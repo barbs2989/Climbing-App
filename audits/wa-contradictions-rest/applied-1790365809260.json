@@ -1,0 +1,203 @@
+{
+ "applied": [
+  {
+   "id": "wa_chockstone_route",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rack size"
+  },
+  {
+   "id": "wa_chockstone_route",
+   "column": "rack",
+   "path": [
+    0
+   ],
+   "fact": "Rack size"
+  },
+  {
+   "id": "wa_chockstone_route",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 2025-26 closure dates in road.seasonalGate"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "watch_out",
+   "path": [],
+   "fact": "KNOWN HAZARDS copied from another route"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "watch_out",
+   "path": [],
+   "fact": "KNOWN HAZARDS copied from another route"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "rappels",
+   "path": [],
+   "fact": "Descent rappel line"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent rappel line"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Descent rappel line"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Descent rappel line"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "hazards",
+   "path": [
+    0
+   ],
+   "fact": "Fixed rappel anchors on the descent"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 reopening vs the route's window"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "rappel_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Chockstone rappel anchor"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "rappel_detail",
+   "path": [
+    3,
+    "anchor"
+   ],
+   "fact": "Chockstone rappel anchor"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_chockstone_route",
+   "before": {
+    "detailed_rack": "A single cam rack from 0.5-3in (with doubles of the 0.5 and 0.75in sizes) plus a nut set covers the route; bring extra quickdraws for the fixed pins and bolts on the crux and upper pitches.",
+    "rack": [
+     "Cams 0.5–3in (single set, doubles of 0.5 & 0.75in)",
+     "Nut set",
+     "8 quickdraws (for fixed pins/bolts)",
+     "2x 60cm slings (tree-rap backup)",
+     "Single 60m rope"
+    ],
+    "road": {
+     "name": "Blue Lake Trailhead, SR-20, Washington Pass",
+     "status": "Paved highway parking at the Blue Lake Trailhead; no unpaved road driving required.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    }
+   }
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "before": {
+    "road": {
+     "name": "Blue Lake Trailhead, SR-20, Washington Pass",
+     "status": "Paved highway parking at the Blue Lake Trailhead; no unpaved road driving required.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    },
+    "watch_out": "Active avalanche path crossing (Phantom Slide approach) — check NWAC Snoqualmie Pass forecast, time crossing carefully\nThin or absent ice most winters — be ready to dry-tool, condition-dependent climbing\nLoose chossy rock on pitch 2 and box gully — protection can be difficult\nNo established rappel stations on descent — inspect any fixed anchors thoroughly, fatal anchor failure recorded (2025)\nCold northwest-facing aspect — expect winter temperatures even on clear days\nAvalanche patrol explosives nearby (Alpental) — stay clear of ski area boundary during control operations",
+    "rappels": "~4 raps down the bolted West Face line (single 60 m rope); no fixed anchors in the couloir itself",
+    "descent_text": "The standard, safer descent uses the bolted rappel line on the West Face/Chockstone Route side: about four rappels plus some downclimbing back to the base. Descending the technical couloir back down to the east (the way many parties climb) is documented but dangerous - there are no fixed anchors there, forcing parties to improvise anchors on steep, broken rock, sometimes on old rusted fixed pitons, above a long fall onto talus or snow. A fatal 2025 accident occurred exactly this way.",
+    "pro_tips": [
+     "Climb it in the narrow window right after SR-20 reopens (late April-early May) for the best snow/ice conditions - it degrades quickly as the season warms.",
+     "Start pre-dawn to be off the technical terrain and descending well before afternoon warming.",
+     "Always descend via the bolted West Face/Chockstone Route rappels, never back down the couloir to the east."
+    ],
+    "itinerary": "Typical single-day itinerary: pre-dawn start from the car, ~1 hr approach to the couloir base, 5-7 hrs of technical climbing to the col and summit, then descend via the West Face/Chockstone bolted rappels (not back down the couloir) in 2-3 hrs, aiming to be off all technical terrain well before dark.",
+    "hazards": [
+     "No established rappel stations exist on this descent, forcing ad hoc anchors in poor rock -- a fatal accident (May 2025) occurred when an old rusted piton anchor failed, killing 3 climbers; inspect any in-place anchor thoroughly and consider building fresh anchors rather than trusting fixed gear"
+    ],
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First rappel off the summit rock band, starting down the West Couloir/Chockstone side.",
+      "anchor": "bolted anchor",
+      "hazards": [
+       "Descending the east-side couloir instead is the documented trap: it holds no fixed anchors, so parties improvise stations on steep broken rock and old rusted pitons. The May 2025 fatal accident on this route happened that way"
+      ],
+      "lengthM": 30,
+      "station": "Off the summit rock band the descent starts down the west/southwest side on the standard summer bolted stations - not back down the couloir you climbed."
+     },
+     {
+      "n": 2,
+      "notes": "Continues down bolted stations, with some downclimbing worked in between rappels.",
+      "anchor": "bolted anchor",
+      "hazards": [
+       "Loose rock on the ledges between stations, with the party below you directly in the fall line"
+      ],
+      "lengthM": 30,
+      "station": "Second bolted station on the standard line. Short downclimbs link the stations, so expect to move between anchors on foot rather than rappelling continuously."
+     },
+     {
+      "n": 3,
+      "notes": "Passes the steepest, most broken sections of the West Couloir face.",
+      "anchor": "bolted anchor",
+      "hazards": [
+       "Route-finding, not steepness, is the difficulty here: several rappel lines exist on this face and only this one leads to the chockstone exit"
+      ],
+      "lengthM": 30,
+      "station": "The third rappel is the one that lands you in the notch between North and South Early Winters Spire. That notch is the aiming point for the whole upper sequence - if you are not heading toward it you are on the wrong line."
+     },
+     {
+      "n": 4,
+      "pull": "Pull clear of the chockstone's underside - the strands hang free past it and a knot pulled up against the block is awkward to reach from below.",
+      "notes": "Short (~50 ft) free rappel off the 'giant chockstone' to reach lower-angle terrain near the base; a single 60m rope is sufficient for the whole descent.",
+      "anchor": "fixed piton-and-nut/chockstone anchor",
+      "hazards": [
+       "Largely free-hanging as you clear the chockstone, with no wall contact to steady you or to fend off a spin",
+       "The exit below traverses under South Early Winters Spire's southwest rib into Spire Gully, which postholes badly in soft snow"
+      ],
+      "lengthM": 15,
+      "station": "From the notch, the final rappel takes you past the large chockstone in the West Couloir. The anchor is NOT on the chockstone itself - it is a fixed piton-and-nut station in the skier's-right wall, and a single rope gets you down past the blockage."
+     }
+    ]
+   }
+  }
+ ]
+}

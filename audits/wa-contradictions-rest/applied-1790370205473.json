@@ -1,0 +1,43 @@
+{
+ "applied": [
+  {
+   "id": "wa_golden_horn_north_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach line to Snowy Lakes"
+  },
+  {
+   "id": "wa_iceman",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Watch-out list describes a waterfall ice climb"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_golden_horn_north_face",
+   "before": {
+    "approach": "The standard access to Golden Horn's north side starts from the Swamp Creek pullout on Hwy 20 (about 3 miles before Rainy Pass), bushwhacking up Swamp Creek to Snowy Lakes on the PCT (~6,700 ft). From Snowy Lakes, travel northwest toward Golden Horn's basin to access the north aspect; this is the general basin-access line reported by parties, not pitch-by-pitch beta for the original 1958 North Face route."
+   }
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "before": {
+    "approach": "From a camp at Snowy Lakes (reached via Swamp Creek and the PCT from Rainy Pass), the first-ascent party scrambled the ridge and traversed a scree field on the mountain's southwest side, then descended to the base of the east face before roping up."
+   }
+  },
+  {
+   "id": "wa_iceman",
+   "before": {
+    "watch_out": "Ephemeral waterfall ice formation—flow dependent on consistent freezing temperatures and water source; inconsistent conditions season-to-season; may not form or may be fragile\nDiurnal freeze-thaw cycles determine quality—afternoon warming melts ice; evening refreezing creates variable conditions; early morning climbing critical for optimal ice\nAvalanche terrain exposure—upper drainage may load with wind slab; assess stability before committing to climb; wide gully presents potential for slide if conditions unstable\nFalling ice hazard from above—ice deterioration and calving risk as temperatures rise; position carefully and move quickly through gully; afternoon climbing extremely hazardous\nSteep ice pitches (80+ degrees) with protection challenges—quality ice and anchor placement critical; poor conditions = unprotectable climbing with high consequence\nRoute-finding in whiteout conditions—gully system can be confusing in poor visibility; GPS/map essential; easy to enter wrong drainage\nLimited bailout options once committed—terrain traps in lower gully; retreat can be difficult; commit only in established conditions\nApproach hazards including avalanche exposure—approach gully subject to slides; assess slope stability; time approach carefully in safe hours"
+   }
+  }
+ ]
+}

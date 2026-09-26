@@ -1,0 +1,170 @@
+{
+ "file": "r448.json",
+ "results": [
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "fact": "Direction of Dot Mountain",
+   "verdict": "fixed",
+   "correct_value": "Dot Mountain lies about a mile SOUTH of Ptarmigan Peak along the connecting ridge (between Ptarmigan and Mount Lago).",
+   "evidence": "PeakVisor places Dot at 48.8522 N, about 1.6 km south-southeast of Ptarmigan (48.866 N). A Pasayten peakbagging report gains the ridge from Lago and heads north over Dot to Ptarmigan, and a 2024 loop report puts Dot south of Ptarmigan via the Ptarmigan-Dot saddle. The itinerary, approach card and area coordinates already agree; overview and pro_tips[0] were the outliers.",
+   "sources": [
+    "https://peakvisor.com/peak/dot-mountain.html",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ptarmigan_peak_pasayten_scramble",
+     "fact": "Direction of Dot Mountain",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "by a mile-long ridge just to the north",
+     "replace": "by a mile-long ridge just to the south"
+    },
+    {
+     "id": "wa_ptarmigan_peak_pasayten_scramble",
+     "fact": "Direction of Dot Mountain",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "(1 mile north along a connecting ridge)",
+     "replace": "(1 mile south along a connecting ridge)"
+    }
+   ]
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "fact": "Trailhead name and elevation",
+   "verdict": "fixed",
+   "correct_value": "The route starts at the Slate Pass Trailhead (Buckskin Ridge TH), ~6,900 ft, at the second switchback of the Slate Peak spur; the 7,170-ft Slate Peak Trailhead is a different trailhead (West Fork Pasayten #472) at the gate.",
+   "evidence": "The Forest Service lists Slate Pass Trailhead at 6,900 ft (Buckskin Ridge Trail #498, second switchback) and Slate Peak Trailhead separately at 7,170 ft serving the West Fork Pasayten Trail #472 at the gate; its Slate Pass Trail #478.2 links #498 to #478. An independent Middle Fork Pasayten trip report states the trailhead was Slate Pass at 6,900 ft, and a Shellrock Basin report gives the Buckskin Ridge trailhead at 6,900 ft. All Ptarmigan reports start at Slate Pass. Patched the waypoint name/elev/note, the approach figure, and the road driveNote that described the Slate Peak TH.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-peak-trailhead",
+    "https://static.deanmyerson.org/Pasayten-Wilderness,-part-1---Middle-Fork-of-the-Pasayten-River.html",
+    "https://trailcatjim.com/shellrock-basin-mt-lago-mt-carru-blackcap-mtn/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/slate-pass-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_ptarmigan_peak_pasayten_scramble",
+     "fact": "Trailhead name and elevation",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "Slate Peak Trailhead",
+     "replace": "Slate Pass Trailhead"
+    },
+    {
+     "id": "wa_ptarmigan_peak_pasayten_scramble",
+     "fact": "Trailhead name and elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 7170,
+     "value": 6900
+    },
+    {
+     "id": "wa_ptarmigan_peak_pasayten_scramble",
+     "fact": "Trailhead name and elevation",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Gated end of FR-5400 past Harts Pass (highest driveable road in WA); the Robinson Creek (Middle Fork Pasayten) Trail #478 drops from here into the Pasayten Wilderness.",
+     "replace": "Second switchback on the Slate Peak spur above Harts Pass, below the road's gated end; the Slate Pass Trail drops from here to the Robinson Creek (Middle Fork Pasayten) Trail #478 in the Pasayten Wilderness."
+    },
+    {
+     "id": "wa_ptarmigan_peak_pasayten_scramble",
+     "fact": "Trailhead name and elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the Slate Pass trailhead (~6,800 ft,",
+     "replace": "From the Slate Pass trailhead (~6,900 ft,"
+    },
+    {
+     "id": "wa_ptarmigan_peak_pasayten_scramble",
+     "fact": "Trailhead name and elevation",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "the Slate Peak spur continues 2.7 miles further to the trailhead (7,170 ft) near the gated road-end — Slate Peak is the highest point in Washington reachable by road.",
+     "replace": "the Slate Peak spur climbs to the Slate Pass trailhead (6,900 ft) at its second switchback, below the gated road-end near Slate Peak — the highest point in Washington reachable by road."
+    }
+   ]
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "fact": "Approach mileage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One report states ~16 miles from Slate Pass to camp near Shellrock Pass (matches itinerary day 1 = 16, not the approach's 'mile 17-18' or waypoint 15). Another gives 36 miles round trip, 18 miles car to summit; a Shellrock Basin loop with side trips was ~35 miles, and another link-up ~42 miles. No two sources state the same mile mark for Shellrock Pass or Freds Lake, and the itinerary's 41-mile day sum includes the Dot/Lago loop, so no patch was written. Likely direction: approach 'mile 17-18' should be ~16 and Freds Lake should precede the Freds Pass pin (13).",
+   "sources": [
+    "https://hike2hike.com/summits/mount-lago-and-ptarmigan-peak-north-cascades-bulgers/",
+    "https://onehikeaweek.com/2015/08/16/ptarmigan-peak/",
+    "https://trailcatjim.com/shellrock-basin-mt-lago-mt-carru-blackcap-mtn/",
+    "https://climberkyle.com/2020/07/08/hart-of-the-pasayten/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "fact": "North side of the peak",
+   "verdict": "fixed",
+   "correct_value": "Ptarmigan's north FACE is sheer, but its north RIDGE, reached from a ~7,250-ft saddle above Ptarmigan Lake (from Tamarack Ridge / Tatoosh Buttes), is broad easy tundra and talus. It is not reached from the Lago-Dot ridge, which lies south.",
+   "evidence": "A 2024 loop report climbs from the 7,250-ft saddle overlooking Ptarmigan Lake up the north ridge as easy Class 1 tundra/scree/talus, and places Dot 2.5 mi south. A 2020 party went up and over Ptarmigan from Tatoosh Buttes toward Dot Lakes, and a 2020 link-up gained Ptarmigan's shoulder from Tamarack Ridge. The sheer north face is consistent with the hazards; the descent field now warns off the face rather than the whole north side, and face now names the correct start of the north ridge.",
+   "sources": [
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/",
+    "https://mountainflamingo.com/2020-08-05-09-pasayten-peakbagging/",
+    "https://climberkyle.com/2020/07/08/hart-of-the-pasayten/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ptarmigan_peak_pasayten_scramble",
+     "fact": "North side of the peak",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "the north side is cliffed and is not a descent option.",
+     "replace": "stay off the cliffed north face, which is not a descent option."
+    },
+    {
+     "id": "wa_ptarmigan_peak_pasayten_scramble",
+     "fact": "North side of the peak",
+     "op": "replace_text",
+     "column": "face",
+     "path": [],
+     "find": "North Ridge from the Lago-Dot connecting ridge is the common alternative",
+     "replace": "North Ridge from the saddle above Ptarmigan Lake is the common alternative"
+    }
+   ]
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "fact": "Parking pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service recreation pages for Slate Pass and Slate Peak trailheads both say no fees are required, and the regional day-use fee list does not include them; but the PNT trailhead page for Harts Pass states $5/day or a recreation pass. Sources disagree for the Harts Pass area, so no patch. If adopted, access.passRequired should name Slate Pass (not Slate Peak) TH and access.parking_pass's Andrews Creek/Chewuch examples are from other trailheads.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.pnt.org/locations/harts-pass-trailhead/"
+   ],
+   "patches": []
+  }
+ ]
+}

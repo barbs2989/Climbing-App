@@ -1,0 +1,437 @@
+{
+ "file": "r462.json",
+ "results": [
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "Approach line and base camp for the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach prose itself offers two lines (Duckabush to La Crosse Basin/O'Neil Pass, or the La Crosse Pass Trail), and the itinerary follows the basin line while the waypoints and approach variant follow the pass line. The only detailed climbing description of the peak (the Olympic climbers' guide page) was unreachable, and the encyclopedia entry gives only Class 2 with no line. Loop descriptions confirm both the basin (Marmot Lake/Lake La Crosse near O'Neil Pass) and La Crosse Pass surround the peak, but no source describes which line the summit scramble uses or confirms a use-trail near 'Fisher's Notch'.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_LaCrosse",
+    "https://www.wta.org/go-hiking/hikes/lacrosse-pass",
+    "https://trailcatjim.com/lacrosse-pass-loop-via-enchanted-valley-oneil-pass-anderson-pass-2026/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "Direction from La Crosse Pass to the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit coordinate (47.6848, -123.3122) is confirmed by the encyclopedia entry. Mount Elk Lick is 2.54 mi east of La Crosse and is climbed via the La Crosse Pass Trail, and the pass loop is described as circling La Crosse and White Mountain, which suggests the pass lies east of the summit (summit to the west, as the route's own pins show). But the hiking association's listing places the pass area at 47.7038, -123.3150, due north of the summit, which would make 'south' correct. The route's own junction pin is also ~3.7 mi straight-line from its pass pin, inconsistent with the 1-3 mi Duckabush-side trail, so the pins cannot adjudicate. Needs a map reading of the pass location.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_LaCrosse",
+    "https://en.wikipedia.org/wiki/Mount_Elk_Lick",
+    "https://www.wta.org/go-hiking/hikes/lacrosse-pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "La Crosse Pass Trail length and gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park service gives the whole La Crosse Pass Trail as 6.4 mi (3,600 ft to 5,566 ft); the hiking association gives 6.4 mi one-way with 2,000 ft of gain (the gentler Dosewallips side); a trail database gives 5.4 mi point to point, 2,881 ft gain / 1,901 ft loss, and says the Duckabush side climbs nearly 3,000 ft 'in the first mile or so'; a trip report describes about 2,500 ft of closely spaced switchbacks, and a search excerpt says about 3,000 ft in about 3 miles. So 6.4 mi is the full divide crossing (not the Duckabush side alone, as the waypoint mileages 16.7 -> 23.1 imply) and ~3,000 ft is the Duckabush-side gain, but no two sources agree on the Duckabush-side distance (about 1 mi vs about 3 mi), so no patch.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/lacrosse-pass-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/lacrosse-pass",
+    "https://www.hikingproject.com/trail/7001887/lacrosse-pass",
+    "https://trailcatjim.com/lacrosse-pass-loop-via-enchanted-valley-oneil-pass-anderson-pass-2026/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft and the itinerary day rows agree on 7,000 ft while the itinerary total note says about 9,000 ft cumulative. No outside source states the car-to-car gain for this summit via the Duckabush (the only published total found is ~11,400 ft for a different 47-mile O'Neil Pass/La Crosse Basin loop from the Dosewallips). Per the rules gain figures change only to a sourced value, so no patch.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/oneill-pass-to-lake-la-crosse-loop"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "Season: October",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park service's La Crosse Pass Trail page gives 'Best Season: Mid-July through October', which supports best_season, while the encyclopedia infobox gives June to September and the row's season chip, itinerary, optimal window and seasonal guidance end in September (October 'risky'). Sources disagree on October, so no patch.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/lacrosse-pass-trail.htm",
+    "https://en.wikipedia.org/wiki/Mount_LaCrosse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "fact": "Season: June",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Jul-Sep (from mid-July)",
+   "evidence": "best_season, itinerary.cal, seasonal_guidance (June 'risky', optimal window late July-September) and climate.typical (pass not reliably snow-free until mid-to-late July) all start the season in July; the park service's La Crosse Pass Trail page gives the best season as starting mid-July and warns snow may cover the higher reaches. Only the encyclopedia's generic infobox says June, so the season chip, the summit waypoint note and the approach variant's 'Late June' start are the outliers.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/lacrosse-pass-trail.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_la_crosse_scramble",
+     "fact": "Season: June",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Sep",
+     "value": "Jul-Sep"
+    },
+    {
+     "id": "wa_mount_la_crosse_scramble",
+     "fact": "Season: June",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "best climbed June-September",
+     "replace": "best climbed mid-July through September"
+    },
+    {
+     "id": "wa_mount_la_crosse_scramble",
+     "fact": "Season: June",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Late June to September",
+     "value": "Mid-July to September"
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_arete",
+   "fact": "Rope length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "60 m rope",
+   "evidence": "The route's published description lists '60 m rope and a selection of long slings' as the protection. gear, detailed_rack, pro_needs and rack all already say 60 m; rope_length_m 30 and the 'short rope' wording in rope_note were the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/110624881/tower-arete"
+   ],
+   "patches": [
+    {
+     "id": "wa_tower_arete",
+     "fact": "Rope length",
+     "op": "set",
+     "column": "rope_length_m",
+     "path": [],
+     "expect": 30,
+     "value": 60
+    },
+    {
+     "id": "wa_tower_arete",
+     "fact": "Rope length",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "a short rope may be carried for exposed sections",
+     "replace": "a 60 m rope may be carried for exposed sections"
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_arete",
+   "fact": "Trailhead / road",
+   "verdict": "fixed",
+   "correct_value": "GETTING THERE should lead to Tiffany Springs Campground (Trail #373) on FS-39, about 7.5-8 miles up FS-39 from FS-37 and past Freezeout Pass (3.2 mi up FS-39).",
+   "evidence": "The route pages for this face park at Tiffany Springs Campground (6,760 ft) and follow trail #373 past Tiffany Lake to Honeymoon Pass. The Tiffany Lake hike page drives from Winthrop 6.5 mi on East Chewuch Rd, 13 mi on FR 37, then 7.5 mi on FR 39 to Tiffany Springs Campground; the forest service campground page gives FR 39 north 8 miles from FR 37 and says the road has not been graded recently. Freezeout Pass trailhead sits only 3.2 mi up FR 39, so the road card described the wrong (Freezeout Ridge) trailhead.",
+   "sources": [
+    "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain",
+    "https://www.wta.org/go-hiking/hikes/tiffany-lake",
+    "https://www.fs.usda.gov/r06/colville/recreation/tiffany-springs-campground",
+    "https://www.wta.org/go-hiking/hikes/tiffany-mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_tower_arete",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Freezeout Ridge Trailhead, via East Chewuch Road / FS-37 / FS-39, north of Winthrop",
+     "value": "Tiffany Springs Campground, via East Chewuch Road / FS-37 / FS-39, north of Winthrop"
+    },
+    {
+     "id": "wa_tower_arete",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved/gravel out of Winthrop for the first stretch, becoming rough gravel for the final ~3.2 miles up FS-39 to Freezeout Pass; limited parking at the trailhead.",
+     "value": "Paved/gravel out of Winthrop for the first stretch, then roughly 7.5-8 miles of rough gravel up FS-39, past Freezeout Pass, to the campground; Trail #373 starts across the road from it."
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_arete",
+   "fact": "Parking pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree. The land manager's campground page says no fees are required at Tiffany Springs, and the regional list of day-use fee sites does not include Tiffany Springs or Tiffany Lake (Colville NF lists only one site). But the Tiffany Lake hike page says an America the Beautiful or Northwest Forest Pass is required, and a county tourism page lists a Northwest Forest Pass for the Tiffany Mountain hike. No two independent sources settle it; the land manager's pages lean to no pass required. (Separately, bivy[0] claims a small nightly campground fee, which the campground page contradicts \u2014 left to the bivy clean-up.)",
+   "sources": [
+    "https://www.fs.usda.gov/r06/colville/recreation/tiffany-springs-campground",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.wta.org/go-hiking/hikes/tiffany-lake",
+    "https://okanogancountry.com/story/hike-of-the-week--tiffany-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tower_arete",
+   "fact": "Distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach to the base of the face (about 2.3 mi: roughly 1.5 mi to Tiffany Lake, 2+ mi to Honeymoon Pass, then a short traverse into the cirque), while the summit pin's 3 mi also includes the climb and the crest walk to the summit; the two figures measure different endpoints and are mutually consistent.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/tiffany-lake",
+    "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "The route's published listing gives the grade as '5.8 YDS (5b French, VI- UIAA)' \u2014 VI- is the UIAA rock-difficulty equivalent of 5.8, not a commitment grade, and no commitment grade is published for the route. The standard grade-comparison table confirms UIAA VI- sits at roughly 5.8-5.9 YDS. The 'VI-' in alpine_grade was a mislabelled rock grade; it is cleared rather than replaced with an invented commitment grade (rock_grade 5.8 already carries the difficulty).",
+   "sources": [
+    "https://www.mountainproject.com/route/110624568/north-tower-ridge-route",
+    "https://en.wikipedia.org/wiki/Grade_(climbing)"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_tower_ridge_route",
+     "fact": "Commitment grade",
+     "op": "set",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "VI-",
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "fact": "Cam sizes for the offwidth crux",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Cams #00 to #4, emphasis on #2-#4",
+   "evidence": "The route's published description calls for a medium trad rack from small stoppers to 'a wide range of cams from #00 to #4' with extra-long slings; gear, detailed_rack and rack already agree. sling_rack.cams capping the rack at 2 in was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/110624568/north-tower-ridge-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_tower_ridge_route",
+     "fact": "Cam sizes for the offwidth crux",
+     "op": "set",
+     "column": "sling_rack",
+     "path": [
+      "cams"
+     ],
+     "expect": "light rack 0.3-2in (small-mid)",
+     "value": "cams #00 to #4 (emphasis on #2-#4 for the chimney/offwidth)"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "fact": "Trailhead / road",
+   "verdict": "fixed",
+   "correct_value": "GETTING THERE should lead to Tiffany Springs Campground (Trail #373) on FS-39, about 7.5-8 miles up FS-39 from FS-37 and past Freezeout Pass (3.2 mi up FS-39).",
+   "evidence": "The route pages for this face park at Tiffany Springs Campground (6,760 ft) and follow trail #373 past Tiffany Lake to Honeymoon Pass. The Tiffany Lake hike page drives from Winthrop 6.5 mi on East Chewuch Rd, 13 mi on FR 37, then 7.5 mi on FR 39 to Tiffany Springs Campground; the forest service campground page gives FR 39 north 8 miles from FR 37 and says the road has not been graded recently. Freezeout Pass trailhead sits only 3.2 mi up FR 39, so the road card described the wrong (Freezeout Ridge) trailhead.",
+   "sources": [
+    "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain",
+    "https://www.wta.org/go-hiking/hikes/tiffany-lake",
+    "https://www.fs.usda.gov/r06/colville/recreation/tiffany-springs-campground",
+    "https://www.wta.org/go-hiking/hikes/tiffany-mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_tower_ridge_route",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Freezeout Ridge Trailhead, via East Chewuch Road / FS-37 / FS-39, north of Winthrop",
+     "value": "Tiffany Springs Campground, via East Chewuch Road / FS-37 / FS-39, north of Winthrop"
+    },
+    {
+     "id": "wa_north_tower_ridge_route",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved/gravel out of Winthrop for the first stretch, becoming rough gravel for the final ~3.2 miles up FS-39 to Freezeout Pass; limited parking at the trailhead.",
+     "value": "Paved/gravel out of Winthrop for the first stretch, then roughly 7.5-8 miles of rough gravel up FS-39, past Freezeout Pass, to the campground; Trail #373 starts across the road from it."
+    }
+   ]
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "fact": "Parking pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree. The land manager's campground page says no fees are required at Tiffany Springs, and the regional list of day-use fee sites does not include Tiffany Springs or Tiffany Lake (Colville NF lists only one site). But the Tiffany Lake hike page says an America the Beautiful or Northwest Forest Pass is required, and a county tourism page lists a Northwest Forest Pass for the Tiffany Mountain hike. No two independent sources settle it; the land manager's pages lean to no pass required. (Separately, bivy[0] claims a small nightly campground fee, which the campground page contradicts \u2014 left to the bivy clean-up.)",
+   "sources": [
+    "https://www.fs.usda.gov/r06/colville/recreation/tiffany-springs-campground",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.wta.org/go-hiking/hikes/tiffany-lake",
+    "https://okanogancountry.com/story/hike-of-the-week--tiffany-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "fact": "Road opening",
+   "verdict": "fixed",
+   "correct_value": "Roads usually snow-free from mid-to-late June",
+   "evidence": "Two peak pages state the access roads are usually snow-free only from mid-June (one says by late June) through September; the route's own road.seasonalGate and approach variant already say late June, and the face's route area notes the snow goes soon after the roads open, consistent with a June opening. No source supports May.",
+   "sources": [
+    "https://www.summitpost.org/tiffany-mountain/151171",
+    "https://www.peakbagger.com/peak.aspx?pid=1779",
+    "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_tower_ridge_route",
+     "fact": "Road opening",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "spring"
+     ],
+     "find": "roads may not be accessible until mid-May",
+     "replace": "the access roads are usually not snow-free until mid-to-late June"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "fact": "Distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach to the base of the face (about 2.3 mi: roughly 1.5 mi to Tiffany Lake, 2+ mi to Honeymoon Pass, then a short traverse into the cirque), while the summit pin's 3 mi also includes the climb and the crest walk to the summit; the two figures measure different endpoints and are mutually consistent.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/tiffany-lake",
+    "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ne_couloir",
+   "fact": "Trailhead / road",
+   "verdict": "fixed",
+   "correct_value": "GETTING THERE should lead to Tiffany Springs Campground (Trail #373) on FS-39, about 7.5-8 miles up FS-39 from FS-37 and past Freezeout Pass (3.2 mi up FS-39).",
+   "evidence": "The route pages for this face park at Tiffany Springs Campground (6,760 ft) and follow trail #373 past Tiffany Lake to Honeymoon Pass. The Tiffany Lake hike page drives from Winthrop 6.5 mi on East Chewuch Rd, 13 mi on FR 37, then 7.5 mi on FR 39 to Tiffany Springs Campground; the forest service campground page gives FR 39 north 8 miles from FR 37 and says the road has not been graded recently. Freezeout Pass trailhead sits only 3.2 mi up FR 39, so the road card described the wrong (Freezeout Ridge) trailhead.",
+   "sources": [
+    "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain",
+    "https://www.wta.org/go-hiking/hikes/tiffany-lake",
+    "https://www.fs.usda.gov/r06/colville/recreation/tiffany-springs-campground",
+    "https://www.wta.org/go-hiking/hikes/tiffany-mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_ne_couloir",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Freezeout Ridge Trailhead, via East Chewuch Road / FS-37 / FS-39, north of Winthrop",
+     "value": "Tiffany Springs Campground, via East Chewuch Road / FS-37 / FS-39, north of Winthrop"
+    },
+    {
+     "id": "wa_ne_couloir",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved/gravel out of Winthrop for the first stretch, becoming rough gravel for the final ~3.2 miles up FS-39 to Freezeout Pass; limited parking at the trailhead.",
+     "value": "Paved/gravel out of Winthrop for the first stretch, then roughly 7.5-8 miles of rough gravel up FS-39, past Freezeout Pass, to the campground; Trail #373 starts across the road from it."
+    }
+   ]
+  },
+  {
+   "id": "wa_ne_couloir",
+   "fact": "Grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "4th class / AI1-2",
+   "evidence": "The route's published description grades it 4th class YDS, AI1-2, Grade I. grade, rock_grade, ice_grade and pitch_detail already agree; the summit waypoint's 'low 5th' was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/110593475/ne-couloir"
+   ],
+   "patches": [
+    {
+     "id": "wa_ne_couloir",
+     "fact": "Grade",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "(low 5th/AI1-2)",
+     "replace": "(4th class/AI1-2)"
+    }
+   ]
+  },
+  {
+   "id": "wa_ne_couloir",
+   "fact": "Road opening",
+   "verdict": "fixed",
+   "correct_value": "Roads usually snow-free from mid-to-late June",
+   "evidence": "Two peak pages state the access roads are usually snow-free only from mid-June (one says by late June) through September; the route's own road.seasonalGate and approach variant already say late June, and the face's route area notes the snow goes soon after the roads open, consistent with a June opening. No source supports May.",
+   "sources": [
+    "https://www.summitpost.org/tiffany-mountain/151171",
+    "https://www.peakbagger.com/peak.aspx?pid=1779",
+    "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_ne_couloir",
+     "fact": "Road opening",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "spring"
+     ],
+     "find": "roads may not be accessible until May",
+     "replace": "the access roads are usually not snow-free until mid-to-late June"
+    }
+   ]
+  },
+  {
+   "id": "wa_ne_couloir",
+   "fact": "Distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach to the base of the face (about 2.3 mi: roughly 1.5 mi to Tiffany Lake, 2+ mi to Honeymoon Pass, then a short traverse into the cirque), while the summit pin's 3 mi also includes the climb and the crest walk to the summit; the two figures measure different endpoints and are mutually consistent.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/tiffany-lake",
+    "https://www.mountainproject.com/area/110593459/north-face-tiffany-mountain"
+   ],
+   "patches": []
+  }
+ ]
+}

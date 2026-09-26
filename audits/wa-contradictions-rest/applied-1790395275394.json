@@ -1,0 +1,114 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_horn_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "elev"
+   ],
+   "fact": "Black and White Lakes junction location"
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Black and White Lakes junction location"
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Black and White Lakes junction location"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_horn_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.5155,
+      "lng": -123.3295,
+      "elev": 875,
+      "name": "Staircase Ranger Station / North Fork Skokomish Trailhead",
+      "note": "Overnight wilderness permits must be reserved in advance (none are issued at the trailhead); NW Forest Pass/park entrance fee required for the lot across from the campground.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Hoodsport on Highway 101, take SR-119 (North Lake Cushman Road), which becomes FR-24 past the lake, and follow it roughly 9 miles to the Staircase Ranger Station in the southeast corner of Olympic National Park, around 800 ft. Park in the lot across from the campground — a NW Forest Pass or park entrance fee is required there. If you plan to camp at Flapjack Lakes, that is a quota basin limited year round and no permits are issued at the trailhead, so reserve one well before you drive out."
+     },
+     {
+      "lat": 47.546206,
+      "lng": -123.376107,
+      "elev": 1473,
+      "name": "Spike Camp junction",
+      "note": "Primitive riverside camp where the North Fork Skokomish River Trail forks toward Flapjack Lakes; last easy river-level water before the steep climb begins.",
+      "type": "Campsite",
+      "distMi": 3.4
+     },
+     {
+      "lat": 47.56102,
+      "lng": -123.3419,
+      "elev": 3900,
+      "name": "Flapjack Lakes",
+      "note": "Established backcountry camp at twin subalpine lakes below Sawtooth Ridge; bear canisters mandatory, camping permit reservation required (quota area, limited year round), no campfires above 3,500 ft.",
+      "type": "Campsite",
+      "distMi": 7
+     },
+     {
+      "lat": 47.553507352941175,
+      "lng": -123.32244264705884,
+      "elev": 4100,
+      "name": "Black and White Lakes junction waterfall",
+      "note": "Waterfall at the Black and White Lakes spur junction is the last reliable, easy water before the dry push toward Gladys Divide.",
+      "type": "Water",
+      "distMi": 7.5
+     },
+     {
+      "lat": 47.554919647058824,
+      "lng": -123.32204435294119,
+      "elev": 4400,
+      "name": "Off-trail departure point (~4,400 ft pond)",
+      "note": "Before a small pond on the Gladys Divide trail, leave the maintained tread and head southeast up an open snow/rock slope toward Sawtooth Pass.",
+      "type": "Junction",
+      "distMi": 7.8
+     },
+     {
+      "lat": 47.556802705882355,
+      "lng": -123.32151329411765,
+      "elev": 5300,
+      "name": "Sawtooth Pass",
+      "note": "Gain the Sawtooth Ridge crest at this saddle, then work along the ridge crest toward the notch below The Fin and The Horn.",
+      "type": "Junction",
+      "distMi": 8.2
+     },
+     {
+      "lat": 47.557744235294116,
+      "lng": -123.32124776470589,
+      "elev": 5450,
+      "name": "Notch south of The Horn (under The Fin's west face)",
+      "note": "Exposed scramble traverse under The Fin's west face to the notch; loose pillow-basalt and runout (R-rated) moves above the notch onto The Horn.",
+      "type": "Hazard",
+      "distMi": 8.4
+     },
+     {
+      "lat": 47.558215,
+      "lng": -123.321115,
+      "elev": 5536,
+      "name": "The Horn summit",
+      "note": "True summit via the SE or SW 5.5 route from the notch; descend by rappelling from the summit and reversing the traverse under The Fin.",
+      "type": "Summit",
+      "distMi": 8.5
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,1461 @@
+{
+ "batches": [
+  "b449.json",
+  "b450.json",
+  "b451.json",
+  "b452.json"
+ ],
+ "routes_read": 11,
+ "routes": [
+  {
+   "id": "wa_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area": "Dorado Needle",
+   "contradictions": [
+    {
+     "fact": "Pitch lengths",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "three short (each well under 25 m/rope-length), moderate pitches"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "this one is THREE pitches, each WELL UNDER 25 m"
+      },
+      {
+       "field": "pitch_detail[1].lengthM",
+       "says": "35"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "25"
+      }
+     ],
+     "why": "Prose says every pitch is well under 25 m but the breakdown lists 25 m, 35 m and 25 m pitches.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance trailhead to high camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].distMi",
+       "says": "3.2"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 5.3 mi and ~5,300 ft gain, 5-6 hours car-to-camp"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.3"
+      }
+     ],
+     "why": "The high-camp waypoint sits 3.2 mi from the trailhead while the approach and itinerary put the same camp 5.3 mi in (and the summit waypoint at 4.2 mi is closer than the camp per itinerary).",
+     "internal_resolution": "approach, approach_variants and itinerary agree on 5.3 mi; waypoint distMi values are the outliers",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day trip (~14 mi, ~6,400 ft total gain)"
+      }
+     ],
+     "why": "Technical stats show 9.7 km (6 mi) while the itinerary totals ~13.6-14 mi; the page presents both as the route distance.",
+     "internal_resolution": "dist_km appears to be one-way; itinerary days sum to 13.6 mi",
+     "needs_research": false
+    },
+    {
+     "fact": "Roush Creek basin vs Eldorado Basin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a broad basin around 5,500-5,800 ft (Roush Creek/Eldorado Basin), where scattered camps exist near 6,100 ft"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "The neighbouring basin to the east offers an alternative low camp when Eldorado Basin is occupied, with usable ground reported roughly between 6,100 and 6,400 ft"
+      }
+     ],
+     "why": "Approach treats Roush Creek and Eldorado Basin as one basin at 5,500-5,800 ft; the camping section says they are separate neighbouring basins.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Parking/entrance fee",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None beyond the parking or entrance fee this route already lists."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "None — there are no trailhead or parking fees for trails that begin on National Park Service land, and there is no fee to enter the North Cascades National Park Service Complex."
+      }
+     ],
+     "why": "Fees refers to a parking/entrance fee that the pass line says does not exist.",
+     "internal_resolution": "passRequired is explicit that there is no fee; fees wording is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Route difficulty class",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.notes",
+       "says": "Class 3 route with glacier crossings; Eldorado Area climb"
+      },
+      {
+       "field": "grade",
+       "says": "5.4"
+      }
+     ],
+     "why": "Raw access note calls it a class 3 route while the grade is 5.4 fifth class (raw field likely not rendered).",
+     "internal_resolution": "grade, rock_grade and pitch_detail agree on 5.4",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "name": "Southwest Buttress",
+   "area": "Dorado Needle",
+   "contradictions": [
+    {
+     "fact": "Route distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "6.44"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~16 mi round trip"
+      },
+      {
+       "field": "approach",
+       "says": "The recorded round-trip distance is about 25.75 km"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "4.7"
+      }
+     ],
+     "why": "dist_km 6.44 km (4.0 mi) is far below the ~16 mi round trip (and even the 4.7 mi one-way waypoint distance).",
+     "internal_resolution": "itinerary days (15.4 mi) and approach (25.75 km RT) agree; dist_km is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance trailhead to high camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].distMi",
+       "says": "3.2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.7"
+      }
+     ],
+     "why": "High-camp waypoint is 3.2 mi from the trailhead but the itinerary approach day is 5.7 mi.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Base of gully elevation vs pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].elev",
+       "says": "7600 (Marble Creek–McAllister pass)"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "7900 (Base of Southwest Buttress gully)"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "A snow-filled gully roughly 700 vertical feet below the pass leads to the start of the buttress climbing."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "IT STARTS ABOUT 700 VERTICAL FEET BELOW THE MARBLE CREEK-McALLISTER PASS"
+      }
+     ],
+     "why": "The gully base is described as ~700 ft below the pass yet its waypoint (7,900 ft) is 300 ft above the pass waypoint (7,600 ft).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Fixed anchors on route (bail)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "Multiple fixed rappel anchors exist along the buttress and near the summit ridge"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "no fixed anchors on route except the rappel station near the summit"
+      }
+     ],
+     "why": "Bail advice relies on fixed anchors along the buttress that the rack section says do not exist.",
+     "internal_resolution": "pitch_detail lists gear/natural anchors on every pitch, supporting detailed_rack",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day timing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "12"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "3:30 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "~8:00 PM"
+      }
+     ],
+     "why": "The day-2 schedule runs 3:30 AM to ~8:00 PM (16.5 h) but the day is stated as 12 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "High camp location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "establish a high camp on rock/moraine near the glacier shoulder for the multi-day stay"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Approach to high camp near the McAllister/Marble Creek col"
+      },
+      {
+       "field": "waypoints[2].name",
+       "says": "Eldorado/Inspiration Glacier high camp"
+      }
+     ],
+     "why": "Itinerary/timing place high camp near the McAllister/Marble Creek col while approach and waypoints put it at the Eldorado/Inspiration glacier shoulder.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "9"
+      },
+      {
+       "field": "turnaround",
+       "says": "Given the length (9-13 pitches)"
+      }
+     ],
+     "why": "Turnaround quotes 9-13 pitches while pitches, beta, overview and pitch_detail give 9.",
+     "internal_resolution": "pitches, pitch_detail, overview and beta agree on 9",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "name": "Direct Southwest Buttress",
+   "area": "Dorado Needle",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "8"
+      },
+      {
+       "field": "beta",
+       "says": "8-pitch, III 5.10a"
+      },
+      {
+       "field": "rope_note",
+       "says": "~13 pitches over 1000+ ft"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "2 rows (P1, P2)"
+      }
+     ],
+     "why": "Header says 8 pitches, rope note says ~13, and the route breakdown lists only the 2 direct-start pitches.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Relation of direct start to the approach gully",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "continue straight up (\"strait up\" per the route description) from the same gully entry point"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THE TWO ROUTES SHARE EVERY STEP OF THE APPROACH AND SEPARATE AT ONE POINT: THE TOP OF THE SNOW GULLY"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climbs straight up the buttress crest rather than detouring through the standard approach gully"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].detail",
+       "says": "Direct start, bypassing the approach gully."
+      }
+     ],
+     "why": "Approach/baseFinding say the Direct uses the same gully and diverges at its top; the itinerary and timing say it bypasses the gully.",
+     "internal_resolution": "approach, approach_variants, waypoints[4].directions and descent_text agree it uses the gully",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the direct line departs the standard line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].note",
+       "says": "the Direct variant departs the standard buttress line higher on the wall, not at the base"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "SEPARATE AT ONE POINT: THE TOP OF THE SNOW GULLY"
+      },
+      {
+       "field": "descent_text",
+       "says": "The Direct start rejoins the standard Southwest Buttress after its first two pitches"
+      }
+     ],
+     "why": "Waypoint says the variant departs higher on the wall; other fields say it departs at the gully top and rejoins after two pitches.",
+     "internal_resolution": "approach, baseFinding, descent_text agree it departs at the gully top",
+     "needs_research": false
+    },
+    {
+     "fact": "Extent of sustained 5.9-5.10 climbing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "it stays on the direct crest of the buttress for sustained 5.9-5.10 climbing"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "SO THE DIRECT START IS TWO PITCHES LONG"
+      }
+     ],
+     "why": "Overview implies the whole route is sustained 5.9-5.10 on the crest; other fields say only two pitches differ before joining the 5.7-5.8 standard line.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day trip (~16.2 mi, ~7,200 ft total gain)"
+      }
+     ],
+     "why": "dist_km 9.7 km (6 mi) vs itinerary ~16 mi round trip.",
+     "internal_resolution": "itinerary days sum to 15.8 mi; dist_km appears one-way",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance trailhead to high camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3.2"
+      },
+      {
+       "field": "approach",
+       "says": "~5.8 mi, ~5,500 ft gain from the car"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.8"
+      }
+     ],
+     "why": "High-camp waypoint is 3.2 mi from the trailhead vs 5.8 mi in approach and itinerary.",
+     "internal_resolution": "approach, approach_variants and itinerary agree on 5.8 mi",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day timing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "12.5"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "3:00 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "~9:00 PM"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "a full 11-13 hr summit day"
+      }
+     ],
+     "why": "Schedule spans 3:00 AM to ~9:00 PM (18 h) against a stated 12.5 h / 11-13 h day.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "name": "East Ridge / Inspiration Glacier",
+   "area": "Dorado Needle",
+   "contradictions": [
+    {
+     "fact": "Approach gain/distance to high camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "high camp around 7,400 ft (roughly 4 miles and ~6,000 ft of gain)"
+      },
+      {
+       "field": "gain_ft",
+       "says": "6000"
+      },
+      {
+       "field": "dist_km",
+       "says": "6.4"
+      }
+     ],
+     "why": "A 2,100 ft trailhead to a 7,400 ft camp is ~5,300 ft, not ~6,000; and if the approach alone is 6,000 ft/4 mi, the route total gain_ft 6000 and dist_km 6.4 km (4 mi) cannot also cover the 1,000+ ft and several miles from camp to the 8,440 ft summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "what_to_bring[5]",
+       "says": "Free NPS wilderness backcountry permit"
+      },
+      {
+       "field": "access.fees",
+       "says": "$10 per person + $6 non-refundable reservation fee for the required backcountry overnight permit"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades National Park Complex wilderness permit — quota, not free"
+      }
+     ],
+     "why": "Gear list calls the permit free while access says it costs $10/person + $6.",
+     "internal_resolution": "access.fees, access.permit, overnight_permit and bivy all say it is not free",
+     "needs_research": false
+    },
+    {
+     "fact": "Moat at the bottom of the NW Ridge rappels",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "a few short raps plus a moat crossing"
+      },
+      {
+       "field": "descent_text",
+       "says": "an uncomplicated rappel that lands in a moatless notch"
+      }
+     ],
+     "why": "Rappels prose says the descent includes a moat crossing; descent text says the rappel lands in a moatless notch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Alpine grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "alpine_grade",
+       "says": "PD+"
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      }
+     ],
+     "why": "A French PD+ rating (a modest route) sits beside commitment III for a 14-pitch 5.7 ridge with an 8-12 h day.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_tepeh_towers",
+   "name": "Tepeh Towers",
+   "area": "Main Peak",
+   "contradictions": [
+    {
+     "fact": "Permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "Any overnight stay requires a free North Cascades National Park backcountry permit"
+      },
+      {
+       "field": "approach",
+       "says": "Any overnight stay requires a free North Cascades National Park backcountry permit"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades National Park Complex wilderness permit — quota, not free"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Not free — confirm current pricing when booking."
+      }
+     ],
+     "why": "Directions and approach call the permit free; access and camping say it is not free ($10/person + $6).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade vs outing length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "alpine_grade",
+       "says": "Grade III"
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      },
+      {
+       "field": "beta",
+       "says": "round trip from camp is well under 2 hours"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "2.5"
+      }
+     ],
+     "why": "Grade III implies a most-of-a-day climb, but every other field describes a sub-2-hour side trip from camp with one 30 m pitch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip time from camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "round trip from camp is well under 2 hours"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Round trip from camp is well under two hours."
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "2.5"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "1"
+      },
+      {
+       "field": "itinerary",
+       "says": "climb the short route (~30 min)"
+      }
+     ],
+     "why": "Timing totals 2.5 h (1 h climbing) against 'well under 2 hours' and a ~30 min climb.",
+     "internal_resolution": "beta, approach_variants and itinerary agree on <2 h",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach text describes summiting Eldorado",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours"
+      },
+      {
+       "field": "approach",
+       "says": "IMPORTANT — this route is NOT on Eldorado Peak itself"
+      }
+     ],
+     "why": "The approach first describes climbing to Eldorado's summit, then says the route is not on Eldorado Peak.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "name": "Northeast Face",
+   "area": "Main Peak",
+   "contradictions": [
+    {
+     "fact": "Permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Free backcountry/wilderness permit required from the Marblemount Wilderness Information Center"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades National Park Complex wilderness permit — quota, not free"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Not free — confirm current pricing when booking."
+      }
+     ],
+     "why": "Access permit line calls the permit free; the overnight permit and camping entries say $10/person + $6.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day timing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "2:30 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "2:30 PM"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "6"
+      }
+     ],
+     "why": "Schedule runs 2:30 AM to 2:30 PM (12 h) while the day is 9 h and timing gives 6 h for the climb.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Which face",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Northeast Face"
+      },
+      {
+       "field": "aspect",
+       "says": "NE"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Alpine start to climb the East Face's snow/ice/mixed pitches"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].label",
+       "says": "Reach base of East Face"
+      }
+     ],
+     "why": "Itinerary calls the objective the East Face while the route, face and aspect say Northeast Face.",
+     "internal_resolution": "name, face, aspect, overview agree on Northeast Face",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent glacier",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "descend the East Ridge/Inspiration Glacier line (not the face) back to camp"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Descend the standard East Ridge/Eldorado Glacier route back to camp."
+      }
+     ],
+     "why": "Descent is via the Inspiration Glacier in one field and the Eldorado Glacier in the other.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "name": "East Ridge (Inspiration Glacier)",
+   "area": "Main Peak",
+   "contradictions": [
+    {
+     "fact": "Camping in Eldorado Basin",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "camping in Eldorado Basin itself is prohibited due to heavy use"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "The usual first camp, about three miles and 3,300 ft from the car"
+      },
+      {
+       "field": "approach",
+       "says": "Eldorado Creek Basin (a common first camp at roughly 5,400–5,600 ft"
+      }
+     ],
+     "why": "Access says camping in Eldorado Basin is prohibited, while approach, approach_variants and the camping section present it as the usual first camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Roush Creek camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Camping is permitted on the Roush Creek rib (~5,400 ft)"
+      },
+      {
+       "field": "bivy[1].capacity",
+       "says": "between roughly 6,100 and 6,400 ft"
+      },
+      {
+       "field": "approach",
+       "says": "Roush Creek Basin (an alternate/second camp at 6,100–6,400 ft"
+      }
+     ],
+     "why": "Roush Creek camping is put at ~5,400 ft in access vs 6,100-6,400 ft elsewhere.",
+     "internal_resolution": "approach, approach_variants and bivy agree on 6,100-6,400 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance trailhead to high camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "3"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3.5"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "5.5"
+      },
+      {
+       "field": "approach",
+       "says": "Eldorado Creek Basin (... ~3 miles and 3,300 ft from the trailhead)"
+      }
+     ],
+     "why": "High camp is 3 mi (itinerary), 3.5 mi (waypoint) or 5.5 mi (approach variant); the approach puts the lower basin itself at ~3 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~10 mi round trip"
+      }
+     ],
+     "why": "dist_km 8 km (5 mi) vs ~10 mi round trip in the itinerary.",
+     "internal_resolution": "dist_km appears one-way (summit waypoint 4.8 mi)",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day start and length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "before the 5.5-hr, 05:00-start summit push"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "3:30 AM from camp"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "7"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].time",
+       "says": "1:00 PM"
+      },
+      {
+       "field": "approach",
+       "says": "6–9 hours total on summit day"
+      }
+     ],
+     "why": "Summit day is 5.5 h from 05:00 (partner reqs), 7 h from 3:30 AM (timing/itinerary), yet the schedule runs 3:30 AM-1:00 PM (9.5 h).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season / road opening",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jul-Sep, once the talus is bare"
+      },
+      {
+       "field": "road.status",
+       "says": "Seasonally open, roughly late June through fall"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "The road typically doesn't open until late May or June"
+      },
+      {
+       "field": "access.closures",
+       "says": "typically opens to its upper trailheads by late June or early July"
+      }
+     ],
+     "why": "The road is said to open late May/June in one place and late June/early July in others, and the season starts in May while the primary approach variant is Jul-Sep.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Optimal window vs September",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "June through September, with July-August the most consistently firm"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "September is inside the stated optimal window but rated marginal in the month breakdown.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Water above the boulder field",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[6]",
+       "says": "no reliable water above the boulder field — winter-camping skills needed at high camp"
+      },
+      {
+       "field": "bivy[2].water",
+       "says": "Eldorado Creek and snowmelt through the basin, reliable"
+      },
+      {
+       "field": "bivy[1].water",
+       "says": "Reliable running water in the basin"
+      }
+     ],
+     "why": "Hazards say there is no reliable water above the boulder field, but both basins above it are listed with reliable water.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_west_arete",
+   "name": "West Arete",
+   "area": "Main Peak",
+   "contradictions": [
+    {
+     "fact": "Approach col to the base",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "traverse below the Eldorado Glacier to the notch between Eldorado and The Triad, descend the glacier on the notch's northwest side"
+      },
+      {
+       "field": "approach_variants[0].name",
+       "says": "Over the ice cap to Dorado Needle Col, then down into Marble Creek Cirque"
+      },
+      {
+       "field": "itinerary",
+       "says": "Continue via Dorado Col to the base of the west face"
+      },
+      {
+       "field": "bail",
+       "says": "downclimbing the 5.6 scrambling back toward Dorado Col"
+      }
+     ],
+     "why": "The approach goes via the Eldorado-Triad notch while approach variants, itinerary and bail go via Dorado (Needle) Col, a different col.",
+     "internal_resolution": "approach_variants, itinerary and bail agree on Dorado Col; approach and waypoints[0].note name the Triad notch",
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "roughly July-September"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Prime climbing season (Jul-Sep) for a snow-free arête"
+      }
+     ],
+     "why": "Best season and climate include September, outside the Jul-Aug season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Character of the first climbing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the first roughly 800 ft of climbing is Class 4 before harder 5th-class sections"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The opening pitch is unbelievably loose 5.6 on the ridge crest."
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "5.6"
+      }
+     ],
+     "why": "Approach says the first ~800 ft is class 4; baseFinding and the breakdown start with a 5.6 pitch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6800"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The toe of the arête sits at roughly 6,000 ft in the Marble Creek Cirque"
+      },
+      {
+       "field": "itinerary",
+       "says": "high camp near the East Ridge base (~7,400 ft)"
+      }
+     ],
+     "why": "Trailhead 2,100 ft to a 7,400 ft camp, down to a 6,000 ft toe and up ~2,800 ft to 8,872 ft is ~8,000+ ft of gain, not 6,800.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High camp location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "Alpine start from high camp near Dorado Col"
+      },
+      {
+       "field": "itinerary",
+       "says": "a high camp near the East Ridge base (~7,400 ft)"
+      }
+     ],
+     "why": "Timing puts high camp near Dorado Col; itinerary and approach variant put it at the East Ridge base.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "17"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "8"
+      },
+      {
+       "field": "beta",
+       "says": "historically up to ~17 hours round-trip from the East Ridge base camp"
+      }
+     ],
+     "why": "totalHrs 17 is the camp-to-camp climbing day, yet an 8 h approach is listed separately, so the total cannot be 17.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Permit fee basis",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "$10/person/night + a flat $6 nonrefundable reservation fee"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "$10 per person plus a $6 reservation fee."
+      }
+     ],
+     "why": "Fee is per person per night in one line and per person (per trip) in the other.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "name": "South Ridge",
+   "area": "Main Peak",
+   "contradictions": [
+    {
+     "fact": "Rappels on route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "Several rappels used to bypass gendarmes along the ridge crest"
+      },
+      {
+       "field": "descent_text",
+       "says": "Descend via Eldorado's standard East Ridge route back toward the glacier camp."
+      },
+      {
+       "field": "beta",
+       "says": "pitches 3-4 are classic exposed knife-edge ridge ('B-Basin knife riding') ending in a short downclimb"
+      }
+     ],
+     "why": "Rappels prose describes several rappels past gendarmes that no pitch, beta, bail or descent field mentions.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "Any overnight stay needs a free North Cascades National Park backcountry permit"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Overnight stays need a free backcountry permit."
+      },
+      {
+       "field": "access.fees",
+       "says": "The wilderness permit costs $10 per person for adults 16 and over"
+      }
+     ],
+     "why": "Several fields call the permit free while access says it costs $10/person + $6.",
+     "internal_resolution": "access.fees, overnight_permit and bivy agree it is not free",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit waypoint describes a different route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].note",
+       "says": "Broad, snow-covered ridge to the spectacular knife-edge summit; the standard/easiest route."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If you are walking on broad snow with nothing but a snow crest above you, you are on the ordinary route and not on this climb at all."
+      }
+     ],
+     "why": "The summit waypoint note describes the standard East Ridge snow route, not this rock ridge.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Roush Creek Basin elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "5200"
+      },
+      {
+       "field": "bivy[1].elev",
+       "says": "6300"
+      },
+      {
+       "field": "bivy[1].capacity",
+       "says": "roughly between 6,100 and 6,400 ft"
+      }
+     ],
+     "why": "Roush Creek Basin is 5,200 ft in the waypoint vs 6,100-6,400 ft in the camping section.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "name": "North Ridge",
+   "area": "Main Peak",
+   "contradictions": [
+    {
+     "fact": "Notch elevation vs descending from camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Descend the Inspiration Glacier toward the notch ... at about 8,100 ft"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "7600 (Eldorado (East Ridge) camp)"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "7900 (Base of North Ridge)"
+      }
+     ],
+     "why": "The route 'goes DOWN' from a 7,600 ft camp to a notch at ~8,100 ft, and the base waypoint (7,900 ft) disagrees with the 8,100 ft notch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.7"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.7"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "Airy, exposed 5.6 ridge crest of solid granite to the summit."
+      }
+     ],
+     "why": "Summit waypoint says 5.6 while the grade fields say 5.7.",
+     "internal_resolution": "grade, rock_grade, pitch_detail agree on 5.7 (baseFinding notes sources disagree)",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count vs length and rope",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "3"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "244"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      }
+     ],
+     "why": "Three pitches cannot cover 244 m (800 ft) with a 60 m rope.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "name": "Northwest Couloir / Eldorado Glacier",
+   "area": "Main Peak",
+   "contradictions": [
+    {
+     "fact": "Season",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Oct-Apr"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "optimal"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Go in a firm late-spring or early-summer window."
+      },
+      {
+       "field": "climate.bySeason.spring",
+       "says": "Best window for firm couloir snow"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Cascade River Road usually doesn't open until late May/June"
+      }
+     ],
+     "why": "Season Oct-Apr is almost entirely outside the May-July window every other field recommends, and the access road is closed for most of it.",
+     "internal_resolution": "seasonal_guidance, climate, pro_tips, crowds and best_season all point to late spring/early summer",
+     "needs_research": false
+    },
+    {
+     "fact": "Optimal window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "no confirmed ascent evidence for a June-specific optimal window"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "optimal"
+      }
+     ],
+     "why": "The optimal-window text disclaims June while the breakdown rates June optimal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Fall conditions",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "a good cold snap in early fall/winter (e.g., late October-November) can also bring in firm, well-bonded ice"
+      },
+      {
+       "field": "climate.bySeason.fall",
+       "says": "More broken and icy; less appealing."
+      }
+     ],
+     "why": "Best season recommends a late-fall window that the climate section calls less appealing.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "8"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "commonly described as eight 60 m pitches"
+      },
+      {
+       "field": "overview",
+       "says": "offering 2-3 long pitches (often simul-climbed)"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "the couloir's 2-3 long pitches"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "2 rows"
+      }
+     ],
+     "why": "Header/climbing route say 8 pitches; overview, itinerary, timing and route breakdown say 2-3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III, AI2"
+      },
+      {
+       "field": "ice_grade",
+       "says": "WI2-3"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "M3-M4"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "AI2-3, up to WI3 in lean conditions"
+      }
+     ],
+     "why": "Grade pill (WI2-3 from ice_grade) differs from grade AI2, and alpine_grade gives a mixed M3-M4 grade no other field supports.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappels on the descent / rope length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[5]",
+       "says": "70m rope for full-length rappels on descent (a 60m works but needs an extra rappel)"
+      },
+      {
+       "field": "descent_text",
+       "says": "This is a walk-off/downclimb with no rappels required on the descent itself"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "A full 60 m rope gets a party through in one"
+      }
+     ],
+     "why": "Gear sizes the rope for descent rappels that the descent text says do not exist, and says a 60 m needs an extra rappel while the approach says 60 m does it in one.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Usual way into the couloir",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "The usual way in is from above: ... RAPPEL from it into the cirque below."
+      },
+      {
+       "field": "approach",
+       "says": "is a variation, not the only way in — most parties simply continue glacier travel around to the couloir's base at about 7,800 ft"
+      },
+      {
+       "field": "beta",
+       "says": "Approach via the East Ridge glacier track to a rappel notch between Eldorado Peak and Dean's Spire (~8,100 ft), rappel into the west-facing cirque"
+      }
+     ],
+     "why": "Approach variants and beta make the notch rappel the usual entry; the approach calls it a variation and says most parties traverse the glacier.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day start and length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "3:30 AM from camp"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "followed by a 04:30 alpine start for a 7-hr route day"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "2:00 PM"
+      }
+     ],
+     "why": "Start is 3:30 AM vs 04:30, and the day is 9 h (timing), 7 h (partner reqs) or 10.5 h (schedule 3:30 AM-2:00 PM).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Descent route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Descend the East Ridge / Inspiration Glacier route back over the pass near Dorado Needle to the standard high camp"
+      },
+      {
+       "field": "descent_text",
+       "says": "drop through the gap in the lower East Ridge, rope up and cross the Inspiration Glacier"
+      }
+     ],
+     "why": "Descent routes over a pass near Dorado Needle, which the detailed East Ridge descent does not cross.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climb length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "480"
+      },
+      {
+       "field": "beta",
+       "says": "climb the couloir (~1,000 ft, 7,800–8,800 ft)"
+      }
+     ],
+     "why": "480 m (1,575 ft) vs ~1,000 ft of couloir.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8.04"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~10 mi round trip"
+      }
+     ],
+     "why": "dist_km 8 km (5 mi) vs ~10 mi round trip.",
+     "internal_resolution": "dist_km appears one-way (summit waypoint 4.9 mi)",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

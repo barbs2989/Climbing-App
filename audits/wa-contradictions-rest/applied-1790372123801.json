@@ -1,0 +1,163 @@
+{
+ "applied": [
+  {
+   "id": "wa_spontaneous_distraction",
+   "column": "access",
+   "path": [
+    "_raw",
+    "notes"
+   ],
+   "fact": "Access notes describe the neighbouring route"
+  },
+  {
+   "id": "wa_first_amendment",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Fixed gear on the route"
+  },
+  {
+   "id": "wa_first_amendment",
+   "column": "watch_out",
+   "path": [
+    1
+   ],
+   "fact": "Fixed gear on the route"
+  },
+  {
+   "id": "wa_first_amendment",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Fixed gear on the route"
+  },
+  {
+   "id": "wa_first_amendment",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Fixed gear on the route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_spontaneous_distraction",
+   "before": {
+    "access": {
+     "_raw": {
+      "notes": "Multi-pitch climbing route (7 pitches reported) at Washington Pass; Spontaneity Arete route",
+      "permit_cost": "Free",
+      "permit_type": "No overnight permit required",
+      "land_manager": "USFS Okanogan-Wenatchee National Forest",
+      "forest_contact": "(509) 664-9200 - Okanogan-Wenatchee National Forest",
+      "wilderness_zone": "Not in designated wilderness; Washington Pass area",
+      "parking_pass_cost": "$5 per day or $30 annual",
+      "seasonal_closures": "Washington Pass (SR 20) typically closed mid-November to mid-April",
+      "special_requirements": "Standard Forest Service regulations; best climbing season late June-September",
+      "parking_pass_required": "Northwest Forest Pass"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No overnight permit required",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Not in designated wilderness; Washington Pass area",
+     "landManager": "USFS Okanogan-Wenatchee National Forest",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_first_amendment",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Highway turnout east of Washington Pass, then a long ledge traverse across the face",
+      "notes": "Park in the highway turnout about two miles east of Washington Pass, near milepost 165, at roughly 4,900 ft. Nothing is signed.\n\nThe climbers' path drops steeply from the WEST end of the turnout through loose dirt and rock into the trees, marked here and there by cairns, crosses Early Winters Creek on logs, and climbs into an open rocky drainage and talus below the formation. The old line finishes with two or three informal fixed ropes across an avalanche path; a newer variation bears RIGHT just before them and needs only a little scrambling.\n\nThis route sees very few ascents, so current conditions beta effectively does not exist and there will be no traffic to follow. Budget the extra time the traverse costs on top of the walk in.",
+      "season": "July through September, once the creek crossing and approach snow have gone",
+      "hazards": [
+       "The base is a 250-yard third and fourth-class traverse away from the obvious start",
+       "Very few ascents, so no chalk, no traffic and no current conditions information",
+       "The crux comes off a belay high on the route in thin cracks with sparse protection; knifeblades and thin pins are useful",
+       "Dirty and vegetated cracks in places",
+       "Descent is by the neighbouring route's rappels or its loose gully, not by reversing this line"
+      ],
+      "baseFinding": "YOU DO NOT START WHERE THE PATH ENDS. Arrive first at the base of the formation's trade route — identified by TREE SNAGS on the left as the ground steepens, before the gully. From there, TRAVERSE ABOUT TWO HUNDRED AND FIFTY YARDS ACROSS THE FACE on third and fourth-class ledges, finishing JUST RIGHT OF CENTRE on the north-west face. That traverse is the approach to this climb and it is the piece everyone underestimates.\n\nThe test that you have gone far enough is the first pitch itself. It is a HUNDRED-FOOT CHIMNEY AND HAND CRACK ending on a LARGE LEDGE, and it is easy — around 5.4. If the ground in front of you is steep or technical at the very start, you have stopped short. A hundred feet of easy chimney to a big ledge is the signature.\n\nCONFIRM ON THE PITCHES ABOVE, because the low ground is not distinctive. Pitch two is a slightly vegetated hands-and-fists corner. Pitch three follows the same corner then breaks RIGHT on thin face climbing to a LEDGE WITH A CAVE. Pitch four is finger cracks to a large slabby ledge. Corner, then a cave ledge, then a slabby ledge: that sequence is the line.\n\nNEGATIVE MARKERS, and both are easy to fall into. If you racked up at the snags and started climbing without traversing, you are on the trade route — much easier, and it will feel like it. If your first pitch is protected by BOLTS, you are on the partly bolted four-pitch line beside the gully; nothing on this route is bolted.\n\nBe warned that the line is not continuously natural and some cracks are dirty and vegetated. That is the character of the route rather than evidence you are off it. The crux comes late, right off a belay high on the climb, in very thin cracks with sparse protection.\n\nAt the top it joins the trade route for its final scrambly ridge pitches, and the descent is that route's line: rappel it, or take the third-class gully on climbers' right, which is faster and loose."
+     }
+    ],
+    "watch_out": [
+     "Sparse, thin protection on the 5.9-5.10c and 5.11a crux pitches.",
+     "Very seldom climbed — expect route-finding uncertainty and little to no fixed gear beyond the bolted cave belay.",
+     "Dirt-filled cracks typical of the area even where the rock itself is excellent."
+    ],
+    "pitch_detail": [
+     {
+      "grade": "5.4",
+      "notes": "From the base of Spontaneity Arête, traverse about 250 yards toward the middle of the northwest face on 3rd- and 4th-class ledges to the start. The first pitch is a chimney and hand crack to a large ledge.",
+      "pitch": "1",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.8",
+      "notes": "A hands-and-fists corner, somewhat vegetated, which begins just around the corner from a 5.10 splitter finger crack.",
+      "pitch": "2",
+      "lengthM": 46
+     },
+     {
+      "grade": "5.9",
+      "notes": "Continue up the same corner, then break right onto thin face climbing to a ledge with a cave, a loose, chossy belay. Protection on the face moves is minimal.",
+      "pitch": "3",
+      "lengthM": 37
+     },
+     {
+      "grade": "5.8+",
+      "notes": "Good finger cracks lead to a large, slabby ledge.",
+      "pitch": "4",
+      "lengthM": 37
+     },
+     {
+      "grade": "Traverse",
+      "notes": "Traverse right off the ledge to another ledge. The line to the left does not go.",
+      "pitch": "5"
+     },
+     {
+      "grade": "5.9",
+      "notes": "A quality finger crack. Small cams and nuts carry most of the protection from here up.",
+      "pitch": "6"
+     },
+     {
+      "grade": "5.10+",
+      "notes": "A series of corners and roofs with very thin protection; knifeblade and Lost Arrow pitons are useful, and small TCUs and micro-nuts are essential.",
+      "pitch": "7",
+      "lengthM": 46
+     },
+     {
+      "crux": true,
+      "grade": "5.11a",
+      "notes": "The crux comes immediately off the belay in the same super-thin crack system, then continues through more corners and roofs.",
+      "pitch": "8"
+     },
+     {
+      "grade": "5.6",
+      "notes": "Mostly easier ground that joins Spontaneity Arête for its last one-and-a-half scrambly ridge pitches, via the Goldie Crack, to the summit.",
+      "pitch": "9"
+     }
+    ]
+   }
+  }
+ ]
+}

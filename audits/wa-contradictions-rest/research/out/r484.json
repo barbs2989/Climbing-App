@@ -1,0 +1,166 @@
+{
+ "file": "r484.json",
+ "results": [
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Trailhead and approach line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction: itinerary days and timing.sectionBreakdown describe the Elwha/Whiskey Bend/Long Ridge/Mount Fitzhenry approach, while approach, approach_variants, descent_text, waypoints and trailhead describe Sol Duc/High Divide/Carrie. Both approaches genuinely exist (the Fitzhenry line ascends brush and ridges over Fitzhenry to Fairchild's north glacier remnant; the Sol Duc line goes via the High Divide, Catwalk and Carrie). Fixing it means rewriting all four itinerary days (miles, gain, loss, hours, schedules) and the timing breakdown for the Sol Duc line, and no sources give day-level figures for a Sol Duc out-and-back to Fairchild, so no patch is written. Recommend a sourced rewrite of itinerary + timing to the Sol Duc line (or relabelling as a separate Fitzhenry variant).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Fitzhenry",
+    "https://www.mountaineers.org/activities/routes-places/mount-william-fairchild",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Trail used to reach the Bailey Range",
+   "verdict": "unresolved",
+   "correct_value": "Sol Duc -> High Divide -> Cat Basin -> Catwalk (not Appleton Pass)",
+   "evidence": "Real: waypoints[2]/[3] route via the Appleton Pass Trail and leave trail at Appleton Pass, while approach/descent go over the High Divide to Cat Basin. Trip reports describe the Sol Duc start going to Heart Lake and the High Divide, then out the Catwalk to Carrie; Appleton Pass is a separate trail (used from the Boulder Creek side). The fix needs the two pins moved/replaced (lat/lng are out of scope for this pass), so no patch; flag for pin rework of waypoints[2], [3] and the Appleton mention in waypoints[1].note.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://www.hikingproject.com/trail/7001863/bailey-range-route",
+    "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "What the Catwalk is",
+   "verdict": "fixed",
+   "correct_value": "The Catwalk is the narrow exposed ridge between Cat Peak and Mount Carrie; the loose sidehill across Carrie's south face is a separate stretch beyond it.",
+   "evidence": "One trip report calls the Catwalk a section of narrower ridgeline between Cat Peak and Mt. Carrie; an independent 8-day trip report describes it as a 1-2 ft wide rock arm between Cat Peak and Mt. Carrie. The row's waypoints, hazards and bivy notes already agree; only the approach and descent_text mislabel the Carrie south-face sidehill as the Catwalk.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "and then climbing/sidehilling toward Mount Carrie (6,995 ft). Many parties use the exposed, loose-talus sidehill traverse across Carrie's south face known as \"the Catwalk\"; an alternative",
+     "replace": "and then crossing the Catwalk, the narrow, exposed class 3 ridge linking Cat Peak to Mount Carrie (6,995 ft). Past it, many parties use the exposed, loose-talus sidehill traverse across Carrie's south face; an alternative",
+     "id": "wa_mount_fairchild_standard",
+     "fact": "What the Catwalk is"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Sidehill/traverse back across the Catwalk (or the north-side alternative) to Cat Basin",
+     "replace": "Sidehill back across Carrie's south face (or take the north-side alternative), then recross the Catwalk to Cat Basin",
+     "id": "wa_mount_fairchild_standard",
+     "fact": "What the Catwalk is"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: dist_km 38.6 (24 mi) renders as one-way approach but equals the ~24 mi round trip in totalNote; the approach says ~12 mi one way; itinerary miles (31) belong to the Whiskey Bend line; the summit waypoint sits at 15.5 mi. No source states the one-way Sol Duc-to-Fairchild distance (the Bailey Range route segment alone is listed at 13.4 mi point-to-point), so no figure can be adopted. Resolve together with the itinerary rewrite.",
+   "sources": [
+    "https://www.hikingproject.com/trail/7001863/bailey-range-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Glacier / crevasse severity",
+   "verdict": "fixed",
+   "correct_value": "The Fairchild Glacier crossing from Carrie is crevassed and should be roped.",
+   "evidence": "One trip report, descending the snow berm off Mount Carrie toward Stephen Lake, notes nasty crevasses on the north side of the berm and ropes up; another describes the glacier below Carrie as full of blue ice with crevasses they rappelled to avoid. Both contradict 'snowfields rather than a crevassed glacier'; the row's hazards, gear, waypoints and approach already call for roped glacier travel.",
+   "sources": [
+    "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395/",
+    "http://eileensadventures.com/2020/07/baileys-high-traverse-in-the-olympic-mountains"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "Minor/localized - the route crosses lingering snowfields near the summit rather than a heavily crevassed glacier hidden crevasses or moats are possible especially earlier in the season before snow consolidates, so glacier-travel awareness is still warranted",
+     "replace": "Real - the line drops from Mount Carrie onto the Fairchild Glacier, which has open crevasses beside its snow ridge and turns to hard blue ice late in the season; hidden crevasses are likelier early, before the snow consolidates, so travel roped",
+     "id": "wa_mount_fairchild_standard",
+     "fact": "Glacier / crevasse severity"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "Basic glacier/crevasse-hazard awareness for the snowfields near Fairchild",
+     "replace": "Roped glacier travel and crevasse rescue for the Fairchild Glacier crossing",
+     "id": "wa_mount_fairchild_standard",
+     "fact": "Glacier / crevasse severity"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Glacier kit for snowfields",
+     "replace": "Glacier kit for the Fairchild Glacier crossing",
+     "id": "wa_mount_fairchild_standard",
+     "fact": "Glacier / crevasse severity"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Trailhead pass and permit",
+   "verdict": "fixed",
+   "correct_value": "Olympic NP entrance pass; wilderness permit reserved in advance (no self-issue at trailhead).",
+   "evidence": "The park's wilderness page says all permits are made through Recreation.gov, paper self-registration at trailheads is no longer available, Sol Duc/Seven Lakes Basin is a quota area and Bailey Range cross-country trips are booked by phone with the WIC. The park fee page and an independent Sol Duc trail guide confirm the park entrance fee (checked on Sol Duc Hot Springs Road) covers trailhead parking; a Northwest Forest Pass is a Forest Service pass and not what Sol Duc requires.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/fees.htm",
+    "https://www.parkrangerjohn.com/sol-duc-falls-trail-olympic-national-park/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Northwest Forest Pass required, self-issue wilderness permit at the kiosk.",
+     "replace": "Olympic National Park entrance pass required; overnight trips need a wilderness permit reserved in advance, since none are issued at the trailhead.",
+     "id": "wa_mount_fairchild_standard",
+     "fact": "Trailhead pass and permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Aspect / face",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real tension: face 'Southwest Ridge'/aspect SW vs a line that enters the NE-descending Fairchild Glacier and exits up the summit ridge. The Fairchild Glacier starts ~6,600 ft on the Bailey crest and descends northeast, but no source found names the summit ridge the standard line finishes on or its aspect, so no change.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fairchild_Glacier",
+    "https://en.wikipedia.org/wiki/Mount_Fairchild"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "fact": "Round-trip gain",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "gain_ft 9300 (header) matches the Whiskey Bend itinerary day sum, but the approach prose and itinerary.totalNote both say ~8,000 ft round-trip gain. No source states a car-to-car gain for this route, so no change; resolve with the itinerary rewrite.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

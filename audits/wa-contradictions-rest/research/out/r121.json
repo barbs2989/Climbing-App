@@ -1,0 +1,68 @@
+{"file": "r121.json", "results": [
+ {"id": "wa_wright_pond", "fact": "First ascent date", "verdict": "fixed",
+  "correct_value": "First ascent summer 2009 by Mike Pond and Chris Wright (they returned in 2010 to add lead bolts and clean it)",
+  "evidence": "The Mountain Project route page (written by FA party member Chris Wright) gives FA Chris Wright & Mike Pond, 2009, and says they went back in 2010 to add lead bolts. The Alpine Institute FA article dates the ground-up first ascent to summer 2009. The 'October 4, 2010' in beta is the bolting/cleaning visit at best, not the FA; the fa column is already right.",
+  "sources": ["https://www.mountainproject.com/route/113868664/wright-pond", "https://www.alpineinstitute.com/first-ascent-wright-pond-route/"],
+  "patches": [
+   {"id": "wa_wright_pond", "fact": "First ascent date", "op": "replace_text", "column": "beta", "path": [], "find": "Expect lichen and loose rock (newer route, FA October 4, 2010).", "replace": "Expect lichen and loose rock (first climbed in 2009 and seldom repeated)."}
+  ]},
+ {"id": "wa_wright_pond", "fact": "Cam rack", "verdict": "fixed_internal_plus_one",
+  "correct_value": "Doubles to a #3 Camalot, emphasis on small cams and wires, RPs useful",
+  "evidence": "gear[0], detailed_rack, pro_needs and pro_tips (4 fields) all say doubles to #3 with small gear emphasis; the FA party's Mountain Project route page states 'Doubles to #3 Camalot, emphasis on small cams and wires. RPs useful.' The beta's 'doubles to #2 plus single #3 and #4' is word for word the Narcos rack from the neighbouring route's page, copied onto this row by mistake. No second independent source gives a Wright-Pond rack.",
+  "sources": ["https://www.mountainproject.com/route/113868664/wright-pond", "https://www.mountainproject.com/route/119269320/narcos"],
+  "patches": [
+   {"id": "wa_wright_pond", "fact": "Cam rack", "op": "replace_text", "column": "beta", "path": [], "find": "Trad protection: doubles from tips to #2 plus single #3 and #4 cams.", "replace": "Trad protection: doubles to a #3 Camalot, weighted toward small cams and wires, with RPs for thin seams."}
+  ]},
+ {"id": "wa_wright_pond", "fact": "Protection rating", "verdict": "fixed_internal_plus_one",
+  "correct_value": "PG13",
+  "evidence": "hazards[0], watch_out[0] and the wall waypoint note all say PG13; the Mountain Project area page lists Wright-Pond as 5.11a/b trad PG13. Only obj_haz says R. The route page calls P1 'a bold lead' but gives no R rating.",
+  "sources": ["https://www.mountainproject.com/area/113868657/cutthroat-creek-wall-or-little-liberty-bell", "https://www.mountainproject.com/route/113868664/wright-pond"],
+  "patches": [
+   {"id": "wa_wright_pond", "fact": "Protection rating", "op": "set", "column": "obj_haz", "path": [0], "expect": "runout (R-rated) climbing", "value": "runout (PG13) climbing"}
+  ]},
+ {"id": "wa_wright_pond", "fact": "Route length vs pitch lengths", "verdict": "fixed",
+  "correct_value": "183 m (600 ft)",
+  "evidence": "The Wright-Pond route page gives 600 ft (182 m), 4 pitches; the independently written Narcos page and its trip report give 600 ft for the neighbouring line that tops out at the same finish on the same wall. 244 m (800 ft) exceeds even the 200 m sum of the rope-length pitch figures, which run diagonally (P1 follows an arch left, P2 traverses a bolted face), so ~183 m of height is consistent with them.",
+  "sources": ["https://www.mountainproject.com/route/113868664/wright-pond", "https://www.mountainproject.com/route/119269320/narcos", "https://cascadeclimbers.com/forum/topic/103532-tr-little-liberty-bellcutthroat-creek-wall-partial-new-route-narcos-59-600ft-07112020/"],
+  "patches": [
+   {"id": "wa_wright_pond", "fact": "Route length vs pitch lengths", "op": "set", "column": "length_m", "path": [], "expect": 244, "value": 183}
+  ]},
+ {"id": "wa_wright_pond", "fact": "Wall height / elevations", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The Mountain Project area pin gives 6,263 ft at 48.54975,-120.6435, but USGS 1 m ground at that same coordinate reads ~6,397 ft and nearby points range 6,240-6,433 ft, so the pin does not pin down either the base or the top. With ~600 ft of climbing (not 800), a 5,800 ft base would top out ~6,400 ft, so 6,263 may be a mid-face value; the 5,800 ft figure lives only in bivy[] (off-limits here). gain_ft 1312 has no outside source. No two sources state base or top elevations; no patch.",
+  "sources": ["https://www.mountainproject.com/area/113868657/cutthroat-creek-wall-or-little-liberty-bell", "https://epqs.nationalmap.gov/v1/json?x=-120.6435&y=48.54975&units=Feet&wkid=4326"],
+  "patches": []},
+ {"id": "wa_wright_pond", "fact": "Parking pass required", "verdict": "fixed",
+  "correct_value": "Northwest Forest Pass or America the Beautiful Pass; land manager Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+  "evidence": "The WTA Cutthroat Pass page lists 'America the Beautiful Pass or Northwest Forest Pass' and Okanogan-Wenatchee NF, Methow Valley Ranger District. NW Hiker's Cutthroat page says 'NW Forest Pass Required' in the Okanogan-Wenatchee NF, Methow Ranger District. access.passRequired 'None' and access.landManager 'N/A' are the outliers.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/cutthroat-pass", "https://www.nwhiker.com/cutthroatpassE.html"],
+  "patches": [
+   {"id": "wa_wright_pond", "fact": "Parking pass required", "op": "set", "column": "access", "path": ["passRequired"], "expect": "None", "value": "Northwest Forest Pass or America the Beautiful Pass"},
+   {"id": "wa_wright_pond", "fact": "Parking pass required", "op": "set", "column": "access", "path": ["landManager"], "expect": "N/A", "value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"}
+  ]},
+ {"id": "wa_narcos", "fact": "Which Wright-Pond anchors Narcos shares for bail", "verdict": "fixed",
+  "correct_value": "Narcos joins Wright-Pond in its P3 right-facing corner and shares the bolted belay at the top of Wright-Pond's third pitch, then finishes on Wright-Pond's last pitch",
+  "evidence": "The Narcos page says P4 steps right into a right-facing corner, 'you are now on the Wright-Pond', and follows it to a bolted belay; P5 finishes as Wright-Pond's last pitch. The Wright-Pond page (separate author) describes its P3 as the right-facing corner ending at a bolted belay below the P4 corner/chimney, with P1 and P2 belays low on the left side of the wall. So the shared bolted station is Wright-Pond's P3 anchor, not its P1/P2 stations; overview and pitch_detail are consistent with this.",
+  "sources": ["https://www.mountainproject.com/route/119269320/narcos", "https://www.mountainproject.com/route/113868664/wright-pond"],
+  "patches": [
+   {"id": "wa_narcos", "fact": "Which Wright-Pond anchors Narcos shares for bail", "op": "replace_text", "column": "bail", "path": [], "find": "The upper pitches share bolted belay anchors with Wright-Pond (its P1/P2 stations), giving bail-out rappel options if needed;", "replace": "Once Narcos joins Wright-Pond, the bolted belay at the top of that route's third pitch and the rappel line below it give bail-out options if needed;"}
+  ]},
+ {"id": "wa_narcos", "fact": "Total elevation gain", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "USGS ground at the trailhead pin reads ~4,470 ft and the wall pin area ~6,240-6,430 ft, so 2,700 ft looks high for car-to-car, but no outside source states a gain figure for this route and the rules forbid computing one from elevations. No patch.",
+  "sources": ["https://epqs.nationalmap.gov/v1/json?x=-120.6547&y=48.5564&units=Feet&wkid=4326", "https://www.mountainproject.com/route/119269320/narcos"],
+  "patches": []},
+ {"id": "wa_narcos", "fact": "Approach distance", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Sources give only time (1-1.5 hr to the shoulder) and the first leg (1/4 mile on the old road bed to a double cairn); none gives a total approach distance. Straight-line trailhead to wall pin is ~0.7 mi, so 1.2 mi is plausible and 1.5-2 mi possibly high, but nothing external settles it. No patch.",
+  "sources": ["https://www.mountainproject.com/route/119269320/narcos", "https://www.mountainproject.com/area/113868657/cutthroat-creek-wall-or-little-liberty-bell"],
+  "patches": []},
+ {"id": "wa_narcos", "fact": "Parking pass required", "verdict": "fixed", "discovered": true,
+  "correct_value": "Northwest Forest Pass or America the Beautiful Pass; land manager Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+  "evidence": "Same shared access blob as Wright-Pond: passRequired 'None' and landManager 'N/A' contradict parking_pass, overnight_permit, permit and land_manager on this row. WTA and NW Hiker both state a Northwest Forest Pass (or interagency pass) is required at the Cutthroat trailhead, managed by the Methow Valley Ranger District of the Okanogan-Wenatchee NF.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/cutthroat-pass", "https://www.nwhiker.com/cutthroatpassE.html"],
+  "patches": [
+   {"id": "wa_narcos", "fact": "Parking pass required", "op": "set", "column": "access", "path": ["passRequired"], "expect": "None", "value": "Northwest Forest Pass or America the Beautiful Pass"},
+   {"id": "wa_narcos", "fact": "Parking pass required", "op": "set", "column": "access", "path": ["landManager"], "expect": "N/A", "value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"}
+  ]}
+]}

@@ -1,0 +1,523 @@
+{
+ "file": "r342.json",
+ "results": [
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "fact": "Where the route leaves the Chain Lakes Trail",
+   "verdict": "fixed",
+   "correct_value": "Stay on Chain Lakes Trail to the last switchback just below Herman Saddle, then go cross-country up heather and scrub trees to the Mazama Dome-Herman ridge.",
+   "evidence": "The Mountaineers route description says to follow the trail past Bagley Lakes toward Herman Saddle and leave it at the last switchback to head for the ridge between Mazama Dome and Mount Herman. The SummitPost route page likewise says to go to the last switchback, spot the low point on the ridge above, and scramble a couple hundred feet of heather and scrub trees. The 4,500-ft 'gully' exit and the 'above the saddle' wording in the waypoints were the outliers.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-herman",
+    "https://www.summitpost.org/mt-herman/1063604"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "name"
+     ],
+     "expect": "Chain Lakes Trail — leave-trail point for the Herman gully",
+     "value": "Chain Lakes Trail — switchbacks toward Herman Saddle",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Where the route leaves the Chain Lakes Trail"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "expect": "Chain Lakes Trail is followed to about 4,500 ft, where climbers peel off trail and start up the gully toward Herman Saddle; no cairns, easy to miss in cloud.",
+     "value": "Stay on Chain Lakes Trail as it switchbacks up toward Herman Saddle; the route leaves it only at the last switchback below the saddle, an unmarked exit that is easy to miss in cloud.",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Where the route leaves the Chain Lakes Trail"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "Above the saddle you leave any trail and work up",
+     "replace": "Once on the ridge by the saddle, off any trail, work up",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Where the route leaves the Chain Lakes Trail"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "fact": "Distance to Herman Saddle and the summit",
+   "verdict": "fixed",
+   "correct_value": "About 2 mi to Herman Saddle and about 3 mi to the summit one way (~6 mi round trip).",
+   "evidence": "The Mountaineers give the scramble as about 6 miles round trip with 2,100 ft of gain. Powder Project measures the Heather Meadows-to-Herman Saddle approach at 1.9 miles, and a Chain Lakes trip blog gives about 5 miles out-and-back to the saddle. The waypoint mileages (saddle 3.5, summit 4.6 one way), the schedule's 3.5 miles, the partner card's 3-3.5 miles and dist_km (9.7 km = the round trip, shown as one-way) were rescaled to about 2 mi to the saddle and 3.1 mi to the summit.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-herman",
+    "https://www.powderproject.com/trail/7000946/herman-saddle-approach",
+    "https://mybackyardandbeyond.com/chain-lakes-trail-herman-saddle/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 2,
+     "value": 1.2,
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Distance to Herman Saddle and the summit"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 3.5,
+     "value": 2,
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Distance to Herman Saddle and the summit"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 4,
+     "value": 2.5,
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Distance to Herman Saddle and the summit"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 4.3,
+     "value": 2.8,
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Distance to Herman Saddle and the summit"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 4.6,
+     "value": 3.1,
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Distance to Herman Saddle and the summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Follow trail roughly 3.5 miles",
+     "replace": "Follow trail roughly 2 miles",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Distance to Herman Saddle and the summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "roughly 3-3.5 miles of trail approach",
+     "replace": "roughly 2 miles of trail approach",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Distance to Herman Saddle and the summit"
+    },
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 9.7,
+     "value": 5.0,
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Distance to Herman Saddle and the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "fact": "Direction of the Chain Lakes Trail toward Herman Saddle",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "From Bagley Lakes the Chain Lakes Trail bends west to switchback up to Herman Saddle.",
+   "evidence": "Powder Project's Herman Saddle approach heads south along the Bagley Lakes valley then west, ascending west/northwest to the saddle. The row's own pins put Herman Saddle west of both the trailhead and Bagley Lakes, and the approach itself places Mazama Dome to the west of the saddle; only the 'bends east' phrase (copied into approach_variants) disagreed.",
+   "sources": [
+    "https://www.powderproject.com/trail/7000946/herman-saddle-approach",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/chain-lakes-trail-682"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "which bends east and begins switchbacking up",
+     "replace": "which bends west and begins switchbacking up",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Direction of the Chain Lakes Trail toward Herman Saddle"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "which bends east and switchbacks up",
+     "replace": "which bends west and switchbacks up",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Direction of the Chain Lakes Trail toward Herman Saddle"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "fact": "Where SR 542 is gated in winter",
+   "verdict": "fixed",
+   "correct_value": "In winter SR 542 is plowed to Heather Meadows (the Bagley Lakes Trailhead / upper ski-area lot); only the final 2.7 miles to Artist Point close.",
+   "evidence": "WSDOT says crews clear the highway all winter up to the Heather Meadows area and close only the last 2.7 miles to Artist Point. The Forest Service's SR 542 page gives the winter closure point as the Bagley Lakes Trailhead / upper ski area lot, and its Chain Lakes trail page lists that trailhead as year-round access. CLIMATE (winter) and a pro tip claiming a lower gate and a longer tour were the outliers.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2026/sr-542-road-artist-point-mount-baker-reopens-season-wednesday-june-10",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-highway-sr-542",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/chain-lakes-trail-682"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "winter"
+     ],
+     "find": "SR 542 is gated well below Heather Meadows, so the peak is instead approached on skis/snowshoes as a much longer backcountry tour with real avalanche exposure",
+     "replace": "SR 542 is plowed only as far as Heather Meadows, the winter road end, so the peak becomes a ski or snowshoe tour from the same lot with real avalanche exposure",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Where SR 542 is gated in winter"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "starting from the lower winter-closure gate — that's a much longer, avalanche-exposed tour",
+     "replace": "starting from the same lot at the winter road end — that's an avalanche-exposed tour",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Where SR 542 is gated in winter"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "Bagley Lakes Trailhead is at about 4,200 ft.",
+   "evidence": "The Forest Service Chain Lakes Trail page lists the Bagley Lakes Trailhead at 4,200 ft (4,400 ft is the separate Heather Meadows Visitor Center trailhead). Powder Project's approach from the same lot starts at 4,202 ft. The approach and trailhead card already say ~4,200 ft; the trailhead waypoint and first schedule line said 4,400.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/chain-lakes-trail-682",
+    "https://www.powderproject.com/trail/7000946/herman-saddle-approach"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4400,
+     "value": 4200,
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "(~4,400 ft)",
+     "replace": "(~4,200 ft)",
+     "id": "wa_mount_herman_standard_scramble",
+     "fact": "Trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Where the Twin Lakes Trailhead is (road end at the lakes vs 2 mi below)",
+   "verdict": "fixed",
+   "correct_value": "The Twin Lakes Trailhead is at the road end beside Twin Lakes (~5,200 ft); the rough last ~2 miles of FS-3065 lie below it, above the Yellow Aster Butte trailhead.",
+   "evidence": "The Forest Service High Pass Trail page says high-clearance vehicles can negotiate the remaining two miles to Twin Lakes, with the Twin Lakes Trailhead as the start of Trail 685/676. WTA's Twin Lakes page describes a 2.5-mile road walk from the Yellow Aster Butte trailhead to the lakes, and a Larrabee trip report starts at the trailhead at Twin Lakes, 5,200 ft. The trailhead and Twin Lakes waypoints wrongly put the 2-mile rough road above the trailhead.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676",
+    "https://www.wta.org/go-hiking/hikes/twin-lakes-2",
+    "https://trailcatjim.com/mt-larrabee-via-southwest-slope/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "at the end of maintained FS-3065; the rough road continues ~2 more miles toward Twin Lakes, passable to high-clearance vehicles.",
+     "replace": "at the road end beside Twin Lakes; the last ~2 miles of FS-3065 below it are rough and need a high-clearance vehicle.",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Where the Twin Lakes Trailhead is (road end at the lakes vs 2 mi below)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "expect": "Drive Twin Lakes Road (FS 3065) to the end of the maintained grade, where a self-issue kiosk takes the Northwest Forest Pass or the day-use fee. The road is snow-gated through winter and spring. Above this point it degrades for roughly two more miles toward Twin Lakes and the Forest Service recommends high clearance, so many parties leave the car here and walk the rest.",
+     "value": "Drive Twin Lakes Road (FS 3065) past the Yellow Aster Butte trailhead and up the final, roughly two-mile rough section to the road end at Twin Lakes, where a Northwest Forest Pass or the day-use fee is needed. The road is snow-gated through winter and spring. That last section is steep and rutted and needs a high-clearance vehicle, so many parties park at the Yellow Aster Butte trailhead and walk it.",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Where the Twin Lakes Trailhead is (road end at the lakes vs 2 mi below)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "Continue up the rough upper road about two miles and roughly 1,500 feet of gain, on foot or in a high-clearance vehicle, to the lake basin",
+     "replace": "The lakes lie at the road end, in the basin",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Where the Twin Lakes Trailhead is (road end at the lakes vs 2 mi below)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 2,
+     "value": 0,
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Where the Twin Lakes Trailhead is (road end at the lakes vs 2 mi below)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Pass waypoint positions",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The High Pass pin sits almost on the trailhead pin and the Low Pass pin lies southwest of the lakes although the route heads north; these are waypoint coordinates, which are out of scope for this pass. The waypoint mileages were corrected under the distance fix, but the pins themselves need a separate coordinate repair.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "About 8 mi round trip from Twin Lakes (about 4 mi one way).",
+   "evidence": "The Mountaineers route description gives 8 miles from Twin Lakes, and a separate trip report logs 8 miles from the Twin Lakes trailhead. The stored dist_km (6.4 km = 4.0 mi one way) already matches; the itinerary's 10 mi, the partner card's 6 mi and the waypoint mileages (built from a trailhead 2 mi below the lakes) were the outliers. High Pass is about 1.8-2.6 mi from the lakes (WTA, Hike of the Week), consistent with the approach's 'roughly 2 miles' and the breakdown's 2.3.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-larrabee",
+    "https://trailcatjim.com/mt-larrabee-via-southwest-slope/",
+    "https://www.wta.org/go-hiking/hikes/high-pass-1",
+    "https://www.hikeoftheweek.com/2021/09/30/high-pass/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 10,
+     "value": 8,
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Round-trip distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 10 miles round trip",
+     "replace": "roughly 8 miles round trip",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Round-trip distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "roughly 6 miles",
+     "replace": "roughly 8 miles",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Round-trip distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 2.7,
+     "value": 1.7,
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Round-trip distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 3.3,
+     "value": 2.3,
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Round-trip distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 4.3,
+     "value": 3.3,
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Round-trip distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 5,
+     "value": 4,
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Where the maintained trail is left",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mountaineers route description says to continue on trail to about 6,400 ft and then traverse left and down into the basin, which supports the breakdown and schedule; the approach and waypoints end the maintained trail at High Pass (~5,940 ft) and treat 6,400 ft as a cliff band. A SummitPost page mentions a cliffy area at 6,400 ft where heather ends. A user path continuing past the end of the maintained trail could reconcile both, but no second source confirms the trail to 6,400 ft, so nothing was changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-larrabee",
+    "https://www.summitpost.org/mount-larrabee/151373"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Extra gain when parking at Yellow Aster Butte TH",
+   "verdict": "fixed",
+   "correct_value": "Parking at the Yellow Aster Butte trailhead adds about 2.3-2.5 mi each way and about 1,500 ft of climbing on the walk in.",
+   "evidence": "Hike of the Week says starting from the Yellow Aster Butte trailhead adds 4.8 miles round trip and 1,500 ft of gain on the access road. The Yellow Aster Butte trailhead sits at about 3,600 ft and Twin Lakes at about 5,200 ft (a ~1,600-ft difference), and WTA gives the road walk as 2.5 miles. The itinerary's 500 ft was the outlier.",
+   "sources": [
+    "https://www.hikeoftheweek.com/2021/09/30/high-pass/",
+    "https://www.wta.org/go-hiking/hikes/yellow-aster-butte",
+    "https://trailcatjim.com/mt-larrabee-via-southwest-slope/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "adding ~2.3 mi and 500 ft each way",
+     "replace": "adding ~2.3 mi each way and ~1,500 ft of climbing on the walk in",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Extra gain when parking at Yellow Aster Butte TH"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit is required for the Mount Baker Wilderness here; only a recreation pass (Northwest Forest Pass) to park at Twin Lakes.",
+   "evidence": "The Forest Service High Pass Trail 676 page lists a valid Recreation Pass at Twin Lakes Trailhead plus wilderness regulations (party of 12, no campfires) and no wilderness permit. The Forest Service Mt. Baker Wilderness page mentions only recreation passes and a voluntary climbing register, and Hike of the Week lists 'Northwest Forest or Interagency Pass required; wilderness rules apply'. The permit column was fixed; the bivy[0]/bivy[1] permit lines repeat the self-issue claim but bivy is owned by the camping clean-up and was not patched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.hikeoftheweek.com/2021/09/30/high-pass/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No wilderness permit required; no quota or fee.",
+     "id": "wa_mount_larrabee_south_ridge",
+     "fact": "Wilderness permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "fact": "Total elevation gain (gain_ft 3,900 vs itinerary 4,225 / totalNote ~4,200)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft says 3,900 while the itinerary day and total note say about 4,200 and the approach says 3,500-4,000. Outside figures disagree: one trip report logs 3,900 ft (via the lower Gargett Mine basin variant) and the Mountaineers give 2,600 ft from Twin Lakes. No two sources agree on this route's figure, so nothing was changed.",
+   "sources": [
+    "https://trailcatjim.com/mt-larrabee-via-southwest-slope/",
+    "https://www.mountaineers.org/activities/routes-places/mount-larrabee"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

@@ -1,0 +1,547 @@
+{
+ "applied": [
+  {
+   "id": "wa_honeymoon_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Upper Dungeness Trailhead elevation"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Upper Dungeness Trailhead elevation"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Number of routes on the peak"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Park entrance fee"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Park entrance fee"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Best month to climb"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "status"
+   ],
+   "fact": "Best month to climb"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "Best month to climb"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "status"
+   ],
+   "fact": "Best month to climb"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "Best month to climb"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "September",
+    "status"
+   ],
+   "fact": "Best month to climb"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "September",
+    "reason"
+   ],
+   "fact": "Best month to climb"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel on the route"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Name of the saddle reached"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Name of the saddle reached"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Name of the saddle reached"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Name of the saddle reached"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Location of Shelter Rock"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Location of Shelter Rock"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead name"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead name"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Park entrance fee"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elevFt"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "label"
+   ],
+   "fact": "Summit elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_honeymoon_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2900,
+      "name": "Upper Dungeness Trailhead",
+      "note": "Standard approach for the only documented route on Mount Deception: hike the Royal Basin Trail (#833.2) ~7.2 miles to Royal Lake, then the Upper Royal Basin Trail into the alpine basin, then scramble to the summit ridge. Accessed via Forest Roads 2880/2870 from Sequim/Palo Alto Rd.",
+      "type": "Trailhead",
+      "elevFt": 2900,
+      "directions": "Drive to the Upper Dungeness/Royal Basin Trailhead from Sequim by way of Palo Alto Road and Forest Roads 2880 and 2870; the trailhead is on FR 2870 and the hike starts on Trail #833.2. A Northwest Forest Pass is needed to park here. Royal Lake is an Olympic National Park quota area, so an overnight also requires a wilderness permit arranged in advance."
+     },
+     {
+      "lat": 47.83201,
+      "lng": -123.21073,
+      "elev": 5100,
+      "name": "Royal Lake",
+      "note": "Via Upper Dungeness Trail from Royal Basin trailhead;",
+      "type": "Campsite",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.8131,
+      "lng": -123.23389,
+      "elev": 7788,
+      "name": "Mount Deception Summit",
+      "type": "Summit",
+      "elevFt": 7788
+     }
+    ],
+    "approach": "From the Upper Dungeness/Royal Basin Trailhead (elev. ~2,500 ft), hike the Upper Dungeness River Trail roughly 7 miles with about 2,500 ft of gain to Royal Lake, then continue about a mile farther into Upper Royal Basin (~5,600 ft), a meadow-and-tarn basin ringed by Deception, Mystery, Fricaba, and Hal Foss Peak. From the upper basin, leave the trail and ascend scree/talus into Deception Basin, then climb the left (west) of two gullies just right of a large rock buttress. Follow that gully system up to Mount Deception's east ridge about 150 yards southeast of the summit and follow the ridge to the top; the scramble from Deception Basin takes roughly 3 hours. A Northwest Forest Pass is needed at the trailhead and a wilderness permit is required for overnight stays.",
+    "approach_variants": [
+     {
+      "name": "Royal Basin to Deception Basin",
+      "notes": "From the Upper Dungeness / Royal Basin Trailhead at about 2,500 ft, hike the Upper Dungeness River Trail and then the Royal Basin Trail roughly 7 miles with about 2,500 ft of gain to Royal Lake, then continue about another mile into Upper Royal Basin at roughly 5,600 ft — a meadow and tarn basin ringed by Deception, Mystery, Fricaba and Hal Foss.\n\nA Northwest Forest Pass is needed at the trailhead, and Royal Lake is an Olympic National Park quota area, so an overnight needs a wilderness permit arranged in advance.\n\nFrom the upper basin, leave the trail and ascend scree and talus northwest into Deception Basin. From the flat in Deception Basin the scramble to the summit takes about three hours.",
+      "distMi": 8,
+      "season": "Apr-Jun, while the gully still holds snow",
+      "hazards": [
+       "loose rotten rock throughout the upper mountain",
+       "snow in the gully in early season, and the left-branching variation melts out by late season",
+       "scree and talus in the basin",
+       "steep and exposed ground on a peak generally described as serious"
+      ],
+      "baseFinding": "From the flat in Deception Basin, climb scree and talus to the northwest and look for a LARGE ROCK BUTTRESS. Immediately right of that buttress there are TWO gullies. Take the LEFT (west) one.\n\nThe buttress is what identifies the pair — do not try to identify the gully on its own, because there is more than one gully-shaped thing in the basin. Left of two, immediately right of a big buttress.\n\nFollow that gully system up to Mount Deception's east ridge, arriving roughly 150 yards southeast of the summit, then follow the ridge to the top. Reaching the ridge that close to the summit is the confirmation you took the right gully; topping out much further along the ridge means you were in the wrong one.\n\nThe Honeymoon variation proper takes a left-branching snow gully off the main line — climb nearly to the low point and then branch left. By late season that branch is largely melted out and the feature disappears. It is graded class 3 but is reported to feel harder than that."
+     }
+    ],
+    "access": {
+     "_raw": {
+      "permit_cost": "$6 reservation fee + $8 per person per night",
+      "permit_type": "Backcountry Wilderness Permit (overnight required)",
+      "land_manager": "National Park Service (Olympic National Park)",
+      "group_size_limit": "12 people maximum",
+      "permit_pickup_hours": "9:00 AM - 4:00 PM (contact 360-565-3100 for specific hours)",
+      "special_requirements": "Bear canisters required; designated campsites only in high-use areas",
+      "wilderness_zone_name": "Royal Basin / Deception Creek area",
+      "parking_pass_required": "Northwest Forest Pass ($5 day / $30 annual)",
+      "permit_pickup_location": "Olympic National Park Wilderness Information Center, Port Angeles, WA",
+      "seasonal_closure_dates": "High-use overnight camping May 1 - Sept 30 (reservation-only); closed to overnight access other times based on snow conditions"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers.",
+     "permit": "Backcountry Wilderness Permit (overnight required)",
+     "closures": "High-use overnight camping May 1 - Sept 30 (reservation-only); closed to overnight access other times based on snow conditions",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "National Park Service (Olympic National Park)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass ($5 day / $30 annual)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "July through August, within the broader June-September climbing season",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow largely consolidated or melted off the worst sections while some snowfields remain for easier travel; peak permit demand for Royal Basin camping",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Lingering snowfields make the upper mountain's rotten snow and self-arrest hazards worse; access road and trail may still have snow patches",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Driest, most stable conditions in this rain-shadow range; least residual snow and loose-rock/snow interface hazard",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still climbable but shorter days and increasing chance of early-season snow or storms toward month's end",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Eastern Olympic rain-shadow effect keeps it drier than the western Olympics, but it remains a maritime range with lingering snow into early summer",
+      "probability": "Afternoon cloud buildup and reduced visibility are a known route-finding hazard on the upper mountain, more common in unsettled June/early-July weather than in the drier August window"
+     },
+     "exposure": "Significant fall exposure on the upper mountain: loose rock and rotten snow make a slip difficult to arrest, and fatalities have occurred on this peak — consequence of a fall is high despite the non-technical Class 2 rating",
+     "avalanche": {
+      "zone": "Olympics (NWAC forecast zone) — NWAC issues only general/advisory-level guidance for the Olympics rather than a detailed daily forecast, and this route is climbed almost entirely outside the winter avalanche season",
+      "byMonth": {
+       "July": "N/A",
+       "June": "Low",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel; hazard is steep, loose talus and rotten/lingering snowfields rather than glaciated terrain"
+    },
+    "itinerary": {
+     "cal": "Royal Basin is a quota/permit camping zone in Olympic National Park (bear canister required); climbing before ~July 1 is preferred while snow still covers the notoriously loose upper rock.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Royal Lake trailhead the trail climbs steadily along Royal Creek through open forest and rhododendrons to lower Royal Basin (~7 mi, ~5,100 ft) at Shelter Rock, then continues about a mile farther and 500 ft higher into upper Royal Basin, which has better tarn-side campsites, fewer bugs, and closer access to the peak. Guided parties budget 5-7 hours for this approach.",
+       "hours": 6,
+       "miles": 8,
+       "title": "Backpack in to upper Royal Basin",
+       "gainFt": 3200,
+       "lossFt": 0,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Establish camp near Royal Lake / upper Royal Basin"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start is standard given the loose, exposed terrain. Cross the moraine below camp and climb the steep scree/snow slope on the west edge of the NE face to the Deception-Mystery saddle, drop about 100 ft onto the small glacier/snowfield, traverse west around Gilhooley Tower, then finish on class 2-3 slopes to the summit. Rock is notoriously loose, so parties move carefully and expect the descent to take nearly as long as the climb.",
+       "hours": 8,
+       "miles": 4,
+       "title": "Summit push on the NE face/glacier route",
+       "gainFt": 2300,
+       "lossFt": 2300,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave upper basin camp",
+         "detail": "Alpine start to climb the scree/snow before it softens and to allow a margin for loose rock."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Base of NE face slope",
+         "detail": "Cross the moraine and start up the steep scree or snow finger on the west edge of the face."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Deception-Mystery saddle",
+         "detail": "Descend ~100 ft onto the glacier/snowfield and begin the traverse west around Gilhooley Tower."
+        },
+        {
+         "time": "+5 hr",
+         "label": "Below the summit block",
+         "detail": "Class 2 walking slopes lead the final stretch to the top."
+        },
+        {
+         "time": "~9:30-10:00 AM",
+         "label": "Summit (7,786 ft)",
+         "detail": "Second-highest peak in the Olympics; views over Royal Basin and the Bailey Range."
+        },
+        {
+         "time": "~1:00-2:00 PM",
+         "label": "Back at camp",
+         "detail": "Downclimbing the loose rock/scree is slow and often takes as long as the ascent."
+        }
+       ],
+       "objective": "Climb Mount Deception via the NE face and Deception-Mystery saddle, return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach back down Royal Creek to the trailhead. Mostly a straightforward downhill grind; the only real routefinding is staying on the correct fork about a mile from the trailhead.",
+       "hours": 5,
+       "miles": 8,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3200,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Break camp and return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day/2-night trip is the common weekend pattern (~20 mi and ~5,300 ft gain round trip): backpack in to upper Royal Basin, a long alpine-start summit day on loose NE-face terrain, then hike out. Strong or guided parties sometimes compress this into a 2-day/1-night trip by combining the summit push with the full hike-out on day 2."
+    },
+    "timing": {
+     "totalHrs": 19,
+     "summitTimeHrs": 8,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 6,
+     "recommendedStart": "4:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "From the Royal Lake trailhead the trail climbs steadily along Royal Creek through open forest and rhododendrons to lower Royal Basin (~7 mi, ~5,100 ft) at Shelter Rock, then contin…",
+       "fromTo": "Backpack in to upper Royal Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8,
+       "note": "An alpine start is standard given the loose, exposed terrain. Cross the moraine below camp and climb the steep scree/snow slope on the west edge of the NE face to the Deception-Mys…",
+       "fromTo": "Summit push on the NE face/glacier route",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Reverse the approach back down Royal Creek to the trailhead. Mostly a straightforward downhill grind; the only real routefinding is staying on the correct fork about a mile from th…",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "access": {
+     "fees": "USFS trailhead day-use fee $5/vehicle/day or $30/year (Northwest Forest Pass or Interagency 'America the Beautiful' pass accepted in lieu of the day fee), plus the $6 NPS wilderness-permit reservation fee for overnight trips.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are mandatory for food storage in Royal Basin. Camping is restricted to three designated areas: Royal Creek, Lower Royal Meadow, and Royal Lake; groups of 7 or more must use designated group campsites.",
+     "permit": "NPS wilderness permit required for any overnight stay in Royal Basin/upper mountain, reserved via recreation.gov ($6 non-refundable reservation fee); online reservations for the May 15-Oct 15 season typically open around mid-April; camp areas are quota-limited.",
+     "group_limit": 12,
+     "landManager": "Trailhead and lower approach trail (Upper Dungeness Trail #833, Royal Basin Trail #832 to the wilderness boundary) are on Olympic National Forest, Hood Canal Ranger District; the upper basin and the peak itself are within Olympic National Park's Daniel J. Evans Wilderness.",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass or America the Beautiful/Interagency pass for trailhead parking.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 47.8779,
+      "lng": -123.1369,
+      "elev": null,
+      "name": "Upper Dungeness Trailhead / Royal Basin Trail #833.2",
+      "note": "FR-2870, Olympic National Forest; Royal Basin approach to Mount Deception standard route.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive to the Upper Dungeness Trailhead at the end of Forest Road 2870, at about 2,500 feet in Olympic National Forest. A Forest Service day-use pass is required at the trailhead."
+     },
+     {
+      "lat": 47.8305184,
+      "lng": -123.2131016,
+      "name": "Royal Basin / Royal Lake",
+      "type": "Campsite",
+      "distMi": null,
+      "elevFt": null
+     },
+     {
+      "lat": 47.813335,
+      "lng": -123.233255,
+      "elev": 7786,
+      "name": "Mount Deception",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 7786
+     }
+    ]
+   }
+  }
+ ]
+}

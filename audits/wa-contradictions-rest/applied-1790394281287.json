@@ -1,0 +1,267 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_seattle_south",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "column": "climate",
+   "path": [
+    "typical"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Order of Promise Creek Bench vs Low Divide"
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Wilderness permit booking"
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Wilderness permit booking"
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "column": "waypoints",
+   "path": [
+    1,
+    "name"
+   ],
+   "fact": "Lewis Meadow location"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_seattle_south",
+   "before": {
+    "season": "Jun-Aug",
+    "climate": {
+     "fall": "Increasing rain and shortening daylight narrow the practical window",
+     "spring": "Deep snowpack typically lingers in the upper basins and on the summit slopes into early summer",
+     "summer": "The most reliable window (Jul-Sep) but still unsettled — trip reports document rain and hail squalls even in early September",
+     "winter": "Heavy snow and storms make the multi-day approach and summit slopes impractical for most parties",
+     "typical": "Marine west coast climate: wet, mild winters with heavy snow accumulation in the high interior, and a relatively short, more stable summer window. June through August is the most favorable period for viewing or climbing the peak; the standard scramble is typically driest and most snow-free from mid-July through September, per NPS sources.",
+     "bySeason": {
+      "summer": "Best window (Jul-Sep) for the scree/talus scramble; expect long daylight but still-frequent Pacific frontal systems and afternoon cloud buildup typical of the Olympics.",
+      "winter": "Heavy snow and frequent storms make the approach trails themselves a serious undertaking; not a realistic season for this route."
+     },
+     "forecastZone": "Olympic Mountains (NWAC forecasts this range in winter)"
+    },
+    "pitch_detail": [
+     {
+      "grade": "Trail, ~16 mi",
+      "notes": "North Fork Quinault River Trail through old-growth rainforest; gains roughly 3,100 ft to Low Divide camp (~3,600 ft).",
+      "pitch": "Trailhead to Low Divide"
+     },
+     {
+      "grade": "Primitive trail/off-trail, ~3 mi",
+      "notes": "Via the Skyline Trail system into Seattle Creek Basin, over intermediate high points like Promise Creek Bench (~5,340 ft), down to camp near 4,550 ft below the peak's west slopes.",
+      "pitch": "Low Divide to Seattle Meadows basecamp"
+     },
+     {
+      "grade": "Class 2-3 scramble",
+      "notes": "Ascend scree on the west slope, cross to the southwest couloir, then scramble loose talus on the south ridge/east side to the (slightly higher) south summit; roughly 2-2.5 hrs from camp, under 2 hrs to descend.",
+      "pitch": "Seattle Meadows to summit"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.8595,
+      "lng": -123.9344,
+      "elev": 578,
+      "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+      "note": "Self-issue wilderness permit and register at the trailhead kiosk by the visitor center; NPS entrance fee applies.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.85930758169935,
+      "lng": -123.8461745751634,
+      "elev": 900,
+      "name": "Five Mile Island / Lewis Meadow area",
+      "note": "Trail stays nearly flat along the Hoh River through old-growth rainforest with frequent side-creek water access.",
+      "type": "Water",
+      "distMi": 5.6
+     },
+     {
+      "lat": 47.85716,
+      "lng": -123.69428,
+      "elev": 2600,
+      "name": "Elk Lake camp",
+      "note": "Reservable backcountry camp with privy and bear wire; last reliable easy water before the trail climbs steeply to Glacier Meadows.",
+      "type": "Campsite",
+      "distMi": 15.3
+     },
+     {
+      "lat": 47.832351,
+      "lng": -123.691442,
+      "elev": 4300,
+      "name": "Glacier Meadows high camp",
+      "note": "Old ranger-station camp near timberline; no camping is permitted between here and the Blue Glacier moraine.",
+      "type": "Campsite",
+      "distMi": 17.6
+     },
+     {
+      "lat": 47.824784,
+      "lng": -123.683084,
+      "elev": 5100,
+      "name": "Top of Blue Glacier lateral moraine",
+      "note": "Way trail tops the moraine; the scree descent onto the ice is steep, loose, and washed out — watch for rockfall while dropping onto the glacier.",
+      "type": "Junction",
+      "distMi": 18.4
+     },
+     {
+      "lat": 47.808126307692305,
+      "lng": -123.73248138461538,
+      "elev": 6600,
+      "name": "Blue Glacier crossing to Snow Dome",
+      "note": "Rope up here — the glacier is riddled with crevasses and icefall; Snow Dome is the broad basin where the Olympus (east) and Mount Tom/White-Hubert Glacier (west) lines diverge.",
+      "type": "Hazard",
+      "distMi": 20
+     },
+     {
+      "lat": 47.798032769230765,
+      "lng": -123.74958112820514,
+      "elev": 6800,
+      "name": "White/Hubert Glacier traverse to Tom-Olympus col",
+      "note": "Continue roped travel across the crevassed White/Hubert Glacier along the base of the Olympus massif to gain the col below Mount Tom.",
+      "type": "Hazard",
+      "distMi": 21
+     },
+     {
+      "lat": 47.792825,
+      "lng": -123.758325,
+      "elev": 7076,
+      "name": "Mount Tom summit",
+      "note": "Class 3-4 scramble up from the col; westernmost 7,000+ ft summit in the contiguous US, with the White Glacier visible falling away below.",
+      "type": "Summit",
+      "distMi": 21.5
+     }
+    ],
+    "itinerary": {
+     "cal": "Glacier Meadows/Elk Lake wilderness permits are first-come, first-served and can run out on summer weekends; best conditions and snow-bridge coverage for the Tom traverse are typically late June-August.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Long, gentle rainforest walk following the Hoh River upstream. Grade is easy but the miles add up; most parties treat this as a warm-up day and camp around the Olympus Guard Station / Lewis Meadow area.",
+       "hours": 6,
+       "miles": 9.3,
+       "title": "Hoh River Trail to Lewis Meadow / Olympus Guard Station",
+       "gainFt": 400,
+       "lossFt": 0,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Establish first camp along the Hoh River"
+      },
+      {
+       "n": 2,
+       "note": "Trail steepens and switchbacks up the canyon wall above the Hoh, including the exposed ladder/rope section near the old Jemrod Gully slide about a quarter mile below camp. Camp at Glacier Meadows, practice glacier-travel and rope skills, and sign the climbers' register at the ranger yurt.",
+       "hours": 6.5,
+       "miles": 8.2,
+       "title": "Up to Glacier Meadows high camp",
+       "gainFt": 3400,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach Glacier Meadows (4,200 ft) below the Blue Glacier"
+      },
+      {
+       "n": 3,
+       "note": "The crux day. Rope up and cross the Blue Glacier at first light, climb to Snow Dome, then make a horizontal, mostly-easy traverse across the snowy Olympus massif toward Mount Tom before dropping to the White Glacier side. The descent off the massif to the White Glacier is steep, loose, and the route's real difficulty; many parties are turned back here in late-season/low-snow conditions, so treat the summit as conditions-dependent and keep a firm turnaround time.",
+       "hours": 11,
+       "miles": 7,
+       "title": "Summit push: Blue Glacier - Snow Dome - Mount Tom",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Alpine start from Glacier Meadows",
+         "detail": "Rope up for glacier travel before first light to get good snow conditions."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Cross Blue Glacier to Snow Dome",
+         "detail": "Standard Olympus approach line; watch for crevasses and the bergschrund."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Traverse toward Mount Tom",
+         "detail": "Easy, low-angle snow traverse below the Olympus summits toward the Tom side of the massif."
+        },
+        {
+         "time": "+5-6 hr",
+         "label": "Descend to White Glacier",
+         "detail": "Steep, loose terrain — the crux of the day; this is where parties commonly turn back."
+        },
+        {
+         "time": "+7-8 hr",
+         "label": "Summit Mount Tom (7,076 ft)",
+         "detail": "Short remaining climb once past the descent."
+        },
+        {
+         "time": "By dark",
+         "label": "Return to Glacier Meadows",
+         "detail": "Reverse the full traverse and glacier crossing; budget extra time for re-crossing the Blue Glacier tired."
+        }
+       ],
+       "objective": "Climb Mount Tom via the Blue Glacier and Snow Dome traverse"
+      },
+      {
+       "n": 4,
+       "note": "Pack up camp and head back down the canyon and along the Hoh River to a lower camp (Lewis Meadow / Olympus Guard Station area), reversing Day 2 and most of Day 1's terrain.",
+       "hours": 5,
+       "miles": 8.2,
+       "title": "Descend to lower camp",
+       "gainFt": 0,
+       "lossFt": 3200,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Retreat from Glacier Meadows toward the trailhead"
+      },
+      {
+       "n": 5,
+       "note": "Final flat rainforest miles back to the Hoh Rain Forest Visitor Center and the cars.",
+       "hours": 5,
+       "miles": 9.3,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 400,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Return to the Hoh River trailhead"
+      }
+     ],
+     "totalNote": "A remote 5-day glacier expedition, not a single-day scramble: roughly 42-43 miles round trip via the Hoh River Trail, with one long summit day crossing the Blue Glacier and traversing the Olympus massif to Mount Tom. The steep, loose descent to the White Glacier below the summit is the technical crux and a common turnaround point."
+    }
+   }
+  }
+ ]
+}

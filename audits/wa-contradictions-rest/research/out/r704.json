@@ -1,0 +1,226 @@
+{
+ "file": "r704.json",
+ "results": [
+  {
+   "id": "wa_cobbles_101",
+   "fact": "Route grade vs crux pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only source with pitch grades gives the route 5.7 overall and grades P1 5.7, P2 5.6, P3 5.6, P4 5.8 \u2014 the row copies it exactly, so the inconsistency is in the source itself. No second independent source grades the route or its pitches, so neither the header nor the P4 grade can be changed on two agreeing sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/110852598/cobbles-101",
+    "https://www.mountainproject.com/area/109294508/pinto-rock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cobbles_101",
+   "fact": "Protection (bolted vs gear)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Bolted sport route; quickdraws plus alpine draws (12 total), with a sling for the occasional knob; no cams or nuts.",
+   "evidence": "The route page lists protection as bolts only, quickdraws plus at least 3 alpine draws (12 total), and mentions only slinging a hump on P2 and a cobble on P5 \u2014 no cams or nuts. The crag overview says newer routes are bolted and advises carrying a couple of extra slings. Inside the row, gear, pro_needs, detailed_rack and pro_tips all say bolted with no trad gear; sling_rack cams/nuts and rope_note 'gear placements' are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/110852598/cobbles-101",
+    "https://www.mountainproject.com/area/109294508/pinto-rock"
+   ],
+   "patches": [
+    {
+     "id": "wa_cobbles_101",
+     "fact": "Protection (bolted vs gear)",
+     "op": "set",
+     "column": "sling_rack",
+     "path": [],
+     "expect": {
+      "cams": "light set",
+      "nuts": "small set",
+      "extra_slings": "several"
+     },
+     "value": {
+      "extra_slings": "several"
+     }
+    },
+    {
+     "id": "wa_cobbles_101",
+     "fact": "Protection (bolted vs gear)",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "mixed bolt + occasional gear placements.",
+     "replace": "bolted throughout, with an occasional knob or cobble to sling."
+    }
+   ]
+  },
+  {
+   "id": "wa_cobbles_101",
+   "fact": "Descent line",
+   "verdict": "fixed",
+   "correct_value": "Rappel from an anchor near a tree at the north end of the formation (East Face), 2 raps with a 60m rope or 1 with two ropes \u2014 not down the route.",
+   "evidence": "The route page says to rappel off the north end of the East face from an anchor near a tree: two raps with a 60m rope or one double-rope rap. The Mountaineers route page says to cross the flat summit a few hundred yards north to a small stand of trees with a chained rappel station. Both place the descent at the north end, not down the climbing line.",
+   "sources": [
+    "https://www.mountainproject.com/route/110852598/cobbles-101",
+    "https://www.mountaineers.org/activities/routes-places/pinto-rock-bowling-alley",
+    "https://www.mountainproject.com/area/109294508/pinto-rock"
+   ],
+   "patches": [
+    {
+     "id": "wa_cobbles_101",
+     "fact": "Descent line",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Rappel the route (",
+     "replace": "Rappel from the anchor near a tree at the north end of the formation ("
+    }
+   ]
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "fact": "Route grade vs hardest pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two sources agree the route is 5.4 overall (one says its hardest moves are 5.4). Only one source gives pitch grades (P1 5.2, P2 5.6, P3 5.4, P4 5.6), and it is itself the origin of the header/pitch mismatch. With no second source for the pitch grades, neither the 5.6 pitches nor the beta range can be changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/109342321/bowling-alley-aka-regular-route",
+    "https://www.mountaineers.org/activities/routes-places/pinto-rock-bowling-alley"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "fact": "Pitch count",
+   "verdict": "fixed",
+   "correct_value": "4 pitches",
+   "evidence": "One source describes the route as 4 pitches (430 ft) with four pitch descriptions; another describes it as a 400-foot, 3-4 pitch climb. Neither supports 5 pitches; the row's pitches, pitch_detail, overview, beta, rope_note and itinerary all say 4.",
+   "sources": [
+    "https://www.mountainproject.com/route/109342321/bowling-alley-aka-regular-route",
+    "https://www.mountaineers.org/activities/routes-places/pinto-rock-bowling-alley"
+   ],
+   "patches": [
+    {
+     "id": "wa_bowling_alley_aka_regular_route",
+     "fact": "Pitch count",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "5-pitch regular route",
+     "replace": "4-pitch regular route"
+    }
+   ]
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "fact": "Protection (bolted vs gear)",
+   "verdict": "fixed",
+   "correct_value": "Bolted, climbed sport fashion with quickdraws and alpine draws (12 total) plus slings for knobs; no cams or nuts.",
+   "evidence": "The route page lists protection as quickdraws and alpine draws, 12 total, with some knobs slung on P1-P4 \u2014 no cams or nuts. The Mountaineers route page says the route was once protected by slinging knobs but now has bolts and chains so it can be climbed sport fashion. rope_note ('bolt + knob-thread') and extra_slings ('for threading knobs') are consistent with that; only sling_rack cams/nuts are wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/109342321/bowling-alley-aka-regular-route",
+    "https://www.mountaineers.org/activities/routes-places/pinto-rock-bowling-alley",
+    "https://www.mountainproject.com/area/109294508/pinto-rock"
+   ],
+   "patches": [
+    {
+     "id": "wa_bowling_alley_aka_regular_route",
+     "fact": "Protection (bolted vs gear)",
+     "op": "set",
+     "column": "sling_rack",
+     "path": [],
+     "expect": {
+      "cams": "light set",
+      "nuts": "small set",
+      "extra_slings": "several, for threading knobs"
+     },
+     "value": {
+      "extra_slings": "several, for threading knobs"
+     }
+    }
+   ]
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "fact": "Descent line",
+   "verdict": "fixed",
+   "correct_value": "Rappel from an anchor near a tree at the north end of the formation (East Face), not down the route.",
+   "evidence": "The route page says to rappel off the north end of the East face from an anchor near a tree, two raps with a 60m rope or one double-rope rap. The Mountaineers route page says to cross the summit north to a small stand of trees with a chained rappel station. Both put the descent at the north end, not down the route.",
+   "sources": [
+    "https://www.mountainproject.com/route/109342321/bowling-alley-aka-regular-route",
+    "https://www.mountaineers.org/activities/routes-places/pinto-rock-bowling-alley",
+    "https://www.mountainproject.com/area/109294508/pinto-rock"
+   ],
+   "patches": [
+    {
+     "id": "wa_bowling_alley_aka_regular_route",
+     "fact": "Descent line",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Rappel the route (",
+     "replace": "Rappel from the anchor near a tree at the north end of the formation ("
+    }
+   ]
+  },
+  {
+   "id": "wa_wild_wild_west",
+   "fact": "Protection (bolted vs gear)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Bolted sport route; about a dozen draws including alpine draws; no cams or nuts.",
+   "evidence": "The route page lists it as a sport route protected by bolts, with a dozen draws including alpine draws \u2014 no cams or nuts. Inside the row, beta, pro_needs, detailed_rack and both pro_tips say fully bolted with no natural gear; sling_rack cams/nuts is the lone outlier. The crag overview says newer routes are bolted (advising only extra slings).",
+   "sources": [
+    "https://www.mountainproject.com/route/110943576/wild-wild-west",
+    "https://www.mountainproject.com/area/109294508/pinto-rock"
+   ],
+   "patches": [
+    {
+     "id": "wa_wild_wild_west",
+     "fact": "Protection (bolted vs gear)",
+     "op": "set",
+     "column": "sling_rack",
+     "path": [],
+     "expect": {
+      "cams": "small rack 0.3-1in for gaps between bolts",
+      "nuts": "small back-up set",
+      "slings": "2 single-length"
+     },
+     "value": {
+      "slings": "2 single-length"
+     }
+    }
+   ]
+  },
+  {
+   "id": "wa_wild_wild_west",
+   "fact": "Rappel line",
+   "verdict": "fixed",
+   "correct_value": "Rappel from the summit anchor up and left on the back side, near fir trees at the north end of the formation, descending the East Face; no walk-off.",
+   "evidence": "The route page says the rappel is up and left on the back side, as for all summit routes, near a stand of fir trees; the neighbouring summit routes place that anchor at the north end of the East face. The Mountaineers route page says to cross the summit north to a small stand of trees with a chained rappel station. No source mentions a walk-off from the summit or a rappel down the West Face.",
+   "sources": [
+    "https://www.mountainproject.com/route/110943576/wild-wild-west",
+    "https://www.mountainproject.com/route/110852598/cobbles-101",
+    "https://www.mountaineers.org/activities/routes-places/pinto-rock-bowling-alley"
+   ],
+   "patches": [
+    {
+     "id": "wa_wild_wild_west",
+     "fact": "Rappel line",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "to find the rappel line back down the West Face.",
+     "replace": "to find the rappel anchor at the north end of the formation, which descends the East Face."
+    },
+    {
+     "id": "wa_wild_wild_west",
+     "fact": "Rappel line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "then rappel or walk off.",
+     "replace": "then rappel off the north end of the formation."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2328 @@
+{
+ "batches": [
+  "b041.json",
+  "b042.json",
+  "b043.json",
+  "b044.json"
+ ],
+ "routes_read": 14,
+ "routes": [
+  {
+   "id": "wa_chockstone_route",
+   "name": "Chockstone Route",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "6"
+      },
+      {
+       "field": "pitch_detail[0..2].pitch",
+       "says": "P1 / P2 (crux) / P3-P5"
+      }
+     ],
+     "why": "The header says 6 pitches but ROUTE BREAKDOWN only runs P1 through P5.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Location of the tree rappel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "one tree rappel down the 5.0 slab at the very start of the route"
+      },
+      {
+       "field": "descent",
+       "says": "a tree-rappel option down a 5.0 slab also exists near the start of the route"
+      },
+      {
+       "field": "sling_rack.webbing.purpose",
+       "says": "tree-rap sling backup at the base"
+      },
+      {
+       "field": "rappel_detail[0].notes",
+       "says": "First rappel, off a tree down a short 5.0 slab from the summit exit area."
+      },
+      {
+       "field": "descent_text",
+       "says": "one rappel off a tree down the 5.0 slab near the start, located about 30m down and skier's-right of the summit exit"
+      }
+     ],
+     "why": "Some fields put the tree rappel at the bottom of the route and others put it just below the summit exit as the first rappel of the descent. `descent` also calls it an optional alternative rather than part of the sequence.",
+     "internal_resolution": "rappel_detail[0], descent_text and rappel_count_note ('a tree rap near the top followed by four bolted West Face stations') agree it is the first rappel near the summit exit; rope_note, descent and sling_rack are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "SR 20 pullout 1.5 mi west of Washington Pass."
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "about 1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "The Blue Lake TH is placed 1.5 mi west of the pass in two fields and half a mile west in the bivy card.",
+     "internal_resolution": "1.5 mi (waypoint + approach_variants + trailheadDirection) is the majority; bivy[0] is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance to the gully",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow the Blue Lake Trail about 1.5 miles to the climbers' path"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "walk the maintained trail roughly a mile and a half to the signed Liberty Bell Trail #727 climbing-access junction"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "0.6"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "1"
+      }
+     ],
+     "why": "Waypoints put the gully base 0.6 mi and the summit 1.0 mi from the trailhead, but the prose has you walking 1.5 mi of trail before even leaving it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "Single rack to 2\""
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A single cam rack from 0.5-3in"
+      },
+      {
+       "field": "rack[0]",
+       "says": "Cams 0.5–3in (single set, doubles of 0.5 & 0.75in)"
+      }
+     ],
+     "why": "gear stops the rack at 2 inches while detailed_rack and rack carry it to 3 inches.",
+     "internal_resolution": "detailed_rack and rack agree on 0.5-3in; gear[0] is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "name": "Early Winter Couloir",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Trailhead / road",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Blue Lake Trailhead, SR-20, Washington Pass"
+      },
+      {
+       "field": "road.status",
+       "says": "Paved highway parking at the Blue Lake Trailhead"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "the Blue Lake Trailhead serves the west side and is the wrong side of the mountain for this route"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      }
+     ],
+     "why": "GETTING THERE names the Blue Lake Trailhead, while the waypoint and approach explicitly say Blue Lake is the wrong side of the mountain and to park at the hairpin.",
+     "internal_resolution": "waypoints, approach, approach_variants and approach_logistics all use the SR-20 hairpin; road.* is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "KNOWN HAZARDS copied from another route",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "watch_out",
+       "says": "Active avalanche path crossing (Phantom Slide approach) — check NWAC Snoqualmie Pass forecast"
+      },
+      {
+       "field": "watch_out",
+       "says": "Avalanche patrol explosives nearby (Alpental) — stay clear of ski area boundary"
+      },
+      {
+       "field": "watch_out",
+       "says": "Cold northwest-facing aspect"
+      },
+      {
+       "field": "aspect",
+       "says": "E"
+      },
+      {
+       "field": "climate.forecastZone",
+       "says": "the area falls within NWAC's East Slopes avalanche forecasting"
+      }
+     ],
+     "why": "watch_out describes a Snoqualmie Pass/Alpental couloir (Phantom Slide, Alpental ski area, Snoqualmie forecast, NW aspect), not this east-facing Washington Pass couloir.",
+     "internal_resolution": "Every other field puts the route at Washington Pass with an E aspect; watch_out was contaminated from another route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent rappel line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "~4 raps down the bolted West Face line (single 60 m rope)"
+      },
+      {
+       "field": "descent_text",
+       "says": "uses the bolted rappel line on the West Face/Chockstone Route side"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Always descend via the bolted West Face/Chockstone Route rappels"
+      },
+      {
+       "field": "descent",
+       "says": "The standard descent follows the West Couloir on the west side of the peak"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "a newer, fully bolted rappel route down the right side of the West Face, roughly six stations ... Do not mix stations between the two lines."
+      }
+     ],
+     "why": "Several fields send the party down the 'West Face' bolted line, while rappel_count_note says the West Face line is a different, roughly six-station line and the 4-rap descent is the West Couloir.",
+     "internal_resolution": "descent, rappel_detail and rappel_count_note describe the 4-rap West Couloir line ending at the chockstone; rappels, descent_text, pro_tips and itinerary mislabel it 'West Face'.",
+     "needs_research": true
+    },
+    {
+     "fact": "Fixed rappel anchors on the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "hazards[0]",
+       "says": "No established rappel stations exist on this descent, forcing ad hoc anchors in poor rock"
+      },
+      {
+       "field": "descent",
+       "says": "bolted anchors lead down with about 4 rappels"
+      }
+     ],
+     "why": "KNOWN HAZARDS says the descent has no established stations while DESCENT describes a bolted 4-rap line.",
+     "internal_resolution": "The no-anchors statement is true only of reversing the couloir itself (per descent, descent_text and obj_haz[3]); hazards[0] reads as if it applies to the recommended descent.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 reopening vs the route's window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "season",
+       "says": "typically April-early May"
+      }
+     ],
+     "why": "The road card says the highway stayed closed until mid-June, which is after the whole April–early May window the season field gives.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the technical climbing starts",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "traverse NORTH to gain a ramp of snow lying at about 40 degrees, and the technical climbing starts from the TOP of that ramp"
+      },
+      {
+       "field": "beta",
+       "says": "traverse north to a 40-degree snow ramp, then climb roughly five pitches"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Snow ramp approach toward the second chockstone."
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Mixed/snow step past the first chockstone"
+      }
+     ],
+     "why": "Prose puts the 40-degree ramp before the first pitch, but ROUTE BREAKDOWN makes the ramp P2, after P1 has already passed the first chockstone.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Chockstone rappel anchor",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappel_detail[3].notes",
+       "says": "Short (~50 ft) free rappel off the 'giant chockstone'"
+      },
+      {
+       "field": "rappel_detail[3].anchor",
+       "says": "fixed piton-and-nut/chockstone anchor"
+      },
+      {
+       "field": "rappel_detail[3].station",
+       "says": "The anchor is NOT on the chockstone itself - it is a fixed piton-and-nut station in the skier's-right wall"
+      }
+     ],
+     "why": "One rappel row says both that you rappel off the chockstone and that the anchor is not on the chockstone.",
+     "internal_resolution": "station (and descent: 'fixed piton-and-nut anchor at a chockstone') indicates a wall anchor beside the chockstone.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "name": "Southwest Rib",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1.6"
+      }
+     ],
+     "why": "The overview shows 2 km (1.2 mi), the header and itinerary show 6 mi, and the waypoints put the summit 1.6 mi out.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of descent rappels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "Downclimb part of the South Arete, then 2 rappels down the chimney."
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "rappel a short chimney back to the base"
+      },
+      {
+       "field": "rappels",
+       "says": "~3 rappels via the South Arete descent"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "3 bolted chain stations"
+      }
+     ],
+     "why": "The itinerary gives 2 chimney rappels; the rappels field and the RAPPELS table give 3 bolted stations.",
+     "internal_resolution": "rappels, rappel_detail and rappel_count_note agree on 3 stations; the itinerary is the outlier (rappel_count_note notes 2-3 depending on downclimbing).",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3]",
+       "says": "11:30 AM Top out, summit (start 6:00 AM)"
+      }
+     ],
+     "why": "Time to the summit equals the full car-to-car time, but the itinerary reaches the summit 5.5 hrs after leaving the car.",
+     "internal_resolution": "The itinerary schedule shows summitTimeHrs holding the car-to-car total.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Total approach time: 1.5-2 hours"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "1.5-2"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1–1.5 hours"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "About 1 hr of steady uphill approach."
+      }
+     ],
+     "why": "The approach time is given as 1 hr, 1–1.5 hrs and 1.5–2 hrs.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Blue Lake Trailhead (1 mile west of Washington Pass"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "about 1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "The trailhead is placed 0.5, 1 and 1.5 mi west of the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.8"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.8"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "5.8+"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "widely cited as the route's technical crux"
+      }
+     ],
+     "why": "The headline grade is 5.8, but the pitch the breakdown calls the crux is 5.8+.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camping at the Blue Lake trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.special_hazards",
+       "says": "Camping NOT permitted at Blue Lake Trailhead"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Parties routinely sleep at the lot or at the highway hairpin"
+      }
+     ],
+     "why": "The access data says camping is not permitted at the trailhead, but the CAMPING card recommends sleeping at the lot. access._raw may not render.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "SR-20 open/close months",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "usually opens by late May and closes with the first heavy snow (often November)"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      }
+     ],
+     "why": "The itinerary calendar and ACCESS give different typical opening and closing months for the highway.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_southern_man",
+   "name": "Southern Man",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Free grade of the crux",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.11d"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.11d"
+      },
+      {
+       "field": "pitch_detail[5].grade",
+       "says": "5.12a"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "(5.12a free, or 5.11 C1)"
+      },
+      {
+       "field": "overview",
+       "says": "freed by B. Matthews and Bryan Burdo in 2010 at 5.11d (a September 2009 ascent by Burdo at 5.12a has also been reported but is unconfirmed"
+      }
+     ],
+     "why": "The header says 5.11d, but the crux pitch and itinerary say 5.12a — a grade the overview calls unconfirmed.",
+     "internal_resolution": "grade, rock_grade, overview, beta and partner_requirements agree on 5.11d; pitch_detail[5] and the itinerary use the unconfirmed 5.12a.",
+     "needs_research": true
+    },
+    {
+     "fact": "Free-ascent party/year",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "free ascent Blake Matthews and Bryan Burdo (2010)"
+      },
+      {
+       "field": "pitch_detail[5].notes",
+       "says": "freed by Bryan Burdo at 5.12a in 2009"
+      }
+     ],
+     "why": "The FA field credits the free ascent to Matthews and Burdo in 2010; the crux pitch credits Burdo alone in 2009.",
+     "internal_resolution": "fa and overview agree on 2010 and call the 2009 report unconfirmed.",
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Climb Southern Man and return to the Blue Lake trailhead"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass at Blue Lake Trailhead"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "THIS IS THE EAST-SIDE TRAILHEAD, NOT THE BLUE LAKE TRAILHEAD"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      }
+     ],
+     "why": "The itinerary returns to the Blue Lake trailhead, but the approach says explicitly that this route starts from the east-side hairpin, not Blue Lake.",
+     "internal_resolution": "approach, approach_variants, waypoints and approach_logistics all use the hairpin; the itinerary objective is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Bolt-ladder pitch",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "busting left of its bolt-ladder pitch onto a funky 5.10a section"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "The last pitch shared with the Direct East Buttress -- a bolt ladder through steep rock -- before Southern Man splits off"
+      },
+      {
+       "field": "bail",
+       "says": "above the bolt-ladder pitch"
+      }
+     ],
+     "why": "The beta has the route bypass the East Buttress bolt ladder, while the breakdown has it climb the ladder as P4 before splitting off.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack emphasis",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "Double rack to #3 Camalot, plus a single #4 and a #5 or #6 — Southern Man reportedly takes a lot of wide gear, the opposite of a thin-crack assumption"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Standard alpine trad rack with an emphasis on thin gear (small cams/nuts)"
+      },
+      {
+       "field": "rack[0]",
+       "says": "Cams 0.3-3in, doubles in thin sizes"
+      }
+     ],
+     "why": "gear says the route takes a lot of wide gear up to #5/#6; detailed_rack and rack say to stress thin gear and stop at 3 inches.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "single (double ropes for descent)"
+      },
+      {
+       "field": "rack[3]",
+       "says": "Single rope for lead, doubled rope recommended for descent"
+      },
+      {
+       "field": "descent_text",
+       "says": "3 single-rope rappels (60m rope)"
+      }
+     ],
+     "why": "The kit fields recommend double ropes for the descent, but the descent is three single-rope rappels on a 60 m rope.",
+     "internal_resolution": "descent_text, rappel_detail and approach_variants baseFinding all describe single 60 m rope rappels.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "11"
+      }
+     ],
+     "why": "Time to the summit equals the full 11-hour car-to-car day, which leaves no time for the descent.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late June–September"
+      }
+     ],
+     "why": "The best window starts in late June, before the Jul–Sep season opens.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Face",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "face",
+       "says": "East Buttress / Headwall"
+      },
+      {
+       "field": "aspect",
+       "says": "S"
+      },
+      {
+       "field": "overview",
+       "says": "climbs the south-facing headwall"
+      }
+     ],
+     "why": "The face field says East Buttress for a route whose aspect and own headwall face south.",
+     "internal_resolution": "aspect, overview and approach say south-facing headwall; face names only the shared start.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 closing month",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed by snow/avalanche danger each winter (typically mid-November)"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December"
+      }
+     ],
+     "why": "The road card and ACCESS give different typical closing months.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "name": "East Buttress",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Trailhead / approach side",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Blue Lake Trailhead (SR-20)"
+      },
+      {
+       "field": "road.name",
+       "says": "WA-20 (North Cascades Highway) to Blue Lake Trailhead"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].label",
+       "says": "Leave Blue Lake trailhead"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1–1.5 hours from the Blue Lake trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "From the Blue Lake basin, hike up the gully below the col"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Park at the dirt pullout at the hairpin turn on SR-20 ... not at the Blue Lake Trailhead, which serves the west side."
+      }
+     ],
+     "why": "Most fields start from the Blue Lake Trailhead, but APPROACHES says to park at the hairpin and not at Blue Lake, and the Spire Gully landmarks are on the east side.",
+     "internal_resolution": "The Spire Gully / last-tree / notch sequence in approach, waypoints and approach_variants is the east-side hairpin approach (as on the Direct East Buttress); the Blue Lake framing looks wrong.",
+     "needs_research": true
+    },
+    {
+     "fact": "Hairpin pullout location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "hairpin-curve pullout ~1 mi east on Hwy 20"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "0.3"
+      },
+      {
+       "field": "waypoints[1].lat/lng",
+       "says": "48.516853, -120.674436"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "4900"
+      }
+     ],
+     "why": "The hairpin is described as about 1 mi east along the highway, but its waypoint sits 0.3 mi from the Blue Lake lot, at nearly the same longitude and 300 ft lower.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Waypoint note describes the Direct route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].note",
+       "says": "Rope up here; the Direct East Buttress climbs ~9 pitches of 5.8-5.9 crack-and-face up the buttress crest to the summit."
+      },
+      {
+       "field": "pitches",
+       "says": "6"
+      },
+      {
+       "field": "beta",
+       "says": "Direct East Buttress (5.11a, 9 pitch variant)"
+      }
+     ],
+     "why": "The base waypoint for this 6-pitch route describes a different 9-pitch route, and grades that route 5.8-5.9 while the beta calls it 5.11a.",
+     "internal_resolution": "pitches, pitch_detail and itinerary agree on 6 pitches for this route; waypoints[5].note was copied from the Direct.",
+     "needs_research": false
+    },
+    {
+     "fact": "Bolts on the route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "A few small carabiners (or hero loops) for the old bolts on pitches 4 and 6"
+      },
+      {
+       "field": "pitch_detail[3].bolts",
+       "says": "0"
+      },
+      {
+       "field": "pitch_detail[5].bolts",
+       "says": "0"
+      }
+     ],
+     "why": "gear lists old bolts on P4 and P6, but the breakdown records no bolts on any pitch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "6.6"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.2"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "2.8"
+      }
+     ],
+     "why": "The overview shows 6.6 km (4.1 mi), while the header and itinerary show 5.2 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of descent rappels",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[3].detail",
+       "says": "Downclimb + 2 rappels via the South Arete"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "3 stations"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "three single-rope raps from bolted anchors"
+      }
+     ],
+     "why": "The itinerary gives 2 rappels; the RAPPELS table and waypoint give 3.",
+     "internal_resolution": "rappel_count_note explains 2-3; the table and waypoint use 3.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3]",
+       "says": "1:00 PM Summit (start 5:30 AM)"
+      }
+     ],
+     "why": "Time to the summit equals the car-to-car total, but the itinerary summits 7.5 hrs after leaving.",
+     "internal_resolution": "The itinerary shows summitTimeHrs holding the car-to-car total.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "~2 hr approach."
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "1-1.5"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1–1.5 hours"
+      }
+     ],
+     "why": "The itinerary uses a 2-hour approach; the other fields say 1–1.5 hrs.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Beta says the route is undocumented",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The specific route details are not well documented. This route designation ... is not clearly distinguished from the Direct East Buttress"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "6 fully described pitches distinct from the Direct start"
+      }
+     ],
+     "why": "The beta says the route cannot be told apart from the Direct, while ROUTE BREAKDOWN and the summit waypoint describe a distinct non-direct start.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "name": "Northwest Face (Boving-Pollock)",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "First ascent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "Boving and Kerns, 1977"
+      },
+      {
+       "field": "overview",
+       "says": "First ascended (aid) by Boving & Pollock in 1976; freed by Boving & Kerns in 1977."
+      }
+     ],
+     "why": "The FA field lists the 1977 free-ascent party as the first ascent; the overview (and the route name) credit Boving & Pollock in 1976.",
+     "internal_resolution": "The overview separates the two ascents clearly; the fa field holds the free ascent, not the first.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "double/twin ropes recommended"
+      },
+      {
+       "field": "rope_note",
+       "says": "long multi-rappel descent makes twin 60m ropes the common choice"
+      },
+      {
+       "field": "rack[3]",
+       "says": "Twin/double 60m ropes for the multi-rappel descent"
+      },
+      {
+       "field": "descent_text",
+       "says": "3 single-rope rappels (60m rope)"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "60m single rope"
+      }
+     ],
+     "why": "The kit fields call for twin ropes for a long rappel descent, but the descent is three single-rope rappels.",
+     "internal_resolution": "descent_text, rappel_detail, rappel_count_note and baseFinding all say single 60 m rope.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent description",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Retrace the ascent route for descent, utilizing established snow/ice slopes or scramble terrain. Watch for crevasse hazards"
+      },
+      {
+       "field": "descent_text",
+       "says": "take the standard South Arete descent"
+      },
+      {
+       "field": "seasonal_hazards.crevasses.location",
+       "says": "None — dry granite formation, no glacier travel"
+      }
+     ],
+     "why": "`descent` is generic glacier text (reverse the route, crevasses) that contradicts the South Arete descent and the no-glacier hazard. It is the shorter field, so it is hidden.",
+     "internal_resolution": "descent_text is correct; descent is placeholder text.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "8.5"
+      }
+     ],
+     "why": "Time to the summit equals the full car-to-car day.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "6.6"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5"
+      }
+     ],
+     "why": "The overview shows 6.6 km (4.1 mi); the header and itinerary show 5 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Headline grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.11a/b"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.11b"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.11a"
+      },
+      {
+       "field": "beta",
+       "says": "right-facing corner ... (5.11a)"
+      }
+     ],
+     "why": "The rock grade chip says 5.11b, but the crux pitch and the beta say 5.11a.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "SR-20 closing month",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "typically mid-November"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December"
+      }
+     ],
+     "why": "The road card and ACCESS give different typical closing months.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "name": "Free Mojo",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Aspect / face",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "W"
+      },
+      {
+       "field": "face",
+       "says": "South Arete / West Face area"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "the route's shaded, north-facing aspect"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "(north-facing)"
+      },
+      {
+       "field": "overview",
+       "says": "this part of the Northwest Face"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "The free version of the Mojo Rising line on SEWS's south face"
+      }
+     ],
+     "why": "The route is called west-, north-, northwest- and south-facing in different fields.",
+     "internal_resolution": "The approach (basin below the west face, next to the Northwest Face and Mojo Rising) supports W/NW; 'south face' in the itinerary is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch 1 anchor",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "a two-piece fixed anchor on a pedestal"
+      },
+      {
+       "field": "pitch_detail[0].anchor",
+       "says": "Fixed gear anchor (nut + cam)"
+      },
+      {
+       "field": "descent_text",
+       "says": "P1 to a fixed 2-bolt anchor"
+      }
+     ],
+     "why": "The descent calls the P1 anchor 2 bolts, but the beta and breakdown say it is a fixed nut and cam. That matters for a bail.",
+     "internal_resolution": "beta, pitch_detail and approach_variants agree on a two-piece fixed gear anchor; descent_text is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Fixed anchor atop pitch 2",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "a party retreating after pitch 2 would rappel P2 then P1 back to the ground"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "rappels P2 then P1 back to the ground from the fixed anchors"
+      },
+      {
+       "field": "pitch_detail[1].anchor",
+       "says": "Gear (ledge)"
+      },
+      {
+       "field": "bail",
+       "says": "above that, retreat requires building trad gear anchors"
+      }
+     ],
+     "why": "The descent assumes fixed anchors atop P2; the breakdown and bail say P2 ends on a gear belay.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "single (double ropes for descent)"
+      },
+      {
+       "field": "rack[5]",
+       "says": "Single rope, double ropes for descent"
+      },
+      {
+       "field": "descent_text",
+       "says": "3 single-rope rappels (60m)"
+      }
+     ],
+     "why": "The kit fields call for double ropes; the descent is single 60 m rappels.",
+     "internal_resolution": "descent_text and rappel_count_note say single 60 m rope.",
+     "needs_research": false
+    },
+    {
+     "fact": "Bolts on the route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "modern mixed bolt/gear protection"
+      },
+      {
+       "field": "pitch_detail[*].bolts",
+       "says": "0 on all six pitches"
+      }
+     ],
+     "why": "rope_note says the route is bolt-protected; the breakdown shows no bolts at all.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the route joins another line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.requiredSkills[2]",
+       "says": "Route joins the existing Mojo Rising line at its P5"
+      },
+      {
+       "field": "beta",
+       "says": "P5 and P6 (5.easy ...) trend right to join the South Arete"
+      }
+     ],
+     "why": "The route is said to join Mojo Rising at P5 in one field and to join the South Arete in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch 6 length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "P6 (5.easy, ~25 ft)"
+      },
+      {
+       "field": "pitch_detail[5].lengthM",
+       "says": "25"
+      }
+     ],
+     "why": "The beta gives 25 ft for P6; the breakdown gives 25 m (82 ft).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "June–September"
+      }
+     ],
+     "why": "The optimal window includes June, which falls outside the Jul–Sep season (June is marked marginal).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      }
+     ],
+     "why": "Time to the summit equals the full car-to-car day.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_roofs",
+   "name": "Boving Roofs",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Standard descent",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Most parties rappel the route back to the base rather than continuing to the summit"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].label",
+       "says": "Rappel the route"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "usually rappelling the route rather than continuing to the summit"
+      },
+      {
+       "field": "descent_text",
+       "says": "rappelling back through an overhanging roof feature is awkward and not the documented practice"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "parties do not reverse this pitch"
+      }
+     ],
+     "why": "The itinerary plans to rappel the route through the roofs; DESCENT and APPROACHES say parties do not reverse the pitch and instead continue to the summit and go down the South Arete.",
+     "internal_resolution": "descent, descent_text, rappel_count_note, baseFinding and bail ('above the roofs, commit to finishing') all agree on topping out; the itinerary is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2350"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "1800"
+      }
+     ],
+     "why": "TECHNICAL STATS gives 2,350 ft; the itinerary gives 1,800 ft, which reflects the rappel-the-route plan without a summit.",
+     "internal_resolution": "Ties to the descent contradiction: with the documented summit finish, 2,350 ft is correct.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "6.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "6.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3]",
+       "says": "11:00 AM Top of Boving Roofs pitch"
+      }
+     ],
+     "why": "Time to the summit equals the car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "single (double ropes common for descent raps)"
+      },
+      {
+       "field": "rope_note",
+       "says": "many parties carry twin 60m ropes"
+      },
+      {
+       "field": "rappel_detail[0].notes",
+       "says": "Each rap stays within a single 60 m rope."
+      }
+     ],
+     "why": "The kit fields suggest twin ropes; the rappel table says every rappel works on one 60 m rope.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch numbering of the roof pitch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[1].pitch",
+       "says": "2"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "a loose block at the start of the roof pitch (P5)"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "Roof/overhang crack technique on P5"
+      }
+     ],
+     "why": "The breakdown numbers the roof pitch as P2 of 3, but hazards and partner requirements call it P5 (and the loose pitch P4).",
+     "internal_resolution": "Approach explains the P5 is the combined-line count; the labels should be reconciled.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the route rejoins the Southwest Rib",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "before rejoining the Bear Hug pitch"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "top out at the head of the Southwest Rib's Bear Hug pitch"
+      }
+     ],
+     "why": "The overview has the route rejoin at the Bear Hug pitch; the breakdown has it top out above that pitch.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "name": "Dolphin Chimney",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Wide-gear sizes",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "Rack to a #5 cam (roughly 3 inches)"
+      },
+      {
+       "field": "gear[1]",
+       "says": "A #6 can back up the first 20 feet"
+      },
+      {
+       "field": "rope_note",
+       "says": "Standard rack to 3in; wide piece (#3-#4) useful for the chimney section"
+      },
+      {
+       "field": "rack[0]",
+       "says": "Cam set 0.3–4in (wide piece #3-#4 useful for the chimney)"
+      }
+     ],
+     "why": "gear calls for a #5 (which is not 3 inches) plus a #6; rope_note and rack top out at #3–#4 or 4 inches.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "single (double ropes for descent)"
+      },
+      {
+       "field": "rack[2]",
+       "says": "Single rope (double ropes useful for descent)"
+      },
+      {
+       "field": "descent_text",
+       "says": "3 single-rope rappels (60m rope)"
+      }
+     ],
+     "why": "The kit fields suggest double ropes; the descent is single 60 m rappels.",
+     "internal_resolution": "descent_text and baseFinding say single 60 m rope.",
+     "needs_research": false
+    },
+    {
+     "fact": "Face",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "W"
+      },
+      {
+       "field": "face",
+       "says": "Southwest Rib (chimney feature)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "midway up SEWS's south face"
+      }
+     ],
+     "why": "The itinerary puts the chimney on the south face; aspect and approach put it on the west side beside the Southwest Rib.",
+     "internal_resolution": "aspect, approach and approach_variants place it on the west side next to the Boving Roofs.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "June–September"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September"
+      }
+     ],
+     "why": "The optimal and best windows include June, outside the Jul–Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "8.5"
+      }
+     ],
+     "why": "Time to the summit equals the full car-to-car day.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mojo_rising",
+   "name": "Mojo Rising",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Whether the route has been freed",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "the 5.11b grade reflects later free ascents of the aid section"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Route has yet to be fully freed as of the source material"
+      },
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "the route has never been fully freed"
+      },
+      {
+       "field": "aid_grade",
+       "says": "C1+"
+      }
+     ],
+     "why": "The overview says the aid has since been freed; pro_needs, partner requirements and the aid grade say the route has never gone free.",
+     "internal_resolution": "pro_needs, partner_requirements, aid_grade, pitch_detail (C1+/C1) and what_to_bring (aiders) agree it is still aided; the free line is the separate Free Mojo route.",
+     "needs_research": true
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "single (double ropes for descent)"
+      },
+      {
+       "field": "rack[3]",
+       "says": "Single rope; double ropes recommended for descent"
+      },
+      {
+       "field": "descent_text",
+       "says": "rappel the first 3 pitches with a single 60m rope ... 3 single-rope rappels (60m)"
+      }
+     ],
+     "why": "The kit fields recommend double ropes; both descent options use a single 60 m rope.",
+     "internal_resolution": "descent_text, bail, pro_tips and rappel_count_note all say single 60 m.",
+     "needs_research": false
+    },
+    {
+     "fact": "Face",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "NW"
+      },
+      {
+       "field": "face",
+       "says": "Northwest Face area (left of Boving-Pollock)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Mojo Rising climbs SEWS's south face"
+      }
+     ],
+     "why": "The itinerary calls it a south-face route; aspect, face and approach put it on the northwest face.",
+     "internal_resolution": "aspect, face, approach and baseFinding agree on NW.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent sequence",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Rappel the first three pitches with a 60m rope, then simul-climb or pitch out the remainder on the Southwest Rib"
+      },
+      {
+       "field": "descent_text",
+       "says": "two descent options ... rappel the first 3 pitches ... To finish the full climb, pitches 7-9 are typically simul-climbed"
+      }
+     ],
+     "why": "`descent` merges two alternatives into one impossible sequence (rappel P1–3, then climb the rest); descent_text presents them as separate options.",
+     "internal_resolution": "descent_text is correct.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late June–September"
+      }
+     ],
+     "why": "The best window starts in late June, before the Jul–Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      }
+     ],
+     "why": "Time to the summit equals the full car-to-car day.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "name": "Passenger",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "commitment",
+       "says": "III"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "IV"
+      }
+     ],
+     "why": "The grade chips say Grade III and Grade IV.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Headline difficulty",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.11d"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.11d"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "its 5.12a grade puts it well outside the moderate-classic traffic"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "at 5.12a with limited traffic"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.11+"
+      }
+     ],
+     "why": "The route is 5.11d in the grade fields but 5.12a in the crowds and seasonal-hazards text.",
+     "internal_resolution": "grade, rock_grade, approach_variants and pitch_detail agree on 5.11d/5.11+; the 5.12a mentions are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Boving Roofs as a pitch of this route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "with the famous Boving Roofs pitch as its centerpiece"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "Crack/corner pitches building to the Boving Roofs on P3"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "An outstanding, sustained finger crack runs to a roof/slot intersection"
+      },
+      {
+       "field": "aspect",
+       "says": "SE"
+      }
+     ],
+     "why": "The itinerary builds the day around the Boving Roofs, which is a separate route on the west face; this route's P3 is a finger crack on the SE face.",
+     "internal_resolution": "pitch_detail, overview and approach describe a SE-face line with no Boving Roofs; the itinerary text is contaminated.",
+     "needs_research": false
+    },
+    {
+     "fact": "Retreat",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "Rappel the route; retreat is committing on the steep upper pitches."
+      },
+      {
+       "field": "descent_text",
+       "says": "The Passenger itself is not commonly rappelled top-to-bottom"
+      },
+      {
+       "field": "approach_variants[0].hazards[2]",
+       "says": "5.11d over seven pitches with no route-specific rappel line"
+      }
+     ],
+     "why": "BAILOUT says to rappel the route; DESCENT and APPROACHES say it has no rappel line of its own.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "2.4"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.3"
+      }
+     ],
+     "why": "The overview shows 2.4 km (1.5 mi); the header and itinerary show 5.3 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "about an hour in ... about 10 minutes of scrambling/traversing"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1–1.5 hours"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "~2 hr approach to the south face."
+      }
+     ],
+     "why": "The approach is about 1 hr 10 min in the prose and 2 hrs in the itinerary.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3]",
+       "says": "2:00 PM Top out (start 5:00 AM)"
+      }
+     ],
+     "why": "Time to the summit equals the car-to-car total, but the itinerary tops out 9 hrs after leaving.",
+     "internal_resolution": "The itinerary shows summitTimeHrs holding the car-to-car total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "name": "The Hitchhiker",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Start offset from the Passenger",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "starting about 100 yards right of The Passenger"
+      },
+      {
+       "field": "approach",
+       "says": "continuing roughly another 100 ft to a small left-facing dihedral with 4 bolts"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "about 100 ft right of Passenger"
+      }
+     ],
+     "why": "The overview puts the start 100 yards from the Passenger; every other field says 100 ft. That matters for finding the start.",
+     "internal_resolution": "approach, approach_variants baseFinding, itinerary and sectionBreakdown agree on ~100 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1.5–2 hrs via the east-side hairpin/Spire Gully"
+      },
+      {
+       "field": "approach",
+       "says": "Blue Lake Trailhead climber's trail (~1 hour) to the South Arete base"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Blue Lake Trailhead (SR-20)"
+      }
+     ],
+     "why": "Partner requirements send the party up from the east-side hairpin via Spire Gully; the approach and trailhead use Blue Lake.",
+     "internal_resolution": "approach, approach_variants, approach_logistics, waypoints and itinerary use Blue Lake.",
+     "needs_research": true
+    },
+    {
+     "fact": "Car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "11"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.carToCar",
+       "says": "~8 hrs (2012 trip report)"
+      },
+      {
+       "field": "turnaround",
+       "says": "about 8 hours of climbing for the first-ascent party"
+      }
+     ],
+     "why": "The plan is 11 hrs car-to-car, but partner requirements give ~8 hrs car-to-car, which is what other fields give for the climbing alone.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "11"
+      }
+     ],
+     "why": "Time to the summit equals the full car-to-car day.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of descent rappels",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "descent is a downclimb plus 2 rappels down South Arete"
+      },
+      {
+       "field": "rappels",
+       "says": "3"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "3 stations"
+      }
+     ],
+     "why": "Partner requirements give 2 rappels; RAPPELS gives 3.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Aid/free grading",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[0]",
+       "says": "Can be climbed at IV 5.11 A0, or free (avoiding aid) at 5.10 A1"
+      },
+      {
+       "field": "grade",
+       "says": "5.11-"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "D"
+      },
+      {
+       "field": "commitment",
+       "says": "IV"
+      }
+     ],
+     "why": "pro_tips calls a 5.10 A1 option 'free (avoiding aid)', which contradicts itself and the 5.11- free grade. alpine_grade 'D' also does not match commitment IV.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Gain vs loss",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2600"
+      },
+      {
+       "field": "loss_ft",
+       "says": "2200"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2200"
+      }
+     ],
+     "why": "TECHNICAL STATS gives 2,600 ft of gain, while the loss and the itinerary give 2,200 ft for an out-and-back day.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent description",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "retracing the ascent when possible. Be aware of loose rock and snow bridge hazards"
+      },
+      {
+       "field": "descent_text",
+       "says": "it tops out at the summit rather than being descended via its own rappel line"
+      }
+     ],
+     "why": "`descent` is generic text (reverse the route, snow bridges) that contradicts the South Arete descent. It is shorter, so it is hidden.",
+     "internal_resolution": "descent_text is correct.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_arete",
+   "name": "South Arete",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Descent route",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "Rappel to the NEWS-SEWS notch, scramble the gully, rappel a chockstone."
+      },
+      {
+       "field": "descent_text",
+       "says": "Descend by rappelling/downclimbing the South Arete climbing route itself ... three fixed rappel stations"
+      },
+      {
+       "field": "descent",
+       "says": "retracing the ascent when possible. Be aware of loose rock and snow bridge hazards"
+      }
+     ],
+     "why": "The itinerary descends by the notch and chockstone (the North Early Winters Spire West Couloir descent); DESCENT and RAPPELS go down the South Arete's own three bolted stations.",
+     "internal_resolution": "descent_text, rappels, rappel_detail and rappel_count_note agree on the South Arete stations; the itinerary line is contaminated.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "3"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "2 rows (1, 2)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "2 pitches, mostly 3rd/4th class."
+      },
+      {
+       "field": "pro_needs",
+       "says": "the two roped pitches"
+      }
+     ],
+     "why": "The header says 3 pitches; the breakdown, itinerary and pro_needs say 2.",
+     "internal_resolution": "pitch_detail, itinerary, sectionBreakdown and pro_needs agree on 2.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "After roughly 1.3-1.5 miles and about 1,000 ft of gain ... Expect roughly 2,000 ft of gain from where you leave the maintained trail ... up to ~2,000 ft of gain from the car"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "2000"
+      }
+     ],
+     "why": "The approach prose adds 1,000 ft on the trail to 2,000 ft above it, then gives the total from the car as ~2,000 ft.",
+     "internal_resolution": "approach_variants and partner_requirements give ~2,000 ft total; '2,000 ft from where you leave the maintained trail' is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Rope length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "what_to_bring[2]",
+       "says": "Light rack and a single rope (30-60m)"
+      },
+      {
+       "field": "rack[3]",
+       "says": "Single 30-60m rope"
+      },
+      {
+       "field": "rappel_detail[0].lengthM",
+       "says": "30"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "The line was designed around a single 60 m rope"
+      }
+     ],
+     "why": "The kit allows a 30 m rope, but the rappels are 30 m long and designed around a 60 m rope.",
+     "internal_resolution": "gear[2], rope_length_m, descent_text and rappel_count_note all say 60 m.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "for a total of about 2.5 hours"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "2-2.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "~1.75 hr approach."
+      }
+     ],
+     "why": "The itinerary uses a 1.75-hour approach; the approach fields say 2–2.5 hrs.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "2.5"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4.1"
+      }
+     ],
+     "why": "A 2.5 mi one-way approach cannot give a 4.1 mi round trip. dist_km (2.5 mi) matches the one-way figure but is shown as the route distance.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "6"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "6"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3]",
+       "says": "10:00 AM Summit (start 6:30 AM)"
+      }
+     ],
+     "why": "Time to the summit equals the car-to-car total, but the itinerary summits 3.5 hrs after leaving.",
+     "internal_resolution": "The itinerary shows summitTimeHrs holding the car-to-car total.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "name": "Direct East Buttress",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].label",
+       "says": "Leave Blue Lake trailhead"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "return to the Blue Lake trailhead"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1–1.5 hours from the Blue Lake trailhead"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Do not use the Blue Lake Trailhead — that is the west-side approach and it puts you on the wrong side of the mountain."
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      }
+     ],
+     "why": "The itinerary and partner requirements start from Blue Lake; the approach explicitly warns against Blue Lake and starts from the hairpin.",
+     "internal_resolution": "approach, approach_variants, waypoints and approach_logistics use the hairpin; the itinerary and partner_requirements are outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Aided grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III+, 5.9 A0 (or 5.11 free), 9 pitches"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "(5.9-5.11, or 5.10a with a point of aid)"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.11a/A0"
+      },
+      {
+       "field": "pitch_detail[5].grade",
+       "says": "5.10+/A0"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "5.10-"
+      }
+     ],
+     "why": "The grade says the aided version goes at 5.9 A0 and the itinerary says 5.10a with a point of aid, but the breakdown has 5.10- free climbing and 5.10+/A0 ladders.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bolt-ladder pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Bolt ladders on pitches 5-6"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "a ladder of roughly 14 closely-spaced bolts"
+      },
+      {
+       "field": "pitch_detail[5].notes",
+       "says": "a second bolt ladder"
+      },
+      {
+       "field": "pitch_detail[3].bolts",
+       "says": "2"
+      }
+     ],
+     "why": "The beta puts the ladders on P5–6; the breakdown puts them on P4 and P6. P4 also records 2 bolts against a note of ~14.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Largest cam",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "the crux move is protected right at your waist by a good #4 cam"
+      },
+      {
+       "field": "gear[1]",
+       "says": "double set of cams, green Alien to #3 Camalot"
+      },
+      {
+       "field": "gear[3]",
+       "says": "single #3.5 Camalot"
+      }
+     ],
+     "why": "The P3 crux relies on a #4 cam, but the rack stops at #3.5.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent anchor",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "downclimbing the summit pitch and one more pitch to a tree rappel anchor, then 3 short station-to-station rappels"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "three bolt-and-chain stations North Cascade Mountain Guides installed"
+      },
+      {
+       "field": "rappel_detail[0].station",
+       "says": "The top anchor is bolts and chains on a big ledge immediately above the small tree older parties used to sling"
+      }
+     ],
+     "why": "The itinerary starts the rappels from a tree anchor, which rappel_detail says the bolted station has superseded.",
+     "internal_resolution": "rappel_detail and rappel_count_note (South Arete, 2022 stations) are current.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3]",
+       "says": "1:30 PM Summit (start 5:00 AM)"
+      }
+     ],
+     "why": "Time to the summit equals the car-to-car total, but the itinerary summits 8.5 hrs after leaving.",
+     "internal_resolution": "The itinerary shows summitTimeHrs holding the car-to-car total.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "~2 hr approach."
+      },
+      {
+       "field": "approach",
+       "says": "Roughly 1.5 hours car-to-base"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "1-1.5"
+      }
+     ],
+     "why": "The itinerary uses a 2-hour approach; the approach fields say 1–1.5 hrs.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "2.4"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.2"
+      }
+     ],
+     "why": "The overview shows 2.4 km (1.5 mi); the header and itinerary show 5.2 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III+"
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "D"
+      }
+     ],
+     "why": "The grade string says III+, commitment says III, and alpine_grade holds 'D'.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

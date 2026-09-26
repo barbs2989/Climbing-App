@@ -1,0 +1,261 @@
+{
+ "file": "r703.json",
+ "results": [
+  {
+   "id": "wa_point_success_south_side",
+   "fact": "Trailhead",
+   "verdict": "unresolved",
+   "correct_value": "Longmire Wilderness Information Center (Wonderland Trail)",
+   "evidence": "Every prose field and the published route descriptions start this route at Longmire via the Wonderland Trail; the Trailhead waypoint is a pin at the Dry Creek gate on Westside Road. Renaming it to Longmire would put the Longmire name on a Dry Creek coordinate, and moving the pin is out of scope, so no patch. The waypoint's own note already warns that it is the old corridor. (Separately, the park still lists Kautz Creek as an access, so 'the only approach' in partner_requirements is arguable; a 2025 party did start at Kautz Creek.)",
+   "sources": [
+    "https://www.summitpost.org/success-cleaver/467582",
+    "https://www.williswall.com/willis-wall-blog/2017/8/3/success-cleaver-mt-rainier-national-park",
+    "https://traskwildernessco.com/blog2/success-cleaver"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "fact": "Glacier travel",
+   "verdict": "fixed",
+   "correct_value": "Success Cleaver avoids significant glacier travel, but crevassed ground exists near the summit plateau",
+   "evidence": "SummitPost says Success Cleaver is one of only two Rainier climbs that do not involve significant glacier travel. A 2025 trip report (Trask) says the route avoids major glacier traverses, but the party briefly roped up near the top because of big crevasses on the upper Nisqually on the way to Columbia Crest. So 'never setting foot on a glacier' overstates it. The row's descent_text and seasonal_hazards already say 'no significant glacier travel', so only the overview needs to change.",
+   "sources": [
+    "https://www.summitpost.org/success-cleaver/467582",
+    "https://traskwildernessco.com/blog2/success-cleaver",
+    "https://www.williswall.com/willis-wall-blog/2017/8/3/success-cleaver-mt-rainier-national-park"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "climbable to a true summit without ever setting foot on a glacier",
+     "replace": "climbable to a true summit without significant glacier travel",
+     "id": "wa_point_success_south_side",
+     "fact": "Glacier travel"
+    }
+   ]
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "fact": "Best season vs season",
+   "verdict": "fixed",
+   "correct_value": "season May-Sep; best window mid-May to early July",
+   "evidence": "SummitPost and Willis Wall both say the route is best done early in the season, while it is still mostly snow-covered. Documented ascents in May (a Mountaineers trip report from May 7, 12 hours car to car) and April (Trask, 2025) show that May is inside the climbing season. So the Jun-Sep season was the outlier against best_season, seasonal_guidance, itinerary.cal and pro_tips. Widen the season to May-Sep, and widen the approach variant's season text to match.",
+   "sources": [
+    "https://www.summitpost.org/success-cleaver/467582",
+    "https://www.williswall.com/willis-wall-blog/2017/8/3/success-cleaver-mt-rainier-national-park",
+    "https://www.mountaineers.org/activities/trip-reports/mount-rainier-success-cleaver",
+    "https://traskwildernessco.com/blog2/success-cleaver"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Sep",
+     "value": "May-Sep",
+     "id": "wa_point_success_south_side",
+     "fact": "Best season vs season"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "June through September;",
+     "replace": "May through September;",
+     "id": "wa_point_success_south_side",
+     "fact": "Best season vs season"
+    }
+   ]
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "fact": "Crux grade",
+   "verdict": "fixed",
+   "correct_value": "Grade III-IV, low Class 5",
+   "evidence": "SummitPost says the final rock band to the summit is low Class 5. The Mazamas route listing says there is at least one pitch of rock climbing in the upper bands. Both agree with the row's rock_grade, beta, gear, hazards, detailed_rack and pitch_detail, so `grade` saying Class 4 was the only outlier.",
+   "sources": [
+    "https://www.summitpost.org/success-cleaver/467582",
+    "https://mazamas.org/activity/282/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Grade III-IV, Class 4",
+     "value": "Grade III-IV, low Class 5",
+     "id": "wa_point_success_south_side",
+     "fact": "Crux grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "fact": "Total gain from Longmire",
+   "verdict": "fixed",
+   "correct_value": "about 11,500 ft of gain from Longmire to Point Success",
+   "evidence": "SummitPost gives more than 11,500 ft of total gain from the trailhead, and says the 8,000 ft figure is the rise of the cleaver itself over 3.3 miles. The Mountaineers route page gives 25 miles round trip and 11,500 ft of gain. The approach prose and the approach variant had put the cleaver's 8,000 ft on the whole trip; gain_ft and itinerary.totalNote are already right.",
+   "sources": [
+    "https://www.summitpost.org/success-cleaver/467582",
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 12–13 miles and 8,000+ ft of gain from Longmire",
+     "replace": "roughly 12–13 miles and 11,500 ft of gain from Longmire",
+     "id": "wa_point_success_south_side",
+     "fact": "Total gain from Longmire"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "about 12–13 miles and over 8,000 ft of gain to Point Success",
+     "replace": "about 12–13 miles and roughly 11,500 ft of gain to Point Success",
+     "id": "wa_point_success_south_side",
+     "fact": "Total gain from Longmire"
+    }
+   ]
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "fact": "Summer vs winter registration dates",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park's own climbing page lists Winter Self Registration as September 15 – May 21 and Summer Walk-Up Registration as May 22 – September 30, so the official source itself overlaps in late September. (The row says Sept 16, which is one day off from the park's Sept 15.) The wilderness-permit/peak season of May 1 – September 15 is correct as stated in access.fees. No second source settles the overlap, so no patch.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "fact": "Itinerary day gains vs gain_ft",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The itinerary day gains (4,300 + 4,300 + 3,550 = 12,150 ft) put a TOTAL row of 12,150 ft beside the header gain_ft and the totalNote, both 11,500 ft; the day losses add to 11,700 ft. Outside sources give 11,500 ft as a trip total but no per-day figures. Per the rules, the day figures are not rebalanced.",
+   "sources": [
+    "https://www.summitpost.org/success-cleaver/467582",
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ez_way",
+   "fact": "Trailhead / approach length",
+   "verdict": "fixed",
+   "correct_value": "Start at an unmarked FR-2551 spur off FR-25 south of Elk Pass, via the Boundary Trail past Badger Lake; about 11.3 miles round trip",
+   "evidence": "Mountain Project's Shark Rock page says to drive FR25 to FR2551 south of Elk Pass, go 1 5/8 miles to an unmarked spur, then take flagged connectors to the Boundary Trail: 2.25 miles to Badger Lake and 2.75 miles more. The first-ascent trip report parks at the same FR2551 spur, follows the Boundary Trail past Badger Lake and Kirk Rock, and totals 11.3 miles round trip. Neither mentions Wright Meadows or a 16.9-mile approach. The Trailhead waypoint pin (at Elk Pass) is left alone because the coordinates are out of scope.",
+   "sources": [
+    "https://www.mountainproject.com/area/113734269/shark-rock",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=25925"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Wright Meadows Trailhead (Gifford Pinchot NF, Dark Divide area), via Boundary Trail #1 / Craggy Peak Trail #3",
+     "value": "Unmarked FR-2551 spur off FR-25 south of Elk Pass (Gifford Pinchot NF, Dark Divide area), via Boundary Trail #1",
+     "id": "wa_ez_way",
+     "fact": "Trailhead / approach length"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "the approach trail alone is roughly 16.9 miles, so plan for a very long backcountry trip regardless of road condition.",
+     "replace": "the approach is roughly 5.5 miles each way on the Boundary Trail past Badger Lake, so plan a long day regardless of road condition.",
+     "id": "wa_ez_way",
+     "fact": "Trailhead / approach length"
+    }
+   ]
+  },
+  {
+   "id": "wa_ez_way",
+   "fact": "Route grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project's EZ Way page rates it 5.6 PG13, and the row's grade, beta, pitch_detail and waypoint note say 5.6. The first-ascent trip report (Nelsen and Wagner, 8/18/2017) calls the lead pitch YDS 5.5, which matches rock_grade and rappels. The two outside sources disagree, and both come from the same first-ascent party, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/113734342/ez-way",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=25925"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ez_way",
+   "fact": "Face the route climbs",
+   "verdict": "fixed",
+   "correct_value": "West face",
+   "evidence": "Mountain Project places EZ Way on the west face and describes a traverse low across the west face to a belay bench. The first-ascent report says the party climbed the west face. `face` was the only field placing it on the north side.",
+   "sources": [
+    "https://www.mountainproject.com/route/113734342/ez-way",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=25925"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "face",
+     "path": [],
+     "expect": "North side of the summit block, just below the peak's north ridge",
+     "value": "West face of Shark Rock, below the summit ridge",
+     "id": "wa_ez_way",
+     "fact": "Face the route climbs"
+    }
+   ]
+  },
+  {
+   "id": "wa_ez_way",
+   "fact": "Gain",
+   "verdict": "not_a_contradiction",
+   "correct_value": "2,430 ft car to car",
+   "evidence": "gain_ft is the whole-outing total, and the first-ascent report gives exactly 11.3 miles round trip and 2,430 ft of vertical. Mountain Project gives 1,050 ft to Badger Lake plus 700 ft beyond it on the rolling Boundary Trail. The approach's 700 ft covers only the second segment, and the waypoint elevations are net endpoints, so none of these figures conflict.",
+   "sources": [
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=25925",
+    "https://www.mountainproject.com/area/113734269/shark-rock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ez_way",
+   "fact": "First-ascent party name",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Kelly Wagner and Don Nelsen, August 18, 2017",
+   "evidence": "Mountain Project's EZ Way page lists the FA as Don Nelsen & Kelly Wagner, August 18, 2017. The Oregon Hikers first-ascent trip report names the party Kelly Wagner and Don Nelsen, with the same date. The row had 'Kevin'.",
+   "sources": [
+    "https://www.mountainproject.com/route/113734342/ez-way",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=25925"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "fa",
+     "path": [],
+     "find": "Kevin Wagner",
+     "replace": "Kelly Wagner",
+     "id": "wa_ez_way",
+     "fact": "First-ascent party name"
+    }
+   ]
+  }
+ ]
+}

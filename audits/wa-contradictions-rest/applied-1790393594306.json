@@ -1,0 +1,299 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "waypoints",
+   "path": [
+    6,
+    "elev"
+   ],
+   "fact": "Carru-Lago col elevation"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "Carru-Lago col elevation"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    1,
+    "label"
+   ],
+   "fact": "Carru-Lago col elevation"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Summit line from camp"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Drainage descended from Slate Pass"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "note"
+   ],
+   "fact": "Drainage descended from Slate Pass"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Drainage descended from Slate Pass"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    3,
+    "note"
+   ],
+   "fact": "Drainage descended from Slate Pass"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Drainage descended from Slate Pass"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Drainage descended from Slate Pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_carru_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.737833,
+      "lng": -120.6785,
+      "elev": 7170,
+      "name": "Slate Peak Trailhead (Buckskin Ridge TH)",
+      "note": "End of Slate Peak Road (FR-5400), a high-clearance gravel spur off Harts Pass Road; self-issue Pasayten Wilderness permit at the kiosk, road typically open only July-September.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.744811,
+      "lng": -120.659579,
+      "elev": 6500,
+      "name": "Slate Pass",
+      "note": "Saddle on Buckskin Ridge where the Buckskin Ridge/Middle Fork Pasayten trail junction is reached (~30 min from the TH) and the route leaves the ridge crest to drop steeply toward the West/Middle Fork Pasayten River.",
+      "type": "Junction",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.82287,
+      "lng": -120.59824,
+      "elev": 6507,
+      "name": "Fred's Lake",
+      "note": "Small subalpine lake with limited established sites reached via a climbing traverse off the Eureka Creek trail; standard first-night base camp for the Carru-Lago-Osceola cluster (~5 hrs in from the trailhead).",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": 48.814774,
+      "lng": -120.536214,
+      "elev": 7130,
+      "name": "Rolo Pass (ridge crest above Fred's Lake)",
+      "note": "Switchbacks out of the Fred's Lake basin gain this open ridge crest; views back northwest to Fred's Lake and east into the Eureka Creek headwater basin, the divide crossing point toward Shellrock Basin.",
+      "type": "Junction",
+      "distMi": 8.1
+     },
+     {
+      "lat": 48.805758,
+      "lng": -120.533934,
+      "elev": 6800,
+      "name": "Upper Eureka Creek crossing",
+      "note": "Rock-hop the Eureka Creek headwaters below Rolo Pass before climbing back up into Shellrock Basin; last reliable water before the summit day.",
+      "type": "Water",
+      "distMi": 9.5
+     },
+     {
+      "lat": 48.820821,
+      "lng": -120.552218,
+      "elev": 6800,
+      "name": "Shellrock Basin",
+      "note": "Open meadow/talus basin near Shellrock Pass with tarn water, used as the high camp for Carru, Lago, and Blackcap summit pushes.",
+      "type": "Campsite",
+      "distMi": 11
+     },
+     {
+      "lat": 48.82876,
+      "lng": -120.53984,
+      "elev": 8100,
+      "name": "Lago-Carru saddle",
+      "note": "Broad col between Mount Lago and Mount Carru; leave the basin here and gain Carru's southeast slope/ridge for the final scramble.",
+      "type": "Junction",
+      "distMi": 12.3
+     },
+     {
+      "lat": 48.831994,
+      "lng": -120.554332,
+      "elev": 8595,
+      "name": "Mount Carru",
+      "note": "True summit via class 2-3 talus and short rock on the southeast ridge; exposure enough on the final blocks to keep it interesting.",
+      "type": "Summit",
+      "distMi": 13
+     }
+    ],
+    "descent": "Reverse the south-slope talus/scree line back to camp. Parties continuing an Osceola-Carru-Lago traverse instead drop to the Carru-Lago col (~7,100 ft) to continue toward Mount Lago, or head west off the Carru-Osceola col toward Shellrock Basin/Rolo Pass. Loose rock underfoot makes the descent slower than it looks, so budget similar time to the ascent and keep the group tight (or staggered) to avoid kicking rock onto climbers below.",
+    "itinerary": {
+     "cal": "Harts Pass Road (WA-20 to FR-5400) and the Pasayten's cross-country basins often aren't fully snow-free and easy to travel until late June/early July; Eureka Creek crossings can be difficult during peak snowmelt.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Harts Pass/Slate Pass trailhead, cross Slate Pass and descend into the West Fork Pasayten drainage, then climb back up to Fred's Lake for the first camp. Full wilderness packs with 4 days of food.",
+       "hours": 5,
+       "miles": 7,
+       "title": "Hike in to Fred's Lake",
+       "gainFt": 1400,
+       "lossFt": 2000,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Fred's Lake camp"
+      },
+      {
+       "n": 2,
+       "note": "Climb over Fred's/Rolo Pass on the ridge above Fred's Lake, then drop to Eureka Creek and back up into scenic Shellrock Basin, directly below the Carru-Lago-Osceola cirque. A shorter day than Day 1, leaving the afternoon free to scout the route.",
+       "hours": 3.5,
+       "miles": 5,
+       "title": "Cross to Shellrock Basin high camp",
+       "gainFt": 1600,
+       "lossFt": 900,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Establish high camp in Shellrock Basin"
+      },
+      {
+       "n": 3,
+       "note": "Leave camp with light daypacks and climb toward the Lago-Carru saddle, then follow the obvious southeast slope/ridge line - mostly class 2 talus and scree with brief exposed sections - to the summit. Many parties tack on Osceola and/or Lago from the same camp, but a Carru-only push is a shorter, half-day round trip.",
+       "hours": 6,
+       "miles": 5,
+       "title": "Summit day: Mount Carru",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Shellrock Basin camp",
+         "detail": "Light daypack; head toward the Lago-Carru saddle."
+        },
+        {
+         "time": "6:45 AM",
+         "label": "Reach Lago-Carru col (~7,100 ft)",
+         "detail": "Transition onto Carru's southeast slope."
+        },
+        {
+         "time": "8:15 AM",
+         "label": "Summit",
+         "detail": "Class 2 scree/talus scramble; views across the Pasayten crest."
+        },
+        {
+         "time": "8:45 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the southeast slope line back to the col."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at Shellrock Basin camp",
+         "detail": "Rest of the day free; some parties extend to Osceola or Lago instead."
+        }
+       ],
+       "objective": "Climb Carru's southeast slopes and return to camp"
+      },
+      {
+       "n": 4,
+       "note": "Reverse Days 1 and 2 in a single long push: back over Rolo/Fred's Pass, down through the West Fork Pasayten drainage, and over Slate Pass to the trailhead. A full day with full packs.",
+       "hours": 8,
+       "miles": 12,
+       "title": "Hike out",
+       "gainFt": 2200,
+       "lossFt": 1600,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the Harts Pass/Slate Pass trailhead"
+      }
+     ],
+     "totalNote": "A remote 4-day Pasayten backpack: ~29-30 miles round trip and roughly 7,500-8,000 ft of cumulative gain, with one long summit day tagging Carru's southeast slopes from a high camp in Shellrock Basin."
+    },
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "South/southeast talus slopes",
+      "notes": "From a Shellrock Basin or Eureka Creek camp, gain the Carru-Osceola col or Rolo Pass and scramble the south/southeast talus slopes to the summit ridge."
+     }
+    ],
+    "timing": {
+     "totalHrs": 22.5,
+     "summitTimeHrs": 6,
+     "descentTimeHrs": 8,
+     "approachTimeHrs": 8.5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5,
+       "note": "From the Harts Pass/Slate Pass trailhead, cross Slate Pass and descend into the West Fork Pasayten drainage, then climb back up to Fred's Lake for the first camp. Full wilderness p…",
+       "fromTo": "Hike in to Fred's Lake",
+       "section": "Approach"
+      },
+      {
+       "hrs": 3.5,
+       "note": "Climb over Fred's/Rolo Pass on the ridge above Fred's Lake, then drop to Eureka Creek and back up into scenic Shellrock Basin, directly below the Carru-Lago-Osceola cirque. A short…",
+       "fromTo": "Cross to Shellrock Basin high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "Leave camp with light daypacks and climb toward the Lago-Carru saddle, then follow the obvious southeast slope/ridge line - mostly class 2 talus and scree with brief exposed sectio…",
+       "fromTo": "Summit day: Mount Carru",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8,
+       "note": "Reverse Days 1 and 2 in a single long push: back over Rolo/Fred's Pass, down through the West Fork Pasayten drainage, and over Slate Pass to the trailhead. A full day with full pac…",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach": "Two standard approaches leave from the Harts Pass Road (FR 5400) area near Slate Peak (~6,900-7,400 ft, one of the highest drivable roads in Washington): (1) the shortest line drops from Slate Pass/Buckskin Ridge down the West/Middle Fork Pasayten River to Fred's Lake/Fred's Pass, then crosses upper Eureka Creek toward Shellrock Basin below the Carru-Lago-Osceola cirque — about 15 miles one-way; (2) the Monument Creek Trail, also off Harts Pass Road, is roughly 19 miles one-way with more up-and-down elevation change. Pasayten trails are lightly maintained — expect blowdown on the Middle Fork Pasayten Trail and stretches where the tread is fainter than GPS basemaps suggest, so off-trail navigation skill is required."
+   }
+  }
+ ]
+}

@@ -1,0 +1,256 @@
+{
+ "batches": ["b025.json", "b026.json", "b027.json", "b028.json"],
+ "routes_read": 9,
+ "routes": [
+  {
+   "id": "wa_courtney_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Courtney Peak",
+   "contradictions": [
+    {
+     "fact": "Ascent ridge direction from Fish Creek Pass (SE vs NW)",
+     "severity": "high",
+     "claims": [
+      {"field": "face", "says": "Southeast Ridge"},
+      {"field": "beta", "says": "climb the open southeast ridge directly to the summit on a boot path"},
+      {"field": "waypoints[2].directions (Fish Creek Pass)", "says": "turn onto the obvious NW-trending ridge toward the summit"},
+      {"field": "waypoints[3].name", "says": "NW ridge talus/boulder field"},
+      {"field": "descent", "says": "Reverse the NW ridge back down to Fish Creek Pass"},
+      {"field": "climbing_route[0].notes", "says": "pick up the obvious boot path/climbers' trail that switchbacks northwest up the open ridge toward Courtney Peak"},
+      {"field": "itinerary.days[0].note / objective", "says": "the SE/SW Ridge to Courtney's summit"}
+     ],
+     "why": "face and beta name the ascent line the Southeast Ridge, but the waypoints, descent, climbing_route and approach text all describe climbing northwest from Fish Creek Pass, and the itinerary calls it a third thing ('SE/SW Ridge') — the route's own named direction is inconsistent across fields.",
+     "internal_resolution": "The summit (48.26058,-120.44339) sits north-northwest of Fish Creek Pass (48.25597,-120.43759); waypoints/descent/climbing_route/approach all agree on 'northwest', so 'Southeast Ridge' in face/beta looks like the error.",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp location for this route (Star Lake vs Boiling Lake basin)",
+     "severity": "high",
+     "claims": [
+      {"field": "overview", "says": "commonly climbed together with Oval and Star Peaks from a single high camp at Star Lake"},
+      {"field": "waypoints[2].directions (Fish Creek Pass)", "says": "Star Lake sits just below the far side of the pass and is the last reliable water before the summit push"},
+      {"field": "itinerary.days[0].title", "says": "Backpack in via Fish Creek Pass, tag the summit, camp at Star Lake"},
+      {"field": "bivy[5] ('Boiling Lake basin')", "says": "The high camp for Star Peak and Courtney Peak... From the road it is reached over Horsehead Pass from Upper Eagle Lake in a short day"}
+     ],
+     "why": "Every narrative field on this route names Star Lake, just below Fish Creek Pass on this route's own approach, as the overnight camp, but the bivy entry claiming to be 'the high camp for Star Peak and Courtney Peak' is Boiling Lake basin, reached via Horsehead Pass from Upper Eagle Lake — a different trailhead system (Crater Creek/Eagle Lakes) than this route's West Fork Buttermilk/Fish Creek Pass approach.",
+     "internal_resolution": "overview, waypoints and itinerary all agree on Star Lake via this route's own approach; the Boiling Lake basin bivy entry describes an unrelated access system and appears misfiled onto this route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which peaks this route links up with from one high camp (Oval+Bigelow vs Oval+Star)",
+     "severity": "medium",
+     "claims": [
+      {"field": "pro_tips[0]", "says": "Combine with Oval and Bigelow from one high camp"},
+      {"field": "overview", "says": "commonly climbed together with Oval and Star Peaks from a single high camp at Star Lake"},
+      {"field": "pro_tips[2]", "says": "Loop with Oval and Star Peaks by descending north past West Oval Lake to the Eagle Creek/Oval Creek trailhead"}
+     ],
+     "why": "Mount Bigelow is a separate Sawtooth summit reached from the Crater Creek/Eagle Lakes trailhead, not from Star Lake; every other mention of a link-up on this route names Star Peak, not Bigelow.",
+     "internal_resolution": "overview and pro_tips[2] agree on Oval+Star; pro_tips[0]'s 'Bigelow' looks like a contamination/typo for 'Star'.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time to reach Fish Creek Pass (approachTimeHrs vs schedule)",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.approachTimeHrs", "says": "4"},
+      {"field": "itinerary.days[0].schedule[1].time (label 'Reach Fish Creek Pass')", "says": "+5 to 6 hr"}
+     ],
+     "why": "timing.approachTimeHrs states 4 hours for the approach, but the day's own schedule shows 5-6 hours just to reach Fish Creek Pass from the trailhead.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "name": "Southeast Ridge",
+   "area": "Devore Peak",
+   "contradictions": [
+    {
+     "fact": "Technical difficulty of the summit crux (Class 2-3 / 5.0 vs 5.0-5.4, and rope_note's own admission)",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Class 2-3"},
+      {"field": "rock_grade", "says": "5.0"},
+      {"field": "pitch_detail[3].grade ('Crux step')", "says": "5.0-5.4"},
+      {"field": "rope_note", "says": "Mountaineers beta describes Class 4 terrain with a few Class 5 moves... meaningfully harder than the listed Class 2-3 grade"}
+     ],
+     "why": "The headline grade and rock_grade cap the route at 5.0/Class 2-3, but the route's own crux pitch is graded up to 5.4, and rope_note explicitly flags the listed grade as understating the real difficulty.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain (gain_ft vs loss_ft vs itinerary)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "3500"},
+      {"field": "loss_ft", "says": "7600"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "3100+4200+300=7600"}
+     ],
+     "why": "This is an out-and-back route, so gain and loss should match, but gain_ft (3500) and loss_ft (7600) disagree with each other, and the itinerary's day-by-day gainFt sums to 7600 — matching loss_ft, not gain_ft.",
+     "internal_resolution": "loss_ft and the itinerary's gain/loss sums (both 7,600) agree with each other and with the ~7,600 ft round trip implied by the approach/descent text; gain_ft=3500 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance (dist_km vs itinerary miles)",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "5.6 (3.5 mi)"},
+      {"field": "itinerary.days[*].miles sum", "says": "9+7+9=25"},
+      {"field": "itinerary.totalNote", "says": "roughly 25 miles and 7,600 ft of gain round trip"}
+     ],
+     "why": "dist_km implies a 3.5-mile route, but the itinerary's own day mileages and totalNote both put the round trip at about 25 miles.",
+     "internal_resolution": "itinerary days and totalNote agree with each other on ~25 mi; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether fixed rappel anchors exist on the crux/summit step",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "fixed rap anchors have been reported in place by recent parties, though some climbers instead downclimb the same section"},
+      {"field": "approach_variants[0].baseFinding", "says": "a rappel anchor sits at the edge of the summit ridge... The unavoidable step near the top has a second rappel station visible above it"},
+      {"field": "descent_text", "says": "there are no fixed bolts, chains, or any other fixed hardware on this route... you'll build a natural anchor (webbing/cord around a horn or block)"},
+      {"field": "detailed_rack", "says": "a sling around a nearby tree/horn has served as an anchor for past parties"}
+     ],
+     "why": "Two fields describe fixed rappel anchors/stations already in place near the summit step, while two other fields explicitly deny any fixed hardware exists and describe building a natural anchor instead — a party's rope/sling plan differs depending on which is true.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bird Creek Camp's elevation and position",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[2] ('Bird Creek Camp')", "says": "elev 5800, distMi 8"},
+      {"field": "approach", "says": "you reach Bird Creek Camp (~4,200 ft), the last established campsite... 4-5 miles from Weaver Point"},
+      {"field": "bivy[7] ('Bird Creek Camp, Devore Creek trail')", "says": "elev 4200; sits about four miles up that trail"}
+     ],
+     "why": "The waypoint list places 'Bird Creek Camp' at 5,800 ft and 8 miles in, but the route's own approach text and its bivy entry both put the same-named Bird Creek Camp at ~4,200 ft and ~4-5 miles in — about 1,600 ft and 3-4 miles apart for the same named camp.",
+     "internal_resolution": "approach text and the bivy entry agree with each other (~4,200 ft, ~4 mi); the waypoint list's 'Bird Creek Camp' at 5,800 ft/8 mi appears to actually be the higher, unofficial ~5,400 ft camp the approach text separately describes, mislabeled with the wrong name.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope length (rope_length_m vs gear/pro_needs range)",
+     "severity": "low",
+     "claims": [
+      {"field": "rope_length_m", "says": "30"},
+      {"field": "gear[4]", "says": "light rock rack... and 30-60m rope for the exposed summit crux/optional rappel"},
+      {"field": "pro_needs", "says": "plus a 30-60m rope is worth carrying"}
+     ],
+     "why": "rope_length_m pins a single 30 m value while gear/pro_needs describe a 30-60 m range; not strictly incompatible (30 is within the range) but a climber comparing the kit list to the stated rope length could be confused.",
+     "internal_resolution": "descent_text says a single 30 m rope 'is more than enough,' consistent with rope_length_m=30; the 60 m figure elsewhere is just the top of an offered range.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_emerald_peak_se_ridge",
+   "name": "Southeast Ridge",
+   "area": "Emerald Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_emerald_peak_west_route",
+   "name": "West Route",
+   "area": "Emerald Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_fifth_of_july_mountain_scramble",
+   "name": "Standard Scramble",
+   "area": "Fifth of July Mountain",
+   "contradictions": [
+    {
+     "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)",
+     "severity": "high",
+     "claims": [
+      {"field": "beta", "says": "Most parties reach it via the Basalt Pass Trailhead... An alternative, longer approach comes from the Entiat River Trailhead via Myrtle Lake, Larch Lakes, and Cow Creek Pass"},
+      {"field": "approach", "says": "Start at the Entiat River Trailhead (elev. ~3,150 ft)... Cow Creek Meadows... Cow Creek Pass... climb open talus... to gain the south ridge/saddle"},
+      {"field": "waypoints", "says": "Entiat River Trailhead -> Cow Creek Meadows Trail junction -> Myrtle Lake -> Cow Creek Meadows -> Cow Creek Pass -> summit (no Basalt Pass or Devils Smoke Stack mentioned)"},
+      {"field": "approach_variants[0].name", "says": "Basalt Ridge crest to Fifth of July Pass"},
+      {"field": "approach_variants[0].notes", "says": "This is the side on which the start of the climbing is actually described... where that [Entiat] approach leaves the trail... [is] unclear"},
+      {"field": "pitch_detail[0].notes", "says": "From the basin below the saddle west of Devils Smoke Stack (roughly 6,980 ft after a ~500 ft scree-gully descent from a 7,480 ft col)..."}
+     ],
+     "why": "The row's structured approach/waypoints/itinerary/descent_text are entirely written for the Entiat River Trailhead/Cow Creek Pass line, but beta calls that the 'alternative,' the only detailed approach_variants entry is written for the Basalt Pass side instead (and admits the Entiat side is 'unclear'), and pitch_detail's basin/col description (Devils Smoke Stack, 7,480 ft col) belongs to the Basalt approach, not the Cow Creek Pass line the rest of the row documents. A climber cannot tell which approach they are actually reading.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Base camp for this route (Myrtle Lake/Cow Creek Meadows vs Larch Lakes)",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.days[0].title", "says": "Hike in to Myrtle Lake / Cow Creek Meadows"},
+      {"field": "bivy[2] ('Larch Lakes meadow camps')", "says": "This is the base camp for Fifth of July Mountain and the only one worth using for it."}
+     ],
+     "why": "The route's own itinerary plans the overnight at Myrtle Lake/Cow Creek Meadows, but the bivy panel names a different camp, Larch Lakes, as the sole valid base for this peak.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_scramble",
+   "name": "Standard Scramble",
+   "area": "Hoodoo Peak",
+   "contradictions": [
+    {
+     "fact": "Route line above the cabin — via Libby Lake's south shore to a 'southwest ridge' vs leaving the trail at the cabin without ever reaching the lake, onto a 'west ridge'",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "traverse around its [Libby Lake's] south shore, then locate two parallel gullies splitting the talus/boulder slope above the lake; take the narrower gully on climber's right and follow it to the crest of the southwest ridge"},
+      {"field": "descent_text", "says": "back down the summit boulder field to the southwest ridge, down the entry gully to the shore of Libby Lake, around the lake, and out Libby Creek Trail"},
+      {"field": "waypoints[4].note ('Historic trapper's cabin')", "says": "Decaying cabin where the scramble route leaves Libby Creek Trail; a faint boot path angles right (west) into the trees toward Hoodoo"},
+      {"field": "itinerary.days[0].schedule[1].detail", "says": "trail junction where the route leaves toward the boulder field/gully instead of continuing to Libby Lake"},
+      {"field": "approach_variants[0].notes", "says": "Note that the standard line does not go to Libby Lake at all — the lake is the left-hand continuation and a fine camp, but the peak is reached from the cabin"},
+      {"field": "approach_variants[0].baseFinding", "says": "the peak is the faint boot path leaving to the RIGHT of the cabin... If you have arrived at a lake shore, you have walked past the cabin"}
+     ],
+     "why": "The 'approach' and 'descent_text' fields both route the climb via Libby Lake's south shore to a 'southwest ridge,' but the waypoints, itinerary schedule, and the detailed approach_variants entry all agree the route leaves the trail at an old cabin well before the lake and never reaches it — approach_variants states outright that arriving at the lakeshore means a party has gone the wrong way.",
+     "internal_resolution": "Three independent fields (waypoints, itinerary schedule, approach_variants) agree the route leaves at the cabin and does not reach Libby Lake; 'approach' and 'descent_text' describing a Libby-Lake-shore line are the contradicting pair.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+   "name": "Raven Ridge Traverse",
+   "area": "Hoodoo Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_bigelow_scramble",
+   "name": "Standard Scramble",
+   "area": "Mount Bigelow",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance (dist_km vs itinerary miles)",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "10.1 (6.3 mi)"},
+      {"field": "itinerary.days[*].miles sum", "says": "6.2+9.6=15.8"}
+     ],
+     "why": "dist_km implies about 6.3 miles, roughly the one-way distance to Upper Eagle Lake, while the itinerary's own day-by-day mileage totals 15.8 miles for the trip.",
+     "internal_resolution": "dist_km looks like a one-way distance to camp being used where the page would present it as the route's total distance; the itinerary is the more complete figure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "name": "Tribute to Richard",
+   "area": "Mount Bigelow",
+   "contradictions": [
+    {
+     "fact": "Route distance (dist_km as one-way to base vs round-trip car-to-car mileage)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "12.9 (8.0 mi)"},
+      {"field": "approach", "says": "the FA party logged the whole thing as '8 miles more or less from TH, ~3500' to base'"},
+      {"field": "itinerary", "says": "about 13 trail-and-scramble miles with roughly 3,900 ft of gain plus four pitches of 5.10 (car-to-car estimate)"}
+     ],
+     "why": "dist_km (8.0 mi) matches the one-way distance to the base of the climb quoted in approach, not the ~13-mile round-trip car-to-car distance also quoted in the row's own itinerary text; the page would likely show dist_km as 'the' route distance.",
+     "internal_resolution": "the FA party's own one-way figure (8 mi to base) matches dist_km; the itinerary's ~13 mi is the round-trip total — the same underlying trip presented as two different quantities.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

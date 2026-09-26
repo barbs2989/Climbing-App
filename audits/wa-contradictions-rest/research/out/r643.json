@@ -1,0 +1,305 @@
+{
+ "file": "r643.json",
+ "results": [
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "fact": "Mowich Lake trailhead access",
+   "verdict": "fixed",
+   "correct_value": "Mowich Lake has had no public road access since WSDOT permanently closed the SR 165 Fairfax Bridge in April 2025; the White River / St. Elmo Pass approach is the one reachable by road.",
+   "evidence": "WSDOT announced the 103-year-old SR 165 Carbon River/Fairfax Bridge closed permanently in April 2025, closed to vehicles, cyclists and pedestrians with no detour. The Mountaineers and KING5 report the bridge was the sole public route to Mowich Lake and Carbon River. Mowich Lake Road branches from SR 165 south of the bridge, not from Carbon River Road near Buckley, so the drive note was also wrong. The approach_variants[0].primary flag was left unchanged (ordering is structural); the prose on every Mowich surface now states the closure.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/103-year-old-sr-165-carbon-river-fairfax-bridge-permanently-closed",
+    "https://www.mountaineers.org/blog/access-update-fairfax-bridge-closure-and-the-future-of-the-carbon-river-corridor",
+    "https://www.king5.com/article/traffic/traffic-news/fairfax-bridge-mount-rainier-national-park-closed-safety/281-d67d2c1e-e563-4b08-93ef-bf08db16218a"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Mowich Lake trailhead access",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Gravel road off Carbon River Road near Buckley leads to Mowich Lake (4,929 ft), the standard trailhead for the west-side approach; the White River approach (St. Elmo Pass) opens earlier in the season as an alternative.",
+     "replace": "Mowich Lake (4,929 ft) was the standard trailhead for the west-side approach, but it has had no road access since the SR 165 Fairfax Bridge closed in April 2025; drive to White River instead and use the St. Elmo Pass approach."
+    },
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Mowich Lake trailhead access",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Via Mowich Lake (4,929 ft, reached by gravel road off Carbon River Road near Buckley, often not opening until early-mid July): approach",
+     "replace": "Via Mowich Lake (4,929 ft; no road access since the SR 165 Fairfax Bridge closed in April 2025, so reaching the lake itself is now a long walk): approach"
+    },
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Mowich Lake trailhead access",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "— longer, but on a road that typically opens earlier than Mowich Lake.",
+     "replace": "— longer, but it is the approach that can still be reached by road."
+    },
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Mowich Lake trailhead access",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "at the end of a long gravel road that is often still snowed shut into early or mid July, and that single fact decides whether this approach is available at all.",
+     "replace": "at the end of a road that has had no public access since the SR 165 Fairfax Bridge closed in April 2025 (before that it was often snowed shut into early or mid July), and that single fact decides whether this approach is available at all."
+    },
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Mowich Lake trailhead access",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      6
+     ],
+     "find": "Mowich Lake Road frequently closed by snow into July,",
+     "replace": "No road access to Mowich Lake since the April 2025 bridge closure,"
+    },
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Mowich Lake trailhead access",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "because the White River road opens well before Mowich Lake Road does,",
+     "replace": "because the White River road opens in late spring while Mowich Lake has had no road access since the 2025 bridge closure,"
+    },
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Mowich Lake trailhead access",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "(verify current Mowich Lake Road access)",
+     "replace": "(no road access since the April 2025 Fairfax Bridge closure)"
+    },
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Mowich Lake trailhead access",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "; the Mowich Lake road's late opening (often early July) effectively sets the practical start of the season from that side.",
+     "replace": "; with no road access to Mowich Lake since the April 2025 bridge closure, the White River approach is the practical way in."
+    },
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "Mowich Lake trailhead access",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "spring"
+     ],
+     "find": "the Mowich Lake road is frequently still closed.",
+     "replace": "Mowich Lake has had no road access since the 2025 bridge closure."
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The July to mid-August window on the Mowich variant tracked the old Mowich Lake Road opening, which no longer applies after the 2025 bridge closure. One route description says the road was often closed until early July while the route is often in great shape by May, and a documented ascent was made May 26-29 via White River. No two sources give a Mowich-approach season window, so the variant season was not changed. The best_season sentence about the Mowich road opening was rewritten under the access fix.",
+   "sources": [
+    "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+    "https://www.countryhighpoints.com/mt-rainier-via-ptarmigan-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "fact": "High camp position relative to the bergschrund",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "High camp (~10,200-10,300 ft) is on the ridge crest ABOVE the bergschrund; parties drop a few hundred feet onto the Mowich Glacier to reach the schrund.",
+   "evidence": "One route description puts the high camp at 10,200 ft and says parties downclimb a few hundred feet onto the Mowich Glacier and then cross the bergschrund. A 2018 trip report puts the bivy at 10,300 ft with the bergschrund crossing after it. On the row, both approach_variants baseFindings and pitch_detail[0] agree; only the itinerary sentence said the camp was below the schrund.",
+   "sources": [
+    "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+    "https://www.countryhighpoints.com/mt-rainier-via-ptarmigan-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "High camp position relative to the bergschrund",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "establish a high camp (~10,300 ft) below the bergschrund",
+     "replace": "establish a high camp (~10,300 ft) on the ridge crest above the bergschrund"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "fact": "White River Road opening",
+   "verdict": "bivy_zone_list",
+   "correct_value": "White River Road targets opening around May 22 (late May); the White River Campground opens around late June.",
+   "evidence": "NPS spring opening schedules give White River Road to the campground in late May (May 25 in 2012) and the campground in late June. An NPS climbing-ranger update gives a May 22 target and says walking and biking are allowed on the park road before then. So the variant's mid-May start and 'opens earlier' are consistent. The outlier is the Camp Schurman bivy note, which mixes up the campground opening with the road opening; bivy[] is owned by the camping clean-up, so no patch was written. The Camp Schurman entry serves only the descent.",
+   "sources": [
+    "https://www.nps.gov/mora/learn/news/spring-opening.htm",
+    "https://mountrainierclimbing.blogspot.com/2026/05/conditions-and-permit-update-camp.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Which wall is on which side of Liberty Ridge",
+   "verdict": "fixed",
+   "correct_value": "Facing uphill, Willis Wall is on the climber's left (east) and the Liberty Wall on the right (west).",
+   "evidence": "An AAC first-ascent account says the north cirque is bounded on the east by Curtis Ridge, with Willis Wall between Curtis and Liberty Ridge, and Ptarmigan Ridge about a mile and a half west, beyond the Liberty Wall. A guide service's route page describes the view as Willis Wall on the left and Liberty Wall on the right. Both agree with the row's baseFinding; the overview had them reversed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12193647500/The-First-Ascent-of-Mt-Ranier-by-Way-of-Liberty-Ridge-on-Willis-Wall-September-28-October-1-1935",
+    "https://www.mountainguides.com/rnr-liberty.shtml"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_liberty_ridge_finish",
+     "fact": "Which wall is on which side of Liberty Ridge",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "the Liberty Wall to climber's left, the infamous Willis Wall to the right",
+     "replace": "the infamous Willis Wall to climber's left, the Liberty Wall to the right"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Commitment and ice grade",
+   "verdict": "fixed",
+   "correct_value": "Grade IV, AI2-3",
+   "evidence": "One route database lists Liberty Ridge as Grade IV, AI2-3 steep snow. The Mazamas route listing says grade IV with sustained alpine ice 2-3. A trip report also grades it IV 60°. None supports IV-V or AI3+; the grade column and the partner-skill line now match the chips.",
+   "sources": [
+    "https://www.mountainproject.com/route/106459197/liberty-ridge",
+    "https://mazamas.org/activity/instance/3614/detail/",
+    "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_liberty_ridge_finish",
+     "fact": "Commitment and ice grade",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Grade IV-V, AI3+",
+     "value": "Grade IV, AI2-3"
+    },
+    {
+     "id": "wa_liberty_cap_liberty_ridge_finish",
+     "fact": "Commitment and ice grade",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "find": "up to AI3+",
+     "replace": "up to AI2-3"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Location of the technical crux",
+   "verdict": "fixed",
+   "correct_value": "The summit bergschrund below Liberty Cap is usually the technical crux; the Thumb Rock ice step is a short steep alternative to a traverse.",
+   "evidence": "One route description says climbers must be prepared for short vertical ice sections to pass the bergschrund, and that the 70-80 degree step at Thumb Rock can be bypassed by a traverse. Guide and trip-report material describes the bergschrund just below Liberty Cap as often or usually the crux, ranging from a steep ramp to WI3. The row's hazards, itinerary and waypoints already agree.",
+   "sources": [
+    "https://www.mountainproject.com/route/106459197/liberty-ridge",
+    "https://www.mountainguides.com/pdf/rnr-liberty.pdf",
+    "http://www.markpthomas.com/mountaineering/trip-reports/washington/mt-rainier-liberty-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_liberty_ridge_finish",
+     "fact": "Location of the technical crux",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "This represents the crux of Liberty Ridge and is where parties often spend significant time.",
+     "replace": "It is one of the steepest steps on the route and is where parties often spend significant time; the summit bergschrund higher up is usually the technical crux."
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Season start vs White River Road opening",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The variant's early-May start is a conditions window. Before the White River Road opens to cars (target around May 22), NPS allows walking and biking on the park road, and early-May Liberty Ridge ascents happen. The road status describes vehicle opening only, so the two are compatible.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2026/05/conditions-and-permit-update-camp.html",
+    "https://www.nps.gov/mora/learn/news/spring-opening.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Columbia Crest elevation and summit status (pro_tips vs overview)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Columbia Crest measured about 14,389 ft in 2024 and is no longer the high point; the southwest rim (~14,400 ft) is.",
+   "evidence": "The overview says a 2024 GPS survey found the southwest rim (~14,400 ft) higher than Columbia Crest (~14,389 ft), but pro_tips still called Columbia Crest the true summit at 14,411 ft. Three outlets report the August 2024 survey: Columbia Crest 14,389.2 ft and southwest rim 14,399.6 ft.",
+   "sources": [
+    "https://www.spokesman.com/stories/2024/oct/08/mount-rainier-is-shrinking-and-now-has-a-new-summi/",
+    "https://www.seattlemet.com/travel-and-outdoors/2024/09/mount-rainier-shorter-gps-summit",
+    "https://explorersweb.com/mount-rainier-has-shrunk-and-its-summit-location-has-changed/"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_liberty_ridge_finish",
+     "fact": "Columbia Crest elevation and summit status (pro_tips vs overview)",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "to true summit Columbia Crest (14,411 ft)",
+     "replace": "to the mountain's true summit, now the crater's southwest rim (about 14,400 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Total gain: gain_ft vs itinerary",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft is 9700, but the itinerary days sum to 9,900 ft (3000+3600+3300) and itinerary.totalNote says roughly 9,900 ft of gain. No outside source giving the car-to-car gain for this route was found, so nothing was changed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Liberty Cap elevation (overview 14,097 vs summit pin and high_point_ft 14,112)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The overview gives Liberty Cap as 14,097 ft, while the summit waypoint and high_point_ft say 14,112 ft (a guide service also uses 14,112). The two figures probably come from different vertical datums, and this was not researched to settlement. The Ptarmigan row has the same split (waypoint 14097, high_point_ft 14112).",
+   "sources": [
+    "https://www.mountainguides.com/rnr-liberty.shtml"
+   ],
+   "patches": []
+  }
+ ]
+}

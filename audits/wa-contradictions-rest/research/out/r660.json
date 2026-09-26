@@ -1,0 +1,346 @@
+{
+ "file": "r660.json",
+ "results": [
+  {
+   "id": "wa_little_tahoma_cowlitz_ingraham_glaciers",
+   "fact": "High camp: Camp Muir vs camps below it on the traverse",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Bivy-only dispute. The single Camp Muir entry does not serve this route: approach, approach_variants, beta, pitch_detail and itinerary all leave the Muir track near 8,600 ft and camp on the Cowlitz/Ingraham glaciers or Cathedral Rocks cleaver. Left to the camping clean-up; no bivy patch written.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "fact": "Season window vs June optimal",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's argument against June rests on road.status/closures ('opens late June to early July'), but that describes the Sunrise Road: the park's opening schedule lists the White River Road to the campground lot (which passes the Fryingpan Creek trailhead) about a month earlier (e.g. May 25 vs June 22 for Sunrise), and the park's trailhead page says the road is open June-October. Late-May and June ascents of Little Tahoma are commonly reported. So June may well be a valid window and the Jul-Sep season plus the road text may be what is wrong; not settled by two agreeing sources on the climbing window, so no patch. The same road.status/closures wording appears on the East Shoulder row.",
+   "sources": [
+    "https://www.nps.gov/mora/learn/news/spring-opening.htm",
+    "https://www.nps.gov/places/summerland-trailhead.htm",
+    "https://www.summitpost.org/2021-05-30-little-tahoma-trip-report/1061304"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "fact": "Trailhead distance past White River entrance",
+   "verdict": "fixed",
+   "correct_value": "about 3 miles (2.9 mi) past the White River entrance",
+   "evidence": "The park's Summerland Trailhead page puts the trailhead three miles past the White River Entrance near the Fryingpan Creek bridge; the WTA hike page gives 2.9 miles; a Rainier visitor guide also says about three miles. The approach's '5 miles' is wrong.",
+   "sources": [
+    "https://www.nps.gov/places/summerland-trailhead.htm",
+    "https://www.wta.org/go-hiking/hikes/summerland-panhandle-gap",
+    "https://visitrainier.com/summerland/"
+   ],
+   "patches": [
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Trailhead distance past White River entrance",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 5 miles past the White River entrance station",
+     "replace": "about 3 miles past the White River entrance station"
+    }
+   ]
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "fact": "Parking pass / climbing permit",
+   "verdict": "fixed",
+   "correct_value": "NPS entrance fee (no NW Forest Pass); climbing registration + $82 fee required on glaciers/above 10,000 ft",
+   "evidence": "The park's climbing page requires registration and an $82 per-person cost-recovery fee for anyone on a glacier or above ~10,000 ft; the park climbing-ranger permits page states the same fee and in-person registration. The route is inside Mount Rainier NP, where the park entrance fee applies, not a USFS Northwest Forest Pass.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Parking pass / climbing permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "value": "Inside the national park, so a Northwest Forest Pass does not apply; the park entrance fee does. Climbing registration and the per-person climbing fee are required before going onto a glacier or above 10,000 ft."
+    }
+   ]
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "fact": "Summit timing vs turnaround",
+   "verdict": "fixed",
+   "correct_value": "Pre-dawn alpine start (~2:00 AM) so the summit is reached around 8 AM and the block is left by mid-morning; leg durations unchanged",
+   "evidence": "A guided itinerary for this route leaves Meany Crest early 'to get near the summit by sunrise', with 5-6 hours camp to summit; a club trip report on the East Shoulder records a 1:40 AM start. Both support the turnaround and the day note's own 'alpine start', not a 6:30 AM departure. The schedule was shifted earlier by 4.5 hours keeping every leg's duration.",
+   "sources": [
+    "https://www.alpineascents.com/climbs/little-tahoma/itinerary/",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-little-tahoma-east-shoulder-4"
+   ],
+   "patches": [
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Summit timing vs turnaround",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": "6:30 AM from camp",
+     "value": "2:00 AM from camp"
+    },
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Summit timing vs turnaround",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "time"
+     ],
+     "expect": "6:30 AM",
+     "value": "2:00 AM"
+    },
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Summit timing vs turnaround",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "time"
+     ],
+     "expect": "8:30 AM",
+     "value": "4:00 AM"
+    },
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Summit timing vs turnaround",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "time"
+     ],
+     "expect": "~12:45 PM",
+     "value": "~8:15 AM"
+    },
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Summit timing vs turnaround",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "time"
+     ],
+     "expect": "4:30 PM",
+     "value": "12:00 PM"
+    }
+   ]
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "fact": "Summit finish class (Class 2-3 in itinerary vs Class 3-4 grade)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Class 3-4",
+   "evidence": "Same finding as on the East Shoulder row (same line): route sources describe the final summit scramble as short, exposed Class 3-4 (the final step Class 4); grade and rock_grade on this row agree. The itinerary's 'Class 2-3' finish understates it.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-little-tahoma-east-shoulder",
+    "https://summitborn.com/little-tahoma-peak-mountain-guide/"
+   ],
+   "patches": [
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Summit finish class (Class 2-3 in itinerary vs Class 3-4 grade)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "a short Class 2-3 rock finish",
+     "replace": "a short Class 3-4 rock finish"
+    },
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Summit finish class (Class 2-3 in itinerary vs Class 3-4 grade)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "a short Class 2-3 scramble",
+     "replace": "a short Class 3-4 scramble"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "fact": "High camp elevation and distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Meany Crest is given as ~7,500 ft by a trip report and ~7,200 ft by a guided itinerary, so the itinerary's ~7,900 ft could describe the separate toe-of-Fryingpan camp (also listed in bivy) rather than an error. The clear defect is day 1 miles=4, shorter than the 4.1-4.5 mi to Summerland alone, but no source gives the trailhead-to-camp distance, and changing the camp elevation would break the day's gainFt (3,900+4,000). Left unpatched.",
+   "sources": [
+    "https://www.summitpost.org/little-tahoma-wasn-t-so-little-after-all/904624",
+    "https://www.alpineascents.com/climbs/little-tahoma/itinerary/",
+    "https://www.wta.org/go-hiking/hikes/summerland-panhandle-gap"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "fact": "Rappel on descent",
+   "verdict": "fixed",
+   "correct_value": "No rappel required; most downclimb the summit block, an old anchor allows an optional short rappel",
+   "evidence": "A SummitPost trip report notes an old rappel anchor on the summit scramble that proved useful for the descent, and club trip reports rig anchors/fixed lines on the summit block; a guided itinerary simply reverses the route to camp with no rappel. So a rappel is optional, not 'common' and not impossible.",
+   "sources": [
+    "https://www.summitpost.org/little-tahoma-wasn-t-so-little-after-all/904624",
+    "https://www.mountaineers.org/activities/trip-reports/little-tahoma-east-shoulder",
+    "https://www.alpineascents.com/climbs/little-tahoma/itinerary/"
+   ],
+   "patches": [
+    {
+     "id": "wa_little_tahoma_east_shoulder",
+     "fact": "Rappel on descent",
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "0",
+     "value": "None required; most parties downclimb the summit block, though an old anchor on the final step allows an optional short rappel."
+    },
+    {
+     "id": "wa_little_tahoma_east_shoulder",
+     "fact": "Rappel on descent",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "old anchors may be found, and a rappel is common on the way down.",
+     "replace": "old anchors may be found, and some parties use them for a short rappel on the way down."
+    },
+    {
+     "id": "wa_little_tahoma_east_shoulder",
+     "fact": "Rappel on descent",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "downclimb the summit block,",
+     "replace": "downclimb the summit block (or make a short rappel from the old anchor),"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "fact": "Summit block difficulty",
+   "verdict": "fixed",
+   "correct_value": "Class 3-4",
+   "evidence": "Route descriptions give the East Shoulder finish as Class 3-4 with a short, very exposed Class 4 final scramble (~30 ft); grade, rock_grade, pitch_detail and climbing_route agree. The itinerary's 'Class 2-3' is the outlier.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-little-tahoma-east-shoulder",
+    "https://summitborn.com/little-tahoma-peak-mountain-guide/"
+   ],
+   "patches": [
+    {
+     "id": "wa_little_tahoma_east_shoulder",
+     "fact": "Summit block difficulty",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "Class 2-3 rock finish",
+     "replace": "Class 3-4 rock finish"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "fact": "Fryingpan Creek crossing location",
+   "verdict": "fixed",
+   "correct_value": "~3.2 mi, ~5,200 ft",
+   "evidence": "A Rainier visitor guide puts the Fryingpan Creek footbridge about 3 miles in at 5,250 ft; a waterfall survey gives 3.4 miles to the footbridge, beside falls at 5,181 ft. Both agree with approach_variants (3.2 mi, ~1,400 ft above a 3,800-3,900 ft trailhead); the waypoint's 2 mi / 4,300 ft is wrong. Pin coordinates left untouched (out of scope).",
+   "sources": [
+    "https://visitrainier.com/summerland-and-panhandle-gap/",
+    "https://www.waterfallsnorthwest.com/index.php/waterfall/Upper-Fryingpan-Creek-Falls-13541"
+   ],
+   "patches": [
+    {
+     "id": "wa_little_tahoma_east_shoulder",
+     "fact": "Fryingpan Creek crossing location",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 2,
+     "value": 3.2
+    },
+    {
+     "id": "wa_little_tahoma_east_shoulder",
+     "fact": "Fryingpan Creek crossing location",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4300,
+     "value": 5200
+    }
+   ]
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "fact": "Climbing registration: self-issue or not",
+   "verdict": "fixed",
+   "correct_value": "Summer: no self-registration, register in person at a wilderness information center after paying online; self-registration only in winter",
+   "evidence": "The park's climbing page says there is NO self-registration in summer (May 22-Sep 30) and self-registration at Paradise only in winter; the park climbing-ranger permits page says permits must be picked up in person at a ranger station. access.permit's 'self-issued for free' is wrong for this summer route. The Sept 15/16-30 overlap in access.notes mirrors the park's own published season dates, so it was left as is.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+    "https://mountrainierclimbing.blogspot.com/p/climbing-fee-and-registration.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_little_tahoma_east_shoulder",
+     "fact": "Climbing registration: self-issue or not",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "(self-issued for free after paying the $82 climbing fee)",
+     "replace": "(pay the $82 climbing fee online first; in summer, registration is done in person at a wilderness information center, and self-registration is available only in winter)"
+    }
+   ]
+  }
+ ]
+}

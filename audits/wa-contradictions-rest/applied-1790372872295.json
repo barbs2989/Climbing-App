@@ -1,0 +1,95 @@
+{
+ "applied": [
+  {
+   "id": "wa_chimney_peak_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Direction of the peak from the chalet"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_chimney_peak_standard",
+   "before": {
+    "itinerary": {
+     "cal": "Enchanted Valley is a quota/reservation permit zone; the May 15-Oct 15 season's permits release online on April 15, and bear canisters are required in the valley.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the East Fork Quinault River Trail from Graves Creek Trailhead (~600 ft) through old-growth rainforest to the historic Enchanted Valley Chalet (~2,035 ft). Grade is gentle and well-graded almost the whole way, with the trail gaining elevation gradually alongside the river. Camp in the quota zone near the chalet, with a view of Chimney Peak's cliffs and waterfalls to the west.",
+       "hours": 7.5,
+       "miles": 13.5,
+       "title": "Approach to Enchanted Valley Chalet",
+       "gainFt": 2000,
+       "lossFt": 500,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach the Enchanted Valley Chalet camp"
+      },
+      {
+       "n": 2,
+       "note": "An alpine-start, out-and-back day climb straight off camp: leave the trail and climb steep, brushy off-trail terrain gaining roughly 4,900 ft in under a mile to reach the SW ridge, then follow class 3 scrambling along the ridge to the 6,917-ft summit. Terrain is notably steep and slide-alder/brush-choked low down (typical of Olympic peak approaches) before opening onto rock near the ridge crest; descend the same way.",
+       "hours": 11,
+       "miles": 2,
+       "title": "Summit day: SW ridge of Chimney Peak",
+       "gainFt": 4900,
+       "lossFt": 4900,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Alpine start from chalet camp",
+         "detail": "Leave most gear in camp; carry a light day pack."
+        },
+        {
+         "time": "5:00 AM",
+         "label": "Leave the trail, begin off-trail ascent",
+         "detail": "Steep brush and forest low on the SW ridge/drainage."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Break out above brushline",
+         "detail": "Terrain opens to class 2-3 rock and heather benches."
+        },
+        {
+         "time": "~12:30 PM",
+         "label": "Class 3 scrambling to the summit ridge",
+         "detail": "Final scramble along the SW ridge crest."
+        },
+        {
+         "time": "~1:30 PM",
+         "label": "Summit (6,917 ft)",
+         "detail": "Views over Enchanted Valley and the Anderson massif."
+        },
+        {
+         "time": "~3:30 PM",
+         "label": "Descend, back at camp by evening",
+         "detail": "Reverse the ridge and brushy drainage; expect a long, tiring descent."
+        }
+       ],
+       "objective": "Climb Chimney Peak's SW ridge and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Retrace the East Fork Quinault River Trail back down to Graves Creek Trailhead. Same easy grade as the approach, just in reverse; tired legs from the summit day make this feel longer than Day 1.",
+       "hours": 7.5,
+       "miles": 13.5,
+       "title": "Hike out",
+       "gainFt": 500,
+       "lossFt": 2000,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to Graves Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night backpack: ~27 miles and ~4,000 ft round trip on trail to/from Enchanted Valley Chalet, plus a very steep, brushy ~4,900 ft off-trail class 3 scramble day to the summit and back. Parties wanting a buffer or rest day often stretch it to 4 days."
+    }
+   }
+  }
+ ]
+}

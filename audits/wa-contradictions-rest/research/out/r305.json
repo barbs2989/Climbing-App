@@ -1,0 +1,366 @@
+{
+ "file": "r305.json",
+ "results": [
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Granite Pass elevation",
+   "verdict": "fixed",
+   "correct_value": "Granite Pass ~6,300 ft (waypoint 6270 stands)",
+   "evidence": "Two independent trail descriptions put Granite Pass at 6,270 ft and 6,300 ft, and a third lists 6,300 ft; the pass sits about 1.25 mi and several hundred feet below Cutthroat Pass. The 6,600 ft in the approach prose was a copy of the Cutthroat Pass figure.",
+   "sources": [
+    "https://musthikemusteat.com/sr-20-north-cascade-hwy/snowy-lakes/",
+    "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes",
+    "https://www.theoutbound.com/washington/backpacking/camp-at-snowy-lakes"
+   ],
+   "patches": [
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Granite Pass elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "find": "Granite Pass (~6,600 ft, roughly",
+     "replace": "Granite Pass (~6,300 ft, roughly",
+     "path": []
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Granite Pass elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Granite Pass at about 6,600 ft",
+     "replace": "Granite Pass at about 6,300 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Hardest climbing grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split: one club route page says the line should never exceed class 3 and the classic guide calls it class 3 (one commenter reads that as 10-15 ft of low fifth class); a scramble blog rates it class 3/4 and a trip report hit a wet class 4 slab while admitting it was off the easiest line. No two sources give a 5.4 crux, and none settle whether the hardest move is class 3, 4 or low fifth, so no patch.",
+   "sources": [
+    "https://hike2hike.com/scrambling/tower-mountain-golden-horn-north-cascades/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-23.3152422309",
+    "https://www.summitpost.org/standard-route/166242",
+    "https://www.mountaineers.org/activities/routes-places/tower-mountain-golden-horn"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "roughly 20-23 miles round trip",
+   "evidence": "One hiking-association page gives 23.0 mi round trip to Snowy Lakes; two independent trip write-ups give 20 mi and 20-22 mi. The row's itinerary (23 mi) agrees; the partner-requirements 11-13 mi is roughly the one-way figure.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/golden-horn",
+    "https://musthikemusteat.com/sr-20-north-cascade-hwy/snowy-lakes/",
+    "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes"
+   ],
+   "patches": [
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Round-trip distance",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "roughly 11-13 miles round trip",
+     "replace": "roughly 20-23 miles round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Whether the Snowy Lakes spur is signed",
+   "verdict": "bivy_zone_list",
+   "correct_value": "unsigned / poorly marked boot path",
+   "evidence": "Three independent write-ups call the spur unmarked or not well marked (look for a boot path); one hiking-association page calls it signed. The row's waypoint and watch_out (unsigned) match the majority; the only outlier is bivy[1].notes, which is owned by the camping clean-up, so no patch.",
+   "sources": [
+    "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes",
+    "https://www.theoutbound.com/washington/backpacking/camp-at-snowy-lakes",
+    "https://musthikemusteat.com/sr-20-north-cascade-hwy/snowy-lakes/",
+    "https://www.wta.org/go-hiking/hikes/golden-horn"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Water at Cutthroat Pass",
+   "verdict": "fixed",
+   "correct_value": "No water at Cutthroat Pass; fill up at the last stream below it (Porcupine Creek area)",
+   "evidence": "The PCT association trip page says there is no water at the pass and to fill up at Porcupine Creek below it; a hiking-association page describes 'a dry Cutthroat Pass'; a PCT section description names the Porcupine Creek crossing as the fill-up. The approach prose telling parties to top off at the pass is wrong.",
+   "sources": [
+    "https://explore.pcta.org/trips/rainy-pass-to-cutthroat-pass",
+    "https://www.wta.org/go-hiking/hikes/golden-horn",
+    "https://pctwashington.com/descriptions/section_l1"
+   ],
+   "patches": [
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Water at Cutthroat Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "find": "so top off water here, since little reliable water",
+     "replace": "so fill up at the last stream below the pass, since the pass itself is dry and little reliable water",
+     "path": []
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Water at Cutthroat Pass",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "SO TOP OFF AT THE PASS;",
+     "replace": "SO FILL UP AT THE LAST STREAM BELOW THE PASS, WHICH IS ITSELF DRY;"
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Overnight wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No overnight/wilderness permit required to camp at Snowy Lakes; Northwest Forest Pass to park",
+   "evidence": "A backpacking guide states no overnight permit is needed (Northwest Forest Pass for parking); a club backpack listing says the same; a climbing blog says no backcountry permit is needed since the peak is outside the national park. The route stays on national forest outside designated wilderness, so the self-issue wilderness permit claims in access.permit and the trailhead waypoint are the outliers.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/camp-at-snowy-lakes",
+    "https://www.mountaineers.org/activities/activities/backpack-rainy-pass-to-snowy-lakes",
+    "http://cnmtstuartclimbproject.blogspot.com/2017/09/route-tower-mountain-golden-horn-north.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Overnight wilderness permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "A free self-issue Wilderness permit (available at the trailhead kiosk) is required for overnight camping along this Okanogan-Wenatchee National Forest corridor, including Snowy Lakes camp. This is separate from the PCT long-distance permit",
+     "replace": "No overnight or wilderness permit is required to camp along this Okanogan-Wenatchee National Forest corridor, including Snowy Lakes camp. The PCT long-distance permit"
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Overnight wilderness permit",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "self-issue wilderness permit and Northwest Forest Pass required at the kiosk.",
+     "replace": "Northwest Forest Pass required to park; no overnight permit needed."
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Overnight wilderness permit",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "At the trailhead kiosk, fill out a self-issue wilderness permit and display a Northwest Forest Pass.",
+     "replace": "Display a Northwest Forest Pass to park; no overnight permit is needed for this stretch of trail."
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Summit-day time (timing.summitTimeHrs)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "summitTimeHrs (10) equals the whole day-2 section (climb plus hike-out), while the schedule reaches the summit about 3-3.5 h from camp. No outside source giving a camp-to-summit time for this route was found, so the value is left for the null-not-compute class repair.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Cutthroat Pass elevation",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "~6,800 ft",
+   "evidence": "The USGS topo name point at the row's own Cutthroat Pass coordinate reads about 6,834 ft; a hiking-association page and an independent trip report both give 6,800 ft. The row's 6,600 ft (waypoint, approach, approach variant) disagrees with its own bivy entry (6,800) and with these sources.",
+   "sources": [
+    "http://www.topozone.com/washington/skagit-wa/gap/cutthroat-pass/",
+    "https://www.wta.org/go-hiking/hikes/golden-horn",
+    "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes"
+   ],
+   "patches": [
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Cutthroat Pass elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 6600,
+     "value": 6800
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Cutthroat Pass elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "find": "Cutthroat Pass (~6,600 ft, ~4.9 mi)",
+     "replace": "Cutthroat Pass (~6,800 ft, ~4.9 mi)",
+     "path": []
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Cutthroat Pass elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Cutthroat Pass at about 6,600 ft",
+     "replace": "Cutthroat Pass at about 6,800 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Snowy Lakes spur position relative to Methow Pass",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The Snowy Lakes spur leaves the PCT about a mile BEFORE (south of) Methow Pass; the approach never crosses Methow Pass",
+   "evidence": "A hiking-association page says to take the Snowy Lakes trail about a mile before Methow Pass; a PCT section description puts the Snowy Lake side trail at 9.5 mi and Methow Pass at 10.5 mi. The row's approach, approach variant, spur waypoint directions and descent all send parties over Methow Pass first, which is wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/golden-horn",
+    "https://pctwashington.com/descriptions/section_l1"
+   ],
+   "patches": [
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Snowy Lakes spur position relative to Methow Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "find": "loses a bit of elevation, and climbs again to Methow Pass (~9 mi). Roughly 10 miles in, just past Methow Pass at about 6,300 ft,",
+     "replace": "and loses a bit of elevation into a meadowed basin. Roughly 9.5-10 miles in, about a mile short of Methow Pass at about 6,300 ft,",
+     "path": []
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Snowy Lakes spur position relative to Methow Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "find": "Cutthroat/Granite/Methow pass rollercoaster",
+     "replace": "Cutthroat/Granite pass rollercoaster",
+     "path": []
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Snowy Lakes spur position relative to Methow Pass",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "loses a little elevation and climbs again to Methow Pass at about 9 miles.\n\nRoughly 10 miles in, just past Methow Pass at about 6,300 ft,",
+     "replace": "loses a little elevation into a meadowed basin.\n\nRoughly 9.5-10 miles in, about a mile before Methow Pass at about 6,300 ft,"
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Snowy Lakes spur position relative to Methow Pass",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "over Cutthroat, Granite and Methow Passes to Snowy Lakes",
+     "replace": "over Cutthroat and Granite Passes to Snowy Lakes"
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Snowy Lakes spur position relative to Methow Pass",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "directions"
+     ],
+     "find": "crosses a blasted-out cliff cut, loses a little elevation, then climbs again over Methow Pass. Keep going past Methow Pass and watch",
+     "replace": "crosses a blasted-out cliff cut, and loses a little elevation into a meadowed basin. About a mile before Methow Pass, watch"
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Snowy Lakes spur position relative to Methow Pass",
+     "op": "replace_text",
+     "column": "descent_text",
+     "find": "hike out via Methow Pass, Granite Pass, and Cutthroat Pass",
+     "replace": "hike out via Granite Pass and Cutthroat Pass",
+     "path": []
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Spur climbs UP to Snowy Lakes, not down",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The spur climbs ~400-600 ft up to the lakes",
+   "evidence": "A hiking-association page describes well-graded switchbacks up about half a mile to Lower Snowy Lake; a PCT section description gives 0.8 mi and 634 ft of climbing to Snowy Lake. The row's own waypoints agree (spur 6,230 ft, camp 6,700 ft); the day-1 note and timing note saying 'down into' the basin are wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/golden-horn",
+    "https://pctwashington.com/descriptions/section_l1"
+   ],
+   "patches": [
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Spur climbs UP to Snowy Lakes, not down",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "short side trip down into the Snowy Lakes basin",
+     "replace": "short side trip up into the Snowy Lakes basin"
+    },
+    {
+     "id": "wa_tower_mountain_southwest_route",
+     "fact": "Spur climbs UP to Snowy Lakes, not down",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "short side trip down into the Snowy Lakes basin",
+     "replace": "short side trip up into the Snowy Lakes basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "fact": "Mileage to the Snowy Lakes spur",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The row puts the spur at ~mile 9.2 (watch_out), 10.5 (waypoint distMi) and ~10 (approach). Outside figures also scatter: 9.2, 9.5 and 10.5 mi in three write-ups, so no two agree closely enough to pick one.",
+   "sources": [
+    "https://musthikemusteat.com/sr-20-north-cascade-hwy/snowy-lakes/",
+    "https://pctwashington.com/descriptions/section_l1",
+    "https://www.theoutbound.com/washington/backpacking/camp-at-snowy-lakes"
+   ],
+   "patches": []
+  }
+ ]
+}

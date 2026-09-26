@@ -1,0 +1,357 @@
+{
+ "file": "r105.json",
+ "results": [
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "Total round-trip distance for the Walrus Glacier itinerary",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: day miles now 7.5+8+7.5 = 23 and totalNote says roughly 23 miles, matching the approach's ~22-23 mi and dist_km's 11.5 mi one way.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "Total gain for the Walrus Glacier itinerary",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: itinerary days now sum to 3,100+3,400 = 6,500 ft and totalNote says 6,500 ft, matching gain_ft 6500.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "Boulder Basin camp elevation",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Camps in Boulder Basin sit at roughly 4,900-5,300 ft",
+   "evidence": "Within the row, the Boulder Basin camp waypoint (5,300), the approach prose (4,900-5,300), approach_variants[1] (~5,300) and itinerary day 1's own 3,100 ft of gain from a 2,300 ft trailhead all put camp near 5,300 ft; only the day-1 note and schedule say up to 6,000 ft. One trip report reaches the basin camp after about 3,000 ft of gain from the 2,300 ft trailhead (~5,300 ft). No second external source gave an explicit camp elevation.",
+   "sources": [
+    "http://trailcatjim.com/clark-mtn-via-walrus-glacier-2013/"
+   ],
+   "patches": [
+    {
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Boulder Basin camp elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Camp in the basin anywhere from about 4,900 to 6,000 ft",
+     "replace": "Camp in the basin anywhere from about 4,900 to 5,300 ft"
+    },
+    {
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Boulder Basin camp elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Campsites spread from about 4,900 to 6,000 ft",
+     "replace": "Campsites spread from about 4,900 to 5,300 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "Aspect/face of the documented Walrus Glacier line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two sources agree the Walrus Glacier is on Clark's east side (reached by wrapping around the eastern arm from a bench above Boulder Pass), so the glacier line is not a west-aspect climb. But this row deliberately bundles two lines under the name 'West Ridge / Walrus Glacier' (face 'West Ridge'), and name/face are out of scope; a single aspect value cannot describe both, so choosing W or E (or splitting the route) is a product decision rather than a research fix.",
+   "sources": [
+    "http://trailcatjim.com/clark-mtn-via-walrus-glacier-2013/",
+    "https://wenatcheeoutdoors.org/2016/05/20/clark-mountain-walrus-glacier/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Clark-specific",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "'Boulder Pass and Thunder Basin, White River' serves this route; the Mackinaw Shelter (North Fork Sauk), White Pass/Foam Creek benches, Glacier Gap and Kennedy Ridge/Glacier Creek entries are Glacier Peak camps and do not serve Clark. Left to the separate camping clean-up; no bivy patch written.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_milk_n_honey",
+   "fact": "Route distance — dist_km (4.0 mi) vs itinerary total miles (10.6 mi)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance ('Approach (one way)') while itinerary miles are the car-to-car day total; the two measure different quantities and agree once halved.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_milk_n_honey",
+   "fact": "Total gain/loss — 4,760 ft (gain_ft/loss_ft) vs 4,100 ft (itinerary day)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: itinerary day gainFt/lossFt now 4760/4760, matching gain_ft/loss_ft.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Rope length recommended — 25-30 m (gear/rack) vs 60 m (detailed_rack/rope_length_m/pro_tips)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: gear and rack now both say a single 60 m rope that covers the ~25 m descent rappel.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Overnight permit fee — 'none beyond parking' vs the $5-6 lottery fees stated in the same access block",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: access.fees now reads 'Day climbs: free. Overnight lottery: $6 non-refundable application fee, then $5/person/day if selected', consistent with _raw.permit_cost; notes no longer quote a different figure.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Approach side of Colchuck Lake — waypoint routes via Aasgard Pass (west) while approach/approach_variants explicitly say EAST shoreline only",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The NW Ridge is approached from the east side of Colchuck Lake up the obvious gully to the notch above Jabberwocky Tower, not via the Aasgard Pass boot path",
+   "evidence": "A detailed trip report for this exact route approaches from the east side of Colchuck Lake, up the obvious gully to the notch above Jabberwocky Tower, then Class 3 onto the NW Ridge; it does not use the Aasgard path. The area-level description of the Aasgard-path-then-bushwhack approach is the one used for the west-face wall routes. Inside the row, approach, approach_variants (notes and baseFinding), pro_tips[0] and the itinerary note all agree on the east-side gully; only waypoint 3's name and note describe the Aasgard break.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+    "https://www.mountainproject.com/area/105806030/colchuck-balanced-rock"
+   ],
+   "patches": [
+    {
+     "id": "wa_nw_ridge_2",
+     "fact": "Approach side of Colchuck Lake — waypoint routes via Aasgard Pass (west) while approach/approach_variants explicitly say EAST shoreline only",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "name"
+     ],
+     "find": "Aasgard Pass Gully Break",
+     "replace": "East-shore gully to the Jabberwocky notch"
+    },
+    {
+     "id": "wa_nw_ridge_2",
+     "fact": "Approach side of Colchuck Lake — waypoint routes via Aasgard Pass (west) while approach/approach_variants explicitly say EAST shoreline only",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "Leave the Aasgard Pass boot path ~400 ft above the lake, traverse brush to the gully leading to Balanced Rock.",
+     "replace": "From the lake's eastern shoreline and talus, climb the obvious loose gully toward the notch above Jabberwocky Tower; the upper part is rope-up terrain, and Class 3 ground leads from the notch onto the NW Ridge."
+    }
+   ]
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Round-trip distance — dist_km (5.0 mi) vs itinerary/approach's stated ~18.5 km / 11.5 mi round trip",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (8 km ≈ 5 mi) is the one-way approach figure and sits close to the summit waypoint's 5.5 mi; the ~18.5 km / 11.5 mi in the approach prose and itinerary is explicitly round trip. Different quantities, no disagreement.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "fact": "Does The Scoop reach the standard single-rappel walk-off? descent_text says NO, descent/rappel_count_note say YES",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: descent_text now says parties who top out can use the standard single 30 m rappel and walk-off, with rappelling the route on two 60 m ropes as the alternative, matching descent, rappels and rappel_count_note.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "fact": "Commitment grade — Grade IV (in `grade`) vs commitment III",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No external source found gives a roman commitment grade for the West Face: the route page lists only 5.11+, trad, 9 pitches; a detailed trip report gives 5.11+/12-, 8+ pitches, 850 ft; the first-winter-ascent note gives 300 m, 5.11+; the encyclopedia list gives only the YDS grade. Sibling routes on the same wall are published at III (The Scoop, Scarface, Leche La Vaca) and IV (Let it Burn, Tempest Wall), so neither value can be inferred. Needs a source that states the grade.",
+   "sources": [
+    "https://www.mountainproject.com/route/105806033/west-face",
+    "https://stephabegg.com/trip-reports/washington/cbr-west-face/",
+    "http://publications.americanalpineclub.org/articles/13201212209/Colchuck-Balanced-Rock-west-face-first-winter-ascent",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "fact": "Crux/route grade — 5.11 (`grade`) vs 5.11+ (`rock_grade`) vs 5.11+/5.12- (pitch_detail crux)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: grade now reads 'Grade IV, 5.11+', matching rock_grade 5.11+; the crux pitch's 5.11+/5.12- is a stated range whose lower bound is the route grade.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "fact": "Total ascent gain/loss — 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: gain_ft/loss_ft and the itinerary day now all read 4,760 ft; the approach's 2,280 ft is explicitly trailhead-to-lake only.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance ('Approach (one way)') while itinerary miles are the car-to-car day total; the two measure different quantities and agree once halved.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "fact": "Whether the summit rappel is mandatory or optional",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: descent now says the ~30 m rappel 'can be skipped by scrambling around the summit block', matching descent_text's 'optional'.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance ('Approach (one way)') while itinerary miles are the car-to-car day total; the two measure different quantities and agree once halved.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "External sources disagree: the route's own page lists it as Trad, 5 pitches, Grade III, with pitch 5 being ~100 m of 4th-class to low-5th terrain toward the summit (simul-climbed), which is exactly the P5 the row's beta, pro_tips and watch_out describe; the encyclopedia's route list gives 4 pitches. Inside the row, pitches=5, beta, pro_tips and watch_out count 5, while overview, pitch_detail (4 rows, P4 ending in a scramble), the itinerary schedule and descent_text count 4. Whether the final simul-climbed section is a pitch is a counting convention, and the two sources split; no patch written.",
+   "sources": [
+    "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance ('Approach (one way)') while itinerary miles are the car-to-car day total; the two measure different quantities and agree once halved.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_let_it_burn",
+   "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: beta now describes P1-P9 with the 5.12a crux on P3 past two bolts, matching pitches=9, pitch_detail and the overview.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_let_it_burn",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance ('Approach (one way)') while itinerary miles are the car-to-car day total; the two measure different quantities and agree once halved.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_scarface_3",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's own page gives 'Trad, 5+ pitches, 1,200 ft, Grade III', and the first-ascent trip report title gives III 5.10+ without a count that could be read. '5+' supports neither a flat 5 nor 6: pitch_detail and the itinerary say 5, pitches says 6, overview says 5+. No second source pins the number, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/108157279/scarface",
+    "https://cascadeclimbers.com/forum/topic/75607-tr-colchuck-balanced-rock-scarface-iii-510-8152010/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_scarface_3",
+   "fact": "Whether the summit rappel is mandatory or optional",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: descent now says the ~30 m rappel can be skipped by scrambling around the summit block, matching descent_text.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_scarface_3",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance ('Approach (one way)') while itinerary miles are the car-to-car day total; the two measure different quantities and agree once halved.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_tipping_point",
+   "fact": "Descent describes only the mid-route bail, not the standard full-route (summit) finish",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: descent and descent_text now both give the standard summit descent after the full route first, and the two 40 m Sky Lounge rappels as the retreat from the lower half, matching rappels and bail.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "fact": "Whether the summit rappel is mandatory or optional",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: descent now says the rappel can be skipped by scrambling around the summit block, matching descent_text.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach distance ('Approach (one way)') while itinerary miles are the car-to-car day total; the two measure different quantities and agree once halved.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_tempest",
+   "fact": "Published timing labels swap 'climb' and 'descent'",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: sectionBreakdown now labels the 3 h hike-in Approach, the 14 h day Climb and the 3 h hike-out Descent, and totalHrs 20 equals their sum; itinerary agrees.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "fact": "Total elevation gain to the col",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: approach now says about 2,500 ft above the lake or roughly 4,600 ft from the trailhead, and the itinerary gain/loss is 4,600, matching gain_ft and the waypoints (3,400 to 8,000 ft). The route page also gives ~2,500 ft, consistent with that being above the lake.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_the_balanced_rock",
+   "fact": "Boulder problem grade: V1 vs V2",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: approach now calls it the short V1 boulder problem, matching grade, rock_grade and overview (the route's page also lists V1).",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

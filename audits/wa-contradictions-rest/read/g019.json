@@ -1,0 +1,1934 @@
+{
+ "batches": [
+  "b073.json",
+  "b074.json",
+  "b075.json",
+  "b076.json"
+ ],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "name": "West Ridge",
+   "area": "North Twin Sister",
+   "contradictions": [
+    {
+     "fact": "Access fees / passes / landowner permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None — no climbing fee (National Forest, not Mount Rainier NP)"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at most trailheads — $30/year or $5/day."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No federal pass is required at the private logging-road gate itself"
+      },
+      {
+       "field": "permit",
+       "says": "carry a Discover Pass where parking on DNR land"
+      },
+      {
+       "field": "what_to_bring[0]",
+       "says": "Weyerhaeuser day-use recreation permit (confirm/purchase before driving out)"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "most recently reported by climbers as Hampton Family Forests, formerly Olivine Corp./Weyerhaeuser) — a fee recreational permit is required"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "The landowner now runs a fee recreation permit covering this block of forestland"
+      }
+     ],
+     "why": "The page says no fee, a Northwest Forest Pass, a Discover Pass, and a paid landowner recreation permit (named both Weyerhaeuser and Hampton) for the same gate.",
+     "internal_resolution": "pro_tips[3] and bivy[1].permit agree on a current paid landowner (Hampton) recreation permit; access.fees 'None' and the NW Forest Pass/Mount Rainier boilerplate look like template text",
+     "needs_research": true
+    },
+    {
+     "fact": "Camping on the private timberland",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland; no wilderness permit or registration is needed."
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "no campfires at any time, and no camping"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Camping is legal on the forest side and not on the timber company side"
+      }
+     ],
+     "why": "One field says camping on the private timberland is unregulated; the camp cards say camping there is prohibited.",
+     "internal_resolution": "Both bivy cards agree camping on the timber-company land is not allowed",
+     "needs_research": false
+    },
+    {
+     "fact": "Stay-left vs climber's-right on the ridge",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "staying generally on the climber's-right/west side to avoid the hardest moves"
+      },
+      {
+       "field": "pro_tips[4]",
+       "says": "Stay left (west side) of the ridge crest near the false summits — straying right leads into harder, looser, exposed terrain."
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the West Ridge (stay left/west of the crest)"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "staying on the correct/left side of the ridge — straying right leads into unintended class 5 terrain"
+      }
+     ],
+     "why": "The beta tells the climber to keep climber's-right while pro_tips and partner requirements say stay left and that straying right leads to class 5.",
+     "internal_resolution": "pro_tips, partner_requirements and hazards all say 'stay left'; beta's 'climber's-right' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Road-end / bike-stash elevation and how much gain remains",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Gated logging roads (bike-friendly) to roughly 4,900 ft"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 5-6 miles with about 2,000-2,500 ft of gain on private-timberland logging roads"
+      },
+      {
+       "field": "bivy[1].elev",
+       "says": "3170"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "roughly five miles and two thousand feet of road above the river bridge ... shoulder the pack for the last three thousand feet"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "bike/hike ~5-6 miles of logging road to the ridge toe, then climb ~1 mile and ~1,500 vertical ft"
+      }
+     ],
+     "why": "The road ends at ~3,200 ft per the approach and camp card but at ~4,900 ft per the route breakdown, and 1,200 + 2,500 + 1,500 ft of climbing does not reach the 6,644 ft summit.",
+     "internal_resolution": "approach, bivy[1] (3,170 ft) agree on a road end near 3,200 ft; pitch_detail's 4,900 ft and the '~1,500 vertical ft' remainder are the outliers",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs total time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary",
+       "says": "roughly 6-7 hours from trailhead to summit and 4-5 hours back down"
+      }
+     ],
+     "why": "summitTimeHrs holds the car-to-car total, while the itinerary puts the summit 6-7 hours in.",
+     "internal_resolution": "itinerary prose gives 6-7 hr to the summit; summitTimeHrs = totalHrs is the car-to-car figure",
+     "needs_research": false
+    },
+    {
+     "fact": "North-face glissade season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "In early season (roughly May-June), many parties instead glissade"
+      },
+      {
+       "field": "best_season",
+       "says": "The north-face glissade descent option is best taken in June-July"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      }
+     ],
+     "why": "The glissade window is May-June in one field and June-July in another, and it sits largely outside the stated Jul-Sep season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope carried vs no rappels",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "parties carrying a 70m half rope, harness, belay device, and prusik for harder sections/short raps"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A handful of parties bring a light rack and a short rope"
+      },
+      {
+       "field": "sling_rack.runners",
+       "says": "webbing, quick-links/rap rings for rap stations"
+      },
+      {
+       "field": "bail",
+       "says": "there is no fixed rappel line on the standard route, so bailing high on the ridge means reversing exposed 3rd/4th-class terrain rather than rapping off"
+      }
+     ],
+     "why": "The kit fields describe a 70 m rope and rap-station hardware for short raps, while detailed_rack says a short rope and bail says you downclimb rather than rappel.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager / wilderness contamination",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.land_manager",
+       "says": "Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Upper route and summit lie within Mount Baker Wilderness"
+      },
+      {
+       "field": "overview",
+       "says": "Both Twin Sisters summits sit near, but the approach roads lie outside, the Mount Baker-Snoqualmie National Forest boundary"
+      }
+     ],
+     "why": "The page mentions North Cascades National Park (which the Twin Sisters are not in), and the overview's boundary wording is hard to square with a summit inside Mount Baker Wilderness.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "name": "North Twin Sister Olivine Scramble",
+   "area": "North Twin Sister",
+   "contradictions": [
+    {
+     "fact": "Which side of the crest to climb",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "stay LEFT (climber's left) on the crest; drifting right leads toward false summits and unintentional Class 4-5 terrain"
+      },
+      {
+       "field": "face",
+       "says": "West Ridge (stay-left / south-of-crest line)"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "staying south/left of the crest"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "keeping just right of the crest"
+      },
+      {
+       "field": "climbing_route[1].notes",
+       "says": "Drop about 100 ft right of the crest and continue for roughly 800 ft"
+      }
+     ],
+     "why": "The approach and variant say drifting right leads to loose class 4-5 ground, but the climbing route tells parties to keep right and drop 100 ft right of the crest. On an eastbound west ridge, climber's left is north, so 'south/left' contradicts itself as well.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier / crevasse exposure on the line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Glacier/crevasse proximity near the North-South saddle if the line passes close to the Sisters Glacier's upper apron"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "riskier as crevasses open later in the season"
+      },
+      {
+       "field": "best_season",
+       "says": "earlier season (before crevasses open later in summer) is generally safer for that terrain"
+      }
+     ],
+     "why": "Safety says no glacier travel while the hazards and best season warn about crevasses at the North-South saddle.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which line the route is (west ridge vs between-summits approach)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "the same route as the separate West Ridge entry"
+      },
+      {
+       "field": "beta",
+       "says": "North Twin Sister has a single standard line — the class 3-4 west ridge"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "this between-summits approach is far less represented in trip-report archives than the West Ridge route"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "route-finding on the ridge between the two summits"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "near the North-South saddle"
+      }
+     ],
+     "why": "The overview and beta call this the west ridge, but crowds, partner requirements and hazards describe a different line near the saddle between the two summits.",
+     "internal_resolution": "overview, beta, approach, climbing_route and waypoints all describe the west ridge; the crowds/partner/hazards text describes another line",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead named on the TRAILHEAD card vs waypoints",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Clearwater Creek gate (Middle Fork Nooksack logging roads)"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Gated Bridge Trailhead (FR 38 / Weyerhaeuser Rd 9000)"
+      },
+      {
+       "field": "approach_variants[1].name",
+       "says": "FR-38 gate at the Middle Fork Nooksack bridge, then the Dailey Prairie roads to the West Ridge path"
+      },
+      {
+       "field": "approach",
+       "says": "Drive to the gate before the Clearwater Creek/Middle Fork Nooksack crossing"
+      }
+     ],
+     "why": "The trailhead card names the Clearwater Creek gate (variant 1), while the trailhead waypoint and Dailey Prairie waypoints follow the FR-38 bridge gate (variant 2, 'from the other side of the road network').",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Car-to-summit distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 6-6.5 miles and about 5,500 ft of gain car-to-summit ... By about 6.4 miles you pass an old fire-ring in the clearcut and enter a final band of brush before reaching timber at the base of the west ridge"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "7.3"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "14.6"
+      },
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      }
+     ],
+     "why": "The approach puts the whole car-to-summit trip at 6-6.5 miles but reaches the fire ring below the ridge at 6.4 miles. The waypoints put the summit at 7.3 miles, and dist_km (6.0 mi) matches neither.",
+     "internal_resolution": "waypoints (7.3 mi one way) and itinerary (14.6 mi round trip) agree; approach's '6-6.5 miles car-to-summit' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Headline grade vs climbing route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3 (Class 2 where staying well south of the crest)"
+      },
+      {
+       "field": "climbing_route[3].class",
+       "says": "Class 3–4"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "sustained, well-featured Class 3-4 dunite"
+      },
+      {
+       "field": "beta",
+       "says": "with short class 4 steps"
+      }
+     ],
+     "why": "The grade pill says Class 3, but the climbing route, itinerary and beta all include class 4 steps.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Where bikes are stashed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2]",
+       "says": "Bike stash / treeline ... near 4,100 ft, marked by a firepit and cairn where parties stash bikes"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "Almost every party bikes to here and leaves the bike"
+      },
+      {
+       "field": "bivy[1].elev",
+       "says": "3170"
+      },
+      {
+       "field": "approach_variants[1].baseFinding",
+       "says": "LARGE CULVERT PIPE at the timber-road terminus. Stash bikes there"
+      }
+     ],
+     "why": "The bike stash is placed at Dailey Prairie (3,170 ft), at the culvert road-end, and at a 4,100 ft treeline fire ring.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Access fees / passes / landowner permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None — no climbing fee (National Forest, not Mount Rainier NP)"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at most trailheads"
+      },
+      {
+       "field": "permit",
+       "says": "carry a Discover Pass where parking on DNR land"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "a Weyerhaeuser recreation permit is posted as required"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "The landowner now runs a fee recreation permit"
+      }
+     ],
+     "why": "The page says no fee, a Northwest Forest Pass, a Discover Pass, and a required landowner recreation permit for the same gate.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camping on the private timberland",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "no camping"
+      }
+     ],
+     "why": "One field says camping on the timberland is unregulated; the camp card says camping there is not allowed.",
+     "internal_resolution": "Both bivy cards agree camping on the timber-company land is not allowed",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs total time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "~12:00-1:00 PM"
+      }
+     ],
+     "why": "summitTimeHrs holds the car-to-car total, while the schedule reaches the summit about 7 hours after a 5:30 start.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead directions order",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "to the bridge over the Middle Fork Nooksack River, then continue on Forest Road 38. Park at the yellow gate just before the bridge"
+      }
+     ],
+     "why": "The directions have you drive over the bridge onto FR 38 and then park before the bridge.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "North Cascades NP land-manager boilerplate",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.land_manager",
+       "says": "with some upper routes crossing into North Cascades National Park"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Summit lies within Mount Baker Wilderness"
+      }
+     ],
+     "why": "The land-manager text mentions North Cascades National Park, which does not apply to the Twin Sisters.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "name": "Ruth-Icy Traverse",
+   "area": "Ruth Mountain",
+   "contradictions": [
+    {
+     "fact": "Total gain / loss",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "8000"
+      },
+      {
+       "field": "loss_ft",
+       "says": "8000"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3500"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "2000"
+      },
+      {
+       "field": "itinerary.days[0].lossFt",
+       "says": "0"
+      },
+      {
+       "field": "itinerary.days[1].lossFt",
+       "says": "6400"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 8,000 cumulative ft of gain (and a matching ~8,000 ft of loss)"
+      }
+     ],
+     "why": "The itinerary days add up to 5,500 ft of gain and 6,400 ft of loss, while the columns and totalNote say 8,000 each. Day 2's 2,000 ft cannot cover Ruth, the 1,600 ft drop and climb back, and Icy.",
+     "internal_resolution": "gain_ft, loss_ft, totalNote and descent_text agree on ~8,000 ft; the per-day itinerary figures are the outliers",
+     "needs_research": false
+    },
+    {
+     "fact": "Ruth-Icy saddle elevation",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "about 1,600 ft total off Ruth's summit) to the low saddle/col between Ruth and Icy at roughly 6,600-6,800 ft"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "to the low saddle/col between Ruth and Icy at roughly 6,600-6,800 ft"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "Ruth-Icy Saddle elev 5800"
+      },
+      {
+       "field": "bivy[3].notes",
+       "says": "reaches the low point of the connecting ridge near 5,700 ft"
+      },
+      {
+       "field": "climbing_route[1].notes",
+       "says": "aiming for a notch/saddle just west of Icy's Northwest Spire (~6,500 ft)"
+      }
+     ],
+     "why": "The text puts the saddle at 6,600-6,800 ft, but 7,115 ft minus a 1,600 ft descent is about 5,500 ft. The waypoint (5,800) and bivy (5,700) agree with that, and the climb then 'ascends' to a notch at 6,500 ft that would sit below the stated saddle.",
+     "internal_resolution": "waypoint 5,800 ft, bivy 5,700 ft and the 1,600 ft descent from 7,115 ft agree; the '6,600-6,800 ft' figure is wrong",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp elevation / location",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a high camp around 6,600 ft below the Ruth-Icy col"
+      },
+      {
+       "field": "approach",
+       "says": "a camp near the notch northwest of Ruth's summit (~6,600 ft)"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Ruth Glacier Camp elev 5800 — Common high camp on Ruth Mountain's north slope"
+      },
+      {
+       "field": "bivy[0]",
+       "says": "Ruth Arm ridge camps below the Ruth Glacier, elev 5900, role main"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Camp falls within a North Cascades NP cross-country/high-occupancy zone requiring a backcountry permit"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "no national park backcountry permit is required here"
+      }
+     ],
+     "why": "The high camp is at 6,600 ft (NCNP, permit needed) in the itinerary and approach, but at 5,800-5,900 ft on the forest side (no permit) in the waypoint and main camp card.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel vs downclimb on Icy's gully, fixed anchor",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "most parties rappel the crux 4th-class gully rather than downclimb it ... no bolts or fixed gear are reported"
+      },
+      {
+       "field": "descent",
+       "says": "downclimb the short summit gully off Icy Peak"
+      },
+      {
+       "field": "bail",
+       "says": "the short summit gully on Icy is the route's only real commitment point and can usually be downclimbed"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "rappel slings around a horn at its top ... Sling anchors at the top of a 100 ft gully are the arrival marker"
+      }
+     ],
+     "why": "Descent says downclimb, descent_text says most parties rappel, and one field reports no fixed gear while another uses the slings at the top as the arrival marker.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope length for the gully rappel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "30"
+      },
+      {
+       "field": "gear[5]",
+       "says": "30m+ rope is adequate for a single-strand rappel of the ~100 ft gully"
+      },
+      {
+       "field": "descent_text",
+       "says": "a single full-length rappel with a 60m rope that gets the whole gully done in one shot ... bring at least a 30m single or 60m rope"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "30"
+      }
+     ],
+     "why": "The kit lists a 30 m rope for a 30 m (100 ft) gully, which is only possible single-strand from a fixed end, while the descent says a 60 m rope is what clears the gully in one rappel.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time for the traverse day",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "trip reports cite around 12 hours of moving time from camp"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "5:30 AM Break camp ... 9:00 AM Summit Icy Peak ... 4:00 PM Back at trailhead"
+      },
+      {
+       "field": "approach_variants[0].hazards[4]",
+       "says": "at the end of a twelve-hour day"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec",
+       "says": "Fit for a ~15.5-hour remote day with a loaded pack"
+      }
+     ],
+     "why": "Day 2 is 10 hours (Icy summit at 9 AM), elsewhere it is 12 hours from camp, and partner requirements describe one 15.5-hour day when timing splits it over two days.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best months (June/July vs late July-September)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[3].notes",
+       "says": "which is why most parties go in June or July"
+      },
+      {
+       "field": "best_season",
+       "says": "Late July into September is most reliable ... Earlier in the season the traverse's rock sections may be snow- or ice-covered"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The notch-bivy card says most parties go in June or July; the season fields say late July-September and rate June marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Low-5th move location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.requiredSkills[1]",
+       "says": "A short low-5th move near the notch"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "one short pitch of low-5th/exposed scrambling near its summit block"
+      },
+      {
+       "field": "rock_grade",
+       "says": "up to a short 4th-class summit gully on Icy Peak"
+      }
+     ],
+     "why": "The hardest move is near the notch in one field and at the summit block in another; the grade says 4th class while other text says low 5th.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_mountain_south_slopes",
+   "name": "North Face / Ruth Glacier",
+   "area": "Ruth Mountain",
+   "contradictions": [
+    {
+     "fact": "One day vs two days (and pack weight)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "A single long day ... with no overnight camp"
+      },
+      {
+       "field": "itinerary.days[0].packLb",
+       "says": "18"
+      },
+      {
+       "field": "approach",
+       "says": "most parties split it over two days with a camp near the notch"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "most parties split it into a 2-day trip via Hannegan Pass/Ruth Arm camp rather than a single push"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "overnight glacier-camp load ... roughly 30-40 lb"
+      }
+     ],
+     "why": "The itinerary plans a one-day, 18 lb trip with no camp, while the approach and partner requirements say most parties camp and carry 30-40 lb.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Round trip is roughly 12 miles"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "12"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "7"
+      },
+      {
+       "field": "dist_km",
+       "says": "9.65"
+      }
+     ],
+     "why": "The summit waypoint at 7 mi one way means 14 mi round trip, not 12, and dist_km (6.0 mi) matches neither.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Max slope angle vs 'gentle' glacier",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "max_angle",
+       "says": "60"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "the gentle, low-angle apron of the Ruth Glacier"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "broad, non-technical snow slopes"
+      }
+     ],
+     "why": "A 60° max angle does not fit a route described everywhere as a gentle, low-angle Class 2-3 glacier walk.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-June through September"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-June through September"
+      }
+     ],
+     "why": "The best window starts in mid-June, before the stated Jul-Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs total time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3]",
+       "says": "10:00 AM Summit Ruth Mountain (after 5:00 AM start)"
+      }
+     ],
+     "why": "summitTimeHrs holds the car-to-car total, while the schedule reaches the summit after 5 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Hannegan Camp mileage",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Around mile 3, at Hannegan Camp"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "3.5"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "about a mile below Hannegan Camp"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3"
+      }
+     ],
+     "why": "Hannegan Camp sits at mile 3 in the approach and at 3.5 in the waypoints, and the stream said to be a mile below it is only 0.5 mi below.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "name": "Crater Rim Scramble (from Easton Glacier)",
+   "area": "Sherman Peak",
+   "contradictions": [
+    {
+     "fact": "Route distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "3.9"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "10.9"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 14-15 miles"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "7.2"
+      }
+     ],
+     "why": "TECHNICAL STATS shows 3.9 km (2.4 mi), while the header, itinerary and waypoints give ~14.9 mi round trip (7.2 mi one way).",
+     "internal_resolution": "itinerary, totalNote and waypoints agree; dist_km 3.9 is wrong",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the glacier starts / rope-up elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Ridge walk above treeline to roughly 8,000-9,000 ft, where the route leaves rock/moraine and gains the Easton Glacier"
+      },
+      {
+       "field": "approach",
+       "says": "Rope up for glacier travel around 6,800–7,200 ft"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Easton Glacier toe / rope-up point elev 6700"
+      }
+     ],
+     "why": "The route breakdown puts the glacier start at 8,000-9,000 ft; the approach and waypoint say the glacier and rope-up begin near 6,700-7,200 ft.",
+     "internal_resolution": "approach, climbing_route[0] and waypoint agree on ~6,700-7,200 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent via the Roman Wall",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "downclimb the steep snow of the upper Easton Glacier past the Roman Wall section first ... right off the summit plateau"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "continuing up past the crater rim onto the steep sustained snow of the Roman Wall means you have left Sherman Peak below you and are climbing Mount Baker"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the crater-rim traverse and Easton Glacier route"
+      }
+     ],
+     "why": "The descent text describes coming down the Roman Wall from Baker's summit plateau, which the variant says is not on the Sherman route at all.",
+     "internal_resolution": "descent, beta and baseFinding agree Sherman is reached from the crater rim without the Roman Wall; descent_text was written for Grant Peak",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance and gain to camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "~7 miles and ~4,300 ft to camp at Sandy Camp/Railroad Grade"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2300"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "Sandy Camp elev 5900, distMi 4"
+      }
+     ],
+     "why": "Partner requirements put camp at 7 miles and 4,300 ft; the itinerary and waypoints give 4 miles and ~2,300-2,500 ft (3,400 to 5,900 ft).",
+     "internal_resolution": "itinerary and waypoints agree on 4 mi / ~2,500 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Sulphur Creek ford location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Within the first 0.3–0.4 mile the trail fords Sulfur Creek"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1"
+      }
+     ],
+     "why": "The Sulphur Creek ford is 0.3-0.4 mi in per the approach but at mile 1 per the waypoint.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pass purchase at the trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "Recreation Pass at Park Butte Trailhead — not sold onsite"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue Northwest Forest Pass and wilderness permit kiosk at the lot"
+      },
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "No climbing or wilderness permit"
+      }
+     ],
+     "why": "One field says the pass is not sold onsite while the waypoint says a kiosk at the lot covers it; one field says there is a self-issue wilderness permit while another says there is no wilderness permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Sherman Peak bearing from Grant Peak",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "about half a mile southeast of Baker's true summit"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "just southwest of and lower than the true summit"
+      }
+     ],
+     "why": "Sherman is southeast of Grant Peak in the overview and southwest of it in the waypoint note.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Start time and summit time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "2:30 AM from camp"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1]",
+       "says": "3:30 AM Leave high camp"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3]",
+       "says": "~8:00 AM Traverse West Ridge to the summit"
+      }
+     ],
+     "why": "The recommended start is the wake-up time, not the 3:30 departure, and summitTimeHrs 12 is the whole of day 2, not the time to the summit (~5 h).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "North Cascades NP land-manager boilerplate",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.land_manager",
+       "says": "with some upper routes crossing into North Cascades National Park"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Wilderness / Mt. Baker National Recreation Area)"
+      }
+     ],
+     "why": "The land-manager text mentions North Cascades National Park, which does not apply to Mount Baker's south side.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "name": "Squak Glacier Route",
+   "area": "Sherman Peak",
+   "contradictions": [
+    {
+     "fact": "Line to the summit (Roman Wall saddle vs south ridge)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "climb glaciated terrain through a documented crevasse maze (~8,700 ft) to the saddle below the Roman Wall, then traverse south of Baker's true summit"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "up the Squak Glacier through crevassed terrain to the saddle below the Roman Wall"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "From here the route makes a rising traverse of the Squak toward Sherman's south ridge"
+      }
+     ],
+     "why": "Beta and the breakdown reach Sherman from the saddle below the Roman Wall (north of Sherman), while the camp card sends the route up Sherman's south ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season: early-season route vs Jun-Sep",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "The Squak is an early-season objective ... a bergschrund opens across the line as the season goes on and can shut the route down entirely by late summer"
+      },
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "climate.summer",
+       "says": "June-September is the primary climbing season with the most stable glacier-travel conditions"
+      }
+     ],
+     "why": "The camp card calls this an early-season route that can close by late summer, while season and climate give June-September as the main window.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camping below 6,000 ft",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "Camping is restricted to designated tent-pad sites below 6,000 ft"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "camping below 6,000 ft on this route is prohibited"
+      }
+     ],
+     "why": "One field allows camping below 6,000 ft at designated pads; the other says it is prohibited.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "high camp is commonly established around 6,800 ft"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "High camp (~6,800 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6500"
+      }
+     ],
+     "why": "The high camp is at 6,800 ft in the approach and breakdown but 6,500 ft on the main camp card.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "name": "Twin Sisters Olivine Scramble",
+   "area": "Skookum Peak",
+   "contradictions": [
+    {
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "parties bike or hike ~6-7 miles up the steep Skookum Pasture logging road, then scramble a brushy climbers' trail onto the ridge ... stay left/west of the crest"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].fromTo",
+       "says": "Car-to-car: Skookum Pasture road + olivine ridge scramble"
+      },
+      {
+       "field": "approach",
+       "says": "follow Elbow Lake Trail #697 ... then pick up the unmaintained Green Creek climbers' path into the Green Creek Cirque"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Standard access to Skookum is from the east via Elbow Lake Trail #697 and the Green Creek climbers' path — not the Dailey Prairie/west-side roads"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "add 2-4+ hours round trip if the timberland gate is locked and the road must be hiked or biked"
+      },
+      {
+       "field": "permit",
+       "says": "the approach crosses private and DNR timberland ... carry a Discover Pass"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Access from this side does not cross the private timberland"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "The Dailey Prairie logging-road gate is separately locked"
+      }
+     ],
+     "why": "The itinerary, timing, partner requirements, permit and bail describe a bike-up logging-road approach over private timberland, while the approach, waypoints, variant, pro_tips and bivy use the Elbow Lake Trail / Green Creek approach from the east, which does not cross timberland.",
+     "internal_resolution": "approach, waypoints, approach_variants, pro_tips, bivy, access.closures and road all agree on Elbow Lake Trail / Green Creek; the logging-road text (itinerary, timing, partner_requirements, permit, obj_haz, bail) was copied from a west-side route",
+     "needs_research": false
+    },
+    {
+     "fact": "Grade: Class 3-4 scramble vs 5.4 north ridge",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.4"
+      },
+      {
+       "field": "beta",
+       "says": "The north ridge climbs sustained but famously 'bomber' red dunite/olivine rock rated 5.4"
+      },
+      {
+       "field": "face",
+       "says": "North Ridge"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "A harder, more direct alternative is Skookum's north ridge (5.4)"
+      },
+      {
+       "field": "what_to_bring[3]",
+       "says": "Approach shoes are adequate for the standard Class 3-4 line"
+      }
+     ],
+     "why": "The page presents the route as both a Class 3-4 scramble with the 5.4 north ridge as an alternative, and as the 5.4 north ridge itself. The grade pill shows 5.4 from rock_grade while grade says Class 3-4.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope needed (rappel off Jaws' Tooth)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "none"
+      },
+      {
+       "field": "rope_note",
+       "says": "reducing rope necessity even on steeper sections"
+      },
+      {
+       "field": "pro_needs",
+       "says": "a 30m rope is carried for the rappel off Jaws' Tooth immediately before this section"
+      },
+      {
+       "field": "beta",
+       "says": "It is reached by rappelling off the adjacent Jaws' Tooth"
+      },
+      {
+       "field": "gear[2]",
+       "says": "optional rope for exposed steps"
+      }
+     ],
+     "why": "The rope fields say no rope, while pro_needs and beta require a 30 m rope to rappel off Jaws' Tooth.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent: reverse vs committing past Jaws' Tooth",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Reverse the scramble."
+      },
+      {
+       "field": "descent_text",
+       "says": "Descend by retracing the ascent ridge"
+      },
+      {
+       "field": "turnaround",
+       "says": "Because the line is committing once past Jaws' Tooth ... there is no fast retreat from Skookum itself"
+      },
+      {
+       "field": "beta",
+       "says": "reached by rappelling off the adjacent Jaws' Tooth ... continues onward toward Little Sister"
+      }
+     ],
+     "why": "The descent says to simply reverse the ridge, but if the route is reached by rappelling Jaws' Tooth, reversing it means reclimbing the tooth, and the turnaround calls it committing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance / Green Creek junction mileage",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow Elbow Lake Trail #697 (~8 miles, passing Lake Doreen) to Elbow Lake, then pick up the unmaintained Green Creek climbers' path"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Green Creek climbers' path junction (Hildebrand Creek switchback) distMi 2.5"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "7"
+      },
+      {
+       "field": "watch_out[1]",
+       "says": "Long approach (~16 miles round trip via Elbow Lake Trail)"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "14"
+      },
+      {
+       "field": "dist_km",
+       "says": "22.53"
+      }
+     ],
+     "why": "The approach walks 8 miles to Elbow Lake before the Green Creek path, but the waypoints leave the trail at mile 2.5 and reach the summit at 7. Round-trip figures run 14 to 16+ miles.",
+     "internal_resolution": "waypoints, itinerary (14 mi) and dist_km (14.0 mi) agree; approach '~8 miles ... to Elbow Lake' is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Gain less than trailhead-to-summit rise",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4200"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2000"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "6534"
+      }
+     ],
+     "why": "4,200 ft of gain is less than the 4,534 ft rise from the 2,000 ft trailhead to the 6,534 ft summit.",
+     "internal_resolution": "waypoint and summit elevations show gain must be at least ~4,550 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Late Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "optimal"
+      },
+      {
+       "field": "best_season",
+       "says": "July through September is the reliable window"
+      }
+     ],
+     "why": "Season starts in late July, but July is rated optimal and best_season starts in July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "River crossing rig status",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].note",
+       "says": "cross via an unofficial log/rope rig a few hundred yards up or downstream"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "log/rope crossing destroyed in Dec 2025 floods"
+      }
+     ],
+     "why": "The waypoint describes a log/rope rig to use, while hazards say it was destroyed and not rebuilt.",
+     "internal_resolution": "hazards, pro_tips, access.closures and approach agree it was destroyed",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "name": "West Ridge",
+   "area": "South Twin Sister",
+   "contradictions": [
+    {
+     "fact": "Route distance",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "20.1"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "19"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "12"
+      },
+      {
+       "field": "turnaround",
+       "says": "on the order of 12+ miles one-way"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Requires biking ~6-7 mi of a gated logging road each way"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 6-6.5 miles ... Total foot travel from the bike cache to the ridge is roughly 4 miles"
+      }
+     ],
+     "why": "Waypoints and turnaround give 12 mi one way (24 round trip), the itinerary 19 mi round trip, and dist_km 12.5 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bike stash location and bike-leg gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "mountain-bike the old quarry/logging road system for roughly 6-6.5 miles and about 800-1,000 ft of gain"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "Dailey Prairie elev 3166 distMi 4.5"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "most parties stash bikes at this point"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Orsino Creek Crossing elev 4500 distMi 8.5"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "Almost every party bikes to here and leaves the bike ... roughly five miles and two thousand feet of road above the river bridge"
+      }
+     ],
+     "why": "The bike leg is 6-6.5 mi and 800-1,000 ft in the approach, but the waypoints climb ~2,000 ft by Dailey Prairie and stash bikes at 8.5 mi and 4,500 ft, while the camp card stashes them at Dailey Prairie.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Notch vs false summit relationship",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].note",
+       "says": "Gain the West Ridge crest here, roughly 400 ft below the false summit"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "5200"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "6500"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "Short rappel/5th-class step ~400 ft below the top"
+      }
+     ],
+     "why": "The 5,200 ft notch is said to be 400 ft below the false summit, which its own waypoint puts at 6,500 ft (1,300 ft higher).",
+     "internal_resolution": "Waypoint elevations and 'roughly two hours of class 2-3 scrambling' from the notch show the notch is ~1,300 ft below the false summit",
+     "needs_research": false
+    },
+    {
+     "fact": "False summit to true summit distance / bypass direction",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "watch_out[0]",
+       "says": "The false summit ~200 yards before the true top ... traverse right and regain the crest ~500 ft higher"
+      },
+      {
+       "field": "waypoints[6].directions",
+       "says": "Continue along the crest a short distance, on the order of fifty yards"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "about 200 yards short of the false summit, leave the crest to the RIGHT — south — traverse ledges, and regain the crest roughly 500 ft lower"
+      }
+     ],
+     "why": "The gap between the false and true summits is 200 yards in one field and 50 yards in another. The ascent-context bypass regains the crest 500 ft higher in watch_out but 500 ft lower in the variant.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel: most parties vs optional",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a short 5th-class step just below the summit block that most parties rope up and rappel"
+      },
+      {
+       "field": "descent_text",
+       "says": "many parties bypass the hardest of these via the well-known false-summit traverse ... Parties who instead stay on the ridge crest ... sometimes choose to rappel"
+      },
+      {
+       "field": "bail",
+       "says": "Reversible at most points; the firm rock makes downscrambling secure."
+      }
+     ],
+     "why": "The itinerary says most parties rappel; descent_text says most bypass and only some rappel.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Fees / permits / land status",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None — this is an informal roadside approach"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "no permit required"
+      },
+      {
+       "field": "permit",
+       "says": "carry a Discover Pass where parking on DNR land"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "gated/permitted private-timberland access (Olivine Corp. permits reported around $250/vehicle or $75/foot-travel)"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "The landowner now runs a fee recreation permit"
+      },
+      {
+       "field": "access.permit",
+       "says": "Free self-issue Wilderness permit at the trailhead register"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "no wilderness permit or registration is needed"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "this open prairie flat (a DNR Natural Area Preserve)"
+      }
+     ],
+     "why": "The page says no fee and no permit, a Discover Pass, a paid landowner permit ($250/$75 or a capped fee permit), a free wilderness permit, and no wilderness registration. Dailey Prairie is also both a DNR preserve and private timberland.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct (snow-free scrambling typically Jul-Sep ...)"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "risky"
+      }
+     ],
+     "why": "The header season runs May-Oct, while seasonal guidance calls June and October risky and outside the season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II-III, Class 4 / low 5th"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      }
+     ],
+     "why": "The grade gives II-III; the commitment column gives II.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs total time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "~1:00-2:00 PM"
+      }
+     ],
+     "why": "summitTimeHrs holds the car-to-car total, while the schedule reaches the summit ~8-9 hours after a 5 AM start.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "name": "South Twin Sister Olivine Scramble",
+   "area": "South Twin Sister",
+   "contradictions": [
+    {
+     "fact": "One-way distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "on the order of 12+ miles one-way"
+      },
+      {
+       "field": "waypoints[0].distMi",
+       "says": "7.45"
+      },
+      {
+       "field": "dist_km",
+       "says": "10.05"
+      }
+     ],
+     "why": "The turnaround says 12+ miles one way; the summit waypoint says 7.45 mi and dist_km 6.2 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Gain less than trailhead-to-summit rise",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5400"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "(~1,200 ft)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "7004"
+      }
+     ],
+     "why": "5,400 ft of gain is less than the 5,804 ft rise from the 1,200 ft gate to the 7,004 ft summit.",
+     "internal_resolution": "Trailhead 1,200 ft and summit 7,004 ft require at least ~5,800 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Fees / passes / wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "Fee recreational access permit required for the Hampton timberland approach"
+      },
+      {
+       "field": "permit",
+       "says": "carry a Discover Pass where parking on DNR land"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at most trailheads"
+      },
+      {
+       "field": "access.permit",
+       "says": "Wilderness self-issue permit typically required within the Mount Baker Wilderness boundary"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "no wilderness permit or registration is needed"
+      }
+     ],
+     "why": "The page names a Hampton fee permit, a Discover Pass and a Northwest Forest Pass, and says a wilderness self-issue permit is both required and not needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camping near Dailey Prairie",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "some parties camp at Orsino Creek Basin or near Dailey Prairie to split the trip over two days"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "no campfires at any time, and no camping"
+      },
+      {
+       "field": "bivy[1].name",
+       "says": "Dailey Prairie road end (staging and bike stash, not a camp)"
+      }
+     ],
+     "why": "The itinerary suggests camping near Dailey Prairie; the camp card says camping there is not allowed.",
+     "internal_resolution": "bivy card is explicit",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "name": "North Ridge",
+   "area": "South Twin Sister",
+   "contradictions": [
+    {
+     "fact": "Rock grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "3rd class (sometimes rated 4th class; most parties describe it as easy 3rd class)"
+      },
+      {
+       "field": "grade",
+       "says": "Grade III, Class 4"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "Real exposure on mid-5th-class sections of the ridge crest"
+      },
+      {
+       "field": "gear[1]",
+       "says": "a 30m rope for protecting 5th-class ridge sections"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "published descriptions hedge them as possibly low fifth class. A rope is advised for anyone staying directly on the crest"
+      }
+     ],
+     "why": "The grade pill (rock_grade) shows easy 3rd class, grade says Class 4, the climbing route has a possibly low-5th final 400 ft, and hazards say mid-5th.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier travel required vs optional / non-glaciated",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "Crampons, ice axe, and crevasse-rescue kit if crossing the Sisters Glacier toward North Twin"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "Crevasses on the Sisters Glacier if linking to North Twin"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble/alpine rock route"
+      },
+      {
+       "field": "what_to_bring",
+       "says": "light rock rack, rope, helmet, ice axe (early season), navigation tools"
+      },
+      {
+       "field": "pitch_detail[0]",
+       "says": "Glacier travel — Cross the Sisters Glacier southbound to the bergschrund below the ridge"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "cross the Sisters Glacier past the bergschrund (crampons/axe, rope up for the schrund)"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "The standard approach crosses a moat ... then travels the glacier ... rope up for this crossing"
+      }
+     ],
+     "why": "The gear and hazards treat the glacier and crevasse kit as needed only when linking to North Twin, and one field calls the route non-glaciated, but the breakdown, itinerary, climbing route and crevasse field make the Sisters Glacier crossing part of the standard route.",
+     "internal_resolution": "pitch_detail, climbing_route[0], itinerary, timing, obj_haz and seasonal_hazards.crevasses agree the glacier is on the standard line",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III, Class 4"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      }
+     ],
+     "why": "The grade says Grade III; the commitment column says II.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel on the West Ridge descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[5].detail",
+       "says": "Reverse the West Ridge line (short rappel near the top) back to the bikes."
+      },
+      {
+       "field": "descent_text",
+       "says": "no rappels are required on the standard descent (rappels: 0)"
+      },
+      {
+       "field": "rappels",
+       "says": "0"
+      }
+     ],
+     "why": "The itinerary descent includes a short rappel; descent_text and rappels say none is required.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Best time for the glacier crossing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "best attempted June-July before it opens up"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      },
+      {
+       "field": "best_season",
+       "says": "late season (September) exposes a difficult moat/bergschrund"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "good"
+      }
+     ],
+     "why": "The itinerary recommends June-July while seasonal guidance rates June risky. best_season warns about a difficult September moat while seasonal guidance rates September good.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bypass direction on the West Ridge descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "contour off the crest to the right (north side) for roughly 200 yards from the false summit ... follow the cairned scramble route down and left (south)"
+      },
+      {
+       "field": "climbing_route[4].notes",
+       "says": "traverse around onto the south side of the ridge"
+      }
+     ],
+     "why": "The descent bypass leaves the crest on the north side, while the route's own bypass (and the sibling West Ridge) uses the south side.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ranger station vs land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.rangerStation",
+       "says": "Washington DNR Northwest Region (Sedro-Woolley)"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness"
+      }
+     ],
+     "why": "The emergency ranger station is a DNR office, while the summit's land manager is the Mt. Baker Ranger District.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Fees / camping on the timberland",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None, but access via private/DNR roads subject to gates"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "The landowner now runs a fee recreation permit ... and no camping"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camping is on unregulated Mount Baker-Snoqualmie National Forest and private timberland"
+      }
+     ],
+     "why": "Access says no fee and unregulated camping on the timberland; the camp card describes a fee permit and no camping.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit time vs total time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "~12:30-1:30 PM"
+      }
+     ],
+     "why": "summitTimeHrs holds the car-to-car total, while the schedule reaches the summit ~8 hours after a 5 AM start.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

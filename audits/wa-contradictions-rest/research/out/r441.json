@@ -1,0 +1,313 @@
+{
+ "file": "r441.json",
+ "results": [
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Difficulty of the described line",
+   "verdict": "fixed",
+   "correct_value": "Class 3 ridge scramble from Lago (summit itself an easy walk-up; one short Class 4 step on Point 8207 that can be skirted on its north side)",
+   "evidence": "Climber Kyle calls Dot itself an easy walk-up but describes Class 3 scrambling on the knife-edge toward Pt 8165 and the steepest scrambling of the trip (a short class 4 step) on Pt 8207. One Hike A Week passed north of Pt 8207 and bypassed Pt 8165 on the west via an exposed third-class ledge. Trailcat Jim describes the south ridge as never exceeding Class 3. The route as laid out is therefore Class 3, not a Class 2 walk-up; grade/overview/rope_note/pro_needs/exposure text brought into line with rock_grade and climbing_route.",
+   "sources": [
+    "https://climberkyle.com/2020/07/08/hart-of-the-pasayten/",
+    "https://onehikeaweek.com/2015/08/16/ptarmigan-peak/",
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 2",
+     "value": "Class 3",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Difficulty of the described line"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Dot is an easy Class 2 talus scramble almost always tagged onto",
+     "replace": "Dot is a Class 3 ridge scramble (the summit itself an easy talus walk-up) almost always tagged onto",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Difficulty of the described line"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Class 2 walk-up/scramble on boot path, talus and scree;",
+     "replace": "Class 3 ridge scramble on talus and rock, with one short Class 4 step on Point 8207 that can be skirted on its north side;",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Difficulty of the described line"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "Class 2 talus/ridge scramble with occasional Class 3 sidehilling;",
+     "replace": "Class 3 talus/ridge scramble, with one short Class 4 step on Point 8207 that can be skirted on its north side;",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Difficulty of the described line"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "fall exposure on Class 2 terrain",
+     "replace": "fall exposure on Class 3 terrain",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Difficulty of the described line"
+    }
+   ]
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Standard ascent line",
+   "verdict": "fixed",
+   "correct_value": "Two genuine lines, neither established as 'standard': the north-side talus from the Ptarmigan-Dot saddle, and the south ridge from Lago (the line this route lays out)",
+   "evidence": "Trailcat Jim reached Dot from the Ptarmigan-Dot saddle by easy talus and descended the Class 3 south ridge; One Hike A Week and Climber Kyle traversed the ridge between Lago and Dot past Points 8207 and 8165. No source names either as the standard route, so the ROUTE BREAKDOWN labels that call the saddle line 'standard' and the south ridge 'alternate' (contradicting the approach, waypoints and itinerary) are relabelled neutrally.",
+   "sources": [
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/",
+    "https://onehikeaweek.com/2015/08/16/ptarmigan-peak/",
+    "https://climberkyle.com/2020/07/08/hart-of-the-pasayten/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "pitch"
+     ],
+     "find": "Saddle to summit (standard ascent)",
+     "replace": "Saddle to summit (north side)",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Standard ascent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "pitch"
+     ],
+     "find": "South ridge (alternate line)",
+     "replace": "South ridge (from Lago)",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Standard ascent line"
+    }
+   ]
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Approach trail line to Eureka Creek",
+   "verdict": "fixed",
+   "correct_value": "Slate Pass -> Middle Fork Pasayten (Robinson Creek) trail down-valley -> up over Freds Pass (Freds Lake) -> head of Eureka Creek Basin",
+   "evidence": "The SummitPost Mount Lago/Osceola pages give the shortest road approach as Slate Pass down the Middle Fork Pasayten, then up to Freds Pass and across the upper Eureka Creek (about 16 miles). Hike2Hike's Osceola/Carru report follows the Whistler cutoff to the Robinson Creek trail, then the Freds Lake cutoff to the Eureka Creek trail junction near mile 10; Trailcat Jim's loop links Eureka Creek, Rolo Pass and Freds Lake back to Robinson Creek. No source routes it over a Wildcat Mountain saddle via a Ferguson Lake trail, so the approach and descent prose are aligned with the waypoints.",
+   "sources": [
+    "https://www.summitpost.org/mount-lago/151487",
+    "https://www.summitpost.org/osceola-peak/151497",
+    "https://hike2hike.com/summits/osceola-and-carru-north-cascades-washington/",
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(reached via Trail #474, the Ferguson Lake/Eureka Creek trail, which drops off Wildcat Mountain's south saddle into Eureka Creek Basin)",
+     "replace": "(reached by following the Middle Fork Pasayten trail down-valley, then climbing over Freds Pass into the head of Eureka Creek Basin)",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Approach trail line to Eureka Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "rejoin the Trail #474/#478 network for the roughly 9-mile, well-graded return to the Slate Pass trailhead",
+     "replace": "climb back over Freds Pass and follow the Middle Fork Pasayten trail up-valley for the long return to the Slate Pass trailhead",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Approach trail line to Eureka Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Trailhead name and elevation",
+   "verdict": "fixed",
+   "correct_value": "Slate Pass (Buckskin Ridge) Trailhead, ~6,900 ft, about 3.5 mi up FR 5400-600 beyond Harts Pass (not the Slate Peak road end)",
+   "evidence": "The USFS Slate Pass Trailhead page lists 6,900 ft, access to Buckskin Ridge Trail #498, reached 3.5 miles up FR 5400-600 from Harts Pass at the second switchback. The Mountaineers' Buckskin Ridge/Middle Fork loop also gives the Slate Pass Trailhead at 6,900 ft; Trailcat Jim gives 6,850 ft. The waypoint's 'Slate Peak' name, 7,170 ft and 'road end' description were wrong (Slate Peak is the higher gate).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead",
+    "https://www.mountaineers.org/activities/routes-places/buckskin-ridge-middle-fork-pasayten-river-loop",
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Slate Peak / Buckskin Ridge Trailhead",
+     "value": "Slate Pass / Buckskin Ridge Trailhead",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Trailhead name and elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 7170,
+     "value": 6900,
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Trailhead name and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "End of FR 5400 beyond Harts Pass;",
+     "replace": "On FR 5400-600 about 3.5 miles beyond Harts Pass;",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Trailhead name and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "continue past Harts Pass toward Slate Peak to the road end.",
+     "replace": "turn right at Harts Pass onto FR 5400-600 toward Slate Peak for about 3.5 miles to the Slate Pass trailhead at a switchback.",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Trailhead name and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "find": "at the Slate Peak/Buckskin Ridge trailhead itself",
+     "replace": "at the Slate Pass/Buckskin Ridge trailhead itself",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Trailhead name and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "lists the Slate Peak trailhead as",
+     "replace": "lists the Slate Pass trailhead as",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Trailhead name and elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "nearestHospital"
+     ],
+     "find": "drive from the Slate Peak trailhead itself",
+     "replace": "drive from the Slate Pass trailhead itself",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Trailhead name and elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Cumulative gain and loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The itinerary days sum to exactly gain_ft 6,500 and loss_ft 7,500, but an out-and-back cannot lose 1,000 ft more than it gains, and totalNote's '6,000-7,000 ft each way' disagrees with both. No source states car-to-car gain/loss for this out-and-back: One Hike A Week gives 36 mi round trip with no gain; Trailcat Jim's 10,150 ft and Climber Kyle's ~11,000 ft are for different loops. Left unpatched.",
+   "sources": [
+    "https://onehikeaweek.com/2015/08/16/ptarmigan-peak/",
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/",
+    "https://climberkyle.com/2020/07/08/hart-of-the-pasayten/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Parking pass at the trailhead",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The USFS Slate Pass Trailhead page says no fees are required; WTA's Buckskin Ridge hike page says a Northwest Forest Pass is required. The two authoritative sources disagree, so no field is changed.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead",
+    "https://www.wta.org/go-hiking/hikes/buckskin-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Current Harts Pass Road status",
+   "verdict": "fixed",
+   "correct_value": "Road storm-closed spring 2026; then closed at Monument Creek trailhead from late July 2026 by the Ptarmigan Fire; USFS closure order covering Buckskin Ridge #498 and Robinson Creek #478 trails Sept 9 - Oct 31, 2026",
+   "evidence": "Methow Valley News (Aug 2026) reports the Harts Pass Road closed at the Monument Creek trailhead by the Ptarmigan Fire from late July until further notice. The USFS Ptarmigan Fire closure order (Sept 9 - Oct 31, 2026) closes Buckskin Ridge Trail #498 and the Robinson Creek trails, and WTA's Buckskin Ridge page shows the trail closed for the Ptarmigan Fire as of Sept 14, 2026. ACCESS omitted the fire closure; it is appended (camping card left untouched).",
+   "sources": [
+    "https://methowvalleynews.com/2026/08/06/trail-campground-closures-an-overview/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/ptarmigan-fire-closure-methow-valley-ranger-district-0",
+    "https://www.wta.org/go-hiking/hikes/buckskin-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "with reports of reopening in late June 2026.",
+     "replace": "with reports of reopening in late June 2026. In late July 2026 the road was closed again at the Monument Creek trailhead by the Ptarmigan Fire, and a fire closure order covering Buckskin Ridge Trail #498 and the Robinson Creek trails runs through October 31, 2026 unless lifted sooner.",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Current Harts Pass Road status"
+    }
+   ]
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Dot's position relative to Lago",
+   "verdict": "fixed",
+   "correct_value": "Dot sits on the ridge running north from Lago to Ptarmigan, about a mile south of Ptarmigan (Ptarmigan, not Dot, is ~2.4 mi north of Lago)",
+   "evidence": "SummitPost's Ptarmigan Peak page puts Ptarmigan about 2.4 miles due north of Mount Lago via a long ridge traverse, and describes the final mile from Dot to Ptarmigan as gentle Class 2. One Hike A Week says Dot and Ptarmigan share a mile-long ridge. The overview had transposed both figures onto Dot.",
+   "sources": [
+    "https://www.summitpost.org/ptarmigan-peak/151489",
+    "https://onehikeaweek.com/2015/08/16/ptarmigan-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "on the mile-long ridge connecting Mount Lago and Ptarmigan Peak in the remote central Pasayten Wilderness, roughly 2.4 miles north of Lago",
+     "replace": "on the ridge running north from Mount Lago to Ptarmigan Peak in the remote central Pasayten Wilderness, about a mile south of Ptarmigan",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Dot's position relative to Lago"
+    }
+   ]
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Round-trip vs one-way distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 28.32 km = 17.6 mi is the one-way figure (matches the summit waypoint distMi 17.6 and the ~18 mi one-way in trip reports), rendered as 'Approach (one way)'; the itinerary's ~35-mile figure is explicitly labelled round trip.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

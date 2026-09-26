@@ -1,0 +1,158 @@
+{
+ "file": "r701.json",
+ "results": [
+  {
+   "id": "wa_clast_from_the_past",
+   "fact": "Route grade vs crux pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only route description found rates the route 5.10b overall while listing pitch 2 at 5.10c/d and pitch 1 at 5.5 — the same internal mismatch the row carries. No second independent source for either the overall grade or the pitch grade could be found (theCrag and SummitPost returned 403; searches found nothing else), so neither number can be changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/110931364/clast-from-the-past",
+    "https://www.mountainproject.com/area/110928210/north-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "fact": "Discipline / protection style",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Fully bolted sport route; no trad gear (discipline column itself is out of patch scope — should read sport)",
+   "evidence": "The route page lists it as sport, bolts throughout (7 clips P1, 9 clips P2); the North Side area listing also types all its routes sport/toprope. Internally gear, pro_needs, detailed_rack and beta all say fully bolted; sling_rack (cams, nuts, knob slings) is the lone outlier and is cleared. The discipline column 'trad' is also wrong but discipline is not patchable under the rules — flagged for the owner.",
+   "sources": [
+    "https://www.mountainproject.com/route/110931364/clast-from-the-past",
+    "https://www.mountainproject.com/area/110928210/north-side"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "sling_rack",
+     "path": [],
+     "expect": {
+      "cams": "small rack supplementing bolts for knob placements",
+      "nuts": "small nut set",
+      "runners": "2-4 slings for knob hitches"
+     },
+     "value": null,
+     "id": "wa_clast_from_the_past",
+     "fact": "Discipline / protection style"
+    }
+   ]
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "fact": "Pitch count and descent method in rope note",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Two-pitch route descended by two rappels on a single 60m rope",
+   "evidence": "The route page gives 2 pitches, 180 ft (55 m), descent 'rappel the route'. Internally pitches, pitch_detail, beta, descent, descent_text, rappel_detail and watch_out all agree on 2 pitches and 2 rappels; rope_note is the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/110931364/clast-from-the-past"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Single-pitch basalt route on the North Side of Pinto Rock; 60m rope sufficient to lower off.",
+     "replace": "Two-pitch basalt route on the North Side of Pinto Rock; a single 60m rope is enough for both rappels.",
+     "id": "wa_clast_from_the_past",
+     "fact": "Pitch count and descent method in rope note"
+    }
+   ]
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "fact": "Descent method",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Rappel the route from its own chain anchors in 2 raps",
+   "evidence": "The route page gives the descent as rappel the route. The Sidewinder page mentions summit rappel rings that meet Clast from the Past partway and hiking around the east side — but as ways to REACH the North Side base, not as a descent from this route; gear[1] misread that approach note. descent, descent_text, rappel_detail, rappels, watch_out and pro_tips all say rappel the route.",
+   "sources": [
+    "https://www.mountainproject.com/route/110931364/clast-from-the-past",
+    "https://www.mountainproject.com/route/114937321/sidewinder"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      1
+     ],
+     "find": "descent is either a walk-off around the east side or a bolted rappel line that shares anchors partway with the neighboring route Sidewinder",
+     "replace": "descent is two rappels down the route from its own chain anchors",
+     "id": "wa_clast_from_the_past",
+     "fact": "Descent method"
+    }
+   ]
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "fact": "Gear list says lowering is an option while watch_out says rappelling is required",
+   "verdict": "fixed_internal_plus_one",
+   "discovered": true,
+   "correct_value": "Rappel (not lower) from the chain anchors",
+   "evidence": "The route page says rappel the route; at 180 ft total a 60m rope cannot lower from the top. watch_out, pro_tips, descent and rappel_detail all say rappel; gear[3]'s 'if lowering rather than rappelling' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/110931364/clast-from-the-past"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      3
+     ],
+     "find": "for the anchor stations if lowering rather than rappelling",
+     "replace": "for rigging the rappels at the chain anchors",
+     "id": "wa_clast_from_the_past",
+     "fact": "Gear list says lowering is an option while watch_out says rappelling is required"
+    }
+   ]
+  },
+  {
+   "id": "wa_clast_from_the_past",
+   "fact": "High point vs topout",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The North Side area page puts the wall base at 4,864 ft and the Pinto Rock location at 4,821 ft; the 5,118 ft figure is the formation's summit pin, which a 55 m route on the North Side does not reach. By catalog convention high_point_ft on crag routes tracks the base (4,864 ft here), but only one outside source gives that figure and no second source was found, so no patch. The 'topout' waypoint at 4,821 ft is really the pullout coordinate/area elevation, not a topout; same values are shared with Sidewinder and Top Gun.",
+   "sources": [
+    "https://www.mountainproject.com/area/110928210/north-side",
+    "https://www.mountainproject.com/area/109294508/pinto-rock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sidewinder_4",
+   "fact": "Discipline / protection style",
+   "verdict": "unresolved",
+   "correct_value": "sport",
+   "evidence": "The route page types Sidewinder as sport, bolts about every four feet to a chain anchor, and the North Side area listing agrees. Every protection field on the row already says bolted sport; the only wrong field is discipline ('trad'), which the rules put out of patch scope — flagged for the owner to change to sport.",
+   "sources": [
+    "https://www.mountainproject.com/route/114937321/sidewinder",
+    "https://www.mountainproject.com/area/110928210/north-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_top_gun",
+   "fact": "watch_out describes a different route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Hazards of a ~30 ft basalt toprope below a roof, lowered off Sidewinder's chains",
+   "evidence": "The route page describes a 30 ft toprope reached by leading Sidewinder and lowering from its chains to the roof lip, with the North Side at about 4,864 ft; nothing about granite, 7,200+ ft, rappels or glacier approaches applies. Every other field on the row agrees with that; watch_out is generic alpine text and is replaced with the route's actual hazards drawn from its own hazards/obj_haz fields.",
+   "sources": [
+    "https://www.mountainproject.com/route/114939646/top-gun",
+    "https://www.mountainproject.com/area/110928210/north-side"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "watch_out",
+     "path": [],
+     "expect": "Route-finding complexity—alpine rock climbing with terrain variations; easy to wander off established line; study topo and photos\nLoose and friable rock—typical Cascades granite; test holds and placements; helmet essential\nExposed scrambling on upper sections—significant consequences if climbing protection fails; runout potential between bolts\nWeather exposure on open ridge—afternoon storms common; exposed position dangerous with lightning; start early\nDescent route-finding—rappel and down-climbing required; terrain confusing in poor light; headlamp essential\nAltitude exposure—7200+ feet; sustained climbing; altitude sickness possible; hydration management critical\nLimited bailout options once committed to upper pitches—terrain becomes more serious as altitude increases; commit only in good conditions\nGlacier/snow approach possible—seasonal variation; microspikes may be needed; assess conditions before approach",
+     "value": "Rope running over the roof lip can rub and wear; extend the toprope so it runs clear of the edge\nLowering from Sidewinder's chains to the roof lip leaves the climber hanging in a steep, exposed spot to start\nSteep, loose approach and exit trail below the North Side wall, especially with a pack",
+     "id": "wa_top_gun",
+     "fact": "watch_out describes a different route"
+    }
+   ]
+  }
+ ]
+}

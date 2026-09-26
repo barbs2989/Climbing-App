@@ -1,0 +1,281 @@
+{
+ "applied": [
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Gardner Meadows elevation"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Gardner Meadows elevation"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Gardner Meadows elevation"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Difficulty of the Gardner-North Gardner connecting ridge"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Difficulty of the Gardner-North Gardner connecting ridge"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Elevation of the small meadow basin above Gardner Meadows"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Elevation of the small meadow basin above Gardner Meadows"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Elevation of the small meadow basin above Gardner Meadows"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Direction from Gardner summit toward North Gardner / Point 8,487"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Direction from Gardner summit toward North Gardner / Point 8,487"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Access text copied from the Washington Pass area"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Access text copied from the Washington Pass area"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "Access text copied from the Washington Pass area"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Wilderness named in avalanche zone"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "before": {
+    "gain_ft": 5800,
+    "approach": "From the Wolf Creek Trailhead (large parking area at the end of FS Road 5505 above Winthrop; Northwest Forest Pass required) follow Wolf Creek Trail #527 up-valley into the Lake Chelan-Sawtooth Wilderness. The trail drops roughly 250 ft in the first stretch, then settles into a long, gently-graded valley-bottom walk. About 90% of this corridor burned in the 2021 Cedar Creek Fire, so expect standing dead snags and blackened deadfall the entire way in — a real overhead-hazard concern in wind, and the cause of at least one reported tree-fall near camp. At roughly 2.6 miles the trail fords the North Fork of Wolf Creek (can run high in early season) — treat this as your last easy, reliable water source if you're moving fast. The Abernathy Lake trail splits off around 7.6 miles; continue straight up the Wolf Creek valley. The trail opens into Gardner Meadows around 9.5–10.3 miles (roughly 2,400–2,800 ft of cumulative gain from the trailhead), a broad, wildflower-and-lupine-filled basin at about 6,000 ft that serves as the standard base camp, with running water and (in season) avalanche lilies. From the meadows, leave the maintained trail and climb cross-country up the west side of the small stream draining south off Gardner Mountain, staying on its west bank; terrain shifts from broad grassy benches to scree and talus. Around 6,200 ft you reach a small meadow basin below the peak — from there work up toward the summit ridge, threading a few short cliff bands and gullies. This stretch is the route-finding crux of the approach: loose rock underfoot, and into early summer, lingering snow patches that can warrant an ice axe. The final approach to Gardner's 8,902 ft summit is class 2–3 scrambling on broken rock and scree.",
+    "approach_variants": [
+     {
+      "name": "Gardner Meadows: west bank of the stream to the scree",
+      "notes": "From Gardner Meadows around 6,000 ft leave the maintained trail and get onto the WEST side — climber's left — of the small stream draining south off Gardner Mountain toward Wolf Creek, then climb the steep meadows paralleling it, staying west of the streambed the whole way. A small meadow basin arrives at about 6,200 ft. Keep working toward the ridgeline; at roughly 7,100 ft the meadows give out and the ground turns to loose, marble-sized scree over sand, which is the slog that defines this route — about 1,400 ft of gain in half a mile. A faint bootpath exists in places and is easy to lose. Reckon on four to five hours from the meadows.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Standing dead snags and blackened deadfall the length of the burnt Wolf Creek corridor",
+       "1,400 ft of loose scree over sand — poor footing in both directions",
+       "Lingering snow patches in the cliff bands and gullies into early summer",
+       "Loose, exposed scrambling with gendarmes on the connecting ridge if you carry on to North Gardner"
+      ],
+      "baseFinding": "STAY WEST OF THE STREAM, AND DO NOT CLIMB THE GULLY IT COMES OUT OF. Three gullies drain this face and they are not equivalent. The EASTERN one is where the stream originates, and it is the one that can cliff-band you out — which is exactly why every description of this route tells you to stay west of the stream from the meadows upward. The CENTRAL open gully and slopes just west of the stream is the most direct line and tops out at the saddle southeast of the summit. A further large gully west of that reaches the saddle southwest of the true summit, between the mountain's two highpoints. The transition to watch for is at about 7,100 ft where meadow turns to rock and the scree begins; above it you climb directly up steep rocky slopes, picking over scree and rock buttresses. At the top the ground flattens onto a high plateau and the summit sits on the ridge crest, WIDE AND GENTLE. If you are standing on a pointed bump with higher ground to the north, you are on one of the sub-peaks southeast of the true top."
+     }
+    ],
+    "itinerary": {
+     "cal": "The Wolf Creek approach crosses old burn with little shade; most parties go mid-July through September once the trail and upper basins are snow-free, and it's worth checking current Wolf Creek Road conditions before driving in.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Wolf Creek Trailhead (~2,950 ft), follow the maintained Wolf Creek Trail #527 roughly 10 miles to Gardner Meadows, then continue off-trail on grassy slopes to a basin camp around 6,000-6,250 ft. Parties note little shade on this stretch (old burn) and occasional blowdown near the meadows, so an early start and full water bottles matter on hot days.",
+       "hours": 6.5,
+       "miles": 10,
+       "title": "Approach to Gardner Meadows / Wolf Creek Basin",
+       "gainFt": 3300,
+       "lossFt": 100,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Backpack in to high camp below Gardner's west ridge"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp pre-dawn and climb the grassy/scree slopes west of the outlet stream to a small basin around 7,000 ft, then work up the west ridge (class 2-3, loose in spots) to Gardner's summit. Strong parties continue the connecting ridge over Point 8,487 - dropping onto snow/scree below cliff bands to bypass exposed sections - to reach North Gardner, then reverse the same line back to camp.",
+       "hours": 8,
+       "miles": 5,
+       "title": "Gardner Mountain via West Ridge, saddle traverse to North Gardner",
+       "gainFt": 3900,
+       "lossFt": 3900,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": "Grassy/scree slopes toward the 7,000 ft basin below the west ridge."
+        },
+        {
+         "time": "+2.5 hr",
+         "label": "Reach west ridge crest",
+         "detail": "Class 2-3 scrambling, loose in places; stay on the whisper of a trail where visible."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Summit Gardner Mountain (8,898 ft)",
+         "detail": "Trip reports place summit time for the linked route around 8-9 AM for a 5 AM start."
+        },
+        {
+         "time": "+4-5 hr",
+         "label": "Saddle traverse toward Point 8,487",
+         "detail": "Drop to the low route (~7,400 ft) under the cliff bands rather than the exposed direct ridge crest."
+        },
+        {
+         "time": "+5.5-6 hr",
+         "label": "Summit North Gardner Mountain (8,956 ft)",
+         "detail": "Optional extension; some parties turn around at Gardner if time/conditions are marginal."
+        },
+        {
+         "time": "+8 hr",
+         "label": "Back at camp",
+         "detail": "Descent is fast: plunge-step scree, glissade remaining snow, and grass-slope down to the basin."
+        }
+       ],
+       "objective": "Summit Gardner Mountain and (optionally) North Gardner via the connecting ridge/saddle"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and reverse the approach: off-trail down to Gardner Meadows and out the Wolf Creek Trail to the trailhead. Mostly descending with minor undulation.",
+       "hours": 6,
+       "miles": 10,
+       "title": "Hike out",
+       "gainFt": 200,
+       "lossFt": 3500,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to Wolf Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~25-mile round trip with roughly 7,300-8,000 ft of total gain/loss - backpack in to a ~6,000-6,250 ft camp at Gardner Meadows/Wolf Creek Basin, a long summit day linking Gardner and North Gardner over the connecting ridge/saddle, then hike out. Very fit parties have done both peaks car-to-car in one very long day, but the standard, comfortable plan is 2-3 days."
+    },
+    "beta": "From Gardner Meadows (~10.5 mi in), leave the trail and ascend the grassy/brushy west side of the small stream draining south off Gardner Mountain, aiming for a small meadow basin around 6,200-7,100 ft. From there the route climbs a long, tedious slope of loose, marble-sized scree over sand (roughly 1,400 ft of gain in about half a mile) to reach the upper ridge/summit plateau, then finishes with a short, easier ridge scramble (some hand-holds, brief exposure) to the true summit. A faint climber's path exists on the scree in places but is easy to lose. Parties continuing to North Gardner Mountain descend southwest along the summit ridge to a false summit, then drop and scramble through loose rock/scree (and snow in early season) to a saddle near Point 8487, from which the 'Gardner Traverse' continues north — that connecting ridge is notably harder (class 3-4, gendarmes, occasional unexpected class 4) than the ascent of Gardner itself.",
+    "descent_text": "This is a non-technical alpine scramble — the standard West Ridge / Saddle Traverse descent involves no rappelling (0 rappels). From Gardner's summit the route continues southwest along the summit ridge over a false summit, then descends steeply through loose scree and (early-season) snow to a saddle below Point 8487. From that saddle, the ridge toward Point 8487 and North Gardner Mountain is generally class 2, but includes a gendarme or two and cliff bands that look intimidating from a distance; if conditions look sketchy (wet rock, verglas, or lingering snow), the safer line is to drop off the ridge to about 7,400–7,500 ft and side-traverse around the cliff bands before regaining the ridge near Point 8487. Most parties climb Gardner first and North Gardner second, then reverse the route: descend North Gardner's scree back toward the saddle and drop Gardner's south-facing scree/talus slopes back to the small stream basin and Gardner Meadows — trip reports specifically recommend this order, since Gardner's scree descends quickly and pleasantly (good scree-skiing when dry, glissade potential when snow-covered), whereas doing it in reverse is reportedly 'miserable.' From Gardner Meadows, retrace Wolf Creek Trail #527 roughly 10.3 miles back to the trailhead, including a final, easy-to-underestimate ~200 ft climb right near the trailhead. Carry an ice axe into early July for the one or two snow patches typically encountered high on the traverse, and watch for burned/standing dead timber the entire way, especially in wind.",
+    "timing": {
+     "totalHrs": 20.5,
+     "summitTimeHrs": 8,
+     "descentTimeHrs": 6,
+     "approachTimeHrs": 6.5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "From the Wolf Creek Trailhead (~2,950 ft), follow the maintained Wolf Creek Trail #527 roughly 10 miles to Gardner Meadows, then continue off-trail on grassy slopes to a basin camp…",
+       "fromTo": "Approach to Gardner Meadows / Wolf Creek Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8,
+       "note": "Leave camp pre-dawn and climb the grassy/scree slopes west of the outlet stream to a small basin around 7,000 ft, then work up the west ridge (class 2-3, loose in spots) to Gardner…",
+       "fromTo": "Gardner Mountain via West Ridge, saddle traverse to North Gardner",
+       "section": "Climb"
+      },
+      {
+       "hrs": 6,
+       "note": "Break camp and reverse the approach: off-trail down to Gardner Meadows and out the Wolf Creek Trail to the trailhead. Mostly descending with minor undulation.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "access": {
+     "fees": "Northwest Forest Pass day-use fee (or covered by an annual interagency pass) for trailhead parking",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No wilderness permit required — the Lake Chelan-Sawtooth Wilderness does not use a self-issue permit system (unlike North Cascades National Park Service Complex backcountry, which requires an NPS overnight permit); only the trailhead parking pass applies.",
+     "closures": "Trail corridor lies within the 2021 Cedar Creek Fire burn scar (~90% high-severity along much of the Wolf Creek drainage); expect standing dead trees/hazard-tree risk, especially on windy days — check current Methow Valley Ranger District trail alerts before heading out.",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District — Lake Chelan-Sawtooth Wilderness",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass or America the Beautiful/interagency pass for trailhead parking",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for camping in the Lake Chelan-Sawtooth Wilderness; parking at the trailhead needs a recreation pass or day pass."
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier eastern-Cascade climate; dry rock is typical in the primary season with lingering snow early and full winter conditions outside it",
+      "probability": "Afternoon convective thunderstorms are possible in mid/late summer — plan for an early start and be off the exposed ridge by afternoon"
+     },
+     "exposure": "Exposed Class 3 moves on the connecting ridge above loose talus; a slip on the loose rock carries real injury consequence, and the remote location means any incident requires a lengthy self-rescue or Okanogan County SAR response rather than quick help",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route climbed outside avalanche season; no NWAC zone forecast specifically applies to this Pasayten/Okanogan summit",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    }
+   }
+  }
+ ]
+}

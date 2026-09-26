@@ -1,0 +1,256 @@
+{
+ "applied": [
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Church Lake elevation / gain from trailhead"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Church Lake elevation / gain from trailhead"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Church Lake elevation / gain from trailhead"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "what_to_bring",
+   "path": [
+    0
+   ],
+   "fact": "Maintained trail vs boot path"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Point 6066: col or knoll"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Point 6066: col or knoll"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Point 6066: col or knoll"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Point 6066: col or knoll"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Point 6066: col or knoll"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Point 6066: col or knoll"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Point 6066: col or knoll"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Point 6066: col or knoll"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Wilderness / land manager"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Wilderness / land manager"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Where Canyon Creek Road leaves SR-542"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "before": {
+    "beta": "From the Church Lake trailhead at the end of FS Road 3160, an easy but steep unofficial path drops about 0.6 miles to Church Lake. From the lake the route continues around the shore and up through meadows toward a ridge/saddle above, then follows the ridge — which becomes steep but is 'nothing scary' — to a high point near peak 6066, with the final ~100 meters to the true summit requiring some class 3 scrambling on a narrow, occasionally exposed ridge. This is a hiker/scrambler route, not a roped climb; no technical gear is used on it.",
+    "waypoints": [
+     {
+      "lat": 48.957,
+      "lng": -121.851,
+      "elev": 4900,
+      "name": "FS Road 3160 End Trailhead",
+      "note": "End of the rough, single-lane FS Road 3160 (high-clearance/4x4 recommended); unmaintained boot path to Church Lake starts here.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Canyon Creek Road (FS-31) north off SR-542 above Maple Falls, then FS-3160 to its end at about 4,900 ft. The upper road is single-lane and rough, high clearance is the usual advice, and the parking is no more than a wide spot at the end."
+     },
+     {
+      "lat": 48.95563333333333,
+      "lng": -121.85343333333333,
+      "elev": 5100,
+      "name": "Boot Path Junction / Old Roadbed",
+      "note": "Unmarked user-built path leaves the old roadbed and climbs through brush toward the lake basin.",
+      "type": "Junction",
+      "distMi": 0.2,
+      "directions": "Continue on the old roadbed past the parking area for a couple of hundred yards. The user-built path toward the lake basin leaves it unmarked, though motorbike use has worn the line in well enough to follow."
+     },
+     {
+      "lat": 48.94962,
+      "lng": -121.84918,
+      "elev": 5150,
+      "name": "Church Lake",
+      "note": "Emerald subalpine lake in a basin below Bearpaw; established rough camp spots on the shore, often overgrown approach.",
+      "type": "Campsite",
+      "distMi": 0.6,
+      "directions": "The path climbs steeply through forest — the steepest sustained grade of the day, about 400 ft — then rolls over a rise into the cirque holding the lake, 0.6 to 0.7 mile from the car."
+     },
+     {
+      "lat": 48.951086751999995,
+      "lng": -121.854669344,
+      "elev": 5450,
+      "name": "Left Rim of Church Lake Basin",
+      "note": "Keep left around the lake and start climbing the rim of the basin toward Point 6066 rather than following the lakeshore fully around.",
+      "type": "Junction",
+      "distMi": 1,
+      "directions": "Skirt the lake along its east/left shore rather than following the shoreline the whole way around, then start up the rim of the basin on the left (west) toward Point 6066. Fill water at the lake; there is none above it."
+     },
+     {
+      "lat": 48.948673504,
+      "lng": -121.854238688,
+      "elev": 5800,
+      "name": "Steep Heather/Meadow Ridge Below Point 6066",
+      "note": "Steep, loose tread through heather and meadow gains the ridge crest; described by hikers as steep but 'nothing scary' in dry conditions, slick when wet.",
+      "type": "Hazard",
+      "distMi": 1.4,
+      "directions": "Above the lake the tread fades into intermittent boot path and cairns through meadow and heather benches, and the rim steepens on loose footing. Straightforward when dry, genuinely slick when wet, and snow lingers on the shaded slopes here into midsummer."
+     },
+     {
+      "lat": 48.941,
+      "lng": -121.8525,
+      "elev": 6066,
+      "name": "Point 6066 Knoll",
+      "note": "Knoll with 270-degree views from Mount Baker eastward into Canada; the narrow summit ridge to Bearpaw's true top begins here.",
+      "type": "Junction",
+      "distMi": 1.7,
+      "directions": "Keep working up the rim to the broad high point on the ridge dividing Church Lake's basin from Bearpaw's summit block. This stretch accounts for most of the day's remaining gain."
+     },
+     {
+      "lat": 48.946260255999995,
+      "lng": -121.853808032,
+      "elev": 6060,
+      "name": "Exposed Summit Ridge",
+      "note": "Narrow, sometimes exposed ridgeline with loose footing for the final approach; use caution, easy to slip off either side.",
+      "type": "Hazard",
+      "distMi": 1.8,
+      "directions": "From the knoll drop slightly and traverse north across a rocky, heathery bowl toward the base of the summit block, picking up the narrow connecting ridge. Footing is loose and the crest is exposed on both sides in places."
+     },
+     {
+      "lat": 48.94605,
+      "lng": -121.85402,
+      "elev": 6091,
+      "name": "Bearpaw Mountain",
+      "note": "True summit; final ~100m from the ridge is a short Class 2-3 scramble over blocky rock.",
+      "type": "Summit",
+      "distMi": 1.85,
+      "directions": "The last stretch is a short Class 2-3 scramble, roughly 100 m, on generally solid blocky rock with mild exposure. Reverse the same ground to descend, or drop the scree-and-dirt chute that cuts straight from the ridge down to the lakeshore — quicker, but loose enough that it is no place to be below another party."
+     }
+    ],
+    "what_to_bring": [
+     "trekking poles for the short, steep maintained trail to Church Lake",
+     "ice axe or microspikes if attempting in spring/early summer while snow persists in the cirque (reported to linger into July)",
+     "sturdy trail shoes or light hiking boots",
+     "navigation aid (map/GPS) since the climbers' path fades to a boot-track past Church Lake through the alpine meadows/cirque",
+     "sun protection for the open alpine basin",
+     "helmet if concerned about loose rock on the final scramble (optional, not reported as standard practice)"
+    ],
+    "approach_variants": [
+     {
+      "name": "FS-3160 road-end boot path to Church Lake, then the basin rim to the 6,066 ft saddle",
+      "notes": "From the FS-3160 road-end parking, reached via Canyon Creek Road (FS-31) then FS-3160, the route follows an unmaintained but heavily used boot path — not a numbered Forest Service trail. It climbs steeply through forest for about 0.6-0.7 mile and roughly 400 ft to Church Lake, a small emerald subalpine lake in a cirque directly below Bearpaw's north side. This first stretch is the steepest sustained grade of the day.\n\nSkirt the lake along its east (left) shore; the best flat campsites are on the far side.\n\nBeyond the lake the tread fades into intermittent boot path and cairns through meadows and heather benches. Keep LEFT — west — up the basin rim toward a broad saddle around 6,066 ft on the ridge separating Church Lake's basin from Bearpaw's summit block. That stretch accounts for most of the remaining 900 ft of the route's 1,300 ft total gain over roughly 1.5 miles one way.\n\nChurch Lake is the last reliable water.",
+      "season": "Roughly Jul-Sep; snow patches persist into July on shaded ground and in the summit gullies",
+      "hazards": [
+       "An unmaintained boot path with no numbered trail and no maintained tread past the lake",
+       "Intermittent cairns through meadows and heather with nothing built to follow",
+       "Snow patches into July on shaded ground and in the summit gullies",
+       "A loose scree and dirt descent chute that parties use as a shortcut",
+       "Church Lake is the last water"
+      ],
+      "baseFinding": "CHURCH LAKE IS THE HANDRAIL AND IT IS UNMISSABLE — 0.6 TO 0.7 MILE UP, 400 FT OF GAIN, AND THE STEEPEST GROUND OF THE DAY IS BEHIND YOU WHEN YOU REACH IT. Everything about this route is oriented from the lake. Skirt it on its EAST, left-hand, shore.\n\nABOVE THE LAKE THE INSTRUCTION IS ONE WORD: LEFT. Keep left — west — up the basin rim. The tread is intermittent boot path and cairns through meadows and heather benches and there is nothing built to follow, so the bearing is what you navigate on.\n\nTHE 6,066 FT SADDLE IS THE TOP OF THE APPROACH, AND IT IS A COL: a broad low point on the ridge separating the Church Lake basin from the summit block, with ground falling away on the far side. Arriving somewhere you can see down both sides is the confirmation.\n\nFROM THE SADDLE, DROP SLIGHTLY AND TRAVERSE NORTH. The base of the summit block is across a rocky heather bowl to the north. That short descent is the step people skip; a party that keeps climbing straight off the saddle is on the ridge rather than under the block.\n\nTHE CLIMBING IS THE LAST 300 FT AND NOTHING BELOW IT. From the base of the block, roughly 300 ft of easy Class 2-3 on generally solid rock and blocks, with mild exposure only in the last stretch, reaches the 6,091 ft summit. If you are scrambling for much more than 300 ft you are on the wrong feature.\n\nDESCENT SHORTCUT WORTH KNOWING, because it changes what you should look for on the way up: many parties come down a scree and dirt chute that cuts straight from the ridge to the lake shore, shortcutting the traverse. It is loose. Noting where it tops out on the way up is what makes it usable on the way down."
+     }
+    ],
+    "approach": "From the FS 3160 road-end parking (roughly 48.957°N, 121.851°W, reached via Canyon Creek Road/FS 31 then FS 3160 as noted above), the route follows an unmaintained but well-worn boot path — not a numbered Forest Service trail, just a heavily used user track — that climbs steeply through forest for about 0.6-0.7 mile and roughly 400 ft of gain to Church Lake, a small emerald subalpine lake sitting in a cirque directly below Bearpaw's north side. This first pitch is the steepest sustained grade of the day. Skirt the lake along its east/left shore (best flat campsites are on the far side, useful if splitting the trip). Beyond the lake the trail fades into intermittent boot-path and cairns through meadows and heather benches; keep left (west) up the basin rim toward a broad saddle/high point around 6,066 ft on the ridge separating Church Lake's basin from Bearpaw's summit block — this stretch accounts for most of the remaining ~900 ft of the route's 1,300 ft total gain over roughly 1.5 mi one-way (matching the ~5.9 km round trip). From the 6,066 ft saddle, drop slightly and traverse north across a rocky/heather bowl toward the base of Bearpaw's summit block; the final approximately 300 ft to the 6,091 ft summit is easy class 2-3 scrambling on generally solid rock and blocks, with mild exposure in the last pitch. Church Lake is the last reliable water source — carry water from there for the upper mountain. There is no maintained tread past the lake, so route-finding by cairns and boot-path is necessary, and in early/mid-season lingering snow on the steep initial slope above the lake and in the summit gullies can require an ice axe and caution; parties often find snow patches into July on shaded sections.",
+    "descent_text": "Descend the same line: from the summit, downclimb the class 2-3 scramble terrain back to the 6,066 ft saddle above Church Lake basin. From there most parties either retrace the rim/boot-path back down into the basin, or drop via a direct scree/dirt gully (chute) that cuts straight down from the ridge to the lake's shore, shortcutting the traverse — this chute is loose underfoot (scree and dirt over rock) and warrants care with footing and any parties below; if snow lingers in the chute (common into early summer) an ice axe and basic self-arrest awareness are worthwhile. From Church Lake, retrace the 0.6-0.7 mile boot path back down to the FS 3160 trailhead. This is a non-technical walk-off/downclimb scramble — no rope or rappelling is used on this route.",
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Standard Mt. Baker-Snoqualmie NF regulations apply. The Church Lake/Bearpaw Mountain route follows an unmaintained boot path (not an official FS trail); it's a short (~3.7 mi RT) outing from the FS 3160 road end, not a remote multi-day approach.",
+     "permit": "None required — a self-issue climbing register may exist at some trailheads but is optional and free.",
+     "closures": "Recent Forest Service road-status reports note FS 31 (Canyon Creek Road) closed at mile 4 by landslide debris, which also blocks the FS 3160 spur used for this route. Verify current status with the Glacier Public Service Center or MBS road-conditions page before the trip.",
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mount Baker Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camp only at designated sites where they exist, such as the Chain Lakes. Developed campgrounds on the highway take reservations on Recreation.gov."
+     }
+    }
+   }
+  }
+ ]
+}

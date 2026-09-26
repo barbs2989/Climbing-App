@@ -1,0 +1,1801 @@
+{
+ "batches": [
+  "b097.json",
+  "b098.json",
+  "b099.json",
+  "b100.json"
+ ],
+ "routes_read": 9,
+ "routes": [
+  {
+   "id": "wa_mount_barnes_scramble",
+   "name": "Elwha Basin Scramble",
+   "area": "Mount Barnes",
+   "contradictions": [
+    {
+     "fact": "Approach trailhead and base camp",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Sol Duc Trailhead (end of Sol Duc Hot Springs Road)"
+      },
+      {
+       "field": "itinerary.days[3].title",
+       "says": "Ferry Basin to a high camp near Bear Pass"
+      },
+      {
+       "field": "beta",
+       "says": "Parties approach via the long Elwha River Trail to a camp in or near Elwha Basin"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "from Elwha Basin camp to the summit"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "long approach up the Elwha River trail to the upper basin (historically well over a full day of hiking each way)"
+      },
+      {
+       "field": "bail",
+       "says": "Descend to the Elwha trail and follow it out"
+      }
+     ],
+     "why": "The waypoints, trailhead card and itinerary run a Sol Duc/Bailey Range traverse to a camp near Bear Pass, while beta, pitch_detail and partner requirements describe an Elwha River Trail approach to an Elwha Basin camp.",
+     "internal_resolution": "Waypoints, approach_logistics, road, itinerary and timing all use Sol Duc with a Bear Pass camp; the Elwha-basin wording in beta/pitch_detail/partner_requirements is the outlier (approach offers Elwha only as an alternative).",
+     "needs_research": false
+    },
+    {
+     "fact": "Elwha Snowfinger usable on the exit",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[5].note",
+       "says": "down the Elwha Snowfinger snowfield into the tangled brush"
+      },
+      {
+       "field": "timing.sectionBreakdown[5].fromTo",
+       "says": "Descend the Elwha Snowfinger and out to Whiskey Bend"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "the Elwha Snowfinger has largely melted out and is no longer a dependable ascent/descent ramp"
+      },
+      {
+       "field": "descent",
+       "says": "the 'snowfinger' has largely melted out in recent years and can no longer be relied on as a snow ramp"
+      }
+     ],
+     "why": "The itinerary exit day plans a descent of the Snowfinger snowfield that hazards and descent say is melted out and unreliable.",
+     "internal_resolution": "hazards, descent and watch_out agree the snowfinger is no longer a snow ramp; the itinerary/timing wording is stale.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "3200"
+      },
+      {
+       "field": "itinerary.days[*].gainFt (sum)",
+       "says": "15700"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "17,000+ ft of cumulative gain"
+      },
+      {
+       "field": "itinerary.days[4].gainFt",
+       "says": "2200"
+      },
+      {
+       "field": "overview",
+       "says": "It rises about 3,200 ft above the basin"
+      }
+     ],
+     "why": "The header gain (3,200 ft) is neither the trip total (itinerary sums to 15,700, totalNote says 17,000+) nor the summit side-trip gain (2,200 ft), and the totalNote disagrees with its own day sums.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whiskey Bend to Elwha Basin mileage",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "26 mi round trip with ~6,100 ft gain to the trail's end near Elwha Basin/Dodwell-Rixon Pass"
+      },
+      {
+       "field": "bivy[3].notes",
+       "says": "roughly twenty-five miles from Whiskey Bend"
+      },
+      {
+       "field": "itinerary.days[5].miles",
+       "says": "25.5"
+      }
+     ],
+     "why": "The approach calls the Whiskey Bend-to-trail's-end trip 26 mi round trip, but Chicago Camp alone is ~25 mi one way and the exit day is 25.5 mi.",
+     "internal_resolution": "bivy and itinerary agree the trail is ~25 mi one way; '26 mi round trip' should be one way.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "late July through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "interior basin typically still snowbound; not considered in season"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through mid-August is most reliable ... September trips face thicker slide-alder brush"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best mid-August through mid-September"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Late July to mid-September"
+      }
+     ],
+     "why": "The season chip includes June (called out of season) and excludes September (called good/workable), and the best windows given (mid-Jul-mid-Aug vs mid-Aug-mid-Sep) barely overlap.",
+     "internal_resolution": "Most fields (seasonal_guidance, approach_variants, crowds, avalanche zone) point to late July-September; season 'Jun-Aug' is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier travel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer route"
+      },
+      {
+       "field": "waypoints[5].name",
+       "says": "Childs Glacier crossing"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Small glacier/permanent snowfield below Bear Pass ... with crevasse-type terrain in Junkyard Basin just beyond"
+      },
+      {
+       "field": "approach_variants[0].hazards[3]",
+       "says": "Firm snow on the small glacier below Bear Pass — axe and traction"
+      }
+     ],
+     "why": "Safety tab says no glacier travel while the waypoints and approach hazards put a glacier crossing with crevasse-type terrain on the route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit side-trip duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[4].hours",
+       "says": "6"
+      },
+      {
+       "field": "itinerary.days[4].schedule",
+       "says": "+1.5 hr / +1 hr / +3 hr Summit / +5-6 hr Retrace"
+      },
+      {
+       "field": "approach",
+       "says": "a few hours round trip once camp is established"
+      }
+     ],
+     "why": "The schedule offsets add to 10.5-11.5 hours for a day listed as 6 hours and described as a few hours round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Permit booking channel and vetting",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "all overnight wilderness stays require a wilderness camping permit via Recreation.gov"
+      },
+      {
+       "field": "access.permit",
+       "says": "the Elwha Basin/Bailey Range cross-country camping zones are call-in only and must be booked by phone ... rather than the standard online quota system"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "requires an Olympic NP wilderness permit (quota + required bear canister) via recreation.gov"
+      },
+      {
+       "field": "access.rules",
+       "says": "Rangers will not deny a permit based on a party's stated skill or gear"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the rangers will ask about your experience before issuing"
+      }
+     ],
+     "why": "Fields disagree on whether the cross-country zones can be booked on Recreation.gov and on whether rangers vet experience.",
+     "internal_resolution": "access.permit, pro_tips and bivy agree the cross-country zones are phone-only; the Recreation.gov-only wording is generic.",
+     "needs_research": true
+    },
+    {
+     "fact": "Madison Falls to Whiskey Bend road walk",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "adding an extra 6.2 mi one-way walk or bike"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "about six to seven miles away on foot. The park's own figure is seven."
+      }
+     ],
+     "why": "The road-walk length is given as 6.2 mi and as ~7 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "name": "North Couloir / Christie Glacier",
+   "area": "Mount Christie",
+   "contradictions": [
+    {
+     "fact": "Route difficulty grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "beta",
+       "says": "a rotten, exposed ledge traverse (class 4)"
+      },
+      {
+       "field": "climbing_route[2].class",
+       "says": "4"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "loose, chossy, poorly-protected Class 4 rock step below the high col"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[2]",
+       "says": "Class 2-3 scrambling movement on loose rock"
+      }
+     ],
+     "why": "The header grade Class 2-3 understates a route whose crux every descriptive field calls Class 4 and that requires a rope and rappel.",
+     "internal_resolution": "beta, hazards, obj_haz, climbing_route and rappels all describe a Class 4 crux; grade should reflect it.",
+     "needs_research": false
+    },
+    {
+     "fact": "Position of the Class 4 step relative to the col",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "hazards[0]",
+       "says": "Class 4 rock step below the high col"
+      },
+      {
+       "field": "rappels",
+       "says": "to descend the loose Class 4 step below the high col"
+      },
+      {
+       "field": "approach_variants[0].hazards[0]",
+       "says": "A loose, chossy, poorly protected Class 4 step above the high col"
+      },
+      {
+       "field": "climbing_route[2].label",
+       "says": "Summit block cliff above the col"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "True summit gained by a loose Class 4 scramble through dense krummholz off the southeast ridge"
+      }
+     ],
+     "why": "The crux step is placed below the col in some fields, above the col in others, and on the summit/SE ridge in the summit waypoint (which the climbing route calls Class 2-3).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of rappels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "One short rappel (roughly 30-50 ft)"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "parties have rapped the summit-block cliff (about 50 ft) and again through the krummholz"
+      },
+      {
+       "field": "descent",
+       "says": "down-climb or rappel the loose Class 4 step"
+      },
+      {
+       "field": "bail",
+       "says": "requires a rappel to descend safely ... do not attempt to down-climb it unroped"
+      }
+     ],
+     "why": "RAPPELS says one rappel while the climbing route describes two, and descent allows down-climbing that bail forbids.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day timeline",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "4:00-5:00 AM from camp"
+      },
+      {
+       "field": "itinerary.days[2].schedule[4]",
+       "says": "~4:00 PM Summit (6,182 ft)"
+      },
+      {
+       "field": "itinerary.days[2].schedule[5].detail",
+       "says": "Expect 12-14 hours round trip"
+      }
+     ],
+     "why": "With the recommended 4-5 AM start the schedule still puts the summit at ~4 PM (copied from the 9 AM reference party), which would make the ascent alone 11-12 hours and the round trip far over 12-14 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Elip Creek camp distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Elip Creek (~3 mi) is a closer alternative if starting late"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "6.5"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "5.1 (Halfway House)"
+      }
+     ],
+     "why": "Day 1 calls Elip Creek a closer (~3 mi) alternative to Halfway House, but the waypoints and approach put Elip Creek at 6.5 mi, beyond Halfway House at 5.1 mi.",
+     "internal_resolution": "waypoints and approach agree Elip Creek is at ~6.5 mi.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7000"
+      },
+      {
+       "field": "itinerary.days[*].gainFt (sum)",
+       "says": "7000"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 41 miles and 8,000+ ft round trip"
+      }
+     ],
+     "why": "The totalNote says 8,000+ ft while gain_ft and the itinerary days both total 7,000 ft.",
+     "internal_resolution": "gain_ft and the day sums agree on 7,000.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "25.7"
+      },
+      {
+       "field": "itinerary.days[*].miles (sum)",
+       "says": "41.2"
+      },
+      {
+       "field": "overview",
+       "says": "roughly 30+ miles round trip from the nearest trailhead"
+      }
+     ],
+     "why": "dist_km (16 mi) is one-way while the itinerary totals 41 mi round trip and the overview says 30+ mi round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "Mid-to-late July through August is the reliable window ... By September, fall rains raise the North Fork Quinault ford levels"
+      },
+      {
+       "field": "climate.bySeason.summer",
+       "says": "Best window (Jul-Aug)"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September window"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "optimal"
+      }
+     ],
+     "why": "seasonal_guidance rates September optimal while best_season and climate end the reliable window in August and warn of September fords and snow.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glaciated vs non-glaciated",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "The standard West Slopes route crosses the Christie Glacier"
+      },
+      {
+       "field": "gear[2]",
+       "says": "climbing rope (glacier travel + short rappel)"
+      }
+     ],
+     "why": "The avalanche card calls the route non-glaciated while the crevasse card, gear and beta require roped travel on the Christie Glacier.",
+     "internal_resolution": "Every other field describes a roped Christie Glacier crossing.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "name",
+       "says": "North Couloir / Christie Glacier"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "The standard West Slopes route"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "READ THE NAME ON THIS ROUTE WITH CARE — it says West Slopes and the climb is on the NORTH side"
+      }
+     ],
+     "why": "Two fields call the route 'West Slopes' while the displayed name is North Couloir / Christie Glacier.",
+     "internal_resolution": "name, face and aspect all say north; the 'West Slopes' references are stale.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit issuance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "Pick up a self-issue wilderness permit at the trailhead kiosk"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "no same-day walk-up sites are held"
+      },
+      {
+       "field": "access.permit",
+       "says": "reserve online via recreation.gov before your trip"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "quota season roughly May-Sept) for every camp on this route"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Not itself a quota area"
+      }
+     ],
+     "why": "The trailhead waypoint says to self-issue a permit at the kiosk while access says reserve in advance with no walk-ups, and fields disagree on whether Low Divide is a quota area.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "name": "Mount Dana Scramble",
+   "area": "Mount Dana",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Whiskey Bend Trailhead (Elwha)"
+      },
+      {
+       "field": "approach",
+       "says": "the actual hike-in follows the Elwha River Trail ... Elwha Snow Finger ... Dodwell-Rixon Pass"
+      },
+      {
+       "field": "descent_text",
+       "says": "walk back down-valley (~24-26 miles) to Whiskey Bend"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Sol Duc trailhead to Heart Lake"
+      },
+      {
+       "field": "itinerary.days[1].title",
+       "says": "Over Cat Peak and the Catwalk to Eleven Bull Basin"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "check Sol Duc Road status before committing to a trailhead date"
+      }
+     ],
+     "why": "The waypoints, trailhead card, road, approach and descent all use Whiskey Bend and the Elwha Snowfinger, while the itinerary and timing run the trip from the Sol Duc trailhead over High Divide and the Catwalk.",
+     "internal_resolution": "Waypoints, approach_logistics, road, access, approach, descent_text and rope_note all use the Elwha/Whiskey Bend line; itinerary and timing are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5414"
+      },
+      {
+       "field": "itinerary.days[*].gainFt (sum)",
+       "says": "14400"
+      },
+      {
+       "field": "itinerary.days[*].lossFt (sum)",
+       "says": "15800"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "an estimated 14,000-16,000 ft of cumulative gain"
+      }
+     ],
+     "why": "The header gain 5,414 ft is far below the 14,000+ ft trip total, and the itinerary's loss exceeds its gain on a round trip that returns to the same trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Madison Falls road walk",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "adds roughly 7 miles each way of road walking"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "walk or bike ~8 miles to the Whiskey Bend Trailhead"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "about six to seven miles away on foot"
+      }
+     ],
+     "why": "The road-walk length is given as ~7 mi, ~8 mi and 6-7 mi.",
+     "internal_resolution": "Most fields say ~7 mi; the trailhead card's ~8 mi is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trip length in days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "realistically a multi-day trip (3+ days)"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "6 days"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Full food/fuel loads for a week-plus trip"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "typical of a 3-5+ day interior trip"
+      }
+     ],
+     "why": "Trip length is framed as 3+ days, 3-5+ days, 6 days and week-plus in different fields.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit channel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "reserved via Recreation.gov or in person at the Wilderness Information Center"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "CROSS-COUNTRY ZONES CANNOT BE BOOKED ONLINE — you must telephone the wilderness information centre"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "no same-day walk-up sites are held"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "recreation.gov quota zone"
+      }
+     ],
+     "why": "Fields disagree on whether the permit is booked online, by phone, or in person.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "56.33"
+      },
+      {
+       "field": "approach",
+       "says": "Given the roughly 70-mile round-trip distance"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 66-mile, 6-day round trip"
+      }
+     ],
+     "why": "dist_km (35 mi) is one-way while the itinerary and approach give 66-70 mi round trip for different trailheads.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "name": "South Slopes (Bailey Range)",
+   "area": "Mount Ferry",
+   "contradictions": [
+    {
+     "fact": "Elwha Snowfinger exit",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[3].note",
+       "says": "descend the Elwha Snowfinger (a permanent snow gully) to reconnect with maintained trail at Low Divide"
+      },
+      {
+       "field": "timing.sectionBreakdown[3].note",
+       "says": "descend the Elwha Snowfinger (a permanent snow gully)"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "Elwha Snowfinger exit has largely melted out and is no longer reliably passable (2023-2025 reports) -- do not rely on it as a bailout"
+      },
+      {
+       "field": "access.closures",
+       "says": "The Elwha Snowfinger exit is also effectively closed by natural melt-out."
+      },
+      {
+       "field": "descent",
+       "says": "Rangers now commonly route parties back north to the Ferry-Pulitzer col and out via Dodger Point instead"
+      }
+     ],
+     "why": "The itinerary exits down the Snowfinger as a permanent snow gully, while hazards, access and descent say it has melted out and is effectively closed.",
+     "internal_resolution": "hazards, descent, descent_text and access.closures agree the snowfinger is unreliable; the itinerary/timing is stale.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit ascent line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "South Slopes (Bailey Range)"
+      },
+      {
+       "field": "overview",
+       "says": "a straightforward walk-up over loose 'Olympics dagger' scree from the Ferry-Pulitzer col"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "via a broad bench and scree/talus slope east of the true summit"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "do Mount Ferry as a side excursion via the southeast ridge ... descending the easier south slope"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If you are downclimbing a couple of hundred feet through a small connecting canyon southwest, that is the onward traverse toward Pulitzer, not the way up."
+      }
+     ],
+     "why": "The ascent is described as from the Ferry-Pulitzer col, from a bench east of the summit, and up the southeast ridge, while the route is named South Slopes, which the itinerary uses only for descent.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].note",
+       "says": "descending the easier south slope back to the Bailey Range route before continuing to camp near Stephen/Cream Lake"
+      },
+      {
+       "field": "itinerary.days[2].title",
+       "says": "Stephen Lake / Cream Lake to Queets Basin"
+      },
+      {
+       "field": "approach",
+       "says": "over Cat Peak's exposed 'Catwalk' ... and Stephen Peak ... before dropping into Ferry Basin (~5,700 ft), the standard camp beneath Mount Ferry"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Ferry Basin"
+      }
+     ],
+     "why": "The itinerary camps at Stephen/Cream Lake after Ferry, but the approach puts Stephen Peak before Ferry Basin and names Ferry Basin as the standard camp.",
+     "internal_resolution": "approach, approach_variants, waypoints and bivy agree Ferry Basin is the camp and lies past Stephen Peak.",
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass at Sol Duc",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Northwest Forest Pass required for parking"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass."
+      }
+     ],
+     "why": "The trailhead waypoint requires a Northwest Forest Pass while access requires the Olympic NP entrance fee for the same trailhead.",
+     "internal_resolution": "The Sol Duc trailhead is inside Olympic National Park, so access.parking_pass is the consistent one.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4495"
+      },
+      {
+       "field": "itinerary.days[*].gainFt (sum)",
+       "says": "10744"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "4500"
+      }
+     ],
+     "why": "The header gain 4,495 ft matches only day 2, not the 5-day trip total of 10,744 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Exit leg to trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[3].title",
+       "says": "Dodwell-Rixon Pass to Low Divide"
+      },
+      {
+       "field": "itinerary.days[4].miles",
+       "says": "5"
+      },
+      {
+       "field": "itinerary.days[4].objective",
+       "says": "Hike out via the North Fork Quinault (or Elwha) trail"
+      },
+      {
+       "field": "approach",
+       "says": "the Elwha River/Whiskey Bend trailhead in the south, or with the North Fork Quinault trailhead via Dodwell-Rixon Pass"
+      }
+     ],
+     "why": "The final day covers 5 mi from Low Divide to a trailhead, but both exits named (North Fork Quinault, Elwha) are 16+ mi from Low Divide; the Snowfinger also descends to the Elwha Basin, not Low Divide.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit channel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "wilderness permits (recreation.gov) needed"
+      },
+      {
+       "field": "access.permit",
+       "says": "itineraries must be arranged by phone through the Wilderness Information Center"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "quota zones at Cream Lake, Ferry Basin, Elwha Basin"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas"
+      }
+     ],
+     "why": "Fields disagree on booking channel and on which zones are quota areas.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier kit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "Parties commonly carry a lightweight glacier/crevasse-rescue kit ... for other glacier crossings elsewhere on the Bailey Range Traverse"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "the existing beta describes lingering snowfields on the traverse rather than crevassed glacier terrain"
+      }
+     ],
+     "why": "The rack recommends crevasse-rescue gear for glacier crossings on the traverse while the crevasse card says the traverse has only snowfields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Sol Duc to Heart Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 9-11 miles and ~3,300 ft of gain from the car"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2844"
+      }
+     ],
+     "why": "The approach gives 9-11 mi and ~3,300 ft to Heart Lake while the itinerary and waypoint give 8 mi and 2,844 ft.",
+     "internal_resolution": "waypoints (Heart Lake distMi 8, elevations 1900→4744) and itinerary agree.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "name": "Standard Scramble",
+   "area": "Mount Lawson",
+   "contradictions": [
+    {
+     "fact": "Approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "hike the North Fork Quinault River Trail roughly 16 miles to Low Divide ... then follow the primitive, unmaintained Skyline Ridge Trail toward Promise Creek Pass before dropping off-trail onto Lawson's slopes"
+      },
+      {
+       "field": "waypoints[5].name",
+       "says": "North Fork Quinault River Ford / Leave Trail"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Continue to a riverside site near the short switchbacks below Lawson's north-face avalanche fan - the crossing point used by most parties"
+      },
+      {
+       "field": "descent_text",
+       "says": "re-ford the North Fork Quinault River ... to regain the maintained trail near Sixteen Mile camp"
+      },
+      {
+       "field": "watch_out[4]",
+       "says": "primitive/unmaintained trail past Low Divide"
+      }
+     ],
+     "why": "The approach goes over Low Divide and the Skyline Ridge Trail, while waypoints, itinerary, descent and bivy leave the valley trail at a river ford below Lawson's north side.",
+     "internal_resolution": "beta, waypoints, itinerary, descent_text, bail and bivy all use the river-ford/north-side line; the Low Divide/Skyline wording is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Leave-trail point (distance and elevation)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].distMi",
+       "says": "7.2"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "1050"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "10"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "The camp is roughly twelve miles up the valley from the North Fork trailhead"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "2021"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "9.5 (summit)"
+      }
+     ],
+     "why": "The ford/leave-trail point is at 7.2 mi and 1,050 ft in the waypoints but ~10 mi (itinerary) or ~12 mi at 2,021 ft (Sixteen Mile Camp) elsewhere, and the summit waypoint at 9.5 mi comes before the itinerary even reaches camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Scramble grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "beta",
+       "says": "The scrambling itself is only Class 2"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "the climb is a class 2 slog"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "one awkward Class 3-4 step depending on season"
+      }
+     ],
+     "why": "The route is graded Class 3, called only Class 2 in beta and bivy, and given a Class 3-4 step in the itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "June through August"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Go in June/July when the chute still holds consolidated snow"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September; August is the most reliable window"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "river fords are dangerous with peak snowmelt (outside the season window)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Go in late summer when the river is low"
+      }
+     ],
+     "why": "The season chip and best_season recommend June and exclude September, while seasonal_guidance calls June outside the season and includes September.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which fords",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[2]",
+       "says": "difficult fords at Wild Rose, Elip, and 16-Mile creeks"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "There are three of them — Wild Rose Creek, Elip Creek and the North Fork itself right at this camp"
+      }
+     ],
+     "why": "The third ford is 16-Mile Creek in hazards/watch_out but the North Fork Quinault itself in bivy and descent_text.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camp type and summit-day load",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "Alpine start from high camp"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Multi-day approach (2+ days) via the southern Olympic trail network to a high camp"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Hike in to a riverside camp near the base of Lawson's north-side gullies"
+      },
+      {
+       "field": "itinerary.days[1].packLb",
+       "says": "0"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Retrace the route back down to camp, then break camp and hike the full ~10 miles back"
+      }
+     ],
+     "why": "The itinerary uses a one-day approach to a valley riverside camp, not a multi-day approach to a high camp, and lists a 0 lb pack on a day that hikes out with full camp.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche exposure",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route climbed outside avalanche season"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "parties often go earlier (Mar-May) ... at the cost of avalanche risk in the gully"
+      }
+     ],
+     "why": "The avalanche card says there is no avalanche season exposure, while the itinerary describes Mar-May ascents that take avalanche risk in the gully.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "30.58"
+      },
+      {
+       "field": "itinerary.days[*].miles (sum)",
+       "says": "23"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 20 miles"
+      }
+     ],
+     "why": "dist_km is 19 mi, the itinerary days total 23 mi and the totalNote says ~20 mi.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Permit availability",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[0]",
+       "says": "popular Quinault-corridor camps (Wolf Bar, Elip Creek) fill fast"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "The North Fork Quinault is not a quota area, so this is one of the easier permits in the park"
+      }
+     ],
+     "why": "One field warns North Fork Quinault camps fill fast; another says the North Fork is not a quota area and permits are easy to get.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "name": "Standard Route",
+   "area": "Mount Meany",
+   "contradictions": [
+    {
+     "fact": "Rope and rack required",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gear[3]",
+       "says": "light rope (optional, for a short exposed step near the summit)"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "No technical rock gear required for most of the route; some parties carry a short (30m) rope"
+      },
+      {
+       "field": "pro_needs",
+       "says": "None for the standard line"
+      },
+      {
+       "field": "rappels",
+       "says": "2 rappels of roughly 25 ft each ... build your own anchors from a small rack of stoppers, pitons and slings"
+      },
+      {
+       "field": "beta",
+       "says": "an exposed ~25 ft 5.2 lead pitch protected with a small rack and rope, descended via two rappels"
+      },
+      {
+       "field": "itinerary.days[3].schedule[0].detail",
+       "says": "rope and rack carried"
+      }
+     ],
+     "why": "The kit fields call the rope optional and no rack needed, while the descent, beta and itinerary require a led 5.2 pitch and two rappels off self-built anchors from a rack.",
+     "internal_resolution": "beta, rappels, rappel_detail, descent_text, pitch_detail and itinerary agree on a roped pitch and two rappels; gear/detailed_rack/pro_needs understate it.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach trailhead vs waypoints",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "North Fork Quinault Trailhead / Ranger Station"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Hike in to Francis/Elip Creek Camp"
+      },
+      {
+       "field": "waypoints[0]",
+       "says": "Hayes River Guard Station, distMi 16.1"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "Elwha Snow Finger, distMi 28.5"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Dodwell-Rixon Pass, distMi 31.5"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "multi-day approach up the Elwha and over the Goldie/Queets divide"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Elwha Basin"
+      }
+     ],
+     "why": "The trailhead card and itinerary use the North Fork Quinault via Low Divide and Seattle Basin, but the waypoint list, partner requirements and main bivy follow the Elwha/Snowfinger/Dodwell-Rixon line with mileages measured from Whiskey Bend.",
+     "internal_resolution": "The trailhead card, itinerary, timing, descent_text and approach_variants use the North Fork Quinault/Seattle Basin line; the Elwha waypoints and partner text belong to the alternative approach.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 4 (5.2 crux)"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.2-5.4"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "5.2"
+      },
+      {
+       "field": "beta",
+       "says": "The easiest route is rated Class 3"
+      }
+     ],
+     "why": "The header pill shows rock_grade 5.2-5.4, but the crux pitch and grade both say 5.2, and beta calls the route Class 3.",
+     "internal_resolution": "grade, pitch_detail, hazards and itinerary all say 5.2; the 5.4 upper bound is unsupported.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain and loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2500"
+      },
+      {
+       "field": "itinerary.days[*].gainFt (sum)",
+       "says": "7200"
+      },
+      {
+       "field": "itinerary.days[*].lossFt (sum)",
+       "says": "2850"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 9,300 ft of cumulative gain and loss"
+      }
+     ],
+     "why": "The header gain 2,500 ft matches neither the summit day (1,950) nor the trip (7,200 by day sums, 9,300 by totalNote), and the itinerary descent days lose only 900 ft from a ~4,900 ft camp to a ~500 ft trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Either approach involves 3-5+ days of off-trail travel"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "exact day count not recorded"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 6-day, ~42-mile round-trip backpack"
+      }
+     ],
+     "why": "The approach says 3-5+ days of off-trail travel and partner requirements say the day count is unknown, while the itinerary gives a 6-day trip that is mostly on trail.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Quota status of Low Divide",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "quota system in summer for popular zones like Low Divide/Seattle Basin"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "Not itself a quota area"
+      },
+      {
+       "field": "access.permit",
+       "says": "parties must call the Wilderness Information Center directly to book camps"
+      }
+     ],
+     "why": "The itinerary calls Low Divide a quota zone while the Low Divide bivy says it is not.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whiskey Bend road walk",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "adding roughly 6 miles each way"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "about six to seven miles away on foot. The park's own figure is seven."
+      },
+      {
+       "field": "access.closures",
+       "says": "Whiskey Bend Road has been closed to vehicles since 2021 (washout)"
+      }
+     ],
+     "why": "The Elwha road-walk length is given as ~6 and ~7 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "1"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "4 rows (Ridge approach, Shoulder traverse, Crux pitch, Summit ridge traverse)"
+      }
+     ],
+     "why": "pitches says 1 while ROUTE BREAKDOWN lists four rows; only one row is a roped pitch.",
+     "internal_resolution": "Only the 5.2 row is a roped pitch, so pitches=1 is consistent in substance.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "name": "Mount Norton Scramble",
+   "area": "Mount Norton",
+   "contradictions": [
+    {
+     "fact": "Summit-day gain from Hayes River",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[3].elev",
+       "says": "1750 (Hayes River Guard Station)"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "6397 (summit)"
+      },
+      {
+       "field": "itinerary.days[2].gainFt",
+       "says": "3400"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "about 3,200 ft of gain in under a mile"
+      },
+      {
+       "field": "overview",
+       "says": "its east face climbs 3,200 ft above Hayes River in under a mile"
+      },
+      {
+       "field": "itinerary.days[2].miles",
+       "says": "4.2"
+      }
+     ],
+     "why": "From the Hayes River camp at 1,750 ft to the 6,397 ft summit is at least 4,650 ft of gain, not 3,200-3,400, and the camp and summit coordinates are ~3.5 mi apart, not under a mile.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[2].schedule[3].label",
+       "says": "Reach the summit (6,321 ft)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "6397"
+      }
+     ],
+     "why": "The schedule gives the summit as 6,321 ft while every other field says 6,397 ft.",
+     "internal_resolution": "area, overview, waypoint and high_point_ft agree on 6,397.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "June through August offers the most favorable snow-free conditions"
+      },
+      {
+       "field": "climate.summer",
+       "says": "the recommended June-August climbing window"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late July through September, with August as the core of the window"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Interior still snowbound; explicitly described as not in season"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "the route is only in season (late July-September)"
+      }
+     ],
+     "why": "best_season and climate recommend June-August, while seasonal_guidance, avalanche and crowds say June is out of season and the window runs late July-September.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach mileages",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "From the trailhead (currently Madison Falls ...)"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "11.5"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "5.3"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "16.1 mi from Whiskey Bend per NPS"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "14.3 (Elkhorn)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend"
+      }
+     ],
+     "why": "The itinerary reaches Hayes River 16.8 mi from Madison Falls, but Hayes River is 16.1 mi beyond Whiskey Bend plus a 6-7 mi road walk, and Elkhorn is placed at 14.3 mi (waypoint) vs ~11 mi (bivy).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Madison Falls road walk",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "adding roughly 6.2 miles each way"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "adds ~13 extra round-trip miles"
+      },
+      {
+       "field": "approach",
+       "says": "walk or bike roughly 7 miles"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "walk or bike ~8 miles to the Whiskey Bend Trailhead"
+      }
+     ],
+     "why": "The road-walk length is given as 6.2, ~6.5, ~7 and ~8 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the route leaves the trail",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow the Elwha River Trail deep into the park interior toward the Elwha Basin/Bailey Range country before leaving the trail"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "climbers leave the maintained trail near this junction [Hayes River]"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "last reliably maintained camp before leaving the main Elwha corridor toward Norton"
+      },
+      {
+       "field": "best_season",
+       "says": "snow can linger into July on the approach beyond Chicago Camp"
+      }
+     ],
+     "why": "The approach and best_season place the route toward the Elwha Basin, beyond Chicago Camp, while the waypoints, itinerary and bivy leave the trail at Hayes River, well short of it.",
+     "internal_resolution": "waypoints, beta, itinerary and bivy agree on leaving the trail at Hayes River.",
+     "needs_research": false
+    },
+    {
+     "fact": "Grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "alpine_grade",
+       "says": "Class 2"
+      },
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "Class 2-3 scrambling"
+      }
+     ],
+     "why": "The header pill shows alpine_grade Class 2 while the grade column and partner requirements say Class 2-3.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "name": "Standard Scramble",
+   "area": "Mount Noyes",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "June through August, once snow clears from Low Divide and the upper basin"
+      },
+      {
+       "field": "climate.summer",
+       "says": "the favorable climbing window (June-August)"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Late July to mid-September"
+      }
+     ],
+     "why": "best_season and climate recommend June-August, but the season chip and seasonal_guidance start in July and run through September.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach side (Elwha vs North Fork Quinault)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "North Fork Quinault Trailhead (North Shore Road, road's end)"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].fromTo",
+       "says": "Approach up the North Fork Quinault"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "a long trail hike up the Elwha to a high camp in the upper Elwha Basin"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Elwha River ford required at Chicago Camp"
+      },
+      {
+       "field": "what_to_bring[3]",
+       "says": "Map/compass or GPS for the unmaintained off-trail section above Chicago Camp"
+      }
+     ],
+     "why": "The trailhead card and timing use the North Fork Quinault to Low Divide, but hazards, gear and partner requirements assume the Elwha approach via Chicago Camp and call its ford required.",
+     "internal_resolution": "approach_logistics, timing, pitch_detail and pro_tips favour the North Fork Quinault; the Elwha-only claims should be framed as the alternative.",
+     "needs_research": false
+    },
+    {
+     "fact": "Walk-up permits",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "with walk-up permits available at Wilderness Information Centers"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "no same-day walk-up sites are held"
+      }
+     ],
+     "why": "One access field offers walk-up permits and the other says none are held.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "46.03"
+      },
+      {
+       "field": "approach",
+       "says": "the shorter North Fork Quinault River Trail (~16 miles one-way to Low Divide)"
+      }
+     ],
+     "why": "dist_km (28.6 mi) matches neither the North Fork Quinault round trip (32+ mi to Low Divide and back plus off-trail) nor a one-way figure.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "name": "Standard Scramble",
+   "area": "Mount Olson",
+   "contradictions": [
+    {
+     "fact": "Trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "South Fork Skokomish Trailhead (Trail #873)"
+      },
+      {
+       "field": "road.name",
+       "says": "South Fork Skokomish Road (Forest Roads 23 and 2353) to the Skokomish Lower/Upper South Fork Trailhead"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "From the Wynoochee Pass trailhead (high-clearance road access), cross Wynoochee Pass to Sundown Lake"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Wynoochee Pass TH needs a high-clearance vehicle (spur 2270-400)"
+      },
+      {
+       "field": "itinerary.days[2].objective",
+       "says": "Return to the Wynoochee Pass trailhead"
+      }
+     ],
+     "why": "The trailhead card, road, waypoints, approach and descent use the South Fork Skokomish trailhead, while the itinerary and timing start and end at the Wynoochee Pass trailhead.",
+     "internal_resolution": "approach_logistics, waypoints, road, approach, approach_variants, beta and descent all use the South Fork Skokomish trailhead; the itinerary is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the Mount Olson Way leaves Six Ridge / high camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].distMi",
+       "says": "8.7 (Six Ridge crest / Mount Olson boot-path junction)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "then the Six Ridge crest ~11 miles to the overgrown 'Mount Olson Way' spur"
+      },
+      {
+       "field": "descent",
+       "says": "back through McGravey Lakes and Camp Bellevue to the Mount Olson Way Trail/Six Ridge Trail junction"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "camp near McGravey Lakes or Camp Bellevue, the last reliable water before the peak"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "last dependable water and the standard base camp for an Olson attempt"
+      }
+     ],
+     "why": "The boot path is placed 1.5 mi past Sundown Pass (8.7 mi) in the waypoints, ~11 mi along the crest in the trailhead note, and beyond McGravey Lakes and Camp Bellevue in descent and itinerary; the base camp and last water are named as Lake Sundown, Camp Bellevue and the tarn.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "No NPS entrance station on this approach; a Northwest Forest Pass (or Interagency/America the Beautiful pass) is required for day use at the Forest Service trailhead"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass."
+      },
+      {
+       "field": "access.notes",
+       "says": "only the standard entrance fee and wilderness camping permit apply"
+      }
+     ],
+     "why": "One access field requires a Northwest Forest Pass at a Forest Service trailhead with no NPS entrance fee; another requires the Olympic NP entrance fee.",
+     "internal_resolution": "access.fees and access.landManager agree the trailhead is on Olympic National Forest land; the NP parking_pass/notes text is generic.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit issuance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].note",
+       "says": "self-issue backcountry camping permit required beyond this point"
+      },
+      {
+       "field": "access.permit",
+       "says": "reserve via recreation.gov or get a walk-up permit at a Wilderness Information Center"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits."
+      }
+     ],
+     "why": "Permits are described as self-issue at the boundary, available walk-up at a WIC, and reserve-only with no walk-ups.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Access forest road",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Forest Roads 23 and 2353"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Reached via Skokomish Valley Rd / FS-23 / FS-2361 from Shelton; FS-2361 gated Oct 1-Apr 30"
+      }
+     ],
+     "why": "The final spur road is FR 2353 in the road card but FS-2361 in the waypoint and approach variant.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Lake Sundown elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[4].elev",
+       "says": "3810"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Lake Sundown is a short spur off the pass at about 7.6 miles and 4,030 ft"
+      }
+     ],
+     "why": "The Lake Sundown waypoint gives 3,810 ft while the approach variant gives 4,030 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of fords",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].hazards[0]",
+       "says": "Two unbridged fords only safely crossable in late summer and early autumn low water"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "South Fork Skokomish River ford"
+      }
+     ],
+     "why": "The approach variant warns of two fords but only one ford is described anywhere on the route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Fire closure effect on access",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "This is a different drainage from the South Fork Skokomish/Six Ridge approach used for Olson and doesn't directly affect it"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "THE EASTERN SIX RIDGE TRAIL IS CURRENTLY CLOSED ... because of the 2025 fire"
+      }
+     ],
+     "why": "Access says the 2025 fire closure does not affect the Olson approach while the bivy says it closes the eastern Six Ridge Trail.",
+     "internal_resolution": "Both agree the South Fork approach is open; only the eastern Staircase approach is affected.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

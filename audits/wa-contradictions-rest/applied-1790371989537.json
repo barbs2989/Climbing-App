@@ -1,0 +1,235 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_arriva_scramble",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Land manager / National Park status"
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Land manager / National Park status"
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "How to get the wilderness permit"
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "How to get the wilderness permit"
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "How to get the wilderness permit"
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "packWeight"
+   ],
+   "fact": "Number of days / pack"
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Number of days / pack"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_arriva_scramble",
+   "before": {
+    "access": {
+     "fees": "Trailhead parking requires a Northwest Forest Pass, Interagency (America the Beautiful) Pass, or Recreation.gov Digital Day Pass ($5/vehicle/day or $30/year). Overnight backcountry permits — effectively required for this multi-day objective — cost $10/person plus a $6 non-refundable reservation fee.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No dogs beyond the national park boundary, including at Easy Pass. No pack animals at the trailhead. Stay on durable surfaces — alpine vegetation in the meadows is fragile.",
+     "permit": "A wilderness/backcountry permit is required for all overnight stays; reserve on recreation.gov and pick it up in person at the Wilderness Information Center in Marblemount by 11am on the trip's start date or the reservation is cancelled. Camping is prohibited at Easy Pass itself and in the pass meadows — designated camps on the Fisher Creek Trail are Fisher Camp, Cosho Camp, and Junction Camp; Fisher Creek Basin/Silent Lakes camping is cross-country zone camping (ask the WIC about current quotas).",
+     "closures": "SR-20 (North Cascades Highway) closes for winter, typically early December through April or May depending on snowpack, cutting off all access to the Easy Pass Trailhead; check WSDOT mountain pass reports before planning a trip.",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "North Cascades National Park (Stephen Mather Wilderness); the Easy Pass Trailhead itself sits on Okanogan-Wenatchee National Forest, Methow Valley Ranger District, just outside the park boundary.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at the Easy Pass trailhead on SR-20 between mileposts 151 and 152, which has a self-issue station — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass / Interagency Pass for trailhead parking, plus an NPS wilderness/backcountry permit for the overnight approach.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit — quota, fee",
+      "where": "Reserve on Recreation.gov; permits for Cascade River Road trailheads must be picked up in person at the Marblemount Wilderness Information Center."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 48.5879,
+      "lng": -120.8029,
+      "elev": 3700,
+      "name": "Easy Pass Trailhead",
+      "note": "Signed pullout on SR-20 near milepost 151-152 (45 mi east of Marblemount); Northwest Forest Pass required, self-issue NPS wilderness permit if bivying beyond the pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.575589,
+      "lng": -120.820072,
+      "elev": 4300,
+      "name": "Easy Pass Creek footlog crossing",
+      "note": "Trail crosses Easy Pass Creek (feeds Granite Creek) on a log; it gets sketchy/submerged in high snowmelt water.",
+      "type": "Water",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.57152,
+      "lng": -120.84178,
+      "elev": 6500,
+      "name": "Easy Pass",
+      "note": "Trail high point and North Cascades NP boundary; leave the maintained tread here and drop west off-trail toward Fisher Creek to reach Arriva's basin.",
+      "type": "Junction",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.560827083333336,
+      "lng": -120.84059791666667,
+      "elev": 5600,
+      "name": "Fisher Creek Basin (below Arriva)",
+      "note": "Off-trail boot/talus descent from the pass lands in the open basin under Arriva's south/southwest aspect; the maintained Fisher Creek Trail continues down-valley to Fisher Camp (~2 mi further) if splitting the approach over two days.",
+      "type": "Junction",
+      "distMi": 5
+     },
+     {
+      "lat": 48.55757833333333,
+      "lng": -120.84512166666667,
+      "elev": 6000,
+      "name": "Talus and snow apron below the SW slopes",
+      "note": "Loose talus interspersed with lingering snowfields/moats guards the base of the climbing line; carry an ice axe into midsummer and watch for hidden meltwater gaps under the snow edge.",
+      "type": "Hazard",
+      "distMi": 5.6
+     },
+     {
+      "lat": 48.552705208333336,
+      "lng": -120.85190729166666,
+      "elev": 7800,
+      "name": "Notch gaining the south/southwest ridge",
+      "note": "Rising traverse across a talus bowl reaches this notch, the gateway into the short Class 3 rock bands and ledge systems leading to the summit block.",
+      "type": "Junction",
+      "distMi": 6.5
+     },
+     {
+      "lat": 48.548915,
+      "lng": -120.857185,
+      "elev": 8215,
+      "name": "Mount Arriva summit",
+      "note": "True (West) summit of Mount Arriva, first climbed 1966; despite sitting only 1.5 mi from Easy Pass it is hidden from the pass and the highway, so route-finding on the final rock bands is the crux.",
+      "type": "Summit",
+      "distMi": 7.2
+     }
+    ],
+    "itinerary": {
+     "cal": "North Cascades NP requires a backcountry permit for camping at Fisher Overlook/Silent Lakes year-round; about 60% of sites are reservable in advance on recreation.gov, the rest are walk-up, and permits must be picked up by 11am on the start date.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Easy Pass Trail to the pass (~2.3 hr, +2,800 ft), then drop about 1,300 ft into Fisher Creek Basin where the trail fades into cross-country travel through meadows past a big waterfall. Continue up the obvious gully to camp at Upper Silent Lake, with views across to Black Peak.",
+       "hours": 7.4,
+       "miles": 7.2,
+       "title": "Approach to Silent Lakes camp",
+       "gainFt": 5600,
+       "lossFt": 2400,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach Upper Silent Lakes camp (~7,000 ft)"
+      },
+      {
+       "n": 2,
+       "note": "A short but exposed scramble day from camp: gain the south ridge/gully-ledge system, cross a notch around 7,800 ft, and finish on loose class 3 (occasional class 4) terrain to the true (west) summit. Reverse the same line back to camp.",
+       "hours": 5.3,
+       "miles": 2.5,
+       "title": "Summit day: Mount Arriva, South Ridge",
+       "gainFt": 1900,
+       "lossFt": 1900,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "Early AM",
+         "label": "Leave Silent Lakes camp",
+         "detail": "Good-weather parties start at first light; the documented 2019 ascent was weather-delayed to 11:45 AM after overnight rain."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Reach ~7,800 ft notch",
+         "detail": "Loose rock and exposed ledges; some parties rope up here for the finish."
+        },
+        {
+         "time": "+2.9 hr from camp",
+         "label": "Summit (8,215 ft)",
+         "detail": "Matches documented ascent time from a Silent Lakes camp."
+        },
+        {
+         "time": "",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line back through the notch."
+        },
+        {
+         "time": "+2.4 hr from summit",
+         "label": "Back at Silent Lakes camp",
+         "detail": "Rest and refill water before the exit day."
+        }
+       ],
+       "objective": "Climb Mount Arriva (8,215 ft) via the south ridge and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and reverse the approach: down through Fisher Creek Basin, back up and over Easy Pass, then down to the trailhead. Parties exiting from a lower Fisher Overlook camp report this leg in as little as 4.3 hours; expect longer from the higher Silent Lakes camp.",
+       "hours": 6.5,
+       "miles": 7.2,
+       "title": "Exit to trailhead",
+       "gainFt": 2400,
+       "lossFt": 5600,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Hike out to the Easy Pass Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, roughly 14-16 mile round trip: about 5,600 ft of cumulative approach gain to a Silent Lakes camp at 7,000 ft, a short ~5 hr summit day on Arriva's south ridge (1,900 ft round trip), and a full day to hike back out; strong parties sometimes compress the summit push and exit into one long day, or extend the trip to also tag Fisher Peak."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strenuous full day: Easy Pass trail approach followed by significant off-trail basin travel and elevation gain before the scramble even starts; plan for a long, sustained effort",
+      "packWeight": "Light single-push day pack (roughly 15-25 lbs) is typical; heavier if bivying to break up the long approach"
+     },
+     "approachTime": "Long: Easy Pass trail plus substantial cross-country basin travel to reach the base of the SW Slopes; realistically a full-day approach-and-climb effort, commonly done car-to-car in one long day or broken with a basin camp",
+     "requiredSkills": [
+      "Off-trail/cross-country route-finding",
+      "Exposed Class 3 scrambling on loose rock",
+      "Early-season steep snow travel and self-arrest (approach basin)",
+      "Backcountry navigation (map/compass/GPS) away from trail",
+      "Sound judgment on afternoon-storm bailout timing"
+     ],
+     "experienceLevel": "Intermediate-to-advanced scrambler comfortable with sustained Class 3 terrain and off-trail/cross-country route-finding without a maintained path to the summit"
+    }
+   }
+  }
+ ]
+}

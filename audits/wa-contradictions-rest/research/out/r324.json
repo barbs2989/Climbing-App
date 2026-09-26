@@ -1,0 +1,339 @@
+{
+ "file": "r324.json",
+ "results": [
+  {
+   "id": "wa_little_sister_north_face",
+   "fact": "Side of the face used for the rappel descent",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Looker's right and climber's right are the same side of a face (both face the wall), so all four fields name the same (west) side. The published route description says to rappel scattered pin and tat anchors on the looker's right side; the first-ascent party's descent went down the face and across onto the NW ridge, i.e. the west/looker's-right side.",
+   "sources": [
+    "https://www.mountainproject.com/route/126694312/north-face",
+    "https://cascadeclimbers.com/forum/topic/99716-tr-twin-sisters-range-little-sister-north-face-54-3p-fa-7242016/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "fact": "Private/DNR land and parking pass",
+   "verdict": "fixed",
+   "correct_value": "Parking at the Elbow Lake Trailhead needs a Northwest Forest Pass or interagency pass (not a Discover Pass).",
+   "evidence": "The Elbow Lake Trailhead on FR 38 requires an America the Beautiful or Northwest Forest Pass (hiking-trail listing) and 'a valid Recreation Pass' (Pacific Northwest Trail location page; the Forest Service trail page carries the same line in search snippets); nothing indicates DNR parking, so the Discover Pass clause is replaced. Whether any of the Elbow Lake/Green Creek walk crosses private or DNR timberland could not be settled by two sources (the private/gated land documented for the range is the western Dailey Prairie/Olivine access), so that part is split into a separate unresolved result and left untouched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/elbow-lake",
+    "https://www.pnt.org/locations/elbow-lake-trail/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/elbow-lake-trail-697"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "and carry a Discover Pass where parking on DNR land.",
+     "replace": "and park at the Elbow Lake Trailhead with a Northwest Forest Pass or interagency pass.",
+     "id": "wa_little_sister_north_face",
+     "fact": "Private/DNR land and parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "fact": "Whether the Elbow Lake / Green Creek approach crosses private or DNR timberland",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "permit and access.landManager say the lower approach crosses private/Olivine/DNR land; the camp entry and the South Couloir row say the Elbow Lake side does not. The Elbow Lake Trail is a national-forest trail from a Forest Service trailhead, and the 2007 traverse account only says the range is ringed by private gated logging land (the west side). No two sources state the ownership of the Green Creek climbers' path, so no patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/elbow-lake-trail-697",
+    "https://www.wta.org/go-hiking/hikes/elbow-lake",
+    "https://publications.americanalpineclub.org/articles/12200712900"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "fact": "Private/DNR land and parking pass",
+   "verdict": "fixed",
+   "correct_value": "Parking at the Elbow Lake Trailhead needs a Northwest Forest Pass or interagency pass (not a Discover Pass).",
+   "evidence": "The Elbow Lake Trailhead on FR 38 requires an America the Beautiful or Northwest Forest Pass (hiking-trail listing) and 'a valid Recreation Pass' (Pacific Northwest Trail location page; the Forest Service trail page carries the same line in search snippets); nothing indicates DNR parking, so the Discover Pass clause is replaced. Whether any of the Elbow Lake/Green Creek walk crosses private or DNR timberland could not be settled by two sources (the private/gated land documented for the range is the western Dailey Prairie/Olivine access), so that part is split into a separate unresolved result and left untouched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/elbow-lake",
+    "https://www.pnt.org/locations/elbow-lake-trail/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/elbow-lake-trail-697"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "and carry a Discover Pass where parking on DNR land.",
+     "replace": "and park at the Elbow Lake Trailhead with a Northwest Forest Pass or interagency pass.",
+     "id": "wa_little_sister_west_face",
+     "fact": "Private/DNR land and parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "fact": "Whether the Elbow Lake / Green Creek approach crosses private or DNR timberland",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "permit and access.landManager say the lower approach crosses private/Olivine/DNR land; the camp entry and the South Couloir row say the Elbow Lake side does not. The Elbow Lake Trail is a national-forest trail from a Forest Service trailhead, and the 2007 traverse account only says the range is ringed by private gated logging land (the west side). No two sources state the ownership of the Green Creek climbers' path, so no patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/elbow-lake-trail-697",
+    "https://www.wta.org/go-hiking/hikes/elbow-lake",
+    "https://publications.americanalpineclub.org/articles/12200712900"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "fact": "Water above Green Creek",
+   "verdict": "fixed",
+   "correct_value": "There is spring water at the Green Creek cirque camp above the creek crossing.",
+   "evidence": "A guided party's account describes two springs of fresh running water at the camp in the bottom of the Green Creek basin; a separate Green Creek Circuit report found running water higher up near the Sisters Glacier edge and filled up there. Both contradict 'none above Green Creek'; the kit line now points to the basin springs without claiming anything about the climb itself.",
+   "sources": [
+    "https://bakermountainguides.com/devil-know-green-creek-traverse/",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      0
+     ],
+     "find": "Water — none reliable above Green Creek",
+     "replace": "Water — fill up at the springs by the Green Creek cirque camp before the glacier",
+     "id": "wa_little_sister_north_face",
+     "fact": "Water above Green Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "fact": "Water above Green Creek",
+   "verdict": "fixed",
+   "correct_value": "There is spring water at the Green Creek cirque camp above the creek crossing.",
+   "evidence": "A guided party's account describes two springs of fresh running water at the camp in the bottom of the Green Creek basin; a separate Green Creek Circuit report found running water higher up near the Sisters Glacier edge and filled up there. Both contradict 'none above Green Creek'; the kit line now points to the basin springs without claiming anything about the climb itself.",
+   "sources": [
+    "https://bakermountainguides.com/devil-know-green-creek-traverse/",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      0
+     ],
+     "find": "Water — none above Green Creek",
+     "replace": "Water — fill up at the springs by the Green Creek cirque camp before the glacier",
+     "id": "wa_little_sister_west_face",
+     "fact": "Water above Green Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_southeast_ridge",
+   "fact": "Water above Green Creek",
+   "verdict": "fixed",
+   "correct_value": "There is spring water at the Green Creek cirque camp above the creek crossing.",
+   "evidence": "A guided party's account describes two springs of fresh running water at the camp in the bottom of the Green Creek basin; a separate Green Creek Circuit report found running water higher up near the Sisters Glacier edge and filled up there. Both contradict 'none above Green Creek'; the kit line now points to the basin springs without claiming anything about the climb itself.",
+   "sources": [
+    "https://bakermountainguides.com/devil-know-green-creek-traverse/",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      0
+     ],
+     "find": "Water — none above Green Creek",
+     "replace": "Water — fill up at the springs by the Green Creek cirque camp before the glacier",
+     "id": "wa_little_sister_southeast_ridge",
+     "fact": "Water above Green Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "fact": "Which col separates Little Sister from Cinderella",
+   "verdict": "fixed",
+   "correct_value": "The 6,240+ ft col southeast of the summit is the Cinderella-Little Sister col (the Southeast Ridge's start).",
+   "evidence": "Cinderella Peak sits at 48.69092,-121.97156, east-southeast of Little Sister (48.69241,-121.97649), and the Southeast Ridge is described as beginning at the col between Cinderella and Little Sister above the looker's-left (south) side of the glacier. The 2015 winter party went up snow to the col east of Little Sister (6240+ ft, southeast of the summit) and wrapped round to the south side. So the variant's claim that the Cinderella col lies northwest/west is wrong. (Note: the Southeast Ridge row's baseFinding says other routes on the peak do not go to the col, which this route does - a cross-row issue, not patched here.)",
+   "sources": [
+    "https://www.mountainproject.com/route/126693917/southeast-ridge",
+    "https://www.mountainproject.com/area/126694792/cinderella-peak",
+    "https://www.mountainproject.com/area/126693811/little-sister",
+    "https://stephabegg.com/trip-reports/washington/little-sister/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "6,240+ ft, and SOUTHEAST of the summit. A col northwest or west of the summit is the Cinderella-Little Sister ground and belongs to other routes.",
+     "replace": "6,240+ ft, and SOUTHEAST of the summit. It is the col between Little Sister and Cinderella, the same one the Southeast Ridge starts from.",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Which col separates Little Sister from Cinderella"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "fact": "Rappel amount on the descent",
+   "verdict": "fixed",
+   "correct_value": "Two rappels: one from near the top (a double-60 m rappel was used) and one below the col southeast of the summit, where a single 60 m rope reaches. The 100+ m of rappelling with a knot pass happened elsewhere on the 2007 traverse.",
+   "evidence": "The 2007 traverse account says Little Sister's South Couloir was skied on day two, and that the 100+ m of rappelling ending in a fixed 40 m single-strand rappel with a knot pass came at the later crux crossing near South Twin (on a buttress they named Mirage Peak) - so descent_text, beta, hazards and watch_out misattributed it. The 2015 party's report records a double-60 m rappel from near the top and another from the col, with a single 60 m rope enough for the col rappel, matching rappels/bail/detailed_rack.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200712900",
+    "https://stephabegg.com/trip-reports/washington/little-sister/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "The traverse's technical crux involved roughly 40 m of 4th-class rock followed by 100+ m of 50-degree ice and mixed terrain, with the descent of Little Sister's South Couloir singled out as the trip's best line; the descent required 100+ meters of rappelling, including a fixed final rappel with a knot pass.",
+     "replace": "On the second day one of them skied Little Sister's South Couloir, singled out as the trip's best line. The traverse's technical crux - about 40 m of 4th-class rock, 100+ m of 50-degree ice, then 100+ m of rappelling ending in a fixed rappel with a knot pass - came later, on a crossing of the range near South Twin Sister, not on this peak.",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Rappel amount on the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Descended (not climbed) as part of the range traverse using 100+ meters of rappelling, including a fixed final rappel requiring a knot pass.",
+     "replace": "Reverse the line: one winter party made a double-rope rappel from near the top and a second rappel below the col southeast of the summit, where a single 60 m rope reaches. The couloir has also been skied.",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Rappel amount on the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "with a multi-rappel descent, including a fixed final rappel requiring a knot pass, per the only account found.",
+     "replace": "with two rappels on the descent, one from near the top and one below the col.",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Rappel amount on the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "Multi-pitch rappelling required to descend, with limited/fixed anchor options on at least one rappel.",
+     "replace": "Two rappels on the descent, from anchors you build yourself.",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Rappel amount on the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      3
+     ],
+     "find": "Over 100 m of rappelling recorded on the descent, including a knot pass",
+     "replace": "Two rappels on the descent, one from near the top and one below the col",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Rappel amount on the descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "It has been descended with more than 100 m of rappelling including a fixed final rappel requiring a knot pass.",
+     "replace": "The winter party came down it with two rappels, one from near the top and one below the col.",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Rappel amount on the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "fact": "Whether the line has a standalone ascent",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "It has been climbed as a standalone day trip (31 January 2015, about 12 hours car to car) as well as skied during the 2007 range traverse.",
+   "evidence": "The 2015 trip report records a single-day ascent from the Elbow Lake Trailhead (left 7:10 a.m., summit 1:00-1:30 p.m., back after dark, ~12 hours). climate.winter, timing.recommendedStart, approach, detailed_rack and the approach variant all describe that ascent; emergency.notes and hazards[2] are the outliers. The 2007 account confirms the traverse was a separate ski descent.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/little-sister/",
+    "https://publications.americanalpineclub.org/articles/12200712900"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "Extremely remote, multi-day traverse terrain — this line is only documented as part of a larger range traverse, not as a standalone day route.",
+     "replace": "Extremely remote terrain with minimal cell coverage; a winter party did it car to car in about 12 hours and finished after dark.",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Whether the line has a standalone ascent"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "Documented only as part of a larger, remote multi-day traverse — rescue access would be very limited.",
+     "replace": "Remote and rarely climbed — rescue access would be very limited.",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Whether the line has a standalone ascent"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "fact": "Private/DNR land and parking pass",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Elbow Lake Trailhead, Green Creek approach and peak are national forest; parking needs a Northwest Forest Pass or interagency pass.",
+   "evidence": "access.landManager, access.closures (only western approaches cross private timberland), access.passRequired and what_to_bring all agree on national forest and a Northwest Forest Pass; only permit disagrees. The trailhead listings require an America the Beautiful/Northwest Forest Pass or a recreation pass.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/elbow-lake",
+    "https://www.pnt.org/locations/elbow-lake-trail/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/elbow-lake-trail-697"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "the approach crosses private and DNR timberland - check current access, and carry a Discover Pass where parking on DNR land.",
+     "replace": "parking at the Elbow Lake Trailhead needs a Northwest Forest Pass or interagency pass.",
+     "id": "wa_little_sister_south_couloir",
+     "fact": "Private/DNR land and parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "fact": "Pitch breakdown, ice grade and angle taken from the traverse's crux, not this line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "pitch_detail[0-2] (40 m of 4th-class rock 'protected and rappelled on the ski descent', then 100+ m of 50-degree ice), max_angle 50, ice_grade AI1 and hazards[0] come from the 2007 traverse's overall rating and its crux crossing near South Twin, which the traverse account places on a different part of the range. The 2015 party describes a snow and rock slope/gully climbed unroped, with a bit of mixed near the top. No source gives pitch lengths or an angle for this line, so no replacement is written.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200712900",
+    "https://stephabegg.com/trip-reports/washington/little-sister/"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

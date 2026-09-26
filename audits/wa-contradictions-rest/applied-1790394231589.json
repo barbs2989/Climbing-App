@@ -1,0 +1,170 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_dana_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Madison Falls road walk"
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness permit channel"
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Wilderness permit channel"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_dana_scramble",
+   "before": {
+    "approach_logistics": {
+     "peakLat": 47.791345,
+     "peakLng": -123.485665,
+     "trailhead": "Whiskey Bend Trailhead (Elwha)",
+     "trailheadLat": 47.968,
+     "trailheadLng": -123.583,
+     "trailheadDirection": "Via the Elwha Valley: Olympic Hot Springs Road is closed to vehicles at Madison Falls — walk or bike ~8 miles to the Whiskey Bend Trailhead"
+    },
+    "access": {
+     "fees": "Park entrance: $30/vehicle or $15/person on foot/bike (both valid 7 days), or $55 for an annual Olympic NP pass. Wilderness camping permit: $8 per person per night plus a non-refundable $6 per-permit reservation fee (youth 15 and under camp free).",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Campfires are prohibited above 3,500 ft; the Elwha River and its tributaries are closed to fishing; the Elwha must be forded (unbridged) at Chicago Camp en route to the interior.",
+     "permit": "No separate climbing permit is required. Any overnight stay in the backcountry requires a Wilderness Camping Permit, reserved via Recreation.gov or in person at the Wilderness Information Center (WIC) in Port Angeles — required practically for this route given the multi-day approach.",
+     "closures": "Olympic Hot Springs Road is closed to all vehicle traffic at Madison Falls due to flood/washout damage, adding roughly 7 miles of walking or biking each way to reach the Whiskey Bend trailhead; check current NPS Elwha status before planning.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance pass or America the Beautiful interagency pass, plus a wilderness camping permit",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    },
+    "itinerary": {
+     "cal": "Requires an Olympic National Park wilderness permit (recreation.gov quota zone) and is only reasonable snow-free from roughly July through September; check Sol Duc Road status before committing to a trailhead date.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard trail hiking from the Sol Duc trailhead via Sol Duc Falls and the High Divide/Deer Lake corridor up to Heart Lake, the last established camp before the route goes fully off-trail. Full food/fuel loads for a week-plus trip make this a heavy-pack day even though the tread is good.",
+       "hours": 6,
+       "miles": 10,
+       "title": "Sol Duc trailhead to Heart Lake",
+       "gainFt": 3300,
+       "lossFt": 300,
+       "packLb": 44,
+       "schedule": [],
+       "objective": "Reach Heart Lake basin, the gateway to the Bailey Range"
+      },
+      {
+       "n": 2,
+       "note": "Leaves the trail for good: sidehilling steep scree below Bogachiel Peak, over/around Cat Peak, and across the exposed but short 'Catwalk' ridge connecting to the Carrie/Stephen massif, then down to a basin camp. This is the first of the long, slow off-trail days typical of Bailey Range trip reports.",
+       "hours": 9.5,
+       "miles": 9,
+       "title": "Over Cat Peak and the Catwalk to Eleven Bull Basin",
+       "gainFt": 2800,
+       "lossFt": 2400,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Cross the Catwalk and drop into Eleven Bull Basin"
+      },
+      {
+       "n": 3,
+       "note": "Continues east along the range past Stephen Lake/Cream Lake country toward the Mount Norton-Mount Dana massif, picking a bench or basin camp within striking distance of Dana's summit ridge. Route-finding on benches, heather, and lingering snow patches is slow and deliberate.",
+       "hours": 9,
+       "miles": 10,
+       "title": "Push deeper to a high camp below Mount Dana",
+       "gainFt": 2600,
+       "lossFt": 1900,
+       "packLb": 36,
+       "schedule": [],
+       "objective": "Establish a high camp near the Mount Norton/Dana basin"
+      },
+      {
+       "n": 4,
+       "note": "A light-pack round trip from high camp up Dana's flank: heather ledges and scree/talus give way to short class 2-3 scrambling near the summit ridge. There is no shorter way out from here, so the party breaks camp on return and pushes several miles back toward Eleven Bull Basin the same day to keep the retreat on pace.",
+       "hours": 12,
+       "miles": 14,
+       "title": "Summit Mount Dana, then start the retreat",
+       "gainFt": 3500,
+       "lossFt": 4100,
+       "packLb": 30,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave high camp",
+         "detail": "Light day packs; main gear cached at camp."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach base of summit ridge",
+         "detail": "Talus and heather benches give way to steeper ground."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Summit Mount Dana",
+         "detail": "Short class 2-3 scrambling on the final pitch."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line exactly."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at high camp",
+         "detail": "Break camp and repack for the multi-day return."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Start retreat toward Eleven Bull Basin",
+         "detail": "First leg of the long reversal back to Sol Duc."
+        }
+       ],
+       "objective": "Reach the 6,213 ft summit of Mount Dana and begin the return"
+      },
+      {
+       "n": 5,
+       "note": "The core retreat day, re-crossing the ground of Days 2-3 in reverse: back around Stephen/Cream Lake country, over the Catwalk and Cat Peak, and down to regain the maintained trail near Heart Lake. In the Bailey Range there is no faster way out than the way in, so this mirrors the outbound pace closely.",
+       "hours": 10,
+       "miles": 13,
+       "title": "Back over Cat Peak and the Catwalk to Heart Lake",
+       "gainFt": 1900,
+       "lossFt": 3200,
+       "packLb": 24,
+       "schedule": [],
+       "objective": "Retrace the off-trail line back to Heart Lake basin"
+      },
+      {
+       "n": 6,
+       "note": "An easy, mostly downhill trail walk back out via High Divide and Sol Duc Falls to the trailhead, with light packs after a week of consumed food.",
+       "hours": 6,
+       "miles": 10,
+       "title": "Heart Lake to Sol Duc trailhead",
+       "gainFt": 300,
+       "lossFt": 3900,
+       "packLb": 18,
+       "schedule": [],
+       "objective": "Hike out to the trailhead"
+      }
+     ],
+     "totalNote": "A demanding roughly 66-mile, 6-day round trip with an estimated 14,000-16,000 ft of cumulative gain, almost entirely off-trail through the Bailey Range — once you're near Mount Dana, retreat is essentially as long as the way in."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,2154 @@
+{
+ "batches": [
+  "b117.json",
+  "b118.json",
+  "b119.json",
+  "b120.json"
+ ],
+ "routes_read": 11,
+ "routes": [
+  {
+   "id": "wa_honeymoon_route",
+   "name": "Honeymoon Route",
+   "area": "Mount Deception",
+   "contradictions": [
+    {
+     "fact": "Upper Dungeness Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "2900"
+      },
+      {
+       "field": "approach",
+       "says": "From the Upper Dungeness/Royal Basin Trailhead (elev. ~2,500 ft)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From the Upper Dungeness / Royal Basin Trailhead at about 2,500 ft"
+      }
+     ],
+     "why": "The trailhead card/waypoint gives 2,900 ft while both approach texts give ~2,500 ft, a 400 ft disagreement for the same trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Line climbed from the upper basin (Honeymoon couloir vs standard gully)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "climbing a prominent NE-facing snow couloir from upper Royal Basin straight to the upper mountain"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Drop off the low point of the Deception-Martin ridge into a steep, left-branching snow gully"
+      },
+      {
+       "field": "approach",
+       "says": "climb the left (west) of two gullies just right of a large rock buttress. Follow that gully system up to Mount Deception's east ridge about 150 yards southeast of the summit and follow the ridge to the top"
+      }
+     ],
+     "why": "The APPROACH field describes the standard scramble's left-of-two gully to the east ridge, while overview/pitch_detail describe the Honeymoon NE couloir and a Gilhooley Tower traverse.",
+     "internal_resolution": "Overview, beta, name and pitch_detail all describe the NE couloir; the approach text is the standard route's line copied onto this route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best time to climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "Best in a narrow spring window when the couloir holds consolidated snow ... an early-summer (late June) ascent was reported, but conditions are more variable outside spring"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late June (once Royal Basin permits open, before rock fully dries out)"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.status",
+       "says": "risky"
+      },
+      {
+       "field": "season",
+       "says": "Apr-Jun"
+      }
+     ],
+     "why": "best_season calls spring the best window and late June more variable, while seasonal_guidance makes late June optimal and May (mid-spring) risky.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Royal Basin overnight permit season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Royal Basin permits open June 15"
+      },
+      {
+       "field": "access.closures",
+       "says": "High-use overnight camping May 1 - Sept 30 (reservation-only)"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "the summer block released in a single mid-April drop for the mid-May through mid-October season"
+      }
+     ],
+     "why": "Three different start dates (May 1, mid-May, June 15) are given for the same Royal Basin permit season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total ascent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7861"
+      },
+      {
+       "field": "approach",
+       "says": "From the Upper Dungeness/Royal Basin Trailhead (elev. ~2,500 ft), hike ... roughly 7 miles with about 2,500 ft of gain to Royal Lake, then continue about a mile farther into Upper Royal Basin (~5,600 ft)"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~7 mi one-way / 14 mi RT to Upper Royal Basin (~2,650 ft gain) before the summit block"
+      }
+     ],
+     "why": "An out-and-back from a ~2,500-2,900 ft trailhead to a 7,788 ft summit gains roughly 4,900-5,300 ft, far below the 7,861 ft in gain_ft (loss_ft is 5,400).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope needed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "a rope, a few slings, and light rock protection can be prudent for parties wanting to belay short class 3-4 sections"
+      },
+      {
+       "field": "rope_note",
+       "says": "rope and other typical glacier accessories are unnecessary"
+      },
+      {
+       "field": "rope_type",
+       "says": "none"
+      }
+     ],
+     "why": "PROTECTION suggests a rope and light rack may be prudent while the rope fields say a rope is unnecessary.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Number of routes on the peak",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Standard approach for the only documented route on Mount Deception"
+      },
+      {
+       "field": "name",
+       "says": "Honeymoon Route"
+      }
+     ],
+     "why": "The trailhead waypoint on this (second) route claims Mount Deception has only one documented route.",
+     "internal_resolution": "The waypoint note is copied from the standard route; this row itself is a separate documented route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Park entrance fee",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None beyond the parking or entrance fee this route already lists."
+      },
+      {
+       "field": "access.notes",
+       "says": "only the standard entrance fee and wilderness camping permit apply"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "no Olympic National Park entrance fee is charged to park there"
+      }
+     ],
+     "why": "Two access lines refer to a standard entrance fee while the parking line says no park entrance fee is charged at this trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance and gain to Upper Royal Basin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~7 mi one-way / 14 mi RT to Upper Royal Basin (~2,650 ft gain)"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "8"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 7 miles with about 2,500 ft of gain to Royal Lake, then continue about a mile farther into Upper Royal Basin (~5,600 ft)"
+      }
+     ],
+     "why": "Partner requirements put Upper Royal Basin at 7 mi/2,650 ft, while the approach puts it about 8 mi and ~3,100 ft from the trailhead (7 mi is Royal Lake).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "name": "Standard Scramble (Royal Basin)",
+   "area": "Mount Deception",
+   "contradictions": [
+    {
+     "fact": "Best month to climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "Early-to-mid July is generally the prime window ... Published advice specifically recommends climbing before July 1 ... Late summer (Aug-Sept) is climbable but ... considered less safe"
+      },
+      {
+       "field": "watch_out[3]",
+       "says": "too late (Aug-Sept) means dangerously loose bare rock"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "climbing before ~July 1 is preferred while snow still covers the notoriously loose upper rock"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "July through August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August.status",
+       "says": "optimal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "SEASONAL GUIDANCE rates August optimal and June marginal while best_season, watch_out, itinerary and approach_variants say early season (before July) is preferred and Aug-Sept loose rock is less safe.",
+     "internal_resolution": "Four fields (best_season, watch_out, itinerary.cal, approach_variants[0].season) agree that early season is preferred and Aug-Sept is worse; seasonal_guidance is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier travel on the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel; hazard is steep, loose talus and rotten/lingering snowfields rather than glaciated terrain"
+      },
+      {
+       "field": "overview",
+       "says": "crosses the small Deception Glacier remnant"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Glacier crossing requires ice axe and crampons."
+      },
+      {
+       "field": "obj_haz[6]",
+       "says": "Crevasse hazards on glacier approaches"
+      }
+     ],
+     "why": "Safety tab says no glacier travel while overview, rack and hazards describe crossing the Deception Glacier remnant with crevasse hazard.",
+     "internal_resolution": "Most fields agree the route crosses a small glacier remnant (rope_note: crevasse danger minimal); the crevasses line should say that rather than 'no glacier travel'.",
+     "needs_research": false
+    },
+    {
+     "fact": "Name of the saddle reached",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[2].label",
+       "says": "Deception-Mystery saddle"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climb the steep scree/snow slope on the west edge of the NE face to the Deception-Mystery saddle"
+      },
+      {
+       "field": "overview",
+       "says": "to the low point on the Deception-Martin ridge"
+      },
+      {
+       "field": "approach",
+       "says": "this slope leads up toward the Deception-Martin saddle"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "toward the Deception-Martin (Gilhooley) saddle"
+      }
+     ],
+     "why": "The itinerary names the Deception-Mystery saddle while every other field names the Deception-Martin (Gilhooley) saddle.",
+     "internal_resolution": "Overview, approach, approach_variants, hazards and descent_text all say Deception-Martin; the itinerary is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Deception Basin's role",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "From Deception Basin the scramble takes roughly three hours."
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Do not confuse this with Deception Basin, which appears in the same permit system but serves the alternative route on the far side of the peak."
+      }
+     ],
+     "why": "The approach variant times this Royal Basin route from Deception Basin, which the bivy note says belongs to the alternative route on the far side of the peak.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trip length in days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Typically a 2-day trip"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day/2-night trip is the common weekend pattern"
+      }
+     ],
+     "why": "Partner requirements call it typically 2 days while the itinerary calls 3 days the common pattern (2 days only for strong parties).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Royal Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Follow Upper Dungeness Trail 1 mile to Royal Basin Trail junction. Continue 7.2 miles to Royal Lake"
+      },
+      {
+       "field": "approach",
+       "says": "reaches Royal Lake (5,100 ft) at about 6-7 miles from the trailhead"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Upper Dungeness and Royal Basin trails: well-maintained, 7.2 miles, 2,500 ft to Royal Lake"
+      }
+     ],
+     "why": "Beta makes Royal Lake 8.2 mi from the trailhead, the approach 6-7 mi, and pitch_detail 7.2 mi.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Location of Shelter Rock",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "to lower Royal Basin (~7 mi, ~5,100 ft) at Shelter Rock, then continues about a mile farther"
+      },
+      {
+       "field": "approach",
+       "says": "From the lake, circle to its far end and continue past Shelter Rock"
+      }
+     ],
+     "why": "The itinerary puts Shelter Rock at the lake level before the upper basin, the approach puts it beyond the far end of the lake (bivy[1] notes flag the disagreement).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where camping is allowed",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Camping is restricted to three designated areas: Royal Creek, Lower Royal Meadow, and Royal Lake"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Establish camp near Royal Lake / upper Royal Basin"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "this is not a designated-site camp: pitch on bare ground or gravel ... an upper-basin or cross-country booking is made by telephoning the Wilderness Information Center"
+      }
+     ],
+     "why": "ACCESS says camping is limited to three designated areas that exclude the upper basin, while the itinerary and main bivy camp in Upper Royal Basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "From the Royal Lake trailhead the trail climbs steadily along Royal Creek"
+      },
+      {
+       "field": "approach",
+       "says": "From the Upper Dungeness Trailhead (2,500 ft, end of FR 2870"
+      }
+     ],
+     "why": "The itinerary starts from a 'Royal Lake trailhead' while all other fields use the Upper Dungeness Trailhead.",
+     "internal_resolution": "All other fields and waypoints name the Upper Dungeness Trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Park entrance fee",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "only the standard entrance fee and wilderness camping permit apply"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "no Olympic National Park entrance fee is charged to park there"
+      }
+     ],
+     "why": "One access line says a standard entrance fee applies, the parking line says none is charged.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "16.1"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~20 mi and ~5,300 ft gain round trip"
+      }
+     ],
+     "why": "dist_km (10 mi) and the itinerary's 20 mi round trip are presented as the route distance; dist_km appears to be one-way.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fricaba_standard",
+   "name": "Standard Scramble (Constance Pass / Home Lake)",
+   "area": "Mount Fricaba",
+   "contradictions": [
+    {
+     "fact": "Total ascent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4259"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 5,600 ft of cumulative gain"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "gainFt 2900 + 2600 + 100 = 5600"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 6,000 ft of gain over multiple days"
+      }
+     ],
+     "why": "The header gain (4,259 ft) is the bare trailhead-to-summit difference, while the itinerary total is 5,600 ft (31% more) because the route drops into Deception Basin and reclimbs.",
+     "internal_resolution": "4,259 = 7,139 - 2,880 (net only); the itinerary's cumulative 5,600 ft reflects the descent into and climb out of Deception Basin.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Home Lake",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "7.9"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "9.3"
+      },
+      {
+       "field": "approach",
+       "says": "Home Lake (5,330 ft, roughly 9.3–9.6 mi from the trailhead)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Just over nine miles from the Upper Dungeness trailhead"
+      }
+     ],
+     "why": "Day 1 of the itinerary is 7.9 miles to Home Lake while the waypoints, approach and bivy put Home Lake 9.3-9.6 miles in.",
+     "internal_resolution": "Waypoints, approach, approach_variants and bivy agree on ~9.3 mi; the itinerary day miles are the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Is Home Lake inside the national park (permit needed?)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required in the Buckhorn Wilderness"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camp Handy, Boulder Shelter and Home Lake are on national forest land ... A park wilderness permit is needed only to camp across Constance Pass."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Inside Olympic National Park, so an Olympic National Park wilderness permit is required"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "Buckhorn Wilderness / Olympic National Park boundary at distMi 7.1 (Home Lake at 9.3)"
+      },
+      {
+       "field": "access.permit",
+       "says": "a reserved NPS wilderness camping permit is required for any overnight stay once you cross into Olympic National Park near Home Lake/Constance Pass"
+      }
+     ],
+     "why": "The overnight-permit line says the main camp needs no park permit, while the bivy, access.permit and waypoints place Home Lake inside Olympic National Park.",
+     "internal_resolution": "The boundary waypoint (7.1 mi) lies before Home Lake (9.3 mi), and bivy, access.permit and land_manager agree Home Lake is in the park; overnight_permit is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which peaks Home Lake serves",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Home Lake, in a basin just below Constance Pass, is the standard base camp for Fricaba, Hal Foss, Mystery, and Deception."
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "It does nothing at all for The Needles or the Royal Basin peaks, which sit over a major divide from here."
+      }
+     ],
+     "why": "The approach calls Home Lake the base camp for Deception (a Royal Basin peak) while the bivy says it does nothing for Royal Basin peaks.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Reliability of Boulder Shelter water",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].note",
+       "says": "Most reliable water source on the trail"
+      },
+      {
+       "field": "approach",
+       "says": "The creek at Boulder Shelter is the most reliable water source on the whole approach"
+      },
+      {
+       "field": "bivy[2].water",
+       "says": "the flow drops noticeably by late summer"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "The lake, immediately at camp. Reliable through the season."
+      }
+     ],
+     "why": "The waypoint and approach call Boulder Shelter the most reliable water, while the bivy says its flow drops by late summer and Home Lake is the reliable source.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "18.2"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day, roughly 22.6-mile round trip"
+      }
+     ],
+     "why": "dist_km (11.3 mi, the one-way summit distance) and the itinerary's 22.6 mi round trip are both presented as the route distance.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Buckhorn Wilderness permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.requiredSkills[4]",
+       "says": "Wilderness permit logistics (self-issued Buckhorn Wilderness permit"
+      },
+      {
+       "field": "access.permit",
+       "says": "No permit needed for day use or camping within Buckhorn Wilderness (register at the trailhead board)"
+      }
+     ],
+     "why": "Partner requirements call for a self-issued Buckhorn permit while access says no permit is needed there.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day distance from Home Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "7"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "9.3"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "11.3"
+      }
+     ],
+     "why": "Waypoints put the summit 2 mi beyond Home Lake (4 mi round trip) while the summit day is 7 miles.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "name": "Standard Route",
+   "area": "Mount Johnson",
+   "contradictions": [
+    {
+     "fact": "Day-1 gain to Upper Royal Basin",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "1800"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2500"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "5600"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "camping near Imperial Tarn at roughly 5,800 ft"
+      },
+      {
+       "field": "hazards[2]",
+       "says": "2,500+ ft of gain just to reach Royal Basin"
+      }
+     ],
+     "why": "Day 1 climbs from a 2,500 ft trailhead to a 5,600-5,800 ft camp (3,100-3,300 ft), not 1,800 ft; the itinerary total (4,500) therefore also disagrees with gain_ft 5180.",
+     "internal_resolution": "Waypoint elevations and beta (2,650 ft to Royal Lake alone) show 1,800 ft is too low.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction from Royal Lake to the col",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From Royal Lake continue north on the scramblers'/climbers' path ... to Upper Royal Basin ... below Mount Deception's south face"
+      },
+      {
+       "field": "approach",
+       "says": "head cross-country east/northeast up heather benches and talus to the rim of the glacial moraine ringing Surprise Basin"
+      },
+      {
+       "field": "waypoints[4]",
+       "says": "Upper Royal Basin 47.8313,-123.2214 (SW of Royal Lake 47.8320,-123.2107)"
+      },
+      {
+       "field": "waypoints[5]",
+       "says": "Clark-Johnson col 47.8352,-123.2340 (W-NW of the basin)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "It puts you at the foot of the west wall of the basin, which is the east side of The Needles"
+      }
+     ],
+     "why": "The approach sends parties north then east/northeast and puts the basin below Deception's south face, while the waypoints and bivy put Upper Royal Basin south-west of the lake, below Deception's north side, with Johnson and the col to the west.",
+     "internal_resolution": "Waypoint coordinates and the bivy note agree the col lies west of the basin.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach drainage",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "long interior approach (Dosewallips/Deception basin) to a high camp"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "long approach into the Dosewallips/Deception basin high camp"
+      },
+      {
+       "field": "approach",
+       "says": "From the Upper Dungeness Trailhead ... Royal Basin Trail"
+      }
+     ],
+     "why": "Partner requirements describe a Dosewallips approach while every other field uses the Upper Dungeness/Royal Basin approach.",
+     "internal_resolution": "Approach, waypoints, itinerary, approach_variants and bivy all use Royal Basin.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "total route time ~11 hrs from high camp"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "9"
+      }
+     ],
+     "why": "Partner requirements give ~11 hours from camp versus 9 hours in timing and the itinerary.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Final moves to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Short, exposed, loose finish up the north side of the summit block to the top."
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "pick up the cairned ledge system that corkscrews around toward the SE ridge ... followed by a loose gully and class 3-4 moves onto the summit block"
+      },
+      {
+       "field": "descent",
+       "says": "downclimb the SE-ridge gully back onto the corkscrew ledge"
+      }
+     ],
+     "why": "The route breakdown finishes up the north side of the summit block while the itinerary and descent finish via a gully on the SE ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappels on descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "1"
+      },
+      {
+       "field": "descent_text",
+       "says": "Treat this rappel as optional/conditional rather than mandatory: capable parties in dry conditions generally downclimb the whole route."
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the route: downclimb the SE-ridge gully"
+      }
+     ],
+     "why": "The rappel count states one rappel while the descent text says it is optional and most parties downclimb.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier on the route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer route"
+      },
+      {
+       "field": "hazards[3]",
+       "says": "remnant glacier/permanent snowfield crossing below the Clark-Johnson col"
+      },
+      {
+       "field": "obj_haz[2]",
+       "says": "Remnant glacier crossing below the Clark-Johnson saddle"
+      }
+     ],
+     "why": "Safety calls the route non-glaciated while the hazards list a remnant glacier crossing.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Royal Basin permit season",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "permits needed May 1–Sept 30"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "online booking opens roughly mid-June through mid-October"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "released in a single mid-April drop for the mid-May through mid-October season"
+      }
+     ],
+     "why": "Three incompatible permit seasons are given for the same Royal Basin quota.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "How to book Upper Royal Basin and whether camping is allowed there",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "the Upper Royal Basin zone (closest to the Needles) is not bookable online — reserve it by calling the Olympic Wilderness Information Center"
+      },
+      {
+       "field": "access.rules",
+       "says": "camp only in designated sites"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Same Olympic National Park quota permit as Royal Lake, booked as the upper basin rather than the lake ... advance reservation only, mid-April release"
+      },
+      {
+       "field": "bivy[0].capacity",
+       "says": "No numbered sites at all."
+      }
+     ],
+     "why": "Access says the upper basin is booked by phone and camping is designated-sites-only, while the main bivy says it is booked like Royal Lake and has no designated sites.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead road",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "~12-car lot at road end on FR 2860/FR 270"
+      },
+      {
+       "field": "road.name",
+       "says": "Forest Roads NF-2880 / NF-2870 to Upper Dungeness Trailhead"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Upper Dungeness Trailhead (Trail #833.2, FR-2870)"
+      }
+     ],
+     "why": "The trailhead waypoint names FR 2860/FR 270 while the road and trailhead card name FR 2870.",
+     "internal_resolution": "Road and approach_logistics agree on FR 2870.",
+     "needs_research": false
+    },
+    {
+     "fact": "Campfires in Royal Basin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].note",
+       "says": "fires allowed only here, not at the third site 3/4 mile farther up"
+      },
+      {
+       "field": "access.rules",
+       "says": "No campfires anywhere in Royal Basin"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "campfires are prohibited throughout Royal Basin"
+      }
+     ],
+     "why": "One waypoint allows fires at Royal Creek Camp while access and another waypoint prohibit campfires anywhere in Royal Basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "name": "Standard Scramble (Deception Creek / Royal Basin)",
+   "area": "Mount Mystery",
+   "contradictions": [
+    {
+     "fact": "Rope length",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rack[0]",
+       "says": "30m rope"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "some parties carry a 30m rope and a few pickets"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      },
+      {
+       "field": "descent_text",
+       "says": "A single 60m rope is sufficient for each of the two rappels"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "two single-rope (60m) rappels"
+      }
+     ],
+     "why": "The rack lists a 30 m rope while the rope and rappel fields describe two 60 m single-rope rappels; a party carrying 30 m may not reach.",
+     "internal_resolution": "The rappel fields (rope_length_m, descent_text, rappel_count_note) agree on 60 m; the rack's 30 m is the outlier, though per-rappel lengths are unknown.",
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier travel on the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel on the standard Deception Creek/Royal Basin route itself; this is steep snow gullies and rock, not glacier crossing"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer route"
+      },
+      {
+       "field": "beta",
+       "says": "cross the stagnant, minimally-crevassed Mystery Glacier"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "Glacier travel"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "treat it as real glacier travel - a few crevasses must be stepped over"
+      }
+     ],
+     "why": "Safety says there is no glacier crossing while beta, route breakdown, rope_note, gear and pro_tips require crossing the Mystery Glacier.",
+     "internal_resolution": "Most fields (beta, pitch_detail, rope_note, gear, pro_tips, waypoints) agree the Mystery Glacier is crossed.",
+     "needs_research": false
+    },
+    {
+     "fact": "How the summit section is descended",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "two single-rope rappels from near the summit down to the saddle/notch rather than downclimbing the whole thing, then downclimbing the remaining class 2–3 terrain"
+      },
+      {
+       "field": "rappel_detail[1].notes",
+       "says": "after which the remaining class 2-3 terrain is downclimbed toward Mystery Glacier"
+      },
+      {
+       "field": "climbing_route[2].notes",
+       "says": "A short 4th class step on poor rock ... gains a notch near 7,500 ft ... it has to be downclimbed on the way out, usually unroped, and one party rated a single move on the reverse at 5.8"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "Beyond the notch a clean class 3 gully leads to the summit block"
+      }
+     ],
+     "why": "The descent says rappels cover the ground down to the notch and only class 2-3 remains, while the climbing route puts the class 4 (5.8-move) step below the notch and says it is downclimbed unroped.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Location and rock quality of the crux",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[4]",
+       "says": "Class 4: Short, exposed breccia slot/gully leading to the summit (7,639 ft); the technical crux of the route."
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "loose, exposed class 3/4 rock in the summit gully above this notch — the main fall hazard on the route"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "Beyond the notch a clean class 3 gully leads to the summit block, where the rock is markedly better than anything below"
+      },
+      {
+       "field": "climbing_route[2].notes",
+       "says": "A short 4th class step ... gains a notch near 7,500 ft ... This is the commitment point"
+      }
+     ],
+     "why": "Route breakdown and a waypoint place the class 4 crux in a loose gully above the notch; the climbing route places it on the step below the notch with a clean class 3 gully above.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Elevation of the Mystery Glacier foot",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climbing_route[0].notes",
+       "says": "From camps around 6,200 ft in Deception Basin, drop west to about 6,000 ft and climb a stagnant glacier remnant"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "6650"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "6560"
+      }
+     ],
+     "why": "The climbing route puts the glacier's foot around 6,000 ft, while the terminus waypoint is 6,650 ft, higher than the 6,560 ft notch you descend from.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the party camps",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climbing_route[0].notes",
+       "says": "From camps around 6,200 ft in Deception Basin"
+      },
+      {
+       "field": "descent_text",
+       "says": "back to the Deception Basin camp/gravel bars"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].label",
+       "says": "Leave Upper Royal Basin camp"
+      }
+     ],
+     "why": "The climbing route and descent start/end at a Deception Basin camp while the itinerary camps in Upper Royal Basin and crosses Royal Pass each way.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead forest road",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Forest Road 2860 to Upper Dungeness Trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "From the Upper Dungeness Trailhead (Forest Road 2860"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "The trailhead sits on Forest Road 2870"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Upper Dungeness Trailhead (Trail #833.2, FR-2870)"
+      }
+     ],
+     "why": "GETTING THERE and the approach name FR 2860 (road.driveNote 'FR 2860 for about 11 miles') while the trailhead card, waypoint and approach variant name FR 2870.",
+     "internal_resolution": "Waypoint directions, approach_logistics and approach_variants agree on FR 2870.",
+     "needs_research": true
+    },
+    {
+     "fact": "How the overnight permit is obtained",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue Olympic National Park wilderness permit required at the kiosk before starting up the Royal Basin Trail"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "self-issue Olympic National Park wilderness permit at the kiosk"
+      },
+      {
+       "field": "access.permit",
+       "says": "Royal Basin is a quota/reservation area ... permits ... are released around April 15 via recreation.gov"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "there is no same-day walk-up window, so a party that turns up without a permit has no legal camp"
+      }
+     ],
+     "why": "The trailhead card says to self-issue the permit at the kiosk while access and bivy say permits are reserved in advance with no walk-up option.",
+     "internal_resolution": "access.permit, overnight_permit and bivy agree on advance reservation.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where camping is allowed",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "camp only in designated sites (Royal Creek, Lower Royal Meadow, or Royal Lake)"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach high camp in Upper Royal Basin"
+      },
+      {
+       "field": "bivy[0].capacity",
+       "says": "No numbered sites at all."
+      }
+     ],
+     "why": "Access limits camping to three designated areas that exclude the upper basin, while the itinerary and main bivy camp in Upper Royal Basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cause of the 2022 fatality",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[3]",
+       "says": "exact cause of the fall was not publicly detailed by NPS beyond that visibility/conditions were a factor"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "a 2022 fatality occurred here tied to route-finding errors onto cliffy ground"
+      }
+     ],
+     "why": "One field says the cause was not detailed beyond visibility, the other attributes it to route-finding errors.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "18.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 23 miles round trip"
+      }
+     ],
+     "why": "dist_km (11.5 mi, the one-way summit distance) and the itinerary's 23 mi round trip are both shown as the route distance.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_steel_first_divide",
+   "name": "First Divide Route (North Fork Skokomish / Staircase approach)",
+   "area": "Mount Steel",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5440"
+      },
+      {
+       "field": "beta",
+       "says": "climbing from about 785 ft to 4,688 ft ... roughly 1,540 ft of further elevation gain"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "the two together are commonly done as one long trip of around 32 miles and 4,400 ft total"
+      }
+     ],
+     "why": "The bivy says Steel plus Hopper together total ~4,400 ft of gain, less than the 5,440 ft this route alone lists (which matches the beta arithmetic).",
+     "internal_resolution": "gain_ft matches beta's 785→4,688 plus 1,540 ft; the bivy's combined 4,400 ft figure is the outlier.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "name": "Standard Scramble (Marmot Lake / Duckabush approach)",
+   "area": "Mount Steel",
+   "contradictions": [
+    {
+     "fact": "Marmot Lake elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].elev",
+       "says": "4921"
+      },
+      {
+       "field": "itinerary.days[1].objective",
+       "says": "Establish camp at Marmot Lake (4,921 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "4400"
+      },
+      {
+       "field": "beta",
+       "says": "From Marmot Lake Camp (~4,400 ft)"
+      }
+     ],
+     "why": "The camp is given as 4,921 ft in the waypoint and itinerary but 4,400 ft in the bivy and beta, a 520 ft difference.",
+     "internal_resolution": "bivy notes put it 1,700 ft above the 2,694 ft Upper Duckabush camp (~4,400 ft), supporting 4,400.",
+     "needs_research": true
+    },
+    {
+     "fact": "Where the summit day leaves the trail",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From Marmot Lake Camp (~4,400 ft) leave the maintained trail and follow a small creek up into an amphitheater"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "Leave the trail near camp and climb open talus/heather slopes"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "From camp, drop back roughly 3 mi to the creek junction and climb into this open basin"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "Leave the maintained Duckabush Trail here, about 3 mi below Marmot Lake"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "if you find yourself gaining the pass or arriving at Marmot Lake you have walked past the creek"
+      }
+     ],
+     "why": "Beta and itinerary start the climb from camp at Marmot Lake, while the waypoints and approach variant put the creek turnoff about 3 miles below the lake (a 6-mile detour not in the 4.5-mile summit day).",
+     "internal_resolution": "Waypoints, approach and approach_variants agree the turnoff is ~3 mi below Marmot Lake.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trip length in days",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Typically a 2-3 day trip; roughly 14+ miles one-way to a high camp"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "budget at least 3-4 days"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A remote ~50-mile, 5-day round trip"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Most parties take two full days each way."
+      }
+     ],
+     "why": "Partner requirements say 2-3 days and 14+ miles one-way, pro_tips 3-4 days, while the itinerary and bivy describe a 5-day, ~21-mile-each-way trip.",
+     "internal_resolution": "Itinerary, timing (33 hr over 5 sections) and bivy agree on 5 days and ~21 mi one-way.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach drainage in partner requirements",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "(Duckabush or Dosewallips/Anderson Pass approach to a high camp near Marmot Lake or First Divide)"
+      },
+      {
+       "field": "approach",
+       "says": "Start at the Duckabush Trailhead ... A second, reportedly easier approach starts from First Divide"
+      }
+     ],
+     "why": "Partner requirements mention a Dosewallips/Anderson Pass approach that no other field describes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "First Divide variant saddle",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "climbs the saddle between Mount Duckabush and Mount Steel before turning north along the ridge"
+      },
+      {
+       "field": "climbing_route[1].notes",
+       "says": "drop southwest to the saddle between Mount Steel's two summit humps"
+      },
+      {
+       "field": "approach_variants[1].baseFinding",
+       "says": "drop southwest to the saddle between those humps"
+      }
+     ],
+     "why": "Beta puts the variant on the Duckabush-Steel saddle while the approach, climbing route and variant use the saddle between Steel's two summit humps.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit slope difficulty",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "easy Class 1 slopes lead from the amphitheater to the summit"
+      },
+      {
+       "field": "grade",
+       "says": "Class 2-3 (steep snow early season)"
+      },
+      {
+       "field": "climbing_route[0].class",
+       "says": "easy Class 2"
+      },
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "short, exposed Class 3 moves near the summit"
+      }
+     ],
+     "why": "Beta calls the summit slopes Class 1 while the grade and other fields say Class 2-3 with exposed Class 3 moves.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[1]",
+       "says": "Avalanche potential on the east-facing slopes below the summit in early season"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "Cornices/avalanche hazard on the upper mountain lingers well past typical Cascade timelines — don't assume July = snow-free here"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.July",
+       "says": "N/A"
+      }
+     ],
+     "why": "The avalanche panel says N/A for every month including July while hazards and watch_out warn of avalanche hazard into July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Park entrance fee",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "a park entrance fee applies where the route crosses into Olympic National Park"
+      },
+      {
+       "field": "access.fees",
+       "says": "NPS entrance: $30/vehicle (7-day) or $15 per person walk-in/bike-in"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "NPS entrance pass at the park boundary"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "The trailhead is on Olympic National Forest land, so no Olympic National Park entrance fee is charged to park there."
+      }
+     ],
+     "why": "Three fields say a park entrance fee/pass is needed while the parking line says none is charged at this Forest Service trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Walk-up permits and copied Staircase text",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "non-quota areas including this drainage can generally be booked year-round or picked up at a Wilderness Information Center"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire"
+      }
+     ],
+     "why": "One line says permits can be picked up at a WIC, the other says there are no walk-up permits and describes Flapjack Lakes/Staircase, a different approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day-2 gain to Marmot Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "2600"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "1400"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "4921"
+      }
+     ],
+     "why": "Day 2 climbs from Ten-Mile Camp (1,400 ft) to Marmot Lake (4,921 ft, or 4,400 per bivy), at least 3,000 ft net, not 2,600.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "name": "The Needles Scramble",
+   "area": "Mount Walkinshaw",
+   "contradictions": [
+    {
+     "fact": "Approach side and summit line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The easiest route is described as a Class 3 scramble via the 'West Side' or 'Gray Wolf Ridge.' ... Parties describe the west-side forest approach as the technical crux of the day due to dense brush"
+      },
+      {
+       "field": "pitch_detail[1].pitch",
+       "says": "Ridge scramble to false summit (Baldy approach)"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "allows a traverse around Walkinshaw's north side into the basin beyond, bypassing the direct summit scramble"
+      },
+      {
+       "field": "approach",
+       "says": "Aim for the prominent talus tongue and gully system on Walkinshaw's east/southeast side — this is the 'West Side' class-3 scramble route"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climb cross-country onto the ridge crest north/northeast of the peak, then follow the crest south, scrambling airily along a narrow, blade-like section"
+      }
+     ],
+     "why": "Beta and the route breakdown describe a brushy west-side/Gray Wolf Ridge (Baldy) approach, the approach and waypoints describe an east/southeast gully from Royal Basin (while calling it the 'West Side'), and the itinerary describes a north ridge blade.",
+     "internal_resolution": "The trailhead, waypoints, approach, approach_variants, itinerary day 1 and bivy all use Royal Basin; beta and pitch_detail describe the Gray Wolf Ridge approach. The summit line itself (E/SE gully vs north ridge) is unresolved.",
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "2970"
+      },
+      {
+       "field": "approach",
+       "says": "From the Upper Dungeness Trailhead (~2,960 ft"
+      },
+      {
+       "field": "approach",
+       "says": "reaching Royal Lake (5,100 ft, ~7.2 mi, ~2,500 ft gain)"
+      }
+     ],
+     "why": "A 2,960-2,970 ft trailhead cannot be ~2,500 ft below the 5,100 ft Royal Lake; the gain implies a ~2,600 ft trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappelling on descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "0"
+      },
+      {
+       "field": "descent_text",
+       "says": "no rappelling is required on the standard West Side route"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the route, downclimbing or rappelling exposed steps."
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "Reverse the ridge; downclimb or rappel the crux step."
+      },
+      {
+       "field": "rope_note",
+       "says": "a short rope/handline is a reasonable precaution for exposed Class 4 moves or a short rappel off the summit block"
+      }
+     ],
+     "why": "The descent text says no rappel is needed while the itinerary and rope note plan to rappel the crux step.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Royal Basin permit season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "NPS quota reservations for overnight camping in Royal Basin run May 1-Sept 30"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "quota season runs May through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.reason",
+       "says": "Royal Basin's online permit season ends October 15"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "for the mid-May through mid-October season"
+      }
+     ],
+     "why": "The permit season is given as May 1-Sept 30 in three fields and mid-May to mid-October in two others.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where camping is allowed",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "camp only in the three designated zones"
+      },
+      {
+       "field": "access.permit",
+       "says": "quota-season sites (Royal Creek, Lower Royal Meadow, Royal Lake zones)"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Camp at Upper Royal Basin (5,600') rather than Royal Lake"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Backpack to Upper Royal Basin"
+      }
+     ],
+     "why": "Access restricts camping to three zones that exclude the upper basin, while pro_tips, itinerary and main bivy camp in Upper Royal Basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cell coverage on the peak",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "comms",
+       "says": "Some cell coverage has been reported along the open crest of Gray Wolf Ridge"
+      },
+      {
+       "field": "emergency.notes",
+       "says": "No cell coverage in Royal Basin or on the peak"
+      }
+     ],
+     "why": "One field reports some coverage on the ridge crest, the other says none on the peak.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "name": "East Slopes (Standard)",
+   "area": "Sundial",
+   "contradictions": [
+    {
+     "fact": "Glacier/crevasses on the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.reason",
+       "says": "snow bridges over crevasses may still be present"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August.reason",
+       "says": "glacier crossing is more visually straightforward with crevasses more open and defined"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "Not applicable — the Royal Basin approach to Sundial involves no glacier travel or crevassed terrain"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "no rope or glacier gear is needed on the Royal Basin approach"
+      }
+     ],
+     "why": "SEASONAL GUIDANCE discusses crevasses and a glacier crossing while every other field says there is no glacier travel.",
+     "internal_resolution": "Crevasses, detailed_rack, pro_tips, bail and partner_requirements agree there is no glacier; the month reasons are copied from a glaciated route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking/entrance pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "$30 per private vehicle Olympic NP entrance pass (valid 7 days)"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "NPS entrance pass plus a Recreation.gov wilderness camping permit"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "$5 NW Forest day-use fee, self-issue permit envelope"
+      }
+     ],
+     "why": "Access says a $30 park entrance pass is needed while the trailhead waypoint says the $5 Northwest Forest day-use fee applies.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where camping is allowed",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "camping restricted to designated Royal Lake sites"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "continue into Upper Royal Basin to camp at roughly 5,600 ft"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the East Face/NE couloir scramble back to camp in Upper Royal Basin"
+      }
+     ],
+     "why": "Access restricts camping to Royal Lake while the itinerary, descent and main bivy camp in Upper Royal Basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cairned crack passage (possibly another peak's feature)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "at least one spot appears to cliff out but a cairned Class 3 crack around the corner allows passage"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "one spot appears to cliff out where a cairned Class 3 crack around the corner is the way through"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "aim for the northeast-facing gully/couloir ... The gully doglegs left below a notch on the summit ridge"
+      }
+     ],
+     "why": "Beta describes a ledge-and-cairned-crack route-finding crux that the climbing route (NE gully to a notch, short Class 3 to summit) does not include; the wording matches Mount Johnson's corkscrew-ledge crux.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.9"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "9.8"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day, ~19.6-mile round trip"
+      }
+     ],
+     "why": "dist_km (8.0 mi) is neither the one-way summit distance (9.8 mi) nor the round trip (19.6 mi).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "name": "Sawtooth Range Scramble",
+   "area": "The Horn",
+   "contradictions": [
+    {
+     "fact": "Approach from Gladys Divide area to the notch",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From Gladys Divide beyond Flapjack Lakes, the standard approach climbs a steep snow/scree gully to Needle Pass ... A climbers'/goat trail then bypasses The Needle and Castle Spires"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From the divide the tread turns primitive and you gain the crest through a steep snow-and-scree gully ... circumventing the Needle and the Castle Spires"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Before a small pond on the Gladys Divide trail, leave the maintained tread and head southeast up an open snow/rock slope toward Sawtooth Pass."
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "leaving the trail at about 4,400 ft to cross an open snow/rock slope southeast to Sawtooth Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Cruiser's standard line breaks off before the divide, up a steep snow couloir to Needle Pass ... The Fin and The Horn are reached by cutting east short of the divide to the narrow chute at Sawtooth Pass"
+      }
+     ],
+     "why": "Beta and the approach variant route parties from Gladys Divide up the Needle Pass gully past the Needle and Castle Spires, while the waypoints, itinerary, timing and bivy leave the trail at ~4,400 ft short of the divide for Sawtooth Pass.",
+     "internal_resolution": "Waypoints, itinerary, timing and bivy agree on the Sawtooth Pass line; the bivy identifies the Needle Pass couloir as Mount Cruiser's route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach trail named in seasonal guidance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "by this point the Putvin Trail approach and Sawtooth high country are reliably snow-free"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Lingering snowfields on the steep Putvin Trail headwall"
+      },
+      {
+       "field": "overview",
+       "says": "east of Flapjack Lakes, not in the Lake of the Angels/Putvin drainage to the north"
+      }
+     ],
+     "why": "Seasonal guidance describes the Putvin Trail approach, which the overview explicitly says is a different drainage from this Staircase/Flapjack approach.",
+     "internal_resolution": "Overview, approach, waypoints and itinerary all use Staircase/Flapjack Lakes.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ropes for the rappel",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gear[2]",
+       "says": "Two ropes, for a double-rope rappel off the summit notch"
+      },
+      {
+       "field": "rack[4]",
+       "says": "Two ropes for a double-rope rappel off the summit notch"
+      },
+      {
+       "field": "descent_text",
+       "says": "carrying two ropes allows a full double-rope rappel back down to the notch"
+      },
+      {
+       "field": "rope_type",
+       "says": "single dynamic"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "~130 ft"
+      }
+     ],
+     "why": "Gear, rack and descent require two ropes for the rappel while the rope fields show a single 60 m rope, which rappels only ~30 m of a ~130 ft (40 m) pitch.",
+     "internal_resolution": "Three fields plus the 130 ft pitch length point to two ropes (or a double-length rappel); the single-rope fields are the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Technical level: roped 5.5 vs scramble",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.5 R"
+      },
+      {
+       "field": "overview",
+       "says": "parties agree it is a genuine roped 5th-class trad route (5.5, R)"
+      },
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "Experienced scrambler - loose rock and exposure on the Sawtooth spires demand solid Class 3-4 judgment"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "Significant exposure on the Class 3-4 spire scrambling"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "A short rope helps on the exposed sections"
+      },
+      {
+       "field": "what_to_bring[1]",
+       "says": "rope for short exposed sections"
+      }
+     ],
+     "why": "The grade and overview say roped 5.5 R trad, while partner requirements, the exposure note, pro_tips and what_to_bring treat it as a Class 3-4 scramble needing only a short rope.",
+     "internal_resolution": "Grade, rock_grade, overview, pitch_detail, rack and descent_text agree it is a roped 5.5 R climb.",
+     "needs_research": false
+    },
+    {
+     "fact": "How the wilderness permit is obtained",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Self-issue wilderness permit at the ranger station kiosk"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "reserved permit required from mid-June through September 30"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "there are no same-day walk-up permits"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Flapjack Lakes is a NAMED QUOTA AREA, limited year round ... NO SITES ARE HELD AS SAME-DAY WALK-UPS"
+      }
+     ],
+     "why": "The trailhead card says to self-issue a permit and that reservations apply mid-June to Sept 30, while access and bivy say there are no walk-up permits and the quota applies year round.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total ascent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5500"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 17.5 miles and 4,750 ft round trip"
+      },
+      {
+       "field": "loss_ft",
+       "says": "4750"
+      }
+     ],
+     "why": "The header gain (5,500 ft) disagrees with the itinerary total (4,750 ft), which matches the 875 ft trailhead to 5,536 ft summit.",
+     "internal_resolution": "The itinerary total matches waypoint elevations; gain_ft appears high.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Flapjack Lakes and Gladys Divide",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "climb steeply another ~3.6 miles to Flapjack Lakes (~4,000 ft, 8 miles from the trailhead)"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "7"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "about 7.5 miles and 3,100 ft from the Staircase trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "Round-trip approach mileage to Gladys Divide alone runs close to 19 miles"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 17.5 miles and 4,750 ft round trip"
+      }
+     ],
+     "why": "Flapjack Lakes is 7, 7.5 or 8 miles depending on the field (3.4 + 3.6 = 7), and the 19-mile round trip to Gladys Divide exceeds the whole trip's 17.5 miles.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Black and White Lakes junction location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3]",
+       "says": "Black and White Lakes junction waterfall at distMi 7.5, elev 4100 (Flapjack Lakes at 7.0, 3900)"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "the last reliable, easy water before the dry push toward Gladys Divide"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "the waterfall near the Black and White Lakes junction, roughly half a mile below the lakes"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "Reached by branching left across Donahue Creek about half a mile below Flapjack Lakes"
+      }
+     ],
+     "why": "The waypoint places the junction/waterfall half a mile beyond and above Flapjack Lakes, while both bivy entries place it half a mile below the lakes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day trip vs multi-day",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "Light day pack for a fast single-push team"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "realistically a multi-day backpack with a high camp, not a single-push day trip from the road"
+      },
+      {
+       "field": "gear[4]",
+       "says": "the approach is a multi-day undertaking, not a day trip"
+      }
+     ],
+     "why": "The pack-weight line assumes a single-push day team while the same section and the gear list say it is not a day trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "name": "The Needles Scramble",
+   "area": "The Incisor",
+   "contradictions": [
+    {
+     "fact": "Itinerary/timing describe a different peak (North Cascades)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "This is done entirely car-to-car in one day from a Highway 20 pullout near Pine Creek/Lone Fir Campground."
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "Short, exposed class 3 scrambling on solid granite; views of Silver Star, Liberty Bell, and the main Needles towers."
+      },
+      {
+       "field": "timing.sectionBreakdown[0].fromTo",
+       "says": "Car-to-car: Pine Creek approach + East Peak scramble"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "4:30 AM from the trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "Hike the Upper Dungeness Trail #833 about 1 mile to the Royal Creek/Royal Basin Trail #832 junction"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Multi-day: ~1 day (7 mi, ~2,500-2,600 ft gain) hiking in to Royal Basin ... most parties camp in Royal Basin rather than attempting it car-to-car"
+      }
+     ],
+     "why": "The itinerary and timing describe a one-day car-to-car North Cascades (Highway 20, Silver Star/Liberty Bell, granite) climb of an 'East Peak', while every other field describes a multi-day Royal Basin approach in the Olympics.",
+     "internal_resolution": "Approach, waypoints, beta, bivy, partner_requirements and pro_tips all describe the Olympic Royal Basin approach; the itinerary/timing are contaminated from another peak.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.9"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6.1"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "10"
+      },
+      {
+       "field": "turnaround",
+       "says": "Given the long approach (14-16+ mile round trip)"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "split the ~7-8 mile approach across two days"
+      }
+     ],
+     "why": "The distance is 8.0 mi (dist_km), 6.1 mi round trip (itinerary), 10 mi one-way (summit waypoint) or 14-16+ mi round trip (turnaround).",
+     "internal_resolution": "Waypoints put the summit 10 mi one-way (~20 mi round trip); the itinerary's 6.1 mi belongs to the contaminated North Cascades text.",
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4900"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 4,900 ft of total gain from trailhead to summit"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "4400"
+      }
+     ],
+     "why": "The itinerary's 4,400 ft disagrees with the 4,900 ft in gain_ft and the approach.",
+     "internal_resolution": "gain_ft and approach agree with the 2,500 ft trailhead to 7,440 ft summit; the itinerary figure comes from the contaminated text.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rock quality in The Needles",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "the Needles' rock is specifically higher quality than is typical for the Olympics"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Notoriously loose, rotten rock throughout The Needles"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "sustained Class 3-4 exposure on notoriously loose/rotten rock"
+      }
+     ],
+     "why": "Beta calls the Needles' rock better than typical Olympic rock while hazards and safety call it notoriously loose and rotten.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Park entrance fee",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "No permit required for a day climb beyond the standard NPS entrance fee."
+      },
+      {
+       "field": "access.fees",
+       "says": "$30 per vehicle for a 7-day Olympic NP entrance pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "NPS vehicle entrance pass + wilderness camping permit"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "no Olympic National Park entrance fee is charged to park there"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Northwest Forest Pass required"
+      }
+     ],
+     "why": "Three fields require a park entrance pass while the parking line and trailhead waypoint say only a Northwest Forest Pass applies and no park entrance fee is charged.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Direction to the Needles from the basin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[5].note",
+       "says": "pick a talus/heather-bench line east toward the Needles ridge crest"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "views east across the lake to the jagged Needles ridge"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "the foot of the west wall of the basin, which is the east side of The Needles"
+      },
+      {
+       "field": "waypoints[7]",
+       "says": "The Incisor at lng -123.2351, west of Upper Royal Basin at -123.2194"
+      }
+     ],
+     "why": "Two waypoint notes send the party east toward the Needles, while the coordinates and bivy place the Needles (and the Incisor) west of Royal Basin.",
+     "internal_resolution": "Coordinates and bivy agree the Needles are west.",
+     "needs_research": false
+    },
+    {
+     "fact": "Sheriff jurisdiction",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.sheriffDispatch",
+       "says": "Clallam County Sheriff (360) 417-2265 after hours"
+      },
+      {
+       "field": "emergency.county",
+       "says": "The Needles/Royal Basin lie in Jefferson County within Olympic National Park"
+      }
+     ],
+     "why": "The emergency card lists the Clallam County Sheriff while stating the route lies in Jefferson County.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Avalanche hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "obj_haz[2]",
+       "says": "Lingering snow/avalanche potential on approach and route into early summer"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route (climbed outside the NWAC winter forecast season)"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.July",
+       "says": "N/A"
+      }
+     ],
+     "why": "Hazards list avalanche potential into early summer while the avalanche panel says N/A for July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "How Upper Royal Basin is booked",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "the cross-country Upper Royal Basin zone is booked by calling the Olympic Wilderness Information Center"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Same Olympic National Park quota permit as Royal Lake, booked as the upper basin rather than the lake ... advance reservation only, mid-April release"
+      }
+     ],
+     "why": "Access says the upper basin is booked by phone while the bivy says it is booked like Royal Lake in the mid-April release.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

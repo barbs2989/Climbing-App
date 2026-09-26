@@ -1,0 +1,261 @@
+{
+ "file": "r343.json",
+ "results": [
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Hardest rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Outside sources disagree on the grade of the south/southwest-side finish: one route database rates the West Ridge line Class 3 (~10 hrs from the Nooksack Cirque Trail), and a climber's log entry describes a blocky gully to the SE ridge with an easier variation rated class 3/4 needing no protection. No source found states Class 4 for this line, so neither rock_grade (Class 3) nor grade (Class 4) can be confirmed by two agreeing sources.",
+   "sources": [
+    "https://bivouac.com/TripPg.asp?TripId=6009",
+    "https://www.summitpost.org/mount-sefrit/climbers-log/151613"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Route breakdown describes the other (SE) line",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "South-side reports show this approach gains the SE ridge for the finish (a blocky gully to the SE ridge; a south approach finishing up the southeast ridge), and the SE ridge carries the ~100 ft exposed Class 3 traverse. The pitch's 'Class 3-4' grade covers the gully and the note describes the shared ridge finish, so it does not conflict with the Class 4 gully waypoint.",
+   "sources": [
+    "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+    "https://www.summitpost.org/mount-sefrit/climbers-log/151613"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Total gain",
+   "verdict": "fixed",
+   "correct_value": "5000",
+   "evidence": "A south-side trip report from the Nooksack Cirque Trailhead gives ~5,072 ft gain (2,140 ft trailhead to summit). The trailhead sits near 2,200 ft (Nooksack Cirque hike: 640 ft gain to a 2,840 ft high point) and the summit is 7,191 ft, so net gain alone exceeds 5,000 ft; 4,500 is impossible from this trailhead. The itinerary's 5,000 is correct.",
+   "sources": [
+    "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+    "https://www.wta.org/go-hiking/hikes/nooksack-cirque",
+    "https://en.wikipedia.org/wiki/Mount_Sefrit"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4500,
+     "value": 5000,
+     "id": "wa_mount_sefrit_southwest_ridge",
+     "fact": "Total gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Parking pass at Nooksack Cirque Trailhead",
+   "verdict": "fixed",
+   "correct_value": "No parking pass or fee required at the Nooksack Cirque Trailhead",
+   "evidence": "The Nooksack Cirque hike page lists 'Parking Pass/Entry Fee: None'. The Forest Service Region 6 list of day-use fee sites names Hannegan Trailhead and Goat Mountain Trailhead on the Mt. Baker-Snoqualmie but not Nooksack Cirque. access.passRequired is correct; fees, parking_pass and overnight_permit.where are patched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/nooksack-cirque",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "Northwest Forest Pass (or America the Beautiful interagency pass) required to park at the Nooksack Cirque Trailhead — $5/day or $30/annual.",
+     "value": "No parking pass or fee is required at the Nooksack Cirque Trailhead.",
+     "id": "wa_mount_sefrit_southwest_ridge",
+     "fact": "Parking pass at Nooksack Cirque Trailhead"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "value": "None required at the Nooksack Cirque Trailhead; a Northwest Forest Pass is required at many other trailheads in the area.",
+     "id": "wa_mount_sefrit_southwest_ridge",
+     "fact": "Parking pass at Nooksack Cirque Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "; a recreation pass is needed to park.",
+     "replace": "; no parking pass is needed at this trailhead.",
+     "id": "wa_mount_sefrit_southwest_ridge",
+     "fact": "Parking pass at Nooksack Cirque Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Trailhead / camp for this route",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The only bivy entry is the Hannegan road-end camp on Ruth Creek Road, which serves Sefrit's north-side routes, not this route from the Nooksack Cirque Trailhead on FR 34. Bivy is owned by the separate camping clean-up; no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Which side the Wall Street Couloir route is on",
+   "verdict": "fixed",
+   "correct_value": "North side (Wall Street Couloir and Northwest Glacier from Ruth Creek, finishing on the SE ridge)",
+   "evidence": "The Wall Street trip report crosses Ruth Creek and climbs the gully onto the Northwest Glacier on Sefrit's north side before finishing on the southeast ridge. A south-side report notes the north approach is the more common one, and a south/southwest ski report describes its line as avoiding the north-side approach via Ruth Creek. So the line is a north-side route that finishes on the SE ridge.",
+   "sources": [
+    "https://trailcatjim.com/mt-sefrit-via-northwest-glacier-southeast-ridge/",
+    "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+    "https://turns-all-year.com/trip-reports/mount-sefrit-s-sw-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Note a separate, lower-angle SE-side line — via Wall Street Couloir and the Northwest Glacier — is Class 2",
+     "replace": "Note a separate, lower-angle north-side line — via Wall Street Couloir and the Northwest Glacier to the SE ridge — is Class 2",
+     "id": "wa_mount_sefrit_southwest_ridge",
+     "fact": "Which side the Wall Street Couloir route is on"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "A separate, lower-angle line on the southeast side — Wall Street Couloir and the Northwest Glacier —",
+     "replace": "A separate, lower-angle line on the north side — Wall Street Couloir and the Northwest Glacier, finishing on the southeast ridge —",
+     "id": "wa_mount_sefrit_southwest_ridge",
+     "fact": "Which side the Wall Street Couloir route is on"
+    },
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "via the Wall Street Couloir/Northwest Glacier line to the southeast side",
+     "replace": "via the north-side Wall Street Couloir/Northwest Glacier line",
+     "id": "wa_mount_sefrit_southwest_ridge",
+     "fact": "Which side the Wall Street Couloir route is on"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Car-to-car loss vs corrected gain",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "With gain_ft corrected to 5,000, loss_ft still reads 4,500. No outside source states a car-to-car descent figure for this route, so loss_ft is left unchanged under the loss rule.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Approach distance: one-way dist_km vs round-trip miles",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 9.3 (5.8 mi) is shown as one-way, but the itinerary gives 5.8 mi as the ROUND TRIP and the summit waypoint sits at 2.9 mi. A south-side report gives 10.5 mi round trip (about 5.25 mi one way). The row's own corrections cite the same 10.5 mi figure, so it is one source; not enough to settle the one-way distance.",
+   "sources": [
+    "https://onehikeaweek.com/2025/05/23/mount-sefrit/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only detailed report of this route (published twice by the same author) parks at a wide spot about 3 miles up the Hannegan Pass Road, just past a creek flowing over a concrete weir (~2,950 ft), and drops straight to Ruth Creek. This supports the milepost-3 start in approach_variants. No second independent source was found. The road end at Hannegan Campground is ~3,100 ft (5,100 ft pass minus 2,000 ft gain; 3,100 ft gain to a 6,200 ft high point), so the row's '~2,950 ft' matches the pullout, not the road end. Recommend moving the start to the pullout once a second source confirms it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004050114",
+    "https://trailcatjim.com/mt-sefrit-via-northwest-glacier-southeast-ridge/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/hannegan-pass-trail-674",
+    "https://www.wta.org/go-hiking/hikes/hannegan-pass-and-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "fact": "Trailhead elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two sources put the Hannegan road-end trailhead at ~3,100 ft (a 4-mile trail gaining 2,000 ft to the 5,100 ft pass; a hike page giving 3,100 ft gain to 6,200 ft). So '~2,950 ft' is wrong for the road end but right for the milepost-3 pullout. Which figure belongs depends on the unresolved trailhead question, so there is no patch yet; bivy[0].elev 3100 is correct for the road end.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/hannegan-pass-trail-674",
+    "https://www.wta.org/go-hiking/hikes/hannegan-pass-and-peak",
+    "https://trailcatjim.com/mt-sefrit-via-northwest-glacier-southeast-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "fact": "Overnight permit",
+   "verdict": "fixed",
+   "correct_value": "No permit for day use or overnight stays in the Mount Baker Wilderness; fill out the free self-issue registration at the trailhead.",
+   "evidence": "The Mt. Baker-Snoqualmie wilderness regulations require a wilderness permit (free self-issue) only in the Alpine Lakes Wilderness; the Mount Baker Wilderness has none beyond general rules. Wilderness areas without a permit system use free self-registration kiosks at trailheads. access.permit's 'overnight use requires the applicable wilderness permit' is wrong; the overnight_permit block is right.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "No permit for day use; overnight use requires the applicable wilderness permit",
+     "value": "No permit for day use or overnight stays in the Mount Baker Wilderness; fill out the free self-issue registration at the trailhead.",
+     "id": "wa_mount_sefrit_southeast_ridge",
+     "fact": "Overnight permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "fact": "'Same trailhead as the Southeast Ridge'",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "This route correctly starts at the Hannegan road end (the Ruth Creek/Hannegan Pass trail begins there at ~3,100 ft and runs up the valley below Sefrit's cliffs to ~3,450 ft). Whether the Southeast Ridge shares that trailhead is the unresolved question on that route: one report (single author) starts it at a milepost-3 pullout. The cross-reference should be removed or corrected once that question is settled.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/hannegan-pass-trail-674",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004050114"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "fact": "Overnight permit",
+   "verdict": "fixed",
+   "correct_value": "No permit for day use or overnight stays in the Mount Baker Wilderness; fill out the free self-issue registration at the trailhead.",
+   "evidence": "As on the Southeast Ridge: on the Mt. Baker-Snoqualmie only the Alpine Lakes Wilderness requires a wilderness permit, and other wilderness trailheads use free self-registration. No permit is needed for day or overnight use in the Mount Baker Wilderness.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "No permit for day use; overnight use requires the applicable wilderness permit",
+     "value": "No permit for day use or overnight stays in the Mount Baker Wilderness; fill out the free self-issue registration at the trailhead.",
+     "id": "wa_mount_sefrit_bloody_head_couloir",
+     "fact": "Overnight permit"
+    }
+   ]
+  }
+ ]
+}

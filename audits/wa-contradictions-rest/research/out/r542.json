@@ -1,0 +1,28 @@
+{"file": "r542.json", "results": [
+ {"id": "wa_mount_ellinor_standard", "fact": "Total gain", "verdict": "fixed",
+  "correct_value": "About 2,400 ft (2,444 ft) of gain over 1.6 mi one way from the Upper Trailhead",
+  "evidence": "WTA gives 2,444 ft of gain in the 1.6 miles from the upper trailhead to the summit (3.2 mi round trip). onX gives 2,418 ft over ~3.1 mi out-and-back, and another trip guide gives ~2,400 ft; USFS gives the upper trailhead at 3,500 ft and summit at 5,944 ft. Every field except partner_requirements already says 2,444 ft; the 3,200 ft figure is wrong.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/mount-ellinor", "https://www.onxmaps.com/hiking/jx06py4ke6ko/mount-ellinor-via-upper-trailhead", "https://www.wanderingwashingtonian.com/post/mount-ellinor-sunset-hike-guide-upper-trail-summit-views-tips-2026", "https://www.fs.usda.gov/r06/olympic/recreation/trails/mt-ellinor-trail-812"],
+  "patches": [
+   {"id": "wa_mount_ellinor_standard", "fact": "Total gain", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "about 3,200 ft of gain over ~1.6 mi one way", "replace": "about 2,400 ft of gain over ~1.6 mi one way"}
+  ]},
+ {"id": "wa_mount_ellinor_standard", "fact": "Summit distance", "verdict": "fixed",
+  "correct_value": "Summit waypoint at 1.6 mi from the Upper Trailhead",
+  "evidence": "The USFS upper-trailhead listing says the trail from the 3,500 ft upper trailhead reaches the summit in 1.6 miles; WTA likewise gives 1.6 miles to the summit (3.2 mi round trip). The row's approach, approach_variants, itinerary and dist_km all agree on ~1.6 mi; only the summit pin's 1.21 disagrees.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/mt-ellinor-upper-trailhead", "https://www.wta.org/go-hiking/hikes/mount-ellinor"],
+  "patches": [
+   {"id": "wa_mount_ellinor_standard", "fact": "Summit distance", "op": "set", "column": "waypoints", "path": [1, "distMi"], "expect": 1.21, "value": 1.6}
+  ]},
+ {"id": "wa_mount_ellinor_standard", "fact": "Permits/fees that apply", "verdict": "fixed",
+  "correct_value": "Only a Northwest Forest Pass (or equivalent recreation pass) for parking at the upper trailhead; no entrance fee and no wilderness permit for this day climb",
+  "evidence": "The USFS Trail #812 page says a valid Recreation Pass is required for day use at the upper trailhead and none at the lower one, with no entrance fee or permit named (this is national forest, not a park). WTA also lists only a Northwest Forest Pass. access.notes' 'standard entrance fee and wilderness camping permit' is park boilerplate that contradicts permit, access.permit and access.rules.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/trails/mt-ellinor-trail-812", "https://www.wta.org/go-hiking/hikes/mount-ellinor"],
+  "patches": [
+   {"id": "wa_mount_ellinor_standard", "fact": "Permits/fees that apply", "op": "replace_text", "column": "access", "path": ["notes"], "find": "only the standard entrance fee and wilderness camping permit apply.", "replace": "the only charge is the Northwest Forest Pass (or equivalent recreation pass) for parking at the upper trailhead."}
+  ]},
+ {"id": "wa_mount_ellinor_standard", "fact": "Pack weight", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "itinerary.days[0].packLb is 0, and every itinerary renderer only shows pack weight when packLb is truthy (if(d.packLb) / d.packLb?...), so no '0 lb' ever reaches the screen; the 15-20 lb in partner requirements is the only pack weight a climber sees.",
+  "sources": [],
+  "patches": []}
+]}

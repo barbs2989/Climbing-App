@@ -1,0 +1,203 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Granite Pass elevation"
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Water at Cutthroat Pass / Porcupine Creek"
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Water at Cutthroat Pass / Porcupine Creek"
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Snowy Lakes side trail: up or down"
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "directions"
+   ],
+   "fact": "Snowy Lakes side trail: up or down"
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "When SR-20 opens"
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "When SR-20 opens"
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "When SR-20 opens"
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills"
+   ],
+   "fact": "Wilderness permit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "before": {
+    "approach": "From the PCT-Northbound (Rainy Pass) trailhead on SR 20 (elev. ~4,855-4,900 ft), follow the Pacific Crest Trail north. The trail climbs steadily through subalpine forest and larch parkland past Porcupine Creek, reaching Cutthroat Pass (6,820 ft) at about 4.9 miles / ~1,900 ft gain (roughly 2-2.5 hours at a hiking pace). This is the last reliable water before the high country dries out in late summer, so top off here or at Porcupine Creek below. From Cutthroat Pass continue north on the PCT, which drops slightly to Granite Pass (~6,700 ft) and then contours across open, sparsely-treed slopes to Snowy Creek Meadow (~6,400-6,900 ft) - a common camp/water stop, with a short side-trail up to Snowy Lakes if you want a higher, more scenic bivy. From the meadow, stay on the PCT northbound roughly another 1-1.5 miles / ~350 ft gain (about an hour) to Methow Pass (~6,600 ft). Leave the trail here: travel west/southwest, off-trail, through open heather and talus benches toward Mount Hardy's east ridge. Gain the ridge and follow moderate slopes of sand, scree and talus - loose in spots, with real route-finding required - up to the saddle between the true summit and a lower false summit (roughly 7,200-7,600 ft). From the saddle, several hundred feet of enjoyable Class 2-3 scrambling over blocky rock leads to the summit at 8,097 ft; some parties note a notch below the true summit block that's crossed before a short, shallow summit gully. Total one-way distance from the trailhead to the summit is roughly 11-12 miles with about 5,100 ft of cumulative gain, matching the recorded figures - this is a long day for strong parties or, more commonly, a 2-day trip with camp near Snowy Creek Meadow/Snowy Lakes. Snow can linger on the upper ridge and in north-facing gullies near Cutthroat and Granite Passes well into early summer; the highway itself (and both this trailhead and the alternate Swamp Creek pullout used for the shorter South Ridge route) sit inside WSDOT's SR 20 winter closure zone, so the route is typically only accessible from around late May/June through October depending on snowpack. Carry an ice axe and know how to use it if attempting before the passes fully melt out.",
+    "waypoints": [
+     {
+      "lat": 48.5181,
+      "lng": -120.7331,
+      "elev": 4880,
+      "name": "Rainy Pass North Trailhead (PCT)",
+      "note": "Large paved lot on the north side of SR 20 at Rainy Pass; Northwest Forest Pass or Interagency Recreation Pass required for day use.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR 20 to Rainy Pass and park in the large paved lot on the north side of the highway. A Northwest Forest Pass or Interagency pass is needed for day use. The highway sits inside WSDOT's winter closure zone, so access typically runs late May or June through October depending on snowpack."
+     },
+     {
+      "lat": 48.538183,
+      "lng": -120.725159,
+      "elev": 5300,
+      "name": "Porcupine Creek crossing",
+      "note": "Last reliable, easy water before a long dry 7-8 mile stretch of switchbacks up to Cutthroat Pass — top off here.",
+      "type": "Water",
+      "distMi": 2,
+      "directions": "Head north on the Pacific Crest Trail, climbing steadily through subalpine forest and larch parkland for about 2 miles to the creek. Fill up here, because it is the last easy water before a long dry stretch of switchbacks."
+     },
+     {
+      "lat": 48.55458,
+      "lng": -120.70011,
+      "elev": 6834,
+      "name": "Cutthroat Pass",
+      "note": "PCT crosses the Skagit/Okanogan county line here; a side trail drops east to Cutthroat Lake while the route continues north on the PCT.",
+      "type": "Junction",
+      "distMi": 5,
+      "directions": "Keep climbing north on the PCT for roughly another 3 miles and 1,500 ft of switchbacks to the pass, about 2 to 2.5 hours from the car at a hiking pace. Snow can linger in the north-facing gullies near the pass into early summer."
+     },
+     {
+      "lat": 48.56110573389831,
+      "lng": -120.70775150169491,
+      "elev": 6200,
+      "name": "Snowfield past Granite Pass",
+      "note": "Trail descends ~700 ft from Cutthroat Pass to this saddle; a steep snowfield just beyond the pass often lingers into August and has caused slide-for-life falls — carry an ice axe early season.",
+      "type": "Hazard",
+      "distMi": 6.4,
+      "directions": "Continue north as the trail drops about 700 ft toward the saddle beyond Granite Pass. A steep snowfield just past the pass often lasts into August and has caused slide-for-life falls, so carry an axe if you are here early in the season."
+     },
+     {
+      "lat": 48.585667,
+      "lng": -120.719997,
+      "elev": 6500,
+      "name": "Snowy Lakes Trail junction",
+      "note": "Leave the PCT here and descend/traverse west on the 0.8-mile Snowy Lakes side trail toward the basin below Tower Mountain and Golden Horn.",
+      "type": "Junction",
+      "distMi": 9.5,
+      "directions": "Stay on the PCT as it contours across open, sparsely treed slopes to Snowy Creek Meadow, a common water and camp stop. The side trail leaves the PCT here."
+     },
+     {
+      "lat": 48.592704,
+      "lng": -120.722615,
+      "elev": 6900,
+      "name": "Upper Snowy Lake basin",
+      "note": "Established camp on the upper lake ringed by Tower Mountain and Golden Horn; standard base camp for the Hardy climb, treat lake water before drinking.",
+      "type": "Campsite",
+      "distMi": 10.3,
+      "directions": "Descend and traverse west on the 0.8-mile Snowy Lakes side trail into the basin under Tower Mountain and Golden Horn. Camp on the rocky bench above the upper lake; treat the lake water."
+     },
+     {
+      "lat": 48.58208,
+      "lng": -120.73233,
+      "elev": 6591,
+      "name": "Methow Pass",
+      "note": "Open plateau at the PCT's crossing of the Cascade Crest just east of Hardy; leave the trail here and head cross-country up the scree/talus benches on Hardy's southeast slope.",
+      "type": "Junction",
+      "distMi": 10.9,
+      "directions": "Drop back down the side trail to Snowy Creek Meadow and rejoin the PCT northbound, then follow it roughly 1 to 1.5 miles and about 350 ft of gain, around an hour, to the open plateau at the pass."
+     },
+     {
+      "lat": 48.5816962,
+      "lng": -120.7555432,
+      "elev": 8097,
+      "name": "Mount Hardy summit",
+      "note": "Class 2-3 scramble up sand/scree/talus benches to a saddle then a short south-face rock step to the summit block; views of Golden Horn, Tower Mtn, and the Methow River headwaters.",
+      "type": "Summit",
+      "distMi": 11.8,
+      "directions": "Leave the trail and travel off-trail west and southwest through open heather and talus benches toward the east ridge. Gain the ridge and follow moderate sand, scree and talus, loose in places and with real route-finding, up to the saddle between the true summit and the lower false summit around 7,200 to 7,600 ft. From the saddle several hundred feet of blocky class 2-3 scrambling leads up; a notch below the summit block is crossed before a short, shallow summit gully. Allow roughly 3 hours from the pass."
+     }
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "Late June through September; July-August is the most dependable stretch, while June still carries meaningful snow",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow retreating on the lower approach; long daylight, though upper mountain snow can linger early in the month",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "SR 20 typically just reopened; upper mountain and approach still hold snow with cornice/steep-snow hazard",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Best combination of stable weather and minimal snow, matching the climate field's 'best window' summer note",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Mostly talus/scramble conditions, but shortening days and possible early-season snow late in the month",
+       "status": "good"
+      }
+     }
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong, sustained hiking fitness - the PCT approach from Rainy Pass over Methow Pass before even leaving the trail is long, and existing beta flags 'a long return to the trailhead' as a watch-out",
+      "packWeight": "20-35 lbs; ice axe (and crampons in early season) plus enough food/layers for a full alpine day, heavier if bivying to break up the long approach"
+     },
+     "approachTime": "Long - a full day of PCT hiking from Rainy Pass over Methow Pass before the scramble portion even begins; many parties treat it as an overnight objective given the round-trip distance",
+     "requiredSkills": [
+      "Self-arrest and steep snow travel with an ice axe (steep snow and cornices early season)",
+      "Off-trail routefinding once leaving the PCT near Methow Pass",
+      "Loose rock scrambling judgment (Class 2-3 terrain)",
+      "Weather awareness / turnaround discipline for afternoon thunderstorms",
+      "Basic wilderness permit self-issue know-how for the Rainy Pass approach"
+     ],
+     "experienceLevel": "Intermediate to advanced scrambler comfortable with unmarked off-trail routefinding on a remote peak, not a first-scramble objective"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,351 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_face_3",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead and approach"
+  },
+  {
+   "id": "wa_east_face_3",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Trailhead and approach"
+  },
+  {
+   "id": "wa_east_face_3",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Trailhead and approach"
+  },
+  {
+   "id": "wa_east_face_3",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel descent: count and ropes"
+  },
+  {
+   "id": "wa_east_face_3",
+   "column": "gear",
+   "path": [
+    2
+   ],
+   "fact": "Rappel descent: count and ropes"
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Which rappel line needs 70 m"
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "column": "rack",
+   "path": [
+    4
+   ],
+   "fact": "Which rappel line needs 70 m"
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "column": "rappels",
+   "path": [],
+   "fact": "Bolted West Face rappel count and anchors"
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Bolted West Face rappel count and anchors"
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "Bolted West Face rappel count and anchors"
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "column": "approach",
+   "path": [],
+   "fact": "Shared start with the West Face"
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Shared start with the West Face"
+  },
+  {
+   "id": "wa_the_west_face",
+   "column": "descent",
+   "path": [],
+   "fact": "Bolted rappel line count"
+  },
+  {
+   "id": "wa_the_west_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Bolted rappel line count"
+  },
+  {
+   "id": "wa_the_west_face",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Bolted rappel line count"
+  },
+  {
+   "id": "wa_the_west_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Bolted rappel line count"
+  },
+  {
+   "id": "wa_the_west_face",
+   "column": "rack",
+   "path": [
+    4
+   ],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_the_west_face",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Summit distance from trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_face_3",
+   "before": {
+    "approach": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass to Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead. Park at the Blue Lake Trailhead (about 5,200 ft, Northwest Forest Pass required), on the south side of the highway roughly 1.5 miles west of the Washington Pass overlook. Follow the Blue Lake Trail #314 about 1.5 miles to a small meadow, then branch off left onto the well-worn climbers' path, which climbs steeply through slabs, talus, and meadow (with short 3rd-class scrambling) into the basin below the Liberty Bell Group — roughly 3 miles and 2,000 ft of gain, 1.5-2.5 hours total. The classic Beckey Route starts from the notch (about 7,300 ft) between Liberty Bell and Concord Tower, reached via the gully splitting off the climbers' path.",
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5477,
+      "name": "Blue Lake Trailhead (SR-20)",
+      "note": "Park a few hundred yards east of Washington Pass near the small pond; exact pullout GPS not independently confirmed.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51229,
+      "lng": -120.65397,
+      "elev": 6969,
+      "name": "Minuteman Spire - Summit",
+      "note": "East Face, 5-6 pitch route on the east side of the Liberty Bell group.",
+      "type": "Summit",
+      "distMi": 1.2
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.51229,
+     "peakLng": -120.65397,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass to Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead."
+    },
+    "rappels": "4 double-rope rappels from slung anchors roughly 100 ft west of the true summit, down the descent gully back toward the base of the face",
+    "gear": [
+     "standard rock rack to ~3-4in (cams + stoppers)",
+     "extra slings, including long/double runners",
+     "two 60m ropes (the descent is 4 double-rope rappels)",
+     "helmet"
+    ]
+   }
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "before": {
+    "road": {
+     "name": "Blue Lake Trailhead, SR-20, Washington Pass",
+     "status": "Paved highway parking at the Blue Lake Trailhead; no unpaved road driving required.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    },
+    "rope_note": "60m is sufficient if descending via the neighboring Chockstone Route's rappels; 70m is required if using Flycatcher's own newer bolted rap-anchor line. Pick one descent option before starting.",
+    "rack": [
+     "Cams to #3 Camalot",
+     "Single #4 Camalot (optional #5 for wide sections)",
+     "60cm and 120cm webbing for anchors",
+     "Cordelette",
+     "Single dynamic rope (60m via Chockstone raps, 70m via Flycatcher's own line)"
+    ]
+   }
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "before": {
+    "rappels": "~5 rappels by either line: the bolted West Face (4 bolted stations plus a tree rappel), all single-rope on a 60 m rope that just barely reaches - a 70 m is the comfortable choice - or the classic line (3 single-rope raps to the notch, then a largely free-hanging double-rope rappel past the chockstone, then a short tree rap)",
+    "itinerary": {
+     "cal": "Route is dry-season rock only; Hwy 20 (North Cascades Highway) is gated by snow in winter and typically doesn't open until mid/late spring, so plan for a June-September window.",
+     "days": [
+      {
+       "n": 1,
+       "note": "This is a standard single-day alpine rock outing out of Washington Pass, not an overnight trip. Parties hike the Blue Lake Trail and climber's path into the basin below the Liberty Bell group, scramble to the base, climb 4-5 pitches of sustained 5.8-5.9 up the corner/dihedral system, then descend via a bolted rappel line straight back to the packs.",
+       "hours": 7.5,
+       "miles": 5.2,
+       "title": "Car-to-car: Northwest Corner (Boving-Pollack)",
+       "gainFt": 2600,
+       "lossFt": 2600,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Blue Lake trailhead",
+         "detail": "Early start is typical to beat afternoon thunderstorms and other parties to the route."
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Reach base of route",
+         "detail": "~1.5 mi on the Blue Lake Trail, then the well-worn climber's trail into the basin and a short scramble to the start."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Start climbing (P1, 5.8 corner)",
+         "detail": "5 pitches, mostly sustained 5.9 with a burly 3-4\" crack higher up; some parties link to 4 pitches."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Top out",
+         "detail": "~3.5 hrs of climbing for a fit, competent party."
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Begin bolted rappels down the West Face",
+         "detail": "3 rappels with a single 60m rope, or up to half a dozen with shorter ropes, land back at the packs."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Retrace the climber's trail and Blue Lake Trail to the car."
+        }
+       ],
+       "objective": "Climb the 5-pitch NW Corner and be back at the car same day"
+      }
+     ],
+     "totalNote": "A single long day car-to-car: roughly 7-8 hours round trip, about 2,600 ft of total gain over ~5.2 miles, no camping involved."
+    },
+    "rappel_count_note": "Two established descents, both about 5 rappels, which is why the stored figures differed. One published West Face description: \"Three single rope raps bring you down to the notch, another gets you off the large chockstone (a fun, free-hanging rappel), and some scrambling and down-climbing (or a short 30 foot rap on a tree) get you back on the ground\", and separately \"There is four fairly new bolted rap stations and a tree rappel for the last section.\" A 60 m rope just barely works on the bolted line; 70 m is more comfortable.",
+    "approach": "Start at the Blue Lake Trailhead on the south side of Hwy 20 (elev. ~5,400 ft), about one mile west of the Washington Pass Overlook and roughly 30 miles west of Winthrop. Follow the well-graded Blue Lake Trail southwest through subalpine forest. At about 1.4-1.5 miles, watch for a signed junction: the main trail continues straight toward Blue Lake, while a climber's path splits left/south, signed for \"Liberty Bell Trail #727 – Climbing Access,\" reached just past a small stream/meadow that is the last reliable water source before the basin. Take the climber's trail, which switchbacks up through slabs, talus, and heather meadows into the Liberty Bell/Early Winters basin beneath the west faces of the spire group — roughly another 0.5 mile and 1,000-1,300 ft of gain, putting total approach distance at about 2 miles with 1,300-1,600 ft of gain from the car (most parties report 1-2 hours). From the upper basin, continue scrambling/traversing north along the base of North Early Winters Spire's west side, past the start of the West Face route, to a distinctive corner/crack system that leads to a tree-covered ledge — the shared start for the Northwest Corner and West Face. Hazards: lingering snow and occasional avalanche debris in the basin and approach gully well into June (many early-season parties boot or ski the lower approach), talus and slab sections with some route-finding among braided climbers' paths, and no dependable water once past the stream near the Liberty Bell Trail junction, so fill up there.",
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail, then north along the base of the west side",
+      "hours": "1-2",
+      "notes": "Nearly all the routes on North Early Winters Spire are on its west side, so the Blue Lake Trailhead is the right side of the mountain to start from — the hairpin pullout on the east serves the East Buttress and couloir lines, not this one.\n\nFrom the Blue Lake Trailhead (~5,200 ft) on SR-20 about 1.5 miles west of Washington Pass, follow the maintained trail for roughly a mile and a half to the signed Liberty Bell Trail #727 climbing-access junction, which sits just past a small stream and is marked with a large cairn. That stream is your last reliable water.\n\nTrail #727 switchbacks up slabs, talus and heather into the basin under the west faces. Approach as if for South Early Winters Spire and then traverse LEFT (north) along the base of the formations, scrambling, until you are under North Early Winters Spire. Most parties report one to two hours from the car.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "lingering snow and avalanche debris in the basin and approach gully into June",
+       "braided climbers' paths through the upper talus make it easy to drift onto the wrong formation",
+       "no water past the stream at the Trail #727 junction",
+       "poorly protected chimney section low on the first pitch"
+      ],
+      "baseFinding": "Keep traversing north along the base past the start of the West Face route. The Northwest Corner begins at a distinct corner-and-crack system whose first pitch — around 45 metres of 5.8, including a short chimney section with sparse gear — runs up to a broad ledge covered in trees. That treed ledge is the landmark: it is visible from below and from across the basin, it is the top of pitch one, and the route continues up and left off its left-hand edge. If you are under blank slab with no corner leading to a treed ledge, you have not gone far enough north yet. The corner start is shared with the West Face route, so being at the right corner puts you at the right place for either — the two diverge above the ledge, not below it."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_the_west_face",
+   "before": {
+    "descent": "Two options: the original descent goes down and skier's-left of the summit via three single-rope rappels to the notch, then one free-hanging rappel past the chockstone, then a scramble out; a newer line uses four bolted rappel stations plus a tree rappel, starting about 15 ft climber's-right of the route's top.",
+    "descent_text": "Two descent options exist. The original line drops down the left side through a notch with three single-rope rappels, includes one free-hanging rappel over a chockstone, and finishes with some scrambling back to the base. The bolted alternative - four rap stations starting about 15 feet right of where pitch 6 tops out - is generally considered faster and less committing.",
+    "pro_tips": [
+     "Widely regarded as one of the best alpine rock routes at Washington Pass - go early to beat parties queuing on the shared start with the NW Corner.",
+     "The bolted 4-rap descent is faster and cleaner than the original notch/chockstone line."
+    ],
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail into the basin, PAST South Early Winters Spire, then left along the base",
+      "notes": "From the Blue Lake Trailhead at about 5,400 ft on WA-20 west of Washington Pass, follow the Blue Lake Trail about 1.5 miles to the climbers' path, leave the trail into the basin below the Liberty Bell Group, PASS SOUTH EARLY WINTERS SPIRE, and traverse LEFT along the base to the shared start with the Northwest Corner. Allow 1-2 hours car-to-base.\n\nSix pitches, 5.11-, first climbed in 1965 and freed in 1985.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "Two spires in a row on the same approach, with the near one carrying its own routes",
+       "A free-hanging rappel over a chockstone on the original descent line",
+       "Sustained 5.11- climbing over six pitches",
+       "No water in the basin"
+      ],
+      "baseFinding": "THE TWO SPIRES ARE PASSED IN ORDER AND THIS ROUTE IS ON THE SECOND ONE, WHICH IS THE WHOLE NAVIGATION PROBLEM ON THIS SIDE. Coming up the climbers' path into the basin, SOUTH Early Winters Spire comes first. YOU MUST WALK PAST IT. NORTH Early Winters Spire is beyond, and this route is on its west face, reached by traversing LEFT along the base.\n\nSO THE NEGATIVE TEST IS: IF YOU HAVE STOPPED AT THE FIRST WALL YOU REACHED, YOU ARE UNDER SOUTH EARLY WINTERS SPIRE, WHICH CARRIES ITS OWN CLUSTER OF WEST-SIDE ROUTES AND IS A DIFFERENT PEAK.\n\nTHE FEATURE THAT SEPARATES THE TWO SPIRES, AND IT IS THE BEST LANDMARK IN THIS BASIN: A MASSIVE CHASM, A CHOCKSTONE-FILLED CHIMNEY, SPLITS NORTH AND SOUTH EARLY WINTERS SPIRES. It is the Chockstone Route's line. You must have that chasm behind you or beside you before you are under North Early Winters Spire's west face.\n\nARRIVAL: this route shares its start with the Northwest Corner, reached by traversing LEFT along the base after passing the chasm. It also sits immediately RIGHT of Labor Pains, which climbs the clean face between the Chockstone Route and this one. So the order across this wall, from the chasm outward, is: CHOCKSTONE ROUTE in the chasm, LABOR PAINS on the clean face beyond it, then THE WEST FACE.\n\nDESCENT, WHICH GIVES YOU A THIRD CONFIRMATION IF YOU TOP OUT UNSURE: two options exist. The original drops down the left side through a notch with THREE single-rope rappels, including ONE FREE-HANGING RAPPEL OVER A CHOCKSTONE, and finishes with scrambling back to the base. The bolted alternative is FOUR RAP STATIONS STARTING ABOUT 15 FEET RIGHT OF WHERE PITCH 6 TOPS OUT, and is generally faster and less committing."
+     }
+    ],
+    "rack": [
+     "Cams, doubles fingers to 3\" (triples in tips/finger sizes recommended near your limit)",
+     "Small wires/stoppers for the crux and upper pitches",
+     "4 long slings (60cm/120cm) for anchors and awkward gear",
+     "8 alpine quickdraws",
+     "Single 60m dynamic rope"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5400,
+      "name": "Blue Lake TH",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the Blue Lake Trailhead, about 1.5 miles west of Washington Pass at roughly 5,400 ft, and park in the trailhead lot. This is the west-side start for the Liberty Bell Group; the Blue Lake Trail leaves from here and runs about a mile and a half to the climbers' path. Plan the trip for the June to September window."
+     },
+     {
+      "lat": 48.51291,
+      "lng": -120.65557,
+      "elev": 6900,
+      "name": "Base of West Face",
+      "note": "Low-angle cracks lead to a tree-topped chimney on the left side of the west face; shares the start with the NW Corner.",
+      "type": "Junction",
+      "distMi": null
+     },
+     {
+      "lat": 48.51291,
+      "lng": -120.65557,
+      "elev": 7760,
+      "name": "North Early Winters Spire",
+      "type": "Summit",
+      "distMi": 1
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2033 @@
+{
+ "batches": [
+  "b141.json",
+  "b142.json",
+  "b143.json",
+  "b144.json"
+ ],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_lane_peak_r1",
+   "name": "The Zipper (couloir)",
+   "area": "Lane Peak",
+   "contradictions": [
+    {
+     "fact": "Rope needed for the couloir rappel",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "30"
+      },
+      {
+       "field": "rope_note",
+       "says": "30m sufficient if comfortable with running belays/simul-climbing on the couloir"
+      },
+      {
+       "field": "gear[4]",
+       "says": "30-60m rope — a 30m is enough for a running belay/simul-climbing"
+      },
+      {
+       "field": "descent_text",
+       "says": "The rappel is typically just over 100 ft (roughly 30+ m), so it requires a double-rope rappel"
+      },
+      {
+       "field": "approach_variants[0].hazards[3]",
+       "says": "A rappel that is longer than a single 60 m rope doubled"
+      }
+     ],
+     "why": "The kit fields present a 30 m rope as sufficient, but the descent fields say the one rappel is 30+ m and exceeds even a 60 m rope doubled, so a 30 m rope cannot make it.",
+     "internal_resolution": "descent_text and approach_variants agree the rappel needs more than a 60 m doubled; the 30 m figure only covers the ascent.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which descent is most common",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "Direct reversal (the more common bail/return line)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Most parties descend a non-technical line (often the south-face Classic Route) rather than rappelling back down the couloir"
+      }
+     ],
+     "why": "One field calls the rappel reversal the more common descent; the itinerary says most parties walk off the south side instead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which ridge notch the Zipper tops out on",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Climb the Zipper to the west-ridge notch and tag the summit"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "the dead tree at the notch in Lane Peak's east ridge"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the Fly finishes at the west-ridge notch"
+      }
+     ],
+     "why": "The itinerary objective puts the Zipper's top-out at the west-ridge notch, which the baseFinding uses to identify the Fly; every other field says east ridge.",
+     "internal_resolution": "approach, descent_text, pitch_detail and baseFinding all say the east-ridge notch; the itinerary objective is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2000"
+      },
+      {
+       "field": "approach",
+       "says": "around 2,000+ ft of gain to the notch"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "1500"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 6 hours and 1,500 ft car-to-car"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 2-3 miles, ~2500 ft gain"
+      }
+     ],
+     "why": "Gain is given as 1,500, 2,000+ and ~2,500 ft for the same car-to-car day.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "3.2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "3.6"
+      },
+      {
+       "field": "approach",
+       "says": "Total approach is roughly 2-2.5 miles one-way from the road"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1.8"
+      }
+     ],
+     "why": "The approach alone is 2-2.5 mi one-way (4-5 mi round trip), yet the itinerary gives 3.6 mi round trip and dist_km 3.2 km.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time to the couloir base",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "to the base of the obvious center couloir on Lane Peak's north face (roughly 45-75 min)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "+1 hr"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 2-4 hours from the Narada Falls / Stevens Canyon area depending on snow depth"
+      }
+     ],
+     "why": "The approach is 45-75 min in the timing/itinerary but 2-4 hours in partner requirements.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Return time vs schedule legs",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[5].time",
+       "says": "~11:30 AM-12:30 PM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "5:30 AM"
+      }
+     ],
+     "why": "The listed legs (+1 hr, +1.5 hr, +30 min, +1.5-2 hr) sum to 4.5-5 hr from a 5:30 AM start, putting the party back around 10:00-10:30, not 11:30-12:30.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Dec-Jun"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "This is a snow/ice couloir climbed roughly January-April before it melts out"
+      }
+     ],
+     "why": "The season chip runs into June while the itinerary says the couloir melts out after April; seasonal_guidance has no May or June entry.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "When a wilderness permit is required for an overnight",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "A wilderness permit ($12/person/night, required only May 1-Sept 15) is needed only if overnighting."
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle"
+      }
+     ],
+     "why": "One field limits the overnight-permit requirement to a date window while the other says it is required year-round; a winter snow camp (bivy[1]) falls in the gap.",
+     "internal_resolution": "bivy[1].permit describes a winter wilderness permit obtained in person at Longmire, which supports the year-round requirement.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ice tools needed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "what_to_bring[0]",
+       "says": "technical ice tools"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Single ice axe per climber"
+      },
+      {
+       "field": "gear[0]",
+       "says": "Ice axe — a single tool is standard"
+      }
+     ],
+     "why": "What to bring lists technical ice tools while the rack and gear say a single axe is standard.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_3",
+   "name": "Classic Route",
+   "area": "Lane Peak",
+   "contradictions": [
+    {
+     "fact": "Whether the descent involves a rappel",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "This is a walk-off/downclimb — no rappelling."
+      },
+      {
+       "field": "descent",
+       "says": "Downclimb the east-side terrain back to the tree anchor and rappel with a 70m rope"
+      },
+      {
+       "field": "rappels",
+       "says": "One rappel from a tree ~200 ft up the route; a 70m rope reaches the ground"
+      },
+      {
+       "field": "bail",
+       "says": "above it, rappel from the fixed tree (70m rope) rather than downclimbing the looser upper section"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "bring slings to back it up and a 70m rope to reach the ground"
+      }
+     ],
+     "why": "The DESCENT section (the longer descent_text) says there is no rappel, while the RAPPELS section, bail and pro tips require a 70 m rappel from the tree.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope needed",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "none/optional"
+      },
+      {
+       "field": "rope_note",
+       "says": "Typically climbed unroped by competent parties; a short rope/handline is a reasonable option"
+      },
+      {
+       "field": "gear[1]",
+       "says": "short rope or sling useful for the optional/fixed rappel near the summit"
+      },
+      {
+       "field": "rappels",
+       "says": "a 70m rope reaches the ground"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "61"
+      }
+     ],
+     "why": "The kit fields call a rope optional or short, but the rappel fields call for a 70 m rope; the tree also sits ~61 m (200 ft) up, beyond what a 70 m rope doubled can reach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Difficulty of the summit finish",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the final short scramble (Class 3, plentiful holds, minimal exposure)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "the last 50 feet is easy Class 3 scrambling to the summit"
+      },
+      {
+       "field": "rock_grade",
+       "says": "4th class (exposed, loose rock)"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "4th class, loose"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "exposed 4th-class moves just below the true summit"
+      }
+     ],
+     "why": "The approach and itinerary call the summit finish easy Class 3 with minimal exposure, while the grade chips, pitch_detail and hazards say it is exposed 4th class.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Stevens Canyon Road opening date",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Reflection Lake pullout on Stevens Canyon Road (open roughly Memorial Day through mid-October)"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "roughly Memorial Day through mid-October"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "open roughly late May through mid-October"
+      },
+      {
+       "field": "access.closures",
+       "says": "gated and unplowed roughly early/mid-October through late June"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Stevens Canyon Rd typically opens late June"
+      }
+     ],
+     "why": "The approach fields put the road opening at Memorial Day/late May, but access and road say late June, a month later.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Round trip from the road is a bit over 3 miles"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4"
+      },
+      {
+       "field": "dist_km",
+       "says": "6.44"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "2"
+      }
+     ],
+     "why": "The approach gives a bit over 3 miles round trip, while the itinerary and dist_km give 4 miles.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach line in the itinerary",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "pick up the climbers' path up gentle open slopes toward the saddle between Lane and Denman"
+      },
+      {
+       "field": "approach",
+       "says": "drop south through sparse, open forest toward Tatoosh Creek"
+      },
+      {
+       "field": "approach",
+       "says": "continue up through trees staying right of a short cliff band (the timber here is brushy"
+      }
+     ],
+     "why": "The itinerary describes a climbers' path on gentle open slopes with no creek crossing, whereas the approach drops to and crosses Tatoosh Creek and climbs brushy timber.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Narada Falls Parking Lot"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Pinnacle Saddle Trailhead across Stevens Canyon Road from the Reflection Lakes parking (~4,860 ft)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "From the Reflection Lakes pullout on Stevens Canyon Road"
+      }
+     ],
+     "why": "The TRAILHEAD card names Narada Falls but its direction line starts at the Pinnacle Saddle Trailhead/Reflection Lakes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "When a wilderness permit is required for an overnight",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "A wilderness permit ($12/person/night, required only May 1-Sept 15) is needed only if overnighting."
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle"
+      }
+     ],
+     "why": "One field limits the overnight-permit requirement to a date window while the other says it is required year-round; a winter snow camp (bivy[1]) falls in the gap.",
+     "internal_resolution": "bivy[1].permit describes a winter wilderness permit obtained in person at Longmire, which supports the year-round requirement.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "name": "The Fly (couloir)",
+   "area": "Lane Peak",
+   "contradictions": [
+    {
+     "fact": "Couloir length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "244"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "approximately 400-500 vertical feet"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "approximately 600-700 vertical feet"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "approximately 200-300 vertical feet"
+      }
+     ],
+     "why": "The three pitch_detail sections add up to 1,200-1,500 vertical ft, but length_m is 244 m (~800 ft).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time to the couloir base",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Approach takes approximately 1.5-2 hours to couloir base."
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].detail",
+       "says": "roughly 45-75 minutes to the couloir base"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 2-4 hours from the Narada Falls / Stevens Canyon area"
+      }
+     ],
+     "why": "The approach time is given as 45-75 min, 1.5-2 h and 2-4 h.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2000"
+      },
+      {
+       "field": "approach",
+       "says": "hike 2 miles with approximately 2,000 feet elevation gain"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "1500"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 5-6 hours and 1,500 ft car-to-car"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "~2500 ft gain"
+      }
+     ],
+     "why": "Gain is given as 1,500, 2,000 and ~2,500 ft for the same day.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ice screws and technical tools",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[3]",
+       "says": "Ice screws are rarely used here and are not worth carrying in a normal snow year"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "ice screws are rarely used here and are not worth carrying in a normal snow year"
+      },
+      {
+       "field": "what_to_bring[3]",
+       "says": "ice screws"
+      },
+      {
+       "field": "what_to_bring[0]",
+       "says": "technical ice tools"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "IF YOU ARE SWINGING TWO TOOLS INTO ICE, YOU ARE NOT ON THE FLY."
+      }
+     ],
+     "why": "GEAR & ESSENTIALS lists ice screws and technical ice tools, while the rack says screws are not worth carrying and the baseFinding says two-tool ice means you are off route.",
+     "internal_resolution": "gear, detailed_rack and baseFinding agree; what_to_bring is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "hike 2 miles"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "3.7"
+      },
+      {
+       "field": "dist_km",
+       "says": "3.2"
+      }
+     ],
+     "why": "The approach is 2 miles one-way (about 4 mi round trip), while the itinerary gives 3.7 mi and dist_km 3.2 km (2 mi).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Overnight permit dates",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "camps may be reserved for dates that fall between June 1 and October 10"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "required year-round for any overnight stay"
+      }
+     ],
+     "why": "One field suggests overnight permits cover only June 1-October 10, while the other says they are required year-round; the winter snow camp in bivy[1] falls outside the reservable window.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "name": "Lover's Lane (couloir)",
+   "area": "Lane Peak",
+   "contradictions": [
+    {
+     "fact": "Rope length for the rappel into the Zipper",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gear[6]",
+       "says": "60m rope"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Carry a 60m rope; the rappel into the Zipper is usually longer than 100 ft."
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A 60m rope"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "a single 70 m doubled will not reach cleanly in a normal year. Two ropes"
+      },
+      {
+       "field": "approach_variants[0].hazards[3]",
+       "says": "A rappel usually longer than a single 70 m rope doubled"
+      },
+      {
+       "field": "descent_text",
+       "says": "a double-rope rappel is recommended"
+      }
+     ],
+     "why": "The kit fields say to carry a single 60 m rope, but the descent fields say the rappel is longer than even a 70 m rope doubled and needs two ropes.",
+     "internal_resolution": "descent, descent_text, rappels and baseFinding all call for a double-rope rappel; the single 60 m rope in gear/pro_tips is too short.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ice grade vs the steepest and hardest couloir",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "ice_grade",
+       "says": "AI1"
+      },
+      {
+       "field": "max_angle",
+       "says": "60"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "This is the hardest and most sustained of the three couloirs"
+      },
+      {
+       "field": "overview",
+       "says": "The steepest and narrowest of Lane Peak's three north-face couloirs"
+      }
+     ],
+     "why": "The header grade AI1 is the lowest ice rating, which clashes with the route being called the hardest and steepest (to 60°) of the three couloirs.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_8",
+   "name": "East Ridge",
+   "area": "Pinnacle Peak",
+   "contradictions": [
+    {
+     "fact": "Whether a single 60 m rope makes the south-face rappel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[3]",
+       "says": "60m rope"
+      },
+      {
+       "field": "rappels",
+       "says": "rope-stretching; a 60m rope may not reach the ground depending on anchor placement"
+      },
+      {
+       "field": "bail",
+       "says": "the fixed rappel anchor at the pitch-2 bench allows a single-rope bail down the south face"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "a 60m may not reach the true summit from the pitch-2 anchor"
+      }
+     ],
+     "why": "The bail presents the pitch-2 rappel as a routine single-rope retreat, and the only rope listed is a 60 m, which the rappel fields say may not reach; detailed_rack also garbles this into reaching the summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2150"
+      },
+      {
+       "field": "approach",
+       "says": "follow the maintained Pinnacle Saddle Trail 1.3 mi (~1,000-1,050 ft gain)"
+      },
+      {
+       "field": "approach",
+       "says": "about 1,500 ft of gain for this approach segment"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4880"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "6562"
+      }
+     ],
+     "why": "Trailhead 4,880 ft to the 6,562 ft summit is ~1,680 ft, and the approach cites ~1,500 ft to the col, but gain_ft says 2,150.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "2"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "2.5"
+      },
+      {
+       "field": "itinerary",
+       "says": "trailhead to Castle-Pinnacle col (~2-3 hr), roped climbing to the summit (~2 hr"
+      }
+     ],
+     "why": "PUBLISHED TIMES shows 2 h to the summit, but the approach alone is 2.5 h, so the summit is ~4.5 h from the car.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_scramble",
+   "name": "Southwest Scramble",
+   "area": "Pinnacle Peak",
+   "contradictions": [
+    {
+     "fact": "Park entrance pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "None"
+      },
+      {
+       "field": "access.fees",
+       "says": "N/A"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Park entrance fee applies separately"
+      }
+     ],
+     "why": "The access card says no pass or fee is required, although the route is inside Mount Rainier NP, where an entrance fee applies (as bivy[0] and sibling routes state).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "3.2"
+      },
+      {
+       "field": "approach",
+       "says": "gains about 1,000-1,050 ft over 1.3 mi to the 5,920 ft Pinnacle-Plummer saddle"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 1/4 mile toward the western side of Pinnacle's south face"
+      }
+     ],
+     "why": "The approach alone is ~1.55 mi one-way before the chute (over 3 mi round trip), yet dist_km shows 3.2 km (2 mi).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "name": "Pinnacle Saddle / South Gully",
+   "area": "Pinnacle Peak",
+   "contradictions": [
+    {
+     "fact": "Direction from Pinnacle Saddle to the summit gully",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From Pinnacle-Plummer saddle, scramble west/southwest up obvious gullies"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "FROM PINNACLE SADDLE, THE PEAK IS EAST"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "GOING WEST FROM THE SADDLE PUTS YOU ON PLUMMER"
+      },
+      {
+       "field": "approach",
+       "says": "contour or scramble east into the gully system on the peak's south/southeast face"
+      }
+     ],
+     "why": "The beta sends parties west from the saddle, which the baseFinding says puts them on Plummer Peak.",
+     "internal_resolution": "approach, climbing_route and baseFinding all say east; the beta is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "North vs south gully",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Summit Pinnacle Peak via Pinnacle Saddle and the North/South Gully"
+      },
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "the skill bar is specifically for the summit push through the North Gully"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "North-facing gully commonly still holds snow this early"
+      },
+      {
+       "field": "aspect",
+       "says": "S"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "The correct summit gully is on the south side of the peak"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "don't waste time looking at the shaded north face"
+      }
+     ],
+     "why": "Several fields name a north or north-facing gully, while the aspect, name and pro tips say the route is the south gully.",
+     "internal_resolution": "aspect, face, name, approach and pro_tips agree on the south gully.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1050"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "1700"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 1,700 ft gain"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4870"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "6562"
+      }
+     ],
+     "why": "gain_ft is the trailhead-to-saddle figure (1,050), while the itinerary and the trailhead-to-summit elevations give ~1,700 ft.",
+     "internal_resolution": "Trailhead 4,870 ft to summit 6,562 ft is ~1,690 ft, which matches the itinerary's 1,700.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "2.1"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "2.6"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 3 miles round trip"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "1.9"
+      }
+     ],
+     "why": "The summit waypoint is 1.9 mi one-way (3.8 mi round trip), but the itinerary says 2.6 mi round trip and dist_km 2.1 km (1.3 mi).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Scramble difficulty",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "4th Class"
+      },
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "beta",
+       "says": "some variations described as low 5th class"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "mostly class 2 with a few class 3 exposed moves near the top"
+      },
+      {
+       "field": "descent_text",
+       "says": "For the standard Class 2–3 scramble"
+      },
+      {
+       "field": "climbing_route[2].class",
+       "says": "Class 3"
+      }
+     ],
+     "why": "The header pill shows 4th class and the beta mentions low 5th, while the itinerary, descent and climbing_route describe Class 2-3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pinnacle's rank in the Tatoosh Range",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[6].note",
+       "says": "True summit and second-highest point in the Tatoosh Range"
+      },
+      {
+       "field": "overview",
+       "says": "some listings call it the range's second-highest peak, while NPS materials call it third-highest"
+      }
+     ],
+     "why": "The waypoint states a rank that the overview itself says is disputed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Avalanche forecast zone",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "No dedicated NWAC forecast zone covers the Tatoosh Range/Pinnacle Peak specifically"
+      },
+      {
+       "field": "climate.forecastZone",
+       "says": "NWAC Mount Rainier / West Slopes South zone"
+      }
+     ],
+     "why": "The Safety tab says no NWAC zone covers the peak, while the Reports tab names the NWAC West Slopes South zone.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pinnacle Saddle pin location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].lat",
+       "says": "46.757782"
+      },
+      {
+       "field": "waypoints[3].lng",
+       "says": "-121.732663"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "5920"
+      },
+      {
+       "field": "waypoints[6].lat",
+       "says": "46.7581647"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "6562"
+      }
+     ],
+     "why": "The 5,920 ft saddle pin sits about 40 m from the 6,562 ft summit pin, 640 ft higher, which is impossible for a saddle between Pinnacle and Plummer.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_plummer_peak_r1",
+   "name": "Pinnacle Saddle / North Slopes",
+   "area": "Plummer Peak",
+   "contradictions": [
+    {
+     "fact": "Which slope of Plummer the route climbs",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "N"
+      },
+      {
+       "field": "face",
+       "says": "North side/ridge directly above the Pinnacle-Plummer Saddle"
+      },
+      {
+       "field": "approach",
+       "says": "the boot path that climbs the open, rocky north-facing slopes of Plummer Peak"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "the boot path climbing the open, rocky southeast-facing slopes"
+      },
+      {
+       "field": "descent_text",
+       "says": "facing outward on the steeper southeast slope"
+      }
+     ],
+     "why": "The aspect, face and approach say north-facing slopes, while climbing_route and descent_text say southeast-facing.",
+     "internal_resolution": "aspect, face, beta, name and approach agree on the north slopes.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "most parties complete the round trip from Reflection Lakes in 2-3 hours"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "2.5-3 hrs total"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "4.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 4-5 hours round trip"
+      }
+     ],
+     "why": "The round trip is 2-3 h in turnaround and partner requirements but 4-5 h in timing and itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[5].note",
+       "says": "Broad rocky summit"
+      },
+      {
+       "field": "beta",
+       "says": "the small (50x15 ft) summit block"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If you are standing on a broad top, you are on the shoulder below it."
+      }
+     ],
+     "why": "The summit waypoint calls it broad, which the baseFinding says means you are on the shoulder, not the summit.",
+     "internal_resolution": "beta and baseFinding agree it is small.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction of paths at Pinnacle Saddle",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].note",
+       "says": "climber's boot path continues right/east to Pinnacle, left/west toward Plummer"
+      },
+      {
+       "field": "approach",
+       "says": "look for a climbers' path branching right (west)"
+      },
+      {
+       "field": "approach",
+       "says": "unmaintained user paths fork east toward Denman Peak/The Castle and west toward Plummer Peak"
+      },
+      {
+       "field": "approach",
+       "says": "a fork continues straight toward Denman"
+      }
+     ],
+     "why": "The Plummer path is called left in the waypoint and right in the approach, and Denman is placed east at the saddle but straight ahead on the westward Plummer path.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pinnacle Saddle pin location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].lat",
+       "says": "46.754055"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "5920"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "1.25"
+      },
+      {
+       "field": "waypoints[5].lat",
+       "says": "46.753364"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "6374"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "1.55"
+      }
+     ],
+     "why": "The saddle pin is about 80 m from the summit pin but 454 ft lower and 0.3 mi earlier on the route; it looks placed near Plummer's summit, not at the Pinnacle-Plummer col.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1500"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "~1,050-1,450 ft gain"
+      }
+     ],
+     "why": "The partner card understates the gain; the trailhead (4,870 ft) to the summit (6,374 ft) is ~1,500 ft.",
+     "internal_resolution": "Waypoint elevations support 1,500 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight camping",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No backcountry camping is permitted along the Pinnacle Peak Trail."
+      },
+      {
+       "field": "bivy[1].name",
+       "says": "Reflection Lakes area winter snow camp"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "required year-round for any overnight stay, including cross-country-zone camping"
+      }
+     ],
+     "why": "The access card says no camping is permitted along this trail, yet the page lists a Reflection Lakes snow camp as the route bivy.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_fantasy_falls",
+   "name": "Fantasy Falls",
+   "area": "Unicorn Peak",
+   "contradictions": [
+    {
+     "fact": "Summit-block rappel anchor",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "from the bleached snag or the slung block with rings"
+      },
+      {
+       "field": "descent_text",
+       "says": "from the bleached snag or the slung block with tat and rings"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "off the slung block on the south side rather than the retired snag"
+      }
+     ],
+     "why": "The rappel and descent fields offer the bleached snag as an anchor, while the baseFinding calls it retired.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Face height vs approach gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "about 1,500 ft of gain from the car to the base of the ice"
+      },
+      {
+       "field": "length_m",
+       "says": "130"
+      },
+      {
+       "field": "gain_ft",
+       "says": "2400"
+      }
+     ],
+     "why": "1,500 ft to the base plus a 130 m (~430 ft) route reaches only ~6,480 ft, not the 6,971 ft summit the route tops out on; total gain is 2,400.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_2",
+   "name": "Classic Route",
+   "area": "Unicorn Peak",
+   "contradictions": [
+    {
+     "fact": "Rappel anchor (bleached snag)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "One rappel of about 50 ft (15 m) from the bleached snag on top of the summit block."
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "to the belay/rappel anchor (old bleached snag)"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Check the bleached snag anchor's condition before weighting it"
+      },
+      {
+       "field": "descent_text",
+       "says": "a bleached/dead tree or snag was used historically — that anchor is no longer sound and should not be trusted; use the rock horn"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Use the ROCK HORN — the old bleached snag some older reports mention is no longer sound."
+      }
+     ],
+     "why": "RAPPELS and ROUTE BREAKDOWN name the snag as the rappel anchor, while DESCENT and the baseFinding say it is unsound and not to be used.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "30"
+      },
+      {
+       "field": "rope_note",
+       "says": "a single 30m rope is more than sufficient"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "A 30m rope covers both the lead and the rappel"
+      },
+      {
+       "field": "rappels",
+       "says": "a trip report recommends 60 m because a 30 m rappel may not reach the ground"
+      },
+      {
+       "field": "descent_text",
+       "says": "recommended a 37-40m rope to be safe"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "40 m removes the guesswork"
+      }
+     ],
+     "why": "The kit fields say 30 m is more than sufficient, while the descent fields recommend 40 m or 60 m because 30 m may fall short.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack (cams)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "One fixed piton mid-pitch plus a single set of nuts is sufficient; no cams needed."
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "3 cams (e.g. Camalot #1, #2, #3) or equivalent hexes"
+      },
+      {
+       "field": "gear[2]",
+       "says": "a few small-to-mid cams and nuts"
+      },
+      {
+       "field": "pro_needs",
+       "says": "small-to-mid cams/nuts"
+      }
+     ],
+     "why": "The rack text says no cams are needed while every other kit field lists cams.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climb length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "122"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "15"
+      }
+     ],
+     "why": "TECHNICAL STATS shows a 122 m (400 ft) climb, while the single pitch is 15 m (~50 ft).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Number of lines on the summit block",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "One of ~4 established lines on Unicorn Peak's ~50ft south summit-block face"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THE ROOF, THE CLASSIC ROUTE, OPEN BOOK. All three start within about 70 ft"
+      }
+     ],
+     "why": "The rope note says ~4 lines while the baseFinding and itinerary describe three.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Park entrance pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "None"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days)"
+      }
+     ],
+     "why": "The access card says no pass is required but, in the same block, lists the park entrance fee.",
+     "internal_resolution": "access.notes and access.parking_pass both say the entrance fee applies.",
+     "needs_research": false
+    },
+    {
+     "fact": "Gain from the trailhead to Snow Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Follow the maintained Snow Lake Trail about 1 mile, gaining roughly 700 ft, to Snow Lake at ~4,600 ft"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Snow Lake Trailhead on Stevens Canyon Road (~4,500 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "4685"
+      }
+     ],
+     "why": "A trailhead at ~4,500 ft plus ~700 ft of gain would put Snow Lake near 5,200 ft, but the lake is given as 4,600-4,685 ft.",
+     "internal_resolution": "bivy[0] and the lake elevation agree on ~4,685 ft, so the '~700 ft' gain to the lake is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best window vs season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late spring and very early summer are the connoisseur's window — roughly May through mid-June."
+      }
+     ],
+     "why": "The When to go text puts the best window partly in May, before the Jun-Sep season chip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.5"
+      },
+      {
+       "field": "approach",
+       "says": "Total approach is roughly 2.5-3 miles one-way"
+      }
+     ],
+     "why": "dist_km shows 4 km (2.5 mi), while the itinerary and approach give 5-6 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "name": "Open Book",
+   "area": "Unicorn Peak",
+   "contradictions": [
+    {
+     "fact": "Rappel anchor (bleached snag)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "from the shared summit-block anchors — a block with tat and rings, or the bleached snag"
+      },
+      {
+       "field": "descent_text",
+       "says": "Avoid the old dead tree/snag — it's reported as no longer trustworthy."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "AVOID THE OLD DEAD SNAG some older reports mention; it is no longer trustworthy."
+      }
+     ],
+     "why": "RAPPELS offers the snag as an anchor while DESCENT and the baseFinding say to avoid it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which side of the summit block the route climbs",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Starts at two wide, left-leaning cracks about 50 ft right of the base of the Classic Route"
+      },
+      {
+       "field": "face",
+       "says": "South slope to the south side of the summit block, right of the Classic Route"
+      },
+      {
+       "field": "approach",
+       "says": "The Open Book line is described as taking the east-facing side of the summit pinnacle"
+      },
+      {
+       "field": "approach",
+       "says": "stay slightly climber's-left/east before starting"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "ORIENTATION TEST: this line is on the EAST-FACING side of the pinnacle."
+      }
+     ],
+     "why": "The route is placed 50 ft right of the Classic on the south side in beta/face, but on the east-facing side reached by staying climber's left in the approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack (cam sizes)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "Big cracks favor #3-#4 Camalot-size cams"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "feels awkward and poorly protected without large cams"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "1-2 small-medium cams"
+      },
+      {
+       "field": "rack[0]",
+       "says": "1-2 small-to-medium cams"
+      }
+     ],
+     "why": "The rack and hazards call for large #3-#4 cams, while sling_rack and rack list only small-medium cams.",
+     "internal_resolution": "detailed_rack, hazards, watch_out and baseFinding all stress wide cracks needing large cams.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "40"
+      },
+      {
+       "field": "rack[3]",
+       "says": "30-35m single rope"
+      },
+      {
+       "field": "gear[0]",
+       "says": "30-35m rope"
+      },
+      {
+       "field": "rappels",
+       "says": "A 40 m rope is plenty; carry 60 m if the moat at the base is open"
+      }
+     ],
+     "why": "rope_length_m and the rappel text say 40 m (60 m late season), while the rack and gear list a 30-35 m rope.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climb length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "122"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "15"
+      }
+     ],
+     "why": "TECHNICAL STATS shows a 122 m (400 ft) climb, while the single pitch is 15 m (~50 ft).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Park entrance pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "None"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days)"
+      }
+     ],
+     "why": "The access card says no pass is required but lists the park entrance fee.",
+     "internal_resolution": "access.notes and access.parking_pass both say the entrance fee applies.",
+     "needs_research": false
+    },
+    {
+     "fact": "Gain from the trailhead to Snow Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "hike the maintained Snow Lake Trail ~1 mile (about 700 ft gain) to Snow Lake"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Snow Lake Trailhead on Stevens Canyon Road (~4,500 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "4685"
+      }
+     ],
+     "why": "A trailhead at ~4,500 ft plus ~700 ft of gain would put Snow Lake near 5,200 ft, but the lake is given as 4,600-4,685 ft.",
+     "internal_resolution": "bivy[0] and the lake elevation agree on ~4,685 ft, so the '~700 ft' gain to the lake is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best window vs season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late May through mid-June is the best time for the day as a whole"
+      }
+     ],
+     "why": "The When to go text puts the best window partly in May, before the Jun-Sep season chip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_roof",
+   "name": "The Roof",
+   "area": "Unicorn Peak",
+   "contradictions": [
+    {
+     "fact": "Rappel anchor (bleached snag)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "from either the bleached snag on the left or the slung block with tat and rings on the right"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Two anchor options at the top (bleached snag left, slung block right) - either works for the rappel"
+      },
+      {
+       "field": "descent_text",
+       "says": "not the old dead tree/snag, which is retired and unsound"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Use the rock horn, not the retired snag."
+      }
+     ],
+     "why": "RAPPELS and pro tips say the snag works as an anchor, while DESCENT and the baseFinding call it retired and unsound.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "30"
+      },
+      {
+       "field": "rack[3]",
+       "says": "30-35m rope"
+      },
+      {
+       "field": "rappels",
+       "says": "A 40 m rope is reported to be plenty. Carry 60 m if the moat at the base is open"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "30 m has been reported marginal"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "so 40 m removes the guesswork"
+      }
+     ],
+     "why": "The kit fields give a 30 m rope, while the rappel fields recommend 40 m (60 m late season).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climb length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "122"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "15"
+      }
+     ],
+     "why": "TECHNICAL STATS shows a 122 m (400 ft) climb, while the single pitch is 15 m (~50 ft).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Where overnight camping is allowed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "camp only at the designated Snow Lake sites if overnighting"
+      },
+      {
+       "field": "bivy[1].name",
+       "says": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "including cross-country-zone camping below Unicorn Peak or The Castle"
+      }
+     ],
+     "why": "The access rules restrict camping to the Snow Lake sites, while the bivy and overnight-permit fields offer cross-country-zone camping below Unicorn.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Gain from the trailhead to Snow Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "take the maintained Snow Lake Trail ~1 mile (~700 ft gain) to Snow Lake"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Snow Lake Trailhead on Stevens Canyon Road (~4,500 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "4685"
+      }
+     ],
+     "why": "A trailhead at ~4,500 ft plus ~700 ft of gain would put Snow Lake near 5,200 ft, but the lake is given as 4,600-4,685 ft.",
+     "internal_resolution": "bivy[0] and the lake elevation agree on ~4,685 ft, so the '~700 ft' gain to the lake is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best window vs season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "late May to mid-June the sweet spot if you want snow on the approach"
+      }
+     ],
+     "why": "The When to go text puts the best window partly in May, before the Jun-Sep season chip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "name": "Snow Lake / Unicorn Creek approach",
+   "area": "Unicorn Peak",
+   "contradictions": [
+    {
+     "fact": "Summit-block grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3-4 summit block"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.0-5.6 (depending on route variation; classic south face is 5.4)"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "Class 4-5.4 (classic south face route is 5.4)"
+      },
+      {
+       "field": "rope_note",
+       "says": "a short (~50ft) Class 3 scramble/technical step"
+      }
+     ],
+     "why": "The header pill shows 5.0-5.6 and ROUTE BREAKDOWN names a 5.4 pitch, while grade and rope_note call the summit block Class 3-4 or Class 3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_type",
+       "says": "none"
+      },
+      {
+       "field": "rope_note",
+       "says": "Competent parties take the easiest line unroped."
+      },
+      {
+       "field": "pro_needs",
+       "says": "Single 30m rope minimum (60m recommended to reduce rope-stretch concerns on double-rappel descent)"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "A 30-35 m rope"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "no need for a full 60-70 m rope"
+      },
+      {
+       "field": "rappels",
+       "says": "1-2 raps, 30-60m"
+      },
+      {
+       "field": "descent_text",
+       "says": "a single-rope rappel of about 50 feet"
+      },
+      {
+       "field": "descent_text",
+       "says": "A 30m rope is sufficient"
+      }
+     ],
+     "why": "rope_type says none; pro_needs recommends 60 m for a double-rope descent; pro_tips and descent_text say 30-35 m is plenty for a single 50 ft rappel; rappels says 1-2 rappels.",
+     "internal_resolution": "descent_text, pro_tips and what_to_bring agree on a 30-35 m rope for one ~50 ft rappel.",
+     "needs_research": false
+    },
+    {
+     "fact": "Gully gain from Snow Lake",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Steep chute gaining 2500 ft from Snow Lake to upper basin."
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "4685"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "6400"
+      },
+      {
+       "field": "gain_ft",
+       "says": "2600"
+      }
+     ],
+     "why": "Snow Lake (4,685 ft) to the west saddle (6,400 ft) is ~1,700 ft, and the whole day gains 2,397-2,600 ft, so the chute cannot gain 2,500 ft.",
+     "internal_resolution": "The waypoint elevations put Snow Lake to the saddle at ~1,715 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance and gain to Snow Lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "to Snow Lake at about 1.3-1.5 miles in (roughly 400-500 ft of the day's gain banked by here)"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "an easy mile to Snow Lake"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4574"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "4685"
+      }
+     ],
+     "why": "Snow Lake is 1 mi or 1.3-1.5 mi from the trailhead, and 400-500 ft of gain is claimed where the pins differ by ~110 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Stevens Canyon Road season at the trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Stevens Canyon Rd open summer only (roughly late June-Sept)"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Typically opens around Memorial Day weekend/early June and closes at the first significant snowfall of the season, often in mid-October"
+      }
+     ],
+     "why": "The trailhead waypoint gives late June-September, while the road fields give Memorial Day/early June to mid-October.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead parking capacity and location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "~2.7 mi east of Paradise/Reflection Lakes; room for only 15-20 cars"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "about 1.5 miles east of Reflection Lakes"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "room for ~15-20 cars"
+      },
+      {
+       "field": "approach",
+       "says": "The lot holds only ~25 cars"
+      },
+      {
+       "field": "approach",
+       "says": "about 1.5 miles east of Reflection Lakes"
+      }
+     ],
+     "why": "The trailhead is 1.5 or 2.7 mi east of Reflection Lakes, and the lot holds 15-20 or ~25 cars.",
+     "internal_resolution": "road.driveNote says 2.7 mi is from the Paradise junction, not Reflection Lakes; three fields agree on 1.5 mi from Reflection Lakes.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4.8"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 6-mile round trip"
+      },
+      {
+       "field": "approach",
+       "says": "about 2.4 miles one-way"
+      }
+     ],
+     "why": "The round trip is given as 2.5 mi (dist_km), 4.8 mi and ~6 mi.",
+     "internal_resolution": "approach (2.4 mi one-way) and waypoints (2.4 mi) support the itinerary's 4.8 mi.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-block rappel anchor (tree)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "The traditional anchor is a stout but aging/dead tree at the top of the block"
+      },
+      {
+       "field": "approach_variants[0].hazards[3]",
+       "says": "Climber-built rappel anchors of uncertain age, including a tree reported as no longer sound"
+      }
+     ],
+     "why": "The descent presents the tree as a usable traditional anchor while the hazards list calls it no longer sound.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Side of the summit block the approach reaches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "then around the west side of the summit block"
+      },
+      {
+       "field": "approach",
+       "says": "traverse/scramble east and around to approach the summit pinnacle from its south side"
+      }
+     ],
+     "why": "The rope note routes parties around the west side, while every other field goes east and around to the south side.",
+     "internal_resolution": "approach, beta, climbing_route and baseFinding all say south side.",
+     "needs_research": false
+    },
+    {
+     "fact": "Elevation at the base of the summit block",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climbing_route[0].notes",
+       "says": "tops out at the base of the summit block itself, at 6,971 ft"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "6900"
+      },
+      {
+       "field": "beta",
+       "says": "the 50-70 foot summit tower"
+      }
+     ],
+     "why": "The base of a 50-70 ft tower is given the 6,971 ft summit elevation; the summit-block waypoint is at 6,900 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche forecast zone",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "no NWAC forecast zone specifically covers the Tatoosh Range/Unicorn Peak"
+      },
+      {
+       "field": "climate.forecastZone",
+       "says": "NWAC West Slopes South"
+      }
+     ],
+     "why": "The Safety tab says no NWAC zone covers the peak, while the Reports tab names NWAC West Slopes South.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Where overnight camping is allowed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "camp only at the designated Snow Lake sites if overnighting"
+      },
+      {
+       "field": "bivy[1].name",
+       "says": "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle"
+      }
+     ],
+     "why": "The access rules restrict camping to the Snow Lake sites, while the bivy section offers a cross-country-zone bivy higher in the basin.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

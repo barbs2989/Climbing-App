@@ -1,0 +1,459 @@
+{
+ "file": "r700.json",
+ "results": [
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Trailhead named in GETTING THERE",
+   "verdict": "fixed",
+   "correct_value": "Reflection Lakes / Pinnacle Peak Trailhead on Stevens Canyon Road (seasonal road)",
+   "evidence": "The NPS Pinnacle Peak Trail sheet puts the trailhead at the Reflection Lakes parking area on Stevens Canyon Road, south side of the road, and says that road is open to vehicles only in summer (typically late June-September). WTA's Pinnacle Saddle page gives the same trailhead. The Mazamas Castle standard-route page also names the Reflection Lakes trailhead. road.name (and road.status, which describes the Longmire road) were copied from the Eagle Peak route.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Pinnacle-Peak-Trail-Dec18.pdf",
+    "https://www.wta.org/go-hiking/hikes/pinnacle-saddle",
+    "https://mazamas.org/activity/146/"
+   ],
+   "patches": [
+    {
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Trailhead named in GETTING THERE",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Eagle Peak Trailhead, Longmire, Mount Rainier NP (Tatoosh Range access)",
+     "value": "Stevens Canyon Road to Reflection Lakes (Pinnacle Peak Trailhead), Mount Rainier NP"
+    },
+    {
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Trailhead named in GETTING THERE",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved park road to Longmire year-round (weather permitting).",
+     "value": "Paved park road; the Stevens Canyon Road section to Reflection Lakes is open to vehicles only in the summer season."
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Permit for a day climb",
+   "verdict": "fixed",
+   "correct_value": "No permit for day climbs; wilderness permit only for overnight stays",
+   "evidence": "NPS wilderness-permit page: no wilderness permit is needed for day trips; a permit is required year-round for overnight stays; a climbing permit applies only above 10,000 ft or on glaciers. WTA's Pinnacle Saddle page lists only a park pass for the day hike. access.permit is patched; access._raw (contaminated with another peak's data) does not render on the route page and was left alone.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://www.wta.org/go-hiking/hikes/pinnacle-saddle"
+   ],
+   "patches": [
+    {
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Permit for a day climb",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Wilderness permit",
+     "value": "None for day climbs; a park wilderness permit is required for overnight stays"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Trail distance to the saddle",
+   "verdict": "fixed",
+   "correct_value": "about 1.3 miles to Pinnacle Saddle",
+   "evidence": "NPS Pinnacle Peak Trail sheet: 2.6 mi round trip, 1,050 ft gain to the saddle. WTA Pinnacle Saddle: 2.5 mi round trip, 1,000 ft. Willhite's page: 1.3 mi to the saddle. The waypoint note's 2 miles is the outlier.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Pinnacle-Peak-Trail-Dec18.pdf",
+    "https://www.wta.org/go-hiking/hikes/pinnacle-saddle",
+    "http://www.willhiteweb.com/mount_rainier_national_park/pinnacle_saddle_trail/castle_peak_283.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Trail distance to the saddle",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "hike 2 miles up Pinnacle Peak Trail",
+     "replace": "hike about 1.3 miles up Pinnacle Peak Trail"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Summit elevation",
+   "verdict": "fixed",
+   "correct_value": 6440,
+   "evidence": "Wikipedia's The Castle (Washington) gives 6,440 ft; the Mazamas standard-route page gives 6,440 ft with 1,600 ft gain. Only Willhite's page says 6,640 (apparently the source of the waypoint's figure). high_point_ft 6440 is right; the summit waypoint is corrected.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Castle_(Washington)",
+    "https://mazamas.org/activity/146/"
+   ],
+   "patches": [
+    {
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Summit elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 6640,
+     "value": 6440
+    },
+    {
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Summit elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": 6640,
+     "value": 6440
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Rappel anchor location",
+   "verdict": "fixed",
+   "correct_value": "~40 ft rappel from slings on the rock horn at the notch atop the chimney, then a short class-3 downclimb",
+   "evidence": "A Middle Tatoosh trip report describes the crack-chimney ending at a tiny notch adjacent to a rappel horn, with a short exposed crest scramble to the top. Eric's Base Camp describes rappel slings above a 40-ft rappel followed by a short class-3 downclimb. So the rappel is off the horn at the notch and descends the chimney itself — there is no chimney left to reverse afterwards. rappels and descent are aligned with descent_text.",
+   "sources": [
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/",
+    "http://www.ericsbasecamp.net/trips/Tatoosh1/Tatoosh1.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Rappel anchor location",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "off fixed slings on the summit block",
+     "replace": "off slings on the rock horn at the notch below the summit crest"
+    },
+    {
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Rappel anchor location",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "or make a single short (~40 ft) rappel from the fixed slings on the summit block, then reverse the chimney pitch from the notch.",
+     "replace": "or make a single short (~40 ft) rappel from the slings on the rock horn at the notch, then downclimb the short class-3 section below."
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Climbing-permit threshold stated in access notes",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "non-glaciated, well under the 10,000-ft climbing-permit threshold (Castle is 6,440 ft, not under 6,000)",
+   "evidence": "access.notes says the peak is under 6,000 ft, but The Castle is 6,440 ft (Wikipedia, Mazamas). NPS states the climbing permit applies above 10,000 ft or on glaciers, so the conclusion stands with the correct threshold.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://en.wikipedia.org/wiki/The_Castle_(Washington)",
+    "https://mazamas.org/activity/146/"
+   ],
+   "patches": [
+    {
+     "id": "wa_castle_peak_tatoosh_southeast_face",
+     "fact": "Climbing-permit threshold stated in access notes",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "but both are non-glaciated scrambles under 6,000 ft — well below the threshold",
+     "replace": "but it is a non-glaciated scramble well under 10,000 ft — below the threshold"
+    }
+   ]
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "fact": "Car-to-car time",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "timing.totalHrs 3.5 (1.25+0.75+1.5) vs itinerary prose 'roughly 4-6 hours car-to-car'. No source found stating a car-to-car time for this route alone; not patched.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_scramble_route",
+   "fact": "Which section is the Class 4 bypass",
+   "verdict": "fixed",
+   "correct_value": "The direct rock step is class 4; the bypass gully is class 3",
+   "evidence": "SummitPost's Eagle Peak page: the initial gully leads to a 4th-class rockface; a path left descends to a bypass gully that uses class-3 rock to reach the top of that rockface. ProTrails: a slightly longer, less technical Class III route goes left across an open slope to a gully. hazards[1] mislabels the bypass as class 4.",
+   "sources": [
+    "https://www.summitpost.org/eagle-peak/952255",
+    "https://www.protrails.com/trail/857/mount-rainier-national-park-eagle-peak-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_scramble_route",
+     "fact": "Which section is the Class 4 bypass",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "Loose rock holds on Class 4 bypass section",
+     "replace": "Loose rock holds on the Class 4 rock step"
+    }
+   ]
+  },
+  {
+   "id": "wa_scramble_route",
+   "fact": "Permit",
+   "verdict": "fixed",
+   "correct_value": "No permit for day climbs; wilderness permit only for overnight stays",
+   "evidence": "NPS: no wilderness permit for day trips, permit required for overnight stays, climbing permit only above 10,000 ft or on glaciers — Eagle Peak (5,958 ft) is neither. WTA's Eagle Peak Saddle page lists only a park pass. access._raw does not render and was left.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+    "https://www.wta.org/go-hiking/hikes/eagle-peak-saddle"
+   ],
+   "patches": [
+    {
+     "id": "wa_scramble_route",
+     "fact": "Permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Wilderness Permit + Climbing Permit (for travel above 10,000 ft or on glaciers)",
+     "value": "None for day climbs; a park wilderness permit is required for overnight stays"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "fact": "Best season / whether May-June is the Monitor Ridge window",
+   "verdict": "fixed",
+   "correct_value": "Climbers Bivouac road opens mid/late June; May climbs go via Worm Flows",
+   "evidence": "Mount St. Helens Institute: the road to Climbers Bivouac is generally available late June through October, with Marble Mountain Sno-Park used November through late June. Puget Sound Outdoors: Climbers Bivouac is reached after about mid-June when the roads open. May therefore cannot be this route's optimal month; the seasonal guidance is aligned with season/best_season.",
+   "sources": [
+    "https://www.mshinstitute.org/climb",
+    "https://www.pugetsoundoutdoors.com/Helens/StHelensWinterClimb.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_st_helens_monitor_ridge",
+     "fact": "Best season / whether May-June is the Monitor Ridge window",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "Late spring (May-June) on lingering snow is best",
+     "replace": "Early summer (late June-July), while snow lingers on the upper mountain, is best"
+    },
+    {
+     "id": "wa_mount_st_helens_monitor_ridge",
+     "fact": "Best season / whether May-June is the Monitor Ridge window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "May",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "marginal"
+    },
+    {
+     "id": "wa_mount_st_helens_monitor_ridge",
+     "fact": "Best season / whether May-June is the Monitor Ridge window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "May",
+      "reason"
+     ],
+     "expect": "Residual snow cover often still present early in the month, allowing efficient glissade descent; permit demand is lower under the larger Apr1-May14 quota",
+     "value": "The road to Climbers Bivouac is normally still snowbound, so climbs this month usually start lower at Marble Mountain Sno-Park via Worm Flows"
+    },
+    {
+     "id": "wa_mount_st_helens_monitor_ridge",
+     "fact": "Best season / whether May-June is the Monitor Ridge window",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "Prime snow-climbing/glissade conditions;",
+     "replace": "Prime snow-climbing/glissade conditions once the road to Climbers Bivouac opens, usually mid-to-late month;"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure by convention: 8 km = 5 mi one-way, matching the summit waypoint (5 mi) and the 10-mi round-trip itinerary (WTA: 10 mi round trip).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-st-helens-monitor-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "fact": "Parking fee at Climbers Bivouac",
+   "verdict": "fixed",
+   "correct_value": "$5/day or NW Forest/Interagency pass; waived only on the climb date for permit holders",
+   "evidence": "USFS Climbers Bivouac page: day-use fee $5 (or Northwest Forest/Interagency pass); permit holders need not pay on the date of climb, but the fee applies for any other date. Recreation.gov permit page: a parking pass is provided with the permit in lieu of a federal recreation pass. Both fields were half-right; parking_pass now states the climb-date limit (bivy not patched per rules).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-climbers-bivouac-summer-climbing-route",
+    "https://www.recreation.gov/permits/4675309"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_st_helens_monitor_ridge",
+     "fact": "Parking fee at Climbers Bivouac",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "waived with a valid climbing permit.",
+     "replace": "waived on the date of your climb with a valid climbing permit; any other day or night parked there needs the day fee or a Northwest Forest or Interagency pass."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "Round-trip distance and gain in partner requirements",
+   "verdict": "fixed",
+   "correct_value": "roughly 11-12 mi round trip, ~5,500-5,700 ft gain",
+   "evidence": "WTA: 12.0 mi round trip, 5,699 ft gain. Mount St. Helens Institute: 12 mi round trip, 5,500 ft. Puget Sound Outdoors: ~11 mi, ~5,700 ft. The 8-9 mi / 4,500 ft figures are Monitor Ridge's.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-st.-helens-worm-flows-route",
+    "https://www.mshinstitute.org/climb",
+    "https://www.pugetsoundoutdoors.com/Helens/StHelensWinterClimb.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_st_helens_worm_flows",
+     "fact": "Round-trip distance and gain in partner requirements",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "roughly 8-9 miles round trip with about 4,500 ft of gain on snow",
+     "replace": "roughly 11-12 miles round trip with about 5,500-5,700 ft of gain on snow"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "Treeline elevation / where the route joins Monitor Ridge",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources genuinely disagree: Mountain Project says the route breaks treeline near 4,600 ft and joins Monitor Ridge about 7,000 ft (the waypoint note's figures); Puget Sound Outdoors says treeline ~3,750 ft and the join at 7,400 ft (the approach's figures). WTA only says posts run from timberline to ~4,800 ft after crossing Swift Creek at 3,700 ft. No two independent sources agree on the merge elevation, so nothing was patched.",
+   "sources": [
+    "https://www.mountainproject.com/route/107353369/worm-flows",
+    "https://www.pugetsoundoutdoors.com/Helens/StHelensWinterClimb.html",
+    "https://www.wta.org/go-hiking/hikes/mount-st.-helens-worm-flows-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "Glacier / rope on the route",
+   "verdict": "fixed",
+   "correct_value": "No rope; ice axe and crampons. The route technically touches the largely stagnant Swift Glacier with crevasses rarely seen",
+   "evidence": "Engineered for Adventure: the route technically crosses the Swift Glacier but the transition is hardly noticeable and no crevasses are seen; no rope used. WTA and Mount St. Helens Institute list ice axe, crampons and avalanche awareness only, no rope or glacier gear. The crevasses panel's hedge is consistent; the schedule's 'rope up' is the outlier.",
+   "sources": [
+    "https://engineeredforadventure.com/wormsflows/",
+    "https://www.wta.org/go-hiking/hikes/mount-st.-helens-worm-flows-route",
+    "https://www.mshinstitute.org/explore/climbing-permits/route-descriptions.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_st_helens_worm_flows",
+     "fact": "Glacier / rope on the route",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "rope up or don crampons as conditions dictate",
+     "replace": "put on crampons as conditions dictate"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "Aspect of the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The trailhead lies south-southeast of the summit and the route heads generally north, so a W aspect looks wrong, but no two sources state the route's aspect (descriptions say it climbs north from Marble Mountain; one calls it the western approach). Not patched.",
+   "sources": [
+    "https://www.mountainproject.com/route/107353369/worm-flows",
+    "https://www.wta.org/go-hiking/hikes/mount-st.-helens-worm-flows-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "Parking pass for this trailhead",
+   "verdict": "fixed",
+   "correct_value": "Washington Sno-Park permit at Marble Mountain Sno-Park in winter",
+   "evidence": "Recreation.gov permit page: a separate Washington Sno-Park pass is required at Marble Mountain in winter; the included parking pass is for Climbers Bivouac. WTA Worm Flows and Puget Sound Outdoors both name the Sno-Park permit for Marble Mountain. parking_pass was copied from Monitor Ridge.",
+   "sources": [
+    "https://www.recreation.gov/permits/4675309",
+    "https://www.wta.org/go-hiking/hikes/mount-st.-helens-worm-flows-route",
+    "https://www.pugetsoundoutdoors.com/Helens/StHelensWinterClimb.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_st_helens_worm_flows",
+     "fact": "Parking pass for this trailhead",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "$5/day/vehicle at Climber’s Bivouac, waived with a valid climbing permit.",
+     "value": "Washington Sno-Park permit to park at Marble Mountain Sno-Park during the winter Sno-Park season."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "One-way distance (dist_km) vs itinerary",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 8 (5 mi one-way) and summit distMi 5.4 vs itinerary 12 mi round trip. Sources range 10 mi (MSHI route guide), 10.8, 11 and 12 mi (WTA, MSHI climb page) round trip; no agreed one-way figure, so not patched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-st.-helens-worm-flows-route",
+    "https://www.mshinstitute.org/explore/climbing-permits/route-descriptions.html"
+   ],
+   "patches": []
+  }
+ ]
+}

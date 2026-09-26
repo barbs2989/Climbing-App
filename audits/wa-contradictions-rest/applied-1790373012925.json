@@ -1,0 +1,310 @@
+{
+ "applied": [
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "grade",
+   "path": [],
+   "fact": "Difficulty of the described line"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "overview",
+   "path": [],
+   "fact": "Difficulty of the described line"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Difficulty of the described line"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Difficulty of the described line"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Difficulty of the described line"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "pitch"
+   ],
+   "fact": "Standard ascent line"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "pitch"
+   ],
+   "fact": "Standard ascent line"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach trail line to Eureka Creek"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Approach trail line to Eureka Creek"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "emergency",
+   "path": [
+    "nearestHospital"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Current Harts Pass Road status"
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "column": "overview",
+   "path": [],
+   "fact": "Dot's position relative to Lago"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_dot_mountain_scramble",
+   "before": {
+    "grade": "Class 2",
+    "overview": "Dot Mountain (~8,220–8,225 ft) is a minor summit on the mile-long ridge connecting Mount Lago and Ptarmigan Peak in the remote central Pasayten Wilderness, roughly 2.4 miles north of Lago — not in the Carru/Osceola cluster proper, though the Lago-Carru col is the usual approach line. It's named for Dot (Adele) Wernstedt, wife of Lage Wernstedt, the USFS topographer/climber who mapped much of the Pasayten and made many first ascents there in the 1920s. With modest independent prominence, Dot is an easy Class 2 talus scramble almost always tagged onto a Lago-Carru-Ptarmigan traverse or a broader Pasayten Bulger-bagging trip, and sits near what hikers have called the most remote point in the entire Pasayten Wilderness.",
+    "rope_note": "Class 2 walk-up/scramble on boot path, talus and scree; no rope or rack needed, ice axe only if early-season snow persists.",
+    "pro_needs": "Class 2 talus/ridge scramble with occasional Class 3 sidehilling; a helmet is recommended for the loose-rock ridge traverse between Lago and Dot. No rope or technical protection normally needed.",
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier continental NE Cascades climate; generally more stable and less precipitation-prone than the west-side Cascades, but exposed above-treeline ridge walking still carries lightning and wind exposure",
+      "probability": "Afternoon thunderstorms are common in summer - plan for an early alpine start (before dawn from high camp) to be off exposed ridgelines before storms build"
+     },
+     "exposure": "Low-to-moderate fall exposure on Class 2 terrain, but the primary consequence driver is the remoteness itself: loose talus underfoot and a long remote Pasayten approach, meaning any injury or fall translates into a very long, difficult self-rescue or evacuation rather than acute technical fall danger",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route; no NWAC forecast zone specifically covers this part of the Pasayten/Okanogan Range, and the route is only reasonably attempted after snow has melted out",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "pitch_detail": [
+     {
+      "grade": "Class 1 (trail, then off-trail)",
+      "notes": "Roughly 18-25 miles one-way via Slate Pass/Robinson Creek/Tatoosh Buttes or Eureka Creek/Lago-Carru Col trail systems to a high camp on Tamarack Ridge or near Dot Lakes",
+      "pitch": "Approach"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Talus and scree slopes from the Ptarmigan-Dot saddle (~7,800 ft) gain the final several hundred feet to the summit",
+      "pitch": "Saddle to summit (standard ascent)"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Narrow, blocky ridge with considerable exposure; documented as never exceeding Class 3, descending toward a loose gully above Dot Lakes",
+      "pitch": "South ridge (alternate line)"
+     }
+    ],
+    "approach": "From the Slate Pass trailhead (~6,900', reached via the Harts Pass Road — one of the highest drivable roads in Washington), pick up the Buckskin Ridge Trail #498 heading north/northeast into the Pasayten Wilderness. About 0.5 mile in, a cutoff splits off toward the Robinson Creek–Middle Fork Trail #478; parties bound for Dot Mountain generally follow the Eureka Creek drainage (reached via Trail #474, the Ferguson Lake/Eureka Creek trail, which drops off Wildcat Mountain's south saddle into Eureka Creek Basin) rather than staying on the full Buckskin Ridge crest toward Silver/Buckskin Lakes. The trail through Eureka Creek Basin runs through open, wildflower-strewn meadows (avalanche lilies in early/mid season) with larch groves higher up, and this is the last reliable running water for the day — carry what you'll need above it. From the basin, leave the trail and climb off-trail east/southeast to the Lago–Carru col on the ridge between Mount Carru and Mount Lago. From the col, contour Mount Lago's rocky, talus-covered north slopes (loose 6–12\" rock; a helmet is worth carrying for rockfall) down to a small tarn near 7,400', which is the standard overnight camp given the ~35–36 mile round-trip distance. From the tarn/col, regain the crest and follow it north: the first real obstacle is Point 8207, the technical crux of the traverse (exposed class 3–4 scrambling on otherwise solid rock), followed by Point 8165 with sustained class 3 moves and one exposed, improbable-looking ledge traverse through a small cliff band — most parties bypass Pt 8165's true summit to the west. Beyond that the ridge relents into a pleasant, mostly-dirt walk above treeline, and Dot Mountain's summit is reached by an easy, non-technical walk-up along the crest. Note there is no water anywhere on this high ridge traverse until a small tarn on Ptarmigan Peak's south shoulder, well beyond Dot Mountain.",
+    "descent_text": "This is an off-trail ridge scramble with no fixed hardware and no rappelling anywhere on it — rappels: 0. The way down is to reverse the ascent line. From Dot Mountain, retrace the ridge crest south, re-negotiating the exposed ledge traverse and class 3 moves on Point 8165 and the class 3–4 crux on Point 8207; both are more awkward downclimbing than climbing, so face in where needed and watch for loose blocks near the crux. Regain the Lago–Carru col and reverse the contour across Mount Lago's loose north-slope talus back down to the 7,400' tarn — parties describe this specific slope as a grinding, ankle-turning scree/talus descent, easier going up than down, so take it slow. From the tarn, drop back into Eureka Creek Basin and rejoin the Trail #474/#478 network for the roughly 9-mile, well-graded return to the Slate Pass trailhead. Given the total distance (~35–36 miles round trip) and elevation swing, this route is normally done as a 2–3 day trip with a high camp near the Lago–Carru col rather than a single push — so for most parties the 'descent' off Dot Mountain is really the return leg to that high camp, with the longer trail descent to the car following on a subsequent day. No rope, harness, or rappel device is needed anywhere on this route; a helmet for the loose ridge and talus sections is the main safety item worth carrying.",
+    "waypoints": [
+     {
+      "lat": 48.737833,
+      "lng": -120.6785,
+      "elev": 7170,
+      "name": "Slate Peak / Buckskin Ridge Trailhead",
+      "note": "End of FR 5400 beyond Harts Pass; self-issue Pasayten Wilderness permit at the kiosk, no fee required.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive the Harts Pass Road (FR 5400) up from Mazama and continue past Harts Pass toward Slate Peak to the road end. It is one of the highest drivable roads in the state and typically does not clear of snow until early to mid summer, so check its status before committing."
+     },
+     {
+      "lat": 48.7697,
+      "lng": -120.6393,
+      "elev": 5280,
+      "name": "Whistler Cutoff – Middle Fork Pasayten Trail Junction",
+      "note": "Buckskin Ridge Trail drops via the Whistler Cutoff to meet the Middle Fork Pasayten River (Robinson Creek) Trail #478 in the valley bottom; steep, dusty descent losing ~1,900 ft.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "Head north on Buckskin Ridge Trail #498 and take the cutoff that splits off about half a mile in. It drops steeply and dustily off the ridge, losing around 1,900 ft, to meet the Middle Fork Pasayten (Robinson Creek) Trail #478 on the valley floor."
+     },
+     {
+      "lat": 48.82437169117647,
+      "lng": -120.57357022058824,
+      "elev": 7100,
+      "name": "Fred's Pass",
+      "note": "Trail climbs from Berk Creek over this ridge-crest pass to drop into the upper Eureka Creek drainage — the standard link between the Middle Fork Pasayten valley and Eureka Creek basin on the shortest road approach to Lago/Dot.",
+      "type": "Junction",
+      "distMi": 13,
+      "directions": "Turn down-valley and follow the Middle Fork trail for roughly nine miles. The grade is easy but the going is slow — burn zones and hundreds of downed logs to step over or around — and the tread deteriorates the farther in you get. Near the head of the section the route turns up Berk Creek and climbs to the pass on the ridge crest."
+     },
+     {
+      "lat": 48.83049,
+      "lng": -120.54762,
+      "elev": 7600,
+      "name": "Lago–Carru Col",
+      "note": "Broad talus saddle between Mount Lago and Mount Carru at the head of Eureka Creek basin; can hold névé into midsummer and is the crux navigation point of the approach.",
+      "type": "Junction",
+      "distMi": 15.5,
+      "directions": "Drop off the pass into the upper Eureka Creek drainage and follow the basin through open meadows and larch groves. This is the last running water of the day, so fill here. Where the basin heads, leave the trail and climb off-trail up talus to the broad saddle between Carru and Lago."
+     },
+     {
+      "lat": 48.835469,
+      "lng": -120.528159,
+      "elev": 7400,
+      "name": "7,400 ft Tarn Camp, Mount Lago north side",
+      "note": "Exposed alpine tarn camp used as high camp for the Lago/Dot traverse, reached by dropping off the col across Lago's rocky north slopes; intermittent snowmelt water only, no wood.",
+      "type": "Campsite",
+      "distMi": 16,
+      "directions": "Contour east off the col across Mount Lago's north slopes, losing a couple of hundred feet to reach the tarn. The whole traverse is loose plate talus in the 6-12 inch range — worth wearing a helmet, since a party strung out across it will knock rock down onto itself."
+     },
+     {
+      "lat": 48.846847830882346,
+      "lng": -120.54654797794117,
+      "elev": 8207,
+      "name": "Point 8207",
+      "note": "Ridge high point passed on its north/climber's side above the tarn camp; easy dirt-and-rock walking with no route-finding issues above treeline.",
+      "type": "Junction",
+      "distMi": 16.7,
+      "directions": "Regain the crest above camp and follow it north. Taken direct, Point 8207 is the technical crux of the traverse: exposed Class 3-4 on rock that is surprisingly solid, with one short Class 4 step. Skirting it on the north side keeps the leg to easy dirt-and-rock walking. Either way there is no route-finding problem this high above treeline."
+     },
+     {
+      "lat": 48.84988514705882,
+      "lng": -120.5428963235294,
+      "elev": 8165,
+      "name": "Point 8165 Ledge Bypass",
+      "note": "An improbable, exposed 3rd-class ledge threads through cliffs on Point 8165's west side — the one technical move on an otherwise mellow ridge traverse toward Dot Mountain.",
+      "type": "Hazard",
+      "distMi": 17.2,
+      "directions": "Continue north along the crest, which narrows and turns knife-edged in places with sustained Class 3 moves. Most parties skip Point 8165's true summit and cut onto its west side to pick up the ledge through the cliff band."
+     },
+     {
+      "lat": 48.85227,
+      "lng": -120.5398,
+      "elev": 8224,
+      "name": "Dot Mountain",
+      "note": "Talus-strewn summit at the north end of the Lago ridge system, gained via the final short traverse off Point 8165; broad, easy footing at the top.",
+      "type": "Summit",
+      "distMi": 17.6,
+      "directions": "Beyond the cliff band the ridge relents into a pleasant, mostly-dirt walk above treeline. The summit is an easy, non-technical walk-up along the crest — the difficulties of the traverse are all behind you."
+     },
+     {
+      "lat": 48.856667,
+      "lng": -120.535278,
+      "elev": 7800,
+      "name": "Ptarmigan-Dot Col",
+      "type": "Saddle",
+      "distMi": null,
+      "elevFt": 7800,
+      "directions": "Only parties continuing to Ptarmigan Peak carry on past the summit. Follow the crest down off Dot over mild ground, losing about 400 ft to the saddle. There is no water anywhere on this ridge until a small tarn on Ptarmigan's south shoulder, roughly a mile further on."
+     }
+    ],
+    "access": {
+     "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+     "rules": "Wilderness regulations; pack out all waste. Okanogan-Wenatchee National Forest wilderness group-size limit applies: max 12 people (combined with any stock); larger groups must split into separate parties with at least 1 mile of separation.",
+     "permit": "Self-issued wilderness permit, free, available at the trailhead",
+     "closures": "Harts Pass Road (FR 5400) suffered storm damage in 2026 that closed vehicle access from the Monument Creek trailhead through Harts Pass — blocking Robinson, Rattlesnake, Harts Pass, Brown Bear, Slate Pass, and Slate Peak trailheads — from roughly March 2026, with reports of reopening in late June 2026. This stretch of road is prone to repeat storm damage; verify current status on the Okanogan-Wenatchee NF conditions page before a trip.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District / Pasayten Wilderness",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "passRequired": "None confirmed at the Slate Peak/Buckskin Ridge trailhead itself (USFS lists no fee for this site); some other Pasayten-area trailheads do require a Northwest Forest Pass, so check the specific one you use",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+     }
+    },
+    "road": {
+     "name": "Lost River Road (paved, ~7.5 mi from SR-20 at Mazama) to Harts Pass, then Forest Road 5400 (gravel) to the Slate Pass / Slate Peak spur and Buckskin Ridge trailhead",
+     "status": "paved to Mazama/Lost River area, gravel and narrow beyond to Harts Pass and Slate Peak",
+     "driveNote": "Access varies by chosen approach; the FR 5400 stretch beyond Harts Pass is narrow, exposed, and has repeatedly been closed by storm damage (closed roughly March-June 2026); check current conditions before driving in.",
+     "seasonalGate": "Typically snowbound and gated through spring; USFS lists the Slate Peak trailhead as normally accessible only July through September"
+    },
+    "emergency": {
+     "notes": "Call 911 for emergencies.",
+     "county": "Okanogan",
+     "rangerStation": "Methow Valley Ranger District, 24 West Chewuch Road, Winthrop, WA 98862, (509) 996-4000",
+     "nearestHospital": "Mid-Valley Hospital, 810 Jasmine St, Omak, WA (~45 mi / about 1 hr drive from Winthrop via SR-20, closest general hospital to the Methow Valley access side); Three Rivers Hospital, Brewster, WA (~49-50 mi from Winthrop) is a somewhat farther alternative. Both are several hours' drive from the Slate Peak trailhead itself given the remote access road.",
+     "sheriffDispatch": "911 for emergencies; Okanogan County Sheriff non-emergency/dispatch (509) 422-7232"
+    },
+    "grade_num": 2
+   }
+  }
+ ]
+}

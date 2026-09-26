@@ -1,0 +1,247 @@
+{
+ "applied": [
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_cathedral_rock_standard",
+   "fact": "Round-trip distance",
+   "op": "set",
+   "column": "dist_km",
+   "path": [],
+   "expect": 4.8,
+   "value": 6.4,
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/cathedral-rock",
+    "http://www.willhiteweb.com/washington_climbing/cle_elum/cathedral_rock/climbing_096.htm"
+   ],
+   "why": "expect mismatch at dist_km[]: live 6.4"
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "fact": "Time to reach the summit (summitTimeHrs)",
+   "op": "set",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "expect": 10.5,
+   "value": null,
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face"
+   ],
+   "why": "expect mismatch at timing[\"summitTimeHrs\"]: live null"
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "fact": "2026 fire closure of the Cathedral Pass Trail / trailhead",
+   "op": "set",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "expect": "No route-specific closures found as of mid-2026, but the Cle Elum River corridor has had periodic seasonal restoration-area closures in past years — check current Okanogan-Wenatchee NF alerts before a trip.",
+   "value": "The 2026 Three Queens Fire closure, in force through October 31, 2026 unless lifted sooner, shuts the Pacific Crest Trail through Cathedral Pass and the Deception Pass trail; in August 2026 the Cathedral Rock trail itself was also inside the closure. Check current Okanogan-Wenatchee NF alerts before a trip.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/newsroom/releases/updated-closure-issued-three-queens-fire",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-decreased-cle-elum-ranger-district",
+    "https://komonews.com/news/local/three-queens-fire-snoqualmie-pass-pacific-crest-trail-lake-kachess-cle-elum-ranger-district-kittitas-county-fire-what-trails-and-campsites-are-closed-because-of-the-wildfire"
+   ],
+   "why": "expect mismatch at access[\"closures\"]: live \"The 2026 Three Queens Fire closure, in effect from August 11 and scheduled to run through October 31, 2026, took in the"
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "fact": "Car-to-car time and start time in partner_requirements",
+   "op": "replace_text",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "find": "matching the 8-hour car-to-car estimate with a 06:00 start",
+   "replace": "matching a 10-12 hour car-to-car day with a 5:00 AM start",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face"
+   ],
+   "why": "find occurs 0x at partner_requirements[\"fitnessSpec\",\"hiking\"]"
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "fact": "Car-to-car time and start time in partner_requirements",
+   "op": "replace_text",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "find": "within the 8-hour total car-to-car estimate",
+   "replace": "within a 10-12 hour car-to-car day",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face"
+   ],
+   "why": "find occurs 0x at partner_requirements[\"approachTime\"]"
+  },
+  {
+   "id": "wa_cathedral_rock_northwest_couloir",
+   "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress",
+   "op": "replace_text",
+   "column": "overview",
+   "path": [],
+   "find": "used both as an alternate ascent line and as the standard descent from the summit",
+   "replace": "used both as an alternate ascent line and as an occasional alternative descent from the summit",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face",
+    "https://www.cascadeclimber.com/cathedral_rock.htm",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2000101503"
+   ],
+   "why": "find occurs 0x at overview[]"
+  },
+  {
+   "id": "wa_cathedral_rock_northwest_couloir",
+   "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress",
+   "op": "replace_text",
+   "column": "beta",
+   "path": [],
+   "find": "It is frequently used as a descent route after climbing the Southwest Face or Northeast Buttress.",
+   "replace": "Some parties use it as an alternative way down, though the usual descent from the summit is the Southwest Face.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cathedral-rock-southwest-face",
+    "https://www.cascadeclimber.com/cathedral_rock.htm",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2000101503"
+   ],
+   "why": "find occurs 0x at beta[]"
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "fact": "Ice grade (route-level ice_grade vs crux pitch grades)",
+   "op": "set",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "expect": "AI3",
+   "value": "AI2",
+   "sources": [
+    "https://www.mountainproject.com/route/121085057/north-face",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-ice-climb-chair-peak-north-face-winter"
+   ],
+   "why": "expect mismatch at pitch_detail[0,\"grade\"]: live \"AI2\""
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "fact": "Ice grade (route-level ice_grade vs crux pitch grades)",
+   "op": "set",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "grade"
+   ],
+   "expect": "AI3",
+   "value": "AI2",
+   "sources": [
+    "https://www.mountainproject.com/route/121085057/north-face",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-ice-climb-chair-peak-north-face-winter"
+   ],
+   "why": "expect mismatch at pitch_detail[3,\"grade\"]: live \"AI2\""
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "fact": "Crux step angle (max_angle/pitch_detail vs beta/pro_tips/waypoint)",
+   "op": "set",
+   "column": "max_angle",
+   "path": [],
+   "expect": 70,
+   "value": 80,
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-north-face-chair-peak/",
+    "http://www.alpinedave.com/Chair.html"
+   ],
+   "why": "expect mismatch at max_angle[]: live 80"
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "fact": "Total approach gain to the base of the North Face",
+   "op": "replace_text",
+   "column": "approach",
+   "path": [],
+   "find": "Total approach gain to the base is roughly 1,300-1,500 ft",
+   "replace": "Total approach gain to the base is roughly 2,300-2,500 ft",
+   "sources": [
+    "https://www.mountainproject.com/route/121085057/north-face",
+    "http://www.alpinedave.com/Chair.html",
+    "https://en.wikipedia.org/wiki/Chair_Peak"
+   ],
+   "why": "find occurs 0x at approach[]"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)",
+   "op": "replace_text",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "find": "totaling a 5-8 hour car-to-car day",
+   "replace": "totaling a 10-12 hour car-to-car day",
+   "sources": [
+    "https://spokalpine.com/2025/01/30/chair-peak-ne-buttress-ii-wi3-5-4/",
+    "https://climberkyle.com/2019/03/15/chair-peak-ne-buttress-wi3/"
+   ],
+   "why": "find occurs 0x at partner_requirements[\"fitnessSpec\",\"hiking\"]"
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "fact": "summitTimeHrs equals the car-to-car total",
+   "op": "set",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "expect": 11.5,
+   "value": null,
+   "sources": [
+    "https://spokalpine.com/2025/01/30/chair-peak-ne-buttress-ii-wi3-5-4/"
+   ],
+   "why": "expect mismatch at timing[\"summitTimeHrs\"]: live null"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate-high fitness for a ~2 hour approach with real elevation gain from Alpental/Snow Lake trailhead into the Source Lake basin, plus the multi-pitch climb and descent, totaling a 10-12 hour car-to-car day",
+      "packWeight": "Light-moderate day pack (rock rack, rope, helmet, approach shoes/boots); heavier in winter with ice tools/screws and extra layers"
+     },
+     "approachTime": "About 2 hours from the Alpental/Snow Lake trailhead to the Thumb Tack, and roughly 3-3.5 hours to the base of the buttress",
+     "requiredSkills": [
+      "4th class and low 5th class (5.4) scrambling with exposure",
+      "rope management and belaying on a multi-pitch alpine route",
+      "anchor building and rappelling",
+      "rockfall awareness and loose-rock management (serious party-caused rockfall hazard)",
+      "basic route-finding in an alpine cirque"
+     ],
+     "experienceLevel": "Intermediate alpine climber - comfortable on low 5th class rock with sustained exposure and loose rock; prior multi-pitch/scrambling experience expected (this is a standard Mountaineers 'Basic Alpine Climb' objective)"
+    }
+   }
+  }
+ ]
+}

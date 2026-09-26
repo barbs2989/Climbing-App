@@ -1,0 +1,695 @@
+{
+ "file": "r022.json",
+ "results": [
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Descent: rappel the face vs traverse over Challenger",
+   "verdict": "fixed",
+   "correct_value": "The descent continues along the connecting ridge to Mount Challenger's summit and down Challenger's glacier route; it does not rappel the East Face.",
+   "evidence": "The 2004 first-ascent report says the party decided the easiest way down was up, continuing to Challenger's summit and down its established route back to camp rather than rappelling the face. The route page for the line likewise gives the descent as simul-climbing/belaying the ridge to Challenger's summit and following that peak's descent.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200514900/North-America-United-States-Washington-Mt-Challenger-Cascade-Range-Poltergeist-Pinnacle-East-Face",
+    "https://www.mountainproject.com/route/120232096/poltergeist-pinnacle"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "before reversing the route and re-crossing the glacier back to camp. Parties often continue the same long day to tag Mount Challenger's main summit as well.",
+     "replace": "before continuing along the connecting ridge over Mount Challenger's main summit and descending its glacier route back to camp.",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Descent: rappel the face vs traverse over Challenger"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "label"
+     ],
+     "find": "Descend the route",
+     "replace": "Descend over Challenger",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Descent: rappel the face vs traverse over Challenger"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Rappel/downclimb back to the glacier.",
+     "replace": "Continue along the ridge to Mount Challenger's summit, then down its standard glacier route.",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Descent: rappel the face vs traverse over Challenger"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "rappel the route to reverse back to the glacier and camp.",
+     "replace": "the way down continues along the ridge to Mount Challenger's summit and down its glacier route, not back down the face.",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Descent: rappel the face vs traverse over Challenger"
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Perfect Pass elevation",
+   "verdict": "fixed",
+   "correct_value": "About 6,200 ft (approach's ~5,800 ft is the outlier).",
+   "evidence": "One detailed trip report through Easy Ridge and Perfect Pass gives the pass as 6,200 ft, and a second Picket Range route description places Perfect Pass camping at 6,200 ft on the edge of the Challenger Glacier. Other accounts give up to 6,300 ft; none support ~5,800 ft. The waypoint (6,198) already agrees.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://www.summitpost.org/picket-range/171088"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "up to Perfect Pass (~5,800 ft)",
+     "replace": "up to Perfect Pass (~6,200 ft)",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Perfect Pass elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Commitment grade and rock quality",
+   "verdict": "fixed",
+   "correct_value": "Grade IV; rock generally sound.",
+   "evidence": "The first-ascent report grades the route IV 5.9 and describes solid rock on the buttress crest; the route page also gives Grade IV and says the rock is generally sound for gear anchors. SEASONAL HAZARDS was the lone field saying Grade III on loose rock.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200514900/North-America-United-States-Washington-Mt-Challenger-Cascade-Range-Poltergeist-Pinnacle-East-Face",
+    "https://www.mountainproject.com/route/120232096/poltergeist-pinnacle"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Grade III alpine rock on a slender, loose-rock pinnacle",
+     "replace": "Grade IV alpine rock on a slender granite pinnacle",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Commitment grade and rock quality"
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Required leading grade",
+   "verdict": "fixed",
+   "correct_value": "Confident 5.9 leading (crux pitch 5.9+ R).",
+   "evidence": "The first-ascent report gives pitch 1 as 5.9+ R and the route as IV 5.9; the route page gives the overall grade 5.9 with an unprotectable 5.9 crux on pitch 1. A 5.7 leader requirement understates the crux.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200514900/North-America-United-States-Washington-Mt-Challenger-Cascade-Range-Poltergeist-Pinnacle-East-Face",
+    "https://www.mountainproject.com/route/120232096/poltergeist-pinnacle"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "find": "at 5.7 on an alpine tower",
+     "replace": "at 5.9 on an alpine tower",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Required leading grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Pitch count",
+   "verdict": "fixed",
+   "correct_value": "Three roped pitches followed by one long (~270 m) simul-climbed ridge section \u2014 four entries in the breakdown.",
+   "evidence": "The first-ascent report lists three pitches (55 m, 60 m, 60 m) then about 270 m of simul-climbing up to 5.7; the route page likewise lists P1-P3 and a single ~800 ft P4+ ridge section. Nothing supports 'two' simul pitches, so the overview is reworded to one long section, matching the 4-entry breakdown.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200514900/North-America-United-States-Washington-Mt-Challenger-Cascade-Range-Poltergeist-Pinnacle-East-Face",
+    "https://www.mountainproject.com/route/120232096/poltergeist-pinnacle"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "followed by two long simul-climbed pitches up the connecting ridge to the summit.",
+     "replace": "followed by a long simul-climbed section of roughly 270 m up the connecting ridge to the summit.",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Approach days",
+   "verdict": "fixed",
+   "correct_value": "Typically one to two days in to Perfect Pass and one long day out, not 2-3 days each way.",
+   "evidence": "The first-ascent party hiked from the trailhead to Perfect Pass in a single day and climbed the next; another trip report reached Perfect Pass on day one of a three-day trip; a third took two days in on a four-day loop. None describe 2-3 days each way, and the row's own itinerary walks in over two days and out in one.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200514900/North-America-United-States-Washington-Mt-Challenger-Cascade-Range-Poltergeist-Pinnacle-East-Face",
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/",
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "Multi-day (typically 2-3 days each way)",
+     "replace": "Multi-day (typically one to two days in to Perfect Pass and one long day out)",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Approach days"
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Wilderness permit reservable vs walk-up only",
+   "verdict": "fixed",
+   "correct_value": "The Perfect Pass cross-country zone is walk-up only (1 party/night); it cannot be reserved ahead.",
+   "evidence": "The park's cross-country zone page lists Perfect Pass (party of 6, one party per night) and states that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved, all other zones being walk-up only; the park's separate backcountry-reservations page and its commercial-user reservation guide state the same list. The row's access.permit, access.fees and bivy permit already agree; the trip plan, trailhead directions, permit line and overnight_permit.where said to reserve.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/getinvolved/cua-sup-backcountry-permit-reservation-guide.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "is required for the Perfect Pass/Whatcom Pass zone and is worth reserving ahead in peak season.",
+     "replace": "is required for the Perfect Pass zone, which is walk-up only and cannot be reserved ahead.",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Wilderness permit reservable vs walk-up only"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "is required for the Perfect Pass/Whatcom Pass zone and is worth reserving ahead in peak season.",
+     "replace": "is required for the Perfect Pass zone, which is walk-up only and cannot be reserved ahead.",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Wilderness permit reservable vs walk-up only"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Perfect Pass cross-country zone is walk-up only, issued in person at a Wilderness Information Center)",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Wilderness permit reservable vs walk-up only"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "replace": "This zone cannot be reserved ahead; get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Wilderness permit reservable vs walk-up only"
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Trailhead-to-Perfect Pass distance / waypoint mileage",
+   "verdict": "fixed",
+   "correct_value": "Imperfect Impasse lies roughly 14+ mi in and Perfect Pass about 16 mi in; the stored 9 / 13 (and Challenger Arm 14) are impossible, so they are set to unknown.",
+   "evidence": "The Chilliwack River crossing is about 9 miles from the car (itinerary and a published route description agree), and a detailed trip report puts the Easy Ridge saddle at 10.7 mi and a further 3.8 mi over Easy Peak to the Impasse (~14.5 mi). The Impasse cannot sit at mile 9 (the valley-floor ford), nor Perfect Pass at 13. No source gives exact pin mileages, so per the rule the pins' distances are nulled rather than interpolated; Challenger Arm's 14 depends on the wrong Perfect Pass figure and is nulled too.",
+   "sources": [
+    "https://trailcatjim.com/hannegan-pass-easy-ridge-lookout-easy-peak-via-northwest-ridge/",
+    "https://www.summitpost.org/picket-range/171088"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 9,
+     "value": null,
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Trailhead-to-Perfect Pass distance / waypoint mileage"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 13,
+     "value": null,
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Trailhead-to-Perfect Pass distance / waypoint mileage"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 14,
+     "value": null,
+     "id": "wa_poltergeist_pinnacle_north_route",
+     "fact": "Trailhead-to-Perfect Pass distance / waypoint mileage"
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "fact": "Later waypoint mileages and dist_km (glacier crossing 16, base 17, summit 17.5; dist_km 28.17 = 17.5 mi)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "With Perfect Pass about 16 mi in and ~3 mi of glacier beyond it, the base/summit would be nearer 19 mi one-way than 17-17.5, and the glacier-crossing pin at 16 would sit at the pass. No source states these distances, so nothing is changed.",
+   "sources": [
+    "https://trailcatjim.com/hannegan-pass-easy-ridge-lookout-easy-peak-via-northwest-ridge/",
+    "http://publications.americanalpineclub.org/articles/12200514900/North-America-United-States-Washington-Mt-Challenger-Cascade-Range-Poltergeist-Pinnacle-East-Face"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_spectre_peak_haunted_wall",
+   "fact": "First-ascent year",
+   "verdict": "fixed",
+   "correct_value": "August 2006 (the journal report appeared in the 2007 edition).",
+   "evidence": "The first-ascent trip report is titled with the date 8/14/2006, and the South Ridge first-ascent report calls Haunted Wall Wallace and Layton's 2006 route; the Haunted Wall report itself was published in the 2007 journal, which explains the 2007 in beta.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/44426-tr-spectre-peak-haunted-wall-fa-iv-59-2100-8142006/",
+    "http://publications.americanalpineclub.org/articles/13201216382",
+    "http://publications.americanalpineclub.org/articles/12200713001/North-America-United-States-Washington-Cascade-Range-Spectre-Peak-Haunted-Wall"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Established in August 2007",
+     "replace": "Established in August 2006",
+     "id": "wa_spectre_peak_haunted_wall",
+     "fact": "First-ascent year"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_haunted_wall",
+   "fact": "Whether rappels are required",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "One committing rappel on the way up (into the notch below the south-ridge gendarme); the descent is a downclimb with no rappels.",
+   "evidence": "The first-ascent report says one rappel gets you into the notch and fully committed, followed by face climbing and a ridge traverse to the summit, and that the descent downclimbed snow on the far side to ledges and around to the south face. The row's descent, descent_text and rappels already agree the descent has no rappel; only the plural 'rappel sequence' in the hazard fields was wrong. No second independent source was retrievable (the forum trip report did not load).",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200713001/North-America-United-States-Washington-Cascade-Range-Spectre-Peak-Haunted-Wall"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      2
+     ],
+     "find": "A fully committing rappel sequence is required in places",
+     "replace": "A single rappel into a notch partway up the route commits the party to finishing it",
+     "id": "wa_spectre_peak_haunted_wall",
+     "fact": "Whether rappels are required"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "Committing rappels with few options to bail",
+     "replace": "A committing rappel into a notch partway up, with few options to bail",
+     "id": "wa_spectre_peak_haunted_wall",
+     "fact": "Whether rappels are required"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "This route's own hazard notes warn of committing rappels with few options to bail, and retreat",
+     "replace": "The one rappel on the route comes on the way up, into the notch below the south-ridge gendarme, and it commits the party; retreat",
+     "id": "wa_spectre_peak_haunted_wall",
+     "fact": "Whether rappels are required"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Where to leave the maintained trail after Hannegan Pass",
+   "verdict": "fixed",
+   "correct_value": "Stay on the maintained trail from Hannegan Pass down past Boundary and Copper Creek camps; the Easy Ridge path starts across the Chilliwack River ford, about 9 mi in.",
+   "evidence": "A published Challenger approach says a good trail goes to Hannegan Pass, then down to the Chilliwack River crossing (~2,750 ft) 9 miles from the car before climbing onto Easy Ridge; another trip report walked about two miles past Copper Creek camp to a hidden path by a cairn and crossed the river to the Easy Ridge trail; a third crossed the river on a log to reach it. None leave the trail at the pass.",
+   "sources": [
+    "https://www.summitpost.org/mount-challenger/151237",
+    "https://onehikeaweek.com/2020/06/26/easy-ridge/",
+    "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "At the pass, leave the maintained trail: a boot path/climbers' route (watch for a cut-log marker at the unsigned junction \u2014 parties have noted the turnoff is easy to miss) breaks off toward Easy Ridge rather than continuing down to Boundary Camp/Chilliwack River. From here it is sustained cross-country travel:",
+     "replace": "From the pass, stay on the maintained trail as it drops past Boundary Camp and Copper Creek Camp into the Chilliwack valley; roughly two miles beyond Copper Creek an easily missed side path leads down to the Chilliwack River ford (about 2,750 ft), and the Easy Ridge path climbs steeply from the far bank. From here it is sustained, largely cross-country travel:",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Where to leave the maintained trail after Hannegan Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Ascent rappels vs descent rappels; descent line",
+   "verdict": "fixed",
+   "correct_value": "Both rappels (~25 m at the P7 gendarme, ~30 m off the last hoodoo tower) are made on the ascent; the ~600 ft of 3rd/low-5th above is climbed up to the summit; the descent goes down the east-side slopes (steep snow in a big-snow year) back toward camp.",
+   "evidence": "The first-ascent journal report says the party made a 30 m rappel off a distinct tower, then simul-climbed about 600 ft of 4th and low 5th class to the summit, and descended steep snow slopes to the east. The first ascensionist's own pitch-by-pitch account lists both the 25 m and 30 m rappels during the ascent and says the 600 ft after the last rappel was simul-climbed to the summit.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216382",
+    "https://www.theclimbingguides.com/post/spirited-away-first-ascent-of-the-south-ridge-of-spectre-peak-2000-5-8"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      11,
+      "notes"
+     ],
+     "find": "then downclimb roughly 600 ft",
+     "replace": "then simul-climb roughly 600 ft",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Ascent rappels vs descent rappels; descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Key technical rappel of the descent, from the final hoodoo tower down to a grassy ledge system, within the ~600 ft downclimb from the summit.",
+     "replace": "Key technical rappel of the ascent, from the final hoodoo tower down to a grassy ledge system, below the last ~600 ft of scrambling to the summit.",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Ascent rappels vs descent rappels; descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "find": "30m rappel off the summit to a grassy ledge system to start the way down.",
+     "replace": "Leave the summit down the east-side slopes (steep snow in a big-snow year, loose talus later) toward camp.",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Ascent rappels vs descent rappels; descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "note"
+     ],
+     "find": "Continue down from the summit rappel through roughly 600 ft of 3rd-class (with a couple of low-5th moves) and a final 100 ft of easy 5th class back to the approach camp,",
+     "replace": "Finish the descent down Spectre's east-side slopes back to the approach camp,",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Ascent rappels vs descent rappels; descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      3,
+      "note"
+     ],
+     "find": "Continue down from the summit rappel through roughly 600 ft of 3rd-class (with a couple of low-5th moves) and a final 100 ft of easy 5th class back to the approach camp,",
+     "replace": "Finish the descent down Spectre's east-side slopes back to the approach camp,",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Ascent rappels vs descent rappels; descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "schedule",
+      0,
+      "label"
+     ],
+     "find": "Finish rappels/downclimb to camp",
+     "replace": "Finish the descent to camp",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Ascent rappels vs descent rappels; descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "From the summit, downclimb roughly 600 ft of 3rd-class terrain with a couple of low-5th-class moves (the FA party called the upper section 'glory 5.0 terrain') back down through the ridge's hoodoo/tower section. Within that section is the route's key rappel: a single ~30-meter rappel from the final hoodoo tower down to a grassy ledge system. A second, lower rappel of about 25 meters has also been reported past an exposed gendarme roughly at the Pitch 7 band on the west side of the ridge \u2014 parties should carry a single 60m rope (or two ropes) and be ready for up to two short technical rappels, though in some conditions the lower one can reportedly be avoided/downclimbed.",
+     "replace": "The descent does not reverse the ridge. Both of the route's rappels \u2014 about 25 m into the gap at the Pitch 7 gendarme and about 30 m off the final hoodoo tower \u2014 are made on the way up, below the last ~600 ft of scrambling to the top, so a single 60 m rope covers them.",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Ascent rappels vs descent rappels; descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Below the rappels/downclimbing, the descent drops onto",
+     "replace": "From the summit, the descent drops onto",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Ascent rappels vs descent rappels; descent line"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Rope note describes the Haunted Wall",
+   "verdict": "fixed",
+   "correct_value": "The rope note should describe this 12-pitch ridge: a single 60 m rope for two short ascent rappels.",
+   "evidence": "The Haunted Wall report describes ~800 ft of runout climbing into a chimney, one rappel into a notch and exposed face climbing \u2014 exactly the rope_note text \u2014 while the South Ridge first-ascent accounts describe 12 pitches with 25 m and 30 m rappels on a single rope.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200713001/North-America-United-States-Washington-Cascade-Range-Spectre-Peak-Haunted-Wall",
+    "https://www.theclimbingguides.com/post/spirited-away-first-ascent-of-the-south-ridge-of-spectre-peak-2000-5-8",
+    "http://publications.americanalpineclub.org/articles/13201216382"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "~800ft of runout climbing into a chimney, a rappel into a notch, then exposed face climbing to a gendarme.",
+     "replace": "12 pitches of ridge climbing with two short rappels on the way up (about 25 m and 30 m), which a single 60 m rope covers.",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Rope note describes the Haunted Wall"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "Grade IV.",
+   "evidence": "The first-ascent journal report grades Spirited Away IV 5.9, and a 2025 repeat trip report is titled IV, 5.9; only PARTNER REQUIREMENTS said Grade III.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216382",
+    "https://cascadeclimbers.com/forum/topic/108156-tr-spectre-peak-spirited-away-iv-59-~2000-ft-10-pitches-07072025/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "for the Grade III climb itself",
+     "replace": "for the Grade IV climb itself",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Commitment grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      4
+     ],
+     "find": "to complete a Grade III route",
+     "replace": "to complete a Grade IV route",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Commitment grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Round-trip gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first ascensionist's own write-up gives 46 miles and 17,500 ft of total gain for the trip, which the approach text repeats; the stored gain_ft 8,100 is only this row's itinerary day-sum. The journal report gives no gain figure, and no second source was found for this route, so gain_ft is not changed.",
+   "sources": [
+    "https://www.theclimbingguides.com/post/spirited-away-first-ascent-of-the-south-ridge-of-spectre-peak-2000-5-8",
+    "http://publications.americanalpineclub.org/articles/13201216382"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Crux pitch number",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The sources disagree: the first-ascent journal report says the crux (short overhanging 5.9 choss) came on the second pitch, matching the schedule's P2, while the first ascensionist's pitch-by-pitch account puts the 5.9R crux on pitch 3, matching pitch_detail and beta. Left as is.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216382",
+    "https://www.theclimbingguides.com/post/spirited-away-first-ascent-of-the-south-ridge-of-spectre-peak-2000-5-8"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Chilliwack ford elevation",
+   "verdict": "fixed",
+   "correct_value": "About 2,750 ft, roughly 9 mi from the trailhead.",
+   "evidence": "A published Challenger approach gives the Chilliwack River crossing as 2,750 ft and 9 miles from the car; a separate Easy Ridge trip report gives the river-level low point as about 2,700 ft and describes it as about two miles past Copper Creek camp (itself ~7.3 mi in). The 3,600 ft pin elevation and 7 mi distance conflict with both and with the row's own directions (the ford is below the ~3,000 ft Copper Creek area).",
+   "sources": [
+    "https://www.summitpost.org/mount-challenger/151237",
+    "https://onehikeaweek.com/2020/06/26/easy-ridge/",
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 3600,
+     "value": 2750,
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Chilliwack ford elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 7,
+     "value": 9,
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Chilliwack ford elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "find": "this low point at 3,600 ft",
+     "replace": "this low point at about 2,750 ft",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Chilliwack ford elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Range named as Southern Pickets / Terror group",
+   "verdict": "fixed",
+   "correct_value": "Northern Pickets (neighbours Phantom, Ghost, Crooked Thumb, Challenger).",
+   "evidence": "Spectre is listed among the Northern Pickets peaks (Crooked Thumb, Phantom, Ghost, Spectre, Fury) and lies on the Northern Pickets traverse line; the Terror group is in the Southern Pickets.",
+   "sources": [
+    "https://drdirtbag.com/2017/08/08/northern-pickets-traverse-east-fury-to-challenger-vi-5-7-28h32/",
+    "https://publications.americanalpineclub.org/articles/12200615400",
+    "http://publications.americanalpineclub.org/articles/13201216382"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "in the Southern Pickets",
+     "replace": "in the Northern Pickets",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Range named as Southern Pickets / Terror group"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "Combine with neighboring Terror-group towers",
+     "replace": "Combine with neighboring Northern Pickets summits",
+     "id": "wa_spectre_peak_south_route",
+     "fact": "Range named as Southern Pickets / Terror group"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "fact": "Permit: access.permit offers advance reservation for a walk-up-only approach",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "access.permit says advance reservations are available via recreation.gov or email, while the bivy entries say the camps are walk-up. The park reserves only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes among cross-country zones, but it is not established which zone(s) the Easy Ridge and Phantom Peak camps fall in, so no change is made.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

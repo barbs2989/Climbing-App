@@ -1,0 +1,47 @@
+{"file": "r586.json", "results": [
+ {"id": "wa_mount_worthington_standard", "fact": "Parking pass at the Tubal Cain Trailhead", "verdict": "fixed",
+  "correct_value": "No parking pass or fee is required at the Tubal Cain Trailhead; a free self-issued wilderness permit is filled out at the trailhead.",
+  "evidence": "The Olympic National Forest recreation-site page for Tubal Cain Trailhead states no fees are required for the site. The WTA hike page for Tubal Cain Mine to Buckhorn Lake states no parking pass is needed and a free self-issued wilderness permit is required at the trailhead. access.fees and access.parking_pass were already right; access.overnight_permit.where was the outlier. bivy[0].permit also wrongly claims a NW Forest Pass is needed, but bivy is owned by the camping clean-up and is not patched here.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/tubal-cain-trailhead", "https://www.wta.org/go-hiking/hikes/tubal-cain-mine-and-buckhorn-lake"],
+  "patches": [
+   {"id": "wa_mount_worthington_standard", "fact": "Parking pass at the Tubal Cain Trailhead", "op": "replace_text", "column": "access", "path": ["overnight_permit", "where"], "find": "Camps outside Olympic National Park need no permit; a recreation pass is required to park at the national forest trailheads.", "replace": "Fill out the free self-issued wilderness permit at the Tubal Cain Trailhead register; no parking pass is needed at this trailhead."}
+  ]},
+ {"id": "wa_mount_worthington_standard", "fact": "Entrance fee / overnight permit", "verdict": "fixed",
+  "correct_value": "No entrance or parking fee; the only requirement is the free self-issued wilderness permit at the trailhead register (no quota or reserved overnight permit).",
+  "evidence": "The Forest Service trailhead page says no fees apply at Tubal Cain Trailhead (so no 'entrance fee'). WTA confirms no parking pass and that a free self-issued wilderness permit is required at the trailhead. access.notes (Rainier boilerplate about an entrance fee) and access.overnight_permit.what ('No overnight permit required') are rewritten to agree with access.permit.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/tubal-cain-trailhead", "https://www.wta.org/go-hiking/hikes/tubal-cain-mine-and-buckhorn-lake"],
+  "patches": [
+   {"id": "wa_mount_worthington_standard", "fact": "Entrance fee / overnight permit", "op": "replace_text", "column": "access", "path": ["notes"], "find": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.", "replace": "No climbing fee, entrance fee or parking fee — only the free self-issued wilderness permit at the trailhead register applies."},
+   {"id": "wa_mount_worthington_standard", "fact": "Entrance fee / overnight permit", "op": "replace_text", "column": "access", "path": ["overnight_permit", "what"], "find": "No overnight permit required in the Buckhorn Wilderness", "replace": "No quota or reserved overnight permit in the Buckhorn Wilderness; the free self-issued trailhead permit is the only one needed"}
+  ]},
+ {"id": "wa_mount_worthington_standard", "fact": "Trail gain to the Buckhorn Lake spur", "verdict": "fixed",
+  "correct_value": "Roughly 1,900 ft of trail gain from the ~3,300 ft trailhead to the ~5,200 ft Buckhorn Lake spur; same figure lost on the walk out.",
+  "evidence": "The Forest Service Tubal Cain Trail #840 information puts the trailhead near 3,250 ft; WTA gives a 5,200 ft high point at the Buckhorn Lake side trail (5.7 mi) with about 2,000 ft of gain, and another trail guide puts the split at 5,185 ft. The row's own waypoints (3,300 and 5,200) agree; the 2,800 ft figure in approach and descent_text is the outlier. gain_ft (4,600 car to car) is untouched and consistent with published whole-trip figures of ~4,450-5,075 ft.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/trails/tubal-cain-trail-840", "https://www.wta.org/go-hiking/hikes/tubal-cain-mine-and-buckhorn-lake", "http://www.protrails.com/trail/659/olympic-national-park-buckhorn-lake"],
+  "patches": [
+   {"id": "wa_mount_worthington_standard", "fact": "Trail gain to the Buckhorn Lake spur", "op": "replace_text", "column": "approach", "path": [], "find": "gaining roughly 2,800 ft over the first ~5.5-6 miles", "replace": "gaining roughly 1,900 ft over the first ~5.5-6 miles"},
+   {"id": "wa_mount_worthington_standard", "fact": "Trail gain to the Buckhorn Lake spur", "op": "replace_text", "column": "descent_text", "path": [], "find": "~5.5-6 mile, ~2,800 ft-loss walk out", "replace": "~5.5-6 mile, ~1,900 ft-loss walk out"}
+  ]},
+ {"id": "wa_mount_worthington_standard", "fact": "Summit block difficulty", "verdict": "fixed",
+  "correct_value": "Class 3 summit block (route otherwise Class 2).",
+  "evidence": "Wikipedia gives the easiest route as a class 3 scramble; a Mountaineers trip report describes the route as all class 2 except the class 3 Worthington summit block; the SummitPost page likewise rates the summit fin an easy class 3 scramble with some exposure. The only 'class 3/4' mention found refers to the combined Iron Mountain ridge terrain, not Worthington's summit step. descent_text's 'class 3-4' is the outlier against grade/rock_grade/approach.",
+  "sources": ["https://en.wikipedia.org/wiki/Mount_Worthington_(Washington)", "https://www.mountaineers.org/activities/trip-reports/ne-mount-worthington-mount-worthington", "https://www.summitpost.org/mount-worthington/781252"],
+  "patches": [
+   {"id": "wa_mount_worthington_standard", "fact": "Summit block difficulty", "op": "replace_text", "column": "descent_text", "path": [], "find": "a class 3-4 face with good holds", "replace": "a class 3 face with good holds"}
+  ]},
+ {"id": "wa_mount_worthington_standard", "fact": "Summit block size", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "Both are true and describe different things: the summit block is about 40 ft, and the route up it reaches a short ~10 ft easy crack a few feet left of the crest before following the top of the fin. Published route descriptions give both figures together.",
+  "sources": ["https://www.summitpost.org/mount-worthington/781252", "https://www.mountaineers.org/activities/routes-places/mount-worthington"],
+  "patches": []},
+ {"id": "wa_mount_worthington_standard", "fact": "Season end", "verdict": "bivy_zone_list",
+  "correct_value": "Jul-Sep (season, best_season, seasonal_guidance agree)",
+  "evidence": "The only outlier is bivy[0].notes ('Best from July into October'); bivy is owned by the camping clean-up, so no patch. The Buckhorn Lake camp does serve this route.",
+  "sources": [],
+  "patches": []},
+ {"id": "wa_mount_worthington_standard", "fact": "Which stream is crossed at Buckhorn Lake", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Sources agree the route passes around the south end of Buckhorn Lake. One source (a lake trail description) says continuing beyond the lake requires crossing the inlet waterfall at its head; a Mountaineers trip report says the party crossed the lake outlet and traversed around the south end. No two sources agree on one crossing, and both may be crossed on different lines. The approach text is left alone; the disputed 'outlet' wording lives only in bivy[0].notes, which is not patched here.",
+  "sources": ["https://www.mountaineers.org/activities/trip-reports/ne-mount-worthington-mount-worthington", "https://www.fs.usda.gov/r06/olympic/recreation/trails/buckhorn-lake-trail-845"],
+  "patches": []}
+]}

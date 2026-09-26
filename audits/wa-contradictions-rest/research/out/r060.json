@@ -1,0 +1,457 @@
+{
+ "file": "r060.json",
+ "results": [
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Three row fields say Grade III and the commitment chip says II. The 2004 AAJ account of the Southern Picket Enchainment gives Frenzlespitz as \"II 5.6\", which supports the outlier rather than the majority; no second source for either numeral was found, so nothing is changed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)",
+   "verdict": "fixed",
+   "correct_value": "From the Ottohorn-Himmelhorn col, descend roughly 500 ft on the north side (below Ottohorn's north face) to the foot of Frenzel Spitz's south face, then climb it; no crest traverse over Ottohorn.",
+   "evidence": "The 1962 AAJ first-ascent account says Frenzelspitz sits off the main chain close under the north face of Ottohorn and that the party had to descend about 500 ft of that face to gain access. A 2011 enchainment report describes rappelling the broken couloir and glacier off the north side of the Himmelhorn/Ottohorn col to reach the south face of Frenzelspitz. Both agree with the approach text and summit directions; the itinerary day 3, summit note, col note, pro_needs and overview were the outliers.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets",
+    "http://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-6.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "then following Ottohorn's east ridge and connecting terrain (short roped/low-5th pitches where the ridge steepens) over to Frenzel Spitz's summit block.",
+     "replace": "then rappelling and downclimbing roughly 500 ft of broken couloir and glacier/moat terrain off the col's north side to the foot of Frenzel Spitz's south face, and climbing its 5.6 rock to the summit.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "title"
+     ],
+     "expect": "Summit push: Ottohorn - Frenzel Spitz",
+     "value": "Summit push: over the col to Frenzel Spitz",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "objective"
+     ],
+     "expect": "Climb Ottohorn's east ridge to the Ottohorn-Himmelhorn col and continue to Frenzel Spitz",
+     "value": "Cross the Ottohorn-Himmelhorn col, descend its north side and climb Frenzel Spitz",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      2,
+      "label"
+     ],
+     "expect": "Climb Ottohorn's east ridge",
+     "value": "Descend the north side of the col",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Short low-5th-class pitches to gain the ridge crest.",
+     "value": "Rappel the steep step below the col, then downclimb broken couloir and glacier/moat ground, roughly 500 ft in all.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      3,
+      "label"
+     ],
+     "expect": "Traverse to Frenzel Spitz",
+     "value": "Reach the South Route",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "expect": "Connecting ridge/scramble terrain between the two summits.",
+     "value": "Get from the glacier edge onto rock at the foot of the south face; the moats here can be hard to cross late in the season.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "expect": "Reverse the ridge and col descent, rappelling short steps as needed.",
+     "value": "Reclimb the ~500 ft to the col, then descend the friendlier Crescent Creek side to camp.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "then following Ottohorn's east ridge and connecting terrain (short rope…",
+     "replace": "then descending roughly 500 ft off the col's north side to the foot of Frenzel Spitz's south face…",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "fromTo"
+     ],
+     "expect": "Summit push: Ottohorn - Frenzel Spitz",
+     "value": "Summit push: over the col to Frenzel Spitz",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "expect": "True summit gained via 5.6 rock along the connecting ridge from the col; descend by reversing the ridge and downclimbing/rappelling back to the col.",
+     "value": "True summit gained via 5.6 rock on the south side after descending about 500 ft from the col; return the same way, reclimbing to the col.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "the South Route ridge to Frenzel Spitz departs from here.",
+     "replace": "the descent toward Frenzel Spitz's South Route drops off its north side from here.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "is only reachable after first gaining Ottohorn via the Ottohorn–Himmelhorn col",
+     "replace": "is only reachable by crossing the Ottohorn–Himmelhorn col and descending about 500 ft below Ottohorn's north face",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "for the connecting ridge/snowfield sections between Ottohorn and Frenzel Spitz.",
+     "replace": "for the glacier, moat and snow ground below the north side of the Ottohorn-Himmelhorn col.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "on the Frenzel Spitz side to reach the base",
+     "replace": "on the north (Frenzel Spitz) side to reach the base",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Line from the col to Frenzel Spitz (via Ottohorn vs downclimb from col)"
+    }
+   ]
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Which side of the Ottohorn-Himmelhorn col leads to Frenzel Spitz / back to camp",
+   "verdict": "fixed",
+   "correct_value": "The south (Crescent Creek) side is the way up from and back to camp; the north side (broken couloir, glacier and moats, usually rappelled) is the way down to Frenzel Spitz.",
+   "evidence": "The first-ascent account places Frenzelspitz below Ottohorn's north face and reached by a 500 ft descent of that face; a 2011 report rappelled the couloir and glacier off the north side of the col to reach Frenzelspitz's south face. A Pickets reference page confirms the north side of the col is loose, tricky 5th class and the south side is friendlier. So the base-finding claim that the north side leads away from Frenzel Spitz is wrong, and descent_text wrongly routed the return to Crescent Creek Basin down the north side.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets",
+    "http://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-6.html",
+    "https://stephabegg.com/trip-reports/washington/pickets/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "If the ground below you needs a rope to descend, you are on the north side and you are heading for the Mustard Glacier, not Frenzel Spitz.",
+     "replace": "That north side is the way to Frenzel Spitz, which sits under Ottohorn's north face: the 500 ft descent to the route's base goes down it, and the friendly Crescent Creek side is only the way up to the col and back to camp.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Which side of the Ottohorn-Himmelhorn col leads to Frenzel Spitz / back to camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "directions"
+     ],
+     "find": "the side that guards it from the north is sustained loose 5th class, so do not plan on reversing it that way.",
+     "replace": "the north side, which drops toward Frenzel Spitz, is sustained loose 5th class, with a steep step that is usually rappelled on the way down and has to be reclimbed on the way back.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Which side of the Ottohorn-Himmelhorn col leads to Frenzel Spitz / back to camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "From the col, the descent onto the north side drops into a broken couloir and glacier/moat terrain",
+     "replace": "On the way in, the descent from the col onto its north side drops into a broken couloir and glacier/moat terrain",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Which side of the Ottohorn-Himmelhorn col leads to Frenzel Spitz / back to camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Once back down into Crescent Creek Basin, retrace the approach traverse",
+     "replace": "Once back on the col, descend its friendlier south side into Crescent Creek Basin, then retrace the approach traverse",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Which side of the Ottohorn-Himmelhorn col leads to Frenzel Spitz / back to camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Descent / rappel location and count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The two claims describe different places (summit gully vs the step below the col), so they are not strictly incompatible, but the RAPPELS text never mentions the col rappel and its summit-gully raps, 70 m option and \"Crossover Descent\" could not be confirmed by any source. The only sourced rappel is off the north side of the Otto-Himmel col (2011 report). No patch without a second source.",
+   "sources": [
+    "http://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-6.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Barrier difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources genuinely vary: a Pickets reference calls both Barrier crossings \"classic Pickets Class 3\" (loose, can be death-defying when wet); other reports call it \"serious Class 3\" or describe crossing a moat onto low-fifth-class terrain. No two sources agree on a single rating, so the row's 3rd/4th/low-5th spread is left as is.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/",
+    "https://www.summitpost.org/mount-terror/155359"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Crescent Creek Basin camp elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Parties camp on several benches: one description keeps to the ~5,800 ft band, another reports a flat area below Mount Terror at about 6,050 ft. No two sources agree on one camp elevation, so 5,900 / 6,050 / 6,200 are left unchanged.",
+   "sources": [
+    "https://www.summitpost.org/mount-terror/155359",
+    "https://stephabegg.com/trip-reports/washington/pickets/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Glacier travel on the route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The rock climb is not glaciated, but the approach below the north side of the col crosses glacier and moat terrain.",
+   "evidence": "pro_needs, detailed_rack and seasonal_hazards.crevasses all describe glacier/moat crossings; the 2011 report describes rappelling onto a glacier off the north side of the col and being stopped by moats and glacier edges that would not hold body weight. Only the avalanche panel label \"non-glaciated\" disagreed.",
+   "sources": [
+    "http://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-6.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer rock route;",
+     "replace": "N/A - the rock climb itself is not glaciated, though the approach below the col crosses glacier and moat terrain;",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Glacier travel on the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Road seasonality",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "SR-20 to Newhalem stays open in winter and Goodell Creek Campground is open year-round (first-come outside the peak season), which supports access.closures. But whether the spur through the Upper Goodell group camp to the old roadbed is gated in winter could not be confirmed, and that may be what road.seasonalGate refers to; left unchanged.",
+   "sources": [
+    "https://www.recreation.gov/camping/campgrounds/246852",
+    "https://www.nps.gov/noca/planyourvisit/goodell-creek-campground.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Permit reservability and pickup",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin and Crescent Creek are walk-up-only cross-country zones (not reservable in advance); the permit is issued in person at the Marblemount Wilderness Information Center the day of or the day before the trip.",
+   "evidence": "The park's backcountry-reservations page says only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes cross-country zones can be reserved and the rest are walk-up only; the park's cross-country zone table lists both Terror Basin and Crescent Creek as walk-up only, 6 per party. The permits page says walk-up permits are issued the day of or day before, most must be picked up in person, and email walk-up permits apply only to other trailheads (Baker Lake, Mt Baker Hwy, Twisp); an independent permit guide agrees most walk-up sites need in-person pickup.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.backwoodsatlas.com/field-notes/north-cascades-backcountry-permits.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Terror Basin and Crescent Creek zones are walk-up only, issued in person at the Marblemount Wilderness Information Center the day of or the day before the trip)",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Permit reservability and pickup"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "reserve dates in advance on Recreation.gov, watch the mandatory safety video, then collect the printed/signed permit in person at the Wilderness Information Center in Marblemount (walk-up/email permits are not issued for this destination).",
+     "replace": "these zones cannot be reserved in advance, so watch the mandatory safety video and collect the printed/signed walk-up permit in person at the Wilderness Information Center in Marblemount the day of or the day before the trip (email permits are not issued for this destination).",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Permit reservability and pickup"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "These zones are walk-up only: get the permit in person at the Marblemount Wilderness Information Center the day of or the day before the trip.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Permit reservability and pickup"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "replace": "the remaining 40% are walk-up, obtained in person the day of or the day before at the Wilderness Information Center in Marblemount. The Terror Basin and Crescent Creek zones are not among the reservable ones and are walk-up only.",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Permit reservability and pickup"
+    }
+   ]
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Rock quality",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Loose rock is the rule; there is no \"solid gneiss\" promise.",
+   "evidence": "hazards, gear, obj_haz and watch_out all describe loose rock and rockfall, and a Pickets reference describes the terrain around these basins as loose \"Pickets Class 3\" and steep choss. Only the pro tip praised solid rock.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "expect": "Enjoy the cluster's solid gneiss",
+     "value": "Test every hold; the rock is often loose",
+     "id": "wa_frenzel_spitz_south_route",
+     "fact": "Rock quality"
+    }
+   ]
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Which basin is the base for McMillan/Inspiration",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Only bivy[0].notes disagrees (it names Crescent Creek Basin as the McMillan/Inspiration base); approach and baseFinding correctly name Terror Basin. bivy[] is owned by the camping clean-up; for this route Crescent Creek Basin camp is the right base, Terror Basin, Stump Hollow, the roadbed and Goodell Creek are on-route stops, and the McMillan/Inspiration wording in bivy[0] belongs to other routes.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Round-trip distance vs dist_km",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 14.48 km is the 9 mi one-way distance (matches the summit waypoint distMi 9); the approach and itinerary give the ~18 mi round trip.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "fact": "Peak location vs col distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit pin sits well west of approach_logistics' peak coordinate and of the col pin. Coordinates are out of scope for this pass and the peak-listing page with the coordinate could not be loaded; flagged for the pin audits only.",
+   "sources": [
+    "https://peakbagger.com/peak.aspx?pid=38253"
+   ],
+   "patches": []
+  }
+ ]
+}

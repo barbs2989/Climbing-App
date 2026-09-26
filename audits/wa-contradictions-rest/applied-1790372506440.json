@@ -1,0 +1,192 @@
+{
+ "applied": [
+  {
+   "id": "wa_little_sister_north_face",
+   "column": "permit",
+   "path": [],
+   "fact": "Private/DNR land and parking pass"
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "column": "what_to_bring",
+   "path": [
+    0
+   ],
+   "fact": "Water above Green Creek"
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "column": "permit",
+   "path": [],
+   "fact": "Private/DNR land and parking pass"
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "column": "what_to_bring",
+   "path": [
+    0
+   ],
+   "fact": "Water above Green Creek"
+  },
+  {
+   "id": "wa_little_sister_southeast_ridge",
+   "column": "what_to_bring",
+   "path": [
+    0
+   ],
+   "fact": "Water above Green Creek"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Which col separates Little Sister from Cinderella"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "beta",
+   "path": [],
+   "fact": "Rappel amount on the descent"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rappel amount on the descent"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Rappel amount on the descent"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Rappel amount on the descent"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Rappel amount on the descent"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Rappel amount on the descent"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "emergency",
+   "path": [
+    "notes"
+   ],
+   "fact": "Whether the line has a standalone ascent"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "hazards",
+   "path": [
+    2
+   ],
+   "fact": "Whether the line has a standalone ascent"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "permit",
+   "path": [],
+   "fact": "Private/DNR land and parking pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_little_sister_north_face",
+   "before": {
+    "permit": "No climbing permit; the approach crosses private and DNR timberland - check current access, and carry a Discover Pass where parking on DNR land.",
+    "what_to_bring": [
+     "Water — none reliable above Green Creek",
+     "Helmet for rockfall and the moat crossing",
+     "Extra layers for glacier travel",
+     "Sun protection"
+    ]
+   }
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "before": {
+    "permit": "No climbing permit; the approach crosses private and DNR timberland - check current access, and carry a Discover Pass where parking on DNR land.",
+    "what_to_bring": [
+     "Water — none above Green Creek",
+     "Extra layers for a long day on an exposed face",
+     "Sun protection"
+    ]
+   }
+  },
+  {
+   "id": "wa_little_sister_southeast_ridge",
+   "before": {
+    "what_to_bring": [
+     "Water — none above Green Creek",
+     "Helmet",
+     "Extra layers for exposed ridge climbing"
+    ]
+   }
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Green Creek Glacier to the 6,240+ ft col southeast of the summit, then round onto the south side",
+      "notes": "From the Elbow Lake Trailhead on Forest Road 38, Elbow Lake Trail #697 reaches the Middle Fork Nooksack within a few minutes. THE BRIDGE IS GONE and has been for decades — the Forest Service states plainly that there is no bridge to the north trailhead and that fording may not be possible at high flows. Parties cross on whatever log is currently there: one recorded party used a log roughly 200 yards east of the trail junction, another an unofficial log about a quarter mile downstream of the usual crossing. Assume you will have to hunt for it and treat the crossing as the most consequential thing you do all day.\n\nOnce across, follow Elbow Lake Trail — reported in remarkably good shape — through old growth for about 1.5 miles. Just before a sharp switchback near Hildebrand Creek, find the blazed Green Creek climbers' path branching off up the Green Creek drainage, marked with small blue diamonds.\n\nFollow it past the Wiseman Lake outlet at about 2,850 ft, up through the brush-filled valley, past a rock buttress around 3,800 ft, and onto loose scree, boulder fields and rolling slabs with Class 3 scrambling to gain the Green Creek Glacier. That is roughly five miles one way and 4,000 ft of gain from the trailhead.\n\nIn deep winter, snowshoes have been left at the snow line and crampons carried from there.",
+      "season": "Roughly Jan-May. This is a snow line and a winter ascent of it is on record; in deep winter parties have found hard snow all the way to the col",
+      "hazards": [
+       "A bridgeless Middle Fork Nooksack crossing that must be hunted for and is the day's biggest consequence",
+       "A south-facing snow gully — timing matters and it warms",
+       "A line with no recorded climbing first ascent and very little traffic",
+       "Over 100 m of rappelling recorded on the descent, including a knot pass",
+       "Loose scree, boulder fields and Class 3 slabs to reach the glacier"
+      ],
+      "baseFinding": "THE COL SOUTHEAST OF THE SUMMIT, AT 6,240 FT OR A LITTLE ABOVE, IS THE HINGE OF THE WHOLE ROUTE — AND THE COULOIR IS ON THE FAR SIDE OF IT. From the basin, climb snow to that col. Then TRAVERSE ONTO THE SOUTH SIDE and up into the gully. Nothing on the Green Creek side of the col is this route; you have to go over.\n\nSO THE TEST IS AN ASPECT FLIP, WHICH IS THE MOST RELIABLE KIND IN CLOUD. You approach on the NORTH-facing Green Creek side, in shade, on the glacier. You climb on the SOUTH side, out of the basin you walked in through. If you are still looking at the glacier you came up, you have not crossed the col.\n\nCONFIRM THE COL BY ITS NUMBER AND ITS POSITION: 6,240+ ft, and SOUTHEAST of the summit. A col northwest or west of the summit is the Cinderella-Little Sister ground and belongs to other routes.\n\nWINTER CHANGES WHERE THE APPROACH ENDS, NOT WHERE THE ROUTE STARTS. In deep winter, hard snow has run continuously to the col, which makes the walk simpler and the col no less the marker.\n\nBE CLEAR ABOUT THE RECORD ON THIS LINE, because it affects what you should expect to find: no rock or ice first ascent is recorded. What is documented is a ski descent of the line during a traverse of the range, and a party in January 2015 reporting a suspected first winter ascent of the peak by this south-side ground. It has been descended with more than 100 m of rappelling including a fixed final rappel requiring a knot pass. That is not a well-trodden route with a bootpack in it."
+     }
+    ],
+    "beta": "This line was skied as part of a multi-day (May 12-14) south-to-north ski traverse of the Twin Sisters Range by Chris Simmons, Mark Allen, Greg Balco, and Paul Kimbrough. The traverse's technical crux involved roughly 40 m of 4th-class rock followed by 100+ m of 50-degree ice and mixed terrain, with the descent of Little Sister's South Couloir singled out as the trip's best line; the descent required 100+ meters of rappelling, including a fixed final rappel with a knot pass.",
+    "descent_text": "Descended (not climbed) as part of the range traverse using 100+ meters of rappelling, including a fixed final rappel requiring a knot pass.",
+    "watch_out": [
+     "Steep 50-degree ice/mixed terrain with a multi-rappel descent, including a fixed final rappel requiring a knot pass, per the only account found."
+    ],
+    "hazards": [
+     "Steep snow/ice couloir terrain (up to ~50 degrees).",
+     "Multi-pitch rappelling required to descend, with limited/fixed anchor options on at least one rappel.",
+     "Documented only as part of a larger, remote multi-day traverse — rescue access would be very limited."
+    ],
+    "emergency": {
+     "notes": "Extremely remote, multi-day traverse terrain — this line is only documented as part of a larger range traverse, not as a standalone day route.",
+     "county": "Whatcom County, WA",
+     "rangerStation": "Mount Baker Ranger District, 810 State Route 20, Sedro-Woolley, WA 98284 — (360) 854-2553",
+     "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham, WA — (360) 734-5400",
+     "sheriffDispatch": null
+    },
+    "permit": "No climbing permit; the approach crosses private and DNR timberland - check current access, and carry a Discover Pass where parking on DNR land."
+   }
+  }
+ ]
+}

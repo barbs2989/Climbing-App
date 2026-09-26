@@ -1,0 +1,188 @@
+{
+ "applied": [
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "Summit / high point elevation"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Rope"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "rack",
+   "path": [
+    3
+   ],
+   "fact": "Rope"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rope"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "emergency",
+   "path": [
+    "county"
+   ],
+   "fact": "County / emergency jurisdiction"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "emergency",
+   "path": [
+    "notes"
+   ],
+   "fact": "County / emergency jurisdiction"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "County / emergency jurisdiction"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "emergency",
+   "path": [
+    "sheriffDispatch"
+   ],
+   "fact": "County / emergency jurisdiction"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager / pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_blue_s_buttress",
+   "before": {
+    "approach": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass to Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead. Park at the Blue Lake Trailhead (about 5,200 ft, Northwest Forest Pass required), on the south side of the highway roughly 1.5 miles west of the Washington Pass overlook. Follow the Blue Lake Trail #314 about 1.5 miles to a small meadow, then branch off left onto the well-worn climbers' path, which climbs steeply through slabs, talus, and meadow (with short 3rd-class scrambling) into the basin below the Liberty Bell Group — roughly 3 miles and 2,000 ft of gain, 1.5-2.5 hours total. The classic Beckey Route starts from the notch (about 7,300 ft) between Liberty Bell and Concord Tower, reached via the gully splitting off the climbers' path.",
+    "approach_logistics": {
+     "peakLat": 48.50271,
+     "peakLng": -120.63726,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass to Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead."
+    },
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5477,
+      "name": "Blue Lake Trailhead (SR-20)",
+      "note": "Approximate — park at/near the Hairpin pullout on SR-20 just west of Washington Pass; exact pullout GPS not independently confirmed.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.50271,
+      "lng": -120.63726,
+      "elev": 7840,
+      "name": "Poster Peak - Summit",
+      "note": "Blue's Buttress, moderate 8-10 pitch route, short approach.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ],
+    "high_point_ft": 7565,
+    "gear": [
+     "Climbing cams #0.5-3",
+     "Nuts small to large",
+     "Large hexes",
+     "Two 70m ropes",
+     "Slings and carabiners",
+     "Rock shoes or climbing shoes",
+     "Approach shoes",
+     "Layers for alpine weather",
+     "Food and water",
+     "Sunscreen and hat"
+    ],
+    "rack": [
+     "Cams #0.5–3 (double set, emphasis #1–2.5)",
+     "Nuts, small-to-large set",
+     "Large hexes",
+     "Two 70m ropes (for simul-climbing)",
+     "6 alpine quickdraws",
+     "Slings and carabiners"
+    ],
+    "detailed_rack": "Bring a double set of cams from #0.5 to #3 (emphasis on #1-2.5), a set of nuts covering small to large sizes, and large hexes. Two 70-meter ropes are sufficient for simul-climbing most of the route. Approach shoes or light boots work well; approach is mostly 3rd class scrambling on talus.",
+    "emergency": {
+     "notes": "Skagit County Sheriff SAR covers this area. Cell service unreliable; satellite communicators recommended. Helicopter evacuation possible in emergencies; landing zones may be limited on the peak.",
+     "county": "Skagit County, Washington",
+     "rangerStation": "North Cascades National Park Ranger Station (Marblemount); Wenatchee National Forest ranger contacts available through USFS website",
+     "nearestHospital": "Skagit Valley Hospital, 300 Hospital Parkway, Mount Vernon, WA 98273; approximately 75 miles west (90 minute drive)",
+     "sheriffDispatch": "(360) 428-3211 (non-emergency); 911 for emergencies"
+    },
+    "access": {
+     "_raw": "Washington Pass hairpin turn parking area",
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "N/A",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    }
+   }
+  }
+ ]
+}

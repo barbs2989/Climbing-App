@@ -1,0 +1,440 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Side of the peak climbed"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Side of the peak climbed"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Side of the peak climbed"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Side of the peak climbed"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "overview",
+   "path": [],
+   "fact": "Summit elevation / which summit is highest"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "overview",
+   "path": [],
+   "fact": "Summit elevation / which summit is highest"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "hazards",
+   "path": [
+    2
+   ],
+   "fact": "Summit elevation / which summit is highest"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Summit elevation / which summit is highest"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Summit elevation / which summit is highest"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "waypoints",
+   "path": [
+    4,
+    "elev"
+   ],
+   "fact": "Marmot Lake elevation and distance above Upper Duckabush Camp"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Marmot Lake elevation and distance above Upper Duckabush Camp"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Marmot Lake elevation and distance above Upper Duckabush Camp"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "hazards",
+   "path": [
+    3
+   ],
+   "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "bail",
+   "path": [],
+   "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "descent",
+   "path": [],
+   "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "overview",
+   "path": [],
+   "fact": "Trail miles to Marmot Lake / O'Neil Pass"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Night-one camp identity"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Wilderness permit: self-issue vs reserved"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Wilderness permit: self-issue vs reserved"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Camp quota status"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Overnight permit text describes a different area"
+  }
+ ],
+ "rejected": [
+  {
+   "op": "replace_text",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "find": "Since the true high point is disputed, some peakbaggers tag both the main summit and the East Peak, ~3.4 miles away",
+   "replace": "Some peakbaggers also tag the slightly lower East Peak, roughly 0.3 miles from the main summit",
+   "id": "wa_mount_duckabush_standard",
+   "fact": "Summit elevation / which summit is highest",
+   "sources": [
+    "https://sites.google.com/site/climbersguideolympics/peaks/skokomish-duckabush-group/duckabush-mount",
+    "https://peakery.com/mount-duckabush-washington/",
+    "https://peakery.com/mount-duckabush-east-peak-washington/",
+    "https://en.wikipedia.org/wiki/Mount_Duckabush",
+    "https://peakvisor.com/peak/mount-duckabush.html"
+   ],
+   "why": "new text cites a source: peakbagger"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_mount_duckabush_standard",
+   "before": {
+    "itinerary": {
+     "cal": "As of mid-2026 the Duckabush Trail has been affected by Bear Gulch Fire closures/hazard-tree work in the Skokomish-Duckabush-Dosewallips area (some sections reopened in fall 2025, with mitigation work continuing into 2026) — check current NPS/USFS alerts before planning this trip.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Duckabush trailhead the trail is easy for the first ~2.4 mi, then climbs steeply and loosely over Big Hump before dropping back to the river. Camp at Ten Mile Camp (1,400 ft) beside the Duckabush River; there's a privy and multiple tent sites.",
+       "hours": 6.5,
+       "miles": 11,
+       "title": "Trailhead to Ten Mile Camp",
+       "gainFt": 2500,
+       "lossFt": 250,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Hike in via the Duckabush River Trail to Ten Mile (Upper Duckabush) Camp"
+      },
+      {
+       "n": 2,
+       "note": "The trail continues along the river with overgrown, root-and-blowdown sections, then climbs in earnest toward the park's alpine zone. The final mile up to Marmot Lake / the O'Neil Pass junction is steep and exposed underfoot. Camp near O'Neil Pass (~4,950 ft) or at Marmot Lake, both of which put Mount Duckabush's north/northwest slopes within striking distance.",
+       "hours": 6,
+       "miles": 8,
+       "title": "Ten Mile Camp to O'Neil Pass / Marmot Lake high camp",
+       "gainFt": 3200,
+       "lossFt": 1200,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Continue up-valley to a high camp near O'Neil Pass or Marmot Lake, below Mount Duckabush"
+      },
+      {
+       "n": 3,
+       "note": "Drop packs at camp and head cross-country toward the peak's northwest slopes/ridge, mixing heather benches, talus, and short class 2-3 scrambling to the summit (6,232-6,254 ft). Route-finding is the crux more than technical difficulty; parties typically pick a line up broken rock and heather rather than a single defined trail.",
+       "hours": 7,
+       "miles": 5,
+       "title": "Summit day: Mount Duckabush",
+       "gainFt": 1800,
+       "lossFt": 1800,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave high camp",
+         "detail": "Light daypack; leave the rest of camp set up."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Reach O'Neil Pass ridgeline / off-trail terrain",
+         "detail": "Pick up the cross-country line toward Duckabush's north side."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Summit",
+         "detail": "Class 2-3 scrambling on the upper mountain; watch for loose rock."
+        },
+        {
+         "time": "+5.5 hr",
+         "label": "Back at high camp",
+         "detail": "Reverse the ascent line; afternoon clouds/thunderstorms are common in summer."
+        }
+       ],
+       "objective": "Climb Mount Duckabush from high camp and return to camp"
+      },
+      {
+       "n": 4,
+       "note": "A long, mostly-downhill day retracing the full approach — over Big Hump one more time and back to the trailhead. Many parties start before dawn to beat the heat and finish with daylight to spare.",
+       "hours": 10,
+       "miles": 19,
+       "title": "Hike out",
+       "gainFt": 600,
+       "lossFt": 4650,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to the Duckabush trailhead"
+      }
+     ],
+     "totalNote": "A 4-day, 3-night trip: roughly 43 miles and ~7,900 ft of cumulative gain round-trip, with one full day (Day 3) dedicated to the class 2-3 off-trail summit push from a high camp near O'Neil Pass/Marmot Lake."
+    },
+    "timing": {
+     "totalHrs": 29.5,
+     "summitTimeHrs": 7,
+     "descentTimeHrs": 10,
+     "approachTimeHrs": 12.5,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "From the Duckabush trailhead the trail is easy for the first ~2.4 mi, then climbs steeply and loosely over Big Hump before dropping back to the river. Camp at Ten Mile Camp (1,400 …",
+       "fromTo": "Trailhead to Ten Mile Camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "The trail continues along the river with overgrown, root-and-blowdown sections, then climbs in earnest toward the park's alpine zone. The final mile up to Marmot Lake / the O'Neil …",
+       "fromTo": "Ten Mile Camp to O'Neil Pass / Marmot Lake high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 7,
+       "note": "Drop packs at camp and head cross-country toward the peak's northwest slopes/ridge, mixing heather benches, talus, and short class 2-3 scrambling to the summit (6,232-6,254 ft). Ro…",
+       "fromTo": "Summit day: Mount Duckabush",
+       "section": "Climb"
+      },
+      {
+       "hrs": 10,
+       "note": "A long, mostly-downhill day retracing the full approach — over Big Hump one more time and back to the trailhead. Many parties start before dawn to beat the heat and finish with day…",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "overview": "Mount Duckabush (6,232 ft) is a remote, multi-summit peak in the Skokomish–LaCrosse group of the central Olympic Mountains, within Olympic National Park's Daniel J. Evans Wilderness, on the divide between the Duckabush River headwaters and La Crosse Basin near Marmot Lake and O'Neil Pass. LIDAR survey data actually puts a subsidiary East Peak, about 3.4 miles NNE, roughly 7 ft higher (6,239 ft) than the traditionally-climbed main summit — parties chasing the true high point sometimes tag both. With only a handful of logged ascents on record, it's one of the least-visited named summits in the range, owing to an approach that runs 16+ trail miles one-way before any off-trail scrambling even starts.",
+    "hazards": [
+     "Loose rock and short exposed steps near the multiple summits",
+     "Steep snow on the upper slopes into early summer, with possible cornices on north/east-facing sections of the summit ridge in spring conditions",
+     "Ambiguous true high point: LIDAR data lists the East Peak (6,239 ft, ~3.4 mi NNE) roughly 7 ft higher than the traditionally-climbed main summit (6,232 ft)",
+     "Very long, remote wilderness approach (16+ trail miles one-way to O'Neil Pass/Marmot Lake, then off-trail) far from help — few logged ascents and no cell coverage",
+     "Brush and blowdown on the Duckabush River Trail between 10-Mile Camp and Upper Duckabush Camp can slow travel in less-maintained years"
+    ],
+    "waypoints": [
+     {
+      "lat": 47.685162,
+      "lng": -123.039683,
+      "elev": 440,
+      "name": "Duckabush Trailhead",
+      "note": "Northwest Forest Pass required for parking; no potable water on site, nearest is Interrorem Cabin; self-issue Olympic NP wilderness permit needed further in for overnight.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Quilcene, drive south on US-101 about 15 miles to the Duckabush Recreation Area, then turn west onto Duckabush River Road/Forest Service Road 2510 and follow it about 6 miles before continuing on FS Road 2510-060 to the road-end trailhead, at about 440 feet. A Northwest Forest Pass is required to park and there is no potable water at the trailhead (the nearest is at Interrorem Cabin); you'll also need a self-issue Olympic National Park wilderness permit further along if you're staying overnight. Check current Forest Service/Park Service alerts before you go, since fire-related closures and hazard-tree work in the area have affected this trail into 2026."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 1550,
+      "name": "Olympic National Park Boundary",
+      "note": "Trail #803 crosses from Olympic National Forest into Olympic National Park here, after the steep 1,000 ft climb over Big Hump; NP wilderness permit and bear-canister rules apply beyond this point.",
+      "type": "Junction",
+      "distMi": 6.2
+     },
+     {
+      "lat": 47.676343,
+      "lng": -123.20179,
+      "elev": 1471,
+      "name": "10-Mile Camp",
+      "note": "Established riverside camp with fire rings and toilet; reliable water from the Duckabush River, but the final approach has heavy blowdown requiring scrambling around downed trees.",
+      "type": "Campsite",
+      "distMi": 10.8
+     },
+     {
+      "lat": 47.654828,
+      "lng": -123.319442,
+      "elev": 2673,
+      "name": "Upper Duckabush Camp",
+      "note": "Established camp with toilet near the LaCrosse Basin trail junction; a common second-night stop before pushing on to Marmot Lake or O'Neil Pass.",
+      "type": "Campsite",
+      "distMi": 16.3
+     },
+     {
+      "lat": 47.64895,
+      "lng": -123.36363,
+      "elev": 4921,
+      "name": "Marmot Lake",
+      "note": "Large subalpine lake with several established sites around the shore; the standard high camp for the summit push, about 1.3 mi and 1,300 ft below Mount Duckabush's summit ridge.",
+      "type": "Campsite",
+      "distMi": 19.8
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4950,
+      "name": "O'Neil Pass (alternate high camp)",
+      "note": "Alternate high-camp/approach point 1.5 mi northeast of O'Neil Peak where the Duckabush Trail tops out; some parties stage the summit climb from here instead of Marmot Lake - not on the direct line to the summit, repositioned here as a branch off Marmot Lake rather than further along the main route.",
+      "type": "Junction",
+      "distMi": null
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5900,
+      "name": "Summit ridge Class 3 steps",
+      "note": "Open talus and heather slopes above camp narrow to short, exposed Class 3 down-sloping steps just below the true summit; loose rock underfoot, use caution in wet or icy conditions.",
+      "type": "Hazard",
+      "distMi": 20.9
+     },
+     {
+      "lat": 47.630462,
+      "lng": -123.361639,
+      "elev": 6254,
+      "name": "Mount Duckabush",
+      "note": "True summit (NAVD88 6,254 ft); broad views over the Duckabush and Quinault drainages and across to Mount Steel and O'Neil Peak.",
+      "type": "Summit",
+      "distMi": 21.1
+     }
+    ],
+    "approach": "From the Duckabush Trailhead (end of Forest Service Road 2510, ~440 ft, reached via US-101 south of Quilcene), follow the Duckabush River Trail #803 upriver. The first ~2.4 miles run at an easy grade along the river through old-growth forest, then the trail climbs steadily and at times steeply (~1,000 ft) to crest Big Hump at about mile 3.9 — the trail's first real obstacle, made looser and more exposed to sun/blowdown by a 2011 human-caused fire that scorched a swath of old growth on the Hump. Past Big Hump the trail drops back toward the river and continues upvalley through Five-Mile and Ten-Mile Camps, with several unbridged side-creek crossings that are normally an easy rock-hop but can be a real ford during spring snowmelt or after heavy rain. Beyond Upper Duckabush Camp the trail leaves the valley floor and switchbacks up out of the drainage, gaining roughly 2,000 ft over the final ~3 miles through forest to reach Marmot Lake (~4,900 ft), a reliable-water high camp at roughly 19-20 trail miles from the trailhead (the Duckabush/O'Neil Pass corridor runs 16+ miles from the park boundary alone, per NPS). From Marmot Lake it's a little over a mile more, skirting a ridge with Quinault-valley views, to O'Neil Pass (~4,950 ft). This is a serious multi-day backpack approach with no realistic car-to-summit day-trip option; nearly all parties camp at Marmot Lake or O'Neil Pass and climb the peak from there. From at or near O'Neil Pass, leave the maintained trail and head cross-country (no path, talus and heather benches) toward Duckabush's south side to reach either the base of the South Ridge or the south aspect of Middle Peak — both listed as Grade I, Class 4 lines in the regional climbers' guide. Snow and small permanent snowfields persist on the mountain's north side well into summer, so the south-side/ridge lines are the standard route; carry an ice axe for lingering snow on the benches and approach slopes in early season (June is listed as the start of the climbing season). An alternate approach reaches the same high camp via the Dosewallips River Trail and Anderson Pass area rather than the Duckabush River Trail.",
+    "pro_tips": [
+     "Book your Recreation.gov wilderness permit as early as possible — the quota-limited Duckabush corridor camps (10-Mile, Upper Duckabush, Marmot Lake) fill for summer weekends",
+     "Plan on 3–4 days minimum: ~16 miles one-way just to O'Neil Pass, plus a full off-trail day for the summit",
+     "Since the true high point is disputed, some peakbaggers tag both the main summit and the East Peak, ~3.4 miles away"
+    ],
+    "bail": "Retreat is simply reversing the trail, but it's long — from O'Neil Pass/Marmot Lake it's still ~16 miles back to the trailhead, so set a camp-to-camp turnaround time rather than planning to bail all the way to the car in one push.",
+    "descent": "Reverse the approach: descend the off-trail talus/heather (and any snow) back to O'Neil Pass or Marmot Lake, then retrace the Duckabush River Trail roughly 16 miles to the trailhead — most parties split this over one or two more camp nights rather than doing it in a single push.",
+    "access": {
+     "fees": "Duckabush Trailhead (USFS) day-use parking: $5/vehicle/day or $30 annual pass — Northwest Forest Pass, Interagency, or Digital Pass accepted (Scan & Pay only; no cash on site). No separate NPS entrance fee is charged at this backcountry-only access point.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Overnight camping in the corridor is restricted to designated sites — 10-Mile Camp, Upper Duckabush Camp, and Marmot Lake; bear canisters are required for food storage in this zone.",
+     "permit": "NPS wilderness camping permit required for any overnight stay past the park boundary: $8/person/night plus a non-refundable $6 reservation fee, booked on Recreation.gov. Summer-season (May 15–Oct 15) permit reservations release April 15 at 7:00 a.m. Pacific; permits can also be arranged through the Wilderness Information Center, (360) 565-3100.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Duckabush Trailhead and first ~6 trail miles), transitioning to Olympic National Park / Daniel J. Evans Wilderness at the park boundary near mile 6.2.",
+     "land_manager": "Olympic National Forest (Duckabush Trailhead and first ~6 trail miles), transitioning to Olympic National Park / Daniel J. Evans Wilderness at the park boundary near mile 6.2.",
+     "parking_pass": "Duckabush Trailhead (USFS) day-use parking: $5/vehicle/day or $30 annual pass — Northwest Forest Pass, Interagency, or Digital Pass accepted; no separate NPS entrance fee is charged at this backcountry-only access point.",
+     "passRequired": "Northwest Forest Pass (or equivalent) for trailhead parking; NPS wilderness permit for any overnight travel beyond the park boundary.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    }
+   }
+  }
+ ]
+}

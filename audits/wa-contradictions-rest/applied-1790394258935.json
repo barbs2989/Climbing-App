@@ -1,0 +1,256 @@
+{
+ "applied": [
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Approach line to the NW Ridge high camp"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Approach line to the NW Ridge high camp"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "rack",
+   "path": [
+    3
+   ],
+   "fact": "Rope for the rappels"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Rope for the rappels"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Rope for the rappels"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "emergency",
+   "path": [
+    "nearestHospital"
+   ],
+   "fact": "Nearest hospital location"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Direction of the ridge from the gap to the summit"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Direction of the ridge from the gap to the summit"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Direction of the ridge from the gap to the summit"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "Round-trip distance"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.8231,
+      "lng": -120.0197,
+      "name": "Thirtymile Trailhead",
+      "note": "From here, follow Chewuch River Trail #510 to Remmel Lake, then go off-trail south (~2 miles bushwhack) to reach the NW Ridge; this is the line of the 2011 ascent.",
+      "type": "Trailhead"
+     },
+     {
+      "lat": 48.92573,
+      "lng": -120.13832,
+      "elev": 6850,
+      "name": "Four Point Lake",
+      "note": "Multiple good campsites with views of Remmel; standard bivy.",
+      "type": "Water",
+      "distMi": 14
+     },
+     {
+      "lat": 48.928,
+      "lng": -120.185,
+      "elev": 7500,
+      "name": "NW Ridge Camp",
+      "note": "Bivy on Remmel's NW Ridge itself, reached via ridge travel from the Four Point Lake basin.",
+      "type": "Campsite",
+      "distMi": 17.5
+     },
+     {
+      "lat": 48.9232028,
+      "lng": -120.196762,
+      "elev": 8685,
+      "name": "Remmel Mountain",
+      "type": "Summit",
+      "elevFt": 8685
+     }
+    ],
+    "rack": [
+     "Light trad rack: cams and stoppers to ~2in",
+     "3x 60cm webbing for flake/horn protection and simple anchors",
+     "2 alpine draws/quickdraws",
+     "Two 60m ropes or one 70m rope for rappels"
+    ],
+    "gear": [
+     "Rope — a single 50-60 m is reported to cover the rappels, though two 60 m or one 70 m is also recommended",
+     "Light trad rack: small nuts and cams to about 2 in",
+     "Slings, cord and a few draws — enough to back up natural rappel anchors",
+     "Helmet (loose rock exposure)",
+     "Approach shoes or light boots for the bushwhack",
+     "Insulating layers (can be cold at 8,685 ft)"
+    ],
+    "pro_needs": "A light alpine rack — stoppers and cams to about 2 inches — protects the short low-5th-class gendarme pitches, plus slings and cord for backing up natural anchors on the granite; fixed anchors are unlikely on this rarely-climbed line. Rope requirements are not settled: some descriptions call a single 50-60 m rope sufficient for the rappels, others recommend two 60 m ropes. Carry doubles if you want the full-length option.",
+    "pitches": 6,
+    "overview": "A rarely-climbed alpine ridge line up Remmel's long ridge north of the summit above Remmel Lake, combining sections of 3rd-class scrambling with two short 5.1-5.2 pitches over gendarmes.",
+    "emergency": {
+     "notes": "Cell service is unreliable in Pasayten Wilderness. Satellite messenger or satellite communication device strongly recommended. Emergency evacuation would likely require helicopter rescue from exposed ridge terrain.",
+     "county": "Okanogan County, WA",
+     "rangerStation": "Winthrop Ranger District, Okanogan-Wenatchee National Forest, 24 West Chewuch Road, Winthrop, WA 98862, (509) 996-4000, Monday-Friday 8am-4pm",
+     "nearestHospital": "Confluence Health - Mid Valley Hospital in Omak, WA (approximately 45 miles south); North Valley Hospital in Tonopah, UT is further; note that true emergency access is via helicopter in remote Pasayten location",
+     "sheriffDispatch": "Okanogan County Sheriff's Office non-emergency dispatch (509) 422-7232; 911 for emergencies"
+    }
+   }
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "before": {
+    "beta": "From the Robinson Creek Trailhead, follow the maintained Robinson Creek Trail south/southeast, cross Beauty Creek, and turn uphill onto the unmarked, unmaintained Beauty Creek Trail. Climb the brushy, steep Beauty Creek valley, cross a tributary around 5,200-5,260 ft, then ascend open meadow/scree to a small tarn at roughly 6,750-6,800 ft in a rocky basin. From the tarn, climb the loose scree slope (snow-covered in early season) north of the tarn to a gap in the southeast ridge, then turn left (south) and follow the ridge about a mile over several false summits — mostly class 2 walking with a few class 3 sections and a narrow, exposed crux just below the true summit.",
+    "pitch_detail": [
+     {
+      "grade": "Class 1 (trail)",
+      "notes": "2.8 mi on maintained Robinson Creek - Middle Fork Trail #478 from trailhead (~2,560 ft) to the Beauty Creek junction (~3,560 ft).",
+      "pitch": "Robinson Creek Trail approach"
+     },
+     {
+      "grade": "Class 2 (unmaintained tread)",
+      "notes": "~1.5 mi up the brushy, steep, unmarked Beauty Creek Trail to a tributary crossing around 5,200-5,260 ft.",
+      "pitch": "Beauty Creek Trail"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Open meadow and loose scree/talus gaining roughly 1,500-1,600 ft to the tarn basin at ~6,750-6,800 ft; can be snow-covered in early season.",
+      "pitch": "Scree slope to tarn"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Ascend the loose scree slope north of the tarn to a gap in the southeast ridge.",
+      "pitch": "Scree to ridge gap"
+     },
+     {
+      "grade": "Class 2 (with class 3 sections)",
+      "notes": "About 1 mile of ridge crest south to the summit, over several false summits; mostly class 2 walking.",
+      "pitch": "Ridge traverse"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Short, narrow, exposed knife-edge/gully step just below the true summit; a helmet is recommended for loose rock.",
+      "pitch": "Summit crux"
+     }
+    ],
+    "descent_text": "From the summit, reverse the ridge scramble north along the crest back to the gap, downclimb the scree slope to the tarn basin, then follow the boot path/open slopes back down to the Beauty Creek tributary crossing (~5,200 ft) and down the steep, brushy Beauty Creek Trail to its junction with the Robinson Creek Trail. From there it is a straightforward 2.8-mile walk out the maintained Robinson Creek Trail to the trailhead. The loose scree section above and below the tarn is the main slow/careful-footing section on both ascent and descent.",
+    "dist_km": 8.85,
+    "waypoints": [
+     {
+      "lat": 48.66227,
+      "lng": -120.54241,
+      "elev": 2560,
+      "name": "Robinson Creek Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 2560
+     },
+     {
+      "lat": 48.726768,
+      "lng": -120.575086,
+      "elev": 8729,
+      "name": "Robinson Mountain Summit",
+      "type": "Summit",
+      "distMi": 5.5,
+      "elevFt": 8729
+     }
+    ],
+    "turnaround": "Given the long approach (11+ miles round trip with 6,000+ ft of gain) and a full day of exposure to sun and afternoon thunderstorm risk on an open ridge with no shelter, set a firm turnaround time based on daylight and current weather/energy rather than pushing to complete the ridge traverse late in the day.",
+    "itinerary": "Commonly done as a very long single day (~11-14 miles round trip, ~6,100-6,500 ft gain, reported car-to-car times around 12 hours) or as an overnight, camping at the Southeast Robinson Tarn (or lower in Beauty Creek valley or at the Robinson Creek bridge) to split the approach and summit push into two days.",
+    "timing": {
+     "totalHrs": 12,
+     "summitTimeHrs": 3.3,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 6.1,
+     "recommendedStart": "Pre-dawn/early-morning start given the long (~11-14 mile) round trip with 6,100-6,500 ft of gain and an exposed, largely shadeless ridge."
+    }
+   }
+  }
+ ]
+}

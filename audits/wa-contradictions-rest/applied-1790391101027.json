@@ -1,0 +1,181 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_incisor_scramble",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Itinerary/timing describe a different peak (North Cascades)"
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "column": "timing",
+   "path": [],
+   "fact": "Itinerary/timing describe a different peak (North Cascades)"
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Direction to the Needles from the basin"
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Direction to the Needles from the basin"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_incisor_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "The approach holds snow on the upper slopes into early summer, so an ice axe (and often crampons) is standard through June/early July; by late summer it's a dry scree/scramble approach.",
+     "days": [
+      {
+       "n": 1,
+       "note": "This is done entirely car-to-car in one day from a Highway 20 pullout near Pine Creek/Lone Fir Campground. The approach is the crux of the day logistically: an abandoned, brushy trail, a creek crossing, slide alder, and a steep gain to the ridge before any scrambling starts. The East Peak itself is a straightforward class 3 scramble once you're at the saddle, in contrast to the main Needles summit which requires 5th-class rock pitches.",
+       "hours": 9.5,
+       "miles": 6.1,
+       "title": "Car-to-car: Pine Creek approach + East Peak scramble",
+       "gainFt": 4400,
+       "lossFt": 4400,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave the Pine Creek pullout",
+         "detail": "Park at the small pullout on Hwy 20 south of Pine Creek (or at Lone Fir Campground) and start up the unofficial, overgrown Pine Creek trail while it's cool."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Ford Pine Creek, push through slide alder",
+         "detail": "The trail fades around 4,400 ft; cross the creek and bushwhack through alder and downed timber to reach open forest and the south ridge clearing near 4,900 ft."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Snow slopes toward 6,800 ft",
+         "detail": "Persistent snow patches on the upper slopes often linger into midsummer; an axe (and crampons in early season) makes this section faster and safer."
+        },
+        {
+         "time": "+4.5 hr",
+         "label": "Reach the saddle below the summit towers",
+         "detail": "Stage below the technical pitches used by rock parties and peel off toward the East Peak's easier class 3 line."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Summit East Peak (7,440 ft)",
+         "detail": "Short, exposed class 3 scrambling on solid granite; views of Silver Star, Liberty Bell, and the main Needles towers."
+        },
+        {
+         "time": "~2:00 PM",
+         "label": "Back at the trailhead",
+         "detail": "Reverse the scramble and the bushwhack descent; most parties are back at the car by early-to-mid afternoon."
+        }
+       ],
+       "objective": "Tag the East Peak summit (7,440 ft) via the Pine Creek bushwhack approach"
+      }
+     ],
+     "totalNote": "A long but single-day car-to-car scramble: roughly 9-10 hours, ~6 miles round trip, and about 4,400 ft of gain, most of it in a steep, brushy off-trail approach rather than the scrambling itself."
+    },
+    "timing": {
+     "totalHrs": 9.5,
+     "summitTimeHrs": 9.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "4:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9.5,
+       "note": "This is done entirely car-to-car in one day from a Highway 20 pullout near Pine Creek/Lone Fir Campground. The approach is the crux of the day logistically: an abandoned, brushy tr…",
+       "fromTo": "Car-to-car: Pine Creek approach + East Peak scramble",
+       "section": "Climb"
+      }
+     ]
+    },
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2500,
+      "name": "Upper Dungeness Trailhead",
+      "note": "Large parking lot with vault toilet just past the Dungeness River bridge; Northwest Forest Pass required and a backcountry camping permit is needed once you cross into the national park.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From US 101 near Sequim, follow Palo Alto Road onto Forest Road 2880 and continue to Dungeness Forks Campground, then take FR 2870 about 8.7 miles to the Upper Dungeness Trailhead at roughly 2,500 feet. The lot sits just past the Dungeness River bridge and is large, with a vault toilet. A Northwest Forest Pass is required to park, and you will also need a backcountry camping permit once the route crosses into the national park."
+     },
+     {
+      "lat": 47.876487,
+      "lng": -123.140901,
+      "elev": 2200,
+      "name": "Royal Creek / Royal Basin Trail #832 junction",
+      "note": "Fork off Upper Dungeness Trail #833; bear right onto Royal Creek/Royal Basin Trail #832 toward Royal Basin.",
+      "type": "Junction",
+      "distMi": 1
+     },
+     {
+      "lat": 47.8743679,
+      "lng": -123.1469029,
+      "elev": 3000,
+      "name": "Maynard Burn Trail junction / park boundary",
+      "note": "Stay left at the Maynard Burn intersection; the trail crosses from Olympic National Forest into Olympic National Park here, so backcountry permit rules apply beyond this point.",
+      "type": "Junction",
+      "distMi": 2.5
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4200,
+      "name": "Talus slopes and creek crossings below Royal Basin",
+      "note": "Trail breaks into open talus with several small stream crossings and waterfall views; braided and slick where hikers have cut across the heather.",
+      "type": "Water",
+      "distMi": 4.5
+     },
+     {
+      "lat": 47.83201,
+      "lng": -123.21073,
+      "elev": 5100,
+      "name": "Royal Lake",
+      "note": "Established, permit-only campsites at the outlet; standard base camp with views east across the lake to the jagged Needles ridge.",
+      "type": "Campsite",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.829892,
+      "lng": -123.219388,
+      "elev": 5700,
+      "name": "Upper Royal Basin",
+      "note": "Meadow-and-tarn basin roughly three-quarters of a mile above Royal Lake; leave the maintained trail here and pick a talus/heather-bench line east toward the Needles ridge crest.",
+      "type": "Junction",
+      "distMi": 8
+     },
+     {
+      "lat": 47.828873,
+      "lng": -123.229604,
+      "elev": 6800,
+      "name": "Talus and heather-bench scramble to ridge crest",
+      "note": "Loose Class 2-3 talus and steep heather benches gaining the ridge crest; footing is unstable and route-finding is easy to lose in cloud or low light.",
+      "type": "Hazard",
+      "distMi": 9.3
+     },
+     {
+      "lat": 47.828325,
+      "lng": -123.235105,
+      "elev": 7440,
+      "name": "The Incisor",
+      "note": "7,440 ft summit spire in The Needles range, 40 ft of prominence, first climbed 1958; final moves are exposed Class 3-4 scrambling along the ridge crest.",
+      "type": "Summit",
+      "distMi": 10
+     }
+    ]
+   }
+  }
+ ]
+}

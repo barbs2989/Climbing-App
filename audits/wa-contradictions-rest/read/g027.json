@@ -1,0 +1,1770 @@
+{
+ "batches": [
+  "b105.json",
+  "b106.json",
+  "b107.json",
+  "b108.json"
+ ],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "name": "Southwest Slope via Marmot Pass",
+   "area": "Buckhorn Mountain",
+   "contradictions": [
+    {
+     "fact": "Summit route from Marmot Pass: Tubal Cain Trail or unsigned boot path",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Boot path heads north on the Tubal Cain Trail, then a use trail climbs the ridge over a minor knob."
+      },
+      {
+       "field": "approach",
+       "says": "Marmot Pass ... a major trail junction where the Tubal Cain Trail forks off toward Buckhorn Lake Camp/the old Tubal Cain Mine ... pick up the unsigned climbers'/boot path that follows the open ridge crest north"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The summit route leaves from the pass itself and not from any signed junction ... the fork dropping northeast toward the lake. ... neither goes up"
+      }
+     ],
+     "why": "ROUTE BREAKDOWN sends the party onto the Tubal Cain Trail, which the approach and base-finding text describe as the maintained fork dropping toward Buckhorn Lake that does not go up.",
+     "internal_resolution": "approach, approach_variants and beta agree the summit line is an unsigned boot path, not the Tubal Cain Trail; pitch_detail[2] is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Location of the steep 3/4-mile switchback section",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "At about mile 2.5–3.5 the trail pulls away from the river and climbs a sustained, steeper 3/4-mile pitch of switchbacks ... to Shelter Rock Camp (~3,600 ft)"
+      },
+      {
+       "field": "descent_text",
+       "says": "The only sustained knee-punishing stretch is the steep 3/4-mile switchback section between Shelter Rock Camp and Camp Mystery"
+      }
+     ],
+     "why": "The approach puts the steep switchbacks below Shelter Rock Camp; the descent puts them between Shelter Rock Camp and Camp Mystery.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit grade and exposure",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2 (off-trail talus/scree)"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 2-3 (scramble)"
+      },
+      {
+       "field": "overview",
+       "says": "one short Class 3 move onto the summit boulder"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "the summit push above Marmot Pass is an easy, non-exposed class 2 scramble"
+      },
+      {
+       "field": "rope_note",
+       "says": "a steep but non-exposed open path ... an easy Class 2 scramble"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "The short Class 3 move onto the summit boulder can feel exposed to newer scramblers"
+      },
+      {
+       "field": "obj_haz[2]",
+       "says": "Exposure near the summit block"
+      }
+     ],
+     "why": "Some fields call the finish Class 3 and exposed, others call it a non-exposed Class 2 scramble.",
+     "internal_resolution": "Most fields (overview, rock_grade, watch_out, obj_haz, pitch_detail 'Class 2-3') say Class 2 with one short exposed Class 3 move; the 'non-exposed class 2' wording in itinerary.totalNote and rope_note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Permit for day use / overnight",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Buckhorn Wilderness permit at the trailhead; Northwest Forest Pass to park."
+      },
+      {
+       "field": "access.permit",
+       "says": "No separate wilderness entry permit is required for day use."
+      },
+      {
+       "field": "access.notes",
+       "says": "only the standard entrance fee and wilderness camping permit apply."
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required in the Buckhorn Wilderness"
+      }
+     ],
+     "why": "The row says there is a self-issue wilderness permit, no permit needed for day use, a 'wilderness camping permit' and an 'entrance fee', and no overnight permit at all.",
+     "internal_resolution": "access.permit, access.overnight_permit and bivy[].permit agree: no entry/overnight permit (only a free self-registration) and a Northwest Forest Pass; access.notes' 'entrance fee and wilderness camping permit' is boilerplate that does not apply to this National Forest trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Roughly June/July through October for a snow-free ascent"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Mid-July to early October"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "The season is roughly late June through October"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through early September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "optimal"
+      }
+     ],
+     "why": "The season chip ends in September while best_season, the approach variant and the camp notes run into October; seasonal_guidance calls all of July optimal but its optimal window starts mid-July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "9.3"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "13.5"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "6.02"
+      }
+     ],
+     "why": "dist_km (5.8 mi) is neither the itinerary's 13.5 mi round trip nor the waypoints' ~6 mi one-way figure.",
+     "internal_resolution": "itinerary (13.5 mi RT) and the waypoint summit distMi (6.02 one-way) agree with each other; dist_km is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "name": "Northwest Buttress",
+   "area": "Inner Constance",
+   "contradictions": [
+    {
+     "fact": "Whether the walk-out re-crosses Constance Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Continue on the Constance Pass trail ... crossing into Olympic National Park, and drop to Home Lake at about 9.3 miles (~5,308-5,330 ft, ~500 ft below Constance Pass)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Reach it from the UPPER DUNGENESS trailhead by way of Camp Handy and Boulder Shelter — the approach from the Dosewallips over Constance Pass is technically the same lake"
+      },
+      {
+       "field": "descent_text",
+       "says": "the walk out regains meaningful elevation over Constance Pass before the long descent to the Dungeness"
+      },
+      {
+       "field": "approach_variants[0].hazards[4]",
+       "says": "A 9+ mile approach with meaningful re-ascent over Constance Pass on the way out"
+      }
+     ],
+     "why": "Home Lake is reached from the Dungeness side below Constance Pass, so walking out to the Dungeness should not re-cross the pass, yet the descent and a hazard say it does.",
+     "internal_resolution": "approach and bivy put Home Lake ~500 ft below Constance Pass on the Dungeness side; the 're-ascent over Constance Pass' claims appear wrong.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach distance to base camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "drop to Home Lake at about 9.3 miles ... Put simply, the approach is 8.5 miles up to a base camp near Home Lake."
+      },
+      {
+       "field": "itinerary",
+       "says": "hike ~9.3 miles to Home Lake"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Camping lower at Boulder Shelter ... at the cost of two miles and 400 ft each way"
+      },
+      {
+       "field": "approach",
+       "says": "Boulder Camp / Boulder Shelter at roughly 6.1-6.4 miles"
+      }
+     ],
+     "why": "The approach gives both 9.3 and 8.5 miles to Home Lake, and Boulder Shelter at 6.1-6.4 mi is ~3 mi (not two) below a lake at 9.3 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock quality near the summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "very poor rock overall — 'as bad as anything in the Olympics' near the summit ridge"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "Rock quality is reported as very bad, worse than typical Olympic basalt near the summit ridge"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Final long, low-angle pitch to the summit proper — the pleasant part of the climb, on the more solid pillow basalt that caps the peak."
+      }
+     ],
+     "why": "The final pitch is described as the most solid rock on the route while beta and watch_out say the rock is worst near the summit ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Order of the ledge traverse and the Class 3/4 gully",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail",
+       "says": "P1 ramp ... P2 'Turn LEFT onto the obvious ledge' ... P3 'Steep Class 3/4 gully above the ledge system'"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "follow the ramp around CLIMBER'S RIGHT of the PROMINENT DIHEDRAL ... to a steep Class 3/4 gully. ... after the first pitch this route turns CLIMBER'S LEFT onto an obvious ledge"
+      }
+     ],
+     "why": "The ROUTE BREAKDOWN puts the gully above the ledge; the base-finding text reaches the gully from the ramp, before the ledge.",
+     "internal_resolution": "pitch_detail and descent_text ('the steeper buttress below the Class 3/4 gully') agree the gully is above the ledge; the baseFinding ordering is the outlier.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "name": "Standard Route (Northeast summit via Crystal Pass)",
+   "area": "Inner Constance",
+   "contradictions": [
+    {
+     "fact": "Which line the route climbs (South Gully/East Ridge vs Crystal Pass/north ridge)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Standard Route (Northeast summit via Crystal Pass)"
+      },
+      {
+       "field": "overview",
+       "says": "The commonly described standard line climbs out of Avalanche Canyon via a South Gully/snow-filled defile to the East Ridge ('Route 2A') rather than via nearby Crystal Pass"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "South Defile ... South Gully ... Exit the gully onto the East Ridge ... along the East Ridge to the summit"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "From the base of Inner Constance's northeast side, a short step just above the pass leads into the rising traverse."
+      },
+      {
+       "field": "climbing_route[1].notes",
+       "says": "A rising traverse along the right side of the north ridge/crest on broken, blocky terrain"
+      },
+      {
+       "field": "approach",
+       "says": "From Crystal Pass, descend into upper Avalanche Canyon ... a short step just above the pass leads into a rising traverse along the right side of the north ridge/crest"
+      },
+      {
+       "field": "face",
+       "says": "Northeast side, above Crystal Pass"
+      }
+     ],
+     "why": "The route's own overview says the standard line is the South Gully–East Ridge and NOT via Crystal Pass, while the name, face, approach and CLIMBING ROUTE describe a Crystal Pass / north-ridge traverse.",
+     "internal_resolution": "overview, beta, pitch_detail, waypoints, descent and itinerary day 2 all describe the South Gully–East Ridge from Lake Constance; the name, face, approach, climbing_route and descent_text describe a different Crystal Pass line.",
+     "needs_research": true
+    },
+    {
+     "fact": "Descent line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Reverse the South Gully–East Ridge line ... descend the snow finger through the gully ... back to Avalanche Canyon and Lake Constance."
+      },
+      {
+       "field": "descent_text",
+       "says": "downclimb the class 3–4 blocky terrain back down the rising traverse to the step above Crystal Pass ... over Constance Pass, and back down the Constance Pass Trail and Dosewallips Road"
+      }
+     ],
+     "why": "The two descent fields send the party down two different lines to two different camps/exits; the longer descent_text (the one shown) contradicts the South Gully route the rest of the page describes.",
+     "internal_resolution": "descent matches pitch_detail/beta/waypoints/itinerary (South Gully to Lake Constance).",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach and camp: Lake Constance vs Dosewallips/Constance Pass/Crystal Pass",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "pick up the Constance Pass Trail ... gaining to Constance Pass at about 5,850 ft ... climbing to Crystal Pass ... This Dosewallips/Crystal Pass approach (about 16 mi one-way, ~25.75 km)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "follow the Dosewallips River trail and climb toward Constance Pass, then leave the maintained trail to gain the basin/pass (Crystal Pass)"
+      },
+      {
+       "field": "waypoints",
+       "says": "Lake Constance Trailhead ... Creekside Camp Bench ... Lake Constance ... Avalanche Canyon / The Thumb"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Lake Constance"
+      },
+      {
+       "field": "access.permit",
+       "says": "the approach effectively requires an overnight at Lake Constance"
+      },
+      {
+       "field": "beta",
+       "says": "From Lake Constance, ascend Avalanche Canyon"
+      }
+     ],
+     "why": "The approach text and itinerary day 1 take the long Constance Pass/Crystal Pass approach while the waypoints, bivy, beta, access and pitch_detail use the Lake Constance trail.",
+     "internal_resolution": "waypoints, bivy, beta, pitch_detail, access.permit and approach_variants[0] (primary) all use Lake Constance; approach and itinerary day 1 are outliers.",
+     "needs_research": true
+    },
+    {
+     "fact": "Trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 16 miles round trip"
+      },
+      {
+       "field": "approach",
+       "says": "about 16 mi one-way, ~25.75 km ... Lake Constance approach into Avalanche Canyon (roughly 8 mi one-way)"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "9"
+      },
+      {
+       "field": "dist_km",
+       "says": "12.9"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6.5"
+      },
+      {
+       "field": "itinerary.days[2].miles",
+       "says": "5"
+      }
+     ],
+     "why": "16 miles is given as both the round-trip and the one-way figure; the in and out days differ (6.5 vs 5 mi) for the same trail; the summit waypoint is 9 mi one-way.",
+     "internal_resolution": "Waypoints (summit at 9 mi one-way via Lake Constance) and dist_km (8 mi) point to ~16-18 mi round trip via Lake Constance; the '16 mi one-way' figure belongs to the Crystal Pass approach.",
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7300"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3800"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "2200"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 6,000 ft of gain"
+      },
+      {
+       "field": "itinerary.days[2].lossFt",
+       "says": "3972"
+      }
+     ],
+     "why": "Itinerary gain totals 6,000 ft vs gain_ft 7,300, and day 3 loses 3,972 ft after day 1 gained 3,800.",
+     "internal_resolution": "Waypoints run from 700 ft (washout) to 7,672 ft, so at least ~7,000 ft of gain; gain_ft 7300 fits, and the itinerary understates it (summit day from Lake Constance at 4,800 ft is ~2,900 ft, not 2,200).",
+     "needs_research": false
+    },
+    {
+     "fact": "Hardest rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 4 / low 5th"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.0"
+      },
+      {
+       "field": "pro_needs",
+       "says": "several exposed Class 4 / low-5th-class pitches on poor rock, including the steep chimney/roof move below the summit"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "hardest row 'Class 3-4'"
+      },
+      {
+       "field": "beta",
+       "says": "Gain the east ridge crest via a final pitch of Class 3 rock, then follow Class 2-3 scrambling"
+      }
+     ],
+     "why": "The grade pill and protection text claim low-5th pitches and a chimney/roof, but the South Gully–East Ridge breakdown and beta top out at Class 3-4.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season / best window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep (snow-dependent; best attempted early-to-mid season while the couloir/defile still holds snow bridging the moats)"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through July is favored ... by August the snow largely melts out and the same gully becomes unpleasantly loose rock and scree"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September, once the rock has mostly dried out"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August",
+       "says": "Core of the best-season window ... the most reliable month for the standard route"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      }
+     ],
+     "why": "season and best_season favour early season while the gully holds snow and warn that August is loose; seasonal_guidance calls August optimal and June risky.",
+     "internal_resolution": "season, best_season, beta ('excellent when snow is firm') and approach_variants[0].season agree early-to-mid season is best; seasonal_guidance is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade vs a multi-day trip",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "alpine_grade",
+       "says": "I"
+      },
+      {
+       "field": "commitment",
+       "says": "I"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day trip"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "19"
+      }
+     ],
+     "why": "Grade I denotes a few hours' climb, while the row describes a 3-day, 19-hour trip with a 8.5-hour summit day.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Location of the Class 3-4 rock step",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[6].directions",
+       "says": "exit the gully onto the crest by way of a short Class 3-4 rock step"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Exit the gully onto the East Ridge via a short rock step."
+      },
+      {
+       "field": "itinerary.days[1].schedule[3]",
+       "says": "9:00 AM Class 3-4 step to summit block — Short exposed rock step below the true summit."
+      },
+      {
+       "field": "descent",
+       "says": "down-climb/rappel the Class 3-4 rock steps off the summit block"
+      }
+     ],
+     "why": "The waypoint and breakdown place the Class 3-4 step at the notch where the gully meets the East Ridge; the schedule and descent place it at the summit block.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock type",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "built of Eocene tilted pillow basalt"
+      },
+      {
+       "field": "watch_out",
+       "says": "granite and metamorphic rock severely weathered"
+      },
+      {
+       "field": "descent_text",
+       "says": "classic crumbly Olympic metavolcanic rock"
+      }
+     ],
+     "why": "watch_out calls the rock granite, contradicting the pillow basalt described elsewhere.",
+     "internal_resolution": "overview, beta, pitch_detail and waypoints all say pillow basalt; watch_out's 'granite' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Lake Constance quota season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].note",
+       "says": "camping permits are quota-limited May 1-Sept 30"
+      },
+      {
+       "field": "access.permit",
+       "says": "Lake Constance is a quota site with reservations for the May 15-October 15 season"
+      }
+     ],
+     "why": "Two different quota seasons for the same permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Road-walk mileage within the Crystal Pass variant",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[1].notes",
+       "says": "roughly 5.5 miles past the Lake Constance turn-off to the old Dosewallips Campground ... about 6.5 miles and 1,900 ft of cumulative gain from the gate"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "5"
+      },
+      {
+       "field": "approach",
+       "says": "Continue roughly 5.5 more miles ... (about 6.5 mi ... from the gate)"
+      }
+     ],
+     "why": "With the Lake Constance turn-off at ~5 mi, 5.5 mi past it cannot be 6.5 mi from the gate.",
+     "internal_resolution": "approach says 5.5 mi past the washout (1 mi in), totalling 6.5 mi; the variant's 'past the Lake Constance turn-off' is the error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Washout parking vs road end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Drive about 8.5 miles from US-101 to the road-end parking — the washout is roughly a mile farther up the old roadbed"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Vehicle-accessible road end at the 2002 washout (~9 mi from Hwy 101)"
+      },
+      {
+       "field": "approach",
+       "says": "From the Dosewallips River Road washout (roughly 1 mile in from the old trailhead gate, elev. ~600 ft)"
+      }
+     ],
+     "why": "The road field puts parking a mile below the washout; the trailhead waypoint says parking is at the washout.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "name": "Sean's Route/Second Wind",
+   "area": "Inner Constance",
+   "contradictions": [
+    {
+     "fact": "Where the route finishes (false summit vs true summit)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "several pitches of unroped class 4-to-low-5th scrambling to the false summit"
+      },
+      {
+       "field": "descent_text",
+       "says": "From the false summit, downclimb exposed, broken ridge terrain"
+      },
+      {
+       "field": "pitch_detail[5].notes",
+       "says": "The final beautiful low-angle pitch of the Northwest Buttress to the summit proper at 7,670 ft."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "to the southwest false summit, then it rejoins the Northwest Buttress for the last pitch to the true top"
+      }
+     ],
+     "why": "Overview and descent end the route at the false summit; the breakdown and base-finding carry it on to the true summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "6"
+      },
+      {
+       "field": "overview",
+       "says": "A 3-pitch alpine trad line"
+      },
+      {
+       "field": "itinerary",
+       "says": "~3 technical pitches plus scrambling"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "6 rows P1-P6"
+      }
+     ],
+     "why": "The header shows 6 pitches while the overview headline calls it a 3-pitch line.",
+     "internal_resolution": "pitches and pitch_detail agree on 6; '3-pitch' counts only the crack-system pitches.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent method",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "No fixed anchors — every rappel station must be built and left ... double ropes make the descent much less committing."
+      },
+      {
+       "field": "descent",
+       "says": "Descend via exposed ridge scrambling and a loose, sandy ledge system down into Avalanche Canyon"
+      },
+      {
+       "field": "descent_text",
+       "says": "downclimb exposed, broken ridge terrain, then work down a loose, sandy ledge system into Avalanche Canyon"
+      }
+     ],
+     "why": "RAPPELS implies a rappel descent while both descent fields describe a downclimb/scramble descent into Avalanche Canyon.",
+     "internal_resolution": "descent, descent_text, watch_out and itinerary agree on a scrambling descent; rappels prose describes retreat only.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass at the trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "NPS park entrance fee applies"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "NPS entrance fee or America the Beautiful pass for vehicle/park access"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "Day use $5/vehicle/day or $30/year; Northwest Forest Pass, Interagency and Digital passes honoured."
+      }
+     ],
+     "why": "ACCESS says an NPS entrance fee applies, while the road note describes a Forest Service day-use fee at the Upper Dungeness trailhead.",
+     "internal_resolution": "The trailhead is on FS 2870 in Olympic National Forest (road, waypoints); the NPS entrance-fee claim is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "approximately 8.5 miles uphill to a basecamp near Home Lake"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "down to Home Lake at about 9.3 miles"
+      },
+      {
+       "field": "climate.fall",
+       "says": "a route with a two-day approach"
+      }
+     ],
+     "why": "Approach distance is 8.5 vs 9.3 mi, and climate calls it a two-day approach while the approach/itinerary treat it as a single day to camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "name": "Terrible Traverse",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "Which chute leads to the traverse (North vs South Chute)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Rather than the South Chute used for the Finger Traverse, this route climbs the North Chute higher in the basin"
+      },
+      {
+       "field": "climbing_route[0].label",
+       "says": "North Chute"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "This route does NOT take the South Chute: it stays in the canyon and climbs the North Chute higher up."
+      },
+      {
+       "field": "descent_text",
+       "says": "drop back down the North Chute's loose scree/talus into Avalanche Canyon"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Climb Avalanche Canyon and the South Chute to the notch below the summit block, then cross the Terrible Traverse"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].detail",
+       "says": "Up Avalanche Canyon and the South Chute."
+      },
+      {
+       "field": "pitch_detail[2].pitch",
+       "says": "South Chute to ~7,300 ft notch"
+      },
+      {
+       "field": "overview",
+       "says": "while crossing from the South Chute notch toward the summit block"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Lake Constance — the standard base for the South Chute"
+      }
+     ],
+     "why": "The approach, CLIMBING ROUTE and descent insist the route takes the North Chute and not the South Chute, while the itinerary, ROUTE BREAKDOWN and overview send the party up the South Chute.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Notch elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[1].detail",
+       "says": "~1,950 ft above camp, base of the traverse."
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4750 (Lake Constance)"
+      },
+      {
+       "field": "pitch_detail[2].pitch",
+       "says": "South Chute to ~7,300 ft notch"
+      },
+      {
+       "field": "approach",
+       "says": "reach the base of the Terrible Traverse itself at about 7,435 ft"
+      }
+     ],
+     "why": "1,950 ft above a 4,750 ft camp is ~6,700 ft, not the ~7,300-7,435 ft notch/traverse base given elsewhere.",
+     "internal_resolution": "overview, approach, climbing_route and pitch_detail put the traverse at ~7,300-7,450 ft; the schedule's '~1,950 ft above camp' matches the South Chute notch (~6,600 ft) instead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Traverse crossed on ascent or descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The Terrible Traverse is typically encountered during descent from the summit."
+      },
+      {
+       "field": "itinerary.days[1].schedule[2]",
+       "says": "9:00 AM Cross the Terrible Traverse (before the 12:30 PM summit)"
+      },
+      {
+       "field": "approach",
+       "says": "traverses north on ledges to reach the base of the Terrible Traverse itself at about 7,435 ft"
+      }
+     ],
+     "why": "beta says the traverse is typically met on the descent; the approach and itinerary cross it on the way up.",
+     "internal_resolution": "approach, climbing_route, itinerary and descent_text ('reverse the Terrible Traverse') all cross it on ascent.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel on the traverse",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "Possible to rappel the traverse section if pickets are placed"
+      },
+      {
+       "field": "climbing_route[2].notes",
+       "says": "though it is not a roped rappel move"
+      },
+      {
+       "field": "descent_text",
+       "says": "There is no mandatory rappelling on the Terrible Traverse or its connecting chute"
+      }
+     ],
+     "why": "RAPPELS offers a rappel of the traverse while the climbing route and descent say it is not a rappel move.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11.5"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "11.5"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "5:30 AM Leave camp ... ~6:30 PM Back at camp"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "per the existing 13-hr round-trip timing"
+      }
+     ],
+     "why": "The schedule runs 13 hours camp-to-camp while the timing and itinerary hours say 11.5.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead location and elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Dosewallips Road washout parking (FR-2610)"
+      },
+      {
+       "field": "waypoints (Trailhead)",
+       "says": "Lake Constance Trailhead (Dosewallips Road), elev 1400, at 47.7403,-123.0658"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 5 miles of road-walking/biking up the washed-out Dosewallips River Road to the unsigned Lake Constance climbers' trail (~1,450 ft)"
+      }
+     ],
+     "why": "The trailhead waypoint is named for the Lake Constance climbers' trail at 1,400 ft but sits on the washout-parking coordinates, which the row places ~5 road miles lower at ~600-700 ft.",
+     "internal_resolution": "The coordinates match approach_logistics' washout parking; the name/elevation belong to the Lake Constance trail junction ~5 mi up the road.",
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager / wilderness",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "Olympic National Park / Olympic National Forest (Buckhorn Wilderness)"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "National Park Service — Olympic National Park (Olympic Wilderness)"
+      }
+     ],
+     "why": "Two different land managers/wildernesses are given for the same route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "name": "Finger Traverse",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "Which chute the Finger Traverse is on",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "encountered on the North Chute side around 7,400-7,450 ft ... it's also sometimes referenced simply as crossing via the 'North Chute.'"
+      },
+      {
+       "field": "approach",
+       "says": "pick up the 'Cat Ears' rock landmark marking the turn south into the South Chute"
+      },
+      {
+       "field": "climbing_route[0].label",
+       "says": "South Chute"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "you have passed it and are heading for the North Chute and the Terrible Traverse instead"
+      }
+     ],
+     "why": "The overview ties the Finger Traverse to the North Chute; the approach, CLIMBING ROUTE, breakdown and itinerary reach it by the South Chute and say the North Chute leads to the Terrible Traverse.",
+     "internal_resolution": "approach, climbing_route, pitch_detail, itinerary, approach_variants and descent_text all use the South Chute; the overview is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Traverse crossed on ascent or descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "After summiting via the standard South Chute approach, the Finger Traverse is typically encountered on the descent."
+      },
+      {
+       "field": "itinerary.days[1].schedule[2]",
+       "says": "9:30 AM Cross the Finger Traverse (before the 11:30 AM summit)"
+      },
+      {
+       "field": "descent_text",
+       "says": "Descent reverses the ascent line: back across the Finger Traverse"
+      }
+     ],
+     "why": "beta says it is met on descent; approach, itinerary and descent_text cross it on the way up.",
+     "internal_resolution": "approach, climbing_route, itinerary and descent_text agree it is crossed on ascent.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance and gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "A representative full round trip (trailhead to summit and back) runs about 8 miles with roughly 6,400 ft gained and lost."
+      },
+      {
+       "field": "gain_ft",
+       "says": "7100"
+      },
+      {
+       "field": "itinerary",
+       "says": "days miles 6.5 + 5 + 6.5 = 18; gainFt 4200 + 3200 = 7400"
+      }
+     ],
+     "why": "The descent text's 8 miles / 6,400 ft round trip disagrees with the 18-mile, 7,100-7,400 ft figures in the header and itinerary.",
+     "internal_resolution": "The 8-mile figure omits the ~5-mile closed road walk each way that approach and itinerary include.",
+     "needs_research": false
+    },
+    {
+     "fact": "Finger Traverse grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "5.0 (exposed)"
+      },
+      {
+       "field": "climbing_route[3].class",
+       "says": "class 3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.0 (rated Class 3 by consensus, with one low-5th-class move gaining the summit block)"
+      },
+      {
+       "field": "approach",
+       "says": "an exposed, downsloping class 3 ledge above a large cliff"
+      }
+     ],
+     "why": "The ROUTE BREAKDOWN grades the traverse 5.0, while the CLIMBING ROUTE, approach and rock_grade call it Class 3 (the low-5th move is on the summit block).",
+     "internal_resolution": "rock_grade, approach and climbing_route agree the traverse is Class 3; pitch_detail[2] is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Lake Constance trail maintained or not",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "often called the hardest maintained approach in the Olympics"
+      },
+      {
+       "field": "approach",
+       "says": "the unsigned, unmaintained Lake Constance climbers' trail"
+      }
+     ],
+     "why": "The itinerary calls it maintained; the approach says it is unmaintained.",
+     "internal_resolution": "approach and approach_variants say unmaintained.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead location and elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Dosewallips Road washout parking (FR-2610)"
+      },
+      {
+       "field": "waypoints (Trailhead)",
+       "says": "Lake Constance Trailhead (Dosewallips Road), elev 1400, at 47.7403,-123.0658"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "road-end washout itself is lower (~600ft)"
+      }
+     ],
+     "why": "The trailhead waypoint is named for the Lake Constance climbers' trail at 1,400 ft but sits on the washout-parking coordinates, which the row places ~5 road miles lower at ~600-700 ft.",
+     "internal_resolution": "The coordinates match approach_logistics' washout parking; the name/elevation belong to the Lake Constance trail junction ~5 mi up the road.",
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager / wilderness",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "Olympic National Park / Olympic National Forest (Buckhorn Wilderness)"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "National Park Service — Olympic National Park (Olympic Wilderness)"
+      }
+     ],
+     "why": "Two different land managers/wildernesses are given for the same route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "name": "North Chimney (Standard Route)",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "South Chute height",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "climbs the broad South Chute (scree, ~1,200 ft) to a notch on the South Ridge around 6,600 ft"
+      },
+      {
+       "field": "beta",
+       "says": "climb the broad South Chute 1,200+ feet to the south ridge saddle"
+      },
+      {
+       "field": "approach",
+       "says": "The South Chute climbs about 1,900 ft of scree"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "~1,900 ft of loose scree/talus up the chute to roughly 6,600 ft"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "About 1,900 ft of scree to a saddle/notch near 6,560-6,600 ft"
+      }
+     ],
+     "why": "The chute is 1,200 ft in the overview and beta but 1,900 ft in the approach, breakdown and climbing route.",
+     "internal_resolution": "Lake Constance (~4,700 ft) to a ~6,600 ft notch is ~1,900 ft; the 1,200 ft figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Finger and Terrible Traverses: alternatives or both",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[4]",
+       "says": "Finger Traverse — Class 3-4, exposed"
+      },
+      {
+       "field": "pitch_detail[5].notes",
+       "says": "A second exposed ledge/tower traverse on the summit ridge; passability varies with snow/ice cover by season."
+      },
+      {
+       "field": "climbing_route[2].notes",
+       "says": "Two options from the notch: the Terrible Traverse ... or the Finger Traverse"
+      },
+      {
+       "field": "overview",
+       "says": "crossing either the snow-dependent 'Terrible Traverse' or its rock alternative the 'Finger Traverse'"
+      }
+     ],
+     "why": "The ROUTE BREAKDOWN lists the Terrible Traverse as a second traverse after the Finger Traverse, while everywhere else they are alternatives.",
+     "internal_resolution": "overview, approach, climbing_route and descent_text all treat them as either/or.",
+     "needs_research": false
+    },
+    {
+     "fact": "Days on the trip",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-day, 2-night trip is standard"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "almost always climbed as a 2-day trip with a pre-dawn summit day"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "for the standard 2-day approach-then-summit itinerary"
+      }
+     ],
+     "why": "Itinerary says 3 days is standard; partner requirements say 2 days.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road-walk distance from the washout",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "walk or mountain-bike the old roadbed roughly 5-6 more miles"
+      },
+      {
+       "field": "approach_variants[1].distMi",
+       "says": "5.5"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "plan on an extra ~4-5 miles ... each way"
+      },
+      {
+       "field": "turnaround",
+       "says": "the road washout adds ~4-5 miles each way"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "the ~4-mile road-walk from the Dosewallips washout"
+      }
+     ],
+     "why": "The road walk to the Lake Constance trail is 5-6 mi in the approach but ~4-5 mi in road, turnaround and pro_tips.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season: June",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "Outside the season; heavy lingering snow ... status risky"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jun-Sep; June snow makes the South Chute far pleasanter than late-summer scree"
+      },
+      {
+       "field": "approach",
+       "says": "snow-covered and easier in June"
+      }
+     ],
+     "why": "seasonal_guidance calls June outside the season while the season chip includes it and the approach says June snow makes the chute easier.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-block grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3, with short low-5th-class moves on the final summit block"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "graded 3rd class but reported by many as feeling like easy 4th class"
+      },
+      {
+       "field": "pitch_detail[6].grade",
+       "says": "Class 3-4"
+      }
+     ],
+     "why": "rock_grade puts low-5th moves on the summit block, while the climbing route and breakdown grade it 3rd/easy 4th.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking/entrance pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "No day-use pass is needed to climb"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day) ..."
+      },
+      {
+       "field": "access.notes",
+       "says": "only the standard entrance fee and wilderness camping permit apply."
+      }
+     ],
+     "why": "ACCESS both says no pass is needed and lists an entrance fee.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Lake Constance reservation season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "reservations available roughly mid-June to mid-October"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Reserve on Recreation.gov well ahead for May through September."
+      }
+     ],
+     "why": "Two different reservation seasons for the same quota site.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "5:30 AM Leave camp ... ~7:30 PM Back at camp"
+      }
+     ],
+     "why": "The schedule is 14 hours camp-to-camp vs 12 hours in timing/itinerary.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Lake Constance trail signed or unsigned",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "to the signed, unmaintained Lake Constance climbers' path"
+      },
+      {
+       "field": "approach_variants[1].notes",
+       "says": "The bike is left at the unsigned start of the climbers' path."
+      }
+     ],
+     "why": "The trail start is called both signed and unsigned.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead location and elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Dosewallips Road washout parking (FR-2610)"
+      },
+      {
+       "field": "waypoints (Trailhead)",
+       "says": "Lake Constance Trailhead (Dosewallips Road), elev 1400, at 47.7403,-123.0658"
+      },
+      {
+       "field": "approach",
+       "says": "Park at the Dosewallips Road washout (~600 ft) ... roughly 5-6 more miles ... to the signed, unmaintained Lake Constance climbers' path"
+      }
+     ],
+     "why": "The trailhead waypoint is named for the Lake Constance climbers' trail at 1,400 ft but sits on the washout-parking coordinates, which the row places ~5 road miles lower at ~600-700 ft.",
+     "internal_resolution": "The coordinates match approach_logistics' washout parking; the name/elevation belong to the Lake Constance trail junction ~5 mi up the road.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "name": "West Arête",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "Approach and camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Same trailhead and grueling approach as the standard route ... to Lake Constance ... Camp at the established sites on the lake's north end."
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Approach to Lake Constance camp"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "a multi-day approach up the western flank to a high camp, distinct and reportedly less-traveled than the Lake Constance trail used for the standard route"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Multi-hour approach to a high camp on the western flank of the massif; less documented than the Lake Constance approach"
+      },
+      {
+       "field": "seasonal_hazards.weather.typical",
+       "says": "the West Arête's western-flank approach may see slightly more moisture than the Lake Constance side"
+      }
+     ],
+     "why": "Partner requirements and seasonal hazards describe a separate western-flank approach to a high camp, while the approach, itinerary and bivy use the Lake Constance trail and camp.",
+     "internal_resolution": "approach, approach_variants, itinerary, bivy and waypoints all use Lake Constance.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rock type",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "Full set of nuts/stoppers — this granite takes them well"
+      },
+      {
+       "field": "descent_text",
+       "says": "Given the pillow-basalt rock (loose and often runout)"
+      },
+      {
+       "field": "obj_haz[0]",
+       "says": "Loose, crumbly rock typical of the Olympics"
+      }
+     ],
+     "why": "The gear list calls the rock granite that takes nuts well; the descent calls it loose pillow basalt.",
+     "internal_resolution": "descent_text and obj_haz agree on loose Olympic basalt; the 'granite' in gear is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rack and rope",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear",
+       "says": "Single rack of cams from about 0.3 to 3 inches ... 50m single rope for the rappel, or a double-rope setup"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Single light rack to ~2 inches with slings; rope for exposed steps"
+      },
+      {
+       "field": "descent_text",
+       "says": "a single 30-60m rope is more than sufficient for the optional summit-block rap"
+      }
+     ],
+     "why": "The rack tops out at 3 in vs ~2 in, and gear calls for a 50 m rope 'for the rappel' while the descent needs only an optional short rap.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Character of the climbing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "sustained 5.4-5.5 rock over 5+ pitches (harder than the 'low 5th' commonly cited)"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "roughly 5 pitches of low-5th-class rock"
+      },
+      {
+       "field": "beta",
+       "says": "fairly broken Class 2 and 3 with occasional 4th or low 5th steps"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "broken class 2 and 3 with the odd class 4 or low fifth step"
+      }
+     ],
+     "why": "The overview says sustained 5.4-5.5 and explicitly harder than 'low 5th', while the itinerary, beta and variant describe broken Class 2-3 with occasional low-5th steps.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which pitch is 5.4 up and left past pitons",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[2].detail",
+       "says": "Pitch 1 (5.4) up and left past fixed pitons to a chimney belay."
+      },
+      {
+       "field": "pitch_detail[0]",
+       "says": "pitch 1, class 3/4: Traverse around a small tower from Crystal Pass, climbing a vertical crack protected by fixed webbing"
+      },
+      {
+       "field": "pitch_detail[2]",
+       "says": "pitch 3, 5.4: Traverse up and right on a groove clipping into existing pitons ... alcove belay below a chimney"
+      }
+     ],
+     "why": "The schedule describes pitch 1 as the 5.4 piton pitch; the breakdown makes pitch 1 class 3/4 and the 5.4 piton pitch pitch 3.",
+     "internal_resolution": "pitch_detail matches overview and beta.",
+     "needs_research": false
+    },
+    {
+     "fact": "Climb length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "335"
+      },
+      {
+       "field": "overview",
+       "says": "roughly 1,100 feet"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "lengthM 45 + 40 + 35 + 35 + 35 = 190"
+      }
+     ],
+     "why": "The pitch lengths sum to 190 m (~620 ft), not the 335 m / 1,100 ft stated.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cat Ears as target or wrong-way marker",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "continue up into Avalanche Canyon past the 'Thumb' rock feature and stay toward the climber's-right side of the canyon heading for the 'Cat Ears' landmark"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If you found yourself climbing a scree chute out of the west side of the canyon with the Cat Ears above you, you are on the standard South Chute route"
+      }
+     ],
+     "why": "The approach tells you to head for the Cat Ears; the base-finding says the Cat Ears above you mean you are on the wrong route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "11.1"
+      },
+      {
+       "field": "itinerary",
+       "says": "days miles 6.5 + 6 + 6.5 = 19"
+      }
+     ],
+     "why": "dist_km (6.9 mi) matches neither the itinerary's 19 mi round trip nor a one-way figure (~9 mi from the road and canyon mileages).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "5:30 AM Leave camp ... ~7:30 PM Back at camp"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "per the existing 14-hr round-trip summit timing"
+      }
+     ],
+     "why": "The schedule and partner requirements give 14 hours; timing and the itinerary give 13.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead location and elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Dosewallips Road washout parking (FR-2610)"
+      },
+      {
+       "field": "waypoints (Trailhead)",
+       "says": "Lake Constance Trailhead (Dosewallips Road), elev 1400, at 47.7403,-123.0658"
+      },
+      {
+       "field": "approach",
+       "says": "a road-walk/bike of roughly 5 miles up the closed, washed-out Dosewallips River Road to the unsigned Lake Constance climbers' trail (~1,450 ft)"
+      }
+     ],
+     "why": "The trailhead waypoint is named for the Lake Constance climbers' trail at 1,400 ft but sits on the washout-parking coordinates, which the row places ~5 road miles lower at ~600-700 ft.",
+     "internal_resolution": "The coordinates match approach_logistics' washout parking; the name/elevation belong to the Lake Constance trail junction ~5 mi up the road.",
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager / wilderness",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "Olympic National Park / Olympic National Forest (Buckhorn Wilderness)"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "National Park Service — Olympic National Park (Olympic Wilderness)"
+      }
+     ],
+     "why": "Two different land managers/wildernesses are given for the same route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "name": "North Chute",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "Timing total",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "11"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "3.5"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "6"
+      },
+      {
+       "field": "timing.descentTimeHrs",
+       "says": "5"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: approach to Lake Constance. Day 2: ... Day 3: hike out."
+      }
+     ],
+     "why": "The PUBLISHED TIMES components add to 14.5 hours, not the 11-hour total.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season includes the avalanche-prone June window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Avalanche hazard in Avalanche Canyon and its chutes is serious in May-June conditions."
+      },
+      {
+       "field": "turnaround",
+       "says": "Avoid the chute in early season when it is avalanche-prone"
+      },
+      {
+       "field": "best_season",
+       "says": "Snow eases scree travel in May-June but brings avalanche hazard"
+      }
+     ],
+     "why": "The season chip starts in June while the hazards and turnaround say to avoid the chute in the May-June avalanche period.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Camp description points to the South Chute",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "From camp the route runs north into Avalanche Canyon and then up the chute toward the south ridge notch"
+      },
+      {
+       "field": "approach",
+       "says": "the North Chute climbs a parallel couloir further into the canyon"
+      }
+     ],
+     "why": "The camp card describes the South Chute to the south-ridge notch, not this route's North Chute.",
+     "internal_resolution": "approach, pitch_detail and approach_variants all describe the North Chute; the shared bivy note is copied from the South Chute routes.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead location and elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Dosewallips Road washout parking (FR-2610)"
+      },
+      {
+       "field": "waypoints[0]",
+       "says": "Lake Constance Trailhead (Dosewallips Road), elev 1400, at 47.740259,-123.065764"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Bike or walk the closed Dosewallips Road (FS 2610) about 5 miles to the unsigned Lake Constance climbers' trail"
+      }
+     ],
+     "why": "The trailhead waypoint is named for the Lake Constance trail at 1,400 ft but sits on the washout-parking coordinates ~5 road miles below it.",
+     "internal_resolution": "The coordinates match approach_logistics' washout parking; the name/elevation belong to the Lake Constance trail junction.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ellinor_standard",
+   "name": "Standard Trail (Upper Trailhead, NFR 24)",
+   "area": "Mount Ellinor",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "about 3,200 ft of gain over ~1.6 mi one way"
+      },
+      {
+       "field": "gain_ft",
+       "says": "2444"
+      },
+      {
+       "field": "approach",
+       "says": "total gain from the Upper TH is 2,444 ft over 1.6 mi one-way"
+      }
+     ],
+     "why": "Partner requirements overstate the gain by ~30%.",
+     "internal_resolution": "gain_ft, approach, itinerary and approach_variants agree on 2,444 ft (3,500 ft trailhead to 5,944 ft summit).",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Summer (roughly Jun-Sep, snow-dependent)"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "July-October for the dry Class 2 hiking trail; late April-June for the classic firm-snow climb and glissade"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jul-Oct for the snow-free summer trail"
+      },
+      {
+       "field": "best_season",
+       "says": "roughly June–October"
+      },
+      {
+       "field": "approach",
+       "says": "Outside of core summer (roughly November–June), snow typically fills the chute and buries the upper switchbacks"
+      }
+     ],
+     "why": "The season chip is Jun-Sep, while the rest of the row gives Jul-Oct for the summer trail (with June as snow season) and an April-June snow-climb window.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1.21"
+      },
+      {
+       "field": "approach",
+       "says": "2,444 ft over 1.6 mi one-way"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "1.6"
+      }
+     ],
+     "why": "The summit waypoint is at 1.21 mi while the trail is 1.6 mi one-way everywhere else.",
+     "internal_resolution": "approach, approach_variants, itinerary (3.3 mi RT) and dist_km (2.57 km) agree on ~1.6 mi.",
+     "needs_research": false
+    },
+    {
+     "fact": "Permits/fees that apply",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "only the standard entrance fee and wilderness camping permit apply."
+      },
+      {
+       "field": "access.rules",
+       "says": "no NPS wilderness-permit or bear-canister rules apply here"
+      },
+      {
+       "field": "permit",
+       "says": "no separate wilderness permit needed for this day hike."
+      }
+     ],
+     "why": "access.notes cites an entrance fee and wilderness camping permit that the rest of the row says do not apply.",
+     "internal_resolution": "permit, access.permit and access.rules agree only a Northwest Forest Pass is needed; access.notes is boilerplate.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pack weight",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].packLb",
+       "says": "0"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "Light daypack (roughly 15-20 lb)"
+      }
+     ],
+     "why": "The itinerary shows a 0 lb pack vs 15-20 lb in partner requirements.",
+     "internal_resolution": "0 is a placeholder; 15-20 lb is the stated value.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

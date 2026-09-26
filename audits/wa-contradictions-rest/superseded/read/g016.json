@@ -1,0 +1,606 @@
+{
+ "batches": ["b061.json", "b062.json", "b063.json", "b064.json"],
+ "routes_read": 15,
+ "routes": [
+  {
+   "id": "wa_prusik_peak_sail_away",
+   "name": "Sail Away",
+   "area": "Prusik Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_boving_christensen",
+   "name": "Boving-Christensen",
+   "area": "Prusik Peak",
+   "contradictions": [
+    {
+     "fact": "total route length",
+     "severity": "medium",
+     "claims": [
+      {"field": "length_m", "says": "137"},
+      {"field": "pitch_detail[0..3].lengthM sum", "says": "35+60+30+50 = 175m"},
+      {"field": "rope_note", "says": "4 pitches, 450ft, on Prusik's south/west face near Solid Gold"}
+     ],
+     "why": "length_m (137m≈450ft) and rope_note (450ft) agree, but the four pitch_detail lengths sum to 175m (≈574ft) — a 28% mismatch with the stated route length.",
+     "internal_resolution": "length_m and rope_note agree at ~450ft; pitch_detail's summed lengths are the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "descent method off the top",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "One 60m rappel down the north side, then a ~30-minute scramble back to the base."},
+      {"field": "descent_text", "says": "make one full-length rappel (a 60m rope is standard) down to easier ground, then scramble/downclimb roughly 30 minutes back around to the base of the south face"},
+      {"field": "rappels", "says": "Two rappels off tat to the base of the West Ridge, or complete the West Ridge and use its normal rappel descent."}
+     ],
+     "why": "descent/descent_text describe a single 60m rappel straight down the north side to the south-face base, but the rappels field instead describes TWO rappels to the West Ridge base or finishing the West Ridge and using its own descent — a different rappel count and destination.",
+     "internal_resolution": "descent and descent_text agree with each other (and match bail's mid-route two-rap option, which is for retreat, not the summit descent); rappels appears to have conflated the bail-out option with the actual topout descent.",
+     "needs_research": false
+    },
+    {
+     "fact": "approach elevation gain to Gnome Tarn camp/base",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach / approach_variants[0].gainFt", "says": "4,600 ft one-way ... to Gnome Tarn and the base of the south face"},
+      {"field": "itinerary.days[0].gainFt", "says": "4000"},
+      {"field": "waypoints", "says": "Stuart Lake Trailhead elev 3400 -> Gnome Tarn elev 7415 (diff 4015)"}
+     ],
+     "why": "The approach prose and approach_variants both state ~4,600 ft one-way gain to camp/base, but the itinerary's own Day-1 gainFt (4000) and the waypoint elevation difference (4015ft) both agree on ~4,000 ft — a 600ft/15% gap from the approach text.",
+     "internal_resolution": "itinerary.gainFt and the waypoint elevation difference agree at ~4,000 ft; the approach/approach_variants '4,600 ft' figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.sectionBreakdown[0]", "says": "fromTo 'Approach to Gnome Tarn camp', section 'Climb'"},
+      {"field": "timing.sectionBreakdown[1]", "says": "fromTo 'Climb Boving-Christensen', section 'Descent'"}
+     ],
+     "why": "The approach leg is tagged section:'Climb' and the actual climbing leg is tagged section:'Descent' — the section label contradicts the leg's own fromTo/note. This also means top-level summitTimeHrs (6.5) is really the approach time, and descentTimeHrs (10.5) includes the real climbing time.",
+     "internal_resolution": "fromTo and note text for each entry are internally consistent with each other; the 'section' tag is the outlier and appears swapped.",
+     "needs_research": false
+    },
+    {
+     "fact": "overnight group size cap",
+     "severity": "low",
+     "claims": [
+      {"field": "access._raw.group_size_limits", "says": "Maximum party 12 people"},
+      {"field": "access.rules", "says": "Overnight groups inside the permit boundary capped at 8 people"},
+      {"field": "access.group_limit", "says": "8"}
+     ],
+     "why": "access._raw states a 12-person cap while access.rules/group_limit state 8 for the same permit area.",
+     "internal_resolution": "Two fields (access.rules, access.group_limit) agree at 8; access._raw's 12 is the outlier. access._raw looks like an unrendered raw dump, hence low priority.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "name": "Stanley-Burgner",
+   "area": "Prusik Peak",
+   "contradictions": [
+    {
+     "fact": "total route length",
+     "severity": "medium",
+     "claims": [
+      {"field": "length_m", "says": "183 (≈600ft)"},
+      {"field": "pitch_detail[0..5].lengthM sum", "says": "55+30+55+18+24+55 = 237m (≈778ft)"},
+      {"field": "timing.sectionBreakdown[1].note / itinerary.days[1].note", "says": "6 pitches (~650 ft)"}
+     ],
+     "why": "Three different totals for the same climb: 600ft (length_m), ~650ft (sectionBreakdown/itinerary note), and 778ft (summed pitch_detail) — the pitch_detail sum is a clear outlier from the other two.",
+     "internal_resolution": "length_m and the sectionBreakdown/itinerary note are close to each other (600 vs 650ft); pitch_detail's summed lengths (778ft) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "hardest free-climbing grade of the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade / rock_grade", "says": "5.10a"},
+      {"field": "pitch_detail (crux P5, and P6)", "says": "5.9+"},
+      {"field": "best_season", "says": "Historically graded III 5.9+ ... many modern parties find the upper pitches feel closer to 5.10-"}
+     ],
+     "why": "The header/overall grade is 5.10a, but no individual pitch in pitch_detail is graded above 5.9+, and the route's own best_season text says even the modern consensus is only 'closer to 5.10-', not 5.10a.",
+     "internal_resolution": "pitch_detail and best_season agree the hardest climbing is 5.9+/~5.10-; grade/rock_grade's 5.10a is unsupported by any single pitch.",
+     "needs_research": false
+    },
+    {
+     "fact": "approach elevation gain to Gnome Tarn camp/base",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "roughly 7.5–8 miles and 4,600+ ft one-way from the trailhead"},
+      {"field": "itinerary.days[0].gainFt", "says": "4000"},
+      {"field": "waypoints", "says": "Stuart Lake Trailhead elev 3400 -> Gnome Tarn elev 7415 (diff 4015)"}
+     ],
+     "why": "Approach prose claims ~4,600+ ft one-way gain to camp/base, but itinerary Day 1 and the waypoint elevation difference both put it at ~4,000-4,015 ft.",
+     "internal_resolution": "itinerary.gainFt and waypoint elevations agree at ~4,000ft; the approach text's 4,600+ ft is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "name": "Energizer Bunny",
+   "area": "Prusik Peak",
+   "contradictions": [
+    {
+     "fact": "total route length",
+     "severity": "medium",
+     "claims": [
+      {"field": "length_m", "says": "137 (≈450ft)"},
+      {"field": "pitch_detail[0..4].lengthM sum", "says": "30+30+30+30+45 = 165m (≈541ft)"},
+      {"field": "rope_note", "says": "5 pitches, 450ft"}
+     ],
+     "why": "length_m and rope_note agree at ~450ft, but the pitch_detail lengths sum to 165m/541ft, a 20% mismatch.",
+     "internal_resolution": "length_m and rope_note agree; pitch_detail's summed length is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "hardest pitch grade vs overall route grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade / rock_grade", "says": "5.10+ (C1)"},
+      {"field": "pitch_detail[4] (P5, 'Shared finishing pitch with Solid Gold')", "says": "5.11a"}
+     ],
+     "why": "Pitch 5 is graded 5.11a, harder than the overall stated route grade of 5.10+.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "total round-trip elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.totalNote", "says": "~19.5 mi, ~4,500 ft round-trip estimated"},
+      {"field": "gain_ft", "says": "5200"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "4000+500+700 = 5200"}
+     ],
+     "why": "gain_ft and the sum of the itinerary's own day-by-day gainFt values agree at 5,200 ft, but totalNote states only ~4,500 ft for the same trip.",
+     "internal_resolution": "gain_ft and itinerary day sums agree at 5,200 ft; totalNote's ~4,500 ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.sectionBreakdown[0]", "says": "fromTo 'Approach to Gnome Tarn camp', section 'Climb'"},
+      {"field": "timing.sectionBreakdown[1]", "says": "fromTo 'Climb Energizer Bunny', section 'Descent'"}
+     ],
+     "why": "The approach leg is tagged section:'Climb' and the climbing leg is tagged section:'Descent', so top-level summitTimeHrs/descentTimeHrs misattribute time between approach and climbing.",
+     "internal_resolution": "fromTo/note per entry are self-consistent; the 'section' tag is swapped.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_davis",
+   "name": "Beckey-Davis",
+   "area": "Prusik Peak",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "7"},
+      {"field": "beta", "says": "Seven pitches from 5.5 to 5.9"},
+      {"field": "approach_variants[0].baseFinding", "says": "seven pitches, about 650 ft"},
+      {"field": "pitch_detail", "says": "only 6 numbered rows (P1-P6)"},
+      {"field": "itinerary.days[1].objective", "says": "Send the Beckey-Davis route (5.9, 6 pitches)"},
+      {"field": "rope_note", "says": "6 pitches, 700ft, original 1962 line"}
+     ],
+     "why": "pitches/beta/baseFinding all say seven pitches, but the structured pitch_detail table has exactly six rows, and both itinerary.objective and rope_note independently say six pitches.",
+     "internal_resolution": "pitch_detail's actual row count (6), itinerary.objective, and rope_note agree at six; pitches/beta/baseFinding's 'seven' is the outlier camp.",
+     "needs_research": false
+    },
+    {
+     "fact": "total round-trip elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.totalNote", "says": "~19.5 mi, ~4,500 ft round-trip estimated"},
+      {"field": "gain_ft", "says": "5450"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "4000+750+700 = 5450"}
+     ],
+     "why": "gain_ft and the itinerary's own day gainFt sum agree at 5,450 ft, but totalNote states only ~4,500 ft.",
+     "internal_resolution": "gain_ft and itinerary day sums agree at 5,450 ft; totalNote is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "approach elevation gain to Gnome Tarn camp/base",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "roughly 7.5–8 miles and 4,600+ ft one-way"},
+      {"field": "itinerary.days[0].gainFt", "says": "4000"},
+      {"field": "waypoints", "says": "Stuart Lake Trailhead elev 3400 -> Gnome Tarn elev 7415 (diff 4015)"}
+     ],
+     "why": "Approach prose claims ~4,600+ ft one-way to camp/base; itinerary day 1 and waypoint elevations agree on ~4,000-4,015 ft.",
+     "internal_resolution": "itinerary.gainFt and waypoint elevations agree at ~4,000ft; approach text's 4,600+ ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.sectionBreakdown[0]", "says": "fromTo 'Approach to Gnome Tarn camp', section 'Climb'"},
+      {"field": "timing.sectionBreakdown[1]", "says": "fromTo 'Climb Beckey-Davis', section 'Descent'"}
+     ],
+     "why": "The approach leg is tagged 'Climb' and the actual climb is tagged 'Descent'; top-level summitTimeHrs (6.5) is really the approach time and descentTimeHrs (12.5) includes the real climb time.",
+     "internal_resolution": "fromTo/note per entry are self-consistent; the 'section' tag is swapped.",
+     "needs_research": false
+    },
+    {
+     "fact": "overnight group size cap",
+     "severity": "low",
+     "claims": [
+      {"field": "access._raw.group_size_limits", "says": "Maximum party 12 people"},
+      {"field": "access.rules / access.group_limit", "says": "capped at 8 people / 8"}
+     ],
+     "why": "access._raw states a 12-person cap while access.rules/group_limit state 8.",
+     "internal_resolution": "access.rules and access.group_limit agree at 8; access._raw's 12 is the outlier (and appears unrendered).",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "name": "Solid Gold",
+   "area": "Prusik Peak",
+   "contradictions": [
+    {
+     "fact": "rope count needed for the rappel descent",
+     "severity": "high",
+     "claims": [
+      {"field": "rope_type / rope_length_m / rope_note", "says": "single dynamic, 60m; 'a single 60m rope is confirmed sufficient for this one rap'"},
+      {"field": "descent_text", "says": "the standard descent is a single, full-length rappel — a 60m rope is typical"},
+      {"field": "rack", "says": "Two 60m ropes (route requires two ropes for the rappel descent, per route beta)"},
+      {"field": "what_to_bring", "says": "two 60m ropes"},
+      {"field": "detailed_rack", "says": "two 60m ropes for the rappels"}
+     ],
+     "why": "rope_note/rope_type/descent_text state one 60m rope is sufficient for the (typically single) rappel, but rack/what_to_bring/detailed_rack all explicitly require two 60m ropes — a safety-relevant rope-count contradiction.",
+     "internal_resolution": "Three fields (rope_note, rope_type, descent_text) agree a single 60m rope suffices; rack/what_to_bring/detailed_rack's 'two ropes' claim is the outlier camp.",
+     "needs_research": false
+    },
+    {
+     "fact": "which face the rappel descent is on",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent", "says": "Rappel the south face route back to the base."},
+      {"field": "descent_text", "says": "locate the shared 'Solid Gold' rap anchors ... on the north side of the ridge ... down the north face"},
+      {"field": "rappels", "says": "Rappel the back (north) side, or continue to the summit via the West Ridge and descend that way."}
+     ],
+     "why": "descent says the rappel is down 'the south face route,' but descent_text and rappels both specify the rappel is on the north side, not down the climbed south face.",
+     "internal_resolution": "descent_text and rappels agree on a north-side rappel; descent's 'south face' wording is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "total gain/loss for the round trip",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "6200"},
+      {"field": "loss_ft", "says": "4608"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "4000+500+700 = 5200"},
+      {"field": "itinerary.days[*].lossFt sum", "says": "700+500+4000 = 5200"},
+      {"field": "itinerary.totalNote", "says": "~4,600 ft round-trip"}
+     ],
+     "why": "Four different numbers for what should be one round-trip elevation change on an out-and-back route: gain_ft 6200, loss_ft 4608 (gain and loss should be roughly equal for a round trip but differ by 1,592ft), itinerary day sums which agree with themselves at 5200/5200, and totalNote's 4,600.",
+     "internal_resolution": "itinerary's own day-by-day gainFt/lossFt sum to a matching, self-consistent 5,200/5,200; gain_ft, loss_ft, and totalNote are all outliers and disagree with each other too.",
+     "needs_research": false
+    },
+    {
+     "fact": "overnight group size cap",
+     "severity": "low",
+     "claims": [
+      {"field": "access._raw.group_size_limits", "says": "Maximum party 12 people"},
+      {"field": "access.group_limit", "says": "8"}
+     ],
+     "why": "access._raw states 12 while access.group_limit states 8 for the same permit area.",
+     "internal_resolution": "access.group_limit (8) matches every other route's value; access._raw's 12 is the outlier.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_alpine_craggers_delight",
+   "name": "Alpine Cragger's Delight",
+   "area": "Prusik Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_prusik_peak_prayer_for_a_friend",
+   "name": "Prayer for a Friend",
+   "area": "Prusik Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_prusik_peak_taylor_wood_route",
+   "name": "Taylor-Wood Route",
+   "area": "Prusik Peak",
+   "contradictions": [
+    {
+     "fact": "number of sections/pitches on the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "overview", "says": "a long, 5.9+ ten-section route up the south face"},
+      {"field": "pitches", "says": "8"},
+      {"field": "beta", "says": "lists roughly eight described segments ending at the summit"}
+     ],
+     "why": "The overview explicitly calls this a 'ten-section route,' but the structured pitches field says 8, and beta's own segment list only enumerates about eight sections.",
+     "internal_resolution": "pitches (8) and the count of segments actually described in beta agree; overview's 'ten-section' claim is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "name": "Der Sportsman",
+   "area": "Prusik Peak",
+   "contradictions": [
+    {
+     "fact": "hardest free-climbing grade of the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade / rock_grade", "says": "5.11+"},
+      {"field": "pitch_detail[0] (crux P1)", "says": "5.11d/12a"},
+      {"field": "itinerary.days[1].objective", "says": "Send Der Sportsman (5.11+/12-, 6 pitches) base to summit"}
+     ],
+     "why": "The header/overall grade is 5.11+, but the crux pitch is 5.11d/12a, and the route's own itinerary objective already acknowledges the upper grade '5.11+/12-' — a harder tier than the plain '5.11+' shown in grade/rock_grade.",
+     "internal_resolution": "pitch_detail and itinerary.objective agree the route goes up to 12-/12a; grade/rock_grade undersell it as just 5.11+.",
+     "needs_research": false
+    },
+    {
+     "fact": "total gain/loss for the round trip",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "6200"},
+      {"field": "loss_ft", "says": "4500"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "4000+700+700 = 5400"},
+      {"field": "itinerary.days[*].lossFt sum", "says": "700+700+4000 = 5400"}
+     ],
+     "why": "gain_ft (6200) and loss_ft (4500) disagree with each other by 1,700ft despite this being a round trip back to the same trailhead, and both disagree with the itinerary's own self-consistent day-by-day sum of 5,400 ft each way. (Flagged by detector hint [loss-vs-itinerary].)",
+     "internal_resolution": "itinerary day sums agree with themselves at 5,400/5,400; gain_ft and loss_ft are outliers and inconsistent with each other too.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "name": "West Ridge",
+   "area": "Prusik Peak",
+   "contradictions": [
+    {
+     "fact": "overall commitment grade (roman numeral)",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Grade II, 5.7"},
+      {"field": "commitment", "says": "III"},
+      {"field": "alpine_grade", "says": "III"}
+     ],
+     "why": "The grade field states Grade II for the whole route, but commitment and alpine_grade both state Grade III for the same route. (Flagged by detector hint [commitment-grade].)",
+     "internal_resolution": "commitment and alpine_grade agree at III; grade's 'II' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Stuart Lake Trailhead elevation",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[0]", "says": "name 'Stuart Lake Trailhead (Trail #1599)', elev 1300, same coordinates (47.5282,-120.82036) used elsewhere for Stuart Lake TH"},
+      {"field": "approach", "says": "Start at the Stuart Lake Trailhead (Trail #1599) ... elev. ~3,400-3,600 ft"},
+      {"field": "waypoints[0].note", "says": "this route's own recorded GPS track starts at Snow Lakes TH, not Stuart Lake TH"}
+     ],
+     "why": "This route's own approach prose states the Stuart Lake Trailhead is at ~3,400-3,600 ft (matching every other Prusik Peak route's waypoint for the identical coordinates), but this route's waypoint entry for the 'same' named trailhead at the identical coordinates gives elev 1300 — a real-world elevation that instead matches Snow Lakes Trailhead, not Stuart Lake TH. The waypoint's own note admits confusion between the two trailheads.",
+     "internal_resolution": "approach text (3,400-3,600ft) matches every other route's Stuart Lake TH waypoint elevation; this route's waypoint (1300ft) is the outlier and appears to have mixed in Snow Lakes TH's real elevation under the Stuart Lake TH name/coordinates.",
+     "needs_research": false
+    },
+    {
+     "fact": "total gain/loss/round-trip figure",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "6200"},
+      {"field": "loss_ft", "says": "4608"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "4000+600+700 = 5300"},
+      {"field": "itinerary.days[*].lossFt sum", "says": "700+600+4000 = 5300"},
+      {"field": "itinerary.totalNote", "says": "~20.5 mi, ~4,700 ft round-trip"}
+     ],
+     "why": "Four different values for the same round-trip elevation change: gain_ft 6200, loss_ft 4608 (should roughly match gain_ft for a round trip but differs by 1,592ft), itinerary's own self-consistent 5,300/5,300, and totalNote's 4,700. (loss_ft vs itinerary flagged by detector hint.)",
+     "internal_resolution": "itinerary's day-by-day gainFt/lossFt sums agree with each other at 5,300 ft; gain_ft, loss_ft, and totalNote are all outliers.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "name": "South Face (Burgner-Stanley)",
+   "area": "Prusik Peak",
+   "contradictions": [
+    {
+     "fact": "which way the route is descended",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Descend via the standard West Ridge downclimb/rappels toward the Enchantments basin."},
+      {"field": "itinerary.days[1].note / schedule", "says": "'...then descend via the standard West Ridge downclimb/rappels' / 'Downclimb/rappel the West Ridge back toward the notch'"},
+      {"field": "itinerary.totalNote", "says": "...descending via the West Ridge."},
+      {"field": "descent_text", "says": "Walk east from the summit and begin the north-face rappel line on slung belay stations ... Plan on 3–4 single-rope rappels"},
+      {"field": "rappels", "says": "Rappel the north face with slung/natural belay stations."},
+      {"field": "approach_variants[0].baseFinding", "says": "Note that the West Ridge starts somewhere else entirely — around at Prusik Pass on the far side of the peak — so the two are not confusable at the base, only on the map."}
+     ],
+     "why": "The 'descent' field and the itinerary (note, schedule, and totalNote) all claim the route is descended via the West Ridge, but descent_text, rappels, rappel_detail, and rope_note all describe a completely different north-face rappel line shared by south-face routes — and the route's own baseFinding text explicitly says the West Ridge is a separate route on the far side of the peak, not reachable from this descent. A climber following 'descent'/itinerary would go the wrong way.",
+     "internal_resolution": "descent_text, rappels, rappel_detail (5 stations), rappel_count_note, rope_note, and approach_variants.baseFinding all agree on a shared north-face rappel descent; 'descent' and the itinerary's 'West Ridge' claims are the outliers, contradicted by the route's own baseFinding text.",
+     "needs_research": false
+    },
+    {
+     "fact": "number of rappels on the north-face descent",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent_text / rappel_count_note", "says": "Plan on 3–4 single-rope rappels"},
+      {"field": "rappel_detail", "says": "5 numbered stations (n1-n5)"},
+      {"field": "waypoints ('North face rappel descent')", "says": "Five rappels off slung blocks/horns down the north face"}
+     ],
+     "why": "descent_text and rappel_count_note both state 3-4 rappels, but the structured rappel_detail table lists 5 stations, and a waypoint note independently states 'Five rappels' — outside the stated 3-4 range.",
+     "internal_resolution": "rappel_detail's row count and the waypoint note agree at 5; descent_text/rappel_count_note's '3-4' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "total route length",
+     "severity": "medium",
+     "claims": [
+      {"field": "length_m", "says": "152 (≈499ft)"},
+      {"field": "pitch_detail[0..5].lengthM sum", "says": "55+30+55+18+24+55 = 237m (≈778ft)"}
+     ],
+     "why": "length_m (499ft) is far short of the summed pitch_detail lengths (778ft) — a 56% mismatch.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "total round-trip elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.totalNote", "says": "~19.5 mi, ~4,500 ft round-trip"},
+      {"field": "gain_ft", "says": "5400"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "4000+700+700 = 5400"}
+     ],
+     "why": "gain_ft and the itinerary's own day gainFt sum agree at 5,400 ft, but totalNote states only ~4,500 ft.",
+     "internal_resolution": "gain_ft and itinerary day sums agree at 5,400 ft; totalNote is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.sectionBreakdown[0]", "says": "fromTo 'Approach to Gnome Tarn camp', section 'Climb'"},
+      {"field": "timing.sectionBreakdown[1]", "says": "fromTo 'Climb the South Face (Burgner-Stanley)', section 'Descent'"}
+     ],
+     "why": "The approach leg is tagged 'Climb' and the actual climb is tagged 'Descent'; top-level summitTimeHrs (6.5) is really the approach time and descentTimeHrs (13) includes the real climb time.",
+     "internal_resolution": "fromTo/note per entry are self-consistent; the 'section' tag is swapped.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_north_ridge",
+   "name": "North Ridge",
+   "area": "Sherpa Balanced Rock",
+   "contradictions": []
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_ne_couloir",
+   "name": "Northeast Couloir",
+   "area": "Sherpa Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "nature of the finish (one short 5.0 pitch vs. a longer technical finish)",
+     "severity": "high",
+     "claims": [
+      {"field": "overview", "says": "finishing with one short 5.0 rock pitch"},
+      {"field": "grade / rock_grade", "says": "5.0 (short finishing pitch)"},
+      {"field": "beta", "says": "exiting up and right to the Balanced Rock summit via one short 5.0 pitch"},
+      {"field": "approach_variants[0].baseFinding", "says": "Above the notch expect a class four chimney with old rappel slings in it, a harder chimney with a move or two of mid-fifth, a tunnel to pass through, then a traverse on the north side of the crest to the top rather than one short 5.0 pitch."}
+     ],
+     "why": "Overview/grade/beta all describe the finish as a single short 5.0 pitch, but the route's own baseFinding text explicitly says the real finish is a class-4 chimney, a harder chimney with mid-5th moves, a tunnel, and an exposed traverse — and says this in place of ('rather than') a short 5.0 pitch. A party expecting one easy pitch would be unprepared for the actual finish described.",
+     "internal_resolution": "baseFinding directly and explicitly negates the 'one short 5.0 pitch' framing used everywhere else on the route; the two accounts cannot both describe the same finish.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_standard",
+   "name": "Standard Route",
+   "area": "Sherpa Balanced Rock",
+   "contradictions": [
+    {
+     "fact": "which trailhead is used",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "Start at the Longs Pass Trailhead (Esmeralda TH) at the end of Teanaway River Road (USFS Rd 9737)"},
+      {"field": "road.driveNote", "says": "This route starts at the Esmeralda Trailhead (also called the Longs Pass/Ingalls Way TH) via Cle Elum and the North Fork Teanaway drainage — a different road system than the Icicle Creek corridor used for the Enchantments' Stuart Lake Trailhead."},
+      {"field": "approach_variants[0].name", "says": "Longs Pass and Ingalls Creek to the Sherpa-Argonaut basin and Table Rock"},
+      {"field": "itinerary.days[0].title", "says": "Car-to-car: Stuart Lake TH to the Balanced Rock and back"},
+      {"field": "itinerary.days[0].schedule[0]", "says": "'Leave Stuart Lake trailhead'"}
+     ],
+     "why": "The approach text and road field both explicitly say this route starts at the Esmeralda/Longs Pass Trailhead on the Teanaway side, and road.driveNote explicitly says this is a DIFFERENT road system than the Stuart Lake Trailhead. But the itinerary's day title and its first schedule entry both say the day starts from the Stuart Lake trailhead — a real, different trailhead on the Icicle Creek side of the range. A climber following the itinerary would drive to the wrong trailhead.",
+     "internal_resolution": "approach, road, and approach_variants all consistently agree on the Esmeralda/Longs Pass Trailhead; the itinerary's 'Stuart Lake TH' references are the outlier and are directly contradicted by road.driveNote's explicit disambiguation.",
+     "needs_research": false
+    },
+    {
+     "fact": "first ascent party and year",
+     "severity": "medium",
+     "claims": [
+      {"field": "fa", "says": "Fred Dunham, Ray Lilleby, James Wick — August 13, 1961"},
+      {"field": "overview", "says": "Dave Mahre, with Gene and Bill Prater, made the first ascent in 1955."}
+     ],
+     "why": "Two entirely different climbing parties and two different years are given for the first ascent of the same feature. (Flagged by detector hint [fa-year].)",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "one-way/round-trip distance to the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "7.2 (≈4.5 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "14"},
+      {"field": "approach", "says": "Car-to-base is roughly 6-7 miles one-way"}
+     ],
+     "why": "dist_km implies ~4.5mi, but the itinerary's 14mi round trip (≈7mi one-way) and the approach text's explicit '6-7 miles one-way' agree with each other and disagree with dist_km by 35-55%. (Flagged by detector hint [distance-vs-itinerary].)",
+     "internal_resolution": "itinerary.miles and the approach text's stated one-way mileage agree at ~6-7mi one-way; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "total round-trip elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "3800"},
+      {"field": "itinerary.days[0].gainFt", "says": "5000"},
+      {"field": "itinerary.totalNote", "says": "about 14 miles round trip with ~5,000 ft of gain and loss"}
+     ],
+     "why": "gain_ft states 3,800 ft, but the itinerary's own day entry and totalNote both independently state ~5,000 ft. (Flagged by detector hint [gain-vs-itinerary].)",
+     "internal_resolution": "itinerary.gainFt and totalNote agree at 5,000ft; gain_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "number of pitches on the route",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "6"},
+      {"field": "pitch_detail", "says": "only 1 entry (pitch 1, 5.7)"},
+      {"field": "descent_text", "says": "This is a single-pitch feature, so no multi-rappel sequence is needed for the balanced rock itself"},
+      {"field": "gear", "says": "30-60m rope (single pitch)"}
+     ],
+     "why": "pitches states 6, but pitch_detail has exactly one row, and the route's own descent_text explicitly calls this 'a single-pitch feature' — directly contradicting a 6-pitch count.",
+     "internal_resolution": "pitch_detail's row count, descent_text's explicit 'single-pitch' statement, and the gear note ('single pitch') all agree the route is one pitch; the 'pitches: 6' field is the clear outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "number of rappels on the descent",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "4 single-rope rappels down the ascent route"},
+      {"field": "descent_text", "says": "the one bolted rappel off the top is the only roped descent on the Standard Route"},
+      {"field": "bail", "says": "The short route reverses with a rappel"}
+     ],
+     "why": "rappels states 4 rappels, but descent_text explicitly says only ONE ~20ft rappel off the summit block is needed, with the rest of the descent being unroped downclimbing/hiking.",
+     "internal_resolution": "descent_text and bail agree on a single rappel; rappels' '4 single-rope rappels' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "total route length vs. single-pitch scope",
+     "severity": "medium",
+     "claims": [
+      {"field": "length_m", "says": "152 (≈500ft)"},
+      {"field": "overview", "says": "a ~20-ft granite obelisk"},
+      {"field": "gear", "says": "30-60m rope (single pitch)"}
+     ],
+     "why": "length_m of 152m/500ft is grossly inconsistent with the route being a ~20ft summit block climbed in a single pitch on a 30-60m rope.",
+     "internal_resolution": "overview and gear both describe a very short, single-pitch feature; length_m's 152m appears to belong to a different, longer route.",
+     "needs_research": false
+    },
+    {
+     "fact": "reference to 'the cave' in rock_grade with no cave anywhere else in the route",
+     "severity": "low",
+     "claims": [
+      {"field": "rock_grade", "says": "5.5 (5.7 on the harder direct variation right of the cave)"},
+      {"field": "overview / beta / pitch_detail", "says": "describe only a free-standing pedestal/summit block reached by a shoulder-stand and friction moves; no cave is mentioned anywhere"}
+     ],
+     "why": "rock_grade references a 'cave' variation that appears nowhere else in this route's description, suggesting this clause was copied from a different route's data.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

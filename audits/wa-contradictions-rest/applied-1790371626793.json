@@ -1,0 +1,249 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Terror Creek crossing elevation and distance"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "fact": "Terror Creek crossing elevation and distance"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Terror Creek crossing elevation and distance"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Terror Creek crossing elevation and distance"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "directions"
+   ],
+   "fact": "Terror Creek crossing elevation and distance"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "name"
+   ],
+   "fact": "Treeline elevation"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Treeline elevation"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "directions"
+   ],
+   "fact": "Treeline elevation"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Permits: reservable vs walk-up, and self-issue vs in person"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Permits: reservable vs walk-up, and self-issue vs in person"
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permits: reservable vs walk-up, and self-issue vs in person"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "before": {
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Choss slope to the notch south of the summit",
+      "notes": "From the snowfield and small glacier remnant below the peak's south side, claw up dirt and broken rock to the notch immediately south of Degenhardt — the same notch that forms the upper crossing point of the Barrier. This is the worst rock on the route and is consistently described as marking the end of any good climbing in the area. Everything here is loose enough that a party should stay tight and out of each other's fall line, and running meltwater over the slabby sections has been reported as a slip hazard."
+     },
+     {
+      "n": 2,
+      "class": "3",
+      "label": "South ridge to the summit tower",
+      "notes": "From the notch, follow the ridge north toward the summit over exposed but moderate ground. Route-finding matters more than difficulty: parties report traversing much too low and having to regain height. A small tower guards the final notch and is turned rather than climbed direct."
+     },
+     {
+      "n": 3,
+      "class": "4",
+      "label": "Summit blocks",
+      "notes": "The last moves onto the roughly 7,800 ft summit are short 4th class on poor rock, with some parties describing the finish as low fifth depending on the line taken. A rappel anchor has been noted on the south side, though the section is commonly downclimbed. Degenhardt is widely regarded as the chossiest peak in the Southern Pickets, so helmets and careful rope management on the descent matter more than the grade suggests."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.68664,
+      "lng": -121.27121,
+      "elev": 600,
+      "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+      "note": "Unmarked pullout on the Goodell Creek Road across SR-20 from Newhalem/Goodell Creek Campground; self-issue wilderness permit kiosk here, then onto the unmaintained climbers' path paralleling Goodell Creek.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to Newhalem and turn onto the Goodell Creek Road opposite the campground; the start is an unmarked pullout with a self-issue wilderness permit kiosk. A North Cascades backcountry permit is required for the high camps."
+     },
+     {
+      "lat": 48.72888146052632,
+      "lng": -121.28204019473684,
+      "elev": 900,
+      "name": "Terror Creek Log Crossing",
+      "note": "Ford Terror Creek on a large downed log roughly 500 ft upstream of the confluence, then push back through dense devil's club; last reliable water before the steep climb.",
+      "type": "Water",
+      "distMi": 4.3,
+      "directions": "Follow the old logging-road grade along Goodell Creek for a bit over a mile until it narrows to a boot-beaten track. A mile or two in, near Roost Creek, the Terror Creek climbers' path splits off at an unmarked junction that is easy to walk straight past. Beyond it the path fades into creek-bottom brush and devil's club; the customary crossing is a large downed log about 500 ft upstream of where the path first meets the water. In high water that log is sometimes submerged, so budget time to scout an alternate."
+     },
+     {
+      "lat": 48.73146664473684,
+      "lng": -121.28279555263158,
+      "elev": 1000,
+      "name": "Climbers' Path Cairn",
+      "note": "A large cairn with a rock arrow and post marks where the valley trail ends and the steep, unmaintained push up The Barrier's south ridge begins.",
+      "type": "Junction",
+      "distMi": 4.5,
+      "directions": "From the log, push back through dense devil's club to regain the path on the far side. A large cairn with a rock arrow and a post marks the spot where valley travel ends and the climb begins."
+     },
+     {
+      "lat": 48.74697775,
+      "lng": -121.2873277,
+      "elev": 3640,
+      "name": "South Ridge Treeline Break",
+      "note": "Trail crests The Barrier's south ridge and breaks out of forest onto open slopes with views north to Chopping Block (Pinnacle Peak); route-finding gets ambiguous here.",
+      "type": "Junction",
+      "distMi": 5.7,
+      "directions": "The path now grinds relentlessly straight up the hillside, gaining close to 4,000 ft in under two miles through forest and then onto open heather. It is steep and loose in spots and has injured people who pushed it too hard. The trail crests the south ridge and breaks out of the trees with views north to the Chopping Block; route-finding gets ambiguous right here."
+     },
+     {
+      "lat": 48.756967,
+      "lng": -121.30485,
+      "elev": 6400,
+      "name": "Chopping Block Saddle Camp",
+      "note": "Flat gravel tent sites on the saddle east of Chopping Block; standard base camp for Degenhardt/Terror with snowmelt water nearby.",
+      "type": "Campsite",
+      "distMi": 6.5,
+      "directions": "Follow the narrow crest north as the path merges into Stump Hollow, continuing to the flat gravel tent sites on the saddle east of the Chopping Block. Snowmelt water is usually nearby."
+     },
+     {
+      "lat": 48.76378144736842,
+      "lng": -121.29223752631579,
+      "elev": 7000,
+      "name": "Crescent Basin Snow Traverse",
+      "note": "Crampon-worthy snowfield crossing of Crescent Basin toward the Degenhardt-Terror col; a slip here runs out onto rock.",
+      "type": "Hazard",
+      "distMi": 7,
+      "directions": "Leave camp on an alpine start. Traverse Stump Hollow to the saddle near the Chopping Block, then descend about 200 ft into Crescent Creek Basin, which is where you cross The Barrier. There are two options: a lower line over loose ledges at the base of the Terror Glacier, or the higher crossing over moats and steep choss near the top of the glacier just below the peak, which is the one to take if you are climbing Degenhardt. Both are loose, exposed and consistently harder than their class 3 rating suggests. Beyond it, put crampons on for the snowfield below the south side; a slip here runs out onto rock."
+     },
+     {
+      "lat": 48.76895181578948,
+      "lng": -121.29374824210527,
+      "elev": 7900,
+      "name": "NW Ridge / Summit Tower Approach",
+      "note": "Exposed class 3-4 scrambling over loose blocks gaining the ridge between Degenhardt and Terror; parties who traverse too low end up roping up for sustained 5.7-ish choss near the final tower.",
+      "type": "Hazard",
+      "distMi": 7.4,
+      "directions": "Cross the snow and talus to the base of the summit horn, then take class 3-4 slabs and ledges up toward the ridge between Degenhardt and Terror. Route-finding is ambiguous and the mistake to avoid is traversing too low: parties who do end up roping up for sustained low-fifth-class choss below the final tower. A class 4 slot gains the north ridge and a class 4-5 face leads to the west ridge."
+     },
+     {
+      "lat": 48.771537,
+      "lng": -121.294504,
+      "elev": 8107,
+      "name": "Mount Degenhardt Summit",
+      "note": "True summit reached via low-5th-class moves on loose rock around the final tower; descend by reversing the line with a short rappel off the summit block.",
+      "type": "Summit",
+      "distMi": 7.6,
+      "directions": "A short low-fifth-class wall, roughly 5.4 to 5.7, gains the summit ridge and is usually roped. From there an exposed class 3 scramble on loose, fractured rock leads along the ridge to the true summit."
+     }
+    ],
+    "approach": "Start at the Goodell Creek Trailhead (Goodell Creek Group Camp, ~500-600 ft) off SR-20 just west of Newhalem. The first stretch follows an old logging-road grade/climbers' path along Goodell Creek for a little over a mile before it narrows to a boot-beaten track. Roughly 1.5-2 miles in, near Roost Creek (~1600 ft), watch for the unmarked junction where the Terror Creek climbers' path splits off — historically flagged only by a rock arrow, a post, and a large cairn, so route-finding here is a genuine crux; the path is well-defined at first but dies out into creek-bottom brush and devils club lower down. Ford/cross Terror Creek at about 2000 ft: the customary crossing is a large log roughly 500 ft upstream of where the path hits the creek, but in high water this log is sometimes submerged and parties have had to scout alternate logs — treat this as a conditions-dependent obstacle, not a given. From the creek, the path grinds directly and relentlessly up the opposing hillside, gaining close to 4000 ft in under two miles through forest, then open heather slopes above treeline — steep, loose in spots, and a reported source of overuse injuries (at least one climber has torn a calf muscle here). The climbers' path eventually merges into 'Stump Hollow' and follows the narrow crest north to the standard basecamp area near 'Chopping Block Camp' (~6000-6400 ft), the usual base for Southern Pickets objectives. From camp, the approach to Degenhardt itself continues: traverse Stump Hollow to the roughly 6400 ft saddle near the Chopping Block, then descend about 200 ft into Crescent Creek Basin. This is where you make the Barrier crossing — the long rocky rib dividing Terror Basin from Crescent Creek Basin. There are two options: a lower crossing over loose ledges at the base of the Terror Glacier, or a higher crossing over moats and steep choss near the top of the glacier just below Degenhardt (the preferred option if camped near Terror Basin and climbing Degenhardt, Pyramid, or Terror); both are loose, exposed, and consistently described as 'Pickets Class 3' — sustained, serious, low-fifth-class-feeling terrain despite the modest rating. Beyond the Barrier, cross a snowfield/small glacier below Degenhardt's south side (crampons and an axe are standard gear here even in summer) to reach the base of the southwest line. Total trip is roughly 18.7 miles round-trip with about 600-8100+ ft of elevation range; water is available at Goodell Creek and the Terror Creek crossing, with seasonal snowmelt/tarns higher up that can dry out late season.",
+    "approach_variants": [
+     {
+      "name": "Goodell Creek and the Terror Creek log crossing, Stump Hollow to the Chopping Block camp, then the upper Barrier crossing",
+      "notes": "Start at the Goodell Creek Trailhead at the Goodell Creek Group Camp, about 500-600 ft, off SR-20 just west of Newhalem. The first stretch follows an old logging-road grade and climbers' path along Goodell Creek for a little over a mile before narrowing to a boot-beaten track.\n\nRoughly 1.5-2 miles in, near Roost Creek at about 1,600 ft, watch for the unmarked junction where the Terror Creek climbers' path splits off, historically flagged only by a rock arrow, a post and a large cairn. Route-finding here is a genuine crux; the path is well-defined at first but dies out into creek-bottom brush and devil's club lower down.\n\nCross Terror Creek at about 2,000 ft. THE CUSTOMARY CROSSING IS A LARGE LOG ROUGHLY 500 FT UPSTREAM OF WHERE THE PATH HITS THE CREEK, but in high water that log is sometimes submerged and parties have had to scout alternates. From the creek the path grinds directly up the opposing hillside, gaining close to 4,000 ft in under two miles through forest and then open heather. It eventually merges into Stump Hollow and follows the narrow crest north to the basecamp area near Chopping Block Camp at about 6,000-6,400 ft.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "An unmarked junction at Roost Creek that is a genuine route-finding crux",
+       "A Terror Creek log crossing that can be submerged in high water",
+       "Close to 4,000 ft of gain in under two miles on steep, loose ground; a torn calf muscle is on record here",
+       "The Barrier: loose, exposed, and consistently described as feeling far harder than its class-3 rating",
+       "The chossiest rock in the Southern Pickets, with running meltwater over slabby sections as a slip hazard",
+       "Old, weathered tat on the one summit-tower rappel anchor"
+      ],
+      "baseFinding": "THE START OF THE CLIMBING IS THE NOTCH IMMEDIATELY SOUTH OF THE SUMMIT, AND THAT NOTCH IS ALSO THE UPPER BARRIER CROSSING. Those are the same feature, which is what makes it findable: it is a place hundreds of parties pass through for a different reason. From camp, traverse Stump Hollow to the roughly 6,400 ft saddle near the Chopping Block, descend about 200 ft into Crescent Creek Basin, make the Barrier crossing, then cross a snowfield and small glacier below Degenhardt's south side and CLAW UP DIRT AND BROKEN ROCK TO THE NOTCH IMMEDIATELY SOUTH OF THE PEAK.\n\nTWO BARRIER CROSSINGS EXIST AND THIS ROUTE WANTS THE HIGHER ONE: a LOWER crossing over loose ledges at the base of the Terror Glacier, or a HIGHER crossing over moats and steep choss near the top of the glacier JUST BELOW DEGENHARDT. The higher one is the preferred option precisely when Degenhardt, Pyramid or Terror is the objective, because it puts you at the notch. If you took the low ledges you will have to climb back up.\n\nHOW YOU KNOW THE NOTCH WHEN YOU ARE IN IT, IN CLOUD: it is the top of the worst rock on the route, and the route's own description says this ground marks THE END OF ANY GOOD CLIMBING IN THE AREA. Dirt and broken rock underfoot steepening into a gap in a rib, with the Terror Glacier behind you and the ridge running north above you, is the place.\n\nFROM THERE THE COUNT IS SHORT AND THE ERROR IS ALWAYS THE SAME ONE: follow the ridge north over exposed but moderate ground. PARTIES REPORT TRAVERSING MUCH TOO LOW AND HAVING TO REGAIN HEIGHT. Stay near the crest. A SMALL TOWER guards the final notch and is TURNED rather than climbed direct, and the last moves onto the summit are short 4th class on poor rock.\n\nDegenhardt is widely regarded as the chossiest peak in the Southern Pickets. Helmets and careful rope management matter more than the grade suggests."
+     }
+    ],
+    "access": {
+     "fees": "$10 per person camping fee (ages 16+; 15 and under free), plus a $6 non-refundable reservation/application fee charged for the lottery, general on-sale reservation, or a walk-up permit.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "IGBC-approved bear canister (or approved Ursack) mandatory in the Terror Basin cross-country zone June 1-Nov 15; food and scented items must be stored at least 100 ft from sleeping areas.",
+     "permit": "Wilderness/backcountry permit required year-round for any overnight stay in the Terror Basin cross-country zone. Reserve via Recreation.gov (spring early-access lottery, then general on-sale) or obtain a walk-up permit in person at the Wilderness Information Center in Marblemount (climbing-zone permits generally must be issued in person, not by phone/email).",
+     "closures": "Terror Basin was closed to all use in August 2023 after bears repeatedly got into unsecured food and approached campers. Check the NPS Alerts/Conditions page (nps.gov/noca/planyourvisit/conditions.htm) before you go.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (National Park Service)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    }
+   }
+  }
+ ]
+}

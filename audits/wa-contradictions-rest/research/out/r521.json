@@ -1,0 +1,462 @@
+{
+ "file": "r521.json",
+ "results": [
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "fact": "Glacier travel / rope",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The safety fields scope 'no glacier travel' to the east-ridge scramble itself, while the rack explicitly scopes the glacier kit to the multi-day approach; the rope note concerns the scramble. A small unnamed glacier does exist on Pulitzer's north slope, which the east ridge avoids, so the two statements describe different terrain.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Pulitzer_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "fact": "Base camp for the climb",
+   "verdict": "fixed",
+   "correct_value": "Pulitzer is climbed from a camp in Ferry Basin (below the Ferry-Pulitzer col) or from Lone Tree Pass just south of the peak; both are used",
+   "evidence": "Ferry Basin rises to the broad pass between Mount Ferry and Pulitzer and parties camp there (backcountrypost 8-day report, Mountain Madness blog); the traverse goes from Ferry Basin over Pulitzer's shoulder down to Lone Tree Pass, which has a single campsite without water and is also used as a camp (CommuniChi report camped there). So both camps are genuine; the overview/approach/climbing_route claim Lone Tree Pass as the common camp while the itinerary and descent use Ferry Basin — rewording to name both removes the conflict.",
+   "sources": [
+    "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395/",
+    "https://mountainmadness.com/blog/the-bailey-range-a-true-paradise",
+    "https://communichi.org/bailey-range-2017-journey-home/",
+    "https://engineeredforadventure.com/bailey-range-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Base camp for the climb",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "typically approached from a high camp near Lone Tree Pass,",
+     "replace": "approached from a high camp in Ferry Basin or at Lone Tree Pass,"
+    },
+    {
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Base camp for the climb",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "reaches a high camp (commonly Lone Tree Pass) below Pulitzer and Mount Ferry",
+     "replace": "reaches a high camp below Pulitzer and Mount Ferry (Ferry Basin, or Lone Tree Pass just south of Pulitzer)"
+    },
+    {
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Base camp for the climb",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From the high camp (commonly Lone Tree Pass) below Pulitzer and Mount Ferry",
+     "replace": "From the high camp in Ferry Basin (or at Lone Tree Pass, just south of Pulitzer)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "fact": "Permit booking",
+   "verdict": "fixed",
+   "correct_value": "Trail camps (e.g. Heart Lake) reserve online; Bailey Range cross-country zones are arranged only by phone with the WIC",
+   "evidence": "The park's wilderness reservations page says cross-country trips such as the Bailey Range, or camps not listed online, must be booked by contacting the WIC at (360) 565-3100; the federal reservation listing for the Olympic wilderness permit says the same for cross-country zones not on the trip-planner map. The generic 'reserve online' wording in access is scoped so it no longer contradicts the permit field.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.recreation.gov/permits/4098362"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Permit booking",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "find": "(reserved via recreation.gov/WIC)",
+     "replace": "(trail camps online; Bailey Range cross-country zones by phone with the WIC)"
+    },
+    {
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Permit booking",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account;",
+     "replace": "Reserve the trail camps (such as Heart Lake) online or by phone, but arrange the cross-country zones by phone with the Wilderness Information Center;"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pulitzer_standard",
+   "fact": "Sol Duc Road winter status",
+   "verdict": "fixed",
+   "correct_value": "Sol Duc Road often closes for the winter due to snow and ice",
+   "evidence": "An Olympic National Park news release states Sol Duc Road often closes for the winter due to snow and icy conditions; a Sol Duc valley visitor guide says the road is open seasonally with closures during heavy snowfall, and the park has posted seasonal winter closures of the road.",
+   "sources": [
+    "https://www.nps.gov/olym/learn/news/recreate-responsibly-this-fall-and-winter-season-at-olympic-national-park.htm",
+    "https://wereintherockies.com/sol-duc-valley/",
+    "https://www.facebook.com/OlympicNPS/posts/the-sol-duc-road-is-now-closed-for-the-winter-season-it-will-reopen-to-vehicles-/2569019246485530/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_pulitzer_standard",
+     "fact": "Sol Duc Road winter status",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "generally open year-round to Sol Duc Falls trailhead area; upper sections can close temporarily for winter storm damage or repair work",
+     "replace": "open to the Sol Duc Falls trailhead area outside winter, but often closed through the winter for snow and ice; sections can also close temporarily for storm damage or repair work"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+   "verdict": "fixed",
+   "correct_value": "From Dodwell-Rixon Pass the route follows the ridge from the pass to the summit (with a scree traverse around ~5,300 ft), not down into Queets Basin",
+   "evidence": "A 2020 trip report describes leaving Dodwell-Rixon Pass along the ridge (mostly 2nd class on crumbly rock and heather), dropping to a steep scree traverse where it cliffs out, then a snow slope to the summit; a 2017 trip report summarised in search describes the same ridge-from-the-pass line with a 3rd-class traverse near 5,300 ft. Neither descends into Queets Basin; the approach, variant, waypoints and climbing_route already agree.",
+   "sources": [
+    "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-09-17.1930461418"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "Climb cross-country up and over Dodwell-Rixon Pass, descend into Queets Basin, then ascend the South Slopes to the summit before reversing",
+     "replace": "Climb cross-country up to Dodwell-Rixon Pass, then follow the ridge from the pass to the summit, bypassing a cliff band on a scree traverse, before reversing"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "title"
+     ],
+     "find": "over Dodwell-Rixon Pass",
+     "replace": "via Dodwell-Rixon Pass"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "fromTo"
+     ],
+     "find": "over Dodwell-Rixon Pass",
+     "replace": "via Dodwell-Rixon Pass"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "up and over Dodwell-Rixon Pass, descend into Queets Basin, then ascend the South Slopes to the summit",
+     "replace": "up to Dodwell-Rixon Pass, then follow the ridge from the pass to the summit"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "route-finding down the far side.",
+     "replace": "leave the pass and start up the ridge toward the summit."
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "Enter Queets Basin",
+     "replace": "Scree traverse below the cliff band"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Cross moraines and streams to the base of the South Slopes.",
+     "replace": "Where the ridge cliffs out, drop onto steep, firm scree on the east side and traverse before regaining the crest."
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "label"
+     ],
+     "find": "Back through Queets Basin",
+     "replace": "Back at Dodwell-Rixon Pass"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Begin the long reversal over the pass.",
+     "replace": "Begin the long descent back toward the Elwha Basin camp."
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Route from Dodwell-Rixon Pass (via Queets Basin vs SE ridge)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "summit push over Dodwell-Rixon Pass into Queets Basin and up the South Slopes,",
+     "replace": "summit push to Dodwell-Rixon Pass and up the ridge from the pass,"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "fact": "Approach line (Low Divide vs Chicago Camp)",
+   "verdict": "fixed",
+   "correct_value": "Leave the Elwha River Trail at Chicago Camp (short of Low Divide) and go about 3 miles cross-country up into Elwha Basin",
+   "evidence": "The park's Elwha River Trail page lists Chicago Camp as the last camp and says the Elwha is forded at Chicago Camp en route to Low Divide (28.4 mi), i.e. Chicago Camp comes before Low Divide. A 2017 trip report went over Low Divide, down to Chicago Camp and then 3 miles up to Elwha Basin, and a 2020 report exiting Elwha Basin crossed the Elwha before continuing on toward Low Divide — so Elwha Basin is entered from Chicago Camp, not from Low Divide.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-09-17.1930461418",
+    "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Approach line (Low Divide vs Chicago Camp)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "follow the Elwha River Trail 28.4 miles (with a ford of the Elwha River at Chicago Camp) to Low Divide (3,602 ft), then continue cross-country up into Elwha Basin",
+     "replace": "follow the Elwha River Trail to Chicago Camp, where it fords the Elwha short of Low Divide, then leave the trail and continue about 3 miles cross-country up into Elwha Basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Whiskey Bend to Low Divide is 28.4 mi (park page) and Elwha Basin is about 3 mi above Chicago Camp (2017 trip report), but no source found gives the Whiskey Bend to Chicago Camp mileage, and the road walk itself is quoted as 5 to 7 mi, so neither the 62-mi itinerary sum, the ~70-mi totalNote, nor the waypoint distMi values (31/33/35.5) could be confirmed by two sources. No patch.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "fact": "Road walk to Whiskey Bend",
+   "verdict": "fixed",
+   "correct_value": "roughly 6-7 miles each way from Madison Falls to Whiskey Bend",
+   "evidence": "The trail-guide page for Whiskey Bend to Low Divide gives 6.2 mi on the closed road from Madison Falls; a visitor forum answer gives 6.5 mi; other figures quoted are 5 and 7 mi. The 5-6 and ~8 mi figures fall outside the agreed 6-7 mi band; the 6.2 mi waypoint value is inside it and is left.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide",
+    "https://www.tripadvisor.com/ShowTopic-g143047-i769-k13373192-Biking_from_Madison_Falls_to_Whiskey_Bend_Trailhead-Olympic_National_Park_Washington.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Road walk to Whiskey Bend",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "an extra ~7 miles",
+     "replace": "an extra ~6-7 miles"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Road walk to Whiskey Bend",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "roughly 5-6 miles",
+     "replace": "roughly 6-7 miles"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Road walk to Whiskey Bend",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "walk or bike ~8 miles",
+     "replace": "walk or bike ~6-7 miles"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Road walk to Whiskey Bend",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "roughly 7 miles",
+     "replace": "roughly 6-7 miles"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Road walk to Whiskey Bend",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "roughly 7 miles each way",
+     "replace": "roughly 6-7 miles each way"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "fact": "Location relative to the Bailey Range",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Mount Queets lies just southwest of the Bailey Range, not in it",
+   "evidence": "The Bailey Range's list of principal summits does not include Mount Queets, and Mount Barnes (a Bailey Range peak) has Queets 1.7 mi to its southwest; a peak database classes Queets only as Olympic Mountains. The row's overview, approach (combined with the traverse 'to the west'), bivy and crowds fields all treat the Bailey Range as a separate neighbour; only beta places Queets in it.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bailey_Range",
+    "https://en.wikipedia.org/wiki/Mount_Barnes_(Washington)",
+    "https://peakvisor.com/peak/mount-queets.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Location relative to the Bailey Range",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "sits at the heart of the Bailey Range in the interior",
+     "replace": "sits just southwest of the Bailey Range in the interior"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "fact": "Summit elevation (6,474 vs 6,476 ft)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "6,476 ft",
+   "evidence": "The itinerary gives the summit as 6,474 ft while overview, waypoint and high_point_ft say 6,476. The encyclopedia entry and a peak database both give 6,476 ft (1,974 m).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Queets",
+    "https://peakvisor.com/peak/mount-queets.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Summit elevation (6,474 vs 6,476 ft)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      3,
+      "label"
+     ],
+     "find": "6,474 ft",
+     "replace": "6,476 ft"
+    },
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Summit elevation (6,474 vs 6,476 ft)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "objective"
+     ],
+     "find": "6,474 ft",
+     "replace": "6,476 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_queets_south",
+   "fact": "Dodwell-Rixon Pass elevation (4,783 vs 4,763 ft)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "4,763 ft",
+   "evidence": "The approach gives the pass as 4,783 ft while the waypoint and bivy give 4,763 ft and the schedule ~4,760. The Elwha snowfinger article gives 4,763 ft and a topo gazetteer gives about 4,760 ft; one map site shows 4,783, but two sources agree on ~4,763.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Elwha_snowfinger",
+    "https://www.topozone.com/washington/jefferson-wa/gap/dodwell-rixon-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_queets_south",
+     "fact": "Dodwell-Rixon Pass elevation (4,783 vs 4,763 ft)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Dodwell-Rixon Pass (4,783 ft)",
+     "replace": "Dodwell-Rixon Pass (4,763 ft)"
+    }
+   ]
+  }
+ ]
+}

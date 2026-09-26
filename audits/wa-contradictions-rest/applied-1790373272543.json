@@ -1,0 +1,162 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_fricaba_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Distance to Home Lake"
+  },
+  {
+   "id": "wa_mount_fricaba_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Distance to Home Lake"
+  },
+  {
+   "id": "wa_mount_fricaba_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Distance to Home Lake"
+  },
+  {
+   "id": "wa_mount_fricaba_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Is Home Lake inside the national park (permit needed?)"
+  },
+  {
+   "id": "wa_mount_fricaba_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    4
+   ],
+   "fact": "Buckhorn Wilderness permit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_fricaba_standard",
+   "before": {
+    "itinerary": {
+     "cal": "The Home Lake approach is typically snow-free by mid-summer, but upper Deception Basin and the ridge can hold snow into early July, so bring an ice axe/microspikes for early-season attempts.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Start at the Upper Dungeness trailhead and follow trail past Camp Handy and Boulder Shelter up to Home Lake, the standard backcountry camp for this side of the mountain. The trail gains steadily and gets rougher/brushier above Boulder Shelter, with one brief snow patch and a small waterfall crossing common into early summer.",
+       "hours": 5.5,
+       "miles": 7.9,
+       "title": "Backpack in to Home Lake",
+       "gainFt": 2900,
+       "lossFt": 100,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Establish high camp at Home Lake"
+      },
+      {
+       "n": 2,
+       "note": "From Home Lake, climb the short pitch up to Constance Pass, then drop off-trail into upper Deception Basin before picking up the Southwest Ridge scramble to the summit. Expect loose rock/scree and sustained Class 2-3 terrain (harder moves possible near the top); reverse the same line back to camp. This is the long day of the trip — start early to have margin on the descent.",
+       "hours": 9.5,
+       "miles": 7,
+       "title": "Summit push via Constance Pass and Deception Basin",
+       "gainFt": 2600,
+       "lossFt": 2600,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Home Lake camp",
+         "detail": "Light daypack; ice axe recommended if snow lingers in the basin or on the ridge."
+        },
+        {
+         "time": "5:45 AM",
+         "label": "Top out Constance Pass",
+         "detail": "Short, steady climb from the lake; views open west into the Park."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Drop into upper Deception Basin",
+         "detail": "Off-trail cross-country travel, losing several hundred feet before regaining the ridge."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Reach base of Southwest Ridge scramble",
+         "detail": "Loose rock and exposed Class 3 sections begin here."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Summit",
+         "detail": "Turn around promptly if weather is moving in — the descent is the crux for time."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at Home Lake camp",
+         "detail": "Reverse basin crossing and pass descent; plan a buffer for slower scree descent."
+        }
+       ],
+       "objective": "Climb the Southwest Ridge to the summit and return to Home Lake"
+      },
+      {
+       "n": 3,
+       "note": "Straightforward downhill hike back out past Boulder Shelter and Camp Handy to the trailhead. Faster than the approach since it's mostly descending on familiar trail.",
+       "hours": 4.5,
+       "miles": 7.9,
+       "title": "Hike out",
+       "gainFt": 100,
+       "lossFt": 2900,
+       "packLb": 28,
+       "schedule": [],
+       "objective": "Return to the Upper Dungeness trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, roughly 22.6-mile round trip with about 5,600 ft of cumulative gain: backpack in to Home Lake, make a long scramble day to the summit via Constance Pass and Deception Basin, then hike back out."
+    },
+    "access": {
+     "fees": "$5 per vehicle per day (or $30 annual) at Upper Dungeness Trailhead, paid via Recreation.gov Scan & Pay or a Northwest Forest/Interagency Recreation Pass (cash not accepted). Olympic NP overnight wilderness permits run $8/adult/night plus a $6 non-refundable per-permit reservation fee (free for youth 15 and under), or use the $45/person Annual Wilderness Camping Permit Pass, which covers the $8 per night charge but not the $6 reservation fee.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are required for all overnight stays at Home Lake and Constance Pass (free loaner canisters available at NPS Wilderness Information Centers); campfires are prohibited above 3,500 ft; camp on bare ground at least 200 ft from water/trails; no toilets past Boulder Shelter — bury waste 6-8 in deep, 200 ft from water and campsites, pack out toilet paper.",
+     "permit": "No permit needed for day use or camping within Buckhorn Wilderness (register at the trailhead board), but a reserved NPS wilderness camping permit is required for any overnight stay once you cross into Olympic National Park near Home Lake/Constance Pass; book via Recreation.gov.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Buckhorn Wilderness) for the lower approach from Upper Dungeness Trailhead; Olympic National Park (Wilderness) beyond the boundary sign roughly 7.1 miles in, near Home Lake/Constance Pass and Deception Basin — the summit sits on the shared NF/NP boundary.",
+     "land_manager": "Olympic National Forest (Buckhorn Wilderness) for the lower approach from Upper Dungeness Trailhead; Olympic National Park (Wilderness) beyond the boundary sign roughly 7.1 miles in, near Home Lake/Constance Pass and Deception Basin — the summit sits on the shared NF/NP boundary.",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass / Interagency Pass for trailhead parking; NPS wilderness permit for overnight camping.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required in the Buckhorn Wilderness",
+      "where": "Camp Handy, Boulder Shelter and Home Lake are on national forest land; a recreation pass is needed to park. A park wilderness permit is needed only to camp across Constance Pass."
+     }
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong, sustained hiker able to handle an 18-21 mile round trip with roughly 6,000 ft of gain over multiple days; most parties carry overnight loads to a high camp before a separate summit day",
+      "packWeight": "Overnight/multi-day pack (shelter, food, layers) rather than a light single-push pack, since the standard approach is to camp near Home Lake or Constance Pass"
+     },
+     "approachTime": "Multi-day approach is typical: roughly 9+ miles and significant elevation gain to Home Lake/Constance Pass, then a separate summit day from a high camp; not commonly done car-to-car",
+     "requiredSkills": [
+      "Class 2-3 scrambling on loose, shattered talus/shale",
+      "Off-trail route-finding through the Home Lake / Constance Pass basins",
+      "Steep snow travel and self-arrest for early-season attempts before basins melt out",
+      "Backcountry self-sufficiency and navigation far from help/cell coverage",
+      "Wilderness permit logistics (self-issued Buckhorn Wilderness permit, backcountry permit if camping inside Olympic National Park)"
+     ],
+     "experienceLevel": "Intermediate scrambler comfortable with sustained off-trail Class 2-3 travel and multi-day backcountry logistics; not an ideal first scramble given the remoteness, even though the terrain itself is described as approachable for beginner mountaineers once at the basin"
+    }
+   }
+  }
+ ]
+}

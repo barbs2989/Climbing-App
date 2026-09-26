@@ -1,0 +1,40 @@
+{"file": "r325.json", "results": [
+ {"id": "wa_mount_ann_scramble", "fact": "Direction along the summit ridge", "verdict": "fixed",
+  "correct_value": "From Peak 5681 (Mount Annette) the party scrambles WEST about half a mile along the connecting ridge to Mount Ann.",
+  "evidence": "The Mountaineers route description has parties reach ~5,500 ft on the south ridge of Mount Annette (Peak 5681) and then scramble west along the ridge about 0.5 mile to Mount Ann. Wikipedia places Mount Ann at 48.8165N 121.6666W, west of the row's Peak 5681 pin (-121.660), and a winter-route guide puts Ann to the climber's right (west) when topping out on the Ann-Annette saddle from the north. The row's approach, approach variant, descent and waypoints already say west; only the itinerary and timing notes say east.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/lake-ann-mount-shuksan", "https://en.wikipedia.org/wiki/Mount_Ann", "https://besthikesbc.ca/mount-ann-annette/"],
+  "patches": [
+   {"id": "wa_mount_ann_scramble", "fact": "Direction along the summit ridge", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "then scramble east along the connecting ridge over Mount Annette's south ridge to the Mount Ann summit", "replace": "then scramble over Mount Annette's south ridge and west along the connecting ridge to the Mount Ann summit"},
+   {"id": "wa_mount_ann_scramble", "fact": "Direction along the summit ridge", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 0, "note"], "find": "then scramble east along the connecting ridge over Mount Annette", "replace": "then scramble over Mount Annette and west along the connecting ridge"}
+  ]},
+ {"id": "wa_mount_ann_scramble", "fact": "Off-trail line (east side of Annette and a gully vs over Peak 5681 along the crest)", "verdict": "fixed",
+  "correct_value": "Two genuine lines: the summer route follows the crest from the 4,900 ft saddle over Peak 5681; the usual snow-season (winter) route leaves the trail near the Lake Ann junction and climbs the slopes/ridge just west of Annette. Beta describes the snow-season line and should say so.",
+  "evidence": "WTA's Mount Ann page says the usual winter route leaves the trail around the Lake Ann junction and ascends the ridge just west of Annette Peak (matching beta and face). A second winter guide also leaves the trail near the Swift Creek crossing and climbs the northern slopes to the Ann-Annette saddle rather than going over Annette. The Mountaineers summer description uses the 4,900 ft saddle, boot path and cairns over Peak 5681 (matching approach and waypoints). Both are real; the fix labels beta's line as the snow-season alternative instead of presenting it as the route.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/mount-ann", "https://besthikesbc.ca/mount-ann-annette/", "https://turns-all-year.com/trip-reports/mount-ann", "https://www.mountaineers.org/activities/routes-places/lake-ann-mount-shuksan"],
+  "patches": [
+   {"id": "wa_mount_ann_scramble", "fact": "Off-trail line (east side of Annette and a gully vs over Peak 5681 along the crest)", "op": "replace_text", "column": "beta", "path": [], "find": "Near the Lake Ann junction, leave the trail and work up", "replace": "The summer line follows the crest from the 4,900-ft saddle over Peak 5681; the usual snow-season line differs: near the Lake Ann junction, leave the trail and work up"}
+  ]},
+ {"id": "wa_mount_ann_scramble", "fact": "Season window", "verdict": "fixed",
+  "correct_value": "Jul-Sep",
+  "evidence": "The Forest Service Lake Ann Trail 600 page lists the season of use as late summer to fall. WTA calls Lake Ann a late-season hike because snow lingers into August. The row's own best_season, seasonal_guidance (June risky, July marginal, late July onward optimal), climate and hazards agree June is not a snow-free month; the season chip is also reduced to a short window as the column requires.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-ann-trail-600", "https://www.wta.org/go-hiking/hikes/lake-ann"],
+  "patches": [
+   {"id": "wa_mount_ann_scramble", "fact": "Season window", "op": "set", "column": "season", "path": [], "expect": "Jun-Sep (snow-free); winter/spring ascents possible for experienced parties with stable snowpack and mountaineering gear", "value": "Jul-Sep"},
+   {"id": "wa_mount_ann_scramble", "fact": "Season window", "op": "replace_text", "column": "approach_variants", "path": [0, "season"], "find": "Roughly Jun-Sep snow-free", "replace": "Roughly Jul-Sep snow-free"}
+  ]},
+ {"id": "wa_mount_ann_scramble", "fact": "Overnight permit", "verdict": "fixed",
+  "correct_value": "No overnight permit is needed to camp at Lake Ann in the Mount Baker Wilderness; overnight parties sign the trailhead register (camp at least 2 miles from the trailhead May 15-Nov 14).",
+  "evidence": "The Forest Service Lake Ann Trail 600 page requires a backcountry permit only once the trail enters North Cascades National Park, and the MBS wilderness regulations require self-issue permits only for the Alpine Lakes Wilderness. An independent Lake Ann guide states no permit is required for camping at Lake Ann; a sign-in book at the trailhead serves instead. access.overnight_permit and access.permit already say this; only the trailhead waypoint note and directions claim a self-issue permit. The Chain Lakes example in overnight_permit.where is hedged ('where they exist') and was left alone.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-ann-trail-600", "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations", "https://explorenborgen.com/lake-ann/"],
+  "patches": [
+   {"id": "wa_mount_ann_scramble", "fact": "Overnight permit", "op": "replace_text", "column": "waypoints", "path": [0, "note"], "find": "self-issue backcountry permit for overnight camping.", "replace": "overnight parties sign the trailhead register (no camping permit needed)."},
+   {"id": "wa_mount_ann_scramble", "fact": "Overnight permit", "op": "replace_text", "column": "waypoints", "path": [0, "directions"], "find": "and a self-issue backcountry permit is needed if you're camping overnight", "replace": "and overnight parties sign the wilderness register at the trailhead; no camping permit is needed"}
+  ]},
+ {"id": "wa_mount_ann_scramble", "fact": "Drive distance from Bellingham", "verdict": "fixed",
+  "correct_value": "Bellingham hospital is roughly 57 miles / ~1.5 hr from the trailhead.",
+  "evidence": "WTA's driving directions give 34 miles from Bellingham to the Glacier Public Service Center plus 23 more to Austin Pass (57 miles). The Forest Service independently gives ~23 miles from Glacier to the Lake Ann trailhead. The row's road, approach and waypoint directions all say ~58 miles / 1.5-2 hr; only the hospital line says 35 miles / 1 hr.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/mount-ann", "https://www.fs.usda.gov/r06/mbs/recreation/trails/lake-ann-trail-600"],
+  "patches": [
+   {"id": "wa_mount_ann_scramble", "fact": "Drive distance from Bellingham", "op": "replace_text", "column": "emergency", "path": ["nearestHospital"], "find": "roughly 35 miles / ~1 hr drive from the trailhead", "replace": "roughly 57 miles / ~1.5 hr drive from the trailhead"}
+  ]}
+]}

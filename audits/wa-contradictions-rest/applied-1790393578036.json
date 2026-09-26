@@ -1,0 +1,567 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Car-to-car time"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "gear",
+   "path": [
+    4
+   ],
+   "fact": "Car-to-car time"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Car-to-car time"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "watch_out",
+   "path": [
+    3
+   ],
+   "fact": "Car-to-car time"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Wilderness permit at the trailhead"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Wilderness permit at the trailhead"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Wilderness permit at the trailhead"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance on FR-24 before turning onto FR-2419"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Distance on FR-24 before turning onto FR-2419"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance on FR-24 before turning onto FR-2419"
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee and camping permit in access.notes"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "column": "approach",
+   "path": [],
+   "fact": "Where the route leaves the road (trailhead)"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Where the route leaves the road (trailhead)"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where the route leaves the road (trailhead)"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the route leaves the road (trailhead)"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Driving directions to FR 2419"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Summit waypoint difficulty"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit for a day climb"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee and camping permit in access.notes"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Which section is the crux"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Land manager and parking pass"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager and parking pass"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "access",
+   "path": [
+    "permitZone"
+   ],
+   "fact": "Land manager and parking pass"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Land manager and parking pass"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit in the permit field"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee and camping permit in access.notes"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Distance on FR-24 before turning onto FR-2419"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance on FR-24 before turning onto FR-2419"
+  },
+  {
+   "id": "wa_mount_washington_olympic_winter_direct",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead and access road"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "before": {
+    "turnaround": "Budget for a long day — most parties report 10-11 hours car-to-car despite the short (~4 mi) distance. Set a firm turnaround time (early-mid afternoon if not yet at the summit saddle) so the exposed catwalk/east-side traverse and descent gullies aren't done in the dark.",
+    "gear": [
+     "Helmet (required — loose rock and short rock-face climbing throughout)",
+     "Ice axe for early-season snow on the gullies/saddle",
+     "Light rope or hand line for the catwalk crux (optional, useful for mixed-ability groups)",
+     "3+ liters of water (upper mountain has little shade and can be hot/muggy in summer)",
+     "Headlamp (round trips commonly run 10-11 hours)"
+    ],
+    "pro_tips": [
+     "Climb Mount Washington first, then traverse the connecting ridge southwest to Mount Ellinor if linking the two summits — this is the preferred direction given the terrain",
+     "Start early; most parties report 10-11 hour round trips for only ~4 miles, driven by the steep, technical nature of the terrain rather than distance",
+     "Check recent trip reports before going in shoulder season — snow can linger on the saddle and gullies well into summer"
+    ],
+    "watch_out": [
+     "The 'catwalk' crux traverse — many parties choose to protect it with a hand line for less experienced members",
+     "The 'Dog Walk Ledge' on descent",
+     "Loose rock in the gullies onto climbers below — helmets are effectively mandatory",
+     "Long car-to-car time (10-11 hrs is typical) — start early to avoid a dark, exposed descent"
+    ],
+    "waypoints": [
+     {
+      "lat": 47.5204,
+      "lng": -123.2352,
+      "elev": 3026,
+      "name": "Mount Washington Trailhead (FR-2419)",
+      "note": "End of FR-2419 off North Lake Cushman Road/FR 24; self-issue Mt. Skokomish Wilderness permit and Northwest Forest Pass required at the kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From the T-intersection at the end of North Lake Cushman Road, turn right onto FS Road 24 and continue about a mile, then turn left onto FS Road 2419 and follow it up the Big Creek drainage for roughly 6.6 miles to its end at a small trailhead and parking area near 3,026 ft. Fill out a self-issue Mt. Skokomish Wilderness permit and display a Northwest Forest Pass at the kiosk."
+     },
+     {
+      "lat": 47.522042,
+      "lng": -123.236838,
+      "elev": 3400,
+      "name": "Climbers' path / rock gullies",
+      "note": "Maintained trail gives way to a climbers' path up steep, narrow rock gullies studded with tree roots — hand-over-hand in spots.",
+      "type": "Junction",
+      "distMi": 0.3
+     },
+     {
+      "lat": 47.523137,
+      "lng": -123.23793,
+      "elev": 3800,
+      "name": "Lower meadow",
+      "note": "Grade eases briefly in an open meadow where the ridgeline and neighboring Mount Ellinor come into view.",
+      "type": "Junction",
+      "distMi": 0.5
+     },
+     {
+      "lat": 47.525875,
+      "lng": -123.240659,
+      "elev": 4700,
+      "name": "Upper talus/scree field",
+      "note": "Route climbs a broad talus and scree slope above the meadow; footing is loose, watch for rockfall from parties above.",
+      "type": "Hazard",
+      "distMi": 1
+     },
+     {
+      "lat": 47.529159,
+      "lng": -123.243934,
+      "elev": 5600,
+      "name": "5,600' ramp at the headwall",
+      "note": "Crux route-finding point: path swings west onto a ramp that hugs the headwall briefly, then ducks back through trees.",
+      "type": "Junction",
+      "distMi": 1.6
+     },
+     {
+      "lat": 47.530254,
+      "lng": -123.245026,
+      "elev": 5950,
+      "name": "South saddle",
+      "note": "Known bivy site on the saddle; first spot on the climb where the true summit becomes visible.",
+      "type": "Campsite",
+      "distMi": 1.8
+     },
+     {
+      "lat": 47.530802,
+      "lng": -123.245572,
+      "elev": 6100,
+      "name": "The Catwalk",
+      "note": "Exposed knife-edge ledge crux move on the final ridge; helmet recommended, some parties rig a handline here.",
+      "type": "Hazard",
+      "distMi": 1.9
+     },
+     {
+      "lat": 47.531349,
+      "lng": -123.246118,
+      "elev": 6255,
+      "name": "Mount Washington summit",
+      "note": "True summit (6,255'); exposed east-facing ridge on the final approach, summit register present.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "FR-2419 up the Big Creek drainage to the road-end trailhead",
+      "notes": "From the T-intersection at the end of North Lake Cushman Road, go right onto FS Road 24 for about a mile, then left onto FS Road 2419 and follow it up the Big Creek drainage roughly 6.6 miles to its end at a small trailhead at about 3,026 ft. Self-issue Mt. Skokomish Wilderness permit and Northwest Forest Pass at the kiosk.\n\nFrom here the trail quickly becomes a boot path and then largely off-trail scrambling — there is no numbered maintained trail for most of the route. It climbs directly and steeply through forest, hand-over-hand on roots and rock in places, to a couple of open meadow benches around 3,800 ft. That meadow band holds the most reliable early-season water via snowmelt seeps; by mid-to-late summer expect it dry, so carry what you need from the car.",
+      "season": "Roughly Jun-Sep, best Jul-Aug. Spring and early summer put avalanche-capable snow in the gully",
+      "hazards": [
+       "Loose rock and rockfall in the entry gullies and on the talus — spread the group out rather than stacking above and below",
+       "Sustained exposure on the Dog Walk Ledge / Catwalk, where the tread is one boot wide with drops on both sides",
+       "Steep avalanche-prone snow in the gullies and on the saddle in spring and early season",
+       "The scree field below the false summit is greasy and slick when wet",
+       "Significant elevation loss on descent, hard on knees and ankles, and slower than the climb",
+       "Route-finding through the forested lower section, meadows and talus in poor visibility",
+       "Little shade above treeline; the route gets hot"
+      ],
+      "primary": true,
+      "baseFinding": "THE ROUTE IS A SEQUENCE OF THREE TERRAIN CHANGES AND EACH ONE IS A CHECK YOU CAN MAKE WITHOUT SEEING ANYTHING. First: forest gives way to OPEN MEADOW BENCHES around 3,800 ft — that is where the ridgeline and neighbouring Mount Ellinor come into view on a clear day, and where the ground briefly eases. Second: above the meadows you enter SCREE AND TALUS and the rule is to stay primarily on the CLIMBER'S-LEFT side of a large loose rocky gully. Left side of the gully, all the way. Third: the path winds above the gully until it GAINS THE SOUTHERN RIDGELINE, and from there the ground drops away on BOTH sides.\n\nTHE ARRIVAL TEST FOR THE REAL CLIMBING IS THE SOUTH SADDLE AT ABOUT 5,950 FT, AND IT HAS TWO MARKERS: it is a KNOWN BIVY SITE, and it is the FIRST POINT ON THE ROUTE WHERE THE TRUE SUMMIT BECOMES VISIBLE. Flat ground you could sleep on, high on a ridge, is a thing you can identify by standing on it.\n\nSECOND TEST, above the saddle: a STONE WIND SHELTER sits on the ridge. A built structure is unambiguous in any weather. From the wind shelter a final short Class 3-4 scramble gains the true 6,255 ft summit. If you have topped out without passing a stone shelter, you are on the false summit below it.\n\nTHE SECTION IN BETWEEN IS THE ONE PEOPLE REMEMBER: the ridge-crest traverse called the Dog Walk Ledge or the Catwalk, where in several spots the tread narrows to barely one boot-width with real exposure on both sides. Class 3 with a couple of Class 3+/4 moves. If the crest you are on is comfortably wide the whole way, you have not reached it yet.\n\nWHAT GOING TOO FAR LOOKS LIKE: a trip report warns specifically that contouring too far RIGHT (north) near the crest gets sketchy, exposed and dangerous. Stay left of the drop-off on the north side."
+     },
+     {
+      "name": "From Mount Ellinor, across the connecting ridge or the west-side basin",
+      "notes": "Recorded as an approach because parties do reach Washington from Ellinor rather than from Big Creek, usually as half of a traverse. Ellinor is reached by Trail #812 from its Upper or Lower Trailhead, both on the same North Lake Cushman Road corridor, and from Ellinor's summit the connecting ridge runs northeast toward Washington. It is not a walk. The crest is fractured, weathered pillow basalt with sustained Class 4 scrambling past a series of gendarmes, and it carries a loose 50 ft downclimb that most parties call the least enjoyable part of the day. The alternative that several parties prefer is the west-side basin traverse: drop into the basin below the crest and cross it, rejoining Ellinor's standard winter route line rather than fighting the ridge. Used as an approach to Washington this is a long way round for a peak with a 3.2 km trail of its own, and it is here for traverse parties.",
+      "season": "Roughly Jun-Sep",
+      "hazards": [
+       "Fractured, weathered pillow basalt on the connecting ridge with a crux gendarme downclimb of notably poor rock and severe exposure",
+       "Sustained Class 4 scrambling past gendarmes with a loose 50 ft downclimb",
+       "Committing terrain between two summits with no quick exit",
+       "All the Washington summit-ridge hazards at the end of it"
+      ],
+      "baseFinding": "COMING FROM ELLINOR THE ARRIVAL TEST FOR WASHINGTON'S SUMMIT GROUND IS THE SAME STONE WIND SHELTER on the ridge, with the final short Class 3-4 scramble above it to the 6,255 ft top. THE TEST ON THE CONNECTING RIDGE ITSELF, WHICH IS WHERE THE DAY IS DECIDED: hidden ledges keep the difficulty at Class 4 or below on most of the gendarmes, so if you are pulling harder than that you have taken the crest where a ledge existed. Look below the obvious line before committing to it. Where the ridge gets too difficult or exposed to continue unroped, the usual answer is to DROP INTO THE BASIN BELOW and either downclimb a technical sequence or bypass it on a snow finger. HONEST LIMIT: the usual advice on the crux gendarme downclimb is to avoid it — the rock is notably poor and the exposure severe, and several parties recommend the west-side basin instead of the direct ridge. That is a recommendation to change route, not a marker, and this variant is written down mainly so a party knows the option exists before they are standing on it."
+     }
+    ],
+    "approach": "From the T-intersection at the end of North Lake Cushman Road, continue right onto FS Road 24 for about 1 mile, then turn left onto FS Road 2419 and follow it up the Big Creek drainage for roughly 6.6 miles to its end at a small trailhead/parking area at about 3,026 ft. From here the 'trail' quickly becomes a boot path and then largely off-trail scrambling — there is no numbered maintained trail for most of the route. The path climbs directly and steeply through forest for the first stretch, hand-over-hand on roots and rock in places, gaining several hundred feet before breaking out of the trees into a couple of open meadow benches (the most reliable early-season water, via lingering snowmelt seeps, is generally found in this meadow band — by mid-to-late summer expect it to be dry, so carry all the water you'll need from the car). Above the meadows the route enters scree and talus slopes and stays primarily on the climber's-left side of a large, loose rocky gully; this section is tight in spots with a lot of unconsolidated rock, so groups should stay spread out (not stacked directly above/below each other) to avoid raining rocks on people below. In spring and early summer this gully can hold avalanche-prone snow and may require an ice axe. The path winds above the gully until it gains Mount Washington's southern ridgeline, then follows a faint, exposed climbers'/goat trail along the ridge crest — in multiple spots the tread narrows to barely one boot-width with real exposure on both sides (this is the section referred to as the 'Dog Walk Ledge'); solid class 3 with a couple of class 3+/4 moves, and not a place for hesitant scramblers. The ridge trail leads to a scree field below the false summit (greasy and slick if wet) and a 'goat trail' up its climbers'-right edge to a stone wind shelter on the ridge, from which a final short class 3–4 scramble gains the true 6,255 ft summit.",
+    "access": {
+     "fees": "A Northwest Forest Pass or America the Beautiful/Interagency pass is needed to park at the developed trailhead lot (Northwest Forest Pass: $5/day or $30/annual as of 2025); there is no separate entrance or camping fee for the peak itself.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Wilderness regulations apply within Mount Skokomish Wilderness: no campfires above 3,500 ft (stoves only), pack out all trash, keep group sizes small.",
+     "permit": "No wilderness permit is required for Olympic National Forest wilderness (unlike neighboring Olympic National Park). Standard Wilderness group-size and no-campfire-above-3,500-ft rules apply (stoves only).",
+     "closures": "Forest Road 2419 is a gravel spur off FR-24 that is not maintained for winter travel and can be gated or snowed in outside the summer/fall season — check Olympic National Forest alerts before driving in.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Hood Canal Ranger District), within the Mount Skokomish Wilderness",
+     "land_manager": "Olympic National Forest (Hood Canal Ranger District) — Mount Skokomish Wilderness",
+     "parking_pass": "Northwest Forest Pass: $5/day or $30/year (or America the Beautiful/Interagency pass).",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required on the national forest side",
+      "where": "Lena Lake, The Brothers camps and the Lake Cushman trailheads are in Olympic National Forest; a Northwest Forest Pass is needed to park. Camps inside Olympic National Park need a park wilderness permit."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "before": {
+    "approach": "From Forest Road 2419 (off North Lake Cushman Road/FR-24), continue to just past the second crossing of Big Creek (~3,100 ft); a way trail leads to the base of the southeast ridge's rock section. Follow an old roadbed across Big Creek and a climbers' trail up a rock rib, gaining roughly 1,600 ft to a bowl below the Shield Wall; a gully ascends up and left to a notch at the wall's left corner (~4,850 ft) where the technical climbing begins.",
+    "road": {
+     "name": "Forest Road 2419 (off FR-24, North Lake Cushman corridor)",
+     "status": "Gravel Forest Service road; approach begins from the same corridor as the Mount Washington standard route",
+     "driveNote": "From US-101 near Hoodsport, take SR-119 (North Lake Cushman Rd), then FR-24 for 1.5 mi, then left on FR-2419 to just past the second crossing of Big Creek (~3,100 ft); the SE Ridge/Shield Wall route starts roughly 1,000 ft beyond the standard-route trail entrance.",
+     "seasonalGate": "Can be gated or snowbound outside roughly late spring through fall — check Olympic National Forest road/alert pages before driving out."
+    },
+    "approach_variants": [
+     {
+      "name": "FR-2419 past the second Big Creek crossing, the way trail to the Shield Wall",
+      "notes": "From US 101 turn west onto Lake Cushman Road and in about 1.5 miles turn right onto Forest Road 2419. Continue up the Big Creek drainage to just past the SECOND CROSSING OF BIG CREEK, at about 3,100 ft. This is NOT the standard route's trailhead: the way trail for this route leaves the road roughly 1,000 ft BEYOND the standard route's trail entrance, so if you have parked where everybody else parks, you are in the wrong place by a thousand feet of road.\n\nFollow an old roadbed across Big Creek and a climbers' trail up a rock rib, gaining roughly 1,600 ft toward the bowl below the Shield Wall. A small way trail leads to the base of the large rock section of the southeast ridge at about 3,700 ft; bear RIGHT (east) around those rocks and follow the ridgeline until you are forced RIGHT (north) by prominent gendarmes. A gully then ascends up and left to a notch at the wall's LEFT corner at about 4,850 ft, where the technical climbing begins.",
+      "season": "Roughly Jun-Sep",
+      "hazards": [
+       "Generally poor rock for much of the route, with only one to five placements available on many pitches",
+       "Retreat from partway up is reported as difficult and potentially dangerous — commit only in good weather with a competent party",
+       "Loose blocks on the parapets of the upper SE ridge above the Shield Wall proper",
+       "Few opportunities to sling horns or blocks despite what older published descriptions suggest",
+       "Three rappels interleaved with climbing high on the route, on loose ground",
+       "The descent is an exposed Class 3-4 scramble at the end of thirteen pitches"
+      ],
+      "baseFinding": "THE ARRIVAL TEST IS A NOTCH AT THE LEFT-HAND CORNER OF THE WALL AT ABOUT 4,850 FT, AND THE THING THAT PROVES IT BEYOND ARGUMENT IS BOLTS. This route's first pitch carries TWO FIXED BOLTS mid-pitch and a BOLTED BELAY STATION at its top. That is the only fixed hardware on the lower mountain and it is on this pitch. So: if you have climbed a rope length and there is no bolt anywhere on it, you are not on the Shield Wall — go back down and find the notch. Bolts are man-made, they do not move with the season, and you can find them by hand.\n\nTHE SEQUENCE THAT GETS YOU THERE IS THREE FORCED TURNS AND EACH IS A CHECK: (1) the base of the large rock section of the SE ridge at about 3,700 ft — bear RIGHT, east, AROUND the rocks rather than up them; (2) follow the ridgeline until PROMINENT GENDARMES FORCE YOU RIGHT (north) — you are not choosing to go right, the terrain makes you; (3) the gully then goes UP AND LEFT to the notch. Right, right, then left. If you have made only rightward moves, you have not found the gully.\n\nWHAT WRONG LOOKS LIKE AT THE START: taking the standard route's trail entrance instead of the one a thousand feet further up the road puts you on the walk-up scramble, which is the DESCENT for this climb. That is not a disaster — it is the way down — but it will not deliver you to the Shield Wall.\n\nWHAT CONFIRMS THE ROUTE ABOVE PITCH ONE: the Shield Wall proper is seven pitches of low fifth to 5.7, and the crux is a WELL-PROTECTED FINGER CRACK passing the second tower ON THE RIGHT. On a route where most pitches take only one to five pieces, a pitch that protects well is itself a marker. Above the wall the ridge continues through rock parapets and gendarmes with three 30 m rappels interleaved with about six more pitches of third class to 5.7 to the summit.\n\nDESCENT NOTE THAT BEARS ON THE APPROACH: you come down Mount Washington's standard Class 3-4 scramble to the same FR-2419 trailhead area, so the two trail entrances are a thousand feet apart at the road and you will use both in one day."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 47.5204,
+      "lng": -123.2352,
+      "elev": 3026,
+      "name": "Mount Washington Trailhead (FR 2419)",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.531349,
+      "lng": -123.246118,
+      "elev": 6260,
+      "name": "Mount Washington - Summit",
+      "note": "SE Ridge / Shield Wall route, class 3+ scramble.",
+      "type": "Summit",
+      "distMi": 1.7
+     }
+    ],
+    "access": {
+     "_raw": {
+      "permit_type": "Day hike: no permit required. Overnight in park: wilderness permit required. Forest side camping: no permit needed",
+      "land_manager": "Olympic National Forest (Hood Canal Ranger District) — Mount Skokomish Wilderness",
+      "cost_structure": "Day hike: free. Overnight camping: $6 reservation fee + $8 per person per night (adults 16+); youth 15 and under free",
+      "special_hazards": "Alpine weather, potential closures due to fire impacts, snow at higher elevations, bear country",
+      "wilderness_zone": "Mount Skokomish Wilderness, Olympic National Forest",
+      "group_size_limits": "Not specified in sources; recommend contacting park",
+      "seasonal_closures": "Staircase and adjacent wilderness areas closed due to Bear Gulch Fire impacts; high country areas seasonally restricted by snow",
+      "permit_pickup_hours": "Port Angeles: 9:00 AM - 5:00 PM daily (closed Thanksgiving and Christmas); Quinault: 9:00 AM - 5:00 PM Thursday-Monday",
+      "altitude_restrictions": "Mount Washington summit 6,260 feet; no maintained trail to the true summit — standard route is a Class 3-4 scramble",
+      "parking_pass_required": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking",
+      "permit_pickup_location": "Port Angeles Visitor Center (year-round) or Quinault Ranger Station (seasonal: Memorial Day - end of September)"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers.",
+     "permit": "Day hike: no permit required. Overnight in park: wilderness permit required. Forest side camping: no permit needed",
+     "closures": "N/A",
+     "permitZone": "Mount Skokomish Wilderness, Olympic National Forest",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Mount Skokomish Wilderness)",
+     "land_manager": "USDA Forest Service — Olympic National Forest (Mount Skokomish Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required on the national forest side",
+      "where": "Lena Lake, The Brothers camps and the Lake Cushman trailheads are in Olympic National Forest; a Northwest Forest Pass is needed to park. Camps inside Olympic National Park need a park wilderness permit."
+     }
+    },
+    "permit": "Free self-issue Mount Skokomish Wilderness permit at the trailhead; Northwest Forest Pass to park."
+   }
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "before": {
+    "rope_note": "Grade II alpine trad/snow route; published descriptions explicitly state that the rock is horrible and the protection problematic on the fractured basalt, so natural pro on horns/chockstones is often more reliable than cams/nuts. Crux is a ~150ft low-5th 'wedge' section near the start.",
+    "access": {
+     "_raw": {
+      "permit_type": "Day hike: no permit required. Overnight in park: wilderness permit required. Forest side camping: no permit needed",
+      "land_manager": "Olympic National Park (park side) / Olympic National Forest (forest side)",
+      "cost_structure": "Day hike: free. Overnight camping: $6 reservation fee + $8 per person per night (adults 16+); youth 15 and under free",
+      "special_hazards": "Alpine weather, potential closures due to fire impacts, snow at higher elevations, bear country",
+      "wilderness_zone": "Olympic National Park Daniel J. Evans Wilderness (if using park trailhead)",
+      "group_size_limits": "Not specified in sources; recommend contacting park",
+      "seasonal_closures": "Staircase and adjacent wilderness areas closed due to Bear Gulch Fire impacts; high country areas seasonally restricted by snow",
+      "permit_pickup_hours": "Port Angeles: 9:00 AM - 5:00 PM daily (closed Thanksgiving and Christmas); Quinault: 9:00 AM - 5:00 PM Thursday-Monday",
+      "altitude_restrictions": "Mount Washington summit 6,278 feet; day hike accessible year-round (3.2-mile out-and-back)",
+      "parking_pass_required": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking",
+      "permit_pickup_location": "Port Angeles Visitor Center (year-round) or Quinault Ranger Station (seasonal: Memorial Day - end of September)"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers.",
+     "permit": "Day hike: no permit required. Overnight in park: wilderness permit required. Forest side camping: no permit needed",
+     "closures": "N/A",
+     "permitZone": "Olympic National Park Daniel J. Evans Wilderness (if using park trailhead)",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (park side) / Olympic National Forest (forest side)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required on the national forest side",
+      "where": "Lena Lake, The Brothers camps and the Lake Cushman trailheads are in Olympic National Forest; a Northwest Forest Pass is needed to park. Camps inside Olympic National Park need a park wilderness permit."
+     }
+    },
+    "permit": "Free self-issue Mount Skokomish Wilderness permit at the trailhead; Northwest Forest Pass to park.",
+    "waypoints": [
+     {
+      "lat": 47.5204,
+      "lng": -123.2352,
+      "elev": 3026,
+      "name": "Mount Washington Trailhead (FR 2419)",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The traverse has no trailhead of its own — it starts on Mount Washington's summit, so you drive to the Big Creek road-end off North Lake Cushman Road. Take FS Road 24 for about a mile, turn left onto FS Road 2419, and follow it roughly 6.6 miles up the Big Creek drainage to the small parking area at the road end, around 3,026 ft. Most parties finish on Mount Ellinor and walk out from its upper trailhead, which is a different parking area on the same road corridor, so leave a second car there or arrange a shuttle before you start."
+     },
+     {
+      "lat": 47.531349,
+      "lng": -123.246118,
+      "elev": 6260,
+      "name": "Mount Washington - Summit",
+      "note": "Climb Washington first, then traverse the ridge SW toward Ellinor.",
+      "type": "Summit",
+      "distMi": 1.7
+     },
+     {
+      "lat": 47.5220351,
+      "lng": -123.2604403,
+      "elev": 5944,
+      "name": "Mount Ellinor - Summit",
+      "note": "Traverse endpoint.",
+      "type": "Topout",
+      "distMi": 3.2
+     },
+     {
+      "lat": 47.51022,
+      "lng": -123.24815,
+      "elev": 3500,
+      "name": "Mount Ellinor Upper Trailhead",
+      "note": "Standard descent/exit point via Mount Ellinor's upper trailhead.",
+      "type": "Junction",
+      "distMi": 4.2
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Climb Mount Washington first from FR-2419 — the traverse starts on its summit",
+      "notes": "This route has no trailhead and no approach of its own. It begins on Mount Washington's summit and runs southwest along the connecting ridge to Mount Ellinor, rather than descending Washington's standard route.\n\nSo the approach is Washington's standard south route: FS Road 24 off North Lake Cushman Road for about a mile, left onto FS Road 2419 and up the Big Creek drainage roughly 6.6 miles to the road-end trailhead at about 3,026 ft; steep boot path through forest to the meadow benches; scree and talus staying climber's-left of the large loose gully; the southern ridgeline and the exposed Dog Walk Ledge; the scree field below the false summit and the goat trail up its climber's-right edge to the stone wind shelter; and a final short Class 3-4 scramble to the 6,255 ft summit.\n\nMost parties finish at Ellinor and walk out its standard trail from the upper trailhead, which is a different parking area on the same road corridor — plan the shuttle. Reversing the traverse back over Washington is possible but nobody recommends it.",
+      "season": "Roughly Jun-Sep",
+      "hazards": [
+       "Fractured, weathered pillow basalt the whole length of the crest",
+       "A crux gendarme downclimb with notably poor rock and severe exposure that guides often advise bypassing entirely",
+       "Sustained Class 4 with hidden ledges — the difficulty depends on finding them",
+       "A loose 50 ft downclimb",
+       "Committing ground between two summits with no quick exit",
+       "The exit is at a different trailhead from the start; plan a shuttle"
+      ],
+      "baseFinding": "THE BASE OF THIS ROUTE IS A SUMMIT, AND THE TEST THAT YOU ARE ON THE RIGHT ONE IS A BUILDING: you passed a STONE WIND SHELTER on the ridge just below and then made a short Class 3-4 scramble to a top with a summit register on it. If you have not passed a stone shelter, you are on Washington's false summit and the traverse has not started. THE TEST THAT YOU ARE ON THE TRAVERSE AND NOT ON A DESCENT IS THE FIRST FEATURE, AND IT IS THE BEST SECTION OF THE ROUTE RATHER THAN THE WORST: from the summit, follow the narrow crest of fractured pillow basalt SOUTHWEST. The first thing you meet is THE WEDGE, about 150 ft of POSITIVE low-fifth / Class 4 climbing on good holds. Positive holds on this mountain are unusual enough to be diagnostic. If the first 150 ft off the summit feels loose and unpleasant and you are losing height fast, you have dropped off the crest into the standard descent gully instead of onto the ridge. SECOND TEST, further along: past the Wedge the ridge continues as sustained Class 4 past a series of gendarmes, and HIDDEN LEDGES usually keep the difficulty at Class 4 or below. So if a gendarme is presenting you with fifth-class moves, look below the obvious line before you commit — the ledge is probably there and you have not found it. One loose 50 ft downclimb is the section everybody dislikes; it is part of the route, not a sign you are off it. THE DECISION POINT: where the crest becomes too hard or too exposed to continue unroped, the usual answer is to DROP INTO THE BASIN BELOW and either downclimb a technical sequence or bypass it on a SNOW FINGER, rejoining Ellinor's standard winter route line to that summit. Several parties recommend taking the west-side basin traverse into Ellinor's northeast couloir over the direct ridge from the start, specifically because the crux gendarme downclimb has poor rock and severe exposure."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_washington_olympic_winter_direct",
+   "before": {
+    "approach": "Start at the Jefferson Pass trailhead and follow the drainages west/toward the mountain, mixing bushwhacking with snow travel; parties have reported getting off-route on this approach."
+   }
+  }
+ ]
+}

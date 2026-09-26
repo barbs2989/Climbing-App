@@ -1,0 +1,38 @@
+{"file": "r601.json", "results": [
+ {"id": "wa_mount_fricaba_standard", "fact": "Total ascent", "verdict": "unresolved", "correct_value": null,
+  "evidence": "No outside source states a car-to-car gain for the Fricaba scramble via Home Lake/Constance Pass. Published figures are for the Home Lake hike alone (about 6,000 ft round trip on one hiking page, about 4,800 ft on a trail-map page), which do not include the summit day. Per the rules gain_ft is not recomputed from arithmetic; the 4,259 vs 5,600 split stays open.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/home-lake", "https://www.onxmaps.com/hiking/k1mzjnnv2qd7/constance-pass-home-lake-via-upper-dungeness-trail"],
+  "patches": []},
+ {"id": "wa_mount_fricaba_standard", "fact": "Distance to Home Lake", "verdict": "fixed", "correct_value": "9.3 mi one way (Upper Dungeness TH to Home Lake)",
+  "evidence": "A trail-guide page puts Home Lake at 9.3 mi from the Upper Dungeness trailhead (Camp Handy 3.4, Boulder Shelter 6.1). A hiking page gives 19.4 mi round trip (about 9.7 one way) and a trail-map page 19.6 mi round trip. All sources put Home Lake well beyond 9 miles; the itinerary's 7.9 is the outlier. Adopted 9.3 to match the waypoint and approach text; day 1 and day 3 miles and the total note updated (7 mi summit day left as is).",
+  "sources": ["http://www.protrails.com/trail/664", "https://www.wta.org/go-hiking/hikes/home-lake", "https://www.onxmaps.com/hiking/k1mzjnnv2qd7/constance-pass-home-lake-via-upper-dungeness-trail"],
+  "patches": [
+   {"id": "wa_mount_fricaba_standard", "fact": "Distance to Home Lake", "op": "set", "column": "itinerary", "path": ["days",0,"miles"], "expect": 7.9, "value": 9.3},
+   {"id": "wa_mount_fricaba_standard", "fact": "Distance to Home Lake", "op": "set", "column": "itinerary", "path": ["days",2,"miles"], "expect": 7.9, "value": 9.3},
+   {"id": "wa_mount_fricaba_standard", "fact": "Distance to Home Lake", "op": "replace_text", "column": "itinerary", "path": ["totalNote"], "find": "roughly 22.6-mile round trip", "replace": "roughly 25.6-mile round trip"}
+  ]},
+ {"id": "wa_mount_fricaba_standard", "fact": "Is Home Lake inside the national park (permit needed?)", "verdict": "fixed", "correct_value": "Home Lake is inside Olympic National Park; a park wilderness permit is needed to camp there. Camp Handy and Boulder Shelter are national forest (no permit).",
+  "evidence": "The Forest Service page for Home Lake Trail #893 says it runs 0.9 mi from Boulder Shelter to the park boundary, where it becomes the Constance Pass Trail leading to Home Lake within Olympic National Park. A hiking guide states Home Lake is in Olympic National Park and a permit must be reserved; a regional travel article also places the park entry before Home Lake. overnight_permit.where was the outlier.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/trails/home-lake-trail-893", "https://www.wta.org/go-hiking/hikes/home-lake", "https://www.explorehoodcanal.com/stories/2026/9/16/home-lake"],
+  "patches": [
+   {"id": "wa_mount_fricaba_standard", "fact": "Is Home Lake inside the national park (permit needed?)", "op": "replace_text", "column": "access", "path": ["overnight_permit","where"], "find": "Camp Handy, Boulder Shelter and Home Lake are on national forest land; a recreation pass is needed to park. A park wilderness permit is needed only to camp across Constance Pass.", "replace": "Camp Handy and Boulder Shelter are on national forest land; a recreation pass is needed to park. A park wilderness permit is needed to camp at Home Lake or anywhere past the park boundary, about a mile beyond Boulder Shelter."}
+  ]},
+ {"id": "wa_mount_fricaba_standard", "fact": "Which peaks Home Lake serves", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Sources confirm Deception Basin can be reached off-trail from the Constance Pass side, but the standard approach described for Mystery and Deception is from Royal Basin; no two sources name Home Lake as the standard base camp for Deception/Mystery. The bivy sentence is part of the regional camp list owned by the camping clean-up, so no patch either way.",
+  "sources": ["https://climberkyle.com/2025/07/22/constance-royal-high-route/", "https://climberkyle.com/2016/08/15/mt-mystery-and-mt-deception/"],
+  "patches": []},
+ {"id": "wa_mount_fricaba_standard", "fact": "Buckhorn Wilderness permit", "verdict": "fixed", "correct_value": "No permit is needed in the Buckhorn Wilderness; a reserved park wilderness permit is needed to camp inside Olympic National Park (including Home Lake).",
+  "evidence": "The Olympic National Forest wilderness page says no permit is needed to visit Olympic National Forest wilderness areas; permits apply only inside the national park. A trip guide for the Upper Dungeness likewise says no permit is needed to camp in the Buckhorn Wilderness but a park permit is needed for Home Lake. The partner-requirements line claiming a self-issued Buckhorn permit is the outlier.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/wilderness", "https://theguide.io/articles/olympics-marmot-pass-dungeness-river-and-buckhorn-lake"],
+  "patches": [
+   {"id": "wa_mount_fricaba_standard", "fact": "Buckhorn Wilderness permit", "op": "replace_text", "column": "partner_requirements", "path": ["requiredSkills",4], "find": "self-issued Buckhorn Wilderness permit, backcountry permit if camping inside Olympic National Park", "replace": "none needed in the Buckhorn Wilderness; a reserved wilderness permit to camp inside Olympic National Park, including Home Lake"}
+  ]},
+ {"id": "wa_mount_fricaba_standard", "fact": "Summit-day distance from Home Lake", "verdict": "unresolved", "correct_value": null,
+  "evidence": "No source gives the Home Lake–Constance Pass–Deception Basin–Fricaba round-trip distance. Home Lake is 0.5 mi below Constance Pass; the rest of the line is off-trail with no published mileage. The waypoint distMi values (9.3 to 11.3) are themselves unsourced, so neither the 7 mi day nor the 4 mi implied by the pins can be confirmed.",
+  "sources": ["http://www.protrails.com/trail/664"],
+  "patches": []},
+ {"id": "wa_mount_fricaba_standard", "fact": "Trip round-trip distance in partner requirements", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "partner_requirements.fitnessSpec.hiking says an 18-21 mile round trip, but the Home Lake hike alone is about 18.6-19.6 mi round trip per published trail figures, before any summit day, and the itinerary totals 25.6 mi after the day-1/day-3 fix. The summit-day distance is unsourced, so the trip total cannot be settled.",
+  "sources": ["http://www.protrails.com/trail/664", "https://www.wta.org/go-hiking/hikes/home-lake"],
+  "patches": []}
+]}

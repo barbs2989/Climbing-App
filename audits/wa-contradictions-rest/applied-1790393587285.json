@@ -1,0 +1,287 @@
+{
+ "applied": [
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Robinson Pass elevation"
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Robinson Pass elevation"
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Parking pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "Pasayten Wilderness trailheads and high passes typically aren't fully clear of snow until mid-to-late July; this is a self-issue wilderness permit area with no advance reservation needed.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Fast, well-graded trail up and over 6,600 ft Robinson Pass, then down into the Pasayten drainage to camp on the flats along the Middle Fork Pasayten River. An easy warm-up day on good tread.",
+       "hours": 6,
+       "miles": 9.5,
+       "title": "Robinson Creek to Middle Fork Pasayten",
+       "gainFt": 4200,
+       "lossFt": 2400,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach Middle Fork Pasayten River flats camp"
+      },
+      {
+       "n": 2,
+       "note": "Continue down-valley past Fred's Lake, climb over 7,100 ft Rolo Pass into the Eureka Creek drainage, and on to 7,500 ft Shellrock Pass, with an optional side trip to Lake Doris. Camp at a small pond near North Monument Creek just below the pass, setting up for the summit day.",
+       "hours": 7.5,
+       "miles": 10.5,
+       "title": "Rolo Pass to Shellrock country",
+       "gainFt": 3600,
+       "lossFt": 3200,
+       "packLb": 36,
+       "schedule": [],
+       "objective": "Reach North Monument Creek Pond below Shellrock Pass"
+      },
+      {
+       "n": 3,
+       "note": "The trip's crux day: cross-country travel to Butte Pass, then a connecting ridge scramble over Pass Butte and on to Lost Peak's Class 2 NW ridge, before descending the west ridge and moving camp on to Lake of the Woods. Parties note this basin/talus travel is slower than it looks on the map, and several parties stash overnight packs near Butte Pass and carry only a day pack for the ridge traverse.",
+       "hours": 10,
+       "miles": 10,
+       "title": "Pass Butte and Lost Peak",
+       "gainFt": 3400,
+       "lossFt": 3600,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "Early AM",
+         "label": "Break camp",
+         "detail": "Cross the basin toward Butte Pass; some parties cache overnight gear here and continue with day packs."
+        },
+        {
+         "time": "~11:30 AM-12:30 PM",
+         "label": "Reach Butte Pass",
+         "detail": "Loose talus and burned deadfall slow the cross-country approach in real trip reports."
+        },
+        {
+         "time": "Early afternoon",
+         "label": "Summit Pass Butte (8,140 ft)",
+         "detail": "Fun Class 2-3 ridge scramble direct from the pass."
+        },
+        {
+         "time": "Mid-afternoon",
+         "label": "Summit Lost Peak (8,464 ft)",
+         "detail": "Traverse the connecting ridge, then follow the NW ridge to the top; can be cold and wind-blasted on the high ground."
+        },
+        {
+         "time": "Late afternoon",
+         "label": "Descend west ridge",
+         "detail": "Retrieve any cached gear near Butte Pass before continuing."
+        },
+        {
+         "time": "Evening",
+         "label": "Arrive Lake of the Woods camp"
+        }
+       ],
+       "objective": "Summit Pass Butte (8,140 ft) and Lost Peak (8,464 ft)"
+      },
+      {
+       "n": 4,
+       "note": "Climb over Pistol Pass, with strong parties adding an optional scramble up Lake Mountain or a side push toward North Pistol Peak, then descend to camp at Eureka Falls near the confluence of the Lost River and Eureka Creek.",
+       "hours": 8,
+       "miles": 11.5,
+       "title": "Over Pistol Pass",
+       "gainFt": 2600,
+       "lossFt": 3700,
+       "packLb": 34,
+       "schedule": [],
+       "objective": "Reach Eureka Falls camp"
+      },
+      {
+       "n": 5,
+       "note": "A short, easy, mostly downhill walk out, fording Eureka Creek en route to the Monument Trailhead.",
+       "hours": 3.5,
+       "miles": 6.5,
+       "title": "Exit to Monument Trailhead",
+       "gainFt": 200,
+       "lossFt": 2800,
+       "packLb": 20,
+       "schedule": [],
+       "objective": "Hike out"
+      }
+     ],
+     "totalNote": "A full 5-day, roughly 48-mile loop backpack (~14,000 ft cumulative gain) through the Pasayten Wilderness, with one dedicated summit day linking Pass Butte and Lost Peak from a high camp near Shellrock/Butte Pass; Lost Peak's remoteness rules out a single-day car-to-car approach."
+    },
+    "timing": {
+     "totalHrs": 35,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": 11.5,
+     "approachTimeHrs": 13.5,
+     "recommendedStart": "Early AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Fast, well-graded trail up and over 6,600 ft Robinson Pass, then down into the Pasayten drainage to camp on the flats along the Middle Fork Pasayten River. An easy warm-up day on g…",
+       "fromTo": "Robinson Creek to Middle Fork Pasayten",
+       "section": "Approach"
+      },
+      {
+       "hrs": 7.5,
+       "note": "Continue down-valley past Fred's Lake, climb over 7,100 ft Rolo Pass into the Eureka Creek drainage, and on to 7,500 ft Shellrock Pass, with an optional side trip to Lake Doris. Ca…",
+       "fromTo": "Rolo Pass to Shellrock country",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "The trip's crux day: cross-country travel to Butte Pass, then a connecting ridge scramble over Pass Butte and on to Lost Peak's Class 2 NW ridge, before descending the west ridge a…",
+       "fromTo": "Pass Butte and Lost Peak",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8,
+       "note": "Climb over Pistol Pass, with strong parties adding an optional scramble up Lake Mountain or a side push toward North Pistol Peak, then descend to camp at Eureka Falls near the conf…",
+       "fromTo": "Over Pistol Pass",
+       "section": "Descent"
+      },
+      {
+       "hrs": 3.5,
+       "note": "A short, easy, mostly downhill walk out, fording Eureka Creek en route to the Monument Trailhead.",
+       "fromTo": "Exit to Monument Trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "access": {
+     "fees": "No wilderness entry fee; a Northwest Forest Pass is not required at the primitive Robinson Creek / Slate Pass / Monument Creek trailheads used to approach this peak (only posted developed day-use sites require it).",
+     "rules": "Group size capped at 12 people / 18 head of stock.",
+     "permit": "Free self-issue wilderness permit required at the trailhead register (no quota, no reservation, no cost).",
+     "closures": "Harts Pass Road (Lost River Rd / FR 9140 -> FR 5400) was closed to vehicles from the Monument Creek Trailhead through Harts Pass after storm/flood damage in December 2025, cutting off the Robinson Creek, Slate Pass, and Slate Peak trailheads used for the standard approaches; it was listed open again by the Forest Service as of July 2, 2026. Separately, the Ptarmigan Fire closure (Forest Service order 06-17-04-26-39, in effect September 9 through October 31, 2026) closes Monument Creek Trail #484 north of the Lake of the Woods turnoff, Eureka Creek Trail #474, Robinson Creek Trail #478 north of Eureka Creek, and Buckskin Ridge Trail #498; Methow Valley Ranger District, (509) 996-4000. Verify current status with the Methow Valley Ranger District before planning a trip.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District — Pasayten Wilderness",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "passRequired": "Northwest Forest Pass (trailhead parking)",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 48.65617,
+      "lng": -120.51276,
+      "elev": 2550,
+      "name": "Monument Creek Trailhead (Lost River Road / Harts Pass Road)",
+      "note": "USFS trailhead on Lost River Road (FR 5400 spur); Northwest Forest Pass or self-issue wilderness permit at the kiosk, last reliable water/toilet before miles of Pasayten trail.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.75375,
+      "lng": -120.63538,
+      "elev": 6220,
+      "name": "Robinson Pass",
+      "note": "Gains the Middle Fork Pasayten divide via a steep final 1.2-mile forested pitch; trail forks here toward the Pasayten River valley.",
+      "type": "Junction",
+      "distMi": 9,
+      "directions": "Trail #478 follows Robinson Creek through big timber for about six miles, never far from the sound of the water, then fords the creek. Above the ford the grade stays gradual through forest, crossing several avalanche runouts, and breaks into meadowland near 4,700 ft. Pass the Slate Pass Trail junction and finish with a half mile of open meadow climbing to the pass."
+     },
+     {
+      "lat": 48.783078228571426,
+      "lng": -120.61945422857143,
+      "elev": 4400,
+      "name": "Middle Fork Pasayten River flats",
+      "note": "Common first-night camp beside the river a few miles below Robinson Pass; reliable water but mosquito-heavy in early season.",
+      "type": "Water",
+      "distMi": 12,
+      "directions": "Drop off the far side of the pass and descend about three miles into the broad U-shaped Middle Fork valley, losing roughly 1,800 ft to river level. Camps sit along the water here."
+     },
+     {
+      "lat": 48.82287,
+      "lng": -120.59824,
+      "elev": 6507,
+      "name": "Fred's Lake",
+      "note": "Green alpine lake ringed by larches with a popular established camp; last dependable water before the Rolo/Shellrock high country.",
+      "type": "Campsite",
+      "distMi": 16,
+      "directions": "Continue down-river before the trail turns and climbs back into the high country, gaining around 2,100 ft to the lake basin. Fred's Lake sits a short way off the main trail rather than on it, so watch for the spur or you will walk straight past it."
+     },
+     {
+      "lat": 48.819342400000004,
+      "lng": -120.56960532,
+      "elev": 7100,
+      "name": "Rolo Pass",
+      "note": "Ridge-crest pass just above Fred's Lake; route continues cross-country toward the head of Eureka Creek and Shellrock Basin.",
+      "type": "Junction",
+      "distMi": 18,
+      "directions": "From the lake keep climbing to the ridge-crest pass a few hundred feet above, through open larch and talus. The maintained tread thins out above the lake, and this is where the route stops being a trail hike."
+     },
+     {
+      "lat": 48.81486,
+      "lng": -120.52594,
+      "elev": 7500,
+      "name": "Shellrock Pass / Shellrock Basin",
+      "note": "Trail here has been unmaintained for decades and the basin fogs in frequently; easy to lose the faint tread in whiteout, navigate by map/compass.",
+      "type": "Hazard",
+      "distMi": 21,
+      "directions": "From Rolo Pass drop to the headwaters of Eureka Creek and traverse across into Shellrock Basin, then climb to the pass at 7,500 ft. The tread through here has been unmaintained for decades and is faint to nonexistent, and the basin fogs in readily — carry map and compass and be ready to navigate without seeing any of the surrounding peaks."
+     },
+     {
+      "lat": 48.81287,
+      "lng": -120.458255,
+      "elev": 8464,
+      "name": "Lost Peak",
+      "note": "Class 3 talus/meadow scramble up the southwest or northwest ridge from a Shellrock Pass area camp; descend the same ridge line reversed.",
+      "type": "Summit",
+      "distMi": 24,
+      "directions": "From a camp near the pass, gain either the southwest or the northwest ridge and follow it over talus and alpine meadow to the top. Class 3 with no sustained technical ground, but the crest is high, exposed to wind, and can hold snow well past midsummer."
+     }
+    ]
+   }
+  }
+ ]
+}

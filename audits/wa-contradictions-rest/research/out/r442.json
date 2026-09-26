@@ -1,0 +1,230 @@
+{
+ "file": "r442.json",
+ "results": [
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "fact": "Lake of the Woods camp elevation vs Pistol Pass",
+   "verdict": "fixed",
+   "correct_value": "Lake of the Woods sits at about 6,620 ft (~6,600 ft), roughly 500 ft below 7,100 ft Pistol Pass",
+   "evidence": "USGS 3DEP elevation at the lake surface returns 6,623 ft, and the independent SRTM 30 m model returns 2,020 m (6,627 ft); both return ~7,070-7,100 ft at Pistol Pass. A trip report describes the camp as a mile down from the pass, and another reports about 1,600 ft of gain from the lake to the 8,371 ft summit (implying ~6,750 ft). The stored 7,300 ft pin and the 7,000-7,300 ft prose all sit above the pass the camp is reached by descending from.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.4995&y=48.7728&units=Feet&wkid=4326",
+    "https://api.opentopodata.org/v1/srtm30m?locations=48.7727284,-120.499502",
+    "https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/",
+    "https://www.alpinewanderlust.com/larch-of-the-woods-lake-mountain-overnight/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Lake of the Woods camp elevation vs Pistol Pass",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "elev"
+     ],
+     "expect": 7300,
+     "value": 6620
+    },
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Lake of the Woods camp elevation vs Pistol Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "a basecamp around 7,000'",
+     "replace": "a basecamp around 6,600'"
+    },
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Lake of the Woods camp elevation vs Pistol Pass",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "(~7,100 ft)",
+     "replace": "(~6,600 ft)"
+    },
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Lake of the Woods camp elevation vs Pistol Pass",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "a camp around 7,000 to 7,300 ft near Lake of the Woods",
+     "replace": "a camp around 6,600 ft near Lake of the Woods"
+    }
+   ]
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "fact": "Maintenance of Monument Creek Trail #484",
+   "verdict": "fixed",
+   "correct_value": "Trail #484 is maintained for its first ~4 miles to Eureka Creek; only the trail beyond Eureka Creek is unmaintained",
+   "evidence": "The Forest Service trail page says the trail beyond Eureka Creek has not been maintained for 25+ years and is impassable to stock. The WTA hike page says the maintained trail runs four miles and stops at the Eureka Creek bridge washout. One trip report found the first miles overgrown in places, so 'well-maintained' was softened to 'maintained'; the closure sentence was reordered so it no longer reads as covering the whole trail.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/monument-creek-trail",
+    "https://www.wta.org/go-hiking/hikes/monument-creek",
+    "https://www.lucasmountainknowledge.com/post/lake-mountain-and-monument-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Maintenance of Monument Creek Trail #484",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "Monument Creek Trail (#484) and the historic Pistol Pass Trail beyond Eureka Creek have been unmaintained for over 25 years",
+     "replace": "Beyond Eureka Creek, Monument Creek Trail (#484) and the historic Pistol Pass Trail have been unmaintained for over 25 years"
+    },
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Maintenance of Monument Creek Trail #484",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "the only well-maintained tread on the whole trip",
+     "replace": "the only maintained stretch of trail on the whole trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "fact": "Which peaks share this camp",
+   "verdict": "fixed",
+   "correct_value": "Lake Mountain is paired with Monument Peak from the Lake of the Woods camp; Carru/Osceola/Lago are a separate group",
+   "evidence": "Three independent trip reports climb Lake Mountain together with Monument Peak from the Lake of the Woods camp over Pistol Pass (one on consecutive days, one on the same day). None pairs it with Carru, Osceola or Lago, which are the separate Lago group farther north.",
+   "sources": [
+    "https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://www.lucasmountainknowledge.com/post/lake-mountain-and-monument-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Which peaks share this camp",
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "expect": "Tag it alongside Carru, Osceola, and Lago from one camp",
+     "value": "Tag it alongside Monument Peak from the same Lake of the Woods camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "fact": "Line from camp to the east ridge",
+   "verdict": "fixed",
+   "correct_value": "The east ridge is climbed directly from the Lake of the Woods camp; crossing the pass south of Lake Mountain into the Monument-Lake basin belongs to the Monument Peak / west-slope approach",
+   "evidence": "Two trip reports go from the lake straight up through the larches onto Lake Mountain's east ridge (1.9 h and ~90 min from camp), one noting the peak is 'right there' above the lake. The only report that crossed the pass south of Lake Mountain and dropped the far side did so to climb Monument and Lake's WEST slope, and the Monument-Lake basin description is the Monument approach. The east-ridge fields that routed over the pass were fixed in waypoint directions, approach, the base-finding note and the descent.",
+   "sources": [
+    "https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/",
+    "https://www.alpinewanderlust.com/larch-of-the-woods-lake-mountain-overnight/",
+    "https://www.lucasmountainknowledge.com/post/lake-mountain-and-monument-peak",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Line from camp to the east ridge",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "directions"
+     ],
+     "find": "From camp, cross the low pass immediately south of Lake Mountain, drop down the far side, and make a descending traverse into the basin between Monument Peak and Lake Mountain.",
+     "replace": "From camp, climb northwest straight out of the lake basin through the larches toward the lower east ridge."
+    },
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Line from camp to the east ridge",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From either camp, gain the low pass just south of Lake Mountain, drop down the far side, and make a descending traverse into the basin between Monument Peak and Lake Mountain. From here a subsidiary",
+     "replace": "From the Lake of the Woods camp, climb straight up out of the lake basin through the larches toward the peak. A subsidiary"
+    },
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Line from camp to the east ridge",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "From camp near Lake of the Woods, gain the low pass just south of Lake Mountain, drop the far side, and make a descending traverse into the basin between Monument Peak and Lake Mountain. The base is the point in that basin where you stop traversing and turn uphill, and the mountain",
+     "replace": "From camp near Lake of the Woods, head uphill out of the lake basin toward the peak, which rises directly above camp. The base is where the open slope steepens toward the summit, and the mountain"
+    },
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Line from camp to the east ridge",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "back into the Monument-Lake basin, staying",
+     "replace": "back toward the lake basin, staying"
+    },
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Line from camp to the east ridge",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "From the basin, re-ascend the low pass south of the peak and drop back to Lake of the Woods camp.",
+     "replace": "Follow the larch slopes back down to Lake of the Woods camp."
+    }
+   ]
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "fact": "Difficulty",
+   "verdict": "fixed",
+   "correct_value": "Class 2-3",
+   "evidence": "One trip report rates the east ridge Class 2-3 with exposed granite; another descended a Class 3 line on the east face; others found nothing over Class 2 on the easiest line. So Class 2-3 (as grade, rock_grade and climbing_route already say) is right, and 'easy class 2' in PROTECTION understated it.",
+   "sources": [
+    "https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://www.alpinewanderlust.com/larch-of-the-woods-lake-mountain-overnight/"
+   ],
+   "patches": [
+    {
+     "id": "wa_lake_mountain_pasayten_scramble",
+     "fact": "Difficulty",
+     "op": "set",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "Easy class 2 scramble; no technical gear normally required.",
+     "value": "Class 2-3 scramble; no technical gear normally required."
+    }
+   ]
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "fact": "Gain from Lake of the Woods camp to the summit",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach, climbing_route[0] and itinerary day 2 say 1,300-1,400 ft from camp; pitch_detail says ~1,600 ft. With the lake at ~6,620 ft (USGS and SRTM) and the summit at 8,371 ft, the net rise is ~1,750 ft, and one trip report says about 1,600 ft. Day 2's gainFt (1,300) is part of the itinerary total that equals gain_ft 7,300, so it cannot be changed alone, and no second source states the figure; left open.",
+   "sources": [
+    "https://www.alpinewanderlust.com/larch-of-the-woods-lake-mountain-overnight/",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.4995&y=48.7728&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  }
+ ]
+}
