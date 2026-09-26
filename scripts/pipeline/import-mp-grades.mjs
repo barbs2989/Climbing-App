@@ -467,8 +467,25 @@ async function runState(st) {
   }
   for (let i = 0; i < inserts.length; i += 25) {
     const batch = inserts.slice(i, i + 25);
-    const r = await fetchRetry(`${SUPABASE_URL}/rest/v1/routes`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(batch) });
+    const post = rows => fetchRetry(`${SUPABASE_URL}/rest/v1/routes`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(rows) });
+    const r = await post(batch);
     const txt = await r.text();
+    // A statement timeout (57014) rolls the whole batch back — the insert triggers are slow on a
+    // big state (California failed here at 11,792 inserts) — so the same rows are re-sent one at a
+    // time, each with three tries a minute apart.
+    if (!r.ok && /57014/.test(txt)) {
+      for (const row of batch) {
+        let ok = false, last = "";
+        for (let t = 0; t < 3 && !ok; t++) {
+          if (t) await new Promise(res => setTimeout(res, 60_000));
+          const r1 = await post([row]); last = await r1.text();
+          ok = r1.ok && JSON.parse(last).length === 1;
+          if (!ok && !/57014/.test(last)) break;
+        }
+        if (!ok) throw new Error(`${st.name}: insert of ${row.id} failed ${last.slice(0, 300)}`);
+      }
+      continue;
+    }
     if (!r.ok) throw new Error(`${st.name}: insert failed ${r.status} ${txt.slice(0, 300)}`);
     if (JSON.parse(txt).length !== batch.length) throw new Error(`${st.name}: insert count mismatch`);
   }
