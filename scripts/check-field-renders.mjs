@@ -579,7 +579,9 @@ const KNOWN = {
   // purpose (the owner's call — no route tags or features on the page), leaving `lists` with no
   // route-page reader. The column still decides Lists and Challenges membership, off the route
   // page, and lib/routeTags.js is still pinned by check:route-tags. Main was red on this from the
-  // moment #1940 merged; the entry records the removal instead of re-adding the chips.
+  // moment #1940 merged, and an entry here recorded the removal.
+  // ...and back again: the owner asked to bring the tags back the same day, #1940 was reverted,
+  // RouteTagRow renders `lists` once more, and the entry is removed.
   // Its only reader was EnrichmentPanels' DATA QUALITY box on Overview, removed together with
   // ProvenancePanel's DATA CONFIDENCE box: two panels, at the top of the page, both answering
   // "how complete is this route's data" before the route itself. Gaps are now reported by the
@@ -595,9 +597,6 @@ const KNOWN = {
   corrections: "reader removed with the DATA CONFIDENCE box — graded bookkeeping, and much of "
     + "the column reads \"None — consistent across sources.\" The substantive half of that box, "
     + "`verif`, was kept as a one-line note on Overview rather than allowlisted here.",
-  lists: "route-page reader removed on purpose in #1940 (the tag chip row) — the column still "
-    + "decides Lists and Challenges membership off the route page. Re-adding chips is a product "
-    + "call, not a fix for this guard.",
   data_quality: "reader removed on purpose — the DATA QUALITY box duplicated DATA CONFIDENCE "
     + "at the top of Overview and both were replaced by per-section gap notices. Give it a "
     + "home beside the fields it grades if it comes back, not another page-level banner.",
