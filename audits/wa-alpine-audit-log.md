@@ -28541,3 +28541,64 @@ research subagents this batch again reported WebFetch to nps.gov, wta.org, dnr.w
 summitpost.org, cascadeclimbers.com, mountainproject.com, and americanalpineclub.org as
 egress-blocked in this environment — verification rested on WebSearch snippets citing those
 domains rather than direct fetches.
+
+## Batch 353 (2026-09-26) — pass 6
+
+Routes: `wa_mount_thomson_west_ridge`, `wa_mount_tom_scramble`, `wa_mount_torment_south_ridge`,
+`wa_mount_torment_torment_forbidden_traverse`, `wa_mount_townsend_standard`,
+`wa_mount_triumph_northeast_ridge`, `wa_mount_washington_olympic_winter_direct`,
+`wa_mount_wilder_scramble`.
+
+**Fixed (1 route, 1 UPDATE):** `wa_mount_torment_torment_forbidden_traverse`'s `beta` field called
+the finishing pitch (Forbidden Peak's West Ridge) "(5.7, 50 classic)" while three other fields on
+the *same row* — `rock_grade` ('5.6'), `overview` ("never harder than 5.6"), and `pitch_detail`
+pitch 5 ("4th/5.6") — all say 5.6. External sources (Steph Abegg's route page titled "Forbidden
+Peak, West Ridge (5.6)", BC Adventure Guides, and other independent trip-report/guide-service
+listings) favor 5.6 by a clear majority over the one guide-service page that used 5.7. Corrected
+the outlier `beta` field to match the rest of the row.
+
+**Flagged for human review (7):** `wa_mount_thomson_west_ridge` — the stored FA credits four
+people (Fred & Helmy Beckey, Robert Craig, William Ford, 1940); only the two Beckeys and the year
+are corroborated by any source reached, and no source ties Craig or Ford to this specific route —
+matches a pre-existing `data_quality` gap rather than a new finding. `wa_mount_tom_scramble` — the
+stored Upper Hoh Road closure date (Dec 23, 2024) runs 3 days behind independent sources (Dec 20,
+2024), possibly an announced-vs-effective distinction rather than an error; separately its
+gain_ft/loss_ft (7,100/6,900) carries a 200 ft asymmetry for an out-and-back, and its Elk Lake camp
+waypoint (2,600 ft) disagrees with its own bivy note ("roughly 2,500 ft") — both internal, not
+externally sourced. `wa_mount_torment_south_ridge` and `wa_mount_torment_torment_forbidden_traverse`
+both store the **identical** `dist_km` value (4.8) despite being very different routes — the South
+Ridge's own waypoints imply ~4.6 mi one-way (~14.8 km round trip) and the Traverse's own itinerary
+day-mileages sum to ~11.5 mi (~18.5 km); neither is 4.8 km. Strong internal-consistency signal of a
+copy/default bug affecting both rows, but no authoritative external total-distance figure was found
+for either route to correct it against, so left unchanged pending a human/data-eng re-derivation
+(each route also carries its own smaller, unsourced gain_ft-vs-loss_ft mismatch — 380 ft and 785 ft
+respectively). `wa_mount_townsend_standard` — the stored `permit` field flatly states no Northwest
+Forest Pass or Discover Pass is needed at either trailhead, but independent secondary sources
+conflict (some say a Northwest Forest Pass IS required); no primary fs.usda.gov/wta.org page was
+reachable in this environment to settle it. `wa_mount_triumph_northeast_ridge` — the stored grade
+note "5.7 (crux offwidth; sometimes rated 5.6)" undersells the real spread found across sources:
+5.5 (The Mountaineers), 5.6 (Alpine Institute), 5.7 (Steph Abegg, guide services) — a wording
+nuance, not a hard error. `wa_mount_wilder_scramble` — stored `dist_km=84.5` does not cleanly
+reconcile with the row's own itinerary day-mileage sum (44.5 mi / 71.6 km round trip), even after
+accounting for the ~7 mi Madison Falls road-walk leg either way it's added; an internal-consistency
+question, since no independent authoritative total-mileage figure for this route was found.
+
+**Clean (1):** `wa_mount_washington_olympic_winter_direct` — confirmed as a real, documented
+winter route on the Olympic Mount Washington (correctly disambiguated from the Cascades peak of the
+same name), its 6,260 ft summit elevation, and the "often climbed around President's Day/George
+Washington's Birthday" claim all independently corroborated; its `fa` field is correctly left null
+since no first-ascent record was found anywhere.
+
+`last_processed_id` advanced to `wa_mount_wilder_scramble`; scope counts not re-run this batch (last
+known: 698 in-scope, 751 total wa_ alpine/mountaineering tagged, from batch 352) — spot-checked only
+this batch's own candidates, confirming `wa_narcos` correctly excluded (its area is a 'crag', not a
+'peak') while all 8 selected routes sit on 'peak' areas. Next up: Mushroom Tower, Navaho Peak, the
+Cathedral Peak (Pasayten)/Bonanza Peak/Snowfield Peak/North Early Winters Spire cluster, Nooksack
+Tower. No `.env`/`.env.local` present at run start (fresh clone); wrote a local `.env.local` with
+just the anon read key supplied in the task prompt to run `check:sql` before committing the fix file
+(no service key used or needed — this run made no writes). PR for this branch was already open, so
+no new PR was opened. All three research subagents this batch again reported WebFetch to every
+domain tried (nps.gov, fs.usda.gov, wta.org, en.wikipedia.org, summitpost.org, mountainproject.com,
+stephabegg.com, cascadeclimbers.com, climbing.com, mazamas.org, peakbagger.com) as EGRESS_BLOCKED in
+this environment — every finding above rests on WebSearch result snippets only, not fetched primary
+pages.
