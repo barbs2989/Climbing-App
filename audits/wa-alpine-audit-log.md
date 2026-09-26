@@ -28367,3 +28367,49 @@ for both the read-only research queries and for validating the SQL fix file with
 WebFetch to nps.gov/fs.usda.gov/Wikipedia/SummitPost/CascadeClimbers as egress-blocked in this
 environment (consistent with every recent batch) — verification rested on WebSearch snippets
 citing those same domains rather than direct fetches.
+
+## Batch 350 (2026-09-26) — pass 6
+
+Routes: `wa_mount_shuksan_north_face`, `wa_mount_shuksan_northeast_ridge`,
+`wa_mount_shuksan_northwest_arete`, `wa_mount_shuksan_price_glacier`,
+`wa_mount_shuksan_sulphide_glacier`, `wa_mount_shuksan_white_salmon_glacier`,
+`wa_mount_spickard_silver_glacier`, `wa_mount_spickard_southwest`.
+
+**Fixed (2):** `wa_mount_shuksan_north_face`'s `descent` field called Winnie's Slide "(50+
+degrees)" — independent sources (SummitPost, Mountainproject, trip reports) consistently put
+Winnie's Slide itself at ~40-45°, and this same database's own White Salmon Glacier route
+already stores that exact feature at "40-45 degrees" in two separate fields, so the 50+ figure
+(likely borrowed from generic "40- to 50-degree" copy describing the North Face as a whole) was
+corrected to match. `wa_mount_shuksan_northwest_arete`'s summit waypoint ("Mount Shuksan summit
+pyramid") stored elev/elevFt as 9127 ft, but its own coordinate matches Wikipedia's cited
+NGVD29 summit figure of 9,131 ft to four decimal places, and 5 of the other 6 Shuksan routes
+audited this same batch already use 9131 — corrected the outlier waypoint to match.
+
+**Flagged for human review (1):** `wa_mount_shuksan_north_face`'s `fa` ("Fasset, Hanft,
+Thompson", no date) could not be corroborated against any independent source (SummitPost,
+Mountaineers.org, AAI, Wikipedia, CascadeClimbers, AAJ all searched) — not contradicted, just
+unverifiable, so left alone rather than guessed.
+
+**Clean (6):** `wa_mount_shuksan_northeast_ridge` (confirmed as a real, seldom-climbed
+4th-class-to-5.6/5.7 alternate finish off the North Face/Hanging Glacier approach, not confused
+with a different line — exact grade is soft across sources but not contradicted);
+`wa_mount_shuksan_price_glacier` (1945 Beckey/Schwabland/Granston FA and Fifty Classic Climbs
+inclusion both independently confirmed); `wa_mount_shuksan_sulphide_glacier` (Sept 7, 1906
+Curtis/Price FA — the peak's overall first ascent — confirmed exactly, including name
+spelling); `wa_mount_shuksan_white_salmon_glacier` (its own `fa` field already flags the 1926
+Piley/Richards/Thompson party as unverified; research could not corroborate it either,
+consistent with the existing self-flag, so left unchanged); `wa_mount_spickard_silver_glacier`
+(route description, summit elevation variance, and summit coordinate all independently
+confirmed); `wa_mount_spickard_southwest` (both the mountain's overall 1904 Reaburn FA and the
+Beckeys' June 21, 1941 Southwest Route FA, made right after Northwest Mox, independently
+confirmed by secondary sources).
+
+`last_processed_id` advanced to `wa_mount_spickard_southwest`; re-confirmed scope this batch:
+still 698 in-scope, 751 total wa_ alpine/mountaineering tagged (both unchanged from batch 349);
+249 in-scope routes remain unaudited this pass (next up: the Mount St. Helens/Mount Steel
+cluster). No `.env`/`.env.local` present at run start (fresh clone) — none needed this batch;
+only the public anon key was used, for both the read-only research queries and for validating
+the SQL fix file with `npm run check:sql` before writing it. All three research subagents this
+batch again reported WebFetch to nps.gov/fs.usda.gov/Wikipedia/SummitPost/CascadeClimbers as
+egress-blocked in this environment — verification rested on WebSearch snippets citing those
+same domains rather than direct fetches.
