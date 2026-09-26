@@ -289,15 +289,20 @@ async function runState(st) {
   if (planned.length) {
     const vals = planned.map(a => `(${q(a.id)}, ${q(a.name)}, ${a.lat ?? "null"}::float8, ${a.lng ?? "null"}::float8)`);
     const hits = new Map();
-    for (let i = 0; i < vals.length; i += 300) for (const h of sql(`
-      select v.id, (select a.id || ' (' || a.name || ')' from areas a
-                     where a.path <@ (select path from areas where id = ${q(st.id)})
-                       and case when v.lat is not null
-                           then catalog_key(a.name) = catalog_key(v.name) and a.lat between v.lat - 0.02 and v.lat + 0.02
-                                and catalog_km(v.lat, v.lng, a.lat, a.lng) <= 1.5
-                           else a.area_type = 'peak' and search_canon(a.name) = search_canon(v.name) end
-                     order by catalog_km(v.lat, v.lng, a.lat, a.lng) nulls last limit 1) hit
-        from (values ${vals.slice(i, i + 300).join(",")}) v(id, name, lat, lng)`)) if (h.hit) hits.set(h.id, h.hit);
+    // Each name's key is computed ONCE (materialized), not once per pairing: calling catalog_key
+    // inside the correlated subquery timed out on California (300 planned x every state area).
+    for (let i = 0; i < vals.length; i += 1000) for (const h of sql(`
+      with s as materialized (select id, name, area_type, lat, lng, catalog_key(name) k, search_canon(name) sc
+                                from areas where path <@ (select path from areas where id = ${q(st.id)})),
+           v as materialized (select id, name, lat, lng, catalog_key(name) k, search_canon(name) sc
+                                from (values ${vals.slice(i, i + 1000).join(",")}) v(id, name, lat, lng))
+      select v.id, (select s.id || ' (' || s.name || ')' from s
+                     where case when v.lat is not null
+                           then s.k = v.k and s.lat between v.lat - 0.02 and v.lat + 0.02
+                                and catalog_km(v.lat, v.lng, s.lat, s.lng) <= 1.5
+                           else s.area_type = 'peak' and s.sc = v.sc end
+                     order by catalog_km(v.lat, v.lng, s.lat, s.lng) nulls last limit 1) hit
+        from v`)) if (h.hit) hits.set(h.id, h.hit);
     if (hits.size) {
       const plannedBy = new Map(planned.map(a => [a.id, a]));
       const dupOf = id => { for (let x = id; plannedBy.has(x); x = plannedBy.get(x).parent_id) if (hits.has(x)) return x; return null; };
@@ -375,19 +380,23 @@ async function runState(st) {
     const plannedBy = new Map(planned.map(a => [a.id, a]));
     const vals = inserts.map(x => { const p = plannedBy.get(x.area_id); return `(${q(x.id)}, ${q(x.name)}, ${q(x.area_id)}, ${q(p ? p.name : "")}, ${p?.lat ?? "null"}::float8, ${p?.lng ?? "null"}::float8)`; });
     const dupRoute = new Map();
-    for (let i = 0; i < vals.length; i += 300) for (const h of sql(`
-      with v as (select v.id, v.name, coalesce(a.name, nullif(v.aname, '')) aname, coalesce(a.lat, v.lat) lat, coalesce(a.lng, v.lng) lng
-                   from (values ${vals.slice(i, i + 300).join(",")}) v(id, name, area_id, aname, lat, lng)
-                   left join areas a on a.id = v.area_id)
-      select v.id, (select r.id || ' (' || r.name || ' on ' || n.name || ')'
-                      from areas n join routes r on r.area_id = n.id
-                     where n.path <@ (select path from areas where id = ${q(st.id)})
-                       and ((catalog_key(n.name) = catalog_key(v.aname) and (v.lat is null or n.lat is null or catalog_km(v.lat, v.lng, n.lat, n.lng) <= 5))
-                            or (v.lat is not null and n.lat between v.lat - 0.005 and v.lat + 0.005 and catalog_km(v.lat, v.lng, n.lat, n.lng) <= 0.3))
-                       and catalog_key(r.name) = catalog_key(v.name)
-                       and not route_name_is_placeholder(r.name)
-                     limit 1) hit
-        from v where not route_name_is_placeholder(v.name)`)) if (h.hit) dupRoute.set(h.id, h.hit);
+    // Keys computed once per name (materialized), and route names keyed only in the candidate areas
+    // — the correlated form re-keyed the whole state per insert and timed out on California.
+    for (let i = 0; i < vals.length; i += 1000) for (const h of sql(`
+      with s as materialized (select id, name, lat, lng, catalog_key(name) k
+                                from areas where path <@ (select path from areas where id = ${q(st.id)})),
+           v as materialized (select v.id, catalog_key(v.name) rk, catalog_key(coalesce(a.name, nullif(v.aname, ''))) ak,
+                                     coalesce(a.lat, v.lat) lat, coalesce(a.lng, v.lng) lng
+                                from (values ${vals.slice(i, i + 1000).join(",")}) v(id, name, area_id, aname, lat, lng)
+                                left join areas a on a.id = v.area_id
+                               where not route_name_is_placeholder(v.name)),
+           c as materialized (select v.id vid, v.rk, s.id nid, s.name nname from v join s
+                                on (s.k = v.ak and (v.lat is null or s.lat is null or catalog_km(v.lat, v.lng, s.lat, s.lng) <= 5))
+                                or (v.lat is not null and s.lat between v.lat - 0.005 and v.lat + 0.005 and catalog_km(v.lat, v.lng, s.lat, s.lng) <= 0.3)),
+           rk as materialized (select r.id, r.name, r.area_id, catalog_key(r.name) k from routes r
+                                where r.area_id in (select nid from c) and not route_name_is_placeholder(r.name))
+      select distinct on (c.vid) c.vid as id, rk.id || ' (' || rk.name || ' on ' || c.nname || ')' hit
+        from c join rk on rk.area_id = c.nid and rk.k = c.rk`)) if (h.hit) dupRoute.set(h.id, h.hit);
     const why = "climb already in our catalog on a neighbouring area";
     for (let i = inserts.length - 1; i >= 0; i--) {
       if (!dupRoute.has(inserts[i].id)) continue;
