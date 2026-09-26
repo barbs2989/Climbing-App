@@ -1,0 +1,888 @@
+{
+ "id": "wa_sloan_peak_r1",
+ "area_id": "wa_sloan_peak",
+ "name": "West Face (Corkscrew route)",
+ "discipline": "mountaineering",
+ "grade": null,
+ "grade_system": null,
+ "grade_num": null,
+ "pitches": null,
+ "length_m": null,
+ "sort_order": null,
+ "stars": null,
+ "fa": "Harry Bedal and Nels Skaar, July 30, 1921 (as part of the first ascent of the standard/Corkscrew line)",
+ "lat": null,
+ "lng": null,
+ "aspect": "W",
+ "season": "Jun-Sep",
+ "description": null,
+ "gear": [
+  "Ice axe",
+  "Crampons",
+  "Harness",
+  "Rope for glacier travel",
+  "Crevasse rescue kit (pickets, prusiks)",
+  "Helmet"
+ ],
+ "hazards": [
+  "Loose rock and exposure on the final scramble to the summit block."
+ ],
+ "verif": null,
+ "overview": "The upper Corkscrew Route as it finishes on Sloan Peak's Upper West Face: after crossing the Sloan Glacier and circling the South ridge, the standard boot path climbs the final exposed 3rd/4th-class scramble on the west side of the summit block.",
+ "beta": "This is the same standard mountaineering line as the Corkscrew Route — the peak's standard route ascends the 'South Face and Upper West Face.' See that route's approach/beta for the full line; this route's grade (Grade II, glacier/snow + Class 3 scramble) matches the Corkscrew Route, not the separate roped 5.7-5.8 technical 'West Face' rock route (first ascent Merrill-Minton), which is a distinct, much harder climb than the grade shown here.",
+ "turnaround": "As with the Corkscrew Route, plan to be off the upper snowfields and glacier before afternoon warming increases rockfall and wet-slide hazard on this west-facing terrain.",
+ "auto_generated": false,
+ "alpine_grade": "II",
+ "rock_grade": "Class 3",
+ "ice_grade": null,
+ "gain_ft": 5935,
+ "loss_ft": 5935,
+ "dist_km": 7.65,
+ "max_angle": null,
+ "rappels": null,
+ "commitment": "II",
+ "face": "Upper West Face",
+ "permit": "Free self-issue Henry M. Jackson Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+ "comms": null,
+ "descent": "Reverse the ascent line back down the west-face scramble to the glacier, then descend the glacier and approach trail to the trailhead.",
+ "obj_haz": [
+  "Rockfall/icefall on the west-facing summit block, worst in the afternoon",
+  "Crevasses on the Sloan Glacier approach to this section"
+ ],
+ "waypoints": [
+  {
+   "lat": 48.0701,
+   "lng": -121.3753,
+   "name": "Bedal Creek Trailhead (FR-4096)",
+   "type": "Trailhead"
+  },
+  {
+   "lat": 48.0414,
+   "lng": -121.3401,
+   "elev": 7835,
+   "name": "Sloan Peak summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 7835
+  }
+ ],
+ "gpx": [
+  [
+   48.087034,
+   -121.308494
+  ],
+  [
+   48.0829659,
+   -121.310366
+  ],
+  [
+   48.0822984,
+   -121.311765
+  ],
+  [
+   48.0818302,
+   -121.313103
+  ],
+  [
+   48.0806711,
+   -121.312558
+  ],
+  [
+   48.079418,
+   -121.313542
+  ],
+  [
+   48.0795454,
+   -121.315357
+  ],
+  [
+   48.0798128,
+   -121.317323
+  ],
+  [
+   48.079732,
+   -121.31861
+  ],
+  [
+   48.0792275,
+   -121.31919
+  ],
+  [
+   48.0778363,
+   -121.321188
+  ],
+  [
+   48.0759269,
+   -121.323026
+  ],
+  [
+   48.0758336,
+   -121.323609
+  ],
+  [
+   48.0755532,
+   -121.324224
+  ],
+  [
+   48.0741814,
+   -121.324688
+  ],
+  [
+   48.0729047,
+   -121.323941
+  ],
+  [
+   48.0724801,
+   -121.324813
+  ],
+  [
+   48.070863,
+   -121.326693
+  ],
+  [
+   48.069933,
+   -121.326338
+  ],
+  [
+   48.0676972,
+   -121.327761
+  ],
+  [
+   48.066914,
+   -121.32809
+  ],
+  [
+   48.0661666,
+   -121.32816
+  ],
+  [
+   48.0658348,
+   -121.328753
+  ],
+  [
+   48.065807,
+   -121.32932
+  ],
+  [
+   48.0653337,
+   -121.32903
+  ],
+  [
+   48.0647178,
+   -121.331115
+  ],
+  [
+   48.0646032,
+   -121.331807
+  ],
+  [
+   48.064616,
+   -121.332508
+  ],
+  [
+   48.0642561,
+   -121.333214
+  ],
+  [
+   48.0638503,
+   -121.333455
+  ],
+  [
+   48.0634036,
+   -121.333043
+  ],
+  [
+   48.06285,
+   -121.3338
+  ],
+  [
+   48.0623762,
+   -121.333258
+  ],
+  [
+   48.0625877,
+   -121.334224
+  ],
+  [
+   48.0621635,
+   -121.334708
+  ],
+  [
+   48.0611641,
+   -121.335069
+  ],
+  [
+   48.0607074,
+   -121.335844
+  ],
+  [
+   48.0601722,
+   -121.337244
+  ],
+  [
+   48.059805,
+   -121.338217
+  ],
+  [
+   48.0588337,
+   -121.338969
+  ],
+  [
+   48.0573956,
+   -121.337473
+  ],
+  [
+   48.0564268,
+   -121.336845
+  ],
+  [
+   48.0554999,
+   -121.3357
+  ],
+  [
+   48.0558866,
+   -121.335425
+  ],
+  [
+   48.0565714,
+   -121.334671
+  ],
+  [
+   48.0553768,
+   -121.334397
+  ],
+  [
+   48.0542559,
+   -121.334766
+  ],
+  [
+   48.0527248,
+   -121.335783
+  ],
+  [
+   48.0513028,
+   -121.335738
+  ],
+  [
+   48.0500086,
+   -121.337475
+  ],
+  [
+   48.049349,
+   -121.338242
+  ],
+  [
+   48.0480978,
+   -121.339559
+  ],
+  [
+   48.0472968,
+   -121.339254
+  ],
+  [
+   48.0459112,
+   -121.338729
+  ],
+  [
+   48.0450321,
+   -121.339024
+  ],
+  [
+   48.0438334,
+   -121.338942
+  ],
+  [
+   48.0407548,
+   -121.338903
+  ],
+  [
+   48.0403845,
+   -121.340244
+  ],
+  [
+   48.0397632,
+   -121.341143
+  ],
+  [
+   48.0402484,
+   -121.34155
+  ],
+  [
+   48.0405204,
+   -121.341432
+  ],
+  [
+   48.0410899,
+   -121.340745
+  ],
+  [
+   48.0412236,
+   -121.340317
+  ],
+  [
+   48.0410457,
+   -121.340064
+  ],
+  [
+   48.0413811,
+   -121.340165
+  ],
+  [
+   48.0414587,
+   -121.340254
+  ],
+  [
+   48.0414761,
+   -121.34021
+  ],
+  [
+   48.0410851,
+   -121.340092
+  ],
+  [
+   48.0402851,
+   -121.341512
+  ],
+  [
+   48.0396875,
+   -121.341063
+  ],
+  [
+   48.0403229,
+   -121.340036
+  ],
+  [
+   48.041316,
+   -121.33873
+  ],
+  [
+   48.0426108,
+   -121.339023
+  ],
+  [
+   48.0436713,
+   -121.338966
+  ],
+  [
+   48.0453023,
+   -121.338549
+  ],
+  [
+   48.0472627,
+   -121.339155
+  ],
+  [
+   48.048972,
+   -121.338781
+  ],
+  [
+   48.0500432,
+   -121.337371
+  ],
+  [
+   48.0515769,
+   -121.335822
+  ],
+  [
+   48.0528184,
+   -121.336005
+  ],
+  [
+   48.0533223,
+   -121.335421
+  ],
+  [
+   48.0549513,
+   -121.334465
+  ],
+  [
+   48.0562019,
+   -121.334521
+  ],
+  [
+   48.0559211,
+   -121.335421
+  ],
+  [
+   48.0563015,
+   -121.336384
+  ],
+  [
+   48.0568901,
+   -121.337258
+  ],
+  [
+   48.0578924,
+   -121.337618
+  ],
+  [
+   48.0587015,
+   -121.338607
+  ],
+  [
+   48.0592652,
+   -121.338808
+  ],
+  [
+   48.0595091,
+   -121.338719
+  ],
+  [
+   48.0600042,
+   -121.337475
+  ],
+  [
+   48.0602976,
+   -121.337227
+  ],
+  [
+   48.0603545,
+   -121.336538
+  ],
+  [
+   48.0606918,
+   -121.33577
+  ],
+  [
+   48.0613004,
+   -121.334854
+  ],
+  [
+   48.0620414,
+   -121.334689
+  ],
+  [
+   48.0623693,
+   -121.334408
+  ],
+  [
+   48.0629015,
+   -121.333756
+  ],
+  [
+   48.0638062,
+   -121.333462
+  ],
+  [
+   48.0641576,
+   -121.333253
+  ],
+  [
+   48.0644775,
+   -121.332395
+  ],
+  [
+   48.0648127,
+   -121.331638
+  ],
+  [
+   48.0652566,
+   -121.330122
+  ],
+  [
+   48.0653574,
+   -121.329531
+  ],
+  [
+   48.0658085,
+   -121.32924
+  ],
+  [
+   48.0657244,
+   -121.328655
+  ],
+  [
+   48.0659574,
+   -121.328621
+  ],
+  [
+   48.0660215,
+   -121.3284
+  ],
+  [
+   48.0663262,
+   -121.328328
+  ],
+  [
+   48.0664984,
+   -121.327534
+  ],
+  [
+   48.0667562,
+   -121.328201
+  ],
+  [
+   48.0672834,
+   -121.328109
+  ],
+  [
+   48.067998,
+   -121.327472
+  ],
+  [
+   48.0685372,
+   -121.327131
+  ],
+  [
+   48.0691634,
+   -121.327012
+  ],
+  [
+   48.0697241,
+   -121.326659
+  ],
+  [
+   48.0702499,
+   -121.326319
+  ],
+  [
+   48.070834,
+   -121.32687
+  ],
+  [
+   48.0716352,
+   -121.325993
+  ],
+  [
+   48.0717293,
+   -121.325592
+  ],
+  [
+   48.0723547,
+   -121.32483
+  ],
+  [
+   48.072205,
+   -121.324033
+  ],
+  [
+   48.072709,
+   -121.324506
+  ],
+  [
+   48.0727497,
+   -121.324211
+  ],
+  [
+   48.0734837,
+   -121.324071
+  ],
+  [
+   48.0735387,
+   -121.32391
+  ],
+  [
+   48.0741261,
+   -121.324501
+  ],
+  [
+   48.074355,
+   -121.324278
+  ],
+  [
+   48.0752377,
+   -121.324328
+  ],
+  [
+   48.0762008,
+   -121.323575
+  ],
+  [
+   48.0763559,
+   -121.323235
+  ],
+  [
+   48.0767463,
+   -121.322795
+  ],
+  [
+   48.0767272,
+   -121.322398
+  ],
+  [
+   48.0792038,
+   -121.319155
+  ],
+  [
+   48.0795774,
+   -121.318859
+  ],
+  [
+   48.0797292,
+   -121.318592
+  ],
+  [
+   48.0797784,
+   -121.317314
+  ],
+  [
+   48.0793457,
+   -121.315699
+  ],
+  [
+   48.0789947,
+   -121.315755
+  ],
+  [
+   48.0794827,
+   -121.315268
+  ],
+  [
+   48.0793171,
+   -121.314321
+  ],
+  [
+   48.079143,
+   -121.313057
+  ],
+  [
+   48.0803266,
+   -121.312538
+  ],
+  [
+   48.0810113,
+   -121.313004
+  ],
+  [
+   48.0811755,
+   -121.312781
+  ],
+  [
+   48.0813199,
+   -121.313264
+  ],
+  [
+   48.0818312,
+   -121.312739
+  ],
+  [
+   48.0819705,
+   -121.312609
+  ],
+  [
+   48.0821139,
+   -121.312029
+  ],
+  [
+   48.0822937,
+   -121.310997
+  ],
+  [
+   48.0826609,
+   -121.310982
+  ],
+  [
+   48.082889,
+   -121.310801
+  ],
+  [
+   48.0868758,
+   -121.30868
+  ]
+ ],
+ "elev_pts": null,
+ "disciplines": null,
+ "timing": {
+  "totalHrs": 13,
+  "summitTimeHrs": 1,
+  "descentTimeHrs": 6,
+  "approachTimeHrs": 6,
+  "recommendedStart": "Pre-dawn start, same as the Corkscrew Route"
+ },
+ "detailed_rack": "Same as the Corkscrew Route: glacier-travel kit (harness, pickets, prusiks, ice axe, crampons, rope) plus a helmet for the scramble.",
+ "what_to_bring": [
+  "Snowshoes (spring)",
+  "Microspikes",
+  "Water filter",
+  "10 essentials"
+ ],
+ "pro_tips": [
+  "Treat this as the finishing pitch of the Corkscrew Route rather than a separate line — see that route's tips for the full-day plan."
+ ],
+ "watch_out": [
+  "West-facing upper slopes catch afternoon sun and soften/sluff readily — climb this section early."
+ ],
+ "pro_needs": "No fixed protection needed on this class 3/easy class 4 scramble terrain; light rack optional.",
+ "best_season": "Late June through August, once the upper ledges are snow-free and before the September glacier becomes more crevassed; matches the Corkscrew Route's season.",
+ "high_point_ft": 7835,
+ "aid_grade": null,
+ "approach": "Identical to the Corkscrew Route: via Bedal Creek trailhead (FR 4096) or the Cougar Creek/North Fork Sauk trailhead (FR 49), joining the Sloan Glacier crossing before the final west-face scramble to the summit.",
+ "descent_text": "Downclimb the exposed scramble on the Upper West Face back to the glacier-access point (~7,300 ft), re-cross the Sloan Glacier roped, and follow the approach ridge/trail back to the trailhead, reversing the Corkscrew Route's approach.",
+ "bail": "Retreat down the west-face scramble to the glacier is straightforward in good visibility; the technical difficulty is confined to a short band just below the summit.",
+ "pitch_detail": [
+  {
+   "grade": "Class 3, occasional Class 4",
+   "notes": "Final section of the standard route; exposed scrambling on the west side of the summit block.",
+   "pitch": "Glacier exit to summit via Upper West Face (7,300-7,835 ft)"
+  }
+ ],
+ "itinerary": null,
+ "access": {
+  "fees": "No entry fee; Northwest Forest Pass may be required for parking",
+  "rules": "Group size capped at 12 (people + stock combined) in Henry M. Jackson Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+  "permit": "Free self-issue wilderness permit at the trailhead",
+  "closures": null,
+  "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek-Bedal, ~14 mi), typically Nov-mid/late May; check current Darrington Ranger District conditions before a trip.",
+  "group_limit": 12,
+  "landManager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (within the Henry M. Jackson Wilderness)",
+  "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Henry M. Jackson Wilderness",
+  "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Bedal Creek or Sloan Peak/Cougar Creek trailheads) — $5/day or $30/year.",
+  "passRequired": "Northwest Forest Pass (trailhead parking)",
+  "overnight_permit": {
+   "url": null,
+   "what": "Free self-issue Henry M. Jackson Wilderness permit",
+   "where": "Fill one out at the trailhead register before heading in."
+  }
+ },
+ "road": {
+  "name": "Forest Road 4096 (Bedal Creek) / North Fork Sauk River Road, FR 49 (Cougar Creek)",
+  "status": "FR 4096 is rough and pothole-scarred; high-clearance 4WD/AWD recommended.",
+  "driveNote": "Same trailheads as the Corkscrew Route — see that route for full drive directions.",
+  "seasonalGate": null
+ },
+ "climate": {
+  "fall": "Glacier becomes more crevassed/technical by September.",
+  "spring": "Unstable snowpack and high water on approach creek crossings.",
+  "summer": "July-August is the prime window.",
+  "winter": "Full winter conditions; not the standard season for this line.",
+  "typical": "Maritime North Cascades climate; snow persists late on this glaciated peak.",
+  "forecastZone": null
+ },
+ "emergency": {
+  "notes": "Remote alpine drainage away from cell towers; a satellite communicator/PLB is recommended.",
+  "county": "Snohomish County, WA",
+  "rangerStation": "Darrington Ranger District, (360) 436-1155, 1405 Emens Ave N, Darrington, WA 98241",
+  "nearestHospital": "Providence Regional Medical Center Everett (Level II Trauma Center)",
+  "sheriffDispatch": "Snohomish County Sheriff non-emergency: 425-407-3999 (dial 911 for emergencies)"
+ },
+ "lists": null,
+ "crowds": null,
+ "partner_requirements": null,
+ "seasonal_guidance": {
+  "optimalWindow": "July and August, when the Sloan Glacier is well bridged and the corkscrew ledges have melted free of snow",
+  "monthBreakdown": {
+   "May": {
+    "reason": "The Mountain Loop Highway gate often has not opened and deep snow on the approach and ledges brings avalanche and route-finding problems.",
+    "status": "risky"
+   },
+   "July": {
+    "reason": "The glacier is sealed with solid snow bridges and a clear boot path, and the upper west-face ledges come free of snow.",
+    "status": "optimal"
+   },
+   "June": {
+    "reason": "Consolidated snow from mid elevations slows route-finding, drainages run high, and the upper ledges may still hold snow.",
+    "status": "marginal"
+   },
+   "August": {
+    "reason": "Ledges and summit scramble are dry, but by late August the glacier breaks up and crevasses need weaving around.",
+    "status": "optimal"
+   },
+   "September": {
+    "reason": "Crevasses widen on the Sloan Glacier and the crossing can become impassable sometime this month; check recent conditions first.",
+    "status": "marginal"
+   }
+  }
+ },
+ "seasonal_hazards": null,
+ "data_quality": null,
+ "difficulty": null,
+ "approach_logistics": {
+  "peakLat": 48.04145,
+  "peakLng": -121.340261,
+  "trailhead": "Bedal Creek Trailhead (FR-4096)",
+  "trailheadLat": 48.0719,
+  "trailheadLng": -121.3764,
+  "trailheadDirection": "From the Bedal Creek Trailhead at the end of FR-4096 off the Mountain Loop Highway (~2,790 ft), via Bedal Creek Trail #705"
+ },
+ "sling_rack": null,
+ "alpine_draws": null,
+ "rope_type": null,
+ "rope_length_m": null,
+ "rope_note": null,
+ "ascender": null,
+ "corrections": " 2026-08-01: access.land_manager/landManager/rules/parking_pass/seasonal corrected — same Glacier-Peak-Wilderness/contamination errors as the sibling Corkscrew Route, plus landManager wrongly said \"adjacent to\" the Henry M. Jackson Wilderness rather than inside it. 2026-08-01: Bedal Creek Trailhead waypoint corrected from (48.0719,-121.3764) to (48.0701,-121.3753) to match the same physical trailhead as recorded on the sibling wa_sloan_peak_corkscrew route. 2026-08-01: loss_ft was null; filled to 5935 to match gain_ft on this out-and-back route (same trailhead/summit as the sibling wa_sloan_peak_corkscrew, which shares this exact gain_ft value). 2026-08-01: dist_km corrected from 15.3 to 7.65, same round-trip-stored-as-one-way fix as the sibling wa_sloan_peak_corkscrew.",
+ "gear_confidence": null,
+ "rappel_detail": null,
+ "rappel_count_note": null,
+ "rack": null,
+ "features": null,
+ "classic": false,
+ "gear_bucket": null,
+ "assumed_gear": null,
+ "gps_contributor_name": null,
+ "outing_shape": "outback",
+ "approach_variants": [
+  {
+   "name": "Bedal Creek Trail #705 (FR 4096)",
+   "hours": "3-5",
+   "notes": "This route describes the same line as the Corkscrew Route; the approach is identical. FR 4096 off the Mountain Loop Highway to the Bedal Creek trailhead at about 2,790 ft, then the old Bedal Creek trail for roughly 1.5 miles and 700 ft. At around 3,500 ft a climbers' path turns off to the LEFT near 48.0560, -121.3631, usually carrying pink flagging. It climbs about 1,400 ft steeply through forest, breaks into talus near 4,900 ft, then runs southeast through meadow to the Bedal-Sloan saddle at 5,300 ft with its shallow pond and camp — the last easy water. Southeast from the saddle over increasingly open scramble ground; a minor rock ridge at about 5,800 ft gives the first view of the glacier.",
+   "distMi": 9.5,
+   "gainFt": 5300,
+   "season": "Jul-Sep, once the forest band below 4,900 ft is clear of snow",
+   "hazards": [
+    "Losing the 3,500 ft climbers'-path junction",
+    "Firm morning snow above 5,800 ft",
+    "Crevasses on the Sloan Glacier"
+   ],
+   "baseFinding": "Cross the Sloan Glacier to bare rock on the southeast edge of the summit block, roughly 7,300 ft — that is where glacier gear gets cached and where the west-face scramble actually starts. Follow the heather-ledge boot track ten to fifteen minutes and turn up the gully of pale, near-white rock on your RIGHT. Still on snow means not yet there; heather with no white gully on the right after a quarter hour means you are too low."
+  }
+ ],
+ "climbing_route": [
+  {
+   "n": 1,
+   "label": "Glacier exit onto the east rock",
+   "notes": "Head southwest across the glacier toward the obvious corner where the left skyline of the summit massif meets the east ridge, staying high and right on the glacier and then angling left to within about 100 ft of the east rock face. The face above sheds rock, so move left if debris is coming down and do not linger under it. Leaving the snow for rock near 7,100 ft is where the route gets awkward late in the season — the moat opens and crevasses lower on the slope may force a detour to a lower crossing. Glacier gear can be left at this transition."
+  },
+  {
+   "n": 2,
+   "class": "2-3",
+   "label": "Heather shelf across the south face",
+   "notes": "The corkscrew itself: a rock-and-heather shelf carrying a well-worn goat and climber path that cuts high across the entire south face, around the corner and partway onto the west face. The tread is good and the scrambling easy, but above roughly 7,200 ft the ledge is edged by a drop of around 500 ft, so this is the section where a slip is not survivable despite the modest grade. Wet or frosted heather and lingering snow patches on the shelf are the thing to watch."
+  },
+  {
+   "n": 3,
+   "class": "3",
+   "label": "Summit gully to the ridge crest",
+   "notes": "A prominent gully at the far end of the traverse is climbed straight up to its top at the ridge crest. Mostly second and third class with a few sections where hands are needed; loose material in the gully means keeping the party close together or spread out sideways."
+  },
+  {
+   "n": 4,
+   "class": "4",
+   "label": "Class 4 step and summit scramble",
+   "notes": "At the crest move east (left) just below the ridge, climb a short steep step of about class 4, then scramble a further 200-300 ft of exposed third class on granite to the summit. Descent reverses the whole line, and the corkscrew is easy to lose from above — note where the shelf leaves the ridge on the way up, because dropping off the wrong side of the south face leads into cliffs."
+  }
+ ],
+ "bivy": [
+  {
+   "elev": 5200,
+   "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+   "role": "main",
+   "type": "bivy",
+   "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off, and some parties stop there when the river ford has eaten the day. EVERYTHING ABOVE THE TRAILHEAD DEPENDS ON THE NORTH FORK SAUK FORD, which is the genuine crux of the trip: it has no bridge, runs fast and thigh-deep or worse in snowmelt, and log jams that worked one season are gone the next. Camp on bare ground or snow rather than the meadow turf, which is thin and slow to recover.",
+   "water": "Cougar Creek below the benches and snowmelt runnels near camp are reliable into midsummer; by late August the higher pockets can dry and parties may need to descend or melt snow",
+   "permit": "Inside the HENRY M. JACKSON WILDERNESS — free self-issue wilderness permit at the trailhead box; no reservation or quota. Northwest Forest Pass to park. Group size limited to 12.",
+   "capacity": "Small, scattered pockets — a few tents on heather and gravel benches; no single site holds a large party"
+  },
+  {
+   "elev": 1246,
+   "name": "Bedal Campground, Mountain Loop Highway",
+   "role": "main",
+   "type": "camp",
+   "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the loop, so access depends entirely on whether the seasonal gate between Barlow Pass and the Bedal area is open — the road normally closes around early November and reopens in the second half of May, with the exact date set by snow and washout repairs. Coming from Granite Falls when that gate is shut means the long drive around through Darrington. Check the Darrington district's road status, because the gate has opened as late as Memorial Day in heavy years.",
+   "water": "No treated drinking water at the sites — bring your own or filter from the adjacent river",
+   "permit": "Developed fee campground on national forest land; the per-night fee covers it and no pass or permit is needed to occupy a site. Nothing here is inside wilderness.",
+   "capacity": "Around 20 developed sites with tables, tent pads, fire rings and vault toilets; fee campground, typically open late spring to fall"
+  }
+ ],
+ "prot_rating": null,
+ "start_type": null,
+ "landing": null,
+ "pads": null,
+ "rock": null,
+ "crux": null,
+ "access_checked_at": null,
+ "name_search": "west face corkscrew route rte",
+ "ice_grade_num": null,
+ "mixed_grade_num": null,
+ "aid_grade_num": null
+}
