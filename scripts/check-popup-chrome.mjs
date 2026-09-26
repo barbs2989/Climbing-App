@@ -12,13 +12,19 @@
 //      with "Close" is a popup's close control, and must be styled POP_CLOSE / POP_CLOSE_MEDIA.
 //      The aria-label is what separates it from the many chip-remove ×'s (aria-label "Remove…",
 //      "Dismiss…", "Delete…"), which are deliberately small and are NOT this control.
-//   2. A <button> labelled "← Back" that closes a popup — onClick={onClose}, or aria-label
-//      "Back" — must be styled POP_BACK. In-page navigation (onBack, setRouteView) is not a
-//      popup and keeps its own look.
-//   3. "‹ Back" is not a spelling. One back glyph, everywhere.
+//      Since 2026-09-25 an aria-label starting "Dismiss" counts too (a card's or banner's ✕), as
+//      does title="Close" — three map info panels closed on a muted 17px × with only a title.
+//   2. ANY <button> whose label starts with "←" — "← Back", "← Back to crews", "← Countries" —
+//      must be styled POP_BACK / POP_BACK_MEDIA. This used to cover only buttons that closed a
+//      popup, and in-page back kept "its own look": a blue text link in Safety, a 12.5px pill in
+//      the country picker, a bare blue "←" span with no button in chat, a solid blue bar in the
+//      area browser. Reported 2026-09-25: "make back and x button consistent among the whole app
+//      for every instance". So every back is now the same control.
+//   3. "‹ Back" is not a spelling. One back glyph, everywhere. And a back arrow is a <button>:
+//      a clickable <span>/<div> whose whole label is "←" fails (chat's header did this).
 //
-// Fails closed: fewer than 40 POP_CLOSE uses means the scan is not reading the app (there are
-// 52 at the time of writing), and that must never read as a clean pass.
+// Fails closed: fewer than 45 POP_CLOSE / 30 POP_BACK uses means the scan is not reading the app
+// (see the counts it prints), and that must never read as a clean pass.
 import fs from "fs";
 import path from "path";
 import url from "url";
@@ -55,9 +61,9 @@ function* buttons(src) {
 }
 
 const LONE_CLOSE = /^\s*(?:✕|×|\{\s*"(?:✕|×)"\s*\})\s*</;
-const BACK_LABEL = /^\s*(?:←\s*Back|\{\s*"←\s*Back"\s*\}|\{\s*<Lbl\s+s=\{\s*"←\s*Back"\s*\})/;
+const BACK_LABEL = /^\s*(?:←|\{\s*"←|\{\s*<Lbl\s+s=\{\s*"←|<span[^>]*>\s*\{\s*"←")/;
 const USES_CLOSE = /style=\{\s*(?:POP_CLOSE(?:_MEDIA)?\b|Object\.assign\(\s*\{\s*\}\s*,\s*POP_CLOSE(?:_MEDIA)?\b)/;
-const USES_BACK = /style=\{\s*(?:POP_BACK\b|Object\.assign\(\s*\{\s*\}\s*,\s*POP_BACK\b)/;
+const USES_BACK = /style=\{\s*(?:POP_BACK(?:_MEDIA)?\b|Object\.assign\(\s*\{\s*\}\s*,\s*POP_BACK(?:_MEDIA)?\b|\{\s*\.\.\.POP_BACK(?:_MEDIA)?\b)/;
 
 const bad = [];
 let closeUses = 0, backUses = 0;
@@ -68,18 +74,21 @@ for (const rel of files) {
     if (USES_CLOSE.test(b.tag)) closeUses++;
     if (USES_BACK.test(b.tag)) backUses++;
     const aria = (b.tag.match(/aria-label\s*=\s*"([^"]*)"/) || [])[1] || "";
-    if (LONE_CLOSE.test(b.after) && /^Close\b/i.test(aria) && !USES_CLOSE.test(b.tag))
+    const title = (b.tag.match(/title\s*=\s*"([^"]*)"/) || [])[1] || "";
+    if (LONE_CLOSE.test(b.after) && (/^(?:Close|Dismiss)\b/i.test(aria) || /^Close$/i.test(title)) && !USES_CLOSE.test(b.tag))
       bad.push(`${rel}:${lineOf(b.at)}  close control "${aria}" is not styled POP_CLOSE`);
-    const closesPopup = /onClick=\{\s*onClose\s*\}/.test(b.tag) || /^Back$/i.test(aria);
-    if (BACK_LABEL.test(b.after) && closesPopup && !USES_BACK.test(b.tag))
-      bad.push(`${rel}:${lineOf(b.at)}  popup back button is not styled POP_BACK`);
+    if (BACK_LABEL.test(b.after) && !USES_BACK.test(b.tag))
+      bad.push(`${rel}:${lineOf(b.at)}  back button is not styled POP_BACK`);
   }
   let k = -1;
   while ((k = src.indexOf("‹ Back", k + 1)) >= 0) bad.push(`${rel}:${lineOf(k)}  "‹ Back" — spell it "← Back"`);
+  const bareArrow = /<(?:span|div)\b[^<]*\{\.\.\.clickable\([^<]*>\s*(?:←|\{\s*"←"\s*\})\s*<\//g;
+  let m;
+  while ((m = bareArrow.exec(src))) bad.push(`${rel}:${lineOf(m.index)}  a clickable "←" that is not a <button> — use <button style={POP_BACK}>← Back</button>`);
 }
 
 console.log(`check:popup-chrome — read ${files.length} file(s): ${closeUses} POP_CLOSE, ${backUses} POP_BACK`);
-if (closeUses < 40 || backUses < 15) {
+if (closeUses < 45 || backUses < 30) {
   console.error(`FAIL: only ${closeUses} POP_CLOSE / ${backUses} POP_BACK uses found — the scan is not reading the app.`);
   process.exit(1);
 }
