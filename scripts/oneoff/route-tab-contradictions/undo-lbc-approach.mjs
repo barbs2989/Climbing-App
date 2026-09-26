@@ -1,9 +1,9 @@
 // A second run of c3 re-applied a replace_text whose replacement contains its own find string, so the Waptus
 // sentence was inserted twice into Little Big Chief NE Face's approach. Restore the value backed up just before it.
 import fs from "node:fs";
-import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/route-tab-consistency/scripts/lib/supabase-env.mjs";
+import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const T = "/Users/nathanbarber/.claude/jobs/24876501/tmp";
+const T = new URL("../../../audits/route-tab-contradictions/decisions/applied", import.meta.url).pathname;
 const id = "wa_little_big_chief_mountain_northeast_face";
 const good = JSON.parse(fs.readFileSync(`${T}/structural-confirm_out_c3_json-1790429628486.json`)).backups.find(b => b.id === id).approach;
 const get = async () => (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=approach&id=eq.${id}`, { headers: headers(key) })).json())[0].approach;
