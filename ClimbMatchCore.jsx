@@ -1950,18 +1950,18 @@ function BailoutForm({onSubmit,onCancel,peakCoord}){
   const sm=on=>({padding:"8px 12px",borderRadius:15,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"});
   const pinLat=parseFloat(lat),pinLng=parseFloat(lng);
   return <div style={{background:C.surface,borderRadius:10,padding:"11px 12px",border:`1px solid ${C.border}`,marginTop:8}}>
-    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>NAME THIS BAIL STATION</div>
+    <div style={{...SUB_LABEL,marginBottom:5}}>NAME THIS BAIL STATION</div>
     <input aria-label="Name this bail station" value={name} onChange={e=>setName(e.target.value)} placeholder="e.g. Notch below the headwall" style={Object.assign({},fld,{marginBottom:9})}/>
-    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>{"LOCATION ON THE MAP (optional — tap to place)"}</div>
-    <WaypointMapPicker waypoints={[{lat:isNaN(pinLat)?null:pinLat,lng:isNaN(pinLng)?null:pinLng,type:"Hazard",name:name||"Bail point"}]} activeIdx={0} peakCoord={peakCoord} onPick={function(la,ln){setLat(la.toFixed(5));setLng(ln.toFixed(5));}}/><div style={{display:"flex",gap:8,margin:"8px 0 9px"}}><div style={{flex:1}}><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>LATITUDE</div><input aria-label="Latitude (or tap the map above)" type="number" value={lat} onChange={e=>setLat(e.target.value)} placeholder="e.g. 48.7860" style={fld}/></div><div style={{flex:1}}><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>LONGITUDE</div><input aria-label="Longitude" type="number" value={lng} onChange={e=>setLng(e.target.value)} placeholder="e.g. -121.8430" style={fld}/></div></div>
-    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>ANCHOR TYPE</div>
+    <div style={{...SUB_LABEL,marginBottom:5}}>{"LOCATION ON THE MAP (optional — tap to place)"}</div>
+    <WaypointMapPicker waypoints={[{lat:isNaN(pinLat)?null:pinLat,lng:isNaN(pinLng)?null:pinLng,type:"Hazard",name:name||"Bail point"}]} activeIdx={0} peakCoord={peakCoord} onPick={function(la,ln){setLat(la.toFixed(5));setLng(ln.toFixed(5));}}/><div style={{display:"flex",gap:8,margin:"8px 0 9px"}}><div style={{flex:1}}><div style={{...SUB_LABEL,marginBottom:5}}>LATITUDE</div><input aria-label="Latitude (or tap the map above)" type="number" value={lat} onChange={e=>setLat(e.target.value)} placeholder="e.g. 48.7860" style={fld}/></div><div style={{flex:1}}><div style={{...SUB_LABEL,marginBottom:5}}>LONGITUDE</div><input aria-label="Longitude" type="number" value={lng} onChange={e=>setLng(e.target.value)} placeholder="e.g. -121.8430" style={fld}/></div></div>
+    <div style={{...SUB_LABEL,marginBottom:5}}>ANCHOR TYPE</div>
     <div style={{fontSize:11,color:C.textMuted,marginBottom:7,lineHeight:1.4}}>{"No fixed anchor on glacier/snow terrain? Use \"No fixed anchor\" and rely on the map location above."}</div>
     <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:9}}>{ANCHOR_TYPES.map(a=><button key={a} onClick={()=>setAnchorType(a)} style={sm(anchorType===a)}>{a}</button>)}</div>
     <div style={{display:"flex",gap:8,marginBottom:9}}>
-      <div style={{flex:1}}><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>{"DIST. TO SAFETY ("+uDistMiUnit().toUpperCase()+")"}</div><input aria-label={"Distance to safety ("+uDistMiUnit()+")"} type="number" value={distMi} onChange={e=>setDistMi(e.target.value)} placeholder="e.g. 1.2" style={fld}/></div>
-      <div style={{flex:1}}><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>TIME TO SAFETY</div><input aria-label="Time to safety" value={timeToSafety} onChange={e=>setTimeToSafety(e.target.value)} placeholder="e.g. ~1.5 hr" style={fld}/></div>
+      <div style={{flex:1}}><div style={{...SUB_LABEL,marginBottom:5}}>{"DIST. TO SAFETY ("+uDistMiUnit().toUpperCase()+")"}</div><input aria-label={"Distance to safety ("+uDistMiUnit()+")"} type="number" value={distMi} onChange={e=>setDistMi(e.target.value)} placeholder="e.g. 1.2" style={fld}/></div>
+      <div style={{flex:1}}><div style={{...SUB_LABEL,marginBottom:5}}>TIME TO SAFETY</div><input aria-label="Time to safety" value={timeToSafety} onChange={e=>setTimeToSafety(e.target.value)} placeholder="e.g. ~1.5 hr" style={fld}/></div>
     </div>
-    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>NOTES</div>
+    <div style={{...SUB_LABEL,marginBottom:5}}>NOTES</div>
     <textarea aria-label="Rappel count, what to watch for, landmarks" value={note} onChange={e=>setNote(e.target.value)} placeholder="Rappel count, what to watch for, landmarks…" rows={3} style={Object.assign({},fld,{resize:"vertical",marginBottom:10})}/>
     <div style={{display:"flex",gap:7}}>
       <button onClick={onCancel} style={{flex:1,padding:8,background:C.surface,color:C.textSub,border:`1px solid ${C.border}`,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
@@ -1975,15 +1975,15 @@ function StartLocationForm({onSubmit,onCancel,peakCoord}){
   const ok=lat!==""&&lng!==""&&!isNaN(parseFloat(lat))&&!isNaN(parseFloat(lng));
   const pinLat=parseFloat(lat),pinLng=parseFloat(lng);
   return <div style={{background:C.surface,borderRadius:10,padding:"11px 12px",border:`1px solid ${C.border}`,marginTop:8}}>
-    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>TAP THE MAP TO PLACE IT</div>
+    <div style={{...SUB_LABEL,marginBottom:5}}>TAP THE MAP TO PLACE IT</div>
     <WaypointMapPicker waypoints={[{lat:isNaN(pinLat)?null:pinLat,lng:isNaN(pinLng)?null:pinLng,type:"Trailhead",name:"Start"}]} activeIdx={0} peakCoord={peakCoord} onPick={function(la,ln){setLat(la.toFixed(5));setLng(ln.toFixed(5));}}/>
     <div style={{display:"flex",gap:8,marginBottom:9}}>
-      <div style={{flex:1}}><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>LATITUDE</div><input aria-label="Latitude" type="number" value={lat} onChange={e=>setLat(e.target.value)} placeholder="e.g. 48.7860" style={fld}/></div>
-      <div style={{flex:1}}><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>LONGITUDE</div><input aria-label="Longitude" type="number" value={lng} onChange={e=>setLng(e.target.value)} placeholder="e.g. -121.8430" style={fld}/></div>
+      <div style={{flex:1}}><div style={{...SUB_LABEL,marginBottom:5}}>LATITUDE</div><input aria-label="Latitude" type="number" value={lat} onChange={e=>setLat(e.target.value)} placeholder="e.g. 48.7860" style={fld}/></div>
+      <div style={{flex:1}}><div style={{...SUB_LABEL,marginBottom:5}}>LONGITUDE</div><input aria-label="Longitude" type="number" value={lng} onChange={e=>setLng(e.target.value)} placeholder="e.g. -121.8430" style={fld}/></div>
     </div>
-    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>PHOTO OF THE START (optional)</div>
+    <div style={{...SUB_LABEL,marginBottom:5}}>PHOTO OF THE START (optional)</div>
     <label style={{display:"flex",alignItems:"center",justifyContent:"center",gap:6,padding:"9px 10px",borderRadius:9,border:`1px dashed ${photo?C.green:C.border}`,background:photo?C.greenBg:C.card,color:photo?C.green:C.textSub,fontSize:12,cursor:"pointer",fontWeight:600,marginBottom:9}}>{photo?"✓ Photo attached":"Add a photo"}<input type="file" accept="image/*" onChange={e=>{var f=e.target.files&&e.target.files[0];if(f)setPhoto(URL.createObjectURL(f));}} className="cm-file-input"/></label>
-    <div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,marginBottom:5}}>HOW TO IDENTIFY IT</div>
+    <div style={{...SUB_LABEL,marginBottom:5}}>HOW TO IDENTIFY IT</div>
     <textarea aria-label="How to identify it" value={note} onChange={e=>setNote(e.target.value)} placeholder="e.g. left-facing corner below a detached block, 200ft climber's-left of the gully…" rows={3} style={Object.assign({},fld,{resize:"vertical",marginBottom:10})}/>
     <div style={{display:"flex",gap:7}}>
       <button onClick={onCancel} style={{flex:1,padding:8,background:C.surface,color:C.textSub,border:`1px solid ${C.border}`,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
