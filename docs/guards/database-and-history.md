@@ -374,6 +374,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     variant marks; 14 groups remained, **5 were one climb twice and were merged (0220)**, and the
     rest differ in grade or discipline ("5.12 Face" trad 5.12c/d vs sport 5.12a, "Charlie's Arete"
     V4 vs V2) and stay listed as READ. Do not re-read them; do not "merge" them on the key alone.
+  - **0221 added three, on purpose.** Folding Mountain Project's parallel ice/bouldering trees into
+    the main tree put a summer route and a winter line of the same name in one area: Centerfold
+    5.4 / WI3 and Percolator 5.7 / WI3+ (Rumney's Parking Lot Wall), The Sundial 5.12a / Sundial V0.
+    Different climbs, listed as READ. The fold kept every cross-discipline same-name pair apart for
+    the same reason; only same-discipline twins were merged.
   - **catalog_key is recomputed in JS** (`lib/search.js` `searchCanon` + 0214's stoplist). In SQL
     it does not finish over 211k routes: measured `57014` at the default timeout, then a gateway
     **524** with `statement_timeout = 300s`. `check:search-norm` keeps the JS and SQL tables one.
