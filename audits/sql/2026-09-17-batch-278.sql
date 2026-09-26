@@ -1,0 +1,108 @@
+-- WA alpine audit batch 278 (pass 5)
+-- Routes checked: wa_mount_pilchuck_east_ridge, wa_mount_pilchuck_standard_route,
+-- wa_mount_price_hester_lake_route, wa_mount_rahm_standard,
+-- wa_mount_rainier_curtis_ridge, wa_mount_rainier_disappointment_cleaver,
+-- wa_mount_rainier_edmunds_headwall, wa_mount_rainier_emmons_glacier
+
+-- wa_mount_pilchuck_standard_route: access.rules claims the trail is subject to a
+-- 12-person group-size cap "inside Glacier Peak Wilderness" with a campfire ban above
+-- 3,500 ft "in wilderness". This contradicts the row's OWN access.landManager field two
+-- keys over, which correctly states the upper trail and summit lie within Mount Pilchuck
+-- STATE PARK (Washington State Parks), not a federal wilderness area. Confirmed against
+-- Washington State Parks' own Mount Pilchuck State Park page and the WA State Parks
+-- "Mount Pilchuck State Park History" field guide post: the park (1,893 acres, with a
+-- 1,897-acre Natural Forest Area designated in 1990) is a state-managed unit completely
+-- surrounded by, but distinct from, Mount Baker-Snoqualmie National Forest -- it carries
+-- no federal wilderness designation of any kind. Glacier Peak Wilderness is a separate,
+-- much larger federal Wilderness Area centered on Glacier Peak itself, roughly 50 km east
+-- of Pilchuck (Glacier Peak ~48.11N/-121.11W vs. Pilchuck's summit at 48.057974N/
+-- -121.797918W per this row's own approach_logistics) -- the two areas do not overlap.
+-- This looks like boilerplate wilderness-permit language copied onto the row from a
+-- genuinely Glacier-Peak-Wilderness route elsewhere in the catalog.
+--
+-- Fixed by removing the false wilderness-specific claim rather than inventing a
+-- replacement group-size/campfire rule for the state park, which was not confirmed from
+-- an authoritative source this run. access.rules is corrected to state plainly that no
+-- federal wilderness designation applies here (matching landManager); group_limit is
+-- dropped since the number (12) was solely a Wilderness Act party-size cap that does not
+-- apply to this route.
+
+UPDATE routes
+SET access = (access - 'group_limit') || jsonb_build_object(
+  'rules',
+  'No federal wilderness designation applies here -- the upper trail and summit lie within Mount Pilchuck State Park (see landManager), not Glacier Peak Wilderness or any other Wilderness Area. Standard Mount Baker-Snoqualmie National Forest trail rules apply on the lower approach.'
+)
+WHERE id = 'wa_mount_pilchuck_standard_route'
+  AND access->>'rules' LIKE '%Glacier Peak Wilderness%';
+
+-- No further UPDATEs this batch. All other checked facts verified clean against
+-- independent sources:
+--   wa_mount_pilchuck_east_ridge
+--   & wa_mount_pilchuck_standard_route: high_point_ft 5324 matches the published fire-
+--                                        lookout elevation (Mount Pilchuck State Park /
+--                                        multiple sources); approach_logistics peakLat/
+--                                        peakLng (48.057974,-121.797918) match Wikipedia's
+--                                        48d03'28.7"N 121d47'52.1"W to five decimal places;
+--                                        Pinnacle Lake / FR 4020-4021 driving directions and
+--                                        the ~2,700 ft trailhead elevation match published
+--                                        directions verbatim; waypoints/gain_ft for the
+--                                        standard route (trailhead ~3,000-3,100 ft, summit
+--                                        5,324 ft, gain 2,300 ft, 2.7 mi) are internally
+--                                        consistent and match the known route profile.
+--   wa_mount_price_hester_lake_route: high_point_ft 5587 matches published elevation
+--                                        (1,703 m / 5,587 ft) exactly; approach_logistics
+--                                        trailheadLat/Lng for Dingford Creek Trailhead
+--                                        (47.5172,-121.45437) match the USFS-derived
+--                                        coordinate (47.51720,-121.45437) exactly, and the
+--                                        "18 miles from North Bend" driveNote matches
+--                                        published directions verbatim.
+--   wa_mount_rahm_standard: high_point_ft 8485 is within 1 ft of Wikipedia's 8,486 ft
+--                                        (ordinary survey rounding); fa "Joe Hutton, Peggy
+--                                        Hutton, Roy Mason; 1955" matches Wikipedia exactly;
+--                                        approach_logistics peakLat/peakLng (48.997115,
+--                                        -121.228755) are within ~160 m of Wikipedia's DMS
+--                                        coordinate (48.99750,-121.23083), consistent with
+--                                        ordinary cross-source peak-coordinate variance; the
+--                                        "small extinct caldera" claim in overview is
+--                                        corroborated (the "Mount Rahm Caldera" is a
+--                                        documented Eocene-age feature, unrelated to the
+--                                        modern Cascade volcanic arc).
+--   wa_mount_rainier_curtis_ridge: high_point_ft 13800 and the "point of no return" rappel
+--                                        at ~10,300 ft both match route beta (a rappel off a
+--                                        boulder anchor at 10,300 ft, "point of no return",
+--                                        then easy snow to the top of the ridge at 13,800
+--                                        ft, below the true 14,406 ft summit); fa "Gene
+--                                        Prater and Marcel Schuster" matches the AAC's own
+--                                        account of the July 20-21 first ascent (Marcel
+--                                        Schuster and Gene Prater, Yakima Cascadians). The
+--                                        "Camp Schurman" waypoint initially looked like
+--                                        cross-route contamination from the Emmons-Winthrop
+--                                        route, since it appears nowhere in the route's own
+--                                        overview/beta/approach text -- but descent_text
+--                                        explicitly describes descending Emmons-Winthrop via
+--                                        Camp Schurman as the standard way off the mountain
+--                                        after finishing the ridge, so the waypoint is
+--                                        correct and the row is internally consistent.
+--   wa_mount_rainier_disappointment_cleaver: fa note (first climbed Aug 17, 1870 by Hazard
+--                                        Stevens and P.B. Van Trump via Gibraltar Ledges,
+--                                        not the DC) is a well-established historical fact;
+--                                        Paradise trailhead coordinates (46.78669,
+--                                        -121.73454) match the published location closely;
+--                                        gain_ft 9000 matches the simple Paradise (5,400 ft)
+--                                        to summit (14,406 ft) elevation difference almost
+--                                        exactly.
+--   wa_mount_rainier_edmunds_headwall: high_point_ft 14112 matches Liberty Cap's published
+--                                        elevation exactly, and external route descriptions
+--                                        confirm the route lies on the buttress directly
+--                                        below Liberty Cap (not the true summit) --
+--                                        consistent with the row's own waypoint noting the
+--                                        route "tops out here, below/at the NW rim".
+--   wa_mount_rainier_emmons_glacier: fa "Rev. J. Warner Fobes, George James, and Richard O.
+--                                        Wells, August 20, 1884" matches published accounts
+--                                        of the first ascent via the northeast side
+--                                        (Winthrop Glacier from lower Curtis Ridge) exactly;
+--                                        the parenthetical "first ski descent of the
+--                                        Emmons-Winthrop: Roberts, Bengtson, Welsh,
+--                                        Schmidtke, 1947" also matches published ski-history
+--                                        accounts exactly (Dave Roberts, Kermit Bengtson,
+--                                        Cliff Schmidtke, and a fourth party member).
