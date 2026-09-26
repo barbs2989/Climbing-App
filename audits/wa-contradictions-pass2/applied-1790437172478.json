@@ -1,0 +1,239 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_hopper_standard",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Whether the Duckabush alternative is open"
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Permit issuance at Staircase"
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager at the Staircase trailhead"
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Land manager at the Staircase trailhead"
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Bear-canister note names another camp"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel on the route"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Glacier travel on the route"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead"
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_mount_hopper_standard",
+   "fact": "Whether the Duckabush alternative is open",
+   "op": "replace_text",
+   "column": "overview",
+   "path": [],
+   "find": "; the Duckabush River Trail toward Marmot Lake is the currently drivable alternative, at roughly double the approach distance.",
+   "replace": "; the longer Duckabush approach via Marmot Lake, at roughly double the distance, is also cut where the Home Sweet Home Trail climbs to First Divide, so no open trail reaches the peak while the closure stands.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+    "https://www.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm",
+    "https://www.wta.org/go-hiking/hikes/north-fork-skokomish-river"
+   ],
+   "why": "find occurs 0x at overview[]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_mount_hopper_standard",
+   "before": {
+    "pro_tips": [
+     "Reserve your Olympic NP wilderness permit on recreation.gov as early as possible — summer reservations release mid-April and the Skokomish/Duckabush zones fill quickly.",
+     "While Staircase is closed, plan on the Duckabush River Trail to Marmot Lake as the drive-to alternative — budget roughly double the approach mileage and extra days."
+    ],
+    "waypoints": [
+     {
+      "lat": 47.5158,
+      "lng": -123.33,
+      "elev": 785,
+      "name": "Staircase Ranger Station / North Fork Skokomish Trailhead",
+      "note": "Self-issue wilderness permit kiosk at the ranger station; parking lot is off North Staircase Road at the end of FR-24.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.5802398,
+      "lng": -123.3661745,
+      "elev": 1550,
+      "name": "Camp Pleasant",
+      "note": "Established riverside camp beside the North Fork Skokomish with reliable water, roughly the halfway point to First Divide.",
+      "type": "Campsite",
+      "distMi": 6.9
+     },
+     {
+      "lat": 47.613025,
+      "lng": -123.344132,
+      "elev": 2040,
+      "name": "Nine Stream Camp",
+      "note": "Last reliable camp and water before the trail turns steeply uphill; gains about 2,600 ft over the next 3 miles to First Divide.",
+      "type": "Campsite",
+      "distMi": 9.3
+     },
+     {
+      "lat": 47.63537,
+      "lng": -123.30878,
+      "elev": 4688,
+      "name": "First Divide",
+      "note": "High saddle between Mount Duckabush/Mount Steel (west) and Mount Hopper (east); the long-unmaintained 'Mount Hopper Way' splits off here toward the peak.",
+      "type": "Junction",
+      "distMi": 12.7
+     },
+     {
+      "lat": 47.62699754117647,
+      "lng": -123.30375816862745,
+      "elev": 5300,
+      "name": "Overgrown Mount Hopper Way / meadow bushwhack",
+      "note": "The old Mount Hopper Way tread has vanished under brush for over a decade — expect bushwhacking and route-finding through forest before popping out into the open summit meadow.",
+      "type": "Hazard",
+      "distMi": 13.6
+     },
+     {
+      "lat": 47.629375,
+      "lng": -123.296755,
+      "elev": 6120,
+      "name": "Mount Hopper summit",
+      "note": "Final approach is crumbly, exposed scree/talus where the summit ridge narrows and is impassable in spots — pick your line carefully on both ascent and descent.",
+      "type": "Summit",
+      "distMi": 14.4
+     }
+    ],
+    "access": {
+     "fees": "Olympic NP wilderness permit: $8 per adult (16+) per night plus a non-refundable $6 reservation fee (free for 15 and under), or a $45/person Annual Wilderness Pass (reservation fee still applies). Duckabush Trailhead day-use parking requires a Northwest Forest Pass ($5/day or $30/year) or Interagency/Digital Pass.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are required for overnight food storage in this backcountry unit; campfires are prohibited above 3,500 ft; groups are capped at 12 people/8 stock animals within The Brothers Wilderness/Olympic NP on the Duckabush approach; dogs are not permitted once the route enters Olympic National Park.",
+     "permit": "Overnight wilderness camping permit required year-round, reserved via recreation.gov; summer-season (May 15–Oct 15) reservations typically release in mid-April.",
+     "closures": "The road is open, but the approach is not: the North Fork Skokomish Trail from Staircase to First Divide and the Home Sweet Home Trail from First Divide down to the Duckabush River Trail junction have been CLOSED since the 2025 Bear Gulch Fire (20,233 acres, contained 12 Nov 2025) while crews assess hazard trees and repair backcountry infrastructure, with no reopening date on the park's trail-conditions page (updated September 14, 2026) or fire-conditions page (updated September 18, 2026). Flapjack Lakes, Six Ridge, Wagonwheel Lake and First Divide camp are closed as well, so neither the Staircase side nor the Duckabush side has an open trail to First Divide while the closure stands.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness) for the peak and upper approach; Olympic National Forest, Hood Canal Ranger District, for the Staircase and Duckabush trailheads and lower valley trail.",
+     "land_manager": "Olympic National Park (Daniel J. Evans Wilderness) for the peak and upper approach; Olympic National Forest, Hood Canal Ranger District, for the Staircase and Duckabush trailheads and lower valley trail.",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "America the Beautiful / Olympic National Park pass at the Staircase entrance station",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Interior Olympics microclimate with heavy winter snowpack that lingers into early summer on shaded/upper terrain; summer is the best window once snow clears, with fall bringing shortening days and early storm risk",
+      "probability": "Afternoon convective buildups are possible in the interior Olympics during summer; exposed ridge/summit terrain raises lightning consequence"
+     },
+     "exposure": "Loose rock and exposure on the upper mountain; a slip on the Class 3-4 summit terrain or on loose rock bands could result in a long, consequential fall, and the very long interior approach means rescue response would be slow",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route (NWAC's single 'Olympics' forecast zone covers the range but is only active roughly Nov-Apr, outside this route's July-September climbing season)",
+      "byMonth": {
+       "July": "Low",
+       "August": "Low",
+       "September": "Low"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "access": {
+     "fees": "$6 Recreation.gov reservation fee plus $8 per person per night wilderness camping fee (ages 16+, youth 15 and under free); Northwest Forest Pass or America the Beautiful Pass required for trailhead parking.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "No campfires in Royal Basin beyond the two lower Royal Creek camps, and no fires above 3,500 ft park-wide; bear canisters are mandatory for all food, garbage, and scented items; camp only in designated sites (composting toilets at Royal Lake only).",
+     "permit": "Overnight wilderness permit required for Royal Basin. The Royal Creek, Lower Royal Meadow, and Royal Lake camping zones are bookable on Recreation.gov; the Upper Royal Basin zone (closest to the Needles) is not bookable online — reserve it by calling the Olympic Wilderness Information Center directly at 360-565-3100.",
+     "closures": "Royal Basin operates under a camping quota in peak season; bear canisters are required and campfires are prohibited",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness); trailhead access is via Olympic National Forest land (Northwest Forest Pass required for parking)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass or Interagency Recreation Pass for trailhead parking; wilderness permit for overnight camping",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass or America the Beautiful Pass required for parking at the Upper Dungeness Trailhead (USFS); once inside Olympic National Park, a wilderness camping permit (with its own fee) is required for overnight stays.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "NPS wilderness permit required; bear canisters are mandatory for food/scented items in Royal Basin; camp in designated sites at Royal Creek, Lower Royal Meadow or Royal Lake, or in Upper Royal Basin, which has no designated sites — there camp only on bare ground or gravel, with a permit booked by phone through the Wilderness Information Center; no campfires above 3,500 ft; follow Leave No Trace practices throughout.",
+     "permit": "Royal Basin is a quota/reservation area in Olympic National Park - permits for the May 15-October 15 season are released around April 15 via recreation.gov (10:00 AM EDT / 7:00 AM PDT); contact the Olympic Wilderness Information Center (360-565-3100) for current availability.",
+     "group_limit": 12,
+     "landManager": "Mixed jurisdiction: Olympic National Forest (Buckhorn Wilderness) for the trailhead and lower approach trail, transitioning to Olympic National Park at the park boundary near Royal Basin.",
+     "land_manager": "Mixed jurisdiction: Olympic National Forest (Buckhorn Wilderness) for the trailhead and lower approach trail, transitioning to Olympic National Park at the park boundary near Royal Basin.",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass (or America the Beautiful Pass) at the Upper Dungeness Trailhead; NPS wilderness permit required once inside Olympic National Park.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    }
+   }
+  }
+ ]
+}

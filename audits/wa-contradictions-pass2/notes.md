@@ -15,3 +15,17 @@
 
 - **Skookum (wa_skookum…)**: the row mixes a Class 3–4 scramble with the 5.4 north ridge. Retry research confirmed both lines exist; which one this row describes is an owner decision (split the row, or pick one and rewrite the other fields).
 - **Early Winters approach distance (Free Mojo, Boving Roofs, Dolphin Chimney)**: two sources give 2.5 mi one way, but each row's own itinerary says 5.2–5.5 mi round trip. `dist_km` was left alone so it doesn't swap one mismatch for another; Boving-Pollock (itinerary says 5 mi round trip) was set to 4.0 km.
+
+## Re-read pass (2026-09-26) — items for the owner
+- **Pins in the wrong place (coordinates out of scope):** Blue's Buttress trailhead pin sits on the Blue Lake Trailhead, but the climb starts at the hairpin pullout 1 mi east of Washington Pass. Same for the Minuteman and East Buttress trailhead cards/pins. Beckey-Tate, West Face and West Ridge (Cutthroat area): in-between pins sit 0.7–1.9 km off the line. Clean Break: the car is at the Silver Star Creek pullout, but the trailhead pin is elsewhere.
+- **Camp cards (camping clean-up owns `bivy`):** Larrabee's three bivy entries claim a self-issue wilderness permit (the Mount Baker Wilderness has only a voluntary climbing register). The Washington Pass camp card says the Blue Lake TH is "half a mile" from the pass; every other field and four sources say ~1 mi.
+- **Cross-route:** the SE Buttress row now says the drive is ~23 mi (sourced); its sibling Monk / NE Ridge rows still say 28 mi.
+- **Sefrit distance from Shuksan:** held. Two sources say three miles; the summit coordinates are ~4.1 mi apart.
+- **Particulate Matter `access._raw`:** describes a Glacier Peak Wilderness peak (not rendered); left alone.
+- **The Fin (wa_the_fin_scramble) `season`:** holds a full sentence ("…July through September/October…") instead of a short window; two sources end it in September. The guard refuses prose edits there, so it needs a short window (e.g. "Jul-Sep") with the sentence moved to `best_season`.
+- **Inner Constance (wa_inner_constance_standard) name:** says "via Crystal Pass", but every content field describes a different approach; `name` is the owner’s call.
+- **Clast from the Past:** filed with discipline trad, but its own gear fields describe a sport route (discipline is the owner’s call).
+- **Adams North Ridge day-2 miles:** the itinerary says 4 mi, but two sources give ~17 mi round trip on a 4.1 mi each-way approach. No source states the day figure, so it was left alone (the summit pin's impossible 11.5 mi was nulled).
+- **Killen Creek parking pass (Adams camp cards):** the sources split. The Forest Service trail page lists no pass; others still say Northwest Forest Pass. Confirm with the Mt. Adams Ranger District before rewording.
+- **Rainier climbing fee (10 rows):** Liberty Ridge, Sunset Ridge, Nisqually Icefall, Kautz Headwall, Willis Wall, Fuhrer Finger, Mowich Face, North Mowich Headwall, Tahoma and Curtis Ridge still say "Annual: covers unlimited climbs that calendar year". The park's current pages say the 2026 fee is per climb. `access.fees` is an open product decision, so these were not swept. Disappointment Cleaver's approach sentence was aligned with its own `access.fees`.
+- **Source wording still on screen:** Willis Wall `sling_rack.note` ("verbatim from a direct trip report"), Tahoma summit-day note ("one reported trip").

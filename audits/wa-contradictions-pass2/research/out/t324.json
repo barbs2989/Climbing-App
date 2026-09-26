@@ -1,0 +1,16 @@
+{"file": "t324.json", "results": [
+ {"id": "wa_the_fin_scramble", "fact": "Rope length vs chimney rappel", "verdict": "fixed_internal_plus_one",
+  "correct_value": "The NE-face pitch is ~120 ft (37 m); a single 60 m rope doubled reaches only ~30 m, so rappelling the full chimney needs two ropes. The standard descent is the east-face scramble, so the single 60 m rope stays as the carried rope.",
+  "evidence": "The route's own beta, pitch_detail (37 m), length_m (37) and rope_note all give the pitch as 120 ft, and one external route page states the pitch is 120 ft with an easy 3rd-class scramble to the summit. A second route page says the east-face scramble descent avoids rappelling, matching descent/descent_text. Only the rappels sentence implied a single 60 m rope can make a 37 m rappel, which is arithmetically impossible (30 m doubled); the patch states that a full-length rappel needs two ropes and leaves the rope columns alone.",
+  "sources": ["https://www.mountainproject.com/route/124501856/the-fin-northeast-face", "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"],
+  "patches": [
+   {"id": "wa_the_fin_scramble", "fact": "Rope length vs chimney rappel", "op": "replace_text", "column": "rappels", "path": [], "find": "sling a chockstone/horn for a single ~120 ft (37 m) rappel.", "replace": "sling a chockstone/horn for a ~120 ft (37 m) rappel, which needs two ropes — a single 60 m rope doubled reaches only about 30 m."}
+  ]},
+ {"id": "wa_the_fin_scramble", "fact": "October in the climbing season", "verdict": "fixed",
+  "correct_value": "Scrambling season for the Sawtooth high country runs July through September; October is outside the window.",
+  "evidence": "A Mount Cruiser (Sawtooth Ridge high point, same Flapjack Lakes base) route page gives June through September as the most favorable climbing weather, and a regional Flapjack Lakes guide gives June through September as the best season. The row's best_season, optimalWindow, climate.typical/summer and approach_variants season all end in September; only the season column's 'September/October' disagreed. The trail-hikable-into-October clause is about the trail, not the scramble, and is left as is.",
+  "sources": ["https://www.summitpost.org/mount-cruiser/151837", "https://www.explorehoodcanal.com/hikesandwalks/flapjack-lakes-in-olympic-national-park"],
+  "patches": [
+   {"id": "wa_the_fin_scramble", "fact": "October in the climbing season", "op": "replace_text", "column": "season", "path": [], "find": "safest to scramble July through September/October once", "replace": "safest to scramble July through September once"}
+  ]}
+]}

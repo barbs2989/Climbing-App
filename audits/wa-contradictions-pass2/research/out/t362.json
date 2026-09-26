@@ -1,0 +1,56 @@
+{"file": "t362.json", "results": [
+ {"id": "wa_mount_st_helens_monitor_ridge", "fact": "July conditions (snow-covered vs snow-free)", "verdict": "fixed",
+  "correct_value": "Snow usually lingers on the upper mountain in early July and thins to patches over loose ash and boulders by late July",
+  "evidence": "The Mount St. Helens Institute notes Climbers Bivouac has opened in early-to-mid July in recent years because of snow. An Oregon Hikers thread reports continuous snow from about 7,000 ft to the summit on July 2, and a July 2021 trip report still found snow patches on the upper route. July is therefore not 'typically snow-free'; the month row was the outlier against optimalWindow and best_season.",
+  "sources": ["https://www.mshinstitute.org/climbing-routes", "https://www.oregonhikers.org/forum/viewtopic.php?t=30779", "https://backcountrypost.com/threads/climbing-mount-saint-helens-via-monitor-ridge-route-july-2021.10164/"],
+  "patches": [
+   {"id": "wa_mount_st_helens_monitor_ridge", "fact": "July conditions (snow-covered vs snow-free)", "op": "replace_text", "column": "seasonal_guidance", "path": ["monthBreakdown", "July", "reason"], "find": "Typically snow-free — route becomes loose volcanic ash and boulders; hot and exposed", "replace": "Snow usually lingers on the upper mountain early in the month, thinning to patches over loose volcanic ash and boulders by late July; hot and exposed"}
+  ]},
+ {"id": "wa_mount_st_helens_monitor_ridge", "fact": "Cell coverage on the route", "verdict": "fixed",
+  "correct_value": "Coverage is limited to none; at best spotty, intermittent signal higher on the ridge depending on carrier",
+  "evidence": "The Mount St. Helens Institute states there is limited to no cell service on the access roads or the climbing route itself. An Oregon Hikers climb report calls reception spotty, and a 2024 trip report (AT&T) found none through the forest and only intermittent bars higher up. No source supports 'intermittent-to-good'; watch_out and emergency already agree with the sources, so only comms is softened.",
+  "sources": ["https://www.mshinstitute.org/climb", "https://www.oregonhikers.org/forum/viewtopic.php?t=31030", "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-25.180256358947"],
+  "patches": [
+   {"id": "wa_mount_st_helens_monitor_ridge", "fact": "Cell coverage on the route", "op": "replace_text", "column": "comms", "path": [], "find": "parties report intermittent-to-good reception (especially Verizon) above treeline and on the summit, but do not rely", "replace": "higher on the ridge and at the summit a signal comes and goes at best, depending on carrier, so do not rely"}
+  ]},
+ {"id": "wa_mount_st_helens_monitor_ridge", "fact": "When the climbing permit is required", "verdict": "fixed",
+  "correct_value": "Permit required year-round above 4,800 ft; Apr 1-Oct 31 is only the quota season",
+  "evidence": "The Forest Service Climbers Bivouac page states a climbing permit is required year-round for all persons above 4,800 ft. The Mount St. Helens Institute says permits are required all year, quota-limited Apr 1-Oct 31 and free/self-issued Nov-Mar. The schedule line was the only field saying Apr 1-Oct 31.",
+  "sources": ["https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-climbers-bivouac-summer-climbing-route", "https://www.mshinstitute.org/climb"],
+  "patches": [
+   {"id": "wa_mount_st_helens_monitor_ridge", "fact": "When the climbing permit is required", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "schedule", 0, "detail"], "find": "permit required Apr 1-Oct 31.", "replace": "climbing permit required year-round above 4,800 ft."}
+  ]},
+ {"id": "wa_mount_st_helens_monitor_ridge", "fact": "Avalanche hazard in the route's season", "verdict": "fixed_internal_plus_one",
+  "correct_value": "June: Low (not N/A) — lingering snow on the upper slopes can still slide in late spring/early summer",
+  "evidence": "The Mount St. Helens Institute states avalanches can and do occur in winter, spring and early summer, and advises avalanche training and tools whenever snow is on the ground. The Forest Service says the mountain has big avalanches October through May (silent on June). Internally, approach, approach_variants[0].hazards[4], pitch_detail[2] and the June month row all treat June as a snow climb with avalanche awareness; only the avalanche panel says N/A. June set to Low, matching May, and the zone text qualified.",
+  "sources": ["https://www.mshinstitute.org/climb", "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mount-st-helens-winterspring-climbing-tips"],
+  "patches": [
+   {"id": "wa_mount_st_helens_monitor_ridge", "fact": "Avalanche hazard in the route's season", "op": "set", "column": "seasonal_hazards", "path": ["avalanche", "byMonth", "June"], "expect": "N/A", "value": "Low"},
+   {"id": "wa_mount_st_helens_monitor_ridge", "fact": "Avalanche hazard in the route's season", "op": "replace_text", "column": "seasonal_hazards", "path": ["avalanche", "zone"], "find": "N/A - non-glaciated summer scramble route (dry ridge west of Swift Glacier); avalanche hazard mainly applies", "replace": "Low once the ridge melts out - non-glaciated summer scramble route (dry ridge west of Swift Glacier), but snow lingering on the upper slopes in late spring and early summer can still slide; avalanche hazard mainly applies"}
+  ]},
+ {"id": "wa_mount_st_helens_monitor_ridge", "fact": "Facilities at Climbers Bivouac", "verdict": "bivy_zone_list",
+  "correct_value": null,
+  "evidence": "Bivy-only dispute; bivy[] is owned by the separate camping clean-up, so no patch. For that pass: the Forest Service trailhead page lists a vault toilet/pit toilets, tent pads with fire pits and no water, and the Mount St. Helens Institute also lists pit toilets, so the notes' 'nothing else' is the wrong half. Climbers Bivouac itself does serve this route.",
+  "sources": ["https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-climbers-bivouac-summer-climbing-route", "https://www.mshinstitute.org/climb"],
+  "patches": []},
+ {"id": "wa_mount_st_helens_worm_flows", "fact": "Car-to-car time vs the day schedule", "verdict": "fixed",
+  "correct_value": "About 9.5-10 hrs car-to-car: roughly 6 hrs up, ~3-4 hrs down; schedule rim arrival ~10:30-11 AM, back ~2:30 PM",
+  "evidence": "The Forest Service/WTA give 7-10 hours round trip for Worm Flows; the Mount St. Helens Institute gives about 6 hours up and 4 down. totalHrs 9.5, sectionBreakdown and totalNote agree with that; the schedule (rim at 12-1 PM, back by 4:30 PM, ~12 hrs) was the outlier and also put the summit after the early-afternoon turnaround. Schedule times retimed; the rim detail also dropped its trip-report attribution.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/mount-st.-helens-worm-flows-route", "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-worm-flows-winter-climbing-route", "https://www.mshinstitute.org/climb"],
+  "patches": [
+   {"id": "wa_mount_st_helens_worm_flows", "fact": "Car-to-car time vs the day schedule", "op": "set", "column": "itinerary", "path": ["days", 0, "schedule", 3, "time"], "expect": "12:00-1:00 PM", "value": "10:30-11:00 AM"},
+   {"id": "wa_mount_st_helens_worm_flows", "fact": "Car-to-car time vs the day schedule", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "schedule", 3, "detail"], "find": "Trip reports commonly show rim arrival around 12:45 PM on a dawn start; summit ~8,363 ft.", "replace": "Roughly six hours up from a pre-dawn start; summit ~8,363 ft."},
+   {"id": "wa_mount_st_helens_worm_flows", "fact": "Car-to-car time vs the day schedule", "op": "set", "column": "itinerary", "path": ["days", 0, "schedule", 4, "time"], "expect": "1:00-2:00 PM", "value": "11:00-11:30 AM"},
+   {"id": "wa_mount_st_helens_worm_flows", "fact": "Car-to-car time vs the day schedule", "op": "set", "column": "itinerary", "path": ["days", 0, "schedule", 5, "time"], "expect": "2:00-4:30 PM", "value": "11:30 AM-2:30 PM"}
+  ]},
+ {"id": "wa_mount_st_helens_worm_flows", "fact": "Glacier and crevasse exposure", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "The Forest Service/Hiking Project description says the Swift Glacier is still active and may have seen and unseen crevasses and to use caution, while noting the route technically touches it and crevasses are rarely seen; SummitPost treats Worm Flows/Swift Glacier as one route. A 'Minor' crevasse rating alongside a no-rope standard kit is consistent with that and with every source.",
+  "sources": ["https://www.hikingproject.com/trail/7030832/mount-st-helens-winter-route-worm-flows", "https://www.summitpost.org/worm-flows-swift-glacier/155588"],
+  "patches": []},
+ {"id": "wa_clast_from_the_past", "fact": "Discipline (trad vs sport)", "verdict": "unresolved",
+  "correct_value": "sport (per every protection field on the row)",
+  "evidence": "Internally pro_needs, gear, detailed_rack and hazards all describe a fully bolted two-pitch sport route, so 'trad' is the outlier. However the discipline column is out of scope for this patch process, and no route-specific page for Clast from the Past could be found online (only Pinto Rock area pages). Settling it needs an owner-approved discipline change, ideally after a route page confirms the bolted protection.",
+  "sources": ["https://www.mountainproject.com/area/109294508/pinto-rock", "https://www.thecrag.com/en/climbing/united-states/washington/area/4510029027"],
+  "patches": []}
+]}

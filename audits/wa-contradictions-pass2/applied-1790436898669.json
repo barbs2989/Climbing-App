@@ -1,0 +1,352 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_ellinor_standard",
+   "column": "season",
+   "path": [],
+   "fact": "Summer-trail season end"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "label"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "baseFinding"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Line from Lake of the Angels to the west-ridge notch"
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "column": "beta",
+   "path": [],
+   "fact": "Line above Lake of the Angels (beta rock rib vs cliff-base traverse)"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "overview",
+   "path": [],
+   "fact": "Which top is the true summit"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Which top is the true summit"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Which top is the true summit"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Which top is the true summit"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance from Silver Lakes junction to summit"
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Forest type on the lower trail"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_ellinor_standard",
+   "before": {
+    "season": "Summer (roughly Jun-Sep, snow-dependent)"
+   }
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "before": {
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Rock rib above Lake of the Angels",
+      "notes": "From Lake of the Angels the route leaves any trail and goes cross-country: climb roughly 800 ft up onto a rock rib above the lake's basin and cross to its north side. The gully/rib terrain above the lake is loose and route-finding is nontrivial in cloud or fresh snow; snow typically lingers on the north-facing basin above the lake well into summer, so an ice axe (and sometimes microspikes/crampons) is worth carrying into early-mid summer. Water is scarce above the lake."
+     },
+     {
+      "n": 2,
+      "class": "class 2-3",
+      "label": "Notch on the west ridge below St. Peter's Gate",
+      "notes": "Follow the terrain up toward a notch on Mount Stone's west ridge below the feature known as St. Peter's Gate."
+     },
+     {
+      "n": 3,
+      "label": "Talus/boulder terrain to the summit block",
+      "notes": "Continue through talus/boulder terrain toward the summit block; the 6,618 ft high point."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Putvin Trail #813 to Lake of the Angels, then the rock rib above the basin",
+      "notes": "this route and the Lake of the Angels route appear to be the same climb entered twice. The variants here are written for the ground the route itself describes. Park at the Putvin Trailhead (FST 813) at about 1,565 ft on Hamma Hamma Road (FR 25). A slide near road mile 10.5 has at times blocked the last 1.2 miles; check Forest Service status. The trail follows the west side of Boulder Creek a few hundred feet, then starts a long unrelenting climbing traverse west, gaining nearly 3,000 ft in under 4 miles without easing. Around 1.3 miles it crosses an OLD LOGGING ROAD, and the tread is easy to lose there — look for the continuation slightly DOWNHILL. Around 4,200 ft comes the short headwall with an old hand-line or a large exposed tree root as the handhold, the crux of the trail and a common turnaround point when wet. Maintained tread ends in a basin around 3.9 miles at about 4,500 ft, and a rougher way-trail continues up steep rocky ground to Lake of the Angels at about 4,900 ft near 4 miles.",
+      "season": "Roughly Jun-Sep. Consolidated snow has been reported from about 4,500 ft up well into summer in the north-facing basin above the lake",
+      "hazards": [
+       "Exposed scramble moves near the summit block and a 15-20 ft Class 4 crack step with no fixed anchor",
+       "Lingering steep snow in the north-facing basin above the lake into early-mid summer",
+       "Route-finding above Lake of the Angels is loose and nontrivial in cloud or fresh snow",
+       "The 4,200 ft headwall on the trail is greasy when wet and the hand-line is not maintained",
+       "The tread is easy to lose where it crosses the old logging road at about 1.3 miles"
+      ],
+      "primary": true,
+      "baseFinding": "THE CLIMB STARTS WHERE THE TRAIL ENDS, AND THE ARRIVAL TEST IS A RIB, NOT A SUMMIT VIEW. From Lake of the Angels the route leaves any trail: climb roughly 800 ft up onto the ROCK RIB above the lake's basin and CROSS TO ITS NORTH SIDE. A rib is a shape underfoot — the ground rises to a spine and falls away on both sides — so it is identifiable in cloud, and the instruction to cross to the far side of it is a check you can perform without seeing anything. SECOND TEST: from the north side of the rib, Class 2-3 terrain leads up toward a NOTCH ON MOUNT STONE'S WEST RIDGE, BELOW the feature called ST. PETER'S GATE. Below, not through. St. Peter's Gate is the notch in the SOUTHEAST ridge and it belongs to the traverse from Lena Lake; the notch you want is on the WEST ridge and sits lower and to the south of it. If you have walked up to a notch that opens onto an entirely different basin to the east, that is the Gate and you are past your turn. THIRD TEST, on the summit block: the final 150 to 200 ft is mostly Class 3 but contains one well-documented 15 to 20 ft CLASS 4 STEP up a SHALLOW CRACK, often marked by a CAIRN. A cairn is man-made and does not move. If you have reached the top without meeting a short crack step, you are on a sub-summit — this mountain has three, and parties confuse them in fog. WHAT THE ROUTE'S OWN TIMING SAYS: Mountaineers reports for this line log around 5.5 hours up and 4 hours down, roughly 10 hours car to car. CAUTION FROM A TRIP REPORT, and it is route-finding advice rather than a hazard note: at least one party took a steep mossy waterfall gully as a descent shortcut and found it far worse than reversing the ascent. Reverse the rib; do not improvise a line down the south side."
+     },
+     {
+      "name": "Lena Lake and the St. Peter's traverse, arriving at the Gate from the east",
+      "notes": "The long way to the same mountain, kept here because it is a genuinely different approach rather than a variation of the Putvin walk. Lena Lake Trail #810 about 3 miles to Lena Lake, then the steep primitive tread up the West Fork to Upper Lena Lake at about 4,550 ft and 6.5 miles. From there, off-trail west past Lena Tarn and Scout Lake to Scout Pass at about 5,200 ft, down to Upper Scout Lake and round into Scout Basin, over Ullin's Pass at about 5,000 ft above Ullin's Bathtubs, then a rising traverse to a snow ramp across a steep hillside below Mount Stone, ending on loose moraine, and finally exposed dirt-and-mud slopes to St. Peter's Gate at about 5,950 ft.\n\nMost parties then continue southwest about half a mile into the Lake of the Angels basin, which is where this approach rejoins the Putvin ground, and exit down the Putvin Trail — a different trailhead about 4 road miles from Lena Lake, so plan a shuttle or a stashed bike.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Extensive off-trail route-finding across Scout Pass, Scout Basin and Ullin's Pass on faint tread",
+       "Loose glacial moraine and exposed dirt slopes below St. Peter's Gate",
+       "Requires a car shuttle or stashed bike between two trailheads about 4 road miles apart",
+       "Fog on the upper mountain, where parties have repeatedly lost the route",
+       "Unbridged stream crossings on the way-trail sections"
+      ],
+      "baseFinding": "THE ARRIVAL TEST IS ST. PETER'S GATE AT ABOUT 5,950 FT: the traverse's high point, an obvious rocky notch in Mount Stone's SOUTHEAST ridge, reached up a steep snow-and-dirt ramp over loose moraine. Ground stops rising, notch pinches, and the Lake of the Angels basin opens beyond. THE TEST THAT PUTS YOU ON THIS ROUTE'S LINE RATHER THAN THE GULLY LINE: from the Gate, continue southwest into the Lake of the Angels basin and pick the route up from there — the rock rib above the lake, crossed to its NORTH side, and Class 2-3 ground to the notch on the WEST ridge below the Gate. The alternative from the Gate is to drop about 300 ft directly to the base of a basalt cliff and take the south-face gully; that is the Lena Lake traverse route, a Class 3-4 gully, and a different climb. ABOVE THE WEST-RIDGE NOTCH THE TEST IS THE SAME: a short Class 4 step up a shallow crack, often cairned, in the last 150 to 200 ft, on a mountain with three summits. HONEST LIMIT: coming from the east adds a day and several passes of unmarked way-trail. It is chosen for the country, not for the climb."
+     }
+    ],
+    "itinerary": {
+     "cal": "The ground above Lake of the Angels often holds snow into July, so many parties carry an ice axe even on the single-day version.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard way most parties climb Mount Stone: steep trail up to Lake of the Angels basin, then boots-and-axe up the rock rib and on to the west-ridge terrain to the summit block, reversing the whole route to descend. Expect short Class 3 (and a Class 3-4 summit move) plus lingering snow above the lake into mid-summer.",
+       "hours": 10,
+       "miles": 10,
+       "title": "Car-to-car scramble via Putvin Trail and the west ridge",
+       "gainFt": 5053,
+       "lossFt": 5053,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Putvin trailhead",
+         "detail": "Early start recommended — trail is relentlessly steep with roots/rock scrambling low down."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach Lake of the Angels basin (~4,900 ft)",
+         "detail": "Trail gains roughly 3,300 ft in under 4 miles to here."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Transition to axe/boots, head for the rock rib",
+         "detail": "Boot or crampon transition typically happens around 4,500-5,000 ft."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Summit Mount Stone (6,612 ft)",
+         "detail": "Short Class 3-4 scrambling near the top."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the scramble line and Putvin Trail; watch for afternoon thunderstorms/softening snow."
+        },
+        {
+         "time": "3:30 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Mount Stone and return to the trailhead same day"
+      }
+     ],
+     "totalNote": "A long single day: roughly 10 mi round trip with 5,053 ft of gain/loss, about 8-10 hours car-to-car for a fit party."
+    },
+    "timing": {
+     "totalHrs": 10,
+     "summitTimeHrs": null,
+     "descentTimeHrs": 4,
+     "approachTimeHrs": 3,
+     "recommendedStart": "5:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10,
+       "note": "Standard way most parties climb Mount Stone: steep trail up to Lake of the Angels basin, then boots-and-axe up the rock rib and on to the west-ridge terrain to the summ…",
+       "fromTo": "Car-to-car scramble via Putvin Trail and the west ridge",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "before": {
+    "beta": "From Hamma Hamma River Road, hike the steep Putvin Trail (FST 813) through Olympic National Forest gaining nearly 3,000 feet in less than 4 miles. Emerge in an alpine basin at Lake of the Angels (~4,900 feet), then scramble Class 3 terrain north of a rock rib, ascending the West Ridge with some exposed class 4 moves to reach the South Peak summit."
+   }
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "before": {
+    "overview": "Mount Townsend is one of the most-visited summits in the northeastern Olympics, rising above the Quilcene valley in the Buckhorn Wilderness of Olympic National Forest. The maintained Mt. Townsend Trail (#839) climbs through old-growth Douglas-fir/rhododendron forest, crosses a series of increasingly open, avalanche-scoured ravines, and breaks into subalpine meadows near Camp Windy (2.6 mi) before meeting the Silver Lake Trail junction (3 mi) and reaching the open, wind-scoured south summit (4 mi, roughly 6,260-6,280 ft). The true high point sits a short, easy walk beyond the more-visited south summit viewpoint. On clear days the summit gives a full panorama of the Olympic high country (Mount Constance, Mount Deception, The Brothers), the Cascades, Hood Canal, Puget Sound, and the San Juan Islands. The combination of a short approach, no technical difficulty, and outsized views makes it one of the most popular day hikes/easy scrambles on the Olympic Peninsula.",
+    "pro_tips": [
+     "Start from the Upper Trailhead rather than the Lower to save about 2.4 mi round trip and roughly 500 ft of extra climbing",
+     "Arrive before 8am on summer weekends - the small Upper TH lot fills fast",
+     "The true summit high point is a short use-path beyond the more-photographed south summit viewpoint",
+     "Rhododendrons peak in the lower forest in late May/June; wildflowers peak in the upper meadows June-August, followed by huckleberries and fall color in September"
+    ],
+    "itinerary": {
+     "cal": "Snow can linger on the switchbacks above Camp Windy into early summer, slowing the upper trail; check recent trip reports before an early-season attempt.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A well-graded trail climbs steadily from the Upper Trailhead through forest, crests an open rock face near Camp Windy, passes the Silver Lake Trail junction, and switchbacks up to the open, windswept south summit with Olympics/Puget Sound/Cascades views. Return the same way; snow can linger on the upper switchbacks into early summer.",
+       "hours": 5.5,
+       "miles": 8,
+       "title": "Car-to-car day hike to the summit",
+       "gainFt": 3010,
+       "lossFt": 3010,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "8:00 AM",
+         "label": "Leave Upper Trailhead",
+         "detail": "Trail climbs steadily through forest toward Camp Windy."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Camp Windy / open rock face",
+         "detail": "2.6 mi in; small tarn and first big views open up."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Silver Lake Trail junction",
+         "detail": "3 mi in; stay right/straight to continue toward Townsend's summit."
+        },
+        {
+         "time": "+3 hr",
+         "label": "South summit",
+         "detail": "4 mi in, ~6,260-6,280 ft; optional short detour to the true high point (6,282 ft)."
+        },
+        {
+         "time": "+3.3 hr",
+         "label": "Begin descent",
+         "detail": "Return via the same trail."
+        },
+        {
+         "time": "+5.5 hr",
+         "label": "Back at trailhead",
+         "detail": "Typical fit-hiker round trip; add time in early season if snow lingers above Camp Windy."
+        }
+       ],
+       "objective": "Reach the south summit (and optional true high point) of Mount Townsend"
+      }
+     ],
+     "totalNote": "A single, straightforward day hike: ~8.0 mi round trip from the Upper Trailhead with ~3,000 ft gain, typically 4-6.5 hrs car-to-car."
+    },
+    "approach": "Start at the Mt. Townsend Upper Trailhead (elev. ~3,300 ft), reached via Forest Road 27 off Penny Creek Road out of Quilcene — the trailhead has a small gravel lot and a Buckhorn Wilderness boundary sign where Trail #839 begins. From the lot, the trail climbs immediately into dense, heavily wooded second-growth forest via the first of three switchback sets; this opening stretch is the steepest sustained grade on the route (roughly 20% grade for the first ~3 miles) and stays shaded most of the way. After the initial switchbacks the trail eases through forest before a second switchback section, then a third set of steep, fully sun-exposed switchbacks that break out onto the crest of a ridge — this exposed stretch is the hottest, most water-demanding part of the hike in summer, so carry all the water you need (there is no reliable creek crossing directly on-trail; the small streams crossed in the first mile or so are often dry by late summer, so shallow Windy Lake by Camp Windy is the last water). At about 5,300 ft, roughly 2.3 miles in, an unmarked spur trail branches off to Windy Lake/Camp Windy, a common rest stop and the last reliable flat ground before the alpine section. Continuing on the main trail, at about 5,500 ft you reach the junction with the Silver Lakes Trail #842 — stay right (straight/uphill) to continue to the summit; the left fork toward Silver Lakes involves loose, unmaintained scrambling and is not the standard route. From this junction the forest opens into subalpine meadow and the trail's grade eases considerably for the final ~1.3 miles to the broad, flat summit ridge (6,282 ft), passing through increasingly open wildflower meadows with the last quarter-mile crossing mostly open, low-angle grassy/rocky tundra. No technical terrain or exposure is encountered on the standard route; the main hazards are heat/sun exposure on the third switchback set, lingering snow patches on the upper meadows into early summer (which can obscure the tread and create a slip hazard on a steep sidehill), and occasional route-finding uncertainty at the Silver Lakes junction if signage is missing."
+   }
+  }
+ ]
+}

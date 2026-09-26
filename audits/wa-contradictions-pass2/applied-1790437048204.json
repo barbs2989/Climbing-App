@@ -1,0 +1,273 @@
+{
+ "applied": [
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Distance between Summerland and the trailhead"
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Gain from trailhead to Lake of the Angels"
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Gain from trailhead to Lake of the Angels"
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Gain from trailhead to Lake of the Angels"
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Summit-push time"
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Basin the Putvin Trail climbs through"
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Permit note names another lake"
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking pass at the Putvin trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "before": {
+    "itinerary": {
+     "cal": "Best climbed June-August while the Fryingpan/Whitman glaciers hold consolidated snow; the road past the Fryingpan Creek trailhead usually opens by late May, and crevasses/moats open up more by late summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Wonderland Trail from the Fryingpan Creek Trailhead through old-growth forest, cross Fryingpan Creek, and climb through the Summerland meadows before leaving trail to work up scree/snow to a rocky camp overlooking the Fryingpan Glacier at roughly 7,350 ft.",
+       "hours": 6.5,
+       "miles": 4.5,
+       "title": "Approach to high camp",
+       "gainFt": 3550,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach a high camp near Meany Crest on the Fryingpan Glacier moraine"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start gets the team across the Fryingpan Glacier and over Whitman Notch (9,100 ft) before the snow softens, then up the Whitman Glacier and a picket-protected couloir to a short Class 3-4 rock finish on the summit block. After descending back to camp, most parties drop further to the Summerland shelter that evening to shorten day 3.",
+       "hours": 10.5,
+       "miles": 5.5,
+       "title": "Summit day and move to Summerland",
+       "gainFt": 3788,
+       "lossFt": 5188,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "2:00 AM",
+         "label": "Leave high camp",
+         "detail": "Roped up and crampons on for the Fryingpan Glacier crossing."
+        },
+        {
+         "time": "4:00 AM",
+         "label": "Cross Whitman Notch",
+         "detail": "~1,850 ft above camp; the col between the Fryingpan and Whitman glaciers."
+        },
+        {
+         "time": "~8:15 AM",
+         "label": "Reach the summit",
+         "detail": "Up the Whitman Glacier and couloir, then a short Class 3-4 scramble to the true summit at 11,138 ft."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Back at high camp",
+         "detail": "Descent re-crosses both glaciers via the notch."
+        },
+        {
+         "time": "Evening",
+         "label": "Move down to Summerland shelter",
+         "detail": "Drops to ~5,950 ft to shorten the exit hike."
+        }
+       ],
+       "objective": "Cross both glaciers, climb the couloir to the summit, and descend to Summerland"
+      },
+      {
+       "n": 3,
+       "note": "A short, easy morning hike back down through Summerland and the forest to the trailhead.",
+       "hours": 2.5,
+       "miles": 3.2,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2150,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Return to the Fryingpan Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip is the standard club/party pace: ~14 mi round trip with ~7,600 ft of gain/loss, split between a moderate approach day, a long alpine-start glacier summit day, and a short exit."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "before": {
+    "itinerary": {
+     "cal": "The Putvin trailhead sits on FR-25, the Hamma Hamma River road; check Olympic National Forest alerts before going, as this area has been affected by wildfire closures in recent years.",
+     "days": [
+      {
+       "n": 1,
+       "note": "The Putvin Trail is steep and rough - the headwall below the lake takes hand-and-foot scrambling on roots and rock - so most parties treat it as a half-day in with a full overnight pack. Camp at Lake of the Angels, which also serves as the base for nearby Mount Stone.",
+       "hours": 3.5,
+       "miles": 3.5,
+       "title": "Backpack in to Lake of the Angels camp",
+       "gainFt": 2900,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Set up basecamp at Lake of the Angels"
+      },
+      {
+       "n": 2,
+       "note": "An early start lets you cache overnight gear at camp and climb light: scramble talus and side-hill terrain up toward the summit ridge, then a short class 2-3 section (rock is notoriously rotten) to the top. After descending to camp, break camp and hike the brutal trail back out the same afternoon - a long but standard weekend pattern for this approach.",
+       "hours": 10,
+       "miles": 8.7,
+       "title": "Summit push and hike out",
+       "gainFt": 2400,
+       "lossFt": 5300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Alpine start from camp",
+         "detail": "Light daypacks, overnight gear cached at camp."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach base of summit scramble terrain",
+         "detail": "Talus, side-hilling, and contouring below the summit ridge on loose, rotten rock."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Summit",
+         "detail": "Class 2-3 finish; take care on the rotten rock near the top."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Back at camp",
+         "detail": "Down-climb the summit section carefully, then break camp and re-pack for the hike out."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Begin hike out",
+         "detail": "Full overnight pack back down the steep, rooted Putvin Trail."
+        },
+        {
+         "time": "4:00 PM",
+         "label": "Trailhead",
+         "detail": "End of trip."
+        }
+       ],
+       "objective": "Climb Mount Skokomish (6,434 ft) and return to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day, 1-night weekend trip: roughly 12 miles round trip with about 5,300 ft of cumulative gain, most parties backpacking in on day one and combining the summit push with the full hike-out on day two."
+    },
+    "timing": {
+     "totalHrs": 13.5,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": 2.5,
+     "approachTimeHrs": 3.5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 3.5,
+       "note": "The Putvin Trail is steep and rough - the headwall below the lake takes hand-and-foot scrambling on roots and rock - so most parties treat it as a half-day in with a full overnight pack. Camp at Lake of the Angels, which also serves as the base for nearby Mount Stone.",
+       "fromTo": "Backpack in to Lake of the Angels camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "An early start lets you cache overnight gear at camp and climb light: scramble talus and side-hill terrain up toward the summit ridge, then a short class 2-3 section (rock is notor…",
+       "fromTo": "Summit push and hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "pitch_detail": [
+     {
+      "grade": "Class 1-2 (steep trail)",
+      "notes": "~3.5 mi, ~3,400 ft gain via Boulder Creek basin; crosses three drainages early, then a steep, sometimes near-vertical headwall with root/rock scrambling.",
+      "pitch": "Trailhead to Lake of the Angels"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Skirt the lake's north/west shore, then ascend alpine slopes and a scree-and-snow gully (climber's-right) to the saddle NE/E of the peak; snow often lingers here into summer.",
+      "pitch": "Lake of the Angels to ~5,800 ft saddle"
+     },
+     {
+      "grade": "Class 2-3 (3+ in spots)",
+      "notes": "Cross scree, grass and rock slopes, then scramble loose, rotten rock up the south ridge to the true (south) summit; watch for a lower false summit/horn.",
+      "pitch": "Saddle to summit (southeast slope / south ridge)"
+     }
+    ],
+    "access": {
+     "fees": "Northwest Forest Pass required to park at Mildred Lakes and Putvin trailheads (no fee at the trailhead itself otherwise). Entering via Staircase/Olympic NP requires the $30 park entrance fee (7-day private-vehicle pass; $15 for a walk-in/bike individual pass) or an interagency pass, plus an $8 per person per night backcountry camping fee (booked via Recreation.gov) for Flapjack Lakes.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Standard Wilderness regulations apply (no bikes/motorized use, max group size limits, camp 200 ft from water). Mountain goats are frequently encountered around the peak's base and Lake of the Angels basin — do not approach or feed them; give them a wide berth as they can be aggressive toward hikers seeking salt.",
+     "permit": "No wilderness permit is required for day trips on Olympic National Forest land (Mildred Lakes, Putvin Trail). Camping at Lake of the Angels, which lies inside Olympic National Park, requires an Olympic National Park wilderness camping permit. If approaching via Flapjack Lakes inside Olympic National Park, an overnight wilderness camping permit is required, reservable on Recreation.gov for the Flapjack Lakes zone (bookable mid-April, camping dates mid-June through mid-October); contact the Wilderness Information Center at (360) 565-3100.",
+     "closures": "UPDATED (as of July 8, 2026): the Mildred Lakes Trail (#822) and Mildred Lakes Trailhead on FS-25 — along with the Mt. Rose Trail/Trailhead, Dry Creek East Trailhead, and the Staircase developed area (campground, ranger station, Rapids Loop Trail) — REOPENED on July 8, 2026 per a joint Olympic National Forest/Olympic National Park press release, ending the closure tied to the 2025 Bear Gulch Fire. Still CLOSED pending hazard-tree removal and infrastructure repair: wilderness trails beyond the developed Staircase area, including the North Fork Skokomish River Trail (from the Staircase Rapids Loop to Home Sweet Home) and the Flapjack Lakes Trail, with no reopening date on the park's fire-conditions page updated September 18, 2026, plus FS-2451 and the Copper Creek Trail (Olympic National Forest alert updated July 8, 2026). The Putvin Trail/Lake of the Angels approach, on a different drainage further north off Hamma Hamma River Road, was never part of this closure and remains the standard approach to Mount Skokomish. Always check the Olympic National Forest alerts page and NPS Olympic fire-conditions page before a trip, as backcountry trail status keeps changing as repair work continues through summer 2026.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Hood Canal Ranger District) for the Mildred Lakes and Putvin trailheads; Olympic National Park (Wilderness Information Center) for the Staircase/North Fork Skokomish/Flapjack Lakes side.",
+     "land_manager": "Olympic National Forest (Hood Canal Ranger District)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "None for day use; NPS wilderness permit for overnight camping.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit",
+      "where": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center. Upper Lena Lake is quota-limited, so book early for July to September."
+     }
+    }
+   }
+  }
+ ]
+}

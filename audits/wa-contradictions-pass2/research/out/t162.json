@@ -1,0 +1,423 @@
+{
+ "file": "t162.json",
+ "results": [
+  {
+   "id": "wa_mount_ann_scramble",
+   "fact": "Drop into Swift Creek basin",
+   "verdict": "fixed",
+   "correct_value": "The Lake Ann Trail drops about 800 ft from the Austin Pass trailhead into the Swift Creek basin (4,700 ft trailhead to ~3,900 ft basin floor, matching the row's own pins).",
+   "evidence": "A hiking blog describing the trail says you lose about 800 ft in the first 2 miles and then gain about 1,000 ft; a separate route write-up (search excerpt) says the trail drops 800 ft into the Swift Creek valley and rises 900-1,000 ft to the saddle. The row's pins (4,700 ft trailhead, 3,900 ft basin) also give 800 ft; neither the 900 ft in beta nor the 700 ft elsewhere is right, so every copy is set to about 800 ft (and beta's 'Lake Ann basin' corrected to the Swift Creek basin).",
+   "sources": [
+    "https://www.cynhw.com/blog/2024/8/5/lake-ann-mount-baker-highway",
+    "https://www.mountaineers.org/books/blog/exploring-lake-ann-and-swift-creek-mount-baker",
+    "https://www.summitpost.org/mount-ann/153759"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "which drops roughly 900 ft into the Lake Ann basin",
+     "replace": "which drops roughly 800 ft into the Swift Creek basin",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Drop into Swift Creek basin"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "which drops about 700 ft into the Swift Creek headwaters basin",
+     "replace": "which drops about 800 ft into the Swift Creek headwaters basin",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Drop into Swift Creek basin"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Trail drops ~700 ft from the trailhead",
+     "replace": "Trail drops ~800 ft from the trailhead",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Drop into Swift Creek basin"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "It DROPS about 700 ft into",
+     "replace": "It DROPS about 800 ft into",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Drop into Swift Creek basin"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "most of which comes from the fact that the trail loses 700 ft at the start",
+     "replace": "part of which comes from the fact that the trail loses 800 ft at the start",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Drop into Swift Creek basin"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "expect": "A 700 ft descent at the start that must be re-climbed at the end of the day",
+     "value": "An 800 ft descent at the start that must be re-climbed at the end of the day",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Drop into Swift Creek basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "fact": "Trail gain to the saddle",
+   "verdict": "fixed",
+   "correct_value": "From the Swift Creek basin floor the trail climbs about 1,000 ft to the 4,900 ft saddle, after an initial drop of about 800 ft; roughly 4 miles in all.",
+   "evidence": "The same two descriptions put the climb out of the Swift Creek basin to the saddle at about 900-1,000 ft, and the row's own pins (3,900 ft basin, 4,900 ft saddle) give 1,000 ft. The 2,000 ft figure matches no source for this stretch (it resembles the whole Lake Ann hike's round-trip gain).",
+   "sources": [
+    "https://www.cynhw.com/blog/2024/8/5/lake-ann-mount-baker-highway",
+    "https://www.mountaineers.org/books/blog/exploring-lake-ann-and-swift-creek-mount-baker",
+    "https://www.wta.org/go-hiking/hikes/lake-ann"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Trail hiking on Lake Ann Trail No. 600 gains about 2,000 ft over roughly 4 miles.",
+     "replace": "Trail hiking on Lake Ann Trail No. 600: drop about 800 ft into the Swift Creek basin, then climb about 1,000 ft to the saddle, roughly 4 miles in all.",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Trail gain to the saddle"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "fact": "Road reopening date",
+   "verdict": "fixed",
+   "correct_value": "The final stretch of SR 542 to Austin Pass/Artist Point typically opens in late June or early July (it opened June 10 in 2026).",
+   "evidence": "The ski area's Artist Point page says the road typically opens in late June or early July. State DOT opening announcements give July 11 (2022), June 28 (2023), June 21 (2024), June 27 (2025) and June 10 (2026) — late June to early July, with 2026 early. Neither 'mid-to-late June' nor 'roughly July' fits alone, so all copies now say late June or early July.",
+   "sources": [
+    "https://www.mtbaker.us/summer-info/artist-point/",
+    "https://wsdot.wa.gov/about/news/2026/sr-542-road-artist-point-mount-baker-reopens-season-wednesday-june-10",
+    "https://www.bellingham.org/articles/recreationalists-rejoice-sr-542-the-road-to-artist-point-is-open",
+    "https://www.spokesman.com/stories/2024/jun/21/road-to-mount-bakers-artist-point-reopens-for-summ/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "typically reopens mid-to-late June (WSDOT reopened it June 10 in 2026)",
+     "replace": "typically reopens in late June or early July (it reopened June 10 in 2026)",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Road reopening date"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "typically opens mid-to-late June and closes",
+     "replace": "typically opens late June or early July and closes",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Road reopening date"
+    },
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "spring"
+     ],
+     "find": "(mid-to-late June)",
+     "replace": "(late June or early July)",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Road reopening date"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "typically isn't snow-free and open until roughly July depending on snowpack",
+     "replace": "typically doesn't open until late June or early July, depending on snowpack",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Road reopening date"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "typically isn't snow-free and open until around July depending on snowpack",
+     "replace": "typically doesn't open until late June or early July, depending on snowpack",
+     "id": "wa_mount_ann_scramble",
+     "fact": "Road reopening date"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Season vs best window",
+   "verdict": "fixed",
+   "correct_value": "Season May-Sep (best window late May through July).",
+   "evidence": "One guide service lists its Easton Glacier season as May-September and another as 'May - August, conditions dependent'; a route listing also gives May through September. All start the season in May, which the row's own best window (late May through July, May rated good) already says; the end month (September) is kept as stored. Season widened to May-Sep and the approach's season chip matched.",
+   "sources": [
+    "https://www.pacificalpineguides.com/climb-mt-baker",
+    "https://cascademountainascents.com/trips/mount-baker-easton-glacier/",
+    "https://www.alltrails.com/trail/us/washington/mount-baker-via-easton-glacier"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Sep",
+     "value": "May-Sep",
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Season vs best window"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Jun-Sep",
+     "value": "May-Sep",
+     "id": "wa_mount_baker_easton_glacier",
+     "fact": "Season vs best window"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "fact": "Best-conditions window in the itinerary",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "itinerary.cal says best conditions are June-August, while best_season and seasonal_guidance say late May through July ('August opens the glacier'). A search excerpt from a guide page calls June-August the best time; nothing found states late May-July. Needs a second source on the prime window before either copy changes.",
+   "sources": [
+    "https://www.pacificalpineguides.com/climb-mt-baker"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Direction across the Coleman to the ridge",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The approach and pitch_detail say cross the Coleman climbers' left (east) from the Hogsback to the North Ridge, which matches the geography (the ridge lies east of the Hogsback camp; ascending the glacier, east is climbers' left). The only dissent is the bivy[0] (Hogsback) note saying 'climbers' right'; bivy is owned by the camping clean-up, so no patch here — that note's direction should read climbers' left (east).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "fact": "Summit-day duration",
+   "verdict": "fixed",
+   "correct_value": "A camp-to-summit-to-camp day of about 10-14 hours.",
+   "evidence": "A guide service's North Ridge itinerary gives 10-14 hours from high camp to the summit and back; a detailed trip report records 12 hours camp to summit to camp (2 AM start). Another guide asks clients to handle 12-16 continuous hours. The 12-18 hr range in descent_text is the outlier; the itinerary's 11 hr and 10-14 hr note already fall within the sourced range.",
+   "sources": [
+    "https://www.northwestalpineguides.com/northwest-climbs/mount-baker-north-ridge/",
+    "https://engineeredforadventure.com/nridgebaker/",
+    "https://blackbirdguides.com/products/mt-baker-north-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "commonly runs 12-18 hours from high camp on summit day",
+     "replace": "commonly runs 10-14 hours from high camp on summit day",
+     "id": "wa_mount_baker_north_ridge",
+     "fact": "Summit-day duration"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one external page says anything about timing (the cleaver's upper crevasses become very broken by mid-summer; road access limited early season), and a late-season trip report (early September) calls the route interesting in late season. No two sources state a usable or best window, so neither the variant's 'Roughly May-Aug' nor the Jul-Aug season is confirmed. A published season window for the Boulder-Park Cleaver would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+    "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "fact": "Summit-day start time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One guide service says summit day starts between midnight and 4 AM depending on conditions; search excerpts cite trip reports that left camp at 2 AM and at 4 AM. The stored 4:30 wake/5:15 leave comes from one reported June ascent and is later than the guide's window, but no second source gives a specific start time to adopt. A second published start time (for example a guide itinerary with a clock time) would settle it.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing-routes/mount-baker-coleman-deming-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "fact": "Running water at Hogsback camp",
+   "verdict": "fixed",
+   "correct_value": "Running meltwater at the Hogsback camp itself; nothing above it.",
+   "evidence": "Two separate write-ups (search excerpts) say the Hogsback camp has plenty of running water, with multiple streams, and that it is the last running water on the route. The sibling North Ridge row's Hogsback entry says the same. The variant's sentence placing the last water at the Kulshan Cabin site is the outlier.",
+   "sources": [
+    "https://www.hikersbliss.com/mount-baker-hiking-heliotrope-trail/",
+    "https://www.mountaineers.org/activities/trip-reports/mount-baker-coleman-glacier-14"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "There is running water up to about the old Kulshan Cabin site; above the camp there is nothing but what you melt.",
+     "replace": "Meltwater usually runs at the Hogsback camp itself; above the camp there is nothing but what you melt.",
+     "id": "wa_mount_baker_coleman_deming",
+     "fact": "Running water at Hogsback camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "fact": "Total elevation gain",
+   "verdict": "fixed",
+   "correct_value": "About 8,100 ft of gain car to car.",
+   "evidence": "A climbing club's Boulder Glacier listing gives 8,100 ft of gain; a route page gives 8,000 ft of gain from the 2,700 ft trailhead. The itinerary already totals 8,100 ft (3,000 + 5,100), and the variant says 8,000 ft. gain_ft 7,000 is set to 8,100, and the variant's '7,000+ ft of gain' updated. loss_ft (7,000) is left: no source states a car-to-car descent figure (see the separate entry).",
+   "sources": [
+    "https://www.mountaineers.org/activities/activities/basic-glacier-climb-mount-baker-boulder-glacier-4",
+    "https://www.summitpost.org/boulder-glacier-cleaver/165032"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 7000,
+     "value": 8100,
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "which is where the 7,000+ ft of gain comes from",
+     "replace": "which is where the 8,000+ ft of gain comes from",
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "Total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "fact": "Total elevation loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "loss_ft is 7,000 while the itinerary's days total 8,100 ft of loss. Under the rules loss_ft may change only to a sourced car-to-car descent figure, and none was found (sources state gain only).",
+   "sources": [],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "fact": "High camp location",
+   "verdict": "fixed",
+   "correct_value": "Day 1 ends at the usual camp where Boulder Ridge meets the glacier (~5,500-5,700 ft).",
+   "evidence": "One route page says the main camp is about 5,700 ft where the open ridge meets the glacier (with an optional camp by the cleaver ~7,500 ft); another says camps start around 5,200 ft with a more sheltered one at the cleaver's toe ~6,800 ft. The day's own note, gain (3,000 ft from 2,700 ft) and beta all describe the ridge camp, so only the objective line naming the cleaver's toe is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+    "https://hike2hike.com/mountaineering/boulder-glacier-mount-baker-washington/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "expect": "Boulder Ridge trailhead to camp at the toe of the Cleaver",
+     "value": "Boulder Ridge trailhead to high camp where the ridge meets the glacier",
+     "id": "wa_mount_baker_boulder_glacier",
+     "fact": "High camp location"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "High camp / approach side",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The approach, variant, itinerary and waypoints all use the Heliotrope Ridge/Hogsback camp (~6,000 ft). The bivy list (Park Glacier camp near the Portals, Camp Kiser on Ptarmigan Ridge) serves the Park Glacier Headwall from Artist Point, not this route; the hidden 'Heliotrope Ridge Camp' is the one that serves it. Bivy is owned by the camping clean-up — no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Trailhead coordinates",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 'Heliotrope Ridge Trailhead' pin and approach_logistics.trailheadLat/Lng (48.8465, -121.6927) are the Artist Point coordinates; the sibling North Ridge row stores the Heliotrope Ridge trailhead at 48.80201, -121.89597. Coordinates are out of scope for this pass, so the pin needs a coordinate repair elsewhere.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "fact": "Day-1 gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Trailhead (~3,700 ft) to the Hogsback camp (~6,000 ft) is about 2,300 ft, which the sibling Coleman-Deming and North Ridge approaches state. But changing the day to 2,300 makes the itinerary total 6,900 against gain_ft 7,201 (it is 7,500 now), and the rules forbid changing a day's figure unless the total then equals gain_ft or a source states both. A sourced car-to-car gain for the Cockscomb would settle day 1, day 2 and gain_ft together.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "fact": "Camp Kiser elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A trail listing puts the Ptarmigan Ridge Trail's highest point at 6,100 ft and says the trail then drops slightly before the nondescript Camp Kiser, so ~7,000 ft looks too high, but no page states Camp Kiser's own elevation (the Forest Service route page, trip reports and a glacier study all name it without a height). A topo-derived height for Camp Kiser would settle it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/ptarmigan-ridge",
+    "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route"
+   ],
+   "patches": []
+  }
+ ]
+}

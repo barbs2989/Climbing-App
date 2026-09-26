@@ -1,0 +1,196 @@
+{
+ "file": "t322.json",
+ "results": [
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "fact": "Camping restriction names the other side of the range",
+   "verdict": "fixed",
+   "correct_value": "The overnight-permit note should give the self-issue permit at the Conrad Meadows trailhead, not the Snowgrass Flat camping rule for the west-side approach.",
+   "evidence": "The Forest Service South Fork Tieton trail page says the free, non-quota Goat Rocks Wilderness permit is self-issued at the trailhead, and a hiking field guide for the South Tieton hike puts a self-registration wilderness permit station just off the road at Conrad Meadows. The Snowgrass Flat camping closure applies to the west-side Snowgrass approach, which this route does not use (its approach, waypoints and camp card are all Conrad Meadows). The patch drops the irrelevant Snowgrass sentence and names the trailhead this route uses.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/south-fork-tieton-trail",
+    "https://www.oregonhikers.org/field_guide/South_Tieton_Hike",
+    "https://www.pcta.org/discover-the-trail/permits/local-permits/"
+   ],
+   "patches": [
+    {
+     "id": "wa_gilbert_peak_meade_glacier",
+     "fact": "Camping restriction names the other side of the range",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Fill one out at the trailhead. Camping on Snowgrass Flat itself is prohibited; use the sites below it.",
+     "replace": "Fill one out at the Conrad Meadows trailhead."
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "fact": "Camping restriction names the other side of the range",
+   "verdict": "fixed",
+   "correct_value": "The overnight-permit note should give the self-issue permit at the Conrad Meadows trailhead, not the Snowgrass Flat camping rule for the west-side approach.",
+   "evidence": "The Forest Service South Fork Tieton trail page says the free, non-quota Goat Rocks Wilderness permit is self-issued at the trailhead, and a hiking field guide for the South Tieton hike puts a self-registration wilderness permit station just off the road at Conrad Meadows. The Snowgrass Flat camping closure applies to the west-side Snowgrass approach, which this route does not use (its approach, waypoints and camp card are all Conrad Meadows). The patch drops the irrelevant Snowgrass sentence and names the trailhead this route uses.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/south-fork-tieton-trail",
+    "https://www.oregonhikers.org/field_guide/South_Tieton_Hike",
+    "https://www.pcta.org/discover-the-trail/permits/local-permits/"
+   ],
+   "patches": [
+    {
+     "id": "wa_gilbert_peak_conrad_glacier",
+     "fact": "Camping restriction names the other side of the range",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Fill one out at the trailhead. Camping on Snowgrass Flat itself is prohibited; use the sites below it.",
+     "replace": "Fill one out at the Conrad Meadows trailhead."
+    }
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "fact": "Hardest grade (class 3 vs class 4)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree. The Gilbert Peak area listing on a major route database rates its 'West Route' 4th class R, while a detailed trip report of the Cispus Basin goat-ledges / black-prow line calls the traverse class 2 with some class 3 moves and the summit finish a class 2-3 scramble. The row's own corrections note already doubts that the database's 'West Route' is this Cispus Basin line. Settling it needs a second independent description of the Cispus Basin line's hardest move (notch / summit finish).",
+   "sources": [
+    "https://www.mountainproject.com/area/122751797/gilbert-peak-mt-curtis-gilbert",
+    "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Base camp elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A detailed trip report of the Old Snowy/Ives/Gilbert trip camped in lower Snowgrass Flats at about 6,200 ft, matching the camp card (6,000-6,300 ft), while the itinerary puts a camp 7 mi in at 7,100-7,200 ft, close to the 7,250 ft col. Moving the itinerary camp would also change Day 1 miles and gain and Day 2 figures, and no source states those day figures for a lower camp, so no patch is written (camp card is owned by the camping clean-up). Settling it needs a source giving the day split from a Snowgrass-area camp, or confirming legal camps near 7,100 ft on the crest.",
+   "sources": [
+    "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Which side of Ives the route climbs",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A detailed trip report climbed Ives by its northwest ridge (class 1-2), over a rounded crest, then up the south face (class 3), matching face, beta, approach, climbing_route and waypoints. The disagreeing field is the route NAME ('Northeast Slopes'), which is out of scope for patching, and there is no single correct replacement for aspect (the line is a NW ridge finishing on a S face), so no patch is written. Needs an owner decision on renaming the route.",
+   "sources": [
+    "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "When the access road opens",
+   "verdict": "fixed",
+   "correct_value": "The access road (FR 2150) is snow-free by about May-June; it is the upper Snowgrass basin and high trail that stay snowy until mid-to-late July.",
+   "evidence": "The Forest Service FR 2150 page closes the road to wheeled vehicles Dec 1 - Apr 1 for winter recreation and its condition update expects the winter snow to melt during May and June. The Forest Service Snowgrass Trail #96 information says high-elevation trail typically melts out by mid-July. So the road opens well before July; only the upper basin stays snowy into mid/late July. Patch removes 'approach road' from the itinerary claim.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/forest-road-2150",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-96-snowgrass"
+   ],
+   "patches": [
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "When the access road opens",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "the Snowgrass Flats approach road and upper basin are typically not fully snow-free",
+     "replace": "the upper Snowgrass basin is typically not fully snow-free"
+    }
+   ]
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Route distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (11.43 km = 7.1 mi) is the one-way distance and agrees with the summit waypoint at 7 mi; the itinerary's 14.2 mi is explicitly the round-trip total. Different quantities, each labelled.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Which ridge of Old Snowy connects to the PCT",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A detailed trip report ascended Old Snowy by its narrow north ridge from the Packwood Glacier cirque (supporting the itinerary), while descent_text/descent describe a south-ridge boot path to the PCT; the popular trail description only says the scramble branches right off the PCT and switchbacks steeply up about half a mile, without naming a ridge. No two sources agree on which ridge the standard summit path uses. Needs a second source naming the ridge the Old Snowy boot path follows from the PCT.",
+   "sources": [
+    "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/",
+    "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "fact": "High camp elevation",
+   "verdict": "fixed",
+   "correct_value": "~10,300 ft",
+   "evidence": "Two independent trip reports put the Ptarmigan Ridge bivy at 10,300 ft (one reached 'the flat bivy sites at 10,300ft', the other 'a comfortable bivy site at 10,300 ft'), agreeing with the itinerary (~10,300) and the approach variant (10,200-10,300). Patched the route breakdown's 'near 10,000 ft'. The camp card (bivy[0].notes) still says 'near 10,000 ft' but bivy is owned by the camping clean-up and is not patched here.",
+   "sources": [
+    "https://www.countryhighpoints.com/mt-rainier-via-ptarmigan-ridge/",
+    "https://spokalpine.com/2022/07/27/mt-rainier-ptarmigan-ridge-iv-ai3/"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+     "fact": "High camp elevation",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From high camp near 10,000 ft",
+     "replace": "From high camp near 10,300 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "fact": "Height of the summit bergschrund ice",
+   "verdict": "fixed",
+   "correct_value": "It varies by year: from a snow bridge with no technical difficulty to a short vertical ice step (reported from 5-8 ft up to 25-30 ft).",
+   "evidence": "A route database description says to expect a few short (5-8 ft) vertical ice sections at the bergschrund; a guide service's 2017 trip report needed a 12 ft vertical snow and ice pitch; another report found the schrund offered no technical challenge; one report describes a 25-30 ft vertical section. Sources agree it varies year to year, as the Liberty Cap waypoint already says. Both fixed-number claims were rewritten to state the range.",
+   "sources": [
+    "https://www.mountainproject.com/route/106459197/liberty-ridge",
+    "https://www.mountainguides.com/rainier-tr2017-liberty-ridge.shtml",
+    "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_liberty_cap_liberty_ridge_finish",
+     "fact": "Height of the summit bergschrund ice",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "bergschrund navigation (25-30 feet of vertical ice)",
+     "replace": "a bergschrund crossing that varies by year from an easy snow bridge to a short vertical ice step"
+    },
+    {
+     "id": "wa_liberty_cap_liberty_ridge_finish",
+     "fact": "Height of the summit bergschrund ice",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Vertical ice pitches at bergschrund crossing (5-8 ft sections)",
+     "replace": "Bergschrund crossing can need a short vertical ice step, depending on the year"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "file": "t222.json",
+ "results": [
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Daily gain split (approach vs summit day)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mill Creek ascent report gives only a trip total (1,880 ft trailhead, about 6,460 ft of gain) and no per-day split; the 5,899 ft mine elevation comes from a mining-records database, and parties camp at varying points between the mine and the basin. Re-splitting the days while keeping the itinerary total equal to gain_ft would require computing new day figures, which is not allowed. A source stating the day-1 gain from Canyon Creek to a camp near the Azurite Mine would settle it.",
+   "sources": [
+    "https://onehikeaweek.com/2012/08/19/mount-ballard/",
+    "https://westernmininghistory.com/mine-detail/10047819/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Round-trip / summit-day distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mill Creek report and the Azurite route description agree on 6 miles up Canyon Creek plus about 5 up Mill Creek to the mine (11 mi, matching days 1 and 3), but no source gives a round-trip total or a mine-to-summit distance, so neither the ~31-mile note nor the 5.5-mile summit day can be settled. A GPS track distance from the mine camp to the true summit and back would settle it.",
+   "sources": [
+    "https://onehikeaweek.com/2012/08/19/mount-ballard/",
+    "https://www.summitpost.org/azurite-peak/154496"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Access text copied from a different trailhead area",
+   "verdict": "fixed",
+   "correct_value": "A Northwest Forest Pass (or America the Beautiful / day pass, $5/day or $30/year) is required at the Canyon Creek trailhead; the Cutthroat Lake camping rule belongs to a different trailhead this route never uses.",
+   "evidence": "The Forest Service Canyon Creek Trailhead page lists a $5/day or $30/year fee payable with a Northwest Forest Pass, digital day pass or interagency pass. The WTA Canyon Creek page independently says a Northwest Forest Pass or America the Beautiful pass is required at the lot after milepost 141. The route starts at Canyon Creek (approach, waypoints, passRequired), so the Washington Pass/Blue Lake/Cutthroat trailhead list and the Cutthroat Lake rule were copied from another area.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/canyon-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/canyon-creek"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads",
+     "replace": "Northwest Forest Pass required at the Canyon Creek trailhead",
+     "id": "wa_mount_ballard_south",
+     "fact": "Access text copied from a different trailhead area"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "; no camping within ¼ mile of Cutthroat Lake",
+     "replace": "",
+     "id": "wa_mount_ballard_south",
+     "fact": "Access text copied from a different trailhead area"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Road to the trailhead",
+   "verdict": "fixed",
+   "correct_value": "Paved SR 20 straight to a large trailhead lot beside the highway",
+   "evidence": "The Forest Service page places the Canyon Creek Trailhead on State Route 20 near milepost 141, 55.1 miles west of Winthrop, closed only when the highway closes in winter. The WTA page likewise puts the large parking area directly on the left of Highway 20 after milepost 141. No gravel road is involved; the gravel/drop-off description belongs to the Harts Pass road on the east side.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/canyon-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/canyon-creek"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Gravel, narrow, seasonal — steep drop-offs, yield to trucks",
+     "replace": "Paved highway to a large trailhead lot beside SR 20; no gravel road",
+     "id": "wa_mount_ballard_south",
+     "fact": "Road to the trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "fact": "One-way approach distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route description says the shortest approach (Slate Pass, Middle Fork Pasayten, Freds Pass, upper Eureka Creek) is 15 miles long, matching the approach prose. A four-day trip report through Rolo Pass to Shellrock Basin gives only a 35-mile total including side trips and no segment distances; other reports give totals that include several extra peaks. No second source states the one-way distance, so neither the 15-mile prose nor the 13-mile summit pin can be confirmed. A GPS track from Slate Pass to Shellrock Basin/Carru would settle it.",
+   "sources": [
+    "https://www.summitpost.org/mount-carru/151490",
+    "https://trailcatjim.com/shellrock-basin-mt-lago-mt-carru-blackcap-mtn/",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Direction along the Middle Fork Pasayten trail",
+   "verdict": "fixed",
+   "correct_value": "North (downstream) along the Middle Fork Pasayten",
+   "evidence": "An Osceola trip report from Slate Pass says the party travelled downstream along the Middle Fork Pasayten toward Freds Lake and Lake Doris. A separate Middle Fork Pasayten trip account describes heading north and downstream along the Middle Fork from the Doris Lake area. The row's own pins run north from the junction to the Eureka Creek turnoff.",
+   "sources": [
+    "https://trailcatjim.com/osceola-peak-mt-rolo/",
+    "https://static.deanmyerson.org/Pasayten-Wilderness,-part-1---Middle-Fork-of-the-Pasayten-River.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "before turning south down the Middle Fork Pasayten drainage",
+     "replace": "before turning north down the Middle Fork Pasayten drainage",
+     "id": "wa_osceola_peak_scramble",
+     "fact": "Direction along the Middle Fork Pasayten trail"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "find": "Turn south and follow the Middle Fork Pasayten trail up the valley.",
+     "replace": "Turn north and follow the Middle Fork Pasayten trail down the valley.",
+     "id": "wa_osceola_peak_scramble",
+     "fact": "Direction along the Middle Fork Pasayten trail"
+    }
+   ]
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "fact": "Summit-day gain from Lake Doris",
+   "verdict": "unresolved",
+   "correct_value": "About 1,600 ft from Lake Doris to the summit; the ~1,400 ft figure is the talus slope up to the southwest ridge/south face",
+   "evidence": "Lake Doris sits at 6,975 ft (route description) or 6,991 ft (state fish-and-wildlife lake record), and Osceola's summit is 8,587 ft (encyclopedia entry, trip report 8,587/8,579), so camp to summit is about 1,600 ft, as the waypoint directions (800 + 800 ft) say. The 1,400 ft figure in the sources is the talus climb to the southwest ridge or south face before finishing to the summit, which is how beta and approach already phrase it, so those are left. descent_text stated 1,400 ft as the whole summit-to-camp descent and is corrected. itinerary day 2 gainFt/lossFt 1,450 is left untouched because day figures may not change while the itinerary total already differs from gain_ft (unresolved total-gain item).",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://wdfw.wa.gov/fishing/locations/high-lakes/doris",
+    "https://en.wikipedia.org/wiki/Osceola_Peak",
+    "https://trailcatjim.com/osceola-peak-mt-rolo/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "fact": "Itinerary total mileage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report gives 36 miles round trip (18 miles car to summit, including Dot Mountain); another puts the camp near Shellrock Pass about 16 miles in (matching day 1) but gives no total. The itinerary's 41-mile day sum includes a 9-mile Dot/Lago loop, and no second source states a total for this itinerary. A second source giving the round-trip distance from Slate Pass via Shellrock Pass would settle whether the note or the day-2 loop mileage should change.",
+   "sources": [
+    "https://onehikeaweek.com/2015/08/16/ptarmigan-peak/",
+    "https://hike2hike.com/summits/mount-lago-and-ptarmigan-peak-north-cascades-bulgers/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "fact": "Waypoint pins placed on the wrong features",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Berk Creek junction (4,400 ft) is pinned ~150 m from the 8,614 ft summit and the Shellrock Pass bench is pinned at Dot Mountain's summit coordinate; the names and elevations are plausible for the real features, so the defect is the lat/lng, which is out of scope for this pass. Re-pinning both waypoints from a topo map would settle it.",
+   "sources": [
+    "https://peakvisor.com/peak/dot-mountain.html",
+    "https://hike2hike.com/summits/mount-lago-and-ptarmigan-peak-north-cascades-bulgers/"
+   ],
+   "patches": []
+  }
+ ]
+}

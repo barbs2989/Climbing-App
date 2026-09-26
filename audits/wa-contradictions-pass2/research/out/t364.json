@@ -1,0 +1,543 @@
+{
+ "file": "t364.json",
+ "results": [
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Rack: cams or not",
+   "verdict": "fixed",
+   "correct_value": "A single set of nuts suffices (fixed piton mid-pitch); a few small cams are optional — no large cams (#1-#3) required.",
+   "evidence": "The route listing says one fixed pin and a single set of nuts will suffice. A peak overview says a small rack of cams 0.3-1 in plus stoppers is plenty for each summit-block route; a forum thread says there is little real need for gear. So nuts suffice and small cams are optional; 'no cams needed' as an absolute and Camalot #1-#3 as required are both unsupported. detailed_rack softened; rack[0] and sling_rack.cams changed to optional small cams.",
+   "sources": [
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://www.summitpost.org/unicorn-peak/151196",
+    "https://www.mountainproject.com/forum/topic/114778842/beta-on-unicorn-peak-in-the-tatoosh"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "plus a single set of nuts is sufficient; no cams needed.",
+     "replace": "plus a single set of nuts is sufficient; a few small cams are optional.",
+     "id": "wa_classic_route_2",
+     "fact": "Rack: cams or not"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      0
+     ],
+     "expect": "Cams (Camalot #1–#3 or equivalent hexes)",
+     "value": "A few small cams (optional)",
+     "id": "wa_classic_route_2",
+     "fact": "Rack: cams or not"
+    },
+    {
+     "op": "set",
+     "column": "sling_rack",
+     "path": [
+      "cams"
+     ],
+     "expect": "3 cams (e.g. Camalot #1, #2, #3) or equivalent hexes",
+     "value": "A few small cams, optional",
+     "id": "wa_classic_route_2",
+     "fact": "Rack: cams or not"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Climb length",
+   "verdict": "fixed",
+   "correct_value": "15 m (50 ft)",
+   "evidence": "Each of the three summit-block routes is listed as a single 50 ft (15 m) pitch; trip reports describe the south face of the horn as about 50 ft high with 40-50 ft routes. length_m 122 was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/",
+    "https://www.summitpost.org/unicorn-peak/151196"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 122,
+     "value": 15,
+     "id": "wa_classic_route_2",
+     "fact": "Climb length"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Rope length recommended for the rappel",
+   "verdict": "fixed",
+   "correct_value": "A 30 m rope is usually enough but can come up just short; 35-40 m removes any doubt. No source recommends 60 m.",
+   "evidence": "The route listing says a 30 m rope is adequate for the lead and the rap; the neighbouring route's listing says a 40 m rope is plenty for the rap; a trip report found a 30 m rope fell short at one rappel station; another overview reports 37 m was just enough and 40 m sufficient. The one 60 m mention is a party that carried 60 m on hearsay, not a recommendation. The rappels text (which also named a trip report as its source) is aligned to 35-40 m.",
+   "sources": [
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://www.mountainproject.com/route/119135747/the-roof",
+    "http://ericsbasecamp.net/trips/Unicorn/Unicorn.htm",
+    "https://www.summitpost.org/unicorn-peak/151196",
+    "https://www.hippohamster.com/posts/unicorn-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "a trip report recommends 60 m because a 30 m rappel may not reach the ground where the moat is open.",
+     "replace": "it can come up just short where the moat is open, so 35-40 m removes any doubt.",
+     "id": "wa_classic_route_2",
+     "fact": "Rope length recommended for the rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Gain from the trailhead to Snow Lake",
+   "verdict": "fixed",
+   "correct_value": "About 350 ft of up-and-down one way (700 ft is the round-trip cumulative)",
+   "evidence": "The trail to Snow Lake dips and climbs: Snow Lake sits only ~130 ft above the parking, for about 350-370 ft of one-way gain; the 700 ft figure is the cumulative round-trip up-and-down. The 700 ft in approach_variants was a round-trip figure presented as one-way.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes",
+    "https://visitrainier.com/bench-and-snow-lakes-2/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly 700 ft to Snow Lake",
+     "replace": "roughly 350 ft of up-and-down to Snow Lake",
+     "id": "wa_classic_route_2",
+     "fact": "Gain from the trailhead to Snow Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_2",
+   "fact": "Snow Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "~4,550 ft",
+   "evidence": "The trailhead pullout is about 4,550 ft (a traverse trip report starts at 4,550 ft; Snow Lake is 4,685 ft and sits ~130 ft above the parking, i.e. ~4,555 ft). The 4,400 ft pin elevation disagrees with the row's own '~4,500 ft' trailhead text and with both sources.",
+   "sources": [
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/",
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes",
+    "https://en.wikipedia.org/wiki/Snow_Lake_(Mount_Rainier)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4400,
+     "value": 4550,
+     "id": "wa_classic_route_2",
+     "fact": "Snow Lake Trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Climb length",
+   "verdict": "fixed",
+   "correct_value": "15 m (50 ft)",
+   "evidence": "Each of the three summit-block routes is listed as a single 50 ft (15 m) pitch; trip reports describe the south face of the horn as about 50 ft high with 40-50 ft routes. length_m 122 was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/119176566/open-book",
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/",
+    "https://www.summitpost.org/unicorn-peak/151196"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 122,
+     "value": 15,
+     "id": "wa_open_book_2",
+     "fact": "Climb length"
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Gain from the trailhead to Snow Lake",
+   "verdict": "fixed",
+   "correct_value": "About 350 ft of up-and-down one way",
+   "evidence": "The trail to Snow Lake dips and climbs: Snow Lake sits only ~130 ft above the parking, for about 350-370 ft of one-way gain; the 700 ft figure is the cumulative round-trip up-and-down. The 700 ft in approach_variants was a round-trip figure presented as one-way.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes",
+    "https://visitrainier.com/bench-and-snow-lakes-2/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly 700 ft to Snow Lake",
+     "replace": "roughly 350 ft of up-and-down to Snow Lake",
+     "id": "wa_open_book_2",
+     "fact": "Gain from the trailhead to Snow Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Rack needed (light vs large cams)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The row says gear is optional and light, and that if you protect the wide cracks you want #3-#4 cams and little else; 'light rack of 1-2 big cams, optional' and 'poorly protected without large cams' are compatible statements, and the route listing says exactly 'big cracks for #3 or #4 cams but not much else'.",
+   "sources": [
+    "https://www.mountainproject.com/route/119176566/open-book"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Rope length",
+   "verdict": "fixed",
+   "correct_value": "40 m (30 m can fall short on the rappel)",
+   "evidence": "The neighbouring route's listing says 40 m is plenty for the shared rap; a trip report found 30 m fell short at one station; another overview reports 37 m just enough, 40 m sufficient. rope_length_m, rappels and descent_text already say 40 m; gear[0] and rack[3] are aligned.",
+   "sources": [
+    "https://www.mountainproject.com/route/119135747/the-roof",
+    "http://ericsbasecamp.net/trips/Unicorn/Unicorn.htm",
+    "https://www.summitpost.org/unicorn-peak/151196"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "expect": "30-35m rope",
+     "value": "40m rope",
+     "id": "wa_open_book_2",
+     "fact": "Rope length"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      3
+     ],
+     "expect": "30-35m single rope",
+     "value": "40m single rope",
+     "id": "wa_open_book_2",
+     "fact": "Rope length"
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Face the line climbs",
+   "verdict": "fixed",
+   "correct_value": "South face of the summit block, about 50 ft right of the Classic Route (not the east side)",
+   "evidence": "The route listing places Open Book at two wide left-leaning cracks about 50 ft right of the Classic Route's base, climbing up and left to the shared anchor. A traverse trip report lists Open Book among the three or four routes on the ~50 ft south face. The separate, easier east-side option (reached counterclockwise around the block) is a different line, which the row's own bail text already treats as distinct. Approach, approach_variants notes and baseFinding corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/119176566/open-book",
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/",
+    "https://www.summitpost.org/unicorn-peak/151196"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The Open Book line is described as taking the east-facing side of the summit pinnacle rather than the straight-up south face used by the Classic Route, so from the base of the horn stay slightly climber's-right/east before starting the technical climbing;",
+     "replace": "The Open Book line starts at two wide, left-leaning cracks about 50 ft right of the Classic Route on the same south face, so from the base of the horn move climber's-right before starting the technical climbing;",
+     "id": "wa_open_book_2",
+     "fact": "Face the line climbs"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "This route takes the east-facing side of the pinnacle rather than the south face direct,",
+     "replace": "This route takes the right-hand end of the south face rather than the face direct,",
+     "id": "wa_open_book_2",
+     "fact": "Face the line climbs"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "ORIENTATION TEST: this line is on the EAST-FACING side of the pinnacle. The Classic Route goes straight up the SOUTH face.",
+     "replace": "ORIENTATION TEST: this line is at the RIGHT-HAND END of the SOUTH face. The Classic Route goes straight up the MIDDLE of the same face.",
+     "id": "wa_open_book_2",
+     "fact": "Face the line climbs"
+    }
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "fact": "Snow Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "~4,550 ft",
+   "evidence": "The trailhead pullout is about 4,550 ft (a traverse trip report starts at 4,550 ft; Snow Lake is 4,685 ft and sits ~130 ft above the parking, i.e. ~4,555 ft). The 4,400 ft pin elevation disagrees with the row's own '~4,500 ft' trailhead text and with both sources.",
+   "sources": [
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/",
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes",
+    "https://en.wikipedia.org/wiki/Snow_Lake_(Mount_Rainier)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4400,
+     "value": 4550,
+     "id": "wa_open_book_2",
+     "fact": "Snow Lake Trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_roof",
+   "fact": "Climb length",
+   "verdict": "fixed",
+   "correct_value": "15 m (50 ft)",
+   "evidence": "Each of the three summit-block routes is listed as a single 50 ft (15 m) pitch; trip reports describe the south face of the horn as about 50 ft high with 40-50 ft routes. length_m 122 was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/119135747/the-roof",
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/",
+    "https://www.summitpost.org/unicorn-peak/151196"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 122,
+     "value": 15,
+     "id": "wa_the_roof",
+     "fact": "Climb length"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_roof",
+   "fact": "Gain from the trailhead to Snow Lake",
+   "verdict": "fixed",
+   "correct_value": "About 350 ft of up-and-down one way",
+   "evidence": "The trail to Snow Lake dips and climbs: Snow Lake sits only ~130 ft above the parking, for about 350-370 ft of one-way gain; the 700 ft figure is the cumulative round-trip up-and-down. The 700 ft in approach_variants was a round-trip figure presented as one-way.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes",
+    "https://visitrainier.com/bench-and-snow-lakes-2/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly 700 ft to Snow Lake",
+     "replace": "roughly 350 ft of up-and-down to Snow Lake",
+     "id": "wa_the_roof",
+     "fact": "Gain from the trailhead to Snow Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_roof",
+   "fact": "Rope length",
+   "verdict": "fixed",
+   "correct_value": "35-40 m (40 m plenty for the rap)",
+   "evidence": "The route listing says a 40 m rope is plenty for the rap; a trip report found a 30 m rope fell short at one station; another overview reports 37 m just enough and 40 m sufficient. gear[0] aligned with rack[3] and rope_length_m.",
+   "sources": [
+    "https://www.mountainproject.com/route/119135747/the-roof",
+    "http://ericsbasecamp.net/trips/Unicorn/Unicorn.htm",
+    "https://www.summitpost.org/unicorn-peak/151196"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "expect": "30-35m rope",
+     "value": "35-40m rope",
+     "id": "wa_the_roof",
+     "fact": "Rope length"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_roof",
+   "fact": "Snow Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "~4,550 ft",
+   "evidence": "The trailhead pullout is about 4,550 ft (a traverse trip report starts at 4,550 ft; Snow Lake is 4,685 ft and sits ~130 ft above the parking, i.e. ~4,555 ft). The 4,400 ft pin elevation disagrees with the row's own '~4,500 ft' trailhead text and with both sources.",
+   "sources": [
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/",
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes",
+    "https://en.wikipedia.org/wiki/Snow_Lake_(Mount_Rainier)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4400,
+     "value": 4550,
+     "id": "wa_the_roof",
+     "fact": "Snow Lake Trailhead elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Trailhead parking capacity",
+   "verdict": "fixed",
+   "correct_value": "About 15-20 cars",
+   "evidence": "One hiking guide says the paved shoulder fits only 15 to 20 vehicles and fills by about 9 AM on summer weekends; another says the half-moon lot holds a maximum of 20 cars with no overflow. The 25-car figure in approach_variants and crowds is aligned to 15-20.",
+   "sources": [
+    "https://www.baldhiker.com/bench-and-snow-lake-trail-on-mount-rainer-washington/",
+    "https://wherearethosemorgans.com/bench-and-snow-lakes-trail-mt-rainier-hike/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The lot holds only about 25 cars",
+     "replace": "The lot holds only about 15-20 cars",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Trailhead parking capacity"
+    },
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "parking lot holds only ~25 cars",
+     "replace": "parking lot holds only ~15-20 cars",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Trailhead parking capacity"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Distance to Snow Lake",
+   "verdict": "fixed",
+   "correct_value": "About 1-1.25 miles",
+   "evidence": "The Bench and Snow Lakes hike is 2.5 mi round trip in one trail guide and 2.2-2.6 mi round trip in others, i.e. roughly 1.1-1.3 mi one way; 1.5 mi is not supported.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/bench-and-snow-lakes",
+    "https://www.baldhiker.com/bench-and-snow-lake-trail-on-mount-rainer-washington/",
+    "https://visitrainier.com/bench-and-snow-lakes-2/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "to Snow Lake at about 1.3-1.5 miles",
+     "replace": "to Snow Lake at about 1-1.25 miles",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Distance to Snow Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Stevens Canyon Road open season",
+   "verdict": "fixed",
+   "correct_value": "Open from about late May/early June to mid-October",
+   "evidence": "A park-worker guide says the Stevens Canyon entrance reopens in early June and closes mid-October most years; a park news release shows a late-October scheduled closure (closed Oct 19 by early snow); the park's trailhead page says the road is open in summer, typically from June. 'Late June' opening in the waypoint note is too late.",
+   "sources": [
+    "https://wereintherockies.com/driving-mount-rainier/",
+    "https://www.nps.gov/mora/learn/news/winter-closures-10-19-17.htm",
+    "https://www.nps.gov/places/bench-and-snow-lake-trailhead.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Stevens Canyon Rd open summer only (roughly late June-Sept)",
+     "replace": "Stevens Canyon Rd open only from about late May or early June to mid-October",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Stevens Canyon Road open season"
+    }
+   ]
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "fact": "Elevation where the approach tops out",
+   "verdict": "fixed",
+   "correct_value": "The approach ends at the base of the ~50 ft summit block, below the 6,971 ft summit",
+   "evidence": "The summit is 6,971 ft; the summit-block routes are about 50 ft long, so the base of the block (where this approach ends) is not at 6,971 ft — the row's own 'Summit block' pin is 6,900 ft. Approach and climbing_route text reworded so the 6,971 ft figure is the summit, not the base.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Unicorn_Peak",
+    "https://sites.google.com/site/guideto100peaks/home/3-route-descriptions/94-unicorn-peak-6971-c",
+    "https://www.mountainproject.com/route/117385955/classic-route",
+    "https://trailcatjim.com/middle-tatoosh-traverse-unicorn-peak-the-castle/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "with 2,397 ft of gain to the 6,971 ft high point, topping out at the base of the summit block itself,",
+     "replace": "with 2,397 ft of gain, topping out at the base of the summit block itself, about 50 ft below the 6,971 ft summit,",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Elevation where the approach tops out"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "at the base of the summit block itself, at 6,971 ft,",
+     "replace": "at the base of the summit block itself, about 50 ft below the 6,971 ft summit,",
+     "id": "wa_unicorn_peak_r1",
+     "fact": "Elevation where the approach tops out"
+    }
+   ]
+  }
+ ]
+}

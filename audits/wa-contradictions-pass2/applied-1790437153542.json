@@ -1,0 +1,61 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Distance to the East Peak"
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Season start"
+  },
+  {
+   "id": "wa_mount_fricaba_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_duckabush_standard",
+   "before": {
+    "pro_tips": [
+     "Book your Recreation.gov wilderness permit as early as possible — the Duckabush corridor camps (10-Mile, Upper Duckabush, Marmot Lake) are not quota areas, but every night must still be reserved in advance",
+     "Plan on 3–4 days minimum: ~21-22 miles one-way just to O'Neil Pass, plus a full off-trail day for the summit",
+     "Since the true high point is disputed, some peakbaggers tag both the main summit and the East Peak, ~3.4 miles away"
+    ],
+    "approach": "From the Duckabush Trailhead (end of Forest Service Road 2510, ~440 ft, reached via US-101 south of Quilcene), follow the Duckabush River Trail #803 upriver. The first ~2.4 miles run at an easy grade along the river through old-growth forest, then the trail climbs steadily and at times steeply (~1,000 ft) to crest Big Hump at about mile 3.9 — the trail's first real obstacle, made looser and more exposed to sun/blowdown by a 2011 human-caused fire that scorched a swath of old growth on the Hump. Past Big Hump the trail drops back toward the river and continues upvalley through Five-Mile and Ten-Mile Camps, with several unbridged side-creek crossings that are normally an easy rock-hop but can be a real ford during spring snowmelt or after heavy rain. Beyond Upper Duckabush Camp the trail leaves the valley floor and switchbacks up out of the drainage, gaining roughly 2,000 ft over the final ~3 miles through forest to reach Marmot Lake (~4,400 ft), a reliable-water high camp at roughly 19-20 trail miles from the trailhead (the Duckabush/O'Neil Pass corridor runs 16+ miles from the park boundary alone, per NPS). From Marmot Lake it's a little over a mile more, skirting a ridge with Quinault-valley views, to O'Neil Pass (~4,950 ft). This is a serious multi-day backpack approach with no realistic car-to-summit day-trip option; nearly all parties camp at Marmot Lake or O'Neil Pass and climb the peak from there. From at or near O'Neil Pass, leave the maintained trail and head cross-country (no path, talus and heather benches) toward Duckabush's south side to reach either the base of the South Ridge or the south aspect of Middle Peak — both listed as Grade I, Class 4 lines in the regional climbers' guide. Snow and small permanent snowfields persist on the mountain's north side well into summer, so the south-side/ridge lines are the standard route; carry an ice axe for lingering snow on the benches and approach slopes in early season (June is listed as the start of the climbing season). An alternate approach reaches the same high camp via the Dosewallips River Trail and Anderson Pass area rather than the Duckabush River Trail."
+   }
+  },
+  {
+   "id": "wa_mount_fricaba_standard",
+   "before": {
+    "access": {
+     "fees": "$5 per vehicle per day (or $30 annual) at Upper Dungeness Trailhead, paid via Recreation.gov Scan & Pay or a Northwest Forest/Interagency Recreation Pass (cash not accepted). Olympic NP overnight wilderness permits run $8/adult/night plus a $6 non-refundable per-permit reservation fee (free for youth 15 and under), or use the $45/person Annual Wilderness Camping Permit Pass, which covers the $8 per night charge but not the $6 reservation fee.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are required for all overnight stays at Home Lake and Constance Pass (free loaner canisters available at NPS Wilderness Information Centers); campfires are prohibited above 3,500 ft; camp on bare ground at least 200 ft from water/trails; no toilets past Boulder Shelter — bury waste 6-8 in deep, 200 ft from water and campsites, pack out toilet paper.",
+     "permit": "No permit needed for day use or camping within Buckhorn Wilderness (register at the trailhead board), but a reserved NPS wilderness camping permit is required for any overnight stay once you cross into Olympic National Park near Home Lake/Constance Pass; book via Recreation.gov.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Buckhorn Wilderness) for the lower approach from Upper Dungeness Trailhead; Olympic National Park (Wilderness) beyond the boundary sign roughly 7.1 miles in, near Home Lake/Constance Pass and Deception Basin — the summit sits on the shared NF/NP boundary.",
+     "land_manager": "Olympic National Forest (Buckhorn Wilderness) for the lower approach from Upper Dungeness Trailhead; Olympic National Park (Wilderness) beyond the boundary sign roughly 7.1 miles in, near Home Lake/Constance Pass and Deception Basin — the summit sits on the shared NF/NP boundary.",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass / Interagency Pass for trailhead parking; NPS wilderness permit for overnight camping.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required in the Buckhorn Wilderness",
+      "where": "Camp Handy and Boulder Shelter are on national forest land; a recreation pass is needed to park. A park wilderness permit is needed to camp at Home Lake or anywhere past the park boundary, about a mile beyond Boulder Shelter."
+     }
+    }
+   }
+  }
+ ]
+}

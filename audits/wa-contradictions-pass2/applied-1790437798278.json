@@ -1,0 +1,532 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "White River trailhead elevation"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rack: screws, pickets, and where the rock gear is used"
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "High camp location and elevation"
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_bread_loaf",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "Start time"
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Top of the headwall"
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "May",
+    "reason"
+   ],
+   "fact": "Mowich Lake road access"
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "Mowich Lake road access"
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "column": "beta",
+   "path": [],
+   "fact": "Mowich Lake road access"
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "summer"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Driving to Mowich Lake"
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Whether the climbing fee is per climb or per year"
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "column": "hazards",
+   "path": [
+    0
+   ],
+   "fact": "Ladders on the route"
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Ladders on the route"
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Ladders on the route"
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Approach time"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 46.9024,
+      "lng": -121.6438,
+      "elev": 4800,
+      "name": "White River Campground (Glacier Basin Trailhead)",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.952,
+      "lng": -121.818,
+      "elev": 4900,
+      "name": "Mowich Lake Camp",
+      "type": "Campsite",
+      "distMi": 0.5
+     },
+     {
+      "lat": 46.89,
+      "lng": -121.8,
+      "elev": 7300,
+      "name": "Puyallup Winthrop Junction Camp",
+      "type": "Campsite",
+      "distMi": 9
+     },
+     {
+      "lat": 46.875,
+      "lng": -121.775,
+      "elev": 8500,
+      "name": "Puyallup Glacier Serac Zone",
+      "type": "Hazard",
+      "distMi": 11
+     },
+     {
+      "lat": 46.86298,
+      "lng": -121.77486,
+      "elev": 14112,
+      "name": "Liberty Cap",
+      "type": "Summit",
+      "distMi": null
+     }
+    ],
+    "detailed_rack": "Per person: two technical ice tools, 12-point crampons, helmet, harness. Per team: 30–60 m rope (often two for rappels), 6–8 ice screws, 3–4 pickets, a light rock rack (small cams/nuts) for the Black Pyramid, V-thread tool, crevasse-rescue kit."
+   }
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "before": {
+    "timing": {
+     "totalHrs": 30,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": 6,
+     "approachTimeHrs": 12,
+     "recommendedStart": "~2:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "From the Westside Road gate, walk the road to Round Pass, then the South Puyallup River Trail and Wonderland Trail to a camp around 6,000 ft.",
+       "fromTo": "Long approach to St. Andrews Park",
+       "section": "Approach"
+      },
+      {
+       "hrs": 5.5,
+       "note": "Climb the Puyallup Cleaver past Tokaloo Spire, then traverse north across the Puyallup and South Mowich glaciers to a high camp near Colonnade Ridge (~9,600 ft).",
+       "fromTo": "Move to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "Climb steep gullies and snowfields through Sunset Amphitheater — in a dry year a thin choss-wall/gully transition on the ridge can need an improvised belay or stop the climb — then descend a standard rout…",
+       "fromTo": "Summit day",
+       "section": "Climb"
+      },
+      {
+       "hrs": 6,
+       "note": "Descend to Camp Schurman or Camp Muir depending on the descent route, then arrange transport back to Westside Road since the standard descents exit on the opposite side of the moun…",
+       "fromTo": "Exit",
+       "section": "Descent"
+      }
+     ]
+    },
+    "climate": {
+     "fall": "Loose rock ridge becomes more exposed as snow recedes; increasingly serious",
+     "spring": "Heavy snow loading on the approach glaciers",
+     "summer": "Primary window (Jul-Aug based on the FA timing)",
+     "winter": "Not climbed; Westside Road access is minimal even for approach",
+     "typical": "Volcanic stratovolcano; rapidly changing weather, high winds, whiteouts common",
+     "bySeason": {
+      "fall": "Shorter days, early storms, dry glaciers",
+      "spring": "Prime alpine ice/snow season; cold, firm conditions",
+      "summer": "Warmer, more crevasse opening, higher rockfall/icefall on faces",
+      "winter": "Severe; full winter mountaineering, very few ascents"
+     },
+     "forecastZone": "NWS Seattle - Mount Rainier"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "before": {
+    "climate": {
+     "fall": "Bergschrunds and the ice cliff open up, increasing difficulty",
+     "spring": "Ice cliff terrain still well-bridged; heavier snow lower down",
+     "summer": "Primary season, June–August",
+     "winter": "Rarely attempted; road stays open but conditions are severe",
+     "typical": "Volcanic stratovolcano; rapidly changing weather, high winds, whiteouts common",
+     "bySeason": {
+      "fall": "Shorter days, early storms, dry glaciers",
+      "spring": "Prime alpine ice/snow season; cold, firm conditions",
+      "summer": "Warmer, more crevasse opening, higher rockfall/icefall on faces",
+      "winter": "Severe; full winter mountaineering, very few ascents"
+     },
+     "forecastZone": "NWS Seattle - Mount Rainier"
+    }
+   }
+  },
+  {
+   "id": "wa_bread_loaf",
+   "before": {
+    "timing": {
+     "totalHrs": 2.5,
+     "summitTimeHrs": 2.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Pre-dawn start",
+     "sectionBreakdown": [
+      {
+       "hrs": 2.5,
+       "note": "A short approach to a boulder, not a Rainier summit route; walk in, boulder for a few hours, and hike out the same day.",
+       "fromTo": "Bouldering session at Bread Loaf",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Glacier",
+      "notes": "From the bivy near 9,600 ft between the North Mowich and Edmunds glaciers (reached over Ptarmigan Ridge from Mowich Lake), cross volcanic scree and then the lower Edmunds Glacier to the foot of the headwall near 9,900 ft. Overhead seracs on this side of the mountain do calve; keep moving under them and start before dawn.",
+      "pitch": "Camp to the headwall"
+     },
+     {
+      "grade": "Steep snow/ice",
+      "notes": "The bergschrund at the foot of the headwall is often impassable. It has been passed on the climber's left, near a twin gendarme, or through broken crevasses on the left. Expect a short steep step onto the face; belay it when the snow bridge or ice is marginal.",
+      "pitch": "Bergschrund bypass"
+     },
+     {
+      "crux": true,
+      "grade": "Sustained 45–50° snow/ice",
+      "notes": "A long, sustained slope from about 9,900 to 13,000 ft, reported at 45° with 50° sections. Conditions decide the character: penitente-textured névé that gives steps without front-pointing, or a thin skin of snow over hard alpine ice with shiny blue patches. Rockfall comes down the face once sun hits it; carry screws for the icy years.",
+      "pitch": "Main headwall"
+     },
+     {
+      "grade": "Steep snow, penitentes",
+      "notes": "Above the steepest climbing near 13,000 ft, the route joins upper Sunset Ridge and the bench atop the Edmunds, then heads for Liberty Cap (14,112 ft). Penitentes up to about 3 ft tall can cover this ground and turn it into slow, exhausting work. Descend by carryover down the Emmons-Winthrop or a west-side route.",
+      "pitch": "Upper Sunset Ridge traverse"
+     }
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "July, when the headwall holds firm neve and the Mowich approach is snow-free, before the bergschrund becomes impassable",
+     "monthBreakdown": {
+      "May": {
+       "reason": "The Mowich Lake road is still closed and snowed in, adding many miles, and the northwest face carries unconsolidated spring snow and slide risk.",
+       "status": "risky"
+      },
+      "July": {
+       "reason": "Firm neve on the headwall and a melted-out approach; the bergschrund may need a bypass on climber's left, and rockfall picks up once sun hits the face.",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "The face is well filled and corns up for ski descents, but the Mowich Lake road usually has not opened and the approach through Spray Park is snowbound.",
+       "status": "good"
+      },
+      "August": {
+       "reason": "The bergschrund grows and the face turns to penitentes and hard ice, with more rockfall and wider crevasses on the Edmunds approach.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Late-season bare ice and open crevasses on a remote face, with the first fall storms arriving and shortening days.",
+       "status": "risky"
+      }
+     }
+    },
+    "beta": "First skied in 1997 by Armond DuBuque, Doug Ingersoll, Andrew McLean, and Carl Skoog; typically accessed via the Mowich Lake road."
+   }
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "before": {
+    "pro_tips": [
+     "Confirm with Camp Muir rangers whether the Direct or the Cleaver is the current in-condition line",
+     "Best early season (May–June) when the headwall is filled; switch to the Cleaver once it breaks up",
+     "Move fast under the icefall in the pre-dawn cold",
+     "Plan to descend the Cleaver rather than down-climb the steep direct"
+    ],
+    "crowds": {
+     "peakTraffic": "Late May-June weekends, before the direct falls out of condition",
+     "solitudeRating": 2,
+     "estimatePerSeason": "A few hundred climbers during the brief May-June window it's in condition; traffic largely gets absorbed into the DC once the headwall breaks up"
+    },
+    "climate": {
+     "typical": "Summit temps commonly well below freezing year-round; heavy maritime snowfall; rapid weather changes typical of a 14,000-ft Cascade volcano.",
+     "bySeason": {
+      "fall": "Crevasses wide open, rockfall increases, early storms",
+      "spring": "Deep snowpack, firm climbing, cold; storms frequent",
+      "summer": "Prime season; warmer days, firmer nights, afternoon convection possible",
+      "winter": "Severe; very few attempts, full winter conditions"
+     },
+     "forecastZone": "Mount Rainier (NWS Seattle)"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "before": {
+    "timing": {
+     "totalHrs": 21,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 9,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Drive to Mowich Lake and hike via the Spray Park area to a base camp near the Mowich Glacier (~9,000-9,600 ft), caching snowshoes/extra fuel if planning to return to camp.",
+       "fromTo": "Approach to base camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 3,
+       "note": "Shift to a higher bivy below the face; parties bring a rock rack (small cams, offsets, tricams) for the mid-face rock band above.",
+       "fromTo": "Move to high camp / rest and rack up",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "Climb roughly 4,000 ft of sustained 40-55° ice through the Hourglass, staying right of an exposed, detached rock band, then cross the mid-face rock band to Sunset Ridge and the sum…",
+       "fromTo": "Summit day",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Paradise to Camp Muir, then Cathedral Gap and Ingraham Flats",
+      "notes": "Paradise (5,420 ft) is the trailhead. Maintained tread on the Skyline Trail runs past Panorama Point (~6,800 ft) and Pebble Creek (~7,200 ft) — Pebble Creek is the last running water on the route — and ends near McClure Rock (~7,385 ft). Everything above that is the Muir Snowfield, which the Park Service does not mark or maintain; the trench you follow is boot-packed and wanded by the guide services and is erased by wind or new snow within hours.\n\nThe snowfield is the part of this route that kills people who are not climbing. It is a narrow tongue with heavily crevassed glaciers on both flanks — Nisqually to the west, Cowlitz to the north and east, Paradise to the south and east — and the cliff band between McClure Rock and Anvil Rock is corniced and snow-covered in winter. A modest navigation error puts you on a glacier or over an edge. The Park Service publishes bearings for this ground for that reason: north of Pebble Creek the line to Moon Rocks runs 355 degrees true. Carry map and compass and know the bearings before the visibility goes.\n\nCamp Muir (10,080 ft) is the high camp: stone huts, a public shelter, a ranger station and toilets on a saddle between the snowfield and the Cowlitz Glacier. Nightly capacity is capped and the camp fills, especially Friday and Saturday. Ingraham Flats and the snowfield itself are the sanctioned overflow, each with a much smaller cap.\n\nPermits: everyone on a glacier or above roughly 10,000 ft needs a per-person climbing permit for the calendar year, obtained online or at a ranger station. Overnights during the high-use season need a wilderness permit for the specific camp, with roughly half the capacity reservable in advance and the balance held for walk-ups; a reservation still has to be picked up in person. Party size is two or more unless you hold a rare solo authorisation.\n\nFrom Camp Muir the day begins roped. Cross the upper Cowlitz Glacier eastward toward the Cathedral Rocks, pass through Cathedral Gap — the breach in that rock ridge — and drop into Ingraham Flats (~11,200 ft), a bench under the Ingraham icefall used both as a rest stop and as an alternative high camp.",
+      "distMi": 4.5,
+      "gainFt": 4700,
+      "season": "Late May through September, once guide services have the boot track in",
+      "hazards": [
+       "Whiteout navigation on the Muir Snowfield — unmarked, unmaintained, glaciers and cliffs on both flanks, boot track erased by wind",
+       "Corniced cliff band between McClure Rock and Anvil Rock, hidden under snow in winter",
+       "Crevasses on the Cowlitz crossing between Camp Muir and Cathedral Gap",
+       "Rockfall in Cathedral Gap and off the Cleaver, worst once the sun is on it",
+       "Serac fall from the Ingraham icefall above Ingraham Flats"
+      ],
+      "primary": true,
+      "baseFinding": "The climbing starts where you step off snow onto the rock of the Cleaver, and there are three checks that you are in the right place.\n\nFirst, direction out of Camp Muir. You should be crossing the Cowlitz eastward and gaining a notch in a rock ridge — Cathedral Gap. If instead you are climbing a rock ridgeline immediately northwest of camp, out of the tents, you are on the Cowlitz Cleaver and you are on the Gibraltar Ledges approach, a different route.\n\nSecond, the Flats. Ingraham Flats is genuinely flat — a bench with dug tent platforms and the Ingraham icefall hanging above and to the west. If you are still gaining steadily and have not walked across level ground, you have not reached it.\n\nThird, the Cleaver itself. From the Flats you traverse to the Cleaver's lower southern side. You do not climb the nose. The nose is the low rock toe pointing down at the Flats, and the boot track passes it and gains rock roughly 300 ft above it, on the Ingraham side. If you are pulling onto rock at the very lowest point of the rib you are off the track. Once on it, you are on a rock rib with glacier on both sides and you follow it to its top at about 12,300 ft.\n\nNegative marker: if the whole way from the Flats stays on snow with the icefall directly overhead and you never touch rock, you are on the Ingraham Direct, not the Cleaver."
+     },
+     {
+      "name": "High camp at Ingraham Flats instead of Camp Muir",
+      "notes": "Ingraham Flats (~11,200 ft) is a permitted camp with a much smaller nightly cap than Camp Muir, and it is the sanctioned overflow when Muir is booked out. The approach is identical as far as Camp Muir; you then rope up and continue over the Cowlitz and through Cathedral Gap with camp gear, which turns the carry into a longer day but removes about 1,100 ft and the Cathedral Gap crossing from summit morning.\n\nThe trade is exposure. The Flats sit under the Ingraham icefall, and the camp is chosen and re-sited by the rangers with that in mind. There is no water, no shelter and no toilet building; the Camp Muir facilities are 1,100 ft below you.",
+      "season": "Same window; used when Camp Muir is full or to shorten summit day",
+      "hazards": [
+       "Serac fall from the Ingraham icefall onto the camp and the ground immediately above it",
+       "No water source and no shelter at the Flats",
+       "Camp capacity is small and separately permitted from Camp Muir"
+      ],
+      "baseFinding": "Camping here puts you within a few hundred metres of the Cleaver's base, so the recognition problem changes shape: you are looking for the traverse line off the bench rather than for the bench itself. From the tents, the Cleaver is the rock rib bounding the Flats on the north and west. Walk toward its lower southern flank and expect to gain rock a few hundred feet above its lowest toe, not at the toe. Icefall debris on the snow between camp and the rib is a sign you are crossing under the serac line rather than skirting it — that ground is to be crossed quickly and not lingered on."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "before": {
+    "hazards": [
+     "Large open crevasses and ladder crossings, especially mid-to-late season",
+     "The Corridor and upper glacier carry avalanche and collapse hazard after storms",
+     "Serac fall near the Winthrop icefall",
+     "Long, sustained glacier travel — fatigue-related falls on descent",
+     "Bergschrund crossing near 13,000 ft on the upper Emmons, usually snow-bridged; becomes a more distinct obstacle as crevasses open later in the season."
+    ],
+    "watch_out": [
+     "Open crevasses and ladders on the upper Emmons",
+     "Avalanche slab in the Corridor after fresh snow/wind",
+     "Crevasses on the Inter Glacier during descent glissades",
+     "Heat and soft snow on the long afternoon exit"
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Sustained fitness for a long summit day (~17 hrs total) with significant elevation gain from Camp Schurman",
+      "packWeight": "30-40 lb overnight pack to Camp Schurman; ~15-20 lb summit pack"
+     },
+     "approachTime": "6-9 hrs from the White River trailhead to Camp Schurman (9,460 ft)",
+     "requiredSkills": [
+      "Roped glacier travel & crevasse rescue",
+      "Confidence on aluminum-ladder crevasse crossings",
+      "Self-arrest/cramponing on 30-40° snow",
+      "Route-finding around open crevasses, especially mid-late season",
+      "Whiteout navigation"
+     ],
+     "experienceLevel": "Solid alternative first Rainier route for a partner with prior glacier-travel/crevasse-rescue training; somewhat more remote and self-sufficient than the DC"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "before": {
+    "timing": {
+     "totalHrs": 26.5,
+     "summitTimeHrs": 8,
+     "descentTimeHrs": 7,
+     "approachTimeHrs": 6,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "From Westside Road, follow the South Puyallup River Trail and Wonderland Trail toward St. Andrews Park.",
+       "fromTo": "Approach to St. Andrews Park",
+       "section": "Approach"
+      },
+      {
+       "hrs": 5,
+       "note": "Climb the Puyallup Cleaver to St. Andrews Rock, then use a ramp to drop onto the Tahoma Glacier at 9,600 ft; ample flat camp spots sit just below the rocks.",
+       "fromTo": "Move to high camp at St. Andrews Rocks",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8,
+       "note": "Navigate crevasse crossings on the Tahoma Glacier to the summit; one reported trip summited by 6:15 AM and was back at the tent by 9:30 AM, so the climbing itself is fast once unde…",
+       "fromTo": "Summit day",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7,
+       "note": "Reverse the approach back down the Puyallup Cleaver and out via the Wonderland Trail and Westside Road.",
+       "fromTo": "Exit",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,158 @@
+{
+ "applied": [
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_scramble_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Distance shown in the header"
+  },
+  {
+   "id": "wa_scramble_route",
+   "column": "overview",
+   "path": [],
+   "fact": "Which variant is the bypass"
+  },
+  {
+   "id": "wa_scramble_route",
+   "column": "best_season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_classic_route_3",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead card name vs its directions"
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "packWeight"
+   ],
+   "fact": "Ice screws and rock rack"
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Ice screws and rock rack"
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "column": "descent",
+   "path": [],
+   "fact": "Whether the rappel into the Zipper is part of the ascent or the descent"
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Whether the rappel into the Zipper is part of the ascent or the descent"
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Whether the rappel into the Zipper is part of the ascent or the descent"
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Whether the rappel into the Zipper is part of the ascent or the descent"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "before": {
+    "pitches": 4
+   }
+  },
+  {
+   "id": "wa_scramble_route",
+   "before": {
+    "dist_km": 7.3,
+    "overview": "A scenic alpine scramble from Eagle Peak Saddle to the summit featuring Class 3 rock with an exposed section and optional Class 4 bypass. The route combines well-maintained trail approach with high-alpine scrambling on volcanic terrain with prominent Mount Rainier views.",
+    "best_season": "Mid-late summer to early fall when snow is absent and conditions are most stable. June through early October provides the best weather, with July and August offering the warmest and most snow-free conditions."
+   }
+  },
+  {
+   "id": "wa_classic_route_3",
+   "before": {
+    "approach_logistics": {
+     "peakLat": 46.757985,
+     "peakLng": -121.752965,
+     "trailhead": "Narada Falls Parking Lot",
+     "trailheadLat": 46.77501,
+     "trailheadLng": -121.74624,
+     "trailheadDirection": "From the Pinnacle Saddle Trailhead across Stevens Canyon Road from the Reflection Lakes parking (~4,860 ft); when the road is snow-gated, winter parties start from the Narada Falls pullout"
+    }
+   }
+  },
+  {
+   "id": "wa_lane_peak_r2",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Short but steep winter approach (roughly 2-3 miles, ~2500 ft gain), can be slow without an established boot pack",
+      "packWeight": "Light-moderate day-climb load (~15-25 lb: rope, screws/pickets, rack, extra layers)"
+     },
+     "approachTime": "Roughly 45-75 minutes from the Narada Falls / Stevens Canyon area, longer depending on snow depth and trail-breaking conditions",
+     "requiredSkills": [
+      "40-45 degree snow/ice climbing",
+      "self-arrest and steep snow travel",
+      "avalanche hazard assessment",
+      "ice tool/crampon technique",
+      "short-roping or simul-climbing steep terrain",
+      "winter/whiteout navigation",
+      "companion rescue"
+     ],
+     "experienceLevel": "Solid alpine ice/mixed climber comfortable on sustained steep couloir terrain; described as the 'easiest' of the two Lane Peak couloirs but still a real alpine ice/mixed route, not a beginner outing"
+    },
+    "pro_needs": "Ice/snow protection; rock pro for anchors"
+   }
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "before": {
+    "descent": "From the top, rappel roughly 100+ ft (double rope) from anchors on the ridge down into the adjacent Zipper couloir, then continue down the Zipper or descend via the standard South Face gully/Lane-Denman saddle.",
+    "approach_variants": [
+     {
+      "name": "Narada Falls, under Denman Peak, and the first steep avalanche funnel",
+      "notes": "Begin at the Narada Falls parking area, which is plowed and open year-round. Travel on skis or snowshoes along the closed Reflection Lakes road, then traverse steep hillsides under Denman Peak toward Lane Peak's base, turning sharply uphill at the first steep avalanche funnel to reach the base of the couloir.\n\nThe route is a north-facing couloir immediately climber's left of the Zipper, with two or three steeper ice and mixed sections needing screws or pickets, and an upper couloir that steepens to about 60 degrees before topping out on the ridge above the Zipper.\n\nFrom the top, the standard move is a rappel of more than 100 ft — a double rope is recommended — down into the adjacent Zipper couloir, then either downclimb the remaining Zipper snow or continue over to the standard South Face line and the Lane-Denman saddle.\n\nThe approach traverse is itself avalanche terrain.",
+      "season": "Roughly Dec-May",
+      "hazards": [
+       "Avalanche exposure on the approach traverse beneath Denman Peak",
+       "Steep sustained ice and mixed ground that can be harder than rated depending on conditions",
+       "A rappel that transfers the party into the adjacent Zipper couloir, with rockfall and rope-pull consequences for anyone below",
+       "A rappel usually longer than a single 70 m rope doubled",
+       "Short winter days on a north aspect"
+      ],
+      "baseFinding": "LEFT TO RIGHT: LOVER'S LANE, THE ZIPPER, THE FLY. THIS IS THE LEFTMOST — IMMEDIATELY CLIMBER'S LEFT OF THE ZIPPER.\n\nTHE APPROACH TEST IS A COUNT, AND IT IS THE ONE THAT WORKS ON A SKI TRACK IN THE DARK: traversing under DENMAN PEAK toward Lane's base, you turn sharply uphill AT THE FIRST STEEP AVALANCHE FUNNEL YOU MEET. FIRST, not second. IF YOU HAVE PASSED ONE FUNNEL AND CARRIED ON TO ANOTHER, YOU ARE AT THE ZIPPER.\n\nTHE CLIMBING TEST IS ANGLE, AND IT IS DECISIVE BECAUSE THIS ROUTE IS THE STEEPEST OF THE THREE: the upper couloir reaches about 60 degrees, with two or three steeper ice and mixed sections below it that want screws. IF NOTHING HAS EXCEEDED ABOUT 45 DEGREES, YOU ARE IN THE ZIPPER OR THE FLY.\n\nTHE TOP-OUT TEST IS THE DEFINITIVE ONE, AND IT IS UNIQUE TO THIS ROUTE: LOVER'S LANE FINISHES ON THE RIDGE ABOVE THE ZIPPER, AND THE STANDARD DESCENT IS A RAPPEL OF MORE THAN 100 FT FROM THAT RIDGE INTO THE ZIPPER ITSELF. SO IF YOU CAN LOOK DOWN INTO A NEIGHBOURING COULOIR FROM WHERE YOU TOPPED OUT, YOU ARE ON LOVER'S LANE. If instead you topped out at a DEAD TREE IN A NOTCH with slings on it, you climbed the Zipper.\n\nPLAN THE ROPE BEFORE YOU LEAVE THE CAR, BECAUSE THE TOP OF THIS ROUTE IS THE WRONG PLACE TO FIND OUT: the rappel is usually longer than 100 ft, so a single 70 m doubled will not reach cleanly in a normal year. Two ropes, or a very deliberate plan for downclimbing the first section.\n\nAND THE THING THAT MAKES THIS ROUTE'S DESCENT DIFFERENT FROM ITS NEIGHBOURS': you do not descend your own line. You rappel into somebody else's, which is a good reason to know where parties on the Zipper are before you pull the rope."
+     }
+    ]
+   }
+  }
+ ]
+}

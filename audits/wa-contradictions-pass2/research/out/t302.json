@@ -1,0 +1,47 @@
+{"file": "t302.json", "results": [
+ {"id": "wa_mount_clark_standard", "fact": "How the Upper Royal Basin camp is booked", "verdict": "bivy_zone_list",
+  "correct_value": "Upper Royal Basin is not bookable on Recreation.gov; it is reserved by calling the Olympic Wilderness Information Center (Royal Lake and the lower zones are booked online).",
+  "evidence": "Two independent backpacking guides state Upper Royal Basin permits are not on Recreation.gov and are obtained through the park's Wilderness Information Center / ranger station by phone. WTA confirms online booking applies to Royal Lake. itinerary.cal, day-1 note, access.permit and the trailhead waypoint already say this; only bivy[0].permit ('same quota permit as Royal Lake... advance reservation only, mid-April release') is wrong, and bivy is owned by the camping clean-up, so no patch. access.overnight_permit.where speaks only of the Royal Lake quota and is not wrong.",
+  "sources": ["https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views", "https://www.cynhw.com/blog/hiking-and-backpacking-royal-lake", "https://www.wta.org/go-hiking/hikes/royal-basin"],
+  "patches": []},
+ {"id": "wa_mount_clark_standard", "fact": "Direction from Upper Royal Basin camp to Surprise Col", "verdict": "fixed",
+  "correct_value": "From Upper Royal Basin the Clark-Johnson col (Surprise Col) lies west-northwest, up Surprise Basin on the basin's west wall.",
+  "evidence": "Published coordinates put Mount Clark at 47.8355,-123.2318 and Mount Johnson (0.26 mi SW of Clark) at 47.8327,-123.2373, so their col is at roughly 47.834,-123.235 — west-northwest of Upper Royal Basin, which lies east of The Needles. A Mount Deception route description has parties climbing the SE side of Surprise Col from the basin, and a Deception-Clark report traverses NORTH from Deception into Surprise Basin, both consistent with the col being NW of the upper basin, not south/southeast. The row's own camp and col pins agree.",
+  "sources": ["https://en.wikipedia.org/wiki/Mount_Clark_(Washington)", "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)", "https://www.summitpost.org/mount-deception/151109", "https://onehikeaweek.com/2022/10/01/mount-deception/"],
+  "patches": [
+   {"id": "wa_mount_clark_standard", "fact": "Direction from Upper Royal Basin camp to Surprise Col", "op": "replace_text", "column": "approach", "path": [], "find": "(early season) snow south/southeast over the moraine rim", "replace": "(early season) snow west-northwest over the moraine rim"}
+  ]},
+ {"id": "wa_mount_clark_standard", "fact": "Col-to-summit time", "verdict": "fixed",
+  "correct_value": "Col to summit about 1.5-2 hours; camp to summit about 3.5-4 hours (the day note mislabelled the camp-to-summit figure as col-to-summit).",
+  "evidence": "One detailed report times upper Royal Basin to Surprise Col at 1.5-2 h and the col to the summit at about 1.5 h, 3.6 h camp-to-summit in all. A second party left upper-basin camp at 6 pm with about 3.5 h of daylight and summited and returned to the col before sunset, so col-to-summit was well under 2 h. The schedule (col 8:00, summit 9:30-10:00) is right; the note's 3.5-4 h is the camp-to-summit figure.",
+  "sources": ["https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/", "https://stevensong.com/usa/washington/mount-clark-olympics-wa/"],
+  "patches": [
+   {"id": "wa_mount_clark_standard", "fact": "Col-to-summit time", "op": "replace_text", "column": "itinerary", "path": ["days", 1, "note"], "find": "Real trip reports clock the col-to-summit climb at roughly 3.5-4 hours;", "replace": "The col-to-summit section takes about 1.5-2 hours;"}
+  ]},
+ {"id": "wa_mount_clark_standard", "fact": "Summit-day duration", "verdict": "fixed_internal_plus_one",
+  "correct_value": "About 8 hours camp to camp on the summit day.",
+  "evidence": "timing.summitTimeHrs (8), timing.sectionBreakdown[1].hrs (8), itinerary.days[1].hours (8) and the day-2 schedule (5:30 AM to 1:00 PM) all agree against the partner line's ~10 h. A detailed report's 3.6 h camp-to-summit ascent fits an ~8 h round trip from camp.",
+  "sources": ["https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/"],
+  "patches": [
+   {"id": "wa_mount_clark_standard", "fact": "Summit-day duration", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "long summit day from high camp (~10 hrs)", "replace": "long summit day from high camp (~8 hrs)"}
+  ]},
+ {"id": "wa_mount_clark_standard", "fact": "Route distance", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "dist_km 12.9 km = 8.0 mi is the one-way walk from the Upper Dungeness Trailhead to Upper Royal Basin high camp, which WTA gives as about 8 mi one-way; it matches the day-1 8.2 mi, the Upper Royal Basin waypoint (distMi 8) and the hazard line's 14-16 mi round trip to the basin. The 10 mi summit waypoint and ~22-24 mi trip total add the off-trail summit day, a different quantity.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/royal-basin"],
+  "patches": []},
+ {"id": "wa_mount_clark_standard", "fact": "Rappel versus downclimbing the summit slot", "verdict": "fixed",
+  "correct_value": "The ~60 ft rappel goes down the north side of the summit block — the slot — replacing its downclimb; the rest of the route is then reversed.",
+  "evidence": "A detailed report describes one 60-ft rappel off the summit block that avoided downclimbing the loose ground below it. A route photo captioned 'Summit Block (north side, which is also the rappel)' shows the rappel line is the north-face slot itself. So rappelling and then downclimbing the slot double-counts it; descent_text, descent and the day-2 schedule already say the rappel replaces the downclimb.",
+  "sources": ["https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/", "https://www.mountainproject.com/photo/109143127/summit-block-north-side-which-is-also-the-rappel"],
+  "patches": [
+   {"id": "wa_mount_clark_standard", "fact": "Rappel versus downclimbing the summit slot", "op": "replace_text", "column": "pitch_detail", "path": [8, "notes"], "find": "Roughly 60 ft rappel off the summit block, then downclimb the slot and reverse the route back to the col.", "replace": "Roughly 60 ft rappel down the north side of the summit block in place of downclimbing the slot, then reverse the rest of the route back to the col."}
+  ]},
+ {"id": "wa_mount_clark_standard", "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead", "verdict": "fixed",
+  "correct_value": "Only a Northwest Forest / America the Beautiful pass to park at the USFS trailhead, plus the wilderness camping permit for overnights.",
+  "evidence": "The park's own Royal Basin page says a Northwest Forest Pass or America the Beautiful Pass is required to park at the USFS Upper Dungeness Trailhead and names no entrance fee; WTA and a separate backpacking guide list the same parking pass plus the backcountry camping permit. The trailhead sits in Olympic National Forest with no park entrance station. access.parking_pass, access.fees and access.passRequired already agree; access.notes' 'standard entrance fee' is the outlier.",
+  "sources": ["https://home.nps.gov/olym/planyourvisit/royal-basin.htm", "https://www.wta.org/go-hiking/hikes/royal-basin", "https://www.cynhw.com/blog/hiking-and-backpacking-royal-lake"],
+  "patches": [
+   {"id": "wa_mount_clark_standard", "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead", "op": "replace_text", "column": "access", "path": ["notes"], "find": "only the standard entrance fee and wilderness camping permit apply", "replace": "only the trailhead parking pass and wilderness camping permit apply"}
+  ]}
+]}

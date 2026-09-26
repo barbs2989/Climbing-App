@@ -1,0 +1,244 @@
+{
+ "file": "t201.json",
+ "results": [
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "fact": "When to go",
+   "verdict": "fixed",
+   "correct_value": "Snow-free scrambling typically from early July (snow mostly gone as June ends, a north gully can hold snow through July) until the first October snow; optimal window and approach season start early July, not mid-July.",
+   "evidence": "A July 2024 party found the Pasayten snow almost entirely gone as June ended and judged the trip in shape from July 1 until the first October snow, needing an axe only for Amphitheater's north gully. A forum answer from an experienced Pasayten scrambler recommends late June or early July as the area is among the first to melt out; a 2021 party climbed Amphitheater July 1-5. A 2011 party found the lake half iced in mid-July, so late June stays marginal. The row's mid-July starts are the outliers; the pro tip is narrowed to early July so it no longer promises snow-free ground in marginal June.",
+   "sources": [
+    "https://rocknropenw.com/2024/07/10/amphitheater-cathedral-in-the-pasayten/",
+    "https://backpackinglight.com/forums/topic/7320/",
+    "https://havetent.com/2021/07/12/cathedral-se-buttress-amphitheatre-mountain/",
+    "https://andyporterimages.blog/2012/01/21/598/"
+   ],
+   "patches": [
+    {
+     "id": "wa_amphitheater_mountain_west_route",
+     "fact": "When to go",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "late June–early July for snow-free scrambling",
+     "replace": "early July for mostly snow-free scrambling"
+    },
+    {
+     "id": "wa_amphitheater_mountain_west_route",
+     "fact": "When to go",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "Mid-July to August, after",
+     "replace": "Early July through August, after"
+    },
+    {
+     "id": "wa_amphitheater_mountain_west_route",
+     "fact": "When to go",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Mid-July to late September",
+     "value": "Early July to late September"
+    }
+   ]
+  },
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "fact": "Distance from the road",
+   "verdict": "fixed",
+   "correct_value": "Upper Cathedral Lake is roughly 17-20 miles from the nearest trailhead: one long day or two days of walking, not several days.",
+   "evidence": "The Thirtymile/Chewuch approach is about 19.75 miles to Upper Cathedral Lake; a 2021 party reached the lake on the second morning after a short evening start (~17 mi on day 2); a 2024 party took two days (~24 mi via Four Point Lake). The row's own approach, itinerary and timing give a one-day walk in. The hazard line is reworded to a long day or more.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "https://havetent.com/2021/07/12/cathedral-se-buttress-amphitheatre-mountain/",
+    "https://rocknropenw.com/2024/07/10/amphitheater-cathedral-in-the-pasayten/"
+   ],
+   "patches": [
+    {
+     "id": "wa_amphitheater_mountain_west_route",
+     "fact": "Distance from the road",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "expect": "Several days from the nearest road in either direction",
+     "value": "A long day's walk or more from the nearest road in either direction"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Jun-Sep (June is a snow climb, often preferred over bare scree; mid-July-Sep for a dry ascent; October risky).",
+   "evidence": "Documented ascents in late May (2007, on snow with axe), mid/late June (2021, 2022) and a 2021 report advising May/June before the talus is bare, so the avalanche field's claim that the peak is climbed only mid-July-September is false and June is not a 'poor' month but a snow climb. The approach season is aligned to the header Jun-Sep; October stays risky (an October 2020 party met waist-deep snow on the traverse).",
+   "sources": [
+    "https://trailcatjim.com/big-craggy-peak-west-craggy-peak-via-copper-glance-basin/",
+    "https://havetent.com/2021/06/25/big-craggy-west-craggy/",
+    "https://www.lucasmountainknowledge.com/post/the-craggies-june-2022",
+    "https://hike2hike.com/scrambling/big-and-west-craggy-north-cascades/"
+   ],
+   "patches": [
+    {
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Season window",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "July to early October",
+     "value": "June to September"
+    },
+    {
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "approach creek crossings and lingering snow on the loose upper scramble terrain make this a poor month",
+     "replace": "the creek crossing runs high and the upper slopes still hold snow, so bring ice axe and crampons; firm snow often makes the loose upper scree easier than bare talus"
+    },
+    {
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "only climbed in the dry mid-July-September window, outside NWAC's winter forecast season",
+     "replace": "climbed from late spring into early fall, after NWAC's winter forecast season has ended"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "Bench elevation below the summit",
+   "verdict": "fixed",
+   "correct_value": "The slope steepens into loose scree at about 7,800 ft (~680 ft below the summit); the bench ~1,300 ft below the top is a separate, lower spot of unsourced elevation.",
+   "evidence": "Two independent sources put the steepening into loose scree at about 7,800 ft on the southeast ridge. The only source mentioning a bench describes the last ~1,300 ft from it to the summit, i.e. a lower spot near 7,200 ft, with no elevation given; the row conflated the two. The bench is dropped from the three sentences that pinned it to 7,800 ft; 'kicks back' (eases) is also corrected to 'steepens'.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/big-craggy-west-craggy-peaks",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-05-31.213446676892",
+    "https://hike2hike.com/scrambling/big-and-west-craggy-north-cascades/"
+   ],
+   "patches": [
+    {
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Bench elevation below the summit",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "A small bench/flat spot roughly 1,300 ft below the summit (~7,800 ft) marks where the angle steepens and the terrain shifts",
+     "replace": "Around 7,800 ft the angle steepens and the terrain shifts"
+    },
+    {
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Bench elevation below the summit",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "directions"
+     ],
+     "find": "A small bench or flat spot around 7,800 ft, roughly 1,300 ft below the top, marks where the angle kicks back and the ground turns to tedious scree.",
+     "replace": "Around 7,800 ft the angle steepens and the ground turns to tedious scree."
+    },
+    {
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Bench elevation below the summit",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Higher, a small bench at about 7,800 ft marks where the angle steepens",
+     "replace": "Higher, at about 7,800 ft, the angle steepens"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "Last reliable water",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "On the basin/camp variant one detailed report puts the last water at a creek crossing near 6,400 ft (matching the base finding), and camps use the tarn or the stream by Copper Glance Lake. For the direct southeast-ridge line one report names only Copper Glance Creek, leaving the trail a couple hundred yards past it. No source confirms a creek at 6,100 ft after leaving the trail (waypoint 3). A second report locating water on the SE-ridge line above the trail would settle it.",
+   "sources": [
+    "https://www.hippohamster.com/posts/north_cascades/big_craggy_west_craggy/",
+    "http://ericsbasecamp.net/trips/Craggies/Craggies.htm",
+    "https://havetent.com/2021/06/25/big-craggy-west-craggy/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "Mine ruins distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives 2 mi. One report puts the mine at ~1.5 mi and the creek ford at ~1.6 mi; others put the ford about 0.5 mi from the trailhead and the mine about 0.5 mi past it (~1 mi), or the mine ~30 minutes / 0.5-1 mi in. The stored 2 is wrong but the true figure (1 vs 1.5 mi) and the ford/mine order are disputed; a GPS track with both marked would settle it.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Craggies/Craggies.htm",
+    "https://www.lucasmountainknowledge.com/post/the-craggies-june-2022",
+    "https://havetent.com/2021/06/25/big-craggy-west-craggy/",
+    "https://hike2hike.com/scrambling/big-and-west-craggy-north-cascades/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "Time from camp to summit",
+   "verdict": "fixed",
+   "correct_value": "About 3-3.5 h trailhead to the 6,600-ft basin camp; ~2 h camp to Big Craggy directly, ~5.6 h when West Craggy is climbed first.",
+   "evidence": "One party took 3.3 h to the 6,600-ft basin camp, then 2.6 h to West Craggy and 5.6 h cumulative to Big Craggy; another reports about 3 hours to the same camp. The '4 hours' in partner requirements is corrected; the 2-hour direct figure is kept and labelled as the direct option so it no longer reads against the itinerary's via-West-Craggy times.",
+   "sources": [
+    "https://trailcatjim.com/big-craggy-peak-west-craggy-peak-via-copper-glance-basin/",
+    "https://www.hippohamster.com/posts/north_cascades/big_craggy_west_craggy/"
+   ],
+   "patches": [
+    {
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Time from camp to summit",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Typically about 4 hours from the trailhead to high camp, then roughly 2 more hours from camp to the summit",
+     "replace": "Typically about 3 to 3.5 hours from the trailhead to high camp, then roughly 2 more hours from camp to Big Craggy's summit on its own (5 to 6 hours when West Craggy is climbed first)"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "One-way distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 11-12 mi round trips (11.6 mi in one GPS report, 12 mi in a route description) include West Craggy; Big Craggy alone was reported as 7.4 mi round trip (~3.7 mi one way), consistent with dist_km 6.4 (4.0 mi). The summit waypoint's 5 mi is unsourced for Big Craggy alone, and only one source gives a Big-Craggy-only distance, so neither value can be changed; a second Big-Craggy-only track would settle it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-05-31.213446676892",
+    "https://www.hippohamster.com/posts/north_cascades/big_craggy_west_craggy/",
+    "https://www.mountaineers.org/activities/routes-places/big-craggy-west-craggy-peaks"
+   ],
+   "patches": []
+  }
+ ]
+}

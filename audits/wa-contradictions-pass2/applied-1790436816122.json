@@ -1,0 +1,650 @@
+{
+ "applied": [
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Shellrock camp elevation"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Harts Pass road status"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Harts Pass road status"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Basecamp name"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "climbing_route",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Knife-edge on the NE ridge"
+  },
+  {
+   "id": "wa_blizzard_peak_standard",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Harts Pass road status"
+  },
+  {
+   "id": "wa_blizzard_peak_standard",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Harts Pass road status"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_south_route",
+   "column": "season",
+   "path": [],
+   "fact": "Season vs road opening"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_south_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season vs road opening"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_south_route",
+   "column": "best_season",
+   "path": [],
+   "fact": "Season vs road opening"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_the_drawbridge",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Which approach access/emergency describe"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_the_drawbridge",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Which approach access/emergency describe"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_the_drawbridge",
+   "column": "emergency",
+   "path": [
+    "county"
+   ],
+   "fact": "Which approach access/emergency describe"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_the_drawbridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permits required"
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Canadian approach line"
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Ptarmigan Fire closure order and PCT status"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "column": "rope_note",
+   "path": [],
+   "fact": "SW ridge notch elevation"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Freezeout Cabin position"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Direction of travel on Lightning Creek"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Direction of travel on Lightning Creek"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "The Slate Peak road (trailhead access, WA's highest drivable road) typically isn't snow-free until early July, and the Pasayten's remoteness means this route is really only a July-September outing.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Buckskin Ridge/Slate Peak trailhead (~6,900 ft), climb over Slate Pass and drop past Fred's Lake, then continue through the Eureka Creek valley and up into Shellrock Basin, camping at or just below Shellrock Pass (~7,200 ft). Trip reports split this into two shorter days via a Fred's Lake camp, but strong parties do it in one long push.",
+       "hours": 8,
+       "miles": 14,
+       "title": "Backpack in to Shellrock Basin",
+       "gainFt": 3600,
+       "lossFt": 3300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach high camp near Shellrock Pass"
+      },
+      {
+       "n": 2,
+       "note": "An early start from camp, up onto Shellrock Pass and along Blackcap's northeast ridge — a Class 2-3 scramble with maybe one or two harder moves, finishing on the distinctive black hornfels summit cap. Round trip from camp runs about 5 hours, leaving the afternoon free to rest or tag Mt. Lago/Mt. Carru if water and energy allow.",
+       "hours": 5,
+       "miles": 6,
+       "title": "Summit day: Blackcap Mountain",
+       "gainFt": 1800,
+       "lossFt": 1800,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp",
+         "detail": "Begin the climb from the Shellrock Pass bivy/camp."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach Shellrock Pass",
+         "detail": "Gain the ridge crest for morning views before traversing toward Blackcap."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach the summit",
+         "detail": "Class 2-3 northeast ridge scramble tops out on the black hornfels summit block."
+        },
+        {
+         "time": "8:45 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ridge route back toward camp."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at camp",
+         "detail": "Round trip from camp runs roughly 5 hours."
+        }
+       ],
+       "objective": "Climb Blackcap via the northeast ridge"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: down through Eureka Creek, back over the Rolo Pass/Fred's Lake area and Slate Pass, and out to the Buckskin Ridge/Slate Peak trailhead. Some parties split this into two shorter days with a camp on the Pasayten River flats instead.",
+       "hours": 8,
+       "miles": 14,
+       "title": "Hike out",
+       "gainFt": 2900,
+       "lossFt": 3500,
+       "packLb": 28,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A remote 3-day, roughly 30-34 mile round trip into the Pasayten Wilderness with about 8,000-8,500 ft of cumulative gain; many parties instead stretch it to 4-5 days to also tag nearby Mt. Lago and Mt. Carru from the same Shellrock Basin camp."
+    },
+    "access": {
+     "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+     "rules": "Self-issued wilderness permits (free) required at the trailhead; Leave No Trace travel/camping; weed-free feed required for any pack/saddle stock.",
+     "permit": "Self-issued wilderness permit at trailhead (free)",
+     "closures": "Harts Pass Rd (FS-5400) and the trailheads it serves (Robinson Creek, Slate Peak, and access toward Monument Creek) were closed for months in winter/spring 2025-26 after flood/storm damage and reopened following repairs by mid-June 2026 — confirm current road status with the Methow Valley Ranger District before a trip.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District — 24 West Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "passRequired": "Northwest Forest Pass / Interagency or Digital Day Pass required for parking at Robinson Creek Trailhead and other developed trailheads.",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+     }
+    },
+    "road": {
+     "name": "Harts Pass Road (FS-5400) and Monument Creek Rd (FS-5400-015)",
+     "status": "gravel beyond Mazama; narrow, exposed, and rough in sections, high-clearance recommended",
+     "driveNote": "From Winthrop, Lost River Rd (County Rd 9140) is paved about 7.5 miles through Mazama, then becomes gravel FS-5400. Harts Pass (6,198 ft) is Washington's highest maintained road; it continues 3 more miles to Slate Peak (7,488 ft), the highest drivable point in the state. The road is closed to trailers June 1-Dec 31. It suffered flood damage that closed it for much of winter/spring 2025-26; it reopened after repairs by mid-June 2026 — check current FS alerts before driving.",
+     "seasonalGate": "Typically opens in early July once snow clears and closes again with the first significant fall snow, usually by October."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day backpacking fitness; typical itineraries cover 30-35 miles round trip with sustained elevation gain over several days to/from a basecamp",
+      "packWeight": "Overnight/multi-day pack weight (roughly 30-45 lb with camp gear and food) since a long approach makes a single-day car-to-car push impractical"
+     },
+     "approachTime": "Long - typically 1-2 days of trail plus cross-country travel from the Pasayten trailhead(s) to a basecamp (e.g. near Dorothy Lake or Shellrock Pass) before a summit push; not a casual day-trip objective",
+     "requiredSkills": [
+      "Class 3 scrambling on loose rock/talus",
+      "off-trail routefinding and navigation",
+      "steep talus/scree travel technique",
+      "backcountry camping and Leave No Trace practice",
+      "stream crossings",
+      "remote self-rescue judgment (no cell coverage, long evacuation)"
+     ],
+     "experienceLevel": "Solid scrambler comfortable with sustained Class 3 terrain and loose talus, plus multi-day wilderness travel experience - this peak is typically combined with neighboring summits on a multi-day Pasayten traverse rather than climbed as an isolated day trip"
+    },
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "East face to the northeast ridge",
+      "notes": "From the col, scramble up loose scree and talus on Blackcap's east face to gain the northeast ridge, where the rock transitions to distinctive black hornfels/shale."
+     },
+     {
+      "n": 2,
+      "class": "Class 2-3",
+      "label": "Northeast ridge to the summit",
+      "notes": "Follow the ridge, staying on its left/south side as terrain allows, on easy Class 2-3 with some exposure and loose rock near the top. The ridge includes one true knife-edge section with easy-to-moderate exposure, distinct from the otherwise mellow class 2-3 terrain. Camp-to-summit is about 5-6 hours round trip."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_blizzard_peak_standard",
+   "before": {
+    "road": {
+     "name": "Harts Pass Road (Forest Road 5400)",
+     "status": "Open; closed after Dec 2025 flood/storm damage and listed open again by the Forest Service as of July 2, 2026",
+     "driveNote": "Even when open, it's WA's highest drivable pass (6,198 ft) — narrow, rugged, high-clearance recommended. There is no lawful alternative: walking south into the US on the PCT from Manning Provincial Park, BC is not a legal border crossing, so this road is the only way in.",
+     "seasonalGate": "Generally open through summer into September/October depending on snowpack; may be briefly gated on weekdays during periodic summer gravel-hauling/maintenance work"
+    },
+    "access": {
+     "fees": "None — no entrance fee; the required wilderness permit is free.",
+     "rules": "Leave No Trace; Pasayten Wilderness caps groups at 12 people and stock combined (larger groups must split and stay a mile apart); grizzly bear and gray wolf habitat — store food properly; weed-free feed required for stock.",
+     "permit": "Free, non-quota, self-issued wilderness permit at the trailhead (required for overnight use); no advance reservation.",
+     "closures": "Harts Pass Road (FS Road 5400) sustained major damage in Dec 2025 storms/flooding and was closed indefinitely from the Monument Creek Trailhead through Harts Pass, cutting off the Robinson, Rattlesnake, Harts Pass, Brown Bear, Slate Pass, and Slate Peak trailheads. The Forest Service lifted that closure: its Methow Valley road-status table lists Harts Pass Road open as of July 2, 2026. Separately, the Ptarmigan Fire closure (Forest Service order 06-17-04-26-39, in effect September 9 through October 31, 2026) closes the Boundary Trail (#533) from the Pacific Crest Trail east to Bunker Hill and the Castle Pass Trail (#749), which cuts off the Castle Pass-to-Frosty Pass leg of this approach; the Pacific Crest Trail itself is open to the border. Methow Valley Ranger District, (509) 996-4000.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Harts Pass approach).",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "passRequired": "No pass required at the Harts Pass Trailhead itself; some other Okanogan-Wenatchee NF trailheads in the area require a Northwest Forest Pass, so check trailhead kiosks.",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the Harts Pass trailhead kiosk before walking in."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_castle_peak_pasayten_south_route",
+   "before": {
+    "season": "Jun-Sep",
+    "approach_variants": [
+     {
+      "name": "The crest trail north from Harts Pass to Castle Pass, then the head of Castle Creek",
+      "notes": "READ THIS FIRST. The line most often written up for this route walks in from the provincial park to the north and crosses the international boundary cross-country in the clearing south of the creek. That is not a lawful crossing. Away from a port of entry it requires prior arrangement with the border authority, the corridor is patrolled, and casual parties cannot simply walk over.\n\nThe way that stays inside the United States is the crest trail. The high pass road climbs about twenty miles of unpaved single lane from Mazama, single track with pullouts rather than passing room, a wall on one side and an unguarded drop on the other, and grades near seventeen percent high up. Trailers are prohibited. It opens with the snowmelt, usually early to mid July.\n\nFrom the pass the crest trail runs north for a long way over high, open country to Castle Pass, where the Boundary Trail crosses. Castle Creek heads right there, so the pass puts you at the top of the basin this route climbs from.\n\nThe other wholly-US option is the eastern one — a boat across the lake and the abandoned creek trail — but that lands you on the far side of the mountain and serves the standard scramble rather than this line.",
+      "season": "Roughly late June through September, once the basin brush and wetlands are passable and the high road is open",
+      "hazards": [
+       "The commonly published approach crosses the international boundary cross-country and is not a lawful crossing",
+       "Alder, brush and wetland openings in the lower basin",
+       "Two gullies handed off to each other with a notch between; the transition at about 6,800 ft is the routefinding crux",
+       "Snow patches persist near the summit well into the season",
+       "Extremely remote from any US trailhead; the crest-trail approach is a multi-day walk each way"
+      ],
+      "baseFinding": "This route works from a camp in the basin at about 5,500 ft, so the first thing to find is the basin floor rather than any rock. From the pass, drop into the head of the creek and follow it down and out into the open basin below the peak's south side. The lower ground here is alder, brush and wetland openings; the walking improves as you gain the basin proper.\n\nFROM CAMP THE ROUTE IS A SEQUENCE OF TWO GULLIES AND A NOTCH, and each hands off to the next. First, the WIDE GULLY ON THE SOUTH SIDE — the broad one, not a narrow chute. Take it to roughly 6,800 ft. Second, at about that height, move INTO THE NORTH-EAST GULLY and aim for a NOTCH at around 7,400 ft. Third, from the notch, cross granite slabs, boulders and lingering snow patches south of the top, and finish with a short scramble to the true summit.\n\nTHE PHYSICAL TEST THROUGHOUT IS THAT NOTHING IS STEEP. Granite slabs, boulders and snow patches are the correct texture. If a rope comes out of the pack for anything other than a snow patch, you are not on this line.\n\nNEGATIVE MARKER, and it is the whole north half of the mountain: the north face is a fourteen-hundred-foot wall of granite ribs, gullies and couloirs above a glacier, carrying several hard routes. If that is above you, you have walked round the peak and you are under the technical climbing.\n\nSECOND NEGATIVE MARKER, on the boundary. The summit sits about a mile south of the international line and the boundary clearing is a visible feature from up here. Do not use it as a route, and do not follow ground north out of the basin.\n\nDescent reverses everything: back through the notch, down the north-east gully, then the wide south gully to camp."
+     }
+    ],
+    "best_season": "Documented as climbable in late September with granite slabs, boulders and lingering snow patches near the summit; likely accessible more broadly June–September once the Castle Creek brush and basin wetlands are passable."
+   }
+  },
+  {
+   "id": "wa_castle_peak_pasayten_the_drawbridge",
+   "before": {
+    "access": {
+     "fees": "Free self-issue wilderness permit at US trailheads",
+     "permit": "Self-issue Pasayten Wilderness permit (free)",
+     "closures": "Crosses the US/Canada border cross-country off the official PCT corridor — not an authorized crossing.",
+     "landManager": "Okanogan-Wenatchee National Forest (Pasayten Wilderness), USFS; approach crosses into E.C. Manning Provincial Park, BC",
+     "passRequired": null
+    },
+    "emergency": {
+     "notes": "Extremely remote; cell coverage unlikely, rescue response will be slow.",
+     "county": "Okanogan/Whatcom county line, WA (US side); approach is via British Columbia, Canada",
+     "rangerStation": "Methow Valley Ranger District, 24 W Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+     "nearestHospital": "Three Rivers Hospital, Brewster, WA",
+     "sheriffDispatch": "Okanogan County Sheriff's Office non-emergency dispatch"
+    }
+   }
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 49.0608,
+      "lng": -120.8244,
+      "elev": 3900,
+      "name": "Frosty Mountain / Lightning Lake Trailhead, E.C. Manning Provincial Park, BC",
+      "note": "Canada-side approach, distinct from the US-side scramble approach: start at the Frosty Mountain trail from Lightning Lake Day Use area in Manning Park, hike toward the Frosty Mountain crest, then head cross-country south over the US border, descending into the Princess Creek basin and traversing to the Princess/Crow Creek divide, then down into Crow Creek to the glacier at the base of Castle Peak's North Face.",
+      "type": "Trailhead",
+      "elevFt": 3900
+     },
+     {
+      "lat": 48.9821,
+      "lng": -120.8622,
+      "elev": 8343,
+      "name": "Castle Peak Summit (East Turret - true summit)",
+      "type": "Summit",
+      "elevFt": 8343
+     }
+    ],
+    "itinerary": "A 3+ day car-to-car trip is typical: day 1 travel to a high camp near the border/Crow Creek basin (or much further in via the US side); day 2 climb the route and descend to camp; day 3+ hike back out. The approach length and border-crossing logistics make this a serious multi-day undertaking rather than a single push.",
+    "approach_variants": [
+     {
+      "name": "Ross Lake boat crossing, Lightning Creek and the abandoned Freezeout Creek trail to the north-face glacier",
+      "notes": "The approach that stays inside the United States, and much the longer of the two.\n\nFrom the highway pullout above the dam, a spur trail drops to the lake shore; cross by water taxi or by a boat portaged down it, and land near the head of the lake. Follow the Lightning Creek trail, then the abandoned and increasingly brushy Freezeout Creek trail. The steep rock-and-alder diagonal immediately above the trail junction is the hardest navigation on the whole walk; look for intermittent orange flagging. The cabin at about 3,600 ft is a waypoint and an emergency shelter, and tread mostly disappears around 4,200 ft.\n\nCamping in the lower corridor needs a park backcountry permit; the upper part is wilderness with a free self-issue permit.\n\nFrom the upper basin, work round to the north side and onto the glacier at the foot of the wall, which is mellow enough for easy travel.",
+      "season": "Summer; the documented ascent was made in early August",
+      "hazards": [
+       "At least four unmarked lines on one wall, two of them starting close together on the same buttress",
+       "Awkward bergschrund or moat at the base of the climbing",
+       "Roughly half the pitches are at the upper end of the grade, with the crux on a corner low down",
+       "Descent by the east ridge and a snow finger, not by reversing the climb",
+       "Multi-day approach and a retreat measured in days"
+      ],
+      "primary": true,
+      "baseFinding": "The face is about fourteen hundred feet of granite ribs, gullies and couloirs above a glacier and it carries several routes with nothing marked. Do not identify by name; identify by feature.\n\nFIRST, PLACE THE CENTRAL BUTTRESS. Stand back on the glacier and find the summit, then look at the buttress directly beneath it — that is the neighbouring route, and this line is NOT on it. This route takes the LEFT MARGIN of that buttress system, so you want to be off to the left of the plumb line from the summit.\n\nSECOND, FIND THE GULLY OR CHIMNEY AT THE BUTTRESS'S LEFT EDGE. The start is in the BLOCKY LINE OF FACE HOLDS JUST LEFT OF IT. Blocky face holds, immediately left of a gully or chimney, at the left edge of the buttress: that is the whole identification at the ground. The first pitch is long, mostly low fifth class, with a wide crack near its end.\n\nTHIRD, AND THIS IS THE CONFIRMATION HIGHER UP THAT NOTHING ELSE ON THE FACE GIVES YOU: this route follows a DISTINCTIVE YELLOW QUARTZ DYKE up the wall to avoid the dirtier rock either side of it. A yellow band running up the granite is not a subtle feature. If you never meet one, you are on a different climb.\n\nWatch for an awkward BERGSCHRUND OR MOAT where the glacier meets the rock.\n\nNEGATIVE MARKERS, and they matter because two of the neighbours are hard: if the summit is directly overhead from your belay and your second pitch is desperate face climbing wanting an aid move, you are on the central buttress line. And the face's original route and at least two others also exist here, so the honest rule is that anything without the yellow dyke above it is not this.\n\nDescent is not the route reversed and not a rappel: take the east ridge from the top to an obvious col, then a snow finger back down toward the approach glacier and basin."
+     },
+     {
+      "name": "Provincial park approach from the north over Frosty Mountain to Crow Creek",
+      "notes": "READ THE LEGAL POINT FIRST. This approach walks in from the provincial park on the northern side and crosses the international boundary cross-country. That is not a lawful crossing. Away from a port of entry it needs prior arrangement with the border authority, the corridor is patrolled, and casual parties cannot simply walk over. It is recorded because it is the commonly published line and the shorter of the two, not as a recommendation.\n\nAs described, it takes the old trail along the creek to the boundary, then leaves the trail and travels cross-country south past Frosty Mountain, descending through the next creek basin and over the divide into the drainage below the peak's north face, finishing at the toe of the glacier.\n\nThe lawful alternatives are the boat crossing and abandoned creek trail from the east, or the crest trail from the west, both of which are considerably longer.",
+      "season": "Summer, once the divide traverse is clear enough to travel",
+      "hazards": [
+       "The described approach crosses the international boundary cross-country and is not a lawful crossing",
+       "Cross-country travel over a mountain and a drainage divide to reach the glacier",
+       "Awkward bergschrund or moat at the base of the wall",
+       "Several unmarked routes on one face, two of them on the same buttress",
+       "Descent by the east ridge and a snow finger rather than the way you came up"
+      ],
+      "baseFinding": "Whichever way you arrive, the glacier is the same and so is the identification, and this side has one advantage worth using: you come DOWN toward the wall, which gives you the whole face in one view before you are under it. Take that view rather than sorting the routes out from the bergschrund.\n\nFrom back on the glacier, find the summit and note the buttress directly under it — that is the neighbouring line and it is not this one. This route is on the LEFT MARGIN of the same buttress system.\n\nThe ground marker is a GULLY OR CHIMNEY at the buttress's left edge, with the route starting in the BLOCKY LINE OF FACE HOLDS JUST LEFT OF IT. The confirmation above is a YELLOW QUARTZ DYKE, which the line follows deliberately to stay on clean rock and away from the dirtier granite either side. Yellow band, left margin, blocky start beside a chimney: those three together are the route.\n\nExpect an awkward bergschrund or moat at the transition from ice to rock.\n\nNEGATIVE MARKERS. Directly under the summit with a very hard second pitch means the central buttress line. No yellow dyke anywhere above you means one of the other lines on this face, of which there are several and none is marked.\n\nSecond negative marker and it is not about climbing: the boundary clearing is a visible cut line across this ground. It is not a route and it is not a shortcut.\n\nDescent is the east ridge to an obvious col and then a snow finger back to the glacier and basin."
+     }
+    ],
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 people / 18 head of stock.",
+     "permit": "North Cascades NPS wilderness permit for camps in the Ross Lake NRA corridor; free self-issue Pasayten Wilderness permit beyond the wilderness boundary.",
+     "closures": "Ptarmigan Fire Closure Order 06-17-04-26-34, effective 24 Aug - 31 Oct 2026, closes Boundary Trail #533, the Pacific Crest Trail #2000 and Castle Pass Trail #749 in the Pasayten Wilderness. The fire was 24,516 acres at 13% containment on 14 Aug 2026 and is burning 20 miles NW of Mazama.",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest (Pasayten Wilderness); Ross Lake National Recreation Area (NPS) on the Lightning Creek approach",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "None needed at the Ross Dam trailhead.",
+     "passRequired": "N/A",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at a US trailhead such as Harts Pass. Parties starting in Manning Park have no US kiosk on their way in, so contact the Methow Valley Ranger District before the trip."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_castle_peak_pasayten_scramble",
+   "before": {
+    "rope_note": "Class 2 with easy Class 3 and a few Class 3+ steps on solid granite. No rope on the standard scramble; carry an ice axe if snow patches persist near the 7400' notch.",
+    "waypoints": [
+     {
+      "lat": 48.7278,
+      "lng": -121.0628,
+      "elev": 1600,
+      "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+      "note": "North Cascades NP wilderness permit required; a 0.6-mile spur trail drops to the Ross Lake shoreline where the multi-day approach to Castle Peak begins.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead is a pullout on SR-20 near milepost 134. A North Cascades National Park wilderness permit is required before you start."
+     },
+     {
+      "lat": 48.71547818181818,
+      "lng": -120.97509272727274,
+      "elev": 1500,
+      "name": "Ross Lake Dock / Boat Put-in",
+      "note": "Put-in for the Ross Lake Resort water taxi (or paddle) that shortcuts many miles of the East Bank Trail toward the Lightning Creek Trail.",
+      "type": "Junction",
+      "distMi": 0.6,
+      "directions": "A 0.6-mile spur trail drops from the pullout to the Ross Lake shoreline, losing about a hundred feet. Anyone bringing a private or inflatable boat portages it down this stretch."
+     },
+     {
+      "lat": 48.875257,
+      "lng": -121.019219,
+      "elev": 1500,
+      "name": "Lightning Creek Trail Junction",
+      "note": "Boat drop-off where the route leaves Ross Lake and picks up the Lightning Creek Trail heading east into the valley toward Freezeout Creek.",
+      "type": "Junction",
+      "distMi": 5,
+      "directions": "The lake crossing runs north to the Lightning Creek landing near the head of Ross Lake. The resort water taxi is the usual way across and books out well in advance; paddling it adds hours at both ends. Either way the return pickup is a fixed time, so plan the summit day around it — there is no quick walk-out from this side."
+     },
+     {
+      "lat": 48.933164,
+      "lng": -120.985501,
+      "elev": 2500,
+      "name": "Turner Bridge / Nightmare Camp",
+      "note": "Lightning Creek crossing near Nightmare Camp on an aging span; the bridge is unstable and a ford may be required.",
+      "type": "Hazard",
+      "distMi": 12,
+      "directions": "From the landing follow the Lightning Creek Trail up-valley for roughly seven miles of forest walking. Parties commonly leave the shore before dawn to leave enough daylight for the ground above. The bridge is the Lightning Creek crossing and has been in poor shape; a ford may be the safer option, and that is a call worth making in daylight on the way in rather than by headlamp on the way out."
+     },
+     {
+      "lat": 48.87002727272726,
+      "lng": -120.9088090909091,
+      "elev": 3600,
+      "name": "Freezeout Creek Cabin",
+      "note": "Maintained backcountry cabin at the start of the abandoned Freezeout Creek Trail; the last reliably stocked shelter/water stop before the climb proper.",
+      "type": "Campsite",
+      "distMi": 13,
+      "directions": "Cross Lightning Creek and pick up the old, unmaintained Freezeout Creek Trail. The first stretch above the junction is the trickiest route-finding on the whole approach: steep rock-and-alder slopes that take a rising, diagonal ascent line before you regain proper forest and tread. Flagging has marked it in recent seasons but do not plan on it being there. Back in the trees the tread is in decent shape the rest of the way, and the cabin sits just past a creek crossing."
+     },
+     {
+      "lat": 48.90741818181817,
+      "lng": -120.89277272727273,
+      "elev": 4600,
+      "name": "Freezeout Creek Ford & Blowdown Zone",
+      "note": "Trail disintegrates into heavy blowdown above the cabin; climbers ford Freezeout Creek and sidehill through alder to regain open talus near 5,000 ft.",
+      "type": "Hazard",
+      "distMi": 16,
+      "directions": "About a quarter mile above the cabin, cross Freezeout Creek again and pass through an old burn. Tread mostly gives out near 4,200 ft where it turns north and re-crosses the creek, though the bushwhacking through here is not bad. Stay on the west side of the creek roughly 50-100 ft above the water — that band gives the most open going — until about 5,000 ft, where you cross to the south/east side and the ground opens into meadow and talus."
+     },
+     {
+      "lat": 48.96973636363636,
+      "lng": -120.86604545454546,
+      "elev": 7600,
+      "name": "Southwest Ridge Notch",
+      "note": "Gained via steep red heather and scree slopes; marks the start of the class 2-3 scramble along the SW ridge to the summit.",
+      "type": "Junction",
+      "distMi": 21,
+      "directions": "From the open ground above 5,000 ft it is a long, steady climb on steep red heather, talus and scree to the notch — around 2,500 ft of gain with no water on any of it, so fill from the creek before you leave it. Several similar-looking gullies and chutes feed this basin; note the exact one you come up, because taking the wrong one on the way down cliffs you out on bluffs well above the creek."
+     },
+     {
+      "lat": 48.981991,
+      "lng": -120.862054,
+      "elev": 8343,
+      "name": "Castle Peak Summit",
+      "note": "True summit, second-highest peak in the Hozomeen Range, about one mile south of the Canadian border; class 2-3 scrambling on the final pitch.",
+      "type": "Summit",
+      "distMi": 22,
+      "directions": "From the notch it is roughly 700 vertical feet along the ridge, mostly Class 2 with short Class 3 steps. The rock is generally good but there is loose talus on it, and the crest is fully exposed with nowhere to shelter — get off it early if storms are building. On this schedule most parties finish the descent in the dark, so carry headlamps regardless of the forecast."
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Take the Ross Lake Resort water taxi north across Ross Lake to the Lightning Creek dock, then hike the Lightning Creek and Freezeout Creek trails south to a camp near the historic Freezeout Cabin (3,600 ft). This trail is faint/abandoned in stretches and involves a creek crossing at Lightning Creek.",
+       "hours": 6,
+       "miles": 9,
+       "title": "Boat in and approach to camp",
+       "gainFt": 2100,
+       "lossFt": 400,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a camp near Freezeout Cabin (3,600 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Continue up the Freezeout Creek drainage, leaving the last maintained tread behind, and establish a high camp higher in the basin below the SW ridge notch (roughly 5,000-5,500 ft) to shorten the following day's summit push. Water and flat tent sites are the deciding factor on exact camp spot.",
+       "hours": 4,
+       "miles": 4,
+       "title": "Move to high camp / stage for summit",
+       "gainFt": 1600,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Push higher toward the SW ridge approach for a shorter summit day"
+      },
+      {
+       "n": 3,
+       "note": "From high camp, climb talus and heather slopes to the SW ridge notch (~7,600 ft), then scramble Class 2 with a few Class 3 steps along the ridge to the summit. A 2004 trip report from a similar Freezeout-side camp reached the summit in about 4 hours from camp; expect a similarly long day with loose rock and route-finding low on the ridge.",
+       "hours": 9,
+       "miles": 6,
+       "title": "Summit day via the SW ridge notch",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave high camp",
+         "detail": "Early alpine start to beat afternoon thunderstorm risk common on Pasayten summits."
+        },
+        {
+         "time": "+3-4 hr",
+         "label": "Reach the SW ridge notch (~7,600 ft)",
+         "detail": "Talus and heather slopes give way to blocky ridge scrambling."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Summit (8,343 ft)",
+         "detail": "Final 200 ft is the most exposed, fun Class 3 scrambling on generally solid rock."
+        },
+        {
+         "time": "+5-6 hr",
+         "label": "Back at the notch, begin descent",
+         "detail": "Reverse the ridge and downclimb to scree/heather."
+        },
+        {
+         "time": "+9 hr",
+         "label": "Return to high camp",
+         "detail": "Loose rock and afternoon heat/storms can slow the descent."
+        }
+       ],
+       "objective": "Climb Castle Peak (8,343 ft) and return to high camp"
+      },
+      {
+       "n": 4,
+       "note": "Break camp and retrace the Freezeout/Lightning Creek trail back down to the Ross Lake shore, timed to meet the scheduled water taxi pickup (taxi schedules are limited and should be booked in advance with Ross Lake Resort).",
+       "hours": 6,
+       "miles": 9,
+       "title": "Hike out and water-taxi back",
+       "gainFt": 400,
+       "lossFt": 3700,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to Ross Lake and catch the water taxi to the trailhead"
+      }
+     ],
+     "totalNote": "A remote 4-day trip (~28 miles, ~7,400 ft gross gain) using the Ross Lake water-taxi/Freezeout Creek approach; some strong parties compress it to 3 days or even do it as a single 24+ hour continuous push, but a relaxed backpacking pace with 2 nights out and a dedicated summit day from high camp is the realistic recommendation."
+    },
+    "timing": {
+     "totalHrs": 25,
+     "summitTimeHrs": 4,
+     "descentTimeHrs": 15,
+     "approachTimeHrs": 6,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Take the Ross Lake Resort water taxi north across Ross Lake to the Lightning Creek dock, then hike the Lightning Creek and Freezeout Creek trails south to a camp near the historic …",
+       "fromTo": "Boat in and approach to camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 4,
+       "note": "Continue up the Freezeout Creek drainage, leaving the last maintained tread behind, and establish a high camp higher in the basin below the SW ridge notch (roughly 5,000-5,500 ft) …",
+       "fromTo": "Move to high camp / stage for summit",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "From high camp, climb talus and heather slopes to the SW ridge notch (~7,600 ft), then scramble Class 2 with a few Class 3 steps along the ridge to the summit. A 2004 trip report f…",
+       "fromTo": "Summit day via the SW ridge notch",
+       "section": "Climb"
+      },
+      {
+       "hrs": 6,
+       "note": "Break camp and retrace the Freezeout/Lightning Creek trail back down to the Ross Lake shore, timed to meet the scheduled water taxi pickup (taxi schedules are limited and should be…",
+       "fromTo": "Hike out and water-taxi back",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

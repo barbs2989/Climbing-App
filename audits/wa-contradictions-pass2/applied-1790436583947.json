@@ -1,0 +1,247 @@
+{
+ "applied": [
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "June",
+    "reason"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Character of the final climb to the true summit"
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Character of the final climb to the true summit"
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Camp location"
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "name"
+   ],
+   "fact": "Gold Run Pass vs the Tomyhoi Lake fork"
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Gold Run Pass vs the Tomyhoi Lake fork"
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Gold Run Pass vs the Tomyhoi Lake fork"
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead position on FR 3065"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September, consistent with prior research; August is the most reliably clear window",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Season opens but lingering snow on the ridge is still a real hazard early in the month; conditions firm up and become more reliable by mid-to-late July",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Significant residual snow typically still covers the approach and ridge; expect wet-snow/sluff hazard on steep sections and difficult routefinding - not the intended season for this route",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Most consistent dry, stable window with the ridge typically snow-free; best month for the exposed summit block scrambling",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Generally stable and popular (including for fall colors), but days are shorter and early-season storms can move in, shrinking weather windows",
+       "status": "good"
+      }
+     }
+    },
+    "itinerary": {
+     "cal": "Best conditions June-September; snow at the moat traverse is firmest early in the day, so an early (pre-dawn to 8 AM) start is recommended.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Nearly all parties do this route in a single long day from the Yellow Aster Butte (Twin Lakes Road) trailhead: hike the Yellow Aster Butte trail and drop to the Yellow Aster/Tomyhoi tarns, follow the boot path along Tomyhoi Ridge, then scramble the exposed final gully to the summit. The crux is a hard-snow traverse around a small moat below the false summit, followed by a steep class 3-4 gully to the true summit.",
+       "hours": 9,
+       "miles": 13.5,
+       "title": "Car-to-car climb via Yellow Aster Butte",
+       "gainFt": 5000,
+       "lossFt": 5000,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "8:00 AM",
+         "label": "Leave Yellow Aster Butte trailhead",
+         "detail": "Elev. ~3,600 ft on Twin Lakes Road; start on the Yellow Aster Butte trail."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach Yellow Aster/Tomyhoi tarns",
+         "detail": "Drop off the main trail onto the boot path toward the Tomyhoi Arm and ridge crest."
+        },
+        {
+         "time": "+3 hr from tarns",
+         "label": "Traverse the moat and final gully",
+         "detail": "Crux hard-snow traverse around the moat below the false summit, then a long, loose, exposed class 3-4 gully/chimney to the true summit."
+        },
+        {
+         "time": "~1:30-2:00 PM",
+         "label": "Summit",
+         "detail": "360-degree views to Baker, Shuksan, and into Canada; typical summit arrival 5-6 hours after starting."
+        },
+        {
+         "time": "+5 hr descent",
+         "label": "Descend to trailhead",
+         "detail": "Reverse the route; parties starting later or moving slower often finish the last stretch by headlamp."
+        }
+       ],
+       "objective": "Summit Tomyhoi Peak and return to trailhead"
+      }
+     ],
+     "totalNote": "A long single day: roughly 7.5-9 hours car-to-car, ~13-14 miles round trip with about 5,000-5,600 ft of gain and loss."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "~12-13+ mile round trip with roughly 5,000-5,600 ft of gain/loss in a single long day (or split with a camp at Tomyhoi Lake/basin); needs to sustain a full alpine day",
+      "packWeight": "Light day pack if done car-to-car; light overnight pack (10-11am start not viable - most do it as a long day or with one camp night) if camping in the basin"
+     },
+     "approachTime": "Long approach - several hours (roughly 6-7 miles) from the Yellow Aster Butte trailhead to the basin/base of the ridge before the class 3-4 climbing even begins",
+     "requiredSkills": [
+      "Exposed class 3-4 scrambling and routefinding near/on the summit block",
+      "Comfort with unroped exposure and loose rock (helmet recommended)",
+      "Snow travel / self-arrest skills for lingering snow on the ridge, especially in July",
+      "Navigation skills for the boot-path approach through the tarns/basin below the ridge"
+     ],
+     "experienceLevel": "Intermediate scrambler - needs prior class 3-4 exposed scrambling experience and solid routefinding judgment; not a beginner objective given the exposed summit block and loose rock"
+    },
+    "waypoints": [
+     {
+      "lat": 48.9435,
+      "lng": -121.6625,
+      "elev": 3600,
+      "name": "Tomyhoi Lake / Yellow Aster Butte Trailhead",
+      "note": "End of FR 3065 (Twin Lakes Road), 4.5 mi off SR 542; Northwest Forest Pass required and roadside parking along the switchbacks is very limited.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.954,
+      "lng": -121.66533,
+      "elev": 5427,
+      "name": "Gold Run Pass",
+      "note": "Trail forks near the pass: right drops to Tomyhoi Lake, route stays left toward Yellow Aster Butte meadows.",
+      "type": "Junction",
+      "distMi": 1.5,
+      "directions": "Start on the Yellow Aster Butte trail and climb steeply — roughly 1,500 ft in the first mile and a half — through an avalanche path and then forest, crossing a couple of small seasonal creeks low down that are the easiest water on the route early in the season. At the signed fork the right branch carries on over the pass and down to Tomyhoi Lake; stay left for the Yellow Aster meadows."
+     },
+     {
+      "lat": 48.97039,
+      "lng": -121.704028,
+      "elev": 5580,
+      "name": "Yellow Aster tarns / meadows",
+      "note": "High plateau of small glacier-carved tarns; all camping must be at or beyond this point (LNT-only, camp on snow/rock/bare ground, not the fragile meadow turf) — reliable water from the tarns.",
+      "type": "Campsite",
+      "distMi": 4,
+      "directions": "Beyond the fork the grade eases and the trail traverses the south flank of the butte for a bit over two miles as the terrain opens into meadow. At an unsigned junction around three and a half miles the path to the butte's summit goes right; drop left instead on narrow, steep switchbacks into the tarn basin."
+     },
+     {
+      "lat": 48.963306,
+      "lng": -121.701573,
+      "elev": 5800,
+      "name": "Boot path onto Tomyhoi Arm",
+      "note": "Leave the maintained trail here and pick up the well-defined climbers' boot path heading north along the crest of Tomyhoi Arm toward the southeast ridge.",
+      "type": "Junction",
+      "distMi": 4.3,
+      "directions": "Leave the maintained trail at the basin and head north-northwest, over a broad hump and down to a col near 6,270 ft, where a well-beaten climbers' boot path picks up along the crest. Getting onto the right crest is the thing to be careful about here — the arm runs north toward the peak, and the trail system does not go that way."
+     },
+     {
+      "lat": 48.953485,
+      "lng": -121.669305,
+      "elev": 6900,
+      "name": "Moat below Tomyhoi Glacier remnant",
+      "note": "Shallow moat/hard snow between rock and the shrinking glacier remnant — usually the crux; carry an ice axe, and it can be bypassed 100-200 ft lower via a rock finger if snow is firm.",
+      "type": "Hazard",
+      "distMi": 6,
+      "directions": "Follow the boot path up the broadening ridge, and where the crest narrows above roughly 6,800 ft drop onto the broad benches on the north side rather than staying on top. The path fades into scree and talus as you near the toe of the glacier remnant; traverse along its upper edge to get past several rock pinnacles, assessing the ice before committing to it. Cross the moat between rock and ice — it is hard snow more often than not, which is why an axe belongs on this route, and if it is too firm it can be turned a hundred feet or two lower on a finger of rock."
+     },
+     {
+      "lat": 48.943932,
+      "lng": -121.67098,
+      "elev": 7200,
+      "name": "Notch below the false summit",
+      "note": "Gain this notch via a V-shaped Class 3.5 slot (some parties belay it), then traverse a ledge west to a wide corner leading up to the false summit.",
+      "type": "Junction",
+      "distMi": 6.5,
+      "directions": "Above the moat, gain the notch through a V-shaped slot of about Class 3.5. It is short but steep and exposed enough that parties often put a rope on it, and it is distinctly harder to reverse than to climb. From the notch, traverse a ledge west to the wide corner that leads up to the false summit."
+     },
+     {
+      "lat": 48.974939,
+      "lng": -121.709832,
+      "elev": 7439,
+      "name": "Tomyhoi Peak",
+      "note": "Class 3 scramble on solid rock from the false summit to the true summit block; sweeping views of Mt. Baker, Mt. Shuksan, and north into Canada.",
+      "type": "Summit",
+      "distMi": 7,
+      "directions": "From the false summit the true summit looks worse than it is. Downclimb loose ledges to the col between the two, then scramble the summit block on solid, glacier-polished rock — Class 3, with a short gabled section of ridge where the exposure is real on both sides. This is out-and-back ground, so everything climbed here has to be reversed on tired legs."
+     }
+    ]
+   }
+  }
+ ]
+}

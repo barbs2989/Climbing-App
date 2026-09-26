@@ -1,0 +1,263 @@
+{
+ "file": "t221.json",
+ "results": [
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Number of days for the trip",
+   "verdict": "fixed",
+   "correct_value": "A multi-day trip (the itinerary lays it out over 4 days); '2–3 day' removed from descent_text",
+   "evidence": "Documented parties reaching Dot Mountain from Slate Pass took 3 days (Lago-Dot-Ptarmigan trip, day 3 on Dot) to 5 days (Ptarmigan/Dot loop via Tatoosh Buttes and the Lago-Carru col), and the Osceola-Carru-Lago traverse is published as a multi-day outing. Sources agree it is multi-day but give no single 2-3 figure, so the outlier sentence is reworded to 'multi-day' to agree with the 4-day itinerary rather than asserting a new count.",
+   "sources": [
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "this route is normally done as a 2–3 day trip with a high camp",
+     "replace": "this route is normally done as a multi-day trip with a high camp",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Number of days for the trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Itinerary day mileages vs waypoint distances",
+   "verdict": "fixed",
+   "correct_value": "Day 1 (9 mi) ends at the Berk Creek crossing on the Middle Fork Pasayten, not in Eureka Creek; Eureka Creek is reached on day 2 over the pass above Freds Lake",
+   "evidence": "One trip log records 9.0 miles from the Buckskin Ridge/Slate Pass trailhead to the Berk Creek crossing camp on the Middle Fork, then Freds Lake and the pass to Eureka Creek the next leg; another account describes 'the first 9 miles' of trail from Slate Pass before leaving the valley for Freds Lake. This matches the row's own Fred's Pass waypoint (9 mi down the Middle Fork, then up Berk Creek). The day-1/day-2 place names and their timing.sectionBreakdown copies are corrected. The day-3 (8 mi) / day-4 (11.2 mi) split versus the 16-mile high camp is NOT patched here — see the separate unresolved entry.",
+   "sources": [
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/",
+    "https://drdirtbag.com/2016/07/20/osceola/",
+    "https://climberkyle.com/2020/07/08/hart-of-the-pasayten/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "the trail drops off the ridge into the Eureka Creek drainage before climbing again toward the Pasayten high country. Most parties carry full overnight packs and camp somewhere along Eureka Creek to break up the long approach.",
+     "replace": "the trail drops off the ridge into the Middle Fork Pasayten valley and follows it down-valley to the Berk Creek crossing. Most parties carry full overnight packs and camp near Berk Creek to break up the long approach.",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Itinerary day mileages vs waypoint distances"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "find": "Approach to Eureka Creek",
+     "replace": "Approach down the Middle Fork to Berk Creek",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Itinerary day mileages vs waypoint distances"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Reach a camp in the Eureka Creek drainage",
+     "replace": "Reach a camp near the Berk Creek crossing",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Itinerary day mileages vs waypoint distances"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "Continue up out of Eureka Creek toward the Lago-Carru col",
+     "replace": "Climb Berk Creek over the pass above Freds Lake, drop into Eureka Creek, and continue up toward the Lago-Carru col",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Itinerary day mileages vs waypoint distances"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "find": "Approach to Eureka Creek",
+     "replace": "Approach down the Middle Fork to Berk Creek",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Itinerary day mileages vs waypoint distances"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "into the Eureka Creek drainage before climbing again toward the Pasayten high country",
+     "replace": "into the Middle Fork Pasayten valley and follows it down-valley to the Berk Creek crossing",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Itinerary day mileages vs waypoint distances"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "Continue up out of Eureka Creek toward the Lago-Carru col",
+     "replace": "Climb Berk Creek over the pass above Freds Lake, drop into Eureka Creek, and continue up toward the Lago-Carru col",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "Itinerary day mileages vs waypoint distances"
+    }
+   ]
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "Itinerary day 3 / day 4 mileage vs the 16-mile high camp",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Split out of the listed mileage contradiction: waypoints put the high camp at mile 16 and Dot at 17.6, so the hike-out (day 4, 11.2 mi) is too short and the summit day (day 3, 8 mi) too long. One trip log gives ~15.8 mi from the Lago basin back to the trailhead, supporting ~16 for the hike-out, but no source states the summit-day distance from the tarn camp, and changing day 4 alone would push the total to ~40 mi against the 35-mile totalNote/approach. Settled by a source giving the tarn-to-Dot(-Ptarmigan) round-trip distance.",
+   "sources": [
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "fact": "One-way approach distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Roughly 16-18 miles one-way",
+   "evidence": "Row: summit waypoint 17.6 mi, approach and descent_text ~35-36 mi round trip, itinerary 35-mile totalNote all agree on ~16-18 mi one-way; the 18-25 range is the outlier. A 2024 trip log reached a Tamarack Ridge camp at ~16 mi (via Tatoosh Buttes) and returned from the Lago basin over the Lago-Carru col in ~15.8 mi, agreeing with ~16-18 mi to the high camps and summit. No second independent one-way figure found.",
+   "sources": [
+    "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/",
+    "https://climberkyle.com/2020/07/08/hart-of-the-pasayten/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Roughly 18-25 miles one-way",
+     "replace": "Roughly 16-18 miles one-way",
+     "id": "wa_dot_mountain_scramble",
+     "fact": "One-way approach distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "fact": "Hardest grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The current route listing grades the climb 5.9 with P1 the crux at 5.9, and the P1 single-pitch listing (Bad-Tempered Prom Queen) is 5.9-. A detailed 2020 pitch-by-pitch report and a 2020 comment call P1 a stiff 5.8 (crux) and P6 5.8, and older descriptions gave 5.6-5.8. Sources split between 5.8+ and 5.9 with no two independent current sources agreeing; settled by a current guidebook/topo grade for P1.",
+   "sources": [
+    "https://www.mountainproject.com/route/111765317/juniors-farm",
+    "https://www.mountainproject.com/route/111764913/bad-tempered-prom-queen",
+    "http://hiking.andrewleader.net/reports/juniors-farm-2020/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "fact": "Whether a 60 m rope reaches the hidden fourth rappel anchor",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope reaches the hidden anchor from the station above (use every station)",
+   "evidence": "The route description says the descent (down the climb to the divergence, then five rappels) is done with a 60 m rope using every anchor station, and a 70 m only links the top two rappels. A 2020 pitch-by-pitch report says a single 60 m works and describes this exact hidden gully anchor (tree with sling to the left is the wrong one); the tight rope-end it reports is on the rappel after it, already covered by rappel 6's 'last two only just reach' warning. The '70 m with a couple of metres left' hazard contradicts both and the 30 m length, so it is replaced.",
+   "sources": [
+    "https://www.mountainproject.com/route/111765317/juniors-farm",
+    "http://hiking.andrewleader.net/reports/juniors-farm-2020/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      3,
+      "hazards",
+      1
+     ],
+     "find": "A party on a 70 m rope arrived at this anchor with only a couple of metres of rope left; a 60 m barely reaches",
+     "replace": "A single 60 m rope reaches this station from the one above, but only if you land in the right gully; do not try to skip it",
+     "id": "wa_junior_s_farm",
+     "fact": "Whether a 60 m rope reaches the hidden fourth rappel anchor"
+    }
+   ]
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Parking pass at Monument Creek trailhead",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Bivy-only dispute (bivy[0].permit is a regional camp-list text); per the camping clean-up rule no bivy patch is written. bivy[0] (Dot Lake/Butte Pass) and bivy[2] (bench SW of Shellrock Pass) serve Lost Peak; bivy[1] (Berk Creek/Middle Fork camps) serves the Robinson Creek start this itinerary uses. access.*, permit and the trailhead waypoint consistently say only Robinson Creek needs a pass.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Pack weight on the day camp is moved",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The app treats packLb 0 as unset: every itinerary renderer (Plan tab chips, text export, printable export) guards with `if(d.packLb)`, so no '0 lb' pack is shown beside the 'Break camp' schedule; nothing on screen disagrees.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "fact": "Direction from Lake of the Woods camp to the Lake Mountain saddle",
+   "verdict": "fixed",
+   "correct_value": "northwest",
+   "evidence": "Lake Mountain lies about 1.5 mi NNW of Pistol Pass and a couple of miles SE of Monument Peak; a 2025 report looking north from Pistol Pass shows Lake of the Woods in the centre with Lake Mountain to the left, and a 2021 account reaches Monument's long south ridge by dropping off Lake Mountain's west side. So from the lake the saddle on Lake Mountain's south ridge and the basin beyond are northwest, matching the route's own pins (saddle ~0.6 km N / 0.8 km W of camp; summit further NW). 'South' is replaced with 'northwest' in both copies.",
+   "sources": [
+    "https://www.summitpost.org/lake-mountain/151507",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-08-10.215319498004",
+    "https://www.lemkeclimbs.com/monument-peak-group.html",
+    "https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From camp, traverse cross-country south to the ~7,400-ft saddle",
+     "replace": "From camp, traverse cross-country northwest to the ~7,400-ft saddle",
+     "id": "wa_monument_peak_pasayten_scramble",
+     "fact": "Direction from Lake of the Woods camp to the Lake Mountain saddle"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "From high camp, traverse south to the saddle below Lake Mountain",
+     "replace": "From high camp, traverse northwest to the saddle below Lake Mountain",
+     "id": "wa_monument_peak_pasayten_scramble",
+     "fact": "Direction from Lake of the Woods camp to the Lake Mountain saddle"
+    }
+   ]
+  }
+ ]
+}

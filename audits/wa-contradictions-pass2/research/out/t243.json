@@ -1,0 +1,21 @@
+{"file": "t243.json", "results": [
+ {"id": "wa_mount_noyes_standard", "fact": "Date of the Elwha road washout", "verdict": "fixed",
+  "correct_value": "November 2017 (the Olympic Hot Springs Road washout that closed vehicles at Madison Falls)",
+  "evidence": "The NPS news release of November 30, 2017 reports the prior week's storm and flooding caused significant damage and closed Olympic Hot Springs Road in the Elwha Valley. Press coverage and trail-status summaries describe a first washout in late November 2015, reopening to vehicles on January 26, 2017, and a second washout in November 2017 that has kept the road closed beyond Madison Falls since. No source describes a 2024 washout; the pro tip's year is the outlier and approach/access.closures are right.",
+  "sources": ["https://www.nps.gov/olym/learn/news/olympic-hot-springs-road-in-the-elwha-valley-remains-closed-due-to-flood-damage.htm", "https://www.seattletimes.com/seattle-news/environment/elwha-river-takes-out-olympic-hot-springs-road-yet-again/", "https://outdoor-society.com/elwha-rivers-whiskey-bend-road-closed-to-all-access-olympic-hot-springs-to-open/"],
+  "patches": [
+   {"id": "wa_mount_noyes_standard", "fact": "Date of the Elwha road washout", "op": "replace_text", "column": "pro_tips", "path": [2], "find": "Since the 2024 Elwha road washout", "replace": "Since the November 2017 Elwha road washout"}
+  ]},
+ {"id": "wa_mount_olson_standard", "fact": "Height of the scramble above the tarn", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Summit elevation is 5,289 ft (topo-derived listing). A 2018 trip report describes the Olson Way leaving the Six Ridge junction, climbing about 500 ft across loose rock to a saddle, then dropping all of that and more into a large talus basin holding the tarn, followed by a steep, slow climb to the summit — which implies the tarn sits well below 5,100 ft and favours the ~1,000 ft figure, but it gives no tarn elevation. No second source giving the tarn's height or the gain from tarn to summit could be reached (the Olympic climbers' guide page and the forum trip report were unreachable). Settling it needs a topo reading of the tarn in the basin below Olson's east pass plus one trip report stating its height.",
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report.2018-07-28.3740270681", "https://peakery.com/mount-olson-washington/"],
+  "patches": []},
+ {"id": "wa_ruth_peak_olympics_scramble", "fact": "Approach corridor", "verdict": "fixed",
+  "correct_value": "Commonly from Sol Duc over the High Divide, past Cat Basin and across the Catwalk to Eleven Bull Basin (Ferry Basin lies beyond Ruth, not on the way to it)",
+  "evidence": "A 2021 Bailey Range trip report follows Sol Duc, Heart Lake, the High Divide, past Cat Peak and over the Catwalk to Eleven Bull Basin on day one, reaching Ferry Basin only the next day via Stephen Lake — so Ferry Basin is beyond Ruth. A separate traverse write-up states the classic traverse leaves the Sol Duc trailhead up past Heart Lake onto the High Divide, with the Boulder Creek/Appleton Pass start described as an optional extension. The beta's 'Appleton Pass ... Ferry Basin/Eleven Bull Basin' is the outlier against approach, waypoints, itinerary, timing and approach_variants.",
+  "sources": ["https://climberkyle.com/2021/07/31/the-bailey-range-traverse/", "https://www.trailgroove.com/blogs/entry/498-a-bailey-range-traverse-hiking-in-olympic-national-park/"],
+  "patches": [
+   {"id": "wa_ruth_peak_olympics_scramble", "fact": "Approach corridor", "op": "replace_text", "column": "beta", "path": [], "find": "commonly via Appleton Pass, Cat Basin, and Ferry Basin/Eleven Bull Basin", "replace": "commonly from Sol Duc over the High Divide, past Cat Basin and across the Catwalk to Eleven Bull Basin"}
+  ]}
+]}

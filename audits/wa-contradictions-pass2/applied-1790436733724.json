@@ -1,0 +1,202 @@
+{
+ "applied": [
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where the two rappels are, and the descent line"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "rappel_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Where the two rappels are, and the descent line"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "rappels",
+   "path": [],
+   "fact": "Where the two rappels are, and the descent line"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Where the two rappels are, and the descent line"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Where the two rappels are, and the descent line"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Where the two rappels are, and the descent line"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "pitch"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "pitch"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "pitch"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Direction of the Robinson Creek Trail from the trailhead"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction of the Robinson Creek Trail from the trailhead"
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass at the Dosewallips road end"
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking pass at the Dosewallips road end"
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Parking pass at the Dosewallips road end"
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "column": "bail",
+   "path": [],
+   "fact": "Bailout pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "before": {
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First of two rappels down the main gendarmes on the ridge's west side.",
+      "anchor": "gendarme anchor, west side (type not recorded)",
+      "lengthM": 15
+     },
+     {
+      "n": 2,
+      "notes": "Second rappel; total rappelling covers roughly 30m before scrambling down west-slope talus/scree back toward camp.",
+      "anchor": "gendarme anchor, west side (type not recorded)",
+      "lengthM": 15
+     }
+    ],
+    "rappels": "2 on the ascent, off the west side of the North Summit to regain the ridge crest. On the descent, the gendarmes are rappelled or downclimbed; how many rappels the return along the ridge needs is not established. Anchors may have to be built from scratch.",
+    "descent_text": "From the summit, downclimb the upper ridge scrambling to the first gendarme, rappel or downclimb it, continue down the ridge to the second gendarme, rappel it, and continue 3rd-class scrambling back to the high camp at ~7,500 ft; from there retrace the bushwhack to Remmel Lake.",
+    "pitch_detail": [
+     {
+      "grade": "3rd class",
+      "notes": "From the high camp at timberline (~7,500 ft) on the lower ridge, hike and scramble up the NW ridge, a lightly vegetated, boulder-covered crest, to the top of the North Summit. From a distance the ridge can look like a rubble pile of big boulders, but much of the rock is good.",
+      "pitch": "1"
+     },
+     {
+      "grade": "Rappel, west side",
+      "notes": "The ridge cannot be followed directly off the North Summit. Make the first of two rappels down its west side. Anchors may need to be built, so carry extra slings. Loose rock and boulders sit on all the rappel lines, so keep the rope clear and the party out of the fall line.",
+      "pitch": "Rappel 1"
+     },
+     {
+      "grade": "Rappel, west side",
+      "notes": "The second rappel on the west side regains the ridge crest beyond the North Summit. A single 50 or 60 m rope is enough. Leave the anchor in good order: the descent comes back this way.",
+      "pitch": "Rappel 2"
+     },
+     {
+      "grade": "5.2",
+      "notes": "Follow the ridge top as much as possible to the first of the two main gendarmes, and climb it in a couple of short pitches rated 5.1 to 5.2 on mostly stable rock. Harder variations exist. Protection is a small rack of nuts and long slings. On the way down, this gendarme needs a rappel.",
+      "pitch": "2"
+     },
+     {
+      "grade": "5.2",
+      "notes": "The second main gendarme also goes in a couple of 5.1-5.2 pitches on mostly stable rock, staying on the crest where possible, and leads on to the summit. It too needs a rappel on the descent, so keep enough slings in reserve for anchors on both gendarmes and the North Summit.",
+      "pitch": "3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "before": {
+    "beta": "From the Robinson Creek Trailhead, follow the maintained Robinson Creek Trail south/southeast, cross Beauty Creek, and turn uphill onto the unmarked, unmaintained Beauty Creek Trail. Climb the brushy, steep Beauty Creek valley, cross a tributary around 5,200-5,260 ft, then ascend open meadow/scree to a small tarn at roughly 6,750-6,800 ft in a rocky basin. From the tarn, climb the loose scree slope (snow-covered in early season) north of the tarn to a gap in the southeast ridge, then turn left (north-west) and follow the ridge about a mile over several false summits — mostly class 2 walking with a few class 3 sections and a narrow, exposed crux just below the true summit.",
+    "approach": "From Winthrop, drive Highway 20 west about 14-15 miles to the Mazama junction, then either (a) continue on Lost River Road (County Road 9140) about 8.75 miles (paved then gravel Forest Road 5400) to Robinson Creek Trailhead, or (b) turn onto the Harts Pass Road (also FR-5400) and drive about 9.0 miles to the same trailhead (elev. ~2,500-2,560 ft, with an information sign, picnic table, and vault toilet). From the trailhead, hike the Robinson Creek - Middle Fork Trail (#478) south for about 2.8 miles to the signed/bridged Beauty Creek junction (elev. ~3,560 ft) just past a bridge over Beauty Creek. Turn right (northeast/uphill) onto the unmarked, overgrown Beauty Creek Trail and follow it about 1.5 miles up the valley, staying northwest of the creek, to a tributary crossing around 5,200-5,260 ft, then continue up open slopes to the tarn basin at about 6,750-6,800 ft."
+   }
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "before": {
+    "access": {
+     "fees": "Standard Olympic NP entrance fee: $30 per vehicle (7-day pass), $15 per person for hikers/cyclists without a vehicle, or a $55 Olympic NP annual pass / $80 America the Beautiful annual pass.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are required for overnight food storage throughout this backcountry zone. Camp only at designated sites (Marmot Lake, Upper Duckabush, 10-Mile Camp on the Duckabush side; Honeymoon Meadows, Dose Forks, Deception Creek, Bear Camp, Dose Meadows on the Dosewallips side) or at least 200 ft from water/trails elsewhere; there is no established camping at LaCrosse Pass itself and no water source there.",
+     "permit": "A Wilderness (overnight) permit is required for any backcountry camping en route and must be reserved through Recreation.gov; cost is $6 per reservation plus $8 per person per night. Day-use climbing itself needs no separate climbing permit, but nearly every party will be camping overnight given the approach length.",
+     "closures": "The Dosewallips River Road has been closed to vehicle traffic since a major January 2002 flood washout and remains permanently closed to cars (foot/bike travel only). Vehicles reach a road-end parking about 8.5 miles from US-101 and the washout sits roughly a mile beyond, adding about 6.5 miles each way to any Dosewallips-side approach. The Duckabush trailhead has no such closure.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (National Park Service)",
+     "land_manager": "Olympic National Forest (initial ~4.9 mi approach from the Dosewallips Road washout/Elkhorn Campground to the park boundary) transitioning to Olympic National Park (National Park Service) beyond the boundary to the summit.",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Wilderness camping permit (not a parking/road pass) reserved via Recreation.gov",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic NP wilderness camping permit, nightly fee per person",
+      "where": "Reserve in advance on Recreation.gov, by phone, or in person at a Wilderness Information Center. There are no self-issue permits at trailheads."
+     }
+    },
+    "bail": "Descend to La Crosse Pass or the nearest trail and follow it out."
+   }
+  }
+ ]
+}
