@@ -10,3 +10,8 @@
 - East Fury: routes now 8,322 ft (2024 dGPS 8,321.5 + peak list 8,325); check the area record elevation_ft (may still be 8,356) (s038).
 - Mount Stone (Lake of the Angels): approach and climbing_route[3] name a guidebook as their source (no-sources rule) (s054).
 - Sefrit SE Ridge: start moved to the milepost-3 pullout in 5 fields; trailhead pin still at the road end (s050). Mount Seattle Elwha itinerary omits the Madison Falls road walk (s050).
+- Old Snowy (wa_old_snowy_mountain_r1): summit scramble is the NW ridge (3 sources; beta/approach patched); name 'South Ridge / PCT approach' should be renamed (s062).
+- Blue's Buttress high point: pass 1 (r244) set high_point_ft 7,565 -> 7,840 (MP + USGS near the ridge); pass 2 (s065) finds two sources giving Poster Peak as 7,565 and the 7,840 ground ~0.8 km SE of the summit pin. Which summit the route tops out on is unsettled — owner/ground check. Hospital line (Skagit Valley, 75 mi) also doubtful.
+
+- **Skookum (wa_skookum…)**: the row mixes a Class 3–4 scramble with the 5.4 north ridge. Retry research confirmed both lines exist; which one this row describes is an owner decision (split the row, or pick one and rewrite the other fields).
+- **Early Winters approach distance (Free Mojo, Boving Roofs, Dolphin Chimney)**: two sources give 2.5 mi one way, but each row's own itinerary says 5.2–5.5 mi round trip. `dist_km` was left alone so it doesn't swap one mismatch for another; Boving-Pollock (itinerary says 5 mi round trip) was set to 4.0 km.

@@ -1,0 +1,134 @@
+{
+ "file": "s073.json",
+ "results": [
+  {
+   "id": "wa_wings",
+   "fact": "Protection beta",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both published descriptions of Wings (the route database entry, which lists Protection: N/A, and the peak reference page listing all Steeple Rock routes) describe the corner, pillar-top belay, loose traverse and shallow chimney but give no gear. Nothing found supports the rack's 0.3-2.5 in cam range, so the rack is unsourced while pro_needs says no protection beta is on record. A first-hand report stating the gear used on Wings would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/118351686/wings",
+    "https://www.summitpost.org/steeple-rock/394209"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_caravan",
+   "fact": "Line after the 3rd bolt",
+   "verdict": "unresolved",
+   "correct_value": "goes straight up after the 3rd bolt (likely)",
+   "evidence": "The only description of Caravan (the first-ascensionist's entry) says it shares Chitlins' start and goes straight up after the 3rd bolt, matching beta and pitch_detail; the Chitlins Con Carne entry has no text, and the crag page and the neighbouring Summertime entry give only route order. No second independent source exists and only two row fields oppose the overview, so no patch. Suggested fix if a second source appears: overview 'before breaking right at the third bolt' -> 'before going straight up from the third bolt'.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728691/caravan",
+    "https://www.mountainproject.com/route/110728678/chitlins-con-carne",
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_django",
+   "fact": "Route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only source (the first-ascensionist's entry) itself says 70 ft (21 m), 2 pitches, with a 50 ft second pitch, carrying the same inconsistency; the crag page and the Summertime entry give no pitch lengths, and the route has no comments. A second description giving P1's length or the total would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728672/django",
+    "https://www.mountainproject.com/route/110728801/summertime"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hottentot",
+   "fact": "Protection on P2",
+   "verdict": "fixed",
+   "correct_value": "Both pitches are bolt-protected; on P2 a piton past the crux pulled out and was not replaced, leaving a longer gap before the last bolts. P2 grade remains unconfirmed.",
+   "evidence": "The first-ascensionist's 2015 entry lists the route as Sport with protection 'bolts', P2 then unfreed. A different climber's July 2026 comment on the route says P2 (a thin slab) was freed in 2026 and is bolted, with a piton after the crux that pulled out by hand and was not replaced, leaving extra space between bolts. Two parties agree P2 is bolted, so pro_needs, detailed_rack and the hazard line are updated; the grade stays unconfirmed (neither gives one).",
+   "sources": [
+    "https://www.mountainproject.com/route/110728825/hottentot",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/110728825"
+   ],
+   "patches": [
+    {
+     "id": "wa_hottentot",
+     "fact": "Protection on P2",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "P1 is bolted; P2's protection and grade are unresolved — confirm current status before committing.",
+     "replace": "Both pitches are bolted. On P2 a piton past the crux has come out and was not replaced, so the gap before the last couple of bolts is longer; P2's grade is still unconfirmed."
+    },
+    {
+     "id": "wa_hottentot",
+     "fact": "Protection on P2",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "P2 protection is not clearly documented given its unconfirmed/unfreed status as of 2015.",
+     "replace": "P2 is also bolted, with a longer gap past its crux where a piton has pulled out."
+    },
+    {
+     "id": "wa_hottentot",
+     "fact": "Protection on P2",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "Uncertain protection/grade on the upper pitch.",
+     "replace": "Uncertain grade on the upper pitch, and a longer gap between bolts past its crux where a piton has come out."
+    }
+   ]
+  },
+  {
+   "id": "wa_summertime",
+   "fact": "Descent from the top",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's only description (Trad, 5 pitches, 400 ft, Grade II) lists the chained anchors passed (tops of Caravan and Django, the crux-pitch anchor) but says nothing about getting off the clifftop; the crag page and route comments add no descent. Whether parties rappel the route or walk off cannot be confirmed. A report of an actual descent from the top would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728801/summertime",
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_alice_in_wonderland",
+   "fact": "Lower-off distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Alice starts from the top of Summertime P1 (itself described as passing the Caravan and Django chains) and is 40 ft, so its anchor is likely beyond a single-rope lower; but no source states the anchor height or how parties descend from it, and there are no comments. A report of the descent from the Alice anchor would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728819/alice-in-wonderland",
+    "https://www.mountainproject.com/route/110728801/summertime"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "fact": "Cairned crack passage (possibly another peak's feature)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A first-hand Sundial ascent describes a couloir on the right of the Needles that doglegs left to the ridge, then a short class 3 scramble south - no cliff-out or cairned crack. The Olympic climbing guide's Sundial page lists only route names (Class 3 East Face, Belvedere Basin, Surprise Basin; 5.0 South Side Face) with no detail. A Mount Clark corkscrew trip report describes ledges, a notch and an exposed diagonal crack down to an east ledge - the likely origin of the sentence - but no source states Sundial lacks such a spot. A detailed Sundial East Face description would settle it.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/may-24-2008-sundial-peak-the-needles-olympic-ntl-park",
+    "http://www.climbersguideolympics.com/peaks/gray-wolf-hurricane-ridge-group/sundial",
+    "https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "fact": "Cairned crack passage (possibly another peak's feature)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A first-hand Sundial ascent describes a couloir on the right of the Needles that doglegs left to the ridge, then a short class 3 scramble south - no cliff-out or cairned crack. The Olympic climbing guide's Sundial page lists only route names (Class 3 East Face, Belvedere Basin, Surprise Basin; 5.0 South Side Face) with no detail. A Mount Clark corkscrew trip report describes ledges, a notch and an exposed diagonal crack down to an east ledge - the likely origin of the sentence - but no source states Sundial lacks such a spot. A detailed Sundial East Face description would settle it.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/may-24-2008-sundial-peak-the-needles-olympic-ntl-park",
+    "http://www.climbersguideolympics.com/peaks/gray-wolf-hurricane-ridge-group/sundial",
+    "https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_pleiades_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "Rappel anchor on Peak 1 vs 'no established rappel route'"
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "column": "bail",
+   "path": [],
+   "fact": "Rappel anchor on Peak 1 vs 'no established rappel route'"
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "detail"
+   ],
+   "fact": "Rappel anchor on Peak 1 vs 'no established rappel route'"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_pleiades_scramble",
+   "before": {
+    "descent": "Reverse the ascent line (down-climb); no established rappel route.",
+    "bail": "Retreat by down-climbing the ascent line back to the basin below Larrabee's east face, over the col, and down to High Pass — there is no fixed rappel/bail infrastructure on route.",
+    "itinerary": {
+     "cal": "Twin Lakes road is often snow-covered or rough into early summer; conditions are typically best August-September once the talus and rock are dry.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Twin Lakes trailhead, climbers go over Low Pass and High Pass and cross the basin beneath Mount Larrabee's east ridge to reach the base of the Pleiades, then scramble exposed, notoriously loose 3rd/4th class rock to the summit. Nearly everyone treats this as a long single day rather than an overnight — Twin Lakes already sits near 5,200 ft, and there's no established camp or reliable water any closer to the peaks.",
+       "hours": 10,
+       "miles": 7.5,
+       "title": "Car-to-car scramble to The Pleiades",
+       "gainFt": 3200,
+       "lossFt": 3200,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "5:30-6:00 AM",
+         "label": "Leave Twin Lakes trailhead",
+         "detail": "High-clearance/4WD is often needed on the final rough miles of the Twin Lakes road, especially early season."
+        },
+        {
+         "time": "+2 to 2.5 hr",
+         "label": "Reach High Pass",
+         "detail": "Traverse meadows and talus below Mount Larrabee's east ridge toward the Pleiades saddle."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Gain the base of the Pleiades ridge",
+         "detail": "Helmets on here; the rock quality gets notably worse from this point."
+        },
+        {
+         "time": "+2 to 2.5 hr",
+         "label": "Scramble to the summit",
+         "detail": "Exposed 3rd/4th class climbing on chossy blocks and a short slab pitch to the 'goat ledge'; parties note this stretch commonly takes 2-3x longer than expected."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit",
+         "detail": "Highpoint of the group at 7,371 ft."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Down-climb and return to trailhead",
+         "detail": "No rappel route is established — reverse the ascent line carefully; loose rock makes the descent rockfall-prone for parties below."
+        }
+       ],
+       "objective": "Reach the high point of The Pleiades via the Twin Lakes / High Pass approach"
+      }
+     ],
+     "totalNote": "A long, technical single day: roughly 7.5 miles round trip with about 3,200 ft of gain/loss, but slow going (9-11 hrs car to car) due to sustained loose 3rd/4th class scrambling near the summit."
+    }
+   }
+  }
+ ]
+}

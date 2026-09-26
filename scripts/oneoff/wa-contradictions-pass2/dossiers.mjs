@@ -12,7 +12,9 @@ const SKIP = new Set(["name_search", "auto_generated", "sort_order", "gpx", "ele
 const argv = process.argv.slice(2), opt = k => { const i = argv.indexOf(k); return i < 0 ? null : argv[i + 1]; };
 const EXCL = new Set(opt("--exclude") ? JSON.parse(fs.readFileSync(opt("--exclude"))) : []);
 const START = +(opt("--start") || 1);
-const rich = R.filter(r => !EXCL.has(r.id)).filter(r => r.overview || r.approach || r.timing || r.itinerary || r.pitch_detail || r.waypoints || hints[r.id]);
+// --only <ids.json>: batch ONLY these routes (e.g. the re-read of every row a fix touched)
+const ONLY = opt("--only") ? new Set(JSON.parse(fs.readFileSync(opt("--only")))) : null;
+const rich = R.filter(r => !EXCL.has(r.id) && (!ONLY || ONLY.has(r.id))).filter(r => r.overview || r.approach || r.timing || r.itinerary || r.pitch_detail || r.waypoints || hints[r.id]);
 const byArea = {};
 for (const r of rich) (byArea[r.area_id] ||= []).push(r);
 const areaIds = Object.keys(byArea).sort((a, b) => (A[a]?.path || "").localeCompare(A[b]?.path || ""));

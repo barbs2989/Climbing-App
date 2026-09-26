@@ -1,0 +1,43 @@
+{"file": "s070.json", "results": [
+ {"id": "wa_south_early_winter_spire_passenger", "fact": "Retreat", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "BAILOUT is about retreating mid-route; DESCENT is about getting down after topping out. They are different things, so the two fields do not conflict. A route description says rappelling the Passenger to retreat is fairly simple on the lower pitches, but above pitch 4 there are no fixed anchors and you have to leave gear. That matches 'retreat is committing on the steep upper pitches'. The same source and another route page both give the South Arete as the normal descent, which matches descent_text. 'No route-specific rappel line' fits the missing fixed anchors up high.",
+  "sources": ["http://www.supertopo.com/rock-climbing/Washington-Pass-South-Early-Winters-Spire-The-Passenger", "https://www.mountainproject.com/route/106585962/the-passenger"],
+  "patches": []},
+ {"id": "wa_south_early_winter_spire_passenger", "fact": "Round-trip distance", "verdict": "fixed",
+  "correct_value": "dist_km 4.0 (about 2.5 mi one way; the Passenger starts about 10 minutes of scrambling beyond the South Arete base)",
+  "evidence": "One guide service puts the summer approach from the Blue Lake trailhead to the South Arete base at about 2.5 mi with about 2,000 ft of gain. A club route page gives 6.0 mi round trip and 2,600 ft for the South Arete. So both sources make the one-way approach at least 2.5 mi. Route descriptions put the Passenger's start about ten minutes past the South Arete base. The stored 1.5 mi looks like the distance on the maintained Blue Lake Trail before the climbers' path leaves it, which is a different quantity. I used 4.0 km, the low end of the sourced range. It matches this catalog's South Arete row and fits the 5.3 mi round-trip itinerary.",
+  "sources": ["https://www.alpineinstitute.com/route-profile-the-south-arete-of-south-early-winter-spire/", "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete", "http://www.supertopo.com/rock-climbing/Washington-Pass-South-Early-Winters-Spire-The-Passenger", "https://www.mountainproject.com/route/106585962/the-passenger"],
+  "patches": [
+   {"id": "wa_south_early_winter_spire_passenger", "fact": "Round-trip distance", "op": "set", "column": "dist_km", "path": [], "expect": 2.4, "value": 4.0}
+  ]},
+ {"id": "wa_the_hitchhiker", "fact": "Start offset from the Passenger", "verdict": "fixed_internal_plus_one",
+  "correct_value": "about 100 ft right of The Passenger",
+  "evidence": "Five fields on the row say about 100 ft: approach, approach_variants[0].hazards[0], baseFinding, the itinerary note and the sectionBreakdown note. The neighbouring Passenger row's approach also says 100 ft. A detailed trip report by a party that climbed both routes on consecutive days says The Hitchhiker is about 100 feet right of The Passenger. The only other figure found (250 ft) is a historical note about the rock the first-ascent party first looked at, before the start was moved. Nothing supports 100 yards.",
+  "sources": ["https://stephabegg.com/trip-reports/washington/washington-pass/", "http://www.supertopo.com/rock-climbing/Washington-Pass-South-Early-Winters-Spire-The-Hitchhiker"],
+  "patches": [
+   {"id": "wa_the_hitchhiker", "fact": "Start offset from the Passenger", "op": "replace_text", "column": "overview", "path": [], "find": "starting about 100 yards right of The Passenger", "replace": "starting about 100 ft right of The Passenger"}
+  ]},
+ {"id": "wa_the_hitchhiker", "fact": "Approach trailhead", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "There are really two approaches. A route description for The Hitchhiker covers both: approach from Blue Lake, stash gear at the South Arete base and walk about ten minutes to the start, or scramble up the scree from the hairpin. It recommends Blue Lake as the more pleasant way and gives 1.5-2.5 hr. A separate trip report on this route came up from the Hairpin in spring snow. The row's main approach fields use Blue Lake. partner_requirements describes the hairpin option, which is also real.",
+  "sources": ["http://www.supertopo.com/rock-climbing/Washington-Pass-South-Early-Winters-Spire-The-Hitchhiker", "https://stephabegg.com/trip-reports/washington/washington-pass/", "https://www.mountainproject.com/area/106257377/south-early-winters-spire"],
+  "patches": []},
+ {"id": "wa_the_hitchhiker", "fact": "Gain vs loss", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "No source gives a car-to-car gain or loss for The Hitchhiker. Route descriptions only say the Blue Lake and hairpin approaches have 'similar elevation gain'. South Arete figures for the same summit range from 2,000 ft (approach only) to 2,500-2,600 ft, but they are for a different route. Under the standing rule, neither gain_ft nor loss_ft can change. It would be settled by a stated car-to-car gain for this route.",
+  "sources": ["http://www.supertopo.com/rock-climbing/Washington-Pass-South-Early-Winters-Spire-The-Hitchhiker"],
+  "patches": []},
+ {"id": "wa_south_arete", "fact": "Pitch count", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Sources count the pitches differently because much of the route is scrambling that parties may or may not rope up for. One route page lists 3 pitches. A long-standing peak page calls it a 'three or four pitch climb'. One route write-up describes two roped pitches (crux crack, chockstone chimney) and then scrambling, which matches pitch_detail, the itinerary and pro_needs. A trip report calls it a 5-pitch climb. It would be settled by a catalog decision on whether the scrambling above the chimney counts as a pitch.",
+  "sources": ["https://www.mountainproject.com/route/106378815/south-arete", "https://www.summitpost.org/south-early-winters-spire/150417", "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete", "http://alpinealicia.com/2011/20110702_SEWSSouthArete.html"],
+  "patches": []},
+ {"id": "wa_south_arete", "fact": "Round-trip distance", "verdict": "fixed_internal_plus_one",
+  "correct_value": "itinerary day miles 5 (round trip of the 2.5 mi one-way approach)",
+  "evidence": "Four fields say the approach is 2.5 mi one way: dist_km 4 (2.49 mi), approach_variants[0].distMi 2.5, partner_requirements.fitnessSpec.approach and partner_requirements.approachTime. The route is an out-and-back whose descent reverses the approach. A guide service puts the summer approach from Blue Lake at about 2.5 mi with about 2,000 ft of gain. A club route page lists 6.0 mi round trip. Both rule out a 4.1 mi round trip. The itinerary's 4.1 is the outlier, and 5 is twice the row's own sourced one-way figure.",
+  "sources": ["https://www.alpineinstitute.com/route-profile-the-south-arete-of-south-early-winter-spire/", "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete"],
+  "patches": [
+   {"id": "wa_south_arete", "fact": "Round-trip distance", "op": "set", "column": "itinerary", "path": ["days", 0, "miles"], "expect": 4.1, "value": 5}
+  ]}
+]}

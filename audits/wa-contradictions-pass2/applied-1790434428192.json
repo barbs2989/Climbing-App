@@ -1,0 +1,38 @@
+{
+ "applied": [
+  {
+   "id": "wa_hottentot",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Protection on P2"
+  },
+  {
+   "id": "wa_hottentot",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Protection on P2"
+  },
+  {
+   "id": "wa_hottentot",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Protection on P2"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_hottentot",
+   "before": {
+    "pro_needs": "P1 is bolted; P2's protection and grade are unresolved — confirm current status before committing.",
+    "detailed_rack": "Bolted P1 to chains — standard quickdraws suffice. P2 protection is not clearly documented given its unconfirmed/unfreed status as of 2015.",
+    "hazards": [
+     "Unmaintained, off-trail approach with a creek crossing.",
+     "Uncertain protection/grade on the upper pitch."
+    ]
+   }
+  }
+ ]
+}

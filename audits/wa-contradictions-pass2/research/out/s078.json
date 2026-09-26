@@ -1,0 +1,153 @@
+{
+ "file": "s078.json",
+ "results": [
+  {
+   "id": "wa_northwest_face",
+   "fact": "Summit elevation vs Burgundy Col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: USGS 1 m point elevation at the row's own summit pin reads ~8,012 ft and at the Burgundy Col pin ~7,897 ft, so the stored 7,663 ft is certainly too low. But the topo-derived list gives 7,940 ft, a prior lidar sample gave a local high of ~8,060 ft, and the club route page implies ~500 ft above a 7,800 ft col (~8,300 ft). No two sources agree on one figure within tolerance. A surveyed/topo-list figure matching the lidar summit (or a peakbagger reading) would settle it.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.59304&y=48.55552&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.591969&y=48.554323&units=Feet&wkid=4326",
+    "https://listsofjohn.com/peak/212044",
+    "https://www.mountaineers.org/activities/routes-places/vasiliki-tower-northwest-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face",
+   "fact": "Summit elevation vs Burgundy Col (high_point_ft and Summit waypoint 7,663 ft below the 7,800 ft col)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same defect as the Northwest Face row: high_point_ft and waypoints[3].elev/elevFt say 7,663 ft while the col waypoint says 7,800 ft. USGS lidar at the summit pin reads ~8,012 ft; a topo list says 7,940 ft; other readings run 8,060-8,300 ft. No agreed replacement value.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.59304&y=48.55552&units=Feet&wkid=4326",
+    "https://listsofjohn.com/peak/212044"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry searched club, summitpost, AAJ and general pages; the only source giving a pitch count for Vasiliki Tower's South Face is still the one route listing (3 pitches, 250 ft), which matches pitches=3. The two-pitch overview/beta/ROUTE BREAKDOWN text describes the Northwest Face. With only one source, and the row majority pointing the other way, nothing is changed. A second route description or topo of the South Face would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/114432444/south-face",
+    "https://www.mountaineers.org/activities/routes-places/vasiliki-tower-northwest-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources themselves split at the June edge: one peak page for neighbouring Burgundy Spire gives the best time as July through September, while a Washington Pass climbing overview gives a mid-June to late-September season with best weather from late June. The chip (Jul-Sep) and seasonal_guidance (June marginal) match the first; best_season and climate.summer match the second. Needs an owner call on whether the chip should include late June.",
+   "sources": [
+    "https://www.summitpost.org/burgundy-spire/151368",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "fact": "Parking pass at the hairpin turnout",
+   "verdict": "fixed",
+   "correct_value": "No parking pass is needed at the SR-20 hairpin turnout (it is a highway pullout, not a Forest Service fee trailhead).",
+   "evidence": "The peak page for Wallaby Peak states a Northwest Forest Pass is not required to park at the hairpin (a separate page for Kangaroo Temple says the same). The Forest Service's official Pacific Northwest list of day-use fee sites names Okanogan-Wenatchee fee trailheads (Cutthroat, Blue Lake, Rainy Pass etc.) but no SR-20 hairpin or Kangaroo/Wallaby site. The hiking-association page lists a pass generically. The waypoint's 'pass required' is the outlier.",
+   "sources": [
+    "https://www.summitpost.org/wallaby-peak/554133",
+    "https://www.summitpost.org/kangaroo-temple/815101",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": " Northwest Forest Pass required.",
+     "replace": " No parking pass is needed at this highway turnout.",
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Parking pass at the hairpin turnout"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": ", and display a Northwest Forest Pass or interagency pass.",
+     "replace": ". No parking pass is needed at this highway turnout.",
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Parking pass at the hairpin turnout"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Northwest Forest Pass / America the Beautiful pass recommended",
+     "value": "None at the SR-20 hairpin turnout",
+     "id": "wa_wallaby_peak_standard",
+     "fact": "Parking pass at the hairpin turnout"
+    }
+   ]
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "fact": "Approach gain to Home Lake",
+   "verdict": "fixed",
+   "correct_value": "About 3,000-3,500 ft of gain one way to Home Lake/Constance Pass (not 4,000-5,000 ft)",
+   "evidence": "The Warrior Peak peak page breaks the Upper Dungeness approach into ~600 ft to Camp Handy, ~1,850 ft to Boulder Camp and ~700 ft to Home Lake (~3,150 ft one way). A mapping-service route page for Constance Pass + Home Lake via the Upper Dungeness gives 4,782 ft for the whole 19.6-mile round trip (low point 2,489 ft, high point 5,843 ft), showing the 4,000-5,000 ft figure is a round-trip total, not a one-way approach. Both agree with the row's own waypoints (2,500 to 5,330 ft) and itinerary day 1 (2,800 ft).",
+   "sources": [
+    "https://www.summitpost.org/warrior-peak/816121",
+    "https://www.onxmaps.com/hiking/k1mzjnnv2qd7/constance-pass-home-lake-via-upper-dungeness-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "~4,800 ft one-way approach to the base of the route",
+     "replace": "~3,000 ft one-way approach to Home Lake",
+     "id": "wa_warrior_peak_standard",
+     "fact": "Approach gain to Home Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "with ~4,000-5,000 ft of gain",
+     "replace": "with roughly 3,000-3,500 ft of gain",
+     "id": "wa_warrior_peak_standard",
+     "fact": "Approach gain to Home Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_west_craggy_peak_standard_route",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found only combined figures: the club route page gives ~12 mi round trip / 5,800 ft for Big and West Craggy together, and a speed-record page gives a 9.5 mi Big-West Craggy loop. No source gives a trailhead-to-West-Craggy one-way distance, so whether 8.9 km (5.5 mi) is wrong cannot be established from two sources. A GPS track or trip report for West Craggy alone would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/big-craggy-west-craggy-peaks",
+    "https://fastestknowntime.com/route/big-craggy-west-craggy-loop-wa"
+   ],
+   "patches": []
+  }
+ ]
+}

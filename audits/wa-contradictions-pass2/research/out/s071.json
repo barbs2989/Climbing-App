@@ -1,0 +1,126 @@
+{
+ "file": "s071.json",
+ "results": [
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Largest cam",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The one detailed route description found says the rack is a standard alpine rack to 4 in and that the P3 roof crux has good gear at your waist, after which you step up and place a #4 — so the row reads the #4 as the crux protection, which that source does not quite say, and it implies the rack should reach a #4. No second source (other trip reports fetched gave no rack sizes; several guide/forum pages were blocked) confirms a #4 or a #3.5 limit. A second rack list or pitch description naming the largest piece would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.jeffreyjhebert.com/adventures/direct-east-buttress-on-s-early-winters-spire",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/deb-on-sews/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (2.4 km / 1.5 mi) is the one-way approach from the hairpin to the base, while itinerary.days[0].miles (5.2) is the whole day, which the row itself describes as a loop: descend the South Arete to the Blue Lake Trail and road-walk or shuttle back to the hairpin (descent_text, rappel_detail[2]). Those are different quantities and a loop day of ~5 mi is consistent with a 1.5 mi approach.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_cobbles_101",
+   "fact": "Route grade vs crux pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only pitch-graded source still gives 5.7 overall with P4 at 5.8 (P1 5.7, P2 5.6, P3 5.6, P5 5.6); the row copies it. Every other page found (search snippets of club trip reports, area pages) only repeats 5.7 or quotes the same pitch list; the club and crag-database pages were blocked (403). An independent pitch grading or a second overall grade of 5.8 would settle which to change.",
+   "sources": [
+    "https://www.mountainproject.com/route/110852598/cobbles-101"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "fact": "Route grade vs hardest pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Overall grade 5.4 is confirmed by two sources, but the 5.6 pitch grades (P2, P4) still trace to a single source; search results only restate that same pitch list, and the club trip-report and crag-database pages were blocked. A second independent pitch-by-pitch grading is needed to decide whether the pitches or the header should move.",
+   "sources": [
+    "https://www.mountainproject.com/route/109342321/bowling-alley-aka-regular-route",
+    "https://www.mountaineers.org/activities/routes-places/pinto-rock-bowling-alley"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "fact": "Wilderness self-issue permit and Discover Pass",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit is required in the Mount Baker Wilderness (climbing register is voluntary)",
+   "evidence": "The Forest Service Mt. Baker Wilderness page lists only a voluntary climbing register (registration optional) and its wilderness-regulations page names self-issue permits only for the Alpine Lakes Wilderness; a separate climbing page on North Twin states no permits or parking passes are required for climbing in the Sisters Range. This agrees with the row own overnight_permit (no wilderness permit or registration), so access.permit is corrected. The Discover Pass line in `permit` is conditional (only where parking on DNR land) and was left unchanged; no source ties a Discover Pass to the FR 38 gate either way.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.summitpost.org/north-twin/151345",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_twin_sister_west_ridge",
+     "fact": "Wilderness self-issue permit and Discover Pass",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Free self-issue Wilderness permit at the trailhead register",
+     "replace": "No wilderness permit required"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "fact": "Wilderness self-issue permit",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit required in the Mount Baker Wilderness",
+   "evidence": "Same row-internal conflict as the West Ridge: access.permit says a self-issue wilderness permit is typically required while access.overnight_permit says no wilderness permit or registration is needed. The Forest Service Mt. Baker Wilderness page lists only a voluntary register, and a North Twin climbing page states no permits are required for climbing in the Sisters Range.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+    "https://www.summitpost.org/north-twin/151345",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_twin_sister_scramble",
+     "fact": "Wilderness self-issue permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Wilderness self-issue permit typically required",
+     "replace": "No wilderness permit required"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "fact": "Gain less than trailhead-to-summit rise",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "USGS point elevation at the gate pin is 1,212 ft, so 5,400 ft cannot reach the 7,004 ft summit; the contradiction is real. Outside figures still disagree: one GPS trip gives 6,102 ft over 21.4 mi from the gate, one report gives 5,400 ft of which 800 ft was driven past the gate, and a biking report gives ~2,500 ft for the road section only. A second independent car-to-car figure from the Middle Fork gate (e.g. ~6,100 ft) would settle it.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-122.0394&y=48.7669&units=Feet&wkid=4326",
+    "https://www.thewildoutsiders.com/adventure-journal/south-twin-sister",
+    "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still only one source grades anything containing this ridge: the full Twin Sisters traverse at Grade II, Class 3, which implies the North Ridge alone is at most Grade II (matching commitment II, not grade Grade III). Searches found no second grade for the North Ridge itself; the SummitPost South Twin page was blocked. A second source rating this route or the traverse would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-twin-sisters-traverse"
+   ],
+   "patches": []
+  }
+ ]
+}

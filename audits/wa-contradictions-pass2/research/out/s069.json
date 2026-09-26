@@ -1,0 +1,237 @@
+{
+ "file": "s069.json",
+ "results": [
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "First ascent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route history states the Northwest Face was first climbed in October 1976 by Boving and Pollock, with Boving and Kerns making the first free ascent in July 1977; another route listing gives only 'Boving and Kerns 1977' as the FA. A documented Boving-Pollock ascent on 25 Sep 1976 belongs to North Early Winters Spire's Northwest Corner, so a second independent record of a 1976 Boving-Pollock ascent of THIS South Early Winters Spire route was not found. A second historical record (guidebook or AAJ note) naming the 1976 party on this route would settle it.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-South-Early-Winters-Spire-Northwest-Face",
+    "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock",
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "dist_km 4.0 (about 2.5 mi one way; about 5 mi round trip, matching the itinerary)",
+   "evidence": "A trail-map record of the Early Winters Spires approach via the Blue Lake Trail gives 2.5 mi one way; an independent route write-up for the Southwest Rib, which shares this basin approach, gives 5 miles round trip. The stored 6.6 km (4.1 mi) is a round-trip-sized figure in the one-way slot; 2.5 mi = 4.0 km, and the itinerary's 5 mi round trip already agrees.",
+   "sources": [
+    "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+    "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Round-trip distance",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 6.6,
+     "value": 4
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "fact": "Headline grade",
+   "verdict": "fixed",
+   "correct_value": "5.11a (crux pitch 2, 5.11a)",
+   "evidence": "A route topo grades the Northwest Face III 5.11a with pitch 2 as the 5.11 crux; an independent climber's Washington Pass route index lists the Northwest Face at 5.11a. One route database lists 5.11b overall but itself calls pitch 2 '11a/11', so the 5.11b chip is the outlier against the row's own pitch and beta grades.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-South-Early-Winters-Spire-Northwest-Face",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.11b",
+     "value": "5.11a",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Headline grade"
+    },
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "5.11a/b",
+     "value": "5.11a",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Headline grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "High-grade 5.11a/b climbing",
+     "replace": "High-grade 5.11a climbing",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Headline grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "6-pitch 5.11a/b Boving-Pollock",
+     "replace": "6-pitch 5.11a Boving-Pollock",
+     "id": "wa_northwest_face_boving_pollock",
+     "fact": "Headline grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Fixed anchor atop pitch 2",
+   "verdict": "fixed",
+   "correct_value": "Only pitch 1 has a fixed anchor; the pitch 2 belay is gear-built",
+   "evidence": "One route description places a two-piece fixed anchor at the top of pitch 1 and says the party built its pitch 2 belay from gear in a vertical crack on a ledge. A separate trip report found no good anchor where the belay atop pitch 2 is suggested and continued to the top of pitch 3; the first-ascent account describes the pitch 2 belay as a ledge with no fixed gear. The breakdown and bail fields are right; the descent text and base note wrongly assumed fixed anchors atop pitch 2.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467/free-mojo",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/",
+    "http://blakeclimbs.blogspot.com/2013/06/washington-pass-freedom.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "The documented lower pitches (P1 to a two-piece fixed gear anchor, P2 to ledges) suggest Free Mojo can be descended with rappels using a 60m rope from the fixed anchors if not continuing to the top — a party retreating after pitch 2 would rappel P2 then P1 back to the ground.",
+     "replace": "Only pitch 1 ends at a fixed anchor (a two-piece nut-and-cam anchor on a pedestal); the belay atop pitch 2 is built from gear on ledges, so a party retreating from above pitch 1 must leave gear for an anchor to get back down to the pitch 1 anchor, then rappel from it to the ground.",
+     "id": "wa_free_mojo",
+     "fact": "Fixed anchor atop pitch 2"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "a party retreating after pitch 2 rappels P2 then P1 back to the ground from the fixed anchors on a 60 m rope.",
+     "replace": "a party retreating from the fixed anchor atop pitch 1 rappels to the ground; above it the belays are built from gear, so retreating higher means leaving gear.",
+     "id": "wa_free_mojo",
+     "fact": "Fixed anchor atop pitch 2"
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Where the route joins another line",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two fields describe two different junctions. The first-ascent account says a short 5.10 flare after the two new pitches leads into Mojo Rising at the base of that route's 5th pitch (so 'joins Mojo Rising at its P5' is right), and the route description says Free Mojo's own P5 later trends right to meet the upper arete to the summit; a trip report says it then joins the Southwest Rib higher up. Both statements can hold at once.",
+   "sources": [
+    "http://blakeclimbs.blogspot.com/2013/06/washington-pass-freedom.html",
+    "https://www.mountainproject.com/route/117392467/free-mojo",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "Pitch 6 length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route description says P6 climbs 'about 25 ft' to the summit, matching the beta and implying pitch_detail's 25 m is a unit slip (about 8 m). No second independent source gives the last pitch's length (the trip report and first-ascent account do not). A second pitch-by-pitch topo would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/117392467/free-mojo",
+    "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states a car-to-car gain for the Boving Roofs itself. A write-up of the Southwest Rib (which this route shares and finishes on) gives 2,520 ft gain for 5 miles round trip, and a trail-map record gives 1,919 ft to the base of the spires only; neither is a figure for THIS route, and the two stored values (2,350 and 1,800) match neither. A published gain figure for the Boving Roofs to the summit would settle it.",
+   "sources": [
+    "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html",
+    "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Wide-gear sizes",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one route description exists: the party carried gear to a #5 as the guidebook suggested, found the chockstone about 20 ft up plus a few tiny nuts and cams, and thought a #6 might protect the first 20 ft. No second independent source gives a rack, so whether the rack tops out at #3-#4 (rope_note, rack) or #5/#6 (gear) cannot be settled on two sources. The separate, factual error that a #5 is 'roughly 3 inches' is fixed below.",
+   "sources": [
+    "https://www.mountainproject.com/route/117509825/dolphin-chimney"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "Size of a #5 cam",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "A #5 cam covers roughly 3.4-5.9 in, not 3 in",
+   "evidence": "Two gear listings give the Camalot C4 #5 expansion range as 85.4-148.5 mm (3.36-5.85 in); 3 in is the #3/#4 range. The parenthetical in gear[0] misstated the size of the cam it names.",
+   "sources": [
+    "https://www.bentgate.com/black-diamond-camalot-c4.html",
+    "https://weighmyrack.com/cam/black-diamond-camalot-c4-5-2018-0"
+   ],
+   "patches": [
+    {
+     "id": "wa_dolphin_chimney",
+     "fact": "Size of a #5 cam",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "find": "Rack to a #5 cam (roughly 3 inches)",
+     "replace": "Rack to a #5 cam (roughly 3.5 to 6 inches)"
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "fact": "One-way approach distance",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": "dist_km 4.0 (about 2.5 mi one way)",
+   "evidence": "The stored 8.37 km equals this row's own itinerary round-trip mileage (5.2 mi) and sits in the one-way approach slot. A trail-map record gives 2.5 mi one way from the Blue Lake Trailhead to the Early Winters Spires, and an independent Southwest Rib write-up (same basin approach) gives 5 miles round trip; 2.5 mi = 4.0 km. [Held: 4.0 km would contradict this row’s own itinerary round trip.]",
+   "sources": [
+    "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+    "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_boving_roofs",
+   "fact": "One-way approach distance",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": "dist_km 4.0 (about 2.5 mi one way)",
+   "evidence": "The stored 8.85 km equals this row's own itinerary round-trip mileage (5.5 mi) and sits in the one-way approach slot. A trail-map record gives 2.5 mi one way from the Blue Lake Trailhead to the Early Winters Spires, and an independent Southwest Rib write-up (same basin approach) gives 5 miles round trip; 2.5 mi = 4.0 km. [Held: 4.0 km would contradict this row’s own itinerary round trip.]",
+   "sources": [
+    "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+    "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "fact": "One-way approach distance",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": "dist_km 4.0 (about 2.5 mi one way)",
+   "evidence": "The stored 8.37 km equals this row's own itinerary round-trip mileage (5.2 mi) and sits in the one-way approach slot. A trail-map record gives 2.5 mi one way from the Blue Lake Trailhead to the Early Winters Spires, and an independent Southwest Rib write-up (same basin approach) gives 5 miles round trip; 2.5 mi = 4.0 km. [Held: 4.0 km would contradict this row’s own itinerary round trip.]",
+   "sources": [
+    "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+    "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html"
+   ],
+   "patches": []
+  }
+ ]
+}

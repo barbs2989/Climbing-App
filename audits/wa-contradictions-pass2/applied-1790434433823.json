@@ -1,0 +1,100 @@
+{
+ "applied": [
+  {
+   "id": "wa_gato_negro",
+   "column": "beta",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_gato_negro",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_gato_negro",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_gato_negro",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Topout elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_gato_negro",
+   "before": {
+    "beta": "Gato Negro is a full-day alpine rock climb with fairly sustained 5.10a/b climbing spread across 11 long pitches. Most pitches span 180-190 feet with none shorter than 150 feet. The route features a spectacular hand-crack first pitch, bolted 5.10a face climbing on fragile flakes, rising traverses under roofs, and splitter cracks on the final headwall. Route-finding is somewhat challenging; avoid a clean blocky chimney to the right of the route that looks good but is not as good as it appears. Cruxes are mostly well-protected, but a few slightly runout 5.8 sections on loose granite and a 5.9+ offwidth chimney section present additional challenges.",
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July to late August: the Burgundy Col approach has melted out and the days are long enough for 11 long pitches and the loose descent",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Long days cover 11 long pitches plus the gully descent, and the approach snow is mostly gone by mid-month; start early on the cold west face.",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "SR 20 is open, but snow still covers the approach above the camp bench and patches and ice linger at the base and in the descent gully.",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "A dry, melted-out approach and the late-season spring near camp; late-summer wildfire smoke in the Methow can end a trip.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Cold rock, very short days for a Grade IV, early snow in the gullies, and SR 20 can close early in a storm before its winter closure.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Stable weather but cold mornings on the west face and short evenings; parties have descended the loose gully by headlamp.",
+       "status": "good"
+      }
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 48.55,
+      "lng": -120.6306,
+      "elev": 4400,
+      "name": "SR-20 Wine Spires / Silver Star pullout (~MP 165, ~4 mi east of Washington Pass)",
+      "note": "Climbers park at this pullout, descend to and cross Early Winters Creek, then climb a steep climbers trail to the Bench (~6,500-6,700ft) below Burgundy Col, from which all Wine Spires routes (including Whine Spire/Gato Negro) and Silver Star's standard route are reached.",
+      "type": "Trailhead",
+      "elevFt": 4400,
+      "directions": "Drive SR-20 to the unsigned Wine Spires / Silver Star pullout east of Washington Pass, near milepost 165-166 and roughly 4 miles past the pass, at about 4,300 to 4,400 feet. It is a plain roadside pull-off with no sign and no developed parking, so watch your mileposts. Do not confuse it with the Blue Lake trailhead, which is on the other side of Washington Pass entirely."
+     },
+     {
+      "lat": 48.55016,
+      "lng": -120.58894,
+      "elev": 7800,
+      "name": "Whine Spire (Gato Negro topout)",
+      "note": "12-pitch alpine trad route (5.10a/b) on the sub-peak east of Silver Star Mountain; topout elevation is approximate.",
+      "type": "Topout",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.55016,
+      "lng": -120.58894,
+      "elev": 8348,
+      "name": "Whine Spire summit (sub-peak on Silver Star Mountain's ridge, east side)",
+      "type": "Summit",
+      "elevFt": 8348
+     }
+    ]
+   }
+  }
+ ]
+}
