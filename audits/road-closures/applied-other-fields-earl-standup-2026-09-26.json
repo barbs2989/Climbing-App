@@ -1,0 +1,39 @@
+{
+ "wa_earl_peak_standup_creek_route": {
+  "area_id": "wa_earl_peak",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Standup Creek Road, off Stafford Creek Road / Teanaway River Road",
+     "status": "CLOSED — Labor Mountain Fire closure order, effective May 20-Dec 31, 2026",
+     "driveNote": null,
+     "seasonalGate": null
+    },
+    "value": {
+     "name": "Standup Creek Road, off Stafford Creek Road / Teanaway River Road",
+     "status": "Open — the Forest Service's Cle Elum road table dated September 8, 2026 lists Standup Creek Road (FR 9703-112) open; the Labor Mountain Fire order closed the trail, not the road",
+     "driveNote": null,
+     "seasonalGate": null
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Northwest Forest Pass or America the Beautiful interagency pass required for trailhead parking",
+     "permit": null,
+     "closures": "Standup Creek Trail #1369 is CLOSED under the Labor Mountain Fire closure order (effective May 20-Dec 31, 2026). Contact the Cle Elum Ranger District (509-852-1100) for current status.",
+     "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District (USFS)",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Pass"
+    },
+    "value": {
+     "fees": "Northwest Forest Pass or America the Beautiful interagency pass required for trailhead parking",
+     "permit": null,
+     "closures": "Standup Creek Trail #1369 has been closed under Forest Service order 06-17-03-2026-14 (Labor Mountain Fire, May 20 through December 31, 2026 unless rescinded sooner); that order is no longer posted on the Okanogan-Wenatchee alerts page (checked September 26, 2026). Contact the Cle Elum Ranger District (509-852-1100) for current status.",
+     "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District (USFS)",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Pass"
+    }
+   }
+  },
+  "why": "road table lists FR 9703-112 open; the order closed only the trail",
+  "confidence": "high"
+ }
+}
