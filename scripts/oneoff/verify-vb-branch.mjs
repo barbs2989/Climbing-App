@@ -60,6 +60,13 @@ const SCOPE_CASES = [
      new branch cannot be blamed for it later. No catalog row is a bare "V"; measured. */
   ["V", "v", 5],
 ];
+// V-easy / V? (2026-09-25): asserted against the CURRENT parser only — OLD predates them.
+const EASY_CASES = [["V-easy", "v", VBEG], ["V-Easy", "v", VBEG], ["Veasy", "v", VBEG], ["V-easy", "yds", 5], ["V?", "v", null], ["V-easy, V1 top", "v", 1]];
+const easyBad = EASY_CASES.filter(([g, s, want]) => { const got = NEW(g, s); return want == null ? got != null : got == null || Math.abs(got - want) > 1e-9; });
+if (easyBad.length) {
+  for (const [g, s, want] of easyBad) console.error(`FAIL gradeNumFrom(${JSON.stringify(g)}, ${JSON.stringify(s)}) -> ${NEW(g, s)}, expected ${want}`);
+  process.exit(1);
+}
 const scopeBad = SCOPE_CASES.filter(([g, s, want]) => {
   const got = NEW(g, s);
   return want == null ? got != null : got == null || Math.abs(got - want) > 1e-9;
@@ -95,6 +102,8 @@ const TOKEN_VB = /\bvb\b/i;
 const gained = [], changed = [], lost = [], unattributable = [];
 for (const r of rows) {
   const g = String(r.grade || ""), sys = gradeSystemForDiscipline(r.discipline);
+  // V-easy and V? were re-scored deliberately by a later change (EASY_CASES above), not by this branch.
+  if (sys === "v" && /^\s*V(?:-?\s*easy|\?)\s*$/i.test(g)) continue;
   const before = OLD(g, sys), after = NEW(g, sys);
   if (before == null && after == null) continue;
   if (before == null) {
