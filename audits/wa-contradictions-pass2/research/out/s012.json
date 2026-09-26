@@ -1,0 +1,391 @@
+{
+ "file": "s012.json",
+ "results": [
+  {
+   "id": "wa_just_enough",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one detailed source exists: it lists the route as a single 100 ft (30 m) pitch (3 bolts to wide hangers, then more bolts to a chain anchor on a huge ledge), which supports pitches=1 and implies the 'two pitches' prose misreads the low top-rope anchor. The route author's area guide and Megadike North topo give only name and grade, and no other page (trip reports, other databases) describes the route; the row's own majority (pro_needs, descent, descent_text, hazards, what_to_bring) says two pitches. Would be settled by a second description of the route's pitch count, e.g. a printed Dikes guide or a trip report.",
+   "sources": [
+    "https://www.mountainproject.com/route/114414838/just-enough",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html",
+    "http://people.whitman.edu/~pogue/files/megnorth.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_just_enough",
+   "fact": "Rope needed to lower",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The one detailed source gives 100 ft (30 m) and says a long rope is needed to top-rope it, which would make the 70 m rope advice right and length_m 21 / '70 ft total' wrong; no second source gives the route's length or rope advice. Would be settled by a second independent length for the route.",
+   "sources": [
+    "https://www.mountainproject.com/route/114414838/just-enough",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html",
+    "http://people.whitman.edu/~pogue/files/megnorth.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_just_enough",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one detailed source exists: it lists the route as a single 100 ft (30 m) pitch (3 bolts to wide hangers, then more bolts to a chain anchor on a huge ledge), which supports pitches=1 and implies the 'two pitches' prose misreads the low top-rope anchor. The route author's area guide and Megadike North topo give only name and grade, and no other page (trip reports, other databases) describes the route; the row's own majority (pro_needs, descent, descent_text, hazards, what_to_bring) says two pitches. Would be settled by a second description of the route's pitch count, e.g. a printed Dikes guide or a trip report.",
+   "sources": [
+    "https://www.mountainproject.com/route/114414838/just-enough",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html",
+    "http://people.whitman.edu/~pogue/files/megnorth.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_just_enough",
+   "fact": "Rope needed to lower",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The one detailed source gives 100 ft (30 m) and says a long rope is needed to top-rope it, which would make the 70 m rope advice right and length_m 21 / '70 ft total' wrong; no second source gives the route's length or rope advice. Would be settled by a second independent length for the route.",
+   "sources": [
+    "https://www.mountainproject.com/route/114414838/just-enough",
+    "http://people.whitman.edu/~pogue/climbing/dikesguide.html",
+    "http://people.whitman.edu/~pogue/files/megnorth.pdf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ahoot",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "fixed",
+   "correct_value": "No pass or permit required at the FR-64 roadside pullouts",
+   "evidence": "The Forest Service's official list of Umatilla National Forest sites where a day-use fee is charged names only Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes; neither Middle Point Trailhead nor any FR-64 pullout is on it, and the Northwest Forest Pass is honored only where a day-use fee is required. The Middle Point Trailhead recreation page lists no fee or pass. Independently, the Walla Walla area tourism trail page for Middle Point Ridge lists Fees: None. The informal crag pullouts farther up the road are not developed sites, so no pass is required; the rendered no-pass fields are right and the _raw pass fields are the outliers.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://outsidewallawalla.com/activity/middle-point-ridge-trail/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ahoot",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_type"
+     ],
+     "expect": "Northwest Forest Pass (day use)",
+     "value": "None required for day climbing"
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_required"
+     ],
+     "expect": "Northwest Forest Pass",
+     "value": "None"
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_cost_structure"
+     ],
+     "expect": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "value": "No fee"
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_pickup_hours"
+     ],
+     "expect": "Self-service at trailhead",
+     "value": "Not applicable"
+    },
+    {
+     "id": "wa_ahoot",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_pickup_location"
+     ],
+     "expect": "Online, local retail, or trailhead",
+     "value": "Not applicable"
+    }
+   ]
+  },
+  {
+   "id": "wa_just_for_fun",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "fixed",
+   "correct_value": "No pass or permit required at the FR-64 roadside pullouts",
+   "evidence": "The Forest Service's official list of Umatilla National Forest sites where a day-use fee is charged names only Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes; neither Middle Point Trailhead nor any FR-64 pullout is on it, and the Northwest Forest Pass is honored only where a day-use fee is required. The Middle Point Trailhead recreation page lists no fee or pass. Independently, the Walla Walla area tourism trail page for Middle Point Ridge lists Fees: None. The informal crag pullouts farther up the road are not developed sites, so no pass is required; the rendered no-pass fields are right and the _raw pass fields are the outliers.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://outsidewallawalla.com/activity/middle-point-ridge-trail/"
+   ],
+   "patches": [
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_type"
+     ],
+     "expect": "Northwest Forest Pass (day use)",
+     "value": "None required for day climbing"
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_required"
+     ],
+     "expect": "Northwest Forest Pass",
+     "value": "None"
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_cost_structure"
+     ],
+     "expect": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "value": "No fee"
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_pickup_hours"
+     ],
+     "expect": "Self-service at trailhead",
+     "value": "Not applicable"
+    },
+    {
+     "id": "wa_just_for_fun",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_pickup_location"
+     ],
+     "expect": "Online, local retail, or trailhead",
+     "value": "Not applicable"
+    }
+   ]
+  },
+  {
+   "id": "wa_heinous_thing",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "fixed",
+   "correct_value": "No pass or permit required at the FR-64 roadside pullouts",
+   "evidence": "The Forest Service's official list of Umatilla National Forest sites where a day-use fee is charged names only Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes; neither Middle Point Trailhead nor any FR-64 pullout is on it, and the Northwest Forest Pass is honored only where a day-use fee is required. The Middle Point Trailhead recreation page lists no fee or pass. Independently, the Walla Walla area tourism trail page for Middle Point Ridge lists Fees: None. The informal crag pullouts farther up the road are not developed sites, so no pass is required; the rendered no-pass fields are right and the _raw pass fields are the outliers.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://outsidewallawalla.com/activity/middle-point-ridge-trail/"
+   ],
+   "patches": [
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_type"
+     ],
+     "expect": "Northwest Forest Pass (day use)",
+     "value": "None required for day climbing"
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_required"
+     ],
+     "expect": "Northwest Forest Pass",
+     "value": "None"
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_cost_structure"
+     ],
+     "expect": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "value": "No fee"
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_pickup_hours"
+     ],
+     "expect": "Self-service at trailhead",
+     "value": "Not applicable"
+    },
+    {
+     "id": "wa_heinous_thing",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_pickup_location"
+     ],
+     "expect": "Online, local retail, or trailhead",
+     "value": "Not applicable"
+    }
+   ]
+  },
+  {
+   "id": "wa_just_enough",
+   "fact": "Northwest Forest Pass requirement",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "No pass or permit required at the FR-64 roadside pullouts",
+   "evidence": "The Forest Service's official list of Umatilla National Forest sites where a day-use fee is charged names only Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes; neither Middle Point Trailhead nor any FR-64 pullout is on it, and the Northwest Forest Pass is honored only where a day-use fee is required. The Middle Point Trailhead recreation page lists no fee or pass. Independently, the Walla Walla area tourism trail page for Middle Point Ridge lists Fees: None. The informal crag pullouts farther up the road are not developed sites, so no pass is required; the rendered no-pass fields are right and the _raw pass fields are the outliers. This row rendered the Northwest Forest Pass as required ($5/$30) for the same Megadike pullouts that the sibling Dikes rows correctly show as fee-free.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/passes",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+    "https://outsidewallawalla.com/activity/middle-point-ridge-trail/"
+   ],
+   "patches": [
+    {
+     "id": "wa_just_enough",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "value": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site."
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Northwest Forest Pass (day use)",
+     "value": "No permit required for day climbing at these informal roadside pullouts."
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Northwest Forest Pass",
+     "value": "No -- informal roadside pullout, not a developed fee site"
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_type"
+     ],
+     "expect": "Northwest Forest Pass (day use)",
+     "value": "None required for day climbing"
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "parking_pass_required"
+     ],
+     "expect": "Northwest Forest Pass",
+     "value": "None"
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_cost_structure"
+     ],
+     "expect": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "value": "No fee"
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_pickup_hours"
+     ],
+     "expect": "Self-service at trailhead",
+     "value": "Not applicable"
+    },
+    {
+     "id": "wa_just_enough",
+     "fact": "Northwest Forest Pass requirement",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_pickup_location"
+     ],
+     "expect": "Online, local retail, or trailhead",
+     "value": "Not applicable"
+    }
+   ]
+  }
+ ]
+}

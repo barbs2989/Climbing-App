@@ -1,0 +1,24 @@
+{"file": "s059.json", "results": [
+ {"id": "wa_nooksack_tower_south_face", "fact": "First-ascent year", "discovered": true, "verdict": "fixed",
+  "correct_value": "July 2001 (fa column already says this; approach_variants[0].notes still says July 2002)",
+  "evidence": "The row's own fa column now reads 'July 2001'; only approach_variants[0].notes still says 2002. The first-ascent party's trip report is headed 'South Face: Grade V, 5.10- July 23-25, 2001'. The AAJ note appears in the 2002 volume, which reports the prior year's climbs, and a Peakware Mount Shuksan log entry describing the new route with Manfredi on the 'back side' of Nooksack Tower is dated November 5, 2001 - so the climb cannot be July 2002. Caveat: all three records trace to the first-ascent party, but two are independently dated publications (the 2002 AAJ volume and a 2001-dated log) that rule out 2002.",
+  "sources": ["http://cascadeclassics.org/Climbing/NooksackTower/SouthFace/Summer01/SouthFace,Summer01.htm", "http://publications.americanalpineclub.org/articles/12200219800/North-America-United-States-Washington-Nooksack-Tower-South-Face", "https://peakware.com/peaks.php?action=tag&item=peak&list=climbed&login=1&pk=334&view=logs"],
+  "patches": [
+   {"id": "wa_nooksack_tower_south_face", "fact": "First-ascent year", "op": "replace_text", "column": "approach_variants", "path": [0, "notes"], "find": "It was first climbed in July 2002 and it is", "replace": "It was first climbed in July 2001 and it is"}
+  ]},
+ {"id": "wa_nooksack_tower_beckey_route", "fact": "Couloir steepness", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The 1946 first-ascent account gives an 800 ft, 50-degree ice couloir. The only source for the itinerary's '50-60 degrees with one 70-degree step' (and max_angle 70) is a single July 3, 2009 party (its SummitPost and NWHikers reports share one author): 'starts out around 50 degrees, steepening to 60 at the top (with one 70 degree step at the transition to rock)'. No second independent party gives an angle; the 2013 CascadeClimbers report only says conditions were snowy. The couloir angle plausibly varies with snow cover, so neither 45-50 nor 50-60/70 can be adopted on two sources. What would settle it: a second independent trip report or guide stating the couloir's top angle.",
+  "sources": ["https://www.summitpost.org/nooksack-tower/527261", "http://publications.americanalpineclub.org/articles/12194743602/North-America-United-States-Washington-Nooksack-Tower-First-Ascent", "https://cascadeclimbers.com/forum/topic/91649-tr-nooksack-tower-ne-face-beckeyschmidtke-6102013/"],
+  "patches": []},
+ {"id": "wa_nooksack_tower_beckey_route", "fact": "Rappel length", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The 2009 party reports 'about ten 60m raps to the glacier below', and the 2013 party (a different team) says they made double-rope rappels the whole way, which is consistent with rappels longer than 30 m, but gives neither count nor rope length. No source states per-rappel lengths or supports the 30 m cap in rappel_detail and rappel_count_note, and none explicitly refutes it. What would settle it: a report stating the rope length used and the approximate length of each rappel.",
+  "sources": ["https://www.summitpost.org/nooksack-tower/527261", "https://cascadeclimbers.com/forum/topic/91649-tr-nooksack-tower-ne-face-beckeyschmidtke-6102013/"],
+  "patches": []},
+ {"id": "wa_nooksack_tower_beckey_route", "fact": "Season window", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Dated ascents from independent parties run from June into late August: June 10, 2013 (CascadeClimbers), July 3, 2009 (SummitPost), July 5, 1946 (FA, AAJ), July 23, 2023, Aug 25, 2007 and Aug 28, 2006 (CascadeClimbers titles). This supports the Jun-Aug season and contradicts the 'mid-July' start in best_season, seasonal_guidance and climate. But whether September belongs in the window rests on one unverified search snippet of a September 2018 Peakbagger ascent, and 'reliable window' is a judgment no source states. So neither side can be rewritten on two agreeing sources. What would settle it: a verified September ascent report (or a guide stating the window), after which best_season/optimalWindow/climate.typical could be aligned with the season column.",
+  "sources": ["https://cascadeclimbers.com/forum/topic/91649-tr-nooksack-tower-ne-face-beckeyschmidtke-6102013/", "https://www.summitpost.org/nooksack-tower/527261", "http://publications.americanalpineclub.org/articles/12194743602/North-America-United-States-Washington-Nooksack-Tower-First-Ascent", "https://cascadeclimbers.com/forum/topic/56971-tr-nooksack-tower-north-face-8252007/", "https://cascadeclimbers.com/forum/topic/44769-tr-nooksack-tower-north-face-8282006/"],
+  "patches": []}
+]}

@@ -1,0 +1,209 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Water at the Portals camp"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Water at the Portals camp"
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Cameron Basin camp character"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "before": {
+    "itinerary": {
+     "cal": "Best done early season (May-June) while the snow bridges over the moat/bergschrund near 9,500 ft are still intact.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Climb over the Table Mountain shoulder and past the saddle near Coleman Pinnacle to reach the Portals camp, a sandy, sheltered site with running water tucked among the glaciers.",
+       "hours": 4,
+       "miles": 4.5,
+       "title": "Approach to the Portals camp",
+       "gainFt": 1800,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Artist Point trailhead to high camp below the Park Glacier"
+      },
+      {
+       "n": 2,
+       "note": "An early start is essential to beat the sun on this northeast-facing headwall, which turns to mush once the sky clears. Cross a crevassed moat/bergschrund near 9,500 ft, then make a long rising traverse up the headwall (several sustained ice pitches) to the summit ridge; descend back to camp and hike out the same day.",
+       "hours": 12.5,
+       "miles": 8.5,
+       "title": "Climb the headwall and hike out",
+       "gainFt": 5000,
+       "lossFt": 5700,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": ""
+        },
+        {
+         "time": "~7:30-8:00 AM",
+         "label": "Cross the bergschrund/moat (~9,500 ft)",
+         "detail": "Narrow snow bridge; crux route-finding section."
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Summit",
+         "detail": "~5 hrs from camp in a reported late-May ascent."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at camp",
+         "detail": ""
+        },
+        {
+         "time": "5:30 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the Park Glacier headwall to the summit, descend, and drive out"
+      }
+     ],
+     "totalNote": "A 2-day glacier/ice route with one night at a high camp below the headwall; the summit day is long (12+ hrs) and very sun/timing-sensitive."
+    },
+    "timing": {
+     "totalHrs": 16.5,
+     "summitTimeHrs": 12.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 4,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4,
+       "note": "Climb over the Table Mountain shoulder and past the saddle near Coleman Pinnacle to reach the Portals camp, a sandy, sheltered site with running water tucked among the glaciers.",
+       "fromTo": "Approach to the Portals camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12.5,
+       "note": "An early start is essential to beat the sun on this northeast-facing headwall, which turns to mush once the sky clears. Cross a crevassed moat/bergschrund near 9,500 ft, then make …",
+       "fromTo": "Climb the headwall and hike out",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "before": {
+    "itinerary": {
+     "cal": "Snow can linger on Cameron Pass into late July/August, and a wilderness permit plus bear canister is required for the Cameron Basin camp zone.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Obstruction Point trailhead, follow Lillian Ridge over rolling, view-packed alpine terrain to Grand Pass (~6 mi), then drop steeply off the pass to the Cameron Creek meadows and follow the creek up into upper Cameron Basin, just below Cameron Pass. Set up camp in the designated zone (bear canister required, no fires).",
+       "hours": 6.5,
+       "miles": 9.9,
+       "title": "Backpack in to Cameron Basin",
+       "gainFt": 2400,
+       "lossFt": 2900,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave Obstruction Point trailhead",
+         "detail": "Already starting near 6,135 ft; ridge walking with modest ups and downs."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Reach Grand Pass",
+         "detail": "Steepest trail in the park drops from here into the Cameron Creek cirque."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Cross the Cameron Creek meadows",
+         "detail": "Unbridged branches of the creek; reliable water, but the tread is easy to lose in brush or fog."
+        },
+        {
+         "time": "~2:30 PM",
+         "label": "Make camp in Cameron Basin",
+         "detail": "Old-growth, mossy, sheltered basin below the pass; snow can linger here into late July."
+        }
+       ],
+       "objective": "Reach the permitted camp zone below Cameron Pass"
+      },
+      {
+       "n": 2,
+       "note": "Leave the tent up and climb light. The standard line gains the long, gradual west ridge from Cameron Pass — mostly class 1-2 hiking/scrambling to the main summit, with the harder class 3-4 terrain reserved for parties continuing the ridge to Cameron's Middle and East peaks. Return to camp by early-mid afternoon.",
+       "hours": 5.5,
+       "miles": 5,
+       "title": "Climb Mount Cameron and return to camp",
+       "gainFt": 1500,
+       "lossFt": 1500,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp",
+         "detail": "Early start to beat afternoon weather buildup, common in the Olympics."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Gain the west ridge crest",
+         "detail": "Class 1-2 talus and heather slopes lead up the gradual ridgeline."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Summit (7,190 ft)",
+         "detail": "Views across the Cameron/Grey Wolf and Dosewallips drainages; East and Middle Cameron summits visible along the class 3-4 ridge if extending the day."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Back at camp",
+         "detail": "Rest, refill water, reset for the hike out."
+        }
+       ],
+       "objective": "Summit the main peak (7,190 ft) via the long, gradual west ridge from Cameron Pass"
+      },
+      {
+       "n": 3,
+       "note": "Reverse Day 1: walk down out of Cameron Basin along Cameron Creek, climb steeply back up to Grand Pass, and follow Lillian Ridge back to the trailhead. Poles help on the steep, sometimes loose descent/reascent at Grand Pass.",
+       "hours": 6.5,
+       "miles": 9.9,
+       "title": "Hike out to Obstruction Point",
+       "gainFt": 2900,
+       "lossFt": 2400,
+       "packLb": 32,
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night backpack (~25 miles round trip including the summit day): roughly 20 miles of trail hiking to and from a Cameron Basin camp, plus a class 1-2 scramble day to Mount Cameron's 7,190 ft main summit."
+    }
+   }
+  }
+ ]
+}

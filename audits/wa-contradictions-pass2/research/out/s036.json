@@ -1,0 +1,135 @@
+{
+ "file": "s036.json",
+ "results": [
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Best time to climb",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found only condition-specific ascents (March 2024 ski descent of the NE chute camped in the upper basin; May 2026 and June 2007 ascents; a 2014 June Royal Basin climb noting the peak is best while snow remains on the steep slopes). No two sources say whether May/spring or late June is the better window for this couloir. Would be settled by a route description that names a best month for the NE couloir.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/mt-deception-ne-chute-solo",
+    "https://karl-helser.com/mount-deception-royal-basin/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-05-08.081314775466"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Royal Basin overnight permit season",
+   "verdict": "fixed",
+   "correct_value": "Royal Basin advance reservations cover June 15 - Oct 15 (so 'permits open June 15' is right); access.closures' 'May 1 - Sept 30' is the old recommended-reservation window, not the permit season",
+   "evidence": "The park's 2020 news release on advance wilderness reservations states Royal Basin only allows advance reservations June 15 through October 15. An independent 2026 backcountry-permit guide lists June 15 - Oct 15 as the season for Glacier Meadows/Elk Lake, Royal Basin, Flapjack Lakes and Lake Constance, versus May 15 - Oct 15 for other areas; the park's current reservations page confirms the May 15 - Oct 15 general season with shorter seasons for high areas and says off-season/unlisted trips go through the Wilderness Information Center. access.closures (both copies) is rewritten to the June 15 - Oct 15 window. bivy[1].permit ('mid-May through mid-October') is also wrong for Royal Basin but bivy is out of scope for this pass.",
+   "sources": [
+    "https://www.nps.gov/olym/learn/news/advanced-reservations-for-wilderness-backpacking-in-olympic-national-park.htm",
+    "https://www.iheartpacificnorthwest.com/blog_post/guide-to-backcountry-permits-for-oregon-washington/",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin"
+   ],
+   "patches": [
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Royal Basin overnight permit season",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "High-use overnight camping May 1 - Sept 30 (reservation-only); closed to overnight access other times based on snow conditions",
+     "replace": "Advance overnight reservations for Royal Basin run June 15 - Oct 15; outside that window, overnight permits are arranged directly with the Wilderness Information Center"
+    },
+    {
+     "id": "wa_honeymoon_route",
+     "fact": "Royal Basin overnight permit season",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "_raw",
+      "seasonal_closure_dates"
+     ],
+     "find": "High-use overnight camping May 1 - Sept 30 (reservation-only); closed to overnight access other times based on snow conditions",
+     "replace": "Advance overnight reservations for Royal Basin run June 15 - Oct 15; outside that window, overnight permits are arranged directly with the Wilderness Information Center"
+    }
+   ]
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "fact": "Total ascent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still no source states a car-to-car gain for the Honeymoon/NE couloir route. A 2014 Royal Basin climb of Deception (standard side) reports ~6,000 ft total gain over 19 miles, which suggests 7,861 ft is high, but it is a different line and a single source. Would be settled by two reports of this couloir giving a total gain.",
+   "sources": [
+    "https://karl-helser.com/mount-deception-royal-basin/",
+    "http://ericsbasecamp.net/trips/Deception/Deception.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_deception_standard",
+   "fact": "Where camping is allowed",
+   "verdict": "fixed",
+   "correct_value": "Designated sites exist only at Royal Creek, Lower Royal Meadow and Royal Lake; Upper Royal Basin has no designated sites but can be camped on bare ground/gravel with a permit booked through the Wilderness Information Center",
+   "evidence": "A Royal Basin backpacking guide states Upper Royal Basin permits are booked by calling the Olympic Wilderness Information Center, that there are no designated campsites there, and to camp only on bare ground or gravel. The park's reservations page says any campsite not listed on the online system is booked by contacting the WIC, and its Royal Basin page lists the three designated camp areas. Independent parties camped in the upper basin in June 2014 and March 2024. access.rules is reworded so the three-area rule applies to designated sites and the upper basin is described as a WIC booking, matching the itinerary and bivy.",
+   "sources": [
+    "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://karl-helser.com/mount-deception-royal-basin/",
+    "https://turns-all-year.com/trip-reports/mt-deception-ne-chute-solo"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_deception_standard",
+     "fact": "Where camping is allowed",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Camping is restricted to three designated areas: Royal Creek, Lower Royal Meadow, and Royal Lake;",
+     "replace": "Designated campsites are limited to three areas: Royal Creek, Lower Royal Meadow, and Royal Lake; Upper Royal Basin has no designated sites, is booked by calling the Wilderness Information Center, and allows camping on bare ground or gravel only;"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Distance to high camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found only the ~4 mi to the Terror Creek junction (several reports) and qualitative descriptions of the steep climb to Stump Hollow/Chopping Block camp; no second source gives a one-way mileage to camp. Would be settled by two GPS-tracked reports stating trailhead-to-camp mileage.",
+   "sources": [
+    "https://chasingdonutscom.wordpress.com/2021/07/14/chopping-block-and-degenhardt/",
+    "https://drdirtbag.com/2021/07/23/the-chopping-block/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Line followed above the notch (south ridge vs corkscrew/north ridge)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources describe two genuinely different lines: one party followed a ridge to the notch south of Degenhardt (the upper Barrier crossing) and on to a 4th-class summit, matching climbing_route; another followed a ledge behind the north skyline from the Terror-Degenhardt ridge; a third did the Corkscrew (N ridge slot, W ridge face, S ridge ledge). Which line this row's 'Southwest Route' is cannot be settled; a guidebook-level route description naming the Southwest Route would settle it.",
+   "sources": [
+    "http://drdirtbag.com/2014/07/28/southern-pickets/",
+    "https://chasingdonutscom.wordpress.com/2021/07/14/chopping-block-and-degenhardt/",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Crux difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Three independent reports call the summit 4th class (a 2014 report of the notch-south line, a 2020 report with 'a few class 4 moves', a 2021 party that hit low fifth only after missing a gully), but an NPS ranger report calls it a short class 5 climb and the Corkscrew report rates a class 4-5 face. Sources genuinely split, and the 5.6 rating is woven through grade, rock_grade, gear, pitch_detail, waypoints, pro_tips, watch_out and partner skills, so no partial change is made. A guidebook rating for this specific line would settle it.",
+   "sources": [
+    "http://drdirtbag.com/2014/07/28/southern-pickets/",
+    "https://onehikeaweek.com/2020/08/09/mount-degenhardt/",
+    "https://chasingdonutscom.wordpress.com/2021/07/14/chopping-block-and-degenhardt/",
+    "https://www.nps.gov/noca/blogs/crescent-creek-basin-degenhardt-peak.htm",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/"
+   ],
+   "patches": []
+  }
+ ]
+}

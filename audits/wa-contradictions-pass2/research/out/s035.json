@@ -1,0 +1,112 @@
+{
+ "file": "s035.json",
+ "results": [
+  {
+   "id": "wa_mount_constance_west_arete",
+   "fact": "Climb length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found no page stating a total length for the West Arete or an elevation for Crystal Pass; the route pages that might (the club route page, a 2013 forum trip report) refused automated access, and search summaries only repeat '4-5 ropelengths' and 'broken class 2-3 with occasional 4th/low 5th steps'. Neither 335 m / 1,100 ft nor the 190 m pitch sum is confirmed. Settled by a sourced Crystal Pass elevation plus a stated route length, or a trip report giving pitch lengths.",
+   "sources": [
+    "https://www.summitpost.org/west-arete-5-5/851949",
+    "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+    "https://cascadeclimbers.com/forum/topic/91562-tr-mount-constance-west-arete-632013/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "fact": "Timing total",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The contradiction is real (3.5 + 6 + 5 = 14.5 h vs totalHrs 11). No outside source gives approach/summit/descent times for the North Chute variation, and a computed total would not be sourced. Settled by a trip report on this chute giving its summit-day or car-to-car times.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Number of rappels on the descent",
+   "verdict": "fixed",
+   "correct_value": "Three rappels on a single 60 m rope (about 25 m to the platform, then two of about 30 m down the Class 4 gully); some parties downclimb the lower gully.",
+   "evidence": "A climbing page describes a 25 m rappel from the ridge-crest bolts to the platform, then two further ~30 m rappels to the base (three total). A 2023 trip report by a different party states that most parties make three rappels to reach the bottom of the gully with a 60 m rope; that party made two and downclimbed the rest after missing the next anchor. The row's rappel table and descent_text already say three; the rappels prose and the hidden descent are brought into line (and the rappels prose no longer names a guide).",
+   "sources": [
+    "https://www.summitpost.org/mount-cruiser/151837",
+    "https://stevensong.com/usa/washington/mount-cruiser/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Number of rappels on the descent",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "Descend the route: downclimb/short rappel off newer bolted anchors near the ridge crest back to the chockstone-chimney, then continue down the gully. The older Olympic Mountains climbing guide recommends two ropes.",
+     "replace": "Most parties make three rappels on a single 60 m rope used doubled: about 25 m from the newer bolted anchor on the ridge crest down to the platform, then two of about 30 m down the Class 4 gully past the chockstone to its base. Some parties rappel twice and downclimb the lower gully instead. A second rope makes linking the stations easier but is not required."
+    },
+    {
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Number of rappels on the descent",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "and rappel back to the platform, then reverse the Class 4 gully and Cannon Hole squeeze down to Needle Pass.",
+     "replace": "and rappel back to the platform, then make two more rappels down the Class 4 gully past the Cannon Hole squeeze and continue down to Needle Pass."
+    },
+    {
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Number of rappels on the descent",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "A single 60 m rope is generally adequate for the rappel,",
+     "replace": "A single 60 m rope is generally adequate for the rappels,"
+    },
+    {
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Number of rappels on the descent",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      3
+     ],
+     "find": "for the rappel",
+     "replace": "for the rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Climbed length vs pitch/rappel lengths",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The pitch table ends at the 2-bolt station on the ridge crest (85 m); the overview and beta add a short, very exposed Class 3 ridge-crest scramble to the true summit (reported at roughly 25 m), so a 107 m route length exceeding the pitch sum is expected. The rappel table matching the pitch sum is incidental.",
+   "sources": [
+    "https://trailcatjim.com/mt-cruiser-via-flapjack-lakes-needle-pass-beta-peak-south-corner-2023/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "fact": "Trailhead and approach line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction: waypoints, trailhead card, road, approach and descent use Whiskey Bend/Elwha Snowfinger while the itinerary and timing run a Sol Duc/High Divide/Catwalk trip. Encyclopedic sources place Dana (6,213 ft) in the Bailey Range draining to the Elwha, with parent Mount Norton ~3.9 mi away; a Dodger Point page lists Dana among peaks seen from Dodger Point, which suggests the Dodger Point/Ludden ridge side, not Dodwell-Rixon Pass ~5 mi west. No source describes an actual approach or route to Dana, so neither line can be adopted and the 6-day itinerary cannot be rewritten. Settled by two trip reports of an ascent of Mount Dana naming the trailhead and approach.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Dana_(Washington)",
+    "https://peakery.com/mount-dana-washington-6209ft/",
+    "https://en.wikipedia.org/wiki/Dodger_Point",
+    "https://www.summitpost.org/dodger-point/882661"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft/loss_ft 5,414 disagree with the itinerary sums (14,400 / 15,800) and the 14,000-16,000 ft totalNote. No outside source states a car-to-car gain or loss for Mount Dana by any approach, and the approach itself is unsettled. Settled only after the approach is sourced and a trip report states the round-trip gain.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

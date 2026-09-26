@@ -1,0 +1,399 @@
+{
+ "applied": [
+  {
+   "id": "wa_baldy_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "False summit Pt 6537"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "False summit Pt 6537"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Road status"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Which side of the lake and basin"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "directions"
+   ],
+   "fact": "Which side of the lake and basin"
+  },
+  {
+   "id": "wa_beckey_tate",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Wall aspect"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Order of the creek crossing and the talus edge"
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Order of the creek crossing and the talus edge"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_baldy_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.882612,
+      "lng": -123.143167,
+      "elev": 3300,
+      "name": "Maynard Burn (Tyler Peak) Trailhead",
+      "note": "End of FR 2870-120 off Palo Alto Rd; Northwest Forest Pass required to park here.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive FR 2870 off Palo Alto Road to its end at the signed Baldy/Tyler Peak trailhead, a gravel pullout for about a dozen cars in the Upper Dungeness drainage of the Hood Canal Ranger District."
+     },
+     {
+      "lat": 47.8862135,
+      "lng": -123.1527502,
+      "elev": 3600,
+      "name": "Mueller Creek crossing",
+      "note": "Rock-hop crossing just past the trailhead; the rocks here are slick.",
+      "type": "Water",
+      "distMi": 0.5,
+      "directions": "Follow the old roadbed a short distance from the lot; at about 0.3 mile the Baldy climbers' path (Lower Maynard Burn Trail #816) splits off to the right and begins climbing in earnest, and at roughly half a mile it crosses a decommissioned logging road. Mueller Creek parallels these early switchbacks and is the last dependable water low on the mountain — top off here, especially late in the summer; the only water higher up is a small stream off a steep side path near the ridge crest."
+     },
+     {
+      "lat": 47.88848485483871,
+      "lng": -123.1621759548387,
+      "elev": 5200,
+      "name": "Maynard Burn fire-line clearing",
+      "note": "Flat clearing where the trail crosses an old decommissioned road/fire barrier; used as a camp before the steep push.",
+      "type": "Campsite",
+      "distMi": 1.3,
+      "directions": "Steep switchbacks gain roughly 1,600 ft in under a mile. At about 1.3 miles the path crosses the old Maynard Burn track near a short junction with the Upper Dungeness Trail (#833.2), and continues above it as the Upper Maynard Burn Trail (#816.2)."
+     },
+     {
+      "lat": 47.89047229032258,
+      "lng": -123.17042349032258,
+      "elev": 6300,
+      "name": "Eroded ravine section",
+      "note": "Steepest stretch of the climb -- crumbly, narrow (barely one-foot-wide) tread across a rocky ravine; the ~3,000 ft gain in the first 2 miles ends here.",
+      "type": "Hazard",
+      "distMi": 2,
+      "directions": "This is the relentless section: narrow tread, in places barely a foot wide, sidehilling an eroding slope on loose dirt and gravel, with crumbly footing where it crosses the rocky ravine. By about two miles the forest thins and Tyler Peak comes into view."
+     },
+     {
+      "lat": 47.892459725806454,
+      "lng": -123.17867102580645,
+      "elev": 6200,
+      "name": "Ridge crest water source",
+      "note": "Trail tops out on the ridge crest; the last water on the route is a small meadow stream down a short, steep side path here, with none beyond; exposed to frequent wind blasts.",
+      "type": "Water",
+      "distMi": 2.7,
+      "directions": "Above the ravine the tread turns faint and muddy through boggy meadow benches where flagging and cairns are sparse, then breaks out onto the open ridge crest east of Baldy at roughly 2.7 miles. This is where the route leaves the trees for good and the first views north to the Strait of Juan de Fuca and Vancouver Island open up — fix the spot in your memory, because it is the key handrail on the way down in fog."
+     },
+     {
+      "lat": 47.89397,
+      "lng": -123.1822,
+      "elev": 6350,
+      "name": "Gray Wolf Ridge saddle",
+      "note": "Low point where the Baldy climbers' path joins Gray Wolf Ridge proper; Class 1-2 talus/ridge walking begins here.",
+      "type": "Junction",
+      "distMi": 2.85,
+      "directions": "A short step west along the crest ends the formal trail tread. Everything above is cross-country over talus and heather with no maintained path, fully exposed to wind and cloud."
+     },
+     {
+      "lat": 47.89416324193549,
+      "lng": -123.18574034193549,
+      "elev": 6537,
+      "name": "False summit (Pt. 6537)",
+      "note": "Marked as a separate high point on USGS maps -- traverse below it through open talus rather than over the top to save effort.",
+      "type": "Junction",
+      "distMi": 3.3,
+      "directions": "Continue west along the open crest on talus. In poor visibility this bump is routinely mistaken for the true top, and it is the spot people most often lose the line on the descent, so note how you pass it on the way up."
+     },
+     {
+      "lat": 47.895015,
+      "lng": -123.189275,
+      "elev": 6808,
+      "name": "Baldy summit",
+      "note": "True summit; 360-degree views of Mount Constance, the Strait of Juan de Fuca, and Vancouver Island.",
+      "type": "Summit",
+      "distMi": 3.6,
+      "directions": "A final few hundred feet of open ridge west from the bump reaches the true summit, which holds an old campsite. Lingering snow can bury the boot path through this section into June and the crest catches the full wind; carry a map or GPS track, since this is the stretch that causes trouble when cloud rolls in."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Maynard Burn climbers' path from the Dungeness",
+      "notes": "From the gravel pullout at the end of the forest road, follow the old roadbed a short way; at about a third of a mile the climbers' path splits right and starts climbing in earnest. Mueller Creek in the first switchbacks is the last dependable water low on the mountain; the only water higher is a small stream down a steep side path near the ridge crest. The middle section is a narrow, eroded staircase — tread barely a foot wide in places, sidehilling an eroding slope, with crumbly footing across a rocky ravine and faint muddy going through boggy meadow benches.",
+      "season": "Mid-June to October",
+      "hazards": [
+       "Narrow, eroded tread with genuine exposure below about 5,400 ft",
+       "Snow lingering on the open upper ridge into late June",
+       "Treeless, wind- and lightning-exposed crest with no shelter",
+       "Faint boot path across the meadow benches, easily lost in fog",
+       "Loose scree and rockfall on the continuation toward Gray Wolf Ridge"
+      ],
+      "baseFinding": "The moment the route stops being a trail is obvious and it is worth stopping to look around: at roughly 2.7 miles and about 6,200 ft the forest thins and quits, and the path gains the open ridge crest and saddle east of the peak. That is the base of the ridge walk, and the two markers are the last stunted trees behind you and the first view north across the Strait of Juan de Fuca to Vancouver Island. Fix this spot in your memory — coming back down in cloud, it is the doorway back into the trees and where the tread becomes obvious again. From the saddle a boot path runs west along the fully exposed crest. The decoy is a rocky bump at roughly 6,500 ft, mapped as a separate high point, which is repeatedly taken for the top; the path traverses beneath it through open talus rather than over it, and the true summit is another stretch west and carries an old campsite. You have gone too far if the ridge is dropping into loose scree and running on toward Gray Wolf."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Standard Mt. Baker-Snoqualmie NF regulations apply. The Church Lake/Bearpaw Mountain route follows an unmaintained boot path (not an official FS trail); it's a short (~3.7 mi RT) outing from the FS 3160 road end, not a remote multi-day approach.",
+     "permit": "None required — a self-issue climbing register may exist at some trailheads but is optional and free.",
+     "closures": "Recent Forest Service road-status reports note FS 31 (Canyon Creek Road) closed at mile 4 by landslide debris, which also blocks the FS 3160 spur used for this route. Verify current status with the Glacier Public Service Center or MBS road-conditions page before the trip.",
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mount Baker Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camp only at designated sites where they exist, such as the established sites at Church Lake. Developed campgrounds on the highway take reservations on Recreation.gov."
+     }
+    },
+    "approach": "From the FS 3160 road-end parking (roughly 48.957°N, 121.851°W, reached via Canyon Creek Road/FS 31 then FS 3160 as noted above), the route follows an unmaintained but well-worn boot path — not a numbered Forest Service trail, just a heavily used user track — that climbs steeply through forest for about 0.6-0.7 mile and roughly 400 ft of gain to Church Lake, a small emerald subalpine lake sitting in a cirque directly below Bearpaw's north side. This first pitch is the steepest sustained grade of the day. Skirt the lake along its east/left shore (best flat campsites are on the far side, useful if splitting the trip). Beyond the lake the trail fades into intermittent boot-path and cairns through meadows and heather benches; keep left (west) up the basin rim toward a broad knoll around 6,066 ft on the ridge separating Church Lake's basin from Bearpaw's summit block — this stretch accounts for most of the remaining ~900 ft of the route's 1,300 ft total gain over roughly 1.5 mi one-way (matching the ~5.9 km round trip). From the 6,066 ft knoll, drop slightly and traverse north across a rocky/heather bowl toward the base of Bearpaw's summit block; the final approximately 300 ft to the 6,091 ft summit is easy class 2-3 scrambling on generally solid rock and blocks, with mild exposure in the last pitch. Church Lake is the last reliable water source — carry water from there for the upper mountain. There is no maintained tread past the lake, so route-finding by cairns and boot-path is necessary, and in early/mid-season lingering snow on the steep initial slope above the lake and in the summit gullies can require an ice axe and caution; parties often find snow patches into July on shaded sections.",
+    "waypoints": [
+     {
+      "lat": 48.957,
+      "lng": -121.851,
+      "elev": 4800,
+      "name": "FS Road 3160 End Trailhead",
+      "note": "End of the rough, single-lane FS Road 3160 (high-clearance/4x4 recommended); unmaintained boot path to Church Lake starts here.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Canyon Creek Road (FS-31) north off SR-542 just east of Glacier, then FS-3160 to its end at about 4,800 ft. The upper road is single-lane and rough, high clearance is the usual advice, and the parking is no more than a wide spot at the end."
+     },
+     {
+      "lat": 48.95563333333333,
+      "lng": -121.85343333333333,
+      "elev": 5100,
+      "name": "Boot Path Junction / Old Roadbed",
+      "note": "Unmarked user-built path leaves the old roadbed and climbs through brush toward the lake basin.",
+      "type": "Junction",
+      "distMi": 0.2,
+      "directions": "Continue on the old roadbed past the parking area for a couple of hundred yards. The user-built path toward the lake basin leaves it unmarked, though motorbike use has worn the line in well enough to follow."
+     },
+     {
+      "lat": 48.94962,
+      "lng": -121.84918,
+      "elev": 5150,
+      "name": "Church Lake",
+      "note": "Emerald subalpine lake in a basin below Bearpaw; established rough camp spots on the shore, often overgrown approach.",
+      "type": "Campsite",
+      "distMi": 0.6,
+      "directions": "The path climbs steeply through forest — the steepest sustained grade of the day, about 400 ft — then rolls over a rise into the cirque holding the lake, 0.6 to 0.7 mile from the car."
+     },
+     {
+      "lat": 48.951086751999995,
+      "lng": -121.854669344,
+      "elev": 5450,
+      "name": "Left Rim of Church Lake Basin",
+      "note": "Keep left around the lake and start climbing the rim of the basin toward Point 6066 rather than following the lakeshore fully around.",
+      "type": "Junction",
+      "distMi": 1,
+      "directions": "Skirt the lake along its east/left shore rather than following the shoreline the whole way around, then start up the rim of the basin on the left (west) toward Point 6066. Fill water at the lake; there is none above it."
+     },
+     {
+      "lat": 48.948673504,
+      "lng": -121.854238688,
+      "elev": 5800,
+      "name": "Steep Heather/Meadow Ridge Below Point 6066",
+      "note": "Steep, loose tread through heather and meadow gains the ridge crest; described by hikers as steep but 'nothing scary' in dry conditions, slick when wet.",
+      "type": "Hazard",
+      "distMi": 1.4,
+      "directions": "Above the lake the tread fades into intermittent boot path and cairns through meadow and heather benches, and the rim steepens on loose footing. Straightforward when dry, genuinely slick when wet, and snow lingers on the shaded slopes here into midsummer."
+     },
+     {
+      "lat": 48.941,
+      "lng": -121.8525,
+      "elev": 6066,
+      "name": "Point 6066 Knoll",
+      "note": "Knoll with 270-degree views from Mount Baker eastward into Canada; the narrow summit ridge to Bearpaw's true top begins here.",
+      "type": "Junction",
+      "distMi": 1.7,
+      "directions": "Keep working up the rim to the broad high point on the ridge dividing Church Lake's basin from Bearpaw's summit block. This stretch accounts for most of the day's remaining gain."
+     },
+     {
+      "lat": 48.946260255999995,
+      "lng": -121.853808032,
+      "elev": 6060,
+      "name": "Exposed Summit Ridge",
+      "note": "Narrow, sometimes exposed ridgeline with loose footing for the final approach; use caution, easy to slip off either side.",
+      "type": "Hazard",
+      "distMi": 1.8,
+      "directions": "From the knoll drop slightly and traverse north across a rocky, heathery bowl toward the base of the summit block, picking up the narrow connecting ridge. Footing is loose and the crest is exposed on both sides in places."
+     },
+     {
+      "lat": 48.94605,
+      "lng": -121.85402,
+      "elev": 6091,
+      "name": "Bearpaw Mountain",
+      "note": "True summit; final ~100m from the ridge is a short Class 2-3 scramble over blocky rock.",
+      "type": "Summit",
+      "distMi": 1.85,
+      "directions": "The last stretch is a short Class 2-3 scramble, roughly 100 m, on generally solid blocky rock with mild exposure. Reverse the same ground to descend, or drop the scree-and-dirt chute that cuts straight from the ridge down to the lakeshore — quicker, but loose enough that it is no place to be below another party."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_beckey_tate",
+   "before": {
+    "itinerary": {
+     "cal": "Approach gullies hold snow into July in a normal year, so many parties prefer late July-September for a drier, faster approach and descent gully.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard parties do this whole route in a single long day from the Hairpin Turn pullout on SR-20 — there's no camp on this route. An early start matters: the approach gullies hold snow into midsummer and afternoon thunderstorms are common on the exposed south face.",
+       "hours": 10,
+       "miles": 4.3,
+       "title": "Car-to-car: approach, climb, descend",
+       "gainFt": 3166,
+       "lossFt": 3166,
+       "packLb": 16,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Hairpin Turn",
+         "detail": "Follow the climbers' trail up the west side of Early Winters Creek, then cut left (east) from the upper basin toward the low point between Big Kangaroo and Half Moon."
+        },
+        {
+         "time": "+2.5-3 hr",
+         "label": "Rack up at the base",
+         "detail": "Approach is talus, forest strips, and often lingering snow; timing varies a lot with conditions and party fitness."
+        },
+        {
+         "time": "+4-6 hr",
+         "label": "Climb the six pitches",
+         "detail": "Party often solos or simul-climbs the easier lower pitch(es) before roping up for the harder golden-granite pitches higher up."
+        },
+        {
+         "time": "~1:00-2:00 PM",
+         "label": "Summit (8,326 ft)",
+         "detail": "High point of Kangaroo Ridge, southeast-facing wall."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Descend rappels + gully",
+         "detail": "Two single-rope (60m) raps from slung-block anchors at successive notches, then a scree/snow gully walk-off back toward the highway."
+        },
+        {
+         "time": "~4:30-5:00 PM",
+         "label": "Back at the Hairpin Turn",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Big Kangaroo (8,326 ft) via the Beckey-Tate (5.9+, 6 pitches)"
+      }
+     ],
+     "totalNote": "A long single day car-to-car: roughly 9-11 hrs round trip from the Hairpin Turn for about 3,166 ft gain over six pitches of 5.9+ alpine rock."
+    }
+   }
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5160,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "note": "Large pullout on the outside of the SR-20 hairpin switchback ~0.9 mi east of Washington Pass; no permit required to park.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the Hairpin Turn pullout, about a mile east of Washington Pass near milepost 163, at roughly 5,100 to 5,160 feet — a large pullout on the outside of the hairpin switchback. No permit is required to park."
+     },
+     {
+      "lat": 48.511063,
+      "lng": -120.638929,
+      "elev": 5300,
+      "name": "Early Winters Creek Crossing",
+      "note": "Easy crossing of Early Winters Creek on the cairned climbers' trail before it splits toward the west-face gullies.",
+      "type": "Water",
+      "distMi": 0.4
+     },
+     {
+      "lat": 48.50818,
+      "lng": -120.63223,
+      "elev": 6000,
+      "name": "Talus Fork / Gully Base",
+      "note": "Trail opens into talus and scree here; bear into the west-face approach gully rather than continuing on toward Kangaroo Pass.",
+      "type": "Junction",
+      "distMi": 0.9
+     },
+     {
+      "lat": 48.505269,
+      "lng": -120.624051,
+      "elev": 7400,
+      "name": "Chockstone / Loose Gully Band",
+      "note": "Chockstone marks the start of the technical climbing; the gully above is loose with a cliff band — helmet essential for rockfall.",
+      "type": "Hazard",
+      "distMi": 1.5
+     },
+     {
+      "lat": 48.502472,
+      "lng": -120.62322,
+      "elev": 8100,
+      "name": "Ridge Crest Notch below Summit Block",
+      "note": "The first roped pitch, started below the chockstone, reaches the ridge crest at this notch; the second pitch traverses from here around the summit block.",
+      "type": "Junction",
+      "distMi": 1.8
+     },
+     {
+      "lat": 48.519416,
+      "lng": -120.617505,
+      "elev": 8326,
+      "name": "Big Kangaroo Summit",
+      "note": "Small, mostly unprotectable exposed 5.6 slab summit with a single old rusty bolt — room for only one climber at a time.",
+      "type": "Summit",
+      "distMi": 1.9
+     }
+    ]
+   }
+  }
+ ]
+}

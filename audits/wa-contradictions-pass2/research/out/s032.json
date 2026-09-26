@@ -1,0 +1,46 @@
+{"file": "s032.json", "results": [
+  {"id": "wa_mount_baker_squak_glacier", "fact": "Commitment grade", "verdict": "fixed",
+   "correct_value": "Grade III (grade 'Grade III, Easy Snow' already says so; alpine_grade -> 'Grade III', commitment -> 'III')",
+   "evidence": "The row itself holds three different numerals (grade III, alpine_grade II, commitment I). One climbing database grades the Squak 'Grade III, Easy Snow'; the SummitPost route page lists 'Difficulty: Grade II or III' with a one-to-two-day time frame. No source supports Grade I, and III is the one value both sources admit and the row's own grade column already carries.",
+   "sources": ["https://www.mountainproject.com/route/108224628/squak-glacier", "https://www.summitpost.org/squak-glacier/165092"],
+   "patches": [
+     {"id": "wa_mount_baker_squak_glacier", "fact": "Commitment grade", "op": "set", "column": "alpine_grade", "path": [], "expect": "Grade II", "value": "Grade III"},
+     {"id": "wa_mount_baker_squak_glacier", "fact": "Commitment grade", "op": "set", "column": "commitment", "path": [], "expect": "I", "value": "III"}
+   ]},
+  {"id": "wa_mount_baker_squak_glacier", "fact": "Distance to summit", "verdict": "fixed",
+   "correct_value": "Summit waypoint distMi 6.5 (3.5 mi to Crag View + ~3 mi camp to summit); dist_km 5.5 is the one-way approach to camp and stays",
+   "evidence": "A guide service's route guide gives 3.5 mi trailhead to Crag View camp, 3 mi camp to summit and ~13 mi round trip; a mapping app's Squak/Scott Paul route gives 6.5 mi one way. A club route page gives 13.4 mi round trip (to Sherman Peak), consistent. The stored 9 mi is too long; dist_km (5.5 km = 3.4 mi) matches the camp approach and is not in conflict.",
+   "sources": ["https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/", "https://www.gaiagps.com/hike/362552/mount-baker-via-squak-glacier-route-and-scott-paul-trail/", "https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker"],
+   "patches": [
+     {"id": "wa_mount_baker_squak_glacier", "fact": "Distance to summit", "op": "set", "column": "waypoints", "path": [2, "distMi"], "expect": 9, "value": 6.5}
+   ]},
+  {"id": "wa_mount_baker_boulder_park_cleaver", "fact": "Commitment grade", "verdict": "fixed",
+   "correct_value": "Grade III (grade 'Grade III Snow', alpine_grade 'Grade III', commitment 'III')",
+   "evidence": "The SummitPost 'Boulder Glacier / Cleaver' route page (which covers ascending the cleaver directly) grades it 'Grade III', Glacier Climb, and notes most parties take two to three days. An independent trip-report site's Boulder Glacier page (same east-side line, going up around the cleaver) also labels it 'Grade III Glacier'. No source gives Grade I or II; one database gives only 'Mod. Snow'.",
+   "sources": ["https://www.summitpost.org/boulder-glacier-cleaver/165032", "https://hike2hike.com/mountaineering/boulder-glacier-mount-baker-washington/"],
+   "patches": [
+     {"id": "wa_mount_baker_boulder_park_cleaver", "fact": "Commitment grade", "op": "set", "column": "grade", "path": [], "expect": "Grade II Snow", "value": "Grade III Snow"},
+     {"id": "wa_mount_baker_boulder_park_cleaver", "fact": "Commitment grade", "op": "set", "column": "alpine_grade", "path": [], "expect": "Grade II", "value": "Grade III"},
+     {"id": "wa_mount_baker_boulder_park_cleaver", "fact": "Commitment grade", "op": "set", "column": "commitment", "path": [], "expect": "I", "value": "III"}
+   ]},
+  {"id": "wa_mount_baker_boulder_park_cleaver", "fact": "Glacier crossed to reach the cleaver", "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still split: one database says cross the lower Boulder Glacier NW to the cleaver toe; one trip report says they stepped onto the Park Glacier toward the cleaver base (c. 6,800 ft). SummitPost only says ascend the cleaver directly or traverse WSW onto the Boulder Glacier, and Wikipedia says the Boulder is climbed together with the cleaver between it and the Park Glacier to the north — neither names the glacier crossed from camp. pitch_detail[2] already presents both; beta, descent_text, bail and itinerary still say Park only. Would settle: a second route-specific description naming the glacier crossed from the Boulder Ridge camp.",
+   "sources": ["https://www.mountainproject.com/route/107467457/boulder-park-cleaver", "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm", "https://www.summitpost.org/boulder-glacier-cleaver/165032", "https://en.wikipedia.org/wiki/Boulder_Glacier_(Washington)"],
+   "patches": []},
+  {"id": "wa_mount_baker_boulder_park_cleaver", "fact": "Trip duration", "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both sources confirm 8 hours is far too short but give no common figures: a club route page for the Boulder Glacier (shared approach and camp) gives 4-5 h trailhead to camp, 5-7 h camp to summit, 3 h summit to camp, 3 h camp to trailhead (15-18 h); SummitPost says strong light parties can do it car-to-car in about 10 hours, most take two to three days. Would settle: a second source giving section times for this cleaver line.",
+   "sources": ["https://www.mountaineers.org/activities/routes-places/mt-baker-boulder-glacier", "https://www.summitpost.org/boulder-glacier-cleaver/165032"],
+   "patches": []},
+  {"id": "wa_mount_baker_cockscomb_ridge", "fact": "Commitment grade", "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent account (1961) gives no grade, only 'less than 14 hours of climbing' with a 9,500 ft bivouac; the climbing database grades it 4th class, AI2-3, M1b, PG13 with no roman numeral; the SummitPost Mount Baker page mentions the Cockscomb without a grade. Would settle: any published roman commitment grade for the Cockscomb Ridge.",
+   "sources": ["http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge", "https://www.mountainproject.com/route/113499467/cockscomb-ridge", "https://www.summitpost.org/mount-baker/150195"],
+   "patches": []},
+  {"id": "wa_mount_baker_cockscomb_ridge", "fact": "Waypoint distances", "discovered": true, "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a trailhead-to-summit distance for this line or distances to the ridge base or the tower; the first-ascent account and the database give elevations and glacier-travel time (2-3 h from camp to the ridge) only. The stored distances are in order, so nulling is not called for. Would settle: a measured track of the Heliotrope-Coleman-Roosevelt-Cockscomb line.",
+   "sources": ["http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge", "https://www.mountainproject.com/route/113499467/cockscomb-ridge"],
+   "patches": []}
+]}

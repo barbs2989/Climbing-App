@@ -1,0 +1,308 @@
+{
+ "applied": [
+  {
+   "id": "wa_ahoot",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_type"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_ahoot",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass_required"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_ahoot",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_cost_structure"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_ahoot",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup_hours"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_ahoot",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup_location"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_for_fun",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_type"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_for_fun",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass_required"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_for_fun",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_cost_structure"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_for_fun",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup_hours"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_for_fun",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup_location"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_heinous_thing",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_type"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_heinous_thing",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass_required"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_heinous_thing",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_cost_structure"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_heinous_thing",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup_hours"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_heinous_thing",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup_location"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_enough",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_enough",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_enough",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_enough",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_type"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_enough",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass_required"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_enough",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_cost_structure"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_enough",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup_hours"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  },
+  {
+   "id": "wa_just_enough",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup_location"
+   ],
+   "fact": "Northwest Forest Pass requirement"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ahoot",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Northwest Forest Pass (day use)",
+      "special_hazards": "Climbing rock (check current condition via climbing guides)",
+      "group_size_limits": "Not specified",
+      "permit_pickup_hours": "Self-service at trailhead",
+      "altitude_restrictions": "None documented",
+      "parking_pass_required": "Northwest Forest Pass",
+      "permit_cost_structure": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+      "permit_pickup_location": "Online, local retail, or trailhead"
+     },
+     "fees": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site.",
+     "notes": "A basalt \"cordwood-jointed\" dike/fin formation in the East Fork Touchet River valley off FS Rd 64, ~16-17 mi south of Dayton, WA. Unmaintained approach, seasonally snowed in late fall through spring.",
+     "permit": "No permit required for day climbing at these informal roadside pullouts.",
+     "closures": "FR-64 (Bluewood Road) stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October; check with the Walla Walla Ranger District before a winter/spring trip.",
+     "permitZone": "Not in designated wilderness -- Blue Mountains, East Fork Touchet River valley",
+     "landManager": "Umatilla National Forest (Walla Walla Ranger District)",
+     "land_manager": "Umatilla National Forest (Walla Walla Ranger District)",
+     "passRequired": "No -- informal roadside pullout, not a developed fee site"
+    }
+   }
+  },
+  {
+   "id": "wa_just_for_fun",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Northwest Forest Pass (day use)",
+      "special_hazards": "Climbing rock (check current condition via climbing guides)",
+      "group_size_limits": "Not specified",
+      "permit_pickup_hours": "Self-service at trailhead",
+      "altitude_restrictions": "None documented",
+      "parking_pass_required": "Northwest Forest Pass",
+      "permit_cost_structure": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+      "permit_pickup_location": "Online, local retail, or trailhead"
+     },
+     "fees": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site.",
+     "notes": "A basalt \"cordwood-jointed\" dike/fin formation in the East Fork Touchet River valley off FS Rd 64, ~16-17 mi south of Dayton, WA. Unmaintained approach, seasonally snowed in late fall through spring.",
+     "permit": "No permit required for day climbing at these informal roadside pullouts.",
+     "closures": "FR-64 (Bluewood Road) stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October; check with the Walla Walla Ranger District before a winter/spring trip.",
+     "permitZone": "Not in designated wilderness -- Blue Mountains, East Fork Touchet River valley",
+     "landManager": "Umatilla National Forest (Walla Walla Ranger District)",
+     "land_manager": "Umatilla National Forest (Walla Walla Ranger District)",
+     "passRequired": "No -- informal roadside pullout, not a developed fee site"
+    }
+   }
+  },
+  {
+   "id": "wa_heinous_thing",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Northwest Forest Pass (day use)",
+      "special_hazards": "Climbing rock (check current condition via climbing guides)",
+      "group_size_limits": "Not specified",
+      "permit_pickup_hours": "Self-service at trailhead",
+      "altitude_restrictions": "None documented",
+      "parking_pass_required": "Northwest Forest Pass",
+      "permit_cost_structure": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+      "permit_pickup_location": "Online, local retail, or trailhead"
+     },
+     "fees": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site.",
+     "notes": "A basalt \"cordwood-jointed\" dike/fin formation in the East Fork Touchet River valley off FS Rd 64, ~16-17 mi south of Dayton, WA. Unmaintained approach, seasonally snowed in late fall through spring.",
+     "permit": "No permit required for day climbing at these informal roadside pullouts.",
+     "closures": "FR-64 (Bluewood Road) stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October; check with the Walla Walla Ranger District before a winter/spring trip.",
+     "permitZone": "Not in designated wilderness -- Blue Mountains, East Fork Touchet River valley",
+     "landManager": "Umatilla National Forest (Walla Walla Ranger District)",
+     "land_manager": "Umatilla National Forest (Walla Walla Ranger District)",
+     "passRequired": "No -- informal roadside pullout, not a developed fee site"
+    }
+   }
+  },
+  {
+   "id": "wa_just_enough",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Northwest Forest Pass (day use)",
+      "special_hazards": "Climbing rock (check current condition via climbing guides)",
+      "group_size_limits": "Not specified",
+      "permit_pickup_hours": "Self-service at trailhead",
+      "altitude_restrictions": "None documented",
+      "parking_pass_required": "Northwest Forest Pass",
+      "permit_cost_structure": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+      "permit_pickup_location": "Online, local retail, or trailhead"
+     },
+     "fees": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "notes": "A basalt \"cordwood-jointed\" dike/fin formation in the East Fork Touchet River valley off FS Rd 64, ~16-17 mi south of Dayton, WA. Unmaintained approach, seasonally snowed in late fall through spring.",
+     "permit": "Northwest Forest Pass (day use)",
+     "land_manager": "Umatilla National Forest (Walla Walla Ranger District)",
+     "passRequired": "Northwest Forest Pass"
+    }
+   }
+  }
+ ]
+}

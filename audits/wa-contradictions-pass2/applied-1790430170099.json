@@ -1,0 +1,26 @@
+{
+ "applied": [
+  {
+   "id": "wa_azurite_peak_southeast",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Gear list offers a 30 m rope the descent calls too short"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_azurite_peak_southeast",
+   "before": {
+    "gear": [
+     "helmet (loose choss/rockfall)",
+     "ice axe (early/late-season snow runnels only)",
+     "sturdy scrambling boots/approach shoes",
+     "optional 30-60m rope + harness for upper gully rappel"
+    ]
+   }
+  }
+ ]
+}

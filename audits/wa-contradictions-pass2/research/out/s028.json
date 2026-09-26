@@ -1,0 +1,200 @@
+{
+ "file": "s028.json",
+ "results": [
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "fact": "Published time totals",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still no source gives section or total times for the Southwest Ridge. West McMillan trip reports give approach times to Terror Basin from about 5 to 8 hours and summit days from camp ranging from 4.5 hours to a full day, so no agreed figure exists to rebuild 7/4/4 vs 10. Would settle: a trip report timing the Southwest Ridge itself from Terror Basin camp.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://onehikeaweek.com/2016/08/01/west-mcmillan-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Total gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "New sources add further disagreement: one guide page says over 10,000 ft car-to-car on ~20 miles, another report gives 24 miles round trip with no gain, another ~19 miles with no gain. Combined with earlier figures (9,500, 10,000, 9,000, 8,868) no two independent sources agree on one figure. Would settle: two GPS-logged car-to-car totals that agree.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+    "https://onehikeaweek.com/2016/08/01/west-mcmillan-spire/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "fact": "Summit-day duration and timing totals",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One report gives 4.5 hours camp to camp at a leisurely pace; others leave camp at 6:30 AM or after a 3-hour weather delay with no return time, and one earlier report describes an 11-hour day. No agreed summit-day figure exists to reconcile hours 6, schedule 8 h, note 4-5 h and timing 7/4/4 vs 10. Would settle: a second report timing camp-to-camp that agrees with the 4.5 h one.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://engineeredforadventure.com/west-mcmillan-spire-terror-glacier/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "fact": "Hardest rock grade",
+   "verdict": "fixed",
+   "correct_value": "5.4 (low 5th class throughout); the 5.7-5.8 belongs to the separate, more direct North Ridge line",
+   "evidence": "The route page for North Ridge - West Side grades it 5.4 and states it starts below the separate, more direct 5.7/5.8 North Ridge, which is where the 1994 journal's 5.7-5.8 pitches belong. The club route page independently describes several short low 5th class pitches up the west rib and more to the summit. So grade/rock_grade 5.4 are correct and the 5.7-5.8 in pitch_detail and beta are the wrong line.",
+   "sources": [
+    "https://www.mountainproject.com/route/117649314/north-ridge-west-side",
+    "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside",
+    "http://publications.americanalpineclub.org/articles/12199413501/North-America-United-States-Washington-Traverse-of-Molar-Tooth-North-Peak-Cutthroat-Peak-and-Whistler"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_ridge_west_side",
+     "fact": "Hardest rock grade",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "grade"
+     ],
+     "expect": "5.7-5.8",
+     "value": "Low 5th class"
+    },
+    {
+     "id": "wa_north_ridge_west_side",
+     "fact": "Hardest rock grade",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "multiple short 5th class pitches (5.4-5.8)",
+     "replace": "multiple short low 5th class pitches (up to 5.4)"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "fact": "Protection quality",
+   "verdict": "fixed",
+   "correct_value": "Protection is spaced/sparse in places (runout), not excellent throughout",
+   "evidence": "The route page says the second pitch climbs a lower-angle slab with spaced-out protection (rack: single rack to #2 plus long slings). The club route page independently warns that a leader may not find much protection. Both agree with rope_note, watch_out and the Runout feature; pro_needs, detailed_rack, beta and pitch_detail notes overstated protection.",
+   "sources": [
+    "https://www.mountainproject.com/route/117649314/north-ridge-west-side",
+    "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_ridge_west_side",
+     "fact": "Protection quality",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "solid granite with vertical jointing providing good protection opportunities",
+     "replace": "solid granite with vertical jointing, though protection is spaced in places"
+    },
+    {
+     "id": "wa_north_ridge_west_side",
+     "fact": "Protection quality",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "Granite features provide ample protection opportunities.",
+     "replace": "Placements are spaced in places, notably on the lower-angle slab pitch."
+    },
+    {
+     "id": "wa_north_ridge_west_side",
+     "fact": "Protection quality",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "Most parties find good solid placements throughout the climb.",
+     "replace": "Expect runout stretches between pieces rather than continuous protection."
+    },
+    {
+     "id": "wa_north_ridge_west_side",
+     "fact": "Protection quality",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Vertical granite jointing provides excellent protection throughout technical pitches.",
+     "replace": "Protection on the technical pitches is spaced, so use the vertical jointing where it offers placements."
+    },
+    {
+     "id": "wa_north_ridge_west_side",
+     "fact": "Protection quality",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Multiple moderate-length pitches with good crack systems allow solid piece placement.",
+     "replace": "The pitches are moderate in length, with a lower-angle slab where placements are far apart."
+    },
+    {
+     "id": "wa_north_ridge_west_side",
+     "fact": "Protection quality",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "with good granite and vertical jointing providing solid protection",
+     "replace": "with good granite and vertical jointing; protection can be sparse"
+    },
+    {
+     "id": "wa_north_ridge_west_side",
+     "fact": "Protection quality",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Coarse granite with vertical jointing provides adequate protection.",
+     "replace": "Coarse granite with vertical jointing; the slab pitch has spaced protection."
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "fact": "Descent rappel count",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "rappels/descent/rope_note say 3 rappels off the north ridge (club route page also says 3). The route page describes one rappel plus downclimbing to the shoulder, then a rappel from a small tree and one from a large block, which reads as 2-3 depending on whether the tree station is a separate rappel. Not clearly contradictory enough to patch; a second detailed descent description would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/117649314/north-ridge-west-side",
+    "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Car-to-car figures for the Monument + Lake Mountain trip keep disagreeing: 13,200 ft/31 mi, 12,136 ft/32.2 mi, 11,000 ft/31 mi, and ~10,000 ft for a one-day variant via a different line. All exceed gain_ft 7,567 and the day sum 9,900 but no two agree on one figure. Would settle: two agreeing GPS totals for this exact itinerary.",
+   "sources": [
+    "https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/",
+    "https://www.lucasmountainknowledge.com/post/lake-mountain-and-monument-peak",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://www.mountaineers.org/activities/routes-places/monument-peak-lake-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "fact": "Summit-day gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule and waypoints imply ~4,000 ft for the Monument day, not 2,600. A club route summary gives 8 miles and 5,800 ft from camp for BOTH peaks, which does not isolate Monument's day. Changing the day would also break the itinerary total against the unresolved gain_ft. Would settle: a source stating Monument-only gain from Lake of the Woods.",
+   "sources": [
+    "https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/",
+    "https://www.mountaineers.org/activities/routes-places/monument-peak-lake-mountain"
+   ],
+   "patches": []
+  }
+ ]
+}

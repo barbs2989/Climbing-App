@@ -1,0 +1,48 @@
+{"file": "s049.json", "results": [
+ {"id": "rainier_central_mowich_face", "fact": "Rock grade (header grade pill)", "verdict": "fixed",
+  "correct_value": "No rock grade (null); the route is graded as snow/ice (AI2-3 on the harder variation)",
+  "evidence": "The route's catalogue page types the Central Mowich Face as Ice/Snow/Alpine with no rock grade, and describes the original line using a snow ledge to get around the rock of the hourglass; its route list gives 5.6 only to the neighbouring Ptarmigan Ridge, which is where this value appears to have been copied from. An independent trip report of the face climbs it entirely on 35-60 degree snow and ice, meeting mixed rock only after straying off route. Nothing on the row itself (pitch_detail, beta, baseFinding) rates any rock pitch.",
+  "sources": ["https://www.mountainproject.com/route/106703081/central-mowich-face", "http://www.alpinedave.com/mt_rainier/mowich/mowich.htm"],
+  "patches": [
+   {"id": "rainier_central_mowich_face", "fact": "Rock grade (header grade pill)", "op": "set", "column": "rock_grade", "path": [], "expect": "5.6", "value": null}
+  ]},
+ {"id": "rainier_central_mowich_face", "fact": "Total elevation gain", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The route page gives the face a height of 9,200 ft, which matches Mowich Lake (about 4,930 ft) to Liberty Cap (14,112 ft) and ignores the ~1,000 ft regained after the drop to the glacier; that is a route height, not a stated car-to-car gain. A detailed independent trip report approached from Westside Road (about 14,400 ft total), a different trailhead, so it does not apply. gain_ft 6,200 is clearly too low but no second source states a car-to-car figure from Mowich Lake. Would be settled by a trip report stating total gain from Mowich Lake.",
+  "sources": ["https://www.mountainproject.com/route/106703081/central-mowich-face", "http://www.alpinedave.com/mt_rainier/mowich/mowich.htm"],
+  "patches": []},
+ {"id": "wa_mount_rainier_ptarmigan_ridge", "fact": "Total vertical gain: overview 11,000+ ft vs gain_ft 9,481", "verdict": "unresolved", "discovered": true,
+  "correct_value": null,
+  "evidence": "A search snippet attributes ~11,500 ft of gain to the route but the page could not be retrieved to confirm the figure or its start point; the countryhighpoints trip report (White River start) gives no totals. Note that gain_ft 9,481 equals Mowich Lake to the summit, while the stored trailhead is White River (4,400 ft), from which the net rise alone is ~10,000 ft plus the St Elmo Pass/Curtis Ridge up-and-down, so the overview's 11,000+ is probably closer; the itinerary (9,500) is also too low for a White River start. Would be settled by a second White River trip report stating car-to-car gain.",
+  "sources": ["https://www.countryhighpoints.com/mt-rainier-via-ptarmigan-ridge/", "https://www.jeffreyjhebert.com/adventures/ptarmigan-ridge-on-mount-rainier"],
+  "patches": []},
+ {"id": "wa_mount_rainier_ptarmigan_ridge", "fact": "Total distance", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Trip reports give times (St Elmo Pass ~2 hours, Curtis Ridge camp ~4 hours from the car) but no source states the one-way mileage from White River to the base of Ptarmigan Ridge. Would be settled by a GPS-tracked White River approach report.",
+  "sources": ["https://www.jeffreyjhebert.com/adventures/ptarmigan-ridge-on-mount-rainier", "https://www.countryhighpoints.com/mt-rainier-via-ptarmigan-ridge/"],
+  "patches": []},
+ {"id": "wa_mount_rainier_tahoma_glacier", "fact": "Total gain and loss", "verdict": "fixed_internal_plus_one",
+  "correct_value": "gain_ft 12000 (loss_ft left unchanged)",
+  "evidence": "The row overwhelmingly settles gain: itinerary day gains 3,300 + 3,700 + 5,000 = 12,000, the totalNote says ~12,000 ft, and the waypoints (2,900 ft trailhead to 14,406 ft summit) require at least ~11,500 ft, against the single outlier gain_ft 5,007. A 2024 Westside Road trip report states 12,000 ft of gain; the Mountaineers route summary gives a comparable 11,000-11,330 ft (net). loss_ft is not changed: no outside source states the car-to-car loss for a reverse-the-route descent (the 8,770 ft figure is for a carry-over).",
+  "sources": ["https://climbfrominjury.com/tahoma-glacier-mt-rainier-the-long-way/", "https://www.mountaineers.org/activities/routes-places/mt-rainier-tahoma-glacier"],
+  "patches": [
+   {"id": "wa_mount_rainier_tahoma_glacier", "fact": "Total gain and loss", "op": "set", "column": "gain_ft", "path": [], "expect": 5007, "value": 12000}
+  ]},
+ {"id": "wa_mount_rainier_tahoma_glacier", "fact": "Total distance", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "A 2015 trip report walked 8 miles from Westside Road to a camp above St Andrews Lake (matching itinerary day 1); another reached the Wonderland Trail ~3.8 miles from the car; a carry-over totalled 21.5 miles. None states the one-way distance from the Dry Creek gate to the base of the glacier route, so dist_km (7.5 mi) cannot be replaced with a sourced one-way figure. Would be settled by a report giving gate-to-high-camp mileage.",
+  "sources": ["https://cascadeclimbers.com/forum/topic/97717-tr-mt-rainier-tahoma-glacier-sickle-variation-742015/", "https://www.jeffreyjhebert.com/adventures/tahoma-glacier-on-mount-rainier", "https://climbfrominjury.com/tahoma-glacier-mt-rainier-the-long-way/"],
+  "patches": []},
+ {"id": "wa_mount_rainier_tahoma_glacier", "fact": "Commitment grade", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The Mountaineers route summary rates the Tahoma Glacier Grade III; the Mountain Project route page rates it Grade II. No third source (trip reports checked on cascadeclimbers, alpinedave, jeffreyjhebert) states a grade. Would be settled by a third independent grading (e.g. a published route guide).",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/mt-rainier-tahoma-glacier", "https://www.mountainproject.com/route/201233880/tahoma-glacier"],
+  "patches": []},
+ {"id": "wa_mount_rainier_tahoma_glacier", "fact": "Access notes say a Northwest Forest Pass is required and no climbing permit, contradicting parking_pass, permit and fees", "verdict": "fixed", "discovered": true,
+  "correct_value": "Park entrance pass for the vehicle; climbing permit required on glaciers or above ~10,000 ft",
+  "evidence": "The park's climbing page states a permit is required to be on a glacier or above the normal high camps (~10,000 ft), with an $82 per-person fee. Pass guides from WTA and Visit Rainier state the Northwest Forest Pass is for Forest Service land and is not valid at Mount Rainier, which requires a park entrance pass. The row's own parking_pass, passRequired, permit and fees fields already say this; access.notes is the lone outlier.",
+  "sources": ["https://www.nps.gov/mora/planyourvisit/climbing.htm", "https://www.wta.org/go-outside/passes", "https://visitrainier.com/permits-passes/"],
+  "patches": [
+   {"id": "wa_mount_rainier_tahoma_glacier", "fact": "Access notes say a Northwest Forest Pass is required and no climbing permit, contradicting parking_pass, permit and fees", "op": "set", "column": "access", "path": ["notes"], "expect": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.", "value": "A park entrance pass covers the car; every climber also needs a climbing permit, since the route travels on glaciers and above 10,000 ft."}
+  ]}
+]}

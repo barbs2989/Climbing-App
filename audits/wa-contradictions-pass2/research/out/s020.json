@@ -1,0 +1,259 @@
+{
+ "file": "s020.json",
+ "results": [
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Day-1 mileage vs waypoint distances",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: a trail guide measures the Snowgrass Trail at 1.9 mi to the Goat Creek bridge, 4.7 mi to the Lily Basin junction and 5.4 mi to the PCT junction, with Old Snowy a further ~1.8 mi north on the PCT plus ~0.5 mi; two independent trip reports put the whole two-summit outing at about 14 mi (14.2 mi; 'about 14 miles') and one camped at ~7,200 ft west of Peak 7771. That makes day 1 (camp beyond the PCT junction) roughly 6-6.5 mi rather than 7, but no source states the trailhead-to-camp mileage, and the PCT-junction pin (5 vs 5.4) is a single-source difference. Would settle it: a GPS track or report stating the distance from the trailhead to a ~7,200 ft camp.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Snowgrass_Flat_Hike",
+    "https://onehikeaweek.com/2022/07/10/ives-peak/",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=9611",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-96-snowgrass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Day-2 duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: one party did the whole Old Snowy + Ives trip car-to-car in 8 hours (fast, single day); another took 7.3 h for the Old Snowy/Ives loop from a lower camp alone. Neither states the length of a camp-to-summits-to-trailhead day, so neither the 8 h figure nor the 5:30 AM-to-5 PM schedule can be confirmed by two sources. Would settle it: a report timing the summit loop plus hike-out from a high camp.",
+   "sources": [
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=9611",
+    "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Day-2 gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: one 2011 report gives about 3,700 ft of gain car-to-car for the Old Snowy + Ives outing, and a route summary gives roughly 3,600 ft for the ~14 mi round trip; both exceed gain_ft 3,400 but they do not agree on one figure, and changing day 2's 900 ft would break the itinerary total unless gain_ft also changes. Would settle it: a second source stating the same car-to-car gain (e.g. two GPS-tracked reports).",
+   "sources": [
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=9611",
+    "https://www.summitpost.org/ives-peak/867229",
+    "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_clean_break",
+   "fact": "Car-to-car time: pro tip vs itinerary",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: a guide service says the climb plus descent typically takes 10-11 hours from a Silver Star Creek camp (which is what the pro tip's 10-11 h matches); a route database gives climb 4-10 h, approach 3-6 h, descent 3-6 h; one trip report totals ~11.5 h car to car. No two sources state the same car-to-car figure, so neither the 12-13 h in the itinerary nor timing.totalHrs 10.75 (parts sum to 11.75) can be settled. Would settle it: a second car-to-car time from an independent party.",
+   "sources": [
+    "https://mountainmadness.com/trips/juno-tower-clean-break",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Juno-Tower-Clean-Break",
+    "http://iannicholsonslife.blogspot.com/2010/09/clean-break-iv-510bc-juno-tower-with.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Total gain vs total loss",
+   "verdict": "fixed",
+   "correct_value": "gain_ft 2425 (loss_ft 2500 unchanged)",
+   "evidence": "A Northwest Face trip report states 2,425 ft of gain from the hairpin; a GPS-tracked report on the same hairpin-to-summit approach (North Face, same summit and trailhead) logged 754 m (~2,474 ft); the row's own trailhead (5,160) and summit (7,572) differ by ~2,412 ft. gain_ft 1,900 is below even the net rise; 2,425 is the figure stated for this route and agrees with loss_ft 2,500.",
+   "sources": [
+    "https://www.yellowleaf.org/scramble/g/r/2006-09-23-kangaroo.html",
+    "https://www.francisbaileyh.com/2022/07/23/kangaroo-temple/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 1900,
+     "value": 2425,
+     "id": "wa_northwest_face_2",
+     "fact": "Total gain vs total loss"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Car-to-car and summit times",
+   "verdict": "fixed",
+   "correct_value": "about 11 h car to car; ~2 h approach to the base",
+   "evidence": "A club route page gives about 11 hours car-to-car for the Northwest Face, and a 2006 Northwest Face report logs 11 h 38 min car-to-car (2 h 12 min hairpin to the base, 4 h 7 min on route). A route database gives ~1 h to Kangaroo Pass plus ~1 h from the pass to the routes, i.e. ~2 h approach, matching the report's 2 h 12 min. So the '7-8 hours round trip' prose (a shared Temple sentence) and approachTimeHrs 1 are wrong; totalHrs 11 is right. summitTimeHrs (climbing time on the planner) is handled separately below.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face",
+    "https://www.yellowleaf.org/scramble/g/r/2006-09-23-kangaroo.html",
+    "https://www.mountainproject.com/area/107811443/kangaroo-temple"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Total trailhead-to-summit time runs about 7-8 hours round trip.",
+     "replace": "Expect about 11 hours car to car.",
+     "id": "wa_northwest_face_2",
+     "fact": "Car-to-car and summit times"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Total trailhead-to-summit time runs about 7-8 hours round trip.",
+     "replace": "Expect about 11 hours car to car.",
+     "id": "wa_northwest_face_2",
+     "fact": "Car-to-car and summit times"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 1,
+     "value": 2,
+     "id": "wa_northwest_face_2",
+     "fact": "Car-to-car and summit times"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Published climbing (Summit) time 2.5 h for five pitches",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "timing.summitTimeHrs 2.5 is used as the on-route time; the one report with a split took 4 h 7 min on the route, and no second source states a climbing time for the Northwest Face. Would settle it: a second party's time on route.",
+   "sources": [
+    "https://www.yellowleaf.org/scramble/g/r/2006-09-23-kangaroo.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "South Face approach described as never crossing Kangaroo Pass",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The South Face approach crosses Kangaroo Pass, then drops and traverses to the face",
+   "evidence": "The South Face route page says to hike to Kangaroo Pass, then drop some elevation before traversing to the South Face (2-4 hours); a second route database says most climbers make the journey over Kangaroo Pass for this face and that climbers leave poles at the pass for the South Face. The Temple area page says to go down the gully beyond the pass for the Southwest (South) Face. So this row's claim that the South Face never crosses the pass is wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/114267009/south-face",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Kangaroo-Temple-South-Face",
+    "https://www.mountainproject.com/area/107811443/kangaroo-temple"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THE SOUTH FACE never crosses Kangaroo Pass at all; it hikes southeast on the right side of the creek, and its face is not even visible from the highway.",
+     "replace": "THE SOUTH FACE crosses the same pass but then drops below it and traverses across to the far side of the formation, and its face is not even visible from the highway.",
+     "id": "wa_northwest_face_2",
+     "fact": "South Face approach described as never crossing Kangaroo Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_4",
+   "fact": "Approach time and total day",
+   "verdict": "fixed",
+   "correct_value": "approach ~2.5-4 h, climb 3-5 h, descent 2.5-4 h (timing 3.25/4/3.25/10.5 correct); the 7-8 h round-trip sentence is wrong",
+   "evidence": "A route database gives this route approach 2.5-4 h, climb 3-5 h, descent 2.5-4 h, and the route's own page gives 2-4 hours to the face; the stored timing (approach 3.25, summit 4, descent 3.25, total 10.5) is the midpoint of those ranges. The '7-8 hours round trip' sentence is shared Temple text written for the short north-side routes and cannot hold with a 2-4 h approach each way plus seven pitches, so it is removed; the approach prose already gives '2-4 hours from the car'.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Kangaroo-Temple-South-Face",
+    "https://www.mountainproject.com/route/114267009/south-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Total trailhead-to-summit time runs about 7-8 hours round trip. ",
+     "replace": "",
+     "id": "wa_south_face_4",
+     "fact": "Approach time and total day"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_4",
+   "fact": "Route identity (South Face vs Southwest Face)",
+   "verdict": "fixed",
+   "correct_value": "South Face = the route also called the Southwest Face, reached over Kangaroo Pass by dropping below it and traversing",
+   "evidence": "The South Face route page says to hike to Kangaroo Pass, drop some elevation, and traverse to the South Face; the Temple area page names the same route the 'SouthWest Face' and sends climbers down beyond the pass for it; an independent route database says climbers cross Kangaroo Pass for this face and leave poles at the pass. So rope_note ('also referenced as Southwest Face') and the approach column are right, and the approach_variants entry claiming the route never crosses Kangaroo Pass is the outlier; it is rewritten to the sourced approach.",
+   "sources": [
+    "https://www.mountainproject.com/route/114267009/south-face",
+    "https://www.mountainproject.com/area/107811443/kangaroo-temple",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Kangaroo-Temple-South-Face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "The Hairpin turnout, then southeast on the RIGHT side of the creek, never crossing Kangaroo Pass",
+     "value": "The Hairpin turnout and Kangaroo Pass, then drop below the pass and traverse to the South Face",
+     "id": "wa_south_face_4",
+     "fact": "Route identity (South Face vs Southwest Face)"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "Park at the same hairpin pullout on SR-20 just east of Washington Pass that the Temple's other routes use, but understand from the outset that THIS ROUTE USES A GENUINELY DIFFERENT APPROACH FROM THE NORTH AND NORTHWEST FACE ROUTES.\n\nHike southeast on the RIGHT side of the creek on a trail that improves past several slide and boulder areas. Longer and steeper than the Kangaroo Pass line.\n\nSeven pitches at 5.8, first climbed in summer 1965.",
+     "value": "Park at the same hairpin pullout on SR-20 just east of Washington Pass that the Temple's other routes use, and follow the same climbers' trail over Kangaroo Pass, about an hour.\n\nBeyond the pass the routes part company: instead of heading up toward the notch between the Temple and Little Finger, lose some height below the pass and traverse across to the base of the South Face. Allow roughly 2.5 to 4 hours from the car in all.\n\nSeven pitches at 5.8, first climbed in summer 1965.",
+     "id": "wa_south_face_4",
+     "fact": "Route identity (South Face vs Southwest Face)"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "expect": "NEVER CROSS KANGAROO PASS. THAT IS THE NEGATIVE TEST AND IT IS ABSOLUTE: THE NORTH AND NORTHWEST FACE ROUTES BOTH GO OVER THE PASS AND THEN TRAVERSE BENEATH WALLABY'S SLABS. THIS ONE DOES NOT GO THERE AT ALL. IF YOU ARE STANDING IN A BROAD, VIEW-FILLED SADDLE, YOU HAVE TAKEN THE WRONG APPROACH.\n\nTHE POSITIVE INSTRUCTION IS A SIDE-OF-THE-CREEK TEST, WHICH IS EXACTLY THE KIND THAT SURVIVES FOG: HIKE SOUTHEAST ON THE RIGHT SIDE OF THE CREEK. Water on your left the whole way up. The trail IMPROVES past several slide and boulder areas, which is the opposite of what the Kangaroo Pass path does, so the tread itself tells you which line you are on.\n\nAND THE FACT THAT SHOULD SHAPE THE WHOLE PLAN, BECAUSE IT REMOVES THE OBVIOUS METHOD OF CONFIRMING YOUR OBJECTIVE: THE SOUTH FACE IS NOT VISIBLE FROM THE HIGHWAY. You cannot look at it from the car and pick your line, which is how most parties orient themselves at Washington Pass. Commit to the creek-side approach and read the wall when you arrive under it.\n\nEXPECT IT TO BE LONGER AND STEEPER than the north-side approach. If your walk is taking about an hour to a pass, you are on the wrong one.",
+     "value": "THE SOUTH FACE SHARES THE KANGAROO PASS APPROACH AND SPLITS FROM THE OTHER ROUTES ONLY BEYOND THE PASS.\n\nFrom the hairpin, follow the climbers' trail through the boulder fields and forest up to Kangaroo Pass, about an hour. The North and Northwest Face routes then traverse to the gully below the notch between the Temple and Little Finger and go UP it. THIS ROUTE DOES NOT CLIMB TOWARD THE NOTCH: drop some height below the pass and traverse across to the base of the South Face, on the far side of the formation.\n\nSO THE NEGATIVE TEST IS: IF YOU ARE ASCENDING THE GULLY TOWARD THE NOTCH, YOU ARE ON THE WAY TO THE NORTH-SIDE ROUTES, NOT THIS ONE.\n\nTHE SOUTH FACE IS NOT VISIBLE FROM THE HIGHWAY, so you cannot pick your line from the car; read the wall when you arrive under it. Expect the walk to the base to take roughly 2.5 to 4 hours, longer than the approach to the north-side routes.\n\nReturning to the base after the climb is awkward, so carry everything up the route with you; poles can be left at the pass and collected on the way out.",
+     "id": "wa_south_face_4",
+     "fact": "Route identity (South Face vs Southwest Face)"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards"
+     ],
+     "expect": [
+      "A route with no view of its own face from the road, so the objective cannot be assessed before committing",
+      "Longer and steeper than the peak's other approaches",
+      "Slide and boulder areas low on the trail",
+      "Shared parking with two routes that take a completely different line from the same car"
+     ],
+     "value": [
+      "A route with no view of its own face from the road, so the objective cannot be assessed before committing",
+      "Longer than the approach to the peak's north-side routes",
+      "Slide and boulder areas low on the trail",
+      "A shared trail as far as Kangaroo Pass with the north-side routes, so the split beyond the pass is easy to miss"
+     ],
+     "id": "wa_south_face_4",
+     "fact": "Route identity (South Face vs Southwest Face)"
+    }
+   ]
+  }
+ ]
+}

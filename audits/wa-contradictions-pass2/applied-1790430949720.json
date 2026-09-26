@@ -1,0 +1,68 @@
+{
+ "applied": [
+  {
+   "id": "wa_dark_side_of_liberty",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Schedule credits an 11-hr on-route time to the first ascent"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_dark_side_of_liberty",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "One of the hardest multi-pitch free routes in Washington. The first ascent (Schaefer/Lee, Aug 2019) topped out the tenth and final pitch late in the day. Most parties rappel the route on a single 80m rope rather than finishing the 4th-class scramble to the true summit.",
+       "hours": 12,
+       "miles": 2.2,
+       "title": "Very long single day",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "4:30 AM",
+         "label": "Reach base",
+         "detail": ""
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start climbing",
+         "detail": "10 pitches, crux pitch 4 (V9/V10 boulder problem)"
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Top out / begin rappels",
+         "detail": "~11 hrs on route, per the FA timing"
+        },
+        {
+         "time": "7:00-8:00 PM",
+         "label": "Back at car",
+         "detail": "Single 80m-rope rappel line"
+        }
+       ],
+       "objective": "Free-climb Dark Side of Liberty (5.13+)"
+      }
+     ],
+     "totalNote": "A single very long day for the rare parties capable of it: roughly 12-13 hrs car-to-car including approach and rappel descent."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "file": "s019.json",
+ "results": [
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Itinerary in/out day mileage (6.5 vs 5 mi on the same trail)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The WTA hike page gives 5+ miles of closed road above the washout plus a 4.4-mile round-trip path (about 2.2 mi each way), and the NPS route page gives about 5 miles of road plus ~1.8-2 mi of path; both put the lake about 7 mi one way, matching the Lake Constance pin (7.2 mi) but neither day 1 (6.5) nor day 3 (5). Fixing both days would push the itinerary total to ~18 mi and contradict the totalNote's 16 mi round trip, which the one trip report (16 mi RT to the summit) supports. Settling needs a second measured car-to-summit round-trip distance to fix the total, then days 1 and 3 can be set equal.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-constance",
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm",
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one trip report states a car-to-car figure for this route (~7,300 ft gained and lost), matching gain_ft; no second source stating the total or per-day gains for Route 2A was found in further searches (summitpost, cascadeclimbers, WTA and other trip reports cover Mount Constance, not Inner Constance). Itinerary days (6,000 ft) and totalNote remain unchanged; a second trip report stating the total would settle the totalNote.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Hardest rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The one detailed Route 2A trip report describes a Class 3-4 exit step and Class 2-3 scrambling on the East Ridge, with no chimney or roof; a second party's report of an Inner Constance attempt names routes 2, 2A and 3 but gives no grades, and Wikipedia gives only the FA. No second source grading the South Gully-East Ridge line was found, so grade, rock_grade and pro_needs are unchanged; a guidebook-independent second report grading Route 2A would settle it.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/",
+    "https://trailcatjim.com/mt-constance-outer-peak-via-south-side-inner-peak-attempt/",
+    "https://en.wikipedia.org/wiki/Inner_Constance"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Commitment grade vs a multi-day trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found states a commitment grade for Inner Constance Route 2A; Wikipedia and the trip reports give no grade. The one trip report did it in about 10.5 hours of movement. A published commitment grade for the route would settle it.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/",
+    "https://en.wikipedia.org/wiki/Inner_Constance"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "fact": "Lake Constance quota season",
+   "verdict": "fixed",
+   "correct_value": "Reservation (quota) season May 15-October 15, as access.permit says; the waypoint's May 1-Sept 30 window is the park's 'early reservations recommended' window, not a quota season, so the dates are dropped from the waypoint rather than duplicated.",
+   "evidence": "The NPS wilderness reservations page and the Recreation.gov Olympic Wilderness permit page both state the summer reservation season is May 15 through October 15 (released April 15), and Recreation.gov lists Lake Constance among the reservable quota areas; a third-party permit guide repeats May 15-Oct 15. The NPS Lake Constance route page's May 1-Sept 30 is only a window for which early reservations are recommended. One secondary blog claims a June 15-Oct 15 Lake Constance season, so the waypoint states the quota without dates and access.permit keeps the season.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.recreation.gov/permits/4098362",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/",
+    "https://www.nps.gov/olym/planyourvisit/lake-constance-route.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Lake Constance quota season",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "camping permits are quota-limited May 1-Sept 30, use existing sites",
+     "replace": "camping permits are quota-limited, so use existing sites"
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Lake Constance quota season",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "directions"
+     ],
+     "find": "Camping is quota-limited May 1 through September 30, so use the existing sites.",
+     "replace": "Camping is quota-limited, so use the existing sites."
+    },
+    {
+     "id": "wa_inner_constance_standard",
+     "fact": "Lake Constance quota season",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Camping at the lake is quota-limited May 1 to September 30.",
+     "replace": "Camping at the lake is quota-limited."
+    }
+   ]
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "fact": "Where the route finishes (false summit vs true summit)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only source describing this 2021 route says a few pitches of class 4-low fifth above the roof reach the southwest false summit, after which the line rejoins the NW Buttress for a final pitch to the summit proper. Further searches (cascadeclimbers, AAJ-style reports, summitpost) found no second description of Sean's Route/Second Wind. A second account of the finish (and whether the FA party's descent left from the false summit) would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/122778214/seans-routesecond-wind"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "fact": "Length of the climb",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route page gives about 1,300 ft in 14 pitches with segment descriptions (100-200 ft gully, 200 ft easy 5th, 200 ft headwall, 100 ft to summit) but no full per-pitch lengths; no second source for the West Ridge's length or pitch lengths was found (other Inspiration reports cover the East Ridge and South Face and only mention rappelling the upper West Ridge). The unsourced pitch table (sum ~555 m) cannot be corrected to researched figures; a second pitch-by-pitch description would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/126437847/west-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_5",
+   "fact": "Route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent report and the summitpost route page describe a ~1,000 ft face with a ~400 ft gash (matching length_m 305 and rope_note), while the route database page gives 600 ft in 4 pitches (matching the overview); the summitpost figure appears derived from the FA report, so they may count once. No further independent report with a measured length was reachable (the Mountaineers and a detailed personal trip-report page returned 403). A second independent trip report stating the roped length and pitch count would settle it.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12197012102/North-America-United-States-Washington-Cascade-Mountains-Inspiration-Peak-South-Face",
+    "https://www.mountainproject.com/route/108154541/south-face",
+    "https://www.summitpost.org/south-face/321118"
+   ],
+   "patches": []
+  }
+ ]
+}

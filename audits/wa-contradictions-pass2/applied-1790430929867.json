@@ -1,0 +1,163 @@
+{
+ "applied": [
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Aspect / side of the peak climbed"
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Aspect / side of the peak climbed"
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Aspect / side of the peak climbed"
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Glacier travel"
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Glacier travel"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "before": {
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "scrambling to low 5th class",
+      "label": "Northwest flank from the Himmel-Otto col",
+      "notes": "From the col the Southeast Route continues up easier ground on Himmelhorn's southeast flank to the 7,880 ft summit."
+     }
+    ],
+    "itinerary": {
+     "cal": "North Cascades NP backcountry permit required for the Crescent Creek/Terror Basin camp; route is typically in reasonable condition July-September once the approach brush and access road are snow-free.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Goodell Creek trailhead, follow an old roadbed about 4-4.5 miles, then leave the maintained trail to climb the brushy forested ridge crest, cross Terror Creek on a log jam, and continue through Stump Hollow into Crescent Creek Basin. It's a steep, brushy, unmaintained climbers' path with route-finding required; camp on heather/slabs around 5,800 ft below Terror and Himmelhorn.",
+       "hours": 8,
+       "miles": 7,
+       "title": "Approach to Crescent Creek Basin",
+       "gainFt": 5300,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach high camp below Himmelhorn"
+      },
+      {
+       "n": 2,
+       "note": "An alpine-start day climb from Crescent Creek Basin: ascend the narrow snow/scree gully to the Ottohorn-Himmelhorn col, then work up the southeast side to the summit, downclimbing or bypassing an overhanging block near the top on class 3/4 rock in late season. Descend by reversing the route, downclimbing and rappelling the gully back to camp.",
+       "hours": 7,
+       "miles": 2.5,
+       "title": "Climb Himmelhorn (Southeast Route) and return to camp",
+       "gainFt": 2100,
+       "lossFt": 2100,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave high camp",
+         "detail": "Alpine start up the gully toward the Otto-Himmel col."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach Otto-Himmel col",
+         "detail": "Some parties bivy here instead of Crescent Creek Basin; gear up for the upper mountain."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Upper scramble/bypass",
+         "detail": "Class 3/4 terrain near the top; late-season parties often skirt an overhanging block on the left."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Summit",
+         "detail": "7,880 ft high point."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Downclimb/rappel the route; rap anchors in the moats are useful late season."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Himmelhorn via the Otto-Himmel col gully"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: back across Crescent Creek Basin and Stump Hollow, over the ridge crest, down through the brush to the old roadbed and out to the trailhead.",
+       "hours": 7,
+       "miles": 7,
+       "title": "Hike out",
+       "gainFt": 300,
+       "lossFt": 5400,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to Goodell Creek trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip out of Goodell Creek: a long, brushy, steep approach day to Crescent Creek Basin (~5,300 ft gain), a technical scramble day up the Otto-Himmel col gully to the 7,880 ft summit and back to camp, and a full day hiking out — roughly 16-17 miles and 7,700 ft of gain/loss round trip."
+    },
+    "timing": {
+     "totalHrs": 22,
+     "summitTimeHrs": 7,
+     "descentTimeHrs": 7,
+     "approachTimeHrs": 8,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 8,
+       "note": "From the Goodell Creek trailhead, follow an old roadbed about 4-4.5 miles, then leave the maintained trail to climb the brushy forested ridge crest, cross Terror Creek on a log jam…",
+       "fromTo": "Approach to Crescent Creek Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 7,
+       "note": "An alpine-start day climb from Crescent Creek Basin: ascend the narrow snow/scree gully to the Ottohorn-Himmelhorn col, then work up the southeast side to the summit, downclimbing …",
+       "fromTo": "Climb Himmelhorn (Southeast Route) and return to camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7,
+       "note": "Reverse the approach: back across Crescent Creek Basin and Stump Hollow, over the ridge crest, down through the brush to the old roadbed and out to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "rope_note": "Remote Grade IV alpine rock route in the Southern Pickets; glacier approach then multi-pitch rock to a rappel descent (rap/scramble to a false-summit notch, then rap the route). Bring extra tat — anchors are minimal in this range.",
+    "descent_text": "Descend by reversing the route: downclimb (with short rappels where the rock steepens or is wet/icy) from the summit back down to the Himmel-Otto col, then retrace the approach gully back down into Crescent Creek Basin. Early in the season this gully descent is a quick, straightforward snow glissade/plunge-step with minimal fuss; by late season, when the gully has melted out to icy hardpack and choss-filled moats, parties often find fixed or placed rap anchors in the moat sections more reliable than downclimbing loose rock next to hard snow/ice. From Crescent Creek Basin, reverse the entire approach: recross the Barrier (lower ledge or upper moat/choss option), drop back through Stump Hollow, and pick up the steep climbers' path back down through the timber to the old Goodell Creek roadbed and out to the trailhead. There are no bolted or fixed rappel stations on this route - any anchors encountered or built (slings around horns/blocks/chockstones) are natural, climber-placed gear anchors typical of this remote, seldom-visited range, so carry a small rack of slings/cord and a couple of rappel-rated tat-worthy items in case the moat or upper gully requires a rappel to protect the loose, exposed terrain near the col. A single 60m rope is adequate for any rappels on this route (the terrain near the col is broken into short steps, not a sustained wall), though parties often carry doubles anyway since they're already equipped for glacier travel and the Otto-Himmel col traverse. Watch for rockfall in the gully and on the Barrier crossings, especially with parties above, and for the choss/loose-rock hazard around the overhanging boulder bypass near the col, which is exposed in both directions."
+   }
+  }
+ ]
+}

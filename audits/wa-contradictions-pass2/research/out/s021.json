@@ -1,0 +1,158 @@
+{
+ "file": "s021.json",
+ "results": [
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "fact": "Gain from Lake of the Woods camp to the summit",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found no new figure: a second party's report of the east ridge gives only the time from camp (1.9 hours), and a solo report of the west slope gives no gain; the route's own summary pages give only the pass-to-summit crow-fly distance. Topography (lake ~6,620 ft, summit 8,371 ft) makes 1,300-1,400 ft too low and one report says ~1,600 ft, but day 2's gainFt feeds the itinerary total that equals gain_ft, so no single field can move without a sourced car-to-car total. Settled only by a second party stating the from-camp gain together with a sourced trip total.",
+   "sources": [
+    "https://trailcatjim.com/monument-peak-via-south-ridge-lake-mtn-via-east-ridge/",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://www.alpinewanderlust.com/larch-of-the-woods-lake-mountain-overnight/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry sources give gain (about 2,000 ft car to car, ~800 ft in the couloir) and times (4.5-6 hours car to car) but no mileage for the Zipper alone; a ski report of the neighbouring Fly gave an uncertain ~3 miles, and a club listing gives no distance. Only a recorded GPS track from Reflection Lakes to the notch and back would settle it.",
+   "sources": [
+    "https://mazamas.org/activity/instance/9144/detail/",
+    "https://www.jeffreyjhebert.com/adventures/the-zipper-on-lane-peak",
+    "https://havetent.com/2018/05/04/lane-peak-ski-via-fly-couloir/",
+    "https://dashertonclimbs.com/2021/01/18/zipper-lane-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lane_peak_r1",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Dec-Jun chip stands; prime January-April, climbable into May and in big years June",
+   "evidence": "Independent parties on different dates climbed the Zipper on June 12, 2010 (climbed and skied, good spring snow) and May 3, 2014; other dated ascents are April 17, 2016 and April 22, 2022. So the couloir does not reliably melt out after April, and the Dec-Jun chip is supported as an outer window; the itinerary sentence is corrected to put May-June as the late tail.",
+   "sources": [
+    "https://www.turns-all-year.com/trip-reports/june-12-2010-tatoosh-lane-peak-zipper-and-fly",
+    "https://turns-all-year.com/trip-reports/may-3-14-lane-peak-zipper-couloir-video",
+    "https://thepeakoftheweek.com/2022/04/22/lane-peak-zipper-couloir/",
+    "https://www.jeffreyjhebert.com/adventures/the-zipper-on-lane-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "This is a snow/ice couloir climbed roughly January-April before it melts out",
+     "replace": "This is a snow/ice couloir climbed mostly January-April, and into May or even June in big snow years, before it melts out",
+     "id": "wa_lane_peak_r1",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Rope needed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only rope length stated for this route is the route's own published description: a sturdy tree ~200 ft up, 'use a 70m rope if you want to rappel to the ground from this tree, or down climb' (so rope optional is consistent with a downclimb). A regional mention of a single 70 m rope making a rappel refers to the north-face couloirs, and a 30 m rope is listed for traverse days. No second source confirms the rope length or the 200 ft vs 35 m doubled geometry; settled only by another party describing the rappel length from the tree.",
+   "sources": [
+    "https://www.mountainproject.com/route/119117818/classic-route",
+    "https://www.mountainproject.com/area/110175004/lane-peak",
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Difficulty of the summit finish",
+   "verdict": "fixed",
+   "correct_value": "Mostly Class 3 with a few exposed 4th-class moves (route grade 4th class)",
+   "evidence": "The route's published description grades it 4th class YDS with the remainder 3rd class; a 2024 trip report calls the final ~150 ft a sustained 3rd-class gully with a few 4th-class moves; the peak's encyclopedia entry gives the easiest route as class 4. They agree the line is mostly 3rd class with some 4th-class moves, so 'easy Class 3, minimal exposure' is wrong; the row's overview, hazards, rock_grade and pitch_detail already say this and the two outlier sentences are aligned to them (the published description places its 4th-class section lower on the route, noted but not contradicting the grade).",
+   "sources": [
+    "https://www.mountainproject.com/route/119117818/classic-route",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-27.093739291338",
+    "https://en.wikipedia.org/wiki/Lane_Peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the final short scramble (Class 3, plentiful holds, minimal exposure)",
+     "replace": "the final short scramble (mostly Class 3 with plentiful holds, plus a few exposed 4th-class moves)",
+     "id": "wa_classic_route_3",
+     "fact": "Difficulty of the summit finish"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "the last 50 feet is easy Class 3 scrambling to the summit",
+     "replace": "the summit gully is mostly Class 3 scrambling with a few exposed 4th-class moves",
+     "id": "wa_classic_route_3",
+     "fact": "Difficulty of the summit finish"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Stevens Canyon Road opening date",
+   "verdict": "fixed",
+   "correct_value": "Typically opens late May (around Memorial Day), varying with snow",
+   "evidence": "The park's Box Canyon page says Stevens Canyon Road is open to vehicles 'typically late May-September'. Dated park opening releases open it May 25 (2012), May 23 (2014) and May 22 (2015), and a 2024 news report records it reopening May 24, 2024. One older park page says late June, but the dated openings over four years agree on late May; the approach, waypoint and approach_variants already say so, and access.closures and road.seasonalGate are corrected. (The sibling Zipper row repeats 'late June' in the same two fields but is internally consistent, so it is not patched here.)",
+   "sources": [
+    "https://www.nps.gov/places/box-canyon.htm",
+    "https://www.nps.gov/mora/learn/news/spring-opening.htm",
+    "https://www.nps.gov/mora/learn/news/2014opening.htm",
+    "https://www.nps.gov/mora/learn/news/opening-schedules-2015.htm",
+    "https://www.spokesman.com/stories/2024/jun/06/field-reports-stevens-canyon-road-opens-in-mount-r/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "roughly early/mid-October through late June",
+     "replace": "roughly early/mid-October through late May",
+     "id": "wa_classic_route_3",
+     "fact": "Stevens Canyon Road opening date"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "Stevens Canyon Rd typically opens late June",
+     "replace": "Stevens Canyon Rd typically opens late May, around Memorial Day",
+     "id": "wa_classic_route_3",
+     "fact": "Stevens Canyon Road opening date"
+    }
+   ]
+  },
+  {
+   "id": "wa_classic_route_3",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found states the Classic Route's own round-trip or one-way distance; the published description gives only the 250 ft climb length, and available figures are for multi-peak Tatoosh days or the north-face approach. A GPS track of the Tatoosh Creek line from Reflection Lakes would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/119117818/classic-route",
+    "http://www.willhiteweb.com/mount_rainier_national_park/lane_peak/tatoosh_range_301.htm"
+   ],
+   "patches": []
+  }
+ ]
+}

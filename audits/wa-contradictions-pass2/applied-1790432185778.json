@@ -1,0 +1,224 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "overview",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "hours"
+   ],
+   "fact": "Length of the car-to-car day"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Length of the car-to-car day"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "hrs"
+   ],
+   "fact": "Length of the car-to-car day"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "time"
+   ],
+   "fact": "Length of the car-to-car day"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "time"
+   ],
+   "fact": "Length of the car-to-car day"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "time"
+   ],
+   "fact": "Length of the car-to-car day"
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "column": "grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Commitment grade"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_stone_putvin",
+   "before": {
+    "itinerary": {
+     "cal": "The ground above Lake of the Angels often holds snow into July, so many parties carry an ice axe even on the single-day version.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard way most parties climb Mount Stone: steep trail up to Lake of the Angels basin, then boots-and-axe up the rock rib and on to the west-ridge terrain to the summit block, reversing the whole route to descend. Expect short Class 3 (and a Class 3-4 summit move) plus lingering snow above the lake into mid-summer.",
+       "hours": 9,
+       "miles": 8.5,
+       "title": "Car-to-car scramble via Putvin Trail and the west ridge",
+       "gainFt": 5053,
+       "lossFt": 5053,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Putvin trailhead",
+         "detail": "Early start recommended — trail is relentlessly steep with roots/rock scrambling low down."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach Lake of the Angels basin (~4,900 ft)",
+         "detail": "Trail gains roughly 3,300 ft in under 4 miles to here."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Transition to axe/boots, head for the rock rib",
+         "detail": "Boot or crampon transition typically happens around 4,500-5,000 ft."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Summit Mount Stone (6,612 ft)",
+         "detail": "Short Class 3-4 scrambling near the top."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Begin descent",
+         "detail": "Reverse the scramble line and Putvin Trail; watch for afternoon thunderstorms/softening snow."
+        },
+        {
+         "time": "5:30-6:30 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Mount Stone and return to the trailhead same day"
+      }
+     ],
+     "totalNote": "A long single day: roughly 8.5 mi round trip with 5,053 ft of gain/loss, about 8-10 hours car-to-car for a fit party."
+    },
+    "overview": "The standard route up Mount Stone, the highest point in Mason County. From the Putvin Trail and Lake of the Angels, a class 3 rock scramble of roughly 5,000 ft of gain over about 11 miles round trip gains the summit, with broad views of The Brothers, Mount Anderson, Mount Deception, Mount Constance, and Mount Olympus.",
+    "timing": {
+     "totalHrs": 9,
+     "summitTimeHrs": null,
+     "descentTimeHrs": 4,
+     "approachTimeHrs": 3,
+     "recommendedStart": "5:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "Standard way most parties climb Mount Stone: steep trail up to Lake of the Angels basin, then boots-and-axe up the rock rib and on to the west-ridge terrain to the summ…",
+       "fromTo": "Car-to-car scramble via Putvin Trail and the west ridge",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "before": {
+    "grade": "Grade III-IV, 5.6",
+    "pitch_detail": [
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Climb begins right off the Terror-Degenhardt saddle with a steep hand/off-width crack (offwidth on the left, a narrower finger seam on the right per some parties) — the recognized crux of the route. At least one party rated this section a stout 5.8, though the standard published rating for the climb is III-IV, 5.6.",
+      "pitch": 1,
+      "anchor": "Gear (crack)",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "Continues directly up the crest of the narrow East Ridge on blocky terrain. Rock quality on this ridge is consistently described as some of the loosest, choss-iest in the Pickets, so test every hold and manage rope drag/rockfall for the second.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.2",
+      "notes": "The ridge is abandoned here for a rising traverse onto the south face to bypass a steeper step, on more loose rock; low-angle but exposed, with limited natural gear placements.",
+      "pitch": 3,
+      "anchor": "Gear / rock horn",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.5",
+      "notes": "Wraps back up from the south-face traverse for a final section mixing in easy 5th-class moves before topping out directly on Mount Terror's summit, with its small register and exposed views into McMillan Cirque to the north.",
+      "pitch": 4,
+      "anchor": "Walk-off (no belay) at summit",
+      "lengthM": 35
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,136 @@
+{
+ "applied": [
+  {
+   "id": "wa_northwest_face_2",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain vs total loss"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "approach",
+   "path": [],
+   "fact": "Car-to-car and summit times"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Car-to-car and summit times"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Car-to-car and summit times"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "South Face approach described as never crossing Kangaroo Pass"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach time and total day"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Route identity (South Face vs Southwest Face)"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Route identity (South Face vs Southwest Face)"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Route identity (South Face vs Southwest Face)"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards"
+   ],
+   "fact": "Route identity (South Face vs Southwest Face)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_northwest_face_2",
+   "before": {
+    "gain_ft": 1900,
+    "approach": "The Temple (Kangaroo Temple, on Kangaroo Ridge) is reached from the large pullout at the hairpin turns on SR-20 just east of Washington Pass — the same parking area used for the neighboring Hairpin Crags/Spire Gully climbs. From the pullout, a climber's trail heads south across a boulder field, through forest and more talus (faint, intermittently cairned) up to Kangaroo Pass, about 1 hour. From the pass, an intermittent trail traverses to a gully between Kangaroo Temple and Little Finger; ascending or descending that gully reaches the base of the North Face, Northwest Face, or Southwest Face routes, roughly another hour. Total trailhead-to-summit time runs about 7-8 hours round trip. For this specific route: boulder field to Kangaroo Pass, traverse left to the gully between Kangaroo Temple and Little Finger, then ascend toward the notch. Northwest Face breaks off onto a climber's trail about 200 ft below the notch instead of continuing into the boulder-choked gully.",
+    "approach_variants": [
+     {
+      "name": "The Hairpin turnout and Kangaroo Pass, then break off the gully about 200 ft BELOW the notch",
+      "notes": "The Temple is reached from the large pullout at the hairpin turns on SR-20 just east of Washington Pass, the same parking used for the neighbouring Hairpin Crags and Spire Gully climbs. From the pullout, a climber's trail heads south across a boulder field, through forest and more talus, faint and intermittently cairned, up to Kangaroo Pass, about an hour.\n\nFrom the pass, an intermittent trail traverses to a gully between Kangaroo Temple and Little Finger; ascending or descending that gully reaches the base of the North Face, Northwest Face or Southwest Face routes, roughly another hour. Total trailhead-to-summit time runs about 7-8 hours round trip.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "A 200 ft window in which to leave the gully, above and below which you are on a different route",
+       "Loose talus and a boulder-choked gully",
+       "Rope-stuck issues on the descent, which is why some parties break it into three shorter rappels",
+       "Early-season snow or ice in the approach gully",
+       "No reliable water on the approach"
+      ],
+      "baseFinding": "THE NORTHWEST FACE BREAKS OFF ONTO A CLIMBER'S TRAIL ABOUT 200 FT BELOW THE NOTCH, INSTEAD OF CONTINUING INTO THE BOULDER-CHOKED GULLY. That is the whole find and it is a measured one: two hundred feet short of the top of the gully, an obvious bench and trail splits off RIGHT.\n\nSO THE NEGATIVE TEST IS: IF YOU HAVE REACHED THE NOTCH, YOU HAVE GONE ROUGHLY 200 FT TOO FAR AND YOU ARE AT THE START OF THE NORTH FACE. And if you are fighting up a boulder-choked gully bed rather than walking a bench, you have missed the split.\n\nGETTING TO THE GULLY IN THE FIRST PLACE: from Kangaroo Pass, traverse left to the GULLY BETWEEN KANGAROO TEMPLE AND LITTLE FINGER, then ascend toward the notch. Do not drop straight down the far side of the pass; contour south below the slabs descending from Wallaby Peak, losing about 20 ft below the pass, on a good well-cairned trail beneath the slab bands.\n\nWHAT THE OTHER TWO ROUTES DO FROM THE SAME PLACE, SO THE THREE ARE SEPARABLE: the NORTH FACE goes all the way up the gully to the high notch. THIS ROUTE takes the bench 200 ft below it. THE SOUTH FACE never crosses Kangaroo Pass at all; it hikes southeast on the right side of the creek, and its face is not even visible from the highway.\n\nDESCENT: from the summit, downclimb or scramble to the fixed rappel anchors on the NORTH side of the formation. Accounts differ slightly, with some parties making two full-length rappels of about 30 m and others three shorter single-rope rappels, roughly 150-160-plus ft in total, to avoid rope-stuck issues, landing at or near the North Ridge notch. From the notch, the standard descent gully leads back down to Kangaroo Pass."
+     }
+    ],
+    "timing": {
+     "totalHrs": 11,
+     "summitTimeHrs": 2.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 1,
+     "recommendedStart": "Early (dawn) start recommended to beat afternoon thunderstorms and other parties to the rap stations"
+    }
+   }
+  },
+  {
+   "id": "wa_south_face_4",
+   "before": {
+    "approach": "The Temple (Kangaroo Temple, on Kangaroo Ridge) is reached from the large pullout at the hairpin turns on SR-20 just east of Washington Pass — the same parking area used for the neighboring Hairpin Crags/Spire Gully climbs. From the pullout, a climber's trail heads south across a boulder field, through forest and more talus (faint, intermittently cairned) up to Kangaroo Pass, about 1 hour. From the pass, an intermittent trail traverses to a gully between Kangaroo Temple and Little Finger; ascending or descending that gully reaches the base of the North Face, Northwest Face, or Southwest Face routes, roughly another hour. Total trailhead-to-summit time runs about 7-8 hours round trip. IMPORTANT — this route shares the approach to Kangaroo Pass with Temple's North/Northwest Face routes but finishes differently: rather than climbing toward the notch, drop some elevation below the pass and traverse across to the base of the South Face, roughly 2-4 hours from the car in all. The face isn't visible from the highway.",
+    "approach_variants": [
+     {
+      "name": "The Hairpin turnout, then southeast on the RIGHT side of the creek, never crossing Kangaroo Pass",
+      "notes": "Park at the same hairpin pullout on SR-20 just east of Washington Pass that the Temple's other routes use, but understand from the outset that THIS ROUTE USES A GENUINELY DIFFERENT APPROACH FROM THE NORTH AND NORTHWEST FACE ROUTES.\n\nHike southeast on the RIGHT side of the creek on a trail that improves past several slide and boulder areas. Longer and steeper than the Kangaroo Pass line.\n\nSeven pitches at 5.8, first climbed in summer 1965.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "A route with no view of its own face from the road, so the objective cannot be assessed before committing",
+       "Longer and steeper than the peak's other approaches",
+       "Slide and boulder areas low on the trail",
+       "Shared parking with two routes that take a completely different line from the same car"
+      ],
+      "baseFinding": "NEVER CROSS KANGAROO PASS. THAT IS THE NEGATIVE TEST AND IT IS ABSOLUTE: THE NORTH AND NORTHWEST FACE ROUTES BOTH GO OVER THE PASS AND THEN TRAVERSE BENEATH WALLABY'S SLABS. THIS ONE DOES NOT GO THERE AT ALL. IF YOU ARE STANDING IN A BROAD, VIEW-FILLED SADDLE, YOU HAVE TAKEN THE WRONG APPROACH.\n\nTHE POSITIVE INSTRUCTION IS A SIDE-OF-THE-CREEK TEST, WHICH IS EXACTLY THE KIND THAT SURVIVES FOG: HIKE SOUTHEAST ON THE RIGHT SIDE OF THE CREEK. Water on your left the whole way up. The trail IMPROVES past several slide and boulder areas, which is the opposite of what the Kangaroo Pass path does, so the tread itself tells you which line you are on.\n\nAND THE FACT THAT SHOULD SHAPE THE WHOLE PLAN, BECAUSE IT REMOVES THE OBVIOUS METHOD OF CONFIRMING YOUR OBJECTIVE: THE SOUTH FACE IS NOT VISIBLE FROM THE HIGHWAY. You cannot look at it from the car and pick your line, which is how most parties orient themselves at Washington Pass. Commit to the creek-side approach and read the wall when you arrive under it.\n\nEXPECT IT TO BE LONGER AND STEEPER than the north-side approach. If your walk is taking about an hour to a pass, you are on the wrong one."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "column": "approach",
+   "path": [],
+   "fact": "'Same trailhead as the Southeast Ridge'"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Summit pyramid side used"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "before": {
+    "approach": "Same trailhead access as the Southeast Ridge route: drive to Ruth Creek Road's end at Hannegan Campground via Mt. Baker Hwy (SR 542) and Hannegan Pass Road (FS 32)/Ruth Creek Road. From the Ruth Creek trail at about 3,450 ft, leave the trail, drop southwest to cross Ruth Creek, and cross talus to the base of the couloir at about 4,000 ft."
+   }
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "before": {
+    "rock_grade": "4th-5th class (west ridge of summit pyramid)"
+   }
+  }
+ ]
+}

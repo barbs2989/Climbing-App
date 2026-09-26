@@ -1,0 +1,141 @@
+{
+ "file": "s043.json",
+ "results": [
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still only one source states a rope length: a high-route account lists a 30 m rope as possibly useful. The WTA-posted 2023 report says the route goes without a rope and they used it twice, with no length; a 2002 party made a roped descent of class 3-4 rock with no length given. No source states 60 m, and the report describing two single-rope rappels (Mountaineers) is blocked (403). Would settle: that Mountaineers report or a second party stating the rope length used for the rappels.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Mystery/Mystery.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-04.8041511023",
+    "https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "How the summit section is descended",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A 2023 party placed the class 4 step below a notch near 7,500 ft, with a class 3 gully above; they belayed up to the notch, used the rope to protect the downclimb, and left a bail anchor there rather than downclimb a 5.8 move unroped. A 2002 party made a careful roped descent of class 3-4 rock and scree on a different (east-face) line. The two-rappel report that the descent text relies on could not be read (403), so whether its rappels end at the ~7,500 ft notch or cover the class 4 step is still not established. Would settle: the text of the two-rappel report.",
+   "sources": [
+    "https://alpinismproject.com/2023/07/04/mount-mystery-chossneering-at-its-finest/",
+    "https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Location and rock quality of the crux",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources still describe different lines: one 2023 account puts a 4th-class step below a notch near 7,500 ft with a class 3 gully (loose) above to good summit-block rock; a peak summary rates the route class 3 with a couple of class 4 sections in a solid rock gully near the top; a 2002 east-face party roped a class 4 breccia slot low above the col and a class 4 dihedral near the top; another calls it a 4th-class scramble from the notch to the summit. No two agree on where the crux sits. Would settle: a second independent account of the notch-step line placing the crux explicitly.",
+   "sources": [
+    "https://alpinismproject.com/2023/07/04/mount-mystery-chossneering-at-its-finest/",
+    "https://www.summitpost.org/mount-mystery/422045",
+    "https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/",
+    "https://climberkyle.com/2016/08/15/mt-mystery-and-mt-deception/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Trailhead forest road",
+   "verdict": "not_a_contradiction",
+   "correct_value": "Forest Road 2870",
+   "evidence": "Already resolved: road.name, road.driveNote, approach, waypoints[0].directions, approach_logistics and approach_variants all now name FR 2870.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Where camping is allowed",
+   "verdict": "fixed",
+   "correct_value": "Designated sites at Royal Creek, Lower Royal Meadow and Royal Lake; Upper Royal Basin camping is also allowed, with no designated sites (bare ground/gravel only), permit booked by phone through the Wilderness Information Center.",
+   "evidence": "A Royal Basin backpacking guide states Upper Royal Basin has no designated campsites, camping only on bare ground or gravel, and that its permits are not on Recreation.gov but booked by calling the Olympic Wilderness Information Center. A Mazamas activity page independently recommends camping in upper Royal Basin on the gravel bars by the tarn and asking for an Upper Royal Basin permit; a ProTrails summary says the same, and several climbing parties report camping there. The NPS page lists only the three designated areas, which is why access.rules read as excluding the upper basin.",
+   "sources": [
+    "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views",
+    "https://mazamas.org/activity/276/",
+    "http://www.protrails.com/trail/570/olympic-national-park-royal-basin",
+    "https://home.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "camp only in designated sites (Royal Creek, Lower Royal Meadow, or Royal Lake);",
+     "replace": "camp in designated sites at Royal Creek, Lower Royal Meadow or Royal Lake, or in Upper Royal Basin, which has no designated sites — there camp only on bare ground or gravel, with a permit booked by phone through the Wilderness Information Center;",
+     "id": "wa_mount_mystery_standard",
+     "fact": "Where camping is allowed"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Cause of the 2022 fatality",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: hazards[3] now says the death was ruled an accidental fall and seasonal_hazards.exposure says only that a solo climber died in a fall; neither attributes a cause the other denies.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Duplicate of the earlier entry for this fact. Still only one source states a rope length: a high-route account lists a 30 m rope as possibly useful. The WTA-posted 2023 report says the route goes without a rope and they used it twice, with no length; a 2002 party made a roped descent of class 3-4 rock with no length given. No source states 60 m, and the report describing two single-rope rappels (Mountaineers) is blocked (403). Would settle: that Mountaineers report or a second party stating the rope length used for the rappels.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/Mystery/Mystery.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-04.8041511023",
+    "https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "How the summit section is descended",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Duplicate of the earlier entry for this fact. A 2023 party placed the class 4 step below a notch near 7,500 ft, with a class 3 gully above; they belayed up to the notch, used the rope to protect the downclimb, and left a bail anchor there rather than downclimb a 5.8 move unroped. A 2002 party made a careful roped descent of class 3-4 rock and scree on a different (east-face) line. The two-rappel report that the descent text relies on could not be read (403), so whether its rappels end at the ~7,500 ft notch or cover the class 4 step is still not established. Would settle: the text of the two-rappel report.",
+   "sources": [
+    "https://alpinismproject.com/2023/07/04/mount-mystery-chossneering-at-its-finest/",
+    "https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Location and rock quality of the crux",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Duplicate of the earlier entry for this fact. Sources still describe different lines: one 2023 account puts a 4th-class step below a notch near 7,500 ft with a class 3 gully (loose) above to good summit-block rock; a peak summary rates the route class 3 with a couple of class 4 sections in a solid rock gully near the top; a 2002 east-face party roped a class 4 breccia slot low above the col and a class 4 dihedral near the top; another calls it a 4th-class scramble from the notch to the summit. No two agree on where the crux sits. Would settle: a second independent account of the notch-step line placing the crux explicitly.",
+   "sources": [
+    "https://alpinismproject.com/2023/07/04/mount-mystery-chossneering-at-its-finest/",
+    "https://www.summitpost.org/mount-mystery/422045",
+    "https://trailcatjim.com/mt-mystery-via-mystery-glacier-east-face/",
+    "https://climberkyle.com/2016/08/15/mt-mystery-and-mt-deception/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mystery_standard",
+   "fact": "Where camping is allowed",
+   "verdict": "fixed",
+   "correct_value": "Designated sites at Royal Creek, Lower Royal Meadow and Royal Lake; Upper Royal Basin camping is also allowed, with no designated sites (bare ground/gravel only), permit booked by phone through the Wilderness Information Center.",
+   "evidence": "Duplicate of the earlier entry for this fact; the patch is recorded there once. A Royal Basin backpacking guide states Upper Royal Basin has no designated campsites, camping only on bare ground or gravel, and that its permits are not on Recreation.gov but booked by calling the Olympic Wilderness Information Center. A Mazamas activity page independently recommends camping in upper Royal Basin on the gravel bars by the tarn and asking for an Upper Royal Basin permit; a ProTrails summary says the same, and several climbing parties report camping there. The NPS page lists only the three designated areas, which is why access.rules read as excluding the upper basin.",
+   "sources": [
+    "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views",
+    "https://mazamas.org/activity/276/",
+    "http://www.protrails.com/trail/570/olympic-national-park-royal-basin",
+    "https://home.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": []
+  }
+ ]
+}

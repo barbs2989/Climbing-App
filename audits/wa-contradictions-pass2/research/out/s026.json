@@ -1,0 +1,188 @@
+{
+ "file": "s026.json",
+ "results": [
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Rock quality",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only route-specific account (a guided ascent of the SW Arete) calls the rock and movement excellent. Southern Pickets reports describe gneiss of variable quality with loose gullies on approaches, but none speaks to this route's rock. Enchainment accounts (Kellogg/Holsten; Bunker/Haley/Wallace) give no rock-quality verdict for Little Mac. Would be settled by a second trip report describing the rock on the SW Arete itself.",
+   "sources": [
+    "https://mountainmadness.com/blog/picket-range-expedition-stunning-cascades-climbing",
+    "https://www.outdoorresearch.com/blogs/stories/chad-kellogg-jens-holsten-tackle-complete-picket-range-enchainment",
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Location of the base of the route",
+   "verdict": "fixed",
+   "correct_value": "Little Mac Spire sits just EAST of East McMillan Spire (toward Azure Lake); the approach text's 'west of East McMillan' is wrong, the itinerary's saddle east of East McMillan is consistent.",
+   "evidence": "The AAJ account of the Southern Picket Enchainment travelled east to west and climbed Little McMillan Spire first, then East McMillan, then West McMillan. The Kellogg/Holsten account likewise climbed Little Mac and then traversed to a horn and rappelled into the gully below East McMillan before climbing it. Wikipedia places Azure Lake 0.75 mi east of McMillan Spire, consistent with a traverse above Azure Lake to reach a spire east of East McMillan.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "https://www.outdoorresearch.com/blogs/stories/chad-kellogg-jens-holsten-tackle-complete-picket-range-enchainment",
+    "https://en.wikipedia.org/wiki/McMillan_Spire",
+    "https://en.wikipedia.org/wiki/Azure_Lake_(Whatcom_County,_Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the smaller subsidiary spire just below/west of East McMillan Spire",
+     "replace": "the smaller subsidiary spire just east of East McMillan Spire",
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Location of the base of the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Permit method",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin is a walk-up-only cross-country zone; permits are issued in person at the Marblemount Wilderness Information Center the day of or the day before (Goodell Creek is not an email-issue area).",
+   "evidence": "The park's cross-country zones page lists Terror Basin (6 per party, 6 parties) and states only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes are reservable in advance; the backcountry reservations page repeats that list and says the remaining cross-country zones are walk-up only. The permits page limits email walk-up issue to Baker Lake Rd, Mt Baker Hwy, SR20 east of Ross Lake, Twisp River and Stehekin, and says walk-ups are issued the day of or day before. Independent trip reports (Terror Basin/Crescent Creek parties) describe picking up permits at the Marblemount ranger station.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://jackdeansmith.com/posts/terror-west-ridge",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Terror Basin zone is walk-up only, issued in person at the Marblemount Wilderness Information Center the day of or the day before)",
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Permit method"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "replace": "The Terror Basin zone cannot be reserved in advance: walk-up permits are issued in person at the Marblemount Wilderness Information Center the day of or the day before.",
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Permit method"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable in advance",
+     "replace": "Park-wide, 60% of camp sites are reservable in advance",
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Permit method"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "at the Wilderness Information Center in Marblemount.",
+     "replace": "at the Wilderness Information Center in Marblemount. The Terror Basin cross-country zone is walk-up only.",
+     "id": "wa_little_mac_spire_southwest_route",
+     "fact": "Permit method"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "fact": "Cell coverage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No trip report or agency page found states whether any cell signal exists in Terror Basin itself; reports only note losing reception on the drive to the Goodell Creek campgrounds, and ranger/trip reports checked (NPS Terror Basin patrol blog, Eric's Base Camp, Jack Smith, AAJ) are silent. Would be settled by a trip report stating signal (or none) in the basin.",
+   "sources": [
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.nps.gov/noca/blogs/terror-basin-8-15-17.htm",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "fact": "Pitch breakdown, ice grade and angle taken from the traverse's crux, not this line",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The AAJ report confirms the 40 m of 4th-class rock, 100+ m of 50-degree ice and 100+ m of rappelling came while crossing the range to the Sisters Glacier just south of South Twin, not on Little Sister's South Couloir (so pitch_detail, max_angle 50, AI1 and hazards[0] are misattributed). No source gives the couloir's own angle, length or pitch structure: a Green Creek Circuit report only says the party retreated down a south-facing gully to easier ground. Would be settled by a description of the South Couloir's angle and length.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200712900/North-America-United-States-Washington-Cascade-Range-Twin-Sister-High-Route",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "fact": "Season window vs June optimal",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split on the climbing window: one peak guide gives best season July through August with early July good, while other accounts describe June or July as best and early-season ascents from late May are documented (Memorial Day 2023). The row's argument against June rested on the road, which is wrong (see the road finding): the road past the Fryingpan Creek Trailhead opens in May. Would be settled by two sources agreeing on whether June belongs in the window.",
+   "sources": [
+    "https://sites.google.com/site/guideto100peaks/home/3-route-descriptions/49-little-tahoma-peak-11138-c",
+    "https://trailcatjim.com/little-tahoma-peak-via-fryingpan-glacier-whitman-glacier-2023/",
+    "https://www.summitpost.org/2021-05-30-little-tahoma-trip-report/1061304"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "fact": "Road opening date for the Fryingpan Creek Trailhead",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The White River Road past the Fryingpan Creek Trailhead to the White River Campground lot typically opens in mid-to-late May; only the upper road to Sunrise waits until late June-early July.",
+   "evidence": "NPS opening schedules give the White River Road to the campground lot opening May 25 (2012) and May 18 (2018) versus Sunrise Road June 22 / by July 4th weekend. A 2023 party climbed Little Tahoma from Fryingpan Creek over Memorial Day weekend on the partial spring reopening. The Fryingpan Creek bridge sits about 3 mi from the White River entrance, below the campground turnoff.",
+   "sources": [
+    "https://www.nps.gov/mora/learn/news/spring-opening.htm",
+    "https://www.nps.gov/mora/learn/news/projected-opening-dates-spring-2018.htm",
+    "https://trailcatjim.com/little-tahoma-peak-via-fryingpan-glacier-whitman-glacier-2023/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Seasonal — typically opens late June to early July, closes for winter by mid-October.",
+     "replace": "Seasonal — the road is usually open past the Fryingpan Creek Trailhead to the White River Campground lot by mid-to-late May; the upper road to Sunrise opens late June to early July and closes for winter by mid-October.",
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Road opening date for the Fryingpan Creek Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "The Sunrise/White River Road is snow-gated and typically doesn't open until late June-early July; it closes for the season by mid-October.",
+     "replace": "The road is usually open past the Fryingpan Creek Trailhead to the White River Campground lot by mid-to-late May; the upper road to Sunrise stays snow-gated until late June-early July and closes for the season by mid-October.",
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Road opening date for the Fryingpan Creek Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "the Sunrise-area road/Fryingpan Creek trailhead often doesn't fully open until late June, and",
+     "replace": "the road past the Fryingpan Creek trailhead usually opens by late May, and",
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Road opening date for the Fryingpan Creek Trailhead"
+    }
+   ]
+  }
+ ]
+}

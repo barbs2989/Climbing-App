@@ -1,0 +1,145 @@
+{
+ "applied": [
+  {
+   "id": "wa_lane_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_classic_route_3",
+   "column": "approach",
+   "path": [],
+   "fact": "Difficulty of the summit finish"
+  },
+  {
+   "id": "wa_classic_route_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Difficulty of the summit finish"
+  },
+  {
+   "id": "wa_classic_route_3",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Stevens Canyon Road opening date"
+  },
+  {
+   "id": "wa_classic_route_3",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Stevens Canyon Road opening date"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_lane_peak_r1",
+   "before": {
+    "itinerary": {
+     "cal": "This is a snow/ice couloir climbed roughly January-April before it melts out; Longmire/Stevens Canyon Road gates can restrict start and end times (observed as open ~9:30am-4pm in some shoulder-season reports), so plan the day around the gate schedule.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Park at the Reflection Lakes pullout and approach via Stevens Canyon Road/Tatoosh Creek to the base of the obvious center couloir on Lane Peak's north face (roughly 45-75 min). Climb the couloir on 40-45° snow through its three short steps (the crux is an ~25 ft step near the top), pop out into the sun at the notch, and make the short scramble to the summit. Most parties descend a non-technical line (often the south-face Classic Route) rather than rappelling back down the couloir.",
+       "hours": 6,
+       "miles": 3.6,
+       "title": "Car-to-car climb of the Zipper couloir",
+       "gainFt": 2000,
+       "lossFt": 2000,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Reflection Lakes pullout",
+         "detail": "Aim to be moving early; the Longmire/Stevens Canyon gate can have restricted hours in shoulder season."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Reach the base of the couloir",
+         "detail": "Rope up and gear up for the three mixed/ice steps if conditions warrant."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Top out into the sun at the notch",
+         "detail": "Matches trip-report timing of roughly 75 minutes couloir to couloir-top."
+        },
+        {
+         "time": "+30 min",
+         "label": "Reach the summit",
+         "detail": "Short scramble from the notch."
+        },
+        {
+         "time": "+1.5-2 hr",
+         "label": "Descend the non-technical south side",
+         "detail": "Walk off via the Classic Route line rather than rappelling, conditions permitting."
+        },
+        {
+         "time": "~11:30 AM-12:30 PM",
+         "label": "Back at the car",
+         "detail": "Total field time typically 5-6.5 hours."
+        }
+       ],
+       "objective": "Climb the Zipper to the east-ridge notch and tag the summit"
+      }
+     ],
+     "totalNote": "A single, moderate day: roughly 6 hours and 2,000 ft of gain car-to-car, done well within a morning by most parties."
+    }
+   }
+  },
+  {
+   "id": "wa_classic_route_3",
+   "before": {
+    "approach": "Start from the Reflection Lake pullout on Stevens Canyon Road (open roughly Memorial Day through mid-October) or, when the road is gated by snow, from the Narada Falls pullout — from Narada Falls a short, steep ~200 ft climb through open timber gets you up to Stevens Canyon Road. From either start, walk the road roughly half a mile to the point where it bends sharply and begins heading east; leave the pavement here and drop south through sparse, open forest toward Tatoosh Creek, losing a couple hundred feet to reach it around 4,500 ft. Cross the creek (a rock-hop most of the season, more involved during peak snowmelt) and angle up onto a broad talus slope — about 250 vertical feet — that runs down to the creek (snow-covered in spring, boulder-hopping by mid/late summer). At the top of the talus, continue up through trees staying right of a short cliff band (the timber here is brushy and it's easy to drift toward the cliff if you're not paying attention). Roughly 700 ft above the creek crossing (~5,200 ft) you break out of the trees onto open slopes and continue up to the broad 5,440 ft saddle between Lane Peak and Denman Peak. From the saddle, turn right (west) and climb moderate open ground aiming for the obvious gully weakness in the southeast face — this is the 'prominent gully' the route is named for. Follow it up, trending left near the top for the final short scramble (Class 3, plentiful holds, minimal exposure) to the 6,012 ft summit. Round trip from the road is a bit over 3 miles with roughly 1,400-1,500 ft of gain; there is no reliable water past Tatoosh Creek. Hazards: spring snow/avalanche debris and wet rock in the creek drainage and talus, brushy route-finding through the timber band, and loose rock / rockfall exposure in the summit gully, especially with parties above.",
+    "itinerary": {
+     "cal": "Best done mid-to-late summer (roughly July-September) once the southeast face melts out; earlier in the season this line holds snow/ice and effectively becomes a steeper snow climb rather than a dry Class 3 scramble.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Reflection Lakes pullout on Stevens Canyon Road, road-walk roughly a half mile to the 90-degree bend, then pick up the climbers' path up gentle open slopes toward the saddle between Lane and Denman. From the saddle head west/up into the obvious weakness in the southeast face; the last 50 feet is easy Class 3 scrambling to the summit. Reverse the same line to descend.",
+       "hours": 4,
+       "miles": 4,
+       "title": "Car-to-car via the Classic (South Face) Route",
+       "gainFt": 1400,
+       "lossFt": 1400,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Reach the summit via the south-side scramble line"
+      }
+     ],
+     "totalNote": "A short, trail-less day scramble near Paradise: about 4 miles and 1,400 ft round trip, typically 3-5 hours car-to-car for a fit party."
+    },
+    "access": {
+     "fees": "None — no climbing cost-recovery fee; only the standard park entrance fee applies",
+     "notes": "Inside Mount Rainier National Park, but both summits are non-glaciated and well below the 10,000 ft/high-camp threshold that triggers Rainier’s climbing permit and $82 Climbing Cost Recovery Fee — neither applies here. Only the standard park entrance fee applies.",
+     "permit": "No NPS climbing fee/registration required — MRNP's $82 climbing fee and permit only apply to glacier travel or camps above roughly 10,000 ft, which doesn't apply to this non-glaciated Tatoosh objective. A wilderness permit ($12/person/night) is required year-round if overnighting.",
+     "closures": "Stevens Canyon Road (the direct summer approach past Reflection Lake) is gated and unplowed roughly early/mid-October through late June; during that window approach from the year-round Narada Falls lot instead.",
+     "landManager": "Mount Rainier National Park",
+     "land_manager": "National Park Service — Mount Rainier National Park",
+     "parking_pass": "Standard Mount Rainier NP entrance fee: $30/vehicle (7 days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm",
+      "what": "Mount Rainier National Park wilderness camping permit",
+      "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle."
+     }
+    },
+    "road": {
+     "name": "Narada Falls parking lot / Reflection Lake via Stevens Canyon Road",
+     "status": "Narada Falls lot plowed year-round; Stevens Canyon Rd to Reflection Lake closed in winter",
+     "driveNote": "Reflection Lake (reached via Stevens Canyon Rd) is the shorter summer approach; use Narada Falls the rest of the year.",
+     "seasonalGate": "Stevens Canyon Rd typically opens late June, closes with first significant snowfall (usually early-mid October)"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,369 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "title"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "fromTo"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    5,
+    "detail"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "descent",
+   "path": [],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "name"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "elev"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "hazards",
+   "path": [
+    4
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_johnson_standard",
+   "before": {
+    "itinerary": {
+     "cal": "Royal Basin requires a reservable wilderness permit (online reservations cover June 15 through October 15 and are released each April 15) and a bear canister; best conditions are typically July-September once seasonal snow/ice in the Johnson-Clark notch and bowl has diminished.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Upper Dungeness trailhead, hike the Royal Basin trail past Royal Lake and up into Upper Royal Basin, camping near Imperial Tarn at roughly 5,800 ft. This is a moderate, well-graded backpack with no exposure — most parties take it at a leisurely pace and arrive with time to scout tomorrow's route.",
+       "hours": 4.5,
+       "miles": 8,
+       "title": "Hike in to Upper Royal Basin camp",
+       "gainFt": 1800,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Establish high camp near Imperial Tarn in Upper Royal Basin"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp before dawn, climb to the ~6,900 ft notch between Johnson and Clark, drop into the bowl below, then pick up the cairned ledge system that corkscrews around toward the SE ridge. A short class 3 crack downclimb accesses the ledge traverse, followed by a loose gully and class 3-4 moves onto the summit block. Reverse the entire route to descend, including re-locating the cairned crack and re-crossing the notch back to camp.",
+       "hours": 9,
+       "miles": 3.2,
+       "title": "Summit day: Johnson via the Corkscrew ledge route",
+       "gainFt": 2700,
+       "lossFt": 2700,
+       "packLb": 14,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave high camp",
+         "detail": "Light summit packs; climb toward the Johnson-Clark notch."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach the 6,900 ft notch",
+         "detail": "Cross any remaining snow/ice field and drop into the bowl below."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Pick up the ledge system",
+         "detail": "Locate the cairned class 3 crack and downclimb onto the corkscrew ledge traverse."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Gully and SE ridge",
+         "detail": "Climb the loose gully and class 3-4 moves toward the summit block."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit",
+         "detail": "7,680 ft, high point of The Needles."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at camp",
+         "detail": "Full reversal of the route, including re-finding the crack and ledge."
+        }
+       ],
+       "objective": "Climb Mount Johnson (7,680 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the Royal Basin trail back down past Royal Lake to the trailhead.",
+       "hours": 4.5,
+       "miles": 8,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 1800,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the Upper Dungeness trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip: two roughly 8-mile approach days on maintained trail bracket one long, technical summit day (~2,700 ft gain, class 3-4 terrain) between the Johnson-Clark notch and the summit block."
+    },
+    "timing": {
+     "totalHrs": 18,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": 4.5,
+     "approachTimeHrs": 4.5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "From the Upper Dungeness trailhead, hike the Royal Basin trail past Royal Lake and up into Upper Royal Basin, camping near Imperial Tarn at roughly 5,800 ft. This is a moderate, we…",
+       "fromTo": "Hike in to Upper Royal Basin camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "Leave camp before dawn, climb to the ~6,900 ft notch between Johnson and Clark, drop into the bowl below, then pick up the cairned ledge system that corkscrews around toward the SE…",
+       "fromTo": "Summit day: Johnson via the Corkscrew ledge route",
+       "section": "Climb"
+      },
+      {
+       "hrs": 4.5,
+       "note": "Break camp and retrace the Royal Basin trail back down past Royal Lake to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "descent": "Reverse the route: downclimb the SE-ridge gully back onto the corkscrew ledge, re-locate the cairned class 3 crack to regain the ledge traverse, cross back over the loose talus and remnant glacier/snowfield below the Clark-Johnson col, and descend to Upper Royal Basin.",
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2500,
+      "name": "Upper Dungeness Trailhead",
+      "note": "Northwest Forest Pass required; ~12-car lot at road end on FR 2870 just past the Dungeness River bridge.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.869049,
+      "lng": -123.15061,
+      "elev": 2650,
+      "name": "Royal Basin Trail junction",
+      "note": "Leave the easy Dungeness River Trail here and turn south onto the Royal Creek/Royal Basin Trail toward Royal Basin.",
+      "type": "Junction",
+      "distMi": 1
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 3500,
+      "name": "Royal Creek Camp",
+      "note": "First two designated trailside campsites on Royal Creek at ~3,500 ft with reliable creek water; fires allowed only here, not at the third site 3/4 mile farther up.",
+      "type": "Campsite",
+      "distMi": 3
+     },
+     {
+      "lat": 47.83201,
+      "lng": -123.21073,
+      "elev": 5100,
+      "name": "Royal Lake",
+      "note": "Basecamp for the Johnson/Clark climb at 5,100 ft; composting toilet, bear canisters required, and campfires are prohibited throughout Royal Basin.",
+      "type": "Campsite",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.831319199999996,
+      "lng": -123.2214404,
+      "elev": 5600,
+      "name": "Upper Royal Basin",
+      "note": "Maze of tarns, snowfields and meadows below the north faces of Johnson and Clark; leave the maintained trail here and go cross-country toward the Clark-Johnson col.",
+      "type": "Junction",
+      "distMi": 8
+     },
+     {
+      "lat": 47.83519,
+      "lng": -123.234024,
+      "elev": 6900,
+      "name": "Clark-Johnson col",
+      "note": "Obvious saddle between the two peaks gained via scree/ramps above the basin; Johnson is on climber's left, Clark on the right.",
+      "type": "Junction",
+      "distMi": 8.6
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 7300,
+      "name": "Corkscrew ledge crux",
+      "note": "Ledge system wraps the south/east side of the summit block; where it looks like it cliffs out at a corner, a cairned Class 3 crack marks the correct up/downclimb — easy to miss in fog.",
+      "type": "Hazard",
+      "distMi": 9.2
+     },
+     {
+      "lat": 47.832625,
+      "lng": -123.237265,
+      "elev": 7680,
+      "name": "Mount Johnson",
+      "note": "True summit, 4th-highest peak in the Olympics; sign the register, then reverse the ledge system and col to descend.",
+      "type": "Summit",
+      "distMi": 9.6
+     }
+    ],
+    "hazards": [
+     "loose rock on the upper mountain",
+     "exposure on summit approach",
+     "very long interior approach (14+ miles round trip and 2,500+ ft of gain just to reach Royal Basin, adding significant commitment and complicating self-rescue)",
+     "remnant glacier/permanent snowfield crossing below the Clark-Johnson col (carry an ice axe, especially early season)",
+     "route-finding crux at a cairned class 3 downclimb crack on the ledge system that is easy to miss"
+    ],
+    "approach_variants": [
+     {
+      "name": "Royal Basin and Surprise Basin to the Clark–Johnson col",
+      "notes": "About seven miles to Royal Lake with the last mile eroded and loose, then most of another to the broad heather-and-tarn basin used as base camp. Above that the trail ends: heather benches and talus to the moraine rim, down into Surprise Basin, and across its snowfields to the col. Helmets on from the rim upward — the talus above is loose enough to matter.",
+      "season": "Mid-July to September",
+      "hazards": [
+       "Consistently loose and rotten rock, worst in the upper sections",
+       "Class 4 downclimbing that is harder than the same ground going up",
+       "Snowfield crossing below the col — axe useful into July",
+       "A cairned Class 3 crack on the ledge system that is easy to walk past",
+       "A long interior approach that complicates any self-rescue"
+      ],
+      "baseFinding": "The gateway is the notch between Johnson and Clark at roughly 6,900 ft, crossed by nearly every party heading for either peak. Standing in it, Johnson is on climber's left and Clark on the right; get that the wrong way round and you spend the day on the wrong mountain, which has happened. From the col the route takes ramp systems up and around the peak, staying at Class 3 by skirting right of Gasp Pinnacle — a slender tower and the clearest single landmark on this side, so use it to confirm you are where you think you are. The ledge system then wraps the south and east of the summit block until it reaches a corner where it looks for all the world as though it cliffs out; a cairned Class 3 crack around that corner is the passage, and missing it in cloud is the recognised crux of the route-finding. Above that a final Class 4 push on loose, rotten rock gains the top. If the rock has gone easy and you are walking broad scree with no ramp above you, you have dropped below the ledge and should climb back to it."
+     }
+    ]
+   }
+  }
+ ]
+}

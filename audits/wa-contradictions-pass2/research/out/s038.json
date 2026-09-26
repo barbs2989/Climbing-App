@@ -1,0 +1,192 @@
+{
+ "file": "s038.json",
+ "results": [
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Luna zone permit reservable in advance vs walk-up only",
+   "verdict": "fixed",
+   "correct_value": "Luna cross-country zone (Luna Col high camp) is walk-up only; trail camps such as Luna Camp are reservable",
+   "evidence": "The park's cross-country zone page says only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved and all other zones are walk-up only. The Recreation.gov booking system's own quota data for the 'Luna Cross Country Zone II' division shows an online quota of 0 with the walk-up flag set on every date (Boston Basin, by contrast, shows 4 online slots and no walk-up flag), while Luna Camp (a trail camp) is a separate, reservable division. So the high camp zone is walk-up only; only trail camps like Luna Camp can be booked ahead.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.recreation.gov/api/permititinerary/4675322/division/4675322160/availability/month?month=10&year=2026",
+    "https://www.recreation.gov/api/permitcontent/4675322"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Luna zone permit reservable in advance vs walk-up only",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "NPS wilderness permits (advance reservation via recreation.gov) and a Ross Lake water taxi reservation are both required",
+     "replace": "An NPS wilderness permit (the Luna cross-country zone is walk-up only, issued in person at Marblemount) and a Ross Lake water taxi reservation are both required"
+    },
+    {
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Luna zone permit reservable in advance vs walk-up only",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "(about 40% of sites held for walk-ups).",
+     "replace": "(about 40% of sites held for walk-ups). Trail camps such as Luna Camp can be reserved, but the Luna cross-country zone used for the high camp at Luna Col is walk-up only."
+    },
+    {
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Luna zone permit reservable in advance vs walk-up only",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "replace": "The Luna cross-country zone cannot be reserved; get a walk-up permit in person at the Marblemount Wilderness Information Center."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "East Fury's elevation (8,356 theodolite vs 8,321.5 dGPS)",
+   "verdict": "fixed",
+   "correct_value": "East Fury ~8,322 ft (about 20 ft higher than West Fury), not 8,356",
+   "evidence": "The surveyor's October 2024 dGPS measurement put East Fury's rocky summit at 8,321.5 ft (NGVD29) and states it supersedes the 2022 theodolite figure, which was thrown off by an error in its Luna Peak reference; the old icecap summit has melted about 30 ft. An independently compiled topo peak list gives East Fury 8,325 ft. Both put it near 8,322 ft, not 8,356.",
+   "sources": [
+    "https://www.countryhighpoints.com/east-fury-survey/",
+    "https://listsofjohn.com/peak/48772",
+    "https://trailcatjim.com/major-peaks/northwestern-cascades-groups/the-picket-twelve/mt-fury-east-peak-8288-ft/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "East Fury's elevation (8,356 theodolite vs 8,321.5 dGPS)",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "An October 2022 theodolite survey by Eric Gilbertson found that East Fury is actually roughly 51 ft taller than West Fury (8,356 ft ±8 ft vs. 8,305 ft ±10 ft)",
+     "replace": "Precise modern surveying has found that East Fury is actually roughly 20 ft taller than West Fury (about 8,322 ft vs. roughly 8,300 ft)"
+    },
+    {
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "East Fury's elevation (8,356 theodolite vs 8,321.5 dGPS)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "elev"
+     ],
+     "expect": 8356,
+     "value": 8322
+    },
+    {
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "East Fury's elevation (8,356 theodolite vs 8,321.5 dGPS)",
+     "op": "set",
+     "column": "high_point_ft",
+     "path": [],
+     "expect": 8356,
+     "value": 8322
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Number of rappels",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found no two parties agreeing on a count: one party soloed the steep tower and only noted seeing a rappel station, another made a single short rappel over a 25-ft step, and a route page describes one 30 m rope-stretcher rappel between towers; a Mongo Ridge party rappelled each of three towers. What would settle it: two independent reports of a standard East-West traverse that both count their rappels.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://trailcatjim.com/mt-fury-east-peak-luna-peak-via-access-creek/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Access Creek crossing elevation vs Luna Camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The crossing is 1.5 mi up-valley of Luna Camp (2,432 ft by USGS at its pin), so 2,000 ft is impossible. USGS point elevations on the Big Beaver valley floor about 1.5 mi north-west of Luna Camp read roughly 2,470-2,520 ft, consistent with the ~2,460 ft this catalog's sibling route states, but the crossing pin's own coordinate lies up Access Creek (USGS reads 4,819 ft there) and no fetchable trip report states the crossing elevation. What would settle it: the GNIS mouth coordinate of Access Creek (for a USGS reading) plus one report stating the crossing height.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.220&y=48.846&units=Feet&wkid=4326",
+    "https://stephabegg.com/trip-reports/washington/pickets/northern-pickets-2/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Summit-day timing from Luna Camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two independent parties started the summit day from the Luna Col / Luna Pass camp (6:00 AM and 5:30 AM), not Luna Camp, and one timed the traverse at 2.5 hours from East Fury; but reaching East Fury from the col took one party about 8 hours while the row's sibling says 4-5, so no agreed figure exists to rebuild approachTimeHrs/totalHrs. Changing only the start would leave the 0.5-hr approach wrong. What would settle it: two reports timing Luna Col to East Fury summit.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://trailcatjim.com/mt-fury-east-peak-luna-peak-via-access-creek/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "East Fury elevation vs route high point (overview 8,280 < West 8,305)",
+   "verdict": "fixed",
+   "correct_value": "East Fury ~8,322 ft, the highest point of the traverse",
+   "evidence": "The 2024 dGPS survey puts East Fury at 8,321.5 ft and an independently compiled topo peak list gives 8,325 ft; both place it above West Fury (~8,300 ft), so the overview's 8,280 ft is wrong and the traverse's high point is East Fury, not West Fury's 8,305.",
+   "sources": [
+    "https://www.countryhighpoints.com/east-fury-survey/",
+    "https://listsofjohn.com/peak/48772",
+    "https://trailcatjim.com/major-peaks/northwestern-cascades-groups/the-picket-twelve/mt-fury-east-peak-8288-ft/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "East Fury elevation vs route high point (overview 8,280 < West 8,305)",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "East Fury (8,280 ft) to West Fury",
+     "replace": "East Fury (8,322 ft) to West Fury"
+    },
+    {
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "East Fury elevation vs route high point (overview 8,280 < West 8,305)",
+     "op": "set",
+     "column": "high_point_ft",
+     "path": [],
+     "expect": 8305,
+     "value": 8322
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Overnight permit 'where' says reserve on Recreation.gov for a walk-up-only cross-country zone",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Luna cross-country zone is walk-up only",
+   "evidence": "The park's cross-country zone page says only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved and all other zones are walk-up only. The Recreation.gov booking system's own quota data for the 'Luna Cross Country Zone II' division shows an online quota of 0 with the walk-up flag set on every date (Boston Basin, by contrast, shows 4 online slots and no walk-up flag), while Luna Camp (a trail camp) is a separate, reservable division. So the high camp zone is walk-up only; only trail camps like Luna Camp can be booked ahead.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.recreation.gov/api/permititinerary/4675322/division/4675322160/availability/month?month=10&year=2026",
+    "https://www.recreation.gov/api/permitcontent/4675322"
+   ],
+   "patches": [
+    {
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Overnight permit 'where' says reserve on Recreation.gov for a walk-up-only cross-country zone",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "replace": "The Luna cross-country zone cannot be reserved; get a walk-up permit in person at the Marblemount Wilderness Information Center."
+    }
+   ]
+  }
+ ]
+}

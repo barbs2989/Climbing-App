@@ -1,0 +1,173 @@
+{
+ "file": "s052.json",
+ "results": [
+  {
+   "id": "wa_sw_couloir_and_face",
+   "fact": "Descent duration vs round-trip duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route description gives '8 hr round trip from Lake Ann' at the end of its descent paragraph, supporting descent_text and the approach variant rather than an 8-hour descent. The SummitPost route page carries the same text word for word (same write-up, counts once); no independent party's timing was found, and the row splits 2-2. Would settle with: an independent trip report giving either the round-trip or the descent time.",
+   "sources": [
+    "https://www.mountainproject.com/route/112395854/sw-couloir-and-face",
+    "https://www.summitpost.org/sw-couloir-and-face/990312"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route description gives only 3,300 ft of face height and no car-to-car gain; no outside source states a total gain for this route, and gain_ft may not be computed from pin arithmetic. Would settle with: a trip report stating car-to-car gain from the Lake Ann trailhead.",
+   "sources": [
+    "https://www.mountainproject.com/route/112395854/sw-couloir-and-face",
+    "https://www.wta.org/go-hiking/hikes/lake-ann"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "fact": "Route breakdown repeats the icefall/headwall section",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: the current pitch_detail no longer contains '300 ft through the lower icefall to the headwall base'; it now runs lower snow, ice chimney, upper snow, rock step, glacier tongue, 60-70 degree ice to the headwall, matching the beta and the route description's single approach to the headwall.",
+   "sources": [
+    "https://www.mountainproject.com/route/112395854/sw-couloir-and-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "fact": "Retreat line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Neither the route description (MP and its SummitPost duplicate) nor any other page found names an East Buttress on this line or gives a retreat route; the only related advice is to stay high below the Hourglass in low visibility on the descent to avoid the Upper Curtis icefall. Would settle with: an independent description of the retreat options from the couloir.",
+   "sources": [
+    "https://www.mountainproject.com/route/112395854/sw-couloir-and-face",
+    "https://www.summitpost.org/sw-couloir-and-face/990312"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "fact": "Distance from the glacier corner to the first large crevasse",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": "about 600 ft of steep snow to the first transverse crevasse",
+   "evidence": "approach_variants[0].baseFinding and hazards[0] put the large transverse crevasse in the first 100 ft with ~300 ft of ice/snow above it to the headwall, while beta and pitch_detail[0] (183 m) give ~600 ft of snow to the first crevasse. The route description (and its SummitPost duplicate) says 600 ft of steep snow to the first crevasse, with the 100 ft / 300 ft figures belonging to the second crevasse higher up — so baseFinding conflates the two. Only one independent write-up exists and the row splits 2-2, so not patched. Would settle with: a second independent description of the start.",
+   "sources": [
+    "https://www.mountainproject.com/route/112395854/sw-couloir-and-face",
+    "https://www.summitpost.org/sw-couloir-and-face/990312"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two different parties climbed the route in August (a guide's 30 Aug 2009 trip via Fisher Chimneys, and a CascadeClimbers trip report dated 8/11/2012 via the NW Rib), so August is clearly within the climbing season, supporting season Jul-Aug. No source was found stating a preferred window, and none supports May-June as the best months, but nothing establishes a replacement 'best' window either. Would settle with: a route description stating the preferred months for this line.",
+   "sources": [
+    "https://kurthicks.com/2009/08/30/mt-shuksans-hanging-glacier/",
+    "https://cascadeclimbers.com/forum/topic/87973-tr-mt-shuksan-hanging-glacier-via-the-nw-rib-and-the-nw-ar%C3%AAte-8112012/",
+    "https://cascadeclimbers.com/forum/topic/68730-tr-mt-shuksan-hanging-glacier-1939-872009/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "Treeline elevation / where the route joins Monitor Ridge",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Treeline near 3,700 ft at Chocolate Falls; joins Monitor Ridge near 7,400 ft",
+   "evidence": "Treeline: the Mount St. Helens Institute route guide leaves the forest about 2 miles in at Chocolate Falls (3,700 ft) and Puget Sound Outdoors emerges from the trees around 3,750 ft — two independent sources against the waypoint note's 4,600 ft. Merge: Puget Sound Outdoors says the winter and summer routes meet on Monitor Ridge at 7,400 ft; Mountain Project says ~7,000 ft; the approach, approach_variants notes, baseFinding and climbing_route[0]/[1] (7,400 ft and ~850 ft more to the rim) all agree on 7,400, so the waypoint note is the single outlier.",
+   "sources": [
+    "https://www.mshinstitute.org/explore/climbing-permits/route-descriptions.html",
+    "https://www.pugetsoundoutdoors.com/Helens/StHelensWinterClimb.html",
+    "https://www.mountainproject.com/route/107353369/worm-flows"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_st_helens_worm_flows",
+     "fact": "Treeline elevation / where the route joins Monitor Ridge",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Breaks treeline near 4,600 ft, joins the Monitor Ridge route near 7,000 ft",
+     "replace": "Breaks treeline near 3,700 ft at Chocolate Falls, joins the Monitor Ridge route near 7,400 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "Aspect of the route",
+   "verdict": "fixed",
+   "correct_value": "S",
+   "evidence": "The route description says to head up the fall line generally aiming north from the sno-park, i.e. the slopes climbed face south. USGS point elevations sampled along the line from the sno-park to the rim give a downslope direction of 154-168 degrees on the lower and middle route and ~214 degrees near the rim — a south-facing flank, not west. Aspect set to S and the face label made consistent.",
+   "sources": [
+    "https://www.mountainproject.com/route/107353369/worm-flows",
+    "https://epqs.nationalmap.gov/v1/json?x=-122.1859&y=46.1673&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_st_helens_worm_flows",
+     "fact": "Aspect of the route",
+     "op": "set",
+     "column": "aspect",
+     "path": [],
+     "expect": "W",
+     "value": "S"
+    },
+    {
+     "id": "wa_mount_st_helens_worm_flows",
+     "fact": "Aspect of the route",
+     "op": "replace_text",
+     "column": "face",
+     "path": [],
+     "find": "(south-southwest side)",
+     "replace": "(south side)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "One-way distance (dist_km) vs itinerary",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 8 (~5 mi one way) matches the Institute's ~10 mi round trip and the summit pin's 5.4 mi, while Puget Sound Outdoors says ~5.5 mi one way and WTA and the Forest Service say ~12 mi round trip (the itinerary's figure). Stored value is the same quantity (one-way) and sources genuinely range 5-6 mi, so not patched. Would settle with: a measured GPS track length.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-st.-helens-worm-flows-route",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-worm-flows-winter-climbing-route",
+    "https://www.pugetsoundoutdoors.com/Helens/StHelensWinterClimb.html",
+    "https://www.mshinstitute.org/explore/climbing-permits/route-descriptions.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "fact": "Total elevation gain vs itinerary total and overview",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": 5700,
+   "evidence": "gain_ft 5563 disagrees with the itinerary day/total (5,700), the overview ('about 5,700 ft') and loss_ft 5700. WTA gives 5,699 ft gain and Puget Sound Outdoors about 5,700 ft for this route; 5,563 is the Institute's net sno-park-to-summit figure. gain_ft set to 5700 to match the sourced figure and the itinerary total.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-st.-helens-worm-flows-route",
+    "https://www.pugetsoundoutdoors.com/Helens/StHelensWinterClimb.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_st_helens_worm_flows",
+     "fact": "Total elevation gain vs itinerary total and overview",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5563,
+     "value": 5700
+    }
+   ]
+  }
+ ]
+}

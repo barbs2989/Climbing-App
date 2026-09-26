@@ -1,0 +1,38 @@
+{"file": "s018.json", "results": [
+ {"id": "wa_particulate_matter", "fact": "Parking pass at the hairpin pullout", "verdict": "fixed",
+  "correct_value": "No pass is reported for the roadside hairpin pullout; a Northwest Forest Pass or day pass is needed at the Blue Lake, Cutthroat Lake and Rainy Pass trailheads.",
+  "evidence": "A 2019 ski-tour report from the Washington Pass area states you can park at or near the hairpin turn in any plowed pullout with no permits required, and that the Northwest Forest Pass applies to the maintained Blue Lake lot. The Washington Pass area page lists the pass requirement only for the Blue Lake, Cutthroat Lake and Rainy Pass trailheads/trails, and for the hairpin crags says simply to park at the hairpin. A search-indexed Kangaroo Temple description also says no permits are needed to park at the hairpin. The Mountaineers route page's generic parking-permit field (NWFP) is a template value and does not address the hairpin specifically. The replacement text is the one sibling row wa_ephemeral already carries, so the two Ice Box routes will agree.",
+  "sources": ["https://climberkyle.com/2019/05/12/wa-pass-birthday-tour/", "https://www.mountainproject.com/area/105792192/washington-pass", "https://www.mountainproject.com/area/113263587/hairpin-crags", "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"],
+  "patches": [
+   {"id": "wa_particulate_matter", "fact": "Parking pass at the hairpin pullout", "op": "set", "column": "access", "path": ["passRequired"],
+    "expect": "Recreation Pass at trailhead (if developed recreation site)",
+    "value": "No pass reported for the roadside hairpin pullout (unlike the Blue Lake/Cutthroat Lake/Rainy Pass trailheads on the west side of the pass, which require a Northwest Forest Pass or Recreation.gov day pass)."}
+  ]},
+ {"id": "wa_ephemeral", "fact": "Route grade", "verdict": "unresolved",
+  "correct_value": "5.11c (likely), not settled",
+  "evidence": "Retry found no second independent listing: theCrag returns 403, searches for the route name with 5.11c/5.11d return nothing beyond the one route database page (5.11c, sport, 60 ft, FA Gabe Grayum Sept 2017), and the cascadeclimbers FA wiki page does not render. Only rock_grade and pitch_detail carry 5.11c, short of the internal-overwhelming bar. Would be settled by the current Washington Pass guidebook or theCrag entry giving the grade.",
+  "sources": ["https://www.mountainproject.com/route/117797479/ephemeral"],
+  "patches": []},
+ {"id": "wa_icy_peak_southwest_route", "fact": "Gain, loss and distance", "verdict": "unresolved",
+  "correct_value": "gain_ft 8000 is supported and left; loss_ft and the itinerary day gains (3,600 + 2,200) remain unsettled",
+  "evidence": "Two independent parties give ~16 mi round trip and ~8,000 ft gain via Ruth (one says '8000 feet gained & lost', the other '~8k ft' gain with no loss figure); a third party says 'over 2000 m' of gain, and an outdoor-guide page says 17 mi and 6,000 ft. Only one source states a car-to-car descent figure, so loss_ft 3963 cannot be changed under the rules, and no source gives per-day gains to reconcile the itinerary (5,800 ft total) with gain_ft. Would be settled by a second trip report or GPS track stating total descent (or per-day gain/loss). The distance part of this contradiction is fixed separately below.",
+  "sources": ["https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/", "https://havetent.com/2020/08/11/ruth-icy-traverse/", "https://stevensong.com/usa/washington/ruth-mountain-and-icy-peak/", "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak"],
+  "patches": []},
+ {"id": "wa_icy_peak_southwest_route", "fact": "Gain, loss and distance (dist_km one-way approach)", "verdict": "fixed",
+  "correct_value": "dist_km 12.9 (about 8 mi one way)",
+  "evidence": "Two independent trip reports (different authors, different years) both give 16 mi round trip for Hannegan TH over Ruth to Icy and back, i.e. ~8 mi one way; a third page gives 17 mi round trip. The row's own itinerary (8 + 8.5 mi) and summit waypoint distMi 8.2 agree. The stored 7.2 km (4.5 mi) is roughly the trail distance to Hannegan Pass only, clearly a different quantity from the one-way approach to Icy.",
+  "sources": ["https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/", "https://havetent.com/2020/08/11/ruth-icy-traverse/", "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak"],
+  "patches": [
+   {"id": "wa_icy_peak_southwest_route", "fact": "Gain, loss and distance (dist_km one-way approach)", "op": "set", "column": "dist_km", "path": [], "expect": 7.2, "value": 12.9}
+  ]},
+ {"id": "wa_inner_constance_northwest_buttress", "fact": "Rock quality near the summit", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Retry searches (exact-phrase quotes from beta, cascadeclimbers/nwhikers/blog trip reports, the Second Wind page and its comments) turned up only the single Second Wind description, which calls the shared final NW Buttress pitch a 'beautiful low angle pitch' and all rock 'typical Olympic unstable and loose' - it supports neither 'worst near the summit ridge' nor 'more solid pillow basalt capping the peak'. Would be settled by a second first-hand account of the upper buttress.",
+  "sources": ["https://www.mountainproject.com/route/122778214/seans-routesecond-wind"],
+  "patches": []},
+ {"id": "wa_inner_constance_northwest_buttress", "fact": "Order of the ledge traverse and the Class 3/4 gully", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The only description found still orders it scree -> ramp right of the prominent dihedral -> steep class 3/4 gully -> base of crack system, with the NW Buttress turning left onto the green-lichen ledge after the first pitch; that supports the baseFinding order (gully before the ledge) against pitch_detail P3. No second independent source exists online for this rarely climbed 1983 line. Would be settled by a second trip report or the Olympic climbing guide's description.",
+  "sources": ["https://www.mountainproject.com/route/122778214/seans-routesecond-wind"],
+  "patches": []}
+]}

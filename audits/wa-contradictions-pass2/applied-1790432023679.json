@@ -1,0 +1,74 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "column": "aspect",
+   "path": [],
+   "fact": "Aspect of the ledges"
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "before": {
+    "aspect": "S/SE"
+   }
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "before": {
+    "approach": "Drive Mt. Baker Highway (SR 542) to Hannegan Pass Road (FS 32); at 1.3 miles bear left onto Ruth Creek Road and continue to its end at Hannegan Campground (about 2,950 ft). From the pullout/campground, cross Ruth Creek (a log crossing has been used) and bushwhack roughly 45 minutes through slide alder and devil's club to the base of the Wall Street couloir.",
+    "road": {
+     "name": "Hannegan Pass Road (FS 32) / Ruth Creek Road",
+     "status": "Gravel Forest Service road to Hannegan Campground/trailhead",
+     "driveNote": "From Mt. Baker Hwy (SR 542) ~12.5 mi east of Glacier, turn onto Hannegan Pass Rd (FS 32); at 1.3 mi bear left onto Ruth Creek Rd and continue ~5.4 mi to road's end at Hannegan Campground.",
+     "seasonalGate": "Snow-closed in winter/spring; check Mt. Baker-Snoqualmie NF alerts for opening date"
+    },
+    "approach_logistics": {
+     "trailhead": "Hannegan Campground (Ruth Creek Road, FS 32)",
+     "trailheadLat": 48.91049444,
+     "trailheadLng": -121.5894222,
+     "trailheadDirection": "From the Hannegan Campground pullout at the end of Ruth Creek Road (~2,950 ft), off Hannegan Pass Road (FS 32) from the Mt. Baker Highway"
+    },
+    "itinerary": "Single-push day: drive to the Ruth Creek/Hannegan CG trailhead (2,950 ft); cross Ruth Creek and bushwhack to the base of Wall Street (~45 min); climb the snow couloir to the Northwest Glacier (~5,000 ft); cross the glacier to the 6,500-ft saddle; scramble the southeast ridge to the 7,191-ft summit (about 5.6 hours car-to-summit in one reported trip); descend the same line (about 2.8 hours back to the car)."
+   }
+  }
+ ]
+}
