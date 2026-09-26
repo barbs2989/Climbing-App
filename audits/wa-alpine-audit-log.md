@@ -28165,3 +28165,60 @@ unchanged from batch 345). No `.env`/`.env.local` present at run start (fresh cl
 none needed this batch since no writes were made (read-only anon key query only). All
 research this run used WebSearch snippet synthesis; WebFetch wasn't exercised, so its
 egress status is not re-confirmed one way or the other this batch.
+
+## Batch 347 (2026-09-26, pass 6)
+
+Audited: Mount Pugh Pika Slab, Mount Rahm Standard Route/Glacier, Mount Rainier Curtis
+Ridge, Disappointment Cleaver, Edmunds Headwall, Emmons-Winthrop Glacier, Fuhrer Finger,
+Fuhrer Thumb (8 routes).
+
+**Fixed (3):** `wa_mount_pugh_pika_slab`'s `road.status` and `access.closures` still
+described the December 19, 2025 Mountain Loop Highway storm closure (landslide/mudslide
+damage at Shoofly Curve, ~$3.65M) as ongoing into 2026. The Town of Darrington and
+Snohomish County's own Roads Update both confirm the highway fully reopened by mid-May
+2026 and remained open as of September 2026 (only unrelated single-lane fiber-line
+closures since); both fields updated to reflect that. `wa_mount_rainier_edmunds_headwall`
+and `wa_mount_rainier_fuhrer_thumb` both labeled the current $82 NPS Climbing Cost
+Recovery Fee as a "(2024)" rate — it's the 2026 rate (2025's was $70, confirmed via NPS's
+own fee schedule); both `access.fees` fields brought in line with their sibling routes
+on the same peak. Fuhrer Thumb also had `access.permit` reading "Free climbing permit at
+Paradise WIC", directly contradicted by its own $82 fee and its siblings' correct "Mount
+Rainier Climbing Permit" wording, and `access.closures` still citing Paradise
+timed-entry reservations that NPS's January 2026 release confirmed will not apply in
+2026 — both corrected. SQL in `audits/sql/2026-09-26-batch-347.sql`.
+
+**Flagged for human review (3):** Rainier's stored `high_point_ft` of 14,406 ft
+("Columbia Crest") repeats across all 6 Rainier routes in this batch but disagrees with
+both NPS's still-published official 14,410 ft figure and newer 2024–2025 LiDAR resurvey
+work (Eric Gilbertson et al., ~14,392–14,399.6 ft, which also suggests the mountain's
+true current high point may have shifted off Columbia Crest entirely to a rock outcrop
+on the SW crater rim). Sources genuinely conflict on which figure/convention to use —
+this is a standardization decision for a human, not a typo fix, and it would touch every
+Rainier route in the catalog, not just this batch's six. `wa_mount_pugh_pika_slab`'s
+`high_point_ft` of 6,594 ft is internally consistent with its own trailhead elevation
+plus gain and its own route description (Pika Slab tops a sub-summit crag band below
+the true 7,201 ft summit), so it may be an intentional "route high point" rather than a
+wrong peak elevation — left alone pending a decision on which the schema intends.
+`wa_mount_rainier_curtis_ridge`'s FA (Gene Prater and Marcel Schuster) has no stored
+date; search evidence (AAC Publications snippets) points to 1956 but a primary source
+could not be directly confirmed (egress-blocked), so no date was added.
+
+**Clean (3):** Mount Rahm Standard Route (8,486 ft summit elevation and its exact
+Wikipedia-cited coordinate both confirmed; the 1955 Hutton/Hutton/Mason first ascent
+confirmed; the North Cascades NP backcountry permit fee structure — $10/person + $6
+reservation fee since March 2024 — independently confirmed via NPS's own release; the
+Depot Creek border-crossing passport/NEXUS requirement confirmed via multiple trip
+reports); Disappointment Cleaver and Fuhrer Finger (both routes' first-ascent claims,
+the $82 2026 fee, and road status all independently confirmed against NPS/AAC/SummitPost
+sources, no stale text found); Emmons-Winthrop Glacier (1884 Fobes/James/Wells first
+ascent confirmed, fee and White River Road seasonal-status confirmed; its 1947
+first-ski-descent roster couldn't be independently corroborated one way or the other —
+noted, not flagged, per the audit's no-guessing rule).
+
+`last_processed_id` advanced to `wa_mount_rainier_fuhrer_thumb`; re-confirmed scope this
+batch: still 698 in-scope, 751 total wa_ alpine/mountaineering tagged (both unchanged
+from batch 346). No `.env`/`.env.local` present at run start (fresh clone) — none needed
+this batch since no writes were made (read-only anon key query only, via curl against
+the REST API). Research this batch was split across three parallel subagents (one per
+route cluster) using WebSearch; none reported working WebFetch access, consistent with
+recent batches' egress-blocked status.
