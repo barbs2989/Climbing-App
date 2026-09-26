@@ -1,0 +1,92 @@
+{
+ "applied": [
+  {
+   "id": "wa_north_ridge_7",
+   "column": "grade",
+   "path": [],
+   "fact": "Crux grade: `grade` field ('4th' class) vs rock_grade/pitch_detail (5.5)"
+  },
+  {
+   "id": "wa_north_ridge_7",
+   "column": "grade_system",
+   "path": [],
+   "fact": "Crux grade: `grade` field ('4th' class) vs rock_grade/pitch_detail (5.5)"
+  },
+  {
+   "id": "wa_north_ridge_7",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Route finish: does the route continue past the tower via one more pitch to 'the summit', or stop at/rappel from the tower?"
+  },
+  {
+   "id": "wa_north_ridge_7",
+   "column": "approach",
+   "path": [],
+   "fact": "Boston Basin high camp elevation: approach text (~6,000 ft) vs itinerary/bivy (6,400 ft)"
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "column": "pitch_detail",
+   "path": [],
+   "fact": "Pitch count: `pitches` (5) vs pitch_detail's numbered rows (only 4 accounted for)"
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "gain_ft (1,900 ft) is implausibly low for this route's own trailhead-to-summit elevation difference (~4,000 ft)"
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "column": "approach",
+   "path": [],
+   "fact": "Boston Basin high camp elevation: approach text (~6,000 ft) vs itinerary (6,400 ft) — same shared text issue as the North Ridge route"
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "column": "emergency",
+   "path": [
+    "nearestHospital"
+   ],
+   "fact": "Nearest hospital: this route says only 'Marblemount area'; the sibling North Ridge route (same peak/area) names a specific hospital 45 mi down-valley"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_north_ridge_7",
+   "before": {
+    "grade": "4th",
+    "grade_system": "class",
+    "detailed_rack": "Very light rack. The route is 2-3 pitches of nearly level ridge that's typically simul-climbed or short-roped, then a single steeper crux step (published descriptions call it 4th class, ~50-60ft; others describe it as up to 5.5) leading to a short tower, followed by one more short 4th class pitch to the summit. A small set of cams from finger-size to roughly 2in plus a handful of nuts is enough to protect the crux step and build gear anchors — there is no fixed gear or anchors on-route apart from rappel slings waiting at the descent notch.",
+    "approach": "From Seattle, drive I-5 north to Burlington, then WA-20 east through Marblemount, and turn onto Cascade River Road, following its paved-then-gravel surface about 21.7 miles to a small pullout at 3,200 ft that marks the unmaintained Boston Basin Trailhead (a different, lower stop than the Eldorado trailhead a mile or so up-road, and just before the road's end at Cascade Pass). From there a steep, unmaintained climbers' path follows the old Diamond Mine roadbed briefly before climbing hard, crossing several streams, and breaking above treeline (~5,300 ft) to reach the popular Boston Basin high camp around 6,000 ft — roughly 3-4 miles one-way with about 3,000-3,300 ft of elevation gain. From camp, West Ridge climbers continue cross-country over the glacier to a couloir that gains the ridge crest. Because Boston Basin is a high-demand cross-country camping zone in North Cascades National Park, overnight parties need a wilderness permit; a portion of peak-season (mid-May to mid-October) slots can be reserved in advance via Recreation.gov's early-access lottery, with the remainder issued as limited first-come, first-served walk-up permits. For this specific route: from Boston Basin high camp, a short approach up into the Forbidden Peak zone reaches this minor summit; North and South Ridge differ only in which side of the formation is climbed from the same camp."
+   }
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Class 4 to 5.5",
+      "notes": "Exposed ridge scrambling and light climbing. Follow ridge line toward summit cone.",
+      "pitch": "1-3"
+     },
+     {
+      "grade": "5.6",
+      "notes": "Most technical section. Good quality rock with crack systems. Place solid protection and belay carefully.",
+      "pitch": "4"
+     }
+    ],
+    "gain_ft": 1900,
+    "approach": "From Seattle, drive I-5 north to Burlington, then WA-20 east through Marblemount, and turn onto Cascade River Road, following its paved-then-gravel surface about 21.7 miles to a small pullout at 3,200 ft that marks the unmaintained Boston Basin Trailhead (a different, lower stop than the Eldorado trailhead a mile or so up-road, and just before the road's end at Cascade Pass). From there a steep, unmaintained climbers' path follows the old Diamond Mine roadbed briefly before climbing hard, crossing several streams, and breaking above treeline (~5,300 ft) to reach the popular Boston Basin high camp around 6,000 ft — roughly 3-4 miles one-way with about 3,000-3,300 ft of elevation gain. From camp, West Ridge climbers continue cross-country over the glacier to a couloir that gains the ridge crest. Because Boston Basin is a high-demand cross-country camping zone in North Cascades National Park, overnight parties need a wilderness permit; a portion of peak-season (mid-May to mid-October) slots can be reserved in advance via Recreation.gov's early-access lottery, with the remainder issued as limited first-come, first-served walk-up permits. For this specific route: from Boston Basin high camp, a short approach up into the Forbidden Peak zone reaches this minor summit; North and South Ridge differ only in which side of the formation is climbed from the same camp.",
+    "emergency": {
+     "notes": "Limited cell/satellite coverage. Carry personal locator beacon. Rescue may take hours or days.",
+     "county": "Skagit County",
+     "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Rd., Marblemount, WA 98267 - (360) 854-7245",
+     "nearestHospital": "Marblemount area",
+     "sheriffDispatch": "360-336-9450 (Skagit) or 360-384-5390 (Whatcom)"
+    }
+   }
+  }
+ ]
+}

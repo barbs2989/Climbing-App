@@ -1,0 +1,458 @@
+{
+ "applied": [
+  {
+   "id": "wa_three_queens_standard",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "face",
+   "path": [],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "pitch"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "pitch"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "grade"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "lengthM"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "waypoints",
+   "path": [
+    5,
+    "name"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "name"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "waypoints",
+   "path": [
+    7,
+    "note"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "obj_haz",
+   "path": [
+    1
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Which side of the mountain the standard route actually climbs"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Hardest rock grade on the route"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Trailhead named for the approach / whether the trip involves camping"
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Trailhead named for the approach / whether the trip involves camping"
+  },
+  {
+   "id": "wa_three_queens_middle_peak",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Location of the (shared) Mineral Creek Trailhead relative to Cooper Pass"
+  },
+  {
+   "id": "wa_east_wilmans_spire",
+   "column": "descent",
+   "path": [],
+   "fact": "how many rappels it takes to reach the east notch"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_three_queens_standard",
+   "before": {
+    "gain_ft": 6300,
+    "loss_ft": 6300,
+    "itinerary": {
+     "cal": "Snow can linger on the shoulder traverse into July, so carry an ice axe (and consider microspikes) for early-season attempts.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long single-day scramble up the Mineral Creek Trail to Park Lakes basin, then off-trail up talus/snow to the southeast shoulder and a traverse onto the northeast ridge for a sustained, loose class-3 finish. No camping — parties are back at the trailhead by afternoon/early evening.",
+       "hours": 9.5,
+       "miles": 10,
+       "title": "Car-to-car scramble to East Peak",
+       "gainFt": 3500,
+       "lossFt": 3500,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Mineral Creek Trailhead (2,360 ft)",
+         "detail": "Ford the Kachess River right at the start; trail runs through old clearcuts and second growth."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Cross Mineral Creek",
+         "detail": "Brushy tread for the first few miles before it settles into forest."
+        },
+        {
+         "time": "~8:30 AM",
+         "label": "Leave the trail into the basin below the shoulder",
+         "detail": "Begin the off-trail talus and (early season) snow climb toward Chikamin Ridge."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Gain the southeast shoulder (~6,200 ft)",
+         "detail": "Traverse roughly 0.25 mile of steep snow/talus over to the northeast ridge."
+        },
+        {
+         "time": "~10:00 AM",
+         "label": "Summit East Peak (6,693 ft)",
+         "detail": "Loose class-3 scrambling near the top with real exposure; test every hold before weighting it."
+        },
+        {
+         "time": "~2:30–3:00 PM",
+         "label": "Back at the trailhead",
+         "detail": "Descent reverses the route and runs 3.5–4 hours from the summit."
+        }
+       ],
+       "objective": "Summit East Peak (6,693 ft) via the southeast shoulder and northeast ridge"
+      }
+     ],
+     "totalNote": "A long single day: about 10 miles round trip and 3,500 ft of gain, roughly 9-10 hours car-to-car (about 5 hrs up, 3.5-4 hrs down) — no overnight camp is involved."
+    },
+    "approach_variants": [
+     {
+      "name": "Mineral Creek Trail to the break in the timber west of the waterfall gully",
+      "notes": "From the Mineral Creek trailhead, Trail #1331, at roughly 2,360 to 2,400 ft via FR-4600 over Cooper Pass, the trail promptly crosses the Kachess River — look for logs, and wade if they are not there. It climbs gently north through second growth and brushy old avalanche paths, muddy in places with occasional blowdown.\n\nAt about 1.6 to 1.7 miles it crosses Mineral Creek itself, which carries enough current in early season that parties often lay a log rather than ford. The ruins of an old mine and mill sit just off-trail here — a landmark and the last good water.\n\nContinue upstream through brushy trail roughly another mile, to about the 2.7-mile mark.\n\nAbout 8.85 km, with 1,400 to 1,700 ft of off-trail gain above the trail.",
+      "gainFt": 6300,
+      "season": "July to September",
+      "hazards": [
+       "An unbridged Kachess River crossing at the trailhead and a Mineral Creek crossing with real current in early season",
+       "A brushy, easy-to-miss trail departure between two similar drainages",
+       "Loose rock and rockfall through the upper talus and choss gullies — helmets, and keep the group tight",
+       "A snow ramp around 5,200 ft persisting into midsummer",
+       "Brief but genuine class 3 with shifting blocks on the final 400 ft, harder than the published grade suggests"
+      ],
+      "baseFinding": "THE TAKEOFF IS A BREAK IN THE TIMBER ON THE RIGHT, AND THE WAY TO GET IT RIGHT IS TO KNOW WHICH DRAINAGE IT IS NOT. At about 2.7 miles, between roughly 3,300 and 3,500 ft, watch on the RIGHT (west) for a break in the timber where an obvious boot and social path leaves the maintained trail and cuts west through 100 to 200 ft of vine maple brush to the base of the south-face talus. THE DISCRIMINATOR: leave the trail WEST OF THE BROAD WATERFALL GULLY that drains the south face — NOT at the drainage directly above the Mineral Creek crossing. Trip reports flag exactly this junction as easy to get wrong in the brush, and the two drainages are the reason. Old mine ruins at the creek crossing, then roughly another mile, then the break past the waterfall gully. WHAT THE GROUND SHOULD DO ONCE YOU ARE OFF TRAIL, in order, so you can check yourself without seeing the peak: the lower 1,000 ft is moderately angled, largely stable LARGE talus. Above that the rock turns smaller and looser and funnels into choss gullies, class 2 with short class 3 steps. A snow ramp is commonly met around 5,200 ft and can persist into midsummer, so carry an axe early in the season. THE FINAL 400 FT IS THE MOST EXPOSED GROUND ON THE ROUTE, with brief but genuine class 3 and blocks that shift underfoot. Published descriptions calling this section class 3 are considered generous by parties who found it heads-up throughout. A CONFLICT IN THE RECORD, STATED RATHER THAN RESOLVED: this route also carries a description of an approach from a camp at Upper or Middle Park Lake, ascending to the Main-Middle notch and traversing onto a broad LEDGE SYSTEM ON THE NORTH FACE for the last 200 ft, because the crest directly above the notch degenerates into class 5. That is a different side of the mountain from the Mineral Creek south-talus line above. Both are documented; decide which you are climbing before you leave the car, and do not expect the markers from one to appear on the other."
+     }
+    ],
+    "beta": "From a backcountry camp at Upper or Middle Park Lake, parties ascend talus and scree toward the Main-Middle notch. The ridge crest directly above the notch quickly degenerates into class 5 terrain, so the accepted line traverses south/east onto a broad ledge system on the north face (documented as 'generally sound rock with some loose sections' for roughly the final 200 ft) to reach the summit ridge. An alternate approach climbs a north couloir to the same notch area. Both variants are described as class 3-4 scrambling with real exposure, not a walk-up.",
+    "face": "North Face (Main-Middle notch to summit ridge)",
+    "pitch_detail": [
+     {
+      "grade": "Class 2-3",
+      "notes": "Long, steepening talus and scree slope off-trail from Park Lakes camp toward the notch between Main and Middle peaks",
+      "pitch": "Talus/scree ascent, camp to Main-Middle notch",
+      "lengthM": 545.6
+     },
+     {
+      "grade": "Class 4",
+      "notes": "Bypasses the class-5 direct notch line via an exposed north-face ledge system; final ~200 ft is generally sound rock with some loose sections to the summit ridge",
+      "pitch": "Notch/ledge traverse to summit",
+      "lengthM": 61
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 47.4176,
+      "lng": -121.2373,
+      "elev": 2400,
+      "name": "Mineral Creek Trailhead (Trail #1331)",
+      "note": "Signed trailhead at the bottom of the valley on FR 4600, ~3 mi past Cooper Pass; self-issue wilderness permit at the kiosk, no fee.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive FR-4600 over Cooper Pass and stay on it about 3 miles past the pass, down to the signed Mineral Creek Trailhead on the valley floor at roughly 2,360-2,400 ft. There is a self-issue wilderness permit kiosk at the trailhead and no fee, so fill one out before you start. Trail #1331 leaves the parking area and crosses the Kachess River almost immediately — look for logs spanning it, and expect a short, easy wade when they are not in place."
+     },
+     {
+      "lat": 47.416475,
+      "lng": -121.24044,
+      "elev": 2360,
+      "name": "Kachess River crossing",
+      "note": "Ford or rock-hop the Kachess River right at the start of the trail; can run thigh-deep in early-season high water.",
+      "type": "Water",
+      "distMi": 0.1
+     },
+     {
+      "lat": 47.426105,
+      "lng": -121.24799,
+      "elev": 2900,
+      "name": "Old mine / end of mining-road tread",
+      "note": "Trail follows an old mining road through old-growth forest to this point, then narrows just before the wilderness boundary.",
+      "type": "Junction",
+      "distMi": 1.5
+     },
+     {
+      "lat": 47.427263,
+      "lng": -121.249266,
+      "elev": 3000,
+      "name": "Mineral Creek log crossing",
+      "note": "Cross Mineral Creek on a skinny, wet log (a crisscrossed pair aids balance); slick and exposed enough that some parties build/adjust a log bridge here.",
+      "type": "Hazard",
+      "distMi": 1.7
+     },
+     {
+      "lat": 47.433048,
+      "lng": -121.255641,
+      "elev": 3300,
+      "name": "Leave Mineral Creek Trail for brush/gully ascent",
+      "note": "About a mile past the creek crossing, below the Three Queens massif, leave the maintained trail and start climbing brush and gully terrain toward open talus.",
+      "type": "Junction",
+      "distMi": 2.7
+     },
+     {
+      "lat": 47.443462,
+      "lng": -121.267117,
+      "elev": 6100,
+      "name": "Talus slope to Main–Middle notch",
+      "note": "Open talus ('stone highway' that steepens and gets grungier higher up) leads to the notch between the main and Middle summits; loose underfoot.",
+      "type": "Junction",
+      "distMi": 4.5
+     },
+     {
+      "lat": 47.445198,
+      "lng": -121.26903,
+      "elev": 6540,
+      "name": "South-face ledge below the summit gable",
+      "note": "Traverse a broad but exposed ledge around the south face instead of the knife-edge ridge; without cairns it's easy to wander into Class 4 terrain.",
+      "type": "Hazard",
+      "distMi": 4.8
+     },
+     {
+      "lat": 47.446355,
+      "lng": -121.270305,
+      "elev": 6693,
+      "name": "Three Queens summit",
+      "note": "True summit gained via a short Class 3-4 chimney/gable above the south-face ledge; some parties rope up and rappel this last pitch on descent.",
+      "type": "Summit",
+      "distMi": 5
+     }
+    ],
+    "obj_haz": [
+     "loose talus and scree on the summit approach slopes",
+     "exposed, loose rock on the north-face notch/ledge crux",
+     "unbridged Kachess River ford near the trailhead"
+    ],
+    "timing": {
+     "totalHrs": 9.5,
+     "summitTimeHrs": 9.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9.5,
+       "note": "A long single-day scramble up the Mineral Creek Trail to Park Lakes basin, then off-trail up talus/snow to the southeast shoulder and a traverse onto the northeast ridge for a sust…",
+       "fromTo": "Car-to-car scramble to East Peak",
+       "section": "Climb"
+      }
+     ]
+    },
+    "rock_grade": "Class 2-3",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Full-day (many parties make it an overnight) approach via the Pete Lake / Cooper River trails into the peak's basins, followed by off-trail talus/slope travel to the true (east) summit; several thousand feet of cumulative gain, so long-day alpine fitness is required",
+      "packWeight": "~15-20 lb day pack (10 essentials, food, water, layers) if done car-to-car; ~30-35 lb if backpacking in for an overnight base camp"
+     },
+     "approachTime": "Long - a full day to reach the basin and begin scrambling via Pete Lake/Cooper River; commonly split into a 2-day trip with a basin camp rather than done car-to-car",
+     "requiredSkills": [
+      "off-trail route-finding between the three summits (unmarked, uncairned)",
+      "talus and loose-rock scrambling",
+      "map/compass or GPS navigation",
+      "basic snow-travel competence for lingering early-season snow in the approach basins"
+     ],
+     "experienceLevel": "Intermediate scrambler comfortable with unmaintained-trail and off-trail travel; prior scrambling/mountaineering experience is recommended given the route-finding required between the three summits and the loose talus underfoot"
+    }
+   }
+  },
+  {
+   "id": "wa_three_queens_middle_peak",
+   "before": {
+    "approach_logistics": {
+     "peakLat": 47.44,
+     "peakLng": -121.27,
+     "trailhead": "Mineral Creek Trailhead",
+     "trailheadLat": 47.4176,
+     "trailheadLng": -121.2373,
+     "trailheadDirection": "North from Cle Elum via Highway 903 (17 miles past Lake Cle Elum), then left on Cooper Lake Road (FR-4600) approximately 10 miles to trailhead at Cooper Pass"
+    }
+   }
+  },
+  {
+   "id": "wa_east_wilmans_spire",
+   "before": {
+    "descent": "Two single-rope rappels from fixed anchors back to the east notch, then downclimb the approach gully."
+   }
+  }
+ ]
+}

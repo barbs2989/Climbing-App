@@ -1,0 +1,88 @@
+{
+ "applied": [
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total round-trip elevation loss"
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "exit route/trailhead on descent"
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "existence of route-specific trip-report beta"
+  },
+  {
+   "id": "wa_indian_mountain_baker_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Round-trip / one-way trail distance"
+  },
+  {
+   "id": "wa_indian_mountain_baker_scramble",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Round-trip / one-way trail distance"
+  },
+  {
+   "id": "wa_indian_mountain_baker_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "Round-trip / one-way trail distance"
+  },
+  {
+   "id": "wa_indian_mountain_baker_scramble",
+   "column": "dist_km",
+   "path": [],
+   "fact": "dist_km (shown as one-way approach) holds the round-trip total"
+  },
+  {
+   "id": "wa_indian_mountain_baker_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Brush Creek Trail said to start at Indian Creek Camp"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "before": {
+    "loss_ft": 1788
+   }
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "before": {
+    "descent_text": "Descend by reversing the ascent line: downclimb the south face/south arete/west-face traverse used on the first-ascent route back to the notch below the summit horn, then continue down snow/talus to the Luna Cirque camp at Luna or Lousy Lake. I could not find a trip report giving pitch-by-pitch rappel beta specific to Ghost Peak. Based on its character - a small, generally solid rock horn climbed by a 3rd/4th-class face-and-arete traverse, similar in scale to neighboring Pickets summits like Crooked Thumb and Phantom Peak - most parties simply downclimb the way they came, with no fixed or bolted anchors anywhere in this remote sub-range. Carry a rope and a small rack of slings/nuts in case the exposure or wet/icy rock make a short rappel preferable off a natural anchor (slung horn or chockstone) near the top of the arete; a single 30m rappel would be more than enough to protect the steepest section if needed. Treat this as a walk-off/downclimb route with a possible single natural-anchor rappel in reserve, not a route with a defined multi-rappel descent. Once back at camp, reverse the full approach: back over Pt. 7374 to Challenger Arm, over Perfect Pass/Whatcom Glacier or Whatcom Peak's north ridge to Whatcom Pass, and out the Big Beaver Trail to Ross Lake and the dam.",
+    "rope_note": "No route-specific trip report found. Inferred rope/rack for a Grade III, Class 4 route in the remote North Cascades National Park (Picket Range vicinity): a rope for the Class 4 climbing and any rappels, plus a light rack for occasional protection/anchors."
+   }
+  },
+  {
+   "id": "wa_indian_mountain_baker_scramble",
+   "before": {
+    "approach": "No maintained trail reaches the summit — Indian Mountain is approached cross-country from the Hannegan Pass/Chilliwack River trail system, the only real access into this part of the park. From the Hannegan Trailhead (3,120 ft, end of FR 32/Ruth Creek Road), follow the Hannegan Pass Trail roughly 4-5.6 mi over 5,050-ft Hannegan Pass, then switchback down into the Chilliwack River valley to the Boundary Camp area (about 5.1 mi in) as you cross into North Cascades National Park. Continue down-valley on the Chilliwack River Trail, crossing the river via the hand-pulled 2-person cable car (replaced Oct. 2019), to Indian Creek Camp (roughly 14 mi from the trailhead). From there pick up the Brush Creek Trail, which climbs through the 2022 Brush Creek Fire burn toward Whatcom Pass (about 5.1 mi one-way from the Brush Creek junction). Indian Mountain rises immediately above this corridor; parties leave the trail below or near Whatcom Pass and work up open heather/talus slopes and ridgelines to the summit, with sustained, often brushy or loose route-finding required in both directions. One-way trail distance to the base of the peak runs roughly 18-20 miles, making this realistically a 3-5 day objective, most often combined with a broader Whatcom Pass/Copper Ridge trip rather than climbed stand-alone.",
+    "hazards": [
+     "deep wilderness isolation — no maintained trail or marked route to the summit; off-trail navigation required",
+     "long multi-day approach (35+ mi round trip) through national park backcountry with no quick bailout",
+     "major blowdown on the Chilliwack River Trail between the Brush Creek junction and Indian Creek Camp from 2021-22 wildfire damage",
+     "post-fire hazards on Brush Creek Trail: rockfall from unstable burned switchbacks and falling branches/snags",
+     "aggressive bear activity reported at Chilliwack-drainage camps (Fireweed, South Fork) — hard-sided food storage required",
+     "early-season avalanche terrain on the steep approach slopes above Brush Creek Valley",
+     "Chilliwack River crossing via hand-pulled cable car; creek crossings can run high with snowmelt",
+     "no cell coverage anywhere on the approach or summit"
+    ],
+    "descent": "Reverse the ascent line back down to the Brush Creek/Chilliwack River trail corridor — there is no shorter alternative. Re-cross the Chilliwack River via the cable car and climb back over Hannegan Pass to the trailhead; round-trip trail mileage alone runs 35-40+ miles, so budget contingency time for blowdown in the Brush Creek burn area and possible high water at creek crossings.",
+    "dist_km": 51.5
+   }
+  }
+ ]
+}

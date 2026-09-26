@@ -1,0 +1,304 @@
+{
+ "file": "r010.json",
+ "results": [
+  {
+   "id": "wa_colchuck_peak_north_buttress_couloir",
+   "fact": "Best season window",
+   "verdict": "fixed",
+   "correct_value": "Mar-Jun",
+   "evidence": "The route page for the North Buttress Couloir says it is usually in condition as soon as the trailhead opens; a regional outdoors guide treats it as a winter/spring snow climb timed around the frozen lake (ice breaking up about mid-May); peak route summaries say it is most often climbed in winter or early spring while the couloir is fully filled with snow, with Class 4 rock showing later in summer. None describes a September-October window. The row's own best_season, approach_variants season (Mar-Jun) and climate.fall already agree; `season` is the outlier and also broke the short-window format.",
+   "sources": [
+    "https://www.mountainproject.com/route/109285140/north-buttress-couloir",
+    "https://wenatcheeoutdoors.org/2016/07/16/colchuck-north-buttress-couloir/",
+    "https://www.summitpost.org/north-buttress-couloir/162206",
+    "https://havetent.com/2017/04/15/colchuck-peak-via-north-buttress-couloir/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Best in a cool, stable freeze — commonly climbed late April-May or Sep-Oct",
+     "value": "Mar-Jun",
+     "id": "wa_colchuck_peak_north_buttress_couloir",
+     "fact": "Best season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_northeast_buttress_4",
+   "fact": "Crux/headline rock grade: 5.8+ vs 5.9",
+   "verdict": "fixed",
+   "correct_value": "Route 5.8+ (IV); crux corner 5.8-5.9",
+   "evidence": "The route page grades the Northeast Buttress 5.8+, Grade IV, 14 pitches, and describes the crux pitches 9-10 as gaining a left-facing corner to the ridge crest at 5.8-5.9. A separate route write-up describes sustained 5.8 climbing. No source grades the route or its crux a clean 5.9, so the headline 5.8+ stands and the two cells that print a bare 5.9 for the crux are brought to 5.8-5.9 (matching beta and the climbing_route prose).",
+   "sources": [
+    "https://www.mountainproject.com/route/114519372/northeast-buttress",
+    "https://www.summitpost.org/northeast-buttress/168476"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      9,
+      "grade"
+     ],
+     "expect": "5.9",
+     "value": "5.8-5.9",
+     "id": "wa_northeast_buttress_4",
+     "fact": "Crux/headline rock grade: 5.8+ vs 5.9"
+    },
+    {
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "class"
+     ],
+     "expect": "5.9",
+     "value": "5.8-5.9",
+     "id": "wa_northeast_buttress_4",
+     "fact": "Crux/headline rock grade: 5.8+ vs 5.9"
+    }
+   ]
+  },
+  {
+   "id": "wa_northeast_buttress_4",
+   "fact": "watch_out text describes an unrelated ice/mixed winter route",
+   "verdict": "fixed",
+   "correct_value": "watch_out describing this summer rock route with its walk-off glacier descent",
+   "evidence": "The route page describes a 14-pitch 5.8+ rock route with a walk-off descent down the Colchuck Glacier, and a June 2018 ascent report describes a dry rock climb with a descent on dirt, rock and snow to the col and down the glacier, with no rappels and no ice or mixed pitches. The stored watch_out (M4 mixed, an ice bulge on pitch 3, a corniced rappel descent, 'near Snoqualmie Pass') belongs to a different winter route; it is replaced with warnings drawn from this row's own hazards, approach and descent.",
+   "sources": [
+    "https://www.mountainproject.com/route/114519372/northeast-buttress",
+    "https://www.jeffreyjhebert.com/adventures/ne-buttress-on-colchuck-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "watch_out",
+     "path": [],
+     "expect": "Highly conditions-dependent difficulty; mixed climbing (M4) pitches vary from easy snow/ice to sustained steep sections based on current conditions\nSteep ice bulge (A2-3 rating) on pitch 3 with notoriously difficult anchor placement; anchors unreliable and sparingly available above pitch 3\nHeavily corniced rappel descent; cornice collapse risk during warm spells; potential for rappel line being cut by cornices\nS-shaped gully on pitch 1 with variable mixed climbing up to M4; conditions-dependent route difficulty affects protection options\nLong pitch to base of ice bulge (70-80m) on easy terrain, but terrain becomes avalanche-prone on wider snow slopes\nExposed approach traverse; wind-loaded terrain near Snoqualmie Pass; rapid weather changes common\nMultiple rappel anchors required for descent; deteriorating conditions during descent can create urgent retreat scenarios",
+     "value": "Routefinding decides the day: the upper crux corner is easy to miss, and it is the most common reason parties retreat\nLoose and mossy rock in places, especially the dirty chimney into the main dihedral and debris on the long ledge traverse\nThe moat at the foot of the buttress can be the hardest move of the approach in a lean snow year\nA very long car-to-car day; expect to descend the Colchuck Glacier late, often by headlamp and on icy snow late in the season",
+     "id": "wa_northeast_buttress_4",
+     "fact": "watch_out text describes an unrelated ice/mixed winter route"
+    }
+   ]
+  },
+  {
+   "id": "wa_northeast_buttress_4",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (8 km, about 5 mi) is the one-way approach figure while the itinerary's 13.5 mi is the whole car-to-car outing; they measure different quantities and roughly agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (8 km, about 5 mi) is the one-way approach figure while the itinerary's 13.5 mi is the whole car-to-car outing; they measure different quantities and roughly agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_peak_colchuck_glacier",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (8 km, about 5 mi) is the one-way approach figure while the itinerary's 13 mi is the whole car-to-car outing; they measure different quantities and roughly agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "fact": "Crevasse hazard claimed absent, but glacier travel/crevasses are described elsewhere",
+   "verdict": "fixed",
+   "correct_value": "The approach does travel on the Colchuck Glacier, which holds few crevasses; the entry moat is the main gap",
+   "evidence": "The route page says the Northeast Couloir is accessed from the Colchuck Glacier, higher up it than the North Buttress Couloir, and a winter ascent report describes travelling on the glacier to reach it. Two independent Colchuck Peak guides describe the Colchuck Glacier as a rapidly receding glacier with few if any crevasses that most parties cross unroped. So 'no glacier travel' is wrong, and the watch_out line's demand to always travel roped overstates it.",
+   "sources": [
+    "https://www.mountainproject.com/route/111854129/northeast-couloir",
+    "https://www.jeffreyjhebert.com/adventures/northeast-couloir-on-colchuck-peak",
+    "https://www.theoutbound.com/washington/backpacking/climb-to-the-summit-of-colchuck-peak",
+    "https://besthikesbc.ca/hiking-colchuck-peak-in-the-enchantments/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel; this is a couloir/mixed line on the peak's flank rather than the glacier proper",
+     "value": "Low - the approach crosses the lower Colchuck Glacier, which holds few crevasses; the moat at the couloir's entrance is the gap to plan for, and it widens as the season goes on",
+     "id": "wa_colchuck_peak_northeast_couloir",
+     "fact": "Crevasse hazard claimed absent, but glacier travel/crevasses are described elsewhere"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Crevasses in upper Colchuck Glacier approach (though fewer than on other glacier routes)—travel roped; probe continuously",
+     "replace": "Crevasses on the Colchuck Glacier approach are few, but they open as the season goes on—rope up and probe if any are showing",
+     "id": "wa_colchuck_peak_northeast_couloir",
+     "fact": "Crevasse hazard claimed absent, but glacier travel/crevasses are described elsewhere"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "fact": "Whether winter is the season's technical norm",
+   "verdict": "fixed",
+   "correct_value": "Winter through early spring in a stable, consolidated spell; late May-early June is the later window some parties use",
+   "evidence": "A peak route summary says the Northeast Couloir is best done only under winter/early spring conditions; a February 2016 ascent report and a regional outdoors guide both describe it as a late-winter climb done in a stable spell on a consolidated snowpack (skiing across the frozen lake before its ice breaks up around mid-May). The first ascent was January 1975. The row's season text and itinerary.cal (Feb-May) agree; seasonal_guidance's optimal window and April note, which treat winter conditions as a reason not to go, are the outliers. Only the window and April's reason are changed; month statuses are left as stored.",
+   "sources": [
+    "https://www.summitpost.org/colchuck-peak/151308",
+    "https://www.jeffreyjhebert.com/adventures/northeast-couloir-on-colchuck-peak",
+    "https://wenatcheeoutdoors.org/2016/07/19/colchuck-peak-ne-couloir/",
+    "https://www.mountainproject.com/route/111854129/northeast-couloir"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "May to early June, conditions dependent",
+     "value": "Winter to early spring in a stable, consolidated spell; late May to early June as the couloir starts to melt out",
+     "id": "wa_colchuck_peak_northeast_couloir",
+     "fact": "Whether winter is the season's technical norm"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "April",
+      "reason"
+     ],
+     "expect": "Typically still full winter/avalanche-prone conditions before the best-season window opens",
+     "value": "Still a winter snowpack: climbable in a stable, consolidated spell, but avalanche hazard in the confined couloir is often elevated",
+     "id": "wa_colchuck_peak_northeast_couloir",
+     "fact": "Whether winter is the season's technical norm"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "fact": "Summit-day length and start time: partner_requirements vs timing/itinerary",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "partner_requirements says an 8.5-hr round trip from a 04:00 start at camp, while timing and itinerary day 2 say a 2:30 AM start and an 11-hr summit push (back at camp 1:00 PM). The one ascent report found was a car-to-car ski day of roughly 10.75 hr from a 5:15 AM start, which settles neither camp-based figure; no second source gives a camp-to-camp time.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/northeast-couloir-on-colchuck-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_peak_colchuck_glacier",
+   "fact": "Whether roping up for glacier travel is standard practice",
+   "verdict": "fixed",
+   "correct_value": "Rope is conditions-dependent: most parties go unroped on the bridged early-season glacier; rope up once crevasses or moats open",
+   "evidence": "One Colchuck Peak guide says most people choose not to rope up on this glacier, which has shrunk and shows few if any crevasses; a second independent guide says it is a rapidly receding glacier with few crevasses so most parties do not rope, while advising parties to consider it at the toe. A guide service does rope its clients to the col, so roping is a choice, not a rule. gear, the waypoint directions and the approach text already say this; pro_tips' unconditional instruction is the outlier.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/climb-to-the-summit-of-colchuck-peak",
+    "https://besthikesbc.ca/hiking-colchuck-peak-in-the-enchantments/",
+    "https://www.mountainschool.com/content/main/colchuck-peak-climbs/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "expect": "Rope up for glacier travel even when bridges look solid.",
+     "value": "Decide on the rope at the glacier's toe: many parties go unroped on the bridged early-season snow, but rope up once crevasses or moats have opened.",
+     "id": "wa_colchuck_peak_colchuck_glacier",
+     "fact": "Whether roping up for glacier travel is standard practice"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_east_ridge",
+   "fact": "Total elevation gain understates the trailhead-to-summit climb",
+   "verdict": "fixed",
+   "correct_value": 5305,
+   "evidence": "Two independent Colchuck Peak guides give the car-to-car gain as about 5,300 ft (12.5 mi) and about 5,460 ft (12.6 mi); the row's own trailhead (3,400 ft) and summit (8,705 ft) give 5,305 ft, the figure the sibling Colchuck Glacier and Northeast Buttress rows use for the same climb. 2,800 ft is roughly the lake-to-summit gain only.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/climb-to-the-summit-of-colchuck-peak",
+    "https://besthikesbc.ca/hiking-colchuck-peak-in-the-enchantments/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 2800,
+     "value": 5305,
+     "id": "wa_colchuck_peak_east_ridge",
+     "fact": "Total elevation gain understates the trailhead-to-summit climb"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 2800,
+     "value": 5305,
+     "id": "wa_colchuck_peak_east_ridge",
+     "fact": "Total elevation gain understates the trailhead-to-summit climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_east_ridge",
+   "fact": "Overview/beta omits the glacier crossing that approach/gear require",
+   "verdict": "fixed",
+   "correct_value": "Beta names the Colchuck Glacier climb to the Colchuck-Dragontail col before the ridge",
+   "evidence": "Guides to the non-technical way up Colchuck Peak describe climbing the Colchuck Glacier from the basin above the lake to the col with Dragontail (axe and crampons; about 40-degree snow just below the col), then scrambling from the col to the summit. The row's approach, approach_variants, gear and descent say the same; beta's 'traverse south-west to the east ridge base' skipped the glacier.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/climb-to-the-summit-of-colchuck-peak",
+    "https://besthikesbc.ca/hiking-colchuck-peak-in-the-enchantments/",
+    "https://www.mountainproject.com/route/106845615/colchuck-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "From Colchuck Lake, traverse south-west to the east ridge base.",
+     "replace": "From Colchuck Lake, climb the Colchuck Glacier (axe and crampons; about 40-degree snow just below the col) to the col between Colchuck and Dragontail, which is the base of the ridge.",
+     "id": "wa_colchuck_peak_east_ridge",
+     "fact": "Overview/beta omits the glacier crossing that approach/gear require"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "fact": "Commitment grade: IV vs III",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent report in the American Alpine Journal grades the route IV M6 AI3+ (late January 2011); the current route page grades it WI3 M6, Grade III. The only other ascent account (a forum trip report) would not load. Two sources that disagree, so no numeral is adopted; alpine_grade already discloses both.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12201209602/North-America-United-States-Washington-Colchuck-Peak-Northeast-Face-Hilden-Holsten",
+    "https://www.mountainproject.com/route/112066235/holsten-hilden"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "fact": "Season window: Jan-Feb vs a wider Dec-March window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only documented ascent is the first ascent in late January 2011, made in an unusually long high-pressure spell; neither the first-ascent report nor the route page states a season window. No source supports either Jan-Feb or Dec-Mar, so nothing is changed.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12201209602/North-America-United-States-Washington-Colchuck-Peak-Northeast-Face-Hilden-Holsten",
+    "https://www.mountainproject.com/route/112066235/holsten-hilden"
+   ],
+   "patches": []
+  }
+ ]
+}

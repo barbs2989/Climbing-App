@@ -1,0 +1,440 @@
+{
+ "applied": [
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Length of the rappel below the summit"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Length of the rappel below the summit"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "rappels",
+   "path": [],
+   "fact": "Length of the rappel below the summit"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "title"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "label"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "fromTo"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Which summit(s) the climbing day actually reaches"
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Whether October is within season for this route"
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest rock grade on the standard ascent line"
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Hardest rock grade on the standard ascent line"
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Hardest rock grade on the standard ascent line"
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Hardest rock grade on the standard ascent line"
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Hardest rock grade on the standard ascent line"
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Hardest rock grade on the standard ascent line"
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "column": "best_season",
+   "path": [],
+   "fact": "Overall climbable season"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.026496,
+      "lng": -121.444001,
+      "elev": 2362,
+      "name": "Barlow Pass Trailhead",
+      "note": "Paved-road parking lot at end of Mountain Loop Highway; Northwest Forest Pass required, walk past the gate onto Monte Cristo Road.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.0261,
+      "lng": -121.4425,
+      "elev": 2300,
+      "name": "Weden Creek Trail #724 split",
+      "note": "Leave the gated Monte Cristo Road here (just before the Sauk River crossing) and pick up the signed, steep single-track into Gothic Basin.",
+      "type": "Junction",
+      "distMi": 1
+     },
+     {
+      "lat": 48.0105056,
+      "lng": -121.4434789,
+      "elev": 3000,
+      "name": "Weden Creek crossing",
+      "note": "Ford Weden Creek on the climbers' path roughly a mile up the trail; can run high with snowmelt in early season.",
+      "type": "Water",
+      "distMi": 2.1
+     },
+     {
+      "lat": 47.989994741176474,
+      "lng": -121.45552772058824,
+      "elev": 3700,
+      "name": "Rocky water gully, mile 3.25",
+      "note": "First of several creek/gully crossings where the trail turns noticeably rockier and steeper for the final push into the basin.",
+      "type": "Water",
+      "distMi": 3.25
+     },
+     {
+      "lat": 47.9801852,
+      "lng": -121.4612902,
+      "elev": 5000,
+      "name": "Gothic Basin tarns",
+      "note": "Two small tarns just below Foggy Lake mark the basin; camping is extremely limited and fragile, day-hike this section if possible.",
+      "type": "Campsite",
+      "distMi": 3.8
+     },
+     {
+      "lat": 47.97094,
+      "lng": -121.463078,
+      "elev": 5120,
+      "name": "Weden Pass",
+      "note": "Traverse south through steep talus and heather for a bit over a mile from the basin to gain this pass on the ridge crest between Gothic Basin and Sheep Gap's peaks.",
+      "type": "Junction",
+      "distMi": 5.1
+     },
+     {
+      "lat": 47.96577645714286,
+      "lng": -121.46358288571429,
+      "elev": 5250,
+      "name": "Summit notch rappel",
+      "note": "From Weden Pass traverse SW toward the notch, dropping to ~4900 ft on a brushy dirt ramp to skirt cliff bands, then regain the notch; a short Class 4 step here requires downclimbing or a 100-150 ft rappel.",
+      "type": "Hazard",
+      "distMi": 5.6
+     },
+     {
+      "lat": 47.96345,
+      "lng": -121.46395,
+      "elev": 5814,
+      "name": "Sheep Gap Mountain",
+      "note": "True summit register shows only a handful of visits per decade; expect a long day (10-17 hrs) and possible snow/ice axe conditions even in late season.",
+      "type": "Summit",
+      "distMi": 5.9
+     }
+    ],
+    "descent_text": "Reverse the ascent line: descend the northeast ridge back toward the notch/saddle below the true summit, then downclimb or rappel the short class 3/4 technical step just below the summit. Most parties rappel this step — a single 150 ft rope covers both the lead and the rappel, and anything over 100 ft of rope is adequate for the ~100-150 ft rappel. This is a single rappel; no additional roped descents are reported lower on the route. Because Sheep Gap Mountain is an obscure, lightly-visited summit, no fixed bolted anchor is documented — expect to build or use a natural anchor (rock horn, chockstone, or sling around a block) rather than find bolts or chains, and bring gear/webbing to back it up or replace tat. From the base of the rappel, reverse the traverse back to Weden Pass, then retrace the talus/heather traverse and boot path down to Foggy Lake/Gothic Basin, and follow Weden Creek Trail #724 back down to Monte Cristo Road and Barlow Pass. Watch for loose rock on the class 3/4 terrain above and below the rappel and re-ford Weden Creek on the way out.",
+    "rappels": "1 rappel (~50-75 ft) off a tree anchor; a 150 ft rope covers both the roped pitch and the rappel - doubled through the tree a 100 ft rope reaches only about 50 ft, short of the longer end of this rappel. Do not trust the existing fixed webbing on the tree — it is old.",
+    "itinerary": {
+     "cal": "Trail 724 is rough and rocky and typically snow-free for scrambling from roughly July through September; a Northwest Forest Pass is required at the Barlow Pass trailhead.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From Barlow Pass, walk the gated Monte Cristo road about a mile, then climb the rough, rocky Weden Creek/Gothic Basin Trail #724 through timber and steep switchbacks into subalpine terrain. Camp near the tarns below Foggy Lake to stage for the summit traverse.",
+       "hours": 4,
+       "miles": 4.5,
+       "title": "Approach to Gothic Basin camp",
+       "gainFt": 2700,
+       "lossFt": 0,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Backpack in to a camp near the Gothic Basin tarns"
+      },
+      {
+       "n": 2,
+       "note": "Traverse steep heather and talus south of camp to Weden Pass (5,120'), then continue west-southwest to the saddle between the Middle and North Peaks. Climb the Middle Peak via its northeast ridge, return to the saddle/pass, then tag the North Peak via its east ridge before descending all the way back to the trailhead.",
+       "hours": 9,
+       "miles": 7.3,
+       "title": "Weden Pass traverse, Middle & North Peaks, hike out",
+       "gainFt": 1600,
+       "lossFt": 4300,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Gothic Basin camp",
+         "detail": "Light daypack for the traverse; full packs stashed near camp."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach Weden Pass (5,120')",
+         "detail": "Steep taluses and heather along the way; no real trail."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach Middle/North Peak saddle",
+         "detail": "Traverse west-southwest from the pass."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Summit Middle Peak",
+         "detail": "Via the northeast ridge; downclimb back to the saddle."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit North Peak",
+         "detail": "Via the east ridge; return to Weden Pass."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Back at camp, break down and hike out",
+         "detail": "Full pack for the ~4.5 mi, ~2,700 ft descent to the trailhead; most parties finish by late afternoon."
+        }
+       ],
+       "objective": "Tag Sheep Gap Mountain's Middle and North Peaks, then hike all the way out"
+      }
+     ],
+     "totalNote": "A 2-day trip: roughly 11.8 mi round trip with about 4,300 ft of cumulative gain, backpacking in to Gothic Basin then traversing to Weden Pass to tag Sheep Gap's Middle and North Peaks before hiking all the way out. Strong parties instead push the whole thing car-to-car as a single very long (10-17 hr) day."
+    },
+    "timing": {
+     "totalHrs": 13,
+     "summitTimeHrs": 4,
+     "descentTimeHrs": 9,
+     "approachTimeHrs": null,
+     "recommendedStart": "Early start",
+     "sectionBreakdown": [
+      {
+       "hrs": 4,
+       "note": "From Barlow Pass, walk the gated Monte Cristo road about a mile, then climb the rough, rocky Weden Creek/Gothic Basin Trail #724 through timber and steep switchbacks into subalpine…",
+       "fromTo": "Approach to Gothic Basin camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 9,
+       "note": "Traverse steep heather and talus south of camp to Weden Pass (5,120'), then continue west-southwest to the saddle between the Middle and North Peaks. Climb the Middle Peak via its …",
+       "fromTo": "Weden Pass traverse, Middle & North Peaks, hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through October; peak conditions are August through mid-September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow early season; lingering snow patches and wet brush are likely into mid-July, improving through the month",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Driest, most stable window; best combination of snow-free routefinding and long daylight for the long car-to-car day",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "End of best-season window; early snow, wet/loose rock, and shortened daylight increase difficulty and turnaround risk on a route that already runs 10-17 hours",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Typically dry and stable with fewer thunderstorms than August, though days are shorter for this long outing",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "before": {
+    "grade": "Class 4, Glacier",
+    "rock_grade": "Class 4",
+    "rope_note": "Class 4 with glacier crossing (Chickamin Glacier, approached via Ptarmigan Traverse). Rope up for glacier travel — crevassing and bergschrund can be serious.",
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Typical North Cascades alpine summer weather for this window: generally dry and mild once the route comes into condition, but changeable at elevation",
+      "probability": "Afternoon thunderstorm buildup is a common summer risk in the North Cascades, and route conditions are more forgiving of bad weather early in the window (July) before the bergschrund opens up"
+     },
+     "exposure": "Loose rock on the final Class 4 scramble to the summit combines with sustained steep snow/ice (45-50 degrees) below the col; a fall on either section, or a crevasse fall on the approach, would be serious given the remoteness and distance from rescue",
+     "avalanche": {
+      "zone": "N/A - this is a summer glacier/scramble route climbed outside NWAC's winter forecast season; no NWAC zone issues forecasts for the Jul-Sep climbing window on this remote peak",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Significant - the route crosses the Chickamin and Dome Glaciers, and the bergschrund just below the Dome-Chickamin col is widely reported as the technical crux, sometimes forcing a turnaround in late season"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - reference trip reports log ~34 miles round trip with ~14,000 ft cumulative gain/loss over 3-4 days, much of it off-trail with brushy route-finding",
+      "packWeight": "Multi-day overnight/glacier kit (35-50 lb): tent, food for 3-4 days, rope, glacier gear, bivy gear for weather delays"
+     },
+     "approachTime": "2-3 days in, typically done as part of a 3-4 day trip (often combined with Dome Peak)",
+     "requiredSkills": [
+      "Glacier travel and crevasse rescue (Chickamin/Dome Glacier crossing)",
+      "Steep snow/neve climbing and self-arrest (up to 45-50 degrees below the col)",
+      "Class 4 scrambling on loose rock with exposure",
+      "Off-trail navigation and bushwhack route-finding on the approach",
+      "Multi-day backcountry/wilderness travel and self-sufficiency"
+     ],
+     "experienceLevel": "Experienced alpine climber comfortable with unroped Class 4 scrambling on loose rock plus roped glacier travel; this is not a beginner objective given the remoteness and multi-day approach"
+    },
+    "best_season": "Climbable roughly May through October, but July through August is best — by then the Bachelor Creek ford has typically dropped, the glacier approach is more consolidated, and the summit gully hasn't loosened as much as it does later in the season.",
+    "grade_num": 4
+   }
+  }
+ ]
+}

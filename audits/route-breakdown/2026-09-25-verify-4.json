@@ -1,0 +1,535 @@
+{
+  "wa_mount_rainier_disappointment_cleaver": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "rappels 'Fixed ladders mid-route; no traditional rappelling on standard descent' files crevasse ladders in the rappel column",
+          "verdict": "REFUTED",
+          "evidence": "Not a false statement: guide services do place ladders over crevasses above Ingraham Flats in season, and the column's substance (no rappelling on the standard descent) agrees with descent_text. Filing a non-rappel fact here is a style matter, not an error."
+        },
+        {
+          "claim": "grade 'Grade II–III glacier'",
+          "verdict": "REFUTED",
+          "evidence": "The earlier agent itself called it fine; nothing to verify."
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_gibraltar_ledges": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "climbing_route/approach call the ledges the crux and the Gibraltar Chute 'a roughly 50° snow slope dropping to the Nisqually Glacier'; one source names the chute as the crux",
+          "verdict": "REFUTED",
+          "evidence": "The park's climbing-ranger route write-up calls the ledge system the crux and describes the Gibraltar Chute as a 50-degree snow slope that connects with the Nisqually Glacier — the stored approach text matches it. Other sources (and this row's own beta/overview) name the ice chute as the crux, so both readings are defensible; the columns disagree with each other, but neither is false. climbing_route is not a correctable column in this pass anyway.",
+          "sources": [
+            "https://mountrainierclimbing.blogspot.com/2019/05/gibraltar-ledges-may-8-2019.html",
+            "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_ptarmigan_ridge": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "beta says the summit push starts at '~9,800 ft vs. Liberty Ridge's 10,700 ft from Thumb Rock', but high camp is ~10,300 ft",
+          "verdict": "REFUTED",
+          "evidence": "High camp is indeed ~10,000-10,300 ft on the ridge, but parties descend a few hundred feet from it onto the Mowich Glacier and the route proper starts at ~9,800 ft at the bergschrund. The route's database page makes exactly the stored comparison: almost 1,000 ft more gain on summit day because of a start at 9,800 ft on the Mowich Glacier versus Liberty Ridge's 10,700 ft start from Thumb Rock.",
+          "sources": [
+            "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+            "https://stephabegg.com/trip-reports/washington/rainier-ptarmigan/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_tahoma_glacier": {
+    "area": "wa_mount_rainier",
+    "set": {
+      "approach": "From the Westside Road gate at Dry Creek Trailhead: Tahoma Creek Trail to the Wonderland Trail (~5,600 ft), then onto the southern side of the Tahoma Glacier. The park lists the Tahoma Creek Trail as closed — washed out, unmaintained and exposed to debris flows from the glacier — so check current park trail conditions before relying on it.",
+      "beta": "Grade II-III alpine glacier route. Approach via Westside Road to Tahoma Creek Trail (listed as closed by the park: washed out and exposed to debris flows), ascending Wonderland Trail to ~5,600 ft, then climbing southern side of glacier with multiple diagonal traverses."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach (and beta) send parties up the Tahoma Creek Trail from the Dry Creek gate; its current status should be checked",
+          "verdict": "CONFIRMED",
+          "evidence": "The Westside Road gate at Dry Creek is correct (road closed to vehicles after 3 miles). But the park's trail-conditions page lists the Tahoma Creek Trail as 'CLOSED DUE TO DEBRIS FLOW AND HAZARDOUS CONDITIONS. THE TAHOMA CREEK HAS TAKEN OVER THE TRAIL', and WTA also lists it as closed and washed out. The stored text presented it as an ordinary trail. Correction adds only the closure; no replacement approach is invented.",
+          "sources": [
+            "https://www.nps.gov/mora/planyourvisit/trails-and-backcountry-camp-conditions.htm",
+            "https://www.wta.org/go-hiking/hikes/tahoma-creek",
+            "https://www.nps.gov/places/westside-road-dry-creek-trailhead.htm"
+          ]
+        },
+        {
+          "claim": "stored mid-glacier chip 'up to ~45°'",
+          "verdict": "UNCLEAR",
+          "evidence": "That was in pitch_detail, which was just rewritten and is out of scope here."
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_willis_wall": {
+    "skip_reason": "identity question (the row names a whole face with several lines) and a pitch_detail question — neither is in scope",
+    "review": {
+      "findings": [
+        {
+          "claim": "row names the whole 3,600-ft face (West/East/Central Rib, Thermogenesis) rather than one line",
+          "verdict": "UNCLEAR",
+          "evidence": "Identity question — needs a human decision on which line the row means, or a split. Not researched further."
+        },
+        {
+          "claim": "stored pitch_detail's 'M5+' grade for the lower wall has no source",
+          "verdict": "UNCLEAR",
+          "evidence": "pitch_detail is out of scope for this pass; left for whoever resolves the row's identity."
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_curtis_ridge": {
+    "skip_reason": "no discrepancy was claimed — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text (Emmons-Winthrop to Camp Schurman) and rappels (one early rappel) are consistent with sources",
+          "verdict": "REFUTED",
+          "evidence": "The earlier agent reported agreement, not an error; nothing to correct."
+        }
+      ]
+    }
+  },
+  "wa_mount_rainier_nisqually_icefall": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "approach describes a Paradise start up the lower Nisqually beside the Wapowety Cleaver to a 9,900-ft bergschrund with 40-50 ft of steep ice; the FA came from Camp Muir; the schrund detail is unsourced",
+          "verdict": "UNCLEAR",
+          "evidence": "The FA account confirms the 1948 party started from Camp Muir (10,000 ft), traversed the crevassed Nisqually cirque to a ~40-degree, ~500-ft debris slope whose last 50 ft needed step-cutting, and exited at the ~13,000-ft saddle on the Wapowety Cleaver. That does not disprove a Paradise/lower-Nisqually start for a modern party (the icefall base is reachable from both), and no modern description could be loaded (the one trip report found returned 404). The 9,900-ft schrund figure is unconfirmed but it is not contradicted, and its '40-50 ft of steep ice' is close to the FA's 50 ft of step-cutting. Not changed.",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall"
+          ]
+        },
+        {
+          "claim": "length_m 457 is unexplained",
+          "verdict": "REFUTED",
+          "evidence": "457 m = 1,500 ft, exactly the vertical the FA account gives for the icefall climb from its base to the upper niche (~11,500 ft).",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_little_tahoma_cowlitz_ingraham_glaciers": {
+    "skip_reason": "all findings UNCLEAR (identity/label questions) — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "beta's 'exiting the upper Frying Pan Glacier's corner into a gully' (and the kept pitch_detail label) — from-Paradise sources climb the Whitman Glacier to the summit block",
+          "verdict": "UNCLEAR",
+          "evidence": "The route's database page describes only 'ascend the east face' then a ~30 ft exposed section, with no glacier named; trip reports from Paradise climb the Whitman Glacier. The upper Fryingpan and Whitman glaciers meet near the east shoulder, so the clause may describe the East Shoulder finish rather than be false. Tied to the next item (which finish this row means), so left for a human.",
+          "sources": [
+            "https://www.mountainproject.com/route/122049367/cowlitzingraham-glaciers",
+            "https://www.turns-all-year.com/trip-reports/june-22-2013-little-tahoma-from-paradise",
+            "https://www.summitpost.org/2021-05-30-little-tahoma-trip-report/1061304"
+          ]
+        },
+        {
+          "claim": "the name '(South Face)' mixes two options (South Shoulder with low 5th vs the easier East Shoulder finish)",
+          "verdict": "UNCLEAR",
+          "evidence": "Identity question — not in scope."
+        },
+        {
+          "claim": "grade is null; one source gives 'Grade II'",
+          "verdict": "UNCLEAR",
+          "evidence": "The 'Grade II' source could not be loaded (403). The route's database page grades it 3rd class, steep snow. See classification.",
+          "sources": [
+            "https://www.mountainproject.com/route/122049367/cowlitzingraham-glaciers"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Class 3, steep snow",
+          "evidence": "Only the route's database page could be read: '3rd YDS ... Steep Snow'. Another trip report mentions one or two Class 4 moves on the summit rock; a reviewer may prefer to wait for the identity question before filling it."
+        }
+      }
+    }
+  },
+  "wa_mount_adams_north_ridge": {
+    "area": "wa_mount_adams",
+    "set": {
+      "descent_text": "Most parties descend the route itself, back down the North Ridge toward high camp; it is non-technical, mostly Class 2 over loose volcanic scree. Some parties instead carry over and descend the South Climb to Cold Springs, which requires a long car shuttle. Watch crevasses on any glacier descent."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text: 'Most parties descend the South Climb ... Reversing the North Ridge is possible but involves down-climbing sustained steep snow'",
+          "verdict": "CONFIRMED",
+          "evidence": "The route's database page says simply 'Descend the route' and calls the North Ridge non-technical with very loose volcanic scree; a route write-up describes it as mostly Class 2 and says the way down was much easier and faster (about 2 hours); another trip report calls the North Ridge descent fairly straightforward. The South Climb carryover is real but needs a long shuttle from Road 2329 to Cold Springs. Nothing supports 'most parties' or 'sustained steep snow'. The shuttle and crevasse sentences are kept.",
+          "sources": [
+            "https://www.mountainproject.com/route/107223000/north-ridge",
+            "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route",
+            "https://www.ericsbasecamp.net/trips/AdamsGl/AdamsGl.htm"
+          ]
+        },
+        {
+          "claim": "stored description of the ridge as sustained 40-45° snow with cornices",
+          "verdict": "UNCLEAR",
+          "evidence": "No such text is in beta/overview/approach now; it was presumably in the old pitch_detail, which was just rewritten (out of scope). The descent_text's 'sustained steep snow' was the surviving echo and is fixed above."
+        },
+        {
+          "claim": "grade 'Grade II, moderate snow'",
+          "verdict": "REFUTED",
+          "evidence": "Matches the route's database page (Grade II).",
+          "sources": [
+            "https://www.mountainproject.com/route/107223000/north-ridge"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_shuksan_sulphide_glacier": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "beta and descent_text say the Southeast Ridge has 'two unavoidable pitches rated 5.6 and 5.7'; no source gives 5.6/5.7",
+          "verdict": "UNCLEAR",
+          "evidence": "A source does give it (search excerpt; the page itself returned 403): The Mountaineers' SE Ridge route page says pitches range 5.3-5.7 and that there are two unavoidable steps (5.6 and 5.7) if you stay true to the ridge proper. Against that, the ridge's database page grades it 5.3 over 6 pitches and says no move need exceed 5.4 (none over 5.3 with selective route-finding), and other listings give 5.4 / III 5.3. So the stored figures are one sourced reading, but 'unavoidable' drops that source's 'staying on the ridge proper' condition. Sources disagree; overstating difficulty errs conservative; not changed. A reviewer may want to add 'if staying on the crest' to both columns.",
+          "sources": [
+            "https://www.mountaineers.org/activities/routes-places/mount-shuksan-se-ridge",
+            "https://www.mountainproject.com/route/114984342/southeast-ridge-se-corner",
+            "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/2696507646",
+            "https://spokalpine.com/2024/08/20/shuksan-fisher-chimneys-se-ridge-iii-5-3/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_shuksan_price_glacier": {
+    "area": "wa_mount_shuksan",
+    "set": {
+      "descent_text": "The standard descent is NOT back to the Ruth Creek car — it's over the top and down the Fisher Chimneys to Lake Ann, a completely different trailhead. From the summit pyramid, downclimb and rappel the gully system on the pyramid's south side: climbers typically make 1–3 short rappels off natural anchors (slings on rock horns, occasionally pickets left in snow — don't count on finding a picket anchor still in place) on a single 60 m rope, which doubled through the anchor gives rappels of about 30 m, to drop through the soft or icy sections of the gully, though capable parties often downclimb the whole thing instead. This puts you on Hell's Highway, a ~60 m step of steep snow/alpine ice that accesses the Sulphide Glacier. Cross the Upper Curtis Glacier (watch for opening crevasses and weakening snow bridges by late summer) and downclimb Winnie's Slide, a short ice/snow step that some parties rappel (~30 m) when it's icy or the snow beneath is soft, to reach the top of the Fisher Chimneys. The Chimneys themselves (class 3–4) are generally downclimbed rather than rappelled. Continue down through the chimneys to Lake Ann and out the Lake Ann Trail to the Mount Baker Highway/Artist Point trailhead — roughly 13 miles of trail from where your car is parked at Ruth Creek, so plan a shuttle, hitch, or stashed bike. An alternative is to instead descend the Sulphide Glacier all the way down toward the Baker Lake/Shannon Ridge side — a non-technical glacier walk-off with no rappelling required — but that exits at yet another trailhead, again requiring a car shuttle. Ski parties sometimes reverse the Price Glacier itself (skiing the Price Headwall and the glacier's eastern lobe back to Price Lake), but that is a specialized, avalanche- and icefall-exposed line, not the climbers' descent."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text says the pyramid descent is down 'the gully system on the pyramid's west side'; the standard gully is on the south side",
+          "verdict": "CONFIRMED",
+          "evidence": "The standard rappel/downclimb line off Shuksan's summit pyramid is the central gully on its south face: a guide service's write-up shows climbers 'rappelling down the south side of Mount Shuksan's summit pyramid' and starts its preferred descent from a ridge running south from the summit; multiple route descriptions call the central gully the rappel descent route, reached from the top of the Sulphide Glacier. Only 'west' changed to 'south'; every other word is as stored.",
+          "sources": [
+            "https://blackbirdguides.com/blogs/alpine-climbing/mt-shuksan-fisher-chimneys-small-mountain-big-punch",
+            "https://www.mountainproject.com/route/107476711/white-salmon-glacier",
+            "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mt-shuksan-fisher-chimneys"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_shuksan_white_salmon_glacier": {
+    "area": "wa_mount_shuksan",
+    "set": {
+      "beta": "Grade II glacier route (easy snow), up to 40-45 degree snow. Route to summit via Winnies Slide (40-45 degree snow) or Fisher Chimneys junction. 3rd-4th class scrambling on the summit pyramid. Active Hanging Glacier avalanches. Bergschrunds, crevasses."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta describes a 'Grade II-III alpine ice/mixed route, up to 50-degree ice ... Mixed rock and ice. High exposure with steep glacier headwall' — contradicts grade 'Grade II, Easy Snow' and the overview",
+          "verdict": "CONFIRMED",
+          "evidence": "The route's database page grades the White Salmon Glacier 'Easy Snow', a moderate glacier climb used as the common descent for northside routes: navigate the glacier to the base of Winnie's Slide (6,800 ft), climb 40-45 degree terrain up it onto the Upper Curtis Glacier, Hell's Highway to the Sulphide, then 3rd-4th class scrambling on the summit pyramid. Its listed hazards are Hanging Glacier avalanches, large crevasses, rockfall at Hell's Highway, late-season schrund difficulties. The corrected beta keeps the stored Winnie's Slide/Fisher Chimneys routing and the avalanche, bergschrund and crevasse hazards, and replaces the ice/mixed, 50-degree-ice and headwall clauses with the sourced values.",
+          "sources": [
+            "https://www.mountainproject.com/route/107476711/white-salmon-glacier"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_baker_cockscomb_ridge": {
+    "area": "wa_mount_baker",
+    "set": {
+      "beta": "Grade: 4th class YDS, AI2-3 ice, M1b mixed, PG-13. Technical: 3,000 ft vertical gain over 5 pitches on the ridge itself. Hazards: Extremely loose and unstable rock (especially late season), bergschrunds, extensive crevassing, icefall terrain. Route: From the Heliotrope Ridge trailhead, cross Coleman and Roosevelt Glaciers northeastward, climb low-moderate snow ramps to ridge at ~7,500 ft, bypass Cockscomb Tower on left via steep snow, continue ridge to summit. Descent: Coleman-Deming Route (easy-moderate glacier). Required: Ice climbing competency, crevasse rescue skills, glacier travel experience, rock scrambling ability. Protection: Few ice screws/pickets, glacier gear essential. Best season: Spring or early summer (late season loose rock creates high hazard). First ascent: July 4, 1961 (Murley, Musser, Vielbig).",
+      "fa": "Chuck Murley, John Musser, and Klindt Vielbig, July 4, 1961 (first complete ascent of the ridge)"
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach sends parties from Artist Point along Ptarmigan Ridge to the Rainbow/Park Glacier and says the Coleman and Roosevelt are NOT crossed",
+          "verdict": "CONFIRMED",
+          "evidence": "The FA account (1961): 'followed the trail to Kulshan Cabin and the moraine above to the edge of the Coleman Glacier. This and then the Roosevelt Glacier we crossed in a northeasterly direction to the foot of the objective ridge at 7800 feet.' The route's database page: 'Access from Heliotrope by crossing the Coleman and Roosevelt glaciers and taking low to moderate snow to the ridge around 7500 ft elevation', after 2-3 hours of glacier travel; it mentions the Park Glacier only as a late-season option (descend to it and climb the headwall, AI3). The row's own overview also says Heliotrope across the Coleman and Roosevelt. Every clause of the stored approach described a different approach, so the whole value is replaced with the sourced one; the long-gone cabin is not named.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge",
+            "https://www.mountainproject.com/route/113499467/cockscomb-ridge"
+          ]
+        },
+        {
+          "claim": "(found while verifying) beta's 'Ascend Ptarmigan Ridge Trail to Camp Kiser, cross Coleman and Roosevelt Glaciers' — Camp Kiser is on Ptarmigan Ridge, the wrong side for a Coleman/Roosevelt crossing",
+          "verdict": "CONFIRMED",
+          "evidence": "Same two sources: the approach starts at Heliotrope, not Ptarmigan Ridge. Only that clause changed in beta.",
+          "sources": [
+            "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+            "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge"
+          ]
+        },
+        {
+          "claim": "fa says 'E. Vielbig'; the FA account names Klindt Vielbig",
+          "verdict": "CONFIRMED",
+          "evidence": "The FA account is written by Klindt Vielbig, 1961, and names Chuck Murley and John Musser as his partners on July 4.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge"
+          ]
+        }
+      ],
+      "classification": {
+        "pitches": {
+          "proposed": 5,
+          "evidence": "The route's database page lists 5 pitches over ~3,000 ft; the row's own beta already says '5 pitches on the ridge itself'. Stored value is 0. Single source."
+        }
+      },
+      "note_from_apply": "approach correction dropped at apply time: the live approach already starts at Heliotrope and crosses the Coleman and Roosevelt; the finding described an older value."
+    }
+  },
+  "wa_mount_baker_squak_glacier": {
+    "skip_reason": "no prose finding; classification only — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade is null; the route's database page rates it Easy Snow, Grade III",
+          "verdict": "CONFIRMED",
+          "evidence": "The route's database page: 'Easy Snow', 'Type: Snow, Alpine, Grade III'. A classification column, so proposed below rather than set.",
+          "sources": [
+            "https://www.mountainproject.com/route/108224628/squak-glacier"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Grade III, Easy Snow",
+          "evidence": "The route's database page (single source). Other write-ups describe it as a moderate, beginner-suitable glacier climb, steeper than the Easton, with bergschrunds later in the season."
+        }
+      }
+    }
+  },
+  "wa_mount_baker_boulder_park_cleaver": {
+    "skip_reason": "identity question (possible duplicate of wa_mount_baker_boulder_glacier) — not in scope",
+    "review": {
+      "findings": [
+        {
+          "claim": "row duplicates wa_mount_baker_boulder_glacier (same trailhead, camp, cleaver and buttress)",
+          "verdict": "UNCLEAR",
+          "evidence": "Identity/duplicate question: merging or retiring the row is a human decision. Not researched further in this pass."
+        }
+      ]
+    }
+  },
+  "wa_forbidden_peak_north_ridge": {
+    "area": "wa_forbidden_peak",
+    "set": {
+      "beta": "Grade III, 5.6 on the ridge. From Boston Basin high camp, traverse glacier to Sharkfin Col via 10 feet of 5.7 rock and 200 feet of Class 3 gully. North ridge route at ~7,700 ft to summit. Moderate to good granite, high exposure with wonderful ridge position. Glaciers: Quien Sabe Glacier, Boston Glacier."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta calls the route 'Grade III, 5.7 climbing'",
+          "verdict": "REFUTED",
+          "evidence": "The stored beta now reads 'Grade III, 5.6 on the ridge' and puts the 5.7 on the short step to Sharkfin Col — which is what the sources say (route page: 5.6, Grade III; the col is reached by 10 ft of 5.7 and 200 ft of Class 3 gully).",
+          "sources": [
+            "https://www.mountainproject.com/route/108482756/north-ridge",
+            "https://www.mountaineers.org/activities/routes-places/forbidden-peak-north-ridge"
+          ]
+        },
+        {
+          "claim": "beta's 'Northeast ridge route at ~7,700 ft to summit' — it is the North Ridge",
+          "verdict": "CONFIRMED",
+          "evidence": "Every source names the line the North Ridge; the ridge is gained from the Boston-Forbidden col bivy (~7,600 ft) after crossing the Boston Glacier northwest from below Sharkfin Col. 'Northeast' would point a reader at a different feature. Only that word changed.",
+          "sources": [
+            "https://www.mountainproject.com/route/108482756/north-ridge",
+            "https://mountainmadness.com/blog/north-ridge-of-forbidden-peak"
+          ]
+        },
+        {
+          "claim": "pitches 8 is not supported; most of the ridge is simul-climbed",
+          "verdict": "UNCLEAR",
+          "evidence": "No source consulted gives a pitch count either way; not proposed."
+        },
+        {
+          "claim": "(noted while verifying) rappels gives '~100 ft rappel from Sharkfin Col'; one source gives 150 ft, and the new pitch_detail says two 30 m stages",
+          "verdict": "UNCLEAR",
+          "evidence": "Rappel length depends on where parties build stations; not changed.",
+          "sources": [
+            "https://www.mountaineers.org/activities/routes-places/forbidden-peak-north-ridge"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_eldorado_peak_west_arete": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "pitches 19: one source lists 10 pitches over 2,800 ft, a 2025 party counted 19 (3 simul)",
+          "verdict": "UNCLEAR",
+          "evidence": "Pitch counts depend on how much is simul-climbed; the stored 19 follows a detailed recent ascent and matches the row's beta. Not proposed."
+        },
+        {
+          "claim": "fa gives Aug 24, 1969; the route's database page gives Aug 29",
+          "verdict": "REFUTED",
+          "evidence": "The first-ascent report in the American Alpine Journal gives August 24, 1969 (Richard Emerson and Walter Gove) — the stored date is the primary-source one.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/12197134701/North-America-United-States-Washington-Cascade-Mountains-Eldorado-West-Arete"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_sahale_mountain_r1": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade 'Class 3-4/5.0-5.4 summit block' — no source gives 5th class",
+          "verdict": "REFUTED",
+          "evidence": "Sources do (read as search excerpts; the pages were not opened): one source rates the Quien Sabe route 5.0 'with a couple of 5.4 moves'; another describes the summit block as mostly class 4 with one move of low class 5 at the top. Others call it Class 3. The stored range covers them.",
+          "sources": [
+            "https://ncmountainguides.com/routes/climbing-routes/sahale-peak-quien-sabe-glacier",
+            "https://www.northwestalpineguides.com/northwest-climbs/sahale-peak/",
+            "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier"
+          ]
+        },
+        {
+          "claim": "the separate climbing_route array may now duplicate the rewritten pitch_detail",
+          "verdict": "UNCLEAR",
+          "evidence": "A structural question, not a factual one, and neither column is in scope here."
+        }
+      ]
+    }
+  },
+  "wa_johannesburg_mountain_cj_couloir": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "rappels gives 2-3 60 m rappels to the col; sources give two 60 m rappels in the east gully, or ~7 short rappels on the crest, or a downclimb",
+          "verdict": "REFUTED",
+          "evidence": "Reports give two 60 m rappels in the gully then downclimbing to the col, or three rappels interspersed with downclimbing, or about seven rappels on the crest; the stored '2-3 rappels (60m)' falls within that range. Reports do note that stations are scattered and some needed rebuilding, so 'established anchors' should not be read as bomber, but it is not false.",
+          "sources": [
+            "https://www.mountaineers.org/activities/trip-reports/johannesburg-mountain-east-ridge",
+            "https://cascadeclimbers.com/forum/topic/92261-tr-johannesburg-mountain-and-cascade-peak-cj-couloir-to-east-ridge-and-nw-chimney-7272013/",
+            "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_johannesburg_mountain_northeast_rib_1951_route": {
+    "area": "wa_johannesburg_mountain",
+    "set": {
+      "beta": "Two start variations exist: the original 1951 Route, which is faster but includes a 'scary' 5.7 pitch, and a 1957 variation that starts lower and adds roughly 500 ft of climbing on more logical terrain to avoid it. On the 1957 line, initial 4th-class terrain leads into dense vertical tree-root climbing, a slabby ~60-ft horizontal gully traverse (5.5) with minimal protection, and steep heather sections requiring careful, finger-pressing technique. On the right-hand (1957) rib, a roughly 700-ft crux section of higher-quality 5.6 rock climbing leads toward a bivy site beside the glacier, below the snow arete and glacier that lead to the summit.",
+      "overview": "A parallel, marginally easier line to the Northeast Buttress up the same 5,000-ft face, first climbed in 1951 with a 1957 variation start; mostly unroped 3rd/4th-class climbing through a 'dangerous jungle gym' of vertical brush, with a sustained roughly 700-ft crux rock band on the 1957 variation's right-hand rib."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta and overview describe the 1957 variation (the ~700-ft 5.6 rock band) as if it were the 1951 Route",
+          "verdict": "CONFIRMED",
+          "evidence": "The detailed trip report behind this text climbed the 1957 start, and says the 1951 and 1957 lines almost meet at a snow bowl and then diverge: the 1951 takes the left of two ribs, the 1957 the more prominent right rib. Its 5.5 slabby-gully pitches, the tree climbing and the ~700-ft 5.6 crux band are all from that 1957 ascent. A second report confirms the 1957 line is the western NE Rib. The fix attributes those features to the 1957 line; the 1951/1957 start sentence is kept as stored.",
+          "sources": [
+            "https://spokalpine.com/2020/08/09/johannesburg-57-ne-rib-v-5-6/",
+            "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/"
+          ]
+        },
+        {
+          "claim": "(found while verifying) beta places the bivy 'two pitches below the summit'",
+          "verdict": "CONFIRMED",
+          "evidence": "The same report puts the bivy beside the glacier two pitches ABOVE the 5.6 crux section; the next morning still held the snow arete, glacier and a final scramble to the summit tower (about 1.5 hours). The stored phrase inverted it. Replaced with what the report states.",
+          "sources": [
+            "https://spokalpine.com/2020/08/09/johannesburg-57-ne-rib-v-5-6/"
+          ]
+        },
+        {
+          "claim": "grade '5.6-5.7' fits the 1957 rib plus the 1951 start's 5.7; the 1951 rib is reported at 5.4-5.5",
+          "verdict": "REFUTED",
+          "evidence": "The earlier agent itself judged the stored grade to fit; no change proposed."
+        }
+      ]
+    }
+  },
+  "wa_northeast_face_direct": {
+    "skip_reason": "pitch_detail question only — out of scope",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored pitch_detail rows (P1 moat, 'P2 50°+', 'P5 climb the Duolith', 'P8-P9 north ridge') contradict fragments of the 2013 second-ascent report",
+          "verdict": "UNCLEAR",
+          "evidence": "The finding is entirely about pitch_detail, which this pass must not touch, and the only full source could not be loaded by the earlier agent. Left for a human with the full report."
+        }
+      ]
+    }
+  },
+  "wa_goode_mountain_megalodon_ridge": {
+    "skip_reason": "classification only — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "the route's database page grades it 5.9 over 20 pitches; stored 'IV+, 5.10' / pitches 8 reflect the first ascent only",
+          "verdict": "UNCLEAR",
+          "evidence": "Grade: the database page gives Grade IV, 5.9 (crux on the SE Peak Headwall, easier climbing further left); the first-ascent party went 5.10 on the crest. Both are real lines on the same ridge, so the grade is not wrong. Pitches: the database page gives 20 pitches over 3,000 ft, and the row's own overview says the ridge 'would total 20+' pitches; 8 is how many the FA party belayed while simul-climbing the rest. That one looks wrong for a field the planner reads — proposed below.",
+          "sources": [
+            "https://www.mountainproject.com/route/121051799/megalodon-ridge",
+            "http://publications.americanalpineclub.org/articles/12200813101/North-America-United-States-Goode-Mountain-Megalodon-east-Ridge"
+          ]
+        }
+      ],
+      "classification": {
+        "pitches": {
+          "proposed": 20,
+          "evidence": "Route database page: 20 pitches, 3,000 ft. The row's own overview: 'broken into pitches, would total 20+'; the FA party belayed only 7-8 and simul-climbed the rest. Grade left as is (5.10 on the crest vs 5.9 left of it are both valid)."
+        }
+      }
+    }
+  },
+  "wa_bonanza_peak_northeast_buttress": {
+    "area": "wa_bonanza_peak",
+    "set": {
+      "overview": "Bonanza Peak is the highest non-volcanic summit in Washington. This route is the Northeast Buttress, a serious, mostly-rock alpine line that gains Bonanza's true (9,516') summit directly, branching off the standard Mary Green Glacier approach at about 8,350 ft. Climbing in the 5.7 range (the V, 5.7/5.8 grade belongs to the full three-summit traverse it begins), the Northeast Buttress offers sustained, exposed ridge climbing on generally solid but lichen-covered rock, deep in the Glacier Peak Wilderness above Holden and Lake Chelan."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "overview's 'Graded V, 5.7/5.8' (and the grade column's 'V') belong to the whole three-summit traverse, not the buttress",
+          "verdict": "CONFIRMED",
+          "evidence": "The only account (the 2004 first-ascent note) grades 'the first ridge traverse of all three summits of Bonanza Peak' V 5.7/5.8; the Northeast Buttress was its first leg, climbed in a little under four hours from the 8,350 ft base, 'in the 5.7 range, with wild exposure'. Overview fixed in place; the grade column is proposed below.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/12200416000/North-America-United-States-Washington-Bonanza-Peak-Three-Summit-Traverse"
+          ]
+        },
+        {
+          "claim": "length_m 354 has no source",
+          "verdict": "REFUTED",
+          "evidence": "354 m = 1,161 ft, the difference between the 8,350 ft buttress base given in the FA note and the ~9,511 ft summit — it is the buttress's height, consistent with the account.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/12200416000/North-America-United-States-Washington-Bonanza-Peak-Three-Summit-Traverse"
+          ]
+        },
+        {
+          "claim": "stored pitch_detail rows ('Lower buttress Class 4 to low 5th', 'Upper buttress eases to easy 4th class') are unsupported",
+          "verdict": "UNCLEAR",
+          "evidence": "pitch_detail is out of scope for this pass. The FA note describes the buttress as steep and narrow right away with 5.7-range climbing, which does not match 'Class 4 to low 5th' — a human should look."
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "5.7",
+          "evidence": "FA note: buttress climbing 'in the 5.7 range', under 4 hours base to main summit; the V 5.7/5.8 grade is explicitly for the three-summit traverse. No source gives a commitment grade for the buttress alone, so none is proposed."
+        }
+      }
+    }
+  }
+}

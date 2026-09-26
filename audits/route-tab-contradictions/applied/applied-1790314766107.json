@@ -1,0 +1,556 @@
+{
+ "applied": [
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)"
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "status"
+   ],
+   "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)"
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "status"
+   ],
+   "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)"
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)"
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)"
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "column": "rappels",
+   "path": [],
+   "fact": "Number of rappels on the standard descent"
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "column": "overview",
+   "path": [],
+   "fact": "Spelling of the first-ascent climber's name (Ijames vs James)"
+  },
+  {
+   "id": "wa_soviet_route",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count for the route"
+  },
+  {
+   "id": "wa_soviet_route",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Timing breakdown sums to the stated total"
+  },
+  {
+   "id": "wa_soviet_route",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Timing breakdown sums to the stated total"
+  },
+  {
+   "id": "wa_soviet_route",
+   "column": "timing",
+   "path": [
+    "descentTimeHrs"
+   ],
+   "fact": "Timing breakdown sums to the stated total"
+  },
+  {
+   "id": "wa_soviet_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "section"
+   ],
+   "fact": "Timing breakdown sums to the stated total"
+  },
+  {
+   "id": "wa_soviet_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "section"
+   ],
+   "fact": "Timing breakdown sums to the stated total"
+  },
+  {
+   "id": "wa_soviet_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Which modern ascent compressed the route to 14 pitches, and its time"
+  },
+  {
+   "id": "wa_soviet_route",
+   "column": "beta",
+   "path": [],
+   "fact": "Which modern ascent compressed the route to 14 pitches, and its time"
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "Which trailhead/range this route describes"
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Which trailhead/range this route describes"
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "column": "watch_out",
+   "path": [
+    3
+   ],
+   "fact": "Which trailhead/range this route describes"
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "column": "grade",
+   "path": [],
+   "fact": "Technical difficulty of the route"
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "column": "grade_num",
+   "path": [],
+   "fact": "Technical difficulty of the route"
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Technical difficulty of the route"
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Timing breakdown sums to the stated total"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Total elevation gain/loss for the route"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Best window for the glacier approach (July vs August)"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Best window for the glacier approach (July vs August)"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "status"
+   ],
+   "fact": "Best window for the glacier approach (July vs August)"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "Best window for the glacier approach (July vs August)"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "status"
+   ],
+   "fact": "Best window for the glacier approach (July vs August)"
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "Best window for the glacier approach (July vs August)"
+  },
+  {
+   "id": "wa_buckskin_mountain_southwest_slopes",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Avalanche hazard on the route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through early September month of August; early-to-mid July can also work in low-snow years for an easier bergschrund crossing",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early-to-mid July trip reports cite this as ideal for a simple bergschrund crossing while the upper scramble is still mostly free of snow",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Still heavy spring snowpack; bergschrund and approach conditions unreliable",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "In season; Prime summer, with the driest, most stable glacier and rock conditions",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "A 'Short window' in fall before full winter conditions return",
+       "status": "marginal"
+      }
+     }
+    },
+    "crowds": {
+     "peakTraffic": "Weekends in early-to-mid August, when the bergschrund crossing is easiest and weather is most settled; trip reports range from parties having the mountain to themselves to 'leap-frogging' with two other groups on the same day",
+     "solitudeRating": 3,
+     "estimatePerSeason": "Roughly 15-30 parties per season - Bonanza is on the Bulger list (100 highest WA peaks) so it draws steady peak-bagger traffic despite the remote ferry/bus access, but it's nowhere near a high-traffic trade route"
+    },
+    "rappels": "1-3 rappels commonly used on the upper rock; rest is downclimbed",
+    "overview": "Bonanza Peak (9,516') is the highest non-volcanic summit in Washington and the highpoint of Chelan County. The Mary Green Glacier route — first climbed in 1937 by Curtis James, Barrie James, and Joe Leuthold (Mazamas) — is the peak's classic standard line, ascending its eastern side. Reached only via the Lady of the Lake ferry up Lake Chelan and the remote trail-and-boat village of Holden, the climb combines glacier travel and a moat crossing with a short, exposed Class 3-4 rock finish to a summit deep in the Glacier Peak Wilderness. From the Holden Campground trailhead it's roughly 14 miles round trip with about 6,300 ft of elevation gain to the summit, on top of the multi-day boat-and-trail approach just to reach that trailhead."
+   }
+  },
+  {
+   "id": "wa_soviet_route",
+   "before": {
+    "pitches": 22,
+    "timing": {
+     "totalHrs": 33.5,
+     "summitTimeHrs": 6,
+     "descentTimeHrs": 27.5,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "Early start",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Ferry to Lucerne and bus to Holden Village, then hike the Railroad Creek Trail to Hart Lake before ascending rock-and-heather terraces to a camp just below the 7,100 ft col between…",
+       "fromTo": "Ferry, bus, and approach to camp below the pass",
+       "section": "Climb"
+      },
+      {
+       "hrs": 21.5,
+       "note": "An alpine-start, all-day-and-into-the-night push: about an hour of talus to the base, then 14 pitches of clean climbing up the North Face to the Southwest Peak, followed by a slow,…",
+       "fromTo": "North Face to the Southwest Peak, then out along the ridge",
+       "section": "Descent"
+      },
+      {
+       "hrs": 6,
+       "note": "Break camp, descend the drainage back to the Railroad Creek Trail (some bushwhacking involved), and hustle to make the afternoon ferry from Lucerne back to Chelan.",
+       "fromTo": "Hike out and catch the ferry",
+       "section": "Descent"
+      }
+     ]
+    },
+    "beta": "The 1975 first-ascent party climbed the buttress in 22 pitches over three days using titanium pitons and early Abalakov-style protection; a 1996 ascent using modern gear and 200-ft ropes compressed it to roughly 14 pitches plus 4 belay moves. The route features a major horizontal ledge at half height that is key to the line, a cave belay mid-crux, and three consecutive pitches near 5.10a/b as the technical crux, with much of the remainder in the 5.6-5.9 range. Rock is meta-granitic but includes sections of loose red rock; a 2012 party climbed it in about 12 hours car-to-car from the buttress base."
+   }
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "before": {
+    "overview": "Bonanza Peak is the highest point in the Wenatchee Mountains, a popular mountaineering objective. The North Ridge is the most direct approach to the summit, a straightforward Class 2 scramble over talus and low-angle rock with good routefinding.",
+    "beta": "From the Middle Fork Snoqualmie trailhead, approach via the alpine meadows to the north ridge base. Follow the ridge crest, staying on solid rock and stable talus. Most routefinding is straightforward and well-marked by cairns. Descend the same route.",
+    "watch_out": [
+     "Talus stability — disturbed talus creates rockfall hazard for parties below, move quickly through loose sections",
+     "Ridge traverse exposure — one slip on narrow sections could result in significant drop; helmets recommended",
+     "Afternoon electrical storms — summit by 1pm in summer; thunderstorm risk increases afternoon",
+     "Stream crossing — Middle Fork crossing can be dangerous high water (June-July); consider trekking poles"
+    ],
+    "grade": "Class 2",
+    "grade_num": 2,
+    "hazards": [
+     "Talus and scree field approach — loose rock hazard, particularly on descent",
+     "Exposure on ridge sections — Grade 2 scrambling but some exposure on narrow sections",
+     "Weather development — afternoon thunderstorms common July-August",
+     "Stream crossings in approach canyon — high water in June-July"
+    ],
+    "timing": {
+     "totalHrs": 8.5,
+     "summitTimeHrs": 4.5,
+     "descentTimeHrs": 3.5,
+     "approachTimeHrs": 5,
+     "recommendedStart": "Alpine start from high camp, roughly 4:00-5:00am"
+    }
+   }
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "before": {
+    "itinerary": {
+     "cal": "Best mid-to-late July, after the bergschrund is easy to cross but before the upper glacier gets too broken up; the whole trip is gated by the Lady of the Lake ferry/Holden shuttle schedule out of Chelan or Field's Point Landing.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Catch the ferry from Chelan (or Field's Point Landing) to Lucerne, then the Holden shuttle bus into Holden Village. From there it's roughly 5.5 miles and about 4,000 ft of gain up the Holden Lake trail and rocky heather terraces to a camp near Holden Lake or just below Holden Pass — the same base camp used for the standard Mary Green Glacier route.",
+       "hours": 6,
+       "miles": 5.5,
+       "title": "Ferry, bus, and hike to high camp",
+       "gainFt": 4000,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a camp near Holden Lake / Holden Pass"
+      },
+      {
+       "n": 2,
+       "note": "From camp, traverse along the northeast edge of the Mary Green Glacier to the base of the Northeast Buttress, then climb roughly 4 hours of solid-but-licheny Class 4 to 5.7 ridge rock to the true summit. Rather than reversing the buttress, most parties down-climb/rappel back onto the Mary Green Glacier and retrace the standard route to camp, making for a long 11-12 hour round trip.",
+       "hours": 12,
+       "miles": 4,
+       "title": "Northeast Buttress to the true summit",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave high camp",
+         "detail": "Rope up for the glacier crossing toward the buttress."
+        },
+        {
+         "time": "~7:30 AM",
+         "label": "Reach buttress base",
+         "detail": "About 8,350 ft, at the foot of the Northeast Buttress."
+        },
+        {
+         "time": "~11:15 AM",
+         "label": "Top out on the buttress",
+         "detail": "Roughly 4 hours of Class 4-5.7 ridge climbing to the true summit (9,516 ft)."
+        },
+        {
+         "time": "~11:45 AM",
+         "label": "Begin descent",
+         "detail": "Down-climb/rappel back onto the Mary Green Glacier rather than reversing the buttress."
+        },
+        {
+         "time": "~4:00 PM",
+         "label": "Back at camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the Northeast Buttress and descend via the Mary Green Glacier"
+      },
+      {
+       "n": 3,
+       "note": "Break camp, descend back to Holden Village, and catch the shuttle bus and ferry combination back to Lucerne and Chelan.",
+       "hours": 5,
+       "miles": 5.5,
+       "title": "Hike out and catch the ferry",
+       "gainFt": 0,
+       "lossFt": 4000,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to Holden and connect with the bus/ferry"
+      }
+     ],
+     "totalNote": "A 3-day trip from Holden: about 4,000 ft up to camp on day 1, then an 11-12 hour, ~6,600 ft round-trip summit day up the Northeast Buttress and back down the standard Mary Green Glacier route, followed by a hike-and-ferry exit on day 3."
+    },
+    "timing": {
+     "totalHrs": 23,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 6,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Catch the ferry from Chelan (or Field's Point Landing) to Lucerne, then the Holden shuttle bus into Holden Village. From there it's roughly 5.5 miles and about 4,000 ft of gain up …",
+       "fromTo": "Ferry, bus, and hike to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "From camp, traverse along the northeast edge of the Mary Green Glacier to the base of the Northeast Buttress, then climb roughly 4 hours of solid-but-licheny Class 4 to 5.7 ridge r…",
+       "fromTo": "Northeast Buttress to the true summit",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Break camp, descend back to Holden Village, and catch the shuttle bus and ferry combination back to Lucerne and Chelan.",
+       "fromTo": "Hike out and catch the ferry",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach": "The approach follows the same trailhead-in as the standard route — Railroad Creek Trail (FST 1256) from Holden Village to the Holden Lake Trail junction, then up to Holden Lake (5,278') and Holden Pass (6,360') for high camp — but instead of angling onto the Mary Green Glacier itself, continue on benches and talus/heather to climber's right (east/north side) of the glacier. This adds roughly another 3 hours and substantial elevation gain beyond Holden Pass to reach the base of the Northeast Buttress/Face around 8,350', which explains this route's noticeably larger overall gain (~7,500') compared to the standard Mary Green line. Water sources match the standard approach (Holden Lake, Holden Pass); above the pass, plan on carrying what you need since there's little reliable water on the buttress approach itself. Expect loose rock and routefinding on the benches, and — because this line stays right of the glacier on rock rather than crossing snow/ice — less exposure to crevasse hazard but more exposure to rockfall and unconsolidated talus underfoot.",
+    "approach_variants": [
+     {
+      "name": "Holden Village to Holden Lake and Holden Pass, then the Mary Green's north margin to the buttress toe",
+      "notes": "There is no road to this trailhead. Drive to Chelan or Field's Point Landing, take the passenger boat up Lake Chelan to Lucerne, and ride the village bus up to Holden Village near 3,300 ft. The whole trip is gated by a boat and bus timetable rather than by the weather window, so build the itinerary around sailing days. Both the road and the boat shuttle have been closed since the December 2025 flood and landslide — verify access exists before planning anything.\n\nFrom the village, Railroad Creek Trail #1256 runs about a mile up the valley on near-level grade to a signed fork. Turn RIGHT and climb roughly four miles and 1,700 ft of switchbacks to Holden Lake at about 5,280 ft, the usual first-night camp. Carry water up from the creek — there is none on the switchbacks.\n\nFrom the head of the lake a climbers' path gains about 1,100 ft over heather benches and rocky terraces to Holden Pass near 6,400 ft. That is effectively the last water; everything above has to be carried.\n\nWhat makes this route different from the standard line starts at the pass: instead of angling onto the glacier, it stays on benches and talus to climber's RIGHT of it. Expect about three more hours and a lot of gain above the pass, which is why this route's total is so much larger than the standard's.",
+      "season": "Roughly late Jun to mid-Jul for the easiest bergschrund and glacier margin; the buttress itself is dry rock and tolerates a later start into August",
+      "hazards": [
+       "Rockfall the whole length of the glacier-margin traverse, because holding the margin puts you under rock rather than over crevasses",
+       "Loose, lichen-covered rock on the buttress with sustained 5.6-5.7 and wild exposure to the glacier below",
+       "A moat and steep snow crossing near the summit ridge that parties rope even when they scramble everything else",
+       "Route-finding through unmarked benches, talus and heather above Holden Pass, on loose footing, with no obvious line",
+       "Total dependence on a boat and bus timetable — and both have been closed since the December 2025 flood"
+      ],
+      "baseFinding": "THE GLACIER IS THE HANDRAIL AND THE BUTTRESS TOE IS WHERE IT RUNS OUT. Once you have gained the Mary Green Glacier's northern edge around 7,800 ft, follow the glacier's climber's-RIGHT (north) margin west, then bend south-west along the foot of the north-east ridge to the glacier's upper south-west corner. The rock rib comes down into the ice there, around 8,350 ft. Walk the margin until the ice meets rock; that is the base, and you do not need to see the summit to find it.\n\nHOLDING THE MARGIN IS A TRADE, AND IT IS DELIBERATE: staying on the edge keeps crevasse exposure low and puts you underneath rock the entire way. Helmets on from the moment you start the traverse, not from the moment you start climbing.\n\nGETTING ONTO THE GLACIER IN THE FIRST PLACE — the step most parties get wrong: from Holden Pass make a RISING traverse west along the ridge over benches, talus and heather until a snowfield appears below a band of slabs, then scramble the slabs to the glacier's north edge. There is no single obvious line through the benches, the footing is loose, and it is real routefinding. If you are contouring flat rather than rising, you will end up under the slabs rather than on them.\n\nTHE DISCRIMINATOR AGAINST THE STANDARD ROUTE, WHICH LEAVES FROM THE SAME CAMP: the standard line goes UP THE GLACIER and it identifies itself by WATER — low-angle slabs with a waterfall running down them at roughly 7,000 to 7,300 ft. This route never touches those slabs and never crosses the glacier's middle. If you are climbing wet rock beside running water, you are on the standard route.\n\nTHE CONFIRMATION ONCE YOU ARE ON IT: the crest steepens and narrows IMMEDIATELY above the toe — several rope lengths of Class 4 and low fifth on and just right of the crest, running into sustained 5.6-5.7 with glacier falling away on both sides. If the ground above the toe stays broken and easy for a long way, you have started up the wrong rib.\n\nWHAT TOO FAR ALONG LOOKS LIKE: the licheny mid-buttress at about 9,000 ft is the sustained section, and from the toe to the summit is roughly four hours on the ridge. Reaching easy fourth-class crest with gendarmes to turn means you are near the top, not near the start."
+     }
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "Mid to late summer (roughly July into August), when the Mary Green Glacier's crevasses and snow bridges are most stable",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Approaching the Primary summer window as snow bridges consolidate, though crevasses may still be partly snow-covered and harder to read",
+       "status": "good"
+      },
+      "June": {
+       "reason": "'High avy hazard' in spring lingering into early June on this heavily glaciated aspect",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Mid to late summer is the Primary season",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "'Open crevasses' in fall, increasing route-finding difficulty and hazard on this heavily glaciated face",
+       "status": "marginal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_buckskin_mountain_southwest_slopes",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier east-side/rain-shadow climate in the Central North Cascades / Lake Chelan forecast zone",
+      "probability": "Afternoon thunderstorms are possible in late summer on the exposed south-facing summit slope; plan an alpine start to be off the ridge before they build"
+     },
+     "exposure": "Class 2-3 talus/scree with exposed sections; a slip or injury is serious given the remote, long trail access (no boat/ferry) and the extended evacuation time from long access",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; no NWAC zone specifically forecasts this remote Entiat Mountains peak, and it is climbed outside the winter/spring avalanche forecasting season",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on the Southwest Slopes route"
+    }
+   }
+  }
+ ]
+}

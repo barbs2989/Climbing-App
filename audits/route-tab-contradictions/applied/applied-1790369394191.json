@@ -1,0 +1,260 @@
+{
+ "applied": [
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total elevation gain"
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "total elevation gain"
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "total elevation gain"
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "total elevation gain"
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "glacier/crevasse exposure on approach"
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "approach distance to Boston Basin camp (partner requirements)"
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "descent route off the Northeast Face"
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "column": "descent",
+   "path": [],
+   "fact": "descent route off the Northeast Face"
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "column": "obj_haz",
+   "path": [
+    1
+   ],
+   "fact": "1975 fatality attribution"
+  },
+  {
+   "id": "wa_forbidden_peak_east_ledges",
+   "column": "itinerary",
+   "path": [],
+   "fact": "which routes use East Ledges as their descent"
+  },
+  {
+   "id": "wa_forbidden_peak_east_ridge",
+   "column": "descent",
+   "path": [],
+   "fact": "whether the East Ridge itself can be reversed by rappel"
+  },
+  {
+   "id": "wa_forbidden_peak_east_ridge",
+   "column": "watch_out",
+   "path": [],
+   "fact": "glacier/crevasse exposure on this route"
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "rock grade of the route"
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "column": "watch_out",
+   "path": [],
+   "fact": "season/character of the route (summer rock vs winter ice)"
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Boston Basin high camp elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "before": {
+    "gain_ft": 6640,
+    "loss_ft": 5700,
+    "itinerary": {
+     "cal": "Boston Basin camping requires winning NPS's early-access permit lottery (~15% odds); Cascade River Road's opening date varies with winter road damage. This is one of the Fifty Classic Climbs of North America, so weekend permits are especially competitive.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the climbers' path from the trailhead into Boston Basin and camp near 6,400 ft below the peak.",
+       "hours": 3.5,
+       "miles": 3.3,
+       "title": "Approach to Boston Basin camp",
+       "gainFt": 2800,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Establish camp in Boston Basin"
+      },
+      {
+       "n": 2,
+       "note": "Pre-dawn start up the approach couloir to the West Ridge notch, then ~6 pitches of low 5th-class ridge climbing to the true summit. Reverse the ridge to the notch and descend the couloir back to camp, hiking out the same evening or the next morning.",
+       "hours": 11.5,
+       "miles": 4.7,
+       "title": "West Ridge to summit, descend couloir",
+       "gainFt": 2415,
+       "lossFt": 5215,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "3:00 AM",
+         "label": "Leave camp",
+         "detail": "Pre-dawn start up the approach couloir"
+        },
+        {
+         "time": "~5:00-5:30 AM",
+         "label": "Reach the West Ridge notch"
+        },
+        {
+         "time": "5:30 AM-Midday",
+         "label": "Climb the ridge",
+         "detail": "~6 pitches of low 5th class to the summit"
+        },
+        {
+         "time": "~9:00-11:00 AM",
+         "label": "Summit"
+        },
+        {
+         "time": "Midday-afternoon",
+         "label": "Reverse ridge, descend couloir"
+        },
+        {
+         "time": "Late afternoon/evening",
+         "label": "Back at camp",
+         "detail": "Hike out same evening or camp one more night"
+        }
+       ],
+       "objective": "Climb the West Ridge and return to camp"
+      }
+     ],
+     "totalNote": "A 2-day trip for most parties (hike in/camp, then an 8-10 hr technical summit day); very strong parties occasionally push it car-to-car in a single ~17.5-hr day."
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cool mornings, warming through the day; a prime but weather-sensitive summer window.",
+      "probability": "Afternoon thunderstorms are a recurring hazard, especially in July-August."
+     },
+     "exposure": "Sustained, committing exposure along the knife-edge summit ridge crest; a fall would be serious to fatal, and a multi-rappel descent is required.",
+     "avalanche": {
+      "zone": "West Slopes North (NWAC catchment); NWAC issues no daily forecast between roughly mid-April and mid-November, so no live rating covers this route's July-Sept season",
+      "byMonth": {
+       "July": "Low",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel; the approach couloir/gully is a snow-and-scree feature, not a glacier."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strenuous - roughly 7 miles and 3,100+ ft gain to Boston Basin camp with an overnight pack, plus a pre-dawn approach to the notch.",
+      "packWeight": "Overnight alpine pack, typically 25-35 lb including rack, rope, and camp gear."
+     },
+     "approachTime": "~5-6 hrs to Boston Basin camp, then ~2-3 hrs pre-dawn to the west ridge notch.",
+     "requiredSkills": [
+      "multi-pitch trad leading at 5.6",
+      "rappelling/multi-rappel descent",
+      "snow travel with ice axe and crampons in the access couloir",
+      "route-finding on an exposed ridge crest",
+      "efficient party movement to avoid holding up others on a crowded route"
+     ],
+     "experienceLevel": "Intermediate alpine climber; solid multi-pitch trad leader comfortable on exposed 5.6 with prior snow travel experience."
+    }
+   }
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "before": {
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Lower face rock below the ice patch",
+      "notes": "From the Boston Glacier, start up the rock immediately below and left of the conspicuous ice patch on the lower face. This first section runs about 300 ft and was recorded on the first ascent as grade III climbing protected with a few pitons. Getting off the glacier and onto the rock involves the usual moat or bergschrund at the margin, which grows through the season. Note that this face is climbed rarely enough that no maintained fixed gear should be assumed and modern first-hand descriptions are scarce, so treat this outline as an outline."
+     },
+     {
+      "n": 2,
+      "label": "The ice patch",
+      "notes": "The route's technical centrepiece: roughly 300 ft of ice at about 50 degrees. It is a north-facing feature that has thinned across the range over recent decades, so the depth of ice available for screws should be verified on the day rather than assumed. Everything on the face above funnels through this section, making it the exposed spot for rock and ice released from higher up."
+     },
+     {
+      "n": 3,
+      "label": "Upper face to the summit",
+      "notes": "About 600 ft remain above the ice patch. The angle is steep, but the rock is laid in upward-dipping slabs which makes the climbing easier than it looks from below. Above this the face merges into the summit. Descent is not by reversing the face — the normal descent is a high traverse below the east ridge that skirts the ridge gendarmes rather than following the crest, and it is a long committing exit in its own right; the peak has a reputation for having no easy way down by any route."
+     }
+    ],
+    "descent": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+    "obj_haz": [
+     "extremely loose, largely unprotectable rock",
+     "documented fatal fall on the traverse (1975)",
+     "confusing route-finding across multiple rock ribs"
+    ]
+   }
+  },
+  {
+   "id": "wa_forbidden_peak_east_ledges",
+   "before": {
+    "itinerary": "Used as the descent leg after climbing the West Ridge, East Ridge Direct, or Northwest Face; not typically a stand-alone objective."
+   }
+  },
+  {
+   "id": "wa_forbidden_peak_east_ridge",
+   "before": {
+    "descent": "Descend the West Ridge to its notch and couloir, or reverse the East Ridge with rappels.",
+    "watch_out": "Glacier approach with crevasse field—continuous rope essential; probe every step; bergschrund crossing required at ridge base\nMoat crossing at ridge base—seasonal variation; late season moats can be 5-10+ feet with difficult crossing; assess before committing\nLoose rock sections on east ridge—unstable granite typical of area; test holds; rockfall potential from upper sections and other climbers\nRoute-finding on initial ridge sections—terrain confusing with multiple false summits; verify correct line; study photos and topo\nWeather exposure on high ridge—exposed position with altitude gain to 8400 ft; afternoon storms common; lightning hazard\nDescent complexity—rappel setup required on some sections; route-finding important in descent; tired climbers increase risk\nSustained high-altitude objective—7000+ ft elevation gain to base; hydration and energy management critical; altitude sickness possible\nPotential avalanche exposure on approach slopes—assess stability in spring; afternoon warming increases risk; early start essential"
+   }
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "before": {
+    "beta": "Grade III, 5.7 climbing. From Boston Basin high camp, traverse glacier to Sharkfin Col via 10 feet of 5.7 rock and 200 feet of Class 3 gully. Northeast ridge route at ~7,700 ft to summit. Moderate to good granite, high exposure with wonderful ridge position. Glaciers: Quien Sabe Glacier, Boston Glacier.",
+    "watch_out": "Winter route requiring ice climbing or snow climbing skills\nShort ice pitch potential in winter conditions\nAlpine terrain exposure in winter conditions\nRemote location increases rescue difficulty",
+    "approach": "North-northeast via glacier traversals. From Boston Basin parking, hike to Boston Basin high camp (~5700 ft). Traverse moraine and west edge of Quien Sabe Glacier to 7,500 ft. Climb to Sharkfin Col (7,720 ft)."
+   }
+  }
+ ]
+}

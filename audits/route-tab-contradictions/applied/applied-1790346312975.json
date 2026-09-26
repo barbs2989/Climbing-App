@@ -1,0 +1,69 @@
+{
+ "applied": [
+  {
+   "id": "wa_union_peak_se_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total gain stated as 2,400 ft in one place, 1,696 ft everywhere else"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_union_peak_se_route",
+   "before": {
+    "itinerary": {
+     "cal": "Straightforward as a non-technical scramble when snow-free (roughly July-October); in winter/spring all aspects of the peak are avalanche-prone and it becomes a moderate winter scramble or ski route requiring different gear and timing.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A standard one-day scramble from the Smithbrook approach: follow the Smithbrook Trail a short distance to the Union Gap junction, then leave the trail and bushwhack northeast through forest to gain Union Peak's broad Southeast Ridge, which is followed to the summit. Descent reverses the same line back through the bushwhack to the trailhead.",
+       "hours": 6.5,
+       "miles": 5.4,
+       "title": "Car-to-car scramble",
+       "gainFt": 1696,
+       "lossFt": 1696,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Start on the Smithbrook Trail from the Smithbrook Road pullout."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach Union Gap junction",
+         "detail": "Leave the maintained trail here and begin the bushwhack northeast toward the ridge."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Gain the Southeast Ridge",
+         "detail": "The steepest, brushiest forest section; slow going until the ridge crest opens up."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit Union Peak",
+         "detail": "Broad, gentle summit plateau at 5,700 ft with views of Nason Ridge and the Stevens Pass high country."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line back down the ridge and through the bushwhack."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Union Peak via the Southeast Ridge"
+      }
+     ],
+     "totalNote": "A single, moderate day out: roughly 6-7 hours car-to-car for 2,400 ft of gain and about 5.4 miles round trip, with the bushwhack off-trail section being the slow, effort-intensive part."
+    }
+   }
+  }
+ ]
+}

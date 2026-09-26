@@ -1,0 +1,764 @@
+{
+ "applied": [
+  {
+   "id": "wa_three_fingers_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Itinerary day-mile sum vs. totalNote's stated mileage"
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Itinerary day-mile sum vs. totalNote's stated mileage"
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Itinerary day-mile sum vs. totalNote's stated mileage"
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Itinerary day-mile sum vs. totalNote's stated mileage"
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Itinerary day-mile sum vs. totalNote's stated mileage"
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Itinerary day-mile sum vs. totalNote's stated mileage"
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "gain_ft vs. itinerary day gainFt sum"
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Road-washout location stated inconsistently (mile 4.8 vs. mile 8/8.5)"
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Road-washout location stated inconsistently (mile 4.8 vs. mile 8/8.5)"
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road-washout location stated inconsistently (mile 4.8 vs. mile 8/8.5)"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Fish & Whistle total elevation gain"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Fish & Whistle total elevation gain"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Fish & Whistle total elevation gain"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Fish & Whistle total elevation gain"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "column": "access",
+   "path": [
+    "group_limit"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_ragged_edge",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Ragged Edge total elevation gain"
+  },
+  {
+   "id": "wa_ragged_edge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Ragged Edge total elevation gain"
+  },
+  {
+   "id": "wa_ragged_edge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Ragged Edge total elevation gain"
+  },
+  {
+   "id": "wa_ragged_edge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Ragged Edge total elevation gain"
+  },
+  {
+   "id": "wa_ragged_edge",
+   "column": "access",
+   "path": [
+    "group_limit"
+   ],
+   "fact": "access.group_limit (12) vs access.rules 'no specific group-size restriction (outside wilderness)'"
+  },
+  {
+   "id": "wa_true_grit_2",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_true_grit_2",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_true_grit_2",
+   "column": "access",
+   "path": [
+    "group_limit"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_vesper_peak_north_face_ragged_edge",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_vesper_peak_north_face_ragged_edge",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_vesper_peak_north_face_ragged_edge",
+   "column": "access",
+   "path": [
+    "group_limit"
+   ],
+   "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status"
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Prime climbing season / best months"
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Prime climbing season / best months"
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "spring"
+   ],
+   "fact": "Prime climbing season / best months"
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Prime climbing season / best months"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_three_fingers_r1",
+   "before": {
+    "itinerary": {
+     "cal": "Best attempted in late summer (Aug-Sep) once the glacier crossing between Tin Can Gap and the Middle/North col is more consolidated and less crevassed; carry a rope, rack, and glacier gear in addition to standard scrambling kit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach as the standard South Peak trip: Saddle Lake Trailhead through old-growth forest and Saddle Lake up to the meadows at Goat Flats. Carry the technical rack and glacier gear in addition to overnight kit since North Peak's harder climbing is ahead.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Hike in to Goat Flats camp",
+       "gainFt": 3000,
+       "lossFt": 100,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach Goat Flats camp"
+      },
+      {
+       "n": 2,
+       "note": "From camp, cross Tin Can Gap and drop roughly 400 ft onto the Queest-Alb Glacier before climbing back up about 1,000 ft to the col between Middle and North Peak. Rope up for sustained class 4 climbing with one low-5th-class (5.1) move in a summit chimney; exposure is constant.",
+       "hours": 10,
+       "miles": 4.5,
+       "title": "Technical summit day: North Peak",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave Goat Flats camp",
+         "detail": "Alpine start to cross the glacier while snow is firm."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Reach Tin Can Gap, descend to the glacier",
+         "detail": "Steep snow down to the Queest-Alb Glacier."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Cross glacier, climb to the Middle/North col",
+         "detail": "~1,000 ft regain; watch for crevasses late season."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Rope up for the rock",
+         "detail": "Class 4 to low 5th class (5.1), one exposed chimney move."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit North Peak",
+         "detail": "6,870 ft, highest of the three fingers."
+        },
+        {
+         "time": "4:00 PM",
+         "label": "Back at Goat Flats camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb North Peak via the Queest-Alb Glacier and the Middle/North col"
+      },
+      {
+       "n": 3,
+       "note": "Break camp at Goat Flats and retrace the trail down through Saddle Lake to the trailhead.",
+       "hours": 4,
+       "miles": 7,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3000,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip: hike in to Goat Flats, a long technical day crossing the Queest-Alb Glacier and climbing class 4 to low-5th-class (5.1) rock to North Peak, then hike out; roughly 14.5 mi and 5,400 ft of cumulative gain overall."
+    }
+   }
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "before": {
+    "itinerary": {
+     "cal": "Beta is thin for this specific summit -- confirm current glacier/snow conditions on the Queest-Alb crossing before committing, and plan for a rope and light rack even though the South Face itself is mostly 3rd/4th class.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same shared approach as the other Three Fingers summits: Saddle Lake Trailhead up through old-growth forest and Saddle Lake to the meadows at Goat Flats.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Hike in to Goat Flats camp",
+       "gainFt": 3000,
+       "lossFt": 100,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach Goat Flats camp"
+      },
+      {
+       "n": 2,
+       "note": "From camp, traverse via Tin Can Gap toward the saddle between Middle and North Peak, then climb Middle Peak's South Face -- steep snow/scree giving way to class 3-4 rock, with a rope useful for the short exposed moves near the summit ridge.",
+       "hours": 8.5,
+       "miles": 4,
+       "title": "Technical summit day: Middle Peak South Face",
+       "gainFt": 2100,
+       "lossFt": 2100,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Goat Flats camp",
+         "detail": ""
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach Tin Can Gap",
+         "detail": "Traverse toward the Middle/North saddle."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Start South Face scramble",
+         "detail": "Steep snow/scree into class 3-4 rock."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Summit Middle Peak",
+         "detail": "6,797 ft."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at Goat Flats camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Middle Peak via the saddle and South Face"
+      },
+      {
+       "n": 3,
+       "note": "Break camp at Goat Flats and retrace the trail down through Saddle Lake to the trailhead.",
+       "hours": 4,
+       "miles": 7,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3000,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip shaped like the North Peak itinerary: hike in to Goat Flats, a technical South Face summit day via the Middle/North col, then hike out; roughly 14.5 mi and an estimated 5,100 ft of cumulative gain overall."
+    }
+   }
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "before": {
+    "gain_ft": 5750,
+    "access": {
+     "fees": "$5 day-use Northwest Forest Pass (or annual pass) at the trailhead",
+     "notes": "None required for day use; Northwest Forest Pass recommended for parking. Digital Recreation Day Pass available via Recreation.gov for Mount Baker-Snoqualmie National Forest day-use sites. Overnight use requires separate permits; verify current conditions with Verlot Public Service Center (360) 691-7791. Tupso Pass Road (FS 41) washed out 4.8 miles in (past Canyon Creek bridge at mile 8); permanently closed to vehicles. Hiking and biking allowed. Approximately 9 additional miles to actual trailhead required - bicycle recommended for approach.",
+     "rules": "Boulder River Wilderness: group size limited to 12; no campfires within 1/4 mile of Trail #641 from Saddle Lake or in the Goat Flats area; no camping within 200 ft of Saddle/Bandana Lake shorelines; Leave No Trace",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+     "closures": "Tupso Pass Road (FR 41) washed out ~4.8 miles in and closed to vehicles beyond the Canyon Creek bridge (~mile 8.5) since 2023 — check current MBS NF alerts before driving out",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Darrington Ranger District (Boulder River Wilderness)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass (or America the Beautiful pass) for trailhead parking; free self-issue wilderness permit at the trailhead",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Boulder River Wilderness permit",
+      "where": "Fill one out at the trailhead register; a Northwest Forest Pass is needed to park."
+     }
+    },
+    "road": {
+     "name": "Tupso Pass Road (FR 41)",
+     "status": "Washed out at approximately mile 4.8; permanently closed to vehicle travel beyond the Canyon Creek bridge (~mile 8.5)",
+     "driveNote": "From the vehicle closure gate it's roughly 9 additional miles of road walking or mountain biking to reach the signed Goat Flats trailhead at ~mile 17.5-18",
+     "seasonalGate": "Vehicle gate at Canyon Creek bridge is a standing closure, not seasonal, pending any Forest Service repair"
+    }
+   }
+  },
+  {
+   "id": "wa_fish_whistle",
+   "before": {
+    "loss_ft": 4400,
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "The hardest of Vesper's North Face testpieces, starting just left of True Grit and following bolted friction slabs and a long seam pitch. Same approach as the other North Face routes (Sunrise Mine Trailhead to Vesper Lake, then a short scramble to the base) and the same Class 2 talus walk-off.",
+       "hours": 11.5,
+       "miles": 8.5,
+       "title": "Fish & Whistle, car to car",
+       "gainFt": 4400,
+       "lossFt": 4400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:00-4:30 AM",
+         "label": "Leave trailhead",
+         "detail": "Earlier start recommended given the harder, slower pitches."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Reach Vesper Lake basin",
+         "detail": ""
+        },
+        {
+         "time": "8:30-9:00 AM",
+         "label": "Start climbing",
+         "detail": "Base is ~50 ft left of the True Grit start."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Top out",
+         "detail": "5 pitches, cruxes on P1/P3/P5 (5.9-5.10-), P1/2 and P3/4 link with a 60m rope."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Descend",
+         "detail": "Class 2 southeast talus gully back to Vesper Lake."
+        },
+        {
+         "time": "5:00-5:30 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Fish & Whistle (5.10-, 5 pitches) on Vesper's North Face"
+      }
+     ],
+     "totalNote": "A long, harder single day car-to-car: ~11-12 hrs, ~4,400 ft gain, 5 pitches up to 5.10-."
+    },
+    "access": {
+     "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Darrington Ranger District",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required outside the wilderness",
+      "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_ragged_edge",
+   "before": {
+    "loss_ft": 4400,
+    "itinerary": {
+     "cal": "Best conditions typically July-September once the face's ledge traverse has melted out.",
+     "days": [
+      {
+       "n": 1,
+       "note": "The Ragged Edge day plan: a long single push from the Sunrise Mine Trailhead through Headlee Pass to Vesper Lake, up 6 pitches of low-angle slab/corner climbing on the North Face, then a Class 2 talus walk-off back to the lake and out.",
+       "hours": 10.5,
+       "miles": 8.5,
+       "title": "Ragged Edge, car to car",
+       "gainFt": 4400,
+       "lossFt": 4400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Reach Vesper Lake",
+         "detail": ""
+        },
+        {
+         "time": "8:45 AM",
+         "label": "Start climbing",
+         "detail": ""
+        },
+        {
+         "time": "~12:00 PM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Begin descent",
+         "detail": "Class 2 south/west talus."
+        },
+        {
+         "time": "4:15 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the 6-pitch Ragged Edge (5.7) and descend the standard talus route"
+      }
+     ],
+     "totalNote": "A long single day car-to-car: roughly 10-11 hrs, ~4,400 ft gain, 6 pitches of 5.5-5.7 alpine rock."
+    },
+    "access": {
+     "_raw": {
+      "notes": "Route via Sunrise Mine Trail; outside North Cascades National Park and wilderness boundaries",
+      "permit_cost": "Free",
+      "permit_type": "None (day use and camping permitted without permit)",
+      "land_manager": "USFS Mount Baker-Snoqualmie National Forest",
+      "wilderness_zone": "Outside protected wilderness areas (no permit required)",
+      "group_size_limit": "No specific restriction (outside wilderness)",
+      "parking_pass_cost": "$5 per day or $30 annual",
+      "seasonal_closures": "Mountain Loop Highway seasonal; check current status (typically open spring-fall)",
+      "special_requirements": "No backcountry permit required; standard wilderness practices apply",
+      "parking_pass_required": "Northwest Forest Pass recommended (depending on trailhead)",
+      "permit_pickup_location": "Not applicable - no permit required",
+      "ranger_district_contact": "(360) 436-1155 - Darrington Ranger District"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "No specific group-size restriction (outside wilderness); standard Northwest Forest Pass trailhead rules apply.",
+     "permit": "None (day use and camping permitted without permit)",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "permitZone": "Outside protected wilderness areas (no permit required)",
+     "group_limit": 12,
+     "landManager": "USFS Mount Baker-Snoqualmie National Forest",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass recommended (depending on trailhead)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required outside the wilderness",
+      "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_true_grit_2",
+   "before": {
+    "access": {
+     "_raw": {
+      "notes": "Route via Sunrise Mine Trail; outside North Cascades National Park and wilderness boundaries",
+      "permit_cost": "Free",
+      "permit_type": "None (day use and camping permitted without permit)",
+      "land_manager": "USFS Mount Baker-Snoqualmie National Forest",
+      "wilderness_zone": "Outside protected wilderness areas (no permit required)",
+      "group_size_limit": "No specific restriction (outside wilderness)",
+      "parking_pass_cost": "$5 per day or $30 annual",
+      "seasonal_closures": "Mountain Loop Highway seasonal; check current status (typically open spring-fall)",
+      "special_requirements": "No backcountry permit required; standard wilderness practices apply",
+      "parking_pass_required": "Northwest Forest Pass recommended (depending on trailhead)",
+      "permit_pickup_location": "Not applicable - no permit required",
+      "ranger_district_contact": "(360) 436-1155 - Darrington Ranger District"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "None (day use and camping permitted without permit)",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "permitZone": "Outside protected wilderness areas (no permit required)",
+     "group_limit": 12,
+     "landManager": "USFS Mount Baker-Snoqualmie National Forest",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass recommended (depending on trailhead)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required outside the wilderness",
+      "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_vesper_peak_north_face_ragged_edge",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass (or America the Beautiful interagency pass) required to park at the Sunrise Mine Trailhead",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "No climbing permit required",
+     "closures": "Sunrise Mine Road (FR 4065) and the upper Mountain Loop Highway are subject to seasonal closure; check Mt. Baker-Snoqualmie National Forest alerts (fs.usda.gov) before traveling",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest (Darrington Ranger District; the former Verlot Ranger District office now operates as the Verlot Public Service Center)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required outside the wilderness",
+      "where": "Park with a Northwest Forest Pass. Routes entering the Henry M. Jackson Wilderness need the free self-issue permit from the trailhead register."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "before": {
+    "pro_tips": [
+     "Target February-April, ideally right after a low-elevation snowstorm and a solid refreeze, for the firmest, most predictable conditions",
+     "Stash skis or other snow-travel gear around 2,500 ft in the old growth on the way up to lighten the bushwhack, and retrieve it on descent",
+     "Start pre-dawn — the entire route is exposed to avalanche and wet-slide danger once the sun hits it"
+    ],
+    "itinerary": {
+     "cal": "Best done Feb-April in a high-pressure window after a refreeze; brushy/rocky lower gulch and rime-plastered cirque are far safer when snow-covered and consolidated.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Also a single-day push, not an overnight trip: an early start up Snow Gulch and a steep timbered/rocky ridge (stashing non-essential gear partway), then skinning or booting a glacier basin below the summit block and climbing a short, steep (~50 deg) final pitch. Real ski-descent and climbing trip reports show ~12 hours car-to-car for a fit party in good spring conditions.",
+       "hours": 12,
+       "miles": 13,
+       "title": "Car-to-car via Snow Gulch and the NW Face",
+       "gainFt": 6400,
+       "lossFt": 6400,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "~4:00-4:30 AM",
+         "label": "Leave trailhead / Moose Creek barricade",
+         "detail": "Pre-dawn start; drive/walk to the Snow Gulch approach."
+        },
+        {
+         "time": "~5:15 AM",
+         "label": "Reach Snow Gulch",
+         "detail": "Old forest road/creek approach; can be icy and slippery low down."
+        },
+        {
+         "time": "~7:00 AM",
+         "label": "Top of the bushwhack ridge (~2,500-3,600 ft)",
+         "detail": "Stash non-essential gear near 2,500 ft; boots/crampons on the ridge, skis or foot travel above as snow softens."
+        },
+        {
+         "time": "~10:00 AM",
+         "label": "Reach the glacier basin below the summit block",
+         "detail": "Steep rock walls plastered with rime line the cirque."
+        },
+        {
+         "time": "~11:30 AM-12:00 PM",
+         "label": "Climb the final ~50 deg pitch to the summit",
+         "detail": "Short but genuinely steep icy snow; axe and second tool/whippet recommended."
+        },
+        {
+         "time": "~4:00-4:30 PM",
+         "label": "Back at the car",
+         "detail": "Descend the same line before the snowpack warms further; upper snow can turn to breakable crust by afternoon."
+        }
+       ],
+       "objective": "Climb the Northwest Face ice/snow line to the summit and descend same day"
+      }
+     ],
+     "totalNote": "A demanding single day: about 6,400 ft gain over ~13 mi round trip, roughly 12 hours car-to-car in a good spring refreeze window."
+    },
+    "climate": {
+     "typical": "Wet, maritime west-slope Cascades climate with well over 100 in/yr precipitation; the prime window for this route is a stable high-pressure period after a refreeze, not just a calendar season.",
+     "bySeason": {
+      "fall": "Not a typical season for this line",
+      "spring": "Prime season (Feb-April) — deep snow covers the brush and buries the approach, but the entire uptrack is avalanche terrain; go right after a storm cycle refreezes",
+      "summer": "Route becomes the standard Northwest Shoulder summer scramble as snow recedes and the glacier opens crevasses",
+      "winter": "Occasionally skied/climbed in deep-snow years but avalanche hazard is severe and daylight short"
+     },
+     "forecastZone": "NWAC \"West Slopes North\""
+    },
+    "road": {
+     "name": "387th Ave NE / Old Mine Road (unsigned FS spur off SR-530)",
+     "status": "Paved for about the first 0.5 mile off SR-530, then gravel; dead-ends at the boulder-and-steel-gate barricade where the Moose Creek bridge was removed in 2008.",
+     "driveNote": "From Darrington go ~5 mi west on SR-530 (from Arlington ~26 mi east) to the Whitehorse store at Mine Road, turn south, and follow the gravel spur ~0.6-0.75 mi to the barricade.",
+     "seasonalGate": "No formal gate, but access is frequently snowed-in during this route's prime Feb-April season — check current conditions."
+    }
+   }
+  }
+ ]
+}

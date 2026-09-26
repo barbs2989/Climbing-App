@@ -1,0 +1,392 @@
+{
+ "batches": ["b165.json", "b166.json", "b167.json", "b168.json"],
+ "routes_read": 10,
+ "routes": [
+  {
+   "id": "wa_booker_mountain_northeast_face",
+   "name": "Northeast Face",
+   "area": "Booker Mountain",
+   "contradictions": [
+    {
+     "fact": "Icefall traverse direction (left vs right) to reach the main wall",
+     "severity": "medium",
+     "claims": [
+      {"field": "beta", "says": "then traverse left across an icefall (reported as a genuinely exposed, 'frightening' crossing) to reach the main rock wall"},
+      {"field": "approach_variants[0].notes", "says": "ascend LEFT up that glacier to an icefall, then traverse RIGHT through the icefall to reach the main rock wall"},
+      {"field": "approach_variants[0].baseFinding", "says": "The direction reverses — left to reach the icefall, right to get through it — and that reversal is what tells you the crossing you are making is the intended one"}
+     ],
+     "why": "beta states the icefall crossing that reaches the wall is to the left, while approach_variants (notes and baseFinding) both say the party ascends left to the icefall and then traverses RIGHT through it to reach the wall — opposite directions for the move that actually gets a party to the rock.",
+     "internal_resolution": "approach_variants.notes and its baseFinding agree with each other (2 fields) against beta (1 field); 'right through the icefall' is more likely correct and beta's single-word summary is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_booker_mountain_south_ridge",
+   "name": "South Ridge",
+   "area": "Booker Mountain",
+   "contradictions": [
+    {
+     "fact": "dist_km reads as one-way, but is the only distance figure and would render as the route's total 'Dist'",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "17.7 (≈11.0 mi)"},
+      {"field": "waypoints[2].distMi", "says": "11 (Booker Mountain summit, one-way distance from the trailhead)"},
+      {"field": "itinerary", "says": "Most commonly done as one very long day from the Cascade Pass Trailhead (reported parties starting ~2-3am and finishing ~7:30pm when combining with Buckner), or as a 2-day trip..."}
+     ],
+     "why": "dist_km (17.7 km ≈ 11.0 mi) exactly matches the ONE-WAY waypoint distance to the summit, not a round trip. Since this route has no itinerary-days miles array, the header 'Dist' would show this one-way figure, while the described ~16-17 hour day (2-3am to 7:30pm) implies a much longer round-trip distance (~22 mi).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_booker_mountain_northwest_route",
+   "name": "Northwest Route",
+   "area": "Booker Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_north_ridge_7",
+   "name": "North Ridge",
+   "area": "Aiguille de l'M",
+   "contradictions": [
+    {
+     "fact": "Crux grade: `grade` field ('4th' class) vs rock_grade/pitch_detail (5.5)",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "4th (grade_system: class, grade_num: 5)"},
+      {"field": "rock_grade", "says": "5.5"},
+      {"field": "pitch_detail[1].grade", "says": "5.5 (pitch '4')"},
+      {"field": "detailed_rack", "says": "a single steeper crux step (published descriptions call it 4th class, ~50-60ft; others describe it as up to 5.5)"}
+     ],
+     "why": "TECHNICAL STATS' crux grade is sourced from `grade`, which states only '4th' class for this route, while rock_grade and the pitch_detail row for the crux pitch both call it 5.5 — the header pill uses rock_grade so it shows correctly, but the crux figure sourced from `grade` would understate the difficulty.",
+     "internal_resolution": "rock_grade and pitch_detail agree on 5.5 (2 vs 1); `grade`='4th' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route finish: does the route continue past the tower via one more pitch to 'the summit', or stop at/rappel from the tower?",
+     "severity": "medium",
+     "claims": [
+      {"field": "detailed_rack", "says": "...a single steeper crux step...leading to a short tower, followed by one more short 4th class pitch to the summit."},
+      {"field": "pro_tips", "says": "Tower summit notably loose; true summit to right should be avoided"},
+      {"field": "approach_variants[0].baseFinding", "says": "THE MOST IMPORTANT THING TO KNOW ABOUT THE TOP IS THAT IT IS NOT THE TOP. The route finishes on a subsidiary tower... most parties deliberately stop short of it... it is the reason the descent is a single 40-ft rappel from where you stand."},
+      {"field": "descent", "says": "One 40-foot rappel from tower top, followed by down-climbing ridge."}
+     ],
+     "why": "detailed_rack describes an extra 4th-class pitch continuing past the tower to reach 'the summit', while pro_tips, the approach_variants baseFinding, and descent all agree the route deliberately ends at/raps from the tower and does not continue to the true summit.",
+     "internal_resolution": "Three fields (pro_tips, baseFinding, descent) agree the tower is the endpoint; detailed_rack's extra pitch is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Boston Basin high camp elevation: approach text (~6,000 ft) vs itinerary/bivy (6,400 ft)",
+     "severity": "low",
+     "claims": [
+      {"field": "approach", "says": "...to reach the popular Boston Basin high camp around 6,000 ft — roughly 3-4 miles one-way with about 3,000-3,300 ft of elevation gain."},
+      {"field": "itinerary", "says": "Day 1: ...hike ~2.5 mi / ~3,000 ft gain to high camp (~6,400 ft)."},
+      {"field": "bivy[1].elev", "says": "6400 (Boston Basin upper (high) camp)"}
+     ],
+     "why": "The same named camp is given as ~6,000 ft in the approach prose but 6,400 ft in the itinerary text and the bivy entry — a ~400 ft difference for the same designated site.",
+     "internal_resolution": "itinerary and bivy agree at 6,400 ft (2 vs 1); the approach text's 'around 6,000 ft' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Boston Basin high camp: approach text (3-4 mi) vs itinerary (2.5 mi)",
+     "severity": "low",
+     "claims": [
+      {"field": "approach", "says": "roughly 3-4 miles one-way with about 3,000-3,300 ft of elevation gain"},
+      {"field": "itinerary", "says": "hike ~2.5 mi / ~3,000 ft gain to high camp (~6,400 ft)"}
+     ],
+     "why": "Two fields on the same route give different one-way distances (3-4 mi vs 2.5 mi) to the same camp.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "name": "South Ridge",
+   "area": "Aiguille de l'M",
+   "contradictions": [
+    {
+     "fact": "Pitch count: `pitches` (5) vs pitch_detail's numbered rows (only 4 accounted for)",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "5"},
+      {"field": "pitch_detail", "says": "rows are '1-3' (grouped, grade 'Class 4 to 5.5') and '4' (grade '5.6') — no fifth row"},
+      {"field": "itinerary", "says": "...approach via snowfields to the base of the South Ridge, climb the 5 pitches to the top, then descend via the North Ridge back to camp."}
+     ],
+     "why": "pitches and itinerary both say 5, but pitch_detail's own rows only number up to '4' (with pitches 1-3 grouped into one entry), one pitch short of the stated total.",
+     "internal_resolution": "itinerary agrees with pitches (5); pitch_detail's grouping is missing/short a row.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent method: rappels/itinerary say descend via the North Ridge (1 rappel), but descent/descent_text/bail describe reversing the South Ridge itself",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "Descends via North Ridge: 1 rappel (~40 ft) from fixed slings"},
+      {"field": "itinerary", "says": "...climb the 5 pitches to the top, then descend via the North Ridge back to camp."},
+      {"field": "descent", "says": "Descend via same ridge or similar route depending on descent planning. Likely requires belayed sections and possible rappels."},
+      {"field": "descent_text", "says": "Descend exposed ridge via Class 4 scrambling and short 5.6 downclimbing. Depending on party confidence, rappel may be used for crux section. Reverse route-finding back to camp."},
+      {"field": "bail", "says": "Exposed nature makes retreat more committing than North Ridge. If weather deteriorates, descend carefully via ridge to rejoin approach."}
+     ],
+     "why": "Two fields (rappels, itinerary) say the descent crosses to the North Ridge for a single 40 ft rappel, while three other fields (descent, descent_text, bail) describe reversing the South Ridge itself — Class 4 scrambling with short 5.6 downclimbing and possible rappels — with no mention of switching to the North Ridge. A climber would get two incompatible descent plans.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux pitch number: pro_needs/detailed_rack call it pitch 3; pitch_detail's row is labeled 4",
+     "severity": "low",
+     "claims": [
+      {"field": "pro_needs", "says": "...belayers on pitch 2 should stay out of the fall line because of rockfall risk from parties above on the pitch 3 crux."},
+      {"field": "detailed_rack", "says": "...the sustained low-5th ridge climbing and the 5.6 crux on pitch 3 (bypassing a gendarme on the right, on more solid but harder rock)."},
+      {"field": "pitch_detail[1].pitch", "says": "4 (grade '5.6', 'Most technical section')"}
+     ],
+     "why": "pro_needs and detailed_rack both call the 5.6 crux 'pitch 3', but pitch_detail's own numbered row for that grade is labeled '4'.",
+     "internal_resolution": "pro_needs and detailed_rack agree (pitch 3, 2 fields); pitch_detail's '4' label is the outlier — likely related to the missing pitch-detail row noted above.",
+     "needs_research": false
+    },
+    {
+     "fact": "gain_ft (1,900 ft) is implausibly low for this route's own trailhead-to-summit elevation difference (~4,000 ft)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "1900"},
+      {"field": "waypoints[0].elev", "says": "3200 (Boston Basin Trailhead)"},
+      {"field": "high_point_ft", "says": "7200"},
+      {"field": "(sibling route wa_north_ridge_7).gain_ft", "says": "4000 — same trailhead and same summit"}
+     ],
+     "why": "The trailhead-to-summit elevation difference alone is ~4,000 ft (7,200−3,200 ft), and the sibling North Ridge route — reaching the same summit from the same trailhead — states gain_ft=4000; South Ridge's 1,900 ft is barely half that, which is not physically plausible.",
+     "internal_resolution": "North Ridge's 4,000 ft matches simple elevation-difference arithmetic for the shared trailhead/summit pair; South Ridge's 1,900 ft looks like a data error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Boston Basin high camp elevation: approach text (~6,000 ft) vs itinerary (6,400 ft) — same shared text issue as the North Ridge route",
+     "severity": "low",
+     "claims": [
+      {"field": "approach", "says": "...to reach the popular Boston Basin high camp around 6,000 ft — roughly 3-4 miles one-way with about 3,000-3,300 ft of elevation gain."},
+      {"field": "itinerary", "says": "Day 1: Drive to the Boston Basin trailhead and hike in to high camp (~6,400 ft)."}
+     ],
+     "why": "Same named camp given as ~6,000 ft in approach prose but 6,400 ft in the itinerary text.",
+     "internal_resolution": "Itinerary's 6,400 ft matches the bivy list's designated high-camp elevation on the sibling North Ridge route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Nearest hospital: this route says only 'Marblemount area'; the sibling North Ridge route (same peak/area) names a specific hospital 45 mi down-valley",
+     "severity": "low",
+     "claims": [
+      {"field": "emergency.nearestHospital", "says": "Marblemount area"},
+      {"field": "(sibling route wa_north_ridge_7).emergency.nearestHospital", "says": "PeaceHealth United General Medical Center, Sedro-Woolley - about 45 miles down the Skagit valley"}
+     ],
+     "why": "Two routes on the same crag give different, seemingly incompatible answers for the same geographic fact (nearest hospital).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_boston_peak_southeast_face",
+   "name": "Southeast Face",
+   "area": "Boston Peak",
+   "contradictions": [
+    {
+     "fact": "Total route distance: dist_km (2.5 mi) vs itinerary days total (11.9 mi)",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "4 (≈2.5 mi)"},
+      {"field": "itinerary.days[0].miles, itinerary.days[1].miles, itinerary.days[2].miles", "says": "3.2 + 5.5 + 3.2 = 11.9 mi"}
+     ],
+     "why": "dist_km is roughly a fifth of the summed itinerary mileage for the same car-to-car trip. (Flagged by the mechanical detector pass.)",
+     "internal_resolution": "The itinerary days are granular and internally consistent with their own gain/loss figures (sum to gain_ft/loss_ft exactly); dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cascade River Road access beyond the Eldorado gate (MP20) to Boston Basin trailhead: this route and Northwest Ridge describe normal seasonal access, but the sibling West Face route says the road is currently gated there by 2026 landslide damage",
+     "severity": "medium",
+     "claims": [
+      {"field": "road.status", "says": "Paved to mile 10 from Marblemount, then rough gravel with potholes/washboard from mile 10 to 20...Mile 20 (Eldorado) is the common seasonal/washout closure gate; beyond it the road narrows and climbs steeply the final 3 miles to the Boston Basin trailhead (mile 22.5) and Cascade Pass trailhead (mile 23.1, 3,660 ft)."},
+      {"field": "road.seasonalGate", "says": "Gated at Eldorado (mile 20) through winter and during washout/storm repairs; typically opens to the Cascade Pass trailhead by late June..."},
+      {"field": "(sibling route wa_boston_peak_west_face).road.status", "says": "Open to Eldorado Trailhead (MP 20) as of mid-2026; gated there following spring-2026 landslide/storm damage near MP 18"},
+      {"field": "(sibling route wa_boston_peak_west_face).access_checked_at", "says": "2026-08-27T12:00:00+00:00"}
+     ],
+     "why": "This route's road field describes normal season-only gating with continued access past Eldorado to the Boston Basin trailhead (mile 22.5), with no mention of any ongoing closure, while the sibling West Face route on the same peak (same road) states the road is currently gated AT Eldorado due to spring-2026 storm/landslide damage — meaning a driver could not currently reach mile 22.5 by car at all per that route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_boston_peak_west_face",
+   "name": "West Face of Boston",
+   "area": "Boston Peak",
+   "contradictions": [
+    {
+     "fact": "ice_grade 'M1' vs beta's description of 'vertical mixed terrain'",
+     "severity": "high",
+     "claims": [
+      {"field": "ice_grade", "says": "M1"},
+      {"field": "beta", "says": "A winter ascent found the climbing ranging from low-angle snow to vertical mixed terrain near the top, with significant rime-ice removal required and a bergschrund circumvented by climbing to climber's right."}
+     ],
+     "why": "M1 denotes near-flat, walking-angle mixed ground, which is inconsistent with the route's own account of 'vertical mixed terrain' requiring significant rime-ice clearing near the top — a climber relying on M1 would badly underprepare for the crux.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cascade River Road access beyond the Eldorado gate: this route says currently gated by 2026 landslide damage, but sibling routes on the same peak describe normal seasonal access",
+     "severity": "medium",
+     "claims": [
+      {"field": "road.status", "says": "Open to Eldorado Trailhead (MP 20) as of mid-2026; gated there following spring-2026 landslide/storm damage near MP 18"},
+      {"field": "access_checked_at", "says": "2026-08-27T12:00:00+00:00"},
+      {"field": "(sibling route wa_boston_peak_southeast_face).road.status", "says": "...beyond it the road narrows and climbs steeply the final 3 miles to the Boston Basin trailhead (mile 22.5) and Cascade Pass trailhead (mile 23.1, 3,660 ft)."},
+      {"field": "(sibling route wa_northwest_ridge_2).road.status", "says": "Paved to mile 10 from Marblemount, then gravel to mile 20 (Eldorado gate); the final 3 miles beyond the gate climb steeply and narrowly to the Boston Basin trailhead (mile 22.5)."}
+     ],
+     "why": "Same as the corresponding finding on the Southeast Face route: two of the three Boston Peak routes describe normal access to mile 22.5, while this route says the road is currently gated at MP20.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "name": "Northwest Ridge",
+   "area": "Boston Peak",
+   "contradictions": [
+    {
+     "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018",
+     "severity": "low",
+     "claims": [
+      {"field": "fa", "says": "Boyce–Willis, July 2018 (this specific ridge line; the peak's overall first ascent was 1938 by a different party via the easier east side)"},
+      {"field": "overview", "says": "Its only known ascent is Sam Boyce and Kyle Willis's August 2018 'Boston Marathon,'..."},
+      {"field": "best_season", "says": "...the only documented ascent was in August."},
+      {"field": "seasonal_guidance.monthBreakdown.August.reason", "says": "Best-documented conditions — the one known ascent was in this window"}
+     ],
+     "why": "The `fa` field dates the only known ascent to July 2018, but overview, best_season, and seasonal_guidance's month breakdown all independently say August 2018.",
+     "internal_resolution": "Three fields agree on August; `fa`'s July is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent_text", "says": "...most sensibly descend via the Southwest Face's established rappel line (3 rappels down the southeast/east face on fixed slings to the Boston Glacier — see that route)..."},
+      {"field": "itinerary.cal", "says": "No independent descent exists for this ridge, so plan on using the standard Southwest Face rappel descent to get off the summit..."},
+      {"field": "itinerary.days[1].note", "says": "...once you top out on Boston's true summit, walk off via the standard southeast-side ledges and three 25m rappels shared with the Southwest Face route, back to the Boston Basin high camp."},
+      {"field": "(sibling route wa_boston_peak_southeast_face).name", "says": "Southeast Face — descent: 3x25m rappels down the southeast face to the Boston Glacier"}
+     ],
+     "why": "Three fields on this row call the recommended descent route 'Southwest Face', but Boston Peak's only route matching that description (southeast-side ledges, three 25m rappels to the Boston Glacier) is actually named 'Southeast Face'; no 'Southwest Face' route exists in the dataset.",
+     "internal_resolution": "The described mechanics (southeast ledges, 3×25m rappels to the Boston Glacier) exactly match the existing 'Southeast Face' route, so 'Southwest Face' is very likely a naming error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent method: `rappels` describes a specific 3-5 rappel reversal of the ridge itself, while descent/descent_text/bail say no such descent beta exists and recommend against reversing the ridge",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "3–5 rappels down the standard south-face route, threading around several gendarmes back toward the Boston–Sahale col"},
+      {"field": "descent", "says": "The FA party continued their traverse onward rather than descending the ridge, so no descent-only beta exists. A retreat would likely require reversing the ridge by rappel/downclimb given the scarcity of fixed anchors and the absence of established rappel stations."},
+      {"field": "descent_text", "says": "No descent-only beta exists for this ridge...Retreating directly back down the Northwest Ridge itself should be assumed to mean natural, self-built anchors the whole way...with zero documented stations..."},
+      {"field": "bail", "says": "No documented bail points; retreat requires downclimbing/rappelling the loose ridge crest back the way it was climbed, or dropping into Boston Basin on rotten rock/scree if a lower point permits."}
+     ],
+     "why": "`rappels` presents a specific, seemingly established descent (3-5 rappels via gendarmes back to the Boston-Sahale col) as though it were known/standard, while three other fields explicitly say no descent-only beta exists for reversing this ridge and any anchors used would be improvised — directly contradicting the idea that this is a documented reversal line.",
+     "internal_resolution": "descent, descent_text, and bail (3 fields) agree there is no established reversal descent; `rappels` is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[0].miles", "says": "3.2"},
+      {"field": "itinerary.days[0].objective", "says": "Reach a high camp positioned under Sharkfin/Boston"},
+      {"field": "waypoints[3].distMi", "says": "5.3 (Lower Boston Basin Camp)"},
+      {"field": "waypoints[4].distMi", "says": "6.3 (Western edge of Quien Sabe Glacier, on the way to the higher camp under Sharkfin/Boston)"}
+     ],
+     "why": "Itinerary day 1 claims only 3.2 mi to reach camp, but this route's own waypoint chain places even the LOWER basin camp at 5.3 mi from the trailhead, with the actual high camp under Sharkfin/Boston farther still — a discrepancy of 65%+ that would badly mis-set a party's day-1 time estimate.",
+     "internal_resolution": "The 8-point waypoint chain is specific to this route and internally sequential; itinerary day 1's numbers (miles 3.2, hours 4, gainFt 3100) are identical to the Southeast Face route's day 1 and appear to be reused rather than recalculated for this route's actual approach.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_buckner_mountain_southwest_face",
+   "name": "Southwest Face / Southwest Slopes",
+   "area": "Buckner Mountain",
+   "contradictions": [
+    {
+     "fact": "obj_haz lists hazards belonging to a different approach (Quien Sabe Glacier crevasses, Boston Basin bears) that don't apply to this route's actual Cascade Pass/Sahale Arm/Horseshoe Basin line",
+     "severity": "low",
+     "claims": [
+      {"field": "obj_haz", "says": "crevassed glacier travel if approaching via the Quien Sabe Glacier"},
+      {"field": "obj_haz", "says": "bears regularly seen in Boston Basin"},
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel; the route crosses a permanent snowfield/shoulder but does not involve glacier crevasse hazard"},
+      {"field": "hazards", "says": "['loose scree', 'rockfall', 'steep early-season snow'] — no glacier hazard listed"},
+      {"field": "approach / beta / bivy", "says": "entire approach and camps are via the Cascade Pass Trailhead → Sahale Glacier Camp → Horseshoe Basin; bivy list is 'Sahale Glacier Camp' and 'Upper Horseshoe Basin bivy' — Boston Basin is never mentioned"}
+     ],
+     "why": "seasonal_hazards, the main hazards list, and the entire approach/bivy description all agree this route involves no glacier travel and never passes through Boston Basin, yet obj_haz includes a Quien Sabe Glacier crevasse hazard and a Boston Basin bear warning — both apparently copied from a different Buckner/Boston Peak route. (Glacier-claim flagged by the mechanical detector pass.)",
+     "internal_resolution": "Three other fields (seasonal_hazards, hazards, approach/bivy) agree there is no glacier travel or Boston Basin exposure on this route; the two obj_haz entries are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "dist_km reads as one-way (10.0 mi) while itinerary/totalNote state the round-trip distance (18-20 mi)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "16.09 (≈10.0 mi)"},
+      {"field": "itinerary.days (sum of miles)", "says": "5.5 + 7 + 5.5 = 18 mi"},
+      {"field": "itinerary.totalNote", "says": "A standard 3-day trip (~18-20 mi round trip, ~7,400 ft total gain)..."},
+      {"field": "waypoints[6].distMi", "says": "9.2 (one-way distance to the summit, ≈ dist_km's 10.0 mi)"}
+     ],
+     "why": "dist_km closely matches the one-way waypoint distance to the summit (9.2 mi), while itinerary and totalNote both state the round-trip figure (18-20 mi) — the same low-priority one-way-vs-round-trip pattern called out for dist_km generally.",
+     "internal_resolution": "dist_km appears to record one-way distance; itinerary/totalNote/waypoints (doubled) agree on ~18-20 mi round trip.",
+     "needs_research": false
+    },
+    {
+     "fact": "Hike-out distance: descent_text (9.6 mi) vs itinerary day 3 (5.5 mi) and the waypoint chain (5.9 mi one-way)",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent_text", "says": "...descend the Sahale Arm/Cascade Pass Trail 9.6 miles back to the Cascade Pass Trailhead."},
+      {"field": "itinerary.days[2].miles", "says": "5.5"},
+      {"field": "waypoints[2].distMi", "says": "5.9 (Sahale Glacier Camp, one-way from the trailhead)"}
+     ],
+     "why": "descent_text states the final hike-out leg is 9.6 miles, nearly double the 5.5-5.9 mi that both the itinerary and the route's own waypoint chain give for the same Sahale Glacier Camp-to-trailhead leg.",
+     "internal_resolution": "itinerary day 3 (5.5 mi) and the waypoint chain (5.9 mi one-way) closely agree; descent_text's 9.6 mi is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "name": "North Face",
+   "area": "Buckner Mountain",
+   "contradictions": [
+    {
+     "fact": "Season window: `season`/itinerary.cal say Jul-Sep, but best_season/seasonal_guidance/pro_tips say the route is best (and conditions degrade badly by high summer) in Late May-early July",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "itinerary.cal", "says": "Best conditions are July-September after avalanche danger passes; since this is a point-to-point route..."},
+      {"field": "best_season", "says": "Late May through early July"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Late May through early July, with June generally offering the best balance of ice quality and access"},
+      {"field": "seasonal_guidance.monthBreakdown", "says": "only May ('good'), June ('optimal'), July ('marginal') are scored — August and September are not present at all"},
+      {"field": "seasonal_guidance.monthBreakdown.July.reason", "says": "Face 'bares out' as summer progresses, increasing rockfall risk and degrading ice quality; route becomes progressively less in-condition"},
+      {"field": "pro_tips", "says": "Climb in late spring for the most reliable neve"}
+     ],
+     "why": "This is a snow/ice route whose own seasonal guidance, month breakdown, and pro tips all agree the good conditions are Late May-early July and that the route degrades (bares out, more rockfall) as summer progresses — yet the headline `season` field and itinerary.cal both claim the primary window is July-September, almost the opposite of what the rest of the row supports. (Flagged three times by the mechanical detector pass.)",
+     "internal_resolution": "Four fields (best_season, seasonal_guidance.optimalWindow, monthBreakdown, pro_tips) agree on Late May-early July; only `season` and itinerary.cal claim Jul-Sep, and both read like a generic Cascades-season template rather than route-specific data.",
+     "needs_research": false
+    },
+    {
+     "fact": "Starting trailhead: approach/approach_variants/itinerary/timing all say Boston Basin Trailhead, but approach_logistics and the entire waypoint chain document the Cascade Pass Trailhead / Sahale Arm approach instead",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "Start from the Boston Basin Trailhead (~3,200 ft), about 21.7 miles up Cascade River Road from Marblemount (a separate, shorter-drive trailhead than the Cascade Pass TH used for the SW route)."},
+      {"field": "approach_variants[0].notes", "says": "Start from the BOSTON BASIN trailhead near 3,200 ft, about 21.7 miles up Cascade River Road — a different and shorter drive than the Cascade Pass trailhead used for the southwest route."},
+      {"field": "itinerary.days[0].note", "says": "From the Boston Basin trailhead, hike into Boston Basin, ascend the Quien Sabe Glacier to the Boston-Sahale col..."},
+      {"field": "timing.sectionBreakdown[0].note", "says": "From the Boston Basin trailhead, hike into Boston Basin..."},
+      {"field": "approach_logistics.trailhead", "says": "Cascade Pass Trailhead"},
+      {"field": "approach_logistics.trailheadLat / trailheadLng", "says": "48.47544 / -121.07503 (Cascade Pass Trailhead coordinates)"},
+      {"field": "waypoints[0].name", "says": "Cascade Pass Trailhead (elev 3600, distMi 0) — the entire waypoint chain follows the Cascade Pass/Sahale Arm/Boston-Sahale col line, not the Boston Basin/Quien Sabe/Sharkfin Col line the approach text describes"}
+     ],
+     "why": "Four fields (approach, approach_variants, itinerary, timing) explicitly say this route's primary/standard start is the Boston Basin Trailhead via the Quien Sabe Glacier and a Sharkfin Col rappel — yet approach_logistics' trailhead name/coordinates and the entire documented waypoint list instead describe the Cascade Pass Trailhead / Sahale Arm approach, which the route's own approach_variants text calls only 'a second way in.' A climber following approach_logistics or the waypoints would drive to and start from the wrong trailhead and follow the wrong glacier approach entirely.",
+     "internal_resolution": "Four fields agree the primary start is Boston Basin Trailhead; approach_logistics and waypoints instead document the secondary Sahale-side approach as if it were the primary one.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

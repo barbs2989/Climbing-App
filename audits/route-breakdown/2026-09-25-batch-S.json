@@ -1,0 +1,238 @@
+{
+  "wa_summit_chief_mountain_north_face": {
+    "area": "wa_summit_chief_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Avalanche cone and lower face",
+        "grade": "Neve",
+        "notes": "The line is the chain of runnels and couloirs just right of the true summit on the north face. Start up the avalanche cone at the foot of the face, then climb neve on the lower face into the ramp."
+      },
+      {
+        "pitch": "1",
+        "grade": "WI3",
+        "lengthM": 183,
+        "notes": "The ramp that looks from below like a snow slope linking to the first snowfield can hold several pitches of water ice, mostly WI2 with WI3 steps, finishing on a steeper WI3 pitch into the first snowfield. The rock alongside is compact and takes little beyond thin pitons, so the ice has to carry the protection: bring a real screw rack, not a couple of screws."
+      },
+      {
+        "pitch": "2",
+        "grade": "Snow/neve",
+        "notes": "The first snowfield: moving ground on neve above the ramp. The runnels below funnel everything that slides off this slope and the one above it, and spindrift avalanches run down the face once snow starts falling. Keep moving and watch the weather, since the face turns into a spindrift chute quickly."
+      },
+      {
+        "pitch": "3",
+        "grade": "Snow/neve",
+        "notes": "The second snowfield continues up toward the exit step at its top. Same neve and the same exposure to spindrift as the lower snowfield."
+      },
+      {
+        "pitch": "4",
+        "grade": "AI2",
+        "notes": "A short alpine ice step exits the top of the second snowfield and leads out of the couloir system onto the summit slopes. It is the last technical ground on the route."
+      },
+      {
+        "pitch": "Scramble to the summit",
+        "grade": "Easy scramble",
+        "notes": "Easy scrambling above the exit step reaches the summit. The descent does not reverse the face: it goes down the southwest side by a snow gully that needs downclimbing and two 30 m rappels to reach the snow leading to a col west of the peak."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Added an opening stage (avalanche cone, lower neve) and a closing summit scramble stage, both from the account of the only recorded ascent. Rows 1-4 keep their labels, and their notes now say where each section goes and what the hazard is (thin rock protection on the ramp, spindrift on the snowfields). Ramp grade tightened to one token, WI3, with 'mostly WI2' moved into the notes. REMOVED lengthM 183/183/61 from rows 2-4: no source gives those lengths. They look like the ~2,000 ft total divided up (183+183+183+61 = 610 = length_m). Kept lengthM 183 on row 1, since 600 ft of ice on the ramp is stated. No crux flag, bolts or anchors: nothing states them. Single source (first-ascent account); the second page only repeats a one-line quote, so medium at most.",
+      "sources_consulted": [
+        "http://www.alpinedave.com/summit_chief/north_face.htm",
+        "https://climberkyle.com/2020/03/22/forgotten-cascade-alpine-ice-routes/",
+        "https://cascadeclimbers.com/forum/topic/23430-tr-summit-chief-mountain-north-face-4182004/ (not readable: JS/cookie wall)"
+      ],
+      "other_findings": "climbing_route row 1 prose ('the only published account of this line is the first ascent...') and the beta column name the FA party (Haley) as the source of a comparison and a quote; that may run into the no-sources rule. The FA account says the SW-side rappels land on snow leading to a col WEST of the peak; descent_text says 'return toward the approach basin/camp', which is consistent but vague. grade and pitches are null."
+    }
+  },
+  "wa_burnt_boot_peak_north_ridge": {
+    "area": "wa_burnt_boot_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "5th class",
+        "notes": "The technical climbing starts at the base of the steepest part of the north ridge, on granite. The route is ungraded beyond 'class 5' and has no recorded repeat, so expect to find the line and build every belay yourself."
+      },
+      {
+        "pitch": "2",
+        "grade": "5th class",
+        "notes": "A second class 5 lead continues up the steep granite section of the ridge. Nothing is fixed and no detail beyond the class is on record. The next lead finishes the steep ground on a sharp crest."
+      },
+      {
+        "pitch": "3",
+        "grade": "5th class",
+        "notes": "The last of the three class 5 leads runs along a very sharp granite crest, the most exposed ground on the route, and ends where the ridge eases. Treat it as a knife-edge: protect the crest and plan how the second will follow it."
+      },
+      {
+        "pitch": "4",
+        "grade": "Class 3-4",
+        "notes": "Easier ground above the sharp crest. Three leads of class 3 and 4 remain to the summit. The rock and line here are unrecorded."
+      },
+      {
+        "pitch": "5",
+        "grade": "Class 3-4",
+        "notes": "The second of the three class 3-4 leads above the steep section, continuing up the north ridge toward the summit."
+      },
+      {
+        "pitch": "6",
+        "grade": "Class 3-4",
+        "notes": "The final class 3-4 lead reaches the summit of Burnt Boot Peak (6,540 ft)."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same six leads in the same order. Grade tokens cleaned ('5th class (ungraded)' became '5th class'; the parenthetical is gone). Pitch 5 had empty notes and now has some, and the other notes are rewritten to be usable. The only pitch-level source is a four-sentence first-ascent note, so the notes stay thin on purpose and add no features, lengths, grades or anchors it does not state. Left out: lengthM, anchors, crux flag. The source calls pitch 3 the sharp crest but never names a crux. The descent sentence in pitch 6 is the one inference here: the FA note does not describe a descent, and it only records that the 1963 first ascent used an easier line (the peak's easiest route is a scramble). Drop that sentence if a reviewer prefers.",
+      "sources_consulted": [
+        "http://publications.americanalpineclub.org/articles/12197211602/North-America-United-States-WashingtonCascade-Mountains-Burnt-Boot-Peak-North-Ridge",
+        "https://en.wikipedia.org/wiki/Burnt_Boot_Peak"
+      ],
+      "other_findings": "The beta column quotes the FA note verbatim and names its author ('Recorded in a single short first-ascent note by Don Williamson: ...'). That is a named source and a copied passage on a rendered surface. Wikipedia dates the FA to June 1971; fa just says 1971. Single source; no repeat ascents found."
+    }
+  },
+  "wa_fortune_peak_east_slope": {
+    "area": "wa_fortune_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Ingalls Pass to Headlight Basin",
+        "grade": "Trail, then cross-country",
+        "notes": "From Ingalls Pass (~6,500 ft), take the upper of the two trails that run above Headlight Basin toward Lake Ingalls and follow it for about half a mile. Alternatively, drop into the basin and contour west at about 6,600 ft. The crest traverse from the pass toward Fortune is a different, harder line: loose class 3-4 rock where holds pull off."
+      },
+      {
+        "pitch": "Headlight Basin to summit ridge",
+        "grade": "Snow early; talus later",
+        "notes": "Leave the trail and go cross-country up the east slopes, just east of the summit, to gain the ESE ridge at about 7,050 ft. Early in the season this is firm snow, so carry an axe and crampons. After melt-out it is loose talus and scree. On the way down, the broad slopes back into the basin are the usual line, and in snow they can give a long glissade: check the runout first."
+      },
+      {
+        "pitch": "Summit ridge to top",
+        "grade": "Class 2 scramble",
+        "notes": "A good boot path follows the ESE ridge to the summit (7,382 ft)."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three stages and labels. Notes now give the actual line: the upper trail above Headlight Basin for ~0.5 mi (or contour at ~6,600 ft), cross-country to the ESE ridge at ~7,050 ft, then a boot path to 7,382 ft. They also warn against the loose ridge-crest traverse from Ingalls Pass. The chip 'Moderate snow slope (early) or talus scramble (late)' (51 chars) is shortened to 'Snow early; talus later'. 'Class 2 scramble' carried over. No source states a class for the ridge, only 'a good path'. Two independent trip accounts plus search-result extracts of a SummitPost page that could not be read directly (403).",
+      "sources_consulted": [
+        "https://wenatcheeoutdoors.org/2018/10/29/fortune-peak/",
+        "https://www.yellowleaf.org/scramble/g/r/2006-06--17-18-ingalls.html",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-06-20.4249549226",
+        "https://www.summitpost.org/fortune-peak/572552 (403; content seen only via search-result extracts)"
+      ],
+      "other_findings": "length_m = 101 is presumably the ~330 ft of the ESE ridge above ~7,050 ft, not the east slope from Headlight Basin (~6,600 ft to 7,382 ft is roughly 240 m of gain). Worth a look before it feeds any planner estimate."
+    }
+  },
+  "wa_fortune_peak_standard_route": {
+    "area": "wa_fortune_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Esmeralda Basin Trail to Lake Ann junction",
+        "grade": "Maintained trail",
+        "notes": "From the trailhead (~4,300 ft) the Esmeralda Basin Trail climbs at a gentle grade through open forest and meadow. Stay on it past the early fork where Ingalls Way branches right toward Ingalls Pass. In early summer the many creek crossings run high, and the upper trail can hold snow into June."
+      },
+      {
+        "pitch": "Junction to the pass above Lake Ann",
+        "grade": "Maintained trail, steepening",
+        "notes": "Turn onto the trail toward Lake Ann. It switchbacks up to the saddle above the lake, with Fortune's ridge rising to the north of it. Under snow the trail is hard to follow, and cutting straight uphill leads onto steep snow and dirt slopes, so navigate carefully in early season."
+      },
+      {
+        "pitch": "Pass to summit ridge and summit",
+        "grade": "Class 2-3 scramble",
+        "notes": "From the saddle a climbers' boot path follows the ridge on or just right of the crest, gaining roughly 800 ft in half a mile to the summit (7,382 ft). The steepest ground is near the bottom. Expect loose rock, and in early season a few moves around lingering snow. Staying closer to the crest avoids most of it."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three stages. Stage 1 relabelled 'Esmeralda Basin Trail to Ingalls Way junction' -> '... to Lake Ann junction'. The Ingalls Way fork is the early junction (0.4 mi, per the stored approach), and the Lake Ann trail leaves the Esmeralda Basin Trail, not Ingalls Way. The old label described a 0.4-mile stage, and the route does not take the Ingalls Way turn. Notes are new: trailhead elevation, high creek crossings, the snow navigation trap, and the ridge line (on or right of the crest, ~800 ft in 0.5 mi, steepest low, loose rock). Class 2-3 carried over; no source states a class. Two reasonably independent accounts plus search extracts of SummitPost.",
+      "sources_consulted": [
+        "https://www.kuresman.com/2014/Trip_Reports/Fortune_Peak/Report_Fortune_Peak.html",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-06-25.2109774496",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-06-20.4249549226",
+        "https://www.summitpost.org/fortune-peak/572552 (403; content seen only via search-result extracts)"
+      ],
+      "other_findings": "The approach column says to 'continue on the Ingalls Way trail toward Lake Ann' after the shared 0.4 mi. That looks wrong: Ingalls Way goes to Ingalls Pass, and the Lake Ann trail branches off the Esmeralda Basin Trail. The beta column has the same 'Ingalls Way/Lake Ann trail' conflation."
+    }
+  },
+  "wa_klawatti_peak_sw_buttress": {
+    "area": "wa_klawatti_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "low 5th",
+        "notes": "The route starts on the southwest side of the peak, minutes from the camp spots south of Klawatti. The first problem is the moat: it widens every summer as the glacier shrinks, so scout for a snow bridge or a step across onto rock. The first pitch climbs short low-fifth-class rock straight off the moat. The rock is loose in places, so test holds before weighting them."
+      },
+      {
+        "pitch": "2",
+        "grade": "low 5th",
+        "notes": "One or two more short low-fifth pitches continue up the buttress. How much roped climbing there is depends on the moat and the line chosen: at least one account finds only the bottom pitch fifth class, with steep, loose class 4 above. Belays are built from gear and slings, with a single rack to 2 inches."
+      },
+      {
+        "pitch": "3",
+        "grade": "Scramble, loose",
+        "notes": "Once on the southwest ridge the angle eases to a scramble along an elongated summit crest, where the high point is not obvious. Keep testing holds. For the descent, downclimb or rappel the route, backing up any old anchors with fresh slings, or go down the north side past The Smokestack to the Klawatti Glacier."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three entries and labels. P1 grade '5.3' -> 'low 5th': 5.3 is the route's overall grade, and no source assigns it to a pitch. The 'crux' wording is removed; no source names a crux pitch. P2 'Class 4' -> 'low 5th', since the route description calls for 2-3 short low-5th pitches; the notes say one account finds only the first pitch fifth class. P3 chip 'Class 3-2' -> 'Scramble, loose'. The notes now cover the moat hazard, loose rock, the rack, the unclear summit high point and the descent options. No lengthM, bolts or anchors: nothing states them.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/119380095/klawatti-peak-sw-buttress",
+        "https://www.countryhighpoints.com/klawatti-austera-eldorado-winter-ascents/",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-12-20.2905486903",
+        "https://www.mountaineers.org/activities/trip-reports/inspiration-traverse (search-result extract only; page 403)"
+      ],
+      "other_findings": "One source notes that older guide descriptions call the SW ridge a 3rd-class scramble, and that glacier recession has since added a low-5th pitch at the bottom. The approach column still says 'this route is NOT on Eldorado Peak itself, despite being filed under the same area'. The route is now filed under wa_klawatti_peak, so that sentence is stale. It is also a long Eldorado summit approach pasted onto a Klawatti route ('toward Eldorado's famous narrow snow ridge and the 8,868-foot summit')."
+    }
+  },
+  "wa_amphitheater_mountain_middle_finger_buttress_right_side": {
+    "skip_reason": "Not enough pitch-level information. The only route description found gives two facts (P1 starts on a steep slab with a thin vertical crack; the short crux is on P3) and nothing for P2 or P4-P7. The only other first-hand record, a 2025 comment, rates the line 5.10 C1 R and describes grass hummocks, dirt-filled cracks, thick lichen and loose blocks. So even the grade is contested, and the stored 'historical C1' note has no online source. A 7-pitch table would have to be invented. Other findings: the stored grade 5.9 conflicts with that 2025 report (5.10 C1 R), and the route's quality/cleanliness warning is not in any column. Sources: https://www.mountainproject.com/route/109096812/middle-finger-buttress-right-side (description + comment), https://www.thecrag.com/en/climbing/united-states/washington/route/4529503278"
+  },
+  "wa_remmel_mountain_nw_ridge": {
+    "area": "wa_remmel_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "3rd class",
+        "notes": "From the high camp at timberline (~7,500 ft) on the lower ridge, hike and scramble up the NW ridge, a lightly vegetated, boulder-covered crest, to the top of the North Summit. From a distance the ridge can look like a rubble pile of big boulders, but much of the rock is good."
+      },
+      {
+        "pitch": "Rappel 1",
+        "grade": "Rappel, west side",
+        "notes": "The ridge cannot be followed directly off the North Summit. Make the first of two rappels down its west side. Anchors may need to be built, so carry extra slings. Loose rock and boulders sit on all the rappel lines, so keep the rope clear and the party out of the fall line."
+      },
+      {
+        "pitch": "Rappel 2",
+        "grade": "Rappel, west side",
+        "notes": "The second rappel on the west side regains the ridge crest beyond the North Summit. A single 50 or 60 m rope is enough. Leave the anchor in good order: the descent comes back this way."
+      },
+      {
+        "pitch": "2",
+        "grade": "5.2",
+        "notes": "Follow the ridge top as much as possible to the first of the two main gendarmes, and climb it in a couple of short pitches rated 5.1 to 5.2 on mostly stable rock. Harder variations exist. Protection is a small rack of nuts and long slings. On the way down, this gendarme needs a rappel."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.2",
+        "notes": "The second main gendarme also goes in a couple of 5.1-5.2 pitches on mostly stable rock, staying on the crest where possible, and leads on to the summit. It too needs a rappel on the descent, so keep enough slings in reserve for anchors on both gendarmes and the North Summit."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "REORDERED to match the route description. The stored table put the gendarme climbs BEFORE the two west-side rappels. In fact the two rappels come off the North Summit, to regain the ridge, before either gendarme is climbed, and the gendarmes each need a rappel only on the DESCENT. Grades on 2 and 3 tightened to the token 5.2 (the notes say 5.1-5.2). Entries go from 6 to 5: the stored final row '4' ('continue ridge scrambling to the summit', 3rd class) is dropped, because no source describes a separate scramble after the second gendarme; the description has the ridge top followed to the summit through the gendarmes. No lengthM, bolts or anchors: none stated. Effectively single source (the route description; the SummitPost log found by search reads as the same party's account), so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109095671/nw-ridge",
+        "https://www.mountainproject.com/area/109095663/mt-remmel",
+        "https://www.summitpost.org/remmel-mountain/climbers-log/153242 (403; content seen only via search-result extract)"
+      ],
+      "other_findings": "The rappels column says '2, both on the descent - one off each of the two summit gendarmes ... roughly 30 m of rappelling in total'. The source puts 2 rappels on the ASCENT (off the west side of the North Summit), plus one off each gendarme on the descent. Likely 3-4 on the descent, since the North Summit presumably has to be re-crossed or bypassed; the source says 'several rappels'. The 30 m total is not in any source. The beta column has the same order error ('each is climbed ... and then a rappel on the west side regains the ridge crest'), and descent_text leaves out the North Summit entirely. The beta's claim that parties 'can bypass the technical sections by staying lower on the west slope' was not found in any source. pitches=6 and length_m=361 unverified. Source timing: 3.5 h camp to summit, 2.5 h descent."
+    },
+    "allow_fewer_entries": true
+  },
+  "wa_elephant_head_standard": {
+    "skip_reason": "Route identity unclear and no pitch-level description exists. No published route on Elephant Head (Dome Peak group) could be found; the peak shows up only as a landmark in Ptarmigan Traverse and Dome Peak accounts, and peakbagger ascent logs could not be read (403/JS wall). The stored row also mixes two approaches from opposite sides of the peak. pitch_detail and beta send parties up the Dana Glacier (west side, the Ptarmigan/White Rock Lakes side), while approach, climbing_route and descent_text describe Downey Creek -> Bachelor Creek -> Cub Lake -> Itswoot Ridge, which is the Chickamin/Dome Glacier side. The approach text also reads as a Dome Peak approach. The grade 'Class 4 / glacier' does not agree with climbing_route's 'Class 2-3' finish, and descent_text asserts a 'possible short rappel' contingency with rappels = 0. Needs a human decision on what this row describes before any breakdown is written."
+  }
+}

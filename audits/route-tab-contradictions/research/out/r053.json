@@ -1,0 +1,693 @@
+{
+ "file": "r053.json",
+ "results": [
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "fact": "Round-trip distance: itinerary day miles vs approach prose/totalNote/dist_km/waypoints",
+   "verdict": "fixed",
+   "correct_value": "About 16 miles round trip (~8 mi one way); day 1 ~7 mi to camp, day 2 ~9 mi (summit, back to camp, hike out).",
+   "evidence": "A detailed trip report gives c.16 miles round trip from the ~2,800 ft trailhead to the 7,480+ ft summit; the standard online route description gives 16 miles round trip and ~4,700 ft gain. The trail legs (4 mi to Pete Lake, ~1.2 mi to the PCT, ~1 mi to Lemah Creek) plus ~1-2 mi off-trail put the summit ~8 mi out, so 7 + 15 = 22 on the itinerary is the outlier; day 2 becomes 9 mi.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Lemah/Lemah.htm",
+    "https://www.summitpost.org/lemah-mountain/392789",
+    "https://www.mountainproject.com/route/124569007/lemah-glacier",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pete-lake-trail"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 15,
+     "value": 9,
+     "id": "wa_lemah_mountain_east_route",
+     "fact": "Round-trip distance: itinerary day miles vs approach prose/totalNote/dist_km/waypoints"
+    }
+   ]
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere",
+   "verdict": "fixed",
+   "correct_value": "Class 4 (short class 4 step; no 5th-class move on the standard line)",
+   "evidence": "The standard route description rates the line Class 4 with a Grade I glacier; a route database gives 4th class / Grade II with 'class 3-4' on the summit block; a club route page describes class 4 rock; a trip report calls the only hard move a ~10 ft class 4 wet gully (a party that strayed onto a different line found loose class 4/5). No source grades the standard route 5.0, so rock_grade is right and the 5.0 copies are changed to class 4.",
+   "sources": [
+    "https://www.summitpost.org/lemah-mountain/392789",
+    "https://www.mountainproject.com/route/124569007/lemah-glacier",
+    "https://mazamas.org/activity/207/",
+    "http://ericsbasecamp.net/trips/Lemah/Lemah.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 4-5.0",
+     "value": "Class 4",
+     "id": "wa_lemah_mountain_east_route",
+     "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+    },
+    {
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "class"
+     ],
+     "expect": "easy 5th class",
+     "value": "Class 3-4",
+     "id": "wa_lemah_mountain_east_route",
+     "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "a short exposed step of easy 5th-class climbing guards",
+     "replace": "a short exposed step of class 3-4 climbing guards",
+     "id": "wa_lemah_mountain_east_route",
+     "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+    },
+    {
+     "op": "replace_text",
+     "column": "sling_rack",
+     "path": [
+      "cams",
+      "count"
+     ],
+     "find": "for the class 5.0 summit block move",
+     "replace": "for the exposed class 4 moves",
+     "id": "wa_lemah_mountain_east_route",
+     "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+    },
+    {
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      1
+     ],
+     "find": "for the class 5.0 summit block move",
+     "replace": "for the exposed class 4 moves",
+     "id": "wa_lemah_mountain_east_route",
+     "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      5
+     ],
+     "find": "for the class 5.0 move",
+     "replace": "for the class 4 moves",
+     "id": "wa_lemah_mountain_east_route",
+     "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "a short, exposed class 5.0 step",
+     "replace": "a short, exposed class 4 step",
+     "id": "wa_lemah_mountain_east_route",
+     "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "the short class 4-5.0 summit block move",
+     "replace": "the short class 4 moves near the summit",
+     "id": "wa_lemah_mountain_east_route",
+     "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+    }
+   ]
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "fact": "Elevation of the glacier-exit / moat transition below the col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 6,200 ft figure in the prose is where the standard description has parties exit left up a short cliff onto the glacial remnants; the waypoint instead names a moat/snow-gully top. Sources place the moat differently: one trip report puts the moat and ~200 ft of steep slabs just below the notch above 7,200 ft, another says a moat forms halfway up the steep snow, and a route database puts the snow-finger exit at 4,800-5,000 ft. The waypoint may be a different feature than the 6,200 ft exit, and no two sources give an elevation for it, so no patch.",
+   "sources": [
+    "https://onehikeaweek.com/2022/08/14/chimney-rock/",
+    "https://www.summitpost.org/lemah-glacier-via-lemah-creek/911905",
+    "https://www.mountainproject.com/route/124569007/lemah-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "fact": "Which national forest manages the trailhead (duplicate landManager/land_manager keys disagree)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Lemah Mountain sits on the Cascade crest on the King/Kittitas county line, so both forests border the peak; the Pete Lake trail and trailhead are run by the Cle Elum Ranger District of Okanogan-Wenatchee NF. One key names the trailhead's district, the other names both forests the peak straddles; both are true.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lemah_Mountain",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pete-lake-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints",
+   "verdict": "fixed",
+   "correct_value": "~8 mi one way (dist_km 12.9 is right), ~16 mi round trip; itinerary 7 + 2 + 7 mi.",
+   "evidence": "Lemah Two is reached by the same approach as the main peak to the shared Two/Main col. The approach is 4 mi to Pete Lake (forest service), ~1.2-1.3 mi to the PCT and ~0.8-1 mi to Lemah Creek, then 1-2 mi off-trail; the standard description and a trip report both give ~16 mi round trip. The row's own pitch_detail (4 + 1.2 + 1 mi) and approach_variant (12.9 km) agree with dist_km; the itinerary miles, totalNote, partner approachTime and waypoint distMi were inflated to ~22/11 and are rescaled to the ~8 mi one-way line.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pete-lake-trail",
+    "https://www.mountainproject.com/route/124569007/lemah-glacier",
+    "https://www.summitpost.org/lemah-mountain/392789",
+    "http://ericsbasecamp.net/trips/Lemah/Lemah.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 9,
+     "value": 7,
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 4.5,
+     "value": 2,
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 9,
+     "value": 7,
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~22 miles round trip",
+     "replace": "~16 miles round trip",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "flat, well-graded trail for the first 8 miles",
+     "replace": "flat, well-graded trail for the first 6 miles",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "roughly 11+ miles one-way",
+     "replace": "roughly 8 miles one-way",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 4.5,
+     "value": 4,
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 8,
+     "value": 6.5,
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 9,
+     "value": 7,
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 10,
+     "value": 7.5,
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 10.5,
+     "value": 7.8,
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 11,
+     "value": 8,
+     "id": "wa_lemah_two_scramble",
+     "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+    }
+   ]
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "fact": "Descent route: this route's own chute-to-col (ascent) vs an NW-ridge-to-'the true summit' finish that belongs to the neighboring Main Peak route",
+   "verdict": "fixed",
+   "correct_value": "From the Two/Main col the Lemah Two finish goes south to Lemah Two; the 'north to the true summit, ~30 ft below the top traverse west, NW ridge Class 2' finish belongs to the Main Peak.",
+   "evidence": "The standard route description and a route database both describe, from the col between Lemah 2 and Lemah Main, climbing NORTH toward the main summit block, traversing west ~30 ft below the true summit and finishing on the NW ridge (Class 2) - the Main Peak's finish. Lemah Two lies south of that col (the southern false summits are One and Two). The descent and descent_text are changed to the route's own finish, reusing the 3rd/4th-class col-to-summit section its itinerary already states.",
+   "sources": [
+    "https://www.summitpost.org/lemah-mountain/392789",
+    "https://www.mountainproject.com/area/119745946/lemah-mountain",
+    "https://www.summitpost.org/lemah-glacier-via-lemah-creek/911905"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "downclimb the NW ridge and the Class 3-4 band back to the col,",
+     "replace": "downclimb from the summit back to the col, then down the chute and its Class 3-4 band,",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Descent route: this route's own chute-to-col (ascent) vs an NW-ridge-to-'the true summit' finish that belongs to the neighboring Main Peak route"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "From the col, work north toward the true summit; about 30 ft below the top, traverse west and finish up the northwest ridge (Class 2) to the summit block.",
+     "replace": "From the col, turn south and finish on the short 3rd/4th-class rock section to Lemah Two's summit.",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Descent route: this route's own chute-to-col (ascent) vs an NW-ridge-to-'the true summit' finish that belongs to the neighboring Main Peak route"
+    }
+   ]
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?",
+   "verdict": "fixed",
+   "correct_value": "Below the col: the snow slope and wet chute/chimney (crux, Class 3-4) lead UP TO the Two/Main col; a short 3rd/4th-class section goes from the col to the summit.",
+   "evidence": "The standard description has parties contour around Lemah Two's east buttress and 'ascend a snow slope and chute' to the upper snowpatch, then climb to the col; a route database puts the water-filled chimney with class 3-4 to its right directly above the glacier exit, before the upper snowfield and notch; a trip report describes the ~10 ft class 4 wet gully as the crux before the scramble to the top. The waypoint, itinerary day 2, detailed_rack and descent_text already place it below the col; beta, pitch_detail and the approach_variant's baseFinding are aligned.",
+   "sources": [
+    "https://www.summitpost.org/lemah-glacier-via-lemah-creek/911905",
+    "https://www.mountainproject.com/route/124569007/lemah-glacier",
+    "http://ericsbasecamp.net/trips/Lemah/Lemah.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "climb a series of Class 2-3 cliff bands to the col between Lemah Two and the Main Peak (Lemah Three). From the col, a snow slope and chute lead up toward Lemah Two's upper slopes and summit ridge; the chute itself",
+     "replace": "climb a series of Class 2-3 cliff bands toward the col between Lemah Two and the Main Peak (Lemah Three). A snow slope and chute lead up to the col; the chute itself",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Crampons and an ice axe are commonly used even in summer.",
+     "replace": "Crampons and an ice axe are commonly used even in summer. From the col, a short 3rd/4th-class rock section leads to Lemah Two's summit.",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "grade"
+     ],
+     "expect": "Class 2-3",
+     "value": "Class 2-4 / steep snow",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "Cliff bands lead up to the col between Lemah Two and the Main Peak.",
+     "replace": "Cliff bands, then a snow slope and chute (the crux), lead up to the col between Lemah Two and the Main Peak.",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      5,
+      "grade"
+     ],
+     "expect": "Class 3-4 / steep snow",
+     "value": "Class 3-4",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      5,
+      "notes"
+     ],
+     "find": "Snow slope and chute (crux) to Lemah Two's summit ridge and top.",
+     "replace": "Short 3rd/4th-class rock section from the col to Lemah Two's summit ridge and top.",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Everything technical on this route starts from the col; below it you are walking, scrambling class 2-3 cliff bands, and crossing snow.",
+     "replace": "The technical ground is the climb up to the col; below that you are walking, scrambling class 2-3 cliff bands, and crossing snow.",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THE CONFIRMING FEATURE ABOVE THE COL IS A CHUTE",
+     "replace": "THE CONFIRMING FEATURE BELOW THE COL IS A CHUTE",
+     "id": "wa_lemah_two_scramble",
+     "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+    }
+   ]
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "fact": "PCT direction and trail distances in the approach prose (southbound ~4 mi to Lemah Creek) vs pitch_detail/itinerary (Pete Lake ~4 mi, +1.2 mi to PCT, ~1 mi north to Lemah Creek)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "~4 mi to Pete Lake, ~1.2 mi on to the PCT, then right (north) on the PCT ~1 mi to the Lemah Creek crossing.",
+   "evidence": "The forest service puts Pete Lake at 4 mi; the standard description continues ~1.2 mi to the PCT and turns right (north) about 1 mi to Lemah Creek; a route database gives 4 + 1.3 + 0.8 + 0.8 mi. The row's approach and approach_variant said 4.5 mi to Pete Lake and ~4 mi SOUTHBOUND on the PCT, contradicting its own pitch_detail and itinerary day 1.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pete-lake-trail",
+    "https://www.summitpost.org/lemah-glacier-via-lemah-creek/911905",
+    "https://www.mountainproject.com/route/124569007/lemah-glacier",
+    "http://ericsbasecamp.net/trips/Lemah/Lemah.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 4.5 miles to Pete Lake, continue past the lake and pick up the PCT southbound for roughly 4 more miles to the Lemah Creek crossing, then follow the PCT south under a mile to where",
+     "replace": "about 4 miles to Pete Lake, continue past the lake about 1.2 miles to the PCT, then turn right (north) on the PCT for about a mile to the Lemah Creek crossing, where",
+     "id": "wa_lemah_two_scramble",
+     "fact": "PCT direction and trail distances in the approach prose (southbound ~4 mi to Lemah Creek) vs pitch_detail/itinerary (Pete Lake ~4 mi, +1.2 mi to PCT, ~1 mi north to Lemah Creek)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "about 4.5 miles to Pete Lake, continue past it and pick up the PCT southbound for roughly four more miles to the Lemah Creek crossing, then follow the PCT south under a mile.",
+     "replace": "about 4 miles to Pete Lake, continue past it about 1.2 miles to the PCT, then turn right (north) on the PCT for about a mile to the Lemah Creek crossing.",
+     "id": "wa_lemah_two_scramble",
+     "fact": "PCT direction and trail distances in the approach prose (southbound ~4 mi to Lemah Creek) vs pitch_detail/itinerary (Pete Lake ~4 mi, +1.2 mi to PCT, ~1 mi north to Lemah Creek)"
+    }
+   ]
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "fact": "Elevation of the Lemah Meadows camp: waypoint 4,800 ft vs prose meadow camp ~3,600 ft",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The waypoint 'Lemah Meadows basin camp' says 4,800 ft while approach, pro_tips and the variant put the meadow camp at ~3,600 ft and itinerary day 1 says 4,000-4,500 ft. Sources describe both a ~3,600 ft meadow where the creek spreads into ponds and a higher bench camp near 4,500 ft; it is not clear which camp the pin means, so no patch.",
+   "sources": [
+    "https://www.summitpost.org/lemah-glacier-via-lemah-creek/911905",
+    "https://trailcatjim.com/lemah-mtn-via-lemah-creek-southeast-face-1996/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_big_chief_mountain_northeast_face",
+   "fact": "Does this route require leaving the trail near Williams Lake for an off-trail scramble via a class-4 notch, or stay on the trail all the way to Dutch Miller Gap with no detour?",
+   "verdict": "fixed",
+   "correct_value": "Hike the Middle Fork trail to Dutch Miller Gap (parties often camp at Williams Lake) and start climbing from the gap; the PCT does not reach Dutch Miller Gap.",
+   "evidence": "The peak sits immediately southwest of Dutch Miller Gap; a trip report from a Williams Lake camp hiked the trail up to the gap and began the climb there (East Slope-NE Ridge, crossing a class 4 notch on the NE ridge). The route database lists the Middle Fork trail as an approach and the Beckey-derived description starts from the gap. 'Leaving the trail near Williams Lake' and 'via the PCT' are replaced; the class 4 notch is left as it is documented on this side.",
+   "sources": [
+    "https://trailcatjim.com/la-bohn-tank-loop-and-little-big-chief-peak/",
+    "https://en.wikipedia.org/wiki/Little_Big_Chief_Mountain",
+    "https://www.mountainproject.com/area/119745933/little-big-chief"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "reached by leaving the trail near Williams Lake for an off-trail scramble",
+     "replace": "reached from the gap itself by an off-trail scramble",
+     "id": "wa_little_big_chief_mountain_northeast_face",
+     "fact": "Does this route require leaving the trail near Williams Lake for an off-trail scramble via a class-4 notch, or stay on the trail all the way to Dutch Miller Gap with no detour?"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Approached via the PCT to Dutch Miller Gap",
+     "replace": "Approached via the Middle Fork Snoqualmie trail to Dutch Miller Gap",
+     "id": "wa_little_big_chief_mountain_northeast_face",
+     "fact": "Does this route require leaving the trail near Williams Lake for an off-trail scramble via a class-4 notch, or stay on the trail all the way to Dutch Miller Gap with no detour?"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_big_chief_mountain_northeast_face",
+   "fact": "Primary managing national forest (duplicate landManager/land_manager keys disagree)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The peak is on the King/Kittitas line with its land overseen by Mount Baker-Snoqualmie NF, and this route's Middle Fork approach is on MBS's Snoqualmie district; the other key names both forests that share the Alpine Lakes Wilderness crest. Both are true at different scopes.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Little_Big_Chief_Mountain",
+    "https://www.mountainproject.com/area/119745933/little-big-chief"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_4",
+   "fact": "Approach: Williams-Lake/Dutch-Miller-Gap/class-4-notch boilerplate vs this route's own steel-bridge/cross-country-into-Summit-Chief-Valley turnoff",
+   "verdict": "fixed",
+   "correct_value": "Hike ~3 hours up the Middle Fork trail to a small steel bridge, leave the trail and go cross-country south into Summit Chief Valley; do not go to Dutch Miller Gap.",
+   "evidence": "The first-ascent account and the route database both say: hike up the Middle Fork valley about three hours, leave the trail at a small steel bridge, go cross-country south into Summit Chief Valley, camp at the gravel wash near 4,650 ft; the peak is on the valley's east side. The Dutch Miller Gap / Williams Lake / class 4 notch sentences belong to the Northeast Face and are removed from this approach.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200416301/North-America-United-States-Washington-Little-Big-Chief-Mountain-Falcon-Route",
+    "https://www.mountainproject.com/route/120326654/falcon-route"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "up the Middle Fork Snoqualmie valley about 14-15 miles to Dutch Miller Gap, passing Hardscrabble Horse Camp and the Williams Lake trail junction along the way. Little Big Chief sits immediately southwest of the gap, reached by leaving the trail near Williams Lake for an off-trail scramble up the peak's east slope/northeast ridge, with a short but exposed class 4 notch as the crux below the summit. An alternate, longer approach comes from the east via the Necklace Valley Trail off Foss River Road (Skykomish/US 2 side), crossing La Bohn Gap before dropping to Dutch Miller Gap. For this specific route: leave",
+     "replace": "up the Middle Fork Snoqualmie valley toward Dutch Miller Gap, but do not go to the gap: leave",
+     "id": "wa_northwest_face_4",
+     "fact": "Approach: Williams-Lake/Dutch-Miller-Gap/class-4-notch boilerplate vs this route's own steel-bridge/cross-country-into-Summit-Chief-Valley turnoff"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_4",
+   "fact": "Order of the rappel relative to the glacier-polished-slab crossing on descent",
+   "verdict": "fixed",
+   "correct_value": "Ridge south, pocket glacier, polished slabs trending left to the ridge crest at ~5,400 ft, THEN 1-2 rappels, goat ledges, forest to camp.",
+   "evidence": "The first-ascent account and the route database give the same order: descend the ridge south, gain and descend a pocket glacier, trend left over glacier-polished slabs to the ridge crest at 5,400 ft, then one to two rappels into Summit Chief Valley, goat ledges and steep forest to camp. descent and descent_text already match; rappels is reordered.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200416301/North-America-United-States-Washington-Little-Big-Chief-Mountain-Falcon-Route",
+    "https://www.mountainproject.com/route/120326654/falcon-route"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "1-2 rappels off the south ridge to a pocket glacier, then descend glacier-polished slabs and forest back into Summit Chief Valley to camp",
+     "replace": "After descending the south ridge, the pocket glacier and the glacier-polished slabs to the ridge crest near 5,400 ft, make 1-2 rappels into Summit Chief Valley, then traverse goat ledges and descend forest to camp",
+     "id": "wa_northwest_face_4",
+     "fact": "Order of the rappel relative to the glacier-polished-slab crossing on descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_4",
+   "fact": "Trailhead waypoint note says the two routes diverge only above camp, but this route leaves the trail at the steel bridge well short of Dutch Miller Gap",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Both routes start up the same Middle Fork trail; this one leaves it at a small steel bridge well short of Dutch Miller Gap.",
+   "evidence": "The first-ascent account and the route database put this route's turnoff at a small steel bridge ~3 hours up the Middle Fork trail, into Summit Chief Valley, while the Northeast Face continues to Dutch Miller Gap; the approaches split low in the valley, not above a shared camp.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200416301/North-America-United-States-Washington-Little-Big-Chief-Mountain-Falcon-Route",
+    "https://www.mountainproject.com/route/120326654/falcon-route"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "since both are approached via the same valley and the routes diverge only above camp.",
+     "replace": "since both start up the same valley trail; this route leaves it at a small steel bridge well short of Dutch Miller Gap.",
+     "id": "wa_northwest_face_4",
+     "fact": "Trailhead waypoint note says the two routes diverge only above camp, but this route leaves the trail at the steel bridge well short of Dutch Miller Gap"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_big_chief_mountain_west_route",
+   "fact": "Header/technical grade: rock_grade 5.9 + commitment IV vs grade Class 3 + alpine_grade F + pitch count/pitch_detail",
+   "verdict": "fixed",
+   "correct_value": "rock_grade 'Class 3-4'; commitment IV is the Falcon Route's grade and is removed (no source grades this scramble's commitment).",
+   "evidence": "The easiest line on the peak is a class 3-4 scramble; the route database lists only the 5.9 Falcon Route and a 4th-class Northeast Face; a trip report calls the crux a class 4 notch. IV 5.9 is the grade of the 15-pitch Falcon Route in both the first-ascent account and the route database, so both values were copied from the neighbouring route. rock_grade is set to Class 3-4 and the IV commitment is cleared rather than guessed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Little_Big_Chief_Mountain",
+    "https://www.mountainproject.com/area/119745933/little-big-chief",
+    "https://trailcatjim.com/la-bohn-tank-loop-and-little-big-chief-peak/",
+    "http://publications.americanalpineclub.org/articles/12200416301/North-America-United-States-Washington-Little-Big-Chief-Mountain-Falcon-Route",
+    "https://www.mountainproject.com/route/120326654/falcon-route"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.9",
+     "value": "Class 3-4",
+     "id": "wa_little_big_chief_mountain_west_route",
+     "fact": "Header/technical grade: rock_grade 5.9 + commitment IV vs grade Class 3 + alpine_grade F + pitch count/pitch_detail"
+    },
+    {
+     "op": "set",
+     "column": "commitment",
+     "path": [],
+     "expect": "IV",
+     "value": null,
+     "id": "wa_little_big_chief_mountain_west_route",
+     "fact": "Header/technical grade: rock_grade 5.9 + commitment IV vs grade Class 3 + alpine_grade F + pitch count/pitch_detail"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_big_chief_mountain_west_route",
+   "fact": "Crux location and approach: beta/pitch_detail describe a NE-ridge/SW-face/E-face route from a Williams Lake camp, but this route's own approach/climbing_route/descent_text/waypoints describe a west-ridge/west-face route from a Chief Creek camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A trip report from the Waptus / Chief Creek side gives 4,000+ ft of gain from the Chief Creek crossing and says the easiest route is still the Northeast Face (class 3-4), with the hardest move at an exposed notch on the north ridge. No source found documents a 'west ridge/west face' line from Chief Creek; the peak's west/northwest side faces Summit Chief Valley on the Middle Fork side, where the Falcon Route is. beta/pitch_detail describe the Dutch Miller Gap party's line. Which line this row is meant to be cannot be settled from two sources, and the face 'Northwest Face'/aspect NW may also be copied from the Falcon Route; no patch.",
+   "sources": [
+    "https://www.summitpost.org/little-big-chief-mountain/421526",
+    "https://trailcatjim.com/la-bohn-tank-loop-and-little-big-chief-peak/",
+    "http://publications.americanalpineclub.org/articles/12200416301/North-America-United-States-Washington-Little-Big-Chief-Mountain-Falcon-Route",
+    "https://www.mountainproject.com/route/120326654/falcon-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_big_chief_mountain_west_route",
+   "fact": "dist_km presented as one-way while itinerary/totalNote present round-trip",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (22.7 km = 14.1 mi) is the one-way approach, matching the summit waypoint's 14.1 mi; the itinerary days (11.5 + 5.5 + 11.2) and totalNote (~28 mi, 45.4 km) are the round trip. They are different quantities and agree with each other.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_little_big_chief_mountain_west_route",
+   "fact": "Primary managing national forest (duplicate landManager/land_manager keys disagree)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The summit is on the King/Kittitas line on land overseen by Mount Baker-Snoqualmie NF, while this route's Salmon La Sac trailhead and Waptus trail are Okanogan-Wenatchee, Cle Elum district. landManager already says the wilderness is jointly administered with Okanogan-Wenatchee on the east side, so the two keys describe the peak and the approach, and both are true.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Little_Big_Chief_Mountain",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pete-lake-trail"
+   ],
+   "patches": []
+  }
+ ]
+}

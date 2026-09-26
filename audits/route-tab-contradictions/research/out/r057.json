@@ -1,0 +1,462 @@
+{
+ "file": "r057.json",
+ "results": [
+  {
+   "id": "wa_mount_pugh_pika_slab",
+   "fact": "total elevation gain / whether the described day includes the true summit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The itinerary frames the summit as an optional extension ('continue to the summit for the view if weather allows') and labels 5,300 ft explicitly as the gain of 'the full peak day', while gain_ft/high_point_ft/approach describe the crag-only day (~4,700 ft). Two clearly labelled options, both internally consistent (trailhead ~1,900 ft to the 7,201 ft summit is ~5,300 ft).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_pugh_stujack",
+   "fact": "whether a wilderness permit is required",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit or quota for this route; only a Northwest Forest Pass for parking (access.permit 'None required' is correct).",
+   "evidence": "The Mt. Baker-Snoqualmie wilderness-regulations page lists a free self-issue wilderness permit only for the Alpine Lakes Wilderness (plus the Enchantments overnight permit); it names no permit for the Glacier Peak Wilderness, and the Mt. Pugh Trail 644 page lists only wilderness regulations and a Northwest Forest Pass. An independent Mt Pugh trip write-up states only a forest/interagency pass is needed and no backcountry permits. So the top-level permit field and the Stujack Pass bivy permit note are the outliers.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/mt-pugh-trail-644",
+    "https://bearinthemountains.com/2018/08/day-hike-mt-pugh/",
+    "https://www.discoverdarrington.com/recreation/hiking/mt-pugh-trail-644/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_pugh_stujack",
+     "fact": "whether a wilderness permit is required",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota.",
+     "replace": "No wilderness permit or quota is required for the Glacier Peak Wilderness on this route."
+    },
+    {
+     "id": "wa_mount_pugh_stujack",
+     "fact": "whether a wilderness permit is required",
+     "op": "replace_text",
+     "column": "bivy",
+     "path": [
+      2,
+      "permit"
+     ],
+     "find": "Where wilderness applies, so does the free self-issue permit from the trailhead box and the twelve-person party limit counting people and stock together.",
+     "replace": "Where wilderness applies, so does the twelve-person party limit counting people and stock together; no wilderness permit is needed."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pugh_stujack",
+   "fact": "season window / whether October is part of the optimal season",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Optimal window mid-July through September; October marginal (FR-2095 is gated from 16 October).",
+   "evidence": "The Forest Service Mt. Pugh Trail 644 page states FR 2095 is gated at the Mountain Loop from Oct. 16 to June 1, so half of October has no road access, supporting October as marginal. Inside the row, season (Jul-Sep), monthBreakdown.October ('marginal'), climate.typical (most consistently dry through September) and seasonal_hazards.weather (warm and dry July-September, wetter in October) all agree; only optimalWindow, best_season and the approach-variant season label stretched the window through October.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/mt-pugh-trail-644",
+    "https://www.discoverdarrington.com/recreation/hiking/mt-pugh-trail-644/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_pugh_stujack",
+     "fact": "season window / whether October is part of the optimal season",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Mid-July through October — late July/August offers the most reliably snow-free ridge",
+     "value": "Mid-July through September — late July/August offers the most reliably snow-free ridge; October is marginal, and the spur road is gated from 16 October"
+    },
+    {
+     "id": "wa_mount_pugh_stujack",
+     "fact": "season window / whether October is part of the optimal season",
+     "op": "set",
+     "column": "best_season",
+     "path": [],
+     "expect": "mid-July through October",
+     "value": "mid-July through September; October is marginal"
+    },
+    {
+     "id": "wa_mount_pugh_stujack",
+     "fact": "season window / whether October is part of the optimal season",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "Roughly mid-Jul-Oct.",
+     "replace": "Roughly mid-Jul-Sep, with October marginal."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "fact": "which side of the mountain the route climbs",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Every account found climbs from Airplane Lake on the EAST side: one describes the east slope/east face on snow (with the ridge as an alternative), another scrambles from the lake to the ridge line on the north side of the lake, through a saddle with a class 3 rock ramp, then along the ridge to the summit. No source names a 'Southeast Slopes' line or a saddle on the southeast ridge, and the lake sits almost due east of the summit. But the route name cannot be changed here, and changing aspect/face to E alone would set them against the name, so this needs a naming decision rather than a patch.",
+   "sources": [
+    "https://trailcatjim.com/mt-saul-via-east-slope-east-face-1999/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-13-9462326046"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "fact": "how exposed the route is",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Class 3 scrambling (talus, slabs, broad ridge) with low-to-moderate exposure, not Class 2.",
+   "evidence": "The row's grade, rock_grade, beta ('class 3 scrambling'), pro_needs, obj_haz ('class 3 ridge') and summit waypoint all say Class 3; only seasonal_hazards.exposure says Class 2. An ascent report describes a class 3 rock ramp into a saddle and a few class 3 steps on a wide ridge with nothing too difficult, supporting Class 3 with moderate exposure. Only the terrain class in the exposure line is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-13-9462326046"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_saul_se_route",
+     "fact": "how exposed the route is",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "typical of sustained Class 2 talus/scree",
+     "replace": "typical of Class 3 scrambling on talus, slabs and a broad ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit",
+   "verdict": "fixed",
+   "correct_value": "Turnoff from Indian Creek Trail ~4.5 mi, Airplane Lake ~6 mi, summit ~7.5 mi one-way (~15-16 mi round trip).",
+   "evidence": "A 2021 ascent logged trailhead to the turnoff 4.5 mi/1,200 ft, turnoff to the lake 1.5 mi/2,200 ft and lake to summit 1.5 mi/2,000 ft (7.5 mi one-way). The encyclopedia entry gives the standard route as 16 miles round trip with 5,300 ft of gain. The itinerary (6 mi to camp, 9 mi summit-and-out), the camp note (turnoff at about 4.5 miles) and dist_km (12.5 km) all agree; the waypoint cumulative distances (turnoff 3, lake 4.5, summit 6) were the outliers. Intermediate pins without a sourced distance are cleared rather than guessed; the 12-mile figure is kept as it is framed as one party's more direct line.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-13-9462326046",
+    "https://en.wikipedia.org/wiki/Mount_Saul"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_saul_se_route",
+     "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 3,
+     "value": 4.5
+    },
+    {
+     "id": "wa_mount_saul_se_route",
+     "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 3.8,
+     "value": null
+    },
+    {
+     "id": "wa_mount_saul_se_route",
+     "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 4.5,
+     "value": 6
+    },
+    {
+     "id": "wa_mount_saul_se_route",
+     "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 5.2,
+     "value": null
+    },
+    {
+     "id": "wa_mount_saul_se_route",
+     "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 6,
+     "value": 7.5
+    },
+    {
+     "id": "wa_mount_saul_se_route",
+     "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "for roughly 4.5-6 miles. Near Airplane Creek",
+     "replace": "for roughly 4.5 miles. Near Airplane Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "fact": "Olney Creek Road gate elevation",
+   "verdict": "fixed",
+   "correct_value": "The drive now ends at the gate at the Sultan Basin Road junction, ~1,700 ft (1,680 ft); 2,100 ft is the old closure point at a switchback higher up.",
+   "evidence": "USGS 3DEP elevation at the gate pin is 1,675 ft. A 2018 ascent parked at the gated Olney Creek Road at the pavement's end and gives the route's elevation range as 1,680-5,280 ft. The Mountaineers description of the road 'permanently closed at the switchback at 2,100 ft' dates from when high-clearance vehicles could drive the lower spur; the row's own camp note and closures note say the gate is now at the very start of the road. So 2,100 ft (approach, trailhead card) is stale and 1,800 ft is also off.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.68729&y=47.94902&units=Feet&wkid=4326",
+    "https://onehikeaweek.com/2018/10/27/mount-stickney/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-06-24-0905082660",
+    "https://www.mountaineers.org/activities/routes-places/mount-stickney"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_stickney_scramble",
+     "fact": "Olney Creek Road gate elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1800,
+     "value": 1680
+    },
+    {
+     "id": "wa_mount_stickney_scramble",
+     "fact": "Olney Creek Road gate elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "at roughly 2,100 ft, since",
+     "replace": "at roughly 1,700 ft, since"
+    },
+    {
+     "id": "wa_mount_stickney_scramble",
+     "fact": "Olney Creek Road gate elevation",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Olney Creek Road gate (~2,100 ft)",
+     "value": "Olney Creek Road gate (~1,700 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "fact": "Bivy entry describes a different peak's approach (Spire Mountain, not Mount Stickney)",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "bivy[0] San Juan Campground is on the Index-Galena road (North Fork Skykomish) and is written for Spire Mountain; it does not serve Mount Stickney's Sultan Basin/Olney Creek approach. bivy[1] One Acre Lake and bivy[2] Sultan Basin road pullouts/Olney Creek gate do serve this route. Handled as a catalog-wide class.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "fact": "road-walk and One Acre Lake distances from the current gate",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The approach's '2.25 miles' to the second switchback (3,700 ft) is measured from the old 2,100 ft closure, not from the current gate at the Sultan Basin Road junction, and the waypoints put One Acre Lake at 3.7 mi while the approach says about 6 miles to the lake and the camp note says a 5-6 mile road walk. One account reached the lake at about 6 miles from Sultan Basin Road; another gives 13.5 miles round trip overall. The per-waypoint distances from the new gate could not be settled with two agreeing sources, so no patch.",
+   "sources": [
+    "https://hike2hike.com/scrambling/mount-stickney-washington-state/",
+    "https://onehikeaweek.com/2018/10/27/mount-stickney/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "fact": "Total route elevation gain",
+   "verdict": "fixed",
+   "correct_value": "~4,900 ft round-trip gain (car to car)",
+   "evidence": "A 2022 party on the East Ridge logged 16.2 miles and 5,000 ft of gain (using the Commonwealth shortcut); a 2025 East Ridge ascent logged 16.7 miles and 4,878 ft. Both agree with the itinerary, totalNote and loss_ft (4,900); gain_ft 3,600 is the one-way net rise, not the car-to-car total.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-19.2760366253",
+    "https://www.lucasmountainknowledge.com/post/mount-thomson-sept-2025"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_ridge_6",
+     "fact": "Total route elevation gain",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 3600,
+     "value": 4900
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "fact": "one-way distance from the trailhead",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "~8 miles one-way; ~4,900 ft round-trip gain",
+   "evidence": "The approach and approach_variants say 6-7 miles one-way (distMi 6.5), but the itinerary (~8 mi to Bumblebee Pass, 16.7 mi RT), the summit waypoint (8 mi) and dist_km (13 km) say ~8. One route description measures 7.1 miles on the PCT to Ridge Lake plus 0.5 mile to the Bumblebee Pass gully; two GPS-logged ascents give 16.2 and 16.7 miles round trip. The approach sentence also paired 'cumulative gain' with the net 3,600 ft figure while saying the Bumblebee up-and-over adds to it; it now gives the round-trip total.",
+   "sources": [
+    "http://cwillett.imathas.com/local/thompson/index.html",
+    "https://www.lucasmountainknowledge.com/post/mount-thomson-sept-2025",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-19.2760366253"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_ridge_6",
+     "fact": "one-way distance from the trailhead",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 6-7 miles with about 3,600 ft of cumulative gain",
+     "replace": "roughly 8 miles, and the round trip gains about 4,900 ft"
+    },
+    {
+     "id": "wa_east_ridge_6",
+     "fact": "one-way distance from the trailhead",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 6.5,
+     "value": 8
+    },
+    {
+     "id": "wa_east_ridge_6",
+     "fact": "one-way distance from the trailhead",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Roughly six to seven miles one way",
+     "replace": "Roughly eight miles one way"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "fact": "Total route elevation gain/loss",
+   "verdict": "fixed",
+   "correct_value": "~5,200 ft round-trip gain/loss; ~3,000 ft trailhead to the base of the route",
+   "evidence": "The reader's 3,600 ft is only the net trailhead-to-summit rise and ignores the Bumblebee Pass up-and-over on both legs and the PCT undulations. A West Ridge-up/East Ridge-down party logged 5,200 ft gained and lost; GPS-logged East Ridge days on the same approach logged 5,000 ft and 4,878 ft. So gain_ft/loss_ft (5,200) are right and the itinerary day and totalNote (3,600) are wrong. approach_variants[0].gainFt held the round-trip figure though its own notes and the approach say 2,900-3,000 ft to the base.",
+   "sources": [
+    "https://trailcatjim.com/mt-thomson-via-west-ridge-2016/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-19.2760366253",
+    "https://www.lucasmountainknowledge.com/post/mount-thomson-sept-2025"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_thomson_west_ridge",
+     "fact": "Total route elevation gain/loss",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 3600,
+     "value": 5200
+    },
+    {
+     "id": "wa_mount_thomson_west_ridge",
+     "fact": "Total route elevation gain/loss",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 3600,
+     "value": 5200
+    },
+    {
+     "id": "wa_mount_thomson_west_ridge",
+     "fact": "Total route elevation gain/loss",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~3,600 ft gain/loss",
+     "replace": "~5,200 ft gain/loss"
+    },
+    {
+     "id": "wa_mount_thomson_west_ridge",
+     "fact": "Total route elevation gain/loss",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "gainFt"
+     ],
+     "expect": 5200,
+     "value": 3000
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "fact": "Pitch count and which pitch is the crux",
+   "verdict": "fixed",
+   "correct_value": "Crux (the roofs) on pitch 2; six pitches overall, the last a short pitch from the notch past the false summit that many parties scramble.",
+   "evidence": "The route database entry gives 6 pitches: three to a hanging slab, two more to the false summit, then a drop to a notch and one more pitch to the true summit, with pitch 2's roofs as the physical crux. A separate party's account also found pitch 2 the crux and scrambled the final gap unroped. So pitches=6 and the 5-row ROUTE BREAKDOWN (which ends by coiling the rope at the false summit) both stand; the waypoint label '(Pitch 3)' and the pro tip's alternative six-pitch numbering with the crux on P3 were the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/110554093/west-ridge",
+    "https://stevensong.com/usa/washington/mount-thomson-via-w-ridge-and-kendall-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_thomson_west_ridge",
+     "fact": "Pitch count and which pitch is the crux",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "name"
+     ],
+     "expect": "Crux 5.6 Bulge (Pitch 3)",
+     "value": "Crux 5.6 Roofs (Pitch 2)"
+    },
+    {
+     "id": "wa_mount_thomson_west_ridge",
+     "fact": "Pitch count and which pitch is the crux",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      4
+     ],
+     "find": "A commonly reported six-pitch breakdown: P1-2 climb chimney systems; P3 is the crux, a 5.6 bulge; P4 a 5.4 face with real exposure; P5 a Class 3-4 traverse across a large slab; P6 ledges and cracks to the summit — though many parties link it into just 4-5 pitches.",
+     "replace": "Pitch counts vary with how parties split the rope-lengths: the crux roofs come on pitch 2, three pitches reach a hanging slab, two more lead to the false summit, and a short final pitch or an exposed scramble from the notch beyond it gains the true summit."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "fact": "Car-to-car total time vs its own schedule",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule (3:30 AM start, summit ~noon, back 5-6 PM) implies 13.5-14.5 h, while totalHrs, the day hours and the notes say 11 h / 10-12 h. Reported West Ridge days span roughly 10.5 h for a fast trail-running party to about 14.3 h for a party of four (5:40 AM to 8 PM); no two sources agree on one figure, so neither the total nor the schedule was changed.",
+   "sources": [
+    "https://stevensong.com/usa/washington/mount-thomson-via-w-ridge-and-kendall-peak/",
+    "http://cwillett.imathas.com/local/thompson/index.html"
+   ],
+   "patches": []
+  }
+ ]
+}

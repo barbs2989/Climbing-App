@@ -1,0 +1,247 @@
+{"batches": ["b121.json", "b122.json", "b123.json", "b124.json"], "routes_read": 10, "routes": [
+  {"id": "wa_summit_chief_mountain_north_face", "name": "North Face", "area": "Summit Chief Mountain",
+   "contradictions": []
+  },
+  {"id": "wa_summit_chief_mountain_south_route", "name": "South Route", "area": "Summit Chief Mountain",
+   "contradictions": [
+     {"fact": "Approach distance from Pete Lake Trailhead to Vista Lakes camp",
+      "severity": "high",
+      "claims": [
+        {"field": "approach", "says": "making this a two-day approach of about 9 miles and 2,800 ft to reach the alpine basin"},
+        {"field": "approach_variants[0].distMi", "says": "10 (text: ~5 + 0.6 + 4.5 mi ≈ 10.1 mi)"},
+        {"field": "itinerary.days[0].miles", "says": "13"},
+        {"field": "waypoints[2] ('Vista Lakes (upper lake)').distMi", "says": "13"}
+      ],
+      "why": "The route's own approach prose and approach_variants[0] put the one-way distance to Vista Lakes camp at 9-10 miles, but the itinerary day-1 mileage and the Vista Lakes waypoint both give 13 miles for the same leg -- a 30-40% swing.",
+      "internal_resolution": "gain_ft for the leg (2,800 ft) is identical in both the approach prose and itinerary.days[0], confirming they describe the same segment; the itinerary/waypoint figure (13 mi) is corroborated by descent_text's independently-stated round-trip total ('approximately 30-33+ miles' ≈ 13 mi one-way x2 + summit push), so the approach prose's '9 miles' and approach_variants' distMi 10 are the likely outliers.",
+      "needs_research": false
+     },
+     {"fact": "Trailhead named for the approach / whether the trip involves camping",
+      "severity": "high",
+      "claims": [
+        {"field": "partner_requirements.approachTime", "says": "Long — typically a full day (or more) of hiking from the Dutch Miller Gap or Waptus trailheads just to reach a basin camp, before the summit push itself"},
+        {"field": "partner_requirements.fitnessSpec.hiking", "says": "Dutch Miller Gap or Waptus basin trailheads run well over 15-20 miles round trip with substantial elevation gain before the climbing even starts"},
+        {"field": "approach_logistics.trailhead", "says": "Pete Lake Trailhead (Trail #1323, FR-4616)"},
+        {"field": "road.name", "says": "Salmon La Sac Road (FR-4330) to FR-46 to FR-4616 to Road 113"},
+        {"field": "waypoints[0].name", "says": "Pete Lake Trailhead"}
+      ],
+      "why": "partner_requirements names Dutch Miller Gap and Waptus as the trailheads for this route, but approach, approach_logistics, road, and waypoints all consistently use the Pete Lake Trailhead via Cooper Lake Road/FR-46. Dutch Miller Gap and Waptus are trailheads used by other peaks in the (shared) bivy list, suggesting partner_requirements was copied from a different route's data.",
+      "internal_resolution": "Four independent fields (approach_logistics, road, waypoints[0], itinerary) agree on Pete Lake Trailhead; partner_requirements is the sole outlier.",
+      "needs_research": false
+     },
+     {"fact": "CAMPING & BIVY entries actually usable for this route",
+      "severity": "high",
+      "claims": [
+        {"field": "bivy[]", "says": "9 entries: Pete Lake/Lemah Meadows, Chimney Glacier basin (Chimney Rock's base), Escondido Ridge tarns (Little Big Chief), Waptus/Spade Lake (Little Big Chief), Park Lakes Basin (Three Queens), Hardscrabble Horse Camp/Upper Hardscrabble Lake (Burnt Boot Peak/Big Snow Mountain), Williams Lake (Iron Cap Mountain), Peggy's Pond (Cathedral Rock) — no Vista Lakes entry"},
+        {"field": "itinerary.days[0].objective / waypoints[2]", "says": "Vista Lakes (~5,500-5,600 ft) is the route's actual high camp"}
+      ],
+      "why": "The route's own approach/itinerary/waypoints establish Vista Lakes as the camp used, but the rendered CAMPING & BIVY list has no Vista Lakes entry — instead it lists camps that are explicitly for Chimney Rock, Three Queens, Little Big Chief, Big Snow Mountain, Iron Cap Mountain, Burnt Boot Peak and Cathedral Rock, none of which serve Summit Chief Mountain.",
+      "internal_resolution": "The bivy array is a shared zone-wide list not filtered for this route/peak; Vista Lakes (corroborated by approach, itinerary and waypoints) is simply absent from it.",
+      "needs_research": false
+     },
+     {"fact": "dist_km presented as if it were the round-trip distance",
+      "severity": "low",
+      "claims": [
+        {"field": "dist_km", "says": "20.9 (≈13.0 mi)"},
+        {"field": "itinerary.totalNote", "says": "roughly 26-30 miles and ~5,000 ft round trip"}
+      ],
+      "why": "dist_km (20.9 km ≈ 13 mi) matches only the one-way distance to Vista Lakes camp, not the ~26-30 mi round trip stated in the itinerary/descent_text; if a header 'Dist' stat reads dist_km as the trip total it understates the trip by roughly half.",
+      "internal_resolution": null,
+      "needs_research": false
+     }
+   ]
+  },
+  {"id": "wa_three_queens_standard", "name": "Standard Scramble", "area": "Three Queens",
+   "contradictions": [
+     {"fact": "Total elevation gain/loss for the route",
+      "severity": "high",
+      "claims": [
+        {"field": "gain_ft", "says": "6300"},
+        {"field": "loss_ft", "says": "6300"},
+        {"field": "itinerary.days[0].gainFt", "says": "3500"},
+        {"field": "itinerary.days[0].lossFt", "says": "3500"},
+        {"field": "itinerary.totalNote", "says": "about 10 miles round trip and 3,500 ft of gain"}
+      ],
+      "why": "gain_ft/loss_ft claim 6,300 ft, but the itinerary's own day total and totalNote claim only 3,500 ft — and 3,500 ft is impossible on its own terms, since the trailhead (2,400 ft) to the summit (6,693 ft) is already a 4,333 ft net elevation gain, more than the itinerary's claimed cumulative total.",
+      "internal_resolution": "itinerary's 3,500 ft is mathematically inconsistent with the route's own trailhead/summit elevations (net gain 4,333 ft exceeds the claimed cumulative gain of 3,500 ft); gain_ft/loss_ft (6,300 ft) is the plausible figure. (Also flagged by the mechanical detector.)",
+      "needs_research": false
+     },
+     {"fact": "Which side of the mountain the standard route actually climbs",
+      "severity": "high",
+      "claims": [
+        {"field": "beta", "says": "From a backcountry camp at Upper or Middle Park Lake, parties ascend talus and scree toward the Main-Middle notch... traverses south/east onto a broad ledge system on the north face... to reach the summit ridge"},
+        {"field": "face", "says": "North Face (Main-Middle notch to summit ridge)"},
+        {"field": "pitch_detail[1]", "says": "Bypasses the class-5 direct notch line via an exposed north-face ledge system"},
+        {"field": "approach", "says": "the base of Three Queens' south-face talus... the final ~400 ft to the 6,693-ft high point"},
+        {"field": "waypoints[6] ('South-face ledge below the summit gable')", "says": "Traverse a broad but exposed ledge around the south face"},
+        {"field": "climbing_route[0]", "says": "Lower south-face talus"},
+        {"field": "descent_text", "says": "down the talus to the vine-maple break, and out the 2.7-2.8 miles of trail"},
+        {"field": "approach_variants[0].baseFinding", "says": "A CONFLICT IN THE RECORD, STATED RATHER THAN RESOLVED: this route also carries a description of an approach from a camp at Upper or Middle Park Lake... traversing onto a broad LEDGE SYSTEM ON THE NORTH FACE... That is a different side of the mountain from the Mineral Creek south-talus line above. Both are documented; decide which you are climbing before you leave the car"}
+      ],
+      "why": "beta/face/pitch_detail[1] describe a Park-Lakes approach to a north-face ledge, while approach/waypoints/climbing_route/descent_text describe a different Mineral-Creek-trailhead south-face talus line — and the row's own approach_variants[0].baseFinding explicitly names this as an unresolved conflict between two documented lines on opposite sides of the peak.",
+      "internal_resolution": "Unresolved by the data's own admission — baseFinding says both lines are documented and tells the climber to decide which one they are climbing. The majority of fields (approach, approach_variants (primary), waypoints, climbing_route, descent_text, itinerary, road, access) describe the Mineral Creek/south-face-talus line; only beta, face, and pitch_detail[1] describe the Park Lakes/north-face-ledge line.",
+      "needs_research": true
+     },
+     {"fact": "Hardest rock grade on the route",
+      "severity": "medium",
+      "claims": [
+        {"field": "rock_grade", "says": "Class 2-3"},
+        {"field": "grade", "says": "Class 3-4"},
+        {"field": "pitch_detail[1].grade", "says": "Class 4"},
+        {"field": "climbing_route[2].class", "says": "class 3"},
+        {"field": "hazards[0]", "says": "described in trip reports as generously rated 'Class 3'"},
+        {"field": "approach", "says": "published descriptions of this section as 'class 3' are considered generous by several parties who found it heads-up the whole way"}
+      ],
+      "why": "The header grade pill reads rock_grade first ('Class 2-3'), but the route's own grade field, its class-4 ledge-traverse pitch, and repeated prose noting the published class-3 rating is generous all point to a harder route than 'Class 2-3' implies.",
+      "internal_resolution": "grade ('Class 3-4') agrees with pitch_detail's class-4 pitch and the prose warnings that the class-3 rating undersells the route; rock_grade ('Class 2-3') is the outlier.",
+      "needs_research": false
+     },
+     {"fact": "Trailhead named for the approach / whether the trip involves camping",
+      "severity": "high",
+      "claims": [
+        {"field": "partner_requirements.fitnessSpec.hiking", "says": "Full-day (many parties make it an overnight) approach via the Pete Lake / Cooper River trails into the peak's basins, followed by off-trail talus/slope travel to the true (east) summit"},
+        {"field": "partner_requirements.approachTime", "says": "Long - a full day to reach the basin and begin scrambling via Pete Lake/Cooper River; commonly split into a 2-day trip with a basin camp rather than done car-to-car"},
+        {"field": "itinerary.days[0].note", "says": "No camping — parties are back at the trailhead by afternoon/early evening."},
+        {"field": "itinerary.totalNote", "says": "no overnight camp is involved"},
+        {"field": "approach_logistics.trailhead", "says": "Mineral Creek Trailhead"}
+      ],
+      "why": "partner_requirements names 'Pete Lake / Cooper River trails' as the approach and describes it as commonly an overnight/2-day trip, but approach, approach_logistics, road, waypoints and itinerary all use the Mineral Creek Trailhead and the itinerary explicitly states this is a single car-to-car day with no camping.",
+      "internal_resolution": "approach, approach_logistics, road, waypoints, itinerary and access all agree on the Mineral Creek Trailhead and a single-day car-to-car trip; partner_requirements is the outlier, apparently copied from a different route (Pete Lake/Cooper River trails serve Summit Chief Mountain and Chimney Rock, not Three Queens).",
+      "needs_research": false
+     }
+   ]
+  },
+  {"id": "wa_three_queens_middle_peak", "name": "Middle Peak via South Face - South Chimney", "area": "Three Queens",
+   "contradictions": [
+     {"fact": "Round-trip distance",
+      "severity": "low",
+      "claims": [
+        {"field": "dist_km", "says": "4.3 (text: 'About 4.3 km beyond the road')"},
+        {"field": "itinerary", "says": "roughly 10 miles round trip and 4,600 ft of gain/loss"}
+      ],
+      "why": "dist_km (4.3 km ≈ 2.7 mi) is roughly a quarter of the itinerary's stated 10-mile round trip; even doubled as a one-way figure it only reaches ~5.3 mi.",
+      "internal_resolution": null,
+      "needs_research": false
+     },
+     {"fact": "Location of the (shared) Mineral Creek Trailhead relative to Cooper Pass",
+      "severity": "low",
+      "claims": [
+        {"field": "approach_logistics.trailheadDirection", "says": "North from Cle Elum via Highway 903 (17 miles past Lake Cle Elum), then left on Cooper Lake Road (FR-4600) approximately 10 miles to trailhead at Cooper Pass"},
+        {"field": "approach", "says": "Same trailhead and initial trail as the East/Main Peak standard route: Mineral Creek Trailhead (2,400 ft)"}
+      ],
+      "why": "This route's own approach_logistics places the trailhead 'at Cooper Pass,' but this route's own approach text (and the sibling Standard Scramble route's waypoint directions) place the same Mineral Creek Trailhead about 3 miles past/below Cooper Pass, at a much lower elevation (~2,400 ft) than a mountain pass.",
+      "internal_resolution": "The shared trailhead coordinates (47.4176, -121.2373) and elevation (~2,400 ft) are consistent everywhere except this one trailheadDirection sentence, which is the likely outlier.",
+      "needs_research": false
+     }
+   ]
+  },
+  {"id": "wa_three_queens_west_peak", "name": "West Peak via West Ridge - West Face", "area": "Three Queens",
+   "contradictions": [
+     {"fact": "CAMPING & BIVY entries actually usable for this route",
+      "severity": "medium",
+      "claims": [
+        {"field": "beta", "says": "After camping at Spectacle Point (5,800 ft), the route climbs the West Ridge and West Face..."},
+        {"field": "itinerary", "says": "2-day trip documented: Day 1, trailhead to Spectacle Point camp..."},
+        {"field": "pro_tips[0]", "says": "Spectacle Point camp (5,800 ft) sets up a short summit push the next morning"},
+        {"field": "bivy[]", "says": "9 entries for Pete Lake, Chimney Glacier basin, Escondido Ridge, Waptus/Spade Lake, Park Lakes Basin, Hardscrabble camps, Williams Lake, Peggy's Pond — none is Spectacle Point"}
+      ],
+      "why": "This route's own narrative requires an overnight camp at Spectacle Point (5,800 ft), but the rendered CAMPING & BIVY section has no Spectacle Point entry — only camps serving other peaks (Chimney Rock, Little Big Chief, Three Queens' other routes, Big Snow Mountain, Iron Cap Mountain, Burnt Boot Peak, Cathedral Rock).",
+      "internal_resolution": "The bivy array is a shared zone list not filtered for this route; the route's own beta/itinerary/pro_tips establish Spectacle Point as the actual camp, which is simply missing from Camping & Bivy.",
+      "needs_research": false
+     }
+   ]
+  },
+  {"id": "wa_bedal_peak_standard", "name": "Standard Scramble", "area": "Bedal Peak",
+   "contradictions": [
+     {"fact": "Elevation of the cliff-band crux",
+      "severity": "medium",
+      "claims": [
+        {"field": "hazards[1]", "says": "crux cliff band at roughly 4,600-4,900 ft"},
+        {"field": "turnaround", "says": "the cliff-band crux (~4,600-4,900 ft)"},
+        {"field": "pro_tips[2]", "says": "finding the climber's ramp/notch through the cliff band around 4,600-4,900 ft"},
+        {"field": "approach", "says": "The technical crux comes around 4,900–5,200 ft at a cliff band"},
+        {"field": "waypoints[5] ('Cliff Band / Key Ramp').elev", "says": "4950"},
+        {"field": "waypoints[5].directions", "says": "The crux is a cliff band at about 4,900-5,200 ft"},
+        {"field": "approach_variants[0].baseFinding", "says": "Somewhere between about 4,900 and 5,100 ft the boulder fields give way to meadows and a cliff band bars the way"},
+        {"field": "itinerary.days[0].schedule[2].label", "says": "Snow line and cliff-band ramp, ~4,450-5,100 ft"},
+        {"field": "climbing_route[0]", "says": "Around 4,900-5,200 ft, parties look for a ramp/notch line"}
+      ],
+      "why": "Three fields (hazards, turnaround, pro_tips) place the crux at 4,600-4,900 ft, while six other fields (approach, the Cliff Band waypoint's own elev/directions, approach_variants, itinerary schedule, climbing_route) place it at roughly 4,900-5,200 ft — ranges that only touch at their edges rather than overlap, for one named feature.",
+      "internal_resolution": "The majority (approach, waypoint elev/directions, approach_variants, itinerary schedule, climbing_route) agree on ~4,900-5,200 ft; the 4,600-4,900 ft figure in hazards/turnaround/pro_tips appears to be the stale/minority value.",
+      "needs_research": false
+     },
+     {"fact": "Access route to the route's only listed overnight camp",
+      "severity": "medium",
+      "claims": [
+        {"field": "bivy[0].notes", "says": "about two and a half miles from the road end at around 2,800 ft, climbing steadily through old forest and across avalanche tracks... the way is up the rocky creek bed and through thin forest into the basin [Bedal Basin, with a pioneer cabin among the boulders]"},
+        {"field": "waypoints[0] ('FR 4096 Pullout / Merry Brook Climbers' Path').elev", "says": "2166"},
+        {"field": "approach", "says": "the actual hike starts at an unsigned, unmaintained climber's boot path around 2,100–2,200 ft... follows Merry Brook (also called Merry Creek) upstream"}
+      ],
+      "why": "The route's only overnight-camp entry (Bedal Basin) describes reaching camp via a 2,800 ft 'road end' and the Bedal Creek bed with a pioneer-cabin landmark, while this route's own approach/waypoints describe a different trailhead (FR 4096 pullout, ~2,100-2,200 ft) and a different named drainage (Merry Brook), with no basin camp, pioneer cabin, or Bedal Creek mentioned anywhere in the route's own text.",
+      "internal_resolution": "Possibly a legitimate alternate approach to the same peak rather than contamination, but the route's own fields never reconcile the two starting elevations/drainages, so a climber cannot tell whether Bedal Basin is reached from the trailhead this route uses.",
+      "needs_research": true
+     }
+   ]
+  },
+  {"id": "wa_big_four_mountain_spindrift_couloir", "name": "Spindrift Couloir", "area": "Big Four Mountain",
+   "contradictions": [
+     {"fact": "Maximum ice difficulty on the route",
+      "severity": "medium",
+      "claims": [
+        {"field": "gear[0]", "says": "Two ice tools — sustained thin ice up to roughly WI4/95° through the main couloir"},
+        {"field": "ice_grade", "says": "WI5"},
+        {"field": "pitch_detail (Crux).grade", "says": "near-vertical ice (~WI5)"}
+      ],
+      "why": "The gear note caps the route's ice difficulty at WI4, but the ice_grade field and the pitch_detail crux entry both state WI5 for the same route.",
+      "internal_resolution": "ice_grade and pitch_detail agree at WI5; gear's 'WI4' is the outlier.",
+      "needs_research": false
+     },
+     {"fact": "Anchor type for the first (col) rappel vs. the bowl rappels",
+      "severity": "medium",
+      "claims": [
+        {"field": "rappels", "says": "Multiple rappels on descent (tree anchors at the col, mixed anchors through the north face bowl); exact rappel count not documented"},
+        {"field": "rappel_detail[0].anchor", "says": "natural rock (horn/block) near summit ridge"},
+        {"field": "rappel_detail[1].anchor", "says": "tree"},
+        {"field": "descent_text", "says": "Descent goes northwest, via rappels and steep downclimbing, to the col between Big Four and Hall Peak; from there, multiple tree-anchored rappels lead back down through the North Face bowl to the base"}
+      ],
+      "why": "The summary 'rappels' field places tree anchors at the col itself, but rappel_detail's own first entry (the rap toward the col) documents a natural-rock anchor, and descent_text/rappel_detail agree the tree-anchored rappels come after the col, through the bowl below it — not at the col.",
+      "internal_resolution": "rappel_detail and descent_text agree the col rappel is rock-anchored and the tree anchors are in the bowl below; the top-level 'rappels' summary field has the anchor locations mixed up.",
+      "needs_research": false
+     },
+     {"fact": "First-ascent climber's surname spelling",
+      "severity": "low",
+      "claims": [
+        {"field": "fa", "says": "Bart Paull and Doug Littauer, March 2, 1996"},
+        {"field": "beta", "says": "First climbed March 2, 1996 by Bart Pauli and Doug Littauer"}
+      ],
+      "why": "The same first-ascent climber's surname is spelled 'Paull' in one field and 'Pauli' in another.",
+      "internal_resolution": null,
+      "needs_research": true
+     }
+   ]
+  },
+  {"id": "wa_big_four_mountain_northwest_ridge", "name": "Northwest Ridge", "area": "Big Four Mountain",
+   "contradictions": []
+  },
+  {"id": "wa_big_four_mountain_tower_route", "name": "Tower Route", "area": "Big Four Mountain",
+   "contradictions": [
+     {"fact": "Hardest rock grade on the route",
+      "severity": "high",
+      "claims": [
+        {"field": "grade", "says": "IV 5.7"},
+        {"field": "grade_num", "says": "7"},
+        {"field": "rock_grade", "says": "5.9"},
+        {"field": "pitch_detail[1] ('First tower').grade", "says": "5.7"},
+        {"field": "pitch_detail[3] ('Second and third towers').grade", "says": "5.6-5.7"},
+        {"field": "pro_needs", "says": "Standard trad rack sufficient for 5.7 terrain on the towers"}
+      ],
+      "why": "The header grade pill reads rock_grade first ('5.9'), two full number-grades harder than any pitch on the route describes; grade ('IV 5.7'), grade_num (7, consistent with 5.7), every pitch_detail entry (max 5.7), and pro_needs all agree the hardest climbing is 5.7. (Also flagged by the mechanical detector: 'route 9 but hardest pitch 5.7'.)",
+      "internal_resolution": "grade, grade_num, pitch_detail (both tower pitches) and pro_needs unanimously support 5.7 as the route's hardest grade; rock_grade's '5.9' is the sole, unsupported outlier.",
+      "needs_research": false
+     }
+   ]
+  },
+  {"id": "wa_big_four_mountain_dry_creek_route", "name": "Dry Creek Route", "area": "Big Four Mountain",
+   "contradictions": []
+  }
+]}

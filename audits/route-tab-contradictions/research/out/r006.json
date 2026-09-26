@@ -1,0 +1,599 @@
+{
+ "file": "r006.json",
+ "results": [
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "fact": "Descent direction: which face/gully the first rappel(s) drop onto",
+   "verdict": "fixed",
+   "correct_value": "Two documented descent lines exist: (a) two rappels down slabs just north of the east gully, then a wet-ledge traverse into it; (b) one rappel to a southeast-face ledge, then two or three rappels down the gully east of the couloir's top. The row should present them as alternatives.",
+   "evidence": "One route description (and an independent trip report) give two ~30 m rappels to the east off a slung rock and a small tree, down slabs just north of the east gully, then a traverse right on a snow ledge into the east gully and a glissade to Colchuck Lake. Another route description gives a single rappel back to a ledge on the southeast face, then two or three single-rope rappels down a gully just east of the couloir's top; a separate trip report also rappelled once to a ledge and walked it before descending a gully. Both lines are real, so the fix labels the RAPPELS table and the prose as alternatives instead of choosing one.",
+   "sources": [
+    "https://www.mountainproject.com/route/125260984/northeast-couloir",
+    "https://www.summitpost.org/northeast-couloir/160858",
+    "https://www.summitpost.org/sailing-away-on-argonaut/851445",
+    "https://mountainflamingo.com/2012-05-19-argonaut-peak-ne-couloir/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "plus a protected wet-ledge traverse",
+     "replace": "plus a protected wet-ledge traverse into the east gully. A second line instead makes one rappel to a ledge on the southeast face, then two or three down the gully east of the couloir's top; the station-by-station table follows that second line",
+     "id": "wa_argonaut_peak_northeast_couloir",
+     "fact": "Descent direction: which face/gully the first rappel(s) drop onto"
+    },
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": null,
+     "value": "This table follows the southeast-face ledge line. The other descent makes two rappels down slabs just north of the east gully and then traverses a wet ledge into it. Choose one line before you leave the summit.",
+     "id": "wa_argonaut_peak_northeast_couloir",
+     "fact": "Descent direction: which face/gully the first rappel(s) drop onto"
+    }
+   ]
+  },
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "fact": "Enchantment overnight permit season: May 15-Oct 31 (permit, access.permit) vs June 15-October 15 (access.notes)",
+   "verdict": "fixed",
+   "correct_value": "May 15-October 31",
+   "evidence": "The Forest Service page for the Stuart Lake Trailhead states that overnight reservation permits are required May 15 - October 31. The federal reservation listing for the Enchantment Permit Area and a permit-tracking site give the same May 15 - Oct 31 window. access.notes' June 15-October 15 is the outlier on this row.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.recreation.gov/permits/233273",
+    "https://campflare.com/permit/enchantment"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "required June 15-October 15",
+     "replace": "required May 15-October 31",
+     "id": "wa_argonaut_peak_northeast_couloir",
+     "fact": "Enchantment overnight permit season: May 15-Oct 31 (permit, access.permit) vs June 15-October 15 (access.notes)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_northwest_arete",
+   "fact": "Access/closure info names the wrong trailhead system (Teanaway/Ingalls Creek instead of Stuart Lake/Icicle Creek)",
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass ($5/day or $30/annual) at the Stuart Lake Trailhead; the Teanaway Labor Mountain Fire closure does not concern this approach.",
+   "evidence": "The Forest Service Stuart Lake Trailhead page lists a $5 per vehicle per day or $30 annual pass at this trailhead, managed by the Wenatchee River Ranger District, reached by FR 7601. Two trip reports of this route start at the Stuart Lake trailhead and go up Mountaineer Creek. The Labor Mountain Fire closure order and repair notices name Teanaway / Cle Elum Ranger District roads and trails (Beverly Creek, Longs Pass, Ingalls Way, North Fork Teanaway Road), none on the Icicle side, so the closures text belongs to a Teanaway-side route and is cleared here.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.jeffreyjhebert.com/adventures/nw-arete-on-argonaut-peak",
+    "https://wenatcheeoutdoors.org/2023/08/21/argonautpeak/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/newsroom/releases/labor-mountain-fire-suppression-repair-work-ongoing"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass ($5/day or $30/annual) at the Teanaway/Ingalls Creek trailheads.",
+     "value": "Northwest Forest Pass ($5/day or $30/annual) at the Stuart Lake Trailhead.",
+     "id": "wa_northwest_arete",
+     "fact": "Access/closure info names the wrong trailhead system (Teanaway/Ingalls Creek instead of Stuart Lake/Icicle Creek)"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": "Beverly Creek/Fourth Creek Pass (FR-9737-112, Beverly Turnpike Trailhead) and several nearby Teanaway trails (Longs Pass, Ingalls Way, Standup Creek, etc.) were closed under a USFS order effective May 20-Dec 31, 2026 following the 2025 Labor Mountain Fire — confirm current status with the Cle Elum Ranger District before planning a Teanaway-side approach.",
+     "value": null,
+     "id": "wa_northwest_arete",
+     "fact": "Access/closure info names the wrong trailhead system (Teanaway/Ingalls Creek instead of Stuart Lake/Icicle Creek)"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_arete",
+   "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)",
+   "verdict": "fixed",
+   "correct_value": "14.5 hours for the summit-and-exit day (4:00 AM to 6:30 PM)",
+   "evidence": "One party's car-to-car day ran 4:30am to 9:15pm (~17 hrs): 6 hrs to the notch, 3.5 hrs notch to summit, 2.5 hrs of rappels, then nearly 5 hrs out. Another party reported about four hours of descent via the rappel stations. With the basin already reached on day 1 (~4-5 hrs), the remaining climb-descent-exit is ~13-15 hrs. That supports the schedule's 14.5 hrs, not 11. Every copy of the 11/15.5 figure is updated.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/nw-arete-on-argonaut-peak",
+    "https://wenatcheeoutdoors.org/2023/08/21/argonautpeak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "hours"
+     ],
+     "expect": 11,
+     "value": 14.5,
+     "id": "wa_northwest_arete",
+     "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "hrs"
+     ],
+     "expect": 11,
+     "value": 14.5,
+     "id": "wa_northwest_arete",
+     "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 15.5,
+     "value": 19,
+     "id": "wa_northwest_arete",
+     "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 11,
+     "value": 14.5,
+     "id": "wa_northwest_arete",
+     "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "a big summit/exit day, ~11 hrs",
+     "replace": "a big summit/exit day, ~14.5 hrs",
+     "id": "wa_northwest_arete",
+     "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec"
+     ],
+     "find": "(~15.5 hrs)",
+     "replace": "(~14.5-hr summit-and-exit day)",
+     "id": "wa_northwest_arete",
+     "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "September",
+      "reason"
+     ],
+     "find": "given the 15.5-hr day length",
+     "replace": "given the ~14.5-hr summit day",
+     "id": "wa_northwest_arete",
+     "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_arete",
+   "fact": "Pitch count: 7 vs '6-8' / '6-7'",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The pitches field, overview and the seven ROUTE BREAKDOWN rows say 7; the '6-8' and '6-7' phrasings are ranges that include 7, not a different count.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_arete",
+   "fact": "Descent: itinerary/timing/summit waypoint say reverse the arete and rappel/downclimb the couloir; descent, descent_text, rappel_detail say traverse east with ~4 rappels to the Argonaut-Colchuck col",
+   "verdict": "fixed",
+   "correct_value": "The descent traverses east and makes about four rappels to the Argonaut-Colchuck col; it does not reverse the arete.",
+   "evidence": "A route description states the descent from the east ridge goes to the Argonaut-Colchuck col in four rappels. One trip report describes a single-rope rap down the upper snowfield, a scramble and rappel, a notch onto the east face and two more rappels to its base. Another party descended via the East Ridge rappel stations in about four hours. The schedule, day note, section note and summit-waypoint note are the outliers.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete",
+    "https://www.jeffreyjhebert.com/adventures/nw-arete-on-argonaut-peak",
+    "https://wenatcheeoutdoors.org/2023/08/21/argonautpeak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "Reverse to the notch, rappel/downclimb, break camp, and hike out.",
+     "replace": "Descend east with about four rappels to the Argonaut-Colchuck col, drop back into the basin, break camp, and hike out.",
+     "id": "wa_northwest_arete",
+     "fact": "Descent: itinerary/timing/summit waypoint say reverse the arete and rappel/downclimb the couloir; descent, descent_text, rappel_detail say traverse east with ~4 rappels to the Argonaut-Colchuck col"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "Reverse to the notch, rappel/downclimb, break camp, and hike out.",
+     "replace": "Descend east with about four rappels to the Argonaut-Colchuck col, drop back into the basin, break camp, and hike out.",
+     "id": "wa_northwest_arete",
+     "fact": "Descent: itinerary/timing/summit waypoint say reverse the arete and rappel/downclimb the couloir; descent, descent_text, rappel_detail say traverse east with ~4 rappels to the Argonaut-Colchuck col"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "expect": "Reverse to the notch, rappels down the couloir.",
+     "value": "Traverse east and rappel about four times to the Argonaut-Colchuck col.",
+     "id": "wa_northwest_arete",
+     "fact": "Descent: itinerary/timing/summit waypoint say reverse the arete and rappel/downclimb the couloir; descent, descent_text, rappel_detail say traverse east with ~4 rappels to the Argonaut-Colchuck col"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "most parties reverse the arete with short rappels through the crux, then downclimb the couloir.",
+     "replace": "the standard descent does not reverse the arete: it traverses east and rappels about four times to the Argonaut-Colchuck col.",
+     "id": "wa_northwest_arete",
+     "fact": "Descent: itinerary/timing/summit waypoint say reverse the arete and rappel/downclimb the couloir; descent, descent_text, rappel_detail say traverse east with ~4 rappels to the Argonaut-Colchuck col"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_northwest_arete",
+   "fact": "Colchuck/Stuart trail fork: waypoint says take the Colchuck side; approach says stay straight/right toward Stuart Lake",
+   "verdict": "fixed",
+   "correct_value": "Stay right on the Stuart Lake Trail past the Colchuck Lake junction",
+   "evidence": "One trip report kept going straight at the Colchuck Lake Trail turnoff, then left the Stuart Lake Trail 30 minutes later for Mountaineer Creek. Another took a right at the junction towards Stuart Lake and entered a marsh half a mile past it. The approach and approach_variants text agree; the waypoint note is the outlier.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/nw-arete-on-argonaut-peak",
+    "https://wenatcheeoutdoors.org/2023/08/21/argonautpeak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "take the Colchuck side toward Mountaineer Creek.",
+     "replace": "stay right toward Stuart Lake; the route leaves that trail for Mountaineer Creek farther on.",
+     "id": "wa_northwest_arete",
+     "fact": "Colchuck/Stuart trail fork: waypoint says take the Colchuck side; approach says stay straight/right toward Stuart Lake"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_northwest_arete",
+   "fact": "Overnight permit: access.permit/access.fees/permit say Enchantment quota permit; access.notes and itinerary.cal say this approach is non-quota",
+   "verdict": "fixed",
+   "correct_value": "This approach starts at the Stuart Lake Trailhead, inside the Enchantment Permit Area: overnight permits May 15-Oct 31, free self-issued permit for day use.",
+   "evidence": "The Forest Service Stuart Lake Trailhead page requires advance overnight reservation permits May 15 - October 31 and free self-issued day-use permits. The federal reservation listing shows the Stuart Zone reached from the Stuart Lake Trailhead. access.notes (copied from a Teanaway-side route) says the Stuart Lake trailhead is the lottery one and Argonaut's approaches are not, which is wrong for this route. itinerary.cal's '(no quota)' has the same problem. Where the zone boundary sits in the upper basin is unclear; the bivy notes already flag that, so the new text says the permit rules apply without claiming a boundary.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.recreation.gov/permits/233273",
+    "https://campflare.com/permit/enchantment"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "Do not confuse this approach with the actual Enchantment Permit Area lottery (Stuart/Colchuck/Snow Lakes/Eightmile/Core zones, reached via the Stuart Lake or Snow Lakes trailheads) — Argonaut Peak's standard approaches are separate, non-quota Alpine Lakes Wilderness trailheads.",
+     "value": "This route starts at the Stuart Lake Trailhead, an Enchantment Permit Area trailhead, so its overnight rules apply. The non-quota Teanaway and Ingalls Creek approaches serve Argonaut's south-side routes, not this one.",
+     "id": "wa_northwest_arete",
+     "fact": "Overnight permit: access.permit/access.fees/permit say Enchantment quota permit; access.notes and itinerary.cal say this approach is non-quota"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "a self-issue wilderness permit is required (no quota)",
+     "replace": "a free self-issued permit covers day use, and an overnight camp falls under the Enchantment Permit Area rules (May 15-Oct 31)",
+     "id": "wa_northwest_arete",
+     "fact": "Overnight permit: access.permit/access.fees/permit say Enchantment quota permit; access.notes and itinerary.cal say this approach is non-quota"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_south_face_12",
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line",
+   "verdict": "fixed",
+   "correct_value": "The 5.6 South Face is about three pitches (~300 ft) on the summit wall, starting in a left-facing corner. The 50-ft chockstone gully is the Class 3-4 crux of the separate south scramble route, used here as the descent.",
+   "evidence": "The South Face route description gives 3 pitches / 300 ft, starting in the rightmost and larger of two short left-facing corners and following the face to the summit, with no gully or chockstone. A separate account of the south scramble route puts its only 4th-class move at a chockstone step-right in a 50-ft gully, and calls the summit wall a separate ~3-pitch face. That account also notes the route is descended with one 50-ft rappel. So the chockstone gully belongs to the scramble route (and to this route's descent), not to its pitch 3. The approach and pitch 3 are rewritten; the descent fields stay.",
+   "sources": [
+    "https://www.mountainproject.com/route/114795630/south-face",
+    "https://rocknropenw.com/2024/07/23/argonaut-peak-via-the-south-scramble-route/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Climb to the right side of the summit face and find the route's technical crux: a 50-foot gully with a chockstone near its top (Class 4 — step right at the overhang to avoid harder class 5 moves), which tops out on the east ridge; follow this a short distance to the summit.",
+     "replace": "At the base of the summit face, start in the rightmost and larger of two short left-facing corners and climb about three pitches of blocky rock to the summit. The 50-foot chockstone gully that tops out on the east ridge (Class 4, stepping right at the overhang) is the finish of the scramble route, not part of this climb; it is the usual way down.",
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "grade"
+     ],
+     "expect": "Class 4 (exposed)",
+     "value": "up to 5.6",
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "crux"
+     ],
+     "expect": true,
+     "value": false,
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "anchor"
+     ],
+     "expect": "Sling/webbing anchor above chockstone",
+     "value": "Gear",
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "expect": "The 50-foot gully with a chockstone near its top is Class 3 until the final stepping-right move past the chockstone (step right at the overhang to dodge a harder 5th-class option); short and only Class 4, but it's the route's real crux thanks to the exposure and a heavily-worn sling anchor right above it — back it up with fresh webbing. Tops directly onto the east ridge a short walk from the summit.",
+     "value": "Finish up the upper face on blocky rock to the summit. The face goes almost anywhere, so the difficulty depends on the line you pick.",
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": " — working toward the right side of the summit wall to set up for the top-out gully.",
+     "replace": ".",
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Bring webbing or a cordelette specifically for building/backing up the crux-pitch anchor.",
+     "replace": "Bring webbing or a cordelette for backing up the worn rappel anchor above the chockstone on the descent.",
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    },
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      4
+     ],
+     "expect": "webbing/cordelette for the crux belay/rap anchor",
+     "value": "webbing/cordelette for the chockstone rappel anchor",
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    },
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      2
+     ],
+     "expect": "Webbing/cordelette for crux belay/rap anchor",
+     "value": "Webbing/cordelette for the chockstone rappel anchor",
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    },
+    {
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "Retreat via the same 50-ft rappel back into the gully",
+     "replace": "Retreat by rappelling the 50-ft chockstone gully",
+     "id": "wa_south_face_12",
+     "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_12",
+   "fact": "Route distance: dist_km 8.85 (~5.5 mi one way) vs itinerary 15 mi round trip",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 7.5 mi (12.07 km) one way",
+   "evidence": "On this row, the approach and approach_variants put camp at about 6 mi (distMi 6.5), and the summit waypoint sits at distMi 7.5. The two itinerary days total 15 mi, so about 7.5 mi one way. One external account of the south approach gives 6 miles from the Beverly/Bean Creek trailhead to the Ingalls Creek camp. A 2024 party covered 16 miles round trip on the same Fourth Creek Pass approach to a point high on the peak. dist_km's 5.5 mi is shorter than the trailhead-to-camp leg alone, so it cannot be the one-way figure.",
+   "sources": [
+    "https://rocknropenw.com/2024/07/23/argonaut-peak-via-the-south-scramble-route/",
+    "https://trailcatjim.com/argonaut-peak-attempt-via-fourth-creek-south-slope-northeast-ridge-2024/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 8.85,
+     "value": 12.07,
+     "id": "wa_south_face_12",
+     "fact": "Route distance: dist_km 8.85 (~5.5 mi one way) vs itinerary 15 mi round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_12",
+   "fact": "Climbing season vs the approach road being closed for 2026",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "season/best_season give the route's normal climbing window, and access.closures/road.status give a dated one-year closure order (May 20-Dec 31, 2026) that the page already shows. A temporary closure does not change the climbing window, and the two are not in conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_12",
+   "fact": "Whole-outing gain/loss: gain_ft 6257 vs loss_ft 6157 on an out-and-back, with day 2 not counting the re-climb over Fourth Creek Pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One account of this approach gives day 1 as 2000 ft gain / 1350 ft loss, day 2 as ~4200 ft up and ~4200 ft down, then about 1350 ft regained on the hike out. That totals roughly 7,550 ft each way, well above the stored 6257/6157. Only one external source gives these figures, and loss_ft is known to carry two conventions, so nothing is patched.",
+   "sources": [
+    "https://rocknropenw.com/2024/07/23/argonaut-peak-via-the-south-scramble-route/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Pitch count: 8 (pitches field / prose) vs 6 (approach text and pitch_detail rows)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A route description of Argonaut's Southeast Ridge calls it II 5.6 and says it tops out on the southeast spire after 8 pitches, including two single-rope or one double-rope rappel into the notch. That matches pitches=8 and the rappels field. The 6-pitch figure and the six pitch_detail rows describe an East Ridge line started from the Argonaut-Colchuck col, which is a different route (see the name contradiction). No second independent source for 8 could be reached (the other route pages returned 403), and fixing the count means rebuilding the ROUTE BREAKDOWN, so nothing is patched.",
+   "sources": [
+    "https://www.summitpost.org/southeast-ridge/158954",
+    "https://www.summitpost.org/argonaut-peak/152581",
+    "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Descent rappels: 2 rappels on natural anchors vs detailed_rack's '4 rappels with established anchors'",
+   "verdict": "fixed",
+   "correct_value": "Two single-rope (or one double-rope) rappels on natural anchors; the 4-rappel line is the Northwest Arete's descent to the Argonaut-Colchuck col.",
+   "evidence": "The Southeast Ridge description gives two single-rope or one double-rope rappel into the notch. The four-rappel descent with anchors at each station is the Northwest Arete's descent from the east ridge to the Argonaut-Colchuck col, as stated for that route and followed by two separate parties. This row's own rappel_count_note already says the four-rappel count belongs to a different line. The detailed_rack sentence importing it is replaced with the anchor advice that matches descent_text.",
+   "sources": [
+    "https://www.summitpost.org/argonaut-peak/152581",
+    "https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete",
+    "https://www.jeffreyjhebert.com/adventures/nw-arete-on-argonaut-peak",
+    "https://wenatcheeoutdoors.org/2023/08/21/argonautpeak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "The East Ridge is most commonly encountered as the standard rappel descent off the Northwest Arete (Argonaut-Colchuck Col in 4 rappels) with established anchors found at each station, so bring",
+     "replace": "Rappel anchors are natural (slung horns, blocks, small trees), so bring",
+     "id": "wa_argonaut_peak_east_ridge",
+     "fact": "Descent rappels: 2 rappels on natural anchors vs detailed_rack's '4 rappels with established anchors'"
+    }
+   ]
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Overnight permit: Enchantment quota lottery (permit) vs outside the permit area (access.fees/notes/permit)",
+   "verdict": "fixed",
+   "correct_value": "Free self-issued wilderness permit at the trailhead, no quota or lottery; the Teanaway/Ingalls Creek approach is outside the Enchantment Permit Area.",
+   "evidence": "The Forest Service Ingalls Creek trail/trailhead pages say a free permit filled out at the trailhead is needed to enter the Alpine Lakes Wilderness there. A separate wilderness guide contrasts that self-issue system with the Enchantment area's overnight reservations. The Enchantment Permit Area zones (Core, Snow, Colchuck, Stuart, Eightmile/Caroline) are all reached from the Icicle side. The top-level permit field is copied boilerplate; the sibling South Face row was corrected the same way.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/ingalls-creek-trail",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/ingalls-creek-trailhead",
+    "https://alpinelakeslodge.com/blog/alpine-lakes-wilderness-guide",
+    "https://www.recreation.gov/permits/233273"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+     "value": "Free self-issued USFS wilderness permit at the trailhead — no quota, no lottery. This Teanaway-side (Beverly Creek/Ingalls Creek) approach lies outside the Enchantment Permit Area, whose zones are reached from the Icicle Creek side.",
+     "id": "wa_argonaut_peak_east_ridge",
+     "fact": "Overnight permit: Enchantment quota lottery (permit) vs outside the permit area (access.fees/notes/permit)"
+    }
+   ]
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Route name 'Southeast Ridge' vs prose describing the 'East Ridge' from the Argonaut-Colchuck col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "This is a real conflation of two routes. Separate route pages exist for Argonaut's Southeast Ridge (II 5.6, 8 pitches, tops out on the southeast spire, two single or one double rappel into the notch) and its East Ridge. The ridge from the Argonaut-Colchuck col is the line the Northwest Arete party descends. The row's name, face, pitches and rappels describe the Southeast Ridge. Its beta, approach (to the col, a notch west of a lone gendarme, '6 pitches'), pitch_detail, descent_text and rappel_detail describe the col-side East Ridge, and rappel_detail's 'traverse a snow-covered ledge toward the east gully' comes from the Northeast Couloir descent. Fixing it means rewriting the beta, approach, breakdown and descent from a full Southeast Ridge description, which could not be fetched (403). Flagged, not patched.",
+   "sources": [
+    "https://www.summitpost.org/southeast-ridge/158954",
+    "https://www.summitpost.org/east-ridge/161870",
+    "https://www.summitpost.org/argonaut-peak/152581",
+    "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Climbing season vs the approach road being closed for 2026",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "season/best_season give the normal climbing window, and access.closures/road.status give a dated one-year closure (May 20-Dec 31, 2026) that the page already shows. The two are not in conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Day-2 schedule spans 4:30 AM-9:00 PM (16.5 hrs) vs the day's stated 13 hours; timing.totalHrs 19; partner_requirements '10-hr round trip from bivy'; gain_ft 4300 vs itinerary total 4157",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The day-2 schedule's own first and last entries span 16.5 hours, against hours=13 (and sectionBreakdown 13). partner_requirements quotes a 10-hr round trip from the bivy. gain_ft 4300 does not equal the itinerary gain sum (2800+1357=4157), and day 2 does not count the re-climb over Fourth Creek Pass. No published timing or gain for the Southeast Ridge itself was found, and the row mixes two routes, so no figure can be adopted.",
+   "sources": [],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

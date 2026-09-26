@@ -1,0 +1,685 @@
+{
+ "applied": [
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "column": "approach",
+   "path": [],
+   "fact": "whether approach beta for this boulder exists"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "title"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "title"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "title"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "gainFt"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "note"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "miles"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "lossFt"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "fromTo"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "fromTo"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "fromTo"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    3,
+    "note"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "column": "bail",
+   "path": [],
+   "fact": "which approach/trailhead this route uses"
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "White Chuck River Trailhead waypoint: road and elevation"
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "White Chuck River Trailhead waypoint: road and elevation"
+  },
+  {
+   "id": "wa_gothic_peak_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Which side of the SE ridge crest carries the correct/cairned line"
+  },
+  {
+   "id": "wa_indian_head_peak_southwest_slopes",
+   "column": "approach",
+   "path": [],
+   "fact": "PCT direction from the North Fork Sauk junction to White Pass"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "White Chuck River Trailhead waypoint: road and elevation",
+   "op": "replace_text",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "find": "Road-end trailhead on Suiattle River Rd (FR 26), ~23.5 mi from Darrington; North Fork Sauk TH (48.05832,-121.28793) is a valid alternate approach for this route.",
+   "replace": "Road-end trailhead at the end of White Chuck River Road (FR 23); North Fork Sauk TH (48.05832,-121.28793) is a valid alternate approach for this route.",
+   "sources": [
+    "https://www.summitpost.org/kennedy-glacier/158306",
+    "https://www.countryhighpoints.com/glacier-peak-via-white-chuck-river/",
+    "https://trailcatjim.com/glacier-peak/",
+    "http://ericsbasecamp.net/trips/GlacierPk/GlacierPk.htm"
+   ],
+   "why": "find occurs 0x at waypoints[0,\"note\"]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "before": {
+    "approach": "No route-specific trailhead or approach beta for this boulder problem turned up anywhere online, and the name itself reads like a locally-known or in-joke label rather than a catalogued, widely-documented line — it isn't cross-referenced anywhere against a named boulder or trailhead in the Glacier Peak area."
+   }
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.05832,
+      "lng": -121.28793,
+      "elev": 2800,
+      "name": "North Fork Sauk River Trailhead",
+      "note": "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the Trinity Trailhead, where Buck Creek Trail #1513 and Chiwawa River Trail #1550 enter the Glacier Peak Wilderness. The North Fork Sauk River trailhead is 20.2 mi away on a different approach: both of this route's approach waypoints — Buck Creek Pass at 9.5 mi and the Cool/Gerdine Basin camp above it — are reached from Trinity, and the route's own itinerary begins 'Trailhead to Buck Creek Pass, 12 mi'.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.09,
+      "lng": -120.96,
+      "elev": 5800,
+      "name": "Buck Creek Pass",
+      "type": "Junction",
+      "distMi": 9.5,
+      "elevFt": 5800
+     },
+     {
+      "lat": 48.11,
+      "lng": -121.07,
+      "elev": 6800,
+      "name": "Cool/Gerdine Basin Camp",
+      "type": "Campsite",
+      "distMi": 14,
+      "elevFt": 6800
+     },
+     {
+      "lat": 48.1112273,
+      "lng": -121.1139922,
+      "elev": 10541,
+      "name": "Glacier Peak summit",
+      "type": "Summit",
+      "elevFt": 10541
+     }
+    ],
+    "itinerary": {
+     "cal": "Buck Creek Pass access depends on Suiattle River / Trinity-area road status, which has had washout issues in recent years — confirm current road conditions before relying on this trailhead.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long first day climbing steadily to Buck Creek Pass (~5,800 ft), a popular backcountry basin with views of Glacier Peak's east face.",
+       "hours": 8,
+       "miles": 12,
+       "title": "Trailhead to Buck Creek Pass",
+       "gainFt": 3200,
+       "lossFt": 100,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach the Buck Creek Pass area"
+      },
+      {
+       "n": 2,
+       "note": "Push on from Buck Creek Pass toward the mountain's eastern flank, camping on rock or moraine near the toe of the Cool Glacier to stage for the summit day.",
+       "hours": 4,
+       "miles": 4,
+       "title": "Continue to eastern high camp",
+       "gainFt": 1600,
+       "lossFt": 50,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach a high camp near the Cool Glacier moraine"
+      },
+      {
+       "n": 3,
+       "note": "Alpine start onto the Cool Glacier, gaining the Disappointment Peak Cleaver and following it to the summit, then reversing the same line back to camp.",
+       "hours": 9,
+       "miles": 6,
+       "title": "Summit via Cool Glacier and the cleaver",
+       "gainFt": 2950,
+       "lossFt": 2950,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "3:00-4:00 AM",
+         "label": "Leave high camp",
+         "detail": "Rope up for glacier travel near camp."
+        },
+        {
+         "time": "Mid-morning",
+         "label": "Gain the cleaver",
+         "detail": "Move quickly beneath loose, rockfall-prone cliffs."
+        },
+        {
+         "time": "Late morning",
+         "label": "Summit",
+         "detail": "10,541 ft."
+        },
+        {
+         "time": "Early-mid afternoon",
+         "label": "Back at high camp",
+         "detail": "Reverse Cool Glacier and cleaver."
+        }
+       ],
+       "objective": "Summit Glacier Peak (10,541 ft) and return to high camp"
+      },
+      {
+       "n": 4,
+       "note": "Full reverse of the approach, back over Buck Creek Pass and down to the trailhead — a long, mostly-descending day.",
+       "hours": 7.5,
+       "miles": 12,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 5750,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 4-day trip (~34 miles RT, ~7,750 ft gain) — the long eastern approach via Buck Creek Pass is what makes this route a multi-day undertaking rather than a single push."
+    },
+    "timing": {
+     "totalHrs": 28.5,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": 7.5,
+     "approachTimeHrs": 12,
+     "recommendedStart": "3:00-4:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 8,
+       "note": "A long first day climbing steadily to Buck Creek Pass (~5,800 ft), a popular backcountry basin with views of Glacier Peak's east face.",
+       "fromTo": "Trailhead to Buck Creek Pass",
+       "section": "Approach"
+      },
+      {
+       "hrs": 4,
+       "note": "Push on from Buck Creek Pass toward the mountain's eastern flank, camping on rock or moraine near the toe of the Cool Glacier to stage for the summit day.",
+       "fromTo": "Continue to eastern high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "Alpine start onto the Cool Glacier, gaining the Disappointment Peak Cleaver and following it to the summit, then reversing the same line back to camp.",
+       "fromTo": "Summit via Cool Glacier and the cleaver",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7.5,
+       "note": "Full reverse of the approach, back over Buck Creek Pass and down to the trailhead — a long, mostly-descending day.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day backpacking fitness for a long eastern approach via Chiwawa River/Buck Creek Pass",
+      "packWeight": "35-45 lb pack for the approach and high camp"
+     },
+     "approachTime": "2+ days to high camp via Trinity/Buck Creek Pass; roughly 4 days car-to-car",
+     "requiredSkills": [
+      "Glacier travel & crevasse rescue",
+      "Roped glacier travel",
+      "Rockfall awareness and avoidance on the cleaver",
+      "Self-arrest",
+      "Remote route-finding"
+     ],
+     "experienceLevel": "Prior glacier travel and crevasse-rescue experience plus comfort on loose, rockfall-prone terrain on the cleaver"
+    },
+    "pro_tips": [
+     "Combine with Buck Creek Pass for a scenic eastern approach",
+     "Plan a multi-day trip and verify road access (Chiwawa Road status)",
+     "Camp in the Gerdine/Cool basin and climb early",
+     "Carry a beacon — this is deep wilderness"
+    ],
+    "bail": "High camp in the Gerdine/Cool basin is the bail point; retreat from the upper mountain returns you there, then the long walk out."
+   }
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.0583,
+      "lng": -121.2879,
+      "elev": 1700,
+      "name": "North Fork Sauk Trailhead (FR-49, Sloan Creek Road)",
+      "note": "Road-end trailhead on Sloan Creek Road (FR-49). The White Chuck and Suiattle roads are closed, so this is the open way in: North Fork Sauk Trail #649 climbs to the PCT, then north over Red Pass to the Kennedy Ridge junction and Glacier Creek.",
+      "type": "Trailhead",
+      "elevFt": 1700
+     },
+     {
+      "lat": 48.1226,
+      "lng": -121.177181,
+      "elev": 5000,
+      "name": "Kennedy Ridge Trail / PCT junction",
+      "note": "Kennedy Ridge Trail meets the PCT about a quarter mile north of Kennedy Creek; turn to follow the PCT toward Glacier Creek.",
+      "type": "Junction",
+      "distMi": 7.7
+     },
+     {
+      "lat": 48.131759,
+      "lng": -121.153384,
+      "elev": 5300,
+      "name": "Glacier Creek PCT crossing camp",
+      "note": "Good established campsites with reliable creek water about 2 miles along the PCT from the Kennedy Ridge junction.",
+      "type": "Water",
+      "distMi": 9.7
+     },
+     {
+      "lat": 48.1109188,
+      "lng": -121.13339500000001,
+      "elev": 6500,
+      "name": "Ridge saddle above camp",
+      "note": "Climb SSE up the basin from the Glacier Creek camp to this flat saddle where the route gains the open slopes below Kennedy Glacier.",
+      "type": "Junction",
+      "distMi": 10.5
+     },
+     {
+      "lat": 48.111227199999995,
+      "lng": -121.12697,
+      "elev": 8000,
+      "name": "Vista-Kennedy saddle",
+      "note": "Saddle between Vista Ridge and the Kennedy Glacier icefall; rope up for glacier travel from here.",
+      "type": "Junction",
+      "distMi": 12
+     },
+     {
+      "lat": 48.111535599999996,
+      "lng": -121.12054499999999,
+      "elev": 8800,
+      "name": "Kennedy Glacier crevasse band",
+      "note": "Deep, dramatic crevasses form on this small, steep glacier; parties often hug the left wall under Kennedy Peak to dodge crevasses at the cost of added rockfall exposure.",
+      "type": "Hazard",
+      "distMi": 13.5
+     },
+     {
+      "lat": 48.1112273,
+      "lng": -121.1139922,
+      "elev": 10541,
+      "name": "Glacier Peak summit",
+      "type": "Summit",
+      "elevFt": 10541
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_gothic_peak_standard",
+   "before": {
+    "descent_text": "Reverse the ascent line — the correct SE-ridge descent is generally easier to pick out looking downhill than it was on the way up, and most parties who wandered onto the harder Class 4 rock on the ascent spot the easier Class 3 bypass ('sidewalk' ledge) on the way down. From the true summit, downclimb the short (~100 vertical foot) summit block via its broken south-side terrain rather than traversing climber's-left, which dead-ends above the exposed south face in sustained 4th-class ground. Continue down the scree/talus climber's-left of the SE ridge crest back to the Foggy Lake outlet on the same cairned line used on the ascent, then retrace the maintained Gothic Basin trail — through the basin meadows, the steep timbered switchback band, and the Weeden Creek ford — back to the Barlow Pass trailhead. This is a walk-off/downclimb descent with no rappelling required in normal summer conditions. The real hazards are loose rock and fall exposure on the summit block and upper scree, and, in early-season or wet/icy conditions, hard snow on the slabs and snowfield just below the ridge, where an ice axe (and caution on the creek crossing) is warranted. A short handline is occasionally carried by conservative parties for the final summit-block downclimb, but it is not standard gear for this route."
+   }
+  },
+  {
+   "id": "wa_indian_head_peak_southwest_slopes",
+   "before": {
+    "approach": "Drive the Mountain Loop Highway from Darrington (WA-530) roughly 17-19.7 miles, then turn onto Forest Road 49 (Sloan Creek Road) and continue about 6.6-6.7 miles to the North Fork Sauk Trailhead (2,070 ft, vault toilet, no potable water). Hike the North Fork Sauk Trail #649 through old-growth forest, passing Red Creek camp (3.5 mi) and Mackinaw Shelter (5 mi), then climbing roughly 3,000 ft over the final miles to the Pacific Crest Trail junction (~8.2 mi from the trailhead). Follow the PCT north about 0.7 mi to White Pass, then continue about 2 more miles on the PCT to Indian Pass (~4,962-5,000 ft), the low point/junction with the Indian Creek Trail and the jumping-off point for the peak. Total one-way approach to Indian Pass is roughly 10.9-11 miles."
+   }
+  }
+ ]
+}

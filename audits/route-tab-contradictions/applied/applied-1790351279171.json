@@ -1,0 +1,637 @@
+{
+ "applied": [
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain (gain_ft vs loss_ft vs itinerary)"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Total elevation gain (gain_ft vs loss_ft vs itinerary)"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Whether fixed rappel anchors exist on the crux/summit step"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "fact": "Bird Creek Camp's elevation and position"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Bird Creek Camp's elevation and position"
+  },
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Bird Creek Camp's elevation and position"
+  },
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "column": "commitment",
+   "path": [],
+   "fact": "Total round-trip time"
+  },
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Total round-trip time"
+  },
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Elevation gain to Aasgard Pass mislabeled"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel claim"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "seasonal_guidance",
+   "path": [],
+   "fact": "Seasonal guidance omits the season it's quoted for"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Seasonal guidance omits the season it's quoted for"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills"
+   ],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "packWeight"
+   ],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "typical"
+   ],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "seasonal_hazards",
+   "path": [
+    "weather",
+    "probability"
+   ],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Technical character: partner requirements, hazards and protection written for an ice/mixed winter couloir"
+  },
+  {
+   "id": "wa_this_my_friend",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Descent method — walk-off vs. rappelling the route"
+  },
+  {
+   "id": "wa_this_my_friend",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "label"
+   ],
+   "fact": "Descent method — walk-off vs. rappelling the route"
+  },
+  {
+   "id": "wa_this_my_friend",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Descent method — walk-off vs. rappelling the route"
+  },
+  {
+   "id": "wa_this_my_friend",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Descent method — walk-off vs. rappelling the route"
+  },
+  {
+   "id": "wa_this_my_friend",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Descent method — walk-off vs. rappelling the route"
+  },
+  {
+   "id": "wa_this_my_friend",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Descent method — walk-off vs. rappelling the route"
+  },
+  {
+   "id": "wa_this_my_friend",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_this_my_friend",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "column": "season",
+   "path": [],
+   "fact": "Climbing season window"
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent method"
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "column": "seasonal_guidance",
+   "path": [],
+   "fact": "Seasonal guidance omits the route's actual planned season"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_devore_peak_west_ridge",
+   "before": {
+    "gain_ft": 3500,
+    "descent_text": "Descend the same way you came up: reverse the west-ridge/west-flank ledge system back down to the 7,500 ft col, then drop into the Bird Lakes basin and follow Bird Creek back down through the 5,400 ft high camp to Bird Creek Camp and the maintained Devore Creek Trail to Weaver Point. This is fundamentally a downclimb, not a rappel-dependent descent — most of the Class 3-4 terrain is downclimbed in place. The one spot that regularly gets a rope is a short, steep ~20-ft 4th-class rock step just below the summit; there are no fixed bolts, chains, or any other fixed hardware on this route, so if you choose to rappel it rather than downclimb, you'll build a natural anchor (webbing/cord around a horn or block) and retrieve your gear, or downclimb it with a spot/handline. At least one party describes placing two short rappels on the descent (the summit step plus one more short step lower on the ridge where a loaded pack makes downclimbing feel insecure); a single 30m rope, or a doubled 60m rope, is more than enough length for either. Treat this as an optional-rappel route: confident scramblers downclimb the whole thing with zero rappels, while parties less comfortable with exposed 4th class commonly place one or two short raps off natural anchors. The bigger real hazard on descent is footing — the ridge and the approach basin are loose talus, scree, and \"kitty-litter\" over slab, and at least one climber has taken a ~15-ft scree fall here with contusions and a bruised rib, so move carefully, spread the party out to avoid rockfall onto those below, and expect the ~4,000+ ft of elevation loss back to Weaver Point (and the ferry schedule back down Lake Chelan) to be a long day.",
+    "waypoints": [
+     {
+      "lat": 48.3476353,
+      "lng": -120.7137122,
+      "elev": 1234,
+      "name": "Harlequin Bridge / Campground shuttle stop",
+      "note": "NPS shuttle stop where Stehekin Valley Road crosses the Stehekin River; start of the Stehekin River Trail approach toward Weaver Point.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "There is no road into Stehekin. Drive to Fields Point Landing or Chelan and take the Lady of the Lake II or Lady Express up-lake — two to four hours depending on which boat — then ride the National Park Service shuttle up the Stehekin Valley Road to the Harlequin Bridge stop. Some parties bike or walk the road instead. Sailings drop to a few a week outside peak summer, so build the trip around the boat schedule rather than the other way round."
+     },
+     {
+      "lat": 48.31596,
+      "lng": -120.68181,
+      "elev": 1500,
+      "name": "Stehekin River Trail / Devore Creek Trail junction",
+      "note": "Leave the flat Stehekin River Trail here and turn onto Devore Creek Trail #1244, which climbs steeply through rock bluffs into the Glacier Peak Wilderness.",
+      "type": "Junction",
+      "distMi": 3,
+      "directions": "Cross Harlequin Bridge at the end of the airstrip and pick up the Stehekin River Trail on the far bank, heading downvalley. It is three essentially flat miles along the river to the junction, which sits about half a mile short of Weaver Point — parties who come in by water taxi to Weaver Point instead join this point from the other direction."
+     },
+     {
+      "lat": 48.296118718181816,
+      "lng": -120.75108514545455,
+      "elev": 5800,
+      "name": "Bird Creek Camp",
+      "note": "Small established bivy/camp used as base for Devore and Tupshin climbs; reliable water from Bird Creek nearby, last easy flat tent sites before the open basin.",
+      "type": "Campsite",
+      "distMi": 8,
+      "directions": "Turn uphill and climb hard: roughly 30 switchbacks in about two miles carry the trail through rock bluffs and open forest to the Wilderness boundary near 2,300 ft, and the grade stays relentless for another three-plus miles alongside Devore Creek. The tread through here sees little maintenance and is brushy underfoot. The creek is crossed and paralleled repeatedly and is the water source for the whole stretch."
+     },
+     {
+      "lat": 48.279175,
+      "lng": -120.762533,
+      "elev": 7000,
+      "name": "Upper Bird Creek basin (~7,000 ft)",
+      "note": "Open basin with small lakes below Devore; cross Bird Creek near the northern lake and head southeast toward the bench/gully leading to Devore's ridge.",
+      "type": "Junction",
+      "distMi": 9.5,
+      "directions": "Leave the maintained trail and follow use paths and animal trails up along Bird Creek, gaining about a mile to an unofficial bench camp near 5,400 ft — parties wanting one big summit day often push to there instead. Gaining a hundred feet or so of hillside before sidehilling keeps the brush manageable; fighting up the creekbed does not. Above the bench the ground steepens into heather benches and a talus staircase, then a second looser gully of scree and dirt, before opening into the lake basin."
+     },
+     {
+      "lat": 48.28001978636364,
+      "lng": -120.7627641909091,
+      "elev": 7500,
+      "name": "Saddle west of Point 7657",
+      "note": "Col on Devore's southeast ridge reached via a snowfield/talus scramble from the basin; from here the route works west and traverses onto the peak's southeast face.",
+      "type": "Junction",
+      "distMi": 10.5,
+      "directions": "Cross Bird Creek near the northern lake and climb loose Class 2-3 talus and scree southeast out of the basin to the col. Snow lingers here well into July and can leave a short traverse of around 40 degrees, so carry an axe and take crampons if it is likely to be firm. Loose rock and old avalanche debris are the other hazards on this stretch."
+     },
+     {
+      "lat": 48.27744395727273,
+      "lng": -120.76463283818183,
+      "elev": 8200,
+      "name": "Exposed traverse below summit block",
+      "note": "Class 3-4 ledge traverse across the southeast face to the summit ridge; reported as \"extremely exposed 3rd class (4th?)\" by climbers and the crux of the descent (reverse or short rappel).",
+      "type": "Hazard",
+      "distMi": 10.9,
+      "directions": "From the col, scramble west along the ridge crest, passing the pair of rock towers known locally as the Bottles. The crest then pushes you out onto the southeast face where it steepens and the ledge line begins. Rock quality is mixed — some of it solid, some of it slab under a layer of gravel."
+     },
+     {
+      "lat": 48.27661,
+      "lng": -120.765,
+      "elev": 8383,
+      "name": "Devore Peak summit",
+      "note": "True summit at 8,383 ft on the long north-south ridge dividing Company/Hilgard Creek from Devore Creek; summit block requires a short downclimb or rappel on descent.",
+      "type": "Summit",
+      "distMi": 11,
+      "directions": "Once across the traverse, scramble easier Class 2-3 ground up an obvious gully to the edge of the summit ridge. The last obstacle is a short, unavoidable rock face of about 20 ft, vertical and exposed. It is the one move on the route that most parties choose to rappel on the way down rather than downclimb."
+     }
+    ],
+    "beta": "From Bird Creek Camp (~5,400 ft) on the Devore Creek Trail, traverse to open meadows and a waterfall cirque, then climb semi-open slopes and snow ramps into the ~7,000 ft basin between Wy'North Peak and Devore Peak (the Bird Lakes basin). Cross Bird Creek at the northern lake and hike southeast up talus/scree to a col at roughly 7,500 ft on Devore's southeast ridge. From the col, scramble west along Class 3 terrain, working past a false summit block, to an unavoidable ~20-ft rock step (Class 5.0-5.4) just below the true summit; a short final Class 3-4 pitch tops out at the 1940 first-ascent register.",
+    "pitch_detail": [
+     {
+      "grade": "Class 2",
+      "notes": "Bird Creek Camp (~5,400 ft) to the open ~7,000 ft basin/lakes; talus, meadows, occasional snow ramps.",
+      "pitch": "Basin approach"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Cross Bird Creek at the northern lake, ascend SE to a col at ~7,500 ft on Devore's southeast ridge.",
+      "pitch": "Southeast ridge col"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "From the col head west; loose rock and exposed ledges past a false summit block.",
+      "pitch": "Ridge scramble"
+     },
+     {
+      "grade": "5.0-5.4",
+      "notes": "Unavoidable ~20-ft rock face just below the true summit; a slung tree/rap anchor exists nearby for those who want protection.",
+      "pitch": "Crux step"
+     },
+     {
+      "grade": "Class 3-4",
+      "notes": "Short final exposed pitch to the true summit and 1940 first-ascent register.",
+      "pitch": "Summit pitch"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "before": {
+    "commitment": "12.5 miles, 5,600 ft gain, 8-10 hours",
+    "itinerary": "Single push: Trailhead (3,400 ft) → Colchuck Lake (5,570 ft, ~4.3 mi) → Aasgard Pass (7,841 ft) → east-ridge saddle (~8,500 ft) → summit (8,840 ft, ~6.25 mi one-way); round trip is roughly 12.5 mi, with car-to-car times reported in the 11-17 hour range depending on pace and conditions.",
+    "watch_out": [
+     "Steep snow slope to Aasgard Pass — 35-degree, 700 vertical feet to the 8,500 ft saddle, real avalanche potential if snow-covered"
+    ]
+   }
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "before": {
+    "watch_out": "Constant 40-50 degree angle with slightly steeper sections half way up depending on year\nMiddle section can melt out early in season - creates instability and avalanche risk\nRock band near summit requires navigation through exposed stone\nObjective hazard from falling rock during warmer conditions when snow melts around exposed stone\nSeasonal guidance suggests 'Late May and early June typically have best conditions' - poor conditions outside this window\nEndless bushwhacking through slide alder on approach - adds fatigue and cumulative exposure time hazard\nGrade III alpine terrain demands winter mountaineering experience and conservative decision-making\nProtection needed: pickets if uncomfortable with steep snow/easy ice, set of stoppers, webbing for raps",
+    "gain_ft": 4700,
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cold, northeast-facing alpine conditions typical of the east-slope Cascades in winter and spring",
+      "probability": "Storm loading and wind-transport onto the northeast-facing couloir drive most of the hazard"
+     },
+     "exposure": "High - mixed cruxes and cornices guard the upper couloir; avalanche danger and rockfall as the route warms are the dominant hazards",
+     "avalanche": {
+      "zone": "NWAC East Central zone (Stuart Range/Enchantments) - exact boundary for this specific couloir not confirmed",
+      "byMonth": {
+       "April": "Moderate",
+       "March": "Considerable",
+       "January": "Considerable",
+       "December": "Considerable",
+       "February": "Considerable"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Late winter to spring, conditions dependent",
+     "monthBreakdown": {
+      "April": {
+       "reason": "Frequently the most reliable window before spring warming destabilizes the snowpack",
+       "status": "good"
+      },
+      "March": {
+       "reason": "Often in condition; requires careful stability assessment before committing",
+       "status": "good"
+      },
+      "January": {
+       "reason": "Cold, often unstable snowpack typical of mid-winter storm cycles",
+       "status": "risky"
+      },
+      "December": {
+       "reason": "Couloir may not be fully formed; short daylight and early-season instability",
+       "status": "risky"
+      },
+      "February": {
+       "reason": "Line often building into condition but storm-driven avalanche danger tends to be elevated",
+       "status": "marginal"
+      }
+     }
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong - winter/spring approach to Colchuck Lake, potentially breaking trail",
+      "packWeight": "25-40 lbs with an ice/mixed rack and winter gear"
+     },
+     "approachTime": "4-6 hours to Colchuck Lake in winter conditions",
+     "requiredSkills": [
+      "alpine ice leading",
+      "mixed climbing through cruxes",
+      "avalanche hazard evaluation",
+      "cornice awareness",
+      "route-finding in a steep, committing couloir"
+     ],
+     "experienceLevel": "Experienced alpine ice/mixed climber comfortable with mixed cruxes and avalanche-prone couloir terrain"
+    },
+    "pro_tips": [
+     "Reserve this for stable conditions and experienced mixed climbers",
+     "Early start to manage avalanche and warming hazards",
+     "Often combined with Colchuck Peak or a full Enchantments traverse; watch for rockfall on Aasgard Pass during the descent."
+    ]
+   }
+  },
+  {
+   "id": "wa_this_my_friend",
+   "before": {
+    "itinerary": {
+     "cal": "The route sits in full sun from early morning to early afternoon, so an early start keeps the crux pitches cooler; no overnight permit is needed for a car-to-car day trip.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Long approach from the Stuart Lake trailhead past Colchuck Lake to the base of the NE Towers, then 5 long (~55-60m) pitches of sustained crack and face climbing up to 5.10a. Rappel the route (no fixed anchors — build gear rappels) and retrace the approach back to the car.",
+       "hours": 13,
+       "miles": 10.2,
+       "title": "Car-to-car day on the NE Towers",
+       "gainFt": 4200,
+       "lossFt": 4200,
+       "packLb": 25,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Headlamp hike toward Colchuck Lake."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach base of NE Towers",
+         "detail": "Boulder/talus approach off the standard trail."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Start climbing",
+         "detail": "5 pitches, comfortable ledges every ~55m."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Begin rappels",
+         "detail": "Gear rappels back down the route."
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at the car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb This, My Friend and return to the trailhead"
+      }
+     ],
+     "totalNote": "A single very long day car-to-car (~12-14 hrs): approach to the NE Towers, climb 5 sustained pitches, rappel the route, and hike out — no camp needed."
+    },
+    "timing": {
+     "totalHrs": 13,
+     "summitTimeHrs": 13,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "4:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 13,
+       "note": "Long approach from the Stuart Lake trailhead past Colchuck Lake to the base of the NE Towers, then 5 long (~55-60m) pitches of sustained crack and face climbing up to 5.10a. Rappel…",
+       "fromTo": "Car-to-car day on the NE Towers",
+       "section": "Climb"
+      }
+     ]
+    },
+    "waypoints": [
+     {
+      "lat": 47.5278,
+      "lng": -120.8205,
+      "elev": 3400,
+      "name": "Stuart Lake Trailhead",
+      "note": "Self-issue day-use wilderness permit and NW Forest Pass required at the kiosk.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.49196,
+      "lng": -120.83358,
+      "elev": 5570,
+      "name": "Colchuck Lake",
+      "note": "Reliable water and camps; head up the south side of the lake toward Aasgard Pass.",
+      "type": "Campsite",
+      "distMi": 4
+     },
+     {
+      "lat": 47.487883,
+      "lng": -120.834261,
+      "elev": 5800,
+      "name": "Aasgard Pass trail (south shore)",
+      "note": "Boot path on the south side of Colchuck Lake climbing steeply toward the pass.",
+      "type": "Junction",
+      "distMi": 4.2
+     },
+     {
+      "lat": 47.48251485560538,
+      "lng": -120.82537565919282,
+      "elev": 7250,
+      "name": "Aasgard's largest river braid crossing",
+      "note": "Main Aasgard Pass trail crosses this braided meltwater channel; last reliable water before leaving the trail.",
+      "type": "Water",
+      "distMi": 4.7
+     },
+     {
+      "lat": 47.48220026367713,
+      "lng": -120.82484444843048,
+      "elev": 7350,
+      "name": "Scree break-off point",
+      "note": "Leave the trail at roughly 7,300-7,400 ft and cross loose, unstable scree up and right toward the route base.",
+      "type": "Hazard",
+      "distMi": 4.8
+     },
+     {
+      "lat": 47.4789,
+      "lng": -120.83318,
+      "elev": 8250,
+      "name": "Route top (East Face, NE Towers)",
+      "note": "Top of the 900+ ft East Face route; no fixed anchors on this climb, so plan your own rappel or downclimb off the NE Towers.",
+      "type": "Topout",
+      "distMi": 5.1
+     },
+     {
+      "lat": 47.48028,
+      "lng": -120.82056,
+      "elev": 7841,
+      "name": "Aasgard Pass",
+      "type": "Junction",
+      "elevFt": 7841
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "before": {
+    "season": "Apr-Jul (retains snow into mid-summer)"
+   }
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "before": {
+    "descent": "Descend via established descent route, using rappels and downclimbing as necessary. Multiple anchor points and protection required. Route-finding is critical in poor visibility.",
+    "seasonal_guidance": {
+     "optimalWindow": "July to September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Face is generally clearing of snow but early-month conditions can still be damp or hold patches on the north aspect",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Driest window once the north-facing granite has fully dried out",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Typically stable and cool, though a short window before early snow can return",
+       "status": "good"
+      }
+     }
+    }
+   }
+  }
+ ]
+}

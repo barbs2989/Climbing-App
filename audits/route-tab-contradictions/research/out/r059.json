@@ -1,0 +1,214 @@
+{
+ "file": "r059.json",
+ "results": [
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Which side of the summit block the route climbs (south/west vs east/northeast)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two genuinely different documented lines exist. A 2024 three-day trip report climbs the snow finger off the glacier, moves onto rock near the dark towers and rounds the corner EAST, then steep gully to the summit, descending east via heather ledges, a dihedral and two rappels; the only listed route on a climbing database is 'East Face' (4th class, steep snow). A 2004 trip report instead goes to the Overcoat/Chimney saddle, steps onto the S ridge, takes an exposed ledge on the W side of the S ridge, then a red heathery slot and an angled chimney to the saddle between the south peak and the true summit. pitch_detail is the 2004 line, not contamination from Chimney Rock; climbing_route[0] is the east/snow-finger line but climbing_route[1]-[2] are the 2004 line's slot and chimney, and approach_variants baseFinding's claim that 'nobody' climbs the block from the south is contradicted by the 2004 report. Settling which single line this row should describe needs a rewrite of pitch_detail and climbing_route beyond a minimal patch, and the south-ridge line has only one source, so no patch is written.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004090612",
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/",
+    "https://www.mountainproject.com/area/119745979/overcoat-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Approach-day (day 1) duration vs its own schedule",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule (5:30 AM to 5:30 PM = 12 h) contradicts days[0].hours, timing.approachTimeHrs and sectionBreakdown[0].hrs (9 h). The 2024 trip report this itinerary follows (bike to Hardscrabble, Camp Pedro at mile 13, Valley of the Chiefs, glacier camp) gives no clock times; the 2004 report was a different, shorter single-day line. No external source states the day-1 duration, so neither the 9 h nor the 12 h figure can be confirmed.",
+   "sources": [
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004090612"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Whether June is part of the recommended season",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "July-September (not June)",
+   "evidence": "season (Jul-Sep), best_season, climate.bySeason.summer ('July-September is the standard window'), climate.spring (snow buries the approach into June or later), seasonal_guidance (no June entry; July marginal) and approach_variants[0].season ('Roughly Jul-Sep') all exclude June; itinerary.cal is the lone outlier. A 2004 trip report says late Aug-early Sept is the best time and records a failed June attempt on the snow finger; a 2024 report succeeded in mid-July with lingering snow.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004090612",
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_overcoat_peak_southeast_route",
+     "fact": "Whether June is part of the recommended season",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Best climbed roughly June-August when",
+     "replace": "Best climbed roughly July-September when"
+    }
+   ]
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "dist_km vs one-way and round-trip distance figures elsewhere",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 2024 trip report gives 40.4 miles round trip, but that was a 3-day loop with a relocation to Bears Breast Tarns and a Williams Lake detour, so half of it (20.2 mi = the stored 32.5 km) is not a clean one-way figure. The same report puts Camp Pedro at mile 13 followed by a ~2-mile corridor and a traverse to the glacier camp (~16+ mi to camp), while the 2004 report (from the then-open upper trailhead, 7 miles closer) gives 14+ miles round trip on a shorter crossing. No two sources agree on a one-way trailhead-to-summit figure from Dingford Creek, so dist_km is left as is.",
+   "sources": [
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004090612"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Waypoint mileages vs the approach text's mileages",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Overcoat Lake waypoint says distMi 12 and its note says 'roughly 10 mi in', the benches camp is distMi 13 and the summit 14.5, while the approach text says the ford is 13-14 miles in and camp 15-16 miles, and the 2024 report puts Camp Pedro (before the ford) at mile 13. The waypoints look short against the prose and the report, but only one external source gives mileages on this line, so no patch.",
+   "sources": [
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "fact": "Location of the historic fire lookout",
+   "verdict": "fixed",
+   "correct_value": "The 1936-1967 lookout stood on a small flat bench/ledge about 1 mile up the lookout trail at ~2,800 ft, not on the summit",
+   "evidence": "A fire-lookout history site gives the Red Mountain (Painted Mountain) lookout at 2,800 ft on a narrow ledge on a rib of the mountain, an L-4 cab built 1936 and removed 1967, reached by ~1 mile and 700 ft of gain, and notes the hike confuses people expecting a summit climb. A 2025 traverse trip report independently places the lookout site at a high switchback one mile up the lookout trail on a small flat area occupied 1936-1967. The row's waypoint (2,800 ft bench) already agreed; the approach, climbing_route, overview, beta (3,100-3,570 ft), pitch_detail (lookout site above the ledges) and baseFinding (3,100 ft) were corrected. The ledges and end of tread near 3,100 ft remain unchanged.",
+   "sources": [
+    "http://www.willhiteweb.com/washington/fire_lookouts/red_mountain/lookout_site_222.htm",
+    "https://trailcatjim.com/painted-traverse-painted-mountain-to-portal-peak-2025/",
+    "https://www.wta.org/go-hiking/hikes/red-mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_painted_mountain_scramble",
+     "fact": "Location of the historic fire lookout",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the final several hundred feet to the 6,975-ft summit — site of an old, collapsed fire lookout — is loose scree",
+     "replace": "the final several hundred feet to the 6,975-ft summit is loose scree"
+    },
+    {
+     "id": "wa_painted_mountain_scramble",
+     "fact": "Location of the historic fire lookout",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "the final several hundred feet to the 6,975-ft summit — site of an old, collapsed fire lookout — is loose scree",
+     "replace": "the final several hundred feet to the 6,975-ft summit is loose scree"
+    },
+    {
+     "id": "wa_painted_mountain_scramble",
+     "fact": "Location of the historic fire lookout",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "A now-abandoned fire lookout once stood near the true summit, part of",
+     "replace": "A fire lookout (1936-1967) once stood on a bench about a mile up the trail at roughly 2,800 ft, far below the summit, part of"
+    },
+    {
+     "id": "wa_painted_mountain_scramble",
+     "fact": "Location of the historic fire lookout",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "near the old 1936-67 lookout site (~3,100-3,570 ft).",
+     "replace": "near the old 1936-67 lookout site (~2,800 ft)."
+    },
+    {
+     "id": "wa_painted_mountain_scramble",
+     "fact": "Location of the historic fire lookout",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "through meadows and past the old lookout site, continuing past",
+     "replace": "through meadows, continuing past"
+    },
+    {
+     "id": "wa_painted_mountain_scramble",
+     "fact": "Location of the historic fire lookout",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "to the flat bench around 3,100 ft where the fire lookout once stood",
+     "replace": "to the flat bench around 2,800 ft where the fire lookout once stood"
+    }
+   ]
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "fact": "Expected car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A 2025 trip report reached the summit in 5.0 hours from the trailhead (matching the row's summit waypoint), which fits either a ~9-hour or a ~10-hour round trip depending on descent speed; no source found states a car-to-car total for the standard out-and-back. The 6-9 hr commitment and the 10 hr timing/itinerary cannot be settled with two sources.",
+   "sources": [
+    "https://trailcatjim.com/painted-traverse-painted-mountain-to-portal-peak-2025/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "fact": "Whether this route is typically a day trip or an overnight",
+   "verdict": "fixed",
+   "correct_value": "A single long day car-to-car (8 mi RT, ~4,875 ft), no camp",
+   "evidence": "The hiking guide page lists it as an 8-mile, 4,875-ft day hike with a lunch spot in the meadows; a 2025 traverse party reached the summit in 5 hours from the trailhead without camping. The row's own itinerary, bivy note, timing and commitment all say day trip with no camp. partner_requirements also misdescribed a multi-hour trail approach before a 5,000-ft off-trail climb; the official trail is only one mile and the off-trail climb from ~3,100 ft to 6,975 ft is ~3,900 ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/red-mountain",
+    "https://trailcatjim.com/painted-traverse-painted-mountain-to-portal-peak-2025/"
+   ],
+   "patches": [
+    {
+     "id": "wa_painted_mountain_scramble",
+     "fact": "Whether this route is typically a day trip or an overnight",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "gains roughly 5,000 ft in the final ~3.5 miles on top of the North Fork Sauk/Sloan Creek approach; realistically a long single push or an overnight",
+     "replace": "gains most of its roughly 4,900 ft in the ~3 miles above the first mile of maintained trail; realistically one long single push from the car"
+    },
+    {
+     "id": "wa_painted_mountain_scramble",
+     "fact": "Whether this route is typically a day trip or an overnight",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "expect": "Light day pack if attempted car-to-car by a fast party; overnight pack (20-35 lb) if camping partway, which is the more common approach given the length and remoteness",
+     "value": "Light day pack; the route is done car-to-car in one day, with no established camp and no reliable water above the lower creek crossings"
+    },
+    {
+     "id": "wa_painted_mountain_scramble",
+     "fact": "Whether this route is typically a day trip or an overnight",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Long - multi-hour trail approach via North Fork Sauk/Sloan Creek followed by a steep ~5,000 ft off-trail climb; commonly done as an overnight, or a very long day by strong parties",
+     "value": "Long - one mile of maintained trail from the North Fork Sauk trailhead, then a steep off-trail climb of roughly 3,900 ft to the summit; done as one long day from the car"
+    }
+   ]
+  }
+ ]
+}

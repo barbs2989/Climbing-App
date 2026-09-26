@@ -1,0 +1,585 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_teneriffe_kamikaze_trail",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether a self-issue permit is required/exists on this DNR land"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Distance and gain to Navaho Pass"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Distance and gain to Navaho Pass"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Distance and gain to Navaho Pass"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance and gain to Navaho Pass"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Mileage of the Standup Creek Trail junction"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Mileage of the Standup Creek Trail junction"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance of the final summit push from Navaho Pass"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Name of the trail from the trailhead to Navaho Pass"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "approach",
+   "path": [],
+   "fact": "Road the Stafford Creek Trailhead sits at the end of"
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Road the Stafford Creek Trailhead sits at the end of"
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Route stats (grade/pitches) blend two different named routes on the same wall (Jötnar vs. Bluebell)"
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Approach time to the base of the wall"
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "section"
+   ],
+   "fact": "Approach time to the base of the wall"
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Commitment grade (VI) vs. 'Grade III+' quoted in access notes"
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Commitment grade (VI) vs. 'Grade III+' quoted in access notes"
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Commitment grade (VI) vs. 'Grade III+' quoted in access notes"
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Commitment grade (VI) vs. 'Grade III+' quoted in access notes"
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead waypoint elevation (elev 600 vs elevFt 1300)"
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Recommended start time cited in partner requirements"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_teneriffe_kamikaze_trail",
+   "before": {
+    "access": {
+     "fees": "Washington Discover Pass required to park at the trailhead",
+     "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "rules": "Washington State Department of Natural Resources land - the Mount Si Natural Resources Conservation Area, day use only. This peak is not inside the Alpine Lakes Wilderness, so the USFS wilderness group-size limit and self-issue wilderness permit do not apply here; a Discover Pass is required to park at the trailhead.",
+     "permit": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+     "closures": "Trailhead access gate closed overnight on a seasonal schedule; trails have been subject to temporary DNR maintenance closures (Mount Si, Little Si, and Mount Teneriffe trails reopened June 18, 2026 after such a closure).",
+     "group_limit": 12,
+     "landManager": "Washington State Department of Natural Resources — Mount Si Natural Resources Conservation Area (day-use only)",
+     "land_manager": "Washington State Department of Natural Resources — Mount Si Natural Resources Conservation Area (day-use only)",
+     "parking_pass": "Washington State Discover Pass required to park at the Mount Si Natural Resources Conservation Area trailhead.",
+     "passRequired": "Discover Pass",
+     "overnight_permit": {
+      "url": "https://www.dnr.wa.gov/MountSi",
+      "what": "No overnight camping — day use only",
+      "where": "Mount Teneriffe sits in the Mount Si Natural Resources Conservation Area, which is day use only; a Discover Pass is needed to park."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "before": {
+    "itinerary": {
+     "cal": "The Stafford Creek trailhead access/trail was reported closed due to Labor Mountain Fire damage as of the last check - confirm current road/trail status before planning a trip.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Stafford Creek trailhead, follow Stafford Creek through meadows to Navaho Pass (~4.5 mi, ~2,100 ft gain), then turn onto the southwest ridge / south slopes for a Class 2 scramble to the summit. Descend by reversing the same route.",
+       "hours": 9,
+       "miles": 13,
+       "title": "Car-to-car via Stafford Creek and Navaho Pass",
+       "gainFt": 4200,
+       "lossFt": 4200,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Stafford Creek trailhead",
+         "detail": "Start early to beat the heat on the exposed upper slopes and finish at a reasonable hour."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach Navaho Pass",
+         "detail": "~4.5 miles and 2,100 ft gained through Stafford Creek Meadows; junction with the old County Line Trail."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Begin southwest ridge / south slopes scramble",
+         "detail": "Steep, loose Class 2 terrain for the final ~700-1,000 ft to the summit; snow patches possible into early summer."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit Navaho Peak (7,223 ft)",
+         "detail": "Small summit with room for only a few people; views of the Enchantments, Alpine Lakes Wilderness, and Rainier."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent route back through Navaho Pass and down Stafford Creek."
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Total elapsed time typically 8.5-9 hours car-to-car."
+        }
+       ],
+       "objective": "Summit Navaho Peak and return to the trailhead"
+      }
+     ],
+     "totalNote": "A single long day hike/scramble: about 13 miles round trip with roughly 4,200 ft of gain, typically 8.5-9 hours car-to-car via Stafford Creek Trail to Navaho Pass then the southwest ridge/south slopes - not an overnight trip for the standard approach."
+    },
+    "timing": {
+     "totalHrs": 9,
+     "summitTimeHrs": null,
+     "descentTimeHrs": 3.5,
+     "approachTimeHrs": 5,
+     "recommendedStart": "5:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "From the Stafford Creek trailhead, follow Stafford Creek through meadows to Navaho Pass (~4.5 mi, ~2,100 ft gain), then turn onto the southwest ridge / south slopes for a Class 2 s…",
+       "fromTo": "Car-to-car via Stafford Creek and Navaho Pass",
+       "section": "Climb"
+      }
+     ]
+    },
+    "approach": "Start at the Stafford Creek Trailhead (Trail #1359), Cle Elum Ranger District, Okanogan-Wenatchee National Forest, at the end of North Fork Teanaway River Road (FR 9737) past 29 Pines Campground — a small, often-overflowing lot for roughly 20 cars (Northwest Forest Pass required). From the trailhead, Stafford Creek Trail #1359 climbs at a gentle-to-moderate grade through dry ponderosa/lodgepole forest, staying close to Stafford Creek for the first mile (a short rerouted, steeper switchback section around 0.5 mile bypasses old avalanche-damaged tread). The trail continues gaining gradually along the creek — figure roughly 3,000 ft of gain spread over the approach — reaching a signed junction with the Standup Creek Trail (#1369) at about 3.5–3.8 miles; this crossing of Stafford Creek is the last reliable, easy water source before the high country and is worth topping off here. Bear right (east/north) at the junction to stay on the Navaho Pass approach. Around 4.5 miles the trail opens into a large, marshy subalpine meadow with established campsites and a feeder stream — the usual base camp for parties splitting the trip over two days, and another water source. Beyond camp the trail crosses the barren, eroded 'Moon Landing' stretch (sparse vegetation, serpentine/greenstone talus) before a final push to Navaho Pass (~6,000 ft) around mile 5. A commonly used shortcut leaves the main trail where two creek forks merge around the 3-mile mark, climbing steep, loose slopes directly up the northeast-facing drainage to the col below Navaho's southeast ridge — it saves close to 2 miles of trail hiking but is steeper, unmaintained, and involves loose scree/dirt, so most parties use it only for one direction of the trip. Total car-to-summit is on the order of 11–13 miles round trip with about 4,000–4,200 ft of gain depending on which junction/shortcut combination is used. Note: as of 2026 this trail corridor has had closures tied to Labor Mountain Fire and storm damage — verify current Forest Service trail status before heading in. A second off-trail variant leaves the trail right after the Stafford Creek crossing and climbs directly into the open bowl between Earl Peak and Navaho Peak to about 5,000 ft, scrambles north to the ridgeline near 6,000 ft, then follows the west/southwest ridge to the summit — a different line than the northeast-drainage shortcut.",
+    "waypoints": [
+     {
+      "lat": 47.3663,
+      "lng": -120.8027,
+      "elev": 3100,
+      "name": "Stafford Creek Trailhead",
+      "note": "End of FR 9703; ~20-car lot with pit toilet, Northwest Forest Pass or $5 self-issue fee required; trail has seen closures for Labor Mountain Fire damage so check current USFS alerts before going.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive the Teanaway River Road to 29 Pines Campground, bear right where the pavement ends, then turn onto Stafford Creek Road and follow it a couple of miles to where it ends at the trailhead. The last stretch is dirt and washboarded but passable to low-clearance cars in dry conditions."
+     },
+     {
+      "lat": 47.401465,
+      "lng": -120.803455,
+      "elev": 4800,
+      "name": "Stafford Creek crossing, Stafford Creek Meadows",
+      "note": "Stream crossing in the meadows on Trail #1359; last reliable water before the drier climb toward the pass.",
+      "type": "Water",
+      "distMi": 3.5,
+      "directions": "Trail #1359 leaves the lot at an easy grade through dry ponderosa and lodgepole forest, staying close to Stafford Creek most of the way. A short rerouted section of steeper switchbacks near the half-mile mark bypasses old avalanche-damaged tread. The forest stays open and the grade never gets hard before the trail reaches the marshy meadow ground."
+     },
+     {
+      "lat": 47.409686,
+      "lng": -120.802068,
+      "elev": 5450,
+      "name": "Standup Creek Trail junction",
+      "note": "Trail #1359 meets the Standup Creek Trail about 1 mile below Navaho Pass; continue straight/left on #1359 toward the pass.",
+      "type": "Junction",
+      "distMi": 4.85,
+      "directions": "Stay on Stafford Creek Trail #1359, still gaining gradually along the creek, to the signed junction with the Standup Creek Trail (#1369)."
+     },
+     {
+      "lat": 47.409284,
+      "lng": -120.799768,
+      "elev": 5500,
+      "name": "Upper meadow camp",
+      "note": "Established camp area in the upper meadow (elev/dist interpolated between the 4,800 ft creek crossing and the pass); common overnight staging spot before the steep push above.",
+      "type": "Campsite",
+      "distMi": 5,
+      "directions": "Continue on Trail #1359 above the junction; the trail opens out into a large, marshy subalpine meadow with a feeder stream — another water source, and the usual base camp for parties splitting the trip over two days."
+     },
+     {
+      "lat": 47.414557,
+      "lng": -120.795687,
+      "elev": 6000,
+      "name": "Navaho Pass",
+      "note": "Junction with the old County Line Trail (Cascade Creek Trail #1217); barren, rocky 'moon-scape' terrain with big Enchantments views, but very exposed to wind for camping.",
+      "type": "Junction",
+      "distMi": 5.85,
+      "directions": "Above the meadow the trail leaves the trees and switchbacks up open, rocky slope for the last stretch, gaining roughly 500 ft to the saddle. There is no water and essentially no shade on this section, and on the dry east side it bakes on a warm afternoon."
+     },
+     {
+      "lat": 47.418341,
+      "lng": -120.799937,
+      "elev": 6600,
+      "name": "South ridge scramble path",
+      "note": "Steep climber's path of loose scree and dirt gaining the south ridge; snow patches can linger into July, making poles/microspikes worthwhile.",
+      "type": "Hazard",
+      "distMi": 6.3,
+      "directions": "From the pass turn east and follow the crest trail a short way toward the peak, then leave it where a boot path breaks off uphill onto the south ridge. The path is loose scree over dirt and steepens quickly, so poles earn their keep and it is easy to push rock down onto anyone below you."
+     },
+     {
+      "lat": 47.4226199,
+      "lng": -120.803141,
+      "elev": 7223,
+      "name": "Navaho Peak",
+      "note": "True summit at 7,223 ft on the Alpine Lakes Wilderness boundary; panoramic views of the Enchantments and Stuart Range.",
+      "type": "Summit",
+      "distMi": 6.85,
+      "directions": "Follow the crest up for a bit over 600 ft of gain on broken rock and scree; the scrambling stays easy Class 2 with hands wanted only occasionally. Stay on the ridge line rather than dropping onto the looser slopes on either side, which are steeper than they look from above."
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "Class 2",
+      "label": "South ridge to the summit",
+      "notes": "From Navaho Pass (~6,000 ft), leave the maintained trail and traverse/climb east along the broad south ridge of Navaho Peak: an easy, mostly open scramble on rock and heather with no technical exposure, gaining the final 1,100–1,200 ft to the 7,223 ft summit over about 0.7–0.8 mile."
+     }
+    ],
+    "pitch_detail": [
+     {
+      "grade": "Class 1 (trail)",
+      "notes": "County Line Trail from Stafford Creek trailhead to Navaho Pass (~5.5 mi one-way, ~3,000 ft gain) -- maintained trail, not technical.",
+      "pitch": "Trail to Navaho Pass",
+      "lengthM": 8850
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Leave the pass and follow a boot path east/northeast up loose scree/talus, gaining the final ~1,000-1,200 ft over roughly one mile to the summit block; can involve snow and route-finding into July.",
+      "pitch": "Summit scramble",
+      "lengthM": 1609
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 47.4231,
+     "peakLng": -120.8037,
+     "trailhead": "Stafford Creek Trailhead",
+     "trailheadDirection": "Start at the Stafford Creek Trailhead (Trail #1359), Cle Elum Ranger District, Okanogan-Wenatchee National Forest, at the end of North Fork Teanaway River Road (FR 9737) past 29 Pines Campground - a small, often-overflowing lot for roughly 20 cars (Northwest Forest Pass required)."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": null,
+      "notes": "Lower-quality scrambling/easier rock to gain the wall proper.",
+      "pitch": "Toe"
+     },
+     {
+      "grade": null,
+      "notes": "Steep, sustained climbing begins.",
+      "pitch": "Shield"
+     },
+     {
+      "grade": "up to 5.13- / V5-V6 boulder problem",
+      "notes": "3D, steep roof climbing with boulder-problem-hard sections.",
+      "pitch": "Roofs / '3D Dike' / Big Overhang (~P12-13)"
+     },
+     {
+      "grade": null,
+      "notes": "Technical face/slab climbing between the steeper bands.",
+      "pitch": "Slab"
+     },
+     {
+      "grade": "5.11-5.13-",
+      "notes": "Sustained, continuous overhanging terrain - the route's crux section; stick-clip or 'rodeo-clip' some bolts.",
+      "pitch": "Headwall (~P12-15)"
+     },
+     {
+      "grade": "easier (5.8-ish)",
+      "notes": "Easier climbing to top out, but with loose rock on ledges near the top.",
+      "pitch": "Summit pitches (~P16-17)"
+     }
+    ],
+    "timing": {
+     "totalHrs": 28,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 16,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Hike the Lake Serene trail then leave it to traverse brushy talus and a steep gully system toward the toe of the North Norwegian Buttress; camp near the base to have a fresh start …",
+       "fromTo": "Approach to wall-base camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "Rack up and start up the buttress at first light; established free/aid lines on this wall (Jotnar, Bluebell) run 16-21 pitches of sustained, often loose or seepy climbing. Most par…",
+       "fromTo": "Climb to a high bivy",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "Finish the remaining pitches to the summit, then reverse the route with a single uncut 70m rope on the bolted rappel line (per the route's free-ascent descent) — expect a long, rop…",
+       "fromTo": "Top out and descend",
+       "section": "Climb"
+      }
+     ]
+    },
+    "access": {
+     "fees": "Northwest Forest Pass where applicable",
+     "notes": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade III+ alpine objective. Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+     "rules": "Respect private property near the town of Index on the approach; standard national forest rules above.",
+     "permit": "None required.",
+     "closures": null,
+     "landManager": "Mount Baker-Snoqualmie National Forest (lower slopes/approach may cross other ownership near Index)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. Half Moon Crag: no fee site identified.",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+      "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Wet west-slope environment; rock and brush are rarely fully dry even in the best months (.typical).",
+      "probability": "Lower afternoon-thunderstorm frequency than the drier east-side Cascades; primary risk is fast-moving Pacific frontal systems bringing rain with little warning."
+     },
+     "exposure": "High-consequence exposure throughout a sustained Grade V buttress; loose and vegetated rock raises both fall risk and rockfall risk onto the party, and retreat is committing once underway.",
+     "avalanche": {
+      "zone": "NWAC Stevens Pass zone is the nearest official forecast coverage; this is a dry summer rock objective, so the winter/spring avalanche forecast does not meaningfully apply to the climbing season.",
+      "byMonth": {
+       "July": "N/A",
+       "June": "Low",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high — the approach/descent is described as notoriously difficult, adding hours of strenuous, brushy effort on top of the technical climbing.",
+      "packWeight": "Moderate-heavy (roughly 25-35 lb) with a full alpine rock rack, extra water, and bail gear for a long, committing day."
+     },
+     "approachTime": "Difficult and lengthy — a notoriously difficult approach/descent; plan for a very long, physically demanding day well beyond the roped climbing itself, consistent with the 04:00 recommended start.",
+     "requiredSkills": [
+      "confident traditional multi-pitch leading",
+      "managing loose and vegetated rock",
+      "building solid anchors and retreat/rappel systems on committing terrain",
+      "route-finding on an unmarked buttress",
+      "team efficiency for a very long alpine day"
+     ],
+     "experienceLevel": "Advanced/expert alpine rock climber. Grade V commitment on notoriously loose, vegetated rock demands prior experience on serious, remote alpine routes and strong judgment about when to retreat."
+    },
+    "itinerary": {
+     "cal": "Best conditions are mid-to-late summer (Jul-Aug) once the approach brush and gully snow/ice have melted out and the wall has dried from spring seepage.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Lake Serene trail then leave it to traverse brushy talus and a steep gully system toward the toe of the North Norwegian Buttress; camp near the base to have a fresh start on the wall. This approach is notorious for thick brush between roughly 3,000-3,600 ft.",
+       "hours": 6,
+       "miles": 4,
+       "title": "Approach to wall-base camp",
+       "gainFt": 2800,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Establish camp at the base of the buttress"
+      },
+      {
+       "n": 2,
+       "note": "Rack up and start up the buttress at first light; established free/aid lines on this wall (Jotnar, Bluebell) run 16-21 pitches of sustained, often loose or seepy climbing. Most parties fix or climb to a ledge bivy (commonly cited around pitch 12) rather than trying to top out same day.",
+       "hours": 10,
+       "miles": 0.3,
+       "title": "Climb to a high bivy",
+       "gainFt": 1700,
+       "lossFt": 0,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp, rack up at the base",
+         "detail": ""
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start climbing",
+         "detail": "Lower pitches are typically the chossiest/wettest section."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Reach the pitch-12 bivy ledge area",
+         "detail": "Portaledge recommended if no natural ledge is secured."
+        }
+       ],
+       "objective": "Fix/climb the lower two-thirds of the buttress to a ledge bivy"
+      },
+      {
+       "n": 3,
+       "note": "Finish the remaining pitches to the summit, then reverse the route with a single uncut 70m rope on the bolted rappel line (per the route's free-ascent descent) — expect a long, rope-eating descent through brush lower down before regaining the approach trail and hiking out.",
+       "hours": 12,
+       "miles": 4,
+       "title": "Top out and descend",
+       "gainFt": 500,
+       "lossFt": 5491,
+       "packLb": 25,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave bivy",
+         "detail": ""
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Top out on the buttress / summit ridge",
+         "detail": ""
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin rappel descent",
+         "detail": "Single-line raps on bolted anchors down the route."
+        },
+        {
+         "time": "4:00 PM",
+         "label": "Reach ground, break down camp",
+         "detail": ""
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Hike out to trailhead",
+         "detail": "Brushy lower gully/talus in fading light is common."
+        }
+       ],
+       "objective": "Finish the buttress, summit, and rappel back to the trailhead"
+      }
+     ],
+     "totalNote": "A serious Grade V/VI big-wall route: roughly 8 miles and 5,000 ft round trip, typically done as a 3-day wall trip with two bivies rather than a single push."
+    },
+    "waypoints": [
+     {
+      "lat": 47.80925,
+      "lng": -121.57409,
+      "elev": 600,
+      "name": "Lake Serene Trailhead (Trail #1068)",
+      "type": "Trailhead",
+      "elevFt": 1300
+     },
+     {
+      "lat": 47.7801,
+      "lng": -121.5787,
+      "elev": 5527,
+      "name": "Mount Index Middle Peak",
+      "type": "Summit",
+      "elevFt": 5527
+     }
+    ]
+   }
+  }
+ ]
+}

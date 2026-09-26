@@ -1,0 +1,1342 @@
+{
+ "file": "r009.json",
+ "results": [
+  {
+   "id": "wa_chelan_butte_chelan_butte_trail",
+   "fact": "Parking pass type required (Northwest Forest Pass vs Discover Pass)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Discover Pass (or WDFW Vehicle Access Pass) - the land is a WDFW wildlife area, not national forest",
+   "evidence": "The WDFW Chelan Butte Wildlife Area Unit page says a Discover Pass is required on WDFW lands (unless you hold a Vehicle Access Pass). No source puts this trailhead on Forest Service land or asks for a Northwest Forest Pass. Four access sub-fields (fees, parking_pass, passRequired, land_manager) already say WDFW/Discover Pass; permit was the lone outlier. Caveat: some hiker pages (WTA hike page, a 2024 trip report, beexploring) say no pass is needed at the paved Gorge Rd lot, so enforcement there is uncertain, but the NW Forest Pass wording is wrong either way.",
+   "sources": [
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/chelan-butte-wildlife-area-unit",
+    "https://www.wta.org/go-hiking/hikes/chelan-butte"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Northwest Forest Pass (or day fee) to park at developed trailheads.",
+     "replace": "a Discover Pass (or a WDFW Vehicle Access Pass) covers parking on the state wildlife-area land.",
+     "id": "wa_chelan_butte_chelan_butte_trail",
+     "fact": "Parking pass type required (Northwest Forest Pass vs Discover Pass)"
+    }
+   ]
+  },
+  {
+   "id": "wa_chelan_butte_chelan_butte_trail",
+   "fact": "Is March open or closed to hiking?",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Apr-Oct",
+   "evidence": "The WDFW unit page states that all walk-in access (hiking, snowshoeing, shed hunting) is discouraged Feb 1 through Mar 31 to protect wintering mule deer. The row itself states that window in season, access.closures, best_season and climate.winter; only the season's 'Mar' start contradicts it. season also held prose that belongs in best_season (which already carries the closure explanation), so season becomes the short window.",
+   "sources": [
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/chelan-butte-wildlife-area-unit"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Mar-Oct (best Apr-May and fall); voluntary closure Feb 1-Mar 31 for wintering deer; also used for winter snowshoeing",
+     "value": "Apr-Oct",
+     "id": "wa_chelan_butte_chelan_butte_trail",
+     "fact": "Is March open or closed to hiking?"
+    }
+   ]
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "Total round-trip distance for the Walrus Glacier itinerary",
+   "verdict": "fixed",
+   "correct_value": "~23 mi round trip (11.5 mi one way): day 1 ~7.5 mi, summit day ~8 mi, hike out ~7.5 mi",
+   "evidence": "Two independent write-ups give ~11.5 mi one way / ~22-23 mi round trip (one: 11.5 mi one way with 6,500 ft gain; a separate trip blog: around 22 mi round trip with 6,300 ft plus a few hundred feet of regain). A camp at ~4,900 ft is ~7.5 mi in, leaving ~4 mi each way to the summit, so the 5-mile summit day was short and the 26 mi totalNote (one party's tally) is the outlier. dist_km 18.5 (11.5 mi one way) already agrees.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/20/clark-mountain-walrus-glacier/",
+    "http://cascade-mountaineering.blogspot.com/2012/08/climbing-clark-mountain-washington.html",
+    "https://www.mountaineers.org/activities/routes-places/clark-mountain-walrus-luahna-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 5,
+     "value": 8,
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~8 mi/~3,100 ft up",
+     "replace": "~7.5 mi/~3,100 ft up",
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "an ~5-mile, ~11.5-hour",
+     "replace": "an ~8-mile, ~11.5-hour",
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "the ~8-mile hike out",
+     "replace": "the ~7.5-mile hike out",
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "roughly 25-26 miles round trip with on the order of 6,700 ft of cumulative gain",
+     "replace": "roughly 23 miles round trip with on the order of 6,500 ft of cumulative gain",
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+    },
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "the ~25-26 mile round trip",
+     "replace": "the ~23 mile round trip",
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+    }
+   ]
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "Total gain for the Walrus Glacier itinerary",
+   "verdict": "fixed",
+   "correct_value": "~6,500 ft car to car",
+   "evidence": "One source gives 6,500 ft for Clark via Boulder Pass; another trip account gives 6,300 ft plus a few hundred feet of regain (the drop off Boulder Pass), i.e. ~6,500. The 7,300 ft figure in totalNote comes from a single party's tally. The summit-day gain (3,000) is raised to 3,400 so day gains sum to gain_ft (3,100 + 3,400 = 6,500) and losses (3,400 + 3,100) match; a ~5,300 ft camp to the 8,602 ft summit is ~3,300 ft before the Boulder Pass regain.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/20/clark-mountain-walrus-glacier/",
+    "http://cascade-mountaineering.blogspot.com/2012/08/climbing-clark-mountain-washington.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 3000,
+     "value": 3400,
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Total gain for the Walrus Glacier itinerary"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 3000,
+     "value": 3400,
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Total gain for the Walrus Glacier itinerary"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 26 miles and 7,300 ft gained/lost total",
+     "replace": "roughly 23 miles and 6,500 ft gained/lost total",
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Total gain for the Walrus Glacier itinerary"
+    }
+   ]
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "Boulder Basin camp elevation",
+   "verdict": "fixed",
+   "correct_value": "Camps range from ~4,900 ft (basin, ~7.5 mi) to ~6,000 ft (just below Boulder Pass, ~8.5 mi)",
+   "evidence": "The Mountaineers route listing (via search excerpt) gives a suggested camp at 4,900 ft (7.5 mi) with an alternate camp at 6,000 ft (8.5 mi) just below Boulder Pass; a detailed trip report camped at ~5,600 ft on a forested rib after 3,000 ft of gain. Both the approach's 4,900-5,300 and the itinerary's 5,600-6,000 are real camps; the itinerary is widened to the full range so it no longer contradicts the waypoint (5,300) and approach text.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/clark-mountain-walrus-luahna-peak",
+    "http://trailcatjim.com/clark-mtn-via-walrus-glacier-2013/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Camp in the forested basin around 5,600-6,000 ft",
+     "replace": "Camp in the basin anywhere from about 4,900 to 6,000 ft",
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Boulder Basin camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Forested campsites around 5,600-6,000 ft;",
+     "replace": "Campsites spread from about 4,900 to 6,000 ft;",
+     "id": "wa_clark_mountain_west_ridge",
+     "fact": "Boulder Basin camp elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "Aspect/face of the documented Walrus Glacier line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources agree the Walrus (Clark) Glacier lies on Clark's east side and the glacier route climbs its left (south) margin onto the east ridge/upper south face; the non-glacier line uses the south basin/south ridge. No source found describes a 'West Ridge' line matching aspect W / face 'West Ridge'. The row bundles two lines under one name, so choosing one aspect (E for the documented glacier itinerary vs S for the scramble) is a naming/scope decision two sources cannot settle.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/20/clark-mountain-walrus-glacier/",
+    "http://trailcatjim.com/clark-mtn-via-walrus-glacier-2013/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Clark-specific",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Serves this route: 'Boulder Pass and Thunder Basin, White River' (the route's own camp); 'Napeequa Valley floor near Louis Creek' only for the alternate Little Giant Pass approach. Do not serve Clark: Mackinaw Shelter, White Pass/Foam Creek benches, Glacier Gap, Kennedy Ridge/Glacier Creek, Boulder Basin above Sitkum Creek, Butterfly Butte/Pilz Glacier (Glacier Peak approaches), and Buck Creek Pass/High Pass (a different approach for other peaks).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_milk_n_honey",
+   "fact": "Route distance - dist_km (4.0 mi) vs itinerary total miles (10.6 mi)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is rendered as the one-way approach distance and itinerary miles as the whole day's round trip; ~4-5 mi one way and ~10.4-10.8 mi round trip are consistent, differently-labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_milk_n_honey",
+   "fact": "Total gain/loss - 4,760 ft (gain_ft/loss_ft) vs 4,100 ft (itinerary day)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft gain and loss car to car",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4100,
+     "value": 4760,
+     "id": "wa_milk_n_honey",
+     "fact": "Total gain/loss - 4,760 ft (gain_ft/loss_ft) vs 4,100 ft (itinerary day)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4100,
+     "value": 4760,
+     "id": "wa_milk_n_honey",
+     "fact": "Total gain/loss - 4,760 ft (gain_ft/loss_ft) vs 4,100 ft (itinerary day)"
+    }
+   ]
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Rope length recommended - 25-30 m (gear/rack) vs 60 m (detailed_rack/rope_length_m/pro_tips)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A single 60 m rope (the ~25 m descent rappel needs a doubled rope of at least 50 m)",
+   "evidence": "A trip report of this route describes the descent as a single 25 m rappel off an anchor down the east side; other CBR reports give the same east-side rappel as 30 m. A 25-30 m rope cannot make a 25-30 m doubled rappel, so the gear/rack wording is physically wrong. detailed_rack, rope_length_m, pro_tips and rappels (4 fields) already say 60 m.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+    "https://stephabegg.com/trip-reports/washington/cbr-let-it-burn/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      1
+     ],
+     "find": "a single 25-30m rope is sufficient for the descent rappel",
+     "replace": "a single 60 m rope, which also covers the ~25 m descent rappel",
+     "id": "wa_nw_ridge_2",
+     "fact": "Rope length recommended - 25-30 m (gear/rack) vs 60 m (detailed_rack/rope_length_m/pro_tips)"
+    },
+    {
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      4
+     ],
+     "find": "Single 25-30m rope for descent rappel",
+     "replace": "Single 60 m rope (covers the ~25 m descent rappel)",
+     "id": "wa_nw_ridge_2",
+     "fact": "Rope length recommended - 25-30 m (gear/rack) vs 60 m (detailed_rack/rope_length_m/pro_tips)"
+    }
+   ]
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Overnight permit fee - 'none beyond parking' vs the lottery fees stated in the same access block",
+   "verdict": "fixed",
+   "correct_value": "Day use free; overnight lottery $6 non-refundable application fee plus $5 per person per day if awarded",
+   "evidence": "The Forest Service Enchantments overnight-permit page states a $6 non-refundable application fee and $5/person/day; independent 2026 permit guides give the same $6 application fee and $5 per person per day. access._raw.permit_cost already said $5/person/day; access.fees denied any fee.",
+   "sources": [
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "https://www.recreation.gov/camping/poi/233273",
+    "https://explorewithalec.com/enchantments-lottery-guide/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "None beyond the parking or entrance fee this route already lists.",
+     "replace": "Day climbs: free. Overnight lottery: $6 non-refundable application fee, then $5/person/day if selected.",
+     "id": "wa_nw_ridge_2",
+     "fact": "Overnight permit fee - 'none beyond parking' vs the lottery fees stated in the same access block"
+    }
+   ]
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Approach side of Colchuck Lake - waypoint routes via Aasgard Pass while approach/approach_variants say EAST shoreline",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Settled on the fact: a trip report of the NW Ridge approaches from the E side of Colchuck Lake up the obvious gully to the notch above Jabberwocky Tower, and the peak's route listing describes the Aasgard-path/brush approach as the one to the west-face gully. So the 'Aasgard Pass Gully Break' waypoint belongs to the west-face approach. Left unpatched because the fix is to move or remove the pin itself (lat/lng out of scope); renaming it in place would label a pin that still sits on the west-face approach line.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+    "https://www.mountainproject.com/area/105806030/colchuck-balanced-rock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Round-trip distance - dist_km (5.0 mi) vs itinerary/approach ~11.5 mi round trip",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (8 km = ~5 mi) is the one-way approach figure (summit waypoint at 5.5 mi); the itinerary 11.5 mi and the approach's '~18.5 km round-trip' are the round-trip figure. Differently labelled quantities, consistent with each other.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Is the balanced summit block usually climbed? descent_text says most parties do not attempt it; beta/pro_tips/pro_needs say most parties protect/belay it",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The trip report for this route says the party skipped the balanced rock; the same author on a later ascent climbed it by throwing a rope over the top. The problem's listing grades it V1 with no statement of how many parties climb it. No source supports either 'most parties do not attempt' or 'most parties belay it', so neither is patched.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+    "https://www.mountainproject.com/route/121203676/the-balanced-rock"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "fact": "Does The Scoop reach the standard single-rappel walk-off? descent_text says NO, descent/rappel_count_note say YES",
+   "verdict": "fixed",
+   "correct_value": "Yes - parties who top out use the standard 30 m east rappel from a slung horn and scree walk-off; rappelling the route on natural anchors with two 60 m ropes is the alternative",
+   "evidence": "A trip report of The Scoop topped out and descended by a 30 m rappel east from a slung horn, then scree/snow clockwise to the base. The first-ascent report says the route can be rappelled with two 60 m ropes to avoid the loose descent, i.e. the walk-off exists and rappelling the line is an option. descent_text's 'does not use' claim is wrong; descent's 'lower on the formation' also misplaced that rappel (it is at the summit).",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/cbr-scoop/",
+    "http://publications.americanalpineclub.org/articles/12201009400/Colchuck-Balanced-Rock-The-Scoop"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "The Scoop does not use CBR's standard single-rappel/scree walk-off (the one used by the West Face and most other summit-block routes) because its line sits well right of that descent gully. Instead parties rappel the route itself:",
+     "replace": "Parties who top out can use CBR's standard descent shared with the West Face: a single 30 m rappel east from a slung horn, then scree or snow clockwise around the peak to the base. The alternative, which avoids that loose ground, is to rappel the route itself:",
+     "id": "wa_the_scoop_2",
+     "fact": "Does The Scoop reach the standard single-rappel walk-off? descent_text says NO, descent/rappel_count_note say YES"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "a shorter single-rope rappel option from a slung horn also exists lower on the formation",
+     "replace": "or top out and take the standard single 30 m rappel east from a slung horn, then scramble around the peak",
+     "id": "wa_the_scoop_2",
+     "fact": "Does The Scoop reach the standard single-rappel walk-off? descent_text says NO, descent/rappel_count_note say YES"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "fact": "Itinerary gain (4,600 ft) vs gain_ft (4,760 ft)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4600,
+     "value": 4760,
+     "id": "wa_the_scoop_2",
+     "fact": "Itinerary gain (4,600 ft) vs gain_ft (4,760 ft)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4600,
+     "value": 4760,
+     "id": "wa_the_scoop_2",
+     "fact": "Itinerary gain (4,600 ft) vs gain_ft (4,760 ft)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "fact": "Commitment grade - Grade IV (in `grade`) vs commitment III",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found states a Roman-numeral grade for the West Face: the route listing gives 5.11+, 9 pitches with no Grade; the first-winter-ascent report gives 300 m, 5.11+; a detailed trip report gives 5.11+/12-, 8+ pitches, 850 ft. Neighbouring lines are listed Grade III (Let it Burn, Tipping Point, Leche La Vaca). Without two sources for III or IV, neither value is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/105806033/west-face",
+    "http://publications.americanalpineclub.org/articles/13201212209/Colchuck-Balanced-Rock-west-face-first-winter-ascent",
+    "https://stephabegg.com/trip-reports/washington/cbr-west-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "fact": "Crux/route grade - 5.11 (`grade`) vs 5.11+ (`rock_grade`) vs 5.11+/5.12- (pitch_detail crux)",
+   "verdict": "fixed",
+   "correct_value": "5.11+ (crux pitch sometimes called 5.11+/12-)",
+   "evidence": "The route listing and the AAC first-winter-ascent note both grade the West Face 5.11+; a trip report gives the crux pitch as 5.11+/12-. rock_grade 5.11+ and pitch_detail's range are consistent; `grade`'s bare 5.11 understated it. Only the YDS part of `grade` is changed (the Roman numeral is left for the unresolved item).",
+   "sources": [
+    "https://www.mountainproject.com/route/105806033/west-face",
+    "http://publications.americanalpineclub.org/articles/13201212209/Colchuck-Balanced-Rock-west-face-first-winter-ascent",
+    "https://stephabegg.com/trip-reports/washington/cbr-west-face/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "grade",
+     "path": [],
+     "find": "Grade IV, 5.11",
+     "replace": "Grade IV, 5.11+",
+     "id": "wa_colchuck_balanced_rock_west_face",
+     "fact": "Crux/route grade - 5.11 (`grade`) vs 5.11+ (`rock_grade`) vs 5.11+/5.12- (pitch_detail crux)"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "fact": "Total ascent gain/loss - 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft gain and loss car to car",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft. 2,200 ft is only the trail to Colchuck Lake; the itinerary's 4,500 is also raised to 4,760 so both agree.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 2200,
+     "value": 4760,
+     "id": "wa_colchuck_balanced_rock_west_face",
+     "fact": "Total ascent gain/loss - 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 2200,
+     "value": 4760,
+     "id": "wa_colchuck_balanced_rock_west_face",
+     "fact": "Total ascent gain/loss - 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4500,
+     "value": 4760,
+     "id": "wa_colchuck_balanced_rock_west_face",
+     "fact": "Total ascent gain/loss - 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4500,
+     "value": 4760,
+     "id": "wa_colchuck_balanced_rock_west_face",
+     "fact": "Total ascent gain/loss - 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "fact": "Partner requirements say a ~9-hour car-to-car day, 6 pitches and a multi-rappel descent; the itinerary/timing/pitch_detail say ~15.4 hrs, 9 pitches and a single ~30 m rappel",
+   "verdict": "fixed",
+   "correct_value": "~14-16 hr car-to-car day, 9 pitches, single ~30 m summit rappel then walk-off",
+   "evidence": "A trip report logged the West Face at 15:25 and 14:31 car to car and descended with a single 30 m rappel east from a slung horn; the route listing gives 9 pitches and a walk-off descent. The partner_requirements block was the outlier on all three points.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/cbr-west-face/",
+    "https://www.mountainproject.com/route/105806033/west-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "all within a full ~9-hour car-to-car day",
+     "replace": "all within a full ~14-16-hour car-to-car day",
+     "id": "wa_colchuck_balanced_rock_west_face",
+     "fact": "Partner requirements say a ~9-hour car-to-car day, 6 pitches and a multi-rappel descent; the itinerary/timing/pitch_detail say ~15.4 hrs, 9 pitches and a single ~30 m rappel"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "find": "Efficient multi-pitch systems (6 pitches) to keep pace with the ~9-hour day",
+     "replace": "Efficient multi-pitch systems (9 pitches) to keep pace with a ~15-hour day",
+     "id": "wa_colchuck_balanced_rock_west_face",
+     "fact": "Partner requirements say a ~9-hour car-to-car day, 6 pitches and a multi-rappel descent; the itinerary/timing/pitch_detail say ~15.4 hrs, 9 pitches and a single ~30 m rappel"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "Multi-rappel descent competence, including managing rope-pull issues",
+     "replace": "Rappel competence for the single ~30 m summit rappel, including managing rope-pull issues",
+     "id": "wa_colchuck_balanced_rock_west_face",
+     "fact": "Partner requirements say a ~9-hour car-to-car day, 6 pitches and a multi-rappel descent; the itinerary/timing/pitch_detail say ~15.4 hrs, 9 pitches and a single ~30 m rappel"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is rendered as the one-way approach distance and itinerary miles as the whole day's round trip; ~4-5 mi one way and ~10.4-10.8 mi round trip are consistent, differently-labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "fact": "Whether the summit rappel is mandatory or optional",
+   "verdict": "fixed",
+   "correct_value": "Optional single ~30 m rappel (skippable by bypassing the summit block)",
+   "evidence": "The standard east-side ~30 m rappel off a slung horn is described in trip reports, and one explicitly notes it is not needed if the party bypasses the summit block area; the peak's route listing describes the descent as an optional 30 m rappel then an easy walk-off. So the rappel is optional, as descent_text says; the shorter descent field stated it flatly.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/cbr-let-it-burn/",
+    "https://www.mountainproject.com/route/108157307/let-it-burn"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Single ~30 m rappel down the east side from a slung horn, then",
+     "replace": "Single ~30 m rappel down the east side from a slung horn (it can be skipped by scrambling around the summit block), then",
+     "id": "wa_rikki_tikki_tavi",
+     "fact": "Whether the summit rappel is mandatory or optional"
+    }
+   ]
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4300,
+     "value": 4760,
+     "id": "wa_rikki_tikki_tavi",
+     "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4300,
+     "value": 4760,
+     "id": "wa_rikki_tikki_tavi",
+     "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4,300 ft of gain/loss",
+     "replace": "~4,760 ft of gain/loss",
+     "id": "wa_rikki_tikki_tavi",
+     "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is rendered as the one-way approach distance and itinerary miles as the whole day's round trip; ~4-5 mi one way and ~10.4-10.8 mi round trip are consistent, differently-labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4300,
+     "value": 4760,
+     "id": "wa_full_tilt_tempest_wall_free_version",
+     "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4300,
+     "value": 4760,
+     "id": "wa_full_tilt_tempest_wall_free_version",
+     "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "fact": "Side of the summit the slung-horn rappel leaves from: descent/rappels say south/southwest, other CBR routes say east",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources genuinely differ: the Let it Burn listing places the slung chickenhead on the south/southwest face, while trip reports say the 30 m rappel goes east from a slung horn, and another guide gives a short rappel to the east from in-situ slings. The anchor may sit on one aspect and the rappel run another way; not settled by two agreeing sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/108157307/let-it-burn",
+    "https://stephabegg.com/trip-reports/washington/cbr-let-it-burn/",
+    "https://wenatcheeoutdoors.org/2016/05/02/colchuck-balance-rock/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route listing gives 'Trad, 5 pitches, Grade III' and describes a P5 of 4th-class to low-5th traversing ~100 m to the summit block (matching `pitches`=5, beta and pro_tips); a route table gives 4 pitches. Both describe the same four roped pitches plus a simul-climbed finish, so the count depends on convention and the sources do not agree on one number. Note descent_text attributes the '4th class to summit' finish to pitch 4 when the listing calls it P5.",
+   "sources": [
+    "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is rendered as the one-way approach distance and itinerary miles as the whole day's round trip; ~4-5 mi one way and ~10.4-10.8 mi round trip are consistent, differently-labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "fact": "Itinerary gain (4,100 ft) vs gain_ft (4,760 ft)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4100,
+     "value": 4760,
+     "id": "wa_leche_la_vaca",
+     "fact": "Itinerary gain (4,100 ft) vs gain_ft (4,760 ft)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4100,
+     "value": 4760,
+     "id": "wa_leche_la_vaca",
+     "fact": "Itinerary gain (4,100 ft) vs gain_ft (4,760 ft)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_let_it_burn",
+   "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)",
+   "verdict": "fixed",
+   "correct_value": "One 9-pitch numbering (5.7, 5.10c, 5.12a crux, 5.11a, 5.11+, 5.11+, 5.10a, 5.9, 5.8); another listing links the same climbing into 8 pitches",
+   "evidence": "The route listing describes 6 numbered pitches (5.10; 5.12a past 2 bolts; 5.11a; 5.11c; 5.11c; 5.10a) and calls the route 8 pitches; a detailed trip report numbers it 9 (5.7; 5.10c; 5.12a past two bolts; 5.11a; 5.11+; 5.11+; 5.10a; 5.9; 5.8). The sequences match once the listing's P1 is split into the report's P1-P2, so both describe the same line. beta, pro_tips and watch_out are renumbered to the 9-pitch scheme that pitches and pitch_detail use; the itinerary's '8 pitches' becomes '8-9' because both linkings are published.",
+   "sources": [
+    "https://www.mountainproject.com/route/108157307/let-it-burn",
+    "https://stephabegg.com/trip-reports/washington/cbr-let-it-burn/",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "beta",
+     "path": [],
+     "expect": "P1 (5.10): start as for West Face; blocky ledges then a splitter on the left. P2 (5.12a): wild, pumpy movement to 2 bolts leftward, then a splitter finish to a 2-bolt belay. P3 (5.11a): continue up the crack. P4 (5.11c): steep, strenuous moves up an obvious dihedral. P5 (5.11c): grasp a pancake-thin jug flake, move left to a crack, into a pleasant bouldery finish. P6 (5.10a): wandering traverse right, then a slab traverse back left.",
+     "value": "P1-P2 (5.7, then 5.10c): start as for the West Face up broken ledges, then take the thin-hands splitter on the left. P3 (5.12a, crux): strenuous climbing moves left past 2 bolts, then a splitter to a 2-bolt belay. P4 (5.11a): carry on up the crack system. P5 (5.11c/5.11+): hard, steep moves up the obvious dihedral. P6 (5.11c/5.11+): grab the thin jug flake, move left into a crack and finish with bouldery moves. P7 (5.10a): wander right, then traverse a slab back left. P8-P9 (5.9, 5.8): knobs around the left edge of a roof, then blocky cracks on the crest to the summit ridge.",
+     "id": "wa_let_it_burn",
+     "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "P2's bolts protect the leftward crux move",
+     "replace": "P3's bolts protect the leftward crux move",
+     "id": "wa_let_it_burn",
+     "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "P2 (5.12a) and P4/P5 (5.11c) are sustained",
+     "replace": "P3 (5.12a) and P5/P6 (5.11c/5.11+) are sustained",
+     "id": "wa_let_it_burn",
+     "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "8 pitches, crux 5.12a on pitch of ~130 ft.",
+     "replace": "8-9 pitches depending on linking, crux 5.12a on a ~130 ft pitch.",
+     "id": "wa_let_it_burn",
+     "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "(8 pitches, 5.12-)",
+     "replace": "(8-9 pitches, 5.12-)",
+     "id": "wa_let_it_burn",
+     "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "a hard 8-pitch free route",
+     "replace": "a hard 8-9 pitch free route",
+     "id": "wa_let_it_burn",
+     "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+    }
+   ]
+  },
+  {
+   "id": "wa_let_it_burn",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is rendered as the one-way approach distance and itinerary miles as the whole day's round trip; ~4-5 mi one way and ~10.4-10.8 mi round trip are consistent, differently-labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_let_it_burn",
+   "fact": "Itinerary gain (4,500 ft) vs gain_ft (4,760 ft)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4500,
+     "value": 4760,
+     "id": "wa_let_it_burn",
+     "fact": "Itinerary gain (4,500 ft) vs gain_ft (4,760 ft)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4500,
+     "value": 4760,
+     "id": "wa_let_it_burn",
+     "fact": "Itinerary gain (4,500 ft) vs gain_ft (4,760 ft)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_scarface_3",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route listing says only 'five or more' pitches (P5+ are 'the final pitches'), 1,200 ft, Grade III; no source gives an exact count. pitches=6 and overview '5+' are compatible, but the itinerary says '5 pitches' twice. With no source for an exact number nothing is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/108157279/scarface",
+    "https://cascadeclimbers.com/forum/topic/75607-tr-colchuck-balanced-rock-scarface-iii-510-8152010/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_scarface_3",
+   "fact": "Whether the summit rappel is mandatory or optional",
+   "verdict": "fixed",
+   "correct_value": "Optional single ~30 m rappel (skippable by bypassing the summit block)",
+   "evidence": "The standard east-side ~30 m rappel off a slung horn is described in trip reports, and one explicitly notes it is not needed if the party bypasses the summit block area; the peak's route listing describes the descent as an optional 30 m rappel then an easy walk-off. So the rappel is optional, as descent_text says; the shorter descent field stated it flatly.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/cbr-let-it-burn/",
+    "https://www.mountainproject.com/route/108157307/let-it-burn"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Single ~30 m rappel down the east side from a slung horn, then",
+     "replace": "Single ~30 m rappel down the east side from a slung horn (it can be skipped by scrambling around the summit block), then",
+     "id": "wa_scarface_3",
+     "fact": "Whether the summit rappel is mandatory or optional"
+    }
+   ]
+  },
+  {
+   "id": "wa_scarface_3",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is rendered as the one-way approach distance and itinerary miles as the whole day's round trip; ~4-5 mi one way and ~10.4-10.8 mi round trip are consistent, differently-labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_scarface_3",
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4300,
+     "value": 4760,
+     "id": "wa_scarface_3",
+     "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4300,
+     "value": 4760,
+     "id": "wa_scarface_3",
+     "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_tipping_point",
+   "fact": "Descent describes only the mid-route bail, not the standard full-route (summit) finish",
+   "verdict": "fixed",
+   "correct_value": "After the full route (finished via Let it Burn), descend by the standard summit descent (optional ~30 m rappel from a slung horn, then scree walk-off); the two 40 m Sky Lounge rappels are the retreat from P4",
+   "evidence": "The route listing calls P4's anchor the last point you can rappel from, gives two 40 m raps from the Sky Lounge back to the gully, and finishes 'P6 -> Summit per Let It Burn'. Let it Burn's listing and a trip report describe that summit descent as an optional 30 m rappel from a slung horn then an easy walk-off. descent and descent_text presented the bail as the only descent.",
+   "sources": [
+    "https://www.mountainproject.com/route/114550803/the-tipping-point",
+    "https://www.mountainproject.com/route/108157307/let-it-burn",
+    "https://stephabegg.com/trip-reports/washington/cbr-let-it-burn/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "P4's anchor is the last point a rope reaches back down to; from there,",
+     "replace": "After topping out via Let it Burn's upper pitches, take the standard summit descent: an optional single ~30 m rappel from a slung horn, then scree or snow clockwise around the peak back to the base. To retreat from the lower half instead, P4's anchor is the last point a rope reaches back down to; from there,",
+     "id": "wa_the_tipping_point",
+     "fact": "Descent describes only the mid-route bail, not the standard full-route (summit) finish"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "From the top of P4 (the 'last rappel point'), two 40m rappels",
+     "replace": "After the full route, take the standard summit descent (optional ~30 m rappel from a slung horn, then scree around the peak). To retreat from the top of P4 (the 'last rappel point'), two 40m rappels",
+     "id": "wa_the_tipping_point",
+     "fact": "Descent describes only the mid-route bail, not the standard full-route (summit) finish"
+    }
+   ]
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "fact": "Whether the summit rappel is mandatory or optional",
+   "verdict": "fixed",
+   "correct_value": "Optional single ~30 m rappel (skippable by bypassing the summit block)",
+   "evidence": "The standard east-side ~30 m rappel off a slung horn is described in trip reports, and one explicitly notes it is not needed if the party bypasses the summit block area; the peak's route listing describes the descent as an optional 30 m rappel then an easy walk-off. So the rappel is optional, as descent_text says; the shorter descent field stated it flatly.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/cbr-let-it-burn/",
+    "https://www.mountainproject.com/route/108157307/let-it-burn"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Single ~30 m rappel down the east side from a slung horn, then",
+     "replace": "Single ~30 m rappel down the east side from a slung horn (it can be skipped by scrambling around the summit block), then",
+     "id": "wa_accendo_lunae_lib_west_face_var",
+     "fact": "Whether the summit rappel is mandatory or optional"
+    }
+   ]
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "fact": "Route distance: dist_km vs itinerary miles",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is rendered as the one-way approach distance and itinerary miles as the whole day's round trip; ~4-5 mi one way and ~10.4-10.8 mi round trip are consistent, differently-labelled quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "fact": "Itinerary gain (4,200 ft) vs gain_ft (4,760 ft)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4200,
+     "value": 4760,
+     "id": "wa_accendo_lunae_lib_west_face_var",
+     "fact": "Itinerary gain (4,200 ft) vs gain_ft (4,760 ft)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 4200,
+     "value": 4760,
+     "id": "wa_accendo_lunae_lib_west_face_var",
+     "fact": "Itinerary gain (4,200 ft) vs gain_ft (4,760 ft)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_tempest",
+   "fact": "Published timing labels swap 'climb' and 'descent'",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Approach 3 h (hike in), climb 12 h camp to summit, descent 5 h (2 h back to camp + 3 h hike out); total 20 h",
+   "evidence": "No value is in dispute, only labels: the itinerary and each sectionBreakdown entry's own fromTo/note agree day 1 is a 3 h hike-in, day 2 a 14 h climbing day (leave camp 3 AM, top out 3 PM, back at camp 5 PM) and day 3 a 3 h hike out. Section tags are corrected and the top-level split is read off the row's own schedule (12 h to the summit; 2 h back to camp + 3 h out = 5 h), so totalHrs 20 is unchanged. The route table confirms it is a long multi-pitch aid/free line.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "section"
+     ],
+     "expect": "Climb",
+     "value": "Approach",
+     "id": "wa_the_tempest",
+     "fact": "Published timing labels swap 'climb' and 'descent'"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "section"
+     ],
+     "expect": "Descent",
+     "value": "Climb",
+     "id": "wa_the_tempest",
+     "fact": "Published timing labels swap 'climb' and 'descent'"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": null,
+     "value": 3,
+     "id": "wa_the_tempest",
+     "fact": "Published timing labels swap 'climb' and 'descent'"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 3,
+     "value": 12,
+     "id": "wa_the_tempest",
+     "fact": "Published timing labels swap 'climb' and 'descent'"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "descentTimeHrs"
+     ],
+     "expect": 17,
+     "value": 5,
+     "id": "wa_the_tempest",
+     "fact": "Published timing labels swap 'climb' and 'descent'"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tempest",
+   "fact": "Itinerary gain (2,280 + 2,200 = 4,480 ft) vs gain_ft (4,760 ft)",
+   "verdict": "fixed",
+   "correct_value": "4,760 ft (2,280 ft to the lake + ~2,480 ft lake to summit)",
+   "evidence": "Colchuck Lake sits at 5,580 ft after 2,280 ft of gain from the Stuart Lake Trailhead (so the trailhead is ~3,300-3,400 ft), and the summit of Colchuck Balanced Rock is 8,240 ft, giving roughly 4,800-4,900 ft trailhead to summit; one documented ascent recorded 4,760 ft trailhead to summit. A car-to-car day that tops out therefore gains ~4,760 ft, matching gain_ft. The lake (5,580 ft) to the 8,240 ft summit is ~2,500-2,650 ft, so the climb day's 2,200 understated it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 2200,
+     "value": 2480,
+     "id": "wa_the_tempest",
+     "fact": "Itinerary gain (2,280 + 2,200 = 4,480 ft) vs gain_ft (4,760 ft)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 2200,
+     "value": 2480,
+     "id": "wa_the_tempest",
+     "fact": "Itinerary gain (2,280 + 2,200 = 4,480 ft) vs gain_ft (4,760 ft)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_tempest",
+   "fact": "Side of the summit the slung-horn rappel leaves from: rappels says south/southwest, descent/descent_text say east",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources genuinely differ: the Let it Burn listing places the slung chickenhead on the south/southwest face; trip reports describe the 30 m rappel going east from a slung horn. Not settled by two agreeing sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/108157307/let-it-burn",
+    "https://stephabegg.com/trip-reports/washington/cbr-let-it-burn/",
+    "https://wenatcheeoutdoors.org/2016/05/02/colchuck-balance-rock/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "fact": "Total elevation gain to the col",
+   "verdict": "fixed",
+   "correct_value": "~4,600 ft from the trailhead (about 2,280 ft to the lake plus ~2,400-2,500 ft lake to col)",
+   "evidence": "The route listing gives the line's length as 2,500 ft from Colchuck Lake to the col (the lake-to-col figure the approach text quoted as the route's gain). The Colchuck Lake trail gains 2,280 ft to the lake at 5,580 ft. Trailhead to col is therefore ~4,600-4,800 ft, matching gain_ft 4,600 and the waypoints (3,400 to 8,000). The approach sentence and the car-to-car itinerary's 2,500 were the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/108159527/colchuck-balanced-rock-col-east-lake-side-approch",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "consistent with the route's recorded 2,500 ft of gain.",
+     "replace": "about 2,500 ft above the lake, or roughly 4,600 ft of gain from the trailhead.",
+     "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+     "fact": "Total elevation gain to the col"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2500,
+     "value": 4600,
+     "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+     "fact": "Total elevation gain to the col"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 2500,
+     "value": 4600,
+     "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+     "fact": "Total elevation gain to the col"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "fact": "dist_km 17.06 (10.6 mi) is shown as the one-way approach but equals the itinerary's round trip; the col waypoint is at 5.3 mi",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "17.06 km is exactly 10.6 mi, the itinerary's round-trip figure, while the col waypoint sits at 5.3 mi one way; dist_km should probably be ~8.5 km. External sources give only 4 mi to the lake plus about an hour to the col, not a one-way mileage to the col, so the value is flagged rather than changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.mountainproject.com/route/108159527/colchuck-balanced-rock-col-east-lake-side-approch"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_balanced_rock",
+   "fact": "Boulder problem grade: V1 vs V2",
+   "verdict": "fixed",
+   "correct_value": "V1",
+   "evidence": "The problem's own listing grades it V1 (Font 5), 12 ft, up the south-east crimpy arete; a trip report of The Scoop lists the summit block as a V1 boulder problem. The approach text's 'V2' was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/121203676/the-balanced-rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-scoop/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "is the short V2 boulder problem",
+     "replace": "is the short V1 boulder problem",
+     "id": "wa_the_balanced_rock",
+     "fact": "Boulder problem grade: V1 vs V2"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,662 @@
+{
+ "applied": [
+  {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Avalanche hazard claimed N/A but also described as present in early season"
+  },
+  {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Distance from the Leroy Creek crossing to Leroy Basin camp"
+  },
+  {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "Distance from the Leroy Creek crossing to Leroy Basin camp"
+  },
+  {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Distance from the Leroy Creek crossing to Leroy Basin camp"
+  },
+  {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "Distance from the Leroy Creek crossing to Leroy Basin camp"
+  },
+  {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "column": "waypoints",
+   "path": [
+    7,
+    "distMi"
+   ],
+   "fact": "Distance from the Leroy Creek crossing to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Total cumulative gain/loss (route-level fields vs itinerary day sums)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Total cumulative gain/loss (route-level fields vs itinerary day sums)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Order of the summit-ridge scree ramp vs. the final approach to the summit"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "label"
+   ],
+   "fact": "Order of the summit-ridge scree ramp vs. the final approach to the summit"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Order of the summit-ridge scree ramp vs. the final approach to the summit"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    7,
+    "distMi"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "directions"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance from the trailhead to Leroy Basin camp"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Trailhead/road for this route's approach"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Trailhead/road for this route's approach"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "label"
+   ],
+   "fact": "Naming of the summit ridge: 'West Ridge' vs 'southwest ridge'"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Naming of the summit ridge: 'West Ridge' vs 'southwest ridge'"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Leroy Basin camp elevation (5,400 ft on this row vs ~6,100 ft)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "directions"
+   ],
+   "fact": "Leroy Basin camp elevation (5,400 ft on this row vs ~6,100 ft)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Leroy Basin camp elevation (5,400 ft on this row vs ~6,100 ft)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "Leroy Basin camp elevation (5,400 ft on this row vs ~6,100 ft)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Leroy Basin camp elevation (5,400 ft on this row vs ~6,100 ft)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Leroy Basin camp elevation (5,400 ft on this row vs ~6,100 ft)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_seven_fingered_jack_southwest_slopes",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Warm, dry North Cascades summer weather is typical during the best-season window, with cooler mornings at the Leroy Basin camp and exposed, sun-baked scrambling on the southwest-facing slopes and ridge",
+      "probability": "Afternoon thunderstorms and building convective weather are a real risk on exposed summit ridges during summer scramble season, particularly into August"
+     },
+     "exposure": "Consequence is driven by the loose scree/talus and route-finding among the summit pinnacles; a slip on the loose rock or a wrong turn among the pinnacles/false summits carries real injury potential, and rockfall onto climbers below is a concern in the gully sections leaving Leroy Basin, though the terrain itself (Class 2-3) is not highly technical",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on this route"
+    },
+    "waypoints": [
+     {
+      "lat": 48.0832,
+      "lng": -120.835,
+      "elev": 3500,
+      "name": "Phelps Creek Trailhead",
+      "note": "End of FR 6211 (Phelps Creek Road); no parking pass required, but the final 2.3 miles of forest road are rough gravel.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Follow the Chiwawa River Road to the Phelps Creek Road, FR 6211, and take it to its end at the trailhead (3,500 ft). The final 2.3 miles of the forest road are rough gravel. No parking pass is required here."
+     },
+     {
+      "lat": 48.107927,
+      "lng": -120.834395,
+      "elev": 3900,
+      "name": "Glacier Peak Wilderness Boundary",
+      "note": "Trail crosses into Glacier Peak Wilderness here; self-issue wilderness permit is customary at the trailhead/boundary kiosk.",
+      "type": "Junction",
+      "distMi": 2.6,
+      "directions": "Start up Phelps Creek Trail #1511. About a quarter mile in the Carne Mountain Trail branches steeply off to the right; stay left and low on the gentle grade along the creek. The rest of this stretch is easy forest walking with little elevation gain."
+     },
+     {
+      "lat": 48.117053,
+      "lng": -120.837497,
+      "elev": 4140,
+      "name": "Leroy Creek Crossing",
+      "note": "Ford Leroy Creek just before the unsigned Leroy Creek climbers' path forks north off the Phelps Creek Trail; can run high and difficult to ford in early season.",
+      "type": "Water",
+      "distMi": 3.5,
+      "directions": "Continue on the main trail through more level forest. Leroy Creek is the third significant creek the trail crosses and the only one that gives trouble: the log-and-rock crossing runs hard with snowmelt and is the crux of the day for some parties, so scout up and down the bank rather than forcing the obvious line. Do not walk past it, since the unsigned climbers' path leaves the maintained trail at this crossing with no marker."
+     },
+     {
+      "lat": 48.138078,
+      "lng": -120.827325,
+      "elev": 6100,
+      "name": "Leroy Basin",
+      "note": "Established camp in the meadow near treeline in Leroy Basin, the standard base camp for both Seven Fingered Jack and Mount Maude.",
+      "type": "Campsite",
+      "distMi": 6,
+      "directions": "Leave the maintained trail at the crossing and climb the unmaintained boot path up the north side of Leroy Creek. It gains roughly 2,000 feet in about a mile and a half, steep and brushy in places, and is the hardest sustained work of the trip. Where the tread fades, stay on the north side of the creek and keep climbing rather than traversing off into timber. It ends abruptly in the open meadows and talus of the basin."
+     },
+     {
+      "lat": 48.139737,
+      "lng": -120.822578,
+      "elev": 6700,
+      "name": "Boot Path End / Talus Slope Start",
+      "note": "The intermittent climbers' trail out of Leroy Basin fades in a flat spot around here; continue straight up the broad southwest scree/talus slope toward the gap right of Mount Maude's North Tower.",
+      "type": "Junction",
+      "distMi": 6.5,
+      "directions": "From camp head up toward the peak on the intermittent path leaving the basin. There are two ways up this lower step, a rock gully or the gentler ridge just right of it, and the ridge is the more stable underfoot. The two rejoin at a flat spot where the broad southwest slope opens out, and the path effectively ends there."
+     },
+     {
+      "lat": 48.142955,
+      "lng": -120.816832,
+      "elev": 7400,
+      "name": "Loose Scree Traverse",
+      "note": "Veer left, hugging the base of Seven Fingered Jack's walls on a lot of loose, sliding scree; helmets recommended due to rockfall risk from parties above.",
+      "type": "Hazard",
+      "distMi": 7,
+      "directions": "Climb straight up the broad scree and talus slope, initially toward the gap right of Mount Maude's north side, then veer left as the angle steepens to hug the base of Seven Fingered Jack's walls. This is sliding scree with no line that stays firm, so spread the party out sideways rather than stacking up, because anything dislodged runs a long way. Steeper bulges can be turned on either side without difficulty."
+     },
+     {
+      "lat": 48.145494,
+      "lng": -120.815998,
+      "elev": 7800,
+      "name": "7,800 ft Bench",
+      "note": "Broad bench below the jagged summit spires where the southwest slope route tops out onto the upper mountain before the final scramble.",
+      "type": "Junction",
+      "distMi": 7.3,
+      "directions": "Keep working up and left on the same loose ground until the angle relents onto the broad bench beneath the summit towers. It is the first ground on the upper mountain with secure enough footing to regroup and sort out which of the fingers you are heading for."
+     },
+     {
+      "lat": 48.1504888,
+      "lng": -120.8143137,
+      "elev": 9078,
+      "name": "Seven Fingered Jack Summit",
+      "note": "True summit gained via Class 2-3 scrambling among the summit towers; bear left (west) among the spires for the highest point.",
+      "type": "Summit",
+      "distMi": 7.8,
+      "directions": "From the bench bear left (west) as you come up among the towers: the true summit is the leftmost of the fingers seen from the basin below, and every spire right of it is lower. The last of it is class 2-3 scrambling on blocky rock. If you find yourself on anything harder, you have committed to the wrong finger; drop back and traverse further left."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "before": {
+    "itinerary": {
+     "cal": "Phelps Creek Road (FS 6211) is rough gravel and best climbed July-September once the scree ramp and stream-bed crux are snow-free.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Phelps Creek Trail then break off onto the Leroy climbers' path, which steepens sharply (around 1,200 ft/mile) into Leroy Basin. Parties report going through several liters of water on this leg in afternoon heat; camp in the trees away from the busier lakeside sites.",
+       "hours": 4,
+       "miles": 6.5,
+       "title": "Approach to high camp",
+       "gainFt": 1900,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "9:00 AM",
+         "label": "Leave Phelps Creek trailhead",
+         "detail": "~3,500 ft; well-graded trail for the first ~3.5 miles."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Turn off onto Leroy climbers' path",
+         "detail": "About 1.5 hrs from the trailhead to the Leroy High Route junction."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Arrive Leroy Basin camp",
+         "detail": "~5,400 ft; steep final push, plan for a hot, exposed climb with a full overnight pack."
+        }
+       ],
+       "objective": "Reach Leroy Basin camp"
+      },
+      {
+       "n": 2,
+       "note": "A long day: cross Leroy Pass and Freezer Pass, drop into the Ice Lakes basin, then traverse a loose, consequential stream-bed crux before gaining the southwest ridge on a scree ramp. The scrambling above is chossy class 3 (feels like low class 4 with the exposure) with several one-at-a-time sections to avoid rockfall.",
+       "hours": 11,
+       "miles": 9,
+       "title": "Summit push via Freezer Pass and the SW ridge",
+       "gainFt": 3800,
+       "lossFt": 3800,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Wake, leave camp before/at sunrise",
+         "detail": "Light packs; leave the overnight gear at Leroy Basin."
+        },
+        {
+         "time": "~7:00 AM",
+         "label": "Freezer Pass, drop into Ice Lakes basin",
+         "detail": "Cross-country traverse, ~500 ft down to the basin."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Stream-bed crux",
+         "detail": "Loose clay/scree gully — tricky down-climb and re-ascent, reported as the route's toughest obstacle."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Gain the southwest ridge",
+         "detail": "~400 ft up a scree/talus ramp to the ridge crest."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Summit",
+         "detail": "Class 3-4 ledges and gendarmes on the final push; trip reports place summit arrival early-to-mid afternoon."
+        },
+        {
+         "time": "5:30 PM",
+         "label": "Back at camp",
+         "detail": "Reverse the full line; budget 7+ hours round trip from camp."
+        }
+       ],
+       "objective": "Climb South Spectacle Butte (8,392 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the Leroy climbers' path and Phelps Creek Trail back to the car.",
+       "hours": 3.5,
+       "miles": 6.5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 1900,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~22-mile round trip with a long class 3-4 summit day out of a Leroy Basin high camp; ~7,500 ft of cumulative gain, most of it on day 2."
+    },
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "2-3",
+      "label": "West Ridge from the toe",
+      "notes": "From the toe of the ridge, follow it upward on class 2-3 terrain."
+     },
+     {
+      "n": 2,
+      "class": "class 3, a short section regarded by some as low class 4",
+      "label": "Forced ledge traverses on the south side",
+      "notes": "Broken crags and short cliff bands along the crest repeatedly force the route off the true ridgeline onto looser, chossy ledges on the south side; the north side of the ridge is cliffy and should not be attempted. These traverses are the crux: rock is loose and ledges are narrow, so parties should move one at a time to avoid raining rock on those below."
+     },
+     {
+      "n": 3,
+      "label": "Final 400 ft scree-and-talus ramp",
+      "notes": "The final roughly 400 ft to the summit is a scree-and-talus ramp; cairns mark the line but blend into the surrounding rock and are easy to lose, so expect some route-finding on the way up."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.083,
+      "lng": -120.8349,
+      "elev": 3500,
+      "name": "Phelps Creek Trailhead",
+      "note": "End of Phelps Creek Rd/FR 6211 off Chiwawa River Road; no parking pass or day-use fee required (per USFS), wilderness boundary is 2.6 mi up-trail.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Leavenworth, take US-2 west about 15 miles to Coles Corner, WA-207 north about 4.4 miles, then the Chiwawa Loop Road onto Chiwawa River Road (FR 6200) for roughly 22 miles and FR 6211 for the last 2.3 miles to the trailhead at about 3,500 ft. The gravel and dirt beyond about mile 11 is rough and rutted and is not suitable for low-clearance vehicles; the road is normally snowed shut from late fall through spring and is also subject to washout closures, so check Wenatchee River Ranger District alerts before driving. No parking pass or day-use fee is required, but fill out the free self-issue Glacier Peak Wilderness permit at the trailhead."
+     },
+     {
+      "lat": 48.141041,
+      "lng": -120.827725,
+      "elev": 5400,
+      "name": "Leroy Basin camp",
+      "note": "Established sites reached via a steep unmaintained path off the Leroy Creek crossing (~3.5 mi up Phelps Creek Trail then 1.9 mi up-basin); streams provide water and there are views of Seven-Fingered Jack.",
+      "type": "Campsite",
+      "distMi": 5.4,
+      "directions": "Follow Phelps Creek Trail #1511 up the east side of the valley, a gentle well-graded grade of roughly 275 ft per mile, crossing the wilderness boundary at 2.6 miles and reaching the Leroy Creek ford at about 3.5 miles. Immediately across the ford the unmaintained Leroy Creek high route (#1512) branches steeply up to the north-east; it is well trodden but climbs at roughly 1,200 ft per mile for the final 1.9 miles into the basin. This half is hot and exposed under a full overnight pack, so carry several liters, and note that campfires are prohibited above 5,000 ft anywhere in the wilderness."
+     },
+     {
+      "lat": 48.128952,
+      "lng": -120.816313,
+      "elev": 6850,
+      "name": "Leroy Pass",
+      "note": "Sheepherder trail on the Leroy/Carne high route crests here before the cross-country traverse toward Freezer Pass.",
+      "type": "Junction",
+      "distMi": 6.9,
+      "directions": "From camp pick up the Carne Mountain high trail, an old sheepherder track, and follow it south-east; it gives up a little elevation to cross the south fork of Leroy Creek before climbing to the 6,850 ft saddle. Cairns mark the way, but several paths braid apart in the basin, so stay on the lower and better-trodden line where they diverge. About 1.5 miles and 1,450 ft of gain from camp."
+     },
+     {
+      "lat": 48.127538,
+      "lng": -120.799605,
+      "elev": 7600,
+      "name": "Freezer Pass",
+      "note": "Faint footpaths through heather, talus and scree cross the pass and drop cross-country into the Ice Lakes basin.",
+      "type": "Junction",
+      "distMi": 7.9,
+      "directions": "Continue east from the saddle on faint footpaths through heather and then talus and scree, gaining about 750 ft over roughly a mile to the 7,600 ft pass. There is no maintained tread here and the bootpaths come and go, so keep track of your line for the return. Snow can linger on this stretch into early or mid July."
+     },
+     {
+      "lat": 48.13219,
+      "lng": -120.77903,
+      "elev": 6600,
+      "name": "Lower Ice Lake / old Ice Lakes Trail remnants",
+      "note": "Faint remnants of the historic Ice Lakes Trail mark the point where the route leaves the lakeshore and begins the exposed east traverse toward the Buttes; both lakes are reliable water sources.",
+      "type": "Water",
+      "distMi": 9.4,
+      "directions": "Drop north-east off the pass down talus into the Ice Lakes basin, losing about 1,000 ft. Pass the north end of Upper Ice Lake and follow the dry stream bed down to the west shore of Lower Ice Lake, then pick up the faint remnants of the old Ice Lakes Trail on the north side. Both lakes are reliable water."
+     },
+     {
+      "lat": 48.130907846153846,
+      "lng": -120.774626,
+      "elev": 6600,
+      "name": "Creek washout crossing",
+      "note": "Loose, slippery scrub-and-rock traverse around 6,600 ft crosses a hardpan-dirt gully/washout — pick the crossing line carefully, it's easy to end up cliffed out.",
+      "type": "Hazard",
+      "distMi": 9.7,
+      "directions": "Leave the lakeshore where the old trail remnants fade and sidehill east at about 6,600 ft, alternating between slippery scrub and loose rock with no real tread. Keep the party strung out in a line rather than stacked one above another, because almost everything here moves underfoot. Roughly a third of a mile brings you to the lip of the washed-out gully."
+     },
+     {
+      "lat": 48.12962569230769,
+      "lng": -120.770222,
+      "elev": 6800,
+      "name": "Base of the southwest ridge",
+      "note": "Cross-country basin floor between the two Buttes where a scree ramp gains the southwest ridge crest; Class 3 scrambling begins about 400 ft above here, staying climber's right past several loose gendarmes.",
+      "type": "Junction",
+      "distMi": 10,
+      "directions": "Pick a crossing line carefully and downclimb the loose clay and scree into the washout, then climb the far side back to about the same elevation; dropping too low here can leave you cliffed out. This is the last reliable water before the summit, so fill up at the crossing. Beyond it the traverse eases and flattens into the open basin floor between the two Buttes, about a third of a mile in all."
+     },
+     {
+      "lat": 48.12654,
+      "lng": -120.75984,
+      "elev": 8392,
+      "name": "South Spectacle Butte summit",
+      "note": "True summit gained via ledges on the southeast corner of the summit block above ~8,100 ft, after sustained, exposed Class 3 scrambling on the ridge below.",
+      "type": "Summit",
+      "distMi": 10.7,
+      "directions": "From the basin floor climb the scree-and-talus ramp about 400 ft to gain the crest of the southwest ridge, then follow the crest on Class 2-3 talus and broken rock, turning the gendarmes on climber's right. At around 7,700 ft a spire forces the crux: a short chossy chute, a traverse on down-sloping rock, and a Class 3 dike back up, all with real exposure on rotten holds, so move one at a time. Above about 8,100 ft leave the crest for ledges on the south-east corner of the summit block; cairns mark the line but blend into the surrounding rock and are easy to lose."
+     }
+    ],
+    "approach": "The standard approach is a long, mostly cross-country line from the Phelps Creek Trailhead at the end of Phelps Creek Road (FR 6211), about 3,500 ft. Follow Phelps Creek Trail #1511 up the east side of the valley — a gentle, well-graded grade of roughly 275 ft per mile — crossing into the Glacier Peak Wilderness at 2.6 miles and reaching the Leroy Creek ford at about 3.5 miles. Immediately across the ford, the unmaintained Leroy Creek high route (Trail #1512) branches steeply north-east; it is well trodden but climbs at roughly 1,200 ft per mile for 1.9 miles into Leroy Basin, where established camps sit off a steep path above the creek crossing. This half is hot and exposed under an overnight pack, so carry several liters. Campfires are prohibited above 5,000 ft anywhere in the wilderness, and a free self-issue wilderness permit is filled out at the trailhead. From camp, pick up the Carne Mountain high trail — an old sheepherder track — and follow it south-east, giving up a little elevation to cross the south fork of Leroy Creek before climbing to the 6,850 ft saddle at Leroy Pass; cairns mark the way but several paths braid apart in the basin, so stay on the lower and better-trodden line where they diverge. Continue east on faint footpaths through heather, then talus and scree, gaining about 750 ft over roughly a mile to Freezer Pass at 7,600 ft. There is no maintained tread here and the bootpaths come and go, so keep track of your line for the return; snow can linger on this stretch into early or mid July. Drop north-east off the pass down talus into the Ice Lakes basin, losing about 1,000 ft, passing the north end of Upper Ice Lake and following the dry stream bed to the west shore of Lower Ice Lake. Both lakes are reliable water. Pick up the faint remnants of the historic Ice Lakes Trail on the north side and sidehill east at about 6,600 ft on slippery scrub and loose rock with no real tread — keep the party strung out in a line rather than stacked one above another, because almost everything here moves underfoot. Roughly a third of a mile brings you to the lip of a washed-out gully; downclimb the loose clay and scree into it and climb the far side back to about the same elevation, picking the crossing line carefully, since dropping too low can leave you cliffed out. This is the last reliable water before the summit. Beyond it the traverse eases into the open basin floor between the two Buttes at about 6,800 ft, where a scree-and-talus ramp gains the crest of the southwest ridge and the scrambling begins. A separate approach corridor exists on the west side of the peak: leaving Phelps Creek Trail #1511 at around 5,300 ft and climbing cross-country east through heather and talus benches to gain the peak's west-facing slopes. It is a shorter day from the trailhead and avoids the Freezer Pass crossing, but it is a different line from the one this route's waypoints and descent follow, and the north side of that ridge is cliffy and should not be entered.",
+    "approach_variants": [
+     {
+      "name": "Phelps Creek and Leroy Basin over Leroy and Freezer passes to the Ice Lakes basin",
+      "notes": "From the Phelps Creek Trailhead at about 3,500 ft, Phelps Creek Trail #1511 climbs the east side of the valley at roughly 275 ft per mile, crossing into the wilderness at 2.6 miles and reaching the Leroy Creek ford at about 3.5. Immediately across the ford the unmaintained Leroy Creek high route branches steeply north-east and climbs 1.9 miles into Leroy Basin at about 5,400 ft, where the camps are. That half is hot and exposed under a pack.\n\nFrom camp pick up the Carne Mountain high trail — an old sheepherder track — south-east; it gives up a little height to cross the south fork of Leroy Creek before climbing to Leroy Pass at 6,850 ft. Cairns mark the way but several paths braid apart in the basin: stay on the LOWER and better-trodden line where they diverge.\n\nContinue east on faint footpaths through heather, then talus and scree, gaining about 750 ft over roughly a mile to Freezer Pass at 7,600 ft. There is no maintained tread here and the boot paths come and go, so TRACK YOUR OWN LINE FOR THE RETURN.\n\nDrop north-east off the pass into the Ice Lakes basin, losing about 1,000 ft past the north end of Upper Ice Lake and down the dry stream bed to the west shore of Lower Ice Lake. Both lakes are reliable water.",
+      "season": "Aug is the reliable month. Early-to-mid July can still hold snow and high water on the Freezer Pass traverse and at the washed-out stream bed; late September adds larch colour and takes away daylight",
+      "hazards": [
+       "A washed-out gully crossing at 6,600 ft where dropping too low cliffs you out",
+       "Sustained loose rock and talus on the ridge and the scree ramp, with real rockfall risk onto anyone below",
+       "The north side of the south-west ridge is cliffy and must not be entered when the crags force you off the crest",
+       "No reliable water beyond the washout crossing — carry four to five litres in summer heat",
+       "Cairns that blend into the surrounding rock across the Ice Lakes traverse and on the descent from the summit block"
+      ],
+      "baseFinding": "THE BASE IS AN OPEN BASIN FLOOR BETWEEN TWO SUMMITS AND THAT IS WHY IT IS FINDABLE IN CLOUD — you are not looking for a feature on a face, you are walking into a gap between the two Buttes at about 6,800 ft. The traverse eases into it. If the ground is still side-hilling and everything moves under your feet, you have not arrived.\n\nGETTING THERE, THE ONE PLACE PEOPLE GET HURT: from Lower Ice Lake the old Ice Lakes Trail fades and you SIDEHILL EAST AT ABOUT 6,600 FT on slippery scrub and loose rock with no tread. Keep the party STRUNG OUT IN A LINE rather than stacked one above another — almost everything here moves. About a third of a mile brings the lip of a WASHED-OUT GULLY. Downclimb the loose clay and scree into it and climb the far side back to ABOUT THE SAME ELEVATION.\n\nTHAT ELEVATION RULE IS THE NEGATIVE MARKER AND IT HAS A STATED CONSEQUENCE: DROPPING TOO LOW IN THE WASHOUT LEAVES YOU CLIFFED OUT. Cross at 6,600, not below it. This is also the last reliable water before the summit, so fill there.\n\nTHE CLIMBING STARTS AT A RAMP: from the basin floor, a SCREE-AND-TALUS RAMP of about 400 ft gains the crest of the south-west ridge. Ramp first, ridge second. If you are on the crest without having walked up 400 ft of scree, you got onto the ridge somewhere else.\n\nTHE SIDE RULE ON THE RIDGE, AND IT IS ABSOLUTE: broken crags and short cliff bands repeatedly force the route OFF the crest onto ledges on the SOUTH side. THE NORTH SIDE OF THE RIDGE IS CLIFFY AND SHOULD NOT BE ENTERED. If you have been pushed off the crest and the ground below you drops away in a way that feels wrong, check which side you stepped onto before you commit.\n\nTHE CRUX HAS AN ELEVATION: around 7,700 ft a spire forces a short chossy chute, a traverse on down-sloping rock, and a Class 3 dike. Some parties call it low Class 4. That is the hardest ground and it is a single passage, not a section.\n\nCAIRNS HERE BLEND INTO THE ROCK. On the way up that costs time; on the way down it costs a great deal more, because from the summit block you have to find the crest again at about 8,100 ft. Pick the line up deliberately rather than drifting down the first ledge system that goes."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day backpacking fitness - the approach up the Entiat River / Ice Lakes basin trail system is long (miles of trail plus off-trail talus/heather) before the summit push",
+      "packWeight": "Moderate-heavy - typically an overnight (or multi-night) backpacking load to basin camp, then a lighter day pack for the scramble"
+     },
+     "approachTime": "Long - remote trailhead reached via ~38 miles of Entiat River Road, then a multi-mile trail approach into the upper Entiat/Ice Lakes basin; most parties treat this as a 2-3 day backpacking trip rather than a day climb",
+     "requiredSkills": [
+      "Off-trail route-finding on talus and heather",
+      "Class 2-3 scrambling on loose rock",
+      "Map/compass or GPS navigation (route-finding between the two buttes is a named hazard)",
+      "Loose-rock/scree management and basic self-arrest awareness"
+     ],
+     "experienceLevel": "Intermediate scrambler comfortable with unmarked, off-trail Class 2-3 terrain and independent route-finding between the two buttes"
+    },
+    "rope_note": "Entiat Mountains. West Ridge/West Gully line up; gentle Class 2-3 with a minor cliff band (~6,800ft) requiring routefinding but no rope."
+   }
+  }
+ ]
+}

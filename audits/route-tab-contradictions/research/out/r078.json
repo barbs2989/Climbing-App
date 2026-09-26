@@ -1,0 +1,79 @@
+{"file": "r078.json", "results": [
+  {"id": "wa_mount_rahm_south_side", "fact": "Which of Mount Rahm's two summits is the true/high point",
+   "verdict": "fixed",
+   "correct_value": "Rahm has two summits of nearly equal height; the west summit carries the higher mapped contour (8,480-ft closed contour) and the east summit is triangulated at 8,478 ft. The south-side line reaches the east summit first, and the west summit is a short ridge walk away.",
+   "evidence": "Map-based peak data (SummitPost description, echoed in Peakbagger's listing of 'Mount Rahm - West Peak' as the main 8,480-ft entry, and in derivative encyclopedia text) states the east summit is triangulated at 8,478 ft while the west summit has an 8,480-ft closed contour and is therefore the high point. Eric Gilbertson's winter ascent report topped out on the east summit first, then made a quick trip over to the west summit, noting the two have not been surveyed against each other. No source calls the east summit the true/higher one, so the 'east (true)' wording and the traverse's 'true (higher) summit is east' note are wrong; the waypoint's 'west/high point' is right.",
+   "sources": ["https://www.summitpost.org/mount-rahm/153619", "https://www.peakbagger.com/peak.aspx?pid=1606", "https://www.peakbagger.com/peak.aspx?pid=18813", "https://www.countryhighpoints.com/rahm-and-custer-winter-ascents/", "https://grokipedia.com/page/mount_rahm"],
+   "patches": [
+     {"id": "wa_mount_rahm_south_side", "fact": "Which of Mount Rahm's two summits is the true/high point", "op": "replace_text", "column": "beta", "path": [], "find": "to the south spur and the east (true) summit.", "replace": "to the south spur and the east summit; the west summit, a short ridge walk away, carries the higher mapped contour."},
+     {"id": "wa_mount_rahm_south_side", "fact": "Which of Mount Rahm's two summits is the true/high point", "op": "replace_text", "column": "pitch_detail", "path": [2, "notes"], "find": "via the south spur to the east (true) summit;", "replace": "via the south spur to the east summit, with the west summit (the mapped high point) a short walk beyond;"},
+     {"id": "wa_mount_rahm_custer_traverse", "fact": "Which of Mount Rahm's two summits is the true/high point", "op": "replace_text", "column": "watch_out", "path": [2], "find": "the true (higher) summit is roughly 200 yards east of the first one reached", "replace": "the west one carries the higher mapped contour, but the east is within a few feet, so visit both to be sure of the top"}
+   ]},
+  {"id": "wa_mount_rahm_standard", "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the ONE-WAY approach, not a round trip, so comparing it to the itinerary's 17-mi round-trip sum or the 16-mi return waypoint is comparing different quantities. 8 km (5 mi) matches a published car-to-Ouzel-Lake figure of roughly 10 miles round trip, so it reads as the one-way approach to camp; research did not establish a single one-way figure that clearly replaces it.",
+   "sources": ["http://www.ericsbasecamp.net/trips/Spickard-Redoubt/Spickard-Redoubt.htm"],
+   "patches": []},
+  {"id": "wa_mount_rahm_standard", "fact": "Depot Creek Falls crossing elevation",
+   "verdict": "fixed",
+   "correct_value": "3800",
+   "evidence": "A Spickard/Redoubt trip report places the waterfall crossing at about 3,800 ft (citing the standard guide's 'unforgettable' waterfall). The Northwest Waterfall Survey lists Depot Creek Falls at 4,760 ft with a 948-ft drop, i.e. the brink; the base, where the path crosses the slabs, is therefore about 3,810 ft. The stored 4,760 is the waterfall's listed (top) elevation, not the crossing; the two sibling routes' 3,800 is correct.",
+   "sources": ["http://www.ericsbasecamp.net/trips/Spickard-Redoubt/Spickard-Redoubt.htm", "https://www.waterfallsnorthwest.com/waterfall/Depot-Creek-Falls-2870", "https://en.wikipedia.org/wiki/Depot_Creek_Falls"],
+   "patches": [
+     {"id": "wa_mount_rahm_standard", "fact": "Depot Creek Falls crossing elevation", "op": "set", "column": "waypoints", "path": [1, "elev"], "expect": 4760, "value": 3800}
+   ]},
+  {"id": "wa_mount_rahm_standard", "fact": "Bivy list includes camps reached by an unrelated trailhead (Hannegan Pass)",
+   "verdict": "bivy_zone_list", "correct_value": null,
+   "evidence": "Regional camp list copied across the Chilliwack peaks. Serves this route: 'Ouzel Lake basin, head of Depot Creek' (the actual high camp). Do not serve it: Hannegan Camp, Boundary Camp, Copper Lake Camp, US Cabin Camp and the Bear Mountain saddle basin, all on the Hannegan Pass / Chilliwack River side.",
+   "sources": [], "patches": []},
+  {"id": "wa_mount_rahm_custer_traverse", "fact": "Bivy list includes camps reached by an unrelated trailhead (Hannegan Pass)",
+   "verdict": "bivy_zone_list", "correct_value": null,
+   "evidence": "Same regional list. Serves this link route: 'Ouzel Lake basin, head of Depot Creek'. Do not serve it: Hannegan Camp, Boundary Camp, Copper Lake Camp, US Cabin Camp and the Bear Mountain saddle basin. (Silver Lake, the other camp this route's own text names, is not on the list.)",
+   "sources": [], "patches": []},
+  {"id": "wa_mount_redoubt_south_face", "fact": "Total elevation gain",
+   "verdict": "fixed",
+   "correct_value": "6400",
+   "evidence": "Trip reports put the road washout at ~2,600 ft and Ouzel Lake at ~5,700 ft (about 3,100 ft to camp), and give ~3,300 ft from Ouzel Lake (5,640 ft) to the 8,956-8,969-ft summit. The trailhead-to-summit difference alone (2,600 to 8,969 ft) is ~6,370 ft, so 5,000 ft is impossible; ~6,400 ft matches the itinerary's 3,100 + 3,300 and its totalNote.",
+   "sources": ["https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/", "http://www.ericsbasecamp.net/trips/Spickard-Redoubt/Spickard-Redoubt.htm", "https://en.wikipedia.org/wiki/Mount_Redoubt_(Washington)"],
+   "patches": [
+     {"id": "wa_mount_redoubt_south_face", "fact": "Total elevation gain", "op": "set", "column": "gain_ft", "path": [], "expect": 5000, "value": 6400}
+   ]},
+  {"id": "wa_mount_redoubt_south_face", "fact": "Round-trip distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "13.8 km one way (~8.6 mi car to summit)",
+   "evidence": "dist_km is the one-way approach; 17.7 km (11 mi) exceeds every one-way figure on the row: the summit waypoint sits at 8.6 mi, the itinerary gives 7 mi to camp plus a 3.5-mi round-trip summit day (~8.75 mi one way), and the totalNote's ~17 mi round trip halves to ~8.5 mi. Externally, a party hiking out from a high camp at the head of the Redoubt Glacier logged 9.1 miles to the car, placing the summit roughly 9 mi from the road, not 11. Set to the row's own summit distance.",
+   "sources": ["https://stephabegg.com/trip-reports/washington/chilliwack-slam/"],
+   "patches": [
+     {"id": "wa_mount_redoubt_south_face", "fact": "Round-trip distance", "op": "set", "column": "dist_km", "path": [], "expect": 17.7, "value": 13.8}
+   ]},
+  {"id": "wa_mount_redoubt_south_face", "fact": "Rock/ice difficulty quoted in beta belongs to a different route variant",
+   "verdict": "fixed",
+   "correct_value": "The South route is a glacier walk and snow gully to Class 4 rock (an occasional low fifth-class move) on the summit block; 60-degree ice and harder rock belong to the Northeast Face.",
+   "evidence": "Three independent trip reports of the Redoubt Glacier / south route describe glacier travel, snow to ~35 degrees, Class 2-3 gullies and a Class 4 summit block through the cannonhole (one: 'Class 3, except a few 4th class moves'; another: glacier travel, snow to 35+, class 4 rock). None report 5.7 rock or 60-degree ice, which the row's own beta assigns to the Northeast Face.",
+   "sources": ["https://stephabegg.com/trip-reports/washington/chilliwack-slam/", "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/", "http://www.ericsbasecamp.net/trips/Spickard-Redoubt/Spickard-Redoubt.htm"],
+   "patches": [
+     {"id": "wa_mount_redoubt_south_face", "fact": "Rock/ice difficulty quoted in beta belongs to a different route variant", "op": "replace_text", "column": "beta", "path": [], "find": "Grade II-III alpine rock/glacier route, up to 5.7 rock and 60-degree ice possible.", "replace": "Grade II-III alpine rock/glacier route. The South route described here is a glacier walk and steep snow gully to exposed Class 4 rock on the summit block; the steep ice and fifth-class rock belong to the Northeast Face."},
+     {"id": "wa_mount_redoubt_south_face", "fact": "Rock/ice difficulty quoted in beta belongs to a different route variant", "op": "replace_text", "column": "access", "path": ["notes"], "find": "Hazards: Steep ice (60+ degrees), low 5th class rock, avalanche potential, remote location. Required skills: Alpine ice climbing, rock scrambling, glacier travel.", "replace": "Hazards: crevassed glacier, steep snow, loose Class 4 rock on the summit block, avalanche potential, remote location. Required skills: glacier travel and crevasse rescue, steep snow, rock scrambling."}
+   ]},
+  {"id": "wa_mount_redoubt_south_face", "fact": "A 'Depot Glacier' crossing not corroborated by the detailed approach",
+   "verdict": "fixed",
+   "correct_value": "From Ouzel Lake the route crosses Depot Creek and scrambles rock steps/slabs southwest of the lake directly onto the Redoubt Glacier; no Depot Glacier crossing.",
+   "evidence": "One report: from Ouzel Lake, scrambled easy rock steps and slabs to the Redoubt Glacier snout (0.9 hr from camp), with no mention of the Depot Glacier. Another: crossed Depot Creek, climbed scree to the slabby buttress, then traversed onto the Redoubt Glacier. A third moved camp to the head of the Redoubt Glacier and climbed it. None route through the Depot Glacier.",
+   "sources": ["https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/", "http://www.ericsbasecamp.net/trips/Spickard-Redoubt/Spickard-Redoubt.htm", "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"],
+   "patches": [
+     {"id": "wa_mount_redoubt_south_face", "fact": "A 'Depot Glacier' crossing not corroborated by the detailed approach", "op": "replace_text", "column": "approach", "path": [], "find": "Approach via Depot Glacier to Redoubt Glacier.", "replace": "From Ouzel Lake, cross Depot Creek and scramble rock steps and slabs southwest of the lake onto the Redoubt Glacier."}
+   ]},
+  {"id": "wa_mount_redoubt_south_face", "fact": "Bivy list includes camps reached by an unrelated trailhead (Hannegan Pass)",
+   "verdict": "bivy_zone_list", "correct_value": null,
+   "evidence": "Regional list. Serves this route: 'Ouzel Lake basin, head of Depot Creek'. Do not serve it: Hannegan Camp, Boundary Camp, Copper Lake Camp, US Cabin Camp and the Bear Mountain saddle basin (Hannegan Pass / Chilliwack River side).",
+   "sources": [], "patches": []},
+  {"id": "wa_mount_redoubt_south_face", "fact": "Summit elevation in itinerary (8,963 ft) vs high_point_ft / summit waypoint (8,969 ft)", "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "8,969 ft",
+   "evidence": "The itinerary's day-2 note gives the true summit as 8,963 ft while high_point_ft and the summit waypoint say 8,969 ft. The traditional published elevation is 8,969 ft (encyclopedia entry; a trip-report archive titled 'Mt Redoubt 8969 ft'; 2,734 m on a peak database), with a lidar revision to 8,958 ft; no source gives 8,963.",
+   "sources": ["https://en.wikipedia.org/wiki/Mount_Redoubt_(Washington)", "https://trailcatjim.com/major-peaks/northwestern-cascades-groups/the-american-chilliwack-six/mt-redoubt-8969-ft/", "https://peakvisor.com/peak/mount-redoubt-united-states.html"],
+   "patches": [
+     {"id": "wa_mount_redoubt_south_face", "fact": "Summit elevation in itinerary (8,963 ft) vs high_point_ft / summit waypoint (8,969 ft)", "op": "replace_text", "column": "itinerary", "path": ["days", 1, "note"], "find": "true summit at 8,963 ft", "replace": "true summit at 8,969 ft"}
+   ]}
+]}

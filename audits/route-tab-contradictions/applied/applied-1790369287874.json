@@ -1,0 +1,439 @@
+{
+ "applied": [
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier/crevasse hazard on this route"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent terrain (class/features near the summit)"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "overview",
+   "path": [],
+   "fact": "Which Ragged Ridge Bulger is westernmost"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Direction of the traverse from Easy Pass to camp"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Direction of the traverse from Easy Pass to camp"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Day-1 gain to camp vs its own note"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "Day-1 gain to camp vs its own note"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Day-1 gain to camp vs its own note"
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "Which summit this route tops out on"
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "column": "approach",
+   "path": [],
+   "fact": "Backcountry permit cost"
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Backcountry permit cost"
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "column": "bail",
+   "path": [],
+   "fact": "Hardest terrain on the route"
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Cost of the required wilderness permit"
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "column": "obj_haz",
+   "path": [],
+   "fact": "Crevasse/glacier hazard on this route"
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Technical difficulty of the crux"
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Permit is self-issue"
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Permit is self-issue"
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "column": "beta",
+   "path": [],
+   "fact": "Beta describes two rock pitches (SW Buttress text)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "The summit gully often holds snow into mid-summer, so an axe/crampons (or at least trekking poles) are commonly carried through July; by late summer it can be mostly loose scree/talus instead.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Easy Pass Trailhead, hike 3.6 miles and about 2,800 ft up to Easy Pass, then leave the trail and sidehill east along the 6,600-6,700 ft contour south of the ridge crest, crossing several gullies and rocky buttresses to reach a basin camp at roughly 6,600 ft below Mesahchie Peak. This is the standard base for all of the Ragged Ridge Bulgers.",
+       "hours": 5.5,
+       "miles": 7.5,
+       "title": "Approach to high camp",
+       "gainFt": 2600,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach high camp on Ragged Ridge below Mesahchie Peak"
+      },
+      {
+       "n": 2,
+       "note": "From camp, climb about 800 ft to a bench below Kimtah's south face, then make a long rising traverse below the ridge crest to the base of the summit gully. Ascend snow/scree in the gully with class 3 rock on its margins to a broad scree saddle between the east and west summits, then scramble to the true (east) summit. Many parties continue west to tag Cosho Peak the same day before returning to camp, making for a long day out until near dark.",
+       "hours": 9,
+       "miles": 5,
+       "title": "Summit push: Kimtah Peak via SW slopes/gully",
+       "gainFt": 2050,
+       "lossFt": 2050,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:30 AM",
+         "label": "Leave high camp",
+         "detail": "Head up scree/talus toward the ~7,400 ft bench below Kimtah's south face."
+        },
+        {
+         "time": "~7:15 AM",
+         "label": "Reach the bench",
+         "detail": "Stash extra gear here before the long traverse."
+        },
+        {
+         "time": "~9:45 AM",
+         "label": "Finish the traverse",
+         "detail": "~2.5 hr rising sidehill traverse below the ridge crest to the base of the summit gully."
+        },
+        {
+         "time": "~11:30 AM-12:00 PM",
+         "label": "Top out the gully to the summit",
+         "detail": "Class 3 scrambling with snow in the gully; cross the scree saddle to the true east summit."
+        },
+        {
+         "time": "Early-mid afternoon",
+         "label": "Begin descent",
+         "detail": "Reverse the gully and traverse; some parties detour west to Cosho Peak first."
+        },
+        {
+         "time": "By dark",
+         "label": "Back at camp",
+         "detail": "A long day (~9 hrs) if Kimtah is climbed alone; longer if combined with Cosho."
+        }
+       ],
+       "objective": "Climb Kimtah Peak and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the Day 1 traverse and trail back over Easy Pass to the trailhead.",
+       "hours": 5,
+       "miles": 7.5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2600,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Return to Easy Pass Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip from a single high camp: roughly 15 miles and ~4,600 ft round-trip gain overall, with most of the work on a long (8-10 hr) summit day; nearly all parties combine Kimtah with neighboring Cosho and/or Katsuk Peaks from the same camp rather than doing Kimtah in isolation."
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Alpine North Cascades weather with rapid changes possible",
+      "probability": "Afternoon thunderstorms and fast-moving weather systems are a known summer risk in the North Cascades"
+     },
+     "exposure": "Moderate-to-serious: loose rock in the gullies, route-finding among parallel gully systems, and exposure near the summit; combined with the remoteness of Ragged Ridge, a fall or injury here means a slow, difficult evacuation",
+     "avalanche": {
+      "zone": "Not directly covered by NWAC (Ragged Ridge/North Cascades NP interior falls outside standard NWAC forecast zones, and NWAC generally does not issue forecasts during the mid-July-September climbing window for this route)",
+      "byMonth": {
+       "July": "Low",
+       "June": "Considerable",
+       "August": "N/A",
+       "October": "Low",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel required on the standard SW Slopes/Gully route; the nearby Kimtah Glacier is only encountered if continuing the Ragged Ridge traverse toward Cosho, which is a separate objective from this route"
+    },
+    "descent": "Reverse the ascent: down-climb the class-4 summit block via its west side, cross back through the snow moat/snowfield on the southwest face, and descend the blocky granite-and-slate gully to the ~7,400 ft bench. The crux of the reverse traverse is a prominent gendarme requiring roughly 250-300 ft of careful, airy class-4 down-climbing — go slow here, especially in the afternoon when the rock is more likely to be sun-loosened. Continue the sidehill traverse east back to the Mesahchie basin camp.",
+    "overview": "Kimtah is the westernmost of the four standard Ragged Ridge Bulgers — Mesahchie, Katsuk, Kimtah, and Cosho, east to west — all included on Washington's Bulger List of the state's 100 highest peaks. It sits above the Kimtah Glacier on its northwest slopes and the Katsuk Glacier to the northeast, in the rugged, trail-less Ragged Ridge massif of North Cascades National Park. Because the peak lies outside LiDAR survey coverage, some listings still give its elevation only as a contour-based estimate of \"8,600+ ft.\"",
+    "timing": {
+     "totalHrs": 19.5,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": 5,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "6:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "From the Easy Pass Trailhead, hike 3.6 miles and about 2,800 ft up to Easy Pass, then leave the trail and sidehill east along the 6,600-6,700 ft contour south of the ridge crest, c…",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "From camp, climb about 800 ft to a bench below Kimtah's south face, then make a long rising traverse below the ridge crest to the base of the summit gully. Ascend snow/scree in the…",
+       "fromTo": "Summit push: Kimtah Peak via SW slopes/gully",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "Reverse the Day 1 traverse and trail back over Easy Pass to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "before": {
+    "approach": "From Seattle, drive I-5 north and then WA-20 (North Cascades Highway) east through Sedro-Woolley, Concrete, and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles — paved for the first 10 miles, gravel and washboard the rest of the way — to the Eldorado parking area near mile 20. From the trailhead, hikers backtrack a short distance along the road to find a safe crossing of the Cascade River (historically a large log or braided ford, which shifts year to year), then pick up a steep, unmaintained climbers' boot path that gains roughly 3,000-3,500 feet through old-growth forest to a boulder field, crosses Eldorado Creek, and opens into the alpine meadows of the Eldorado Creek basin, a common camp area roughly 5-6 hours from the car. From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours. Any overnight stay requires a free North Cascades National Park backcountry permit — Eldorado is managed as a high-use cross-country zone with advance reservations available on Recreation.gov plus a limited walk-up allocation issued in person at the Marblemount Wilderness Information Center. IMPORTANT — this route is NOT on Eldorado Peak itself, despite being filed under the same area: from the Eldorado/Inspiration Glacier high camp (~7,600ft), continue traversing the Inspiration Glacier well past Eldorado's summit to Klawatti col; Tepeh Towers are passed along this same glacier traverse, and Austera Peak requires further travel across the Klawatti Glacier (including a short rappel from the col) beyond Klawatti Peak — meaningfully further and more committing than simply topping out on Eldorado.",
+    "waypoints": [
+     {
+      "lat": 48.49261,
+      "lng": -121.11761,
+      "elev": 2100,
+      "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+      "note": "",
+      "type": "Trailhead",
+      "elevFt": 2100,
+      "directions": "From Seattle, take I-5 north then follow WA-20, the North Cascades Highway, east through Sedro-Woolley, Concrete and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles to the Eldorado parking area near mile 20 — paved for the first 10 miles, gravel and washboard the rest of the way. Any overnight stay in the Eldorado/Klawatti zone requires a free North Cascades National Park backcountry permit, available in advance on Recreation.gov or as a limited walk-up allocation from the Marblemount Wilderness Information Center or ranger station."
+     },
+     {
+      "lat": 48.533,
+      "lng": -121.129,
+      "elev": 7600,
+      "name": "Eldorado (East Ridge) camp",
+      "type": "Campsite",
+      "distMi": 5.5
+     },
+     {
+      "lat": 48.5529,
+      "lng": -121.1062,
+      "elev": 7900,
+      "name": "Klawatti camp / col",
+      "note": "Camp south of Klawatti near the col dividing the Klawatti and McAllister Glaciers; SW Buttress start is minutes away.",
+      "type": "Junction",
+      "distMi": 6.9
+     },
+     {
+      "lat": 48.55444,
+      "lng": -121.10444,
+      "elev": 8485,
+      "name": "Klawatti Peak",
+      "type": "Summit",
+      "elevFt": 8485
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "before": {
+    "bail": "Terrain is Class 3 scrambling throughout; retreat by reversing the ridge at any point, detouring around The Smokestack on its west-side gully.",
+    "access": {
+     "fees": "No park entrance fee. A wilderness/backcountry permit is required for overnight camping and costs $10 per person plus a $6 fee, youth 15 and under free.",
+     "permit": "Free backcountry permit required for overnight stays in the Eldorado/Inspiration cross-country zone, obtained in advance via recreation.gov or same-day (subject to quota) from the North Cascades Wilderness Information Center in Marblemount",
+     "closures": "No permanent closures currently reported; Cascade River Road is gravel/washboard beyond about mile 10 with a history of seasonal washouts",
+     "landManager": "North Cascades National Park Service Complex (NPS)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park Complex wilderness permit — quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Wilderness Information Center in Marblemount; $10 per person plus a $6 reservation fee."
+     }
+    },
+    "obj_haz": [
+     "exposure",
+     "loose rock",
+     "routefinding around The Smokestack"
+    ]
+   }
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "before": {
+    "rock_grade": "Class 3-4 (scrambling)",
+    "waypoints": [
+     {
+      "lat": 48.49261,
+      "lng": -121.11761,
+      "elev": 2150,
+      "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+      "note": "End of gravel Cascade River Road (~mile 20 from Marblemount); privy at trailhead, self-issue wilderness permit required for overnight camping in North Cascades NP.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Cascade River Road from Marblemount to its end at the large gravel pullout that serves as the Eldorado trailhead, at roughly 2,100 feet. The final stretch of road is gravel, and there's a privy at the trailhead. A self-issue wilderness permit is required for overnight camping in North Cascades National Park. Best conditions on this route typically run mid-July through early September, once the road is open and the Cascade snowpack has consolidated."
+     },
+     {
+      "lat": 48.52926,
+      "lng": -121.124229,
+      "elev": 3650,
+      "name": "Talus/boulder field entry",
+      "note": "After ~1,500 ft of forest gain the trail gives way to a cairned talus slope with cliffs on the left; stay off the climbers' path in fog, it's easy to lose in the boulders.",
+      "type": "Junction",
+      "distMi": 1.3
+     },
+     {
+      "lat": 48.549914,
+      "lng": -121.119281,
+      "elev": 6200,
+      "name": "Roush Creek Basin camps",
+      "note": "Small, level camp spots on the ridge at 6,100-6,400 ft in the basin below Eldorado Glacier; last reliable tent sites before roped glacier travel.",
+      "type": "Campsite",
+      "distMi": 3.3
+     },
+     {
+      "lat": 48.547934,
+      "lng": -121.124876,
+      "elev": 6800,
+      "name": "Eldorado Glacier gain point",
+      "note": "Rope up here; snowfields lead onto the Eldorado Glacier just west (left) of the rocky ridge above Roush Creek Basin.",
+      "type": "Junction",
+      "distMi": 4.2
+     },
+     {
+      "lat": 48.531491,
+      "lng": -121.125156,
+      "elev": 7500,
+      "name": "Eldorado ice-cap / Inspiration Glacier high camp",
+      "note": "Common high camp on the Eldorado-Inspiration ice cap near Klawatti Col, used as the base for the traverse onto the Klawatti Glacier.",
+      "type": "Campsite",
+      "distMi": 5.5
+     },
+     {
+      "lat": 48.512121,
+      "lng": -121.118043,
+      "elev": 7800,
+      "name": "Klawatti Glacier crossing",
+      "note": "Stay roped crossing the crevassed Klawatti Glacier toward the base of the southeast face; open crevasses require route-finding, especially late season.",
+      "type": "Hazard",
+      "distMi": 6.3
+     },
+     {
+      "lat": 48.4976,
+      "lng": -121.120913,
+      "elev": 8100,
+      "name": "Bergschrund below the southeast face",
+      "note": "A short Class 4-5 rock pitch is needed to clear the bergschrund guarding the face; a rap sling has been reported on the right (east) side for the descent moat.",
+      "type": "Hazard",
+      "distMi": 6.8
+     },
+     {
+      "lat": 48.554293,
+      "lng": -121.1042829,
+      "elev": 8485,
+      "name": "Klawatti Peak",
+      "note": "True summit, a rock nunatak ringed by the Klawatti, McAllister, and Inspiration Glaciers; the final few hundred feet above the schrund are 40-55° snow leading to low-5th-class rock.",
+      "type": "Summit",
+      "distMi": 7
+     }
+    ],
+    "beta": "Grade III alpine route requiring mixed climbing technique. Approach via Klawatti Glacier from the west with 2 pitches of Class 4-5 rock climbing and 45-50 degree snow slopes. Lower sections feature Class 4 rock; upper sections Class 3 scrambling. Crampons, ice axe, pickets, 60m rope, and single rack to 2 inch are essential. Allow 1-2 hours for climbing depending on amount of roped climbing."
+   }
+  }
+ ]
+}

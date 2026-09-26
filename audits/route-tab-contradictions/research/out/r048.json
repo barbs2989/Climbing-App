@@ -1,0 +1,76 @@
+{"file": "r048.json", "results": [
+ {"id": "wa_dome_peak_dome_glacier", "fact": "dist_km (~10 mi) vs itinerary round-trip total (29 mi)", "verdict": "fixed",
+  "correct_value": "About 15 mi (24.1 km) one way from the Downey Creek trailhead to the summit; ~29-31 mi round trip",
+  "evidence": "A detailed Dome Glacier trip report logs about 31 miles round trip and 8,400 ft of gain via Downey and Bachelor Creeks. A second report gives about 30 miles round trip, with Cub Lake about 12 miles in and the summit roughly 15 miles from the trailhead. dist_km 16.1 (10 mi) matches neither the one-way nor the round-trip figure; the row's own itinerary (29 mi RT) and summit waypoint (distMi 17) both put one-way near 15 mi.",
+  "sources": ["https://www.jeffreyjhebert.com/adventures/dome-glacier-on-dome-peak", "http://ericsbasecamp.net/trips/DomePk/DomePk.htm"],
+  "patches": [
+   {"id": "wa_dome_peak_dome_glacier", "fact": "dist_km (~10 mi) vs itinerary round-trip total (29 mi)", "op": "set", "column": "dist_km", "path": [], "expect": 16.1, "value": 24.1}
+  ]},
+ {"id": "wa_elephant_head_standard", "fact": "rappels field says 0 while descent_text describes a possible rappel", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "rappels says no rappel is required, and descent_text itself says the route is a walk-off/downclimb with no established rappel line; the single short rappel it mentions is explicitly an optional choice some parties make on one step, not part of the standard descent.",
+  "sources": [], "patches": []},
+ {"id": "wa_elephant_head_standard", "fact": "dist_km appears one-way while itinerary total is round-trip, presented as the same 'distance'", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "dist_km renders as the one-way approach (23.35 km = 14.5 mi) and is exactly half the itinerary's 29-mile round trip (11.5 mi to camp plus 3 mi to the summit each way); the two are different quantities and agree.",
+  "sources": [], "patches": []},
+ {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)", "verdict": "fixed",
+  "correct_value": "About 9,400 ft of gain (and loss) car to car; itinerary days 5,600/350, 3,450/3,450, 350/5,600",
+  "evidence": "A 2022 ascent via the North Fork Sauk trail, PCT and Foam Creek trail logged 33 miles and 9,400 ft of gain. A guided itinerary on the same approach sums to about 9,000 ft of gain (1,000 + 3,800 + 4,200) over about 30 miles. The itinerary's 7,750 ft is physically impossible: trailhead (2,050 ft) to summit (10,541 ft) is already 8,491 ft net, and day 1 (2,050 to 7,300 ft) and day 2 (7,300 to 10,541 ft) were each below their own net rise. gain_ft/loss_ft 9,400 are kept; itinerary days, totalNote and the summit-day figure in the approach prose are brought to it (split follows the topography: 5,250 ft net to Glacier Gap plus the drop into the White Chuck basin; 3,241 ft net camp-to-summit plus the drop onto Gerdine Ridge).",
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-26.2091111554", "https://www.alpineascents.com/climbs/glacier-peak/itinerary/"],
+  "patches": [
+   {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)", "op": "set", "column": "itinerary", "path": ["days", 0, "gainFt"], "expect": 5100, "value": 5600},
+   {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)", "op": "set", "column": "itinerary", "path": ["days", 0, "lossFt"], "expect": 100, "value": 350},
+   {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)", "op": "set", "column": "itinerary", "path": ["days", 1, "gainFt"], "expect": 2650, "value": 3450},
+   {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)", "op": "set", "column": "itinerary", "path": ["days", 1, "lossFt"], "expect": 2650, "value": 3450},
+   {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)", "op": "set", "column": "itinerary", "path": ["days", 2, "gainFt"], "expect": 0, "value": 350},
+   {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)", "op": "set", "column": "itinerary", "path": ["days", 2, "lossFt"], "expect": 5050, "value": 5600},
+   {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)", "op": "replace_text", "column": "itinerary", "path": ["totalNote"], "find": "~30-32 miles RT, ~7,650-7,750 ft gain", "replace": "~30-33 miles RT, ~9,000-9,400 ft gain"},
+   {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)", "op": "replace_text", "column": "approach", "path": [], "find": "about 2,350 ft of gain and 835 ft of intermediate descent", "replace": "about 3,450 ft of gain, some of it height lost and regained along the way"}
+  ]},
+ {"id": "wa_glacier_peak_cool_glacier_gerdine", "fact": "dist_km (~17 mi) vs itinerary round-trip total (~30-32 mi)", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "dist_km renders as the one-way approach; 27.4 km = 17 mi is about half the 30-33 mile round trip (a 2022 party logged 33 mi RT; a guided itinerary about 15.5 mi up), so the two figures are different quantities and agree within rounding.",
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-26.2091111554", "https://www.alpineascents.com/climbs/glacier-peak/itinerary/"], "patches": []},
+ {"id": "wa_glacier_peak_cool_glacier_gerdine", "discovered": true, "fact": "Approach and summit-day mileages disagree: itinerary day 1 is 11 mi but the hike out on the same path is 12 mi and the Glacier Gap waypoint is at 13 mi; approach prose calls summit day 5.25 mi while itinerary day 2 is 7 mi", "verdict": "unresolved", "correct_value": null,
+  "evidence": "One party reported 12-13 miles on trail before leaving the maintained trails for the moraine valley, and a 2022 party logged 33 mi RT, which fits ~13 mi each way plus a ~7 mi summit day, but no second source states the trailhead-to-Glacier-Gap and summit-day mileages directly, so no patch was written.",
+  "sources": ["https://imacnw.org/trip_report/glacier-peak-summit-mountaineering-07-18-2024/", "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-08-26.2091111554"], "patches": []},
+ {"id": "wa_glacier_peak_sitkum_glacier", "fact": "Commitment/technical grade disagrees across three fields (II vs I-II vs III)", "verdict": "unresolved", "correct_value": null,
+  "evidence": "One route database rates the Sitkum Glacier 'Easy Snow, Grade III' (matching alpine_grade), while the row's grade and commitment say II / I-II. Other sources consulted (club activity pages, trip reports) describe it only as technically easy with a long approach, or use their own letter scales, and give no Roman commitment grade; two agreeing sources for one value were not found.",
+  "sources": ["https://www.mountainproject.com/route/121086767/sitkum-glacier", "https://mazamas.org/activity/197/", "https://www.danielarndt.com/trips/48-glacier-peak-climb-via-sitkum-glacier"], "patches": []},
+ {"id": "wa_glacier_peak_sitkum_glacier", "fact": "dist_km (~9 mi) vs itinerary round-trip total (~21-25 mi)", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "dist_km 14.5 km = 9.0 mi is the one-way distance to the Boulder Basin high camp (itinerary days 1+2 = 7 + 2 mi; the route description gives about 9 miles to Boulder Basin), while the itinerary total adds the summit day and the hike out. Both depend on the White Chuck approach, whose validity is the separate unresolved trailhead contradiction.",
+  "sources": ["https://www.mountainproject.com/route/121086767/sitkum-glacier"], "patches": []},
+ {"id": "wa_glacier_peak_sitkum_glacier", "fact": "Structured waypoints/road/approach_logistics describe a different trailhead than the approach/itinerary prose", "verdict": "unresolved",
+  "correct_value": "The White Chuck approach the prose describes is no longer usable; current access is from the North Fork Sauk trailhead via White Pass and the PCT, which the waypoints/road/approach_logistics already reflect",
+  "evidence": "The Forest Service page for White Chuck River Trail 643 lists it as 'INACCESSIBLE, NO ROAD OR TRAIL ACCESS', washed away by the 2003 flood, less than a third remaining and no plans to repair. A 2020 party found FR 23 blocked by boulders, walked the old road and lost the trail at Pumice Creek. So the approach, itinerary days 1, 2 and 4, itinerary.cal, timing.sectionBreakdown, descent_text, approach_variants (White Chuck marked primary) and the bivy entries describe a defunct approach while the waypoints (coordinates cannot change) start at North Fork Sauk. The fix is a full rewrite of approach narrative, mileages, hours and gains for the North Fork Sauk -> White Pass -> PCT north -> Sitkum Creek -> Boulder Basin line; no source consulted gives those segment distances, so no patch was written. Also note the 'Boulder Basin Camp' waypoint pin sits at 48.105,-121.13, east of the summit rather than in Boulder Basin (pin position out of scope).",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/white-chuck-river-trail-643", "https://www.countryhighpoints.com/glacier-peak-via-white-chuck-river/"], "patches": []},
+ {"id": "wa_doorway_flake", "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'", "verdict": "fixed", "correct_value": "Base/bivy",
+  "evidence": "The approach ends at the grassy saddle at the base of the South Face: one party reached the grassy saddle two hours from the car and began climbing from it; route pages start the South Face lines from the saddle (Concerto scrambles down ramps from it across the granite apron; Western Dihedral goes left from it to the base of Skeena26). The saddle is where climbing begins, not where it ends, so 'Topout' is wrong; the pin is retyped to match its duplicate, coordinates untouched.",
+  "sources": ["https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer", "https://www.mountainproject.com/route/118571310/western-dihedral", "https://climberkyle.com/2021/06/19/the-darrington-rodeo/"],
+  "patches": [
+   {"id": "wa_doorway_flake", "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'", "op": "set", "column": "waypoints", "path": [1, "type"], "expect": "Topout", "value": "Base/bivy"}
+  ]},
+ {"id": "wa_skeena26", "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'", "verdict": "fixed", "correct_value": "Base/bivy",
+  "evidence": "The approach ends at the grassy saddle at the base of the South Face: one party reached the grassy saddle two hours from the car and climbed Skeena26 from there; route pages start the South Face lines from the saddle (Western Dihedral goes left from it to the base of Skeena26). The saddle is where climbing begins, not where it ends, so 'Topout' is wrong; the pin is retyped to match its duplicate, coordinates untouched.",
+  "sources": ["https://www.mountainproject.com/route/118571310/western-dihedral", "https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer", "https://climberkyle.com/2021/06/19/the-darrington-rodeo/"],
+  "patches": [
+   {"id": "wa_skeena26", "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'", "op": "set", "column": "waypoints", "path": [1, "type"], "expect": "Topout", "value": "Base/bivy"}
+  ]},
+ {"id": "wa_western_dihedral", "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'", "verdict": "fixed", "correct_value": "Base/bivy",
+  "evidence": "Western Dihedral's route page starts from the grassy saddle at the end of the approach (then left and up past Skeena26's base, about an hour to the route); another party describes reaching the grassy saddle two hours from the car before climbing. The saddle is the approach end / bivy, not the topout; the pin is retyped to match its duplicate, coordinates untouched.",
+  "sources": ["https://www.mountainproject.com/route/118571310/western-dihedral", "https://climberkyle.com/2021/06/19/the-darrington-rodeo/"],
+  "patches": [
+   {"id": "wa_western_dihedral", "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'", "op": "set", "column": "waypoints", "path": [1, "type"], "expect": "Topout", "value": "Base/bivy"}
+  ]},
+ {"id": "wa_concerto_in_c_for_drill_and_hammer", "fact": "DESCENT field describes glacier/crevasse terrain on a 14-pitch rock rappel route", "verdict": "fixed_internal_plus_one",
+  "correct_value": "Rappel the line of ascent on the route's fixed chain anchors; several rappels need a full 60 m rope. There is no walk-off, so plan the descent as rappels from the summit crest back to the grassy saddle.",
+  "evidence": "The route page states the descent is to rappel the route, which has some 60 m rappels, on stainless chain anchors; descent_text, rappels and bail on the row all agree. The 'descent' text (snow/ice slopes, crevasses) is boilerplate from a glacier route; another party's account of this wall confirms it is dry granite above the grassy saddle with no glacier.",
+  "sources": ["https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer", "https://climberkyle.com/2021/06/19/the-darrington-rodeo/"],
+  "patches": [
+   {"id": "wa_concerto_in_c_for_drill_and_hammer", "fact": "DESCENT field describes glacier/crevasse terrain on a 14-pitch rock rappel route", "op": "set", "column": "descent", "path": [], "expect": "Retrace the ascent route for descent, utilizing established snow/ice slopes or scramble terrain. Watch for crevasse hazards and falling rock. Allow ample time for safe descent.", "value": "Rappel the line of ascent on the route's fixed chain anchors; several rappels need a full 60 m rope. There is no walk-off, so plan the descent as rappels from the summit crest back to the grassy saddle."}
+  ]},
+ {"id": "wa_concerto_in_c_for_drill_and_hammer", "discovered": true, "fact": "Grassy saddle waypoint (start of the route) typed 'Topout'", "verdict": "fixed", "correct_value": "Base/bivy",
+  "evidence": "The route page says Concerto starts from the grassy saddle (scramble down ramps 20-30 m and across the granite apron), and the waypoint's own note calls it the end of the ~3 hr approach below the wall; the route tops out on the summit crest far above. Another party also reached this grassy saddle at the end of the approach. Type changed; coordinates untouched.",
+  "sources": ["https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer", "https://climberkyle.com/2021/06/19/the-darrington-rodeo/"],
+  "patches": [
+   {"id": "wa_concerto_in_c_for_drill_and_hammer", "fact": "Grassy saddle waypoint (start of the route) typed 'Topout'", "op": "set", "column": "waypoints", "path": [1, "type"], "expect": "Topout", "value": "Base/bivy"}
+  ]}
+]}

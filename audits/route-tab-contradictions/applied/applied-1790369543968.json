@@ -1,0 +1,366 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Distance and gain from trailhead to Peggy's Pond camp"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "gainFt"
+   ],
+   "fact": "Distance and gain from trailhead to Peggy's Pond camp"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance and gain from trailhead to Peggy's Pond camp"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Distance and gain from trailhead to Peggy's Pond camp"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Distance and gain from trailhead to Peggy's Pond camp"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Distance and gain from trailhead to Peggy's Pond camp"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Distance and gain from trailhead to Peggy's Pond camp"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "hours"
+   ],
+   "fact": "Total time for summit day (day 2) vs its own schedule"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "timing",
+   "path": [
+    "descentTimeHrs"
+   ],
+   "fact": "Total time for summit day (day 2) vs its own schedule"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Total time for summit day (day 2) vs its own schedule"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "hrs"
+   ],
+   "fact": "Total time for summit day (day 2) vs its own schedule"
+  },
+  {
+   "id": "wa_mount_hinman_hinman_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "time"
+   ],
+   "fact": "Summit-day duration vs its own schedule"
+  },
+  {
+   "id": "wa_mount_hinman_hinman_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "time"
+   ],
+   "fact": "Summit-day duration vs its own schedule"
+  },
+  {
+   "id": "wa_mount_pilchuck_east_ridge",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "which ranger district manages this route"
+  },
+  {
+   "id": "wa_mount_pilchuck_standard_route",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "which regulatory regime (wilderness vs state park) applies"
+  },
+  {
+   "id": "wa_mount_pilchuck_standard_route",
+   "column": "access",
+   "path": [
+    "group_limit"
+   ],
+   "fact": "which regulatory regime (wilderness vs state park) applies"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Cathedral Pass, the ledge traverse to Peggy's Pond, and the Southeast Ridge",
+      "notes": "From the Cathedral Rock / Deception Pass trailhead at the end of FR-4330, about 3,400 ft, take the signed Deception Pass / Cathedral Pass trail. At about 1.8 miles a signed junction splits right to Squaw Lake — stay left. The trail climbs another two miles into subalpine meadow and switchbacks to Cathedral Pass at about 5,500 ft and 4.2 to 4.5 miles, at the PCT junction.\n\nFrom the pass drop briefly toward Deep Lake on the PCT; a use path leaves at a switchback toward Peggy's Pond, or continue to the signed Peggy's Pond Trail #1375 junction. Either way the last half mile is a rough, primitive traverse across narrow ledges with real exposure to steep drop-offs. Go slowly with a pack; it feels harder than anything on the maintained trail.\n\nPeggy's Pond at about 5,560 ft, five to five and a half miles in, is the last reliable water and the last established camp.\n\nAbout 12 km and 5,100 ft.",
+      "distMi": 7.5,
+      "gainFt": 5100,
+      "season": "July to September. Snow can linger above the pond well into July and an axe is worth carrying then",
+      "hazards": [
+       "An exposed, primitive ledge traverse into Peggy's Pond, harder than the trail that precedes it",
+       "An early creek crossing near the trailhead that can be a wet ford in high water",
+       "Loose talus and route-finding uncertainty below the East Summit",
+       "Real crevasses opening on the Daniel and Lynch glacier ice on the north side by late summer",
+       "Lingering snow into July that can require an axe on the slopes above the pond"
+      ],
+      "baseFinding": "THE APPROACH HAS A HARD EDGE AND IT IS THE LEDGE TRAVERSE INTO PEGGY'S POND. That half-mile of narrow ledges with exposure is the last thing between trail and mountain, and it is the point at which a party knows it has left the walking behind. Peggy's Pond is the base camp and the last water.\n\nFROM THE POND, THE FINDING IS AN ALTITUDE AND A SHAPE: braided boot paths head northwest then west across heather benches and talus, gaining roughly 1,500 ft over about a mile, to the broad SOUTHEAST RIDGE at 6,800 to 7,000 ft. You are on the right ridge when it NARROWS WESTWARD with the HYAS CREEK GLACIER ON YOUR RIGHT and CIRCLE LAKE FAR BELOW ON YOUR LEFT. That pairing — glacier right, lake left — is the confirmation, and it does not need the summit to be visible.\n\nTHE NEXT CHECKPOINT IS A SADDLE AT ABOUT 7,600 FT between the East and Middle summits, reached by traversing climbers' trail and open scree BELOW the East Summit at 7,899 ft. The path is faint where it first leaves the ridge and well defined afterwards, so a faint start is not evidence you are off route.\n\nWHERE THE GLACIER COMES IN: to use the Daniel Glacier proper, enter it just NORTH of a prominent spire on the Northeast Ridge and traverse west across it to the Middle Summit.\n\nAND THE ONE THING NOT TO DO NEAR THE TOP: the true West Summit at 7,960 ft is reached over loose talus, lingering snowfields and the rocky margin of the Daniel Glacier remnant. Stay on the rock and scree spine. Wandering onto the glacier ice on the north side is where the crevasses are."
+     }
+    ],
+    "itinerary": {
+     "cal": "Cathedral Rock Trailhead's access road is rough gravel best driven with high-clearance/4x4; the route is typically climbed June-September once the Cathedral Pass trail and Daniel Glacier snow are in reasonable shape.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Cathedral Rock Trailhead (~3,350 ft), climb steadily via Squaw Lake and over Cathedral Pass (~5,550 ft) before dropping slightly to camp at Peggy's Pond (~5,560 ft). Trail is well-graded switchbacks up to the pass, then a rougher/fainter path along the basin to the pond.",
+       "hours": 4.5,
+       "miles": 7.5,
+       "title": "Approach to Peggy's Pond",
+       "gainFt": 2700,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Backpack in to high camp at Peggy's Pond"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start from Peggy's Pond, ascend on trail/snow toward the SE ridge and onto the Daniel Glacier to reach the Middle and West Summits (~2,400 ft gain from camp). Most parties are back at camp by mid-afternoon, break camp, and continue the ~7.5 mile, 2,700 ft descent out to the trailhead the same day, finishing in the evening.",
+       "hours": 11,
+       "miles": 11.5,
+       "title": "Summit push and hike out",
+       "gainFt": 2400,
+       "lossFt": 5100,
+       "packLb": 30,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start from Peggy's Pond, light packs for the summit push."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Reach base of Daniel Glacier",
+         "detail": "Rope up / gear up for glacier travel if crevasses are open."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Summit (West Peak)",
+         "detail": "Real trip reports of the adjacent SE-ridge route show parties topping out on all three summits around 1:00-1:15 PM."
+        },
+        {
+         "time": "3:30 PM",
+         "label": "Back at Peggy's Pond",
+         "detail": "Break camp and repack for the hike out."
+        },
+        {
+         "time": "~7:30 PM",
+         "label": "Trailhead",
+         "detail": "Full descent of Cathedral Pass trail back to the car."
+        }
+       ],
+       "objective": "Climb the Daniel Glacier / SE Slopes to the Middle and West (true) Summits, then hike all the way out"
+      }
+     ],
+     "totalNote": "A 2-day/1-night trip: ~19 miles round trip with about 5,100 ft total gain; many parties extend to 3 days by adding a rest/weather day or side trips to Cathedral Rock, Tuck & Robin Lakes, or the Jade/Marmot Lakes basins."
+    },
+    "timing": {
+     "totalHrs": 15.5,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 4.5,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "From the Cathedral Rock Trailhead (~3,350 ft), climb steadily via Squaw Lake and over Cathedral Pass (~5,550 ft) before dropping slightly to camp at Peggy's Pond (~5,560 ft). Trail…",
+       "fromTo": "Approach to Peggy's Pond",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "Alpine start from Peggy's Pond, ascend on trail/snow toward the SE ridge and onto the Daniel Glacier to reach the Middle and West Summits (~2,400 ft gain from camp). Most parties a…",
+       "fromTo": "Summit push and hike out",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_mount_hinman_hinman_glacier",
+   "before": {
+    "itinerary": {
+     "cal": "Necklace Valley's steep, often snow-covered switchbacks and the high basins near La Bohn Gap are typically most passable from late July through September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the East Fork Foss / Necklace Valley Trail (steep and rooty in spots, with swampy, mosquito-prone lake basins) up into Necklace Valley and toward La Bohn Gap, camping at La Bohn Lakes or Jade Lake — the standard base camp used by nearly all parties climbing Hinman.",
+       "hours": 7.5,
+       "miles": 9,
+       "title": "Backpack in to La Bohn Lakes / Jade Lake",
+       "gainFt": 4200,
+       "lossFt": 200,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Establish high camp near La Bohn Gap"
+      },
+      {
+       "n": 2,
+       "note": "Climb through La Bohn Gap and follow broad class 2-3 ridge/scramble terrain to the summit; the historic Hinman Glacier has largely melted out, so expect rock and receding snow patches rather than true glacier travel on most late-summer ascents. Reverse the route back to camp.",
+       "hours": 7,
+       "miles": 5,
+       "title": "Summit day: La Bohn Gap to Mount Hinman",
+       "gainFt": 1900,
+       "lossFt": 1900,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "3:45 AM",
+         "label": "Leave high camp",
+         "detail": "Early alpine start is typical to beat afternoon heat and softening snow."
+        },
+        {
+         "time": "+~1 hr",
+         "label": "Top out at La Bohn Gap",
+         "detail": "Gap sits directly above Jade Lake/La Bohn Lakes camp."
+        },
+        {
+         "time": "+3 hr from camp",
+         "label": "Reach the summit",
+         "detail": "Fast parties report summiting roughly 3 hours after leaving camp via the broad west ridge."
+        },
+        {
+         "time": "~10:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ridge/scramble line back toward La Bohn Gap."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Back at camp",
+         "detail": "Rest, refill water, and prep for the hike out."
+        }
+       ],
+       "objective": "Reach the summit of Mount Hinman (7,492 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Retrace the Necklace Valley Trail back down through the valley and along the East Fork Foss River to the trailhead.",
+       "hours": 6,
+       "miles": 9,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 4200,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Return to the Necklace Valley trailhead"
+      }
+     ],
+     "totalNote": "A 3-day backpack for most parties: roughly 23 miles round trip and ~6,000 ft of cumulative gain, basing at La Bohn Lakes/Jade Lake and making a long class 2-3 scramble summit day (the historic Hinman Glacier has largely melted out); very fit parties occasionally push it car-to-car in ~15 hours, but that is not the standard/recommended plan."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_pilchuck_east_ridge",
+   "before": {
+    "access": {
+     "fees": "Day-use fee via Northwest Forest Pass or America the Beautiful interagency pass required at the Pinnacle Lake Trailhead",
+     "permit": null,
+     "closures": null,
+     "landManager": "Mount Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "passRequired": "Northwest Forest Pass / Interagency Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Park with a Northwest Forest Pass; there is no wilderness permit for this route."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_pilchuck_standard_route",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass or America the Beautiful interagency pass required to park at the trailhead.",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "No climbing permit required for the standard route.",
+     "closures": "FR 42 is closed seasonally (winter into spring); check Mount Baker-Snoqualmie NF alerts before driving out.",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest (Darrington Ranger District) manages the approach road and lower trail corridor; the upper trail and summit lie within Mount Pilchuck State Park (Washington State Parks), with trail maintenance run jointly with the Everett branch of The Mountaineers.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Park with a Northwest Forest Pass; there is no wilderness permit for this route."
+     }
+    }
+   }
+  }
+ ]
+}
