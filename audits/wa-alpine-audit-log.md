@@ -28294,3 +28294,76 @@ Ridge/Mowich Face/Ptarmigan Ridge) using WebSearch; WebFetch was attempted again
 was blocked by the environment's egress policy, consistent with recent batches, so the Kautz
 ice-anchor and NPS "up was down" checks rest on secondary corroboration rather than a direct
 read of the NPS route-brief PDFs.
+
+## Batch 349 (2026-09-26, pass 6)
+
+Audited: Mount Rainier Sunset Ridge, Tahoma Glacier, Willis Wall (continuing the Rainier
+cluster), Mount Redoubt South Face, Mount Sefrit Bloody Head Couloir/Southeast Ridge, Mount
+Shuksan Fisher Chimneys/Hanging Glacier (8 routes; research split across three parallel
+subagents by cluster).
+
+**Fixed (2):** `wa_mount_rainier_willis_wall`'s stored `lat`/`lng` (46.8529/-121.76047) were
+essentially the mountain's summit-crater coordinates (matching this catalog's own
+`approach_logistics.peakLat/peakLng` for Rainier generally) rather than the wall itself, which
+is the north-face headwall of the Carbon Glacier cirque roughly 1.2 mi north of the summit.
+Corrected to Willis Wall's own GNIS/Wikipedia/Wikidata coordinate, 46.8704/-121.7590 (GNIS
+Feature ID 1528182). `wa_mount_rainier_tahoma_glacier`'s `access.notes` read "Northwest Forest
+Pass required ($5/day or $30/annual). No specific climbing permit." — self-contradicted by this
+same row's own `access.parking_pass` ("Northwest Forest Pass does not apply inside the park"),
+`access.permit` ("Mount Rainier Climbing Permit"), and `access.overnight_permit` (climbing
+registration required above 10,000 ft/on glaciers — this route summits well above that); NWFP is
+a USFS pass and does not apply inside the park. Reworded to match the sibling Sunset
+Ridge/Willis Wall rows. SQL in `audits/sql/2026-09-26-batch-349.sql`, validated with
+`npm run check:sql` before being written (both statements resolved to a real target id; no
+DELETEs in this file).
+
+**Flagged for human review (6):** `wa_mount_rainier_sunset_ridge`'s `fa` credits Lyman Boyer
+with naming the route, but the AAC source found instead credits Ome Daiber — possible
+attribution conflation, needs the actual AAC article text checked before rewriting.
+`wa_mount_rainier_tahoma_glacier`'s well-corroborated 1891 Van Trump/Drewry/Riley FA is
+documented as an ascent of "North Tahoma Glacier," which multiple sources treat as a distinct
+named feature from today's "Tahoma Glacier" route — a real risk the FA is pinned to the wrong
+glacier; needs a Beckey/AAC Journal check, not guessed. `wa_mount_redoubt_south_face`: its
+`road.status` washout-at-1.7mi description conflicts with a September 2025 trip report
+describing a locked gate at ~0.9 mi instead (a different stopping point), and Chilliwack Lake
+Provincial Park's current (2026) BC Parks access status couldn't be pinned down after its
+Dec-2025 flood closure; separately, `alpine_grade` "II-III" looks like it may describe the whole
+peak rather than this specific South Face route, which the row's own `beta` field scopes to
+Grade II (the Northeast Face carries the Grade III / 5th-class rock) — no directly-quotable
+source pins the South route to II alone, so flagged rather than fixed; also `access.notes`
+mentions only a passport for the border crossing while `access.passRequired`/`what_to_bring`
+correctly also allow an enhanced driver's license (minor internal inconsistency).
+`wa_mount_sefrit_bloody_head_couloir` and `wa_mount_sefrit_southeast_ridge` share an unresolved
+permit-process question — stored text describes free self-issue trailhead registration, while a
+USFS snippet instead describes a backcountry permit issued at the Glacier Public Service Center;
+couldn't fetch fs.usda.gov directly to tell whether these describe the same practice or a real
+gap. Bloody Head Couloir's `access.fees` may also be missing a $5/vehicle digital day-use fee a
+USFS snippet lists specifically for the Hannegan trailhead. Southeast Ridge's own `approach`
+field separately conflates two different start points: it reads as if the route starts at the
+Hannegan Campground road-end (~3,120 ft per USFS), but its own `approach_variants` note
+explicitly says the real start is a mile-marker-3 pullout at ~2,950 ft that is "NOT" the
+campground trailhead — a climber following the plain-language field would be sent to the wrong
+place. `wa_mount_shuksan_fisher_chimneys`' `fa` party list (including "Winnie Spieseke") could
+not be corroborated against any independent source, and one adverse source states the identity
+behind the eponymous "Winnie's Slide" is unresolved in historical records; separately, the row
+is internally inconsistent — `gain_ft`/`loss_ft` don't match the sum of its own
+`itinerary.days[].gainFt/lossFt` (a 500 ft gap), and `dist_km` reads as roughly half the route's
+own stated 15-16 mi round trip. `wa_mount_shuksan_hanging_glacier` contradicts itself twice:
+`high_point_ft` (9131) vs. its own summit waypoint elevation (9127) for the same coordinate, and
+`best_season`/`seasonal_guidance` ("May to June") vs. its own `approach_variants` season and
+bivy/permit notes (all Jul-Aug-flavored) — the row's own `data_quality` already rates confidence
+LOW/MEDIUM and admits its beta is drawn from a single documented ascent account; its `descent`
+field also reads as generic boilerplate next to a far more specific `descent_text` on the same
+row.
+
+`last_processed_id` advanced to `wa_mount_shuksan_hanging_glacier`; re-confirmed scope this
+batch: still 698 in-scope, 751 total wa_ alpine/mountaineering tagged (both unchanged from batch
+348); 257 in-scope routes remain unaudited this pass, confirmed via a fresh live query for the
+next ids after this batch's cursor (`wa_mount_shuksan_north_face` next, continuing the Shuksan
+cluster alphabetically — expected continuity, no bookkeeping gap). No `.env`/`.env.local`
+present at run start (fresh clone) — none needed this batch; only the public anon key was used,
+for both the read-only research queries and for validating the SQL fix file with
+`npm run check:sql` before writing it. All three research subagents this batch reported
+WebFetch to nps.gov/fs.usda.gov/Wikipedia/SummitPost/CascadeClimbers as egress-blocked in this
+environment (consistent with every recent batch) — verification rested on WebSearch snippets
+citing those same domains rather than direct fetches.
