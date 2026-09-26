@@ -887,6 +887,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `check:screen-lists` already records, committed in a guard written the same hour. Replaced
       with the `See all` opener, which renders only on `connections.length > 0`, and re-verified
       in BOTH directions: absent on a clean run, present under the injection.
+  - **FOUR FAILS ON A LOADED BOX WERE THE WALK READING TOO EARLY, NOT THE APP (2026-09-25).** The
+    auto-open and the Home card both wait on `profileLoaded`, which turns true only when
+    `getProfile` resolves, and nothing spins while it is pending — so `settledText` returned first
+    and the walk read a screen the sheet had not reached yet. The DB check slept a fixed 2.5s and
+    read the row once, before a slow write had landed. Now it waits up to 60s for the sheet, 30s
+    for the card, and polls the row for 30s. Every FAIL also prints the app's own `/profiles`
+    requests with their timing and status, so the next red run says whether the read or the write
+    went out at all. Re-run after the change: all green, disciplines and grade in the row.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
