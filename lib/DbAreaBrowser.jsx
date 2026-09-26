@@ -16,7 +16,7 @@ import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from
 import { clickable } from "./clickable";
 import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
-import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
+import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./popupChrome.js";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -898,7 +898,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
       )}
       {afChips.length ? (
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 9 }}>
-          {afChips.map(c => <button key={c.k} onClick={c.clear} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", borderRadius: 16, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{c.label}<span style={{ opacity: 0.7 }}>✕</span></button>)}
+          {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", borderRadius: 16, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
           <button onClick={() => setAf(DEF)} style={{ padding: "5px 8px", background: "none", border: "none", color: C.textMuted, fontSize: 12, fontWeight: 700, cursor: "pointer", textDecoration: "underline" }}>Clear all</button>
         </div>
       ) : null}
@@ -1187,7 +1187,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
         <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 210px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
         {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
         <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} />
-        <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} style={{ position: "absolute", top: 10, right: 10, zIndex: 1000, background: "rgba(13,17,23,0.85)", border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{fullscreen ? "✕ Exit full screen" : "⤢ Full screen"}</button>
+        <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>{fullscreen ? "✕" : "⤢"}</button>
         {sel ? (
           <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
             <div style={{ flex: 1, minWidth: 0 }}>
