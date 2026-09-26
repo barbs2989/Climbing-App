@@ -13,6 +13,7 @@ import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updat
 const MIN_PASSWORD = 8;
 import { POLICY_VERSION } from "./policy";
 import { POP_CLOSE } from "./popupChrome.js";
+import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
 
 const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
 const field = { width: "100%", boxSizing: "border-box", background: "#0d1117", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
@@ -42,6 +43,14 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [adult, setAdult] = useState(false); // 18+ attestation, create-account only
+  // Turnstile (lib/captcha.jsx). Off until a site key is set, and then asked on the three forms
+  // that reach Supabase with a password or an email: sign in, create account, forgot password.
+  // A token is spent by ONE attempt, so every attempt ends by asking for a fresh widget.
+  const [captcha, setCaptcha] = useState("");
+  const [captchaRound, setCaptchaRound] = useState(0);
+  const needsCaptcha = CAPTCHA_ON && (mode === "in" || mode === "up" || mode === "forgot");
+  const spendCaptcha = () => { setCaptcha(""); setCaptchaRound((n) => n + 1); };
+  const captchaMissing = () => { if (needsCaptcha && !captcha) { setErr("Complete the security check first."); return true; } return false; };
   // Asked, not assumed -- see useOAuthProviders. Until the project has Google enabled this is
   // false and the button never renders, so nobody is offered a sign-in that cannot complete.
   const providers = useOAuthProviders();
@@ -52,9 +61,10 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   // climbers are here, and Supabase returns success either way for the same reason.
   const sendReset = async () => {
     if (!email.trim()) { setErr("Enter the email you signed up with."); return; }
+    if (captchaMissing()) return;
     setErr(""); setInfo(""); setBusy(true);
-    const { error } = await requestPasswordReset(email.trim());
-    setBusy(false);
+    const { error } = await requestPasswordReset(email.trim(), needsCaptcha ? captcha : undefined);
+    setBusy(false); if (needsCaptcha) spendCaptcha();
     if (error) { setErr(error.message); return; }
     rememberEmail(email.trim());
     setInfo("If that email has an account, a reset link is on its way. The link opens ClimbMatch and asks for a new password.");
@@ -80,11 +90,13 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
     // not just the checkbox, or the rule is decoration.
     if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
     if (mode === "up" && password.length < MIN_PASSWORD) { setErr(`Use at least ${MIN_PASSWORD} characters.`); return; }
+    if (captchaMissing()) return;
     setErr(""); setInfo(""); setBusy(true);
+    const token = needsCaptcha ? captcha : undefined;
     const { data, error } = mode === "in"
-      ? await signIn(email.trim(), password)
-      : await signUp(email.trim(), password, name.trim(), POLICY_VERSION);
-    setBusy(false);
+      ? await signIn(email.trim(), password, token)
+      : await signUp(email.trim(), password, name.trim(), POLICY_VERSION, token);
+    setBusy(false); if (needsCaptcha) spendCaptcha();
     if (error) { setErr(error.message); return; }
     // Signing up with an address that already has an account is NOT an error:
     // to avoid leaking which emails are registered, Supabase returns a decoy user
@@ -190,6 +202,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
             <span>I am 18 or older.</span>
           </label>
         )}
+        {needsCaptcha && <Turnstile resetKey={mode + ":" + captchaRound} onToken={(t) => { setCaptcha(t); if (t) setErr(""); }} onError={setErr} />}
         {err && <div role="alert" style={{ color: c.red, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{err}</div>}
         {info && <div role="status" style={{ color: c.green, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{info}</div>}
         <button onClick={done ? () => onRecovered && onRecovered() : go} disabled={busy} style={{ width: "100%", padding: 12, borderRadius: 11, border: "none", background: "#2a74de", color: "#fff", fontSize: 15, fontWeight: 700, cursor: busy ? "default" : "pointer", opacity: busy ? 0.7 : 1 }}>

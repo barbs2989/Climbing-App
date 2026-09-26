@@ -28,8 +28,14 @@
 //      a bare muted glyph. A clickable <span>/<div> whose whole label is ✕/× fails too — two photo
 //      removers were spans with no name at all. A ✕ INSIDE a chip that is itself the button (the
 //      filter chips) is decoration, not a control, and is not matched: its <span> has no handler.
+//   5. Added 2026-09-26. (a) A map's full-screen toggle — any <button> whose aria-label or title
+//      says "full screen" — is the same round control as a ✕, styled POP_CLOSE / POP_CLOSE_MEDIA:
+//      ⤢ to enter, ✕ to leave. The area map drew it as a small "✕ Exit full screen" text button
+//      and the route map as a bare ⤤/⤢ square with no name. (b) The ✕ drawn inside a chip that is
+//      itself the button — a <span> holding only ✕/× — must be styled POP_CHIP_X (a small ring in
+//      the same edge and fill), not a bare faded glyph. Floor: 3 POP_CHIP_X uses.
 //
-// Fails closed: fewer than 45 POP_CLOSE / 30 POP_BACK / 18 POP_REMOVE uses means the scan is not reading the app
+// Fails closed: fewer than 45 POP_CLOSE / 30 POP_BACK / 18 POP_REMOVE / 3 POP_CHIP_X uses means the scan is not reading the app
 // (see the counts it prints), and that must never read as a clean pass.
 import fs from "fs";
 import path from "path";
@@ -73,7 +79,7 @@ const USES_REMOVE = /style=\{\s*(?:POP_REMOVE(?:_MEDIA)?\b|Object\.assign\(\s*\{
 const USES_BACK = /style=\{\s*(?:POP_BACK(?:_MEDIA)?\b|Object\.assign\(\s*\{\s*\}\s*,\s*POP_BACK(?:_MEDIA)?\b|\{\s*\.\.\.POP_BACK(?:_MEDIA)?\b)/;
 
 const bad = [];
-let closeUses = 0, backUses = 0, removeUses = 0;
+let closeUses = 0, backUses = 0, removeUses = 0, chipXUses = 0;
 for (const rel of files) {
   const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
   const lineOf = at => src.slice(0, at).split("\n").length;
@@ -89,6 +95,8 @@ for (const rel of files) {
     const removes = /^(?:Remove|Delete|Withdraw|Clear)\b/i.test(aria || ariaExpr) || /^(?:Remove|Delete|Clear)\b/i.test(title);
     if (LONE_CLOSE.test(b.after) && removes && !USES_REMOVE.test(b.tag))
       bad.push(`${rel}:${lineOf(b.at)}  remove control "${aria || ariaExpr || title}" is not styled POP_REMOVE`);
+    if (/full screen/i.test(b.tag) && !USES_CLOSE.test(b.tag))
+      bad.push(`${rel}:${lineOf(b.at)}  full-screen toggle is not styled POP_CLOSE / POP_CLOSE_MEDIA`);
     if (BACK_LABEL.test(b.after) && !USES_BACK.test(b.tag))
       bad.push(`${rel}:${lineOf(b.at)}  back button is not styled POP_BACK`);
   }
@@ -98,12 +106,18 @@ for (const rel of files) {
   let m;
   const bareX = /<(?:span|div)\b[^<]*\{\.\.\.clickable\([^<]*>\s*(?:✕|×|\{\s*"(?:✕|×)"\s*\})\s*<\//g;
   while ((m = bareX.exec(src))) bad.push(`${rel}:${lineOf(m.index)}  a clickable ✕ that is not a <button> — use <button aria-label="Remove …" style={POP_REMOVE}>✕</button>`);
+  const chipX = /<span\b([^<>]*)>\s*(?:✕|×|\{\s*"(?:✕|×)"\s*\})\s*<\/span>/g;
+  while ((m = chipX.exec(src))) {
+    if (/clickable\(|onClick/.test(m[1])) continue;
+    if (/style=\{\s*POP_CHIP_X\b/.test(m[1])) chipXUses++;
+    else bad.push(`${rel}:${lineOf(m.index)}  a ✕ inside a chip is not styled POP_CHIP_X`);
+  }
   while ((m = bareArrow.exec(src))) bad.push(`${rel}:${lineOf(m.index)}  a clickable "←" that is not a <button> — use <button style={POP_BACK}>← Back</button>`);
 }
 
-console.log(`check:popup-chrome — read ${files.length} file(s): ${closeUses} POP_CLOSE, ${backUses} POP_BACK, ${removeUses} POP_REMOVE`);
-if (closeUses < 45 || backUses < 30 || removeUses < 18) {
-  console.error(`FAIL: only ${closeUses} POP_CLOSE / ${backUses} POP_BACK / ${removeUses} POP_REMOVE uses found — the scan is not reading the app.`);
+console.log(`check:popup-chrome — read ${files.length} file(s): ${closeUses} POP_CLOSE, ${backUses} POP_BACK, ${removeUses} POP_REMOVE, ${chipXUses} POP_CHIP_X`);
+if (closeUses < 45 || backUses < 30 || removeUses < 18 || chipXUses < 3) {
+  console.error(`FAIL: only ${closeUses} POP_CLOSE / ${backUses} POP_BACK / ${removeUses} POP_REMOVE / ${chipXUses} POP_CHIP_X uses found — the scan is not reading the app.`);
   process.exit(1);
 }
 if (!bad.length) { console.log("ok — every popup's close and back controls use lib/popupChrome.js."); process.exit(0); }

@@ -355,6 +355,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - Injection-tested **3/3** (restyle *Remove day*; turn a photo remover back into a clickable
       span; restyle an expression-labelled `{"Remove "+t}` chip ×), restored byte-identical. Fails
       closed under 18 `POP_REMOVE` uses (23 at the time of writing).
+  - **Rule 5, 2026-09-26: the two things Rule 4 left alone.** (a) The maps' full-screen toggle is
+    now the same 44px round control as a ✕ (`POP_CLOSE_MEDIA`): ⤢ to enter, ✕ to leave. The area
+    map had drawn it as a small "✕ Exit full screen" text button and the route map as a bare ⤤/⤢
+    square whose only name was a `title`; both now carry an aria-label. The route map hides its
+    in-map toggle in full screen, since its full-screen header already carries a `POP_CLOSE` ✕ and
+    two ✕s would be one too many. A pill reading "Full screen" was rejected: beside the
+    Satellite/Topo/Street switcher it crowds a 390px phone. Any `<button>` whose tag says "full
+    screen" must use `POP_CLOSE`/`POP_CLOSE_MEDIA`. (b) The ✕ inside a chip that is itself the
+    button is now `POP_CHIP_X`, an 18px ring in the same edge and fill, `aria-hidden` — the chip
+    is the control. The two filter chips had no name beyond their value ("5.8"), so they gained
+    `aria-label="Remove filter: …"`; ListsManager's already said "Remove X from this list". Any
+    `<span>` holding only ✕/× with no handler must be `POP_CHIP_X`. Injection-tested 2/2, restored
+    byte-identical. Note the floor exits BEFORE the per-line list prints, so an injection that
+    removes one of only 3 chip uses proves the floor, not the rule — add a bare span instead.
+    Fails closed under 3 `POP_CHIP_X` uses (3 at the time of writing).
 - **`check:script-roots`** asserts that **no script reads the app files of somebody ELSE's
   worktree**. Static — one directory walk and a regex, milliseconds — so it sits in `npm run build`.
   - **THE DEFECT WAS ALREADY DOCUMENTED AND NOBODY HAD ASKED HOW BIG IT WAS.** This file records
