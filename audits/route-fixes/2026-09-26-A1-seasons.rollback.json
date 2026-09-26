@@ -1,0 +1,286 @@
+[
+ {
+  "id": "wa_mount_baker_boulder_park_cleaver",
+  "season": "May-Aug"
+ },
+ {
+  "id": "wa_colchuck_peak_east_ridge",
+  "season": "Jul-Oct",
+  "seasonal_guidance": {
+   "optimalWindow": "July, while seasonal snow still covers the Colchuck Glacier to the col and before it melts to hard bare ice",
+   "monthBreakdown": {
+    "July": {
+     "reason": "Continuous consolidated snow up the glacier to the col takes crampons well, and the Class 2-3 ridge above is mostly melted out.",
+     "status": "optimal"
+    },
+    "June": {
+     "reason": "The access road may still be closed and the glacier gully holds deep, avalanche-prone snow; the scramble ridge above the col can still be snow-covered.",
+     "status": "marginal"
+    },
+    "August": {
+     "reason": "Snow on the glacier thins and gets suncupped; patches of hard ice near the col become more likely late in the month, so crampons are essential.",
+     "status": "good"
+    },
+    "October": {
+     "reason": "Fresh snow over bare glacier ice, short days and freezing temperatures make the glacier and col treacherous; the access road can close with the first heavy snow.",
+     "status": "risky"
+    },
+    "September": {
+     "reason": "Seasonal snow is often gone, leaving bare glacier ice at the 40-degree section below the col where crampons bite poorly and a slip is hard to stop.",
+     "status": "marginal"
+    }
+   }
+  },
+  "best_season": "Late July through September; snow persists longer on north slopes"
+ },
+ {
+  "id": "wa_eldorado_peak_west_arete",
+  "season": "Jul-Aug"
+ },
+ {
+  "id": "wa_sloan_peak_r1",
+  "season": "Jun-Sep (best Jul-Aug)"
+ },
+ {
+  "id": "wa_chair_peak_east_face",
+  "season": "Year-round; best Jun-Sep (ice axe can help in shoulder-season snow)"
+ },
+ {
+  "id": "wa_colfax_peak_kimchi_suicide_volcano",
+  "season": "Apr",
+  "seasonal_guidance": {
+   "optimalWindow": "March to April, when the north face ice is fat and the Coleman Glacier crevasses are still well bridged",
+   "monthBreakdown": {
+    "May": {
+     "reason": "Warming loosens the rock steps and ice, raising rockfall, and bridges on the Coleman Glacier soften; go only after a cold spell and start very early.",
+     "status": "marginal"
+    },
+    "June": {
+     "reason": "The ice on the rock steps rots and sheds, rockfall increases, and large crevasses can open across the Coleman Glacier.",
+     "status": "risky"
+    },
+    "April": {
+     "reason": "Longer days and a shrinking snowline on the road, with the face's ice and mixed steps still frozen in; skis help on the approach and descent.",
+     "status": "optimal"
+    },
+    "March": {
+     "reason": "The north face ice is usually well formed and crevasse bridges are solid, but the approach often still starts miles down the snowbound road.",
+     "status": "marginal"
+    },
+    "February": {
+     "reason": "The unplowed Glacier Creek Road adds miles of snow travel, short days squeeze a long approach, and storm slabs load the slopes above the Coleman Glacier.",
+     "status": "marginal"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "season": "Feb-Apr (frozen); FA was July"
+ },
+ {
+  "id": "wa_east_ridge_2",
+  "season": "Jun-Sep"
+ },
+ {
+  "id": "wa_east_ridge_9",
+  "season": "Jul-Sep",
+  "seasonal_guidance": {
+   "optimalWindow": "Mid-July to early September, once the talus gully to the notch has melted out and the serpentine is dry",
+   "monthBreakdown": {
+    "May": {
+     "reason": "Late May ascents happen, but the approach gully is full snow, hard in the morning and prone to wet slides as it warms.",
+     "status": "marginal"
+    },
+    "July": {
+     "reason": "Snow in the gully shrinks to short patches and the slick serpentine dries; the Ingalls Way trailhead lot fills early on weekends.",
+     "status": "optimal"
+    },
+    "June": {
+     "reason": "The gully still holds snow needing axe and crampons early, then good plunge-stepping; the upper ridge rock is usually dry by late June.",
+     "status": "marginal"
+    },
+    "August": {
+     "reason": "Snow-free loose talus to the notch and dry rock; more parties above in the gully raises rockfall risk, so start early.",
+     "status": "optimal"
+    },
+    "October": {
+     "reason": "Early snow and verglas on the serpentine make the squeeze and downclimbs treacherous, and the rappel descent slows in cold.",
+     "status": "marginal"
+    },
+    "September": {
+     "reason": "Larches turn and crowds peak on the Ingalls Way trail; dry rock but shorter days on a long 14-16 hour outing.",
+     "status": "good"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_east_slope",
+  "season": "Year-round (winter ascents documented); best scrambling conditions Jul-Sep"
+ },
+ {
+  "id": "wa_fish_whistle",
+  "season": "Jun-Sep"
+ },
+ {
+  "id": "wa_flight_of_the_falcon",
+  "season": "Jul-Sep",
+  "best_season": "Climbed in July and August; the basin's approach terrain holds snow into early summer at this elevation and the brush is markedly worse when wet, so a stretch of settled, dry weather is recommended."
+ },
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "season": "Jun-Sep (snow lingers on approach benches into early July; class 2-3 talus mostly melts out by late Jul-Aug)"
+ },
+ {
+  "id": "wa_flycatcher_buttress",
+  "season": "Jun-Sep"
+ },
+ {
+  "id": "wa_garfield_mountain_infinite_bliss",
+  "season": "Jun-Sep"
+ },
+ {
+  "id": "wa_inspiration_traverse",
+  "season": "July-September",
+  "seasonal_guidance": {
+   "optimalWindow": "Early July to early August, while snow bridges over crevasses and the moats below the summit blocks are still solid",
+   "monthBreakdown": {
+    "July": {
+     "reason": "Consolidated snow bridges and filled moats make the glacier travel and summit blocks straightforward, with long days for the traverse.",
+     "status": "optimal"
+    },
+    "June": {
+     "reason": "Deep snow cover bridges the crevasses on the Eldorado and Inspiration glaciers; the Eldorado Creek basin slopes can still slide after warm spells.",
+     "status": "marginal"
+    },
+    "August": {
+     "reason": "Crevasses on the McAllister and Klawatti glaciers open and moats widen through the month; water on the glaciers becomes scarce.",
+     "status": "good"
+    },
+    "October": {
+     "reason": "Fresh snow over open crevasses hides them, days are short, and the Cascade River Road is gated at the Eldorado trailhead in late autumn.",
+     "status": "risky"
+    },
+    "September": {
+     "reason": "Open crevasses, bare ice and widened bergschrunds complicate the traverse and summit access, and early autumn storms can bring whiteout.",
+     "status": "marginal"
+    }
+   }
+  },
+  "best_season": "July to early August, while snow bridges over crevasses and moats are still solid"
+ },
+ {
+  "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+  "season": "Jun-Jul"
+ },
+ {
+  "id": "wa_little_sister_north_face",
+  "season": "Jun-Sep"
+ },
+ {
+  "id": "wa_little_sister_southeast_ridge",
+  "season": "Jun-Sep"
+ },
+ {
+  "id": "wa_little_sister_west_face",
+  "season": "Jun-Sep"
+ },
+ {
+  "id": "wa_mount_howard_south_slope",
+  "season": "Jul-Sep",
+  "seasonal_guidance": {
+   "optimalWindow": "August to September, when the south gully and talus are snow-free and the Nason Ridge trail is dry for a long day",
+   "monthBreakdown": {
+    "May": {
+     "reason": "A spring snow climb: consolidated snow fills the gullies and the Rock-Crescent col, but cornices and wet slough threaten the col; axe and crampons.",
+     "status": "marginal"
+    },
+    "July": {
+     "reason": "The talus and the class 3 gully melt out through the month; early July can still need an axe on the col and in the gully.",
+     "status": "good"
+    },
+    "June": {
+     "reason": "Snow lingers above about 5,000 ft on the Rock Lake side and softens into slush by midday; the col can still carry a cornice.",
+     "status": "marginal"
+    },
+    "August": {
+     "reason": "The route is snow-free talus and trail, Crescent Lake is the only reliable water, and blueberries line the overgrown Nason Ridge trail.",
+     "status": "optimal"
+    },
+    "October": {
+     "reason": "The first snow can coat the loose south gully and the talus, and short days make the round trip tight.",
+     "status": "marginal"
+    },
+    "September": {
+     "reason": "Cooler days suit the 3,300 ft climb to Crescent Lake, the rock is dry, and fall color comes to Nason Ridge.",
+     "status": "optimal"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_mount_pilchuck_east_ridge",
+  "season": "Aug-Oct (best after snowmelt; blueberry and fall-color season in the Bathtub Lakes basin is a noted highlight; spring travel requires ice axe/crampons)"
+ },
+ {
+  "id": "wa_mount_pilchuck_standard_route",
+  "season": "Jul-Oct (trail typically snow-covered into early/midsummer some years)"
+ },
+ {
+  "id": "wa_sherman_peak_baker_squak_glacier",
+  "season": "Jun-Sep"
+ },
+ {
+  "id": "wa_sinister_peak_north_face",
+  "season": "Jun-Aug"
+ },
+ {
+  "id": "wa_south_face_2",
+  "season": "Jun-Sep"
+ },
+ {
+  "id": "wa_traverse_of_mount_index",
+  "season": "Jul-Aug (dry rock across all three summits; earlier season has more snow/rockfall risk, later season has minimal water)"
+ },
+ {
+  "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+  "season": "Jun-Oct (summer scramble); also documented as a January ski-mountaineering ascent"
+ },
+ {
+  "id": "wa_alpine_lookout_round_mountain_trail",
+  "season": "Jun-Oct (one of the first higher hikes in the area to lose its winter snowpack; ridge crest and Nine-mile Saddle can still hold snow in early season)"
+ },
+ {
+  "id": "wa_argonaut_peak_northeast_couloir",
+  "season": "Late May-early June (best on consolidated, not-yet-melted-out snow)"
+ },
+ {
+  "id": "wa_big_snagtooth_west_ridge",
+  "season": "Apr-Oct (best May-Jun with snow cover)"
+ },
+ {
+  "id": "wa_big_snow_mountain_north_slope_dingford_route",
+  "season": "Jul-Sep (best after gullies/couloirs melt out)"
+ },
+ {
+  "id": "wa_black_peak_northeast_ridge",
+  "season": "May-Oct (best Jun-Sep)"
+ },
+ {
+  "id": "wa_blue_s_buttress",
+  "season": "late Jun-Sep"
+ },
+ {
+  "id": "wa_castle_peak_tatoosh_southeast_face",
+  "season": "Jul-Sep (dry rock); scrambling feasible into Jun/Oct with snow on the approach"
+ },
+ {
+  "id": "wa_chockstone_route",
+  "season": "Jun-Sep (early-season ascents require ice axe/crampons for snow in the gully)"
+ },
+ {
+  "id": "wa_concerto_in_c_for_drill_and_hammer",
+  "season": "mid-Jun - Sep"
+ }
+]
