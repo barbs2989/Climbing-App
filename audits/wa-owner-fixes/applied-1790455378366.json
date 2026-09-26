@@ -1,0 +1,186 @@
+{
+ "applied": [
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [
+    5,
+    "lat"
+   ],
+   "fact": "Yang-Yang Lakes pin (waypoints[5]) 3.2 km off the lakes"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [
+    5,
+    "lng"
+   ],
+   "fact": "Yang-Yang Lakes pin (waypoints[5]) 3.2 km off the lakes"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [
+    7,
+    "lat"
+   ],
+   "fact": "White Rock Lakes pin (waypoints[7]) off the lakes, wrong elevation and sequence note"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [
+    7,
+    "lng"
+   ],
+   "fact": "White Rock Lakes pin (waypoints[7]) off the lakes, wrong elevation and sequence note"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [
+    7,
+    "elev"
+   ],
+   "fact": "White Rock Lakes pin (waypoints[7]) off the lakes, wrong elevation and sequence note"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [
+    7,
+    "note"
+   ],
+   "fact": "White Rock Lakes pin (waypoints[7]) off the lakes, wrong elevation and sequence note"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [
+    8,
+    "lat"
+   ],
+   "fact": "Spire Point pin (waypoints[8]) 2 km off the peak"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [
+    8,
+    "lng"
+   ],
+   "fact": "Spire Point pin (waypoints[8]) 2 km off the peak"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ptarmigan_traverse",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.4754,
+      "lng": -121.0751,
+      "elev": 3600,
+      "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+      "note": "Also the standard trailhead for the reverse Ptarmigan Traverse exit at Downey Creek is different (Suiattle River Rd), but Cascade Pass is the traditional/most common starting trailhead.",
+      "type": "Trailhead",
+      "elevFt": 3600
+     },
+     {
+      "lat": 48.4683,
+      "lng": -121.06,
+      "elev": 5392,
+      "name": "Cascade Pass",
+      "note": "Maintained trail ends here; traverse continues cross-country.",
+      "type": "Junction",
+      "distMi": 3.6
+     },
+     {
+      "lat": 48.4484594,
+      "lng": -121.0528892,
+      "elev": 6903,
+      "name": "Cache Col",
+      "note": "Glacier-travel notch south of Cascade Pass; gateway to the traverse proper.",
+      "type": "Junction",
+      "distMi": 5.5
+     },
+     {
+      "lat": 48.439276,
+      "lng": -121.046228,
+      "elev": 6120,
+      "name": "Kool-Aid Lake",
+      "note": "First bivy; the exposed 'Red Ledges' traverse below Art's Knoll follows.",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": 48.43,
+      "lng": -121.03,
+      "elev": 6900,
+      "name": "Red Ledges (Art's Knoll)",
+      "note": "Narrow, exposed ledge crossing; a fall here would be serious.",
+      "type": "Hazard",
+      "distMi": 9
+     },
+     {
+      "lat": 48.421,
+      "lng": -121.061,
+      "elev": 5852,
+      "name": "Yang-Yang Lakes",
+      "note": "Second common bivy, below Spider-Formidable Col.",
+      "type": "Campsite",
+      "distMi": 12
+     },
+     {
+      "lat": 48.4,
+      "lng": -121.03,
+      "elev": 7500,
+      "name": "Spider-Formidable Col",
+      "note": "High col crossing toward the LeConte Glacier and Sentinel/Old Guard Peaks.",
+      "type": "Junction",
+      "distMi": 13.5
+     },
+     {
+      "lat": 48.36,
+      "lng": -121.05,
+      "elev": 6500,
+      "name": "White Rock Lakes / South Cascade Glacier Col",
+      "note": "Third bivy; crosses the flat South Cascade Glacier en route to Spire Point.",
+      "type": "Campsite",
+      "distMi": 18
+     },
+     {
+      "lat": 48.335,
+      "lng": -121.06,
+      "elev": 8264,
+      "name": "Spire Point",
+      "note": "Prominent landmark near the Dome-Dana col.",
+      "type": "Junction",
+      "distMi": 21
+     },
+     {
+      "lat": 48.308,
+      "lng": -121.1,
+      "elev": 6400,
+      "name": "Cub Lake / Itswoot Ridge",
+      "note": "Fourth bivy on Itswoot Ridge above Cub and Itswoot Lakes.",
+      "type": "Campsite",
+      "distMi": 24
+     },
+     {
+      "lat": 48.3034,
+      "lng": -121.0295,
+      "elev": 8920,
+      "name": "Dome Peak",
+      "note": "Optional side summit near the traverse's south end; the traverse itself does not cross it.",
+      "type": "Landmark",
+      "distMi": null,
+      "elevFt": 8920
+     }
+    ]
+   }
+  }
+ ]
+}
