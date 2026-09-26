@@ -1,0 +1,541 @@
+{
+ "results": [
+  {
+   "id": "wa_sitkum_spire_standard",
+   "verdict": "confirmed",
+   "resolution": "merge_into wa_glacier_peak_sitkum_glacier (retire this row; no carry-over patches needed)",
+   "summary": "Retire this row into the Sitkum Glacier route on Glacier Peak: it describes that climb, and the spire is only the landmark beside the saddle the route crosses.",
+   "evidence": "Every independent description of this line (route database page, three separate trip reports) climbs the Sitkum Glacier to the ~9,500 ft saddle just east of Sitkum Spire and continues up the pumice ridge to Glacier Peak's main summit. The spire appears only as a landmark or in a photo caption. No source records an ascent of the spire itself, or the Class 4/low 5th finish, rappel and traffic figures this row gives it. The row's own beta goes to Glacier Peak's summit. The target row wa_glacier_peak_sitkum_glacier already carries everything the recommendation wanted carried over: the identical access.closures text (FR 23 closed at MP 3.7, Trail 643 inaccessible since 2003, use the North Fork Sauk and PCT), the same opening paragraph in approach, a North Fork Sauk/PCT approach variant, and the Boulder Basin climbers'-path detail. So the merge needs no patches on the kept row. The target is the existing copy of this climb, so a merge (not a refile) is the right form.",
+   "sources": [
+    "https://www.mountainproject.com/route/121086767/sitkum-glacier",
+    "https://trailcatjim.com/glacier-peak/",
+    "https://www.countryhighpoints.com/glacier-peak-via-white-chuck-river/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/white-chuck-river-trail-643"
+   ],
+   "ops": [
+    {
+     "op": "merge",
+     "from": "wa_sitkum_spire_standard",
+     "into": "wa_glacier_peak_sitkum_glacier"
+    }
+   ],
+   "pin_followups": [
+    "After the merge, area wa_sitkum_spire holds no routes; decide whether to keep it as an empty landmark area, and re-check its route_count."
+   ]
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "verdict": "confirmed",
+   "resolution": "rename to 'East Slopes (via Airplane Lake)'; aspect SE->E; face, and the 'southeast' wording in beta, pro_needs, crowds and itinerary, rewritten",
+   "summary": "Rename this route 'East Slopes (via Airplane Lake)' and make its aspect east: every account climbs the east side above Airplane Lake, and nothing describes a southeast line.",
+   "evidence": "Independent searching turned up no source naming a 'Southeast Slopes' route on Mount Saul. The first-hand accounts climb from Airplane Lake. One kicks steps up the east slope and east face on snow, noting the ridge as an alternative and a good descent. Another goes from the lake to the ridge north of it through a saddle, then along the ridge with a few class 3 steps. The encyclopedia entry gives only the 16 mi / 5,300 ft standard route via the Indian Creek trail and the Airplane Lake trail. The row's own pins put Airplane Lake (48.0026,-121.0067) about 1.2 km almost due east of the summit (48.0018,-121.0233), and the row's own itinerary already aims for the ridge east of the summit. The peak has no sibling route, so the rename creates no duplicate.",
+   "sources": [
+    "https://trailcatjim.com/mt-saul-via-east-slope-east-face-1999/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-13-9462326046",
+    "https://en.wikipedia.org/wiki/Mount_Saul"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_mount_saul_se_route",
+     "expect_name": "Southeast Slopes",
+     "name": "East Slopes (via Airplane Lake)"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_saul_se_route",
+     "column": "aspect",
+     "path": [],
+     "expect": "SE",
+     "value": "E"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_saul_se_route",
+     "column": "face",
+     "path": [],
+     "expect": "Southeast ridge / summit slopes",
+     "value": "East slopes and east ridge above Airplane Lake"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_saul_se_route",
+     "column": "beta",
+     "path": [],
+     "find": "Southeast Slopes is Mount Saul's standard",
+     "replace": "The east side above Airplane Lake is Mount Saul's standard"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_saul_se_route",
+     "column": "beta",
+     "path": [],
+     "find": "climbs steeply past Airplane Lake to a saddle on the peak's southeast ridge, finishing with class 3 scrambling",
+     "replace": "climbs steeply to Airplane Lake, directly below the east side of the peak. From the lake, either kick up the east slope and east face (a snow climb early in the season) or gain the ridge north of the lake through a saddle and follow it to the summit, finishing with class 3 scrambling"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_saul_se_route",
+     "column": "pro_needs",
+     "path": [],
+     "find": "None — Southeast Slopes is a class 3 scramble",
+     "replace": "None — the east side above Airplane Lake is a class 3 scramble"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_saul_se_route",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": " (only two accounts exist, both describing the East Slope/East Face approach via Airplane Lake rather than this Southeast Slopes line specifically)",
+     "replace": ""
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_saul_se_route",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "via the Southeast/East Slopes",
+     "replace": "via the East Slopes"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "verdict": "confirmed",
+   "resolution": "rename to 'West Side (LeConte Glacier)'; no other field changes",
+   "summary": "Rename this route 'West Side (LeConte Glacier)': the standard scramble goes up the west/northwest side from the LeConte Glacier, and only the stored name says southwest.",
+   "evidence": "The peak summary says the summit is reached from the LeConte Glacier by a class 2/3 snow couloir and short scramble on the west side, with a 2-3 pitch low-fifth route on the east side (the sibling row). A 2020 report climbed the snow slope on Old Guard's northwest side to a class 3 scramble. A third, independent account (the 2025 survey party) crossed the LeConte Glacier to the Old Guard-Sentinel col and made the 3rd class scramble from there. Sentinel lies about 0.4 km west of Old Guard, so that col is on the west side too. The row's aspect (NW), face, beta, descent and pitch_detail already describe this line, and 'southwest' appears nowhere in the row except the name. The only sibling is the East Side Route, so no duplicate.",
+   "sources": [
+    "https://www.summitpost.org/old-guard-peak/303084",
+    "https://onehikeaweek.com/2020/07/05/sentinel-peak/",
+    "https://www.countryhighpoints.com/sentinel-peak-and-old-guard-peak-surveys/"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_old_guard_peak_southwest_route",
+     "expect_name": "Southwest Route",
+     "name": "West Side (LeConte Glacier)"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_deep_blue",
+   "verdict": "confirmed",
+   "resolution": "keep the route; discipline trad->sport, aspect N->NE, face north->northeast; descent, descent_text, rappels, gear[2] and turnaround rewritten for the usual walk-off with a 70 m rappel option (bail left as is: bolted anchors do allow retreat by rappel)",
+   "summary": "Relabel Deep Blue as a bolted sport route on Dolomite Tower's northeast face, and say the usual way down is a 2.5-3 hour walk-off, with rappelling possible on a 70 m rope.",
+   "evidence": "The route page lists Deep Blue as Sport/Alpine 5.13c, with a small cam set (.2-.75) and 16 draws, and says the cams are needed only for the approach pitches. It describes the descent as a walk off the back of the tower into a gully and around behind Mt. Baring (2.5-3 h), with rappelling possible on a 70 m rope. The tower's area page lists Deep Blue as Sport and says the routes face northeast (sun about 6-10am). The Vanishing Point page, for a route topping out on the same tower, also describes a walk-off rather than a rappel. No second publisher covers this 2020 route: searches for trip reports, first-ascent write-ups and articles found none, so the external evidence comes from one publisher. The row itself already agrees, though. Its overview, pro_needs, detailed_rack and pro_tips call the route fully bolted, and its best_season and climate call the aspect NE. These changes make the labels match the row's own description, at medium confidence. Not changed: pitches. The route page gives 15 pitches over 1,400 ft, while the row gives 12 with link-ups, and that needs its own review.",
+   "sources": [
+    "https://www.mountainproject.com/route/201406999/deep-blue",
+    "https://www.mountainproject.com/area/119221018/dolomite-tower",
+    "https://www.mountainproject.com/route/119221029/vanishing-point"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_deep_blue",
+     "column": "discipline",
+     "path": [],
+     "expect": "trad",
+     "value": "sport"
+    },
+    {
+     "op": "set",
+     "id": "wa_deep_blue",
+     "column": "aspect",
+     "path": [],
+     "expect": "N",
+     "value": "NE"
+    },
+    {
+     "op": "set",
+     "id": "wa_deep_blue",
+     "column": "face",
+     "path": [],
+     "expect": "Dolomite Tower, north face (Mt. Baring massif)",
+     "value": "Dolomite Tower, northeast face (Mt. Baring massif)"
+    },
+    {
+     "op": "set",
+     "id": "wa_deep_blue",
+     "column": "descent",
+     "path": [],
+     "expect": "Rappel the route directly on its bolted anchors (fully bolted top to bottom).",
+     "value": "Walk off the back of the tower (about 2.5-3 hours to the main climbers' trail), or rappel the route on its bolted anchors with a 70 m rope."
+    },
+    {
+     "op": "set",
+     "id": "wa_deep_blue",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Because every anchor on Deep Blue is bolted, parties descend by rappelling the route itself rather than walking off; bring a rope long enough (and doubled rap tat/rings as needed) to link the bolted stations back to the ground.",
+     "value": "The usual way down is on foot. From the top, walk off the back side of the tower and cut left into the gully, then traverse around behind Mt. Baring, holding your height rather than dropping, until you meet the main climbers' trail, which leads back to the trailhead. Allow about 2.5-3 hours. The route can also be rappelled on its bolted anchors, but that needs a 70 m rope."
+    },
+    {
+     "op": "set",
+     "id": "wa_deep_blue",
+     "column": "rappels",
+     "path": [],
+     "expect": "Rappel anchors on the tower and along the fixed-line approach sections were replaced with stainless steel during the 2020 work on this face and are spaced roughly 30-35 m apart, so the line can be rappelled with a 60 m rope; a 70 m allows a single-rappel reversal of part of the approach.",
+     "value": "Not the usual descent (most parties walk off), but the route can be rappelled on its bolted anchors with a 70 m rope. The anchors on the roped approach slabs below the tower were replaced with stainless steel during the 2020 work on this face and sit roughly 30-35 m apart."
+    },
+    {
+     "op": "set",
+     "id": "wa_deep_blue",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "expect": "rope long enough for the bolted rappel descent",
+     "value": "70 m rope if you plan to rappel the route rather than walk off"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_deep_blue",
+     "column": "turnaround",
+     "path": [],
+     "find": "and the rappel descent finish before dark",
+     "replace": "and the walk-off descent finish before dark"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "verdict": "confirmed",
+   "resolution": "keep as the Chiwawa River / Massie Lake / west ridge route; rewrite itinerary, timing, partner fitness, crowds and pro_tips[0] for a Massie Lake camp; set the lake to about 5,900 ft (waypoints[3].elev, approach, bivy[0]); beta's 3 mi to the junction corrected to about 4",
+   "summary": "Keep this as the Chiwawa River Trail / Massie Lake / west ridge route and rewrite the trip plan, which sent climbers on a 29-mile loop through Buck Creek Pass, as a 2-day trip with a camp at Massie Lake (about 5,900 ft).",
+   "evidence": "The Chiwawa approach is independently documented: about 4 miles up the Chiwawa River from Trinity (2,820 ft), a ford, then old faint sheepherder trails up to Massie Lake, with a shoulder at 6,420 ft beyond the lake. That shoulder figure rules out the row's 6,600-6,700 ft lake. The 1 m USGS lidar and the 10 m NED both return a flat water surface at the named lake point (48.1332,-120.9014), 5,936 ft and 5,917 ft (identical values at points 60 m apart), so the lake is about 5,900-5,930 ft. That also rules out the waypoint's 4,800 ft and the '1,500 ft from the ford' figure. The Buck Creek Pass / High Pass / 'south basin' itinerary matches only a 27-mile multi-peak loop (Buck Creek Pass, High Pass, Cleator, Helmet Butte, Massie, Liberty Cap). The row's name, beta, approach, approach_variants, climbing_route, descent_text, bail and waypoints all describe the Chiwawa line. The new day figures are derived rather than read from a source. Trailhead 2,800 ft to lake about 5,900 ft is about 3,100 ft over about 6 miles (4 on the trail, about 2 on the path, matching the row's bivy note). Lake to summit (7,533 ft) is about 1,650 ft over about 1.5 miles each way, from the row's own waypoint legs. Total about 15 miles, in line with the 14.75-mile round trip logged in 2024. Hours reuse the row's existing 5.5 h approach and 6.5 h descent. Not changed: dist_km (20.28 km = 12.6 mi) and the waypoint distMi values, which sit short of these legs and need their own review.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/31/massie-lake-high-route/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-08-28.224652782050",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2006081910",
+    "https://washington.hometownlocator.com/maps/feature-map,ftc,1,fid,1522795,n,massie%20lake.cfm",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.9013923&y=48.1331822&units=Feet&wkid=4326",
+    "https://api.opentopodata.org/v1/ned10m?locations=48.1331822,-120.9013923|48.1328,-120.9008"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_massie_peak_west_route",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Glacier Peak Wilderness requires a free self-issue permit at the trailhead; the high route and basin are typically not fully snow-free until mid-to-late July.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From the Trinity Trailhead, follow the Buck Creek Trail through forest and along the Chiwawa River, then climb steadily to the open meadows of Buck Creek Pass. Most parties camp here the first night before continuing higher toward Massie Peak the next day.",
+        "hours": 5.5,
+        "miles": 9.7,
+        "title": "Approach to Buck Creek Pass",
+        "gainFt": 3300,
+        "lossFt": 0,
+        "packLb": 35,
+        "schedule": [],
+        "objective": "Establish first camp at Buck Creek Pass"
+       },
+       {
+        "n": 2,
+        "note": "Break camp and continue past High Pass toward Massie Peak's south basin (~6,600 ft), where most parties make their second camp near a small stream in the east gully. From there, pick up the old sheepherder's trail (Massie Lake High Route), follow it roughly 1.5 miles, then climb onto Massie Peak's west ridge and traverse east to the summit, returning to the basin camp by evening. Terrain is off-trail cross-country scrambling with loose rock near the ridge — not technical, but exposed enough to warrant care and good route-finding.",
+        "hours": 7.5,
+        "miles": 7,
+        "title": "Move to high camp and climb Massie Peak",
+        "gainFt": 2200,
+        "lossFt": 300,
+        "packLb": 35,
+        "schedule": [
+         {
+          "time": "7:00 AM",
+          "label": "Break camp at Buck Creek Pass",
+          "detail": "Full pack for the move to the south basin camp."
+         },
+         {
+          "time": "8:30 AM",
+          "label": "Establish high camp in Massie Peak's south basin",
+          "detail": "~6,600 ft, near the stream in the east gully; stash overnight gear."
+         },
+         {
+          "time": "9:00 AM",
+          "label": "Head out on the Massie Lake High Route",
+          "detail": "Follow the old sheepherder's trail east roughly 1.5 miles."
+         },
+         {
+          "time": "10:30 AM",
+          "label": "Gain the west ridge",
+          "detail": "Turn uphill off the high route onto Massie Peak's west ridge."
+         },
+         {
+          "time": "12:00 PM",
+          "label": "Summit Massie Peak (7,533 ft)",
+          "detail": "Traverse just over a mile east along the ridge to the high point."
+         },
+         {
+          "time": "2:30 PM",
+          "label": "Back at high camp",
+          "detail": "Reverse the ridge and high route to the south basin."
+         }
+        ],
+        "objective": "Relocate to Massie Peak's south basin and tag the summit via the West Route"
+       },
+       {
+        "n": 3,
+        "note": "Descend from the south basin back through Buck Creek Pass and retrace the full Buck Creek Trail down to the Trinity Trailhead. It's a long, mostly downhill day out.",
+        "hours": 6.5,
+        "miles": 12.5,
+        "title": "Hike out",
+        "gainFt": 200,
+        "lossFt": 4700,
+        "packLb": 33,
+        "schedule": [],
+        "objective": "Return to the Trinity Trailhead"
+       }
+      ],
+      "totalNote": "A 3-day, 2-night backpack rather than a day trip: roughly 29 miles round trip with about 5,500 ft of cumulative gain, camping at Buck Creek Pass and then in Massie Peak's remote south basin before a cross-country push up the west ridge."
+     },
+     "value": {
+      "cal": "Glacier Peak Wilderness requires a free self-issue permit at the trailhead; the high route and basin are typically not fully snow-free until mid-to-late July.",
+      "days": [
+       {
+        "n": 1,
+        "note": "From the Trinity Trailhead, walk the Chiwawa River Trail upstream about 4 miles to the unsigned Massie Lake junction (a large boulder on one side of the trail, an 'M' with an arrow carved in a tree on the other). Ford the river there and climb the steep, faint old sheep path about 2 miles to Massie Lake. Fill up at the river: there is no dependable water between the ford and the lake. Camp at the lake.",
+        "hours": 5.5,
+        "miles": 6,
+        "title": "Approach to Massie Lake",
+        "gainFt": 3100,
+        "lossFt": 0,
+        "packLb": 35,
+        "schedule": [],
+        "objective": "Reach Massie Lake (about 5,900 ft) and set up camp"
+       },
+       {
+        "n": 2,
+        "note": "From the lake, follow the faint high-route tread away from the basin, leave it and climb onto Massie Peak's broad west ridge, then follow the crest to the summit on talus and heather with a few short class 3 steps. Reverse the same line to camp, pack up, and walk back down the sheep path, across the ford and out the Chiwawa River Trail. The sheep path is easiest to lose on the way down.",
+        "hours": 10.5,
+        "miles": 9,
+        "title": "Summit Massie Peak and hike out",
+        "gainFt": 1700,
+        "lossFt": 4800,
+        "packLb": 15,
+        "schedule": [
+         {
+          "time": "6:00 AM",
+          "label": "Leave Massie Lake camp",
+          "detail": "Day pack only; carry all your water for the climb."
+         },
+         {
+          "time": "7:30 AM",
+          "label": "Gain the west ridge",
+          "detail": "Leave the faint high-route tread and turn uphill onto the ridge."
+         },
+         {
+          "time": "9:00 AM",
+          "label": "Summit Massie Peak (7,533 ft)",
+          "detail": "Short class 3 steps near the top."
+         },
+         {
+          "time": "11:00 AM",
+          "label": "Back at camp",
+          "detail": "Reverse the ridge; break camp."
+         },
+         {
+          "time": "4:30 PM",
+          "label": "Back at Trinity Trailhead",
+          "detail": "Down the sheep path, across the ford, out the Chiwawa River Trail."
+         }
+        ],
+        "objective": "Climb the West Route and return to the trailhead"
+       }
+      ],
+      "totalNote": "A 2-day, 1-night trip: about 6 miles and 3,100 ft up the Chiwawa River Trail and the old sheep path to camp at Massie Lake (about 5,900 ft), then the summit by the west ridge and the walk out, about 9 miles. Strong parties do the whole thing car-to-car in one long day."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_massie_peak_west_route",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 19.5,
+      "summitTimeHrs": 7.5,
+      "descentTimeHrs": 6.5,
+      "approachTimeHrs": 5.5,
+      "recommendedStart": "7:00 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": 5.5,
+        "note": "From the Trinity Trailhead, follow the Buck Creek Trail through forest and along the Chiwawa River, then climb steadily to the open meadows of Buck Creek Pass. Most parties camp he…",
+        "fromTo": "Approach to Buck Creek Pass",
+        "section": "Approach"
+       },
+       {
+        "hrs": 7.5,
+        "note": "Break camp and continue past High Pass toward Massie Peak's south basin (~6,600 ft), where most parties make their second camp near a small stream in the east gully. From there, pi…",
+        "fromTo": "Move to high camp and climb Massie Peak",
+        "section": "Climb"
+       },
+       {
+        "hrs": 6.5,
+        "note": "Descend from the south basin back through Buck Creek Pass and retrace the full Buck Creek Trail down to the Trinity Trailhead. It's a long, mostly downhill day out.",
+        "fromTo": "Hike out",
+        "section": "Descent"
+       }
+      ]
+     },
+     "value": {
+      "totalHrs": 15,
+      "summitTimeHrs": 7.5,
+      "descentTimeHrs": 6.5,
+      "approachTimeHrs": 5.5,
+      "recommendedStart": "6:00 AM from Massie Lake",
+      "sectionBreakdown": [
+       {
+        "hrs": 5.5,
+        "note": "Chiwawa River Trail about 4 miles to the unsigned junction, ford the river, then the steep old sheep path about 2 miles to camp at Massie Lake.",
+        "fromTo": "Trinity Trailhead to Massie Lake",
+        "section": "Approach"
+       },
+       {
+        "hrs": 5,
+        "note": "From the lake onto the west ridge and along the crest to the summit, then back down the same line to camp.",
+        "fromTo": "Massie Lake to summit and back",
+        "section": "Climb"
+       },
+       {
+        "hrs": 4.5,
+        "note": "Down the sheep path, across the ford, and out the Chiwawa River Trail to Trinity.",
+        "fromTo": "Massie Lake to Trinity Trailhead",
+        "section": "Descent"
+       }
+      ]
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_massie_peak_west_route",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "expect": "High endurance - the approach alone (Buck Creek Trail to Pass No Pass Trail to the upper basin, then the old sheepherder's/Massie Lake high route) runs in the 20-27 mile round-trip range with ~4,700+ ft of gain, typically done as an overnight basecamp",
+     "value": "High endurance - about 15 miles round trip and roughly 4,800 ft of gain from the Trinity Trailhead by the Chiwawa River Trail and the old sheep path to Massie Lake, much of it off-trail and steep; usually done as an overnight at the lake"
+    },
+    {
+     "op": "set",
+     "id": "wa_massie_peak_west_route",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "expect": "Overnight/basecamp pack weight (most parties camp near Buck Creek Pass or the upper basin rather than day-tripping the summit)",
+     "value": "Overnight pack weight to Massie Lake, then a light day pack for the summit"
+    },
+    {
+     "op": "set",
+     "id": "wa_massie_peak_west_route",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Long - a full day (or more realistically an overnight) to reach the west ridge approach basin before the summit push itself",
+     "value": "About half a day to camp at Massie Lake (about 6 miles and 3,100 ft), with the summit and walk-out the next day"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_massie_peak_west_route",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "find": "the Pass No Pass Trail and sheepherder's route are unmarked",
+     "replace": "the sheepherder's path to Massie Lake and the route above it are unmarked"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_massie_peak_west_route",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "usually tacked onto a longer Buck Creek Pass/Massie Lake/High Pass basecamp trip rather than climbed on its own",
+     "replace": "usually climbed from a camp at Massie Lake, and sometimes tagged on longer multi-peak loops from Buck Creek Pass"
+    },
+    {
+     "op": "set",
+     "id": "wa_massie_peak_west_route",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "expect": "Good add-on from a Phelps Creek basecamp",
+     "value": "Camp at Massie Lake and climb the peak early the next morning"
+    },
+    {
+     "op": "set",
+     "id": "wa_massie_peak_west_route",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elev"
+     ],
+     "expect": 4800,
+     "value": 5930
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_massie_peak_west_route",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "reached via a steep, poorly-marked boot path climbing ~1,500 ft from the river ford.",
+     "replace": "reached via a steep, poorly-marked boot path of about 2 miles from the river ford."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_massie_peak_west_route",
+     "column": "approach",
+     "path": [],
+     "find": "for about 3 miles and roughly 1,900-2,100 ft of gain to Massie Lake (~6,600-6,700 ft)",
+     "replace": "for about 2 miles to Massie Lake (about 5,900 ft)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_massie_peak_west_route",
+     "column": "beta",
+     "path": [],
+     "find": "follow the Chiwawa River Trail north about 3 miles",
+     "replace": "follow the Chiwawa River Trail north about 4 miles"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_massie_peak_west_route",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "climbs roughly two miles and fifteen hundred feet to the lake",
+     "replace": "climbs roughly two miles to the lake, at about 5,900 feet"
+    }
+   ],
+   "pin_followups": [
+    "waypoints[3] 'Massie Lake' is pinned at 48.131485,-120.927636, about 2 km west of the named lake (48.1332,-120.9014), on a slope at about 5,915 ft; move it to the lake.",
+    "approach_logistics.peakLat/peakLng (48.1224,-120.8823) sits at about 4,230 ft in a valley, not on the summit; the summit waypoint (48.1363,-120.9123, ground about 7,479 ft) is much closer to the peak.",
+    "waypoints[1]/[2] (M-tree junction and ford, 48.1388,-120.9385) and waypoints[4] (ridge gain) should be checked against the ground; the junction's distMi 2.8 disagrees with the ~4 miles the approach gives."
+   ]
+  }
+ ]
+}
