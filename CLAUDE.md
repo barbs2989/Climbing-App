@@ -351,6 +351,10 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   `select * from catalog_find_route('<name>', '<target area_id>')`; a hit is a candidate to READ,
   not proof. Browse a state as the Climbs tab lays it out:
   `select outline from catalog_directory where state = 'Washington' order by sort_key`.
+  Since 0216 the database ENFORCES this: an INSERT of a same-named area within 1.5 km (or a
+  same-named peak, when the new area has no coordinate) or a same-named route nearby raises an
+  error naming the existing row. Add to that row instead; only after READING it and finding a
+  different place, bypass for one transaction with `set local catalog.allow_duplicate = 'on'`.
 - **Before writing a researched string into an existing column, look at where it renders.** A
   column that reaches a header, pill, chip or table cell takes a *value* (`season` is a window,
   `grade` is a grade); its explanation belongs in the prose column beside it. `rappels` is prose
