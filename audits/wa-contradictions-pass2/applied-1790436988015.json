@@ -1,0 +1,421 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_christie_west",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    4,
+    "time"
+   ],
+   "fact": "Summit time vs turnaround"
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Summit time vs turnaround"
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Date of the Olympic Hot Springs Road washout (Elwha variant)"
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Whiskey Bend Road drivable?"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Ridge crossed from the Quinault side"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "note"
+   ],
+   "fact": "Ridge crossed from the Quinault side"
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "schedule",
+    1,
+    "label"
+   ],
+   "fact": "Ridge crossed from the Quinault side"
+  }
+ ],
+ "rejected": [
+  {
+   "op": "replace_text",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "find": "As of the 2024 Olympic Hot Springs Road washout",
+   "replace": "Since the November 2017 Olympic Hot Springs Road washout",
+   "id": "wa_mount_norton_scramble",
+   "fact": "Date of the Olympic Hot Springs Road washout",
+   "sources": [
+    "https://www.nps.gov/olym/learn/news/olympic-hot-springs-road-in-the-elwha-valley-remains-closed-due-to-flood-damage.htm",
+    "http://www.peninsuladailynews.com/news/flooding-closes-olympic-hot-springs-road/",
+    "https://www.nps.gov/olym/planyourvisit/visiting-the-elwha.htm",
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide"
+   ],
+   "why": "find occurs 0x at itinerary[\"cal\"]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_mount_christie_west",
+   "before": {
+    "itinerary": {
+     "cal": "Olympic NP requires a wilderness permit (obtained in advance; summer reservation season May 15-Oct 15, not a quota area) for every camp on this route (Halfway House/Elip Creek, Low Divide, Martins Park); the North Couloir snow is typically most stable July-August before it thins to bare ice/rock later in the season.",
+     "days": [
+      {
+       "n": 1,
+       "note": "An easy warm-up day up the North Fork Quinault River trail through old-growth rainforest. Most parties start in the afternoon and camp at Halfway House; Elip Creek (~6.5 mi) is a slightly farther alternative that shortens day 2.",
+       "hours": 3.5,
+       "miles": 5.1,
+       "title": "Trailhead to Halfway House Camp",
+       "gainFt": 600,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach Halfway House (or Elip Creek) camp"
+      },
+      {
+       "n": 2,
+       "note": "The long haul of the trip: steady climbing up the valley to Low Divide, including a thigh-deep ford near Sixteenmile Camp. Real trip reports clock this leg at 9-11 hours with a full pack; plan an early start and expect to arrive in the evening.",
+       "hours": 9,
+       "miles": 11,
+       "title": "Halfway House to Low Divide",
+       "gainFt": 3300,
+       "lossFt": 100,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Establish base camp at Low Divide"
+      },
+      {
+       "n": 3,
+       "note": "From Low Divide, head up through Martins Park to the North Couloir, a snow/rock gully to a 5,600 ft saddle on Christie's north side, then rope up to cross the Christie Glacier and moat, surmount a short loose Class 4 step above the East Col, fight through krummholz, and finish on a Class 2-3 southeast ridge scramble to the summit. This is a full alpine day with real routefinding and loose rock; the reference party's 9 AM start put them back at camp near 11 PM in the dark.",
+       "hours": 14,
+       "miles": 9,
+       "title": "Summit push via North Couloir - Christie Glacier - SE Ridge",
+       "gainFt": 3000,
+       "lossFt": 3000,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:00-5:00 AM",
+         "label": "Alpine start recommended",
+         "detail": "An earlier start than the reference trip's 9 AM avoids finishing the loose, exposed descent after dark."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Reach the 5,600 ft north ridge saddle",
+         "detail": "Via Martins Park and the North Couloir snow/rock gully; crampons typically needed on the snow."
+        },
+        {
+         "time": "",
+         "label": "Cross the Christie Glacier and East Col",
+         "detail": "Rope up for the glacier and moat crossing; a short, loose Class 4 step guards the col."
+        },
+        {
+         "time": "",
+         "label": "Krummholz and SE ridge scramble",
+         "detail": "Dense krummholz bushwhack gains the southeast ridge, then Class 2-3 rock to the summit."
+        },
+        {
+         "time": "~4:00 PM",
+         "label": "Summit (6,182 ft)",
+         "detail": "Reference party topped out at 4:20 PM after a 9 AM start."
+        },
+        {
+         "time": "Evening/night",
+         "label": "Return to Low Divide camp",
+         "detail": "Expect 12-14 hours round trip; the descent is loose and slow, so carry headlamps."
+        }
+       ],
+       "objective": "Climb Mount Christie (6,182 ft) and return to Low Divide"
+      },
+      {
+       "n": 4,
+       "note": "Reverse the Day 2 route back down the valley, re-fording near Sixteenmile Camp. Mostly downhill and noticeably faster than the way in.",
+       "hours": 6.5,
+       "miles": 11,
+       "title": "Low Divide back to Halfway House",
+       "gainFt": 100,
+       "lossFt": 3300,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Retrace the trail out of the high country"
+      },
+      {
+       "n": 5,
+       "note": "A short, easy final morning back through the rainforest to the car.",
+       "hours": 2.5,
+       "miles": 5.1,
+       "title": "Halfway House to Trailhead",
+       "gainFt": 0,
+       "lossFt": 600,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Hike out to the North Fork Quinault trailhead"
+      }
+     ],
+     "totalNote": "A serious 5-day backcountry trip: ~2 days and 16 miles to reach Low Divide camp, a long 14-hour glacier/scramble summit day (~3,000 ft gain, Class 4 step), then 2 days back out the same trail — roughly 41 miles and 8,000+ ft round trip."
+    },
+    "approach_variants": [
+     {
+      "name": "North Fork Quinault to Low Divide, then Martins Park and the north couloir",
+      "notes": "Every published account climbs the north couloir out of Martins Park to a north-ridge saddle, crosses the Christie Glacier to a col east of the summit, and finishes up the southeast ridge. From the North Fork Quinault Ranger Station at roughly 500 ft, at the end of the North Fork Quinault River Road about 17 miles east of US-101 at Lake Quinault, follow the North Fork Quinault River Trail upstream past Wolf Bar at about 2.5 miles, Halfway House Camp near 5 miles, Elip Creek near 6.5 miles, Trapper Shelter near 8.1 miles (day and emergency use only), a ford of the North Fork at Sixteen Mile Camp near 13.2 miles that can run thigh-deep in high water, and Low Divide near 15.3-16.7 miles, which sits on the actual Quinault-Elwha drainage divide. From Low Divide take the rough fisherman's path into Martins Park and the Martin Lakes basin and camp there.",
+      "season": "Roughly Jul-Sep. Firm morning snow in the couloir is what makes this line reasonable; late season it thins to loose rock",
+      "hazards": [
+       "A loose, chossy, poorly protected Class 4 step above the high col that has changed between seasons — treat published descriptions of it as provisional",
+       "Glacier travel on the Christie Glacier with a moat at its top whose width varies year to year and by time of day",
+       "Steep snow in the entry couloir with runout risk, and refreezing snow in it on a late return",
+       "Dense subalpine krummholz above the col",
+       "A thigh-deep ford of the North Fork Quinault at Sixteen Mile Camp in high water",
+       "Extreme remoteness — an injury near the summit means a multi-day self-extraction or a helicopter"
+      ],
+      "primary": true,
+      "baseFinding": "FROM LOWER MARTINS PARK THERE IS ONE BROAD SNOW-AND-ROCK COULOIR AND IT RUNS SOUTH TOWARD THE PEAK. That is the whole arrival test and it is why parties consistently report finding it easily: you walk out of the lower meadows and over to the base of the snowfield. You are at the base when the meadow ends and continuous snow begins, with the couloir running away from you SOUTH — not west. If the drainage you are looking up runs any other direction, it is not this one.\n\nTHE CONFIRMING TEST IS A NUMBER AND A DURATION: the couloir gains about 2,100 ft and tops out at a SADDLE ON THE NORTH RIDGE near 5,600 ft, and parties consistently report about three and a half hours for it. If you have climbed far more than 2,100 ft without reaching a saddle, you are in the wrong gully.\n\nSECOND TEST, past the saddle, and it is the one that catches the real trap on this peak: from the saddle you DROP down loose gravelly slopes to the lower edge of the CHRISTIE GLACIER. A route that only ever climbs is not this one. Rope up — reports describe few or no open crevasses but the angle is enough that parties treat it as glacier ground anyway. At the top of the glacier a MOAT forms where ice meets rock; in a good year it is a single easy step across to the high col. Check it before committing, because it is the thing that changes year to year.\n\nWHAT WAITS AT THE COL, so it is not a surprise: the barrier above it is a chossy eroded cliff band, very steep to locally overhanging, and it is the crux of the peak, not a formality. It has changed between recent seasons — one party found the expected weakness gone and had to force a line to the right across an extremely loose, essentially unprotectable ledge on a tight rope. Expect dense krummholz above it before the rock improves and the Class 2-3 southeast ridge leads to the summit."
+     },
+     {
+      "name": "Elwha side to Low Divide, from Whiskey Bend",
+      "notes": "Low Divide is a divide, and the Elwha reaches it from the north just as the Quinault does from the south. Historically this meant the Elwha River Trail from the Whiskey Bend Trailhead. Since the September 2024 Olympic Hot Springs Road washout, Whiskey Bend has been closed to vehicles, which adds an extra 6.2 miles each way on foot or by bike from the Madison Falls parking area simply to reach the trailhead — check current road status before choosing this side, because that closure is what decides whether it is competitive with the Quinault.\n\nFrom Low Divide the route is identical to the Quinault variant: the fisherman's path into Martins Park and the Martin Lakes basin, camp, and the north couloir.\n\nNo mileage is quoted for this side because published figures assume Whiskey Bend is drivable and most currently are not.",
+      "season": "Roughly Jul-Sep, on the same window as the Quinault side",
+      "hazards": [
+       "Road closure at Olympic Hot Springs Road adds 6.2 miles each way and may change season to season",
+       "Everything above Low Divide is the same as the Quinault variant: the Class 4 step above the col, the Christie Glacier moat, and the entry couloir",
+       "A long Elwha valley walk with river crossings",
+       "No cell coverage and multi-day self-rescue exposure"
+      ],
+      "baseFinding": "IDENTICAL TO THE QUINAULT VARIANT ONCE YOU ARE AT LOW DIVIDE, and that shared test is a good one: from LOWER Martins Park there is ONE broad snow-and-rock couloir and it runs SOUTH toward the peak. Walk to where the meadow ends and the snow begins. Up it about 2,100 ft, roughly three and a half hours, to a saddle on the NORTH ridge near 5,600 ft; then DOWN loose gravel to the Christie Glacier; then the moat at the glacier's top and the high col east of the summit.\n\nTHE EXTRA TEST THIS SIDE NEEDS is at Low Divide itself, because you arrive from the opposite direction. Low Divide is a trail junction and the site of the historic ranger station, and it is where the climbers' route LEAVES maintained trail for Martins Park. Coming up from the Elwha, that turn is on your right as you crest the divide and it is a rough fisherman's path, not a signed one. If you have started descending toward the Quinault, you have walked past it."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.968,
+      "lng": -123.583,
+      "elev": 1250,
+      "name": "Whiskey Bend Trailhead",
+      "note": "Start of the Elwha River Trail (28.4 mi to Low Divide); reached via 4.4 mi of narrow gravel Whiskey Bend Road, which washes out and closes periodically.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.92393704980237,
+      "lng": -123.57234331699605,
+      "elev": 800,
+      "name": "Lillian River Trail junction",
+      "note": "Elwha River Trail crosses to the east bank near the Lillian River confluence and meets the Lillian River Trail spur; reliable water here before the climb to a high crest at mile 6.2.",
+      "type": "Junction",
+      "distMi": 4.8
+     },
+     {
+      "lat": 47.902313,
+      "lng": -123.490328,
+      "elev": 1296,
+      "name": "Mary's Falls Camp",
+      "note": "Established backcountry campsite beside the falls on the Elwha River Trail; NPS wilderness permit reservation required in summer season.",
+      "type": "Campsite",
+      "distMi": 8.8
+     },
+     {
+      "lat": 47.7366057,
+      "lng": -123.5293929,
+      "elev": 1900,
+      "name": "Chicago Camp (Elwha ford)",
+      "note": "Ford (footlog when present) of the Elwha River just before the trail's steep 3.1 mi final push toward Low Divide; last established camp before leaving the maintained trail for Elwha Basin.",
+      "type": "Water",
+      "distMi": 25.3
+     },
+     {
+      "lat": 47.759307868421054,
+      "lng": -123.55937284736842,
+      "elev": 3200,
+      "name": "Elwha Basin (\"the maze\")",
+      "note": "Off-trail bushwhack through downed timber and brush between Chicago Camp and Dodwell-Rixon Pass; boot path is faint and easy to lose in fog.",
+      "type": "Hazard",
+      "distMi": 28
+     },
+     {
+      "lat": 47.776124289473685,
+      "lng": -123.58158021578947,
+      "elev": 4200,
+      "name": "Elwha Snowfinger",
+      "note": "Perennial avalanche-fed snowfield climbing to the pass; hidden crevasses and moats form as the season progresses, so conditions change year to year.",
+      "type": "Hazard",
+      "distMi": 30
+     },
+     {
+      "lat": 47.78453,
+      "lng": -123.59268,
+      "elev": 4763,
+      "name": "Dodwell-Rixon Pass",
+      "note": "Divide between the Elwha and Queets drainages and the gateway into the Bailey Range high country; the descent from Dana reverses back to this exact point.",
+      "type": "Junction",
+      "distMi": 31
+     },
+     {
+      "lat": 47.791345,
+      "lng": -123.485665,
+      "elev": 6214,
+      "name": "Mount Dana",
+      "note": "True summit gained by a Class 2-3 side excursion off the main Bailey Range Traverse, traversing north past the Bear Pass/Mount Barnes basin from Dodwell-Rixon Pass.",
+      "type": "Summit",
+      "distMi": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "before": {
+    "approach": "No maintained trail reaches the peak. Most parties approach via the Elwha River Trail from Whiskey Bend and over Dodwell-Rixon Pass into the Bailey Range highline route, or via the North Fork Quinault River Trail from the North Fork Quinault trailhead (not Graves Creek, which serves the East Fork and Enchanted Valley) and over the Christie-Noyes ridge (the route used on at least one documented ascent). Either approach involves 3-5+ days of off-trail travel, river fords, and remote high camps before reaching the Noyes-Meany col.",
+    "itinerary": {
+     "cal": "Olympic NP requires a wilderness camping permit (reserved in advance; Low Divide and Seattle Basin are not quota areas); the North Fork Quinault Road has a history of washout closures, so check NPS road status before driving in.",
+     "days": [
+      {
+       "n": 1,
+       "note": "An afternoon-start hike up the North Fork Quinault River trail through old-growth forest to the first night's camp. Easy grade, mostly flat river-valley walking.",
+       "hours": 4.8,
+       "miles": 4.8,
+       "title": "Hike in to Francis/Elip Creek Camp",
+       "gainFt": 800,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Francis/Elip Creek Camp"
+      },
+      {
+       "n": 2,
+       "note": "The longest day of the approach: steady climbing up the North Fork Quinault valley to Low Divide, including a mandatory ford of the river. Parties note a long lunch/swim break at the ford and afternoon heat as the main slow-down factors.",
+       "hours": 9.3,
+       "miles": 10,
+       "title": "Push up-valley to Low Divide",
+       "gainFt": 2850,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Low Divide Camp"
+      },
+      {
+       "n": 3,
+       "note": "A shorter, deliberately easy day to arrive at basecamp with time to rest before the summit push. Trail switchbacks into Seattle Meadows, then cross-country through heather meadows to a gravelly camp rib as high in the basin as possible.",
+       "hours": 4.8,
+       "miles": 6,
+       "title": "Climb to Seattle Basin high camp",
+       "gainFt": 1600,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Establish basecamp in Seattle Basin (~4,900 ft)"
+      },
+      {
+       "n": 4,
+       "note": "The technical crux day: an early start, a scree traverse to the Noyes/Seattle notch, and a short low Class 5 roped pitch with loose rock but good gear on the final push to the summit. Two rappels and a long scree/talus descent bring the party back to camp after dark.",
+       "hours": 14.5,
+       "miles": 5,
+       "title": "Summit day",
+       "gainFt": 1950,
+       "lossFt": 1950,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave high camp",
+         "detail": "Light alpine-start pack; rope and rack carried, camp gear cached."
+        },
+        {
+         "time": "~7:30 AM",
+         "label": "Reach the Noyes/Seattle notch",
+         "detail": "Ridge saddle gained via scree slopes above camp."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Traverse scree to the Meany ridge",
+         "detail": "Loose, exposed cross-country traverse — the slowest non-technical section."
+        },
+        {
+         "time": "~11:00 AM",
+         "label": "Lead the roped pitch",
+         "detail": "Low Class 5.2 rock, loose but with good gear placements; one pitch."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Summit",
+         "detail": "~5.6 hrs camp-to-summit."
+        },
+        {
+         "time": "After dark",
+         "label": "Back at camp",
+         "detail": "Two rappels off the summit block plus the long scree descent make for a ~14.5-hr round trip."
+        }
+       ],
+       "objective": "Climb Mount Meany via the Noyes-Meany col and NE face, return to camp"
+      },
+      {
+       "n": 5,
+       "note": "A relaxed, later-starting day after the long summit push — sleep in, then descend back through Low Divide toward Sixteenmile Camp with leisurely stream-crossing breaks.",
+       "hours": 6.1,
+       "miles": 6,
+       "title": "Descend toward Sixteenmile Camp",
+       "gainFt": 0,
+       "lossFt": 300,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach Sixteenmile Camp"
+      },
+      {
+       "n": 6,
+       "note": "A long final day retracing the valley trail back to the car, often in showery weather; the biggest mileage day of the trip but on easy, well-graded tread.",
+       "hours": 7.8,
+       "miles": 12,
+       "title": "Hike out to trailhead",
+       "gainFt": 0,
+       "lossFt": 600,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the North Fork Quinault trailhead"
+      }
+     ],
+     "totalNote": "A 6-day, ~42-mile round-trip backpack (roughly 9,300 ft of cumulative gain and loss) via the North Fork Quinault River and Seattle Basin, with a single long, technical summit day involving a low-5th-class pitch and two rappels."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,178 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "ice_grade",
+   "path": [],
+   "fact": "Ice grade"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach glaciers / camp sequence"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "hazards",
+   "path": [
+    3
+   ],
+   "fact": "Approach glaciers / camp sequence"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach glaciers / camp sequence"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Approach glaciers / camp sequence"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach glaciers / camp sequence"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Approach glaciers / camp sequence"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach glaciers / camp sequence"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Approach glaciers / camp sequence"
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "column": "descent",
+   "path": [],
+   "fact": "Summit-day duration"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "before": {
+    "ice_grade": "WI3-4",
+    "approach": "From the Mowich Lake trailhead (no public road access since the SR 165 Fairfax Bridge closed permanently in April 2025, so the lake is now a long walk in from another park entrance), follow the Wonderland Trail roughly 3-4 miles through Spray Park, passing Spray Falls. Where the Wonderland Trail begins to descend toward the Carbon River, leave it and head cross-country southeast between Echo Rock and Observation Rock, picking up a climbers' path onto the lower slopes of Ptarmigan Ridge. Continue ascending the ridge's lower apron until it narrows above Observation Rock; established bivy sites (some with old wind-break rock walls) sit around 9,600-10,300 ft near the base of the North Mowich/Edmunds Glaciers, used as camps for Mowich Face, Edmunds Headwall, and Ptarmigan Ridge alike. From camp, drop and traverse across the North Mowich Glacier (roped, watch for recent rockfall debris crossing the ice) to gain the base of the Mowich Face proper. This is a genuinely long, remote approach with no maintained trail for the upper two-thirds — self-sufficiency and solid navigation are required, and there's no water above Spray Park except melted snow.",
+    "hazards": [
+     "Sustained steep ice/snow with multiple line options",
+     "Serac and rockfall hazard on the face",
+     "Remote NW commitment with complex descent",
+     "Roped glacier travel on the approach — the route drops onto the Mowich Glacier and ascends the North Mowich to camp, with crevasses that thin snow bridges can hide. The bergschrund below the face is frequently not passable direct and has to be turned, so budget time for finding a way through."
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "High multi-day fitness for approach plus a sustained multi-pitch ice face",
+      "packWeight": "40-50 lb for a multi-day remote ascent with a full technical ice rack"
+     },
+     "approachTime": "6-10 hrs from Mowich Lake to the base of the face via the North/South Mowich glaciers",
+     "requiredSkills": [
+      "Sustained steep ice climbing (multiple pitches, various lines)",
+      "Serac and rockfall hazard judgment across a broad face",
+      "Remote, complex descent route-finding",
+      "Advanced crevasse rescue on approach glaciers"
+     ],
+     "experienceLevel": "Expert alpinist - partner needs strong steep-ice credentials and comfort choosing among multiple committing line options on a broad, complex face"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Volcanic stratovolcano; rapidly changing weather, high winds, whiteouts common",
+      "probability": "Broad NW exposure means the whole face is loaded/scoured together after storms"
+     },
+     "exposure": "High - sustained steep ice/snow with multiple serac and rockfall zones, plus a remote and complex descent",
+     "avalanche": {
+      "zone": "West Slopes South (NWAC) - no route-specific bulletin for this remote NW-side face",
+      "byMonth": {
+       "May": "Considerable",
+       "July": "Low",
+       "June": "Moderate"
+      }
+     },
+     "crevasses": "Crevasse navigation on the North/South Mowich approach glaciers, secondary to the face's own serac/rockfall hazard"
+    },
+    "pitch_detail": [
+     {
+      "grade": "Glacier",
+      "notes": "From the bivy sites on lower Ptarmigan Ridge (about 9,600 ft, near the North Mowich and Edmunds glaciers), rope up and drop onto the North Mowich Glacier and cross it to the foot of the face. Watch for fresh rockfall debris on the ice: it marks the fall lines coming off the face. Start in the dark so the face is climbed before sun hits it.",
+      "pitch": "Approach to base"
+     },
+     {
+      "grade": "Crevassed, snow bridge",
+      "notes": "The bergschrund under the central face is large and can be impassable late season. It is usually bypassed through a rock band on the climber's left; earlier in the year a snow bridge may go after weaving around the biggest crevasses. Belay the crossing if the bridge is thin.",
+      "pitch": "Bergschrund"
+     },
+     {
+      "grade": "35–45° snow",
+      "notes": "The lower two-thirds of the face runs at roughly 35–42° on solid snow in good conditions, climbed with running protection on pickets. Near 12,000 ft the surface turns to harder ice and demands more careful technique. The whole face is exposed to rockfall and ice shards; climbing before the sun arrives reduces but does not remove the hazard.",
+      "pitch": "Mowich Face"
+     },
+     {
+      "crux": true,
+      "grade": "40–60° snow/ice",
+      "notes": "Around 12,500 ft the line splits. The original (Grade III) cuts left into an hourglass of snow, ice and rock, gains a snow ledge around the rock, then a 40–50° ramp. The harder (Grade IV) variation cuts right over one or two AI2–3 ice steps and 4–6 pitches of 50–60° snow. Wrong gullies here dead-end in cliffs; carry screws.",
+      "pitch": "Upper face variations"
+     },
+     {
+      "grade": "Steep snow, windlip",
+      "notes": "The face tops out on a bench near 13,300 ft; high up a windlip or choke often needs a short traverse on firmer snow. From the bench, slushy sun cups or penitentes lead to Liberty Cap (14,112 ft). The descent is a carryover down the Emmons-Winthrop or Disappointment Cleaver, not the face.",
+      "pitch": "Exit to Liberty Cap"
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Mowich Lake, Spray Park and the Ptarmigan Ridge camp, then across the North Mowich Glacier",
+      "notes": "Mowich Lake Road is unpaved and seasonal. In a normal year it opens well after the roads on the east and south sides of the park — commonly not until July — and closes with the first significant snow. Since April 2025, though, the SR 165 Fairfax Bridge that carried the only public road to it has been closed permanently to cars, bikes and walkers, so Mowich Lake itself is now a long wilderness walk from another park entrance.\n\nFrom Mowich Lake, follow the Wonderland Trail roughly 3-4 miles through Spray Park, passing Spray Falls. Where the Wonderland begins to descend toward the Carbon River, leave it and head cross-country southeast BETWEEN ECHO ROCK AND OBSERVATION ROCK, picking up a climbers' path onto the lower slopes of Ptarmigan Ridge.\n\nCamps sit on the ridge between roughly 9,600 and 10,300 ft, some with old rock wind walls; these serve the Mowich Face, the Edmunds Headwall and Ptarmigan Ridge alike. From camp you DROP and traverse the North Mowich Glacier, roped, watching for fresh rockfall debris on the ice, to gain the base of the face.\n\nThere is no water above Spray Park and no maintained trail for the upper two-thirds of this approach.",
+      "season": "Roughly May-Jun for ice; the face bares out and starts shedding rock as it warms",
+      "hazards": [
+       "Sustained steep ice and snow with multiple line options and no obvious separation between them",
+       "Serac and rockfall hazard on the face; the North Mowich crossing collects the debris",
+       "A bergschrund that is frequently impassable direct and must be turned",
+       "Roped glacier travel with crevasses under thin snow bridges on both the drop from camp and the return",
+       "No walk-off: topping out commits the party to a carryover and a car shuttle",
+       "Road access on this side has been closed since the April 2025 Fairfax Bridge closure"
+      ],
+      "baseFinding": "TWO NAMED ROCKS ARE THE ONLY HARD MARKERS ON THE WHOLE CROSS-COUNTRY SECTION, AND THEY WORK IN CLOUD BECAUSE THEY ARE BIG AND THEY ARE A PAIR. You leave the Wonderland Trail and go BETWEEN ECHO ROCK AND OBSERVATION ROCK. Not past one of them — between the two. If you can only see one rock, you do not yet know which one it is.\n\nTHE SECOND THING IS COUNTER-INTUITIVE AND IT IS WHERE PARTIES GO WRONG: FROM HIGH CAMP YOU GO DOWN. Camp is on Ptarmigan Ridge; the face is across the North Mowich Glacier from it. If you leave camp and start climbing, you are on Ptarmigan Ridge, which is a different route to a different top-out. Losing height off the ridge is correct and is the single clearest signal that you are on this climb and not its neighbour.\n\nTHE BERGSCHRUND IS THE ARRIVAL AND IT IS FREQUENTLY NOT PASSABLE DIRECT. It has to be turned, so budget time for looking rather than treating the schrund as a formality. Reaching a schrund you cannot cross straight over means you are probably in the right place.\n\nTHIS IS THE UMBRELLA FACE, NOT A SINGLE LINE, AND THAT IS THE MOST IMPORTANT THING TO CARRY IN. Four separate climbs share this wall and this camp — the North Mowich Headwall, the Central Mowich Face, the Edmunds Headwall, and Ptarmigan Ridge above and to the side of them. They are told apart by WHICH GLACIER you cross from camp and by WHAT THE FIRST GROUND ABOVE THE SCHRUND IS, not by the walk in, which is identical for all of them. Decide which one you are doing before you leave camp in the dark; there is roughly 4,000 ft of 40 to 55 degree ice and mixed ground above, and being one line out is not a thing you discover early.\n\nWHAT RETREAT LOOKS LIKE, BECAUSE IT IS NOT THE WAY YOU CAME: there is no walk-off from the top of this face. Topping out commits you to a carryover down the far side of the mountain to Paradise or White River and a shuttle back. Backing off means reversing the North Mowich Glacier, climbing about 1,000 ft of scree and talus near Observation Rock, and walking out through Spray Park."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "before": {
+    "descent": "Descend the climbing route in reverse via Disappointment Cleaver and Ingraham Glacier back to Ingraham Flats, then continue down the Cowlitz Glacier and Muir Snowfield to Camp Muir and the trail to Paradise. Remove crampons on the descent of the Cleaver itself once snow conditions permit. Total descent 7.5 miles and 8-10 hours."
+   }
+  }
+ ]
+}

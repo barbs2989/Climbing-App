@@ -1,0 +1,36 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_mystery_standard",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Where camping is allowed"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_mystery_standard",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass or America the Beautiful Pass required for parking at the Upper Dungeness Trailhead (USFS); once inside Olympic National Park, a wilderness camping permit (with its own fee) is required for overnight stays.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "NPS wilderness permit required; bear canisters are mandatory for food/scented items in Royal Basin; camp only in designated sites (Royal Creek, Lower Royal Meadow, or Royal Lake); no campfires above 3,500 ft; follow Leave No Trace practices throughout.",
+     "permit": "Royal Basin is a quota/reservation area in Olympic National Park - permits for the May 15-October 15 season are released around April 15 via recreation.gov (10:00 AM EDT / 7:00 AM PDT); contact the Olympic Wilderness Information Center (360-565-3100) for current availability.",
+     "group_limit": 12,
+     "landManager": "Mixed jurisdiction: Olympic National Forest (Buckhorn Wilderness) for the trailhead and lower approach trail, transitioning to Olympic National Park at the park boundary near Royal Basin.",
+     "land_manager": "Mixed jurisdiction: Olympic National Forest (Buckhorn Wilderness) for the trailhead and lower approach trail, transitioning to Olympic National Park at the park boundary near Royal Basin.",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass (or America the Beautiful Pass) at the Upper Dungeness Trailhead; NPS wilderness permit required once inside Olympic National Park.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    }
+   }
+  }
+ ]
+}

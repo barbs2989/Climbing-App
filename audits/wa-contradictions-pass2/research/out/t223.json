@@ -1,0 +1,284 @@
+{
+ "file": "t223.json",
+ "results": [
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "fact": "Where the two rappels are, and the descent line",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Ascent: two rappels down the west side of the North Summit to regain the crest. Descent: rappel each of the two main gendarmes on the west side, then scramble down and around the west slope, bypassing the North Summit, to the high camp.",
+   "evidence": "The only detailed account found (the peak's SummitPost page) describes two rappels on the west side from the north summit to regain the ridge on the ascent, a couple of 5.1-5.2 pitches on each of two main gendarmes, and on descent rappelling each gendarme then scrambling down and around the west slope on boulders and scree, avoiding the north summit. Inside the row, rappels, beta, pitch_detail[1-2], descent, hazards and watch_out already agree with that; the rappel table notes, descent_text and two breakdown notes were the outliers. No second independent route description exists online (Mountain Project lists the line with no detail).",
+   "sources": [
+    "https://www.summitpost.org/remmel-mountain/153242",
+    "https://www.mountainproject.com/area/109095663/mt-remmel"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "First of two rappels down the main gendarmes on the ridge's west side.",
+     "replace": "First descent rappel, down the west side of the main gendarme nearer the summit.",
+     "id": "wa_remmel_mountain_nw_ridge",
+     "fact": "Where the two rappels are, and the descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Second rappel; total rappelling",
+     "replace": "Second descent rappel, down the west side of the other main gendarme; total rappelling",
+     "id": "wa_remmel_mountain_nw_ridge",
+     "fact": "Where the two rappels are, and the descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "On the descent, the gendarmes are rappelled or downclimbed; how many rappels the return along the ridge needs is not established.",
+     "replace": "On the descent, each of the two main gendarmes is rappelled on its west side, and the party then drops onto the west slope instead of returning over the North Summit.",
+     "id": "wa_remmel_mountain_nw_ridge",
+     "fact": "Where the two rappels are, and the descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "to the first gendarme, rappel or downclimb it, continue down the ridge to the second gendarme, rappel it, and continue 3rd-class scrambling back to the high camp at ~7,500 ft;",
+     "replace": "to the first gendarme, rappel its west side, continue down the ridge to the second gendarme, rappel it, then scramble down and around the west slope on boulders and scree, bypassing the North Summit, back to the high camp at ~7,500 ft;",
+     "id": "wa_remmel_mountain_nw_ridge",
+     "fact": "Where the two rappels are, and the descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "Leave the anchor in good order: the descent comes back this way.",
+     "replace": "The descent does not come back this way: it leaves the ridge below the gendarmes and bypasses the North Summit on the west slope.",
+     "id": "wa_remmel_mountain_nw_ridge",
+     "fact": "Where the two rappels are, and the descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "anchors on both gendarmes and the North Summit.",
+     "replace": "anchors on both gendarmes.",
+     "id": "wa_remmel_mountain_nw_ridge",
+     "fact": "Where the two rappels are, and the descent line"
+    }
+   ]
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "pitches = 4 (a couple of short pitches on each of two gendarmes); breakdown rows are sections, not pitch numbers",
+   "evidence": "The peak's SummitPost account describes a couple of 5.1-5.2 pitches on each of the two main gendarmes (about four), matching pitches=4 and the breakdown notes; Mountain Project lists 3 pitches, so the exact count is soft. The conflict came from numbering the breakdown sections 1-3 as if they were pitches (row 1 is a 3rd-class scramble), so the section labels are renamed and the count left alone.",
+   "sources": [
+    "https://www.summitpost.org/remmel-mountain/153242",
+    "https://www.mountainproject.com/area/109095663/mt-remmel"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "pitch"
+     ],
+     "expect": "1",
+     "value": "Ridge to North Summit",
+     "id": "wa_remmel_mountain_nw_ridge",
+     "fact": "Pitch count"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "pitch"
+     ],
+     "expect": "2",
+     "value": "Gendarme 1",
+     "id": "wa_remmel_mountain_nw_ridge",
+     "fact": "Pitch count"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "pitch"
+     ],
+     "expect": "3",
+     "value": "Gendarme 2",
+     "id": "wa_remmel_mountain_nw_ridge",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "fact": "Total loss vs gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states a car-to-car descent figure for this route; the standing rule forbids setting loss_ft equal to gain_ft on out-and-back reasoning. 1,200 ft looks like summit-to-camp loss only. Would be settled by a trip record giving the total descent for the Remmel Lake / NW Ridge outing.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "fact": "Direction of the Robinson Creek Trail from the trailhead",
+   "verdict": "fixed",
+   "correct_value": "The Robinson Creek Trail runs north up the Robinson Creek valley from the trailhead",
+   "evidence": "The trail's Forest Service page describes it running up the river bottom to a northern terminus 23 miles out, with the pass's north side continuing into the Middle Fork Pasayten; WTA describes it climbing up the Robinson Creek valley past the Beauty Creek bridge at 2.8 mi to Robinson Pass at 9.5 mi, beyond which it descends into the Pasayten valley. The route's own pins put the summit north-northwest of the trailhead. 'South' is wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/robinson-creek-middle-fork-trail",
+    "https://www.wta.org/go-hiking/hikes/robinson-creek"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "follow the maintained Robinson Creek Trail south/southeast,",
+     "replace": "follow the maintained Robinson Creek Trail north,",
+     "id": "wa_robinson_mountain_southeast_ridge",
+     "fact": "Direction of the Robinson Creek Trail from the trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Trail (#478) south for about 2.8 miles",
+     "replace": "Trail (#478) north for about 2.8 miles",
+     "id": "wa_robinson_mountain_southeast_ridge",
+     "fact": "Direction of the Robinson Creek Trail from the trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "fact": "Direction of the turn onto the Beauty Creek Trail",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The approach says to turn right (northeast/uphill) onto the Beauty Creek Trail, but the summit pin lies north-west of the junction and approach_variants says the path stays on the west/north-west side of Beauty Creek; one trip report places the hidden path just west of the bridge, while approach_variants tells the reader to look on climber's right. No second source states the turn direction; a map-based description of the junction would settle it.",
+   "sources": [
+    "https://onehikeaweek.com/2021/08/21/beauty-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_west_craggy_peak_standard_route",
+   "fact": "Parking pass at the Copper Glance trailhead",
+   "verdict": "bivy_zone_list",
+   "correct_value": "No fee / no pass at the Copper Glance Trailhead",
+   "evidence": "The Forest Service trailhead page states no fees are required at this site, agreeing with permit, access and road fields; the only outlier is bivy[0].permit (the Copper Glance Lake camp, which does serve this route), whose Northwest Forest Pass sentence should be dropped by the camping clean-up. One 2025 hiker report claims a pass is needed, so the official page is preferred. No patch written to bivy by rule.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/copper-glance-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Aspect of the standard scramble line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources confirm the summit lies about 1.5 mi south of Anderson Pass and the scramble starts from the pass, but none states which faces the line climbs; the pins suggest north-side terrain, which conflicts with the 'south- and west-facing' aspect text. A route description naming the slopes or ridge followed from Anderson Pass would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Parking pass at the Dosewallips road end",
+   "verdict": "fixed",
+   "correct_value": "No parking pass or park entrance fee at the Dosewallips road end; only the wilderness camping permit costs money",
+   "evidence": "WTA's Dosewallips River Road page lists the parking pass/entry fee as none; a backpacking guide to the Dosewallips trail says the trailhead pass is none and no parking passes are needed, and a third hiking site says the road enters the park a few miles in without requiring a park entrance fee. The access fields claiming a $30 entrance fee were the outliers.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/dosewallips-river",
+    "https://www.iheartpacificnorthwest.com/backpack-dosewallips-river-trail/",
+    "https://modernhiker.com/hike/dosewallips-river-road/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "value": "None required to park at the Dosewallips road end, and no park entrance fee is charged on this approach.",
+     "id": "wa_white_mountain_olympics_scramble",
+     "fact": "Parking pass at the Dosewallips road end"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "Standard Olympic NP entrance fee: $30 per vehicle (7-day pass), $15 per person for hikers/cyclists without a vehicle, or a $55 Olympic NP annual pass / $80 America the Beautiful annual pass.",
+     "value": "No parking or park entrance fee at the Dosewallips road end; the cost is the wilderness camping permit.",
+     "id": "wa_white_mountain_olympics_scramble",
+     "fact": "Parking pass at the Dosewallips road end"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply.",
+     "replace": "only the wilderness camping permit applies.",
+     "id": "wa_white_mountain_olympics_scramble",
+     "fact": "Parking pass at the Dosewallips road end"
+    }
+   ]
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Bailout pass",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Anderson Pass",
+   "evidence": "The route's waypoints, approach variant, itinerary and aspect all leave and return via Anderson Pass on the West Fork Dosewallips; the Mountaineers route page places the summit about 1.5 mi south of Anderson Pass with the approach up the West Fork Dosewallips. La Crosse Pass is on neither the approach nor the route.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "Descend to La Crosse Pass or the nearest trail",
+     "replace": "Descend to Anderson Pass or the nearest trail",
+     "id": "wa_white_mountain_olympics_scramble",
+     "fact": "Bailout pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "fact": "Stated recorded distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 27.36 is the one-way figure (17 mi) and the prose's 54.72 km is labelled as the round trip, exactly double; the two agree.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

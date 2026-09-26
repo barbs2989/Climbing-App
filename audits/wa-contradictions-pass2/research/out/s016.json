@@ -1,0 +1,141 @@
+{
+ "file": "s016.json",
+ "results": [
+  {
+   "id": "wa_hagan_mountain_south",
+   "fact": "Rock protection",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found three more ascent accounts: a solo party describes the summit as mostly class 2 with a short exposed class 4 bit, climbed in approach shoes with no rope; another party says several members roped up for the final Class 3-4 rock; a third notes exposed class 3-4 climbing and old rappel slings in the notch. None says whether rock protection (cams/nuts) is carried or placed, so neither pro_needs ('rather than rock protection') nor the small-rack fields can be confirmed. Would settle: an account stating what protection a roped party placed on the summit rock.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/watson-bacon-hagan-blum-traverse-solo",
+    "https://trailcatjim.com/blum-hagan-traverse-mount-blum-mount-hagan/",
+    "https://drdirtbag.com/2021/07/29/blum-hagan-bacon/",
+    "https://en.wikipedia.org/wiki/Hagan_Mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "fact": "Permit for the camps",
+   "verdict": "fixed",
+   "correct_value": "Watson Lakes are Forest Service land (Noisy-Diobsud Wilderness); the Diobsud Lakes camps are inside North Cascades National Park, so the itinerary's NPS backcountry permit is correct for this route's camp and access.landManager/permit/rules must say so.",
+   "evidence": "The NPS Land Resources Division boundary layer places all four Diobsud lakes (about 4,430, 4,820, 5,120 and 5,390 ft, located from the WDFW high-lakes record and OpenStreetMap lake polygons, elevations from USGS EPQS) inside North Cascades National Park, while Upper Watson Lake falls outside the park. Independently, the USFS wilderness boundary layer contains Upper Watson Lake in the Noisy-Diobsud Wilderness but none of the Diobsud lakes. The NPS lists a Bacon Peak cross-country zone with a 6-person party limit, consistent with itinerary.cal.",
+   "sources": [
+    "https://services1.arcgis.com/fBc8EJBxQRMcHlei/arcgis/rest/services/NPS_Land_Resources_Division_Boundary_and_Tract_Data_Service/FeatureServer/2",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0",
+    "https://wdfw.wa.gov/fishing/locations/high-lakes/diobsud-middle",
+    "https://www.openstreetmap.org/relation/11597574",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.fs.usda.gov/r06/mbs/recreation/noisy-diobsud-wilderness"
+   ],
+   "patches": [
+    {
+     "id": "wa_hagan_mountain_south",
+     "fact": "Permit for the camps",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "find": "Approach and camps (Watson Lakes, Diobsud Lakes) are on Mount Baker-Snoqualmie National Forest land within the Noisy-Diobsud Wilderness (Mt. Baker Ranger District);",
+     "replace": "The trail and the Watson Lakes camps are on Mount Baker-Snoqualmie National Forest land within the Noisy-Diobsud Wilderness (Mt. Baker Ranger District); the Diobsud Lakes camps lie just inside North Cascades National Park;"
+    },
+    {
+     "id": "wa_hagan_mountain_south",
+     "fact": "Permit for the camps",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "If camping within the North Cascades National Park boundary near the summit,",
+     "replace": "If camping within the North Cascades National Park boundary (the Diobsud Lakes camps and the benches near the summit),"
+    },
+    {
+     "id": "wa_hagan_mountain_south",
+     "fact": "Permit for the camps",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Some approaches cross into North Cascades National Park land on the upper mountain,",
+     "replace": "The route crosses into North Cascades National Park land at the Diobsud Lakes and on the upper mountain,"
+    }
+   ]
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "fact": "Self-issue wilderness permit at the trailhead kiosk",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Split from the camp-permit finding: waypoints[0].note says a self-issue Noisy-Diobsud Wilderness permit is at the kiosk while access.permit says no permit is needed for day use. The Forest Service Noisy-Diobsud and Watson Lakes trailhead pages require a recreation pass and designated sites at Watson Lakes but do not mention a self-issue permit; only a generic Forest Service line says day users 'may need' one. Would settle: the Mt. Baker Ranger District stating whether the Watson Lakes trailhead has a self-issue wilderness registration.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/noisy-diobsud-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/watson-lakes-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "fact": "Which approach the route takes (Baker River/Sulphide Creek vs Watson Lakes/Diobsud Lakes)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach column, descent_text and approach_logistics.trailhead describe a Baker River Trail #606 / Sulphide Creek bushwhack via Hidden Lake, while the itinerary, timing, waypoint directions and road describe the Watson Lakes trailhead (FR 1107022) and a Diobsud Lakes camp; waypoints[0] is named Baker River Trailhead but its note and directions describe the Watson Lakes trailhead. Both lines are used by traverse parties, so choosing one and rewriting the other set is a whole-section rewrite, not a minimal patch. Would settle: an owner decision on which approach this row presents.",
+   "sources": [
+    "https://engineeredforadventure.com/watson-blum-traverse/",
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Rope needed for the summit rappel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Archived route pages for the peak's documented lines show every one is technical: South Face 5.9+ (or 5.7 A0) Grade III, five pitches; North Ridge 5.7+ Grade III, seven pitches; both recommend double ropes for the rappels and found no fixed anchors. The peak overview says there are at least three difficult and no easy routes. No source describes a southwest scramble, its rappel, anchor or length, so the 100-150 ft figure and the 30 m rope cannot be checked. Would settle: identifying the actual route this row describes (likely none exists as a scramble).",
+   "sources": [
+    "https://web.archive.org/web/2023/https://www.summitpost.org/half-moon/153612",
+    "https://web.archive.org/web/2023/https://www.summitpost.org/south-face/163682",
+    "https://web.archive.org/web/2023/https://www.summitpost.org/north-ridge/163686"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Approach line to the base (over Kangaroo Pass vs talus ramp left of the pass)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Confirmed on the route pages themselves: the scree gully north of Half Moon from about 2 miles leads to the deep notch that is the base of the North Ridge, while the South Face approach goes over Kangaroo Pass and traverses east below Wallaby to cross the ridge into the basin south of the peak. Each approach belongs to a different documented route and neither page describes a southwest scramble, so which approach this row should carry cannot be settled. Would settle: identifying which documented route this row is.",
+   "sources": [
+    "https://web.archive.org/web/2023/https://www.summitpost.org/south-face/163682",
+    "https://web.archive.org/web/2023/https://www.summitpost.org/north-ridge/163686"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Distance and time from the car to Kangaroo Pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route page gives Kangaroo Pass as 3 miles from the hairpin; a 2021 hiker's GPS stats give 6.91 miles and 5 hours round trip to the pass (about 3.5 mi one way); another party reports 4.4 miles round trip to Wallaby's summit via the pass, which implies the pass is closer to 2 miles. The straight-line distance from the stored trailhead to the pass pin is about 1.3 mi. Figures range from ~2 to ~3.5 mi one way with no two agreeing, and no source gives a time to the pass. Would settle: a measured track to the pass from the hairpin.",
+   "sources": [
+    "https://web.archive.org/web/2023/https://www.summitpost.org/half-moon/153612",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-11-3111130648",
+    "https://onehikeaweek.com/2018/05/27/wallaby-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Summit time within the day",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: timing.summitTimeHrs is now null in the current row, so it no longer claims the car-to-car 10.5 hr as the summit time.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{"file": "s061.json", "results": [
+ {"id": "wa_the_west_face", "fact": "Pitch count", "verdict": "unresolved", "correct_value": null,
+  "evidence": "A guide service and one route database give 6 pitches; one listing gives 5 pitches/600 ft; a 2024 trip report climbed it in 5 pitches (linking the start), and a second party's report describes about 4 pitches with a full 70 m final pitch. The count depends on linking and no two sources give the same pitch-by-pitch breakdown, so a sixth row cannot be written and 6 cannot be dropped. A published topo with a numbered pitch list would settle it.",
+  "sources": ["https://ncmountainguides.com/routes/climbing-routes/north-early-winter-spire-west-face", "https://www.francisbaileyh.com/2024/10/11/north-early-winter-spire-west-face-5-11a/", "https://www.jeffreyjhebert.com/adventures/w-face-on-n-early-winters-spire", "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772605"],
+  "patches": []},
+ {"id": "wa_the_west_face", "fact": "Route length", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Figures found remain 500 ft (one route database), ~600 ft (a listing surfaced by search, not fetchable), 200 m (another database) and ~610 ft from summed pitch lengths. Trip reports fetched give no total. No two independent sources state the same length; a topo-derived face height or a second route page with a length would settle it.",
+  "sources": ["https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772605", "https://www.mountainproject.com/route/105847147/the-west-face"],
+  "patches": []},
+ {"id": "wa_chockstone_route", "fact": "Pitch count", "verdict": "unresolved", "correct_value": null,
+  "evidence": "One route database gives 6 pitches; a detailed trip report climbed it in 4 pitches; two other trip reports describe 'multiple pitches' without a count. The number depends on how the gully walking and simul-climbed sections are split. A second source giving 5 or 6 pitches would settle it.",
+  "sources": ["https://trailcatjim.com/north-early-winters-spire-via-chockstone-route/", "https://spokalpine.com/2016/09/12/north-early-winters-spire-chockstone-route-ii-5-7/", "https://gethighonaltitude.com/2022/07/01/north-early-winter-spire-chockstone-route/"],
+  "patches": []},
+ {"id": "wa_chockstone_route", "fact": "Approach distance to the gully", "verdict": "fixed", "correct_value": "Summit about 2.5 mi from the trailhead; the gully-base and crux pin distances are unsourced and impossible (shorter than the 1.5+ mi of trail walked first), so unknown",
+  "evidence": "A trip report on this route gives 5 miles round trip (about 2.5 mi each way) from the Blue Lake Trailhead; a GPS route for the Early Winters Spires via the Blue Lake Trail gives 2.5 mi one way. The forest service trail page puts the climbers' junction at about 1.7 mi, so pins at 0.6 and 0.8 mi cannot be right; with no source for their own distances they are set to unknown rather than interpolated.",
+  "sources": ["https://trailcatjim.com/north-early-winters-spire-via-chockstone-route/", "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/", "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"],
+  "patches": [
+   {"id": "wa_chockstone_route", "fact": "Approach distance to the gully", "op": "set", "column": "waypoints", "path": [3, "distMi"], "expect": 1, "value": 2.5},
+   {"id": "wa_chockstone_route", "fact": "Approach distance to the gully", "op": "set", "column": "waypoints", "path": [1, "distMi"], "expect": 0.6, "value": null},
+   {"id": "wa_chockstone_route", "fact": "Approach distance to the gully", "op": "set", "column": "waypoints", "path": [2, "distMi"], "expect": 0.8, "value": null}
+  ]},
+ {"id": "wa_chockstone_route", "fact": "Trailhead distance west of Washington Pass (waypoint note / approach_variants / trailheadDirection say 1.5 mi)", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "The forest service page places the trailhead about 0.25 mi beyond the Washington Pass Overlook; a hiking guide says just under a mile past the overlook; another page says the overlook is 0.8 mi east of the trailhead. Sources disagree and measure from the overlook, not the pass. A highway milepost for both the pass and the trailhead would settle it.",
+  "sources": ["https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail", "https://www.wta.org/go-hiking/hikes/blue-lake"],
+  "patches": []},
+ {"id": "wa_chockstone_route", "fact": "Blue Lake Trailhead elevation (waypoint 5,200 / approach_variants ~5,200 vs approach 5,400)", "discovered": true, "verdict": "fixed", "correct_value": "5,400 ft",
+  "evidence": "The USGS point elevation at the trailhead pin's own coordinates reads 5,380 ft; a trip report on this route gives the Blue Lake Trailhead at 5,400 ft. The row's approach text and the sibling West Face row already say 5,400 ft.",
+  "sources": ["https://epqs.nationalmap.gov/v1/json?x=-120.67436&y=48.518965&units=Feet&wkid=4326", "https://trailcatjim.com/north-early-winters-spire-via-chockstone-route/"],
+  "patches": [
+   {"id": "wa_chockstone_route", "fact": "Blue Lake Trailhead elevation", "op": "set", "column": "waypoints", "path": [0, "elev"], "expect": 5200, "value": 5400},
+   {"id": "wa_chockstone_route", "fact": "Blue Lake Trailhead elevation", "op": "replace_text", "column": "approach_variants", "path": [0, "notes"], "find": "From the Blue Lake Trailhead (~5,200 ft)", "replace": "From the Blue Lake Trailhead (~5,400 ft)"}
+  ]},
+ {"id": "wa_early_winter_couloir", "fact": "Hairpin trailhead elevation", "verdict": "unresolved", "correct_value": null,
+  "evidence": "The USGS point elevation at the trailhead pin's coordinates reads 5,151 ft, which sits between the stored 5,200 and the prose's 5,100 and cannot discriminate; no trip report or route page found states the hairpin's elevation. A second measured figure for the hairpin (or confirmation that the pin sits on the hairpin itself) would settle it.",
+  "sources": ["https://epqs.nationalmap.gov/v1/json?x=-120.64332&y=48.51454&units=Feet&wkid=4326"],
+  "patches": []},
+ {"id": "wa_clast_from_the_past", "fact": "Route grade vs crux pitch", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Searches found no second description of this route; the only route page carries the same 5.10b overall / 5.10c-d P2 mismatch, and the other crag database returned 403. A second route listing or trip report with a pitch grade would settle it.",
+  "sources": ["https://www.mountainproject.com/route/110931364/clast-from-the-past"],
+  "patches": []},
+ {"id": "wa_north_twin_sister_west_ridge", "fact": "Stay-left vs climber's-right on the ridge", "verdict": "fixed", "correct_value": "Keep climber's right (south) of the crest on the lower ridge; move climber's left (north) near the false summits",
+  "evidence": "A club route description keeps right of the crest on the lower ridge to a prominent crag, then climbs left to a headwall and over the false-summit crag; a guide service says the path is generally on climber's right; a 2014 trip report stayed on or south (climber's right) of the crest low down; a scramble write-up insists on staying left near the false summits. Both row claims are each half right; the 'west side' labels are wrong on a ridge climbed eastward.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/north-twin-sister-w-ridge", "https://www.adventurespiritguides.com/blog/post/northtwinsister", "https://trailcatjim.com/north-twin-sister-via-west-ridge-2014/", "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/"],
+  "patches": [
+   {"id": "wa_north_twin_sister_west_ridge", "fact": "Stay-left vs climber's-right on the ridge", "op": "replace_text", "column": "beta", "path": [], "find": "(staying generally on the climber's-right/west side to avoid the hardest moves)", "replace": "(keeping to climber's right of the crest on the lower ridge and moving to climber's left near the false summits, to avoid the hardest moves)"},
+   {"id": "wa_north_twin_sister_west_ridge", "fact": "Stay-left vs climber's-right on the ridge", "op": "replace_text", "column": "pro_tips", "path": [4], "find": "Stay left (west side) of the ridge crest near the false summits", "replace": "Stay climber's left of the ridge crest near the false summits"},
+   {"id": "wa_north_twin_sister_west_ridge", "fact": "Stay-left vs climber's-right on the ridge", "op": "replace_text", "column": "descent", "path": [], "find": "Reverse the West Ridge (stay left/west of the crest)", "replace": "Reverse the West Ridge (north of the crest near the false summits, south of it lower down)"},
+   {"id": "wa_north_twin_sister_west_ridge", "fact": "Stay-left vs climber's-right on the ridge", "op": "replace_text", "column": "partner_requirements", "path": ["requiredSkills", 1], "find": "staying on the correct/left side of the ridge — straying right", "replace": "staying on the correct side of the ridge, climber's left near the false summits — straying right there"}
+  ]}
+]}

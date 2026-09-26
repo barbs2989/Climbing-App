@@ -1,0 +1,1160 @@
+{
+ "batches": [
+  "b315.json",
+  "b316.json",
+  "b317.json",
+  "b318.json",
+  "b319.json",
+  "b320.json",
+  "b321.json"
+ ],
+ "routes_read": 18,
+ "routes": [
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "name": "Stoddard Buttress",
+   "area": "wa_mount_terror",
+   "contradictions": [
+    {
+     "fact": "Name/identity of the high camp the climb starts from",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Goodell Creek trailhead to Terror Camp in Crescent Creek Basin"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "Alpine start (~4:00 AM) from Terror Camp"
+      },
+      {
+       "field": "bivy[3].name",
+       "says": "Terror Basin camp"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "This is the SEPARATE Crescent Creek cross-country zone, not Terror Basin"
+      }
+     ],
+     "why": "The start is given as 'Terror Camp', while the camp list presents Terror Basin camp and Crescent Creek Basin camp as separate places in separate permit zones, so a climber can't tell which camp is meant.",
+     "internal_resolution": "The approach places 'Terror Camp' in Crescent Creek Basin (bivy[0], elev 6050), so the start should name Crescent Creek Basin camp.",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of gully rappels on the descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "West Ridge notch rappels (2x ~30m) then a loose gully with several more rappels back down to Crescent Creek Cirque"
+      },
+      {
+       "field": "descent_text",
+       "says": "descend a chossy, steep-snow gully with an overhanging chockstone rappel back into Crescent Creek Cirque"
+      }
+     ],
+     "why": "RAPPELS says 'several more' gully rappels, but the displayed descent names a single chockstone rappel in the gully.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux grade of the knife-edge finish",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "5.8"
+      },
+      {
+       "field": "grade",
+       "says": "Grade IV, 5.8"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "crux 5.8+ per the published account of the 1985 extension"
+      },
+      {
+       "field": "fa",
+       "says": "an extended/left-side finish variant was climbed by Stoddard July 14-17, 1985 and is known as \"North Face, Left Side\" (5.8+)"
+      }
+     ],
+     "why": "The route's own finish pitch quotes a 5.8+ crux taken from the 1985 variant, which fa describes as a separate line, while every grade column says 5.8.",
+     "internal_resolution": "The fa field treats the 1985 5.8+ finish as a separate variant, so the pitch note should not quote it as this route's crux.",
+     "needs_research": false
+    },
+    {
+     "fact": "Length of the low-fifth crest section",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "climbing thousands of feet of low-fifth to 5.8 rock"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Thousands of feet of low-fifth simul-climbing along the crest"
+      },
+      {
+       "field": "pitch_detail[1].lengthM",
+       "says": "304.8"
+      },
+      {
+       "field": "length_m",
+       "says": "762"
+      }
+     ],
+     "why": "The prose says 'thousands of feet' of low-fifth, but that row is 304.8 m (1,000 ft) and the whole route is only 762 m (2,500 ft).",
+     "internal_resolution": "length_m and the pitch rows add up to 762 m, so the 'thousands of feet' prose is the overstatement.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "name": "North Face / North Buttress",
+   "area": "wa_mount_terror",
+   "contradictions": [
+    {
+     "fact": "Which climbers path the approach uses from the Terror Creek cairn",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Do not continue straight past the cairn; that fainter track follows Terror Creek toward Crescent Creek Basin and is a separate (and notoriously brushier) approach. Instead take the hard right and start up the steep, well-beaten Terror Basin boot path"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "follow the old road bed then the Terror Creek climber's path — a notoriously brushy, hard-to-follow route with a creek crossing — up to a bench camp around 6,000 ft"
+      },
+      {
+       "field": "itinerary.days[3].note",
+       "says": "out the Terror Creek climber's path to the trailhead"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "the unmarked turnoff onto the Terror Basin climbers' path"
+      }
+     ],
+     "why": "The approach says not to take the Terror Creek track, calling it a separate and brushier line, but the itinerary sends Day 1 and the hike-out up that path and describes it the way the approach describes the path to avoid.",
+     "internal_resolution": "The approach, approach_variants[0] and waypoints[1] all use the well-beaten Terror Basin boot path, so the itinerary (and timing.sectionBreakdown notes copied from it) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Line from Terror Basin to the base of the North Face (waypoints)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].name",
+       "says": "Terror Glacier crossing"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Crevasse hazard traversing toward the north face base"
+      },
+      {
+       "field": "approach",
+       "says": "The technical start of the North Face is reached from the Crescent Creek Basin camp by crossing the Ottohorn-Himmelhorn col and descending the Mustard Glacier into McMillan Cirque"
+      },
+      {
+       "field": "itinerary.days[2].note",
+       "says": "cross the Otto-Himmel col and traverse below the Twin Spires and the Rake to reach the base of the North Face"
+      }
+     ],
+     "why": "The waypoints go from Terror Basin across the Terror Glacier to the face, 1 mile, with no Barrier, Crescent Creek Basin or Otto-Himmel col. The approach and itinerary reach the face over the Otto-Himmel col and the Mustard Glacier.",
+     "internal_resolution": "The approach, approach_variants[0].baseFinding, the itinerary and the gear (Mustard Glacier) all agree, so the waypoint list is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance from the trailhead to the Terror Creek cairn",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3.5"
+      },
+      {
+       "field": "approach",
+       "says": "along Goodell Creek for roughly 4 to 4.5 miles — gentle grade, easy walking — to a stone-cairn/arrow junction near 1,700 ft"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "The roughly four miles of overgrown roadbed to the cairn"
+      }
+     ],
+     "why": "The cairn waypoint is at 3.5 mi, while the approach puts it at 4-4.5 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Terror Basin camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the standard high camp is in a gravelly, wildflower basin about 400 ft below and beyond the saddle, around 5,700 ft"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "5800"
+      },
+      {
+       "field": "bivy[3].elev",
+       "says": "5800"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "up to a bench camp around 6,000 ft"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach the 6,000 ft basin below the Southern Pickets"
+      }
+     ],
+     "why": "The Day 1 camp is given as 5,700 ft in the approach and 6,000 ft in the itinerary, 300 ft apart.",
+     "internal_resolution": "The waypoint and bivy both say 5,800, and the approach says about 400 ft below the 6,200 ft saddle.",
+     "needs_research": false
+    },
+    {
+     "fact": "Length of the summit day",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "14"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "2:30 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[5].time",
+       "says": "~8:00 PM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[5].detail",
+       "says": "A 15+ hr day"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "one very long (14-15 hr) technical day"
+      }
+     ],
+     "why": "The schedule runs from 2:30 AM to about 8:00 PM, which is 17.5 hours, but the day is listed as 14 hours and described as 14-15 or '15+' hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent entry notch (Terror-Rake notch vs notch north of the Chopping Block)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "downclimb/scramble the West Ridge crest westward toward the low notch between Terror and The Rake, where a large chockstone marks the top of the descent gully system"
+      },
+      {
+       "field": "descent_text",
+       "says": "Do not rappel into the low notch north of the sub-peak known as the Chopping Block — the correct line into Crescent Creek Basin is about 100 yards north of that notch, at a flat, bivy-site shelf on the ridge"
+      }
+     ],
+     "why": "The same descent text puts the gully entry at the chockstone in the Terror-Rake notch and also 100 yards north of a notch by the Chopping Block, which is a separate peak about 2 km south.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cell coverage",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "comms",
+       "says": "has been reported reachable from near the summit — a call from the summit area was critical in a 2009 rescue"
+      },
+      {
+       "field": "emergency.notes",
+       "says": "No cell coverage in the Pickets."
+      }
+     ],
+     "why": "COMMS reports a signal near the summit, while EMERGENCY says there is no coverage in the Pickets.",
+     "internal_resolution": "comms gives a specific reported instance, so emergency.notes should say coverage is unreliable rather than none.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "name": "West Ridge",
+   "area": "wa_mount_terror",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6000"
+      },
+      {
+       "field": "approach",
+       "says": "total approach elevation gain to basecamp is nearly 6,000 ft"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6050"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8151"
+      }
+     ],
+     "why": "gain_ft equals the approach gain to camp alone, but the summit day adds about 2,100 ft more (6,050 to 8,151), so total ascent is about 8,000+ ft.",
+     "internal_resolution": "The approach gain (about 6,000) plus camp-to-summit (about 2,100) gives about 8,100, so gain_ft 6000 is too low.",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of rappels above the notch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Two or three rappels in the gully, plus one or two above the notch, get parties down"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the summit tower is downclimbed or a short section rappelled back to the notch off existing sling anchors. One short step, not a sequence."
+      },
+      {
+       "field": "rappels",
+       "says": "Downclimb the summit tower or rap a short section"
+      }
+     ],
+     "why": "The base-finding text gives 'one or two' rappels above the notch, then says it is one short step, not a sequence.",
+     "internal_resolution": "rappels, descent and descent_text all describe one short optional rappel above the notch.",
+     "needs_research": false
+    },
+    {
+     "fact": "Camp the climb starts from",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "Early start from Terror Camp"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: approach to Terror Camp/Crescent Creek Basin"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "It is not the camp you climb Terror from"
+      }
+     ],
+     "why": "'Terror Camp' reads as the Terror Basin camp, which the bivy list says is not the camp you climb Terror from. The climb starts from Crescent Creek Basin.",
+     "internal_resolution": "The beta and approach both start from Crescent Creek Basin.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "name": "East Ridge",
+   "area": "wa_mount_terror",
+   "contradictions": [
+    {
+     "fact": "Avalanche terrain on the approach",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer route"
+      },
+      {
+       "field": "watch_out[7]",
+       "says": "Potential avalanche exposure on approach slopes—assess stability in spring; afternoon warming increases risk; early start essential"
+      }
+     ],
+     "why": "SAFETY rates avalanche N/A for the Jul-Sep route, while KNOWN HAZARDS lists avalanche exposure on the approach slopes, framed for a spring trip the route's season excludes.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "name": "West Ridge",
+   "area": "wa_ottohorn",
+   "contradictions": [
+    {
+     "fact": "Glacier used on the approach",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "Ice axe & crampons (glacier approach via Crescent Creek Basin/Mustard Glacier)"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Glacier travel gear for the Crescent Creek Basin/Mustard Glacier approach"
+      },
+      {
+       "field": "bail",
+       "says": "Do not use the north side of the col as an escape — it drops onto the Mustard Glacier"
+      },
+      {
+       "field": "approach",
+       "says": "From that camp, snow and small glacier slopes lead northwest in about an hour to the Ottohorn-Himmelhorn col"
+      }
+     ],
+     "why": "The gear fields say the approach uses the Mustard Glacier, but the approach stays on the south (Crescent Creek) side, and the bail and descent say to avoid the Mustard Glacier.",
+     "internal_resolution": "The approach, descent_text and bail all keep the route south of the col, so the Mustard Glacier mention in the gear fields is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Scramble grade of the standard finish",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 4 (a 5.7 variation exists on the north side of the summit blocks)"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "Class 4 (or 5.7 variation on the north side)"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "accounts consistently call the peak class 3 and describe it as one of the few Southern Picket summits that is not fifth class"
+      }
+     ],
+     "why": "The grade columns say Class 4, while the climbing-route text says accounts 'consistently' call it class 3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "16.1"
+      },
+      {
+       "field": "approach",
+       "says": "the near-identical Goodell Creek / Terror Basin / Barrier approach to Mount Terror is recorded at 20 miles and 10,000 ft round trip"
+      }
+     ],
+     "why": "dist_km is 16.1 km (10 mi) on an out-and-back, but the approach says the near-identical trip is 20 mi round trip. dist_km looks one-way, shown as the trip distance.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "name": "Southeast Route",
+   "area": "wa_ottohorn",
+   "contradictions": [
+    {
+     "fact": "Glacier travel and kit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer rock route"
+      },
+      {
+       "field": "rope_note",
+       "says": "approach crosses glaciated terrain near Ottohorn-Himmelhorn col requiring rope for glacier travel"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "Likely crevasse hazard on the glacier/snow approach into the Crescent Creek basin during early season"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[3]",
+       "says": "glacier travel and crevasse rescue for the approach (Crescent Creek basin)"
+      },
+      {
+       "field": "gear[3]",
+       "says": "Ice axe for early-season snow"
+      }
+     ],
+     "why": "The row calls the route non-glaciated, yet says the approach needs a rope for glacier travel and crevasse-rescue skills. The gear list has only an ice axe.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time from camp to the Otto-Himmel col",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[1].time",
+       "says": "+2 hr"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "About an hour above camp"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "parties have done it from the col in roughly an hour round trip"
+      }
+     ],
+     "why": "The schedule allows 2 hours to the col, but the col waypoint says it is about an hour above camp.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Height from the col to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Route is approximately 500–700 vertical feet from col to summit."
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "7400"
+      },
+      {
+       "field": "waypoints[7].elev",
+       "says": "7840"
+      }
+     ],
+     "why": "The col (7,400) and summit (7,840) waypoints are 440 ft apart, not the 500-700 ft the beta gives.",
+     "internal_resolution": "The waypoints and approach agree on a 7,400 ft col, so the beta's 500-700 ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Driving direction to Goodell Creek Road",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "From Sedro-Woolley/Marblemount, follow WA-20 east past Newhalem; Goodell Creek Road turns off near the Goodell Creek Campground"
+      },
+      {
+       "field": "approach",
+       "says": "reached via the gravel road that forks off Hwy 20 across from Newhalem"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "across SR-20 from Newhalem"
+      }
+     ],
+     "why": "The drive note says to go east past Newhalem, while the approach and trailhead put the turn across from Newhalem, which a driver from the west reaches before Newhalem.",
+     "internal_resolution": "The approach and both trailhead descriptions put the road across from Newhalem.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "name": "South Route",
+   "area": "wa_the_chopping_block",
+   "contradictions": [
+    {
+     "fact": "Whether the zone permit can be reserved",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Reserve on Recreation.gov, then get the permit by email or in person"
+      },
+      {
+       "field": "access.permit",
+       "says": "About 60% of sites can be reserved in advance via Recreation.gov"
+      },
+      {
+       "field": "bivy[3].permit",
+       "says": "It is NOT on the short list of zones reservable in advance, so it is WALK-UP ONLY"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Cross-country zone permit from the Wilderness Information Center"
+      }
+     ],
+     "why": "The permit fields tell climbers to reserve on Recreation.gov, but the Terror Basin camp says the zone is walk-up only and cannot be reserved.",
+     "internal_resolution": "bivy[3] is the zone-specific statement, and every sibling Southern Pickets row in this batch says Terror Basin and Crescent Creek are walk-up only, so the reservable wording is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "free NPS backcountry permit required for any overnight camping"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "needs a free backcountry wilderness permit"
+      },
+      {
+       "field": "access.fees",
+       "says": "$10 per person (charged mid-May through early October; no fee October-mid-May) plus a $6 non-refundable processing fee"
+      }
+     ],
+     "why": "The trailhead waypoint calls the permit free, but ACCESS lists $10 per person plus $6.",
+     "internal_resolution": "access.fees is the detailed, dated fee schedule, so 'free' is only true outside the mid-May to early-October season.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the Day 1 camp is and how much the day gains",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "dropping to a flat camp around 5,800 ft. It's a brutal, sustained ~4,000+ ft grind"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "5700"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Cross the Barrier ridge into Stump Hollow/Crescent Creek Basin"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "the standard high camp for the South Route"
+      },
+      {
+       "field": "beta",
+       "says": "to a high camp on the Stump Hollow ridge below the peak"
+      }
+     ],
+     "why": "The Day 1 note calls it a ~4,000+ ft day but lists 5,700 ft of gain. The itinerary camps in Terror Basin and reaches Stump Hollow on Day 2, while the waypoint and beta make Stump Hollow the high camp.",
+     "internal_resolution": "The approach ('well over 5,000 ft of gain to camp') agrees with gainFt 5700, so '~4,000+' is the error. Which camp is meant needs a decision.",
+     "needs_research": true
+    },
+    {
+     "fact": "Distance shown for the trip",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "10.46"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~6.5 mi and ~5,700 ft each way to camp"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "3"
+      }
+     ],
+     "why": "dist_km (6.5 mi) is the one-way distance to camp, while the itinerary totals 16 mi, so the stats and the header would show different trip distances.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "name": "South Route",
+   "area": "wa_the_pyramid_picket",
+   "contradictions": [
+    {
+     "fact": "Difficulty of the standard west-side line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade III, low 5th class"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "an option for parties wanting more technical climbing than the standard Class 3 west-side scramble"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "West-side Class 3 scramble tops out on the true summit"
+      },
+      {
+       "field": "rock_grade",
+       "says": "3rd-4th class with a few moves of low 5th (unrated)"
+      }
+     ],
+     "why": "The grade pill says low fifth class, while a pro tip and the summit waypoint call the standard line a Class 3 scramble.",
+     "internal_resolution": "The grade, rock_grade, beta, waypoints[5] and approach_variants all include low-fifth moves, so 'Class 3 scramble' understates it.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "name": "Ridge Traverse Route",
+   "area": "wa_the_rake",
+   "contradictions": [
+    {
+     "fact": "Length of the summit day",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "3:30 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "5:00 PM"
+      }
+     ],
+     "why": "The schedule runs from 3:30 AM to 5:00 PM, which is 13.5 hours, but the day and timing.summitTimeHrs say 12.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.typical",
+       "says": "High alpine season runs mid-June through mid-September"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.reason",
+       "says": "Early September can still be good, but the season ends early in the month"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through early September is most reliable"
+      }
+     ],
+     "why": "The climate section starts the season in mid-June and ends it mid-September, while the season column starts in July and the guidance ends it early in September.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Permit fee basis",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "$10/person/night + $6 nonrefundable fee as of March 2024"
+      },
+      {
+       "field": "access.fees",
+       "says": "$10 per person backcountry recreation fee plus a $6 nonrefundable permit/reservation fee"
+      }
+     ],
+     "why": "One ACCESS field charges $10 per person per night and the other $10 per person.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Peak coordinates",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.peakLat",
+       "says": "48.768"
+      },
+      {
+       "field": "approach_logistics.peakLng",
+       "says": "-121.288"
+      },
+      {
+       "field": "waypoints[7].lat",
+       "says": "48.7755"
+      },
+      {
+       "field": "waypoints[7].lng",
+       "says": "-121.3067"
+      }
+     ],
+     "why": "approach_logistics puts the peak about 1.5 km from the summit waypoint, at the same coordinate The Pyramid row uses, which looks copied.",
+     "internal_resolution": "The summit waypoint matches the area coordinate (48.7755, -121.3067).",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "name": "West Slope - East Arete (Original Route)",
+   "area": "wa_west_twin_needle",
+   "contradictions": [
+    {
+     "fact": "Permit booking method implied by the fee",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "NPS backcountry permit fee: $10/person plus a $6 reservation fee (Recreation.gov)"
+      },
+      {
+       "field": "access.permit",
+       "says": "these zones are walk-up only, issued in person at the Wilderness Information Center in Marblemount"
+      }
+     ],
+     "why": "The fee line points to a Recreation.gov reservation fee, but the permit line says the zone is walk-up only.",
+     "internal_resolution": "access.permit, access.overnight_permit.where and the bivy permits all say walk-up only.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "name": "South Route",
+   "area": "wa_west_twin_needle",
+   "contradictions": [
+    {
+     "fact": "Distance to Crescent Creek Basin camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "9.5"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "7.5"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "9.5"
+      }
+     ],
+     "why": "The itinerary puts camp at 9.5 mi, but the waypoints put camp at 7.5 mi and the summit at 9.5 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "15.7"
+      },
+      {
+       "field": "approach",
+       "says": "Total round trip from the trailhead runs about 19.5 miles (~31 km)"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 19.5 miles RT"
+      }
+     ],
+     "why": "dist_km is 15.7 km (9.8 mi), about half the stated 31 km round trip, so it looks one-way while shown as the trip distance.",
+     "internal_resolution": "The approach and totalNote both say about 31 km (19.5 mi) round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "name": "Neve Glacier / Standard Route",
+   "area": "wa_snowfield_peak",
+   "contradictions": [
+    {
+     "fact": "Permit cost",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "pick up the free NPS wilderness permit from the Marblemount Wilderness Information Center"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "a free NPS wilderness permit from the Marblemount Wilderness Information Center is required"
+      },
+      {
+       "field": "access.fees",
+       "says": "$10 per person plus a $6 nonrefundable permit fee for backcountry permits via recreation.gov (about 60% of capacity is reservable in advance, 40% held for walk-up permits at the Marblemount WIC, which are free)"
+      }
+     ],
+     "why": "Two fields call the permit free, while ACCESS charges $10 per person plus $6 and says only walk-up permits are free. Sibling Southern Pickets rows say walk-up permits cost the same.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "name": "Neve Glacier / West Ridge",
+   "area": "wa_snowfield_peak",
+   "contradictions": [
+    {
+     "fact": "Distance shown for the trip",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.1"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~15 mi, ~7,250 ft gain round trip"
+      },
+      {
+       "field": "approach",
+       "says": "Round trip is about 15-16 miles"
+      }
+     ],
+     "why": "dist_km is 12.1 km (7.5 mi), half the stated 15-16 mi round trip, so it looks one-way.",
+     "internal_resolution": "The approach, totalNote and itinerary miles (5 + 9.8) all give about 15 mi round trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "name": "South Ridge / Southwest Gully",
+   "area": "wa_azurite_peak",
+   "contradictions": [
+    {
+     "fact": "Season window (June)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep (snow/ice gear often needed into June/early July)"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Route and approach still largely snowbound; SR 20 may not yet be fully open"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "climbed only in dry Jul-Sep window"
+      }
+     ],
+     "why": "The season column opens in June, but the guidance calls June risky and snowbound and other fields say the route is climbed only July to September.",
+     "internal_resolution": "best_season, optimalWindow, approach_variants season and the avalanche note all start in July or later.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the standard line has a Class 4 step",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "mostly Class 2-3 with one steep, clean Class 4 step midway"
+      },
+      {
+       "field": "obj_haz[1]",
+       "says": "Class 4 exposure on the west-face traverse and summit gully"
+      },
+      {
+       "field": "beta",
+       "says": "the standard way stays on Class 3 ground beside it"
+      },
+      {
+       "field": "waypoints[7].directions",
+       "says": "loose underfoot but no harder than Class 3 on dry rock"
+      }
+     ],
+     "why": "The rope note and hazards put a Class 4 step on the standard line, while the beta and summit directions say it stays Class 3.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "name": "West Ridge (Standard Route)",
+   "area": "wa_big_snagtooth",
+   "contradictions": [
+    {
+     "fact": "Season start (April)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Apr-Oct"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.April.reason",
+       "says": "SR-20 is usually still gated for spring clearing"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      }
+     ],
+     "why": "The season opens in April, but the April guidance says the access highway is usually still gated.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance shown for an out-and-back",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "6"
+      },
+      {
+       "field": "outing_shape",
+       "says": "outback"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3.75"
+      }
+     ],
+     "why": "dist_km 6 (3.7 mi) is the one-way distance to the summit on an out-and-back, and it is the only distance on the page.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_black_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "area": "wa_black_peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "name": "South Ridge",
+   "area": "wa_black_peak",
+   "contradictions": [
+    {
+     "fact": "Best season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct (best Jun-Sep)"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best conditions are typically mid-July through September"
+      }
+     ],
+     "why": "The season chip calls June to September best, while best_season and the trip-plan note start in mid-July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Side of Wing Lake the South col is reached from",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[6].note",
+       "says": "Gained via a moraine and permanent snowfield east of Wing Lake"
+      },
+      {
+       "field": "approach",
+       "says": "From Wing Lake, go around the right (north) side of the lake and aim for the obvious talus/snow gully"
+      },
+      {
+       "field": "waypoints[6].lng",
+       "says": "-120.818554"
+      },
+      {
+       "field": "waypoints[4].lng",
+       "says": "-120.806837"
+      }
+     ],
+     "why": "The col waypoint says the approach runs east of Wing Lake, but the approach goes around the north side and the col's own coordinate is west of the lake.",
+     "internal_resolution": "The approach, approach_variants and the coordinates agree, so 'east of Wing Lake' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cell coverage",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.notes",
+       "says": "No cell coverage at the trailhead or on route"
+      },
+      {
+       "field": "comms",
+       "says": "NPS notes reception is possible from some higher/open locations"
+      }
+     ],
+     "why": "EMERGENCY says there is no coverage on the route, while COMMS says reception is possible from higher open spots.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "name": "Southwest Ridge / Standard Route",
+   "area": "wa_corteo_peak",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "Best climbed roughly June-August while the Lewis Glacier still holds enough snow"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      },
+      {
+       "field": "best_season",
+       "says": "Late July through September is most reliable"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Oct"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.reason",
+       "says": "Outside the documented Jul-Sep season"
+      }
+     ],
+     "why": "The trip plan calls June to August best, while the guidance rates June risky and best_season starts in late July. The season column includes October, which the guidance calls outside the Jul-Sep season.",
+     "internal_resolution": "best_season, optimalWindow and climate.bySeason.summer all favor mid/late July through September, so itinerary.cal is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Main camp for this route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well"
+      },
+      {
+       "field": "bivy[0].role",
+       "says": "main"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach the larch-bench camp above Lewis Lake"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "Camp on the larch bench above Lewis Lake for an early start on the glacier"
+      }
+     ],
+     "why": "The camp list makes Wing Lake a main camp and 'the natural first night for Corteo', while the itinerary and pro tips camp at Lewis Lake, where the Corteo line starts.",
+     "internal_resolution": "The itinerary, pro_tips, waypoints[3] and bivy[1] all use Lewis Lake.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

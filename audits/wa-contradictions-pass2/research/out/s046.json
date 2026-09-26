@@ -1,0 +1,163 @@
+{
+ "file": "s046.json",
+ "results": [
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Ice pitch lengths and angles",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found only more year-dependent figures: a 2024 park conditions report describes a short mandatory lower step (~50 ft) climbed in several pitches in that season; another party reports about two full 60 m pitches of AI2; a climber's inclinometer read 35 degrees overall and 42-44 at the steepest. No two independent sources give one set of step lengths; the chute's size changes year to year. Settling it needs an owner decision to state the chute as a seasonal range (e.g. the park's 'short pitch to 250 ft / short pitch to 300+ ft') in every field, rather than a single figure.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2024/07/kautz-glacier-conditions-report-72724.html",
+    "https://www.climber.org/reports/2000/617.html",
+    "https://gethighonaltitude.com/2019/07/21/mt-rainier-kautz-glacier/",
+    "https://www.desktodirtbag.com/mount-rainier-kautz/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "fact": "Distance to Camp Hazard",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "New sources give only whole-route figures: a guide service states ~10 miles Paradise to summit; a 2020 carry-over trip logged 18.5 miles total up the Kautz and down the DC. No source states the Paradise-to-Camp Hazard mileage, so neither 5 nor 7 can be confirmed. A GPS track of the Paradise-Camp Hazard leg from two parties would settle it.",
+   "sources": [
+    "https://www.rmiguides.com/rmi-knowledge-hub/routes-of-mount-rainier-choosing-the-best-path-to-the-summit/",
+    "https://www.richardhforbes.com/trip-log/2020/7/22/trip-report-mount-rainier-via-the-kautz-june-18th-through-20th-2020",
+    "http://www.willhiteweb.com/washington_climbing/mount_rainier/camp_hazard_route_262.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "fact": "Headwall length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The ice on this line is the Kautz chute, whose size varies by season: one 2024 conditions report describes a ~50 ft mandatory lower step, other parties two full 60 m pitches, the park brief a lower step to ~250 ft and upper step to 300+ ft. No two sources give a total matching 259 m, 90 m, 300 ft or 400-450 ft. Settling needs an owner decision to express length as a seasonal range consistently.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2024/07/kautz-glacier-conditions-report-72724.html",
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://www.climber.org/reports/2000/617.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "dist_km ~8.05 (about 5 mi one way, Paradise to summit)",
+   "evidence": "A trip report describes the route as gaining a bit over 9,000 ft in only about 5 miles. A guide service's itinerary gives 2-3 miles from Paradise to high camp and 4-5 miles round trip on summit day (about 2-2.5 mi each way), i.e. roughly 5 mi one way. The stored 24.94 km (15.5 mi) is not a one-way figure; the itinerary (5 mi day 1, 8 mi summit-and-descent day 2) is consistent with ~5 mi one way.",
+   "sources": [
+    "https://simplyluke.com/2023/02/10/success_on_the_fuhrer_finger.html",
+    "https://www.rmiguides.com/mt-rainier/fuhrer-finger"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 24.94,
+     "value": 8.05,
+     "id": "wa_mount_rainier_fuhrer_finger",
+     "fact": "Round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "fact": "Paradise to high camp mileage",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The itinerary gives 5 miles for day 1 (Paradise to a Wilson Glacier high camp), while a guide service lists 2-3 miles for the Paradise-to-high-camp day. Only one source states the leg; a second (GPS track or route page) would settle it.",
+   "sources": [
+    "https://www.rmiguides.com/mt-rainier/fuhrer-finger"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Total distance",
+   "verdict": "fixed",
+   "correct_value": "dist_km ~16.1 (about 10 mi one way, White River to the summit); Liberty Cap waypoint distance unknown",
+   "evidence": "The park route brief gives about 8 mi trailhead to Thumb Rock plus about 2.5 mi to Columbia Crest (10.5 mi). A guide service states ~10 miles from White River to the summit. So the one-way approach is about 10 mi (16.1 km), not 6 mi; the itinerary's 18 mi includes the carry-over descent. The Liberty Cap pin at mile 15 is impossible against both, and its own distance is unsourced, so it is set to unknown.",
+   "sources": [
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://www.rmiguides.com/rmi-knowledge-hub/routes-of-mount-rainier-choosing-the-best-path-to-the-summit/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 9.6,
+     "value": 16.1,
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Total distance"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 15,
+     "value": null,
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Total distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park brief gives ~11,500 ft (matches gain_ft); a guide service states 10,000 ft; trip reports sum day gains to ~10,000 ft (3,100 + 3,300 + 3,600). Sources disagree, and per-day itinerary figures cannot be changed without a source stating them. A second source stating 11,500 ft (or a GPS-derived cumulative gain) would settle it.",
+   "sources": [
+    "http://home.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf",
+    "https://www.rmiguides.com/rmi-knowledge-hub/routes-of-mount-rainier-choosing-the-best-path-to-the-summit/",
+    "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Elevation where the approach drops onto the Carbon Glacier",
+   "verdict": "fixed",
+   "correct_value": "about 7,300 ft",
+   "evidence": "Three independent trip reports put the drop from Curtis Ridge onto the Carbon at about 7,200 ft (a 2018 party dropped onto the Carbon 'at about 7200', a ski party found the drop-off 'spot on at 7200 feet', a 2009 party camped on Curtis Ridge around 7,200 ft at the access point), and a route page says the ramp reaches the Carbon around 7,300 ft. The park brief's 7,600 ft is where parties leave the ridge crest, not where they reach the glacier. The approach_variants figure (roughly 7,300 ft) already agrees; pitch_detail's 7,600 is the outlier.",
+   "sources": [
+    "https://spokalpine.com/2018/05/29/mt-rainier-liberty-ridge/",
+    "https://turns-all-year.com/trip-reports/11-14-april-liberty-ridge-with-partial-ski-descent",
+    "http://hugebean.blogspot.com/2009/06/trip-report-liberty-ridge-2009.html",
+    "https://www.mountainproject.com/route/106459197/liberty-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "onto the Carbon Glacier at about 7,600 ft",
+     "replace": "onto the Carbon Glacier at about 7,300 ft",
+     "id": "wa_mount_rainier_liberty_ridge",
+     "fact": "Elevation where the approach drops onto the Carbon Glacier"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "fact": "Waypoints from other sides of the mountain",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The waypoint list includes 'Mowich Lake Camp' (0.5 mi), 'Puyallup Winthrop Junction Camp' (9 mi) and 'Puyallup Glacier Serac Zone' (11 mi) — Mowich Lake and the Puyallup Glacier are on the northwest/west side of Rainier, not on the White River-St Elmo-Carbon approach the rest of the row describes. Pin positions are out of scope for this pass; needs a waypoint rebuild.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

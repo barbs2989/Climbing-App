@@ -1,0 +1,160 @@
+{
+ "file": "s058.json",
+ "results": [
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found no new figure for this Watson Lakes line. One trip report via Anderson Lakes to the East Peak gives 2,500 ft gained and lost over 6 mi; an overnight via the Watson Lakes camp gives ~3,000 ft for the scramble; WTA gives only the lakes hike (1,100 ft). The figures describe different lines and do not agree; a GPS track of this exact Watson-Lakes/east-gully line would settle it.",
+   "sources": [
+    "https://trailcatjim.com/mt-watson-east-peak-via-northwest-face/",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/",
+    "https://www.wta.org/go-hiking/hikes/anderson-and-watson-lakes"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources still split: ~6 mi round trip (3 mi one way, matching dist_km 4.8 km) for the Anderson Lakes/direct line, ~8 mi round trip for the Watson Lakes overnight line, and a 2023 day trip to the tarns below the Watson Glacier clocked a little over 7 mi. None supports the 4.7-mi summit waypoint or ~9-10 mi itinerary total. A measured track of the Watson Lakes/east-gully line would settle it.",
+   "sources": [
+    "https://trailcatjim.com/mt-watson-east-peak-via-northwest-face/",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-03.6827621991"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Glacier travel",
+   "verdict": "fixed",
+   "correct_value": "The standard line climbs a steep snow finger that is a tongue of the small Watson Glacier remnant to the col between the summits; it is not glacier-free.",
+   "evidence": "A 2020 high-route report describes carrying crampons and ice axe 'up to the little glacier, climbing a steep snow finger between the two summits'. A separate route description aims for 'the glacier finger' below the East summit and makes a rising traverse from the base of the glacier remnants to the ~5,900 ft col. An overnight report and a ski report both describe moats at the gullies/col. So the safety fields' 'no glacier travel' / 'non-glaciated' are wrong; beta, rack and obj_haz are right.",
+   "sources": [
+    "https://climberkyle.com/2020/09/05/watson-blum-high-route/",
+    "https://www.summitpost.org/mount-watson/climbers-log/155079",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/",
+    "https://turns-all-year.com/trip-reports/mount-watson-bacon-peak",
+    "https://en.wikipedia.org/wiki/Mount_Watson_(Washington)"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_watson_scramble",
+     "fact": "Glacier travel",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel",
+     "value": "Small glacier remnant only: the steep snow finger to the col between the summits is a tongue of the shrinking Watson Glacier. Moats open between snow and rock by mid-to-late summer, especially in the west gully."
+    },
+    {
+     "id": "wa_mount_watson_scramble",
+     "fact": "Glacier travel",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer route",
+     "replace": "N/A - summer route"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Distance to the Watson Lakes saddle",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~2.5 mi from the trailhead to the ~4,800 ft saddle",
+   "evidence": "The Forest Service trail page gives 1 mi to the Anderson Butte junction, another mile to the 4,700 ft second junction, then 0.5 mi up to the saddle (2.5 mi). The row's own waypoints (junctions at 1 and 2 mi, saddle at 2.5 mi) and the approach prose (second junction at 1.5-2 mi, then 0.5 mi to the saddle) agree; WTA also puts the second junction at 1.5 mi, before the saddle, so 1.4 mi to the saddle is impossible. The ~1.4 mi in the itinerary note and its timing copy is the lone outlier. Bivy text is left to the camping clean-up.",
+   "sources": [
+    "https://fs.usda.gov/r06/mbs/recreation/trails/anderson-watson-lakes-trail-611",
+    "https://www.wta.org/go-hiking/hikes/anderson-and-watson-lakes"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_watson_scramble",
+     "fact": "Distance to the Watson Lakes saddle",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "~1.4 mi to a ~4,800 ft saddle",
+     "replace": "~2.5 mi to a ~4,800 ft saddle"
+    },
+    {
+     "id": "wa_mount_watson_scramble",
+     "fact": "Distance to the Watson Lakes saddle",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "~1.4 mi to a ~4,800 ft saddle",
+     "replace": "~2.5 mi to a ~4,800 ft saddle"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "fact": "dist_km (one-way approach)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 84.5 km (52.5 mi) is clearly not a one-way figure. NPS/WTA-style mileages put Hayes River Guard Station at 16.1 mi from Whiskey Bend, but Camp Wilder's distance is given variously (~16 to ~20 mi) and no source states the one-way distance to the off-trail summit. An authoritative Elwha trail mileage table for Camp Wilder plus the off-trail leg would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/elwha-river-from-whiskey-bend",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-11.9813882583",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=26199"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still no outside source for Mushroom Tower's standard-route pitch count: Mountain Project and theCrag list no routes on it, the 2010 CascadeClimbers report still does not load and has no archive copy, and a historic account describes only one hard overhanging pitch. The row itself says 2 in four fields vs 1 in beta; a readable modern trip report would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/area/119807627/kangaroo-ridge",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/area/874831815",
+    "https://www.mountaineers.org/blog/remembering-mountaineer-fred-beckey"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "fact": "Crux rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a modern grade for the tower (5.4 vs 5.5). The only historic account found describes a 12-ft overhang overcome with a shoulder stand, which fits neither figure cleanly. A readable modern trip report or guidebook entry is needed.",
+   "sources": [
+    "https://www.mountaineers.org/blog/remembering-mountaineer-fred-beckey"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "fact": "Pullout side of the hairpin",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "All sources found (Kangaroo Temple/Ridge route pages, Mazamas, WTA Kangaroo Pass report, onehikeaweek) say only 'large pullout/turnout at the hairpin turn'; one describes the start as 'tucked behind the pullout on the hairpin corner'. None states inside vs outside. A map or photo of the pullout relative to the curve would settle it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-11-3111130648",
+    "https://mazamas.org/activity/instance/9515/detail/",
+    "https://onehikeaweek.com/2012/09/08/kangaroo-temple/"
+   ],
+   "patches": []
+  }
+ ]
+}

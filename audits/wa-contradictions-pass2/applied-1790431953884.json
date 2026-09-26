@@ -1,0 +1,57 @@
+{
+ "applied": [
+  {
+   "id": "rainier_central_mowich_face",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Rock grade (header grade pill)"
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain and loss"
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Access notes say a Northwest Forest Pass is required and no climbing permit, contradicting parking_pass, permit and fees"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "rainier_central_mowich_face",
+   "before": {
+    "rock_grade": "5.6"
+   }
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "before": {
+    "gain_ft": 5007,
+    "access": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "closures": "Westside Road closed to vehicles beyond the Dry Creek gate (~3 miles in); subject to additional temporary closures from debris flows",
+     "seasonal": null,
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park (NPS)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Mount Rainier NP entrance pass (covered by park entrance fee / America the Beautiful pass) — Northwest Forest Pass does not apply inside the park",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  }
+ ]
+}

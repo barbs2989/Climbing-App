@@ -1,0 +1,66 @@
+{
+ "applied": [
+  {
+   "id": "wa_czech_it_out",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Aspect of the wall"
+  },
+  {
+   "id": "wa_czech_it_out",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Aspect of the wall"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_czech_it_out",
+   "before": {
+    "climate": {
+     "fall": "Dry, pleasant",
+     "spring": "Climbable from ~April",
+     "summer": "Hot and exposed on this NE aspect in the afternoon",
+     "winter": "Often snowbound",
+     "typical": "Dry hot summers, cold snowy winters",
+     "forecastZone": "Blue Mountains foothills, eastern WA"
+    },
+    "waypoints": [
+     {
+      "lat": 46.13757,
+      "lng": -117.80862,
+      "elev": 3400,
+      "name": "Middle Point Trailhead (FR 64)",
+      "note": "Drive ~1.2 miles further south on FR 64 past this trailhead, then scramble up the hillside to Megadike.",
+      "type": "Trailhead",
+      "elevFt": 3400,
+      "directions": "From Dayton, follow North Touchet Road out of town toward Ski Bluewood; it is paved for roughly the first 15 to 16 miles, then turns to gravel as Forest Service Road 64 at the national forest boundary. The Dikes sit along that road in the East Fork Touchet River valley below Ski Bluewood, in the Walla Walla Ranger District of the Umatilla National Forest. The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April. You do not park at this trailhead: for Megadike South, keep driving about 1.2 miles further south on FR 64 past it and pull off on either side of the road just before the bridge over the river."
+     },
+     {
+      "lat": 46.1238,
+      "lng": -117.8215,
+      "elev": 3850,
+      "name": "Megadike South",
+      "note": "South end of the same megadike wall as Megadike North; park ~1.2 mi past the trailhead just before the river bridge, scramble up the NW hillside above the bridge abutment, then traverse the ridge to the south-facing walls.",
+      "type": "Topout",
+      "distMi": 1.2
+     },
+     {
+      "lat": 46.1243,
+      "lng": -117.8218,
+      "elev": 3890,
+      "name": "Megadike (south section)",
+      "type": "Summit",
+      "elevFt": 3890
+     }
+    ]
+   }
+  }
+ ]
+}

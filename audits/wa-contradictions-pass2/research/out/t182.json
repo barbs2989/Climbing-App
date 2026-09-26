@@ -1,0 +1,327 @@
+{
+ "file": "t182.json",
+ "results": [
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Location of Watson Pass and where the maintained trail ends",
+   "verdict": "fixed",
+   "correct_value": "The ~4,800 ft saddle is an unnamed saddle at the wilderness boundary; the maintained trail crosses it and descends to the Watson Lakes (4,400 ft), where the scramble route leaves the trail. No source calls any point 'Watson Pass'.",
+   "evidence": "The Forest Service trail page: second junction at 4,700 ft, left fork climbs 0.5 mi to a saddle where the trail enters the Noisy-Diobsud Wilderness before dropping to the Watson Lakes at 4,400 ft. WTA: the trail to the left climbs briefly then drops down to the lakes. A 2024 trip report leaves the trail after rounding the second lake and climbs talus toward Watson. The Mountaineers route page calls it 'the saddle above Watson Lakes (~4,800 ft)', from which a boot path runs south along the ridge toward Upper Anderson Lakes (an alternative line).",
+   "sources": [
+    "https://fs.usda.gov/r06/mbs/recreation/trails/anderson-watson-lakes-trail-611",
+    "https://www.wta.org/go-hiking/hikes/anderson-and-watson-lakes",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/",
+    "https://www.mountaineers.org/activities/routes-places/anderson-lakes-watson-lakes-mount-watson"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "name"
+     ],
+     "expect": "Watson Pass (saddle)",
+     "value": "Saddle above Watson Lakes",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Location of Watson Pass and where the maintained trail ends"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "expect": "Trail gains about 150 ft to this pass above Watson Lakes; leave the maintained trail here and pick up the climber's boot path heading south along the ridge toward Mount Watson.",
+     "value": "The trail climbs about half a mile from the fork to this saddle at the Noisy-Diobsud Wilderness boundary, then continues as maintained trail down to the Watson Lakes, where the scramble route leaves the tread. A boot path also heads south from here along the ridge toward Upper Anderson Lakes, a longer alternative way onto the north side of the peak.",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Location of Watson Pass and where the maintained trail ends"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "Boot path descends off the pass into the Watson Lakes basin",
+     "replace": "The trail descends off the saddle into the Watson Lakes basin",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Location of Watson Pass and where the maintained trail ends"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "on Watson's north/west slopes toward Watson Pass and the ridge crest",
+     "replace": "on Watson's north/west slopes toward the ridge crest",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Location of Watson Pass and where the maintained trail ends"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "on Watson's north/west slopes toward Watson Pass and the ridge crest",
+     "replace": "on Watson's north/west slopes toward the ridge crest",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Location of Watson Pass and where the maintained trail ends"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Day-by-day gain/loss vs camp and trailhead elevations",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The day figures (2,900 up/100 down on day 1; 900 up/3,700 down on day 2) are impossible against the 4,200 ft trailhead and 5,400 ft camp, but the rules forbid re-cutting per-day figures unless the new total matches gain_ft/loss_ft, and those two columns (2,400 / 3,800) disagree with each other. Outside figures disagree too: one route page gives 2,000 ft round trip for the north-side route, a 2024 trip report about 3,000 ft. A source stating per-day or car-to-car gain for the overnight version would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/anderson-lakes-watson-lakes-mount-watson",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "When to go",
+   "verdict": "fixed",
+   "correct_value": "July-September window; earlier in it is easier on the snow (later, moats open and the glacier finger turns to ice).",
+   "evidence": "The Mountaineers route page rates the route an alpine scramble in early season when snow-covered and a basic alpine climb in late season once the glacier surface is bare blue ice. A late-July 2024 trip report turned back from the west gully because of a large moat and snow bridge. Both support 'earlier is easier on the snow' but neither recommends June, which the seasonal guidance marks marginal; the trip-plan note now says 'earlier within July-September' instead of 'early summer'.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/anderson-lakes-watson-lakes-mount-watson",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Go early summer if possible - by mid-to-late summer melt-out",
+     "replace": "Within the July-September window, earlier is easier on the snow finger and gullies - by mid-to-late summer melt-out",
+     "id": "wa_mount_watson_scramble",
+     "fact": "When to go"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Which side of Watson the high camp is on",
+   "verdict": "fixed",
+   "correct_value": "North side (the camp sits on the north slopes, on the line from the lakes to the north-side glacier and the 5,900 ft col).",
+   "evidence": "The Mountaineers route page brings both routes to the base of the glacier on the north side of Mount Watson (~5,700 ft) and ascends from the north side to the col. A 2024 trip report camped around 5,400 ft on the slopes beneath the peak after climbing from Watson Lakes and describes the standard approach as from the north. Neither source puts the approach or camp on the west or east side.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/anderson-lakes-watson-lakes-mount-watson",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "~5,400 ft on the west slopes",
+     "replace": "~5,400 ft on the north slopes",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Which side of Watson the high camp is on"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "below Watson's north/east side",
+     "replace": "below Watson's north side",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Which side of Watson the high camp is on"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Elevation of the second trail junction on the way out",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~4,700 ft (the Anderson/Watson Lakes fork)",
+   "evidence": "The Forest Service trail page puts the second junction (right to Anderson Lake, left to Watson Lakes) at 4,700 ft; waypoints[2] and the approach agree. The 5,900 ft figure is the summit-ridge saddle, not a trail junction. WTA confirms the two junctions passed are Anderson Butte and the Anderson/Watson fork.",
+   "sources": [
+    "https://fs.usda.gov/r06/mbs/recreation/trails/anderson-watson-lakes-trail-611",
+    "https://www.wta.org/go-hiking/hikes/anderson-and-watson-lakes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "(5,900-ft basin exit, then the Anderson Butte",
+     "replace": "(the ~4,700-ft Anderson/Watson Lakes fork, then the Anderson Butte",
+     "id": "wa_mount_watson_scramble",
+     "fact": "Elevation of the second trail junction on the way out"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "fact": "Car-to-car gain: gain_ft vs itinerary total vs prose ranges",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "gain_ft says 2,400 and loss_ft 3,800; the itinerary days total 3,800 up/3,800 down; totalNote says ~3,500-4,000 ft; the approach says 2,500-3,000 ft. Outside sources disagree: a route page gives 2,000 ft round trip (day route from the trailhead), a 2024 trip report about 3,000 ft for the scramble. Two sources agreeing on the overnight car-to-car gain would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/anderson-lakes-watson-lakes-mount-watson",
+    "https://www.alpinewanderlust.com/mild-adventure-for-tired-souls-mt-watson-overnight-scramble/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "fact": "Land manager in the fee note",
+   "verdict": "fixed",
+   "correct_value": "No climbing or entrance fee; the upper route is in North Cascades National Park, which charges no entrance fee, and an overnight stay needs its paid backcountry permit.",
+   "evidence": "The NPS fees page says there is no fee to enter the North Cascades National Park Service Complex; the NPS permits page gives the backcountry permit at $10 per person plus a $6 fee. WTA's passes page and other permit guides agree there is no entrance fee. The '(National Forest, not Mount Rainier NP)' wording was a template leftover contradicting the row's own land manager.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.wta.org/go-outside/passes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "(National Forest, not Mount Rainier NP)",
+     "replace": "(North Cascades National Park charges no entrance fee; an overnight stay needs its paid backcountry permit)",
+     "id": "wa_nooksack_tower_south_face",
+     "fact": "Land manager in the fee note"
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "fact": "Start time",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "'Start extremely early (2-3 am)' and 'depart by 3-4 am' overlap: one is when to get going, the other the latest departure. The first-ascent party's own account has them waking at 2 am and leaving camp around 3 am, which satisfies both.",
+   "sources": [
+    "http://cascadeclassics.org/Climbing/NooksackTower/SouthFace/Summer01/SouthFace,Summer01.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Summit-day duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Accounts genuinely disagree: one trip report reached the summit ~10 h after leaving camp and was back at camp 21 h after leaving; a 2023 report went camp to summit in 4.5 h and summit to camp in 6.5 h; the 1946 first ascent went from the 6,500 ft schrund (10:30 am) to the summit by 3:30 pm. The PUBLISHED TIMES (7 up / 5 down) sit near the fast end, the itinerary (20 h summit day) at the slow end. Settling it needs the owner to choose a representative pace, or a guide-level source giving a typical camp-to-camp time.",
+   "sources": [
+    "https://www.summitpost.org/nooksack-tower/527261",
+    "https://cascadeclimbers.com/forum/topic/107495-tr-nooksack-tower-beckey-schmidtke-07232023/",
+    "http://publications.americanalpineclub.org/articles/12194743602/North-America-United-States-Washington-Nooksack-Tower-First-Ascent"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Length of the ice couloir in the breakdown",
+   "verdict": "fixed",
+   "correct_value": "~800 ft (about 244 m) of couloir",
+   "evidence": "The 1946 first-ascent account says Beckey kicked steps 800 ft up a 50-degree ice couloir above the schrund. A 2023 trip report describes downclimbing roughly 800 ft of the couloir snow. The breakdown row's 50 m length was a single-pitch default.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12194743602/North-America-United-States-Washington-Nooksack-Tower-First-Ascent",
+    "https://cascadeclimbers.com/forum/topic/107495-tr-nooksack-tower-beckey-schmidtke-07232023/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "lengthM"
+     ],
+     "expect": 50,
+     "value": 244,
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "Length of the ice couloir in the breakdown"
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "First rappel anchor",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A built anchor around a stack of summit blocks, not fixed gear",
+   "evidence": "A trip report says the first rappel was off a stack of rocks on the summit block. The row's own station and hazards text agree; only the anchor-type label said 'fixed anchor (pin/sling)'.",
+   "sources": [
+    "https://www.summitpost.org/nooksack-tower/527261"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "anchor"
+     ],
+     "expect": "fixed anchor (pin/sling)",
+     "value": "natural anchor (slung blocks)",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "First rappel anchor"
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "Rack size",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a maximum cam size for this route; a 2023 report says only 'small rack (placed 2 pieces)'. A route page or report naming the largest piece would settle 2 in vs 3 in.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/107495-tr-nooksack-tower-beckey-schmidtke-07232023/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "fact": "The 21-hour account: back at camp, not at the car",
+   "verdict": "fixed_internal_plus_one",
+   "discovered": true,
+   "correct_value": "One party returned to CAMP about 21 hours after leaving camp",
+   "evidence": "The trip report behind the 21-hour figure says they downclimbed the couloir in the dark and navigated back to camp, returning 21 hours after they left (camp). The itinerary, totalNote and partner requirements already say 18-21 h from camp; descent_text and an approach hazard wrongly made it trailhead / car-to-car.",
+   "sources": [
+    "https://www.summitpost.org/nooksack-tower/527261"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "one fast team describes returning to the trailhead roughly 21 hours after leaving",
+     "replace": "one party describes getting back to camp roughly 21 hours after leaving it",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "The 21-hour account: back at camp, not at the car"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "expect": "Parties routinely still on the couloir or the lower approach after dark; one fast team recorded 21 hours car to car",
+     "value": "Parties routinely still on the couloir or the lower approach after dark; one team took 21 hours from camp back to camp",
+     "id": "wa_nooksack_tower_beckey_route",
+     "fact": "The 21-hour account: back at camp, not at the car"
+    }
+   ]
+  }
+ ]
+}

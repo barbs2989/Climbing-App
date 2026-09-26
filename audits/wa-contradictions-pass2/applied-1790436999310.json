@@ -1,0 +1,233 @@
+{
+ "applied": [
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Camping restriction names the other side of the range"
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Camping restriction names the other side of the range"
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "When the access road opens"
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Height of the summit bergschrund ice"
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Height of the summit bergschrund ice"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass or equivalent Interagency Pass may be required at trailhead parking",
+     "notes": "Straddles Gifford Pinchot NF (west) and Okanogan-Wenatchee NF (east, White Pass side); this route's approach from the Conrad Meadows trailhead is on the Okanogan-Wenatchee side.",
+     "rules": "Group size capped at 12 (people + stock combined) per 36 CFR 261.58(f).",
+     "permit": "Free, self-issued Goat Rocks Wilderness permit required at the trailhead",
+     "closures": "No camping within 100 ft of the Pacific Crest Trail or lakes; group size and campfire restrictions apply within the Wilderness.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest (Naches Ranger District) for the Conrad Meadows approach; the summit itself sits within Goat Rocks Wilderness (jointly administered with Gifford Pinchot National Forest)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Naches Ranger District) — Goat Rocks Wilderness",
+     "parking_pass": "Required at the Conrad Meadows trailhead — $5/day or $30/year Northwest Forest Pass.",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Goat Rocks Wilderness permit",
+      "where": "Fill one out at the trailhead. Camping on Snowgrass Flat itself is prohibited; use the sites below it."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "before": {
+    "access": {
+     "fees": "Some Goat Rocks trailheads require a day-use fee or valid recreation pass.",
+     "permit": "Free, self-issued wilderness permit required at the trailhead.",
+     "closures": "No campfires; no camping within 100 ft of the PCT or lakes; Shoe Lake basin and Snowgrass Flats closed to camping.",
+     "landManager": "Goat Rocks Wilderness (Gifford Pinchot / Okanogan-Wenatchee NF boundary); borders the Yakama Indian Reservation, closed to public access except along the PCT",
+     "passRequired": "Northwest Forest Pass / America the Beautiful pass at some trailheads.",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Goat Rocks Wilderness permit",
+      "where": "Fill one out at the trailhead. Camping on Snowgrass Flat itself is prohibited; use the sites below it."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "before": {
+    "itinerary": {
+     "cal": "Free self-issue wilderness permits at the trailhead; the Snowgrass Flats approach road and upper basin are typically not fully snow-free until mid-to-late July, and Snowgrass Flat proper is closed to camping so camp at established sites in the upper basin or off-trail on durable ground.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Snowgrass Flat/Berry Patch trailhead (4,650 ft), cross Goat Creek at ~2 mi, pass (but don't camp at) Lower Snowgrass Flat around 4 mi, and continue climbing through meadows to the PCT, dropping a light camp in the upper Snowgrass basin around 7,100-7,200 ft. Afternoon is free to scout the next day's route to Elk Pass and enjoy the meadows and wildflowers.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Backpack in to upper Snowgrass basin camp",
+       "gainFt": 2500,
+       "lossFt": 100,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach camp near treeline below the PCT/Elk Pass junction"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start with a light pack up to the PCT and Old Snowy's north ridge, stash poles for the final Class 3 scramble to the summit, downclimb the south ridge to the Old Snowy-Ives col, then climb Ives' NW ridge (Class 1-2) and a short Class 3 south-face scramble to the top. Reverse the traverse back to camp, break camp, and hike the full ~6.5 mi back out to the trailhead.",
+       "hours": 8,
+       "miles": 7.2,
+       "title": "Old Snowy + Ives Peak summit push, then hike out",
+       "gainFt": 900,
+       "lossFt": 3300,
+       "packLb": 10,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": "Light day pack, rejoin the PCT toward Elk Pass."
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Stash poles, start Old Snowy scramble",
+         "detail": "Unmarked junction; final ~50 ft is Class 3 hand-climbing."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Summit Old Snowy Mountain",
+         "detail": "7,880 ft."
+        },
+        {
+         "time": "8:15 AM",
+         "label": "Reach Old Snowy-Ives col",
+         "detail": "Downclimb the south ridge talus."
+        },
+        {
+         "time": "9:15 AM",
+         "label": "Summit Ives Peak",
+         "detail": "Via NW ridge (Class 1-2) and a short Class 3 south-face scramble."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at camp, break camp and hike out",
+         "detail": "Arrive back at trailhead by ~4:30-5:00 PM."
+        }
+       ],
+       "objective": "Tag both summits and hike all the way back to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day trip: backpack ~7 mi into an upper Snowgrass basin camp (~7,100-7,200 ft) on Day 1, then do a long ~7-8 hr summit push over Old Snowy Mountain and Ives Peak and hike all the way out on Day 2 (~14.2 mi / 3,400 ft round trip total). Very fit parties do sometimes push it car-to-car in one long (8+ hr) day, but backpacking in is the standard/recommended plan."
+    }
+   }
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Glacier, crevassed",
+      "notes": "From high camp near 10,000 ft, drop several hundred feet onto the Mowich Glacier at about 9,800 ft and head for the bergschrund at the foot of the face. This is where the technical climbing begins; leave early, because the cliffs higher on the route shed rock once the sun reaches them.",
+      "pitch": "1"
+     },
+     {
+      "grade": "AI3",
+      "notes": "The bergschrund is usually crossed on a snow bridge left of the central rock outcrop, but in some seasons it needs an end-run or a short steep ice step, which has gone at AI3. How hard this is depends entirely on the year and the month, from a walk over a bridge to a real ice pitch.",
+      "pitch": "2"
+     },
+     {
+      "grade": "40–60° snow and ice",
+      "notes": "About 1,000 ft of sustained slope, hugging the cliffs on the right, up to where large rock cliffs block the way. In firm snow it is 40–45° and often simul-climbed without much protection; in icy years it runs 50–60° alpine ice and wants screws or pickets every rope length. Between the snow aprons, a lean year can expose thin verglass and frozen mud.",
+      "pitch": "3",
+      "lengthM": 305
+     },
+     {
+      "grade": "45–55° snow",
+      "notes": "Traverse left into the hourglass-shaped snow face below the big buttress that splits the upper route, and climb it to the buttress base near 11,500 ft. Overhanging, rotten cliffs sit above: pick sheltered belays and move fast once the sun is on them. A melted-out rock band mid-hourglass can hold thin verglass. From here the original line goes left toward the icefall; the more-used line continues right.",
+      "pitch": "Hourglass"
+     },
+     {
+      "grade": "WI3",
+      "notes": "The right-hand line crosses exposed snow and ice below the rock band, protected with pickets and screws, to a small cave under a strip of water ice. That ice has gone as a full rope length of WI3 on screws. How much ice forms varies a lot: expect anything from styrofoam snow to verglassed rock to good water ice.",
+      "pitch": "4"
+     },
+     {
+      "grade": "5.6",
+      "notes": "An exposed talus scramble leads to the rock step, a short chimney through the rock band at about 12,000–12,200 ft. It is normally 5.6 rock climbed in crampons past a couple of fixed pins, but in some seasons it fills with water ice and goes at about WI3. Belays at its base are poor; a slung boulder has served as the anchor.",
+      "pitch": "5"
+     },
+     {
+      "grade": "Low-angle glacier snow",
+      "notes": "Above the rock band you reach the broad, low-angle snow ramp of the Liberty Cap Glacier. Follow it up to Liberty Cap. Rime crust is common, and many parties unrope partway up. The technical difficulty is over, but it is a long, tiring climb at altitude after a big day.",
+      "pitch": "6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "II-III, mod snow/ice",
+      "notes": "Hiking and glacier travel on Glacier Basin, Winthrop Glacier, and Carbon Glacier. Navigation through crevassed terrain with potential for concealed crevasses. Route-finding is the main challenge; many parties navigate between known landmarks and marked camps. Simul-travel with loose rope is typical for experienced teams.",
+      "pitch": "1-2: Approach Glaciers (White River to Carbon Glacier Base)"
+     },
+     {
+      "grade": "III-IV, AI2-3, 40-50 deg",
+      "notes": "Ascend snow slopes and rock outcrops from Carbon Glacier base to Thumb Rock (10,500-10,775 ft). Terrain alternates between 30-40 degree snow/ice and scrambling on volcanic rock. Some sections require step-cutting or cramponing on blue ice. Bergschrund crossing may require short ice climbing or creative passage.",
+      "pitch": "3-4: Lower Liberty Ridge to Thumb Rock"
+     },
+     {
+      "grade": "III-IV, WI3, 70-80 deg",
+      "notes": "From Thumb Rock, ascend either a short vertical ice pitch (70-80 degrees) in the center of the rock band, or traverse left around the cliff. The ice pitch is a 10-20 foot technical section requiring confident ice climbing and secure placement of ice screws for protection. It is one of the steepest steps on the route and is where parties often spend significant time; the summit bergschrund higher up is usually the technical crux.",
+      "pitch": "5: Thumb Rock Ice Pitch"
+     },
+     {
+      "grade": "III-IV, AI3, 50-60 deg",
+      "notes": "Climb increasingly steeper slopes (50-60 degrees) and navigate the upper ridge crest or its western flank to reach the Liberty Cap Glacier around 13,500 ft. Several short icy sections and potential bergschrund crossings require rope belays or simul-climbing. Final approach to Liberty Cap summit involves bergschrund navigation (25-30 feet of vertical ice) and final snow/ice approach to the summit area.",
+      "pitch": "6: Upper Ridge to Liberty Cap Glacier"
+     }
+    ],
+    "watch_out": "Objective hazards from Thumb Rock itself and rock bands above at 10,500 ft bivy area\nActive avalanche discharge documented: 'Avalanche from Willis Wall' photo evidence of active snow sloughs from adjacent terrain\nVertical ice pitches at bergschrund crossing (5-8 ft sections)\n70-80 degree ice pitches near rock bands around 10,500 ft - crux terrain\nSustained 40-60 degree ice climbing approaching Liberty Cap Glacier\n50-60 degree steep snow/ice faces on east ridge above Black Pyramid\nSeasonal bridges and icy ledges require careful crevasse navigation\nIntricate Carbon Glacier crossing - complex crevasse systems throughout\nExtreme wind exposure at altitude: documented 80mph summit winds\nGrade IV route - serious alpine undertaking requiring solid ice climbing and glacier travel skills"
+   }
+  }
+ ]
+}

@@ -1,0 +1,529 @@
+{
+ "file": "t341.json",
+ "results": [
+  {
+   "id": "adams_northwest_ridge",
+   "fact": "Trailhead parking pass at Killen Creek",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The only conflicting copy is bivy[0].permit (a shared High Camp card). The Forest Service trail #113 page lists only the free self-issue wilderness permit and the Climbing Pass as required, and the Oregon Hikers field guide's fees section for this trailhead lists only the wilderness permit, which supports access.parking_pass. Note the evidence is not unanimous: WTA and an older wildflower guide still say a Northwest Forest Pass is required, so the camping clean-up should confirm with the Mt. Adams Ranger District before rewording the bivy card.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://www.wta.org/go-hiking/hikes/killen-creek",
+    "http://science.halleyhosting.com/nature/cascade/mtadams/places/flwrhikes/n/killen.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "fact": "Route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way APPROACH, not trailhead-to-summit. 8 km (about 5 mi) matches the walk to High Camp (3.1 mi Killen Creek Trail + 1.0 mi High Camp Trail) plus the short walk to the foot of the face below the Adams Glacier terminus; the summit climb is not part of the approach figure.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike"
+   ],
+   "patches": []
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "fact": "When the route is in condition",
+   "verdict": "fixed",
+   "correct_value": "Late spring (about mid-June) into July",
+   "evidence": "Both documented descents of this face were on the weekend of mid-June; one report says good conditions come 'late in the spring' and the other notes the timing 'at least in mid June'. That is the Jun-Jul window the season chip and best_season give, so climate.spring is narrowed to late spring rather than all of spring.",
+   "sources": [
+    "https://wildsnow.com/26151/mount-adams-north-face-northwest-ridge/",
+    "https://www.turns-all-year.com/trip-reports/adams-nfnwr-avalanche-headwall"
+   ],
+   "patches": [
+    {
+     "id": "adams_northwest_ridge",
+     "fact": "When the route is in condition",
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "spring"
+     ],
+     "find": "Firmest, most in-condition period.",
+     "replace": "Late spring, from about mid-June, is the firmest, most in-condition period."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "fact": "Where human-waste pack-out starts",
+   "verdict": "fixed",
+   "correct_value": "Above 7,000 ft (timberline), not only above high camp",
+   "evidence": "The Forest Service summit page requires climbers to pack out human waste because decomposition above 7,000 ft is too slow; a second guide says solid waste must be packed out above timberline. Both put the line well below the Lunch Counter high camp, agreeing with access.rules and the bivy card.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+    "https://www.eyehike.com/Adams/Adams_Logistics.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_adams_south_climb",
+     "fact": "Where human-waste pack-out starts",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "Human waste carry-out (WAG) bags required above high camp",
+     "replace": "Human waste carry-out (WAG) bags required above 7,000 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report gives the Adams Glacier with a North Ridge descent as c.16 miles round trip; two sources give about 17 mi round trip for the North Ridge (which shares this route's approach and descent). That suggests dist_km (17.5 mi, shown as one-way) is a round-trip figure and the itinerary's 13 mi total and the 11.5 mi summit pin are both off, but no second independent source states this route's own distance, and the 7-mile glacier-base pin is unsourced. A second route-specific distance (e.g. a club route page) would settle it.",
+   "sources": [
+    "https://www.ericsbasecamp.net/trips/AdamsGl/AdamsGl.htm",
+    "http://ericsbasecamp.net/trips/AdamsNR/AdamsNR.htm",
+    "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Running water at High Camp",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dispute is only with the shared High Camp bivy card. Outside sources partly support the card: the meadow stream at Adams Glacier Meadows runs until late summer and parties fill up at the glacial lake above camp. The camping clean-up should soften 'reliable through summer' rather than this route's approach text being changed.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://climberkyle.com/2018/08/18/mt-adams-traverse/",
+    "https://www.alpinewanderlust.com/hot-pa-pahto-north-ridge-adams/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Number of days / camp after the climb",
+   "verdict": "fixed",
+   "correct_value": "Two days: camp at High Camp before the climb, descend to the car on summit day",
+   "evidence": "Three independent trip reports all climbed the Adams Glacier, descended the North Ridge and walked out to the trailhead the same day (one back in camp before 6 pm and at the trailhead about 8 pm, another at the car by 4:30 pm, a third at the car before sunset). The itinerary's two-day plan is right; the descent text's 'camp both before and after' is the outlier.",
+   "sources": [
+    "https://www.ericsbasecamp.net/trips/AdamsGl/AdamsGl.htm",
+    "https://www.jeffreyjhebert.com/adventures/adams-glacier-on-mount-adams",
+    "http://santiamalpineclub.org/mountain/climbing/trip/report/03.06.28.adams.php"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "Number of days / camp after the climb",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "plan on a camp at High Camp both before and after the climb.",
+     "replace": "plan on a night at High Camp before the climb, then descend all the way to the car on summit day."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "fact": "Descending the South Climb to the car",
+   "verdict": "fixed",
+   "correct_value": "Descend the North Ridge to the car; the South Climb ends at Cold Springs and needs a shuttle",
+   "evidence": "The South Climb trail runs from the Cold Springs trailhead on the south side, and a club North Cleaver up / South side down trip notes it involves a car shuttle. So the itinerary cannot offer the South Climb as a same-day way back to the Killen Creek car; the descent text already says so.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-183-south-climb",
+    "https://mazamas.org/activity/instance/3190/detail/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "Descending the South Climb to the car",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "then descend the North Ridge or South Climb all the way to the car.",
+     "replace": "then descend the North Ridge all the way to the car."
+    },
+    {
+     "id": "wa_mount_adams_adams_glacier",
+     "fact": "Descending the South Climb to the car",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "find": "Via the North Ridge or South Climb.",
+     "replace": "Via the North Ridge."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Route distance",
+   "verdict": "fixed",
+   "correct_value": "About 17 mi round trip from Killen Creek (about 8.5 mi each way); summit day from High Camp about 8.8 mi",
+   "evidence": "Two independent sources give the North Ridge from the Killen Creek trailhead as about 17 miles round trip. With the sourced 4.1 mi each way to High Camp (3.1 mi Killen Creek Trail + 1.0 mi High Camp Trail), the camp-summit-camp day is about 8.8 mi, not 4, and the summit is about 8.5 mi from the trailhead, not 11.5. dist_km (3.5 mi) is left: it renders as the one-way approach and matches the 3.5 mi walk to the PCT.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/AdamsNR/AdamsNR.htm",
+    "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Route distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 11.5,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Whether the approach crosses glacier",
+   "verdict": "fixed",
+   "correct_value": "The approach from High Camp to the ridge is snowfield and moraine, not glacier; glacier lies on the ridge's flanks and on the summit ice cap",
+   "evidence": "From High Camp parties go up late-season snowfields and moraine to the cleaver and gain the ridge almost immediately after the lake above camp; the route is described as non-technical, with the only glacier travel being a corridor of unbroken glacier between the top of the ridge and the summit. The rack, protection and approach text are reworded to put the glacier gear on the ice cap and flanks rather than the approach.",
+   "sources": [
+    "https://climberkyle.com/2018/08/18/mt-adams-traverse/",
+    "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route",
+    "https://www.mountainproject.com/route/107223000/north-ridge",
+    "http://ericsbasecamp.net/trips/AdamsNR/AdamsNR.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Whether the approach crosses glacier",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "crevasse-rescue kit for the glaciated approach.",
+     "replace": "crevasse-rescue kit for the summit ice cap."
+    },
+    {
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Whether the approach crosses glacier",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "plus glacier-travel gear for the approach;",
+     "replace": "plus glacier-travel gear for the summit ice cap;"
+    },
+    {
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Whether the approach crosses glacier",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "and it involves more crevassed ground — roped travel and glacier skills are expected, unlike the South Spur.",
+     "replace": "and crevassed glacier lies on both flanks of the ridge and on the summit ice cap, so glacier skills are expected, unlike the South Spur."
+    },
+    {
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Whether the approach crosses glacier",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "find": "more open crevasses on the glacier approach",
+     "replace": "more open crevasses on the glaciers beside the ridge"
+    },
+    {
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Whether the approach crosses glacier",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "glacier travel kit for the approach",
+     "replace": "glacier travel kit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Distance to the base of the ridge",
+   "verdict": "fixed",
+   "correct_value": "The ridge is gained almost immediately above camp; the 7-mile figure is unsupported",
+   "evidence": "Parties leaving the lake about a mile above High Camp gain the ridge 'almost immediately', and another report goes straight from the lake up snowfields and moraine onto the cleaver. The pin's 7 mi (2.9 mi past camp) has no source and contradicts both, so it is set to unknown rather than replaced with an interpolated number.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route",
+    "https://climberkyle.com/2018/08/18/mt-adams-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Distance to the base of the ridge",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 7,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Running water at High Camp",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Dispute is only with the shared High Camp bivy card. Sources show a meadow stream at High Camp that may stop running late in summer, and a glacial lake above camp where parties fill up, so 'last reliable water' at East Fork Adams Creek is defensible while the card's 'reliable through summer' is overstated; left to the camping clean-up.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://climberkyle.com/2018/08/18/mt-adams-traverse/",
+    "https://www.alpinewanderlust.com/hot-pa-pahto-north-ridge-adams/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Steepest angle",
+   "verdict": "fixed",
+   "correct_value": 40,
+   "evidence": "A guide service says the steepest sections of the North Ridge are around 40 degrees, and a route listing gives a maximum slope of about 40 degrees. The itinerary's 'around 40°' is right and max_angle 50 is the outlier.",
+   "sources": [
+    "https://www.mountainschool.com/mt-adams-guides",
+    "https://www.bivy.com/adventures/us/washington/mt-adams:-north-ridge-route-483011"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_adams_north_ridge",
+     "fact": "Steepest angle",
+     "op": "set",
+     "column": "max_angle",
+     "path": [],
+     "expect": 50,
+     "value": 40
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "fact": "Summit-day start time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source found giving a recommended departure time for this route (one traverse party started at 7 a.m. from the car, which does not bear on a camp start). A published route description stating a start window would settle 2-3 AM vs 3-4 AM.",
+   "sources": [
+    "https://climberkyle.com/2018/08/18/mt-adams-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a distance for the Lyman Glacier route itself. The shared approach is 4.1 mi each way to High Camp, and the North Ridge descent route is about 17 mi round trip, which suggests the 14.2-mi itinerary total is short and dist_km (23.2 mi) is not a one-way figure, but neither can be set without a route-specific distance.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+    "http://ericsbasecamp.net/trips/AdamsNR/AdamsNR.htm",
+    "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "fact": "Running water at High Camp",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Dispute is only with the shared High Camp bivy card; the approach text's East Fork Adams Creek as last easy water is consistent with sources, while the card's 'reliable through summer' is overstated (the meadow stream may stop running late in summer). Left to the camping clean-up.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+    "https://climberkyle.com/2018/08/18/mt-adams-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_mazama_glacier_headwall",
+   "fact": "Headwall elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One source says the route turns up the steep headwall at about 11,300 ft; the main route description gives Sunrise Camp (8,300 ft) and the bergschrund (9,500 ft) but no headwall elevation. The 11,600-ft pin may mark the top of the headwall rather than its foot. A second source for where the headwall begins or ends would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/107760356/mazama-glacier-headwall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The club route page for the Avalanche/White Salmon Glaciers from Cold Springs gives 6,700 ft of gain, and 5,000 ft appears only as the summit-day figure from a high camp. Only one source states the car-to-car figure, so gain_ft (and loss_ft) are not changed; a second route-specific gain figure would settle it.",
+   "sources": [
+    "https://mazamas.org/activity/220/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "fact": "Aspect",
+   "verdict": "fixed",
+   "correct_value": "SW",
+   "evidence": "The club route page calls this a glacier route on the SW slopes, and the Avalanche Glacier is described as lying on the west to southwest slopes of Mount Adams. The overview, beta and approach agree; aspect S and the face label 'South side' are corrected.",
+   "sources": [
+    "https://mazamas.org/activity/220/",
+    "https://en.wikipedia.org/wiki/Avalanche_Glacier"
+   ],
+   "patches": [
+    {
+     "id": "adams_avalanche_glacier",
+     "fact": "Aspect",
+     "op": "set",
+     "column": "aspect",
+     "path": [],
+     "expect": "S",
+     "value": "SW"
+    },
+    {
+     "id": "adams_avalanche_glacier",
+     "fact": "Aspect",
+     "op": "replace_text",
+     "column": "face",
+     "path": [],
+     "find": "Avalanche Glacier / South side",
+     "replace": "Avalanche Glacier / Southwest side"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Killen Creek trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": 4600,
+   "evidence": "Trip reports and a trail guide give the Killen Creek trailhead at c.4,600 ft (the guide lists a low point of 4,600 ft), matching the trailhead pin and the camp card; 4,140 ft is the outlier.",
+   "sources": [
+    "https://www.ericsbasecamp.net/trips/AdamsGl/AdamsGl.htm",
+    "http://science.halleyhosting.com/nature/cascade/mtadams/places/flwrhikes/n/killen.htm",
+    "http://ericsbasecamp.net/trips/AdamsNR/AdamsNR.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_adams_lava_glacier_headwall",
+     "fact": "Killen Creek trailhead elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "near Takhlakh Lake at about 4,140 ft",
+     "replace": "near Takhlakh Lake at about 4,600 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Total gain and loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The club route page gives 7,800 ft of gain for the Lava Glacier Headwall, which supports gain_ft; no source states a car-to-car descent figure, so loss_ft (5,000) and the itinerary's 6,700/6,700 are not changed. A route-specific loss or itinerary figure would settle it.",
+   "sources": [
+    "https://mazamas.org/activity/221/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives this route's distance. The shared North Ridge descent route is about 17 mi round trip from Killen Creek, which suggests the 12.5-mi itinerary is short and dist_km (16.5 mi) is a round-trip rather than a one-way figure, but neither can be set without a route-specific source.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/AdamsNR/AdamsNR.htm",
+    "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Ice screw count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's own corrections note says the rack was sized by analogy with neighbouring routes, and the club page gives no screw count. Sources describe the face as about 45-degree neve climbed continuously, which fits the protection text's 'occasional screw', but no source states a number, so neither copy is changed.",
+   "sources": [
+    "https://mazamas.org/activity/221/",
+    "https://wildsnow.com/26151/mount-adams-north-face-northwest-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "fact": "Descending the South Climb to the car",
+   "verdict": "fixed",
+   "correct_value": "Descend the North Ridge to the car; the South Climb ends at Cold Springs and needs a shuttle",
+   "evidence": "The itinerary offers the South Climb as a same-day way back to the car, but the descent text says it ends at a different trailhead and needs a shuttle. The South Climb runs from Cold Springs on the south side, and a club North Cleaver up / South side down trip notes it involves a car shuttle, so the itinerary copies are corrected.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-183-south-climb",
+    "https://mazamas.org/activity/instance/3190/detail/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_adams_lava_glacier_headwall",
+     "fact": "Descending the South Climb to the car",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "then descend the North Ridge or South Climb.",
+     "replace": "then descend the North Ridge."
+    },
+    {
+     "id": "wa_mount_adams_lava_glacier_headwall",
+     "fact": "Descending the South Climb to the car",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Via the North Ridge or South Climb.",
+     "replace": "Via the North Ridge."
+    },
+    {
+     "id": "wa_mount_adams_lava_glacier_headwall",
+     "fact": "Descending the South Climb to the car",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "descending via the North Ridge or South Climb.",
+     "replace": "descending via the North Ridge."
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

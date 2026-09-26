@@ -1,0 +1,331 @@
+{
+ "file": "t122.json",
+ "results": [
+  {
+   "id": "wa_east_face_2",
+   "fact": "Rappel lengths vs route length",
+   "verdict": "fixed",
+   "correct_value": "Two double-rope rappels: summit-area horn to the slung horn at the top of pitch 2, then to the base; no per-rappel length is published, so the 35 m / ~120 ft figure (an unsourced estimate that cannot fit a 400 ft route) is removed.",
+   "evidence": "Both route descriptions give the descent as a 15 ft downclimb from the bunny-ears notch to a slung horn, a double-rope rappel to the large slung horn at the top of pitch 2, and a second double-rope rappel to the base, on a 400 ft, 4-pitch route; neither states a length for either rappel. The row's own rappel_count_note already admits the 35 m is an estimate; since rap 1 spans pitches 3-4 it cannot be ~35 m if rap 2 is to reach the ground, so the unsourced figure is nulled rather than replaced.",
+   "sources": [
+    "https://www.mountainproject.com/route/109228122/east-face",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Chablis-Spire-East-Face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "lengthM"
+     ],
+     "expect": 35,
+     "value": null,
+     "id": "wa_east_face_2",
+     "fact": "Rappel lengths vs route length"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "First double-rope rappel (~120 ft) from the summit area down to an intermediate anchor on the face.",
+     "replace": "First double-rope rappel from the summit area down to the large slung horn at the top of pitch 2.",
+     "id": "wa_east_face_2",
+     "fact": "Rappel lengths vs route length"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "to the scree base. Plan on similar to the first rappel.",
+     "replace": "to the scree base.",
+     "id": "wa_east_face_2",
+     "fact": "Rappel lengths vs route length"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "First double-rope rappel descends approximately 120 feet to an intermediate anchor (located on the face). Reanchor ropes for second rappel",
+     "replace": "First double-rope rappel descends to the large slung horn at the top of pitch 2. Reanchor ropes there for the second rappel",
+     "id": "wa_east_face_2",
+     "fact": "Rappel lengths vs route length"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "Per-station distances are not published; the listed values are estimates from the description of the first rappel as roughly a 120 ft double-rope rappel and should not be planned around.",
+     "replace": "Per-station distances are not published, so none is listed.",
+     "id": "wa_east_face_2",
+     "fact": "Rappel lengths vs route length"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Which pitch is the crux",
+   "verdict": "fixed",
+   "correct_value": "Every pitch is about 5.6; the one serious section is the short unprotected 5.6R dyke/slab on pitch 2. P4 is a laid-back, well-protected 5.6 corner, not the crux.",
+   "evidence": "One description grades the route II 5.6R, says every pitch is 5.6 and names the short 5.6 R stretch on pitch 2 as the one intimidating section, calling the P4 corner fun and well protected. The other gives P2's dyke as 5.6R with no pro for 25-30 ft and P4 as a laid-back 5.6 corner.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Chablis-Spire-East-Face",
+    "https://www.mountainproject.com/route/109228122/east-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "P4 is the 5.6 crux corner.",
+     "replace": "every pitch is about 5.6, and the short unprotected dyke on P2 is the one serious section.",
+     "id": "wa_east_face_2",
+     "fact": "Which pitch is the crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Number of days",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The itinerary is an optional overnight plan (camping at the bench, which pro_tips also suggests) while timing describes the one-day push; two genuine options, not a conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Summit difficulty",
+   "verdict": "fixed",
+   "correct_value": "The final ~15 ft to the tiny summit are unprotected and are led one climber at a time; the summit is not 'easily attained'. Pitch 4 itself is well protected up to a ledge ~15 ft below the top, so '40-foot section with no viable pro' is also wrong.",
+   "evidence": "One description says P4 ends on a ledge just 15 ft below the summit and climbers visit the tiny summit one at a time, leading the final 15 ft separately and down-climbing on belay. The other calls the move from the bunny-ears notch to the summit unprotectable, done one at a time on a rope. Both agree on a short unprotected finish (not 40 ft, and not easy).",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Chablis-Spire-East-Face",
+    "https://www.mountainproject.com/route/109228122/east-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "East Face, easily attained summit;",
+     "replace": "East Face; the tiny summit is reached by a short unprotected lead, one climber at a time;",
+     "id": "wa_east_face_2",
+     "fact": "Summit difficulty"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "40-foot section with no viable pro.",
+     "replace": "The last 15 feet take no protection.",
+     "id": "wa_east_face_2",
+     "fact": "Summit difficulty"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Cam range",
+   "verdict": "fixed",
+   "correct_value": "Cams to 3 in (one set about 0.3-3 in).",
+   "evidence": "The gear list for the route gives one set of cams 0.3-3 in with a set of nuts and two 60 m ropes; the other description says a light rack to 3 inches. Both top out at 3 in, not 2 in.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/route_gear.php?r=wacispef",
+    "https://www.mountainproject.com/route/109228122/east-face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "sling_rack",
+     "path": [
+      "cams"
+     ],
+     "expect": "0.3-2in",
+     "value": "0.3-3in",
+     "id": "wa_east_face_2",
+     "fact": "Cam range"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Where the 5.8 finger crack is (pitch 1, not pitch 2)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The optional 5.8 finger crack is on pitch 1, from the split block (easier ground right at ~5.4); pitch 2 is the 5.6R dyke/slab. The approach_variants baseFinding already says this.",
+   "evidence": "One description puts the finger-crack option (5.8) or a traverse to easier 5.4 ground on P1, belaying above the crack, with P2 being the 25-30 ft unprotected 5.6R dyke. The other also describes P1 passing a splitter 5.8 finger crack by the detached block and P2 as the protection-less soft 5.6 R section. The row's pitch_detail and beta put the finger crack on P2, contradicting its own baseFinding.",
+   "sources": [
+    "https://www.mountainproject.com/route/109228122/east-face",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Chablis-Spire-East-Face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Build anchor for belay.",
+     "replace": "From the block, either climb the 5.8 finger crack straight up or keep traversing right on easier ground to the ledge above it. Build anchor for belay.",
+     "id": "wa_east_face_2",
+     "fact": "Where the 5.8 finger crack is (pitch 1, not pitch 2)"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "grade"
+     ],
+     "expect": "5.6 (5.8 crack variation)",
+     "value": "5.6R",
+     "id": "wa_east_face_2",
+     "fact": "Where the 5.8 finger crack is (pitch 1, not pitch 2)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Finger crack option climbs at 5.8 or easier terrain available at 5.4. Critical",
+     "replace": "Critical",
+     "id": "wa_east_face_2",
+     "fact": "Where the 5.8 finger crack is (pitch 1, not pitch 2)"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Pitch 2 features a finger crack option (5.8) or easier terrain (5.4) with a critical 25-30 foot unprotectable section on a dyke.",
+     "replace": "Pitch 1 offers a 5.8 finger crack or easier ground to its right, and pitch 2 has a critical 25-30 foot unprotectable section on a dyke.",
+     "id": "wa_east_face_2",
+     "fact": "Where the 5.8 finger crack is (pitch 1, not pitch 2)"
+    }
+   ]
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Grade of pitch 2",
+   "verdict": "fixed",
+   "correct_value": "P5 is the 5.10b crux; P2 is 5.9 (the only other 5.10b is the optional left-start on P1).",
+   "evidence": "The route description grades the traditional start 5.8-5.9, the left-start P1 variation 5.10b, its P2 5.9, and names P5 (thin hands to offwidth, to a bolted belay) as the 5.10 crux. A separate trip report identifies pitch 5 as the crux (thin hands to fingers to offwidth) with the other pitches 5.8. Neither makes P2 a 5.10b pitch.",
+   "sources": [
+    "https://www.mountainproject.com/route/106256230/east-face-rebel-yell",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/rebel-yell/",
+    "https://www.summitpost.org/rpc-s-chianti-spire-rebel-yell/651488"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "(5.10 overall with crux pitches P2 and P5 at 5.10b)",
+     "replace": "(5.10 overall with the 5.10b crux on P5)",
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Grade of pitch 2"
+    }
+   ]
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Water at Burgundy Col",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Snow near the col usually provides water, but it is not year-round: it can be gone or rock-hard late in a dry season.",
+   "evidence": "The row's approach, approach_variants hazard and camping card all say the col's snow is unreliable by late summer. Outside reports agree water near the col is limited or non-existent late summer/early fall, with one late-season party carrying 6 L each for lack of it and bench-camp threads pointing to the lower spring instead. One older description does say 'year round snow', so the sources are not unanimous; the patch removes the 'year-round' promise without asserting a new number.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/paisano-burgundy/",
+    "https://www.summitpost.org/burgundy-spire/151368",
+    "https://www.mountainproject.com/forum/topic/114587941/water-situation-near-bench-camp-below-burgundy-col-in-wa-pass"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Water is available near the col from year-round snow.",
+     "replace": "Snow patches near the col usually supply water, but they can be gone or rock-hard late in a dry season.",
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Water at Burgundy Col"
+    }
+   ]
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Recommended start time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Safety text should not cite a 04:00 start the rest of the row does not give; timing and the day-2 schedule both say 5:00 AM from camp.",
+   "evidence": "timing.recommendedStart and the itinerary schedule agree on 5:00 AM from camp; the Safety sentence refers to a 04:00 'recommended start' that exists nowhere else. No outside source publishes a specific start time for this route, so the patch points the cross-reference at the row's own 5:00 AM figure rather than adopting a new fact.",
+   "sources": [
+    "https://www.mountainproject.com/route/106256230/east-face-rebel-yell"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "probability"
+     ],
+     "find": "(per the 04:00 recommended start)",
+     "replace": "(per the 5:00 AM recommended start from camp)",
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Recommended start time"
+    }
+   ]
+  },
+  {
+   "id": "wa_clean_break",
+   "fact": "Trailhead where the car is parked",
+   "verdict": "unresolved",
+   "correct_value": "Parties park at the small Silver Star Creek pullout (~8.5 mi east of Washington Pass) and approach up Silver Star Creek; the MP166 Wine Spires pullout is where the Burgundy Col descent reaches the highway (~3.5 mi from the car).",
+   "evidence": "One trip report started from the small pullout at Silver Star Creek 8.5 miles east of Washington Pass, descended past Bench Camp below Burgundy Col and hitch-hiked the 3.5 miles back to the car; another party approached and returned via Silver Star Creek; the route page locates the start from Silver Star Creek. The fact is settled, but the fix needs the Trailhead pin and approach_logistics.trailheadLat/Lng moved to the Silver Star Creek pullout, and coordinates are out of scope; renaming the card/pin text alone would label the MP166 pin with the wrong place, so no patch is written.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/juno-tower-clean-break/",
+    "http://iannicholsonslife.blogspot.com/2010/09/clean-break-iv-510bc-juno-tower-with.html",
+    "https://www.mountainproject.com/route/109232141/clean-break"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_clean_break",
+   "fact": "Fixed piece on pitch 7",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The #4 once left fixed on P7 (2014) is gone; bring your own #4.",
+   "evidence": "The route page's protection notes say a #4 was fixed on P7 as of 7/4/14 and that it is now gone per a later comment. In the row, sling_rack says it is no longer there and gear, rack and detailed_rack all already tell the party to carry its own #4; only detailed_rack's 'may not be reliable' implies it might still be there.",
+   "sources": [
+    "https://www.mountainproject.com/route/109232141/clean-break"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "(fixed protection on P7 was present in 2014 but may not be reliable; bring your own)",
+     "replace": "(the #4 once left fixed on P7 is gone; bring your own)",
+     "id": "wa_clean_break",
+     "fact": "Fixed piece on pitch 7"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,469 @@
+{"batches": ["b427.json","b428.json","b429.json","b430.json","b431.json","b432.json","b433.json"], "routes_read": 24, "routes": [
+{"id": "wa_mount_st_helens_monitor_ridge", "name": "Monitor Ridge", "area": "Mount St. Helens", "contradictions": [
+ {"fact": "July conditions (snow-covered vs snow-free)", "severity": "low",
+  "claims": [
+   {"field": "seasonal_guidance.monthBreakdown.July.reason", "says": "Typically snow-free — route becomes loose volcanic ash and boulders; hot and exposed"},
+   {"field": "seasonal_guidance.optimalWindow", "says": "Early summer (late June-July), while snow lingers on the upper mountain, is best for efficient climbing and glissade descent"},
+   {"field": "best_season", "says": "late June-July often still has continuous snow on the upper mountain (good for glissading the descent)"}],
+  "why": "The July month row says the route is typically snow-free, while the optimal window and best_season both say July still holds snow.",
+  "internal_resolution": "optimalWindow and best_season agree that July often still holds snow; the July month reason is the outlier.",
+  "needs_research": false},
+ {"fact": "Cell coverage on the route", "severity": "low",
+  "claims": [
+   {"field": "comms", "says": "parties report intermittent-to-good reception (especially Verizon) above treeline and on the summit"},
+   {"field": "watch_out[2]", "says": "No reliable cell service anywhere on route"},
+   {"field": "emergency.notes", "says": "Cell coverage is unreliable to nonexistent on the access roads and the entire climbing route"}],
+  "why": "comms reports reception above treeline, while watch_out and emergency say there is none anywhere on the route.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "When the climbing permit is required", "severity": "low",
+  "claims": [
+   {"field": "permit", "says": "Climbing permit required year-round above 4,800 ft"},
+   {"field": "itinerary.days[0].schedule[0].detail", "says": "Most parties start pre-dawn; permit required Apr 1-Oct 31."}],
+  "why": "The schedule implies a permit is needed only Apr-Oct, but every other field says it is required year-round.",
+  "internal_resolution": "permit, access.permit, waypoints[0] and bivy[0].permit all say year-round (free and self-issued Nov-Mar); Apr 1-Oct 31 is only the quota season.",
+  "needs_research": false},
+ {"fact": "Avalanche hazard in the route's season", "severity": "low",
+  "claims": [
+   {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route (dry ridge west of Swift Glacier); avalanche hazard mainly applies to the winter Worm Flows route"},
+   {"field": "seasonal_hazards.avalanche.byMonth.June", "says": "N/A"},
+   {"field": "approach_variants[0].hazards[4]", "says": "Full winter conditions and avalanche terrain on the upper slopes well into late spring"},
+   {"field": "seasonal_guidance.monthBreakdown.June.reason", "says": "Prime snow-climbing/glissade conditions once the road to Climbers Bivouac opens"}],
+  "why": "June is rated the optimal snow-climbing month and the approach lists avalanche terrain into late spring, but the avalanche panel says N/A for June.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Facilities at Climbers Bivouac", "severity": "low",
+  "claims": [
+   {"field": "bivy[0].notes", "says": "with tent pads and fire rings but nothing else"},
+   {"field": "bivy[0].water", "says": "Pit toilets are provided"}],
+  "why": "The same camp card says there is nothing but tent pads and fire rings, and also that pit toilets are provided.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_mount_st_helens_worm_flows", "name": "Worm Flows", "area": "Mount St. Helens", "contradictions": [
+ {"fact": "Car-to-car time vs the day schedule", "severity": "medium",
+  "claims": [
+   {"field": "timing.totalHrs", "says": "9.5"},
+   {"field": "itinerary.totalNote", "says": "about 9-10 hrs car-to-car"},
+   {"field": "itinerary.days[0].schedule[0].time", "says": "4:30-5:00 AM"},
+   {"field": "itinerary.days[0].schedule[3].time", "says": "12:00-1:00 PM"},
+   {"field": "itinerary.days[0].schedule[5].time", "says": "2:00-4:30 PM"},
+   {"field": "turnaround", "says": "Turn around by early afternoon"}],
+  "why": "A 4:30-5:00 AM start with rim arrival at 12-1 PM, a break until 2 PM and a return by 4:30 PM gives up to about 12 hours, not 9.5, and puts the summit after the stated early-afternoon turnaround.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Glacier and crevasse exposure", "severity": "medium",
+  "claims": [
+   {"field": "seasonal_hazards.crevasses", "says": "Minor - the route runs along/near Swift Glacier ... it remains an active glacier and may have visible and unseen crevasses"},
+   {"field": "detailed_rack", "says": "No rope/rock pro on the standard route."},
+   {"field": "approach", "says": "The route follows Worm Flow Ridge past an old seismic monitoring station near 6,200 ft, then continues up snow/scree slopes to merge with the summer Monitor Ridge climbing route at about 7,400 ft."}],
+  "why": "The crevasse panel says the route crosses or runs along an active glacier with hidden crevasses, but the kit carries no rope and every route description stays on the ridge.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_old_snowy_mountain_r1", "name": "South Ridge / PCT approach", "area": "Old Snowy Mountain", "contradictions": [
+ {"fact": "Which trail reaches the PCT (96 vs 97)", "severity": "medium",
+  "claims": [
+   {"field": "waypoints[2].note", "says": "Trail 97 forks off Trail 96 and climbs west toward the PCT; stay on 97 to continue toward Old Snowy rather than continuing on 96."},
+   {"field": "waypoints[3].note", "says": "Trail 97 tops out on the Pacific Crest Trail; turn north"},
+   {"field": "approach", "says": "Continue past the Trail 97 junction (west to Cispus Basin/PCT) and the Trail 86 junction (Goat Lake), staying on the main track ... At about 4.7 miles the trail meets the Pacific Crest Trail"},
+   {"field": "descent_text", "says": "Continue south on the PCT to the Trail 96 junction (~7,100 ft) and descend Trail 96 the way you came"}],
+  "why": "The waypoints tell a party to turn onto Trail 97 at the junction, while the approach and descent say to stay on Trail 96 past it to the PCT.",
+  "internal_resolution": "approach, approach_variants[0].notes ('Continue past the two trail junctions to the PCT') and descent_text agree on staying on Trail 96; the two waypoint notes are the outlier.",
+  "needs_research": false},
+ {"fact": "Round-trip distance", "severity": "low",
+  "claims": [
+   {"field": "itinerary.days[0].miles", "says": "14"},
+   {"field": "itinerary.totalNote", "says": "about 14 miles round trip"},
+   {"field": "approach", "says": "round trip is roughly 15.5 miles"},
+   {"field": "approach_variants[0].notes", "says": "Round trip is roughly 15.5 miles"},
+   {"field": "waypoints[6].distMi", "says": "7.6"}],
+  "why": "The header and itinerary give 14 miles round trip, but the approach text and summit waypoint give about 15.2-15.5 miles.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Total loss", "severity": "low",
+  "claims": [
+   {"field": "loss_ft", "says": "3100"},
+   {"field": "itinerary.days[0].lossFt", "says": "3600"},
+   {"field": "gain_ft", "says": "3600"}],
+  "why": "This out-and-back loses 3,600 ft in the itinerary but loss_ft says 3,100.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_clast_from_the_past", "name": "Clast from the Past", "area": "North Side", "contradictions": [
+ {"fact": "Discipline (trad vs sport)", "severity": "low",
+  "claims": [
+   {"field": "discipline", "says": "trad"},
+   {"field": "pro_needs", "says": "Fully bolted two-pitch sport route; no trad gear required"},
+   {"field": "gear[0]", "says": "the route is fully bolted ... bring a standard sport rack for the pitch length rather than a trad rack"}],
+  "why": "The route is filed as trad, but every protection field calls it a fully bolted sport route.",
+  "internal_resolution": "pro_needs, gear, detailed_rack ('Sport rack') and hazards[2] ('Two-pitch sport climbing') all say sport; discipline is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_top_gun", "name": "Top Gun", "area": "North Side", "contradictions": []},
+{"id": "wa_cobbles_101", "name": "Cobbles 101", "area": "South Face", "contradictions": [
+ {"fact": "Season window (spring access)", "severity": "low",
+  "claims": [
+   {"field": "season", "says": "late spring-fall (snow-free)"},
+   {"field": "best_season", "says": "the forest-road approach and formation are described as inaccessible during winter and spring due to snow"},
+   {"field": "climate.spring", "says": "Road and approach typically still snowed in"},
+   {"field": "road.seasonalGate", "says": "reopening typically by early-mid summer"}],
+  "why": "The season chip starts in late spring, but best_season, climate and the road gate say spring is snowed in and the road reopens in early-to-mid summer.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_bowling_alley_aka_regular_route", "name": "Bowling Alley (aka Regular Route)", "area": "South Face", "contradictions": [
+ {"fact": "Season window (spring access)", "severity": "low",
+  "claims": [
+   {"field": "season", "says": "late spring-fall (snow-free)"},
+   {"field": "best_season", "says": "the forest-road approach and formation are described as inaccessible during winter and spring due to snow"},
+   {"field": "climate.spring", "says": "Road and approach typically still snowed in"},
+   {"field": "road.seasonalGate", "says": "reopening typically by early-mid summer"}],
+  "why": "The season chip starts in late spring, but best_season, climate and the road gate say spring is snowed in.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Protection: fully bolted vs knob threads", "severity": "low",
+  "claims": [
+   {"field": "pro_needs", "says": "Fully bolted to chain/fixed anchors on every pitch"},
+   {"field": "detailed_rack", "says": "no trad gear is used"},
+   {"field": "rope_note", "says": "mixed bolt + knob-thread protection"},
+   {"field": "sling_rack.extra_slings", "says": "several, for threading knobs"}],
+  "why": "Kit fields call the route fully bolted, while rope_note and sling_rack say protection is mixed bolts and knob threads.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Descent time", "severity": "low",
+  "claims": [
+   {"field": "timing.descentTimeHrs", "says": "3"},
+   {"field": "timing.totalHrs", "says": "6.5"},
+   {"field": "itinerary", "says": "rappel back to the base, and hike out to the car — easily done in half a day"},
+   {"field": "approach", "says": "generally under 15 minutes' walk from the parking pullout"}],
+  "why": "Three hours for two rappels and a walk-out of under 15 minutes does not fit a half-day outing.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "P2 said to join the route it is on", "severity": "low",
+  "claims": [
+   {"field": "pitch_detail[1].notes", "says": "Vertical groove past large rock formations, traversing to join the Regular Route line"},
+   {"field": "name", "says": "Bowling Alley (aka Regular Route)"}],
+  "why": "Pitch 2 of the Regular Route says it traverses to join the Regular Route, which suggests the pitch text describes a different line or a variation.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_wild_wild_west", "name": "Wild Wild West", "area": "West Face", "contradictions": [
+ {"fact": "Approach road condition and clearance", "severity": "low",
+  "claims": [
+   {"field": "hazards[1]", "says": "Approach roads (NF-25/28/77) are rough gravel beyond the FR-76 junction and need a high-clearance vehicle."},
+   {"field": "road.status", "says": "From Randle, NF-25 is paved/maintained gravel for ~19 miles, then NF-28 and NF-77 become progressively rougher forest roads"}],
+  "why": "The hazards call all three roads rough and needing high clearance, while road.status calls NF-25 paved or maintained gravel.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Where the route-finding is hard", "severity": "low",
+  "claims": [
+   {"field": "obj_haz[2]", "says": "route-finding on lower pitches"},
+   {"field": "watch_out[1]", "says": "Route-finding on the upper pitches can be tricky"}],
+  "why": "The Safety tab places the route-finding difficulty on the lower pitches in one list and on the upper pitches in the other.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Total gain", "severity": "low",
+  "claims": [
+   {"field": "gain_ft", "says": "700"},
+   {"field": "waypoints[0].elev", "says": "4747"},
+   {"field": "high_point_ft", "says": "5123"},
+   {"field": "length_m", "says": "122"}],
+  "why": "The route runs about 400 ft from the 4,747 ft toe to the 5,123 ft summit after a short road walk, yet the header gain is 700 ft.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_point_success_south_side", "name": "Point Success via Success Cleaver", "area": "Point Success", "contradictions": [
+ {"fact": "Glacier travel and crevasse rescue", "severity": "medium",
+  "claims": [
+   {"field": "overview", "says": "climbable to a true summit without significant glacier travel"},
+   {"field": "approach_variants[0].baseFinding", "says": "If a glacier is underfoot you have left the cleaver — this route is defined by not being on one."},
+   {"field": "detailed_rack", "says": "glacier rescue gear and pickets for the snow"},
+   {"field": "partner_requirements.requiredSkills[0]", "says": "glacier travel and crevasse rescue (crevasses present near the summit)"},
+   {"field": "seasonal_hazards.crevasses", "says": "Present near the summit despite Success Cleaver being one of the only two Rainier routes without significant sustained glacier travel"},
+   {"field": "itinerary.days[2].schedule[1].detail", "says": "Transition off Success Cleaver onto the Kautz Cleaver/glacier terrain near 12,200 ft"}],
+  "why": "The route is described as never touching a glacier, but the rack, the partner skills, the crevasse panel and the summit-day schedule all call for glacier travel and crevasse rescue.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Location of the first night's camp", "severity": "low",
+  "claims": [
+   {"field": "partner_requirements.approachTime", "says": "Full day (6-8+ hours) from Longmire to high camp near Indian Henry's Hunting Ground (~10 miles, ~4,100 ft gain)"},
+   {"field": "approach", "says": "Indian Henry's Hunting Ground at roughly 6.3–7 mi and 5,300 ft"},
+   {"field": "itinerary.days[0].objective", "says": "Reach camp near the 6,400 ft saddle / Pyramid Peak"}],
+  "why": "The Partners tab puts the 10-mile day-1 camp near Indian Henry's, which the approach places at 6.3-7 miles, while the itinerary camps at the 6,400 ft saddle by Pyramid Peak.",
+  "internal_resolution": "The itinerary, approach and bivy[0] put the first camp at Point 6631 / the 6,400 ft saddle, about 10 miles in; 'near Indian Henry's' in partner_requirements is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_ez_way", "name": "EZ Way", "area": "Shark Rock", "contradictions": [
+ {"fact": "Pitch count", "severity": "low",
+  "claims": [
+   {"field": "pitches", "says": "3"},
+   {"field": "itinerary", "says": "climb EZ Way (one pitch plus scrambling)"},
+   {"field": "rope_note", "says": "Exact pitch count/length not published."},
+   {"field": "pitch_detail[1].pitch", "says": "1"}],
+  "why": "The header shows 3 pitches, but the itinerary and pitch_detail describe one roped pitch plus two scramble sections, and rope_note says no pitch count is published.",
+  "internal_resolution": "pitch_detail has one roped pitch ('1', 5.6) and two 3rd-4th class scramble rows, matching the itinerary's 'one pitch plus scrambling'; pitches=3 counts the scrambles.",
+  "needs_research": false},
+ {"fact": "Approach terrain (trail vs cross-country)", "severity": "low",
+  "claims": [
+   {"field": "turnaround", "says": "Given the long, mostly cross-country approach ... in this remote, trail-less terrain"},
+   {"field": "itinerary", "says": "hike several miles largely cross-country via the Boundary Trail and Badger Lake"},
+   {"field": "approach", "says": "Follow the Boundary Trail 2.25 miles to Badger Lake, then continue 2.75 miles ... to the last switchback below the ridge crest; from there an almost-level traverse through open timber"}],
+  "why": "The approach is about 5 miles on the Boundary Trail with only a short traverse off it, yet the turnaround and itinerary call it mostly cross-country and trail-less.",
+  "internal_resolution": "approach and road.status ('roughly 5.5 miles each way on the Boundary Trail') say the approach is on trail; the 'cross-country' wording is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_castle_peak_tatoosh_southeast_face", "name": "Southeast Face (Standard Route)", "area": "The Castle", "contradictions": [
+ {"fact": "Protection on the chimney pitch", "severity": "low",
+  "claims": [
+   {"field": "overview", "says": "a short, well-protected easy-5th-class crack-and-chimney pitch"},
+   {"field": "hazards[1]", "says": "A short but real 5th-class pitch with sparse natural protection."},
+   {"field": "pro_needs", "says": "Protection is sparse on the chimney/crack pitch"},
+   {"field": "pitch_detail[2].notes", "says": "sparse protection, a #2 Camalot covers the crux"}],
+  "why": "The overview calls the pitch well protected, while the hazards, pro_needs and pitch notes say protection is sparse.",
+  "internal_resolution": "hazards, pro_needs, pitch_detail and approach_variants[0].hazards[1] all say sparse; the overview is the outlier.",
+  "needs_research": false},
+ {"fact": "Pitch count", "severity": "low",
+  "claims": [
+   {"field": "pitches", "says": "4"},
+   {"field": "bail", "says": "The technical crux is a single, short pitch close to the col"},
+   {"field": "pitch_detail[2].pitch", "says": "P1"}],
+  "why": "The header shows 4 pitches, but the route has one roped pitch; the other pitch_detail rows are the trail approach, the scree traverse and a summit scramble.",
+  "internal_resolution": "pitch_detail labels only one row 'P1' (the other three are Approach, Traverse and Summit scramble), and bail and overview describe a single pitch.",
+  "needs_research": false}
+]},
+{"id": "wa_scramble_route", "name": "Scramble Route", "area": "Eagle Peak", "contradictions": [
+ {"fact": "Distance shown in the header", "severity": "medium",
+  "claims": [
+   {"field": "dist_km", "says": "7.3"},
+   {"field": "approach", "says": "a maintained trail (about 7.2 miles round trip, ~2,955 ft gain)"},
+   {"field": "descent", "says": "the same 3.6-mile switchback trail"},
+   {"field": "itinerary", "says": "trailhead to the Eagle Peak-Chutla saddle (~3.6 mi one-way"},
+   {"field": "waypoints[0].distMi", "says": "3.5"}],
+  "why": "dist_km 7.3 renders as about 4.5 mi, which matches neither the 3.6 mi one-way nor the 7.2 mi round trip the prose gives.",
+  "internal_resolution": "All prose and the saddle waypoint agree on about 3.6 mi one-way / 7.2 mi round trip; dist_km looks like the round-trip mileage stored as km.",
+  "needs_research": false},
+ {"fact": "Which variant is the bypass", "severity": "low",
+  "claims": [
+   {"field": "overview", "says": "Class 3 rock with an exposed section and optional Class 4 bypass"},
+   {"field": "beta", "says": "The primary bypass route goes left 100-200 feet into a short Class 3 gully"},
+   {"field": "rock_grade", "says": "optional Class 4 direct variant at the crux rock step below the summit"}],
+  "why": "The overview calls the Class 4 line the bypass, but the beta and rock_grade say the bypass is the Class 3 gully and the Class 4 line is the direct step.",
+  "internal_resolution": "beta, rock_grade, pitch_detail[1-2], pro_tips[1] and the baseFinding all say the bypass is Class 3 and the direct step is Class 4; the overview is the outlier.",
+  "needs_research": false},
+ {"fact": "Season window", "severity": "low",
+  "claims": [
+   {"field": "season", "says": "Jul-Sep"},
+   {"field": "best_season", "says": "June through early October provides the best weather"}],
+  "why": "best_season (rendered, since there is no seasonal_guidance) names June and early October as best, both outside the Jul-Sep season.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Direction of the summit finish", "severity": "low",
+  "claims": [
+   {"field": "climbing_route[1].notes", "says": "turn back west/left for the final scramble to the 5,958 ft top"},
+   {"field": "approach_variants[0].baseFinding", "says": "the summit is 5,958 ft, roughly a quarter mile east along the ridge"},
+   {"field": "pitch_detail[0].notes", "says": "Stay right to avoid false summit on left."},
+   {"field": "pro_tips[3]", "says": "look for the climber's path veering right toward true Eagle Peak summit"}],
+  "why": "The climbing route finishes by turning west/left, while the other fields put the summit east of the saddle, keep right, and call the left-hand high point the false summit.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_lane_peak_r1", "name": "The Zipper (couloir)", "area": "Lane Peak", "contradictions": [
+ {"fact": "Rope needed for the couloir rappel", "severity": "medium",
+  "claims": [
+   {"field": "descent_text", "says": "requires a double-rope rappel — two ropes joined, or a single rope doubled — to reach the base cleanly; in a high-snow year a single 70 m rope may just reach"},
+   {"field": "approach_variants[0].hazards[3]", "says": "A rappel that is longer than a single 60 m rope doubled"},
+   {"field": "gear[4]", "says": "rappelling the couloir needs two ropes"},
+   {"field": "rope_note", "says": "too short for the rappel descent, which needs two ropes"},
+   {"field": "rope_length_m", "says": "30"}],
+  "why": "descent_text says a single doubled rope works, while the gear, rope note and approach hazard say two ropes are required and a 60 m doubled is too short.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Pitch lengths vs rope length", "severity": "low",
+  "claims": [
+   {"field": "pitch_detail[0].lengthM", "says": "100"},
+   {"field": "pitch_detail[1].lengthM", "says": "100"},
+   {"field": "pitch_detail[2].lengthM", "says": "105"},
+   {"field": "rope_length_m", "says": "30"},
+   {"field": "rack[6]", "says": "30-60m single rope"}],
+  "why": "Pitches of 100-105 m, each ending at a belay, cannot be led on the 30-60 m rope the kit specifies.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_classic_route_3", "name": "Classic Route", "area": "Lane Peak", "contradictions": [
+ {"fact": "Trailhead card name vs its directions", "severity": "low",
+  "claims": [
+   {"field": "approach_logistics.trailhead", "says": "Narada Falls Parking Lot"},
+   {"field": "approach_logistics.trailheadDirection", "says": "From the Pinnacle Saddle Trailhead across Stevens Canyon Road from the Reflection Lakes parking (~4,860 ft)"},
+   {"field": "approach", "says": "Start from the Reflection Lake pullout on Stevens Canyon Road ... or, when the road is gated by snow, from the Narada Falls pullout ... walk the road roughly half a mile to the point where it bends sharply"}],
+  "why": "The trailhead card names Narada Falls but gives directions from the Pinnacle Saddle Trailhead, which this route's approach never uses.",
+  "internal_resolution": "approach, approach_variants and waypoints start at the Reflection Lake pullout (summer) or Narada Falls (road gated) and walk the road to the bend; the Pinnacle Saddle Trailhead direction is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_lane_peak_r2", "name": "The Fly (couloir)", "area": "Lane Peak", "contradictions": [
+ {"fact": "Ice screws and rock rack", "severity": "low",
+  "claims": [
+   {"field": "gear[3]", "says": "Ice screws are rarely used here and are not worth carrying in a normal snow year — save them for The Zipper next door"},
+   {"field": "detailed_rack", "says": "ice screws are rarely used here and are not worth carrying in a normal snow year"},
+   {"field": "partner_requirements.fitnessSpec.packWeight", "says": "Light-moderate day-climb load (~15-25 lb: rope, screws/pickets, rack, extra layers)"},
+   {"field": "pro_needs", "says": "Ice/snow protection; rock pro for anchors"}],
+  "why": "The gear list says to leave screws behind and carries no rock rack, while the Partners tab pack and pro_needs include screws and a rack.",
+  "internal_resolution": "gear and detailed_rack agree (axe, crampons, a rope and a couple of pickets only if belaying); the partner_requirements pack text matches the Zipper's and is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_lane_peak_r3", "name": "Lover's Lane (couloir)", "area": "Lane Peak", "contradictions": [
+ {"fact": "Whether the rappel into the Zipper is part of the ascent or the descent", "severity": "medium",
+  "claims": [
+   {"field": "descent", "says": "From the top, rappel roughly 100+ ft (double rope) from anchors on the ridge down into the adjacent Zipper couloir, then continue down the Zipper or descend via the standard South Face gully/Lane-Denman saddle."},
+   {"field": "approach_variants[0].notes", "says": "From the top, the standard move is a rappel of more than 100 ft ... down into the adjacent Zipper couloir, then either downclimb the remaining Zipper snow or continue over to the standard South Face line"},
+   {"field": "approach_variants[0].baseFinding", "says": "THE STANDARD DESCENT IS A RAPPEL OF MORE THAN 100 FT FROM THAT RIDGE INTO THE ZIPPER ITSELF"},
+   {"field": "descent_text", "says": "The 100+ ft rappel from the ridge top into the adjacent Zipper couloir ... is part of the ascent, not the descent."},
+   {"field": "beta", "says": "climbers typically rappel 100+ ft (double rope recommended) into the adjacent Zipper couloir, then climb the last of the Zipper and traverse to the summit"}],
+  "why": "Some fields treat the Zipper rappel as the descent that ends the climb, while the beta, pitch_detail and descent_text treat it as a mid-route step before climbing on to the summit and descending the south side.",
+  "internal_resolution": "overview, beta, rappels, pitch_detail[3-4] and descent_text agree that the rappel is made on the way up and the party then summits; descent, approach_variants notes and baseFinding are the outliers.",
+  "needs_research": false}
+]},
+{"id": "wa_east_ridge_8", "name": "East Ridge", "area": "Pinnacle Peak", "contradictions": []},
+{"id": "wa_pinnacle_peak_tatoosh_r1", "name": "Pinnacle Saddle / South Gully", "area": "Pinnacle Peak", "contradictions": [
+ {"fact": "Avalanche forecast zone", "severity": "low",
+  "claims": [
+   {"field": "seasonal_hazards.avalanche.zone", "says": "No dedicated NWAC forecast zone covers the Tatoosh Range/Pinnacle Peak specifically"},
+   {"field": "climate.forecastZone", "says": "NWAC Mount Rainier / West Slopes South zone"}],
+  "why": "The avalanche panel says no NWAC zone covers the peak, while the climate panel names the NWAC zone that does.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_plummer_peak_r1", "name": "Pinnacle Saddle / North Slopes", "area": "Plummer Peak", "contradictions": [
+ {"fact": "Snow on the boot path in July", "severity": "low",
+  "claims": [
+   {"field": "seasonal_guidance.monthBreakdown.July.reason", "says": "Snow typically cleared from the boot path; core of the best-season window"},
+   {"field": "approach_variants[0].season", "says": "a snowfield often crosses the boot path near the saddle into July"},
+   {"field": "itinerary.cal", "says": "Early-season parties (June-early July) often encounter a steep snow section between the saddle and the summit ... by mid-to-late July this is typically melted out"},
+   {"field": "best_season", "says": "Late July through September is most reliable for snow-free travel"}],
+  "why": "The July month row says the boot path is typically clear, while three other fields say a snowfield often crosses it into July.",
+  "internal_resolution": "approach_variants, itinerary.cal, best_season, gear[2] and pro_tips[2] agree that snow lingers into early or mid July; the July month reason is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_classic_route_2", "name": "Classic Route", "area": "Unicorn Peak", "contradictions": [
+ {"fact": "Rack: cams or not", "severity": "medium",
+  "claims": [
+   {"field": "detailed_rack", "says": "One fixed piton mid-pitch plus a single set of nuts is sufficient; no cams needed."},
+   {"field": "gear[2]", "says": "a few small-to-mid cams and nuts"},
+   {"field": "pro_needs", "says": "small-to-mid cams/nuts and slings for a short crack"},
+   {"field": "rack[0]", "says": "Cams (Camalot #1–#3 or equivalent hexes)"},
+   {"field": "sling_rack.cams", "says": "3 cams (e.g. Camalot #1, #2, #3) or equivalent hexes"}],
+  "why": "The rendered rack says no cams are needed, while every other kit field lists cams.",
+  "internal_resolution": "gear, pro_needs, rack and sling_rack all list cams; detailed_rack is the outlier.",
+  "needs_research": false},
+ {"fact": "Climb length", "severity": "medium",
+  "claims": [
+   {"field": "length_m", "says": "122"},
+   {"field": "pitch_detail[0].lengthM", "says": "15"},
+   {"field": "rope_note", "says": "~50ft south summit-block face"},
+   {"field": "pitches", "says": "1"}],
+  "why": "Technical stats show a 122 m climb, but the route is one pitch of about 15 m (40-50 ft).",
+  "internal_resolution": "pitch_detail, rope_note, approach_variants ('about 40-50 ft') and itinerary ('~40-50 ft pitch') all agree on about 15 m; length_m is the outlier.",
+  "needs_research": false},
+ {"fact": "Rope length recommended for the rappel", "severity": "low",
+  "claims": [
+   {"field": "rappels", "says": "a trip report recommends 60 m because a 30 m rappel may not reach the ground where the moat is open"},
+   {"field": "descent_text", "says": "recommended a 37-40m rope to be safe"},
+   {"field": "pro_tips[0]", "says": "35-40m removes any doubt"},
+   {"field": "approach_variants[0].baseFinding", "says": "40 m removes the guesswork"}],
+  "why": "The rappels field recommends 60 m, while the descent, pro tip and baseFinding say 35-40 m is enough.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Gain from the trailhead to Snow Lake", "severity": "low",
+  "claims": [
+   {"field": "approach", "says": "Follow the maintained Snow Lake Trail about 1 mile, with roughly 350 ft of up-and-down, to Snow Lake at ~4,600 ft"},
+   {"field": "approach_variants[0].notes", "says": "take the maintained Snow Lake Trail about a mile and roughly 700 ft to Snow Lake"}],
+  "why": "The two approach texts give 350 ft and 700 ft for the same mile to Snow Lake.",
+  "internal_resolution": "The trailhead waypoint (4,400 ft) and Snow Lake (~4,600-4,685 ft) support about 350 ft up and down; the 700 ft in approach_variants is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_open_book_2", "name": "Open Book", "area": "Unicorn Peak", "contradictions": [
+ {"fact": "Climb length", "severity": "medium",
+  "claims": [
+   {"field": "length_m", "says": "122"},
+   {"field": "pitch_detail[0].lengthM", "says": "15"},
+   {"field": "pitches", "says": "1"},
+   {"field": "turnaround", "says": "Fifty feet of easy fifth class"}],
+  "why": "Technical stats show a 122 m climb, but the route is one pitch of about 15 m (50 ft).",
+  "internal_resolution": "pitch_detail and turnaround agree on about 15 m / 50 ft; length_m is the outlier.",
+  "needs_research": false},
+ {"fact": "Gain from the trailhead to Snow Lake", "severity": "low",
+  "claims": [
+   {"field": "approach", "says": "hike the maintained Snow Lake Trail ~1 mile (about 350 ft of up-and-down) to Snow Lake"},
+   {"field": "approach_variants[0].notes", "says": "the maintained trail about a mile and roughly 700 ft to Snow Lake"}],
+  "why": "The two approach texts give 350 ft and 700 ft for the same mile to Snow Lake.",
+  "internal_resolution": "The trailhead waypoint (4,400 ft) and Snow Lake (4,685 ft) support about 350 ft; the 700 ft in approach_variants is the outlier.",
+  "needs_research": false},
+ {"fact": "Rack needed (light vs large cams)", "severity": "low",
+  "claims": [
+   {"field": "gear[2]", "says": "light rack optional — many parties climb it without placing much gear"},
+   {"field": "pro_needs", "says": "Light rack; a rope and a few runners for the natural anchor and belay/rappel are the main requirement"},
+   {"field": "detailed_rack", "says": "Big cracks favor #3-#4 Camalot-size cams"},
+   {"field": "hazards[0]", "says": "Wide-crack climbing that feels awkward and poorly protected without large cams."}],
+  "why": "Some fields say a rack is optional, while the rack and hazards say the wide cracks need large cams to be protected.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Rope length", "severity": "low",
+  "claims": [
+   {"field": "gear[0]", "says": "30-35m rope"},
+   {"field": "rack[3]", "says": "30-35m single rope"},
+   {"field": "rope_length_m", "says": "40"},
+   {"field": "rappels", "says": "A 40 m rope is plenty; carry 60 m if the moat at the base is open late in the season."},
+   {"field": "descent_text", "says": "multiple parties have found 30m to be marginal or just short ... so a 40m rope removes any doubt"}],
+  "why": "The gear and rack call for a 30-35 m rope, while the rope field and rappel text say 30 m can fall short and specify 40 m.",
+  "internal_resolution": "rope_length_m, rappels, descent_text and the baseFinding agree on 40 m; gear[0] and rack[3] are the outliers.",
+  "needs_research": false},
+ {"fact": "Face the line climbs", "severity": "low",
+  "claims": [
+   {"field": "face", "says": "South slope to the south side of the summit block, right of the Classic Route"},
+   {"field": "approach", "says": "The Open Book line is described as taking the east-facing side of the summit pinnacle rather than the straight-up south face"},
+   {"field": "approach_variants[0].baseFinding", "says": "this line is on the EAST-FACING side of the pinnacle"}],
+  "why": "The face field puts the line on the south side, while the approach and baseFinding put it on the east-facing side.",
+  "internal_resolution": null, "needs_research": true}
+]},
+{"id": "wa_the_roof", "name": "The Roof", "area": "Unicorn Peak", "contradictions": [
+ {"fact": "Climb length", "severity": "medium",
+  "claims": [
+   {"field": "length_m", "says": "122"},
+   {"field": "pitch_detail[0].lengthM", "says": "15"},
+   {"field": "pitches", "says": "1"},
+   {"field": "turnaround", "says": "the summit block is 50 feet of a five-mile day"}],
+  "why": "Technical stats show a 122 m climb, but the route is one pitch of about 15 m (50 ft).",
+  "internal_resolution": "pitch_detail and turnaround agree on about 15 m / 50 ft; length_m is the outlier.",
+  "needs_research": false},
+ {"fact": "Gain from the trailhead to Snow Lake", "severity": "low",
+  "claims": [
+   {"field": "approach", "says": "take the maintained Snow Lake Trail ~1 mile (~350 ft of up-and-down) to Snow Lake"},
+   {"field": "approach_variants[0].notes", "says": "the maintained trail about a mile and roughly 700 ft to Snow Lake"}],
+  "why": "The two approach texts give 350 ft and 700 ft for the same mile to Snow Lake.",
+  "internal_resolution": "The trailhead waypoint (4,400 ft) and Snow Lake (4,685 ft) support about 350 ft; the 700 ft in approach_variants is the outlier.",
+  "needs_research": false},
+ {"fact": "Rope length", "severity": "low",
+  "claims": [
+   {"field": "gear[0]", "says": "30-35m rope"},
+   {"field": "rope_length_m", "says": "40"},
+   {"field": "rack[3]", "says": "35-40m rope"},
+   {"field": "rappels", "says": "A 40 m rope is reported to be plenty."}],
+  "why": "The gear list calls for a 30-35 m rope, while the rope field, rack and rappel text specify 35-40 m because 30 m can fall short.",
+  "internal_resolution": "rope_length_m, rack, rappels, descent_text and the baseFinding agree on 40 m; gear[0] is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_unicorn_peak_r1", "name": "Snow Lake / Unicorn Creek approach", "area": "Unicorn Peak", "contradictions": [
+ {"fact": "Trailhead parking capacity", "severity": "low",
+  "claims": [
+   {"field": "approach", "says": "The lot holds only ~15-20 cars and fills by 8am on summer weekends."},
+   {"field": "waypoints[0].note", "says": "room for only 15-20 cars"},
+   {"field": "approach_variants[0].notes", "says": "The lot holds only about 25 cars and fills by mid-morning on summer weekends."},
+   {"field": "crowds.estimatePerSeason", "says": "parking lot holds only ~25 cars, fills by 8am on summer weekends"}],
+  "why": "The same lot is given room for 15-20 cars in some fields and about 25 in others.",
+  "internal_resolution": null, "needs_research": true},
+ {"fact": "Distance to Snow Lake", "severity": "low",
+  "claims": [
+   {"field": "approach", "says": "to Snow Lake at about 1-1.25 miles in"},
+   {"field": "waypoints[1].distMi", "says": "1"},
+   {"field": "approach_variants[0].notes", "says": "to Snow Lake at about 1.3-1.5 miles"}],
+  "why": "The approach variant puts Snow Lake at 1.3-1.5 miles, while the approach and waypoint put it at 1-1.25 miles.",
+  "internal_resolution": "approach, waypoints[1] and itinerary ('an easy mile to Snow Lake') agree on about 1 mile; approach_variants is the outlier.",
+  "needs_research": false},
+ {"fact": "Stevens Canyon Road open season", "severity": "low",
+  "claims": [
+   {"field": "waypoints[0].note", "says": "Stevens Canyon Rd open summer only (roughly late June-Sept)"},
+   {"field": "road.seasonalGate", "says": "Typically opens around Memorial Day weekend/early June and closes at the first significant snowfall of the season, often in mid-October"},
+   {"field": "access.closures", "says": "gated and snowed-in roughly October through late May"}],
+  "why": "The trailhead waypoint says the road is open late June to September, while the road and access fields say late May/early June to mid-October.",
+  "internal_resolution": "road.seasonalGate, road.status, access.closures and best_season agree on late May to mid-October; the waypoint note is the outlier.",
+  "needs_research": false},
+ {"fact": "Elevation where the approach tops out", "severity": "low",
+  "claims": [
+   {"field": "approach", "says": "2,397 ft of gain to the 6,971 ft high point, topping out at the base of the summit block itself"},
+   {"field": "climbing_route[0].notes", "says": "tops out at the base of the summit block itself, at 6,971 ft"},
+   {"field": "waypoints[5].elev", "says": "6900"},
+   {"field": "waypoints[6].elev", "says": "6971"},
+   {"field": "beta", "says": "the 50-70 foot summit tower"}],
+  "why": "The approach puts the base of the summit block at 6,971 ft, the summit's own height, even though the block is a 50-70 ft horn and its waypoint sits at 6,900 ft.",
+  "internal_resolution": "The waypoints and beta put the base of the block around 6,900 ft and the top at 6,971 ft; the '6,971 ft' base in the approach and climbing_route is the outlier.",
+  "needs_research": false}
+]},
+{"id": "wa_fantasy_falls", "name": "Fantasy Falls", "area": "Unicorn Peak", "contradictions": []}
+]}

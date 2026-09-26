@@ -1,0 +1,152 @@
+{
+ "applied": [
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "column": "best_season",
+   "path": [],
+   "fact": "Start of the best season"
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "column": "beta",
+   "path": [],
+   "fact": "Composition of the 7 pitches"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "High-camp elevation and day-1 gain"
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "High-camp elevation and day-1 gain"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Difficulty billing of the rock step"
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "column": "bail",
+   "path": [],
+   "fact": "Difficulty billing of the rock step"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "before": {
+    "best_season": "Best June through September; snow often lingers in the connecting basin below Ellinor into early summer, so carry an ice axe (and consider crampons) even though most of the traverse is rock."
+   }
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "before": {
+    "beta": "The traverse is 7 roped pitches (statically belayed, though simulclimbing is possible): fourth-class scrambling to a notch near 6,100 ft, a descent on steep snow into the Great Basin, moderate snow pitches on the east ridge, a sparsely protected rock traverse on the west side, mixed rock-and-snow sections with moat belays, and a final steep couloir ascent to the South Brother summit. The route is recommended north-to-south."
+   }
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "before": {
+    "itinerary": {
+     "cal": "The South Couloir often holds snow (ice axe/crampons recommended) into mid-summer and typically melts out to a class 3-4 scramble by late August.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Lena Lake trailhead (~700 ft), a mellow, well-graded trail climbs past Lena Lake and up the Valley of the Silent Men to a forested camp (Lena Forks / East Lena Creek Basin area, ~3,600 ft) at the base of the upper valley. Route-finding gets trickier through the old burn area — carry a GPS track, as the pink flagging is easy to miss.",
+       "hours": 3.5,
+       "miles": 6,
+       "title": "Hike in to high camp",
+       "gainFt": 2900,
+       "lossFt": 0,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach camp in the Valley of the Silent Men"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start from camp with light packs to the base of the South Couloir (the second gully from climber's right), then a steep snow/scree climb of roughly 3,000 ft to the summit ridge with a few exposed class 3-4 moves near the top. After summiting, reverse the couloir back to camp, break camp, and hike the full ~6 miles back out to the trailhead the same day — a long second day, but this is how most 2-day parties run it.",
+       "hours": 10.5,
+       "miles": 11,
+       "title": "Summit push and hike out",
+       "gainFt": 3200,
+       "lossFt": 6100,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave high camp",
+         "detail": "Light alpine-start packs; axe/crampons useful if the couloir still holds snow"
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Reach base of South Couloir",
+         "detail": "Short climb up-valley from camp to the gully entrance"
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Summit",
+         "detail": "South (true) summit, 6,866 ft, via the couloir and a short, exposed class 3-4 finish"
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Back at camp",
+         "detail": "Break down camp and repack for the hike out"
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Reach trailhead",
+         "detail": "Round trip from camp back to car; full car-to-car trip runs ~10-11 hrs on summit day"
+        }
+       ],
+       "objective": "Climb the South Couloir to the summit, then pack all the way out"
+      }
+     ],
+     "totalNote": "A 2-day trip is the standard way parties do it: hike in ~6 mi to a camp in the Valley of the Silent Men (~2,900 ft gain), then a big second day climbing the South Couloir to the summit and packing all the way back out (~11 mi, ~3,200 ft up / 6,100 ft down). Very fit parties skip the camp and do the whole route car-to-car in a single ~10.5 hr day."
+    },
+    "timing": {
+     "totalHrs": 14,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3.5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 3.5,
+       "note": "From the Lena Lake trailhead (~700 ft), a mellow, well-graded trail climbs past Lena Lake and up the Valley of the Silent Men to a forested camp (Lena Forks / East Lena Creek Basin…",
+       "fromTo": "Hike in to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10.5,
+       "note": "An alpine start from camp with light packs to the base of the South Couloir (the second gully from climber's right), then a steep snow/scree climb of roughly 3,000 ft to the summit…",
+       "fromTo": "Summit push and hike out",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "before": {
+    "watch_out": "Morning snow in couloir can be firm or icy and masks how technical the underlying rock actually is—assess and re-assess snow conditions; if rock climbing is required, retreat if not capable; snow/ice transition can be slippery and dangerous\nCrux rock step (20-50 ft above saddle) more serious than Class 3-4 billing suggests—at least one party ended up roping up and placing gear due to steepness and poor rock quality; secure ropes on this section unless climbing with extreme confidence\nDon't glissade descent chute without clear sightline to runout—nearby terrain has close calls from parties glissading blind into rocks or drop-offs; walking descent safer than sliding in poor visibility\nCouloir/gully approach terrain—potential for rockfall from upper sections; stay compact and move through quickly; afternoon rockfall increase from sun warming; start early\nSnow conditions seasonal and highly variable—July-September is the usual window; summer dry conditions expose loose rock; winter requires mountaineering skills; verify current conditions\nRoute-finding complexity on initial scramble approach—establish correct line before committing; terrain can look similar but lead to worse ground\nMoat crossing potential at upper couloir sections—bergschrund may be significant; assess before committing; belay if uncertain\nFatigue on descent—long day with technical climbing can leave climbers tired; descents often cause more injuries; maintain focus and move deliberately on all scrambling",
+    "bail": "The crux rock step above the saddle can be downclimbed carefully, or protected/rappelled off a small nut or sling anchor if it feels too exposed to solo — worth carrying a light rack even though the route is nominally unroped Class 3-4."
+   }
+  }
+ ]
+}

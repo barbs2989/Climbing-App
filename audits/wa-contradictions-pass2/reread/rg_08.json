@@ -1,0 +1,1259 @@
+{
+ "batches": [
+  "b357.json",
+  "b358.json",
+  "b359.json",
+  "b360.json",
+  "b361.json",
+  "b362.json",
+  "b363.json"
+ ],
+ "routes_read": 24,
+ "routes": [
+  {
+   "id": "wa_hagan_mountain_south",
+   "name": "South Slopes",
+   "area": "Hagan Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "name": "Ruth-Icy Traverse (Northwest Ridge, via Ruth Mountain)",
+   "area": "Icy Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "name": "Southwest Route / Icy Glacier",
+   "area": "Icy Peak",
+   "contradictions": [
+    {
+     "fact": "Day 2 duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.sectionBreakdown[1].hrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "4:00 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "4:30 PM"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "a long ~12-13 hr day two"
+      }
+     ],
+     "why": "The day-2 schedule runs 4:00 AM to 4:30 PM (12.5 hr) and the totalNote says 12-13 hr, but the day's hours and the timing breakdown say 10.5.",
+     "internal_resolution": "Schedule and totalNote agree on ~12.5 hr; the 10.5 figure (and timing.totalHrs 16) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "descend Ruth's south/west side about 800 ft ... down to the Ruth–Icy saddle (~5,700 ft)"
+      },
+      {
+       "field": "approach",
+       "says": "Ruth Mountain's summit (7,115 ft)"
+      },
+      {
+       "field": "descent_text",
+       "says": "roughly 2,000 ft of regain back up to Ruth Mountain's summit/camp"
+      },
+      {
+       "field": "approach_variants[0].hazards[4]",
+       "says": "Roughly 2,000 ft of regain over Ruth on the way home"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].detail",
+       "says": "~5,700 ft; about a 900-ft drop from camp"
+      }
+     ],
+     "why": "Ruth 7,115 ft to a 5,700 ft saddle is ~1,400 ft, not 'about 800 ft', and the regain is quoted as ~2,000 ft (or 900 ft from the 6,600 ft notch camp).",
+     "internal_resolution": "Elevations (7,115 summit, 6,600 camp, 5,700 saddle) imply ~1,400 ft from the summit / ~900 ft from camp; the 800 ft and 2,000 ft figures are both off.",
+     "needs_research": false
+    },
+    {
+     "fact": "Single-push car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "parties report ~12 hours car-to-car when done in a single push"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "very strong parties occasionally link it car-to-car in one long (15-20 hr) day instead"
+      }
+     ],
+     "why": "Two different durations for the same one-day push.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "name": "X Couloir (Southwest Face) / Standard Route",
+   "area": "Lincoln Peak",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "15.5"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "1:45 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "After 6:00 PM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].label",
+       "says": "Hike out to trailhead"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "9.5"
+      }
+     ],
+     "why": "15.5 hr from a 1:45 AM wake ends ~5:15 PM, yet the schedule only starts the ~7-mile hike out after 6 PM, implying a ~19-20 hr day.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "National Park boundary / park permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "This is national forest, not national park, so no park backcountry permit applies and none can be obtained for it"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Mount Baker Wilderness)"
+      }
+     ],
+     "why": "Boilerplate says the route may enter the national park and need an NPS permit; the camp entry says the area is national forest only.",
+     "internal_resolution": "landManager and the bivy permit agree it is Mount Baker Wilderness only; the NCNP clause is generic boilerplate.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.permit",
+       "says": "No wilderness permit required; free self-issue permits available at the trailhead."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No overnight wilderness permit is required and none is issued for this area"
+      }
+     ],
+     "why": "One field offers a free self-issue wilderness permit; the camp entry says none is issued.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Only route on the peak",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The standard and only remotely feasible route on Lincoln Peak."
+      },
+      {
+       "field": "overview",
+       "says": "it was the only documented route to the summit until a 2015 first ascent opened a second line on the NW Face"
+      }
+     ],
+     "why": "Beta calls this the only feasible route while the overview documents a second established route.",
+     "internal_resolution": "The overview (and the sibling Wilkes-Booth row) show a second route exists; the beta wording is stale.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "name": "Wilkes-Booth (Northwest Face)",
+   "area": "Lincoln Peak",
+   "contradictions": [
+    {
+     "fact": "Glacier crossed to reach the face",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From Heliotrope Ridge, cross the lower Thunder Glacier to the base of Lincoln's northwest face"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Glacier gear for the approach across the Thunder Glacier."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If you find yourself descending toward a cirque with no icefall above you, you have cut left toward the Thunder Glacier side and are heading for the southwest face."
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "Cross the Coleman Glacier approach into the amphitheater between Lincoln Peak and Assassin Spire."
+      },
+      {
+       "field": "waypoints[4].name",
+       "says": "Coleman Glacier toe / rope-up point"
+      }
+     ],
+     "why": "The approach and pro_needs send the party across the Thunder Glacier, while the approach variant says Thunder Glacier is the wrong side and the itinerary and waypoints use the Coleman.",
+     "internal_resolution": "Approach variant, itinerary, waypoints (Coleman toe, Black Buttes basin camp) and watch_out all use the Coleman; the Thunder Glacier mentions in approach and pro_needs are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "14"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "5.2"
+      },
+      {
+       "field": "dist_km",
+       "says": "9"
+      }
+     ],
+     "why": "The summit pin sits 5.2 mi out (≈10.4 mi round trip), the header shows 14 mi, and TECHNICAL STATS shows 9 km (5.6 mi).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route described as a ridge",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "sustained scrambling/climbing on the ridge"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "before the technical ridge climbing begins"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "this ridge line is a minor variant of an already obscure peak"
+      },
+      {
+       "field": "face",
+       "says": "Northwest Face"
+      }
+     ],
+     "why": "The Partners and crowds text describes a ridge scramble, which contradicts the rest of the row: a 2,000 ft northwest-face ice route.",
+     "internal_resolution": "Overview, beta, pitch_detail and face all describe a NW-face WI4 ice route; the 'ridge' text is left over from the old north_ridge record.",
+     "needs_research": false
+    },
+    {
+     "fact": "National Park boundary",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Mount Baker Wilderness)"
+      },
+      {
+       "field": "access.permit",
+       "says": "No wilderness permit required, and none is issued for this wilderness"
+      }
+     ],
+     "why": "Boilerplate about NCNP permits contradicts the rest of the access block, which says the area is Mount Baker Wilderness only.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_southeast_ridge",
+   "name": "Southeast Ridge",
+   "area": "Little Sister",
+   "contradictions": [
+    {
+     "fact": "Approach season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jun-Sep"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      }
+     ],
+     "why": "The approach variant opens the season in June, while the season column starts in July and guidance calls June risky because of the river ford.",
+     "internal_resolution": "season, best_season and seasonal_guidance agree June is out; the variant's Jun start is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "name": "North Face",
+   "area": "Little Sister",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "5"
+      },
+      {
+       "field": "beta",
+       "says": "roughly 600 ft (4 pitches)"
+      },
+      {
+       "field": "itinerary",
+       "says": "climb the four pitches of the North Face"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "matches the published 600 ft/4-pitch total"
+      }
+     ],
+     "why": "The header shows 5 pitches while the prose says 4; the fifth pitch_detail row is an unroped scramble.",
+     "internal_resolution": "Prose and pitch_detail say 4 roped pitches plus an unroped scramble; 'pitches: 5' counts the scramble.",
+     "needs_research": false
+    },
+    {
+     "fact": "High point",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "6526"
+      },
+      {
+       "field": "area.elevation_ft",
+       "says": "6600"
+      },
+      {
+       "field": "overview",
+       "says": "finishing with unroped scrambling to the true summit"
+      }
+     ],
+     "why": "The route tops out on the true summit, but TECHNICAL STATS gives a high point 74 ft below the summit shown in the header.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jun-Sep"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      }
+     ],
+     "why": "The approach variant opens the season in June, while the season column starts in July and guidance calls June risky.",
+     "internal_resolution": "season and seasonal_guidance agree; the variant is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "name": "West Face",
+   "area": "Little Sister",
+   "contradictions": [
+    {
+     "fact": "High point",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "6526"
+      },
+      {
+       "field": "area.elevation_ft",
+       "says": "6600"
+      },
+      {
+       "field": "itinerary",
+       "says": "tag the summit"
+      }
+     ],
+     "why": "The route reaches the summit, but its high point is 74 ft below the summit elevation shown in the header.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "name": "South Couloir",
+   "area": "Little Sister",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_ann_scramble",
+   "name": "Lake Ann Approach Scramble",
+   "area": "Mount Ann",
+   "contradictions": [
+    {
+     "fact": "Drop into Swift Creek basin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "drops roughly 900 ft into the Lake Ann basin before climbing back out"
+      },
+      {
+       "field": "approach",
+       "says": "drops about 700 ft into the Swift Creek headwaters basin"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Trail drops ~700 ft from the trailhead"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "It DROPS about 700 ft into the Swift Creek headwaters basin"
+      }
+     ],
+     "why": "The beta gives 900 ft for the same drop that three other fields put at 700 ft.",
+     "internal_resolution": "Approach, waypoint and variant agree on ~700 ft (waypoints 4,700 → 3,900 ≈ 800); beta's 900 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trail gain to the saddle",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "Trail hiking on Lake Ann Trail No. 600 gains about 2,000 ft over roughly 4 miles."
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "3900"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "4900"
+      }
+     ],
+     "why": "From the 3,900 ft basin floor to the 4,900 ft saddle is ~1,000 ft of gain, not ~2,000.",
+     "internal_resolution": "Waypoint elevations and the 700 ft drop from a 4,700 ft trailhead imply ~1,000 ft; the 2,000 ft figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Road reopening date",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "typically reopens mid-to-late June (WSDOT reopened it June 10 in 2026)"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "typically isn't snow-free and open until roughly July"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "The upper highway to Austin Pass typically isn't snow-free and open until around July"
+      }
+     ],
+     "why": "The road is said to open in mid-to-late June in one place and around July in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "name": "Easton Glacier",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "2:30 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "1:00-3:00 PM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].label",
+       "says": "Back at high camp, hike out"
+      }
+     ],
+     "why": "10.5 hr from 2:30 AM ends at 1:00 PM, but the schedule only gets back to camp at 1-3 PM and still has the ~4-mile hike out to do.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Descent timing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[4].time",
+       "says": "10:00 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "Aim to be off the glacier by mid-morning before the snow turns to slush."
+      }
+     ],
+     "why": "The schedule only starts the descent at 10 AM, which makes the stated goal of being off the glacier by mid-morning impossible.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season vs best window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late May through July"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.status",
+       "says": "good"
+      },
+      {
+       "field": "best_season",
+       "says": "Late May through July"
+      }
+     ],
+     "why": "The best window starts in late May, but the season column begins in June.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "3.5"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~4-5 hrs from Schreiber Meadow up the Railroad Grade to camps near Sandy Camp/upper moraine"
+      }
+     ],
+     "why": "Two different times are given for the trailhead-to-Sandy-Camp approach.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "name": "North Ridge",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Direction across the Coleman to the ridge",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "cross the Coleman Glacier heading climbers' left (east), navigating the icefall below Colfax Peak"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "cross the Coleman Glacier climbers' left (east) below Colfax Peak"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "rope up, cross the Coleman climbers' right below the Colfax icefall, and gain the ridge on the glacier's true right"
+      }
+     ],
+     "why": "The camp entry says to cross climber's right while the approach and route breakdown say climber's left (east).",
+     "internal_resolution": "Approach and pitch_detail agree on climbers' left (east); the bivy note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "a long (10-14 hr) technical summit day"
+      },
+      {
+       "field": "descent_text",
+       "says": "commonly runs 12-18 hours from high camp on summit day"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "2:00-3:00 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].time",
+       "says": "Late afternoon"
+      }
+     ],
+     "why": "The summit day is given as 11, 10-14 and 12-18 hr, and the schedule (2-3 AM to late afternoon back at camp) implies ~14-15 hr.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "5"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].detail",
+       "says": "~4 pitches of AI3"
+      },
+      {
+       "field": "overview",
+       "says": "2-6 belayed pitches of 50-85 degree ice"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "glacier travel"
+      }
+     ],
+     "why": "The header shows 5 pitches, but two of the five pitch_detail rows are glacier and snow approach, and the prose gives ~4 or 2-6 ice pitches.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "name": "Coleman Headwall",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "1:00-2:00 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].time",
+       "says": "Early-mid afternoon"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "Evening"
+      },
+      {
+       "field": "descent_text",
+       "says": "allow 3-4 hours from summit to camp and another 1.5-2.5 hours from camp to the car"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "very strong parties occasionally push it car-to-car in a single ~14 hr day"
+      }
+     ],
+     "why": "Camp-to-summit 8-12 hr plus 3-4 hr down to camp plus 1.5-2.5 hr out gives 12.5-18.5 hr; the schedule runs 1 AM to evening, yet day 2 is listed as 13 hr, barely under the ~14 hr car-to-car figure for very strong parties.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "name": "Squak Glacier",
+   "area": "Mount Baker",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "name": "Boulder–Park Cleaver",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Aug"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly May-Aug — a longer usable window than the pure glacier line beside it"
+      },
+      {
+       "field": "best_season",
+       "says": "June is too early (deep snow, more rockfall)"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The approach variant says the route is usable from May, while the season column, best_season and guidance put May and June outside the window.",
+     "internal_resolution": "season, best_season and seasonal_guidance agree on Jul-Aug; the variant is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "name": "Coleman–Deming Glacier",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Summit-day start time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "4:30 AM from camp"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].time",
+       "says": "5:15 AM"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "Start by 2 a.m. for firm snow on the Roman Wall and a safer descent"
+      }
+     ],
+     "why": "The planner's start time (4:30 wake, 5:15 leave) is 2.5-3 hr later than the pro tip's 'start by 2 a.m.'",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time to Hogsback",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "3.5"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~4-5 hrs to Hogsback camp"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "two to three hours up from the trailhead"
+      }
+     ],
+     "why": "Three different trailhead-to-Hogsback times: 2-3, 3.5 and 4-5 hr.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Running water at Hogsback camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "There is running water up to about the old Kulshan Cabin site; above the camp there is nothing but what you melt."
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "Running meltwater at camp, but nothing above it"
+      }
+     ],
+     "why": "One field says running water ends at the Kulshan Cabin site, below camp; the camp entry says there is running meltwater at camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "name": "Boulder Glacier",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7000"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 16 miles and 8,100 ft round trip"
+      },
+      {
+       "field": "approach_variants[0].hazards[4]",
+       "says": "8,000 ft of gain from the lowest trailhead on the peak"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2700"
+      }
+     ],
+     "why": "The header gain of 7,000 ft is below even the net rise from a 2,700 ft trailhead to the 10,781 ft summit (8,081 ft); the itinerary and variant say ~8,000-8,100.",
+     "internal_resolution": "Trailhead 2,700 ft to summit 10,781 ft is 8,081 ft, which matches the itinerary's 8,100; gain_ft/loss_ft 7000 are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Boulder Ridge trailhead to camp at the toe of the Cleaver"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "most parties camp where the ridge meets the glacier at about 5,500-5,700 ft"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Parties bound for the cleaver instead head northwest to its toe near 6,800 ft"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "at roughly 5,500 to 5,700 ft just below the Boulder Glacier"
+      }
+     ],
+     "why": "The day-1 objective puts camp at the toe of the cleaver (~6,800 ft, reached across the glacier), while every other field puts it at 5,500-5,700 ft below the glacier.",
+     "internal_resolution": "Note, approach, beta and bivy agree on 5,500-5,700 ft; the objective line is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "name": "Cockscomb Ridge",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "High camp / approach side",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0].name",
+       "says": "Park Glacier camp near the Portals"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Beyond Camp Kiser, across the Rainbow Glacier and onto the Park Glacier. This is where most parties sleep before the Park Glacier Headwall or the Cockscomb."
+      },
+      {
+       "field": "bivy[1].name",
+       "says": "Camp Kiser, Ptarmigan Ridge"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Establish glacier camp via Heliotrope Ridge"
+      },
+      {
+       "field": "approach",
+       "says": "take the right-hand climbers' path up the Hogsback moraine to camp near 6,000 ft"
+      }
+     ],
+     "why": "CAMPING & BIVY names a Ptarmigan Ridge / Portals camp reached from Artist Point as the main camp, while the approach, itinerary and waypoints use the Hogsback camp from Heliotrope Ridge on the opposite side of the mountain.",
+     "internal_resolution": "Approach, approach_variants, itinerary and waypoints all use Heliotrope Ridge/Hogsback; the bivy list is copied from the Park Glacier Headwall route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead coordinates",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Heliotrope Ridge Trailhead"
+      },
+      {
+       "field": "waypoints[0].lat",
+       "says": "48.8465"
+      },
+      {
+       "field": "waypoints[0].lng",
+       "says": "-121.6927"
+      },
+      {
+       "field": "approach_logistics.trailheadLat",
+       "says": "48.8465"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3"
+      }
+     ],
+     "why": "The 'Heliotrope Ridge Trailhead' pin sits at the Artist Point coordinates, ~9 mi from the Hogsback camp pin, which is stated as 3 mi from the trailhead.",
+     "internal_resolution": "The camp pin (48.795,-121.885) and the Heliotrope trailhead used by the sibling Coleman routes (48.802,-121.895) show the trailhead pin is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Day-1 gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2900"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3700"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "6000"
+      }
+     ],
+     "why": "3,700 ft trailhead to a 6,000 ft camp is ~2,300 ft, not 2,900.",
+     "internal_resolution": "Trailhead and camp elevations (and the sibling routes' 2,300 ft) point to ~2,300.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ridge-day duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "13"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "2:00 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "Evening"
+      }
+     ],
+     "why": "13 hr from a 2 AM start ends ~3 PM, but the schedule still has the hike out to the trailhead in the evening.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "name": "Park Glacier Headwall",
+   "area": "Mount Baker",
+   "contradictions": [
+    {
+     "fact": "Camp Kiser elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "then 0.5 miles to Camp Kiser (~7,000 ft)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Note that the recorded elevation for Camp Kiser looks high; accounts describe it as a nondescript flat five miles in"
+      }
+     ],
+     "why": "The approach gives Camp Kiser an elevation that the approach variant itself calls wrong.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4.5"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Artist Point trailhead to high camp below the Park Glacier"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Camp Kiser — about five miles in from Artist Point"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "Beyond Camp Kiser, across the Rainbow Glacier and onto the Park Glacier"
+      }
+     ],
+     "why": "Day 1 ends at a Portals camp beyond Camp Kiser after 4.5 mi, but Camp Kiser alone is given as about 5 mi in.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total descent / loss",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "loss_ft",
+       "says": "7000"
+      },
+      {
+       "field": "itinerary.days[1].lossFt",
+       "says": "5700"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "1800"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "5000"
+      }
+     ],
+     "why": "The itinerary climbs 6,800 ft and descends only 5,700 ft on a round trip back to the same car, while loss_ft says 7,000.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "name": "Standard Scramble (South/East Slopes)",
+   "area": "Mount Herman",
+   "contradictions": [
+    {
+     "fact": "Where the maintained trail ends",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "watch_out[0]",
+       "says": "No maintained trail above the Chain Lakes/Bagley Lakes junction"
+      },
+      {
+       "field": "approach",
+       "says": "the trail joins Chain Lakes Trail (Forest Service Trail 682), which bends west and begins switchbacking up toward Herman Saddle ... At the last switchback below Herman Saddle ... leave the maintained trail"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "Stay on Chain Lakes Trail as it switchbacks up toward Herman Saddle; the route leaves it only at the last switchback below the saddle"
+      }
+     ],
+     "why": "The watch-out says the maintained trail ends at the Bagley/Chain Lakes junction; the approach and waypoints keep you on the maintained Chain Lakes Trail up to the last switchback below the saddle.",
+     "internal_resolution": "Approach, waypoints, variant and descent all agree the trail runs to the last switchback; the watch_out is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR 542 reopening in heavy years",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "reopening date depends on snowpack and has slipped into July in heavy years"
+      },
+      {
+       "field": "climate.bySeason.spring",
+       "says": "The highway gate near Heather Meadows may not open until May or June in a heavy-snow year"
+      }
+     ],
+     "why": "Two different reopening months are given for heavy-snow years.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_larrabee_south_ridge",
+   "name": "South Ridge",
+   "area": "Mount Larrabee",
+   "contradictions": [
+    {
+     "fact": "Wilderness permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "No wilderness permit required; no quota or fee."
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight wilderness permit required"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Free self-issue wilderness permit at the Twin Lakes register."
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "Free self-issue wilderness permit at the register for anyone continuing onto the trails."
+      }
+     ],
+     "why": "The permit fields say no wilderness permit is needed; the camp entries say to get a free self-issue wilderness permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "name": "Southwest Ridge",
+   "area": "Mount Sefrit",
+   "contradictions": [
+    {
+     "fact": "Car-to-car duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "4:30 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[5].time",
+       "says": "6-8:30 PM"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 10-14 hours"
+      }
+     ],
+     "why": "The schedule runs 4:30 AM to 6-8:30 PM (13.5-16 hr), which is more than the 12 hr day and the 10-14 hr total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Time to reach technical terrain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "plan for a full day or more to reach the base of technical terrain"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "Midday"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].label",
+       "says": "Class 4 gully system"
+      }
+     ],
+     "why": "The Partners tab says a full day or more to reach the technical terrain; the itinerary reaches the gully by midday on a single car-to-car day.",
+     "internal_resolution": "Itinerary, timing and totalNote agree on a one-day outing; partner_requirements is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[3]",
+       "says": "Wet-snow avalanches and cornices on nearby north-facing snow lines into early summer"
+      },
+      {
+       "field": "obj_haz[2]",
+       "says": "Early-season avalanche terrain on the approach slopes"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer route ... outside avalanche forecasting relevance"
+      },
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      }
+     ],
+     "why": "KNOWN HAZARDS lists early-season avalanche terrain, while the AVALANCHE panel calls the route N/A and gives no June rating even though June is in the season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance from Mount Shuksan",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "about three miles north of Mount Shuksan"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Broad rocky summit block 4 miles north of Mount Shuksan"
+      }
+     ],
+     "why": "Two different distances from Mount Shuksan for the same summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "name": "Southeast Ridge",
+   "area": "Mount Sefrit",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "name": "Bloody Head Couloir",
+   "area": "Mount Sefrit",
+   "contradictions": []
+  }
+ ]
+}

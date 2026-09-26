@@ -1,0 +1,36 @@
+{"file": "s051.json", "results": [
+ {"id": "wa_mount_sefrit_bloody_head_couloir", "fact": "'Same trailhead as the Southeast Ridge'", "verdict": "fixed",
+  "correct_value": "This route starts at the Hannegan road end; the Southeast Ridge is not reached from that trailhead, so the cross-reference is removed from the approach.",
+  "evidence": "Two independent Southeast Ridge ascents start elsewhere: one party started at a Ruth Creek Road pullout near milepost 3 (~2,950 ft), crossed Ruth Creek on logs and climbed the Wall Street gully and Northwest Glacier to the SE ridge; another reached the SE ridge from the Nooksack Cirque trailhead on the south side. Neither starts at Hannegan Campground, while this couloir is reached from the Hannegan Pass trail at ~3,450 ft (Forest Service trail page, earlier pass). The variant notes' 'same road access' is left, since the milepost-3 start is on the same road.",
+  "sources": ["https://trailcatjim.com/mt-sefrit-via-northwest-glacier-southeast-ridge/", "https://onehikeaweek.com/2025/05/23/mount-sefrit/", "https://www.fs.usda.gov/r06/mbs/recreation/trails/hannegan-pass-trail-674"],
+  "patches": [
+   {"id": "wa_mount_sefrit_bloody_head_couloir", "fact": "'Same trailhead as the Southeast Ridge'", "op": "replace_text", "column": "approach", "path": [], "find": "Same trailhead access as the Southeast Ridge route: drive to Ruth Creek Road's end", "replace": "Drive to Ruth Creek Road's end"}
+  ]},
+ {"id": "wa_mount_shuksan_north_face", "fact": "Distance to summit", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Still only one distance for this exact route (car, North Face, White Salmon descent): 13 mi round trip GPS. Other reports found this pass (a ski descent, two North Face trip reports, a Fisher-Chimneys-approach ascent) give no mileage; White Salmon Glacier-only ascents run 9.5-10 mi round trip, a different line. Settled by a second GPS-logged North Face loop from the White Salmon gate, or a sourced one-way distance to the summit.",
+  "sources": ["https://stephabegg.com/trip-reports/washington/shuksan-nf/", "https://www.whereiskylemiller.com/mt-baker-542/mount-shuksan/", "https://thepeakoftheweek.com/2016/05/11/mt-shuksan-north-face/", "https://engineeredforadventure.com/shuksan-north-face/", "https://www.jeffreyjhebert.com/adventures/north-face-of-mount-shuksan"],
+  "patches": []},
+ {"id": "wa_mount_shuksan_fisher_chimneys", "fact": "Winnie's Slide angle", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "A further trip report gives 'a steeper 45-degree section'; search snippets repeat '1 pitch 45 degrees', but earlier sources give 40 and 40-45, and others near 60 at the top. Several more pages (route page, guide pages, NPS conditions blog, two trip reports) give no figure. No two sources settle one maximum against the others; a measured slope (e.g. a surveyed or topo-derived angle) would settle it.",
+  "sources": ["https://www.desktodirtbag.com/mount-shuksan-fisher-chimneys/", "https://www.jessb.org/mt-shuksan-fisher-chimneys/", "https://www.mountainproject.com/route/107476711/white-salmon-glacier", "https://home.nps.gov/noca/blogs/climbing-conditions-mt-shuksan-2024.htm"],
+  "patches": []},
+ {"id": "wa_mount_shuksan_fisher_chimneys", "fact": "Distance", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Round-trip figures from independent parties disagree: 12 mi (noted as an under-count), 13.7 mi (GPS, 2-day), ~14 mi (guide itinerary), ~14.8 mi (mapped route), 15.6 mi (mapping app). One-way therefore runs roughly 6-7.8 mi; dist_km's 6.8 mi fits the middle and the summit pin's 7.5 fits the upper range, while the itinerary's 15-16 mi total sits at the top. No two sources agree on one figure, so nothing is changed; two GPS tracks agreeing within ~0.5 mi would settle it.",
+  "sources": ["https://mountainflamingo.com/2020-07-25-26-mount-shuksan-via-fisher-chimneys/", "https://havetent.com/2018/07/20/shuksan-via-fisher-chimneys/", "https://www.rmiguides.com/north-cascades/shuksan-fisher-chimneys", "https://www.gaiagps.com/hike/235448/mount-shuksan-via-fisher-chimneys-approach/", "https://www.alltrails.com/trail/us/washington/mount-shuksan-via-the-fischer-chimneys-approach"],
+  "patches": []},
+ {"id": "wa_mount_shuksan_sulphide_glacier", "fact": "Season start", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "The Jun-Sep season chip is the climbing season (two independent pages give June-September for this climb and the Shannon Ridge trail); the late-May extension is explicitly labelled as a ski option, and the itinerary's note about the road's snow is compatible with a June 'good' rating because early parties walk or ski from where snow stops the car. Genuine options clearly labelled, not a conflict.",
+  "sources": ["https://summitborn.com/mount-shuksan-sulphide-glacier-summit-guide/", "https://www.wta.org/go-hiking/hikes/shannon-ridge", "https://www.northwestalpineguides.com/northwest-climbs/mount-shuksan-sulphide-glacier/"],
+  "patches": []},
+ {"id": "wa_mount_shuksan_price_glacier", "fact": "Summit pyramid side used", "verdict": "fixed",
+  "correct_value": "The Price Glacier finishes up the easy 4th-to-low-5th-class gullies on the summit pyramid's south side.",
+  "evidence": "The route page for the Price Glacier states the standard pyramid ascent is via easy 4th or low 5th class gullies on the south side. An independent Price Glacier trip report went around to the south side of the summit and climbed the gully (mostly snow, a few rock moves mid-way and at the top). The west ridge is a separate alternative, not the route's finish; the beta, route breakdown and descent already say south side, so only the rock_grade chip changes.",
+  "sources": ["https://www.mountainproject.com/route/106238998/price-glacier", "https://www.jeffreyjhebert.com/adventures/price-glacier-on-mount-shuksan"],
+  "patches": [
+   {"id": "wa_mount_shuksan_price_glacier", "fact": "Summit pyramid side used", "op": "replace_text", "column": "rock_grade", "path": [], "find": "(west ridge of summit pyramid)", "replace": "(south-side gullies of summit pyramid)"}
+  ]}
+]}

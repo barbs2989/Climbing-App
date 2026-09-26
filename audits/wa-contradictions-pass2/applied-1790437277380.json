@@ -1,0 +1,457 @@
+{
+ "applied": [
+  {
+   "id": "wa_classic_route_2",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rack: cams or not"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "rack",
+   "path": [
+    0
+   ],
+   "fact": "Rack: cams or not"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "sling_rack",
+   "path": [
+    "cams"
+   ],
+   "fact": "Rack: cams or not"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "length_m",
+   "path": [],
+   "fact": "Climb length"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rope length recommended for the rappel"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Gain from the trailhead to Snow Lake"
+  },
+  {
+   "id": "wa_classic_route_2",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Snow Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "length_m",
+   "path": [],
+   "fact": "Climb length"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Gain from the trailhead to Snow Lake"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "rack",
+   "path": [
+    3
+   ],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "approach",
+   "path": [],
+   "fact": "Face the line climbs"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Face the line climbs"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Face the line climbs"
+  },
+  {
+   "id": "wa_open_book_2",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Snow Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "length_m",
+   "path": [],
+   "fact": "Climb length"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Gain from the trailhead to Snow Lake"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_the_roof",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Snow Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trailhead parking capacity"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Trailhead parking capacity"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance to Snow Lake"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Stevens Canyon Road open season"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "approach",
+   "path": [],
+   "fact": "Elevation where the approach tops out"
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Elevation where the approach tops out"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_classic_route_2",
+   "before": {
+    "detailed_rack": "One fixed piton mid-pitch plus a single set of nuts is sufficient; no cams needed.",
+    "rack": [
+     "Cams (Camalot #1–#3 or equivalent hexes)",
+     "Small stopper set",
+     "~6 shoulder-length + 2 double-length slings",
+     "Single 30–35m rope"
+    ],
+    "sling_rack": {
+     "cams": "3 cams (e.g. Camalot #1, #2, #3) or equivalent hexes",
+     "nuts": "small set of stoppers",
+     "slings": "~6 shoulder-length + 2 double-length runners"
+    },
+    "length_m": 122,
+    "rappels": "One rappel of about 50 ft (15 m) from the slung rock horn on the south side of the summit block; the old bleached snag is dead and ageing; do not rely on it. A 30 m rope is reported sufficient; a trip report recommends 60 m because a 30 m rappel may not reach the ground where the moat is open. Some parties downclimb the easier east side of the block instead and skip the rappel entirely.",
+    "approach_variants": [
+     {
+      "name": "Snow Lake and Unicorn Col to the middle line on the summit horn",
+      "notes": "Shared approach with the peak's other summit-block lines: from the Snow Lake trailhead, take the maintained Snow Lake Trail about a mile and roughly 700 ft to Snow Lake, the last water. Skirt the west and north shore; the tread continues a short way over a tree-covered rise before petering out into talus.\n\nWork up and right toward the obvious talus and dirt gully on the peak's northwest side; a climbers' path picks up again on a heather bench near the top of the gully. Follow it into the basin, then climb moraine along the left side of the small permanent snow patch to Unicorn Col just west of the summit. A climbers' path traverses below the cliffs — easier travel than the scree either side — and leads east around the south side to the base of the summit horn.\n\nThe climb itself is a single pitch of blocky low-fifth-class climbing, about 40-50 ft, on the south and southeast face, with one fixed piton mid-pitch.\n\nRoughly 2.5-3 miles one-way and about 2,400 ft of gain.",
+      "season": "Roughly Jun-Sep",
+      "hazards": [
+       "Loose blocks on the approach scramble to the base of the horn",
+       "A short exposed pitch above broken ground where a fall has real consequence",
+       "A rappel that may not reach the ground on a 30 m rope, particularly with an open moat late season",
+       "An old bleached snag at the top that is no longer a sound anchor",
+       "Two different rappel lines off the same block landing in different places"
+      ],
+      "baseFinding": "LEFT TO RIGHT ALONG THE FOOT OF THE HORN: THE ROOF, THE CLASSIC ROUTE, OPEN BOOK. All three start within about 70 ft of each other and all three finish at the same slung block, so the BOTTOM is the only place this can be got right.\n\nTHE CLASSIC ROUTE IS THE MIDDLE ONE, AND IT TAKES THE SOUTH AND SOUTHEAST FACE DIRECT — blocky low-fifth climbing straight up, one pitch of about 40-50 ft, with ONE FIXED PITON MID-PITCH. A piton at half height on open face is the positive confirmation.\n\nTHE DISTANCE TEST IS THE PRACTICAL ONE AND IT WORKS BY FEEL RATHER THAN BY SIGHT:\n  — THE ROOF STARTS ABOUT 20 FT TO YOUR LEFT, at the point where the RIDGELINE MEETS THE BLOCK.\n  — OPEN BOOK STARTS ABOUT 50 FT TO YOUR RIGHT, at TWO WIDE, LEFT-LEANING CRACKS.\n\nSO THE TWO NEGATIVES ARE TACTILE, WHICH IS WHAT YOU WANT WHEN THE HORN IS IN CLOUD: IF YOU ARE FIGHTING A WIDE AWKWARD CRACK THAT WANTS BIG CAMS, YOU HAVE WALKED PAST THIS ROUTE TO THE RIGHT AND YOU ARE ON OPEN BOOK. IF THERE IS A ROOF OVER YOUR HEAD AND YOU ARE IN A GULLY OR CHIMNEY, YOU HAVE GONE LEFT PAST IT AND YOU ARE ON THE ROOF, at 5.6.\n\nCHARACTER TEST: this is blocky face and crack climbing on the OPEN face. Not inside a chimney, not in a wide crack. If you are inside anything, you are on a neighbour.\n\nWHY IT MATTERS: this is the middle grade of the three — 5.4, against Open Book's easy fifth and The Roof's 5.6. Being one line out changes the grade in whichever direction you drifted, on a short pitch above broken ground.\n\nDESCENT DETAIL WORTH SETTLING AT THE TOP RATHER THAN OVER THE EDGE: there are effectively two rappel lines off the summit block, one dropping to the notch and the ground below the horn, the other landing on the snow patch side. A 30 m rope has been reported as just short depending on which one you use and on how open the moat is late season; 40 m removes the guesswork. Use the ROCK HORN — the old bleached snag some older reports mention is no longer sound."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 46.7678,
+      "lng": -121.7072,
+      "elev": 4400,
+      "name": "Snow Lake Trailhead",
+      "note": "On Stevens Canyon Road ~1.5 mi east of Reflection Lakes, Mount Rainier NP; follow the Snow Lake trail then ascend the upper basin toward the saddle west of the peak.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.74591,
+      "lng": -121.70119,
+      "elev": 6971,
+      "name": "Unicorn Peak Summit",
+      "note": "Shared high point for all Unicorn Peak routes; easy 5th class/scramble finish.",
+      "type": "Summit",
+      "distMi": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_open_book_2",
+   "before": {
+    "length_m": 122,
+    "approach_variants": [
+     {
+      "name": "Snow Lake and Unicorn Col to the rightmost line on the summit horn",
+      "notes": "Identical approach to the peak's other summit-block lines: from the Snow Lake trailhead, the maintained trail about a mile and roughly 700 ft to Snow Lake, the last water. Past the lake the tread fades over a wooded rise; work up and right into the talus and dirt gully on the northwest side, where a climbers' path reappears on a heather bench near the top and leads into the basin beneath the summit block. Ascend moraine along the edge of the small basin snowfield to Unicorn Col, then follow the traversing use trail below the cliffs on the south side to the base of the horn.\n\nThis route takes the east-facing side of the pinnacle rather than the south face direct, and it is the easiest of the three summit-block lines — a step down from the Classic Route and well below The Roof.\n\nRoughly 2.5-3 miles one-way with about 2,400 ft of gain, mostly on climbers' path and talus once past Snow Lake.",
+      "season": "Roughly Jun-Sep",
+      "hazards": [
+       "Wide-crack climbing that is awkward and poorly protected without large cams",
+       "Loose rock in the gully and chimney terrain around the summit tower",
+       "Loose talus and scree below the west saddle once the approach gully melts out",
+       "An exposed step near the top of the horn with real air below on the east side",
+       "A 30 m rope that may not reach on one of the two rappel lines"
+      ],
+      "baseFinding": "LEFT TO RIGHT ALONG THE FOOT OF THE HORN: THE ROOF, THE CLASSIC ROUTE, OPEN BOOK. OPEN BOOK IS THE RIGHTMOST AND THE EASIEST.\n\nTHE POSITIVE TEST IS UNMISTAKABLE AND IT IS A COUNT: TWO WIDE, LEFT-LEANING CRACKS, ABOUT 50 FT RIGHT OF THE CLASSIC ROUTE'S BASE. Two of them, wide, leaning left. From there the line climbs up and LEFT toward the anchor shared with the other routes.\n\nTHE NEGATIVE IS ABOUT CRACK WIDTH AND YOU FEEL IT IN THE FIRST FEW MOVES, WHICH IS EXACTLY WHEN YOU WANT TO KNOW: IF THE CRACK TAKES YOUR FINGERS AND HANDS COMFORTABLY, YOU ARE ON THE CLASSIC ROUTE, 50 FT TO YOUR LEFT, AT 5.4. Open Book's cracks are wide and awkward and want large cams — that awkwardness is the route, not a sign you are off it.\n\nTHE SECOND NEGATIVE IS OVERHEAD: IF THERE IS A ROOF ABOVE YOU, YOU HAVE WALKED THE ENTIRE WIDTH OF THE BLOCK AND YOU ARE ON THE ROOF AT 5.6 — the hardest of the three and the far left end of the list.\n\nORIENTATION TEST: this line is on the EAST-FACING side of the pinnacle. The Classic Route goes straight up the SOUTH face. If you are directly beneath the south face looking up at blocky ground with a piton visible at half height, you are one line to the left of here.\n\nDESCENT: the same shared anchor as the other two — the large rock horn on the south side, about 40-50 ft above the notch. AVOID THE OLD DEAD SNAG some older reports mention; it is no longer trustworthy. A 30 m rope has been found marginal or short depending on which of the two rappel lines you take off the horn, so 40 m removes the doubt. Downclimbing this line is viable given the grade, but it is still exposed near the top."
+     }
+    ],
+    "gear": [
+     "30-35m rope",
+     "a few slings for natural anchors",
+     "light rack optional — many parties climb it without placing much gear"
+    ],
+    "rack": [
+     "1-2 large cams (#3-#4 Camalot size)",
+     "Small nut set",
+     "3-4 shoulder-length runners",
+     "30-35m single rope"
+    ],
+    "approach": "Identical trailhead-to-basin approach as the Classic Route and The Roof: from the Snow Lake Trailhead on Stevens Canyon Road, hike the maintained Snow Lake Trail ~1 mile (about 350 ft of up-and-down) to Snow Lake, the last water source. Continue past the lake on the fading tread over a wooded rise, then pick a line up and right into the talus/dirt gully on the peak's NW side; a climbers' path reappears on a heather bench near the gully's top and leads into the basin beneath the summit block. Ascend moraine along the edge of the small basin snowfield to the saddle (Unicorn Col) just west/southwest of the summit, then follow the use trail traversing below the cliffs on the south side of the peak to the base of the summit horn. The Open Book line is described as taking the east-facing side of the summit pinnacle rather than the straight-up south face used by the Classic Route, so from the base of the horn stay slightly climber's-right/east before starting the technical climbing; it's regarded as the easiest of the summit-block lines (Easy 5th class / 5.0), a step down from the Classic Route (5.4-5.6) and The Roof (5.6). Total approach is roughly 2.5-3 miles one-way with about 2,400 ft gain, mostly on climbers' path and talus once past Snow Lake.",
+    "waypoints": [
+     {
+      "lat": 46.7678,
+      "lng": -121.7072,
+      "elev": 4400,
+      "name": "Snow Lake Trailhead",
+      "note": "On Stevens Canyon Road ~1.5 mi east of Reflection Lakes, Mount Rainier NP; follow the Snow Lake trail then ascend the upper basin toward the saddle west of the peak.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.74591,
+      "lng": -121.70119,
+      "elev": 6971,
+      "name": "Unicorn Peak Summit",
+      "note": "Shared high point for all Unicorn Peak routes.",
+      "type": "Summit",
+      "distMi": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_the_roof",
+   "before": {
+    "length_m": 122,
+    "approach_variants": [
+     {
+      "name": "Snow Lake and Unicorn Col to the leftmost line on the summit horn",
+      "notes": "Same approach as the other summit-block lines: from the Snow Lake trailhead, the maintained trail about a mile and roughly 700 ft to Snow Lake for the last reliable water. Past the lake the tread fades over a wooded hump; contour up and right into the obvious northwest talus and dirt gully, where a heather-bench climbers' path reappears near the top and drops you into the basin under the peak. Climb the moraine beside the small basin snowfield to Unicorn Col, then follow the traversing use trail below the summit cliffs on the south side to the base of the horn — roughly 2.5-3 miles one-way and about 2,400 ft of gain.\n\nThis is the hardest and most exposed of the three summit-block lines, following a steeper and more sustained line than either neighbour, with an old piton at about half height.\n\nCarry a double-length runner or a cordelette. The top anchor for this line sits set back from the edge, so the rappel power-point has to be extended out to the lip to keep the rope running cleanly over the roof feature.",
+      "season": "Roughly Jun-Sep",
+      "hazards": [
+       "Loose rock reported in the gully and chimney section",
+       "The steepest and most exposed of the three summit-block lines, and awkward to reverse",
+       "A top anchor set back from the edge, which drags the rope over the roof unless extended",
+       "An old piton at half height that should not be treated as protection",
+       "A 30 m rope that may not reach on one of the two rappel lines"
+      ],
+      "baseFinding": "LEFT TO RIGHT ALONG THE FOOT OF THE HORN: THE ROOF, THE CLASSIC ROUTE, OPEN BOOK. THE ROOF IS THE LEFTMOST AND THE HARDEST.\n\nTHE POSITIVE TEST IS A JUNCTION RATHER THAN A CRACK, WHICH IS WHY IT IS EASY TO FIND IN POOR LIGHT: IT STARTS ABOUT 20 FT LEFT OF THE CLASSIC ROUTE, AT THE POINT WHERE THE RIDGELINE MEETS THE SUMMIT BLOCK. Ridge into block — that meeting point is the marker.\n\nTHE FEATURE ITSELF IS THE SECOND CONFIRMATION AND IT IS OVERHEAD: A WIDE GULLY OR CHIMNEY RUNNING BENEATH A ROOF. You climb the gully, then STEP RIGHT UNDER THE ROOF onto a ledge, then up to the belay. IF THERE IS NO ROOF ABOVE YOU, YOU ARE NOT ON THIS ROUTE. There is an old piton at about half height.\n\nTHE TWO NEGATIVES, BOTH TO YOUR RIGHT:\n  — 20 FT RIGHT, blocky climbing straight up the open south face with a piton mid-pitch, and no roof: that is the CLASSIC ROUTE at 5.4.\n  — 70 FT RIGHT, two wide left-leaning cracks: that is OPEN BOOK at easy fifth.\nSo every way of being wrong here makes the climbing EASIER, not harder — which is the safer direction, but it also means nothing about the ground will warn you that you missed the route you came for.\n\nGRADE AS A CHECK: 5.6, noticeably burlier than the Classic Route's corner and well above Open Book. If it feels like the easiest thing on the block, you are not on it.\n\nAND THE ONE PIECE OF DESCENT PLANNING THAT HAS TO HAPPEN BEFORE YOU LEAVE THE GROUND: the top anchor for this line is SET BACK FROM THE EDGE. Extend it with a cordelette or long sling so the rope runs over the lip rather than dragging on the roof. Most parties rappel this line even if they downclimbed elsewhere on the peak, because reversing it is considerably more exposed than reversing its neighbours. A single-rope rappel of roughly 40-50 ft; 30 m has been reported marginal depending on which of the two lines off the horn you use, so 40 m removes the guesswork. Use the rock horn, not the retired snag."
+     }
+    ],
+    "gear": [
+     "30-35m rope",
+     "slings/runners",
+     "small-to-mid cams and nuts"
+    ],
+    "waypoints": [
+     {
+      "lat": 46.7678,
+      "lng": -121.7072,
+      "elev": 4400,
+      "name": "Snow Lake Trailhead",
+      "note": "On Stevens Canyon Road ~1.5 mi east of Reflection Lakes, Mount Rainier NP; follow the Snow Lake trail then ascend the upper basin toward the saddle west of the peak.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.74591,
+      "lng": -121.70119,
+      "elev": 6971,
+      "name": "Unicorn Peak Summit",
+      "note": "Shared high point for all Unicorn Peak routes.",
+      "type": "Summit",
+      "distMi": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_unicorn_peak_r1",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Snow Lake, the northwest gully and Unicorn Col to the summit horn",
+      "notes": "Start at the Snow Lake trailhead on Stevens Canyon Road, about 1.5 miles east of Reflection Lakes. The lot holds only about 25 cars and fills by mid-morning on summer weekends.\n\nFollow the maintained Snow Lake Trail through subalpine forest and meadow, past the Bench Lake junction, to Snow Lake at about 1.3-1.5 miles — the last reliable water. Skirt the lake's west and north shore, then leave the maintained tread where a climbers' path breaks off and climbs a steep drainage about half a mile into the large open bowl on Unicorn's northwest side, shared with Foss and West Unicorn.\n\nThe basin is loose talus and scree; through much of July the gully above the lake can still hold firm snow, so carry an axe and, in early season, crampons.\n\nFrom the basin, climb to the saddle on the peak's west side, then traverse and scramble east and around to approach the summit pinnacle from its south side — sustained class 2-3 on talus and blocky rock. About 2.4 miles one-way and 2,397 ft of gain to the base of the summit block, where the roped climbing starts.",
+      "season": "Roughly Jun-Sep; the approach gully holds firm snow through much of July",
+      "hazards": [
+       "Loose talus and scree below the west saddle once the approach gully melts out, usually mid-to-late July",
+       "Wet-slide and cornice hazard in the northwest gully and bowl in late spring, with documented slide paths off the cliffs above Snow Lake",
+       "An exposed step near the top of the summit horn with real air below on the east side",
+       "Climber-built rappel anchors of uncertain age, including a tree reported as no longer sound",
+       "Afternoon thunderstorms in summer and unreliable cell coverage"
+      ],
+      "baseFinding": "THE HORN IS THE POINT AND THE COL IS NOT. Unicorn Col, the saddle just west of the summit at about 6,400 ft, is where the route-finding stops feeling hard — but the summit is still a traverse away, EAST, and around onto the SOUTH side.\n\nTHE TEST AT THE COL IS A SHAPE: the summit block is a FREE-STANDING 50 TO 70 FT HORN, the thing the peak is named for. IF NOTHING IN FRONT OF YOU LOOKS LIKE A DETACHED TOWER, YOU HAVE NOT COME FAR ENOUGH EAST.\n\nTHE APPROACH NEGATIVE IS IN THE GULLY AND IT IS THE ONE THAT PUTS PARTIES ON BAD GROUND: aim for the MAIN gully out of the basin above Snow Lake, and AVOID THE STEEP HEADWALLS TO ITS LEFT. If the ground ahead gets steep and rocky rather than staying a talus or snow chute, you have drifted left. Go back down and across rather than pressing up.\n\nTHE TRAVERSE NEGATIVE IS ABOUT HEIGHT, NOT DIRECTION: the correct use trail traverses BELOW the cliffs on the south side, and it is easier travel than the loose scree above and below it. If you are scrambling up onto the ridge crest instead of contouring underneath it, you are above the path and on worse rock.\n\nAND THE THING THAT MATTERS MOST AT THE FOOT OF THE HORN: THREE SEPARATE LINES START WITHIN ABOUT 70 FT OF EACH OTHER THERE, and they run from easy fifth class to 5.6. LEFT TO RIGHT THEY ARE: THE ROOF, THE CLASSIC ROUTE, OPEN BOOK. All three finish at the same slung block, so the only place to get this right is at the bottom. Know which one you came for before you rope up.\n\nDESCENT FINDING, DECIDED BEFORE YOU START UP: most parties rappel the horn rather than downclimb it — a single-rope rappel of about 50 ft down the south side. The traditional anchor is an aging tree at the top of the block; many parties instead sling the rock horn on the south side, which carries slings and rings left by others. Both are climber-built and neither is maintained: inspect and back up before weighting anything. There are two rappel lines off that horn and they land in different places, so confirm which you are on."
+     }
+    ],
+    "crowds": {
+     "peakTraffic": "Weekend mornings July-August at the trailhead/Snow Lake; the summit scramble itself sees far fewer parties than the lake trail",
+     "solitudeRating": 3,
+     "estimatePerSeason": "No official visitor count is known. Snow Lake trailhead itself is a popular Mount Rainier NP hike (parking lot holds only ~25 cars, fills by 8am on summer weekends), but parties consistently describe the scramble beyond Snow Lake into the Unicorn Creek bowl as lightly traveled - some parties report having the summit to themselves, others encounter a guided group (e.g. The Mountaineers) or one or two other parties on a busy weekend day."
+    },
+    "waypoints": [
+     {
+      "lat": 46.7678,
+      "lng": -121.7071,
+      "elev": 4574,
+      "name": "Snow Lake Trailhead",
+      "note": "Signed pullout on Stevens Canyon Road ~1.5 mi east of Reflection Lakes; room for only 15-20 cars, no amenities, Stevens Canyon Rd open summer only (roughly late June-Sept).",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.75722,
+      "lng": -121.69806,
+      "elev": 4685,
+      "name": "Snow Lake",
+      "note": "Cirque lake below Unicorn Peak reached via the Snow Lake Trail; skirt the west (left) shore to pick up the climbers' path leaving the maintained trail.",
+      "type": "Water",
+      "distMi": 1
+     },
+     {
+      "lat": 46.753568,
+      "lng": -121.703994,
+      "elev": 5300,
+      "name": "NW bowl entrance",
+      "note": "Leave the lakeshore and enter the steep, unmaintained valley on Unicorn's NW side; follow it roughly 0.5 mi up into the large bowl below the west saddle.",
+      "type": "Junction",
+      "distMi": 1.4
+     },
+     {
+      "lat": 46.74641,
+      "lng": -121.705885,
+      "elev": 6400,
+      "name": "West saddle",
+      "note": "Top of the bowl gains the saddle on the west side of the peak (same saddle skiers use to access the Unicorn Glacier side); this is where the route turns east toward the summit.",
+      "type": "Junction",
+      "distMi": 2
+     },
+     {
+      "lat": 46.744277,
+      "lng": -121.702139,
+      "elev": 6700,
+      "name": "South-side talus traverse",
+      "note": "Exposed traverse across loose talus/scree below the summit block to reach its south (easiest) side; rockfall risk onto parties below, care on wet or icy scree.",
+      "type": "Hazard",
+      "distMi": 2.25
+     },
+     {
+      "lat": 46.7448,
+      "lng": -121.701438,
+      "elev": 6900,
+      "name": "Summit block",
+      "note": "~40 ft of 4th/low-5th-class rock to the true top; rope and runners recommended, natural gear anchors reported at the summit for a short rappel on descent.",
+      "type": "Hazard",
+      "distMi": 2.3
+     },
+     {
+      "lat": 46.7445542,
+      "lng": -121.7012031,
+      "elev": 6971,
+      "name": "Unicorn Peak summit",
+      "note": "Highest point in the Tatoosh Range; tight summit with limited standing room, expect to belay or hand-line the last move in a crowd.",
+      "type": "Summit",
+      "distMi": 2.4
+     }
+    ],
+    "approach": "Start at the Snow Lake Trailhead on Stevens Canyon Road, about 1.5 miles east of Reflection Lakes (roughly 20 minutes past the Stevens Canyon entrance station). The lot holds only ~15-20 cars and fills by 8am on summer weekends. Follow the maintained Snow Lake Trail as it climbs through subalpine forest and meadow, passing the Bench Lake junction, to Snow Lake at about 1-1.25 miles in (only around 350 ft of up-and-down by here) — this is the last reliable water source. Skirt the lake's west/north shoreline, then leave the maintained tread where a boot-path/climber's trail breaks off and climbs a steep drainage for about half a mile into the large open bowl on Unicorn's northwest side, shared with neighboring Foss and West Unicorn peaks. This basin is loose talus and scree (locally infamous 'Cascadian scree') — expect sliding underfoot and some loose rock; through much of July the gully above the lake can still hold firm snow, so carry an ice axe (and crampons in early season) and be alert to the runout below. From the basin, climb to the saddle on the peak's west side, then traverse/scramble east and around to approach the summit pinnacle from its south side — this stretch is sustained Class 2-3 on talus and blocky rock. Total distance is about 2.4 miles one-way with 2,397 ft of gain to the 6,971 ft high point, topping out at the base of the summit block itself, where the roped climbing begins.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "Class 2-3",
+      "label": "West saddle to the summit pinnacle",
+      "notes": "From the basin climb to the saddle on the peak's west side, then traverse/scramble east and around to approach the summit pinnacle from its south side; sustained on talus and blocky rock, with loose rock and sliding scree. The described line tops out at the base of the summit block itself, at 6,971 ft, where the roped climbing begins — the summit block climbing is not described."
+     }
+    ]
+   }
+  }
+ ]
+}

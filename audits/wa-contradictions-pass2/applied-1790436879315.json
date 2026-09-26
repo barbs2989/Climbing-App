@@ -1,0 +1,171 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_constance_west_arete",
+   "column": "beta",
+   "path": [],
+   "fact": "Crux pitch and its grade"
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "column": "waypoints",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Lake Constance waypoint distance"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which traverse the North Chute line crosses"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    2
+   ],
+   "fact": "Which traverse the North Chute line crosses"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Which traverse the North Chute line crosses"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "baseFinding"
+   ],
+   "fact": "Which traverse the North Chute line crosses"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "hazards",
+    3
+   ],
+   "fact": "Which traverse the North Chute line crosses"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "column": "watch_out",
+   "path": [
+    1
+   ],
+   "fact": "Which traverse the North Chute line crosses"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Which traverse the North Chute line crosses"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Which traverse the North Chute line crosses"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Closed-road distance to the Dosewallips road end"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_constance_west_arete",
+   "before": {
+    "beta": "From Crystal Pass (base of the West Arête), begin a rising traverse on the right side of the ridge crest at ~10:30 AM (typical timing). Terrain involves fairly broken Class 2 and 3 with occasional 4th or low 5th steps. Bypass towers via a ledge on the right side. Reach the crux pitch on the arête proper—traverse up and right on a groove (5.4), clip existing pitons, move straight up (5.4) then back left to a small alcove below a chimney. Anchor and ascend the chimney leftward to a sloping ledge, then traverse left to easier ground. Continue to ridge crest with talus climbing above, then cross to east side following the standard route descent to summit horn.",
+    "waypoints": [
+     {
+      "lat": 47.75073,
+      "lng": -123.14226,
+      "elev": 4750,
+      "name": "Lake Constance",
+      "type": "Campsite",
+      "distMi": 2,
+      "elevFt": 4750
+     },
+     {
+      "lat": 47.7403,
+      "lng": -123.0658,
+      "elev": 550,
+      "name": "Dosewallips Road washout parking",
+      "note": "\"Same Dosewallips Road / Lake Constance approach as the other Constance routes, diverging higher up at Crystal Pass.\"",
+      "type": "Trailhead",
+      "elevFt": 550
+     },
+     {
+      "lat": 47.772826,
+      "lng": -123.127336,
+      "elev": 7756,
+      "name": "Mount Constance (true/main summit)",
+      "type": "Summit",
+      "elevFt": 7756
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Lake Constance climbers' trail, then up Avalanche Canyon past the South Chute",
+      "notes": "Bike or walk the closed Dosewallips Road (FS 2610) about 5 miles to the unsigned Lake Constance climbers' trail, then the steep, unmaintained trail roughly 3,300 ft in under 2.2 miles to Lake Constance at 4,800 ft. Camp at the north end of the lake.\n\nFrom the lake, head north into Avalanche Canyon. This route is the parallel couloir further into the canyon: where the standard South Chute line turns east and climbs out early, the North Chute keeps you in the canyon bed longer and climbs from higher up it.\n\nIt sees less traffic than the South Chute and is commonly used as one half of a loop — up one, down the other — rather than as a route in its own right. It rejoins the standard line at or just below the Terrible Traverse, and finishes over the summit block and the North Chimney.",
+      "season": "Roughly Jun-Sep. Snow in the chute is an improvement on the scree, but Avalanche Canyon is named for what runs down it in May and June",
+      "hazards": [
+       "Avalanche hazard in Avalanche Canyon and its chutes is called out explicitly for May-June conditions",
+       "A long, loose gully with rockfall onto anyone below",
+       "It commits you to the Terrible Traverse rather than the Finger Traverse — the harder and more exposed of the two crossings",
+       "Less traffic means less boot track and fewer people to ask"
+      ],
+      "primary": true,
+      "baseFinding": "THE WHOLE ROUTE-FINDING PROBLEM ON THIS ROUTE IS TELLING THIS CHUTE FROM THE OTHER ONE, AND THE TEST IS: KEEP WALKING UP THE CANYON PAST THE FIRST CHUTE. The published instruction for the South Chute is to start climbing east as soon as the CAT EARS tower is visible, and trip reports describing this line say plainly that you bypass the South Chute entrance and continue up loose talus to the MOUTH OF THE NORTH CHUTE further into Avalanche Canyon. So the discriminator is temporal, not visual: the first opportunity to leave the canyon eastward is the wrong one. IN CLOUD, where the Cat Ears cannot be seen at all, this is still workable because the test is about the canyon floor under your feet rather than about a skyline. From the lake, follow the canyon NORTH. Do not turn uphill at the first gully. Keep going on the talus until the canyon delivers you to a second, more northerly couloir, and take that. THE CONFIRMING TEST IS ABOVE THE CHUTE, and it is what proves you took the right one: the North Chute leads toward the Terrible Traverse, the steep exposed snow crossing above a large cliff at roughly 7,435 ft. The South Chute leads to a notch at about 6,600 ft with the Cat Ears tower just left of it and then, after a saddle and a 150 ft descent and a second gully, to the Finger Traverse — a downsloping ledge with a horizontal finger crack and old pitons. If you top out and find a finger crack, you took the South Chute; if you top out and find a snow traverse over a cliff, you took this one. HONEST LIMIT: this chute is documented mostly as a variation inside other parties' loops. It is long, loose and less travelled, and there is no marker sequence inside the gully itself."
+     },
+     {
+      "name": "Dosewallips road and Constance Pass, over Crystal Pass into upper Avalanche Canyon",
+      "notes": "The alternative that avoids the Lake Constance trail. Road-walk or bike roughly 5.5 miles from the washout past the Lake Constance turn-off to the road end at the old campground and ranger station, then the Constance Pass Trail south and southwest to Constance Pass at about 5,850 ft. Leave the trail, travel cross-country west into the head of Crystal Basin, and climb to Crystal Pass on the Constance-Warrior massif. From Crystal Pass drop south into UPPER Avalanche Canyon. This is the variant that suits this route best of the three Constance routes, because the North Chute is the higher of the two chutes and coming in from Crystal Pass you meet it without walking the whole canyon up from the lake.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Unmarked cross-country between Constance Pass and Crystal Pass on talus, scree and lingering snow",
+       "No water above Constance Pass except transient snowmelt",
+       "Avalanche and rockfall in the canyon and the chute",
+       "Commits to the Terrible Traverse at the end of a long approach day",
+       "Roughly 6.5 miles of closed road at each end"
+      ],
+      "baseFinding": "THIS IS THE ONE APPROACH WHERE THE NORTH CHUTE IS THE EASY ONE TO FIND, BECAUSE YOU ARRIVE ABOVE IT. Dropping into Avalanche Canyon from Crystal Pass on the intermittent climbers' path, the FIRST couloir that offers a line up onto the Constance side is the North Chute. Take it. If you keep descending the canyon you will next pass the Cat Ears and the Thumb and eventually reach the South Chute entrance and then the lake — every one of which means you have gone below the route.\n\nTHE CONFIRMING TEST IS THE SAME AS ON THE LAKE APPROACH: this chute delivers you toward the TERRIBLE TRAVERSE, a steep exposed snow crossing directly above a large cliff at roughly 7,435 ft, reached after the line loses a little height and traverses north on ledges. If you top out on a notch with a tower just to its left and then find a saddle, a 150 ft drop and a ledge with a horizontal finger crack, you have found the South Chute and the Finger Traverse instead.\n\nHONEST LIMIT: the climbers' track fades near Crystal Pass, so this variant's own approach is the navigationally hard part, not the chute."
+     }
+    ],
+    "watch_out": [
+     "Early-season snow in this chute carries real avalanche hazard — assess conditions before committing.",
+     "Like the South Chute, this line ultimately funnels into the same exposed Terrible Traverse near the summit."
+    ],
+    "descent_text": "From the summit, downclimb the North Chimney/summit block, re-cross the Terrible Traverse, and descend the North Chute (or the South Chute, if looping) back to Avalanche Canyon and Lake Constance.",
+    "itinerary": "Day 1: approach to Lake Constance. Day 2: pre-dawn ascent of Avalanche Canyon and the North Chute, cross the Terrible Traverse, summit, descend. Day 3: hike out."
+   }
+  }
+ ]
+}

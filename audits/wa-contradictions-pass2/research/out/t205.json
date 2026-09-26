@@ -1,0 +1,214 @@
+{
+ "file": "t205.json",
+ "results": [
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Published car-to-car times for this route spread from under 7 hours to about 10.5 hours depending on pace: one party reports under 7 hours, another about 8.5 hours (4.75 h up), another 5.4 h up and 4.9 h down (10.3 h), another ~2 h to the basin plus 3 h to the summit. The ascent of ~5 hours is well agreed, but no two sources agree on a descent time or single car-to-car figure; settling it needs a chosen pace convention (e.g. restate timing/totalNote as a 7-10.5 h range, or align the schedule's summit time and descent to 9 h).",
+   "sources": [
+    "https://trailcatjim.com/tomyhoi-peak-via-southeast-ridge/",
+    "http://ericsbasecamp.net/trips/Tomyhoi/Tomyhoi.htm",
+    "https://geoffzenger.com/tomyhoi-peak",
+    "https://stephabegg.com/trip-reports/washington/tomyhoi/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Climbable Jun-Sep (June is an early-season option with lots of snow); most reliable mid-July through September",
+   "evidence": "The peak's standard description gives June through September as the climbing window depending on snow, and a documented ascent was made on June 27; other accounts note an axe is needed earlier in the season and rock-only conditions by late September. So Jun-Sep is correct as the window, but June is snowy shoulder season rather than 'not the intended season', and 'best conditions June-September' overstates June.",
+   "sources": [
+    "https://www.summitpost.org/tomyhoi-peak/150463",
+    "https://geoffzenger.com/tomyhoi-peak",
+    "https://www.hippohamster.com/posts/north_cascades/tomyhoi_peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "difficult routefinding - not the intended season for this route",
+     "replace": "difficult routefinding - an early-season option only for parties equipped for and comfortable on steep snow"
+    },
+    {
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Season window",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Best conditions June-September;",
+     "replace": "Climbable June-September, most reliably mid-July through September;"
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Character of the final climb to the true summit",
+   "verdict": "fixed",
+   "correct_value": "An exposed class 3 scramble (one short class 3.5 slot) on mostly solid rock",
+   "evidence": "One report calls the finish a delightful Class 3 scramble on solid rock above a V-shaped Class 3.5 slot; another describes class 3 with some exposure on solid rock via easy gully systems, and warns harder-than-class-3 ground means you are off route; a third calls the crux groove the most solid rock of the day at Class 3. None describes a long, loose class 3-4 chimney.",
+   "sources": [
+    "https://trailcatjim.com/tomyhoi-peak-via-southeast-ridge/",
+    "https://www.hippohamster.com/posts/north_cascades/tomyhoi_peak/",
+    "https://geoffzenger.com/tomyhoi-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Character of the final climb to the true summit",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "then a long, loose, exposed class 3-4 gully/chimney to the true summit.",
+     "replace": "then an exposed class 3 scramble, with one short 3.5 slot, on mostly solid rock to the true summit."
+    },
+    {
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Character of the final climb to the true summit",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "followed by a steep class 3-4 gully to the true summit.",
+     "replace": "followed by an exposed class 3 scramble, with one short 3.5 slot, to the true summit."
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Camp location",
+   "verdict": "fixed",
+   "correct_value": "Yellow Aster tarns",
+   "evidence": "Parties splitting the climb camp at the Yellow Aster Butte lakes/tarns basin (one reached it in 2h20 on day 1); the route leaves the Tomyhoi Lake trail at the 1.5-mile fork and never goes to Tomyhoi Lake, which lies 2 miles and 1,600 ft down beyond Gold Run Pass.",
+   "sources": [
+    "https://www.hippohamster.com/posts/north_cascades/tomyhoi_peak/",
+    "https://stephabegg.com/trip-reports/washington/tomyhoi/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/tomyhoi-lake-trail-686"
+   ],
+   "patches": [
+    {
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Camp location",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "a camp at Tomyhoi Lake/basin",
+     "replace": "a camp at the Yellow Aster tarns"
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Gold Run Pass vs the Tomyhoi Lake fork",
+   "verdict": "fixed",
+   "correct_value": "The 1.5-mile pin is the Yellow Aster Butte / Tomyhoi Lake trail junction, below Gold Run Pass; the route does not cross the pass",
+   "evidence": "The land manager's trail page puts the junction with Yellow Aster Butte Trail 686.1 about 1.5 miles from the trailhead, with the Tomyhoi Lake trail continuing upward through meadow to Gold Run Pass; a trail guide adds the pass is about another half mile on, ~1,800 ft above the trailhead. The pin's 5,427 ft is the pass's height, not the junction's, and the junction's own height is unsourced, so it is set to unknown.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/tomyhoi-lake-trail-686",
+    "https://www.wta.org/go-hiking/hikes/tomyhoi-lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Gold Run Pass vs the Tomyhoi Lake fork",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "name"
+     ],
+     "expect": "Gold Run Pass",
+     "value": "Tomyhoi Lake Trail junction"
+    },
+    {
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Gold Run Pass vs the Tomyhoi Lake fork",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 5427,
+     "value": null
+    },
+    {
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Gold Run Pass vs the Tomyhoi Lake fork",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Trail forks near the pass: right drops to Tomyhoi Lake",
+     "replace": "Signed fork below Gold Run Pass: right climbs over the pass and drops to Tomyhoi Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Trailhead position on FR 3065",
+   "verdict": "fixed",
+   "correct_value": "Trailhead is 4.5 mi up FR 3065; the road continues ~2 rough miles to Twin Lakes",
+   "evidence": "The land manager says the Tomyhoi Lake/Yellow Aster Butte trailhead is reached after 4.5 miles on FR 3065, and road guides say the remaining ~2 miles to Twin Lakes are unmaintained and need high clearance. So the trailhead is not the end of the road.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/tomyhoi-lake-trail-686",
+    "https://www.bellingham.org/tackling-twin-lakes-road-in-the-north-cascades",
+    "https://www.wta.org/go-hiking/hikes/winchester-mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Trailhead position on FR 3065",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "End of FR 3065 (Twin Lakes Road), 4.5 mi off SR 542;",
+     "replace": "On FR 3065 (Twin Lakes Road), 4.5 mi up from SR 542, where the road continues about 2 rough miles to Twin Lakes;"
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Round-trip gain figures for this route disagree: 5,600 ft (one detailed report), 5,000 ft (a club route page, and 5,000+ elsewhere), 5,400 ft, and 4,800 ft. The 5,000 figure has two loosely agreeing sources but one gives an impossible 5-mile distance, so neither 5,000 nor 5,600 is settled; a measured GPS track of this route would settle it.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/tomyhoi/",
+    "https://www.mountaineers.org/activities/routes-places/tomyhoi-peak-southeast-route",
+    "https://www.hippohamster.com/posts/north_cascades/tomyhoi_peak/",
+    "https://trailcatjim.com/tomyhoi-peak-via-southeast-ridge/"
+   ],
+   "patches": []
+  }
+ ]
+}

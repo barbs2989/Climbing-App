@@ -1,0 +1,243 @@
+{
+ "file": "t323.json",
+ "results": [
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on whether June belongs in the window: one peak guide gives July through August as the vital-statistics season and calls early July good; a search-summarised report says June or July is best, and a detailed trip report climbed it successfully in late May. No two independent sources agree on a specific window that would settle whether optimalWindow (mid-June-Aug) or the season chip/best_season (Jul, best early Jul-early Aug) is right. Would settle with a second source stating the optimal months explicitly.",
+   "sources": [
+    "https://sites.google.com/site/guideto100peaks/home/3-route-descriptions/49-little-tahoma-peak-11138-c",
+    "https://trailcatjim.com/little-tahoma-peak-via-fryingpan-glacier-whitman-glacier-2023/",
+    "https://www.summitpost.org/little-tahoma/151666"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "fact": "Route distance (one-way vs round trip)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 11.3 km (~7.0 mi) is the one-way approach shown as 'Approach (one way)', matching the summit pin's 7.54 mi; the itinerary's 4 + 10.1 = 14.1 mi is the round trip. Two different quantities, correctly labelled.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "fact": "Day-1 mileage to a high camp beyond Summerland",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Itinerary day 1 reaches a ~7,900 ft camp above Summerland in 4 miles, while the row's approach and waypoints put Summerland itself at 4.5 mi. A detailed trip report reached a 7,350 ft camp at 4.5 mi via the direct spring route; no source states the distance to a 7,900 ft camp, so no patch.",
+   "sources": [
+    "https://trailcatjim.com/little-tahoma-peak-via-fryingpan-glacier-whitman-glacier-2023/",
+    "https://www.wta.org/go-hiking/hikes/summerland-panhandle-gap"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "fact": "Distance between Summerland and the trailhead",
+   "verdict": "fixed",
+   "correct_value": "Day 3 hike-out from Summerland ~4.5 mi",
+   "evidence": "The hiking-trail association page puts Summerland about 4.5 miles from the Fryingpan Creek trailhead, and an independent trail blog says Camp Summerland is about 4.5 miles in (the park gives 8.4 mi round trip, i.e. 4.2). The 3.2 mi figure is the footlog creek crossing (a trip report gives 3.2 mi to the creek crossing). Day 3 miles set to 4.5, matching approach, approach_variants and day 1; the itinerary total becomes 14.5 mi, consistent with the '~14 mi' total note.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/summerland-panhandle-gap",
+    "https://uprootedtraveler.com/summerland-trail-mt-rainier/",
+    "https://www.nps.gov/places/summerland-trailhead.htm",
+    "https://trailcatjim.com/little-tahoma-peak-via-fryingpan-glacier-whitman-glacier-2023/"
+   ],
+   "patches": [
+    {
+     "id": "wa_frying_pan_whitman_glaciers",
+     "fact": "Distance between Summerland and the trailhead",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 3.2,
+     "value": 4.5
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 5.2 km (3.2 mi) is shorter than the 3.5-3.6 mi trail to Lake of the Angels alone, so it cannot be the one-way distance to the summit. Trip reports give round trips of 9.6 mi and ~11 mi, which do not agree on a one-way figure, and no source states the one-way distance; computing one is not allowed. Would settle with two sources stating the trailhead-to-summit one-way distance.",
+   "sources": [
+    "https://mountainflamingo.com/2019-06-01-mt-skokomish/",
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Gain from trailhead to Lake of the Angels",
+   "verdict": "fixed",
+   "correct_value": "Day 1 gain ~3,400 ft; itinerary total gain 5,100 ft (= gain_ft)",
+   "evidence": "The hiking-trail association page gives 3,400 ft gain to Lake of the Angels, an independent hiking blog gives 3,400 ft, and a trail directory 3,358 ft. Total trip gain via the lake is 5,100 ft in one trip report and ~5,000 ft in another, matching gain_ft 5100. Day 1 set to 3,400; day 2 reduced to 1,700 so the itinerary total stays equal to gain_ft (lake ~4,900 ft to 6,434 ft summit), and the total note updated from 5,300 to 5,100.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://hike734.com/hikingolympic/lake-of-the-angels/",
+    "https://www.hikingproject.com/trail/7001921/lake-of-the-angels-putvin-trail",
+    "https://mountainflamingo.com/2019-06-01-mt-skokomish/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Gain from trailhead to Lake of the Angels",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2900,
+     "value": 3400
+    },
+    {
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Gain from trailhead to Lake of the Angels",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 2400,
+     "value": 1700
+    },
+    {
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Gain from trailhead to Lake of the Angels",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "about 5,300 ft of cumulative gain",
+     "replace": "about 5,100 ft of cumulative gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Summit-push time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "summitTimeHrs unknown (null)",
+   "evidence": "summitTimeHrs 10 equals the whole day-2 section (summit plus the full hike-out), while approachTimeHrs 3.5 and descentTimeHrs 2.5 are also published, so the Planner counts the hike out twice. The day-2 schedule reaches the summit 4.5 h after leaving camp, and a trip report took roughly 1.75 h lake-to-summit and ~2.5 h summit-to-trailhead. Nulled rather than replaced with a computed figure.",
+   "sources": [
+    "https://mountainflamingo.com/2019-06-01-mt-skokomish/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Summit-push time",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Basin the Putvin Trail climbs through",
+   "verdict": "fixed",
+   "correct_value": "Along Boulder Creek first, then up the Whitehorse Creek drainage to the lake",
+   "evidence": "The hiking-trail association page says the trail follows Boulder Creek for the first 1.5 miles; an independent hiking blog says it climbs alongside Boulder Creek and that Whitehorse Creek cascades over the headwall below the lake, and another page places the lake at the head of Whitehorse Creek. Both creeks are real parts of the approach; the breakdown's 'Boulder Creek basin' is reworded so it no longer names a different basin from the approach text.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://hike734.com/hikingolympic/lake-of-the-angels/",
+    "https://www.theoutbound.com/washington/hiking/hike-to-lake-of-the-angels"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Basin the Putvin Trail climbs through",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "via Boulder Creek basin",
+     "replace": "up along Boulder Creek, then into the Whitehorse Creek drainage"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Permit note names another lake",
+   "verdict": "fixed",
+   "correct_value": "Remove the Upper Lena Lake quota sentence",
+   "evidence": "Upper Lena Lake is reached by the Lena Lake trail, not the Putvin Trail; this route camps at Lake of the Angels, for which the hiking-trail association page says a wilderness permit from an Olympic NP Wilderness Information Center is required and states no quota. The stray sentence about another camp's quota is removed; no replacement fact is added.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Permit note names another lake",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": " Upper Lena Lake is quota-limited, so book early for July to September.",
+     "replace": ""
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_skokomish_standard",
+   "fact": "Parking pass at the Putvin trailhead",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "No pass or fee needed at the Putvin trailhead",
+   "evidence": "access.fees says a Northwest Forest Pass is required at the Putvin trailhead, while the Lake of the Angels camp entry says none is needed there. The national forest's own Putvin Trailhead page says no fees are required for the site, and the hiking-trail association page says no pass or entry fee is required. The Mildred Lakes part of the sentence is left as it was.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/putvin-trailhead",
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_skokomish_standard",
+     "fact": "Parking pass at the Putvin trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "Northwest Forest Pass required to park at Mildred Lakes and Putvin trailheads (no fee at the trailhead itself otherwise).",
+     "replace": "Northwest Forest Pass required to park at the Mildred Lakes trailhead; no pass or fee is needed to park at the Putvin trailhead."
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge",
+   "fact": "Whether a rope is carried",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route database lists the North Ridge as an Easy 5th trad line but gives no protection or rope detail; another climbing site describes the same line as 'North Side Scrambles, Class 2', implying no rope. No source states whether a rope is carried, so rope_type 'none' vs the gear list's rope cannot be settled. Would settle with two trip reports or descriptions stating rope use on this line.",
+   "sources": [
+    "https://www.mountainproject.com/area/118351599/steeple-rock",
+    "https://www.summitpost.org/steeple-rock/394209"
+   ],
+   "patches": []
+  }
+ ]
+}

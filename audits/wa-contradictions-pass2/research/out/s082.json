@@ -1,0 +1,218 @@
+{
+ "file": "s082.json",
+ "results": [
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "fact": "Compass direction of the 6,800 ft gully crossing",
+   "verdict": "fixed",
+   "correct_value": "left (west)",
+   "evidence": "The route description says to follow the south ridge to about 6,800 ft, then head left across gullies to the gentler southwest slope. USGS 1 m elevation samples across the ridge (lat 48.5115-48.5145) put the south ridge crest at about lng -120.708 running north-south, with gentler ground falling to the WEST (e.g. 7,130 -> 6,787 -> 6,543 -> 5,932 ft westward at lat 48.513) and steeper ground to the east; north along the ridge is uphill toward the summit, not across gullies. So 'left' while climbing a south ridge is west, onto the southwest slope.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.711&y=48.513&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Compass direction of the 6,800 ft gully crossing",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "cross a couple of gullies left (north) onto",
+     "replace": "cross a couple of gullies left (west) onto"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Compass direction of the 6,800 ft gully crossing",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "cross a couple of gullies left (north) onto",
+     "replace": "cross a couple of gullies left (west) onto"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Compass direction of the 6,800 ft gully crossing",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "baseFinding"
+     ],
+     "find": "cross a couple of gullies LEFT, north, onto",
+     "replace": "cross a couple of gullies LEFT, west, onto"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Compass direction of the 6,800 ft gully crossing",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "baseFinding"
+     ],
+     "find": "or cross two gullies north for easier ground",
+     "replace": "or cross two gullies west for easier ground"
+    }
+   ]
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still only one source states the split (about 5,300 ft to Honeymoon Meadows plus about 4,000 ft on the summit day, ~9,300 ft); another trip report gives about 5,000 ft for the ~17 mile walk in, and the hike page for the West Fork trail alone gives 2,400 ft, so the day-1 figure and the car-to-car total do not converge. gain_ft 5,706 is a net-rise figure no source states. Would settle: a GPS-measured car-to-car total for the Dosewallips road end -> Honeymoon Meadows -> White Mountain trip.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft",
+    "https://www.rightkindoflost.com/west-fork-dosewallips-river-trail/",
+    "https://www.wta.org/go-hiking/hikes/west-fork-dosewallips-river"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Total loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car descent figure for this route, and loss_ft may not be derived from gain or the itinerary. Would settle: a sourced car-to-car loss figure.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "fact": "Honeymoon Meadows to Anderson Pass leg",
+   "verdict": "fixed",
+   "correct_value": "about 950 ft of gain from Honeymoon Meadows (distance more than 1.2 mi; stated value removed)",
+   "evidence": "USGS point elevations at the row's own pins read 3,536 ft at Honeymoon Meadows and 4,477 ft at Anderson Pass (~940 ft); published figures of 3,527 ft for Honeymoon Meadows and 4,464 ft for Anderson Pass give the same ~940 ft, so '700 ft' is wrong (700 ft is the figure for the shorter hop to Camp Siberia). On distance, a mile log puts Honeymoon Meadows at 14.15 mi and the pass at 16.0 mi (1.85 mi) and a separate family trip report says Camp Siberia alone is 1.3 mi past Honeymoon Meadows, so '~1.2 mi' understates it; the exact figure is not agreed by two sources, so the number is removed rather than replaced.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.31109&y=47.707998&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-123.3265&y=47.6961&units=Feet&wkid=4326",
+    "https://www.mountaineers.org/activities/routes-places/white-mountain-6400-ft",
+    "http://www.alpinequest.com/olympichammadose.htm",
+    "https://www.protrails.com/trail/838/",
+    "https://j3.org/2018/08/backpack-dosewallips-anderson-glacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_white_mountain_olympics_scramble",
+     "fact": "Honeymoon Meadows to Anderson Pass leg",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "~1.2 mi and 700 ft of gain from Honeymoon Meadows.",
+     "replace": "About 950 ft of gain from Honeymoon Meadows."
+    }
+   ]
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "Where the lingering snow lies",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The trail and route pages (hike description, mile-by-mile trail guide, lookout history page, lookout list page) all say only that a steep, exposed snowfield near the top/above the switchbacks lingers into July-August and that the slope 'above' must be traversed; none names its aspect. One page notes the trail crosses the treeless southeast slope, which fits the approach wording but does not say where the snow lies. Would settle: a trip report or photo naming which face the lingering snow traverse crosses.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/winchester-mountain",
+    "https://www.hikingproject.com/trail/7015472/winchester-mountain",
+    "https://www.willhiteweb.com/north_cascades/winchester_mountain_lookout/twin_lakes_173.htm",
+    "https://www.trailchick.com/wa-state-fire-lookouts/winchester-mountain-lookout/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Round-trip distance for partners",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources genuinely disagree: the hike page gives 11.0 mi one-way from Long Swamp (matching the row's 22 mi RT), while a lookout-history page says 'Seven miles by Trail 342 ... starting at Long Swamp', another lookout page calls it the 7-mile Windy Peak Trail, and a 2004 trip report says the trail from Long Swamp is 12 miles round trip. The straight line from the trailhead pin to the summit is only ~5.1 mi, which favours the shorter figure, but changing it would rewrite dist_km, itinerary, hazards, timing and every waypoint distMi against the one detailed source. Would settle: a GPS track of Trail 342 from Long Swamp to the summit.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/windy-peak",
+    "https://www.wildlandnw.net/windy-peak-pasayten-wilderness",
+    "http://www.willhiteweb.com/pasayten_wilderness/windy_peak/lookout_232.htm",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004072220"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "fact": "Side of the summit climbed",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Two genuine options: one route page says parties coming from the south can make a blocky scramble up the south side of the summit pyramid or stay on the trail across a west-facing basin to the easy west side, and another says the easy class 2 way is the west slope with the south and north ridges harder. The rope note names the easy west-slope line and the approach variant describes the south-side scramble from the trail's high point south of the summit; both exist.",
+   "sources": [
+    "https://www.summitpost.org/windy-peak/151514",
+    "https://www.mountainproject.com/area/109096885/windy-peakwindy-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "fact": "Thirtymile Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "~3,400 ft",
+   "evidence": "The trailhead's mapped location (48.8228, -120.0197, matching the row's pin) reads 3,447 ft on the USGS 1 m elevation service; trail-mapping sites give the Chewuch Trail's low point at its Thirtymile end as 1,045 m (~3,430 ft) and ~3,440 ft. The ~3,600 ft figure in four prose fields is ~150-200 ft too high; the waypoint's 3,400 ft is right.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.019819&y=48.822956&units=Feet&wkid=4326",
+    "https://naturalatlas.com/trailheads/thirtymile-1664607",
+    "https://www.trailforks.com/trails/chewuch-trail/",
+    "https://www.hikingproject.com/trail/7015851/chewuch-trail-510"
+   ],
+   "patches": [
+    {
+     "id": "wa_wolframite_mountain_scramble",
+     "fact": "Thirtymile Trailhead elevation",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Thirtymile Trailhead (~3,600 ft)",
+     "replace": "Thirtymile Trailhead (~3,400 ft)"
+    },
+    {
+     "id": "wa_wolframite_mountain_scramble",
+     "fact": "Thirtymile Trailhead elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Thirtymile Trailhead (~3,600 ft)",
+     "replace": "Thirtymile Trailhead (~3,400 ft)"
+    },
+    {
+     "id": "wa_wolframite_mountain_scramble",
+     "fact": "Thirtymile Trailhead elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Thirtymile Trailhead (~3,600 ft)",
+     "replace": "Thirtymile Trailhead (~3,400 ft)"
+    },
+    {
+     "id": "wa_wolframite_mountain_scramble",
+     "fact": "Thirtymile Trailhead elevation",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "Thirtymile Trailhead (~3,600 ft)",
+     "replace": "Thirtymile Trailhead (~3,400 ft)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,217 @@
+{
+ "file": "t042.json",
+ "results": [
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Glacier used on the approach",
+   "verdict": "fixed",
+   "correct_value": "The glacier kit is for the snow and small glacier slopes between Crescent Creek Basin and the Ottohorn-Himmelhorn col; the Mustard Glacier lies on the north side and is not part of this route's approach.",
+   "evidence": "The Mustard Glacier is a small glacier on the northern slope of Himmelhorn, i.e. north of the Otto-Himmel col; a Picket Range overview describes a ramp from the col dropping onto the Mustard Glacier on the far side. The row's own approach, descent_text, bail and rappels all keep the route on the south (Crescent Creek) side and treat the Mustard Glacier as the north-side alternative.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Himmelhorn_(Washington)",
+    "https://www.summitpost.org/picket-range/171088"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Glacier used on the approach",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "find": "(glacier approach via Crescent Creek Basin/Mustard Glacier)",
+     "replace": "(snow and small glacier slopes from Crescent Creek Basin to the col)"
+    },
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Glacier used on the approach",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Glacier travel gear for the Crescent Creek Basin/Mustard Glacier approach",
+     "replace": "Glacier travel gear for the snow and small glacier slopes from Crescent Creek Basin to the col"
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Scramble grade of the standard finish",
+   "verdict": "fixed",
+   "correct_value": "Class 3-4 (a 5.7 variation exists)",
+   "evidence": "The 2003 enchainment party's feature article calls Ottohorn class 3 and one of the few Southern Picket summits that is not fifth class, and a 2011 party also found it 3rd-class scrambling until a fresh rockfall zone forced two 5.7 pitches; the same 2003 party's short report lists the east ridge as class 4. Sources therefore span class 3 to 4, so 'consistently class 3' overstates and a flat 'Class 4' understates; the row's own descent_text (Class 3 with a short Class 4 step) and pro_needs (Class 3-4) already say 3-4.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "http://publications.americanalpineclub.org/articles/12200415801/North-America-United-States-Washington-Southern-Picket-Range-Complete-Enchainment",
+    "https://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-5.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Scramble grade of the standard finish",
+     "op": "replace_text",
+     "column": "rock_grade",
+     "path": [],
+     "find": "Class 4 (a 5.7",
+     "replace": "Class 3-4 (a 5.7"
+    },
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Scramble grade of the standard finish",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "grade"
+     ],
+     "find": "Class 4 (or 5.7",
+     "replace": "Class 3-4 (or 5.7"
+    },
+    {
+     "id": "wa_ottohorn_west_ridge",
+     "fact": "Scramble grade of the standard finish",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "accounts consistently call the peak class 3 and",
+     "replace": "most accounts call the peak class 3, with a short class 4 step, and"
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the ONE-WAY approach distance; 16.1 km (10 mi) one way is consistent with the 20-mile round trip the approach text quotes for the near-identical Mount Terror approach.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "fact": "Route identity: 'West Ridge' 2017 line vs an east-ridge description",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The overview and hazards say this is a 2017 west-ridge first-ascent line whose grade, pitch count and length are not recorded, yet rock_grade, pitch_detail, climbing_route, pro_needs and descent_text describe the 1961 standard east ridge from the Otto-Himmel col with grades. The Southeast Route row covers that standard line. Settling it needs an owner decision on whether this row is the 2017 west ridge (and should drop the east-ridge grade/pitch detail) or a duplicate of the standard route; no source describes a 2017 west ridge in detail.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Glacier travel and kit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A Picket Range overview places the Barrier crossing at the lower end of the Terror Glacier and mentions moats and crevasses on the approach to the Otto-Himmel col, which argues against 'non-glaciated', but no second independent source states whether the Crescent Creek side below the col is glaciated enough to require roped glacier travel and crevasse rescue. A topo/trip report stating glacier travel on the south side of the col would settle it.",
+   "sources": [
+    "https://www.summitpost.org/picket-range/171088"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Height from the col to the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Summit 7,840 ft is well established, but no external source found gives the Otto-Himmel col elevation (the 7,400 ft figure appears only in this catalog's rows). A topo-derived col elevation (or Ottohorn key-col figure) would settle whether 500-700 ft or ~440 ft is right.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "Driving direction to Goodell Creek Road",
+   "verdict": "fixed",
+   "correct_value": "Coming east on SR 20 the turn is on the north side just west of downtown Newhalem, opposite the visitor-center road, just east of Goodell Creek Campground (MP ~119).",
+   "evidence": "A Mount Terror route page directs drivers to turn north from SR 20 just west of downtown Newhalem, opposite the North Cascades Visitor Center entrance road. A trail guide says to look for the road just east of Goodell Campground, and campground listings put the campground at milepost 119 beside Newhalem; a driver from Marblemount reaches the turn before Newhalem, not past it.",
+   "sources": [
+    "https://www.summitpost.org/mount-terror/155359",
+    "https://www.wta.org/go-hiking/hikes/west-mcmillan-spire",
+    "https://www.recreation.gov/camping/campgrounds/246852"
+   ],
+   "patches": [
+    {
+     "id": "wa_ottohorn_southeast_route",
+     "fact": "Driving direction to Goodell Creek Road",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "follow WA-20 east past Newhalem; Goodell Creek Road turns off near the Goodell Creek Campground",
+     "replace": "follow WA-20 east toward Newhalem; Goodell Creek Road turns off to the north just west of town, opposite the visitor-center road and just east of Goodell Creek Campground,"
+    }
+   ]
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "fact": "One-way approach distance",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "dist_km (27.68 km, shown as the one-way approach) is described in the row's own approach text as the ~28 km ROUND-TRIP distance, and the row's own day-1 miles (7.5) and waypoints (col at 8 mi) put one way near 12-13 km. No external source found states the one-way trailhead-to-Ottohorn distance, so dist_km is left; a sourced one-way figure would settle it.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "fact": "Permit cost",
+   "verdict": "fixed",
+   "correct_value": "Wilderness permits, reserved or walk-up, cost $10 per person plus a $6 non-refundable fee in the summer season (youth 15 and under free).",
+   "evidence": "The park's permits page states permits cost $10 per person plus a $6 fee, and its reservations page says the $6 fee and the $10 recreation fee apply to walk-up permits too. A trail association page and a park fund article likewise state a non-refundable $6 fee for all walk-up permits on top of $10 per person in summer. The 'free' walk-up claims are wrong.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.pnt.org/backcountry-permits/",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_snowfield_peak_neve_glacier",
+     "fact": "Permit cost",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "pick up the free NPS wilderness permit",
+     "replace": "pick up the NPS wilderness permit"
+    },
+    {
+     "id": "wa_snowfield_peak_neve_glacier",
+     "fact": "Permit cost",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "a free NPS wilderness permit",
+     "replace": "an NPS wilderness permit"
+    },
+    {
+     "id": "wa_snowfield_peak_neve_glacier",
+     "fact": "Permit cost",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "40% held for walk-up permits at the Marblemount WIC, which are free)",
+     "replace": "40% held for walk-up permits at the Marblemount WIC, which carry the same fees)"
+    }
+   ]
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "fact": "Distance shown for the trip",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the ONE-WAY approach distance; 12.1 km (7.5 mi) one way is half of the ~15 mi round trip stated in the approach, totalNote and itinerary miles, so the fields agree.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

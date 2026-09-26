@@ -1,0 +1,460 @@
+{
+ "applied": [
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain (gain_ft vs itinerary, loss_ft and totalNote)"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Drive distance to the washout"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Drive distance to the washout"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Drive distance to the washout"
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Drive distance to the washout"
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Road distance to the old road end"
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "column": "waypoints",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Lake Constance waypoint distance"
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Road distance to the old road end"
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "column": "waypoints",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Lake Constance waypoint distance"
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Lake Constance trail gain"
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Cat Ears location"
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Cat Ears location"
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "column": "waypoints",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Lake Constance waypoint distance"
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "column": "approach",
+   "path": [],
+   "fact": "Drive distance from US-101 to the washout parking"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_buckhorn_marmot_pass",
+   "before": {
+    "permit": "Free self-issue Buckhorn Wilderness permit at the trailhead; Northwest Forest Pass to park.",
+    "access": {
+     "fees": "$5 Northwest Forest Pass day pass or $30 annual pass per vehicle (available at recreation.gov or local vendors).",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only a Northwest Forest Pass (or interagency pass) to park applies.",
+     "rules": "Buckhorn Wilderness limits groups to 12 people and/or 8 head of stock; no open fires or wood gathering above 3,500 ft elevation; Leave No Trace practices and standard federal wilderness regulations apply.",
+     "permit": "Northwest Forest Pass (or another valid Forest Service interagency day/annual pass) is required to park at the Upper Big Quilcene Trailhead. No separate wilderness entry permit is required for day use.",
+     "closures": "Check Olympic National Forest alerts (fs.usda.gov/alerts/olympic) for current washouts or damage on FR 27/FR 2750 before driving, especially in shoulder season; trail is generally snow-free and open roughly June–October, varying by year.",
+     "group_limit": 12,
+     "landManager": "USDA Forest Service, Olympic National Forest — Hood Canal Ranger District, Quilcene Office, 295142 Highway 101 S, Quilcene, WA 98376, (360) 765-2200 (open Tue–Wed, 9am–3pm).",
+     "land_manager": "USDA Forest Service, Olympic National Forest — Hood Canal Ranger District, Quilcene Office, 295142 Highway 101 S, Quilcene, WA 98376, (360) 765-2200 (open Tue–Wed, 9am–3pm).",
+     "parking_pass": "Northwest Forest Pass",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required in the Buckhorn Wilderness",
+      "where": "Camps outside Olympic National Park need no permit; a recreation pass is required to park at the national forest trailheads."
+     }
+    },
+    "gain_ft": 4257
+   }
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.740259,
+      "lng": -123.065764,
+      "elev": 700,
+      "name": "Dosewallips Road washout parking (FR-2610)",
+      "note": "Vehicle-accessible road end at the 2002 washout (~9 mi from Hwy 101); self-issue wilderness permit kiosk here before biking/hiking the closed roadbed.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Dosewallips Road inland from US-101, roughly 9 miles, to the vehicle-accessible road end at the 2002 washout. Fill in a self-issue wilderness permit at the kiosk before starting up the closed roadbed."
+     },
+     {
+      "lat": 47.7296,
+      "lng": -123.1417,
+      "elev": 1425,
+      "name": "Lake Constance Trailhead",
+      "note": "Unmaintained climbers' path splits off the old Dosewallips roadbed and climbs steeply up the narrow Constance Creek canyon; unsigned and easy to walk past.",
+      "type": "Junction",
+      "distMi": 5,
+      "directions": "The road beyond has been closed to motor vehicles since the 2002 flood but stays open to foot and bicycle, and most parties ride it; a short riverside bypass gets around the washed-out section before the old roadbed resumes. About 5 miles up, an unmaintained climbers' path splits off the roadbed and starts up the narrow Constance Creek canyon. It is unsigned and easy to walk straight past, so watch for it."
+     },
+     {
+      "lat": 47.74720416666667,
+      "lng": -123.14216875,
+      "elev": 3100,
+      "name": "Creekside Camp Bench",
+      "note": "Trail briefly levels crossing the valley floor beside Constance Creek; flat spot with an established fire ring and reliable running water, a common rest/camp break before the final steep push.",
+      "type": "Water",
+      "distMi": 6,
+      "directions": "The climbers' path climbs steeply and directly up the canyon, unmaintained and choked with blowdown, and this lower section is the hardest walking of the trip. At around 3,100 ft the tread briefly levels out on the valley floor beside Constance Creek at a flat bench with an established fire ring and reliable running water."
+     },
+     {
+      "lat": 47.75073,
+      "lng": -123.14226,
+      "elev": 4800,
+      "name": "Lake Constance",
+      "note": "Emerald backcountry lake cupped in a rock bowl at the mouth of Avalanche Canyon; camping permits are quota-limited, so use existing sites to protect the fragile basin.",
+      "type": "Campsite",
+      "distMi": 7.2,
+      "directions": "From the bench the path resumes its steep push, gaining the last 1,700 ft to the lake at 4,800 ft, cupped in a rock bowl at the mouth of Avalanche Canyon. Camping is quota-limited, so use the existing sites."
+     },
+     {
+      "lat": 47.75713266666667,
+      "lng": -123.14367333333334,
+      "elev": 5400,
+      "name": "Avalanche Canyon / The Thumb",
+      "note": "Barren, rocky Avalanche Canyon opens north from the lake, a stark contrast to the rainforest below; the Thumb rock formation marks where the South Chute (Mount Constance) and South Gully (Inner Constance) lines diverge on faint, intermittent climbers' track.",
+      "type": "Junction",
+      "distMi": 7.8,
+      "directions": "Head north out of the lake basin into Avalanche Canyon, barren and rocky in contrast to the rainforest below, on faint and intermittent climbers' track and snow patches. Continue up-canyon to the broad couloir below the Thumb, the rock formation that marks where the South Chute on Mount Constance and the South Gully on Inner Constance diverge."
+     },
+     {
+      "lat": 47.76247238888889,
+      "lng": -123.14484902777778,
+      "elev": 6400,
+      "name": "South Defile Snow Choke",
+      "note": "Snow-filled defile narrows to a roughly 2-ft gap with 5-10 ft deep moats opening on each side by mid-late season; parties have reported refrigerator-size snow blocks calving here, so move through quickly and probe snow bridges before committing.",
+      "type": "Hazard",
+      "distMi": 8.3,
+      "directions": "From the mouth of the canyon follow the faint, intermittent climbers' track and snow patches north up Avalanche Canyon to the broad couloir below the Thumb, then take the Inner Constance branch and veer right into a steeper secondary couloir that narrows into the defile. Snow blocks calve out of this constriction as the day warms, so move through it quickly and probe the bridges over the moats before committing weight to them."
+     },
+     {
+      "lat": 47.76674416666667,
+      "lng": -123.14578958333334,
+      "elev": 7200,
+      "name": "East Ridge Notch",
+      "note": "A steep, discontinuous snow finger tops out at this notch on Inner Constance's East Ridge; a short Class 3 rock step gains the ridge crest before the summit scramble.",
+      "type": "Junction",
+      "distMi": 8.7,
+      "directions": "Above the defile the gully continues on discontinuous snow, with repeated stemming between the snow finger and the rock walls to get around the moats and a few short up- and downclimbs on rock where the snow runs out. A steep snow finger tops out at the notch; exit the gully onto the crest by way of a short Class 3-4 rock step."
+     },
+     {
+      "lat": 47.770235,
+      "lng": -123.145435,
+      "elev": 7672,
+      "name": "Inner Constance",
+      "note": "True summit (7,672 ft), the Olympics' 4th/5th-highest peak; final approach is fun Class 2-3 scrambling on pillow basalt along the East Ridge.",
+      "type": "Summit",
+      "distMi": 9,
+      "directions": "Follow the East Ridge crest from the notch on Class 2-3 scrambling over pillow basalt to the top. Rock across this massif is notoriously rotten, so keep the party tight and out of each other's fall line. Do not let the line pull you toward the southwest summit — it has no easy connection across to the true northeast high point."
+     }
+    ],
+    "road": {
+     "name": "Dosewallips River Road",
+     "status": "Washed out since a January 2002 flood and never repaired; closed to motor vehicles (open to foot and bicycle traffic only), with no end date given as of the Olympic National Park road-conditions page updated August 7, 2026. Drive about 10.5 miles from US-101 at Brinnon to the road-end parking at the washout, then foot or bike only, adding about 6.5 miles each way.",
+     "driveNote": "Open to foot and bicycle travel year-round (conditions permitting); most parties bike the flat road segment to save time before hiking the steep Lake Constance climbers' trail."
+    },
+    "access": {
+     "fees": "Olympic NP entrance: $30/vehicle or $15/person on foot or bike (7-day pass). Wilderness camping permit: $8/adult/night plus a $6 non-refundable reservation fee; free for youth 15 and under.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Campfires prohibited at Lake Constance and above 3,500 ft; bear canisters required for food storage; stock animals prohibited on the Lake Constance trail.",
+     "permit": "Wilderness camping permit required for any overnight stay (the approach effectively requires an overnight at Lake Constance). Reserve via Recreation.gov; Lake Constance is a quota site with reservations for the May 15-October 15 season released mid-April.",
+     "closures": "Dosewallips River Road has been closed to vehicle traffic at the washout, about 10.5 miles from Brinnon, since a January 2002 flood and is open to foot and bicycle traffic only, with no end date given as of the Olympic National Park road-conditions page updated August 7, 2026.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance pass (e.g. America the Beautiful) required for park entry.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — Lake Constance is a quota area, reserve early; nightly fee",
+      "where": "Reserve on Recreation.gov, by phone with the Port Angeles Wilderness Information Center, or in person at a Wilderness Information Center. Camps outside the park boundary need no permit."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Lake Constance climbers' trail, Avalanche Canyon and the South Chute",
+      "notes": "From the Dosewallips River Road washout at roughly 550 ft, about 5 miles of road-walk or bike on the closed road, crossing Constance Creek on wooden footbridges near the start, to the unsigned, unmaintained Lake Constance climbers' trail at about 1,450 ft.\n\nThe trail gains roughly 3,300-3,400 ft in 1.8-2.2 miles to Lake Constance at 4,800 ft — one of the steepest approaches in the Olympics. The first half-mile is brutal and eases only slightly into denser forest with exposed roots and rock steps needing hands. Expect scramble-grade tread with no switchbacks and cairn-and-flagging route-finding in places. Budget 2.5-3.5 hours with a full pack. Water at Constance Creek partway and at the lake outlet; treat everything.\n\nThe trail skirts the lake's east shore to established campsites at the north end, in a rocky bowl at the mouth of Avalanche Canyon. Most parties camp there rather than going car to car. From camp, head north up scree into the canyon's lower basin, then bend east along a rib.",
+      "season": "Roughly Jun-Sep. Residual snow in the South Chute makes it a far better climb than bare scree does",
+      "hazards": [
+       "The Finger Traverse is a highly exposed, downsloping narrow ledge; footholds are marginal even with the crack in hand",
+       "Reversing it on descent goes round a blind corner and most parties find that harder than the way up",
+       "1,900 ft of loose scree in the South Chute, which sluffs rock onto parties below",
+       "The fixed pitons on the traverse are decades old — do not trust them without inspection",
+       "One of the steepest approach trails in the Olympics; the descent takes many parties nearly as long as the climb"
+      ],
+      "primary": true,
+      "baseFinding": "THE TEST IS A TOWER CALLED THE CAT EARS, AND THE PUBLISHED INSTRUCTION IS A TRIGGER RATHER THAN A DESCRIPTION: BEGIN CLIMBING THE SOUTH CHUTE AS SOON AS THE CAT EARS ARE VISIBLE. Follow Avalanche Canyon north from the lake — roughly 0.6 mile — and watch east. The Cat Ears is the tower standing just LEFT of the notch you are aiming for at the top of the chute. The moment it comes into view, turn east and start up. Starting later means more scree; starting earlier puts you on the wrong ground.\n\nIN CLOUD, WHEN THE CAT EARS CANNOT BE SEEN, THE FALLBACK IS THE CHUTE'S OWN SHAPE. The South Chute is a long gully that NARROWS as it climbs, gaining about 1,900 ft from the lake to roughly 6,600 ft at the notch in the south ridge. It is the first substantial gully leaving the canyon eastward above the lake. If the gully you are in is widening rather than narrowing, or if you are still walking north up the canyon bed after well over half a mile, you have passed it and are heading for the North Chute and the Terrible Traverse instead.\n\nSECOND TEST, and it is what confirms you were right about the chute: above the notch you cross a saddle, DROP about 150 ft, and work up a second scree gully to a notch in the summit ridge. A route that only ever goes up is not this one — the deliberate loss of height above the first notch is part of the line. From there the route threads gaps and ledges marked in places by faded WHITE PAINT DOTS. Painted dots are man-made, they do not move, and they are visible at arm's length in fog; if you are seeing them you are on the line.\n\nTHE FINGER TRAVERSE ITSELF IS A TACTILE TEST, WHICH IS THE BEST KIND HERE: a downsloping ledge above a large cliff with a HORIZONTAL CRACK running along its top edge, which you jam your fingers into for balance because the footholds are thin. A rusty decades-old set of fixed pitons sits along it. If there is no continuous crack at hand height above the ledge you are standing on, that is not the Finger Traverse."
+     },
+     {
+      "name": "Dosewallips road and Constance Pass, over Crystal Pass into Avalanche Canyon",
+      "notes": "The long alternative that avoids the Lake Constance trail entirely. From the Dosewallips washout, road-walk or bike roughly 5.5 miles past the Lake Constance turn-off to the old campground and decommissioned ranger station at the true road end. Take the Constance Pass Trail up through forest into subalpine parkland to Constance Pass at about 5,850 ft, then leave the trail and go cross-country west into the head of Crystal Basin and up to Crystal Pass on the Constance-Warrior massif.\n\nFrom Crystal Pass descend south into Avalanche Canyon on an intermittent climbers' path through scree and talus, staying toward the north side of the canyon, and continue DOWN the canyon toward the lake until the South Chute opens on your left (east).\n\nThis is considerably longer than the lake approach and it exists because the lake trail is brutally steep, unmaintained and blowdown-choked. Most parties on it are on a two or three day trip with a camp near Constance Pass or in upper Avalanche Canyon.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Unmarked cross-country travel between Constance Pass and Crystal Pass, on talus, scree and lingering snow",
+       "No water above Constance Pass beyond transient snowmelt",
+       "Every hazard on the Finger Traverse itself, reached at the end of a longer day",
+       "Roughly 6.5 miles of closed road at each end"
+      ],
+      "baseFinding": "ENTERING THE CANYON FROM CRYSTAL PASS PUTS THE CAT EARS TEST THE OTHER WAY UP: you must descend PAST the North Chute before the South Chute opens. The Cat Ears tower and the formation trip reports call the Thumb both sit in this stretch of canyon, and on this side you pass them going down rather than meeting them going up.\n\nTHE RELIABLE TEST ON THIS SIDE IS THE CHUTE'S TOP, NOT ITS BOTTOM. The South Chute tops out at a notch in the SOUTH ridge at roughly 6,600 ft, with the Cat Ears tower standing just left of that notch. Coming down the canyon from Crystal Pass you can pick your entry by which notch the gully above you leads to: the one with a tower just left of it is the South Chute. The chute that leads straight toward the Terrible Traverse without a tower beside its notch is the North Chute.\n\nABOVE THE CHUTE THE TESTS ARE IDENTICAL to the lake approach and they are the good ones: cross the saddle, LOSE about 150 ft, up a second scree gully to a notch in the summit ridge, then gaps and ledges marked with faded WHITE PAINT DOTS, then a downsloping ledge with a continuous horizontal finger crack along its top edge and old fixed pitons in it.\n\nHONEST LIMIT: the track fades near Crystal Pass and the drop into the canyon is unmarked. This variant is longer and navigationally harder; it is chosen for the trail it avoids, not for the ground it crosses."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 47.75073,
+      "lng": -123.14226,
+      "elev": 4750,
+      "name": "Lake Constance",
+      "type": "Campsite",
+      "distMi": 2,
+      "elevFt": 4750
+     },
+     {
+      "lat": 47.7403,
+      "lng": -123.0658,
+      "elev": 550,
+      "name": "Dosewallips Road washout parking",
+      "note": "Parking where the Dosewallips Road is closed at the washout. The Lake Constance climbers' trail leaves the closed road about 5 mi farther on, at roughly 1,450 ft.",
+      "type": "Trailhead",
+      "elevFt": 550
+     },
+     {
+      "lat": 47.772826,
+      "lng": -123.127336,
+      "elev": 7756,
+      "name": "Mount Constance (true/main summit)",
+      "type": "Summit",
+      "elevFt": 7756
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Lake Constance climbers' trail and Avalanche Canyon to the South Chute",
+      "notes": "Road-walk or bike about 5 miles up the washed-out Dosewallips River Road to the unsigned Lake Constance climbers' trail at roughly 1,450 ft. The trail is unmaintained and gains about 3,300-3,400 ft in under 2.2 miles to Lake Constance at 4,800 ft — steep from the first half-mile, exposed roots and rock steps needing hands, no real switchbacks. Budget 2.5-3.5 hours with a pack. Camp at the lake's north end.\n\nFrom camp, head up into Avalanche Canyon on scree and talus. Firm snow, when it is there, makes this whole section faster and safer than bare scree. This route takes the same South Chute as the Finger Traverse, then a second gully to a higher notch near 7,300 ft. From there the line loses a little height and traverses north on ledges to reach the Terrible Traverse itself at about 7,435 ft.",
+      "season": "Roughly Jun-Sep. Steep hard snow persists longer on the Terrible Traverse than on any other crux on this mountain, which is exactly the point of it",
+      "hazards": [
+       "The Terrible Traverse crosses steep firm snow directly above a large cliff — an unprotected slip is very likely fatal",
+       "Hard, icy neve is common through June and early July; afternoon softening increases slip risk later in the day",
+       "Loose rock throughout the South Chute — classic Olympic choss, and rockfall from parties above is a real hazard",
+       "Avalanche hazard in Avalanche Canyon and its chutes, called out specifically for May-June conditions",
+       "One of the steepest approach trails in the Olympics, hard on the way down and slick when wet"
+      ],
+      "primary": true,
+      "baseFinding": "THE TEST IS THE CAT EARS, AND IT IS A TRIGGER: START UP THE SOUTH CHUTE AS SOON AS THAT TOWER COMES INTO VIEW. Walk north up Avalanche Canyon from the lake past the Thumb and watch east. The Cat Ears is a rock tower standing just LEFT of the notch at the top of the South Chute; once you can see it, turn east and climb. If you are still walking up the canyon bed well after it appeared, you are heading for the North Chute instead.\n\nIn cloud, when the tower is hidden, use the chute's shape: the South Chute is the first substantial gully leaving the canyon eastward above the lake, and it NARROWS as it climbs to the notch at about 6,600 ft.\n\nSECOND TEST, above that notch: the line drops a little, climbs a second scree gully to a higher notch near 7,300 ft, then loses height again and traverses NORTH on ledges. Here the two crossings part company. The Finger Traverse goes up and around a corner on a ledge with a horizontal finger crack along its top; the Terrible Traverse is reached over hard-packed scree to a cairned ledge heading north, and you meet the crossing itself at about 7,435 ft. It is unmistakable when you arrive: a steep exposed snow slope directly above a large cliff, or in late season a narrow rock ledge at the base of the icy slope above it. It is called the Terrible Traverse because a slip there does not stop.\n\nWHAT THE SEASON CHANGES: early to mid summer this is hard steep snow wanting an axe, crampons and, for many parties, pickets. Late season it often melts back to that rock ledge, which most parties find more secure. Neither is the wrong condition; they are different climbs."
+     },
+     {
+      "name": "Dosewallips road and Constance Pass, over Crystal Pass into upper Avalanche Canyon",
+      "notes": "The long way in, and the one parties choose to avoid the Lake Constance trail. From the same Dosewallips washout, road-walk or bike roughly 5.5 miles past the Lake Constance turn-off to the old Dosewallips Campground and decommissioned ranger station at the true road end, about 6.5 miles and 1,900 ft of cumulative gain from the gate.\n\nPick up the Constance Pass Trail, which climbs south and southwest through forest into subalpine parkland to Constance Pass at about 5,850 ft. Published trail mileages differ by several miles depending on where the count starts, so none is quoted. The upper stretch is open meadow and scree with the last reliable water at creek crossings below treeline.\n\nFrom Constance Pass leave the trail and travel cross-country west, dropping into the head of Crystal Basin and climbing to Crystal Pass, the windswept notch on the Constance-Warrior massif. From Crystal Pass descend into UPPER Avalanche Canyon — which is where this variant differs usefully from the lake approach, because it puts you in the canyon ABOVE the lake rather than below it.",
+      "season": "Roughly Jul-Sep, once the snow remnant below Crystal Pass is safe or gone",
+      "hazards": [
+       "The climbers' track fades near Crystal Pass and the descent into upper Avalanche Canyon is unmarked",
+       "Early-season snow remnant below Crystal Pass may want an axe and, for some parties, a rope",
+       "No water above Constance Pass except transient snowmelt — carry it",
+       "All the Terrible Traverse hazards above, reached by a longer and more committing line",
+       "Roughly 6.5 miles of closed road at each end"
+      ],
+      "baseFinding": "COMING IN FROM CRYSTAL PASS YOU ENTER AVALANCHE CANYON FROM ABOVE, SO YOU MUST DESCEND PAST THE NORTH CHUTE BEFORE THE SOUTH CHUTE OPENS. Dropping south into the canyon, the first couloir you meet on the Constance side is the North Chute; keep going down the canyon toward the lake.\n\nTHE FIXED LANDMARKS on this stretch are the Cat Ears tower and the Thumb. The gully you want is the one whose top notch, at roughly 6,600 ft, has the Cat Ears tower standing just left of it: that is the South Chute. If you reach the lake you have gone below it.\n\nABOVE THE CHUTE THE TEST IS THE SAME AS THE LAKE APPROACH: a short drop and a second gully to the upper notch near 7,300 ft, then the route loses a little height and traverses NORTH on ledges to the Terrible Traverse at about 7,435 ft — a steep exposed snow crossing above a large cliff, or a narrow rock ledge in late season.\n\nHONEST LIMIT: the informal climbers' track fades near Crystal Pass and this stretch is talus, scree and lingering snow with real route-finding. This variant trades a brutal trail for a navigation problem; in cloud it is the harder of the two."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 47.75073,
+      "lng": -123.14226,
+      "elev": 4750,
+      "name": "Lake Constance",
+      "type": "Campsite",
+      "distMi": 2,
+      "elevFt": 4750
+     },
+     {
+      "lat": 47.7403,
+      "lng": -123.0658,
+      "elev": 550,
+      "name": "Dosewallips Road washout parking",
+      "note": "Same approach as Finger Traverse/North Chimney; Terrible Traverse is the original/harder crux crossing that Finger Traverse became the popular alternative to.",
+      "type": "Trailhead",
+      "elevFt": 550
+     },
+     {
+      "lat": 47.772826,
+      "lng": -123.127336,
+      "elev": 7756,
+      "name": "Mount Constance (true/main summit)",
+      "type": "Summit",
+      "elevFt": 7756
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong, sustained hiking fitness for the notoriously steep Lake Constance trail (~3,600 ft gain in about 2 miles), typically followed by an early pre-dawn summit push the next day",
+      "packWeight": "Overnight pack (roughly 30-40 lbs) for the standard 2-day approach-then-summit itinerary, lighter summit-day pack for the push from camp"
+     },
+     "approachTime": "~3-4 hrs on a very steep trail to Lake Constance camp; almost always climbed as a 2-day trip with a pre-dawn summit day",
+     "requiredSkills": [
+      "confident, continuous exposed Class 3-4 scrambling/climbing with no fixed protection",
+      "route-finding through Avalanche Canyon and the upper gully/chimney system",
+      "composure crossing the Terrible Traverse and around the Cat's Ears near the summit",
+      "snow travel/self-arrest skills for lingering snow in the gullies, especially early in the season",
+      "judgment to turn around if rockfall risk or route-finding uncertainty increases"
+     ],
+     "experienceLevel": "Intermediate to advanced scrambler/climber. Prior experience on exposed Class 3-4 alpine terrain is expected; this is a serious undertaking for a first big scramble given the loose rock and the Terrible Traverse/Cat's Ears exposure noted in the existing beta."
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier than the western Olympics due to the rain-shadow position; expect dry rock by mid-summer",
+      "probability": "Afternoon thunderstorms are possible in July-August; early-season storm systems can arrive by mid-to-late September per the existing 'fall' climate note"
+     },
+     "exposure": "Sustained fall exposure on the Terrible Traverse and around the Cat's Ears near the summit; a fall in these sections would likely be serious to fatal, and loose rock adds rockfall risk to parties below",
+     "avalanche": {
+      "zone": "NWAC 'Olympics' forecast zone (nearest official zone; NWAC does not issue a Mount Constance-specific forecast)",
+      "byMonth": {
+       "July": "Moderate",
+       "June": "Considerable",
+       "August": "Low",
+       "September": "Low"
+      }
+     },
+     "crevasses": "N/A - no glacier travel; hazard is lingering seasonal snowfield/gully snow, not glacial ice"
+    },
+    "waypoints": [
+     {
+      "lat": 47.75073,
+      "lng": -123.14226,
+      "elev": 4750,
+      "name": "Lake Constance",
+      "type": "Campsite",
+      "distMi": 2,
+      "elevFt": 4750
+     },
+     {
+      "lat": 47.7403,
+      "lng": -123.0658,
+      "elev": 550,
+      "name": "Dosewallips Road washout parking",
+      "note": "Same approach as the other standard-route variants; see Finger Traverse note.",
+      "type": "Trailhead",
+      "elevFt": 550
+     },
+     {
+      "lat": 47.772826,
+      "lng": -123.127336,
+      "elev": 7756,
+      "name": "Mount Constance (true/main summit)",
+      "type": "Summit",
+      "elevFt": 7756
+     }
+    ],
+    "approach": "Park at the Dosewallips Road washout (~600 ft), reached via ~7 paved miles then ~3 gravel miles of FR 2610 from US 101 at Brinnon (closed to vehicles since a 2002 washout). From the gate, walk or mountain-bike the old roadbed roughly 5 more miles up the Dosewallips valley to the signed, unmaintained Lake Constance climbers' path (no official Forest Service trail number — this is a boot path, not a maintained trail). The path launches almost immediately into sustained, root-and-log 'veggie belay' climbing through old burn debris for the first ~0.4 mile before old-growth forest closes in. At about 0.8 mile you pass Half Acre Rock, a large monolith with established campsites and a common water/rest stop on Constance Creek, which parallels the lower trail (by late summer the creek and canyon above run dry, so treat this as your last reliable water before the lake). Past 1.1 miles the brush opens onto steep, exposed slopes, and by 1.3 miles the creek is forced through a narrow defile — the path is shoved up and over a series of rock ledges and short cliff bands, using roots and at least one landmark Alaska cedar as a handhold to gain the next ledge; exposure increases with each ledge and a slip here is serious. In total the path gains roughly 3,200-3,400 ft in under 2 miles to Lake Constance (~4,680-4,800 ft), making it one of the steepest approach trails in the Olympics; a wilderness camping permit is required for overnight stays at the lake. From the lake's outlet, work around/across to the north shore and into Avalanche Canyon between Inner Constance and Mount Constance, aiming for a large boulder called 'the Thumb' that marks the canyon's true entrance; stay low and climber's-left in the canyon rather than fighting scree early. Begin angling up the South Chute — a long, narrowing scree gully — as soon as the twin rock towers called the 'Cat Ears' come into view above; entering the chute at this point (rather than lower) gets you onto firmer, less-eroded ground. From the lake, the South Chute line climbs about 1,900 ft of scree (snow-covered and easier in June, bare and miserable by late summer) to a saddle/notch near 6,560-6,600 ft below the Cat Ears. From the saddle, descend a short ~150 ft, then climb a second scree gully to a ridge notch near 7,300 ft, where the route enters the exposed upper 'maze': either the Terrible Traverse (an airy snow-and-rock traverse above a huge cliff at roughly 7,435 ft — a fall here would be fatal, and in early season several snow pickets are advisable for protection) or its alternative, the Finger Traverse (a downsloping, fingers-jammed-in-a-crack ledge above another cliff, marked by old rusty pitons that some parties use as a solo-belay anchor). Both feed into class 3, occasionally class 4, terrain leading to the base of the ~60 ft summit block, where the North Chimney climbs its north side (3rd class, reported by many as feeling like easy 4th class) to the 7,756 ft summit. Approach hazards: loose talus and scree throughout, route-finding through the lower cliff bands, no water beyond the lake in late summer, and fatal-fall exposure on both the Terrible and Finger Traverses."
+   }
+  }
+ ]
+}

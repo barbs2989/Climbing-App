@@ -1,0 +1,29 @@
+{"file": "s080.json", "results": [
+  {"id": "wa_south_spur", "fact": "Gain vs loss on a loop that ends at the trailhead", "verdict": "unresolved", "correct_value": null,
+   "evidence": "Retry found no new car-to-car figure for this 4-day Easy Ridge in / Whatcom Pass out loop. The 2011 account of exactly this loop gives 37 mi and 13,700 ft gained and lost; the speed-record page gives 12,000 ft of gain; a 2022 party that went in and out via Easy Ridge (a different shape, plus Challenger) reports 44 mi and 18,000 ft. No two sources agree on a total for this loop. What would settle it: a second independent account of the same loop stating its total gain/loss.",
+   "sources": ["https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/", "https://fastestknowntime.com/route/whatcom-peak-wa", "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/"],
+   "patches": []},
+  {"id": "wa_south_spur", "fact": "Season / best month", "verdict": "unresolved", "correct_value": null,
+   "evidence": "South-side ascents are documented on 3 Aug 2014 (south snowfield soft, no crampons needed), in mid-August (speed record), and on 21-24 July 2022 and 28-31 July 2011 (good snow cover); a late-August 2017 ranger party was turned back by a moat. The August ascents weaken 'August risky', but no source rates months or states whether September belongs in the working window, so rewriting the month breakdown would be a judgement, not a sourced fact. What would settle it: a source that characterises typical south-side conditions by month, or dated September ascents.",
+   "sources": ["https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/", "https://fastestknowntime.com/route/whatcom-peak-wa", "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/", "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/"],
+   "patches": []},
+  {"id": "wa_south_spur", "fact": "Day 1 elevation loss (300 ft over Hannegan Pass to the Chilliwack ford)", "verdict": "unresolved", "discovered": true, "correct_value": null,
+   "evidence": "One account records 4,700 ft gained and 2,700 ft lost from the trailhead to camp on Easy Ridge; a 2022 account says only that the trail below Hannegan Pass loses a 'deceptively large' amount of elevation, with no figure. Day 1 lossFt (300) is clearly too low, but changing it alone would break the itinerary's agreement with loss_ft (9,300), and no two sources state a car-to-car loss for this loop. What would settle it: a second source for the day-1 figures together with a sourced loop total.",
+   "sources": ["https://trailcatjim.com/hannegan-pass-easy-ridge-lookout-easy-peak-via-northwest-ridge/", "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/"],
+   "patches": []},
+  {"id": "wa_castle_in_the_sky", "fact": "P3 protection rating", "verdict": "fixed", "correct_value": "Pitch 3 is 5.9 and runout; its letter rating is given as PG-13 in one account and R in another, so both fields state 'runout' without a letter.",
+   "evidence": "The first-ascent write-up rates pitch 3 '5.9 PG-13, 200 ft'; the route database page rates it '5.9R 200'' with the same description (knifeblade before the slab step, friable discontinuous corners, fixed #1 KB at the belay). The expedition report in the AAJ gives no protection letter. Both rated sources agree the pitch is 5.9 and runout; they disagree only on the letter, so the row now says runout in both places and no longer asserts either letter.",
+   "sources": ["https://www.theclimbingguides.com/post/castle-in-the-sky-first-ascent-of-the-south-buttress-of-whatcom-peak-iv-5-10b-td", "https://www.mountainproject.com/route/122896783/castle-in-the-sky", "http://publications.americanalpineclub.org/articles/13201216381"],
+   "patches": [
+     {"id": "wa_castle_in_the_sky", "fact": "P3 protection rating", "op": "replace_text", "column": "pitch_detail", "path": [2, "notes"], "find": "Runout (PG-13). Head up", "replace": "Runout. Head up"},
+     {"id": "wa_castle_in_the_sky", "fact": "P3 protection rating", "op": "replace_text", "column": "watch_out", "path": [0], "find": "the P3 corner system (5.9R)", "replace": "the runout P3 corner system (5.9)"}
+   ]},
+  {"id": "wa_north_ridge_2", "fact": "Day 1 elevation loss", "verdict": "unresolved", "correct_value": null,
+   "evidence": "Hannegan Pass sits at about 5,066 ft and the Brush Creek trail low point near the Chilliwack at about 2,700 ft, so the day's note (drop ~2,500 ft) is plausible and lossFt 1,700 / gainFt 3,600 look too low. But no source states this day's totals, and changing them would move the itinerary off gain_ft/loss_ft (7,700 each), which no source states either. What would settle it: an account of the Hannegan-to-Whatcom Pass day stating its gain and loss plus a sourced round-trip total.",
+   "sources": ["https://www.hikingproject.com/trail/7015238/brush-creek-trail", "https://www.hikingproject.com/trail/7091651/copper-ridge-loop"],
+   "patches": []},
+  {"id": "wa_north_ridge_2", "fact": "Season / best months", "verdict": "unresolved", "correct_value": null,
+   "evidence": "Two independent August ascents are now documented: 7 Aug 2022 up the North Ridge from Whatcom Pass in running shoes, skirting all the snow on the right, rock solid enough; and 3 Aug 2014, descending the North Ridge, where a snow patch on the ridge caused a fall. They show August is climbable but disagree on how the snow behaves, and no source addresses September. What would settle it: dated September ascents or a source rating the months for this ridge.",
+   "sources": ["https://www.lemkeclimbs.com/whatcom-peak.html", "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/"],
+   "patches": []}
+]}

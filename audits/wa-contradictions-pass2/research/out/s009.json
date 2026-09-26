@@ -1,0 +1,243 @@
+{
+ "file": "s009.json",
+ "results": [
+  {
+   "id": "wa_concord_tower_north_face",
+   "fact": "Hardest rock grade",
+   "verdict": "fixed",
+   "correct_value": "5.7",
+   "evidence": "The North Face route listing grades the line 5.7 overall (P1 5.6, P2 5.7, P3 5.6+/5.7). An independent trip-report site from a 2013 ascent by a different party also lists Concord Tower North Face as 5.7, 3 pitches. The crag-level description and one blog call it 5.6, but the route's own graded pitches top out at 5.7, which rock_grade, the crux pitch and the crux waypoint already say; grade was the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_concord_tower_north_face",
+     "fact": "Hardest rock grade",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "5.6",
+     "value": "5.7"
+    }
+   ]
+  },
+  {
+   "id": "wa_up_in_arms",
+   "fact": "Aid still used on the route",
+   "discovered": true,
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already resolved: the current beta says the six pitches are 'climbed all free' and no field in the fresh row mentions aid, which agrees with the first-ascent report that aid was used only on the initial ascent.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216754"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Which way the variation leaves the standard line",
+   "verdict": "fixed",
+   "correct_value": "The standard North Face turns diagonally LEFT partway up pitch 2 (after the hueco wall); the Directisimo stays in the crack system and continues straight up it.",
+   "evidence": "The standard North Face description says to stay left after the hueco wall, and that going right puts you on another line. A separate party commenting on the Directisimo says they got drawn into this crack after missing the standard route's diagonal left turn halfway up pitch 2; another says the topo follows the crack straight up. So the standard line steps LEFT and this variation goes straight/right up the crack — overview, pro_tips, pitch_detail[1] and rope_note wrongly said the standard line steps right.",
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/107715253?sortOrder=newest&showAll=true",
+    "https://www.mountainproject.com/route/107715253/north-face-var-right-directisimo"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Which way the variation leaves the standard line",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "staying direct through steeper crack/corner terrain (5.8) rather than stepping right on the standard 5.6-5.7 line",
+     "replace": "staying direct up a steeper crack system (5.8) where the standard 5.6-5.7 line turns left"
+    },
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Which way the variation leaves the standard line",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "continue straight up the corner system instead of stepping right onto the standard 5.6-5.7 line",
+     "replace": "continue straight up the crack system instead of turning left with the standard 5.6-5.7 line"
+    },
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Which way the variation leaves the standard line",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "than the standard route's step-right option",
+     "replace": "than the standard route's diagonal left turn"
+    },
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Which way the variation leaves the standard line",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "where the standard line steps right at 5.6-5.7",
+     "replace": "where the standard line turns left at 5.6-5.7"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Pitch 2 and pitch 3 description",
+   "verdict": "fixed",
+   "correct_value": "P2 is the sustained 5.8 crack (fist, hand and easy off-width sizes); P3 from the top of the crack to the summit is easy low fifth class, not a 5.7 arête.",
+   "evidence": "The route description grades the last pitch 5.easy; one commenter states the top of the crack pitch to the summit is 5.0, not 5.7; a third party calls the final pitch low 5th class with sparse gear. Several parties describe P2 as a continuous crack (fist cracks, easy off-width with face holds, hand cracks), matching pitch_detail[1] and the itinerary. The 'exposed arête' finish comes from a standard-North-Face blog about avoiding that route's topout crack, not this variation. Left untouched (sources split): whether P2 detours left to the slung boulder, and whether the final ramp has bolts (one says bolted ramp, one says no bolts until the anchor).",
+   "sources": [
+    "https://www.mountainproject.com/route/107715253/north-face-var-right-directisimo",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/107715253?sortOrder=oldest&showAll=true",
+    "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/107715253?sortOrder=newest&showAll=true"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Pitch 2 and pitch 3 description",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "grade"
+     ],
+     "expect": "5.7",
+     "value": "low 5th"
+    },
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Pitch 2 and pitch 3 description",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "Gain the arête and follow its exposed crest back up, rejoining the standard North Face's final moves near the summit block.",
+     "replace": "From the top of the crack, easy low-fifth-class ground leads up and left to the summit, rejoining the standard North Face's finish; protection is sparse once you leave the crack."
+    },
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Pitch 2 and pitch 3 description",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "finishing up an exposed arete pitch to the summit",
+     "replace": "finishing with an easy low-fifth pitch to the summit"
+    },
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Pitch 2 and pitch 3 description",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "finishing up an exposed arete p…",
+     "replace": "finishing with an easy low-fifth p…"
+    },
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Pitch 2 and pitch 3 description",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "rejoins it for a 5.7 arete pitch near the summit",
+     "replace": "rejoins it for an easy low-fifth pitch to the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "fact": "Grade of the standard North Face as referenced on this page",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "5.7",
+   "evidence": "The itinerary total note calls the standard route 'the easier 5.6 North Face'; the standard North Face is graded 5.7 by its route listing and by an independent trip-report site (see the North Face grade fix in this file), and this row's own overview and rope_note already say 5.6-5.7.",
+   "sources": [
+    "https://www.mountainproject.com/route/106543279/north-face",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_face_var_right_directisimo",
+     "fact": "Grade of the standard North Face as referenced on this page",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "the easier 5.6 North Face",
+     "replace": "the easier 5.7 North Face"
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Descent rappel step location and nature",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found only more of the same: the standard description says the descent follows the climbing route (exposed class 3 with a few class 4 moves, SW ridge reached at a large notch via an easy gully); a 2025 solo report scrambled it at class 3 with no rappel; the WTA report used a different east-side line. No source places a rappel at a class-4 gully step at 7,600-7,700 ft, and the only rope-work account is the ~70-degree snow strand near the glacier-side notch. Would be settled by a second report locating the optional rappel.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/corteo-peak-southwest-ridge",
+    "https://stevensong.com/usa/washington/corteo-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-10-09.3966524808",
+    "https://trailcatjim.com/corteo-peak-via-lewis-glacier-southwest-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found assigns a Grade II or III to the Southwest Ridge; all describe it only as class 3-4 and a 10-12 hr day. Would be settled by a guidebook commitment grade for this route.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/corteo-peak-southwest-ridge",
+    "https://stevensong.com/usa/washington/corteo-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Climb length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route listing gives '3200 ft (970 m), 3 pitches' (evidently the gain), and another route database gives 9 pitches and a 5,000 ft height — neither is a plausible technical length for a 3-pitch ridge and they disagree with each other. No source states the actual climbing length. Would be settled by a source giving the ridge's roped/technical length.",
+   "sources": [
+    "https://www.mountainproject.com/route/110174839/west-ridge",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Cutthroat-Peak-West-Ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "fact": "Rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source supports 5.8: the route database page grades the route 'III WI4' with no rock grade, and an archived description of the east-face route lists no rock grade either. Only one source gives the optional summit rock as 5.4 (the row's pitch_detail[4] agrees). 5.8 is likely borrowed from the South Buttress. Would be settled by a second source grading the summit rock pitches, or an owner decision to clear rock_grade.",
+   "sources": [
+    "https://www.mountainproject.com/route/109740367/cauthorn-wilson",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Cutthroat-Peak-Cauthorn-Wilson",
+    "https://web.archive.org/web/2017/https://www.summitpost.org/east-face-wilson-cauthorn-route/157682"
+   ],
+   "patches": []
+  }
+ ]
+}

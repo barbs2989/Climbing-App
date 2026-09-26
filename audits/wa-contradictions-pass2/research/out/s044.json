@@ -1,0 +1,251 @@
+{
+ "file": "s044.json",
+ "results": [
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Summit-day gain from Hayes River",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 3,200 ft 'in under a mile' figure describes the east face's relief above the Hayes River, not the climb from the guard-station camp. The USGS point service reads about 1,690 ft at the camp pin and about 6,308 ft at the summit, so the climb gains at least ~4,600 ft, not 3,400. No outside page gives a gain figure for this route, and the itinerary days add up to gain_ft, so day 3 cannot change unless gain_ft does. Would settle it: a trip report that states the car-to-car or camp-to-summit gain.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.453858&y=47.8093095&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-123.413675&y=47.762435&units=Feet&wkid=4326",
+    "https://en.wikipedia.org/wiki/Mount_Norton"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "This retry again found no trip report for Mount Norton. Peakbagger and ListsOfJohn peak pages were blocked by Cloudflare, so no ascent dates could be read, and the only statement anywhere is the generic 'June through August' weather line. Would settle it: dated ascents or a trip report on when the Hayes River slopes melt out.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Norton",
+    "https://peakvisor.com/peak/mount-norton-united-states.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Approach mileages",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Hayes River Guard Station at 16.1 mi and Mary's Falls at 8.8 mi from Whiskey Bend are confirmed again, and NPS confirms the 7-mile road walk from Madison Falls. Outside figures for Elkhorn disagree: a trip report says 'nearly 10 miles', a historic-photo page says 'about eleven miles up the Elwha', and Wikipedia's 14.3 mi is measured from the town of Elwha. All of these contradict the stored 14.3 mi, but no two agree on a value, and the itinerary's day miles have no source for each day. Would settle it: the NPS Elwha trail mileage chart.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/elwha-river",
+    "https://www.oldoregonphotos.com/elk-horn-ranger-station-in-elwha-valley-c-1925.html",
+    "https://en.wikipedia.org/wiki/Elkhorn_Guard_Station"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "fact": "Summit elevation",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "6,319 ft",
+   "evidence": "The row gives the summit as 6,397 ft (overview, summit pin, high_point_ft) and as 6,321 ft (day-3 schedule). ListsOfJohn lists Norton at 6,319 ft, and PeakVisor's headline figure is 1,926 m (6,319 ft). USGS 3DEP point readings on a grid around the summit pin top out at about 6,308 ft, which fits 6,319 and rules out 6,397 (about 90 ft above anything on the ground). The 6,397 figure seems to come from the Wikipedia infobox, which PeakVisor's prose repeats.",
+   "sources": [
+    "https://listsofjohn.com/peak/50159",
+    "https://peakvisor.com/peak/mount-norton-united-states.html",
+    "https://epqs.nationalmap.gov/v1/json?x=-123.413675&y=47.762435&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Mount Norton is a 6,397 ft summit",
+     "replace": "Mount Norton is a 6,319 ft summit",
+     "id": "wa_mount_norton_scramble",
+     "fact": "Summit elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "elev"
+     ],
+     "expect": 6397,
+     "value": 6319,
+     "id": "wa_mount_norton_scramble",
+     "fact": "Summit elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "elevFt"
+     ],
+     "expect": 6397,
+     "value": 6319,
+     "id": "wa_mount_norton_scramble",
+     "fact": "Summit elevation"
+    },
+    {
+     "op": "set",
+     "column": "high_point_ft",
+     "path": [],
+     "expect": 6397,
+     "value": 6319,
+     "id": "wa_mount_norton_scramble",
+     "fact": "Summit elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      3,
+      "label"
+     ],
+     "find": "(6,321 ft)",
+     "replace": "(6,319 ft)",
+     "id": "wa_mount_norton_scramble",
+     "fact": "Summit elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Dated trips found this time: a late-July 2023 Quinault High Route through the Noyes-Meany saddle area, and a September 3-7 Mount Seattle and Low Divide loop with no snow mentioned. Both show that late July and early September go, but nothing speaks to June, and the only June-August statement is still the generic weather line. Would settle it: a source saying whether Low Divide and the Seattle Basin cols are passable in June.",
+   "sources": [
+    "https://climberkyle.com/2023/07/30/quinault-high-route/",
+    "https://trailcatjim.com/skyline-trail-loop-three-lakes-low-divide-mt-seattle/",
+    "https://en.wikipedia.org/wiki/Mount_Noyes_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "fact": "Total distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The North Fork Quinault trail is confirmed again at about 16 mi to Low Divide: one trip report gives 11.5 mi from the ranger station to Twelvemile plus 4 mi on to Low Divide, and another calls it a nearly 20-mile hike up and down the North Fork trail. Nothing measures the primitive-trail and off-trail leg on to the Noyes-Meany col. The stored 46.03 km (28.6 mi) still matches the Elwha distance, but no one-way figure to the base of this climb can be established. Would settle it: a GPS track or trip report giving the mileage from the trailhead to the col.",
+   "sources": [
+    "https://trailcatjim.com/skyline-trail-loop-three-lakes-low-divide-mt-seattle/",
+    "https://climberkyle.com/2023/07/30/quinault-high-route/",
+    "https://www.nps.gov/olym/planyourvisit/elwha-river-trail.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Where the Mount Olson Way leaves Six Ridge / high camp",
+   "verdict": "fixed",
+   "correct_value": "The Mount Olson Way leaves Six Ridge east of (beyond) McGravey Lakes and Belview Camp; its mileage from the South Fork trailhead is unknown. Water exists past Lake Sundown (streams toward McGravey, spring at Belview).",
+   "evidence": "Two separate 2017 trip reports place the Mt. Olson Way junction on Six Ridge past McGravey Lakes and Belview. One (Aug 11) passes the McGravey and Belview camps and then reaches the 'Mt. Olson Way Trail' sign on the ridge proper. The other (Sept 1-4) reaches the Success Basin / Olson old-trail junction above Belview and gives it as 5.6 mi from the North Fork Skokomish. NPS gives Six Ridge as 10.6 mi, so the junction is about 5 mi east of the Sundown end, not 1.5 mi past Sundown Pass. The stored 8.7 and 9.5 mi (junction and tarn) are therefore wrong and are set to unknown. NPS lists a spring at Belview and streams between Belview and McGravey Lakes, and the Sept report refilled at Belview, so Lake Sundown is not the last water.",
+   "sources": [
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=26215",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1105298",
+    "https://www.nps.gov/olym/planyourvisit/six-ridge-primitive-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 8.7,
+     "value": null,
+     "id": "wa_mount_olson_standard",
+     "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 9.5,
+     "value": null,
+     "id": "wa_mount_olson_standard",
+     "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "then the Six Ridge crest ~11 miles to the overgrown",
+     "replace": "then east along the Six Ridge crest past McGravey Lakes and Belview Camp to the overgrown",
+     "id": "wa_mount_olson_standard",
+     "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "to about 8.7 miles and 4,650 ft, where",
+     "replace": "past McGravey Lakes and Belview Camp to about 4,650 ft, where",
+     "id": "wa_mount_olson_standard",
+     "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "then back through McGravey Lakes and Camp Bellevue to the Mount Olson Way Trail/Six Ridge Trail junction, and out",
+     "replace": "then back to the Mount Olson Way Trail/Six Ridge Trail junction, west through Camp Bellevue and McGravey Lakes, and out",
+     "id": "wa_mount_olson_standard",
+     "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "last dependable water and the standard base camp for an Olson attempt",
+     "replace": "a designated camp, with more water further east at McGravey Lakes and a spring at Belview Camp",
+     "id": "wa_mount_olson_standard",
+     "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "3,810 ft: the last dependable water and the standard basecamp.",
+     "replace": "3,810 ft and is a designated camp; small streams toward McGravey Lakes and a spring at Belview Camp further along the ridge also supply water.",
+     "id": "wa_mount_olson_standard",
+     "fact": "Where the Mount Olson Way leaves Six Ridge / high camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Current status of the Upper South Fork Skokomish trail after the Bear Gulch Fire",
+   "discovered": true,
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Olympic National Forest's Bear Gulch Fire page and its alerts list (Forest Order 06-09-26-10, July 8, 2026) say only FS-2451 and the Copper Creek Trail stay closed, and all other previously affected sites reopened on July 8, 2026. The trailhead page's August 2025 closure alert is out of date, and the row's statement that the fire does not affect this approach agrees with the current order. Separately, access.closures still lists Mt. Rose, Mildred Lakes and Dry Creek as closed through Oct 1, 2026, which the July order contradicts. That was left unpatched because only one agency source states it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/fire/info/bear-gulch-fire",
+    "https://www.fs.usda.gov/r06/olympic/alerts",
+    "https://www.fs.usda.gov/r06/olympic/recreation/skokomish-upper-lower-south-fork-trailhead"
+   ],
+   "patches": []
+  }
+ ]
+}

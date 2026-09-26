@@ -1,0 +1,419 @@
+{
+ "file": "t121.json",
+ "results": [
+  {
+   "id": "wa_action_potential",
+   "fact": "Which face the route climbs",
+   "verdict": "fixed",
+   "correct_value": "East Face (aspect E); the approach correctly walks around the base of the north face to reach it, but the seasonal text should not call the route itself 'the north side'.",
+   "evidence": "The first-ascent party's own report is titled 'East Face Burgundy Spire' (Allen/Layton, July 2004), and the route's online topo overlay labels it the east face; the same route page says to reach it you scramble down and around the north face from Burgundy Col to a clean splitter flake. So the approach text is consistent (it passes the north face base); only the seasonal_guidance lines that describe the route as being on the north side are wrong.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/26481-tr-burgundy-spire-fa-action-potential-east-face-burgundy-spire-7192004/",
+    "https://www.mountainproject.com/route/119394880/action-potential",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Burgundy-Spire-Action-Potential"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "find": "the cracks are dry, and the north side stays cool;",
+     "replace": "the cracks are dry, and the east face goes into shade by afternoon;",
+     "id": "wa_action_potential",
+     "fact": "Which face the route climbs"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "September",
+      "reason"
+     ],
+     "find": "Stable weather and cool rock on the north side,",
+     "replace": "Stable weather and cool rock,",
+     "id": "wa_action_potential",
+     "fact": "Which face the route climbs"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "October",
+      "reason"
+     ],
+     "find": "The shaded north side is cold,",
+     "replace": "The face is cold once it loses the morning sun,",
+     "id": "wa_action_potential",
+     "fact": "Which face the route climbs"
+    }
+   ]
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Rappel anchors on the route for a bail",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Action Potential has no rappel line of its own; retreat is via the North Face's established rappel line, reached from Burgundy Ledge.",
+   "evidence": "rappel_count_note, descent_text, gear[5], rappel_detail[0].notes and the summit waypoint all make the 5 double-rope stations the North Face's line. The route page online gives the alternative finish as traversing Burgundy Ledge into the standard North Face route, i.e. the descent belongs to that route.",
+   "sources": [
+    "https://www.mountainproject.com/route/119394880/action-potential",
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "Retreat via the established rappel anchors on the route (5 raps with doubles);",
+     "replace": "This route has no rappel line of its own: from Burgundy Ledge, retreat down the North Face's established rappel anchors (5 raps with doubles);",
+     "id": "wa_action_potential",
+     "fact": "Rappel anchors on the route for a bail"
+    }
+   ]
+  },
+  {
+   "id": "wa_action_potential",
+   "fact": "Where the North Face rappel line lands / what is at the North Face start",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The last of the five North Face rappels lands back at Burgundy Col; the North Face starts with 4th-class scrambling straight above the col, not a chimney. Action Potential's start is 5-10 minutes further around the base.",
+   "evidence": "A two-60m-rope party describes the final three double rappels bringing them 'back to the col', and says the North Face starts by scrambling up from the col with 5th class beginning ~45 m up in a right-facing corner. The North Face route page gives P1-2 as a 4th-class scramble with occasional mid-5th moves to a broad sandy ledge. The row's own rappel_detail[4].station already ends at Burgundy Col, while descent_text, rappel_detail[4].notes and baseFinding placed the landing at a 'first-pitch chimney near Action Potential's own start', which is 5-10 minutes away.",
+   "sources": [
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/",
+    "https://www.mountainproject.com/route/107231977/north-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "and a final 60m to the base of the first-pitch chimney near Action Potential's own start.",
+     "replace": "and a final 60m back to Burgundy Col, 5-10 minutes from Action Potential's own start.",
+     "id": "wa_action_potential",
+     "fact": "Where the North Face rappel line lands / what is at the North Face start"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "Final rappel to the base of the first-pitch chimney, near Action Potential's own start.",
+     "replace": "Final rappel back to Burgundy Col, 5-10 minutes from Action Potential's own start.",
+     "id": "wa_action_potential",
+     "fact": "Where the North Face rappel line lands / what is at the North Face start"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "that line starts at a first-pitch chimney at the col end of the base, which is also where the last rappel of the standard descent lands. A chimney at the near end,",
+     "replace": "that line starts with 4th-class scrambling straight above the col, which is also where the last rappel of the standard descent lands. The North Face start at the near end,",
+     "id": "wa_action_potential",
+     "fact": "Where the North Face rappel line lands / what is at the North Face start"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "DESCENT IS THE NORTH FACE'S, WHICH RETURNS YOU TO THIS ROUTE'S OWN START: five double-rope rappels from the summit area, ending with a final 60 m to the base of the first-pitch chimney, near where Action Potential and the North Face begin.",
+     "replace": "DESCENT IS THE NORTH FACE'S, WHICH RETURNS YOU TO BURGUNDY COL: five double-rope rappels from the summit area, ending with a final 60 m to the col, 5-10 minutes from this route's start.",
+     "id": "wa_action_potential",
+     "fact": "Where the North Face rappel line lands / what is at the North Face start"
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Single-rope descent",
+   "verdict": "fixed",
+   "correct_value": "A single rope works but means more, shorter rappels (one party logged 9-10) plus some downclimbing — not fewer than the five double-rope rappels.",
+   "evidence": "The North Face route page says you can get down with a single 60 but may have to downclimb in places, and a 70 was nicer. A trip report that reversed the route on shorter rappels counted 9-10 of them. No source supports 'roughly 4 rappels' on a single rope; the rack's intermediate-anchor note is consistent with more rappels.",
+   "sources": [
+    "https://www.mountainproject.com/route/107231977/north-face",
+    "https://climberkyle.com/2019/08/01/paisano-pinnacle-burgundy-spire-linkup-5-8/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "(roughly 4 rappels instead of 5)",
+     "replace": "(more, shorter rappels than the five double-rope ones; one party logged 9-10)",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Single-rope descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "parties using a single 60-70m rope have reportedly gotten down in roughly 4 rappels by adding downclimbing.",
+     "replace": "parties using a single 60-70m rope have gotten down with more, shorter rappels (one party logged 9-10) and some downclimbing.",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Single-rope descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Where the last rappel lands",
+   "verdict": "fixed",
+   "correct_value": "The fifth rappel returns to Burgundy Col; pitch 1 of the North Face is a 4th-class scramble above the col, not a chimney.",
+   "evidence": "The North Face route page describes P1-2 as a 4th-class scramble with occasional mid-5th moves to the broad sandy ledge. A two-60m-rope party scrambled up from the col to where 5th class starts ~45 m up, and on descent three final double rappels brought them 'back to the col'. Neither mentions a first-pitch chimney.",
+   "sources": [
+    "https://www.mountainproject.com/route/107231977/north-face",
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "R5 (~60m) from the top of the first-pitch chimney down to the base, landing back near where the route (and Action Potential) start.",
+     "replace": "R5 (~60m) down over the lower scramble terrain, landing back at Burgundy Col where the route starts.",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Where the last rappel lands"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      4,
+      "anchor"
+     ],
+     "find": "top of the first-pitch chimney",
+     "replace": "top of the lower scramble pitches",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Where the last rappel lands"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "Final rappel down to the base of the route.",
+     "replace": "Final rappel down to the base of the route at Burgundy Col.",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Where the last rappel lands"
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Water at the bench",
+   "verdict": "fixed",
+   "correct_value": "The bench has a reliable spring a short walk north of camp (the creek beside camp is often dry); above it there is only an unreliable trickle below the col.",
+   "evidence": "Posters on a water-at-the-bench thread call the little spring to the north of the bench easy to find and very reliable, with plenty running in mid-September. A 2019 trip report refilled at a spring in the sandy gully above the ~6,600 ft bench. Separately, a small trickle a little before the col is reported, but it is not dependable — so the bench is the last reliable water, not seasonal, and not the last water of any kind.",
+   "sources": [
+    "https://www.mountainproject.com/forum/topic/114587941/water-situation-near-bench-camp-below-burgundy-col-in-wa-pass",
+    "https://climberkyle.com/2019/08/01/paisano-pinnacle-burgundy-spire-linkup-5-8/",
+    "https://www.summitpost.org/burgundy-spire/151368"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "the Bench has seasonal water that can be dry by late summer, and little is found higher, so tank up before the Col.",
+     "replace": "the Bench has a reliable spring a short walk north of camp (the creek beside camp is often dry), and above it there is only an unreliable trickle, so tank up before the Col.",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Water at the bench"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Seasonal water; can be dry by late summer.",
+     "replace": "Reliable spring a short walk north of camp; the creek beside camp is often dry.",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Water at the bench"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Reckon on the bench being the last flat ground and the last water.",
+     "replace": "Reckon on the bench being the last flat ground and the last reliable water.",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Water at the bench"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "hazards",
+      2
+     ],
+     "find": "no water above the bench",
+     "replace": "no reliable water above the bench",
+     "id": "wa_burgundy_spire_north_face",
+     "fact": "Water at the bench"
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "fact": "Bench camp capacity",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dispute is between the approach prose (a dozen-plus tents) and bivy[1].capacity (three or four tents). bivy[] is owned by the separate camping clean-up, so no patch here. For this route, the Burgundy Col bivy, the bench camp and the upper scree benches are all on the approach and serve it; Lone Fir Campground is a roadside car camp for the night before.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "fact": "Early Winters Creek crossing pin",
+   "verdict": "unresolved",
+   "correct_value": "The pin should sit ~0.2 mi from the trailhead (the Action Potential row puts the same crossing at 48.550209, -120.628185); its distMi and note are right.",
+   "evidence": "The waypoint's own note and distMi (0.2 mi, ~200 ft below the pullout) agree with the approach prose and with the identical waypoint on the Action Potential row; only the latitude (48.56803, ~1.2 mi north) is wrong. Pin coordinates are out of scope for this pass, so no patch is written; it needs a pin repair.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "fact": "Standard descent: downclimb vs rappel",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Descent is the North Face's 5-rappel line; downclimbing is an opportunistic, not-recommended alternative.",
+   "evidence": "descent_text, rappels, rappel_detail, rappel_count_note and approach_variants all make the North Face rappels the standard descent. The North Face's descent is described online as five double rappels back to the col, and the neighbouring route page gives finishing into the North Face route as the way off.",
+   "sources": [
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/",
+    "https://www.mountainproject.com/route/119394880/action-potential"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "finish by downclimbing or linking into the standard North Face rappel line.",
+     "replace": "finish by linking into the standard North Face rappel line.",
+     "id": "wa_ultramega_ok",
+     "fact": "Standard descent: downclimb vs rappel"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Downclimb or link into the standard North Face rap line.",
+     "replace": "Link into the standard North Face rap line.",
+     "id": "wa_ultramega_ok",
+     "fact": "Standard descent: downclimb vs rappel"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "most parties downclimb/scramble from the summit or link into the standard North Face's 5-rappel descent line",
+     "replace": "parties link into the standard North Face's 5-rappel descent line",
+     "id": "wa_ultramega_ok",
+     "fact": "Standard descent: downclimb vs rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "fact": "Where the North Face rappel line lands / what is at the North Face start",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The final North Face rappel lands back at Burgundy Col; the North Face starts with 4th-class scrambling above the col, not a chimney.",
+   "evidence": "A two-60m-rope party's last three double rappels brought them back to the col, and they began the climb by scrambling up from the col with 5th class starting ~45 m up. The North Face route page gives P1-2 as a 4th-class scramble to a broad sandy ledge. The row's own rappel_detail[4].station already ends at Burgundy Col.",
+   "sources": [
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/",
+    "https://www.mountainproject.com/route/107231977/north-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "and a final ~60m to the base of the first-pitch chimney, near where Action Potential and the North Face start.",
+     "replace": "and a final ~60m back to Burgundy Col.",
+     "id": "wa_ultramega_ok",
+     "fact": "Where the North Face rappel line lands / what is at the North Face start"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "Final rappel to the base of the first-pitch chimney.",
+     "replace": "Final rappel back to Burgundy Col.",
+     "id": "wa_ultramega_ok",
+     "fact": "Where the North Face rappel line lands / what is at the North Face start"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "FIRST THE NORTH FACE'S first-pitch CHIMNEY, then",
+     "replace": "FIRST THE NORTH FACE'S START, SCRAMBLING STRAIGHT UP FROM THE COL, then",
+     "id": "wa_ultramega_ok",
+     "fact": "Where the North Face rappel line lands / what is at the North Face start"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "if you are still beside the North Face's first-pitch chimney you are short of this start",
+     "replace": "if you are still at the col below the North Face's start you are short of this start",
+     "id": "wa_ultramega_ok",
+     "fact": "Where the North Face rappel line lands / what is at the North Face start"
+    }
+   ]
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "fact": "Route length vs pitch lengths",
+   "verdict": "unresolved",
+   "correct_value": "900 ft / 273 m total (length_m and overview are right); the per-pitch lengths are unsourced.",
+   "evidence": "The route's online page gives 'Trad, Alpine, 900 ft (273 m), 8 pitches', matching length_m and overview. No source gives per-pitch lengths, so the pitch_detail lengthM values (summing to 310 m) cannot be corrected; a pitch-by-pitch topo with lengths would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/114960561/ultramega-ok"
+   ],
+   "patches": []
+  }
+ ]
+}

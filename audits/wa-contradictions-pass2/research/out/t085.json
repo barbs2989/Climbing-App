@@ -1,0 +1,47 @@
+{"file": "t085.json", "results": [
+ {"id": "wa_mushroom_tower_standard", "fact": "Approach time to the tower base", "verdict": "unresolved", "correct_value": null,
+  "evidence": "The only documented Mushroom Tower trip (June 2010) gives an 8-hour round trip including Big Kangaroo but no time to the base. The Big Kangaroo west-route description gives 5-6 hours from the cars (to its summit), which does not isolate this approach. No two sources state a car-to-base time for Mushroom Tower; a timed ascent of the hairpin-to-Mushroom gully would settle whether 1.5-2.5 h or 2.5-4 h is right.",
+  "sources": ["https://cascadeclimbers.com/forum/topic/74254-tr-north-cascades-washington-pass-area-mushroom-tower-amp-big-kangaroo-6132010/", "https://www.mountaineers.org/activities/routes-places/big-kangaroo-west-route-1"],
+  "patches": []},
+ {"id": "wa_mushroom_tower_standard", "fact": "SR-20 winter closure window", "verdict": "fixed",
+  "correct_value": "Closes roughly late November or early December; reopens in April or early May (snow-dependent)",
+  "evidence": "The park's road-conditions page says snow and avalanche hazard usually close the highway in late November/early December and it usually reopens in April or early May. The historical opening/closing record (from the state DOT's table) gives a typical opening around April 23 and closing around November 24, with recent closures on Nov 30 2023 and Dec 4 2025. The row's three fields disagreed; all copies are aligned to that window.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/road-conditions.htm", "https://passopenings.com/north-cascades-highway/", "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates", "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm"],
+  "patches": [
+   {"id": "wa_mushroom_tower_standard", "fact": "SR-20 winter closure window", "op": "replace_text", "column": "access", "path": ["closures"], "find": "roughly late November to early/mid-April", "replace": "roughly late November or early December until April or early May"},
+   {"id": "wa_mushroom_tower_standard", "fact": "SR-20 winter closure window", "op": "replace_text", "column": "access", "path": ["seasonal"], "find": "roughly early December–mid/late April", "replace": "roughly late November or early December until April or early May"},
+   {"id": "wa_mushroom_tower_standard", "fact": "SR-20 winter closure window", "op": "replace_text", "column": "waypoints", "path": [0, "directions"], "find": "it usually reopens between late April and mid-May and closes again with late-fall snow", "replace": "it usually reopens in April or early May and closes again in late November or early December"},
+   {"id": "wa_mushroom_tower_standard", "fact": "SR-20 winter closure window", "op": "replace_text", "column": "road", "path": ["seasonalGate"], "find": "roughly late November through early/mid-April", "replace": "roughly late November or early December through April or early May"},
+   {"id": "wa_mushroom_tower_standard", "fact": "SR-20 winter closure window", "op": "replace_text", "column": "climate", "path": ["bySeason", "winter"], "find": "typically from late November into early/mid-April", "replace": "typically from late November or early December into April or early May"}
+  ]},
+ {"id": "wa_wallaby_peak_standard", "fact": "Time from car to Kangaroo Pass", "verdict": "fixed",
+  "correct_value": "About 1 to 1.5 hours car to Kangaroo Pass",
+  "evidence": "A 2022 trip report timed the hairpin to Kangaroo Pass at about 1:15 for ~1.5 miles, then another 1:15 to the summit. A separate Kangaroo Temple account notes the pass was reached one hour from the car despite the 2-hour guidebook estimate. The approach text and waypoint already say 1-1.5 h; the 'roughly 2 hours' line and the 2-3 h partner figures are aligned. The itinerary's +1.5-2 hr planning step overlaps and is left alone.",
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-30.0422221179", "http://www.alpinedave.com/kangaroo/kangaroo_nw.html"],
+  "patches": [
+   {"id": "wa_wallaby_peak_standard", "fact": "Time from car to Kangaroo Pass", "op": "replace_text", "column": "approach", "path": [], "find": "budget roughly 2 hours car-to-pass", "replace": "budget roughly 1 to 1.5 hours car-to-pass"},
+   {"id": "wa_wallaby_peak_standard", "fact": "Time from car to Kangaroo Pass", "op": "replace_text", "column": "partner_requirements", "path": ["approachTime"], "find": "~2-3 hours from the car to Kangaroo Pass", "replace": "~1-1.5 hours from the car to Kangaroo Pass"},
+   {"id": "wa_wallaby_peak_standard", "fact": "Time from car to Kangaroo Pass", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "roughly 2-3 hrs car-to-Kangaroo Pass", "replace": "roughly 1-1.5 hrs car-to-Kangaroo Pass"}
+  ]},
+ {"id": "wa_wallaby_peak_standard", "fact": "Length of the day", "verdict": "fixed",
+  "correct_value": "A short day outing (roughly 3.5-7.5 h car to car depending on pace)",
+  "evidence": "Recorded trips run from about 3 h 17 min and just under 5 h to 7.5 h at a slow pace with many photo stops; another report calls it a great short day outing. 'Half-day' understates the slower parties the timing (7.5 h) and trip plan (6-9 h) plan for, so the overview is reworded to 'short day outing', which fits both.",
+  "sources": ["https://www.lucasmountainknowledge.com/post/wallaby-peak-oct-2025", "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-30.0422221179", "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-07.072740562018", "https://onehikeaweek.com/2018/05/27/wallaby-peak/"],
+  "patches": [
+   {"id": "wa_wallaby_peak_standard", "fact": "Length of the day", "op": "replace_text", "column": "overview", "path": [], "find": "it's now a popular half-day outing", "replace": "it's now a popular short day outing"}
+  ]},
+ {"id": "wa_wallaby_peak_standard", "fact": "Scramble class", "verdict": "fixed",
+  "correct_value": "Mostly Class 2 with some Class 3 moves in the loose summit gully",
+  "evidence": "A 2024 report describes the scree gully before the summit as the crux with loose rock and some class 3 moves; a 2022 report says hands were needed most of the time and rates it 2+/3-. The grade (Class 2-3), route breakdown and beta already reflect this; the rope note's 'nothing harder than Class 2 unless optionally detouring' is the outlier.",
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-07.072740562018", "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-30.0422221179"],
+  "patches": [
+   {"id": "wa_wallaby_peak_standard", "fact": "Scramble class", "op": "replace_text", "column": "rope_note", "path": [], "find": "nothing harder than Class 2 unless optionally detouring onto Class 3 rock to avoid loose scree.", "replace": "mostly Class 2, with some Class 3 moves in the loose summit gully (firmer Class 3 rock at its margins avoids the worst scree)."}
+  ]},
+ {"id": "wa_wallaby_peak_standard", "fact": "Stay limit for sleeping at the pullouts/dispersed sites", "verdict": "fixed",
+  "correct_value": "14 consecutive days (and 28 days per calendar year) on Okanogan-Wenatchee NF lands",
+  "evidence": "The current forest occupancy order (May 2025-May 2027) prohibits occupying one location longer than 14 consecutive days and more than 28 days total per calendar year. A dispersed-camping directory for the forest gives the same 14-day limit. The bivy card's 14-day figure is right; access.rules' 10-day cap is corrected (no bivy patch).",
+  "sources": ["https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/occupancy-and-use-camping-restrictions-forestwide", "https://dispersedapp.com/usfs-camping/washington/okanogan-wenatchee-national-forest/"],
+  "patches": [
+   {"id": "wa_wallaby_peak_standard", "fact": "Stay limit for sleeping at the pullouts/dispersed sites", "op": "replace_text", "column": "access", "path": ["rules"], "find": "Dispersed camping capped at 10 days;", "replace": "Dispersed camping capped at 14 consecutive days;"}
+  ]}
+]}

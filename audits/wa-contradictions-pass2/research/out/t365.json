@@ -1,0 +1,20 @@
+{"file": "t365.json", "results": [
+ {"id": "wa_wild_wild_west", "fact": "Approach road condition and clearance", "verdict": "fixed",
+  "correct_value": "NF-25 from Randle is paved; NF-28 (gravel) and NF-77 are the rough roads that want high clearance.",
+  "evidence": "The Forest Service FR-28 page says FR-28 is paved only ~1.5 mi to the FR-76 junction, then gravel, not well maintained, high clearance recommended. Trailforks and a road-conditions site both describe NF-25 from Randle as a paved forest road (with deteriorated sections). The Pinto Rock area page calls NF-77 rough, go slow. So the hazard wrongly lumped NF-25 in with the rough gravel roads, and road.status's 'paved/maintained gravel' for NF-25 is tightened to 'paved'.",
+  "sources": ["https://www.fs.usda.gov/r06/giffordpinchot/recreation/forest-road-28", "https://www.trailforks.com/trails/nf-25-road/", "https://www.roadsnw.com/rnw/135/", "https://www.mountainproject.com/area/109294508/pinto-rock"],
+  "patches": [
+   {"id": "wa_wild_wild_west", "fact": "Approach road condition and clearance", "op": "replace_text", "column": "hazards", "path": [1], "find": "Approach roads (NF-25/28/77) are rough gravel beyond the FR-76 junction and need a high-clearance vehicle.", "replace": "Beyond paved NF-25, the approach roads (NF-28 and NF-77) are rough gravel and need a high-clearance vehicle."},
+   {"id": "wa_wild_wild_west", "fact": "Approach road condition and clearance", "op": "replace_text", "column": "road", "path": ["status"], "find": "NF-25 is paved/maintained gravel for ~19 miles", "replace": "NF-25 is paved for ~19 miles"}
+  ]},
+ {"id": "wa_wild_wild_west", "fact": "Where the route-finding is hard", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The route's published pitch descriptions (P1 ramps to ledge, P2 groove and saddle traverse to chains, P3 up and right to semi-hanging belay, P4 up and left through basalt) do not say which pitches are hard to follow; no second source discusses route-finding on this line. Internally only the watch_out line and rope_note ('wandering P3/P4') point to the upper pitches, not enough to overrule obj_haz. A trip report naming the pitch where parties go off-route would settle it.",
+  "sources": ["https://www.mountainproject.com/route/110943576/wild-wild-west"],
+  "patches": []},
+ {"id": "wa_wild_wild_west", "fact": "Total gain", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Sources give the climb as 400 ft (4 pitches) and the formation as just over 400 ft tall, but none states a car-to-car gain including the road walk from the pullout; the pullout elevation is not published. Per the rules gain_ft cannot be recomputed from waypoint arithmetic. A sourced pullout elevation or stated total gain would settle it.",
+  "sources": ["https://www.mountainproject.com/route/110943576/wild-wild-west", "https://www.mountainproject.com/area/109294508/pinto-rock"],
+  "patches": []}
+]}

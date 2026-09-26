@@ -1,0 +1,413 @@
+{
+ "applied": [
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "hours"
+   ],
+   "fact": "Day 2 duration"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "hrs"
+   ],
+   "fact": "Day 2 duration"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Day 2 duration"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    4
+   ],
+   "fact": "Height lost/regained between Ruth and the Ruth-Icy saddle"
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Single-push car-to-car time"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "National Park boundary / park permit"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "National Park boundary / park permit"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Only route on the peak"
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Route described as a ridge"
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Route described as a ridge"
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Route described as a ridge"
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Route described as a ridge"
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "National Park boundary / park permit"
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "National Park boundary / park permit"
+  },
+  {
+   "id": "wa_little_sister_southeast_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Approach season start"
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Approach season start"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "before": {
+    "itinerary": {
+     "cal": "Ruth Mountain's summit and the Ruth-Icy col lie inside North Cascades National Park, so an overnight wilderness permit (pick up at the Glacier ranger station) is required for the camp; FR 32 to Hannegan Trailhead is typically snow-free and open by mid-to-late June.",
+     "days": [
+      {
+       "n": 1,
+       "note": "An easy, well-graded trail to Hannegan Pass gives way to a steeper, looser climbers' path up Ruth Arm and a short root/rock gully with scramble moves, then snow/glacier travel up the Ruth Glacier to a flat camp at the notch. Most parties take 5-6 hours with overnight packs and set up before evening.",
+       "hours": 5.5,
+       "miles": 8,
+       "title": "Approach to Ruth Glacier notch camp",
+       "gainFt": 3600,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave Hannegan Trailhead",
+         "detail": "3,100 ft; FR 32 road end near Hannegan Campground."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Reach Hannegan Pass",
+         "detail": "5,056 ft, ~4 mi of mellow forest trail with a few easy creek crossings."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Climb the Ruth Arm gully",
+         "detail": "Loose rock-and-root gully with a few scramble moves gaining the ridge toward Ruth."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Arrive at Ruth Glacier notch camp",
+         "detail": "~6,600 ft; set up tents and rope up gear for tomorrow's early start."
+        }
+       ],
+       "objective": "Establish camp at the Ruth Glacier notch (~6,600 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Drop from camp to the Ruth-Icy saddle, cross the Icy Glacier to the notch below Icy's Northwest Spire, then scramble to the base of the summit gully and climb the 100-ft Class 4 gully to the top. After returning to camp (roughly 8-9 hours round trip), break down camp and hike the full way back out to the trailhead the same day — a long but standard finish to the trip.",
+       "hours": 10.5,
+       "miles": 8.5,
+       "title": "Icy Peak summit push and hike out",
+       "gainFt": 2200,
+       "lossFt": 4300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave camp for Icy Peak",
+         "detail": "Descend the loose boot path toward the Ruth-Icy saddle in the dark/early light."
+        },
+        {
+         "time": "5:00 AM",
+         "label": "Cross the Ruth-Icy saddle",
+         "detail": "~5,700 ft; about a 900-ft drop from camp, roughly an hour."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach the notch below Icy's NW Spire",
+         "detail": "~6,500 ft via talus/slabs and roped Icy Glacier travel; watch the one known crack near the boot path."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Summit Icy Peak",
+         "detail": "Northwest summit via ~500 ft of 2nd-3rd class then the 100-ft Class 4 summit gully; the true Southeast summit (7,073 ft) takes more 3rd-4th class scrambling. Helmets on for rockfall."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Back at camp, break it down",
+         "detail": "Reverse gully/glacier/saddle (~4-5 hr back from the summit), rappel or downclimb the summit gully off the rock horn anchor, then pack up camp."
+        },
+        {
+         "time": "4:30 PM",
+         "label": "Out at Hannegan Trailhead",
+         "detail": "Reverse the Ruth Arm gully and Hannegan Pass trail, ~4-5 hr descent with full packs."
+        }
+       ],
+       "objective": "Climb Icy Peak via the Ruth-Icy col and Icy Glacier, then break camp and hike all the way out"
+      }
+     ],
+     "totalNote": "A classic 2-day, 1-night trip: ~5-6 hrs up to the Ruth Glacier notch camp on day one, then a long ~12-13 hr day two that combines the Icy Peak summit push (Ruth-Icy saddle, Icy Glacier, 100-ft Class 4 summit gully) with breaking camp and hiking all the way out; very strong parties occasionally link it car-to-car in one long (15-20 hr) day instead."
+    },
+    "timing": {
+     "totalHrs": 16,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "4:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "An easy, well-graded trail to Hannegan Pass gives way to a steeper, looser climbers' path up Ruth Arm and a short root/rock gully with scramble moves, then snow/glacier travel up t…",
+       "fromTo": "Approach to Ruth Glacier notch camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10.5,
+       "note": "Drop from camp to the Ruth-Icy saddle, cross the Icy Glacier to the notch below Icy's Northwest Spire, then scramble to the base of the summit gully and climb the 100-ft Class 4 gu…",
+       "fromTo": "Icy Peak summit push and hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "approach": "Start at the Hannegan Pass Trailhead (Trail #674) at road's end on FS Road 32 (Hannegan Pass Road), off SR 542 (Mt. Baker Highway), elevation ~3,100 ft. Hike Trail #674 roughly 4 miles, switchbacking up through forest along Ruth Creek to Hannegan Pass (5,066 ft), gaining ~2,000 ft. The signed Hannegan Camp (~3.5 mi in) is the last reliable water on the trail — fill up there, as there is no running water past it for the rest of the route. From the pass, leave the maintained trail and go cross-country east/northeast, climbing open heather meadows and scattered timber onto Ruth Mountain's north side (3rd-class terrain through trees in spots), then rope up and ascend the moderate slopes of the Ruth Glacier — crevasses open up here in late season, especially on the upper mountain — to Ruth Mountain's summit (7,115 ft). Most parties treat this as a 5–6 hour trailhead-to-camp day, camping on Ruth's summit plateau or in the saddle beyond it. From camp, descend Ruth's south/west side about 800 ft; there are two common lines down — a steep, loose gully some parties call the 'death gully,' or safer heather slopes and a game trail on climber's left (2nd–3rd class) — down to the Ruth–Icy saddle (~5,700 ft). From the saddle, traverse talus and slabs below a rock ridge to gain the Icy Glacier, rope up again, and climb the glacier's northwest slope gradually southeast, keeping the rock ridge on your left and crevasses on your right, to about 6,500 ft. Traverse the upper glacier below Icy's west face, skirting the west notch (watch for a bergschrund near the top some seasons), to reach a notch/saddle west of Icy's Northwest Spire (~6,500 ft). From there climb roughly 500 ft of 2nd–3rd class talus and snow up Icy's south side to the base of a light-colored, ~100-ft 4th-class summit gully with solid jugs and ledges; this leads to the northwest summit. Note the true high point is a separate southeast tower about 11 ft higher, reached by additional 3rd/4th class scrambling — many parties only tag the northwest summit, which holds the register. Hazards throughout: crevasses on both the Ruth and Icy Glaciers, occasional rockfall on Icy's south-side scramble terrain, black flies and mosquitoes on the lower trail in summer, and essentially no water source after Hannegan Camp. A few moves in the summit gully feel low-fifth class rather than straightforward 4th class, depending on the exact line chosen.",
+    "approach_variants": [
+     {
+      "name": "Hannegan Pass, over Ruth Mountain, then the Icy Glacier's northwest slope to the west notch",
+      "notes": "From the Hannegan Pass Trailhead at road's end on FS Road 32, near 3,100 ft, hike Trail #674 roughly four miles and 2,000 ft to Hannegan Pass at 5,066 ft. Hannegan Camp about 3.5 miles in is the LAST reliable water on the route — fill up there, because there is nothing running past it.\n\nFrom the pass go cross-country east and northeast up heather meadows and scattered timber onto Ruth's north side, with some third-class ground through trees, then rope up for the Ruth Glacier to Ruth's summit at 7,115 ft. Most parties treat trailhead-to-camp as a five to six hour day and camp on Ruth's summit plateau or in the saddle beyond.\n\nFrom camp, descend Ruth's south and west side about 800 ft to the Ruth-Icy saddle near 5,700 ft, taking the heather slopes and game trail on climber's LEFT rather than the steep loose gully. From the saddle, traverse talus and slabs below a rock ridge to gain the Icy Glacier.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "No water source at all after Hannegan Camp",
+       "Crevasses on both the Ruth and the Icy Glaciers, and a bergschrund near the west notch in some seasons",
+       "Loose rock in the summit gully with the whole party funnelled through it — helmets are standard",
+       "The steep loose 'death gully' off Ruth, which is the natural fall line and the wrong option",
+       "Roughly 2,000 ft of regain over Ruth on the way home"
+      ],
+      "baseFinding": "ON THE ICY GLACIER, KEEP THE ROCK RIDGE ON YOUR LEFT AND THE CREVASSES ON YOUR RIGHT. That is the navigation instruction for the whole glacier and it works without seeing the summit: climb the northwest slope gradually southeast to about 6,500 ft with a rock ridge as your left-hand handrail. If the rock swings round to your right, you have crossed the glacier and are heading for the wrong side of the peak.\n\nTHE NOTCH IS THE BASE, AND IT IS WEST OF THE NORTHWEST SPIRE at roughly 6,500 ft. Traverse the upper glacier below Icy's west face, skirting the west notch — some seasons there is a bergschrund near the top of it — to reach the notch or saddle just west of the Northwest Spire.\n\nTHERE IS A LONG HORIZONTAL CREVASSE NEAR THE TOP OF THE GLACIER, right below the Icy towers, and it is a useful landmark rather than only a hazard: it runs across your line just where the glacier ends beneath the peak. Meeting it means you are at the top of the glacier.\n\nTHE CLIMBING STARTS AT THE FIRST PROMINENT GULLY. From the notch, about 500 ft of second and third class talus and snow up Icy's south side reaches the base of a LIGHT-COLOURED, roughly 100 FT FOURTH-CLASS GULLY on the LEFT, with solid jugs and ledges. There are rappel slings around a horn at its top, left by previous parties. Colour, length and the slings at the top are three independent confirmations, which is more than most gullies in the Cascades offer.\n\nWHICH SUMMIT: the gully leads to the NORTHWEST summit, which holds the register. The true high point is a separate southeast tower about 11 ft higher, reached by more third and fourth class scrambling. Many parties only tag the northwest one — decide in advance rather than at the notch.\n\nA FEW MOVES IN THE GULLY FEEL LOW FIFTH RATHER THAN FOURTH, depending on the exact line taken. That is not a sign you are off route; it is the route."
+     }
+    ],
+    "descent_text": "Descent reverses the ascent line. Off the summit gully, parties either downclimb the 4th-class rock (described as casual with solid holds) or rig a single rappel: a 60m rope doubled gives about 30m (100 ft) of rope per side, matching the gully's height, anchored on slings/webbing around a rock horn at the top — this is a natural anchor only (no bolts/fixed chains reported), so inspect and back up existing tat before trusting it. From the base of the gully, downclimb the 2nd–3rd class talus/snow back to the Icy Glacier saddle, re-rope and re-cross the Icy Glacier reversing the ascent line, then traverse back to the Ruth–Icy saddle. From there it's roughly 2,000 ft of regain back up to Ruth Mountain's summit/camp — the sting in the tail of this traverse — before descending Ruth's north side and the Ruth Glacier back to Hannegan Pass, and hiking the 4-mile trail out to the trailhead. This is a long day (parties report ~12 hours car-to-car when done in a single push) with significant elevation loss-then-regain between Icy and Ruth; carry a stove or plan water carefully since there's no reliable source between Hannegan Camp and the trailhead on the way out. Watch for loose rock in the summit gully and standard crevasse/glacier hazards in reverse on both glaciers."
+   }
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass ($30/yr) or a daily/annual interagency pass required for trailhead parking.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). Mount Baker-Snoqualmie National Forest. No specific climbing permit.",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required only if camping overnight past the boundary.",
+     "permit": "No wilderness permit required; free self-issue permits available at the trailhead.",
+     "closures": "Middle Fork Nooksack Road (FS-38) closed at milepost 7 by a December 2025 washout; confirm current status before approach",
+     "landManager": "Mount Baker-Snoqualmie National Forest (Mount Baker Wilderness)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "passRequired": "Northwest Forest Pass at fee trailheads",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Mount Baker Wilderness rules apply."
+     }
+    },
+    "beta": "The standard and only remotely feasible route on Lincoln Peak. Approach via Rankin Creek Basin from FS Road 38. Technical snow and ice climbing with significant avalanche risk. Route comprises multiple sections: 30-40 degree initial snowfields, crux serac obstacle requiring 70-85 degree ice climbing (50 feet high), hidden gully with 2-4 foot deep runnels, narrow exposed snow aretes with steep drop-offs, and final 50-degree gully to summit rocks. Climb early morning when snow is frozen; conditions deteriorate rapidly with afternoon warming."
+   }
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong all-day fitness for a long glacier approach plus sustained scrambling/climbing on the ridge",
+      "packWeight": "Light-to-moderate alpine day/summit pack (roughly 20-30 lbs) with glacier and basic rock gear"
+     },
+     "approachTime": "Long glacier approach below the Black Buttes before the technical ridge climbing begins; plan an alpine start well before dawn",
+     "requiredSkills": [
+      "Glacier travel and crevasse rescue",
+      "Leading steep water ice to WI4 and mixed ground on loose rock",
+      "Route-finding on serious terrain with unreliable anchors",
+      "Self-rescue competency",
+      "Judgment to retreat quickly from changing Baker-massif weather"
+     ],
+     "experienceLevel": "Experienced alpine climbers comfortable leading WI4 ice and moving fast on steep snow and loose mixed ground, with a solid glacier travel background"
+    },
+    "crowds": {
+     "peakTraffic": "Rarely climbed; the only recorded ascent was in mid-March",
+     "solitudeRating": 5,
+     "estimatePerSeason": "Essentially unclimbed most seasons; Lincoln Peak overall has only about a dozen documented ascents total and this ridge line is a minor variant of an already obscure peak"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Maritime conditions on the Mount Baker massif with rapid, sometimes severe changes",
+      "probability": "Afternoon thunderstorms/convective buildup are possible during peak summer months (Jul-Aug)"
+     },
+     "exposure": "High - sustained exposure on a loose ridge with unreliable anchors and serious self-rescue implications",
+     "avalanche": {
+      "zone": "NWAC West Slopes North (Mount Baker area) - no zone covers the Black Buttes specifically",
+      "byMonth": {
+       "May": "Considerable",
+       "July": "Low",
+       "June": "Moderate",
+       "August": "Low",
+       "September": "Low"
+      }
+     },
+     "crevasses": "Significant - the glacier approach below the Black Buttes exposes climbers to crevasse hazard before the ridge climbing begins"
+    },
+    "access": {
+     "fees": "Northwest Forest Pass ($30/yr) or a daily/annual interagency pass required for trailhead parking.",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required only if camping overnight past the boundary.",
+     "permit": "No wilderness permit required, and none is issued for this wilderness — trailhead registration is voluntary. The self-issue wilderness permit some parties expect is an Alpine Lakes requirement and does not apply here.",
+     "closures": "Access roads in this district are subject to washout closures.",
+     "landManager": "Mount Baker-Snoqualmie National Forest (Mount Baker Wilderness)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "passRequired": "Northwest Forest Pass (fee trailheads); no wilderness permit",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Mount Baker Wilderness rules apply; a recreation pass is needed to park at the Heliotrope Ridge trailhead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_little_sister_southeast_ridge",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Green Creek Glacier on its looker's-left side to the Cinderella-Little Sister col",
+      "notes": "The approach is the Green Creek one shared by every route on this peak: Elbow Lake Trailhead on FR-38, the unbridged Middle Fork Nooksack crossing on whatever log is currently in place, then Elbow Lake Trail #697 and the blue-blazed Green Creek climbers' path leaving it near a switchback around 2,600 ft.\n\nUp the Green Creek drainage past the Wiseman Lake outlet, through brush, past a rock buttress around 3,800 ft, and onto loose scree, boulder fields and rolling slabs with Class 3 scrambling to gain the Green Creek Glacier.\n\nThis route then differs from its neighbours in one instruction: travel the glacier staying on the LOOKER'S-LEFT — south — side, up to the Cinderella-Little Sister col, which is where the ridge starts.\n\nThe route is graded around 5.3 and runs about three pitches.",
+      "season": "Roughly Jun-Sep",
+      "hazards": [
+       "A moat at the glacier margin that grows through the season",
+       "A dangerously loose connecting ridge toward Cinderella that must not be used as a traverse",
+       "Fixed pins and tat of unknown age on the north-face descent option",
+       "The bridgeless Middle Fork Nooksack crossing shared by every route here",
+       "Loose scree, boulder fields and Class 3 slabs to gain the glacier"
+      ],
+      "baseFinding": "THE BASE IS A COL, AND THAT IS WHAT SEPARATES THIS ROUTE FROM EVERY OTHER LINE ON THE PEAK. The southeast ridge starts at the CINDERELLA-LITTLE SISTER COL, at the head of the Green Creek Glacier. You have arrived when you are standing in a low point on a ridge with a peak at each end of it — Cinderella one way, Little Sister the other — and glacier behind you.\n\nTHE GLACIER INSTRUCTION IS THE ONE THING TO GET RIGHT AND IT IS A SIDE: stay LOOKER'S-LEFT, the SOUTH side, on the way up. The other routes on this peak do not go to the col at all, so drifting right across the glacier puts you under the north face instead.\n\nSO THE DISCRIMINATOR IS SIMPLY WHETHER YOU REACHED A COL. If you have walked until the glacier runs into a WALL, you are at the north face and you are on a different, harder route. If you have walked until the glacier runs into a NOTCH you can walk through, you are at the start of this one.\n\nTHE MOAT AT THE GLACIER MARGIN IS THE LAST OBSTACLE, and it is a season problem rather than a route problem: trivial in a heavy snow year, a real step late in the season, and the same in reverse coming down.\n\nWHAT NOT TO DO FROM THE COL: do not continue along the connecting ridge toward Cinderella. At least one party describes that ridgeline as dangerously loose and recommends dropping back to the glacier instead. The col is a start point for two peaks and a through-route for neither.\n\nDESCENT NOTE THAT DOUBLE-CHECKS THE START: most parties downclimb this same ridge back to the col. The alternative is to drop onto the NORTH FACE side and rappel scattered fixed pin and tat anchors back to the glacier — which is a different aspect and needs deciding on top, not in the moat."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "before": {
+    "pitches": 5,
+    "approach_variants": [
+     {
+      "name": "Green Creek Glacier straight to the foot of the wall, without going to the col",
+      "notes": "The approach is the standard Green Creek one: Elbow Lake Trailhead on FR-38, the unbridged Middle Fork Nooksack crossing — the unofficial log about a quarter mile downstream of the marked ford is what most parties use — then off-trail to Green Creek, cross it, and ascend a rock buttress near 3,800 ft onto the Green Creek Glacier.\n\nWhere the Southeast Ridge continues to the Cinderella-Little Sister col at the glacier's head, this route stops at the face itself. It is graded around 5.4 and is the hardest of the peak's documented lines.\n\nDescent is either rappelling the climber's-right side of the face on scattered fixed pin and tat anchors back to the glacier, or downclimbing the easier Southeast Ridge to the col and returning to the glacier from there.",
+      "season": "Roughly Jun-Sep",
+      "hazards": [
+       "No published line along the base of the face — the party chooses its own start",
+       "Scattered fixed pins and tat of unknown age as the rappel descent option",
+       "A north-facing wall that holds snow and ice at its base",
+       "A moat where the glacier meets the wall",
+       "The bridgeless Middle Fork Nooksack crossing shared by every route here"
+      ],
+      "baseFinding": "THE GLACIER RUNS INTO A WALL, AND THE WALL IS THE ROUTE. That is the arrival and it is the whole test: walk up the Green Creek Glacier until the ice ends against rock that goes up rather than along. There is no col, no notch and no ledge system to identify. THE COL IS THE OVERSHOOT MARKER AND IT IS THE MOST USEFUL THING TO KNOW HERE. If you keep going and arrive at a low point on the ridge with Cinderella on the far side of it, you have walked past the north face and are at the base of the SOUTHEAST RIDGE — a different route, two grades easier, on a different aspect. Reaching a col means turn round. THE ASPECT IS THE CONFIRMATION. This face is NORTH. It is in shade, it holds snow and ice at its base later than anything else on the peak, and the rock is cold. If you are standing in sun at the foot of your intended line, you are somewhere else on the mountain. BE HONEST ABOUT WHAT IS PUBLISHED HERE: no source consulted gives a per-pitch start point along the base of this face. What is documented is the aspect, the grade, the approach glacier and the fact that the face is roughly a thousand feet high. A party arriving at the wall still has to choose its own line along the base, and should expect to. DESCENT DECIDES THE DAY AND MUST BE DECIDED ON TOP: the two options are rappelling the climber's-RIGHT side of the face on scattered fixed pin and tat anchors — old gear, unknown age, treat it as found rather than as fixed — or downclimbing the Southeast Ridge to the col and back to the glacier that way. The second is more walking and less trusting."
+     }
+    ]
+   }
+  }
+ ]
+}

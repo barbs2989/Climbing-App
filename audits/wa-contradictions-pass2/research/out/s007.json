@@ -1,0 +1,124 @@
+{
+ "file": "s007.json",
+ "results": [
+  {
+   "id": "wa_cathedral_peak_last_rites",
+   "fact": "Whether the 17-20 mile hike-in is done in one day",
+   "verdict": "fixed",
+   "correct_value": "The hike-in to Upper Cathedral Lake is done in one long day by strong parties (both via Andrews Creek and via the Chewuch); others split it. Neither \"nobody\" nor \"most parties\" is supported.",
+   "evidence": "A 2016 party hiked 19 miles in via the Andrews Creek trail and Andrews Pass to Upper Cathedral Lake in a single 10+ hour day. A separate 2025 party hiked the 18+ mile Chewuch approach to camp at Upper Cathedral Lake in one sunrise-to-sundown day. Two independent parties on different trails and years did it in a day, so \"Nobody does this in a day\" is false; no source establishes that \"most\" parties do.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pasayten-2016/",
+    "https://spokalpine.com/2025/09/23/cathedral-peak-southeast-buttress-iii-5-10a/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_last_rites",
+     "fact": "Whether the 17-20 mile hike-in is done in one day",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Nobody does this in a day; two nights out is the normal shape of the trip.",
+     "replace": "Strong parties walk it in one long day with heavy packs; others split it with a camp partway up the drainage."
+    },
+    {
+     "id": "wa_cathedral_peak_last_rites",
+     "fact": "Whether the 17-20 mile hike-in is done in one day",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "most parties do the full 17–20 miles",
+     "replace": "strong parties do the full 17–20 miles"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Total gain vs trailhead and summit elevations",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The contradiction is real: a 4,300 ft pullout and an 8,350 ft summit cannot be reached with 2,850 ft of total gain. Retry found only approach figures for neighbouring objectives (about 3,700 ft from Early Winters Creek to Burgundy Col; 4,500-6,000 ft for Silver Star via the same approach); no source states a car-to-car gain for Chablis Spire East Face, and route pages for Chablis (supertopo, Mountaineers) were unreachable. Would settle with a Chablis-specific trip report or route page stating total gain.",
+   "sources": [
+    "http://www.willhiteweb.com/north_cascades/silver_star_mountain/map_142.htm",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan",
+    "https://www.lucasmountainknowledge.com/post/silver-star-mountain-june-2019"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chianti_spire_north_face",
+   "fact": "Hardest grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route is published as II 5.6 (1952 first ascent). Two independent east-face accounts give the Chianti summit block as 5.7 (a 5.7 block must be surmounted; final pitch 5.7, ~20 ft, old bolt on top), which matches pitch_detail[2]. But no source says whether the North Face tops out over that same 5.7 face or grades its summit move, so it is not settled whether the route grade should read 5.7 or the block grade 5.6 on this line. Would settle with a North Face-specific description grading its top-out.",
+   "sources": [
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/rebel-yell/",
+    "https://www.summitpost.org/rebel-yell/225411",
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chianti_spire_north_face",
+   "fact": "First-ascent approach history",
+   "verdict": "unresolved",
+   "correct_value": "Climbed 500 ft of difficult rock from the east to the Chianti-Pernod notch, rappelled 250 ft on the west face, then followed a loose gully to the Chianti-Burgundy notch (as approach_variants says).",
+   "evidence": "The original 1952 account confirms approach_variants: from a camp at the head of Silver Star Creek they climbed moraine and ice to the eastern walls, climbed 500 ft to the notch between Pernod and Chianti, made a 250-ft rappel on the west face and followed a loose gully to the Chianti-Burgundy notch. Every other page found (SummitPost Chianti page, search snippets) restates that single account, so still only one independent source; beta/overview compress it into a rappel directly into the Burgundy notch. Would settle with an independent guidebook-style account of the 1952 approach.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Approach distance to Burgundy Col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "New sources give the whole Silver Star ascent via Burgundy Col as 3.5 miles one way, and a GPS-logged trip as 5.68 miles round trip to Silver Star summit. Both imply the col is well under 3.5 miles one way, so both \"just under 5 miles\" and the itinerary 3.9 mi look too long, but no source states the distance to the col itself, and the two summit figures differ. Would settle with a GPS track or route page giving the pullout-to-col distance.",
+   "sources": [
+    "http://www.willhiteweb.com/north_cascades/silver_star_mountain/map_142.htm",
+    "https://www.lucasmountainknowledge.com/post/silver-star-mountain-june-2019"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chimney_peak_standard",
+   "fact": "Hardest grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only Wikipedia (class 3 via SW ridge) states a grade; PeakVisor gives no route data, Peakware was unreachable, and no trip report of an ascent was found on nwhikers/cascadeclimbers/climberkyle. The row is itself split between Class 3 and Class 3-4. Would settle with a published route description or trip report grading the SW ridge.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chimney_Peak_(Olympic_Mountains)",
+    "https://peakvisor.com/peak/chimney-peak-united-states.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chimney_peak_standard",
+   "fact": "Location of the exposed step",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found describes an exposed step on the SW ridge at all, so whether it is low or near the top cannot be settled. Would settle with an ascent trip report.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chimney_Peak_(Olympic_Mountains)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chimney_peak_standard",
+   "fact": "Trail gain to the chalet",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources still disagree and none gives an inbound one-way gain matching either value: WTA 3,700 ft round trip, another hiking guide ~3,400 ft round trip, and a third page 13 miles with \"1,500+ ft\" gain (unclear whether one way). Neither ~2,600 ft nor 2,000 ft is confirmed. Would settle with two sources stating the one-way inbound gain to the chalet.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchanted-valley",
+    "https://hikingguy.com/hikes/enchanted-valley-chalet/",
+    "http://www.willhiteweb.com/olympic_mountains/enchanted_valley/chalet_trail_214.htm"
+   ],
+   "patches": []
+  }
+ ]
+}

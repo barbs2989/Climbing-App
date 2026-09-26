@@ -1,0 +1,184 @@
+{
+ "applied": [
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Location of the base of the route"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Permit method"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Permit method"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Permit method"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Permit method"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road opening date for the Fryingpan Creek Trailhead"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Road opening date for the Fryingpan Creek Trailhead"
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Road opening date for the Fryingpan Creek Trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "before": {
+    "approach": "From the Upper Goodell Creek Group Campground trailhead (end of the short Goodell Creek Road spur off the North Cascades Highway near Newhalem, ~600 ft), follow the unmaintained but well-trodden Goodell Creek climbers' trail, which runs along an old overgrown logging road bed paralleling Goodell Creek. The first roughly 4.5 miles are comparatively mellow, mostly forested walking to the old 'spar tree,' where a boot path cut by Seattle Mountaineers work parties continues on. From there the trail turns brutally steep for about 2.5 more miles and 4,700 ft of gain, climbing more or less straight up the timbered nose of ridge between Terror and Crescent Creeks — widely cited as one of the steepest approach trails in the Cascades. Watch for a large cairn marking the unsigned junction where a climbers' path splits off toward Terror Basin; take that fork (rather than continuing toward Crescent Creek Basin/the Barrier, which serves Terror/Chopping Block-side objectives) to reach the tarns and typical camp in upper Terror Basin below the McMillan-Inspiration wall. Reliable water is available at Goodell Creek crossings low on the trail and at the Terror Basin tarns/snowmelt near camp; carry water above camp, since the final approach onto rock is dry. From camp, angle north/northeast across talus and scree past the small glacial tarn below West McMillan Spire, staying on the McMillan side of the basin (not crossing the Barrier) to reach the base of the southwest arête on Little Mac Spire, the smaller subsidiary spire just below/west of East McMillan Spire. Expect loose rock, some routefinding through talus and low bluffs, and lingering snow/moat problems at the base of the rock well into summer.",
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "access": {
+     "fees": "Backcountry permit: $10 per person plus a $6 non-refundable reservation fee. No entrance fee for North Cascades National Park.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "A backcountry camping permit is required for any overnight stay in Terror Basin or elsewhere in the park; obtain it in person at the Wilderness Information Center in Marblemount. No permit is needed for day travel, but the approach realistically requires an overnight given its length.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "before": {
+    "road": {
+     "name": "Sunrise Road / White River Road (WA-410 via the White River entrance)",
+     "status": "Seasonal — typically opens late June to early July, closes for winter by mid-October.",
+     "driveNote": "The Fryingpan Creek Trailhead parking lot sits on the Sunrise Road about 2.9 mi past the White River entrance station."
+    },
+    "access": {
+     "fees": "$82/person climbing registration, required year-round for any travel above 10,000 ft or onto a glacier, plus a $12/person/night wilderness permit for overnight camping (May 1-Sep 15); park entrance is $30/vehicle for 7 days.",
+     "notes": "Inside the national park, so a Northwest Forest Pass does not apply; the park entrance fee does. Climbing registration and the per-person climbing fee are required before going onto a glacier or above 10,000 ft.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Climbing registration required for all travel above 10,000 ft or on any glacier; a separate wilderness permit is required for overnight camping at Summerland or high camp.",
+     "closures": "The Sunrise/White River Road is snow-gated and typically doesn't open until late June-early July; it closes for the season by mid-October.",
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park",
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "America the Beautiful / interagency annual pass covers only the $30 vehicle entrance fee, not the separate $82 climbing registration fee.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration and fee for the glaciers",
+      "where": "Reserve on Recreation.gov or get a walk-up permit at the White River Wilderness Information Center; register and pay the climbing fee before the climb."
+     }
+    },
+    "itinerary": {
+     "cal": "Best climbed June-August while the Fryingpan/Whitman glaciers hold consolidated snow; the Sunrise-area road/Fryingpan Creek trailhead often doesn't fully open until late June, and crevasses/moats open up more by late summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Wonderland Trail from the Fryingpan Creek Trailhead through old-growth forest, cross Fryingpan Creek, and climb through the Summerland meadows before leaving trail to work up scree/snow to a rocky camp overlooking the Fryingpan Glacier at roughly 7,350 ft.",
+       "hours": 6.5,
+       "miles": 4.5,
+       "title": "Approach to high camp",
+       "gainFt": 3550,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach a high camp near Meany Crest on the Fryingpan Glacier moraine"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start gets the team across the Fryingpan Glacier and over Whitman Notch (9,100 ft) before the snow softens, then up the Whitman Glacier and a picket-protected couloir to a short Class 3-4 rock finish on the summit block. After descending back to camp, most parties drop further to the Summerland shelter that evening to shorten day 3.",
+       "hours": 10.5,
+       "miles": 5.5,
+       "title": "Summit day and move to Summerland",
+       "gainFt": 3788,
+       "lossFt": 5188,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "2:00 AM",
+         "label": "Leave high camp",
+         "detail": "Roped up and crampons on for the Fryingpan Glacier crossing."
+        },
+        {
+         "time": "4:00 AM",
+         "label": "Cross Whitman Notch",
+         "detail": "~1,850 ft above camp; the col between the Fryingpan and Whitman glaciers."
+        },
+        {
+         "time": "~8:15 AM",
+         "label": "Reach the summit",
+         "detail": "Up the Whitman Glacier and couloir, then a short Class 3-4 scramble to the true summit at 11,138 ft."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Back at high camp",
+         "detail": "Descent re-crosses both glaciers via the notch."
+        },
+        {
+         "time": "Evening",
+         "label": "Move down to Summerland shelter",
+         "detail": "Drops to ~5,950 ft to shorten the exit hike."
+        }
+       ],
+       "objective": "Cross both glaciers, climb the couloir to the summit, and descend to Summerland"
+      },
+      {
+       "n": 3,
+       "note": "A short, easy morning hike back down through Summerland and the forest to the trailhead.",
+       "hours": 2.5,
+       "miles": 3.2,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2150,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Return to the Fryingpan Creek Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip is the standard club/party pace: ~14 mi round trip with ~7,600 ft of gain/loss, split between a moderate approach day, a long alpine-start glacier summit day, and a short exit."
+    }
+   }
+  }
+ ]
+}

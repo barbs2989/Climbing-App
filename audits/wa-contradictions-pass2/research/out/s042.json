@@ -1,0 +1,88 @@
+{
+ "file": "s042.json",
+ "results": [
+  {
+   "id": "wa_mount_lincoln_standard",
+   "fact": "Ridge/side climbed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The published route list (Olympic Mountains climbing guide, as reproduced on the peak's encyclopedia page) names three lines: South Ridge class 2, Flapjack Lake and North Ridge class 3, Harniss Chute class 3, which would make this Flapjack-side route the north ridge line and face='South Ridge' wrong. But the only two detailed recent reports found (explorerron, two dates, one author) approached via the south end of Sawtooth Ridge from the valley trail, not from Flapjack, and the row's own pitch_detail and beta mix both lines. No second independent source describing the Flapjack-side line's ridge name was reachable (peakbagger, summitpost, mountaineers pages returned 403). A detailed Flapjack-side route description from a second party would settle it.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Lincoln_(Washington)",
+    "https://explorerron.com/2024/09/11/mount-lincoln-olympic-mountains-sawtooth-range-no-easy-steps/",
+    "https://explorerron.com/2024/09/24/mount-lincoln-and-sw-lincoln/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_lincoln_standard",
+   "fact": "Descent line (Sawtooth Pass vs reversing the ascent)",
+   "verdict": "fixed",
+   "correct_value": "From the Lincoln end of Sawtooth Ridge parties drop off the crest's west side by a steep gully (dirt, then scree, talus and boulders) into forest and back to Flapjack Lakes; the descent does not go via Sawtooth Pass or the Gladys Divide tarn.",
+   "evidence": "A 2005 complete Sawtooth Ridge traverse party, after tagging North Lincoln and the true summit, dropped off the ridge by the one obvious descent gully - a steep dirt chute that eased to scree, talus and boulders - then bushwhacked around a ridge back to Flapjack Lakes. A different party in 2024 retreated from below Lincoln's summit block down a couloir into a basin one ridge from Flapjack Lakes and regained the trail just above the lakes. Neither went near Sawtooth Pass, which is the approach to The Fin and The Horn far to the north near Gladys Divide.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200514600",
+    "https://explorerron.com/2024/09/11/mount-lincoln-olympic-mountains-sawtooth-range-no-easy-steps/",
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_lincoln_standard",
+     "fact": "Descent line (Sawtooth Pass vs reversing the ascent)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "back to the base of Mount Lincoln, regain the Sawtooth Ridge crest, and follow it southwest back to Sawtooth Pass, then downclimb/glissade (early season) the open snow-and-rock slope back to the Gladys Divide trail near the small tarn at ~4,400 ft. From there it's a long but straightforward hike back through Flapjack Lakes and down",
+     "replace": "back to the Sawtooth Ridge crest, then drop off its west side by a steep gully (dirt first, then scree, talus and boulders) into the forest and work back through the brush to Flapjack Lakes. From there it's a long but straightforward hike down"
+    },
+    {
+     "id": "wa_mount_lincoln_standard",
+     "fact": "Descent line (Sawtooth Pass vs reversing the ascent)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "lingering snow on the Sawtooth Pass slope into midsummer",
+     "replace": "lingering snow in the descent gully into midsummer"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found only more traverse totals for other variants: 61 mi / 26,000 ft (Sol Duc loop with Olympus), 57.8 mi / 15,000 ft (Quinault exit, 7 days), and 65+ mi with no gain figure (Sol Duc loop). None states car-to-car gain for Sol Duc to Camp Pan, Mathias, out the Hoh. A GPS-measured total for this exact line would settle it.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/",
+    "https://adventurejon.com/2024/12/08/the-bailey-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "fact": "Distance to first camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Additional reports (cwillett, engineeredforadventure, climberkyle, mountainflamingo, a guide service itinerary) confirm Eleven Bull Basin lies beyond Heart Lake/High Divide and the Catwalk start, so 9 mi is too short for it, but none gives a mileage; the two figures on record (12.5 mi and 15 mi) still disagree. Note also the waypoint list mixes a Hoh trailhead at mile 0 with Sol Duc-based distances. Two agreeing mileages from Sol Duc to Eleven Bull Basin would settle it.",
+   "sources": [
+    "http://cwillett.imathas.com/local/bailey/index.html",
+    "https://engineeredforadventure.com/bailey-range-traverse/",
+    "https://www.pacificalpineguides.com/bailey-range-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_meany_standard",
+   "fact": "Total gain and loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The second report found (eileensadventures) is by a member of the same August 2020 party as the trailcatjim report and gives no totals, so it is not independent; the trailcatjim figures (42 mi, 9,300 ft gained and lost) remain the only stated total. Other Seattle Basin/Quinault reports are multi-peak loops. A second independent party's car-to-car gain for the North Fork Quinault / Seattle Basin line would settle it.",
+   "sources": [
+    "https://trailcatjim.com/mt-meany-via-quinault-river-seattle-basin-southeast-ridge-northeast-face/",
+    "https://eileensadventures.com/2020/08/6-days-in-the-olympics-climbing-one-peak-mt-meany"
+   ],
+   "patches": []
+  }
+ ]
+}

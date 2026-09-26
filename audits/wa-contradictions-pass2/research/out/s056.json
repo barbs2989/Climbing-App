@@ -1,0 +1,347 @@
+{
+ "file": "s056.json",
+ "results": [
+  {
+   "id": "wa_mount_tom_scramble",
+   "fact": "Summit scramble grade",
+   "verdict": "fixed",
+   "correct_value": "Glacier plus Class 3 scrambling for the usual line (a steep snow pitch then a scramble to the top); an all-rock line up the summit pinnacle is about Class 4. No 5.x move is on record — the 5.7/5.3 figures in pro_tips and watch_out belong to the Mount Olympus West Peak summit block, not Mount Tom.",
+   "evidence": "Wikipedia's peak article gives the easiest route as glacier + Class 3 scrambling. A 2004 cascadeclimbers trip report (Olympus & Tom) says most parties climb a steep snow pitch then scramble to the summit pinnacle, while the author took an all-rock line of roughly 220 ft of 4th class, soloed. Search results attribute the '5.7 chimney vs 5.4 either side' description to the Olympus summit block, and no source gives any 5th-class move on Tom. rock_grade/pitch_detail 'Class 3' and the 'Class 3-4' range in route prose both fit; only the 5.7/5.3 claims are wrong.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Tom_(Washington)",
+    "https://cascadeclimbers.com/forum/topic/26805-tr-mt-olympus-amp-mt-tom-724-312004/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_tom_scramble",
+     "fact": "Summit scramble grade",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "find": "one variation has a short 5.7-ish move (protectable with medium nuts) where other parties found an easier ~5.3 line just to the side",
+     "replace": "most parties take a steep snow pitch and then scramble the last rock, while staying on rock the whole way up the summit pinnacle runs closer to Class 4"
+    },
+    {
+     "id": "wa_mount_tom_scramble",
+     "fact": "Summit scramble grade",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      2
+     ],
+     "find": "at least one party found a 5.7-ish move where an easier ~5.3 line existed just to the side",
+     "replace": "keeping to rock all the way up the summit pinnacle is closer to Class 4, where the snow-then-scramble line stays easier"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "fact": "Upper Trailhead elevation (waypoint 3,300 ft vs approach ~3,400 ft)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "~3,300 ft (waypoints[0].elev 3300 is right; the prose '~3,400 ft' is the outlier)",
+   "evidence": "The Forest Service trailhead page gives the Upper Trailhead at 47.8561, -123.035621 (the pin's own coordinate); the USGS 1 m elevation service at that point reads 3,342 ft. WTA gives 3,010 ft of gain to a 6,260 ft high point, i.e. a start near 3,250 ft, and Wikipedia likewise gives a 3,010 ft rise from the trailhead. Only Gaia GPS gives 3,400 ft. Both independent measures put the trailhead nearer 3,300 than 3,400, matching the row's own waypoint and gain_ft.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/mt-townsend-upper-trailhead",
+    "https://epqs.nationalmap.gov/v1/json?x=-123.035621&y=47.8561&units=Feet&wkid=4326",
+    "https://www.wta.org/go-hiking/hikes/mount-townsend",
+    "https://en.wikipedia.org/wiki/Mount_Townsend_(Washington)"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_townsend_standard",
+     "fact": "Upper Trailhead elevation (waypoint 3,300 ft vs approach ~3,400 ft)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Upper Trailhead (elev. ~3,400 ft)",
+     "replace": "Upper Trailhead (elev. ~3,300 ft)"
+    },
+    {
+     "id": "wa_mount_townsend_standard",
+     "fact": "Upper Trailhead elevation (waypoint 3,300 ft vs approach ~3,400 ft)",
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "Upper Trailhead (elev. ~3,400 ft)",
+     "replace": "Upper Trailhead (elev. ~3,300 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Approach side and summit line",
+   "verdict": "fixed",
+   "correct_value": "The summit is climbed from the col at the south end of Gray Wolf Ridge, northeast of the peak, then up the broken northeast ridge (pinnacles passed on their east side, ledges and small gullies, an exposed blade to the top): Class 3 with perhaps one short Class 4 step. From Royal Basin the col is reached by a brushy forest band, a talus tongue below the east face and a scree rib; from Baldy by following Gray Wolf Ridge south. There is no east/southeast-gully 'West Side' line, and no west-side forest approach.",
+   "evidence": "A 2008 WTA trip report climbed from the lower Royal Basin camp: a slow 700 ft brushy forest band, a talus tongue below the complex east face, northwest up boulders and a scree ridge to the south end of Gray Wolf Ridge (col NE of Walkinshaw), 4-5 pinnacles passed on the east side with Class 3 moves on rotten shale, then the NE ridge through ledges and gullies to an airy blade and the summit; it also notes others reach the same NE col along Gray Wolf Ridge. A 2023 cascadeclimbers report (Gray Wolf Ridge to Walkinshaw, 'Standard') climbed from the col south of South Gray Wolf: mostly exposed Class 3 with maybe one small 4th-class section, descending to the Royal Basin trail. Wikipedia gives Class 3 via Gray Wolf Ridge. The row's itinerary day 2 already describes this NE-ridge blade line; the approach/waypoints/baseFinding/beta/pitch_detail are rewritten to match (pins not moved).",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2008070914",
+    "https://cascadeclimbers.com/forum/topic/107509-tr-graywolf-ridge-to-walkinshaw-standard-07162023/",
+    "https://en.wikipedia.org/wiki/Mount_Walkinshaw"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Aim for the prominent talus tongue and gully system on Walkinshaw's east/southeast side — this is the 'West Side' class-3 scramble route. Ascend the loose, blocky gully (described firsthand as 'rotten Olympic shale' — notably looser than typical Cascades granite) with care, then follow class 2-3 terrain along the upper ridge, including a few short class-3 moves past steepened pinnacles, to the small (~10-ft-diameter) rocky summit at 7,378 ft.",
+     "replace": "Aim for the prominent talus tongue below Walkinshaw's broken east face, then climb northwest over boulders and a bare scree rib to the col at the south end of Gray Wolf Ridge, northeast of the peak. From the col, skirt several steepening pinnacles on their east side with Class 3 moves on rotten shale (far looser than typical Cascades granite), then follow the northeast ridge through ledges and small gullies to an exposed blade of rock and the small (~10-ft-diameter) rocky summit at 7,378 ft — Class 3 overall, with perhaps one short Class 4 step."
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "The easiest route is described as a Class 3 scramble via the 'West Side' or 'Gray Wolf Ridge.'",
+     "replace": "The easiest line is a Class 3 scramble that gains the col at the south end of Gray Wolf Ridge, northeast of the peak, and follows the northeast ridge to the top."
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Parties describe the west-side forest approach as the technical crux of the day due to dense brush, with class 2-3 open ridge scrambling above treeline and a final class 3 push to the small, exposed summit block.",
+     "replace": "The forest band climbing out of Royal Basin toward the col is slow, brushy going; above it, Class 3 ground on the ridge, with perhaps one short Class 4 step, leads to the small, exposed summit block."
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "face",
+     "path": [],
+     "find": "West Side / Gray Wolf Ridge (named alternate approaches, not distinct technical faces)",
+     "replace": "Northeast ridge, from the col at the south end of Gray Wolf Ridge"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "Multiple parallel gullies on the west side",
+     "replace": "Multiple similar gullies on the east face and northeast ridge"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "name"
+     ],
+     "find": "West-side scree/talus gully system",
+     "replace": "East-face talus below the northeast col"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "in several parallel gullies below the ridge",
+     "replace": "on the talus and scree below the ridge"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "directions"
+     ],
+     "find": "Aim for the prominent talus tongue and gully system below the ridge,",
+     "replace": "Aim for the prominent talus tongue below the east face, then climb northwest over boulders and a bare scree rib to the col northeast of the peak,"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "reached via class 3-4 moves up the final gully to the ridge crest",
+     "replace": "reached from the col northeast of the peak along the broken northeast ridge; Class 3 with perhaps one short Class 4 step"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "directions"
+     ],
+     "find": "Climb the loose, blocky gully with care, then follow Class 2-3 terrain up the ridge above, including a few short Class 3 moves past steepened pinnacles,",
+     "replace": "From the col, skirt a few steepening pinnacles on their east side, then follow the northeast ridge through ledges and small gullies and along an airy blade"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "running down from a gully system on the east and southeast side — it is the widest and cleanest-looking fan of loose rock on that flank and it points straight at the gully above it",
+     "replace": "below the broken east face — the widest and cleanest-looking fan of loose rock on that flank"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Climb the gully, which is blocky and rotten rather than difficult, then follow Class 2 to 3 ground along the upper ridge past a few short steepened steps to a small rocky top no more than about ten feet across.",
+     "replace": "From its top, climb northwest over boulders and a bare scree rib to the col northeast of the peak, skirt a few steepening pinnacles on their east side, then follow the northeast ridge and an exposed blade to a small rocky top no more than about ten feet across."
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "downclimb the same loose gully and class 2-3 ridge back down to the base of the talus tongue",
+     "replace": "downclimb the northeast ridge and pass the pinnacles back to the col, then descend the scree rib and talus to the base of the talus tongue"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "on the standard West Side route",
+     "replace": "on the standard northeast ridge line"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "on Walkinshaw's west side",
+     "replace": "on the Royal Basin side below Walkinshaw's east face"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "pitch"
+     ],
+     "find": "Ridge scramble to false summit (Baldy approach)",
+     "replace": "Talus and scree rib to the northeast col"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Open ridge climbing above treeline toward a false summit around 6,537 ft, continuing along Gray Wolf Ridge toward Walkinshaw.",
+     "replace": "Talus tongue below the east face, then boulders and a bare scree rib northwest to the col at the south end of Gray Wolf Ridge; parties coming along the ridge from Baldy arrive at the same col."
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "pitch"
+     ],
+     "find": "North-side traverse / cliff weakness",
+     "replace": "Pinnacles and northeast ridge"
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "A weakness through cliffs at roughly 6,200-6,300 ft allows a traverse around Walkinshaw's north side into the basin beyond, bypassing the direct summit scramble.",
+     "replace": "Pass several steepening pinnacles on their east side on rotten rock, then work up ledges and small gullies on the broken northeast ridge; one short step may reach Class 4."
+    },
+    {
+     "id": "wa_mount_walkinshaw_scramble",
+     "fact": "Approach side and summit line",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "via the West Side or Gray Wolf Ridge line",
+     "replace": "along an exposed blade of rock at the top of the northeast ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Trailhead elevation",
+   "verdict": "not_a_contradiction",
+   "correct_value": "~2,550 ft",
+   "evidence": "Already resolved: the fresh row gives the Upper Dungeness Trailhead as 2,550 ft in waypoints[0].elev, its directions and the approach, consistent with ~2,500 ft of gain to Royal Lake at 5,100 ft and itinerary day 1 gainFt 2550 (NPS Royal Basin page: 2,550 to 5,100 ft; USGS point elevation at the pin reads ~2,494 ft).",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://epqs.nationalmap.gov/v1/json?x=-123.136927&y=47.877572&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Cell coverage on the peak",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source reports phone reception (or its absence) on Gray Wolf Ridge, in Royal Basin or on Walkinshaw; the trip reports read (WTA 2008, cascadeclimbers 2023, WTA 2026 Baldy/Gray Wolf, willhiteweb, TrailGroove, exploreolympics, The Wild Outsiders) never mention signal, and forum threads only say park coverage is spotty. Would settle: a trip report stating reception on the Gray Wolf Ridge crest or the summit.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-16.095539252719",
+    "https://www.tripadvisor.com/ShowTopic-g143047-i769-k13967816-Cell_service_in_most_of_ONP-Olympic_National_Park_Washington.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "fact": "Cell coverage on the peak",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source reports phone reception (or its absence) on Gray Wolf Ridge, in Royal Basin or on Walkinshaw; the trip reports read (WTA 2008, cascadeclimbers 2023, WTA 2026 Baldy/Gray Wolf, willhiteweb, TrailGroove, exploreolympics, The Wild Outsiders) never mention signal, and forum threads only say park coverage is spotty. Would settle: a trip report stating reception on the Gray Wolf Ridge crest or the summit.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-16.095539252719",
+    "https://www.tripadvisor.com/ShowTopic-g143047-i769-k13967816-Cell_service_in_most_of_ONP-Olympic_National_Park_Washington.html"
+   ],
+   "patches": []
+  }
+ ]
+}

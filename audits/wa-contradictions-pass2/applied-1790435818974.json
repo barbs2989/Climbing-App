@@ -1,0 +1,95 @@
+{
+ "applied": [
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the overnight permit can be reserved"
+  },
+  {
+   "id": "wa_castle_in_the_sky",
+   "column": "length_m",
+   "path": [],
+   "fact": "Route length"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "before": {
+    "access": {
+     "fees": "$10 per person plus a $6 nonrefundable reservation fee during the summer fee season (mid-May through early October); no charge the rest of the year. No fee for youth 15 and under.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Mandatory moratorium on new fixed anchors within North Cascades NP backcountry (no new drilled bolts/hangers) — use removable/clean protection.",
+     "permit": "Backcountry/wilderness permit required year-round for any overnight stay. Reserve in advance on Recreation.gov (60% of permits) or get a walk-up permit (40% held) at the Wilderness Information Center in Marblemount or the Glacier Public Service Center for northern trailheads.",
+     "closures": "Hannegan Pass Road (FR 32) has had storm-damage sections in recent years limiting vehicle access near the trailhead — verify current status with the Mt. Baker Ranger District/Glacier Public Service Center before driving out.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (Stephen Mather Wilderness)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Northwest Forest Pass at the Hannegan Pass trailhead",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_south_spur",
+   "before": {
+    "access": {
+     "fees": "$10 per person plus a $6 nonrefundable reservation fee during the summer fee season (mid-May through early October); no charge the rest of the year. No fee for youth 15 and under.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). Whatcom Peak area, North Cascades. Backcountry permit for overnight.",
+     "rules": "Mandatory moratorium on new fixed anchors within North Cascades NP backcountry (no new drilled bolts/hangers) — use removable/clean protection.",
+     "permit": "Backcountry/wilderness permit required year-round for any overnight stay. Reserve in advance on Recreation.gov (60% of permits) or get a walk-up permit (40% held) at the Wilderness Information Center in Marblemount or the Glacier Public Service Center for northern trailheads.",
+     "closures": "Hannegan Pass Road (FR 32) has had storm-damage sections in recent years limiting vehicle access near the trailhead — verify current status with the Mt. Baker Ranger District/Glacier Public Service Center before driving out.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (Stephen Mather Wilderness)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Northwest Forest Pass at the Hannegan Pass trailhead",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_castle_in_the_sky",
+   "before": {
+    "length_m": 771
+   }
+  }
+ ]
+}

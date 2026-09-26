@@ -1,0 +1,83 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_hitchhiker",
+   "column": "overview",
+   "path": [],
+   "fact": "Start offset from the Passenger"
+  },
+  {
+   "id": "wa_south_arete",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Round-trip distance"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_hitchhiker",
+   "before": {
+    "overview": "A long, sustained mixed free/bolted line up the steep southeast face of SEWS, starting about 100 yards right of The Passenger. Established over three visits between July and September 2007 by Bryan Burdo and Scott Johnston."
+   }
+  },
+  {
+   "id": "wa_south_arete",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "The easiest and most popular route on SEWS — mostly 3rd/4th class scrambling with a couple of 5.5-5.6 moves over 2 pitches. Often used as the descent route for the harder south-face lines as well.",
+       "hours": 6,
+       "miles": 4.1,
+       "title": "Car-to-car climb",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "6:30 AM",
+         "label": "Leave Blue Lake trailhead",
+         "detail": ""
+        },
+        {
+         "time": "8:15 AM",
+         "label": "Reach base of South Arete",
+         "detail": "~1.75 hr approach."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Start climbing",
+         "detail": "2 pitches, mostly 3rd/4th class."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Begin descent",
+         "detail": "Downclimb the arete, then 3 rappels from bolted stations to the base."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the South Arete and return to the Blue Lake trailhead"
+      }
+     ],
+     "totalNote": "A short, classic beginner day: about 6 hrs car-to-car with only 2 pitches of easy 5th class."
+    }
+   }
+  }
+ ]
+}

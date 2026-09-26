@@ -1,0 +1,187 @@
+{
+ "file": "s050.json",
+ "results": [
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "fact": "Gibraltar Chute angle (45 vs 50 degrees)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two figures describe different extents: the approach/climbing_route call the chute as a whole 'roughly 50°' where it drops to the Nisqually, while the baseFinding gives the ~400 ft actually climbed as 45-degree snow. Outside sources span the same range (35-50° for the route, 50° for the chute, 40-45° for the exit gully, 45-50° at an accident site), so 'roughly 50°' and 45° are both within what is published; a reader sees no incompatible claim.",
+   "sources": [
+    "https://engineeredforadventure.com/gibraltarledges/",
+    "http://mountrainierclimbing.blogspot.com/2017/05/gibraltar-ledges-5232017.html",
+    "https://cascadeclimber.com/gibraltar_ledges.htm",
+    "http://publications.americanalpineclub.org/articles/13200606800/Fall-on-SnowUnable-to-Self-Arrest-Washington-Mount-Rainier-Gibraltar-Ledges"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "fact": "Season window",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "A best window (Dec-Apr, best_season and optimalWindow) inside a broader climbable season (winter through spring, documented into early June) is not a contradiction; May is rated 'risky', not out of season. Park ranger conditions reports document ascents on May 8 2019, mid-May 2018 and May 22-23 2017, and a 2006 accident occurred on the route on June 10, so the 'into early June' season is real while the frozen winter window is the recommended one.",
+   "sources": [
+    "https://mountrainierclimbing.blogspot.com/2019/05/gibraltar-ledges-may-8-2019.html",
+    "http://mountrainierclimbing.blogspot.com/2018/05/route-update-ingraham-direct-and.html",
+    "http://publications.americanalpineclub.org/articles/13200606800/Fall-on-SnowUnable-to-Self-Arrest-Washington-Mount-Rainier-Gibraltar-Ledges",
+    "https://www.mountainproject.com/route/107467946/gibraltar-ledges"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "fact": "Aspect of the ledges",
+   "verdict": "fixed",
+   "correct_value": "S/SW",
+   "evidence": "The park climbing rangers' May 2017 report calls the ledge section south-west facing (in shade until about 10am); a separate ranger party's May 8 2019 report says the ledges melt out quickly 'due to its S/SW aspect'. Two reports by different parties on different dates agree on a south-west orientation, as do four fields of the row itself (approach variant notes, a hazard line and two baseFinding passages); only the aspect chip says S/SE.",
+   "sources": [
+    "http://mountrainierclimbing.blogspot.com/2017/05/gibraltar-ledges-5232017.html",
+    "https://mountrainierclimbing.blogspot.com/2019/05/gibraltar-ledges-may-8-2019.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_rainier_gibraltar_ledges",
+     "fact": "Aspect of the ledges",
+     "op": "set",
+     "column": "aspect",
+     "path": [],
+     "expect": "S/SE",
+     "value": "S/SW"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "fact": "Trailhead / approach side",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both approaches are real and the approach prose already presents them as two options (North Fork Quinault ~16 mi to Low Divide per the park; Elwha from Whiskey Bend, whose road is closed to vehicles at Madison Falls). The contradiction is structural: the trailhead card, waypoints, beta and route breakdown are a Quinault plan, while the whole itinerary, timing breakdown, road card, descent, pro_tips and partner_requirements are an Elwha plan. No source supplies per-day gain/loss/hours for either side, so no patch; settling it needs an owner decision on which approach the page plans, then a rebuild of the other side's fields.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide",
+    "https://home.nps.gov/olym/planyourvisit/current-road-conditions.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "fact": "Elwha itinerary starts at Whiskey Bend although the road to it is closed",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "access.closures, road.status and the approach prose all say vehicles stop at Madison Falls, adding roughly 6-7 miles each way to Whiskey Bend; park road-conditions information confirms Whiskey Bend Road is closed to vehicles because of the Olympic Hot Springs Road washout. Yet itinerary day 1 and timing.sectionBreakdown[0] start 'From Whiskey Bend Trailhead' with 11 mi and 6.5 h, omitting the road walk. Fixing this means re-planning day miles/hours, which depends on the unresolved choice of approach side above.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+    "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Hardest rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route database rates the West Ridge line Class 3; a 2024 south-side party led a short low-5th pitch by mistake and then found from above a third-class gully they could have used; a climber's log calls an easier variation class 3/4 without protection. No source found rates this line Class 4, but none describes exactly the row's leftmost-fork gully either, and the row states Class 4 in six fields (grade, hazards, pro_tips, waypoints, detailed_rack, itinerary). Would settle: the Beckey guide's rating for Sefrit's west/southwest route.",
+   "sources": [
+    "https://bivouac.com/TripPg.asp?TripId=6009",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1277599",
+    "https://www.summitpost.org/mount-sefrit/climbers-log/151613"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Car-to-car loss vs corrected gain",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "loss_ft 4,500 vs gain_ft 5,000 and itinerary lossFt 5,000. The only trip report with figures gives a 2,140-7,212 ft elevation range and 10.5 mi round trip but no descent total; under the loss rule loss_ft is not changed without an outside car-to-car descent figure for this route.",
+   "sources": [
+    "https://onehikeaweek.com/2025/05/23/mount-sefrit/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "fact": "Approach distance: one-way dist_km vs round-trip miles",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "dist_km 9.3 (5.8 mi) displays as one-way while the itinerary calls 5.8 mi the round trip and the summit pin sits at 2.9 mi. One report gives 10.5 mi round trip from the Nooksack Cirque trailhead; the two other south-side reports found (2013 ski, 2024 scramble) give time and gain but no distance. One source only; a second stated round-trip or one-way distance would settle it.",
+   "sources": [
+    "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+    "https://turns-all-year.com/trip-reports/mount-sefrit-s-sw-face",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1277599"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)",
+   "verdict": "fixed",
+   "correct_value": "Start at a roadside pullout near milepost 3 on Ruth Creek Road (~2,950 ft, just past a creek over a concrete weir), across Ruth Creek from Wall Street — not the road end at Hannegan Campground.",
+   "evidence": "A detailed route report parks at a wide spot about 3 miles up the road just past a creek flowing over a concrete weir (~2,950 ft) and drops straight to Ruth Creek. An independent 2010 party on the same route writes 'You park about 4.3 miles from the highway and you can see the beginning of the route' (1.3 mi to the fork plus ~3 mi = the milepost-3 pullout, not the road end ~6.7 mi from the highway); a 2022 winter party likewise reached Ruth Creek 'right across from the Wall Street gully' after about 4 miles of road. USGS 1 m elevation at the row's road-end trailhead pin reads ~3,160 ft, so '~2,950 ft' fits the pullout, not the campground. Note: approach_logistics.trailheadLat/Lng still point at the road end (coordinates out of scope) and bivy[0] was not touched.",
+   "sources": [
+    "https://trailcatjim.com/mt-sefrit-via-northwest-glacier-southeast-ridge/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=604871",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1226204",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.5894222&y=48.91049444&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "continue to its end at Hannegan Campground (about 2,950 ft). From the pullout/campground, cross Ruth Creek",
+     "replace": "continue to a pullout near milepost 3, just past a creek flowing over a concrete weir (about 2,950 ft), well short of the road's end at Hannegan Campground. From the pullout, cross Ruth Creek",
+     "id": "wa_mount_sefrit_southeast_ridge",
+     "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "continue ~5.4 mi to road's end at Hannegan Campground.",
+     "replace": "continue to a roadside pullout near milepost 3, just past a creek flowing over a concrete weir, across Ruth Creek from the Wall Street couloir; do not drive on to the road's end at Hannegan Campground.",
+     "id": "wa_mount_sefrit_southeast_ridge",
+     "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Hannegan Campground (Ruth Creek Road, FS 32)",
+     "value": "Ruth Creek Road pullout near milepost 3 (FS 32)",
+     "id": "wa_mount_sefrit_southeast_ridge",
+     "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "From the Hannegan Campground pullout at the end of Ruth Creek Road (~2,950 ft)",
+     "replace": "From a pullout near milepost 3 on Ruth Creek Road, just past a creek flowing over a concrete weir (~2,950 ft)",
+     "id": "wa_mount_sefrit_southeast_ridge",
+     "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "drive to the Ruth Creek/Hannegan CG trailhead (2,950 ft)",
+     "replace": "drive to the Ruth Creek Road pullout near milepost 3 (2,950 ft)",
+     "id": "wa_mount_sefrit_southeast_ridge",
+     "fact": "Trailhead (road end at Hannegan Campground vs milepost-3 pullout)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,183 @@
+{
+ "applied": [
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Liberty Cap summit pin elevation (14097) vs high_point_ft 14112"
+  },
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elevFt"
+   ],
+   "fact": "Liberty Cap summit pin elevation (14097) vs high_point_ft 14112"
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "column": "overview",
+   "path": [],
+   "fact": "Liberty Cap elevation (overview 14,097 vs summit pin and high_point_ft 14,112)"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Whether Heliotrope Ridge can reach the X Couloir"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Whether Heliotrope Ridge can reach the X Couloir"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Whether Heliotrope Ridge can reach the X Couloir"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Whether Heliotrope Ridge can reach the X Couloir"
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Rock grade on an ice route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Mowich Lake, Spray Park and the Ptarmigan crest",
+      "notes": "The prettier of the two ways in, and the one that puts you on the route's own ridge from the bottom. Mowich Lake sits at about 4,929 ft at the end of a road that has had no public access since the SR 165 Fairfax Bridge closed in April 2025 (before that it was often snowed shut into early or mid July), and that single fact decides whether this approach is available at all. From the lake it is three to four miles of trail up through Spray Park; at about 6,400 ft a beaten path breaks off right toward the permanent snow. Cross the Flett Glacier in the gap between Echo Rock, 7,870 ft, and Observation Rock, 8,364 ft, at somewhere around 7,500 ft, climb to the saddle immediately east of Observation Rock, and cross onto the Russell Glacier near 7,800 ft. From there the crest runs south, sometimes on rock but mostly on easy snow just left of the crest line, with the Russell falling away east. This stretch is uncrevassed and is genuinely a walk. The last few hundred yards to camp are not: the crest narrows to a knife edge with an overhanging rock step on it, and most parties bypass that by dropping about 200 ft onto 40 degree snow on the east side and traversing back. Well above the base, the exit gully through the rock buttress is the one identification climbers argue about — whether it is the first or the second break in the cliffs is genuinely unsettled, so climb to the fixed pin rather than to a count. The descent is the Emmons route out to White River, so coming in this way needs a car shuttle or a very long road walk.",
+      "season": "July to mid-August",
+      "hazards": [
+       "Ice avalanche off the Liberty Cap Glacier's ice cliffs onto the traverse between camp and the bergschrund",
+       "Bare rock at the crux chimney in lean years, which raises both the grade and the rockfall",
+       "Bergschrund and crevasses at the start of the technical ground, around 9,800 ft",
+       "Sustained 45 to 60 degree snow and ice, with a long exposed rising traverse",
+       "Rockfall off decomposing volcanic cliffs on everything below about 12,200 ft",
+       "Overhanging rock step on the knife edge into high camp",
+       "No road access to Mowich Lake since the April 2025 bridge closure, and a descent that finishes at a different trailhead"
+      ],
+      "primary": true,
+      "baseFinding": "The walking and the climbing are cleanly separated here and the boundary is a flat spot, but the climb does not start above camp — it starts several hundred feet BELOW it and on the far side of the ridge, and that is what parties get wrong. Follow the crest south from the saddle beside Observation Rock until the ridge stops rising and levels out at about 10,200 to 10,300 ft. You will know the place without being told, because four things sit together there and nowhere else: room for a couple of small tents on flat ground, a steep 2,000 ft drop to the Carbon Glacier immediately EAST of you, huge banded ice cliffs standing directly SOUTH above you where the Liberty Cap Glacier ends, and a clean view straight across at Liberty Ridge. From that camp the route drops WEST off the crest a few hundred feet onto the upper Mowich Glacier and crosses the bergschrund at about 9,800 ft, aiming for a bridge just left of a rock outcropping near the middle of the face. Look that crossing over from camp the evening before, because it is in plain sight from up there and its condition changes year to year. The traverse down to it passes under the run-out of the ice cliffs and is usually walked across old avalanche debris and stray boulders sitting on the ice, so it is done in the dark and fast. Two ways to know you are wrong. If you have descended onto the Mowich Glacier and kept going west or south, you are wandering out onto Mowich Face ground rather than to the schrund. And if you cross a bergschrund with no ice cliffs above and to your left, stop: from the schrund the route rises back EAST, climber's left, toward those cliffs, not away from them. The route finishes on Liberty Cap; Columbia Crest is a separate trip across the summit plateau and is not part of this climb."
+     },
+     {
+      "name": "White River, St. Elmo Pass and across the Carbon",
+      "notes": "The way in that is actually available during the ice season, because the White River road opens in late spring while Mowich Lake has had no road access since the 2025 bridge closure, and it puts you back at your own car after the Emmons descent instead of on the far side of the mountain. It is the Liberty Ridge approach as far as the Carbon: Glacier Basin, then a boot track up snow and scree to St. Elmo Pass, given variously as 7,400 or 7,600 ft, then onto the Winthrop Glacier and a roped traverse at roughly 7,200 to 7,400 ft around to Curtis Ridge, where there are good bivy sites near 7,500 ft. Next morning drop and cross the Carbon around 7,000 ft, staying clear of its seracs and north of the ice cliffs where the Russell calves onto it, then take snowfields up onto the Ptarmigan crest at about its 9,000 ft point and follow the ridge to high camp. It is longer than the Mowich walk, it crosses three glaciers, and it spends hours under actively shedding walls, so it wants to be done cold and early. One thing to fix in your head before the descent: parties coming off Liberty Cap routes routinely wander onto the busy Disappointment Cleaver at Columbia Crest instead of the faint Emmons track, which is the wrong side of the mountain if your car is at White River.",
+      "season": "Mid-May to early July",
+      "hazards": [
+       "Hours of exposure to rockfall and icefall crossing beneath Willis Wall and the Liberty Wall",
+       "Ice avalanche off the Liberty Cap Glacier's cliffs onto the traverse into the route",
+       "Crevasses on the Winthrop and the Carbon, thin bridges early and open cracks late",
+       "Committing traverse with no quick exit once past Curtis Ridge",
+       "Sustained 45 to 60 degree ice and a rock or mixed crux around 12,000 ft",
+       "Very little traffic, so no established track above the Carbon and a slow rescue",
+       "Losing the faint Emmons descent to the well-trodden Disappointment Cleaver at the summit"
+      ],
+      "baseFinding": "This is the approach on which Rainier's two Liberty Cap routes actually get confused, and the trap is a physical one: there is usually a bootpack running from St. Elmo Pass to the Carbon Glacier, and it was stamped in by parties going to LIBERTY Ridge. It is the right track as far as the Carbon and the wrong one after that. Working west you cross under Willis Wall and meet a narrow rock and snow ridge dropping straight to the glacier. That first spine is Liberty Ridge. Keep going. Past it the ground opens beneath a big pale cirque wall capped by hanging ice, and the next crest beyond that wall, roughly a mile and a half further west, is Ptarmigan Ridge. Put it the simple way and it is hard to get wrong: on Liberty Ridge the Liberty Wall is on your right, and on Ptarmigan Ridge it is on your left. Cross the Carbon below the seracs, gain the Ptarmigan crest at about its 9,000 ft point and follow the ridge up to the flat high camp at 10,200 to 10,300 ft. That flat is the base of the climb, and four things fix it together: room for a couple of small tents, a steep 2,000 ft drop to the Carbon immediately east, banded ice cliffs standing directly south above you where the Liberty Cap Glacier ends, and Liberty Ridge in full view straight across. From camp the route drops WEST off the crest onto the upper Mowich Glacier and crosses the bergschrund at about 9,800 ft, near a rock outcropping about the middle of the face — study that crossing from camp the evening before, because it is in plain sight from up there. Above the schrund the line rises back east, climber's left, toward the ice cliffs. If you have crossed a schrund with no ice cliff up and left of you, you are on the wrong part of the mountain."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 46.9336,
+      "lng": -121.8654,
+      "name": "Mowich Lake Trailhead",
+      "type": "Trailhead"
+     },
+     {
+      "lat": 46.8628,
+      "lng": -121.7746,
+      "elev": "14097",
+      "name": "Liberty Cap",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": "14097"
+     },
+     {
+      "lat": 46.8528857,
+      "lng": -121.7603744,
+      "elev": "14389",
+      "name": "Columbia Crest (historic high point; overtaken by the crater's southwest rim per an Aug. 2024 GPS survey as the icecap thins)",
+      "type": "landmark",
+      "distMi": null,
+      "elevFt": "14389"
+     },
+     {
+      "lat": 46.87017,
+      "lng": -121.73333,
+      "elev": 9400,
+      "name": "Camp Schurman (Emmons-Winthrop descent)",
+      "type": "Campsite",
+      "distMi": null,
+      "elevFt": 9400
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_liberty_cap_liberty_ridge_finish",
+   "before": {
+    "overview": "Liberty Ridge is the sharp buttress splitting Rainier's glaciated north face — the infamous Willis Wall to climber's left, the Liberty Wall to the right — and is widely regarded as the most striking, and most dangerous, of the mountain's standard routes. First climbed in 1935 by Ome Daiber, Arnie Campbell, and Jim Borrow, it gains roughly 7,000 vertical feet of sustained 30-60° snow and ice from the Carbon Glacier to the summit plateau and is one of Steck & Roper's '50 Classic Climbs of North America.' It tops out on Liberty Cap (14,097 ft; an August 2025 GPS survey puts it closer to 14,095 ft as the summit icecap keeps thinning), the northernmost of Rainier's three summit points. Columbia Crest, long treated as the mountain's true high point, has itself been overtaken: a GPS survey on August 28, 2024 found a rockier point on the crater's southwest rim now stands higher (~14,400 ft) than the faster-thinning Columbia Crest icecap (~14,389 ft)."
+   }
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "before": {
+    "approach": "The X Couloir is approached from the south via the Middle Fork Nooksack River Road (FR-38), not from Heliotrope Ridge (that trailhead serves Lincoln's separate NW Face/Wilkes-Booth line). Drive FR-38 toward its mile-12.5 switchback and start hiking/bushwhacking the old decommissioned road around Pt. 4481 toward Rankin Creek — snow travel (often by bike or snowshoe on the lower stretch) leads past East Rankin Lake (~5,120 ft) and up into the basin to a sheltered camp at treeline around 6,100 ft, near the highest trees in the basin below Seward Peak. From camp, an alpine start gets the team into the southwest basin and across the bergschrund crux while it's still cold and firm, climbing roughly 1,500 ft of 30-40° snow and a steep serac step in the X Couloir to the 9,085 ft summit. Total approach is on the order of 7 miles and 3,350 ft of gain to the basin camp. IMPORTANT — access note: FR-38 (Middle Fork Nooksack River Road), damaged in the December 2025 floods, has been closed to vehicles at milepost 7 by a washout since 27 July 2026, with no end date given on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026, and a separate seasonal gate at Wallace Creek (~mile 10) closes the road December 1-June 15 for elk calving; confirm current road status with the Mount Baker Ranger District (Glacier Public Service Center) before a trip, since the drivable road-end — and therefore the length of the approach — varies year to year.",
+    "descent_text": "Most parties reverse the ascent line, downclimbing and rappelling the same southwest gully/couloir system (the X Couloir) back down into the southwest basin below the face. This is a real rappelling descent, not a walk-off: the most detailed documented descent (a repeat/'2nd descent' trip report) describes 10 double-rope rappels — 4 off pickets placed by the descending party, 1 off a sling around a rock, and 5 off pre-existing slings left around rock horns lower in the gully. Bring a rope long enough to rappel on doubled strands plus spare cord/webbing for building or backing up anchors, since fixed tat should never be trusted blindly. Anchors are a mix of natural (slung rock horns and blocks) and improvised (snow pickets), not bolted — expect to build some yourself. The exact rappel count is conditions-dependent: earlier-season parties with more continuous snow have gotten down with as few as 3 rappels off deadman/picket anchors and simul-downclimbing between them, while later-season, rockier conditions push the count up toward the 10-rappel figure above; budget for the higher number and extra anchor material. The gully funnels rockfall and is exposed to spindrift/small slides after storms, so descend early and move efficiently through the narrower constrictions. Once off the couloir, re-rope for the bergschrund and any crevassed ground on the way down to the treeline camp, then reverse the approach - down past East Rankin Lake and around Pt. 4481 on the old decommissioned road - back to FR-38. Do not descend north toward Heliotrope Ridge. That trailhead serves Lincoln's separate northwest-face line, and taking it puts you on the opposite side of the mountain with a glacier between you and your camp.",
+    "approach_variants": [
+     {
+      "name": "Middle Fork Nooksack Road (FR-38) and Rankin Creek to the treeline camp, then the southwest basin",
+      "notes": "IMPORTANT AND FIRST: the X Couloir is approached from the SOUTH via the Middle Fork Nooksack River Road (FR-38), not from Heliotrope Ridge. Heliotrope serves Lincoln's separate northwest-face line. Getting this wrong puts you on the opposite side of the mountain with a glacier between you and your route.\n\nDrive FR-38 toward its mile-12.5 switchback and start walking the old decommissioned road around Point 4481 toward Rankin Creek. Snow travel — often by bike or snowshoe on the lower stretch — leads past East Rankin Lake near 5,120 ft and up into the basin to a sheltered camp at treeline around 6,100 ft, by the highest trees in the basin below Seward Peak. Roughly seven miles and 3,350 ft of gain to camp.\n\nACCESS: as of mid-2026 FR-38 is closed at milepost 7 by a washout from the December 2025 floods, with no confirmed repair timeline, and a separate gate at Wallace Creek near mile 10 closes the road 1 December to 15 June for elk calving. Confirm the drivable road-end with the Mount Baker Ranger District before the trip; the length of the approach varies year to year.",
+      "season": "Roughly Apr-Jun. A spring snow climb; essentially never done in summer, because what makes it climbable is continuous snow rather than the rubble underneath",
+      "hazards": [
+       "A bergschrund crossing that must be done cold and early",
+       "1,500 ft of 30-40 degree snow with a steep serac step, all of it above a long runout",
+       "FR-38 flood damage with no repair timeline, plus an elk-calving gate closed 1 Dec - 15 Jun",
+       "A gully that funnels rockfall and spindrift after storms",
+       "A descent that is a real rappel sequence off pickets and slung horns, not a walk-off"
+      ],
+      "baseFinding": "THE HIGHEST TREES IN THE BASIN ARE THE CAMP, AND THE CAMP IS THE LAST THING YOU CAN NAVIGATE TO. Above treeline the southwest side of Lincoln is open snow and there is nothing to hold on to in cloud. So the arrival marker is vegetative rather than topographic: climb until the trees stop, and camp at the last of them, below Seward Peak, around 6,100 ft.\n\nTHE BERGSCHRUND IS THE BASE OF THE CLIMB. From camp an alpine start takes you into the southwest basin and to the schrund while the snow is still cold and firm. Above it is roughly 1,500 ft of 30-40 degree snow with a steep serac step in it.\n\nDO NOT EXPECT ONE CLEAN COULOIR — THIS IS THE TRAP THE NAME SETS. Parties who have climbed and skied it describe it as less a couloir and more a series of steep chutes and faces, and the line drops from the high point to the highest notch, then down a narrow chute, and trends right out of view. So 'find the obvious couloir' is the wrong instruction and will have you standing in the basin looking for something that is not there. Work from the notch downward: the correct line is the one that connects to the HIGHEST notch on the skyline, and it is narrow where it leaves the basin.\n\nTHE SERAC STEP IS THE CONFIRMATION. Somewhere in that 1,500 ft you meet a steep serac step. A line with no ice step in it is not the X Couloir.\n\nAND THE ASPECT SETTLES THE COARSE ERROR: this route faces SOUTHWEST and you reach it from Rankin Creek. If you are standing on the Coleman Glacier looking at a shaded north-facing cirque, you have come in from Heliotrope and you are under the other route on this mountain."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "before": {
+    "rock_grade": "5.4"
+   }
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Season window"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "before": {
+    "season": "Late Jul-Aug",
+    "approach_variants": [
+     {
+      "name": "Crescent Creek Basin to the Eye Col",
+      "notes": "From the basin camp below Mount Terror around 6,050 ft, head west and drop about 300 ft below the moraine to the head of Crescent Creek. Traverse north through Crescent Creek Basin, keeping the party together through the scree to limit rockfall and hugging the cliffs, then make a rising traverse beneath the Eye Col gully that carries you past an adjacent buttress rather than straight up at it. The notch at about 7,400 ft is reached by continuing PAST a gully that would otherwise force a rappel — that decoy gully is the thing to walk by. The last stretch to the col is scree you walk up rather than rock you climb.",
+      "season": "Late Jul-Sep",
+      "hazards": [
+       "Constantly falling rock in the Eye Col gully",
+       "Steep, loose gully climbing with genuine route-finding uncertainty on this south side",
+       "Disorienting in cloud or low light — the south side carries comparatively sparse route information",
+       "A multi-day committing approach over The Barrier before any of this begins"
+      ],
+      "baseFinding": "CHOCKSTONES ARE THE GATE, AND THE VIEW THROUGH THE COL IS THE CONFIRMATION. Going up toward the Eye Col, the small chockstones low in the gully present no real problem and are scrambled past; higher, the LARGER chockstones put the ground into fifth class, and that size change is where the rope comes out. If you are still stepping over rubble you are low; if you are stemming past a jammed block you are at the transition. The Eye Col itself is the notch between East and West Twin Needle at about 7,400 ft, gained on scree from the south, and it announces itself: from it you get your first sight through the gap to the Northern Pickets, and East Twin Needle stands directly above it. Know which line you intend before you leave the col — the Eye Col sits on the WEST side of East Twin Needle, while the peak's hard, tremendously exposed east arete is on the opposite flank and is reached along the ridge from the east, not from here."
+     }
+    ],
+    "climate": {
+     "fall": "Shortening days and increasing storm frequency by October; early snow can close out the route.",
+     "spring": "Heavy residual snowpack on approach gullies and the Barrier crossing makes spring ascents of the technical line impractical.",
+     "summer": "Warmest, driest window (roughly late July–September) and the only realistic climbing season for this route; even then, multi-day settled weather is not guaranteed.",
+     "winter": "Not a winter objective; deep snow and avalanche hazard on all approaches.",
+     "typical": "Remote alpine climate; midsummer optimum.",
+     "bySeason": {
+      "fall": "Cold and stormy",
+      "spring": "Snowbound",
+      "summer": "Best season for climbing, but afternoon thunderstorms are common in the North Cascades interior; water sources above ~5,400 ft (Crescent Creek Basin camps) can dry up by late August.",
+      "winter": "Severe; rarely attempted"
+     },
+     "forecastZone": "West Slopes North Cascades"
+    }
+   }
+  }
+ ]
+}

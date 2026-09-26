@@ -1,0 +1,1795 @@
+{
+ "batches": [
+  "b336.json",
+  "b337.json",
+  "b338.json",
+  "b339.json",
+  "b340.json",
+  "b341.json",
+  "b342.json"
+ ],
+ "routes_read": 26,
+ "routes": [
+  {
+   "id": "wa_liberty_bell_nw_face",
+   "name": "Northwest Face",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Break-off point elevation vs the notch",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].elev",
+       "says": "7300"
+      },
+      {
+       "field": "waypoints[4].name",
+       "says": "Break-off below the Liberty Bell-Concord notch"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "a few hundred feet below the notch"
+      },
+      {
+       "field": "descent_text",
+       "says": "Liberty Bell-Concord notch (~7,300 ft)"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "7350"
+      }
+     ],
+     "why": "The break-off described as a few hundred feet below the notch is given the notch's own elevation, and the bench above it is higher than the notch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "about 1 mi west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.4"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "2.7"
+      }
+     ],
+     "why": "TECHNICAL STATS distance (dist_km) reads as one-way while the header/itinerary give round-trip miles for the same trip.",
+     "internal_resolution": "dist_km matches the one-way summit waypoint distance; itinerary miles are round trip",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_rapple_grapple",
+   "name": "Rapple Grapple",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "A short west-face line at 4 pitches"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Four pitches at 5.8"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "3 rows (P1-P3)"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "3 pitches of quality 5.7 cracks"
+      }
+     ],
+     "why": "The pitch column, itinerary and approach say 4 pitches; ROUTE BREAKDOWN lists 3 and a pro tip says 3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "8"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Blue Lakes Trailhead, 1 mile west of Washington Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "Three different distances from the pass for the same trailhead appear on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4.02"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2"
+      }
+     ],
+     "why": "TECHNICAL STATS distance (dist_km) reads as one-way while the header/itinerary give round-trip miles for the same trip.",
+     "internal_resolution": "dist_km matches the one-way summit waypoint distance; itinerary miles are round trip",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "name": "Serpentine Crack",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Largest cam / wide crux protection",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "One #4 cam for the bulge on the second pitch"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "a #3 Camalot placed at eye level protects a wide, physical section"
+      },
+      {
+       "field": "pitch_detail[1].anchor",
+       "says": "Gear (cams to #3)"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Single to double rack through hand size"
+      }
+     ],
+     "why": "The gear list says a #4 is needed on pitch 2, while pitch 2's own notes and the rack say the wide crux is protected by a #3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "about 1 mi west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_crack_free",
+   "name": "Liberty Crack (Free)",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "3:30-4:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "6:00-7:00 PM"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 10-12 hrs car-to-car"
+      }
+     ],
+     "why": "The schedule runs from 3:30-4:00 AM to 6:00-7:00 PM (14-15.5 hrs), not the 10.5 hrs given as the day's total.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux pitch 2 grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.13b"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "fun 5.11- corner climbing ... stick 5.12- moves to a small stance"
+      },
+      {
+       "field": "beta",
+       "says": "the crux pitch 2 'Lithuanian Lip' (5.13b)"
+      }
+     ],
+     "why": "Pitch 2 is graded 5.13b but its own description tops out at 5.12- moves.",
+     "internal_resolution": "grade, rock_grade, beta, hazards and partner_requirements all say 5.13b; the pitch note is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "2:30 PM (Top out)"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier; the schedule's summit time shows the real value",
+     "needs_research": false
+    },
+    {
+     "fact": "Bolts on pitches 7-8",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[6].notes",
+       "says": "a single shiny bolt"
+      },
+      {
+       "field": "pitch_detail[6].bolts",
+       "says": "2"
+      },
+      {
+       "field": "pitch_detail[7].notes",
+       "says": "a long-runner bolt"
+      },
+      {
+       "field": "pitch_detail[7].bolts",
+       "says": "0"
+      }
+     ],
+     "why": "Pitch bolt counts disagree with the bolts named in the same rows' notes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Blue Lakes Trailhead, 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4.02"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.2"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2"
+      }
+     ],
+     "why": "TECHNICAL STATS distance (dist_km) reads as one-way while the header/itinerary give round-trip miles for the same trip.",
+     "internal_resolution": "dist_km matches the one-way summit waypoint distance; itinerary miles are round trip",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "name": "The Independence Route",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Approach line in the waypoints",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve ... talus field directly below the East Face"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "just before the climbers' path splits off the Blue Lake Trail"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "Leave the maintained Blue Lake Trail here"
+      },
+      {
+       "field": "waypoints[3].name",
+       "says": "West face base / sloping bench"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "Scramble left off the approach gully onto Liberty Bell's broad sloping west-side bench"
+      }
+     ],
+     "why": "The waypoints walk a west-side Blue Lake Trail approach to the west face, but the route is an East Face line approached from the hairpin pullout.",
+     "internal_resolution": "approach, approach_variants, approach_logistics, road, itinerary and waypoints[0] all use the hairpin/East Face approach; waypoints[1]-[4] are copied from a west-side route",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent: rappel the route or not",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].note",
+       "says": "descend via the standard Beckey Route rappels/downclimb to the notch, not back down the route"
+      },
+      {
+       "field": "descent",
+       "says": "Rappel the route from the top of pitch 8 with a single 70 m rope, or continue to the summit"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "fixed anchors let parties rappel from the top of pitch 8 back down the East Face to their packs on a single 70 m rope"
+      }
+     ],
+     "why": "The summit waypoint says not to descend the route, while the descent field offers rappelling it from pitch 8 as an option.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "4:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "5:30-7:00 PM"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 10-11 hrs car-to-car"
+      }
+     ],
+     "why": "The schedule spans 13.5-15 hrs while the day's hours and total note say 10-11.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "3:30 PM (Top out)"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier; the schedule's summit time shows the real value",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Blue Lakes Trailhead, 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4.02"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "2.7"
+      }
+     ],
+     "why": "TECHNICAL STATS distance (dist_km) reads as one-way while the header/itinerary give round-trip miles for the same trip.",
+     "internal_resolution": "dist_km matches the one-way summit waypoint distance; itinerary miles are round trip",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_beckey_route",
+   "name": "Beckey Route (Southwest Face)",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "11:30 AM (Summit)"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier; the schedule's summit time shows the real value",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "about 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5"
+      }
+     ],
+     "why": "TECHNICAL STATS distance (dist_km) reads as one-way while the header/itinerary give round-trip miles for the same trip.",
+     "internal_resolution": "dist_km matches the one-way summit waypoint distance; itinerary miles are round trip",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_and_injustice_for_all",
+   "name": "Liberty and Injustice for All",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Hardest pitch grade vs headline grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.12b"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.12b"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "5.12-"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.12-"
+      },
+      {
+       "field": "beta",
+       "says": "two short 5.12- cruxes"
+      }
+     ],
+     "why": "The headline grade is 5.12b but no pitch or prose on the route is harder than 5.12-.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Blue Lakes Trailhead, 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_3",
+   "name": "East Face",
+   "area": "Minuteman Spire",
+   "contradictions": [
+    {
+     "fact": "Trailhead coordinates",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Pond pullout east of Washington Pass (SR-20)"
+      },
+      {
+       "field": "waypoints[0].lat/lng",
+       "says": "48.518965, -120.67436"
+      },
+      {
+       "field": "approach_logistics.trailheadLat/Lng",
+       "says": "48.518965, -120.67436"
+      }
+     ],
+     "why": "The east-side pond pullout is pinned at the Blue Lake Trailhead's coordinates (the same pair other routes use for Blue Lake, west of the pass), so the map puts the car on the wrong side of the pass.",
+     "internal_resolution": "Other rows put the hairpin/pond pullout at 48.51454, -120.64332; this pin is Blue Lake's",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking spot / distance east of the pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Park beside the small pond on SR-20 a few hundred yards east of Washington Pass"
+      },
+      {
+       "field": "road.name",
+       "says": "Washington Pass Overlook pullout, SR-20"
+      },
+      {
+       "field": "road.status",
+       "says": "park at the informal pullout on the north shoulder near Washington Pass Overlook (~1.2 mi east of Washington Pass)"
+      }
+     ],
+     "why": "GETTING THERE names the Overlook pullout about 1.2 mi east, while the approach and waypoint name the pond pullout a few hundred yards east.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_west_face",
+   "name": "The West Face",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "about 1.5 miles west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "name": "Early Winter Couloir",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Fixed rappel stations on the descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "watch_out",
+       "says": "No established rappel stations on descent — inspect any fixed anchors thoroughly"
+      },
+      {
+       "field": "descent",
+       "says": "bolted anchors lead down with about 4 rappels"
+      }
+     ],
+     "why": "KNOWN HAZARDS says the descent has no established rappel stations, while the descent is the bolted West Couloir line; only a retreat down the couloir lacks them.",
+     "internal_resolution": "descent, descent_text, rappel_detail, hazards[0] and pro_tips agree that only the couloir itself lacks anchors; watch_out is unqualified",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "name": "Flycatcher Buttress",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "The season here runs about June through September"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jun-Sep"
+      }
+     ],
+     "why": "The season chip says July-September while the trailhead card and approach say June-September.",
+     "internal_resolution": "season, best_season and seasonal_guidance (June marginal) point to Jul-Sep",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_chockstone_route",
+   "name": "Chockstone Route",
+   "area": "North Early Winters Spire",
+   "contradictions": []
+  },
+  {
+   "id": "wa_labor_pains",
+   "name": "Labor Pains",
+   "area": "North Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Summit distance from the trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].distMi",
+       "says": "1"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "the Blue Lake Trail and the climbers' path lead into the basin below the Liberty Bell Group and past South Early Winters Spire"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "via the Blue Lake Trail to the climbers' path"
+      }
+     ],
+     "why": "The summit is placed 1 mi from the Blue Lake Trailhead, but the approach first walks about 1.5 mi of Blue Lake Trail before the climbers' path.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "name": "Northwest Corner (Boving-Pollack Route)",
+   "area": "North Early Winters Spire",
+   "contradictions": []
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "name": "Southwest Rib",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "11:30 AM (Top out, summit)"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier; the schedule's summit time shows the real value",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead / parking",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Blue Lake Trailhead / SR-20 'hairpin' pullout"
+      },
+      {
+       "field": "road.status",
+       "says": "plus a roadside pullout at a hairpin bend below Washington Pass"
+      },
+      {
+       "field": "approach",
+       "says": "From Blue Lake Trailhead"
+      }
+     ],
+     "why": "GETTING THERE offers the east-side hairpin pullout, but every approach field for this west-side route starts from Blue Lake.",
+     "internal_resolution": "approach, approach_variants, waypoints and itinerary all use the Blue Lake Trailhead",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "name": "East Buttress",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Blue Lake Trailhead (SR-20)"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Blue Lake Trailhead on SR-20 ... via the Blue Lake Trail to the climbers' path"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Blue Lake Trailhead, Hwy 20"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Park at the dirt pullout at the hairpin turn on SR-20 ... not at the Blue Lake Trailhead, which serves the west side"
+      },
+      {
+       "field": "approach",
+       "says": "From the SR-20 hairpin pullout"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].label",
+       "says": "Leave the SR-20 hairpin pullout"
+      }
+     ],
+     "why": "The TRAILHEAD card and first waypoint send the party to Blue Lake, while the approach, approach variant and itinerary start at the hairpin and say Blue Lake is the wrong side.",
+     "internal_resolution": "approach, approach_variants, road.name, itinerary and partner_requirements all use the hairpin",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "~2 hr approach."
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 2 hr approach"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "1-1.5"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1–1.5 hours from the SR-20 hairpin pullout"
+      }
+     ],
+     "why": "The itinerary allows about 2 hrs for the approach; the approach variant and partner card say 1-1.5 hrs.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "1:00 PM (Summit / begin descent)"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier; the schedule's summit time shows the real value",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "about 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_roofs",
+   "name": "Boving Roofs",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "6.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "6.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Cam sizes for the roofs",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "extra small cams for roof cracks"
+      },
+      {
+       "field": "gear[1]",
+       "says": "Doubles of medium-to-large cams (0.5-3 in) for the roofs"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Roofs protect well with medium-to-large cams"
+      }
+     ],
+     "why": "The rope note calls for extra small cams on the roofs, while the gear list and pro notes call for medium-to-large cams.",
+     "internal_resolution": "gear, pro_needs, detailed_rack, rack and pitch_detail[1] all say 0.5-3 in medium-to-large",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "name": "Dolphin Chimney",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "June–September"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September, dry rock."
+      }
+     ],
+     "why": "The best window starts in June, before the season chip's July start.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "8.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mojo_rising",
+   "name": "Mojo Rising",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late June–September"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September."
+      }
+     ],
+     "why": "The best window starts in late June, before the season chip's July start.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_passenger",
+   "name": "Passenger",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "5:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[5].time",
+       "says": "6:30 PM"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 10.5-11 hrs car-to-car"
+      }
+     ],
+     "why": "The schedule spans 13.5 hrs while the day's hours and total note say 10.5-11.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "~2 hr approach to the south face."
+      },
+      {
+       "field": "approach",
+       "says": "about an hour in ... about 10 minutes of scrambling/traversing"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1–1.5 hours from the Blue Lake trailhead to the base"
+      }
+     ],
+     "why": "The itinerary allows about 2 hrs to the base; the approach and partner card give about 1-1.5 hrs.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "2:00 PM (Top out)"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier; the schedule's summit time shows the real value",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "name": "The Hitchhiker",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Free grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.11-"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "5.11-"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Goes free at about 5.11b, or at 5.10d with a few short aid sections"
+      }
+     ],
+     "why": "The headline and crux pitch are 5.11- while the pro tip says it goes free at 5.11b.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel count on the descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "3"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "descent is a downclimb plus 2 rappels down South Arete"
+      },
+      {
+       "field": "descent",
+       "says": "make 3 single-rope rappels"
+      }
+     ],
+     "why": "The partner card says 2 rappels; every descent field says 3.",
+     "internal_resolution": "rappels, descent, descent_text and rappel_detail agree on 3",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late June–September"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September once the south face is dry."
+      }
+     ],
+     "why": "The best window starts in late June, before the season chip's July start.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "11"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_southern_man",
+   "name": "Southern Man",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Pitches shared with the Direct East Buttress",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[3]",
+       "says": "the route shares its first 4-5 pitches with the Direct East Buttress"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "shares its first 4-5 pitches with Direct East Buttress"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Shared lower pitches (1–2) with Direct East Buttress"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Where the Direct East Buttress heads up its bolt ladder, Southern Man breaks out left instead"
+      },
+      {
+       "field": "approach",
+       "says": "splits off around halfway up ... for its final 5 pitches (9 total)"
+      }
+     ],
+     "why": "The number of shared pitches is given as 1-2, 3 (ROUTE BREAKDOWN leaves the shared line on pitch 4) and 4-5.",
+     "internal_resolution": "pitch_detail shows P1-P3 shared and the split on P4; approach's 'final 5 pitches' also implies 4 before the split",
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "11"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "name": "Northwest Face (Boving-Pollock)",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Pitch 4 grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.8"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Easier, sometimes-unroped ground"
+      },
+      {
+       "field": "beta",
+       "says": "P4 is a scramble approach to the overhangs"
+      }
+     ],
+     "why": "Pitch 4 is graded 5.8, a grade no party would climb unroped, while its notes and the beta call it a scramble.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "8.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "name": "Free Mojo",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Aspect of the face",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "W"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "the route's shaded, north-facing aspect"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "shaded until ~1pm (north-facing)"
+      },
+      {
+       "field": "overview",
+       "says": "this part of the Northwest Face"
+      },
+      {
+       "field": "face",
+       "says": "South Arete / West Face area"
+      }
+     ],
+     "why": "ASPECT & SUN says west while the hazards and seasonal text call it north-facing and the face field says south/west.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Headline grade vs crux pitch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.11-"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.11"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.11"
+      },
+      {
+       "field": "beta",
+       "says": "P2 (mid-11, ~82 ft)"
+      }
+     ],
+     "why": "The grade pill says 5.11- while the crux pitch is described as mid-5.11.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "June–September"
+      }
+     ],
+     "why": "The best window starts in June, before the season chip's July start.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_arete",
+   "name": "South Arete",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Approach time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "~1.75 hr approach."
+      },
+      {
+       "field": "approach",
+       "says": "for a total of about 2.5 hours and up to ~2,000 ft of gain from the car"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "2-2.5"
+      }
+     ],
+     "why": "The itinerary allows 1.75 hrs to the base; the approach and approach variant give 2-2.5 hrs.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "Light rack to 2 inches"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "light set 0.3-2in"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "a single set of cams to about 3 inches"
+      }
+     ],
+     "why": "The rack text goes to 3 inches while the gear list and sling rack stop at 2 inches.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "6"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "6"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "10:00 AM (Summit)"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier; the schedule's summit time shows the real value",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed at two different distances from the pass on the Plan tab.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "name": "Direct East Buttress",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Approach time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "~2 hr approach."
+      },
+      {
+       "field": "approach",
+       "says": "Roughly 1.5 hours car-to-base"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "1-1.5"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1–1.5 hours from the SR-20 hairpin pullout"
+      }
+     ],
+     "why": "The itinerary allows 2 hrs to the base; the other fields give 1-1.5 hrs.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of 5.11 pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "two crux pitches of 5.11 and one 5.10 connector"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.11a/A0"
+      },
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "5.10-"
+      },
+      {
+       "field": "pitch_detail[5].grade",
+       "says": "5.10+/A0"
+      }
+     ],
+     "why": "The beta says two 5.11 pitches but ROUTE BREAKDOWN has only one (P4) and two 5.10 pitches.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bolt-ladder bolt count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[3].bolts",
+       "says": "2"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "a ladder of roughly 14 closely-spaced bolts"
+      },
+      {
+       "field": "pitch_detail[5].bolts",
+       "says": "2"
+      },
+      {
+       "field": "pitch_detail[5].notes",
+       "says": "a second bolt ladder"
+      }
+     ],
+     "why": "Bolt counts of 2 on the two bolt-ladder pitches contradict the ladders their own notes describe.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Time to summit vs car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "1:30 PM (Summit)"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the time to the summit as the whole car-to-car total, so the Planner would count the descent and walk-out twice.",
+     "internal_resolution": "timing.totalHrs / itinerary hours are the car-to-car total; summitTimeHrs holds that same total and is the outlier; the schedule's summit time shows the real value",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

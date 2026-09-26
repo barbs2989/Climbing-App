@@ -1,0 +1,31 @@
+{"file": "s047.json", "results": [
+ {"id": "wa_mount_rainier_sunset_ridge", "fact": "Rock difficulty", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Retry pass: the 1938 first-ascent account says the rocky ridge presented no climbing difficulties except one short traverse of rotten lava that needed a rappel, with no class given; a 2025 party describes fourth-class choss; one route summary says rock bands go at 4th to low 5th class; only one source gives 5.5. No two independent sources give the same class. Would settle with a second published YDS rating for the ridge rock (e.g. the Cascade Alpine Guide entry).",
+  "sources": ["https://publications.americanalpineclub.org/articles/12193931000/A-New-Route-Up-Rainiers-West-Side", "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/", "https://www.mountainproject.com/route/112479245/sunset-ridge", "https://mazamas.org/activity/283/"],
+  "patches": []},
+ {"id": "wa_mount_rainier_sunset_ridge", "fact": "Crux of the route", "verdict": "fixed", "correct_value": "The upper Mowich Face (roughly 1,000-1,300 ft of 55-60 degree snow/ice) is the sustained steep crux; the choss-wall/notch transition on the ridge is a condition-dependent obstacle that can stop parties in dry years, not a fixed crux.",
+  "evidence": "The 1938 first-ascent account describes a 60-degree slope rising about 1,000 ft as the demanding steep ground, and a short rotten-lava traverse on the ridge that needed a rappel. The park climbing rangers' conditions report gives about 1,300 ft of 55-60 degree snow on the upper Mowich Face. A 2025 party was stopped at the knife-edge notch because low snow left a choss wall. The sources agree the notch transition depends on snow cover, and differ on the face's length (1,000 vs 1,300 ft), so the itinerary's categorical 'the crux is' claim is softened and the length stated as a range.",
+  "sources": ["https://publications.americanalpineclub.org/articles/12193931000/A-New-Route-Up-Rainiers-West-Side", "http://mountrainierclimbing.blogspot.com/2018/05/sunset-ridge-conditions.html", "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/"],
+  "patches": [
+   {"id": "wa_mount_rainier_sunset_ridge", "fact": "Crux of the route", "op": "replace_text", "column": "itinerary", "path": ["days", 2, "note"], "find": "the crux is a thin choss-wall/gully transition sometimes needing an improvised belay", "replace": "in a dry year a thin choss-wall/gully transition on the ridge can need an improvised belay or stop the climb"},
+   {"id": "wa_mount_rainier_sunset_ridge", "fact": "Crux of the route", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 2, "note"], "find": "the crux is a thin choss-wall/gully transition sometimes needing an improvised belay", "replace": "in a dry year a thin choss-wall/gully transition on the ridge can need an improvised belay or stop the climb"},
+   {"id": "wa_mount_rainier_sunset_ridge", "fact": "Crux of the route", "op": "replace_text", "column": "itinerary", "path": ["days", 2, "schedule", 1, "label"], "find": "Crux gully/choss-wall transition", "replace": "Gully/choss-wall transition"},
+   {"id": "wa_mount_rainier_sunset_ridge", "fact": "Crux of the route", "op": "replace_text", "column": "pitch_detail", "path": [3, "notes"], "find": "front-point roughly 1,300 ft of firm 55–60° snow", "replace": "front-point roughly 1,000–1,300 ft of firm 55–60° snow"},
+   {"id": "wa_mount_rainier_sunset_ridge", "fact": "Crux of the route", "op": "replace_text", "column": "approach_variants", "path": [0, "baseFinding"], "find": "roughly 1,000 ft of about 60-degree neve or ice", "replace": "roughly 1,000–1,300 ft of 55- to 60-degree neve or ice"}
+  ]},
+ {"id": "wa_mount_rainier_willis_wall", "fact": "Season window", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Retry pass: a 2006 party (June 29-July 1) wrote that existing route information came from parties on the face in winter or early spring and that their ascent was unusually late; the AAJ records a first winter ascent in 1970; the documented early ascents (1961 West Rib solo) were in June. No two sources name the same best window, so 'winter/early spring' vs 'late spring' cannot be chosen. Would settle with a route description that states the recommended months.",
+  "sources": ["https://cascadeclimber.com/willis_wall.htm", "http://publications.americanalpineclub.org/articles/12197128800/Mount-Raniers-Willis-Wall-in-Winter", "https://en.wikipedia.org/wiki/Willis_Wall"],
+  "patches": []},
+ {"id": "wa_mount_rainier_willis_wall", "fact": "Technical grade of the wall", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "Already resolved: the current pitch_detail grades read 'Glacier, crevassed', 'Snow, 45°, rock bands' and 'Mixed, 50–60° ice'; no M5+ rating remains on the route breakdown to conflict with the 5.5 / AI3 chips.",
+  "sources": [], "patches": []},
+ {"id": "wa_mount_rainier_willis_wall", "fact": "Total distance", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Retry pass: sources give White River Campground to Glacier Basin as 3.5 mi and a further climb to St Elmo Pass (~7,400 ft) then about a mile across the Winthrop to Curtis Ridge, which suggests the one-way approach is well under the stored 33.8 km (21 mi), but no source states a one-way total for this route, and dist_km may not be changed by arithmetic. Would settle with a source stating the White River to Curtis Ridge/base-of-wall one-way mileage.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/glacier-basin-mount-rainier", "https://www.mountainproject.com/route/106459197/liberty-ridge"],
+  "patches": []},
+ {"id": "wa_mount_rainier_nisqually_icefall", "fact": "Rope length", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Retry pass: only the 1948 first-ascent account gives a rope length (about 120 ft / 37 m); no modern route description for this rarely climbed line states a recommended rope, so neither the 45 m chip nor the note's 50-60 m can be confirmed. Would settle with a modern route description or trip report stating the rope carried.",
+  "sources": ["https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall"],
+  "patches": []}
+]}

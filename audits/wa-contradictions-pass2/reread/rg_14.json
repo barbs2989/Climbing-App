@@ -1,0 +1,868 @@
+{
+ "batches": [
+  "b399.json",
+  "b400.json",
+  "b401.json",
+  "b402.json",
+  "b403.json",
+  "b404.json",
+  "b405.json"
+ ],
+ "routes_read": 18,
+ "routes": [
+  {
+   "id": "wa_mount_constance_west_arete",
+   "name": "West Arête",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "11.1"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "6.5 + 6 + 6.5 (= 19 mi)"
+      },
+      {
+       "field": "approach",
+       "says": "a road-walk/bike of roughly 5 miles ... gaining roughly 3,300-3,400 ft in under 2.2 miles"
+      }
+     ],
+     "why": "dist_km (6.9 mi) is shorter than even the one-way road-walk plus trail to Lake Constance (~7.2 mi), while the header shows the 19-mi itinerary total.",
+     "internal_resolution": "The itinerary (19 mi RT) and approach prose (~5 mi road + 2.2 mi trail + ~1.5 mi canyon each way) agree; dist_km 11.1 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Camp description describes the South Chute route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "From camp the route runs north into Avalanche Canyon and then up the chute toward the south ridge notch, so a summit day from here is short by Olympic standards."
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "13"
+      },
+      {
+       "field": "turnaround",
+       "says": "Set a firm turnaround given the long day"
+      }
+     ],
+     "why": "The main camp card describes the South Chute line and a short summit day, but this route goes to Crystal Pass and the West Arête on a 13-hour day.",
+     "internal_resolution": "Itinerary, timing and turnaround all describe a long ~13 h summit day via Crystal Pass; the bivy notes are copied from the South Chute route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux pitch and its grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Reach the crux pitch on the arête proper—traverse up and right on a groove (5.4), clip existing pitons"
+      },
+      {
+       "field": "pitch_detail[2]",
+       "says": "grade 5.4, 'Traverse up and right on a groove clipping into existing pitons', crux:false"
+      },
+      {
+       "field": "pitch_detail[3]",
+       "says": "grade 5.5, crux:true"
+      }
+     ],
+     "why": "Beta calls the 5.4 groove pitch the crux while pitch_detail marks it non-crux and puts a 5.5 crux on the next pitch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Start time on the arête",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "begin a rising traverse on the right side of the ridge crest at ~10:30 AM (typical timing)"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2]",
+       "says": "9:30 AM Start climbing"
+      }
+     ],
+     "why": "Two different climbing start times are given for the same day.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Lake Constance waypoint distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].distMi",
+       "says": "2 (Lake Constance)"
+      },
+      {
+       "field": "approach",
+       "says": "a road-walk/bike of roughly 5 miles up the closed, washed-out Dosewallips River Road ... then a steep ... boot path ... in under 2.2 miles"
+      }
+     ],
+     "why": "The lake is shown 2 mi along a route whose trailhead waypoint is the road washout ~5 mi further back.",
+     "internal_resolution": "Approach and itinerary (6.5 mi on day 1) put the lake ~7 mi from the washout trailhead; distMi 2 is measured from the climbers' trail, not the listed trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking fee at the Dosewallips washout",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass / park entrance as applicable to trailhead"
+      }
+     ],
+     "why": "The same ACCESS card says an Olympic NP entrance fee applies and that a Northwest Forest Pass may be the requirement at this trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "name": "North Chute",
+   "area": "Mount Constance",
+   "contradictions": [
+    {
+     "fact": "Which traverse the North Chute line crosses",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach_variants[0].hazards[2]",
+       "says": "It commits you to the Terrible Traverse rather than the Finger Traverse"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If you top out and find a finger crack, you took the South Chute; if you top out and find a snow traverse over a cliff, you took this one."
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "here the South Chute route joins from its scree gully below"
+      },
+      {
+       "field": "pitch_detail[3].pitch",
+       "says": "Finger Traverse"
+      },
+      {
+       "field": "pitch_detail[5].notes",
+       "says": "Past the Finger Traverse, lose some height into a half-bowl"
+      },
+      {
+       "field": "overview",
+       "says": "rejoining the standard route below the ridge notch, before the Finger Traverse and Terrible Traverse"
+      }
+     ],
+     "why": "The approach variant says this chute leads to the Terrible Traverse and that finding the Finger Traverse means you are on the South Chute, but the route breakdown sends this line across the Finger Traverse, and has the South Chute joining at the top of this chute.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "about 5 miles to the unsigned Lake Constance climbers' trail, then ... roughly 3,300 ft in under 2.2 miles to Lake Constance"
+      }
+     ],
+     "why": "dist_km (6.0 mi) is shorter than the one-way distance to the lake (~7.2 mi) before the canyon and chute are added.",
+     "internal_resolution": "The approach prose is consistent with the sibling West Arête route; dist_km appears to be neither one-way nor round-trip.",
+     "needs_research": true
+    },
+    {
+     "fact": "Closed-road distance to the Dosewallips road end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[1].notes",
+       "says": "Road-walk or bike roughly 5.5 miles from the washout past the Lake Constance turn-off to the road end"
+      },
+      {
+       "field": "approach_variants[1].hazards[4]",
+       "says": "Roughly 6.5 miles of closed road at each end"
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "The Dosewallips Ranger Station is 6.5 miles beyond a road closed to vehicles since 2002."
+      }
+     ],
+     "why": "The same variant gives 5.5 and 6.5 miles for the same road walk.",
+     "internal_resolution": "Two fields (hazards, emergency) say 6.5 mi; the 5.5 mi in the variant notes is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Difficulty of the chute",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "beta",
+       "says": "Rated Grade II, class 3 — the same overall difficulty as the South Chute"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "The difficulty builds from Class 2 low down to Class 4 moves higher up."
+      }
+     ],
+     "why": "The route breakdown puts Class 4 moves in the chute itself while the grade and beta call it class 3.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ellinor_standard",
+   "name": "Standard Trail (Upper Trailhead, NFR 24)",
+   "area": "Mount Ellinor",
+   "contradictions": [
+    {
+     "fact": "Summer-trail season end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Summer (roughly Jun-Sep, snow-dependent)"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "July-October for the dry Class 2 hiking trail"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly Jul-Oct for the snow-free summer trail"
+      },
+      {
+       "field": "best_season",
+       "says": "roughly June–October"
+      }
+     ],
+     "why": "The season chip ends in September while the optimal window, approach season and best_season all run through October (and June is described as snow-chute season).",
+     "internal_resolution": "Four fields agree on a Jul/Jun-Oct window; the season column's Sep end is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "2.57"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "3.3"
+      }
+     ],
+     "why": "Header shows 3.3 mi (round trip) while dist_km is the 1.6-mi one-way figure; both render as 'distance'.",
+     "internal_resolution": "Both are correct for their convention (1.6 mi one way, 3.3 mi RT).",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pershing_standard",
+   "name": "Standard Scramble (Jefferson Creek / Hamma Hamma approach)",
+   "area": "Mount Pershing",
+   "contradictions": [
+    {
+     "fact": "Whether a rope is carried",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "comfortable with sustained, exposed Class 3 (and optional Class 4 on the ridge-crest variant) with no rope"
+      },
+      {
+       "field": "beta",
+       "says": "a rope is commonly carried for the class 4 step and the ridge crux"
+      }
+     ],
+     "why": "Partner requirements describe the route as ropeless (and put the Class 4 on a 'ridge-crest variant'), while beta says a rope is commonly carried and the Class 4 step is on the standard left-gully line.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "name": "Lena Lake to Mt Stone traverse",
+   "area": "Mount Stone",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "name": "South Route via Lake of the Angels",
+   "area": "Mount Stone",
+   "contradictions": [
+    {
+     "fact": "Face label",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "face",
+       "says": "South Couloir / Southwest Slope–West Ridge"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Parties who lose the faint path here are drawn up into steeper Class 3–4 gullies on the south face; stay with the cliff base."
+      }
+     ],
+     "why": "The face field names a South Couloir, but the route breakdown says the line avoids the south-face gullies and follows the cliff base to the west ridge.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Entrance fee",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "only the standard entrance fee and wilderness camping permit apply"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "No parking pass or fee is needed at the Putvin Trailhead."
+      }
+     ],
+     "why": "The ACCESS card says an entrance fee applies and that no fee is needed.",
+     "internal_resolution": "parking_pass, passRequired and bivy all say no fee at the Putvin Trailhead; the notes line is boilerplate.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "name": "Putvin Trail / Lake of the Angels Scramble",
+   "area": "Mount Stone",
+   "contradictions": [
+    {
+     "fact": "Line from Lake of the Angels to the west-ridge notch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a boot path climbs a couple of hundred feet of rocky, brushy ground, then traverses up beneath St. Peter's Gate ... and back west to a notch"
+      },
+      {
+       "field": "pitch_detail[5].notes",
+       "says": "Short of the Gate, head left and follow a boot path along the base of the long cliff band"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "climb roughly 800 ft up onto a rock rib above the lake's basin and cross to its north side"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "climb roughly 800 ft up onto the ROCK RIB above the lake's basin and CROSS TO ITS NORTH SIDE"
+      }
+     ],
+     "why": "Two different lines above the lake are given: a short climb then a traverse left under the Gate's cliffs, versus an 800-ft climb onto a rock rib crossed to its north side.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Face label",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "face",
+       "says": "South Couloir / Southwest Slope–West Ridge"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Reverse the rib; do not improvise a line down the south side."
+      }
+     ],
+     "why": "The face names a South Couloir, but the route text follows a rib and cliff-base traverse to the west ridge.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Entrance fee",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "only the standard entrance fee and wilderness camping permit apply"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "No parking pass or fee is needed at the Putvin Trailhead."
+      }
+     ],
+     "why": "The ACCESS card says an entrance fee applies and that no fee is needed.",
+     "internal_resolution": "parking_pass, passRequired and bivy all say no fee; the notes line is boilerplate.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_townsend_standard",
+   "name": "Mount Townsend Trail (standard)",
+   "area": "Mount Townsend",
+   "contradictions": [
+    {
+     "fact": "Which top is the true summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].note",
+       "says": "True summit (higher than the north summit at 6,212 ft)"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The south summit is the true high point; the popular viewpoint where most people stop and turn round sits a short, easy walk below the actual crown"
+      },
+      {
+       "field": "overview",
+       "says": "The true high point sits a short, easy walk beyond the more-visited south summit viewpoint."
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "The true summit high point is a short use-path beyond the more-photographed south summit viewpoint"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].detail",
+       "says": "4 mi in, ~6,260-6,280 ft; optional short detour to the true high point (6,282 ft)."
+      }
+     ],
+     "why": "Waypoint and approach variant say the south summit IS the true summit, while overview, pro_tips and itinerary treat the south summit as a viewpoint with the true high point beyond it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "no Northwest Forest Pass or Discover Pass needed at either trailhead"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Accounts disagree about whether a parking pass is enforced at this particular trailhead, so carry a Northwest Forest Pass"
+      }
+     ],
+     "why": "ACCESS says no pass is needed; the camp card says it is disputed and to carry a Northwest Forest Pass.",
+     "internal_resolution": "access.fees/permit/parking_pass/overnight_permit all say no pass; the bivy text is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which switchback set is the exposed one",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "then a third set of steep, fully sun-exposed switchbacks that break out onto the crest of a ridge"
+      },
+      {
+       "field": "descent_text",
+       "says": "the exposed third (lowest) switchback set can be loose underfoot"
+      }
+     ],
+     "why": "The approach puts the third (sun-exposed) switchback set highest, breaking onto the ridge; the descent calls it the lowest.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance from Silver Lakes junction to summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the trail's grade eases considerably for the final ~1.3 miles to the broad, flat summit ridge"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "3 (junction)"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "4 (summit)"
+      }
+     ],
+     "why": "Junction at 3 mi and summit at 4 mi leave 1.0 mi, not ~1.3 mi.",
+     "internal_resolution": "Waypoints, overview and itinerary all use 3 mi and 4 mi.",
+     "needs_research": false
+    },
+    {
+     "fact": "Forest type on the lower trail",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "climbs through old-growth Douglas-fir/rhododendron forest"
+      },
+      {
+       "field": "approach",
+       "says": "the trail climbs immediately into dense, heavily wooded second-growth forest"
+      }
+     ],
+     "why": "Old-growth vs second-growth for the same lower forest.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "6.4"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "8"
+      }
+     ],
+     "why": "Header shows 8 mi (RT) while dist_km is the 4-mi one-way figure.",
+     "internal_resolution": "Both correct for their convention.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "name": "Standard Scramble (above Lake Cushman)",
+   "area": "Mount Washington",
+   "contradictions": [
+    {
+     "fact": "Distance (one-way vs round trip)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "3.2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4"
+      }
+     ],
+     "why": "Header shows 4 mi (RT) while dist_km is the 2-mi one-way figure.",
+     "internal_resolution": "Both correct for their convention.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "name": "SE Ridge AKA Shield Wall",
+   "area": "Mount Washington",
+   "contradictions": []
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "name": "Washington Ellinor Traverse (Ridge)",
+   "area": "Mount Washington",
+   "contradictions": [
+    {
+     "fact": "Start of the best season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "Best June through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "status marginal: A hanging snowfield and a steep snow finger below Ellinor remain ... ice axe and crampons are needed."
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "July through September"
+      }
+     ],
+     "why": "best_season calls June part of the best window while the month breakdown rates June marginal and the optimal window starts in July.",
+     "internal_resolution": "seasonal_guidance and climate (spring: 'not a standard-season traverse until snow clears') agree on July; best_season is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_winter_direct",
+   "name": "Winter Direct",
+   "area": "Mount Washington",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_worthington_standard",
+   "name": "Standard Route",
+   "area": "Mount Worthington",
+   "contradictions": [
+    {
+     "fact": "Parking pass at the Tubal Cain Trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "No day-use fee; no NW Forest Pass required at this trailhead."
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "None required."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Free self-issued trailhead permit, Northwest Forest Pass or interagency pass required to park at the Tubal Cain trailhead."
+      }
+     ],
+     "why": "ACCESS says no pass is needed; the camp card says a Northwest Forest Pass is required to park at the same trailhead.",
+     "internal_resolution": "Five access fields say no pass; the bivy permit text is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Exposure on the summit block",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "Because the summit block is a short, low-exposure downclimb rather than a rappel"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "Real exposure on the narrow summit block/fin"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "Short Class 3 scramble up the exposed 40-ft summit block"
+      }
+     ],
+     "why": "The descent calls the summit block low-exposure while hazards and itinerary call it exposed.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "name": "Brothers Traverse (North Peak to South Peak)",
+   "area": "The Brothers",
+   "contradictions": [
+    {
+     "fact": "Composition of the 7 pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The traverse is 7 roped pitches ...: fourth-class scrambling to a notch near 6,100 ft, a descent on steep snow into the Great Basin, moderate snow pitches on the east ridge, a sparsely protected rock traverse ..."
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "The roped traverse starts below the North Brother: scramble down easy rock to a flat spot to rope up"
+      },
+      {
+       "field": "pitch_detail[0..1]",
+       "says": "Terraces to the 6,100 ft notch; Great Basin to the North Brother (unnumbered approach rows)"
+      }
+     ],
+     "why": "Beta counts the scramble to the 6,100-ft notch and the Great Basin descent among the 7 roped pitches, while pitch_detail treats those as unroped approach and numbers 7 pitches starting below the North Brother.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "name": "South Couloir (Standard Route)",
+   "area": "The Brothers",
+   "contradictions": [
+    {
+     "fact": "High-camp elevation and day-1 gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "to a forested camp (Lena Forks / East Lena Creek Basin area, ~3,600 ft)"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2900"
+      },
+      {
+       "field": "approach",
+       "says": "to a climbers' camp (sometimes called Camp Brothers) at about 2,900 ft"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "2200"
+      },
+      {
+       "field": "bivy[0].elevM",
+       "says": "914 (Lena Forks base camp, ~3,000 ft)"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "One trip record names it the East Lena Creek Basin and treats it as a separate place from the forks camp"
+      }
+     ],
+     "why": "The itinerary puts camp at ~3,600 ft (gain 2,900 ft) and merges Lena Forks with East Lena Creek Basin, while approach, overview, approach variant and bivy put the Lena Forks camp at ~2,900-3,000 ft (gain ~2,200 ft) and the East Lena Creek Basin as a separate higher camp.",
+     "internal_resolution": "Approach, overview, approach variant and the main bivy agree on ~2,900-3,000 ft; the itinerary day-1 elevation and gain are the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[1].schedule",
+       "says": "5:00 AM leave camp ... 1:30 PM Reach trailhead"
+      }
+     ],
+     "why": "The schedule spans 8.5 hours (with a 3.5-hour camp-to-summit for ~3,000+ ft) while the day is billed as 10.5 hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best early-season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[1].notes",
+       "says": "The classic time for this route is early season, roughly April into May"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late May through June"
+      },
+      {
+       "field": "best_season",
+       "says": "roughly April-June ... the 'sweet spot'"
+      }
+     ],
+     "why": "The primary approach variant names April-May as the classic window, while seasonal_guidance says late May-June.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_warrior_peak_standard",
+   "name": "Southeast Peak Standard (Home Lake approach)",
+   "area": "Warrior Peak",
+   "contradictions": [
+    {
+     "fact": "Crossing the cirque's drainage stream",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "until you reach the final larger creek that flows from the cirque SE of Warrior Peak. Continue past this creek to a boulder field, then head up and back left toward the creek"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Leave the trail BEFORE crossing the major stream ... STAYING NORTH OF THE STREAMBED the whole way ... If you have crossed it and it is now on your left, you are on the wrong side"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "staying north of the streambed draining the cirque"
+      }
+     ],
+     "why": "The approach tells parties to continue past (cross) the cirque creek, while the approach variant and waypoint say never cross it and stay north of it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Difficulty billing of the rock step",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 4 / low 5th"
+      },
+      {
+       "field": "watch_out",
+       "says": "Crux rock step (20-50 ft above saddle) more serious than Class 3-4 billing suggests"
+      },
+      {
+       "field": "bail",
+       "says": "even though the route is nominally unroped Class 3-4"
+      }
+     ],
+     "why": "Watch-out and bail describe the route as billed Class 3-4, but the grade shown everywhere is Class 4 / low 5th.",
+     "internal_resolution": "grade, rock_grade, pitch_detail and waypoints all say Class 4 / low 5th (5.0-5.2).",
+     "needs_research": false
+    },
+    {
+     "fact": "Couloir snow late in the season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "the couloir holds snow into late season and turns icy in cold weather"
+      },
+      {
+       "field": "best_season",
+       "says": "By August the couloir is usually mostly bare scree and talus"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August",
+       "says": "couloirs generally melted to scree/rock"
+      }
+     ],
+     "why": "The camp card says the couloir holds snow into late season; best_season and seasonal guidance say it is bare by August.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_baldy_standard",
+   "name": "Standard Route",
+   "area": "Baldy",
+   "contradictions": []
+  },
+  {
+   "id": "wa_gray_wolf_ridge_se_slopes",
+   "name": "Southeast Slopes (Standard Scramble)",
+   "area": "Gray Wolf Ridge",
+   "contradictions": [
+    {
+     "fact": "Car-to-car duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "13.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "13.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "4:30 AM Leave trailhead ... ~8-9 PM Reach trailhead"
+      }
+     ],
+     "why": "The day's own schedule runs 15.5-16.5 hours while hours and timing give 13.5.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

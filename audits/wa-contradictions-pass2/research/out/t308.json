@@ -1,0 +1,260 @@
+{
+ "file": "t308.json",
+ "results": [
+  {
+   "id": "wa_sundial_northeast",
+   "fact": "Camping in Upper Royal Basin",
+   "verdict": "fixed",
+   "correct_value": "Camping in Upper Royal Basin is permitted: it has no designated sites, camping there is on bare ground or gravel only, and the permit is arranged through the park's Wilderness Information Center rather than booked online like Royal Lake.",
+   "evidence": "The park's own wilderness permit system lists 'Upper Royal Basin (No Campfires)' as a bookable camp area, and its Royal Lake entry says the Royal Lake sites are at the lake, not in the Upper Basin, and that to camp in the Upper Basin you contact the WIC at (360) 565-3100. A backpacking write-up quotes the park rule that Upper Royal Basin has no designated campsites and camping is only on bare ground or gravel, avoiding Imperial Tarn, and that its permit is by phone to the WIC; a WTA trip-report search snippet carries the same rule. The NPS Royal Basin page lists only Royal Creek, Lower Royal Meadow and Royal Lake as designated-site areas, which is consistent (the upper basin has no designated sites) rather than a ban. The three fields saying camping is not permitted in Upper Royal Basin are wrong; bivy[0] is right and is not touched.",
+   "sources": [
+    "https://www.recreation.gov/api/permitcontent/4098362",
+    "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2014-07-29.0945235808",
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_sundial_northeast",
+     "fact": "Camping in Upper Royal Basin",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "camping is not permitted in Upper Royal Basin itself — camp at Royal Lake",
+     "replace": "Upper Royal Basin has no designated sites (camping there is on bare ground or gravel only, by a permit arranged through the Wilderness Information Center), so this plan camps at Royal Lake"
+    },
+    {
+     "id": "wa_sundial_northeast",
+     "fact": "Camping in Upper Royal Basin",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "camping restricted to the designated sites at Royal Creek, Lower Royal Meadow and Royal Lake (no camping in Upper Royal Basin)",
+     "replace": "camping restricted to the designated sites at Royal Creek, Lower Royal Meadow and Royal Lake, except in Upper Royal Basin, which has no designated sites and is camped only on bare ground or gravel under a permit arranged through the Wilderness Information Center"
+    },
+    {
+     "id": "wa_sundial_northeast",
+     "fact": "Camping in Upper Royal Basin",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Camping is not permitted there, so camp at the lake;",
+     "replace": "It has no designated sites (camping there is on bare ground or gravel only, by a permit arranged through the Wilderness Information Center), so most parties camp at the lake;"
+    }
+   ]
+  },
+  {
+   "id": "wa_sundial_northeast",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The stored 12.9 km (8.0 mi) matches the one-way trail distance to Upper Royal Basin (7.2 mi to Royal Lake per NPS plus roughly three-quarters to one mile more; WTA gives 16 mi round trip to the upper basin), not the trailhead-to-summit distance. No source states the one-way distance from the trailhead to Sundial's summit, and the waypoint 9.8 mi and the itinerary's 5.2 mi climb day are unsourced, so there is no researched figure to replace dist_km with. Would settle: a trip report or GPS track giving trailhead-to-summit mileage.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.wta.org/go-hiking/hikes/royal-basin"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "1 roped pitch (~130 ft, 5.5 R) above a Class 3-4 approach scramble",
+   "evidence": "The route's own record lists The Horn as a 130 ft (39 m) trad alpine climb at 5.5, which is a single pitch on a 60 m rope. In the row, pitch_detail (one roped 5.5 R pitch of ~130 ft after a Class 3-4 approach traverse), length_m 40, pro_tips, beta, approach_variants, what_to_bring, detailed_rack ('the short technical pitch'), seasonal_hazards and partner_requirements all describe one summit pitch; only the pitches column (2, counting the unroped traverse) and the itinerary's '1-2 pitches' disagree. A second independent pitch-count source was not reachable (Mountaineers and CascadeClimbers pages blocked).",
+   "sources": [
+    "https://www.mountainproject.com/route/124505266/the-horn"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 2,
+     "value": 1
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Pitch count",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "(5.5, 1-2 pitches of steep pillow basalt)",
+     "replace": "(5.5, a single pitch of steep pillow basalt)"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Scramble or roped climb",
+   "verdict": "unresolved",
+   "correct_value": "A roped 5.5 R trad climb (not a scramble); the fields that need changing are the route name and the disciplines list, which are outside patch scope.",
+   "evidence": "The route record grades The Horn 5.5 trad, 130 ft, and warns not to mistake it for a fourth-class scramble; the Mountaineers route page (search excerpt) gives both the Southeast and Southwest routes as 5.5. grade, rock_grade, overview, beta and the rack fields already agree. The conflict is only with the name 'Sawtooth Range Scramble' and disciplines ['scrambling'], which this pass may not edit; settle by an owner rename/re-categorisation.",
+   "sources": [
+    "https://www.mountainproject.com/route/124505266/the-horn",
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Parking pass at Staircase",
+   "verdict": "fixed",
+   "correct_value": "An Olympic National Park entrance pass (or America the Beautiful pass) is required at Staircase; a Northwest Forest Pass is not the pass for this trailhead.",
+   "evidence": "Recreation.gov's Staircase listing says you must have a valid pass covering the Olympic National Park entrance fee to use the Staircase facilities, purchasable at park entrance stations. A Flapjack Lakes trail guide says there is no permit for day hikes but a park entrance fee per vehicle, or an America the Beautiful pass. The park's permit system notes a Northwest Forest Pass only for Forest Service trailheads such as Upper Dungeness, not for Staircase, which is inside the park.",
+   "sources": [
+    "https://www.recreation.gov/camping/campgrounds/247586",
+    "https://www.10adventures.com/hikes/olympic-national-park/flapjack-lakes-trail/",
+    "https://www.recreation.gov/api/permitcontent/4098362"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Parking pass at Staircase",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "NW Forest Pass/park entrance fee required for the lot",
+     "replace": "an Olympic National Park entrance pass (or America the Beautiful pass) is required for the lot"
+    },
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Parking pass at Staircase",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "a NW Forest Pass or park entrance fee is required there",
+     "replace": "an Olympic National Park entrance pass is required there"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Day push or overnight",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Planned as an overnight: full backpacking pack to Flapjack Lakes, light pack for the climbing day.",
+   "evidence": "The row's itinerary (3 days, 35/15/30 lb packs), approach, approachTime, gear[4], timing and bivy all plan a camp at Flapjack Lakes; only packWeight leads with a single-push day pack. The Sawtooth Ridge area description routes the approach to Flapjack Lakes as the camp, and a documented Sawtooth traverse party bivied on the ridge trip. Wording was changed to match the plan the rest of the row describes.",
+   "sources": [
+    "https://www.mountainproject.com/area/124501771/sawtooth-ridge",
+    "https://waynewallace.wordpress.com/2016/06/22/sawtooth-traverse-olympics-2004/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Day push or overnight",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "expect": "Light day pack for a fast single-push team; many parties instead carry an overnight kit and camp at Flapjack Lakes to split the approach and climbing into two days.",
+     "value": "Full overnight pack (camp kit, bear canister, food) for the walk in to Flapjack Lakes, then a light climbing pack for the summit day from camp."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Camping rules at Flapjack Lakes",
+   "verdict": "fixed",
+   "correct_value": "Camp in designated sites only at Flapjack Lakes.",
+   "evidence": "The NPS Flapjack Lakes Trail page states 'Camp in designated sites only at Flapjack Lakes.' The park's permit system entry for Flapjack Lakes says 'Camp in designated campsites only' (group site for 7-12). A trail guide likewise says to camp only in the established sites around the lake. access.rules' 'or on durable/bare ground' is wrong; the bivy card is right and untouched.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm",
+    "https://www.recreation.gov/api/permitcontent/4098362",
+    "http://www.protrails.com/trail/565/olympic-national-park-flapjack-lakes"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_horn_scramble",
+     "fact": "Camping rules at Flapjack Lakes",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Camp only in established sites or on durable/bare ground, at least 200 ft from water sources.",
+     "replace": "Camp in the designated sites only."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Distance from Staircase to Flapjack Lakes",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": "About 7.5-7.7 mi one way",
+   "evidence": "NPS and the park's permit system give Flapjack Lakes as 7.5 miles from the Staircase trailhead (~3,000 ft gain); WTA gives 15.4 mi round trip (7.7 one way). The row says 7 mi in the itinerary days, the Flapjack waypoint and the timing note (3.4 + 3.6), but '8 miles from the trailhead' in the approach sentence. Fixing it cascades through itinerary miles, the 17.5-mile total note and the Spike Camp split (3.4 vs 3.5-3.7 in sources); left for a coordinated repair.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/flapjack-lakes"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_horn_scramble",
+   "fact": "Total gain: gain_ft vs itinerary total",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 5,500 matches the Mountaineers' 17-mile / 5,500 ft round-trip figure, but the itinerary days sum to 4,750 ft of gain and the totalNote says 4,750 ft. No source gives per-day figures, and day gains may not be changed without them.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Rock quality in The Needles",
+   "verdict": "fixed",
+   "correct_value": "The Needles' rock is better than the pillow lava typical of much of the Olympics, but it is still loose and rockfall-prone.",
+   "evidence": "A Mount Deception route page says the Needles crags hold rock of much higher quality, in contrast to the pillow lava that makes for poor climbing across much of the range (the Mount Deception article likewise calls its pillow lava poor climbing). The Royal Basin area page says that, like all Olympic rock, its chossiness is part of its appeal, and the row's hazards, obj_haz, watch_out and seasonal_hazards all call the rock loose. Both are true in their frames; the beta was reworded so the relative claim no longer reads as a denial of the loose-rock hazard.",
+   "sources": [
+    "https://www.summitpost.org/mount-deception/151109",
+    "https://en.wikipedia.org/wiki/Mount_Deception_(Washington)",
+    "https://www.mountainproject.com/area/112527657/royal-basin"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_incisor_scramble",
+     "fact": "Rock quality in The Needles",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "though the Needles' rock is specifically higher quality than is typical for the Olympics",
+     "replace": "and although the Needles' rock is better than the pillow lava found across much of the Olympics, it is still loose and every hold needs testing"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "fact": "Route grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No route-level description of The Incisor was found: the Needles summit table gives only elevation (7,440 ft), prominence and a 1958 first ascent, regional pages give Class 3 to 5.8 for the massif as a whole, and the one known trip report (CascadeClimbers, 2004) could not be retrieved. Class 3 vs Class 3-4 cannot be settled; would need a trip report or the Olympic climbing guide's entry for The Incisor.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Needles_(Olympic_Mountains)",
+    "https://cascadeclimbers.com/forum/topic/28337-tr-threadin-the-needles-arrowhead-incisor-martin-peak-9252004/"
+   ],
+   "patches": []
+  }
+ ]
+}

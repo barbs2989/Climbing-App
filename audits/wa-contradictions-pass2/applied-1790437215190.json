@@ -1,0 +1,195 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_steel_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "byMonth",
+    "June"
+   ],
+   "fact": "Avalanche hazard"
+  },
+  {
+   "id": "wa_mount_steel_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Location of the Duckabush River ford"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction at the Royal Basin Trail junction"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "waypoints",
+   "path": [
+    1,
+    "directions"
+   ],
+   "fact": "Direction at the Royal Basin Trail junction"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Royal Basin trail number"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Access road"
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Olympic NP entrance fee at the Upper Dungeness Trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_steel_standard",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Interior Olympic weather driven by marine influence - can be wetter and cloudier than the Cascades, with heavy annual snowfall that keeps steep snow lingering on the upper mountain into early summer",
+      "probability": "Afternoon thunderstorms are less common here than in the Cascades, but fast-moving marine cloud/rain systems can move in with little warning even in summer"
+     },
+     "exposure": "Short but genuine exposed Class 3 climbing near the summit block, combined with steep snow on the upper slopes into early summer where a slip could have serious consequences; paired with the very long, remote wilderness approach far from help, any injury here is a serious self-rescue situation",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route climbed outside the official NWAC winter forecast season; no NWAC zone specifically forecasts this remote Olympic interior peak",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on this route"
+    },
+    "approach": "Start at the Duckabush Trailhead (FR 2510-060) off US 101 and follow the Duckabush River Trail #803. The first real test is Big Hump at mile 3.9: a steep, loose-rock push of about 1,000 ft in roughly 30 switchbacks, then a 800 ft drop back down to river level on the far side — this is the trail's technical crux underfoot, not the summit. Continue upriver through old growth and a burned section (standing dead snags — use caution in wind) to Five Mile Camp (5.3 mi), a popular water stop and camp at a set of rapids. Between the Olympic National Park boundary (~6.2 mi from the trailhead) and Ten Mile Camp expect scattered blowdown and a documented trail washout that must be scrambled around rather than crossed directly. Around mile 17, just before Duckabush Camp, the trail fords the Duckabush River itself — a wide crossing that can run thigh-deep and swift in early season or after rain; scout upstream/downstream for the best braid and use a pole. From Duckabush Camp, continue upvalley roughly 3 more miles on the Duckabush/O'Neil Pass trail; the unmarked Marmot Lake climbers' route then leaves the maintained trail (no sign, occasional cairns at best) and follows a small feeder creek up climber's-left into a rocky amphitheater on the west side of Mount Steel's summit. This final stretch is cross-country travel over heather benches and talus, finishing on easy Class 2 slopes to the summit ridge and the 6,225-ft high point. Snow lingers in the amphitheater and on the upper slopes into summer, with nasty cornices reported on the summit ridge until late June, so carry an ice axe and expect firm early-morning snow before roughly early July. Water is reliable along the Duckabush and at Marmot Lake but scarce once you leave the creek for the amphitheater, so top off there. With Marmot Lake itself over 21 miles from the trailhead, this route is done as a multi-day backpack with a high camp at Marmot Lake or the amphitheater, not a car-to-car day climb. A second, reportedly easier approach starts from First Divide (13-14 miles from the Staircase trailhead via the North Fork Skokomish Trail): follow the ridge west into a basin holding an unnamed lake, drop southwest to the saddle between Mount Steel's two summit humps, then finish north along the summit ridge; this line shares the same early-summer cornice/avalanche caution near the ridge crest. That approach is closed: the park lists the North Fork Skokomish Trail from Staircase to First Divide, and First Divide camp, as closed since the 2025 Bear Gulch Fire, with no reopening date on its trail-conditions page (updated September 14, 2026) or fire-conditions page (updated September 18, 2026)."
+   }
+  },
+  {
+   "id": "wa_mount_walkinshaw_scramble",
+   "before": {
+    "approach": "From the Upper Dungeness Trailhead (~2,550 ft, end of FR 2870), start on the Upper Dungeness Trail #833.2, which runs a gentle, mostly level mile through old-growth forest along the Dungeness River to a well-signed junction. Bear right (east, then south) onto the Royal Basin Trail #840 and settle into a steady, moderate climb up the Royal Creek valley for about 5 miles, crossing several tributary creeks — the last reliable water before the high basin — through forest that opens into wildflower meadows around the 6-mile mark, with Mount Clark and Mount Walkinshaw's 7,000-ft summits visible ahead. The trail steepens for the final push through switchbacks into Royal Basin, reaching Royal Lake (5,100 ft, ~7.2 mi, ~2,500 ft gain) — the established backcountry camp area (bear canisters required, no fires, permits needed May-Sept). From the lake, a climbers' path continues roughly another 0.8-1 mile and 500 ft of gain across willow flats and boulder benches to Upper Royal Basin (~5,600 ft, ~8 mi from the trailhead), the day-use staging area for all Needles-area objectives (camping is not permitted in the upper basin). Beyond Upper Royal Basin there is no maintained tread: traverse cross-country north, contouring below Mount Clark's east flank on talus and boulder benches toward Mount Walkinshaw, the northernmost peak in the Needles chain — this stretch is rough, adds roughly 1.5 miles and several hundred feet of ascending/descending sidehill travel, and involves genuine route-finding (krummholz and short cliff bands can obscure the best line, as noted by parties working this same traverse from the Gray Wolf Ridge side). Aim for the prominent talus tongue below Walkinshaw's broken east face, then climb northwest over boulders and a bare scree rib to the col at the south end of Gray Wolf Ridge, northeast of the peak. From the col, skirt several steepening pinnacles on their east side with Class 3 moves on rotten shale (far looser than typical Cascades granite), then follow the northeast ridge through ledges and small gullies to an exposed blade of rock and the small (~10-ft-diameter) rocky summit at 7,378 ft — Class 3 overall, with perhaps one short Class 4 step. Keep parties tight and helmets on through the entire gully/ridge section — loose rock and rockfall onto climbers below are the defining hazard of this route. Total round-trip distance from the trailhead is on the order of 19 miles (matching the route's recorded 30.58 km), reflecting the extra cross-country mileage beyond Upper Royal Basin that standard figures for the closer Royal Basin peaks (Deception/Mystery, ~14 mi RT) don't include.",
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2550,
+      "name": "Upper Dungeness Trailhead",
+      "note": "USFS trailhead off FR 2870; Northwest Forest Pass required at the self-issue kiosk, and a wilderness permit is needed for Royal Basin camping.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive to the Upper Dungeness Trailhead at about 2,550 ft at the end of FR 2870. A Northwest Forest Pass is required at the self-issue kiosk, and Royal Basin camping needs a wilderness permit (quota season runs May through September)."
+     },
+     {
+      "lat": 47.871756,
+      "lng": -123.147433,
+      "elev": 3120,
+      "name": "Royal Basin Trail junction",
+      "note": "Dungeness River Trail forks here; leave the river trail and climb south on the Royal Basin Trail toward Royal Creek.",
+      "type": "Junction",
+      "distMi": 1,
+      "directions": "Start on Upper Dungeness Trail 833.2, a gentle and nearly level mile through old growth alongside the Dungeness River to a well-signed fork. Leave the river trail and bear right, east then south, onto Royal Basin Trail 840."
+     },
+     {
+      "lat": 47.852422,
+      "lng": -123.178433,
+      "elev": 4200,
+      "name": "Royal Creek",
+      "note": "Trail parallels Royal Creek for several miles with multiple crossings; reliable water but can run high with snowmelt in early season.",
+      "type": "Water",
+      "distMi": 4,
+      "directions": "Settle into a steady, moderate climb up the Royal Creek valley for roughly five miles, crossing several tributary creeks along the way. These are the last reliable water before the high basin and can run high with early-season snowmelt."
+     },
+     {
+      "lat": 47.830518,
+      "lng": -123.213102,
+      "elev": 5100,
+      "name": "Royal Lake designated camp",
+      "note": "Established sites with a composting toilet near the lake outlet; no campfires above 3,500 ft and bear canisters are required.",
+      "type": "Campsite",
+      "distMi": 7.2,
+      "directions": "The forest opens into wildflower meadows around the six-mile mark, with the 7,000 ft summits of Mount Clark and Mount Walkinshaw in view ahead. The trail then steepens through switchbacks into Royal Basin to reach Royal Lake at 5,100 ft, about 7.2 miles in and 2,500 ft above the car. Established sites and a composting toilet sit near the outlet; bear canisters are required and no fires are allowed above 3,500 ft."
+     },
+     {
+      "lat": 47.834718,
+      "lng": -123.215964,
+      "elev": 5400,
+      "name": "Arrowhead Meadow",
+      "note": "Open meadow between Royal Lake and Upper Royal Basin where the trail becomes fainter; watch for the climbers' path branching toward the basin's west side.",
+      "type": "Junction",
+      "distMi": 7.6,
+      "directions": "Above the lake a climbers' path crosses willow flats and boulder benches. Tread becomes fainter through this open meadow, so watch for the path branching toward the west side of the basin."
+     },
+     {
+      "lat": 47.837636,
+      "lng": -123.220429,
+      "elev": 5700,
+      "name": "Upper Royal Basin",
+      "note": "Seasonal ranger station and the last reliable water before heading cross-country; the Needles' craggy west wall rises directly above.",
+      "type": "Campsite",
+      "distMi": 8,
+      "directions": "Continue on the climbers' path a total of roughly 0.8 to 1 mile and 500 ft of gain above Royal Lake to Upper Royal Basin at about 5,600 to 5,700 ft. Camping is not permitted in the upper basin, but it is the staging point for every Needles objective and holds the last reliable water before the cross-country travel, with the craggy west wall of the Needles rising directly above."
+     },
+     {
+      "lat": 47.844931,
+      "lng": -123.23159,
+      "elev": 6600,
+      "name": "East-face talus below the northeast col",
+      "note": "Loose, rotten Olympic shale on the talus and scree below the ridge; rockfall risk is high, especially with parties above — helmets recommended.",
+      "type": "Hazard",
+      "distMi": 9,
+      "directions": "Beyond Upper Royal Basin there is no maintained tread. Traverse cross-country north, contouring on talus and boulder benches below Mount Clark's east flank toward Walkinshaw at the north end of the chain; this stretch adds roughly 1.5 miles of rough sidehill travel with several hundred feet of ascent and descent, and demands real route-finding since krummholz and short cliff bands hide the best line. Aim for the prominent talus tongue below the east face, then climb northwest over boulders and a bare scree rib to the col northeast of the peak, where loose, rotten Olympic shale makes rockfall the defining hazard, so keep the party tight and helmets on."
+     },
+     {
+      "lat": 47.848515,
+      "lng": -123.237105,
+      "elev": 7378,
+      "name": "Mount Walkinshaw summit",
+      "note": "Northernmost summit of the Needles, reached from the col northeast of the peak along the broken northeast ridge; Class 3 with perhaps one short Class 4 step; exposed, loose rock near the top.",
+      "type": "Summit",
+      "distMi": 9.5,
+      "directions": "From the col, skirt a few steepening pinnacles on their east side, then follow the northeast ridge through ledges and small gullies and along an airy blade to the small summit block roughly ten feet across at 7,378 ft. The rock is looser than typical Cascades granite, so test holds and keep the party out from under each other."
+     }
+    ],
+    "descent_text": "Descend by reversing the ascent line: downclimb the northeast ridge and pass the pinnacles back to the col, then descend the scree rib and talus to the base of the talus tongue, then retrace the cross-country traverse south below Mount Clark to Upper Royal Basin. This is a walk-off/downclimb — no rappelling is required on the standard northeast ridge line, and no fixed anchors or rappel stations are known to exist on it. The loose rock that makes the gully slow on the way up makes it just as slow (if not slower) coming down; downclimb facing in on the steeper sections, test holds before weighting them, and keep helmets on for the whole party the entire way down, since Olympic 'shale' rock is rotten and prone to breaking or sliding underfoot. Once back at Upper Royal Basin, follow the climbers' path back to Royal Lake and then the maintained Royal Basin Trail #840 and Upper Dungeness Trail #833.2 the full ~8 miles back to the trailhead. Given the length and elevation loss, budget real time and daylight for this descent — most parties treat the round trip as a long, full day (or a backpack with a camp at Royal Lake) rather than a quick out-and-back.",
+    "road": {
+     "name": "Dungeness Road / FR 2870 (Royal Basin access)",
+     "status": "Gravel; reported in good condition on the Baldy/Gray Wolf Ridge approach (FS 2860-120)",
+     "driveNote": "Gravel forest roads to the Dungeness/Royal Basin trailheads; conditions vary seasonally.",
+     "seasonalGate": "Olympic National Forest roads are subject to seasonal winter closures; sections have also seen temporary storm-damage closures (e.g., FS-2880 in the Dungeness closed for debris fall in late 2025) — check current USFS Olympic National Forest alerts before driving in."
+    },
+    "access": {
+     "fees": "$8/adult/night backcountry camping fee plus a $6 non-refundable reservation fee per permit; a $45/person annual Olympic Wilderness Pass covers the nightly fee for frequent users.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters required in Royal Basin; camp only in the three designated zones; no campfires; stock animals prohibited past the park boundary.",
+     "permit": "No permit is required for a day climb, but a Northwest Forest Pass or America the Beautiful pass is needed to park at the Upper Dungeness Trailhead. Overnight stays in Royal Basin require an NPS wilderness permit; quota-season sites (Royal Creek, Lower Royal Meadow, Royal Lake zones) run May 1-Sept 30 and need advance reservation via recreation.gov or the Wilderness Information Center.",
+     "closures": "Olympic National Forest access roads are subject to seasonal winter closures and occasional storm-damage closures — check USDA Forest Service Olympic National Forest alerts before traveling.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Buckhorn Wilderness) for the trailhead and lower approach; Olympic National Park (Daniel J. Evans Wilderness) above the park boundary, including Royal Basin and the peak itself.",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass, Interagency (America the Beautiful), or Digital Pass at USFS trailheads.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    }
+   }
+  }
+ ]
+}

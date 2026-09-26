@@ -1,0 +1,73 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Where the maintained trail ends"
+  },
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "spring"
+   ],
+   "fact": "SR 542 reopening in heavy years"
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Time to reach technical terrain"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_herman_standard_scramble",
+   "before": {
+    "watch_out": [
+     "No maintained trail above the Chain Lakes/Bagley Lakes junction — many parties mistakenly top out on Mazama Dome instead of Herman; confirm the correct saddle and ridge before leaving the trail.",
+     "Snow can linger in the summit gully into July; without an ice axe a slip here is a long, exposed slide.",
+     "The final east ridge is short but loose, with 'veggie' (vegetation) holds that shouldn't be trusted as handholds or anchors.",
+     "Heather Meadows is prone to fast-moving marine cloud/fog that can erase visibility on the open, trail-less ridge."
+    ],
+    "climate": {
+     "typical": "Wet, heavy-snowpack North Cascades maritime climate right at the crest of the range; Heather Meadows sees frequent summer marine cloud/fog. Check the WSDOT SR 542 status and the NWAC forecast before heading up.",
+     "bySeason": {
+      "fall": "First snow can arrive by October, quickly shortening the season and icing up the summit ridge.",
+      "spring": "The highway gate near Heather Meadows may not open until May or June in a heavy-snow year, and deep snow lingers in north-facing gullies well into July.",
+      "summer": "Late July through September is the most reliable snow-free window; afternoon marine cloud and occasional thunderstorms are the main weather hazards.",
+      "winter": "SR 542 is plowed only as far as Heather Meadows, the winter road end, so the peak becomes a ski or snowshoe tour from the same lot with real avalanche exposure — The Mountaineers rate this terrain 'Challenging.'"
+     },
+     "forecastZone": "NWAC Mount Baker Zone"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong — sustained steep, brushy, off-trail gain low on the route with no switchbacks to ease the grade",
+      "packWeight": "Light alpine day pack (climbing rack/rope for Class 4 sections, layers, navigation gear) — approach demands minimizing weight given the bushwhack"
+     },
+     "approachTime": "Long, strenuous approach dominated by steep timbered/brushy lower slopes; plan for a full day or more to reach the base of technical terrain",
+     "requiredSkills": [
+      "off-trail/bushwhack navigation",
+      "Class 4 scrambling with exposure",
+      "loose rock management",
+      "route-finding on descent",
+      "basic snow travel for lingering snow patches"
+     ],
+     "experienceLevel": "Solid scrambler/alpine climber comfortable with unroped Class 4 terrain, loose rock, and route-finding without a maintained trail; prior brushy North Cascades approaches a plus"
+    }
+   }
+  }
+ ]
+}

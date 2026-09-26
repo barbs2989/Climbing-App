@@ -1,0 +1,399 @@
+{
+ "file": "t241.json",
+ "results": [
+  {
+   "id": "wa_andersons_thumb_standard",
+   "fact": "Timing of the Flypaper Pass snow finger",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two outside accounts agree the Flypaper Pass snow finger is best climbed in spring or early summer, and a mid-July report found the chutes badly melted out with exposed ice, so the approach and waypoint text are correct as written. What would need to change is the route's own season window and August 'optimal' rating (and the itinerary cal), but no source gives a season for this undocumented spire itself; settling it needs a sourced best window for the whole Anderson's Thumb trip (e.g. a trip report or route page stating the months) before re-rating July/August.",
+   "sources": [
+    "https://www.summitpost.org/east-ridge-from-flypaper-pass/528123",
+    "https://trailcatjim.com/mount-anderson-east-peak-and-attempt-of-west-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Descent line off the summit block",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One outside guide says its party descended the left side of the peak, which was much easier than the rock scramble up, then retraced the trail. Other accounts found (search excerpts) describe parties simply reversing the ascent line, and the trail-association page only warns to take care descending. The row itself is split three fields (descent_text, climbing_route[2], approach) against three (itinerary note, schedule 'Reverse the route', descent). A second independent source explicitly recommending the left/west-side downclimb over the ascent gully would settle it.",
+   "sources": [
+    "https://www.earthtrekkers.com/klahhane-ridge-mount-angeles-hike-olympic/",
+    "https://www.wta.org/go-hiking/hikes/mount-angeles"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "fact": "Switchback Trail gain",
+   "verdict": "bivy_zone_list",
+   "correct_value": "about 700 ft in 0.6 mi",
+   "evidence": "The only stale copy is in bivy[0].notes (Heart o' the Hills campground, a staging camp not on the route). The trail-association page gives 700 ft of gain in 0.6 mile for the Switchback Trail, matching beta and approach. No bivy patch is written per the camping clean-up rule; the camp card's '1,000 ft' should be corrected in that pass.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-angeles"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "fact": "Climbing season start",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "season is the outer window (late Jun-Sep) and the best window (mid/late July-September) sits inside it; best_season explicitly addresses June-early July parties with residual snow and an ice axe, and June is rated risky rather than closed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "fact": "Direction of the Sol Duc River Trail",
+   "verdict": "fixed",
+   "correct_value": "upriver (east) from the trailhead to the Appleton Pass junction at 4.9 mi",
+   "evidence": "The trail-association page puts the Appleton Pass junction 4.9 miles up the Sol Duc River Trail, heading inland/upriver from the road end; a second trail guide describes hiking above the Sol Duc River past the falls and then staying left onto the Appleton Pass Trail. The Sol Duc flows northwest here, so upriver is east/southeast, matching the row's approach ('upriver') and the waypoint pins.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/sol-duc-river",
+    "https://www.10adventures.com/hikes/olympic-national-park/appleton-pass-via-sol-duc-falls/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "Follow the Sol Duc River Trail west/north about 4.9 miles",
+     "replace": "Follow the Sol Duc River Trail upriver (east) about 4.9 miles",
+     "id": "wa_mount_appleton_standard",
+     "fact": "Direction of the Sol Duc River Trail"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (12.9 km = 8 mi) is the one-way approach distance by convention and matches the summit waypoint's 8 mi; itinerary miles are per day, and a single-day round trip of ~16-17 mi is the same trip counted both ways.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "fact": "Which fork at the Appleton Pass junction",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Appleton Pass Trail is the left fork; the right fork crosses the Sol Duc River on a footlog toward Sol Duc Park",
+   "evidence": "The trail-association page says to stay right at the 4.9-mile Appleton Pass junction to continue on the Sol Duc River Trail, which crosses the river on a footlog. A second guide says to stay left onto the Appleton Pass Trail. The waypoint note had the river crossing and the right fork on the Appleton side.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/sol-duc-river",
+    "https://www.10adventures.com/hikes/olympic-national-park/appleton-pass-via-sol-duc-falls/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Sol Duc River Trail forks here; cross the Sol Duc River on a footlog just before the split, then head uphill (stay right) onto the Appleton Pass Trail.",
+     "replace": "Sol Duc River Trail forks here; bear left and uphill onto the Appleton Pass Trail. The right fork crosses the Sol Duc River on a footlog and carries on toward Sol Duc Park and Heart Lake.",
+     "id": "wa_mount_appleton_standard",
+     "fact": "Which fork at the Appleton Pass junction"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "fact": "Route name referenced in prose (stale after rename)",
+   "verdict": "fixed",
+   "correct_value": "Keep the warning that Hurricane Ridge is not an approach, without claiming the route's name points there",
+   "evidence": "The route is now named for the High Divide/Catwalk line, and outside accounts of Carrie ascents all start at the Sol Duc trailhead via Heart Lake, the High Divide, Cat Basin and the Catwalk; none approach from Hurricane Ridge. Only the 'despite the name' clauses are stale; the approach facts stand.",
+   "sources": [
+    "https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/",
+    "http://cwillett.imathas.com/local/bailey/index.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Despite this route's name, there is no trail or known route",
+     "replace": "There is no trail or known route",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Route name referenced in prose (stale after rename)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "Despite the route name, do not drive to Hurricane Ridge",
+     "replace": "Do not drive to Hurricane Ridge",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Route name referenced in prose (stale after rename)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "there is no established route to this peak from it, despite what the route's name suggests.",
+     "replace": "there is no established route to this peak from it.",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Route name referenced in prose (stale after rename)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "fact": "One-way distance to summit",
+   "verdict": "fixed",
+   "correct_value": "Heart Lake ~8 mi, High Divide ~0.5 mi above it; summit roughly 13 mi one-way",
+   "evidence": "Heart Lake sits 7.85 mi (one trail guide) to 8.0 mi (trail-association page) from the Sol Duc trailhead, and both put the High Divide junction at 8.4 mi, only about half a mile above the lake; the Deer Lake Trail junction is at the Sol Duc Falls bridge, under a mile in. The row's '+6 mi' / 7-mile day and '1.5 miles' to the divide were the stale figures; with an 8-mile first day the one-way total (8 + about 5.5 on the summit day) agrees with the approach's 'roughly 13 miles'.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/sol-duc-river",
+    "https://www.protrails.com/trail/842/olympic-national-park-heart-lake",
+    "https://www.theoutbound.com/washington/hiking/hike-to-sol-duc-falls-and-deer-lake"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Heart Lake (+6 mi, 4,800 ft) → High Divide crest (+1.5 mi, 5,100 ft)",
+     "replace": "Heart Lake (+7 mi, 4,800 ft) → High Divide crest (+0.5 mi, 5,100 ft)",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "One-way distance to summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "climb about 6 more miles up the Sol Duc valley",
+     "replace": "climb about 7 more miles up the Sol Duc valley",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "One-way distance to summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Climb about 1.5 miles to the High Divide crest",
+     "replace": "Climb about half a mile to the High Divide crest",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "One-way distance to summit"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 7,
+     "value": 8,
+     "id": "wa_mount_carrie_se_route",
+     "fact": "One-way distance to summit"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 7,
+     "value": 8,
+     "id": "wa_mount_carrie_se_route",
+     "fact": "One-way distance to summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 25-mile round trip",
+     "replace": "roughly 27-mile round trip",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "One-way distance to summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "fact": "Boston Charlie's Camp elevation vs gain to summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "USGS 3DEP ground elevation at the mapped Boston Charlie's Camp point is ~5,543 ft (matching bivy[3].elev), which leaves only ~1,450 ft to the 6,995 ft summit; but the widely repeated route description says the southwest ridge gains 2,000 ft in under a mile from the camp, and the same figure is also in pitch_detail[3].notes (not only the bivy card). No second source gives either the camp's elevation or a different gain figure, so neither copy is changed; a topo-derived camp elevation from a second source, or a trip report stating the camp-to-summit gain, would settle it.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.6645907&y=47.8909876&units=Feet&wkid=4326",
+    "https://www.openstreetmap.org/node/9469530574",
+    "https://www.summitpost.org/mount-carrie/154767"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Distance to Cat Basin",
+   "verdict": "fixed",
+   "correct_value": "~13 mi applies to Boston Charlie's Camp only; Cat Basin is several miles closer",
+   "evidence": "The Cat Basin primitive trail leaves the High Divide junction (8.4 mi from the trailhead) and runs east toward Cat Basin and Appleton Pass; an outside traverse account puts Cat Peak about 3 miles from Heart Lake, and another party reached Cat Basin camp on day one and crossed the Catwalk only on the summit day, so Cat Basin is well short of Boston Charlie's. Removing Cat Basin from the '13 miles' sentence makes the approach agree with the waypoints.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/cat-basin-primitive",
+    "http://cwillett.imathas.com/local/bailey/index.html",
+    "https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "One-way distance from the trailhead to Boston Charlie's Camp/Cat Basin is roughly 13 miles",
+     "replace": "One-way distance from the trailhead to Boston Charlie's Camp is roughly 13 miles",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Distance to Cat Basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Deer Lake junction distance",
+   "verdict": "fixed",
+   "correct_value": "Deer Lake junction under a mile in (at the falls bridge); Heart Lake ~7 mi beyond it (~8 mi from the trailhead)",
+   "evidence": "Trail guides put Sol Duc Falls at 0.8 mi and the Deer Lake Trail leaving across the falls bridge, with Deer Lake itself about 3.4 mi out at ~3,527 ft on a side trail; Heart Lake is 7.85-8.0 mi from the trailhead. The approach prose is corrected. The waypoint[2] pin labelled 'Deer Lake Trail junction' actually sits on Deer Lake (its coordinates, 3,525 ft elevation and 3.7 mi all describe the lake), which is off-route; that pin needs moving to the falls bridge, which is out of scope here (see the discovered entry).",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/hike-to-sol-duc-falls-and-deer-lake",
+    "http://www.protrails.com/trail/572/olympic-national-park-deer-lake",
+    "https://www.wta.org/go-hiking/hikes/sol-duc-river"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "continue about 1 mile past the Deer Lake Trail junction, then roughly 6 more miles to Heart Lake (4,800 ft)",
+     "replace": "pass the Deer Lake Trail junction at about 1 mile, then continue roughly 7 more miles to Heart Lake (4,800 ft)",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Deer Lake junction distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Boston Charlie's Camp elevation vs gain to summit",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Both disputed values live only in bivy[3] on this route. USGS ground elevation at the mapped camp is ~5,543 ft (matching the card), leaving ~1,450 ft to the summit, while the repeated route description says 2,000 ft in under a mile; not settled by two sources, and no bivy patch is written.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-123.6645907&y=47.8909876&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Heart Lake to High Divide distance and Heart Lake day mileage",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "High Divide ~0.5 mi above Heart Lake; Heart Lake ~8 mi from the trailhead",
+   "evidence": "Heart Lake sits 7.85 mi (one trail guide) to 8.0 mi (trail-association page) from the Sol Duc trailhead, and both put the High Divide junction at 8.4 mi, only about half a mile above the lake; the Deer Lake Trail junction is at the Sol Duc Falls bridge, under a mile in. The row's own waypoints (Heart Lake 7.85 mi, High Divide junction 8.3 mi) agree; the '1.5 mi' to the divide and the 7-mile first day were stale. With an 8-mile first day the out day (8 + 6) equals the stored 14-mile hike-out and the total becomes 32 mi.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/sol-duc-river",
+    "https://www.protrails.com/trail/842/olympic-national-park-heart-lake",
+    "https://www.theoutbound.com/washington/hiking/hike-to-sol-duc-falls-and-deer-lake"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From Heart Lake, climb 1.5 miles to the High Divide crest",
+     "replace": "From Heart Lake, climb about half a mile to the High Divide crest",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "Climb 1.5 mi to the High Divide crest",
+     "replace": "Climb about half a mile to the High Divide crest",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "Climb 1.5 mi to the High Divide crest",
+     "replace": "Climb about half a mile to the High Divide crest",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 7,
+     "value": 8,
+     "id": "wa_mount_carrie_standard",
+     "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 31-mile round trip",
+     "replace": "roughly 32-mile round trip",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Heart Lake to High Divide distance and Heart Lake day mileage"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Deer Lake Trail junction pin sits on Deer Lake",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[2] is named and described as the junction on the Sol Duc River Trail, but its coordinates are on Deer Lake itself (ground elevation 3,525 ft, and 3.7 mi matches the lake's distance), an off-route side trail. The real junction is at the Sol Duc Falls bridge, under a mile in. Moving the pin is out of scope; settle by relocating the pin to the falls bridge and then setting elev (~1,950 ft) and distMi (~0.8-0.9).",
+   "sources": [
+    "http://www.protrails.com/trail/572/olympic-national-park-deer-lake",
+    "https://nominatim.openstreetmap.org/search?q=Deer+Lake,+Clallam+County,+Washington&format=json"
+   ],
+   "patches": []
+  }
+ ]
+}

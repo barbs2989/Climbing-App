@@ -1,0 +1,106 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_appleton_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "Which side of the ridge the snow approach climbs"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_appleton_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.955249,
+      "lng": -123.835839,
+      "elev": 1650,
+      "name": "Sol Duc Trailhead (Olympic NP)",
+      "note": "Road-end trailhead past Sol Duc Hot Springs Resort (14 mi up Sol Duc Hot Springs Rd from US-101); a reserved wilderness permit is required for any overnight stay.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Sol Duc Hot Springs Road off US-101 and follow it about 13 to 14 miles past Sol Duc Hot Springs Resort, near Sol Duc Falls, to the road-end Sol Duc Trailhead in Olympic National Park. Any overnight stay needs a wilderness permit reserved in advance; none are issued at the trailhead. The trail is typically snow-free July through October. Do not plan on the Boulder Lake side instead: Olympic Hot Springs Road washed out and is permanently closed to vehicles beyond Madison Falls, which adds 8 miles each way of road walking or biking just to reach the old Boulder Creek Trailhead."
+     },
+     {
+      "lat": 47.932233,
+      "lng": -123.750183,
+      "elev": 3082,
+      "name": "Appleton Pass Trail junction (Sol Duc River Trail split)",
+      "note": "Sol Duc River Trail forks here; cross the Sol Duc River on a footlog just before the split, then head uphill (stay right) onto the Appleton Pass Trail.",
+      "type": "Junction",
+      "distMi": 4.9
+     },
+     {
+      "lat": 47.9319907,
+      "lng": -123.748658,
+      "elev": 3425,
+      "name": "Rocky Creek footbridge",
+      "note": "Two-part log bridge over Rocky Creek — the last dependable, easy water refill before the long climb up into the Appleton Pass meadows.",
+      "type": "Water",
+      "distMi": 5.25
+     },
+     {
+      "lat": 47.938564,
+      "lng": -123.719422,
+      "elev": 5050,
+      "name": "Appleton Pass camp area",
+      "note": "Scattered established tent pads just below the pass, some fully exposed to wind with views, others tucked in trees; water is from Oyster Lake or lingering snowfields, unreliable by late summer.",
+      "type": "Campsite",
+      "distMi": 7.1
+     },
+     {
+      "lat": 47.93842,
+      "lng": -123.72269,
+      "elev": 5114,
+      "name": "Appleton Pass (the gap)",
+      "note": "True saddle/pass; maintained trail continues north to Boulder Lake/Olympic Hot Springs and east toward Oyster Lake — leave the trail here and head north up open slopes toward Appleton's south ridge.",
+      "type": "Junction",
+      "distMi": 7.3
+     },
+     {
+      "lat": 47.94701285714285,
+      "lng": -123.73019285714285,
+      "elev": 5950,
+      "name": "6,000-ft notch below the summit block",
+      "note": "Heather/talus/grass slope steepens sharply into a Class 3 notch between Appleton's two summit humps — the exposed section climbers report needing to concentrate through, both up and down.",
+      "type": "Hazard",
+      "distMi": 7.8
+     },
+     {
+      "lat": 47.950555,
+      "lng": -123.732785,
+      "elev": 6017,
+      "name": "Mount Appleton summit",
+      "note": "True summit (6,017 ft), the higher of two rocky humps; open views west/north down the South Fork Boulder Creek valley toward Mt. Olympus.",
+      "type": "Summit",
+      "distMi": 8
+     }
+    ],
+    "approach": "Two approaches reach Appleton Pass, the base for the scramble. The Sol Duc approach is now the practical option: from the Sol Duc Trailhead (about 13 road miles off US-101 via Sol Duc Rd, near Sol Duc Falls), follow the Sol Duc River Trail roughly 4.9 miles upriver, crossing Crystal Creek on a suspension bridge, to the signed Appleton Pass Trail junction, then climb about 2.3 miles and ~2,030 ft through forest and subalpine meadow to Appleton Pass (5,100 ft) — about 7.4 miles and 3,100 ft one-way from the trailhead (NPS figures: trailhead 2,000 ft to pass 5,100 ft). The alternate Boulder Lake/Elwha approach is now far longer: since Olympic Hot Springs Road washed out and was permanently closed to vehicles beyond Madison Falls, reaching the old Boulder Creek Trailhead adds 8 miles one-way of road walking/biking before another ~7.7 miles of trail (via Boulder Creek Campground and Boulder Lake) to the pass — most parties now use the Sol Duc side. From Appleton Pass, leave the maintained trail and follow a climbers' path north up the ridge crest toward Mount Appleton, working around minor outcrops near the crest, traversing onto the north side across a talus basin near 5,400 ft, then regaining the crest at a rock step near 5,800 ft (marked by a distinct rock horn on its south/left side); pass this on an exposed Class 3 heathery gully/ledge system, then continue up talus and heather to the ~6,000-ft notch below the true summit and on to the top."
+   }
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "before": {
+    "overview": "The North Ridge of Mount Baker is the peak's premier moderate alpine ice route and a Cascades classic, first climbed by Fred Beckey, Ralph Widrig, and Dick Widrig in August 1948. From the Heliotrope Ridge approach, cross the Coleman Glacier laterally to the base of the ridge, then ascend snow slopes left of the ridge crest (with crevasse crossings) to the ice cliff that forms the route's crux — 2-6 belayed pitches of 50-85 degree ice depending on the year and line chosen. Above the cliff, moderate snow/ice leads toward the summit cap, which steepens in its last few hundred feet with real exposure over the west face and a possible crevasse crossing near the summit plateau."
+   }
+  }
+ ]
+}

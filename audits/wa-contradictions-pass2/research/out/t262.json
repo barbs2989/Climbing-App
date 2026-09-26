@@ -1,0 +1,592 @@
+{
+ "file": "t262.json",
+ "results": [
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Summit-day duration",
+   "verdict": "fixed",
+   "correct_value": "12 hours camp to camp; back at Glacier Meadows 2:00-3:00 PM",
+   "evidence": "A guide itinerary gives the Glacier Meadows summit day as 9-12 hours round trip; a second guide service says to expect a 10-13+ hour day; independent trip reports record about 13 hours (3 AM start) and about 12.5 hours (8.2 h up, 4.3 h down). 12 hours sits inside both guide ranges, so the day length becomes 12 and the schedule's return time is brought into line with a 2-3 AM start (summit mid-morning, roughly 4 hours down).",
+   "sources": [
+    "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+    "https://www.pacificalpineguides.com/climb-mt-olympus",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington",
+    "https://trailcatjim.com/mount-olympus-blue-glacier-north-face-2003/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "hours"
+     ],
+     "expect": 10,
+     "value": 12,
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10,
+     "value": 12,
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "hrs"
+     ],
+     "expect": 10,
+     "value": 12,
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 29,
+     "value": 31,
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      5,
+      "time"
+     ],
+     "expect": "4:00-6:00 PM",
+     "value": "2:00-3:00 PM",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Summit-day duration"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Summit-day start time",
+   "verdict": "fixed",
+   "correct_value": "2:00-3:00 AM alpine start from Glacier Meadows; crowds text no longer names a different hour",
+   "evidence": "Trip reports record a 3 AM start from camp and a 0230 start recommended to beat the heat; timing and the itinerary schedule already say 2-3 AM. The crowds line's 4-5 AM figure is the outlier, so its specific hour is replaced with 'an alpine start from camp', which is true under every source.",
+   "sources": [
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-06-23.081200414632",
+    "https://backcountrysights.com/mount-olympus-via-crystal-pass/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "find": "an early (4-5am) start is recommended",
+     "replace": "an alpine start from camp is recommended",
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Summit-day start time"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Trip distance (dist_km vs itinerary)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure (17.4 mi) and is labelled 'Approach (one way)' on screen, while the itinerary miles are per day and sum to the round trip; they measure different quantities and both are consistent with a ~17.4 mi approach.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "fact": "Summit-day distance",
+   "verdict": "fixed",
+   "correct_value": "9.5 mi round trip from Glacier Meadows",
+   "evidence": "The row's approach says the summit is roughly 4-6 more miles from Glacier Meadows and its waypoints put Glacier Meadows at 17.5 and the summit at 22 (4.5 mi each way), yet day 3 says 7 mi round trip. A trip report measured the summit day at 9.5 mi; a club itinerary gives 44 mi round trip with Glacier Meadows at 17.2 mi, leaving about 9.6 mi for the summit day; another report says 'another 4 miles or so' each way.",
+   "sources": [
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington",
+    "https://mazamas.org/activity/instance/3955/detail/",
+    "https://www.jeffreyjhebert.com/adventures/blue-glacier-on-mount-olympus"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 7,
+     "value": 9.5,
+     "id": "wa_mount_olympus_blue_glacier",
+     "fact": "Summit-day distance"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Summit-day start time",
+   "verdict": "fixed",
+   "correct_value": "2:00-3:00 AM from Glacier Meadows",
+   "evidence": "Trip reports record a 3 AM start and a 0230 start from camp; the row's timing and schedule say 2-3 AM. pro_tips (3-4 AM) is aligned to 2-3 AM and the turnaround's 4-5 AM is replaced with advice to keep the alpine start, so no field names a conflicting hour.",
+   "sources": [
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-06-23.081200414632",
+    "https://backcountrysights.com/mount-olympus-via-crystal-pass/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "pre-dawn darkness (3-4 AM)",
+     "replace": "pre-dawn darkness (2-3 AM)",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Summit-day start time"
+    },
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "on busy weekends start at 4-5am because the block bottlenecks",
+     "replace": "on busy weekends the block bottlenecks, so hold to the 2-3 AM start",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Summit-day start time"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Summit-day duration",
+   "verdict": "fixed",
+   "correct_value": "12 hours camp to camp; back at Glacier Meadows 2:00-3:00 PM",
+   "evidence": "A guide itinerary gives the Glacier Meadows summit day as 9-12 hours round trip; a second guide service says to expect a 10-13+ hour day; independent trip reports record about 13 hours (3 AM start) and about 12.5 hours (8.2 h up, 4.3 h down). 12 hours sits inside both guide ranges, so the day length becomes 12 and the schedule's return time is brought into line with a 2-3 AM start (summit mid-morning, roughly 4 hours down).",
+   "sources": [
+    "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+    "https://www.pacificalpineguides.com/climb-mt-olympus",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington",
+    "https://trailcatjim.com/mount-olympus-blue-glacier-north-face-2003/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "hours"
+     ],
+     "expect": 10,
+     "value": 12,
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10,
+     "value": 12,
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "hrs"
+     ],
+     "expect": 10,
+     "value": 12,
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 29,
+     "value": 31,
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "time"
+     ],
+     "expect": "5:00-6:00 PM",
+     "value": "2:00-3:00 PM",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Summit-day duration"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Summit-day distance",
+   "verdict": "fixed",
+   "correct_value": "9.5 mi round trip from Glacier Meadows",
+   "evidence": "A trip report measured the summit day at 9.5 mi; a club itinerary gives 44 mi round trip with Glacier Meadows at 17.2 mi (about 9.6 mi left for the summit day); another report says about 4 miles each way. This matches the row's own waypoints (17.2 to 22 mi) and camp note (4-6 mi each way); day 3's 7 mi is the outlier.",
+   "sources": [
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington",
+    "https://mazamas.org/activity/instance/3955/detail/",
+    "https://www.jeffreyjhebert.com/adventures/blue-glacier-on-mount-olympus"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 7,
+     "value": 9.5,
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Summit-day distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "High Hoh Bridge / ladder mileage",
+   "verdict": "fixed",
+   "correct_value": "High Hoh Bridge near mile 13; ladder about a quarter mile below Glacier Meadows",
+   "evidence": "One trail guide puts the High Hoh Bridge at around 13 miles, another has the 13.2 camps immediately past the bridge, and a club itinerary crosses it at 13.2 mi (Olympus Guard Station is at ~9). The park service and a trail guide both place the washout ladder about 0.25 mile before Glacier Meadows (a trip report: less than half a mile). The approach column already says both; the variant notes are corrected.",
+   "sources": [
+    "https://hikingguy.com/hikes/hoh-river-trail-blue-glacier/",
+    "https://www.hikewithkurt.com/hoh-river-trail-to-blue-glacier-the-ultimate-guide",
+    "https://mazamas.org/activity/instance/3955/detail/",
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+    "https://onehikeaweek.com/2019/07/09/mount-olympus/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "the Olympus Guard Station and High Hoh Bridge near mile 9, Lewis Meadow near mile 11 (the usual overnight if you split the walk in), and Elk Lake near mile 15.",
+     "replace": "the Olympus Guard Station near mile 9, Lewis Meadow near mile 11 (the usual overnight if you split the walk in), the High Hoh Bridge near mile 13, and Elk Lake near mile 15.",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "High Hoh Bridge / ladder mileage"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "A washed-out cliffside stretch around mile 16 is crossed",
+     "replace": "A washed-out cliffside stretch about a quarter mile below Glacier Meadows is crossed",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "High Hoh Bridge / ladder mileage"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Land manager / pass fields",
+   "verdict": "fixed",
+   "correct_value": "Olympic National Park (Olympic Wilderness); entrance fee $30/vehicle for 7 days or $55 annual pass",
+   "evidence": "The park service fee page gives $30 per private vehicle for seven days and a $55 Olympic annual pass, and the wilderness reservation page places the Hoh/Olympus in Olympic National Park wilderness; the 'N/A' values are placeholders contradicting the row's own land_manager and parking_pass.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/fees.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "N/A",
+     "value": "Olympic National Park (Olympic Wilderness)",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Land manager / pass fields"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "N/A",
+     "value": "Olympic National Park entrance fee ($30/vehicle for 7 days, or $55 annual pass)",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Land manager / pass fields"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Wilderness permit fee",
+   "verdict": "fixed",
+   "correct_value": "$6 non-refundable wilderness permit reservation fee plus $8 per person per night, ages 16+, in addition to the park entrance fee",
+   "evidence": "The park's wilderness reservation page states $8 per person per night for ages 16 and older plus a $6 non-refundable reservation fee; the park fee page states the same $8 per person per night plus $6 per permit. access.fees saying there is no fee beyond entrance is wrong.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/fees.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "$6 non-refundable wilderness permit reservation fee plus $8 per person per night, ages 16+, in addition to the park entrance fee",
+     "id": "wa_olympus_blue_glacier_east_ramps",
+     "fact": "Wilderness permit fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "fact": "Trip distance (dist_km vs itinerary)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure (17.4 mi) and is labelled 'Approach (one way)' on screen, while the itinerary miles are per day and sum to the round trip; they measure different quantities and both are consistent with a ~17.4 mi approach.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Summit-day duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Standard-route summit days run 9-13 hours in guide and trip-report sources, but no source found gives a camp-to-camp time for the West Ridge itself (the schedule implies 17-18 h, the day says 13). A West Ridge trip report with start and return times would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/114973736/west-ridge",
+    "https://www.pacificalpineguides.com/climb-mt-olympus"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Trip distance (dist_km vs itinerary)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure (17.4 mi) and is labelled 'Approach (one way)' on screen, while the itinerary miles are per day and sum to the round trip; they measure different quantities and both are consistent with a ~17.4 mi approach.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "fact": "Wilderness permit fee",
+   "verdict": "fixed",
+   "correct_value": "$6 non-refundable wilderness permit reservation fee plus $8 per person per night, ages 16+, in addition to the park entrance fee",
+   "evidence": "access.fees says there is no fee beyond parking/entrance, while the row's overnight_permit says there is a nightly fee per person and permit requires a wilderness permit. The park's reservation page and fee page both state $8 per person per night (16+) plus a $6 reservation fee.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/fees.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "$6 non-refundable wilderness permit reservation fee plus $8 per person per night, ages 16+, in addition to the park entrance fee",
+     "id": "wa_mount_olympus_west_ridge",
+     "fact": "Wilderness permit fee"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "fact": "Commitment grade of a summit-block variation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on the commitment grade of the standard line itself: one route database grades North Ridge via Blue Glacier as Grade III (and the West Ridge IV), while the catalog's standard Blue Glacier row says II. No source grades this summit-block variation separately. A second independent grading of the standard route would settle whether II or III is right for all Blue Glacier finishes.",
+   "sources": [
+    "https://www.mountainproject.com/area/107743423/mount-olympus"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "fact": "Traverse-day duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Single-summit days from Glacier Meadows run 9-13 hours; no source found states the camp-to-camp time for the three-peak traverse, so neither the 13 h figure nor the 14-19 h prose/schedule can be confirmed. A traverse trip report with start and return times would settle it.",
+   "sources": [
+    "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+    "https://cascadeclimbers.com/forum/topic/104168-tr-olympic-national-park-mt-olympus-traverse-east-peak-middle-peak-west-peak-08012021/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "fact": "Glacier Meadows to West Peak time",
+   "verdict": "fixed",
+   "correct_value": "4-6 hours from Glacier Meadows to the West Peak",
+   "evidence": "A guide service's training page states 'Glacier Meadows Camp to Summit in 4-6 hours'; a trip report took about 6 hours from the top of the moraine to the summit, and another 8.2 hours from camp. 2-2.5 hours is far below every source.",
+   "sources": [
+    "https://www.alpineascents.com/climbs/mount-olympus/training/",
+    "https://backcountrysights.com/mount-olympus-via-crystal-pass/",
+    "https://trailcatjim.com/mount-olympus-blue-glacier-north-face-2003/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Time: 2-2.5 hours to summit from Glacier Meadows base.",
+     "replace": "Time: 4-6 hours to summit from Glacier Meadows.",
+     "id": "wa_olympus_traverse",
+     "fact": "Glacier Meadows to West Peak time"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "fact": "Summit-day start time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The two windows (2-3 AM in pro_tips vs 1:30-2:00 AM in timing/schedule) touch at 2 AM; no traverse-specific source gives a start time, and single-summit sources (2:30-3 AM) do not decide a longer traverse day. A traverse trip report would settle it.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "fact": "Trip distance (dist_km vs itinerary)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure (17.4 mi) and is labelled 'Approach (one way)' on screen, while the itinerary miles are per day and sum to the round trip; they measure different quantities and both are consistent with a ~17.4 mi approach.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "fact": "Summit-day duration",
+   "verdict": "fixed",
+   "correct_value": "12 hours camp to camp; back at Glacier Meadows 2:00-3:00 PM",
+   "evidence": "A guide itinerary gives the Glacier Meadows summit day as 9-12 hours round trip; a second guide service says to expect a 10-13+ hour day; independent trip reports record about 13 hours (3 AM start) and about 12.5 hours (8.2 h up, 4.3 h down). 12 hours sits inside both guide ranges, so the day length becomes 12 and the schedule's return time is brought into line with a 2-3 AM start (summit mid-morning, roughly 4 hours down).",
+   "sources": [
+    "https://www.alpineascents.com/climbs/mount-olympus/itinerary-2/",
+    "https://www.pacificalpineguides.com/climb-mt-olympus",
+    "https://missadventurepants.com/blog/climbing-mount-olympus-washington",
+    "https://trailcatjim.com/mount-olympus-blue-glacier-north-face-2003/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "hours"
+     ],
+     "expect": 11,
+     "value": 12,
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 11,
+     "value": 12,
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "hrs"
+     ],
+     "expect": 11,
+     "value": 12,
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 30,
+     "value": 31,
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Summit-day duration"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "time"
+     ],
+     "expect": "5:00-6:30 PM",
+     "value": "2:00-3:00 PM",
+     "id": "wa_olympus_summit_block_north_face",
+     "fact": "Summit-day duration"
+    }
+   ]
+  },
+  {
+   "id": "wa_olympus_summit_block_north_face",
+   "fact": "Trip distance (dist_km vs itinerary)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure (17.4 mi) and is labelled 'Approach (one way)' on screen, while the itinerary miles are per day and sum to the round trip; they measure different quantities and both are consistent with a ~17.4 mi approach.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

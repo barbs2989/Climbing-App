@@ -1,0 +1,1338 @@
+{
+ "batches": [
+  "b343.json",
+  "b344.json",
+  "b345.json",
+  "b346.json",
+  "b347.json",
+  "b348.json",
+  "b349.json"
+ ],
+ "routes_read": 21,
+ "routes": [
+  {
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "name": "Southwest Couloir",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Approach time to the couloir",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "1.5-2.5"
+      }
+     ],
+     "why": "Published Times says a 1-hour approach while the only approach variant says 1.5-2.5 hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From the Blue Lake Trailhead (1 mile west of Washington Pass on SR-20)"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "about 1 mi west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass, 5,400 ft"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "The camping card puts the same trailhead half a mile from the pass while three other fields say about a mile.",
+     "internal_resolution": "approach, road.driveNote, approach_logistics and approach_variants[0] all say ~1 mile; the bivy note is the outlier.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ellen_pea",
+   "name": "Ellen Pea",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1900"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4360"
+      },
+      {
+       "field": "waypoints[2].elevFt",
+       "says": "5895"
+      },
+      {
+       "field": "length_m",
+       "says": "274"
+      }
+     ],
+     "why": "Trailhead 4,360 ft to a 5,895 ft base is 1,535 ft before 274 m (~900 ft) of climbing, ~2,435 ft to the top, not 1,900.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "name": "The L & H Route (Free Variation)",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1900"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4360"
+      },
+      {
+       "field": "waypoints[2].elevFt",
+       "says": "5895"
+      },
+      {
+       "field": "length_m",
+       "says": "337"
+      }
+     ],
+     "why": "Trailhead-to-base (1,535 ft) plus 337 m (~1,105 ft) of climbing is ~2,640 ft, about 28% more than the 1,900 ft header gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tiger",
+   "name": "The Tiger",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": [
+    {
+     "fact": "Which ledge the route starts from",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "The approach ledge is a lower one; the highest ledge out of the gully leads to the start of P4 instead."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "On the upper ledge, work to the CENTRE of the wall"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "if you are on a narrow ledge below the whole wall with a single bolt beside you, you stopped one ledge too low"
+      }
+     ],
+     "why": "Pitch 1's note says P1 starts from the lower ledge and the highest ledge is P4's start, while the base-finding tells the party to start on the upper ledge and calls the lower ledge too low.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1900"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4360"
+      },
+      {
+       "field": "waypoints[2].elevFt",
+       "says": "5895"
+      },
+      {
+       "field": "length_m",
+       "says": "305"
+      }
+     ],
+     "why": "1,535 ft to the base plus 305 m (~1,000 ft) of climbing is ~2,535 ft, not 1,900.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "name": "The Exorcism of Mark Hanna",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": [
+    {
+     "fact": "Pitch 2 aided alternative grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.11a (or 5.9 A0)"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "can be French-freed at ~5.10a"
+      },
+      {
+       "field": "beta",
+       "says": "can be French-freed at 5.10a"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Pitch 2 can be French-freed at roughly 5.10a"
+      }
+     ],
+     "why": "The pitch grade gives the aided version as 5.9 A0, but the same pitch's notes, the beta and the pro tip all give it as 5.10a.",
+     "internal_resolution": "Three fields say ~5.10a French-free; the grade string's 5.9 A0 is the outlier.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_age",
+   "name": "Golden Age",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "name": "Summit Block Scramble (from Stehekin)",
+   "area": "McGregor Mountain",
+   "contradictions": [
+    {
+     "fact": "Day 2 duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "9"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "5:30 AM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "4:30-5:30 PM"
+      }
+     ],
+     "why": "The day-2 schedule runs from 5:30 AM to 4:30-5:30 PM (11-12 hours), but the day and Published Times say 9 hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Backcountry permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[1].permit",
+       "says": "Free backcountry permit required"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades National Park Service Complex backcountry permit, fee charged"
+      },
+      {
+       "field": "access.permit",
+       "says": "a per-person fee plus a reservation fee applies"
+      }
+     ],
+     "why": "The camping card calls the backcountry permit free, while the access section says it carries a per-person and reservation fee.",
+     "internal_resolution": "Both access fields say it costs a fee; the High Bridge bivy entry is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the ~100 switchbacks are",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Nearly 100 more switchbacks over about a third of a mile bring hikers to a rocky outcropping where the maintained trail ends."
+      },
+      {
+       "field": "approach",
+       "says": "Beyond the lake the trail switchbacks relentlessly (climbers report close to 100 switchbacks)"
+      },
+      {
+       "field": "waypoints[3].directions",
+       "says": "close to a hundred switchbacks up an open southwest-facing shoulder"
+      },
+      {
+       "field": "waypoints[4].directions",
+       "says": "Above camp the tread throws another set of tight switchbacks at you and ends in about a third of a mile"
+      }
+     ],
+     "why": "The beta puts the ~100 switchbacks in the third of a mile above Heaton Camp, while the approach and waypoints put them below camp.",
+     "internal_resolution": "approach, waypoints[3], approach_variants and itinerary day 1 all put the ~100 switchbacks below Heaton Camp; the beta is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trail start and lake",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "whose trail leaves the valley road near the guard station a mile or so from the bridge"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "past Coon Lake in the first mile"
+      },
+      {
+       "field": "approach",
+       "says": "From High Bridge, follow the Old Wagon Road/PCT north to Howard Lake at about 1.3 miles"
+      }
+     ],
+     "why": "The camping card starts the trail about a mile from High Bridge, while the approach and waypoints start it at High Bridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance and gain to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "about 7.7 miles and 6,400 ft of gain to within half a mile of the top"
+      },
+      {
+       "field": "approach",
+       "says": "total stats to the true summit are 7.7 miles and 6,600 ft one-way"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "7.8"
+      }
+     ],
+     "why": "The camping card puts 7.7 mi at half a mile below the top, but the approach and summit waypoint put the summit itself at about 7.7-7.8 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager: NRA vs National Park",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "Lake Chelan National Recreation Area (North Cascades NP complex)"
+      },
+      {
+       "field": "access.notes",
+       "says": "This corridor is inside the Lake Chelan National Recreation Area"
+      },
+      {
+       "field": "bivy[2].permit",
+       "says": "the upper valley and everything you climb from it are North Cascades National Park"
+      }
+     ],
+     "why": "Access says the route is in the Lake Chelan NRA, while the camping card says everything climbed from the upper valley is in the National Park.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Character of the summit scramble",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "overview",
+       "says": "The final pitch is a Class 3 hand-and-foot scramble"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "on the marked line there are no climbing moves, only the occasional handhold for balance on a narrow ledge. If you are pulling on rock to make upward progress, you are off the arrows."
+      }
+     ],
+     "why": "The grade and overview describe hands-on Class 3, while the base-finding says hands on rock mean you are off route.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "name": "Southwest Slopes",
+   "area": "Mount Arriva",
+   "contradictions": [
+    {
+     "fact": "Whether parties rope up",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "class 3 (YDS) scrambling with no reported roped climbing"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].detail",
+       "says": "some parties rope up here for the finish"
+      }
+     ],
+     "why": "The beta says no roped climbing has been reported, while the summit-day schedule says some parties rope up for the finish.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "name": "Southwest Slopes (Snow/Scramble)",
+   "area": "Mount Hardy",
+   "contradictions": [
+    {
+     "fact": "Snowy Lakes turnoff relative to Methow Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].distMi",
+       "says": "9.5 (Snowy Lakes Trail junction)"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "10.9 (Methow Pass)"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Head back to Snowy Creek Meadow and up the PCT to Methow Pass"
+      },
+      {
+       "field": "bivy[1].capacity",
+       "says": "around a mile beyond Methow Pass, near where the boot path to the lakes leaves"
+      }
+     ],
+     "why": "The waypoints and itinerary put the Snowy Lakes turnoff about 1.4 mi before Methow Pass, while the camping card puts it about a mile beyond the pass.",
+     "internal_resolution": "The waypoints, approach, itinerary and approach_variants[0] agree the turnoff comes before Methow Pass; bivy[1] is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Day-2 elevation from camp to Methow Pass and summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[1].detail",
+       "says": "~350 ft gained from camp."
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "6900 (Upper Snowy Lake camp)"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "6591 (Methow Pass)"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].detail",
+       "says": "~1,850 ft gained off-trail"
+      }
+     ],
+     "why": "Camp (6,900 ft) sits above Methow Pass (6,591 ft), so no gain is possible to the pass, and pass to summit (8,097 ft) is ~1,500 ft, not 1,850.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Last reliable water",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].note",
+       "says": "Last reliable, easy water before a long dry 7-8 mile stretch"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2"
+      },
+      {
+       "field": "bivy[2].water",
+       "says": "The last certain water is on the climb up, roughly three miles from the trailhead"
+      }
+     ],
+     "why": "The Porcupine Creek waypoint is at mile 2, but the Cutthroat Pass camp card puts the last certain water about three miles up.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rainy Pass trailhead parking type",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "the Rainy Pass PCT-Northbound trailhead and the Swamp Creek pullout are both informal highway-shoulder parking areas"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Large paved lot on the north side of SR 20 at Rainy Pass"
+      },
+      {
+       "field": "bivy[0].capacity",
+       "says": "A large paved lot"
+      }
+     ],
+     "why": "Access calls the Rainy Pass trailhead informal shoulder parking, while the waypoint, camping card and approach call it a large paved lot.",
+     "internal_resolution": "The waypoint, bivy[0] and approach_variants[0] all say large paved lot; access.permit is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Months when traction is needed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "Microspikes or crampons may be necessary March through May"
+      },
+      {
+       "field": "hazards[6]",
+       "says": "SR 20 closes seasonally for avalanche danger, roughly early Dec-Apr/May"
+      },
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      }
+     ],
+     "why": "The rack advice names March-May, when the same row says the highway is closed and outside the Jun-Sep season.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "name": "Blue's Buttress",
+   "area": "Poster Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead pin location",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].lat/lng",
+       "says": "48.518965, -120.67436"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "park at/near the Hairpin pullout on SR-20 about a mile east of Washington Pass"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "not the Blue Lake Trailhead, which serves the far side of the Liberty Bell group and puts you on the wrong mountain"
+      }
+     ],
+     "why": "The trailhead pin (also in approach_logistics) is the Blue Lake Trailhead coordinate, west of Washington Pass, while every text field says the hairpin east of the pass and warns against Blue Lake.",
+     "internal_resolution": "All text fields (approach, variant, waypoint note, bivy) describe the hairpin east of the pass; the coordinate is the outlier.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_action_potential",
+   "name": "Action Potential",
+   "area": "Burgundy Spire",
+   "contradictions": [
+    {
+     "fact": "Which face the route climbs",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "E"
+      },
+      {
+       "field": "face",
+       "says": "East Face"
+      },
+      {
+       "field": "overview",
+       "says": "up Burgundy Spire's East Face"
+      },
+      {
+       "field": "approach",
+       "says": "scramble down and around the base of Burgundy's north face"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August.reason",
+       "says": "the north side stays cool"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.reason",
+       "says": "cool rock on the north side"
+      }
+     ],
+     "why": "The route is labelled East Face with aspect E, but the approach and seasonal guidance place it on the north side of the spire.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel anchors on the route for a bail",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "Retreat via the established rappel anchors on the route (5 raps with doubles)"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "Action Potential has no rappel line of its own - parties finish into North Face terrain"
+      }
+     ],
+     "why": "The bail advice promises established rappel anchors on this route, while the rappel note says the route has no rappel line and the 5 raps belong to the North Face.",
+     "internal_resolution": "rappel_count_note, descent_text and gear[5] all say the 5 stations are the North Face line; the bail text is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "name": "North Face",
+   "area": "Burgundy Spire",
+   "contradictions": [
+    {
+     "fact": "Single-rope descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "(roughly 4 rappels instead of 5)"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "parties using a single 60-70m rope have reportedly gotten down in roughly 4 rappels"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "single-rope parties need an intermediate anchor at the big ledge"
+      }
+     ],
+     "why": "The descent text says a single rope means fewer rappels (4), while the rack says a single rope needs an extra intermediate anchor.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the last rappel lands",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "R5 (~60m) from the top of the first-pitch chimney down to the base"
+      },
+      {
+       "field": "rappel_detail[4].anchor",
+       "says": "top of the first-pitch chimney"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Scramble up 4th class with occasional mid-5th moves to the broad sandy ledge"
+      }
+     ],
+     "why": "The descent refers to the route's first-pitch chimney, but pitch 1 is described as a 4th-class scramble to a sandy ledge, with no chimney.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water at the bench",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].directions",
+       "says": "broad flat bench at ~6,460 ft (last reliable water)"
+      },
+      {
+       "field": "approach_variants[1].notes",
+       "says": "Reckon on the bench being the last flat ground and the last water."
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "the Bench has seasonal water that can be dry by late summer"
+      },
+      {
+       "field": "approach",
+       "says": "a small trickle on the trail below the col"
+      }
+     ],
+     "why": "The bench is called the last reliable water, but the same row says it can be dry by late summer and lists a trickle higher up below the col.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bench camp capacity",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "fits a dozen-plus tents"
+      },
+      {
+       "field": "approach_variants[1].notes",
+       "says": "holds a dozen or more tents"
+      },
+      {
+       "field": "bivy[1].capacity",
+       "says": "comfortably three or four tents"
+      }
+     ],
+     "why": "The approach and variants say the bench fits a dozen or more tents; the camping card says three or four.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "name": "Ultramega OK",
+   "area": "Burgundy Spire",
+   "contradictions": [
+    {
+     "fact": "Early Winters Creek crossing pin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].lat",
+       "says": "48.56803"
+      },
+      {
+       "field": "waypoints[0].lat",
+       "says": "48.55"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "0.2"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Trail descends ~200 ft from the pullout"
+      }
+     ],
+     "why": "The creek-crossing pin is about 1.2 mi north of the trailhead, while its own distance and note put it 0.2 mi away.",
+     "internal_resolution": "distMi and note agree on ~0.2 mi; the coordinate is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Standard descent: downclimb vs rappel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "finish by downclimbing or linking into the standard North Face rappel line"
+      },
+      {
+       "field": "descent_text",
+       "says": "the standard way down is the North Face's 5-rappel descent"
+      },
+      {
+       "field": "descent_text",
+       "says": "this is opportunistic route-finding rather than an established descent, and is not recommended"
+      }
+     ],
+     "why": "The itinerary offers downclimbing as a normal finish, while the descent text calls it an opportunistic, not-recommended alternative to the 5-rappel line.",
+     "internal_resolution": "descent_text, rappels, rappel_detail and approach_variants all make the North Face rappels the standard descent.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route length vs pitch lengths",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "273"
+      },
+      {
+       "field": "overview",
+       "says": "~900 ft"
+      },
+      {
+       "field": "pitch_detail[*].lengthM",
+       "says": "30+55+20+25+30+55+35+60 = 310"
+      }
+     ],
+     "why": "The pitch lengths add up to 310 m, 37 m (14%) more than the stated 273 m / ~900 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "name": "East Face",
+   "area": "Chablis Spire",
+   "contradictions": [
+    {
+     "fact": "Rappel lengths vs route length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "122"
+      },
+      {
+       "field": "rappel_detail[0].lengthM",
+       "says": "35"
+      },
+      {
+       "field": "rappel_detail[0].notes",
+       "says": "First double-rope rappel (~120 ft)"
+      },
+      {
+       "field": "rappel_detail[1].notes",
+       "says": "Plan on similar to the first rappel."
+      },
+      {
+       "field": "rappels",
+       "says": "2 double-rope (60m) rappels ... (first from just below the summit to a horn at the top of pitch 2, second back to the base)"
+      }
+     ],
+     "why": "Two ~35 m rappels cover ~70 m, and the second one (P2 anchor to the ground) has to cover ~85 m of a 122 m route. That is longer than two 60 m ropes can rappel.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which pitch is the crux",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "P4 is the 5.6 crux corner"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Fun, laid-back climbing in obvious corner approach to summit"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.6 (5.8 crack variation)"
+      }
+     ],
+     "why": "The rope note calls P4 the crux corner, while the pitch breakdown calls P4 laid-back and puts the runout 5.6/5.8 difficulty on P2.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Day 1: ... Hike to bench camp ... Day 2: ... Day 3: Pack out"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "8.5"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "5:00-6:00am from trailhead to secure daylight for descent"
+      }
+     ],
+     "why": "The itinerary is a 3-day trip, while Published Times gives an 8.5-hour day starting from the trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit difficulty",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].note",
+       "says": "East Face, easily attained summit"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "Summit block unprotectable final moves"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "40-foot section with no viable pro"
+      }
+     ],
+     "why": "The summit waypoint calls the summit easily attained, while hazards and pitch 4 call its final 40 ft unprotectable.",
+     "internal_resolution": "hazards, watch_out, overview and pitch 4 agree on the unprotectable summit block; the waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cam range",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "sling_rack.cams",
+       "says": "0.3-2in"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "single set of traditional cams (0.5-3\")"
+      },
+      {
+       "field": "beta",
+       "says": "Light rack to 3 inches adequate."
+      }
+     ],
+     "why": "The kit summary tops out at 2 in, while the detailed rack, rack list and beta go to 3 in.",
+     "internal_resolution": "detailed_rack, rack[0] and beta agree on cams to 3 in.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "name": "East Face (Rebel Yell area / standard)",
+   "area": "Chianti Spire",
+   "contradictions": [
+    {
+     "fact": "Grade of pitch 2",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "crux pitches P2 and P5 at 5.10b"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.9"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "parties on the harder left-start variation rate this pitch 5.9+/10b"
+      }
+     ],
+     "why": "The beta makes P2 a 5.10b crux, while the pitch breakdown grades P2 5.9 and gives 5.10b only on a variation.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water at Burgundy Col",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Water is available near the col from year-round snow."
+      },
+      {
+       "field": "approach",
+       "says": "A snow patch at/near the col is the last dependable water source but is unreliable by late summer"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "can be rock-hard in the morning or gone entirely in a dry, late season"
+      }
+     ],
+     "why": "The itinerary promises year-round snow water at the col, while the approach and camping card say it is unreliable or gone by late summer.",
+     "internal_resolution": "approach, approach_variants hazards and bivy[0] agree it is unreliable late season.",
+     "needs_research": false
+    },
+    {
+     "fact": "Recommended start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.weather.probability",
+       "says": "start early (per the 04:00 recommended start)"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "5:00 AM from camp"
+      },
+      {
+       "field": "itinerary.days[1].schedule[0].time",
+       "says": "5:00 AM"
+      }
+     ],
+     "why": "The Safety tab cites a 04:00 recommended start, while Published Times and the schedule say 5:00 AM.",
+     "internal_resolution": "timing and the schedule agree on 5:00 AM.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_clean_break",
+   "name": "Clean Break",
+   "area": "Juno Tower",
+   "contradictions": [
+    {
+     "fact": "Trailhead where the car is parked",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "SR-20 Wine Spires pullout (milepost 166)"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "SR-20 Wine Spires pullout (milepost 166)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Park at the small pullout on SR-20 roughly eight and a half miles east of Washington Pass."
+      },
+      {
+       "field": "descent_text",
+       "says": "then hitch-hike back to the vehicle"
+      },
+      {
+       "field": "itinerary",
+       "says": "from a bivy or camp near Silver Star Creek"
+      }
+     ],
+     "why": "The trailhead card and pin use the MP166 pullout, but the only approach variant parks at the Silver Star Creek pullout. The descent to MP166 then needs a hitch-hike back to the car.",
+     "internal_resolution": "approach_variants, itinerary, descent_text and waypoints[0].note all put the car at the Silver Star Creek pullout. MP166 is where the descent ends.",
+     "needs_research": false
+    },
+    {
+     "fact": "Fixed piece on pitch 7",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "fixed protection on P7 was present in 2014 but may not be reliable"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "(no longer a fixed piece on P7)"
+      }
+     ],
+     "why": "One field says the P7 fixed piece may still be there, the other says it is gone.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "name": "West Ridge",
+   "area": "Paisano Pinnacle",
+   "contradictions": [
+    {
+     "fact": "Bench spring reliability",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "There is a spring near the bench camp and it is the last reliable water."
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "limited to non-existent by late summer and early autumn"
+      }
+     ],
+     "why": "The approach calls the bench spring reliable, while the camping card says water there is limited to non-existent by late summer.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_rampage",
+   "name": "Rampage",
+   "area": "Paisano Pinnacle",
+   "contradictions": [
+    {
+     "fact": "Bench spring reliability",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "A spring near the camp bench is the last reliable water."
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "where there is a spring — the last reliable water"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "limited to non-existent by late summer and early autumn"
+      }
+     ],
+     "why": "The approach calls the bench spring reliable, while the camping card says water there is limited to non-existent by late summer.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_2",
+   "name": "South Face",
+   "area": "Pernod Spire",
+   "contradictions": [
+    {
+     "fact": "Day-1 gain to Burgundy Col",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2600"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "Class 2 scree notch on Silver Star's north ridge 3,700 ft above the creek crossing"
+      },
+      {
+       "field": "approach",
+       "says": "gaining nearly 2,400 ft — to the bench camp at roughly 6,460-6,500 ft ... to 7,770-ft Burgundy Col"
+      }
+     ],
+     "why": "Day 1 (pullout to Burgundy Col) is listed at 2,600 ft, but the col waypoint and approach put it about 3,500-3,700 ft above the creek. Only the day split is disputed here: the totals now agree (gain_ft = itinerary sum = 3,500).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing time for a 2-pitch route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "46"
+      },
+      {
+       "field": "turnaround",
+       "says": "Only 150 ft / 2 pitches"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].detail",
+       "says": "About 4-4.5 hours of climbing."
+      }
+     ],
+     "why": "A 150 ft, 2-pitch route is scheduled for 4-4.5 hours of climbing (5:45 to ~10:00 AM).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water at Burgundy Col",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a few small bivy spots and year-round snowmelt water are available"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "can be rock-hard in the morning or gone entirely in a dry, late season"
+      }
+     ],
+     "why": "The itinerary promises year-round snow water at the col, while the camping card says it can be gone in a dry, late season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Location of the A0 aid section",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "finishes with an A0 aid move off a bolt to the summit"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "The final move to the summit is A0 (aid) off a bolt"
+      },
+      {
+       "field": "descent_text",
+       "says": "lower on the route (the short aid section)"
+      }
+     ],
+     "why": "The pitch breakdown and watch-out put the aid move at the summit, while the descent text puts the aid section lower on the route.",
+     "internal_resolution": "pitch_detail, watch_out, pro_needs and beta all put the A0 move at the summit.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "name": "Standard Rock Route",
+   "area": "Pernod Spire",
+   "contradictions": [
+    {
+     "fact": "First-ascent year",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "First ascent 1952 — Don Wilde, Dick McGowan, and Fred Beckey."
+      },
+      {
+       "field": "overview",
+       "says": "made the first ascent in September 1952"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "a South Face description plus the 1989 first-ascent note"
+      }
+     ],
+     "why": "The rappel note cites a 1989 first-ascent note, while fa and the overview date the route's first ascent to 1952.",
+     "internal_resolution": "fa and the overview agree on 1952.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier travel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel; the Wine Spires are dry granite towers reached via a talus/scramble approach"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "Lingering snow and glacier-fringe travel crossing toward the Silver Star Glacier into July"
+      },
+      {
+       "field": "descent_text",
+       "says": "Rope up for the glacier crossing if there's any question about moat/crevasse conditions"
+      }
+     ],
+     "why": "The Safety tab rules out glacier travel, while the hazards and descent describe a Silver Star Glacier crossing that may need a rope. This is separate from the settled descent-line question.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether June is in season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Outside the established season"
+      },
+      {
+       "field": "best_season",
+       "says": "mid-July through September"
+      }
+     ],
+     "why": "The season chip includes June, while the seasonal guidance calls June outside the established season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Last water",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "this bench is the last reliable water"
+      },
+      {
+       "field": "waypoints[1].directions",
+       "says": "The bench is the last reliable water and can run dry by late summer"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "A handful of small bivy spots sit at the col with year-round snow for water."
+      }
+     ],
+     "why": "The bench is called the last water, while the itinerary promises year-round snow water higher up at the col.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_west_face",
+   "name": "Direct West Face",
+   "area": "Pernod Spire",
+   "contradictions": [
+    {
+     "fact": "Day-1 gain to the bench",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "1100"
+      },
+      {
+       "field": "approach",
+       "says": "reaches Early Winters Creek at about 4,080 ft ... gaining close to 2,400 ft to a flat bench at about 6,460-6,500 ft"
+      }
+     ],
+     "why": "Day 1 (pullout to bench) is listed at 1,100 ft, while the approach says close to 2,400 ft. Only the day split is disputed here: the totals now agree (gain_ft = itinerary sum = 3,400).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water at the bench",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Water here is unreliable late season ... don't count on it"
+      },
+      {
+       "field": "bivy[1].water",
+       "says": "a spring roughly ten minutes north of camp keeps running well into September in most years"
+      }
+     ],
+     "why": "The approach says not to count on bench water late season, while the camping card calls its spring the most dependable water and says it runs into September.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Role of the fixed-nut ridge anchor",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[6].notes",
+       "says": "a fixed nut anchor there serves a 60 m rappel to sandy benches below"
+      },
+      {
+       "field": "pitch_detail[7].notes",
+       "says": "From the benches, a 5.10 corner leads to the summit block"
+      },
+      {
+       "field": "rappel_detail[0]",
+       "says": "Rappel east down the gully to the Pernod-Chablis notch. anchor: Fixed nuts on the summit ridge"
+      }
+     ],
+     "why": "The pitch breakdown uses the fixed-nut anchor for a rappel partway up (to the benches below the summit block), while the rappel table makes it the first descent rappel to the Pernod-Chablis notch.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cam range",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "sling_rack.cams",
+       "says": "0.3-3 in single rack"
+      },
+      {
+       "field": "gear[1]",
+       "says": "cams to #4 Camalot"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "2-3x green Alien (or equivalent small cam) up through a #4 Camalot"
+      }
+     ],
+     "why": "The kit summary stops at 3 in and a single rack, while the gear list and detailed rack go to a #4 with doubled or tripled small cams.",
+     "internal_resolution": "gear, detailed_rack, rack and pro_tips agree: through #4 with 2-3 small cams.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

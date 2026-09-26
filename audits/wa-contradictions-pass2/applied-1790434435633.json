@@ -1,0 +1,365 @@
+{
+ "applied": [
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Compass direction of the 6,800 ft gully crossing"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "climbing_route",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Compass direction of the 6,800 ft gully crossing"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "baseFinding"
+   ],
+   "fact": "Compass direction of the 6,800 ft gully crossing"
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "baseFinding"
+   ],
+   "fact": "Compass direction of the 6,800 ft gully crossing"
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Honeymoon Meadows to Anderson Pass leg"
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Thirtymile Trailhead elevation"
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Thirtymile Trailhead elevation"
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Thirtymile Trailhead elevation"
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Thirtymile Trailhead elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "before": {
+    "approach": "Two trailheads serve the Southeast Slopes / South Ridge scramble, both off SR-20 between Rainy Pass and Washington Pass. Option A (PCT approach, most commonly used): park at the marked Pacific Crest Trail North trailhead lot on the north side of Rainy Pass (~4,850 ft, next to the Road 600 turnoff). From the lot, leave the PCT almost immediately and strike out cross-country/climber's-path east into open forest, gaining steeply through timber and over downed logs — there is no maintained tread once you leave the PCT. Continue up through the trees (expect lingering snow patches into early summer) to about 6,100 ft, where the forest opens into a meadow basin below the west ridge/gully complex. From the basin, trend south/southeast on a rising traverse to gain the col/basin between Whistler and the southwest peak of Cutthroat, then work up the broad west ridge or the shallow gully just north of it to the summit shoulder; the final short section involves a rock gully with a visible ramp along the headwall over downsloping slabs and loose gravel — a helmet is recommended here for rockfall from parties above. Round trip via this line runs roughly 3.7 miles with about 3,000 ft of gain (trailhead 4,850 ft to summit 7,790 ft). Option B (highway turnout approach, reaches the true south ridge): from the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass (0.7 mile before the Blue Lake trailhead, ~5,000 ft), walk back down/along the road shoulder to a boot path that starts at the west edge of a stand of trees. Follow the boot path up through a meadow, then rising-traverse east to intersect the level portion of Whistler's south ridge at about 6,180 ft. From there, scramble up the ridge and connecting gullies to the summit; alternatively leave the ridge around 6,800 ft, cross a couple of gullies left (north) onto gentler southwest-facing slopes, and finish to the summit that way. This line is also about 4 miles round trip with ~3,000 ft gain. Both approaches are trail-less above the first stretch of forest — expect route-finding, loose talus/scree in the gullies, and class 2-3 terrain with occasional class 3-4 moves and real exposure near the ridge crest and summit gully; no reliable water source above the lower forest, so carry what you need from the car. No creek fords or avalanche paths of note on the standard summer line, but early-season snow lingers in the forest and basin and can make the gully sections firm or icy.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "class 2-3 with occasional class 3-4 moves",
+      "label": "Col to the summit shoulder via the west ridge (Option A)",
+      "notes": "From the meadow basin at about 6,100 ft trend south/southeast on a rising traverse to gain the col/basin between Whistler and the southwest peak of Cutthroat, then work up the broad west ridge or the shallow gully just north of it to the summit shoulder. Trail-less with route-finding and loose talus/scree in the gullies, and real exposure near the ridge crest; early-season snow can make the gully sections firm or icy."
+     },
+     {
+      "n": 2,
+      "label": "Final rock gully and headwall ramp",
+      "notes": "The final short section involves a rock gully with a visible ramp along the headwall over downsloping slabs and loose gravel — a helmet is recommended here for rockfall from parties above."
+     },
+     {
+      "n": 3,
+      "class": "class 2-3 with occasional class 3-4 moves",
+      "label": "South ridge from 6,180 ft (Option B)",
+      "notes": "Intersect the level portion of Whistler's south ridge at about 6,180 ft, then scramble up the ridge and connecting gullies to the summit; loose talus/scree in the gullies and real exposure near the ridge crest and summit gully."
+     },
+     {
+      "n": 4,
+      "label": "Southwest slopes variant",
+      "notes": "Alternatively leave the ridge around 6,800 ft, cross a couple of gullies left (north) onto gentler southwest-facing slopes, and finish to the summit that way."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Rainy Pass PCT lot, then cross-country east into the meadow basin and the col toward Cutthroat's southwest peak",
+      "notes": "Park at the marked Pacific Crest Trail North trailhead lot on the north side of Rainy Pass at about 4,850 ft, next to the Road 600 turnoff. LEAVE THE PCT ALMOST IMMEDIATELY and strike out cross-country east into open forest, gaining steeply through timber and over downed logs. There is no maintained tread once you leave the PCT.\n\nThis is WHISTLER MOUNTAIN ABOVE RAINY PASS in Chelan County, not the Whistler Canyon trailhead area near Oroville, which is about 100 miles away and unrelated.\n\nRound trip runs roughly 3.7 miles with about 3,000 ft of gain.",
+      "season": "Jul-Oct",
+      "hazards": [
+       "No maintained tread above the PCT; route-finding the whole way",
+       "Downed logs in the lower forest",
+       "Loose talus and scree in the gullies, with class 3-4 moves and real exposure near the ridge crest",
+       "Downsloping slabs and loose gravel in the summit gully",
+       "No reliable water above the lower forest",
+       "Early-season snow lingering in the forest and basin, firming the gullies"
+      ],
+      "primary": true,
+      "baseFinding": "CLIMB UNTIL THE FOREST OPENS. At about 6,100 ft the timber gives way to A MEADOW BASIN BELOW THE WEST RIDGE AND GULLY COMPLEX, and that transition is the first reliable confirmation on a trail-less approach. Trees stopping is something you notice in any visibility.\n\nFROM THE BASIN, TREND SOUTH AND SOUTHEAST ON A RISING TRAVERSE TO GAIN THE COL AND BASIN BETWEEN WHISTLER AND THE SOUTHWEST PEAK OF CUTTHROAT. THAT COL IS THE AIMING POINT, and it is named by the two peaks either side of it.\n\nThen work up the BROAD WEST RIDGE, or the SHALLOW GULLY JUST NORTH OF IT, to the summit shoulder.\n\nTHE LAST SECTION IS THE ONE THAT CONFIRMS YOU ARE ON THE SUMMIT LINE RATHER THAN A NEIGHBOURING GULLY: A ROCK GULLY WITH A VISIBLE RAMP ALONG THE HEADWALL, OVER DOWNSLOPING SLABS AND LOOSE GRAVEL. A ramp cutting the headwall is the way through; helmet on here for rockfall from parties above."
+     },
+     {
+      "name": "The unmarked SR-20 turnout, then a boot path onto the true south ridge at 6,180 ft",
+      "notes": "The second option, and the one that reaches the true south ridge. From the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass, 0.7 mile BEFORE the Blue Lake trailhead, at about 5,000 ft, walk back down and along the road shoulder to a boot path that starts at the WEST EDGE OF A STAND OF TREES.\n\nAbout 4 miles round trip with roughly 3,000 ft of gain, the same as the PCT option.",
+      "season": "Jul-Oct",
+      "hazards": [
+       "An unmarked trailhead identified only by its distance from the Blue Lake trailhead",
+       "Trail-less above the first stretch of forest",
+       "Class 2-3 with occasional class 3-4 moves and real exposure near the ridge crest",
+       "Loose talus and scree in the connecting gullies",
+       "No reliable water on the route"
+      ],
+      "baseFinding": "THE TRAILHEAD IS UNMARKED AND THE PATH START IS A TREE-LINE EDGE, SO THE FIND IS AT THE ROAD RATHER THAN ON THE MOUNTAIN. The pullout is 0.7 MILE BEFORE THE BLUE LAKE TRAILHEAD coming from Rainy Pass. IF YOU HAVE REACHED THE BLUE LAKE TRAILHEAD, YOU HAVE DRIVEN 0.7 MILE TOO FAR. From the pullout, walk the shoulder to where a STAND OF TREES begins, and the boot path leaves from its WEST EDGE.\n\nFOLLOW THE BOOT PATH UP THROUGH A MEADOW, THEN RISING-TRAVERSE EAST TO INTERSECT THE LEVEL PORTION OF WHISTLER'S SOUTH RIDGE AT ABOUT 6,180 FT. A LEVEL SECTION OF RIDGE IS THE ARRIVAL, and a level stretch on a ridge is something you can feel underfoot without seeing anything.\n\nFROM THERE, SCRAMBLE UP THE RIDGE AND CONNECTING GULLIES TO THE SUMMIT. THE ALTERNATIVE, WHICH IS ALSO CORRECT: leave the ridge around 6,800 ft, cross a couple of gullies LEFT, north, onto gentler southwest-facing slopes, and finish that way.\n\nSO THE DECISION AT 6,800 FT IS A REAL FORK AND BOTH BRANCHES WORK: stay on the crest for more exposure and directness, or cross two gullies north for easier ground.\n\nTHE NEGATIVE TEST AGAINST THE OTHER APPROACH, WHICH MATTERS BECAUSE BOTH START WITHIN THREE MILES OF EACH OTHER ON THE SAME HIGHWAY: the PCT option leaves from the marked PCT North lot at Rainy Pass and gains a MEADOW BASIN at 6,100 ft below the WEST ridge. This one leaves from an unmarked turnout and gains the SOUTH ridge at 6,180 ft. Marked lot and west ridge, or unmarked turnout and south ridge."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "The Dosewallips Road has been washed out ~5.4 mi from the old trailhead since 2002 (not slated for repair), so parties bike the abandoned road bed to save time; the route is normally snow-free and done July-September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Ride bikes up the washed-out Dosewallips Road to the old Ranger Station, stash them, then continue on foot up the West Fork Dosewallips Trail past Dose Forks and Diamond Meadows to camp. Most parties camp at Honeymoon Meadows; some push on toward Camp Siberia to shorten the summit day.",
+       "hours": 9,
+       "miles": 17,
+       "title": "Bike-and-hike approach to high camp",
+       "gainFt": 5300,
+       "lossFt": 300,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave the Dosewallips washout trailhead",
+         "detail": "Bikes loaded with overnight gear for the ride up the old road."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach the former Ranger Station, stash bikes",
+         "detail": "~7 mi and about 1,900 ft of gain riding the abandoned road bed."
+        },
+        {
+         "time": "+5 hr",
+         "label": "Hike the West Fork Dosewallips Trail",
+         "detail": "Forested trail past Dose Forks and Diamond Meadows camps."
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Make camp at Honeymoon Meadows (3,527 ft)",
+         "detail": "~14-15 mi and roughly 3,500-4,000 ft of hiking gain from the trailhead."
+        }
+       ],
+       "objective": "Reach camp at Honeymoon Meadows (or Camp Siberia near Anderson Pass)"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp with a light pack, cross Anderson Pass, then leave the trail for open scree and talus slopes to the summit — Class 2 with no maintained path, so route-finding matters above treeline. Round trip is about 8 miles with roughly 4,000 ft of gain and loss.",
+       "hours": 9,
+       "miles": 8,
+       "title": "Summit push",
+       "gainFt": 4000,
+       "lossFt": 4000,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave high camp",
+         "detail": "Light daypack; save weight for the off-trail gain."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Reach Anderson Pass (4,464 ft)",
+         "detail": "~1.2 mi and 700 ft of gain from Honeymoon Meadows."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Ascend open talus/scree toward White Mountain",
+         "detail": "Class 2, off-trail; steepest, loosest ground of the day."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit White Mountain (6,378 ft)",
+         "detail": "Views of Mt Anderson, Mt LaCrosse, and the Anderson/Eel Glaciers."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Descend the same talus slopes back to camp",
+         "detail": "Care needed on loose rock, especially if wet."
+        }
+       ],
+       "objective": "Climb White Mountain (6,378 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse day one: hike back down the West Fork Dosewallips Trail to the old Ranger Station, retrieve bikes, and coast the washed-out road back to the car. Lighter pack and mostly downhill grade make this faster than the trip in.",
+       "hours": 8,
+       "miles": 17,
+       "title": "Hike-and-bike out",
+       "gainFt": 300,
+       "lossFt": 5300,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to the Dosewallips trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~42-mile round trip up the West Fork Dosewallips (extended by the long-standing Dosewallips Road washout): two long bike-and-hike approach days to a high camp near Anderson Pass, bracketing one big scramble day with ~4,000 ft of gain to the remote 6,378 ft summit."
+    }
+   }
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "before": {
+    "timing": {
+     "totalHrs": 23,
+     "summitTimeHrs": 6,
+     "descentTimeHrs": 7.5,
+     "approachTimeHrs": 9.5,
+     "recommendedStart": "6:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5,
+       "note": "From the Thirtymile Trailhead (~3,600 ft), follow the Chewuch River Trail #510 north 8.8 miles to its junction with the Tungsten Creek Trail #534. Gentle, well-graded trail through…",
+       "fromTo": "Approach to the Tungsten Creek junction",
+       "section": "Approach"
+      },
+      {
+       "hrs": 4.5,
+       "note": "Climb the Tungsten Creek Trail #534 for 6.2 miles to its junction with the Boundary Trail #533 at historic Tungsten Mine Camp (~6,750 ft), site of two old cabins and mining relics …",
+       "fromTo": "Up to Tungsten Mine Camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "Leave camp with light daypacks, follow the Boundary Trail about 1 mile west to where it bends south, then leave the trail and ascend the broad, gentle west side of Wolframite (sust…",
+       "fromTo": "Summit day: Wolframite Mountain",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7.5,
+       "note": "Retrace the full approach — Boundary/Tungsten Creek Trail down to the Chewuch River Trail junction and out to Thirtymile TH — in one long, mostly-downhill day. Fit parties often pu…",
+       "fromTo": "Hike out to the trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach": "Park at the Thirtymile Trailhead (~3,600 ft) at the end of West Chewuch Road, about 29 miles north of Winthrop. From there follow the Chewuch River Trail #510 north, staying close to the Chewuch River; Chewuch Falls is a good landmark around 2.5 miles in. Around mile 8 to 8.8 the trail crosses a 2001 burn area — standing dead snags are common here and more prone to falling in wind, so be alert in storms. At roughly 8-8.8 miles (~4,700 ft) reach the signed junction with Tungsten Creek Trail #534 and turn right (northeast). Follow Tungsten Creek Trail #534 for 6.2 miles, gaining about 2,100 ft, passing within earshot of Big Horn and Horseshoe Creeks and crossing Cinch Creek; Tungsten Creek itself, which the trail follows for its final stretch, is the last dependable water before the high country (in dry years, e.g. a September 2017 trip, sources beyond here were reported as dry streambeds and stagnant pools, so tank up). This trail ends at its junction with the Boundary Trail #533 at the historic Tungsten Mine Camp (~6,750 ft) — old mine structures, iron pipe, and building ruins from the 1908-1920s tungsten operation are visible on the south side of Wolframite Mountain. This point is roughly 14-15 miles in, effectively a full day's hike, and most parties camp near here rather than pushing to the summit and back in one day. From the mine camp junction, follow the Boundary Trail #533 west/south for about 1 mile to the point where the trail bends south toward Apex Pass. Leave the trail here and ascend off-trail, heading northeast up Wolframite's broad, gentle west slopes to the 8,136-8,137 ft summit; done on this line the terrain is a straightforward Class 2 talus/heather slope, though other lines or variations can involve short sections of low Class 3. This is the safest and most recommended line up the peak. Total one-way distance from the trailhead is roughly 16-17 miles with about 4,700 ft of cumulative gain, consistent with the ~34-mile (54.72 km) round trip — treat this as a backpack with a high camp near Tungsten Mine or the Boundary Trail, not a single-day car-to-car scramble.",
+    "itinerary": {
+     "cal": "Pasayten Wilderness requires only a self-issued permit at the trailhead; FS Road 51 to the Thirtymile TH and the high, open Boundary Trail slopes near Wolframite often don't fully clear of snow until late June/July.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Thirtymile Trailhead (~3,600 ft), follow the Chewuch River Trail #510 north 8.8 miles to its junction with the Tungsten Creek Trail #534. Gentle, well-graded trail through forest along the Chewuch River; several established campsites near the junction make a natural first-night stop.",
+       "hours": 5,
+       "miles": 8.8,
+       "title": "Approach to the Tungsten Creek junction",
+       "gainFt": 1300,
+       "lossFt": 100,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Hike from Thirtymile TH toward Tungsten Mine Camp"
+      },
+      {
+       "n": 2,
+       "note": "Climb the Tungsten Creek Trail #534 for 6.2 miles to its junction with the Boundary Trail #533 at historic Tungsten Mine Camp (~6,750 ft), site of two old cabins and mining relics on the south side of Wolframite. Most parties arrive by early-to-mid afternoon, leaving time to set up camp, filter water, and scout the west-side scramble line before dark.",
+       "hours": 4.5,
+       "miles": 6.2,
+       "title": "Up to Tungsten Mine Camp",
+       "gainFt": 2100,
+       "lossFt": 50,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach Tungsten Mine Camp at the base of Wolframite"
+      },
+      {
+       "n": 3,
+       "note": "Leave camp with light daypacks, follow the Boundary Trail about 1 mile west to where it bends south, then leave the trail and ascend the broad, gentle west side of Wolframite (sustained Class 2, with occasional Class 3 variations depending on line) to the 8,136 ft summit. Many strong parties use this camp as a base to also tag Apex Mountain or Bauerman Ridge the same day or the next, but a straight Wolframite round trip comfortably fits a single day from camp.",
+       "hours": 6,
+       "miles": 4,
+       "title": "Summit day: Wolframite Mountain",
+       "gainFt": 1450,
+       "lossFt": 1450,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Tungsten Mine Camp",
+         "detail": "Light daypack; follow the Boundary Trail west."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Leave the Boundary Trail",
+         "detail": "Trail bends south; begin off-trail ascent up the open west slope."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Reach the summit",
+         "detail": "Broad Class 2 slope tops out at 8,136 ft; views into the Pasayten and across the Canadian border."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line back to the Boundary Trail."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Back at Tungsten Mine Camp",
+         "detail": "Rest, dry gear, and pack for the hike out."
+        }
+       ],
+       "objective": "Climb Wolframite Mountain's west side and return to camp"
+      },
+      {
+       "n": 4,
+       "note": "Retrace the full approach — Boundary/Tungsten Creek Trail down to the Chewuch River Trail junction and out to Thirtymile TH — in one long, mostly-downhill day. Fit parties often push straight through rather than splitting the exit into two days.",
+       "hours": 7.5,
+       "miles": 15,
+       "title": "Hike out to the trailhead",
+       "gainFt": 150,
+       "lossFt": 3150,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to Thirtymile TH"
+      }
+     ],
+     "totalNote": "A 4-day, ~34-mile round-trip backpack (net gain/loss roughly 4,600 ft each way) with a layover day for the Class 2 summit climb from Tungsten Mine Camp; very strong parties compress this to 2 days or even a single long car-to-car push."
+    },
+    "approach_logistics": {
+     "peakLat": 48.986025,
+     "peakLng": -120.129525,
+     "trailhead": "Thirtymile Trailhead",
+     "trailheadDirection": "Park at the Thirtymile Trailhead (~3,600 ft) at the end of West Chewuch Road, about 29 miles north of Winthrop."
+    }
+   }
+  }
+ ]
+}

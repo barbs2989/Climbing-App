@@ -1,0 +1,1685 @@
+{
+ "batches": [
+  "b364.json",
+  "b365.json",
+  "b366.json",
+  "b367.json",
+  "b368.json",
+  "b369.json",
+  "b370.json"
+ ],
+ "routes_read": 21,
+ "routes": [
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "name": "White Salmon Glacier",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Winnie's Slide steepness and length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "a short, steep snow slope of about 40-45 degrees that steepens past 50 near the top, for a few hundred feet"
+      },
+      {
+       "field": "max_angle",
+       "says": "45"
+      },
+      {
+       "field": "gear[3]",
+       "says": "Winnies Slide (40-45°, ~6,800 ft)"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "150-200 ft step of steep 40-45° snow/ice"
+      }
+     ],
+     "why": "The route breakdown says the slide passes 50° and runs a few hundred feet, while the max angle, gear note and waypoint cap it at 45° and 150-200 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether SR 542 is open year-round to this trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Paved, open seasonally"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "The Mount Baker Highway (SR 542) is plowed year-round to the Mt. Baker Ski Area, near where this approach starts"
+      }
+     ],
+     "why": "GETTING THERE calls the road seasonal while ACCESS says it is plowed year-round to the ski area, below which this trailhead sits.",
+     "internal_resolution": "access.seasonal and road.seasonalGate ('Closed by winter snow beyond the ski area') agree the closure is above the ski area, so the pull-off is reachable year-round.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "name": "North Face",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Summit-day and total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "2600"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climb roughly 2,500-2,600 ft of sustained 45-50 degree snow and ice ... to the summit"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "5500"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "9131"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 5,000-5,500 ft of total gain"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3500"
+      }
+     ],
+     "why": "Camp at 5,500 ft to the 9,131 ft summit is about 3,630 ft, not 2,600, and trailhead 3,500 ft to summit is already 5,630 ft of net rise, more than the itinerary's 5,200 ft total.",
+     "internal_resolution": "Camp (bivy, waypoint, approach, baseFinding all 5,500) and summit elevations agree; the day-2 gain and the total understate the climb.",
+     "needs_research": false
+    },
+    {
+     "fact": "Hike-out leg vs the approach it reverses",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[2].note",
+       "says": "Reverse the White Salmon Creek approach back to the car."
+      },
+      {
+       "field": "itinerary.days[2].miles",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "5"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "3"
+      }
+     ],
+     "why": "The same leg is 5 miles/3 hours going in but 4 miles/5 hours coming out, all downhill.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead named in the bivy permit note",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[0].permit",
+       "says": "the approach leaves Forest Service ground shortly past Lake Ann and the bivy is inside the park ... Do not assume the Lake Ann trailhead pass covers this."
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "White Salmon Day-Lodge Area (FR-3075, Mt. Baker Ski Area)"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "None required at the White Salmon Road pull-off"
+      }
+     ],
+     "why": "The main bivy's permit note routes the party past Lake Ann, but every approach field starts at the White Salmon pull-off, where no pass is required.",
+     "internal_resolution": "Approach, waypoints, itinerary, approach_variants and trailhead all use White Salmon Road; the bivy permit text was written for the Fisher Chimneys side.",
+     "needs_research": false
+    },
+    {
+     "fact": "Road named in access.seasonal is not on this route's drive",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.seasonal",
+       "says": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access"
+      },
+      {
+       "field": "road.name",
+       "says": "White Salmon Road (FS 3075) off SR 542"
+      }
+     ],
+     "why": "The ACCESS card warns about Baker Lake Road while the route's own trailhead is reached by a different road, so the closure note describes another approach.",
+     "internal_resolution": "The trailhead/road fields are consistent with each other; access.seasonal is generic Shuksan boilerplate.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "name": "Northwest Arete",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "What borders the arête",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "watch_out[0]",
+       "says": "Arete is bordered by the Northwest Couloir (south side) and Hanging Glacier terrain (north side)"
+      },
+      {
+       "field": "approach_variants[1].baseFinding",
+       "says": "with the White Salmon Glacier on one side of the pillar and the North Face ground on the other"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The northwest arête is the pillar between them"
+      }
+     ],
+     "why": "Safety names the Northwest Couloir and Hanging Glacier as the arête's flanks; the Plan baseFinding names the White Salmon Glacier and the North Face.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Access notes describe other approaches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "the lower approach (Lake Ann Trail, Sulphide Glacier forest approach) is USFS"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures"
+      },
+      {
+       "field": "approach",
+       "says": "parking at the lower White Salmon lodge on SR 542 (White Salmon Road, FR-3075)"
+      }
+     ],
+     "why": "ACCESS describes the Lake Ann and Sulphide approaches and the Baker Lake Road, none of which this route uses.",
+     "internal_resolution": "Approach, approach_variants, waypoints and road all start at the White Salmon lodge on SR 542.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "name": "Southeast Ridge (SE Corner)",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Trailhead the party drives to",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "Roughly 2-2.5 hours from Seattle/Bellingham via SR-542 to the Lake Ann Trailhead."
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1 approach to a bivy near Winnie's Slide or the Sulphide high camp"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Lake Ann trailhead)"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Shannon Ridge Trailhead (Sulphide Glacier approach)"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Shannon Ridge TH"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass (or equivalent) for parking at the Shannon Ridge Trailhead"
+      }
+     ],
+     "why": "GETTING THERE drives to Lake Ann on SR 542 while the trailhead card, waypoints and approach start at Shannon Ridge off Baker Lake Road.",
+     "internal_resolution": "Trailhead card, waypoints, approach, approach_variants, bivies and passRequired all use Shannon Ridge; the road drive note and Winnie's Slide bivy belong to the Fisher Chimneys approach.",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].name",
+       "says": "Camp at the pass below the Sulphide Glacier"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5400"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6400"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Most parties camp on the large flat plateau around 6,400 ft"
+      }
+     ],
+     "why": "The only Campsite waypoint puts camp at 5,400 ft while the main bivy and approach put it 1,000 ft higher.",
+     "internal_resolution": "bivy[0] and approach_variants agree on 6,400 ft; 5,400 ft is the pass where the featureless snow begins.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit at the lower Shannon Ridge camps",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].permit",
+       "says": "no backcountry permit needed here, which is the entire reason parties use these sites"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead."
+      }
+     ],
+     "why": "One field says no permit is needed at the lower ridge camps, the other says a free self-issue permit is.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "name": "Fisher Chimneys",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[2].hours",
+       "says": "10"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[2].schedule[0].time",
+       "says": "3:30 AM"
+      },
+      {
+       "field": "itinerary.days[2].schedule[4].time",
+       "says": "6:00 PM"
+      }
+     ],
+     "why": "The day-3 schedule runs from 3:30 AM to 6:00 PM, 14.5 hours, but the day and PUBLISHED TIMES both say 10 hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Elevation of the top of the Chimneys / high camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "where the Fisher Chimneys begin ... near 6,000 ft"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "roughly 1,000–1,200 vertical ft of 2nd–3rd class dirt path"
+      },
+      {
+       "field": "approach",
+       "says": "Many parties camp on benches at the base of, or partway up, the Chimneys (roughly 6,500-7,200 ft)"
+      },
+      {
+       "field": "bivy[2].elev",
+       "says": "6700"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "a high camp at the top of the chimneys ... (~6,700 ft)"
+      }
+     ],
+     "why": "A 1,000-1,200 ft chimney system starting near 6,000 ft tops out near 7,000-7,200 ft, and 'partway up' camps reach 7,200 ft, yet the top-of-chimneys camp is 6,700 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the usual high camp sits on the White Salmon",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "The White Salmon sits on Shuksan's northwest flank — its toe holds the usual high camp"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Walk briefly across the top of the White Salmon Glacier to a rock outcrop with bivy platforms"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "just past the top of the chimney system near the edge of the upper glacier"
+      }
+     ],
+     "why": "DESCENT puts the high camp at the glacier's toe; the breakdown and bivy put it at the top of the White Salmon.",
+     "internal_resolution": "pitch_detail, bivy[2] and itinerary.days[1] all place camp at the top of the White Salmon.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time to Lake Ann",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~4 miles/3-4 hrs to Lake Ann camp"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "2.5"
+      }
+     ],
+     "why": "Partners tab says 3-4 hours to Lake Ann; the itinerary day says 2.5.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Road named in access.seasonal is not on this route's drive",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.seasonal",
+       "says": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access"
+      },
+      {
+       "field": "road.name",
+       "says": "SR 542 (Mount Baker Highway)"
+      }
+     ],
+     "why": "The ACCESS card warns about Baker Lake Road while the route's own trailhead is reached by a different road, so the closure note describes another approach.",
+     "internal_resolution": "The trailhead/road fields are consistent with each other; access.seasonal is generic Shuksan boilerplate.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "name": "Sulphide Glacier",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Grade of the standard summit-pyramid gully",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II, Class 4"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[3]",
+       "says": "Class 4 scrambling on the summit pyramid"
+      },
+      {
+       "field": "rock_grade",
+       "says": "3rd class (4th class / low 5th on the SE Ridge finish)"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "3rd class"
+      }
+     ],
+     "why": "The crux grade and Partners tab say Class 4 while the rock grade and route breakdown call the standard gully 3rd class.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "8"
+      },
+      {
+       "field": "approach",
+       "says": "Total approach to high camp is roughly 4-5 miles one-way"
+      }
+     ],
+     "why": "dist_km 8 (5.0 mi) is shorter than the one-way miles to camp plus the glacier, and the summit waypoint sits at 8 miles.",
+     "internal_resolution": "Waypoints and itinerary (5 mi to camp, 6 mi round-trip summit day) put the summit ~7-8 mi one-way; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "September inside the optimal window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late May (ski) through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The optimal window runs through September while the month breakdown rates September marginal.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "name": "Price Glacier",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Day-1 gain to camp (and day-2 gain)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2200"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2200"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "6500"
+      },
+      {
+       "field": "approach",
+       "says": "first bivy sites on flat granite slabs around 6,000–6,500 ft"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "3800"
+      }
+     ],
+     "why": "Trailhead 2,200 ft to camp 6,000-6,500 ft is 3,800-4,300 ft on day 1, not 2,200; camp to the 9,131 ft summit is only ~2,600-3,100 ft, not 3,800.",
+     "internal_resolution": "Trailhead, camp and summit elevations are consistent across waypoints, approach and baseFinding; the day-1/day-2 gain figures look swapped.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6000"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 6,000 ft of gain"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2200"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "9131"
+      }
+     ],
+     "why": "The trailhead-to-summit rise alone is 6,931 ft, before the regain on the Lake Ann trail exit, so 6,000 ft understates the total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to base camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.5"
+      },
+      {
+       "field": "approach",
+       "says": "the North Cascades National Park boundary (~4 mi in)"
+      }
+     ],
+     "why": "The approach reaches the park boundary at ~4 mi before crossing the river and climbing to Price Lake and the slabs, yet the camp waypoint sits at 4 mi.",
+     "internal_resolution": "itinerary.days[0] (5.5 mi) fits the approach description better.",
+     "needs_research": true
+    },
+    {
+     "fact": "Whether the road to the trailhead is drivable",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "FR 32 has a longstanding washout roughly 2.3 miles in, near Ruth Creek (elev. ~2,150 ft); travel beyond that point is on foot"
+      },
+      {
+       "field": "approach",
+       "says": "reached via Hannegan Pass Road (FS-32) off the Mount Baker Highway and then Nooksack Cirque Road (FS-34) to its end"
+      }
+     ],
+     "why": "GETTING THERE says Hannegan Pass Road is washed out 2.3 mi in, while the approach and trailhead directions drive on up FS-34 to its end.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Road named in access.seasonal is not on this route's drive",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.seasonal",
+       "says": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access"
+      },
+      {
+       "field": "road.name",
+       "says": "Hannegan Pass Road (FS 32) to FS 34, Ruth Creek/Nooksack Cirque Trailhead"
+      }
+     ],
+     "why": "The ACCESS card warns about Baker Lake Road while the route's own trailhead is reached by a different road, so the closure note describes another approach.",
+     "internal_resolution": "The trailhead/road fields are consistent with each other; access.seasonal is generic Shuksan boilerplate.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "name": "SW Couloir and Face",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "7"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "10 sections (Lower icefall snow ... Summit pyramid)"
+      }
+     ],
+     "why": "The header shows 7 pitches while ROUTE BREAKDOWN lists 10 sections.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Length of the rock section",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[4]",
+       "says": "for the short 5.2 rock/face section at the top"
+      },
+      {
+       "field": "overview",
+       "says": "roughly 1,000 feet of 5th-class rock on the SE corner buttress"
+      },
+      {
+       "field": "pitch_detail[7].lengthM",
+       "says": "305"
+      }
+     ],
+     "why": "The gear list calls the 5th-class rock short, while the overview and breakdown make it a 1,000 ft buttress.",
+     "internal_resolution": "overview, beta and pitch_detail[7] all say ~1,000 ft.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "name": "Hanging Glacier",
+   "area": "Mount Shuksan",
+   "contradictions": [
+    {
+     "fact": "Glacier beside the alternate-approach bivy",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[1].notes",
+       "says": "climb the Fisher Chimneys and Winnie's Slide to a bivy near the Lower Curtis Glacier"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach high camp near Winnie's Slide / the Upper Curtis Glacier"
+      }
+     ],
+     "why": "The same camp above Winnie's Slide is put next to the Lower Curtis in one field and the Upper Curtis in another.",
+     "internal_resolution": "Winnie's Slide tops out on the Upper Curtis per the itinerary and other Shuksan rows.",
+     "needs_research": true
+    },
+    {
+     "fact": "Ice screw count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "sling_rack.ice_screws",
+       "says": "4-6"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "6-8 ice screws"
+      },
+      {
+       "field": "rack[1]",
+       "says": "6-8 ice screws"
+      }
+     ],
+     "why": "The PROTECTION card says 4-6 screws while the rack lists say 6-8.",
+     "internal_resolution": "detailed_rack and rack agree on 6-8.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead named in the main bivy permit note",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].permit",
+       "says": "the approach leaves Forest Service ground shortly past Lake Ann and the bivy is inside the park"
+      },
+      {
+       "field": "approach_variants[0].name",
+       "says": "White Salmon Creek from the old lodge site, up the White Salmon Glacier to the dividing shoulder"
+      }
+     ],
+     "why": "The White Salmon-side bivy's permit note describes the Lake Ann approach.",
+     "internal_resolution": "The primary approach and trailhead are White Salmon.",
+     "needs_research": false
+    },
+    {
+     "fact": "Road named in access.seasonal is not on this route's drive",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.seasonal",
+       "says": "Baker Lake Road (FSR 11) has had seasonal bridge-work closures affecting Shuksan-area access"
+      },
+      {
+       "field": "road.name",
+       "says": "Mount Baker Highway (SR 542) to White Salmon Road (FS 3075)"
+      }
+     ],
+     "why": "The ACCESS card warns about Baker Lake Road while the route's own trailhead is reached by a different road, so the closure note describes another approach.",
+     "internal_resolution": "The trailhead/road fields are consistent with each other; access.seasonal is generic Shuksan boilerplate.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "name": "South/East Scramble",
+   "area": "Mount Watson",
+   "contradictions": [
+    {
+     "fact": "Location of Watson Pass and where the maintained trail ends",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].name",
+       "says": "Watson Pass (saddle)"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "leave the maintained trail here and pick up the climber's boot path"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "4800"
+      },
+      {
+       "field": "approach",
+       "says": "From Watson Lakes the maintained trail ends ... climb talus ... toward Watson Pass and the ridge crest"
+      }
+     ],
+     "why": "The waypoint puts Watson Pass on the trail saddle before the lakes and leaves the trail there; the approach puts Watson Pass above the lakes and ends the trail at the lakes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day-by-day gain/loss vs camp and trailhead elevations",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2900"
+      },
+      {
+       "field": "itinerary.days[0].lossFt",
+       "says": "100"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach a camp around 5,400-5,600 ft"
+      },
+      {
+       "field": "itinerary.days[1].lossFt",
+       "says": "3700"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "900"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4300"
+      }
+     ],
+     "why": "Day 1 nets +2,800 ft from a ~4,200 ft trailhead (a 7,000 ft camp, above the summit), and day 2 nets −2,800 ft, so the days cannot both match a 5,400 ft camp.",
+     "internal_resolution": "Trailhead, lakes (4,400), camp (5,400) and summit (6,221) elevations agree across waypoints, approach and bivy; the per-day gain/loss figures do not.",
+     "needs_research": false
+    },
+    {
+     "fact": "When to go",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "Go early summer if possible - by mid-to-late summer melt-out opens moats ... making the route harder and slower."
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late July through mid-September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August.status",
+       "says": "optimal"
+      }
+     ],
+     "why": "The trip plan recommends early summer, while the seasonal guidance marks June marginal and late July to mid-September optimal.",
+     "internal_resolution": "seasonal_guidance, best_season ('many parties prefer August') and approach_variants.season favour late summer.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which side of Watson the high camp is on",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "parties camping partway (e.g., ~5,400 ft on the west slopes)"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach a camp around 5,400-5,600 ft on the open slopes below Watson's north/east side"
+      }
+     ],
+     "why": "The same 5,400 ft camp is placed on the west slopes in one field and the north/east side in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Elevation of the second trail junction on the way out",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "passing back through the two junctions (5,900-ft basin exit, then the Anderson Butte Trail #611.1 junction at 1 mile from the trailhead)"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "4700"
+      },
+      {
+       "field": "approach",
+       "says": "at roughly 4,700 ft, a second junction splits"
+      }
+     ],
+     "why": "DESCENT names the upper junction at 5,900 ft (the summit saddle's height) while waypoints and approach put it at 4,700 ft.",
+     "internal_resolution": "waypoints[2] and approach agree on 4,700 ft.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "name": "South Face",
+   "area": "Nooksack Tower",
+   "contradictions": [
+    {
+     "fact": "Land manager in the fee note",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None — no climbing fee (National Forest, not Mount Rainier NP)"
+      },
+      {
+       "field": "access.landManager",
+       "says": "National Park Service (North Cascades National Park)"
+      }
+     ],
+     "why": "The fee note calls the route National Forest and mentions Mount Rainier NP, while the land manager is North Cascades National Park.",
+     "internal_resolution": "landManager, land_manager, permit and bivy permits all name North Cascades NP for the upper route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[0]",
+       "says": "Start this climb extremely early (2-3 am)"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "Depart bivouac or camp by 3-4 am"
+      }
+     ],
+     "why": "Two different recommended start windows.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "name": "North Face (Beckey-Schmidtke Route)",
+   "area": "Nooksack Tower",
+   "contradictions": [
+    {
+     "fact": "Summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "7"
+      },
+      {
+       "field": "timing.descentTimeHrs",
+       "says": "5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "20"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "20"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "gains the top after roughly 10 hours of climbing"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].time",
+       "says": "3:00 PM - midnight"
+      }
+     ],
+     "why": "PUBLISHED TIMES give 7 h up and 5 h down from the base (20 h car-to-car), but the itinerary's summit day alone is 20 h with ~10 h climbing and ~9 h of rappels, and the trip totals 33 h.",
+     "internal_resolution": "Itinerary, totalNote, partner_requirements and descent_text agree on an 18-21 h round trip from camp.",
+     "needs_research": false
+    },
+    {
+     "fact": "Length of the ice couloir in the breakdown",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "50"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "the ice-couloir start of the historic Beckey-Schmidtke line"
+      },
+      {
+       "field": "beta",
+       "says": "an 800-foot, 50-degree ice couloir"
+      }
+     ],
+     "why": "ROUTE BREAKDOWN makes the couloir a single 50 m pitch while the beta and itinerary describe 800 ft of it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "First rappel anchor",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappel_detail[0].anchor",
+       "says": "fixed anchor (pin/sling)"
+      },
+      {
+       "field": "rappel_detail[0].hazards[0]",
+       "says": "There is nothing fixed to inspect here"
+      },
+      {
+       "field": "rappel_detail[0].station",
+       "says": "rigged around a stack of blocks rather than any fixed gear"
+      }
+     ],
+     "why": "The same rappel row says the anchor is fixed and that nothing is fixed.",
+     "internal_resolution": "hazards and station both say it is a built anchor on blocks.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rack size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "alpine rock rack to 3 inches"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "An alpine rack to three inches"
+      },
+      {
+       "field": "what_to_bring[1]",
+       "says": "Light alpine rock rack to about 2 in"
+      }
+     ],
+     "why": "The rack tops out at 3 in in two fields and 2 in in another.",
+     "internal_resolution": "gear and detailed_rack agree on 3 in.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5735"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2200"
+      },
+      {
+       "field": "approach",
+       "says": "park at Ruth Creek (elevation 2,156 feet)"
+      },
+      {
+       "field": "waypoints[7].elev",
+       "says": "8285"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3900"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "2400"
+      }
+     ],
+     "why": "The trailhead-to-summit rise is ~6,100 ft and the itinerary adds to 6,300 ft, both above the 5,735 ft total.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "name": "West Ridge",
+   "area": "North Twin Sister",
+   "contradictions": [
+    {
+     "fact": "Whether a permit is required",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "the approach roads cross private timberland where the landowner's paid recreation permit is required for walk-in or bike entry"
+      },
+      {
+       "field": "access.permit",
+       "says": "None required — a self-issue climbing register may exist at some trailheads but is optional and free."
+      },
+      {
+       "field": "access.fees",
+       "says": "entry on foot or bike requires the landowner's paid recreation permit"
+      }
+     ],
+     "why": "The ACCESS permit line says none is required while the permit field, fees and gear list say the landowner's paid recreation permit is required to walk or bike in.",
+     "internal_resolution": "permit, access.fees, access.parking_pass, what_to_bring[0] and pro_tips[3] all require the paid landowner permit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Main camp belongs to another route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "This is the standard overnight camp for the west ridge of South Twin"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "Done in a single day, no camp."
+      }
+     ],
+     "why": "The main CAMPING card is the South Twin west-ridge camp, reached by a different path, on a North Twin single-day route.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "name": "North Twin Sister Olivine Scramble",
+   "area": "North Twin Sister",
+   "contradictions": [
+    {
+     "fact": "Whether a permit is required",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "the approach roads cross private timberland where the landowner's paid recreation permit is required for walk-in or bike entry"
+      },
+      {
+       "field": "access.permit",
+       "says": "None required — a self-issue climbing register may exist at some trailheads but is optional and free."
+      },
+      {
+       "field": "access.fees",
+       "says": "entry on foot or bike requires the landowner's paid recreation permit"
+      }
+     ],
+     "why": "The ACCESS permit line says none is required while the permit field and fees say the landowner's paid recreation permit is required.",
+     "internal_resolution": "permit, access.fees, access.parking_pass and waypoints[0].note all require the paid landowner permit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Hardest scrambling grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "well-featured Class 3-4 dunite"
+      },
+      {
+       "field": "climbing_route[3].class",
+       "says": "Class 3–4"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "sustained Class 3, locally Class 4"
+      }
+     ],
+     "why": "The route grade is Class 3, while the itinerary, climbing route and waypoint include Class 4 steps.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "7.3"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 7 miles and about 5,500 ft of gain car-to-summit"
+      }
+     ],
+     "why": "dist_km 9.7 (6.0 mi) is shorter than the 7-7.3 mi one-way the approach and waypoints give.",
+     "internal_resolution": "approach, approach_variants, waypoints and itinerary (14.6 mi round trip) agree on ~7.3 mi.",
+     "needs_research": false
+    },
+    {
+     "fact": "Main camp belongs to another route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "This is the standard overnight camp for the west ridge of South Twin"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "This is climbed in a single long day — no camp."
+      }
+     ],
+     "why": "The main CAMPING card is the South Twin west-ridge camp on a North Twin single-day route.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "name": "Ruth-Icy Traverse",
+   "area": "Ruth Mountain",
+   "contradictions": [
+    {
+     "fact": "High camp location, elevation and permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].name",
+       "says": "Ruth Glacier Camp"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "5800"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "5900"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "no national park backcountry permit is required here"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a high camp around 6,600 ft at the notch northwest of Ruth's summit"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Camp falls within a North Cascades NP cross-country/high-occupancy zone requiring a backcountry permit"
+      }
+     ],
+     "why": "The campsite waypoint and main bivy put camp at 5,800-5,900 ft on Forest Service ground with no park permit, while the itinerary, approach and timing put camp at 6,600 ft inside the park and require a permit.",
+     "internal_resolution": "itinerary, approach, approach_variants, timing and bivy[3] all describe the 6,600 ft notch camp.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best months for the traverse",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[3].notes",
+       "says": "which is why most parties go in June or July"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late July-August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "The bivy note says most parties go in June or July, while the guidance calls June marginal and late July-August optimal.",
+     "internal_resolution": "seasonal_guidance, best_season and climate agree on late July onward.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "name": "Crater Rim Scramble (from Easton Glacier)",
+   "area": "Sherman Peak",
+   "contradictions": [
+    {
+     "fact": "Distance to the Sulphur Creek crossing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1"
+      },
+      {
+       "field": "approach",
+       "says": "Within the first 0.3–0.4 mile the trail fords Sulfur Creek"
+      }
+     ],
+     "why": "The waypoint puts the creek crossing at 1 mile; the approach puts it at 0.3-0.4 mile.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Character of the final climb to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[3].detail",
+       "says": "Skirt a jagged high point, then an easy ridge walk to Sherman Peak (10,133 ft)."
+      },
+      {
+       "field": "beta",
+       "says": "ascends roughly 400 ft of increasingly steep snow (or loose rock/scree if snow-free) to the small summit"
+      },
+      {
+       "field": "descent_text",
+       "says": "the steep snow right below the summit"
+      }
+     ],
+     "why": "The schedule calls the finish an easy ridge walk while the beta, breakdown and descent describe 400 ft of increasingly steep snow.",
+     "internal_resolution": "beta, pitch_detail[4] and descent_text agree on steep snow.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "name": "Squak Glacier Route",
+   "area": "Sherman Peak",
+   "contradictions": [
+    {
+     "fact": "High camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "high camp is commonly established around 6,800 ft"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "High camp (~6,800 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6500"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "about 3.5 miles and 3,300 ft above Schriebers Meadow"
+      }
+     ],
+     "why": "The approach and breakdown put camp at 6,800 ft while the main camp card puts it at 6,500 ft (3,300 ft above the ~3,366 ft trailhead).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "name": "Twin Sisters Olivine Scramble",
+   "area": "Skookum Peak",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "watch_out[1]",
+       "says": "Long approach (~16 miles round trip via Elbow Lake Trail)"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "14"
+      },
+      {
+       "field": "dist_km",
+       "says": "22.53"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "7"
+      }
+     ],
+     "why": "Safety says ~16 miles round trip while the itinerary, dist_km (14.0 mi) and summit waypoint give 14.",
+     "internal_resolution": "itinerary, totalNote, dist_km and waypoints agree on 14 miles.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which side of the crest to stay on",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "mostly 2nd-3rd class if you stay left/west of the crest"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "keep left (west side) of the crest"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "the route then follows the connecting ridge south"
+      }
+     ],
+     "why": "Travelling south along the ridge, climber's left is east, so 'left/west' contradicts itself given the stated direction of travel.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Late Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "optimal"
+      },
+      {
+       "field": "best_season",
+       "says": "July through September is the reliable window"
+      }
+     ],
+     "why": "The header season starts in late July while the guidance marks July optimal from mid-month.",
+     "internal_resolution": "seasonal_guidance, best_season and itinerary.cal all start in (mid-)July.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time from the trail junction to the ridge crest",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[2].time",
+       "says": "+1 hr"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "Forest opens onto exposed olivine/dunite rock"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "2.5"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "2600"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "6.5"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "6000"
+      }
+     ],
+     "why": "The schedule gives one hour from the Hildebrand Creek junction to the crest, which the waypoints put 4 miles and 3,400 ft apart through the cirque and loose 3rd/4th class.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "name": "West Ridge",
+   "area": "South Twin Sister",
+   "contradictions": [
+    {
+     "fact": "Total gain of the approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "combined bike + foot gain for the full approach runs about 4,600 ft"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "with combined bike and foot gain around 4,600 ft"
+      },
+      {
+       "field": "gain_ft",
+       "says": "6100"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "6100"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "1200"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "7004"
+      }
+     ],
+     "why": "The 1,200 ft trailhead to the 7,004 ft summit is 5,800 ft of net rise, so a 4,600 ft total is impossible; gain_ft and the itinerary say 6,100.",
+     "internal_resolution": "gain_ft, itinerary and the waypoint elevations agree; the 4,600 ft figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "False summit elevation vs its distance from the top",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[5].elev",
+       "says": "6500"
+      },
+      {
+       "field": "waypoints[5].name",
+       "says": "False Summit Dihedral"
+      },
+      {
+       "field": "waypoints[6].directions",
+       "says": "The high point at the dihedral is not the top ... on the order of fifty yards ... to the next high point"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "the false summit (itself about 50 yards short of the true top)"
+      }
+     ],
+     "why": "A false summit 50 yards from the 7,004 ft top cannot sit at 6,500 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where parties stash bikes",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].note",
+       "says": "most parties stash bikes at this point"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "6.5"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "Almost every party bikes to here and leaves the bike"
+      },
+      {
+       "field": "bivy[1].elev",
+       "says": "3170"
+      }
+     ],
+     "why": "The Orsino Creek waypoint (6.5 mi, 4,500 ft) and the Dailey Prairie camp card (3,170 ft) each claim to be where nearly everyone leaves the bike.",
+     "internal_resolution": "waypoints, approach and approach_variants (6-7 mi to the culvert) agree; bivy[1] describes the North Twin path.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether most parties rappel the crux",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "a short 5th-class step just below the summit block that most parties rope up and rappel"
+      },
+      {
+       "field": "descent_text",
+       "says": "many parties bypass the hardest of these via the well-known false-summit traverse"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "don't commit to the ridge-crest 5th-class step; traverse right"
+      }
+     ],
+     "why": "The trip plan says most parties rope up and rappel the step; the descent and Safety say to bypass it.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climb length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "244"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Gain the West Ridge crest here, roughly 1,300 ft below the false summit"
+      }
+     ],
+     "why": "A ridge gained at 5,200 ft and followed to 7,004 ft is ~1,800 ft, far more than the 244 m (~800 ft) climb length.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "name": "South Twin Sister Olivine Scramble",
+   "area": "South Twin Sister",
+   "contradictions": [
+    {
+     "fact": "Dihedral elevation vs the high notch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "a large dihedral near 6,500 ft goes on ledges and cracks"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "At the high notch, about 400 ft below the summit"
+      },
+      {
+       "field": "beta",
+       "says": "a high notch at about 6,600 ft"
+      }
+     ],
+     "why": "The summit-gully section, climbed after leaving the 6,600 ft notch, meets a dihedral at 6,500 ft, below the notch.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "name": "North Ridge",
+   "area": "South Twin Sister",
+   "contradictions": [
+    {
+     "fact": "Hardest rock on the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "3rd class (sometimes rated 4th class; most parties describe it as easy 3rd class)"
+      },
+      {
+       "field": "descent_text",
+       "says": "the last ~400 vertical feet of the North Ridge below the summit is steep, exposed low-5th-class terrain"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "published descriptions hedge them as possibly low fifth class"
+      },
+      {
+       "field": "grade",
+       "says": "Grade III, Class 4"
+      }
+     ],
+     "why": "The rock grade calls the route easy 3rd class while the grade, climbing route, hazards and descent describe a steep low-5th finish.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel on the descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "0"
+      },
+      {
+       "field": "descent_text",
+       "says": "no rappels are required on the standard descent (rappels: 0)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[5].detail",
+       "says": "Reverse the West Ridge line (short rappel near the top) back to the bikes."
+      }
+     ],
+     "why": "The schedule includes a rappel on the West Ridge descent; the rappel count and descent say none.",
+     "internal_resolution": "rappels and descent_text agree on 0 via the bypass.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best month",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "best attempted in July, before it opens up"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August.status",
+       "says": "optimal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "good"
+      }
+     ],
+     "why": "The trip plan says July is best while the guidance rates August optimal and July only good.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climb length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "244"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If you have reached a distinct notch at 6,600 ft you are 800 ft above the start"
+      },
+      {
+       "field": "climbing_route[3].label",
+       "says": "Final crest, last 400 ft"
+      }
+     ],
+     "why": "From the 5,800 ft saddle to the 7,004 ft summit is ~1,200 ft (800 ft to the notch plus the last 400 ft), not 244 m (~800 ft).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "1"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "3 sections (Glacier crossing, Lower ridge, Upper ridge to summit)"
+      }
+     ],
+     "why": "The header shows 1 pitch while the breakdown lists 3 sections and the climbing route 5.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_carru_scramble",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Diagonal crack difficulty"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "hazards",
+   "path": [
+    2
+   ],
+   "fact": "Diagonal crack difficulty"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "grade"
+   ],
+   "fact": "Diagonal crack difficulty"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_carru_scramble",
+   "before": {
+    "access": {
+     "fees": "No wilderness entry fee. The developed Harts Pass Trailhead (vault toilet) may require a Northwest Forest Pass or America the Beautiful pass for parking; the more rustic Slate Peak/Slate Pass and Monument Creek trailheads typically aren't fee sites, but carrying a pass is a safe bet.",
+     "rules": "Standard Pasayten Wilderness group-size limits apply; use bear-resistant food storage given the 2024-approved North Cascades grizzly bear reintroduction effort, which covers the Pasayten.",
+     "permit": "Free, non-quota, self-issued wilderness permit at the trailhead — no reservation or quota system for the Pasayten Wilderness.",
+     "closures": "Harts Pass Road (FR 5400) — the primary access road for all standard approaches — was closed indefinitely by the Forest Service in spring 2026 after storm damage; the Forest Service's Methow Valley road-status table lists it open again as of July 2, 2026. Separately, the Ptarmigan Fire closure (Forest Service order 06-17-04-26-39, in effect September 9 through October 31, 2026) closes the Buckskin Ridge (#498), West Fork Pasayten (#472), Eureka Creek (#474) and Shellrock (#484.1) trails and the Monument Creek Trail (#484) north of the Lake of the Woods turnoff, which cuts off both standard approaches. Methow Valley Ranger District, (509) 996-4000.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest / Pasayten Wilderness",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "before": {
+    "beta": "From Upper Royal Basin, ascend heather/talus to the moraine rim, drop to snowfields and climb to the ~6,900 ft col between Clark and Mount Johnson. From the col, ascend talus to the cliff base and skirt right on a wide, low-angle (Class 2) southwest-facing ledge — exposed-looking but easy. Where the cliffs split into a Y-shaped gully, go straight up to a boulder then right to a notch on the SE ridge (Class 2-3), descend the ridge to an east ledge via a diagonal crack system (Class 2-3, exposed but solid), follow the ledge north, then climb a loose gully (Class 3) to a dihedral ramp (Class 4, or a Class 3 broken face alternative on the left) and finally a shallow slot through the north face of the summit block (Class 3-4, good holds). Descend by reversing the route with one short rappel off the summit block. Route-finding is the main difficulty; published descriptions are described by multiple parties as sketchy, and several climbers have produced their own route sketches after the fact.",
+    "hazards": [
+     "long, complex approach (roughly 14-16 mi round trip to Upper Royal Basin plus off-trail talus/scree to Surprise Col)",
+     "sustained loose rock ('choss') in the corkscrew route's gullies",
+     "exposed Class 3-4 downclimb of a diagonal crack that looks like a cliff-out from above -- watch for the cairn marking its top",
+     "a roughly 60-ft rappel is often needed off the summit block",
+     "lingering snow on the approach and in upper gullies into July",
+     "difficult, easy-to-lose route-finding around the summit block",
+     "black bear activity in Royal Basin (bear canister required)",
+     "no cell service; a rescue would involve a long multi-mile carry-out"
+    ],
+    "pitch_detail": [
+     {
+      "grade": "Class 1-2",
+      "notes": "From Upper Royal Basin, ascend heather and talus to the glacial moraine rim, then drop to snowfields and climb to the ~6,900-6,920 ft col between Mount Clark and Mount Johnson (Surprise Col).",
+      "pitch": "Section 1"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "From the col, ascend a talus slope to the base of the cliffs, then skirt right beneath the cliffs on a wide, southwest-facing ledge for roughly 100 yards — looks exposed but is easy.",
+      "pitch": "Section 2"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Where the cliffs split into a Y-shaped gully system, climb straight up to a large boulder, then veer right to gain a notch on the southeast ridge.",
+      "pitch": "Section 3"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Descend the southeast ridge to an east-facing ledge via a diagonal crack system — exposed but on solid rock.",
+      "pitch": "Section 4"
+     },
+     {
+      "grade": "Class 1-2",
+      "notes": "Follow the east ledge northward for roughly 50 yards.",
+      "pitch": "Section 5"
+     },
+     {
+      "grade": "Class 3",
+      "notes": "Ascend a shallow, loose/rubbly gully to the base of a dihedral ramp.",
+      "pitch": "Section 6"
+     },
+     {
+      "grade": "Class 4 (or Class 3 alt.)",
+      "notes": "Climb the steeply inclined dihedral ramp direct (Class 4), or scramble a broken face on the left as an easier alternative (Class 3).",
+      "pitch": "Section 7"
+     },
+     {
+      "grade": "Class 3-4",
+      "notes": "Ascend a shallow slot through the north face of the summit block to the top — described as \"fun\" with good holds.",
+      "pitch": "Section 8"
+     },
+     {
+      "grade": "Rappel + Class 3-4 downclimb",
+      "notes": "Roughly 60 ft rappel off the summit block, then downclimb the slot and reverse the route back to the col.",
+      "pitch": "Section 9 (descent)"
+     }
+    ]
+   }
+  }
+ ]
+}

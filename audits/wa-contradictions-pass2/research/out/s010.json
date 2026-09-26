@@ -1,0 +1,187 @@
+{
+ "file": "s010.json",
+ "results": [
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "fact": "Total gain / loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still only one South Buttress car-to-car gain figure: a 2024 trip report records 958 m (~3,143 ft), matching loss_ft. A 2018 West Ridge report from nearly the same pullout gives 5,000 to 8,050 ft (~3,050 ft) and the earlier-found West Ridge report 3,300 ft, but those are a different route. Guide and route pages (NCMG, Mountain Madness, climbing database page, a personal report) give no gain. Everything found says gain_ft 2500 is low, but no two sources state the same figure for this route. Would settle: a second South Buttress GPS track or guide stating the car-to-car gain.",
+   "sources": [
+    "https://www.francisbaileyh.com/2024/07/06/cutthroat-peak-south-buttress-5-8/",
+    "https://onehikeaweek.com/2018/08/25/cutthroat-peak/",
+    "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress",
+    "https://www.mountainproject.com/route/109326651/south-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A 2024 South Buttress report records 6.08 km (3.8 mi) round trip including the climb, which agrees with the itinerary's 3.8 mi and the summit pin's 2 mi; a 2018 West Ridge report from nearly the same pullout gives 3.6 mi round trip. dist_km is the one-way approach to the base, which ends in the boulder field below the summit, so a figure somewhat under 1.9 mi is expected; no source states the one-way approach distance to the gully, so it is not clear dist_km 2 is a different quantity. Would settle: a stated or GPS-measured pullout-to-gully distance.",
+   "sources": [
+    "https://www.francisbaileyh.com/2024/07/06/cutthroat-peak-south-buttress-5-8/",
+    "https://onehikeaweek.com/2018/08/25/cutthroat-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "fact": "Parking location in access.notes (Rainy Pass trailhead lot vs SR 20 pullout)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Roadside pullout on the north side of SR 20 about 1.5 mi west of Washington Pass",
+   "evidence": "access.notes (rendered in ACCESS) says parking is a small lot at the Rainy Pass trailhead, while the approach, waypoints, road and approach_variants all start from the SR 20 pullout ~1.5 mi west of Washington Pass. The Mountaineers route page says to park along the highway near the Whistler Mountain sign about 3 mi east of Rainy Pass; a 2024 South Buttress trip report starts from a Highway 20 road pullout; a 2018 West Ridge report parks on Highway 20 about 0.5 mi west of the Blue Lake trailhead. All agree on a roadside pullout, not the Rainy Pass lot.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+    "https://www.francisbaileyh.com/2024/07/06/cutthroat-peak-south-buttress-5-8/",
+    "https://onehikeaweek.com/2018/08/25/cutthroat-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_south_buttress",
+     "fact": "Parking location in access.notes (Rainy Pass trailhead lot vs SR 20 pullout)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Small unpaved parking lot at Rainy Pass trailhead.",
+     "replace": "Park in the long roadside pullout on the north side of SR 20 about 1.5 miles west of Washington Pass."
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "fact": "Beta describes a different route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Grade III; a long day from the SR 20 pullout west of Washington Pass (not Grade II, not from Rainy Pass)",
+   "evidence": "The row's grade, overview, hazards, turnaround, itinerary and 10.5 h timing all describe a long Grade III route, and the Mountaineers route page rates the Southeast Buttress Grade III. For the start point, the Mountaineers page (park along the highway near the Whistler Mountain sign ~3 mi east of Rainy Pass) and a 2024 trip report (Highway 20 pullout, State Creek crossing) agree it is a roadside pullout west of Washington Pass, matching the row's approach and waypoints. The beta's '5.7' is removed rather than replaced because the rock grade itself is unsettled (see discovered item).",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+    "https://www.francisbaileyh.com/2024/07/06/cutthroat-peak-south-buttress-5-8/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_peak_southeast_buttress",
+     "fact": "Beta describes a different route",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Grade II, 5.7 climbing.",
+     "replace": "Grade III."
+    },
+    {
+     "id": "wa_cutthroat_peak_southeast_buttress",
+     "fact": "Beta describes a different route",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Quick alpine climb from Rainy Pass.",
+     "replace": "A long alpine day from the SR 20 pullout west of Washington Pass."
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "fact": "Rock grade (rock_grade 5.6)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "rock_grade 5.6 drives the header grade pill; the Mountaineers route page (seen only via search summaries, the page returns 403) rates the Southeast Buttress III 5.8, and some sources conflate this line with the South Buttress (5.7/5.8). No second independent source gives this route's rock grade. Would settle: a second route-specific source (guide or trip report) naming the Southeast Buttress crux grade.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "fact": "Parking location in access.notes (Rainy Pass trailhead lot vs SR 20 pullout)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Roadside pullout on the north side of SR 20 about 1.5 mi west of Washington Pass",
+   "evidence": "access.notes (rendered in ACCESS) says parking is a small lot at the Rainy Pass trailhead, while the approach, waypoints, road and approach_variants all start from the SR 20 pullout ~1.5 mi west of Washington Pass. The Mountaineers route page says to park along the highway near the Whistler Mountain sign about 3 mi east of Rainy Pass; a 2024 South Buttress trip report starts from a Highway 20 road pullout; a 2018 West Ridge report parks on Highway 20 about 0.5 mi west of the Blue Lake trailhead. All agree on a roadside pullout, not the Rainy Pass lot.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+    "https://www.francisbaileyh.com/2024/07/06/cutthroat-peak-south-buttress-5-8/",
+    "https://onehikeaweek.com/2018/08/25/cutthroat-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_peak_southeast_buttress",
+     "fact": "Parking location in access.notes (Rainy Pass trailhead lot vs SR 20 pullout)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Small unpaved parking lot at Rainy Pass trailhead.",
+     "replace": "Park in the long roadside pullout on the north side of SR 20 about 1.5 miles west of Washington Pass."
+    }
+   ]
+  },
+  {
+   "id": "wa_firearms",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF day-use fee list and the Region 6 fee-site list both name only nine Umatilla fee sites (Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon, Twin Buttes); neither lists Middle Point or any FR 64 pullout, and the Middle Point Trailhead page states no fee. That supports the rendered 'no pass' fields, but both lists come from one publisher (the Forest Service); the climbing area page and the crag guide (unreachable) say nothing about passes. The disputed values live only in access._raw, which does not render. Would settle: an independent climbing or local source stating no pass is needed at the Dikes pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_moe",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF day-use fee list and the Region 6 fee-site list both name only nine Umatilla fee sites (Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon, Twin Buttes); neither lists Middle Point or any FR 64 pullout, and the Middle Point Trailhead page states no fee. That supports the rendered 'no pass' fields, but both lists come from one publisher (the Forest Service); the climbing area page and the crag guide (unreachable) say nothing about passes. The disputed values live only in access._raw, which does not render. Would settle: an independent climbing or local source stating no pass is needed at the Dikes pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_face_farce",
+   "fact": "Rope length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "rope_note labels the 70 m figure as a crag-wide recommendation driven by Megadike North's taller walls, while detailed_rack and descent_text state that a 60 m rope is ample for this 11 m (35 ft) route; a wall-level recommendation versus a route-specific sufficiency, each clearly labelled, do not conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_face_farce",
+   "fact": "Megadike North longest route / all single-pitch (descent_text vs rope_note)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "descent_text says every Megadike North route is single-pitch and the longest is 100 ft; the climbing database lists Slabtastic on Megadike North at 120 ft, 2 pitches, and its area text says routes reach 120 ft, matching rope_note. Both are one publisher; the crag guide (the other independent record) could not be reached. Would settle: the crag guide's Megadike North route lengths.",
+   "sources": [
+    "https://www.mountainproject.com/route/117792017/unk",
+    "https://www.mountainproject.com/area/122638325/megadike-north"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_internal_combustion",
+   "fact": "Northwest Forest Pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Umatilla NF day-use fee list and the Region 6 fee-site list both name only nine Umatilla fee sites (Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon, Twin Buttes); neither lists Middle Point or any FR 64 pullout, and the Middle Point Trailhead page states no fee. That supports the rendered 'no pass' fields, but both lists come from one publisher (the Forest Service); the climbing area page and the crag guide (unreachable) say nothing about passes. The disputed values live only in access._raw, which does not render. Would settle: an independent climbing or local source stating no pass is needed at the Dikes pullouts.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+    "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+   ],
+   "patches": []
+  }
+ ]
+}

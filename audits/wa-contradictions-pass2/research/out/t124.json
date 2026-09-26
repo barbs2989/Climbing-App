@@ -1,0 +1,155 @@
+{
+ "file": "t124.json",
+ "results": [
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Day 2 duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The day-2 schedule runs 5:30 AM to 4:30-5:30 PM (11-12 hr) while itinerary hours, summitTimeHrs and sectionBreakdown say 9. No source found gives a Heaton Camp -> summit -> High Bridge day time; one report of a camp-to-summit ascent took 6+ hours in snow, another a much longer multi-day loop. Settling it needs two trip reports timing the summit-plus-hike-out day.",
+   "sources": [
+    "https://onehikeaweek.com/2019/06/23/mcgregor-mountain/",
+    "https://www.countryhighpoints.com/mcgregor-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Backcountry permit cost",
+   "verdict": "bivy_zone_list",
+   "correct_value": "NPS backcountry permit carries a per-person and reservation fee (access fields are right)",
+   "evidence": "Only bivy[1].permit calls the permit free; both access fields say a fee applies. bivy[] is owned by the camping clean-up, so no patch.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Where the ~100 switchbacks are",
+   "verdict": "fixed",
+   "correct_value": "The ~100 switchbacks are on the trail below Heaton Camp; above camp the trail runs only about a third of a mile more to a rocky outcropping",
+   "evidence": "The WTA hike page says the trail's many switchbacks (near 100) ease the ascent, that Heaton Camp sits above the terminal moraine, and that in roughly a third of a mile beyond it the trail ends on a rocky outcropping. The NPS page says the trail switchbacks relentlessly through the forest and continues only a short distance past Heaton Camp to the talus; a trip report places the switchbacks between the PCT junction and Heaton Camp. The beta's 'nearly 100 more switchbacks over a third of a mile' is the outlier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail",
+    "https://www.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://onehikeaweek.com/2019/06/23/mcgregor-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Where the ~100 switchbacks are",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Nearly 100 more switchbacks over about a third of a mile bring hikers to a rocky outcropping where the maintained trail ends.",
+     "replace": "Another set of switchbacks above camp ends in about a third of a mile at a rocky outcropping, where the maintained trail stops."
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Trail start and lake",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Trail starts at High Bridge and follows the Old Wagon/PCT to Howard (Coon) Lake at ~1.3 mi",
+   "evidence": "NPS: from the shuttle's end at High Bridge follow the Old Wagon (PCT) trail toward Howard Lake; the approach and waypoints agree. Only bivy[1].notes places the start a mile from the bridge; bivy[] is not patched in this pass.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://wenatcheeoutdoors.org/2016/06/01/mcgregor-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Distance and gain to the summit",
+   "verdict": "bivy_zone_list",
+   "correct_value": "7.7 mi to the summit (approach and waypoints)",
+   "evidence": "NPS gives 7.7 mi and 6,600 ft to the summit; a Stehekin lodging page gives 7.7 mi and 6,400 ft to within half a mile of the summit, which is what bivy[1].notes copies. The dispute lives only in the bivy card, which this pass does not patch.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://stehekinvalleyranch.com/mcgregor-mt/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Land manager: NRA vs National Park",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The NPS trail page places the McGregor Mountain Trail in North Cascades National Park; Wikipedia says the summit lies on the shared boundary of the park and Lake Chelan NRA; a trip report says the peak is in the NRA. Sources disagree, so access.landManager/notes are left; the bivy side cannot be patched. A boundary map (NPS GIS) for the High Bridge-McGregor corridor would settle it.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://en.wikipedia.org/wiki/McGregor_Mountain_(Washington)",
+    "https://onehikeaweek.com/2019/06/23/mcgregor-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Character of the summit scramble",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Class 3 scramble using hands for balance and short steps on exposed ledges, not technical climbing",
+   "evidence": "NPS says reaching the summit requires a hand-and-foot scramble up talus and along exposed ledges; WTA calls it not particularly technical but steep and exposed. On the row, grade, overview, the ledges waypoint note, partner_requirements (confident Class 3, rope advisable for some) and climbing_route all describe hands-on Class 2-3; only the baseFinding's 'no climbing moves' check disagrees, so its second check is reworded.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_mcgregor_mountain_scramble",
+     "fact": "Character of the summit scramble",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "A second check: on the marked line there are no climbing moves, only the occasional handhold for balance on a narrow ledge. If you are pulling on rock to make upward progress, you are off the arrows.",
+     "replace": "A second check: the marked line is scrambling on talus and ledges where hands come into play for balance and short steps, but it never turns into sustained, committing climbing. If you are making steep, committing rock moves, you are off the arrows."
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "fact": "Total gain: gain_ft 6,200 vs 6,600 in approach/hazards/totalNote",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 6,200 (the header Gain) sits below the trailhead-to-summit difference (1,627 to 8,143 ft) while approach, hazards and itinerary totalNote say 6,600 and the itinerary days sum to 6,550. NPS states 6,600 ft to the summit; WTA states 6,200; a Stehekin page states 6,400 to within half a mile. No two sources agree, so gain_ft is left.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/mcgregor-mountain-trail",
+    "https://stehekinvalleyranch.com/mcgregor-mt/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "fact": "Whether parties rope up",
+   "verdict": "fixed",
+   "correct_value": "Arriva's south ridge is scrambled unroped; no rope is reported",
+   "evidence": "A 2019 Silent Lakes trip report roped up only for the Fisher Step on Fisher Peak and climbed Arriva's dike slots and ledges without one; a second combined Fisher/Arriva report describes 3rd class terrain up the south ridge with no rope. The row's beta, rock_grade and baseFinding also say no rope; the day-2 schedule line is the outlier.",
+   "sources": [
+    "https://trailcatjim.com/silent-lakes-mt-arriva-fisher-peak-2019/",
+    "https://www.countryhighpoints.com/fisher-peak-and-mt-arriva/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_arriva_scramble",
+     "fact": "Whether parties rope up",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "some parties rope up here for the finish.",
+     "replace": "the finish is normally scrambled unroped."
+    }
+   ]
+  }
+ ]
+}

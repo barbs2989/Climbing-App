@@ -1,0 +1,95 @@
+{
+ "file": "t123.json",
+ "results": [
+  {
+   "id": "wa_ellen_pea",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car ascent for this route or for any route on the wall: the wall's own approach description gives only times (about 1 hour to the lower ledge, 1 hour 10 minutes to the upper ledge), and the route pages give only climbing length. The rules forbid computing a new gain_ft from trailhead/base/length arithmetic, and the 5,895 ft base elevation is itself unsourced. Settled only by a source stating the total ascent (or a measured base elevation plus a source for the topout).",
+   "sources": [
+    "https://www.mountainproject.com/area/106565701/mm-wall-aka-supercave-wall",
+    "https://squamishrockguides.com/mm-wall/",
+    "https://www.mountainproject.com/route/106565918/ellen-pea"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ellen_pea",
+   "fact": "Approach time to the start",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "timing.approachTimeHrs is 0.75 (45 min) while the approach prose says about 1 hour 10 minutes to the upper ledge and the itinerary says 1-1.2 hours. The route's own page and a guide-service page (identical wording, so one source) give about 45 minutes to the ledge where the routes start; the wall's area page gives 1 hour to the lower ledge and 1 hour 10 minutes to the upper ledge. The two sources disagree, so neither figure can be adopted.",
+   "sources": [
+    "https://www.mountainproject.com/route/106565918/ellen-pea",
+    "https://squamishrockguides.com/mm-wall/",
+    "https://www.mountainproject.com/area/106565701/mm-wall-aka-supercave-wall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car ascent for this route or for any route on the wall: the wall's own approach description gives only times (about 1 hour to the lower ledge, 1 hour 10 minutes to the upper ledge), and the route pages give only climbing length. The rules forbid computing a new gain_ft from trailhead/base/length arithmetic, and the 5,895 ft base elevation is itself unsourced. Settled only by a source stating the total ascent (or a measured base elevation plus a source for the topout).",
+   "sources": [
+    "https://www.mountainproject.com/area/106565701/mm-wall-aka-supercave-wall",
+    "https://squamishrockguides.com/mm-wall/",
+    "https://www.mountainproject.com/route/111075283/the-l-h-route-free-variation"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_tiger",
+   "fact": "Which ledge the route starts from",
+   "verdict": "fixed",
+   "correct_value": "Pitch 1 starts from the treed ledge at the base of the wall, NOT from the highest ledge out of the gully (the half-height ledge that leads to the start of P4).",
+   "evidence": "The Tiger's route page warns not to go to the highest ledge system out of the gully because it leads to the start of P4. The Golden Age page describes that ledge as the midway ledge bisecting the wall at half height, reached by climbing the Tiger's first three pitches or continuing up the gully; a guide-service page likewise says a higher access ledge out of the gully bypasses the initial pitches. The P1 note's phrase 'a lower one' read as the wall's LOWER ledge (the apron), clashing with the base-finding's 'upper ledge'; the note is reworded to say only what the sources support (not the highest ledge), which agrees with the base-finding.",
+   "sources": [
+    "https://www.mountainproject.com/route/109429099/the-tiger",
+    "https://www.mountainproject.com/route/120993800/golden-age",
+    "https://squamishrockguides.com/mm-wall/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_tiger",
+     "fact": "Which ledge the route starts from",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The approach ledge is a lower one; the highest ledge out of the gully leads to the start of P4 instead.",
+     "replace": "Do not follow the gully to its highest ledge, the one that splits the wall at half height: it leads to the start of P4 instead."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tiger",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car ascent for this route or for any route on the wall: the wall's own approach description gives only times (about 1 hour to the lower ledge, 1 hour 10 minutes to the upper ledge), and the route pages give only climbing length. The rules forbid computing a new gain_ft from trailhead/base/length arithmetic, and the 5,895 ft base elevation is itself unsourced. Settled only by a source stating the total ascent (or a measured base elevation plus a source for the topout).",
+   "sources": [
+    "https://www.mountainproject.com/area/106565701/mm-wall-aka-supercave-wall",
+    "https://squamishrockguides.com/mm-wall/",
+    "https://www.mountainproject.com/route/109429099/the-tiger"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "fact": "Pitch 2 aided alternative grade",
+   "verdict": "unresolved",
+   "correct_value": "Likely: pitch 2 goes at 5.9 A0, so the whole route can be French-freed at 5.10a (pitch 3 is 5.10a).",
+   "evidence": "The only page found for this route grades pitch 2 '5.11a or 5.9 A0' and separately says the ROUTE could be French-freed at 5.10a; since pitch 3 is 5.10a, the 5.10a is the route's hardest free grade when pitch 2 is aided, not pitch 2's grade. The row's notes, beta and pro tip misattribute the route figure to pitch 2, and the grade string is the correct one. No second independent source exists (searches return nothing else), so no patch; a second topo confirming pitch 2's aided grade would settle it, after which the three fields should say the route (not pitch 2) goes at 5.10a with pitch 2 aided.",
+   "sources": [
+    "https://www.mountainproject.com/route/107811969/the-exorcism-of-mark-hanna"
+   ],
+   "patches": []
+  }
+ ]
+}

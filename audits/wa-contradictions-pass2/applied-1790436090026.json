@@ -1,0 +1,579 @@
+{
+ "applied": [
+  {
+   "id": "wa_action_potential",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "Which face the route climbs"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "September",
+    "reason"
+   ],
+   "fact": "Which face the route climbs"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "October",
+    "reason"
+   ],
+   "fact": "Which face the route climbs"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "bail",
+   "path": [],
+   "fact": "Rappel anchors on the route for a bail"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Where the North Face rappel line lands / what is at the North Face start"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "rappel_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Where the North Face rappel line lands / what is at the North Face start"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the North Face rappel line lands / what is at the North Face start"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the North Face rappel line lands / what is at the North Face start"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Single-rope descent"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "Single-rope descent"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Where the last rappel lands"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "rappel_detail",
+   "path": [
+    4,
+    "anchor"
+   ],
+   "fact": "Where the last rappel lands"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "rappel_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Where the last rappel lands"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Water at the bench"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Water at the bench"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Water at the bench"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "hazards",
+    2
+   ],
+   "fact": "Water at the bench"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Standard descent: downclimb vs rappel"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Standard descent: downclimb vs rappel"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "descent",
+   "path": [],
+   "fact": "Standard descent: downclimb vs rappel"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Where the North Face rappel line lands / what is at the North Face start"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "rappel_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Where the North Face rappel line lands / what is at the North Face start"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the North Face rappel line lands / what is at the North Face start"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the North Face rappel line lands / what is at the North Face start"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_action_potential",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through early September, after the snow at the base of Burgundy's north side melts back and before fall cold sets in",
+     "monthBreakdown": {
+      "May": {
+       "reason": "SR 20 has usually just reopened, the scree gullies to Burgundy Col are snow-loaded, and the route's base below the col is still buried.",
+       "status": "risky"
+      },
+      "July": {
+       "reason": "The approach melts out and water flows near the bench, but steep snow at the base can persist into midsummer; later July is better.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Snow eases the slog to the col but can be dangerous on the north side, the base traverse may need an axe, and the lichen-covered cracks are often wet.",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "The base traverse is mostly snow-free, the cracks are dry, and the north side stays cool; water near the col dwindles to a trickle.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "The shaded north side is cold, early snow can coat the col, and WSDOT typically closes SR 20 at Washington Pass as winter storms arrive.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Stable weather and cool rock on the north side, though the loose gully below the col is bare scree and daylight is shorter.",
+       "status": "optimal"
+      }
+     }
+    },
+    "bail": "Retreat via the established rappel anchors on the route (5 raps with doubles); single-rope parties can lower/rappel using slings left at the stations.",
+    "descent_text": "Action Potential tops out in two possible ways, and the descent depends on which finish you take: either climb up past an old bolt to the skyline and ramble class-5.7 terrain to the true summit, or finish by traversing Burgundy Ledge into the standard North Face route. Either way, the descent used by essentially all parties is the North Face's rappel line: with double ropes, plan on 5 rappels from the summit area back down the face — roughly 40m off a heavily slung summit boulder, 55m off bolts to a ledge near a rock arch, 55m off a sling at a constriction to a slung horn, 40m to scree ledges, and a final 60m to the base of the first-pitch chimney near Action Potential's own start. Anchors are a mix of slung boulders/horns and fixed bolts; watch for old webbing and be deliberate pulling ropes, since the face has ledges that catch the line. From the base of the last rappel, reverse the Burgundy Col approach to the highway.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "Keep both ends clear of the constriction above the wide crack before the last climber pulls - it is the documented rope trap on this descent.",
+      "notes": "First rappel of the shared North Face descent line.",
+      "anchor": "Heavily slung summit boulder",
+      "hazards": [
+       "A single 60 m rope does NOT reach the bolts: you finish roughly 10 ft above them and downclimb easy 5th class to get there. A 70 m single is the length that reaches, and is what recent parties recommend",
+       "This is the rappel where a party got a rope end stuck in a constriction above a wide crack and had to lead 5.8 back up to free it"
+      ],
+      "lengthM": 40,
+      "station": "The summit anchor - the heavily slung summit boulder - dropping down the upper north face to what is reported to be the only bolted anchor on the whole rappel route. Everything below it is slung natural gear, so this is the one station you can identify with certainty."
+     },
+     {
+      "n": 2,
+      "notes": "Traverses to reach the next anchor.",
+      "anchor": "Bolts to a ledge near a rock arch",
+      "hazards": [
+       "The line does not follow the route, so what you see going down is not what you climbed"
+      ],
+      "lengthM": 55,
+      "station": "Down toward the main ledge system. Parties on two ropes report doubling up and rappelling climber's-LEFT of the climbing line to reach the next station rather than dropping straight down it."
+     },
+     {
+      "n": 3,
+      "notes": "Drops to a slung horn.",
+      "anchor": "Sling at a rock constriction",
+      "hazards": [
+       "Ledge-to-ledge rappelling on this face means loose material sitting on every stance above you"
+      ],
+      "lengthM": 55,
+      "station": "A single rappel from the ledge system down to the ledge at the bottom of the third pitch."
+     },
+     {
+      "n": 4,
+      "notes": "Down to scree ledges.",
+      "anchor": "Slung horn",
+      "hazards": [
+       "You have to walk under and past a large block to find this station, so it is not visible from where the previous rappel lands",
+       "Traversing a ledge with the ropes still out is where they snag on this descent"
+      ],
+      "lengthM": 40,
+      "station": "From the ledge, cut climber's LEFT to the station, which sits just after you walk back underneath the large block. A station is also reported at the top of pitch 4, reached by a ledge traverse - the ledge is the feature to navigate by, not the fall line."
+     },
+     {
+      "n": 5,
+      "notes": "Final rappel to the base of the first-pitch chimney, near Action Potential's own start.",
+      "anchor": "Scree ledge anchor",
+      "hazards": [
+       "The notch is the aiming point; below the col the descent continues down loose gullies on foot"
+      ],
+      "lengthM": 60,
+      "station": "The last rappels run down through the sandy terraces to Burgundy Col. From the final stance the rappel route is a straight shot through the obvious notch in the rock below to the ground."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "The Wine Spires pullout and Burgundy Col, then 5-10 minutes around the north face to the splitter flake",
+      "notes": "From the SR-20 pullout at about 4,310 ft near milepost 166, roughly 3.75 miles east of Washington Pass and opposite Silver Star, a boot path drops through talus into forest, passes a register box, and crosses Early Winters Creek on logs at about 4,080 ft. The trail climbs east, roughly 2,200 ft, to a flat bench and campsite at about 6,460 ft, the halfway point and a common high camp, then works up through loose scree gullies and a final cairned stretch of unstable scree-over-slab to Burgundy Col at about 7,770-7,800 ft. Roughly 3 miles and 3,500 ft one-way.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Unstable cairned scree-over-slab on the final stretch to Burgundy Col, the approach's main hazard in both directions",
+       "Loose rock and sometimes steep snow on the walk around the base of the north face",
+       "Anchors on the descent are a mix of slung boulders and horns with fixed bolts; watch for old webbing",
+       "Ledges on the face that catch a pulled rope",
+       "Reliable water only at Early Winters Creek; seasonal water near the Bench and an unreliable trickle near the col"
+      ],
+      "baseFinding": "ACTION POTENTIAL DOES NOT START AT THE COL. FROM BURGUNDY COL, SCRAMBLE DOWN AND AROUND THE BASE OF BURGUNDY'S NORTH FACE FOR ABOUT 5 TO 10 MINUTES UNTIL YOU ARE BELOW A CLEAN SPLITTER FLAKE. THAT FLAKE IS THE ROUTE START.\n\nSO THE THREE THINGS TO CHECK ARE A DIRECTION, A DURATION AND A FEATURE: DOWN and AROUND the north face, FIVE TO TEN MINUTES, and a CLEAN SPLITTER FLAKE. Clean is the operative word on a peak where most of the rock is not.\n\nTHE ORDER ALONG THE BASE, WHICH IS WHAT MAKES THIS ONE PLACEABLE: THIS ROUTE SITS JUST BEYOND ULTRAMEGA OK'S START. Ultramega OK is only about 15 FT climber's-right of this route, at a TWIN-CRACK SYSTEM MARKED BY OBVIOUS LOOSE BLOCKS ABOUT 60 FT UP. So: IF YOU ARE LOOKING AT TWO CRACKS WITH LOOSE BLOCKS SIXTY FEET ABOVE YOU, KEEP GOING ABOUT 15 FT.\n\nAND IF YOU HAVE NOT WALKED AT ALL, YOU ARE ON THE NORTH FACE: that line starts at a first-pitch chimney at the col end of the base, which is also where the last rappel of the standard descent lands. A chimney at the near end, twin cracks with loose blocks five to ten minutes along, and the splitter flake about 15 ft beyond them.\n\nEARLY IN THE SEASON THE WALK ALONG THE BASE MAY BE SNOW RATHER THAN SCREE, sometimes steep enough to want an axe into midsummer. That does not change the count; it changes the footing.\n\nDESCENT IS THE NORTH FACE'S, WHICH RETURNS YOU TO THIS ROUTE'S OWN START: five double-rope rappels from the summit area, ending with a final 60 m to the base of the first-pitch chimney, near where Action Potential and the North Face begin."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "before": {
+    "descent_text": "From the summit, the descent is 5 double-rope rappels down the face back to Burgundy Col, then a reversal of the approach. Specifically: R1 (~40m) from a large, heavily slung boulder at the summit down the middle of the upper face to a bolted anchor on a ledge; R2 (~55m) from the bolts down lichen-covered rock to a huge ledge near a rock arch — traverse the ledge to a constriction where slings back up the next anchor; R3 (~55m) from that constriction down more lichen-covered rock to a horn with a blue sling (climber's right of the ascent line); R4 (~40m) from that horn down to broad, scree-covered upper ledges — pull the rope carefully here, as there's real potential to snag it on the ledge system; R5 (~60m) from the top of the first-pitch chimney down to the base, landing back near where the route (and Action Potential) start. Double 60m ropes are the standard setup; parties have gotten down with a single 60–70m rope and some added downclimbing between stances (roughly 4 rappels instead of 5), but that's tighter and involves more exposed downclimbing on loose terrain. Anchors are a mix of slung natural features (boulder, horn) and fixed bolts/webbing — inspect webbing before weighting it, since it's exposed to UV and can be old. Once at the base of the last rappel, reverse the Burgundy Col approach (down the loose scree, then the boot path past the flat bench and creek crossing) back to the highway pullout.",
+    "rappel_count_note": "Standard descent is 5 rappels with double 60m ropes; parties using a single 60-70m rope have reportedly gotten down in roughly 4 rappels by adding downclimbing.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "Two ropes or a 70 m if you want to arrive at the bolts on rope. On a single 60 m, plan the downclimb deliberately rather than discovering it at the ends.",
+      "notes": "Drops down the middle of the upper face to a bolted anchor on a ledge.",
+      "anchor": "large, heavily slung boulder at the summit",
+      "hazards": [
+       "A 60 m rope doubled comes up short of it — you finish about 10 ft above the bolts and have to downclimb easy but unprotected 5th class off the ends to reach them"
+      ],
+      "lengthM": 40,
+      "station": "From the heavily slung boulder on the summit the line drops down the middle of the upper face to the only bolted anchor on the entire descent, sitting on a ledge."
+     },
+     {
+      "n": 2,
+      "notes": "Down lichen-covered rock to a huge ledge near a rock arch; traverse the ledge to a constriction with slings up to the next anchor.",
+      "anchor": "bolted anchor on ledge",
+      "hazards": [
+       "The station is reached by traversing rather than rappelling, so a party looking straight down from the landing will not find an anchor"
+      ],
+      "lengthM": 55,
+      "station": "Lands on a large ledge beside the rock arch. The next anchor is not below where you land — walk the ledge across to a constriction where slings back up the station."
+     },
+     {
+      "n": 3,
+      "notes": "Down more lichen-covered rock to a horn with a blue sling.",
+      "anchor": "constriction (slung)",
+      "hazards": [
+       "The constriction swallows a pulled rope — one party had to lead back up the ground below it to free theirs",
+       "Lichen-covered rock the whole way, and the descent generally has many places for a rope to hang up"
+      ],
+      "lengthM": 55,
+      "station": "The slung constriction above the wide-crack ground; the rappel runs down lichen-covered rock to a horn carrying a blue sling, set climber's right of the ascent line."
+     },
+     {
+      "n": 4,
+      "notes": "Down to broad, scree-covered upper ledges.",
+      "anchor": "horn with blue sling",
+      "hazards": [
+       "Genuine potential to snag the rope on the ledge system below — pull from clear of the fall line and watch the strand all the way down"
+      ],
+      "lengthM": 40,
+      "station": "From the blue-slung horn down to the broad, scree-covered upper ledges."
+     },
+     {
+      "n": 5,
+      "notes": "Final rappel down to the base of the route.",
+      "anchor": "top of the first-pitch chimney",
+      "lengthM": 60
+     }
+    ],
+    "itinerary": {
+     "cal": "Climb July-September; water is reliable at Early Winters Creek; the Bench has seasonal water that can be dry by late summer, and little is found higher, so tank up before the Col.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard approach to Burgundy Col followed by 6-7 pitches of face and crack climbing (up to 5.8) to the summit, then a 5-rappel descent. The large majority of parties do this car-to-car in one long day; a minority split it with a bivy at the Bench or the Col for a more relaxed pace.",
+       "hours": 12.5,
+       "miles": 6,
+       "title": "Car-to-car: North Face",
+       "gainFt": 4000,
+       "lossFt": 4000,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave the pullout",
+         "detail": "Cross Early Winter Creek and start up the climbers' trail."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Bench (6,460 ft)",
+         "detail": "Seasonal water; can be dry by late summer."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Burgundy Col (7,770 ft)",
+         "detail": "Rack up."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Start climbing",
+         "detail": "Pitch 1 of the North Face."
+        },
+        {
+         "time": "10:50 AM",
+         "label": "Summit (8,400 ft)",
+         "detail": ""
+        },
+        {
+         "time": "11:50 AM – 5:00 PM",
+         "label": "Descend and hike out",
+         "detail": "5-rappel line on two 60m ropes (a single 60m or 70m also works with some downclimbing), then back over the Col and down to the car."
+        }
+       ],
+       "objective": "Summit Burgundy Spire (8,400 ft) via the North Face"
+      }
+     ],
+     "totalNote": "A long single day for fit parties, roughly 11-13 hrs car-to-car (real trip reports range from ~12 to 17 hrs depending on pace and party size); some parties instead split it with a bivy at the Bench (6,460 ft) or Burgundy Col (7,770 ft)."
+    },
+    "approach_variants": [
+     {
+      "name": "Burgundy Col in a single push",
+      "hours": "4-6",
+      "notes": "Park at the pullout on SR-20 near milepost 166, roughly four miles east of Washington Pass and looking straight across the valley at Silver Star Mountain. There is no numbered Forest Service trail here — the whole thing is an established boot path.\n\nScramble down the embankment past cairns. The first stretch is loose, scree-covered talus before it settles into a proper path. Cross Early Winters Creek on one of the logs; the logjam shifts year to year, so look up and down stream for the best one, and expect a cold, pushy ford in early season.\n\nOn the far bank the path winds through forest for about a quarter of a mile, then turns straight uphill between two small creeks and climbs relentlessly. At about 6,460 ft the angle relents at a broad flat bench — big enough for a dozen tents and the obvious rest stop.\n\nAbove the bench the path climbs and traverses loose scree gullies before a final cairned stretch of very unstable scree over slab to Burgundy Col at about 7,770 ft, the notch between Burgundy Spire and Paisano Pinnacle. That is roughly 3,700 ft above the creek. That last scree is worse on the way down than the way up.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Early Winters Creek crossing — logs shift, and the ford is cold and swift in early season",
+       "extremely unstable ball-bearing scree over slab on the final stretch to the col — this is the section that kicks rocks onto whoever is below, so travel close together",
+       "loose talus on the initial drop from the highway",
+       "very large gain for a day trip; most parties camp"
+      ],
+      "longForm": true,
+      "baseFinding": "The col is the destination and the route starts essentially straight off it. Burgundy Col is a narrow notch with Burgundy Spire on one side and Paisano Pinnacle on the other, and once you are stood in it the first pitch is directly above and visually obvious — the North Face rises immediately from the col rather than requiring any traverse along the base. If you have to walk any distance from the notch to find a start, you are at the wrong notch. Confirmation from the col: the Silver Star Glacier lies below on the far (east) side, so a col that drops onto a glacier behind you is the right one."
+     },
+     {
+      "name": "Camp at the 6,460 ft bench",
+      "notes": "The usual way this is done. Walk the same line from the milepost 166 pullout — down the loose talus embankment, across Early Winters Creek on logs, through the forest and then steeply up between the two small creeks — and stop at the broad flat bench at about 6,460 ft, which holds a dozen or more tents and is the natural halfway point. There is usually a seasonal trickle or snowmelt nearby.\n\nNext morning you carry only what you need for the col and the route, which makes the loose scree above the bench substantially less unpleasant. Reckon on the bench being the last flat ground and the last water.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "the direct-looking gully to the col is the wrong line — loose and exposed",
+       "loose scree over slab on the traverse into the col",
+       "no water above the bench",
+       "rockfall onto parties below on the final approach"
+      ],
+      "primary": true,
+      "baseFinding": "From camp, the route to the col climbs and traverses scree gullies with cairns on the final stretch. Aim for the narrow notch with Burgundy Spire on your left and Paisano Pinnacle on your right; the first pitch of the North Face rises directly out of it. Do not take the obvious direct gully that appears to lead straight to the col — it is loose and exposed. The path goes up the gully above camp and then makes a rising traverse right beneath the cliffs on heather-covered slabs into the col."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "before": {
+    "itinerary": {
+     "cal": "Climb July-September; the route sees little traffic so expect some lichen, and there is no reliable water at or above Burgundy Col.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Approach Burgundy Col, then scramble down and around the north face to the NE Buttress start. Eight pitches of mostly 5.8-5.9 climbing with a 5.11a crux on a lightly-traveled, sometimes lichenated line demand careful route-finding. Most parties treat this as a full, committing day and finish by downclimbing or linking into the standard North Face rappel line.",
+       "hours": 14,
+       "miles": 6.6,
+       "title": "Car-to-car: NE Buttress (Ultramega OK)",
+       "gainFt": 4300,
+       "lossFt": 4300,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave the pullout",
+         "detail": "Cross Early Winter Creek and start up the climbers' trail."
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Bench camp (6,460 ft)",
+         "detail": "Last reliable water; tank up here, especially late season."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Burgundy Col (7,770 ft)",
+         "detail": "Scramble down and around the north face to the NE Buttress base."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Start climbing",
+         "detail": "8 pitches, mostly 5.8-5.9 with a 5.11a crux, ~900 ft of climbing."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Top out",
+         "detail": "Downclimb or link into the standard North Face rap line."
+        },
+        {
+         "time": "~7:00 PM",
+         "label": "Back at car",
+         "detail": "5-rappel descent plus the hike out from the Col."
+        }
+       ],
+       "objective": "Send the NE Buttress (5.11a, 8 pitches) and summit Burgundy Spire"
+      }
+     ],
+     "totalNote": "A long single day for strong parties solid at 5.11a, roughly 13-15 hrs car-to-car, with real route-finding on a lightly traveled line — not a route to underestimate."
+    },
+    "descent": "No dedicated rappel line is documented for Ultramega OK itself — most parties downclimb/scramble from the summit or link into the standard North Face's 5-rappel descent line rather than rappelling this route directly.",
+    "descent_text": "Ultramega OK has no independent, well-established rappel line of its own — it is a Northeast Buttress route whose last pitch finishes up an offwidth crack to the summit, though a party that loses the line high up can traverse ledges into upper North Face terrain (near Burgundy Ledge) and finish from there. From wherever the route is topped out, the standard way down is the North Face's 5-rappel descent: ~40m from a heavily slung summit boulder down the middle of the upper face to a bolted ledge anchor; ~55m from the bolts down lichen-covered rock to a huge ledge near a rock arch (traverse the ledge to a constriction with slings); ~55m from that constriction down to a blue-slung horn; ~40m from the horn to broad scree ledges (watch the rope pull here — lots of snag potential); and a final ~60m to the base of the first-pitch chimney, near where Action Potential and the North Face start. Double 60m ropes make this clean; parties with a single 70m have reported getting down with some downclimbing between stances, but it's tighter on this line than on the standard North Face. From the base of the raps, reverse the Burgundy Col approach back to the highway. A few parties describe instead downclimbing loose 3rd/4th-class terrain on Burgundy's east side back toward the col to avoid rappelling altogether, but this is opportunistic route-finding rather than an established descent, and is not recommended in the wet or for parties unfamiliar with the terrain.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "The constriction above the wide crack is the documented rope-eater on this face. Watch where the ends land and keep both strands out of it.",
+      "notes": "Drops down the middle of the upper face to a bolted ledge anchor.",
+      "anchor": "Heavily slung summit boulder",
+      "hazards": [
+       "A single 60 m rope comes up about 10 ft short of the bolts and the last of it is an unroped downclimb on easy 5th class; a 70 m single reaches",
+       "A party rappelling here got a rope end wedged in a constriction above a wide crack and had to lead 5.8 to recover it"
+      ],
+      "lengthM": 40,
+      "station": "The slung summit boulder, dropping down the upper north face to the only bolted anchor anywhere on this rappel route. Below it every station is slung natural gear, so this is the single anchor you can positively identify."
+     },
+     {
+      "n": 2,
+      "notes": "Down lichen-covered rock to a large ledge near a rock arch; traverse the ledge to a constriction with slings.",
+      "anchor": "Bolted ledge anchor",
+      "hazards": [
+       "The rappel line diverges from the climb, so the terrain below you is ground you have not seen"
+      ],
+      "lengthM": 55,
+      "station": "Down toward the main ledge system, rappelling climber's-LEFT of the climbing line rather than straight down it."
+     },
+     {
+      "n": 3,
+      "notes": "Drops to a horn slung with blue webbing.",
+      "anchor": "Slings at a rock constriction",
+      "hazards": [
+       "Loose material accumulates on these ledges and sits directly above whoever is next on the rope"
+      ],
+      "lengthM": 55,
+      "station": "One rappel from the ledge system down to the ledge at the bottom of the third pitch."
+     },
+     {
+      "n": 4,
+      "notes": "Down to broad scree ledges.",
+      "anchor": "Blue-slung horn",
+      "hazards": [
+       "Not visible from where the previous rappel lands - you have to walk under the block to find it",
+       "Traversing with ropes deployed is where they hang up here"
+      ],
+      "lengthM": 40,
+      "station": "Cut climber's LEFT from the ledge; the station is just past the point where you walk back underneath the large block. Accounts also describe a station at the top of pitch 4 reached by traversing the ledge - navigate by the ledge and the block, not by looking straight down."
+     },
+     {
+      "n": 5,
+      "notes": "Final rappel to the base of the first-pitch chimney.",
+      "anchor": "Scree ledge anchor",
+      "hazards": [
+       "Below the col the descent is loose gullies on foot rather than more rappelling"
+      ],
+      "lengthM": 60,
+      "station": "The remaining rappels run down through the sandy terraces to Burgundy Col; from the last stance the line is a straight shot down through the obvious notch in the rock below to the ground."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "The Wine Spires pullout and Burgundy Col, then further around the north face to the twin cracks with loose blocks",
+      "notes": "Start at the long highway pullout on SR-20 at about 4,310 ft near milepost 166, roughly 3.75 miles east of Washington Pass and directly across the valley from Silver Star Mountain. A boot path drops east through loose talus into forest; look for a REGISTRATION BOX a few minutes in.\n\nThe path fords Early Winters Creek on logs at about 4,080 ft, a swift wade in early season. From the creek it climbs steadily east through forest and open slopes for roughly 2,200 ft to a broad flat bench and campsite around 6,460 ft, the approach's natural midpoint and a good high camp or bail point. Above the bench the boot path traverses loose scree gullies below Burgundy's northwest side and finishes up a final stretch of unstable, cairn-marked ball-bearing scree over slab to Burgundy Col at about 7,770-7,800 ft, the notch between Burgundy Spire and Paisano Pinnacle. About 3 miles and 3,500 ft one-way.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Unstable ball-bearing scree over slab below the col, with rockfall onto party members below",
+       "Lingering snow on the traverse around the north face, wanting an axe into July",
+       "No independent rappel line; the descent merges into another route's terrain",
+       "A single 70 m rope leaves the descent tight, with downclimbing between stances",
+       "A swift wade of Early Winters Creek in early season"
+      ],
+      "baseFinding": "THIS ROUTE STARTS JUST SHORT OF ACTION POTENTIAL ALONG THE BASE, AND THE MARKER IS COUNTABLE: A TWIN-CRACK SYSTEM WITH OBVIOUS LOOSE BLOCKS ABOUT 60 FT UP. Two cracks, and blocks visible sixty feet above you.\n\nSO THE INSTRUCTION IS: FROM THE COL, SCRAMBLE LOOSE ROCK, OR KICK STEPS IN LINGERING SNOW WITH AN AXE INTO JULY, DOWN AND AROUND THE BASE OF BURGUNDY'S NORTH FACE, AND KEEP GOING. THIS START IS CLIMBER'S-LEFT OF THE NORTH FACE, AND ONLY ABOUT 15 FT CLIMBER'S-RIGHT OF ACTION POTENTIAL.\n\nTHE ORDER ALONG THE BASE, GOING AWAY FROM THE COL: FIRST THE NORTH FACE'S first-pitch CHIMNEY, then THIS ROUTE'S TWIN CRACKS about 5-10 minutes along, then ACTION POTENTIAL'S CLEAN SPLITTER FLAKE roughly 15 FT FURTHER. IF YOU HAVE STOPPED AT A SINGLE CLEAN SPLITTER, YOU HAVE GONE ONE ROUTE TOO FAR.\n\nAND THE NEGATIVE TEST FROM THE OTHER DIRECTION: if you are still beside the North Face's first-pitch chimney you are short of this start, and a single clean splitter with no loose blocks above it means you have walked about 15 ft past it.\n\nARRIVAL AT THE COL, WHICH IS THE OTHER FIND ON THIS DAY: Burgundy Col is the NOTCH BETWEEN BURGUNDY SPIRE AND PAISANO PINNACLE, at about 7,770-7,800 ft, and it is reached by the last stretch of cairned ball-bearing scree over slab. Rock towers on both sides, the ground dropping away ahead, at the top of the worst scree of the day.\n\nDESCENT, AND THE ROPE MATH IS TIGHTER HERE THAN ON THE NORTH FACE: this route has no independent rappel line and most parties merge into upper North Face terrain near Burgundy Ledge, then take the North Face's five-rappel descent. DOUBLE 60 M ROPES MAKE THAT CLEAN. Parties with a single 70 m have got down with some downclimbing between stances, but it is tighter on this line than on the standard North Face."
+     }
+    ]
+   }
+  }
+ ]
+}

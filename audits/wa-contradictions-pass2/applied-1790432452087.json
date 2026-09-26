@@ -1,0 +1,108 @@
+{
+ "applied": [
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Where the 5.7 crux is and which face it climbs"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Where the 5.7 crux is and which face it climbs"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Which notch the approach reaches at ~7,400 ft"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Which notch the approach reaches at ~7,400 ft"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "before": {
+    "rock_grade": "5.7 (crux, in the Eye Col gully)",
+    "waypoints": [
+     {
+      "lat": 48.68664,
+      "lng": -121.27121,
+      "elev": 600,
+      "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+      "note": "Unpaved turnout off SR-20 across from Newhalem, signed for Goodell Creek; no parking pass is needed, but an overnight trip needs a wilderness permit from the Wilderness Information Center in Marblemount.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead is an unpaved turnout off SR-20 across from Newhalem, signed for Goodell Creek. No parking pass is needed here, but camping in the Terror or Crescent Creek basins needs a wilderness permit, issued in person at the Wilderness Information Center in Marblemount."
+     },
+     {
+      "lat": 48.713999,
+      "lng": -121.289245,
+      "elev": 2200,
+      "name": "Upper trail fork",
+      "note": "Maintained forestry-road-bed trail ends here; climbers' path continues with diminishing cairns/flagging toward Terror Creek.",
+      "type": "Junction",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.718238,
+      "lng": -121.291407,
+      "elev": 2500,
+      "name": "Terror Creek crossing",
+      "note": "Ford Terror Creek at a shallow braid; crossing depth is very flow-dependent and can be a wade in high water.",
+      "type": "Water",
+      "distMi": 4
+     },
+     {
+      "lat": 48.732526,
+      "lng": -121.284572,
+      "elev": 5400,
+      "name": "The Barrier",
+      "note": "Steep, brushy, loose ridge (spur off Mt. Degenhardt) separating Terror Creek and Crescent Creek basins; cross via a loose ledge system near the lower Terror Glacier or a higher moat crossing below Degenhardt — classic sustained 'Pickets Class 3' that turns parties back.",
+      "type": "Hazard",
+      "distMi": 6
+     },
+     {
+      "lat": 48.736559,
+      "lng": -121.267264,
+      "elev": 6050,
+      "name": "Crescent Creek Basin camp (below Mt. Terror)",
+      "note": "Established high camp on a flat bench below Mount Terror with meltwater from two overhead slab streams; the basin runs 6,050–6,440 ft.",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": 48.746312,
+      "lng": -121.26574,
+      "elev": 7400,
+      "name": "Eye Col gully traverse",
+      "note": "Drop ~300 ft below the moraine to Crescent Creek's head, then rising-traverse below the Eye Col gully past an adjacent buttress on a minor rib to a notch, avoiding a closed chimney and loose choss.",
+      "type": "Junction",
+      "distMi": 8.7
+     },
+     {
+      "lat": 48.77667,
+      "lng": -121.3125,
+      "elev": 7936,
+      "name": "West Twin Needle",
+      "note": "Final class 5.7 pitch through larger chockstones/a narrow crack above the col, then class 2-3 scrambling under white slabs to the true summit; descend via rappels off the Himmelhorn–West Twin Needle col.",
+      "type": "Summit",
+      "distMi": 9.5
+     }
+    ],
+    "approach": "Start at the Goodell Creek Cross-Country Zone trailhead off SR-20 just west of Newhalem (this is the drive-in endpoint). From the trailhead, follow the climbers' path up the old, overgrown Goodell Creek logging-road corridor through open forest for roughly 3.5 miles; beyond the fork where the maintained tread ends, the route becomes a boot path through talus with only sparse flagging, so follow cairns rather than a continuous trail. This talus/boulder-hopping stretch leads to a crossing of Terror Creek — look for a cairn marking the ford; water levels are seasonal and the crossing can go from a rock-hop in late season to a genuinely wet, current-fed ford in early summer or after rain. Beyond the creek, the route climbs a steep, brushy rib known informally as 'the Barrier': tree debris, slide alder, and a faded, easy-to-lose boot path make this the route-finding crux of the approach. Water becomes scarce above about 5400 ft — expect only dry streambeds and the occasional small puddle, so treat any water below the Barrier as your last reliable fill-up. The path tops out and drops about 200 ft into Crescent Creek Basin, then traverses roughly a mile north across scree to the common Southern Pickets camp below Mount Terror at about 6050 ft, fed by two streams coming off the slabs above (reliable water and the standard base camp for this side of the range). From camp, West Twin Needle's south side presents two gullies right of a dividing buttress; the true line follows a minor rib on climber's left of the rightmost gully (which cliffs out in a closed chimney) up to the Himmelhorn–West Twin Needle notch at about 7400 ft. The technical crux of the approach is pitching through this 'Eye Col' gully past large chockstones on low 5th-class rock, including one narrow-crack pitch typically taken on a belay. From the notch, easy slabs and scrambling (roughly 5.7) lead to the summit. Total round trip from the trailhead runs about 19.5 miles (~31 km) with well over 7000 ft of gain. Expect loose rock throughout the gullies, sustained route-finding through brush and scree, exposed scrambling on the connecting ribs, and unreliable water above the Barrier.",
+    "descent_text": "Descend by reversing to the Himmelhorn–West Twin Needle notch (~7400 ft), then downclimbing the class 2–3 west face below it. Below that, plan on 2 rappels using doubled 60m ropes to get past a band of vertical slabs — parties report the first anchor built on a protruding rock angled upward (to keep a rappel sling from walking off) and a second anchor set above boulders in the south gully; treat these as natural/gear anchors rather than fixed bolted stations; bring cord/rap rings since existing tat should not be counted on. From the base of the rappels, grassy benches sit around 6800 ft; from there traverse east and climb back up roughly 200 ft to regain the 'left gully,' which is then downclimbed/scrambled to the base near the buttress that splits the approach gullies. From there, retrace the south-route approach line back down through Crescent Creek Basin to camp. Where conditions and the exact line allow, some parties instead reverse the east-face gully (class 2–3) directly into Crescent Creek Basin, avoiding the technical col rappels entirely but at the cost of more sustained loose, exposed scrambling — this is the non-technical walk-off alternative referenced in older route notes. Watch for loose blocks throughout and be prepared for stuck ropes on retrieval (reported by at least one party, freed with a hard tug) — a real risk on this kind of low-angle-slab rappel line."
+   }
+  }
+ ]
+}

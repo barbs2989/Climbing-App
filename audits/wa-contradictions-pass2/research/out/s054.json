@@ -1,0 +1,43 @@
+{"file": "s054.json", "results": [
+ {"id": "wa_lena_lake_to_mt_stone_traverse", "fact": "Total elevation loss", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The one report that states a descent figure for this traverse gives 6,550 ft lost including the Mt Stone side-trip (5,450 ft without it) and about 7,400 ft gained, which matches the stored loss_ft but not the itinerary days (7,550 ft) or the stored 9,000 ft gain. A second report gives 16.3 mi and 7,574 ft gain with no loss figure; a third gives 9,000 ft gain with no loss. Only one source states loss, so neither loss_ft nor the itinerary days are changed. A second report stating car-to-car descent (or per-day loss) would settle it.",
+  "sources": ["https://trailcatjim.com/st-peters-traverse-mt-stone-2021/", "https://thirst4adventure.com/2015/05/28/lake-of-angels-upper-lena-traverse/", "https://explorerron.com/2024/09/04/the-putvin-traverse/"],
+  "patches": []},
+ {"id": "wa_lena_lake_to_mt_stone_traverse", "fact": "Distance from Upper Lena Lake to St. Peter's Gate", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "No report found states the mileage of this segment on its own: one gives 5.0 hours and 2,200 ft from the Upper Lena camp without miles, another says the way-trail portion is about 3 miles, another watched the gate for the last 2-2.5 miles, and a 16.3 mi full-traverse total would only give the segment by subtraction. Nothing is patched; a GPS track reporting the Upper Lena-to-Gate mileage from two parties would settle it.",
+  "sources": ["https://trailcatjim.com/st-peters-traverse-mt-stone-2021/", "https://thirst4adventure.com/2015/05/28/lake-of-angels-upper-lena-traverse/", "https://explorerron.com/2023/09/04/mount-bretherton-and-putvin-traverse-loop-via-st-peters-gate-and-lake-of-angels/"],
+  "patches": []},
+ {"id": "wa_lena_lake_to_mt_stone_traverse", "fact": "Where to cache overnight packs", "verdict": "fixed",
+  "correct_value": "Packs are cached at the base of the basalt cliff about 300 ft below St. Peter's Gate, after descending from the Gate (as pro_tips, pitch_detail and descent_text already say).",
+  "evidence": "One party descended 300 ft of steep dirt and scree from St. Peter's Gate to the base of a basalt cliff and stashed their packs there before climbing Mt Stone. A different party, on a different trip, dropped a couple hundred feet from the Gate to the start of the climber's path up Mt Stone and left their big packs there. Both put the cache below the Gate, so approach, climbing_route[0] and the variant's baseFinding are corrected.",
+  "sources": ["https://trailcatjim.com/st-peters-traverse-mt-stone-2021/", "https://eileensadventures.com/2021/09/traverse-from-upper-lena-lake-to-lake-of-the-angles"],
+  "patches": [
+   {"id": "wa_lena_lake_to_mt_stone_traverse", "fact": "Where to cache overnight packs", "op": "replace_text", "column": "approach", "path": [], "find": "From St. Peter's Gate, most parties cache overnight packs and descend about 300 ft to the base of a basalt cliff, then follow", "replace": "From St. Peter's Gate, most parties descend about 300 ft to the base of a basalt cliff and cache overnight packs there, then follow"},
+   {"id": "wa_lena_lake_to_mt_stone_traverse", "fact": "Where to cache overnight packs", "op": "replace_text", "column": "climbing_route", "path": [0, "notes"], "find": "From St. Peter's Gate, most parties cache overnight packs and descend about 300 ft to the base of a basalt cliff, then follow", "replace": "From St. Peter's Gate, most parties descend about 300 ft to the base of a basalt cliff and cache overnight packs there, then follow"},
+   {"id": "wa_lena_lake_to_mt_stone_traverse", "fact": "Where to cache overnight packs", "op": "replace_text", "column": "approach_variants", "path": [0, "baseFinding"], "find": "Cache your overnight packs there. Then DESCEND ABOUT 300 FT to the BASE OF A BASALT CLIFF. The climber's path", "replace": "Then DESCEND ABOUT 300 FT to the BASE OF A BASALT CLIFF and cache your overnight packs there. The climber's path"}
+  ]},
+ {"id": "wa_lena_lake_to_mt_stone_traverse", "fact": "Total elevation gain (gain_ft vs itinerary)", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The itinerary days total 8,400 ft of gain while gain_ft says 9,000 (totalNote hedges 8,400-9,000). Outside figures disagree: about 7,400 ft with the summit in one report, 7,574 ft in another, 9,000 ft in a third. No two agree, so nothing is patched; two reports giving the same car-to-car gain including the Mt Stone side-trip would settle it.",
+  "sources": ["https://trailcatjim.com/st-peters-traverse-mt-stone-2021/", "https://thirst4adventure.com/2015/05/28/lake-of-angels-upper-lena-traverse/", "https://explorerron.com/2024/09/04/the-putvin-traverse/"],
+  "patches": []},
+ {"id": "wa_mount_stone_lake_of_angels", "fact": "Commitment grade", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Route pages and trip reports rate the standard route only as Class 3 (Class 2 for the north summit) and give no I/II commitment grade; the Grade I figure comes only from the row's own prose. Nothing is patched. Note that the approach and climbing_route[3] sentences also name a guidebook as their source, which is a separate no-sources clean-up. The guidebook's own route entry would settle it.",
+  "sources": ["https://mazamas.org/activity/instance/8395/detail/", "https://chossclimbers.com/testing/us/washington/olympics/mount-stone/", "https://en.wikipedia.org/wiki/Mount_Stone"],
+  "patches": []},
+ {"id": "wa_mount_stone_lake_of_angels", "fact": "Round-trip distance", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "New figures add to the spread: 12 mi / 5,300 ft on one club route page, about 12 mi on a club trip report, 9-10 mi on a trail aggregator, and 11 mi on the encyclopedia and route pages that copy each other. None agrees with 9.3 or 9.6 mi, and no two independent sources agree on any one figure. A GPS-logged car-to-car figure from two parties would settle it.",
+  "sources": ["https://mazamas.org/activity/instance/8395/detail/", "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-mount-stone-south-couloir-1", "https://www.alltrails.com/trail/us/washington/mount-stone", "https://en.wikipedia.org/wiki/Mount_Stone"],
+  "patches": []},
+ {"id": "wa_mount_stone_lake_of_angels", "fact": "Aspect of the snow-holding basin", "verdict": "fixed",
+  "correct_value": "The slopes above Lake of the Angels toward St. Peter's Gate and Mt Stone face south; the basin should not be called north-facing.",
+  "evidence": "USGS point elevations climb steadily north of the lake (about 4,945 ft at the lake, 5,150, 5,830 and 6,170 ft at points about 300, 600 and 900 m to the NNE), so the ground above the lake on this route faces south/southwest. A traverse report describes descending the SOUTH side of St. Peter's Gate to Lake of the Angels. Another says the north-facing snow couloir is at the Gate on the Upper Lena side, not above the lake. The wrong adjective is removed instead of adding a new aspect claim.",
+  "sources": ["https://epqs.nationalmap.gov/v1/json?x=-123.2705&y=47.6015&units=Feet&wkid=4326", "https://explorerron.com/2023/09/04/mount-bretherton-and-putvin-traverse-loop-via-st-peters-gate-and-lake-of-angels/", "https://explorerron.com/2024/09/04/the-putvin-traverse/"],
+  "patches": [
+   {"id": "wa_mount_stone_lake_of_angels", "fact": "Aspect of the snow-holding basin", "op": "replace_text", "column": "approach_variants", "path": [0, "season"], "find": "Snow lingers in the north-facing basin above the lake well into summer", "replace": "Snow lingers in the basin above the lake well into summer"}
+  ]}
+]}

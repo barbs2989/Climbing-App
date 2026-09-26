@@ -1,0 +1,274 @@
+{
+ "applied": [
+  {
+   "id": "wa_action_potential",
+   "column": "waypoints",
+   "path": [
+    4,
+    "directions"
+   ],
+   "fact": "Where Action Potential starts relative to Ultramega OK"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "approach",
+   "path": [],
+   "fact": "Where Action Potential starts relative to Ultramega OK"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where Action Potential starts relative to Ultramega OK"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where Action Potential starts relative to Ultramega OK"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "beta",
+   "path": [],
+   "fact": "Where the route starts relative to Action Potential"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "approach",
+   "path": [],
+   "fact": "Where the route starts relative to Action Potential"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the route starts relative to Action Potential"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the route starts relative to Action Potential"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the route starts relative to Action Potential"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the route starts relative to Action Potential"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Wilderness status vs wilderness-registration box"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "approach",
+   "path": [],
+   "fact": "Wilderness status vs wilderness-registration box"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Wilderness status vs wilderness-registration box"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_action_potential",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.55,
+      "lng": -120.6306,
+      "elev": 4310,
+      "name": "SR-20 Burgundy Col Pullout",
+      "note": "Long unmarked pullout on the east shoulder of SR-20 near milepost 165-166, about 4 miles east of Washington Pass; the climber's trail drops down the embankment on the east side.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Washington Pass, drive SR-20 east about 3.75 miles, past the hairpin turn, to the next long pullout on the east shoulder near milepost 166, opposite Silver Star. The climbers' path is not signed — it drops off the east side of the embankment."
+     },
+     {
+      "lat": 48.550209,
+      "lng": -120.628185,
+      "elev": 4080,
+      "name": "Early Winters Creek Crossing",
+      "note": "Trail descends ~200 ft from the pullout to ford/log-cross Early Winters Creek; last reliable, easy water before the steep climb begins.",
+      "type": "Water",
+      "distMi": 0.2,
+      "directions": "The boot path drops down the embankment through talus and into forest, passing a register box, and loses a little over 200 ft to a log crossing of Early Winters Creek. Fill up here: this is the last easy water before the climb, with only an unreliable trickle near the col above."
+     },
+     {
+      "lat": 48.551885,
+      "lng": -120.608861,
+      "elev": 6460,
+      "name": "The Bench",
+      "note": "Flat forested camping bench with multiple established tent sites and views toward the Liberty Bell group; common first-night camp for a two-day trip.",
+      "type": "Campsite",
+      "distMi": 1.8,
+      "directions": "From the creek the trail turns east and climbs steeply and continuously, gaining roughly 2,400 ft in a mile and a half of forest to the flat bench. This is about the halfway point of the approach by both distance and gain, which is why parties splitting the trip camp here."
+     },
+     {
+      "lat": 48.552722,
+      "lng": -120.599199,
+      "elev": 7770,
+      "name": "Burgundy Col",
+      "note": "7,770-ft notch gained via 1,000+ ft of loose ball-bearing scree; from here descend/traverse loose rock or steep snow around the north face to reach the route.",
+      "type": "Junction",
+      "distMi": 2.6,
+      "directions": "Above the bench the ground opens into loose scree gullies, finishing with a cairned stretch of unstable scree over slab to the notch. This is the crux of the approach in both directions — the ball-bearing scree is the main hazard on the route, and the col's east side can hold snow or ice into summer."
+     },
+     {
+      "lat": 48.552827,
+      "lng": -120.597991,
+      "elev": 7700,
+      "name": "Splitter flake start",
+      "note": "About 5-10 minutes below the col via loose rock/snow scramble to a clean splitter flake; P1 climbs the flake system to a roof pull and lieback on the left.",
+      "type": "Junction",
+      "distMi": 2.7,
+      "directions": "Do not start climbing at the col. Scramble down and around the base of Burgundy's north face on loose rock, or on steep snow that can want an axe into midsummer, for five to ten minutes until you are directly under a clean splitter flake. The start sits between the North Face's start and Ultramega OK's, which goes further around still."
+     },
+     {
+      "lat": 48.553455,
+      "lng": -120.590745,
+      "elev": 8483,
+      "name": "Burgundy Spire Summit",
+      "note": "Eight varied, loose and lichen-covered pitches (crux 5.10c) top out at the summit; standard descent is the North Face's 5-rappel line (double ropes) back toward the col.",
+      "type": "Summit",
+      "distMi": 3.3,
+      "directions": "Eight pitches: a flake system to a roof pull and lieback, a right-trending finger crack, then the lichened, steep 5.10c finger crack that is the crux. Fourth-class ground trends left to a chimney, then a poor-rock corner and steep, thinly-protected bulges at 5.10 with the belay beyond the arete. The last pitch either rambles up to 5.7 past an old bolt to the skyline and the true summit, or traverses Burgundy Ledge into the standard North Face route — the descent is the North Face rappel line either way."
+     }
+    ],
+    "approach": "Shares the Burgundy Col approach used by Burgundy's other routes. From the SR-20 pullout (~4,310 ft, near milepost 166, ~3.75 mi east of Washington Pass, opposite Silver Star), a boot path drops through talus into forest, passes a register box, and crosses Early Winters Creek on logs at ~4,080 ft. The trail climbs east (~2,200 ft) to a flat bench/campsite at ~6,460 ft — roughly the halfway point and a common high camp — then works up through loose scree gullies and a final cairned stretch of unstable scree-over-slab to Burgundy Col (~7,770–7,800 ft): about 3 miles and 3,500 ft one-way. Action Potential does not start at the col: from the col, scramble down and around the base of Burgundy's north face (loose rock, sometimes steep snow requiring an axe into midsummer) for about 5–10 minutes until you're below a clean splitter flake — this is the route start, between the North Face's start and Ultramega OK's further-around start. Water is reliable at Early Winters Creek, seasonal near the Bench, and only a trickle near the col; the col's east side sometimes holds snow/ice into summer. The loose scree below the col is the approach's main hazard in both directions.",
+    "approach_variants": [
+     {
+      "name": "The Wine Spires pullout and Burgundy Col, then 5-10 minutes around the north face to the splitter flake",
+      "notes": "From the SR-20 pullout at about 4,310 ft near milepost 166, roughly 3.75 miles east of Washington Pass and opposite Silver Star, a boot path drops through talus into forest, passes a register box, and crosses Early Winters Creek on logs at about 4,080 ft. The trail climbs east, roughly 2,200 ft, to a flat bench and campsite at about 6,460 ft, the halfway point and a common high camp, then works up through loose scree gullies and a final cairned stretch of unstable scree-over-slab to Burgundy Col at about 7,770-7,800 ft. Roughly 3 miles and 3,500 ft one-way.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Unstable cairned scree-over-slab on the final stretch to Burgundy Col, the approach's main hazard in both directions",
+       "Loose rock and sometimes steep snow on the walk around the base of the north face",
+       "Anchors on the descent are a mix of slung boulders and horns with fixed bolts; watch for old webbing",
+       "Ledges on the face that catch a pulled rope",
+       "Reliable water only at Early Winters Creek; seasonal water near the Bench and an unreliable trickle near the col"
+      ],
+      "baseFinding": "ACTION POTENTIAL DOES NOT START AT THE COL. FROM BURGUNDY COL, SCRAMBLE DOWN AND AROUND THE BASE OF BURGUNDY'S NORTH FACE FOR ABOUT 5 TO 10 MINUTES UNTIL YOU ARE BELOW A CLEAN SPLITTER FLAKE. THAT FLAKE IS THE ROUTE START.\n\nSO THE THREE THINGS TO CHECK ARE A DIRECTION, A DURATION AND A FEATURE: DOWN and AROUND the north face, FIVE TO TEN MINUTES, and a CLEAN SPLITTER FLAKE. Clean is the operative word on a peak where most of the rock is not.\n\nTHE ORDER ALONG THE BASE, WHICH IS WHAT MAKES THIS ONE PLACEABLE: THIS ROUTE SITS BETWEEN THE NORTH FACE'S START AND ULTRAMEGA OK'S. Ultramega OK is FURTHER AROUND, well climber's-left of both, at a TWIN-CRACK SYSTEM MARKED BY OBVIOUS LOOSE BLOCKS ABOUT 60 FT UP. So: IF YOU ARE LOOKING AT TWO CRACKS WITH LOOSE BLOCKS SIXTY FEET ABOVE YOU, YOU HAVE WALKED PAST THIS ROUTE.\n\nAND IF YOU HAVE NOT WALKED AT ALL, YOU ARE ON THE NORTH FACE: that line starts at a first-pitch chimney at the col end of the base, which is also where the last rappel of the standard descent lands. A chimney at the near end, a splitter flake five to ten minutes along, twin cracks with loose blocks further still.\n\nEARLY IN THE SEASON THE WALK ALONG THE BASE MAY BE SNOW RATHER THAN SCREE, sometimes steep enough to want an axe into midsummer. That does not change the count; it changes the footing.\n\nDESCENT IS THE NORTH FACE'S, WHICH RETURNS YOU TO THIS ROUTE'S OWN START: five double-rope rappels from the summit area, ending with a final 60 m to the base of the first-pitch chimney, near where Action Potential and the North Face begin."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "before": {
+    "beta": "From Burgundy Col, descend around the north face to a twin-crack system with obvious loose blocks about 60 ft up (Action Potential's start is roughly 15 ft to the right). Eight pitches climb twin cracks, a chimney/right-facing corner, delicate face moves, and a bulging, thin-corner roof-traverse crux (P4, 5.11a) before wide cracks and chimneys and a final hand-crack/offwidth pitch reach the summit. Described by climbers as a good route that would be excellent with more traffic; some sections (notably the P6 corner) were noted as lichen-covered/dirty as of a 2018 ascent.",
+    "approach": "Start at the long highway pullout on SR-20 (~4,310 ft, near milepost 166, roughly 3.75 mi east of Washington Pass and directly across the valley from Silver Star Mountain). A boot path drops east through loose talus into forest; look for a wilderness-registration box a few minutes in. The path fords Early Winters Creek on logs at about 4,080 ft (a swift wade in early season — trekking poles help). From the creek the trail climbs steadily east through forest and open slopes for roughly 2,200 ft to a broad flat bench/campsite around 6,460 ft, the approach's natural midpoint and a good high camp or bail point. Above the bench the boot path traverses loose scree gullies below Burgundy's northwest side and finishes up a final stretch of unstable, cairn-marked 'ball-bearing' scree over slab to Burgundy Col (~7,770–7,800 ft), the notch between Burgundy Spire and Paisano Pinnacle — about 3 miles and 3,500 ft one-way. From the col, Ultramega OK does not start at the col itself: scramble loose rock (or kick steps in lingering snow, ice axe recommended into July) down and around the base of Burgundy's north face until you reach a twin-crack system marked by obvious loose blocks about 60 ft up — this is the route start, well left (climber's) of the North Face and Action Potential starts. Water is available at Early Winters Creek, a small trickle partway up near the col, and occasionally late-season ice on the col's east side. The loose final scree slopes below the col are the approach's main hazard — move carefully and stay bunched to avoid rockfall onto party members below.",
+    "approach_variants": [
+     {
+      "name": "The Wine Spires pullout and Burgundy Col, then further around the north face to the twin cracks with loose blocks",
+      "notes": "Start at the long highway pullout on SR-20 at about 4,310 ft near milepost 166, roughly 3.75 miles east of Washington Pass and directly across the valley from Silver Star Mountain. A boot path drops east through loose talus into forest; look for a WILDERNESS-REGISTRATION BOX a few minutes in.\n\nThe path fords Early Winters Creek on logs at about 4,080 ft, a swift wade in early season. From the creek it climbs steadily east through forest and open slopes for roughly 2,200 ft to a broad flat bench and campsite around 6,460 ft, the approach's natural midpoint and a good high camp or bail point. Above the bench the boot path traverses loose scree gullies below Burgundy's northwest side and finishes up a final stretch of unstable, cairn-marked ball-bearing scree over slab to Burgundy Col at about 7,770-7,800 ft, the notch between Burgundy Spire and Paisano Pinnacle. About 3 miles and 3,500 ft one-way.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Unstable ball-bearing scree over slab below the col, with rockfall onto party members below",
+       "Lingering snow on the traverse around the north face, wanting an axe into July",
+       "No independent rappel line; the descent merges into another route's terrain",
+       "A single 70 m rope leaves the descent tight, with downclimbing between stances",
+       "A swift wade of Early Winters Creek in early season"
+      ],
+      "baseFinding": "THIS ROUTE STARTS FURTHEST AROUND THE BASE OF ANY LINE HERE, AND THE MARKER IS COUNTABLE: A TWIN-CRACK SYSTEM WITH OBVIOUS LOOSE BLOCKS ABOUT 60 FT UP. Two cracks, and blocks visible sixty feet above you.\n\nSO THE INSTRUCTION IS: FROM THE COL, SCRAMBLE LOOSE ROCK, OR KICK STEPS IN LINGERING SNOW WITH AN AXE INTO JULY, DOWN AND AROUND THE BASE OF BURGUNDY'S NORTH FACE, AND KEEP GOING. THIS START IS WELL CLIMBER'S-LEFT OF BOTH THE NORTH FACE AND ACTION POTENTIAL.\n\nTHE ORDER ALONG THE BASE, GOING AWAY FROM THE COL: FIRST THE NORTH FACE'S first-pitch CHIMNEY, then ACTION POTENTIAL'S CLEAN SPLITTER FLAKE about 5-10 minutes along, then THIS ROUTE'S TWIN CRACKS. IF YOU HAVE STOPPED AT A SINGLE CLEAN SPLITTER, YOU ARE ONE ROUTE SHORT.\n\nAND THE NEGATIVE TEST FROM THE OTHER DIRECTION: there is nothing documented further around than this, so a wall with no twin cracks and no loose blocks means you have gone past the last recorded start on this side.\n\nARRIVAL AT THE COL, WHICH IS THE OTHER FIND ON THIS DAY: Burgundy Col is the NOTCH BETWEEN BURGUNDY SPIRE AND PAISANO PINNACLE, at about 7,770-7,800 ft, and it is reached by the last stretch of cairned ball-bearing scree over slab. Rock towers on both sides, the ground dropping away ahead, at the top of the worst scree of the day.\n\nDESCENT, AND THE ROPE MATH IS TIGHTER HERE THAN ON THE NORTH FACE: this route has no independent rappel line and most parties merge into upper North Face terrain near Burgundy Ledge, then take the North Face's five-rappel descent. DOUBLE 60 M ROPES MAKE THAT CLEAN. Parties with a single 70 m have got down with some downclimbing between stances, but it is tighter on this line than on the standard North Face."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.55,
+      "lng": -120.6306,
+      "elev": 4310,
+      "name": "SR-20 Burgundy Col Pullout",
+      "note": "Long unmarked pullout on the east shoulder of SR-20 near milepost 165-166, about 4 miles east of Washington Pass; the climber's trail drops down the embankment on the east side.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "This route starts from a long, unmarked pullout on the east shoulder of State Route 20 near milepost 166, about 3.75 miles east of Washington Pass and directly across the valley from Silver Star Mountain, at roughly 4,310 feet. A climber's path drops down the embankment on the east side of the pullout into loose talus and forest, and you'll pass a wilderness-registration box a few minutes down the trail."
+     },
+     {
+      "lat": 48.56803,
+      "lng": -120.629805,
+      "elev": 4080,
+      "name": "Early Winters Creek Crossing",
+      "note": "Trail descends ~200 ft from the pullout to ford/log-cross Early Winters Creek; last reliable, easy water before the steep climb begins.",
+      "type": "Water",
+      "distMi": 0.2
+     },
+     {
+      "lat": 48.552689650944515,
+      "lng": -120.60337830920488,
+      "elev": 6460,
+      "name": "The Bench",
+      "note": "Flat forested camping bench with multiple established tent sites and views toward the Liberty Bell group; common first-night camp for a two-day trip.",
+      "type": "Campsite",
+      "distMi": 1.8
+     },
+     {
+      "lat": 48.554424,
+      "lng": -120.592209,
+      "elev": 7770,
+      "name": "Burgundy Col",
+      "note": "7,770-ft notch gained via 1,000+ ft of loose ball-bearing scree; routes on the north face are reached by scrambling/downclimbing loose rock or snow left from here.",
+      "type": "Junction",
+      "distMi": 2.6
+     },
+     {
+      "lat": 48.55419895307295,
+      "lng": -120.59179453796625,
+      "elev": 7700,
+      "name": "Twin-crack start",
+      "note": "~5-10 min scramble down and around the north face from the col to a twin-crack system with obvious loose blocks about 60 ft up; roped climbing begins here.",
+      "type": "Junction",
+      "distMi": 2.7
+     },
+     {
+      "lat": 48.553455,
+      "lng": -120.590745,
+      "elev": 8483,
+      "name": "Burgundy Spire Summit",
+      "note": "P8 climbs left past an old bolt toward the top; parties who lose the line after P7 traverse ledges onto the North Face route's 5.10a squeeze chimney to finish, then downclimb/scramble or use the North Face rappel line to retreat.",
+      "type": "Summit",
+      "distMi": 3.3
+     }
+    ]
+   }
+  }
+ ]
+}
