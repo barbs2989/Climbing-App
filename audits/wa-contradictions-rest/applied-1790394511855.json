@@ -1,0 +1,312 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach line"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "watch_out",
+   "path": [
+    4
+   ],
+   "fact": "Approach line"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Leave-trail point (distance and elevation)"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "Leave-trail point (distance and elevation)"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "waypoints",
+   "path": [
+    7,
+    "distMi"
+   ],
+   "fact": "Leave-trail point (distance and elevation)"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Leave-trail point (distance and elevation)"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Leave-trail point (distance and elevation)"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Leave-trail point (distance and elevation)"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Leave-trail point (distance and elevation)"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    5,
+    "detail"
+   ],
+   "fact": "Leave-trail point (distance and elevation)"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Leave-trail point (distance and elevation)"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "hazards",
+   "path": [
+    2
+   ],
+   "fact": "Which fords"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "watch_out",
+   "path": [
+    2
+   ],
+   "fact": "Which fords"
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Permit availability"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_lawson_standard",
+   "before": {
+    "approach": "Via the North Fork Quinault Trailhead (North Shore Road), hike the North Fork Quinault River Trail roughly 16 miles to Low Divide — fords at Wild Rose Creek, Elip Creek, and 16-Mile Creek can be difficult or impassable in high water — then follow the primitive, unmaintained Skyline Ridge Trail toward Promise Creek Pass before dropping off-trail onto Lawson's slopes.",
+    "watch_out": [
+     "long remote approach",
+     "early-season snow (lingers on Skyline Ridge Trail into late July/August)",
+     "difficult creek fords (Wild Rose, Elip, 16-Mile)",
+     "loose rock",
+     "primitive/unmaintained trail past Low Divide"
+    ],
+    "waypoints": [
+     {
+      "lat": 47.575778,
+      "lng": -123.648002,
+      "elev": 519,
+      "name": "North Fork Quinault Trailhead",
+      "note": "Olympic National Park wilderness camping permit required, booked through Recreation.gov (the Quinault Wilderness Information Center is the staffed office for this valley); the park entrance fee covers parking and no Northwest Forest Pass is needed on National Park land; trail heads upstream along the North Fork Quinault River through old-growth rainforest.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.599376,
+      "lng": -123.619146,
+      "elev": 560,
+      "name": "Wolf Bar",
+      "note": "Established riverside camp (6-7 sites) with bear wires on the west bank of the North Fork Quinault; reliable river water but treat before drinking.",
+      "type": "Campsite",
+      "distMi": 2.5
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 750,
+      "name": "Wild Rose Creek Ford",
+      "note": "Unbridged crossing where the creek has washed out the trail bank; can be a difficult wet ford in spring/early summer or after rain.",
+      "type": "Hazard",
+      "distMi": 4.9
+     },
+     {
+      "lat": 47.628869,
+      "lng": -123.632965,
+      "elev": 780,
+      "name": "Halfway House",
+      "note": "Site of a long-gone Press Expedition-era lodge, now sandy riverside campsites; good water and a natural turnaround/rest point.",
+      "type": "Campsite",
+      "distMi": 5.1
+     },
+     {
+      "lat": 47.639492,
+      "lng": -123.651445,
+      "elev": 870,
+      "name": "Elip Creek Camp",
+      "note": "Backcountry camp near the Elip Creek/Skyline Trail junction (old sign reads 'Skyline Trail 4.6'); last reliable, easy water before leaving the maintained trail for Lawson.",
+      "type": "Campsite",
+      "distMi": 6.5
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 1050,
+      "name": "North Fork Quinault River Ford / Leave Trail",
+      "note": "Route leaves the maintained trail here, fords the North Fork Quinault River, and begins direct, unmarked bushwhacking up steep timber toward Mount Lawson's north side.",
+      "type": "Junction",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.65167932,
+      "lng": -123.60529190666666,
+      "elev": 4000,
+      "name": "North Ridge Gully",
+      "note": "Steep rock-and-snow gully gaining the North Ridge; loose rock underfoot and can hold firm snow into summer, warranting an ice axe/traction check before committing.",
+      "type": "Hazard",
+      "distMi": 8.7
+     },
+     {
+      "lat": 47.656335,
+      "lng": -123.588465,
+      "elev": 5401,
+      "name": "Mount Lawson",
+      "note": "True summit of this isolated 'island peak,' ringed by river valleys on all sides, with broad views over the Quinault drainage; descend by reversing the North Ridge and gully to the river ford.",
+      "type": "Summit",
+      "distMi": 9.5
+     }
+    ],
+    "itinerary": {
+     "cal": "Published descriptions list June-Aug as the nominal season, but the crux is really the North Fork ford: parties often go earlier (Mar-May) when snow bridges or an occasional fallen log ease the crossing at the cost of avalanche risk in the gully, or later (Aug) when the water is low but the gully is melted-out, brushy, and loose.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the North Fork Quinault trailhead, follow the North Fork Quinault River Trail roughly 10 miles through old-growth forest and past frequent blowdown, passing the Wolf Bar (~2.5 mi) and Elip Creek (~6.5 mi) camps along the way. Continue to a riverside site near the short switchbacks below Lawson's north-face avalanche fan - the crossing point used by most parties (a rare fallen log makes for a dry crossing some years; otherwise it's a careful rock-hop or ford). Camping right at the base sets up a fast, self-contained summit day.",
+       "hours": 5.5,
+       "miles": 10,
+       "title": "Approach to river camp",
+       "gainFt": 700,
+       "lossFt": 100,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Hike in to a riverside camp near the base of Lawson's north-side gullies"
+      },
+      {
+       "n": 2,
+       "note": "Cross the North Fork Quinault before or at dawn and climb roughly 3,800-4,000 ft up the 'hidden gully' system on Lawson's north side (steep snow/scree and one awkward Class 3-4 step depending on season) to the ridge and broad summit plateau. Retrace the route back down to camp, then break camp and hike the full ~10 miles back to the trailhead - parties who reach the summit typically push all the way out the same day rather than spending a second night.",
+       "hours": 12,
+       "miles": 13,
+       "title": "Summit push and full hike-out",
+       "gainFt": 4000,
+       "lossFt": 4700,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "Before dawn",
+         "label": "Break camp, cross river",
+         "detail": "Ford or log-crossing of the North Fork Quinault at the base of the avalanche fan."
+        },
+        {
+         "time": "~6:00 AM",
+         "label": "Start up the hidden gully",
+         "detail": "Snow-filled gully system diagonaling up the north side toward the ridge."
+        },
+        {
+         "time": "+3 hr 10 min",
+         "label": "Top out on the summit",
+         "detail": "5,401 ft; a 2009 trip report logged exactly this time from river to summit."
+        },
+        {
+         "time": "+30 min",
+         "label": "Depart summit",
+         "detail": "Retrace the ascent line, including the one exposed downclimb near the crux."
+        },
+        {
+         "time": "+2 hr 10 min",
+         "label": "Back at river camp",
+         "detail": "Most parties are back at camp by roughly noon."
+        },
+        {
+         "time": "Afternoon (~5 hr)",
+         "label": "Hike out to trailhead",
+         "detail": "Full ~10-mile exit completed the same day, finishing the round trip in one push after camp."
+        }
+       ],
+       "objective": "Climb the north gully system to the summit, then hike all the way back to the trailhead"
+      }
+     ],
+     "totalNote": "A fast, committing 2-day round trip: roughly 20 miles and 4,500+ ft of gain/loss total, anchored by a single camp near the river crossing and a big 10-12 hour summit day that finishes with the entire hike back to the car."
+    },
+    "timing": {
+     "totalHrs": 17.5,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "From the North Fork Quinault trailhead, follow the North Fork Quinault River Trail roughly 10 miles through old-growth forest and past frequent blowdown, passing the Wolf Bar (~2.5…",
+       "fromTo": "Approach to river camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "Cross the North Fork Quinault before or at dawn and climb roughly 3,800-4,000 ft up the 'hidden gully' system on Lawson's north side (steep snow/scree and one awkward Class 3-4 ste…",
+       "fromTo": "Summit push and full hike-out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "hazards": [
+     "routefinding on trail-less terrain",
+     "afternoon weather",
+     "difficult fords at Wild Rose, Elip, and 16-Mile creeks on the North Fork Quinault approach"
+    ],
+    "pro_tips": [
+     "Reserve your Olympic Wilderness permit early — summer-season (May 15–Oct 15) reservations open online mid-April and popular Quinault-corridor camps (Wolf Bar, Elip Creek) fill fast",
+     "Break the long approach into 2 nights: camp at Elip Creek (~6.5 mi in) to shorten the off-trail day to the summit and back",
+     "Go in June/July when the chute still holds consolidated snow — reportedly easier than late-season bare, loose rock, though the river ford gets harder as snowmelt volume rises",
+     "Scout the river-crossing and chute location on a topo/aerial image before you go — route-finding off-trail is the crux for most parties on this seldom-visited peak"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{"file": "r504.json", "results": [
+ {"id": "wa_mount_lawson_standard", "fact": "Approach line", "verdict": "fixed_internal_plus_one",
+  "correct_value": "North Fork Quinault River Trail about 12 miles to the river ford at Sixteen Mile Camp, cross the river, then off-trail directly up Lawson's north side (not via Low Divide / Skyline Trail).",
+  "evidence": "Beta, waypoints, itinerary, timing, descent_text, bail and bivy all use the river-ford line below Lawson's north side; only approach and watch_out[4] send the party to Low Divide and the Skyline Trail. The NPS trail page puts the Sixteen Mile river ford ~12 mi up and Low Divide ~3.5 mi beyond it; Wikipedia says the summit rises 3,800 ft above the North Fork in 1.3 mi, and the Mazamas North Ridge listing starts the climb from the North Fork trail and goes up a gully from the creek.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm", "https://en.wikipedia.org/wiki/Mount_Lawson_(Washington)", "https://mazamas.org/activity/1100/"],
+  "patches": [
+   {"id": "wa_mount_lawson_standard", "fact": "Approach line", "op": "replace_text", "column": "approach", "path": [], "find": "roughly 16 miles to Low Divide — fords at Wild Rose Creek, Elip Creek, and 16-Mile Creek can be difficult or impassable in high water — then follow the primitive, unmaintained Skyline Ridge Trail toward Promise Creek Pass before dropping off-trail onto Lawson's slopes.", "replace": "roughly 12 miles to the river ford at Sixteen Mile Camp — the fords at Wild Rose Creek, Elip Creek, and the North Fork itself at Sixteen Mile can be difficult or impassable in high water — then cross the river and leave the trail, climbing off-trail directly up Lawson's north side."},
+   {"id": "wa_mount_lawson_standard", "fact": "Approach line", "op": "set", "column": "watch_out", "path": [4], "expect": "primitive/unmaintained trail past Low Divide", "value": "unmarked off-trail line from the river ford to the summit"}
+  ]},
+ {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point (distance and elevation)", "verdict": "fixed",
+  "correct_value": "The ford/leave-trail point is the North Fork crossing at Sixteen Mile Camp, about 12.2 mi from the trailhead; round trip to the summit about 25 mi. The ford elevation is not settled.",
+  "evidence": "NPS camp spacing (Wolf Bar ~2.5, Halfway House +2.6, Elip ~4 from Wolf Bar, Sixteen Mile ~5.7 from Elip) puts the Sixteen Mile ford at ~12.2 mi; trail databases give the ford at 12.1 mi / 'about 12 miles in'. The Mazamas North Ridge listing gives 25 mi round trip, matching 12 mi in plus the summit day. The waypoint 7.2 mi, itinerary 10 mi, and the later pins (8.7, 9.5 mi) are therefore wrong; the gully and summit pins have no sourced distance so they are set to null. The ford waypoint's 1,050 ft elevation looks too low (the summit is 3,800 ft above the river, implying ~1,600 ft; the camp entry says 2,021 ft) but no two sources state it, so elev is left unchanged (unresolved).",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm", "https://www.hikingproject.com/trail/7001965/north-fork-quinault-river-trail", "https://mazamas.org/activity/1100/", "https://www.oregonhikers.org/forum/viewtopic.php?t=19821"],
+  "patches": [
+   {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point", "op": "set", "column": "waypoints", "path": [5, "distMi"], "expect": 7.2, "value": 12.2},
+   {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point", "op": "set", "column": "waypoints", "path": [6, "distMi"], "expect": 8.7, "value": null},
+   {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point", "op": "set", "column": "waypoints", "path": [7, "distMi"], "expect": 9.5, "value": null},
+   {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point", "op": "set", "column": "itinerary", "path": ["days", 0, "miles"], "expect": 10, "value": 12},
+   {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "roughly 10 miles through", "replace": "roughly 12 miles through"},
+   {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 0, "note"], "find": "roughly 10 miles through", "replace": "roughly 12 miles through"},
+   {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point", "op": "replace_text", "column": "itinerary", "path": ["days", 1, "note"], "find": "hike the full ~10 miles back", "replace": "hike the full ~12 miles back"},
+   {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point", "op": "replace_text", "column": "itinerary", "path": ["days", 1, "schedule", 5, "detail"], "find": "Full ~10-mile exit", "replace": "Full ~12-mile exit"},
+   {"id": "wa_mount_lawson_standard", "fact": "Leave-trail point", "op": "replace_text", "column": "itinerary", "path": ["totalNote"], "find": "roughly 20 miles", "replace": "roughly 25 miles"}
+  ]},
+ {"id": "wa_mount_lawson_standard", "fact": "Scramble grade", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Wikipedia gives the easiest route as class 2 hiking; the Mazamas North Ridge listing gives only a club rating (A/B), no class. No second independent source states a class for this route, and the row itself is split (grade, overview, descent_text, partner_requirements say Class 3; beta and bivy say Class 2; itinerary a Class 3-4 step). Left unchanged.",
+  "sources": ["https://en.wikipedia.org/wiki/Mount_Lawson_(Washington)", "https://mazamas.org/activity/1100/"],
+  "patches": []},
+ {"id": "wa_mount_lawson_standard", "fact": "Season window", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The Mazamas listing rates the climb for spring, summer and fall (winter harder) without a window; NPS notes the Sixteen Mile ford is hazardous in snowmelt and heavy rain, which argues against June but states no window for the climb. No two sources give a season for this route, so season, best_season and seasonal_guidance are left as is.",
+  "sources": ["https://mazamas.org/activity/1100/", "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm"],
+  "patches": []},
+ {"id": "wa_mount_lawson_standard", "fact": "Which fords", "verdict": "fixed",
+  "correct_value": "Three fords: Wild Rose Creek, Elip Creek, and the North Fork Quinault River itself at Sixteen Mile Camp.",
+  "evidence": "NPS lists fords at Wild Rose Creek, Elip Creek and 16-Mile, and describes the Sixteen Mile crossing as the North Fork itself, knee to thigh deep. An independent trip report and hiker reviews describe the trail crossing the river by a ford at Sixteen Mile Camp. '16-Mile creek' in hazards/watch_out is the river crossing, not a creek.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm", "https://www.oregonhikers.org/forum/viewtopic.php?t=19821", "https://www.komoot.com/smarttour/e729280756/north-fork-quinault-trail"],
+  "patches": [
+   {"id": "wa_mount_lawson_standard", "fact": "Which fords", "op": "set", "column": "hazards", "path": [2], "expect": "difficult fords at Wild Rose, Elip, and 16-Mile creeks on the North Fork Quinault approach", "value": "difficult fords at Wild Rose Creek, Elip Creek, and the North Fork Quinault itself at Sixteen Mile Camp"},
+   {"id": "wa_mount_lawson_standard", "fact": "Which fords", "op": "set", "column": "watch_out", "path": [2], "expect": "difficult creek fords (Wild Rose, Elip, 16-Mile)", "value": "difficult fords (Wild Rose Creek, Elip Creek, the North Fork at Sixteen Mile)"}
+  ]},
+ {"id": "wa_mount_lawson_standard", "fact": "Permit availability", "verdict": "fixed",
+  "correct_value": "The North Fork Quinault is not a wilderness quota area; permits are still reserved online.",
+  "evidence": "The NPS wilderness reservations page lists the quota areas (Sol Duc/Seven Lakes, Grand Valley, Royal Lake, Ozette coast, Lake Constance, Flapjack, Upper Lena, Hoh sections, and since 2024 the East Fork Quinault) and says non-quota permits are not limited; the North Fork Quinault is not among them. Washington's National Park Fund names the same quota areas. So the pro tip's claim that Wolf Bar and Elip Creek fill fast is unsupported.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm", "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"],
+  "patches": [
+   {"id": "wa_mount_lawson_standard", "fact": "Permit availability", "op": "replace_text", "column": "pro_tips", "path": [0], "find": " and popular Quinault-corridor camps (Wolf Bar, Elip Creek) fill fast", "replace": "; the North Fork Quinault is not a quota area, so its camps are not capped by a nightly limit"}
+  ]},
+ {"id": "wa_mount_lawson_standard", "fact": "Approach distance (dist_km) vs itinerary", "verdict": "unresolved", "discovered": true,
+  "correct_value": null,
+  "evidence": "dist_km 30.58 (~19 mi) is shown as the one-way approach, but the trail to the leave-trail ford is ~12.2 mi (NPS) and the full round trip ~25 mi (Mazamas); 19 mi matches neither. No source states the one-way trailhead-to-summit distance, so dist_km is left unchanged.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm", "https://mazamas.org/activity/1100/"],
+  "patches": []}
+]}

@@ -1,0 +1,196 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_mathias_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel required"
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Glacier travel required"
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "column": "what_to_bring",
+   "path": [
+    1
+   ],
+   "fact": "Glacier travel required"
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Scramble grade"
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Scramble grade"
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Hoh trailhead pin says it starts the Sol Duc approach"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_mathias_scramble",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Wet maritime climate typical of the Olympics the Bailey Range holds snow well into summer, and a short clear window exists in fall before storms return",
+      "probability": "Weather can change quickly in this exposed, remote range; multi-day trips carry meaningful exposure to a shift toward wet/stormy conditions given the several-day commitment"
+     },
+     "exposure": "Committing, remote Class 3 terrain with long self-evacuation distances; a fall or injury far from help is a serious consequence given the multi-day, off-trail nature of the approach",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; NWAC does not issue forecasts for the Olympics outside roughly mid-November to mid-April, well outside this route's season",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel required on the Class 3 scramble route to the summit itself, though the broader Bailey Range Traverse passes near glaciated terrain (Hoh Glacier) that requires care"
+    },
+    "what_to_bring": [
+     "helmet",
+     "ice axe (early season)",
+     "map/compass/GPS",
+     "multi-day backcountry kit"
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high endurance for consecutive long days (typically 4-8+ days) with significant elevation gain/loss and off-trail travel over talus, heather, and snowfields",
+      "packWeight": "Multi-day expedition load (overnight/backpacking gear, food for a week+, bear canister) typically 35-50+ lb"
+     },
+     "approachTime": "Multi-day approach; Mathias is reached only as part of the several-days-long Bailey Range Traverse, not a single-day approach",
+     "requiredSkills": [
+      "off-trail navigation and route-finding (map/compass/GPS) in featureless or complex terrain",
+      "exposed Class 3 scrambling with a pack",
+      "steep snowfield/glissade travel and self-arrest",
+      "stream/river crossing judgment",
+      "self-sufficient wilderness travel and self-evacuation given remote location"
+     ],
+     "experienceLevel": "Advanced backcountry traveler with prior multi-day off-trail/cross-country navigation experience; comfortable on sustained Class 3 terrain with a loaded overnight pack and unmarked route-finding through remote alpine terrain"
+    },
+    "waypoints": [
+     {
+      "lat": 47.86028,
+      "lng": -123.93472,
+      "elev": 1950,
+      "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+      "note": "Olympic National Park wilderness permit required, booked through Recreation.gov - there are no longer paper self-registration permits at trailheads, and no Northwest Forest Pass is needed on National Park land; start of the Sol Duc/High Divide approach into the Bailey Range.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.9053,
+      "lng": -123.7769,
+      "elev": 5474,
+      "name": "High Divide (Bailey Range Trail split, near Bogachiel Peak)",
+      "note": "Unmaintained Bailey Range climbers' path branches off the maintained High Divide trail here and drops into the woods toward Cat Peak; unmarked and easy to lose in fog.",
+      "type": "Junction",
+      "distMi": 9
+     },
+     {
+      "lat": 47.882274,
+      "lng": -123.641263,
+      "elev": 5200,
+      "name": "Eleven Bull Basin",
+      "note": "First established camp on the Northern Baileys - heather benches with streams gushing off the hillside; last easy reliable water before the long exposed sidehill traverse.",
+      "type": "Campsite",
+      "distMi": 15
+     },
+     {
+      "lat": 47.85391435897436,
+      "lng": -123.7256282051282,
+      "elev": 5900,
+      "name": "Ferry Basin",
+      "note": "Broad glacially-scoured pass/basin below Mt. Ferry with glacial lakes and streams, reached via the Stephen Lake bypass to avoid sidehilling; smooth walking before terrain roughens toward Queets Basin.",
+      "type": "Campsite",
+      "distMi": 19
+     },
+     {
+      "lat": 47.79314,
+      "lng": -123.66241,
+      "elev": 6150,
+      "name": "Blizzard Pass",
+      "note": "Flat snowfield pass gained after crossing the Humes Glacier terminus and Queets Basin; first clear view of Mt. Mathias and the Hoh Glacier cirque below.",
+      "type": "Junction",
+      "distMi": 26
+     },
+     {
+      "lat": 47.815375128205126,
+      "lng": -123.68717435897436,
+      "elev": 5500,
+      "name": "Camp Pan",
+      "note": "Obvious sandy-flat campsite on a prow jutting into the glacial valley, a half-mile and 600 ft below Blizzard Pass; the standard last camp before climbing Mathias.",
+      "type": "Campsite",
+      "distMi": 26.5
+     },
+     {
+      "lat": 47.81023656410257,
+      "lng": -123.68204717948717,
+      "elev": 6500,
+      "name": "Hoh Glacier / snow finger below Glacier Pass",
+      "note": "Steep snow finger and crevassed glacier crossing between Camp Pan and Glacier Pass leading to the base of the summit ridge; rope up, hidden crevasses reported here.",
+      "type": "Hazard",
+      "distMi": 27.5
+     },
+     {
+      "lat": 47.80522,
+      "lng": -123.676932,
+      "elev": 7156,
+      "name": "Mount Mathias summit",
+      "note": "True summit via Class 4 climbing on the ridge from the Mercury-Mathias col or the Glacier Pass snow finger; a seldom-climbed, exposed final scramble between the Blue and Hoh glaciers.",
+      "type": "Summit",
+      "distMi": 28.5
+     }
+    ],
+    "descent_text": "Descend by the same line used on ascent: downclimb the Class 4 summit ridge back to the top of the snow finger, then plunge-step or downclimb the 35–40° snow finger back to Glacier Pass. This is a walk-off/downclimb — no fixed rappel stations are reported on Mathias itself, and no rappels are specifically documented for this line; treat the snow finger and the loose upper ridge as the descent crux (rockfall and a fall-arrest-consequence slope, not technical lowering). If the snow has gone to hard ice/firm neve late in the season, some parties choose to belay or downclimb facing in rather than plunge-stepping. From Glacier Pass, reverse the approach: cross the Hoh Glacier back to Camp Pan, then descend via the Blue Glacier — passing the Snow Dome bootpack and exiting via the glacier's lateral/terminal moraine — down to Glacier Meadows Camp, and out the Hoh River Trail to the trailhead (roughly 2 days of hiking/glacier travel from Camp Pan back to the car). If this climb is combined with the full Bailey Range Traverse, the alternate exit continues north from High Divide back to the Sol Duc trailhead instead. Watch for rockfall on the loose upper mountain as the day warms, softening snow bridges on the Hoh/Blue Glacier crossings later in the day, and the same unstable Hoh Lake Slide sidehill on the way out."
+   }
+  }
+ ]
+}

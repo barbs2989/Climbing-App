@@ -1,0 +1,51 @@
+{
+ "applied": [
+  {
+   "id": "wa_gato_negro",
+   "column": "emergency",
+   "path": [
+    "nearestHospital"
+   ],
+   "fact": "Nearest hospital"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction from Royal Lake to the col"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction from Royal Lake to the col"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction from Royal Lake to the col"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_gato_negro",
+   "before": {
+    "emergency": {
+     "notes": "Cell service is unreliable in the Washington Pass area. Satellite communication device recommended. Emergency helicopter access possible via NWSRU.",
+     "county": "Okanogan County",
+     "rangerStation": "Okanogan-Wenatchee National Forest - Methow Valley Ranger District",
+     "nearestHospital": "Skagit Valley Hospital, Mount Vernon, WA (about 60 miles)",
+     "sheriffDispatch": "Okanogan County Sheriff dispatch (non-emergency): 509-422-7232"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "before": {
+    "approach": "From the Upper Dungeness Trailhead, start on Upper Dungeness Trail #833.2 through second-growth and then old-growth forest along the Dungeness River. At about 1 mile, bear right at the signed junction onto the Royal Basin Trail (the left fork continues up-valley toward Boulder Shelter/Constance Pass). The Royal Basin trail then climbs gradually for several miles alongside Royal Creek — the main water source for the approach — crossing it on log/plank bridges more than once; these crossings can run fast and cold during early-season snowmelt (June). Around mile 6 the grade steepens sharply for the push to Royal Lake (7.2 mi, roughly 2,500 ft gained from the trailhead), with the final mile gaining about 500 ft on looser, sometimes-eroded tread. From Royal Lake continue north on the scramblers'/climbers' path roughly another 0.8 mile and 500 ft to Upper Royal Basin (about 8 mi in, ~5,600 ft), a broad heather-and-tarn basin below Mount Deception's south face that most parties use as base camp (NPS wilderness permit and bear canister required; no fires; advance reservations cover June 15–Oct 15). From Upper Royal Basin the maintained trail ends; head cross-country east/northeast up heather benches and talus to the rim of the glacial moraine ringing Surprise Basin, the small hanging cirque between Mount Martin, Mount Johnson, and Mount Clark. Drop into Surprise Basin and cross its snowfields (crampons/axe often useful into July) toward the roughly 6,900 ft notch/col between Johnson (climber's left) and Clark (climber's right) — this is the standard gateway to Johnson's upper mountain. This off-trail stretch above Upper Royal Basin is loose talus and scree with genuine rockfall and route-finding hazard; helmets on from the moraine rim upward. Given the total distance (~19 miles / 30.9 km round trip) and elevation gain, most parties backpack in and camp at Upper Royal Basin, climbing Johnson as a long day from camp rather than attempting it car-to-car."
+   }
+  }
+ ]
+}

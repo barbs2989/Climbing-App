@@ -1,0 +1,128 @@
+{
+ "applied": [
+  {
+   "id": "wa_cobbles_101",
+   "column": "sling_rack",
+   "path": [],
+   "fact": "Protection (bolted vs gear)"
+  },
+  {
+   "id": "wa_cobbles_101",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Protection (bolted vs gear)"
+  },
+  {
+   "id": "wa_cobbles_101",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "column": "sling_rack",
+   "path": [],
+   "fact": "Protection (bolted vs gear)"
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_wild_wild_west",
+   "column": "sling_rack",
+   "path": [],
+   "fact": "Protection (bolted vs gear)"
+  },
+  {
+   "id": "wa_wild_wild_west",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rappel line"
+  },
+  {
+   "id": "wa_wild_wild_west",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Rappel line"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_cobbles_101",
+   "before": {
+    "sling_rack": {
+     "cams": "light set",
+     "nuts": "small set",
+     "extra_slings": "several"
+    },
+    "rope_note": "Pinto Rock South Face, 5 pitches, knobby rock ('cobbletrust' skill-building route); mixed bolt + occasional gear placements.",
+    "descent": "Rappel the route (2 raps with a 60m rope, or 1 rap with 2 ropes)"
+   }
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 46.326559,
+      "lng": -121.923912,
+      "elev": 4700,
+      "name": "Pinto Rock base (end of NF-77)",
+      "note": "Approach via NF-25 to Mosquito Meadows, then NF-28/NF-77 (rough road) to the base of the ~400' cliff, Gifford Pinchot National Forest.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Randle, take SR-131 south and follow NF-25 about 19 miles into the Mosquito Meadows area, then turn onto NF-28 for 2.7 miles. Turn onto NF-77, a rough gravel road, and drive it slowly to the roadside pullout at the end, directly below the formation at about 4,700 feet. This is Gifford Pinchot National Forest, and the pullout sits at the base of the roughly 400-foot cliff."
+     },
+     {
+      "lat": 46.326559,
+      "lng": -121.923912,
+      "elev": 5118,
+      "name": "Pinto Rock summit",
+      "note": "5-pitch regular route through a basalt band and chimney to the summit; descend via 2 raps (60m) or 1 double-rope rap off the north end of the east face.",
+      "type": "Summit",
+      "distMi": 0.2
+     },
+     {
+      "lat": 46.32649,
+      "lng": -121.92364,
+      "name": "South Face / route start",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "sling_rack": {
+     "cams": "light set",
+     "nuts": "small set",
+     "extra_slings": "several, for threading knobs"
+    },
+    "descent": "Rappel the route (2 raps with a 60m rope, or 1 rap with 2 ropes)"
+   }
+  },
+  {
+   "id": "wa_wild_wild_west",
+   "before": {
+    "sling_rack": {
+     "cams": "small rack 0.3-1in for gaps between bolts",
+     "nuts": "small back-up set",
+     "slings": "2 single-length"
+    },
+    "descent_text": "From the top, descend by rappelling; head up and left along the back side of the formation near the fir trees to find the rappel line back down the West Face.",
+    "itinerary": "Single-day outing: drive to the NF-77 pullout, approach directly to the wall base (short walk), climb 4 pitches (Grade II, a few hours round trip for a competent team), then rappel or walk off."
+   }
+  }
+ ]
+}

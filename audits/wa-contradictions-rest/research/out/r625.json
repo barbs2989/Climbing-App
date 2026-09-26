@@ -1,0 +1,261 @@
+{
+ "file": "r625.json",
+ "results": [
+  {
+   "id": "wa_the_fin_scramble",
+   "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+   "verdict": "fixed",
+   "correct_value": "Leave the Gladys Divide trail near 4,400 ft (about a mile past Flapjack Lakes) and climb southeast to Sawtooth Pass, the chute beside The Fin; the NE face starts just east of the pass. Needle Pass serves the spires north of The Fin.",
+   "evidence": "The route's own climbing page says to go up the Gladys Divide trail past Flapjack Lakes, cut east about a mile in toward the narrow chute left of The Fin (Sawtooth Pass), and start the route east of the pass. The club route page says to leave the trail at ~4,400 ft before the small pond and head southeast up open snow/rock to Sawtooth Pass, and reserves Needle Pass for spires north of The Fin. Prose fixed in approach, approach_variants, bail, partner text and the Needle Pass pin note; the Gladys Divide/Needle Pass pins themselves (coordinates, distMi) remain in the list and are off this line — pin removal is out of scope.",
+   "sources": [
+    "https://www.mountainproject.com/route/124501856/the-fin-northeast-face",
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the lakes go east ~1.5 mi to Gladys Divide (~5,000'), then follow the Sawtooth Ridge crest southeast (via Needle Pass, ~5,720') past Alpha, Beta, Mount Cruiser, The Blob, The Needle, and the Castle Peaks to The Fin.",
+     "replace": "From the lakes continue east on the Gladys Divide trail to about 4,400' near a small pond, then leave the trail and climb open snow and rock slopes southeast to Sawtooth Pass, the narrow chute beside The Fin; the northeast face starts just east of the pass."
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "used to gain the ridgeline toward The Fin; loose talus and boulder-field route-finding.",
+     "replace": "used for the spires north of The Fin; this route does not cross it, turning off the Gladys Divide trail near 4,400 ft for Sawtooth Pass instead."
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "then a mile and a half of primitive tread to Gladys Divide.",
+     "replace": "then the trail on toward Gladys Divide, which you leave near a small pond at about 4,400 ft."
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Beyond Gladys Divide the maintained trail ends and you travel the crest on goat paths and boulder fields.",
+     "replace": "From there it is off-trail on open snow and rock slopes up to Sawtooth Pass."
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      3
+     ],
+     "find": "Exposed downclimbing on the crest between Gladys Divide and the tower, the same steps you reverse on the way out",
+     "replace": "Loose snow or scree in the Sawtooth Pass chute, which gets chossier as the snow melts out late in the season"
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Work southeast along the crest from Gladys Divide, past the Needle and the Castle Spires, until a narrow chute cuts the ridge immediately beside a blade-shaped tower.",
+     "replace": "Short of Gladys Divide, leave the trail and head southeast toward a narrow chute that cuts the ridge immediately beside a blade-shaped tower."
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "down to Sawtooth Pass, then Gladys Divide, Flapjack Lakes,",
+     "replace": "down from Sawtooth Pass to the Gladys Divide trail, then Flapjack Lakes"
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~2,450 ft over Gladys Divide and Sawtooth Pass on scramble day",
+     "replace": "~2,450 ft up to Sawtooth Pass and the tower on scramble day"
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Approach line to The Fin (Needle Pass ridge traverse vs Sawtooth Pass slope)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "summit day over Gladys Divide and Sawtooth Pass to The Fin",
+     "replace": "summit day via Sawtooth Pass to The Fin"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "fact": "Scramble vs 5.4 roped route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both sources document only one climbing route to the summit, the 5.4 NE Face (Pinsch/Tate 1966, one 120 ft pitch); the club route page also mentions an east-face scramble used as a descent to avoid rappelling, but no source grades it or describes it as an ascent line. The row's name/discipline (out of scope) say scramble while grade/pitch/FA describe the 5.4 route; this needs an owner decision, not a text patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/124501856/the-fin-northeast-face",
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "fact": "Seasonal guidance names the wrong trail",
+   "verdict": "fixed",
+   "correct_value": "Seasonal guidance should refer to the Sawtooth Pass approach from Flapjack Lakes, not the Putvin Trail.",
+   "evidence": "Both sources put the approach through Staircase, Flapjack Lakes and the Gladys Divide trail to Sawtooth Pass; the Putvin Trail is Mount Skokomish's approach and is not used. Also fixed the matching 'headwall approach' wording in the required skills.",
+   "sources": [
+    "https://www.mountainproject.com/route/124501856/the-fin-northeast-face",
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Seasonal guidance names the wrong trail",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "find": "the Putvin Trail headwall and the Sawtooth scrambling",
+     "replace": "the Sawtooth Pass slope and the Sawtooth scrambling"
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Seasonal guidance names the wrong trail",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "covers the steep Putvin Trail headwall and the Sawtooth approach",
+     "replace": "covers the steep Sawtooth Pass slope and the rest of the approach"
+    },
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Seasonal guidance names the wrong trail",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      3
+     ],
+     "find": "steep dirt/scree on the headwall approach",
+     "replace": "steep dirt/scree on the Sawtooth Pass approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "fact": "Descent (reverse the pitch vs walk off)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Descend the east-face scramble to Sawtooth Pass rather than reversing the chimney pitch.",
+   "evidence": "descent_text and rappels agree on the east-face scramble descent; the club route page says the east-face scramble can be used for descent to avoid rappelling. The hidden short descent field is aligned.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Descent (reverse the pitch vs walk off)",
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Reverse the route, downclimbing or rappelling exposed steps.",
+     "value": "Descend the east-face scramble back to Sawtooth Pass rather than reversing the chimney pitch."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "fact": "Summit-day distance and gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Outside sources give only whole-trip figures: ~17 mi round trip and 5,500 ft gain, which the itinerary (7.5+2+7.5 mi; 3,050+2,450 ft) already matches. The waypoint distMi values (Fin at 10.5) trace the off-route Gladys Divide/Needle Pass line and are unsourced; no source states the camp-to-summit distance, gain or The Fin's summit elevation (the area page lists 5,263 ft, the row 5,599 ft), so nothing is changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn",
+    "https://www.mountainproject.com/area/124501771/sawtooth-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives an NCCS commitment grade for The Fin. The 'IV' appears to come from the route page's grade conversion table, where 5.4 is listed as 'IV UIAA' — a difficulty conversion, not a commitment grade — so the stored 'IV' is very likely wrong, but no two sources state the correct numeral.",
+   "sources": [
+    "https://www.mountainproject.com/route/124501856/the-fin-northeast-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "fact": "Permit type at trailhead",
+   "verdict": "fixed",
+   "correct_value": "Flapjack Lakes permits are reserved in advance on the federal booking system; no self-issue or walk-up.",
+   "evidence": "The park's wilderness reservations page says Flapjack Lakes is a quota area, permits are not available by self-issue or walk-up, and no sites are held for same-day walk-ups. The park's Flapjack Lakes trail page says camping permits are limited year round with early reservation recommended.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_fin_scramble",
+     "fact": "Permit type at trailhead",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Wilderness permit required (self-issue reservation system);",
+     "replace": "Wilderness permit required, reserved in advance (no self-issue or walk-up permits for Flapjack Lakes);"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_fin_scramble",
+   "fact": "Route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 13.7 km = 8.5 mi is the one-way approach figure shown as 'Approach (one way)'; the itinerary's 17 mi is round trip (sources: ~17 mi RT). They agree.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sawtooth-ridge-the-fin-and-the-horn"
+   ],
+   "patches": []
+  }
+ ]
+}

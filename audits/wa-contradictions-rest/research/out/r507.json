@@ -1,0 +1,324 @@
+{
+ "file": "r507.json",
+ "results": [
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Trailhead",
+   "verdict": "fixed",
+   "correct_value": "The route starts and ends at the Upper South Fork Skokomish trailhead (end of FR 2361), crossing Sundown Pass to Sundown Lake and the Six Ridge Trail; the itinerary and timing wrongly used the Wynoochee Pass trailhead.",
+   "evidence": "WTA's Upper South Fork Skokomish hike and its Six Ridge hike both describe the Six Ridge route starting at the Upper Skokomish trailhead and climbing to Sundown Pass (7.2 mi) and Sundown Lake, matching this row's waypoints, road and approach. The Forest Service Trail #873 page gives the same trail (park boundary 4.9 mi, Sundown Lake 7.6 mi). Wynoochee Pass (FR 2270 spur 400) is a separate approach to Sundown Lake from the west. Day mileages/gains were left as stored (not re-derived) per the no-arithmetic rule.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/upper-south-fork-skokomish-river",
+    "https://www.wta.org/go-hiking/hikes/six-ridge",
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/skokomish-upper-south-fork-trail-873",
+    "https://hike734.com/hikingolympic/wynoochee-pass-and-lake-sundown/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "From the Wynoochee Pass trailhead (high-clearance road access), cross Wynoochee Pass to Sundown Lake,",
+     "replace": "From the Upper South Fork Skokomish trailhead, climb the South Fork Skokomish River Trail over Sundown Pass to Sundown Lake,",
+     "id": "wa_mount_olson_standard",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "Reverse the Six Ridge / Wynoochee Pass approach",
+     "replace": "Reverse the Six Ridge / Sundown Pass approach",
+     "id": "wa_mount_olson_standard",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "From the Wynoochee Pass trailhead (high-clearance road access), cross Wynoochee Pass to Sundown Lake,",
+     "replace": "From the Upper South Fork Skokomish trailhead, climb the South Fork Skokomish River Trail over Sundown Pass to Sundown Lake,",
+     "id": "wa_mount_olson_standard",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "via Wynoochee Pass and the primitive",
+     "replace": "via Sundown Pass and the primitive",
+     "id": "wa_mount_olson_standard",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "Reverse the Six Ridge / Wynoochee Pass approach",
+     "replace": "Reverse the Six Ridge / Sundown Pass approach",
+     "id": "wa_mount_olson_standard",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "objective"
+     ],
+     "find": "Return to the Wynoochee Pass trailhead",
+     "replace": "Return to the Upper South Fork Skokomish trailhead",
+     "id": "wa_mount_olson_standard",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Wynoochee Pass TH needs a high-clearance vehicle (spur 2270-400);",
+     "replace": "FR 2361 to the Upper South Fork Skokomish trailhead is closed to vehicles Oct 1-Apr 30;",
+     "id": "wa_mount_olson_standard",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "round trip via Wynoochee Pass and the",
+     "replace": "round trip via Sundown Pass and the",
+     "id": "wa_mount_olson_standard",
+     "fact": "Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Where the Mount Olson Way leaves Six Ridge / high camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Trip reports place the unsigned 'Mt. Olson Way Trail' sign on the ridge proper beyond Six Ridge Pass, in the stretch with the old McGravey Lakes camp and Belview camp; McGravey Lakes sits about 1.5 mi east of Sundown Pass by map (~47.545,-123.487, ~4,000 ft), so the stored 8.7 mi (1.5 mi past the pass) is probably too short, and the trailhead note's '~11 miles' is the full length of the Six Ridge crest to the North Fork (WTA), not the distance to the Olson spur. No two sources give a mileage for the junction, so no patch; the 8.7 distMi does not break waypoint order so it was not nulled.",
+   "sources": [
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=26215",
+    "https://www.wta.org/go-hiking/hikes/six-ridge",
+    "https://www.topozone.com/washington/mason-wa/lake/mcgravey-lakes/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Parking pass",
+   "verdict": "fixed",
+   "correct_value": "No parking pass or NP entrance fee at the Upper South Fork Skokomish trailhead; only the wilderness camping permit applies for overnights.",
+   "evidence": "WTA's Upper South Fork Skokomish page lists 'Parking pass/entry fee: None'. The Forest Service Skokomish Upper/Lower South Fork Trailhead page (same coordinates as this route's trailhead pin, 47.48632,-123.45775) states no fees are required. The FS Lower South Fork trail page requires a recreation pass only at the separate Lower trailhead on FR 2353. There is no NPS entrance station on this approach, so the NP entrance-fee text did not apply.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/upper-south-fork-skokomish-river",
+    "https://www.fs.usda.gov/r06/olympic/recreation/skokomish-upper-lower-south-fork-trailhead",
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/skokomish-lower-south-fork-trail-873"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "a Northwest Forest Pass (or Interagency/America the Beautiful pass) is required for day use at the Forest Service trailhead",
+     "replace": "no parking pass is required at the Upper South Fork Skokomish trailhead",
+     "id": "wa_mount_olson_standard",
+     "fact": "Parking pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "value": "None required at the Upper South Fork Skokomish trailhead, and there is no Olympic National Park entrance station on this approach.",
+     "id": "wa_mount_olson_standard",
+     "fact": "Parking pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply",
+     "replace": "only the wilderness camping permit applies",
+     "id": "wa_mount_olson_standard",
+     "fact": "Parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Wilderness permit issuance",
+   "verdict": "fixed",
+   "correct_value": "Olympic NP wilderness permits must be obtained in advance (online, by phone, or in person at a WIC); no self-registration at trailheads and no same-day walk-up sites.",
+   "evidence": "The NPS Olympic wilderness reservations page states there are no longer paper self-registration permits at trailheads and no sites are held as same-day walk-ups; permits come via Recreation.gov, by phone, or in person at a WIC. Washington's National Park Fund permit guide says the same.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "find": "self-issue backcountry camping permit required beyond this point",
+     "replace": "a wilderness camping permit, reserved in advance, is required for overnight stays beyond this point",
+     "id": "wa_mount_olson_standard",
+     "fact": "Wilderness permit issuance"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "a self-issue backcountry permit is required",
+     "replace": "an advance-reserved wilderness permit is required for overnight stays",
+     "id": "wa_mount_olson_standard",
+     "fact": "Wilderness permit issuance"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "(reserve via recreation.gov or get a walk-up permit at a Wilderness Information Center)",
+     "replace": "(reserve in advance online, by phone, or in person at a Wilderness Information Center; no sites are held for same-day walk-ups)",
+     "id": "wa_mount_olson_standard",
+     "fact": "Wilderness permit issuance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Access forest road",
+   "verdict": "fixed",
+   "correct_value": "FR 23 then FR 2361 (about 5 mi) to the Upper South Fork Skokomish trailhead; FR 2361 closed Oct 1-Apr 30. FR 2353 serves the Lower South Fork trailhead.",
+   "evidence": "WTA's Upper South Fork hike and Explore Hood Canal's Lake Sundown guide both route FR 23 to FR 2361, about 5 mi to road's end at the trailhead, closed Oct 1-Apr 30; Explore Hood Canal explicitly bears left past the FR 2353 junction. The Forest Service Lower South Fork page puts FR 2353 (0.75 mi) at the Lower trailhead, 10.3 trail miles below the upper one, so the road card described the wrong trailhead for this route's waypoint mileages.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/upper-south-fork-skokomish-river",
+    "https://www.explorehoodcanal.com/stories/2022/9/10/lake-sundown",
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/skokomish-lower-south-fork-trail-873"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "find": "(Forest Roads 23 and 2353) to the Skokomish Lower/Upper South Fork Trailhead",
+     "replace": "(Forest Roads 23 and 2361) to the Upper South Fork Skokomish Trailhead",
+     "id": "wa_mount_olson_standard",
+     "fact": "Access forest road"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then FR 23 ~9 mi and FR 2353 ~0.75 mi to the trailhead.",
+     "replace": "then FR 23, staying on it past the FR 2353 junction, and right onto FR 2361 for about 5 mi to its end at the trailhead; FR 2361 is closed to vehicles Oct 1-Apr 30.",
+     "id": "wa_mount_olson_standard",
+     "fact": "Access forest road"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Lake Sundown elevation",
+   "verdict": "fixed",
+   "correct_value": "3,810 ft",
+   "evidence": "Explore Hood Canal gives Lake Sundown's elevation as 3,810 ft; the USGS-name-derived topozone entry (Mount Hoquiam quad) gives ~3,825 ft at 47.5355,-123.5103 (same spot as the waypoint). WTA notes the trail descends ~400 ft from the 4,125 ft pass, consistent with the lake sitting below the pass, not at 4,030 ft. The waypoint's 3810 stands; the approach variant's 4,030 was the outlier.",
+   "sources": [
+    "https://www.explorehoodcanal.com/stories/2022/9/10/lake-sundown",
+    "http://www.topozone.com/washington/jefferson-wa/lake/lake-sundown/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Lake Sundown is a short spur off the pass at about 7.6 miles and 4,030 ft",
+     "replace": "Lake Sundown is a short spur off the pass at about 7.6 miles and 3,810 ft",
+     "id": "wa_mount_olson_standard",
+     "fact": "Lake Sundown elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Number of fords",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "There are two South Fork Skokomish crossings: Explore Hood Canal describes a first crossing near 1.3 mi (on a fallen cedar) and a second later, both safe only in late-summer/early-fall low water, and WTA names the unbridged ford at 2.4 mi the 'second Skokomish crossing'. The waypoint marks only the unbridged one, which does not deny the first; 'two fords' is consistent.",
+   "sources": [
+    "https://www.explorehoodcanal.com/stories/2022/9/10/lake-sundown",
+    "https://www.wta.org/go-hiking/hikes/upper-south-fork-skokomish-river"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Fire closure effect on access",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Both fields agree: the Bear Gulch Fire closure covers the eastern Six Ridge Trail (east edge of Belview Camp down to the North Fork), which WTA confirms, while the South Fork Skokomish/Sundown Pass approach used here stays open. It is also a bivy-only field, which is handled elsewhere.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/six-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "fact": "Current status of the Upper South Fork Skokomish trail after the Bear Gulch Fire",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The Forest Service trailhead page still carries an 'August 1, 2025: Upper South Fork Skokomish River Trail currently closed due to Bear Gulch Fire' alert, while access.closures says the fire does not affect this approach. The alert may be stale (a 2026 news item mentions only a short Aug 12-13, 2026 access closure), and no second source settles the current status, so no change.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/skokomish-upper-lower-south-fork-trailhead"
+   ],
+   "patches": []
+  }
+ ]
+}

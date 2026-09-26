@@ -1,0 +1,167 @@
+{
+ "file": "r443.json",
+ "results": [
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Trailhead and approach line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row stitches together three different trips: a Monument Creek out-and-back to a pond camp below Butte Pass (approach, descent_text, approach_variants), a 5-day Robinson Creek-to-Monument loop over Robinson, Rolo, Shellrock, Butte and Pistol passes (waypoints, itinerary, timing), and a Pistol Pass line (partner_requirements). A documented 5-day loop matches the itinerary exactly (Robinson Creek TH -> Middle Fork flats -> Rolo/Shellrock -> North Monument Creek pond -> Butte Pass/Pass Butte/Lost -> Lake of the Woods -> Pistol Pass -> Eureka Falls -> Monument TH), and the Forest Service confirms the Monument Creek trail beyond Eureka Creek is unmaintained. All three lines are real ways to reach the peak, so choosing one and rewriting the approach, descent, waypoints and itinerary to it is a restructuring decision, not a minimal patch. Also note waypoint[0] is named Monument Creek Trailhead but carries 2,550 ft (Robinson Creek TH height) while the approach says 2,400 ft (FS gives Monument Creek TH 2,430 ft).",
+   "sources": [
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/monument-creek-trailhead",
+    "https://www.fs.usda.gov/recarea/okawen/recarea/?recid=59343"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 77.25 equals the itinerary's 48-mile loop total (days sum to 48 mi), not a one-way approach. A documented run of the identical 5-day loop logged 42.5 miles and 13,500 ft gain; a Mountaineers traverse of the Lago group plus Lost is described as 50+ miles. No two sources agree on either the loop total or a one-way figure for a single line, and the approach/descent prose describes a different (Monument Creek, ~16+ mi each way) line, so the distance cannot be settled until the trailhead/line dispute is.",
+   "sources": [
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/",
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Robinson Pass elevation",
+   "verdict": "fixed",
+   "correct_value": "6,220 ft",
+   "evidence": "WTA's Robinson Creek hike pages give Robinson Pass as 6,220 ft (9.5 mi one-way from the Robinson Creek trailhead). The USGS 3DEP elevation service at the row's own Robinson Pass pin returns about 6,211 ft. The itinerary day 1 note and its copy in timing.sectionBreakdown[0] said 6,600 ft; the waypoint and bivy already say 6,220.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/robinson-creek",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.63538&y=48.75375&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "id": "wa_lost_peak_pasayten_scramble",
+     "fact": "Robinson Pass elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "6,600 ft Robinson Pass",
+     "replace": "6,220 ft Robinson Pass"
+    },
+    {
+     "id": "wa_lost_peak_pasayten_scramble",
+     "fact": "Robinson Pass elevation",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "6,600 ft Robinson Pass",
+     "replace": "6,220 ft Robinson Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two genuine lines with different grades exist: the southwest slope is given as Class 3 (Wikipedia/SummitPost-derived peak data), while the Butte Pass - Pass Butte - northwest ridge line is described as Class 2 by The Mountaineers and as a rock scramble up the NW ridge in a documented loop trip. The row's grade/rock_grade (Class 3) follow the SW slope while pro_needs, approach and itinerary follow the Class 2 NW ridge. Which line this route record represents must be decided first (see summit-line entry); no patch.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lost_Peak",
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Summit line (SW slope vs NW ridge)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The SW slope (Class 3, loose scree) is listed as the easiest/normal route in peak references, while The Mountaineers and trip reports describe the Butte Pass/Pass Butte crest onto the NW ridge as the line that avoids all the south/southwest scree. Beta/face/pitch_detail present the SW slope as the 'essentially only documented' line, which is false, but rewriting the record to one line (and its grade, face, aspect) is a restructuring choice rather than a minimal fix.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lost_Peak",
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Parking pass",
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass (or interagency pass) required at Robinson Creek trailhead; no pass needed at Monument Creek or Slate Pass trailheads",
+   "evidence": "The Forest Service Robinson Creek trailhead page lists a $5/day fee honoring the Northwest Forest Pass, and WTA's Robinson Creek hike page lists Northwest Forest Pass parking. The Forest Service Monument Creek trailhead page says no fees are required, and WTA's Monument Creek page says a Forest Service pass is not required there; the FS Slate Pass trailhead page also lists no fee. access.fees wrongly exempted Robinson Creek, passRequired/parking_pass and the Monument waypoint note wrongly required a pass everywhere (parking_pass named unrelated Chewuch trailheads). bivy[0]/[1] permit text also says a pass is needed at Slate Pass/Monument Creek but bivy is out of scope.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/robinson-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/robinson-creek",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/monument-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/monument-creek",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead"
+   ],
+   "patches": [
+    {
+     "id": "wa_lost_peak_pasayten_scramble",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "a Northwest Forest Pass is not required at the primitive Robinson Creek / Slate Pass / Monument Creek trailheads used to approach this peak (only posted developed day-use sites require it).",
+     "replace": "no parking pass is needed at the Monument Creek or Slate Pass trailheads, but parking at the Robinson Creek trailhead requires a Northwest Forest Pass or interagency pass."
+    },
+    {
+     "id": "wa_lost_peak_pasayten_scramble",
+     "fact": "Parking pass",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Northwest Forest Pass (trailhead parking)",
+     "value": "Northwest Forest Pass at the Robinson Creek trailhead only"
+    },
+    {
+     "id": "wa_lost_peak_pasayten_scramble",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "required at trailheads (e.g. Andrews Creek, Chewuch River)",
+     "replace": "required at the Robinson Creek trailhead (none needed at Monument Creek or Slate Pass)"
+    },
+    {
+     "id": "wa_lost_peak_pasayten_scramble",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Northwest Forest Pass or self-issue wilderness permit at the kiosk",
+     "replace": "no parking pass needed; fill out the free self-issue wilderness permit at the kiosk"
+    }
+   ]
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "fact": "Base camp",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The approach's 'pond below Butte Pass' and itinerary day 2's 'North Monument Creek Pond below Shellrock Pass' are the same pond in the North Monument Creek basin between the two passes (a documented loop camps there after crossing Shellrock Pass and climbs to Butte Pass next morning), and day 3 moving camp to Lake of the Woods is a later night, not a rival base camp. The remaining clash is bivy[0] (Dot Lake, a Lago-group traverse camp), which is a bivy-list matter; bivy[1] (Middle Fork river camps) and bivy[2] (Shellrock bench) do lie on the itinerary's loop.",
+   "sources": [
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+ "file": "r585.json",
+ "results": [
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Trailhead and approach line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The peak has at least three documented ways in, and the row mixes them. An encyclopedia entry gives the easiest route as class 2 via the Hayden Pass Trail (matching the 1920 first-ascent line along the barrier ridge near Hayden Pass, i.e. pitch_detail); another summary describes Dose Meadows to Lost Pass (0.9-1 mi, 1,000-1,500 ft) or a high traverse from Obstruction Point over Grand Pass and Cameron Pass into the Lost River basin. No two independent sources establish which is THE standard line, and the Obstruction Point approach prose also runs cross-country east-northeast from the Cameron Creek basin, the wrong direction for a peak lying south of Grand Pass and southwest of Cameron. Making the row agree means rewriting approach, descent, descent_text, pitch_detail, beta, trailheadDirection and the waypoints around one chosen line, which is beyond a minimal researched patch.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Claywood",
+    "https://grokipedia.com/page/mount_claywood",
+    "https://en.wikipedia.org/wiki/Lost_Pass",
+    "https://www.nps.gov/olym/planyourvisit/hayden-pass-trail.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Road description",
+   "verdict": "fixed",
+   "correct_value": "Obstruction Point Road: about 7.8-8 miles of narrow gravel from the Hurricane Ridge visitor area to the road-end trailhead",
+   "evidence": "The route's trailhead card, approach, waypoints and itinerary all start at Obstruction Point, and road.name/status/seasonalGate describe Obstruction Point Road; only driveNote describes the Dosewallips washout (a different road on the south side). Two sources give Obstruction Point Road as a roughly 7.8-8 mile narrow gravel road leaving just below the Hurricane Ridge visitor center parking and ending at the Obstruction Point parking area.",
+   "sources": [
+    "https://www.hikeolympic.com/obstruction-point",
+    "http://www.willhiteweb.com/olympic_mountains/obstruction_peak_road/hurricane_ridge_222.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_claywood_standard",
+     "fact": "Road description",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "Vehicles can only reach the washout point, about 5.5 miles short of the historic Dosewallips trailhead/ranger station; the National Forest Service has indicated the road will not be repaired, so the remainder must be walked or biked.",
+     "value": "The gravel road leaves Hurricane Ridge Road just below the Hurricane Ridge visitor center parking and runs about 8 miles along the ridge crest to the road-end parking at Obstruction Point; allow extra time, as it is narrow, winding and steep in places."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Route from Grand Pass to the summit and back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Tied to the approach-line dispute: the Grand Pass Trail continues from Grand Pass down Cameron Creek to Cameron Basin and over Cameron Pass into the Lost River basin, from which Lost Pass and Claywood are reached, so the itinerary/descent/waypoint version (Cameron Pass, Lost Basin, Lost Pass) is geographically coherent while the approach/descent_text version (direct cross-country ENE from the basin below Grand Pass, ~4-5 mi round trip beyond the pass) points the wrong way and understates the distance. No two independent sources describe the Obstruction Point line to Claywood in enough detail to write replacement prose safely.",
+   "sources": [
+    "https://grokipedia.com/page/mount_claywood",
+    "https://en.wikipedia.org/wiki/Mount_Claywood",
+    "https://www.alltrails.com/trail/us/washington/grand-pass-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "High camp location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Depends on which approach line the row adopts (Lost Basin below Lost Pass from the north, or Dose Meadows from the south); the Upper Cameron Basin pin sits on the other side of Cameron Pass. The bivy entries are owned by the separate camping clean-up and are not patched here; the itinerary/waypoint camp cannot be settled without first settling the approach line.",
+   "sources": [
+    "https://grokipedia.com/page/mount_claywood",
+    "https://en.wikipedia.org/wiki/Lost_Pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Gain to Grand Pass",
+   "verdict": "fixed",
+   "correct_value": "A few hundred feet of net gain (6,150 to ~6,450-6,488 ft) but roughly 1,900-2,000 ft of total climbing to Grand Pass",
+   "evidence": "The trailhead (6,150 ft) and Grand Pass (about 6,450 ft) differ by only ~300 ft, so '1,300 ft of net gain' is impossible. One hiking guide gives 4.3 mi/900 ft gain (1,650 ft loss) to Gladys Lake then 1.6 mi/1,000 ft to the pass, ~1,900 ft total climbing in ~5.9 mi; a second gives Gladys Lake to the pass as 1.5 mi/1,000 ft and the 12-mile out-and-back as 4,070 ft of gain, i.e. roughly 2,000 ft each way.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Grand_Valley_Loop_Hike",
+    "https://www.wta.org/go-hiking/hikes/grand-valley-via-grand-pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_claywood_standard",
+     "fact": "Gain to Grand Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 1,300 ft of net gain from the trailhead, with several hundred additional feet of up-and-down along the ridge itself",
+     "replace": "only a few hundred feet of net gain from the trailhead but close to 2,000 ft of total climbing, because the trail first loses well over 1,000 ft into the lake basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Permit registration",
+   "verdict": "fixed",
+   "correct_value": "Wilderness permit reserved in advance (no trailhead self-registration); bear canister required",
+   "evidence": "The park's wilderness reservations page states paper self-registration permits are no longer available at trailheads; permits come through the federal reservation system, by phone, or in person at a Wilderness Information Center, and bear canisters are required in all wilderness camp areas. A second overview of Olympic permits repeats that trailhead self-registration is not available.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_claywood_standard",
+     "fact": "Permit registration",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "self-issue wilderness permit and bear canister required, available at the Wilderness Information Center in Port Angeles.",
+     "replace": "a wilderness permit reserved in advance (there is no self-registration here) and a bear canister are required; canisters are loaned at the Wilderness Information Center in Port Angeles."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "fact": "Overnight permit quota area",
+   "verdict": "fixed",
+   "correct_value": "ONP wilderness permit required for any overnight stay; Grand and Badger Valleys on the Obstruction Point approach are the quota area; canisters required in all wilderness camps",
+   "evidence": "The park's quota list includes Royal Basin/Royal Lake and, separately, Grand and Badger Valleys; Royal Basin is a different drainage with no connection to this route, while Grand Valley lies on the Obstruction Point approach. Bear canisters are required in all wilderness camp areas, not only Royal Basin. A second source lists Grand Valley among the park's high-demand permit areas.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://explore.usparkpass.com/parks/olympic/permits/",
+    "https://www.iheartpacificnorthwest.com/blog_post/guide-to-backcountry-permits-for-oregon-washington/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_claywood_standard",
+     "fact": "Overnight permit quota area",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "what"
+     ],
+     "expect": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+     "value": "Olympic National Park wilderness permit — required for any overnight stay, not free"
+    },
+    {
+     "id": "wa_mount_claywood_standard",
+     "fact": "Overnight permit quota area",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin.",
+     "value": "Reserve on Recreation.gov. Camps in Grand and Badger Valleys along the Obstruction Point approach are a quota area and book up quickly. Bear canisters are required at every wilderness camp."
+    }
+   ]
+  }
+ ]
+}

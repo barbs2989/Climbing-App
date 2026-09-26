@@ -1,0 +1,669 @@
+{
+ "applied": [
+  {
+   "id": "wa_bread_loaf",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Climbing permit instructions"
+  },
+  {
+   "id": "wa_bread_loaf",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Climbing permit instructions"
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "column": "beta",
+   "path": [],
+   "fact": "Best season"
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "column": "commitment",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Season vs access closure"
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Camp Hazard elevation"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "column": "waypoints",
+   "path": [
+    2,
+    "elev"
+   ],
+   "fact": "Wilson Gully elevation"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Turtle Snowfield side"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Approach line on day 1"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Approach line on day 1"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Ice chute grade"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Approach line"
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Mowich Lake road access"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation / identity"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead elevation / identity"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead elevation / identity"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "approach",
+   "path": [],
+   "fact": "Ice step angles"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Ice step angles"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Ice step angles"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Ice step angles"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Ice step angles"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Ice step angles"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Ice step angles"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "max_angle",
+   "path": [],
+   "fact": "Ice step angles"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "class"
+   ],
+   "fact": "Upper step ice grade"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "approach",
+   "path": [],
+   "fact": "Upper step ice grade"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Approach from Paradise (Muir Snowfield vs Glacier Vista / Nisqually crossing)"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Camp Hazard elevation in itinerary"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_bread_loaf",
+   "before": {
+    "access": {
+     "fees": "Park entrance fee applies. No climbing permit or Climbing Cost Recovery Fee: those are required only for parties travelling on a glacier or above 10,000 ft, and this is a forest boulder at about 1,900 ft.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "No climbing permit is required for this route. Mount Rainier's climbing permit applies only to travel on a glacier or above the normal climbing high camps at roughly 10,000 feet.",
+     "seasonal": null,
+     "group_limit": 12,
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "before": {
+    "beta": "Grade II alpine climb (50° snow/ice couloir); 5-7 hours summit day from camp (~9,000 ft); requires prior glacier travel experience, cramponing on firm ice, two ice tools competency; hazards include ice fall from Kautz Ice Cliff, rockfall, avalanche danger (early start essential), crevasses on Wilson and Nisqually Glaciers; best season June-September; technical skills: rope team travel, secure belay placement, avalanche awareness",
+    "commitment": "III",
+    "access": {
+     "fees": "$82/climber climbing cost-recovery fee (2024) plus entrance fee",
+     "notes": "Mount Rainier National Park climbing permit required ($82 per person through Pay.gov); registration through Recreation.gov mandatory for summit attempts; Paradise parking available year-round; wilderness permit ($10 per person per night, $6 transaction fee); entrance fees waived for nonresidents in 2026; typical season closure November-May due to snow; storms possible June-September",
+     "permit": "Free climbing permit at Paradise WIC",
+     "closures": "None specific to this route; Paradise corridor sometimes uses timed-entry reservations in peak summer",
+     "landManager": "Mount Rainier National Park (NPS)",
+     "passRequired": "America the Beautiful pass or $30/vehicle entrance pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Paradise, the Nisqually crossing and the Wilson bench",
+      "notes": "From Paradise (5,420 ft) follow the paved trail about a mile to Glacier Vista, then the Nisqually Moraine climbers' path to roughly 6,300 ft where boot paths drop onto the Nisqually Glacier. Rope up here — the crossing is through crevassed ground exposed to icefall from above and is dangerous in poor visibility.\n\nFrom the east side of the glacier there are two ways onto the Wapowety Cleaver ground. One is a flat traverse to the base of a gully known as The Fan, climbed directly to a bench at about 7,300 ft; The Fan carries avalanche, rockfall and steep-snow hazard. The other climbs the Nisqually/Wilson margin at about 6,800 ft through an often-crevassed gully to the same 7,300–7,400 ft bench.\n\nAbove the bench, snow slopes lead to a string of established camps: Wilson Moraine (8,200–8,600 ft), Lower Castle (9,250 ft) and Upper Castle (9,400–9,500 ft), the most common base, with running water from about mid-June. Higher again, rock islands along the west edge of the Turtle snowfield between roughly 9,500 and 10,500 ft hold good bivouacs, and there is usually flowing water at the snowfield edges in warm weather.\n\nCamp Hazard (about 11,000–11,100 ft) is the traditional high camp and is named for what sits above it: the Kautz Ice Cliff. Many parties deliberately camp lower and climb through Camp Hazard early rather than sleep under the cliff. On the Turtle, keep to the western, climber's-right side — the centre and east are raked by ice and rock off the cliff.\n\nRainier permits apply: a per-person climbing permit for glacier travel or ground above roughly 10,000 ft, and a wilderness permit for each overnight camp in the high-use season.",
+      "season": "Mid-May into early August; the approach and glaciers deteriorate quickly after that",
+      "hazards": [
+       "Serac fall from the Kautz Ice Cliff onto Camp Hazard and the traverse beneath it",
+       "Crevasses and icefall exposure on the Nisqually Glacier crossing",
+       "Avalanche, rockfall and steep snow in The Fan gully",
+       "Ice and rockfall raking the centre and east side of the Turtle snowfield",
+       "Thin or rotten ice in the chute late in the season"
+      ],
+      "primary": true,
+      "baseFinding": "The single most useful fact about this route is that the technical climbing starts BELOW Camp Hazard, not above it. Parties who expect to walk out of camp and start climbing walk straight under the ice cliff.\n\nFrom camp, pick up the climbers' path on the rock and follow it to a short rappel, which often has a fixed line on it. That rappel is the confirmation you are on the right line — it drops you about 150 ft into the drainage gully at the bottom of the ice cliff. You should be LOSING height before you gain any.\n\nFrom the bottom of that gully, traverse west, underneath the ice cliff, until you can see an obvious snow-and-ice ramp running up on your left. That ramp is the Kautz ice chute, and it is the start of the route. The older description of the same ground is: down over the ridge, down the gully about 150 ft, then either cross the icefall into the broad chute or continue down and around the toe of the icefall to reach the bottom of the chute.\n\nWhat you should find in the chute: a first pitch of roughly 400 ft at 35–40 degrees on stepped ground that most parties climb with a single tool, then a second pitch of roughly 400 ft at 45–50 degrees where a second tool earns its place. In lean years the ice can be thin, rotten or frozen dirt rather than good ice; the angle, not the quality, is what identifies it.\n\nNegative marker: if you are climbing directly up from Camp Hazard toward the ice cliff, stop. That is the serac fall line, and it is the reason the camp has its name."
+     },
+     {
+      "name": "Comet Falls and Van Trump Park",
+      "notes": "Start at the Comet Falls trailhead (3,650 ft) on the Longmire–Paradise road. The maintained Comet Falls Trail climbs 2.2 miles and about 2,000 ft to a junction, then continues toward Van Trump Park for another 0.6 miles to the end of maintained tread. From there unmaintained social trails climb a steep moraine crest to about 6,500 ft and onto the permanent snow of the Van Trump Glacier remnant, which is followed to the Upper Castle at roughly 9,500 ft where this approach merges with the Paradise line.\n\nThe advantage is that it never crosses the Nisqually Glacier. The cost is a lower start, a steeper carry and a descent that is genuinely hard to reverse: the Park Service's own advice is to save a GPS track, because relocating the correct moraine and the treeline trail junction on the way down is difficult even in clear weather. Several parties a season lose that junction and end up bushwhacking.",
+      "season": "Same window; avoids the Nisqually Glacier crossing entirely",
+      "hazards": [
+       "Losing the moraine crest and the treeline trail junction on descent — carry a saved track",
+       "Steep unmaintained moraine travel above the end of maintained trail",
+       "Same serac and ice-cliff exposure above the Castle and at Camp Hazard"
+      ],
+      "baseFinding": "This variant's finding problem is the reverse of most: the hard recognition is on the way down, not the way up. On the way up, the sequence is trail to a junction, more trail to the end of maintained tread, then a steep moraine crest — if you are still on graded tread above about 6,500 ft you have followed the wrong branch toward Van Trump Park's meadows rather than the climbers' line.\n\nThe merge point is the Upper Castle at about 9,400–9,500 ft, a rock rib with established camp sites and, from mid-June, running water. Once you are there the route ahead is the same as the Paradise approach: up the Turtle keeping to its western edge, to Camp Hazard, and then DOWN a short rappel into the gully beneath the ice cliff to reach the chute."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 46.78669,
+      "lng": -121.73454,
+      "elev": 5400,
+      "name": "Paradise Parking Area",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.782,
+      "lng": -121.748,
+      "elev": 6336,
+      "name": "Glacier Vista",
+      "type": "Junction",
+      "distMi": 1.5,
+      "directions": "Leave the upper Paradise lot on the Skyline Trail and follow the standard Muir-bound tread as it climbs above the meadows. Glacier Vista is the marked overlook where the Nisqually opens up several hundred feet below you. This is where the Kautz route leaves the trail system for good."
+     },
+     {
+      "lat": 46.778,
+      "lng": -121.755,
+      "elev": 8800,
+      "name": "Wilson Gully (Crux)",
+      "type": "Hazard",
+      "distMi": 3.5,
+      "directions": "Follow the climbers' path along the moraine to about 6,300 ft, then drop onto the Nisqually and rope up before starting across — the crossing threads crevassed terrain under icefall and is genuinely dangerous in poor visibility. Take the line of least resistance over to the far side and the distinct low-angle snow gully there, then climb it to the bench above at roughly 7,300 to 7,400 ft. Move through this stretch early and do not stop in it."
+     },
+     {
+      "lat": 46.793,
+      "lng": -121.762,
+      "elev": 10800,
+      "name": "Camp Hazard",
+      "type": "Campsite",
+      "distMi": 7,
+      "directions": "From the top of the gully follow the ridge line up past the string of established camps — Wilson Moraine, then Lower and Upper Castle, which is where most parties spend the first night and where running water is usually available from mid-June on. Above the Castle the Turtle snowfield leads to Camp Hazard: sun-cupped firm snow and glacier ice, so keep an ice tool in hand. Stay to the west side of the snowfield, because its centre and east flank are raked by rock and ice off the Kautz Ice Cliff."
+     },
+     {
+      "lat": 46.8517,
+      "lng": -121.7603,
+      "elev": 14406,
+      "name": "Columbia Crest",
+      "type": "Summit",
+      "distMi": 13,
+      "directions": "Leave camp in the dark. Drop a couple of hundred feet through the gully between the rock cliff and the ice cliff, then move left around the base of the ice cliff to the foot of the chute — this is the deposition zone under the ice cliff and the reason for the alpine start, so cross it moving. The chute is two or three pitches of roughly 40 to 50 degree snow and ice, bare and hard in a lean year, and six to eight screws is a sensible rack. Above it, angle up the upper Kautz and Wapowety Cleaver, working around crevasses, moats along the rock, and a large bergschrund near the crater rim before the flat walk to the top."
+     }
+    ],
+    "detailed_rack": "Per person: ice axe plus a second technical tool, 12-point crampons, helmet, harness. Per rope team: 30–40 m rope, 4–6 ice screws (for the chute), 2–4 pickets, crevasse-rescue kit, a couple of slings/cordelettes for V-thread or picket anchors.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Muir Snowfield then traverse onto the Wilson/Kautz Glacier area to Camp Hazard, with some crevasse navigation.",
+       "hours": 6,
+       "miles": 5,
+       "title": "Paradise to Camp Hazard",
+       "gainFt": 5700,
+       "packLb": 50,
+       "objective": "Reach Camp Hazard (~10,800 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start to cross the exposed Kautz Ice Chute quickly (active icefall zone), climb the upper Kautz to the summit, then descend the Disappointment Cleaver to Paradise.",
+       "hours": 12,
+       "miles": 8,
+       "title": "Summit day",
+       "gainFt": 3300,
+       "lossFt": 9000,
+       "packLb": 30,
+       "schedule": [
+        {
+         "time": "~2:00 AM",
+         "label": "Leave Camp Hazard"
+        },
+        {
+         "label": "Cross the Kautz Ice Chute",
+         "detail": "Exposed to icefall — move continuously, do not stop"
+        },
+        {
+         "label": "Climb the upper Kautz headwall"
+        },
+        {
+         "label": "Summit"
+        },
+        {
+         "label": "Descend DC to Muir, continue to Paradise"
+        }
+       ],
+       "objective": "Cross the Kautz Ice Chute and summit"
+      }
+     ],
+     "totalNote": "A standard 2-day trip (~9,300 ft gain); a 3-day version adds a night to acclimatize and time the ice chute in cold, stable conditions."
+    },
+    "timing": {
+     "totalHrs": 18,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 6,
+     "recommendedStart": "~2:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Hike the Muir Snowfield then traverse onto the Wilson/Kautz Glacier area to Camp Hazard, with some crevasse navigation.",
+       "fromTo": "Paradise to Camp Hazard",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "Alpine start to cross the exposed Kautz Ice Chute quickly (active icefall zone), climb the upper Kautz to the summit, then descend the Disappointment Cleaver to Paradise.",
+       "fromTo": "Summit day",
+       "section": "Climb"
+      }
+     ]
+    },
+    "gear": [
+     "Standard glacier travel kit: harness, crevasse-rescue gear (prussiks/ascenders)",
+     "60 m rope per rope team",
+     "A few ice screws and 1-2 pickets per rope team for the chute — parties have carried anything from 8 screws and 2 pickets to screws they never placed, so exact counts track current ice coverage",
+     "A second tool — useful specifically in the ice chute, which the NPS route brief rates only AI2 and short",
+     "Crampons",
+     "Helmet — rockfall risk noted on the route"
+    ],
+    "alpine_grade": "III-IV"
+   }
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 46.9387,
+      "lng": -121.8615,
+      "elev": 4930,
+      "name": "Mowich Lake Trailhead",
+      "note": "Long approach (~10+ mi) via Westside Rd, South Puyallup Trail, Wonderland Trail to St. Andrews Park, then Puyallup Cleaver",
+      "type": "Trailhead",
+      "elevFt": 4930
+     },
+     {
+      "lat": 46.86298,
+      "lng": -121.77486,
+      "elev": 14112,
+      "name": "Liberty Cap (route tops out here, below/at the NW rim)",
+      "type": "Summit",
+      "elevFt": 14112
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Mowich Lake and Spray Park to the 9,600 ft divide, then across to the Edmunds Glacier",
+      "notes": "Shared Mowich Face approach: Mowich Lake, the Wonderland Trail through Spray Park, then cross-country onto lower Ptarmigan Ridge and up to the bivouac at roughly 9,600 ft on the divide between the North Mowich and Edmunds glaciers. Rangers and climbing parties have both used that divide bivy as the base for this route.\n\nFrom there, cross the glacier to the foot of the headwall. Parties commonly leave the bivy around 2 am and reach the base a few hours later; the crossing runs beneath the ice cliff run-out coming off the upper mountain, so it is a place to move rather than a place to sort gear.\n\nThe headwall itself is sustained steep snow and ice from roughly 9,900 to 13,400 ft, and its character swings between firm penitente neve and a considerably icier chute depending on the year. Above it the route traverses toward Liberty Cap on ground that can be heavily penitente-covered and slow.\n\nMowich Lake Road is unpaved and typically opens around July; highway access from the north has been interrupted for extended periods.",
+      "season": "Roughly Jun-Jul; the headwall turns icier and starts shedding rock as summer goes on",
+      "hazards": [
+       "Sustained steep snow and ice from about 9,900 to 13,400 ft",
+       "Rockfall and icefall down the headwall once it warms",
+       "Crevasses on the Edmunds and South Mowich approach",
+       "A glacier crossing beneath the upper-mountain ice cliff run-out",
+       "Penitente ground above the headwall that can make the exit far slower than the climb",
+       "Remote, committing position with no walk-off from the top of the face"
+      ],
+      "baseFinding": "FOUR CLIMBS LEAVE THE SAME DIVIDE BIVY. THE SCHRUND IS WHAT TELLS THEM APART FOR THIS ONE.\n\nTHE POSITIVE TEST, AND IT IS A PAIR OF OBJECTS RATHER THAN A DESCRIPTION, WHICH IS WHY IT WORKS IN POOR LIGHT: the bergschrund bypass for the Edmunds Headwall is on CLIMBER'S LEFT, NEAR TWIN GENDARMES. Two rock towers, and you go left of the schrund beside them. No twin gendarmes means no Edmunds Headwall.\n\nTHE NEGATIVE AGAINST THE NEIGHBOUR ON ONE SIDE: the North Mowich Headwall opens with a 40 to 50 ft HOURGLASS of steep rock and ice within a rope length of the bivy. If your first ground is a tight mixed pinch rather than a schrund crossing beside gendarmes, you crossed the wrong glacier.\n\nTHE NEGATIVE AGAINST THE NEIGHBOUR ON THE OTHER SIDE: the Central Mowich Face's schrund is turned by a rock-band bypass on climber's left with no gendarmes at it, and its steep ground eases before 13,000 ft. This route is sustained a long way further — about 9,900 to 13,400 ft is the whole headwall.\n\nTHE CONDITION TEST TELLS YOU WHICH DAY YOU HAVE, AND IT IS WORTH MAKING AT THE SCHRUND RATHER THAN AT 12,000 FT: firm penitentes mean kicking and slow but secure progress; a bare icy chute means screws, and the same face is a different climb. Decide before you commit — there is no easy way off the middle of it.\n\nTHE TOP-OUT IS NOT THE MOUNTAIN'S SUMMIT. This route finishes at or below LIBERTY CAP, on the northwest rim, not at Columbia Crest. Standing on Liberty Cap and looking across at higher ground is correct, not a navigational error."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 46.78669,
+      "lng": -121.73454,
+      "elev": 3600,
+      "name": "Paradise (Skyline Trail)",
+      "note": "Distinct from Paradise lot; route goes via Van Trump Park then unmaintained ridge to Wapowety Cleaver/Kautz Glacier",
+      "type": "Trailhead",
+      "elevFt": 3600
+     },
+     {
+      "lat": 46.8517,
+      "lng": -121.7603,
+      "elev": 14406,
+      "name": "Columbia Crest (true summit)",
+      "type": "Summit",
+      "elevFt": 14406
+     }
+    ],
+    "approach": "From Paradise (5,400 ft), the most common approach uses the Camp Muir route via the Skyline Trail and Muir Snowfield partway, then cuts west; alternatively climbers use the Comet Falls/Van Trump Park approach from the Comet Falls Trailhead (~3,650 ft), directly from the Nisqually entrance area. Either way, the route crosses the lower Nisqually Glacier and gains the Wilson Glacier, ascending to the Turtle Snowfield, with established camps at the Castle (9,200-9,500 ft) and Camp Hazard (10,800 ft, at the top of the snowfield). This is a glaciated approach requiring roped travel and crevasse-rescue readiness once you leave the Nisqually; water is available from snowmelt streams lower on the Comet Falls/Van Trump side but not once you're on glacier ice. The headwall itself typically presents as two ice steps separated by a band of lower-angle snow: the lower step runs around 50°, the upper around 70°, with individual pitches reported anywhere from a short steep section up to 400-450 ft of alpine ice (AI1-AI2 in typical conditions, harder if thin). Rockfall and icefall from the Wapowety Cleaver and Kautz Icefall above are the main approach-zone hazards — move through exposed sections early and efficiently.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "AI1-AI2",
+      "label": "Lower ice step",
+      "notes": "The headwall presents as two ice steps separated by a band of lower-angle snow; the lower step runs around 50°, alpine ice in typical conditions and harder if thin. Rockfall and icefall from the Wapowety Cleaver and Kautz Icefall above are the main hazards — move through exposed sections early and efficiently."
+     },
+     {
+      "n": 2,
+      "label": "Lower-angle snow band",
+      "notes": "A band of lower-angle snow separating the two ice steps."
+     },
+     {
+      "n": 3,
+      "class": "AI1-AI2",
+      "label": "Upper ice step",
+      "notes": "The upper step runs around 70°, with individual pitches reported anywhere from a short steep section up to 400-450 ft of alpine ice, harder if thin. Continued exposure to rockfall and icefall from the Wapowety Cleaver and Kautz Icefall above."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Paradise and the Muir route partway, then west to the Turtle and Camp Hazard",
+      "notes": "From Paradise at 5,400 ft, the common approach follows the Camp Muir route via the Skyline Trail and the Muir Snowfield partway, then cuts west. The route crosses the lower Nisqually, gains the Wilson Glacier and climbs to the Turtle Snowfield, with camps at The Castle around 9,200-9,500 ft and Camp Hazard at 10,800 ft at the top of the snowfield.\n\nRoped travel and crevasse-rescue readiness are needed from the moment you leave the Nisqually. Water is available from snowmelt lower down on the Comet Falls and Van Trump side but not once you are on glacier ice.\n\nRockfall and icefall off the Wapowety Cleaver and the Kautz Icefall are the approach-zone hazards; move through the exposed ground early and efficiently.",
+      "season": "Roughly mid-May to early Aug; the ice holds into summer but the approach and glacier conditions degrade quickly after the start of August",
+      "hazards": [
+       "Two steep ice steps beneath serac and rockfall from the Wapowety Cleaver and the Kautz Icefall",
+       "Brittle or hard ice on the upper step, with screws the only protection",
+       "Genuinely complex crevassed glacier travel on the Kautz approach",
+       "A short rappel or fixed-line downclimb off the Camp Hazard bivy rock to reach the base",
+       "Descent rappels are on ice anchors you build yourself; old ascent-placed threads must not be reused"
+      ],
+      "baseFinding": "THE HEADWALL AND THE STANDARD KAUTZ CHUTE ARE TWO DIFFERENT LINES OFF THE SAME CAMP, AND THE TEST IS HOW MANY STEEP STEPS YOU MEET.\n\nCOUNT TWO. This route presents as TWO ICE STEPS SEPARATED BY A BAND OF LOWER-ANGLE SNOW: the lower step around 50 degrees, the upper around 70. Step, bench, step. If you climb one sustained runnel and the angle then eases the whole way to the summit plateau, you were in the standard Kautz ice chute, not on the headwall.\n\nTHE UPPER STEP IS THE ONE THAT SETTLES IT — noticeably steeper and more sustained than the lower, needing two tools and screws in ice that is often harder or more brittle. The lower step is broad and stepped out and rarely steeper than about 35-40 degrees, and most parties get up it with a single tool and a couple of screws. If the harder ground came FIRST, you are not on this.\n\nWHERE YOU ROPE UP IS PART OF THE FINDING: on the Turtle or Wilson Glacier BELOW the headwall, often after a short rappel or a fixed-line downclimb off the bivy rock at Camp Hazard. Descending off camp before you climb is correct and is a good sign you are on the right line rather than walking out along the chute.\n\nTHE APPROACH HAS TWO STARTS AND THEY LAND IN THE SAME PLACE, SO DO NOT LET THE DIFFERENCE UNSETTLE YOU: Paradise and the Muir route cutting west, or the Comet Falls and Van Trump Park trail from a lower trailhead. Both cross the Nisqually onto the Wilson and climb the Turtle. If you find yourself on maintained trail beside a waterfall you are on the second of those, not lost.\n\nWHAT BEING TOO LATE LOOKS LIKE: seracs and rockfall off the Wapowety Cleaver and the Kautz Icefall hang over the steep ground. The upper step must be climbed efficiently and early. The honest reading of arriving at it warm and in the sun is to go down."
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Muir Snowfield then traverse onto the Wilson/Kautz Glacier area to Camp Hazard.",
+       "hours": 6,
+       "miles": 5,
+       "title": "Paradise to Camp Hazard",
+       "gainFt": 5700,
+       "packLb": 50,
+       "objective": "Reach Camp Hazard (~11,100 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start to climb the Kautz Headwall's 1-2 short ice pitches (not exceeding ~40°) and the ice chute to the summit, then descend the Disappointment Cleaver to Paradise.",
+       "hours": 11,
+       "miles": 8,
+       "title": "Summit day",
+       "gainFt": 3300,
+       "lossFt": 9000,
+       "packLb": 30,
+       "schedule": [
+        {
+         "time": "~2:00 AM",
+         "label": "Leave Camp Hazard"
+        },
+        {
+         "label": "Climb the headwall ice pitches",
+         "detail": "Up to ~40°, roughly 2 short pitches"
+        },
+        {
+         "label": "Continue up the ice chute"
+        },
+        {
+         "label": "Summit"
+        },
+        {
+         "label": "Descend DC to Paradise"
+        }
+       ],
+       "objective": "Climb the headwall and summit"
+      }
+     ],
+     "totalNote": "A standard 2-day trip (~9,000 ft gain) — essentially the Kautz Glacier route with 1-2 short ice pitches on the headwall itself."
+    },
+    "timing": {
+     "totalHrs": 17,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 6,
+     "recommendedStart": "~2:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Hike the Muir Snowfield then traverse onto the Wilson/Kautz Glacier area to Camp Hazard.",
+       "fromTo": "Paradise to Camp Hazard",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "Alpine start to climb the Kautz Headwall's 1-2 short ice pitches (not exceeding ~40°) and the ice chute to the summit, then descend the Disappointment Cleaver to Paradise.",
+       "fromTo": "Summit day",
+       "section": "Climb"
+      }
+     ]
+    },
+    "max_angle": 70
+   }
+  }
+ ]
+}

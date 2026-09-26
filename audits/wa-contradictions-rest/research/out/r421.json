@@ -1,0 +1,1013 @@
+{
+ "file": "r421.json",
+ "results": [
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "fact": "Number of step-across moves",
+   "verdict": "fixed",
+   "correct_value": "Two crossings of the summit chasm; the second (never snow-filled) is the Class 4 step-across, the first is often trivial when snow-filled.",
+   "evidence": "The SummitPost route page describes two minor Class 3+ bits and one Class 4 step-across, and also says the chasm makes 'the first of two step-acrosses' easy when snow-filled while the second has no snow. A Country Highpoints trip report confirms two chasm crossings to reach the summit: the first snow-filled and trivial, the second the committing move over a ~50 ft drop. So there are two crossings but only one Class 4 move; the beta sentence is reworded to say so, rock_grade stays.",
+   "sources": [
+    "https://www.summitpost.org/southwest-route/168102",
+    "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_southwest_route",
+     "fact": "Number of step-across moves",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "There are two minor Class 3+ steps and one Class 4 step-across.",
+     "replace": "There are two minor Class 3+ steps, and the summit chasm is crossed twice; the harder of the two step-acrosses is the Class 4 move."
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "fact": "Walking length of the Loomis approach",
+   "verdict": "fixed",
+   "correct_value": "The Loomis-side approach that walks least is the Cathedral Driveway trail (#510A), ~17-19 mi; the Iron Gate/Boundary Trail approach (~22 mi) is longer.",
+   "evidence": "The variant's 'high trail from Loomis' is the Cathedral Driveway trail #510A, not the Iron Gate Boundary Trail named in APPROACH. The Outbound guide gives the Loomis (Chewuch/Driveway) trailhead as the shortest way in (~19 mi one way, descending ~2 mi at the start), and Country Highpoints calls the Cathedral Drive trailhead a similar distance with a few hundred feet less gain but at least an hour farther to drive. The variant is reworded to name the Driveway trail so it no longer reads as the 22-mile Iron Gate walk.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/backpack-to-cathedral-lakes-and-amphitheater-mountain",
+    "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_southwest_route",
+     "fact": "Walking length of the Loomis approach",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "and the high trail from Loomis, which walks least but drives longest",
+     "replace": "and the Cathedral Driveway trail from the high trailhead above Loomis (not the longer Iron Gate route), which walks least but drives longest"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "fact": "Road surface to Andrews Creek",
+   "verdict": "fixed",
+   "correct_value": "Paved from Winthrop to the Andrews Creek Trailhead (end of pavement); gravel only beyond it on to Thirtymile.",
+   "evidence": "The Forest Service trailhead directions (reproduced on the WTA hike page) run 6 miles on County Rd 1213 then 22 miles on FS 51 'to the end of the paved road', where the Andrews Creek trailhead parking is. Wenatchee Outdoors independently states the road is paved all the way to the Andrews Creek Trailhead, with only the last ~5.5 miles beyond it to Thirtymile unpaved; a WTA trip report says the same (paved to Andrews Creek, gravel on to Thirtymile).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-23.150943134726"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_southwest_route",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Paved out of Winthrop then well-maintained gravel;",
+     "replace": "Paved from Winthrop to the Andrews Creek Trailhead, then well-maintained gravel on to Thirtymile;"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_10",
+   "fact": "Road surface to Andrews Creek",
+   "verdict": "fixed",
+   "correct_value": "Paved the whole way (~6 mi County Rd 1213 + ~22 mi FS 51) to the Andrews Creek Trailhead.",
+   "evidence": "The Forest Service trailhead directions (reproduced on the WTA hike page) run 6 miles on County Rd 1213 then 22 miles on FS 51 'to the end of the paved road', where the Andrews Creek trailhead parking is. Wenatchee Outdoors independently states the road is paved all the way to the Andrews Creek Trailhead, with only the last ~5.5 miles beyond it to Thirtymile unpaved; a WTA trip report says the same (paved to Andrews Creek, gravel on to Thirtymile).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-23.150943134726"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_10",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "replace": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends"
+    },
+    {
+     "id": "wa_south_face_10",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then continue ~22 miles of gravel to the Andrews Creek Trailhead",
+     "replace": "then continue ~22 paved miles to the Andrews Creek Trailhead"
+    },
+    {
+     "id": "wa_south_face_10",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "replace": "No high clearance needed in normal summer conditions."
+    },
+    {
+     "id": "wa_south_face_10",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "paved almost all the way from Winthrop",
+     "replace": "paved the whole way from Winthrop"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_10",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 4,700 is below the 5,551 ft trailhead-to-summit rise, so it is too low, but no outside source states a car-to-car gain for this route. Published figures cover only the approach (WTA: 4,000 ft on the Andrews Creek trail; Wenatchee Outdoors: 4,200-4,600 ft to the lakes). Under the rules no computed total may be written and loss_ft may not be changed without a stated car-to-car descent figure.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_10",
+   "fact": "First-ascent year",
+   "verdict": "fixed",
+   "correct_value": "1968 (Beckey, Wagner, Brottem, Leen, September 1968); the account was published in the 1969 American Alpine Journal.",
+   "evidence": "The AAC Publications record of the South Face describes the four climbers walking in on September 26-27 and climbing the face in 1968; that account appeared in the 1969 journal, which is where '1969 FA account' came from. Mountain Project's area listing and Fred Beckey biographies give the 1968 FA with the same party. watch_out is reworded so it does not suggest a 1969 first ascent.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196939001/North-America-United-States-Washington-Cascade-Mountains-Cathedral-Peak-Okanogan-South-Face",
+    "https://gripped.com/news/happy-94th-birthday-fred-beckey/",
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_10",
+     "fact": "First-ascent year",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "The 1969 FA account notes",
+     "replace": "The first-ascent account notes"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_10",
+   "fact": "Route-specific approach text describes other routes",
+   "verdict": "fixed",
+   "correct_value": "This route starts low and central on the open South Face, left of the Cathedral-Monk gully.",
+   "evidence": "The first-ascent account and Mountain Project describe the South Face as the line up the middle of the ~1,000 ft face, while the SE Buttress climbs the ridge behind The Monk starting in the Cathedral-Monk gully. The 'for this specific route' sentence gave the SE Buttress and NE Ridge starts instead; it is rewritten to this route's own start, matching the variant's base finding.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196939001/North-America-United-States-Washington-Cascade-Mountains-Cathedral-Peak-Okanogan-South-Face",
+    "https://www.mountainproject.com/route/109095874/se-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_10",
+     "fact": "Route-specific approach text describes other routes",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "climb scree/talus to the base of the peak's main South Face; SE Buttress starts on the left wall just after entering the deep gully that separates Cathedral Peak from The Monk, while NE Ridge is gained by continuing up and around toward the ridgeline running north.",
+     "replace": "climb scree/talus to the base of the peak's main South Face and start low in the centre of the open wall, left of the deep gully that separates Cathedral Peak from The Monk (the SE Buttress starts inside that gully)."
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_10",
+   "fact": "South Face base pin location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The pin (48.99027, -120.18882) is the shared Cathedral Peak area coordinate that Mountain Project uses for every route on the peak, not a surveyed base, and it sits north of the summit. Pin positions are out of scope for this pass, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Total / approach elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 4,700 is below the net rise to the summit and disagrees with the itinerary (6,650) and variant (5,550), but no outside source states a car-to-car gain for this route; published approach figures disagree among themselves (WTA 4,000 ft for the Andrews Creek trail; Wenatchee Outdoors 4,200-4,600 ft; the variant's 5,550). No computed total may be written, and the itinerary days cannot be changed without keeping the total consistent.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Approach distance to Upper Cathedral Lake",
+   "verdict": "fixed",
+   "correct_value": "About 18 miles one way from the Andrews Creek Trailhead to Upper Cathedral Lake.",
+   "evidence": "Mountain Project's Cathedral Peak page gives 18 miles from Andrews Creek to Upper Cathedral Lake, and Country Highpoints calls the Andrews Creek trailhead an 18-mile approach. The itinerary (15 mi each way), the camp waypoint (mi 15), the total note (30 mi round trip) and two tips (15-mile backpack) are raised to 18 / 36. The later waypoints (Cathedral Pass 15.5, gully 16, summit 16.5) would then run backwards and their mileages are not independently sourced, so they are set to null.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak",
+    "https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 15,
+     "value": 18
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "miles"
+     ],
+     "expect": 15,
+     "value": 18
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 15,
+     "value": 18
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 15.5,
+     "value": null
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 16,
+     "value": null
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "distMi"
+     ],
+     "expect": 16.5,
+     "value": null
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 30 miles round-trip",
+     "replace": "roughly 36 miles round-trip"
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      5
+     ],
+     "find": "drive + 15-mile backpack",
+     "replace": "drive + 18-mile backpack"
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      0
+     ],
+     "find": "for the 15+ mile approach",
+     "replace": "for the 18-mile approach"
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Approach distance to Upper Cathedral Lake",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "the long, remote approach (15+ miles one-way)",
+     "replace": "the long, remote approach (about 18 miles one-way)"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Descent into the lake basin from Andrews Pass",
+   "verdict": "fixed",
+   "correct_value": "From Andrews Pass (~6,700 ft) the Andrews Creek line climbs overall to Upper Cathedral Lake (~7,380 ft); the ~1,300 ft regain on the way out belongs to the Cathedral Driveway approach.",
+   "evidence": "WTA puts the Andrews Creek trail's high point near Andrews Pass at 6,700 ft, and the SummitPost/Wenatchee Outdoors descriptions put Upper Cathedral Lake at 7,380 ft, so the lake is above the pass and there is no net descent to regain on this line. The Outbound guide and Country Highpoints place the trail that drops from its trailhead (and must be re-climbed on the way out) on the Loomis/Cathedral Driveway side. The APPROACH clause is removed and the final stretch reworded as a climb.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://www.theoutbound.com/washington/backpacking/backpack-to-cathedral-lakes-and-amphitheater-mountain",
+    "https://www.summitpost.org/southwest-route/168102"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Descent into the lake basin from Andrews Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "then drop via the Cathedral Lakes side trail (bear off near the old wilderness guard-station cabin) for the final push down to Upper Cathedral Lake — roughly 18 miles and a full, long hiking day from the trailhead, with a net ~1,300-ft descent into the lake basin that has to be regained on the way out.",
+     "replace": "then take the Cathedral Lakes side trail (bear off near the old wilderness guard-station cabin) for the final climb to Upper Cathedral Lake — roughly 18 miles and a full, long hiking day from the trailhead."
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Position of the route relative to The Monk",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The route starts in the Cathedral-Monk gully (left of The Monk) and climbs the buttress behind The Monk on the right side of the South Face.",
+   "evidence": "beta, face, approach, the Cathedral-Monk gully waypoint and both variants' base findings all put the start on the left (Cathedral) wall of the gully with the route climbing the buttress behind The Monk. Mountain Project's SE Buttress page says the same: the climb begins to the left of The Monk and follows the ridge behind it on the right side of the South Face. The overview's 'just right of' The Monk is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/109095874/se-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Position of the route relative to The Monk",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "just right of a smaller rock tower known as 'The Monk.'",
+     "replace": "rising directly behind a smaller rock tower known as 'The Monk.'"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Route grade",
+   "verdict": "fixed",
+   "correct_value": "5.10a with the linked P8-9 finger-crack pitch (5.9+ unlinked); not 5.8-5.9.",
+   "evidence": "Mountain Project lists the SE Buttress at 5.10a (10 pitches), and a 2025 Spokane Alpine trip report grades it III 5.10a with a 60 m 5.10a headwall pitch. The overview's 5.9+ and the pill's 5.10a are the unlinked/linked options described in pitch_detail; the itinerary's '5.8-5.9' understates the route in two places and is corrected.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak",
+    "https://spokalpine.com/2025/09/23/cathedral-peak-southeast-buttress-iii-5-10a/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Route grade",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "(10 pitches, 5.8-5.9)",
+     "replace": "(10 pitches, 5.9+/5.10a)"
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Route grade",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "10-pitch 5.8-5.9 summit day",
+     "replace": "10-pitch 5.9+/5.10a summit day"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Peepsight junction elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "WTA describes a first junction at about 5.5 miles and the Peepsight Trail junction only later; a One Hike A Week trip report reaches the Peepsight fork at mile 8.5. So the 5.5-mile pin is probably a different junction and its 6,200 ft looks too high, but no source gives an elevation for either junction and only one gives the Peepsight mileage, so nothing is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://onehikeaweek.com/2021/09/13/bald-mountain-pasayten/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Bear canister requirement",
+   "verdict": "fixed",
+   "correct_value": "No canister requirement: the Okanogan-Wenatchee food storage order allows a proper hang (10 ft up, 4 ft out) or an IGBC-certified bear-resistant container.",
+   "evidence": "PCT Washington's food-storage summary states that on the Okanogan-Wenatchee NF food must be hung 10 ft x 4 ft or stored in IGBC-approved containers (canisters, Ursacks and proper hangs all acceptable). The Forest Service forest order and Methow Valley News coverage of the 2024 rules describe the same hang-or-certified-container requirement. The partner requirement's 'bear canister (required)' is corrected; the gear list already matches.",
+   "sources": [
+    "https://pctwashington.com/food_storage",
+    "https://methowvalleynews.com/2024/09/19/national-forest-imposes-new-bear-resistant-rules/",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/alerts/safe-storage-possession-and-handling-food-and-refuse-forestwide"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Bear canister requirement",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      5
+     ],
+     "find": "Bear canister / wilderness camping competence (required in Pasayten)",
+     "replace": "Bear-proof food storage (a proper hang or a certified bear-resistant container, required forest-wide) / wilderness camping competence"
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_peak_pasayten_se_buttress",
+   "fact": "Road surface to Andrews Creek",
+   "verdict": "fixed",
+   "correct_value": "Paved the whole way (~6 mi County Rd 1213 + ~22 mi FS 51) to the Andrews Creek Trailhead.",
+   "evidence": "The Forest Service trailhead directions (reproduced on the WTA hike page) run 6 miles on County Rd 1213 then 22 miles on FS 51 'to the end of the paved road', where the Andrews Creek trailhead parking is. Wenatchee Outdoors independently states the road is paved all the way to the Andrews Creek Trailhead, with only the last ~5.5 miles beyond it to Thirtymile unpaved; a WTA trip report says the same (paved to Andrews Creek, gravel on to Thirtymile).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-23.150943134726"
+   ],
+   "patches": [
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "replace": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends"
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then continue ~22 miles of gravel to the trailhead",
+     "replace": "then continue ~22 paved miles to the trailhead"
+    },
+    {
+     "id": "wa_cathedral_peak_pasayten_se_buttress",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "replace": "No high clearance needed in normal summer conditions."
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "fact": "Road surface to Andrews Creek",
+   "verdict": "fixed",
+   "correct_value": "Paved the whole way (~6 mi County Rd 1213 + ~22 mi FS 51) to the Andrews Creek Trailhead.",
+   "evidence": "The Forest Service trailhead directions (reproduced on the WTA hike page) run 6 miles on County Rd 1213 then 22 miles on FS 51 'to the end of the paved road', where the Andrews Creek trailhead parking is. Wenatchee Outdoors independently states the road is paved all the way to the Andrews Creek Trailhead, with only the last ~5.5 miles beyond it to Thirtymile unpaved; a WTA trip report says the same (paved to Andrews Creek, gravel on to Thirtymile).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-23.150943134726"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_le_gibet",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "replace": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends"
+    },
+    {
+     "id": "wa_the_monk_le_gibet",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then continue ~22 miles of gravel to the Andrews Creek Trailhead",
+     "replace": "then continue ~22 paved miles to the Andrews Creek Trailhead"
+    },
+    {
+     "id": "wa_the_monk_le_gibet",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "replace": "No high clearance needed in normal summer conditions."
+    },
+    {
+     "id": "wa_the_monk_le_gibet",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Paved most of the way from Winthrop",
+     "replace": "Paved the whole way from Winthrop"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "fact": "High point (top of The Monk vs Cathedral summit)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's pitch_detail, descent and Topout waypoint show the route ends on top of The Monk, below Cathedral's 8,606 ft summit, so high_point_ft 8606 is wrong for this route. But no source gives an elevation for The Monk (Mountain Project lists only the peak's 8,601 ft; peakbagger and SummitPost carry no Monk entry), and the waypoint's 8,300 is unsourced, so no value can be written.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "fact": "Size of The Monk",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Monk is a small semi-detached tower (2-5 pitch routes), not a ~1,000 ft feature; the 1,000 ft figure is Cathedral's main South Face.",
+   "evidence": "approach, the variant's base finding, overview and the 5-pitch route length all describe The Monk as a small tower; Mountain Project's Cathedral Peak page distinguishes The Monk as a smaller feature separate from the main 1,000-foot South Face, and its SE Buttress page calls it a semi-detached feature on the lower right of the South Face.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak",
+    "https://www.mountainproject.com/route/109095874/se-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_le_gibet",
+     "fact": "Size of The Monk",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "The Monk is a semi-detached ~1000' tower",
+     "replace": "The Monk is a small semi-detached tower"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "fact": "Tower pin location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Monk pin (48.99027, -120.18882) is the shared Cathedral Peak area coordinate Mountain Project gives for every route on the peak, not a surveyed tower position, which is why it sits north of the summit. Pin positions are out of scope for this pass.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "fact": "Route grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "5.9",
+   "evidence": "grade, rock_grade and the crux pitch all say 5.9, and Mountain Project lists The Monk - Odine at 5.9. watch_out's '5.8 route' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_odine",
+     "fact": "Route grade",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "5.8 route in The Monk complex",
+     "replace": "5.9 route in The Monk complex"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "fact": "Road surface to Andrews Creek",
+   "verdict": "fixed",
+   "correct_value": "Paved the whole way (~6 mi County Rd 1213 + ~22 mi FS 51) to the Andrews Creek Trailhead.",
+   "evidence": "The Forest Service trailhead directions (reproduced on the WTA hike page) run 6 miles on County Rd 1213 then 22 miles on FS 51 'to the end of the paved road', where the Andrews Creek trailhead parking is. Wenatchee Outdoors independently states the road is paved all the way to the Andrews Creek Trailhead, with only the last ~5.5 miles beyond it to Thirtymile unpaved; a WTA trip report says the same (paved to Andrews Creek, gravel on to Thirtymile).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-23.150943134726"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_odine",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "replace": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends"
+    },
+    {
+     "id": "wa_the_monk_odine",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then continue ~22 miles of gravel to the Andrews Creek Trailhead",
+     "replace": "then continue ~22 paved miles to the Andrews Creek Trailhead"
+    },
+    {
+     "id": "wa_the_monk_odine",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "replace": "No high clearance needed in normal summer conditions."
+    },
+    {
+     "id": "wa_the_monk_odine",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "is paved most of the way up the Chewuch River valley",
+     "replace": "is paved the whole way up the Chewuch River valley"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "fact": "High point (top of The Monk vs Cathedral summit)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's pitch_detail, descent and Topout waypoint show the route ends on top of The Monk, below Cathedral's 8,606 ft summit, so high_point_ft 8606 is wrong for this route. But no source gives an elevation for The Monk (Mountain Project lists only the peak's 8,601 ft; peakbagger and SummitPost carry no Monk entry), and the waypoint's 8,300 is unsourced, so no value can be written.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "fact": "Road surface to Andrews Creek",
+   "verdict": "fixed",
+   "correct_value": "Paved the whole way (~6 mi County Rd 1213 + ~22 mi FS 51) to the Andrews Creek Trailhead.",
+   "evidence": "The Forest Service trailhead directions (reproduced on the WTA hike page) run 6 miles on County Rd 1213 then 22 miles on FS 51 'to the end of the paved road', where the Andrews Creek trailhead parking is. Wenatchee Outdoors independently states the road is paved all the way to the Andrews Creek Trailhead, with only the last ~5.5 miles beyond it to Thirtymile unpaved; a WTA trip report says the same (paved to Andrews Creek, gravel on to Thirtymile).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-23.150943134726"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_scabo",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "replace": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends"
+    },
+    {
+     "id": "wa_the_monk_scabo",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then continue ~22 miles of gravel to the Andrews Creek Trailhead",
+     "replace": "then continue ~22 paved miles to the Andrews Creek Trailhead"
+    },
+    {
+     "id": "wa_the_monk_scabo",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "replace": "No high clearance needed in normal summer conditions."
+    },
+    {
+     "id": "wa_the_monk_scabo",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Paved most of the way from Winthrop",
+     "replace": "Paved the whole way from Winthrop"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "fact": "High point (top of The Monk vs Cathedral summit)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's pitch_detail, descent and Topout waypoint show the route ends on top of The Monk, below Cathedral's 8,606 ft summit, so high_point_ft 8606 is wrong for this route. But no source gives an elevation for The Monk (Mountain Project lists only the peak's 8,601 ft; peakbagger and SummitPost carry no Monk entry), and the waypoint's 8,300 is unsourced, so no value can be written.",
+   "sources": [
+    "https://www.mountainproject.com/area/109095714/cathedral-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "fact": "Road surface to Andrews Creek",
+   "verdict": "fixed",
+   "correct_value": "Paved the whole way (~6 mi County Rd 1213 + ~22 mi FS 51) to the Andrews Creek Trailhead.",
+   "evidence": "The Forest Service trailhead directions (reproduced on the WTA hike page) run 6 miles on County Rd 1213 then 22 miles on FS 51 'to the end of the paved road', where the Andrews Creek trailhead parking is. Wenatchee Outdoors independently states the road is paved all the way to the Andrews Creek Trailhead, with only the last ~5.5 miles beyond it to Thirtymile unpaved; a WTA trip report says the same (paved to Andrews Creek, gravel on to Thirtymile).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-23.150943134726"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_west_cracks_left_crack",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "replace": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends"
+    },
+    {
+     "id": "wa_the_monk_west_cracks_left_crack",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then continue ~22 miles of gravel to the Andrews Creek Trailhead",
+     "replace": "then continue ~22 paved miles to the Andrews Creek Trailhead"
+    },
+    {
+     "id": "wa_the_monk_west_cracks_left_crack",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "replace": "No high clearance needed in normal summer conditions."
+    },
+    {
+     "id": "wa_the_monk_west_cracks_left_crack",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The drive is paved most of the way from Winthrop",
+     "replace": "The drive is paved the whole way from Winthrop"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "fact": "Which side of The Monk the cracks are on",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Lower left side of The Monk's south face (despite the 'West Cracks' name).",
+   "evidence": "face, overview, beta, pitch_detail and the base finding all put the West Cracks on the lower left of The Monk's south face; Mountain Project's West Cracks page says the route climbs a crack 'on the left side of the South face'. The waypoint's 'west side' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/109096075/the-monk-west-cracks-right-crack"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_west_cracks_left_crack",
+     "fact": "Which side of The Monk the cracks are on",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "West Cracks lines on The Monk's west side.",
+     "replace": "West Cracks lines, on the lower left side of The Monk's south face."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "fact": "Descent certainty",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Descent is known: rappel the route, or three 75-ft rappels down the NE gully from the top of The Monk.",
+   "evidence": "descent, descent_text, rappels and bail all give the same descent; Mountain Project's Monk route pages give the NE gully descent in three 75 ft rappels. EMERGENCY's 'descent is unknown' sentence is removed.",
+   "sources": [
+    "https://www.mountainproject.com/route/109096056/the-monk-scabo"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_west_cracks_left_crack",
+     "fact": "Descent certainty",
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "no cell coverage should be assumed. The descent is unknown — confirm beta before committing.",
+     "replace": "no cell coverage should be assumed."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "fact": "Road surface to Andrews Creek",
+   "verdict": "fixed",
+   "correct_value": "Paved the whole way (~6 mi County Rd 1213 + ~22 mi FS 51) to the Andrews Creek Trailhead.",
+   "evidence": "The Forest Service trailhead directions (reproduced on the WTA hike page) run 6 miles on County Rd 1213 then 22 miles on FS 51 'to the end of the paved road', where the Andrews Creek trailhead parking is. Wenatchee Outdoors independently states the road is paved all the way to the Andrews Creek Trailhead, with only the last ~5.5 miles beyond it to Thirtymile unpaved; a WTA trip report says the same (paved to Andrews Creek, gravel on to Thirtymile).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/andrews-creek",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-23.150943134726"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_west_cracks_right_crack",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement",
+     "replace": "paved the whole way: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd from Winthrop, then ~22 miles on Forest Road 51 to the trailhead, where the pavement ends"
+    },
+    {
+     "id": "wa_the_monk_west_cracks_right_crack",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then continue ~22 miles of gravel to the Andrews Creek Trailhead",
+     "replace": "then continue ~22 paved miles to the Andrews Creek Trailhead"
+    },
+    {
+     "id": "wa_the_monk_west_cracks_right_crack",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "Road can be rough/washboarded but doesn't require high clearance in normal summer conditions.",
+     "replace": "No high clearance needed in normal summer conditions."
+    },
+    {
+     "id": "wa_the_monk_west_cracks_right_crack",
+     "fact": "Road surface to Andrews Creek",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Paved most of the way from Winthrop",
+     "replace": "Paved the whole way from Winthrop"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "fact": "Which side of The Monk the cracks are on",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Lower left side of The Monk's south face (despite the 'West Cracks' name).",
+   "evidence": "face, overview, beta, pitch_detail and the base finding all put the West Cracks on the lower left of The Monk's south face; Mountain Project's West Cracks page says the route climbs a crack 'on the left side of the South face'. The waypoint's 'west side' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/109096075/the-monk-west-cracks-right-crack"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_west_cracks_right_crack",
+     "fact": "Which side of The Monk the cracks are on",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "West Cracks lines on The Monk's west side.",
+     "replace": "West Cracks lines, on the lower left side of The Monk's south face."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "fact": "Descent certainty",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Descent is known: rappel the route, or three 75-ft rappels down the NE gully from the top of The Monk.",
+   "evidence": "descent, descent_text, rappels and bail all give the same descent; Mountain Project's Monk route pages give the NE gully descent in three 75 ft rappels. EMERGENCY's 'descent is unknown' sentence is removed.",
+   "sources": [
+    "https://www.mountainproject.com/route/109096056/the-monk-scabo"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_monk_west_cracks_right_crack",
+     "fact": "Descent certainty",
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "no cell coverage should be assumed. The descent is unknown — confirm beta before committing.",
+     "replace": "no cell coverage should be assumed."
+    }
+   ]
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "fact": "Big cam for the crux chimney",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "pro_tips, pitch_detail and the variant hazard all want a #4 or big gear for the upper chimney, while sling_rack/rack stop at 3 in; the rack is marked inferred. The only published protection note for the West Cracks (Mountain Project) says 'wide range of nuts' and gives no cam sizes, so the #4 cannot be confirmed or removed.",
+   "sources": [
+    "https://www.mountainproject.com/route/109096075/the-monk-west-cracks-right-crack"
+   ],
+   "patches": []
+  }
+ ]
+}

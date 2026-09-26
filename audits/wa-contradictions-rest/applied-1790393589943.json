@@ -1,0 +1,227 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "waypoints",
+   "path": [
+    7,
+    "elevFt"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "waypoints",
+   "path": [
+    7,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "emergency",
+   "path": [
+    "notes"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Canyon Creek Trailhead location"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "approach",
+   "path": [],
+   "fact": "Canyon Creek Trailhead location"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach mileage"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "overview",
+   "path": [],
+   "fact": "Ballard's position relative to Azurite Pass"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "label"
+   ],
+   "fact": "Ballard's position relative to Azurite Pass"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Ballard's position relative to Azurite Pass"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "descent",
+   "path": [],
+   "fact": "Ballard's position relative to Azurite Pass"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "descent",
+   "path": [],
+   "fact": "Ballard's position relative to Azurite Pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_ballard_south",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.726226,
+      "lng": -120.830383,
+      "elev": 2750,
+      "name": "Mill Creek ford",
+      "note": "Ford Mill Creek just below the trail junction — last reliable, easy-to-reach water before the long climb toward Azurite.",
+      "type": "Water",
+      "distMi": 5.7
+     },
+     {
+      "lat": 48.7302,
+      "lng": -120.831381,
+      "elev": 2800,
+      "name": "Mill Creek Trail junction",
+      "note": "Leave the Canyon Creek tread here and turn up the Mill Creek/Azurite Pass Trail; maintained trail effectively ends beyond this point.",
+      "type": "Junction",
+      "distMi": 6
+     },
+     {
+      "lat": 48.688171,
+      "lng": -120.81229,
+      "elev": 4350,
+      "name": "Overgrown Mill Creek Trail",
+      "note": "Tread disappears under heavy slide alder and downed timber left from the mine-era trail's disuse — expect a slow, scratchy alder-hacking bushwhack for several miles.",
+      "type": "Hazard",
+      "distMi": 8.5
+     },
+     {
+      "lat": 48.68278,
+      "lng": -120.78111,
+      "elev": 5899,
+      "name": "Azurite Mine",
+      "note": "Flat ground amid the old defunct copper/silver mine workings on Mill Creek; the common overnight camp before pushing toward the Ballard basin.",
+      "type": "Campsite",
+      "distMi": 11
+     },
+     {
+      "lat": 48.686458,
+      "lng": -120.767274,
+      "elev": 6600,
+      "name": "Azurite–Ballard basin",
+      "note": "Reached via roughly 3 more brush-choked miles above the mine; open basin at the base of Ballard's south slopes and a typical bivy before the summit push.",
+      "type": "Campsite",
+      "distMi": 14
+     },
+     {
+      "lat": 48.687683,
+      "lng": -120.762661,
+      "elev": 7400,
+      "name": "South-face brush and gully route-finding",
+      "note": "Steep, loose terrain with several look-alike chutes low on the south face — picking the wrong gully here is the main way parties get cliffed out or turned back.",
+      "type": "Hazard",
+      "distMi": 15
+     },
+     {
+      "lat": 48.7206918,
+      "lng": -120.6701073,
+      "elev": 6191,
+      "name": "Harts Pass",
+      "type": "Pass",
+      "distMi": null,
+      "elevFt": 6191
+     },
+     {
+      "lat": 48.7063,
+      "lng": -120.9185,
+      "elev": 1900,
+      "name": "Canyon Creek Trailhead",
+      "note": "Standard access: park at Harts Pass (gate/end of maintained Harts Pass Rd), descend Slate Creek Road ~5+ mi west to South Fork Slate Creek bridge, then bushwhack/scramble up the east ridge to the summit. Note that the 'Canyon Creek Trailhead' ~10 mi away on Hwy 20 is a real but unrelated trailhead that does not access Mount Ballard.",
+      "type": "Trailhead",
+      "elevFt": 6760
+     },
+     {
+      "lat": 48.6885416,
+      "lng": -120.759433,
+      "elev": 8371,
+      "name": "Mount Ballard summit (south/true peak)",
+      "type": "Summit",
+      "elevFt": 8371
+     }
+    ],
+    "emergency": {
+     "notes": "Very remote; cell coverage is unreliable in the Slate Creek drainage. Harts Pass Road is the only vehicle access and any rescue response will be lengthy given driving time plus the multi-hour approach.",
+     "county": "Okanogan",
+     "rangerStation": "Methow Valley Ranger District, 24 West Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+     "nearestHospital": "Three Rivers Hospital (critical access), 507 Hospital Way, Brewster, WA — roughly 60+ miles / 1.5-2 hrs drive from the Mazama-area trailheads",
+     "sheriffDispatch": "911"
+    },
+    "approach_logistics": {
+     "peakLat": 48.686066,
+     "peakLng": -120.757928,
+     "trailhead": "Canyon Creek Trailhead",
+     "trailheadLat": 48.7063,
+     "trailheadLng": -120.9185,
+     "trailheadDirection": "Drive Highway 20 to the Canyon Creek Trailhead near Mazama"
+    },
+    "approach": "Standard approach: drive Highway 20 to the Canyon Creek Trailhead near Mazama and follow the Mill Creek/Azurite Pass Trail (#755) up Canyon Creek then Mill Creek — about 5 miles to the site of the defunct Azurite Mine, then a further ~3 increasingly faint, brush-choked miles (slide alder and downed timber are common since the trail has seen little maintenance since the mine closed) to roughly the 14-mile mark, where a boot path continues about 1.5 more miles to Azurite Pass (6,680+ ft). A longer alternate, more often used for combined Azurite-Ballard trips, starts at the West Fork Methow River Trailhead (#480) near River Bend Campground: follow that trail ~8 miles to the PCT, then the PCT south ~1.5 miles to Horse Heaven Camp before joining the Mill Creek Trail to the pass — this option runs closer to 25 miles round trip with about 6,000 ft of elevation gain.",
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No wilderness permit currently required (route lies just outside the Pasayten Wilderness boundary).",
+     "closures": "Harts Pass Road (FR-5400) closed to wheeled vehicles Dec 1 through spring snowmelt; check current Forest Service alerts, as storm damage (e.g. rockfall, washouts) has caused additional out-of-season closures in some years",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District. The peak sits just outside the formal Pasayten Wilderness boundary (like neighboring Azurite Peak), so wilderness-specific rules do not apply here.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass or America the Beautiful interagency pass required for trailhead parking (Canyon Creek and West Fork Methow River/River Bend trailheads).",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead."
+     }
+    },
+    "overview": "Mount Ballard is a remote, double-summit peak sharing a long ridgeline with its higher neighbor Azurite Peak, near the head of Mill Creek and about 2 miles south of Azurite Pass. It ranks 84th on Washington's 100 highest peaks and rises about 4,000 ft above Mill Creek within roughly a mile, giving it dramatic local relief despite being a non-technical scramble. A 2023 precision survey found the true summit lies about 1,100 ft south of, and higher than, the point long mapped/benchmarked as 'Mount Ballard' (8,301 ft), which is actually a lower north sub-summit. There is no maintained trail to the top; all routes leave trail well below the summit to scramble broad talus, heather, and gully terrain.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "South slopes and gullies from Azurite Pass",
+      "notes": "From Azurite Pass (6,680+ ft), leave the trail and scramble northeast/east up Ballard's broad south-facing slopes and gullies, watching for the correct gully to the true summit block."
+     }
+    ],
+    "descent": "Descend the same broad south-facing slopes/gully used on the ascent back down to Azurite Pass (~6,680 ft); the scree and talus are loose, so downclimb carefully and avoid being directly above other climbers to prevent knocking rock onto them. From the pass, reverse whichever approach trail was used (Mill Creek Trail, or Mill Creek plus West Fork Methow River Trail/PCT) back to the trailhead — the lower, brush-choked stretch of the Mill Creek Trail is typically as slow going out as coming in."
+   }
+  }
+ ]
+}

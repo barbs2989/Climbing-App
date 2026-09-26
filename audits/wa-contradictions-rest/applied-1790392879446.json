@@ -1,0 +1,400 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "grade",
+   "path": [],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Surprise Col identity and position"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Surprise Col identity and position"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Surprise Col identity and position"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "label"
+   ],
+   "fact": "Surprise Col identity and position"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Surprise Col identity and position"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Surprise Col identity and position"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Royal Basin trail fork"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Royal Basin permit type"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Royal Basin permit type"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Royal Basin permit type"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "climate",
+   "path": [
+    "winter"
+   ],
+   "fact": "Royal Basin permit type"
+  },
+  {
+   "id": "wa_mount_clark_standard",
+   "column": "climate",
+   "path": [
+    "forecastZone"
+   ],
+   "fact": "Avalanche forecast coverage"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_clark_standard",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": "Class 2-3",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Able to sustain a 7+ mile, ~2,500-3,000 ft backpack-in day to Royal Lake/Upper Basin with an overnight pack, then a long summit day from high camp (~10 hrs)",
+      "packWeight": "Overnight/multi-day backpacking load (tent, food, bear canister) plus a lighter summit kit for the scramble day"
+     },
+     "approachTime": "Multi-day: ~7 mi/2,500 ft to Royal Lake, then another ~1 mi/500 ft to Upper Basin high camp before a long summit push",
+     "requiredSkills": [
+      "Class 2-3 scrambling on talus and exposed ledges",
+      "Independent route-finding (no maintained trail above Royal Basin)",
+      "Comfort on lingering snow/steep snow slopes in early season",
+      "Backcountry navigation and self-rescue judgment given remoteness",
+      "Wilderness camping logistics (permit, bear canister, LNT)"
+     ],
+     "experienceLevel": "Solid Class 2-3 scrambler with prior alpine scrambling mileage and comfort with sustained route-finding on talus/ledges far from help; not a beginner objective given the long interior approach"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Interior Olympics conditions: best and most stable in summer once snow clears; early storms and shortening days become a factor by September",
+      "probability": "Afternoon thunderstorms/build-ups are possible on the interior Olympic peaks in mid-to-late summer"
+     },
+     "exposure": "Long, remote interior approach with real route-finding consequence if off-route; the summit scramble includes exposed ledge/talus terrain (some parties describe the final summit block moves as harder/more exposed than a typical Class 2-3, closer to Class 3-4), so a slip near the top has serious fall consequences and rescue would be slow given the distance from any trailhead",
+     "avalanche": {
+      "zone": "Olympics (NWAC forecast zone) - avalanche forecasting effectively applies only to the winter/spring season and is not a practical concern for the July-September dry-scramble climbing window on this route",
+      "byMonth": {
+       "July": "Low",
+       "August": "Low",
+       "September": "Low"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "approach": "From the Upper Dungeness Trailhead (2,500 ft, Olympic National Forest, Hood Canal Ranger District), follow the Royal Basin Trail south along the Dungeness River; at about 1 mile the Royal Basin fork splits off (cross a bridge) from the Dungeness River/Constance Pass Trail. Continue past the Royal Creek and Lower Royal Meadow camp areas to Royal Lake at 7.2 mi / 5,100 ft (roughly 2,600 ft of gain), then about 1 more mile and 500 ft into Upper Royal Basin (~5,600 ft), the standard base camp among the meadows and tarns. From camp, leave the trail and climb talus, boulders, and (early season) snow south/southeast to Surprise Col at roughly 7,000 ft, then drop slightly into Surprise Basin and traverse to the Clark-Johnson col to start the corkscrew route. Alternate approach: via the Dungeness River Trail and Constance Pass Trail to Home Lake, then off-trail through Deception Basin and over Royal Pass into upper Royal Basin -- longer, but useful for a loop trip.",
+    "itinerary": {
+     "cal": "Upper Royal Basin camping requires a phone-reserved backcountry permit (not bookable online like the lower Royal Basin zones); call the Olympic Wilderness Information Center ahead of your trip.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Drive to the Upper Dungeness Trailhead (~2,500 ft) and backpack the Royal Basin Trail up Royal Creek to Royal Lake (5,100 ft), continuing another mile into Upper Royal Basin (~5,600 ft) near the tarns below Mount Clark. A permit for the Upper Basin zone must be booked ahead by phone with the Olympic Wilderness Information Center — it isn't available online like the lower zones.",
+       "hours": 5,
+       "miles": 8.2,
+       "title": "Backpack in to high camp",
+       "gainFt": 3100,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach Upper Royal Basin camp"
+      },
+      {
+       "n": 2,
+       "note": "An early alpine start beats afternoon sun on the exposed Surprise Basin slopes. From camp, climb talus/scree/snow to 6,920 ft Surprise Col, drop into Surprise Basin, and traverse to the Clark-Johnson col. From there the corkscrew route works around south and east ledges before an exposed Class 3-4 finish on the north side of the summit block. Real trip reports clock the col-to-summit climb at roughly 3.5-4 hours; most parties make a single ~60 ft rappel off the summit block rather than downclimbing the crux, then reverse the route to camp. Many groups combine Clark with neighboring Mount Deception on the same day since both share the Surprise Basin approach.",
+       "hours": 8,
+       "miles": 6,
+       "title": "Climb Mount Clark via Surprise Basin and the Corkscrew Route",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Upper Royal Basin camp",
+         "detail": "Alpine start to beat sun and afternoon heat on Surprise Basin's slopes."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Reach Surprise Col (6,920 ft)",
+         "detail": "Drop into Surprise Basin and traverse toward the Clark-Johnson col."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach Clark-Johnson col",
+         "detail": "Start the corkscrew route: talus to cliffs, then a Class 2 ledge skirting right."
+        },
+        {
+         "time": "9:30-10:00 AM",
+         "label": "Summit Mount Clark (7,528 ft)",
+         "detail": "Final Class 3-4 scramble finishes on the north side of the summit block."
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Begin descent",
+         "detail": "Most parties rappel ~60 ft off the summit block rather than downclimb the exposed crux."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at camp",
+         "detail": "Time for a rest, food, or a side trip toward Mount Deception if energy allows."
+        }
+       ],
+       "objective": "Summit Mount Clark (7,528 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach down Royal Creek to the trailhead. Trip reports covering this stretch clock it around 4 hours at a steady backpacking pace.",
+       "hours": 4,
+       "miles": 8.2,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3100,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the Upper Dungeness Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day backpack trip: ~22-24 mi round trip with ~5,500-5,800 ft of cumulative gain, one night in, one night at Upper Royal Basin camp, and a long summit day with a Class 3-4 finish and a short rappel."
+    },
+    "timing": {
+     "totalHrs": 17,
+     "summitTimeHrs": 8,
+     "descentTimeHrs": 4,
+     "approachTimeHrs": 5,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5,
+       "note": "Drive to the Upper Dungeness Trailhead (~2,500 ft) and backpack the Royal Basin Trail up Royal Creek to Royal Lake (5,100 ft), continuing another mile into Upper Royal Basin (~5,60…",
+       "fromTo": "Backpack in to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8,
+       "note": "An early alpine start beats afternoon sun on the exposed Surprise Basin slopes. From camp, climb talus/scree/snow to 6,920 ft Surprise Col, drop into Surprise Basin, and traverse t…",
+       "fromTo": "Climb Mount Clark via Surprise Basin and the Corkscrew Route",
+       "section": "Climb"
+      },
+      {
+       "hrs": 4,
+       "note": "Reverse the approach down Royal Creek to the trailhead. Trip reports covering this stretch clock it around 4 hours at a steady backpacking pace.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2500,
+      "name": "Upper Dungeness Trailhead",
+      "note": "USFS trailhead kiosk: $5 self-pay day-use fee or Northwest Forest/Interagency Pass (cash not accepted), plus a self-issue wilderness permit for the Royal Basin zone beyond the forest boundary.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The Upper Dungeness Trailhead sits at about 2,500 ft on FR-2870, in the Hood Canal Ranger District of Olympic National Forest, and Trail #833.2 leaves straight from the parking area. The kiosk asks for a $5 self-pay day-use fee or a Northwest Forest or Interagency Pass, and cash is not accepted, so bring the pass or a card. Fill out the self-issue wilderness permit there too, for the Royal Basin zone beyond the forest boundary. If you plan to camp in Upper Royal Basin, call the Olympic Wilderness Information Center before your trip — that zone is reserved by phone and cannot be booked online like the lower zones."
+     },
+     {
+      "lat": 47.870028,
+      "lng": -123.157287,
+      "elev": 2850,
+      "name": "Royal Basin Trail Fork at Royal Creek",
+      "note": "Trail forks a few steps before a footlog bridge over Royal Creek — bear right for Royal Basin; do not cross the log bridge, that path leads elsewhere.",
+      "type": "Junction",
+      "distMi": 1
+     },
+     {
+      "lat": 47.840376,
+      "lng": -123.211907,
+      "elev": 4695,
+      "name": "Lower Royal Meadow Camp",
+      "note": "One of the designated Royal Basin camping zones — three sites tucked in the trees (the farther two more secluded) beside a broad, stream-crossed meadow.",
+      "type": "Campsite",
+      "distMi": 6.2
+     },
+     {
+      "lat": 47.83201,
+      "lng": -123.21073,
+      "elev": 5100,
+      "name": "Royal Lake",
+      "note": "Designated camp zone with the only composting toilet on the approach; treat lake water for Giardia, and note camping beyond here falls in the Royal Basin wilderness permit zone.",
+      "type": "Campsite",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.831969,
+      "lng": -123.218423,
+      "elev": 5700,
+      "name": "Upper Royal Basin / Moraine Rim",
+      "note": "Leave the maintained trail here, climbing heather and talus to the rim of the glacial moraine ringing Surprise Basin before dropping to its snowfields.",
+      "type": "Junction",
+      "distMi": 8
+     },
+     {
+      "lat": 47.833782,
+      "lng": -123.225074,
+      "elev": 6400,
+      "name": "Surprise Basin Snowfields",
+      "note": "Traverse north through scree and lingering snowfields in the Martin–Johnson–Clark cirque; icy in early season, soft and postholing by afternoon in summer heat.",
+      "type": "Hazard",
+      "distMi": 9
+     },
+     {
+      "lat": 47.834688,
+      "lng": -123.228399,
+      "elev": 6920,
+      "name": "Surprise Col",
+      "note": "Gain this col below Clark's summit tower, only about 600 ft below the top; route-finding gets complex from here through ledges and Y-shaped gully systems (the 'corkscrew').",
+      "type": "Junction",
+      "distMi": 9.5
+     },
+     {
+      "lat": 47.835595,
+      "lng": -123.231725,
+      "elev": 7528,
+      "name": "Mount Clark Summit",
+      "note": "True summit is a block gained via an exposed Class 3-4 slot/dihedral on the north face; many parties make a single ~60-ft rappel off the summit block to retreat, then reverse the corkscrew.",
+      "type": "Summit",
+      "distMi": 10
+     }
+    ],
+    "access": {
+     "fees": "$6 reservation fee plus $8 per person per night (age 16+) for Olympic NP wilderness camping; a Northwest Forest Pass or America the Beautiful interagency pass is required to park at the Upper Dungeness Trailhead.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Approved hard-sided bear canister required for all food/scented items in Royal Basin; camp only in designated sites (Royal Creek, Lower Royal Meadow, Royal Lake, and Upper Basin sites); campfires and wood-burning stoves are prohibited above 3,500 ft, which covers the entire basin; overnight groups capped at 12 people (groups of 7+ must use designated group sites); treat all water.",
+     "permit": "Overnight wilderness camping requires a permit year-round; Royal Basin is a designated 'high demand' quota area (reservation season June 15 - Oct 15) reservable on Recreation.gov or obtained at an NPS Wilderness Information Center. A day climb with no overnight camping doesn't need an NP wilderness permit, but a parking pass is still required at the trailhead.",
+     "closures": "No standing closures, but Olympic NP periodically imposes wilderness-wide burn bans during dry summers -- check current fire restrictions before the trip.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Hood Canal Ranger District, Buckhorn Wilderness) for the trailhead and lower approach; Olympic National Park (Daniel J. Evans Wilderness) for Royal Basin and the peak itself",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "NW Forest Pass / America the Beautiful Pass (trailhead parking) plus an Olympic National Park wilderness camping permit for overnight trips",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    },
+    "climate": {
+     "fall": "Often stable, clear weather into September, sometimes early October, but with shorter daylight and the possibility of early-season snow at elevation.",
+     "spring": "Significant snow persists on the upper approach and at the Clark-Johnson col into June; trail access is generally best from late June onward.",
+     "summer": "The main climbing window — generally snow-free on the route by July, with warm and sometimes hot afternoon conditions on the sun-exposed south/east ledges.",
+     "winter": "Deep snowpack effectively closes the approach and route to casual travel; wilderness permits and Recreation.gov reservations for Royal Basin run roughly mid-June through mid-October.",
+     "typical": "Marine west-coast climate typical of the interior Olympics: heavy winter snowpack lingers into July at this elevation, with a short reliable dry window roughly late July through September. The interior Olympics sit partly in a rain shadow relative to the outer coast but still see frequent Pacific frontal systems and can cloud up or get rained on even in midsummer.",
+     "bySeason": {
+      "fall": "September into early October can be good, with cooler temps and fewer bugs, but earlier storms/snow are possible and days shorten quickly.",
+      "spring": "Deep snowpack and avalanche-prone approach terrain; Royal Basin is often still snow-covered into June -- not recommended for the scramble.",
+      "summer": "Late July-August is the most reliable window: trail mostly snow-free, though upper gullies and the col approach can still hold snow patches into July.",
+      "winter": "Effectively inaccessible for climbing; heavy snow closes the approach and avalanche hazard is high."
+     },
+     "forecastZone": "NWAC does not forecast the Olympic Mountains; use the NWS zone forecast for the Olympics and Olympic NP's current-conditions/trip-planning pages instead."
+    },
+    "grade_num": 3
+   }
+  }
+ ]
+}

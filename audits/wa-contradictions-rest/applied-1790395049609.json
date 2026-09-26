@@ -1,0 +1,187 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_fairchild_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "What the Catwalk is"
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "What the Catwalk is"
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier / crevasse severity"
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Glacier / crevasse severity"
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Glacier / crevasse severity"
+  },
+  {
+   "id": "wa_mount_fairchild_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead pass and permit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_fairchild_standard",
+   "before": {
+    "approach": "There is no trail to Mount Fairchild itself, but the standard approach follows a well-defined maintained-trail corridor before turning to off-trail wilderness travel. Start at the Sol Duc River Trailhead (end of Sol Duc Road) on the Sol Duc River Trail. At 0.8 mi pass Sol Duc Falls, and at 0.9 mi reach the Lovers Lane junction; branch left onto the Deer Lake Trail, which climbs steeply and relentlessly through switchbacks to Deer Lake (3.4 mi, ~3,527 ft) — the first reliable water and the last easy camping before things get serious. Beyond Deer Lake the trail continues up through Potholes Meadows (~5 mi) and gains the High Divide ridge crest around 6 mi/4,730 ft, with good views and intermittent tarns/snowmelt for water. At 7.4 mi pass the Seven Lakes Basin junction (4,900 ft) — a good last water/camp option — then continue along High Divide past or near Bogachiel Peak (5,474 ft). At roughly 10.2 mi, leave the maintained trail system at the Cat Basin junction; from here it is off-trail cross-country and boot-path travel only, dropping into Cat Basin below Cat Peak (5,940 ft) and then climbing/sidehilling toward Mount Carrie (6,995 ft). Many parties use the exposed, loose-talus sidehill traverse across Carrie's south face known as \"the Catwalk\"; an alternative preferred by some climbers is to stay higher on Carrie's north side, which avoids the worst sidehilling and leads up Carrie's ridge and upper flanks to its summit. The route to Fairchild starts from Mount Carrie's summit: head northeast down the Carrie Glacier (rope up and put on crampons here; ice axe mandatory most of the season), circle around to the north of Fairchild, and climb its Southwest Ridge to the 6,899 ft summit. This final section is only thinly described, so expect to find the line yourself. One-way distance to this point is roughly 12 miles with substantial cumulative gain from repeated up-and-down over Bogachiel Peak, Cat Peak, and the Carrie ridge system, consistent with the ~8,000 ft round-trip gain. Hazards: early-season creek crossings near Sol Duc Falls, steep loose-scree switchbacks on the Deer Lake Trail, serious exposure and loose rock on the Catwalk traverse, crevasses and snow bridges on the Carrie Glacier requiring roped glacier travel (especially early/mid-summer), no reliable water between Cat Basin and the glacier, and heavy route-finding demands in fog/whiteout since the entire Cat Basin-to-summit section is unmarked wilderness travel.",
+    "descent_text": "This is a walk-off/glacier-descent route with no rappelling. Descend by reversing the ascent line: from the summit, descend the Southwest Ridge, circle back around the north side of the peak and reclimb the Carrie Glacier roped up with crampons to Mount Carrie's summit, then descend Mount Carrie's north-side ridge. Sidehill/traverse back across the Catwalk (or the north-side alternative) to Cat Basin, drop to rejoin the maintained High Divide Trail at the Cat Basin junction (~10.2 mi mark), and retrace the trail past the Seven Lakes Basin junction, Bogachiel Peak, Potholes Meadows, Deer Lake, and Lovers Lane back down to Sol Duc Falls and the Sol Duc River Trailhead. Some parties instead continue the descent onward as part of the broader Bailey Range Traverse — dropping south past Ruth Peak toward Stephen Lake/Queets Basin and exiting via the Elwha (Whiskey Bend) or Hoh River trailheads — but that is a different, longer one-way multi-day itinerary rather than the out-and-back standard route matching this route's distance and gain. Descent hazards mirror the approach: crevasse fall potential on the glacier (softening snow in the afternoon raises post-holing/slot risk, so an early turnaround is wise), loose talus on the Carrie sidehill, fatigue-driven route-finding errors in the featureless heather and scree of Cat Basin, and long, tired-legs reversal of the steep Deer Lake Trail switchbacks.",
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Interior Olympics climate: heavy winter snowpack with long approaches; best window is mid-July through early September once snow clears",
+      "probability": "Pacific frontal systems can bring sudden weather changes even in summer, and early storms are a fall risk; with the remoteness, there is very limited escape if weather turns"
+     },
+     "exposure": "Technically moderate (Class 2-3), but consequence is high: this is one of the most remote objectives in the range, with a long, committing approach and essentially no quick escape or rescue option if something goes wrong above high camp",
+     "avalanche": {
+      "zone": "No NWAC forecast zone provides operational coverage of this route - NWAC's Olympics-area forecasting is issued only in the winter/spring backcountry ski season and does not run during the July-September climbing window for this route",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Minor/localized - the route crosses lingering snowfields near the summit rather than a heavily crevassed glacier hidden crevasses or moats are possible especially earlier in the season before snow consolidates, so glacier-travel awareness is still warranted"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - the approach is a multi-day (often 5-8 day) largely off-trail traverse or long valley approach with sustained brush, talus, and elevation gain/loss before Fairchild is even reached",
+      "packWeight": "Heavy expedition pack (roughly 40-50+ lbs with food/fuel for a week), sustained over rugged, unmaintained terrain"
+     },
+     "approachTime": "Multi-day - typically several days of travel (via the Bailey Range Traverse or long approaches from Sol Duc/Hoh) to reach a high camp before the final scramble to the summit, consistent with the 12-hour summit-day timing estimate starting from high camp",
+     "requiredSkills": [
+      "Off-trail route-finding and navigation in complex, unmarked terrain (map/compass or GPS, not just trail-following)",
+      "Snowfield travel and self-arrest with an ice axe",
+      "Basic glacier/crevasse-hazard awareness for the snowfields near Fairchild",
+      "Class 2-3 scrambling comfort with exposure",
+      "Multi-day backcountry self-sufficiency (route selection, water/camp logistics, weather judgment) given the remoteness"
+     ],
+     "experienceLevel": "Seasoned off-trail mountaineer/scrambler with multi-day wilderness expedition experience; this is not a route for someone whose only background is trail hiking or single-day scrambles"
+    },
+    "detailed_rack": "Glacier kit for snowfields; light gear for Class 2-3 rock",
+    "waypoints": [
+     {
+      "lat": 47.955249,
+      "lng": -123.835839,
+      "elev": 1950,
+      "name": "Sol Duc Trailhead",
+      "note": "Large trailhead parking lot at the end of Sol Duc Hot Springs Road; Northwest Forest Pass required, self-issue wilderness permit at the kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Turn south off US 101 onto Sol Duc Hot Springs Road (about 29 miles west of Port Angeles) and follow it, paved the whole way, past the park entrance station, the Sol Duc Hot Springs Resort and the campground to the large lot at road's end — the trailhead is at the very end, beyond the resort."
+     },
+     {
+      "lat": 47.95064,
+      "lng": -123.8152,
+      "elev": 1980,
+      "name": "Sol Duc Falls",
+      "note": "Trail crosses a footbridge just below the falls; last easy, reliable water before the climb toward Appleton Pass begins in earnest.",
+      "type": "Water",
+      "distMi": 0.8,
+      "directions": "From the end of the lot take the Sol Duc River Trail up the valley: 0.8 mi of wide, near-level old-growth tread with essentially no elevation change (1,950 to 1,980 ft), ending at the footbridge just below the falls. This is the last easy, reliable water taken straight off the trail before the climbing starts."
+     },
+     {
+      "lat": 47.932375,
+      "lng": -123.75057,
+      "elev": 2900,
+      "name": "Appleton Pass Trail junction",
+      "note": "Leave the Sol Duc River Trail here and turn right/uphill onto the Appleton Pass Trail; elevation is a rough interpolation along the NPS-stated 2,000-5,100 ft climb.",
+      "type": "Junction",
+      "distMi": 4.9
+     },
+     {
+      "lat": 47.93842,
+      "lng": -123.72269,
+      "elev": 5114,
+      "name": "Appleton Pass",
+      "note": "Broad alpine pass on the Bailey Range crest with meadows and views into the Boulder Lake basin; leave the maintained trail here to begin cross-country travel into the Bailey Range proper.",
+      "type": "Junction",
+      "distMi": 7.3
+     },
+     {
+      "lat": 47.9109421459854,
+      "lng": -123.69885850364963,
+      "elev": 5500,
+      "name": "The Cat Walk (Cat Peak traverse)",
+      "note": "Old, narrow, exposed use-path sidehilling the steep flanks of Cat Peak; the steepest, most exposure-prone stretch of the whole approach, worse with a full pack.",
+      "type": "Hazard",
+      "distMi": 10.5
+     },
+     {
+      "lat": 47.890988,
+      "lng": -123.664591,
+      "elev": 5300,
+      "name": "Boston Charlie's Camp",
+      "note": "Small flat tent spot at the east end of the Cat Walk with a shallow melt-water sinkhole pond; water needs filtering and the site is exposed to wind/weather.",
+      "type": "Campsite",
+      "distMi": 11.5,
+      "directions": "Follow the sidehill path east to the far end of the Cat Walk arete, giving back roughly 200 ft. The camp is a single small flat tent spot at the east end with a shallow melt-water sinkhole pond beside it — filter that water, and expect the site to be fully exposed to wind and weather."
+     },
+     {
+      "lat": 47.894242,
+      "lng": -123.649295,
+      "elev": 6995,
+      "name": "Mount Carrie ridge/glacier gain",
+      "note": "Highest point in the Bailey Range (0.84 mi SW of Fairchild's summit); per the descent beta this is where the route regains the ridge/glacier system linking to the Fairchild Glacier.",
+      "type": "Junction",
+      "distMi": 14.5,
+      "directions": "Climb roughly 1,700 ft southeast from Boston Charlie's onto Mount Carrie (6,995 ft), the highest point in the Bailey Range. There is a real choice here: many parties sidehill the loose, exposed talus across Carrie's south face, but staying higher — up the ridge on Carrie's north side, over or just under the summit — avoids the worst of the sidehilling and sets up a cleaner entry onto the Fairchild Glacier. Where the crest becomes too sharp to walk, traverse up across the scree flanks. There is no reliable water on this stretch, so tank up at camp."
+     },
+     {
+      "lat": 47.8971915,
+      "lng": -123.64133100000001,
+      "elev": 6700,
+      "name": "Fairchild Glacier crossing",
+      "note": "Rope up and don crampons/axe here; follow the wind-formed ridge down-glacier toward the exit col on Ruth Peak's shoulder — crevasse hazard, especially late season when snow bridges are thin.",
+      "type": "Hazard",
+      "distMi": 15,
+      "directions": "Drop about 300 ft northeast off Carrie's ridge onto the upper Fairchild Glacier, which starts around 6,600-6,700 ft on the Bailey crest and falls away to the northeast. Rope up and put on crampons here; an ice axe is wanted most of the season. Rather than taking the direct line, follow the wind-formed snow ridge running down the glacier — the same idea as the Hogsback on Mount Hood — which keeps you clear of the crevasses. Late season the snow bridges thin and the surface goes to bare, hard ice, so this is full crampon technique, not microspikes."
+     },
+     {
+      "lat": 47.900458,
+      "lng": -123.633334,
+      "elev": 6899,
+      "name": "Mount Fairchild",
+      "note": "Second-highest peak in the Bailey Range; short final scramble on snow and rock from the glacier saddle to the true summit.",
+      "type": "Summit",
+      "distMi": 15.5,
+      "directions": "Leave the wind ridge and take the steeper exit section up onto Fairchild's summit ridge: roughly 35-40 degrees of snow past an icy patch, the steepest ground on the route. Stay roped and in crampons through it. From the summit ridge a short scramble on snow and rock gains the 6,899 ft true summit, second-highest in the Bailey Range. There is no rappel anywhere on this climb — the only way off is to reverse the entire line, and the glacier softens through the afternoon, so set an early turnaround."
+     },
+     {
+      "lat": 47.9067,
+      "lng": -123.6289,
+      "elev": 6600,
+      "name": "Fairchild Glacier",
+      "type": "Feature",
+      "elevFt": 6600
+     }
+    ]
+   }
+  }
+ ]
+}

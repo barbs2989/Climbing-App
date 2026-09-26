@@ -1,0 +1,40 @@
+{"file": "r446.json", "results": [
+ {"id": "wa_mount_carru_scramble", "fact": "Carru-Lago col elevation", "verdict": "fixed",
+  "correct_value": "~7,600 ft",
+  "evidence": "A 2024 trip report describes crossing the '7600-foot Lago-Carru Col'. Carru's topo-derived prominence is 955 ft with Mount Lago as its parent, which puts the key col (the Carru-Lago saddle) at about 7,640 ft. Neither the stored 8,100 ft nor ~7,100 ft fits; ~7,600 ft is adopted in all three places.",
+  "sources": ["https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/", "https://en.wikipedia.org/wiki/Mount_Carru"],
+  "patches": [
+   {"id": "wa_mount_carru_scramble", "fact": "Carru-Lago col elevation", "op": "set", "column": "waypoints", "path": [6, "elev"], "expect": 8100, "value": 7600},
+   {"id": "wa_mount_carru_scramble", "fact": "Carru-Lago col elevation", "op": "replace_text", "column": "descent", "path": [], "find": "drop to the Carru-Lago col (~7,100 ft)", "replace": "drop to the Carru-Lago col (~7,600 ft)"},
+   {"id": "wa_mount_carru_scramble", "fact": "Carru-Lago col elevation", "op": "replace_text", "column": "itinerary", "path": ["days", 2, "schedule", 1, "label"], "find": "(~7,100 ft)", "replace": "(~7,600 ft)"}
+  ]},
+ {"id": "wa_mount_carru_scramble", "fact": "Trailhead", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Both trailheads are real approaches: the Slate Pass/Buckskin Ridge start is the shorter, standard line (~15 mi), and the Monument Creek trailhead is a genuine, longer alternative that some parties use. The waypoints, itinerary and approach all follow Slate Pass, while the TRAILHEAD card names Monument Creek and its stored coordinates sit at Monument Creek. Aligning the card means changing approach_logistics coordinates, which is out of scope, and relabelling the name alone would put a Slate Pass name on a Monument Creek pin, so no patch is written.",
+  "sources": ["https://www.countryhighpoints.com/pasayten-peakbagging/", "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead"],
+  "patches": []},
+ {"id": "wa_mount_carru_scramble", "fact": "Summit line from camp", "verdict": "fixed",
+  "correct_value": "Climb the talus gully that drops south from the Carru-Lago col, then the southeast ridge to the summit",
+  "evidence": "One route description says the standard way up is a red talus gully east of the Carru-Lago saddle, reached by leaving the trail at a creek crossing and climbing north. A separate trip report says the party climbed the gully dropping from the Carru-Lago col (entering near 6,600 ft), went up through small cliffs until it flattened, then turned left up Carru's southeast ridge. Neither mentions the Carru-Osceola col or Rolo Pass as the start, so CLIMBING ROUTE is the outlier.",
+  "sources": ["https://www.summitpost.org/mount-carru/151490", "https://www.countryhighpoints.com/pasayten-peakbagging/"],
+  "patches": [
+   {"id": "wa_mount_carru_scramble", "fact": "Summit line from camp", "op": "replace_text", "column": "climbing_route", "path": [0, "notes"], "find": "gain the Carru-Osceola col or Rolo Pass and scramble the south/southeast talus slopes to the summit ridge.", "replace": "climb the talus gully that drops south from the Carru-Lago col, then scramble the southeast ridge and upper south slopes to the summit."}
+  ]},
+ {"id": "wa_mount_carru_scramble", "fact": "Parking pass", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Forest Service recreation pages for both the Slate Pass Trailhead and the Slate Peak Trailhead say no fees are required. The WTA hike page for Buckskin Ridge (same trailhead) lists a Northwest Forest Pass or America the Beautiful pass. The two Forest Service pages come from one publisher and a second independent source disagrees, so the fee rule is not settled to the two-source standard. access.parking_pass also names unrelated trailheads (Andrews Creek, Chewuch River), but no replacement is written without a settled value.",
+  "sources": ["https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-pass-trailhead", "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/slate-peak-trailhead", "https://www.wta.org/go-hiking/hikes/buckskin-ridge"],
+  "patches": []},
+ {"id": "wa_mount_carru_scramble", "fact": "Drainage descended from Slate Pass", "verdict": "fixed",
+  "correct_value": "Middle Fork Pasayten",
+  "evidence": "The Carru and Osceola route descriptions give the shortest approach as Slate Pass down the Middle Fork Pasayten to Berk Creek, then up to Freds Pass/Fred's Lake. A 2024 trip report from the Buckskin Ridge trailhead also went down the Middle Fork valley to reach this area, and trip reports on the Middle Fork trail put the Freds/Doris Lake climb above Berk Creek. Changed every copy that names the West Fork (itinerary day notes, their timing copies, and the 'West/Middle Fork' wording in approach and the Slate Pass waypoint). The hazards line about crossings on the 'West/Middle Fork' was left alone.",
+  "sources": ["https://www.summitpost.org/mount-carru/151490", "https://www.summitpost.org/osceola-peak/151497", "https://trailcatjim.com/ptarmigan-peak-summit-loop-2024/", "http://www.deanmyerson.org/pasaytenriver"],
+  "patches": [
+   {"id": "wa_mount_carru_scramble", "fact": "Drainage descended from Slate Pass", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "descend into the West Fork Pasayten drainage", "replace": "descend into the Middle Fork Pasayten drainage"},
+   {"id": "wa_mount_carru_scramble", "fact": "Drainage descended from Slate Pass", "op": "replace_text", "column": "itinerary", "path": ["days", 3, "note"], "find": "down through the West Fork Pasayten drainage", "replace": "down through the Middle Fork Pasayten drainage"},
+   {"id": "wa_mount_carru_scramble", "fact": "Drainage descended from Slate Pass", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 0, "note"], "find": "descend into the West Fork Pasayten drainage", "replace": "descend into the Middle Fork Pasayten drainage"},
+   {"id": "wa_mount_carru_scramble", "fact": "Drainage descended from Slate Pass", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 3, "note"], "find": "down through the West Fork Pasayten drainage", "replace": "down through the Middle Fork Pasayten drainage"},
+   {"id": "wa_mount_carru_scramble", "fact": "Drainage descended from Slate Pass", "op": "replace_text", "column": "approach", "path": [], "find": "down the West/Middle Fork Pasayten River", "replace": "down the Middle Fork Pasayten River"},
+   {"id": "wa_mount_carru_scramble", "fact": "Drainage descended from Slate Pass", "op": "replace_text", "column": "waypoints", "path": [1, "note"], "find": "toward the West/Middle Fork Pasayten River", "replace": "toward the Middle Fork Pasayten River"}
+  ]}
+]}

@@ -1,0 +1,951 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Approach distance to High Camp"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Approach distance to High Camp"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Approach distance to High Camp"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Approach distance to High Camp"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Steepness of the route"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Killen Creek trailhead elevation"
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "column": "commitment",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Climbing pass season and purchase"
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Climbing pass season and purchase"
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Permit requirement (contaminated access note)"
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Trailhead parking (wrong trailhead)"
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "Side of the Adams Glacier"
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Side of the Adams Glacier"
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Side of the Adams Glacier"
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Side of the Adams Glacier"
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "column": "bail",
+   "path": [],
+   "fact": "Which ridge crest the route joins"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Approach distance and total distance"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Approach distance and total distance"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Approach distance and total distance"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Last reliable water"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    4
+   ],
+   "fact": "Last reliable water"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Glaciers crossed"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glaciers crossed"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Killen Creek trailhead elevation"
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead (Killen Creek vs Muddy Meadows)"
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Approach distance / total distance"
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Approach distance / total distance"
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_adams_mazama_glacier_headwall",
+   "column": "season",
+   "path": [],
+   "fact": "Season vs access window"
+  },
+  {
+   "id": "wa_mount_adams_mazama_glacier_headwall",
+   "column": "best_season",
+   "path": [],
+   "fact": "Season vs access window"
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Side of the mountain on the approach"
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Drive direction to Cold Springs"
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "column": "emergency",
+   "path": [
+    "sheriffDispatch"
+   ],
+   "fact": "County vs sheriff"
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Parking pass / climbing permit"
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Approach distance / total distance"
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead (Killen Creek vs Muddy Meadows)"
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "before": {
+    "itinerary": {
+     "cal": "Best climbed June-July before the icefall becomes too broken out; go early to be off the glacier before afternoon heat increases serac/icefall danger.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same Killen Creek approach as the North Ridge, camping near Mountaineers Camp / High Camp below the glacier's icefall.",
+       "hours": 5,
+       "miles": 8.6,
+       "title": "Killen Creek to High Camp",
+       "gainFt": 2900,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach ~9,000 ft high camp below the Adams Glacier"
+      },
+      {
+       "n": 2,
+       "note": "A very early, very long summit day: climbers navigate the icefall's crevasses and bergschrunds by headlamp before dawn to beat the heat-driven serac/icefall danger, then descend the North Ridge or South Climb all the way to the car.",
+       "hours": 15,
+       "miles": 8.9,
+       "title": "Climb the Adams Glacier icefall, descend to the car",
+       "gainFt": 4780,
+       "lossFt": 7680,
+       "packLb": 25,
+       "schedule": [
+        {
+         "time": "1:30 AM",
+         "label": "Wake at High Camp",
+         "detail": ""
+        },
+        {
+         "time": "2:30 AM",
+         "label": "Onto the glacier",
+         "detail": "Navigating crevasses by headlamp."
+        },
+        {
+         "time": "3:45 AM",
+         "label": "Reach base of the icefall (~9,000 ft)",
+         "detail": "Cross bergschrunds; moderately steep ice with short, steeper sections requiring a belay."
+        },
+        {
+         "time": "Late morning",
+         "label": "Above 11,000 ft",
+         "detail": ""
+        },
+        {
+         "time": "Early-mid afternoon",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "~6:00 PM camp / 8:00 PM trailhead",
+         "label": "Descend to the car",
+         "detail": "Via the North Ridge or South Climb."
+        }
+       ],
+       "objective": "Summit via the icefall and descend fully to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day trip: ~5 hr approach to a 9,000 ft high camp, then a very long alpine-start summit day (~15 hr, 1:30 AM wake-up) climbing the icefall and descending all the way to the car by evening; cautious parties add a weather-buffer day."
+    },
+    "waypoints": [
+     {
+      "lat": 46.2885,
+      "lng": -121.5525,
+      "elev": 4400,
+      "name": "Killen Creek Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Reached on Forest Roads 23, 21 and 2329 from the Randle or Trout Lake side. FR-2329 holds snow well into early summer, so check the road before committing — parties blocked short of the trailhead have had to walk or bushwhack an extra mile or more of road and forest to reach it."
+     },
+     {
+      "lat": 46.265,
+      "lng": -121.535,
+      "elev": 6900,
+      "name": "High Camp Trail Junction",
+      "type": "Junction",
+      "distMi": 4.5,
+      "directions": "Follow Killen Creek Trail #113 up through subalpine forest and meadow for about three miles to the Pacific Crest Trail, and cross straight over onto the High Camp Trail. Killen Creek, crossed low on the trail, is the last dependable running water; everything above is melted snow. The tread thins out above treeline and is easy to lose in the dark or a whiteout, so note landmarks on the way up or carry a track."
+     },
+     {
+      "lat": 46.27,
+      "lng": -121.53,
+      "elev": 7000,
+      "name": "High Camp",
+      "type": "Campsite",
+      "distMi": 5,
+      "directions": "Another mile on the High Camp Trail ends it at the edge of the Adams Glacier's lateral moraine. Sheltered bivy sites sit slightly higher, in a shallow snow gully just left of the moraine, and more camping is scattered across the benches above that."
+     },
+     {
+      "lat": 46.285,
+      "lng": -121.515,
+      "elev": 8000,
+      "name": "Adams Glacier Base",
+      "type": "Junction",
+      "distMi": 7,
+      "directions": "A patchy path runs past the upper camping area and up moraine and snow to the glacier toe, where parties rope up. Judge the timing generously — the volcano's scale flattens distance out and this leg routinely runs two hours. The point of the very early start is to be through the icefall before the sun starts working on it."
+     },
+     {
+      "lat": 46.2024,
+      "lng": -121.4909,
+      "elev": 12276,
+      "name": "Mount Adams Summit",
+      "type": "Summit",
+      "distMi": 11.5,
+      "directions": "The usual line takes the right-hand side of the glacier for roughly the first two-thirds, threading ice steps and serac lanes, then cuts back left high up onto the unbroken snow of the summit plateau. Which side of the upper icefall goes changes from year to year, and the left-hand option has been found far steeper than the grade suggests — sustained 55 to 65 degrees rather than moderate — so look at it in daylight from below before committing. The crossing beneath the ice cliffs is the stretch to move through fastest, on thin bridges and with backtracking common. Above the icefall the angle eases and two or three false summits stand between you and the true one, so keep navigating rather than trusting the first high point."
+     }
+    ],
+    "gear": [
+     "Two ice tools — sustained 50-55° ice/snow with sections to ~65°",
+     "3-4 long ice screws for the steeper mid-route ice (some parties carry more, up to 6-8, depending on year/season)",
+     "3-4 pickets, distributed through the rope team, for running belays and crevasse-rescue anchors",
+     "Crampons",
+     "Crevasse-rescue kit (prussiks) — the route climbs an actual icefall/glacier, not just a snowfield",
+     "Harness and helmet",
+     "Rope for the team — most parties simul-climb with running protection rather than pitching the whole route"
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "before": {
+    "commitment": "II",
+    "approach_variants": [
+     {
+      "name": "Cold Springs trailhead and the Lunch Counter",
+      "notes": "From Trout Lake, drive north on Mt Adams Road to the Forest Road 23 junction, bear right about a mile to the signed FR 80 turn for South Climb, then FR 80 for 3.7 miles to FR 8040, and FR 8040 for 8.1 miles — steep, narrow, sharp switchbacks, no RVs or trailers — to the South Climb / Cold Springs trailhead at 5,600 ft.\n\nPermits: a Cascade Volcano Pass is required to travel above 7,000 ft in the Mount Adams Wilderness during the summer season (June 1 to September 30 per the Forest Service), and a free wilderness permit is needed for the trailhead. Both can be self-issued at the trailhead, or the volcano pass can be obtained from the Mount Adams Ranger Station in Trout Lake or by mail. Weekend and weekday rates differ and an annual option exists.\n\nThe trail begins on an old roadbed through burn scar, enters subalpine forest and meadow, crosses the Round-the-Mountain Trail and the PCT, then climbs Crescent Ridge toward the snowfields. In early season there is often no trail at all — just a snow slope leading out of the parking lot. Above the Crescent Glacier the way is meandering snowfields to the Lunch Counter.\n\nThe Lunch Counter (roughly 9,250–9,400 ft) is the standard camp: a broad rocky bench with hand-built rock windbreaks. Water is snowmelt. This is a route where the crowd itself is a factor — it is the most-climbed line on the mountain and the bench fills on summer weekends.",
+      "season": "Late May through September; earlier in the season the whole route is a snow climb from the parking lot",
+      "hazards": [
+       "Rockfall and soft-snow postholing on the Crescent Glacier slopes in warm afternoons",
+       "Whiteout on the featureless snowfields between Crescent Glacier and the Lunch Counter",
+       "Turning around at Piker's Peak believing it is the summit",
+       "Uncontrolled glissading — the standard descent line has caused injuries",
+       "No water above the Lunch Counter; snowmelt only",
+       "Sharp switchbacks and rough surface on FR 8040, and snow blocking it early in the season"
+      ],
+      "baseFinding": "There is no bergschrund and no ice step on this route, so the question 'where does the climbing start' has two answers, and the second one is the one that turns people around short of the top.\n\nThe first: the Lunch Counter is the transition. You are there when the meandering snowfields end at a broad, flat, rocky bench with rock walls built on it and the South Spur rising directly above as one continuous slope. Above the bench there is no more wandering — it is 2,400 ft of steepening snow on a bearing of roughly north-northeast.\n\nThe second, and the important one: what you top out on is NOT the summit. The rounded high point at 11,644 ft is Piker's Peak, the false summit. The test is unmistakable if you know to look for it — the ground ahead of you FLATTENS into a broad saddle and plateau, and a separate dome rises about 600 ft beyond it to the north. If the slope has stopped and the true top is still visibly above and away from you, you are on Piker's. Parties turn around here every season believing they have finished.\n\nNegative marker on the way up: if you are scrambling on a rocky crest rather than kicking steps on snow, you have drifted onto Suksdorf Ridge. That is a legitimate alternative when the snow is soft, but when the snow is firm it is the slower choice, and in a whiteout it is the wrong handrail."
+     }
+    ]
+   }
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "before": {
+    "access": {
+     "fees": "Mt. Adams Climbing Pass required above 7,000 ft, May 1-Sept 30",
+     "notes": "No permit required. Free wilderness permit for overnight (optional). Mount Index, North Cascades area.",
+     "rules": "Group size capped at 12. Human waste must be packed out above 7,000 ft (blue/WAG bags) — free bags available at the Trout Lake Ranger District office, no collection service. The Mazama Glacier route and Bird Creek Meadows/Round-the-Mountain area cross Yakama Nation land and require a separate small tribal recreation permit purchased at Bird Creek Meadows — the standard South Climb/Cold Springs route stays on Forest Service land and does not.",
+     "permit": "Cascade Volcano Pass / Mt. Adams Climbing Pass via recreation.gov",
+     "closures": null,
+     "seasonal": "South Climb route typically opens as snow melts out around May.",
+     "group_limit": 12,
+     "landManager": "USDA Forest Service, Gifford Pinchot National Forest; Mount Adams Wilderness",
+     "land_manager": "Gifford Pinchot National Forest (Mt. Adams Ranger District) — Mount Adams Wilderness",
+     "parking_pass": "Cold Springs/South Climb Trailhead day-use fee: $5/vehicle/day or $30/year (a Northwest Forest Pass satisfies this; the Climbing Pass’s parking stub also covers it May 1–Sept 30).",
+     "passRequired": "Mt. Adams Climbing Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+      "what": "Mount Adams Climbing Pass above 7,000 ft (May to September), plus a free self-issue wilderness permit below 7,000 ft",
+      "where": "Buy the Climbing Pass on Recreation.gov before arriving, since cell coverage is poor; fill out the wilderness permit at the trailhead."
+     }
+    },
+    "beta": "The route climbs the north-facing slope between the Adams Glacier (on climber's right) and the Northwest Ridge crest (on climber's left, avoided for its poor rock), gaining access below the glacier to avoid crevasses/moats, then following steepening 40-45 degree neve past a narrow rock-band pinch to the ridge crest near 10,000 ft and on to the summit.",
+    "approach_variants": [
+     {
+      "name": "Killen Creek and High Camp, then the north-facing slope below the Adams Glacier terminus",
+      "notes": "Forest roads from the Takhlakh Lake area to the Killen Creek trailhead, then Killen Creek Trail #113 to the PCT junction and High Camp Trail #10 to the meadow camp at about 6,900 ft.\n\nFrom camp, gain the north-facing slope that sits between the Adams Glacier and the crest of the Northwest Ridge. The line deliberately gains access BELOW the Adams Glacier terminus to avoid its crevasses and moats, then follows steepening 40 to 45 degree neve past a narrow rock-band pinch to the ridge crest near 10,000 ft and on to the summit.\n\nThe ridge crest itself is avoided on purpose: the rock on it is poor.\n\nDescent is along the North Ridge back to the Adams Glacier basin high camp, or in ski conditions the route itself can be reversed, threading the same rock-band pinch.",
+      "season": "Roughly Jun-Jul, on neve",
+      "hazards": [
+       "A terrain trap between cliff bands with limited escape once committed mid-route",
+       "A narrow rock-band pinch that tightens to AI2-3 in low-snow years",
+       "Crevasse and moat hazard where the route gains ground below the Adams Glacier terminus",
+       "Poor rock on the adjacent ridge crest, which is why the line avoids it",
+       "Sustained 40-45 degree neve with a running belay the only practical protection"
+      ],
+      "baseFinding": "THIS ROUTE IS THE GROUND BETWEEN TWO THINGS, SO THE TEST IS THAT YOU HAVE ONE ON EACH SIDE.\n\nAS YOU CLIMB, THE ADAMS GLACIER SHOULD BE ON YOUR RIGHT AND THE CREST OF THE NORTHWEST RIDGE ON YOUR LEFT. If both are on the same side of you, you are on one of them rather than between them, and you are not on this route.\n\nTHE ROCK IS THE NEGATIVE ON ONE SIDE, AND IT IS TACTILE, WHICH IS WHAT YOU WANT AT NIGHT: this line stays OFF the crest because the crest's rock is poor. If you are pulling on loose blocky rock instead of kicking steps in neve, you have drifted left onto the ridge.\n\nTHE CREVASSES ARE THE NEGATIVE ON THE OTHER SIDE: the route gains its ground BELOW the Adams Glacier terminus specifically so it does not have to deal with the glacier's crevasses and moats. If you are stepping across crevasses, you are too far right and on the Adams Glacier route, which is a different and harder climb.\n\nTHE POSITIVE, AND IT IS COUNTABLE: ONE CONSTRICTION. A narrow pinch through a rock band, ski-width or body-width, is the crux and the only place the route squeezes. If you have climbed a couple of thousand feet of 40 to 45 degree neve and met no constriction, the pinch is still above you and you are on route. If you met a constriction in the first rope length, you are somewhere else.\n\nWHAT THE PINCH MEANS FOR CONDITIONS: it gets tighter in a low-snow year, which is when it becomes the AI2-3 crux rather than a step. It is also a terrain trap — you are between cliff bands there with limited escape, so decide about it from below rather than at it.\n\nTOP-OUT CHECK: the route joins the NORTHWEST RIDGE CREST near 10,000 ft. Gaining a crest at that height is correct; gaining one much lower means you climbed onto the ridge early instead of past it."
+     }
+    ],
+    "bail": "Below about 10,000 ft, retreat by downclimbing the neve back toward the Adams Glacier terminus; above that, escape onto the North Ridge crest once angle allows."
+   }
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Killen Creek Trail through forest, meadow, and huckleberry fields, crossing East Fork Adams Creek (last reliable water) before climbing onto snow to a high camp around 9,000 ft.",
+       "hours": 5,
+       "miles": 8.6,
+       "title": "Killen Creek to High Camp",
+       "gainFt": 2900,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach ~9,000 ft high camp below the North Ridge"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start up steep sections to around 40°, gaining the ridge and the summit plateau, then reversing the route back to High Camp. Parties who stage a shuttle car at Cold Springs instead descend the South Spur directly off the summit, finishing in 2 days.",
+       "hours": 9,
+       "miles": 4,
+       "title": "Summit via the North Ridge, return to camp",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "2:00-3:00 AM",
+         "label": "Leave High Camp",
+         "detail": "Early start for firm snow."
+        },
+        {
+         "time": "Late morning",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "Afternoon",
+         "label": "Return to High Camp",
+         "detail": "Reverse the ridge (or descend the South Spur to a shuttle car at Cold Springs)."
+        }
+       ],
+       "objective": "Climb the North Ridge to the summit and back to High Camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back down the Killen Creek Trail to the trailhead.",
+       "hours": 4,
+       "miles": 8.6,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2900,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to the Killen Creek trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip for parties without a car shuttle: ~5 hr approach to high camp, an alpine-start summit day on the North Ridge back to camp, then a hike out; with a shuttle car staged at Cold Springs, the summit-day descent can instead go straight down the South Spur, finishing in 2 days."
+    },
+    "timing": {
+     "totalHrs": 18,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": 4,
+     "approachTimeHrs": 5,
+     "recommendedStart": "2:00-3:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5,
+       "note": "Hike the Killen Creek Trail through forest, meadow, and huckleberry fields, crossing East Fork Adams Creek (last reliable water) before climbing onto snow to a high camp around 9,0…",
+       "fromTo": "Killen Creek to High Camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "Alpine start up steep sections to around 40°, gaining the ridge and the summit plateau, then reversing the route back to High Camp. Parties who stage a shuttle car at Cold Springs …",
+       "fromTo": "Summit via the North Ridge, return to camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 4,
+       "note": "Break camp and hike back down the Killen Creek Trail to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "waypoints": [
+     {
+      "lat": 46.2885,
+      "lng": -121.5525,
+      "elev": 4400,
+      "name": "Killen Creek Trailhead",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 46.27,
+      "lng": -121.53,
+      "elev": 7000,
+      "name": "High Camp",
+      "type": "Campsite",
+      "distMi": 5
+     },
+     {
+      "lat": 46.275,
+      "lng": -121.52,
+      "elev": 8000,
+      "name": "North Ridge Base",
+      "type": "Junction",
+      "distMi": 7
+     },
+     {
+      "lat": 46.2024,
+      "lng": -121.4909,
+      "elev": 12276,
+      "name": "Mount Adams Summit",
+      "type": "Summit",
+      "distMi": 11.5
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Killen Creek trailhead and High Camp",
+      "notes": "The same walk in as the Adams Glacier and the Northwest Ridge, and High Camp is the shared base for all three. Killen Creek Trail #113 from the trailhead (~4,600 ft) runs about 3.1 miles to the PCT junction at roughly 6,100 ft; cross straight over onto High Camp Trail #10 for another mile to its end at about 6,900 ft on the edge of the Adams Glacier moraine. Camping is spread between 7,000 and 7,600 ft, including a glacial lake camp near 7,650 ft.\n\nAccess is by FR 23, 21 and 2329; FR 2329 is gravel and holds snow into early summer. Killen Creek low on the trail is the last dependable water.\n\nPermits: free self-issue wilderness permit at the trailhead, plus a Cascade Volcano Pass for travel above 7,000 ft in the summer season.\n\nThis is a longer and more committing day than the South Climb from a much quieter side of the mountain, and it involves more crevassed ground — roped travel and glacier skills are expected, unlike the South Spur.",
+      "distMi": 4.1,
+      "gainFt": 2300,
+      "season": "June through September; a snow route early, a loose rock route once it melts out",
+      "hazards": [
+       "Very loose volcanic rock the length of the ridge — helmets, and spacing between climbers",
+       "Crevassed glacier on both flanks if you leave the crest",
+       "Exposed snow travel between rock sections",
+       "Thin moraine tread above treeline, easy to lose in dark or whiteout",
+       "No running water above Killen Creek"
+      ],
+      "baseFinding": "From High Camp the line is southeast, toward the foot of the ridge, and in clear weather you can see the whole thing from the approach — parties describe it as impossible to miss.\n\nThe recognition problem is entirely a poor-visibility one, and the test is what is under your boots. The North Ridge is the rubble-and-cinder rib that separates the Adams Glacier on its west from the Lava Glacier ground on its east. You should be on loose volcanic rock and scree, on a defined crest, with glacier falling away on BOTH sides. If you are on ice with crevasses, you have slid off the rib onto one glacier or the other, and which one tells you which way to correct.\n\nA smooth, clean, snow-only ascent is the wrong sign on this route: it is a choss pile, and the loose rock is the confirmation rather than the complaint. Expect short easy scrambling steps low down.\n\nThe angle eases noticeably around 11,000 ft, which is the sign the ridge proper is behind you and the summit plateau ground is ahead."
+     }
+    ],
+    "hazards": [
+     "Steep, sustained snow on the upper ridge with rockfall from the ridge crest",
+     "Crevasses on the Lava and Lyman glacier approaches",
+     "Cornices on the ridgeline",
+     "Remote north-side approach — long self-reliant day"
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "North-facing, holds snow longer and colder than the south side",
+      "probability": "Not explicitly documented for this route; Cascade volcanoes commonly see afternoon convective activity in summer, as noted for the South Climb, so treat as a plausible but unverified risk here"
+     },
+     "exposure": "High - sustained steep snow on the upper ridge with rockfall from the crest as it warms, cornices along the ridgeline, and a remote, self-reliant north-side approach with no quick bailout",
+     "avalanche": {
+      "zone": "NWAC West Slopes South",
+      "byMonth": {
+       "May": "Considerable",
+       "July": "Low",
+       "June": "Moderate",
+       "August": "N/A"
+      }
+     },
+     "crevasses": "Crevasses on the Lava and Lyman glacier approaches/descent require roped travel and crevasse-rescue readiness"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 46.2885,
+      "lng": -121.5525,
+      "elev": 4140,
+      "name": "Killen Creek Trailhead (Trail #113, FR-2329)",
+      "note": "Reached by traversing from a Lava Glacier basecamp; Muddy Meadows is the trailhead for this approach, not Killen Creek (which serves the due-north Adams Glacier route).",
+      "type": "Trailhead",
+      "elevFt": 4140
+     },
+     {
+      "lat": 46.202494,
+      "lng": -121.490746,
+      "elev": 12276,
+      "name": "Mount Adams summit",
+      "type": "Summit",
+      "elevFt": 12276
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Approach (typically via Killen Creek) to a high camp ~6,900 ft, positioned to traverse toward the Lyman Glacier the next day.",
+       "hours": 5,
+       "miles": 8.6,
+       "title": "Approach to High Camp",
+       "gainFt": 2900,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach a high camp positioned for the Lyman Glacier"
+      },
+      {
+       "n": 2,
+       "note": "An early start is essential. Traverse about an hour across lava fields and around the toe of Lava Ridge to the base of the Lyman Glacier at 8,000 ft, then climb moderate glacier terrain and a crux chute (45-65°, ~50 ft) around 10,000 ft, negotiating crevasses and a bergschrund to reach the summit plateau.",
+       "hours": 10,
+       "miles": 6,
+       "title": "Traverse to the Lyman Glacier and climb to the summit",
+       "gainFt": 3800,
+       "lossFt": 3800,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "~1 hr from camp",
+         "label": "Reach base of the Lyman Glacier (8,000 ft)",
+         "detail": "Traverse lava fields and around Lava Ridge."
+        },
+        {
+         "time": "",
+         "label": "Climb the crux chute",
+         "detail": "45-65° for about 50 ft near 10,000 ft, varies by year."
+        },
+        {
+         "time": "",
+         "label": "Summit",
+         "detail": "Via open upper slopes past crevasses and a bergschrund."
+        }
+       ],
+       "objective": "Climb the North Lyman Glacier to the summit and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back out to the trailhead.",
+       "hours": 4,
+       "miles": 8.6,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2900,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip: approach to high camp, a long summit day on the North Lyman Glacier with a technical crux chute near 10,000 ft, then a hike out."
+    },
+    "descent": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections."
+   }
+  },
+  {
+   "id": "wa_mount_adams_mazama_glacier_headwall",
+   "before": {
+    "season": "May-Aug",
+    "best_season": "Spring or summer for optimal snow/ice conditions."
+   }
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "before": {
+    "approach": "From Cold Springs trailhead, traverse via round-the-mountain trail to the northwest side of Mount Adams, approach glacier directly from southwest.",
+    "approach_logistics": {
+     "peakLat": 46.202412,
+     "peakLng": -121.490895,
+     "trailhead": "Cold Springs Campground/Trailhead",
+     "trailheadLat": 46.1359,
+     "trailheadLng": -121.4976,
+     "trailheadDirection": "South from Randle, WA; accessible via Forest Road 23"
+    },
+    "emergency": {
+     "notes": "No reliable cell coverage; satellite communicator recommended.",
+     "county": "Skamania County (SW approach)",
+     "rangerStation": "Mt. Adams Ranger District, 2455 Hwy 141, Trout Lake, WA 98650, (509) 395-3402",
+     "nearestHospital": "Skyline Hospital, White Salmon, WA, (509) 493-1101",
+     "sheriffDispatch": "911; Yakima County Sheriff Search & Rescue 1 (800) 572-0490"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "before": {
+    "access": {
+     "fees": "$20 per person (single-trip, not annual); free for climbers under 16.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Group size capped at 12. Human waste must be packed out above 7,000 ft (blue/WAG bags) — free bags available at the Trout Lake Ranger District office, no collection service. The Mazama Glacier route and Bird Creek Meadows/Round-the-Mountain area cross Yakama Nation land and require a separate small tribal recreation permit purchased at Bird Creek Meadows — the standard South Climb/Cold Springs route stays on Forest Service land and does not.",
+     "permit": "Mt. Adams Climbing Activity Pass",
+     "closures": "Yakama Nation Tract D is largely closed to public recreation outside specific permitted areas/season (Jul 1 - Oct 1 for non-tribal members).",
+     "seasonal": "South Climb route typically opens as snow melts out around May.",
+     "group_limit": 12,
+     "landManager": "Yakama Nation (Tract D, eastern Mount Adams)",
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Yakama Nation Tract D recreation permit for the Bird Creek side, plus the Mount Adams Climbing Pass above 7,000 ft on national forest land",
+      "where": "Buy the Tract D permit at the fee station where the road enters the reservation; the area is open to non-tribal visitors only in summer, roughly July to September. The Climbing Pass is sold on Recreation.gov."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Approach via Killen Creek to a high camp positioned below the Lava Glacier Headwall, in the triangle formed by the North Ridge and Lava Ridge.",
+       "hours": 5,
+       "miles": 8.6,
+       "title": "Approach to High Camp",
+       "gainFt": 2900,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach a high camp below the headwall (between the North Ridge and Lava Ridge)"
+      },
+      {
+       "n": 2,
+       "note": "A very early alpine start is essential — Mount Adams' headwall routes see significant rockfall and are seldom repeated, so timing matters more than on the standard routes. Climb moderate-to-steep snow/ice up the headwall to the summit, then descend the North Ridge or South Climb.",
+       "hours": 13,
+       "miles": 8.4,
+       "title": "Climb the headwall, descend to the trailhead",
+       "gainFt": 3800,
+       "lossFt": 6700,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "~2:00 AM",
+         "label": "Leave high camp",
+         "detail": "Very early start to minimize rockfall/icefall exposure on the headwall."
+        },
+        {
+         "time": "Midday",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "Afternoon-evening",
+         "label": "Descend to the car",
+         "detail": "Via the North Ridge or South Climb."
+        }
+       ],
+       "objective": "Summit via the Lava Glacier Headwall and descend fully to the car"
+      }
+     ],
+     "totalNote": "A 2-day trip: ~5 hr approach to a high camp below the headwall, then a very early alpine-start summit day (~13 hr) on the Lava Glacier Headwall, descending via the North Ridge or South Climb."
+    },
+    "waypoints": [
+     {
+      "lat": 46.288612,
+      "lng": -121.551532,
+      "elev": 4140,
+      "name": "Killen Creek Trailhead #113",
+      "note": "Muddy Meadows is the more specific, closer approach for the northeast glacier cluster (Lava/Lyman/Wilson/Rusk).",
+      "type": "Trailhead",
+      "elevFt": 4140
+     },
+     {
+      "lat": 46.202494,
+      "lng": -121.490746,
+      "elev": 12276,
+      "name": "Mount Adams summit",
+      "type": "Summit",
+      "elevFt": 12276
+     }
+    ],
+    "descent": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections."
+   }
+  }
+ ]
+}

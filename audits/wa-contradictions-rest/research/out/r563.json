@@ -1,0 +1,655 @@
+{
+ "file": "r563.json",
+ "results": [
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "fact": "Car-to-car time",
+   "verdict": "fixed",
+   "correct_value": "About 5-6 hours car-to-car for a typical party (4-6 hr range); slow groups much longer",
+   "evidence": "A Mountaineers trip report left the trailhead 11:40, summited 2:00 and was back at 4:30 (~5 hr); a WTA trip report came back under 2 hr from the summit for ~5.5 hr round trip. The 10-11 hr figure traces to a single first-timer blog whose group started at 1 pm and returned 11:40 pm. The row's timing, itinerary and partner_requirements already say ~5 (4.5-6+); the four 10-11 hr copies are rewritten.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/mount-washington-standard-south-route-olympics-3",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-07-08-2198619758",
+    "https://explorerron.com/2022/08/17/a-first-timers-guide-to-a-scrambling-mount-washington-olympic-national-forest/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "most parties report 10-11 hours car-to-car despite the short (~4 mi) distance",
+     "replace": "typical parties take 5-6 hours car-to-car for the short (~4 mi) distance, and slower groups much longer",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Car-to-car time"
+    },
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      4
+     ],
+     "find": "round trips commonly run 10-11 hours",
+     "replace": "round trips commonly run 5-6 hours, longer for slower groups",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Car-to-car time"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "most parties report 10-11 hour round trips for only ~4 miles",
+     "replace": "round trips commonly take 5-6 hours for only ~4 miles",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Car-to-car time"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      3
+     ],
+     "find": "Long car-to-car time (10-11 hrs is typical)",
+     "replace": "Slow going for the distance (5-6 hrs car-to-car is typical, more for slower groups)",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Car-to-car time"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "fact": "Identity and location of the crux",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A Mountaineers trip report confirms a short 4th-class pitch above the upper meadow (the 'Hourglass' step in pitch_detail), while a first-timer blog calls the Catwalk 'probably the most challenging, or at least a tie' and pictures the Dog Walk Ledge as a separate descent feature. Sources treat both as hard spots and do not agree on one crux or on whether Catwalk and Dog Walk Ledge are the same feature; no patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/mount-washington-standard-south-route-olympics-3",
+    "https://explorerron.com/2022/08/17/a-first-timers-guide-to-a-scrambling-mount-washington-olympic-national-forest/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "fact": "Best season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No two outside sources found stating a best-month window for this route (WTA and the trip reports give no season). The row's best_season, climate.summer and monthBreakdown lean Jul-Sep against the header's 'best Jul-Aug', but no external source confirms; left open.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "fact": "Wilderness permit at the trailhead",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit is needed; Northwest Forest Pass to park",
+   "evidence": "The Olympic National Forest wilderness page states no permit is needed to visit Olympic National Forest Wilderness areas (Mount Skokomish is one). WTA's Mount Washington page lists only a Northwest Forest Pass or America the Beautiful pass. Waypoint and variant copies of a self-issue permit are removed.",
+   "sources": [
+    "https://fs.usda.gov/r06/olympic/wilderness",
+    "https://www.wta.org/go-hiking/hikes/mount-washington"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "; self-issue Mt. Skokomish Wilderness permit and Northwest Forest Pass required at the kiosk.",
+     "replace": "; Northwest Forest Pass required to park, no wilderness permit needed.",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Wilderness permit at the trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "Fill out a self-issue Mt. Skokomish Wilderness permit and display a Northwest Forest Pass at the kiosk.",
+     "replace": "Display a Northwest Forest Pass; no wilderness permit is needed.",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Wilderness permit at the trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Self-issue Mt. Skokomish Wilderness permit and Northwest Forest Pass at the kiosk.",
+     "replace": "Northwest Forest Pass to park; no wilderness permit is needed.",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Wilderness permit at the trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "fact": "Distance on FR-24 before turning onto FR-2419",
+   "verdict": "fixed",
+   "correct_value": "About 1.5 mi (1.5-1.6 mi) on FR-24",
+   "evidence": "The Forest Service Mt. Ellinor Trail #812 page and WTA's Mount Ellinor page both say turn right at the T and go 1.6 miles to FR 2419; the Mountaineers directions say 1.5 miles. 'About 1 mile' is wrong in three copies; road.driveNote's 1.5 mi stands.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/mt-ellinor-trail-812",
+    "https://www.wta.org/go-hiking/hikes/mount-ellinor",
+    "https://www.mountaineers.org/activities/routes-places/mount-ellinor"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "continue right onto FS Road 24 for about 1 mile",
+     "replace": "continue right onto FS Road 24 for about 1.5 miles",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Distance on FR-24 before turning onto FR-2419"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "turn right onto FS Road 24 and continue about a mile",
+     "replace": "turn right onto FS Road 24 and continue about 1.5 miles",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Distance on FR-24 before turning onto FR-2419"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "go right onto FS Road 24 for about a mile",
+     "replace": "go right onto FS Road 24 for about 1.5 miles",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Distance on FR-24 before turning onto FR-2419"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "fact": "Descent loss vs gain on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "WTA gives 3,190 ft gain and a blog 3,300 ft gain, but no outside source states a car-to-car descent figure for this route, so loss_ft is not changed (standing rule).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-washington",
+    "https://explorerron.com/2022/08/17/a-first-timers-guide-to-a-scrambling-mount-washington-olympic-national-forest/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_washington_olympic_standard",
+   "fact": "Entrance fee and camping permit in access.notes",
+   "verdict": "fixed",
+   "correct_value": "Only a Northwest Forest Pass applies; no entrance fee or wilderness permit",
+   "evidence": "access.notes says 'the standard entrance fee and wilderness camping permit apply', contradicting access.permit/fees on the same row. The Forest Service says no permit is needed in Olympic NF wilderness and WTA lists only a Northwest Forest Pass for this trailhead.",
+   "sources": [
+    "https://fs.usda.gov/r06/olympic/wilderness",
+    "https://www.wta.org/go-hiking/hikes/mount-washington"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply.",
+     "replace": "only the Northwest Forest Pass for parking applies.",
+     "id": "wa_mount_washington_olympic_standard",
+     "fact": "Entrance fee and camping permit in access.notes"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "fact": "Where the route leaves the road (trailhead)",
+   "verdict": "fixed",
+   "correct_value": "Park at the same FR-2419 road-end lot as the standard route; the way trail leaves the old roadbed on foot ~1,000 ft beyond the standard trail entrance, past the Big Creek crossing",
+   "evidence": "Mountain Project says to use the trail located 1,000 ft beyond the standard route trail entrance. A Simmons Mountain Works trip report says the road is closed soon after the 014 junction, and parties walk the old road 5-10 minutes, crossing Big Creek, to a distinct trail by a small stream. So the parking is shared and the offset is on foot; the variant's 'wrong place if you parked where everybody else parks' and the drive-to-the-second-crossing wording are corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/120817414/se-ridge-aka-shield-wall",
+    "https://simmonsmountain.works/workshop/mt-washingtons-se-ridge-alpine-climbing-in-the-olympic-range"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From Forest Road 2419 (off North Lake Cushman Road/FR-24), continue to just past the second crossing of Big Creek (~3,100 ft); a way trail leads",
+     "replace": "From the road-end parking on Forest Road 2419 (off North Lake Cushman Road/FR-24), shared with the standard route, walk the old roadbed past the standard route's trail entrance to just beyond the Big Creek crossing (~3,100 ft); a way trail leads",
+     "id": "wa_se_ridge_aka_shield_wall",
+     "fact": "Where the route leaves the road (trailhead)"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then left on FR-2419 to just past the second crossing of Big Creek (~3,100 ft); the SE Ridge/Shield Wall route starts roughly 1,000 ft beyond the standard-route trail entrance.",
+     "replace": "then left on FR-2419 about 6.6 mi to the road-end parking shared with the standard route (~3,026 ft). On foot, the SE Ridge/Shield Wall way trail leaves the old roadbed roughly 1,000 ft beyond the standard-route trail entrance, just past the Big Creek crossing.",
+     "id": "wa_se_ridge_aka_shield_wall",
+     "fact": "Where the route leaves the road (trailhead)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "This is NOT the standard route's trailhead: the way trail for this route leaves the road roughly 1,000 ft BEYOND the standard route's trail entrance, so if you have parked where everybody else parks, you are in the wrong place by a thousand feet of road.",
+     "replace": "Park there and continue on foot: this route's way trail leaves the old roadbed roughly 1,000 ft BEYOND the standard route's trail entrance, just past the crossing of Big Creek at about 3,100 ft, so do not take the first trail you come to.",
+     "id": "wa_se_ridge_aka_shield_wall",
+     "fact": "Where the route leaves the road (trailhead)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "instead of the one a thousand feet further up the road",
+     "replace": "instead of the one a thousand feet further along the old roadbed",
+     "id": "wa_se_ridge_aka_shield_wall",
+     "fact": "Where the route leaves the road (trailhead)"
+    }
+   ]
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "fact": "Driving directions to FR 2419",
+   "verdict": "fixed",
+   "correct_value": "SR-119 ~9 mi to the T, right on FR-24 ~1.5 mi, left on FR-2419 ~6.6 mi to road end",
+   "evidence": "The Forest Service Mt. Ellinor trail page and WTA both route SR-119 about 9 miles to FS Road 24, right 1.6 miles, then left onto FR 2419; the Mountaineers give 9.4 mi / 1.5 mi / 6.6 mi to the Washington road end. The variant's '1.5 miles then right onto 2419' is replaced.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/mt-ellinor-trail-812",
+    "https://www.wta.org/go-hiking/hikes/mount-ellinor",
+    "https://www.mountaineers.org/activities/routes-places/mount-ellinor"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From US 101 turn west onto Lake Cushman Road and in about 1.5 miles turn right onto Forest Road 2419. Continue up the Big Creek drainage to just past the SECOND CROSSING OF BIG CREEK, at about 3,100 ft.",
+     "replace": "From US 101 at Hoodsport take North Lake Cushman Road (SR-119) about 9 miles to the T, go right on FS Road 24 for about 1.5 miles, then left on Forest Road 2419 up the Big Creek drainage roughly 6.6 miles to the road-end parking the standard route also uses.",
+     "id": "wa_se_ridge_aka_shield_wall",
+     "fact": "Driving directions to FR 2419"
+    }
+   ]
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "fact": "Lead-rope length vs pitch length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project describes some pitches as full 60 m ('as few as two placements in a 60m pitch'), while the Simmons Mountain Works report (which climbed on a 70 m rope and found 60 m sufficient) recommends a 40 m lead line plus a 30 m rap line. The sources themselves disagree on whether a 40 m lead line works, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/120817414/se-ridge-aka-shield-wall",
+    "https://simmonsmountain.works/workshop/mt-washingtons-se-ridge-alpine-climbing-in-the-olympic-range"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "fact": "Summit waypoint difficulty",
+   "verdict": "fixed",
+   "correct_value": "5.7 rock route, 13 pitches",
+   "evidence": "Mountain Project lists 13 pitches, Grade III, 5.7; the Mountaineers route page calls it a 5.7 Grade III rock climb. The waypoint's 'class 3+ scramble' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/120817414/se-ridge-aka-shield-wall",
+    "https://www.mountaineers.org/activities/routes-places/mount-washington-shield-wall"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "class 3+ scramble.",
+     "replace": "a 5.7 rock climb of about 13 pitches.",
+     "id": "wa_se_ridge_aka_shield_wall",
+     "fact": "Summit waypoint difficulty"
+    }
+   ]
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "fact": "Parking pass",
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass (or America the Beautiful/Interagency pass)",
+   "evidence": "WTA's Mount Washington page requires a Northwest Forest Pass or America the Beautiful pass; the Forest Service says trailheads in Olympic NF wilderness need a recreation pass, not a park entrance fee. The NP entrance fee is replaced.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-washington",
+    "https://www.fs.usda.gov/r06/olympic/recreation/mount-skokomish-wilderness"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "value": "Northwest Forest Pass ($5 day / $30 annual) or America the Beautiful/Interagency pass.",
+     "id": "wa_se_ridge_aka_shield_wall",
+     "fact": "Parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "fact": "Wilderness permit for a day climb",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit is needed in the Mount Skokomish Wilderness",
+   "evidence": "The Olympic National Forest wilderness page states no permit is needed for Olympic NF wilderness areas; WTA lists only a parking pass for this trailhead.",
+   "sources": [
+    "https://fs.usda.gov/r06/olympic/wilderness",
+    "https://www.wta.org/go-hiking/hikes/mount-washington"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Skokomish Wilderness permit at the trailhead",
+     "replace": "No wilderness permit is needed in the Mount Skokomish Wilderness",
+     "id": "wa_se_ridge_aka_shield_wall",
+     "fact": "Wilderness permit for a day climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "fact": "Entrance fee and camping permit in access.notes",
+   "verdict": "fixed",
+   "correct_value": "Only a Northwest Forest Pass applies",
+   "evidence": "access.notes cites an entrance fee and wilderness camping permit that the Forest Service and WTA pages do not require for this trailhead.",
+   "sources": [
+    "https://fs.usda.gov/r06/olympic/wilderness",
+    "https://www.wta.org/go-hiking/hikes/mount-washington"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply.",
+     "replace": "only the Northwest Forest Pass for parking applies.",
+     "id": "wa_se_ridge_aka_shield_wall",
+     "fact": "Entrance fee and camping permit in access.notes"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "fact": "National-park rules in access.rules",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "access.rules lists Olympic National Park rules (designated group sites, park-wide bear canisters) on a Forest Service wilderness route whose land manager is Olympic NF. Two sources for the correct Mount Skokomish Wilderness rules were not gathered; left for review.",
+   "sources": [
+    "https://fs.usda.gov/r06/olympic/wilderness"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "fact": "Rope length vs the known rappel",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The rappels prose itself states that the listed 30 m handline does not reach the optional ~25 m rappel off an unreliable tree; the two fields agree rather than conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "fact": "Distance of the traverse",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One GPS-tracked report gives 6 miles and 4,250 ft for the whole route (not clearly trailhead-to-Ellinor-summit); another report gives about 2 miles between the summits. No source states the one-way figure dist_km needs or the waypoint mileages, so no patch.",
+   "sources": [
+    "https://climberkyle.com/2023/06/12/washington-ellinor-traverse/",
+    "https://hikingwithhadland.com/2021/08/28/mount-washington-ellinor-traverse-08-27-2021/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "fact": "Total time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only report with split times says 4.25 hr total, 1.5 hr to Washington and 3.25 hr to Ellinor, which itself does not add up; Mountain Project gives 3.5-4.5 hr for the traverse alone and another party took a full 10+ hr day. No two sources agree on a total.",
+   "sources": [
+    "https://climberkyle.com/2023/06/12/washington-ellinor-traverse/",
+    "https://www.mountainproject.com/route/119255389/washington-ellinor-traverse-ridge",
+    "https://hikingwithhadland.com/2021/08/28/mount-washington-ellinor-traverse-08-27-2021/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "fact": "Which section is the crux",
+   "verdict": "fixed",
+   "correct_value": "The crux is the loose gendarme downclimb (~50 ft) near the ridge's low point; the Wedge is the best climbing",
+   "evidence": "Mountain Project says downclimbing the ridge of gendarmes is the crux and only the initial Wedge is fun; a GPS-tracked trip report says the Wedge was cruised easily and the ~50 ft loose downclimb at the midway low point was the only unenjoyable section. rope_note is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/119255389/washington-ellinor-traverse-ridge",
+    "https://climberkyle.com/2023/06/12/washington-ellinor-traverse/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Crux is a ~150ft low-5th 'wedge' section near the start.",
+     "replace": "The ~150 ft low-5th 'Wedge' near the start is the best climbing; the crux is the loose gendarme downclimb near the ridge's low point.",
+     "id": "wa_washington_ellinor_traverse_ridge",
+     "fact": "Which section is the crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "fact": "Land manager and parking pass",
+   "verdict": "fixed",
+   "correct_value": "Olympic National Forest, Mount Skokomish Wilderness; Northwest Forest Pass",
+   "evidence": "The Forest Service lists the Mount Skokomish Wilderness as an Olympic National Forest unit, and both trailheads (Washington road end and Ellinor upper) are Forest Service trailheads needing a Northwest Forest Pass per WTA. The NP land manager, permit zone and entrance fee are replaced.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/mount-skokomish-wilderness",
+    "https://www.wta.org/go-hiking/hikes/mount-washington",
+    "https://www.wta.org/go-hiking/hikes/mount-ellinor"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "expect": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "value": "USDA Forest Service — Olympic National Forest (Mount Skokomish Wilderness)",
+     "id": "wa_washington_ellinor_traverse_ridge",
+     "fact": "Land manager and parking pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "Olympic National Park (park side) / Olympic National Forest (forest side)",
+     "value": "Olympic National Forest (Mount Skokomish Wilderness)",
+     "id": "wa_washington_ellinor_traverse_ridge",
+     "fact": "Land manager and parking pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "Olympic National Park Daniel J. Evans Wilderness (if using park trailhead)",
+     "value": "Mount Skokomish Wilderness, Olympic National Forest",
+     "id": "wa_washington_ellinor_traverse_ridge",
+     "fact": "Land manager and parking pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "value": "Northwest Forest Pass ($5 day / $30 annual) or America the Beautiful/Interagency pass.",
+     "id": "wa_washington_ellinor_traverse_ridge",
+     "fact": "Land manager and parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "fact": "Wilderness permit in the permit field",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit is needed in the Mount Skokomish Wilderness",
+   "evidence": "permit requires a self-issue wilderness permit while access.permit says a day hike needs none. The Forest Service states no permit is needed for Olympic NF wilderness areas; WTA lists only a parking pass.",
+   "sources": [
+    "https://fs.usda.gov/r06/olympic/wilderness",
+    "https://www.wta.org/go-hiking/hikes/mount-washington"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Mount Skokomish Wilderness permit at the trailhead",
+     "replace": "No wilderness permit is needed in the Mount Skokomish Wilderness",
+     "id": "wa_washington_ellinor_traverse_ridge",
+     "fact": "Wilderness permit in the permit field"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "fact": "Entrance fee and camping permit in access.notes",
+   "verdict": "fixed",
+   "correct_value": "Only a Northwest Forest Pass applies",
+   "evidence": "access.notes cites an entrance fee and wilderness camping permit that the Forest Service and WTA pages do not require for these trailheads.",
+   "sources": [
+    "https://fs.usda.gov/r06/olympic/wilderness",
+    "https://www.wta.org/go-hiking/hikes/mount-washington"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "only the standard entrance fee and wilderness camping permit apply.",
+     "replace": "only the Northwest Forest Pass for parking applies.",
+     "id": "wa_washington_ellinor_traverse_ridge",
+     "fact": "Entrance fee and camping permit in access.notes"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "fact": "Distance on FR-24 before turning onto FR-2419",
+   "verdict": "fixed",
+   "correct_value": "About 1.5 mi (1.5-1.6 mi)",
+   "evidence": "Forest Service and WTA Mount Ellinor pages give 1.6 miles on FR 24; the row's road.driveNote gives 1.5 mi while the trailhead directions and variant say 'about a mile'.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/mt-ellinor-trail-812",
+    "https://www.wta.org/go-hiking/hikes/mount-ellinor"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "Take FS Road 24 for about a mile",
+     "replace": "Take FS Road 24 for about 1.5 miles",
+     "id": "wa_washington_ellinor_traverse_ridge",
+     "fact": "Distance on FR-24 before turning onto FR-2419"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "FS Road 24 off North Lake Cushman Road for about a mile",
+     "replace": "FS Road 24 off North Lake Cushman Road for about 1.5 miles",
+     "id": "wa_washington_ellinor_traverse_ridge",
+     "fact": "Distance on FR-24 before turning onto FR-2419"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "fact": "National-park rules in access.rules",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "access.rules lists Olympic National Park rules (designated group sites, park-wide bear canisters) on a Forest Service wilderness traverse. Correct Mount Skokomish Wilderness rules not double-sourced; left for review.",
+   "sources": [
+    "https://fs.usda.gov/r06/olympic/wilderness"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_washington_olympic_winter_direct",
+   "fact": "Trailhead and access road",
+   "verdict": "fixed",
+   "correct_value": "The Jefferson Pass trailhead is at the end of FR-2419, beside the Mount Washington trailhead",
+   "evidence": "Mountain Project names the start the 'Mount Washington - Jefferson Pass Trailhead'. The Jefferson Pass Trail #800 listing directs SR-119 9 mi, right 1.6 mi on FS 24, then FS 2419 about 7 miles to the trailhead, and AllTrails notes the Mount Washington trailhead serves as access to it. The road card is therefore correct; the approach is clarified so both name the same place.",
+   "sources": [
+    "https://www.mountainproject.com/route/122000159/winter-direct",
+    "https://www.go-washington.com/Jefferson-Pass-Trail-800-Washington/",
+    "https://www.alltrails.com/trail/us/washington/jefferson-pass"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Start at the Jefferson Pass trailhead and follow",
+     "replace": "Start at the Jefferson Pass trailhead at the end of FR-2419, beside the Mount Washington trailhead, and follow",
+     "id": "wa_mount_washington_olympic_winter_direct",
+     "fact": "Trailhead and access road"
+    }
+   ]
+  }
+ ]
+}

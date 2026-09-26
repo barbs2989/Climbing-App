@@ -1,0 +1,33 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "gain copied from Dorado Needle East Ridge"
+  },
+  {
+   "id": "wa_east_ridge",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "loss copied from Dorado Needle East Ridge"
+  },
+  {
+   "id": "wa_east_ridge",
+   "column": "dist_km",
+   "path": [],
+   "fact": "dist copied from Dorado Needle East Ridge"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_ridge",
+   "before": {
+    "gain_ft": 5700,
+    "loss_ft": 5700,
+    "dist_km": 6.4
+   }
+  }
+ ]
+}

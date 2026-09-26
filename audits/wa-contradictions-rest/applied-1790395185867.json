@@ -1,0 +1,125 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_angeles_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Where the scramble leaves the trail"
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "column": "grade",
+   "path": [],
+   "fact": "Scramble grade"
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Scramble grade"
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "column": "waypoints",
+   "path": [
+    3,
+    "elev"
+   ],
+   "fact": "Elevation of fork and base of summit block"
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Heart o' the Hills reservations"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_angeles_standard",
+   "before": {
+    "beta": "From the Switchback Trailhead on Hurricane Ridge Road, hike the Switchback Trail steeply up through subalpine forest (about 1,500 ft in 1.5 miles) to Klahhane Ridge, continuing to Victor Pass (5,850 ft) where the true summit of Mount Angeles rises directly to the west. Leave the maintained trail here and scramble class 3-4 terrain over loose rock/talus to the summit. There is no roped climbing on the standard route, but the exposure and loose rock warrant caution and route-finding care.",
+    "grade": "Class 2-3",
+    "rock_grade": "Class 3-4 (exposed scramble)",
+    "waypoints": [
+     {
+      "lat": 47.9693,
+      "lng": -123.4985,
+      "elev": 5253,
+      "name": "Hurricane Ridge Visitor Center (High Ridge Trailhead)",
+      "note": "Start at the east end of the Hurricane Ridge parking lot on the paved Cirque Rim path onto High Ridge Trail; restrooms/potable water here in summer, none beyond this point.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Hurricane Ridge Road about 17 miles south from Port Angeles — Race Street off Highway 101 — to the road's end at the Hurricane Ridge Visitor Center, around 5,250 ft. Park in the visitor center lot and start at its east end, on the paved Cirque Rim path onto the High Ridge Trail. Come early, since parking here fills. The seasonal contact station has restrooms and potable water, and it is the last of either — there is no reliable water anywhere past the lot."
+     },
+     {
+      "lat": 47.97,
+      "lng": -123.495,
+      "elev": 5500,
+      "name": "Sunrise Point spur junction",
+      "note": "Optional 0.2-mi dead-end spur to a panoramic overlook; stay on the main High Ridge/Sunrise Ridge Nature Trail toward Klahhane Ridge to continue.",
+      "type": "Junction",
+      "distMi": 0.5
+     },
+     {
+      "lat": 47.979664,
+      "lng": -123.484171,
+      "elev": 6050,
+      "name": "Morse Creek valley overlook spur",
+      "note": "Short spur trail to a viewpoint over the Morse Creek/Elwha drainages; roughly 800 ft of the day's climbing is behind you and the trail steepens above.",
+      "type": "Junction",
+      "distMi": 1.5
+     },
+     {
+      "lat": 47.987395,
+      "lng": -123.475508,
+      "elev": 6150,
+      "name": "Mount Angeles trail fork (Klahhane Ridge split)",
+      "note": "Bear left to stay on the climbers' path toward the Mount Angeles summit block; the right fork continues along Klahhane Ridge toward Victor Pass/Lake Angeles and is not the summit route.",
+      "type": "Junction",
+      "distMi": 2.3
+     },
+     {
+      "lat": 47.99416,
+      "lng": -123.467928,
+      "elev": 6410,
+      "name": "Exposed Class 3 crux step below summit block",
+      "note": "~40-ft exposed move on loose, rotten rock near the top of the scree bowl where the boot path fades into talus; a fall here could exceed 100 ft, many parties spot or rope this step.",
+      "type": "Hazard",
+      "distMi": 3
+     },
+     {
+      "lat": 47.995285,
+      "lng": -123.467305,
+      "elev": 6454,
+      "name": "Mount Angeles summit",
+      "note": "True summit (6,454 ft), high point of the Klahhane Ridge/Hurricane Ridge area with views over the Elwha Valley, Port Angeles, and the Strait of Juan de Fuca.",
+      "type": "Summit",
+      "distMi": 3.125
+     }
+    ],
+    "access": {
+     "fees": "NPS entrance fee required: $30/private vehicle (7-day pass), $25/motorcycle, $15/person on foot or bike; Olympic-specific annual pass $55; America the Beautiful passes accepted. Park does not accept cash — card/electronic payment only.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Standard Leave No Trace / NPS wilderness rules apply beyond the trailhead: no dogs or bikes on trail, stay on the established boot path on the summit block to limit erosion, pack out all trash.",
+     "permit": "No permit needed for a day scramble. A wilderness permit (via recreation.gov, $8/person/night + $6 non-refundable reservation fee, or covered by the $45 Annual Wilderness Pass) is only required if camping overnight in the backcountry.",
+     "closures": "Hurricane Ridge Road is gated nightly and, in winter (roughly mid-Dec–late March), is plowed and open for uphill travel only Friday–Sunday (plus a few holiday exceptions) from about 9am–4pm; traction tires/chains are often required. The Hurricane Ridge Day Lodge burned down in an unexplained May 2023 fire and has not been rebuilt: the park's reconstruction page (updated August 25, 2026) lists the project in design, with construction starting in 2028 at the earliest, so there are no indoor visitor facilities at the top — only temporary restroom trailers, and no water or food. The road has also had periodic multi-day closures for rockfall/unstable slopes, and summer 2026 utility work and meadow-trail construction may cause intermittent weekday impacts. Check the NPS current road conditions page or call (360) 565-3131 before driving up.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park — the Hurricane Ridge day-use corridor is developed, non-wilderness NPS land; the route crosses into the Daniel J. Evans Wilderness along Klahhane Ridge beyond the immediate visitor-center area",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass, checked at the Heart O' the Hills entrance station on Hurricane Ridge Road.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit needed for the day climb",
+      "where": "Heart o' the Hills is a fee campground inside the park; reserve a site on Recreation.gov or take a first-come site."
+     }
+    }
+   }
+  }
+ ]
+}

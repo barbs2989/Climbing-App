@@ -1,0 +1,262 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Madison Falls road walk"
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Madison Falls road walk"
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Madison Falls road walk"
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Where the route leaves the trail"
+  },
+  {
+   "id": "wa_mount_norton_scramble",
+   "column": "best_season",
+   "path": [],
+   "fact": "Where the route leaves the trail"
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "column": "hazards",
+   "path": [
+    0
+   ],
+   "fact": "Approach side (Elwha vs North Fork Quinault)"
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "column": "what_to_bring",
+   "path": [
+    3
+   ],
+   "fact": "Approach side (Elwha vs North Fork Quinault)"
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Approach side (Elwha vs North Fork Quinault)"
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach side (Elwha vs North Fork Quinault)"
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach side (Elwha vs North Fork Quinault)"
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Approach side (Elwha vs North Fork Quinault)"
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Walk-up permits"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_norton_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "As of the 2024 Olympic Hot Springs Road washout, vehicle access ends at Madison Falls, adding roughly 6.2 miles each way of road walking/biking before the old Whiskey Bend trailhead; check NPS Wilderness Trail Conditions for washouts beyond Elkhorn, and get a wilderness camping permit — best conditions are June through August.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the trailhead (currently Madison Falls, since the Olympic Hot Springs Road washout closed vehicle access beyond there) follow the old road bed and then the Elwha River Trail south through second-growth and old-growth forest. Grade is gentle and the trail is well-graded, so this is mostly a long valley walk.",
+       "hours": 6.5,
+       "miles": 11.5,
+       "title": "Backpack in to lower Elwha camp",
+       "gainFt": 900,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach Elkhorn / Camp Wilder area"
+      },
+      {
+       "n": 2,
+       "note": "A shorter day continuing up-valley along the Elwha River Trail to the Hayes River patrol cabin/camp area, which sits almost directly below Mount Norton's steep east face. Check current NPS trail-condition reports first — sections between Elkhorn and Hayes River have had flood/landslide damage in recent years.",
+       "hours": 3,
+       "miles": 5.3,
+       "title": "Continue to Hayes River",
+       "gainFt": 500,
+       "lossFt": 100,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Camp near Hayes River Guard Station"
+      },
+      {
+       "n": 3,
+       "note": "Leave the heavy gear at Hayes River camp and climb the steep, brushy east aspect (about 3,200 ft of gain in under a mile per the peak's official description) to the upper ridge, then follow class 2 talus/heather slopes to the summit. Out-and-back to the same camp same day.",
+       "hours": 8,
+       "miles": 4.2,
+       "title": "Summit push",
+       "gainFt": 3400,
+       "lossFt": 3400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Hayes River camp",
+         "detail": "Light day pack, leave tents/food cache set up."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start the steep east-side climb",
+         "detail": "Brushy, unmaintained, steep — pick the path of least resistance up open timber and heather bands."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Gain the summit ridge",
+         "detail": "Terrain eases to class 2 talus and heather."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Reach the summit (6,321 ft)",
+         "detail": "Views over the Bailey Range and Elwha/Hayes drainages."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line; steep terrain is slower and harder to reverse than it looks."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Back at Hayes River camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Mount Norton's east side and return to camp"
+      },
+      {
+       "n": 4,
+       "note": "Retrace the Elwha River Trail (and road-walk/bike section from Madison Falls if the road closure is still in effect) all the way back to the car. A long but flat-grade day.",
+       "hours": 8,
+       "miles": 16.8,
+       "title": "Hike out",
+       "gainFt": 300,
+       "lossFt": 1600,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A remote 4-day trip, roughly 38 miles and ~5,000+ ft round trip: two long valley-trail days in, one steep off-trail summit day from a Hayes River camp, and one long day out."
+    },
+    "watch_out": [
+     "Road washout adds ~13 extra round-trip miles just to reach Whiskey Bend trailhead — factor this into trip planning and permits",
+     "No cell coverage anywhere along the approach or on the peak",
+     "Off-trail navigation skills required past Hayes River Guard Station; parties report no marked scramble route",
+     "Check current NPS fire and trail-condition pages before departure given past fire activity in the upper Elwha watershed"
+    ],
+    "approach_logistics": {
+     "peakLat": 47.762435,
+     "peakLng": -123.413675,
+     "trailhead": "Whiskey Bend Trailhead (Elwha)",
+     "trailheadLat": 47.968,
+     "trailheadLng": -123.583,
+     "trailheadDirection": "Via the Elwha Valley: Olympic Hot Springs Road is closed to vehicles at Madison Falls — walk or bike ~8 miles to the Whiskey Bend Trailhead"
+    },
+    "approach": "From the Madison Falls trailhead (the end of vehicle access since November 2017 flood damage), walk or bike roughly 7 miles up the closed road to the Whiskey Bend trailhead, then follow the Elwha River Trail deep into the park interior toward the Elwha Basin/Bailey Range country before leaving the trail to scramble Mount Norton.",
+    "best_season": "June through August offers the most favorable snow-free conditions for viewing or climbing; the NPS notes snow can linger into July on the approach beyond Chicago Camp, so early-season parties should expect residual snow on upper slopes."
+   }
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "before": {
+    "hazards": [
+     "Elwha River ford required at Chicago Camp — can be hazardous during high water/snowmelt",
+     "Off-trail travel above Chicago Camp/Low Divide is unmaintained and choked with alder in places",
+     "Lingering steep snowfingers in the approach cols into early summer (reported up to ~60°)",
+     "Loose rock on cliff bands below the summit cirque",
+     "Extreme remoteness — no cell coverage on approach or summit; any rescue is multi-day"
+    ],
+    "what_to_bring": [
+     "Ice axe and light crampons for lingering snow in the cols, even in July",
+     "Wilderness camping permit (reserve on Recreation.gov) and a bear canister",
+     "Full multi-day backpacking kit — this is a 4-6 day wilderness expedition, not a day scramble",
+     "Map/compass or GPS for the unmaintained off-trail section above Chicago Camp"
+    ],
+    "watch_out": [
+     "The off-trail route above Chicago Camp is easy to lose in alder thickets past the last cairns — be ready to navigate by map/compass or GPS",
+     "Avoid attempting the summit push in cloud or low visibility — the cirque and views are the payoff, and cross-country navigation is much harder without them",
+     "Check current NPS road/trail status before you go — the Olympic Hot Springs Road washout has materially changed the approach mileage"
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high endurance for a multi-day approach (typically via Elwha River trail to a high camp in the upper Elwha/Seattle Basin) with sustained off-trail travel over talus, brush, and eroded sidehill terrain",
+      "packWeight": "Heavy overnight/multi-day pack (camping gear, food, navigation/river-ford gear) for the approach, lighter summit-day pack from high camp"
+     },
+     "approachTime": "Multi-day approach; a long trail hike up the Elwha to a high camp in the upper Elwha Basin, then a pre-dawn scramble summit push — total trip typically several days",
+     "requiredSkills": [
+      "off-trail routefinding on trail-less, unmarked terrain",
+      "river fording (Elwha drainage) at variable water levels",
+      "Class 2-3 scrambling with exposure on loose rock",
+      "wilderness backcountry camping and Leave No Trace practice",
+      "self-sufficient trip planning (no cell coverage, long walk-out if injured)"
+     ],
+     "experienceLevel": "Experienced backcountry scramblers/mountaineers comfortable with multi-day, trail-less wilderness travel in the Olympics; prior off-trail Olympics or similar PNW alpine-scramble experience strongly preferred given the long remote approach and routefinding demands"
+    },
+    "access": {
+     "fees": "Park entrance fee",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "National Park wilderness regulations; bear-resistant food storage; pack it in/pack it out",
+     "permit": "Wilderness camping permit required for overnight stays; summer-season (mid-May to mid-October) permits are reserved online via recreation.gov, with walk-up permits available at Wilderness Information Centers",
+     "closures": "Elwha access road closed to vehicles beyond Madison Falls since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026; North Fork Quinault Road generally unaffected but may close seasonally in winter",
+     "group_limit": 12,
+     "landManager": "Olympic National Park",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "America the Beautiful pass or an Olympic National Park entrance pass (annual or 7-day) for vehicle/per-person park entry.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    }
+   }
+  }
+ ]
+}

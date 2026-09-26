@@ -1,0 +1,312 @@
+{
+ "file": "r620.json",
+ "results": [
+  {
+   "id": "wa_dirty_sanchez",
+   "fact": "Bolted anchors on the lower pitches",
+   "verdict": "fixed",
+   "correct_value": "P1 belays at a large tree; P2-P4 bolted belays; P5 gear-built belay; P6 bolted; P7 single bolt backed with gear.",
+   "evidence": "A detailed trip report lists anchors pitch by pitch: tree atop P1, pair of bolts P2 and P3, trio of bolts P4, climber-built gear anchor P5, bolts P6, single bolt plus gear P7. A second independent trip report agrees on the tree at P1, a two-bolt anchor at P2, a self-built anchor at P5 and a single bolt at the top. So 'lower pitches bolted, upper gear' was an oversimplification, and the base-finding negative marker (bolted belays from the first pitch) is sharpened to the first belay, which is a tree here and bolted on the neighbouring route.",
+   "sources": [
+    "https://rocknropenw.com/2023/05/09/the-dirty/",
+    "https://www.jessb.org/cracking-the-goose-egg-dirty-sanchez/",
+    "https://www.mountainproject.com/route/119210014/the-dirty"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "Lower pitches have bolted anchors; upper pitches rely on gear placement for anchors",
+     "replace": "Pitch 1 belays at a big tree and pitches 2-4 at bolts; pitch 5 needs a gear-built belay, pitch 6 has bolts again, and the top anchor is a single bolt to back up with gear",
+     "id": "wa_dirty_sanchez",
+     "fact": "Bolted anchors on the lower pitches"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "and bolted belay stations on the first few pitches, you are back",
+     "replace": "and a bolted belay at the top of the very first pitch, you are back",
+     "id": "wa_dirty_sanchez",
+     "fact": "Bolted anchors on the lower pitches"
+    }
+   ]
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "fact": "Rappel anchors along the route",
+   "verdict": "fixed",
+   "correct_value": "Most belays are bolted, but P5 has no fixed anchor and the top anchor is a single bolt.",
+   "evidence": "Two independent trip reports both had to build their own gear anchor at the top of pitch 5 and found only a single bolt at the top anchor, which they backed up with a cam/tricam. 'Multiple rappel anchors throughout' is therefore wrong for the upper route.",
+   "sources": [
+    "https://rocknropenw.com/2023/05/09/the-dirty/",
+    "https://www.jessb.org/cracking-the-goose-egg-dirty-sanchez/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "Multiple rappel anchors exist throughout the route.",
+     "replace": "Most belays are bolted, but pitch 5 has no fixed anchor and the top anchor is a single bolt, so bailing from high on the route means leaving gear.",
+     "id": "wa_dirty_sanchez",
+     "fact": "Rappel anchors along the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "fact": "Crux pitch grade",
+   "verdict": "fixed",
+   "correct_value": "5.5",
+   "evidence": "The route's database page grades P7 (the Jenga Traverse) 5.5; two independent trip reports also call the final knife-edge pitch 5.5, with the difficulty coming from sparse protection.",
+   "sources": [
+    "https://www.mountainproject.com/route/119210014/the-dirty",
+    "https://www.jessb.org/cracking-the-goose-egg-dirty-sanchez/",
+    "https://rocknropenw.com/2023/05/09/the-dirty/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      6,
+      "grade"
+     ],
+     "expect": "5.8",
+     "value": "5.5",
+     "id": "wa_dirty_sanchez",
+     "fact": "Crux pitch grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "fact": "Parking pass vs land manager",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Discover Pass requirement found online applies to the Oak Creek Wildlife Area lot at the Royal Columns, lower in the canyon, not to the Tieton Reservoir Road pullouts. No source found states which pass (if any) the FR-1200 roadside pullouts under Goose Egg need.",
+   "sources": [
+    "https://www.mountainproject.com/area/105922165/royal-columns",
+    "https://www.mountainproject.com/area/108022255/goose-egg-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "fact": "Rappelling the route as a descent",
+   "verdict": "fixed",
+   "correct_value": "Standard descent is the gully walk-off with one short rappel; the lower 4-5 bolted belays can be rappelled with two ropes; above them belays are gear.",
+   "evidence": "The route's database page says the first 4-5 belays are bolted and that continuing over the top may be safer than descending the route; the descent is a walk-off climber's left with one short rappel. A trip report retreated from the top of pitch 5 by rappelling the bolted belays with two 60 m ropes (5 rappel stations).",
+   "sources": [
+    "https://www.mountainproject.com/route/108454104/ride-the-lightning",
+    "https://rocknropenw.com/2014/05/05/ride-the-lightning/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "Rappel descent is possible from any pitch via existing anchors or fixed gear. Multiple rap stations exist; ensure adequate rope length for descent.",
+     "replace": "Retreat by rappel is possible from the bolted belays on the lower 4-5 pitches, but it needs two ropes; above them the belays are gear, so from high on the route it is usually safer to continue to the top and walk off.",
+     "id": "wa_ride_the_lightning_2",
+     "fact": "Rappelling the route as a descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Alternatively, rappel the route via existing anchors.",
+     "replace": "A party that stops at or below the top of pitch 5 can instead rappel the bolted belays, with two ropes.",
+     "id": "wa_ride_the_lightning_2",
+     "fact": "Rappelling the route as a descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "fact": "Car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only timed report found tied in at 9 AM and was down at 6:30 PM, but it bailed from pitch 5 by rappel with a stuck-rope delay, so the 9.5 h is route time for an atypical retreat, not a car-to-car time. A trip report on the neighbouring route on the same cliff gives 8.25 h car-to-car. No two sources give a car-to-car figure for this route.",
+   "sources": [
+    "https://rocknropenw.com/2014/05/05/ride-the-lightning/",
+    "https://www.jessb.org/cracking-the-goose-egg-dirty-sanchez/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "fact": "Rock type",
+   "verdict": "fixed",
+   "correct_value": "andesite",
+   "evidence": "The Washington Climbers Coalition's Tieton page says Tieton climbs are mostly on andesite; the geological literature places the Tieton volcano (andesite dikes and lava flows) at Rimrock, where Goose Egg sits, and the Royal Columns are in the Tieton Andesite. The sister route's own access note already says andesite.",
+   "sources": [
+    "https://washingtonclimbers.org/index.php/2015/10/13/tieton/",
+    "https://pubs.geoscienceworld.org/gsa/gsabulletin/article-abstract/77/11/1293/6012/Tieton-Volcano-a-Miocene-Eruptive-Center-in-the?redirectedFrom=fulltext",
+    "https://trid.trb.org/View/1692611"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "multi-pitch basalt crag",
+     "replace": "multi-pitch andesite crag",
+     "id": "wa_ride_the_lightning_2",
+     "fact": "Rock type"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cruiser_nw_face_corner",
+   "fact": "Legality of a high camp at Gladys Divide/Needle Pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The park lists Gladys Divide inside the Flapjack Lakes quota area, and the park's trail page says camping at Flapjack Lakes is in designated sites only. But search results citing climbing pages say there is no official Gladys Divide site and that climbers bivy just over the divide (outside the park, in the Mount Skokomish Wilderness) without a park permit, which contradicts the bivy card's 'no legal higher camp'. The bivy card is owned by the camping clean-up, and the pages that describe the high bivy could not be fetched to confirm it, so no patch.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/flapjack-lakes-trail.htm",
+    "https://www.summitpost.org/cruiser-mount/151837"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cruiser_nw_face_corner",
+   "fact": "Route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way approach; 12.4 km (7.7 mi) matches the ~8 mi hike in, and the itinerary's ~20 mi is the round-trip total over all days.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Number of rappels on the descent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One climbing page describes a 25 m rappel to the platform and then two more 30 m rappels to the ground (three total). Trip reports disagree: one party made one 30 m rappel down the gully below the peak plus one in the couloir moat; another made a short rappel off the summit anchor and one more to the gully base; a third got by with some roped downclimbing and one rope. Parties clearly vary, and no two sources agree on a count.",
+   "sources": [
+    "https://www.summitpost.org/mount-cruiser/151837",
+    "https://trailcatjim.com/mt-cruiser-via-flapjack-lakes-needle-pass-beta-peak-south-corner-2023/",
+    "https://www.jessb.org/mt-cruiser-south-corner-50/",
+    "https://trailcatjim.com/mt-cruiser-via-needle-pass-south-corner-2000/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Gain from trailhead to base of technical climbing",
+   "verdict": "fixed",
+   "correct_value": "Needle Pass is at about 5,700 ft; the base of the route is beyond it.",
+   "evidence": "A trip report puts Needle Pass at 5,720 ft; a climbing page describes Needle Pass as about 700 ft above Gladys Divide (~5,000 ft), i.e. ~5,700 ft. Starting at ~850 ft, 3,600-3,900 ft of gain cannot reach the base of the climb. The unsupported gain figure is replaced with the pass elevation rather than a computed total.",
+   "sources": [
+    "https://trailcatjim.com/mt-cruiser-via-flapjack-lakes-needle-pass-beta-peak-south-corner-2023/",
+    "https://www.summitpost.org/cruiser-mount/151837"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "All told this is roughly 8-9 miles and 3,600-3,900 ft of gain from the trailhead to the base of the technical climbing",
+     "replace": "All told this is roughly 8-9 miles from the trailhead to the base of the technical climbing, crossing Needle Pass at about 5,700 ft on the way",
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Gain from trailhead to base of technical climbing"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Approach season vs optimal window",
+   "verdict": "fixed",
+   "correct_value": "Late June to September",
+   "evidence": "Trip reports document the approach and climb done well before mid-July: one party on July 8-9, 2000 (snow couloir soft, crampons used) and another on June 14, 2013. The row's season, seasonal guidance and bivy text all say late June through September.",
+   "sources": [
+    "https://trailcatjim.com/mt-cruiser-via-needle-pass-south-corner-2000/",
+    "https://cascadeclimbers.com/forum/topic/91713-tr-mt-cruiser-south-corner-6142013/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Mid-July to September",
+     "value": "Late June to September",
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Approach season vs optimal window"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Climbed length vs pitch/rappel lengths",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source gives a total route length. One trip report gives a 23 m fifth-class pitch plus ~25 m along the summit arete; another source mentions a ~70 ft first pitch; the pitch table's 60 m first pitch includes the Class 4 chute. The sources do not agree on a figure to adopt for length_m.",
+   "sources": [
+    "https://trailcatjim.com/mt-cruiser-via-flapjack-lakes-needle-pass-beta-peak-south-corner-2023/",
+    "https://www.mountainproject.com/area/111020284/mt-cruiser"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Which pitch is the crux / pitch structure",
+   "verdict": "fixed",
+   "correct_value": "Class 4 gully past the Cannon Hole chockstone to the platform; the low-5th face pitch goes from the platform to a bolted belay on the ridge crest; then an easy, exposed Class 3-4 ridge to the summit.",
+   "evidence": "A trip report describes a 23 m 5.0-5.6 pitch followed by ~25 m of Class 3-4 along the summit arete. A climbing page describes downclimbing the Class 3 pitch and then rappelling 25 m to the platform, i.e. the fifth-class pitch starts at the platform, above the chockstone. The overview and pitch table already agree with this; the beta was the outlier in putting the 5th-class pitch at the chockstone.",
+   "sources": [
+    "https://trailcatjim.com/mt-cruiser-via-flapjack-lakes-needle-pass-beta-peak-south-corner-2023/",
+    "https://www.summitpost.org/mount-cruiser/151837",
+    "https://www.mountainproject.com/area/111020284/mt-cruiser"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "A short low-5th-class face pitch, protected by small cams/nuts plus a bolt and reportedly an old piton partway up, leads through or past the cannon-hole chockstone to a ledge;",
+     "replace": "A Class 4 gully leads past the cannon-hole chockstone to a platform, and from there a short low-5th-class face pitch, protected by small cams/nuts plus a bolt and reportedly an old piton partway up, reaches a bolted belay on the ridge crest;",
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Which pitch is the crux / pitch structure"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "fact": "Fees beyond the entrance fee",
+   "verdict": "fixed",
+   "correct_value": "$6 non-refundable reservation fee per permit plus $8 per person per night (16+).",
+   "evidence": "The park's wilderness reservations page and the federal booking page for the Olympic wilderness permit both state a $6 non-refundable reservation fee per overnight permit plus $8 per person per night for adults 16 and over (youth free).",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.recreation.gov/permits/4098362"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": "None beyond the parking or entrance fee this route already lists.",
+     "replace": "The overnight at Flapjack Lakes carries the park's wilderness permit fees: a $6 non-refundable reservation fee per permit plus $8 per person per night for anyone 16 or older.",
+     "id": "wa_mount_cruiser_south_corner",
+     "fact": "Fees beyond the entrance fee"
+    }
+   ]
+  }
+ ]
+}

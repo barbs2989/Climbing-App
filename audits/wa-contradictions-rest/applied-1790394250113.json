@@ -1,0 +1,179 @@
+{
+ "applied": [
+  {
+   "id": "wa_windy_peak_trail",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Summit time holds the car-to-car total"
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Ranger district"
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "column": "grade",
+   "path": [],
+   "fact": "Grade of the summit finish"
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    3
+   ],
+   "fact": "Grade of the summit finish"
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Grade of the summit finish"
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Grade of the summit finish"
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Optimal season"
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass example trailheads"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_windy_peak_trail",
+   "before": {
+    "approach_logistics": {
+     "peakLat": 48.928205,
+     "peakLng": -119.970556,
+     "trailhead": "Cathedral Driveway Trailhead",
+     "trailheadDirection": "From Tonasket, cross the Okanogan River and drive west on Loomis-Oroville Road to Loomis."
+    },
+    "timing": {
+     "totalHrs": 9.5,
+     "summitTimeHrs": 9.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9.5,
+       "note": "Nearly all parties do this route car-to-car in one long day: climb out of Long Swamp Campground through old burn to Two Bear Camp for water, then continue up open, formerly-timbere…",
+       "fromTo": "Long Swamp Trail to the summit and back",
+       "section": "Climb"
+      }
+     ]
+    },
+    "access": {
+     "fees": "Northwest Forest Pass (or Interagency/America the Beautiful pass) required for trailhead parking, or $5/vehicle/day self-pay if no pass; Senior, Access, and Military passes are exempt from the day-use fee.",
+     "rules": "Standard Pasayten Wilderness regulations apply (group-size limits, no mechanized/motorized travel, Leave No Trace, pack out all trash); certified weed-free hay/pellets are required for any pack or saddle stock. Dogs allowed on leash.",
+     "permit": "Free self-issued wilderness permit at the trailhead register (Pasayten Wilderness).",
+     "closures": "Trail is typically snowbound until roughly June/early July; check Methow Valley Ranger District conditions before an early-season trip. High fire-danger closures are possible in late summer — verify current Okanogan-Wenatchee NF alerts before driving in.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District — the Long Swamp/Windy Peak Trail #342 corridor and trailhead fall within this district's Pasayten Wilderness portion, not the neighboring Tonasket Ranger District.",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "passRequired": "Northwest Forest Pass or equivalent Interagency pass.",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+     }
+    },
+    "grade": "Class 1 (trail)",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Full-day fitness for a long trail outing - on the order of 10-14 miles round trip with sustained elevation gain via the Windy Creek or Long Swamp approach; needs to hold a steady pace over many hours",
+      "packWeight": "Day-hike weight (roughly 15-20 lb including extra water, since the upper route has limited water, plus layers and lightning-storm contingency gear); overnight car-camp option at Long Swamp adds standard backpacking weight for that leg only"
+     },
+     "approachTime": "Long access drive (20+ miles of paved/gravel Toats Coulee Road to the Long Swamp / Windy Peak trail system) plus a several-mile trail approach one-way to the summit, making this a full long day or a car-camp-and-day-hike trip",
+     "requiredSkills": [
+      "Trail navigation over a long, remote approach",
+      "Basic mountain-weather judgment - willingness to retreat off the exposed summit ridge if thunderstorms build",
+      "Self-sufficiency for a remote wilderness trailhead (long drive-in, no cell coverage, limited water high on the route)",
+      "No technical or scrambling skills required - standard maintained-trail walk-up"
+     ],
+     "experienceLevel": "Beginner-to-intermediate hiker is fine technically (Class 1 maintained trail, no exposure or scrambling skill needed), but a partner should be comfortable with long, remote, self-sufficient wilderness days - this is noted as the farthest Bulger from any trailhead, reached via a long paved/gravel access road with no cell coverage"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Typical dry Pasayten/Okanogan summer-to-fall pattern - warm, dry midsummer days giving way to cooler, more unsettled weather by September-October",
+      "probability": "Afternoon thunderstorms are the primary named risk (lightning on the exposed summit); most likely July-August"
+     },
+     "exposure": "Low fall-exposure overall (Class 1 maintained trail), but an exposed summit ridge carries real lightning/weather exposure - the main consequence risk is being caught high and exposed in a thunderstorm, not a fall",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "October": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "July through October, with the most reliable conditions in July and August",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Start of the best-season window; snow largely melted off the trail and summit ridge with long daylight for the long mileage",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Outside the season window; lingering snow at elevation and potentially wet/rutted access road are likely, though not confirmed",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Peak of the best-season window; driest, most stable trail and road conditions, but watch for the afternoon lightning risk already flagged on the exposed summit",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Tail end of best season; early snow, freezing temps, and possible road conditions on the long gravel approach become more likely",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Still within best season; cooler temps and fewer bugs, generally stable, but shorter daylight for the long round trip",
+       "status": "good"
+      }
+     }
+    },
+    "grade_num": 1
+   }
+  }
+ ]
+}

@@ -1,0 +1,356 @@
+{
+ "file": "r501.json",
+ "results": [
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Route difficulty grade",
+   "verdict": "fixed",
+   "correct_value": "Class 4 (short loose Class 4 cliff above the high col; Class 2-3 on the southeast summit ridge)",
+   "evidence": "A 2021 trip report of this exact line says the climbing was never more than Class 4 but was the diciest moves in years, on a chossy steep-to-overhanging cliff above the col, with Class 2-3 on the summit ridge. An independent guided-traverse report says the receded Christie Glacier forces climbers onto 4th class rock to reach the summit ridge. Grade raised to Class 4; the skills and exposure cards now mention the Class 4 step; grade_num is derived and left alone.",
+   "sources": [
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/",
+    "https://mountainmadness.com/blog/2011/08/18/olympic-traverse-a-wild-and-wooly-adventure-in-pure-wilderness"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Route difficulty grade",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 2-3",
+     "value": "Class 4"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Route difficulty grade",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "Class 2-3 scrambling movement on loose rock",
+     "replace": "Class 2-3 scrambling movement on loose rock, plus a short, belayed Class 4 cliff step"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Route difficulty grade",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Class 2-3 scrambling on loose rock;",
+     "replace": "Class 2-3 scrambling on loose rock above a short, loose Class 4 cliff over the high col;"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Position of the Class 4 step relative to the col",
+   "verdict": "fixed",
+   "correct_value": "The loose Class 4 cliff sits ABOVE the high col (between the col and the krummholz); the summit is then a Class 2-3 southeast-ridge scramble.",
+   "evidence": "One report crossed the moat to the col and then faced a chossy, eroded, steep-to-overhanging cliff, and on descent made one rappel down to the col. A second party reached the notch, found no way into the krummholz, and was belayed across a loose ledge to the right before entering the krummholz and a fun rock ridge to the summit. Both place the crux above the col, below the krummholz, not at the summit.",
+   "sources": [
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/",
+    "https://eileensadventures.com/2021/08/mt-christie-and-the-skyline-trail-in-the-olympic-mountains"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Position of the Class 4 step relative to the col",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "find": "Class 4 rock step below the high col",
+     "replace": "Class 4 rock step above the high col"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Position of the Class 4 step relative to the col",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "the loose Class 4 step below the high col",
+     "replace": "the loose Class 4 step above the high col"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Position of the Class 4 step relative to the col",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "The chossy, poorly-protected Class 4 step below the col",
+     "replace": "The chossy, poorly-protected Class 4 step above the col"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Position of the Class 4 step relative to the col",
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "The loose Class 4 step below the high col",
+     "replace": "The loose Class 4 step above the high col"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Position of the Class 4 step relative to the col",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "a short loose Class 4 step below the East Col",
+     "replace": "a short loose Class 4 step above the East Col"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Position of the Class 4 step relative to the col",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "True summit gained by a loose Class 4 scramble through dense krummholz off the southeast ridge; shattered, overhanging rock near the top has prompted parties to rappel this section on descent.",
+     "replace": "True summit reached by a Class 2-3 scramble up the southeast ridge, above dense krummholz and the loose, partly overhanging Class 4 cliff over the high col; parties rappel that cliff on descent."
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Position of the Class 4 step relative to the col",
+     "op": "replace_text",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "find": "exposed unroped class 4 traverse",
+     "replace": "exposed, poorly protected class 4 traverse (belay it)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Number of rappels",
+   "verdict": "fixed",
+   "correct_value": "One rappel of about 50 ft from the edge of the krummholz down to the col; rappel rather than down-climb.",
+   "evidence": "One report made a single 50-foot rappel down to the col after coming back through the krummholz. The other party first rigged in the krummholz directly above the notch, moved to a better anchor to the left, and all five rappelled once. Neither down-climbed the step; the RAPPELS prose (one rappel) was right, the climbing-route note (two rappels) and the descent's down-climb option were not.",
+   "sources": [
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/",
+    "https://eileensadventures.com/2021/08/mt-christie-and-the-skyline-trail-in-the-olympic-mountains"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Number of rappels",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "parties have rapped the summit-block cliff (about 50 ft) and again through the krummholz",
+     "replace": "parties rappel the summit-block cliff once (about 50 ft) from an anchor at the edge of the krummholz down to the col"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Number of rappels",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "down-climb or rappel the loose Class 4 step below the high col",
+     "replace": "rappel the loose Class 4 step above the high col"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Elip Creek camp distance",
+   "verdict": "fixed",
+   "correct_value": "Elip Creek is about 6.5 mi from the trailhead, roughly 1.4 mi beyond Halfway House (5.1 mi) - a farther, not closer, camp.",
+   "evidence": "The park's trail page puts Halfway House about 2.6 mi past Wolf Bar (about 5.1 mi) and Elip Creek about 4 mi past Wolf Bar (about 6.5 mi). Other trail descriptions put the Elip Creek crossing at 6.4 mi and its camp at 6.6 mi. The waypoints and approach already say 6.5 mi; only the day-1 note (and its copy in the timing breakdown) was wrong.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://www.wta.org/go-hiking/hikes/elip-creek",
+    "https://hiiker.app/hikes/washington/jefferson-county/elip-creek-via-north-fork-quinault-river-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Elip Creek camp distance",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Elip Creek (~3 mi) is a closer alternative if starting late.",
+     "replace": "Elip Creek (~6.5 mi) is a slightly farther alternative that shortens day 2."
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Elip Creek camp distance",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Elip Creek (~3 mi) is a clo…",
+     "replace": "Elip Creek (~6.5 mi) is a slightly farther alternative."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states a car-to-car gain for this out-and-back. One trip report gives 3,300 ft for Halfway House to Low Divide (matching day 2) and 2,100 ft from camp to the north saddle, but its 11,000 ft total is for a different loop with side trips. gain_ft and the day sums (7,000) are left; the totalNote's 8,000+ is unverified either way.",
+   "sources": [
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Documented ascents found are late July and early August 2021; no source was found stating whether September is optimal or degraded on this route. best_season, climate and itinerary.cal favour Jul-Aug while seasonal_guidance rates September optimal; left open for lack of two sources.",
+   "sources": [
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/",
+    "https://eileensadventures.com/2021/08/mt-christie-and-the-skyline-trail-in-the-olympic-mountains"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Glaciated vs non-glaciated",
+   "verdict": "fixed",
+   "correct_value": "The route crosses the Christie Glacier (roped); it is not non-glaciated.",
+   "evidence": "Both 2021 parties descended from the north saddle to the Christie Glacier, put on crampons and roped up to cross it before the moat and col. The avalanche card's 'non-glaciated' label contradicts these and every other field.",
+   "sources": [
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/",
+    "https://eileensadventures.com/2021/08/mt-christie-and-the-skyline-trail-in-the-olympic-mountains"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Glaciated vs non-glaciated",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer scramble route",
+     "replace": "N/A - summer glacier-and-scramble route"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Route name",
+   "verdict": "fixed",
+   "correct_value": "North Couloir / Christie Glacier (no 'West Slopes' reference).",
+   "evidence": "Both trip reports climb the couloir out of Martins Park to the north-ridge saddle, cross the Christie Glacier to the col east of the summit and finish on the southeast ridge - the route's current name. The two 'West Slopes' mentions are stale; the warning about the name is removed since the name is now correct.",
+   "sources": [
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/",
+    "https://eileensadventures.com/2021/08/mt-christie-and-the-skyline-trail-in-the-olympic-mountains"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Route name",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "The standard West Slopes route crosses",
+     "replace": "The North Couloir route crosses"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Route name",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "READ THE NAME ON THIS ROUTE WITH CARE — it says West Slopes and the climb is on the NORTH side. Every published",
+     "replace": "Every published"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Wilderness permit issuance",
+   "verdict": "fixed",
+   "correct_value": "No self-issue permits at trailheads; the overnight wilderness permit must be obtained in advance (online, by phone, or at a Wilderness Information Center). North Fork Quinault/Low Divide are not quota areas; the summer reservation season is May 15-Oct 15.",
+   "evidence": "The park's wilderness reservations page says paper self-registration permits are no longer available at trailheads and no sites are held as same-day walk-ups, and lists the quota areas (Sol Duc/Seven Lakes, Grand Valley, Royal Lake, East Fork Quinault among them) with a May 15-Oct 15 summer season. A separate park-fund guide repeats that trailhead self-registration is unavailable and gives the same quota list, which does not include the North Fork Quinault or Low Divide.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Wilderness permit issuance",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "self-issue wilderness permit required at the kiosk",
+     "replace": "wilderness permit must be obtained before the trip (none issued here)"
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Wilderness permit issuance",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "Pick up a self-issue wilderness permit at the trailhead kiosk; the overnight camps used on this route (Halfway House or Elip Creek, Low Divide, and Martins Park) fall under the park's quota permit system, reserved in advance through recreation.gov, roughly May through September.",
+     "replace": "No permits are issued at the trailhead: every overnight camp used on this route (Halfway House or Elip Creek, Low Divide, and Martins Park) needs a wilderness permit obtained in advance, online, by phone or at a Wilderness Information Center."
+    },
+    {
+     "id": "wa_mount_christie_west",
+     "fact": "Wilderness permit issuance",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "(recreation.gov, quota season roughly May-Sept) for every camp",
+     "replace": "(obtained in advance; summer reservation season May 15-Oct 15, not a quota area) for every camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_christie_west",
+   "fact": "Low Divide distance from the trailhead",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Low Divide waypoint says 15.3 mi, the approach 16-16.7 mi, the itinerary 5.1+11 = 16.1 mi. One trip report gives 5.1 + 11.0 mi; other trail pages give about 16 mi (and a camp-by-camp sum near 17). The figures don't agree closely enough to set the pin distance without guessing, so it is left.",
+   "sources": [
+    "https://trailcatjim.com/mt-christie-quinault-skyline-loop-2021/",
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm"
+   ],
+   "patches": []
+  }
+ ]
+}

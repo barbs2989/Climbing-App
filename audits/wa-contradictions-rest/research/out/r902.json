@@ -1,0 +1,82 @@
+{"file": "r902.json", "results": [
+ {"id": "wa_mount_steel_standard", "fact": "Marmot Lake elevation", "verdict": "fixed",
+  "correct_value": "4,400 ft",
+  "evidence": "A 2024 trail-crew report for the Upper Duckabush trails lists Marmot Lake at 4,400 ft (Upper Duckabush Camp 2,700, ford 3,350, O'Neil Pass 4,950). The USGS 3DEP ground elevation at the row's own Marmot Lake pin is 4,400 ft (surrounding samples 4,370-4,400). The 4,921-ft figure matches a hiking aggregator that appears to have conflated this lake with the King County Marmot Lake (4,935 ft).",
+  "sources": ["https://www.bchw.org/files/olympic-national-parks-upper-duckabush-and-home-sweet-home-trails-20240823.pdf", "https://epqs.nationalmap.gov/v1/json?x=-123.36363&y=47.64895&units=Feet&wkid=4326", "https://www.topozone.com/washington/king-wa/lake/marmot-lake-2/"],
+  "patches": [
+   {"id": "wa_mount_steel_standard", "fact": "Marmot Lake elevation", "op": "set", "column": "waypoints", "path": [4, "elev"], "expect": 4921, "value": 4400},
+   {"id": "wa_mount_steel_standard", "fact": "Marmot Lake elevation", "op": "replace_text", "column": "itinerary", "path": ["days", 1, "objective"], "find": "Establish camp at Marmot Lake (4,921 ft)", "replace": "Establish camp at Marmot Lake (4,400 ft)"}
+  ]},
+ {"id": "wa_mount_steel_standard", "fact": "Elevation of the 'Steep push below Marmot Lake' pin", "discovered": true, "verdict": "fixed",
+  "correct_value": "~3,700 ft (below the 4,400-ft lake)",
+  "evidence": "Once Marmot Lake is corrected to 4,400 ft, a pin described as the final push BELOW the lake cannot sit at 4,600 ft. The trail-crew report brackets this stretch between the Duckabush ford (3,350 ft) and Marmot Lake (4,400 ft); USGS 3DEP ground elevation at the pin's coordinate is 3,686 ft.",
+  "sources": ["https://www.bchw.org/files/olympic-national-parks-upper-duckabush-and-home-sweet-home-trails-20240823.pdf", "https://epqs.nationalmap.gov/v1/json?x=-123.348421&y=47.65065&units=Feet&wkid=4326"],
+  "patches": [
+   {"id": "wa_mount_steel_standard", "fact": "Elevation of the 'Steep push below Marmot Lake' pin", "op": "set", "column": "waypoints", "path": [3, "elev"], "expect": 4600, "value": 3700}
+  ]},
+ {"id": "wa_mount_steel_standard", "fact": "Where the summit day leaves the trail", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The published route description (quoting the Olympic climbers' guide) says the Marmot Lake route leaves the trail three miles above Duckabush Camp and follows a little creek into an amphitheater on the west side of the summit. The trail-crew report puts Marmot Lake 3.3 mi above Upper Duckabush Camp (2.2 mi to the ford + 1.1 mi), so the turnoff is at or just below Marmot Lake - supporting beta, the itinerary and the approach text, and contradicting waypoints[2]/[5] and approach_variants[0] ('about 3 mi below Marmot Lake'). Not patched: only one route source states the turnoff, and waypoints[2]'s own coordinate sits east of the summit at ~2,830 ft ground elevation (near Upper Duckabush Camp), so rewriting its note would leave the pin contradicting it; pin positions are out of scope.",
+  "sources": ["https://www.summitpost.org/mount-steel/152969", "https://www.bchw.org/files/olympic-national-parks-upper-duckabush-and-home-sweet-home-trails-20240823.pdf"],
+  "patches": []},
+ {"id": "wa_mount_steel_standard", "fact": "Trip length in days", "verdict": "fixed",
+  "correct_value": "About 21 mi one-way to Marmot Lake; typically a 5-day trip (First Divide is ~14 mi from Staircase, but that side is closed)",
+  "evidence": "The route page for Steel gives about 21 miles up the Duckabush to the base near Marmot Lake, and about 14 miles from the North Fork Skokomish trailhead to First Divide. A Duckabush-to-Marmot-Lake trail page gives ~21.7 mi one-way and rates it a 5-day backcountry trip. The row's itinerary, timing and bivy notes already say 5 days / ~21 mi; only partner_requirements.approachTime carried the First-Divide 14-mi / 2-3 day figure. pro_tips 'at least 3-4 days' is a floor and left as is.",
+  "sources": ["https://www.summitpost.org/mount-steel/152969", "https://hiiker.app/hikes/washington/jefferson-county/the-duckabush-to-marmot-lake"],
+  "patches": [
+   {"id": "wa_mount_steel_standard", "fact": "Trip length in days", "op": "replace_text", "column": "partner_requirements", "path": ["approachTime"], "find": "Typically a 2-3 day trip; roughly 14+ miles one-way to a high camp near Marmot Lake/First Divide", "replace": "Typically a 5-day trip; roughly 21 miles one-way to a high camp near Marmot Lake (about 14 miles to First Divide from Staircase when that trail is open)"}
+  ]},
+ {"id": "wa_mount_steel_standard", "fact": "First Divide variant saddle", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The only route description found says that from First Divide you go west into a basin with a nameless lake, then descend southwest toward the saddle between the two peaks of Mt Steel and follow the ridge north to the summit block - agreeing with approach, climbing_route[1] and approach_variants[1], against beta's Duckabush-Steel saddle. Other pages found are copies of that text; no second independent source, and the internal majority (3 fields, no waypoints) is below the internal-plus-one threshold.",
+  "sources": ["https://www.summitpost.org/mount-steel/152969", "https://en.wikipedia.org/wiki/Mount_Steel"],
+  "patches": []},
+ {"id": "wa_mount_steel_standard", "fact": "Park entrance fee", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "The parking line says no park entrance fee is charged to PARK at the Forest Service trailhead (a Northwest Forest Pass applies there); the other fields say an entrance pass applies on crossing into the park. The park's fee page says every visitor needs an entrance pass, with a $15 per-person rate for those entering on foot, and a trail guide for this basin lists a federal park pass for park entry - so both statements hold.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/fees.htm", "https://www.wta.org/go-hiking/hikes/lacrosse-basin"],
+  "patches": []},
+ {"id": "wa_mount_steel_standard", "fact": "Walk-up permits and copied Staircase text", "verdict": "fixed",
+  "correct_value": "Permits for non-quota areas can be reserved online or picked up at a permit office; no sites are held for same-day walk-ups. Flapjack Lakes is not on this route.",
+  "evidence": "The park's wilderness-reservations page says permits in non-quota areas are not limited and can be reserved online or picked up at a permit office, while no sites are held as same-day walk-ups. The Steel route page says the wilderness permit can be obtained at ranger stations, and a permit guide says permits are issued in person at park visitor centers. So access.permit is right; overnight_permit.where's flat 'no same-day walk-up permits' overstated it and its Flapjack Lakes canister clause belongs to a different drainage. The Staircase closure note is kept because it governs the First Divide approach.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm", "https://www.summitpost.org/mount-steel/152969", "https://www.usanationalparks.info/your-essential-guide-to-olympic-national-park-overnight-wilderness-permits/"],
+  "patches": [
+   {"id": "wa_mount_steel_standard", "fact": "Walk-up permits and copied Staircase text", "op": "replace_text", "column": "access", "path": ["overnight_permit", "where"], "find": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first.", "replace": "Reserve on Recreation.gov, or collect the permit in person at a park permit office, before the trip; no campsites are set aside for same-day arrivals. The Staircase trails are closed after the Bear Gulch Fire, so check their status before using the First Divide approach."}
+  ]},
+ {"id": "wa_mount_walkinshaw_scramble", "fact": "Approach side and summit line", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "A detailed first-hand report from Royal Basin describes camping in the lower basin, bushwhacking west through a ~700-ft brushy forest band to a talus tongue below the complex E face, climbing NW to the south end of Gray Wolf Ridge, passing 4-5 pinnacles by class 3 moves on their east side, then the NE ridge and a sharp blade to the summit - matching beta's brush crux and the itinerary's north-ridge blade. The peak's reference page lists the easiest route as class 3 via the West Side or Gray Wolf Ridge. A guidebook-derived description for a Royal/Deception Basin line instead climbs a west gully to the east ridge 150 yd SE of the summit, which resembles the row's approach text. So at least two real lines exist and the row blends them (plus a Baldy-side pitch_detail that bypasses the summit). Settling this needs a rewrite of approach, pitch_detail and waypoints, not a minimal patch.",
+  "sources": ["https://www.wta.org/go-hiking/trip-reports/tripreport-2008070914", "https://en.wikipedia.org/wiki/Mount_Walkinshaw", "https://www.mountaineers.org/activities/routes-places/royal-basin"],
+  "patches": []},
+ {"id": "wa_mount_walkinshaw_scramble", "fact": "Trailhead elevation", "verdict": "fixed",
+  "correct_value": "~2,550 ft",
+  "evidence": "The park's Royal Basin page gives the climb as 2,550 ft to 5,100 ft over 7.2 miles. A climbing-club Royal Basin page puts the parking area just past the Dungeness River bridge at 2,500 ft. USGS 3DEP ground elevation at the row's trailhead pin is 2,494 ft. The row's itinerary already uses 2,550 ft of gain to the 5,100-ft lake, so 2,550 makes every field agree.",
+  "sources": ["https://home.nps.gov/olym/planyourvisit/royal-basin.htm", "https://www.mountaineers.org/activities/routes-places/royal-basin", "https://epqs.nationalmap.gov/v1/json?x=-123.136927&y=47.877572&units=Feet&wkid=4326"],
+  "patches": [
+   {"id": "wa_mount_walkinshaw_scramble", "fact": "Trailhead elevation", "op": "set", "column": "waypoints", "path": [0, "elev"], "expect": 2970, "value": 2550},
+   {"id": "wa_mount_walkinshaw_scramble", "fact": "Trailhead elevation", "op": "replace_text", "column": "waypoints", "path": [0, "directions"], "find": "Drive to the Upper Dungeness Trailhead at about 2,960 ft", "replace": "Drive to the Upper Dungeness Trailhead at about 2,550 ft"},
+   {"id": "wa_mount_walkinshaw_scramble", "fact": "Trailhead elevation", "op": "replace_text", "column": "approach", "path": [], "find": "From the Upper Dungeness Trailhead (~2,960 ft, end of FR 2870)", "replace": "From the Upper Dungeness Trailhead (~2,550 ft, end of FR 2870)"}
+  ]},
+ {"id": "wa_mount_walkinshaw_scramble", "fact": "Royal Basin Trail junction elevation", "discovered": true, "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The junction pin stores 3,120 ft, yet the row's own prose calls the first mile from the ~2,550-ft trailhead gentle and nearly level; USGS 3DEP ground elevation at the pin is 2,648 ft. No second source states the junction's elevation, so not patched.",
+  "sources": ["https://epqs.nationalmap.gov/v1/json?x=-123.147433&y=47.871756&units=Feet&wkid=4326"],
+  "patches": []},
+ {"id": "wa_mount_walkinshaw_scramble", "fact": "Cell coverage on the peak", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "No source found reporting cell coverage (or its absence) on Gray Wolf Ridge, in Royal Basin or on Walkinshaw; only general statements that coverage in the park is spotty.",
+  "sources": [],
+  "patches": []},
+ {"id": "wa_sundial_northeast", "fact": "Cairned crack passage (possibly another peak's feature)", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "A first-hand Sundial report describes a couloir on the looker's-right side of the Needles group that doglegs left to the highest point below the summit, then a short class 3 scramble south from the ridge-top - matching climbing_route and approach, with no ledge cliff-out or cairned crack. The peak's reference page lists only a class 3 East Face. No source was found that mentions the cairned crack on Sundial, but no source denies it either, so the sentence was not removed.",
+  "sources": ["https://turns-all-year.com/trip-reports/may-24-2008-sundial-peak-the-needles-olympic-ntl-park", "https://en.wikipedia.org/wiki/Sundial_(Olympic_Mountains)"],
+  "patches": []},
+ {"id": "wa_sundial_northeast", "fact": "Trailhead elevation", "discovered": true, "verdict": "fixed",
+  "correct_value": "~2,550 ft",
+  "evidence": "The trailhead waypoint says 2,700 ft, but the row's itinerary and timing use 2,550 ft of gain/loss to the ~5,100-ft Royal Lake. The park's Royal Basin page gives 2,550 ft to 5,100 ft; a climbing-club page puts the parking at 2,500 ft; USGS 3DEP ground elevation at this same pin is 2,494 ft.",
+  "sources": ["https://home.nps.gov/olym/planyourvisit/royal-basin.htm", "https://www.mountaineers.org/activities/routes-places/royal-basin", "https://epqs.nationalmap.gov/v1/json?x=-123.136927&y=47.877572&units=Feet&wkid=4326"],
+  "patches": [
+   {"id": "wa_sundial_northeast", "fact": "Trailhead elevation", "op": "set", "column": "waypoints", "path": [0, "elev"], "expect": 2700, "value": 2550}
+  ]}
+]}
