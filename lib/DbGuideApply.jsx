@@ -116,7 +116,7 @@ export default function DbGuideApply({ onClose, notify, C }) {
     return createPortal((
       <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", padding: 16 ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
         <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
-        <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in with a real account to apply as a guide — this application creates a legally-relevant, timestamped record tied to your identity.</div>
+        <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in to apply as a guide — this application creates a legally relevant, timestamped record tied to your identity.</div>
       </div>
     ), document.body);
   }

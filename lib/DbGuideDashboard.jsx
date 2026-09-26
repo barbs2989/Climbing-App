@@ -93,7 +93,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
   if (!session) {
     return createPortal(<div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, padding: 16 ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
-      <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in with a real account to view your guide dashboard.</div>
+      <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in to view your guide dashboard.</div>
     </div>, document.body);
   }
   if (!profile) {
