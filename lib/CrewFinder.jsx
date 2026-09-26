@@ -4,7 +4,7 @@ import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useAreaPaths, useRouteSearch } from "./db";
 import { useState } from "react";
-import { ActionIcon, AreaRegionSelect, Av, C, CAT, CLIMBERS, DLOCALE, DiscIcon, FALLBACK_AV, FALLBACK_COVER, ME, MOUNTAINS, OPEN_CREWS, ROUTES, areaPathNames, catOf, climberLine, distMiles, fuzzyMatchAny, haveMyLoc, inArea, onImgErr, rDiscs, tripOf, uDistMi, uDistMiUnitLong, uImp, vScore } from "../ClimbMatchCore.jsx";
+import { ActionIcon, AreaRegionSelect, Av, C, CAT, CLIMBERS, DLOCALE, DiscIcon, FALLBACK_AV, FALLBACK_COVER, ME, MOUNTAINS, OPEN_CREWS, ROUTES, areaPathNames, catOf, climberLine, distMiles, fuzzyMatchAny, haveMyLoc, inArea, onImgErr, rDiscs, seedRoutesOn, tripOf, uDistMi, uDistMiUnitLong, uImp, vScore } from "../ClimbMatchCore.jsx";
 
 export default function CrewFinder({onRequestJoin,requested,onViewProfile,connections,onOpenRoute,routeById,dbCrews,dbCrewsUnavailable}){
   /* SEED + DB, the way routeById() merges seed and DB routes. The seed OPEN_CREWS array is the
@@ -25,11 +25,11 @@ export default function CrewFinder({onRequestJoin,requested,onViewProfile,connec
   const now=new Date();const today0=new Date(now.getFullYear(),now.getMonth(),now.getDate());
   const within=(d,months)=>{if(!d)return false;const dt=new Date(d+"T12:00:00");const lim=new Date(now);lim.setMonth(lim.getMonth()+months);return dt>=today0&&dt<=lim;};
   const withinDays=(d,days)=>{if(!d)return false;const dt=new Date(d+"T12:00:00");const lim=new Date(now);lim.setDate(lim.getDate()+days);return dt>=today0&&dt<=lim;};
-  const seedClimbMatches=climbQ.trim()?ROUTES.filter(r=>{return fuzzyMatchAny(climbQ,r.name,(MOUNTAINS.find(m=>m.id===r.mountainId)||{}).name);}).slice(0,8):[];
+  const seedClimbMatches=climbQ.trim()&&seedRoutesOn()?ROUTES.filter(r=>{return fuzzyMatchAny(climbQ,r.name,(MOUNTAINS.find(m=>m.id===r.mountainId)||{}).name);}).slice(0,8):[];
   const dbClimbSearch=useRouteSearch(USE_DB?climbQ:"");
   /* By ROUTE, as on Partners: the catalog search also expands a matched region to every route under it, which is By Area's job. Keep a row only when its own name, or its peak or crag, answers. */
   const climbMatches=[...seedClimbMatches,...(dbClimbSearch.data||[]).filter(d=>!seedClimbMatches.some(r=>r.id===d.id)&&fuzzyMatchAny(climbQ,d.name,((d._dbArea||d.areas)||{}).name))].slice(0,8);
-  const objRoutes=ME.objectiveIds.map(id=>ROUTES.find(r=>r.id===id)).filter(Boolean);
+  const objRoutes=ME.objectiveIds.map(id=>routeById?routeById(id):ROUTES.find(r=>r.id===id)).filter(Boolean);
   const selObj=selRoute?((selObjPick&&selObjPick.id===selRoute)?selObjPick:(routeById?routeById(selRoute):ROUTES.find(r=>r.id===selRoute))):null;
   const openCrewN=rid=>_crewPool.filter(oc=>oc.routeId===rid&&((requested||[]).includes(oc.id)||oc.spots>0)&&!(oc.date&&new Date(oc.date+"T12:00:00")<today0)).length;
   let list=_crewPool.filter(oc=>{const r=rOf(oc);if(!(requested||[]).includes(oc.id)&&oc.spots<=0)return false;if(oc.date&&new Date(oc.date+"T12:00:00")<today0)return false;if(mode==="objectives"&&!ME.objectiveIds.includes(oc.routeId))return false;if(mode==="route"){if(!selRoute||oc.routeId!==selRoute)return false;}if(mode!=="area"&&radiusMi<9000){const d=distOf(oc);if(d==null||d>radiusMi)return false;}if(mode==="area"){if(areaBy==="near"){const d=distOf(oc);if(radiusMi<9000&&(d==null||d>radiusMi))return false;}else if(!inPlace(r,areaId||areaState||areaCountry))return false;}if(discF!=="All"&&!rDiscs(r).includes(discF))return false;if(whenF==="flex"&&oc.date)return false;if(whenF==="w1"&&!withinDays(oc.date,7))return false;if(whenF==="w2"&&!withinDays(oc.date,14))return false;if(whenF==="m1"&&!within(oc.date,1))return false;if(whenF==="m3"&&!within(oc.date,3))return false;if(whenF==="m2"&&!within(oc.date,2))return false;if(whenF==="m6"&&!within(oc.date,6))return false;if(whenF==="m12"&&!within(oc.date,12))return false;/* A REAL ORGANISER IS A UUID AND SEED CLIMBERS ARE INTEGERS -- CLIMBERS.find matches never, so

@@ -477,7 +477,11 @@ async function runWeather() {
   //    was itself a units defect: the log form re-seeded from that "3,353 m" and saved it back as
   //    3353 FEET, so every metric edit shrank the value 3.28x. So assert all four links: each
   //    hydration keeps the number, and each place a reader sees it converts.
-  for (const [label, m] of [["RouteDetail", mask], ["ClimbMatch", appMask]]) {
+  //    The route page's half moved to lib/tripReportRow.js (tripRowToActivity), which the Today
+  //    tab's friend activity and the Logbook's recent reports now build their rows with too.
+  const trMask = fs.readFileSync(path.join(ROOT, "lib", "tripReportRow.js"), "utf8")
+    .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+  for (const [label, m] of [["tripRowToActivity (route page, friend feed)", trMask], ["ClimbMatch", appMask]]) {
     if (/uElev\((?:r|row)\.freezing_level_ft\)/.test(m)) fail(`${label}'s climb_logs hydration bakes freezing_level_ft into a uElev() STRING — the log form re-seeds from it and re-saves metres as feet`);
     else if (/\.freezingFt=(?:r|row)\.freezing_level_ft;/.test(m)) ok(`${label}'s climb_logs hydration carries the freezing level as a NUMBER (freezingFt)`);
     else fail(`${label}'s climb_logs hydration no longer carries freezing_level_ft as freezingFt — another climber's freezing level is lost or unconverted`);

@@ -189,10 +189,15 @@ console.log("  ok    trip beta, gear, itinerary, GPX, FA and timings all hydrate
 // That had happened twice over: #843 (car_to_car_minutes, the mirror direction) and #861,
 // where faAscent and developed were dropped, so buildConsensus could only ever credit a
 // First Ascent to yourself.
-const RD_SRC = readFileSync(new URL("../RouteDetail.jsx", import.meta.url), "utf8");
-const rdAnchor = "return _tripRows.map(function(r){";
+// The route page's hydration now lives in lib/tripReportRow.js as tripRowToActivity, shared with
+// the Today tab's friend activity and the Logbook's recent condition reports. RouteDetail must
+// still build its rows WITH it — a page that went back to an inline map would escape this scan.
+const RD_PAGE = readFileSync(new URL("../RouteDetail.jsx", import.meta.url), "utf8");
+if (!RD_PAGE.includes("_tripRows.map(function(r){return tripRowToActivity(r,")) fail("RouteDetail no longer builds its trip reports with tripRowToActivity — this scan would be reading a mapper the route page does not use.");
+const RD_SRC = readFileSync(new URL("../lib/tripReportRow.js", import.meta.url), "utf8");
+const rdAnchor = "export function tripRowToActivity(r, p) {";
 const rdStart = RD_SRC.indexOf(rdAnchor);
-if (rdStart < 0) fail("ANCHOR LOST — could not find RouteDetail's climb_logs hydration (" + rdAnchor + ").");
+if (rdStart < 0) fail("ANCHOR LOST — could not find the shared climb_logs hydration (" + rdAnchor + ").");
 let rdDepth = 0, rdEnd = RD_SRC.length;
 for (let k = RD_SRC.indexOf("{", rdStart + rdAnchor.length - 1); k < RD_SRC.length; k++) {
   if (RD_SRC[k] === "{") rdDepth++;
@@ -240,7 +245,7 @@ if (rdDropped.length) {
   rdDropped.forEach(c => console.error("  - " + c));
   console.error("\nThese survive into your own logbook and not onto the route page, so the");
   console.error("fact is on screen for its author and for nobody else. Both shapes are opened");
-  console.error("into the same components. Map them in RouteDetail's _tripRows.map, or record");
+  console.error("into the same components. Map them in tripRowToActivity (lib/tripReportRow.js), or record");
   console.error("them in ROUTE_THIN with the reader you checked for and did not find.");
   process.exit(1);
 }

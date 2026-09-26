@@ -6,7 +6,7 @@ import { clickable } from "./clickable";
 import { submitContribution, useAreaChildren, useRouteSearch } from "./db";
 import { searchMatches } from "./search";
 import { useCallback, useMemo, useState } from "react";
-import { ADDR_COMMIT, ADDR_GRADES, ADDR_HAZ, ADDR_STYLE, C, CAT, DISC, DbAreaPicker, DiscIcon, ItineraryEditor, Lbl, MOUNTAINS, ROUTES, areaPathNames, blankItinDay, fuzzyMatch, hlMatch, itinDraftToStructured, uImp } from "../ClimbMatchCore.jsx";
+import { ADDR_COMMIT, ADDR_GRADES, ADDR_HAZ, ADDR_STYLE, C, CAT, DISC, DbAreaPicker, DiscIcon, ItineraryEditor, Lbl, MOUNTAINS, ROUTES, areaPathNames, blankItinDay, fuzzyMatch, hlMatch, itinDraftToStructured, seedRoutesOn, uImp } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE, POP_REMOVE_MEDIA } from "./popupChrome.js";
 
 export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,session,onSubmit,onAddRoute}){
@@ -144,7 +144,7 @@ export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,s
   const togItem=v=>setGear(g=>Object.assign({},g,{items:g.items.indexOf(v)>=0?g.items.filter(x=>x!==v):g.items.concat([v])}));
   const tog=(arr,setArr,v)=>setArr(arr.indexOf(v)>=0?arr.filter(x=>x!==v):arr.concat([v]));
   const dbDupeSearch=useRouteSearch(USE_DB&&name.trim().length>=3?name.trim():"");
-  const dupes=name.trim().length>=3?(function(){var seedD=ROUTES.filter(r=>searchMatches(name,r.name||""));return seedD.concat((dbDupeSearch.data||[]).filter(d=>!seedD.some(s=>s.id===d.id))).slice(0,3);})():[];
+  const dupes=name.trim().length>=3?(function(){var seedD=seedRoutesOn()?ROUTES.filter(r=>searchMatches(name,r.name||"")):[];return seedD.concat((dbDupeSearch.data||[]).filter(d=>!seedD.some(s=>s.id===d.id))).slice(0,3);})():[];
   const gearAny=gear.qd||gear.screws||gear.pads||Object.keys(gear.cams).length||Object.keys(gear.nuts).length||gear.items.length;
   const checks=[!!name.trim(),locOk,!!disc,sf("grade")?!!grade:null,sf("pitches")?!!pitch:null,sf("height")?!!height:null,sf("gain")?!!gain:null,sf("loss")?!!loss:null,sf("dist")?!!dist:null,sf("aspect")?!!aspect:null,sf("season")?!!season:null,sf("descent")?!!descent.trim():null,sf("commit")?!!commit:null,sf("protRating")?!!protRating:null,sf("rap")?!!rap:null,sf("road")?!!cleanObj("road"):null,sf("access")?!!cleanObj("access"):null,sf("timing")?!!cleanObj("timing"):null,sf("itinerary")?!!cleanItin():null,sf("landing")?!!landing:null,sf("startType")?!!startType:null,sf("turn")?!!turn:null,sf("comms")?!!comms:null,sf("fa")?!!fa:null,sf("crux")?!!crux:null,sf("overview")?!!overview.trim():null,sf("face")?!!face:null,sf("ropeType")?!!ropeType:null,sf("ropeNote")?!!ropeNote.trim():null,sf("ascender")?!!ascender:null,sf("whatToBring")?linesOf(whatToBring).length>0:null,sf("watchOut")?linesOf(watchOut).length>0:null,sf("objHaz")?linesOf(objHaz).length>0:null,sf("bestSeason")?!!bestSeason.trim():null,sf("outingShape")?!!outingShape:null,sf("rappelCountNote")?!!rappelCountNote.trim():null,sf("alpineDraws")?!!alpineDraws:null,sf("rack")?linesOf(rack).length>0:null,sf("pitchDetail")?cleanPitches().length>0:null,sf("style")?style.length>0:null,sf("haz")?haz.length>0:null,gearAny?1:0,!!desc.trim(),photos.length>0,climbed];
   /* A field the chosen discipline never asks for belongs in NEITHER half of the fraction. Every
