@@ -366,7 +366,11 @@ async function runState(st) {
   const num = v => v == null ? "null" : String(+v);
   for (const { x, c } of effSplits) {
     const n = sql(`select count(*)::int n from routes where area_id = ${q(x)}`)[0].n;
+    // The _climbs child carries the area's own name and is the area itself, not a new place, so
+    // refuse_duplicate_area (which fired on Arizona's two Rappel Rocks 0.35 km apart) is told so —
+    // `set local` lasts for this transaction only.
     sql(`begin;
+      set local catalog.allow_duplicate = 'on';
       insert into areas (id, name, parent_id, area_type, region, lat, lng) values (${q(c.id)}, ${q(c.name)}, (select parent_id from areas where id = ${q(x)}), 'crag', ${q(c.region)}, ${num(c.lat)}, ${num(c.lng)});
       update routes set area_id = ${q(c.id)} where area_id = ${q(x)};
       update areas set parent_id = ${q(x)} where id = ${q(c.id)};
