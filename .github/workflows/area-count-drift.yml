@@ -52,3 +52,12 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: node scripts/check-area-counts.mjs --sql
+      # Same read, second question: did a DUPLICATE route land? The database refuses them (0216/0218);
+      # this is the check that the refusal held. Rows only -- CI has no management token, so whether
+      # the triggers are still installed is the hand-run half (npm run check:catalog-duplicates).
+      - name: Has any area gained a duplicate route?
+        if: always()
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-catalog-duplicates.mjs --rows-only

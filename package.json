@@ -118,6 +118,7 @@
     "check:claims": "node scripts/check-session-claims.mjs",
     "check:drift": "node scripts/check-deploy-drift.mjs",
     "check:counts": "node scripts/check-area-counts.mjs",
+    "check:catalog-duplicates": "node scripts/check-catalog-duplicates.mjs",
     "check:function-columns": "node scripts/check-function-columns.mjs",
     "check:column-drift": "node scripts/check-column-drift.mjs",
     "check:function-drift": "node scripts/check-function-drift.mjs",
