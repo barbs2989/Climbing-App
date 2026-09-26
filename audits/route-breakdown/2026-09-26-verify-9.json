@@ -1,0 +1,654 @@
+{
+  "wa_morning_star_peak_standard": {
+    "area": "wa_morning_star_peak",
+    "set": {
+      "approach": "From the Sunrise Mine Trailhead (2,350 ft, end of FR-4065 off the Mountain Loop Highway), follow the Sunrise Mine Trail (Trail #707) about half a mile. Just before the trail crosses the South Fork Stillaguamish River, leave it for a faint abandoned path on the river's east side, or take the line of least resistance along that side. The path soon fades into slide alder, brush and rock debris; fording the river to dodge the brush is hazardous in high runoff, especially in late spring and early summer. Work up the valley past a house-sized boulder near 3,100 ft, then either cross the river and climb a ridge ramp southwest to the upper basin (about 4,000 ft), or continue to a broad basin at about 3,700 ft and climb the steep gully (or the slabs to its right) directly east of it, leaving it to the right where that is easy. Climb snow-covered slabs to a notch in Morning Star's southeast ridge at about 5,600 ft; these slabs are the route's main avalanche concern. The round trip is roughly 5.5-6 miles with 3,700-4,200 ft of gain. The steep gully is often icy when snow-filled, so helmet, ice axe and crampons are standard early in the season; early-season snow makes this a basic alpine climb rather than a scramble.",
+      "descent_text": "This is a walk-off/downclimb — reverse the ascent line, there is no rappelling on the standard route (0 rappels). From the 6,020 ft summit, descend on or near the south ridge to the broad gully, downclimb it into the southeast basin, traverse back below the cliffs and climb about 200 ft through trees to the notch in the southeast ridge. The gully (icy in early/mid-season) is often easier to face in and downclimb than to descend facing out, and crampons make the icy sections much smoother; groups should stay tight and avoid stacking directly above one another. From the notch, descend the snow-covered slabs (watch for avalanche conditions) and the gully or ridge ramp back into the South Fork Stillaguamish valley, then retrace the brushy east-side path to the Sunrise Mine Trail and the trailhead.",
+      "overview": "Morning Star Peak (6,020 ft) sits above Headlee Pass and the Sunrise Mine basin between Sperry and Del Campo Peaks, in the Mountain Loop Highway corridor of the Mt. Baker-Snoqualmie National Forest (Darrington Ranger District). The standard route leaves the Sunrise Mine Trail about half a mile in, before the South Fork Stillaguamish crossing, and climbs the brushy river valley and snow-covered slabs to a notch in the southeast ridge, then a steep gully to the south ridge and the summit. The South Ridge scramble is rated T5/S4 — a 'rugged, beautiful and challenging true scramble' requiring comfort on steep rock and snow — tougher than the Class 2-3 label alone suggests, especially in early season. Route-finding takes some care, and the snow-covered slabs below the notch are the route's main avalanche concern."
+    },
+    "replace_climbing_route": true,
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "South Fork Stillaguamish valley",
+        "notes": "Leave the Sunrise Mine Trail about half a mile in, just before it crosses the South Fork Stillaguamish, and work up the east side of the valley through brush, slide alder and rock debris past a house-sized boulder near 3,100 ft. Either cross the river and climb a ridge ramp southwest to the upper basin (about 4,000 ft), or continue to the broad basin near 3,700 ft and climb the steep gully, or the slabs to its right, directly east."
+      },
+      {
+        "n": 2,
+        "label": "Slabs to the southeast-ridge notch (~5,600 ft)",
+        "notes": "Climb snow-covered slabs to the notch in Morning Star's southeast ridge. These slabs hold snow well into the season and are the route's main avalanche concern."
+      },
+      {
+        "n": 3,
+        "class": "Class 3",
+        "label": "Gully and south ridge to the summit (6,020 ft)",
+        "notes": "From the notch drop about 200 ft through trees into the southeast basin, traverse right below the cliffs to the first broad gully, and climb it to the south ridge about 250 ft below the summit. Finish on or near the south ridge. The gully is steep and often icy when snow-filled; helmet, ice axe and crampons are standard early in the season."
+      }
+    ],
+    "review": {
+      "findings": [
+        {
+          "claim": "approach, descent_text, overview and climbing_route start the climb at Headlee Pass (~4,600 ft) and scramble north along the south ridge; approach cites last water near Lake Elon/Vesper Lake past the pass",
+          "verdict": "CONFIRMED",
+          "evidence": "The route description for Morning Star Peak/South Ridge leaves the Sunrise Mine Trail at ~0.5 mi just before the South Fork Stillaguamish crossing, ascends the river valley (house-sized boulder 3,100 ft; basin 3,700 ft or ridge ramp to 4,000 ft), snow slabs to a ~5,600-ft notch on the SE ridge, drops ~200 ft into the SE basin, and climbs the first broad gully to the south ridge 250 ft below the summit. An independent trip report follows the same valley/boulder/slab-ramp/notch/steep-gully line (5.4 mi RT, 3,700 ft gain; helmet, axe, crampons). Headlee Pass is the notch on the Sperry–Morning Star ridge leading to Vesper Creek (NW of the peak), so 'north from Headlee Pass along the south ridge' is geographically incoherent; no source describes a Headlee Pass start. The stored pitch_detail already follows the valley route. climbing_route replaced wholesale from the same two sources; 'Class 3' only on the summit step (easiest-route class per the peak's encyclopedia entry); the unsourced 'Class 3-4' and T5/S4 claims inside climbing_route were dropped.",
+          "sources": [
+            "https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge (403 to fetch; text read via search-engine extract)",
+            "https://onehikeaweek.com/2015/02/21/morning-star-peak/",
+            "https://en.wikipedia.org/wiki/Morning_Star_Peak",
+            "https://www.summitpost.org/vesper-peak-s-east-ridge-via-sunrise-mine-trail-and-headlee-pass/352230 (Headlee Pass location, via extract)"
+          ]
+        }
+      ],
+      "notes": "beta left unchanged (it does not name Headlee Pass). The overview's quoted 'T5/S4 … true scramble' sentence was not part of the finding and was left, but it is an unsourced quotation a reviewer may want to drop. The route description gives the slabs as ascended 'eastward'; the stored pitch_detail row 4 says 'northwest' — not changed (pitch_detail out of scope)."
+    }
+  },
+  "wa_gilbert_peak_west_route": {
+    "area": "wa_gilbert_peak",
+    "set": {
+      "beta": "From Cispus Basin (reached from a camp in the timber below Snowgrass Flats, or camped in the basin itself, by following the PCT southbound), climbers go up to the saddle at the basin's northeast end and traverse a series of rock ribs and shallow gullies (the 'Goat Ledges' and 'Goat Ribs') at roughly 7,400-7,600 ft toward Gilbert Peak. The key navigational feature is a band of solid, abrasive white pyroclastic aggregate that points toward a notch behind a prominent dark rock tower nicknamed the 'black prow'; staying on this band (rather than the looser rock above or below it) is described as the safest line. A lower variation holds a consistent ~7,500 ft traverse elevation to reduce exposure to party-induced rockfall. The route is regarded by some as loose and dangerous, but careful route-finding along the white band and goat paths allows a safer Class 2-3 passage to the summit.",
+      "overview": "A longer, looser, more adventurous line up Gilbert Peak's west side from Cispus Basin, traversing the exposed 'Goat Ledges/Goat Ribs' and a band of solid white volcanic aggregate to a notch behind a dark rock tower ('the black prow') before a Class 2-3 finish to the summit.",
+      "approach": "Drive to the Berry Patch or Snowgrass Flat Trailhead (Chambers Lake area) off Forest Road 21/2150 on the west side of the Goat Rocks: turn east onto FR 21, continue about 13 miles, turn at the Snowgrass Trail/Chambers Lake sign onto FR 2150, then follow signs to the Snowgrass Flat Trailhead (elev. ~4,650 ft). Hike Trail #96 (Snowgrass) roughly 4 miles and ~2,000 ft of gain along Goat Creek toward Snowgrass Flats, a large subalpine meadow that is closed to camping (use the established sites below it); from there reach the PCT (via Trail #96 or the cutoff Trail #97) and follow it southbound (heading east) about 2 miles to Cispus Basin, which has an established camp in the trees just above the PCT's Cispus River crossing. Climb to the saddle at the basin's northeast end, then scramble east across the Goat Ledges/Goat Ribs traverse toward Gilbert Peak (often combined with Old Snowy Mountain and Ives Peak in one traverse day).",
+      "descent_text": "Downclimb the Class 2-3 summit section back through the notch behind the black prow, then carefully retrace the white aggregate band across the Goat Ribs/Goat Ledges at the same ~7,500 ft traverse elevation used on ascent to minimize rockfall exposure to teammates below. From the saddle, descend into Cispus Basin, follow the PCT back to Trail #96 (or the cutoff Trail #97), and descend Trail #96 to the trailhead."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta/overview/approach/descent start the climb from a camp below Snowgrass Flats, 'cross south toward the Old Snowy/Ives massif' and head cross-country east from Snowgrass Flats",
+          "verdict": "CONFIRMED",
+          "evidence": "The West Route description continues southbound on the PCT (travelling easterly) ~2 mi to Cispus Basin, with the established camp just above the PCT's Cispus River crossing; the regional field guide calls the west route the one 'from Cispus Basin'. A trip report that camped at Snowgrass Flats still walked the PCT to Cispus Basin and climbed to the ~7,000-ft saddle at its eastern rim before the traverse. A Snowgrass-area camp is therefore possible, but the climb runs via Cispus Basin and its NE saddle, not directly from Snowgrass toward Old Snowy/Ives. Fixed by routing the text through Cispus Basin; the Snowgrass camp option is kept.",
+          "sources": [
+            "https://www.summitpost.org/west-route/217889 (403; via search extract)",
+            "https://www.oregonhikers.org/field_guide/Mt._Curtis_Gilbert",
+            "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/"
+          ]
+        },
+        {
+          "claim": "'Goat Ledges/Goat Ribs' appear in no source",
+          "verdict": "REFUTED",
+          "evidence": "A trip report names the narrow ribs and shallow gullies on the southwest side of the crest the 'goat ribs' and 'goat ledges'. Names kept.",
+          "sources": [
+            "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/"
+          ]
+        },
+        {
+          "claim": "the finish is Class 4",
+          "verdict": "CONFIRMED",
+          "evidence": "No source gives Class 4. The West Route description ends with a Class 2-3 scramble up the west face from the 7,600-ft saddle below Goat Citadel; the trip report gives the traverse as Class 2 with some Class 3 moves and the west face as Class 2-3. 'class 4' -> 'Class 2-3' in beta, overview and descent_text.",
+          "sources": [
+            "https://www.summitpost.org/west-route/217889 (via search extract)",
+            "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Class 3",
+          "evidence": "grade is null. Sources: traverse Class 2 with Class 3 moves, summit west face Class 2-3; no Class 4 anywhere. 'Class 2-3' would also be defensible."
+        },
+        "length_m": {
+          "proposed": null,
+          "evidence": "Stored 610 has no source found; consider nulling."
+        }
+      }
+    }
+  },
+  "wa_south_twin_sister_scramble": {
+    "area": "wa_south_twin_sister",
+    "set": {
+      "beta": "Shares its approach with the West Ridge route: bike/hike logging roads from the gated Middle Fork Nooksack bridge around Dailey Prairie to Orsino Creek Basin, then ascend talus to a notch in the West Ridge near ~5,200 ft and follow the ridge (Class 2-3) to a high notch at about 6,600 ft, some 400 ft below the summit. Rather than following the steeper ridge crest above it, which has exposed 5th-class moves, traverse south onto gullies and a seasonal snowfield (present into mid-summer) to reach the summit at a sustained Class 2-3.",
+      "overview": "The standard non-technical line up South Twin Sister: follow the West Ridge approach to a high notch, then bypass the steep upper ridge crest, which has 5th-class moves, by traversing south across gullies and a seasonal snowfield to the summit, keeping the entire route to Class 2-3 on the range's namesake sticky olivine (dunite) rock.",
+      "descent_text": "Downclimb the south-side gullies and seasonal snowfield back to the high notch (about 6,600 ft), reverse the West Ridge to the ~5,200-ft notch, then retrace the talus slopes, climbers' path, and logging roads to the bike stash and gate. An ice axe is useful for the snowfield crossing even in mid-summer; loose rock in the gullies is the main hazard."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta has the route leave the ridge at the ~5,200-ft notch and traverse south",
+          "verdict": "CONFIRMED",
+          "evidence": "Sources gain the ridge at the obvious ~5,200-ft notch, scramble the West Ridge Class 2-3 for about two hours, and only at the high notch ~6,600 ft (about 400 ft below the summit) traverse south to the gullies. The stored overview already places the bypass at the high notch.",
+          "sources": [
+            "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/",
+            "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge (via search extract)"
+          ]
+        },
+        {
+          "claim": "the bypassed crest is a 'Class 4 step'",
+          "verdict": "CONFIRMED",
+          "evidence": "Staying on the crest above the high notch meets 'a couple of 5th class spots' where parties rope up; no source calls it Class 4. Changed to '5th-class moves' in beta and overview.",
+          "sources": [
+            "https://www.mountaineers.org/activities/routes-places/south-twin-sister-west-ridge (via search extract)"
+          ]
+        },
+        {
+          "claim": "descent_text 'back to the notch below the ridge' should be the high notch",
+          "verdict": "CONFIRMED",
+          "evidence": "Follows from the two findings above: the gullies lead back to the ~6,600-ft notch, and the ridge is then reversed to the 5,200-ft notch.",
+          "sources": [
+            "https://trailcatjim.com/south-twin-sister-via-orsino-creek-basin-west-ridge-south-face/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Class 2-3",
+          "evidence": "grade is null; both sources give Class 2-3 for the ridge and the south-side gully bypass; listed as a basic alpine climb."
+        }
+      }
+    }
+  },
+  "wa_mount_lyall_south_route": {
+    "area": "wa_mount_lyall",
+    "skip_reason": "findings UNCLEAR (single source) — no prose change; classification note only",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade 'Class 3-4' and 'stacked Class 3-4 boulders' (climbing_route, approach, descent_text) have no source; the only description is exposed Class 3",
+          "verdict": "UNCLEAR",
+          "evidence": "The only route description found (a solo trip report) calls the southwest gully exposed Class 3 with ~200 ft of choss and stacked boulders to the top; its 'class 4 move' refers to Lyall Ridge on another day, not Mount Lyall. A 'SW Gully Upper South Ridge' page with a Class 4 step turned up in search but could not be opened and could not be tied to this peak. With one source, and the change being a downgrade on loose terrain, the prose 'Class 3-4' was left in place.",
+          "sources": [
+            "https://onehikeaweek.com/2023/09/11/needle-peak/"
+          ]
+        },
+        {
+          "claim": "route name 'Southwest Ridge Route' is looser than the source (line leaves the ridge at the notch)",
+          "verdict": "UNCLEAR",
+          "evidence": "The source does gain the SW-ridge notch at ~7,300 ft then traverses to a gully; naming is a judgment call. No change.",
+          "sources": [
+            "https://onehikeaweek.com/2023/09/11/needle-peak/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Class 3",
+          "evidence": "Single source: 'exposed class 3 gully', loose final 200 ft. Low confidence — hold unless a second source turns up."
+        }
+      }
+    }
+  },
+  "wa_mount_constance_north_chute": {
+    "area": "wa_mount_constance",
+    "set": {
+      "beta": "Rated Grade II, class 3 — the same overall difficulty as the South Chute — the North Chute is an alternate scree/snow couloir reached from Avalanche Canyon that gains the upper mountain from the north side rather than the south, rejoining the standard South Chute line below the ridge notch, before the Finger Traverse and Terrible Traverse, to finish via the summit block and North Chimney. It sees less traffic than the South Chute and is used as a variation, sometimes as an up-route paired with the South Chute as a down-route (or vice versa) to make a loop.",
+      "overview": "An alternate, less-traveled couloir option to the standard South Chute, ascending a comparable chute on the north side of Avalanche Canyon and rejoining the standard route below the ridge notch, before the Finger Traverse and Terrible Traverse."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta/overview: the North Chute rejoins the standard route 'at (or just below) the Terrible Traverse'",
+          "verdict": "CONFIRMED",
+          "evidence": "Trip reports of the North Chute describe it topping out at a ledge/skinny notch where the South Chute line joins from below, then continuing through the east–west ridge notch and traversing up to the START of the Finger Traverse; parties climbed North Chute + Finger Traverse up and used the Terrible Traverse + South Chute down. The Terrible Traverse is reached by descending a snow chute from the second notch, i.e. it is one of two options above the junction, not the junction itself. The stored pitch_detail (researched separately) already follows this order. Medium confidence: the primary North Chute report (NWHikers 9/16/2012) would not load directly this time; its content was read via search excerpts and the earlier research.",
+          "sources": [
+            "https://www.nwhikers.net/forums/viewtopic.php?t=8001313",
+            "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+            "https://www.summitpost.org/you-ll-die-if-you-fall-here-mount-constance/870057"
+          ]
+        },
+        {
+          "claim": "'North Chimney' naming for the summit block appears only in the stored text",
+          "verdict": "REFUTED",
+          "evidence": "A route description says to look for a 3rd-class chimney around the north side of the summit block; other sources climb the tower on its north side. 'North Chimney' is a descriptive label for a documented feature. No change.",
+          "sources": [
+            "http://www.willhiteweb.com/washington_climbing/olympic_mountains/hood_canal/mount_constance_078.htm",
+            "http://ericsbasecamp.net/trips/Constance/MtConstance2.htm"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_constance_finger_traverse": {
+    "area": "wa_mount_constance",
+    "set": {
+      "approach": "From the Dosewallips River Road washout (~mile 1, roughly 550 ft) it's about a 5-mile road-walk or bike-in on the now-closed road to the unsigned, unmaintained Lake Constance climbers' trail at approximately 1,450 ft, crossing Constance Creek on a couple of wooden footbridges near the start. From there the real work begins: the boot path gains roughly 3,300-3,400 ft in only 1.8-2.2 miles to Lake Constance (4,800 ft), one of the steepest approach trails in the Olympics. The first half-mile is brutally steep and eases only slightly as it enters denser forest with exposed roots and rock steps requiring hands; expect scramble-grade (class 2-3) tread throughout with no switchbacks and cairn/flagging-based route-finding in spots. Budget 2.5-3.5 hours to the lake with a full pack. Water is available at Constance Creek partway up and at the lake/outlet — treat everything. From Lake Constance the trail skirts the east shore to established campsites at the north end, cupped in a rocky bowl at the mouth of Avalanche Canyon; most parties camp here rather than going car-to-car. From camp, head up scree into the canyon's lower basin, bend east along a rib, and pick up the 'Cat Ears' rock landmark marking the turn east into the South Chute. The South Chute is a long, narrowing scree gully climbing about 1,900 ft from the lake to roughly 6,600 ft — loose underfoot and much better done on residual early-season snow, since bare scree here is notoriously miserable and can sluff rock onto parties below. Above the chute, cross a saddle, drop about 150 ft, and work up a second scree gully to a notch in the summit ridge; the route then threads gaps and ledges (marked in places by faded white-paint dots) to the base of the Finger Traverse itself — an exposed, downsloping class 3 ledge above a large cliff where climbers jam their fingers into a crack running along the top edge for balance. A rusty, decades-old set of fixed pitons sits along the ledge for parties who want to protect it, though most cross carefully unroped. Figure a full alpine day from camp: 5-6+ hours above the lake to the summit."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach and climbing_route: 'turn south into the South Chute at the Cat Ears'",
+          "verdict": "CONFIRMED",
+          "evidence": "Avalanche Canyon runs north from the lake and the South Chute climbs its east wall: the Cat Ears lie just north of the South Chute notch; the chute tops out at the ~6,560-ft saddle with the view east to Puget Sound; the canyon's normal route goes right (east) at the Cat Ears. Corrected in approach ('turn east'; nothing else changed). climbing_route[n=1] carries the same words ('Turn south') but is NOT changed here — it may only be replaced whole, and its other steps (e.g. 'drop about 150 ft' vs one source's '80 feet') are not all verified. A human should change 'Turn south' to 'Turn east' there.",
+          "sources": [
+            "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+            "https://onehikeaweek.com/2021/07/24/mount-constance/",
+            "https://www.mountainwerks.org/cma/2004/constance.html"
+          ]
+        },
+        {
+          "claim": "South Chute 'climbing about 1,900 ft from the lake to roughly 6,600 ft' (vs ~1,200 ft in the chute)",
+          "verdict": "REFUTED",
+          "evidence": "The stored text explicitly measures from the lake, and a trip report gives ~1,950 ft from the Lake Constance camp to Chute's Notch; lake (~4,700–4,800 ft) to ~6,560–6,600 ft is ~1,800–1,900 ft. The ~1,200-ft figure is the chute alone. Correct as phrased.",
+          "sources": [
+            "https://trailcatjim.com/mt-constance-outer-peak-via-south-side-inner-peak-attempt/",
+            "http://www.willhiteweb.com/washington_climbing/olympic_mountains/hood_canal/mount_constance_078.htm"
+          ]
+        },
+        {
+          "claim": "beta: 'From the summit ridge near the Terrible Traverse, locate the downsloping ledge' makes the two traverses sound adjacent",
+          "verdict": "UNCLEAR",
+          "evidence": "Both lines branch from the same second notch: the Terrible Traverse drops down a snow chute and traverses north lower down; the Finger Traverse makes a rising traverse on east-side ledges above. 'Near' is loose but defensible for that branching point; the overview already frames it as an alternative. No change.",
+          "sources": [
+            "https://ericsbasecamp.net/trips/Constance/MtConstance.htm",
+            "https://olypenpkbagger.wordpress.com/2015/08/19/mt-constance-finger-traverse-81615/"
+          ]
+        },
+        {
+          "claim": "descent_text: 'a fixed sling/rap anchor is in place' on the summit block",
+          "verdict": "UNCLEAR",
+          "evidence": "One trip-report excerpt (Mountaineers South Chute report, seen via search; direct fetch 403) says there is a rap anchor at the final Class 4 but climbers can downclimb. Other reports top-rope or downclimb the north/west side and mention no anchor. The stored text already treats the rappel as optional, so it is not removed; the '~20 ft' figure is unverified.",
+          "sources": [
+            "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-mount-constance-south-chute-2",
+            "https://olypenpkbagger.wordpress.com/2015/08/19/mt-constance-finger-traverse-81615/",
+            "https://trailcatjim.com/mt-constance-outer-peak-via-south-side-inner-peak-attempt/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_lemah_two_goatshead_spire": {
+    "area": "wa_lemah_two",
+    "set": {
+      "overview": "A separate rock tower (~7,000 ft) on the eastern spur of Lemah Two — the upper of two towers there, the lower being more massive."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "overview: 'distinct from the standard walk-up/scramble to Lemah Two's main summit'",
+          "verdict": "CONFIRMED",
+          "evidence": "No source documents a walk-up or standard scramble to Lemah Two. The standard Lemah route climbs the Lemah Glacier into the basin between Lemah One and Two, traverses around Lemah Two's east buttress and climbs a steep chute (Class 3–4 rock or steep snow/ice) toward Lemah's main summit. The clause is removed; nothing else changed. Not changed (outside this directive): descent_text's closing 'parties on the neighbouring standard route routinely do' is vague and testimony-flavoured.",
+          "sources": [
+            "https://www.summitpost.org/lemah-mountain/392789",
+            "https://en.wikipedia.org/wiki/Lemah_Mountain",
+            "https://www.mountaineers.org/activities/routes-places/lemah-mountain-southeast-approach"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_maude_r3": {
+    "area": "wa_mount_maude",
+    "skip_reason": "identity check only — verdict EXISTS; the row is not to be changed",
+    "review": {
+      "findings": [
+        {
+          "claim": "'Nothing Couloir' on Mount Maude may not exist (earlier agent found no source under that name)",
+          "verdict": "EXISTS",
+          "evidence": "Mountain Project lists 'Nothing Couloir' (route 202193352) under Mt Maude, Entiat Range: Trad/Alpine, 4th class, 1500 ft (455 m), GPS 48.1374,-120.804; FA given as 2001, or the same line as / a variation of the 1932 first recorded ascent of the peak. Its description matches the stored beta point for point: late-season scramble, 1500 ft of class 3-4 on clean solid rock on the WNW side; north of the West Route; 2nd couloir right (south) of the North Tower as seen from the west; shallow right fork up slabby class 3, rightward into the next couloir (brief class 4), sustained slabby class 3 to the crest, ridge south to the main summit around towers on the west side (brief class 4); descend the South Shoulder for a loop. The page was added in Dec 2025, which is why general web searches miss it. Stored grade (Class 3-4), length_m 457 and the uncertain fa all match. For a human: the stored pitch_detail lengthM values (152/46/198/61) are not in the source, which gives only the 1500-ft total; they look back-filled and could be stripped in a later pass.",
+          "sources": [
+            "https://www.mountainproject.com/route/202193352/nothing-couloir",
+            "https://www.mountainproject.com/area/108229010/mt-maude"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_nooksack_tower_south_face": {
+    "area": "wa_nooksack_tower",
+    "set": {
+      "fa": "Jens Klubberud and Ben Manfredi, July 2001"
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "fa says 'July 2002'",
+          "verdict": "CONFIRMED",
+          "evidence": "The first-ascent party's own trip report is headed 'South Face: Grade V, 5.10- / July 23-25, 2001' and says they were the first entry in the summit register in 2001. The AAJ note says only 'In July' and appears in the 2002 journal (publication year), which is where 2002 came from. Correction changes only the year.",
+          "sources": [
+            "http://cascadeclassics.org/Climbing/NooksackTower/SouthFace/Summer01/SouthFace,Summer01.htm",
+            "http://publications.americanalpineclub.org/articles/12200219800/North-America-United-States-Washington-Nooksack-Tower-South-Face"
+          ]
+        },
+        {
+          "claim": "approach puts the base of the south face at 'approximately 6,500-7,000 feet'",
+          "verdict": "UNCLEAR",
+          "evidence": "No source gives a base elevation for the face. 6,500 ft is the FA party's camp on the ridge; from camp they went down (one rappel) onto glacier and traversed to the East Nooksack Glacier, but no source states the elevation of the face's base. The range is plausible for an 8,268-ft summit with a 12-pitch face. Not disproven; reviewer may choose to drop the parenthetical as unsourced.",
+          "sources": [
+            "http://cascadeclassics.org/Climbing/NooksackTower/SouthFace/Summer01/SouthFace,Summer01.htm"
+          ]
+        },
+        {
+          "claim": "approach omits the rappel/downclimb from the camp onto the glacier",
+          "verdict": "REFUTED",
+          "evidence": "An omission, not a false statement: the stored approach says to traverse to the East Nooksack Glacier, which is where the route starts. AAJ: downclimbing and one rappel to a small pocket glacier, then a short couloir down to the edge of the East Nooksack Glacier; the trip report describes a single-rope rappel off a stopper onto the West Nooksack Glacier, then a traverse to the East Nooksack. Adding it would be new material, outside a minimal correction. Worth a future enrichment pass. (Out-of-scope note: descent_text is phrased as first-ascent-party testimony.)",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/12200219800/North-America-United-States-Washington-Nooksack-Tower-South-Face",
+            "http://cascadeclassics.org/Climbing/NooksackTower/SouthFace/Summer01/Part2.htm"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_sherpa_balanced_rock_north_ridge": {
+    "area": "wa_sherpa_balanced_rock",
+    "set": {
+      "descent_text": "From the summit, make a short (~30 ft) rappel, with an optional additional ~20 ft rappel, then descend a class 3 gully to the south/southwest using established rappel stations. Traverse benches east toward the Sherpa-Argonaut Col and descend roughly 1,000 ft of loose, unstable scree/talus back to the basin."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text: 'Parties have reported the full descent taking about 10 hours from the summit'",
+          "verdict": "CONFIRMED",
+          "evidence": "The trip report the figure comes from says the party spent about 10 hours ON THE ROUTE (the climb) and that the descent was bad and hard to find; it gives no descent duration. No other source gives a descent time (the route page describes the descent in detail with no duration; another report gives start/summit clock times only). The sentence misstates its source and is party testimony, so it is removed; nothing else changed.",
+          "sources": [
+            "https://www.summitpost.org/sherpa-peak-n-ridge/497624",
+            "https://www.mountainproject.com/route/110930796/north-ridge",
+            "https://www.lemkeclimbs.com/sherpa-peak-north-ridge-58.html"
+          ]
+        },
+        {
+          "claim": "overview's 'sustained loose rock' states only one side of a contested rock-quality picture",
+          "verdict": "UNCLEAR",
+          "evidence": "Sources genuinely disagree: the route page reports large detached blocks on almost every pitch above low fifth; another report calls the last two 5.8 pitches scary with loose blocks but 'not too bad'; the SummitPost report says the rock is solid and the guidebook's 'marginal rock' is actually quite good. Not clearly wrong; a reviewer may want the overview to say rock quality is reported variously. No change made.",
+          "sources": [
+            "https://www.mountainproject.com/route/110930796/north-ridge",
+            "https://www.lemkeclimbs.com/sherpa-peak-north-ridge-58.html",
+            "https://www.summitpost.org/sherpa-peak-n-ridge/497624"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_accendo_lunae_lib_west_face_var": {
+    "area": "wa_colchuck_balanced_rock",
+    "set": {
+      "beta": "P1-P4 and most of P5 are the standard Let It Burn line, then two pitches (5.12- and 5.11-) lead into the West Face finish. P1 (5.8): ramp to a thin splitter crack, tree belay. P2 (5.10+): another short splitter, walk left to a second tree belay. P3 (5.12-): a few 5.10 cracks past a 5.11 slot where the old fixed pin has been removed, leaving a good cam placement; crux is two bolts moving left; belay at a two-bolt anchor. P4 (5.11a): hands and fingers crack to knobs and a double crack; belay at a fixed pin and bolt. P5 (5.11+): flare crack becoming a lieback; belay on 1\" gear on a rightward bench. P6 (5.12-): a difficult flake/crack sequence; belay in the chimney right of a razor flake. P7 (5.11-): tips V-slot to a roof, then a corner. P8 (5.11+): hand crack to a roof. P9 (5.10): overhanging chimneys to a large ledge. P10 (5.6): easy 300 feet to the summit.",
+      "rappels": "From the summit take the standard single ~30 m rappel off the east side from a slung horn."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta P3: 'past an 5.11 slot with a fixed pin' and 'belay with one bolt and gear in a finger crack'",
+          "verdict": "CONFIRMED",
+          "evidence": "A detailed Let it Burn report (this pitch is Let it Burn's P2, which Accendo shares) explains that the original route had a piton meant to be replaced by a bolt; once the piton was pulled it left a good cam placement, so the bolt went into the anchor instead, which now has two bolts rather than the single bolt the first-edition guidebook lists. The Let it Burn route page also describes this pitch ending at a '2 bolt belay'. The stored beta copies the older Accendo route-page text. Only the P3 clause changed (the 'an 5.11' typo becomes 'a 5.11' inside the rewritten clause). The stored pitch_detail P3 already reflects this.",
+          "sources": [
+            "https://stephabegg.com/trip-reports/washington/cbr-let-it-burn/",
+            "https://www.mountainproject.com/route/108157307/let-it-burn",
+            "https://www.mountainproject.com/route/108157297/accendo-lunae-libwest-face-var"
+          ]
+        },
+        {
+          "claim": "rappels: 'Bolted and natural anchors on the Let it Burn portion allow rappelling the lower half with two ropes'",
+          "verdict": "CONFIRMED",
+          "evidence": "Unsupported and safety-relevant (a retreat plan), so removed per the brief. No source consulted (Accendo and Let it Burn route pages, the Accendo FA write-up, the Let it Burn trip report, AAJ search) describes rappelling the Let it Burn pitches with two ropes; every description gives the walk-off with an optional 30 m rappel from a slung horn. The only two-rope rappel in the FA write-up is on Prusik Peak (Der Sportsman) the next day, which appears to be where the claim came from. The summit-rappel sentence is kept unchanged.",
+          "sources": [
+            "http://blakeclimbs.blogspot.com/2012/07/new-old-classics.html",
+            "https://www.mountainproject.com/route/108157307/let-it-burn",
+            "https://www.mountainproject.com/route/108157297/accendo-lunae-libwest-face-var"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_big_kangaroo_going_down_under": {
+    "area": "wa_big_kangaroo",
+    "set": {
+      "beta": "Starting from the Beckey-Tate approach, the route traverses hard right across overlaps to reach a big ledge below an open-book corner. From there it climbs two classic, clean corner pitches — the second through a burly bulge at 5.11c, the route's crux — followed by a wide-crack section, then exits via easier cracks to the top of the wall.",
+      "overview": "A five-pitch line on the south face sharing the Beckey-Tate approach before traversing right to two clean corner pitches, including a burly 5.11c bulge, then finishing up easier cracks to the top of the wall."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta and overview say the route exits/finishes 'to the summit'",
+          "verdict": "CONFIRMED",
+          "evidence": "The first-ascent note says the party bypassed the big roof via easy cracks 'to the top of the wall'. The Beckey-Tate route page (same face, same descent) states that none of the south face routes top out on the true summit; from the top of the wall a short scramble leads to the notch and the descent gully. SuperTopo likewise says the south face ends a few hundred feet below the summit. Only 'the summit' was replaced with 'the top of the wall' in each column. descent_text ('From the top of the route ... scramble to the notch just north of the true summit') is consistent and left alone.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/13201212207/Big-Kangaroo-south-face-Skinny-Start-Going-Down-Under",
+            "https://www.mountainproject.com/route/114423730/beckey-tate",
+            "http://www.supertopo.com/rock-climbing/Washington-Pass-Big-Kangaroo-Beckey-Tate"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_north_face_left_buttress": {
+    "area": "wa_castle_peak_pasayten",
+    "skip_reason": "descent finding UNCLEAR (details unsourced but not contradicted); pitch count is a classification proposal only — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text: 'descend via Castle Peak's east ridge to an obvious col, then down a snow finger'",
+          "verdict": "UNCLEAR",
+          "evidence": "The route page says only that the descent is via the East ridge and snow slopes to the north, crampons and axe helpful but not mandatory. The stored text agrees on the east ridge and north-side snow; the 'obvious col' and 'snow finger' details appear in no source found, but nothing contradicts them. The FA account does not describe the descent. No change.",
+          "sources": [
+            "https://www.mountainproject.com/route/106464656/north-face-left-buttress",
+            "https://alpinist.com/newswire/accidental-first-ascent-fight-or-flight-in-the-north-cascades/"
+          ]
+        }
+      ],
+      "classification": {
+        "pitches": {
+          "proposed": 12,
+          "evidence": "The route page lists 'Trad, Snow, Alpine, 1400 ft (424 m), 12 pitches, Grade IV' and describes P1-P7 then 'P8-P12. Follow the left side of the buttress to the top'. No source gives 14."
+        }
+      }
+    }
+  },
+  "wa_dirty_sanchez": {
+    "area": "wa_goose_egg_mountain",
+    "set": {
+      "beta": "Multi-pitch alpine rock route with run-out sections requiring careful route-finding. Loose rock throughout with minimal protection on upper pitches, particularly the exposed Jenga Traverse on the final pitch. The route starts on the second obvious rib and is mostly gear-protected, with two bolted pitches (the second and sixth) and gear climbing through corners."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta says the route 'ascends primarily bolted sections'",
+          "verdict": "CONFIRMED",
+          "evidence": "Route page pitch list: P1 gear with one bolt, P2 fully bolted (8 bolts), P3-P4 gear to 3 in, P5 gear with one bolt, P6 four bolts, P7 sparse or no protection. A second trip report gives the same split (P2 bolted with optional gear, P6 a four-bolt pitch, the rest trad). Only two of seven pitches are bolted.",
+          "sources": [
+            "https://www.mountainproject.com/route/119210014/the-dirty",
+            "https://rocknropenw.com/2023/05/09/the-dirty/"
+          ]
+        },
+        {
+          "claim": "stored name 'Dirty Sanchez'; the first ascensionist has asked for 'The Dirty'",
+          "verdict": "CONFIRMED",
+          "evidence": "The route page is titled 'The Dirty'. A 2023 trip report says the first ascensionist asked for the route to be called 'The Dirty', the name used while it was established, in place of the original offensive name. See classification.",
+          "sources": [
+            "https://www.mountainproject.com/route/119210014/the-dirty",
+            "https://rocknropenw.com/2023/05/09/the-dirty/"
+          ]
+        },
+        {
+          "claim": "(noticed, not acted on) fa says 'March 2002 (exact date uncertain)'",
+          "verdict": "UNCLEAR",
+          "evidence": "The route page gives the FA as April 2003. This was not in the finding list and only one source was checked, so fa is left unchanged. Worth a human look.",
+          "sources": [
+            "https://www.mountainproject.com/route/119210014/the-dirty"
+          ]
+        }
+      ],
+      "classification": {
+        "name": {
+          "proposed": "The Dirty",
+          "evidence": "The route page title is 'The Dirty', and the first ascensionist asked for this name in place of the original. The id wa_dirty_sanchez is derived from the name: change the name column only and keep the id."
+        }
+      }
+    }
+  },
+  "wa_garfield_mountain_infinite_bliss": {
+    "area": "wa_garfield_mountain",
+    "set": {
+      "descent_text": "Rappel the line. Two 60 m ropes are required — a single 70 m or 80 m is not long enough for some stations. Reported rappel times run 2.5 to 4 hours. The stations are chained; one station 10 m above the crux anchor lets two 60 m ropes reach the base of the crux pitch in one rappel. Carrying over the top and descending the far side of the mountain has been done but risks an extra night out in brushy, cliffy terrain, and is not recommended. Knot your rope ends: a climber died here on September 7, 2014 after deliberately bypassing a station in fading light, running out of rope, and falling roughly three pitches. Start the rappels with real daylight in hand, and watch for parties still climbing beneath you."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text: 'one station 10 m above the crux anchor lets you make the last pull to the base'",
+          "verdict": "CONFIRMED",
+          "evidence": "The source says the crux pitch (P20) ends at an anchor without chains. About 10 m higher is a chain station, and from it two 60 m ropes reach the base of the CRUX PITCH, not the base of the route, which is about 20 rappels lower. The stored wording can be read as reaching the ground. Only that clause was changed.",
+          "sources": [
+            "http://www.alpinedave.com/garfield/infinite_bliss.htm"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_cascade_peak_nw_chimney": {
+    "area": "wa_cascade_peak",
+    "set": {
+      "beta": "Graded 5.8, the Northwest Chimney climbs three pitches of broken, loose rock - including an aesthetic but sparsely-protected chimney pitch - from the moat below the peak's northwest side to the summit. Loose rock can make the crux first pitch feel considerably harder than that grade (closer to 5.10), and no rappel anchors, pitons or summit register have been reported, which suggests the route sees very few ascents.",
+      "approach": "Same approach as the East Ridge to the C-J col (Cascade River Road to Cascade Pass Trailhead, Cascade Pass Trail to Cascade Pass, then cross-country via Mixup Arm/Cache Glacier to the C-J col). From a bivy at the col, cross the moat below Cascade Peak's northwest side to reach the base of the route.",
+      "descent_text": "From the summit, downclimb/simul-climb back to the top of the technical pitches and rappel the route on gear-built nut/cam anchors. Allow roughly 4.5 hours from the summit back to the C-J col.",
+      "rappels": "Rappel the route on gear-built anchors - no fixed rap stations have been reported. Allow roughly 4.5 hours from the summit back to the C-J col."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta, approach, descent_text and rappels carry party testimony ('A 2013 party found', 'one documented party started up around 9 a.m.', 'One party's descent … took about 4.5 hours', 'as of a 2013 ascent')",
+          "verdict": "CONFIRMED",
+          "evidence": "The testimony is in the stored text as written, and brief hard rule 2 bars it. Rewritten in plain voice, keeping each fact: the first pitch can feel harder, no fixed anchors, pitons or register have been reported, and the descent takes about 4.5 h from the summit to the col. The 9 a.m. start was one party's schedule, not a property of the route, so that clause was dropped. The only description found is the single 2013 trip report, which quotes the guidebook's '5.8 NW Chimney'. A fresh search found no second source.",
+          "sources": [
+            "https://cascadeclimbers.com/forum/topic/92261-tr-johannesburg-mountain-and-cascade-peak-cj-couloir-to-east-ridge-and-nw-chimney-7272013/"
+          ]
+        },
+        {
+          "claim": "the grade column holds a sentence",
+          "verdict": "CONFIRMED",
+          "evidence": "The stored grade reads '5.8 (a 2013 party found pitch 1 harder, closer to 5.10, due to loose rock)'. The published grade is 5.8, and the qualifier is now in beta. See classification.",
+          "sources": [
+            "https://cascadeclimbers.com/forum/topic/92261-tr-johannesburg-mountain-and-cascade-peak-cj-couloir-to-east-ridge-and-nw-chimney-7272013/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "5.8",
+          "evidence": "The only trip report quotes the guidebook grade as 5.8. The parenthetical is testimony and is now carried in beta."
+        }
+      }
+    }
+  },
+  "wa_summertime": {
+    "area": "wa_summertime_crag",
+    "set": {
+      "approach": "Summertime Crag uses a different trailhead than the other four areas' shared Blue Lake approach. From Winthrop, drive west on SR-20 through Mazama toward Washington Pass (or, coming from Seattle, continue past Washington Pass toward Mazama on SR-20); park at a small pullout on the east side of the highway, just before the larger 'Spires Gully' parking area used to access the Early Winters Spires from the east. From the pullout, descend off the road down through trees, cross Early Winters Creek, follow it briefly downstream, then climb up-slope and contour left to reach the crag — about a 20-25 minute walk with minimal elevation change. The crag stays shaded until about midday in summer, making it a popular warm-weather alternative when Mazama-area cragging runs hot."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach: 'The crag stays shaded until mid-afternoon'",
+          "verdict": "CONFIRMED",
+          "evidence": "The crag page gives 'Shade until mid day'. Only that clause was changed.",
+          "sources": [
+            "https://www.mountainproject.com/area/110728644/summertime-crag"
+          ]
+        },
+        {
+          "claim": "approach parks at a small pullout just before the Spires Gully parking, but the crag page says to park in the largest pullout below the SR-20 Hairpin and walk down the highway",
+          "verdict": "UNCLEAR",
+          "evidence": "The crag page says to park in the largest pullout below the Hairpin Curve and walk down the highway toward Mazama to the start of the track (log creek crossing, boulder field, 20-30 min). The stored text parks at a small pullout just below (east of) a larger parking area, which is where a walk down from the big pullout would end. The two may describe adjacent spots rather than contradict each other. Single source; not changed.",
+          "sources": [
+            "https://www.mountainproject.com/area/110728644/summertime-crag"
+          ]
+        },
+        {
+          "claim": "5 pitches is not stated explicitly",
+          "verdict": "REFUTED",
+          "evidence": "The route page lists 400 ft, 5 pitches, Grade II.",
+          "sources": [
+            "https://www.mountainproject.com/route/110728801/summertime"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_gato_negro": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "overview calls it the 'East Face' of Whine Spire, but the AAJ first-ascent report places Whine Spire on Silver Star's west face",
+          "verdict": "UNCLEAR",
+          "evidence": "The first-ascent report puts the route on a spire on the west face of Silver Star. A guide's trip report, and a search summary of a topo site, call Whine Spire a sub-peak on the East face of Silver Star. The sources disagree, and the stored text names the face of Whine Spire, not the face of Silver Star. Not changed.",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/12200319301",
+            "http://iannicholsonslife.blogspot.com/2010/09/gato-negro-iv-510d-with-rebecca.html"
+          ]
+        },
+        {
+          "claim": "beta says '11 long pitches' while pitches = 12",
+          "verdict": "REFUTED",
+          "evidence": "The FA report says 11 pitches were climbed. The route page says 12, the last often skipped. Both are defensible.",
+          "sources": [
+            "https://publications.americanalpineclub.org/articles/12200319301",
+            "https://www.mountainproject.com/route/113324178/gato-negro"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "5.10+",
+          "evidence": "Optional. The FA report gives IV 5.10+, with the P4 overhanging double corner as the crux. A guide's report titles it IV+ 5.10d, a 2007 forum trip report says 5.10b, and the route page describes sustained 5.10a/b. The stored 5.10 is not wrong, but it drops the '+' the first-ascent party gave. A human call."
+        }
+      }
+    }
+  },
+  "wa_ellation": {
+    "area": "wa_mamie_peak",
+    "set": {
+      "beta": "Named for the daughter, Ella, of one of the first ascensionists. Pitch 1 is a bolted groove; pitches 2-3 mix flakes, thin cracks, seams, and steep friction (the mental crux); pitches 4-7 climb knobby, well-bolted face and corner terrain up to sustained 5.10; pitch 8 finishes on a steep juggy face into a flaring corner at 5.11a (or 5.10 with a point of aid). Protection mixes bolts with natural gear throughout — most pitches are partially bolted."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta: 'Named for FA climber Matt Alford's daughter Ella'; the attribution is unverified",
+          "verdict": "CONFIRMED",
+          "evidence": "The route page, three trip reports and the FA line say nothing about whose daughter Ella is. A search summary attributes her to the other first ascensionist. That the route is named for Ella, a first ascensionist's daughter, is supported; which one is her father is not. Softened to 'one of the first ascensionists'.",
+          "sources": [
+            "https://www.mountainproject.com/route/110668845/ellation",
+            "https://www.yuvalboss.com/trip-reports/2017-07-30-ellation/",
+            "https://muntanyaverda.wordpress.com/2012/09/03/mamie-peak-ellation-wa-5-11/",
+            "https://stephabegg.com/trip-reports/washington/mamie-ellation/"
+          ]
+        },
+        {
+          "claim": "length_m 244 (800 ft) vs 700 ft in a trip report",
+          "verdict": "UNCLEAR",
+          "evidence": "The stored overview says about 800 ft, and one trip report title says 700 ft. Minor; no change.",
+          "sources": [
+            "https://stephabegg.com/trip-reports/washington/mamie-ellation/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_wild_wild_west": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "rappels: 'descend up and left on the back (north) side near a stand of fir trees to regain the base' (a comment adds a blue runner, double 70 m ropes and snagging)",
+          "verdict": "REFUTED",
+          "evidence": "The route page's descent says the rappel is up and left on the back side near a stand of fir trees, as for all summit routes. That matches the stored rappels and descent_text. The comment only adds detail; the stored text is not wrong.",
+          "sources": [
+            "https://www.mountainproject.com/route/110943576/wild-wild-west"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_zool_patch": {
+    "skip_reason": "no finding raised — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "(none) the research agent found the grade, pitches, length, FA and rappels all match the source",
+          "verdict": "REFUTED",
+          "evidence": "Nothing to verify; stored values unchanged.",
+          "sources": []
+        }
+      ]
+    }
+  },
+  "wa_primal_scream": {
+    "skip_reason": "no finding raised — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "overview says 'sharing its final three pitches', while the Concerto page says four",
+          "verdict": "REFUTED",
+          "evidence": "The research agent found that the Primal Scream page joins at Concerto's P11 anchor and shares P12-14, three pitches, which matches the stored overview. The agent suggested no change. Not re-researched.",
+          "sources": []
+        }
+      ]
+    }
+  }
+}
