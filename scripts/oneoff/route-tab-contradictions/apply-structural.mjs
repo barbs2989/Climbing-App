@@ -18,7 +18,9 @@ const one = async (table, id) => { const j = await (await fetch(`${SUPABASE_URL}
 const report = { applied: [], rejected: [], backups: [], created: [], deleted: [] };
 const backedUp = new Set();
 async function backup(id) { if (backedUp.has(id)) return; const r = await one("routes", id); if (r) { report.backups.push(r); backedUp.add(id); } }
-const bump = async (areaId, d) => { if (DRY) return; const a = await one("areas", areaId); if (a) await fetch(`${SUPABASE_URL}/rest/v1/areas?id=eq.${areaId}`, { method: "PATCH", headers: H({ "Content-Type": "application/json" }), body: JSON.stringify({ route_count: (a.route_count || 0) + d }) }); };
+// route_count is maintained by the database itself (a manual bump here double-counted every move, measured
+// 2026-09-25 by check:counts), so this is deliberately a no-op.
+const bump = async () => {}; const _unusedBump = async (areaId, d) => { if (DRY) return; const a = await one("areas", areaId); if (a) await fetch(`${SUPABASE_URL}/rest/v1/areas?id=eq.${areaId}`, { method: "PATCH", headers: H({ "Content-Type": "application/json" }), body: JSON.stringify({ route_count: (a.route_count || 0) + d }) }); };
 const hasCite = v => CITE.test(typeof v === "string" ? v : JSON.stringify(v ?? ""));
 
 for (const res of results) {
