@@ -155,13 +155,23 @@ function resolver(stateId, stateName, planned, splits) {
       let c = kids.get(cur + "|" + areaNorm(chain[i])) || [];
       if (!c.length) c = kidsK.get(cur + "|" + ck(chain[i])) || [];
       if (c.length === 1) { cur = c[0].id; continue; }
-      if (c.length > 1) return { why: "ambiguous area name" };
+      if (c.length > 1) return { why: "two of our areas share this name under one parent", at: chain.slice(0, i + 1).join(" > ") };
       const nxt = i + 1 < chain.length ? (kids.get(cur + "|" + areaNorm(chain[i + 1])) || []) : [];
       if (nxt.length === 1 && skips < 2) { skips++; continue; }
       if (!create) return { why: "area not in our catalog" };
-      const near = sameNear(chain[i], geo);
+      let near = sameNear(chain[i], geo);
+      // Several of ours nearby (MP files Purinton Creek three times: rock, bouldering, ice, under
+      // different parents): take the one whose ANCESTORS carry the most of MP's path above it, then
+      // the exact spelling — only if that leaves exactly one.
+      if (near.length > 1) {
+        const above = new Set(chain.slice(0, i).map(ck));
+        const score = x => { let s = 0; for (let y = byId.get(x.parent_id); y; y = byId.get(y.parent_id)) if (above.has(keyOf(y))) s++; return [s, areaNorm(x.name) === areaNorm(chain[i]) ? 1 : 0]; };
+        const scored = near.map(x => ({ x, s: score(x) })).sort((a, b) => b.s[0] - a.s[0] || b.s[1] - a.s[1]);
+        const [a, b] = scored;
+        if (a.s[0] + a.s[1] > 0 && (a.s[0] !== b.s[0] || a.s[1] !== b.s[1])) near = [a.x];
+      }
       if (near.length === 1) { cur = near[0].id; continue; }
-      if (near.length > 1) return { why: "ambiguous area name" };
+      if (near.length > 1) return { why: "two same-named areas of ours nearby", at: chain.slice(0, i + 1).join(" > ") + " : " + near.map(x => x.id).join(",") };
       // Create THIS level only, in MP's order; the next level gets its own chance to match.
       if (direct.has(cur)) {
         if (ids.has(cur + "_climbs")) return { why: "would nest areas under an area that holds routes" };
@@ -242,7 +252,7 @@ async function runState(st) {
   for (const r of byUrl.values()) { allNames.push(mpName(r)); for (const a of String(r.Location || "").split(" > ")) allNames.push(a.trim()); }
   catalogKeys(allNames);
   const place = resolver(st.id, st.name, planned, splits);
-  const refused = {}, matched = [], added = [];
+  const refused = {}, matched = [], added = [], whereRefused = [];
   const cand = [];
   // Existing-area placements first, so an area CREATED for one route is never planned as a leaf
   // that an existing-area placement later needs to descend through.
@@ -253,7 +263,7 @@ async function runState(st) {
     if (norm(chain[0]) !== norm(st.name)) { refused["location outside the state"] = (refused["location outside the state"] || 0) + 1; continue; }
     const p = place(chain.slice(1), false);
     if (!p.areaId && CREATE && p.why === "area not in our catalog") { deferred.push({ r, tk, chain }); continue; }
-    if (!p.areaId) { refused[p.why] = (refused[p.why] || 0) + 1; continue; }
+    if (!p.areaId) { refused[p.why] = (refused[p.why] || 0) + 1; if (SAMPLE && p.at) whereRefused.push(p.why + ": " + p.at); continue; }
     cand.push({ r, tk, areaId: p.areaId });
   }
   // Deepest paths first, so a region created for a short path is not already a leaf holding a route
@@ -262,7 +272,7 @@ async function runState(st) {
   for (const { r, tk, chain } of deferred) {
     const lat = +r["Area Latitude"], lng = +r["Area Longitude"];
     const p = place(chain.slice(1), true, { lat: Number.isFinite(lat) && lat !== 0 ? lat : null, lng: Number.isFinite(lng) && lng !== 0 ? lng : null });
-    if (!p.areaId) { refused[p.why] = (refused[p.why] || 0) + 1; continue; }
+    if (!p.areaId) { refused[p.why] = (refused[p.why] || 0) + 1; if (SAMPLE && p.at) whereRefused.push(p.why + ": " + p.at); continue; }
     cand.push({ r, tk, areaId: p.areaId });
   }
   const areaIds = [...new Set(cand.map(c => c.areaId))];
@@ -335,6 +345,10 @@ async function runState(st) {
     console.log("  sample NEW AREAS:");
     const nameOf = id => (plannedById.get(id) || {}).name || id;
     for (const a of newAreas.filter(a => a.area_type === "crag").slice(0, 10)) console.log("    " + a.name + "  <-  " + nameOf(a.parent_id) + "  (" + a.id + ")");
+  }
+  if (SAMPLE && whereRefused.length) {
+    const c = {}; for (const w of whereRefused) c[w] = (c[w] || 0) + 1;
+    console.log("  refused at:"); for (const [w, n] of Object.entries(c).sort((a, b) => b[1] - a[1]).slice(0, 15)) console.log(`    ${n}  ${w}`);
   }
   if (SAMPLE) {
     console.log("  sample NEW:"); for (const x of inserts.slice(0, 12)) console.log("    " + x.name + " | " + x.grade + " | " + x.discipline + " | " + x.area_id);
