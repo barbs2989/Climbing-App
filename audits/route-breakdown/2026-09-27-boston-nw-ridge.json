@@ -1,0 +1,33 @@
+{
+  "wa_northwest_ridge_2": {
+    "area": "wa_boston_peak",
+    "replace_climbing_route": true,
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Hanging snow slope to the ridge base",
+        "notes": "The only documented ascent gained this ridge after climbing Sharkfin Tower, descending from it, and traversing a steep hanging snow slope directly to the base of the ridge. There is no established independent approach to the foot of the crest, so the snow condition on that traverse is the gatekeeper and it is committing terrain to cross in poor conditions."
+      },
+      {
+        "n": 2,
+        "class": "5.5",
+        "label": "A cheval section",
+        "notes": "The distinctive feature of the ridge is two pitches climbed a cheval, straddling a crest of rock described as having the consistency of feta cheese. The ridge carries an X rating in its only published account, meaning protection is effectively absent and a fall would not be held. Nothing on this section should be trusted as an anchor."
+      },
+      {
+        "n": 3,
+        "label": "Upper ridge to the summit",
+        "notes": "Roughly another 1,000 ft of climbing remains above the a cheval section to reach the 8,894 ft summit, all of it on previously unclimbed and consistently chossy rock. Retreat is the defining hazard: the ridge has no fixed stations, and the only party known to have climbed it went over the summit and on toward Sahale rather than reversing any of it. There is no route description for the crest beyond, and the line has not been repeated — treat it as unrepeated ground rather than an established route."
+      }
+    ],
+    "set": {
+      "beta": "This ridge was first climbed in 2018 as one leg of the 'Boston Marathon' — a ~26.2-mile, mostly-soloed technical traverse circling the entire rim of Boston Basin (26 pitches up to 5.8 R, 26 rappels, 20,000+ ft of technical terrain). The ridge itself is deep, virgin choss rated 5.5 X, including a two-pitch section climbed à cheval (straddling the ridge crest) across rock with the consistency of feta cheese, followed by roughly 1,000 additional feet of similarly poor climbing. It is accessed along the basin rim from the direction of Sharkfin Tower. There is no established description of this specific ridge as an independent route — treat it as an obscure, rarely-repeated line rather than a maintained trade route.",
+      "overview": "Boston Peak's northwest ridge is an obscure, seriously run-out line linking the Sharkfin-Boston col to Boston's summit. Its only known ascent came in July 2018 as part of the 'Boston Marathon,' a west-to-east enchainment that circled Boston Basin over Forbidden Peak, Sharkfin Tower, Boston Peak, and beyond (VI 5.8 R overall). The ridge itself is deep, virgin choss — rock the consistency of feta cheese — including a two-pitch à cheval traverse and roughly 1,000 more feet of climbing rated 5.5 X, much of it climbed unroped. No other ascents are known; treat this as an unrepeated, essentially unprotectable objective for very experienced parties rather than an established route.",
+      "approach": "There is no standalone approach described for this ridge. What is confirmed is that the ridge connecting Boston Peak toward Forbidden Peak passes over Sharkfin Tower (8,120+ ft), and the only known ascent reached it via a multi-day connecting traverse begun on Forbidden Peak rather than as a direct approach to Boston. For a party attempting it directly, the most logical line mirrors the standard access used for the Forbidden/Torment/Sharkfin ridge system: from the Cascade River Road pullout just past mile marker 22 (across from Johannesburg Mountain), follow the old mining road about 0.75 mile to the historic mine site, then the steep, eroded Boston Basin climbers' path — with four stream crossings — up through forest to treeline near 5,300 ft. Boston Basin proper sits at ~5,700 ft, with a low camp around 5,300 ft and a high camp around 6,400 ft. From high camp, glacier travel up the Quien Sabe/Boston Glacier basin toward the col between Sharkfin Tower and Boston would put a party at the low (northwest) end of this ridge; from there the crest itself has no published route description, so expect sustained, likely-loose 4th-class-or-harder ridge climbing with route-finding as the real crux. The line from high camp to the col is the logical way in, not an established approach for this ridge.",
+      "descent_text": "No descent-only beta exists for this ridge — the first-ascent party continued their traverse onward (over to Sahale Peak and down Sahale Arm) rather than retreating back down it, so going down this way is undescribed. A party that climbed the ridge and topped out on Boston's summit would most sensibly descend via the Southeast Face route's established rappel line (3 rappels down the southeast/east face on fixed slings to the Boston Glacier — see that route) rather than reversing the ridge, since that is the only descent off this peak with known, documented anchors. Retreating directly back down the Northwest Ridge itself should be assumed to mean natural, self-built anchors the whole way (slung horns/chockstones or gear placements) with zero documented stations and the same loose rock the route is known for — a serious, committing proposition that should not be planned around finding fixed gear."
+    },
+    "review": {
+      "changed": "climbing_route row 3: removed 'the gendarmes already take several rappels off threaded cord on the way up' — the only account of the ridge describes no on-ridge rappels or gendarmes (verify-8 CONFIRMED the same claim in `rappels`, and flagged this row as out of scope then). Rows 1-2 unchanged. beta/overview: the party's account restated in plain voice (no 'their account calls', no quoted words, no 'the pair found'); every fact kept. The FA party stays in `fa`. approach/descent_text: pipeline-voice closing sentences ('a reasoned estimate … not confirmed beta', 'an honest estimate … not sourced route-specific beta') restated or removed; 'nobody has published what going down this way actually looks like' → 'going down this way is undescribed'."
+    }
+  }
+}
