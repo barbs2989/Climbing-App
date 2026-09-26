@@ -8,16 +8,20 @@
 //
 //   1. IS THE REFUSAL STILL THERE? Both triggers exist, are enabled, and fire on INSERT and UPDATE.
 //      A later migration that drops or re-creates them INSERT-only would pass every other gate.
-//   2. DID ONE GET PAST IT? Two routes in ONE area with the same catalog_key (0214: "Mt." =
-//      "Mount", punctuation and "The" ignored), placeholders ("Unknown", "Project") excluded.
+//   2. DID ONE GET PAST IT? Two routes in ONE area with the same route_name_key (0219: "Mt." =
+//      "Mount", apostrophes, case and "The" ignored, but "Ice"/"Route" words and a trailing variant
+//      mark — "Problem A'", "Grand Slab+" — KEPT), placeholders ("Unknown", "Project") excluded.
+//      The first version used 0214's area-shaped catalog_key and listed 48 groups; read one by one,
+//      43 were different climbs it could not tell apart ("Apron" M5 / "Apron Ice" WI3). 0220 merged
+//      the 5 real ones; the groups still listed were each READ and differ in grade or discipline.
 //      Routes carry no created_at, so "new since the trigger" cannot be read off a date: the
 //      groups that existed on 2026-09-25 are LISTED in scripts/data/catalog-duplicates-baseline.json,
 //      and any group — or any extra row in a listed group — that is not on it fails. A LIST, not
 //      a count: a count stays level when one duplicate is fixed and another lands.
 //
-// catalog_key is recomputed HERE in JS: in SQL it costs past the gateway's ~100 s over 211k
-// routes (measured: 57014, then a 524). lib/search.js searchCanon is the same table as SQL
-// search_canon — check:search-norm pins that — and the stoplist below is 0214's.
+// The key is recomputed HERE in JS: in SQL it costs past the gateway's ~100 s over 211k routes
+// (measured: 57014, then a 524). lib/search.js searchCanon is the same table as SQL search_canon —
+// check:search-norm pins that — and routeNameKey below is 0219's route_name_key, rule for rule.
 //
 // What it cannot see: a duplicate filed under a DIFFERENT area (MP's copy area beside ours) —
 // that is the trigger's 5 km / 0.3 km neighbourhood test, which a whole-catalog pairwise scan
@@ -69,9 +73,13 @@ for (const [name, table] of [["trg_refuse_duplicate_area", "areas"], ["trg_refus
 }
 
 // ── 2. same-area duplicates ──
-const STOP = new Set(["the", "mount", "mountain", "mountains", "peak", "peaks", "area", "areas",
-  "climbing", "climbs", "crag", "crags", "ice", "route", "via", "and", "of"]);          // 0214 catalog_key
-const catalogKey = n => { const c = searchCanon(n); return c.split(" ").filter(w => w && !STOP.has(w)).join(" ") || c; };
+// 0219 route_name_key: canon words minus "the", then "|" and the trailing run of variant marks.
+const routeNameKey = n => {
+  const t = String(n ?? "").trim();
+  const base = searchCanon(t).split(" ").filter(w => w && w !== "the").join(" ") || t.toLowerCase();
+  const marks = (t.match(/[\s'’′"+?!\[\]-]*$/) || [""])[0].replace(/\s/g, "").replace(/[’′]/g, "'");
+  return base + "|" + marks;
+};
 const QUAL = "(route|climb|problem|boulder|line|prow|arete|crack|slab|face|corner|dihedral|lfc|v\\d+|5\\.\\d+[a-d]?|\\d+)";
 const PLACEHOLDER = [/^_?delete$/, new RegExp(`^un-?named(\\s+${QUAL})?$`), new RegExp(`^unknown(\\s+${QUAL})?$`),
   /^(open|closed) project$/, /^(project|route|no name|nameless|tbd|n\/?a)$/, /^v\d+[+-]?$/];            // 0065
@@ -83,7 +91,7 @@ if (routes.length < 100000) { console.error(`check:catalog-duplicates: read only
 const groups = new Map();
 for (const r of routes) {
   if (isPlaceholder(r.name)) continue;
-  const k = catalogKey(r.name); if (!k) continue;
+  const k = routeNameKey(r.name);
   const g = `${r.area_id}|${k}`;
   (groups.get(g) || groups.set(g, []).get(g)).push(r.id);
 }

@@ -361,10 +361,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     exist, are enabled, BEFORE, and fire on **INSERT and UPDATE** (0216 was INSERT-only; 0218 adds
     moves and renames). Read through `supabase db query --linked` — a worktree needs
     `supabase/.temp` symlinked, or it exits 2 with that instruction.
-  - **None got past it.** Two routes in ONE area with the same `catalog_key` (0214), placeholders
-    excluded — against a LIST of the 48 pre-trigger groups in
-    `scripts/data/catalog-duplicates-baseline.json`, never a count (a count holds level when one
-    is fixed and another lands). Routes have no `created_at`, which is why it is a list at all.
+  - **None got past it.** Two routes in ONE area with the same `route_name_key` (0219),
+    placeholders excluded — against a LIST in `scripts/data/catalog-duplicates-baseline.json`,
+    never a count (a count holds level when one is fixed and another lands). Routes have no
+    `created_at`, which is why it is a list at all.
+  - **The first key was WRONG for routes, and reading the groups is what showed it.** Version 1
+    used 0214's `catalog_key`, built for AREA names: it drops "ice", "route", "area", "and" and
+    every mark. It listed 48 groups; read one by one, **43 were different climbs** — boulder
+    variants named by primes ("Problem A" / "A'" / "A''"), "Apron" M5 / "Apron Ice" WI3,
+    "Spray" 5.11 / "Ice Spray" WI4, "Grand Slab" / "Grand Slab+". So the TRIGGER would have refused a
+    climber's real "Problem A''". 0219's `route_name_key` keeps those words and the trailing
+    variant marks; 14 groups remained, **5 were one climb twice and were merged (0220)**, and the
+    rest differ in grade or discipline ("5.12 Face" trad 5.12c/d vs sport 5.12a, "Charlie's Arete"
+    V4 vs V2) and stay listed as READ. Do not re-read them; do not "merge" them on the key alone.
   - **catalog_key is recomputed in JS** (`lib/search.js` `searchCanon` + 0214's stoplist). In SQL
     it does not finish over 211k routes: measured `57014` at the default timeout, then a gateway
     **524** with `statement_timeout = 300s`. `check:search-norm` keeps the JS and SQL tables one.
