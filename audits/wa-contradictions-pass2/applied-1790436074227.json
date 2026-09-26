@@ -1,0 +1,328 @@
+{
+ "applied": [
+  {
+   "id": "wa_south_face_4",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites"
+  },
+  {
+   "id": "wa_koala_krack",
+   "column": "rappels",
+   "path": [],
+   "fact": "Rappel count for the descent"
+  },
+  {
+   "id": "wa_koala_krack",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Whether the North Face is easier than Koala Krack"
+  },
+  {
+   "id": "wa_koala_krack",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_koala_krack",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_koala_krack",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure window"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_south_face_4",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "No overnight permits required; day-use only",
+      "land_manager": "Okanogan-Wenatchee National Forest, North Cascades Highway corridor",
+      "cost_structure": {
+       "parking": "Free at Washington Pass hairpin turnout"
+      },
+      "wilderness_zone": "Non-designated, accessed via Washington Pass on North Cascades Highway",
+      "seasonal_closures": "Seasonal closure of North Cascades Highway (SR-20); snowbanks may prevent parking access early in season; best access July-August",
+      "permit_pickup_hours": "Monday-Friday 8:00 AM - 4:00 PM",
+      "special_restrictions": "Large parking turnout at hairpin; unmaintained route beyond Kangaroo Pass with loose scree, exposed slabs, and short rock climb to summit",
+      "parking_pass_required": "None at hairpin turnout; Northwest Forest Pass may apply to nearby areas",
+      "permit_pickup_location": "Methow Valley Ranger District or Okanogan-Wenatchee Forest Service"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No overnight permits required; day-use only",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Non-designated, accessed via Washington Pass on North Cascades Highway",
+     "landManager": "Okanogan-Wenatchee National Forest, North Cascades Highway corridor",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None at hairpin turnout; Northwest Forest Pass may apply to nearby areas",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    },
+    "road": {
+     "name": "SR-20 highway pullout near Kangaroo Ridge, Washington Pass",
+     "status": "Reached directly from a paved highway pullout; no unpaved approach road.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    }
+   }
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "No overnight permits required; day-use only",
+      "land_manager": "Okanogan-Wenatchee National Forest, North Cascades Highway corridor",
+      "cost_structure": {
+       "parking": "Free at Washington Pass hairpin turnout"
+      },
+      "wilderness_zone": "Non-designated, accessed via Washington Pass on North Cascades Highway",
+      "seasonal_closures": "Seasonal closure of North Cascades Highway (SR-20); snowbanks may prevent parking access early in season; best access July-August",
+      "permit_pickup_hours": "Monday-Friday 8:00 AM - 4:00 PM",
+      "special_restrictions": "Large parking turnout at hairpin; unmaintained route beyond Kangaroo Pass with loose scree, exposed slabs, and short rock climb to summit",
+      "parking_pass_required": "None at hairpin turnout; Northwest Forest Pass may apply to nearby areas",
+      "permit_pickup_location": "Methow Valley Ranger District or Okanogan-Wenatchee Forest Service"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No overnight permits required; day-use only",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Non-designated, accessed via Washington Pass on North Cascades Highway",
+     "landManager": "Okanogan-Wenatchee National Forest, North Cascades Highway corridor",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None at hairpin turnout; Northwest Forest Pass may apply to nearby areas",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    },
+    "road": {
+     "name": "SR-20 highway pullout near Kangaroo Ridge, Washington Pass",
+     "status": "Reached directly from a paved highway pullout; no unpaved approach road.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    }
+   }
+  },
+  {
+   "id": "wa_koala_krack",
+   "before": {
+    "rappels": "1 rappel from bolted anchor at the cairn-marked station",
+    "rope_note": "Short, easy single-pitch granite route on Kangaroo Temple's summit block. No dedicated route-specific beta found; inferred from the comparable/easier North Face (5.6, 3 pitches, standard rack to 3in, chain-rappel descent) on the same formation.",
+    "access": {
+     "_raw": {
+      "permit_type": "No overnight permits required; day-use only",
+      "land_manager": "Okanogan-Wenatchee National Forest, North Cascades Highway corridor",
+      "cost_structure": {
+       "parking": "Free at Washington Pass hairpin turnout"
+      },
+      "wilderness_zone": "Non-designated, accessed via Washington Pass on North Cascades Highway",
+      "seasonal_closures": "Seasonal closure of North Cascades Highway (SR-20); snowbanks may prevent parking access early in season; best access July-August",
+      "permit_pickup_hours": "Monday-Friday 8:00 AM - 4:00 PM",
+      "special_restrictions": "Large parking turnout at hairpin; unmaintained route beyond Kangaroo Pass with loose scree, exposed slabs, and short rock climb to summit",
+      "parking_pass_required": "None at hairpin turnout; Northwest Forest Pass may apply to nearby areas",
+      "permit_pickup_location": "Methow Valley Ranger District or Okanogan-Wenatchee Forest Service"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No overnight permits required; day-use only",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Non-designated, accessed via Washington Pass on North Cascades Highway",
+     "landManager": "Okanogan-Wenatchee National Forest, North Cascades Highway corridor",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None at hairpin turnout; Northwest Forest Pass may apply to nearby areas",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    },
+    "road": {
+     "name": "SR-20 highway pullout near Kangaroo Ridge, Washington Pass",
+     "status": "Reached directly from a paved highway pullout; no unpaved approach road.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Washington Pass area.",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+    }
+   }
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "before": {
+    "gain_ft": 2400,
+    "itinerary": {
+     "cal": "Route sits at ~7,500 ft near Washington Pass, which typically doesn't open (gate/avalanche) until roughly late April-May; parties in early/mid season should expect lingering snow on the approach and gully as seen in the June 2026 report.",
+     "days": [
+      {
+       "n": 1,
+       "note": "This is a single-day outing, not a backpack — parties drive to the Washington Pass hairpin turnout, hike ~1.5-2 hrs up through forest, meadows, and a boulder/scree gully to Kangaroo Pass and the base of the North Face, climb the 3-pitch route, then rappel the route (3x 60m raps from bolted/chain anchors) and hike back out. Trip reports consistently show 7-11 hours car-to-car depending on party size and snow conditions on the approach.",
+       "hours": 9,
+       "miles": 6,
+       "title": "Car-to-car climb",
+       "gainFt": 2800,
+       "lossFt": 2800,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave trailhead",
+         "detail": "Hairpin-turn turnout ~1 mile past Washington Pass on SR-20; forest/meadow trail toward Kangaroo Pass."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Reach base of North Face",
+         "detail": "Boulder field and loose scree gully below Kangaroo Pass; rack up at the north-ridge notch."
+        },
+        {
+         "time": "7:45 AM",
+         "label": "Start climbing",
+         "detail": "P1 (5.6) up and left along an angled crack, then broken rock to a belay ledge."
+        },
+        {
+         "time": "~10:00-10:30 AM",
+         "label": "Top out / reach summit",
+         "detail": "After P2 traverse and the P3 crux corner/slab pitch; optional 4th-class bonus pitch or scramble to the true summit block."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Begin rappels",
+         "detail": "Three single-rope (60m) raps from chain anchors at the top of the face and at the P1 belay."
+        },
+        {
+         "time": "~2:30 PM",
+         "label": "Back at the car",
+         "detail": "Retrace the approach trail down through the boulder field and forest."
+        }
+       ],
+       "objective": "Climb the North Face (5.6, 3 pitches) and return to the car"
+      }
+     ],
+     "totalNote": "A long single day car-to-car: roughly 7-11 hours depending on party size and snow conditions, with ~2,800 ft of gain/loss over about 6 miles round trip — no camping involved."
+    },
+    "access": {
+     "_raw": {
+      "permit_type": "No overnight permits required; day-use only",
+      "land_manager": "Okanogan-Wenatchee National Forest, North Cascades Highway corridor",
+      "cost_structure": {
+       "parking": "Free at Washington Pass hairpin turnout"
+      },
+      "wilderness_zone": "Non-designated, accessed via Washington Pass on North Cascades Highway",
+      "seasonal_closures": "Seasonal closure of North Cascades Highway (SR-20); snowbanks may prevent parking access early in season; best access July-August",
+      "permit_pickup_hours": "Monday-Friday 8:00 AM - 4:00 PM",
+      "special_restrictions": "Large parking turnout at hairpin; unmaintained route beyond Kangaroo Pass with loose scree, exposed slabs, and short rock climb to summit",
+      "parking_pass_required": "None at hairpin turnout; Northwest Forest Pass may apply to nearby areas",
+      "permit_pickup_location": "Methow Valley Ranger District or Okanogan-Wenatchee Forest Service"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No overnight permits required; day-use only",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Non-designated, accessed via Washington Pass on North Cascades Highway",
+     "landManager": "Okanogan-Wenatchee National Forest, North Cascades Highway corridor",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None at hairpin turnout; Northwest Forest Pass may apply to nearby areas"
+    }
+   }
+  }
+ ]
+}

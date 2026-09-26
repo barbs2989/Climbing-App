@@ -1,0 +1,631 @@
+{
+ "file": "t041.json",
+ "results": [
+  {
+   "id": "wa_azurite_peak_southeast",
+   "fact": "Season window (June)",
+   "verdict": "fixed",
+   "correct_value": "June ascents happen with snow on the route; the season column (Jun-Sep with a snow caveat) and a 'risky' June are consistent. The avalanche note's claim that the route is climbed only in a dry Jul-Sep window is the one wrong statement.",
+   "evidence": "A 2018 ascent summited on June 12 with continuous snow from about 6,400 ft and snow runnels on the traverse; a 2014 party summited on May 31 with the summit gully snow-filled. So June is within the climbed season, as the season column says, but snowy, as the June 'risky' rating says; only the avalanche zone text ('climbed only in dry Jul-Sep window') is contradicted.",
+   "sources": [
+    "https://www.lemkeclimbs.com/azurite-peak.html",
+    "https://caltopo.com/m/3M5I",
+    "https://trailcatjim.com/azurite-peak-via-south-ridge-southwest-gully/"
+   ],
+   "patches": [
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Season window (June)",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "climbed only in dry Jul-Sep window",
+     "replace": "usually climbed in the drier Jul-Sep window, though snowy June ascents are made"
+    }
+   ]
+  },
+  {
+   "id": "wa_azurite_peak_southeast",
+   "fact": "Whether the standard line has a Class 4 step",
+   "verdict": "fixed",
+   "correct_value": "The standard line (south ridge, west-face traverse, final southwest gully) is loose Class 3 with short Class 3+ steps; Class 4 is only on the optional west rib or on the southwest face if a party traverses too far.",
+   "evidence": "One trip report says the party drifted onto the southwest face, which 'becomes Class 4 in a hurry', retreated to the last gully to the south and found it 'loose but never more than Class 3'. A second report describes sustained 4th class only on the west rib (an optional harder line) and class 3 rock in the final gully. The beta, approach, waypoint directions and approach variant already say this; rope_note, obj_haz and the itinerary put a Class 4 step on the standard line.",
+   "sources": [
+    "https://trailcatjim.com/azurite-peak-via-south-ridge-southwest-gully/",
+    "https://www.lemkeclimbs.com/azurite-peak.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Whether the standard line has a Class 4 step",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "mostly Class 2-3 with one steep, clean Class 4 step midway; most parties climb it unroped, though a short rope/handline can help less-experienced climbers on the Class 4 step.",
+     "replace": "mostly Class 2-3 with loose Class 3 steps in the final gully; Class 4 appears only on the optional west rib or if you stray onto the southwest face. Most parties climb it unroped, though a short rope/handline can help less-experienced climbers in the gully."
+    },
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Whether the standard line has a Class 4 step",
+     "op": "set",
+     "column": "obj_haz",
+     "path": [
+      1
+     ],
+     "expect": "Class 4 exposure on the west-face traverse and summit gully",
+     "value": "Exposed Class 3 on the west-face traverse and summit gully; Class 4 if you stray onto the southwest face or take the west rib"
+    },
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Whether the standard line has a Class 4 step",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "finishing through class 3-4 gullies just southwest",
+     "replace": "finishing through class 3 gullies just southwest"
+    },
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Whether the standard line has a Class 4 step",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Sustained class 3-4 scrambling",
+     "replace": "Sustained class 3 scrambling"
+    },
+    {
+     "id": "wa_azurite_peak_southeast",
+     "fact": "Whether the standard line has a Class 4 step",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "finishing through class 3-4 gullies just southw",
+     "replace": "finishing through class 3 gullies just southw"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_3",
+   "fact": "Side of Wing Lake the South col is reached from",
+   "verdict": "fixed",
+   "correct_value": "From Wing Lake go around its north (right) side to the talus/snow gully leading to the col on the south ridge, south-west of the summit — not east of the lake.",
+   "evidence": "A route description says to hike around the lake's right (north) side and aim for the talus/snow gully to the couloir left (south) of Black Peak, then angle right to avoid cliffs below the col. A ski trip report describes going from Wing Lake to a col just southwest of Black Peak, which lies west of the lake (Wing Lake is south-east of the summit). The row's approach, beta and pin positions agree; only the col waypoint's 'east of Wing Lake' disagrees.",
+   "sources": [
+    "http://cnmtstuartclimbproject.blogspot.com/2017/08/route-black-peak-south-ridge-north.html",
+    "https://www.summitpost.org/black-peak/150936",
+    "http://willhiteweb.com/north_cascades/black_peak/wing_lake_088.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_ridge_3",
+     "fact": "Side of Wing Lake the South col is reached from",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "Gained via a moraine and permanent snowfield east of Wing Lake;",
+     "replace": "Gained from Wing Lake by going around its north side, then up a moraine and permanent snowfield;"
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Ascents are documented in mid-June (2015, with steep snow requiring a rope) and early August (2017, glacier largely melted to a snowfield); one source says the Lewis Glacier line is good in early season. No two sources state a best window or whether October belongs in the season, so neither the itinerary's June-August nor the Jul-Oct season column vs the 'Jul-Sep' October note can be settled. Would settle: two published route descriptions giving the season window.",
+   "sources": [
+    "https://trailcatjim.com/corteo-peak-via-lewis-glacier-southwest-ridge/",
+    "https://wenatcheeoutdoors.org/2022/09/07/black-peak-corteo-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Main camp for this route",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Both camps genuinely serve Corteo: one party camped on the larch bench above Lewis Lake for Corteo alone, another camped at Wing Lake and climbed both Black and Corteo from there. Wing Lake serves this route mainly when combined with Black Peak; Lewis Lake bench is the itinerary's camp and the natural one for Corteo alone. Bivy list is owned by the camping clean-up; no patch.",
+   "sources": [
+    "https://trailcatjim.com/corteo-peak-via-lewis-glacier-southwest-ridge/",
+    "https://wenatcheeoutdoors.org/2022/09/07/black-peak-corteo-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "fact": "Name/identity of the high camp the climb starts from",
+   "verdict": "fixed",
+   "correct_value": "The climb starts from camp in Crescent Creek Basin, crossing the Ottohorn-Himmelhorn col.",
+   "evidence": "A detailed trip report of the Stoddard Buttress camped 'in Crescent Creek Basin, under Mt. Terror' and crossed the Otto-Himmel col to the base; the 2009 accident report likewise describes camp in Crescent Creek Basin and the Ottohorn-Himmelhorn col approach. 'Terror Camp' reads as the separate Terror Basin camp, so the three copies are renamed.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "http://publications.americanalpineclub.org/articles/13201008902/Falling-Rock-Rock-Came-Loose-Fall-on-Rock-Washington-North-Cascades-Pickett-Range-Mount-Terror"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Name/identity of the high camp the climb starts from",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Goodell Creek trailhead to Terror Camp in Crescent Creek Basin",
+     "replace": "Goodell Creek trailhead to the high camp in Crescent Creek Basin"
+    },
+    {
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Name/identity of the high camp the climb starts from",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": "Alpine start (~4:00 AM) from Terror Camp",
+     "value": "Alpine start (~4:00 AM) from the Crescent Creek Basin camp"
+    },
+    {
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Name/identity of the high camp the climb starts from",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "Day 1: hike to Terror Camp in Crescent Creek Basin.",
+     "replace": "Day 1: hike to the high camp in Crescent Creek Basin."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "fact": "Number of gully rappels on the descent",
+   "verdict": "fixed",
+   "correct_value": "Several rappels are made in the descent gully to Crescent Creek Cirque (commonly three or four), not a single chockstone rappel.",
+   "evidence": "One route description says that after the Blob-Terror notch the gully to Crescent Creek Cirque needs 'several rappels' depending on conditions; a Stoddard Buttress trip report made 4 double-rope rappels down the south side, and a West Ridge report made 3 rappels in the gully with downclimbing between. The rappels column is right; descent_text understates it.",
+   "sources": [
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Number of gully rappels on the descent",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "then descend a chossy, steep-snow gully with an overhanging chockstone rappel back into Crescent Creek Cirque.",
+     "replace": "then descend a chossy, steep-snow gully with several rappels, one of them past an overhanging chockstone, back into Crescent Creek Cirque."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "fact": "Crux grade of the knife-edge finish",
+   "verdict": "fixed",
+   "correct_value": "5.8",
+   "evidence": "The route is graded IV 5.8 in one route database and 5.8 (III-IV) in a detailed trip report; the 5.8+ figure belongs to the 1985 'North Face, Left Side' variant that fa lists separately. The pitch note (which also names a published account as its source) is changed to the route's own 5.8 crux.",
+   "sources": [
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Crux grade of the knife-edge finish",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "; crux 5.8+ per the published account of the 1985 extension",
+     "replace": "; the route's 5.8 crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "fact": "Length of the low-fifth crest section",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The whole route is about 2,500 ft (762 m) with the lower ~1,000 ft 3rd-4th class, so the low-fifth crest cannot be 'thousands of feet'; describe it as long stretches.",
+   "evidence": "length_m (762 m) and the three pitch rows (304.8 + 304.8 + 152.4 m) agree, and one route database gives the route as 2,500 ft; the pitch row itself is 1,000 ft. The 'thousands of feet' phrase is an overstatement in the overview and in the 1,000-ft pitch note.",
+   "sources": [
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Length of the low-fifth crest section",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "climbing thousands of feet of low-fifth to 5.8 rock",
+     "replace": "climbing long stretches of low-fifth to 5.8 rock"
+    },
+    {
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Length of the low-fifth crest section",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Thousands of feet of low-fifth simul-climbing along the crest",
+     "replace": "Long stretches of low-fifth simul-climbing along the crest"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Which climbers path the approach uses from the Terror Creek cairn",
+   "verdict": "fixed",
+   "correct_value": "At the cairn near 1,700 ft turn hard right up the steep, well-defined Terror Basin climbers' path (right/south of Terror Creek); the itinerary and timing notes wrongly describe the day-1 and hike-out path as the brushy, hard-to-follow Terror Creek track.",
+   "evidence": "Trip reports describe a rock cairn and arrow at the end of the Goodell Creek roadbed marking the hard right turn uphill to Terror Basin; one says the Terror Basin trail avoids the bushy, potentially epic Crescent Creek Basin approach, and another says the Terror Basin path has become pretty well defined. The approach, approach variant and waypoint already say this; itinerary days 1 and 4 and the matching timing notes are the stale copies.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+    "https://www.summitpost.org/mount-terror/155359"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Which climbers path the approach uses from the Terror Creek cairn",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "follow the old road bed then the Terror Creek climber's path — a notoriously brushy, hard-to-follow route with a creek crossing — up to a bench camp around 6,000 ft.",
+     "replace": "follow the old road bed to the cairn near 1,700 ft, then turn hard right up the steep Terror Basin climbers' path to camp in Terror Basin (about 5,800 ft)."
+    },
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Which climbers path the approach uses from the Terror Creek cairn",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "follow the old road bed then the Terror Creek climber's path — a notoriously brushy, hard-to-follow route with a creek crossing — up to a",
+     "replace": "follow the old road bed to the cairn near 1,700 ft, then turn hard right up the steep Terror Basin climbers' path to a"
+    },
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Which climbers path the approach uses from the Terror Creek cairn",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "note"
+     ],
+     "find": "out the Terror Creek climber's path to the trailhead",
+     "replace": "down the Terror Basin climbers' path to the trailhead"
+    },
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Which climbers path the approach uses from the Terror Creek cairn",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      3,
+      "note"
+     ],
+     "find": "out the Terror Creek climber's path to the trailhead",
+     "replace": "down the Terror Basin climbers' path to the trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Line from Terror Basin to the base of the North Face (waypoints)",
+   "verdict": "unresolved",
+   "correct_value": "The face is reached from Crescent Creek Basin over the Ottohorn-Himmelhorn col and down to McMillan Cirque below the Mustard Glacier.",
+   "evidence": "Sources agree the base is reached from Crescent Creek Basin via the Ottohorn-Himmelhorn col and McMillan Cirque below the Mustard Glacier, 2-3 hours from camp. But the 'Terror Glacier crossing' pin sits south of the summit, and repairing the waypoint list needs new or moved pins (Barrier crossing, Crescent Creek Basin, the col, the Mustard Glacier), which is out of scope; renaming the existing pin would label a wrong location. Would settle: a pin repair adding those points.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "http://publications.americanalpineclub.org/articles/13201008902/Falling-Rock-Rock-Came-Loose-Fall-on-Rock-Washington-North-Cascades-Pickett-Range-Mount-Terror"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Distance from the trailhead to the Terror Creek cairn",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: one trip report puts the cairn at about 3.5 miles (c.1,700 ft), another at about four miles, and a route summary at about 4.5 miles. No two agree on one figure. Would settle: a measured track distance to the cairn.",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Terror Basin camp elevation",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 5,800 ft, below the ~6,200 ft notch.",
+   "evidence": "A trip report places the camp 'below the gap at a small flat gravelly basin (c.5800)' under a c.6,200 ft notch. The row's waypoint and bivy both say 5,800 and the approach's own '400 ft below the 6,200 ft saddle' gives 5,800; the approach's 'around 5,700' and the itinerary's 6,000 are outliers (the itinerary copy is rewritten under the path fix).",
+   "sources": [
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Terror Basin camp elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 400 ft below and beyond the saddle, around 5,700 ft",
+     "replace": "about 400 ft below and beyond the saddle, around 5,800 ft"
+    },
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Terror Basin camp elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "about 400 ft below and beyond the saddle, around 5,700 ft",
+     "replace": "about 400 ft below and beyond the saddle, around 5,800 ft"
+    },
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Terror Basin camp elevation",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "expect": "Reach the 6,000 ft basin below the Southern Pickets",
+     "value": "Reach camp in Terror Basin below the Southern Pickets"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Length of the summit day",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources give 2-3 hours from Crescent Creek Basin to the base but no camp-to-camp time for the 1961 North Buttress line; a Stoddard Buttress party took about 17 hours camp to camp, a different route. Would settle: a trip report of this line with times, to set the hours and the schedule clock times together.",
+   "sources": [
+    "https://www.summitpost.org/north-buttress/168376"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Descent entry notch (Terror-Rake notch vs notch north of the Chopping Block)",
+   "verdict": "fixed",
+   "correct_value": "The summit descent goes down the West Ridge to the Terror-Rake (Blob-Terror) notch and the gully below it; the 'not the low notch north of the Chopping Block, 100 yards north at a bivy shelf' warning is about dropping into Crescent Creek Basin on the APPROACH from Stump Hollow, not the descent.",
+   "evidence": "The trip report the warning comes from places it on the approach: 'The low notch north of the Chopping Block is not the correct location to descend into Crescent Creek Basin' from the Terror Basin side, after which the party camped at that bivy shelf; another report describes gaining the 6,400 ft saddle northeast of the Chopping Block from Stump Hollow on the approach. A route database gives the summit descent as the West Ridge to the Blob-Terror notch, then the gully to Crescent Creek Cirque. The sentence is removed from the descent and rappel note and reframed as an approach warning in the approach variant.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/",
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Descent entry notch (Terror-Rake notch vs notch north of the Chopping Block)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": " Do not rappel into the low notch north of the sub-peak known as the Chopping Block — the correct line into Crescent Creek Basin is about 100 yards north of that notch, at a flat, bivy-site shelf on the ridge.",
+     "replace": ""
+    },
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Descent entry notch (Terror-Rake notch vs notch north of the Chopping Block)",
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": " Do not rappel into the low notch north of the Chopping Block — the correct line is ~100 yards north, at a bivy-site shelf.",
+     "replace": ""
+    },
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Descent entry notch (Terror-Rake notch vs notch north of the Chopping Block)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "On the descent, and worth memorising before you leave camp: DO NOT RAPPEL INTO THE LOW NOTCH NORTH OF THE CHOPPING BLOCK. The correct line into Crescent Creek Basin is",
+     "replace": "On the approach, when crossing from Stump Hollow into Crescent Creek Basin: DO NOT DROP INTO THE LOW NOTCH NORTH OF THE CHOPPING BLOCK. The correct line into Crescent Creek Basin is"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Cell coverage",
+   "verdict": "fixed",
+   "correct_value": "Cell coverage in the Pickets is essentially absent, but a signal has been found on high summits (including near Terror's summit).",
+   "evidence": "The 2009 accident report says the party reached 911 by phone from Terror's false summit during a Stoddard Buttress ascent; a separate trip report found a signal from Inspiration's summit and on the south end of Terror's false summit, while a West Ridge party's 911 attempts in the descent gully failed. comms is right; emergency.notes and the hazard line saying 'no cell coverage' overstate it.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201008902/Falling-Rock-Rock-Came-Loose-Fall-on-Rock-Washington-North-Cascades-Pickett-Range-Mount-Terror",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Cell coverage",
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "No cell coverage in the Pickets.",
+     "replace": "Cell coverage in the Pickets is essentially absent — a signal has occasionally been found on high summits, but never count on it."
+    },
+    {
+     "id": "wa_mount_terror_north_face",
+     "fact": "Cell coverage",
+     "op": "set",
+     "column": "hazards",
+     "path": [
+      4
+     ],
+     "expect": "No cell coverage; among the most rescue-difficult terrain in North Cascades NP",
+     "value": "Essentially no cell coverage; among the most rescue-difficult terrain in North Cascades NP"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Total gain vs itinerary total",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft is 6,000 while the itinerary days sum to 9,000 ft and the trip runs from 600 ft to the 8,151 ft summit. One source gives 10,000 ft for a Goodell Creek round trip to Terror's West Ridge (a different line), which is not a figure for this route. Would settle: two sources stating the car-to-car gain for the north-face trip.",
+   "sources": [
+    "https://fastestknowntime.com/route/mount-terror-wa"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 6,000 cannot cover a 600 ft trailhead to an 8,151 ft summit. One source gives 10,000 ft of gain for a Goodell Creek round trip on the West Ridge; another trip combining Terror with Degenhardt gives 12,500 ft (not this route alone). Only one source states a figure for this route, so no patch. Would settle: a second source stating the car-to-car gain for the West Ridge.",
+   "sources": [
+    "https://fastestknowntime.com/route/mount-terror-wa",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "fact": "Number of rappels above the notch",
+   "verdict": "fixed",
+   "correct_value": "Parties either downclimb from the summit to the notch or make one or two rappels there; it is not always a single step.",
+   "evidence": "One route description gives the West Ridge down to the Blob-Terror notch as scrambling plus a rappel from pitons; a West Ridge report used two rappel anchors with a 60 m rope; another party downclimbed on a running belay to the notch. So 'one or two above the notch' is supported and the closing 'One short step, not a sequence' is the overstatement.",
+   "sources": [
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Number of rappels above the notch",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": " One short step, not a sequence.",
+     "replace": ""
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "fact": "Camp the climb starts from",
+   "verdict": "fixed",
+   "correct_value": "The climb starts from camp in Crescent Creek Basin.",
+   "evidence": "Trip reports and the accident report describe climbing Terror from camp in Crescent Creek Basin, reached from Terror Basin over the saddle by the Chopping Block; Terror Basin is the first-night camp. 'Terror Camp' is renamed in the two places it appears.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "http://publications.americanalpineclub.org/articles/13201008902/Falling-Rock-Rock-Came-Loose-Fall-on-Rock-Washington-North-Cascades-Pickett-Range-Mount-Terror",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Camp the climb starts from",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": "Early start from Terror Camp to beat afternoon rockfall risk in the gully",
+     "value": "Early start from the Crescent Creek Basin camp to beat afternoon rockfall risk in the gully"
+    },
+    {
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Camp the climb starts from",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "Day 1: approach to Terror Camp/Crescent Creek Basin",
+     "replace": "Day 1: approach to Crescent Creek Basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "fact": "Chopping Block notch warning placed on the descent/route instead of the approach",
+   "verdict": "fixed",
+   "correct_value": "The low-notch-north-of-the-Chopping-Block warning concerns dropping into Crescent Creek Basin from the Chopping Block ridge on the approach, not the line between the basin and the West Ridge.",
+   "evidence": "The trip report that is the origin of the warning gives it on the approach from the Terror Basin side into Crescent Creek Basin; another report describes the approach gaining the 6,400 ft saddle northeast of the Chopping Block and downclimbing into the basin. The route itself climbs the west gully to the Terror-Rake notch.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Chopping Block notch warning placed on the descent/route instead of the approach",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "THE ENTRY POINT IS THE THING PARTIES GET WRONG, AND IT IS RECORDED AS AN EXPLICIT WARNING FROM THE DESCENT SIDE: DO NOT USE THE LOW NOTCH NORTH OF THE SUB-PEAK KNOWN AS THE CHOPPING BLOCK. The correct line between Crescent Creek Basin and this ridge is",
+     "replace": "ON THE APPROACH, THE DROP INTO CRESCENT CREEK BASIN IS THE THING PARTIES GET WRONG: DO NOT USE THE LOW NOTCH NORTH OF THE SUB-PEAK KNOWN AS THE CHOPPING BLOCK. The correct line from the Chopping Block ridge down into Crescent Creek Basin is"
+    },
+    {
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Chopping Block notch warning placed on the descent/route instead of the approach",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "expect": "Rappelling into the wrong notch north of the Chopping Block",
+     "value": "Dropping into Crescent Creek Basin from the wrong notch north of the Chopping Block"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

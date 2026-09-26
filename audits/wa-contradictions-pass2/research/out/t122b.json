@@ -1,0 +1,29 @@
+{
+ "file": "t122b",
+ "results": [
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Recommended start time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Safety text should not cite a 04:00 start the rest of the row does not give; timing and the day-2 schedule both say 5:00 AM from camp.",
+   "evidence": "timing.recommendedStart and the itinerary schedule agree on 5:00 AM from camp; the Safety sentence refers to a 04:00 'recommended start' that exists nowhere else. No outside source publishes a specific start time for this route, so the patch points the cross-reference at the row's own 5:00 AM figure rather than adopting a new fact.",
+   "sources": [
+    "https://www.mountainproject.com/route/106256230/east-face-rebel-yell"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "probability"
+     ],
+     "find": "(per the 04:00 recommended start)",
+     "replace": "(with the 5:00 AM start from camp)",
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Recommended start time"
+    }
+   ]
+  }
+ ]
+}

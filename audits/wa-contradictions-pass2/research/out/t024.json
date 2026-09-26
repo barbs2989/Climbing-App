@@ -1,0 +1,180 @@
+{
+ "file": "t024.json",
+ "results": [
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Season window (June)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The season column is the full window and June is rated 'risky' (not closed) in the month breakdown, while best_season, the optimal window and itinerary.cal give the best window inside it; a published Southern Pickets route page lists the climbing season as June through September, so Jun-Sep is a defensible outer window.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/southern-picket-range"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Whether the overnight permit can be reserved in advance",
+   "verdict": "fixed",
+   "correct_value": "Terror Basin cross-country zone is walk-up only (not reservable in advance); permit in person at the Marblemount WIC",
+   "evidence": "The park's backcountry-reservations page states only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes cross-country zones take advance reservations and the rest are walk-up only; the park's cross-country-zones page repeats this and lists Terror Basin (party max 6, 6 parties) among the non-reservable zones. The Recreation.gov permit catalogue files Terror Basin under the ordinary 'Cross Country Zones (North)' group, not the 'High Use Cross Country Zones' group that holds the reservable zones. The bivy permit notes (walk-up only) were already right; permit, access.permit, access.notes and overnight_permit.where are patched.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.recreation.gov/api/permitcontent/4675322"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Whether the overnight permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(the Terror Basin cross-country zone cannot be reserved in advance; get a walk-up permit in person at the Marblemount Wilderness Information Center)"
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Whether the overnight permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Reserve via Recreation.gov (spring early-access lottery, then general on-sale) or obtain a walk-up permit in person at the Wilderness Information Center in Marblemount (walk-up permits for SR 20 trailheads are issued there in person only; a reserved permit can be issued by email or in person).",
+     "replace": "This zone is not one of the few cross-country zones that can be reserved in advance, so obtain a walk-up permit in person at the Wilderness Information Center in Marblemount (walk-up permits for SR 20 trailheads are issued there in person only)."
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Whether the overnight permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "replace": "Terror Basin is a walk-up-only cross-country zone: the permit is obtained in person, the day of the trip or the day before, at the Wilderness Information Center in Marblemount."
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Whether the overnight permit can be reserved in advance",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "replace": "Walk-up only for this zone: get the permit in person at the Marblemount Wilderness Information Center, the day of the trip or the day before."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Name of the approach junction",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One detailed trip report places the end of the Goodell Creek trail just past 'Roost Creek' (1600 ft), from where a climbers' path traverses toward Terror Creek and dies in creek-bottom brush, so the hazard's 'at Roost Creek' may be the more precise location and the reader's proposed change to 'Terror Creek' could be wrong. Other reports describe the marked fork before the Terror Creek crossing without naming Roost Creek. A second source placing the junction relative to Roost Creek would settle it.",
+   "sources": [
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Cairn location relative to the Terror Creek crossing",
+   "verdict": "fixed",
+   "correct_value": "The rock arrow / post / large cairn mark the fork where the Terror Creek climbers' path leaves the valley trail, BEFORE the Terror Creek crossing; waypoint 2 (after the log) should not claim them.",
+   "evidence": "One trip report reaches the Terror Creek climbers' trail 'marked by a rock arrow, a post, and a large cairn' after the old logging road and only later hits the stream crossing. A second report passes the fork (two cairns having replaced the rock arrow) and then has to cross Terror Creek on a big log about 500 ft upstream at ~2100 ft. The approach text is therefore right; waypoint 2's name, note and directions are rewritten so they no longer place the cairn/arrow/post after the log (pin position untouched).",
+   "sources": [
+    "https://drdirtbag.com/2014/07/28/southern-pickets/",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Cairn location relative to the Terror Creek crossing",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "name"
+     ],
+     "expect": "Climbers' Path Cairn",
+     "value": "Foot of the Climbers' Path Climb"
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Cairn location relative to the Terror Creek crossing",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "find": "A large cairn with a rock arrow and post marks where the valley trail ends",
+     "replace": "Across Terror Creek, this is where the valley trail ends"
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Cairn location relative to the Terror Creek crossing",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "find": "to regain the path on the far side. A large cairn with a rock arrow and a post marks the spot where valley travel ends and the climb begins.",
+     "replace": "to regain the path on the far side, where valley travel ends and the climb begins."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Is the notch south of the summit the upper Barrier crossing",
+   "verdict": "fixed",
+   "correct_value": "The notch immediately south of Degenhardt is the top of the upper Barrier crossing (reached up the upper Terror Glacier/snowfield and choss); the route starts there.",
+   "evidence": "A Mount Terror route page gives two Barrier crossings, the higher one over moats and steep choss at the upper end of the Terror Glacier just below Degenhardt. A separate trip report states the ridge leads to 'the notch south of Degenhardt, which is the top of the upper crossing point.' So baseFinding's first sentence is right and its sequence (cross the Barrier, then the glacier, then up to the notch) plus the matching approach sentence and waypoint 5 directions are reordered so the snow/choss climb leads to the notch that tops the crossing.",
+   "sources": [
+    "https://www.summitpost.org/mount-terror/155359",
+    "https://drdirtbag.com/2014/07/28/southern-pickets/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Is the notch south of the summit the upper Barrier crossing",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "make the Barrier crossing, then cross a snowfield and small glacier below Degenhardt's south side and CLAW UP DIRT AND BROKEN ROCK TO THE NOTCH IMMEDIATELY SOUTH OF THE PEAK.",
+     "replace": "then cross a snowfield and small glacier below Degenhardt's south side and CLAW UP DIRT AND BROKEN ROCK TO THE NOTCH IMMEDIATELY SOUTH OF THE PEAK, which is the top of the upper Barrier crossing."
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Is the notch south of the summit the upper Barrier crossing",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Beyond the Barrier, cross a snowfield/small glacier below Degenhardt's south side (crampons and an axe are standard gear here even in summer) to reach the base of the southwest line.",
+     "replace": "On the upper crossing, go up a snowfield/small glacier below Degenhardt's south side (crampons and an axe are standard gear here even in summer) and scramble loose dirt and broken rock to the notch just south of the summit; that notch tops out the crossing and is the base of the southwest line."
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Is the notch south of the summit the upper Barrier crossing",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "directions"
+     ],
+     "find": "Beyond it, put crampons on for the snowfield below the south side; a slip here runs out onto rock.",
+     "replace": "The upper crossing climbs the snowfield below the south side to the notch just south of the summit, so put crampons on for it; a slip here runs out onto rock."
+    }
+   ]
+  }
+ ]
+}

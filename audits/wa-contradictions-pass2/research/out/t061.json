@@ -1,0 +1,421 @@
+{
+ "file": "t061.json",
+ "results": [
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Summit time vs total time",
+   "verdict": "not_a_contradiction",
+   "correct_value": "timing.summitTimeHrs = null (the 10 h is the car-to-car total, not the time to the summit)",
+   "evidence": "[Held: no approach/descent leg published; settled convention.] The route's descent is a separate multi-hour leg after the summit: the route page describes scrambling to the notch and descending the gully to the hairpin, and a trip report describes the descent down scree and a gully after topping out. A summit time equal to the whole car-to-car total leaves no time for that descent, so the stored figure is the total duplicated; by the catalog convention it is nulled rather than replaced with a computed number.",
+   "sources": [
+    "https://www.mountainproject.com/route/114423730/beckey-tate",
+    "http://iannicholsonslife.blogspot.com/2010/09/big-kangaroo-becky-tate-iii-59.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Approach time to the base",
+   "verdict": "fixed",
+   "correct_value": "2.5-5 hours to the base",
+   "evidence": "The peak's route database page gives 2.5 to 5 hours for the south-face approach depending on conditions and fitness; a trip report calls it a 3-hour approach. The prose's 3-5 h lower bound is raised above the published 2.5 h, which is what made the schedule's +2.5-3 hr look inconsistent; widening the prose to 2.5-5 h makes the schedule a fast-end plan inside the stated range.",
+   "sources": [
+    "https://www.mountainproject.com/area/114423617/big-kangaroo",
+    "http://iannicholsonslife.blogspot.com/2010/09/big-kangaroo-becky-tate-iii-59.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_beckey_tate",
+     "fact": "Approach time to the base",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "with 3-5 hours a reasonable estimate",
+     "replace": "with 2.5-5 hours a reasonable estimate"
+    },
+    {
+     "id": "wa_beckey_tate",
+     "fact": "Approach time to the base",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "with 3-5 hours a reasonable estimate",
+     "replace": "with 2.5-5 hours a reasonable estimate"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Whether a #4 cam is needed",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The rack says a #4 can be placed on about half the pitches but is optional, and pitch 4's note describes the big gear as #3/#4-size pieces set deep in the chimney; a party carrying the required #3 protects it, and one carrying an optional #4 can place it there. The route page's own rack line (double #0.5-#3, #0.4/#4/#5 placeable but unnecessary) matches the stored rack.",
+   "sources": [
+    "https://www.mountainproject.com/route/114423730/beckey-tate"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "South-face pins vs the summit pin",
+   "verdict": "unresolved",
+   "correct_value": "Summit pin (48.5194, -120.6175) is correct; the Kangaroo Pass/col/base/top-of-face pins are drawn ~1.9 km south, near Half Moon",
+   "evidence": "Both an encyclopedia entry (48°31'09\"N 120°37'03\"W) and the area's route database page (48.51928, -120.61646) place Big Kangaroo's summit where the summit pin sits, so the intermediate south-face pins are the misplaced ones. Pin coordinates are out of scope for this pass, and nothing in the prose or distMi is wrong, so no patch is written; it needs a coordinate repair of waypoints[2..5].",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Big_Kangaroo",
+    "https://www.mountainproject.com/area/114423617/big-kangaroo"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Day schedule length vs itinerary hours",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule runs from 5:00 AM to ~4:30-5:00 PM (11.5-12 h) while itinerary hours and timing.totalHrs say 10 and totalNote says 9-11 h. Sources only say most parties do it in a long day; a sourced car-to-car figure would settle which side is right.",
+   "sources": [
+    "https://www.mountainproject.com/route/114423730/beckey-tate"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "fact": "Pitch lengths",
+   "verdict": "fixed",
+   "correct_value": "Per-pitch lengths unknown (null); 3 pitches, 850 ft (259 m) overall",
+   "evidence": "The first-ascent report describes a three-pitch variation, 850 ft, III 5.11, joining the Kearney-Thomas for a 5.11 finger finish, with no per-pitch lengths. A second ascent report also describes three pitches before joining the Kearney-Thomas without lengths. The stored 86/86/87 m are the 259 m total split evenly and exceed a rope length, so they are nulled as unsourced.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201212207/Big-Kangaroo-south-face-Skinny-Start-Going-Down-Under",
+    "https://waynewallace.wordpress.com/2017/07/09/liberty-traverse-skinny-start-big-kangaroo/"
+   ],
+   "patches": [
+    {
+     "id": "wa_big_kangaroo_skinny_start",
+     "fact": "Pitch lengths",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "lengthM"
+     ],
+     "expect": 86,
+     "value": null
+    },
+    {
+     "id": "wa_big_kangaroo_skinny_start",
+     "fact": "Pitch lengths",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "lengthM"
+     ],
+     "expect": 86,
+     "value": null
+    },
+    {
+     "id": "wa_big_kangaroo_skinny_start",
+     "fact": "Pitch lengths",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "lengthM"
+     ],
+     "expect": 87,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Summit time vs total time",
+   "verdict": "not_a_contradiction",
+   "correct_value": "timing.summitTimeHrs = null (7 h is the car-to-car total)",
+   "evidence": "[Held: no approach/descent leg published; settled convention.] A club route page gives 5-6 h car-to-car for the West Route, and a timed trip report splits its Big Kangaroo day into hours up and hours down, so reaching the summit takes clearly less than the whole car-to-car day. The summit figure is the total duplicated and is nulled by the catalog convention rather than replaced with a computed number.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/big-kangaroo-west-route-1",
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Notch pin vs the summit pin",
+   "verdict": "unresolved",
+   "correct_value": "Summit pin is correct; the chockstone and notch pins sit ~1.9 km south of the summit",
+   "evidence": "Both an encyclopedia entry and the area's route database page put Big Kangaroo's summit at ~48.519, -120.617, matching the summit pin; the notch (48.5025) and chockstone (48.5053) pins are the misplaced ones. Pin coordinates are out of scope for this pass; the prose and distMi are consistent, so no patch — needs a coordinate repair of waypoints[3..4].",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Big_Kangaroo",
+    "https://www.mountainproject.com/area/114423617/big-kangaroo"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Day schedule length vs itinerary hours",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule runs 5:30 AM to ~1:30-2:30 PM (8-9 h) while itinerary hours and totalHrs say 7 and totalNote 6-8 h. One club page gives 5-6 h car-to-car; a second independent time for this route alone would settle it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/big-kangaroo-west-route-1"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_wright_pond",
+   "fact": "Overnight use of the Cutthroat Creek trailhead lot",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Local trailhead listings state no overnight camping in the parking lots, and the forest service page only bans camping within a quarter mile of Cutthroat Lake; none found states a ban on overnight PARKING, which backpackers bound for the pass routinely use. bivy[0] presents the trailhead lot as a main camp, which the camping clean-up owns; access.notes' 'No overnight parking allowed' is not confirmed by two sources (they say no overnight camping) and is left for that clean-up to reconcile.",
+   "sources": [
+    "https://okanogancountry.com/poi/cutthroat-creek-trailhead",
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/cutthroat-trailhead"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "fact": "Where you park",
+   "verdict": "fixed",
+   "correct_value": "The long pullout on the north side of SR 20 about 1.5 miles west of Washington Pass",
+   "evidence": "The South Buttress route page sends parties from a long pullout on the north side of the highway 1.5 miles west of Washington Pass into the basin below the peak; the East Face first-ascent report for a neighbouring line hiked about two miles from Highway 20 then cut right into the basin east of the peak and descended the South Buttress. The row's approach, trailhead card, waypoint and road note all use that pullout; only access.notes named Rainy Pass.",
+   "sources": [
+    "https://www.mountainproject.com/route/109326651/south-buttress",
+    "https://publications.americanalpineclub.org/articles/13201216751"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_peak_northeast_face",
+     "fact": "Where you park",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "find": "Small unpaved parking lot at Rainy Pass trailhead.",
+     "replace": "Park in the long pullout on the north side of SR 20 about 1.5 miles west of Washington Pass."
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Trailhead 4,947 ft to the 8,066 ft summit is ~3,120 ft net, but this line ends on a false summit and no source states a car-to-car gain for the East Face. gain_ft may not be recomputed from arithmetic; a sourced gain figure for this route is needed.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216751"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Car-to-car day length",
+   "verdict": "fixed",
+   "correct_value": "About 10 hours car-to-car",
+   "evidence": "The route database page gives an average of 6 hours trailhead to summit and about 4 hours back down; a timed trip report took 6.1 hours up and 4.1 down. The partner line's 8-hour day is the outlier against timing, the itinerary and those sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/110174839/west-ridge",
+    "https://trailcatjim.com/cutthroat-peak-via-west-ridge-upper-north-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_west_ridge",
+     "fact": "Car-to-car day length",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "an 8-hour total route day",
+     "replace": "a 10-hour total route day"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Approach time to the ridge",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One timed trip report reached the southwest-ridge saddle in 3.0 hours from the car, supporting the partner line's 2-3 h over timing.approachTimeHrs 1.5 (whose endpoint is unstated). No second independent source gives an approach time for this route; one would settle whether 1.5 h is wrong or measured to a lower point.",
+   "sources": [
+    "https://trailcatjim.com/cutthroat-peak-via-west-ridge-upper-north-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Ridge waypoint positions vs their names",
+   "verdict": "unresolved",
+   "correct_value": "Summit pin (48.5264, -120.7035) is correct; the crux-face, West Ridge crest and Northwest ledge pins sit 0.7-1.3 km south-east of it",
+   "evidence": "Cutthroat Peak's published coordinate (48°31'35\"N 120°42'13\"W) matches the summit pin, so the ridge pins are the misplaced ones. Pin coordinates are out of scope for this pass; names, notes and distMi are consistent, so no patch — needs a coordinate repair of waypoints[4..6].",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cutthroat_Peak",
+    "https://www.mountainproject.com/route/110174839/west-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_complete_south_buttress",
+   "fact": "Summit time in the day schedule",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~11 AM-1 PM",
+   "evidence": "The 5:00 AM start, +2 hr approach and +4-6 hr climb give 11 AM-1 PM, and totalHrs 12 with descentTimeHrs 3.5 puts the summit ~1:30 PM; 'mid-late afternoon' is the lone outlier and would push the day past 13 h. A guide service gives about 2 hours for the shared South Buttress approach, agreeing with the +2 hr offset.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_complete_south_buttress",
+     "fact": "Summit time in the day schedule",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "time"
+     ],
+     "find": "mid-late afternoon",
+     "replace": "~11 AM-1 PM"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Trailhead to summit is ~3,120 ft net, but many parties finish at the ridgeline below the summit and no source states a car-to-car gain for this couloir. gain_ft may not be recomputed from arithmetic; a sourced gain for this route is needed.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201216751"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "fact": "Summit time in the day schedule",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~9-10 AM",
+   "evidence": "The schedule's 5:00 AM start, +2 hr approach and +2-3 hr climb put the summit at 9-10 AM, and totalHrs 10.5 less a 3-5 h descent puts it before 12:30 PM; '~1-2 PM' disagrees with both. A guide service gives about 2 hours for the approach, and a timed trip report was simul-climbing within about two hours of the car and reached the summit about 4.5 hours after leaving it.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress",
+    "https://www.jeffreyjhebert.com/adventures/south-buttress-on-cutthroat-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_south_buttress",
+     "fact": "Summit time in the day schedule",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "time"
+     ],
+     "find": "~1-2 PM",
+     "replace": "~9-10 AM"
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "fact": "Approach time",
+   "verdict": "fixed",
+   "correct_value": "Roughly 1.5-2 hours to the boulder field",
+   "evidence": "A guide service gives about 2 hours for the approach, and a timed trip report was on route within about two hours of the car. The row's approach, approach variant and timing all say 1.5-2 h; only the partner line said 2-3 h.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress",
+    "https://www.jeffreyjhebert.com/adventures/south-buttress-on-cutthroat-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_cutthroat_south_buttress",
+     "fact": "Approach time",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Roughly 2-3 hours from the SR 20 pullout",
+     "replace": "Roughly 1.5-2 hours from the SR 20 pullout"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "fact": "Whether the notch-gaining 5.7 pitch is one of the 8 pitches",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route database page gives 8 pitches / 600 ft with its description starting from the North Ridge Notch, and presents the 5.7 notch pitch as part of the approach options; it does not say whether that pitch is in the 8. A trip report treats the loose runout pitches as the start of the climb without a count. A source that numbers the pitches from the basin would settle it.",
+   "sources": [
+    "https://www.mountainproject.com/route/114788795/north-ridge",
+    "https://spokalpine.com/2018/07/31/cutthroat-peak-north-ridge-iii-5-7/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "fact": "Which line is the peak's classic",
+   "verdict": "fixed",
+   "correct_value": "The North Ridge is a quieter alternative; the South Buttress is the peak's classic",
+   "evidence": "A trip report calls the North Ridge a lesser-travelled side and the South Buttress the mega-classic; the route database shows 24 ratings on the North Ridge against 112 on the South Buttress, and guide services run the South Buttress. The overview, crowds and classic=false already agree.",
+   "sources": [
+    "https://spokalpine.com/2018/07/31/cutthroat-peak-north-ridge-iii-5-7/",
+    "https://www.mountainproject.com/route/114788795/north-ridge",
+    "https://www.mountainproject.com/route/109326651/south-buttress",
+    "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_ridge_3",
+     "fact": "Which line is the peak's classic",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "This is the peak's classic line.",
+     "replace": "It sees far less traffic than the South Buttress, the peak's classic line."
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "fact": "Summit time in the day schedule",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~11 AM-noon",
+   "evidence": "The ~6:00 AM start, +2 hr and +3 hr offsets give ~11 AM, and totalHrs 8.5 less descentTimeHrs 2.5 gives noon; 'early-mid PM' is the lone outlier. A guide service gives about 2 hours for the shared approach from the pullout, agreeing with the +2 hr offset.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_ridge_3",
+     "fact": "Summit time in the day schedule",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "time"
+     ],
+     "find": "early-mid PM",
+     "replace": "~11 AM-noon"
+    }
+   ]
+  }
+ ]
+}

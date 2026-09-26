@@ -1,0 +1,100 @@
+{
+ "applied": [
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Time from trailhead to the plateau"
+  },
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Time from trailhead to the plateau"
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "Class grade of the scramble"
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Class grade of the scramble"
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Class grade of the scramble"
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "Class grade of the scramble"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_table_mountain_standard_scramble",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Short but steep — roughly 700 ft gain over ~1.5 miles one-way to the plateau; easy trail fitness, no endurance concerns",
+      "packWeight": "Light daypack (water, layers, microspikes/axe if early season) — no technical or overnight gear required"
+     },
+     "approachTime": "15-30 min to the base of the cliff notch from Artist Point; 45 min-1 hr to reach the plateau top",
+     "requiredSkills": [
+      "basic Class 2 scrambling / steep switchback footing",
+      "comfort near unprotected cliff edges on the plateau",
+      "snow travel and self-arrest awareness if attempting in July when the notch may still hold snow",
+      "basic navigation, since the plateau is broad and unmarked and cliff edges are easy to wander toward in flat light"
+     ],
+     "experienceLevel": "Comfortable on Class 2 terrain with exposure; suitable for a fit beginner scrambler paired with someone who has done the route or similar basalt-cliff trails, given the exposed cliff-notch switchbacks and unmarked plateau edges"
+    }
+   }
+  },
+  {
+   "id": "wa_the_pleiades_scramble",
+   "before": {
+    "alpine_grade": "Class 3",
+    "beta": "All four Pleiades peaks are Class 3 scrambles, though loose rock makes them more challenging mentally. The 3rd peak from the west is the tallest. Most climbers scramble peaks 2, 3, and 4 via the goat ledge traverse; peak 1 (to the west) is steeper with exposure and slabby sections. Loose rock and poor-quality stone are the defining characteristics; this is not solid climbing terrain. A helmet is strongly recommended. Keep party size small (6 or fewer) to minimize rockfall hazard. Rock quality is among the worst in the Cascades. Most routes involve scrambling on exposed terrain with height but relatively stable handholds/footholds for Class 3 climbing.",
+    "rope_note": "Approach from High Pass over scree/snow to the col on Mt Larrabee's south arm, then basin traverse and gully to the notch between peaks. All 4 Pleiades summits reportedly 3rd-class scrambles with loose rock.",
+    "seasonal_guidance": {
+     "optimalWindow": "Late July-September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Within the best-season window; snow may still linger in the approach gullies early in the month, and the most stable Cascade summer weather",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Snowpack often still deep on the approach and access road may have residual snow; steep snow on the approach can be more complex and weather less settled than mid-summer",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Within the best-season window; driest rock conditions for the Class 3 summit scramble",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Within the best-season window; dry rock and melted-out gullies, though shorter daylight and a rising chance of early snow late in the month",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  }
+ ]
+}

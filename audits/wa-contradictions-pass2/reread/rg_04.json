@@ -1,0 +1,1957 @@
+{
+ "batches": [
+  "b329.json",
+  "b330.json",
+  "b331.json",
+  "b332.json",
+  "b333.json",
+  "b334.json",
+  "b335.json"
+ ],
+ "routes_read": 27,
+ "routes": [
+  {
+   "id": "wa_south_face_4",
+   "name": "South Face",
+   "area": "Kangaroo Temple",
+   "contradictions": [
+    {
+     "fact": "Rope for retreat and descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "Bring two ropes to facilitate retreat"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Bring two ropes both to aid retreat and to speed rappels if needed"
+      },
+      {
+       "field": "rack[3]",
+       "says": "Single 60m rope for rappel descent"
+      },
+      {
+       "field": "rope_type",
+       "says": "single"
+      }
+     ],
+     "why": "The rack lists a single 60 m rope while Bailout and Pro Tips tell the party to bring two ropes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May.reason",
+       "says": "Soon after SR 20 reopens"
+      }
+     ],
+     "why": "One field says the highway stayed closed until mid-June while another gives a typical mid/late-April reopening, which a climber planning a June trip cannot reconcile.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Dispersed camping capped at 10 days"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the general 14-day stay limit applies"
+      }
+     ],
+     "why": "Access rules cap dispersed camping at 10 days while the bivy card gives a 14-day limit for the same informal overnight use.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "name": "Northwest Face",
+   "area": "Kangaroo Temple",
+   "contradictions": [
+    {
+     "fact": "Rope length needed for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[2]",
+       "says": "50m or 60m rope"
+      },
+      {
+       "field": "descent_text",
+       "says": "some parties do two full-length 30 m rappels"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      },
+      {
+       "field": "rope_note",
+       "says": "Descent: two 30m raps to a scramble-off ledge, or three raps to the notch with a 60m rope."
+      }
+     ],
+     "why": "A 50 m rope cannot make the 30 m rappels the descent describes, yet the gear list offers it as an option.",
+     "internal_resolution": "60 m: rope_length_m, rack, rope_note and the 30 m rappels all require a 60 m rope; the gear list's '50m' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which pitch holds the friction slab",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "A squeeze chimney and friction slab low on the route lead to a well-protected layback/jam crack for the standout second pitch"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Short wide crack onto a smooth friction slab"
+      }
+     ],
+     "why": "Beta puts the friction slab before the pitch-2 crack; the route breakdown puts it on pitch 3.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      }
+     ],
+     "why": "One field says the highway stayed closed until mid-June while another gives a typical mid/late-April reopening, which a climber planning a June trip cannot reconcile.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Dispersed camping capped at 10 days"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the general 14-day stay limit applies"
+      }
+     ],
+     "why": "Access rules cap dispersed camping at 10 days while the bivy card gives a 14-day limit for the same informal overnight use.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_koala_krack",
+   "name": "Koala Krack",
+   "area": "Kangaroo Temple",
+   "contradictions": [
+    {
+     "fact": "Rappel count for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "1 rappel from bolted anchor at the cairn-marked station"
+      },
+      {
+       "field": "descent_text",
+       "says": "rappel from there and join the peak's standard multi-rappel descent line back toward the notch and Kangaroo Pass"
+      }
+     ],
+     "why": "RAPPELS says one rappel while DESCENT says the single rappel joins a multi-rappel line.",
+     "internal_resolution": "descent_text: the one rappel from the Koala station is followed by the peak's standard multi-rappel line, so '1 rappel' undercounts the descent.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the North Face is easier than Koala Krack",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "inferred from the comparable/easier North Face (5.6, 3 pitches"
+      },
+      {
+       "field": "grade",
+       "says": "5.4"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Koala Krack is the easiest (5.4) line to the top"
+      }
+     ],
+     "why": "The rope note calls the 5.6 North Face 'easier' than this 5.4 pitch, contradicting the grade and the summit note.",
+     "internal_resolution": "5.4 < 5.6: Koala Krack is the easier line; 'easier' in rope_note is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "good"
+      }
+     ],
+     "why": "The approach card starts the season in July while the season chip and month guide rate June as in season (good).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      }
+     ],
+     "why": "One field says the highway stayed closed until mid-June while another gives a typical mid/late-April reopening, which a climber planning a June trip cannot reconcile.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Dispersed camping capped at 10 days"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the general 14-day stay limit applies"
+      }
+     ],
+     "why": "Access rules cap dispersed camping at 10 days while the bivy card gives a 14-day limit for the same informal overnight use.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "name": "North Face",
+   "area": "Kangaroo Temple",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2400"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2800"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~2,800 ft of gain/loss over about 6 miles round trip"
+      }
+     ],
+     "why": "The header/stats gain (2,400 ft) and the trip plan (2,800 ft) disagree by ~17% for the same car-to-car day (prior entry marks gain as fixed, but the two values still differ).",
+     "internal_resolution": "gain_ft 2400 matches the trailhead (5,150 ft) to summit (7,572 ft) difference plus the small drop below the pass; 2,800 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 6 miles round trip"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "1.8"
+      },
+      {
+       "field": "dist_km",
+       "says": "4.8"
+      },
+      {
+       "field": "approach",
+       "says": "gains roughly 1,500 ft over about 1.5 miles to Kangaroo Pass"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "1.3"
+      }
+     ],
+     "why": "The waypoints put the summit 1.8 mi out (3.6 mi round trip) and dist_km is 4.8 km (3 mi), but the trip plan and header say 6 miles round trip; the pass is also 1.3 mi by waypoint vs 1.5 mi in the approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "Typically closed mid-November to April/May"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      }
+     ],
+     "why": "GETTING THERE and ACCESS give different typical closing months for the same highway.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "September condition",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "June and September are workable but marginal at the edges"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "good"
+      }
+     ],
+     "why": "The optimal-window text calls September marginal while the month breakdown rates it good.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "name": "Standard Route / South Side",
+   "area": "Mushroom Tower",
+   "contradictions": [
+    {
+     "fact": "Approach time to the tower base",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "plan on 2.5-4 hours up for a party unfamiliar with it"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 1.5-2.5 hours from the SR 20 pullout"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "+2.5 hr"
+      }
+     ],
+     "why": "The approach allows 2.5-4 hours up while Partner Requirements say 1.5-2.5 hours for the same walk.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "roughly late November to early/mid-April"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "it usually reopens between late April and mid-May"
+      }
+     ],
+     "why": "Three fields give three different typical closing/reopening windows for the same highway.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep (snow can linger on approach slopes into early summer)"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "typically mid/late June through October"
+      },
+      {
+       "field": "climate.typical",
+       "says": "realistically climbable only roughly April/May through October/November"
+      }
+     ],
+     "why": "The season chip ends in September while the trip plan and climate extend it through October (and climate starts it in April/May).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "name": "Standard Route / Southwest Side",
+   "area": "Wallaby Peak",
+   "contradictions": [
+    {
+     "fact": "Time from car to Kangaroo Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "typically 1 to 1.5 hours"
+      },
+      {
+       "field": "waypoints[2].directions",
+       "says": "roughly 1,500 ft of gain from the car in about 1 to 1.5 hours"
+      },
+      {
+       "field": "approach",
+       "says": "budget roughly 2 hours car-to-pass"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~2-3 hours from the car to Kangaroo Pass (6,671 ft)"
+      }
+     ],
+     "why": "The same approach is given as 1-1.5 h, 'roughly 2 hours' and 2-3 h to the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Length of the day",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "it's now a popular half-day outing"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "7.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "typically 6-9 hours depending on pace"
+      }
+     ],
+     "why": "The overview calls it a half-day outing while timing and the trip plan give a 6-9 hour car-to-car day.",
+     "internal_resolution": "timing, itinerary and partner requirements agree on ~7.5 h; 'half-day' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "June conditions",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep (dry scramble); climbed as a snow/ice scramble with axe and crampons May-Jun"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "July to early October"
+      }
+     ],
+     "why": "The season chip calls June a dry-scramble month, while the month guide rates June risky for lingering snow and the approach card starts in July.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche/snow terrain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "climbed after seasonal snow clears, Jul-Sep"
+      },
+      {
+       "field": "season",
+       "says": "climbed as a snow/ice scramble with axe and crampons May-Jun"
+      },
+      {
+       "field": "obj_haz[1]",
+       "says": "corniced snow arête at the crux in late spring"
+      }
+     ],
+     "why": "The avalanche panel says the route is only climbed after the snow clears (Jul-Sep), while the season field advertises a May-June snow/ice scramble with a corniced arête.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Scramble class",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "nothing harder than Class 2 unless optionally detouring onto Class 3 rock"
+      },
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "beta",
+       "says": "It is generally rated class 3 scrambling"
+      }
+     ],
+     "why": "The rope note says the line is Class 2 with optional Class 3, while the grade, route breakdown and beta make the summit gully and crux Class 3.",
+     "internal_resolution": "grade, pitch_detail and beta agree on Class 3 sections; rope_note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Kangaroo Pass elevation and objective in the bivy note",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[3].notes",
+       "says": "Elevation figures for the pass are not consistently reported"
+      },
+      {
+       "field": "waypoints[2].name",
+       "says": "Kangaroo Pass"
+      },
+      {
+       "field": "approach",
+       "says": "Kangaroo Pass (6,671 ft)"
+      },
+      {
+       "field": "bivy[3].notes",
+       "says": "most parties simply do Kangaroo Temple in a day"
+      }
+     ],
+     "why": "The bivy card says the pass has no consistent elevation while every other field states 6,671 ft, and it talks about Kangaroo Temple on a Wallaby Peak page.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Dispersed camping capped at 10 days"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the general 14-day stay limit applies"
+      }
+     ],
+     "why": "Access rules cap dispersed camping at 10 days while the bivy card gives a 14-day limit.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_spontaneous_distraction",
+   "name": "Spontaneous Distraction",
+   "area": "Le Petit Cheval",
+   "contradictions": [
+    {
+     "fact": "Whether one 70 m rope reaches every rappel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Rappel the route; a single 70m rope is sufficient."
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "A single 70m rope is sufficient for the rappel descent."
+      },
+      {
+       "field": "rope_note",
+       "says": "One 70m rope is sufficient to rappel the entire route."
+      },
+      {
+       "field": "rappels",
+       "says": "one 70m rope reaches on pitches 1-2, but not from the trees above pitch 3's last bolt, so that rappel needs an intermediate station or another way down"
+      },
+      {
+       "field": "descent_text",
+       "says": "a 70m rope does not reach from the trees directly above pitch 3's last bolt"
+      }
+     ],
+     "why": "Several fields say a single 70 m rope rappels the whole route while RAPPELS and DESCENT say it does not reach from the pitch-3 trees.",
+     "internal_resolution": "rappels, descent_text and pitch_detail[1] are specific (reaches on P1-2 only); the blanket 'sufficient' statements are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "access._raw.seasonal_closures",
+       "says": "typically closed mid-November to mid-April"
+      }
+     ],
+     "why": "One field says the highway stayed closed until mid-June while another gives a typical mid/late-April reopening, which a climber planning a June trip cannot reconcile.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Dispersed camping capped at 10 days"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the general 14-day stay limit applies"
+      }
+     ],
+     "why": "Access rules cap dispersed camping at 10 days while the bivy card gives a 14-day limit for the same informal overnight use.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_first_amendment",
+   "name": "First Amendment",
+   "area": "Le Petit Cheval",
+   "contradictions": [
+    {
+     "fact": "Rope setup for the rappel descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rack[4]",
+       "says": "Single 60m rope, double-rope rappel for descent"
+      },
+      {
+       "field": "rope_note",
+       "says": "standard practice is 60m single with double-rope rappel for descent"
+      },
+      {
+       "field": "gear[3]",
+       "says": "60m rope"
+      },
+      {
+       "field": "descent_text",
+       "says": "about 9 rappels with a 60m rope"
+      }
+     ],
+     "why": "The rack asks for double-rope rappels while carrying only a single 60 m rope, and DESCENT describes rappels with one 60 m rope.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "SR-20 winter closure window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "closed Dec 12, 2025-June 14, 2026 in the 2025-26 season"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "access.closures",
+       "says": "Only accessible while SR-20 is open, roughly May-November"
+      }
+     ],
+     "why": "One field says the highway stayed closed until mid-June while another gives a typical mid/late-April reopening, which a climber planning a June trip cannot reconcile.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Stay limit for sleeping at the pullouts/dispersed sites",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Dispersed camping capped at 10 days"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "the general 14-day stay limit applies"
+      }
+     ],
+     "why": "Access rules cap dispersed camping at 10 days while the bivy card gives a 14-day limit for the same informal overnight use.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "name": "North Face",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].detail",
+       "says": "About 2 hrs col-to-summit"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Length of the second rappel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappel_detail[1].lengthM",
+       "says": "20"
+      },
+      {
+       "field": "rappel_detail[1].station",
+       "says": "The rappel from it drops to the bushy, tree-dotted ledge at the top of pitch 1."
+      },
+      {
+       "field": "pitch_detail[1].lengthM",
+       "says": "35"
+      }
+     ],
+     "why": "The second rappel runs from below pitch 3's slab to the top of pitch 1, i.e. down all of the 35 m pitch 2, yet is listed as 20 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch 3 grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "5.6"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "P3 5.6+/5.7 cracks and slabs to the top"
+      }
+     ],
+     "why": "The route breakdown grades pitch 3 at 5.6 while the trip plan calls it 5.6+/5.7.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trail distance to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6"
+      },
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "2.3"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "2"
+      }
+     ],
+     "why": "The waypoints put the summit 2.3 mi from the car (4.6 mi round trip) while the trip plan and dist_km give 6 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "roughly 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_center",
+   "name": "South Face Center",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Documented rappel lengths",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappel_count_note",
+       "says": "Individual station lengths are not documented."
+      },
+      {
+       "field": "rappel_detail[1].lengthM",
+       "says": "30"
+      }
+     ],
+     "why": "The rappel note says no station lengths are documented while the table lists a 30 m rappel.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rope for the rappel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rack[4]",
+       "says": "Single dynamic rope (70m ideal for a single-pitch rap)"
+      },
+      {
+       "field": "rappels",
+       "says": "2 single-rope raps from the south side of the summit"
+      },
+      {
+       "field": "rope_note",
+       "says": "two single-rope rappels from the south side of the summit for descent"
+      }
+     ],
+     "why": "The rack implies a 70 m rope makes a single rappel of the 67 m pitch, while RAPPELS and the rope note call for two single-rope rappels.",
+     "internal_resolution": "rappels, descent and rope_note agree on two single-rope rappels.",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_3",
+   "name": "South Face",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Distance shown as one quantity",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4.83"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "3"
+      }
+     ],
+     "why": "dist_km (4.83 km = 3 mi, the one-way waypoint distance) and the trip plan's 6 miles are both presented as the route distance.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "about 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_cave_route",
+   "name": "The Cave Route",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Descent line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "Rap the summit's west side, breaking it at the mid-height station on a single 60 m rope (two ropes reach in one); then one more rap down P1's north face to the notch"
+      },
+      {
+       "field": "descent_text",
+       "says": "Rappel off the summit's west side"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "DESCENT: the same as the standard North Face. Rappel chains at the summit allow a doubled-rope rappel toward the notch"
+      }
+     ],
+     "why": "RAPPELS and DESCENT send parties off the summit's west side, while the approach card says the descent is the standard North Face rappel line.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where pitch 3 ends",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Pitch 3 climbs an easier crack and face to a tree belay at the summit."
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "to a tree belay; from there it's an exposed, unroped 40 ft scramble to the small summit"
+      }
+     ],
+     "why": "Beta puts the pitch-3 tree belay at the summit while the route breakdown puts it 40 ft of exposed scrambling below.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "How often the route is climbed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].note",
+       "says": "Cave Route is an alternative line used when Liberty Bell is crowded"
+      },
+      {
+       "field": "overview",
+       "says": "A serious, rarely repeated line"
+      }
+     ],
+     "why": "The summit note presents it as the overflow line for crowds, while the overview says it is rarely repeated and not recommended.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trail distance to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6"
+      },
+      {
+       "field": "dist_km",
+       "says": "9.66"
+      }
+     ],
+     "why": "The summit waypoint is 2 mi from the car (4 mi round trip) while the trip plan and dist_km give 6 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_up_in_arms",
+   "name": "Up In Arms",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Pitch 6 length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[5].notes",
+       "says": "one full 60 m rope length reaches the summit"
+      },
+      {
+       "field": "pitch_detail[5].lengthM",
+       "says": "45"
+      }
+     ],
+     "why": "The pitch note says a full 60 m rope length reaches the summit while the pitch is listed at 45 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "name": "North Face Var. Right (Directisimo)",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Route length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "91"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "25"
+      },
+      {
+       "field": "pitch_detail[1].lengthM",
+       "says": "50"
+      },
+      {
+       "field": "pitch_detail[2].lengthM",
+       "says": "45"
+      }
+     ],
+     "why": "The three pitch lengths add to 120 m while the climb length is given as 91 m.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trail distance to the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6"
+      },
+      {
+       "field": "dist_km",
+       "says": "9.7"
+      }
+     ],
+     "why": "The summit waypoint is 2 mi from the car (4 mi round trip) while the trip plan and dist_km give 6 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_lexington_tower_south_face",
+   "name": "South Face",
+   "area": "Lexington Tower",
+   "contradictions": []
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "name": "East Face",
+   "area": "Lexington Tower",
+   "contradictions": [
+    {
+     "fact": "Notch elevation vs summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].name",
+       "says": "Lexington Tower notch"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "7621"
+      },
+      {
+       "field": "waypoints[1].type",
+       "says": "Summit"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "7560"
+      },
+      {
+       "field": "hazards[2]",
+       "says": "You do not tag the true summit"
+      }
+     ],
+     "why": "The notch below the summit is stored as a Summit waypoint 61 ft higher than the tower's summit (7,560 ft), and high_point_ft equals the summit the route does not reach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late June through September once the base snowfield recedes"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Prime climbing season, June-September"
+      }
+     ],
+     "why": "The best window starts in late June, outside the Jul-Sep season chip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "8.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "name": "Tooth and Claw",
+   "area": "Lexington Tower",
+   "contradictions": [
+    {
+     "fact": "Where a party on 60 m ropes starts rappelling",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappel_count_note",
+       "says": "a party on 60s has to start lower, from partway through the 4th-class scrambling on pitch 7"
+      },
+      {
+       "field": "descent_text",
+       "says": "two 60m ropes are workable using a fixed nut-and-sling anchor partway down P6 as an intermediate station"
+      },
+      {
+       "field": "pitch_detail[6].notes",
+       "says": "Continue the hand/finger crack system to the final bolted anchor near the top of the route."
+      },
+      {
+       "field": "pitch_detail[6].grade",
+       "says": "5.9"
+      }
+     ],
+     "why": "The rappel note puts the 60 m start in 4th-class scrambling on pitch 7, but pitch 7 is a 5.9 crack, and the descent text puts the 60 m station partway down pitch 6 instead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass at the pond pullout",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "No permit is needed here"
+      },
+      {
+       "field": "road.status",
+       "says": "no permit needed"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass"
+      }
+     ],
+     "why": "The trailhead and road cards say nothing is needed to park while ACCESS requires a Northwest Forest Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "11"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_3",
+   "name": "North Face",
+   "area": "Lexington Tower",
+   "contradictions": [
+    {
+     "fact": "Rope length for the two rappels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "a 30m or 60m single-strand rope is sufficient for each"
+      },
+      {
+       "field": "rappel_detail[0].lengthM",
+       "says": "30"
+      },
+      {
+       "field": "rappel_detail[1].lengthM",
+       "says": "30"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      }
+     ],
+     "why": "Each rappel is listed at 30 m, which a 30 m rope cannot make as a retrievable rappel, yet the descent says a 30 m rope is sufficient.",
+     "internal_resolution": "60 m: rope_length_m, rack and the 30 m rappel lengths require a 60 m rope doubled.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the three pitches end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "then 3 pitches (5.7 crux low, easing to 5.4-5.6) to the notch between the summits"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].label",
+       "says": "Summit / notch between towers"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "to belay at the notch between the true and west summits"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "scramble the exposed 'Stegosaur' ridge crest to the true summit"
+      }
+     ],
+     "why": "The trip plan ends the 3 pitches at a notch (and calls it the notch between towers), while the route breakdown reaches that notch after pitch 2 and the true summit on pitch 3.",
+     "internal_resolution": "pitch_detail, waypoints and descent agree: pitch 2 ends at the notch between the summits, pitch 3 reaches the true summit.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time to the Concord-Lexington col",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].note",
+       "says": "roughly 2.2 hrs and 1,950 ft above the trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "Budget roughly 1.5-2 hours"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "1.5-2"
+      }
+     ],
+     "why": "The col waypoint gives 2.2 h from the trailhead while the approach fields give 1.5-2 h.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "6.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "6.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "just under a mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_freedom_rider",
+   "name": "Freedom Rider",
+   "area": "Liberty Bell Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "name": "Live Free or Die!™",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Crux grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.12-"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.12-"
+      },
+      {
+       "field": "beta",
+       "says": "P4 (5.12, V5 crux)"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.12b (V5, height-dependent)"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "a 5.12+ testpiece"
+      }
+     ],
+     "why": "The route is graded 5.12- in the header while the crux pitch is 5.12b and Crowds calls it a 5.12+ testpiece.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel count and ropes for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "5"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "then descend via the standard Beckey-side rappels/downclimb"
+      },
+      {
+       "field": "descent_text",
+       "says": "make four double-rope rappels back to the ground/talus"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "a 70 m rope"
+      }
+     ],
+     "why": "RAPPELS gives 5 (the two-rope M&M Ledge line) while the trip plan descends the Beckey side, and the rack carries only one 70 m rope for a double-rope rappel line.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Gear needed on pitch 4",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "standard rack to 3 inches for pitches 4, 6, 7, and 8"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Mostly bolt-protected on the lower 5 pitches"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "with bolt protection backing up the pendulum"
+      }
+     ],
+     "why": "The gear list puts pitch 4 among the trad-rack pitches while Protection and the route breakdown make it a bolt-protected crux inside the bolted lower five pitches.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "name": "NW Face Var. (Remsberg Variation)",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Distance shown as one quantity",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.2"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2"
+      }
+     ],
+     "why": "dist_km (4 km = 2.5 mi) and the trip plan's 5.2 miles are both presented as the route distance.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9.5"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9.5"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Blue Lakes Trailhead, 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "name": "Overexposure",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "about 1.5 mi west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Blue Lakes Trailhead, 1 mile west of Washington Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed 1.5, 1 and 0.5 miles west of the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "name": "A Servant To Liberty",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "How bolted pitches 4-8 are",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_needs",
+       "says": "Heavily bolted on the upper slab/face pitches (P4-8"
+      },
+      {
+       "field": "pitch_detail[3].bolts",
+       "says": "1"
+      },
+      {
+       "field": "pitch_detail[3].anchor",
+       "says": "Single SMC bolt + gear backup"
+      },
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "Traverses left to flake laybacks protected by two small cams"
+      }
+     ],
+     "why": "Protection calls P4-8 heavily bolted, while the breakdown gives pitch 4 a single bolt and has pitch 5's laybacks on cams.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "name": "Thin Red Line",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Pitch 2 belay",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "then easier ground to a gear belay below a roof-capped dihedral"
+      },
+      {
+       "field": "pitch_detail[1].anchor",
+       "says": "2-bolt anchor"
+      }
+     ],
+     "why": "The pitch-2 note says gear belay while its anchor is listed as a 2-bolt anchor.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Late-June conditions",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "optimal late June through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      },
+      {
+       "field": "beta",
+       "says": "July-September strongly preferred (late June requires ice axe, crampons)"
+      }
+     ],
+     "why": "ACCESS calls late June optimal while the month guide rates June marginal and beta says late June needs axe and crampons.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Blue Lakes Trailhead, 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "name": "Dark Side of Liberty",
+   "area": "Liberty Bell Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_liberty_crack",
+   "name": "Liberty Crack",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "real trip reports show 9-10 hr car-to-car ascents"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "4:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "6:30 PM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "6:00 AM"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "0.5-1"
+      }
+     ],
+     "why": "The schedule runs 4:00 AM to 6:30 PM (14.5 h, with 2 h to the base) while timing and the totals say 10 h and the approach 0.5-1 h.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing time vs car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives the climbing (summit) segment the same length as the whole car-to-car day, leaving no time for the approach or descent the row describes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Blue Lakes Trailhead, 1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_traverse",
+   "name": "Liberty Traverse",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "26"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "climb four pitches"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Three pitches straight from the Liberty Bell–Concord notch"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Five pitches"
+      },
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "seven pitches"
+      }
+     ],
+     "why": "The five sections of the route breakdown describe 4+3+3+5+7 = 22 pitches, not the 26 stated.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "5-6"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Two short rappels down the south face reach the Concord–Lexington notch"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Descend by several rappels down the west face"
+      },
+      {
+       "field": "descent_text",
+       "says": "bolted chain anchors allow 2-3 single-rope rappels"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Downclimb and rappel back into the Liberty Bell–Concord notch"
+      }
+     ],
+     "why": "Adding the rappels described off each summit (Liberty Bell, 2 off Concord, 2 off Lexington, several off North Early Winters, 2-3 off South Early Winters) gives well over 5-6.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Large cams needed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "Doubles of cams from about 2 to 4 inches"
+      },
+      {
+       "field": "gear[2]",
+       "says": "A single #5 cam for the offwidth move"
+      },
+      {
+       "field": "rack[0]",
+       "says": "plus a couple bigger pieces to 3-4in for North Early Winter Spire"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "with a couple of larger cams recommended for North Early Winter Spire"
+      }
+     ],
+     "why": "The gear list asks for doubles to 4 in plus #5 cams (twice), while the rack and Protection ask only for a couple of pieces to 3-4 in.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance shown as one quantity",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "3.2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "7"
+      }
+     ],
+     "why": "dist_km (3.2 km = 2 mi, the approach) and the trip plan's 7 miles are both presented as the route distance.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      },
+      {
+       "field": "access.notes",
+       "says": "1 mile west of Washington Pass"
+      }
+     ],
+     "why": "The bivy card puts the Blue Lake Trailhead half a mile west of the pass while the route's own trailhead text says about a mile.",
+     "internal_resolution": "The route's trailhead/approach fields agree on about 1 mile; the shared bivy note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

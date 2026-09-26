@@ -1,0 +1,297 @@
+{"batches": ["b378.json", "b379.json", "b380.json", "b381.json", "b382.json", "b383.json", "b384.json"], "routes_read": 20, "routes": [
+{"id": "wa_dot_mountain_scramble", "name": "Standard Scramble", "area": "Dot Mountain", "contradictions": [
+  {"fact": "Number of days for the trip", "severity": "medium",
+   "claims": [
+     {"field": "descent_text", "says": "this route is normally done as a 2–3 day trip with a high camp near the Lago–Carru col rather than a single push"},
+     {"field": "itinerary.totalNote", "says": "A remote 4-day, roughly 35-mile round trip"},
+     {"field": "itinerary.days", "says": "4 days (n: 1-4)"}],
+   "why": "The Plan tab's itinerary is a 4-day trip while the descent prose says the route is normally a 2-3 day trip.",
+   "internal_resolution": "Itinerary days, totalNote and timing.sectionBreakdown (4 sections) all agree on 4 days; the descent_text sentence is the outlier.",
+   "needs_research": false},
+  {"fact": "Itinerary day mileages vs waypoint distances", "severity": "medium",
+   "claims": [
+     {"field": "itinerary.days[0]", "says": "miles: 9; objective: Reach a camp in the Eureka Creek drainage"},
+     {"field": "waypoints[2].distMi", "says": "Fred's Pass at 13 mi (the pass you cross to drop into upper Eureka Creek)"},
+     {"field": "itinerary.days[3].miles", "says": "11.2 (Hike out from high camp to the trailhead)"},
+     {"field": "waypoints[4].distMi", "says": "7,400 ft Tarn Camp at 16 mi from the trailhead"}],
+   "why": "Day 1 ends at mile 9 yet claims to camp in Eureka Creek, which per the waypoints is only reached after Fred's Pass at mile 13, and the hike-out day from the 16-mile high camp is given as 11.2 miles.",
+   "internal_resolution": "Waypoints put the high camp at mile 16 (matching days 1+2 = 16 mi), so the hike-out leg is ~16 mi and a mile-9 camp is on the Middle Fork, not Eureka Creek; the day-3/day-4 split is what is off.",
+   "needs_research": false},
+  {"fact": "One-way approach distance", "severity": "low",
+   "claims": [
+     {"field": "pitch_detail[0].notes", "says": "Roughly 18-25 miles one-way via Slate Pass/Robinson Creek/Tatoosh Buttes or Eureka Creek/Lago-Carru Col trail systems"},
+     {"field": "waypoints[7].distMi", "says": "Dot Mountain summit at 17.6 mi"},
+     {"field": "approach", "says": "the ~35–36 mile round-trip distance"}],
+   "why": "The route breakdown's approach row gives 18-25 miles one-way while the waypoints, approach prose and itinerary put the summit at ~17.6 miles one-way.",
+   "internal_resolution": "Waypoints, approach, descent_text and itinerary (35.2 mi total) agree on ~17.6 mi one-way; the pitch_detail range is the outlier.",
+   "needs_research": false}
+]},
+{"id": "wa_lake_mountain_pasayten_scramble", "name": "Standard Scramble", "area": "Lake Mountain", "contradictions": []},
+{"id": "wa_lost_peak_pasayten_scramble", "name": "Standard Scramble", "area": "Lost Peak", "contradictions": [
+  {"fact": "Parking pass at Monument Creek trailhead", "severity": "low",
+   "claims": [
+     {"field": "access.fees", "says": "no parking pass is needed at the Monument Creek or Slate Pass trailheads"},
+     {"field": "waypoints[0].note", "says": "no parking pass needed"},
+     {"field": "bivy[0].permit", "says": "Northwest Forest Pass to park at Slate Pass, Robinson Creek or Monument Creek depending on which end you started."}],
+   "why": "The access section and trailhead waypoint say no pass is needed at Monument Creek or Slate Pass, while the camping card says a Northwest Forest Pass is needed at both.",
+   "internal_resolution": "access.fees, access.parking_pass, access.passRequired and the trailhead waypoint all say only Robinson Creek needs a pass; the bivy permit text is the outlier.",
+   "needs_research": false},
+  {"fact": "Pack weight on the day camp is moved", "severity": "low",
+   "claims": [
+     {"field": "itinerary.days[2].packLb", "says": "0"},
+     {"field": "itinerary.days[2].note", "says": "before descending the west ridge and moving camp on to Lake of the Woods"},
+     {"field": "itinerary.days[2].schedule[0].label", "says": "Break camp"}],
+   "why": "Day 3 breaks camp and carries it to Lake of the Woods, yet the day's pack weight is 0 lb.",
+   "internal_resolution": "The day's own note and schedule say camp is moved, so a full pack is carried for most of the day; 0 lb is wrong.",
+   "needs_research": false}
+]},
+{"id": "wa_monument_peak_pasayten_scramble", "name": "Standard Scramble", "area": "Monument Peak", "contradictions": [
+  {"fact": "Direction from Lake of the Woods camp to the Lake Mountain saddle", "severity": "low",
+   "claims": [
+     {"field": "approach", "says": "From camp, traverse cross-country south to the ~7,400-ft saddle below Lake Mountain"},
+     {"field": "approach_variants[0].baseFinding", "says": "From high camp, traverse south to the saddle below Lake Mountain around 7,400 ft"},
+     {"field": "waypoints[3] / waypoints[4]", "says": "Lake of the Woods 48.77274,-120.49948 -> Lake Mountain South Ridge Saddle 48.77813,-120.51016 (northwest of camp)"}],
+   "why": "The prose sends the party south from camp, but the route's own pins put the saddle northwest of the camp (and Monument itself lies further northwest).",
+   "internal_resolution": null,
+   "needs_research": true}
+]},
+{"id": "wa_mount_ballard_south", "name": "South Slopes", "area": "Mount Ballard", "contradictions": [
+  {"fact": "Daily gain split (approach vs summit day)", "severity": "medium",
+   "claims": [
+     {"field": "itinerary.days[0].gainFt", "says": "2600 (Canyon Creek trailhead to camp at the Azurite Mine)"},
+     {"field": "waypoints[7] / waypoints[3]", "says": "Canyon Creek Trailhead elev 1900 -> Azurite Mine campsite elev 5899"},
+     {"field": "bivy[2].notes", "says": "this is a genuine multi-day trip with more than four thousand seven hundred feet of gain before any climbing starts"},
+     {"field": "itinerary.days[1].gainFt", "says": "3700 (Azurite Mine camp 5,899 ft to the 8,371 ft summit)"}],
+   "why": "Day 1 is listed at 2,600 ft of gain although the trailhead-to-mine climb is at least ~4,000 ft by the route's own elevations, while the summit day is inflated to 3,700 ft for a ~2,470 ft climb.",
+   "internal_resolution": "Waypoint elevations (1,900 -> 5,899 -> 8,371) and bivy[2] show the approach day carries most of the gain; the total 6,500 is right but the day split is inverted.",
+   "needs_research": false},
+  {"fact": "Round-trip / summit-day distance", "severity": "low",
+   "claims": [
+     {"field": "itinerary.totalNote", "says": "A 3-day, ~31-mile round-trip backpack"},
+     {"field": "itinerary.days[*].miles", "says": "11 + 5.5 + 11 = 27.5"},
+     {"field": "itinerary.days[1].miles", "says": "5.5 (summit day from the mine camp)"},
+     {"field": "waypoints[3..5].distMi", "says": "Azurite Mine 11 -> Azurite–Ballard basin 14 -> south-face gully 15 (summit beyond)"}],
+   "why": "The day mileages add to 27.5 not ~31, and the summit day's 5.5 miles cannot cover a mine-to-summit leg that the waypoints put at over 4 miles each way.",
+   "internal_resolution": "Waypoints (mine at 11, summit >15) support ~31 mi total and an ~8+ mi summit day; the day-2 mileage is the outlier.",
+   "needs_research": false},
+  {"fact": "Access text copied from a different trailhead area", "severity": "low",
+   "claims": [
+     {"field": "access.parking_pass", "says": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads"},
+     {"field": "access.rules", "says": "no camping within ¼ mile of Cutthroat Lake"},
+     {"field": "access.passRequired", "says": "required for trailhead parking (Canyon Creek and West Fork Methow River/River Bend trailheads)"}],
+   "why": "The pass and camping rules name Washington Pass / Cutthroat Lake trailheads that this route never uses, while passRequired names the route's actual trailheads.",
+   "internal_resolution": "approach, waypoints and passRequired all use Canyon Creek (or West Fork Methow); the Washington Pass/Cutthroat text is contamination.",
+   "needs_research": false},
+  {"fact": "Road to the trailhead", "severity": "low",
+   "claims": [
+     {"field": "road.name", "says": "SR 20 (North Cascades Highway) corridor access"},
+     {"field": "road.status", "says": "Gravel, narrow, seasonal — steep drop-offs, yield to trucks"},
+     {"field": "waypoints[7].note", "says": "Large parking lot on SR 20 just east of milepost 141"}],
+   "why": "The trailhead is a lot directly on paved SR 20, but the road status describes a narrow gravel road with drop-offs (the Harts Pass/Slate Creek road).",
+   "internal_resolution": "road.name, the trailhead waypoint and bivy[2] all put the trailhead on SR 20; road.status describes the east-side road instead.",
+   "needs_research": false}
+]},
+{"id": "wa_mount_carru_scramble", "name": "South Slopes Scramble", "area": "Mount Carru", "contradictions": [
+  {"fact": "One-way approach distance", "severity": "low",
+   "claims": [
+     {"field": "approach", "says": "about 15 miles one-way"},
+     {"field": "hazards[1]", "says": "long, remote wilderness approach (15-19 miles one-way)"},
+     {"field": "waypoints[7].distMi", "says": "Mount Carru summit at 13"},
+     {"field": "itinerary.days[0..1].miles", "says": "7 + 5 = 12 miles to the Shellrock Basin high camp"}],
+   "why": "The prose puts the approach at 15-19 miles one-way, but the waypoints put the summit at 13 miles and the itinerary reaches high camp in 12.",
+   "internal_resolution": null,
+   "needs_research": true}
+]},
+{"id": "wa_osceola_peak_scramble", "name": "Southwest Slopes Scramble", "area": "Osceola Peak", "contradictions": [
+  {"fact": "Direction along the Middle Fork Pasayten trail", "severity": "low",
+   "claims": [
+     {"field": "waypoints[1].note", "says": "before turning south down the Middle Fork Pasayten drainage"},
+     {"field": "waypoints[2].directions", "says": "Turn south and follow the Middle Fork Pasayten trail up the valley."},
+     {"field": "waypoints[1] / waypoints[2]", "says": "junction 48.7697,-120.6393 -> Eureka Creek Trail junction 48.803233,-120.606433 (north)"}],
+   "why": "The waypoints say to turn south (once 'down', once 'up' the valley) while the route's own pins run north from the junction to the Eureka Creek turnoff.",
+   "internal_resolution": "The pins (and the Middle Fork's northward flow) show the leg runs north, downstream; both 'south' statements are wrong.",
+   "needs_research": false},
+  {"fact": "Summit-day gain from Lake Doris", "severity": "low",
+   "claims": [
+     {"field": "beta", "says": "gaining about 1,400 ft to the southwest ridge/south face before finishing to the summit (8,587 ft)"},
+     {"field": "descent_text", "says": "back down to Lake Doris camp (about 1,400 ft of descent"},
+     {"field": "waypoints[6].directions / waypoints[7].directions", "says": "Figure about 800 ft of gain to reach this point ... about another 800 ft of gain to the broad summit"},
+     {"field": "waypoints[5].elev / waypoints[7].elev", "says": "Lake Doris 6975 -> summit 8584"}],
+   "why": "The prose says ~1,400 ft from camp to summit, but the waypoints (800 + 800 ft, 6,975 -> 8,584 ft) give ~1,600 ft.",
+   "internal_resolution": "Waypoint elevations and waypoint directions agree on ~1,600 ft; the 1,400 ft figure (beta, approach, descent_text, itinerary 1450) understates it.",
+   "needs_research": false}
+]},
+{"id": "wa_ptarmigan_peak_pasayten_scramble", "name": "Standard Scramble", "area": "Ptarmigan Peak", "contradictions": [
+  {"fact": "Itinerary total mileage", "severity": "low",
+   "claims": [
+     {"field": "itinerary.totalNote", "says": "A 3-day, ~36-mile round trip from Slate Pass"},
+     {"field": "itinerary.days[*].miles", "says": "16 + 9 + 16 = 41"}],
+   "why": "The itinerary's own day mileages add to 41 miles while its total note says ~36 miles.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Waypoint pins placed on the wrong features", "severity": "low",
+   "claims": [
+     {"field": "waypoints[1]", "says": "Berk Creek Trail junction, elev 4400, at 48.8649,-120.532275"},
+     {"field": "waypoints[6]", "says": "Ptarmigan Peak summit, elev 8614, at 48.866313,-120.53255"},
+     {"field": "waypoints[3]", "says": "Shellrock Pass bench, elev 7500, at 48.852889,-120.537253 (Dot Mountain's summit is at 48.852315,-120.539975)"}],
+   "why": "The 4,400 ft valley junction is pinned about 150 m from the 8,614 ft summit and the Shellrock Pass camp bench is pinned on Dot Mountain's summit, so the map contradicts the named elevations.",
+   "internal_resolution": null,
+   "needs_research": true}
+]},
+{"id": "wa_remmel_mountain_nw_ridge", "name": "NW Ridge", "area": "Remmel Mountain", "contradictions": [
+  {"fact": "Where the two rappels are, and the descent line", "severity": "medium",
+   "claims": [
+     {"field": "rappels", "says": "2 on the ascent, off the west side of the North Summit to regain the ridge crest."},
+     {"field": "rappel_detail[0].notes", "says": "First of two rappels down the main gendarmes on the ridge's west side."},
+     {"field": "descent", "says": "rappel the west side of the two main gendarmes, then scramble down and around the west slope on good-to-loose boulders and scree, avoiding the north summit route"},
+     {"field": "descent_text", "says": "rappel it, and continue 3rd-class scrambling back to the high camp at ~7,500 ft"},
+     {"field": "pitch_detail[2].notes", "says": "Leave the anchor in good order: the descent comes back this way."}],
+   "why": "The rappel table puts the two rappels on the gendarmes while the rappels prose and route breakdown put them off the North Summit, and the descent both avoids the North Summit route (west slope) and comes back past its rappel anchor along the ridge.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Pitch count", "severity": "low",
+   "claims": [
+     {"field": "pitches", "says": "4"},
+     {"field": "pitch_detail", "says": "numbered climbing pitches 1, 2, 3 plus Rappel 1 and Rappel 2"},
+     {"field": "pitch_detail[3].notes", "says": "climb it in a couple of short pitches rated 5.1 to 5.2"}],
+   "why": "The header says 4 pitches while the route breakdown numbers 3 climbing pitches and describes each gendarme as a couple of pitches (5 or more).",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Total loss vs gain", "severity": "low",
+   "claims": [
+     {"field": "gain_ft", "says": "5265"},
+     {"field": "loss_ft", "says": "1200"},
+     {"field": "descent_text", "says": "from there retrace the bushwhack to Remmel Lake"}],
+   "why": "An out-and-back route that gains 5,265 ft must lose about as much, but loss is given as 1,200 ft.",
+   "internal_resolution": "The route returns the way it came (descent_text, bail), so loss should roughly equal gain; 1,200 is wrong.",
+   "needs_research": false},
+  {"fact": "October conditions", "severity": "low",
+   "claims": [
+     {"field": "best_season", "says": "October excellent with larch colors."},
+     {"field": "seasonal_guidance.monthBreakdown.October.status", "says": "marginal"}],
+   "why": "When-to-go text calls October excellent while the month breakdown rates it marginal.",
+   "internal_resolution": null,
+   "needs_research": false}
+]},
+{"id": "wa_robinson_mountain_southeast_ridge", "name": "Southeast Ridge", "area": "Robinson Mountain", "contradictions": [
+  {"fact": "Direction of the Robinson Creek Trail from the trailhead", "severity": "low",
+   "claims": [
+     {"field": "beta", "says": "follow the maintained Robinson Creek Trail south/southeast"},
+     {"field": "approach", "says": "hike the Robinson Creek - Middle Fork Trail (#478) south for about 2.8 miles"},
+     {"field": "waypoints[0] / waypoints[1]", "says": "Trailhead 48.66227,-120.54241 -> summit 48.726768,-120.575086 (north-northwest)"}],
+   "why": "The prose sends the party south on the trail, but the route's own pins put the summit (and the valley it climbs) north-northwest of the trailhead.",
+   "internal_resolution": "The pins, and bivy[1] (trail continues up-valley to Robinson Pass), show the trail runs north up Robinson Creek; 'south' is wrong.",
+   "needs_research": false}
+]},
+{"id": "wa_west_craggy_peak_standard_route", "name": "Standard Route (South Ridge / South Gully via Copper Glance Basin)", "area": "West Craggy Peak", "contradictions": [
+  {"fact": "Parking pass at the Copper Glance trailhead", "severity": "medium",
+   "claims": [
+     {"field": "permit", "says": "No parking pass is needed at the Copper Glance Trailhead."},
+     {"field": "access.passRequired", "says": "None required at this trailhead per USFS"},
+     {"field": "bivy[0].permit", "says": "Northwest Forest Pass or Interagency pass to park at the Copper Glance trailhead."}],
+   "why": "The permit/access fields say no pass is needed at Copper Glance while the camping card says a Northwest Forest Pass is required there.",
+   "internal_resolution": "permit, access.fees, access.passRequired, road.status and the trailhead waypoint all say no fee; the bivy permit text is the outlier.",
+   "needs_research": false}
+]},
+{"id": "wa_windy_peak_trail", "name": "Windy Peak Trail (Standard Walk-up)", "area": "Windy Peak", "contradictions": [
+  {"fact": "Early July conditions", "severity": "low",
+   "claims": [
+     {"field": "best_season", "says": "Mid/late July through September for reliable snow-free travel"},
+     {"field": "seasonal_guidance.monthBreakdown.July", "says": "status: optimal — snow largely melted off the trail and summit ridge"},
+     {"field": "waypoints[3].directions", "says": "Snow lingers on this upper section into July in many years"}],
+   "why": "July is rated optimal and snow-free in the month breakdown, while the when-to-go text and a waypoint say snow lingers into July and the reliable window starts mid/late July.",
+   "internal_resolution": null,
+   "needs_research": false}
+]},
+{"id": "wa_wolframite_mountain_scramble", "name": "Standard Scramble", "area": "Wolframite Mountain", "contradictions": [
+  {"fact": "Stated recorded distance", "severity": "low",
+   "claims": [
+     {"field": "approach", "says": "consistent with the ~34-mile (54.72 km) round trip"},
+     {"field": "dist_km", "says": "27.36"}],
+   "why": "The approach prose cites a recorded 54.72 km round trip but the route's distance column holds 27.36 km (the one-way figure).",
+   "internal_resolution": "Waypoints (summit at 17 mi) and itinerary (34 mi) show 27.36 km is one-way and 54.72 km round trip; the prose quotes a value the page does not hold.",
+   "needs_research": false}
+]},
+{"id": "wa_tower_arete", "name": "Tower Arete", "area": "North Face Tiffany Mountain", "contradictions": [
+  {"fact": "Whether a rope is needed", "severity": "low",
+   "claims": [
+     {"field": "detailed_rack", "says": "60-meter rope essential for belays on steeper sections"},
+     {"field": "rope_type", "says": "single dynamic (optional)"},
+     {"field": "rope_note", "says": "a 60 m rope may be carried for exposed sections, but many parties solo it unroped."}],
+   "why": "The Protection block calls the rope essential while the rope fields call it optional and say many parties solo the route.",
+   "internal_resolution": null,
+   "needs_research": false},
+  {"fact": "June conditions", "severity": "low",
+   "claims": [
+     {"field": "best_season", "says": "June through early September, when snow has cleared from lower sections"},
+     {"field": "seasonal_guidance.monthBreakdown.June", "says": "status: marginal — snow can still fill the cirque and the lower arete"}],
+   "why": "When-to-go text includes June as best season while the month breakdown rates June marginal because of snow.",
+   "internal_resolution": null,
+   "needs_research": false}
+]},
+{"id": "wa_north_tower_ridge_route", "name": "North Tower Ridge Route", "area": "North Face Tiffany Mountain", "contradictions": []},
+{"id": "wa_ne_couloir", "name": "NE Couloir", "area": "North Face Tiffany Mountain", "contradictions": []},
+{"id": "wa_junior_s_farm", "name": "Junior's Farm", "area": "Full Montey, The", "contradictions": [
+  {"fact": "Hardest grade", "severity": "medium",
+   "claims": [
+     {"field": "grade", "says": "5.8+"},
+     {"field": "rock_grade", "says": "5.9 (pitch grades range roughly 5.5-5.9; P1 is the crux and P6 the next hardest)"},
+     {"field": "pitch_detail[0].grade", "says": "5.8+ (P1, Bad-Tempered Prom Queen)"},
+     {"field": "overview", "says": "pitches ranging from 5.6 to 5.8"},
+     {"field": "waypoints[1].note", "says": "8-pitch sport/alpine route (5.9)"}],
+   "why": "The header grade is 5.8+ while the rock-grade chip and waypoint say 5.9, and both name P1 as the crux, which the route breakdown grades 5.8+.",
+   "internal_resolution": "grade, pitch_detail (P1 5.8+, P6 5.8) and beta agree on 5.8+; rock_grade/waypoint 5.9 are the outliers.",
+   "needs_research": true},
+  {"fact": "Whether a 60 m rope reaches the hidden fourth rappel anchor", "severity": "medium",
+   "claims": [
+     {"field": "rappel_detail[3].hazards[1]", "says": "A party on a 70 m rope arrived at this anchor with only a couple of metres of rope left; a 60 m barely reaches"},
+     {"field": "rappel_detail[3].lengthM", "says": "30"},
+     {"field": "descent", "says": "A single 60 m rope reaches the ground only if you use every anchor station"}],
+   "why": "If a 70 m rope (35 m doubled) had only a couple of metres left at this anchor, a 60 m (30 m doubled) cannot reach it, contradicting both the 30 m rappel length and the claim that a 60 m does the descent.",
+   "internal_resolution": null,
+   "needs_research": true}
+]},
+{"id": "wa_chimney_peak_standard", "name": "Standard Route", "area": "Chimney Peak", "contradictions": []},
+{"id": "wa_mount_la_crosse_scramble", "name": "Mount La Crosse Scramble", "area": "Mount La Crosse", "contradictions": [
+  {"fact": "Avalanche rating in July", "severity": "low",
+   "claims": [
+     {"field": "seasonal_hazards.avalanche.zone", "says": "NWAC issues forecasts only during the winter/spring avalanche season, so this does not apply to the late-July-September summer scramble window"},
+     {"field": "seasonal_hazards.avalanche.byMonth.July", "says": "Moderate"}],
+   "why": "The AVALANCHE card says no forecast applies in the summer season, yet it rates July as Moderate.",
+   "internal_resolution": null,
+   "needs_research": false}
+]},
+{"id": "wa_white_mountain_olympics_scramble", "name": "White Mountain Scramble", "area": "White Mountain", "contradictions": [
+  {"fact": "Aspect of the standard scramble line", "severity": "low",
+   "claims": [
+     {"field": "aspect", "says": "the standard scramble route ascends south- and west-facing heather, talus, and open forest slopes."},
+     {"field": "approach_variants[0].baseFinding", "says": "The summit lies roughly a mile and a half south of the pass ... the scramble begins where you step off the tread on the south side of the saddle"},
+     {"field": "waypoints[4]", "says": "Heather/scree slopes below the summit ridge at 47.6814915,-123.32810875 (directly north of the 47.676622 summit)"}],
+   "why": "The route climbs south from Anderson Pass to a summit south of it, so by its own pins it ascends the north side, not south- and west-facing slopes as the aspect field says.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Day-1 distance to Honeymoon Meadows camp", "severity": "low",
+   "claims": [
+     {"field": "itinerary.days[0].miles", "says": "17"},
+     {"field": "itinerary.days[0].schedule[3].detail", "says": "~14-15 mi and roughly 3,500-4,000 ft of hiking gain from the trailhead."},
+     {"field": "waypoints[2].distMi", "says": "14.1 (Honeymoon Meadows Camp)"}],
+   "why": "Day 1 is 17 miles in its header but ~14-15 miles in its own schedule and 14.1 at the camp waypoint.",
+   "internal_resolution": null,
+   "needs_research": false},
+  {"fact": "Parking pass at the Dosewallips road end", "severity": "low",
+   "claims": [
+     {"field": "access.parking_pass", "says": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass."},
+     {"field": "access.passRequired", "says": "Wilderness camping permit (not a parking/road pass) reserved via Recreation.gov"},
+     {"field": "access.land_manager", "says": "Olympic National Forest (initial ~4.9 mi approach from the Dosewallips Road washout/Elkhorn Campground to the park boundary)"}],
+   "why": "One access field lists a park entrance fee for parking while another says no parking/road pass is required, and the parking area is on national forest land rather than in the park.",
+   "internal_resolution": null,
+   "needs_research": true},
+  {"fact": "Bailout pass", "severity": "low",
+   "claims": [
+     {"field": "bail", "says": "Descend to La Crosse Pass or the nearest trail and follow it out."},
+     {"field": "approach_variants[0].baseFinding", "says": "Anderson Pass is the base"}],
+   "why": "The bailout names La Crosse Pass, but the route leaves the trail at, and returns to, Anderson Pass.",
+   "internal_resolution": "Waypoints, itinerary and approach all use Anderson Pass on the West Fork Dosewallips approach; La Crosse Pass is on neither the approach nor the route.",
+   "needs_research": false}
+]}
+]}

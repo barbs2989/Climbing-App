@@ -1,0 +1,291 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "name"
+   ],
+   "fact": "Crescent Creek Basin camp elevation"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Crescent Creek Basin camp elevation"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether the overnight permit can be reserved in advance"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the overnight permit can be reserved in advance"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Whether the overnight permit can be reserved in advance"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_application_method"
+   ],
+   "fact": "Whether the overnight permit can be reserved in advance"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Recommended timing (late June)"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Barrier crossing on climb day"
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "column": "waypoints",
+   "path": [
+    7,
+    "directions"
+   ],
+   "fact": "Which way the step below the Ottohorn-Himmelhorn col is rappelled"
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Time from trailhead to Terror Basin"
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Days to walk out"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.68664,
+      "lng": -121.27121,
+      "elev": 600,
+      "name": "Goodell Creek Trailhead (Cross-Country Zone Access, Upper Goodell Creek)",
+      "note": "Goodell Creek Trail -> Terror Creek ford -> The Barrier -> Crescent Creek Basin -> Eye Col approach used for all Twin Needles routes.",
+      "type": "Trailhead",
+      "elevFt": 600
+     },
+     {
+      "lat": 48.720424186046515,
+      "lng": -121.27755162790697,
+      "elev": 2100,
+      "name": "Terror Creek logjam crossing",
+      "note": "Climbers' path fades to bushwhack here; cross Terror Creek by fording, or on a big log just upstream when one is in place (last reliable water before the steep, cliffy push up toward the Barrier).",
+      "type": "Water",
+      "distMi": 3.8
+     },
+     {
+      "lat": 48.745203255813955,
+      "lng": -121.28299348837209,
+      "elev": 6100,
+      "name": "The Barrier ridge crossing",
+      "note": "Loose, exposed scrambling (harder late-season without snow cover) gains this ridge that separates the Terror Creek drainage from Crescent Creek Basin.",
+      "type": "Junction",
+      "distMi": 6.3
+     },
+     {
+      "lat": 48.752141395348836,
+      "lng": -121.28451720930232,
+      "elev": 6400,
+      "name": "Crescent Creek Basin (Chopping Block Camp)",
+      "note": "Established bivy sites on the saddle below Mount Terror, used as base camp for both Twin Needles; talus/scree basin below the south-facing summit gullies.",
+      "type": "Campsite",
+      "distMi": 7
+     },
+     {
+      "lat": 48.76007069767442,
+      "lng": -121.28625860465115,
+      "elev": 7400,
+      "name": "Eye Col",
+      "note": "Class-5 chockstone squeeze gains the notch between the summit gullies shared with West Twin Needle; rope up for this section.",
+      "type": "Junction",
+      "distMi": 7.8
+     },
+     {
+      "lat": 48.7767,
+      "lng": -121.3115,
+      "elev": 7840,
+      "name": "East Twin Needle",
+      "note": "East Twin Needle sits atop 'Eye Col' immediately adjacent to West Twin Needle.",
+      "type": "Summit",
+      "elevFt": 7840
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "before": {
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "access": {
+     "_raw": {
+      "permit_cost": "$10 per person plus a $6 permit fee for overnight backcountry permits in the summer season",
+      "land_manager": "National Park Service (North Cascades National Park)",
+      "seasonal_closure_dates": "Year-round access, but winter conditions may restrict access",
+      "permit_application_method": "No permit for day climbs; overnight stays need a North Cascades NP backcountry permit (reserved on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)"
+     },
+     "fees": "No park entrance fee; the overnight backcountry permit costs $10 per person plus a $6 permit fee in the summer season.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "closures": "Year-round access, but winter conditions may restrict access",
+     "group_limit": 6,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    },
+    "pro_tips": [
+     "Go early in the season (late June-July) while snow still eases travel across the Barrier and basin crossings, before August's glacier moats and loose scree complicate the approach.",
+     "The route's grade is famously line-dependent — the first-ascent party rated the crux 5.10c, but a repeat party found an easier line and down-graded it to 5.9, so careful route-finding on the buttress changes the difficulty you'll actually encounter."
+    ],
+    "turnaround": "Given the long, multi-day approach and a remote, self-rescue-only setting far from any road, set a firm turnaround time that leaves ample daylight margin to complete the summit ridge traverse and both rappels, and to be back across the Barrier crossing before afternoon thunderstorms typically build."
+   }
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.68664,
+      "lng": -121.27121,
+      "elev": 600,
+      "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+      "note": "Park off SR-20 near Newhalem at Goodell Creek Campground/road; NPS wilderness permit required for overnight camping in Terror/Crescent Creek Basins.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Highway 20 to Newhalem and park at the Goodell Creek Campground and trailhead just off the highway. An NPS wilderness permit is required for overnight camping in the Terror and Crescent Creek Basins, so arrange that before you head in."
+     },
+     {
+      "lat": 48.7257,
+      "lng": -121.29488,
+      "elev": 1700,
+      "name": "Cairn - Old Roadbed / Terror Basin Fork",
+      "note": "Old logging roadbed ends here; a cairn (replacing an older rock arrow) marks the unmaintained boot path climbing steeply south of Terror Creek toward Terror Basin.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "Follow the old roadbed and climbers' path up the Goodell Creek valley for about four miles, gaining only around 1,000 ft. Fill water at the junction: this is the last easy, reliable source before the climb steepens."
+     },
+     {
+      "lat": 48.71854555555556,
+      "lng": -121.27640666666666,
+      "elev": 2100,
+      "name": "Terror Creek Log Jam Crossing",
+      "note": "Cross Terror Creek on a log jam; the exact crossing point shifts year to year and can require wading or bushwhacking upstream in high water.",
+      "type": "Hazard",
+      "distMi": 4.3,
+      "directions": "Leave the roadbed at the cairn on the unmaintained path cutting uphill and to the right; it reaches Terror Creek within a few hundred yards, before any of the real climbing begins."
+     },
+     {
+      "lat": 48.73643333333333,
+      "lng": -121.28059999999999,
+      "elev": 5700,
+      "name": "Terror Basin",
+      "note": "Gravelly, wildflower basin with established tent sites and multiple streams; the standard base camp for Southern Pickets objectives, roughly 3+ hours in.",
+      "type": "Campsite",
+      "distMi": 6,
+      "directions": "Past the creek the boot path turns relentlessly steep, gaining roughly 4,000-4,700 ft in well under three horizontal miles through old-growth and brush; expect head-high slide alder and devil's club depending on the season and snow year. It breaks out of timber near 5,000-5,200 ft onto heather benches, slabs and snowfields. The path is boot-beaten but often faint, and there is no dependable water between the creek and the basin."
+     },
+     {
+      "lat": 48.74695555555556,
+      "lng": -121.28306666666667,
+      "elev": 6400,
+      "name": "The Barrier",
+      "note": "Loose, exposed low-5th-class ridge crossing over a moat divides Terror Basin from Crescent Creek Basin; classic unstable 'Pickets Class 3' terrain, harder late season.",
+      "type": "Hazard",
+      "distMi": 7,
+      "directions": "From the tent sites, climb up-basin roughly 700 ft to the north-northwest to reach the crest of the divide. The ground is grassy ledges and loose blocks, and it is the one stretch of the approach where a slip has real consequences."
+     },
+     {
+      "lat": 48.75221666666667,
+      "lng": -121.2843,
+      "elev": 5900,
+      "name": "Crescent Creek Basin Camp",
+      "note": "Flat camping area below Mount Terror used as the high camp for Ottohorn, Himmelhorn, and Frenzel Spitz objectives.",
+      "type": "Campsite",
+      "distMi": 7.5,
+      "directions": "Drop about 500 ft off the far side on mixed snow and talus, steeply at first, then traverse for roughly an hour into the basin under the Ottohorn-Himmelhorn massif to reach the flat ground used for camping."
+     },
+     {
+      "lat": 48.76273888888889,
+      "lng": -121.28676666666667,
+      "elev": 7280,
+      "name": "Ottohorn-Himmelhorn Col",
+      "note": "Gain the col from Crescent Creek Basin (snow-filled and straightforward early season, loose tricky 5th class if melted out); the descent toward Frenzel Spitz's South Route drops off its north side from here.",
+      "type": "Junction",
+      "distMi": 8.5,
+      "directions": "From the basin camp it is about 1,400 ft and roughly an hour of climbing up to the crest. This Crescent Creek side is the friendly side of the col, loose but moderate 3rd and 4th class; the north side, which drops toward Frenzel Spitz, is sustained loose 5th class, with a steep step that is usually rappelled on the way down and has to be reclimbed on the way back."
+     },
+     {
+      "lat": 48.77638,
+      "lng": -121.31694,
+      "elev": 7440,
+      "name": "Frenzel Spitz Summit",
+      "note": "True summit gained via 5.6 rock on the south side after descending about 500 ft from the col; return the same way, reclimbing to the col.",
+      "type": "Summit",
+      "distMi": 9,
+      "directions": "Do not try to follow the crest across. From the col, downclimb roughly 500 ft of broken, frequently snow- or ice-covered ground onto the Frenzel Spitz side to reach the foot of the South Route, then climb its rock at about 5.6 back up to the top. The small net height difference between col and summit hides a full descent and re-ascent, so budget the time for it; the step below the col is commonly rappelled from natural anchors on the way back."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - multi-day, off-trail approach through the Goodell Creek/Crescent Creek basin with significant elevation gain, bushwhacking, and talus/heather traverses before any climbing begins",
+      "packWeight": "Heavy overnight alpine pack (roughly 40-50 lbs) carrying bivy gear, several days of food/fuel, and a rock rack for Grade III, 5.6 terrain"
+     },
+     "approachTime": "Multi-day approach (roughly 1.5-2 days each way) via the Goodell Creek/Crescent Creek basin before reaching the peak; typically climbed as part of a multi-day backcountry trip rather than a single push",
+     "requiredSkills": [
+      "Confident 5.6 traditional/alpine rock leading in a remote, unrated/lightly-traveled setting",
+      "Independent route-finding without a maintained trail or established boot path",
+      "Loose-rock management and careful movement on unconsolidated alpine rock",
+      "Basic glacier/snowfield travel and self-arrest for the approach",
+      "Self-sufficiency and self-rescue judgment given the remoteness and lack of cell coverage"
+     ],
+     "experienceLevel": "Seasoned alpine climber with prior North Cascades or comparably remote range experience; must be comfortable committing multiple days to trail-less, glaciated/talus terrain far from help"
+    }
+   }
+  }
+ ]
+}

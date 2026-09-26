@@ -1,0 +1,366 @@
+{
+ "applied": [
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "column": "watch_out",
+   "path": [
+    1
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "column": "season",
+   "path": [],
+   "fact": "Season start"
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Season start"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Total gain of the approach"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Total gain of the approach"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "waypoints",
+   "path": [
+    5,
+    "name"
+   ],
+   "fact": "False summit elevation vs its distance from the top"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "False summit elevation vs its distance from the top"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "waypoints",
+   "path": [
+    6,
+    "directions"
+   ],
+   "fact": "False summit elevation vs its distance from the top"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "False summit elevation vs its distance from the top"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Whether most parties rappel the crux"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Whether most parties rappel the crux"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "descent",
+   "path": [],
+   "fact": "Whether most parties rappel the crux"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "rappels",
+   "path": [],
+   "fact": "Whether most parties rappel the crux"
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "column": "length_m",
+   "path": [],
+   "fact": "Climb length"
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Hardest rock on the route"
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "detail"
+   ],
+   "fact": "Rappel on the descent"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "before": {
+    "watch_out": [
+     "South faces are loose scree and rockfall-prone — descend the way you came up, not down the south side",
+     "Long approach (~16 miles round trip via Elbow Lake Trail) with real elevation gain before any climbing begins",
+     "FSR 38 has been closed since the December 2025 floods with no published repair date — check current Mount Baker-Snoqualmie NF alerts before you drive out"
+    ],
+    "season": "Late Jul-Sep",
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September-September - this is the dry-rock window for the olivine slabs",
+     "monthBreakdown": {
+      "July": {
+       "reason": "rock typically dry at the season start",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "lingering snow on approach slopes and slabs likely; access roads may still be affected by late-season runoff/washouts",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "warmest, most stable conditions, prime window",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "still within best season; days shortening and early-season snow possible late in the month",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "before": {
+    "approach": "Park at the gated bridge over the Middle Fork Nooksack River (~1,200 ft) at the end of FR 38, reached via Mosquito Lake Road off WA-542. From the gate, most parties mountain-bike the old quarry/logging road system for roughly 6-7 miles and well over 2,000 ft of gain, threading several forks and offshoots near Dailey Prairie (GPS/GPX tracking is recommended here since wrong turns are common) before the road becomes too rough or overgrown to ride, usually marked by a large culvert pipe at the timber-road terminus. Stash bikes in the woods and pick up the narrow climbers' path on foot — brushy, wet, and occasionally overgrown but not hard to follow. The path drops slightly, crosses a forested section, and fades out at a red talus slope, which often holds snow well into summer. From the talus, traverse rightward (south) up and across, over a timbered rib, passing the ruins of an old miner's log cabin, then continue up into Orsino Creek Basin — the last reliable water source before the climb. From the basin, pick a line up onto the West Ridge; the standard start is an obvious notch in the ridge crest around 5,200 ft. Total foot travel from the bike cache to the summit is roughly 4 miles with substantial additional gain (combined bike + foot gain for the full approach runs about 4,600 ft), taking most parties 4-5 hours one-way. Watch for loose rock on the climbers' path and lower talus, and for lingering snow on the talus slope and approach gullies in early/mid-season, which can require an ice axe.",
+    "approach_variants": [
+     {
+      "name": "FR-38 gate, bike the Dailey Prairie roads, then Orsino Creek Basin to the 5,200 ft notch",
+      "notes": "Park at the gated bridge over the Middle Fork Nooksack River near 1,200 ft at the end of FR-38, reached via Mosquito Lake Road off WA-542. From the gate most parties mountain-bike the old quarry and logging road system for roughly 6-7 miles and well over 2,000 ft of gain, threading several forks near Dailey Prairie, until the road becomes too rough or overgrown to ride — usually marked by a large culvert pipe at the timber-road terminus. GPS or a GPX track is genuinely recommended on this network.\n\nStash bikes and pick up the narrow climbers' path on foot: brushy, wet, occasionally overgrown, but not hard to follow. It drops slightly, crosses a forested section, and fades out at a red talus slope which often holds snow well into summer.\n\nFrom the talus, traverse RIGHTWARD — south — up and across, over a timbered rib, past the ruins of an old miner's log cabin, then up into Orsino Creek Basin. Orsino Creek is the last reliable water before the climb.\n\nAbout four miles of foot travel from the bike cache to the summit, four to five hours one way for most parties, with combined bike and foot gain around 4,600 ft.",
+      "season": "Roughly May-Oct, with snow-free scrambling typically Jul-Sep. Earlier or later trips want an ice axe for lingering snow near 6,500 ft",
+      "hazards": [
+       "An unsigned logging-road network near Dailey Prairie where wrong turns are common",
+       "A red talus slope holding snow into summer, and lingering snow near 6,500 ft",
+       "A steep loose dirt gully to gain the notch",
+       "Low fifth-class steps on the upper crest that force an improvised rappel if the bypass is missed",
+       "Orsino Creek is the last water for the whole climb"
+      ],
+      "baseFinding": "THE RUINS OF AN OLD LOG CABIN ARE THE ONE MAN-MADE THING ON THIS APPROACH AND THEY ARE THE CHECKPOINT. From the red talus slope where the climbers' path fades, traverse RIGHT — south — up and across, cross a timbered rib, and pass the cabin ruins. If you have not passed a collapsed cabin, you have not made the traverse and you are still below the basin.\n\nORSINO CREEK IS THE LAST WATER AND THE ENTRY TO THE BASIN. Fill up. There is nothing above it.\n\nTHE BASE IS AN OBVIOUS NOTCH IN THE RIDGE CREST AT ABOUT 5,200 FT, AND YOU GET TO IT UP A STEEP LOOSE DIRT GULLY. That combination — an unpleasant slog up steep dirt, scree and talus, then a defined notch in a crest — is the arrival, and it works in cloud because a notch is a thing you stand in with air on the far side. This is the standard start and it is where the West Ridge is gained down low.\n\nTHE DISCRIMINATOR AGAINST THE OTHER ROUTE OUT OF THIS BASIN, AND IT IS A SINGLE NUMBER: the NORTH RIDGE route continues HIGHER and further CLIMBER'S LEFT — north — up basin snow or talus to a saddle around 5,800 ft between North Twin's southeast ridge and South Twin's north ridge. So 5,200 ft and the obvious notch is the West Ridge; 5,800 ft and a saddle between two peaks is the North Ridge. Six hundred feet and a bearing separate two routes that share every step of the approach up to the basin.\n\nTHE ROCK CONFIRMS THE RANGE: dunite, olivine-rich, exceptionally grippy, like coarse sandpaper. It is why parties choose to gain the ridge low rather than high — to maximise time on it.\n\nHIGHER UP, THE FALSE-SUMMIT BYPASS IS WORTH CARRYING BEFORE YOU NEED IT: leave the crest to the RIGHT — south — traverse ledges, and regain the crest about 200 yards short of the false summit, roughly 500 ft above where you left it. Staying exactly on the crest through that step is what forces parties into an improvised rappel."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.7669,
+      "lng": -122.0394,
+      "elev": 1200,
+      "name": "Middle Fork Nooksack River Bridge / FR 38 Gate",
+      "note": "Gated bridge on FR 38 (Dailey Quarry Road) off Mosquito Lake Road; park at the gate even if open; no parking permit is needed, but the private timberland road beyond requires the landowner's fee access permit, and many parties bike it.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From WA-542, turn onto Mosquito Lake Road and follow it to FR-38 (the Dailey Quarry Road), then take FR-38 to its end at the gated bridge over the Middle Fork Nooksack River, around 1,200 feet. Park at the gate even if you find it open — no permit is required to park here, though the road is closed to vehicles beyond this point and most parties continue from here by mountain bike."
+     },
+     {
+      "lat": 48.72278,
+      "lng": -122.03667,
+      "elev": 3166,
+      "name": "Dailey Prairie",
+      "note": "Old logging/quarry road passes this open prairie flat (a DNR Natural Area Preserve) before dropping into the basin between the Twin Sisters.",
+      "type": "Junction",
+      "distMi": 4.5,
+      "directions": "Ride or walk the old quarry and logging roads up from the gate. The grade is easy but the network branches repeatedly and the correct fork is rarely the obvious one, so follow a recorded track rather than instinct. Wrong turns here are the most common way to lose time on this route."
+     },
+     {
+      "lat": 48.717306,
+      "lng": -122.030042,
+      "elev": 4500,
+      "name": "Orsino Creek Crossing",
+      "note": "Last reliable water on the route; climbers' path crosses here and most parties stash bikes at this point before continuing on foot.",
+      "type": "Water",
+      "distMi": 6.5,
+      "directions": "Past the prairie the roadbed drops into the basin between the two Sisters, taking a succession of left-hand forks as it goes. The road deteriorates until it is too rough or overgrown to ride, usually marked by a large culvert pipe where the timber road ends. Stash bikes in the trees and fill water at the crossing, because this is the last reliable source on the route."
+     },
+     {
+      "lat": 48.713337,
+      "lng": -122.017366,
+      "elev": 5000,
+      "name": "Orsino Creek Basin / Red Talus Slope",
+      "note": "Brushy old road fades to a boot path through timber then a red talus field opening into the upper basin below the West Ridge; talus often snow-covered into midsummer.",
+      "type": "Campsite",
+      "distMi": null,
+      "directions": "Pick up the narrow climbers' path on foot heading southeast. It is brushy and wet in places but followable; it drops slightly, crosses a forested section, and simply ends at a red talus slope that often holds snow into midsummer. From the talus traverse up and right (south), over a timbered rib and past the ruins of an old log cabin, into the upper basin."
+     },
+     {
+      "lat": 48.710669,
+      "lng": -122.005014,
+      "elev": 5200,
+      "name": "West Ridge Notch",
+      "note": "Gain the West Ridge crest here, roughly 1,300 ft below the false summit; higher up, from a second notch about 400 ft below the summit, a traverse right (south) leads to easier Class 2-3 gullies instead of the ridge crest.",
+      "type": "Junction",
+      "distMi": null,
+      "directions": "Climb out of the basin on steep dirt, scree and talus toward the obvious low notch in the ridge above. Sight the notch from the basin floor before starting up, and expect poor footing the whole way; this is the least pleasant stretch of the day."
+     },
+     {
+      "lat": 48.707313,
+      "lng": -122.001846,
+      "elev": 6500,
+      "name": "False Summit Dihedral",
+      "note": "Prominent dihedral feature repeatedly mistaken for the true summit; loose, abrasive dunite rock and a couple of low-5th-class moves here if staying on the ridge crest rather than dropping to the south-face gullies.",
+      "type": "Hazard",
+      "distMi": null,
+      "directions": "Follow the ridge up from the notch, roughly two hours of class 2-3 scrambling that moves on and off the crest. The right (south) side is generally solid and the left side is looser, and holding strictly to the crest is harder than dropping slightly south to bypass steps. The dunite is abrasive and holds friction unusually well, but it is hard on hands and rope. The ridge steepens into a cliffy band around 6,500 ft where the large dihedral sits."
+     },
+     {
+      "lat": 48.7049,
+      "lng": -121.9874,
+      "elev": 7004,
+      "name": "South Twin Sister",
+      "note": "Highest point in the Twin Sisters Range; two USGS benchmark caps and a summit register are on top, with Mount Baker visible 10 miles to the northeast.",
+      "type": "Summit",
+      "distMi": 10.5,
+      "directions": "The high point at the dihedral is not the top and carries no cairn or register. Continue along the crest a short distance, on the order of fifty yards, crossing talus and any lingering snow to the next high point, which holds the survey markers and the register. In fog this last short stretch is where parties stop short and turn around believing they have summited."
+     }
+    ],
+    "itinerary": {
+     "cal": "Requires biking ~6-7 mi of a gated logging road each way; best done once the approach talus/ridge snow has melted out, roughly July-September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard single-day outing: bike the gated Middle Fork Nooksack logging road, hike a rough climbers' path to the Orsino Creek basin, then scramble Class 2-3 up the West Ridge crest to a short 5th-class step just below the summit block that most parties rope up and rappel. Reverse the same line to descend.",
+       "hours": 11.5,
+       "miles": 21,
+       "title": "Car-to-car: West Ridge",
+       "gainFt": 6100,
+       "lossFt": 6100,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave trailhead on bikes",
+         "detail": "Ride the quarry/logging road toward the North Twin trail junction."
+        },
+        {
+         "time": "~6:15 AM",
+         "label": "Stash bikes, start hiking",
+         "detail": "Overgrown climbers' path through forest toward Orsino Creek."
+        },
+        {
+         "time": "~8:00 AM",
+         "label": "Orsino Creek basin",
+         "detail": "Best water source on the route; filter here before the dry ridge."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Gain the West Ridge crest",
+         "detail": "Begin sustained Class 2-3 scrambling on solid olivine."
+        },
+        {
+         "time": "~1:00-2:00 PM",
+         "label": "Summit",
+         "detail": "Short rappel/5th-class step ~400 ft below the top; some parties rope up here."
+        },
+        {
+         "time": "~4:30-5:30 PM",
+         "label": "Back at bikes, ride out",
+         "detail": "Reverse the ridge and descent path; arrive trailhead by evening."
+        }
+       ],
+       "objective": "Summit South Twin Sister (7,004 ft) via the West Ridge"
+      }
+     ],
+     "totalNote": "A long but standard single day: ~11-12 hrs car-to-car, ~21 mi round trip (including the bike approach) and ~6,100 ft gain, with one short roped rappel near the top."
+    },
+    "descent": "Reverse the route with a short rappel",
+    "rappels": "1",
+    "length_m": 244
+   }
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "before": {
+    "rock_grade": "3rd class (sometimes rated 4th class; most parties describe it as easy 3rd class)",
+    "itinerary": {
+     "cal": "The bergschrund on the Sisters Glacier crossing can get thin or awkward by late summer as snow recedes; best attempted in July, before it opens up.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Longer and more technical than the West Ridge: same bike/hike approach, then climb to the ~5,800 ft col between North and South Twin, cross the Sisters Glacier past the bergschrund (crampons/axe, rope up for the schrund), and follow the North Ridge crest to the summit. Descend via the West Ridge rather than reversing the glacier.",
+       "hours": 13,
+       "miles": 21,
+       "title": "Car-to-car: North Ridge via Sisters Glacier",
+       "gainFt": 6400,
+       "lossFt": 6400,
+       "packLb": 28,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave trailhead on bikes",
+         "detail": "Same logging-road approach as the West Ridge."
+        },
+        {
+         "time": "~7:30 AM",
+         "label": "Stash bikes, hike toward the col",
+         "detail": "Climbers' path and talus up to the basin between the Twins."
+        },
+        {
+         "time": "~9:30-10:00 AM",
+         "label": "Reach the col (~5,800 ft)",
+         "detail": "Gear up: crampons, axe, rope for the glacier."
+        },
+        {
+         "time": "~10:30-11:30 AM",
+         "label": "Cross Sisters Glacier / bergschrund",
+         "detail": "Rope up to cross the schrund; can be tricky/thin by late summer."
+        },
+        {
+         "time": "~12:30-1:30 PM",
+         "label": "Climb North Ridge to summit",
+         "detail": "Prefer snow over rock where the line allows; some 4th-class rock."
+        },
+        {
+         "time": "~3:30-6:00 PM",
+         "label": "Descend via West Ridge to bikes",
+         "detail": "Reverse the West Ridge line (short rappel near the top) back to the bikes."
+        }
+       ],
+       "objective": "Cross the Sisters Glacier and climb the North Ridge to South Twin's summit"
+      }
+     ],
+     "totalNote": "A very long single day for fit, glacier-experienced parties: ~12-13 hrs car-to-car, ~21 mi, ~6,400 ft gain, with glacier travel, a bergschrund crossing, and a mixed rock ridge to the summit."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "applied": [
+  {
+   "id": "wa_rapple_grapple",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_rapple_grapple",
+   "before": {
+    "approach_logistics": {
+     "peakLat": 48.515435,
+     "peakLng": -120.658365,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    }
+   }
+  }
+ ]
+}

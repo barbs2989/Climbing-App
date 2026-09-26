@@ -1,0 +1,316 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether the zone permit can be reserved"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether the zone permit can be reserved"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Whether the zone permit can be reserved"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the zone permit can be reserved"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Permit cost"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Permit cost"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Where the Day 1 camp is and how much the day gains"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Where the Day 1 camp is and how much the day gains"
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit fee basis"
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Permit booking method implied by the fee"
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "$6 fee described as a reservation fee on a walk-up-only zone"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "before": {
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "access": {
+     "fees": "$10 per person (charged mid-May through early October; no fee October-mid-May) plus a $6 non-refundable processing fee — applies to advance reservations, lottery entries, and walk-up/first-come-first-served permits alike, not just reservations; youth 15 and under free.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "NPS backcountry permit required year-round for overnight stays. About 60% of sites can be reserved in advance via Recreation.gov (watch the mandatory safety video, then email noca_wilderness@nps.gov within 3 days of the trip); the rest are held as walk-up/standby permits issued in person at the Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA, (360) 854-7245.",
+     "closures": "SR 20 (North Cascades Highway) itself closes seasonally, but the gate is well east of here near Ross Dam/Diablo (roughly late November-late April, varying with snowpack and any slide repairs). Newhalem and the Goodell Creek trailhead sit west of that gate and remain reachable year-round from Marblemount/Concrete.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (NPS) — Wilderness Information Center, Marblemount",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 48.68276,
+      "lng": -121.26928,
+      "elev": 500,
+      "name": "Goodell Creek Trailhead",
+      "note": "Old Goodell Creek logging road on SR 20 across from Newhalem Campground; free NPS backcountry permit required for any overnight camping in North Cascades National Park.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to Newhalem. Coming from the west through Marblemount and Concrete the road is open year-round, since the seasonal highway closure gate sits farther east near Ross Dam and Diablo. Park at the Goodell Creek trailhead on the north side of SR-20, across from Newhalem Campground: take the left just past the Goodell Creek crossing, continue past the gravel pit, and follow the road to its end by the creek at about 500 ft. Any overnight camping in North Cascades National Park needs a free backcountry wilderness permit, and the Crescent/Terror Creek approach is usually not snow-free and reliably passable until mid-to-late July."
+     },
+     {
+      "lat": 48.748147,
+      "lng": -121.286126,
+      "elev": 1800,
+      "name": "Climbers' Path Cairn",
+      "note": "Cairn marking where the unmaintained Terror Basin/Barrier climbers' path leaves the overgrown Goodell Creek roadbed and turns steeply uphill toward the Southern Pickets.",
+      "type": "Junction",
+      "distMi": 4
+     },
+     {
+      "lat": 48.758254,
+      "lng": -121.286998,
+      "elev": 2600,
+      "name": "Terror Creek Log Crossing",
+      "note": "Cross Terror Creek on a large logjam ford point used by climbers approaching the Barrier; can be slick and the log position shifts year to year.",
+      "type": "Hazard",
+      "distMi": 4.7
+     },
+     {
+      "lat": 48.759013,
+      "lng": -121.301766,
+      "elev": 3800,
+      "name": "The Barrier Crest",
+      "note": "Small saddle atop a notoriously loose class-3 ridge dividing the Terror and Crescent Creek basins; careful route-finding and rockfall awareness needed here.",
+      "type": "Junction",
+      "distMi": 5.5
+     },
+     {
+      "lat": 48.767437,
+      "lng": -121.305991,
+      "elev": 5600,
+      "name": "Stump Hollow",
+      "note": "Open, gentle slabby/heather basin between the Barrier and Chopping Block ridge — the standard high camp for the South Route.",
+      "type": "Campsite",
+      "distMi": 6.3
+     },
+     {
+      "lat": 48.758509,
+      "lng": -121.307305,
+      "elev": 6300,
+      "name": "South Face Gully",
+      "note": "Loose gully on the south side of the Chopping Block/Barrier ridge gains the sloping south face; helmet on, watch for rockfall onto climbers below.",
+      "type": "Hazard",
+      "distMi": 6.8
+     },
+     {
+      "lat": 48.755,
+      "lng": -121.30806,
+      "elev": 6819,
+      "name": "The Chopping Block",
+      "note": "True summit (6,819 ft), labeled Pinnacle Peak on USGS maps; visible from the North Cascades NP Newhalem visitor center on clear days.",
+      "type": "Summit",
+      "distMi": 7
+     }
+    ],
+    "itinerary": {
+     "cal": "North Cascades NP backcountry camping requires a wilderness permit, and the Crescent/Terror Creek approach is typically not snow-free and reliably passable until mid-to-late July.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Goodell Creek trailhead near Newhalem, follow the old logging road then a steep, sometimes brushy climbers' path south of Terror Creek (wading the creek), climbing relentlessly to a ~6,200 ft spur on the Barrier ridge before dropping to a flat camp around 5,800 ft. It's a brutal, sustained ~4,000+ ft grind with little flat ground until camp.",
+       "hours": 7,
+       "miles": 6.5,
+       "title": "Approach to Southern Pickets high camp",
+       "gainFt": 5700,
+       "lossFt": 400,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach camp near the Barrier / Terror Basin"
+      },
+      {
+       "n": 2,
+       "note": "Cross the Barrier ridge into Stump Hollow/Crescent Creek Basin, then climb south-side slabs and heather to the base of the peak. The route is a rambly scramble with a couple of short, exposed low-5th-class moves near the summit plateau; parties typically make one short rappel (fixed-line/anchor reported at the top) to regain the south-side ledges on descent rather than down-climbing the exposed step. Often combined with an adjacent objective (e.g. West Ridge of Terror) on the same day if time and conditions allow.",
+       "hours": 7,
+       "miles": 3,
+       "title": "Chopping Block summit via South Route",
+       "gainFt": 1400,
+       "lossFt": 1400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start, cross the Barrier toward Stump Hollow/Crescent Creek Basin."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Reach base of south side",
+         "detail": "Traverse slabs/heather below the Chopping Block's south aspect."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Scramble to summit plateau",
+         "detail": "Low 5th-class moves near the top; stay near the east side to avoid the hardest ground."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Begin descent",
+         "detail": "Short rappel down the south side to regain scramble ledges."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Back at camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the Chopping Block and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: climb back over the Barrier spur and descend the steep climbers' path to Terror Creek and the old logging road back to the car. Loose scree/dirt and brush make the descent slow and hard on the knees despite being downhill.",
+       "hours": 6,
+       "miles": 6.5,
+       "title": "Descend to Goodell Creek trailhead",
+       "gainFt": 400,
+       "lossFt": 5700,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Hike out"
+      }
+     ],
+     "totalNote": "A 3-day Southern Pickets trip (~6.5 mi and ~5,700 ft each way to camp); the Chopping Block itself is a moderate scramble/rappel day out of high camp and is commonly tacked on as a warm-up alongside another Southern Pickets objective."
+    }
+   }
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "before": {
+    "access": {
+     "fees": "$10 per person backcountry recreation fee plus a $6 nonrefundable permit/reservation fee — applies to advance Recreation.gov reservations, early-access lottery entries, and walk-up permits alike; no charge for youth 15 and under. This per-person structure replaced the former flat ~$20–26 per-permit fee in March 2024.",
+     "notes": "The Southern Pickets cross-country zones (Terror Basin and Crescent Creek) cannot be reserved in advance; permits are walk-up only, issued in person at the Wilderness Information Center in Marblemount the day of or the day before the trip.",
+     "rules": "Camp only within the cross-country zone written on your permit.",
+     "permit": "NPS backcountry permit required for any overnight stay ($10/person/night + $6 nonrefundable fee as of March 2024 — no longer free). This cross-country zone cannot be reserved in advance: the permit is walk-up only, issued in person at the Wilderness Information Center in Marblemount, (360) 854-7245 / noca_wilderness@nps.gov.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (National Park Service) — Southern Pickets, Crescent Creek Basin cross-country zone",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "before": {
+    "access": {
+     "fees": "NPS backcountry permit fee: $10/person plus a $6 reservation fee (Recreation.gov)",
+     "permit": "Wilderness backcountry permit required for overnight camping in the Terror Basin/Crescent Creek Cross-Country Zone; these zones are walk-up only, issued in person at the Wilderness Information Center in Marblemount",
+     "closures": "Standard NPS Cross-Country Zone rules apply; a bear-resistant food canister may be required for certain camps",
+     "landManager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "before": {
+    "access": {
+     "fees": "$10 per person plus a $6 reservation fee for backcountry permits; climbers 15 and under are free. No day-use or parking fee at Goodell Creek Trailhead.",
+     "notes": "The Southern Pickets cross-country zones (Terror Basin and Crescent Creek) cannot be reserved in advance; permits are walk-up only, issued in person at the Wilderness Information Center in Marblemount the day of or the day before the trip.",
+     "rules": "Camp only within the designated Terror Basin / Crescent Creek Basin cross-country zone; standard Leave No Trace and NPS backcountry regulations apply.",
+     "permit": "Wilderness/backcountry permit required for any overnight stay, including Terror Basin and Crescent Creek Basin cross-country zones; these zones are walk-up only, issued in person at the North Cascades Wilderness Information Center in Marblemount (360-854-7200, noca_wilderness@nps.gov).",
+     "closures": "No standing closures specific to this route beyond normal winter road access; check current NPS trail/road condition reports before a trip.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (National Park Service)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None beyond the NPS wilderness permit - no Northwest Forest Pass needed since the approach is inside North Cascades National Park.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip."
+     }
+    }
+   }
+  }
+ ]
+}

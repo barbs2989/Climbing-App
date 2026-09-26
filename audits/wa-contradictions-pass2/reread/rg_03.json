@@ -1,0 +1,1073 @@
+{
+ "batches": [
+  "b322.json",
+  "b323.json",
+  "b324.json",
+  "b325.json",
+  "b326.json",
+  "b327.json",
+  "b328.json"
+ ],
+ "routes_read": 28,
+ "routes": [
+  {
+   "id": "wa_narcos",
+   "name": "Narcos",
+   "area": "Cutthroat Creek Wall or Little Liberty Bell",
+   "contradictions": []
+  },
+  {
+   "id": "wa_wright_pond",
+   "name": "Wright-Pond",
+   "area": "Cutthroat Creek Wall or Little Liberty Bell",
+   "contradictions": [
+    {
+     "fact": "Overnight use of the Cutthroat Creek trailhead lot",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "No overnight parking allowed."
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "some parties sleep here or in a pullout on the road in before a pre-dawn start, though the lot itself is signed for day use and how strictly that is read varies"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "no permit paperwork is needed to camp"
+      }
+     ],
+     "why": "ACCESS flatly bans overnight parking while CAMPING & BIVY lists the same lot as a main camp that parties sleep in.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "name": "The Perfect Crime (with variations...)",
+   "area": "Cutthroat Wall",
+   "contradictions": [
+    {
+     "fact": "Road to the trailhead (paved highway parking vs a mile of forest road)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required."
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "On FR-400, 1 mi off SR-20 east of Washington Pass."
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "The lot sits a mile up the forest road from SR 20"
+      },
+      {
+       "field": "bivy[0].capacity",
+       "says": "Large gravel lot"
+      }
+     ],
+     "why": "GETTING THERE says you park on the paved highway with no unpaved driving, while the trailhead pin, approach and camp all put the lot a mile up FR-400 in a gravel lot.",
+     "internal_resolution": "Waypoint, approach_logistics, approach_variants and bivy all agree the trailhead is ~1 mi up FR-400; road.status is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether June is prime season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.summer",
+       "says": "June-September is prime season; hot, dry, with occasional afternoon storms"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      }
+     ],
+     "why": "Reports tab calls June prime season while the season chip starts in July and seasonal guidance rates June marginal.",
+     "internal_resolution": "season, best_season and seasonal_guidance agree June is at best marginal; climate.summer is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_easy_getaway",
+   "name": "Easy Getaway",
+   "area": "Cutthroat Wall",
+   "contradictions": [
+    {
+     "fact": "Road to the trailhead (paved highway parking vs a mile of forest road)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required."
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "On FR-400, 1 mi off SR-20 east of Washington Pass."
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "a mile up a spur road off the highway east of the pass, with a kiosk and a large gravel lot"
+      }
+     ],
+     "why": "GETTING THERE says you park on the paved highway with no unpaved driving, while the trailhead pin and approach put the lot a mile up a spur road in a gravel lot.",
+     "internal_resolution": "Waypoint, approach_logistics, approach_variants and bivy agree the trailhead is ~1 mi up FR-400; road.status is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether June is prime season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.summer",
+       "says": "June-September is prime season; hot, dry, with occasional afternoon storms"
+      },
+      {
+       "field": "climate.spring",
+       "says": "Snow lingers into June and Zebra Corner is most likely to be wet/seeping"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      }
+     ],
+     "why": "Reports tab calls June prime season while the season chip starts in July and seasonal guidance rates June marginal (climate.spring even says snow lingers into June).",
+     "internal_resolution": "season, climate.spring and seasonal_guidance agree June is marginal; climate.summer is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "name": "North Ridge - West Side",
+   "area": "Molar Tooth",
+   "contradictions": [
+    {
+     "fact": "Number of days (one-day vs two-day)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Day 1: Drive to Cutthroat Lake trailhead or Rainy Pass. Hike to approach base (3-4 hours via Cutthroat Lake route, or 2-3 hours via PCT). Scout route and camp if needed. Day 2: Climb North Ridge - West Side"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "04:00-05:00 AM"
+      },
+      {
+       "field": "turnaround",
+       "says": "Be off technical terrain by 2:00 PM"
+      }
+     ],
+     "why": "The trip plan is laid out as two days with a camp, while PUBLISHED TIMES and the turnaround describe a single 9-hour day with an alpine start.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cutthroat Lake camp text describes a different peak's approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "It does not serve Cutthroat Peak's south-side routes or the usual North Ridge approach: those start from a different trailhead, a long pullout on SR 20 about 1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "approach",
+       "says": "(1) From the Cutthroat Lake trailhead on Highway 20, hike 1.8 miles with 500 feet elevation gain to Cutthroat Lake (4,800 ft)."
+      }
+     ],
+     "why": "On the Molar Tooth North Ridge page the camp says the 'usual North Ridge approach' starts from a pullout west of Washington Pass and is not served by Cutthroat Lake, but this route's own approach (1) goes via Cutthroat Lake; the text is about Cutthroat Peak.",
+     "internal_resolution": "The camp note is copied from Cutthroat Peak; approach, road and waypoints for this route never use the pullout west of the pass.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight temperature called freezing",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.summer",
+       "says": "Clear skies with 40-50°F overnight freezing for early-morning frozen gully conditions."
+      },
+      {
+       "field": "climate.typical",
+       "says": "Alpine temperatures 55-75°F in July-August with overnight freezing common (40-50°F)."
+      }
+     ],
+     "why": "The same sentence calls 40-50°F nights 'freezing', which they are not.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "name": "East Face",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Where you park",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Small unpaved parking lot at Rainy Pass trailhead."
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)"
+      },
+      {
+       "field": "approach",
+       "says": "From the long pullout on the north side of SR-20 about a mile and a half west of Washington Pass"
+      }
+     ],
+     "why": "ACCESS sends the party to a Rainy Pass trailhead lot while the trailhead card, waypoint and approach all start at the SR-20 pullout west of Washington Pass.",
+     "internal_resolution": "Waypoint, approach_logistics, approach, approach_variants and road.driveNote all use the SR-20 pullout; access.notes is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2500"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4947"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8066"
+      }
+     ],
+     "why": "From a 4,947 ft trailhead to an 8,066 ft high point is at least ~3,120 ft of net gain (more with the drop to State Creek), not 2,500.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "name": "West Ridge",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Car-to-car day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "an 8-hour total route day starting early morning"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "trip reports range from about 10 to 13 hours"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 6 hours up and 4 hours down trailhead-to-trailhead"
+      }
+     ],
+     "why": "Partners tab states an 8-hour total day while timing, itinerary and the partner fitness line all give 10-13 hours.",
+     "internal_resolution": "timing, itinerary and fitnessSpec agree on ~10 h+; the 8-hour figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time to the ridge",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 2-3 hours from the SR 20 pullout through meadows/the approach bowl to the ridge saddle"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.5"
+      }
+     ],
+     "why": "Partners tab gives 2-3 hours to the saddle while PUBLISHED TIMES gives a 1.5-hour approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late June through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      },
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      }
+     ],
+     "why": "The optimal window begins in late June, outside the Jul-Sep season chip, and the same guidance rates June marginal.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Ridge waypoint positions vs their names",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[6].name",
+       "says": "Northwest face traverse (Northwest Ledge)"
+      },
+      {
+       "field": "waypoints[6].lat",
+       "says": "48.515127"
+      },
+      {
+       "field": "waypoints[7].lat",
+       "says": "48.526432"
+      },
+      {
+       "field": "waypoints[5].name",
+       "says": "West Ridge crest / notch"
+      }
+     ],
+     "why": "The 'Northwest face traverse' and 'West Ridge crest' pins sit ~1.2-1.3 km south-east of the summit pin, while their notes and distMi (1.65 vs summit 1.8) place them just below the summit on its west/northwest side.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_complete_south_buttress",
+   "name": "Complete South Buttress",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Summit time in the day schedule",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "5:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "+2 hr"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].time",
+       "says": "+4-6 hr"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "mid-late afternoon"
+      }
+     ],
+     "why": "5:00 AM plus 2 h approach and 4-6 h climbing puts the summit at 11 AM-1 PM, not mid-late afternoon.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "name": "Cauthorn-Wilson Couloir",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2500"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4947"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "8066"
+      }
+     ],
+     "why": "From a 4,947 ft trailhead to the stated 8,066 ft high point is ~3,120 ft net gain, not 2,500 (though many parties turn at the ridgeline below the summit).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "name": "The Swarm",
+   "area": "Cutthroat Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_cutthroat_south_buttress",
+   "name": "South Buttress",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Summit time in the day schedule",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "5:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "+2 hr"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].time",
+       "says": "+2-3 hr"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "~1-2 PM"
+      }
+     ],
+     "why": "5:00 AM plus 2 h approach and 2-3 h of climbing gives a 9-10 AM summit, not 1-2 PM; one of the offsets is wrong.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 2-3 hours from the SR 20 pullout to the boulder field below the south buttress"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "1.5-2"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1.5"
+      },
+      {
+       "field": "approach",
+       "says": "Reckon on an hour and a half to two hours."
+      }
+     ],
+     "why": "Partners tab says 2-3 hours to the boulder field; approach, approach_variants and timing say 1.5-2 hours.",
+     "internal_resolution": "approach, approach_variants and timing agree on 1.5-2 h; partner_requirements is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cutthroat_peak_southeast_buttress",
+   "name": "Southeast Buttress",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Best months",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "watch_out[3]",
+       "says": "Best August-September before freeze-thaw hazards peak"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "July to August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "optimal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "good"
+      }
+     ],
+     "why": "KNOWN HAZARDS calls August-September best while seasonal guidance names July-August optimal and September only good.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_3",
+   "name": "North Ridge",
+   "area": "Cutthroat Peak",
+   "contradictions": [
+    {
+     "fact": "Whether the notch-gaining 5.7 pitch is one of the 8 pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Gains the North Ridge Notch via loose, runout terrain"
+      },
+      {
+       "field": "pitches",
+       "says": "8"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "One loose, runout 5.7 pitch to the North Ridge Notch."
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "~8 pitches, mostly 2nd-4th class ramps and corners"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THIS PITCH SHOULD BE TREATED AS THE TECHNICAL AND PSYCHOLOGICAL CRUX OF THE APPROACH, NOT OF THE RIDGE ABOVE IT."
+      }
+     ],
+     "why": "ROUTE BREAKDOWN counts the notch pitch as P1 of 8, while the itinerary adds ~8 ridge pitches after it and the approach calls it part of the approach, implying 9.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which line is the peak's classic",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Eight pitches at 5.7. This is the peak's classic line."
+      },
+      {
+       "field": "overview",
+       "says": "The North Ridge is a moderate, less-traveled alternative to the South Buttress"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "Moderate-low — noticeably quieter than the standard South Buttress"
+      }
+     ],
+     "why": "The approach card calls this the peak's classic line while the overview and crowds call it a less-travelled alternative to the South Buttress.",
+     "internal_resolution": "overview and crowds agree the South Buttress is the standard classic; the approach_variants sentence is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time in the day schedule",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "~6:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "+2 hr"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].time",
+       "says": "+3 hr"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "early-mid PM"
+      }
+     ],
+     "why": "6 AM plus 2 h and 3 h gives an ~11 AM summit, not early-mid afternoon.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "name": "West Ridge / Saddle Traverse",
+   "area": "Gardner Mountain",
+   "contradictions": [
+    {
+     "fact": "Total elevation loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "loss_ft",
+       "says": "5800"
+      },
+      {
+       "field": "itinerary.days[0].lossFt",
+       "says": "100"
+      },
+      {
+       "field": "itinerary.days[1].lossFt",
+       "says": "3900"
+      },
+      {
+       "field": "itinerary.days[2].lossFt",
+       "says": "3500"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 7,300-8,000 ft of total gain/loss"
+      },
+      {
+       "field": "gain_ft",
+       "says": "7400"
+      }
+     ],
+     "why": "loss_ft 5800 disagrees with the itinerary's 7,500 ft of loss and the total note's 7,300-8,000 ft for a trailhead-to-trailhead trip whose gain is 7,400.",
+     "internal_resolution": "Itinerary days, totalNote and gain_ft agree on ~7,400-7,500; loss_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time from the trailhead to Gardner Meadows camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "Allow four and a half to five hours to camp with a climbing load."
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "6.5"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "6.5"
+      }
+     ],
+     "why": "CAMPING says 4.5-5 hours to camp while the itinerary and PUBLISHED TIMES give 6.5 hours for the same walk-in.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route difficulty class",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "rope_note",
+       "says": "West Ridge/Saddle Traverse is Class 3-4 depending on line/conditions"
+      },
+      {
+       "field": "beta",
+       "says": "class 3-4 around gendarmes and pinnacles"
+      }
+     ],
+     "why": "The grade pill says Class 2-3 for the West Ridge / Saddle Traverse, while the rope note and beta put the traverse this route is named for at Class 3-4.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_horn_north_face",
+   "name": "North Face",
+   "area": "Golden Horn",
+   "contradictions": [
+    {
+     "fact": "Camp entry describes Mount Hardy, not Golden Horn",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].name",
+       "says": "Swamp Creek highway pullout, for Mount Hardy's south face"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "This is the short way up Mount Hardy"
+      },
+      {
+       "field": "approach",
+       "says": "a rougher, off-trail alternative bushwhacks up Swamp Creek from a highway pullout about 3 miles before Rainy Pass"
+      }
+     ],
+     "why": "A CAMPING & BIVY entry on the Golden Horn North Face page is about Hardy's south-face approach, and places the Swamp Creek pullout 'a couple of miles west of Rainy Pass' while the approach says about 3 miles.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Whether July is prime season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.summer",
+       "says": "Prime climbing season (Jul-Sep)"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "marginal"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "August to September"
+      }
+     ],
+     "why": "Reports tab calls July prime while seasonal guidance rates July marginal for this north face.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "name": "East Face",
+   "area": "Golden Horn",
+   "contradictions": [
+    {
+     "fact": "Typical climbing window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.summer",
+       "says": "Jun-Aug is the typical climbing window for this face based on the June FA."
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "August to September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "marginal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "optimal"
+      }
+     ],
+     "why": "Reports tab gives Jun-Aug as the window while seasonal guidance rates June marginal and August-September optimal.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_iceman",
+   "name": "Iceman",
+   "area": "Ice box left side",
+   "contradictions": []
+  },
+  {
+   "id": "wa_ephemeral",
+   "name": "Ephemeral",
+   "area": "Ice Box right side",
+   "contradictions": []
+  },
+  {
+   "id": "wa_particulate_matter",
+   "name": "Particulate Matter",
+   "area": "Ice Box right side",
+   "contradictions": [
+    {
+     "fact": "Access notes describe a different area",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access._raw.wilderness_zone",
+       "says": "Glacier Peak Wilderness"
+      },
+      {
+       "field": "access._raw.land_manager",
+       "says": "USFS Okanogan-Wenatchee National Forest (Chelan Ranger District)"
+      },
+      {
+       "field": "access._raw.approach",
+       "says": "Box Creek Meadows area; Class 2 route to summit via Ice Creek Ridge"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      }
+     ],
+     "why": "The raw access record is for a Glacier Peak Wilderness peak (Image Lake, Ice Creek Ridge, Chelan RD), not this Washington Pass roadside crag; low priority if _raw does not render.",
+     "internal_resolution": "All rendered access/road/emergency fields agree on Methow Valley RD at the SR-20 hairpin; _raw is contaminated.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_unnamed_6",
+   "name": "Unnamed 6",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": []
+  },
+  {
+   "id": "wa_unnamed_3",
+   "name": "Unnamed  3",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": []
+  },
+  {
+   "id": "wa_unnamed_4",
+   "name": "Unnamed  4",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": []
+  },
+  {
+   "id": "wa_unnamed_5",
+   "name": "Unnamed  5",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": []
+  },
+  {
+   "id": "wa_unnamed_2",
+   "name": "Unnamed  2",
+   "area": "Spire Gully right - Alpenkuhl",
+   "contradictions": []
+  },
+  {
+   "id": "wa_beckey_tate",
+   "name": "Beckey-Tate",
+   "area": "Big Kangaroo",
+   "contradictions": [
+    {
+     "fact": "Summit time vs total time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "~1:00-2:00 PM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "+2-3 hr"
+      }
+     ],
+     "why": "PUBLISHED TIMES puts the summit at 10 h, equal to the whole car-to-car total, leaving no time for the 2-3 h descent; the schedule summits at ~8-9 h after a 5 AM start.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time to the base",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "with 3-5 hours a reasonable estimate given the routefinding through boulder fields"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "+2.5-3 hr"
+      }
+     ],
+     "why": "Approach prose budgets 3-5 hours to the base; the day schedule racks up at the base after 2.5-3 hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether a #4 cam is needed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "A #0.4, #4, and #5 can be placed on roughly half the pitches but are not necessary to bring"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Sustained chimney climbing where the gear (large #3/#4-size cams) sits far back in the crack"
+      },
+      {
+       "field": "gear[1]",
+       "says": "double rack of cams ~#0.5-#3 + single set of nuts"
+      }
+     ],
+     "why": "The rack says a #4 is unnecessary while ROUTE BREAKDOWN says pitch 4 is protected by #3/#4-size cams.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "South-face pins vs the summit pin",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].name",
+       "says": "Top of South Face / Snow Gully Exit"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "South face ends a few hundred feet below the true summit"
+      },
+      {
+       "field": "waypoints[5].lat",
+       "says": "48.502284"
+      },
+      {
+       "field": "waypoints[6].lat",
+       "says": "48.519416"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "2.2"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "2.3"
+      }
+     ],
+     "why": "The top-of-face pin is drawn ~1.9 km south of the summit pin (south of Half Moon, whose area lies between them), though the prose and distMi put it a few hundred feet and 0.1 mi below the summit.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "name": "Skinny Start",
+   "area": "Big Kangaroo",
+   "contradictions": [
+    {
+     "fact": "Pitch lengths",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "86"
+      },
+      {
+       "field": "pitch_detail[1].lengthM",
+       "says": "86"
+      },
+      {
+       "field": "pitch_detail[2].lengthM",
+       "says": "87"
+      },
+      {
+       "field": "length_m",
+       "says": "259"
+      },
+      {
+       "field": "overview",
+       "says": "A harder direct start to the Kearney-Thomas route"
+      }
+     ],
+     "why": "Three 86-87 m pitches exceed any single rope length; the 259 m total appears to have been split evenly across a three-pitch direct start.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "name": "West Face / West Route",
+   "area": "Big Kangaroo",
+   "contradictions": [
+    {
+     "fact": "Summit time vs total time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "7"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "7"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "~10:30-11:30 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "+2-3 hr"
+      }
+     ],
+     "why": "PUBLISHED TIMES puts the summit at 7 h, equal to the car-to-car total, while the schedule summits ~5-6 h after a 5:30 AM start and then descends 2-3 h.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether June is in season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Outside the best season window; ... the route is not considered in-season yet"
+      },
+      {
+       "field": "best_season",
+       "says": "mid-July through September"
+      }
+     ],
+     "why": "The season chip and approach card include June, while seasonal guidance says the route is not considered in season in June.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Notch pin vs the summit pin",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].name",
+       "says": "Ridge Crest Notch below Summit Block"
+      },
+      {
+       "field": "waypoints[4].lat",
+       "says": "48.502472"
+      },
+      {
+       "field": "waypoints[5].lat",
+       "says": "48.519416"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "1.8"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "1.9"
+      },
+      {
+       "field": "beta",
+       "says": "about 200 feet of rock in three short pitches from the base of the summit block"
+      }
+     ],
+     "why": "The notch 'below the summit block' is pinned ~1.9 km south of the summit pin, though distMi and the pitch descriptions put it within a pitch or two of the top.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "name": "Southwest Slopes / Standard Scramble",
+   "area": "Half Moon",
+   "contradictions": []
+  }
+ ]
+}

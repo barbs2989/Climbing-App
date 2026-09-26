@@ -1,0 +1,23 @@
+{"file": "t144.json", "results": [
+ {"id": "wa_gato_negro", "fact": "Hardest pitch grade", "verdict": "fixed",
+  "correct_value": "The crux is P4, topped by overhanging double corners at 5.10d (5.10+); P8 at 5.10b is the second-hardest; the route is otherwise sustained 5.10a/b. rock_grade should read 5.10d.",
+  "evidence": "The first-ascent report grades the route IV 5.10+ and says the crux fourth pitch is a 5.8 chimney and hard 5.9 offwidth topped by an overhanging 5.10+ double corner. A detailed trip report grades the route IV+ 5.10d. The general description calls it fairly sustained 5.10a/b with the short power crux in the double overhanging corners on the chimney pitch, so '5.10a/b' is the route's character, not its maximum; P4 at 5.10d is right and rock_grade 5.10b was the outlier (one older forum TR title said 5.10b).",
+  "sources": ["https://publications.americanalpineclub.org/articles/12200319301", "http://iannicholsonslife.blogspot.com/2010/09/gato-negro-iv-510d-with-rebecca.html", "https://www.mountainproject.com/route/113324178/gato-negro"],
+  "patches": [
+   {"id": "wa_gato_negro", "fact": "Hardest pitch grade", "op": "set", "column": "rock_grade", "path": [], "expect": "5.10b", "value": "5.10d"},
+   {"id": "wa_gato_negro", "fact": "Hardest pitch grade", "op": "replace_text", "column": "waypoints", "path": [1, "note"], "find": "12-pitch alpine trad route (5.10a/b)", "replace": "12-pitch alpine trad route (sustained 5.10a/b with a 5.10d crux)"}
+  ]},
+ {"id": "wa_gato_negro", "fact": "Which way the route faces (aspect E / 'East face of Whine Spire' vs seasonal_guidance 'the cold west face')", "verdict": "unresolved", "discovered": true,
+  "correct_value": null,
+  "evidence": "aspect is E, face and overview say east face, and the approach variant traverses beneath the east faces from the far side of Burgundy Col, but seasonal_guidance July and September both say 'west face'. The first-ascent report places the route on 'the west face of Silver Star Mountain' (the massif's west side, not necessarily the spire's own aspect), while another description calls Whine Spire a sub-peak on the east face of Silver Star. Settling it needs two sources that state the aspect of the Gato Negro wall itself.",
+  "sources": ["https://publications.americanalpineclub.org/articles/12200319301", "https://www.mountaineers.org/activities/routes-places/wine-spires"],
+  "patches": []},
+ {"id": "wa_whistler_mountain_scramble", "fact": "Direction of the Option B traverse to the south ridge", "verdict": "fixed",
+  "correct_value": "A rising traverse from the meadow to the level part of the south ridge at about 6,180 ft, with no eastward direction: the pullout lies east/southeast of the summit, so the ridge cannot be reached by traversing east.",
+  "evidence": "The route description for this line says to park at the turnout about 3.1 mi east of Rainy Pass (0.7 mi before Blue Lake TH), take the boot path through a meadow and make a rising traverse to the level part of the south ridge at 6,180 ft - it gives no direction. The peak's own coordinate (48.5155, -120.7079) with SR-20 bending around its southern base puts that pullout east/southeast of the summit, so an eastward traverse leads away from the south ridge. The unsourced word 'east' is removed from both copies; no new direction is asserted.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/whistler-mountain", "https://en.wikipedia.org/wiki/Whistler_Mountain_(Washington)"],
+  "patches": [
+   {"id": "wa_whistler_mountain_scramble", "fact": "Direction of the Option B traverse to the south ridge", "op": "replace_text", "column": "approach", "path": [], "find": "then rising-traverse east to intersect", "replace": "then rising-traverse to intersect"},
+   {"id": "wa_whistler_mountain_scramble", "fact": "Direction of the Option B traverse to the south ridge", "op": "replace_text", "column": "approach_variants", "path": [1, "baseFinding"], "find": "THEN RISING-TRAVERSE EAST TO INTERSECT", "replace": "THEN RISING-TRAVERSE TO INTERSECT"}
+  ]}
+]}

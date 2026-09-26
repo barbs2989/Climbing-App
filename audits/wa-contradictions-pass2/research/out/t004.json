@@ -1,0 +1,175 @@
+{
+ "file": "t004.json",
+ "results": [
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Days of walking to reach Whatcom Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The 'three or four days' claim lives only in bivy[0] (Whatcom Camp, the trail-camp chain via Brush Creek, currently closed), which is a regional camp card; this route's itinerary reaches Perfect Pass on day 2 via Easy Ridge. Whatcom Camp does not serve this itinerary (closed, and the route goes Easy Ridge in); Perfect Pass does. No bivy patch per the camping clean-up ownership.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Whether the overnight permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "Park permits are 60% reservable in general, but the Easy Ridge and Perfect Pass cross-country zones used by this itinerary are walk-up only (Perfect Pass: one party per night); US Cabin Camp is reservable.",
+   "evidence": "The park's cross-country zone page lists Perfect Pass (party limit 6, one party per night) and Easy Ridge (4 parties per night) and states only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes are reservable; the reservations page repeats that all other zones are walk-up only. The Recreation.gov permit system files Perfect Pass and Easy Ridge under ordinary 'Cross Country Zones (North)' rather than the reservable 'High Use' zones, and lists US Cabin Camp with 3 reservable sites. So the general 60/40 reservation statement is true for the park but not for the zones this itinerary camps in.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.recreation.gov/api/permitcontent/4675322"
+   ],
+   "patches": [
+    {
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Whether the overnight permit can be reserved",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "for northern trailheads.",
+     "replace": "for northern trailheads. The Easy Ridge and Perfect Pass cross-country zones this trip camps in cannot be booked ahead: both are walk-up only, and Perfect Pass is limited to one party per night."
+    },
+    {
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Whether the overnight permit can be reserved",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person",
+     "replace": "Trail camps such as US Cabin can be reserved on Recreation.gov; the Easy Ridge and Perfect Pass zones are walk-up only. Get a walk-up permit in person"
+    }
+   ]
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Total distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 25.7 km (16 mi) is the one-way approach figure shown as 'Approach (one way)', while the itinerary totalNote is the round-trip loop; the two are different quantities that agree (2 x ~16-17 mi plus the summit day ~ 36-39 mi).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Car-to-car gain/loss vs itinerary totals",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft = loss_ft = 6840, but the itinerary days total 11,000 ft gain and 11,700 ft loss for the same 4-day Easy Ridge/Whatcom Pass loop. Outside figures for this loop disagree: one detailed circuit report gives 37 mi and 13,700 ft gained and lost, another party (adding Challenger) 44 mi and ~18,000 ft; no two sources state the same total. Would be settled by two sources stating the car-to-car gain for this loop.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Cumulative gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The partner card's 37 mi / ~13,700 ft matches one detailed circuit report of this exact Easy Ridge in / Whatcom Pass out loop over 4 days; gain_ft and the itinerary total 11,000 ft. A second party doing the loop plus Challenger reported 44 mi / ~18,000 ft, and no second source states 11,000 or 13,700 for this loop, so neither value has two agreeing sources. Would be settled by a second independent car-to-car figure for the loop.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Whether the overnight permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "Park permits are 60% reservable in general, but the Easy Ridge and Perfect Pass cross-country zones used by this itinerary are walk-up only (Perfect Pass: one party per night); US Cabin Camp is reservable.",
+   "evidence": "The park's cross-country zone page lists Perfect Pass (party limit 6, one party per night) and Easy Ridge (4 parties per night) and states only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes are reservable; the reservations page repeats that all other zones are walk-up only. The Recreation.gov permit system files Perfect Pass and Easy Ridge under ordinary 'Cross Country Zones (North)' rather than the reservable 'High Use' zones, and lists US Cabin Camp with 3 reservable sites. So the general 60/40 reservation statement is true for the park but not for the zones this itinerary camps in.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.recreation.gov/api/permitcontent/4675322"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_spur",
+     "fact": "Whether the overnight permit can be reserved",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "for northern trailheads.",
+     "replace": "for northern trailheads. The Easy Ridge and Perfect Pass cross-country zones this trip camps in cannot be booked ahead: both are walk-up only, and Perfect Pass is limited to one party per night."
+    },
+    {
+     "id": "wa_south_spur",
+     "fact": "Whether the overnight permit can be reserved",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person",
+     "replace": "Trail camps such as US Cabin can be reserved on Recreation.gov; the Easy Ridge and Perfect Pass zones are walk-up only. Get a walk-up permit in person"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Total distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 25.7 km (16 mi) is the one-way approach to Perfect Pass shown as 'Approach (one way)'; the itinerary's 37-39 mi is the round-trip loop. Different quantities, consistent with each other.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Loss vs gain on a loop that returns to its trailhead",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The trip is a loop from and back to the Hannegan Pass Trailhead, yet loss_ft is 9,300 against gain_ft 11,000 (itinerary days likewise sum to 9,300 loss / 11,000 gain). Only one source states a car-to-car figure for this loop (13,700 ft gained and lost); per the rules loss_ft is not set equal to gain_ft. Needs two sources for the loop's total descent.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_castle_in_the_sky",
+   "fact": "Route length",
+   "verdict": "fixed",
+   "correct_value": "2,000 ft (about 610 m) overall",
+   "evidence": "The first-ascent writeup in the AAC journal gives the route as '2,000', IV 5.10b' with about 1,000 ft of loose upper-ridge scrambling; the route's page on a climbing database gives 2,000 ft (606 m), 12 pitches, and the FA party's own writeup also says about 2,000 ft. The individual pitch lengths (which sum to ~2,530 ft) are rope lengths including the long simul-climbed ridge and traverses, not the route's height, so length_m (the stated route length) should read ~610 m to agree with the October note; pitch lengths are left as published.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216381",
+    "https://www.mountainproject.com/route/122896783/castle-in-the-sky",
+    "https://www.theclimbingguides.com/post/castle-in-the-sky-first-ascent-of-the-south-buttress-of-whatcom-peak-iv-5-10b-td"
+   ],
+   "patches": [
+    {
+     "id": "wa_castle_in_the_sky",
+     "fact": "Route length",
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 771,
+     "value": 610
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "Total distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 27.4 km (17 mi) is the one-way approach shown as 'Approach (one way)'; the itinerary's ~36 mi is the out-and-back round trip ('close to 16 miles each way' plus the climb). Different quantities, consistent.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

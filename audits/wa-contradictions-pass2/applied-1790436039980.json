@@ -1,0 +1,239 @@
+{
+ "applied": [
+  {
+   "id": "wa_mushroom_tower_standard",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "column": "climate",
+   "path": [
+    "bySeason",
+    "winter"
+   ],
+   "fact": "SR-20 winter closure window"
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Time from car to Kangaroo Pass"
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Time from car to Kangaroo Pass"
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Time from car to Kangaroo Pass"
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "column": "overview",
+   "path": [],
+   "fact": "Length of the day"
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Scramble class"
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Stay limit for sleeping at the pullouts/dispersed sites"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mushroom_tower_standard",
+   "before": {
+    "access": {
+     "fees": "None at the trailhead pullout itself.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "Camping is discouraged at Kangaroo Pass and in the fragile upper Early Winters Creek meadows due to their sensitive, sub-alpine terrain; Forest Service campgrounds a short drive east on SR 20 are the recommended alternative. Standard Leave No Trace practice applies throughout.",
+     "permit": "No permit is required for day climbing. A self-issued wilderness permit may be required for overnight camping/bivouacking south of Kangaroo Pass, inside the Lake Chelan-Sawtooth Wilderness.",
+     "closures": "SR 20 is gated and closed seasonally (roughly late November to early/mid-April), which cuts off all highway access to the approach; check WSDOT's North Cascades pass report before a trip.",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District (24 W Chewuch Rd, Winthrop, WA 98862; (509) 996-4000). Kangaroo Pass, just south of the climb, sits on the north boundary of the Lake Chelan-Sawtooth Wilderness.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "No fee or pass is required to park at the informal Hairpin Turn highway pullout used to access the route. A Northwest Forest Pass or America the Beautiful/interagency pass is required at nearby developed Forest Service day-use sites (e.g., the Washington Pass Overlook)."
+    },
+    "waypoints": [
+     {
+      "lat": 48.5143,
+      "lng": -120.6425,
+      "elev": 5150,
+      "name": "Hairpin Turn Pullout, SR-20",
+      "note": "Large roadside pullout on the outside of the SR-20 hairpin switchback (~MP 163); no permit needed, boot path drops south into the trees toward Early Winters Creek.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the large roadside pullout at the hairpin turn near Milepost 163, just below Washington Pass. No permit or pass is needed to park there. This is the North Cascades Highway, so the drive only exists once SR-20 opens for the season — it usually reopens between late April and mid-May and closes again with late-fall snow. From the pullout the boot path drops south off the shoulder into the trees and fords Early Winters Creek directly across from the parking area; there is no maintained trail or trail number above the highway."
+     },
+     {
+      "lat": 48.5261841,
+      "lng": -120.6472455,
+      "elev": 5250,
+      "name": "Early Winters Creek crossing",
+      "note": "Ford Early Winters Creek on the climbers' path just past the pullout; can run high and fast with June snowmelt.",
+      "type": "Water",
+      "distMi": 0.3
+     },
+     {
+      "lat": 48.50157,
+      "lng": -120.62226,
+      "elev": 6671,
+      "name": "Kangaroo Pass",
+      "note": "Cairned climbers' trail gains the Kangaroo Ridge crest here after ~1,500 ft of climbing through trees and the lower gully; route-finding is easy below but the path is faint near the top.",
+      "type": "Junction",
+      "distMi": 1.7
+     },
+     {
+      "lat": 48.52225766666667,
+      "lng": -120.628333,
+      "elev": 7000,
+      "name": "Snow-filled gully below Big Kangaroo",
+      "note": "Parallel gullies angling up the west face beneath Big Kangaroo hold snow well into July; ice axe recommended for the ascending traverse.",
+      "type": "Hazard",
+      "distMi": 2
+     },
+     {
+      "lat": 48.521564766666664,
+      "lng": -120.6249955,
+      "elev": 7400,
+      "name": "Kangaroo Ridge basin",
+      "note": "Talus basin below Big Kangaroo and Mushroom Tower where the standard route splits off toward Mushroom Tower's south side; class 3 scrambling begins here.",
+      "type": "Junction",
+      "distMi": 2.3
+     },
+     {
+      "lat": 48.52087186666667,
+      "lng": -120.62165800000001,
+      "elev": 7900,
+      "name": "Base of South Side route",
+      "note": "Roped low-5th-class climbing starts here; rack light with a few small cams for the step-across move higher up.",
+      "type": "Junction",
+      "distMi": 2.6
+     },
+     {
+      "lat": 48.52017896666666,
+      "lng": -120.61832050000001,
+      "elev": 8150,
+      "name": "Step-across move to summit block",
+      "note": "Exposed step-across move gains the blocky, semi-detached summit block; the route's crux and essentially unprotected.",
+      "type": "Hazard",
+      "distMi": 2.9
+     },
+     {
+      "lat": 48.519948,
+      "lng": -120.617208,
+      "elev": 8180,
+      "name": "Mushroom Tower summit",
+      "note": "Small blocky summit; rappel begins from a fixed anchor of two old 1/4-inch bolts to reverse the ascent route.",
+      "type": "Summit",
+      "distMi": 3
+     }
+    ],
+    "road": {
+     "name": "North Cascades Highway (SR 20)",
+     "status": "Seasonal — closed in winter",
+     "driveNote": "Park in the large pullout on the inside of the 'Hairpin Turn,' approximately Milepost 163, directly below and east of South Early Winters Spire. There is no formal trailhead or sign.",
+     "seasonalGate": "Typically gated and closed roughly late November through early/mid-April (exact dates are snow-dependent); check WSDOT's North Cascades Highway pass report before planning a trip."
+    },
+    "climate": {
+     "typical": "A short alpine window bookended by SR 20's seasonal closure: realistically climbable only roughly April/May through October/November, with the best rock conditions from late July through September.",
+     "bySeason": {
+      "fall": "September is the recommended month — settled weather, cooler temps, and the surrounding larches turning color — but SR 20 can close abruptly with early-season snow, so don't wait too late.",
+      "spring": "SR 20 typically reopens in April; the approach gully and talus are usually still snow-covered well into June, requiring crampons/axe and making travel slower and more hazardous (steep, dicey traverses reported even in mid-June).",
+      "summer": "Warmest and driest window, but a snow patch near the summit can persist into early July and make the crux step-across wet; afternoon thunderstorms are possible.",
+      "winter": "Inaccessible — SR 20 (North Cascades Highway) is gated and closed, typically from late November into early/mid-April."
+     },
+     "forecastZone": "NWAC's Washington Pass weather station (nwac.us) is the most relevant real-time data point; check NWAC's mountain weather forecast and NWS zone forecasts for the East Slopes of the North Cascades for planning."
+    }
+   }
+  },
+  {
+   "id": "wa_wallaby_peak_standard",
+   "before": {
+    "approach": "Park at the large paved turnout at the first hairpin turn on SR-20 (North Cascades Highway), about 1 mile east of the Washington Pass summit (roughly 5,160 ft elevation). There's no formal trailhead sign or numbered trail here — the route to Kangaroo Pass is an unmaintained but well-cairned climbers' path on Okanogan-Wenatchee National Forest land along the edge of the Lake Chelan-Sawtooth Wilderness. From the pullout, head south/southeast toward the base of the large talus slope just south of Spire Gulch (below the north side of Kangaroo Temple). Pick up the boot path skirting the bottom of the talus field and follow cairns carefully — this lower boulder/talus band is the trickiest route-finding on the approach, especially if snow-covered early in the season. The tread firms up into a distinct, easy-to-follow cairned trail once you're in the upper basin. Continue up mixed talus, boulders, and open slope to Kangaroo Pass (6,671 ft), gaining about 1,500 ft over roughly 1.5 miles — typically 1 to 1.5 hours. A small tarn just below the pass is the only water source on the approach and can be dry by late summer or fall; there is none higher, so carry enough from the car. Expect lingering snow from about 5,800 ft up to the pass into early-mid summer, depending on the year — an ice axe and/or microspikes are worth carrying into July. At Kangaroo Pass, leave the boot path and turn northeast onto Wallaby Peak's southwest ridge. A faint climbers' trail continues briefly then disappears on rock; stay on or near the ridge crest, weaving between its north and south sides across mixed rock, scree, and grassy benches. At about 7,400 ft, swing around onto the south flank into the south-facing summit gully. This gully is moderately steep with notable loose rock and scree — wear a helmet, especially with more than one person in the party, since climbers above can kick debris down onto those below; some parties pick a short Class 3 line on the gully's margins to avoid the worst of the scree. Near the top of the gully, exit left (northeast) for the short final scramble to the true summit. Total distance is about 3.0 miles one-way (6.0 mi / ~2,900 ft round trip, or 9.7 km); budget roughly 2 hours car-to-pass and another hour pass-to-summit.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "~6 miles RT with 2,900 ft gain; roughly 2-3 hrs car-to-Kangaroo Pass, plus ~1 hr pass-to-summit each way",
+      "packWeight": "light day pack - water, layers, helmet; no technical rack or rope required for the standard line"
+     },
+     "approachTime": "~2-3 hours from the car to Kangaroo Pass (6,671 ft), then roughly another hour to the summit",
+     "requiredSkills": [
+      "Class 2-3 scrambling on loose rock",
+      "route-finding on a boot path/cairned ridge with multiple braided options",
+      "comfort with exposure on the summit gully crux",
+      "loose rock/rockfall awareness for parties above/below"
+     ],
+     "experienceLevel": "Solid Class 3 scrambling experience with comfort on loose, exposed terrain; not a beginner's first scramble given the crux gully and summit exposure"
+    },
+    "overview": "Wallaby Peak (Point 7995 on USGS maps) is the southernmost summit on Kangaroo Ridge and the ridge's only non-technical high point, rising above Washington Pass in the Okanogan-Wenatchee National Forest's Methow Valley Ranger District. It sits amid a cluster of dramatic granite towers — Kangaroo Temple, Big Kangaroo, Cutthroat Peak — carved from roughly 45-million-year-old Golden Horn batholith granite, but unlike those neighbors, Wallaby's southwest ridge and south-facing summit gully offer a straightforward Class 2-3 scramble to the top. First climbed June 17, 1942 by Fred and Helmy Beckey with Walt Varney, it's now a popular half-day outing, especially in late September/early October when the ridge's larches turn gold.",
+    "rope_note": "Non-technical: bootpath/talus to Kangaroo Pass (6671ft) then SW ridge and a south-facing summit gully; nothing harder than Class 2 unless optionally detouring onto Class 3 rock to avoid loose scree.",
+    "access": {
+     "fees": "No fee at the informal SR-20 turnout; a Northwest Forest Pass or America the Beautiful interagency pass is commonly displayed there and is required at developed trailheads in the district",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No permit required for day scrambling; the upper route brushes the boundary of the adjoining Lake Chelan-Sawtooth Wilderness",
+     "closures": "SR-20 (North Cascades Highway) is gated for winter, typically closing in early December and reopening mid-to-late April at Washington Pass and Rainy Pass depending on snowpack and avalanche hazard — the peak is inaccessible by car during that window; check WSDOT mountain pass reports before a shoulder-season trip",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District — 24 West Chewuch Rd, Winthrop, WA; (509) 996-4000",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None at the SR-20 hairpin turnout",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Dispersed camping on National Forest land is free; nearby developed campgrounds charge a site fee and take no reservation."
+     }
+    }
+   }
+  }
+ ]
+}

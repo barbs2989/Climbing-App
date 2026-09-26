@@ -1,0 +1,409 @@
+{
+ "file": "t001.json",
+ "results": [
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "fact": "What the 10-14 hour summit day is measured from",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "10-14 hours camp to camp",
+   "evidence": "The day-2 schedule leaves high camp at 4:30-5:00 AM and returns to Terror Basin camp in the evening, the schedule detail, timing.recommendedStart ('from camp'), day-2 hours (12), timing.summitTimeHrs (12) and the totalNote ('a long 10-14 hr summit day') all measure the day from camp; 'car-to-camp round trip' is incoherent. Externally, a party camped in Terror Basin took roughly 10+ hours camp-to-camp for West McMillan alone, consistent with a 10-14 h camp-based day for both summits; a fast party did West McMillan alone car-to-car in about 10 h, so no source gives 10-14 h car-to-car for both summits.",
+   "sources": [
+    "https://onehikeaweek.com/2016/08/01/west-mcmillan-spire/",
+    "https://climberkyle.com/2019/08/29/west-mcmillan-spire/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "parties report 10-14 hours car-to-camp round trip when both summits are combined",
+     "replace": "expect 10-14 hours camp to camp when both summits are combined",
+     "id": "wa_east_mcmillan_spire_west_ridge",
+     "fact": "What the 10-14 hour summit day is measured from"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A guide service that runs this climb says it goes best from mid-July until late August, with September good only in stable-weather years, which supports the Jul-Aug season but not the 'early September' best window; no second independent source states the window either way (the route and peak pages that might were blocked). Would settle it: a second source stating the Fury season window (Jul-Aug vs into September).",
+   "sources": [
+    "https://www.mountainschool.com/Mount-fury-guided-climb"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Distance from trailhead to Luna Col",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Two frames of the same approach: the waypoints count cumulative miles walking the whole way (about 1 mi to the lake plus ~6 mi of lakeshore trail, then 8-9.5 mi to Luna Camp, ~1.5 mi to the Access Creek crossing and several miles cross-country, ~22 mi), while itinerary day 1 (18 mi) and the approach's ~17 mi use the water taxi. A water-taxi trip to Luna Col and back over East and West Fury is reported at 41 mi round trip, matching the itinerary's 18 + 4.5 + 18.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://www.mountaineers.org/activities/routes-places/ross-dam-big-beaver-creek",
+    "http://ericsbasecamp.net/trips/Luna/Luna.htm",
+    "https://stephabegg.com/trip-reports/washington/pickets/northern-pickets-2/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Trail used for the Whatcom Pass approach option",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Whatcom Pass is genuinely reachable from both sides: about 17 mi from the Hannegan Pass trailhead, and about 17 mi from Ross Lake on the Little Beaver Trail. The pitch breakdown's first row describes the 1958 first-ascent party's own Hannegan approach, while the approach prose names the Ross Lake option; they are two real options, not one approach attributed to two trails.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/little-beaver-trail-via-hannegan-pass",
+    "https://www.gaiagps.com/hike/381902/whatcom-via-little-beaver-trail/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2012-09-05.1998018861"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Total distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (38.6 km = 24 mi) is the one-way walking distance and agrees with the waypoints (West Fury at 23.3 mi); the itinerary's ~41 mi is a round trip using the water taxi, which a 2020 party also reports as 41 mi. One-way vs round trip, with/without the boat, not a disagreement.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Elevation of the Access Creek crossing of Big Beaver Creek",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "about 2,460 ft",
+   "evidence": "The waypoint puts the crossing at 2,000 ft although it lies upstream of Luna Camp (2,432 ft on the same row). The Luna Peak route page gives the crossing just north of the Access Creek confluence at about 2,460 ft; the USGS 1/3-arc-second DEM at a documented crossing log-jam (48.8395,-121.2090) reads 2,437 ft, and at Luna Camp 2,432 ft, so the crossing is ~2,440-2,460 ft, not 2,000.",
+   "sources": [
+    "https://www.summitpost.org/luna-peak/151781",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.209&y=48.8395&wkid=4326&units=Feet",
+    "https://havetent.com/2018/06/25/luna-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elev"
+     ],
+     "expect": 2000,
+     "value": 2460,
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Elevation of the Access Creek crossing of Big Beaver Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Camp the traverse day starts from",
+   "verdict": "fixed",
+   "correct_value": "Traverse day starts at ~6 AM from the Luna Col high camp; Luna Camp is only the first night",
+   "evidence": "A 2020 party camped at Luna Col, left at 6 AM, climbed East Fury, traversed to West Fury (2.5 h) and returned to Luna Col the same day. A guide service runs day 1 as 9.4 mi to Luna Camp and uses a 7,200 ft Luna high camp as the summit launch point; another party slept night 1 at Luna Camp and nights 2-3 at the Luna-Fury col; a fourth left its Luna Pass camp at 5:30 AM for East Fury. None starts the summit day from Luna Camp in the valley.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://www.mountainschool.com/Mount-fury-guided-climb",
+    "http://ericsbasecamp.net/trips/Luna/Luna.htm",
+    "https://trailcatjim.com/mt-fury-east-peak-luna-peak-via-access-creek/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": "0600 from Luna Camp",
+     "value": "0600 from Luna Col",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Camp the traverse day starts from"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "Day 2: Ascend to East Fury summit, traverse to West Fury, return to East Fury summit. Day 3: Descend to Luna Camp, begin exit. Day 4: Complete descent to Ross Lake and water taxi return.",
+     "replace": "Day 2: Climb Access Creek and Access Col to a high camp at Luna Col. Day 3: From Luna Col, ascend East Fury, traverse to West Fury, and return over East Fury to Luna Col. Day 4: Descend Access Creek and the Big Beaver Trail to Ross Lake for the water taxi return.",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Camp the traverse day starts from"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Access Creek crossing location/elevation",
+   "verdict": "fixed",
+   "correct_value": "About 1.5 mi beyond Luna Camp, around 2,460 ft",
+   "evidence": "Two route write-ups put the turn-off 1.5 mi north of Luna Camp (another says about a mile; one party timed it at 29 minutes past camp), crossing Big Beaver Creek just north of the Access Creek confluence at about 2,460 ft. The USGS DEM at a documented crossing point reads 2,437 ft and at Luna Camp 2,432 ft, so the waypoint's 2,200 ft (below the camp downstream of it) is wrong and 'a short way' understates the distance. The bivy note is not patched (bivy is out of scope) and already says a mile and a half.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/northern-pickets-2/",
+    "https://www.summitpost.org/luna-peak/151781",
+    "http://ericsbasecamp.net/trips/Luna/Luna.htm",
+    "https://trailcatjim.com/mt-fury-east-peak-luna-peak-via-access-creek/",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.209&y=48.8395&wkid=4326&units=Feet"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "A short way beyond camp, leave the trail",
+     "replace": "About a mile and a half beyond camp, leave the trail",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Access Creek crossing location/elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 2200,
+     "value": 2460,
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Access Creek crossing location/elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Time from the Luna Col camp to the traverse start (timing.approachTimeHrs 0.5, totalHrs 5)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "With the day starting at Luna Col, a 0.5 h approach to East Fury's summit is far too short: one report gives about 4 hours Luna Col to East Fury, another about 8 hours (in fog, from Luna Pass). The 2.5 h East-to-West traverse figure is corroborated. Would settle it: a second source giving a typical Luna Col to East Fury time so approachTimeHrs and totalHrs can be restated.",
+   "sources": [
+    "https://www.summitpost.org/mount-fury/152299",
+    "https://trailcatjim.com/mt-fury-east-peak-luna-peak-via-access-creek/",
+    "https://onehikeaweek.com/2020/08/02/mount-fury/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Every documented Mongo Ridge ascent (Aug 2006, July 2021, July 2022, early July 2024) fell in July-August, and a guide service says Fury goes best mid-July to late August with September only in stable years; nothing independent states an early-September best window for this ridge. The row itself is split (Sept 'marginal', Aug 'the only realistic window', itinerary.cal July-September). Would settle it: a second source stating the Fury/Mongo season window.",
+   "sources": [
+    "https://www.mountainschool.com/Mount-fury-guided-climb",
+    "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/",
+    "https://www.theclimbingguides.com/post/mongo-ridge-and-the-pole-of-remoteness-7-09-2022-7-14-2022"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Length of the rappel off Tower 1",
+   "verdict": "fixed",
+   "correct_value": "short, about 30 m",
+   "evidence": "A 2021 ascent reports a 30 m rappel from Tower 1 to the Tower 1-2 notch, versus a double-rope rappel off Tower 2, 60 m off Tower 3 and 50 m off Tower 4. A 2022 ascent says the rappel off Tower 1 is short, with Tower 2 about 40 m, Tower 3 about 40 m and Tower 4 about 50 m. The rappel table ('short') is right; the pitch note's 40-50 m is wrong.",
+   "sources": [
+    "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/",
+    "https://www.theclimbingguides.com/post/mongo-ridge-and-the-pole-of-remoteness-7-09-2022-7-14-2022"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      8,
+      "notes"
+     ],
+     "find": "a short rappel (roughly 40-50m) off improvised anchors",
+     "replace": "a short rappel (about 30 m) off improvised anchors",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Length of the rappel off Tower 1"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Position of the Pole of Remoteness on the ridge",
+   "verdict": "fixed",
+   "correct_value": "The Pole of Remoteness is the last major tower, after the four towers and the Rooster Comb, about 500 ft below the summit; the rope-cutting rappel is off it",
+   "evidence": "The first-ascent account climbs pinnacles 1-4, then the Pole of Remoteness as the final major obstacle with about 500 ft of class 4 left to the summit, and the rope was severed by rockfall descending from the Pole. A 2024 ascent gives the same order: four towers, the Rooster Comb, then the Pole, then the false summit. The rappel table's row 5 (with the Pole station, anchor notes and rope-cut hazard) is misplaced; its content is moved to the final row 12 and row 5 made a generic notch rappel.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200713002/North-America-United-States-Washington-Cascade-Range-Mt-Fury-West-Peak-Mongo-Ridge",
+    "https://publications.americanalpineclub.org/articles/13201216959",
+    "https://www.theclimbingguides.com/post/mongo-ridge-and-the-pole-of-remoteness-7-09-2022-7-14-2022"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      4
+     ],
+     "expect": {
+      "n": 5,
+      "pull": "Carry a good length of cord. The single-strand anchors left here have been found in poor shape a year later, and have since been rebuilt redundant — assume you will be replacing rather than clipping.",
+      "notes": "Passes near the tower nicknamed the 'Pole of Remoteness'.",
+      "anchor": "natural (block/horn)",
+      "hazards": [
+       "Rockfall on this rappel severed a rope on the first ascent. Having a second line in the system is what made that survivable"
+      ],
+      "lengthM": null,
+      "station": "Off the top of the Pole of Remoteness. The anchor is a large block on the summit of the tower; parties have tested it deliberately before committing to it."
+     },
+     "value": {
+      "n": 5,
+      "notes": "Another rappel into a notch along the crest; anchors are improvised rather than fixed stations.",
+      "anchor": "natural (block/horn)",
+      "lengthM": null
+     },
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Position of the Pole of Remoteness on the ridge"
+    },
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      11
+     ],
+     "expect": {
+      "n": 12,
+      "notes": "Final rappel on the ridge; easier ground then leads toward West Fury's summit.",
+      "anchor": "natural (block/horn or gear anchor)",
+      "lengthM": null
+     },
+     "value": {
+      "n": 12,
+      "pull": "Carry a good length of cord. The single-strand anchors left here have been found in poor shape a year later, and have since been rebuilt redundant — assume you will be replacing rather than clipping.",
+      "notes": "Off the Pole of Remoteness, the last major tower before the false summit; easier ground then leads toward West Fury's summit.",
+      "anchor": "natural (block/horn)",
+      "hazards": [
+       "Rockfall on this rappel severed a rope on the first ascent. Having a second line in the system is what made that survivable"
+      ],
+      "lengthM": null,
+      "station": "Off the top of the Pole of Remoteness. The anchor is a large block on the summit of the tower; parties have tested it deliberately before committing to it."
+     },
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Position of the Pole of Remoteness on the ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Whether the overnight permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "The cross-country zones this route camps in are walk-up only; permits are obtained in person at Marblemount",
+   "evidence": "The park's cross-country zones page and its backcountry reservations page both state that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and the remaining cross-country zones are walk-up only; Luna appears in the zone table without reservation. Every camp on this itinerary (Access Basin, East Fury, the ridge, Luna Col) is cross-country. The generic 'permit' column (trail camps are reservable) is left as is.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "obtain a Cross-Country Zone permit through the NPS Wilderness Information Center in Marblemount or via recreation.gov.",
+     "replace": "the cross-country zones this route camps in cannot be reserved in advance, so obtain a walk-up Cross-Country Zone permit in person at the NPS Wilderness Information Center in Marblemount.",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Whether the overnight permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "replace": "The cross-country zones on this route cannot be reserved; get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Whether the overnight permit can be reserved"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "How the toe of Mongo Ridge is reached from East Fury",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "From East Fury's summit, descend into the upper Goodell Creek basin to the toe of the Southwest Buttress (about 4,000 ft down), not along the connecting ridge",
+   "evidence": "The approach variant says to 'descend north along the connecting ridge' to the buttress base, while its own baseFinding puts the toe at the bottom of the Goodell Creek side. A 2022 party summited East Fury and then dropped into the Goodell Creek basin to reach the base of the route; a 2021 party describes a 4,000 ft descent from East Fury's summit, often on slab, to the base.",
+   "sources": [
+    "https://www.theclimbingguides.com/post/mongo-ridge-and-the-pole-of-remoteness-7-09-2022-7-14-2022",
+    "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "down the connecting ridge to the toe",
+     "replace": "down into the Goodell Creek basin to the toe",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "How the toe of Mongo Ridge is reached from East Fury"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "then descend north along the connecting ridge to the base of the Southwest Buttress to rack up",
+     "replace": "then descend into the upper Goodell Creek basin to the base of the Southwest Buttress to rack up",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "How the toe of Mongo Ridge is reached from East Fury"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "then GO DOWN the connecting ridge to the base of the Southwest Buttress",
+     "replace": "then GO DOWN into the upper Goodell Creek basin to the base of the Southwest Buttress",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "How the toe of Mongo Ridge is reached from East Fury"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "Drop off East Fury onto the ridge and begin",
+     "replace": "Descend from East Fury into the upper Goodell Creek basin to the toe of the ridge and begin",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "How the toe of Mongo Ridge is reached from East Fury"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "objective"
+     ],
+     "find": "Descend East Fury onto the ridge crest and start the technical traverse",
+     "replace": "Descend from East Fury to the toe of the ridge and start the technical climb",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "How the toe of Mongo Ridge is reached from East Fury"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,558 @@
+{
+ "applied": [
+  {
+   "id": "wa_east_face_3",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Parking spot / distance east of the pass"
+  },
+  {
+   "id": "wa_east_face_3",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Parking spot / distance east of the pass"
+  },
+  {
+   "id": "wa_the_west_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_the_west_face",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Fixed rappel stations on the descent"
+  },
+  {
+   "id": "wa_labor_pains",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Summit distance from the trailhead"
+  },
+  {
+   "id": "wa_labor_pains",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead / parking"
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead / parking"
+  },
+  {
+   "id": "wa_boving_roofs",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Cam sizes for the roofs"
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mojo_rising",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mojo_rising",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Rappel count on the descent"
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "grade"
+   ],
+   "fact": "Pitch 4 grade"
+  },
+  {
+   "id": "wa_free_mojo",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_free_mojo",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_free_mojo",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "time"
+   ],
+   "fact": "Approach time"
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Approach time"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_east_face_3",
+   "before": {
+    "road": {
+     "name": "Washington Pass Overlook pullout, SR-20 (North Cascades Highway)",
+     "status": "SR-20 is fully paved; park at the informal pullout on the north shoulder near Washington Pass Overlook (~1.2 mi east of Washington Pass), then follow the climbers' trail through timber to the talus field beneath Liberty Bell, Minuteman, Concord, and Lexington Towers (roughly 30-45 min to the base).",
+     "driveNote": "About 3.5-4 hours from Seattle via I-5 and SR-20 to Washington Pass; no permit needed for day climbing.",
+     "seasonalGate": "SR-20 over Washington Pass closes every winter (typically early-mid December to mid-April/May depending on snowpack and highway repairs)."
+    }
+   }
+  },
+  {
+   "id": "wa_the_west_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5400,
+      "name": "Blue Lake TH",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the Blue Lake Trailhead, about 1.5 miles west of Washington Pass at roughly 5,400 ft, and park in the trailhead lot. This is the west-side start for the Liberty Bell Group; the Blue Lake Trail leaves from here and runs about a mile and a half to the climbers' path. Plan the trip for the June to September window."
+     },
+     {
+      "lat": 48.51291,
+      "lng": -120.65557,
+      "elev": 6900,
+      "name": "Base of West Face",
+      "note": "Low-angle cracks lead to a tree-topped chimney on the left side of the west face; shares the start with the NW Corner.",
+      "type": "Junction",
+      "distMi": null
+     },
+     {
+      "lat": 48.51291,
+      "lng": -120.65557,
+      "elev": 7760,
+      "name": "North Early Winters Spire",
+      "type": "Summit",
+      "distMi": null
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.512935,
+     "peakLng": -120.655465,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    }
+   }
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "before": {
+    "watch_out": "Avalanche and wet-slide path on the approach snow and in the couloir — check the NWAC East Slopes forecast and climb on a cold, firm morning\nThin or absent ice most winters — be ready to dry-tool, condition-dependent climbing\nLoose chossy rock on pitch 2 and box gully — protection can be difficult\nNo established rappel stations on descent — inspect any fixed anchors thoroughly, fatal anchor failure recorded (2025)"
+   }
+  },
+  {
+   "id": "wa_labor_pains",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5200,
+      "name": "Blue Lake TH",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51291,
+      "lng": -120.65557,
+      "elev": 6900,
+      "name": "Chockstone Route start (shared)",
+      "note": "Shares its start with the Chockstone Route before breaking left onto steeper 5.11a terrain.",
+      "type": "Junction",
+      "distMi": null
+     },
+     {
+      "lat": 48.51291,
+      "lng": -120.65557,
+      "elev": 7760,
+      "name": "North Early Winters Spire",
+      "type": "Summit",
+      "distMi": 1
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.512935,
+     "peakLng": -120.655465,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    }
+   }
+  },
+  {
+   "id": "wa_sews_sw_rib",
+   "before": {
+    "road": {
+     "name": "Blue Lake Trailhead / SR-20 'hairpin' pullout, North Cascades Highway",
+     "status": "Paved highway parking (Blue Lake TH lot) plus a roadside pullout at a hairpin bend below Washington Pass; no unpaved road driving required.",
+     "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 (North Cascades Highway) to the Washington Pass area (~milepost 162).",
+     "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger; dates vary by year (in the 2025-26 season it closed Dec 4, 2025 and, after winter storm damage, did not fully reopen until June 14, 2026), so the area is inaccessible by car for a large part of the year."
+    }
+   }
+  },
+  {
+   "id": "wa_boving_roofs",
+   "before": {
+    "rope_note": "3-pitch trad line on South Early Winters Spire's granite. Standard alpine rack to 3in, extra small cams for roof cracks. This route's standard descent is via the South Arete (3 single-rope rappels on a 60m rope past the Rabbit Ears)."
+   }
+  },
+  {
+   "id": "wa_dolphin_chimney",
+   "before": {
+    "season": "Jul-Sep",
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the Y-shaped larch, up two or three pitches, then LEFT to the dark chasm",
+      "notes": "Start from the Blue Lake Trailhead on Highway 20 just west of Washington Pass. Follow the maintained Blue Lake Trail roughly 1.25 miles, about an hour of easy hiking at modest gain, to the open meadow and clearing on the northwest side of the Liberty Bell massif, marked by a WOODEN TRAIL SIGN. Leave the maintained trail there and follow the well-worn climber's path up through talus and heather benches into the basin below South Early Winters Spire's west side.\n\nA single spectacular pitch of about 75 ft at 5.9+ R, first climbed in 1967.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "No ground start; two or three pitches of another route come first",
+       "5.9+ R with sparse gear in an offwidth and chimney",
+       "Rope management on any rappel of the chimney itself deserves extra care",
+       "No water in the basin"
+      ],
+      "baseFinding": "DOLPHIN CHIMNEY IS NOT STARTED FROM THE GROUND. It is gained by climbing the FIRST TWO OR THREE PITCHES of the Southwest Rib or the Northwest Face Boving-Pollock line, then TRAVERSING LEFT OVER EASY TERRAIN TO THE OBVIOUS DARK, UNMISTAKABLE CHASM ABOUT 100 FT LEFT OF THE BOVING ROOF.\n\nSO THE FEATURE ITSELF IS THE TEST AND IT IS AS GOOD AS THEY GET ON THIS WALL: A DARK CHASM. Not a crack, not a corner, and not something you could talk yourself into. If you are unsure whether you are looking at it, you are not looking at it.\n\nTHE MEASURED OFFSET GIVES A SECOND CHECK: ABOUT 100 FT LEFT OF THE BOVING ROOF. The Boving Roofs pitch is the double-roof feature reached by going left at a ledge from the same rib. Two roofs stacked above you, then a hundred feet further left, is the chimney.\n\nTHE GROUND-LEVEL AIMING POINT FOR THE WHOLE DAY: THE Y-SHAPED LARCH TREE LEFT OF THE SOUTHWEST COULOIR, at the base of the Southwest Rib. That is the landmark most parties use to start up this wall, and it is the one thing here you can find at ground level.\n\nHOW THIS ROUTE IS ACTUALLY DONE, WHICH SHOULD SHAPE THE PLAN: it is a one-pitch add-on within a Southwest Rib or Boving-Pollock day, not a climb with its own descent. Most parties continue past it on easier cracks to rejoin the Southwest Rib and finish to the summit, then take the standard South Arete descent to the RABBIT EARS, two boulder towers with fixed rappel slings, then a short traverse and downclimb into the descent gully and three single-rope 60 m rappels to the base. A party doing the Dolphin as an out-and-back lowers or makes a single rappel back to the ledge below."
+     }
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "June–September (area-wide SR-20-gated window); no route-specific season notes found beyond this",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Area-wide reliable rock season; no route-specific data found",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Area-wide reliable rock season; no route-specific data found",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mojo_rising",
+   "before": {
+    "season": "Jul-Sep",
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the basin below the west face, then 20 ft DOWNHILL of the chockstone chimney",
+      "notes": "Approach as for the Northwest Face: Blue Lake Trailhead, Blue Lake Trail about 1-1.25 miles to the northwest-side clearing, then the climber's path up talus into the basin below the west face.\n\nNine pitches, 5.11b, first climbed in 2006. Pitches 7-9 are typically simul-climbed or pitched out onto the well-travelled Southwest Rib finish to the true summit.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Several lines starting within tens of feet of each other on the same wall",
+       "A finish that merges onto a different route's terrain",
+       "No water in the basin",
+       "Talus and heather with no maintained tread above the trail"
+      ],
+      "baseFinding": "THE START IS AN OBVIOUS BOLTED FACE ABOUT 20 FT DOWNHILL FROM A LARGE CHOCKSTONE-FILLED CHIMNEY AND NOTCH, JUST LEFT OF PITCH 1 OF THE NORTHWEST FACE. THE CHOCKSTONE CHIMNEY IS THE KEY LANDMARK FOR LOCATING THE START AMONG SEVERAL CLOSELY SPACED LINES ON THIS WALL.\n\nSO THE TEST IS: FIND THE CHIMNEY WITH CHOCKSTONES JAMMED IN IT, THEN GO 20 FT DOWNHILL, AND LOOK FOR BOLTS ON A FACE. Bolts off the deck are the distinguishing feature. The Northwest Face beside it starts by traversing into a steep CORNER with no bolts at the base.\n\nTHE OTHER NEIGHBOUR, AND THE DIRECTION SEPARATES THEM CLEANLY: FREE MOJO starts ROUGHLY 40 FT DOWN AND RIGHT OF THE SAME CHIMNEY, ON A NONDESCRIPT CRACK. This route is 20 ft down and LEFT-ish of the chimney, on bolts. Down and right on a crack is the other route; down and left on bolts is this one.\n\nCONFIRM BY WHAT HAPPENS IF YOU BAIL, WHICH IS A HARDWARE COUNT: to descend the route itself, rappel the FIRST THREE PITCHES with a single 60 m rope from BOLTED AND CHAIN ANCHORS back to the ground. A three-pitch fully bolted rappel line off the deck is what this route offers and its corner-system neighbour does not.\n\nAND THE FULL-ROUTE FINISH ENDS SOMEWHERE ELSE: the top three pitches join the Southwest Rib to the true summit, from which the standard South Arete descent runs down to the RABBIT EARS and then three single-rope 60 m rappels from bolted anchors and chains down the gully."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_the_hitchhiker",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "grade": "Grade IV, 900 ft, 9 pitches",
+      "carToCar": "~8 hrs of climbing, plus the approach and descent"
+     },
+     "approachTime": "~1.5–2 hrs via the east-side hairpin/Spire Gully (shared approach with neighboring routes, not fully route-specific-confirmed); descent is a downclimb plus 2 rappels down South Arete, ~1 hr",
+     "requiredSkills": [
+      "Mixed dihedrals, thin slabs, flakes, and roofs",
+      "~20 bolts but still needs a real trad rack (doubles to 2\", 60m rope)",
+      "One documented party needed an aider on a section — be ready for occasional aid if needed"
+     ],
+     "experienceLevel": "Solid 5.11 trad/face leader"
+    },
+    "season": "Jul-Sep",
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the South Arete base, then PAST the Passenger's fir tree another hundred feet to the four-bolt dihedral",
+      "notes": "Approach as for the Passenger: Blue Lake Trailhead climber's trail, about an hour, to the South Arete base, then traverse down and right along the base of the wall.\n\nNine pitches on the steep southeast face, first climbed in 2007. A long day, up to eight hours, of sustained face climbing with about twenty bolts but still requiring a full trad rack.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "A start 100 ft beyond a similar start on the same traverse",
+       "Up to eight hours of sustained face climbing at 5.11-",
+       "About twenty bolts over nine pitches, so a full trad rack is still mandatory",
+       "No water on the approach"
+      ],
+      "baseFinding": "THE START IS A SMALL LEFT-FACING DIHEDRAL WITH FOUR BOLTS IN IT, ROUGHLY 100 FT PAST THE PASSENGER'S START ALONG THE SAME TRAVERSE. FOUR BOLTS IS A COUNT, AND COUNTING IS WHAT YOU CAN STILL DO WHEN YOU CANNOT SEE THE TOP OF THE WALL.\n\nSO THE SEQUENCE IS: South Arete base, then down and right about ten minutes to a FIR TREE WITH DOUBLE CRACKS, which is the Passenger. THAT IS NOT THIS ROUTE. Keep going roughly 100 FT FURTHER to a SMALL LEFT-FACING DIHEDRAL WITH FOUR BOLTS.\n\nTHE NEGATIVE TEST BOTH WAYS: A FIR TREE AND TWO CRACKS MEANS YOU STOPPED SHORT, ON THE PASSENGER. Nothing beyond the four-bolt dihedral is documented along this traverse, so if the wall is running out and you have found no bolts, you have passed it.\n\nA HARDWARE CHECK THAT KEEPS WORKING ABOVE THE GROUND: this route carries about twenty bolts over nine pitches, which is enough that you should keep meeting them, but not enough to climb without a full trad rack. Meeting no bolts at all after a rope length is a sign you are off the line.\n\nDESCENT: the route tops out at the summit rather than being rappelled. Take the standard South Arete descent, downclimbing the arete with a short more exposed step to the RABBIT EARS, then three single-rope rappels on a 60 m rope, which matches the rope length in the route's own protection notes, from bolted anchors and chains down the gully to the base."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.10",
+      "notes": "A short traverse gains a steep corner system; committing 5.10-ish moves lead to a ledge, where some parties belay while others continue on delicate gear to a small-tree stance protected with pitons and cams.",
+      "pitch": 1,
+      "anchor": "Tree (pitons + cams)",
+      "lengthM": 35
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.11a",
+      "notes": "The right-facing corner above has limited feet and hard-won small gear placements -- the route's technical crux, solid for the grade.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "A short chimney leads into a vegetated crack, working past a block to a big ledge belay.",
+      "pitch": 3,
+      "anchor": "Gear (ledge)",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Easier, sometimes-unroped ground heads for the base of the prominent double overhangs above -- the shared Boving Roofs feature.",
+      "pitch": 4,
+      "anchor": "Gear",
+      "lengthM": 20
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.10",
+      "notes": "Climbs over the pair of obvious overhangs with good protection and committing moves, belaying in a gully above -- the Boving Roofs 'money pitch' shared with the Southwest Rib variation.",
+      "pitch": 5,
+      "anchor": "Gear (gully)",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.9",
+      "notes": "A nice hand crack past one 5.9-ish move gives way to easier ground on the right, often simul-climbed or scrambled to the top, finishing on the Southwest Rib's upper pitches.",
+      "pitch": 6,
+      "anchor": "Gear",
+      "lengthM": 30
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_free_mojo",
+   "before": {
+    "season": "Jul-Sep",
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the basin below the west face, then 40 ft DOWN AND RIGHT of the chockstone chimney",
+      "notes": "Same basin approach as Mojo Rising and the Northwest Face: Blue Lake Trailhead, Blue Lake Trail to the northwest-side clearing, then the climber's path up talus into the basin below the west face.\n\nSix pitches, 5.11-.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "A start explicitly described as nondescript, confirmed only at the first belay",
+       "Three routes starting within about 60 ft of each other on one wall",
+       "No water in the basin"
+      ],
+      "baseFinding": "THE START IS ROUGHLY 40 FT DOWN AND RIGHT OF THE LARGE CHOCKSTONE-FILLED CHIMNEY BETWEEN THE TWO SPIRE FORMATIONS, ON A NONDESCRIPT CRACK THAT LEADS TO A TWO-PIECE FIXED ANCHOR ON A PEDESTAL.\n\nSO THE CONFIRMATION IS AT THE TOP OF PITCH ONE, NOT AT THE BOTTOM, AND THAT IS THE HONEST WAY TO USE THIS ROUTE: the crack itself is described as NONDESCRIPT, which means you will not identify it by looking at it. What you can identify is where it ends. A ROPE LENGTH UP, THERE IS A TWO-PIECE FIXED ANCHOR ON A PEDESTAL. If you arrive at a stance with no fixed gear, come down and move along the wall.\n\nPITCH TWO GIVES A SECOND CONFIRMATION: OBVIOUS DOUBLE INCIPIENT CRACKS leading up to a series of ledges. Two thin parallel cracks, not one.\n\nTHE DISCRIMINATOR AGAINST THE TWO NEIGHBOURS, AND THE MEASUREMENTS ARE THE POINT: MOJO RISING is ABOUT 20 FT DOWNHILL of the chimney on an OBVIOUS BOLTED FACE. The NORTHWEST FACE, Boving-Pollock, is entered by TRAVERSING INTO A STEEP CORNER. THIS ROUTE IS 40 FT DOWN AND RIGHT ON A PLAIN CRACK. Bolts mean Mojo Rising; a corner means Boving-Pollock; a plain crack forty feet right of the chimney means Free Mojo.\n\nRETREAT FROM LOW ON THE ROUTE IS STRAIGHTFORWARD, WHICH IS WORTH KNOWING WHEN YOU ARE UNSURE OF THE START: a party retreating from the fixed anchor atop pitch 1 rappels to the ground; above it the belays are built from gear, so retreating higher means leaving gear. There is no penalty for starting, finding the ground wrong, and coming back down."
+     }
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "June–September, though the route stays shaded until ~1pm (north-facing) and may run colder/wetter longer into the season than sunnier SEWS lines",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Reliable dry rock season",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Shady, north-facing aspect plus wet-crack conditions noted at the FA make early season less viable",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Reliable dry rock season; shade keeps it comfortable on hot days",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Dry granite continues; shorter days",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "A sustained 9-pitch line (5.11 free, or 5.9 A0) to the summit. Descend by downclimbing the South Arete to the first bolted station, then 3 short station-to-station rappels down the South Arete.",
+       "hours": 10.5,
+       "miles": 5.2,
+       "title": "Car-to-car climb",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave the SR-20 hairpin pullout",
+         "detail": ""
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Reach base",
+         "detail": "~2 hr approach."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Climb the 9 pitches",
+         "detail": ""
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Summit",
+         "detail": "~6.25 hrs of climbing."
+        },
+        {
+         "time": "1:45 PM",
+         "label": "Begin descent",
+         "detail": "Downclimb 2 pitches, then 3 short rappels station-to-station."
+        },
+        {
+         "time": "4:30 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the Direct East Buttress and return to the car"
+      }
+     ],
+     "totalNote": "A long day: roughly 10.5 hrs car-to-car for 9 pitches up to 5.9-5.11/A0."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,282 @@
+{
+ "file": "t141.json",
+ "results": [
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "fact": "Number of technical pitches",
+   "verdict": "fixed",
+   "correct_value": "2 short technical pitches in the Great Chimney (5.3 entry plus easier chockstone steps; then the 5.4 chockstone move and the cannonhole squeeze)",
+   "evidence": "Two independent trip reports describe the Great Chimney as two short pitches with an intermediate belay: the first with 5.3 entry moves then easier chockstone steps, the second with the 5.4 face move over the large chockstone ending at the cannonhole squeeze. A separate account of the standard Southeast Route also gives 'two short pitches of climbing up to 5.4', and its own ascent was belayed in two pitches. The beta was right; pitches, ROUTE BREAKDOWN, the summit waypoint and three itinerary strings were stale at three (the old 3-row breakdown split the approach ledges and the chockstone steps of pitch 1 into separate rows).",
+   "sources": [
+    "https://trailcatjim.com/american-border-peak-via-southeast-face-south-ridge/",
+    "https://stevensong.com/usa/washington/american-border-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Number of technical pitches",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 3,
+     "value": 2
+    },
+    {
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Number of technical pitches",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.3",
+       "notes": "Cross slabs, ledges, and gullies to the entrance of the summit chimney system on notoriously loose rock.",
+       "pitch": 1,
+       "anchor": "Gear",
+       "lengthM": 30
+      },
+      {
+       "crux": true,
+       "bolts": 0,
+       "grade": "5.4",
+       "notes": "A smooth face move surmounts a large chockstone, ending at a tight 'cannonhole' squeeze where packs must be pushed through ahead of the climber — the technical crux.",
+       "pitch": 2,
+       "anchor": "Gear/chockstone",
+       "lengthM": 25
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.3",
+       "notes": "Easier chockstone steps lead up out of the chimney toward the summit ridge.",
+       "pitch": 3,
+       "anchor": "Walk-off (summit)",
+       "lengthM": 25
+      }
+     ],
+     "value": [
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.3",
+       "notes": "A few 5.3 moves get you into the bottom of the Great Chimney, then a run of easier chockstone steps leads up to a belay partway up the chimney.",
+       "pitch": 1,
+       "anchor": "Gear",
+       "lengthM": null
+      },
+      {
+       "crux": true,
+       "bolts": 0,
+       "grade": "5.4",
+       "notes": "A smooth face move surmounts a large chockstone, ending at a tight 'cannonhole' squeeze where packs must be pushed through ahead of the climber — the technical crux.",
+       "pitch": 2,
+       "anchor": "Gear/chockstone",
+       "lengthM": 25
+      }
+     ]
+    },
+    {
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Number of technical pitches",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "directions"
+     ],
+     "find": "three pitches of the Great Chimney lead to the top — a 5.3 entry, a smooth 5.4 face move over a large chockstone, and a squeeze",
+     "replace": "two pitches of the Great Chimney lead to the top — a 5.3 entry, then a smooth 5.4 face move over a large chockstone and a squeeze"
+    },
+    {
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Number of technical pitches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "climb the 3-pitch chimney system",
+     "replace": "climb the 2-pitch chimney system"
+    },
+    {
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Number of technical pitches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "Climb the 3-pitch chimney system",
+     "replace": "Climb the 2-pitch chimney system"
+    },
+    {
+     "id": "wa_american_border_peak_southeast_face",
+     "fact": "Number of technical pitches",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "3 pitches of loose",
+     "replace": "2 pitches of loose"
+    }
+   ]
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "fact": "Distance and gain to High Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": "About 1.8-2 miles and ~765 ft of gain from Twin Lakes to High Pass (~5,965 ft)",
+   "evidence": "The published hike figures for High Pass from the Twin Lakes trailhead are 3.6 miles round trip, 765 ft of gain, highest point 5,965 ft; a second description puts the pass at 2 miles. So approach, waypoint and approach_variants (2 mi, ~750 ft) are right, and the only outlier is bivy[2] (High Pass camp) notes, which say about two and a half miles and over a thousand feet. bivy is owned by the camping clean-up, so no patch; that card's own distance/gain should be corrected to ~2 mi / ~750 ft there.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/high-pass-1",
+    "https://www.wta.org/go-hiking/hikes/winchester-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Trailhead and approach line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both approaches are real: the Watson Lakes (Anderson Creek, FR-1107) line via Diobsud Lakes, and the shorter Bacon Creek Road line up the southeast ridge past Peak 4800. The row describes the first in approach/waypoints/descent_text/TRAILHEAD card and the second in the itinerary, timing.sectionBreakdown, gain_ft (6,261) and dist_km, while bail mixes both. This is not a single wrong fact that two sources can settle; it needs an owner decision on which approach the page describes (FR-1107 has been washed out at MP 3.8 since winter 2025-26, which argues for Bacon Creek) and then a sourced re-plan of either the itinerary/timing/gain or the approach/waypoints/descent.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts/anderson-watson-road-fsr-1107-closure-mt-baker-ranger-district",
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Overnight permit",
+   "verdict": "fixed",
+   "correct_value": "Park backcountry permit needed only for overnight stays inside North Cascades National Park (the upper mountain); no permit on the Noisy-Diobsud (national forest) side, where Watson Lakes camping is designated-sites only",
+   "evidence": "The Forest Service's Noisy-Diobsud Wilderness page lists only a recreation pass at the Watson Lakes trailhead, designated-site camping at Watson Lakes and no permit requirement, and notes the wilderness borders the national park to the east. Bacon Peak itself lies inside North Cascades National Park (it is listed among the park's cross-country zones), where the park issues backcountry permits for camps and cross-country zones. So the permit column's 'all overnight backcountry stays require a permit' overreaches; it now limits the requirement to the park.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/noisy-diobsud-wilderness",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://en.wikipedia.org/wiki/Bacon_Peak",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks"
+   ],
+   "patches": [
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "Overnight permit",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+     "replace": "overnight stays inside the park boundary require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center); camps on the national forest side of the approach, including Watson Lakes, need none."
+    }
+   ]
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Location and height of the Diobsud Lakes camp",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The Diobsud Lakes are a chain of four lakes between Mt. Watson and Bacon Peak, reached from the Watson Lakes trailhead over a ~5,300 ft saddle and down heather; the middle lake sits at 4,430 ft (48.649, -121.543). That fits the approach and the 'Diobsud basin' waypoint (4,900 ft) and not bivy[0] 'Upper Diobsud Lakes' at 6,000 ft 'on the far side of Bacon Peak from the Anderson Creek road', which is too high and on the wrong side. The waypoint's exact 4,900 is not independently sourced, but it is not the outlier. Bivy is owned by the camping clean-up: the Upper Diobsud Lakes card's elevation and location wording need correcting there.",
+   "sources": [
+    "https://wdfw.wa.gov/fishing/locations/high-lakes/diobsud-middle",
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/",
+    "https://engineeredforadventure.com/watson-blum-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Where the wilderness-boundary saddle is",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service trail description puts the Anderson Butte junction at 1 mile, the second junction (4,700 ft; right fork 0.5 mi down to Lower Anderson Lake at 4,500 ft) a mile further, and the wilderness-boundary saddle 0.5 mile beyond that on the Watson Lakes fork. The trail guide instead puts the second junction at 1.5 miles and Watson Lakes 1.5 miles beyond (3.0 total, high point 4,900 ft). Both agree the saddle is past the Lower Anderson fork, so waypoints[1] (named the saddle but carrying the fork note at 4,700 ft, 1.5 mi) and the approach's '~1.4-1.5 miles' saddle are internally off, but the two sources disagree on the distances and neither gives the saddle's elevation. A topo measurement of the junction and saddle would settle it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/anderson-watson-lakes-trail-611",
+    "https://www.wta.org/go-hiking/hikes/anderson-and-watson-lakes"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "When FR-1107 washed out",
+   "verdict": "fixed",
+   "correct_value": "Washed out in the December 2025 atmospheric-river floods; the Forest Service closure alert is dated July 8, 2026",
+   "evidence": "The Forest Service alert for FSR 1107 (washout at MP 3.8) carries a start date of July 8, 2026, but that is the alert date, not the washout: an April 25, 2026 trip report found the road completely washed out by Anderson Creek about 4 miles in, and the trail closure notice attributes the washout to the atmospheric river of 12/11/2025. The road note now says the washout dates from the December 2025 floods, matching the Watson Lakes trailhead card, and keeps July 8 as the alert date.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts/anderson-watson-road-fsr-1107-closure-mt-baker-ranger-district",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-04-26.113112566486",
+    "https://www.alltrails.com/trail/us/washington/anderson-lake-and-watson-lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "When FR-1107 washed out",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "has been closed at Mile Post 3.8 by a washout since July 8, 2026, with no end date given on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026",
+     "replace": "has been closed at Mile Post 3.8 by a washout from the December 2025 floods (the road was already impassable in April 2026), with no end date given on the Mt. Baker-Snoqualmie National Forest closure alert, issued July 8, 2026 and still posted on 25 September 2026"
+    }
+   ]
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Summit elevation in the CLIMBING ROUTE step",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "7,070 ft",
+   "evidence": "climbing_route[2] gives a 7,061 ft summit while high_point_ft, the summit waypoint, and two itinerary strings give 7,070 ft. 7,061 ft is the older map spot height; 7,070 ft (NAVD 88) is the figure the peak listings use, and it is what every other field on the row shows.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bacon_Peak",
+    "https://www.peakbagger.com/peak.aspx?pid=1644"
+   ],
+   "patches": [
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "Summit elevation in the CLIMBING ROUTE step",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "to the 7,061 ft summit",
+     "replace": "to the 7,070 ft summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "fact": "Gain from the river to the Cinderella-Little Sister notch",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "roughly 4,000 ft over about five miles",
+   "evidence": "The river crossing at the Elbow Lake trailhead is near 2,000 ft (the trail gains 3,000 ft to a 5,060 ft top), and Cinderella's summit is only about 6,440-6,480 ft, so 4,500-5,500 ft of gain to a notch below the summit is impossible. The published Green Glacier approach from the same trailhead is 5 miles one way gaining about 4,000 ft, which fits the row's waypoints (trailhead 2,000 ft, notch 5,800 ft at 5 mi, plus the ~450 ft dip to Green Creek) and the 5,400 ft car-to-summit total.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/twin-sisters-range-green-glacier",
+    "http://www.willhiteweb.com/north_cascades/sister_divide/elbow_lake_trail_211.htm",
+    "https://listsofjohn.com/peak/211985",
+    "https://www.summitpost.org/twin-sisters-range/171190"
+   ],
+   "patches": [
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Gain from the river to the Cinderella-Little Sister notch",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "on the order of 4,500-5,500 ft over several miles",
+     "replace": "roughly 4,000 ft over about five miles"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,413 @@
+{
+ "file": "t002.json",
+ "results": [
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "First camp at Whatcom Pass (closed)",
+   "verdict": "fixed",
+   "correct_value": "Whatcom Camp (and Graybeal) are closed; the first/last trail night must go in a cross-country zone above Whatcom Pass such as Tapto Lakes.",
+   "evidence": "The park's current trail-conditions page lists Graybeal, Graybeal Stock and Whatcom Camps as closed due to fire damage. A September 2025 news report on the Perry Fire also lists Whatcom Camp and both Graybeal camps as closed. Tapto Lakes is a designated cross-country zone about 800 ft above Whatcom Pass (a Whatcom Pass/Tapto trip report; the park's zone table lists Tapto Lakes as a reservable zone). The itinerary and timing notes that call Whatcom Pass camp the night-1/night-4 stop are rewritten; the bivy card is left to the camping clean-up.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/trail-conditions.htm",
+    "https://www.kiro7.com/news/local/perry-fire-north-cascades-national-park-grows-1557-acres/SAXCGX65ANH4JKAPB6OVQHFSRU/",
+    "https://alanmajchrowicz.com/whatcom-pass-tapto-lakes-north-cascades/",
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Reach Whatcom Pass camp",
+     "replace": "Reach Whatcom Pass and camp above it",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "First camp at Whatcom Pass (closed)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "then up to Whatcom Pass — the standard first camp for Northern Pickets objectives.",
+     "replace": "then up to Whatcom Pass. Whatcom Camp and Graybeal Camp below the pass are closed after fire damage, so the first night goes in a cross-country zone above the pass, such as Tapto Lakes; confirm current status with the park before the trip.",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "First camp at Whatcom Pass (closed)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "then up to Whatcom Pass — the standard first camp for Northern Pickets objectives.",
+     "replace": "then up to Whatcom Pass. Whatcom Camp and Graybeal Camp below the pass are closed after fire damage, so the first night goes in a cross-country zone above the pass, such as Tapto Lakes; confirm current status with the park before the trip.",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "First camp at Whatcom Pass (closed)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "note"
+     ],
+     "find": "back down to Whatcom Pass camp.",
+     "replace": "back down to a cross-country camp above Whatcom Pass.",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "First camp at Whatcom Pass (closed)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      3,
+      "note"
+     ],
+     "find": "back down to Whatcom Pass camp.",
+     "replace": "back down to a cross-country camp above Whatcom Pass.",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "First camp at Whatcom Pass (closed)"
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Days of walking to Whatcom Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The 'three or four days of walking' claim lives only in the bivy[3] (Whatcom Camp) note, which is owned by the camping clean-up and describes hikers chaining trail camps. The itinerary's single long day is supported externally: the trail is about 16-17 mi one way, and one climbing party reached Perfect Pass (beyond Whatcom Pass, ~18.5 mi) on day 1. No itinerary patch; the bivy note is the outlier for climbers.",
+   "sources": [
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/",
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Day 1 elevation loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The contradiction is real: day 1 crosses Hannegan Pass (~5,070 ft) and drops to the Chilliwack River (~2,500-2,700 ft) before climbing to Whatcom Pass (~5,200 ft), so loss must be well over 2,000 ft, not 200. But no source states both the day's gain and loss, and the itinerary total cannot be reconciled with gain_ft 1916 / loss_ft 1000 either, so per the rules no day figure is changed. Settled by a trip log giving gain and loss for Hannegan TH to Whatcom Pass together with a sourced car-to-car total for this route.",
+   "sources": [
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/",
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Waypoint chain mixes the two approaches",
+   "verdict": "fixed",
+   "correct_value": "The Crooked Thumb moraine camp, SW buttress saddle and bergschrund pins are on the Hannegan/Whatcom Pass/Perfect Pass line; Luna Camp and Luna Creek pins belong only to the alternative Big Beaver approach. Their distances were measured from a trailhead the list does not show, so they are set to unknown.",
+   "evidence": "A detailed Phantom Peak trip report reaches the Crooked Thumb Glacier moraine camp from Whatcom Pass across the Whatcom Glacier, Perfect Pass and the Challenger Glacier. The first-ascent report of the neighbouring west ridge uses the same Perfect Pass/Challenger Glacier line to a bivy under Ghost Peak on that moraine. The pins' distMi values (10 to 15.5) chain from the Big Beaver trailhead through Luna Creek, which the list's Hannegan trailhead contradicts and no source supports; per the rules unsourced out-of-order distances are nulled rather than recomputed.",
+   "sources": [
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/",
+    "http://publications.americanalpineclub.org/articles/13201216005"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 10,
+     "value": null,
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Waypoint chain mixes the two approaches"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 11.5,
+     "value": null,
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Waypoint chain mixes the two approaches"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 14.5,
+     "value": null,
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Waypoint chain mixes the two approaches"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 15,
+     "value": null,
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Waypoint chain mixes the two approaches"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 15.5,
+     "value": null,
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Waypoint chain mixes the two approaches"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Established NPS backcountry campsite ~10 mi up",
+     "replace": "Alternative Big Beaver approach only, not the Hannegan line: established NPS backcountry campsite ~10 mi up",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Waypoint chain mixes the two approaches"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Off-trail ascent from Luna Camp",
+     "replace": "Alternative Big Beaver approach only: off-trail ascent from Luna Camp",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Waypoint chain mixes the two approaches"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "find": "High camp on the glacier's lateral moraine per route beta;",
+     "replace": "High camp on the glacier's lateral moraine, reached from Whatcom Pass over the Whatcom Glacier, Perfect Pass and the Challenger Glacier;",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Waypoint chain mixes the two approaches"
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Rack needed (glacier/ice gear)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Crampons, ice axe and 3-4 snow pickets/flukes are needed for the snow finger and bergschrund; no ice screws or technical tools.",
+   "evidence": "gear, rack, sling_rack, pro_needs, pro_tips, pitch_detail and hazards all require crampons/axe/pickets and glacier travel; detailed_rack alone says ice gear is unnecessary and approach boots suffice. A detailed ascent report used crampons on the pocket glacier and four snow flukes on the snow finger above a bergschrund.",
+   "sources": [
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Ice climbing gear unnecessary. Approach boots with good traction essential.",
+     "replace": "No ice screws or technical tools needed, but crampons, an ice axe and 3-4 snow pickets or flukes are required for the snow finger and bergschrund.",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Rack needed (glacier/ice gear)"
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Recommended approach drainage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Access Creek is a well-documented way into Luna Cirque (east of the crest), but no source found ties Access Creek — or Luna Creek — to Phantom's southwest route, which the documented ascents reach from Whatcom Pass and Perfect Pass on the west side. The detailed Phantom trip report mentions neither drainage. Settled by a source describing a Luna Cirque (Access Creek) approach to the SW route; otherwise the pro tip and possibly the Luna Creek option should be dropped.",
+   "sources": [
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Whether the overnight permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "Only six cross-country zones (Boston Basin, Eldorado, Sulphide, Price, Triumph, Tapto Lakes) are reservable; the high-camp zones this route uses (Challenger/Perfect Pass side, Luna on the alternative) are walk-up only. Trail camps remain reservable.",
+   "evidence": "The park's cross-country zone page says only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved and the rest are walk-up only, listing Luna, Perfect Pass and Challenger as walk-up. The Recreation.gov permit page independently states only high-use cross-country zones can be reserved and all others require a walk-up permit. access.permit, overnight_permit.where and the permit column are narrowed to match.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.recreation.gov/permits/4675322",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "Reserve in advance via Recreation.gov (60% of permits reservable online) or obtain a walk-up permit (40% held back) at the Marblemount Wilderness Information Center.",
+     "replace": "Trail camps and the Tapto Lakes zone can be reserved in advance via Recreation.gov or taken walk-up; the cross-country zone the high camp sits in is walk-up only, obtained in person at the Marblemount Wilderness Information Center.",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Whether the overnight permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "replace": "The high camp's cross-country zone is walk-up only, in person at the Marblemount Wilderness Information Center; trail-camp and Tapto Lakes nights can also be reserved on Recreation.gov.",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Whether the overnight permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(trail camps and the Tapto Lakes zone can be reserved on Recreation.gov; the high camp's cross-country zone is walk-up only at the Marblemount Wilderness Information Center)",
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Whether the overnight permit can be reserved"
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Whole-outing gain, loss and distance vs the itinerary",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "gain_ft 1916 and loss_ft 1000 cannot be car-to-car totals for a 5-day, ~44 mi trip whose itinerary sums to 8,400 ft of gain; dist_km 51.5 (~32 mi) renders as 'Approach (one way)' but the approach text calls it the Big Beaver round trip, while the Hannegan approach is ~16-17 mi one way. No source states a car-to-car gain/loss for this route alone (a 9-day multi-peak Whatcom Pass trip logged 54 mi and 18,600 ft), so per the rules nothing is changed. Settled by a single-objective Phantom trip log with totals.",
+   "sources": [
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/",
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "fact": "Pitch at which the tower rappel occurs",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The tower rappel is at the top of pitch 7, between pitches 7 and 8.",
+   "evidence": "The first-ascent account itself says the crux cleft is on pitch six, 'two pitches later' they topped a tower and rappelled ~100 ft, and pitches eight through ten followed — so the rappel falls after pitch 7. The rappels field and the beta's 'pitches 8-10' agree; only the beta's loose 'two pitches later' reads as pitch 8, so it is made explicit.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216005"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Two pitches later the ridge tops out on a tower",
+     "replace": "At the top of pitch 7 the ridge tops out on a tower",
+     "id": "wa_phantom_peak_west_ridge",
+     "fact": "Pitch at which the tower rappel occurs"
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "fact": "Whether the overnight permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "The cross-country zones this route camps in (Easy Ridge, Perfect Pass, Challenger/Crooked Thumb) are walk-up only.",
+   "evidence": "The park's cross-country zone page limits advance reservations to Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes and lists Perfect Pass and Challenger as walk-up only; the Recreation.gov permit page independently says all non-high-use cross-country zones need a walk-up permit. overnight_permit.where is the outlier and is corrected.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.recreation.gov/permits/4675322"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "replace": "Walk-up only: the cross-country zones this route camps in cannot be reserved on Recreation.gov, so get the permit in person at the Marblemount Wilderness Information Center.",
+     "id": "wa_phantom_peak_west_ridge",
+     "fact": "Whether the overnight permit can be reserved"
+    }
+   ]
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Summit waypoint distance",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Unknown (null); the summit is roughly 19-20 mi from the trailhead, not 0.",
+   "evidence": "dist_km (61.15 km) and the itinerary (~38-40 mi round trip) put the summit far from the trailhead; a Luna Cirque loop from the same trailhead logged about 40.5 mi. No source gives the summit pin's own trail distance, so per the rules it is set to unknown rather than computed.",
+   "sources": [
+    "https://trailcatjim.com/luna-cirque-loop-via-access-creek-luna-pass-wiley-ridge-2024/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 0,
+     "value": null,
+     "id": "wa_luna_glacier",
+     "fact": "Summit waypoint distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Whether the overnight permit can be reserved",
+   "verdict": "fixed",
+   "correct_value": "Luna Camp (a trail camp) is reservable; the Luna cross-country zone camps in the cirque are walk-up only.",
+   "evidence": "The park's cross-country zone page lists Luna as a walk-up-only zone (6 parties/night) and limits reservations to six other zones; the Recreation.gov permit page independently says only high-use cross-country zones can be reserved. overnight_permit.where and the permit column are narrowed so the reservable option applies only to the trail camp.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://www.recreation.gov/permits/4675322"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center.",
+     "replace": "Luna Camp on the trail can be reserved on Recreation.gov or taken walk-up; the Luna cross-country zone camps in the cirque are walk-up only, in person at the Marblemount Wilderness Information Center.",
+     "id": "wa_luna_glacier",
+     "fact": "Whether the overnight permit can be reserved"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(Luna Camp on the trail can be reserved on Recreation.gov; the cross-country camps in Luna Cirque are walk-up only at the Marblemount Wilderness Information Center)",
+     "id": "wa_luna_glacier",
+     "fact": "Whether the overnight permit can be reserved"
+    }
+   ]
+  }
+ ]
+}
