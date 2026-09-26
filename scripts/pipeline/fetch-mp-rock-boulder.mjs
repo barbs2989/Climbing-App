@@ -6,10 +6,10 @@
 // POLITENESS IS NOT OPTIONAL: robots.txt asks `Crawl-delay: 60`, so requests are spaced 61 s apart,
 // one at a time, and nothing under a disallowed path is requested.
 //
-// The export stops at 1,000 rows. A query that comes back at the cap is split in half by grade code
-// range and re-asked. A SINGLE grade code still at the cap (California has more than 1,000 5.10a
-// routes) is then split by SUB-AREA: the area page's left-nav lists its children, and the same
-// grade is re-asked for each child, recursing further down if a child is still full.
+// The export stops at 1,000 rows. A query that comes back at the cap is split by SUB-AREA: the area
+// page's left-nav lists its children, and each child is asked for the same range, recursing further
+// down while a child is still full. Only a bottom-level area still at the cap is split in half by
+// grade code. (Grade-first cost California over 1,000 requests: one grade alone is over the cap.)
 //
 // ONLY FACTS are fetched — name, location path, grade, route type, pitches, length, coordinates. No
 // description prose. Every response is cached under catalog/_mp/ (gitignored); a re-run resumes
@@ -90,16 +90,22 @@ async function slice(state, areaId, sub, type, lo, hi, log) {
   }
   const rows = rowsOf(body);
   if (rows < 1000) return rows;
+  // SUB-AREAS FIRST: most of a big state's sub-areas come back whole in one request. Splitting by
+  // grade first cost California more than 1,000 requests — a single grade (5.10a) is over the cap
+  // there, so EVERY grade was then re-asked of EVERY sub-area.
+  const kids = await children(areaId);
+  if (kids.length) {
+    let n = 0;
+    for (const k of kids) n += await slice(state, k, true, type, lo, hi, log);
+    return n;
+  }
+  // A bottom-level area still over the cap: split by grade.
   if (hi - lo > 1) {
     const mid = Math.floor((lo + hi) / 2);
     return (await slice(state, areaId, sub, type, lo, mid, log)) + (await slice(state, areaId, sub, type, mid + 1, hi, log));
   }
-  // One or two grade codes and still full: ask each sub-area for the same range.
-  const kids = await children(areaId);
-  if (!kids.length) { log.push(`${state} ${type} ${lo}-${hi} area ${areaId}: at the 1,000 cap with no sub-areas`); return rows; }
-  let n = 0;
-  for (const k of kids) n += await slice(state, k, true, type, lo, hi, log);
-  return n;
+  log.push(`${state} ${type} ${lo}-${hi} area ${areaId}: at the 1,000 cap with no sub-areas`);
+  return rows;
 }
 
 const ids = await stateIds();

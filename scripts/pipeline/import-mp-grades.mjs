@@ -243,7 +243,7 @@ async function runState(st) {
     if (!m) continue;
     if (readFileSync(DIR + "/" + f, "utf8").split("\n").filter(l => l.trim()).length - 1 < 1000) continue;
     const [, s, t, lo, hi, sub] = m, L = +lo, Hh = +hi, mid = Math.floor((L + Hh) / 2);
-    const done = Hh - L > 1 ? has.has(`${s}_${t}_${L}_${mid}${sub}.csv`) && has.has(`${s}_${t}_${mid + 1}_${Hh}${sub}.csv`) : files.some(g => g.startsWith(`${s}_${t}_${L}_${Hh}_a`) && g !== f);
+    const done = (Hh - L > 1 && has.has(`${s}_${t}_${L}_${mid}${sub}.csv`) && has.has(`${s}_${t}_${mid + 1}_${Hh}${sub}.csv`)) || files.some(g => g.startsWith(`${s}_${t}_${L}_${Hh}_a`) && g !== f);
     if (!done) { console.log(`${st.name}: crawl not finished (${f} is at the cap and not yet split) — skipped`); return {}; }
   }
   const planned = [], splits = new Map();
