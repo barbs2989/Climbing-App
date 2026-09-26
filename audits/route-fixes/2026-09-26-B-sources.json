@@ -1,0 +1,280 @@
+[
+ {
+  "id": "wa_vesper_peak_north_face_ragged_edge",
+  "why": "Dated one-off rockfall event replaced with a general rockfall hazard",
+  "set": {
+   "hazards": {
+    "from": [
+     "Loose rock on pitch 4's stacked blocks",
+     "Documented rockfall event in September 2024",
+     "Steep, exposed snow traverse on the approach ledges in early season (June)",
+     "High exposure along the summit arête pitch"
+    ],
+    "to": [
+     "Loose rock on pitch 4's stacked blocks",
+     "Rockfall has occurred on the face; expect loose blocks",
+     "Steep, exposed snow traverse on the approach ledges in early season (June)",
+     "High exposure along the summit arête pitch"
+    ]
+   }
+  }
+ },
+ {
+  "id": "wa_baring_mountain_oatmeal_man",
+  "why": "Stale Jan 2026 washout closure removed: USFS cleared FR 6024 to the trailhead by April 10, 2026",
+  "set": {
+   "access.closures": {
+    "from": "Barclay Creek Road (FS 6024) had a significant washout reported roughly 2 miles before the trailhead in January 2026; verify current road status before driving in.",
+    "to": null
+   }
+  }
+ },
+ {
+  "id": "wa_big_snagtooth_west_ridge",
+  "why": "Year-specific 'as in 2026' and source-shaped 'often cited' dropped from seasonal prose",
+  "set": {
+   "best_season": {
+    "from": "Spring into early summer (roughly once SR-20 opens for the season through June) is often cited as the best window, since residual snow in the upper basin firms up the loose ground and eases travel; by mid-to-late summer the route becomes a loose scree ('kitty litter') and talus slog with more exposed rock. The peak is effectively inaccessible in winter, since SR-20 is gated and closed for the season (typically closed by early December, reopening in spring on a variable date — as late as mid/late June in years with major storm/rockslide damage, as in 2026).",
+    "to": "Spring into early summer (roughly once SR-20 opens for the season through June) is the best window, since residual snow in the upper basin firms up the loose ground and eases travel; by mid-to-late summer the route becomes a loose scree ('kitty litter') and talus slog with more exposed rock. The peak is effectively inaccessible in winter, since SR-20 is gated and closed for the season (typically closed by early December, reopening in spring on a variable date — as late as mid/late June in years with major storm/rockslide damage)."
+   }
+  }
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "why": "'Presently closed' dropped from seasonal prose; closure restated as a dated fact without citing the NPS page",
+  "set": {
+   "best_season": {
+    "from": "Both ends of the calendar have been used. The first ascent was in July, so the line goes as a summer rock-and-snow route; the only recorded winter ascent was 13 March 2005. Late winter through early spring is the more attractive window: the couloir is filled and frozen, the lower rock band takes hooks, thin ice and turf instead of being bare compact slab, the bergschrund is filled in, and the slide alder on the approach has no foliage. Against that, the snowpack must be settled — the whole route sits under the summit cornices — and the Stetattle Creek ford is unpleasant in any month. Consult the NWAC West Slopes North forecast before committing. Note that the approach trail is presently closed by fire damage regardless of season.",
+    "to": "Both ends of the calendar have been used. The first ascent was in July, so the line goes as a summer rock-and-snow route; the only recorded winter ascent was 13 March 2005. Late winter through early spring is the more attractive window: the couloir is filled and frozen, the lower rock band takes hooks, thin ice and turf instead of being bare compact slab, the bergschrund is filled in, and the slide alder on the approach has no foliage. Against that, the snowpack must be settled — the whole route sits under the summit cornices — and the Stetattle Creek ford is unpleasant in any month. Consult the NWAC West Slopes North forecast before committing."
+   },
+   "access.closures": {
+    "from": "NPS North Cascades fire closures page, last updated August 28, 2026: 'Stetattle Creek Trail' is closed under long-term post-fire hazard closures ('hazards from falling dead trees and other ground hazards resulting from wildfires').",
+    "to": "As of late August 2026, the Stetattle Creek Trail is closed under a long-term post-fire hazard closure (falling dead trees and other ground hazards); check the current closure before a trip."
+   }
+  }
+ },
+ {
+  "id": "wa_fortress_mountain_east_ridge",
+  "why": "Dated road-closure item removed from hazards; access.closures already carries the FR 6200 order with its dates",
+  "set": {
+   "hazards": {
+    "from": [
+     "Loose rock in the gully gaining the East Ridge from the Chiwawa-Fortress col.",
+     "Exposed, unroped 4th-class climbing on the final summit pitch.",
+     "Cold, thigh-to-knee-deep river fords crossing the Chiwawa River drainage on the approach.",
+     "Same FR 6200 road-closure access issue as the Southwest Face route (extra ~7 miles of road-walking each way since 2026)."
+    ],
+    "to": [
+     "Loose rock in the gully gaining the East Ridge from the Chiwawa-Fortress col.",
+     "Exposed, unroped 4th-class climbing on the final summit pitch.",
+     "Cold, thigh-to-knee-deep river fords crossing the Chiwawa River drainage on the approach."
+    ]
+   }
+  }
+ },
+ {
+  "id": "wa_fortress_mountain_southwest_face",
+  "why": "Dated road-closure item removed from hazards; access.closures already carries the FR 6200 order with its dates",
+  "set": {
+   "hazards": {
+    "from": [
+     "Rockfall from loose talus and scree on the southwest face gully, especially with other climbers above.",
+     "Steep snow slopes on the approach into early summer requiring ice axe self-arrest skills.",
+     "River/creek crossings and brushy, sometimes-indistinct trail sections lower on the approach.",
+     "A long additional road-walk (~7 miles each way) to reach Trinity Trailhead due to a 2026 storm-damage closure of FR 6200 beyond Atkinson Flat Campground."
+    ],
+    "to": [
+     "Rockfall from loose talus and scree on the southwest face gully, especially with other climbers above.",
+     "Steep snow slopes on the approach into early summer requiring ice axe self-arrest skills.",
+     "River/creek crossings and brushy, sometimes-indistinct trail sections lower on the approach."
+    ]
+   }
+  }
+ },
+ {
+  "id": "wa_full_tilt_tempest_wall_free_version",
+  "why": "2026-specific lottery dates replaced with the recurring annual timing",
+  "set": {
+   "access.notes": {
+    "from": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "to": "The advance lottery opens each February on Recreation.gov, with results in March. ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery."
+   }
+  }
+ },
+ {
+  "id": "wa_rikki_tikki_tavi",
+  "why": "2026-specific lottery dates replaced with the recurring annual timing",
+  "set": {
+   "access.notes": {
+    "from": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "to": "The advance lottery opens each February on Recreation.gov, with results in March. ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery."
+   }
+  }
+ },
+ {
+  "id": "wa_garfield_mountain_infinite_bliss",
+  "why": "Source ('per a first-hand account') removed; prose now agrees with the Jun-Sep season and month calendar",
+  "set": {
+   "best_season": {
+    "from": "Jul-Aug per a first-hand account of the route",
+    "to": "July and August are the most reliable months, when the low slabs are driest and daylight covers all 23 pitches and the descent; June and September go well in a dry spell."
+   }
+  }
+ },
+ {
+  "id": "wa_garfield_mountain_south_route",
+  "why": "Dated 2001 anecdote and its quotation replaced with the hazard itself",
+  "set": {
+   "hazards": {
+    "from": [
+     "Extremely loose rock, especially on the west side of #2 Gully. In 2001 a climber was struck and briefly pinned by a roughly 500-pound block that rolled out of the dirt near the base of the gully as he weighted it — he called it his closest call in the mountains and noted a broken leg up there could have meant a multi-day rescue.",
+     "Rockfall generated by your own party on the descent is the norm, not the exception; keep parties tight and helmets on.",
+     "Benightment is close to standard: twelve hours is an absolute minimum and documented ascents run past 11 p.m.",
+     "No reliable water above roughly 2,100 ft.",
+     "Wet conditions make the gully's mix of sand and polished rock unjustifiably dangerous."
+    ],
+    "to": [
+     "Extremely loose rock, especially on the west side of #2 Gully. Blocks, some of several hundred pounds, can roll out of the dirt at the base of the gully when weighted, and a broken leg up there can mean a multi-day rescue.",
+     "Rockfall generated by your own party on the descent is the norm, not the exception; keep parties tight and helmets on.",
+     "Benightment is close to standard: twelve hours is an absolute minimum and documented ascents run past 11 p.m.",
+     "No reliable water above roughly 2,100 ft.",
+     "Wet conditions make the gully's mix of sand and polished rock unjustifiably dangerous."
+    ]
+   }
+  }
+ },
+ {
+  "id": "wa_gilbert_peak_conrad_glacier",
+  "why": "Club rating and its quotation removed; replaced with the month window the calendar supports",
+  "set": {
+   "best_season": {
+    "from": "Mazamas rates it 'B' difficulty in summer and fall and 'Not Allowed' in spring/winter; late-season ascents may find reduced snowfield steepness on the upper section.",
+    "to": "July to early August is the best window, while snow still smooths the glacier and upper snowfield and the Conrad Meadows approach has melted out; late-season ascents find bare ice and open crevasses but reduced snowfield steepness on the upper section."
+   }
+  }
+ },
+ {
+  "id": "wa_icy_peak_ruth_icy_traverse",
+  "why": "Dated trip-report citation and quotation removed",
+  "set": {
+   "best_season": {
+    "from": "Best attempted early-to-mid summer while the Ruth and Icy Glaciers still hold consolidated snow cover; a later-season (2015) trip report found 'both Ruth and Icy glacier ... down to bare ice,' making the crossings harder and more exposed.",
+    "to": "Best attempted early-to-mid summer while the Ruth and Icy Glaciers still hold consolidated snow cover; by late season both glaciers can be down to bare ice, which makes the crossings harder and more exposed."
+   }
+  }
+ },
+ {
+  "id": "wa_inner_constance_northwest_buttress",
+  "why": "Source-shaped wording ('beta on record') removed",
+  "set": {
+   "best_season": {
+    "from": "Mid-July through mid-September is the realistic window. Earlier and the long Constance Pass approach still holds snow and the buttress ledges are iced or verglassed; later and autumn Pacific fronts return, which on this range means days of low cloud that make route-finding on the face impractical. The most stable spell is usually late July into August, when the Pacific high suppresses precipitation over the Olympics. Even then, plan around cloud rather than around rain — the most useful piece of beta on record is that cloud cover, as always in the Olympics, makes viewing the route very difficult.",
+    "to": "Mid-July through mid-September is the realistic window. Earlier and the long Constance Pass approach still holds snow and the buttress ledges are iced or verglassed; later and autumn Pacific fronts return, which on this range means days of low cloud that make route-finding on the face impractical. The most stable spell is usually late July into August, when the Pacific high suppresses precipitation over the Olympics. Even then, plan around cloud rather than around rain — cloud cover, as always in the Olympics, makes viewing the route very difficult."
+   }
+  }
+ },
+ {
+  "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+  "why": "Dated April 2025 closure removed from seasonal prose; access.closures carries it",
+  "set": {
+   "best_season": {
+    "from": "Late spring to early summer (roughly June through early July), while snow and ice still cover the crux chimney and the approach glaciers remain well-bridged; with no road access to Mowich Lake since the April 2025 bridge closure, the White River approach is the practical way in.",
+    "to": "Late spring to early summer (roughly June through early July), while snow and ice still cover the crux chimney and the approach glaciers remain well-bridged; while the road to Mowich Lake is closed (see access), the White River approach is the practical way in."
+   }
+  }
+ },
+ {
+  "id": "wa_lichtenberg_mountain_west_face",
+  "why": "Record/listing citations and the probable listing date removed; ascent party kept as a credit",
+  "set": {
+   "beta": {
+    "from": "A January 2002 ascent recorded as 'Lichtenberg Mountain West Face 5.9+' was made by James Nakagami, climbing with Dan 'Danimal' Capellini and a third partner. The wall sits just above Lake Valhalla; the approach is a short walk from the Smithbrook trailhead of about an hour, and it is an easier walk in than Snow Creek Wall — the implicit pitch for the crag. A 'grand west face' is separately listed as one of the mountain's three distinct routes, and a party is on record as having been turned around by the sheer wall before eventually reaching the summit by an easier line, which corroborates that this is genuine roped terrain rather than a scramble. Beyond the grade, the location and the approach, the beta is thin: no topo, pitch count, rack list or descent description is available. Anyone going should expect to do their own reconnaissance from Lake Valhalla, and plan for a full trad rack and a walk-off.",
+    "to": "James Nakagami climbed the West Face at 5.9+ with Dan 'Danimal' Capellini and a third partner. The wall sits just above Lake Valhalla; the approach is a short walk from the Smithbrook trailhead of about an hour, and it is an easier walk in than Snow Creek Wall. A grand west face is one of the mountain's three distinct routes, and one party was turned around by the sheer wall before reaching the summit by an easier line, which confirms that this is genuine roped terrain rather than a scramble. Beyond the grade, the location and the approach, the beta is thin: no topo, pitch count, rack list or descent description is available. Anyone going should expect to do their own reconnaissance from Lake Valhalla, and plan for a full trad rack and a walk-off."
+   }
+  }
+ },
+ {
+  "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+  "why": "Year-specific 2019 party replaced with the general winter expectation",
+  "set": {
+   "best_season": {
+    "from": "Documented as a January ski-mountaineering ascent as well as a standard-route summer scramble; outside of roughly June-October, expect a long unplowed-road approach (the 2019 winter party skied 8 miles of unplowed road plus 4 more miles of trail-breaking just to reach the trailhead area).",
+    "to": "Documented as a January ski-mountaineering ascent as well as a standard-route summer scramble; outside of roughly June-October, expect a long unplowed-road approach — in winter, about 8 miles of unplowed road plus more trail-breaking to reach the trailhead."
+   }
+  }
+ },
+ {
+  "id": "wa_se_ridge_aka_shield_wall",
+  "why": "Expired Bear Gulch Fire closure removed (FS-24 and Staircase reopened July 8, 2026); only access._raw.seasonal_closures changes",
+  "set": {
+   "access._raw": {
+    "from": {
+     "permit_type": "Day hike: no permit required. Overnight in park: wilderness permit required. Forest side camping: no permit needed",
+     "land_manager": "Olympic National Forest (Hood Canal Ranger District) — Mount Skokomish Wilderness",
+     "cost_structure": "Day hike: free. Overnight camping: $6 reservation fee + $8 per person per night (adults 16+); youth 15 and under free",
+     "special_hazards": "Alpine weather, potential closures due to fire impacts, snow at higher elevations, bear country",
+     "wilderness_zone": "Mount Skokomish Wilderness, Olympic National Forest",
+     "group_size_limits": "Not specified in sources; recommend contacting park",
+     "seasonal_closures": "Staircase and adjacent wilderness areas closed due to Bear Gulch Fire impacts; high country areas seasonally restricted by snow",
+     "permit_pickup_hours": "Port Angeles: 9:00 AM - 5:00 PM daily (closed Thanksgiving and Christmas); Quinault: 9:00 AM - 5:00 PM Thursday-Monday",
+     "altitude_restrictions": "Mount Washington summit 6,260 feet; no maintained trail to the true summit — standard route is a Class 3-4 scramble",
+     "parking_pass_required": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking",
+     "permit_pickup_location": "Port Angeles Visitor Center (year-round) or Quinault Ranger Station (seasonal: Memorial Day - end of September)"
+    },
+    "to": {
+     "permit_type": "Day hike: no permit required. Overnight in park: wilderness permit required. Forest side camping: no permit needed",
+     "land_manager": "Olympic National Forest (Hood Canal Ranger District) — Mount Skokomish Wilderness",
+     "cost_structure": "Day hike: free. Overnight camping: $6 reservation fee + $8 per person per night (adults 16+); youth 15 and under free",
+     "special_hazards": "Alpine weather, potential closures due to fire impacts, snow at higher elevations, bear country",
+     "wilderness_zone": "Mount Skokomish Wilderness, Olympic National Forest",
+     "group_size_limits": "Not specified in sources; recommend contacting park",
+     "seasonal_closures": "High country areas seasonally restricted by snow",
+     "permit_pickup_hours": "Port Angeles: 9:00 AM - 5:00 PM daily (closed Thanksgiving and Christmas); Quinault: 9:00 AM - 5:00 PM Thursday-Monday",
+     "altitude_restrictions": "Mount Washington summit 6,260 feet; no maintained trail to the true summit — standard route is a Class 3-4 scramble",
+     "parking_pass_required": "Northwest Forest Pass ($5 day / $30 annual) required for Mount Washington trailhead parking",
+     "permit_pickup_location": "Port Angeles Visitor Center (year-round) or Quinault Ranger Station (seasonal: Memorial Day - end of September)"
+    }
+   }
+  }
+ },
+ {
+  "id": "wa_east_slope",
+  "why": "Dated 2012 attempt and its quotation removed; the conditions it describes kept",
+  "set": {
+   "best_season": {
+    "from": "Mid-July through August is the sweet spot: enough of the Borealis Glacier's snowpack remains to bridge crevasses solidly, but the approach trail is snow-free. By late September the glacier is largely bare and thin — a Sept. 2012 attempt found the standard east ridge 'nothing more than a walk' unavailable due to conditions at Lucky Pass, with bullet ice and loose rock instead.",
+    "to": "Mid-July through August is the sweet spot: enough of the Borealis Glacier's snowpack remains to bridge crevasses solidly, but the approach trail is snow-free. By late September the glacier is largely bare and thin, and conditions at Lucky Pass can turn the normally easy east ridge into bullet ice and loose rock."
+   }
+  }
+ },
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "why": "Trip-report sourcing and dated July 2010 ascent removed; closing window aligned with the calendar (Aug-Sep optimal, Oct marginal)",
+  "set": {
+   "best_season": {
+    "from": "Trip reports favor mid-to-late summer through fall. An early-July ascent (July 2010) found lingering snow and a 'frigid summit,' so early season can still be wintry at this elevation. Multiple trip reports specifically recommend visiting around larch season (roughly late September) for more stable weather, drier talus, and better scenery; plan for the route to be most straightforward roughly August through October.",
+    "to": "Mid-to-late summer through early fall is the favored window. Early July can still hold lingering snow and a frigid summit, so early season can be wintry at this elevation. Late September (larch season) often brings more stable weather, drier talus and better scenery; plan for the route to be most straightforward roughly August through September."
+   }
+  }
+ },
+ {
+  "id": "wa_little_sister_north_face",
+  "why": "'Per on-the-ground trip reports' removed",
+  "set": {
+   "best_season": {
+    "from": "Late August/early September gives the driest moat crossing and best rock conditions per on-the-ground trip reports; earlier in the season the moat can be harder or more hazardous to cross.",
+    "to": "Late August/early September gives the driest moat crossing and best rock conditions; earlier in the season the moat can be harder or more hazardous to cross."
+   }
+  }
+ },
+ {
+  "id": "wa_mount_howard_south_slope",
+  "why": "'Trip reports' as a source removed",
+  "set": {
+   "best_season": {
+    "from": "Most commonly climbed as a dry-season scramble from July through September, when the route is mostly snow-free talus and trail. It is also a popular spring snow climb in late April through May/early June, when consolidated snow fills the approach gullies and col, allowing efficient booting/step-kicking (crampons and ice axe recommended, especially for a firm-snow descent); trip reports from this window note 12-18 inches of soft snow over a firm base and cornice/slough hazard near the Rock Mountain col.",
+    "to": "Most commonly climbed as a dry-season scramble from July through September, when the route is mostly snow-free talus and trail. It is also a popular spring snow climb in late April through May/early June, when consolidated snow fills the approach gullies and col, allowing efficient booting/step-kicking (crampons and ice axe recommended, especially for a firm-snow descent); in this window expect up to 12-18 inches of soft snow over a firm base and cornice/slough hazard near the Rock Mountain col."
+   }
+  }
+ }
+]
