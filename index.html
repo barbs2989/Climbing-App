@@ -30,6 +30,21 @@
     <!-- Matches the app banner (C.surface), not the page background, so the Android
          status bar reads as an extension of the banner sitting directly below it. -->
     <meta name="theme-color" content="#161b22" />
+    <!-- What a shared link shows. A ?route= or ?list= link pasted into Messages, Slack or a
+         social app used to preview as a bare "ClimbMatch" with no text and no image, because
+         the page carried no description at all. og:image and og:url are ABSOLUTE on purpose:
+         link scrapers do not resolve a relative path, so %BASE_URL% would not do here. Like the
+         manifest's paths, these are tied to the Pages address in vite.config.js's `base`. -->
+    <meta name="description" content="Find climbing partners, plan your objectives and check route conditions before you go." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ClimbMatch" />
+    <meta property="og:title" content="ClimbMatch" />
+    <meta property="og:description" content="Find climbing partners, plan your objectives and check route conditions before you go." />
+    <meta property="og:url" content="https://barbs2989.github.io/Climbing-App/" />
+    <meta property="og:image" content="https://barbs2989.github.io/Climbing-App/icon-512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta name="twitter:card" content="summary" />
     <style>
       /* Mobile baseline */
       html { -webkit-text-size-adjust: 100%; }
