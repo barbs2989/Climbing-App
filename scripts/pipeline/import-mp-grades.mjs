@@ -1,6 +1,6 @@
-// import-mp-grades.mjs — bring Mountain Project's ice / mixed / aid grades into the catalog, from
-// the CSV exports scripts/pipeline/fetch-mp-ice-mixed-aid.mjs cached under catalog/_mp/ (fetched
-// under the owner's licence from onX). ONLY FACTS are used: name, location path, grade, type,
+// import-mp-grades.mjs — bring Mountain Project's routes into the catalog, from the CSV exports
+// scripts/pipeline/fetch-mp-ice-mixed-aid.mjs and fetch-mp-rock-boulder.mjs cached under
+// catalog/_mp/ (fetched under the owner's licence from onX). ONLY FACTS are used: name, location path, grade, type,
 // pitches, length. No description text exists in the export and none is written.
 //
 // For each exported route:
@@ -8,8 +8,10 @@
 //      per level — the same rule import-ice-wi.mjs uses, since our areas came from OpenBeta, which
 //      came from this site. A level with zero or several same-named children refuses the route.
 //   2. MATCHED to an existing route (same area, same name): fill ice_grade / aid_grade and the
-//      per-scale numbers (0206) where they are EMPTY. An existing grade is never overwritten.
-//   3. NOT in our catalog but its area resolves: add it, discipline from the export's type.
+//      per-scale numbers (0206) where they are EMPTY. An existing grade is never overwritten, and a
+//      matched rock or boulder route is left exactly as it is.
+//   3. NOT in our catalog but its area resolves: add it, discipline from the export's type
+//      (ice / mixed / aid first, as before; then trad, sport, top rope, boulder).
 //   4. Anything else is refused and counted by reason.
 // Grade numbers come from lib/grade.js gradeNumFrom — the single parser.
 //
@@ -25,6 +27,8 @@ const APPLY = args.includes("--apply"), ALL = args.includes("--all"), SAMPLE = a
 const KEY = requireServiceKey();
 const H = { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json" };
 const DIR = "catalog/_mp";
+// The export escapes a few characters as HTML entities; a stored name must read as plain text.
+const decode = s => String(s || "").replace(/&#0?39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").trim();
 const norm = s => String(s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/&#0?39;|&apos;/g, "'").replace(/&amp;/g, "&").trim().toLowerCase();
 // Area names only: our Adirondack areas carry sorting prefixes ("D: Keene Valley and Chapel Pond",
 // "* Adirondack Ice & Mixed") that the export's location path does not.
@@ -70,10 +74,13 @@ function parseCsv(text) {
 }
 
 // The ice / mixed / aid / rock tokens inside a rating like "5.8 AI3", "WI4 M5", "5.9 A2", "Easy 5th WI3-4".
-const TOK = { wi: /\b(?:WI|AI)\d(?:[+-]|-\d)?/, m: /\bM\d+(?:[+-]|-\d+)?/, aid: /\b[AC]\d(?:[+-]|-\d)?/, yds: /\b5\.\d+[abcd]?(?:\/[abcd])?[+-]?/ };
+// "3rd" / "4th" / "Easy 5th" count as YDS only at the start of a rating, as the export writes them.
+// The V token takes "V0+", "V3-4", "VB" and "V-easy"; each is numbered by gradeNumFrom exactly as
+// the boulders already in the catalog are.
+const TOK = { wi: /\b(?:WI|AI)\d(?:[+-]|-\d)?/, m: /\bM\d+(?:[+-]|-\d+)?/, aid: /\b[AC]\d(?:[+-]|-\d)?/, yds: /\b5\.\d+[abcd]?(?:\/[abcd])?[+-]?|^(?:Easy 5th|3rd|4th)\b/, v: /\bV(?:\d+|B|-easy)(?:[+-]|-\d+)?(?![a-z])/ };
 function tokens(rating) {
   const out = {};
-  for (const [s, rx] of Object.entries(TOK)) { const m = String(rating || "").match(rx); if (m) { const n = gradeNumFrom(m[0], s); if (n != null) out[s] = { tok: m[0], num: n }; } }
+  for (const [s, rx] of Object.entries(TOK)) { const m = String(rating || "").trim().match(rx); if (m) { const n = gradeNumFrom(m[0], s); if (n != null) out[s] = { tok: m[0], num: n }; } }
   return out;
 }
 
@@ -127,24 +134,31 @@ function resolver(stateId, stateName, planned) {
   return place;
 }
 
+// A route TYPED ice / mixed / aid keeps the first import's precedence. An aid grade on a route not
+// typed Aid ("5.10 A0" on a trad line — a pendulum or a pulled bolt) no longer outranks its free
+// grade. A roped type then outranks Boulder ("TR, Boulder" is a top rope).
 function disciplineOf(type, tk) {
   const t = String(type || "");
   if (/\bIce\b/.test(t) && tk.wi) return "ice";
   if (/\bMixed\b/.test(t) && tk.m) return "mixed";
   if (/\bAid\b/.test(t) && tk.aid) return "aid";
-  if (tk.wi) return "ice"; if (tk.m) return "mixed"; if (tk.aid) return "aid";
+  if (tk.wi) return "ice"; if (tk.m) return "mixed"; if (tk.aid && !tk.yds) return "aid";
+  if (tk.yds) { if (/\bTrad\b/.test(t)) return "trad"; if (/\bSport\b/.test(t)) return "sport"; if (/\bTR\b/.test(t)) return "toprope"; }
+  if (tk.aid) return "aid";
+  if (/\bBoulder\b/.test(t) && tk.v) return "bouldering";
   return null;
 }
+const PRIMARY = { ice: () => "wi", mixed: tk => tk.yds ? "yds" : "m", aid: tk => tk.yds ? "yds" : "aid", trad: () => "yds", sport: () => "yds", toprope: () => "yds", bouldering: () => "v" };
+const TYPE_DISC = { trad: "trad", sport: "sport", tr: "toprope", boulder: "bouldering", ice: "ice", mixed: "mixed", aid: "aid", alpine: "alpine" };
 
 async function runState(st) {
   const files = readdirSync(DIR).filter(f => f.startsWith(st.id + "_") && f.endsWith(".csv"));
   if (!files.length) { console.log(`${st.name}: no export cached — run fetch-mp-ice-mixed-aid.mjs first`); return {}; }
-  // A slice that hit the cap was split; read only the leaves (a file whose range has no split below it).
+  // Every file of the state — slices, their grade splits, sub-area splits, every type — deduped by
+  // the route's URL. A slice that hit the cap is a subset of its splits, so reading it is harmless.
   const byUrl = new Map();
   for (const f of files) {
-    const [, type, lo, hi] = f.replace(/\.csv$/, "").match(/_(ice|mixed|aid)_(\d+)_(\d+)$/) || [];
-    const split = files.some(g => g !== f && g.startsWith(st.id + "_" + type + "_") && (() => { const m = g.match(/_(\d+)_(\d+)\.csv$/); return +m[1] >= +lo && +m[2] <= +hi && !(m[1] === lo && m[2] === hi); })());
-    if (split) continue;
+    if (!/_(ice|mixed|aid|rock|boulder)_\d+_\d+(?:_a\d+)?\.csv$/.test(f)) continue;
     for (const r of parseCsv(readFileSync(DIR + "/" + f, "utf8"))) if (r.URL) byUrl.set(r.URL, r);
   }
   const planned = [];
@@ -156,7 +170,7 @@ async function runState(st) {
   const rowsIn = [...byUrl.values()].map(r => ({ r, tk: tokens(r.Rating), chain: String(r.Location || "").split(" > ").map(s => s.trim()).reverse() }));
   const deferred = [];
   for (const { r, tk, chain } of rowsIn) {
-    if (!tk.wi && !tk.m && !tk.aid) { refused["no ice/mixed/aid grade"] = (refused["no ice/mixed/aid grade"] || 0) + 1; continue; }
+    if (!tk.wi && !tk.m && !tk.aid && !tk.yds && !tk.v) { refused["no grade we can read"] = (refused["no grade we can read"] || 0) + 1; continue; }
     if (norm(chain[0]) !== norm(st.name)) { refused["location outside the state"] = (refused["location outside the state"] || 0) + 1; continue; }
     const p = place(chain.slice(1), false);
     if (!p.areaId && CREATE && p.why === "area not in our catalog") { deferred.push({ r, tk, chain }); continue; }
@@ -178,8 +192,14 @@ async function runState(st) {
   const byKey = new Map(existing.map(e => [e.area_id + "|" + norm(e.name), e]));
   const taken = new Set(existing.map(e => e.id)), seenNew = new Set();
   const patches = [], inserts = [], nearDup = [];
+  // The near-duplicate test compares against one area's routes, never the state's (California's
+  // rock export is tens of thousands of rows).
+  const loose = s => norm(s).replace(/['’`]/g, "").replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+  const looseByArea = new Map();
+  for (const x of existing) (looseByArea.get(x.area_id) || looseByArea.set(x.area_id, []).get(x.area_id)).push({ xn: loose(x.name), name: x.name });
   for (const { r, tk, areaId } of cand) {
-    const e = byKey.get(areaId + "|" + norm(r.Route));
+    const name = decode(r.Route);
+    const e = byKey.get(areaId + "|" + norm(name));
     if (e) {
       const p = {};
       if (tk.wi && e.ice_grade_num == null) { p.ice_grade_num = tk.wi.num; if (!e.ice_grade) p.ice_grade = tk.wi.tok; }
@@ -189,27 +209,26 @@ async function runState(st) {
       matched.push(e.id);
       continue;
     }
-    const k = areaId + "|" + norm(r.Route);
+    const k = areaId + "|" + norm(name);
     if (seenNew.has(k)) continue; seenNew.add(k);
     // A POSSIBLE DUPLICATE IS REFUSED, NOT ADDED. Some routes in our catalog were named by hand
     // (the 14ers, the WA alpine batches), so "North Couloir" here may be our "North Couloir (Holy
     // Cross)". A name contained in, or containing, a route already on this area is left for a person.
-    const loose = s => norm(s).replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
-    const nn = loose(r.Route);
-    const near = nn.length >= 4 && existing.find(x => x.area_id === areaId && (() => { const xn = loose(x.name); return xn.length >= 4 && (xn.includes(nn) || nn.includes(xn)); })());
-    if (near) { refused["possible duplicate of an existing route"] = (refused["possible duplicate of an existing route"] || 0) + 1; if (SAMPLE) nearDup.push(r.Route + "  ~  " + near.name + "  (" + areaId + ")"); continue; }
+    const nn = loose(name);
+    const near = nn.length >= 4 && (looseByArea.get(areaId) || []).find(({ xn }) => xn.length >= 4 && (xn.includes(nn) || nn.includes(xn)));
+    if (near) { refused["possible duplicate of an existing route"] = (refused["possible duplicate of an existing route"] || 0) + 1; if (SAMPLE) nearDup.push(name + "  ~  " + near.name + "  (" + areaId + ")"); continue; }
     const disc = disciplineOf(r["Route Type"], tk);
-    if (!disc) { refused["type not ice/mixed/aid"] = (refused["type not ice/mixed/aid"] || 0) + 1; continue; }
-    const primary = disc === "ice" ? "wi" : disc === "mixed" ? (tk.yds ? "yds" : "m") : (tk.yds ? "yds" : "aid");
-    const pnum = primary === "yds" ? tk.yds.num : tk[primary].num;
-    let id = areaId + "_" + slug(r.Route), n = 2; while (taken.has(id)) id = areaId + "_" + slug(r.Route) + "_" + n++; taken.add(id);
+    if (!disc) { refused["type and grade do not agree"] = (refused["type and grade do not agree"] || 0) + 1; continue; }
+    const primary = PRIMARY[disc](tk);
+    const pnum = tk[primary].num;
+    let id = areaId + "_" + slug(name), n = 2; while (taken.has(id)) id = areaId + "_" + slug(name) + "_" + n++; taken.add(id);
     const types = String(r["Route Type"] || "").toLowerCase().split(",").map(s => s.trim());
     inserts.push({
-      id, area_id: areaId, name: r.Route, discipline: disc, grade: String(r.Rating).trim(), grade_system: primary, grade_num: pnum,
+      id, area_id: areaId, name, discipline: disc, grade: String(r.Rating).trim(), grade_system: primary, grade_num: pnum,
       ice_grade: (tk.wi || tk.m) ? (tk.wi || tk.m).tok : null, aid_grade: tk.aid ? tk.aid.tok : null,
       ice_grade_num: tk.wi ? tk.wi.num : null, mixed_grade_num: tk.m ? tk.m.num : null, aid_grade_num: tk.aid ? tk.aid.num : null,
       pitches: +r.Pitches > 0 ? +r.Pitches : 0, length_m: +r.Length > 0 ? Math.round(+r.Length / 3.28084) : null,
-      disciplines: [...new Set([disc, ...types.filter(t => ["trad", "sport", "ice", "mixed", "aid", "alpine"].includes(t))])], auto_generated: false,
+      disciplines: [...new Set([disc, ...types.map(t => TYPE_DISC[t]).filter(Boolean)])], auto_generated: false,
     });
   }
   const nRef = Object.values(refused).reduce((a, b) => a + b, 0);
@@ -256,10 +275,11 @@ async function runState(st) {
     if (!r.ok) throw new Error(`${st.name}: insert failed ${r.status} ${txt.slice(0, 300)}`);
     if (JSON.parse(txt).length !== batch.length) throw new Error(`${st.name}: insert count mismatch`);
   }
-  const ids = [...patches.map(x => x.id), ...inserts.map(x => x.id)];
+  // Each patch was read back above (return=representation, exactly one row); each insert must now
+  // exist. (A rock route has no per-scale column, so the old per-scale read-back cannot apply.)
   let back = 0;
-  for (let i = 0; i < ids.length; i += 400) back += sql(`select count(*)::int n from routes where id in (${ids.slice(i, i + 400).map(q).join(",")}) and (ice_grade_num is not null or mixed_grade_num is not null or aid_grade_num is not null)`)[0].n;
-  if (back !== ids.length) throw new Error(`${st.name}: read back ${back} of ${ids.length}`);
+  for (let i = 0; i < inserts.length; i += 400) back += sql(`select count(*)::int n from routes where id in (${inserts.slice(i, i + 400).map(x => q(x.id)).join(",")})`)[0].n;
+  if (back !== inserts.length) throw new Error(`${st.name}: read back ${back} of ${inserts.length} added`);
   console.log(`  wrote and verified ${patches.length} updated + ${inserts.length} added`);
   return { exported: byUrl.size, matched: matched.length, patched: patches.length, added: inserts.length, areas: newAreas.length, refused: nRef };
 }
