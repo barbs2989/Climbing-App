@@ -75,6 +75,8 @@ for (const res of results) {
       else if (hasCite(nv)) why = "new text cites a source";
       else if (p.column === "waypoints" && /lat|lng/.test(JSON.stringify(path))) why = "coordinates are out of scope";
       else if (p.op === "set" && !eq(at, p.expect)) why = `expect mismatch at ${p.column}${JSON.stringify(path)}`;
+      // a replacement that contains its own find string re-applies on every re-run, so refuse once it is present
+      else if (p.op === "replace_text" && typeof at === "string" && p.replace.includes(p.find) && at.includes(p.replace)) why = `already applied at ${p.column}${JSON.stringify(path)}`;
       else if (p.op === "replace_text" && (typeof at !== "string" || at.split(p.find).length !== 2)) why = `find not unique at ${p.column}${JSON.stringify(path)}`;
       if (why) { report.rejected.push({ result: res.id, id, column: p.column, why }); continue; }
       next[p.column] = setAt(cur(p.column), path, p.op === "set" ? p.value : at.replace(p.find, p.replace));
