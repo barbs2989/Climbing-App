@@ -1,4 +1,4 @@
--- 0221 — the areas where ONE climber is the top contributor, for the profile's
+-- 0222 — the areas where ONE climber is the top contributor, for the profile's
 -- "🏆 Top Contributor · <area>" badge.
 --
 -- The badge was computed in the client from the seed ROUTES demo set, matched by DISPLAY
