@@ -17,10 +17,15 @@ const args = process.argv.slice(2);
 const APPLY = args.includes("--apply");
 const [file, sub] = args.filter((a) => a !== "--apply");
 if (!file || !sub || !/^[\w-]+$/.test(sub)) { console.error("usage: apply-declared-fields.mjs <fixes.json> <audit-subdir> [--apply]"); process.exit(2); }
-const COLS = new Set(["bivy", "road", "access", "approach", "approach_logistics", "approach_variants", "waypoints", "watch_out"]);
+const COLS = new Set(["bivy", "road", "access", "approach", "approach_logistics", "approach_variants", "waypoints", "watch_out",
+  "emergency", "pro_tips", "itinerary", "hazards", "obj_haz", "beta", "bail", "overview", "timing", "climate", "best_season"]);
 const fixes = JSON.parse(fs.readFileSync(file, "utf8"));
 const key = requireServiceKey();
 const SOURCE_RE = /\b(mountain ?project|summit ?post|cascade ?climbers|nwhikers|peakbagger|wta\b|washington trails association|beckey|guide ?book|trip reports? (say|note|describe)|according to|reported by|the mountaineers)\b|\b[Pp]er (?:the )?[A-Z]/;
+// A column like pro_tips can already hold a DECIDED keep (a first-ascent credit, a book to carry), so a
+// value is refused only when it names MORE sources than the reviewed value did — an edit may not add one.
+const sources = (v) => (JSON.stringify(v ?? "").match(new RegExp(SOURCE_RE.source, "g")) || []).length;
+const addsSource = (f) => sources(f.value) > sources(f.expect);
 const canon = (v) => Array.isArray(v) ? v.map(canon) : v && typeof v === "object" ? Object.fromEntries(Object.keys(v).sort().map((k) => [k, canon(v[k])])) : v;
 const same = (a, b) => JSON.stringify(canon(a ?? null)) === JSON.stringify(canon(b ?? null));
 
@@ -39,7 +44,7 @@ for (const [id, f] of Object.entries(fixes)) {
   const why = !row ? "no such route"
     : row.area_id !== f.area_id ? `area_id is ${row.area_id}, fix was written against ${f.area_id}`
     : cols.find((c) => !same(row[c], f.fields[c].expect)) ? `${cols.find((c) => !same(row[c], f.fields[c].expect))} changed since the review`
-    : cols.find((c) => SOURCE_RE.test(JSON.stringify(f.fields[c].value ?? ""))) ? `${cols.find((c) => SOURCE_RE.test(JSON.stringify(f.fields[c].value ?? "")))} names a source`
+    : cols.find((c) => addsSource(f.fields[c])) ? `${cols.find((c) => addsSource(f.fields[c]))} adds a source name`
     : null;
   if (why) { console.log(`REFUSE ${id} — ${why}`); refused++; continue; }
   const body = Object.fromEntries(cols.filter((c) => !same(row[c], f.fields[c].value)).map((c) => [c, f.fields[c].value]));
