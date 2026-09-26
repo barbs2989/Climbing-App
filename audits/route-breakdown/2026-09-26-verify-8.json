@@ -1,0 +1,193 @@
+{
+  "wa_northwest_ridge_2": {
+    "area": "wa_boston_peak",
+    "set": {
+      "rappels": "No rappels on the ridge itself are documented, and it has no fixed stations; the way off the summit is the standard rappel line down the south side, shared with the Southeast Face route",
+      "approach": "There is no standalone approach described for this ridge. What is confirmed is that the ridge connecting Boston Peak toward Forbidden Peak passes over Sharkfin Tower (8,120+ ft), and the only known ascent reached it via a multi-day connecting traverse begun on Forbidden Peak rather than as a direct approach to Boston. For a party attempting it directly, the most logical line mirrors the standard access used for the Forbidden/Torment/Sharkfin ridge system: from the Cascade River Road pullout just past mile marker 22 (across from Johannesburg Mountain), follow the old mining road about 0.75 mile to the historic mine site, then the steep, eroded Boston Basin climbers' path — with four stream crossings — up through forest to treeline near 5,300 ft. Boston Basin proper sits at ~5,700 ft, with a low camp around 5,300 ft and a high camp around 6,400 ft. From high camp, glacier travel up the Quien Sabe/Boston Glacier basin toward the col between Sharkfin Tower and Boston would put a party at the low (northwest) end of this ridge; from there the crest itself has no published route description, so expect sustained, likely-loose 4th-class-or-harder ridge climbing with route-finding as the real crux. Treat this as a reasoned estimate from the area's standard access pattern, not confirmed beta for this specific line."
+    },
+    "review": {
+      "findings": [
+        { "claim": "rappels: '3–5 rappels on the ridge itself to get past its gendarmes, off threaded cord'", "verdict": "CONFIRMED", "evidence": "The only account of the ridge mentions rappelling and traversing only to get from Sharkfin Tower onto the ridge. On the ridge it describes a two-pitch à cheval section and about 1,000 ft of loose climbing, with no rappels, no gendarmes and no count. That clause is replaced with a plain statement that no on-ridge rappels are documented; the summit-descent clause is kept. climbing_route row 3 repeats the gendarme-rappel claim but is out of scope here and needs a separate fix.", "sources": ["http://publications.americanalpineclub.org/articles/13201214976/Boston-Basin-Boston-Marathon"] },
+        { "claim": "rappels says the summit descent is 'down the south side' while descent_text says the southeast/east face", "verdict": "REFUTED", "evidence": "The standard Southeast Face descent is about three station-to-station rappels to snow on the southeast side. Both phrasings describe the same line.", "sources": ["https://www.countryhighpoints.com/boston-peak-and-sahale-peak/", "https://stevensong.com/usa/washington/boston-peak/"] },
+        { "claim": "approach: the Sharkfin–Boston col approach reaches 'the low (southwest) end of this ridge'", "verdict": "CONFIRMED", "evidence": "Sharkfin Tower lies northwest of Boston along the rim. The Sharkfin–Boston col, where the first-ascent party joined the ridge after leaving Sharkfin, is the ridge's low northwest end. Only the direction word is changed.", "sources": ["http://publications.americanalpineclub.org/articles/13201214976/Boston-Basin-Boston-Marathon", "https://www.mountainproject.com/area/118250869/boston-peak"] }
+      ]
+    }
+  },
+  "wa_south_ridge_4": {
+    "area": "wa_main_peak",
+    "set": { "rappels": "None documented on the ridge: the knife-edge ends in a short downclimb, and the descent is the East Ridge" },
+    "review": {
+      "findings": [
+        { "claim": "rappels: 'Several rappels used to bypass gendarmes along the ridge crest'", "verdict": "CONFIRMED", "evidence": "The route description has four pitches ending in a short downclimb, then scrambling to the summit and a descent of the east ridge. It mentions no rappels and no gendarmes; the stored pitch_detail, beta and descent_text agree. The claim is unsupported and safety-relevant, so it is removed rather than replaced. Rests on one detailed source.", "sources": ["https://www.mountainproject.com/route/118250844/south-ridge"] }
+      ]
+    }
+  },
+  "wa_austera_peak": {
+    "area": "wa_austera_peak",
+    "set": { "beta": "From Eldorado camp, traverse the Inspiration Glacier to Klawatti Col, pass through the col, and follow the north ridge along the McAllister Glacier to a break at about 7,900 ft, where climbers rappel 75 ft to the Klawatti Glacier. From there, 4th and easy 5th class climbing for about 150 ft gains the sub-summit; a further short pitch (roughly 50 ft of contrived low 5th class climbing on loose rock) on the summit tower reaches the true summit." },
+    "review": {
+      "findings": [
+        { "claim": "beta calls the 50 ft summit-tower pitch 'reported as well-protected 5.5'", "verdict": "CONFIRMED", "evidence": "The well-protected 5.5 is the 75 ft climb back up from the Klawatti Glacier on the return. The summit tower is about 50 contrived feet on loose rock, graded low 5th class elsewhere. descent_text already places the 5.5 correctly.", "sources": ["https://www.mountainproject.com/route/117615075/austera-peak", "https://www.summitpost.org/austera-peak/152991", "https://www.bcadventureguides.com/trip/austera-peak-chockstone-route/"] }
+      ]
+    }
+  },
+  "wa_fortress_mountain_east_ridge": {
+    "area": "wa_fortress_mountain",
+    "set": {
+      "approach": "From Trinity Trailhead, hike the Buck Creek Trail about 1.4 mi to the Chiwawa River Trail (#1550), then follow it north along the valley, passing beneath Red Mountain; leave the trail and climb cross-country to a bench near 6,300 ft, then traverse diagonally up toward Chiwawa Mountain's east ridge, descending to the roughly 7,200 ft col between Chiwawa and Fortress (or continuing over Chiwawa's summit first). Some parties instead approach via the Red Mountain Trail and Chiwawa Basin, fording the Chiwawa River. From the col, a loose class 3-4 gully gains the crest of Fortress's East Ridge.",
+      "descent_text": "From the summit, follow the East Ridge crest back, down-climbing the chimney step partway along it, to the head of the loose gully, descending it carefully to the ~7,200 ft col. From the col, either continue on to Chiwawa Mountain (a common combined objective) or drop back to the ~6,300 ft bench and retrace the cross-country line down to the Chiwawa River Trail, then out via the Buck Creek Trail to Trinity Trailhead.",
+      "overview": "A cross-country approach via the Chiwawa River drainage to the col between Chiwawa Mountain and Fortress, then a loose gully gaining Fortress's East Ridge, followed by better-quality class 3-4 ridge scrambling, with a chimney step partway along, to the summit."
+    },
+    "review": {
+      "findings": [
+        { "claim": "approach starts 'From Trinity Trailhead, hike the Chiwawa River Trail (#1550)'", "verdict": "CONFIRMED", "evidence": "Both sources start on the Buck Creek Trail and reach the Chiwawa River Trail junction at 1.4 mi. descent_text and pitch_detail already say this.", "sources": ["https://wenatcheeoutdoors.org/2016/05/30/fortress-mountain-east-route/", "https://hike2hike.com/scrambling/fortress-and-chiwawa-mountains/"] },
+        { "claim": "approach and descent_text put the bench at ~6,580 ft", "verdict": "CONFIRMED", "evidence": "The Fortress and Chiwawa write-ups both give the camp bench at about 6,300 ft, above a 5,500 ft basin. No source gives 6,580, and the stored pitch_detail already uses 6,300. The approach also implied the trail reaches that height; the trail is left before the bench. Both pages are from one publisher.", "sources": ["https://wenatcheeoutdoors.org/2016/05/30/fortress-mountain-east-route/", "https://wenatcheeoutdoors.org/2016/05/20/chiwawa-mountain-sw-side/"] },
+        { "claim": "descent_text and overview: 'the exposed 4th-class step just below the summit'", "verdict": "CONFIRMED", "evidence": "The crux is a clean chimney through a blank block partway along the ridge, after which the ridge flattens out. A second report calls the final ridge walk to the summit easy class 2–3.", "sources": ["https://wenatcheeoutdoors.org/2016/05/30/fortress-mountain-east-route/", "https://hike2hike.com/scrambling/fortress-and-chiwawa-mountains/"] }
+      ],
+      "classification": { "grade": { "proposed": "Class 3-4", "evidence": "Described as class 3–4 terrain and as a class 3/4 scramble. Stored grade is null.", "sources": ["https://wenatcheeoutdoors.org/2016/05/30/fortress-mountain-east-route/", "https://hike2hike.com/scrambling/fortress-and-chiwawa-mountains/"] } }
+    }
+  },
+  "wa_sinister_peak_north_face": {
+    "area": "wa_sinister_peak",
+    "skip_reason": "all prose findings REFUTED — see review; grade is a classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "descent_text: parties 'often' walk off via the west ridge", "verdict": "REFUTED", "evidence": "The standard way off Sinister is the west side: a class 3 gully to a notch on the west ridge, then class 2 to the summit, reversed to the Dome/Sinister col. The Mountaineers summary also says to return to the Dome–Sinister col. The face has also been skied, which descent_text already mentions.", "sources": ["https://www.lemkeclimbs.com/sinister-peak.html", "https://www.mountaineers.org/activities/routes-places/sinister-peak", "https://turns-all-year.com/trip-reports/dome-south-couloir-sinister-north-face"] }
+      ],
+      "classification": { "grade": { "proposed": "II, 45–50° névé/ice", "evidence": "The first-ascent note gives 45° to 50° névé and ice and NCCS II. Stored grade and pitches are null.", "sources": ["http://publications.americanalpineclub.org/articles/12198053802"] } }
+    }
+  },
+  "wa_big_four_mountain_spindrift_couloir": {
+    "area": "wa_big_four_mountain",
+    "set": { "beta": "First climbed March 2, 1996 by Bart Paull and Doug Littauer in a fast, ultralight, ~9-hour push with no bivy gear. The route starts up an 'ice ribbon' on the initial slabs (thin ice at roughly 65 degrees with a short 85-degree step), continues through the main couloir's three steps of mostly moderate terrain, and hits its crux about three-quarters height: a 100-foot pitch of near-vertical ice leading to steep, often runnelled snow. The upper section mixes rotten ice, shale, and drytooling moves up to roughly 95-degree angles before summit cornices, which may require tunneling through." },
+    "review": {
+      "findings": [
+        { "claim": "beta: initial slabs are 'roughly 75-degree névé and water ice'", "verdict": "CONFIRMED", "evidence": "The first-ascent feature describes the ribbon on the slabs as half an inch to an inch thick at about 65°, steepening to 85° for about 15 ft. The 75° névé and water ice is the first couloir step, as the stored pitch_detail already says. Only the parenthetical is changed.", "sources": ["http://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades"] },
+        { "claim": "fa: the route may have been climbed before 1996", "verdict": "UNCLEAR", "evidence": "The feature lists earlier north-face climbs on other lines (a 1974 gully and a 1988 solo couloir) and presents the Spindrift as new in 1996. No confirmed earlier ascent of this line was found, so fa stays as stored.", "sources": ["http://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades"] }
+      ],
+      "classification": { "grade": { "proposed": "IV+ 5.9 WI5", "evidence": "The first-ascent feature gives IV+ 5.9 WI5 mixed; the AAJ note gives 4,000 feet, IV+ 5.9 95°. Stored '5.9' drops the commitment and ice grades. The 'IV AI4' in the original finding was not found in any source reached.", "sources": ["http://publications.americanalpineclub.org/articles/12199706000/The-Spindrift-Couloir-Scrappin-It-Up-After-Classes-in-the-Washington-Cascades", "http://publications.americanalpineclub.org/articles/12199713800/North-America-United-States-Washington-Cascades-Big-Four-Mountain-North-Face-Spindrift-Couloir"] } }
+    }
+  },
+  "wa_liberty_cap_ptarmigan_ridge_finish": {
+    "area": "wa_liberty_cap",
+    "set": {
+      "beta": "From the base glacier, Ptarmigan Ridge climbs an ice step at the bergschrund onto a roughly 1,000 ft rising traverse of 40-45° snow that turns icier in lean years, through sections of waterfall ice (WI3), to a crux rock chimney (5.6, often ice-filled to WI3) around 12,000-12,200 ft; technical climbing eases above this into snow slopes leading up to Liberty Cap. Liberty Wall's serac looms directly above parts of the route and is the primary objective hazard."
+    },
+    "review": {
+      "findings": [
+        { "claim": "beta gives the ~1,000 ft rising traverse as '50-60° alpine ice'", "verdict": "CONFIRMED", "evidence": "The route page gives 40-45° snow for about 1,000 ft up to just below large rock cliffs, then 45-55° snow to the buttress base at 11,500 ft. A trip report found about 40° snow and ice there, simul-climbed, and icier higher up. Another description gives 45-50° snow or snow/ice. None gives 50-60° as the normal angle. Only the angle clause is changed. The stored pitch_detail may carry back-filled lengthM values; that is out of scope here (pitch_detail not touched).", "sources": ["https://www.mountainproject.com/route/106846325/ptarmigan-ridge", "https://www.countryhighpoints.com/mt-rainier-via-ptarmigan-ridge/", "https://www.summitpost.org/liberty-cap-beating-2-ptarmigan-ridge/783682"] }
+      ]
+    }
+  },
+  "wa_lane_peak_r3": {
+    "area": "wa_lane_peak",
+    "set": {
+      "overview": "The steepest and narrowest of Lane Peak's three north-face couloirs, climbing sustained 40-60° snow/ice to a notch above and left of the Zipper, then rappelling into the Zipper for the summit finish.",
+      "beta": "This alpine ice/snow route ascends a north-facing couloir just left (climber's) of the Zipper, with two or three steeper sections requiring ice protection along the way, topping out on a ridge above the Zipper route. From the top, climbers typically rappel 100+ ft (double rope recommended) into the adjacent Zipper couloir, then climb the last of the Zipper and traverse to the summit.",
+      "descent_text": "From the summit, downclimb to a large tree a few feet below it and rappel from the tree unless the snow is good enough to downclimb. Then plunge-step down moderate slopes toward the Lane–Denman saddle; at the saddle, go to its far left side and descend a steep gully, then retrace the approach. The 100+ ft rappel from the ridge top into the adjacent Zipper couloir (double rope recommended; a 70m rope allows some downclimbing on moderate snow first) is part of the ascent, not the descent.",
+      "rappels": "One roughly 100+ ft rappel (double rope recommended) from the ridge top into the adjacent Zipper couloir, made on the way up; on the descent, a rappel from a tree just below the summit is used unless the snow allows downclimbing"
+    },
+    "review": {
+      "findings": [
+        { "claim": "descent_text/rappels/overview/beta present the rappel from the ridge top into the Zipper as the descent", "verdict": "CONFIRMED", "evidence": "The route description has Lover's Lane topping out on a ridge above the Zipper, rappelling into the Zipper and climbing its final ~300 ft to the summit. Its descent section is separate: downclimb from a large tree a few feet below the summit, rappelling from it unless the snow allows a downclimb, plunge-step toward the Denman–Lane saddle, then take a steep gully on the far left side of the saddle. Trip reports describe the same ascent sequence. The existing rappel facts (100+ ft, double rope, 70 m) are kept and re-labelled as part of the ascent. One trip report describes two double-rope rappels going down; that is one party's descent, so it is not added.", "sources": ["https://www.mountainproject.com/route/114089121/lovers-lane", "https://www.jeffreyjhebert.com/adventures/lovers-lane-on-lane-peak", "https://jdmartin86.github.io/articles/21/lane", "https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane"] }
+      ],
+      "classification": {
+        "grade": { "proposed": "Grade II", "evidence": "The route page gives Grade II; a published summary gives Grade II with snow and/or ice up to 60°. Stored grade is null. 60° is already in the prose.", "sources": ["https://www.mountainproject.com/route/114089121/lovers-lane", "https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane"] }
+      }
+    }
+  },
+  "wa_the_monk_west_cracks_right_crack": {
+    "area": "wa_cathedral_peak_pasayten",
+    "set": {
+      "descent_text": "No descent from the top of the second pitch is documented. If you continue to the top of The Monk, descend the northeast gully with three 75-foot rappels, each covered by a doubled 60 m rope; carry webbing and rings since the anchors are not documented as fixed. From the base, walk down the talus and slabs and follow the drainage back to Upper Cathedral Lake in 30–40 minutes.",
+      "rappels": "Three 75-ft rappels down the northeast gully if you continue to the top of The Monk; no descent from the top of the route itself is documented"
+    },
+    "review": {
+      "findings": [
+        { "claim": "descent_text opens 'Rappel the route on gear from the top of the second pitch — quickest and simplest', and rappels says 'otherwise rappel the route'", "verdict": "CONFIRMED", "evidence": "Unsupported, not disproven. The route page has no descent, anchor or rappel information, and neither does the sibling Left Crack page; no other source describes this route. A safety-relevant claim with no support (rappelling on gear, 'quickest and simplest') is softened to 'not documented'. The northeast-gully descent is kept: it matches the three 75 ft rappels on The Monk's Scabo page.", "sources": ["https://www.mountainproject.com/route/109096075/the-monk-west-cracks-right-crack", "https://www.mountainproject.com/route/109095909/the-monk-west-cracks-left-crack", "https://www.mountainproject.com/route/109096056/the-monk-scabo"] }
+      ]
+    }
+  },
+  "wa_the_monk_scabo": {
+    "area": "wa_cathedral_peak_pasayten",
+    "skip_reason": "only finding is a name-spelling question, UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "name 'Scabo' may be misspelled (source prose says 'Scarbo')", "verdict": "UNCLEAR", "evidence": "The route page's title and the area's route list say 'Scabo'; its description says 'Scarbo'. No independent source was found. The catalog's 'Scabo' matches the page title. No change proposed.", "sources": ["https://www.mountainproject.com/route/109096056/the-monk-scabo", "https://www.mountainproject.com/area/109095714/cathedral-peak"] }
+      ]
+    }
+  },
+  "wa_ne_ridge": {
+    "area": "wa_cathedral_peak_pasayten",
+    "set": {
+      "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 28 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: from Cathedral Lakes camp, follow the trail toward Cathedral Pass and climb scree/talus to the base of the peak's main South Face; SE Buttress starts on the left wall just after entering the deep gully that separates Cathedral Peak from The Monk, while NE Ridge is gained by scrambling up the grassy southeast slope from the Boundary Trail to join the ridge."
+    },
+    "review": {
+      "findings": [
+        { "claim": "approach: NE Ridge 'is gained by continuing up and around toward the ridgeline running north' (from the South Face base)", "verdict": "CONFIRMED", "evidence": "The route page's approach says to scramble up the grassy SE slope from the main (Boundary) Trail to join the ridge, which runs from The Pope toward Cathedral's summit. No source describes the stored line round from the South Face base. The stored pitch_detail already agrees with the source. Single source, so medium confidence. Only that clause is changed.", "sources": ["https://www.mountainproject.com/route/109095842/ne-ridge", "https://www.mountainproject.com/area/109095714/cathedral-peak"] },
+        { "claim": "descent_text/rappels: a short rappel is often useful to get off the summit ridge", "verdict": "REFUTED", "evidence": "The route page's descent is the regular walk-up route to the west, and it adds that a short rappel may be desirable getting off the summit ridge. The claim is sourced; 'often' is at most a slight overstatement. No change.", "sources": ["https://www.mountainproject.com/route/109095842/ne-ridge"] }
+      ]
+    }
+  },
+  "wa_concerto_in_c_for_drill_and_hammer": {
+    "area": "wa_south_face",
+    "skip_reason": "no prose finding CONFIRMED — see review; grade is a classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "descent_text: parties typically rappel to 'the Pitch 13 chain anchor' near the summit", "verdict": "UNCLEAR", "evidence": "The route description says anchors are mostly Fixe stainless two-hanger chain anchors and that the descent rappels the route, with some 60 m rappels. It names chain anchors outright at P11 and at the summit (P14); the P13 anchor is described only as an anchor on a small stance, type not stated. Not contradicted and not confirmed. No change.", "sources": ["https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer"] },
+        { "claim": "beta: crux 'Middle C' section, roughly pitches 7-10", "verdict": "UNCLEAR", "evidence": "The description puts sustained 5.8 friction on pitches 2 and 7-10, which is consistent with 'roughly pitches 7-10'. The name 'Middle C' appears in no source reached. Not disproven, so no change.", "sources": ["https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer", "https://climberkyle.com/2021/06/19/the-darrington-rodeo/"] }
+      ],
+      "classification": { "grade": { "proposed": "5.8+", "evidence": "The route page gives 5.8+ as the headline grade; stored 5.8.", "sources": ["https://www.mountainproject.com/route/118299770/concerto-in-c-for-drill-and-hammer"] } }
+    }
+  },
+  "wa_skeena26": {
+    "area": "wa_south_face",
+    "skip_reason": "all findings REFUTED — see review",
+    "review": {
+      "findings": [
+        { "claim": "stored P7 grade 5.6 conflicts with a 5.8 section at the start of P7", "verdict": "REFUTED", "evidence": "Already fixed: the live pitch_detail P7 row has no grade, and its notes say a 5.8 section starts on this pitch.", "sources": ["https://climberkyle.com/2021/06/19/the-darrington-rodeo/"] },
+        { "claim": "approach: basin roughly 2 hours from the car (one source says ~3 hours to the start)", "verdict": "REFUTED", "evidence": "A trip report reached the grassy saddle two hours from the car. The stored text is the shared Squire Creek basin approach ('roughly 2 hours'), which is a defensible figure. A longer time to the route's own start would be an addition, not a correction.", "sources": ["https://climberkyle.com/2021/06/19/the-darrington-rodeo/"] },
+        { "claim": "route tops out on a forested ledge, below the wall's summit", "verdict": "REFUTED", "evidence": "The live P12 notes already say this, and that the true summit is further up brushy scrambling. There is no conflict with the stored prose.", "sources": ["https://climberkyle.com/2021/06/19/the-darrington-rodeo/"] }
+      ]
+    }
+  },
+  "wa_prey": {
+    "area": "wa_osprey_wall",
+    "skip_reason": "no prose finding — grade is a classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "stored route grade '5.10' understates pitches that top out at 5.10c", "verdict": "CONFIRMED", "evidence": "The route page's headline is 5.10+, with P3 at 5.10c; the stored pitch table also has P5 at 5.10c. This is a classification change, so there is no prose edit. Note: the route page lists 4 pitches (5.6/5.9+/5.10c/5.9) against the stored 5, so the pitch count may need a look.", "sources": ["https://www.mountainproject.com/route/118562306/prey"] }
+      ],
+      "classification": { "grade": { "proposed": "5.10c", "evidence": "Hardest stated pitch grade is 5.10c; the route page's headline is 5.10+. Stored '5.10'.", "sources": ["https://www.mountainproject.com/route/118562306/prey"] } }
+    }
+  },
+  "wa_rise_and_fall": {
+    "area": "wa_central_wall_area",
+    "skip_reason": "findings REFUTED — stored values match the route page",
+    "review": {
+      "findings": [
+        { "claim": "a trip report gives 4 pitches at 5.12b; discipline 'trad' arguable", "verdict": "REFUTED", "evidence": "The stored 5 pitches and 5.12 match the route page, as the original finding itself notes. 'Trad' is defensible for a bolted line that needs finger-size cams. No change.", "sources": [] }
+      ]
+    }
+  },
+  "wa_and_say": {
+    "area": "wa_lookout_point",
+    "skip_reason": "no prose finding — grade is a classification proposal only",
+    "review": {
+      "findings": [
+        { "claim": "stored grade 5.11b is the P2 grade; P4 and P5 are 5.11+", "verdict": "CONFIRMED", "evidence": "The route page lists P1 5.7, P2 5.11b, P3 5.10a, P4 5.11+ and P5 5.11+, with a 5.11 headline and 5 pitches over 300 ft. The stored headline understates the two hardest pitches.", "sources": ["https://www.mountainproject.com/route/110383269/and-say"] }
+      ],
+      "classification": { "grade": { "proposed": "5.11+", "evidence": "P4 and P5 are both 5.11+ on the route page; its headline is '5.11'. Stored 5.11b.", "sources": ["https://www.mountainproject.com/route/110383269/and-say"] } }
+    }
+  },
+  "wa_steel_pulse_2": {
+    "area": "wa_lookout_point",
+    "skip_reason": "findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        { "claim": "route grade contested (5.10c vs 5.10b)", "verdict": "REFUTED", "evidence": "The route page gives a 5.10c headline and notes that an older guide gives 10c and a later one 10b. The stored 5.10c is supported. No change.", "sources": ["https://www.mountainproject.com/route/110182972/steel-pulse"] },
+        { "claim": "length_m 91 exceeds the sum of pitch lengths (100+60+100 ft = 79 m)", "verdict": "UNCLEAR", "evidence": "The route page itself states 300 ft (91 m) total alongside pitch lengths of 100, 60 and 100 ft. Stored length_m copies the stated total, and the source is internally inconsistent. No proposal.", "sources": ["https://www.mountainproject.com/route/110182972/steel-pulse"] }
+      ]
+    }
+  }
+}
