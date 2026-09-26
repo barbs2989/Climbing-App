@@ -5,7 +5,7 @@ import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
 import { useState } from "react";
 import { ActionIcon, C, DbClimbPicker, DiscBadge, Lbl, MOUNTAINS, ROUTES, SZ3, SearchSplit, ShareExportRow, catOf, gradeLabel, inArea, isReady, listShareText, listSheetHtml, printSheet, routeCompleted, shareOrCopy } from "../ClimbMatchCore.jsx";
-import { POP_BACK, POP_CLOSE } from "./popupChrome.js";
+import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
 
 export default function ListsManager({notify,listsUnavailable,objectivesUnavailable,logsUnavailable,userLists,setUserLists,logs,onOpen,crews,onFindPartners,onOpenCrew,onOpenLog,onLogClimb,crewMsgs,routeById,objDates,onSetObjDate,onCreateList,onUpdateList}){const routeGroup=function(r){var d=r.discipline;return (d==="ice"||d==="mixed")?"Ice & Mixed":(d==="alpine"||d==="mountaineering")?"Alpine & Mountaineering":d==="bouldering"?"Bouldering":(d==="scrambling"||d==="hiking")?"Other":"Crag";};const [discF,setDiscF]=useState("all");/* Names of the climbs picked in this session, so the chips can read "Gato Negro" rather
    than "wa_gato_negro". routeById cannot answer for these: it falls back to dbRouteById,
@@ -31,7 +31,7 @@ const [clNames,setClNames]=useState({});const [clOpen,setClOpen]=useState(false)
           <span style={{display:"inline-flex",alignItems:"center",gap:3,fontSize:11.5,color:C.textMuted}}><ActionIcon name="pin" size={11} color={C.textMuted}/>{cragOf(r)}</span>
         </div>
       </div>
-      <button onClick={function(e){e.stopPropagation();setUserLists(function(p){return (p||[]).map(function(l){return l.id===ul.id?Object.assign({},l,{routeIds:(l.routeIds||[]).filter(function(x){return x!==r.id;})}):l;});});if(ul._dbId&&onUpdateList)onUpdateList(ul._dbId,{routeIds:(ul.routeIds||[]).filter(function(x){return x!==r.id;})});}} title="Remove from list" aria-label={"Remove "+(r.name||"route")+" from list"} style={{flexShrink:0,width:32,height:32,borderRadius:8,border:"1px solid "+C.border,background:C.surface,color:C.textMuted,fontSize:12,fontWeight:700,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>{"✕"}</button>
+      <button onClick={function(e){e.stopPropagation();setUserLists(function(p){return (p||[]).map(function(l){return l.id===ul.id?Object.assign({},l,{routeIds:(l.routeIds||[]).filter(function(x){return x!==r.id;})}):l;});});if(ul._dbId&&onUpdateList)onUpdateList(ul._dbId,{routeIds:(ul.routeIds||[]).filter(function(x){return x!==r.id;})});}} title="Remove from list" aria-label={"Remove "+(r.name||"route")+" from list"} style={POP_REMOVE}>{"✕"}</button>
     </div>
     {(crewBtn||logBtn)?<div style={{display:"flex",gap:8,marginTop:10}}>{crewBtn}{logBtn}</div>:null}
     {/* The day you're aiming for. PartnerSearch reads it back through objDates to
