@@ -1,0 +1,483 @@
+{
+ "applied": [
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "whether a route-specific descent has been published"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "access",
+   "path": [
+    "_raw"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "access",
+   "path": [
+    "permitZone"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "which descent line to use, and whether to reverse the route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "rappels",
+   "path": [],
+   "fact": "which descent line to use, and whether to reverse the route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "rappel_detail",
+   "path": [],
+   "fact": "which descent line to use, and whether to reverse the route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "which descent line to use, and whether to reverse the route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "access",
+   "path": [
+    "_raw"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "access",
+   "path": [
+    "permitZone"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "land manager / permit system for this route"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_south_ridge",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Trailhead named for the approach / whether the trip involves camping"
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "packWeight"
+   ],
+   "fact": "Trailhead named for the approach / whether the trip involves camping"
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Trailhead named for the approach / whether the trip involves camping"
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "Trailhead named for the approach / whether the trip involves camping"
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "wilderness permit: itinerary says no permit required, permit/access say a free self-issue permit is required"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "before": {
+    "descent_text": "Descend via established rappel routes on the south/east side. Rappel anchors exist on the eastern wall below the summit area. The descent requires technical rope skills and appropriate anchor setup. Alternative descent is to downclimb the South Ridge route if conditions allow.",
+    "access": {
+     "_raw": {
+      "notes": "Alpine climbing area; exact location within North Cascades National Park Complex requires verification",
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry overnight permit",
+      "land_manager": "National Park Service - North Cascades National Park",
+      "wilderness_zone": "North Cascades National Park Complex",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "$30 per vehicle (7-day pass)",
+      "seasonal_closures": "Wilderness accessible mid-May through mid-October",
+      "permit_pickup_hours": "Daily, May 15 - October 10: 7:00-11:30am and 12:30-4:00pm",
+      "special_requirements": "Permit pickup required by 11am on start date; restrictions on motorized equipment and group size per campsite (4-12 people depending on site)",
+      "parking_pass_required": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+      "permit_pickup_location": "Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Backcountry overnight permit",
+     "closures": "CLOSED RIGHT NOW: Suiattle River Road (FR 26) is washed out and closed to vehicles at about milepost 4.5 after the December 2025 flood, under a closure order running to 1 January 2028 unless lifted sooner, so the Downey Creek Trailhead cannot be reached by car. The Downey Creek Trail itself is also closed through 31 December 2026 under a separate fire closure. Call the Darrington Ranger District, (360) 436-1155, before planning a trip.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "permitZone": "North Cascades National Park Complex",
+     "group_limit": 12,
+     "landManager": "Glacier Peak Wilderness, jointly administered by Mount Baker-Snoqualmie National Forest (Darrington Ranger District) and Okanogan-Wenatchee National Forest",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+      "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+      "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+     }
+    },
+    "emergency": {
+     "notes": "Remote location with 2+ day approach; evacuation is extremely difficult and time-consuming",
+     "county": "Chelan County",
+     "rangerStation": "North Cascades National Park / Okanogan-Wenatchee National Forest",
+     "nearestHospital": "Lake Chelan Community Hospital, 110 S Apple Blossom Dr, Chelan, WA 98816, (509) 682-3300",
+     "sheriffDispatch": "(509) 667-6851 (non-emergency); 911 for emergencies"
+    },
+    "road": {
+     "name": "Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range",
+     "status": "Mountain Loop Highway is paved to Barlow Pass; from there the Monte Cristo Road is gated to vehicles and must be walked or mountain-biked (~4 miles, flat) due to washouts, before continuing on trail into the Glacier Peak Wilderness.",
+     "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to Barlow Pass; add significant additional hike/bike time on the closed road plus trail beyond Monte Cristo. A Northwest Forest Pass is required at Barlow Pass Trailhead.",
+     "seasonalGate": "Mountain Loop Highway itself is generally open beyond winter, but the Monte Cristo Road has been vehicle-closed long-term due to washout damage."
+    }
+   }
+  },
+  {
+   "id": "wa_south_ridge",
+   "before": {
+    "descent_text": "The most common descent is via rappel anchors on the eastern wall below the summit area. Alternatively, the route can be downclimbed (care needed on the cannon hole feature). Carry two 60 m ropes — joined, they give rappels of up to a full 60 m. Per-rappel lengths on this descent are not documented, so plan on roughly a pitch each.",
+    "rappels": "3",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "Plan on roughly one pitch. First rappel down the eastern wall, retracing the route.",
+      "anchor": "eastern wall rappel anchor (bolts/gear)",
+      "lengthM": null
+     },
+     {
+      "n": 2,
+      "notes": "Caution advised near the 'cannon hole' feature if downclimbing is mixed in instead.",
+      "anchor": "eastern wall rappel anchor (bolts/gear)",
+      "lengthM": null
+     },
+     {
+      "n": 3,
+      "notes": "Final rappel reaches the base of the route.",
+      "anchor": "eastern wall rappel anchor (bolts/gear)",
+      "lengthM": null
+     }
+    ],
+    "rappel_count_note": "Route text describes established rappel anchors on the eastern wall with doubled 50m ropes recommended, but gives no rappel-by-rappel breakdown. A count of 3 is inferred from the route's 3-pitch length (rappelling the line itself); the similarly-named South Peak formation at Big Kangaroo reverses its climb in three raps on a single 60m rope. Per-rappel lengths are not documented, so none are given here — plan on roughly one pitch each.",
+    "access": {
+     "_raw": {
+      "notes": "Alpine climbing area; exact location within North Cascades National Park Complex requires verification",
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry overnight permit",
+      "land_manager": "National Park Service - North Cascades National Park",
+      "wilderness_zone": "North Cascades National Park Complex",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "$30 per vehicle (7-day pass)",
+      "seasonal_closures": "Wilderness accessible mid-May through mid-October",
+      "permit_pickup_hours": "Daily, May 15 - October 10: 7:00-11:30am and 12:30-4:00pm",
+      "special_requirements": "Permit pickup required by 11am on start date; restrictions on motorized equipment and group size per campsite (4-12 people depending on site)",
+      "parking_pass_required": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+      "permit_pickup_location": "Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Backcountry overnight permit",
+     "closures": "CLOSED RIGHT NOW: Suiattle River Road (FR 26) is washed out and closed to vehicles at about milepost 4.5 after the December 2025 flood, under a closure order running to 1 January 2028 unless lifted sooner, so the Downey Creek Trailhead cannot be reached by car. The Downey Creek Trail itself is also closed through 31 December 2026 under a separate fire closure. Call the Darrington Ranger District, (360) 436-1155, before planning a trip.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "permitZone": "North Cascades National Park Complex",
+     "group_limit": 12,
+     "landManager": "Glacier Peak Wilderness, jointly administered by Mount Baker-Snoqualmie National Forest (Darrington Ranger District) and Okanogan-Wenatchee National Forest",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+      "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+      "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+     }
+    },
+    "road": {
+     "name": "Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range",
+     "status": "Mountain Loop Highway is paved to Barlow Pass; from there the Monte Cristo Road is gated to vehicles and must be walked or mountain-biked (~4 miles, flat) due to washouts, before continuing on trail into the Glacier Peak Wilderness.",
+     "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to Barlow Pass; add significant additional hike/bike time on the closed road plus trail beyond Monte Cristo. A Northwest Forest Pass is required at Barlow Pass Trailhead.",
+     "seasonalGate": "Mountain Loop Highway itself is generally open beyond winter, but the Monte Cristo Road has been vehicle-closed long-term due to washout damage."
+    }
+   }
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Fit for a long wilderness approach (Dutch Miller Gap or Waptus basin trailheads run well over 15-20 miles round trip with substantial elevation gain before the climbing even starts)",
+      "packWeight": "Overnight/multi-day pack (bivy or backpacking gear) typical, since most parties camp in the Dutch Miller Gap or Waptus basin rather than day-tripping"
+     },
+     "approachTime": "Long — typically a full day (or more) of hiking from the Dutch Miller Gap or Waptus trailheads just to reach a basin camp, before the summit push itself",
+     "requiredSkills": [
+      "Route-finding on unmarked, slabby terrain with no cairns or established trail",
+      "Loose rock management and careful movement to avoid dislodging rock onto partners",
+      "Judgment for exposed Class 3-4 moves without a rope",
+      "Backcountry navigation (map/compass/GPS) given the remote, lightly-traveled approach",
+      "Self-sufficiency for a multi-day wilderness trip far from help"
+     ],
+     "experienceLevel": "Solid Class 3-4 scrambling experience with comfort on loose, blocky, and slabby alpine rock; prior unroped exposure on similar Cascades summits recommended"
+    },
+    "crowds": {
+     "peakTraffic": "A handful of weekends in August when the Dutch Miller Gap / Waptus approach is fully snow-free",
+     "solitudeRating": 5,
+     "estimatePerSeason": "Roughly 5-15 parties per season, likely fewer in below-average snow years"
+    },
+    "itinerary": {
+     "cal": "Vista Lakes basin and the summit basin can hold snow well into July, so most parties climb this July-September; the Pete Lake/Cooper Lake road and trailhead are standard Forest Service access with no permit required.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Pete Lake Trailhead on Cooper Lake, hike the flat Pete Lake Trail to Pete Lake (4.5 mi), then join the PCT and climb a long series of switchbacks up to the Vista Lakes tarns just off the trail. It's a long but non-technical day with a full overnight pack.",
+       "hours": 7.5,
+       "miles": 13,
+       "title": "Approach to Vista Lakes camp",
+       "gainFt": 2800,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave Pete Lake Trailhead",
+         "detail": "Cooper Lake / Salmon La Sac Rd (FR 46) access, ~2,790 ft."
+        },
+        {
+         "time": "+1.9 hr",
+         "label": "Reach Pete Lake",
+         "detail": "Flat trail along the Cooper River."
+        },
+        {
+         "time": "+6 hr",
+         "label": "Join and climb PCT switchbacks",
+         "detail": "~8.5 mi up the Pacific Crest Trail to ~5,500 ft."
+        },
+        {
+         "time": "~2:30 PM",
+         "label": "Arrive Vista Lakes camp",
+         "detail": "Upper lake has sandy/slab sites and swimmable water; ~7.5-8 hr trailhead-to-camp is typical."
+        }
+       ],
+       "objective": "Reach Vista Lakes basecamp (~5,500 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Drop from camp to 5,700 ft Summit Chief Pass, traverse above Summit Chief Lake staying below the ridge/cliffs on the west side, then climb through a high snow basin and up the Southeast Face to a notch on the south ridge. The final ~100 ft is loose Class 2-3 scrambling on untrustworthy rock. Parties describe this as harder than it looks and slower than expected — budget a full day.",
+       "hours": 11,
+       "miles": 4.5,
+       "title": "Summit push via Summit Chief Pass and Southeast Face",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave Vista Lakes camp",
+         "detail": "Light daypack; alpine start for a long, complex day."
+        },
+        {
+         "time": "~5:30 AM",
+         "label": "Summit Chief Pass (5,700 ft)",
+         "detail": "Traverse west below the ridge above Summit Chief Lake."
+        },
+        {
+         "time": "~7:30 AM",
+         "label": "Enter upper basin below the Southeast Face",
+         "detail": "Snow fingers and scree lead toward the south ridge notch."
+        },
+        {
+         "time": "~10:15 AM",
+         "label": "Summit (7,466 ft)",
+         "detail": "Roughly 5.5-6 hr camp-to-summit is typical for competent parties; register shows only a handful of ascents per year."
+        },
+        {
+         "time": "~10:45 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line — loose rock makes downclimbing the crux slow and careful."
+        },
+        {
+         "time": "~3:30 PM",
+         "label": "Back at Vista Lakes camp",
+         "detail": "~11 hr camp-to-camp round trip is typical."
+        }
+       ],
+       "objective": "Climb to the summit (7,466 ft) and return to Vista Lakes camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and reverse the approach: down the PCT switchbacks, past Pete Lake, and out along the Cooper River to the trailhead. Straightforward but long with a lighter pack.",
+       "hours": 7,
+       "miles": 13,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2800,
+       "packLb": 25,
+       "schedule": [],
+       "objective": "Return to Pete Lake Trailhead"
+      }
+     ],
+     "totalNote": "A classic 3-day/2-night backpack: roughly 26-30 miles and ~5,000 ft round trip, with one long, technical summit day from Vista Lakes camp (~11 hr camp-to-camp)."
+    }
+   }
+  }
+ ]
+}

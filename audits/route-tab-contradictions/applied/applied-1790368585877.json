@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "This route's summit/high point elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "before": {
+    "high_point_ft": 8071
+   }
+  }
+ ]
+}

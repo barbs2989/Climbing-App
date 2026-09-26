@@ -1,0 +1,554 @@
+{
+ "file": "r031.json",
+ "results": [
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Round-trip / total hiking distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Published round-trip figures for the Barclay/Tailgunner line disagree widely: two GPS trip reports give 5.44 mi and 5.5 mi (matching the row's 2.75 mi one-way waypoint), while the WTA hike stats and a detailed hiker blog give 7.5 mi, AllTrails 7.2 mi, another guide 6.5 mi and a two-day report 6 mi. No figure has clear independent agreement over the others, so the itinerary's 7.5 mi was not changed.",
+   "sources": [
+    "https://www.lucasmountainknowledge.com/post/gunn-peak-sept-2021",
+    "https://www.alpinewanderlust.com/redemption-climb-gunn-peak-scramble/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-09-04.2003204620",
+    "https://onehikeaweek.com/2016/08/05/gunn-peak/",
+    "https://besthikesbc.ca/hiking-gunn-peak-in-the-wild-sky-wilderness/",
+    "https://trailcatjim.com/gunn-peak-via-tailgunner-pass-south-face-east-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Rope length needed",
+   "verdict": "fixed",
+   "correct_value": "A 30 m rope is sufficient (optional handline / one short rappel at the hidden ramp)",
+   "evidence": "A WTA trip report says the only roped spot is the ~10 ft hidden-ramp step and that a 30 m rope was ample as a handline; a two-day trip report describes the descent as one short rappel over the hidden ramp, and another report notes a rappel station above that single step. Nothing on the route calls for a 50-60 m rope, so detailed_rack now matches rope_length_m and descent_text.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-09-04.2003204620",
+    "https://trailcatjim.com/gunn-peak-via-tailgunner-pass-south-face-east-ridge/",
+    "https://www.alpinewanderlust.com/redemption-climb-gunn-peak-scramble/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "A 50-60 meter rope is optional but recommended for groups with inexperienced members or for emergency descents.",
+     "replace": "A 30 m rope is optional but recommended for groups with inexperienced members, as a handline or for the one short rappel at the hidden ramp.",
+     "id": "wa_gunn_peak_southeast_route",
+     "fact": "Rope length needed"
+    }
+   ]
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Named route line on the face",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "'Gunn Peak via Tailgunner Pass - South Face - East Ridge' is the name a detailed trip report uses for this same standard line: it climbs the south face (hidden ramp) to the notch east of the summit and finishes along the east ridge/north-side ledges, which is what climbing_route describes; Gunn Point is a named 5,760 ft point beside Gunn Basin passed on the approach. The face label and the prose describe the same line.",
+   "sources": [
+    "https://trailcatjim.com/gunn-peak-via-tailgunner-pass-south-face-east-ridge/",
+    "https://trailcatjim.com/east-gunn-peak-gunn-point-tailgunner-peak-wing-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Total elevation gain (gain_ft/loss_ft 4,700 vs itinerary gainFt/lossFt and totalNote 4,900)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft says 4,700 while the itinerary says 4,900. Sources scatter: 4,700 (two-day trip report), 4,900 (WTA hike stats), 4,380, 4,300, 4,105 and 4,060 (other reports/guides). Net rise trailhead-to-summit is about 4,050 ft. No value has clear independent agreement, so nothing was changed.",
+   "sources": [
+    "https://trailcatjim.com/gunn-peak-via-tailgunner-pass-south-face-east-ridge/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-09-04.2003204620",
+    "https://www.alpinewanderlust.com/redemption-climb-gunn-peak-scramble/",
+    "https://www.lucasmountainknowledge.com/post/gunn-peak-sept-2021",
+    "https://besthikesbc.ca/hiking-gunn-peak-in-the-wild-sky-wilderness/",
+    "https://onehikeaweek.com/2016/08/05/gunn-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lewis_creek_route",
+   "fact": "Which approach/line this route actually follows",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources agree the 1915 first ascent went via Lewis Creek, and a USGS-named Lewis Creek lies near Index, a different drainage from Barclay Creek. But no source found gives any modern beta for a Lewis Creek line. The row's approach, descent, pitch_detail, approach_variants and waypoints all describe the Barclay Creek/Tailgunner Pass/hidden-ramp standard route, while the itinerary and timing notes call it a separate, unmarked north/west-side line. The overview calls it 'essentially the same corridor'. Deciding whether this row is a duplicate of the Southeast Route or a real separate line needs a product decision or new beta; nothing was changed.",
+   "sources": [
+    "https://www.summitpost.org/gunn-peak/151026",
+    "https://en.wikipedia.org/wiki/Gunn_Peak",
+    "https://www.mountainproject.com/area/120237182/gunn-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lewis_creek_route",
+   "fact": "Which route the 1915 first ascent followed",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The Southeast Route overview states the 1915 party and date as a fact about the peak, then begins a separate sentence describing the modern standard route; it never says the 1915 party climbed that line. This route's fa ('via Lewis Creek') fits that reading.",
+   "sources": [
+    "https://www.summitpost.org/gunn-peak/151026",
+    "https://en.wikipedia.org/wiki/Gunn_Peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blood_sport",
+   "fact": "Whether the route reaches a summit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The 'Guye Peak' waypoint is the peak's own summit, labelled with the peak's name and given no distance along the route. It works as a landmark and for the summit weather. Overview, descent_text and watch_out all say plainly that the route does not top out, which matches the route's listing (bolts, #1 Camalot, 2-bolt chain anchor, no top-out). Waypoint type/position is out of scope.",
+   "sources": [
+    "https://www.mountainproject.com/route/112214146/blood-sport"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blood_sport",
+   "fact": "Elevation gain for the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The approach is described as about half a mile and 15 minutes from the Alpental lot, whose ground elevation is about 3,127 ft (USGS 3DEP point query). But the stored crag pin sits on ground at about 4,227 ft (USGS query), which would fit the 1,200 ft gain, while the crag waypoint's own elev says 3,400. No source gives the crag's elevation, so the right gain cannot be set; the pin, the waypoint elev and gain_ft need checking against each other.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.411&y=47.442&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.4235&y=47.4454&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/route/112214146/blood-sport"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blood_sport",
+   "fact": "Land manager and required parking pass",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District); Northwest Forest Pass or America the Beautiful pass (or the $5 day-use fee)",
+   "evidence": "The Alpental/Snow Lake trailhead is on Mt. Baker-Snoqualmie National Forest, Snoqualmie Ranger District, and needs a Northwest Forest Pass or America the Beautiful pass. Guye Peak lies in the Alpine Lakes Wilderness, which that forest manages. The 'Unknown' leftovers now repeat what land_manager and parking_pass already say.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/snow-lake-1",
+    "https://www.wta.org/go-hiking/hikes/guye-peak",
+    "https://en.wikipedia.org/wiki/Guye_Peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "Unknown - specific location and land manager not identified in research",
+     "value": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+     "id": "wa_blood_sport",
+     "fact": "Land manager and required parking pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Unknown",
+     "value": "Northwest Forest Pass or America the Beautiful pass (or the $5 day-use fee)",
+     "id": "wa_blood_sport",
+     "fact": "Land manager and required parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_blood_sport",
+   "fact": "Where to park for the approach",
+   "verdict": "fixed",
+   "correct_value": "Public Alpental/Snow Lake lot or legal spots on Alpental Road; the Strasse roads are private and closed to climbers",
+   "evidence": "The Mountaineers route page says that since 2021 the Alpental Community Club has barred climbers from both driving and walking on its private roads, and that every road named 'Strasse' is private. WTA and a Mountaineers trip report both have climbers park at the public Alpental/Snow Lake lot and walk in. The approach field's Erste Strasse parking instruction is out of date and now matches access.notes and approach_variants.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+    "https://www.wta.org/go-hiking/hikes/guye-peak",
+    "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-guye-peak-west-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "park along Erste Strasse near the base chalets, taking care to respect posted no-parking signs on the private-property sections of the road",
+     "replace": "park at the Alpental ski-area lot (the Snow Lake trailhead parking) or in a legal spot along Alpental Road itself. The side roads named 'Strasse' are private, and since 2021 residents have barred climbers from driving or walking on them",
+     "id": "wa_blood_sport",
+     "fact": "Where to park for the approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_rib",
+   "fact": "Hardest/crux grade of the route",
+   "verdict": "fixed",
+   "correct_value": "Easy 5th",
+   "evidence": "The Mountain Project route page rates the South Rib Easy 5th (Trad, Alpine, 800 ft, 5 pitches, Grade II). SummitPost's Guye Peak page describes the summer South Rib as a moderate route with a pitch of 5.6. Both put the crux in fifth class, as rock_grade, rope_note and pitch 3 already say. The Mountaineers' class 3-4 rating is already noted in rock_grade.",
+   "sources": [
+    "https://www.mountainproject.com/route/120769657/south-rib",
+    "https://www.summitpost.org/guye-peak/150942"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "4th",
+     "value": "Easy 5th",
+     "id": "wa_south_rib",
+     "fact": "Hardest/crux grade of the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_rib",
+   "fact": "Land manager and required parking pass",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District); Northwest Forest Pass or America the Beautiful pass (or the $5 day-use fee)",
+   "evidence": "The Alpental/Snow Lake trailhead is on Mt. Baker-Snoqualmie National Forest, Snoqualmie Ranger District, and needs a Northwest Forest Pass or America the Beautiful pass. Guye Peak lies in the Alpine Lakes Wilderness, which that forest manages. The 'Unknown' leftovers now repeat what land_manager and parking_pass already say. (access._raw is a non-rendered provenance note and was left alone.)",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/snow-lake-1",
+    "https://www.wta.org/go-hiking/hikes/guye-peak",
+    "https://en.wikipedia.org/wiki/Guye_Peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "Unknown - specific location and land manager not identified in research",
+     "value": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+     "id": "wa_south_rib",
+     "fact": "Land manager and required parking pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Unknown",
+     "value": "Northwest Forest Pass or America the Beautiful pass (or the $5 day-use fee)",
+     "id": "wa_south_rib",
+     "fact": "Land manager and required parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_rib",
+   "fact": "Where to park for the approach",
+   "verdict": "fixed",
+   "correct_value": "Public Alpental lot or legal spots on Alpental Road; the Strasse roads are private and closed to climbers",
+   "evidence": "The Mountaineers route page says that since 2021 the Alpental Community Club has barred climbers from both driving and walking on its private roads, and that every road named 'Strasse' is private. WTA and a Mountaineers trip report both have climbers park at the public Alpental/Snow Lake lot and walk in. The approach field's Erste Strasse parking instruction is out of date and now matches access.notes and approach_variants. The South Rib variant's 'park along Alpental Road near the Sahale Ski Club' is consistent with that, since Alpental Road itself is not one of the private Strasse roads.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+    "https://www.wta.org/go-hiking/hikes/guye-peak",
+    "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-guye-peak-west-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "park along Erste Strasse near the base chalets, taking care to respect posted no-parking signs on the private-property sections of the road",
+     "replace": "park at the Alpental ski-area lot (the Snow Lake trailhead parking) or in a legal spot along Alpental Road itself. The side roads named 'Strasse' are private, and since 2021 residents have barred climbers from driving or walking on them",
+     "id": "wa_south_rib",
+     "fact": "Where to park for the approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "fact": "Which trailhead/approach this route uses",
+   "verdict": "fixed",
+   "correct_value": "Unsigned Cave Ridge/Snoqualmie Mountain climbers' path from the Snow Lake trailhead to the Cave Ridge-Guye saddle, then class 3 north to the north summit",
+   "evidence": "SummitPost's 'North Route \"Hidden Ridge\"' page describes parking at Alpental, starting up the Cave Ridge/Snoqualmie 'trail' about 100 ft south of the Snow Lake Trail, climbing to the Cave Ridge-Guye saddle and turning right to the north summit (class 3 in summer). WTA's Guye Peak entry describes the same steep climbers' trail shared with Snoqualmie Mountain and Cave Ridge (3.0 mi RT, 2,000 ft). The itinerary day and timing note had been copied from the West Face talus approach and a 'North Rib' climb, and now describe this route. Hours, miles and gain were left unchanged because they already match.",
+   "sources": [
+    "https://www.summitpost.org/north-route-hidden-ridge/899226",
+    "https://www.wta.org/go-hiking/hikes/guye-peak",
+    "https://www.mountaineers.org/activities/activities/alpine-scramble-guye-peak-north-route-cave-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "expect": "Car-to-car: talus approach, North Rib, summit",
+     "value": "Car-to-car: Cave Ridge saddle, North Route, summit",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "expect": "From the Snow Lake trailhead, approach via the non-established talus route toward Guye Peak's north side, then climb the North Rib -- moderate 3rd/4th-class rock with some low-5th-class sections -- to the summit. Descend via the standard South Rib/Cave Ridge saddle scramble/rappel route back to the trailhead.",
+     "value": "From the Snow Lake trailhead, take the climbers' path shared with Snoqualmie Mountain and Cave Ridge up to the Cave Ridge-Guye saddle, then turn north and scramble the steep class 3 gully and ridge to the north summit, optionally by the Hidden Ridge variation with its one 5.4 move and short rappel into the north-middle notch. Descend by reversing the route to the saddle and down the climbers' path.",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "expect": "Summit Guye Peak via the North Rib",
+     "value": "Summit Guye Peak via the North Route",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "expect": "Non-established talus approach avoiding the closed Alpental Community Club roads.",
+     "value": "Start up the unsigned climbers' path near the Snow Lake trail sign, shared with Snoqualmie Mountain and Cave Ridge.",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "label"
+     ],
+     "expect": "Reach base of the North Rib",
+     "value": "Reach the Cave Ridge-Guye saddle",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "expect": "Talus approach around to the peak's north side.",
+     "value": "Steep boot path past a clearing near 4,000-4,200 ft to the saddle.",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "expect": "Climb the North Rib to the summit",
+     "value": "Scramble to the north summit",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "3rd/4th-class rock with low-5th sections; roughly comparable in length to the neighboring West Face route.",
+     "value": "Turn north at the saddle and follow the steep class 3 gully and ridge; the Hidden Ridge variation adds one 5.4 move and a ~30 ft rappel.",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "label"
+     ],
+     "expect": "Descend the standard scramble/rappel route",
+     "value": "Descend the way you came",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "expect": "South Rib / Cave Ridge saddle back to the Snow Lake trailhead.",
+     "value": "Reverse the route to the Cave Ridge saddle and down the climbers' path to the Snow Lake trailhead.",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "expect": "From the Snow Lake trailhead, approach via the non-established talus route toward Guye Peak's north side, then climb the North Rib -- moderate 3rd/4th-class rock with some low-5th-\u2026",
+     "value": "From the Snow Lake trailhead, take the climbers' path shared with Snoqualmie Mountain and Cave Ridge up to the Cave Ridge-Guye saddle, then turn north and scramble the steep class 3 gully and ridge to the north summit, optionally by the Hidden Ridge variation with its one 5.4 move and short rappel into the north-middle notch. Descend by reversing the route to the saddle and down the climbers' path.",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "expect": "Car-to-car: talus approach, North Rib, summit",
+     "value": "Car-to-car: Cave Ridge saddle, North Route, summit",
+     "id": "wa_guye_peak_r2",
+     "fact": "Which trailhead/approach this route uses"
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_improbable_traverse",
+   "fact": "Current crux grade of the route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The published rating is still 5.8 (Mountain Project: Trad, Alpine, 6 pitches, Grade III, 5.8; SummitPost trip reports title it 5.8). pitch_detail and hazards frame the harder unprotected downclimb as a change in condition since the November 2021 rockfall, not as a new rating. No second source gives a revised grade, so the headline grade is the published one and the condition note sits beside it.",
+   "sources": [
+    "https://www.mountainproject.com/route/107316713/improbable-traverse",
+    "https://www.summitpost.org/guye-peak-improbable-traverse-5-8/643498"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_guye_peak_improbable_traverse",
+   "fact": "Total car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row's own itinerary adds up to at least about 8.5 hours (under an hour of approach, 5-7 hours on route, 2.5-4 hours of descent), against timing.totalHrs of 7. Searches found no two trip reports that state a car-to-car total for this route (the pages found give gain and distance but no times). The timing block cannot be reset to a sourced figure.",
+   "sources": [
+    "http://cnmtstuartclimbproject.blogspot.com/2017/11/route-guye-peak-improbable-traverse.html",
+    "https://www.mountainproject.com/route/107316713/improbable-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_gully_south_spur",
+   "fact": "Land manager and required parking pass",
+   "verdict": "fixed",
+   "correct_value": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District); Northwest Forest Pass or America the Beautiful pass (or the $5 day-use fee)",
+   "evidence": "The Alpental/Snow Lake trailhead is on Mt. Baker-Snoqualmie National Forest, Snoqualmie Ranger District, and needs a Northwest Forest Pass or America the Beautiful pass. Guye Peak lies in the Alpine Lakes Wilderness, which that forest manages. The 'Unknown' leftovers now repeat what land_manager and parking_pass already say.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/snow-lake-1",
+    "https://www.wta.org/go-hiking/hikes/guye-peak",
+    "https://en.wikipedia.org/wiki/Guye_Peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "Unknown - specific location and land manager not identified in research",
+     "value": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+     "id": "wa_south_gully_south_spur",
+     "fact": "Land manager and required parking pass"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Unknown",
+     "value": "Northwest Forest Pass or America the Beautiful pass (or the $5 day-use fee)",
+     "id": "wa_south_gully_south_spur",
+     "fact": "Land manager and required parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_gully_south_spur",
+   "fact": "Trailhead used for the primary (winter) approach",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "These are two real seasonal options, and approach_variants lists both: a winter/spring line from Summit West up Commonwealth Basin (primary, matching best_season) and a summer/autumn line from Alpental. The generic approach field describes the Alpental/summer access and also points to the Commonwealth Basin/PCT side for other aspects. The outdated Erste Strasse parking in that field is fixed separately below.",
+   "sources": [
+    "https://www.mountainproject.com/route/118581881/south-gullysouth-spur",
+    "https://www.mountaineers.org/activities/routes-places/guye-peak-s-gully-s-spur"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_gully_south_spur",
+   "fact": "Where to park for the approach (Erste Strasse vs access.notes / private-road closure)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Public Alpental lot or legal spots on Alpental Road; the Strasse roads are private and closed to climbers",
+   "evidence": "The Mountaineers route page says that since 2021 the Alpental Community Club has barred climbers from both driving and walking on its private roads, and that every road named 'Strasse' is private. WTA and a Mountaineers trip report both have climbers park at the public Alpental/Snow Lake lot and walk in. The approach field's Erste Strasse parking instruction is out of date and now matches access.notes and approach_variants.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+    "https://www.wta.org/go-hiking/hikes/guye-peak",
+    "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-guye-peak-west-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "park along Erste Strasse near the base chalets, taking care to respect posted no-parking signs on the private-property sections of the road",
+     "replace": "park at the Alpental ski-area lot (the Snow Lake trailhead parking) or in a legal spot along Alpental Road itself. The side roads named 'Strasse' are private, and since 2021 residents have barred climbers from driving or walking on them",
+     "id": "wa_south_gully_south_spur",
+     "fact": "Where to park for the approach (Erste Strasse vs access.notes / private-road closure)"
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_r1",
+   "fact": "Location, grade and structure of the route's crux",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "This row mixes two different routes. The Mountaineers' Guye Peak/West Face is the big tree-covered ramp across the face with a ~40 ft class 4-low 5th step, which is what beta and the itinerary describe. Mountain Project's Improbable Traverse (5.8, 6 pitches, Grade III, FA Hiser/Borghoff 1960) is what rock_grade, pitch_detail and this row's fa describe, and that route already has its own row (wa_guye_peak_improbable_traverse). Fixing this means deciding which route the row is and rewriting the other half, so nothing was changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/activities/basic-alpine-climb-guye-peak-west-face-96",
+    "https://www.mountainproject.com/route/107316713/improbable-traverse"
+   ],
+   "patches": []
+  }
+ ]
+}

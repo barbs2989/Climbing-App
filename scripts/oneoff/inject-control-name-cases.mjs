@@ -48,8 +48,8 @@ const CASES = [
     // looked at the button. Swapping Lbl for a component that renders NO text must therefore FAIL.
     name: "4 Lbl is what names a back button",
     file: "ClimbMatch.jsx",
-    find: 'setRouteView("areas")} style={{background:C.surface',
-    repl: 'setRouteView("areas")} data-inj="1" style={{background:C.surface',
+    find: 'setRouteView("areas")} style={POP_BACK}',
+    repl: 'setRouteView("areas")} data-inj="1" style={POP_BACK}',
     then: { find: '{<Lbl s={"\u2190 Back"}/>}</button>', repl: '{<ActionIcon name="back" size={14}/>}</button>' },
     expect: "fail",
     why: "with Lbl swapped for a text-less component the button is genuinely unnamed, so this MUST fail",

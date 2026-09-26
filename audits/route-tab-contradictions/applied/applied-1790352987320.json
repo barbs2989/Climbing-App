@@ -1,0 +1,293 @@
+{
+ "applied": [
+  {
+   "id": "wa_baring_mountain_r1",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "access.fees claims no fee, other access fields require a pass/fee"
+  },
+  {
+   "id": "wa_baring_mountain_r1",
+   "column": "turnaround",
+   "path": [],
+   "fact": "turnaround implies a rappel descent; descent fields say it's a walk-off"
+  },
+  {
+   "id": "wa_baring_mountain_south_route",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "access.fees claims no fee, other access/permit fields require a pass"
+  },
+  {
+   "id": "wa_baring_mountain_south_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "rope_note claims a 5th-class crux; grade fields cap the route at Class 3-4"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "title"
+   ],
+   "fact": "Which line the route actually climbs (West Ridge crest vs. a different 'Southeast Slopes' gully)"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Which line the route actually climbs (West Ridge crest vs. a different 'Southeast Slopes' gully)"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Which line the route actually climbs (West Ridge crest vs. a different 'Southeast Slopes' gully)"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Which line the route actually climbs (West Ridge crest vs. a different 'Southeast Slopes' gully)"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Which line the route actually climbs (West Ridge crest vs. a different 'Southeast Slopes' gully)"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "fromTo"
+   ],
+   "fact": "Which line the route actually climbs (West Ridge crest vs. a different 'Southeast Slopes' gully)"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Which line the route actually climbs (West Ridge crest vs. a different 'Southeast Slopes' gully)"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Which line the route actually climbs (West Ridge crest vs. a different 'Southeast Slopes' gully)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_baring_mountain_r1",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Standard national forest regulations",
+     "permit": "None required.",
+     "closures": null,
+     "landManager": "Mount Baker-Snoqualmie National Forest",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+     "passRequired": "Northwest Forest Pass at the trailhead",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+      "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+     }
+    },
+    "turnaround": "Plan a turnaround time in early afternoon to ensure safe rappel descent before dark. Stopping early is critical given the complex multi-rope rappel descent required."
+   }
+  },
+  {
+   "id": "wa_baring_mountain_south_route",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "rules": "Leave No Trace; respect private land near Baring",
+     "permit": "None required.",
+     "closures": null,
+     "landManager": "Mt. Baker-Snoqualmie National Forest",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+     "passRequired": "Northwest Forest Pass at Barclay Lake trailhead",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+      "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+     }
+    },
+    "rope_note": "Unprotected scramble; published descriptions list protection as 'None'. Crux is ~8 ft of exposed 5th-class rock with no gear placed by parties climbing it. Ice axe recommended for the snow-holding gully in spring/early summer."
+   }
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "before": {
+    "itinerary": {
+     "cal": "Lady of the Lake ferry to Lucerne runs a limited schedule and should be reserved in advance; confirm the return sailing time before setting a fixed exit day.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Catch the Lady of the Lake ferry from Field's Point to Lucerne, then the Holden Village shuttle, before hiking the Railroad Creek / Holden Pass trail up to camp at ~6,400 ft. The trail is in good shape and shared by Bonanza-bound parties, so Holden Pass is a well-established camp spot with water nearby.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Ferry + hike-in to Holden Pass camp",
+       "gainFt": 3200,
+       "lossFt": 0,
+       "packLb": 32,
+       "schedule": [
+        {
+         "time": "9:30 AM",
+         "label": "Ferry departs Field's Point",
+         "detail": "Lady of the Lake to Lucerne Landing; confirm current seasonal schedule and reserve ahead."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Arrive Lucerne",
+         "detail": "Board the Holden Village shuttle bus."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Start hiking from Holden Village",
+         "detail": "Railroad Creek trail toward Holden Pass."
+        },
+        {
+         "time": "~5:00 PM",
+         "label": "Reach Holden Pass camp",
+         "detail": "~6,400 ft; set up camp for the Martin/Bonanza approach."
+        }
+       ],
+       "objective": "Reach Holden Pass high camp"
+      },
+      {
+       "n": 2,
+       "note": "From Holden Pass, traverse east along the connecting ridge toward Bonanza, then cut right onto the south-facing slopes into a loose scree gully. Climb the gully and exit via a short Class 3-4 rock step near its top just below an overhang to reach the summit block. The rock is notoriously loose (\"choss\"), so a helmet and careful route-finding through the exit moves matter more than raw fitness.",
+       "hours": 6,
+       "miles": 3.5,
+       "title": "Summit day: Martin Peak via Southeast Slopes",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 14,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp",
+         "detail": "Light day pack; helmet, and a short rope/rack if the party wants protection on the exit move."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Reach the loose gully entrance",
+         "detail": "South side of the Bonanza-Martin connecting ridge."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Class 3-4 exit move",
+         "detail": "Short exposed step on the gully's right side just below the overhang; some parties belay this move or use the fixed rap anchor on the way down."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Summit (8,511 ft)",
+         "detail": "Highest point most parties reach on this side of the valley besides Bonanza."
+        },
+        {
+         "time": "~12:00 PM",
+         "label": "Back at camp",
+         "detail": "Rest of the day free; some parties use the extra daylight to also attempt Bonanza via the Mary Green Glacier if conditions and time allow."
+        }
+       ],
+       "objective": "Climb Martin Peak and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach trail back down to Holden Village, then take the shuttle and ferry back to Field's Point. Start early since the return ferry from Lucerne typically leaves in the early-to-mid afternoon and the shuttle/bus connection has to be made on time.",
+       "hours": 3.5,
+       "miles": 7,
+       "title": "Hike out + return ferry",
+       "gainFt": 0,
+       "lossFt": 3200,
+       "packLb": 26,
+       "schedule": [],
+       "objective": "Descend to Holden Village and catch the return boat"
+      }
+     ],
+     "totalNote": "A 3-day trip built around the Lady of the Lake ferry/Holden Village access: one day in to Holden Pass camp, one summit day on Martin's loose Southeast Slopes gully (~16 mi and ~5,400 ft round trip overall), and one day out to catch the return ferry."
+    },
+    "timing": {
+     "totalHrs": 14,
+     "summitTimeHrs": 6,
+     "descentTimeHrs": 3.5,
+     "approachTimeHrs": 4.5,
+     "recommendedStart": "6:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "Catch the Lady of the Lake ferry from Field's Point to Lucerne, then the Holden Village shuttle, before hiking the Railroad Creek / Holden Pass trail up to camp at ~6,400 ft. The t…",
+       "fromTo": "Ferry + hike-in to Holden Pass camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "From Holden Pass, traverse east along the connecting ridge toward Bonanza, then cut right onto the south-facing slopes into a loose scree gully. Climb the gully and exit via a shor…",
+       "fromTo": "Summit day: Martin Peak via Southeast Slopes",
+       "section": "Climb"
+      },
+      {
+       "hrs": 3.5,
+       "note": "Reverse the approach trail back down to Holden Village, then take the shuttle and ferry back to Field's Point. Start early since the return ferry from Lucerne typically leaves in t…",
+       "fromTo": "Hike out + return ferry",
+       "section": "Descent"
+      }
+     ]
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier east-side (Chelan/Holden) climate than the west-side Cascades; cold and exposed at elevation even in summer",
+      "probability": "Afternoon thunderstorms can develop over the Glacier Peak Wilderness high country in summer; approach and summit day should account for a bail-out plan on ridge/talus terrain"
+     },
+     "exposure": "Consequence is mainly from loose scree/talus and rockfall rather than sustained high-angle exposure; the primary risk is a long, committing, boat-only access that magnifies the seriousness of any injury or route-finding error",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel (route stays on talus and heather benches on the southeast slopes)"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,719 @@
+{
+ "applied": [
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Round-trip distance: itinerary day miles vs approach prose/totalNote/dist_km/waypoints"
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "column": "grade",
+   "path": [],
+   "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "class"
+   ],
+   "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "column": "sling_rack",
+   "path": [
+    "cams",
+    "count"
+   ],
+   "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "column": "rack",
+   "path": [
+    1
+   ],
+   "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    5
+   ],
+   "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Rock grade caps at Class 4, but a 5.0 crux is stated elsewhere"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: dist_km vs itinerary days/totalNote/waypoints"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent route: this route's own chute-to-col (ascent) vs an NW-ridge-to-'the true summit' finish that belongs to the neighboring Main Peak route"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent route: this route's own chute-to-col (ascent) vs an NW-ridge-to-'the true summit' finish that belongs to the neighboring Main Peak route"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "grade"
+   ],
+   "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "pitch_detail",
+   "path": [
+    5,
+    "grade"
+   ],
+   "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "pitch_detail",
+   "path": [
+    5,
+    "notes"
+   ],
+   "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Is the crux chute BELOW the col (leading up to it) or ABOVE the col (leading from it to the summit)?"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "PCT direction and trail distances in the approach prose (southbound ~4 mi to Lemah Creek) vs pitch_detail/itinerary (Pete Lake ~4 mi, +1.2 mi to PCT, ~1 mi north to Lemah Creek)"
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "PCT direction and trail distances in the approach prose (southbound ~4 mi to Lemah Creek) vs pitch_detail/itinerary (Pete Lake ~4 mi, +1.2 mi to PCT, ~1 mi north to Lemah Creek)"
+  },
+  {
+   "id": "wa_little_big_chief_mountain_northeast_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Does this route require leaving the trail near Williams Lake for an off-trail scramble via a class-4 notch, or stay on the trail all the way to Dutch Miller Gap with no detour?"
+  },
+  {
+   "id": "wa_little_big_chief_mountain_northeast_face",
+   "column": "beta",
+   "path": [],
+   "fact": "Does this route require leaving the trail near Williams Lake for an off-trail scramble via a class-4 notch, or stay on the trail all the way to Dutch Miller Gap with no detour?"
+  },
+  {
+   "id": "wa_northwest_face_4",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach: Williams-Lake/Dutch-Miller-Gap/class-4-notch boilerplate vs this route's own steel-bridge/cross-country-into-Summit-Chief-Valley turnoff"
+  },
+  {
+   "id": "wa_northwest_face_4",
+   "column": "rappels",
+   "path": [],
+   "fact": "Order of the rappel relative to the glacier-polished-slab crossing on descent"
+  },
+  {
+   "id": "wa_northwest_face_4",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead waypoint note says the two routes diverge only above camp, but this route leaves the trail at the steel bridge well short of Dutch Miller Gap"
+  },
+  {
+   "id": "wa_little_big_chief_mountain_west_route",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Header/technical grade: rock_grade 5.9 + commitment IV vs grade Class 3 + alpine_grade F + pitch count/pitch_detail"
+  },
+  {
+   "id": "wa_little_big_chief_mountain_west_route",
+   "column": "commitment",
+   "path": [],
+   "fact": "Header/technical grade: rock_grade 5.9 + commitment IV vs grade Class 3 + alpine_grade F + pitch count/pitch_detail"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "before": {
+    "itinerary": {
+     "cal": "Best climbed early-mid summer (roughly late June through August) while the snow gully/Lemah Glacier remnant is still consolidated; it degrades to bare ice/loose rock and opens crevasses/moats later in the season.",
+     "days": [
+      {
+       "n": 1,
+       "note": "An easy, mostly flat trail day: Pete Lake Trail to the PCT junction, then up into the Lemah Creek drainage. The last stretch into Lemah Meadows is damp, brushy, and swampy, so waterproof boots help. Camp on a bench near the creek crossing or a bit higher below the summit gully to shorten summit day.",
+       "hours": 4.5,
+       "miles": 7,
+       "title": "Approach to camp",
+       "gainFt": 1600,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Establish camp in upper Lemah Meadows / near the Lemah Creek crossing"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start to fight through the last of the slide alder and brush before dawn, then climb steep snow / the Lemah Glacier remnant (crampons and axe, watch for bad runout) to the base of the summit rocks, finishing on exposed but solid class 3 scrambling to the true summit. Reverse the route to camp, break it down, and continue the long hike out the same day — most parties end up finishing in the dark.",
+       "hours": 12,
+       "miles": 15,
+       "title": "Summit push and hike out",
+       "gainFt": 3100,
+       "lossFt": 4700,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start to catch the snow/glacier remnant while firm."
+        },
+        {
+         "time": "~6:30 AM",
+         "label": "Reach base of the summit snow gully",
+         "detail": "Rope up / crampons on for the glacier remnant crossing."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Top of the gully/glacier",
+         "detail": "Transition to class 3 rock for the final push."
+        },
+        {
+         "time": "~10:30 AM",
+         "label": "Summit",
+         "detail": "Broad summit block, exposed but solid holds on the way up."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Back at camp",
+         "detail": "Break camp and shoulder full packs for the exit."
+        },
+        {
+         "time": "~6:30 PM",
+         "label": "Trailhead",
+         "detail": "Long exit; headlamps often needed for the last miles."
+        }
+       ],
+       "objective": "Climb the East Route to the Main Peak summit, then exit to the trailhead"
+      }
+     ],
+     "totalNote": "A demanding 2-day round trip: roughly 16 miles and ~4,700 ft gain overall, with a long, full-value second day that combines the summit push and the entire hike out."
+    },
+    "grade": "Class 4-5.0",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Cliff step onto the southeast snowfields",
+      "notes": "From about 6,200 ft, exit left (south) up a short cliff step onto the glacial remnants and snowfields on the peak's southeast side, then traverse to just southwest of the main summit."
+     },
+     {
+      "n": 2,
+      "class": "Class 2-3",
+      "label": "Cliff bands to the Lemah Two / Main Peak col",
+      "notes": "A series of cliff bands leads to the col between Lemah Two and the Main (East) Peak. Trip reports flag this as the technical crux for both route-finding and loose rock: scrambling is loose and exposed, and locating the correct gully and cliff-band line up to the col is a genuine route-finding crux, especially in fog, low visibility, or lingering snow."
+     },
+     {
+      "n": 3,
+      "class": "easy 5th class",
+      "label": "Summit block step from the col",
+      "notes": "From the Lemah Two / Main col, a short exposed step of easy 5th-class climbing guards the final summit block."
+     }
+    ],
+    "sling_rack": {
+     "cams": {
+      "size": "small",
+      "count": "a few, for the class 5.0 summit block move"
+     },
+     "nuts": {
+      "size": "small",
+      "count": "a few"
+     }
+    },
+    "rack": [
+     "60m rope (half-rope system acceptable) for glacier travel and the short technical section",
+     "A few small cams and nuts for the class 5.0 summit block move",
+     "2-3 slings for anchor building on rock",
+     "Crevasse-rescue kit: harnesses, 6+ locking carabiners, ascenders"
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong overnight-mountaineering fitness: day 1 is roughly 7 miles with ~1000 ft gain to a camp near Pete Lake/Lemah Meadows through brushy, sometimes rough trail with creek crossings; day 2 is a shorter but steep ~2.5 miles with ~3700 ft gain to the summit and back",
+      "packWeight": "Overnight pack (approach/camp gear, ~30-40 lb) on day 1; light summit pack (water, layers, light rack) on the climb day"
+     },
+     "approachTime": "Full day (~7 mi, ~1000 ft gain) to a camp near Pete Lake/Lemah Meadows, then a second day of ~2.5 mi and ~3700 ft gain to the summit and back - effectively a 2-day trip, not a single-push dayhike for most parties",
+     "requiredSkills": [
+      "off-trail navigation among multiple similar-looking sub-summits",
+      "sustained loose class 3-4 scrambling",
+      "tolerance for brush/slide-alder bushwhacking on the approach",
+      "basic snow travel for lingering early/late-season snow patches",
+      "comfortable with exposure on the final summit block/step",
+      "optional light rack or rope for the class 5.0 move for less confident parties"
+     ],
+     "experienceLevel": "Experienced scrambler/alpine climber comfortable with sustained loose class 3-4 terrain, independent route-finding among the massif's multiple confusing sub-summits, and a short, exposed class 5.0 step near the true summit"
+    },
+    "rope_note": "Rope for glacier travel and the short class 4-5.0 summit block move; not a pitch-by-pitch rock route.",
+    "grade_num": 0
+   }
+  },
+  {
+   "id": "wa_lemah_two_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "The SE face chute crux is typically climbed as a snow feature and is most straightforward early-mid summer (roughly late June-August) before it melts out to bare rock/ice; check current trip reports for snow coverage before committing to the standard line.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Cooper Lake trailhead, follow the mellow Cooper River / Pete Lake Trail (~4 mi) to Pete Lake, continue to the PCT junction, then head north on the PCT about a mile to the Lemah Creek crossing. Leave the trail before the footbridge and work up along Lemah Creek roughly a mile cross-country to a bench/meadow camp (commonly cited around 4,000-4,500 ft, sometimes lower near 3,600 ft at the Lemah Meadows/PCT junction).",
+       "hours": 5.5,
+       "miles": 9,
+       "title": "Approach to Lemah Creek high camp",
+       "gainFt": 1600,
+       "lossFt": 100,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "Morning",
+         "label": "Leave Cooper Lake trailhead",
+         "detail": "~2,840 ft; flat, well-graded trail for the first 8 miles."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Pass Pete Lake",
+         "detail": "Popular backpacking destination; good water/rest stop."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Reach PCT junction, head north",
+         "detail": "About a mile north on the PCT to the Lemah Creek crossing."
+        },
+        {
+         "time": "+5-6 hr",
+         "label": "Leave trail, camp near Lemah Creek",
+         "detail": "Cross-country up Lemah Creek to a bench/meadow camp below the peak."
+        }
+       ],
+       "objective": "Backpack in to a camp near Lemah Creek / Lemah Meadows"
+      },
+      {
+       "n": 2,
+       "note": "Rope up and cross the glacier remnant into the basin between the false summits, contour north around Lemah Two's east buttress, and climb the snow slope/chute on the east face (the crux — Class 3-4 scrambling, sometimes firm snow or ice) to the col, then finish on 3rd/4th-class rock to the summit. Reverse the whole route back to camp; this is the long day of the trip.",
+       "hours": 10,
+       "miles": 4.5,
+       "title": "Summit push to Lemah Two",
+       "gainFt": 2900,
+       "lossFt": 2900,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "Early AM",
+         "label": "Alpine start from camp",
+         "detail": "Aim to be moving well before sunrise to cross snow while it's firm and beat afternoon softening/rockfall."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Cross glacier remnant into upper basin",
+         "detail": "Rope/crampons/axe typically used here depending on season and snow coverage."
+        },
+        {
+         "time": "+4-5 hr",
+         "label": "Ascend the SE face chute to the col",
+         "detail": "Crux of the route — steep snow or Class 3-4 rock; some parties find hard ice late season."
+        },
+        {
+         "time": "+5-6 hr",
+         "label": "Class 3-4 scramble to the summit",
+         "detail": "Final short ridge/rock section from the col."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Descend reverse route to camp",
+         "detail": "Downclimb the crux band, re-cross the moat and glacier remnant."
+        }
+       ],
+       "objective": "Climb Lemah Two and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse Day 1: back down Lemah Creek to the PCT, south past Pete Lake, and out the Cooper River trail to the car. Strong/fit parties sometimes skip this third day by pushing straight from the summit back to the trailhead on Day 2, making it a long (12+ hour) two-day car-to-car trip instead.",
+       "hours": 4.5,
+       "miles": 9,
+       "title": "Hike out",
+       "gainFt": 100,
+       "lossFt": 1600,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to the Cooper Lake trailhead"
+      }
+     ],
+     "totalNote": "A 3-day standard trip is typical: ~22 miles round trip with roughly 5,000 ft of total gain/loss, one (sometimes two) nights camped near Lemah Creek, and a long glacier/snow-chute summit day; strong parties compress the summit push and hike-out into one big day for a 2-day version instead."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - long approach with significant off-trail travel, elevation gain, and at least one stream crossing (Lemah Creek); typically done as an overnight or multi-day trip rather than a day push",
+      "packWeight": "Overnight/multi-day pack (camp gear + several days food) is typical given the remote approach into the Lemah basin"
+     },
+     "approachTime": "Long, multi-day approach - roughly 11+ miles one-way via the Pete Lake Trail to the Spectacle Lake/Lemah Meadows area, plus additional off-trail travel to gain the Lemah crest and traverse to Lemah Two; most parties camp in the Lemah basin rather than attempting it as a single day push",
+     "requiredSkills": [
+      "Class 4 scrambling and exposure tolerance",
+      "route-finding on loose rock among towers",
+      "off-trail navigation (basin to crest)",
+      "stream crossing (Lemah Creek)",
+      "judgment for short exposed steps that may warrant a handline"
+     ],
+     "experienceLevel": "Experienced alpine scrambler comfortable with exposed Class 4 terrain, loose rock, and route-finding among towers; prior Cascades scrambling experience strongly recommended before attempting the Lemah crest"
+    },
+    "waypoints": [
+     {
+      "lat": 47.4341,
+      "lng": -121.1869,
+      "elev": 2800,
+      "name": "Pete Lake Trailhead",
+      "note": "Self-issue wilderness permit at the kiosk plus a Northwest Forest Pass or $5 day-use fee for parking; reached via I-90 exit 80, SR-903, FR-46, FR-4616.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From I-90 Exit 80 at Roslyn/Salmon la Sac, drive north on SR-903 for 16.8 miles through Roslyn and past Cle Elum Lake, then west on Forest Road 46 for 4.7 miles, and turn right on FR-4616 for one mile to the Cooper Lake/Pete Lake trailhead. Self-issue a wilderness permit at the trailhead kiosk, and bring a Northwest Forest Pass or pay the $5 day-use fee for parking."
+     },
+     {
+      "lat": 47.475873,
+      "lng": -121.235953,
+      "elev": 2984,
+      "name": "Pete Lake",
+      "note": "Established lakeside campsites and the last easy, reliable water before climbing toward the PCT and Lemah basin.",
+      "type": "Water",
+      "distMi": 4.5
+     },
+     {
+      "lat": 47.478625,
+      "lng": -121.253827,
+      "elev": 3000,
+      "name": "Lemah Creek ford at PCT junction",
+      "note": "The old footbridge is washed out; ford cold, sometimes shin-to-thigh-deep Lemah Creek where the Pete Lake trail meets the PCT.",
+      "type": "Hazard",
+      "distMi": 8
+     },
+     {
+      "lat": 47.473334,
+      "lng": -121.223877,
+      "elev": 4800,
+      "name": "Lemah Meadows basin camp",
+      "note": "Climbers' bivy sites in the boggy meadow below Lemah's east face, reached via an overgrown climbers' path north of the creek; last reliable water before the basin.",
+      "type": "Campsite",
+      "distMi": 9
+     },
+     {
+      "lat": 47.4533,
+      "lng": -121.208288,
+      "elev": 6200,
+      "name": "Basin between Lemah One and Lemah Two",
+      "note": "Gain the crest here and contour north around Lemah Two's east buttress toward the base of the summit cliff bands, per route beta.",
+      "type": "Junction",
+      "distMi": 10
+     },
+     {
+      "lat": 47.442969,
+      "lng": -121.19885,
+      "elev": 6800,
+      "name": "Class 3-4 cliff band / chute below the col",
+      "note": "Crux of the climb: loose rock and often lingering steep snow/ice in the chute leading up toward the col between Lemah Two and Lemah Main.",
+      "type": "Hazard",
+      "distMi": 10.5
+     },
+     {
+      "lat": 47.494048,
+      "lng": -121.3009,
+      "elev": 7280,
+      "name": "Lemah Two",
+      "note": "Highest of the two southern false summits on the Lemah massif ridge; short exposed ledges lead to the top.",
+      "type": "Summit",
+      "distMi": 11
+     }
+    ],
+    "descent": "Reverse the ascent: downclimb the NW ridge and the Class 3-4 band back to the col, re-cross the moat onto the glacier remnant, and descend the snow/glacier back to about 5,000 ft and on to camp. Summit day is long, and parties frequently finish the descent to camp after dark — carry headlamps and know the crux downclimb before committing.",
+    "descent_text": "From the traverse below Main Peak, climb a series of Class 2-3 cliff bands toward the col between Lemah Two and Lemah Main. A moat typically separates the glacier remnant from the rock here, worse late season — exit the snow below and right of an obvious wet rock chimney, then climb mostly Class 3 with a short Class 4 step to the chimney's right to reach the col. From the col, work north toward the true summit; about 30 ft below the top, traverse west and finish up the northwest ridge (Class 2) to the summit block.",
+    "beta": "From the Lemah Creek meadow (~3,600 ft), traverse toward the base of the peaks and climb a series of Class 2-3 cliff bands to the col between Lemah Two and the Main Peak (Lemah Three). From the col, a snow slope and chute lead up toward Lemah Two's upper slopes and summit ridge; the chute itself -- a mix of steep snow/ice and Class 3-4 rock, often with water running down it -- is the technical crux. Crampons and an ice axe are commonly used even in summer.",
+    "pitch_detail": [
+     {
+      "grade": "Trail",
+      "notes": "~4 miles, mostly flat forest trail along the Cooper River.",
+      "pitch": "Trailhead - Pete Lake"
+     },
+     {
+      "grade": "Trail",
+      "notes": "~1.2 miles.",
+      "pitch": "Pete Lake - PCT junction"
+     },
+     {
+      "grade": "Trail",
+      "notes": "~1 mile north on the PCT.",
+      "pitch": "PCT - Lemah Creek crossing"
+     },
+     {
+      "grade": "Off-trail, Class 1-2",
+      "notes": "Climber's path on the north side of the creek past waterfalls and swimming holes to the ~3,600 ft meadow.",
+      "pitch": "Lemah Creek climber's trail to meadow"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Cliff bands lead up to the col between Lemah Two and the Main Peak.",
+      "pitch": "Meadow to Lemah Two-Main col"
+     },
+     {
+      "grade": "Class 3-4 / steep snow",
+      "notes": "Snow slope and chute (crux) to Lemah Two's summit ridge and top.",
+      "pitch": "Col to summit"
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Pete Lake and the PCT to the Lemah Creek climbers' path, then the col below the Main Peak",
+      "notes": "From I-90 exit 80 at Roslyn / Salmon la Sac, drive SR-903 north 16.8 miles through Roslyn and past Cle Elum Lake, then west on FR-46 for 4.7 miles and right on FR-4616 for a mile to the Cooper Lake / Pete Lake trailhead.\n\nFollow Pete Lake Trail #1323 along the Cooper River about 4.5 miles to Pete Lake, continue past it and pick up the PCT southbound for roughly four more miles to the Lemah Creek crossing, then follow the PCT south under a mile.\n\nA faint, unmaintained climbers' trail leaves on the NORTH side of Lemah Creek, marked by occasional flagging, with deadfall and brush for the first 400 vertical feet. It passes waterfalls and swimming holes and reaches a meadow at about 3,600 ft where the creek breaks into shallow ponds — the common camp. A thick band of slide alder guards the far end of that meadow and is best bypassed through the timber to the north.\n\nAbout 12.9 km and 4,480 ft.",
+      "gainFt": 4480,
+      "season": "July to September",
+      "hazards": [
+       "A faint, unmaintained climbers' trail with deadfall and brush for the first 400 vertical feet",
+       "A thick band of slide alder at the far end of the meadow camp",
+       "Steep snow or ice and class 3-4 rock in the crux chute, often with water running down it",
+       "A moat where the glacier remnant meets the rock",
+       "A long summit day with descents routinely finishing after dark — carry headlamps",
+       "Remote terrain with a multi-day walk out"
+      ],
+      "baseFinding": "THE ARRIVAL YOU ARE AIMING FOR IS A COL, AND IT IS THE COL BETWEEN LEMAH TWO AND THE MAIN PEAK. From the 3,600 ft meadow camp, follow the drainage to about 5,000 ft where the Lemah Glacier remnant begins, climb to roughly 6,200 ft, then exit SOUTH — climbers' left — up a short cliff onto glacial remnants on the peak's southeast side, and traverse northwest to the base of that col. Everything technical on this route starts from the col; below it you are walking, scrambling class 2-3 cliff bands, and crossing snow.\n\nTHE CONFIRMING FEATURE ABOVE THE COL IS A CHUTE, AND ITS CHARACTER IS DISTINCTIVE: a snow slope and then a chute of mixed steep snow or ice and class 3-4 rock, OFTEN WITH WATER RUNNING DOWN IT. Running water in the chute is the signature of this line and is why parties carry crampons and an axe even in summer. That chute is the technical crux of the route.\n\nTHE ALTITUDE SEQUENCE IS THE FOG TEST: 3,600 ft camp, 5,000 ft glacier remnant, 6,200 ft, then exit left up a short cliff. Four altimeter checks and one turn, none of which needs the summit to be visible.\n\nAND THE NEGATIVE: if you are climbing toward a summit without having stood in a col between two distinct peaks, you are on the wrong feature. Lemah Two is the second of the Lemah summits and the Main Peak — Lemah Three — is the one across the col from you.\n\nPLAN THE DOWNCLIMB BEFORE YOU COMMIT TO THE CHUTE. Summit day here is long and parties frequently finish the descent to camp after dark."
+     }
+    ],
+    "approach": "From I-90 exit 80 (Roslyn/Salmon la Sac), drive north on SR-903 for 16.8 miles through Roslyn and past Cle Elum Lake, then west on Forest Road 46 for 4.7 miles and right on FR-4616 for 1 mile to the Cooper Lake/Pete Lake trailhead. Follow the Pete Lake Trail #1323 along the Cooper River about 4.5 miles to Pete Lake, continue past the lake and pick up the PCT southbound for roughly 4 more miles to the Lemah Creek crossing, then follow the PCT south under a mile to where a faint, unmaintained climbers' trail leaves on the north side of Lemah Creek (marked by occasional flagging; expect deadfall/brush for the first ~400 vertical feet). This path passes a series of waterfalls and swimming holes before reaching a meadow at roughly 3,600 ft where the creek breaks into shallow ponds — a common camp, though a thick band of slide alder guards the far end and is best bypassed through the timber to the north. From camp, follow the drainage up to about 5,000 ft where the Lemah Glacier remnant begins, climb to roughly 6,200 ft, exit south (climber's left) up a short cliff onto glacial remnants on the peak's southeast side, then traverse northwest toward the base of the Main Peak/Lemah Two col."
+   }
+  },
+  {
+   "id": "wa_little_big_chief_mountain_northeast_face",
+   "before": {
+    "approach": "From the Dutch Miller Gap Trailhead, follow Dutch Miller Gap Trail 1030 up the Middle Fork Snoqualmie valley about 14-15 miles to Dutch Miller Gap, passing Hardscrabble Horse Camp and the Williams Lake trail junction along the way. Little Big Chief sits immediately southwest of the gap, reached by leaving the trail near Williams Lake for an off-trail scramble up the peak's east slope/northeast ridge, with a short but exposed class 4 notch as the crux below the summit. An alternate, longer approach comes from the east via the Necklace Valley Trail off Foss River Road (Skykomish/US 2 side), crossing La Bohn Gap before dropping to Dutch Miller Gap. For this specific route: continue the standard Middle Fork Snoqualmie trail all the way up to Dutch Miller Gap, then climb directly above the gap onto the peak's northeast ridge/face — no cross-country detour into Summit Chief Valley needed.",
+    "beta": "Approached via the PCT to Dutch Miller Gap, the route climbs about 500 feet of heather and rock steps up the northeast ridge to an open bench, then crosses a snowfield into a cirque below the east face. Two short (roughly 60-foot) belayed pitches of 3rd-4th class rock lead to the summit area; at the top of the first pitch, move climber's left to find the direct finishing pitch. Reported variations include the north ridge from the upper snowfield, or four pitches of roped class-4 slabs taken directly. A separate approach from Pete Lake/Summit Chief camp reaches Little Big Chief's northeast basin and a ridge notch guarded by a low-5th-class crux (a large vertical crack) that most parties rope up for."
+   }
+  },
+  {
+   "id": "wa_northwest_face_4",
+   "before": {
+    "approach": "From the Dutch Miller Gap Trailhead, follow Dutch Miller Gap Trail 1030 up the Middle Fork Snoqualmie valley about 14-15 miles to Dutch Miller Gap, passing Hardscrabble Horse Camp and the Williams Lake trail junction along the way. Little Big Chief sits immediately southwest of the gap, reached by leaving the trail near Williams Lake for an off-trail scramble up the peak's east slope/northeast ridge, with a short but exposed class 4 notch as the crux below the summit. An alternate, longer approach comes from the east via the Necklace Valley Trail off Foss River Road (Skykomish/US 2 side), crossing La Bohn Gap before dropping to Dutch Miller Gap. For this specific route: leave the main Middle Fork Snoqualmie trail at a small steel bridge well before Dutch Miller Gap and cut cross-country south into Summit Chief Valley; the Northwest Face is visible on the east side of that valley, roughly 3 hours from the trailhead — a distinctly different final leg than the Northeast Face's direct ridge approach.",
+    "rappels": "1-2 rappels off the south ridge to a pocket glacier, then descend glacier-polished slabs and forest back into Summit Chief Valley to camp",
+    "waypoints": [
+     {
+      "lat": 47.5172,
+      "lng": -121.4544,
+      "elev": 1650,
+      "name": "Dingford Creek / Middle Fork Snoqualmie Trailhead",
+      "note": "Same trailhead as the Northeast Face route — this peak does not have route-specific trailheads despite routes being on different faces, since both are approached via the same valley and the routes diverge only above camp.",
+      "type": "Trailhead",
+      "elevFt": 1650
+     },
+     {
+      "lat": 47.52965,
+      "lng": -121.25668,
+      "elev": 7225,
+      "name": "Little Big Chief Mountain - Summit",
+      "type": "Summit",
+      "elevFt": 7225
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_little_big_chief_mountain_west_route",
+   "before": {
+    "rock_grade": "5.9",
+    "commitment": "IV"
+   }
+  }
+ ]
+}

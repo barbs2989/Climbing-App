@@ -1,0 +1,258 @@
+{
+ "applied": [
+  {
+   "id": "wa_crescendo_of_the_sarcophagus_breathing",
+   "column": "grade",
+   "path": [],
+   "fact": "Route grade (5.11c vs 5.11b)"
+  },
+  {
+   "id": "wa_crescendo_of_the_sarcophagus_breathing",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_crescendo_of_the_sarcophagus_breathing",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_crescendo_of_the_sarcophagus_breathing",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_crescendo_of_the_sarcophagus_breathing",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_project_crack",
+   "column": "rope_length_m",
+   "path": [],
+   "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)"
+  },
+  {
+   "id": "wa_project_crack",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_project_crack",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_project_crack",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_project_crack",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "GETTING THERE road block names Alpental Road / I-90 Exit 52, but the crag is reached from Exit 54 via FR 4832 and FR 4934"
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "elev"
+   ],
+   "fact": "trailhead elevation for the same named trailhead"
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "elevFt"
+   ],
+   "fact": "trailhead elevation for the same named trailhead"
+  },
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Headline total trip time (timing.totalHrs) for this route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_crescendo_of_the_sarcophagus_breathing",
+   "before": {
+    "grade": "5.11c",
+    "road": {
+     "name": "Alpental Road, Snoqualmie Pass (I-90 Exit 52)",
+     "status": "Paved road from I-90 Exit 52, about 1.5 miles to a large gravel parking lot at the Alpental ski area; well-maintained but subject to seasonal closure/snow in winter.",
+     "driveNote": "Roughly 45 min-1 hour from Seattle via I-90 to Exit 52.",
+     "seasonalGate": "Roads/trails in this Mt. Baker-Snoqualmie NF area are subject to seasonal winter closure and avalanche hazard near Snow/Source Lake trail in snow season."
+    },
+    "grade_num": 11.75
+   }
+  },
+  {
+   "id": "wa_project_crack",
+   "before": {
+    "rope_length_m": 30,
+    "road": {
+     "name": "Alpental Road, Snoqualmie Pass (I-90 Exit 52)",
+     "status": "Paved road from I-90 Exit 52, about 1.5 miles to a large gravel parking lot at the Alpental ski area; well-maintained but subject to seasonal closure/snow in winter.",
+     "driveNote": "Roughly 45 min-1 hour from Seattle via I-90 to Exit 52.",
+     "seasonalGate": "Roads/trails in this Mt. Baker-Snoqualmie NF area are subject to seasonal winter closure and avalanche hazard near Snow/Source Lake trail in snow season."
+    }
+   }
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "before": {
+    "road": {
+     "name": "Alpental Road, Snoqualmie Pass (I-90 Exit 52)",
+     "status": "Paved road from I-90 Exit 52, about 1.5 miles to a large gravel parking lot at the Alpental ski area; well-maintained but subject to seasonal closure/snow in winter.",
+     "driveNote": "Roughly 45 min-1 hour from Seattle via I-90 to Exit 52.",
+     "seasonalGate": "Roads/trails in this Mt. Baker-Snoqualmie NF area are subject to seasonal winter closure and avalanche hazard near Snow/Source Lake trail in snow season."
+    }
+   }
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.440532,
+      "lng": -120.938446,
+      "elev": 4400,
+      "name": "Ingalls Way / Longs Pass Trail 1390 split",
+      "note": "Trail 1390 forks off toward Ingalls Way and Longs Pass; stay on the Esmeralda Basin Trail (1394) climbing the old mining road.",
+      "type": "Junction",
+      "distMi": 0.4
+     },
+     {
+      "lat": 47.45275,
+      "lng": -120.96288,
+      "elev": 5200,
+      "name": "Esmeralda Basin camps",
+      "note": "Established campsites in open meadow/basin below the headwall, fed by small side streams cascading off the surrounding slopes.",
+      "type": "Campsite",
+      "distMi": 2.2
+     },
+     {
+      "lat": 47.456599,
+      "lng": -120.966091,
+      "elev": 5700,
+      "name": "Lake Ann Trail 1226 junction",
+      "note": "Side trail splits north to Lake Ann overlook; keep straight/left on the main tread climbing toward Fortune Creek Pass.",
+      "type": "Junction",
+      "distMi": 3
+     },
+     {
+      "lat": 47.45714,
+      "lng": -120.97099,
+      "elev": 5960,
+      "name": "Fortune Creek Pass",
+      "note": "Barren, rocky saddle where the maintained trail ends; leave the trail here and head south up open slopes toward Esmeralda's west summit.",
+      "type": "Junction",
+      "distMi": 3.5
+     },
+     {
+      "lat": 47.446757625000004,
+      "lng": -120.968905875,
+      "elev": 6400,
+      "name": "Summit talus/scree slope",
+      "note": "Loose, blocky talus above the pass with sections of unstable rock reported class 3/4 near the final saddle - test holds before weighting them.",
+      "type": "Hazard",
+      "distMi": 4
+     },
+     {
+      "lat": 47.43656,
+      "lng": -120.93697,
+      "elev": 3800,
+      "name": "Esmeralda Basin Trailhead (FR-9737)",
+      "note": "The correct approach is via FR-9737 to the De Roux Creek trailhead/campground, then the Boulder-DeRoux Trail southwest to a scree gully leaving the trail near the last switchback at ~5600ft.",
+      "type": "Trailhead",
+      "elevFt": 3800
+     },
+     {
+      "lat": 47.440662,
+      "lng": -120.968166,
+      "elev": 6765,
+      "name": "Esmeralda Peaks - West Summit (true/high summit)",
+      "type": "Summit",
+      "elevFt": 6765
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "before": {
+    "timing": {
+     "totalHrs": 9.27,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Pre-dawn/early morning start from high camp to cross the snow slopes below the notch while firm and to be off the ridge before afternoon weather"
+    }
+   }
+  }
+ ]
+}

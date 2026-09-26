@@ -1,0 +1,208 @@
+{
+ "applied": [
+  {
+   "id": "wa_dumbell_mountain_west",
+   "column": "beta",
+   "path": [],
+   "fact": "beta claims no mileage/pitch description could be found, but the route has a detailed mileage-laden approach, climbing_route breakdown and itinerary"
+  },
+  {
+   "id": "wa_dumbell_mountain_west",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "seasonal_guidance/partner_requirements tie this route to the 'Lyman basin,' which this approach never reaches"
+  },
+  {
+   "id": "wa_dumbell_mountain_west",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "seasonal_guidance/partner_requirements tie this route to the 'Lyman basin,' which this approach never reaches"
+  },
+  {
+   "id": "wa_dumbell_mountain_west",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "seasonal_guidance/partner_requirements tie this route to the 'Lyman basin,' which this approach never reaches"
+  },
+  {
+   "id": "wa_dumbell_mountain_west",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "NWAC forecast-zone coverage: Reports tab (climate) vs. Safety tab (avalanche)"
+  },
+  {
+   "id": "wa_dumbell_mountain_west",
+   "column": "climate",
+   "path": [
+    "forecastZone"
+   ],
+   "fact": "NWAC forecast-zone coverage: Reports tab (climate) vs. Safety tab (avalanche)"
+  },
+  {
+   "id": "wa_true_grit",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Road/approach corridor for this crag"
+  },
+  {
+   "id": "wa_true_grit",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road/approach corridor for this crag"
+  },
+  {
+   "id": "wa_true_grit",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road/approach corridor for this crag"
+  },
+  {
+   "id": "wa_true_grit",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Road/approach corridor for this crag"
+  },
+  {
+   "id": "wa_true_grit",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Road/approach corridor for this crag"
+  },
+  {
+   "id": "wa_true_grit",
+   "column": "timing",
+   "path": [
+    "recommendedStart"
+   ],
+   "fact": "Road/approach corridor for this crag"
+  },
+  {
+   "id": "wa_true_grit",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Road/approach corridor for this crag"
+  },
+  {
+   "id": "wa_true_grit",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Road/approach corridor for this crag"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_dumbell_mountain_west",
+   "before": {
+    "beta": "This is agreed to be the peak's easiest line and it involves scrambling rather than roped climbing; no detailed pitch-by-pitch or mileage description could be located despite an extensive search.",
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-summer through early fall (roughly late July through September), once approach snow in the Lyman basin has consolidated or cleared",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early-to-mid July can still have lingering approach snow ('snow lingers on the approach' in summer); conditions improve as the month progresses",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Best window - approach snow has generally cleared or consolidated and the scramble is at its most straightforward",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Stable early fall weather typical ('stable early, then snow returns'), but window narrows toward month's end as fall snow can return to the high basin",
+       "status": "good"
+      }
+     }
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong - approach is long (7+ miles one-way to upper basin with ~1800 ft gain just to reach the basin) before any technical elevation gain begins, typically done as a multi-day backpack",
+      "packWeight": "Overnight/multi-day pack weight (camp gear, food) for most parties, since a car-to-summit day push is a very long day"
+     },
+     "approachTime": "Long, multi-day approach typical: backpack in via the Phelps Creek Trail/Spider Meadow or the Lyman Lake/Cloudy Pass side to a high camp, then a full summit day from camp; not a realistic single-day car-to-car for most parties",
+     "requiredSkills": [
+      "Class 3-4 scrambling on loose/exposed rock",
+      "off-trail route-finding in talus and basin terrain",
+      "early-season snow travel and self-arrest if climbing before the approach fully consolidates",
+      "sound judgment to retreat given the remote, committing nature of the terrain"
+     ],
+     "experienceLevel": "Solid Class 3-4 scrambling experience with comfort on loose rock and route-finding off-trail; this is a remote, committing objective (loose rock, exposed Class 3-4 steps, long committing approach) so prior experience self-rescuing or bailing from exposed alpine terrain is important"
+    },
+    "pro_tips": [
+     "Combine with other Lyman Lake basin peaks from a single camp, or more directly with Greenwood Mountain (8,408 ft) via the connecting summit ledge from the same notch",
+     "Carry an axe into early summer for lingering snow in the approach gully; by August it is often mostly scree",
+     "Camp in upper Phelps Basin (~5,700-6,100 ft, near the last reliable water and established bivy sites) rather than lower Spider Meadow to shorten summit day",
+     "Multiple similar-looking notches and false summits near the top have caused parties to get on the wrong ridge (reported in a 2008 trip report) — confirm you're at the correct southeast-ridge notch before committing to the gully."
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Central Cascades alpine climate: best conditions in summer with lingering snow on the approach easing through the season, stable early fall, and a return to full snow/winter conditions by late fall",
+      "probability": "Afternoon thunderstorms are a general risk on exposed Cascades summits in summer, but no route-specific frequency data was found for Dumbell Mountain - treat this as a general Cascades caution rather than a confirmed pattern for this peak"
+     },
+     "exposure": "Exposed Class 3-4 scrambling on the upper mountain, including loose rock and committing steps; a slip on the exposed sections or on early-season snow could result in a serious fall, compounded by the long, remote approach that limits rescue access",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; Dumbell Mountain sits in remote Glacier Peak Wilderness terrain not covered by a specific named NWAC forecast zone, and the route is normally climbed in summer/fall after the formal avalanche season",
+      "byMonth": {
+       "July": "Low",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel (route stays on talus, snow slopes, and scramble rock, not on a glacier)"
+    },
+    "climate": {
+     "typical": "East-of-the-crest Cascades climate — drier than the west slopes but still holds a heavy winter snowpack in Phelps Basin that can persist into July on shaded aspects.",
+     "bySeason": {
+      "fall": "Generally stable and clear early; snow returns to the upper mountain by late September.",
+      "spring": "Full snow cover in Phelps Basin and on the approach gully; avalanche-prone, ski descents documented in this window.",
+      "summer": "Prime window is August into early September once the south-face gully mostly melts to scree; snow patches often linger into July on shaded aspects, and afternoon sun softens remaining snow.",
+      "winter": "Full winter conditions; road access to the trailhead itself is typically snowed in and impractical."
+     },
+     "forecastZone": "Roughly NWAC's East Slopes-Central Cascades zone for winter/spring avalanche forecasting; NWAC does not issue summer forecasts, so check NWS mountain weather and the Wenatchee River Ranger District trip-planning page for current summer conditions."
+    }
+   }
+  },
+  {
+   "id": "wa_true_grit",
+   "before": {
+    "road": {
+     "name": "Mountain Loop Highway to Sunrise Mine Road (FR 4065)",
+     "status": "Mountain Loop Highway is paved the entire way from Granite Falls to the Sunrise Mine Road turnoff; FR 4065 itself is a narrow, rough single-lane gravel road for its final ~2.2-2.5 miles to the trailhead.",
+     "driveNote": "A Northwest Forest Pass is required at the trailhead, which has vault toilets but no other services; the gravel spur is passable to most passenger vehicles in dry conditions but can be rutted or snow-covered into early summer.",
+     "seasonalGate": null
+    },
+    "access": {
+     "permit": "Northwest Forest Pass required at the trailhead",
+     "passRequired": "Northwest Forest Pass"
+    },
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3,
+     "recommendedStart": "Early start given the 3+ hour approach shared with the peak's other technical routes"
+    },
+    "dist_km": 6.4
+   }
+  }
+ ]
+}

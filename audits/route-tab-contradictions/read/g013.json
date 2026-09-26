@@ -1,0 +1,371 @@
+{
+ "batches": ["batches/b049.json", "batches/b050.json", "batches/b051.json", "batches/b052.json"],
+ "routes_read": 12,
+ "routes": [
+  {
+   "id": "wa_southwest_rib_2",
+   "name": "Southwest Rib",
+   "area": "Crystal Lake Tower",
+   "contradictions": [
+    {
+     "fact": "CAMPING & BIVY list is for a different drainage/route cluster",
+     "severity": "high",
+     "claims": [
+      {"field": "approach / itinerary / waypoints", "says": "Approach is via Ingalls Creek Trailhead -> Crystal Creek/Nightmare Gorge -> camp in Crystal Creek Basin or at Crystal Lake (elev ~6900)"},
+      {"field": "bivy[0].name/notes", "says": "\"Colchuck Lake designated campsites\" — \"the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock\", accessed via the Stuart Lake trailhead"},
+      {"field": "bivy[2]-[4]", "says": "Perfection/Inspiration Lake, Gnome Tarn, Shield Lake — all described as camps for Prusik Peak's routes, reached over Aasgard Pass from Colchuck Lake"},
+      {"field": "bivy[5].notes", "says": "Bridge Creek/Eightmile campgrounds — \"most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road\""}
+     ],
+     "why": "Every listed bivy is reached from the Stuart Lake Trailhead / Colchuck Lake basin and explicitly named as the camp for Backbone Ridge, Serpentine Arete, Colchuck Balanced Rock or Prusik Peak routes — none of which share this route's own Ingalls Creek Trailhead / Crystal Creek approach. A climber following CAMPING & BIVY on this route's Plan tab would drive to the wrong trailhead entirely.",
+     "internal_resolution": "This route's own approach/itinerary/waypoints consistently and repeatedly name Ingalls Creek Trailhead and Crystal Creek Basin/Crystal Lake as the camp; the bivy list is the outlier and appears copied from the Dragontail Peak/Colchuck Lake route cluster (confirmed: the identical bivy array appears verbatim on Backbone Ridge, Serpentine Arete, Der Dihedral, Triple Couloirs, Gerber-Sink, Hidden Couloir, Pandora's Box, and East Ridge via Aasgard Pass — all filed on Dragontail Peak, a different mountain).",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent place names disagree",
+     "severity": "high",
+     "claims": [
+      {"field": "descent / descent_text / bail", "says": "Descend by traversing east over the \"Westernmost Chessman\" to the Enchantment Plateau, or south from \"Crystal Lake\" via its outlet stream into \"Crystal Creek Basin\""},
+      {"field": "rappels", "says": "\"...either east to Fantasia Saddle with a rappel down to Fantasia Pond, or northeast/around to Chessmen Notch back to the Enchantment Plateau.\""}
+     ],
+     "why": "The `rappels` field names two places — Fantasia Saddle/Fantasia Pond and Chessmen Notch — that appear nowhere else on the route (descent, descent_text, bail, waypoints, approach_variants all agree on \"Westernmost Chessman\" and \"Crystal Lake\"/\"Crystal Creek Basin\"). A climber comparing PLAN's descent prose to the rappel note would be looking for different named features to navigate the descent by.",
+     "internal_resolution": "5 other fields (descent, descent_text, bail, overview's own summit description, waypoints) agree on \"Westernmost Chessman\" and \"Crystal Lake\"; `rappels` is the sole outlier and its place names look copied from an unrelated route/area.",
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing season window",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "\"Jul-Sep\""},
+      {"field": "best_season", "says": "\"Climbed roughly June through September; documented ascents span from late June to mid-August.\""},
+      {"field": "climate.spring", "says": "\"Lingering snow on the approach and lower rib into June/early July; carry an ice axe before mid-July.\""}
+     ],
+     "why": "`season` states the window starts in July, but `best_season` and the climate notes describe real ascents and axe-required conditions starting in June — a wider, earlier window than `season` claims, not a narrower one nested inside it.",
+     "internal_resolution": "best_season and climate.spring agree with each other (June start); season's \"Jul-Sep\" is the outlier that omits the documented June activity.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit named as part of a different peak",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[3] (Crystal Lake Tower summit).note", "says": "\"Westernmost point on McClellan Peak's summit ridge; SW Rib forms a continuous ~1,400-ft line down into Crystal Creek Basin.\""},
+      {"field": "overview / beta / area", "says": "The route and area are consistently named \"Crystal Lake Tower\" as its own summit (\"the top Beckey identifies as Crystal Lake Tower's summit\"), never McClellan Peak"}
+     ],
+     "why": "This is the only field on the route that names McClellan Peak; every other mention of the summit calls it Crystal Lake Tower's own top. It may be geographically accurate (a subsidiary point on McClellan's ridge) but reads as an inconsistency against the rest of the route's framing.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_backbone_ridge",
+   "name": "Backbone Ridge",
+   "area": "Dragontail Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "name": "East Ridge via Aasgard Pass Route",
+   "area": "Dragontail Peak",
+   "contradictions": [
+    {
+     "fact": "Total round-trip time",
+     "severity": "high",
+     "claims": [
+      {"field": "commitment", "says": "\"12.5 miles, 5,600 ft gain, 8-10 hours\""},
+      {"field": "itinerary", "says": "\"round trip is roughly 12.5 mi, with car-to-car times reported in the 11-17 hour range depending on pace and conditions.\""}
+     ],
+     "why": "`commitment` renders as one of the Overview grade chips and states 8-10 hours for the round trip, while the itinerary text for the same route reports 11-17 hours — the low end of one range is already below the low end of the other, and the high end differs by more than 25%.",
+     "internal_resolution": "itinerary's 11-17 hr figure is presented as the broader, sourced range (\"times reported\"); commitment's 8-10 hr appears to be a narrower, unsupported estimate.",
+     "needs_research": false
+    },
+    {
+     "fact": "Elevation gain to Aasgard Pass mislabeled",
+     "severity": "medium",
+     "claims": [
+      {"field": "watch_out", "says": "\"Steep snow slope to Aasgard Pass — 35-degree, 700 vertical feet to the 8,500 ft saddle, real avalanche potential if snow-covered\""},
+      {"field": "pitch_detail (\"Aasgard Pass\")", "says": "\"~2,000 ft of gain in under a mile to the 7,841 ft pass\""},
+      {"field": "approach", "says": "\"gaining roughly 2,200 ft in 0.75 mile\" to the pass"}
+     ],
+     "why": "Aasgard Pass itself sits at 7,841 ft and is climbed via ~2,000-2,200 ft of gain per every other field, but watch_out attaches \"700 vertical feet\" and an \"8,500 ft saddle\" to the climb \"to Aasgard Pass\" — those numbers actually match the separate Snow Creek Glacier segment beyond the pass (per climbing_route step 2, saddle at ~8,500 ft, gain from the 7,841 ft pass of ~659 ft).",
+     "internal_resolution": "pitch_detail and approach agree with each other on the pass's own ~2,000-2,200 ft gain; watch_out's figures belong to a later segment and are mislabeled as the climb to the pass.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_serpentine_arete",
+   "name": "Serpentine Arête",
+   "area": "Dragontail Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "name": "Pandora's Box (W Couloir)",
+   "area": "Dragontail Peak",
+   "contradictions": [
+    {
+     "fact": "Route grade",
+     "severity": "high",
+     "claims": [
+      {"field": "watch_out", "says": "\"Grade III alpine terrain demands winter mountaineering experience and conservative decision-making\""},
+      {"field": "grade", "says": "\"Grade II, steep snow to ~40-45°, Class 3 scramble\""},
+      {"field": "alpine_grade", "says": "\"I/II (Grade I-II snow route)\""},
+      {"field": "commitment", "says": "\"II\""},
+      {"field": "ice_grade", "says": "\"Moderate snow (Grade II)\""}
+     ],
+     "why": "watch_out calls this a Grade III route while every other grade field (grade, alpine_grade, commitment, ice_grade) rates it Grade I-II.",
+     "internal_resolution": "Four separate fields agree on Grade I-II; watch_out's \"Grade III\" is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "4700"},
+      {"field": "itinerary.days[*].gainFt", "says": "2300 + 3200 + 0 = 5500"}
+     ],
+     "why": "The itinerary's own per-day gain figures sum to 5500 ft, 800 ft (17%) higher than the top-level gain_ft of 4700; the waypoints (trailhead 3,400 ft to summit 8,840 ft via Colchuck Col 8,500 ft) also compute closer to 5,400-5,500 ft.",
+     "internal_resolution": "itinerary gainFt sum and the waypoint elevations agree with each other (~5,440-5,500 ft); gain_ft (4700) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier travel claim",
+     "severity": "medium",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "\"N/A - no glacier travel\""},
+      {"field": "approach", "says": "\"Ascend talus and then the glacier itself...the glacier's east lobe is generally reported free of significant crevasses but can be hard enough to want crampons and an axe. Climb the glacier to Colchuck Col\""},
+      {"field": "approach_variants[0].baseFinding", "says": "\"Climb the glacier to Colchuck Col.\""}
+     ],
+     "why": "The route explicitly climbs the Colchuck Glacier to reach Colchuck Col, but seasonal_hazards.crevasses flatly denies any glacier travel occurs. The glacier being low-crevasse doesn't make the \"no glacier travel\" claim true.",
+     "internal_resolution": "approach and approach_variants agree the glacier is crossed; seasonal_hazards.crevasses is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Steepest angle of the couloir",
+     "severity": "low",
+     "claims": [
+      {"field": "max_angle / watch_out", "says": "max_angle: 50; watch_out: \"Constant 40-50 degree angle\""},
+      {"field": "overview / beta / timing.sectionBreakdown / itinerary.days[1].schedule", "says": "\"up to roughly 40-45°\" / \"up to ~40-45°\" / \"up to ~45 degrees near the top\" / \"Steepest section (~45°)\""}
+     ],
+     "why": "Four fields cap the couloir at ~45°; max_angle and watch_out state 50°.",
+     "internal_resolution": "the majority (overview, beta, timing, schedule) cap at 45°; max_angle/watch_out's 50° is the outlier, though the gap is modest.",
+     "needs_research": false
+    },
+    {
+     "fact": "Seasonal guidance omits the season it's quoted for",
+     "severity": "medium",
+     "claims": [
+      {"field": "watch_out", "says": "\"Seasonal guidance suggests 'Late May and early June typically have best conditions' - poor conditions outside this window\""},
+      {"field": "seasonal_guidance.monthBreakdown", "says": "only covers December, January, February, March, April — no May or June entry at all"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "\"Late winter to spring, conditions dependent\""}
+     ],
+     "why": "watch_out attributes a specific \"Late May and early June\" recommendation to seasonal guidance, but the actual seasonal_guidance object never mentions May or June and stops at April.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r4",
+   "name": "Triple Couloirs",
+   "area": "Dragontail Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_der_dihedral",
+   "name": "Der Dihedral",
+   "area": "Dragontail Peak",
+   "contradictions": [
+    {
+     "fact": "Day-2 climb duration",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[1].hours", "says": "11"},
+      {"field": "itinerary.days[1].schedule", "says": "\"3:30 AM\" Leave camp ... \"7:00 PM\" Back at camp"}
+     ],
+     "why": "The day's own schedule timestamps span 3:30 AM to 7:00 PM — 15.5 hours — while the same day object's `hours` field says 11, a 40% understatement. (The route's totalHrs=17.3, summitTimeHrs=11 and descentTimeHrs=2.5 are all mutually consistent with the 11-hour figure, so the schedule's clock span is the outlier within this one day entry.)",
+     "internal_resolution": "totalHrs (17.3), summitTimeHrs (11), and itinerary.days[1].hours (11) all agree with each other; the day's own schedule array (15.5 hrs door-to-door) is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_this_my_friend",
+   "name": "This, My Friend",
+   "area": "Dragontail Peak",
+   "contradictions": [
+    {
+     "fact": "Descent method — walk-off vs. rappelling the route",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "\"Scramble 3rd/4th-class terrain southwest to a gully below the final belay, then join the standard Aasgard Pass descent.\""},
+      {"field": "descent_text", "says": "\"...This is a walk-off descent - the route is not set up for rappel.\""},
+      {"field": "bail", "says": "\"No fixed anchors exist on the route; ...continuing to the top and using the walk-off descent is the realistic option rather than rappelling.\""},
+      {"field": "watch_out", "says": "\"Route not equipped for rappel descent — commit to the scramble descent\""},
+      {"field": "turnaround", "says": "\"Because the route isn't set up to rappel, only commit above P1 if you're confident finishing all 5 pitches and completing the 3rd/4th-class descent scramble.\""},
+      {"field": "itinerary.days[0].note / schedule", "says": "\"Rappel the route (no fixed anchors — build gear rappels) and retrace the approach back to the car.\" / schedule entry \"1:30 PM Begin rappels — Gear rappels back down the route.\""}
+     ],
+     "why": "Five separate fields (descent, descent_text, bail, watch_out, turnaround) all say this route has no fixed anchors and must be exited by a 3rd/4th-class walk-off scramble to Aasgard Pass, explicitly warning it is 'not set up for rappel.' The itinerary describes the opposite: building gear rappels back down the technical face itself. A climber following the itinerary would plan for a descent method the route's own safety fields say does not exist here.",
+     "internal_resolution": "descent, descent_text, bail, watch_out and turnaround unanimously describe a walk-off; itinerary is the sole outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "5040"},
+      {"field": "itinerary.days[0].gainFt", "says": "4200"}
+     ],
+     "why": "The one-day itinerary's own gainFt (4200) is ~840 ft (17-20%) lower than the top-level gain_ft (5040); summing the route's own waypoint elevations (trailhead 3,400 ft -> Colchuck Lake 5,570 ft -> Aasgard Pass trail ~7,250 ft -> base ~7,541 ft -> route top 8,250 ft) gives roughly 4,850 ft, closer to gain_ft.",
+     "internal_resolution": "waypoint-derived gain (~4,850 ft) sits closer to gain_ft (5040) than to itinerary.days[0].gainFt (4200), suggesting the itinerary figure is the outlier, though the margin is not large.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "name": "Hidden Couloir",
+   "area": "Dragontail Peak",
+   "contradictions": [
+    {
+     "fact": "Rope length",
+     "severity": "high",
+     "claims": [
+      {"field": "gear", "says": "\"60 m rope\""},
+      {"field": "rope_length_m", "says": "30"},
+      {"field": "rope_note", "says": "\"A single ~30m thin rope suits the short (~800ft) Hidden Couloir entry gully for occasional belayed steps...\""},
+      {"field": "rack", "says": "\"~30m thin single rope\""}
+     ],
+     "why": "The top-level gear checklist tells a climber to bring a 60 m rope, but rope_length_m, rope_note, and the rack list all specify a 30 m rope for this specific, short couloir. A climber packing from `gear` alone would carry the wrong rope length (though a longer rope also works, so the practical risk is lower than the reverse case).",
+     "internal_resolution": "rope_length_m, rope_note and rack all agree on 30 m; gear's \"60 m rope\" is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Climbing season window",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "\"Apr-Jul (retains snow into mid-summer)\""},
+      {"field": "best_season", "says": "\"Late winter to spring (in condition)\""},
+      {"field": "climate.bySeason.winter", "says": "\"Primary couloir season; cold and avalanche-prone\""},
+      {"field": "seasonal_guidance.monthBreakdown.March", "says": "status \"good\""}
+     ],
+     "why": "`season` states the window is April-July, excluding winter entirely, while best_season calls \"late winter\" part of the prime window and climate.bySeason.winter calls winter the \"Primary couloir season\"; seasonal_guidance also rates March \"good\" — all describing climbing before the season field's April start.",
+     "internal_resolution": "best_season, climate.bySeason.winter, and seasonal_guidance.monthBreakdown all describe pre-April climbing as good-to-primary; season's \"Apr-Jul\" is the narrower outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rack cam-size upper limit",
+     "severity": "medium",
+     "claims": [
+      {"field": "gear", "says": "\"A small rock rack — cams .3-2 and a set of small-to-medium nuts\""},
+      {"field": "sling_rack.cams", "says": "\"0.2-1in (small set)\""}
+     ],
+     "why": "gear specifies cams up to 2 inches; sling_rack caps the same rack at 1 inch — a meaningfully different top-end size for the same route's protection.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "name": "Gerber-Sink",
+   "area": "Dragontail Peak",
+   "contradictions": [
+    {
+     "fact": "Rope length",
+     "severity": "high",
+     "claims": [
+      {"field": "gear / rack", "says": "\"60m rope\""},
+      {"field": "rope_length_m", "says": "70"},
+      {"field": "rope_note", "says": "\"One party brought a 70m rope and simul-climbed sections that ran beyond it...\""}
+     ],
+     "why": "gear and rack both specify a 60 m rope, but rope_length_m and rope_note describe a 70 m rope in actual use. This is the mirror-image of the rope-length mismatch on the neighboring Hidden Couloir route.",
+     "internal_resolution": "rope_length_m and rope_note agree on 70 m; gear/rack's \"60m rope\" is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent method",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent", "says": "\"Descend via established descent route, using rappels and downclimbing as necessary. Multiple anchor points and protection required.\""},
+      {"field": "descent_text", "says": "\"This is a walk-off/downclimb, not a rappel descent, on every ascent on record. ... No rappels are recorded for a completed ascent...\""}
+     ],
+     "why": "The short `descent` field frames rappelling as a normal, expected part of the descent, while the longer descent_text (which is what actually renders, per the header rule that the shorter of the two is hidden) explicitly states no completed ascent has ever used a rappel and the standard exit is a walk-off via Aasgard Pass.",
+     "internal_resolution": "descent_text is the more detailed, better-supported account and is the one that renders; the short `descent` field's rappel framing is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Seasonal guidance omits the route's actual planned season",
+     "severity": "medium",
+     "claims": [
+      {"field": "seasonal_guidance", "says": "optimalWindow \"July to September\"; monthBreakdown covers only July, August, September"},
+      {"field": "itinerary.cal", "says": "\"Typically climbed March-April while ice/névé fills the runnels — outside the May 15-Oct 31 permit season...\""},
+      {"field": "overview / best_season / climate.bySeason.winter", "says": "the route \"has become a popular winter/spring ice-and-mixed objective\"; \"late winter to spring for the ice/mixed version\"; \"Primary ice/mixed season\""}
+     ],
+     "why": "The route's own itinerary is explicitly built around a March-April ice ascent, and several fields describe the winter/spring ice line as the route's current popular form, yet SEASONAL GUIDANCE names only July-September as the window and has no entry at all for March/April.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "dist_km appears to be one-way while itinerary totals round trip",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6.4 (≈4.0 mi)"},
+      {"field": "itinerary.days[*].miles", "says": "4.3 + 3.6 + 4.3 = 12.2 mi"}
+     ],
+     "why": "dist_km matches only the one-way approach distance to Colchuck Lake, not the route's round-trip total; per rules this is low priority since itinerary miles (not dist_km) is what renders in the header when present.",
+     "internal_resolution": "itinerary miles is the round-trip total and is the field that renders; dist_km is a one-way figure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_enchantment_peak_east_ridge",
+   "name": "East Ridge (Prusik Pass)",
+   "area": "Enchantment Peak",
+   "contradictions": [
+    {
+     "fact": "Grade of the (non-taken) SW sub-summit",
+     "severity": "medium",
+     "claims": [
+      {"field": "watch_out", "says": "\"Don't mistake the SW sub-summit (a distinctly harder, more exposed low-5th-class climb about 1,500 ft away) for this route's destination\""},
+      {"field": "approach_variants[0].baseFinding / hazards", "says": "\"The southwest summit lies about 1,500 ft further along the crest and is a serious exposed fourth-class scramble\"; \"Committing onto the crest toward the southwest summit turns the day into exposed 4th class\""}
+     ],
+     "why": "watch_out labels the SW sub-summit \"low-5th-class\" without qualification, while this route's own baseFinding and hazards call the same feature \"fourth-class.\" (The neighboring Southwest Scramble route on the same peak more carefully calls it \"Class 4 (some report low 5th)\", suggesting a range rather than a flat low-5th grade.)",
+     "internal_resolution": "baseFinding and hazards agree on \"fourth class\"; watch_out's flat \"low-5th-class\" label is the narrower/harder outlier within this route's own fields.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "name": "Southwest Scramble",
+   "area": "Enchantment Peak",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain — three disagreeing figures",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "7250"},
+      {"field": "approach", "says": "\"One-way distance to the summit is roughly 7.5–8 miles with about 5,100 ft of gain, matching the ~15.5-mile, 5,138-ft round trip most parties log for a car-to-car push.\""},
+      {"field": "itinerary.days[*].gainFt", "says": "4300 + 1650 + 700 = 6650"}
+     ],
+     "why": "Three fields on the same route state three different totals for the same fact — 7,250 ft (gain_ft), ~5,138 ft (approach prose), and 6,650 ft (itinerary sum) — a spread of over 2,100 ft (41% between the extremes). A climber sizing up the day's effort would get a materially different picture depending on which field they read.",
+     "internal_resolution": "Waypoint elevations (trailhead 3,500 ft -> Colchuck Lake 5,570 ft -> Aasgard Pass 7,841 ft -> Core Enchantments 7,000 ft -> base of SW slopes 7,600 ft -> summit 8,538 ft) sum to ~5,880 ft one-way, closest to the approach prose's ~5,100-5,138 ft; gain_ft (7,250) is the clearest outlier, with itinerary's 6,650 ft in between.",
+     "needs_research": true
+    },
+    {
+     "fact": "Day-2 summit-day duration",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.days[1].hours", "says": "5.5"},
+      {"field": "itinerary.days[1].schedule", "says": "\"7:00 AM\" Leave camp ... \"2:00 PM\" Back at camp"}
+     ],
+     "why": "The day's own schedule spans 7:00 AM to 2:00 PM (7 hours), about 27% more than the day's stated \"hours\": 5.5.",
+     "internal_resolution": "totalHrs (19.5) = approachTimeHrs (7.5) + summitTimeHrs (5.5) + descentTimeHrs (6.5) are mutually consistent with the 5.5-hour figure, so the schedule's clock span is the outlier within this one day entry.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,351 @@
+{
+ "batches": ["b181.json", "b182.json", "b183.json", "b184.json"],
+ "routes_read": 12,
+ "routes": [
+  {
+   "id": "wa_jack_mountain_southeast_ridge_direct",
+   "name": "Southeast Ridge (Direct)",
+   "area": "Jack Mountain",
+   "contradictions": [
+    {
+     "fact": "bivy list is a generic regional camp list, not near this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0]", "says": "Colonial Creek South Campground, Diablo Lake — elev 1200, 'staging ground for the whole west end of the corridor: directly under Colonial Peak'"},
+      {"field": "bivy[1]-[2]", "says": "Colonial Basin bench camps / Neve-Colonial col high bivy — the standard camps for Snowfield, Neve and Colonial Peak"},
+      {"field": "approach / waypoints", "says": "Route is approached via Canyon Creek Trailhead on SR 20 near MP 141, Crater Lake and Jerry Lakes"}
+     ],
+     "why": "The bivy list is the standard Diablo Lake / Colonial-Snowfield-Pyramid corridor camp set (tens of miles west, on a different drainage), not camps reachable from or useful for this route's own Canyon Creek approach; the route's real camps (Jerry Lakes, Crater Creek) only appear as the last entry.",
+     "internal_resolution": "The route's own approach/waypoints/itinerary consistently describe Canyon Creek TH -> Crater Lake -> Jerry Lakes/Crater Creek Meadows as the only camps used; the other five bivy entries are unrelated to this climb.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_jack_mountain_east_ridge",
+   "name": "East Ridge",
+   "area": "Jack Mountain",
+   "contradictions": [
+    {
+     "fact": "bivy list is a generic regional camp list, not near this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0]-[2]", "says": "Colonial Creek South Campground / Colonial Basin bench camps / Neve-Colonial col high bivy — camps for Colonial, Snowfield and Pyramid Peaks near Diablo Lake"},
+      {"field": "approach_variants[0].notes", "says": "Access is from the south: the Canyon Creek Trailhead ... McMillan Park and Jackita Ridge trail ... Jerry Lakes basin"}
+     ],
+     "why": "Same contamination as the other Jack Mountain routes: a Diablo Lake/Colonial-corridor camp set unrelated to this route's Canyon Creek/Jerry Lakes approach.",
+     "internal_resolution": "The route's own approach text and the final bivy entry (Jerry Lakes basin) describe the real camp; the other five entries belong to a different part of the park.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_jack_mountain_northeast_glacier",
+   "name": "Northeast Glacier",
+   "area": "Jack Mountain",
+   "contradictions": [
+    {
+     "fact": "bivy list is a generic regional camp list, not near this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0]-[2]", "says": "Colonial Creek South Campground / Colonial Basin bench camps / Neve-Colonial col high bivy — Diablo Lake corridor camps"},
+      {"field": "approach", "says": "North from May Creek; northeast face of mountain via glacier approach"},
+      {"field": "access.notes", "says": "Access via high-speed boat shuttle up Ross Lake to May Creek (Ross Lake Resort)"}
+     ],
+     "why": "This route is reached via Ross Lake/May Creek on the east side of the North Cascades; the bivy entries describe camps near Diablo Lake on the opposite (west) side, unrelated to this approach.",
+     "internal_resolution": "The route's own approach/access fields consistently describe Ross Lake/May Creek; none of the five listed bivy camps are on that approach.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_jack_mountain_southwest_ridge",
+   "name": "Southwest Ridge",
+   "area": "Jack Mountain",
+   "contradictions": [
+    {
+     "fact": "bivy list is a generic regional camp list, not near this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0]-[2]", "says": "Colonial Creek South Campground / Colonial Basin bench camps / Neve-Colonial col high bivy — Diablo Lake corridor camps"},
+      {"field": "approach", "says": "Park at the Panther Creek / East Bank trailhead ... Little Jack Trail ... traverse across to the base of Jack Mountain"}
+     ],
+     "why": "Same recurring contamination: camps for Colonial/Snowfield/Pyramid Peaks near Diablo Lake, unrelated to this route's Little Jack Trail / East Bank approach.",
+     "internal_resolution": "The route's own approach describes camping high on the Little Jack ridge crest; the generic Diablo Lake entries do not belong here.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_jack_mountain_north_ridge",
+   "name": "North Ridge",
+   "area": "Jack Mountain",
+   "contradictions": [
+    {
+     "fact": "bivy list is a generic regional camp list, not near this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0]-[2]", "says": "Colonial Creek South Campground / Colonial Basin bench camps / Neve-Colonial col high bivy — Diablo Lake corridor camps"},
+      {"field": "approach", "says": "The north flank of Jack Mountain is reached from the Ross Lake East Bank Trail ... Devils Creek is the main north-side drainage"}
+     ],
+     "why": "Same recurring contamination as the other Jack Mountain routes.",
+     "internal_resolution": "The route's own approach describes an East Bank Trail / Devils Creek camp; the Diablo Lake entries are unrelated.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_jack_mountain_south_face",
+   "name": "South Face / Southeast Ridge",
+   "area": "Jack Mountain",
+   "contradictions": [
+    {
+     "fact": "total trip gain/loss vs itinerary day sums",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "11500"},
+      {"field": "loss_ft", "says": "11500"},
+      {"field": "itinerary.days[0].gainFt/lossFt", "says": "4700 / 700"},
+      {"field": "itinerary.days[1].gainFt/lossFt", "says": "3400 / 3400"},
+      {"field": "itinerary.days[2].gainFt/lossFt", "says": "1400 / 5300"},
+      {"field": "itinerary.totalNote", "says": "roughly 11,000-11,500 ft of cumulative gain"}
+     ],
+     "why": "The three itinerary days' gainFt sum to 9500 ft and lossFt sum to 9400 ft, about 17-18% below the header gain_ft/loss_ft (11500) and below the itinerary's own totalNote claim of 11,000-11,500 ft — the day-by-day numbers and the trip total disagree with each other inside the same itinerary object.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "access.notes/rules describe Boston Basin/Eldorado/Sulphide Glacier permit quotas, not Jack Mountain",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.notes", "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2-13); the remaining 40% are walk-up..."},
+      {"field": "access.rules", "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)."},
+      {"field": "waypoints / itinerary / bivy", "says": "Camps are at Jerry Lakes / Crater Creek Meadows, reached from the Canyon Creek Trailhead"}
+     ],
+     "why": "Boston Basin, Eldorado and the Sulphide Glacier are permit zones for entirely different peaks (Forbidden Peak, Eldorado Peak, Mount Shuksan) reached from different trailheads (Cascade River Road / Baker Lake), many miles from Jack Mountain's Canyon Creek/Pasayten approach; this reads like copy-pasted boilerplate rather than this route's own permit rules.",
+     "internal_resolution": "The route's own access.permit field correctly describes the Pasayten self-issue / NPS backcountry permit split; access.notes/rules is contaminated.",
+     "needs_research": false
+    },
+    {
+     "fact": "land manager stated two different ways",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "Approach trails ... are in Okanogan-Wenatchee National Forest, Methow Valley Ranger District, within the Pasayten Wilderness; the peak and upper basins sit on/near the boundary with the Ross Lake National Recreation Area (NPS)"},
+      {"field": "access.land_manager", "says": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)"}
+     ],
+     "why": "landManager describes a split Forest Service/Park Service jurisdiction (matching every other Jack Mountain route and the emergency.rangerStation field), while land_manager flatly claims the whole route is NPS land with no Forest Service mention at all.",
+     "internal_resolution": "landManager's split description matches all other Jack Mountain routes' access/emergency fields; land_manager is the outlier and appears wrong.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "name": "Nohokomeen Glacier and Headwall",
+   "area": "Jack Mountain",
+   "contradictions": [
+    {
+     "fact": "bivy list is a generic regional camp list, not near this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0]-[2]", "says": "Colonial Creek South Campground / Colonial Basin bench camps / Neve-Colonial col high bivy — Diablo Lake corridor camps"},
+      {"field": "approach", "says": "From SR 20 milepost 138, park at the East Bank Trailhead ... follow the East Bank Trail ... to the May Creek camp"}
+     ],
+     "why": "Same recurring Diablo Lake corridor contamination as the other Jack Mountain routes.",
+     "internal_resolution": "The route's own approach describes camps at ~5,200 ft below the glacier or ~7,400 ft on the glacier; the Diablo Lake entries are unrelated.",
+     "needs_research": false
+    },
+    {
+     "fact": "total gain figure vs overview's stated gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "9069"},
+      {"field": "overview", "says": "The round trip is rated at 30 miles and 10,000 ft of gain"}
+     ],
+     "why": "gain_ft (9069) is about 9% below the overview's own stated 10,000 ft of cumulative gain, and gain_ft is suspiciously identical to the area's summit elevation_ft (9069 ft) — suggesting the field was populated with the peak's elevation rather than an actual computed gain figure.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "round-trip distance vs overview's stated mileage",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "17.7 (~11.0 mi)"},
+      {"field": "overview", "says": "The round trip is rated at 30 miles and 10,000 ft of gain"},
+      {"field": "approach", "says": "roughly 8 miles [trail] ... About 3 miles of this off-trail work reaches a flat camp just over 5,200 ft"}
+     ],
+     "why": "Whether dist_km (17.7 km / 11.0 mi) is read as one-way (matching the ~11 mi to camp described in approach) or as round trip, it does not reconcile with the overview's flat claim of a '30 mile' round trip — even doubling 11 mi one-way only reaches ~22 mi, 8 miles/~27% short of the stated 30.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "name": "Northeast Buttress",
+   "area": "Johannesburg Mountain",
+   "contradictions": [
+    {
+     "fact": "pitch count vs numbered ROUTE BREAKDOWN rows",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "20"},
+      {"field": "pitch_detail", "says": "12 numbered rows (pitch 1 through pitch 12)"},
+      {"field": "overview", "says": "a sustained, roughly twenty-pitch line"}
+     ],
+     "why": "TECHNICAL STATS states 20 pitches, but the ROUTE BREAKDOWN table (pitch_detail) only lists 12 pitches, ending at the 7,100 ft bivy plus 3 more to the summit ridge/ice pitch — a climber counting rows would find 8 fewer pitches than the stat claims.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "obj_haz names the Sill Glacier / a 'descent glacier', which is not on this route's own descent",
+     "severity": "high",
+     "claims": [
+      {"field": "obj_haz", "says": "Icefall and rockfall on the Sill Glacier descent couloir; Crevasses and a bergschrund on the descent glacier"},
+      {"field": "descent / descent_text", "says": "Descend via the long East Ridge ... Doug's Direct ... traverses beneath the Triplets buttress ... climbs to the north ridge of Mixup Peak ... crosses the Cache Glacier"}
+     ],
+     "why": "This route's own descent (Doug's Direct) crosses the Cache Glacier, not the Sill Glacier — the Sill Glacier is the feature that defines the neighboring Cascade-Johannesburg Couloir route's line, not this route's descent. obj_haz appears to have copied a hazard from that other route.",
+     "internal_resolution": "descent_text (the route's own, detailed field) names Cache Glacier consistently; obj_haz's 'Sill Glacier descent couloir' does not match anything in this route's own descent description.",
+     "needs_research": false
+    },
+    {
+     "fact": "seasonal_hazards.crevasses claims no glacier travel, but the route's own descent crosses a glacier",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - no roped glacier travel is required on the buttress itself, but the hanging glaciers above and beside the face produce the icefall/avalanche hazard"},
+      {"field": "descent_text", "says": "...drops via 3rd/4th-class slabs and blocks to the Cache Glacier, then follows a climber's trail along Mixup Arm..."},
+      {"field": "obj_haz", "says": "Crevasses and a bergschrund on the descent glacier"}
+     ],
+     "why": "seasonal_hazards.crevasses is framed as N/A ('no roped glacier travel required'), but the route's own descent_text has the party crossing the Cache Glacier, and obj_haz separately lists crevasses/bergschrund on 'the descent glacier' — the crevasse hazard field undersells a hazard the row itself documents elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "access.notes/rules describe Boston Basin's specific camping quota, not this route's own camp",
+     "severity": "low",
+     "claims": [
+      {"field": "access.notes", "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov..."},
+      {"field": "access.rules", "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)."},
+      {"field": "bivy", "says": "Buttress bivy at the heather-to-rock transition (7,100 ft) is the planned bivy for this route"}
+     ],
+     "why": "Boston Basin is a different climbers' camp off the same Cascade River Road corridor (used for Forbidden Peak/Sharkfin/Torment-Forbidden), not this route's own bivy (a ledge at 7,100 ft on the buttress itself); the access.rules text describes someone else's camp rules rather than this route's.",
+     "internal_resolution": "Lower priority than the same text on Jack Mountain/Katsuk since Boston Basin is at least in the same road corridor, but it still isn't this route's own camping situation.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_johannesburg_mountain_cj_couloir",
+   "name": "Cascade-Johannesburg Couloir (East Ridge)",
+   "area": "Johannesburg Mountain",
+   "contradictions": [
+    {
+     "fact": "approach time stated two different ways",
+     "severity": "low",
+     "claims": [
+      {"field": "timing.approachTimeHrs", "says": "6"},
+      {"field": "approach_variants[0].hours", "says": "under 1"}
+     ],
+     "why": "Both fields are literally labeled the route's approach time, but describe different endpoints: approach_variants' 'under 1 hour' is to the couloir apron/base of climbing (~3,300 ft), while timing.approachTimeHrs (6, matching itinerary day 1) is the full hike to the bivy near the C-J col much higher up. A climber skimming only the numbers would see a 6x discrepancy.",
+     "internal_resolution": "Resolvable from the row's own approach_variants notes text (20 minutes to the apron) vs itinerary day 1 (6 hours to the col bivy) — not a true conflict once both endpoints are read, but the two 'approach hours' figures disagree at face value.",
+     "needs_research": false
+    },
+    {
+     "fact": "access.notes/rules describe Boston Basin's specific camping quota, not this route's own camp",
+     "severity": "low",
+     "claims": [
+      {"field": "access.notes", "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov..."},
+      {"field": "access.rules", "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)."},
+      {"field": "bivy", "says": "Johannesburg Camp (3,400 ft) is 'the practical staging point for the Cascade-Johannesburg Couloir'"}
+     ],
+     "why": "Same as the Northeast Buttress: Boston Basin serves other peaks off the same road, not this route's own bivy (Johannesburg Camp near the trailhead).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "name": "Northeast Ridge (1963 Route)",
+   "area": "Johannesburg Mountain",
+   "contradictions": [
+    {
+     "fact": "approach routed via Cascade Pass in waypoints, but never mentioned in the approach prose",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[1]", "says": "Cascade Pass, elev 5392, distMi 3.6, note: 'Maintained trail tops out here; leave it for the climbers' path toward Johannesburg.'"},
+      {"field": "approach", "says": "East/Northeast from Cascade Pass trailhead; descend and cross Cascade River, then approach the northeast face via C-J couloir"},
+      {"field": "approach_variants[0].notes / baseFinding", "says": "From the Cascade Pass trailhead ... walk a short way back down the road, descend a dirt embankment, ford or cross the infant Cascade River ... Serious ground starts around 3,500 ft — you are on the route within an hour of the car."}
+     ],
+     "why": "The waypoint list sends the party UP the maintained trail to Cascade Pass (5,392 ft, 3.6 mi) before leaving it, while the approach and approach_variants text (matching the near-identical approach used by the neighboring Northeast Buttress and CJ Couloir routes) describe dropping DOWN to ford the Cascade River directly from the trailhead parking lot, with no ascent to Cascade Pass at all and the base reached within an hour of the car — an 1,800 ft detour that the route's own prose says doesn't happen.",
+     "internal_resolution": "The approach/approach_variants prose is corroborated by this peak's other two routes (Northeast Buttress, CJ Couloir), which describe the identical direct river-ford approach with no Cascade Pass detour; the Cascade Pass waypoint looks misplaced/contaminated from a different objective (e.g. Sahale/Trapper/Mixup, which are genuinely reached via Cascade Pass).",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_rib_1951_route",
+   "name": "Northeast Rib (1951 Route)",
+   "area": "Johannesburg Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "name": "Southwest Gully",
+   "area": "Katsuk Peak",
+   "contradictions": [
+    {
+     "fact": "total gain/loss vs itinerary day sums",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "8100"},
+      {"field": "loss_ft", "says": "6000"},
+      {"field": "itinerary.days[0].gainFt/lossFt", "says": "2900 / 150"},
+      {"field": "itinerary.days[1].gainFt/lossFt", "says": "2100 / 2100"},
+      {"field": "itinerary.days[2].gainFt/lossFt", "says": "150 / 2900"},
+      {"field": "itinerary.totalNote", "says": "~12 miles round trip and ~2,900 ft of net gain to the basin camp"}
+     ],
+     "why": "The itinerary's three days sum to 5,150 ft of gain and 5,150 ft of loss — the header gain_ft (8,100 ft) is about 57% higher, and loss_ft (6,000 ft) about 16% higher, than the itinerary's own day-by-day numbers, and the waypoint elevation profile (TH 3,700 -> Easy Pass 6,550 -> summit 8,683, net ~5,000 ft one-way) also supports the itinerary figures rather than the header stat.",
+     "internal_resolution": "Waypoints and itinerary agree closely with each other (~5,000-5,600 ft); gain_ft/loss_ft appear to be the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "access.notes/rules describe Boston Basin/Eldorado/Sulphide Glacier permit quotas, unrelated to this trailhead",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.notes", "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2-13)..."},
+      {"field": "access.rules", "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)."},
+      {"field": "access.permit", "says": "North Cascades NP backcountry permit required for the overnight camp below Mesahchie/Katsuk..."}
+     ],
+     "why": "Katsuk Peak is reached from the Easy Pass trailhead on Ragged Ridge, roughly 30+ miles from Boston Basin's Cascade River Road trailhead; the Boston Basin-specific quota text is unrelated boilerplate, not this route's own permit rules (which are correctly described separately in access.permit).",
+     "internal_resolution": "access.permit is route-specific and correct; access.notes/rules is contaminated from an unrelated area.",
+     "needs_research": false
+    },
+    {
+     "fact": "land manager stated two different ways",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "USFS Okanogan-Wenatchee National Forest (Methow Valley Ranger District) at the Easy Pass Trailhead; the peak and climbing route are within North Cascades National Park, entered at Easy Pass (6,550 ft)."},
+      {"field": "access.land_manager", "says": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)"}
+     ],
+     "why": "landManager correctly describes a split Forest Service (trailhead) / Park Service (route) jurisdiction, matching passRequired ('Northwest Forest Pass... required to park at the Easy Pass Trailhead (USFS land)') and the bivy entries' permit notes; land_manager flatly claims the whole thing is NPS, omitting the Forest Service trailhead entirely.",
+     "internal_resolution": "landManager (and passRequired, and the bivy permit notes) agree on a split jurisdiction; land_manager is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "bivy list includes camps for Black Peak/Corteo Peak, reached from a different trailhead than this route",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy (Wing Lake)", "says": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well ... From the Rainy Pass west lot..."},
+      {"field": "bivy (Lewis Lake)", "says": "...where the Corteo approach commits..."},
+      {"field": "bivy (Rainy Pass trailhead lots)", "says": "This is the door to Black Peak and Corteo..."},
+      {"field": "bivy (Easy Pass trailhead, SR 20)", "says": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva..."}
+     ],
+     "why": "The route's own bivy entry states Easy Pass trailhead is 'the only practical trailhead' for Katsuk, yet three other bivy entries in the same list (Wing Lake, Lewis Lake, Rainy Pass trailhead) are explicitly for Black Peak and Corteo Peak, reached from the separate Rainy Pass trailhead — directly contradicting the 'only practical trailhead' claim on the same route's own field.",
+     "internal_resolution": "The 'Easy Pass trailhead ... only practical trailhead' entry is corroborated by the route's own approach/waypoints (which start at Easy Pass); the Wing Lake/Lewis Lake/Rainy Pass entries are contamination from Black Peak/Corteo Peak.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

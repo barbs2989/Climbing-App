@@ -1,0 +1,340 @@
+{
+ "batches": ["b073.json", "b074.json", "b075.json", "b076.json"],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_preacher_mountain_scramble",
+   "name": "Standard Scramble",
+   "area": "Preacher Mountain",
+   "contradictions": [
+    {
+     "fact": "Descent time from summit to trailhead",
+     "severity": "high",
+     "claims": [
+      {"field": "descent_text", "says": "Descent time is roughly 5 hours (about 1.5 hours from summit to Rainy Lake, 2+ hours from the lake back to the car)"},
+      {"field": "itinerary.days[0].schedule", "says": "Summit break ends ~11:00-11:30 AM; Back at Rainy Lake ~1:00 PM; Back at trailhead ~3:00 PM"}
+     ],
+     "why": "descent_text's own two sub-splits (1.5 hr + 2 hr = 3.5 hr) don't add up to its stated headline 'roughly 5 hours', and the itinerary schedule (summit break end ~11:15 AM to trailhead 3:00 PM) independently shows only ~3.5-4 hours of descent, not 5.",
+     "internal_resolution": "The itinerary schedule and descent_text's own sub-times agree with each other at ~3.5-4 hrs; the headline 'roughly 5 hours' in descent_text is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Rainy Lake",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "roughly 3.5-3.75 miles and 2-2.5 hours from the trailhead" },
+      {"field": "waypoints[4] (Rainy Lake)", "says": "distMi: 4.3"}
+     ],
+     "why": "The approach prose gives one distance to Rainy Lake while the waypoint list gives a distance about 15-20% farther for the same point.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "seasonal_guidance.optimalWindow garbled/self-contradictory text",
+     "severity": "low",
+     "claims": [
+      {"field": "seasonal_guidance.optimalWindow", "says": "Late July through September-July-October season"}
+     ],
+     "why": "The optimal-window sentence appears to merge two different season strings into one garbled, internally contradictory phrase (reads as spanning both 'late July-September' and 'July-October' at once, out of order).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Treen Peak",
+   "contradictions": [
+    {
+     "fact": "Approach trailhead/route named in partner_requirements (Taylor River vs Green Ridge)",
+     "severity": "high",
+     "claims": [
+      {"field": "partner_requirements.approachTime", "says": "hike in via the Taylor River / Snoqualmie Lake trail system, then leave the trail for an unmarked, brushy scramble route to the summit"},
+      {"field": "partner_requirements.fitnessSpec.hiking", "says": "roughly 10+ miles round trip with several thousand feet of gain"},
+      {"field": "approach / approach_logistics.trailhead / road / waypoints[0]", "says": "Unsigned climbers' path off FS Road 56 ... about 1.1 miles before the Dingford Creek Trailhead (Green Ridge line)"},
+      {"field": "watch_out", "says": "Don't mistake the old Taylor River approach (via the washed-out bridge area) for the current standard route — it adds many extra miles"}
+     ],
+     "why": "partner_requirements describes the OLD Taylor River/Snoqualmie Lake approach and a 10+ mile round trip, which the route's own watch_out field explicitly warns is NOT the current standard route (the ~7 mi Green Ridge/FS 56 line documented in approach, road, waypoints, and approach_variants).",
+     "internal_resolution": "approach, approach_logistics, road, waypoints, approach_variants, and watch_out all independently agree on the Green Ridge/FS 56 climbers' path (~7 mi RT); partner_requirements is the sole outlier and appears to carry over stale Taylor River approach text.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window vs seasonal_guidance's 'optimal' window",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jun-Sep (climbable as a snow/scramble route in winter/spring with traction gear and added avalanche/cornice hazard)"},
+      {"field": "best_season", "says": "Mid-July through September is the reliable weather and snow-free window"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through October, with the core dry-and-stable window in August-September"},
+      {"field": "seasonal_guidance.monthBreakdown.October.status", "says": "good"},
+      {"field": "approach_variants[0].season", "says": "Late July to September"}
+     ],
+     "why": "season and best_season both cap the reliable window at September, but seasonal_guidance calls October part of the 'optimal' window and rates it 'good' — a month outside the stated season, not merely a narrower best-window inside a wider one.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain (gain_ft vs itinerary's net gain vs prose)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "6500"},
+      {"field": "itinerary.days[0].gainFt", "says": "4400"},
+      {"field": "itinerary.totalNote", "says": "about 4,400 ft net gain, though real trip reports log 5,500-6,100+ ft of total up-and-down"},
+      {"field": "pro_tips", "says": "total climbing (not just net gain) is closer to 6,000 ft round trip"}
+     ],
+     "why": "The header/Overview TECHNICAL STATS will show gain_ft=6500 while the Plan tab's itinerary TOTAL row shows only 4400 (net gain) for the same climb, and the route's own prose gives yet other totals (5,500-6,100+ and 'closer to 6,000') - none matching 6500 - so a climber sees several different total-gain numbers.",
+     "internal_resolution": "4400 is explainable as the net trailhead-to-summit elevation change (1,350 to 5,765 ft, confirmed by waypoints); the true cumulative gain including the ~800 ft mid-route drop-and-regain is closer to the 5,500-6,100 ft the prose describes, making the header's 6,500 the likely outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance (dist_km vs itinerary miles)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "7.2 (≈4.5 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "7"},
+      {"field": "waypoints[7] (Treen Peak summit)", "says": "distMi 3.8 (one-way, implying ~7.6 mi round trip)"}
+     ],
+     "why": "dist_km converts to about 4.5 mi, well under the ~7-7.6 mi round trip implied by the itinerary and the doubled one-way waypoint mileage; flagged low priority per the dist_km one-way/round-trip convention note.",
+     "internal_resolution": "itinerary miles (7) and doubled waypoint one-way distance (~7.6) agree with each other; dist_km (4.5 mi) is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_teneriffe_kamikaze_trail",
+   "name": "Kamikaze Trail (SW Ridge Scramble)",
+   "area": "Mount Teneriffe",
+   "contradictions": [
+    {
+     "fact": "Whether a self-issue permit is required/exists on this DNR land",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.permit", "says": "None required — free self-issue day-use permit at the trailhead (no quota for day use)."},
+      {"field": "access.rules", "says": "This peak is not inside the Alpine Lakes Wilderness, so the USFS wilderness group-size limit and self-issue wilderness permit do not apply here; a Discover Pass is required to park at the trailhead."},
+      {"field": "permit (top-level)", "says": "No climbing permit; a Discover Pass is required to park on Washington State lands."}
+     ],
+     "why": "access.permit both says a permit is 'None required' and then describes a free self-issue day-use permit as if it exists, and that description directly contradicts access.rules' explicit statement that self-issue permits 'do not apply here' on this DNR (non-Wilderness) land.",
+     "internal_resolution": "access.rules and the top-level permit field agree no self-issue permit exists on this DNR land (only a Discover Pass to park); access.permit's mention of a self-issue day-use permit is the outlier and matches the sibling Standard Route's access.permit, which correctly states no self-issue permit box exists.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Teneriffe Falls (duplicate waypoint entries)",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[1] (Teneriffe Falls (Kamikaze Falls))", "says": "distMi 2.4, elev 2633"},
+      {"field": "waypoints[2] (Teneriffe Falls / Kamikaze Trail junction)", "says": "distMi 2.8, elev 2633"}
+     ],
+     "why": "Two waypoints with the same name/elevation for what appears to be the same falls area give different distances from the trailhead (2.4 mi vs 2.8 mi).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_teneriffe_standard_route",
+   "name": "Mount Teneriffe Trail (Standard Route)",
+   "area": "Mount Teneriffe",
+   "contradictions": []
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "name": "Southeast Slopes",
+   "area": "Bryant Peak",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain (gain_ft/itinerary vs approach prose & approach_variant's own gainFt)",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "3900"},
+      {"field": "itinerary.days[0].gainFt", "says": "3900"},
+      {"field": "approach", "says": "on the order of 3,000-3,400 ft of net gain to the 5,790 ft summit"},
+      {"field": "approach_variants[0].gainFt", "says": "3400"}
+     ],
+     "why": "The header/Overview stats and the itinerary both give total gain as 3,900 ft, but the route's own approach prose and its approach_variant's own gainFt field put it at 3,000-3,400 ft - about 15% lower - for the same climb.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_chair_peak_voie_de_chaise",
+   "name": "Voie de Chaise",
+   "area": "Chair Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_chair_peak_east_face",
+   "name": "East Face",
+   "area": "Chair Peak",
+   "contradictions": [
+    {
+     "fact": "Hardest pitch grade / crux grade disagreement",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "5.2"},
+      {"field": "rock_grade", "says": "5.2 (5.5 at the overhanging band)"},
+      {"field": "pitch_detail[0] (P1)", "says": "grade 5.1-5.6"},
+      {"field": "beta", "says": "about 400 ft of the route's pleasant climbing is 4th to easy 5th class, with the notable overhanging band rated 5.5"}
+     ],
+     "why": "The route's headline grade is 5.2, rock_grade calls the crux '5.5', but pitch_detail's P1 grade range tops out at 5.6 — three different numbers for the route's hardest move, and no pitch in pitch_detail is actually labeled 5.5.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "name": "North Face",
+   "area": "Chair Peak",
+   "contradictions": [
+    {
+     "fact": "Total elevation loss (loss_ft vs itinerary day's lossFt)",
+     "severity": "medium",
+     "claims": [
+      {"field": "loss_ft", "says": "3138"},
+      {"field": "itinerary.days[0].lossFt", "says": "2600"}
+     ],
+     "why": "This is a single-day out-and-back from the same trailhead, so the day's loss should equal the route's total loss_ft (which equals gain_ft, 3138); the itinerary's 2600 is about 17% short of that.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Ice grade (route-level ice_grade vs crux pitch grades)",
+     "severity": "high",
+     "claims": [
+      {"field": "ice_grade", "says": "AI2"},
+      {"field": "pitch_detail[0] (pitch 1, crux:true)", "says": "grade AI3"},
+      {"field": "pitch_detail[3] (pitch 4)", "says": "grade AI3"}
+     ],
+     "why": "The header/Overview grade chip shows ice_grade 'AI2', but the route's own crux pitches (P1, marked crux:true, and P4) are graded AI3 in pitch_detail — a full grade harder than the headline.",
+     "internal_resolution": "pitch_detail's own P1/P4 entries (both AI3) show the technical difficulty is AI3, not AI2; the top-level ice_grade appears to understate it.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux step angle (max_angle/pitch_detail vs beta/pro_tips/waypoint)",
+     "severity": "medium",
+     "claims": [
+      {"field": "max_angle", "says": "70"},
+      {"field": "pitch_detail[3] (pitch 4)", "says": "Steepens again to 50-70° snow and ice on the final headwall"},
+      {"field": "beta", "says": "one short crux step that can approach 80° (sometimes rock, 5.4-5.6, if thin on ice)"},
+      {"field": "pro_tips", "says": "The crux is a short (~10 ft) step below the summit block that can hit ~80°"},
+      {"field": "waypoints (Col below summit block).note", "says": "a crux step up to roughly 80 degrees (occasionally bare 5.6 rock) leads to the summit from here"}
+     ],
+     "why": "max_angle and pitch_detail cap the steepest ice/snow at 70°, but beta, pro_tips, and the col waypoint all independently describe a short crux step reaching about 80° — a notably steeper, more serious move than max_angle states.",
+     "internal_resolution": "Three independent prose fields (beta, pro_tips, waypoint note) agree on ~80°; max_angle and pitch_detail's P4 range are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total approach gain to the base of the North Face",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "Total approach gain to the base is roughly 1,300-1,500 ft over about 2.5-3 miles one-way"},
+      {"field": "waypoints (Alpental TH elev 3100 -> North Face open-book base elev 5506)", "says": "implies ~2,406 ft of gain over that same one-way stretch"}
+     ],
+     "why": "The approach prose's stated total gain to the base (1,300-1,500 ft) is roughly 900-1,100 ft less than the elevation difference between the route's own trailhead (3,100 ft) and base (5,506 ft) waypoints - a gap large enough to materially misstate the approach's effort/time.",
+     "internal_resolution": "The waypoints (with explicit elev/elevFt values matching the route's other gain figures) are self-consistent; the approach text's 1,300-1,500 ft figure is the likely outlier, possibly measuring only the final leg from the ~4,200 ft basin rather than the true trailhead-to-base total.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "name": "Northeast Buttress",
+   "area": "Chair Peak",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade (route grade vs rock_grade vs pitch_detail)",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Class 5.6"},
+      {"field": "rock_grade", "says": "5.4"},
+      {"field": "pitch_detail[2] (P3, crux)", "says": "grade AI2-3 (winter) / 5.4-5.6 (dry)"},
+      {"field": "pro_tips", "says": "about 400 ft of mostly Class 3-4 with one short 5.6 step"}
+     ],
+     "why": "The header grade pill (rock_grade takes priority) would show '5.4,' a full grade below the route's own stated crux difficulty of 5.6 (used in the grade field, P3's dry range, and pro_tips).",
+     "internal_resolution": "grade, P3's dry range, and pro_tips all agree the crux is 5.6; rock_grade (5.4) understates it and is the likely outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total car-to-car / approach time (partner_requirements vs timing & itinerary)",
+     "severity": "high",
+     "claims": [
+      {"field": "partner_requirements.fitnessSpec.hiking", "says": "totaling a 5-8 hour car-to-car day"},
+      {"field": "partner_requirements.approachTime", "says": "About 2 hours from the Alpental/Snow Lake trailhead to the base of the buttress"},
+      {"field": "timing.totalHrs / itinerary.days[0].hours", "says": "11.5"},
+      {"field": "itinerary.days[0].schedule[1]", "says": "+3.5 hr Reach base of the Northeast Buttress ... One detailed trip report logged 3 hr 24 min car-to-base"},
+      {"field": "itinerary.totalNote", "says": "about 10-12 hours; one well-documented trip logged 11 hr 22 min total"}
+     ],
+     "why": "partner_requirements gives a much shorter car-to-car time (5-8 hrs) and approach time (~2 hrs) than every other time field on the route (totalHrs 11.5, the schedule, and totalNote's logged 11h22m trip / 3h24m approach) - a climber using the Partners tab to gauge commitment would badly underestimate the day.",
+     "internal_resolution": "timing, the itinerary schedule, and totalNote all agree closely (~10-12 hrs total, ~3.5 hr approach) citing a real logged trip report; partner_requirements is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_chair_peak_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area": "Chair Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_chair_bryant_traverse",
+   "name": "Chair-Bryant Traverse",
+   "area": "Chair Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_chair_peak_west_ridge",
+   "name": "West Ridge",
+   "area": "Chair Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_lone_wolf",
+   "name": "Lone Wolf",
+   "area": "Obelisk, The",
+   "contradictions": [
+    {
+     "fact": "Getting-there road/access describe a different, unrelated area",
+     "severity": "high",
+     "claims": [
+      {"field": "road.name", "says": "Alpental Road, Snoqualmie Pass (I-90 Exit 52), for The Citadel"},
+      {"field": "road.driveNote", "says": "Roughly 45 min-1 hour from Seattle via I-90 to Exit 52."},
+      {"field": "access._raw.wilderness_zone_name", "says": "Reiter Foothills / Gold Bar bouldering area"},
+      {"field": "access.landManager / access._raw.land_manager", "says": "Washington Department of Natural Resources (DNR managed land near Gold Bar)"},
+      {"field": "approach / waypoints[0]", "says": "From I-90 Exit 54 (Hyak), follow Hyak Drive onto Forest Service Road NF-9070 ... (Silver Basin, National Forest)"}
+     ],
+     "why": "The GETTING THERE (road) and ACCESS fields describe two entirely different, unrelated climbing areas - Alpental/The Citadel off I-90 Exit 52, and the DNR Reiter Foothills bouldering area near Gold Bar - neither of which is Silver Basin/The Obelisk, which the route's own approach, waypoints, and overview place off I-90 Exit 54 via Hyak Drive/FR-9070 on National Forest land. A climber following road/access as written would drive to the wrong trailhead and expect the wrong pass/permit.",
+     "internal_resolution": "approach, waypoints, and overview all independently agree on Hyak/FR-9070/Silver Basin; road and access appear contaminated with unrelated areas' data.",
+     "needs_research": false
+    },
+    {
+     "fact": "Protection style: bolted sport route vs trad rack/rope_note",
+     "severity": "high",
+     "claims": [
+      {"field": "pro_needs", "says": "Fully bolted sport protection throughout; no gear placements required."},
+      {"field": "overview / beta", "says": "a 2-pitch bolted sport line ... follows the obvious, continuous bolt line"},
+      {"field": "sling_rack", "says": "cams: standard Index trad rack up to #4 (Camalot-equivalent); nuts: standard nut set; runners: 4-6 slings"},
+      {"field": "rope_note", "says": "Presumed short trad route on Index Town Wall granite (Obelisk/Madsen's Ledge area); standard 60m rope to lower/rappel."}
+     ],
+     "why": "The route is described everywhere else (overview, beta, pitch_detail, pro_needs, detailed_rack) as a fully bolted 2-pitch sport route needing no gear, but sling_rack lists a full trad rack and rope_note calls it a 'trad route' at Index Town Wall - a different crag entirely, unrelated to Silver Basin.",
+     "internal_resolution": "overview, beta, pitch_detail, pro_needs, and detailed_rack all agree this is bolted sport climbing; sling_rack and rope_note appear copied from an unrelated Index Town Wall trad route.",
+     "needs_research": false
+    },
+    {
+     "fact": "The Obelisk's own elevation disagreement across waypoints",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[1] (The Obelisk, Junction)", "says": "elev 4494"},
+      {"field": "waypoints[2] (The Obelisk, Crag)", "says": "elev 4494"},
+      {"field": "waypoints[3] (The Obelisk, Summit)", "says": "elev 4900, note: 'Elevation is an estimate from the surrounding terrain ... no separate elevation figure is published for this formation.'"},
+      {"field": "high_point_ft", "says": "4494"}
+     ],
+     "why": "Three waypoints for the same named formation ('The Obelisk') give two different elevations (4494 ft twice, 4900 ft once) - a ~400 ft (9%) disagreement about the crag's own height.",
+     "internal_resolution": "high_point_ft and the two identically-elevationed waypoints agree at 4494 ft; the 4900 ft 'Summit' waypoint is the outlier and is self-flagged in its own note as an estimate.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

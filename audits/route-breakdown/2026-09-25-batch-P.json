@@ -1,0 +1,365 @@
+{
+  "wa_liberty_bell_freedom_or_death": {
+    "area": "wa_liberty_bell",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "P1",
+        "grade": "5.10b",
+        "anchor": "bolted",
+        "notes": "Start on the small leftward-trending ramp just right of Liberty Crack, with bolts visible on the slab above. Climb the face and crack system more or less straight up rather than drifting left; expect four or five gear placements before the first bolt, so this pitch is not bolt-protected throughout. Grades given range from 5.10b to 5.10c."
+      },
+      {
+        "pitch": "P2",
+        "grade": "5.11c",
+        "anchor": "bolted",
+        "notes": "Step left off the anchor and follow the bolt line up, trending slightly right. The pitch is protected by bolts; a finger-sized cam or two can be slotted along the way but is optional."
+      },
+      {
+        "pitch": "P3",
+        "grade": "5.12a",
+        "anchor": "bolted",
+        "crux": true,
+        "notes": "Follow bolts up and left through sustained, technical climbing with two or three bouldery 5.11+ sections; the pitch is hard to aid. Supplement the bolts with a single set of cams from fingers to hands (roughly 0.5 to 1). The route can be rappelled with a single 60 m rope from this anchor. Linking into the neighbouring Thin Red Line is possible by moving right to a juggy flake before the last bolt; extend runners against drag."
+      },
+      {
+        "pitch": "P4",
+        "grade": "5.11c",
+        "anchor": "bolted",
+        "notes": "Begins with an awkward, rough 5.10 traverse left with committing moves to gain Liberty Crack just above its second anchor, then climbs the crack to a bolted anchor with a short mid-5.11 crux. Protection is gear plus some fixed heads and pins; offset nuts and finger-sized pieces are useful, and a #3 cam is important after the face crux. Grades for the finish range from 5.11c to 5.11+, with the protection described as PG13 to R."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same four pitches, now with direction, protection, gear and hazard detail. P4 grade changed from 5.10c to 5.11c: the 5.10c figure is only the traverse; both pitch descriptions put the crack finish to the anchor at 5.11c-5.11+. P1 grade token set to 5.10b (5.10b/c range kept in notes). Anchors set to bolted (all belays stated as bolted). No lengths or bolt counts are published for any pitch, so none given; null lengthM fields dropped.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109460263/freedom-or-death",
+        "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/109460263?sortOrder=oldest&showAll=true",
+        "https://www.mountainproject.com/route/112083555/a-servant-to-liberty"
+      ],
+      "other_findings": "beta column states P4 is 5.10c; the route description and a first-ascent-era comment put the pitch to its anchor at 5.11c (the 5.10c is the traverse only). Stored beta wording tracks the route-page description closely."
+    }
+  },
+  "wa_up_in_arms": {
+    "area": "wa_concord_tower",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "P1",
+        "grade": "5.11",
+        "lengthM": 30,
+        "bolts": 2,
+        "anchor": "gear",
+        "crux": true,
+        "notes": "Starts about 25 ft left of a large corner below a low bolt. Mantle off a positive edge to clip the first bolt (or stick-clip it), make technical moves past a second bolt, then follow a left-trending crack whose gear is good but hard to see and place. The crux sequence is committing and runs above the gear. Easier ground leads toward a dark corner; move left at the top to build a belay in a clean crack."
+      },
+      {
+        "pitch": "P2",
+        "grade": "5.9",
+        "lengthM": 30,
+        "anchor": "bolted",
+        "notes": "Climb the wide crack as it rolls right and goes horizontal, to a stance beneath double cracks on the right. Follow the double cracks to a bolted anchor on a good ledge. The line wanders, so extend placements to control rope drag."
+      },
+      {
+        "pitch": "P3",
+        "grade": "5.10",
+        "lengthM": 30,
+        "bolts": 1,
+        "anchor": "gear",
+        "notes": "Just right of the anchor, climb crumbly rock that still takes good gear to a bolt, then make a technical move right to a stance above jumbled blocks. Use the twin fish-shaped cracks to reach the left-hand crack and follow it to a broad ledge. Many gear belay options exist; belaying toward the left end sets up the next pitch."
+      },
+      {
+        "pitch": "P4",
+        "grade": "5.7",
+        "lengthM": 45,
+        "anchor": "gear",
+        "notes": "Traverse left beneath the big roof, keeping the ropes high to avoid drag, then go roughly straight up and trend right to an overlap and easy slabby ground. Belay in wide cracks in a small notch on the right. Save the #3 and #4 cams for the next pitch if possible, since this belay uses large pieces."
+      },
+      {
+        "pitch": "P5",
+        "grade": "5.9",
+        "lengthM": 40,
+        "anchor": "gear",
+        "notes": "Head up and slightly left to a finger crack in a small left-facing corner, then traverse left in a shallow feature (protectable) and make a heady step up to a crack before moving right onto a dike. Where the crack ends, walk far right along the dike to the next crack, then climb wide cracks to a pod and belay on medium gear behind a flake. PG13; the pitch wanders, so belay early if drag builds."
+      },
+      {
+        "pitch": "P6",
+        "grade": "5.7",
+        "lengthM": 45,
+        "notes": "From the pod, one full 60 m rope length reaches the summit; parties that stopped short on the previous pitch will need to split this into two. Follow the wide crack through the right-facing corner above, watch for loose boulders near its top, then easy ground leads to the summit."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same six pitches, labels, grades and lengths kept; notes now give the line, protection, belay placement and hazards. Added bolt counts only where the description names them for that pitch (P1: two bolts, P3: one bolt; total matches the three protection bolts the first ascensionists report). Anchor types added from the description (P2 bolted, the rest gear). P5 grade token changed from '5.9 PG13' to '5.9' with PG13 moved into notes. Crux flag on P1 because both first-ascent accounts say the hardest climbing is on pitch one. Pitch-level detail rests on the first ascensionists' route description (single detailed source), corroborated in outline by their journal report; hence medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/125216004/up-in-arms",
+        "https://publications.americanalpineclub.org/articles/13201216754"
+      ],
+      "other_findings": "Stored route grade is 5.10b, but both the first-ascent journal report and the route page grade the route 5.11 (pitch 1 is 5.11). The beta column says aid is 'still occasionally used by the first ascensionists'; the report says the route was cleaned and freed with three added bolts, so it is all-free. The overview's 'six-pitch 5.11 testpiece' already contradicts the stored 5.10b."
+    }
+  },
+  "wa_clean_break": {
+    "area": "wa_juno_tower",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "5.10c",
+        "lengthM": 30,
+        "crux": true,
+        "notes": "From a good ledge with a low fixed pin, climb the namesake splitter: a sustained thin-hands crack up clean, vertical white granite. It is the hardest pitch of the route; extra 0.5 and 0.75 cams help anyone without small hands. Parties sometimes retreat after this pitch, but the 5.10 pitches above are easier."
+      },
+      {
+        "pitch": "2",
+        "grade": "5.9",
+        "lengthM": 23,
+        "notes": "Skip the dirty right-facing corner and take the 3-inch crack up and right over a small roof, past a 4-inch horizontal, up a slab and over a second roof (about 5.10a). To keep it at 5.9, traverse left into the original corner instead of taking the second roof. Belay on a small ledge with a bushy tree."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.7",
+        "lengthM": 24,
+        "notes": "Traverse briefly left, then climb a left-facing corner and angle right past a tree to belay at a horn. Published topos disagree on this section and on the next traverse, and parties commonly go off route in the first few pitches."
+      },
+      {
+        "pitch": "4",
+        "grade": "5.8",
+        "lengthM": 27,
+        "notes": "Go down and right only a short way from the belay (roughly 5 ft down and 15 ft right, not a long descent), then make an insecure move around the arete onto a ledge. Climb blocks to a belay beside a huge flake. Going left here, or down too far, leads off route; the right-hand traverse puts you below the next thin cracks."
+      },
+      {
+        "pitch": "5",
+        "grade": "5.10a",
+        "lengthM": 30,
+        "notes": "Climb the thin crack to a fixed pin, then make a delicate 15-ft traverse left to a second thin crack, where the first cam goes in blind before the move. Follow the crack to a roomy ledge."
+      },
+      {
+        "pitch": "6",
+        "grade": "5.6",
+        "lengthM": 55,
+        "notes": "A full rope length: up a chimney and then blocky ground to a tree belay beneath the Hercules Tower."
+      },
+      {
+        "pitch": "7",
+        "grade": "5.10b",
+        "lengthM": 30,
+        "notes": "A varied pitch. Take the ramp right to a steep wall and a left-sweeping crack that widens from 2 to 4 inches where it turns vertical (5.10a; a #4 cam is the one place it is really useful). Over the bulge, follow a ramp to a 5.10a slab traverse right to a thin crack, and climb it on fingertips to a jug, the pitch's crux."
+      },
+      {
+        "pitch": "8",
+        "grade": "5.8",
+        "lengthM": 30,
+        "notes": "Climb a hand crack, move right around the crest, and follow flakes to a ledge. This pitch and the next easy chimney can be run together as one."
+      },
+      {
+        "pitch": "9",
+        "grade": "5.0",
+        "lengthM": 18,
+        "notes": "An easy chimney leads to a large ledge of blocks."
+      },
+      {
+        "pitch": "10",
+        "grade": "5.9",
+        "lengthM": 24,
+        "notes": "Strong hand jams and some stemming up a short, steep face, then traverse right along a narrow ledge and climb blocks to a huge ledge. The stemming section is also graded 5.10a and is the last hard move of the route."
+      },
+      {
+        "pitch": "11-15",
+        "grade": "5.0-5.5",
+        "lengthM": 152,
+        "notes": "Pass through a hole and go right over the crest to a big ledge, then simul-climb mostly low- to mid-fifth-class ground, staying on or right of the crest. Many options exist and the upper rock is less travelled and lower quality than below, so it can feel ambiguous; keep heading up. A 5.10a hand crack is an optional finish near the top."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Stored table skipped pitches 3-6 and 10; now every pitch 1-10 plus the 11-15 simul block, with lengths, belays and the pitch-3/4 route-finding trap. Existing labels kept. P1 crux flag added (a trip report calls it the crux of the entire route). Lengths are from one pitch-by-pitch description only. P10 grade differs between sources (5.9 vs 5.10a stemming); 5.9 used, the alternative stated in notes. No bolt or anchor data published per pitch, so none given.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/109232141/clean-break",
+        "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/109232141?sortOrder=oldest&showAll=true",
+        "https://stephabegg.com/trip-reports/washington/juno-tower-clean-break/",
+        "http://iannicholsonslife.blogspot.com/2010/09/clean-break-iv-510bc-juno-tower-with.html",
+        "http://www.supertopo.com/rock-climbing/Washington-Pass-Juno-Tower-Clean-Break"
+      ],
+      "other_findings": "The approach column describes the Burgundy Col trail and ends 'Burgundy Spire is reached from the basin/col area' - that is the approach to Burgundy Spire and the usual DESCENT from Juno; the standard approach to Clean Break is up Silver Star Creek to the base of the east buttress at about 5,000 ft (some parties go over Burgundy Col and drop down the back side). The beta column says the first ten pitches are sustained hand cracks, but pitches 3, 4, 6 and 9 are 5.0-5.8 blocks, chimneys and traverses."
+    }
+  },
+  "wa_doorway_flake": {
+    "area": "wa_south_face",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "5.8",
+        "anchor": "bolted",
+        "notes": "The namesake flake sits about 6 m above the talus at the nearest point of the far western wall. Boulder up sculpted knobs to the flake's lower edge, where a good crack takes a range of sizes, and stem over the lip. A 4-inch cam in the top of the flake protects knobs to a bolt; step right up cracks and ledges past another bolt, then back left via a quartz-studded block to a big ledge and smear past two bolts to the anchor."
+      },
+      {
+        "pitch": "2",
+        "grade": "5.9",
+        "anchor": "bolted",
+        "notes": "From the right end of the ledge, face moves lead right to a visible bolt. Easy ground reaches a steep block protected by a 1.5-inch horizontal, then a vertical edge that faces right, then left past an alcove, with four bolts: sustained, fun 5.9 face climbing. Step down left to a narrow ledge and a high bolt, undercling out left to a diving-board feature (3/4-inch gear), and climb its dihedral past one bolt."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.7",
+        "anchor": "bolted",
+        "notes": "Go left off the ledge up edges with a slot for gear and a bolt, then straight up to a large ring of bushes and pass it on the left. Reach left on smears into a clean crack system through the White Spot, pass a hanging block with a white stump on its left, move right to a 1-inch crack, and traverse right into an easy trough to the anchor."
+      },
+      {
+        "pitch": "4",
+        "grade": "5.6",
+        "bolts": 1,
+        "anchor": "bolted",
+        "notes": "Cruise up easy dihedrals including a long 4-inch layback crack. Where it turns right, step left for gear or pad up to a single bolt at a stance under a patch of bushes, then smear up and right near the hanging branches and move left past them to the anchor."
+      },
+      {
+        "pitch": "5",
+        "grade": "5.6",
+        "bolts": 1,
+        "anchor": "bolted",
+        "notes": "One bolt protects a slabby hump heading straight for the summit; scramble the blocks above to a chain anchor. Descent is by rappelling the route with two ropes."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Stored '4-5' row split into pitches 4 and 5, which the description treats as two separate pitches with their own anchors (a comment keyed on '4-5' would need re-keying). Notes now give each pitch's line and protection. Bolt counts given only for P4 and P5, where the description explicitly says a single bolt; P1-P3 bolts are mentioned in the notes but not summed into a count. Crux flag removed from P2: no source calls it the crux (it is the 5.9 pitch, matching the route grade). Anchors set to bolted (hand-drilled bolts, mostly chain anchors). No per-pitch lengths published. Single source (the first ascensionists' description), so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/118626762/doorway-flake"
+      ],
+      "other_findings": "The approach column describes reaching an 'open basin' via Waterfall Basin; the route description instead has climbers reach the grassy saddle, go west to the base of Skeena26, then climb a class 4 scramble (with some low fifth-class moves) to the talus below the far western wall. That scramble is not mentioned in the stored approach."
+    }
+  },
+  "wa_western_dihedral": {
+    "area": "wa_south_face",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "5.8",
+        "anchor": "bolted",
+        "notes": "Start from a ledge with a belay bolt, reached by following the far western wall right past two tree branches. Follow a left-facing edge with face moves past two grassy ledges, each with a bolt, then walk up an angled dike to another bolt (5.8). Alternating smears and ledges lead to the anchor."
+      },
+      {
+        "pitch": "2",
+        "grade": "5.8",
+        "anchor": "bolted",
+        "crux": true,
+        "notes": "Go around the bush on its left and up a trough with sparse gear to a short wall capped by a vertical 2-inch crack. Pull onto a left-rising ramp, pass flakes to a face bolt, and climb the Predihedral on finger edges and stems to a bolt. Cross left on a sloping wave into the big red dihedral and climb its 4-inch-plus cracks to a ledge on the left. Rope drag zigzags here unless extended."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.8",
+        "anchor": "bolted",
+        "crux": true,
+        "notes": "Lower back into the dihedral, pad up to the first bolt, and smear up to a delicate finger traverse rightward across the wall. Climb a couple of cracks for gear until a bolt appears to the right, cross a dirty hump rightward, then finish on clean smearing past two bolts to the anchor."
+      },
+      {
+        "pitch": "4",
+        "grade": "5.5",
+        "anchor": "bolted",
+        "notes": "Lower-angle slab: ramble straight up for about 40 m, then look right for a single bolt that leads to the anchor."
+      },
+      {
+        "pitch": "5",
+        "grade": "5.4",
+        "anchor": "slung pinch",
+        "notes": "Aim for the large Headwall Block above, following shallow troughs and slabs with at least one usable pocket for gear. At the block, a flat vertical wall, scramble left around it; blocks and ledges lead to the summit, where the belay is a sling threaded around a rock pinch. Descend by rappelling the route with two ropes."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Stored '4-5' row split into pitches 4 (5.5) and 5 (5.4), which the description gives as separate pitches (a comment keyed on '4-5' would need re-keying). P1 grade corrected from 5.6-5.7 to 5.8 (the description grades the dike move 5.8). Crux flags on P2 and P3 because the description says both feel like crux pitches. Bolts are mentioned in notes but no per-pitch count is stated, so none given. No per-pitch lengths published. Single source (the first ascensionists' description), so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/118571310/western-dihedral",
+        "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/118571310?sortOrder=oldest&showAll=true"
+      ],
+      "other_findings": "Overview calls the route two crux pitches 'sandwiched between easier friction climbing above and below', but pitch 1 is also 5.8. As with Doorway Flake, the stored approach leaves out the class 4 scramble from the base of Skeena26 up to the far western wall (about 1 hour from the grassy saddle, about 4 hours from the trailhead)."
+    }
+  },
+  "wa_west_face": {
+    "skip_reason": "Right peak confirmed (South Gunsight, Gunsight Range), but the only description is a single sentence of line (chimney on the left for one pitch, traverse right onto the face, a right-facing dihedral high up, finish left). No source gives per-pitch grades or lengths. The stored table's P2/P3 '5.9+' grades look like the overall grade copied onto pitches and the four 38 m lengths look like 152 m divided by four; neither is supported. Recommend the reviewer consider clearing those fields. A route list by the first ascensionists of the neighbouring routes grades this line III 5.9, against the stored 5.9+."
+  },
+  "wa_accidental_discharge_east_face": {
+    "area": "wa_south_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "P1",
+        "grade": "5.10-",
+        "notes": "Start in the large corner in the middle of the east face and climb the splitter finger and hand cracks on the wall right of the corner, up out of the moat to a ledge on the right. Good-quality climbing; this is the best pitch of the route."
+      },
+      {
+        "pitch": "P2",
+        "grade": "5.10",
+        "notes": "Traverse right from the ledge, then follow an offwidth straight up through an overhang. The rock here is loose and dangerous, with broken chimney and dike ground; this feature is not recommended and is worth avoiding unless you want exactly that."
+      },
+      {
+        "pitch": "P3",
+        "grade": "mid 5th class",
+        "notes": "Easier mid-fifth-class climbing up and left to the summit."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three pitches and grades; notes expanded with start location, rock-quality hazard and direction. P3 grade token fixed from the malformed '5.th (mid 5th class)' to 'mid 5th class'. Removed the stored 30/30/31 m lengths: no source gives pitch lengths (they appear to be the 91 m total split three ways). Pitch detail comes from the first ascensionists' description; the overall character is corroborated by their expedition report. Single pitch-level source, so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106324306/accidental-discharge-east-face",
+        "https://alpinist.com/doc/ALP20/newswire-gunrunner-cascades-herrington",
+        "http://blakeclimbs.blogspot.com/2009/08/unpublished-routes-modern-classics.html"
+      ],
+      "other_findings": "discipline is 'mountaineering', but this is a three-pitch 5.10 rock route on a peak whose other routes are filed 'alpine'. The descent_text offers 'downclimb the South Ridge route if conditions allow'; the South Ridge is graded 5.8, so that is not a casual downclimb. The route-page GPS (48.5093, -120.66) on the source site sits at Washington Pass, not the Gunsight Range; if any stored coordinate for this route or West Face came from there it is wrong."
+    }
+  },
+  "wa_east_face": {
+    "area": "wa_middle_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "notes": "A short warm-up leads to the base of the twin cracks. An alternative start begins in the moat at the foot of the Middle-South notch: turn the outside corner, traverse right 30-40 ft, climb a corner, then traverse again to the twin cracks. This start lets a party leave axes and crampons at the base instead of carrying them over."
+      },
+      {
+        "pitch": "2",
+        "grade": "5.10b",
+        "notes": "The twin hand cracks and almost right-facing flake visible from the Blue Glacier. The crux is insecure and comes right off the belay. This and the next three pitches are the sustained core of the route, on some of the cleanest granite in the range."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.10c",
+        "notes": "Climb a corner and the flake above, then make a committing 5.10 mantle out right to a ledge. Save something larger than a small tipped-out cam for the mantle. The belay at the top of this pitch is a poor stance, and many parties link this pitch with the next to reach a good ledge."
+      },
+      {
+        "pitch": "4",
+        "grade": "5.10a",
+        "notes": "A hand crack. Linked with the previous pitch it makes one pitch of about 45 m ending on a good belay ledge."
+      },
+      {
+        "pitch": "5",
+        "grade": "5.10d",
+        "crux": true,
+        "notes": "The crux: a strenuous finger crack that opens into a tight-hands splitter. Keep a #1 cam for the crux. Above the crack, keep climbing up and then right until the low-angle slab of the next pitch is in view and belay there, out of the fall line of the loose flakes on the traverse."
+      },
+      {
+        "pitch": "6",
+        "notes": "A traversing pitch toward the summit ridge. A very large detached flake, and a second big loose-looking flake, sit on this traverse and threaten the belay; route-finding here is slow. Place belays and ropes so nothing is below them if a flake goes."
+      },
+      {
+        "pitch": "7",
+        "notes": "Airy climbing along the summit ridge to the top. A rappel station sits about 50 ft below the summit, and one double-rope rappel from there reaches the Middle-South notch."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Pitch grades re-mapped to the one pitch-by-pitch account: P2 5.10b, P3 5.10c, P4 5.10a, P5 5.10d (stored had 5.10+/5.10/5.10/5.10+ and put 5.10d on P6). Crux moved to P5 (named the 10d crux in two comments by the same climber). Grades removed from P1, P6 and P7 (stored 5.9, 5.10d, 5.9): no source grades those pitches. Notes now give the alternative moat start, pitch-linking advice and the P6 loose-flake hazard. No lengths or anchor data published per pitch. Grades rest on one account; linking and crux-pitch range (P2-P5) corroborated by other climbers' comments.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106325768/east-face",
+        "https://www.mountainproject.com/comments/forObject/Climb-Lib-Models-Route/106325768?sortOrder=oldest&showAll=true",
+        "http://chriswinter.blogspot.com/2011/08/reflections-on-gunsight-range.html",
+        "https://alpinist.com/doc/ALP20/newswire-gunrunner-cascades-herrington",
+        "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/"
+      ],
+      "other_findings": "descent_text ends 'Navigate the crevasse field on Chickamin Glacier to return to base camp', but the route's base and view point are on the Blue Glacier, the east side of the range; worth checking which glacier the moat descent actually lands on. The beta column's 'hidden line visible from Blue Glacier' is self-contradictory wording taken from the route description, where it means the start of pitch 2 is visible from the glacier."
+    }
+  }
+}

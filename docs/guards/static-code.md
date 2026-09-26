@@ -307,8 +307,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     matched the CLOSE glyph only alone (`>✕<`), so a glyph-plus-word close button matched nothing.
     Made symmetric. The widening was verified not to silence the real question: it cleared the map
     and **kept** the other finding until that one was separately shown to be the Suspense fallback.
-- **`check:popup-chrome`** asserts that **every popup's close and back controls look the same** —
-  styled by `POP_CLOSE` / `POP_CLOSE_MEDIA` / `POP_BACK` from `lib/popupChrome.js`. Static, so it
+- **`check:popup-chrome`** asserts that **every close and back control in the app looks the same** —
+  styled by `POP_CLOSE` / `POP_CLOSE_MEDIA` / `POP_BACK` / `POP_BACK_MEDIA` from `lib/popupChrome.js`. Static, so it
   sits in `npm run build`. Reported 2026-09-24 as *"sloppy"* and *"not consistent with popups"*.
   - **Measured before the fix: 8+ close looks and 6 back looks across ~73 popup dismiss controls**
     — a bare muted `×` at 22px with no visible hit area, 36px circles and squares in three fills,
@@ -324,10 +324,22 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     run it flagged the Climbs tab's **delete-saved-search** ×, announced to a screen reader as
     *"Close"*. Relabelled — it was never a close. (Log a climb's remove-partner × carried the same
     wrong label and was fixed independently on main while this was in flight.)
-  - Back is scoped to buttons that CLOSE a popup (`onClick={onClose}` or `aria-label="Back"`);
-    in-page navigation (`onBack`, the Climbs tab's area back) keeps its own look.
-  - Injection-tested **3/3** (restyle a close, restyle a back, spell `‹ Back`), restored by checksum.
-    Fails closed under 40 `POP_CLOSE` / 15 `POP_BACK` uses.
+  - ~~Back is scoped to buttons that CLOSE a popup; in-page navigation keeps its own look.~~
+    **Widened 2026-09-25** on *"make back and x button consistent among the whole app for every
+    instance. Make it clear to see and easy to press"*. In-page back had kept SIX looks of its own
+    (blue text link in Safety, 12.5px pills in the country/state pickers, a bare clickable blue `←`
+    span in both chat headers, a translucent 8px-radius box on the route hero, a solid blue bar in
+    the area browser, a grey pill in onboarding). Rule 2 now fires on ANY `<button>` whose label
+    starts with `←`, and a clickable span/div whose whole label is `←` fails outright. Rule 1 also
+    takes `aria-label="Dismiss…"` and `title="Close"` — three map info panels closed on a muted
+    17px `×` carrying only a title, and four card/banner dismisses were bare glyphs. The
+    *Remove… / Delete… / Withdraw…* ×'s on chips and rows are still out of scope: they delete an
+    item, they do not close anything. `POP_BACK_MEDIA` added for the route page's hero photo.
+  - **Same change raised the tokens 38px → 44px** (the platform minimum tap target) with a 1.5px
+    edge at 30% white and a 12% fill, roughly double the old contrast.
+  - Injection-tested **3/3** after widening (restyle the route page's Back, turn it into a
+    clickable `←` span, restyle a *Dismiss* ✕), restored byte-identical.
+    Fails closed under 45 `POP_CLOSE` / 30 `POP_BACK` uses (60 / 36 at the time of writing).
 - **`check:script-roots`** asserts that **no script reads the app files of somebody ELSE's
   worktree**. Static — one directory walk and a regex, milliseconds — so it sits in `npm run build`.
   - **THE DEFECT WAS ALREADY DOCUMENTED AND NOBODY HAD ASKED HOW BIG IT WAS.** This file records

@@ -1,0 +1,376 @@
+{
+ "applied": [
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "location of the fixed rappel sling"
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "glacier/crevasse crossing on this route"
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "glacier/crevasse crossing on this route"
+  },
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "column": "overview",
+   "path": [],
+   "fact": "typical round-trip time for this route"
+  },
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "column": "turnaround",
+   "path": [],
+   "fact": "typical round-trip time for this route"
+  },
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "column": "approach",
+   "path": [],
+   "fact": "typical round-trip time for this route"
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "which trailhead this route starts from"
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "which trailhead this route starts from"
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "which trailhead this route starts from"
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "which trailhead this route starts from"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "approach",
+   "path": [],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "which trailhead/approach reaches this route"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "rope_note",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "which trailhead/drainage the route breakdown uses"
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "pitch"
+   ],
+   "fact": "which trailhead/drainage the route breakdown uses"
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "which trailhead/drainage the route breakdown uses"
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "column": "comms",
+   "path": [],
+   "fact": "which trailhead/drainage the route breakdown uses"
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "permit/fee system for this route"
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "permit/fee system for this route"
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "permit/fee system for this route"
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "column": "access",
+   "path": [
+    "group_limit"
+   ],
+   "fact": "permit/fee system for this route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "before": {
+    "descent_text": "Standard descent is to reverse the ascent line: downclimb the ridgecrest and southwest gully back to the col, cross the talus to the ~6,700 ft shoulder/bivy site, then pick back down through the cliff bands and heather slopes to the cross-country entry point near the waterfall crossing and back onto the Fisher Creek Trail, before climbing back over Easy Pass and dropping to the trailhead. There is no mandatory rappelling - this is a class 3-4 scramble route and most parties downclimb the entire way - but parties report an existing sling/rap anchor on or near the summit block, and parties uncomfortable with the short exposed class 4 step right off the top sometimes back it off with a single-rope rappel (one rope length, roughly 30-50 ft, off the existing tat/natural block anchor - bring your own rap gear and consider backing up old slings, as their age/condition is unknown) rather than downclimbing it. The heather and slab sections lower down get notably treacherous when wet (parties describe lichen/moss-covered rock and multiple slips/falls in rain), and the waterfall crossing and loose talus/scree throughout are the main ongoing hazards. Summit-to-trailhead descent time is typically around 6 hours for a fit party (about 2 hours summit to high camp, remainder back to the car).",
+    "beta": "Grade: Class 3/4 scramble on rocky terrain. Route description: From Mesahchie Col, cross talus to base of first obvious gully leading up west ridge. Initial section steep class 3/4 at bottom, broadens into gentler gully passing cairns. At 8,100 ft, descend 100 feet to enter south-side Class 3 gully with beige rock. Climb gully until it steepens, locate notch on left side, climb Class 4 deep cut traverse into second gully leading to ridge crest. Hazards: Extremely loose rock (every handhold requires testing), narrow ridge with significant exposure at summit, crevasses if traversing Mesahchie Glacier. Required skills: Rock scrambling Class 3/4, crevasse awareness, exposure comfort. First ascent: 1966. Peak elevation: 8,795 feet (2,681 m), highest in Ragged Ridge."
+   }
+  },
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "before": {
+    "overview": "Mix-up Peak (7,440 ft) sits one mile south of Cascade Pass on the Skagit–Chelan county line and marks the northern end of the Ptarmigan Traverse. First climbed in 1947 by Wesley Grande and Jack Kendrick, its East Face is a compact, mostly solid-rock 'staircase' of class 3–4 scrambling with a short mid-5th-class step near the top, reached by a glacier/snowfield crossing from Cascade Pass. It's a popular half-day objective (7-9 hours car-to-car from the pass) for parties already in the Cascade Pass basin, but the approach's moat and rockfall-prone notches keep it a genuine alpine outing despite the modest elevation.",
+    "turnaround": "No official turnaround time is published, but given the 7-9 hour car-to-base/summit estimate and the risk of downclimbing or rappelling loose rock after dark, most parties plan to be off the summit and back through Gunsight Notch by early-to-mid afternoon, especially when thunderstorms are in the forecast.",
+    "approach": "Start at the Cascade Pass Trailhead at the end of the Cascade River Road (Forest Road 15), elevation ~3,600 ft. Follow the Cascade Pass Trail (a well-graded, switchbacking National Park trail, unnumbered but universally called the Cascade Pass Trail) 3.5-3.7 miles and about 1,800 ft of gain to Cascade Pass (5,392 ft) — a broad, scenic saddle with no reliable water beyond seasonal snowmelt, so top off at a creek crossing lower on the trail. From the pass, do not continue on the maintained Pacific Crest/Stehekin trail; instead pick up a climbers' path on the right (south) side that bends SSE and makes a rising traverse across the heather-and-talus flanks of Mixup Arm and Mixup Peak's east slopes at roughly the 6,000 ft contour. This traverse crosses a minor spur ridge and several steep snow gullies that hold snow well into summer — in early season these have poor runout above a roughly 400 ft drop, so an ice axe and comfort with a traverse on firm snow are important; a slip here has real consequences. Continue traversing to the toe of the Cache Glacier (~6,000-6,200 ft), then ascend moderate glaciated/snow slopes (watch for crevasses in early-mid season) aiming for the obvious notch system below and left of Mixup's summit — commonly called the 'V-notch' — just north of Gunsight Notch, the main portal between Mixup, the Triplets, and Cascade Peak. Gain the notch/saddle via a short snow or scree gully, then work up class 3-4 ramps on the east side to a feature climbers call the 'White Staircase' (exposed class 3), which leads to a point roughly 100 ft below the summit where the roped mid-5th-class pitches of the East Face/East Buttress begin. Camping is prohibited at Cascade Pass itself and on Mixup Arm, so parties either push the whole approach and climb as a long (7-9+ hour) car-to-car day, or continue past the notch/Cache Col area to established sites at Kool-Aid Lake (~6,120 ft) or near Cache Col for a lower-effort summit day. Rockfall — both natural and climber-triggered — is a real hazard on the upper approach gullies and staircase; keep parties tight and helmets on well before roping up."
+   }
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "before": {
+    "approach_logistics": {
+     "peakLat": 48.351145,
+     "peakLng": -121.206615,
+     "trailhead": "Green Mountain Trailhead",
+     "trailheadDirection": "From Darrington, drive north on SR 530 roughly 7-8 miles, turning right onto Suiattle River Road (FR 26) just after crossing the Sauk River bridge."
+    },
+    "descent": "Reverse the ascent: downclimb the Class 4 summit block back onto the glacier, stay roped through the crevassed sections of the Kindy/Goat Creek Glacier, then drop back into the cirque and retrace the approach over Green Mountain to the Green Mountain trailhead on FR 2680. Note that Buckindy is also approached from the other side, up Kindy Creek from FR-1570 off the Cascade River Road; parties who come in that way exit that way. The two trailheads are in different drainages roughly 70 road miles apart, so pick one and return to it.",
+    "access": {
+     "fees": "Northwest Forest Pass or Interagency Annual Pass required to park at the FR-1570/Kindy Creek trailhead",
+     "notes": "Free self-issue wilderness permit at the trailhead; no quota, reservation, or lottery system for this Glacier Peak Wilderness objective (unlike the NPS North Cascades permit zones farther north).",
+     "rules": "Group size limited to 12 people (any combination of people and pack animals) per Forest Service Glacier Peak Wilderness regulations.",
+     "permit": "Free self-issue wilderness permit at the trailhead; no quota or reservation required",
+     "closures": "FR 26 (Suiattle River Road) washed out and closed to vehicles at ~MP 4, with connected spurs including FR 2680 (Green Mountain) also closed under USFS Closure Order #06-05-26-03 (April 2, 2026 - January 1, 2028).",
+     "seasonal": "Suiattle River Road (FR 26) and the FR 2680 spur to the Green Mountain Trailhead are the actual access road for this route; check Mt. Baker Ranger District alerts before a trip for the current washout and closure order.",
+     "group_limit": "12",
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District — within the Glacier Peak Wilderness",
+     "land_manager": "U.S. Forest Service -- Mount Baker-Snoqualmie National Forest (Glacier Peak Wilderness)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Sign the wilderness register at the trailhead where one exists."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.7278,
+      "lng": -121.0628,
+      "elev": 3100,
+      "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+      "note": "This is the sole approach used for all Northern Pickets objectives near Mount Challenger; route continues via Whatcom Pass and Perfect Pass (~6300 ft) before a multi-mile crossing of the Challenger Glacier to reach the pinnacle.",
+      "type": "Trailhead",
+      "elevFt": 3100,
+      "directions": "Drive SR-20, the North Cascades Highway, to the Ross Dam Trailhead near milepost 134 and park there. That is the end of the driving: from the car the trail descends roughly 15 to 20 minutes to Ross Lake, and every mile beyond the shore is on foot or on the water. Come prepared for a genuine multi-day trip rather than a long day, since this is one of the most remote and weather-exposed corners of the North Cascades with essentially no bailout options once you are committed."
+     },
+     {
+      "lat": 48.8878,
+      "lng": -121.5348,
+      "elev": 5066,
+      "name": "Hannegan Pass",
+      "note": "Trail crests here; continue cross-country toward the Chilliwack drainage and Whatcom Pass.",
+      "type": "Junction",
+      "distMi": 4.2
+     },
+     {
+      "lat": 48.895,
+      "lng": -121.47,
+      "elev": 3200,
+      "name": "Boundary Camp",
+      "note": "Camp in the Chilliwack River valley below the climb to Whatcom Pass.",
+      "type": "Campsite",
+      "distMi": 8
+     },
+     {
+      "lat": 48.8754053,
+      "lng": -121.3645777,
+      "elev": 5210,
+      "name": "Whatcom Pass",
+      "note": "Gap between Whatcom Peak and the Challenger massif; gateway to Challenger Glacier.",
+      "type": "Junction",
+      "distMi": 12
+     },
+     {
+      "lat": 48.84,
+      "lng": -121.345,
+      "elev": 6800,
+      "name": "Challenger Glacier Crossing",
+      "note": "Roped glacier travel across Challenger Glacier; crevasse hazard.",
+      "type": "Hazard",
+      "distMi": 14.5
+     },
+     {
+      "lat": 48.82361,
+      "lng": -121.34139,
+      "elev": 8200,
+      "name": "Poltergeist Pinnacle",
+      "type": "Summit",
+      "elevFt": 8200
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.8365,
+     "peakLng": -121.3419,
+     "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "trailheadLat": 48.7278,
+     "trailheadLng": -121.0628,
+     "trailheadDirection": "From the Ross Dam Trailhead on SR-20 near milepost 134, down to Ross Lake and the water-taxi/trail network"
+    },
+    "approach": "Drive SR-20 (North Cascades Highway) to the Ross Dam Trailhead, then descend roughly 15-20 minutes to Ross Lake, where most parties arrange a paid water taxi from Ross Lake Resort (or paddle/walk) to the Big Beaver Trail landing rather than hiking the long lakeshore trail. From Big Beaver Landing it's about 13-14 miles of trail up the Big Beaver valley to Beaver Pass, a full day's hike with a loaded pack. From there, routes diverge onto Wiley Ridge or over Whatcom Pass/Easy Ridge/Perfect Pass to gain the upper basins beneath the Challenger Glacier, with substantial off-trail travel through brush, talus, and heather slopes. The final push crosses the crevassed Challenger Glacier to a short summit rock pitch; this is a genuine multi-day (5+ days) glacier mountaineering expedition into one of the most remote, weather-exposed corners of the North Cascades, with essentially no bailout options once committed.",
+    "road": {
+     "name": "Ross Lake water taxi (from Ross Dam TH off SR-20) to Little Beaver, Northern Pickets",
+     "status": "SR-20 to Ross Dam Trailhead is paved; most parties use the Ross Lake Resort water taxi across the reservoir, then a long multi-day approach up the Big Beaver/Little Beaver trail system into the Northern Pickets.",
+     "driveNote": "Roughly 3 hours from Seattle via SR-20 to Ross Dam, plus the water taxi crossing and a multi-day wilderness approach.",
+     "seasonalGate": "Gated/closed in winter and during early-season snowpack; typically opens by early-mid summer"
+    },
+    "rope_note": "Grade IV 5.9, 4 pitches (P1 5.9/180ft, P2 5.8/200ft, P3 5.8/200ft, P4+ 5.7/800ft in blocks). A 60m single rope covers all pitch lengths; rock is sound for gear anchors. Consider a second rope or extra webbing for descent given the remote alpine setting."
+   }
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Class 1-2",
+      "notes": "Trailhead/spur road to Bluff Lake and Cliff Lake via brushy Jug (Found) Creek basin path",
+      "pitch": "Approach"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Ridge crest/heather-slope traverse from the Cliff Lake saddle to the base of the summit pyramid",
+      "pitch": "West Ridge"
+     },
+     {
+      "grade": "Class 3-4 / steep snow",
+      "notes": "Snow ramp, or heather-and-rock band to the left of the ramp, to the summit; crampons/axe typically needed",
+      "pitch": "Summit Pyramid"
+     }
+    ],
+    "comms": "No reliable cell coverage is reported through the Jug Creek/Bluff Lake approach basin or on the summit ridge; a satellite communicator is recommended.",
+    "access": {
+     "fees": "$10/person/night + a flat $6 nonrefundable reservation fee (charged mid-May–early Oct only; free the rest of the year). No separate climbing fee — North Cascades NP entrance itself is free.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Glacier Peak Wilderness (Forest Service) generally requires only a free self-issued wilderness permit at the trailhead register for day or overnight use — no quota/reservation system like the Enchantments. Illabot Creek Road ends at an informal pullout rather than a developed trailhead, so verify current signage/registration locally before you go.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (Glacier Peak Wilderness)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (Glacier Peak Wilderness)",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Sign the wilderness register at the trailhead where one exists."
+     }
+    }
+   }
+  }
+ ]
+}

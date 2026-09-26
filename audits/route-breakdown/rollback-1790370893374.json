@@ -1,0 +1,167 @@
+{
+ "wa_summit_chief_mountain_north_face": {
+  "area": "wa_summit_chief_mountain",
+  "pitch_detail": [
+   {
+    "grade": "WI2-3",
+    "notes": "Lower ramp of water ice, ~600 ft.",
+    "pitch": "1",
+    "lengthM": 183
+   },
+   {
+    "grade": "Snow/neve",
+    "notes": "First snowfield.",
+    "pitch": "2",
+    "lengthM": 183
+   },
+   {
+    "grade": "Snow/neve",
+    "notes": "Second snowfield.",
+    "pitch": "3",
+    "lengthM": 183
+   },
+   {
+    "grade": "AI2",
+    "notes": "Exit step off the upper snowfield to gain the summit area.",
+    "pitch": "4",
+    "lengthM": 61
+   }
+  ]
+ },
+ "wa_burnt_boot_peak_north_ridge": {
+  "area": "wa_burnt_boot_peak",
+  "pitch_detail": [
+   {
+    "grade": "5th class (ungraded)",
+    "notes": "Lower part of the steepest section of the north ridge, granite",
+    "pitch": "1",
+    "lengthM": null
+   },
+   {
+    "grade": "5th class (ungraded)",
+    "notes": "Continuing class 5 granite",
+    "pitch": "2",
+    "lengthM": null
+   },
+   {
+    "grade": "5th class (ungraded)",
+    "notes": "Crux lead, described as 'a very sharp crest' — the most exposed pitch",
+    "pitch": "3",
+    "lengthM": null
+   },
+   {
+    "grade": "Class 3-4",
+    "notes": "Easier ground above the ridge crux",
+    "pitch": "4",
+    "lengthM": null
+   },
+   {
+    "grade": "Class 3-4",
+    "notes": "",
+    "pitch": "5",
+    "lengthM": null
+   },
+   {
+    "grade": "Class 3-4",
+    "notes": "Final scrambling to the summit",
+    "pitch": "6",
+    "lengthM": null
+   }
+  ]
+ },
+ "wa_fortune_peak_east_slope": {
+  "area": "wa_fortune_peak",
+  "pitch_detail": [
+   {
+    "grade": "Trail/cross-country traverse",
+    "notes": "Traverse below the Ingalls/Fortune ridge",
+    "pitch": "Ingalls Pass to Headlight Basin"
+   },
+   {
+    "grade": "Moderate snow slope (early) or talus scramble (late)",
+    "notes": "Zigzag up the slope; crampons useful in snow season",
+    "pitch": "Headlight Basin to summit ridge"
+   },
+   {
+    "grade": "Class 2 scramble",
+    "notes": "Short ridge walk to the summit",
+    "pitch": "Summit ridge to top"
+   }
+  ]
+ },
+ "wa_fortune_peak_standard_route": {
+  "area": "wa_fortune_peak",
+  "pitch_detail": [
+   {
+    "grade": "Maintained trail",
+    "notes": "Gentle uphill through forest and meadow",
+    "pitch": "Esmeralda Basin Trail to Ingalls Way junction"
+   },
+   {
+    "grade": "Maintained trail, steepening",
+    "notes": "Switchbacks up to the saddle",
+    "pitch": "Junction to the pass above Lake Ann"
+   },
+   {
+    "grade": "Class 2-3 scramble",
+    "notes": "Off-trail boot path along the ridge; loose rock and some exposure",
+    "pitch": "Pass to summit ridge and summit"
+   }
+  ]
+ },
+ "wa_klawatti_peak_sw_buttress": {
+  "area": "wa_klawatti_peak",
+  "pitch_detail": [
+   {
+    "grade": "5.3",
+    "notes": "Low 5th class pitch off the moat crossing, the technical crux of the route.",
+    "pitch": "1"
+   },
+   {
+    "grade": "Class 4",
+    "notes": "Easier class 4 terrain above the initial pitch.",
+    "pitch": "2"
+   },
+   {
+    "grade": "Class 3-2",
+    "notes": "Scrambling to the summit.",
+    "pitch": "3"
+   }
+  ]
+ },
+ "wa_remmel_mountain_nw_ridge": {
+  "area": "wa_remmel_mountain",
+  "pitch_detail": [
+   {
+    "grade": "3rd class",
+    "notes": "Ridge scrambling from high camp (~7,500 ft) on stable, lightly vegetated boulders.",
+    "pitch": "1"
+   },
+   {
+    "grade": "5.1-5.2",
+    "notes": "Climb the first main gendarme on stable rock.",
+    "pitch": "2"
+   },
+   {
+    "grade": null,
+    "notes": "Rappel the west side of the ridge (single 50-60m rope) to regain the crest past the gendarme.",
+    "pitch": "Rappel"
+   },
+   {
+    "grade": "5.1-5.2",
+    "notes": "Climb the second main gendarme.",
+    "pitch": "3"
+   },
+   {
+    "grade": null,
+    "notes": "Second rappel on the west side to regain the ridge.",
+    "pitch": "Rappel"
+   },
+   {
+    "grade": "3rd class",
+    "notes": "Continue ridge scrambling to the summit.",
+    "pitch": "4"
+   }
+  ]
+ }
+}

@@ -1,0 +1,306 @@
+{
+ "applied": [
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead identity and location"
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead identity and location"
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead identity and location"
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total round-trip mileage"
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rappel count and rope length for the descent"
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent line below the summit (Black Tooth Notch / southwest couloir belong to Goode)"
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Two Mile Camp placed on the Thunder Creek side of Park Creek Pass"
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "waypoints",
+   "path": [
+    2,
+    "directions"
+   ],
+   "fact": "Two Mile Camp placed on the Thunder Creek side of Park Creek Pass"
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Two Mile Camp placed on the Thunder Creek side of Park Creek Pass"
+  },
+  {
+   "id": "wa_the_needle_neve_glacier",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Summit descent method (rappel vs downclimb)"
+  },
+  {
+   "id": "wa_the_needle_neve_glacier",
+   "column": "comms",
+   "path": [],
+   "fact": "Emergency/dispatch phone numbers"
+  },
+  {
+   "id": "wa_the_needle_neve_glacier",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Emergency/dispatch phone numbers"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_spider_mountain_north_ridge",
+   "fact": "Cache Col elevation",
+   "op": "set",
+   "column": "bivy",
+   "path": [
+    0,
+    "elev"
+   ],
+   "expect": 6400,
+   "value": 6900,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col",
+    "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route"
+   ],
+   "why": "expect mismatch at bivy[0,\"elev\"]: live 7320"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.6855,
+      "lng": -121.0925,
+      "elev": 4875,
+      "name": "Colonial Creek Campground Trailhead",
+      "note": "Drive-to trailhead on SR-20 at Rainy Pass (milepost ~158); hike south on the Bridge Creek Trail/PCT ~9.5 mi (with ~2000 ft loss) to North Fork Group Camp, then leave trail cross-country toward the basin south of Storm King. Some parties instead approach from the south via the Lady of the Lake ferry to Stehekin + shuttle to High Bridge Camp, joining the same Bridge Creek/North Fork trail system. The current DB trailhead (Thunder Creek Trailhead / Colonial Creek Campground, ~48.6855,-121.0925) is a different, unconnected drainage well north of here and is very likely wrong.",
+      "type": "Trailhead",
+      "elevFt": 4875,
+      "directions": "Drive SR-20 (the North Cascades Highway) to the Colonial Creek Campground trailhead, the start of the most commonly used approach into this basin. From there the Thunder Creek Trail — an easy, mostly forested stock and hiker trail — climbs only about 600 feet over its first 13 miles up-valley. Two alternate approaches reach the same high basin: a steeper, more direct line over McAlester Pass and down Rainbow Creek, also starting from SR-20, or a southern approach by boat or shuttle to Stehekin and High Bridge Camp, then up the Park Creek Trail. A North Cascades National Park wilderness permit is required, and if you're using the Stehekin ferry or shuttle, both run on a limited schedule — typically mid-June through September — so check timetables and reserve the permit before planning dates."
+     },
+     {
+      "lat": 48.542266,
+      "lng": -121.014315,
+      "elev": 3089,
+      "name": "Skagit Queen Camp",
+      "note": "Established camp near old Skagit Queen mine workings where the trail steepens into switchbacks; reliable creek water, common first- or second-night stop.",
+      "type": "Campsite",
+      "distMi": 13.8,
+      "directions": "Follow the Thunder Creek Trail south from the Colonial Creek Campground trailhead on SR-20 — an easy, mostly-forested stock/hiker trail with only about 600 ft of gain — roughly 13 miles up-valley, passing McAllister Camp near mile 6 and Junction Camp near mile 9.5."
+     },
+     {
+      "lat": 48.49846,
+      "lng": -120.96233,
+      "elev": 6100,
+      "name": "Park Creek Pass",
+      "note": "Trail high point in the notch between Mt. Logan and Mt. Buckner; camping is prohibited at the pass itself to protect fragile meadows, so continue on or camp just below it.",
+      "type": "Junction",
+      "distMi": 19.6,
+      "directions": "Continue up-valley past Thunder Basin Camp around mile 16.5, then pick up the signed Park Creek Pass Trail junction a couple of miles beyond; it climbs roughly two miles to Two Mile Camp before switchbacking up through meadows to the pass."
+     },
+     {
+      "lat": 48.50424666666667,
+      "lng": -120.93411333333333,
+      "elev": 7450,
+      "name": "Rib camp below Storm King/Goode basin",
+      "note": "Flat, grassy camp on a small NE/SW-trending rib south of Storm King with a nearby water source; leave the maintained trail here and go cross-country toward the peak.",
+      "type": "Campsite",
+      "distMi": 21,
+      "directions": "Leave the maintained trail at the pass and traverse cross-country west/southwest across snow and talus, favouring climber's left, toward the basin under Storm King's east and west towers. Carry an ice axe and consider crampons into August for lingering snow on this traverse, and take care not to drift off-line in poor visibility."
+     },
+     {
+      "lat": 48.49561555555556,
+      "lng": -120.9265711111111,
+      "elev": 7800,
+      "name": "Talus cirque beneath the towers",
+      "note": "About a mile of loose talus/scree past the rib camp brings you into the cirque directly under Storm King's west and east towers; take the path of least resistance up the scree.",
+      "type": "Junction",
+      "distMi": 22,
+      "directions": "About a mile of loose talus and scree past the rib camp, bearing right toward the cirque; cairns mark a Class 2-3 climber's trail and the line is the path of least resistance up the scree."
+     },
+     {
+      "lat": 48.49302622222223,
+      "lng": -120.92430844444443,
+      "elev": 8400,
+      "name": "North-side exposed ledge traverse",
+      "note": "Class 3-4 ledge system traversing the backside of the summit towers, including a slight overhang requiring a squeeze-under move; most parties fix a line here.",
+      "type": "Hazard",
+      "distMi": 22.3,
+      "directions": "From the cirque, ascend the long, very loose talus/scree slope on the path of least resistance toward the southwest gully system below the summit rocks, staying right of the horn-shaped rock gully at about 8,000 ft to be in the correct gully. This slope is the approach's main hazard — helmets on and space the party out for rockfall and unstable footing. Around 70 ft of Class 3 scrambling reaches the notch, and it is the right-most of the notches in the summit rocks; cross to the north side of it to gain the ledge."
+     },
+     {
+      "lat": 48.49216311111111,
+      "lng": -120.92355422222222,
+      "elev": 8550,
+      "name": "Summit crux crack",
+      "note": "15-foot crack (Class 4 to low 5th) leads to the fixed rappel anchor used for the descent; rope up or belay through this section.",
+      "type": "Hazard",
+      "distMi": 22.4,
+      "directions": "Traverse the ledge roughly 70 ft across the backside of the tower — two or three Class 4 moves, full exposure, and a squeeze under a slight overhang; many parties fix a line. The ledge widens and holds loose rock, so move carefully, then continue across the summit tower's backside to the small spur at the foot of the crack."
+     },
+     {
+      "lat": 48.4913,
+      "lng": -120.9228,
+      "elev": 8520,
+      "name": "Storm King summit",
+      "type": "Summit",
+      "elevFt": 8520,
+      "directions": "Climb the 15-ft solid Class 4 face crack, or wrap around its left side on easier Class 3 blocks; both reach the register and the fixed rappel slings. A final short Class 3 pitch tops out. Two points above 8,520 ft sit east of the triangulated 8,515 ft subsummit — the easternmost is the true high point."
+     }
+    ],
+    "itinerary": {
+     "cal": "North Cascades NP wilderness permits and the Stehekin shuttle bus/ferry both run on limited schedules (typically mid-June through September); reserve the permit and check ferry/shuttle timetables before planning dates.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Take the Lady of the Lake ferry (or Chelan Seaplanes) up Lake Chelan to Stehekin Landing, then the NPS shuttle bus 11 miles to High Bridge (not hiked). From High Bridge, follow the road/Old Wagon Trail bypass to Bridge Creek Camp, continue to Park Creek campground, then up the Park Creek Pass Trail to Two Mile Camp (~3,400 ft). A permit is required to camp in North Cascades NP / Lake Chelan NRA.",
+       "hours": 5,
+       "miles": 9.5,
+       "title": "Boat + hike-in to Two Mile Camp",
+       "gainFt": 1400,
+       "lossFt": 300,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Two Mile Camp on the Park Creek Pass Trail"
+      },
+      {
+       "n": 2,
+       "note": "Continue up the Park Creek Pass Trail about 2 miles, then leave the trail around 4,100 ft at a large washout and climb diagonally climber's-left through heather, meadows and game trails. Terrain steepens and turns rocky near 6,500 ft; cairns then mark a Class 2-3 climber's trail up to the basin below Goode at 7,400 ft, a strenuous full day with an overnight pack. This basin (or the rib just south of it) is the standard high camp for both Storm King and Goode.",
+       "hours": 6.5,
+       "miles": 5,
+       "title": "Push to high basin camp below Storm King",
+       "gainFt": 4100,
+       "lossFt": 100,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Establish high camp in the basin below Goode/Storm King (~7,400-7,500 ft)"
+      },
+      {
+       "n": 3,
+       "note": "From high camp, cross the cirque beneath the west and east towers on very loose talus, staying right of the horn-shaped-rock gully at ~8,000 ft for the correct gully. A short Class 3 scramble to a notch, a 15 ft crack (Class 4/low 5th), and a final Class 3 pitch reach the summit. Fit parties reverse the route back to camp, break camp, and hike all the way out to High Bridge/Stehekin for the shuttle and boat the same day; less aggressive parties add a 4th day to hike out.",
+       "hours": 12.5,
+       "miles": 19,
+       "title": "Summit day and full descent to trailhead",
+       "gainFt": 1200,
+       "lossFt": 5900,
+       "packLb": 40,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Alpine start from high camp",
+         "detail": "Day pack; leave overnight gear staged at camp."
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Enter the summit cirque",
+         "detail": "Loose talus below the west/east towers; identify the correct gully, avoiding the horn-rock gully."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Class 3 to the notch",
+         "detail": "~70 ft of scrambling to reach the summit notch."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Crux crack and final scramble",
+         "detail": "15 ft crack (Class 4/low 5th), then Class 3 to the true summit."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Summit (8,565 ft)",
+         "detail": "Views of Goode, Logan, and Buckner; begin descent soon after."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at high camp, break camp",
+         "detail": "Pack up and begin the long hike out toward High Bridge/Stehekin."
+        }
+       ],
+       "objective": "Climb Storm King, then break camp and hike all the way out"
+      }
+     ],
+     "totalNote": "A 3-day, roughly 40-45 mile round-trip trip: two days of approach (boat/shuttle plus a strenuous climb to a ~7,400 ft high camp below Goode), a technical Class 3-4 scramble to the 8,565 ft summit, and a long descent all the way to the trailhead on day 3. Very fit, fast parties occasionally compress this to 2 days; less aggressive parties sometimes split the hike-out into a 4th day."
+    },
+    "descent_text": "Descent reverses the ascent line. From the notch/crack area just below the true summit, parties typically make two short rappels off fixed slings (in-situ tat/webbing — inspect it and back it up before committing) to get back down through the ~15-ft crux crack and the exposed, Class 4 ledge just below it. Each rappel is short enough that a single 30m rope is sufficient, though many parties carry a 60m anyway for flexibility if linking up with nearby Goode or Buckner objectives on the same trip. Below the rappels, downclimb Class 3–4 to a notch some trip reports refer to as 'Black Tooth Notch,' then downclimb the loose southwest couloir (Class 3) back to the base of the approach talus slope, staying on climber's left ledges to avoid cliffing out on the way down. From the base of the talus, reverse the cross-country traverse east back to Park Creek Pass and the maintained trail system, then descend via whichever of the three approach trails (Thunder Creek, McAlester Pass/Rainbow Creek, or Park Creek/Stehekin) matches your itinerary. Loose rock is the dominant descent hazard from the summit all the way down through the talus — keep helmets on and parties tight until well below the scree.",
+    "approach": "Storm King sits at the head of Thunder Creek in the North Cascades and is one of the range's most remote 'Bulger/Top 100' summits — a three-day car-to-car trip is the norm, and three separate trailhead approaches converge on the same high basin below Mount Goode's south side. The most common line is the Thunder Creek approach: from the Colonial Creek Campground trailhead on SR-20, follow the Thunder Creek Trail (an easy, mostly-forested stock/hiker trail) about 13 miles with only ~600 ft of gain to the McAllister Creek confluence — McAllister Camp (~mile 6) is a common night-one camp. Continue past Junction Camp (~mile 9.5) and Skagit Queen Camp (~mile 13.5) to Thunder Basin Camp (~mile 16.5), then pick up the signed Park Creek Pass Trail junction a couple miles beyond, which climbs roughly 2 miles to Two Mile Camp (3,400 ft) before switchbacking up through meadows to Park Creek Pass. Two alternate approaches reach the same basin: a steeper, more direct line over McAlester Pass and down Rainbow Creek from SR-20 (camp at Rainbow Lake, ~9 mi and 2,700 ft of gain), or a southern approach via boat/shuttle to Stehekin and High Bridge Camp, then up the Park Creek Trail to Park Creek Pass from the south. From Park Creek Pass, leave the maintained trail and traverse cross-country west/southwest across snow and talus (favor climber's left) for roughly a mile to reach the cirque below Storm King's east and west towers — an ice axe and even crampons are worth carrying into August for lingering snow on this traverse, and it's easy to drift off-line in poor visibility. From the cirque, ascend a long, very loose talus/scree slope on the path of least resistance toward the southwest gully system below the summit rocks; this slope is the approach's main hazard — expect rockfall onto parties below and unstable footing, so helmet up here and space out.",
+    "approach_variants": [
+     {
+      "name": "The shared Goode approach to 7,400 ft, then the talus cirque and the right-most notch",
+      "notes": "Storm King sits at the head of Thunder Creek and is one of the range's most remote summits — a three-day car-to-car trip is the norm, and three separate trailhead approaches converge on the same high basin below Goode's south side.\n\nThe most common is Thunder Creek: from Colonial Creek Campground on SR-20, the Thunder Creek trail roughly 13 miles with little gain to the McAllister Creek confluence, past Junction, Skagit Queen and Thunder Basin camps, then the Park Creek Pass trail junction and about two miles up to Two Mile Camp and the switchbacks to PARK CREEK PASS. Alternatives are McAlester Pass and Rainbow Creek from SR-20, or a boat or shuttle to Stehekin and High Bridge Camp then the Park Creek trail from the south. From Stehekin the boot path starts on the north side of a large whitish-rock washout about two miles up the trail, five minutes further into the woods.\n\nFrom Park Creek Pass, leave the maintained trail and traverse cross-country west-southwest across snow and talus, favouring climber's left, roughly a mile to the cirque below Storm King's east and west towers. A rib camp around 7,450 ft with nearby water is the usual base.\n\nFrom the cirque, a long and very loose talus and scree slope leads up toward the southwest gully system. Helmet on and space out — that slope is the approach's main hazard.",
+      "season": "Late July through September; snow often lingers in the basin above about 7,400 ft into early August, so carry an axe and consider crampons even for a nominally dry climb",
+      "hazards": [
+       "Loose blocky rock on the talus approach and the summit ridge, with rockfall onto parties below",
+       "Lingering snow and ice in the basin and the summit gully into early August, and bullet-hard patches",
+       "An exposed class 4 ledge traverse just below the summit with real fall consequences",
+       "In-situ slings at the crux that are aging tat and need backing up before they are weighted",
+       "Extreme remoteness — assume a multi-day evacuation or a helicopter for any serious injury"
+      ],
+      "baseFinding": "THE MOST IMPORTANT THING TO KNOW ABOUT THIS APPROACH IS THAT BELOW 7,400 FT IT IS INDISTINGUISHABLE FROM GOODE MOUNTAIN'S. The same trail, the same basin, the same cairned climber's path. A party in fog below that elevation cannot tell from the ground which peak's route it is on. The split happens above it, where this route trends toward the towers while Goode's continue toward the glacier or Black Tooth Notch.\n\nTHE COUNTING TEST IS THE NOTCH, AND THE WORD IS RIGHT-MOST. There are several notches in the summit rocks; the route crosses at the RIGHT-MOST one. Most of the way up to it is loose scree and talus, which is what makes the notch worth confirming rather than guessing.\n\nCROSS TO THE NORTH SIDE OF THAT NOTCH AND THE GROUND CHANGES CHARACTER COMPLETELY: a fun ledge traverse on the BACKSIDE of the tower, roughly 70 ft, with two or three class 4 moves and full exposure. IF YOU HAVE NOT CROSSED TO THE NORTH SIDE, YOU HAVE NOT FOUND THE LEDGE TRAVERSE, and there is no version of this route that goes up the front.\n\nCONFIRM ON THE LEDGE: it includes a SQUEEZE UNDER A SLIGHT OVERHANG, and there are IN-SITU SLINGS at the crux left by earlier parties. A squeeze move plus old tat is the strongest positive confirmation on the climb — though the tat is aging and is not to be trusted with body weight without backup.\n\nTHE LAST MOVE IS A CHOICE, NOT A CRUX: a 15-ft solid class 4 face crack, or a wrap around its LEFT side on class 3 blocks. Both reach the register and the rappel slings.\n\nAND KNOW WHICH TOP YOU WANT: two 8,520-ft-plus points sit east of a triangulated 8,515 ft subsummit, and the EASTERNMOST is the true high point."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_the_needle_neve_glacier",
+   "before": {
+    "descent_text": "Reverse the ascent: down-climb the low 5th-class move and ridge back to the glacier rim, re-cross the Neve and Colonial Glaciers (crevasse bridges will typically be softer and wider than on the morning crossing), regain the roughly 6,900 ft col, and descend to camp. From camp, retrace the climbers' trail and Pyramid Lake Trail to the trailhead.",
+    "comms": "Cell phone coverage is non-existent in the backcountry areas surrounding The Needle. Satellite communicator (Garmin inReach, Spot, or similar) is strongly recommended for emergency communication. Park dispatch can be reached at (360) 873-4500 ext. 37 in emergency situations, though response times may be slow. The Wilderness Information Center in Marblemount at (360) 854-7200 can provide emergency coordination.",
+    "emergency": {
+     "notes": "For NPS-coordinated SAR within the park, call (360) 856-5700 ext. 515 during business hours, or the North Cascades Communications Center after hours at (360) 873-4590 ext. 37.",
+     "county": "Skagit County, WA",
+     "rangerStation": "North Cascades National Park Wilderness Information Center, Marblemount; park main line (360) 856-5700",
+     "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley, WA, (360) 856-6021 — closest ER to the Marblemount/Diablo corridor",
+     "sheriffDispatch": "Skagit County Sheriff non-emergency (360) 336-9450; call 911 for active emergencies"
+    }
+   }
+  }
+ ]
+}

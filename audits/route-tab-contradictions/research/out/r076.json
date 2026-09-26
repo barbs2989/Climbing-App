@@ -1,0 +1,545 @@
+{
+ "file": "r076.json",
+ "results": [
+  {
+   "id": "wa_magic_mountain_northwest_ridge",
+   "fact": "Standard descent from the summit",
+   "verdict": "fixed",
+   "correct_value": "Descend the South Ridge to the col above Kool-Aid Lake (reversing the route is the alternative)",
+   "evidence": "The South Ridge is the standard Class 3-4 route on Magic Mountain: one trip record describes it as heather and rock (class 3) from the 7,100 ft col east of Kool-Aid Lake to the 7,610 ft summit, and two other published route pages (seen in search extracts; the pages themselves returned 403) give the same line: heather ridge to a false summit, drop ~80 ft, Class 3-4 ledges on the summit tower. Because it tops out on the same summit it is available as a descent from every route on the peak, which is what the itinerary, pro_tips and turnaround already plan; the rendered DESCENT only described reversing the route. The patch adds the South Ridge descent to the rendered text and keeps reversal as the alternative.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/MagicMtn/MagicMtn.htm",
+    "https://www.summitpost.org/magic-mountain-wa/1048343",
+    "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/magic-mountain-south-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Descend the ascent route.",
+     "value": "Descend the South Ridge, or reverse the ascent route.",
+     "id": "wa_magic_mountain_northwest_ridge",
+     "fact": "Standard descent from the summit"
+    },
+    {
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Reverse the short NW-face scramble to the notch, then downclimb the chimney and steep rock back to the easy slopes below.",
+     "value": "Descend the South Ridge: downclimb the Class 3-4 ledges around the east side of the summit tower, regain the false summit up the short gully, and follow the ridge down to the Magic-Hurry-up col above Kool-Aid Lake. To reverse the route instead, go back down the short NW-face scramble to the notch, then downclimb the chimney and steep rock to the easy slopes below.",
+     "id": "wa_magic_mountain_northwest_ridge",
+     "fact": "Standard descent from the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_southwest_cirque",
+   "fact": "Standard descent from the summit",
+   "verdict": "fixed",
+   "correct_value": "Descend the South Ridge (up-one-down-the-other loop) or reverse the gully",
+   "evidence": "The South Ridge is the standard Class 3-4 route on Magic Mountain: one trip record describes it as heather and rock (class 3) from the 7,100 ft col east of Kool-Aid Lake to the 7,610 ft summit, and two other published route pages (seen in search extracts; the pages themselves returned 403) give the same line: heather ridge to a false summit, drop ~80 ft, Class 3-4 ledges on the summit tower. Because it tops out on the same summit it is available as a descent from every route on the peak, which is what the itinerary, pro_tips and turnaround already plan; the rendered DESCENT only described reversing the route. The patch adds the South Ridge descent to the rendered text and keeps reversal as the alternative. The bail line (retreat down the ascent gully) is a retreat, not the planned descent, and stays as is.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/MagicMtn/MagicMtn.htm",
+    "https://www.summitpost.org/magic-mountain-wa/1048343",
+    "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/magic-mountain-south-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Descend the ascent route.",
+     "value": "Descend the South Ridge, or reverse the ascent route.",
+     "id": "wa_magic_mountain_southwest_cirque",
+     "fact": "Standard descent from the summit"
+    },
+    {
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Reverse the heathery gully back down into the southwest cirque.",
+     "value": "Descend the South Ridge: downclimb the Class 3-4 ledges around the east side of the summit tower, regain the false summit, and follow the ridge down to the Magic-Hurry-up col above Kool-Aid Lake. Alternatively, reverse the heathery gully back down into the southwest cirque.",
+     "id": "wa_magic_mountain_southwest_cirque",
+     "fact": "Standard descent from the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_west_ridge",
+   "fact": "Whether a South Ridge descent/walk-off is possible from this route",
+   "verdict": "fixed",
+   "correct_value": "From the summit, walk off the South Ridge; 'no walk-off' applies only to retreat on the west side below the summit",
+   "evidence": "The South Ridge is the standard Class 3-4 route on Magic Mountain: one trip record describes it as heather and rock (class 3) from the 7,100 ft col east of Kool-Aid Lake to the 7,610 ft summit, and two other published route pages (seen in search extracts; the pages themselves returned 403) give the same line: heather ridge to a false summit, drop ~80 ft, Class 3-4 ledges on the summit tower. Because it tops out on the same summit it is available as a descent from every route on the peak, which is what the itinerary, pro_tips and turnaround already plan; the rendered DESCENT only described reversing the route. The patch adds the South Ridge descent to the rendered text and keeps reversal as the alternative. Four row fields (descent, itinerary, pro_tips, timing.recommendedStart) already plan the South Ridge walk-off; the baseFinding's 'no walk-off from this side' is true of the west face below the summit, so it is reworded as retreat guidance rather than a statement about the descent.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/MagicMtn/MagicMtn.htm",
+    "https://www.summitpost.org/magic-mountain-wa/1048343",
+    "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/magic-mountain-south-ridge"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Reverse the chimney and slab, downclimb the open book, and re-cross the schrund back to the pocket glacier.",
+     "value": "From the summit, walk off down the South Ridge: downclimb the Class 3-4 ledges around the east side of the summit tower, regain the false summit, and follow the ridge to the Magic-Hurry-up col above Kool-Aid Lake. Reversing the route is the alternative: reverse the chimney and slab, downclimb the open book, and re-cross the schrund back to the pocket glacier.",
+     "id": "wa_magic_mountain_west_ridge",
+     "fact": "Whether a South Ridge descent/walk-off is possible from this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "AND THE SCHRUND HAS TO WORK IN BOTH DIRECTIONS: the descent reverses the chimney and slab, downclimbs the open book and re-crosses the schrund. Look at it on the way up with that in mind, because there is no walk-off from this side.",
+     "replace": "AND IF YOU HAVE TO RETREAT BELOW THE SUMMIT, THE SCHRUND HAS TO WORK IN BOTH DIRECTIONS: a retreat reverses the chimney and slab, downclimbs the open book and re-crosses the schrund. Look at it on the way up with that in mind, because there is no walk-off from this side of the mountain; the walk-off starts at the summit and goes down the South Ridge.",
+     "id": "wa_magic_mountain_west_ridge",
+     "fact": "Whether a South Ridge descent/walk-off is possible from this route"
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_north_face",
+   "fact": "End of the climbing season",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Late June to early August (season Jun-Aug)",
+   "evidence": "Five row fields agree the window closes in August: season (Jun-Aug), approach_variants.season (Jun-Aug), climate.summer (late June to early August best; late summer bare ice and an open schrund), the baseFinding (the schrund changes most between June and August) and the hazard list (schrund can be the crux by August); only best_season says Jul-Sep. Externally, North Cascades glacier routes are widely described as going out of condition from early August as bergschrunds and moats open, with September favouring alpine rock over glaciated lines. No route-specific season was found for this obscure face.",
+   "sources": [
+    "https://www.mountainproject.com/forum/topic/112249061/best-time-for-north-cascades",
+    "https://www.summitpost.org/phpBB3/north-cascades-climbs-in-september-t69034.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "Jul-Sep, with route",
+     "replace": "Late June to early August, with route",
+     "id": "wa_magic_mountain_north_face",
+     "fact": "End of the climbing season"
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_northeast_couloir",
+   "fact": "Total time for the route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "8 hours (3 approach + 2 climb + 3 descent)",
+   "evidence": "The three stored components (approach 3, summit 2, descent 3) sum to 8, and the 2-hour climb figure matches the recommendedStart note (booting 1.5-2 h) and an external spring ascent report in which the couloir took roughly two hours from the start of booting to the summit. No source gives a 9-hour figure; totalHrs is set to the sum.",
+   "sources": [
+    "https://engineeredforadventure.com/pelton-w-face-magic-mtn-ne-face/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 9,
+     "value": 8,
+     "id": "wa_magic_mountain_northeast_couloir",
+     "fact": "Total time for the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "fact": "Total round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the ONE-WAY approach distance and 8.9 km (5.5 mi) matches the route's own Kool-Aid Lake camp waypoint (distMi 5.5); the itinerary's 16-17 miles is the three-day round-trip total. A one-way figure beside a round-trip total is not a contradiction.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "fact": "Number of pitches/sections in the route breakdown",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The five ROUTE BREAKDOWN rows are approach and scrambling sections (Cascade Pass to Cache Col, Cache Col to Kool-Aid Lake, etc.), not roped pitches; the only section where a belay or the single rappel is used is the short Class 3-4 summit tower, which is what pitches = 1 counts, and the descent_text says so.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "fact": "Trailhead to Kool-Aid Lake distance: itinerary day 1 (6.5 mi) vs the Kool-Aid Lake waypoint and dist_km (5.5 mi)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Day 1 of the itinerary says 6.5 miles to Kool-Aid Lake while the Kool-Aid Lake waypoint (distMi 5.5) and dist_km (8.9 km = 5.5 mi) say 5.5. Published figures range from 3.7 mi to Cascade Pass plus roughly 1 mi from Cache Col to the lake, to a '6-8 miles' figure for the first Ptarmigan day, and one trip record gives 19 miles round trip to the summit; none pins the trailhead-to-lake distance precisely enough to choose.",
+   "sources": [
+    "https://www.mountainproject.com/route/116969398/ptarmigan-traverse",
+    "http://ericsbasecamp.net/trips/MagicMtn/MagicMtn.htm",
+    "https://summitborn.com/ptarmigan-traverse-trail/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "fact": "Summit-day start time and duration",
+   "verdict": "fixed",
+   "correct_value": "3:30 AM start, about 7 hours camp-to-summit-to-camp",
+   "evidence": "Two guide services give the summit day from high camp as 5-7 hours (one: climbing time 5-7 hours from high camp; another: 5-7+ hours round-trip from camp), which agrees with timing.summitTimeHrs 7 and itinerary day-2 hours 7; the approach prose's 6-9 hours brackets it. The schedule's 1:00 PM return (9.5 h) and partner_requirements' 5.5-hr/05:00 figures are the outliers; the 3:30 AM start is stated by recommendedStart and the schedule. The return time is moved to 10:30 AM (1.5 h down from a 9:00 AM summit) and partner_requirements is aligned to 7 hr / 03:30.",
+   "sources": [
+    "https://www.northwestalpineguides.com/northwest-climbs/eldorado-peak/",
+    "https://www.skylinemountainguides.com/all-trips/eldorado-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "time"
+     ],
+     "expect": "1:00 PM",
+     "value": "10:30 AM",
+     "id": "wa_eldorado_peak_east_ridge",
+     "fact": "Summit-day start time and duration"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "the 5.5-hr, 05:00-start summit push",
+     "replace": "the 7-hr, 03:30-start summit push",
+     "id": "wa_eldorado_peak_east_ridge",
+     "fact": "Summit-day start time and duration"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "on top of a 5.5-hr summit day",
+     "replace": "on top of a 7-hr summit day",
+     "id": "wa_eldorado_peak_east_ridge",
+     "fact": "Summit-day start time and duration"
+    }
+   ]
+  },
+  {
+   "id": "wa_tepeh_towers",
+   "fact": "Approach text describes summiting Eldorado Peak, not Tepeh Towers",
+   "verdict": "fixed",
+   "correct_value": "From the basin, continue on the glacier to the ~7,600 ft Eldorado/Inspiration high camp; Tepeh Towers is a separate arete about 45 minutes north-northwest of that camp",
+   "evidence": "One route page gives the approach as about 45 minutes N/NW from the East Ridge camp to the towers and the climb as ~30 minutes of one short low-5th pitch; a separate geographic reference places Tepeh Towers as the arete northwest of the Inspiration Glacier, separating it from the McAllister Glacier, with Eldorado Peak to the west - a different summit. The sentence describing a 3-5 hour climb up Eldorado's snow ridge to its 8,868 ft summit is replaced with the camp approach this route actually uses.",
+   "sources": [
+    "https://www.mountainproject.com/route/119380248/tepeh-towers",
+    "https://en.wikipedia.org/wiki/Inspiration_Glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours.",
+     "replace": "From the basin, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) up the Eldorado Glacier to the high camp near 7,600 ft where the Eldorado and Inspiration ice meet.",
+     "id": "wa_tepeh_towers",
+     "fact": "Approach text describes summiting Eldorado Peak, not Tepeh Towers"
+    }
+   ]
+  },
+  {
+   "id": "wa_tepeh_towers",
+   "fact": "Header/area elevation vs. this route's actual summit",
+   "verdict": "unresolved",
+   "correct_value": "Tepeh Towers summit ~8,113 ft (route fields are right)",
+   "evidence": "The route's own fields (high_point_ft 8113, Summit waypoint 8113, prose) are correct: Tepeh Towers is a separate arete northwest of the Inspiration Glacier, not Eldorado Peak. The 8,872 ft in the header comes from the AREA row (wa_main_peak) the route is filed under; fixing it means re-filing the route or changing the area, both outside route-column patching, so no patch is written here.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Inspiration_Glacier",
+    "https://www.mountainproject.com/route/119380248/tepeh-towers"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "fact": "Summit-day duration vs. its own timestamped schedule",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Day hours 9 agree with summitTimeHrs 6 + descentTimeHrs 3, but the schedule runs 2:30 AM to 2:30 PM (12 h) with a 7.5-hour ascent and 4.5-hour descent. Published route information describes the face as a Grade II variant from the ~7,400 ft East Ridge camp with no timing, and guides give 5-7 hours for the standard East Ridge summit day; no source gives times for this face, so fixing the schedule would mean inventing new clock times.",
+   "sources": [
+    "https://www.mountainproject.com/route/117628561/northeast-face",
+    "https://www.northwestalpineguides.com/northwest-climbs/eldorado-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "fact": "Approach text describes the standard glacier route, not this route's crack/U-notch line",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "From the East Ridge camp, traverse the steep glacier flank to the base of the left-hand (south) skyline below the crack and U-notch",
+   "evidence": "The route page for this line says the south ridge is the left skyline seen from the standard East Ridge camp, reached by a steep, exposed firn traverse on the glacier flank (crampons mandatory), with pitch 1 an obvious crack to the U-notch and descent by the East Ridge. The row's approach_variants, beta, pitch_detail, overview and descent_text (5 fields) all agree; only the approach's route-specific paragraph (copied boilerplate naming a 'West Ridge' and 'all three routes') and its snow-ridge sentence disagree. Only one external source was found.",
+   "sources": [
+    "https://www.mountainproject.com/route/118250844/south-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From camp, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours.",
+     "replace": "From the basin, the route continues onto glaciated terrain (roped travel and crevasse-rescue gear required) to the high camp near 7,600 ft on the Inspiration Glacier flat.",
+     "id": "wa_south_ridge_4",
+     "fact": "Approach text describes the standard glacier route, not this route's crack/U-notch line"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "For this specific route: from Eldorado/Roush Creek high camp, continue up snowfields onto the Eldorado Glacier to the summit ridge system; West Ridge traverses further around past the Triad to the west face before ascending, but all three routes stay on Eldorado Peak itself.",
+     "replace": "For this specific route: from high camp, traverse the steep, exposed snow on the flank of the glacier (crampons mandatory) to the lowest point of the south ridge, the left-hand skyline seen from camp, below an obvious crack leading up to a U-shaped notch in the crest.",
+     "id": "wa_south_ridge_4",
+     "fact": "Approach text describes the standard glacier route, not this route's crack/U-notch line"
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "fact": "Ridge crest grade: 5.7 vs 5.6",
+   "verdict": "fixed",
+   "correct_value": "5.7 (II, 5.7)",
+   "evidence": "Two independent sources grade the North Ridge 5.7: a route database lists it as 5.7 and a detailed trip report gives 'Grade: II, 5.7'. One guide service lists II 5.6 (and the waypoint note echoes that page's wording). The headline grade and rock_grade (5.7) stand; the waypoint note is reworded to 5.7, and the baseFinding's hedge that names a sourcing dispute is replaced with a plain statement of the grade.",
+   "sources": [
+    "https://www.mountainproject.com/area/105923547/eldorado-peak",
+    "https://gethighonaltitude.com/2020/09/07/eldorado-north-ridge/",
+    "https://www.bcadventureguides.com/trip/eldorado-peak-north-ridge-ii-5-6/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "expect": "Airy, exposed 5.6 ridge crest of solid granite to the summit.",
+     "value": "Exposed granite ridge crest, moves up to 5.7, leading to the summit.",
+     "id": "wa_eldorado_peak_north_ridge",
+     "fact": "Ridge crest grade: 5.7 vs 5.6"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Sources also disagree on the grade, 5.6 against 5.7, so do not read a hard move as evidence you are off route.",
+     "replace": "The crux moves are 5.7, so do not read a hard move as evidence you are off route.",
+     "id": "wa_eldorado_peak_north_ridge",
+     "fact": "Ridge crest grade: 5.7 vs 5.6"
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season",
+   "verdict": "fixed",
+   "correct_value": "An ice climb of the cold season, roughly late October to early May (season Oct-Apr stands)",
+   "evidence": "Dated ascents in several independent reports fall in the cold season: October (first-ascent month; one report names late October the ideal window) and April 2024, November 2019, February 2026 (soft, fat ice), and May 1, 2015 described as prime time for icy routes; a June account found a wall-to-wall bergschrund at the base. No source supports June as the optimal month (the row's own optimalWindow admitted no evidence for it). The season field is correct; seasonal_guidance, climate, the weather note and the early-season sentence in best_season/approach_variants are aligned to it. The avalanche-by-month table is left as a hazard table, not a season claim.",
+   "sources": [
+    "https://rocknropenw.com/2024/04/16/eldorado-nw-couloir-2024/",
+    "https://climberkyle.com/2019/11/06/eldorado-peak-nw-ice-couloir-wi3/",
+    "https://engineeredforadventure.com/eldorado-peak-nw-couloir/",
+    "https://www.jeffreyjhebert.com/adventures/nw-ice-couloir-on-eldorado-peak",
+    "https://www.mountainproject.com/route/110444620/northwest-ice-couloir"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [],
+     "expect": {
+      "optimalWindow": "Highly conditions-dependent — no confirmed ascent evidence for a June-specific optimal window",
+      "monthBreakdown": {
+       "May": {
+        "reason": "Couloir may still be filling in and spring snowpack instability is the primary variable",
+        "status": "marginal"
+       },
+       "July": {
+        "reason": "Can still hold early in the month, but the couloir melts and opens as summer progresses",
+        "status": "good"
+       },
+       "June": {
+        "reason": "Core window for firm névé and good ice",
+        "status": "optimal"
+       }
+      }
+     },
+     "value": {
+      "optimalWindow": "Late October to early May, when cold snaps build ice in the couloir; conditions vary widely from year to year",
+      "monthBreakdown": {
+       "October": {
+        "status": "good",
+        "reason": "An early cold snap can bring in firm, well-bonded ice before snow buries the boulder field on the approach"
+       },
+       "November": {
+        "status": "good",
+        "reason": "Ice is often in, but short days make a camp or bivy close to the route nearly essential"
+       },
+       "February": {
+        "status": "good",
+        "reason": "Midwinter ice can be fat after a rain-then-freeze cycle; the gated road and deep snow lengthen the approach"
+       },
+       "April": {
+        "status": "good",
+        "reason": "Spring ice and firm snow in the couloir; watch avalanche stability"
+       },
+       "May": {
+        "status": "marginal",
+        "reason": "Can still hold ice early in the month, but warming brings wet slides below the ridge"
+       },
+       "June": {
+        "status": "marginal",
+        "reason": "The couloir turns to snow and the bergschrund at its base can span the whole face"
+       }
+      }
+     },
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+    },
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "Early season (roughly May-June) can offer steep, thin ice and moderate mixed climbing",
+     "replace": "Spring (roughly April to early May) can offer steep, thin ice and moderate mixed climbing",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "Early season, roughly May-June, can give",
+     "replace": "Spring, roughly April to early May, can give",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "typical"
+     ],
+     "expect": "A late-spring to early-summer snow-and-ice line requiring firm couloir conditions and a stable snowpack.",
+     "value": "A cold-season ice line, climbed from late fall to spring, requiring firm couloir conditions and a stable snowpack.",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "fall"
+     ],
+     "expect": "More broken and icy; less appealing.",
+     "value": "From late October a cold snap can bring in firm, well-bonded ice; a prime window before snow buries the approach.",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "winter"
+     ],
+     "expect": "Full winter conditions with serious avalanche hazard.",
+     "value": "Full winter conditions with serious avalanche hazard; the couloir can hold good ice, but the gated road and deep snow make the approach far longer.",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+    },
+    {
+     "op": "set",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "summer"
+     ],
+     "expect": "Early summer holds good névé; later the couloir melts and opens.",
+     "value": "Out of season as an ice climb: the couloir turns to snow and the bergschrund at its base widens.",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "typical"
+     ],
+     "find": "spring avalanche concern easing into a firmer early-summer window",
+     "replace": "short, cold days through the fall-to-spring ice season and avalanche concern whenever new snow loads the couloir",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Season window (Oct-Apr) vs. best_season/seasonal_guidance/seasonal_hazards, which describe a May-July season"
+    }
+   ]
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "fact": "Summit-day start time and duration",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "3:30 AM start, 9-hour summit day",
+   "evidence": "Four row fields agree on a 9-hour summit day from a 3:30 AM start: itinerary day-2 hours 9, timing.summitTimeHrs 9, sectionBreakdown Climb 9 (which with 6 and 3.5 sum to totalHrs 18.5), and recommendedStart / schedule 3:30 AM. The schedule's 2:00 PM return (10.5 h) and partner_requirements' 7-hr / 04:30 figures are outliers. Guides give 5-7 hours for the easier East Ridge summit day from the same camp, so a longer 9-hour day for the couloir is consistent; the return time is moved to 12:30 PM and partner_requirements aligned.",
+   "sources": [
+    "https://www.northwestalpineguides.com/northwest-climbs/eldorado-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      5,
+      "time"
+     ],
+     "expect": "2:00 PM",
+     "value": "12:30 PM",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Summit-day start time and duration"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "a 04:30 alpine start for a 7-hr route day",
+     "replace": "a 03:30 alpine start for a 9-hr route day",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Summit-day start time and duration"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "a longer (7-hr) technical summit day",
+     "replace": "a longer (9-hr) technical summit day",
+     "id": "wa_eldorado_peak_eldorado_glacier_nw",
+     "fact": "Summit-day start time and duration"
+    }
+   ]
+  }
+ ]
+}

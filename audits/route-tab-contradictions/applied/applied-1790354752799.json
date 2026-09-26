@@ -1,0 +1,494 @@
+{
+ "applied": [
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain (car-to-summit)"
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route"
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route"
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route"
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route"
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Whether the Downey Creek/Suiattle exit is usable as a bail route"
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Downey Creek Trailhead elevation"
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass names the wrong road (Mountain Loop Highway)"
+  },
+  {
+   "id": "wa_east_face",
+   "column": "descent",
+   "path": [],
+   "fact": "number and total length of rappels"
+  },
+  {
+   "id": "wa_east_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "number and total length of rappels"
+  },
+  {
+   "id": "wa_east_face",
+   "column": "rappel_detail",
+   "path": [],
+   "fact": "number and total length of rappels"
+  },
+  {
+   "id": "wa_east_face",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "whether this route requires aid climbing"
+  },
+  {
+   "id": "wa_east_face",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass names another area's trailhead (Sunrise Mine TH / Mountain Loop Highway)"
+  },
+  {
+   "id": "wa_gunrunner",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "access._raw block describes a different area/trailhead"
+  },
+  {
+   "id": "wa_gunrunner",
+   "column": "access",
+   "path": [
+    "permitZone"
+   ],
+   "fact": "access._raw block describes a different area/trailhead"
+  },
+  {
+   "id": "wa_gunrunner",
+   "column": "access",
+   "path": [
+    "_raw",
+    "wilderness_zone"
+   ],
+   "fact": "access._raw block describes a different area/trailhead"
+  },
+  {
+   "id": "wa_gunrunner",
+   "column": "access",
+   "path": [
+    "_raw",
+    "group_size_limit"
+   ],
+   "fact": "access._raw block describes a different area/trailhead"
+  },
+  {
+   "id": "wa_gunrunner",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass"
+   ],
+   "fact": "access._raw block describes a different area/trailhead"
+  },
+  {
+   "id": "wa_gunrunner",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup"
+   ],
+   "fact": "access._raw block describes a different area/trailhead"
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "column": "best_season",
+   "path": [],
+   "fact": "whether late June is a good/best time to climb"
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "whether late June is a good/best time to climb"
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "East-side alternative approach said to lead to Bachelor Meadows/Cub Lake"
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass names the wrong road (Mountain Loop Highway)"
+  },
+  {
+   "id": "wa_sw_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "which approach/trailhead this route uses"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Cache Col elevation",
+   "op": "set",
+   "column": "bivy",
+   "path": [
+    0,
+    "elev"
+   ],
+   "expect": 6400,
+   "value": 6900,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col",
+    "https://www.alpineinstitute.com/programs/the-ptarmigan-traverse-technical-backpacking-and-climbing/"
+   ],
+   "why": "expect mismatch at bivy[0,\"elev\"]: live undefined"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "before": {
+    "gain_ft": 5980,
+    "access": {
+     "fees": "Northwest Forest Pass ($5/day or $30/year) required to park at the Downey Creek trailhead if using the south approach.",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "A North Cascades NP backcountry permit is required for the Cascade Pass portion of the approach ($10/person + $6 reservation fee via Recreation.gov, or free walk-up subject to availability at the Wilderness Information Center, 7280 Ranger Station Road, Marblemount). No permit is required once you cross Cache Col into Glacier Peak Wilderness, though signing trail registers is requested.",
+     "closures": "Suiattle River Road (FS-26) is closed to motor vehicles at roughly MP 4.5 due to 2025 atmospheric-river flood damage, under a closure order in effect April 2, 2026 - January 1, 2028; the Downey Creek trailhead itself remains reachable on foot or by bike beyond the closure, adding several miles each way.",
+     "group_limit": 12,
+     "landManager": "Glacier Peak Wilderness, jointly administered by the Darrington Ranger District (Mt. Baker-Snoqualmie National Forest) on the west/south approach and Okanogan-Wenatchee National Forest to the east; the northern approach via Cascade Pass and Cache Col lies within North Cascades National Park.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass (Downey Creek TH, south approach) and/or NPS wilderness permit (Cascade Pass corridor, north approach).",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required (Glacier Peak Wilderness)",
+      "where": "Camps south of Cache Col are outside the national park. Register at the trailhead if a register is posted."
+     }
+    },
+    "road": {
+     "name": "Cascade River Road (north) / Suiattle River Road FS-26 (south)",
+     "status": "Suiattle River Road is closed to motor vehicles at roughly MP 4.5 (washout, closure order April 2, 2026 - January 1, 2028); the Downey Creek trailhead beyond it is foot/bike accessible only.",
+     "driveNote": "Neither road reaches Lizard Mountain directly -- both lead only to trailheads that begin the multi-day Ptarmigan Traverse.",
+     "seasonalGate": "Cascade River Road gates at Eldorado (MP 20) over winter and typically reopens to the Cascade Pass trailhead by late June or July."
+    },
+    "pro_tips": [
+     "There's no dayhike trailhead for this peak -- plan it as a side-scramble from a White Rock Lakes camp on the Ptarmigan Traverse, not as a standalone objective.",
+     "Carry glacier travel and crevasse-rescue gear for the approach even though the summit scramble itself is only Class 3.",
+     "Check current Suiattle River Road status before planning a south-side exit via Downey Creek/Bachelor Creek -- it's been closed to vehicles at MP 4.5 since 2025 flood damage."
+    ],
+    "approach": "Lizard Mountain has no dedicated trailhead — the accepted approach follows the southern leg of the Ptarmigan Traverse corridor out of the Downey Creek Trailhead (~1,600 ft) on the Suiattle River Road (FR 26) east of Darrington. Take Downey Creek Trail #768, which enters Glacier Peak Wilderness within the first half-mile and climbs gently through old-growth forest, crossing several tributary creeks (can run high in early season) for about 6.6 miles to the Bachelor Creek Trail junction near 2,400 ft. Turn onto the Bachelor Creek climbers' path — unmaintained, steadily steeper, and notorious for blowdown (expect to step over or crawl under numerous downed trees) plus a brushy alder/slide-alder band around 3,800–4,400 ft that becomes a real bushwhack when snow hasn't flattened it. The trail fords Bachelor Creek itself, which flows fast and cold with snowmelt in early-mid summer — scout for a log crossing or plan on wet feet. Above treeline the trail breaks into meadows near Bachelor Meadows and reaches Cub Lake (~5,340 ft), a reliable water source and common first camp. From Cub Lake, climb a steep, often snow-covered pitch onto Itswoot Ridge (~6,350 ft), another established camp with tarn water. Beyond Itswoot Ridge the route goes cross-country (boot path in season) toward and across South Cascade Glacier — a real glacier with crevasse hazard, especially late-season when snow bridges have opened up; rope travel is prudent unless the glacier is fully consolidated. This crossing tops out at Lizard Col (~6,798 ft), the broad notch on Lizard Mountain's south ridge overlooking White Rock Lakes to the southwest. Trailhead to Lizard Col is roughly 14–15 miles one-way with on the order of 5,000+ ft of net gain (more once the undulating up-and-over-Itswoot-Ridge terrain is counted), so almost everyone treats this as a 2–3 day round trip rather than a day climb — matching the ~29-mile (46.67 km) round-trip distance. From the col, the South Route gains Lizard Mountain's south ridge directly to the summit, a straightforward but loose Class 2 scramble of roughly 600 vertical feet, staying near the crest to avoid the worst rubble on the flanks."
+   }
+  },
+  {
+   "id": "wa_east_face",
+   "before": {
+    "descent": "Rappel the south-facing side of the peak (typically 3-4 rappels on 50-60m lines) to avoid the climb-back problem of ascending the east face descent.",
+    "descent_text": "After summiting, traverse south along the summit ridge to the south-facing rappel anchors. Perform 3-4 rappels on 50-60 meter lines to descend the south face, which is protected from rockfall. Navigate the crevasse field on Chickamin Glacier to return to base camp.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First rappel after traversing the summit ridge to the south-facing anchors.",
+      "anchor": "South-face rappel anchor (rockfall-sheltered)",
+      "lengthM": 55
+     },
+     {
+      "n": 2,
+      "notes": "Continuing down the south face.",
+      "anchor": "South-face rappel anchor",
+      "lengthM": 55
+     },
+     {
+      "n": 3,
+      "notes": "Continuing down the south face.",
+      "anchor": "South-face rappel anchor",
+      "lengthM": 55
+     },
+     {
+      "n": 4,
+      "notes": "Final rappel before navigating the crevasse field on the Chickamin Glacier back to camp.",
+      "anchor": "South-face rappel anchor",
+      "lengthM": 55
+     }
+    ],
+    "detailed_rack": "Medium-sized rock climbing rack: 1-2x each of 0.5-1.5 inch cams, medium stopper set, 0.5-1 inch pitons for aid (minimal), 2-3 slings, 2-3 quickdraws, ice tools and crampons if early season or water ice present, single 50-60m rope sufficient for climbing, 2x 50m ropes for rappelling.",
+    "access": {
+     "fees": "None for permit. Recreation pass may be required at trailhead ($5 day or $30 annual)",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Free self-issued wilderness permit required for Glacier Peak Wilderness",
+     "closures": "Check Suiattle River Road for washout closures. Route may close for grizzly bear activity.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "group_limit": 12,
+     "landManager": "Glacier Peak Wilderness, jointly administered by Mount Baker-Snoqualmie National Forest (Darrington Ranger District) and Okanogan-Wenatchee National Forest",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass recommended",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+      "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+      "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_gunrunner",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_cost": "$0 for climbing/registration",
+      "permit_type": "Optional registration for alpine climbs; wilderness permit for overnight stays",
+      "land_manager": "USFS - Mount Baker-Snoqualmie National Forest",
+      "parking_pass": "Northwest Forest Pass ($5 day / $30 annual) or America the Beautiful Pass required for Lake Serene Trailhead",
+      "permit_pickup": "Self-issued at trailhead; optional registration at ranger stations; access via Lake Serene/Bridal Veil Trailhead",
+      "special_hazards": "Extremely difficult alpine ascent; Fred Beckey called it one of the most difficult summits to attain in the Cascades; exposed rock and ice",
+      "wilderness_zone": "Alpine climbing area",
+      "group_size_limit": "Max 12 people in Mt. Baker Wilderness",
+      "seasonal_closures": "Best June-October; winter/spring snow and avalanche hazards",
+      "altitude_restrictions": "None noted"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "Optional registration for alpine climbs; wilderness permit for overnight stays",
+     "closures": "CLOSED RIGHT NOW: Suiattle River Road (FR 26) is washed out and closed to vehicles at about milepost 4.5 after the December 2025 flood, under a closure order running to 1 January 2028 unless lifted sooner, so the Downey Creek Trailhead cannot be reached by car. The Downey Creek Trail itself is also closed through 31 December 2026 under a separate fire closure. Call the Darrington Ranger District, (360) 436-1155, before planning a trip.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "permitZone": "Alpine climbing area",
+     "group_limit": 12,
+     "landManager": "Glacier Peak Wilderness, jointly administered by Mount Baker-Snoqualmie National Forest (Darrington Ranger District) and Okanogan-Wenatchee National Forest",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass recommended",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+      "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+      "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "before": {
+    "best_season": "Late June through September; late June-July is favored for firmer, more continuous glacier snow on the Chikamin approach (per 2017 trip reports), while by August-September the glacier is more broken/icy and crevasses more exposed, though the rock climbing itself stays in condition.",
+    "itinerary": {
+     "cal": "Most parties go around the late-June/early-July window when the Dome and Chikamin glaciers are consolidated enough for reasonable travel; earlier trips mean more snow and harder creek crossings on the approach.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Downey Creek Trailhead (~1,400 ft), follow the Downey Creek Trail then the Bachelor Creek Trail, crossing Bachelor Creek on foot logs and pushing through brushy, overgrown tread. Camp in the flats/meadows around 4,500 ft.",
+       "hours": 9.7,
+       "miles": 8,
+       "title": "Approach to Bachelor Flats",
+       "gainFt": 3800,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach Bachelor Flats camp"
+      },
+      {
+       "n": 2,
+       "note": "Climb through Bachelor Meadows, over Cub Pass, past Cub Lake, and up Itswoot Ridge onto the Dome Glacier, then traverse to the Chikamin-Dome col (~8,500 ft). This is the longest, most sustained climbing day of the approach and typically involves some glacier travel.",
+       "hours": 11.6,
+       "miles": 5.5,
+       "title": "Over Itswoot Ridge to high camp",
+       "gainFt": 5000,
+       "lossFt": 900,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach Chikamin-Dome col high camp"
+      },
+      {
+       "n": 3,
+       "note": "Descend from the col to a bench camp on the Chikamin Glacier (~7,000 ft), drop overnight gear, then push for the summit via the bergschrund, a basalt dike, and an exposed ridge crest with a short 5.6 crux. Many parties top out in the evening and return to camp after dark.",
+       "hours": 11,
+       "miles": 3.5,
+       "title": "Descend to the Chikamin Glacier and climb Gunsight Peak",
+       "gainFt": 2100,
+       "lossFt": 3200,
+       "packLb": 30,
+       "schedule": [
+        {
+         "time": "~7:00 AM",
+         "label": "Break high camp at the col",
+         "detail": ""
+        },
+        {
+         "time": "~8:30 AM",
+         "label": "Reach Chikamin Glacier bench, drop overnight gear",
+         "detail": "~1.5 hr descent from the col"
+        },
+        {
+         "time": "~11:00 AM",
+         "label": "Begin summit push",
+         "detail": "Cross the bergschrund via the walk-off route"
+        },
+        {
+         "time": "~4:00 PM",
+         "label": "Exposed 5.6 crux moves",
+         "detail": "Black rock crux above the basalt dike, then ridge scrambling"
+        },
+        {
+         "time": "6:30 PM",
+         "label": "Summit Gunsight Peak",
+         "detail": ""
+        },
+        {
+         "time": "~8:30-9:00 PM",
+         "label": "Back at glacier bench camp",
+         "detail": "~2.8 hr descent, often finishing by headlamp"
+        }
+       ],
+       "objective": "Summit Gunsight Peak"
+      },
+      {
+       "n": 4,
+       "note": "Climb Sinister Peak via the southwest snowfield, southwest gully, and upper/lower west ridge, then break camp, regain the Chikamin-Dome col, and descend back over Itswoot Ridge to Cub Lake Meadows. A long, full day combining a second summit with a camp move.",
+       "hours": 10,
+       "miles": 6,
+       "title": "Climb Sinister Peak, move camp to Cub Lake",
+       "gainFt": 2200,
+       "lossFt": 3300,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "10:00 AM",
+         "label": "Leave glacier camp for Sinister Peak",
+         "detail": ""
+        },
+        {
+         "time": "~1:30 PM",
+         "label": "Summit Sinister Peak",
+         "detail": "~3.4 hr climb via SW snowfield/gully and west ridge"
+        },
+        {
+         "time": "afternoon",
+         "label": "Break camp, regain Chikamin-Dome col",
+         "detail": "~1,400 ft reclimb with full packs"
+        },
+        {
+         "time": "~8:30 PM",
+         "label": "Arrive Cub Lake Meadows camp",
+         "detail": "~6.5 hr from the col"
+        }
+       ],
+       "objective": "Summit Sinister Peak, relocate to Cub Lake Meadows"
+      },
+      {
+       "n": 5,
+       "note": "Reverse the approach from Cub Lake Meadows over Cub Pass and down through Bachelor Meadows. Many parties use the improved north-side boot path along Bachelor Creek rather than the original brushy route, camping a few miles above the trailhead.",
+       "hours": 9,
+       "miles": 8,
+       "title": "Exit toward the trailhead",
+       "gainFt": 800,
+       "lossFt": 3600,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach a forest camp near Downey Creek"
+      },
+      {
+       "n": 6,
+       "note": "A short final push down the Downey Creek Trail back to the car, typically finishing by mid-morning after an early start.",
+       "hours": 3.5,
+       "miles": 3,
+       "title": "Hike out",
+       "gainFt": 100,
+       "lossFt": 3100,
+       "packLb": 45,
+       "schedule": [
+        {
+         "time": "6:15 AM",
+         "label": "Break camp, hike final miles",
+         "detail": ""
+        },
+        {
+         "time": "mid-morning",
+         "label": "Reach Downey Creek Trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Return to Downey Creek Trailhead"
+      }
+     ],
+     "totalNote": "A demanding 6-day, ~34-mile backpack-and-climb loop with roughly 14,000 ft of cumulative gain/loss: two days approaching to a high camp at the Chikamin-Dome col, two big days summiting Gunsight and Sinister Peaks with a glacier bench camp between them, and two days exiting."
+    },
+    "access": {
+     "fees": "Northwest Forest Pass or America the Beautiful interagency pass required to park at Downey Creek Trailhead (~$5/day or $30/yr)",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "Free self-issue wilderness permit at the trailhead (no quota/reservation)",
+     "closures": "USFS closure order on Suiattle River Road (FR-26) at milepost 4 due to atmospheric-river flood damage, in effect April 2, 2026 through January 1, 2028 (unless rescinded sooner) - this cuts vehicle access to the Downey Creek Trailhead, the standard west-side approach. The only practical approach while this is in effect is the longer east-side route via the Lady of the Lake ferry to Stehekin and the PCT/Agnes Creek Trail to Bachelor Meadows/Cub Lake. Check current Mt. Baker-Snoqualmie NF alerts before planning a west-side trip.",
+     "group_limit": 12,
+     "landManager": "Glacier Peak Wilderness - Mount Baker-Snoqualmie National Forest (Darrington Ranger District) on the west/Downey Creek side; Okanogan-Wenatchee National Forest (Chelan Ranger District) on the east/Stehekin side",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass / interagency pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+      "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+      "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_sw_ridge",
+   "before": {
+    "approach": "Same multi-day approach as the East Face and Gunrunner: Lady of the Lake ferry from Chelan to Stehekin, NPS shuttle to High Bridge, ~9-10 miles on the PCT/Agnes Creek Trail, then an off-trail bushwhack and glacier approach (~5,000 ft gain) to a high camp below the peaks."
+   }
+  }
+ ]
+}

@@ -1,0 +1,401 @@
+{
+ "file": "r067.json",
+ "results": [
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "fact": "Total route gain/loss/distance vs. the summit-day glacier traverse leg",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "gain_ft 7200 and loss_ft 7200 (car-to-car, matching the itinerary TOTAL); dist_km left unchanged (see separate result)",
+   "evidence": "The 1,280 ft ascent / 592 ft descent / 2.8 mi figures are the one-way leg from the Klawatti area to Austera (SummitPost states exactly this leg; Mountain Project lists the route length as 1280 ft), not a car-to-car total. The row's own itinerary days (5400+1800+0 gain, 0+1800+5400 loss), totalNote (~7,000+ ft), approach (5,500-6,000 ft to high camp) and waypoints (2,100 ft trailhead to 8,339 ft summit) all agree on ~7,200 ft; the external leg figure (1,280 up + 592 down each way = ~1,870 ft per direction) plus a ~5,400 ft trailhead-to-camp climb reproduces the itinerary's 7,200 ft. A winter party doing Klawatti+Austera+Eldorado logged 16 mi / 9,000 ft, consistent once the two extra summits are removed.",
+   "sources": [
+    "https://www.mountainproject.com/route/117615075/austera-peak",
+    "https://www.summitpost.org/austera-peak/152991",
+    "https://www.countryhighpoints.com/klawatti-austera-eldorado-winter-ascents/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 1280,
+     "value": 7200,
+     "id": "wa_austera_peak_southwest_ridge",
+     "fact": "Total route gain/loss/distance vs. the summit-day glacier traverse leg"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 592,
+     "value": 7200,
+     "id": "wa_austera_peak_southwest_ridge",
+     "fact": "Total route gain/loss/distance vs. the summit-day glacier traverse leg"
+    }
+   ]
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "fact": "dist_km (4.5 km) is the camp-to-Austera leg, not the one-way approach",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 4.5 km = the 2.8 mi camp-to-Austera leg. The one-way trailhead-to-Austera figure is not settled: the row's own waypoints/itinerary imply ~9.2 mi (6 mi to camp + ~3.2 mi), while published figures give ~7 mi to the East Ridge high camp plus ~3.5 mi more (~10.5 mi). No two sources agree on a one-way number, so dist_km is left as is (the header Dist uses the itinerary's 18.5 mi).",
+   "sources": [
+    "https://www.summitpost.org/austera-peak/152991",
+    "https://www.mountainproject.com/route/117615075/austera-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "fact": "Summit-day length: partner_requirements says 7 hrs round trip and 2+ days to a McAllister Glacier camp; itinerary/timing say one ~6 hr day to the Inspiration camp and an ~11 hr summit day",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "One ~6-hour day to the Eldorado/Inspiration Glacier high camp, then a roughly 11-hour round-trip summit day",
+   "evidence": "Itinerary day 1 (6 hrs to the Eldorado-Inspiration high camp), day 2 (11 hrs, schedule 4 AM to 4-5 PM, 'total day roughly 11-13 hours'), timing.summitTimeHrs 11 and the approach text ('~4 hours one-way' camp to Austera, 5-6+ hours trailhead to camp) all agree; only partner_requirements says 7 hrs and 2+ days to a McAllister camp. The camp-to-Austera leg is published as ~4 hours one way (so 8+ hours round trip before summit climbing), and the high camp per Mountain Project is the Eldorado camp at the base of the east ridge.",
+   "sources": [
+    "https://www.summitpost.org/austera-peak/152991",
+    "https://www.mountainproject.com/route/117615075/austera-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "long summit push (7 total hrs from high camp)",
+     "replace": "long summit push (roughly 11 hrs round trip from high camp)",
+     "id": "wa_austera_peak_southwest_ridge",
+     "fact": "Summit-day length: partner_requirements says 7 hrs round trip and 2+ days to a McAllister Glacier camp; itinerary/timing say one ~6 hr day to the Inspiration camp and an ~11 hr summit day"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Multi-day — typically 2+ days from Cascade River Road/Eldorado trailhead to a McAllister Glacier high camp before the 7-hour round-trip summit day",
+     "value": "Typically one long day (about 6 hours) from the Cascade River Road/Eldorado trailhead to a high camp on the Eldorado/Inspiration Glacier, before a roughly 11-hour round-trip summit day",
+     "id": "wa_austera_peak_southwest_ridge",
+     "fact": "Summit-day length: partner_requirements says 7 hrs round trip and 2+ days to a McAllister Glacier camp; itinerary/timing say one ~6 hr day to the Inspiration camp and an ~11 hr summit day"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_austera_peak",
+   "fact": "Which peak this route summits",
+   "verdict": "fixed",
+   "correct_value": "From the Eldorado Creek basin the route climbs onto the glacier to the Eldorado/Inspiration Glacier high camp below Eldorado's east ridge (~7,600 ft), not to Eldorado's 8,868 ft summit",
+   "evidence": "The route is Austera Peak (8,339 ft), reached from the Eldorado camp at the base of Eldorado's east ridge (~7,600 ft) by traversing the Inspiration Glacier to Klawatti Col (Mountain Project); the standard approach runs about 7 mi / 6,000 ft to the East Ridge of Eldorado high camp, and Austera lies ~3.5 mi beyond (SummitPost). The sentence sending the party to Eldorado's 8,868 ft summit is leftover Eldorado Peak text; it is rewritten to end at the high camp, matching the waypoints and the paragraph's own disclaimer.",
+   "sources": [
+    "https://www.mountainproject.com/route/117615075/austera-peak",
+    "https://www.summitpost.org/austera-peak/152991"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours.",
+     "replace": "climbing to the high camp on the Eldorado/Inspiration Glacier below Eldorado's east ridge.",
+     "id": "wa_austera_peak",
+     "fact": "Which peak this route summits"
+    }
+   ]
+  },
+  {
+   "id": "wa_austera_peak",
+   "fact": "Total route gain/loss/distance vs. the multi-day trip",
+   "verdict": "unresolved",
+   "correct_value": "Car-to-car gain roughly 7,200-7,900 ft (not settled)",
+   "evidence": "Real: 1,280/592 ft and 4.5 km (2.8 mi) are the one-way Klawatti-to-Austera leg (SummitPost; Mountain Project lists 1280 ft as the route length), not the trip from the 2,100 ft trailhead. But no two sources agree on a car-to-car figure: the leg plus a 5,400-6,000 ft trailhead-to-camp climb gives anywhere from ~7,200 to ~7,900 ft, and one-way distance estimates run ~9.2-10.5 mi. This row has no numeric itinerary to anchor a total, so no patch.",
+   "sources": [
+    "https://www.summitpost.org/austera-peak/152991",
+    "https://www.mountainproject.com/route/117615075/austera-peak",
+    "https://www.countryhighpoints.com/klawatti-austera-eldorado-winter-ascents/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "fact": "Total route gain/distance vs. approach-to-camp leg only",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: 6,000 ft / 7 mi (11.3 km) is the trailhead-to-East-Ridge-high-camp leg as published, with a further ~3-3.5 mi and ~1,280 ft up / 592 ft down (each way) of glacier traverse to Austera. Adding these gives ~7,200-7,900 ft car-to-car and ~10-10.5 mi one way depending on which camp-leg figure is used; no two sources give one agreed total, and this row has no itinerary to anchor it, so no patch.",
+   "sources": [
+    "https://www.summitpost.org/austera-peak/152991",
+    "https://www.mountainproject.com/route/117615075/austera-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "fact": "High camp elevation and approach line",
+   "verdict": "fixed",
+   "correct_value": "Leave the Chilliwack River Trail at the Bear Creek confluence, climb past the meadows above Ruta Lake to the broad saddle camp at ~6,480 ft",
+   "evidence": "Steph Abegg's trip report: from Bear Creek climb steep timber and huckleberry to the meadows above Ruta Lake, traverse below Points 6592/6822 to a saddle at 6,480 ft with camping. Mountain Project (Bear Mountain area) describes the same Bear Creek/Ruta Lake line to camping at ~6,500 ft below the saddle, and the Direct North Buttress page starts its approach 'from the saddle'. Nothing supports a 4,600 ft camp via a Copper Ridge junction.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/",
+    "https://www.mountainproject.com/area/112828230/bear-mountain",
+    "https://www.mountainproject.com/route/112828257/direct-north-buttress"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "leave the maintained trail near the Copper Ridge junction and bushwhack/scramble up Bear Mountain's west ridge to a high camp near 4,600 ft",
+     "replace": "leave the maintained trail at the Bear Creek confluence and climb steep brushy timber to the meadows above Ruta Lake, then traverse the divide to a high camp on the broad saddle near 6,480 ft",
+     "id": "wa_direct_north_buttress",
+     "fact": "High camp elevation and approach line"
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "fact": "ice_grade claims technical ice climbing not described anywhere else",
+   "verdict": "fixed",
+   "correct_value": "No ice grade (a rock route with a short neve approach)",
+   "evidence": "Mountain Project lists the Direct North Buttress as Trad, Alpine, 2200 ft, 21 pitches, Grade V, 5.10- with no ice grade; the only snow is steep neve to reach the slabs, where crampons are recommended and a light axe is 'helpful but not necessary'. Steph Abegg's report on the same buttress describes a rock climb with axe and crampons only for the approach neve/couloir. WI5+ is unsupported.",
+   "sources": [
+    "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+    "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "ice_grade",
+     "path": [],
+     "expect": "WI5+",
+     "value": null,
+     "id": "wa_direct_north_buttress",
+     "fact": "ice_grade claims technical ice climbing not described anywhere else"
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "fact": "Bivy list includes a camp for different peaks reached by a different approach",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Regional Chilliwack camp list. Serve this route: 'Basin below the Bear Mountain saddle' (the actual high camp), and on the Hannegan approach Hannegan Camp, Boundary Camp and US Cabin Camp. Copper Lake Camp is on the Copper Ridge high traverse, a side option at best. Ouzel Lake basin (Depot Creek, for Redoubt/Spickard) does NOT serve this route - its own note says it is not reachable from Hannegan. Left for the catalog-wide bivy class.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "fact": "road names Depot Creek Road (BC) while the route's trailhead is Hannegan Pass",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Hannegan Pass Road (FS 32) off the Mount Baker Highway, to the road end at about 3,100 ft",
+   "evidence": "approach_logistics.trailhead, the Trailhead waypoint, the approach prose and the primary approach variant all start at the Hannegan Pass Trailhead at the end of FR-32 (~3,100 ft); the road block instead describes Depot Creek Road in BC, which is the Redoubt/Spickard approach (the row's own Ouzel Lake bivy says Depot Creek is not a Bear approach). Mountain Project's Bear Mountain page gives the two Bear approaches as the Chilliwack Lake road (BC) or the Hannegan Pass trailhead, never Depot Creek.",
+   "sources": [
+    "https://www.mountainproject.com/area/112828230/bear-mountain",
+    "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Depot Creek Road (BC) via Chilliwack River Road, from Chilliwack, BC",
+     "value": "Hannegan Pass Road (FS 32), off the Mount Baker Highway",
+     "id": "wa_direct_north_buttress",
+     "fact": "road names Depot Creek Road (BC) while the route's trailhead is Hannegan Pass"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Chilliwack River Road is paved; Depot Creek Road itself is a narrow, increasingly rough and overgrown dirt spur — parking at the large turnout near the start is recommended, though high-clearance 4WD vehicles may continue about 2.5 miles further.",
+     "value": "Gravel forest road to the trailhead at its end, about 3,100 ft",
+     "id": "wa_direct_north_buttress",
+     "fact": "road names Depot Creek Road (BC) while the route's trailhead is Hannegan Pass"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "Requires crossing into Canada via Chilliwack, BC, then driving Chilliwack River Road ~31.7 miles to the Depot Creek Road turnoff, plus the US-Canada border crossing time; a long approach hike up Depot Creek valley follows.",
+     "value": "From the Mount Baker Highway near Glacier, take Hannegan Pass Road to its end; a Northwest Forest Pass is required at the trailhead, and a long multi-day walk over Hannegan Pass follows.",
+     "id": "wa_direct_north_buttress",
+     "fact": "road names Depot Creek Road (BC) while the route's trailhead is Hannegan Pass"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "fact": "gain_ft/loss_ft/dist_km (5,950 ft, 14.5 km) fit the Chilliwack Lake (BC) start, while the row's trailhead is Hannegan Pass and its approach says 30+ miles and 10,000+ ft",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "5,950 ft is roughly summit minus the ~2,000 ft Chilliwack Lake trailhead, and 14.5 km = the ~9 mi Chilliwack Lake-to-camp walk (Steph Abegg). The row's trailhead is Hannegan Pass (~17 mi to Bear Creek per Mountain Project, ~21 mi to camp per the sister route's waypoints), for which no car-to-car gain/distance is published in two agreeing sources. Which trailhead the page should be built around is a structural choice; no patch.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/",
+    "https://www.mountainproject.com/area/112828230/bear-mountain"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "fact": "Whether the standard descent involves rappels",
+   "verdict": "fixed",
+   "correct_value": "No rappels required: descend west on the south side of the crest, then downclimb a short 3rd-class gully back to camp (~1 hour)",
+   "evidence": "Steph Abegg (North Face Buttress trip report): descent is 3rd/4th, about 1 hour, 'direct and straightforward' - descend west on the south side of the ridge and down-climb a short 3rd class rock gully back to camp. The first-ascent account (AAC) describes 'a quite easy descent route' traversing west to a gap and a snowfield, and Mountain Project's Direct North Buttress page describes snow slopes and cliff bands back to camp; none mentions a rappel. The rappels field ('None') is right; rappel_detail, descent, descent_text, rappel_count_note and the summit waypoint note are brought into line.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/",
+    "http://publications.americanalpineclub.org/articles/12196806700/The-North-Face-of-Bear-Mountain",
+    "https://www.mountainproject.com/route/112828257/direct-north-buttress"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "notes": "First of two rappels protecting a short, sometimes-loose 3rd class gully back to the saddle camp; no fixed anchors, back up any existing tat.",
+       "anchor": "Natural anchor (horn/gear/slung block), upper gully",
+       "lengthM": null
+      },
+      {
+       "n": 2,
+       "notes": "Second rappel finishing the descent to the saddle camp.",
+       "anchor": "Natural anchor, lower gully",
+       "lengthM": null
+      }
+     ],
+     "value": null,
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "fact": "Whether the standard descent involves rappels"
+    },
+    {
+     "op": "set",
+     "column": "rappel_count_note",
+     "path": [],
+     "expect": "Lengths aren't stated beyond 'a single 30m rope is sufficient per rappel', so no per-station length is shown.",
+     "value": "No rappel is required: the short 3rd-class gully back to camp is normally downclimbed.",
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "fact": "Whether the standard descent involves rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Descend via the standard (non-buttress) route with rappels.",
+     "replace": "Descend via the standard (non-buttress) route, downclimbing a short 3rd-class gully; no rappels are required.",
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "fact": "Whether the standard descent involves rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "expect to rappel it in two short pitches, for which a single 30m rope is sufficient per rappel",
+     "replace": "a party that prefers not to downclimb it can rappel off natural anchors, though no rappel is required",
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "fact": "Whether the standard descent involves rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "descend west/south on the standard route with downclimbing and short rappels back toward the saddle camp",
+     "replace": "descend west on the south side of the crest, then downclimb a short 3rd-class gully back toward the saddle camp",
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "fact": "Whether the standard descent involves rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "Remove the false '30.58 km' self-citation; dist_km 14.5 km (~9 mi) is the one-way Chilliwack Lake-to-camp figure the itinerary uses",
+   "evidence": "Real: the approach prose cites a 'recorded 30.58 km distance' that this row does not store (dist_km is 14.5). 14.5 km = ~9 mi, the published one-way Chilliwack Lake trailhead-to-camp distance (Steph Abegg: 'TH to camp ~9 miles'; Bear Creek at ~6 mi also matches), and the itinerary's 9 + 3 + 9 = 21 mi is that trip round trip. The fabricated self-citation is removed; the separate trailhead question is a discovered unresolved item.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/",
+    "https://www.mountainproject.com/area/112828230/bear-mountain"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": " (the route's recorded 30.58 km distance matches this ~19-mile one-way haul)",
+     "replace": "",
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "fact": "Round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "fact": "Total elevation gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "gain_ft 7300, loss_ft 7250; itinerary day 2 lossFt 2450",
+   "evidence": "Steph Abegg's stats for this trip: TH to camp ~4,500 ft gain; camp to base ~1,000 ft loss and ~250 ft gain; buttress 2,200 ft gain; summit to camp 1,450 ft loss; camp to TH 4,500 ft loss - i.e. ~2,450 ft both up and down on summit day. The row's itinerary gains (4,500 / 2,500 / 300 = 7,300) match, but day 2 lossFt 1,450 omits the drop from camp (6,480 ft) to the base (~5,700 ft per both Abegg and this row's own couloir waypoint); corrected to 2,450, making total loss 7,250. gain_ft/loss_ft (5,950, just summit minus the ~2,000 ft trailhead) are set to the itinerary totals.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/",
+    "https://www.mountainproject.com/route/112828257/direct-north-buttress"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5950,
+     "value": 7300,
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 5950,
+     "value": 7250,
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "fact": "Total elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 1450,
+     "value": 2450,
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "fact": "Total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "fact": "Trailhead: itinerary/timing start at Chilliwack Lake (BC) while the trailhead card, waypoints, approach and primary variant start at Hannegan Pass; approach prose also gives Chilliwack-side times (9-9.5 hr, 4,500 ft to camp) for the Hannegan walk it says is 17 mi / 8-9 hr to Bear Creek alone",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Chilliwack Lake start: ~9 mi, 4,500 ft, ~9 hr to the 6,480 ft saddle (Steph Abegg). Hannegan start: ~17 mi to Bear Creek (Mountain Project area page) plus the climb to the saddle, so the '9-9.5 hours and 4,500+ ft ... to camp' sentence cannot describe it. Fixing this means choosing which trailhead the page is built on and rewriting either the itinerary/timing or the trailhead card, waypoints and approach; no two sources give Hannegan-side car-to-car totals, so it is left for a structural decision.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/bear-nf-buttress/",
+    "https://www.mountainproject.com/area/112828230/bear-mountain"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

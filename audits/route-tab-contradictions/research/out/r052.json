@@ -1,0 +1,438 @@
+{
+ "file": "r052.json",
+ "results": [
+  {
+   "id": "wa_kololo_peaks_standard",
+   "fact": "Total elevation gain and loss for the round trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction: gain_ft 6120 and loss_ft 9500 differ on an out-and-back, and the itinerary sums to 7000/7000. 6120 equals the bare elevation range (2,080 to 8,200 ft) published for the trip, not a cumulative gain. The only published cumulative figure found is ~9,500 ft gained and lost over ~30 miles, but that party also added a side trip to White Mountain, so it overstates the standard route. No second independent cumulative figure was found, so no value is adopted.",
+   "sources": [
+    "https://trailcatjim.com/white-pass-kololo-peak-white-mtn/",
+    "https://onehikeaweek.com/2019/06/09/kololo-peaks/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "fact": "Which summit (east or west) is the true, higher summit",
+   "verdict": "fixed",
+   "correct_value": "Of Kololo's twin 8,200-ft summit points, the EASTERN one is the true high point (by ~10-15 ft); parties reach the west top first and traverse to the higher east top (as itinerary day 2 already says).",
+   "evidence": "The peak's standard description states there are two 8,200+ closed contours and the easterly of the two is highest by 10-15 ft, both above an 8,197 ft benchmarked crag further east. An independent 2019 trip report states the east peak is the highest; other party reports describe climbing the west peak then scrambling through the saddle to the higher east summit. Waypoint/beta/pitch_detail/baseFinding/day-2 objective rewritten to agree with the itinerary schedule, which already had it right; pin coordinates untouched, so the waypoint is renamed neutrally.",
+   "sources": [
+    "https://www.summitpost.org/kololo-peaks/154753",
+    "https://onehikeaweek.com/2019/06/09/kololo-peaks/",
+    "https://www.mountaineers.org/activities/trip-reports/kololo-peaks-white-chuck-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_kololo_peaks_standard",
+     "fact": "Which summit (east or west) is the true, higher summit",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "between the west summit (8,240 ft, the true high point) and the slightly lower east summit",
+     "replace": "between the west summit and the slightly higher east summit (8,240 ft, the true high point)"
+    },
+    {
+     "id": "wa_kololo_peaks_standard",
+     "fact": "Which summit (east or west) is the true, higher summit",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "Kololo Peaks has twin summits (an east summit near 8,160+ ft and the higher west/main summit).",
+     "replace": "Kololo Peaks has twin summits a short scramble apart, and the eastern one is the true high point by 10-15 ft."
+    },
+    {
+     "id": "wa_kololo_peaks_standard",
+     "fact": "Which summit (east or west) is the true, higher summit",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "name"
+     ],
+     "find": "Kololo Peaks (west summit)",
+     "replace": "Kololo Peaks (summit)"
+    },
+    {
+     "id": "wa_kololo_peaks_standard",
+     "fact": "Which summit (east or west) is the true, higher summit",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "True (west) summit gained by a short rock scramble off the White River Glacier after the final low-angle ice/snow pitch; some parties also tag the slightly lower east summit.",
+     "replace": "Summit gained by a short rock scramble off the White River Glacier after the final low-angle ice/snow pitch; of the twin tops a short walk apart, the eastern one is the true high point by 10-15 ft, so tag both."
+    },
+    {
+     "id": "wa_kololo_peaks_standard",
+     "fact": "Which summit (east or west) is the true, higher summit",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "Climb Kololo Peaks' true (west) summit, 8,240 ft",
+     "replace": "Climb Kololo Peaks' true (east) summit, 8,240 ft"
+    },
+    {
+     "id": "wa_kololo_peaks_standard",
+     "fact": "Which summit (east or west) is the true, higher summit",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "this peak's own record does not agree on which of its two tops is higher, so bagging one of them is not proof of anything",
+     "replace": "of the twin tops on the summit ridge the eastern one is the true high point by only 10-15 ft, so bag both"
+    }
+   ]
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "fact": "Total round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "Round trip ~28-30 mi (one-way ~14 mi, so dist_km 22.9 is correct as the one-way figure)",
+   "evidence": "dist_km is the one-way approach figure on screen, and 22.9 km (~14.2 mi) is half the published round trip, so it is not in conflict. Published round trips: 28.2 mi (2019 trip report), 29.2 mi (peak description), ~30 mi (another party). Only the approach prose's reference to a '46.99 km distance' (a number shown nowhere) is replaced with the plain round-trip range.",
+   "sources": [
+    "https://onehikeaweek.com/2019/06/09/kololo-peaks/",
+    "https://trailcatjim.com/white-pass-kololo-peak-white-mtn/",
+    "https://www.summitpost.org/kololo-peaks/154753"
+   ],
+   "patches": [
+    {
+     "id": "wa_kololo_peaks_standard",
+     "fact": "Total round-trip distance",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the 46.99 km distance reflects a round trip in the 28-29 mile range",
+     "replace": "the round trip runs roughly 28-30 miles"
+    }
+   ]
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "fact": "Elevation of White Pass",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "White Pass ~5,900 ft",
+   "evidence": "Itinerary day 1 note and schedule give White Pass as 5,400 ft while the approach, approach_variants and waypoint give 5,900 ft. One hiking reference gives the pass at 5,900 ft (9 mi, ~4,000 ft from the North Fork Sauk trailhead) and another gives 5,904 ft at 9.4 mi from the trailhead.",
+   "sources": [
+    "http://willhiteweb.com/north_cascades/white_pass/north_fork_sauk_river_137.htm",
+    "https://www.backpacker.com/trips/adventure-guide-glacier-peak-wilderness/"
+   ],
+   "patches": [
+    {
+     "id": "wa_kololo_peaks_standard",
+     "fact": "Elevation of White Pass",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "to White Pass (5,400 ft)",
+     "replace": "to White Pass (5,900 ft)"
+    },
+    {
+     "id": "wa_kololo_peaks_standard",
+     "fact": "Elevation of White Pass",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "5,400 ft; steep climb from Red Creek",
+     "replace": "5,900 ft; steep climb from Red Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "fact": "Hardest grade on the route (Class 3 vs Class 4)",
+   "verdict": "fixed",
+   "correct_value": "Class 3-4 (summit block rated 3 by some parties, 4 by others)",
+   "evidence": "Trip reports split: one rates the ridge class 2 and the block class 3 but says its looseness warrants class 3+ or 4; a 2025 report and a scramble write-up describe some class 4 / class 3-4 scrambling to the summit; another gives class 3+. So 'Class 3-4' (already in rock_grade, pitch_detail and beta) is the fair statement; the grade column and the summit waypoint note are brought into line.",
+   "sources": [
+    "https://www.alpinewanderlust.com/alpine-joy-kyes-peak-via-columbia-glacier/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-09-29.224511348208",
+    "https://hike2hike.com/scrambling/kyes-peak-washington-scramble/",
+    "https://climberkyle.com/2025/06/29/kyes-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Hardest grade on the route (Class 3 vs Class 4)",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 3 + snow/glacier",
+     "value": "Class 3-4 + snow/glacier"
+    },
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Hardest grade on the route (Class 3 vs Class 4)",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "Class 3 summit block",
+     "replace": "Class 3-4 summit block"
+    }
+   ]
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "fact": "Total elevation gain (trailhead to summit)",
+   "verdict": "fixed",
+   "correct_value": "~6,000 ft car to car",
+   "evidence": "The trailhead (~1,950 ft) to summit (7,282 ft) net rise alone is ~5,330 ft, so 5,200 ft is impossible. A route description gives 6,000+ ft gain (6.5 mi one-way), and a 2023 trip report logged 6,430 ft over 14.2 mi; an older party reported 5,400 ft. gain_ft/loss_ft 6023 already fit; the itinerary, approach and totalNote 5,200 figures are raised to ~6,000.",
+   "sources": [
+    "https://willhiteweb.com/monte_cristo_range/kyes_peak/pictures_123.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-10.2172216322",
+    "http://trailcatjim.com/kyes-peak-via-south-ridge-south-face/"
+   ],
+   "patches": [
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Total elevation gain (trailhead to summit)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 5200,
+     "value": 6000
+    },
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Total elevation gain (trailhead to summit)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 5200,
+     "value": 6000
+    },
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Total elevation gain (trailhead to summit)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~5,200 ft gain",
+     "replace": "~6,000 ft gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "fact": "One-way approach distance",
+   "verdict": "fixed",
+   "correct_value": "~6-7 mi one-way, 12-14 mi round trip",
+   "evidence": "A route description gives 6.5 mi one-way (13 RT); a 2023 trip report logged 14.2 mi RT; an older party logged 12 mi RT. dist_km 11.1 (6.9 mi), the waypoints (7.3 mi) and the itinerary (12 mi) agree; the approach prose's '9-9.5 miles one-way / ~19 km round trip' is replaced (along with its 5,200 ft gain figure).",
+   "sources": [
+    "https://willhiteweb.com/monte_cristo_range/kyes_peak/pictures_123.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-10.2172216322",
+    "http://trailcatjim.com/kyes-peak-via-south-ridge-south-face/"
+   ],
+   "patches": [
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "One-way approach distance",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "is roughly 5,200 ft over about 9-9.5 miles one-way, consistent with a ~19 km round-trip figure",
+     "replace": "is roughly 6,000 ft over about 6-7 miles one-way (12-14 miles round trip)"
+    }
+   ]
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "The trail climbs ~2,700-2,900 ft to the ridge and on to Virgin Lake (~4,600 ft, the high point); the 500-600 ft descent is from Virgin Lake DOWN to Blanca Lake.",
+   "evidence": "The approach, Virgin Lake waypoint directions and approach_variants[0] say the trail drops ~600 ft to Virgin Lake, while the Blanca Lake waypoint says Blanca Lake is a 500 ft descent from Virgin Lake; the itinerary schedule also reaches Blanca Lake before Virgin Lake. The land manager's trail page: 2,700 ft over 3 mi to the ridge, through meadows to Virgin Lake at 4,600 ft, then down 500 ft in 0.5 mi to Blanca Lake. The hiking association's page: ridge at ~3 mi, then Virgin Lake, then down 600 ft in 0.6 mi to Blanca Lake (highest point 4,600).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/blanca-lake-trail-1052",
+    "https://www.wta.org/go-hiking/hikes/blanca-lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the ridge the trail drops about 600 ft over 0.6 mile to Virgin Lake (~4,600 ft, roughly mile 3.5-4)",
+     "replace": "From the ridge the trail rolls on through meadows to Virgin Lake (~4,600 ft, roughly mile 3.5), the high point of the trail; the main tread then drops about 600 ft to Blanca Lake"
+    },
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "From the crest the trail gives back about 600 ft over the final half mile down to the lake.",
+     "replace": "From the crest the trail runs on through meadows to the lake, the high point of the trail; the main tread beyond it drops about 600 ft to Blanca Lake."
+    },
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From the ridge the trail DROPS about six hundred feet to Virgin Lake,",
+     "replace": "From the ridge the trail runs on through meadows to Virgin Lake, the trail's high point before it DROPS about six hundred feet to the big lake, and"
+    },
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "label"
+     ],
+     "find": "Arrive Blanca Lake (~1.5 hrs in)",
+     "replace": "Arrive Virgin Lake (~1.5 hrs in)"
+    },
+    {
+     "id": "wa_kyes_peak_glaciated_scramble",
+     "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "Round the lake, reach Virgin Lake / base of Columbia Glacier",
+     "replace": "Drop to Blanca Lake, round it, reach base of Columbia Glacier"
+    }
+   ]
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "fact": "Total elevation gain for the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: gain_ft 1500 cannot be a car-to-car total, since the trailhead (~3,660 ft) to summit (7,762 ft) net rise alone is ~4,100 ft. But the itinerary's '~9,000+ ft' for Day 1 alone is also doubtful: published segments give ~1,700 ft trailhead to Cascade Pass, Cache Col at ~6,900 ft, and ~2,000 ft from Kool-Aid Lake to Yang Yang Lakes (roughly 5,000 ft to camp), and a whole 30-mile north-to-south traverse is quoted at ~11,000 ft. No source giving a car-to-car gain for Le Conte was found, so no value is written; both gain_ft and the Day 1 '~9,000+ ft' need a sourced total.",
+   "sources": [
+    "https://www.nps.gov/places/cascade-pass-trail.htm",
+    "https://www.adventuresnw.com/a-journey-to-remember-three-days-on-the-ptarmigan-traverse/",
+    "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/",
+    "https://en.wikipedia.org/wiki/Cache_Col"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "fact": "Number of 4th-class sections on the route",
+   "verdict": "fixed",
+   "correct_value": "Mostly 3rd-class with a few short 4th-class moves (north side to the notch, and the exposed summit ledge)",
+   "evidence": "One detailed report describes the north-side route as mostly third class with a few fourth-class moves; another trip report rates it class 3-4; the peak's encyclopedia entry gives the easiest route as class 4. rock_grade's 'one short 4th-class step' undercounts against pitch_detail's two Class 4 sections, so its parenthetical is widened; the headline 'Class 4' stays.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/",
+    "https://onehikeaweek.com/2023/07/02/le-conte-mountain/",
+    "https://en.wikipedia.org/wiki/Le_Conte_Mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_le_conte_mountain_northern_aspect",
+     "fact": "Number of 4th-class sections on the route",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Class 4 (one short 4th-class step; remainder is ledge scrambling and snow)",
+     "value": "Class 4 (a few short 4th-class moves on the north side and the summit ledge; remainder is 3rd-class ledge scrambling and snow)"
+    }
+   ]
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "fact": "Elevation of Cache Col",
+   "verdict": "fixed",
+   "correct_value": "Cache Col ~6,900 ft (6,903)",
+   "evidence": "Cache Col is 6,903 ft in its encyclopedia entry and 6,900 ft in a guide service's Ptarmigan itinerary, matching the waypoint and approach. The bivy entry named for the col carried 6,400 ft and claimed published col figures vary by a couple of hundred feet, which they do not; its elevation is set to the col and the note says the shoulder sites sit lower.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col",
+    "https://www.alpineinstitute.com/programs/the-ptarmigan-traverse-technical-backpacking-and-climbing/"
+   ],
+   "patches": [
+    {
+     "id": "wa_le_conte_mountain_northern_aspect",
+     "fact": "Elevation of Cache Col",
+     "op": "set",
+     "column": "bivy",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 6400,
+     "value": 6900
+    },
+    {
+     "id": "wa_le_conte_mountain_northern_aspect",
+     "fact": "Elevation of Cache Col",
+     "op": "replace_text",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Treat the elevation as approximate, since published figures for the col vary by a couple of hundred feet.",
+     "replace": "The col itself is about 6,900 ft; the shoulder sites below it sit a few hundred feet lower."
+    }
+   ]
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "fact": "Total round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach figure on screen ('Approach (one way)'); 21.1 km (~13.1 mi) matches the ~13-mile Day 1 and half of a published 26.2-mile round trip, so the fields agree.",
+   "sources": [
+    "https://onehikeaweek.com/2023/07/02/le-conte-mountain/"
+   ],
+   "patches": []
+  }
+ ]
+}

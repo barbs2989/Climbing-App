@@ -1,0 +1,386 @@
+{
+ "file": "r024.json",
+ "results": [
+  {
+   "id": "wa_big_snow_mountain_east_buttress",
+   "fact": "First-ascent year",
+   "verdict": "fixed",
+   "correct_value": "1971 (May 11, 1971; Jeff Dial and Don Williamson)",
+   "evidence": "The route's own AAJ note (published in the 1972 volume, which reports the 1971 season) describes Dial and Williamson's ascent on May 11 at NCCS III, F7, A1 with occasional aid pins. The peak's SummitPost page gives the East Buttress FA as Don Williamson and Jeff Dial, May 11, 1971. The '1972' in overview/aid_grade/pro_needs is the publication year, not the ascent year.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12197211601/North-America-United-States-WashingtonCascade-Mountains-Big-Snow-Mountain-East-Butteress",
+    "https://www.summitpost.org/big-snow-mountain/216509"
+   ],
+   "patches": [
+    {
+     "id": "wa_big_snow_mountain_east_buttress",
+     "fact": "First-ascent year",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "A1 in 1972",
+     "replace": "A1 in 1971"
+    },
+    {
+     "id": "wa_big_snow_mountain_east_buttress",
+     "fact": "First-ascent year",
+     "op": "set",
+     "column": "aid_grade",
+     "path": [],
+     "expect": "A1 (original 1972 ascent)",
+     "value": "A1 (original 1971 ascent)"
+    },
+    {
+     "id": "wa_big_snow_mountain_east_buttress",
+     "fact": "First-ascent year",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "The 1972 first ascent",
+     "replace": "The 1971 first ascent"
+    }
+   ]
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "fact": "Total elevation gain (gain_ft/itinerary vs approach prose & approach_variant's own gainFt)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row blends two different approaches: approach, approach_variants, trailhead card and waypoints 1-6 describe the Alpental/Source Lake gully, while itinerary, beta, timing and waypoint 0's note describe Denny Creek via Hemlock Pass. The 9.5 mi / 3,900 ft figure is the published Denny Creek figure for Bryant PLUS Hemlock Peak (Bryant alone is given as 9 mi / 3,600 ft); a separate Denny Creek trip log gives 10.8 mi and 3,521 ft net (2,280 to 5,801 ft). No published source gives a total gain for the Alpental/Source Lake line, so the 3,000-3,400 figure could not be confirmed, and the '9.5-mile round trip' in the Alpental approach prose is the Denny Creek number. Needs a decision on which approach this route carries before any gain/distance number can be made consistent.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/bryant-hemlock-peaks",
+    "https://onehikeaweek.com/2013/06/29/bryant-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "fact": "Summit elevation (5,790 vs 5,801 ft)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "5,801 ft",
+   "evidence": "overview, high_point_ft and the summit waypoint all give 5,801 ft, but the approach prose and climbing_route step 3 say 5,790 ft. Wikipedia's Bryant Peak article gives 5,801 ft (1,768 m), and a Denny Creek trip log also gives the summit as 5,801 ft.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bryant_Peak",
+    "https://onehikeaweek.com/2013/06/29/bryant-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_bryant_peak_southeast_slopes",
+     "fact": "Summit elevation (5,790 vs 5,801 ft)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to the 5,790 ft summit",
+     "replace": "to the 5,801 ft summit"
+    },
+    {
+     "id": "wa_bryant_peak_southeast_slopes",
+     "fact": "Summit elevation (5,790 vs 5,801 ft)",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "Summit 5,790 ft.",
+     "replace": "Summit 5,801 ft."
+    }
+   ]
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "fact": "Which trailhead/approach the route uses (Alpental vs Denny Creek), incl. trailhead waypoint elev 2,300 vs its own directions ~3,100 ft",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Waypoint 0 is named Alpental/Snow Lake Trailhead with directions saying ~3,100-3,120 ft, but its elev is 2,300 (the Denny Creek trailhead height) and its note says the Denny Creek/Hemlock Pass approach is the one used; the itinerary and beta are Denny Creek, while approach, variants, trailhead card and waypoints 1-6 are Alpental/Source Lake. Published Alpental trailhead heights disagree (roughly 2,600 to 3,100 ft quoted), so neither the elevation nor the approach choice was settled here.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/snow-lake-trail-to-source-lake-spur-trail",
+    "https://www.mountaineers.org/activities/routes-places/bryant-hemlock-peaks"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_ridge",
+   "fact": "First-ascent year",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The sibling route's '1971' falls inside this row's hedged '1971-72'/'c. 1972'. The only primary record, Don Williamson's note in the 1972 AAJ (party Williamson, Bucher, Oas), gives no ascent date, so the hedge is the honest statement and nothing contradicts it.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12197211602/North-America-United-States-WashingtonCascade-Mountains-Burnt-Boot-Peak-North-Ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Total elevation gain",
+   "verdict": "fixed",
+   "correct_value": "gain_ft 5,140 is right; the summit day (camp to summit and back) is ~3,640 ft, so itinerary day 2 gain/loss and loss_ft change (loss_ft 5,140)",
+   "evidence": "The reader's internal resolution is backwards: camp at Hardscrabble Horse Camp sits at ~2,830-2,860 ft and the summit is 6,540 ft (Wikipedia; Yellowleaf's USGS-quad list), so the summit day must gain at least ~3,650 ft and the itinerary's 2,600 is physically impossible. A 2023 trip report measured 7.5 mi / 1,400 ft from the Dingford gate to Horse Camp and 4.5 mi / 3,822 ft for the summit day from camp. gain_ft 5,140 = 1,400 + 3,640 + 100 matches this, so day 2 becomes 3,640 up/down and loss_ft = 0 + 3,640 + 1,500 = 5,140.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927",
+    "https://en.wikipedia.org/wiki/Burnt_Boot_Peak",
+    "https://www.yellowleaf.org/scramble/g/li/middleforkpeakselevation.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Total elevation gain",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 2600,
+     "value": 3640
+    },
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Total elevation gain",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 2600,
+     "value": 3640
+    },
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Total elevation gain",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4100,
+     "value": 5140
+    },
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Total elevation gain",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~2,600 ft round-trip summit day",
+     "replace": "~3,600 ft round-trip summit day"
+    }
+   ]
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "One-way distance from trailhead to summit",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 2 mi one way from the river ford/old road end to the summit (plus ~7.5 mi from the Dingford Creek gate)",
+   "evidence": "Summit waypoint distMi 2, itinerary day 2 at 4.3 mi round trip, and the approach/variant prose ('nearly all the gain in the final two miles') agree on ~2 mi from the ford; the approach's '3.5 mi' contradicts its own parenthetical. A 2023 trip report measured the summit day from Horse Camp as 4.5 mi round trip (~2.25 mi each way). dist_km (31.06 km = 19.3 mi, the itinerary's full round-trip total) was left alone: it is a different quantity, but the one-way total from the gate was not independently confirmed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927"
+   ],
+   "patches": [
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "One-way distance from trailhead to summit",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "One-way distance from the trailhead is roughly 3.5 mi (the logged 6.92 km is evidently round trip), with",
+     "replace": "From the ford the summit is roughly 2 mi one way, with"
+    }
+   ]
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "FS 56 is gated to vehicles at the Dingford Creek Trailhead; the old Dutch Miller Gap trailhead/road end (~7.5 mi on) is reached on foot or by bike",
+   "evidence": "The itinerary and access.rules already put the start at Dingford Creek with 7.5 mi to Hardscrabble Horse Camp, but the approach, trailhead card, trailhead waypoint and road note tell a climber to drive to the road-end Dutch Miller Gap Trailhead. The Forest Service's Dutch Miller Gap and Dingford Creek trailhead pages say the road is closed to vehicles at Dingford Creek and the Dutch Miller Gap trailhead is no longer drivable (gated there since June 2007), and a 2023 party rode bikes the 7.5 mi from the Dingford gate to Horse Camp.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/dutch-miller-gap-trailhead",
+    "https://www.fs.usda.gov/r06/mbs/recreation/dingford-creek-trailhead",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927"
+   ],
+   "patches": [
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Park at the very end of Middle Fork Snoqualmie Road (FS Road 56), the Dutch Miller Gap Trailhead (Trail #1030), elev. ~2,500 ft — the last few miles of FS 56 are pitted with potholes and washboard, so high-clearance is strongly recommended.",
+     "replace": "Park at the Dingford Creek Trailhead, where Middle Fork Snoqualmie Road (FS Road 56) is gated to vehicles — the last few miles of FS 56 are pitted with potholes and washboard, so high-clearance is strongly recommended — then walk or bike about 7.5 mi of closed road to its old end at the former Dutch Miller Gap Trailhead (Trail #1030)."
+    },
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "Park at the very end of Middle Fork Snoqualmie Road (FS Road 56), the Dutch Miller Gap Trailhead (Trail #1030), elev. ~2,500 ft - the last few miles of FS 56 are pitted with potholes and washboard, so high-clearance is strongly recommended.",
+     "value": "Park at the Dingford Creek Trailhead, where Middle Fork Snoqualmie Road (FS Road 56) is gated to vehicles - high-clearance is strongly recommended for the potholed last miles - then walk or bike about 7.5 mi of closed road to the old Dutch Miller Gap Trailhead at its end."
+    },
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "End of rough FS Road 56 (~17 mi from I-90 Exit 34);",
+     "replace": "Old end of FS Road 56, reached on foot or by bike about 7.5 mi past the vehicle gate at Dingford Creek Trailhead;"
+    },
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "expect": "FS Road 56 runs about 17 miles up the Middle Fork Snoqualmie from I-90 Exit 34 to the road end. The last few miles are potholed and washboarded, so high clearance is worth having. The lot is shared with the maintained Dutch Miller Gap trail, which this route does not use.",
+     "value": "Drive FS Road 56 up the Middle Fork Snoqualmie from I-90 Exit 34 to the vehicle gate at Dingford Creek Trailhead; the last miles are potholed and washboarded, so high clearance is worth having. Walk or bike the closed road about 7.5 miles beyond the gate to this old road end, where the maintained Dutch Miller Gap trail begins; this route does not use that trail."
+    },
+    {
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "~5 more mi to the road-end trailhead.",
+     "replace": "~5 more mi to the vehicle gate at Dingford Creek Trailhead; the road beyond is closed to vehicles."
+    }
+   ]
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Distance from the Point 5,841 pass to the summit",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Itinerary day 2 note and schedule say 'a little over a mile' / 'about a mile' of snow/talus from the pass to the summit, while the approach calls it a short class 3-4 ridge traverse and the waypoints put the pass at 1.7 mi and the summit at 2.0 mi (the two pins are ~0.2 mi apart). No external source gives this leg's length.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_batskins",
+   "fact": "Crux-flagged pitch vs actual hardest pitch",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Pitch 1 (full, 5.12b) is the crux pitch; pitch 2 (5.11d) is not",
+   "evidence": "The row's own grade (5.12b) and pitch grades (P1 full 5.12b, P2 5.11d) put the crux on pitch 1, which the Mountain Project route page confirms (P1 full 5.12b with a 'cruxy section on knobs', P2 5.11d); P2's 'testy balance crux' is that pitch's own hard move, not the route's crux. A second source ranks Batskins P1 among the hardest Lower Town Wall pitches but uses older grades, so it corroborates only loosely.",
+   "sources": [
+    "https://www.mountainproject.com/route/106197963/batskins",
+    "http://blakeclimbs.blogspot.com/2014/05/index-lws-guilty-as-charged.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_batskins",
+     "fact": "Crux-flagged pitch vs actual hardest pitch",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "crux"
+     ],
+     "expect": false,
+     "value": true
+    },
+    {
+     "id": "wa_batskins",
+     "fact": "Crux-flagged pitch vs actual hardest pitch",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "crux"
+     ],
+     "expect": true,
+     "value": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "fact": "Route grade vs every listed pitch grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The 5.12c/d grade comes from the extended first pitch (the Japanese Gardens P1/TPMV linkup continued past the anchor, 5.12c-5.13a); the usual short P1 is 5.11+",
+   "evidence": "Mountain Project lists P1 via Japanese Gardens at .11+, an extended P1 continuing past that anchor through a height-dependent bouldery section at 5.12c-.13a, P2 5.10-, P3 5.11b/c and P4 5.10d, overall 5.12+. The row's own gear list already refers to 'the crux on the extended pitch 1', so the gap is that pitch_detail omits the extension and flags P3 as the crux even though the short P1 (5.11+) is itself harder than P3. Only one external source gives the pitch breakdown.",
+   "sources": [
+    "https://www.mountainproject.com/route/106328521/tpmv-10-meteorological-vinculation"
+   ],
+   "patches": [
+    {
+     "id": "wa_tpmv_10_meteorological_vinculation",
+     "fact": "Route grade vs every listed pitch grade",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "grade"
+     ],
+     "expect": "5.11+",
+     "value": "5.11+ (5.12c/d extended)"
+    },
+    {
+     "id": "wa_tpmv_10_meteorological_vinculation",
+     "fact": "Route grade vs every listed pitch grade",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "usually climbed alone starting from Japanese Gardens P1.",
+     "replace": "usually climbed alone starting from Japanese Gardens P1. Continuing past that anchor through a hard, height-dependent boulder problem on small gear is the extended version and gives the route its 5.12c/d grade."
+    },
+    {
+     "id": "wa_tpmv_10_meteorological_vinculation",
+     "fact": "Route grade vs every listed pitch grade",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "crux"
+     ],
+     "expect": false,
+     "value": true
+    },
+    {
+     "id": "wa_tpmv_10_meteorological_vinculation",
+     "fact": "Route grade vs every listed pitch grade",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "crux"
+     ],
+     "expect": true,
+     "value": false
+    }
+   ]
+  },
+  {
+   "id": "wa_japanese_gardens",
+   "fact": "Crux-flagged pitch vs actual hardest pitch",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project grades P1 full 5.11b, P2 5.11b, P3 5.11a, P4 5.11c (steeper slab through corners and arches), which would put the crux on P4, not the flagged P2. But the published Index guidebook grades the route 5.11c and says the first pitch might be the best 5.11c at Index, placing the hardest grade on P1 instead. The two sources disagree on which pitch is the crux (neither supports P2), so the flag was not moved.",
+   "sources": [
+    "https://www.mountainproject.com/route/105791008/japanese-gardens",
+    "https://rakkup.com/guidebook/index-rock-climbing/japanese-gardens/c18489"
+   ],
+   "patches": []
+  }
+ ]
+}

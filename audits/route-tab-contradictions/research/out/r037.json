@@ -1,0 +1,472 @@
+{
+ "file": "r037.json",
+ "results": [
+  {
+   "id": "wa_massie_peak_west_route",
+   "fact": "Which approach and camp are used to reach Massie Peak's West Ridge",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Chiwawa River Trail / 'M' tree / ford / sheepherder path to Massie Lake is documented (about 4 mi up the Chiwawa, then an unmaintained path to the lake; the lake spur is given as 1.9 mi and 1,500 ft). But Massie Peak is also climbed from a Buck Creek Pass basecamp on multi-peak loops (an Aug-2024 report covers Buck Creek Pass, High Pass, Cleator, Helmet Butte, Massie, Liberty Cap), so the itinerary's approach is a real alternative rather than invented. The itinerary is nonetheless garbled (it routes 'past High Pass', which lies beyond Buck Creek Pass away from Massie, to a 'south basin' camp and then onto the Massie Lake High Route), and no two sources give the miles/gain/hours needed to rewrite a Chiwawa/Massie Lake itinerary, so no patch is written. The whole itinerary (3 days, 29 mi), timing.sectionBreakdown and partner_requirements.fitnessSpec need a rewrite once one approach is chosen.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/31/massie-lake-high-route/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2006081910",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-08-28.224652782050"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "fact": "Elevation of Massie Lake",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row puts Massie Lake at ~6,600-6,700 ft (approach, and ~6,600 ft 'south basin' in itinerary), 4,800 ft (waypoint), and 'roughly 1,500 ft above the turnoff' (bivy). The lake spur is described as 1.5-1.9k ft of gain from the Chiwawa (~3,300 ft), implying ~4,800-5,200 ft, while the USGS elevation service at the GNIS point for Massie Lake (48.1332, -120.9014) returns ~5,936 ft. The sources do not agree, so no patch.",
+   "sources": [
+    "https://washington.hometownlocator.com/maps/feature-map,ftc,1,fid,1522795,n,massie%20lake.cfm",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.9013923&y=48.1331822&units=Feet&wkid=4326",
+    "https://www.summitpost.org/massie-lake/373477"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "fact": "which trailhead/approach reaches this route",
+   "verdict": "fixed",
+   "correct_value": "Snow Lakes Trailhead -> Nada/Snow Lakes -> Lake Viviane -> leave trail at ~7,000 ft between Leprechaun and Sprite Lakes -> SSE to the notch west of the Prong -> south side of the ridge to the summit block",
+   "evidence": "The standard route leaves the trail at the flat ~7,000 ft area between Leprechaun and Sprite Lakes, climbs SSE keeping west of the Prong to McClellan Ridge, then goes east on the south side of the ridge, the southeast side of the block being easiest. A Snow Lakes party went Snow Lake -> Lake Viviane -> past Leprechaun Lake -> Prong notch -> class 3-4 to the summit. The Ingalls Creek/Crystal Creek text (face, pitch_detail, obj_haz '~18 miles', 'gully above 6,000 ft', 'Fantasia Saddle/Pond') is a separate, real southern route (Ingalls Creek TH, ~18 mi RT, 6,300+ ft); the Colchuck/Aasgard beta is another real approach but contradicts every other field on this row. These fields were rewritten to the Snow Lakes line that the approach, waypoints, itinerary, timing, descent and approach_variants all describe.",
+   "sources": [
+    "https://climberkyle.com/2016/07/12/mcclellan-peak-and-little-anapurna/",
+    "https://www.summitpost.org/mcclellan-peak-wa/151391",
+    "http://ericsbasecamp.net/trips/McClellan/McClellan.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-05-25.3496379974"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "From Colchuck Lake, climb the steep Aasgard Pass gully to the pass, then drop gently into the gentler, rocky Upper Enchantments basin. Traverse east past Perfection Lake toward the ridge connecting to McClellan,",
+     "replace": "From the Snow Lakes Trailhead, climb past Nada Lake and the Snow Lakes and on past Lake Viviane to the flat ground between Leprechaun and Sprite Lakes (~7,000 ft). Leave the trail there and head south-southeast toward the ridge connecting to McClellan,",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "face",
+     "path": [],
+     "find": "(reached via the south/Ingalls Creek approach); an easier class 2 line exists on the peak's east side, reached instead from the Enchantments core",
+     "replace": "(reached along the south side of McClellan Ridge from the Leprechaun/Sprite Lakes area); the southeast side of the block is the easier class 3 finish",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Ingalls Creek Trail to the Crystal Creek crossing, ~7.5 miles of gentle forested trail.",
+     "replace": "Snow Lakes Trail past Nada Lake and the Snow Lakes, then the rougher path past Lake Viviane to the flat ground between Leprechaun and Sprite Lakes (~7,000 ft), roughly 9-10 miles.",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "pitch"
+     ],
+     "expect": "Crystal Creek basin",
+     "value": "Slope to McClellan Ridge",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Cross-country ascent through forest and talus to a high camp near the 6,000 ft basin below Crystal Lake.",
+     "replace": "Leave the trail and climb south-southeast on steep talus, scree or snow (often icy late in the season) to the notch on McClellan Ridge, staying west of the rock tower called the Prong.",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "pitch"
+     ],
+     "expect": "Southwest Face",
+     "value": "South side traverse",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "Rising traverse to the saddle below Crystal Lake, then up McClellan's southwest face to the summit ridge.",
+     "replace": "From the crest, drop about 70 ft and wrap onto the south side of the peak, then scramble east below the ridge toward the summit block.",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "obj_haz",
+     "path": [
+      0
+     ],
+     "find": "Loose, rubble-filled rock in the gully above ~6,000 ft",
+     "replace": "Loose talus, scree and rubble on the slope below the Prong notch",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "obj_haz",
+     "path": [
+      1
+     ],
+     "find": "unmarked basins (Fantasia Saddle/Fantasia Pond) and around the Nightmare Needles",
+     "replace": "the unmarked slope from Leprechaun/Sprite Lakes to the notch west of the Prong",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "obj_haz",
+     "path": [
+      4
+     ],
+     "find": "(~18 miles)",
+     "replace": "(~24 miles)",
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "which trailhead/approach reaches this route"
+    }
+   ]
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "fact": "total elevation gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": 8100,
+   "evidence": "The trailhead is ~1,350 ft and the summit 8,368 ft, so the net rise alone is ~7,000 ft; 6,364 ft (which matches the separate Ingalls Creek route's 6,300+ ft) is impossible for this out-and-back. A Snow Lakes day trip to McClellan logged 23.7 mi and 8,173 ft of gain, which agrees with the row's itinerary gainFt 8100, loss_ft 8100, totalNote 8,000-8,100 and watch_out ~8,000 ft.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-05-25.3496379974",
+    "https://en.wikipedia.org/wiki/McClellan_Peak",
+    "http://ericsbasecamp.net/trips/McClellan/McClellan.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 6364,
+     "value": 8100,
+     "id": "wa_mcclellan_peak_southwest_scramble",
+     "fact": "total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "fact": "Distance from the Barclay Lake Trail to the gully turnoff",
+   "verdict": "fixed",
+   "correct_value": "a little over a mile (~1.2-1.3 mi) up the Barclay Lake Trail",
+   "evidence": "One report follows the trail 'a little over a mile to the bridge across Barclay Creek' and continues about 300 yards to the gully. A club outing lists 2.4 miles on the Barclay Lake Trail for the round trip (about 1.2 mi each way). Both agree with the waypoint distMi 1.3 and the itinerary's '+1 hr'; the approach and approach_variants '0.3-0.5 mile' figure is wrong, as is partner_requirements' '~2.2 mi' (that is the distance to the lake).",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Merchant/Merchant.htm",
+    "https://www.mountaineers.org/activities/activities/alpine-scramble-merchant-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "After only about 0.3–0.5 mile, a few hundred feet past the log bridge",
+     "replace": "After a little over a mile, a few hundred feet past the log bridge",
+     "id": "wa_merchant_peak_south_route",
+     "fact": "Distance from the Barclay Lake Trail to the gully turnoff"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "You leave it after only about a third to half a mile",
+     "replace": "You leave it after a little over a mile",
+     "id": "wa_merchant_peak_south_route",
+     "fact": "Distance from the Barclay Lake Trail to the gully turnoff"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Barclay Lake trail (~2.2 mi)",
+     "replace": "Barclay Lake Trail (a little over a mile)",
+     "id": "wa_merchant_peak_south_route",
+     "fact": "Distance from the Barclay Lake Trail to the gully turnoff"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "real elevation gain from Barclay Lake",
+     "replace": "real elevation gain from the Barclay Lake Trail",
+     "id": "wa_merchant_peak_south_route",
+     "fact": "Distance from the Barclay Lake Trail to the gully turnoff"
+    }
+   ]
+  },
+  {
+   "id": "wa_merchant_peak_south_route",
+   "fact": "Elevation of the Waterfall 3 crux",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One report places the '20 foot tower' with a waterfall branching from the right at c.3,900 ft, but it is not clear this is the third-waterfall chockstone; other reports give elevations only for later points (4,360, 4,800, 5,000 ft). The USGS elevation at the waypoint's own pin is ~3,450 ft, but the pin placement is itself unverified. No two sources fix the crux height.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Merchant/Merchant.htm",
+    "https://www.hippohamster.com/posts/merchant-peak-south-gully",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.436323&y=47.795419&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "fact": "Total round-trip distance shown as header Dist",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The header Dist shows the itinerary miles when present (17.6 mi here), not dist_km. dist_km renders as 'Approach (one way)', and 8 km (~5 mi) matches the one-way approach to the Leroy Basin camp (5.2-5.4 mi on the row; 3.5 mi of trail plus ~1.5 mi of climbers' path).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "fact": "Whether this route involves any rappelling",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "None required; an optional single rappel off a slung horn/block on the summit block is sometimes used",
+   "evidence": "descent_text and rope_note both describe an optional single rappel off a slung horn with no fixed anchors; a winter party slung the summit block and rappelled, noting summer parties may find their rap anchor there. rappels '0' is kept as 'none required' but now states the optional rappel.",
+   "sources": [
+    "https://www.countryhighpoints.com/mt-fernow-winter-ascent/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "0",
+     "value": "None required. Some parties make one short optional rappel off a slung horn on the summit block instead of downclimbing it; there are no fixed anchors.",
+     "id": "wa_mount_fernow_southeast_face",
+     "fact": "Whether this route involves any rappelling"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "fact": "Whether a parking pass/fee is required at this trailhead",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The hiking-guide page for Spider Meadow (Phelps Creek trailhead) lists the parking pass/entry fee as 'None', while another trail listing states a Northwest Forest Pass is required at Phelps Creek. The Forest Service trail page does not state a fee. Sources disagree, so no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/spider-meadows",
+    "https://www.alltrails.com/trail/us/washington/spider-meadow-trail",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/phelps-creek-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "fact": "Whether Mount Lyall has a drive-to trailhead requiring a self-issue permit",
+   "verdict": "fixed",
+   "correct_value": "Free self-issue Glacier Peak Wilderness permit, no quota; no trailhead parking pass (boat + shuttle access)",
+   "evidence": "The Agnes trailheads by High Bridge are reached on the Stehekin shuttle from Stehekin, itself reached by the Lady of the Lake ferry, not by public road; the trail enters the Glacier Peak Wilderness after ~1.5 mi, where the free self-issue wilderness permit applies. So the self-issue permit sentence stands, but the Northwest Forest Pass sentence cannot apply to this car-free trailhead. It was replaced to agree with access.passRequired and road.status.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/agnes-gorge-trail.htm",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "no quota. Northwest Forest Pass at many trailheads.",
+     "replace": "no quota. No trailhead parking pass applies here, since the trailhead is reached by boat and shuttle rather than by car.",
+     "id": "wa_mount_lyall_south_route",
+     "fact": "Whether Mount Lyall has a drive-to trailhead requiring a self-issue permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "fact": "Summit elevation of Mount Lyall",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": 7911,
+   "evidence": "The summit waypoint says 7,867 ft while high_point_ft and the itinerary say 7,911 ft. The peak is listed at 7,912 ft, and the USGS elevation service at the summit coordinate returns ~7,909 ft, so 7,911 is right and the waypoint is the outlier.",
+   "sources": [
+    "https://listsofjohn.com/peak/48949",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.8570775&y=48.2817471&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "elev"
+     ],
+     "expect": 7867,
+     "value": 7911,
+     "id": "wa_mount_lyall_south_route",
+     "fact": "Summit elevation of Mount Lyall"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "elevFt"
+     ],
+     "expect": 7867,
+     "value": 7911,
+     "id": "wa_mount_lyall_south_route",
+     "fact": "Summit elevation of Mount Lyall"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "fact": "Which approach reaches Mount Lyall (High Bridge/Agnes-Swamp Creek vs Holden/Railroad Creek) and the route's class",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach, beta, approach_variants, trailhead and road describe the ferry to Stehekin, High Bridge and the Agnes Creek/Swamp Creek drainage (Swamp Creek Camp ~8 mi up Agnes Creek). But the waypoint chain after the trailhead (Holden Village, Holden Lake, Holden Pass basin) and partner_requirements describe a Lucerne/Holden/Railroad Creek approach, and the itinerary calls it a 'South Route' Class 2-3 while grade and beta say Class 3-4. Not settled with two sources here; pins are out of scope.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-02-05.8491434130",
+    "https://onehikeaweek.com/2023/09/11/needle-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "fact": "Total route distance shown as header Dist",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as 'Approach (one way)', and 8.05 km (5.0 mi) is exactly the one-way approach to the Leroy Creek Basin camp the approach text describes (3.5 mi of Phelps Creek trail plus ~1.5 mi of climbers' path). It is not presented as a round trip.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "fact": "Total round-trip distance shown as header Dist",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The header Dist uses the itinerary miles (14.3 round trip) when present, not dist_km. dist_km renders separately as 'Approach (one way)'. Its 4.0 mi is short of the ~5 mi one-way to Leroy Basin but matches the approach text's own '~4 miles to the Leroy Creek crossing'. It is not a round-trip claim, so it does not conflict with the 14.3 mi itinerary.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "fact": "End of the reliable snow/ice season on the face",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "early June to mid-July; July still good early/mid-month",
+   "evidence": "best_season, climate.summer and season ('Jun-Jul (best)') put the reliable window through about mid-July. A party climbed the face on 23 July 2022 with continuous snow and a firm upper section, and other July reports describe snow nearly to the summit. A June 2005 ascent found soft snow and cornice fall, so June is not uniquely reliable. seasonal_guidance (and the itinerary cal / climate.bySeason 'early July') were aligned to June-mid-July.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/north-face-of-mount-maude",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-24.5517021767",
+    "http://ericsbasecamp.net/trips/MaudeNF/MaudeNF.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Late May through June is the reliable window, before the face degrades into rotten, rockfall-prone conditions by midsummer",
+     "value": "Early June to mid-July is the reliable window, before the face degrades into rotten, rockfall-prone conditions later in the summer",
+     "id": "wa_mount_maude_r1",
+     "fact": "End of the reliable snow/ice season on the face"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "status"
+     ],
+     "expect": "marginal",
+     "value": "good",
+     "id": "wa_mount_maude_r1",
+     "fact": "End of the reliable snow/ice season on the face"
+    },
+    {
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "expect": "Face can still hold into early July, but by midsummer it is described as melting out and turning rotten with rising rockfall danger",
+     "value": "The face usually still holds continuous snow into mid-July; later in the month it grows patchy and softer, with rising rockfall danger",
+     "id": "wa_mount_maude_r1",
+     "fact": "End of the reliable snow/ice season on the face"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "(typically June into early July)",
+     "replace": "(typically June to mid-July)",
+     "id": "wa_mount_maude_r1",
+     "fact": "End of the reliable snow/ice season on the face"
+    },
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "summer"
+     ],
+     "find": "now often requires a June or early-July attempt",
+     "replace": "now often requires an attempt between June and mid-July",
+     "id": "wa_mount_maude_r1",
+     "fact": "End of the reliable snow/ice season on the face"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "fact": "Ice grade of the route (header grade pill)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "External descriptions give the North Face as Grade III, 40-55 degree snow steepening to ~55-60 degrees near the top, with possible hard alpine ice at the steepest part. None found assigns an AI number (AI2 or AI2-3), so the right ice_grade/grade value cannot be settled with two sources.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-maude-n-face",
+    "https://mazamas.org/activity/259/",
+    "https://www.summitpost.org/north-face/261518"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,420 @@
+{
+ "applied": [
+  {
+   "id": "wa_big_snow_mountain_east_buttress",
+   "column": "overview",
+   "path": [],
+   "fact": "First-ascent year"
+  },
+  {
+   "id": "wa_big_snow_mountain_east_buttress",
+   "column": "aid_grade",
+   "path": [],
+   "fact": "First-ascent year"
+  },
+  {
+   "id": "wa_big_snow_mountain_east_buttress",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "First-ascent year"
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "column": "approach",
+   "path": [],
+   "fact": "Summit elevation (5,790 vs 5,801 ft)"
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Summit elevation (5,790 vs 5,801 ft)"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "approach",
+   "path": [],
+   "fact": "One-way distance from trailhead to summit"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead: drive to the road end vs road gated at Dingford Creek"
+  },
+  {
+   "id": "wa_batskins",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "crux"
+   ],
+   "fact": "Crux-flagged pitch vs actual hardest pitch"
+  },
+  {
+   "id": "wa_batskins",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "crux"
+   ],
+   "fact": "Crux-flagged pitch vs actual hardest pitch"
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "fact": "Route grade vs every listed pitch grade"
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Route grade vs every listed pitch grade"
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "crux"
+   ],
+   "fact": "Route grade vs every listed pitch grade"
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "crux"
+   ],
+   "fact": "Route grade vs every listed pitch grade"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_big_snow_mountain_east_buttress",
+   "before": {
+    "overview": "A 10-pitch granite line up the crest of Big Snow Mountain's East Buttress above Hardscrabble Lake, first climbed with aid at NCCS III, 5.7, A1 in 1972 and later freed at 5.10 by Pete Doorish. A rarely repeated, semi-obscure Cascades classic on notably sound rock.",
+    "aid_grade": "A1 (original 1972 ascent)",
+    "pro_needs": "The 1972 first ascent used occasional aid pitons on the Class 5 sections; a standard trad rack should suffice for parties repeating the route free, per the later 5.10 free ascent."
+   }
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "before": {
+    "approach": "From the Alpental day-use trailhead (~3,120 ft, at the end of Alpental Road via I-90 Exit 52), start on the Snow Lake Trail (#1013), a wide, well-graded trail that climbs through old avalanche-path brush and second-growth forest below the ski area's lower lift line. At roughly 1.8 miles and about 720 ft of gain, leave the main Snow Lake Trail where a boot path splits left (southwest) toward Source Lake rather than continuing right toward Snow Lake Col. Drop briefly to cross Source Lake's outlet creek — the last dependable water before the basin steepens, and worth treating and topping off here — then follow the use trail along the lake's north/east shore into the open basin beneath The Tooth and Chair Peak (Source Lake, ~3,400 ft). From the lake the tread becomes an intermittent boot-track over boulder-hop terrain and heather benches, climbing southwest into Great Scott Basin under The Tooth's east face. Contour left (south), staying beneath the broken cliff bands on Bryant Peak's east side, and cross a talus field below the rock spire known locally as \"the Thumbtack\" to reach the mouth of a steep scree-and-talus gully splitting Bryant's southeast face — this is the same drainage backcountry skiers call the \"Bryant Couloir\"/\"wonder gully,\" and it is an active avalanche path in winter and spring, so avoid it in unstable snow or soon after a storm. Ascend the gully favoring its far climber's-right side, which has noticeably firmer footing than the loose center and left. The gully tops out on the Bryant–Chair connecting ridge; from there work south over blocky ridge and talus to the base of the summit block. If the block still holds snow, the final scramble is easy Class 3 with little real exposure; in bare/dry conditions the only reasonable line is around the north (climber's left) side on exposed, distinctly loose Class 3 rock — test every hold. Overall this is about a 9.5-mile round trip with on the order of 3,000–3,400 ft of net gain to the 5,790 ft summit; plan 4–6 hours trailhead-to-summit for a fit party, more if the gully still holds snow requiring axe/crampons.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Southeast face gully",
+      "notes": "Steep scree-and-talus gully splitting Bryant's southeast face, entered at its mouth past a talus field below the rock spire known locally as \"the Thumbtack\". Ascend favoring its far climber's-right side, which has noticeably firmer footing than the loose center and left. This is the drainage backcountry skiers call the \"Bryant Couloir\"/\"wonder gully\" and it is an active avalanche path in winter and spring — avoid it in unstable snow or soon after a storm; axe and crampons if it still holds snow."
+     },
+     {
+      "n": 2,
+      "label": "Bryant-Chair connecting ridge",
+      "notes": "The gully tops out on the Bryant-Chair connecting ridge; from there work south over blocky ridge and talus to the base of the summit block."
+     },
+     {
+      "n": 3,
+      "class": "Class 3",
+      "label": "Summit block",
+      "notes": "If the block still holds snow the final scramble is easy Class 3 with little real exposure. In bare/dry conditions the only reasonable line is around the north (climber's left) side on exposed, distinctly loose Class 3 rock — test every hold. Summit 5,790 ft."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "before": {
+    "itinerary": {
+     "cal": "River fords near Hardscrabble Horse Camp are safest in lower, warmer-afternoon water (July-Sept) or via an early-morning firm-snow crossing; check MBS National Forest alerts, as FS-56/Middle Fork Rd access to the Dingford Creek TH has a history of washout closures that add road-walking miles.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Drive FS-56 to the Dingford Creek/Dutch Miller Gap trailhead (check current road-closure point) and follow the Dutch Miller Gap Trail up the Middle Fork Snoqualmie valley — a gradual first 4.5 miles followed by a steeper final push — to a camp near Hardscrabble Horse Camp. Most parties camp here rather than pushing further, since the peak's approach begins with an unbridged river ford.",
+       "hours": 5.5,
+       "miles": 7.5,
+       "title": "Approach to Hardscrabble camp",
+       "gainFt": 1400,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach camp near Hardscrabble Horse Camp / the river ford"
+      },
+      {
+       "n": 2,
+       "note": "Ford the river, ascend boulder/gully terrain to about 5,200 ft, then follow the key snow gully up to the Point-5,841 pass — parties describe steep snow in the final 200-300 ft where an ice axe (and often crampons/microspikes) is needed, plus a bergschrund/moat near the top that sometimes requires dropping into the moat and traveling beneath the snow for a short stretch. From the pass it's a little over a mile of easier snow/talus to the summit; some parties tag Big Snow Mountain via the connecting ~5,760 ft pass as a bonus, but the standard plan returns straight to camp.",
+       "hours": 8.5,
+       "miles": 4.3,
+       "title": "Burnt Boot Peak via the North Route",
+       "gainFt": 2600,
+       "lossFt": 2600,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Break camp, ford the river",
+         "detail": "Early crossing for firmer snow and lower water; estimated timing."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Ascend boulder field and gully to ~5,200 ft",
+         "detail": "Mixed boulder and brush terrain below the gully proper."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Enter the key snow gully toward the pass",
+         "detail": "Steep snow in the last 200-300 ft; ice axe required, crampons/microspikes recommended."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Top out at Point-5,841 pass",
+         "detail": "Bergschrund/moat crossing may be needed near the top of the gully."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Summit Burnt Boot Peak",
+         "detail": "About a mile of snow/talus travel from the pass to the summit."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at camp",
+         "detail": "Reverse the route; descending gully snow softens through the day."
+        }
+       ],
+       "objective": "Climb Burnt Boot Peak (6,483–6,540 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the Dutch Miller Gap Trail back down to the trailhead/road.",
+       "hours": 4.5,
+       "miles": 7.5,
+       "title": "Hike out",
+       "gainFt": 100,
+       "lossFt": 1500,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day backpack: ~7.5 mi/~1,400 ft each way to camp near Hardscrabble Horse Camp, bookending a ~4.3-mile, ~2,600 ft round-trip summit day via the north gully."
+    },
+    "loss_ft": 4100,
+    "approach": "Park at the very end of Middle Fork Snoqualmie Road (FS Road 56), the Dutch Miller Gap Trailhead (Trail #1030), elev. ~2,500 ft — the last few miles of FS 56 are pitted with potholes and washboard, so high-clearance is strongly recommended. Do not follow the maintained Dutch Miller Gap trail; instead ford the Middle Fork Snoqualmie River roughly 300 ft upstream of the trailhead to its true-right (north) bank. Early-season and post-snowmelt (roughly June) this ford can run thigh-deep and cold — scout upstream for a braided or log crossing if flows are high. Once across, climb the boulder/talus field directly above the river for about 400 vertical feet until you hit a rock band. At the cliff, angle left (west) into a brushy gully thick with salmonberry and black currant — expect real bushwhacking here, not a trail. Follow the gully up into timber around 3,900 ft, then traverse upward through the trees until you break out onto open talus. From the talus, work up and climber's-left toward the low notch/pass beside Point 5,841, which separates Burnt Boot's summit block from the peak immediately west — this notch is the key route-finding target and where the described 'heather/cedar benches' sit. Above roughly 5,400–5,800 ft, pick a line through talus and boulders to avoid the steepest snow; the final ~200 vertical feet below the pass typically holds a firm, sustained snow ramp well into summer, and an ice axe (crampons/microspikes in early season) is required for this section — it is genuine self-arrest terrain. From the pass, a short class 3–4 ridge traverse leads to the summit. One-way distance from the trailhead is roughly 3.5 mi (the logged 6.92 km is evidently round trip), with nearly all the elevation gain packed into the final two miles above the river. There is no reliable water once you leave the river, aside from occasional early-season snowmelt trickles near the pass. Principal hazards: the river ford itself, sustained brush in the lower gully, loose talus/scree on the upper slopes, and the steep snow ramp below the pass. Near the top of the summit-pass snow ramp, watch for a moat-type gap — a short traverse beneath the snow edge may be needed to reach solid rock.",
+    "approach_logistics": {
+     "peakLat": 47.5009,
+     "peakLng": -121.3276,
+     "trailhead": "Dutch Miller Gap Trailhead",
+     "trailheadLat": 47.5104,
+     "trailheadLng": -121.3495,
+     "trailheadDirection": "Park at the very end of Middle Fork Snoqualmie Road (FS Road 56), the Dutch Miller Gap Trailhead (Trail #1030), elev. ~2,500 ft - the last few miles of FS 56 are pitted with potholes and washboard, so high-clearance is strongly recommended."
+    },
+    "waypoints": [
+     {
+      "lat": 47.5104,
+      "lng": -121.3495,
+      "elev": 2862,
+      "name": "Dutch Miller Gap Trailhead",
+      "note": "End of rough FS Road 56 (~17 mi from I-90 Exit 34); self-issue Alpine Lakes Wilderness permit required, high-clearance vehicle recommended for the last miles.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "FS Road 56 runs about 17 miles up the Middle Fork Snoqualmie from I-90 Exit 34 to the road end. The last few miles are potholed and washboarded, so high clearance is worth having. The lot is shared with the maintained Dutch Miller Gap trail, which this route does not use."
+     },
+     {
+      "lat": 47.509820999999995,
+      "lng": -121.34559405,
+      "elev": 2900,
+      "name": "Middle Fork Snoqualmie River ford",
+      "note": "Leave the trail here and ford the river to a boulder field on the far shore; can run thigh-deep and swift in early season.",
+      "type": "Hazard",
+      "distMi": 0.1,
+      "directions": "Walk roughly 300 ft upstream from the lot and cross to the true-right (north) bank. Do not follow the Dutch Miller Gap trail — the route leaves the valley right here. In June and other high-water periods, scout upstream for a braided section or a log rather than forcing the main channel."
+     },
+     {
+      "lat": 47.508883,
+      "lng": -121.34370215,
+      "elev": 3260,
+      "name": "Cliff band / gully entrance",
+      "note": "Boulder field ends at a ~400-ft cliff band; go left into a steep gully choked with salmonberry and black currant bushes.",
+      "type": "Junction",
+      "distMi": 0.3,
+      "directions": "Straight up from the far bank: climb the boulder and talus field directly above the river for about 400 vertical feet until the rock band stops you."
+     },
+     {
+      "lat": 47.506538,
+      "lng": -121.3389724,
+      "elev": 3900,
+      "name": "Treeline at ~3,900 ft",
+      "note": "Gully tops out in scattered timber; leave the brush here and angle SSE cross-country toward the talus slopes.",
+      "type": "Junction",
+      "distMi": 0.8,
+      "directions": "Angle left (west) off the boulder field into the gully and force your way up it. This is real bushwhacking through salmonberry and black currant, not a trail, and it is the slowest ground of the day. The gully tops out where the brush gives way to timber."
+     },
+     {
+      "lat": 47.503724,
+      "lng": -121.33329669999999,
+      "elev": 5800,
+      "name": "Steep snow ramp below north wall",
+      "note": "A persistent snow ramp crosses the talus below Burnt Boot's north face; can hold snow into September and is the crux of the descent in reverse.",
+      "type": "Hazard",
+      "distMi": 1.4,
+      "directions": "Traverse upward through the trees until they run out onto open talus, then work up and climber's-left toward the low notch beside Point 5,841 — that notch is the key route-finding target. Above roughly 5,400 ft, pick a line through talus and boulders that keeps you off the steepest snow; the heather and cedar benches on this stretch give the easiest going."
+     },
+     {
+      "lat": 47.502317,
+      "lng": -121.33045885,
+      "elev": 5750,
+      "name": "Pass at Point 5,841",
+      "note": "Low saddle between the Burnt Boot summit block and neighboring Point 5,841; gain the ridge here for the final scramble.",
+      "type": "Junction",
+      "distMi": 1.7,
+      "directions": "The last couple of hundred vertical feet to the notch are the ramp itself: firm, sustained snow. An ice axe is required and crampons or microspikes are worth having early season — this is genuine self-arrest terrain, not a patch to walk across. Near the top, watch for a moat between snow and rock; a short traverse beneath the snow edge is sometimes needed to reach solid ground."
+     },
+     {
+      "lat": 47.5009,
+      "lng": -121.3276,
+      "elev": 6540,
+      "name": "Burnt Boot Peak",
+      "note": "Class 3 summit block with a short ridge scramble east from the 5,841 pass; views to Lemah Mountain and Overcoat Peak.",
+      "type": "Summit",
+      "distMi": 2,
+      "directions": "A short class 3-4 ridge step east off the notch, then boulder-hopping up the last of the talus to the summit block. Stay on this line: the neighbouring northwest gully is reported to hold class 4 ground and is not the way up."
+     }
+    ],
+    "road": {
+     "name": "Middle Fork Snoqualmie Road (FS Road 56) to Dutch Miller Gap/Dingford Creek Trailhead",
+     "driveNote": "From North Bend/I-90 Exit 34, follow 468th Ave SE 0.6 mi to FS Road 56, then continue ~12 mi to a fork and ~5 more mi to the road-end trailhead. Notoriously rough and pothole-scarred past Garfield Ledges — high-clearance vehicles recommended."
+    }
+   }
+  },
+  {
+   "id": "wa_batskins",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "grade": "5.12b (5.11a short variant)",
+      "notes": "Arch feature with natural gear to ledge anchor; full pitch continues past bolts through shallow groove, tricky stemming, cruxy knobs section, moves left to anchor.",
+      "pitch": 1
+     },
+     {
+      "crux": true,
+      "grade": "5.11d",
+      "notes": "Thin ramp then stemming corner with knobs to a testy balance crux high up; 3 bolts plus small gear for crux.",
+      "pitch": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_tpmv_10_meteorological_vinculation",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "grade": "5.11+",
+      "notes": "Shallow corners/cracks past 3 bolts and gear to anchor; usually climbed alone starting from Japanese Gardens P1.",
+      "pitch": 1
+     },
+     {
+      "crux": false,
+      "grade": "5.10-",
+      "notes": "Slightly runout; cracks up right-facing corner to a ledge, then face climbing left to anchor below corner/slab pitch.",
+      "pitch": 2
+     },
+     {
+      "crux": true,
+      "grade": "5.11b/c",
+      "notes": "Slab-and-corner pitch; committing clip to first bolt, continues up difficult corner via bolts and gear.",
+      "pitch": 3
+     },
+     {
+      "crux": false,
+      "grade": "5.10d",
+      "notes": "Slab past bolts and gear with a tough mantle; multiple 5.8-5.9 finish variations.",
+      "pitch": 4
+     }
+    ]
+   }
+  }
+ ]
+}
