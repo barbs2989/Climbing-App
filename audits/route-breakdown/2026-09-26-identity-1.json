@@ -1,0 +1,259 @@
+{
+  "wa_mount_baker_boulder_glacier": {
+    "area": "wa_mount_baker",
+    "set": {
+      "beta": "From high camp on Boulder Ridge (about 5,500-5,900 ft), traverse slightly west-southwest onto the Boulder Glacier and climb the glacier itself, south of and below the Boulder-Park Cleaver, rather than the cleaver. Gain the first 500-1,000 ft working around small crevasses, bear north around a small rock buttress, then head west straight up the glacier; crevasses are the main obstacle on this line and grow more broken through the summer. Above about 9,200 ft the glacier line and the cleaver line merge. Near 9,500 ft, traverse south-southwest about a quarter mile to get around the big rock buttress, watching for rockfall and crevasses, then deal with the bergschrund near 9,800 ft, whose crossing changes through the season. Keep angling west and up to stay clear of the rock band directly below Grant Peak, and finish up a steep snow slope, about the last 500 ft, to the summit plateau beside Grant Peak.",
+      "overview": "A remote glacier route up Baker's east side that climbs the Boulder Glacier itself: a moderate glacier climb of about 5,200 ft from high camp, with crevasses to thread and a bergschrund to cross. It shares its trailhead, approach and upper mountain with the Boulder-Park Cleaver, which runs up the rib on the glacier's north edge and is the line most parties now choose because it avoids the most crevassed part of the glacier. The arduous, unmaintained approach keeps crowds well below the Coleman-Deming or Easton Glacier routes."
+    },
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Lower Boulder Glacier",
+        "grade": "Glacier, crevassed",
+        "notes": "From high camp, rope up and traverse slightly west-southwest onto the glacier below the Boulder-Park Cleaver. Climb the first 500-1,000 ft weaving around small crevasses, then bear north to get around a small rock buttress before turning uphill. Parties bound for the cleaver instead head northwest to its toe near 6,800 ft."
+      },
+      {
+        "pitch": "Boulder Glacier",
+        "grade": "Glacier, crevassed",
+        "notes": "Head west straight up the glacier, south of the cleaver. Crevasses are the chief difficulty on this line: the glacier's central section is much more broken than the cleaver, and by midsummer its snow bridges are undercut and unreliable, so this line is best early in the season. Above about 9,200 ft it merges with the cleaver route."
+      },
+      {
+        "pitch": "Buttress traverse",
+        "grade": "Snow, crevasses, rockfall",
+        "notes": "Near 9,500 ft, traverse south-southwest about a quarter mile to skirt the large rock buttress. This stretch passes beneath the buttress and through crevasses, and the east-facing slope takes early sun, so helmets, an early start and a steady pace matter here."
+      },
+      {
+        "pitch": "Bergschrund and summit slope",
+        "grade": "Steep snow",
+        "notes": "The bergschrund near 9,800 ft changes through the season and may need a detour to find a crossing. Around it, keep angling west and up to avoid the upper rock band directly below Grant Peak, then climb the final steep snow slope, about the last 500 ft, onto the summit plateau beside Grant Peak."
+      }
+    ],
+    "review": {
+      "verdict": "DISTINCT",
+      "climb": "The Boulder Glacier route proper: from high camp, climb the Boulder Glacier itself (south of and below the Boulder-Park Cleaver) to where it merges with the cleaver line above ~9,200 ft, then the shared upper mountain. Chosen because the row's own name leads with 'Boulder Glacier', its fa (1891) is the Boulder Glacier's first ascent (Wikipedia: first climbed August 24, 1891), and the cleaver line already has its own row (wa_mount_baker_boulder_park_cleaver, fa Morovits 1894, which is the cleaver's first ascent). Both lines are documented as separate lines of ascent from the same high camp: SummitPost 'Boulder Glacier / Cleaver' says from high camp either ascend the cleaver directly or traverse slightly WSW and ascend the Boulder Glacier beneath the cleaver, the two converging above 9,200 ft, with crevasses the chief obstacle on the glacier line; the Mountaineers 'Mount Baker/Boulder Glacier' route gives the glacier line in steps (500-1,000 ft up the glacier avoiding small crevasses, north around a small buttress, west straight up, SSW quarter-mile traverse at ~9,500 ft to skirt the buttress, last 500 ft steep snow). History separates them too: the glacier in 1891, the Park-Boulder ridge by Joe Morovits in 1894 (the 'Morovits Route'). So the two rows are distinct routes, and this row's beta and pitch table were describing the OTHER row's climb (the cleaver).",
+      "changed": "beta: rewritten to describe the glacier line (it described crossing the lower glacier to the cleaver toe and climbing the cleaver). overview: drops 'via the Boulder Glacier and Boulder Cleaver' and the unsourced 'steepest of Baker's standard glacier routes' (the Mountaineers route calls the incline moderate); keeps the approach/crowds sentence. pitch_detail: 4 -> 4 entries, all rewritten for the glacier line; 'Lower Boulder Glacier' label kept (same ground, now climbed rather than crossed), the cleaver entry becomes 'Boulder Glacier', and the two alternative finish options (snow traverse / 4th-class buttress, which were the cleaver route's options on Mountain Project) are replaced by the glacier route's sequential finish (buttress traverse, schrund and summit slope). The cleaver-route table is not lost: it is carried to wa_mount_baker_boulder_park_cleaver in this same file. No lengths, crux flags or grades added. approach (shared, already checked in verify-2), descent_text and fa unchanged.",
+      "sources_consulted": [
+        "https://web.archive.org/web/2023/https://www.summitpost.org/boulder-glacier-cleaver/165032",
+        "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/routes-places/mt-baker-boulder-glacier",
+        "https://en.wikipedia.org/wiki/Boulder_Glacier_(Washington)",
+        "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+        "https://www.mountainproject.com/area/105877061/mt-baker",
+        "http://www.croatia.org/crown/croatians/www.croatians.com/MOUNTAIN%20MAN%20MOROVICH.htm",
+        "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/trip-reports/glacier-ski-snowboard-mount-baker-boulder-glacier",
+        "https://hike2hike.com/mountaineering/boulder-glacier-mount-baker-washington/"
+      ],
+      "other_findings": "The premise that 'Mountain Project lists both routes separately' did NOT hold: MP's Mt Baker area lists 9 routes and has only 'Boulder-Park Cleaver' (FA Morovits, July 2, 1894) and 'Park Glacier' - no Boulder Glacier page. The distinct-routes case rests on SummitPost, the Mountaineers route page and the separate 1891/1894 first ascents instead. fa: 'LaConnor Expedition, 1891' - Wikipedia gives the Boulder Glacier's first ascent as August 24, 1891 but does not name the party; the town is spelled La Conner. Party name not verified, so fa left as stored. descent_text 'Reverse the glacier, re-navigating crevasses' is correct but thin.",
+      "classification": {
+        "name": {
+          "proposed": "Boulder Glacier",
+          "evidence": "The stored name 'Boulder Glacier / Boulder Cleaver' names both lines, and the cleaver has its own row. The Mountaineers file this line as 'Mount Baker/Boulder Glacier'; Wikipedia's first-ascent date is for the Boulder Glacier."
+        },
+        "grade": {
+          "proposed": "no change (II-III)",
+          "evidence": "SummitPost gives Grade III for the Boulder Glacier/Cleaver page; the Mountaineers class it a Basic Glacier Climb (technical 3, strenuous 3). Stored II-III is consistent."
+        },
+        "length_m": {
+          "proposed": "no change without a measurement",
+          "evidence": "The Mountaineers give 5,200 ft camp-to-summit and 8,100 ft total gain; stored 1213 m does not obviously match either (5,200 ft = 1,585 m) - flagged, not changed."
+        }
+      }
+    }
+  },
+  "wa_mount_baker_boulder_park_cleaver": {
+    "area": "wa_mount_baker",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Approach trail",
+        "grade": null,
+        "notes": "Boulder Ridge Trail #605, ~2 miles to wilderness boundary/bog"
+      },
+      {
+        "pitch": "Ridge gain",
+        "grade": "Class 3",
+        "notes": "Steep heather and a short fixed-line rock step to ~5,700 ft camp"
+      },
+      {
+        "pitch": "Glacier to the cleaver toe",
+        "grade": "Glacier, crevassed",
+        "notes": "From camp, rope up and cross to the toe of the Boulder-Park Cleaver near 6,800 ft, usually heading northwest across the lower Boulder Glacier; from a camp high on the ridge some parties step onto the Park Glacier side instead. A few crevasses and icefall bands lie on this crossing. Parties that instead climb the Boulder Glacier's central section meet far more broken ground and unreliable, undercut bridges by midsummer."
+      },
+      {
+        "pitch": "Cleaver",
+        "grade": "Snow and rock rib",
+        "notes": "Follow the cleaver, mostly on its north side, with a short rock scramble around 7,800 ft; this middle section is largely crevasse-free. Flat bivy sites along the rib (around 7,200-7,500 ft) allow a shorter summit day, and a flat spot near 8,800 ft is the place to study the upper mountain. Above the cleaver the snow steepens and can be icy and exposed to rockfall, with crevasses close below; pickets and a few ice screws protect it."
+      },
+      {
+        "pitch": "Upper mountain (snow option)",
+        "grade": "25-35° snow",
+        "notes": "At the large rock buttress near 9,300 ft, head up toward its toe and traverse south toward Sherman Crater on moderate snow, weaving through crevasses; the pattern here dictates the line and is very broken by midsummer. The traverse passes beneath the buttress, so helmets and pace matter. From the crater side, finish up steep glacier between the vents and the summit plateau."
+      },
+      {
+        "pitch": "Upper mountain (rock option)",
+        "grade": "4th class",
+        "notes": "Alternative to the snow traverse: climb the rock buttress above 9,300 ft directly on 4th-class ground, or skirt its north edge on a short snow or ice slope, then angle onto Grant Peak. Cliffs drop steeply near the summit, and the whole face gets early sun, so start early to be off it before rockfall begins."
+      }
+    ],
+    "review": {
+      "verdict": "DISTINCT",
+      "climb": "The Boulder-Park Cleaver (Morovits Route, 1894): Boulder Ridge to high camp, onto the glacier to the toe of the cleaver near 6,800 ft, up the cleaver, then the snow-traverse or rock-buttress finish. The row's name, fa (Joe Morovits and party, July 2, 1894 - matches Mountain Project), beta, overview, approach and descent_text all already describe this climb; none of its prose describes the other route, so no prose column is changed.",
+      "changed": "pitch_detail only, 4 -> 6 entries. The stored table was right but thin; the detailed, already-verified cleaver-route entries that sat on wa_mount_baker_boulder_glacier (batch C, verify-2) are carried here, because that row now describes the glacier line and would otherwise lose them. 'Approach trail' and 'Ridge gain' carried over unchanged. 'Park Glacier traverse' is renamed 'Glacier to the cleaver toe': it is the same ground, but Mountain Project and SummitPost cross the lower BOULDER Glacier to the toe while one trip report stepped onto the Park Glacier from a 5,700 ft camp, so the note gives both and the label names neither. The stored 'Cleaver' entry's pickets/screws protection is kept in its notes. The cleaver chip '25-35°' from the old boulder_glacier entry was dropped (no source gives an angle for the rib itself). No lengths, crux or bolts added.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+        "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm",
+        "https://web.archive.org/web/2023/https://www.summitpost.org/boulder-glacier-cleaver/165032",
+        "https://turns-all-year.com/trip-reports/july-15-16-2009-mt-baker-via-boulder-glacier",
+        "http://www.croatia.org/crown/croatians/www.croatians.com/MOUNTAIN%20MAN%20MOROVICH.htm"
+      ],
+      "other_findings": "Earlier rounds called this row a DUPLICATE of wa_mount_baker_boulder_glacier. That held only because the other row's beta and table described this cleaver; with that row fixed to the glacier line, the two are distinct routes sharing an approach and upper mountain. length_m 1585 matches the Mountaineers' 5,200 ft camp-to-summit figure better than the other row's 1213. The 'Approach trail' and 'Ridge gain' entries are approach sections the stored table already carried; a reviewer may prefer to drop them.",
+      "classification": {
+        "name": {
+          "proposed": "no change (Boulder-Park Cleaver)",
+          "evidence": "Matches Mountain Project's route name."
+        },
+        "grade": {
+          "proposed": "no change",
+          "evidence": "Mountain Project: Moderate Snow; stored 'Grade II Snow' is consistent."
+        }
+      }
+    }
+  },
+  "wa_eldorado_peak_northeast_face": {
+    "area": "wa_main_peak",
+    "set": {
+      "beta": "Follow the East Ridge route and leave its track around 7,500 ft, traversing climber's right onto the large triangular snow and ice face right of the ridge, above the cliffs below it. The usual line traverses beneath the rock band at roughly 8,200 ft, alongside a large crevasse; at its far end, roughly northeast of the summit, turn uphill and climb snow or ice up to 60°, several pitches usually protected with a running belay of pickets and ice screws, to the base of the summit knife-edge, where the route rejoins the East Ridge for the exposed, corniced ridge to the top. The face changes with the season: in late summer an easy low traverse passes below a big crevasse at about 8,100 ft, a moderate high traverse runs above that crevasse and below the bergschrund and rock band at about 8,400 ft, and a direct line crosses above the schrund on ice to about AI2+. Harder variations cross the bergschrund and climb the rock band by a snowy ramp to an exposed 60° ice slope, or contour around to the base of the face and climb several pitches of steep rock to the upper ice. As an ice climb it is best in early fall, before the first storms; after fresh snow it is a straightforward snow climb."
+    },
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Leave the East Ridge",
+        "grade": "Glacier traverse",
+        "notes": "Around 7,500 ft, leave the standard East Ridge track and traverse climber's right onto the Northeast Face, staying above the steep cliffs that guard its lower edge. This is crevassed glacier ground, so stay roped with crevasse rescue gear."
+      },
+      {
+        "pitch": "Traverse below the rock band",
+        "grade": "Easy to moderate snow",
+        "notes": "Traverse the face below the rock band. Late in summer there are two levels: a low line below a significant crevasse at about 8,100 ft, and a higher line above that crevasse but below the bergschrund and rock band at about 8,400 ft. The usual track runs under the band near 8,200 ft, paralleling the big crevasse, to a point roughly northeast of the summit."
+      },
+      {
+        "pitch": "Face section",
+        "grade": "Snow/ice to 60°",
+        "notes": "Turn uphill and climb the face, several pitches up to 60°, to the base of the summit knife-edge; a running belay on pickets and ice screws is the usual protection. A direct line above the bergschrund can hold ice to about AI2+, and a harder variation crosses the schrund and climbs a snowy ramp through the rock band to an exposed 60° ice slope. Snow or bare ice depends on recent weather."
+      },
+      {
+        "pitch": "Summit knife-edge",
+        "grade": "Exposed snow ridge",
+        "notes": "Rejoin the East Ridge at the start of the knife-edge, around 8,700 ft, and follow the exposed crest to the summit. Hard ice just below the edge can take screws, while pickets may need heavy driving. East Ridge parties share this crest, so expect traffic and plan belays that do not block it."
+      }
+    ],
+    "review": {
+      "verdict": "FIX",
+      "climb": "The Northeast Face as usually climbed: leave the East Ridge, traverse beneath the rock band, then snow/ice up to 60° to the summit knife-edge. The name decides, and this is the line all four sources describe as the Northeast Face (SummitPost route page: several pitches to 60°, joining the East Ridge below the summit ridge; Mountaineers route page: Grade III snow or ice, intermediate ice; Mountain Project: three seasonal options, direct line to AI2+; Mountaineers trip report: turned off at ~7,500 ft, traversed under the rock band ~8,200 ft along a large crevasse, then up with a running belay to the knife-edge). The stored columns already sit on this line (running belay, pickets and screws, beneath a rock band, join the knife-edge), so the row was never two climbs; it was vague. The 'AI3-4 ice line through the bergschrund' from earlier research was not found in any source: the hardest documented options are the schrund + snowy-ramp variation to a 60° ice slope and the steep-rock variation from the base of the face, and both are now named as variations inside the one route.",
+      "changed": "beta rewritten with the sequence, elevations, seasonal options and variations (stored beta said 'angle up and right beneath a rock band on 50-60° snow/ice', which merged the moderate traverse with the steep climb). pitch_detail 1 -> 4 entries: two traverse stages, the kept 'Face section' (chip changed from '50-60° snow/ice' to 'Snow/ice to 60°', matching the sources), and the knife-edge. No lengths, crux, grades beyond what sources state. overview, approach and descent_text already describe this climb and are unchanged.",
+      "sources_consulted": [
+        "https://web.archive.org/web/2024/https://www.summitpost.org/northeast-face-eldorado-peak/689323",
+        "https://www.mountainproject.com/route/117628561/northeast-face",
+        "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-ne-face",
+        "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-eldorado-peak-northeast-face-1"
+      ],
+      "other_findings": "The stored descent_text is correct (descend the East Ridge). The 'harder variation' via steep rock from the base of the face is a single-source mention with no detail.",
+      "classification": {
+        "name": {
+          "proposed": "no change (Northeast Face)",
+          "evidence": "Used by SummitPost, Mountain Project and the Mountaineers for this line."
+        },
+        "grade": {
+          "proposed": "Grade II-III, snow/ice to 60°",
+          "evidence": "Stored grade is null. Mountain Project: Moderate Snow, Grade II (direct line AI2+). Mountaineers: Grade III snow or ice, Intermediate Ice Climb. SummitPost: several pitches of snow and ice to 60°."
+        }
+      }
+    }
+  },
+  "wa_lincoln_peak_north_ridge": {
+    "area": "wa_lincoln_peak",
+    "set": {
+      "beta": "Start on the northwest face just right of the prominent hanging glacier with a 60 m WI4 pitch, the route's crux, shared with Shooting Gallery on neighbouring Assassin Spire; its upper half is overhanging, poorly protected ice of doubtful quality. Above, cross a snowfield and climb a vertical ice curtain and a well-protected step of glacial ice into the upper amphitheater, the basin between Lincoln Peak and Assassin Spire, simul-climbing along its west side. On Lincoln's northwest wall, about four roped pitches of steeper ice follow, with snowfields up to 70° between them; the obvious central flow gives about 120 m of WI3+ in two long pitches. From the upper snowfield, follow a rime-covered ridge to a sub-summit, downclimb a short rime step, and climb a final icy gully to the summit. Descend the southwest face route.",
+      "overview": "Wilkes-Booth climbs about 2,000 ft of glacial, alpine and water ice on Lincoln Peak's northwest face, with steep snowfields between the ice and a rime-covered ridge to finish. Its first pitch, a 60 m WI4 lead with overhanging, poorly protected ice in its upper half, is the crux and is shared with the lines on Assassin Spire. The route depends on unusually good ice build-up; the first ascent was a single 18.5-hour push from the Heliotrope Ridge trailhead in a one-day March weather window, descending the southwest face.",
+      "approach": "Start at the Heliotrope Ridge Trailhead (FS Road 39, Trail #677) near Glacier, WA, and follow the Heliotrope Ridge Trail roughly 2 miles through old-growth forest and several avalanche-chute creek crossings to the flat former Kulshan Cabin site (~4,700 ft). From Heliotrope Ridge, cross the lower Thunder Glacier to the base of Lincoln's northwest face and the prominent hanging glacier, where the route starts at the same point as the routes on Assassin Spire. Rope up for the glacier; the face is big and complex and cannot be seen whole from the approach.",
+      "descent_text": "Descend the southwest face route: roughly 2,000 ft of steep snow and ice up to 65°, downclimbed in good conditions and otherwise rappelled. Below the face, traverse back along the north side of the peak toward Heliotrope Ridge, roped for the glacier, and walk out the Heliotrope Ridge Trail."
+    },
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "P1 (crux)",
+        "grade": "WI4",
+        "lengthM": 60,
+        "crux": true,
+        "notes": "Starts just right of the prominent hanging glacier, at the same point as the Assassin Spire routes, and shares its lower ground with Shooting Gallery. The upper half is the crux: overhanging, poorly protected ice of doubtful quality. The route as a whole is graded AI4+ in one account and WI4 in another."
+      },
+      {
+        "pitch": "Ice curtain and glacier step",
+        "grade": "Glacial ice step",
+        "notes": "Cross the first snowfield above the overhanging glacier, climb a vertical ice curtain up to the glacier, then a step of glacial ice with good protection into the upper amphitheater, the basin between Lincoln Peak and Assassin Spire. Simul-climb along the amphitheater's west side toward Lincoln's northwest wall."
+      },
+      {
+        "pitch": "Central flow",
+        "grade": "WI3+",
+        "lengthM": 120,
+        "notes": "Climb the obvious flow in the middle of the amphitheater wall in two long pitches. The first runs a full 70 m (a little simul-climbing on 60 m ropes) and is the harder, with several vertical steps; the second starts with a short 85° section, then eases for about 50 m to the top of the flow. An easier variation traverses in from the right."
+      },
+      {
+        "pitch": "Upper snowfields",
+        "grade": "Snow to 70°",
+        "notes": "Above the flow, steep snowfields reaching 70° separate the upper ice steps and lead up to the crest. Snow condition decides how fast this goes; running protection is pickets and screws."
+      },
+      {
+        "pitch": "Final section",
+        "grade": "Rime ridge, icy gully",
+        "notes": "Follow the rime-covered ridge on snow and rime to the first sub-summit, downclimb a short section of rime ice, then climb the final icy gully, a full but relatively easy rope-length, to the summit."
+      }
+    ],
+    "review": {
+      "verdict": "FIX",
+      "climb": "Wilkes-Booth (Northwest Face, IV WI4, ~2,000 ft, FA Daniel Coltrane and Michal Rynkiewicz, March 13, 2015). The name 'North Ridge / Standard' matches no documented route: the standard route on Lincoln is the southwest face, and the 1958 north-face ascent (Ed Cooper and Fergus O'Conner, May 4, 1958, a 1,000 ft face that needed ice screws) is recorded only as a history line with no route description anywhere found. Wilkes-Booth is well documented (first-ascent trip report with pitch-by-pitch photos, AAJ report) and matches the most stored columns: beta, overview, fa, pitch_detail, grade (IV WI4), length_m (610 = 2,000 ft), and the approach's own target ('the base of Lincoln's northwest face ... roughly 2,000 ft of steep ice and mixed ground'). So the row is Wilkes-Booth and the name should change.",
+      "changed": "beta: rewritten in order from both accounts (stored beta was close but carried 'all-time conditions' testimony and 'nearly snowless winter'). overview: rewritten - it opened in pipeline voice ('This slot corresponds to...') and claimed Wilkes-Booth is 'the only established route besides the historic SW Face X Couloir', which the 1958 north-face and 1974 west-face ascents contradict. approach: kept the correct trailhead/trail sentences; replaced the Coleman Glacier icefall traverse, which no source supports, with the first-ascent approach across the lower Thunder Glacier, and removed the 'north ridge' framing and general conditions advice. descent_text: replaced - the stored text invented rappel counts ('4-6 rappels', 'up to 10 double-rope rappels') and a reverse-the-face option 'per the pattern typical of routes like this'; the sources give a downclimb of the southwest face (snow and ice to 65°) and a traverse back along the north side of the peak. pitch_detail 3 -> 5 entries: 'P1 (crux)' and 'Final section' labels kept; 'P2-P4' split into the glacier step, the central flow and the upper snowfields; the stored '60m' kept as lengthM 60; lengthM 120 for the flow is the stated '~120 m'; no other lengths, no bolts. rappels ('Downclimb or rappel southwest face sections') and fa already correct and unchanged.",
+      "sources_consulted": [
+        "https://web.archive.org/web/2020/https://cascadeclimbers.com/forum/topic/96920-tr-lincoln-peak-wilkes-booth-route-nw-face-grade-4-ai4-3132015/",
+        "http://publications.americanalpineclub.org/articles/13201213260/Lincoln-Peak-Northwest-Face-Wilkes-Booth",
+        "https://en.wikipedia.org/wiki/Black_Buttes",
+        "https://www.lemkeclimbs.com/lincoln-peak.html"
+      ],
+      "other_findings": "No route row exists for Lincoln's 1958 north face, and none can be written from current sources. The standard route is the southwest face (reached via the Thunder Glacier cirque, ~9 hours, rockfall-prone, descended by rappel); if a southwest-face row exists it should carry that name, not this one.",
+      "classification": {
+        "name": {
+          "proposed": "Wilkes-Booth (Northwest Face)",
+          "evidence": "First-ascent trip report and AAJ both title the route 'Wilkes-Booth', NW Face. 'North Ridge / Standard' names neither this line nor the peak's standard (southwest face) route."
+        },
+        "grade": {
+          "proposed": "IV WI4",
+          "evidence": "AAJ: IV WI4. Trip report title: Grade 4+ AI4+. Stored 'IV WI4 (AI4+)' carries both; the grade column takes one value."
+        },
+        "discipline": {
+          "proposed": "ice/alpine rather than mountaineering",
+          "evidence": "A water- and alpine-ice route with WI4 and WI3+ pitches, not a glacier or snow route. Use whichever discipline value the catalog uses for alpine ice."
+        },
+        "pitches": {
+          "proposed": "no change (5)",
+          "evidence": "AAJ: P1 plus about four roped pitches; the trip report shows P1, the glacier step, two flow pitches and a final pitch, with simul-climbing between."
+        }
+      }
+    }
+  },
+  "wa_elephant_head_standard": {
+    "skip_reason": "LEAVE - no documented route of any kind on Elephant Head (Dome Peak group) was found, so there is no climb to make the row describe. The peak appears only as a landmark (Dome Peak descriptions, Ptarmigan Traverse reports).",
+    "review": {
+      "verdict": "LEAVE",
+      "climb": "Undetermined. The name 'Standard Route' implies a documented standard line; none exists in any source found. Both halves of the row (Dana Glacier in beta/pitch_detail; Downey Creek -> Bachelor Creek -> Cub Lake -> Itswoot Ridge in approach/climbing_route/descent_text) are plausible ways toward the peak - Elephant Head sits between the Dana (west) and Chickamin (east) glaciers at the NW end of the crags running off Dome Peak - but no source puts either one on its summit, so neither can be chosen without inventing.",
+      "changed": "Nothing.",
+      "sources_consulted": [
+        "https://web.archive.org/web/2023/https://www.summitpost.org/dome-peak/150357",
+        "https://turns-all-year.com/trip-reports/june-17-20-2004-ptarmigan-traverse",
+        "https://trailcatjim.com/ptarmigan-traverse-dome-peak-2021/",
+        "https://www.summitpost.org/stage-4/175423",
+        "searches: Elephant Head + Dome Peak / Dana Glacier / Chickamin / peakbagger / nwhikers / cascadeclimbers (no ascent account found; peakbagger search blocked)"
+      ],
+      "other_findings": "For the owner: much of the row reads as generated rather than researched, and a human may want to remove it or cut it back to the overview (whose geography matches the SummitPost/Beckey description of the peak). Specifically unsupported: the approach's '~30-mile round-trip' and '6,500 ft of elevation gain to reach the ridge alone'; climbing_route's '7,995 ft' high point reached by 'general mountaineering terrain' from Itswoot Ridge (Itswoot Ridge is the Dome Peak approach, on the Dome Glacier side); descent_text's 'possible short rappel (30-60 ft)' contingency, which contradicts rappels = 0; the beta's 'ascend diagonally WSW to ~6,200 ft, then south up the Dana Glacier', which matches the White Rock Lakes / Dana Glacier approach to Dome Peak on the Ptarmigan Traverse, not a described ascent of Elephant Head; grade 'Class 4 / glacier' versus climbing_route's 'Class 2-3' finish. pitch_detail entries are one-line generic phrases ('Summit approach and final assault').",
+      "classification": {}
+    }
+  }
+}

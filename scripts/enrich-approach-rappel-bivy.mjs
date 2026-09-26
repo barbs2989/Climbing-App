@@ -292,7 +292,7 @@ const pitchLabel = (p, i) => String(p.pitch != null ? p.pitch : (p.n != null ? p
 // The app's no-sources rule reaches this text: it renders verbatim on the route page. A batch that
 // names where a fact came from is refused, not cleaned — the sentence has to be rewritten by
 // whoever can see what it was saying.
-const SOURCE_RE = /\b(mountain ?project|summit ?post|cascade ?climbers|nwhikers|peakbagger|beckey(?! route)|nelson|guide ?book|trip report|according to|reported by|the mountaineers)\b/i;
+const SOURCE_RE = /\b(mountain ?project|summit ?post|cascade ?climbers|nwhikers|peakbagger|beckey(?! route|-tate)|nelson|guide ?book|trip report|according to|reported by|the mountaineers)\b/i;
 const PER_SOURCE_RE = /\b[Pp]er (?:the )?[A-Z]/; // "per Nelson", not "per pitch" — case-sensitive on purpose
 function checkPitchDetail(id, spec, before, commented) {
   const errs = [], next = spec.pitch_detail;

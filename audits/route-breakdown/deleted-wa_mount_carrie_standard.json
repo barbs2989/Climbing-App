@@ -1,0 +1,548 @@
+{
+  "id": "wa_mount_carrie_standard",
+  "area_id": "wa_mount_carrie",
+  "name": "Standard Route (Carrie Glacier / High Divide)",
+  "discipline": "mountaineering",
+  "grade": "Class 3 + glacier travel",
+  "grade_system": "class",
+  "grade_num": 3,
+  "pitches": 0,
+  "length_m": 610,
+  "sort_order": null,
+  "stars": null,
+  "fa": "Probably Billy Everett, 1885, age 16, during his traverse of the Bailey Range",
+  "lat": null,
+  "lng": null,
+  "aspect": "SW",
+  "season": "Jul-Sep",
+  "description": null,
+  "gear": [
+    "rope",
+    "ice axe",
+    "crampons",
+    "glacier travel / crevasse rescue kit",
+    "helmet",
+    "trekking poles",
+    "bear canister (required in Sol Duc/Seven Lakes Basin)",
+    "map & compass or GPS (route beyond High Divide is unsigned)"
+  ],
+  "hazards": [
+    "Glacier travel near the Carrie Glacier with crevasse hazard",
+    "Steep snow and a bergschrund near the summit block depending on season",
+    "Loose rock and exposed Class 3 scrambling on the summit pyramid",
+    "Long, remote approach along the Bailey Range / High Divide far from help",
+    "Thin, crumbly, exposed ledges on Cat Peak's south side just before the Catwalk",
+    "No reliable water between Heart Lake and the summit — carry what you need",
+    "Unsigned, unmaintained route beyond High Divide's trail end; route-finding through Cat Basin requires real off-trail Olympics experience"
+  ],
+  "verif": null,
+  "overview": "Mount Carrie (6,995 ft) is the highest summit in the Bailey Range, a glaciated interior subrange of the Olympic Mountains within Olympic National Park's Daniel J. Evans Wilderness. Named in 1899 by surveyor Theodore Rixon for his wife Caroline \"Carrie,\" the peak is composed of grey Eocene sandstone and hosts two small glaciers — Carrie Glacier in the northeast cirque and Fairchild Glacier on the east slope — that feed the Elwha and Hoh drainages. Nearly every documented ascent, regardless of which line is climbed to the summit block, funnels through the same remote approach: the Sol Duc River trailhead, Heart Lake, High Divide, the exposed \"Catwalk\" ridge crossing, and Boston Charlie's Camp at the foot of the Bailey Range — this is genuinely backcountry mountaineering, far from any road.",
+  "beta": "Approach via High Divide Trail to Boston Charlie's Camp. From camp, this glacier variation gains the northeast cirque and Carrie Glacier (6,800 ft) rather than the direct southwest ridge scramble. Carrie Glacier descends from ~6,800 ft to ~5,000 ft, flowing north-northeast in a chute confined by an arête and Mount Fairchild. The route requires rope team travel with crevasse rescue equipment, probing for hidden crevasses, and awareness of seracs and icefall hazards. The approach, Catwalk included, is the same as the southwest ridge line; only the final entry to the summit differs, via the glacier.",
+  "turnaround": "Mandatory turnaround time: early afternoon. Glacier descent is slower and more hazardous than ascent; you must have daylight and clear visibility for safe rope management and crevasse detection. If you haven't summited by 2 PM, descend.",
+  "auto_generated": true,
+  "alpine_grade": "PD",
+  "rock_grade": null,
+  "ice_grade": null,
+  "gain_ft": 7450,
+  "loss_ft": 7650,
+  "dist_km": 20.9,
+  "max_angle": 50,
+  "rappels": null,
+  "commitment": "III",
+  "face": "Southwest ridge / Catwalk approach",
+  "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+  "comms": "Satellite communicator is mandatory on glacier travel. Cell coverage is nonexistent in the backcountry. Carry personal locator beacon (PLB) for serious emergencies.",
+  "descent": "Reverse the route, descending the summit scramble then re-crossing the Carrie Glacier roped up toward the High Divide.",
+  "obj_haz": [
+    "exposed unroped scrambling on the Catwalk",
+    "loose rock",
+    "snow/glacier travel near Carrie Glacier",
+    "sudden weather from the Pacific side",
+    "long remote approach far from rescue"
+  ],
+  "waypoints": [
+    {
+      "lat": 47.9548,
+      "lng": -123.8349,
+      "elev": 2000,
+      "name": "Sol Duc River Trailhead",
+      "note": "Road's-end trailhead on Sol Duc Hot Springs Road with large parking area and pit toilets; an Olympic National Park entrance pass is required, and overnight stays need a reserved wilderness permit.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From US-101 about 2 miles west of Lake Crescent, turn onto Sol Duc Hot Springs Road and drive roughly 14 miles past Sol Duc Hot Springs Resort to the road end at the Sol Duc River Trailhead, around 2,000 ft. There is a large parking area and pit toilets. You need an Olympic National Park entrance pass, and any overnight stay, including cross-country camping in the Bailey Range, needs an Olympic National Park wilderness permit, so sort that out before you leave."
+    },
+    {
+      "lat": 47.95144,
+      "lng": -123.81905,
+      "elev": 1951,
+      "name": "Sol Duc Falls crossing",
+      "note": "Trail crosses the Sol Duc River on a footbridge right above the falls — first reliable water and a popular day-hike turnaround point.",
+      "type": "Water",
+      "distMi": 0.8
+    },
+    {
+      "lat": 47.926653,
+      "lng": -123.823782,
+      "elev": 3525,
+      "name": "Deer Lake Trail junction",
+      "note": "Stay on the Sol Duc River Trail past this junction rather than detouring to Deer Lake; trail keeps climbing toward Sol Duc Park and Heart Lake.",
+      "type": "Junction",
+      "distMi": 3.7
+    },
+    {
+      "lat": 47.90981,
+      "lng": -123.73438,
+      "elev": 4744,
+      "name": "Heart Lake",
+      "note": "Valentine-shaped tarn with established treeline campsites — last reliable water and camp before leaving the maintained trail for the Bailey Range; top off here.",
+      "type": "Campsite",
+      "distMi": 7.85
+    },
+    {
+      "lat": 47.90782,
+      "lng": -123.738013,
+      "elev": 5042,
+      "name": "High Divide / Cat Basin Trail junction",
+      "note": "Maintained trail ends where High Divide meets the Cat Basin primitive route; a primitive trail continues east along the divide crest toward Cat Peak with no water for several miles.",
+      "type": "Junction",
+      "distMi": 8.3
+    },
+    {
+      "lat": 47.9001113,
+      "lng": -123.6800913,
+      "elev": 5940,
+      "name": "Cat Peak ridge & the Catwalk",
+      "note": "Worn track gains the ridge at Cat Peak, where the exposed, boulder-strewn 'Catwalk' arête begins — Class 2-3 scrambling with real exposure linking Cat Peak to Mount Carrie.",
+      "type": "Hazard",
+      "distMi": 12.5
+    },
+    {
+      "lat": null,
+      "lng": null,
+      "elev": 6400,
+      "name": "Carrie Glacier crossing",
+      "note": "Rope up to cross the Carrie Glacier in Carrie's northeast cirque; climbers have reported open crevasses and steep ice requiring careful routefinding by late summer.",
+      "type": "Hazard",
+      "distMi": 13.5
+    },
+    {
+      "lat": 47.894273,
+      "lng": -123.649285,
+      "elev": 6995,
+      "name": "Mount Carrie summit",
+      "note": "High point of the Bailey Range; short scree/snow scramble from the top of the glacier onto the summit block.",
+      "type": "Summit",
+      "distMi": 14.5
+    }
+  ],
+  "gpx": [
+    [
+      47.9548,
+      -123.8349
+    ],
+    [
+      47.95144,
+      -123.81905
+    ],
+    [
+      47.926653,
+      -123.823782
+    ],
+    [
+      47.90981,
+      -123.73438
+    ],
+    [
+      47.90782,
+      -123.738013
+    ],
+    [
+      47.9001113,
+      -123.6800913
+    ],
+    [
+      47.89717665,
+      -123.66469315
+    ],
+    [
+      47.894242,
+      -123.649295
+    ]
+  ],
+  "elev_pts": null,
+  "disciplines": [
+    "mountaineering",
+    "scrambling"
+  ],
+  "timing": {
+    "totalHrs": 27.5,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 9.5,
+    "recommendedStart": "4:30 AM from camp",
+    "sectionBreakdown": [
+      {
+        "hrs": 4.5,
+        "note": "Drive to the Sol Duc trailhead (2,000 ft) and hike through old-growth forest past the Deer Lake junction to Heart Lake, the standard first-night camp for Bailey Range approaches.",
+        "fromTo": "Approach to Heart Lake",
+        "section": "Approach"
+      },
+      {
+        "hrs": 5,
+        "note": "Climb 1.5 mi to the High Divide crest, then follow the informal Bailey Range climbers' path through meadows and basins toward Carrie's northeast side, camping near the base of the …",
+        "fromTo": "Push into the Bailey Range",
+        "section": "Approach"
+      },
+      {
+        "hrs": 10,
+        "note": "A technical roped day: climb a sickle-shaped snow canyon to a 6,600 ft saddle, descend a short icefall (often a rappel off a snow picket) onto the Carrie Glacier, cross it roped up…",
+        "fromTo": "Carrie Glacier summit push",
+        "section": "Climb"
+      },
+      {
+        "hrs": 8,
+        "note": "Retrace the Bailey Range path back to High Divide and Heart Lake, then descend the Sol Duc trail to the trailhead — a long but straightforward exit day.",
+        "fromTo": "Hike out to trailhead",
+        "section": "Descent"
+      }
+    ]
+  },
+  "detailed_rack": "Standard glacier-travel kit: rope, harness, crevasse-rescue gear (prusiks, pickets, pulleys), ice axe and crampons; helmet for the rocky summit block. No technical rock rack normally needed.",
+  "what_to_bring": [
+    "rope",
+    "ice axe",
+    "crampons",
+    "crevasse rescue kit",
+    "helmet",
+    "navigation (map/GPS)",
+    "extra layers",
+    "overnight gear"
+  ],
+  "pro_tips": [
+    "Fill all water bottles/bladders at Heart Lake — there is no reliable water between there and the summit.",
+    "Most parties treat Carrie as part of a longer Bailey Range Traverse or a Cat Basin base camp rather than a standalone dayhike; plan wilderness permits accordingly."
+  ],
+  "watch_out": [
+    "Crevasses on the Carrie Glacier",
+    "Bergschrund near the summit",
+    "Exposed Class 3 summit block",
+    "Long committing wilderness approach"
+  ],
+  "pro_needs": "Snow/glacier protection (pickets) rather than rock pro; the summit scramble is unprotected Class 3.",
+  "best_season": "Mid-July through September for the most stable glacier and snow conditions.",
+  "high_point_ft": 6995,
+  "aid_grade": null,
+  "approach": "From US-101 about 2 miles west of Lake Crescent, turn onto Sol Duc Hot Springs Road and drive roughly 14 miles past Sol Duc Hot Springs Resort to the road-end trailhead (Sol Duc River Trailhead, ~2,000 ft). Hike the Sol Duc River Trail past Sol Duc Falls, continue about 1 mile past the Deer Lake Trail junction, then roughly 6 more miles to Heart Lake (4,800 ft). From Heart Lake, climb 1.5 miles to the High Divide crest (~5,100 ft) and turn east onto the primitive Cat Basin trail toward Cat Basin and Cat Peak. From there an unmaintained boot path crosses Cat Peak's exposed south side and the \"Catwalk\" — a narrow, airy ridge crest linking High Divide to the Bailey Range (Class 3, high consequence if you fall) — to Boston Charlie's Camp, the traditional jumping-off point for the Bailey Range Traverse and for Carrie itself. One-way distance from the trailhead to Boston Charlie's Camp/Cat Basin is roughly 13 miles; most parties camp at Heart Lake or Cat Basin and climb Carrie's summit as a long day from there.",
+  "descent_text": "Reverse the route: down the summit scramble, back across the glacier roped up, and out along the High Divide / Bailey Range.",
+  "bail": "Retreat by reversing the route; there is no quick exit from the Bailey Range. Bail from the high camps if weather or glacier conditions deteriorate.",
+  "pitch_detail": [
+    {
+      "grade": "Class 1-2",
+      "notes": "Same approach as the scramble route",
+      "pitch": "Sol Duc TH to Cat Basin"
+    },
+    {
+      "grade": "Class 3, exposed",
+      "notes": "Crux exposure before continuing toward Carrie",
+      "pitch": "The Cat Walk"
+    },
+    {
+      "grade": "Class 3 + glacier travel",
+      "notes": "Rope up for crevasse hazard near the glacier head in the northeast cirque below the summit; camps sometimes set around 6,600 ft",
+      "pitch": "Head of Carrie Glacier to summit"
+    }
+  ],
+  "itinerary": {
+    "cal": "Best climbed July-September when the Carrie Glacier is more open and crevasses/bergschrund are visible; Olympic NP requires a wilderness permit for Bailey Range cross-country camping.",
+    "days": [
+      {
+        "n": 1,
+        "note": "Drive to the Sol Duc trailhead (2,000 ft) and hike through old-growth forest past the Deer Lake junction to Heart Lake, the standard first-night camp for Bailey Range approaches.",
+        "hours": 4.5,
+        "miles": 7,
+        "title": "Approach to Heart Lake",
+        "gainFt": 2800,
+        "lossFt": 0,
+        "packLb": 40,
+        "schedule": [],
+        "objective": "Reach Heart Lake camp (4,800 ft)"
+      },
+      {
+        "n": 2,
+        "note": "Climb 1.5 mi to the High Divide crest, then follow the informal Bailey Range climbers' path through meadows and basins toward Carrie's northeast side, camping near the base of the glacier for a short summit push the next morning.",
+        "hours": 5,
+        "miles": 6,
+        "title": "Push into the Bailey Range",
+        "gainFt": 1800,
+        "lossFt": 600,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Camp near the toe of the Carrie Glacier"
+      },
+      {
+        "n": 3,
+        "note": "A technical roped day: climb a sickle-shaped snow canyon to a 6,600 ft saddle, descend a short icefall (often a rappel off a snow picket) onto the Carrie Glacier, cross it roped up, then scramble a short rocky section to the true summit before reversing the entire route to camp.",
+        "hours": 10,
+        "miles": 4,
+        "title": "Carrie Glacier summit push",
+        "gainFt": 2650,
+        "lossFt": 2650,
+        "packLb": 15,
+        "schedule": [
+          {
+            "time": "4:30 AM",
+            "label": "Leave high camp",
+            "detail": "Alpine start for the technical glacier day ahead."
+          },
+          {
+            "time": "+2.5 hr",
+            "label": "Reach the ~6,600 ft snow saddle",
+            "detail": "Via a sickle-shaped snow canyon above camp."
+          },
+          {
+            "time": "+3.5 hr",
+            "label": "Descend the icefall onto the Carrie Glacier",
+            "detail": "Often a short rappel off a snow picket; rope up for glacier travel."
+          },
+          {
+            "time": "+5 hr",
+            "label": "Cross the upper Carrie Glacier",
+            "detail": "Roped travel past crevasses toward the summit rocks."
+          },
+          {
+            "time": "+6.5 hr",
+            "label": "Reach the summit (6,995 ft)",
+            "detail": "Short scramble off the glacier to the true summit."
+          },
+          {
+            "time": "+10 hr",
+            "label": "Back at high camp",
+            "detail": "Reverse the glacier, icefall, and snow saddle."
+          }
+        ],
+        "objective": "Climb the Carrie Glacier to the 6,995 ft summit"
+      },
+      {
+        "n": 4,
+        "note": "Retrace the Bailey Range path back to High Divide and Heart Lake, then descend the Sol Duc trail to the trailhead — a long but straightforward exit day.",
+        "hours": 8,
+        "miles": 14,
+        "title": "Hike out to trailhead",
+        "gainFt": 200,
+        "lossFt": 4400,
+        "packLb": 32,
+        "schedule": [],
+        "objective": "Return to the Sol Duc trailhead"
+      }
+    ],
+    "totalNote": "A 4-day, roughly 31-mile round trip: two days of approach through the Bailey Range to a high camp near the Carrie Glacier's toe, one technical roped summit day (snow saddle, icefall, glacier crossing), then a long hike back out to the Sol Duc trailhead."
+  },
+  "access": {
+    "fees": "$8 per person per night camping fee plus a $6 wilderness-permit reservation fee; park entrance is $30/vehicle (7-day) or $15/person on foot/bike.",
+    "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+    "rules": "Bear canisters are required for food storage in the Sol Duc/Seven Lakes Basin zone (free rentals at the Port Angeles or Quinault Wilderness Information Centers); groups of 7 or more must use designated group campsites.",
+    "permit": "NPS Wilderness Permit required for any overnight backcountry camping, reserved via Recreation.gov; the quota season runs May 15–Oct 15 with permits releasing April 15.",
+    "group_limit": 12,
+    "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+    "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+    "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+    "passRequired": "America the Beautiful pass or Olympic NP entrance pass",
+    "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, per person per night; Sol Duc and Seven Lakes Basin is a quota area",
+      "where": "Reserve on Recreation.gov, or get one in person at a park Wilderness Information Center such as Port Angeles."
+    }
+  },
+  "road": {
+    "name": "Sol Duc Hot Springs Road (Sol Duc River Road)",
+    "status": "Paved, 2WD-accessible to the road-end trailhead",
+    "driveNote": "From US-101 near Lake Crescent, follow Sol Duc Hot Springs Road ~14 miles to the road-end parking area/trailhead.",
+    "seasonalGate": "Typically gated/closed by snow late October through late March; check NPS current road conditions before driving in."
+  },
+  "climate": {
+    "fall": "Possible into October but with shorter daylight and increasing storm frequency.",
+    "summer": "Best conditions Jul-Sep, with the most reliable snow-free travel across the Catwalk and summit slopes.",
+    "winter": "Not typically climbed; Sol Duc Road closes seasonally and the approach becomes exceptionally difficult.",
+    "typical": "Marine west coast climate with strong orographic lift as Pacific storms hit the Olympics; the Bailey Range's interior position means it still gets heavy frontal precipitation, and snow can linger on the Catwalk and summit gullies well into July.",
+    "bySeason": {
+      "fall": "Wet weather and early snow are possible from late September on; road and trail conditions deteriorate quickly.",
+      "spring": "Heavy lingering snowpack on the High Divide and Catwalk makes travel a full winter-mountaineering undertaking until road/trail access opens.",
+      "summer": "July–September is the dry climbing window: long clear spells punctuated by occasional frontal systems, cold nights at Heart Lake/Cat Basin camps, and possible afternoon cloud buildup.",
+      "winter": "Sol Duc Road is closed by snow; the Bailey Range becomes a serious, rarely-visited ski-mountaineering objective."
+    },
+    "forecastZone": "NWAC Olympics zone (nwac.us) for general mountain weather/snow trend context, though NWAC's detailed avalanche forecasting focuses on more accessible Olympic terrain than the interior Bailey Range."
+  },
+  "emergency": {
+    "notes": "This is trailless, remote terrain with unreliable-to-absent cell coverage; a serious injury near Carrie, Cat Basin, or the Catwalk will likely require NPS/county SAR helicopter evacuation.",
+    "county": "Clallam County",
+    "rangerStation": "Olympic National Park Wilderness Information Center, Port Angeles — 360-565-3100",
+    "nearestHospital": "Olympic Medical Center, 939 Caroline St, Port Angeles (roughly 1.5 hr drive from the Sol Duc trailhead)",
+    "sheriffDispatch": "911 (Clallam County Sheriff)"
+  },
+  "lists": null,
+  "crowds": {
+    "peakTraffic": "Rare even at midsummer peak; occasional small cluster of parties in August tied to Bailey Range Traverse season",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low — most climbers on the Carrie Glacier route are Bailey Range Traverse through-hikers tagging the summit en route; total climbers via this specific line are likely well under 100 per season, and dedicated ascents (not part of a larger traverse) are rare"
+  },
+  "partner_requirements": {
+    "fitnessSpec": {
+      "hiking": "Very high — multi-day sustained off-trail travel with major elevation gain/loss to reach a high camp, followed by a full glacier summit day",
+      "packWeight": "35-45+ lbs for a multi-day trip (overnight camping gear, bear canister, plus rope/crampons/glacier gear)"
+    },
+    "approachTime": "Long — typically a 2-3 day backpack via the Sol Duc/High Divide trail system into the Bailey Range high country to establish a high camp, followed by an alpine-start summit day",
+    "requiredSkills": [
+      "Glacier travel and crevasse rescue",
+      "Roped travel and basic mountaineering rope work",
+      "Steep snow/ice axe and crampon technique",
+      "Off-trail route-finding in remote alpine terrain",
+      "Class 3 scrambling on exposed, loose rock",
+      "Multi-day backcountry camping (bear canister required)"
+    ],
+    "experienceLevel": "Experienced glacier mountaineer with prior crevasse rescue practice; this is not an appropriate first glacier climb given the remoteness and complete lack of nearby rescue infrastructure"
+  },
+  "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September, with the firmest glacier travel and most melted-out summit block in the core of that window",
+    "monthBreakdown": {
+      "July": {
+        "reason": "Early-to-mid July can still carry heavier snow/less-consolidated glacier surface; conditions become favorable from mid-July onward",
+        "status": "good"
+      },
+      "August": {
+        "reason": "Best window — firmer glacier travel and a more melted-out, less snow-covered summit block",
+        "status": "optimal"
+      },
+      "September": {
+        "reason": "Still within the recommended window, but a short shoulder season — early storms and new snow are possible, and crevasses may be more open/exposed late in the season",
+        "status": "good"
+      }
+    }
+  },
+  "seasonal_hazards": {
+    "weather": {
+      "typical": "Cool, wet maritime climate with significant glaciation; weather can change rapidly in this interior range",
+      "probability": "Rapid weather shifts are the main concern rather than a specific afternoon-storm pattern; summer is the best but still variable window"
+    },
+    "exposure": "Exposed Class 3 scrambling and loose rock on the summit pyramid above the glacier; crevasse fall potential during the glacier approach; a long, remote wilderness approach far from help means any evacuation is a multi-hour-to-multi-day undertaking",
+    "avalanche": {
+      "zone": "N/A - non-glaciated-avalanche summer route; NWAC does not issue Olympics-zone avalanche forecasts during the mid-July-September climbing season (forecast season runs roughly Nov-Apr)",
+      "byMonth": {
+        "July": "N/A",
+        "August": "N/A",
+        "September": "N/A"
+      }
+    },
+    "crevasses": "Significant — glacier travel on the Carrie Glacier with crevasse hazard, plus a bergschrund near the summit; hazard is most pronounced early in the season (mid-July) and typically eases as the glacier surface consolidates through August, though crevasses can open up again late season"
+  },
+  "data_quality": {
+    "gaps": [
+      "No dedicated northeast/Carrie-Glacier-specific ascent line is documented in available trip reports (SummitPost, Mountaineers, WTA, and multiple independent TRs); nearly all sourced ascents use the southwest ridge via Boston Charlie's Camp. Worth confirming whether this route's name reflects a genuinely distinct glacier line or is describing the same approach as the SW Ridge route.",
+      "No sourced pitch count or grade detail for any bergschrund crossing near the summit.",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+  },
+  "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+  },
+  "approach_logistics": {
+    "peakLat": 47.894273,
+    "peakLng": -123.649285,
+    "trailhead": "Sol Duc Trailhead (Olympic NP)",
+    "trailheadLat": 47.955249,
+    "trailheadLng": -123.835839,
+    "trailheadDirection": "From the Sol Duc Trailhead at the end of Sol Duc Hot Springs Road"
+  },
+  "sling_rack": null,
+  "alpine_draws": null,
+  "rope_type": null,
+  "rope_length_m": null,
+  "rope_note": null,
+  "ascender": null,
+  "corrections": "The stored route name pairs 'Carrie Glacier' with the standard route, but sources (SummitPost, Wikipedia) place the Carrie Glacier in the peak's northeast cirque, on the opposite side of the mountain from the standard climbing line. The actual standard/easiest route does not cross or closely approach the Carrie Glacier — it climbs the southwest ridge from Boston Charlie's Camp via the High Divide Trail and the Catwalk. Route name left as given per instructions, but this mismatch should be considered if the name is ever revised.",
+  "gear_confidence": null,
+  "rappel_detail": null,
+  "rappel_count_note": null,
+  "rack": null,
+  "features": null,
+  "classic": false,
+  "gear_bucket": null,
+  "assumed_gear": null,
+  "gps_contributor_name": null,
+  "outing_shape": null,
+  "approach_variants": [
+    {
+      "name": "Sol Duc road end, High Divide and Cat Basin to the Catwalk",
+      "notes": "Every approach to this peak starts on the park's NORTH side. From the highway west of the big lake, turn onto the hot-springs road and drive to the road-end trailhead. Hike past the falls, continue past the Deer Lake junction, and climb to Heart Lake — the last reliable water and camp before you leave maintained trail. From there gain the High Divide crest and follow the primitive trail east from the junction above the lake toward Cat Basin. Beyond that an unmaintained boot path crosses the exposed south side of the peak at the end of the divide and then the CATWALK, a narrow airy ridge crest linking the divide to the Bailey Range, to reach the first camp beyond it. Most parties camp at Heart Lake or in Cat Basin and climb from there. Carry water from Heart Lake; there is none between it and the summit.",
+      "season": "July to September, once the divide is out of snow and before autumn weather closes the traverse.",
+      "hazards": [
+        "The Catwalk — an exposed sharp ridge crest with high consequence, and thin crumbly ledges with major exposure on the south side of the peak just before it",
+        "Crevasse hazard on the glacier and a bergschrund or moat near the summit block depending on season",
+        "Seracs and icefall in the confined chute",
+        "Loose rock and exposed scrambling on the summit pyramid",
+        "No reliable water between Heart Lake and the summit",
+        "Unsigned, unmaintained route beyond the trail's end; a long way from help"
+      ],
+      "baseFinding": "From the basin camp, this route gains the peak's NORTHEAST CIRQUE and the glacier in it — the discriminator is that you rope up, and you rope up before you step onto ice. The base of the climbing is the head of that glacier, at around sixty-eight hundred feet, where the ice ends against the summit pyramid: look for the point where the upper lip of the glacier abuts rock, with a bergschrund or moat between the two, and start the scramble there. The glacier flows north-northeast in a chute confined by an arete and the neighbouring summit, so the ice should be running away DOWNHILL AND NORTHEAST behind you as you turn onto the rock. Negative marker: if you are kicking up loose south-facing scree in full sun with no crevasses anywhere and no ice to be seen, you are on the scramble line on the peak's south side and are on the other route."
+    }
+  ],
+  "climbing_route": null,
+  "bivy": [
+    {
+      "elev": 4744,
+      "name": "Heart Lake",
+      "role": "main",
+      "type": "camp",
+      "notes": "The most useful camp in the whole zone for a climber. It sits just under eight miles in, a short climb below the High Divide, and it is the last camp on maintained trail with easy water before the route to Mount Carrie, Ruth Peak and Mount Fairchild leaves the trail for good. From here you gain the divide, follow it past Cat Peak, cross the exposed class 3 ridge known as the Catwalk, and the climbing starts. Parties who miss the permit sometimes take a Seven Lakes Basin camp such as Lunch Lake instead, but that puts you off the direct line and adds side-hilling in the morning. Fill every bottle here — the stretch from the divide out to the first Bailey Range camps carries no running water.",
+      "water": "Reliable — the lake and the creek feeding it, all season; this is the last dependable running water for a long way",
+      "permit": "Olympic wilderness permit required, QUOTA camp booked for a specific night on the federal booking site. Reservations for the summer season open in the spring and the High Divide camps are among the fastest to go in the park, often within minutes. Bear canisters mandatory, no campfires.",
+      "capacity": "A small number of designated sites under a nightly cap, with a vault toilet; group parties must use the designated group site"
+    },
+    {
+      "name": "Cat Basin",
+      "role": "main",
+      "type": "camp",
+      "notes": "Cat Basin lies just below the junction at roughly 5,042 ft where the High Divide trail meets the way into the Bailey Range, so it is the last sheltered ground on the approach before the route turns cross-country beneath Cat Peak. Parties heading for Mount Carrie use it to shorten the following morning and to get below the wind, since the divide itself is fully exposed. It is genuinely primitive — expect to be finding your own flat spot on durable ground, and expect the sites to be scattered rather than obvious. In heavy snow years the basin fills late and the traverse out to the Catwalk holds steep snow well into July.",
+      "water": "Streams in the basin early in the season, unreliable by late summer; carry from Heart Lake if the year has been dry",
+      "permit": "Olympic wilderness permit required. This one is worth phoning the park's wilderness information office about rather than assuming — the primitive and cross-country parts of this area are not all bookable through the standard online map, and staff issue those permits directly. Bear canisters mandatory, campfires banned outright at this height.",
+      "capacity": "A primitive designated area rather than a developed camp; a handful of tent spots, no toilet you should count on"
+    },
+    {
+      "elev": 1684,
+      "name": "Sol Duc Hot Springs Resort campground",
+      "role": "route",
+      "type": "camp",
+      "notes": "The drive-in staging base for every objective in this zone except Mount Angeles, a couple of miles short of the end of the Sol Duc Hot Springs Road where the trailhead for the High Divide and Appleton Pass sits. Climbers use it the night before, because the walk to Heart Lake or Appleton Pass is long enough that leaving Port Angeles in the morning wastes the day. It opens with the season, roughly late March into late October, and it fills solidly on summer weekends. It is a staging base and nothing more — from here you still have the entire approach ahead of you, and every camp above it is permit-controlled.",
+      "water": "Potable water and flush toilets in the comfort stations through the operating season",
+      "permit": "No wilderness permit — this is a frontcountry campground with a nightly fee, taken on the federal recreation booking site or through the resort. Park entrance fee applies. Fires are allowed in the provided rings here, unlike anywhere you are going above it.",
+      "capacity": "Around 82 tent sites plus a smaller RV loop; most tent sites are reservable and a handful are held back first-come"
+    },
+    {
+      "elev": 5543,
+      "name": "Boston Charlie's Camp",
+      "role": "route",
+      "type": "bivy",
+      "notes": "This is the first camp on the far side of the Catwalk and the recognised start of the Bailey Range proper. It matters because it puts you directly at the foot of Mount Carrie's southwest ridge, where the route gains around 2,000 ft in under a mile on a semi-cairned bootpack, so a party camped here can be on the summit early and off the loose ground before the afternoon. Getting to it means crossing the exposed class 3 ridge between Cat Peak and Carrie with a full pack, which is the crux of the approach for most people and not somewhere to be in wet weather. The water is the honest drawback and the reason some parties push straight through to the basins beyond.",
+      "water": "Poor and the standing complaint about the place — a shallow sinkhole pond that is often silty and stagnant, and nothing else nearby. Filter and treat, and consider carrying from Heart Lake or Cat Basin",
+      "permit": "Covered by an Olympic wilderness cross-country permit, which for the Bailey Range is arranged directly with the park's wilderness information office rather than booked as a named campsite online. Bear canisters mandatory. No fires. Camp on durable surfaces — snow, rock or gravel — and pack out everything.",
+      "capacity": "Informal cross-country bivy sites for a couple of small parties; no facilities of any kind"
+    }
+  ],
+  "prot_rating": null,
+  "start_type": null,
+  "landing": null,
+  "pads": null,
+  "rock": null,
+  "crux": null,
+  "access_checked_at": null,
+  "name_search": "standard route rte carrie glacier glac gl high divide",
+  "ice_grade_num": null,
+  "mixed_grade_num": null,
+  "aid_grade_num": null
+}
