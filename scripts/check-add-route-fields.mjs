@@ -127,10 +127,7 @@ const MUST_COVER = [
   // PROSE: the walk-in narrative the Planner renders. An approved contribution would have shown
   // "3to6" as its APPROACH section. Nothing read those keys back, so nothing was lost. A future
   // approach control has to write a SENTENCE, and then this name belongs here again.
-  // `style` was REMOVED deliberately (2026-09-25): the user asked for route tags and features to
-  // come out of the app, so the form no longer asks for a "Style / character" and the route page
-  // no longer draws the chips it fed. `routes.features` still exists; nothing collects it now.
-  "season", "commit", "descentText", "haz", "gear", "beta",
+  "season", "commit", "descentText", "style", "haz", "gear", "beta",
   // the eight #794 added; every one of these was a question the form asked and could not store
   "protRating", "fa", "crux", "landing", "startType", "rap", "turn", "comms",
 ];

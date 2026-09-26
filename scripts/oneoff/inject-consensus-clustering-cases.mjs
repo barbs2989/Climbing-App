@@ -38,7 +38,7 @@ const CASES = [
   {
     name: "2 chip order matters again (SET_FIELDS emptied)",
     expect: "fail",
-    edit: (s) => s.replace("var SET_FIELDS={haz:1,objHaz:1,condWindow:1};", "var SET_FIELDS={};"),
+    edit: (s) => s.replace("var SET_FIELDS={haz:1,objHaz:1,style:1,condWindow:1};", "var SET_FIELDS={};"),
   },
   {
     name: "3 wording tolerance removed (normEditStr made identity)",
