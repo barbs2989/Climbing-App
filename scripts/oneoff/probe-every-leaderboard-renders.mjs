@@ -88,15 +88,14 @@ for (const disc of ["all", "mountaineering", "alpine", "scrambling"]) {
 }
 
 // Signed in, your trust row must show YOUR real score (the one on your Profile), not the preview
-// formula the example climbers are scored on — and the board must say the two differ.
+// formula the example climbers are scored on. (The note saying the two differ was removed at the
+// user's request on 2026-09-25, with every other "example profiles" note in the app.)
 const REAL = 99; // high enough that a board honouring it MUST put you first
 const signedIn = dec(render("all", "trust", logs, REAL));
 const myTrustRow = signedIn.match(/aria-label="#\d+, [^"]*, you, [^"]*, (\d+) trust"/);
 const youCard = signedIn.match(/You’re #(\d+)/);
 ok(!!myTrustRow && +myTrustRow[1] === REAL, `signed-in trust row shows your real score: ${myTrustRow ? myTrustRow[1] : "(not in top 15)"} (expected ${REAL})`);
-ok(/yours is your real score/.test(signedIn), "signed-in trust board says example scores are illustrative");
 const demo = dec(render("all", "trust", logs));
-ok(!/yours is your real score/.test(demo), "demo (no real score) does not add that note");
 const demoRank = +(demo.match(/You’re #(\d+)/) || [0, 0])[1], realRank = +(youCard || [0, 0])[1];
 ok(realRank === 1 && demoRank > 1, `your trust rank follows your real score (preview formula #${demoRank}, real score #${realRank})`);
 
