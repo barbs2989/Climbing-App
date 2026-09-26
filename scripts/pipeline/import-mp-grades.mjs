@@ -77,7 +77,9 @@ function parseCsv(text) {
 // "3rd" / "4th" / "Easy 5th" count as YDS only at the start of a rating, as the export writes them.
 // The V token takes "V0+", "V3-4", "VB" and "V-easy"; each is numbered by gradeNumFrom exactly as
 // the boulders already in the catalog are.
-const TOK = { wi: /\b(?:WI|AI)\d(?:[+-]|-\d)?/, m: /\bM\d+(?:[+-]|-\d+)?/, aid: /\b[AC]\d(?:[+-]|-\d)?/, yds: /\b5\.\d+[abcd]?(?:\/[abcd])?[+-]?|^(?:Easy 5th|3rd|4th)\b/, v: /\bV(?:\d+|B|-easy)(?:[+-]|-\d+)?(?![a-z])/ };
+// The RANGE alternative comes first: with "[+-]" first, "V3-4" matched as "V3-" and "WI3-4" as "WI3-",
+// numbering the low end where the catalog numbers the high one (V0-1 = 1 on 1,134 rows).
+const TOK = { wi: /\b(?:WI|AI)\d(?:-\d|[+-])?/, m: /\bM\d+(?:-\d+|[+-])?/, aid: /\b[AC]\d(?:-\d|[+-])?/, yds: /\b5\.\d+[abcd]?(?:\/[abcd])?[+-]?|^(?:Easy 5th|3rd|4th)\b/, v: /\bV(?:\d+|B|-easy)(?:-\d+|[+-])?(?![a-z])/ };
 function tokens(rating) {
   const out = {};
   for (const [s, rx] of Object.entries(TOK)) { const m = String(rating || "").trim().match(rx); if (m) { const n = gradeNumFrom(m[0], s); if (n != null) out[s] = { tok: m[0], num: n }; } }
@@ -86,11 +88,14 @@ function tokens(rating) {
 
 // With CREATE (--create-areas), a level still missing after the skip rule is CREATED, with every
 // level below it, under the deepest area we have — Mountain Project's own structure, by name.
-// Never under an area that already holds routes: an area holds routes OR sub-areas, never both
-// (trg_areas_leaf_xor), so such a route is refused. Created areas are PLANNED here and reused by the
+// An area holds routes OR sub-areas, never both (trg_areas_leaf_xor). When Mountain Project hangs a
+// sub-area under an area of ours that already holds routes, that area is SPLIT the way etl-state
+// files a crag with both: its routes move to a same-named "<id>_climbs" child, and MP's sub-area is
+// created beside it. The split is PLANNED here (splits: area id -> planned _climbs area) and applied
+// by runState only if a route actually lands under a new sub-area. Created areas are PLANNED here and reused by the
 // next route that names them; runState inserts them, parents first, before any route.
-function resolver(stateId, stateName, planned) {
-  const rows = sql(`select a.id, a.name, a.parent_id from areas a where a.path <@ (select path from areas where id = ${q(stateId)})`);
+function resolver(stateId, stateName, planned, splits) {
+  const rows = sql(`select a.id, a.name, a.parent_id, a.lat, a.lng, a.path::text as path from areas a where a.path <@ (select path from areas where id = ${q(stateId)})`);
   const direct = new Set(sql(`select distinct r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(stateId)})`).map(r => r.area_id));
   const kids = new Map(), hasKids = new Set(rows.map(r => r.parent_id)), ids = new Set(rows.map(r => r.id));
   for (const r of rows) { const k = r.parent_id + "|" + areaNorm(r.name); (kids.get(k) || kids.set(k, []).get(k)).push(r); }
@@ -104,8 +109,20 @@ function resolver(stateId, stateName, planned) {
     if (got.areaId) direct.add(got.areaId); // a placed route makes its area a leaf for the rest of the run
     return got;
   };
+  // WE MAY ALREADY HAVE THE AREA, FILED ELSEWHERE. MP files Fireplace Rock as "Cherokee Rock Village
+  // (Sand Rock) > Sand Rock Bouldering > Fireplace Rock"; ours is "Sand Rock > Fireplace Rock". Minting
+  // a new area for every level below the first mismatch made al_fireplace_rock_2 and added its routes
+  // again (168 in Alabama, ~1,069 in Alaska). So before a level is created, an EXISTING area of the
+  // same name within NEAR_KM of the route's own MP coordinates is used instead — if exactly one.
+  const byId = new Map(rows.map(r => [r.id, r])), byName = new Map();
+  for (const r of rows) { const k = areaNorm(r.name); (byName.get(k) || byName.set(k, []).get(k)).push(r); }
+  const coordOf = id => { for (let x = byId.get(id); x; x = byId.get(x.parent_id)) if (x.lat != null && x.lng != null) return x; return null; };
+  const sameNear = (name, geo) => {
+    if (!geo || geo.lat == null) return [];
+    return (byName.get(areaNorm(name)) || []).filter(r => r.path && r.lat != null && r.lng != null && km(r, geo) <= NEAR_KM);
+  };
   const placeInner = (chain, create, geo) => {
-    let cur = stateId, skips = 0;
+    let cur = stateId, skips = 0, created = false;
     for (let i = 0; i < chain.length; i++) {
       const c = kids.get(cur + "|" + areaNorm(chain[i])) || [];
       if (c.length === 1) { cur = c[0].id; continue; }
@@ -113,16 +130,25 @@ function resolver(stateId, stateName, planned) {
       const nxt = i + 1 < chain.length ? (kids.get(cur + "|" + areaNorm(chain[i + 1])) || []) : [];
       if (nxt.length === 1 && skips < 2) { skips++; continue; }
       if (!create) return { why: "area not in our catalog" };
-      if (direct.has(cur)) return { why: "would nest areas under an area that holds routes" };
-      for (let j = i; j < chain.length; j++) {
-        const leaf = j === chain.length - 1;
-        const a = { id: mint(chain[j]), name: chain[j], parent_id: cur, area_type: leaf ? "crag" : "region", region: stateName, lat: leaf ? geo.lat : null, lng: leaf ? geo.lng : null };
-        planned.push(a); rows.push(a); hasKids.add(cur);
-        const k = cur + "|" + areaNorm(a.name); (kids.get(k) || kids.set(k, []).get(k)).push(a);
-        cur = a.id;
+      const near = sameNear(chain[i], geo);
+      if (near.length === 1) { cur = near[0].id; continue; }
+      if (near.length > 1) return { why: "ambiguous area name" };
+      // Create THIS level only, in MP's order; the next level gets its own chance to match.
+      if (direct.has(cur)) {
+        if (ids.has(cur + "_climbs")) return { why: "would nest areas under an area that holds routes" };
+        const x = byId.get(cur);
+        const s = { id: cur + "_climbs", name: x.name, parent_id: cur, area_type: "crag", region: stateName, lat: x.lat ?? null, lng: x.lng ?? null };
+        ids.add(s.id); rows.push(s); byId.set(s.id, s); hasKids.add(cur); direct.delete(cur); direct.add(s.id);
+        const k = cur + "|" + areaNorm(s.name); (kids.get(k) || kids.set(k, []).get(k)).push(s);
+        splits.set(cur, s);
       }
-      return { areaId: cur, created: true };
+      const leaf = i === chain.length - 1;
+      const a = { id: mint(chain[i]), name: chain[i], parent_id: cur, area_type: leaf ? "crag" : "region", region: stateName, lat: leaf ? geo.lat : null, lng: leaf ? geo.lng : null };
+      planned.push(a); rows.push(a); byId.set(a.id, a); hasKids.add(cur);
+      const k = cur + "|" + areaNorm(a.name); (kids.get(k) || kids.set(k, []).get(k)).push(a);
+      cur = a.id; created = true;
     }
+    if (created && planned.some(a => a.id === cur)) return { areaId: cur, created: true };
     if (hasKids.has(cur)) {
       const c = (kids.get(cur + "|" + areaNorm(chain[chain.length - 1])) || []).filter(r => r.id === cur + "_climbs");
       if (c.length !== 1) return { why: "area has sub-areas and no _climbs child" };
@@ -131,8 +157,16 @@ function resolver(stateId, stateName, planned) {
     }
     return { areaId: cur };
   };
-  return place;
+  return Object.assign(place, { coordOf });
 }
+
+// The route's own area coordinates from the export (0 / blank = unknown).
+const geoOf = r => { const lat = +r["Area Latitude"], lng = +r["Area Longitude"]; return Number.isFinite(lat) && lat !== 0 && Number.isFinite(lng) && lng !== 0 ? { lat, lng } : null; };
+// Great-circle km between two {lat, lng}.
+const km = (a, b) => { const R = 6371, r = x => x * Math.PI / 180, dLat = r(b.lat - a.lat), dLng = r(b.lng - a.lng); const h = Math.sin(dLat / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLng / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
+// An existing area this close, with the same name, IS the area MP names. A route this close, with the
+// same name, in another area, is refused as a possible duplicate.
+const NEAR_KM = 5, ROUTE_NEAR_KM = 1;
 
 // A route TYPED ice / mixed / aid keeps the first import's precedence. An aid grade on a route not
 // typed Aid ("5.10 A0" on a trad line — a pendulum or a pulled bolt) no longer outranks its free
@@ -161,8 +195,19 @@ async function runState(st) {
     if (!/_(ice|mixed|aid|rock|boulder)_\d+_\d+(?:_a\d+)?\.csv$/.test(f)) continue;
     for (const r of parseCsv(readFileSync(DIR + "/" + f, "utf8"))) if (r.URL) byUrl.set(r.URL, r);
   }
-  const planned = [];
-  const place = resolver(st.id, st.name, planned);
+  // A state whose rock/boulder crawl is unfinished is REFUSED, not half-imported: every file at the
+  // 1,000-row cap must have its splits on disk (both grade halves, or at least one sub-area file).
+  const has = new Set(files);
+  for (const f of files) {
+    const m = f.match(/^(.+)_(rock|boulder)_(\d+)_(\d+)((?:_a\d+)?)\.csv$/);
+    if (!m) continue;
+    if (readFileSync(DIR + "/" + f, "utf8").split("\n").filter(l => l.trim()).length - 1 < 1000) continue;
+    const [, s, t, lo, hi, sub] = m, L = +lo, Hh = +hi, mid = Math.floor((L + Hh) / 2);
+    const done = Hh - L > 1 ? has.has(`${s}_${t}_${L}_${mid}${sub}.csv`) && has.has(`${s}_${t}_${mid + 1}_${Hh}${sub}.csv`) : files.some(g => g.startsWith(`${s}_${t}_${L}_${Hh}_a`) && g !== f);
+    if (!done) { console.log(`${st.name}: crawl not finished (${f} is at the cap and not yet split) — skipped`); return {}; }
+  }
+  const planned = [], splits = new Map();
+  const place = resolver(st.id, st.name, planned, splits);
   const refused = {}, matched = [], added = [];
   const cand = [];
   // Existing-area placements first, so an area CREATED for one route is never planned as a leaf
@@ -197,8 +242,11 @@ async function runState(st) {
   const loose = s => norm(s).replace(/['’`]/g, "").replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
   const looseByArea = new Map();
   for (const x of existing) (looseByArea.get(x.area_id) || looseByArea.set(x.area_id, []).get(x.area_id)).push({ xn: loose(x.name), name: x.name });
+  const stateNames = new Map();
+  for (const x of sql(`select r.name, r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(st.id)})`)) { const k = loose(x.name); (stateNames.get(k) || stateNames.set(k, []).get(k)).push(x); }
   for (const { r, tk, areaId } of cand) {
-    const name = decode(r.Route);
+    // " | 8010" on 26 names is MP's own disambiguation suffix, not part of the name.
+    const name = decode(r.Route).replace(/\s*\|\s*\d+$/, "");
     const e = byKey.get(areaId + "|" + norm(name));
     if (e) {
       const p = {};
@@ -210,13 +258,19 @@ async function runState(st) {
       continue;
     }
     const k = areaId + "|" + norm(name);
-    if (seenNew.has(k)) continue; seenNew.add(k);
+    if (seenNew.has(k)) { refused["second MP route with the same name in the area"] = (refused["second MP route with the same name in the area"] || 0) + 1; continue; }
+    seenNew.add(k);
     // A POSSIBLE DUPLICATE IS REFUSED, NOT ADDED. Some routes in our catalog were named by hand
     // (the 14ers, the WA alpine batches), so "North Couloir" here may be our "North Couloir (Holy
     // Cross)". A name contained in, or containing, a route already on this area is left for a person.
     const nn = loose(name);
     const near = nn.length >= 4 && (looseByArea.get(areaId) || []).find(({ xn }) => xn.length >= 4 && (xn.includes(nn) || nn.includes(xn)));
     if (near) { refused["possible duplicate of an existing route"] = (refused["possible duplicate of an existing route"] || 0) + 1; if (SAMPLE) nearDup.push(name + "  ~  " + near.name + "  (" + areaId + ")"); continue; }
+    // ...and the same name within ROUTE_NEAR_KM in ANOTHER area of the state is refused too: our tree
+    // may file that crag under a different parent than MP does.
+    const here = place.coordOf(areaId) || geoOf(r);
+    const twin = here && (stateNames.get(nn) || []).find(o => o.area_id !== areaId && (o.c = place.coordOf(o.area_id)) && km(here, o.c) <= ROUTE_NEAR_KM);
+    if (twin) { refused["same name within 1 km in another area"] = (refused["same name within 1 km in another area"] || 0) + 1; if (SAMPLE) nearDup.push(name + "  ==  " + twin.name + "  (" + twin.area_id + ")"); continue; }
     const disc = disciplineOf(r["Route Type"], tk);
     if (!disc) { refused["type and grade do not agree"] = (refused["type and grade do not agree"] || 0) + 1; continue; }
     const primary = PRIMARY[disc](tk);
@@ -236,6 +290,11 @@ async function runState(st) {
   // route refused after its area was planned must not leave an empty area behind.
   const plannedById = new Map(planned.map(a => [a.id, a])), keep = new Set();
   for (const x of inserts) for (let id = x.area_id; plannedById.has(id) && !keep.has(id); id = plannedById.get(id).parent_id) keep.add(id);
+  // A split takes effect only when a kept new area hangs under the split area; its routes then move
+  // to the _climbs child, and so does every route this run adds to the split area itself.
+  const effSplits = [...splits.entries()].filter(([x]) => planned.some(a => keep.has(a.id) && a.parent_id === x)).map(([x, c]) => ({ x, c }));
+  const splitTo = new Map(effSplits.map(({ x, c }) => [x, c.id]));
+  for (const ins of inserts) if (splitTo.has(ins.area_id)) ins.area_id = splitTo.get(ins.area_id);
   const newAreas = planned.filter(a => keep.has(a.id));
   if (SAMPLE && newAreas.length) {
     console.log("  sample NEW AREAS:");
@@ -247,10 +306,29 @@ async function runState(st) {
     console.log("  sample GAIN A GRADE:"); for (const x of patches.slice(0, 8)) console.log("    " + x.id + " " + JSON.stringify(x.p));
     console.log("  possible duplicates refused:"); for (const x of nearDup.slice(0, 12)) console.log("    " + x);
   }
-  console.log(`${st.name}: ${byUrl.size} exported | matched ${matched.length} (${patches.length} gain a grade) | new ${inserts.length}` + (CREATE ? ` (${newAreas.length} new areas)` : "") + ` | refused ${nRef}` + (nRef ? " " + JSON.stringify(refused) : ""));
-  if (!APPLY) return { exported: byUrl.size, matched: matched.length, patched: patches.length, added: inserts.length, areas: newAreas.length, refused: nRef };
+  console.log(`${st.name}: ${byUrl.size} exported | matched ${matched.length} (${patches.length} gain a grade) | new ${inserts.length}` + (CREATE ? ` (${newAreas.length} new areas)` : "") + (effSplits.length ? ` (${effSplits.length} areas split into _climbs + sub-areas)` : "") + ` | refused ${nRef}` + (nRef ? " " + JSON.stringify(refused) : ""));
+  if (SAMPLE) for (const { x, c } of effSplits.slice(0, 8)) console.log("  split " + x + " -> routes to " + c.id + ", new beside it: " + planned.filter(a => keep.has(a.id) && a.parent_id === x && a.id !== c.id).map(a => a.name).join(", "));
+  if (!APPLY) return { exported: byUrl.size, matched: matched.length, patched: patches.length, added: inserts.length, areas: newAreas.length, splits: effSplits.length, refused: nRef };
 
-  // Areas first, parents before children (planned order already is), one at a time so the path
+  // Splits first, one transaction each: the _climbs child is created BESIDE the area (the leaf-XOR
+  // trigger forbids it under an area holding routes), the routes move into it, it is re-parented
+  // under the area, and the area gets back the count the move took off it (the move did -n on the
+  // area and nothing net on its ancestors; a re-parent does not re-bump route_count).
+  const num = v => v == null ? "null" : String(+v);
+  for (const { x, c } of effSplits) {
+    const n = sql(`select count(*)::int n from routes where area_id = ${q(x)}`)[0].n;
+    sql(`begin;
+      insert into areas (id, name, parent_id, area_type, region, lat, lng) values (${q(c.id)}, ${q(c.name)}, (select parent_id from areas where id = ${q(x)}), 'crag', ${q(c.region)}, ${num(c.lat)}, ${num(c.lng)});
+      update routes set area_id = ${q(c.id)} where area_id = ${q(x)};
+      update areas set parent_id = ${q(x)} where id = ${q(c.id)};
+      update areas set route_count = route_count + ${n} where id = ${q(x)};
+      select 1 as ok;
+      commit;`, 1);
+    const b = sql(`select (select count(*)::int from routes where area_id = ${q(x)}) as rest, (select count(*)::int from routes where area_id = ${q(c.id)}) as moved, (select parent_id from areas where id = ${q(c.id)}) as par, (select route_count from areas where id = ${q(c.id)}) as cc`)[0];
+    if (b.rest !== 0 || b.moved !== n || b.par !== x || +b.cc !== n) throw new Error(`${st.name}: split ${x} did not land ${JSON.stringify(b)} (expected ${n} moved)`);
+  }
+
+  // Then new areas (skipping the _climbs children the splits already made), parents before children (planned order already is), one at a time so the path
   // trigger sees each parent; each read back before a route is pointed at it.
   for (const a of newAreas) {
     const r = await fetchRetry(`${SUPABASE_URL}/rest/v1/areas`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(a) });
