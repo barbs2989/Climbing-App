@@ -5,7 +5,8 @@
 //
 // fixes.json is an array of { id, why, set: { <path>: { from?, to } } }. A path is a top-level column (`best_season`),
 // one key of a jsonb column (`access.notes`, `access._raw`), or one month of the calendar
-// (`seasonal_guidance.monthBreakdown.May`, whose `to` is {status, reason} or null to drop the month).
+// (`seasonal_guidance.monthBreakdown.May`, whose `to` is {status, reason} or null to drop the month), or the calendar's
+// `seasonal_guidance.optimalWindow` sentence (<=140 chars).
 // `from` must equal the live value exactly (deep-equal for objects), or the whole batch is refused — so a fix
 // researched against a row that has since changed can never land on the new text. `from` may be omitted only for a
 // calendar month. Other refusals: a `season` that is not a <=12-char window seasonWindowMonths parses; any rendered
@@ -47,6 +48,11 @@ for (const f of fixes) {
     if (!rest.length) {
       if (!same(p.after[col], from)) { errors.push(`${at}: ${path} is not the expected value (live: ${JSON.stringify(p.after[col])?.slice(0, 90)})`); continue; }
       p.after[col] = to;
+    } else if (col === "seasonal_guidance" && rest.join(".") === "optimalWindow") {
+      if (!p.after[col]) { errors.push(`${at}: no calendar to edit`); continue; }
+      if (!same(p.after[col].optimalWindow, from)) { errors.push(`${at}: ${path} is not the expected value`); continue; }
+      if (typeof to !== "string" || !to.trim() || to.length > 140) { errors.push(`${at}: ${path} must be 1-140 chars`); continue; }
+      p.after[col].optimalWindow = to.trim();
     } else if (col === "seasonal_guidance") {
       const m = rest[rest.length - 1];
       if (rest[0] !== "monthBreakdown" || !MONTHS.includes(m)) { errors.push(`${at}: bad calendar path ${path}`); continue; }
