@@ -28222,3 +28222,75 @@ this batch since no writes were made (read-only anon key query only, via curl ag
 the REST API). Research this batch was split across three parallel subagents (one per
 route cluster) using WebSearch; none reported working WebFetch access, consistent with
 recent batches' egress-blocked status.
+
+## Batch 348 (2026-09-26, pass 6)
+
+Audited: Mount Rainier Gibraltar Ledges, Ingraham Direct, Kautz Glacier, Kautz Headwall,
+Liberty Ridge, Mowich Face, Nisqually Icefall, Ptarmigan Ridge (8 routes; continuing the
+Rainier cluster after batch 347).
+
+**Fixed (2):** `wa_mount_rainier_liberty_ridge` and `wa_mount_rainier_ptarmigan_ridge` both
+stored White River Road (off SR 410) as "typically open late June–early October." NPS's own
+historical seasonal-road-opening notices show it typically opens mid-to-late May (as early as
+May 1 some years) and closes mid-to-late October — a full month earlier than stored, which
+would have wrongly told a party planning Liberty Ridge's own mid-May–mid-June best-season
+window that the trailhead road wasn't open yet. Both `road.status` fields corrected. SQL in
+`audits/sql/2026-09-26-batch-348.sql`.
+
+**Flagged for human review (6):** `wa_mount_rainier_kautz_headwall`'s `descent_text` claims
+"NPS guidance" now recommends Zero-Thread ice anchors "over" V-threads because V-threads "can
+melt out before a party returns." No source found attributes this to NPS, and multiple
+ice-anchor references (Abalakov/V-thread technique writeups) describe a Zero-Thread as a
+bare-rope *variant* of the V-thread family, not a competing melt-resistant upgrade — if
+anything a corded V-thread outlasts a bare zero-thread. The premise looks inverted, but
+correcting it well means rewriting the technique explanation, not swapping one fact, and NPS's
+own route-brief PDF was egress-blocked to confirm directly — left for a human with PDF access
+rather than guessed. Ptarmigan Ridge's first-ascent date ("September 8, 1935") and Liberty
+Ridge's "~52 hours car-to-summit, finishing at Paradise" FA detail and its descent_text's
+paraphrase of an NPS "'up was down'" accident-pattern quote could not be independently pinned
+down in available sources (party names/years for Liberty Ridge and Ptarmigan Ridge's 1935 FAs
+are otherwise confirmed) — noted, not changed. Mowich Face's central-face FA party ("Dee
+Molenaar, Gene Prater, Jim Wickwire, Dick Pargeter") likewise couldn't be independently
+corroborated from available search snippets, though the separately-dated 1957 south-face and
+later north-face FA claims are consistent with what sources do confirm. Rainier's repeating
+`high_point_ft` of 14406 (flagged as a standardization question in batch 347) has a new wrinkle
+worth carrying forward: a 2024–2025 LiDAR resurvey puts the current bedrock high point at
+~14,406.3 ft — i.e. the stored figure now sits suspiciously close to that *new* bedrock number
+rather than either NPS's still-official 14,410/14,411 ft or the resurvey's ice-surface
+~14,394.6 ft reading. Still a human standardization call, not a typo, but worth knowing which
+figure it's actually tracking. Separately (not a stored-data error, just worth a human's
+awareness): an active August 2026 wildfire (Grand Park 2 Fire / Wonderland Complex) had an
+administrative closure over the White River/Sunrise corridor at the time of this research —
+transient wildfire closures move too fast for this audit's cadence to chase, but a human
+should sanity-check current road status before relying on this batch's Liberty Ridge/Ptarmigan
+Ridge fix in the very short term.
+
+**Clean (confirmed, no fix needed):** Gibraltar Ledges' and Ingraham Direct's 1870
+Stevens/Van Trump FA framing; Ingraham Direct's "breaks into crevasses by June, parties switch
+to the Disappointment Cleaver" note; Nisqually Icefall's 1948 Molenaar/Craig FA (AAC
+Publications); the $82 2026 Climbing Cost Recovery Fee and Nisqually-Paradise Road (SR 706)
+status shared across this cluster; Kautz Glacier's 1920 Fuhrer/Fuhrer/Toll/Myers FA and its
+August-Kautz-1857-turned-back-at-12,000-ft detail, both confirmed via UW Digital Collections
+and SummitPost/Wikipedia; Kautz Glacier's data_quality note citing NPS's ~460 attempts/year,
+52% summit success rate, and third-most-popular ranking (matches independent route-profile
+citations of the same NPS route brief); Kautz Glacier/Headwall's May–August season window; the
+$82 annual-fee "unlimited climbs that calendar year" characterization; Liberty Cap's 14,112 ft
+elevation (confirmed as the real, intentional top-out point for Liberty Ridge and the
+Mowich-area routes, not an error); and — the batch's most safety-relevant confirmation — the
+SR-165 Fairfax/Carbon River Bridge closure to Mowich Lake really is still fully in effect as of
+September 2026 with no funded reopening timeline (WSDOT's January 2026 planning study puts a
+rebuilt bridge, if approved at all, 6+ years out), and WSDOT's own notice confirms the closure
+covers foot and bike traffic too, not just vehicles — so both routes' "no public vehicle, bike,
+or foot access" wording is accurate as stored, not stale.
+
+`last_processed_id` advanced to `wa_mount_rainier_ptarmigan_ridge`; re-confirmed scope this
+batch: still 698 in-scope, 751 total wa_ alpine/mountaineering tagged (both unchanged from
+batch 347). No `.env`/`.env.local` present at run start (fresh clone) — none needed for the
+read-only anon-key REST queries this batch ran; the two fixes above were validated with
+`npm run check:sql` (using the same public anon key) before being written to the SQL file, and
+neither write was applied to the live DB. Research this batch was split across three parallel
+subagents (Gibraltar Ledges/Ingraham Direct/Nisqually Icefall; Kautz Glacier/Headwall; Liberty
+Ridge/Mowich Face/Ptarmigan Ridge) using WebSearch; WebFetch was attempted against nps.gov and
+was blocked by the environment's egress policy, consistent with recent batches, so the Kautz
+ice-anchor and NPS "up was down" checks rest on secondary corroboration rather than a direct
+read of the NPS route-brief PDFs.
