@@ -28413,3 +28413,61 @@ the SQL fix file with `npm run check:sql` before writing it. All three research 
 batch again reported WebFetch to nps.gov/fs.usda.gov/Wikipedia/SummitPost/CascadeClimbers as
 egress-blocked in this environment — verification rested on WebSearch snippets citing those
 same domains rather than direct fetches.
+
+## Batch 351 (2026-09-26) — pass 6
+
+Routes: `wa_mount_st_helens_monitor_ridge`, `wa_mount_st_helens_worm_flows`,
+`wa_mount_steel_first_divide`, `wa_mount_steel_standard`, `wa_mount_stuart_girth_pillar`,
+`wa_mount_stuart_ice_cliff_glacier`, `wa_mount_stuart_north_ridge`,
+`wa_mount_stuart_stuart_glacier_couloir`.
+
+**Fixed (2):** `wa_mount_st_helens_worm_flows` stated the Marble Mountain Sno-Park trailhead
+elevation three different ways in one row — 2,800 ft in both its `approach` and `beta` prose,
+but 2,680 ft in `waypoints[0].elev` and 2,700 ft in `bivy[0].elev`. USFS/WTA/AllTrails all
+independently give the Sno-Park as 2,800 ft, matching the row's own prose, so both structured
+fields were aligned to 2,800. `wa_mount_stuart_stuart_glacier_couloir` stored `max_angle: 80`,
+but the row's own `overview`/`beta` text caps the crux at "up to 60°" (most of the route is
+40-50°), and an independent route-guide source paraphrasing the Cascade Alpine Guide agrees
+("...to 60 degrees... most of the route is 40 to 50 degrees") — nothing anywhere supports 80°,
+so `max_angle` was corrected to 60.
+
+**Flagged for human review (6):** `wa_mount_st_helens_monitor_ridge` — the "Vertical Beach"
+nickname for the summit ash slope and the phrasing of its 1853 FA note (referring to the
+pre-1980-eruption south-side snow route, which the text already hedges) are both cosmetic,
+unverifiable-but-plausible items, not confirmed errors. `wa_mount_steel_first_divide` — stored
+trail mileage (12.7 mi, Staircase → First Divide) is ~0.4 mi short of two independent trail
+databases (13.1 mi); elevation gain matches exactly, so this looks like a real discrepancy, but
+no NPS-official mileage figure was reachable to adjudicate (WebFetch to nps.gov blocked).
+`wa_mount_steel_standard` — similarly, the Duckabush Trail's Olympic NP boundary mileage is
+stored as ~6.2 mi vs. ~6.7 mi in an independent Forest Service trail-page snippet; also, the FA
+is credited to "party unknown" for the July 19, 1897 ascent connected to O'Neil's expedition,
+which sources support but without a definitive named party either way. `wa_mount_stuart_girth_pillar`
+— FA party (Kit Lewis & Jim Nelson) is independently confirmed, but the stored FA year (1983)
+could not be corroborated or refuted from any source reached. `wa_mount_stuart_north_ridge` —
+internal contradiction: the row's own `fa` field credits Beckey & Marts (1963) with the first
+ascent including the Great Gendarme, matching the best-corroborated external sources, but this
+same row's `overview` prose separately claims Wickwire & Stanley first climbed the Gendarme
+directly in 1964 — the two fields disagree and no primary source (AAC Publications/SummitPost,
+both blocked) was reachable to adjudicate; left unchanged rather than guessed which field is
+wrong. `wa_mount_stuart_stuart_glacier_couloir` — separately from the `max_angle` fix above, its
+stored commitment grade (IV) is one grade above an external source's "Grade III Class 5+ ...to
+60 degrees"; this could be a real error, an edition/regrading difference, or a search-snippet
+paraphrase artifact, and `grade_num: 3` alongside a `grade` of "IV" (no YDS decimal, unlike this
+route's siblings) looks like it may be a data-quality/schema question rather than a route fact —
+both left for a human with direct guidebook access rather than fixed on weak sourcing.
+
+**Clean (1):** `wa_mount_stuart_ice_cliff_glacier` (Aug 5, 1957 Prater/Prater/Mahre FA, III/AI2-3
+grade, and the route's signature icefall/serac hazard characterization all independently
+corroborated, with no discrepancies found).
+
+`last_processed_id` advanced to `wa_mount_stuart_stuart_glacier_couloir`; re-confirmed scope
+this batch: still 698 in-scope, 751 total wa_ alpine/mountaineering tagged (both unchanged from
+batch 350); 241 in-scope routes remain unaudited this pass (next up: finishing the Mount Stuart
+cluster — The Gendarme, West Ridge — then Mount Teneriffe/Mount Terror). No `.env`/`.env.local`
+present at run start (fresh clone) — none needed, since this run used the anon key supplied
+directly in the task prompt for both the read-only research queries and for validating the SQL
+fix file with `npm run check:sql` before writing it (PR #811 was already open for this branch,
+so no new PR was opened). Both research subagents this batch again reported WebFetch to
+nps.gov/fs.usda.gov/Wikipedia/SummitPost/CascadeClimbers/mshinstitute.org/mountainproject.com as
+egress-blocked in this environment — verification rested on WebSearch snippets citing those same
+domains rather than direct fetches.
