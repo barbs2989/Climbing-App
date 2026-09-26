@@ -1,0 +1,1222 @@
+{
+ "results": [
+  {
+   "id": "wa_chimney_rock_west_face",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A: renamed 'South Peak via East Gully' and rewritten as the fourth-class line from the Chimney Glacier to the notch between the central and south summits and on to the South Peak; all Idaho west-face content removed",
+   "summary": "This climb is now Chimney Rock's South Peak by the east-side gully and ledges; the west-face pitches, rocking summit block and two-rope Rappel Chimney descent copied from Idaho's Chimney Rock are gone.",
+   "evidence": "Chimney Rock's route listing still holds only the East Face and East Face Direct; the west-face features (Rappel Chimney, start 30-40 ft right of it, rocking summit block, 40 ft rap to the northwest shoulder, double-rope rap) belong to the Idaho Selkirks Chimney Rock West Face. The encyclopedia entry (not used before) independently confirms the minor south peak at 7,440 ft beside the 7,727 ft central and 7,634 ft north spires, with the Chimney Glacier on the south and east. The South Peak ascent report gives: moat crossed on collapsed snow blocks, about three pitches of wet 4th class left of the main gully, wide ledges to below the notch (600 ft), 400 ft more to the South Peak, descent by the ledges with single-rope rappels, stoppers and slings for protection. A second ascent report to the same notch (for the main peak, not used before) independently describes short wet 4th-class steps and exposed 3rd-class ledges with two rappels on descent. Adjustment: instead of emptying pitch_detail it now carries a three-part breakdown taken from the South Peak account; rappel_detail is emptied since no rappel count is documented; grade set to Class 4 (grade_num 4 by lib/grade.js).",
+   "sources": [
+    "https://trailcatjim.com/chimney-rock-south-peak-via-east-gully/",
+    "https://trailcatjim.com/chimney-rock-main-peak-via-east-face/",
+    "https://en.wikipedia.org/wiki/Chimney_Rock_(Washington)",
+    "https://www.mountainproject.com/area/112042076/chimney-rock",
+    "https://www.summitpost.org/west-face-standard-route/158376"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_chimney_rock_west_face",
+     "expect_name": "West Face / South Summit (Standard)",
+     "name": "South Peak via East Gully"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "aspect",
+     "path": [],
+     "expect": "W",
+     "value": "E"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 5.6",
+     "value": "Class 4"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "grade_num",
+     "path": [],
+     "expect": 6,
+     "value": 4
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "overview",
+     "path": [],
+     "expect": "Chimney Rock is one of the most striking and sought-after technical summits of the Alpine Lakes high country, a twin-towered spire rising above the Lemah and Summit Chief peaks. The standard line gains the higher south summit by a committing glacier approach and several pitches of moderate rock high above remote lake basins.",
+     "value": "Chimney Rock is a steep peak on the Cascade Crest in the Alpine Lakes Wilderness with three summits: the central spire (7,727 ft) is the highest, the north peak is 7,634 ft, and the minor south peak is 7,440 ft. This line climbs the south peak. From the Chimney Glacier it takes wet fourth-class ground and ledges up the east side to the notch between the central and south summits, then continues about 400 ft to the top."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "beta",
+     "path": [],
+     "expect": "From the upper Chimney Glacier, ascend the prominent gully between the main summit and south peak. Follow Class 3-4 scrambling on debris and snow, traversing ledges through the couloir. Continue with Class 4-5 rock climbing on slabs and chimneys to gain the summit. The route involves both snow and rock sections requiring helmets and protection.",
+     "value": "From the upper Chimney Glacier, cross the moat at the foot of the rock and climb the face to the left of the main gully that drops from the notch between the central and south summits. About three pitches of wet, slippery fourth-class ground lead to a system of ledges, some of them very wide, that runs up to just below the notch, roughly 600 vertical ft above the glacier. From the notch, climb about 400 ft more to the South Peak. Stoppers and slings are enough protection."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "gear",
+     "path": [],
+     "expect": [
+      "two ropes, or a 60m lead rope plus a tag line (the Rappel Chimney rappel is rigged two-strand)",
+      "standard rack of nuts/stoppers",
+      "cams (helpful for parallel-sided cracks on P1-P2)",
+      "glacier kit (axe, crampons or microspikes late-season)",
+      "helmet",
+      "rappel gear/slings for tat"
+     ],
+     "value": [
+      "single 60m rope",
+      "small set of stoppers",
+      "slings and cord for anchors and rappels",
+      "glacier kit (axe, crampons, crevasse-rescue gear)",
+      "helmet"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "rappels",
+     "path": [],
+     "expect": "2 rappels: a short single-strand rap off the summit, then a two-strand rap down the Rappel Chimney - a second rope or tag line is required",
+     "value": "No fixed count: downclimb the ledges and make single-rope rappels over the steeper steps back to the glacier, from anchors you build."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "waypoints",
+     "path": [
+      5,
+      "name"
+     ],
+     "expect": "West-side glacier / moat crossing",
+     "value": "Chimney Glacier / moat crossing"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "expect": "Cross the small glacier on the west side of the peak below the face; the moat widens through late season and can force a detour by August.",
+     "value": "Cross the moat where the upper Chimney Glacier meets the rock; it widens through the season, so look for collapsed snow blocks or a bridge where it narrows."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "waypoints",
+     "path": [
+      5,
+      "directions"
+     ],
+     "expect": "Climb the moraine above camp to the glacier; a wet, grubby gully through the rock band is the usual way onto the ice. Rope up and cross the lower glacier bearing toward the toe of the south peak rather than the main-summit gully the East Face uses. Little is known about this connection, so budget route-finding time and be ready to improvise around the moat at the base of the face.",
+     "value": "Climb the moraine above camp; a wet, grubby gully through the rock band is the usual way onto the ice, avoiding the icefall. Rope up and cross the upper glacier toward the gully below the notch between the central and south summits, keeping clear of the deep bergschrund."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "waypoints",
+     "path": [
+      6,
+      "directions"
+     ],
+     "expect": "Off the glacier, the line starts in left-slanting grooves and cracks about thirty to forty feet climber's-right of the obvious Rappel Chimney. Higher up it passes through a chimney that is not visible from the base and which climbs and protects easily. Everything on this aspect stays wet, so the short fourth-class steps feel harder than their grade.",
+     "value": "Climb the face to the left of the main gully: about three pitches of wet, slippery fourth-class ground, then a system of ledges, some very wide, to just below the notch. Everything here stays wet, so the short fourth-class steps feel harder than their grade."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "expect": "South Summit, about 400 vertical feet above the notch; descend by downclimbing/rappelling back to the notch and the northwest-shoulder rappel station.",
+     "value": "South Peak, about 400 vertical feet above the notch; descend by downclimbing the ascent ledges and rappelling the steeper steps."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "waypoints",
+     "path": [
+      7,
+      "directions"
+     ],
+     "expect": "The ground eases off toward the top, finishing at the large, noticeably rocking block that doubles as the top anchor for the descent. This is Chimney Rock's south summit, not the main summit that the East Face route climbs. Coming down reverses the line: a short rappel off the north side back to the northwest shoulder, then a full double-rope rappel down the Rappel Chimney, and downclimbing from there to the glacier.",
+     "value": "From the notch, continue about 400 ft to the top of the South Peak. This is Chimney Rock's lower south summit, not the central main summit (7,727 ft) that the East Face route climbs. Come down the same way: the ledges are easy to pick out from above, and the steeper sections go with single-rope rappels."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "expect": "Cross the glacier toe to the base of the West Face, then climb 3 pitches — an awkward crack/groove pitch, a ladder-like chimney, and a final pitch of large tumbled blocks that's mo…",
+     "value": "Cross the upper Chimney Glacier and the moat, climb about three pitches of wet fourth-class ground and a ledge system left of the main gully to the notch, continue about 400 ft to the South Peak, then downclimb and rappel the same line back to camp."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "fromTo"
+     ],
+     "expect": "Summit day: West Face",
+     "value": "Summit day: South Peak"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "expect": "Cross the glacier toe to the base of the West Face, then climb 3 pitches — an awkward crack/groove pitch, a ladder-like chimney, and a final pitch of large tumbled blocks that's mostly scrambling to the summit. Descend with a short rap to the northwest shoulder followed by a longer double-rope rappel down the 'Rappel Chimney', downclimbing the rest to the glacier.",
+     "value": "Climb the moraine and a wet gully through the rock band onto the upper Chimney Glacier and cross the moat, then climb about three pitches of wet fourth-class ground and a system of ledges left of the main gully to the notch between the central and south summits. Continue about 400 ft to the South Peak, then descend the same way, downclimbing the ledges and rappelling the steeper steps on a single rope."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "title"
+     ],
+     "expect": "Summit day: West Face",
+     "value": "Summit day: South Peak"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "expect": "Climb the West Face to the summit",
+     "value": "Climb the East Gully line to the South Peak"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule"
+     ],
+     "expect": [
+      {
+       "time": "~5:30 AM",
+       "label": "Leave high camp",
+       "detail": "Cross the moraine and glacier toe toward the west side of the peak."
+      },
+      {
+       "time": "~9:00 AM",
+       "label": "Reach base of the West Face",
+       "detail": "Start of Pitch 1, about 30-40 ft right of the 'Rappel Chimney'."
+      },
+      {
+       "time": "9:00 AM-1:00 PM",
+       "label": "Climb the 3 pitches",
+       "detail": "Left-trending grooves/cracks, then an easy protectable chimney, then a block-scramble to the top."
+      },
+      {
+       "time": "~1:00 PM",
+       "label": "Reach the summit",
+       "detail": "South Summit, 7,440 ft — not Chimney Rock's main/central summit (7,727 ft), which the East Face route climbs."
+      },
+      {
+       "time": "Early afternoon",
+       "label": "Begin rappels",
+       "detail": "40-ft rap from the north side to the shoulder, then a double-rope rappel down the Rappel Chimney."
+      },
+      {
+       "time": "~5-6 PM",
+       "label": "Back at high camp",
+       "detail": "Downclimb the lower section and reverse the glacier-toe crossing back to camp."
+      }
+     ],
+     "value": [
+      {
+       "time": "~5:30 AM",
+       "label": "Leave high camp",
+       "detail": "Climb the moraine and the wet gully through the rock band onto the glacier."
+      },
+      {
+       "time": "Morning",
+       "label": "Cross the glacier and the moat",
+       "detail": "Rope up, avoid the icefall and the bergschrund, and cross the moat at the foot of the rock below the notch."
+      },
+      {
+       "time": "Late morning",
+       "label": "Climb to the notch",
+       "detail": "About three pitches of wet fourth-class ground left of the main gully, then ledges to just below the notch."
+      },
+      {
+       "time": "Midday",
+       "label": "Reach the summit",
+       "detail": "South Peak, 7,440 ft, about 400 ft above the notch - not Chimney Rock's main/central summit (7,727 ft), which the East Face route climbs."
+      },
+      {
+       "time": "Early afternoon",
+       "label": "Descend",
+       "detail": "Downclimb the ledges, rappelling the steeper steps on a single rope."
+      },
+      {
+       "time": "~5-6 PM",
+       "label": "Back at high camp",
+       "detail": "Recross the moat and reverse the glacier and rock-band gully to camp."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "expect": "Also a 3-day trip using the same Pete Lake approach and high camp as the East Face, but the summit day climbs 3 pitches up the West Face (grooves/cracks and a ladder-like chimney) to the Main/South Summit, descending via a short rap to the shoulder and a double-rope rappel down the 'Rappel Chimney' — roughly 18.5 miles round trip.",
+     "value": "A 3-day trip using the same Pete Lake approach and high camp as the East Face. The summit day climbs wet fourth-class ground and ledges left of the main gully to the notch between the central and south summits, then continues to the South Peak (7,440 ft), descending the same way with single-rope rappels - roughly 18.5 miles round trip."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "expect": "Same season window as the East Face (July-September); the West Face stays drier since it avoids the East Face moat/bergschrund crossing, but snow patches on the glacier approach can persist into midsummer.",
+     "value": "Same season window as the East Face (July-September); the moat at the foot of the rock widens and the glacier opens up as the season goes on."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_chimney_rock_west_face",
+     "column": "approach",
+     "path": [],
+     "find": "Pitch 1 reportedly starts in grooves and cracks roughly 30-40 feet climber's-right of the obvious 'Rappel Chimney' feature on the west face, reached via a short glacier crossing and scramble from the basin; this specific glacier-to-base connection is less well known than the East Face line, so budget extra route-finding time and be ready to improvise around the moat at the base of the face, which gets worse later in the season.",
+     "replace": "Above camp, a wet, grubby gully through the rock band leads onto the upper Chimney Glacier; rope up, cross toward the gully below the notch between the central and south summits, and be ready to improvise around the moat at the foot of the rock, which gets worse later in the season."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Descend by reversing the West Face rather than continuing along the ridge. From the true summit, make a short ~40-foot single-strand rappel down the north side to regain the northwest shoulder and the large, distinctively rocking summit block, which serves as the anchor/belay at the top of the route's 2nd pitch. From the shoulder, make a full double-rope (two-strand) rappel down the aptly named 'Rappel Chimney' on a fixed/bolted anchor — which gets you down far enough that the remaining short section to the glacier is straightforward downclimbing rather than a third rappel. Because the second rappel is rigged double-strand, bring a full second rope long enough to comfortably reach the lower stance (it doesn't need to be full climbing-diameter — many parties pair a thin tag line with the lead rope to save weight). Total rappels: 2 (short single-strand rap off the summit, then the longer double-rope Rappel Chimney rap). Carry a few feet of extra webbing/cord and a couple of rap rings, especially in early season, in case the fixed anchor material is worn, buried in snow, or needs backing up. From the base of the rappels, reverse the glacier crossing and the moraine/climber's path back to Sunrise Knob and the Pete Lake Trail.",
+     "value": "Descend the line of ascent. From the South Peak, return about 400 ft to the notch between the central and south summits, then follow the ledge system back down; the ledges are easy to pick out from above. Rappel the steeper, wet fourth-class steps on a single 60 m rope rather than downclimbing them. No fixed anchors are known on this line, so carry slings, cord and a few rap rings to build and leave your own. Cross the moat back onto the glacier, reverse the glacier and the gully through the rock band, and return to camp."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "crux": true,
+       "bolts": 0,
+       "grade": "5.6",
+       "notes": "Start in grooves and cracks roughly 30-40 ft climber's-right of the 'Rappel Chimney' feature; the route's technical crux, per the route's Class 5.6 rating.",
+       "pitch": 1,
+       "anchor": "Gear",
+       "lengthM": 40
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.5",
+       "notes": "Continue up the west face on moderate terrain toward the northwest shoulder.",
+       "pitch": 2,
+       "anchor": "Gear/ledge",
+       "lengthM": 35
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.4",
+       "notes": "Easier climbing to the large, distinctively rocking summit block, which also serves as the top anchor for the descent.",
+       "pitch": 3,
+       "anchor": "Summit block (sling)",
+       "lengthM": 30
+      }
+     ],
+     "value": [
+      {
+       "pitch": "1-3",
+       "grade": "Class 4",
+       "notes": "Wet, slippery fourth-class ground on the face to the left of the main gully; stoppers and slings for protection."
+      },
+      {
+       "pitch": "Ledges to the notch",
+       "grade": null,
+       "notes": "A system of ledges, some very wide, leads to just below the notch between the central and south summits, about 600 ft above the glacier."
+      },
+      {
+       "pitch": "Notch to summit",
+       "grade": null,
+       "notes": "About 400 ft more from the notch to the top of the South Peak."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "rappel_detail",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "notes": "Short ~40 ft single-strand rappel off the true summit's north side down to the northwest shoulder, anchored at the large rocking summit block.",
+       "anchor": "summit block / northwest shoulder",
+       "lengthM": 10
+      },
+      {
+       "n": 2,
+       "notes": "Full double-rope rappel down the Rappel Chimney; gets low enough that the remaining descent to the glacier is a downclimb rather than a third rappel.",
+       "anchor": "fixed/bolted anchor ('Rappel Chimney')",
+       "lengthM": null
+      }
+     ],
+     "value": []
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "rappel_count_note",
+     "path": [],
+     "expect": "Two rappels. This line is sparsely documented, and no fixed hardware at the Rappel Chimney anchor is confirmed for this peak — inspect whatever is there and carry webbing, cord and rings to back it up or replace it, especially in early season when the anchor may be worn or buried.",
+     "value": "No fixed count: parties downclimb the ledges and rappel only the steeper steps on a single rope, off anchors they build themselves."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "A standard rack of nuts/stoppers plus cams for the parallel-sided cracks on the lower two pitches; a single 50m rope covers the route and the rappels from the northwest-shoulder station.",
+     "value": "Stoppers and slings are enough for the fourth-class pitches; a single 60 m rope covers the climbing and the rappels on the way down."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "detailed_rack",
+     "path": [],
+     "expect": "Bring a comprehensive trad rack including stoppers (even and odd sizes), full set of single cams from BD #0 to #3 with emphasis on larger 1-2 inch sizes for parallel-sided cracks, and doubles of common sizes. Include slings (multiple lengths), quickdraws (8-10), and runners for expedient protection placement on loose terrain.",
+     "value": "A small set of stoppers and a handful of slings in several lengths protects the wet fourth-class pitches and builds rappel anchors; add cord and rap rings to leave behind."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "rack",
+     "path": [],
+     "expect": [
+      "Stoppers, full set (even & odd sizes)",
+      "Cams BD #0–#3 (single set, doubles in common sizes, emphasis 1–2in)",
+      "8–10 quickdraws",
+      "Assorted slings/runners",
+      "Single 50m rope",
+      "Glacier kit (axe, crampons) for approach"
+     ],
+     "value": [
+      "Stoppers, small-mid set",
+      "Assorted slings/runners",
+      "Cord and rap rings for rappel anchors",
+      "Single 60m rope",
+      "Glacier kit (axe, crampons) for the approach"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "sling_rack",
+     "path": [],
+     "expect": {
+      "cams": "0.3-2.5in",
+      "nuts": "small-mid set"
+     },
+     "value": {
+      "nuts": "small-mid set"
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "pro_tips",
+     "path": [],
+     "expect": [
+      "Cross the glacier early when firm",
+      "Build in time for the long approach and multiple rappels",
+      "Pitch 1's leftward-angling groove/crack system is awkward to protect — rack accordingly."
+     ],
+     "value": [
+      "Cross the glacier early when firm",
+      "Stay on the face left of the main gully and follow the ledges to the notch",
+      "Build in time for the long approach"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "rope_note",
+     "path": [],
+     "expect": "Documented Chimney Rock routes are predominantly on the East Face (3 pitches: chimney, slab, chimney, low-5th). The West Face/South Summit line has limited independent documentation — the rack here is sized by comparison with the East Face standard route, as the closest analog.",
+     "value": "A single 60 m rope covers the fourth-class pitches to the notch and the single-rope rappels over the steeper steps on the way down."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "what_to_bring",
+     "path": [
+      0
+     ],
+     "expect": "rock rack to 3 inches",
+     "value": "stoppers and slings"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Chimney Glacier to the west face",
+     "value": "Chimney Glacier to the East Gully"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_chimney_rock_west_face",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "then rope up and cross the lower glacier bearing toward the toe of the south peak rather than the main-summit gully.",
+     "replace": "then rope up and cross toward the gully below the notch between the central and south summits."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "expect": "The reference feature is the Rappel Chimney — the obvious clean cleft splitting the west face, and the line you will come back down. Pitch one starts in left-slanting grooves and cracks roughly thirty to forty feet climber's-RIGHT of it. Getting that side wrong matters: starting in the chimney itself puts you on the descent line rather than the route. The other trap is that the correct start looks blank and unpromising from the ground, because the chimney that makes the second pitch straightforward is not visible from the base at all — it climbs and protects like a ladder once you are in it. Aim the glacier crossing at the toe of the SOUTH peak; the gully between the main summit and the south peak is the East Face line's ground, and drifting into it takes you onto a different climb. Expect to improvise around the moat at the foot of the face, which gets worse the later in the season you come, and expect the connection from ice to rock to take longer than the neighbouring line, so budget route-finding time rather than assuming you will step straight onto the first pitch.",
+     "value": "The target is the notch between the central (main) summit and the lower south peak, and the gully that drops from it to the Chimney Glacier. Do not climb in the gully itself: the line takes the face to its LEFT, about three pitches of wet, slippery fourth-class rock, then a system of ledges, some very wide, that leads to just below the notch. The way onto the rock is across the moat at the foot of the face, which widens as the season goes on; look for a place where collapsed snow blocks or a bridge let you step across. On the way up the glacier, avoid the icefall and keep away from the deep bergschrund. At the notch the main summit is the other way; the south peak is about 400 ft above you."
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "climbing_route",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "label": "Lower Chimney Glacier to the toe of the south peak",
+       "notes": "From the bivy basin, rope up and cross the lower Chimney Glacier, working toward the toe of the south peak rather than the main-summit gully used by the East Face. Be ready to improvise around the moat at the base of the face, which gets worse later in the season."
+      },
+      {
+       "n": 2,
+       "label": "Pitch 1 — grooves and cracks right of the Rappel Chimney",
+       "notes": "Pitch 1 reportedly starts in grooves and cracks roughly 30-40 feet climber's-right of the obvious 'Rappel Chimney' feature on the west face, reached via a short glacier crossing and scramble from the basin. This glacier-to-base connection is less well known than the East Face line, so budget extra route-finding time."
+      }
+     ],
+     "value": [
+      {
+       "n": 1,
+       "label": "Onto the upper Chimney Glacier and across the moat",
+       "notes": "From the bivy basin, climb the wet gully through the rock band onto the ice, avoid the icefall, rope up and cross toward the gully below the notch between the central and south summits. Cross the moat at the foot of the rock where collapsed snow or a bridge allows."
+      },
+      {
+       "n": 2,
+       "class": "Class 4",
+       "label": "Face left of the main gully to the notch",
+       "notes": "About three pitches of wet, slippery fourth-class ground on the face left of the gully, then a system of ledges, some very wide, to just below the notch, roughly 600 ft above the glacier."
+      },
+      {
+       "n": 3,
+       "label": "Notch to the South Peak",
+       "notes": "About 400 ft more to the top of the South Peak (7,440 ft)."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "expect": "Multi-pitch trad leading at solid 5.6",
+     "value": "Leading wet, loose fourth-class rock and building anchors from stoppers and slings"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "expect": "Experienced alpine climber comfortable leading loose, sometimes wet Class 5.6 rock in a remote setting, with prior glacier-travel and self-rescue experience; not a beginner objective given the long approach, glacier crossing, and rockfall-prone chimneys already noted in the route's hazards.",
+     "value": "Experienced alpine climber comfortable leading wet, loose fourth-class rock in a remote setting and rappelling off self-built anchors, with prior glacier-travel and self-rescue experience; not a beginner objective given the long approach, the moat crossing and the rockfall-prone gully."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_chimney_rock_west_face",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "to the base of the West Face",
+     "replace": "to the foot of the rock"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_chimney_rock_west_face",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "the West Face/South Summit line sees fewer parties than the more commonly climbed East Face",
+     "replace": "the South Peak sees fewer parties than the main summit's East Face"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_chimney_rock_west_face",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "on approach to the West Face",
+     "replace": "on the approach"
+    },
+    {
+     "op": "set",
+     "id": "wa_chimney_rock_west_face",
+     "column": "features",
+     "path": [],
+     "expect": [
+      "Chimney",
+      "Slab",
+      "Exposed",
+      "Adventurous"
+     ],
+     "value": [
+      "Exposed",
+      "Adventurous"
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_chimney_rock_west_face",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The same basin serves the standard West Face and South Summit line by way of the glacier and the notch.",
+     "replace": "The same basin serves the South Peak by way of the glacier and the notch."
+    }
+   ],
+   "pin_followups": [
+    "Route id wa_chimney_rock_west_face still says west face; changing the id is out of scope.",
+    "Waypoints 5-7 (moat crossing, notch, South Peak) have null lat/lng, so they cannot be drawn; the South Peak pin needs a coordinate."
+   ]
+  },
+  {
+   "id": "wa_mount_index_north_norwegian_buttress",
+   "verdict": "confirmed",
+   "resolution": "split: this row becomes Jötnar (VI 5.9 A3+, 16 pitches); new row wa_mount_index_bluebell carries Bluebell (5.13-, 17 pitches)",
+   "summary": "The North Norwegian Buttress row is now the Jötnar aid route, and Bluebell, the separate free route on the same wall, has its own new row with its own pitch breakdown, single-rope bolted descent and first ascent.",
+   "evidence": "Jötnar's own route page (not used before) independently gives VI 5.9 A3+, 16 pitches, 2,000 ft, first ascent Boyce/Chapko/Willis August 2020, aid cruxes P4 (A3+) and P9 (A3), all anchors bolted except the 15th, portaledge sites at P3, P6 and P12, rappel the route with swings on overhangs. The first-ascent team's own account on a guide-service blog (not used before) confirms seven days, portaledge camps and a 1,000-1,200 ft haul-bag lower. The journal report puts Jötnar about 100 yards left of the Doorish line. Bluebell's journal report says it is completely independent of the Doorish, Voodoo and Jötnar lines, fully bolted, 21 pitches, single uncut 70 m rope descent, free ascents Aug 11 and Aug 21-22 2023; the club's news roundup (not used before) repeats 2,000 ft, 5.13-, 21 pitches, first free route on the buttress. Its route page gives 17 pitches and the six-section breakdown. Adjustments: the Bluebell pitch breakdown was rebuilt from its route page rather than moved as-is, because the old one put the 3D Dike at P12-13 when it is in the Shield; the Doorish solo is dropped from fa on both rows. The one blog dating Jötnar to 2021 is outweighed by the journal, route page and the dated 2020 forum report.",
+   "sources": [
+    "https://www.mountainproject.com/route/120300835/jotnar",
+    "https://www.theclimbingguides.com/post/a-journey-to-bring-bigwalling-to-washingtion-jotnar",
+    "http://publications.americanalpineclub.org/articles/13201215809",
+    "https://publications.americanalpineclub.org/articles/13201216755",
+    "https://www.mountainproject.com/route/124804426/bluebell",
+    "https://americanalpineclub.org/news/2024/7/18/the-line-july-2024"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "expect_name": "North Norwegian Buttress",
+     "name": "Jötnar"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "fa",
+     "path": [],
+     "expect": "Pete Doorish, solo, 1980s (aid). First free ascent: Nathan Hadley with Luke Stefurak, Michal Rynkiewicz, and Stamati Anagnostou, August 2023 ('Bluebell', 5.13-)",
+     "value": "Sam Boyce, Lani Chapko and Kyle Willis, August 2020"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "overview",
+     "path": [],
+     "expect": "The North Norwegian Buttress is a striking, roughly 2,000-foot buttress on Mount Index's northwest aspect, plainly visible from busy US 2 above Lake Serene, separated from the smaller South Norwegian Buttress by a deep cleft between the Main and Middle summits. Despite its prominence it saw little traffic for decades — Pete Doorish's 1980s solo aid line was the only route until the Voodoo Project (2002) and Jötnar (2020, VI 5.9 A3+, 16 pitches) added further aid lines. Nathan Hadley's Bluebell (first freed August 2023; 21 pitches, 5.13-, roughly a third overhanging, entirely bolt-protected) is the first free route up the buttress and one of the hardest big walls established in the Cascades.",
+     "value": "Jötnar is a Grade VI big-wall aid route on the North Norwegian Buttress, the roughly 2,000-foot buttress on Mount Index above Lake Serene, separated from the smaller South Norwegian Buttress by a deep cleft between the Main and Middle summits. It follows a continuous crack system on the left side of the buttress, about 100 yards left of the original 1980s Doorish aid line, for 16 pitches at 5.9 A3+. The belays are bolted, and reasonably experienced wall climbers can expect three to four days on the wall with a portaledge; the first ascent took seven."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "beta",
+     "path": [],
+     "expect": "The North Norwegian Buttress is one of the larger walls in the Lower 48, plainly visible from Highway 2. Multiple big-wall routes exist on this face, ranging from Grade VI 5.9 A3+ (Jötnar) to free climbing lines (Bluebell, 5.13-). The buttress is separated from the South Norwegian Buttress by a deep cleft between the Main and Middle Peaks. Most parties approach via Lake Serene.",
+     "value": "Jötnar follows a watercourse up the left side of the North Norwegian Buttress. The lower half runs through seasonal water streaks and is wet early in the summer; the seepage pitches go best early in the morning. The aid cruxes are pitch 4 (A3+) and pitch 9 (A3). Every belay is bolted except the 15th, and there are no natural ledges, so a portaledge is required; good portaledge sites are at pitches 3, 6 and 12. Loose blocks were cleaned after the first ascent, but expect loose rock. Most parties approach via Lake Serene."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": null,
+       "notes": "This breakdown follows Bluebell, the free line (5.13-), not Jötnar's aid pitches. Lower-quality scrambling/easier rock to gain the wall proper.",
+       "pitch": "Toe"
+      },
+      {
+       "grade": null,
+       "notes": "Steep, sustained climbing begins.",
+       "pitch": "Shield"
+      },
+      {
+       "grade": "up to 5.13- / V5-V6 boulder problem",
+       "notes": "3D, steep roof climbing with boulder-problem-hard sections.",
+       "pitch": "Roofs / '3D Dike' / Big Overhang (~P12-13)"
+      },
+      {
+       "grade": null,
+       "notes": "Technical face/slab climbing between the steeper bands.",
+       "pitch": "Slab"
+      },
+      {
+       "grade": "5.11-5.13-",
+       "notes": "Sustained, continuous overhanging terrain - the route's crux section; stick-clip or 'rodeo-clip' some bolts.",
+       "pitch": "Headwall (~P12-15)"
+      },
+      {
+       "grade": "easier (5.8-ish)",
+       "notes": "Easier climbing to top out, but with loose rock on ledges near the top.",
+       "pitch": "Summit pitches (~P16-17)"
+      }
+     ],
+     "value": [
+      {
+       "pitch": "1-3",
+       "grade": null,
+       "notes": "Lower wall in the seasonal water streaks; wet early in the season, best climbed early in the day. Portaledge site at pitch 3."
+      },
+      {
+       "pitch": "4",
+       "grade": "A3+",
+       "notes": "First aid crux."
+      },
+      {
+       "pitch": "5-8",
+       "grade": null,
+       "notes": "Portaledge site at pitch 6."
+      },
+      {
+       "pitch": "9",
+       "grade": "A3",
+       "notes": "Second aid crux."
+      },
+      {
+       "pitch": "10-16",
+       "grade": null,
+       "notes": "Upper wall. Portaledge site at pitch 12; the 15th belay is the only one without bolts."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "rappels",
+     "path": [],
+     "expect": "Single 70m rope; every belay is bolted and rap-equipped, with dedicated rap-line anchors that let parties skip some belays for a faster single-rope descent, especially through the Headwall.",
+     "value": "Rappel the route off its bolted belays (the 15th belay is a gear anchor); overhanging pitches need swings or directionals to reach the next station."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "descent",
+     "path": [],
+     "expect": "Descent is typically by rappelling the route itself, using a single uncut 70m rope on the bolted lines (per the Bluebell first free ascent); older aid lines share similar rappel anchors down the same buttress rather than a walk-off via the standard Mount Index descent.",
+     "value": "Rappel the route itself off the bolted belays; there is no walk-off. The overhanging lower wall means swings between stations, and haul bags can be lowered a long way because there is little for them to snag on."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "descent_text",
+     "path": [],
+     "expect": "The North Norwegian Buttress is descended by rappelling the route itself, not via a walk-off. On the two documented lines — Jötnar (VI 5.9 A3+, 16 pitches) and its free variant Bluebell (5.13-, 21 pitches) — nearly every belay is bolted (on Jötnar, all anchors are bolted except one gear belay near pitch 15), and Bluebell's full 2,000 ft can reportedly be descended on a single, uncut 70m rope rappelling single-strand station to station. That works out to roughly 9-10 long single-strand rappels for the full wall, though a party descending pitch-by-pitch off every bolted ascent anchor could instead make closer to 15-16 shorter rappels — the actual count depends on how many stations you link together with the longer rope. Expect some overhanging pitches where you'll need to swing or place directional protection to reach the next station cleanly, and expect the descent to take nearly as long as the climb. Retrieve any fixed lines left during the ascent as you go (established leave-no-trace practice on this route), then reverse the talus traverse around Lake Serene to the maintained trail.",
+     "value": "Jötnar is descended by rappelling the route, not by a walk-off. All of its belays are bolted except the 15th, which is a gear anchor, so back it up or leave gear there. Much of the wall overhangs: on rappel you can end up hanging free of the rock and need a swing or a directional to reach the next station. Strip the wall as you go and retrieve any fixed lines. Haul bags can be lowered a long way down the lower wall, since the overhang leaves little to snag them on. From the base, reverse the talus traverse around Lake Serene to the maintained trail."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "gear",
+     "path": [],
+     "expect": [
+      "alpine rock rack",
+      "cams to 4in",
+      "nuts",
+      "aid gear",
+      "pitons optional",
+      "bolted anchors on the newer lines (Jötnar, Bluebell) — inspect fixed gear before fully weighting",
+      "portaledge recommended for multi-day attempts"
+     ],
+     "value": [
+      "double set of cams from micro sizes to #4, plus a single #5",
+      "nuts, micronuts and offsets",
+      "beaks, lost arrows and rivet hangers",
+      "aid gear",
+      "bolted anchors at every belay except the 15th - inspect fixed gear before fully weighting",
+      "portaledge (no natural ledges on the wall)"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "Aid rack up to A3+ for Jötnar, the representative modern aid line; the original 1980s Doorish solo line was easier, roughly A2. Newer lines (Jötnar, Bluebell) are largely bolt-protected.",
+     "value": "Double rack from micronuts to a #4 Camalot plus a single #5, offsets, beaks, lost arrows and rivet hangers for aid to A3+; the belays are bolted except the 15th."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "expect": "Rack up and start up the buttress at first light; established free/aid lines on this wall (Jotnar, Bluebell) run 16-21 pitches of sustained, often loose or seepy climbing. Most par…",
+     "value": "Rack up and start up the buttress at first light; Jötnar's 16 pitches are sustained aid, with wet, seepy pitches low down. Climb to a portaledge camp (sites at pitches 3, 6 and 12) rather than trying to top out the same day."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "expect": "Finish the remaining pitches to the summit, then reverse the route with a single uncut 70m rope on the bolted rappel line (per the route's free-ascent descent) — expect a long, rop…",
+     "value": "Finish the remaining pitches, then rappel the route off its bolted belays and hike out; expect overhanging rappels that need swings."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "expect": "Rack up and start up the buttress at first light; established free/aid lines on this wall (Jotnar, Bluebell) run 16-21 pitches of sustained, often loose or seepy climbing. Most parties fix or climb to a ledge bivy (commonly cited around pitch 12) rather than trying to top out same day.",
+     "value": "Rack up and start up the buttress at first light; Jötnar's 16 pitches are sustained aid, and the lower pitches follow seasonal water streaks that are wettest early in the season. There are no natural ledges: parties haul a portaledge and camp at one of the sites at pitches 3, 6 or 12 rather than trying to top out the same day."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Portaledge recommended if no natural ledge is secured.",
+     "value": "Portaledge required; there are no natural ledges."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "expect": "Finish the remaining pitches to the summit, then reverse the route with a single uncut 70m rope on the bolted rappel line (per the route's free-ascent descent) — expect a long, rope-eating descent through brush lower down before regaining the approach trail and hiking out.",
+     "value": "Finish the remaining pitches, then rappel the route off its bolted belays, swinging in on the overhanging sections, before regaining the talus and the Lake Serene trail and hiking out."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 5491,
+     "value": 5000
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "rappel_count_note",
+     "path": [],
+     "expect": "There are two ways to size this: roughly 9-10 long single-strand rappels for the full wall using an uncut 70m rope station-to-station (as on the free variant Bluebell), or closer to 15-16 shorter rappels off every bolted ascent anchor. The 16-rappel, per-station sequence below is used as the more conservative/representative option given the overhanging terrain.",
+     "value": "About 16 rappels, one per belay, off bolted anchors except at the 15th; overhanging pitches need swings or directionals to reach the stations."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "station"
+     ],
+     "find": "Some stations on the buttress are dedicated rappel anchors set off to the side of the climbing belays rather than at them, so the fastest line down is not always straight beneath you. ",
+     "replace": ""
+    },
+    {
+     "op": "split",
+     "id": "wa_mount_index_north_norwegian_buttress",
+     "new_row": {
+      "id": "wa_mount_index_bluebell",
+      "area_id": "wa_north_norwegian_buttress",
+      "name": "Bluebell",
+      "discipline": "alpine",
+      "disciplines": [
+       "alpine"
+      ],
+      "grade": "5.13-",
+      "grade_system": "yds",
+      "grade_num": 13,
+      "rock_grade": "5.13-",
+      "pitches": 17,
+      "length_m": 610,
+      "aspect": "N",
+      "season": "Jun-Sep",
+      "fa": "Nathan Hadley, Michal Rynkiewicz and Stamati Anagnostou, 2023. First free ascent: Hadley, August 11, 2023, with Luke Stefurak; Rynkiewicz and Anagnostou freed it August 21-22, 2023.",
+      "overview": "Bluebell is the first free route up the North Norwegian Buttress of Mount Index: about 2,000 ft of climbing graded 5.13-, protected entirely by bolts, with roughly a third of its pitches overhanging. Most of it is sustained 5.11-5.12. It is its own line, independent of the Doorish, Voodoo Project and Jötnar aid routes, and it took more than 25 days on the wall to establish in 2023.",
+      "beta": "Seventeen pitches as usually linked (21 if split at every stance), in six sections: the Toe (P1-3); the slightly overhanging Shield (P4-6) with the 3D Dike and a boulder-problem crux on blank pinches; the steep Roofs (P7-8); the technical Slab (P9-11), with a ledge at P10 that takes a portaledge; the overhanging Headwall (P12-15) with the 5.13- crux; and easier, barely cleaned Summit pitches (P16-17). Bring a stick clip for the headwall bolts.",
+      "gear": [
+       "16 quickdraws, 2-4 of them alpine draws",
+       "stick clip for the headwall cruxes",
+       "single 70m rope (an 80m rope gives more rappel options)",
+       "portaledge for an on-wall bivy"
+      ],
+      "pitch_detail": [
+       {
+        "pitch": "Toe (P1-3)",
+        "grade": "5.11-5.12-",
+        "notes": "Mostly high-quality, less-than-vertical rock, with some scrambling along ledges."
+       },
+       {
+        "pitch": "Shield (P4-6)",
+        "grade": "5.12-5.13-",
+        "notes": "Slightly overhanging, easing toward vertical; includes the 3D Dike and a boulder-problem crux (about V7) on blank pinches."
+       },
+       {
+        "pitch": "Roofs (P7-8)",
+        "grade": "5.12",
+        "notes": "Steep, three-dimensional climbing on underclings and jugs, with a key pinch through the roof."
+       },
+       {
+        "pitch": "Slab (P9-11)",
+        "grade": "5.11- to 5.12",
+        "notes": "Technical face climbing on excellent stone; the ledge at P10 takes a portaledge."
+       },
+       {
+        "pitch": "Headwall (P12-15)",
+        "grade": "5.11- to 5.13-",
+        "notes": "Overhanging for all four pitches, with boulder-problem cruxes (about V6 and V5); stick-clip some bolts."
+       },
+       {
+        "pitch": "Summit (P16-17)",
+        "grade": "5.8-5.9",
+        "notes": "Minimally cleaned mountain climbing; loose rock on the ledges near the top."
+       }
+      ],
+      "rappels": "Single 70m rope; every belay is bolted and rap-equipped, with dedicated rap-line anchors that let parties skip some belays for a faster single-rope descent, especially through the Headwall.",
+      "descent": "Rappel the route on a single 70 m rope; every anchor is rigged for rappel, and dedicated rappel anchors let the descent skip belays, including the overhanging headwall ones.",
+      "descent_text": "Bluebell is descended by rappelling the route, not by a walk-off. Every belay is bolted and rigged for rappel, and the whole 2,000 ft can be rappelled on a single, uncut 70 m rope; an 80 m rope gives more flexibility. Dedicated rappel anchors set off the climbing line let you skip some belays and avoid the overhanging headwall pitches, which would otherwise leave you hanging in space. From the base, reverse the talus traverse around Lake Serene to the maintained trail.",
+      "hazards": [
+       "steep, committing big wall",
+       "loose rock on the ledges near the top",
+       "notoriously difficult approach"
+      ],
+      "high_point_ft": 5527,
+      "dist_km": 5.8,
+      "approach": "From the Lake Serene Trailhead (~600 ft) off Mount Index Road, follow the maintained Lake Serene Trail — roughly 3.6-4.1 miles (accounts vary slightly) and about 2,000 ft of gain, passing the Bridal Veil Falls spur around mile 1.6 and switchbacking up to Lake Serene (~2,600 ft). At the lake, leave the maintained trail for the unofficial climbers' path that traverses talus and large boulders around the west side of the lake; in early summer this crosses avalanche debris and lingering snow/ice at the lake's edge. Continue up talus beneath the imposing north/east face of North Index toward the cirque below the Norwegian Buttresses, then work up through the brushy base of the wall — steepening mossy slabs and brush that some parties rope up for before reaching clean rock on the buttress proper. Reliable water is available at Lake Serene and its outlet creek, but not higher on the talus approach, so fill up at the lake. Plan roughly 2-3 hours from the trailhead to the base of the wall, more with a loaded pack for a multi-day ascent.",
+      "access": {
+       "fees": "Northwest Forest Pass where applicable",
+       "notes": "Mount Index sits outside designated wilderness (adjacent to Wild Sky Wilderness) — administratively unrestricted despite being a serious Grade VI big-wall objective. Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+       "rules": "Respect private property near the town of Index on the approach; standard national forest rules above.",
+       "permit": "None required.",
+       "closures": null,
+       "landManager": "Mount Baker-Snoqualmie National Forest (lower slopes/approach may cross other ownership near Index)",
+       "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+       "parking_pass": "Mount Index (Lake Serene/Bridal Veil Falls trailhead): Northwest Forest Pass or America the Beautiful pass required. Half Moon Crag: no fee site identified.",
+       "passRequired": "Northwest Forest Pass",
+       "overnight_permit": {
+        "url": null,
+        "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+        "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+       }
+      },
+      "road": {
+       "name": "US-2 to Index / Mount Index Road",
+       "status": "Open year-round (valley); approach trail rough",
+       "driveNote": "From US-2 to the Index area; the climber's approach from the valley is steep and brushy.",
+       "seasonalGate": null
+      },
+      "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+      "emergency": {
+       "county": "King",
+       "rangerStation": "Skykomish Ranger District, Mount Baker-Snoqualmie NF",
+       "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), Monroe, WA",
+       "sheriffDispatch": "911"
+      },
+      "comms": "No cell service at elevation. Satellite communicator (InReach, Spot) strongly recommended for multi-day wall climb.",
+      "climate": {
+       "typical": "Wet west-slope environment; the rock and brush are rarely fully dry.",
+       "bySeason": {
+        "fall": "Wet weather returns; greasy rock.",
+        "spring": "Wet, snowy up high, heavy brush.",
+        "summer": "Driest window; still brushy and loose.",
+        "winter": "Snowbound and dangerous; not a rock season."
+       },
+       "forecastZone": "Washington West Slopes Central Cascades"
+      },
+      "approach_logistics": {
+       "peakLat": 47.7745488,
+       "peakLng": -121.5809415,
+       "trailhead": "Lake Serene Trailhead (Trail #1068)",
+       "trailheadLat": 47.80925,
+       "trailheadLng": -121.57409,
+       "trailheadDirection": "From the Lake Serene Trailhead off Mount Index River Road, via Trail #1068"
+      },
+      "approach_variants": [
+       {
+        "name": "Lake Serene to the foot of the buttress",
+        "notes": "Maintained trail to Lake Serene past the Bridal Veil Falls spur, then the unofficial climbers' path around the right-hand (west) shore over talus and large boulders, down granite slabs, and up the talus fan to the wall. Fill water at the lake — there is none above it. In early summer the lakeside traverse crosses avalanche debris and lingering snow at the water's edge. Two to three hours from the car with a light pack, appreciably more with a loaded haul bag for a multi-day ascent.",
+        "season": "Late July to early September",
+        "hazards": [
+         "Large natural rockfall off North Index and out of the cleft beside Middle Index",
+         "Avalanche debris and lingering snow at the lake edge in early summer",
+         "Steepening mossy slabs and brush at the base that parties rope up for",
+         "Loose and vegetated rock low on the wall",
+         "No walk-off — every retreat from the buttress is by rappel"
+        ],
+        "baseFinding": "Identify the wall before committing to any line on it. The North Norwegian Buttress is the roughly 2,000-foot face on Mount Index's northwest side rising directly above the head of the lake, and it is separated from the smaller South Norwegian Buttress by a deep cleft running up between the Main and Middle summits. That cleft is the boundary between the two buttresses and it is also the chute that funnels stonefall onto the approach, so work up the talus fan to the toe rather than traversing in high across the base. The bottom of the buttress is not the bottom of the climbing: below the clean granite lies a band of steepening mossy slab and brush, and the change from vegetated slab to continuous rock is where the pitches actually begin. Across the face the routes are located by counting off the Doorish line, the original aid line up the buttress, so find that first and work from it. Rack up low, near the lake, and keep your time directly beneath the wall short."
+       }
+      ],
+      "waypoints": [
+       {
+        "lat": 47.80925,
+        "lng": -121.57409,
+        "elev": 600,
+        "name": "Lake Serene Trailhead (Trail #1068)",
+        "type": "Trailhead",
+        "elevFt": 600
+       },
+       {
+        "lat": 47.7801,
+        "lng": -121.5787,
+        "elev": 5527,
+        "name": "Mount Index Middle Peak",
+        "type": "Summit",
+        "elevFt": 5527
+       }
+      ],
+      "classic": false
+     }
+    }
+   ],
+   "pin_followups": [
+    "Route id wa_mount_index_north_norwegian_buttress now holds Jötnar; changing the id is out of scope.",
+    "The new Bluebell row copies the existing row's two waypoints (trailhead and Middle Peak summit); neither pin marks the base of either route."
+   ]
+  },
+  {
+   "id": "wa_east_ridge_7",
+   "verdict": "confirmed",
+   "resolution": "merge_into wa_lundin_peak_east_ridge (adjusted from refile: Lundin Peak already holds this exact climb)",
+   "summary": "This East Ridge is Lundin Peak's East Ridge, which Lundin Peak already lists as its own route, so the Red Mountain copy is folded into that row rather than moved, carrying over its grade, rappel and hazard lines.",
+   "evidence": "The route page files East Ridge (Easy 5th, 30 m, three large bolts, starting at the Lundin/East Lundin saddle via Red Pass) under Lundin Peak. Three ascent reports, one not used before, climb the same bolted final ridge to Lundin's 6,057 ft summit from Red Pass over the eastern horns, with a single short rappel on descent and the rock described as quite good. Target wa_lundin_peak already contains wa_lundin_peak_east_ridge with the same name, length, bolts, start and approach, so a refile would duplicate it. Carried over: grade/grade_system/grade_num (Easy 5th, class, 5 by lib/grade.js for scrambling), rappels, and two hazards. Not carried: the 'loose red rock worse than the south face' hazard and the Red Mountain naming warnings, since the rock on Lundin's ridge is described as good.",
+   "sources": [
+    "https://www.mountainproject.com/route/120989235/east-ridge",
+    "https://www.mountainproject.com/area/110175054/lundin-peak",
+    "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+    "https://www.yellowleaf.org/scramble/g/r/2007-07-04-lundin.html",
+    "https://www.mountainwerks.org/cma/2001/lundin.html"
+   ],
+   "ops": [
+    {
+     "op": "merge",
+     "from": "wa_east_ridge_7",
+     "into": "wa_lundin_peak_east_ridge"
+    },
+    {
+     "op": "set",
+     "id": "wa_lundin_peak_east_ridge",
+     "column": "grade",
+     "path": [],
+     "expect": null,
+     "value": "Easy 5th"
+    },
+    {
+     "op": "set",
+     "id": "wa_lundin_peak_east_ridge",
+     "column": "grade_system",
+     "path": [],
+     "expect": null,
+     "value": "class"
+    },
+    {
+     "op": "set",
+     "id": "wa_lundin_peak_east_ridge",
+     "column": "grade_num",
+     "path": [],
+     "expect": null,
+     "value": 5
+    },
+    {
+     "op": "set",
+     "id": "wa_lundin_peak_east_ridge",
+     "column": "rappels",
+     "path": [],
+     "expect": null,
+     "value": "One rappel off the installed bolts back to the saddle, or downclimb."
+    },
+    {
+     "op": "set",
+     "id": "wa_lundin_peak_east_ridge",
+     "column": "hazards",
+     "path": [],
+     "expect": null,
+     "value": [
+      "Short but real exposure on the summit pitch.",
+      "The three installed bolts are old and of unknown condition; back them up rather than trusting them alone."
+     ]
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_tepeh_towers",
+   "verdict": "confirmed",
+   "resolution": "refile to a new Tepeh Towers area (wa_tepeh_towers, 8,113 ft) under Eldorado Peak, a sibling of Main Peak and Dorado Needle",
+   "summary": "Tepeh Towers moves out from under Eldorado's main summit into its own entry, so its page shows the towers' 8,113 ft instead of Eldorado's 8,872 ft, and the sentences apologising for the filing are removed.",
+   "evidence": "The glacier entry places Tepeh Towers as the arête northwest of the Inspiration Glacier, separating it from the McAllister Glacier, with Eldorado Peak to the west. The federal place-name gazetteer (not used before) lists Tepeh Towers as a ridge in Skagit County with end points 48.5465,-121.1309 and 48.5511,-121.1185; the route's own summit pin (48.5504,-121.1218) sits by the eastern point, which is used for the new area. A topo index (not used before) gives 8,113 ft, matching the row's high point, and another ascent account (not used before) places the towers north of Eldorado across the Inspiration Glacier. The route page confirms the content (one 5.0 pitch above the moat, rappel station below the summit, 45 minutes N/NW of the East Ridge camp). No Tepeh Towers route exists elsewhere under Eldorado Peak, so there is no duplicate.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Inspiration_Glacier",
+    "https://www.mountainproject.com/route/119380248/tepeh-towers",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/find?searchText=Tepeh%20Towers&layers=5&f=json",
+    "https://www.topozone.com/washington/skagit-wa/ridge/tepeh-towers/",
+    "https://engineeredforadventure.com/exploring-the-tepeh-towers-and-the-eggplant/"
+   ],
+   "ops": [
+    {
+     "op": "refile",
+     "id": "wa_tepeh_towers",
+     "expect_area": "wa_main_peak",
+     "area_id": "wa_tepeh_towers",
+     "create_area": {
+      "id": "wa_tepeh_towers",
+      "name": "Tepeh Towers",
+      "parent_id": "wa_eldorado_peak",
+      "area_type": "peak",
+      "elevation_ft": 8113,
+      "lat": 48.5511,
+      "lng": -121.1185
+     }
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_tepeh_towers",
+     "column": "approach",
+     "path": [],
+     "find": " IMPORTANT — this route is NOT on Eldorado Peak itself, despite being filed under the same area: from the Eldorado/Inspiration Glacier high camp (~7,600ft), continue traversing the Inspiration Glacier well past Eldorado's summit to Klawatti col; Tepeh Towers are passed along this same glacier traverse, and Austera Peak requires further travel across the Klawatti Glacier (including a short rappel from the col) beyond Klawatti Peak — meaningfully further and more committing than simply topping out on Eldorado.",
+     "replace": " From the Eldorado/Inspiration Glacier high camp (~7,600 ft), rope up and walk about 45 minutes north-northwest across the glacier to where the towers rise out of the icecap, on the arête that divides the Inspiration Glacier from the McAllister Glacier."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_tepeh_towers",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": " Be clear about what this route is: TEPEH TOWERS IS NOT ON ELDORADO PEAK, despite being filed under the same area. It is a separate formation further along the icecap.",
+     "replace": ""
+    },
+    {
+     "op": "set",
+     "id": "wa_tepeh_towers",
+     "column": "face",
+     "path": [],
+     "expect": "Inspiration Glacier side, Eldorado Peak (Main Peak area)",
+     "value": "Inspiration Glacier side"
+    }
+   ],
+   "pin_followups": [
+    "New area id wa_tepeh_towers is the same string as the route id; the areas and routes tables are separate, but rename the area id (e.g. wa_tepeh_towers_area) if anything treats the two id spaces as one.",
+    "Waypoints 'Base of Tepeh Towers' and 'Glacier-to-rock crossing point' share one coordinate (48.5463,-121.1306), which is the gazetteer's western end of the arête, about 0.8 km from the summit pin; check whether that is where parties actually leave the glacier."
+   ]
+  },
+  {
+   "id": "wa_agnes_mountain_west_route",
+   "verdict": "confirmed",
+   "resolution": "merge_into wa_agnes_mountain_south_ridge, carrying the 1936 first-ascent history and rarity note into its overview",
+   "summary": "The 'West Route' row is folded into Agnes Mountain's South Ridge route, which it already duplicated, keeping only the story of the 1936 first ascent from the West Fork and how rarely the peak is climbed.",
+   "evidence": "Independent searches found no described west-side route on Agnes Mountain: the only west-side fact is that the 1936 Frazier/O'Brien first ascent came from the West Fork of Agnes Creek, with no line, grade or pitches recorded, and the second ascent came in 1969. The recommended route is Asa Peak's northeast ridge to Agnes's south ridge with technical sections to 5.6 (a 5.8 chimney in one ascent). This row's approach (Agnes Creek, Spruce Creek, Upper Blue Basin), climbing_route (Icy-Spruce Pass to the south ridge), three-rappel descent and 5.6-5.8 crux all describe the same climb as wa_agnes_mountain_south_ridge, which is the fuller row. The 1936 party is not written into that row's fa, because they did not climb the south ridge.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Agnes_Mountain",
+    "https://www.wta.org/go-hiking/hikes/west-fork-agnes-creek",
+    "https://trailcatjim.com/agnes-mtn-via-south-ridge-northwest-face-gunsight-peak-attempt/",
+    "https://onehikeaweek.com/2020/07/20/agnes-mountain/"
+   ],
+   "ops": [
+    {
+     "op": "merge",
+     "from": "wa_agnes_mountain_west_route",
+     "into": "wa_agnes_mountain_south_ridge"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_agnes_mountain_south_ridge",
+     "column": "overview",
+     "path": [],
+     "find": "to the top.",
+     "replace": "to the top. The peak's first ascent, in 1936, came up from the West Fork of Agnes Creek rather than by this ridge; the second ascent did not follow until 1969, and only fourteen parties had reached the summit by 1987."
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}

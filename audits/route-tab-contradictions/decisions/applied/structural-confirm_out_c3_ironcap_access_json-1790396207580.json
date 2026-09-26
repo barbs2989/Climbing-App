@@ -1,0 +1,1414 @@
+{
+ "applied": [
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "op": "patch",
+   "columns": [
+    "access"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "area_id": "wa_iron_cap_mountain",
+   "name": "West Ridge / North Ridge via Chetwoot Lake",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "1925, a party led by Joe Hazard",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "ice axe (early season)",
+    "helmet",
+    "trekking poles (multiple creek crossings on approach)",
+    "map/GPS track (cairns are sparse through the boulder fields and it's easy to wander off-route)"
+   ],
+   "hazards": [
+    "loose rock",
+    "long approach",
+    "route-finding through boulder fields between sparse cairns",
+    "slow, unmarked cross-country travel between Big Heart and Chetwoot lakes",
+    "lingering snow and ice on north-facing terrain into early-to-mid July"
+   ],
+   "verif": null,
+   "overview": "Iron Cap Mountain (6,347 ft) rises above the Williams Lake and La Bohn Gap country near the heart of the Alpine Lakes Wilderness. Despite its modest elevation, it has striking local relief, climbing about 2,500 feet above the Middle Fork Snoqualmie River Valley in less than a mile. The mountain straddles two drainages: its south side sheds into tributaries of the Snoqualmie River via the Williams Lake basin, while the north side drains toward the Foss River. It was first climbed in 1925 by a party led by Seattle mountaineer Joe Hazard. This route comes in from the north on the West Fork Foss River trail off US 2, past Trout, Copper and Big Heart lakes to a camp at Chetwoot Lake, and finishes on Iron Cap's west and north ridges.",
+   "beta": "A long backcountry approach (6.6+ trail miles, ~3,400 ft gain to Chetwoot Lake) followed by off-trail cross-country travel and unroped class 3 scrambling on the west and north ridges. Solid granite in places but loose talus and scree lower down; most parties treat it as a 2-3 day trip with a camp at Big Heart or Chetwoot Lake.",
+   "turnaround": "Given the long approach and off-trail, unmarked ridge terrain, set a firm turnaround time before setting out and stick to it — losing daylight or getting caught by weather on the loose, exposed class 3 ridge or during cross-country travel back to the trail is the main risk on this route.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 4707,
+   "loss_ft": 4707,
+   "dist_km": 19.3,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II-III",
+   "face": "West Ridge / North Ridge",
+   "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+   "comms": null,
+   "descent": "Reverse the ascent route",
+   "obj_haz": [
+    "Small glacial remnant (locally called the 'Iron Cap Glacier') and lingering snow/ice on the peak's north side into summer",
+    "Loose talus and boulder terrain typical of Alpine Lakes Wilderness cross-country approaches",
+    "Steep, brushy and indistinct off-trail sections over Atrium Ridge between Big Heart and Chetwoot lakes"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.525214342105265,
+     "lng": -121.3932652631579,
+     "elev": 1800,
+     "name": "Middle Fork footbridge",
+     "note": "Trail crosses to the south side of the Middle Fork Snoqualmie River on a footbridge; reliable water here.",
+     "type": "Water",
+     "distMi": 4.5
+    },
+    {
+     "lat": 47.510099,
+     "lng": -121.34632,
+     "elev": 2828,
+     "name": "Hardscrabble Horse Camp",
+     "note": "Old road tread ends here at an established horse camp with views of rockslides and waterfalls; trail narrows beyond, crossing Hardscrabble Creek into the Alpine Lakes Wilderness just after.",
+     "type": "Campsite",
+     "distMi": 7.7
+    },
+    {
+     "lat": 47.539899210526315,
+     "lng": -121.28088631578947,
+     "elev": 3300,
+     "name": "Pedro Camp / steel bridge",
+     "note": "Locally-known campsite where the trail crosses a steel bridge back over the Middle Fork; open avalanche-slope views of Burntboot Peak, Overcoat Peak and Iron Cap Mountain start from here.",
+     "type": "Campsite",
+     "distMi": 13
+    },
+    {
+     "lat": 47.54365,
+     "lng": -121.252323,
+     "elev": 4200,
+     "name": "Williams Lake Trail junction",
+     "note": "Leave the Dutch Miller Gap Trail here and turn onto Williams Lake Trail 1030.1 for the 1-mile side trip up to the lake.",
+     "type": "Junction",
+     "distMi": 14.2
+    },
+    {
+     "lat": 47.55065,
+     "lng": -121.24765,
+     "elev": 4600,
+     "name": "Williams Lake",
+     "note": "Subalpine lake basin at the base of Bear's Breast Mountain; established campsites on the west shore, boot paths head up toward the high country from here.",
+     "type": "Campsite",
+     "distMi": 15.2
+    },
+    {
+     "lat": 47.55020589473684,
+     "lng": -121.27265410526316,
+     "elev": 5400,
+     "name": "Williams Lake saddle",
+     "note": "Boot path gains this saddle above the lake; from here it's talus and boulder hopping onto the ridge leading toward the Iron Cap summit block.",
+     "type": "Junction",
+     "distMi": 16.4
+    },
+    {
+     "lat": 47.5172,
+     "lng": -121.45437,
+     "elev": 1500,
+     "name": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+     "note": "approach via Trout Lake, Copper/Malachite Lake, and Chetwoot Lake/Iron Cap Lake basin to the peak's north/west ridge.",
+     "type": "Trailhead",
+     "elevFt": 1500
+    },
+    {
+     "lat": 47.553833,
+     "lng": -121.285424,
+     "elev": 6347,
+     "name": "Iron Cap Mountain",
+     "type": "Summit",
+     "elevFt": 6347
+    }
+   ],
+   "gpx": [
+    [
+     47.634996,
+     -121.303308
+    ],
+    [
+     47.634629,
+     -121.304356
+    ],
+    [
+     47.634509,
+     -121.305613
+    ],
+    [
+     47.634124,
+     -121.306214
+    ],
+    [
+     47.633432,
+     -121.306863
+    ],
+    [
+     47.63281,
+     -121.307576
+    ],
+    [
+     47.632197,
+     -121.30807
+    ],
+    [
+     47.631506,
+     -121.308845
+    ],
+    [
+     47.630672,
+     -121.308814
+    ],
+    [
+     47.629772,
+     -121.30868
+    ],
+    [
+     47.629083,
+     -121.309155
+    ],
+    [
+     47.628552,
+     -121.309346
+    ],
+    [
+     47.627938,
+     -121.309745
+    ],
+    [
+     47.627108,
+     -121.310771
+    ],
+    [
+     47.626638,
+     -121.311804
+    ],
+    [
+     47.626202,
+     -121.312521
+    ],
+    [
+     47.626516,
+     -121.313219
+    ],
+    [
+     47.626447,
+     -121.314177
+    ],
+    [
+     47.625778,
+     -121.314868
+    ],
+    [
+     47.624889,
+     -121.314872
+    ],
+    [
+     47.624542,
+     -121.315084
+    ],
+    [
+     47.624001,
+     -121.315295
+    ],
+    [
+     47.623171,
+     -121.314949
+    ],
+    [
+     47.622134,
+     -121.314808
+    ],
+    [
+     47.621624,
+     -121.314515
+    ],
+    [
+     47.621064,
+     -121.314718
+    ],
+    [
+     47.62031,
+     -121.31466
+    ],
+    [
+     47.619666,
+     -121.313994
+    ],
+    [
+     47.618937,
+     -121.314109
+    ],
+    [
+     47.618376,
+     -121.314555
+    ],
+    [
+     47.617759,
+     -121.315031
+    ],
+    [
+     47.61725,
+     -121.315761
+    ],
+    [
+     47.616396,
+     -121.316257
+    ],
+    [
+     47.61582,
+     -121.31638
+    ],
+    [
+     47.615279,
+     -121.31629
+    ],
+    [
+     47.614456,
+     -121.316495
+    ],
+    [
+     47.613779,
+     -121.316773
+    ],
+    [
+     47.613052,
+     -121.317118
+    ],
+    [
+     47.612441,
+     -121.317467
+    ],
+    [
+     47.613001,
+     -121.31763
+    ],
+    [
+     47.612858,
+     -121.318227
+    ],
+    [
+     47.612401,
+     -121.319125
+    ],
+    [
+     47.61209,
+     -121.31983
+    ],
+    [
+     47.612251,
+     -121.320711
+    ],
+    [
+     47.612427,
+     -121.321968
+    ],
+    [
+     47.612585,
+     -121.322049
+    ],
+    [
+     47.612647,
+     -121.322676
+    ],
+    [
+     47.612631,
+     -121.323524
+    ],
+    [
+     47.612753,
+     -121.32371
+    ],
+    [
+     47.612906,
+     -121.324767
+    ],
+    [
+     47.613278,
+     -121.324083
+    ],
+    [
+     47.613501,
+     -121.323789
+    ],
+    [
+     47.613518,
+     -121.324467
+    ],
+    [
+     47.613454,
+     -121.325569
+    ],
+    [
+     47.613427,
+     -121.326176
+    ],
+    [
+     47.613676,
+     -121.326954
+    ],
+    [
+     47.613826,
+     -121.327387
+    ],
+    [
+     47.613777,
+     -121.32789
+    ],
+    [
+     47.614117,
+     -121.327457
+    ],
+    [
+     47.61419,
+     -121.328105
+    ],
+    [
+     47.614096,
+     -121.32921
+    ],
+    [
+     47.613839,
+     -121.329568
+    ],
+    [
+     47.613472,
+     -121.330492
+    ],
+    [
+     47.612897,
+     -121.33028
+    ],
+    [
+     47.612578,
+     -121.330211
+    ],
+    [
+     47.612083,
+     -121.330585
+    ],
+    [
+     47.611509,
+     -121.330442
+    ],
+    [
+     47.611025,
+     -121.331242
+    ],
+    [
+     47.610672,
+     -121.331632
+    ],
+    [
+     47.6106,
+     -121.331906
+    ],
+    [
+     47.610135,
+     -121.331683
+    ],
+    [
+     47.610495,
+     -121.332412
+    ],
+    [
+     47.610879,
+     -121.332829
+    ],
+    [
+     47.610881,
+     -121.333003
+    ],
+    [
+     47.61035,
+     -121.332942
+    ],
+    [
+     47.609605,
+     -121.332347
+    ],
+    [
+     47.609074,
+     -121.331189
+    ],
+    [
+     47.608283,
+     -121.330487
+    ],
+    [
+     47.608108,
+     -121.329682
+    ],
+    [
+     47.607259,
+     -121.328756
+    ],
+    [
+     47.606576,
+     -121.327943
+    ],
+    [
+     47.60579,
+     -121.327826
+    ],
+    [
+     47.605074,
+     -121.328086
+    ],
+    [
+     47.604335,
+     -121.327778
+    ],
+    [
+     47.603729,
+     -121.327563
+    ],
+    [
+     47.603066,
+     -121.327792
+    ],
+    [
+     47.602363,
+     -121.328099
+    ],
+    [
+     47.601795,
+     -121.328566
+    ],
+    [
+     47.601063,
+     -121.329019
+    ],
+    [
+     47.600529,
+     -121.329565
+    ],
+    [
+     47.600182,
+     -121.330061
+    ],
+    [
+     47.59952,
+     -121.330629
+    ],
+    [
+     47.598966,
+     -121.330726
+    ],
+    [
+     47.598225,
+     -121.330746
+    ],
+    [
+     47.597481,
+     -121.330587
+    ],
+    [
+     47.596858,
+     -121.330543
+    ],
+    [
+     47.596143,
+     -121.330027
+    ],
+    [
+     47.595628,
+     -121.329614
+    ],
+    [
+     47.594739,
+     -121.329161
+    ],
+    [
+     47.594037,
+     -121.329218
+    ],
+    [
+     47.593396,
+     -121.328287
+    ],
+    [
+     47.593659,
+     -121.32762
+    ],
+    [
+     47.593927,
+     -121.326984
+    ],
+    [
+     47.59422,
+     -121.327101
+    ],
+    [
+     47.594421,
+     -121.32736
+    ],
+    [
+     47.594733,
+     -121.327143
+    ],
+    [
+     47.59507,
+     -121.326329
+    ],
+    [
+     47.59567,
+     -121.32501
+    ],
+    [
+     47.595833,
+     -121.323788
+    ],
+    [
+     47.594942,
+     -121.323061
+    ],
+    [
+     47.594412,
+     -121.322687
+    ],
+    [
+     47.593937,
+     -121.323009
+    ],
+    [
+     47.59345,
+     -121.322977
+    ],
+    [
+     47.593181,
+     -121.323212
+    ],
+    [
+     47.592953,
+     -121.322412
+    ],
+    [
+     47.592644,
+     -121.321936
+    ],
+    [
+     47.592313,
+     -121.321134
+    ],
+    [
+     47.592291,
+     -121.319676
+    ],
+    [
+     47.59189,
+     -121.319252
+    ],
+    [
+     47.591095,
+     -121.319741
+    ],
+    [
+     47.590254,
+     -121.319771
+    ],
+    [
+     47.589303,
+     -121.320288
+    ],
+    [
+     47.589023,
+     -121.320737
+    ],
+    [
+     47.589075,
+     -121.319789
+    ],
+    [
+     47.588434,
+     -121.3202
+    ],
+    [
+     47.587879,
+     -121.320822
+    ],
+    [
+     47.587072,
+     -121.320669
+    ],
+    [
+     47.586305,
+     -121.320146
+    ],
+    [
+     47.5856,
+     -121.319874
+    ],
+    [
+     47.584948,
+     -121.319772
+    ],
+    [
+     47.584522,
+     -121.319486
+    ],
+    [
+     47.584304,
+     -121.319053
+    ],
+    [
+     47.584216,
+     -121.318882
+    ],
+    [
+     47.583651,
+     -121.318491
+    ],
+    [
+     47.583197,
+     -121.317707
+    ],
+    [
+     47.582849,
+     -121.317088
+    ],
+    [
+     47.582138,
+     -121.316558
+    ],
+    [
+     47.581724,
+     -121.316175
+    ],
+    [
+     47.581497,
+     -121.315786
+    ],
+    [
+     47.581248,
+     -121.315379
+    ],
+    [
+     47.580874,
+     -121.315324
+    ],
+    [
+     47.58034,
+     -121.31512
+    ],
+    [
+     47.580209,
+     -121.313787
+    ],
+    [
+     47.580199,
+     -121.313211
+    ],
+    [
+     47.580206,
+     -121.312414
+    ],
+    [
+     47.579731,
+     -121.311498
+    ],
+    [
+     47.579194,
+     -121.310867
+    ],
+    [
+     47.578822,
+     -121.310733
+    ],
+    [
+     47.578397,
+     -121.310723
+    ],
+    [
+     47.578074,
+     -121.31087
+    ],
+    [
+     47.577572,
+     -121.310974
+    ],
+    [
+     47.577548,
+     -121.311182
+    ],
+    [
+     47.577172,
+     -121.311543
+    ],
+    [
+     47.576462,
+     -121.311559
+    ],
+    [
+     47.57582,
+     -121.311213
+    ],
+    [
+     47.575498,
+     -121.311443
+    ],
+    [
+     47.575211,
+     -121.311731
+    ],
+    [
+     47.574819,
+     -121.312133
+    ],
+    [
+     47.574344,
+     -121.312303
+    ],
+    [
+     47.573797,
+     -121.31268
+    ],
+    [
+     47.573372,
+     -121.313073
+    ],
+    [
+     47.573052,
+     -121.312829
+    ],
+    [
+     47.572661,
+     -121.312595
+    ],
+    [
+     47.572537,
+     -121.312153
+    ],
+    [
+     47.572247,
+     -121.312494
+    ],
+    [
+     47.571685,
+     -121.312759
+    ],
+    [
+     47.571119,
+     -121.31285
+    ],
+    [
+     47.570516,
+     -121.313391
+    ],
+    [
+     47.570016,
+     -121.313532
+    ],
+    [
+     47.569575,
+     -121.313809
+    ],
+    [
+     47.568885,
+     -121.314298
+    ],
+    [
+     47.56807,
+     -121.314261
+    ],
+    [
+     47.567482,
+     -121.314433
+    ],
+    [
+     47.567175,
+     -121.314397
+    ],
+    [
+     47.566503,
+     -121.314594
+    ],
+    [
+     47.565979,
+     -121.314679
+    ],
+    [
+     47.56541,
+     -121.315189
+    ],
+    [
+     47.565006,
+     -121.315372
+    ],
+    [
+     47.564436,
+     -121.31518
+    ],
+    [
+     47.564162,
+     -121.315461
+    ],
+    [
+     47.563559,
+     -121.315656
+    ],
+    [
+     47.563179,
+     -121.315031
+    ],
+    [
+     47.562792,
+     -121.314609
+    ],
+    [
+     47.562577,
+     -121.314017
+    ],
+    [
+     47.562249,
+     -121.313481
+    ],
+    [
+     47.561978,
+     -121.312845
+    ],
+    [
+     47.561638,
+     -121.312337
+    ],
+    [
+     47.561132,
+     -121.311766
+    ],
+    [
+     47.560703,
+     -121.311107
+    ],
+    [
+     47.560224,
+     -121.310016
+    ],
+    [
+     47.559813,
+     -121.309294
+    ],
+    [
+     47.560094,
+     -121.30896
+    ],
+    [
+     47.560288,
+     -121.308248
+    ],
+    [
+     47.56021,
+     -121.307897
+    ],
+    [
+     47.559551,
+     -121.307511
+    ],
+    [
+     47.559284,
+     -121.30815
+    ],
+    [
+     47.558818,
+     -121.308281
+    ],
+    [
+     47.558721,
+     -121.3086
+    ],
+    [
+     47.558656,
+     -121.308524
+    ],
+    [
+     47.558735,
+     -121.307943
+    ],
+    [
+     47.558431,
+     -121.307382
+    ],
+    [
+     47.558284,
+     -121.306505
+    ],
+    [
+     47.558116,
+     -121.305731
+    ],
+    [
+     47.557793,
+     -121.30533
+    ],
+    [
+     47.557615,
+     -121.304757
+    ],
+    [
+     47.55752,
+     -121.303551
+    ],
+    [
+     47.557731,
+     -121.302375
+    ],
+    [
+     47.557825,
+     -121.301703
+    ],
+    [
+     47.557716,
+     -121.300826
+    ],
+    [
+     47.557386,
+     -121.299889
+    ],
+    [
+     47.557097,
+     -121.299415
+    ],
+    [
+     47.556872,
+     -121.299108
+    ],
+    [
+     47.556605,
+     -121.298603
+    ],
+    [
+     47.556304,
+     -121.298136
+    ],
+    [
+     47.556343,
+     -121.297355
+    ],
+    [
+     47.556588,
+     -121.296722
+    ],
+    [
+     47.557,
+     -121.296053
+    ],
+    [
+     47.556392,
+     -121.296235
+    ],
+    [
+     47.556177,
+     -121.295655
+    ],
+    [
+     47.556035,
+     -121.295375
+    ],
+    [
+     47.555593,
+     -121.295322
+    ],
+    [
+     47.554971,
+     -121.295096
+    ],
+    [
+     47.554585,
+     -121.293898
+    ],
+    [
+     47.554339,
+     -121.292863
+    ],
+    [
+     47.554031,
+     -121.291651
+    ],
+    [
+     47.553646,
+     -121.290896
+    ],
+    [
+     47.553447,
+     -121.289861
+    ],
+    [
+     47.553189,
+     -121.288632
+    ],
+    [
+     47.553411,
+     -121.287851
+    ],
+    [
+     47.553634,
+     -121.287237
+    ],
+    [
+     47.5538,
+     -121.2865
+    ],
+    [
+     47.554047,
+     -121.285881
+    ],
+    [
+     47.553809,
+     -121.285614
+    ],
+    [
+     47.553847,
+     -121.285596
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 19.5,
+    "summitTimeHrs": 5,
+    "descentTimeHrs": 6.5,
+    "approachTimeHrs": 8,
+    "recommendedStart": "7:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 8,
+      "note": "West Fork Foss trail to Big Heart Lake, then cross-country over Atrium Ridge to Chetwoot Lake.",
+      "fromTo": "Backpack in to Chetwoot Lake",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5,
+      "note": "From Chetwoot Lake past Point 6077 to the west ridge, the notch and ramp, and the north ridge to the summit, then back to camp.",
+      "fromTo": "Climb Iron Cap Mountain",
+      "section": "Climb"
+     },
+     {
+      "hrs": 6.5,
+      "note": "Back over Atrium Ridge to Big Heart Lake and out the West Fork Foss trail.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "Northwest Forest Pass or America the Beautiful pass for trailhead parking",
+    "Free self-issue Alpine Lakes Wilderness permit (available at the trailhead)",
+    "Topo map/GPS track — cairns thin out through the boulder fields",
+    "Ice axe if traveling before mid-to-late July",
+    "Trekking poles for creek crossings"
+   ],
+   "pro_tips": [
+    "Many parties climb Iron Cap as part of a longer traverse (Big Snow Mountain, Chetwoot/Tank Lakes, La Bohn Gap) rather than as an isolated day trip, since the approach is so long",
+    "Water is plentiful at the lakes along the approach but scarce on the ridge above Chetwoot and Iron Cap lakes; fill up before the climb",
+    "Big Heart Lake is a popular, busy destination; the camps beyond it at Chetwoot Lake are much quieter"
+   ],
+   "watch_out": [
+    "Losing the boulder-field route between cairns — carry a GPS track or detailed map",
+    "The 3rd-class downclimb to the crux notch is a bit exposed; take care with a loaded pack",
+    "High avalanche hazard on approach slopes during May-June snowmelt; this is not an early-season objective"
+   ],
+   "pro_needs": "No technical protection is needed — this is an unroped class 3 scramble on talus and blocky rock; a helmet is a reasonable precaution against rockfall on the ridge.",
+   "best_season": "August",
+   "high_point_ft": 6347,
+   "aid_grade": null,
+   "approach": "Start at the West Fork Foss River trailhead (~1,650 ft): from US 2 at Skykomish, turn south on Foss River Road (FR 68), then left on FR 6835 (signed for Trail 1064) for its last 1.9 miles to the trailhead. Self-issue Alpine Lakes Wilderness permits are at the trailhead. The West Fork Foss Lakes Trail #1064 reaches Trout Lake at 1.6 miles, then climbs to Copper Lake (4.2 miles, about 2,400 ft of gain) and continues past Little Heart Lake to Big Heart Lake (7.3 miles, about 3,300 ft), where the maintained trail ends. From Big Heart, go cross-country over the south end of Atrium Ridge, past small tarns and Little Chetwoot Lake, to Chetwoot Lake, the usual camp. From Chetwoot, climb talus and heather toward Point 6077, pass it on the east through more talus, and gain Iron Cap's west ridge for easy Class 3 scrambling. A short third-class downclimb drops into a notch; beyond it a wide ramp traverses below the summit block, without sidehilling, to the broad north ridge, and easy red-tinged rock and dirt lead to the 6,347 ft summit. A variation climbs from the Iron Cap Lake outlet on ledges around the nose of the north ridge. Route-finding through the boulder fields is the crux of the approach: cairns are sparse, and a map or GPS track is strongly advised. Most parties take two to three days, about 24 miles round trip.",
+   "descent_text": "Descent reverses the ascent or loops through the Iron Cap Lake basin. From the summit, follow the broad north ridge down on easy red-tinged rock and dirt, then either return across the ramp and up out of the notch onto the west ridge and down the talus to Chetwoot Lake, or continue down the north ridge to Iron Cap Lake and work back to camp through the lake basin. This is a Class 2-3 walk-off with no fixed anchors or rappels. The main hazards are loose dirt over rock, especially when wet or with snow patches early in the season, and picking the wrong line: parties who lose the ramp or wander east end up cliffed out on the steeper east-side rock bands or in steep heather, so retrace your ascent track. From Chetwoot, reverse the cross-country leg over Atrium Ridge to Big Heart Lake and walk the West Fork Foss trail about 7.3 miles back to the trailhead.",
+   "bail": "Retreat is straightforward at nearly any point on the ridge or the cross-country approach by simply reversing the ascent line back to Chetwoot Lake and the maintained trail — no fixed rappels or technical retreat gear are needed.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "The lake basins and the ridge typically aren't snow-free until mid-to-late July, so August-September is the most reliable window.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the West Fork Foss trailhead, follow Trail 1064 past Trout, Copper and Little Heart lakes to Big Heart Lake, where the trail ends, then go cross-country over the south end of Atrium Ridge, past Little Chetwoot Lake, to camp at Chetwoot Lake. The trail miles are steady; the off-trail leg is slow.",
+      "hours": 8,
+      "miles": 10,
+      "title": "Backpack in to Chetwoot Lake",
+      "gainFt": 4000,
+      "lossFt": 700,
+      "packLb": 38,
+      "schedule": [
+       {
+        "time": "7:00 AM",
+        "label": "Leave West Fork Foss trailhead",
+        "detail": "Trout Lake at 1.6 miles."
+       },
+       {
+        "time": "~11:30 AM",
+        "label": "Big Heart Lake",
+        "detail": "About 7.3 miles and 3,300 ft; the maintained trail ends."
+       },
+       {
+        "time": "~3:00 PM",
+        "label": "Chetwoot Lake camp",
+        "detail": "Cross-country over Atrium Ridge past small tarns and Little Chetwoot Lake."
+       }
+      ],
+      "objective": "Reach camp at Chetwoot Lake below Iron Cap's west side"
+     },
+     {
+      "n": 2,
+      "note": "Climb from Chetwoot Lake with a light pack: talus and heather toward Point 6077, around it on the east, onto the west ridge, down into the notch, across the ramp to the north ridge and up to the summit. Return the same way or loop down the north ridge past Iron Cap Lake.",
+      "hours": 5,
+      "miles": 4,
+      "title": "Climb Iron Cap Mountain",
+      "gainFt": 1700,
+      "lossFt": 1700,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "7:00 AM",
+        "label": "Leave Chetwoot Lake camp",
+        "detail": "Talus and heather toward Point 6077."
+       },
+       {
+        "time": "~8:30 AM",
+        "label": "West ridge",
+        "detail": "Pass Point 6077 on the east and gain the ridge."
+       },
+       {
+        "time": "~9:30 AM",
+        "label": "Summit",
+        "detail": "Downclimb into the notch, take the ramp to the north ridge, then easy scrambling to the top."
+       },
+       {
+        "time": "~12:00 PM",
+        "label": "Back at camp",
+        "detail": "Retrace the ramp exactly on the way down."
+       }
+      ],
+      "objective": "Summit Iron Cap Mountain by the west and north ridges"
+     },
+     {
+      "n": 3,
+      "note": "Break camp, cross Atrium Ridge back to Big Heart Lake, and walk out the West Fork Foss trail to the trailhead.",
+      "hours": 6.5,
+      "miles": 10,
+      "title": "Hike out",
+      "gainFt": 700,
+      "lossFt": 4000,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Return to the West Fork Foss trailhead"
+     }
+    ],
+    "totalNote": "A 3-day backpack of about 24 miles round trip: a trail day to Big Heart Lake and cross-country to Chetwoot Lake, a summit day of about five hours from camp, and a day out. Strong parties sometimes do it in two days."
+   },
+   "access": {
+    "fees": "A Northwest Forest Pass ($5/day or $30/annual) or America the Beautiful pass covers most Mt. Baker-Snoqualmie NF trailheads in this corridor; the Dingford Creek Trailhead itself is currently posted as a no-fee site, but carry a pass in case that changes.",
+    "notes": "",
+    "rules": "No bikes beyond the old Dutch Miller Gap Horse Camp (trail mile 7.7); no motorized or mechanized travel within the Alpine Lakes Wilderness; groups larger than 12 must split into separate parties with at least one mile of separation.",
+    "permit": "Free self-issue day-use/overnight wilderness permit required at the trailhead for all of the Alpine Lakes Wilderness; group size is capped at 12 (people and stock combined).",
+    "closures": "The old Dutch Miller Gap Trailhead is no longer reachable by vehicle — Dingford Creek Trailhead is now the standard starting point. The lower Middle Fork Snoqualmie Trail below Dingford Creek has been closed since a 2018 landslide. FR 56 has had periodic washout closures near the Taylor River; check current Mt. Baker-Snoqualmie NF alerts before driving.",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie",
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry your copy."
+    }
+   },
+   "road": {
+    "name": "Foss River Road (FR 68) and FR 6835",
+    "status": "Gravel forest roads; check Mt. Baker-Snoqualmie NF road alerts before driving",
+    "driveNote": "From US 2 at Skykomish, turn south on Foss River Road (FR 68), then left on FR 6835 (signed for Trail 1064) for its last 1.9 miles to the West Fork Foss trailhead."
+   },
+   "climate": {
+    "typical": "Wet, cool west-slope Cascades climate; heavy winter snowpack persists into early summer, especially on north-facing terrain. Reliable snow-free scrambling conditions typically arrive by late July/August and hold through September.",
+    "bySeason": {
+     "fall": "Late September into October: shorter days and rising storm risk; snow can return to the high basin by mid-October.",
+     "spring": "Not viable — approach trail and route are largely snow-covered with high avalanche hazard on surrounding slopes during May-June snowmelt.",
+     "summer": "Best window (August-September): warm, mostly snow-free ridge, though the boulder-field approach still demands care and route-finding.",
+     "winter": "FR 56 and the trail are typically snow-covered and effectively inaccessible; not a winter objective."
+    },
+    "forecastZone": "NWAC Snoqualmie Pass / Stevens Pass zones (the peak sits near the boundary) — check both for early- and late-season travel"
+   },
+   "emergency": {
+    "notes": "No cell coverage in the West Fork Foss valley or the lake basins below Iron Cap; the approach is remote, so plan for a long hike and drive to reach help in an emergency.",
+    "county": "King County",
+    "rangerStation": "Skykomish Ranger District, Mount Baker-Snoqualmie National Forest (on US 2 at Skykomish; administers the West Fork Foss trailhead)",
+    "nearestHospital": "EvergreenHealth Monroe, Monroe (24-hour emergency department), west on US 2"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Late July-August weekends, mostly parties doing the Alpine Lakes High Route traverse rather than a dedicated Iron Cap day trip",
+    "solitudeRating": 4,
+    "estimatePerSeason": "roughly 20-40 parties per season (rough estimate from trip-report frequency, not a measured count)"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong, sustained uphill fitness: about 7.3 trail miles and 3,300 ft to Big Heart Lake, then slow cross-country travel to Chetwoot Lake before any scrambling begins",
+     "packWeight": "Most parties camp at Chetwoot Lake given the approach length, so plan for an overnight pack (roughly 20-35 lbs) rather than a single big day"
+    },
+    "approachTime": "Long: a full day on the West Fork Foss trail and over Atrium Ridge to Chetwoot Lake before the climb itself",
+    "requiredSkills": [
+     "Class 3 scrambling on loose talus and short rock steps",
+     "off-trail routefinding (route is not signed/maintained)",
+     "comfort with loose/exposed footing",
+     "self-sufficiency on a long approach far from help"
+    ],
+    "experienceLevel": "Advanced scrambler comfortable with sustained off-trail travel and unmaintained wilderness approaches; not a beginner objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "August is the core window; late July into September is climbable but with more variable snow/weather at the margins (August) and season (Late July-September)",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Only the back half of July is in season; early/mid-July can still have lingering snowpack on the approach and route from spring snow cover",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "In season; maritime climate is clearest and driest in mid-to-late summer, giving the most reliable dry-rock talus/scramble conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still within the dry summer window, but shorter days and a rising chance of early-season storms as fall approaches (a 'short clear window' in fall)",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime Cascades climate; the route window is the driest and clearest in mid-to-late summer, with full snow cover in winter and lingering snow/avalanche risk in spring",
+     "probability": "Afternoon convective showers are a general Cascades summer pattern; no route-specific thunderstorm frequency data was found for Iron Cap"
+    },
+    "exposure": "Class 3 terrain on loose talus and short rock steps (on-file hazard: loose rock); parties describe a short 3rd-class downclimb near a notch adding fall exposure, and the long, unmaintained approach (on-file hazard: long approach) increases the consequence of any injury given distance from help",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route (nearest NWAC coverage is the Stevens Pass zone, but Iron Cap is climbed only in the snow-free season, outside the winter/spring avalanche forecast period)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No official gain_ft/dist_km figures specific to an Iron Cap-only round trip were found; the ~15-mile-to-Williams-Lake and ~30-mile-round-trip figures are derived from trip-report mileages for multi-peak traverses, not a dedicated FS trail log for this exact route",
+     "The precise orientation/name of the summit ridge (some sources call the easiest line the 'North Ridge' from the Foss side; this South Route reaches a broad north ridge from Williams Lake) isn't fully reconciled across sources",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.554001,
+    "peakLng": -121.284819,
+    "trailhead": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+    "trailheadLat": 47.5172,
+    "trailheadLng": -121.45437,
+    "trailheadDirection": "From the Dingford Creek Trailhead up the Middle Fork Snoqualmie Road from North Bend"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Class 3 scramble on stepped rock terrain (Alpine Lakes Wilderness); no rope standard. Ice axe useful for early-season snow approach via Chetwoot Lake/West Fork Foss.",
+   "ascender": null,
+   "corrections": "No route-specific gear beta found; inference from Class 3 terrain description (SummitPost/WTA).",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Iron Cap Lake basin to the north ridge",
+     "notes": "However you reach it, the last of the walking is cross-country over open talus, heather benches and scree above the lake basin. Route-finding is the crux of the approach rather than any move on it: the ground is unmarked and lightly cairned, the footing is loose rock and dirt with occasional steep heather, and visibility-dependent cliff bands will stop a poorly chosen line. Water is scarce once you leave the valley floor, so tank up before the final push.",
+     "season": "Late July to September",
+     "hazards": [
+      "Loose dirt over rock on the upper slopes",
+      "Steep heather with poor runout",
+      "Cliff bands on the east side that will stop a badly chosen line",
+      "Snow lingering into early July on north-facing ground",
+      "No water above the basin"
+     ],
+     "baseFinding": "The scrambling begins on rock ledges above the outlet of Iron Cap Lake. Cross the outlet stream and start working upward to the SOUTHEAST on a series of ledges — the change from vegetated, dirt-over-rock ground to continuous clean ledges is the tell that you are on the route, and the rock here is genuinely solid, unlike everything below it. The line curves around the nose of the north ridge rather than attacking the summit block head-on. Higher, a short third-class downclimb drops into a notch, which reads as a dead end and is not one: beyond it a wide ramp traverses below the summit block, taking you across without sidehilling, and meets the broad north ridge. From there easy red-tinged rock and dirt lead to the true summit. Losing that ramp is the way parties end up cliffed out on the steeper east-side rock bands, so note the line as you go and retrace it exactly on the way down."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 2-3",
+     "label": "West ridge",
+     "notes": "Gained off unmarked cross-country ground above Iron Cap Lake basin; loose rock and dirt underfoot with occasional steep heather. Class 2-3 scrambling toward the 6,347 ft summit."
+    },
+    {
+     "n": 2,
+     "class": "Class 3",
+     "label": "Downclimb into the notch",
+     "notes": "From the ridge a short 3rd-class downclimb drops into a notch."
+    },
+    {
+     "n": 3,
+     "label": "Ramp below the summit block to the north ridge",
+     "notes": "Beyond the notch a wide ramp traverses below the summit block — no sidehilling required — to meet the broad north ridge, which is easy red-rock and dirt scrambling to the true summit."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Chetwoot Lake",
+     "role": "main",
+     "type": "camp",
+     "notes": "The base for the climb: reached off-trail from Big Heart Lake over the south end of Atrium Ridge, past small tarns and Little Chetwoot Lake. Much quieter than Big Heart. The climb to Iron Cap's west ridge starts from here.",
+     "water": "Chetwoot Lake",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit at the West Fork Foss trailhead. Northwest Forest Pass to park. Group limit twelve."
+    },
+    {
+     "name": "Big Heart Lake",
+     "role": "route",
+     "type": "camp",
+     "notes": "The end of the maintained West Fork Foss trail, about 7.3 miles and 3,300 ft from the trailhead; popular and often crowded, but a reasonable first-night stop for slower parties.",
+     "water": "Big Heart Lake",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead. Northwest Forest Pass to park. Group limit twelve."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "west ridge rdg north ridge rdg via chetwoot lake lk",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}
