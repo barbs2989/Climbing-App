@@ -1,0 +1,150 @@
+{
+ "applied": [
+  {
+   "id": "wa_glacier_view_temple",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)"
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "time"
+   ],
+   "fact": "Day-2 summit-day duration"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_project_crack",
+   "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)",
+   "op": "set",
+   "column": "rope_length_m",
+   "path": [],
+   "expect": 30,
+   "value": 60,
+   "sources": [
+    "https://www.mountainproject.com/route/119476986/project-crack"
+   ],
+   "why": "expect mismatch at rope_length_m[]: live 60"
+  },
+  {
+   "id": "wa_enchantment_peak_east_ridge",
+   "fact": "Grade of the (non-taken) SW sub-summit",
+   "op": "replace_text",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "find": "a distinctly harder, more exposed low-5th-class climb",
+   "replace": "a distinctly harder, very exposed 4th-class climb",
+   "sources": [
+    "https://www.countryhighpoints.com/enchantment-peak-survey/",
+    "http://ericsbasecamp.net/trips/EnchantmentPk/EnchantmentPk.htm"
+   ],
+   "why": "find occurs 0x at watch_out[0]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_glacier_view_temple",
+   "before": {
+    "descent_text": "From the top of the route, lower directly off the fixed chain anchor to the ground with a single 60m rope; no walk-off descent is needed for this single-pitch line."
+   }
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "Core Enchantments overnight camping needs a competitive Feb-lottery permit in peak season (roughly mid-June through October); camping without a permit is allowed only before ~May 15, when the pass is often still snow-covered.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Stuart Lake TH, hike to Colchuck Lake, then grind up the notoriously steep, loose Aasgard Pass headwall with full overnight packs. Drop into the Core Enchantments basin and make camp near Isolation or Inspiration Lake, centrally located below Enchantment Peak.",
+       "hours": 7.5,
+       "miles": 6.7,
+       "title": "Approach to Core Enchantments camp",
+       "gainFt": 4300,
+       "lossFt": 700,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Stuart Lake trailhead",
+         "detail": "Early start to beat afternoon heat/storms and finish Aasgard Pass with daylight to spare."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": "~4 mi, 2,200 ft gain; refill water before the pass."
+        },
+        {
+         "time": "~12:30 PM",
+         "label": "Top of Aasgard Pass (~7,800 ft)",
+         "detail": "Brutal 2,000+ ft in 1.5 mi over loose talus/boulders, snow patches possible into July."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Camp near Isolation/Inspiration Lake",
+         "detail": "Core zone overnight permit required in season; free self-issue day permit otherwise."
+        }
+       ],
+       "objective": "Cross Aasgard Pass and establish camp near Isolation/Inspiration Lake"
+      },
+      {
+       "n": 2,
+       "note": "Day-hike from camp past Tranquil Lake to the base of the southwest slopes; class 2 talus and slab lead to a short class 3 gully onto the summit plateau between the SW and NE summits. Many parties link this with Little Annapurna or McClellan Peak in the same push since they share the same basin.",
+       "hours": 5.5,
+       "miles": 3.2,
+       "title": "Enchantment Peak summit day",
+       "gainFt": 1650,
+       "lossFt": 1650,
+       "packLb": 10,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave camp",
+         "detail": "Light day pack; water, layers, helmet for the loose upper gully."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Base of SW ridge/gully",
+         "detail": "Via Tranquil Lake; terrain is class 1-2 until just below the summit block."
+        },
+        {
+         "time": "~11:00 AM",
+         "label": "Summit Enchantment Peak (8,538 ft)",
+         "detail": "Final class 3 gully; loose rock, exposed but short."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at camp",
+         "detail": "Optional side trip to Little Annapurna (8,440 ft) on the return if time/energy allow."
+        }
+       ],
+       "objective": "Scramble the southwest side/ridge to the summit and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reclimb to the top of Aasgard Pass, then carefully downclimb the steep, exposed, loose upper headwall (the crux of the exit, harder than the ascent for many parties) before the long, knee-jarring descent past Colchuck Lake to the car.",
+       "hours": 6.5,
+       "miles": 6.7,
+       "title": "Exit over Aasgard Pass",
+       "gainFt": 700,
+       "lossFt": 4300,
+       "packLb": 28,
+       "schedule": [],
+       "objective": "Return to the Stuart Lake trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, 2-night trip out of the Stuart Lake TH: roughly 16-17 miles round trip with the crux being the ~2,200 ft Aasgard Pass headwall (both up and down) bracketing an easy day-hike summit day inside the Core Enchantments."
+    }
+   }
+  }
+ ]
+}

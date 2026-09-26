@@ -1,0 +1,351 @@
+{
+ "file": "r283.json",
+ "results": [
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The itinerary's 4,400 ft to the Bench and '~5,800 ft one-way' are impossible against the row's own pins (pullout 4,300, creek 4,080, Bench 6,460, summit 8,203), but no outside source states a car-to-car gain for Ares Tower. One source states ~4,400 ft from the highway to Burgundy Col (itself more than the 4,300->7,800 ft difference), another gives 2,500 ft trailhead-to-col; neither is a figure for this route, and the rules forbid computing gain_ft from pin arithmetic.",
+   "sources": [
+    "https://www.summitpost.org/burgundy-col-silverstar-glacier/158024",
+    "https://www.mountaineers.org/activities/routes-places/vasiliki-tower-northwest-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two sources put Burgundy Col about 3 mi from the SR-20 pullout (matching the col pin's distMi 3), and Ares Tower lies north of the col along the ridge, so the one-way distance is roughly 3.5 mi; but no source states the one-way figure to Ares Tower itself. dist_km 11.27 renders as a 7.0 mi ONE-WAY approach and agrees with totalNote's '~7 mi one-way', both likely a round-trip number, and the itinerary day miles (3.3 + 7) disagree with the pins. Without a sourced one-way figure to the summit, dist_km and the itinerary are left unchanged.",
+   "sources": [
+    "https://www.mountainproject.com/area/114431374/vasiliki-tower",
+    "https://www.mountaineers.org/activities/routes-places/vasiliki-tower-northwest-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "fact": "Direction along Vasiliki Ridge from Burgundy Col",
+   "verdict": "fixed",
+   "correct_value": "North from Burgundy Col toward Ares Tower",
+   "evidence": "A 2025 ascent account reaches the notch north of Ares's summit and afterwards continues SOUTH to The Acropolis and then Niki Tower, placing Ares at the north end beyond them. A second source describes Vasiliki Tower as the rock on the north side of Burgundy Col, and Wikipedia places Vasiliki Ridge north of Silver Star; USGS lidar puts the 8,197 ft Ares summit (48.5600 N) north of the ~7,830 ft col (~48.555 N). The itinerary and PUBLISHED TIMES copies saying 'south' are corrected to north.",
+   "sources": [
+    "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/",
+    "https://www.summitpost.org/burgundy-col-silverstar-glacier/158024",
+    "https://en.wikipedia.org/wiki/Vasiliki_Ridge",
+    "https://epqs.nationalmap.gov/v1/json (USGS 1 m lidar point queries)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "gain Burgundy Col and traverse south along Vasiliki Ridge",
+     "replace": "gain Burgundy Col and traverse north along Vasiliki Ridge",
+     "id": "wa_vasiliki_ridge_standard",
+     "fact": "Direction along Vasiliki Ridge from Burgundy Col"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "gain Burgundy Col and traverse south along Vasiliki Ridge",
+     "replace": "gain Burgundy Col and traverse north along Vasiliki Ridge",
+     "id": "wa_vasiliki_ridge_standard",
+     "fact": "Direction along Vasiliki Ridge from Burgundy Col"
+    }
+   ]
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source gives a commitment (Roman) grade for Ares Tower. Sources describe it as a 4th-class spire with a short low-5th step, a fun short-day objective, which fits I-II better than II-III, but neither value is stated by two sources, so grade, commitment and baseFinding are left as they are.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vasiliki_Ridge",
+    "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "fact": "Nature of the technical climbing / pitch count",
+   "verdict": "fixed",
+   "correct_value": "A 4th-class scramble to the notch plus one short low-5th-class step to the summit (the two ROUTE BREAKDOWN rows), not two roped pitches on a tower",
+   "evidence": "Wikipedia calls Ares Tower a 4th class rock spire. A 2025 ascent account follows a 4th-class route to the notch north of the summit, scrambles around a big boulder to the top (a direct low-fifth variation on the west face is the alternative), and makes a single rappel back to stashed gear. The approach text's 'two pitches' of fifth-class tower climbing is corrected; pitches=2 matches the two ROUTE BREAKDOWN rows and is left alone.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vasiliki_Ridge",
+    "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Two pitches, Grade II-III, fifth class.",
+     "replace": "The climbing is a 4th-class scramble to a notch, then one short low-5th-class step to the true summit; Grade II-III.",
+     "id": "wa_vasiliki_ridge_standard",
+     "fact": "Nature of the technical climbing / pitch count"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "climb two pitches, rappel back to your gear",
+     "replace": "climb the short summit step, rappel back to your gear",
+     "id": "wa_vasiliki_ridge_standard",
+     "fact": "Nature of the technical climbing / pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "fact": "Partner requirements describe a harder, multi-rappel objective",
+   "verdict": "fixed",
+   "correct_value": "A confident 4th-class scrambler able to lead one short low-5th step and make one rappel from a fixed anchor",
+   "evidence": "Wikipedia describes Ares Tower as a 4th class spire; a 2025 ascent account describes 4th-class ridge scrambling, an optional low-fifth variation, and one rappel off the summit anchor. Nothing requires multi-pitch 5.7-5.8 leading or multiple rappels, so the three generic Wine Spires skill lines are rewritten to fit this route.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vasiliki_Ridge",
+    "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "expect": "Multi-pitch trad leading and efficient belay/anchor transitions",
+     "value": "Leading one short, exposed low-5th-class step and building a belay on alpine granite",
+     "id": "wa_vasiliki_ridge_standard",
+     "fact": "Partner requirements describe a harder, multi-rappel objective"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "expect": "Multi-rappel descent competence (raps off towers/spires)",
+     "value": "A single rappel from a fixed summit anchor, including checking the anchor before weighting it",
+     "id": "wa_vasiliki_ridge_standard",
+     "fact": "Partner requirements describe a harder, multi-rappel objective"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "expect": "Solid alpine rock climber comfortable leading moderate (5.7-5.8-ish) multi-pitch trad routes with route-finding on featured but sometimes loose granite; prior towers/spires or North Cascades alpine rock experience strongly preferred",
+     "value": "Solid alpine scrambler at home on exposed, loose 4th-class ridge terrain and able to lead a short low-5th-class step, with route-finding on featured but sometimes loose granite; prior experience on the Washington Pass towers helps",
+     "id": "wa_vasiliki_ridge_standard",
+     "fact": "Partner requirements describe a harder, multi-rappel objective"
+    }
+   ]
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "fact": "Parking pass at the Wine Spires pullout",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The only dissenting copy is bivy[0].permit on the shared regional Bench Camp entry, which is owned by the separate camping clean-up; no bivy patch is written. The Bench Camp entry does serve this route (it names Vasiliki Ridge as its main use); the hidden 'The Bench' row is a duplicate of it.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_direct",
+   "fact": "Hardest grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "5.9",
+   "evidence": "The first-ascent account calls the route 'a two- or three-pitch, well protected climb (5.9)', with pitch grades 5.7, 5.8+, 5.9 and 5.7. No second outside source describes this line; rock_grade, overview and every pitch grade in beta already say 5.9, so the lone 5.10 in `grade` is corrected (grade_num is derived and not patched).",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12199413402"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "5.10",
+     "value": "5.9",
+     "id": "wa_south_face_direct",
+     "fact": "Hardest grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_direct",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "2",
+   "evidence": "The first-ascent account describes a first and second pitch in detail and calls the route two- or three-pitch; the beta on this row describes the same two pitches. A pitch count of 0 is impossible; 2 is the number of pitches actually described.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12199413402"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 0,
+     "value": 2,
+     "id": "wa_south_face_direct",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face",
+   "fact": "Summit elevation vs Burgundy Col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "7,663 ft is wrong: the route climbs 240 ft (2 pitches, per the route listing) from Burgundy Col, which sources put at ~7,800 ft. But the replacement cannot be settled: one topo-derived list gives Vasiliki Tower 7,940 ft, a trip-report site 7,920 ft, and USGS 1 m lidar sampled just north of the col returns a local high of ~8,060 ft over a ~7,830 ft saddle, which also fits col + 240 ft. The sources disagree by more than 100 ft, so high_point_ft is left for a ground-based pass.",
+   "sources": [
+    "https://www.mountainproject.com/route/121045942/mountaineers-northwest-face",
+    "https://www.mountainproject.com/area/114431374/vasiliki-tower",
+    "https://listsofjohn.com/peak/212044",
+    "https://stephabegg.com/trip-reports/washington/chianti-rebel-yell/",
+    "https://www.summitpost.org/burgundy-col-silverstar-glacier/158024",
+    "https://epqs.nationalmap.gov/v1/json (USGS 1 m lidar point queries)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route listing gives the South Face as 3 pitches, 250 ft, 5.6, Grade II, which matches pitches=3 and length_m 76. The overview, beta and ROUTE BREAKDOWN say two pitches, but the ROUTE BREAKDOWN text (face to a sandy bench, then a slab with a finger crack on the left) is the Northwest Face's description, so the two-pitch prose looks copied from the neighbouring route. Only one source gives a count, so nothing is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/114432444/south-face",
+    "https://www.mountainproject.com/route/121045942/mountaineers-northwest-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face",
+   "fact": "Summit elevation vs Burgundy Col elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Summit: 7,663 ft (on high_point_ft and the summit pin) is below the col and wrong, but the sources disagree (topo list 7,940 ft, trip-report site 7,920 ft, USGS lidar ~8,060 ft local high just north of the col), so it is left unresolved. The col half of this contradiction is settled separately (see the discovered Burgundy Col entry).",
+   "sources": [
+    "https://listsofjohn.com/peak/212044",
+    "https://stephabegg.com/trip-reports/washington/chianti-rebel-yell/",
+    "https://epqs.nationalmap.gov/v1/json (USGS 1 m lidar point queries)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face",
+   "fact": "Burgundy Col elevation",
+   "verdict": "fixed",
+   "correct_value": "~7,800 ft",
+   "evidence": "SummitPost describes '7800-foot Burgundy Col'; the Northwest Face route listing and the club route page both put camps at Burgundy Col (7,800 ft); USGS lidar gives the saddle just south of Vasiliki Tower at ~7,830 ft. One trip-report site says 7,720 ft. The row's itinerary already says ~7,800 ft; the col pin (7,950) and the approach text (~7,720) are brought into line.",
+   "sources": [
+    "https://www.summitpost.org/burgundy-col-silverstar-glacier/158024",
+    "https://www.mountainproject.com/route/121045942/mountaineers-northwest-face",
+    "https://epqs.nationalmap.gov/v1/json (USGS 1 m lidar point queries)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 7950,
+     "value": 7800,
+     "id": "wa_south_face",
+     "fact": "Burgundy Col elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Burgundy Col (~7,720 ft, ~3 hours)",
+     "replace": "Burgundy Col (~7,800 ft, ~3 hours)",
+     "id": "wa_south_face",
+     "fact": "Burgundy Col elevation"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_south_face",
+   "fact": "Grade vs protection description",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A rack of nuts and cams (to about 4 in) for 5.6 climbing",
+   "evidence": "The route listing grades the South Face 5.6 and says to bring gear up to four inches; grade, rock_grade, pitch_detail (5.6, 5.5), detailed_rack and sling_rack all describe a moderate 5.6 rack. The gear line '5.8-5.9 protection' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/114432444/south-face"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "expect": "5.8-5.9 protection",
+     "value": "Nuts and cams to about 4 in",
+     "id": "wa_south_face",
+     "fact": "Grade vs protection description"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source gives a season for Vasiliki Tower's South Face. The chip (Jul-Sep) and the prose (best late June through August; mid-June start) disagree only at the June edge; the SR-20 reopening and snow at Burgundy Col decide it and vary by year, so it is left unchanged.",
+   "sources": [
+    "https://www.mountainproject.com/route/114432444/south-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face",
+   "fact": "Approach text names a different formation",
+   "verdict": "fixed",
+   "correct_value": "The approach ends at Vasiliki Tower on the north side of Burgundy Col",
+   "evidence": "The route listing places the South Face on the north side of Burgundy Col, opposite Burgundy Spire; SummitPost describes Vasiliki Tower as the towering rock on the north side of the col. The approach's closing clause about reaching Burgundy Spire was carried over from a Burgundy Spire route and is replaced.",
+   "sources": [
+    "https://www.mountainproject.com/route/114432444/south-face",
+    "https://www.summitpost.org/burgundy-col-silverstar-glacier/158024"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Burgundy Spire is reached from the basin/col area with a short additional scramble;",
+     "replace": "Vasiliki Tower rises directly from the north side of the col;",
+     "id": "wa_south_face",
+     "fact": "Approach text names a different formation"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2073 @@
+{
+ "batches": [
+  "b033.json",
+  "b034.json",
+  "b035.json",
+  "b036.json"
+ ],
+ "routes_read": 21,
+ "routes": [
+  {
+   "id": "wa_south_face_center",
+   "name": "South Face Center",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Free grade vs aid (5.7 A3) in itinerary/timing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.8+"
+      },
+      {
+       "field": "overview",
+       "says": "Historically climbed with a short bit of aid (5.7 A3) before being freed at its current, harder free grade"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Climb South Face Center (5.7 A3) finishing via the North Face's last pitch"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "The A3 pitches are notably slower going than the free lines nearby."
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "this is the slowest of Concord's rock lines because of the aid climbing on the two center-crack pitches"
+      }
+     ],
+     "why": "The Plan tab presents the route as an A3 aid climb while the header, chips and overview present it as a 5.8+ free climb (aid being history).",
+     "internal_resolution": "grade, rock_grade, pitch_detail and overview agree on a 5.8+ free climb with aid framed as history; the itinerary/timing text is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count and finish",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "1"
+      },
+      {
+       "field": "beta",
+       "says": "At 220 feet, the whole route goes in one pitch with a 70m rope (or can be broken into two with a 60m rope)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "aid/free the obvious center crack of the south face for two pitches before joining the North Face route's final pitch to reach the summit"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Trend left through two right-facing corners to a tree just below the summit block; belay from bolts at the top."
+      },
+      {
+       "field": "overview",
+       "says": "the route finishes by joining the upper portion of the North Face route to the summit"
+      }
+     ],
+     "why": "One field says the whole route is a single 220-ft pitch ending at bolts, another says two pitches plus the North Face's final pitch (three).",
+     "internal_resolution": "pitches, beta, length_m (67 m = 220 ft) and pitch_detail agree on one pitch (optionally split in two); the itinerary's 'two pitches before joining the North Face route's final pitch' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "about 30 miles west of Winthrop and a quarter mile west of the Washington Pass Overlook"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Signed trailhead on SR-20 ~1 mi west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass, 5,400 ft"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "Four fields place the same trailhead 0.25, 0.5, 1 and 1.5 miles from the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness status",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No climbing permit required; self-issue wilderness rules apply"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "This is general Okanogan-Wenatchee National Forest land outside any wilderness boundary"
+      }
+     ],
+     "why": "One ACCESS line invokes wilderness rules while another says the area is outside any wilderness boundary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2"
+      },
+      {
+       "field": "approach",
+       "says": "Hike the Blue Lake Trail about 1.5 miles until it opens out"
+      }
+     ],
+     "why": "A summit 2 mi from the trailhead gives ~4 mi round trip, not the 6 mi the itinerary and dist_km (9.66 km) state.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_3",
+   "name": "South Face",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Which notch/gully the South Face is approached from",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "to the base of the gully descending between Liberty Bell and Concord/Lexington Towers, then climb the gully (often snow- or ice-filled into late June) to the notch"
+      },
+      {
+       "field": "best_season",
+       "says": "once the Liberty-Concord notch/gully has melted out"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "The South Face is reached from the notch between Concord and Lexington, which is a different saddle from the Liberty Bell-Concord notch that the North Face and the Beckey Route use."
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].label",
+       "says": "Reach Concord-Lexington col"
+      }
+     ],
+     "why": "The APPROACH and season text send the party up the Liberty Bell-Concord gully, which the approach variant explicitly calls the wrong saddle for this route.",
+     "internal_resolution": "approach_variants, baseFinding, itinerary, waypoint note and beta ('gravelly ledges') agree on the Concord-Lexington notch; approach and best_season are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch 1 description",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "P1: rightward traverse on sandy ledges, steep crack, V-groove, finger traverse to a tree anchor."
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "climb the South Face's sandy ledges, crack, V-groove and finger traverse to the summit block"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "traverse rightward across gravelly, gently down-sloping class-2 ledges from the notch's east side, then easier climbing gains tree-lined terrain"
+      },
+      {
+       "field": "beta",
+       "says": "A roped scramble along the ridge crest leads to a sandy stance near a feature climbers call the 'shark fin.'"
+      }
+     ],
+     "why": "The itinerary describes a steep crack, V-groove and finger traverse that appear nowhere in beta or the three-row ROUTE BREAKDOWN (ledges, ridge scramble, Shark Fin).",
+     "internal_resolution": "beta, pitch_detail and approach_variants baseFinding agree on ledges / ridge scramble / Shark Fin; the itinerary's feature list is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 0.25 mile west of the Washington Pass Overlook"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "roughly 1 mile west of Washington Pass Overlook (5,477 ft)"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass, 5,400 ft"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From the Blue Lake Trailhead (~5,200 ft, about 1.5 miles west of Washington Pass)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed 0.25, 0.5, 1 and 1.5 miles from the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness status",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No climbing permit required; self-issue wilderness rules apply"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "This is general Okanogan-Wenatchee National Forest land outside any wilderness boundary"
+      }
+     ],
+     "why": "One ACCESS line invokes wilderness rules while another says the area is outside any wilderness boundary.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_the_cave_route",
+   "name": "The Cave Route",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Where the R (runout) rating comes from",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "The 'R' rating stems from the traversing P2 — protect it well for the second's safety with directional gear."
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Crux pitch-1 highstep move has poor-to-nonexistent protection with real ground-fall/decking potential"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Marginal to nonexistent protection at the crux highstep"
+      },
+      {
+       "field": "pitch_detail[0].crux",
+       "says": "true"
+      }
+     ],
+     "why": "The rope note locates the runout danger on pitch 2 while hazards, watch_out and pro_needs put it on the pitch-1 crux.",
+     "internal_resolution": "hazards, watch_out, pro_needs, pitch_detail and bail all place the runout at the P1 crux; rope_note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "2-rope rap from summit's west side (mid-height rap station may exist); additional rap down P1's north face to the notch"
+      },
+      {
+       "field": "rope_type",
+       "says": "single dynamic"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      },
+      {
+       "field": "descent_text",
+       "says": "rappel chains at the summit allow a doubled-rope rappel toward the notch, or downclimb/scramble back to the notch"
+      }
+     ],
+     "why": "The kit lists one 60 m single rope while RAPPELS calls for a two-rope rap plus a second rap, and the descent names a single doubled rappel or downclimb.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which gully the approach uses",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "follow Blue Lake Trail then the climber's path up to the Concord-Lexington gully"
+      },
+      {
+       "field": "approach",
+       "says": "to the gully between Liberty Bell and Concord Tower"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "this is the LIBERTY BELL-CONCORD notch"
+      }
+     ],
+     "why": "The trailhead waypoint note sends the party to the Concord-Lexington gully, which the approach variant calls the wrong side of Concord for this route.",
+     "internal_resolution": "approach, approach_variants and beta agree on the Liberty Bell-Concord notch; the shared waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rack size",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "standard rack to 3 in"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "A standard trad rack up to 4 inches"
+      }
+     ],
+     "why": "PROTECTION says to 4 in while the gear list says to 3 in.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch-1 belay tree",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "follows a flake past a dead tree to a belay tree (reportedly deteriorating — back it up with gear)"
+      },
+      {
+       "field": "pitch_detail[0].anchor",
+       "says": "Tree/gear (belay tree reported gone — build anchor)"
+      }
+     ],
+     "why": "One field says the belay tree is deteriorating, the other that it is gone.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "~0.25 mile west of the Washington Pass Overlook"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Signed trailhead on SR-20 ~1 mi west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass, 5,400 ft"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed 0.25, 0.5, 1 and 1.5 miles from the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness status",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No climbing permit required; self-issue wilderness rules apply"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "This is general Okanogan-Wenatchee National Forest land outside any wilderness boundary"
+      }
+     ],
+     "why": "One ACCESS line invokes wilderness rules while another says the area is outside any wilderness boundary.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "name": "North Face",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.6"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.7"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "5.7"
+      },
+      {
+       "field": "waypoints[4].name",
+       "says": "Pitch 2 crux (5.7 huecos)"
+      }
+     ],
+     "why": "The TECHNICAL STATS crux grade (from grade) says 5.6 while the grade chip, the crux pitch and the crux waypoint say 5.7.",
+     "internal_resolution": "rock_grade, the crux pitch_detail row, the crux waypoint and partner_requirements ('leading at 5.6-5.7') agree on 5.7; grade is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "Descend by rappelling back down the North Face line itself — do not try to walk off. ... make three single-rope rappels with a 60m rope"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "True summit; descend by reversing to the notch and rappelling Beckey Gully on doubled ropes from fixed chains."
+      },
+      {
+       "field": "descent",
+       "says": "Reverse to the notch and descend the Beckey Gully."
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].detail",
+       "says": "Reverse to the notch, then descend the Beckey Gully."
+      }
+     ],
+     "why": "The summit waypoint tells climbers to rappel the Beckey Gully on doubled ropes, while DESCENT and RAPPELS describe three single-rope rappels down the North Face to the notch (the gully is then walked).",
+     "internal_resolution": "descent_text, rappels ('3'), rappel_detail and rappel_count_note agree on three single-rope rappels down the North Face line to the notch; the summit waypoint note's 'rappelling Beckey Gully on doubled ropes' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel anchors all fixed hardware",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "All anchors on this line are fixed bolts/chains (no natural gear or v-thread anchors needed)."
+      },
+      {
+       "field": "rappel_detail[2].anchor",
+       "says": "tree anchor with webbing (per a Mountaineers trip report: 'webbing on the tree'), not purely bolted as published claims"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "The claim that the whole line is bolts and chains with no natural gear required is not accurate"
+      }
+     ],
+     "why": "DESCENT promises all-bolted anchors while the RAPPELS table says the last station is a tree/bush needing webbing.",
+     "internal_resolution": "rappel_detail and rappel_count_note (trip-report based) agree the third station is a tree; descent_text is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2000"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2300"
+      },
+      {
+       "field": "approach_variants[0].gainFt",
+       "says": "2100"
+      }
+     ],
+     "why": "The header/TECHNICAL STATS gain (2,000 ft) differs from the itinerary day's 2,300 ft by 15%.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach distance to the notch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Blue Lake Trail ... for roughly 1.5-2 miles ... gaining roughly 1,900-2,000 ft over about 1.5 miles ... to reach the gully/notch"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "2.1"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "2"
+      }
+     ],
+     "why": "APPROACH implies 3-3.5 miles to the notch while the waypoints and approach variant put it at about 2 miles.",
+     "internal_resolution": "waypoints, approach_variants and the 6-mile round trip itinerary agree on ~2 miles; approach's 1.5-2 + 1.5 miles is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Climbers' path junction signed or unsigned",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "an unsigned but well-trodden climbers' path branching off shortly after the trail crosses a small stream"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "to the signed Liberty Bell Trail #727 climbing-access junction just past a small stream, marked with a large cairn"
+      }
+     ],
+     "why": "The same junction is described as unsigned and as signed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "about 0.5 mile past milepost 162 and 1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "roughly 1 mile west of Washington Pass Overlook (5,477 ft)"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed 0.5, 1 and 1.5 miles from the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route called the Beckey Route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Car-to-car: North Face (Beckey Route)"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "that is the Beckey Route on Liberty Bell, the other tower"
+      }
+     ],
+     "why": "The itinerary names this Concord route 'Beckey Route', the name the approach text uses to warn against Liberty Bell's route from the same notch.",
+     "internal_resolution": "Every other field calls this route the North Face of Concord and reserves 'Beckey Route' for Liberty Bell; the itinerary title is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness status",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No climbing permit required; self-issue wilderness rules apply"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "This is general Okanogan-Wenatchee National Forest land outside any wilderness boundary"
+      }
+     ],
+     "why": "One ACCESS line invokes wilderness rules while another says the area is outside any wilderness boundary.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_around_the_cave_we_go",
+   "name": "Around the Cave We Go",
+   "area": "Concord Tower",
+   "contradictions": []
+  },
+  {
+   "id": "wa_up_in_arms",
+   "name": "Up In Arms",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.10b"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.11"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "5.11"
+      },
+      {
+       "field": "overview",
+       "says": "A modern (2023) six-pitch 5.11 testpiece"
+      }
+     ],
+     "why": "The header grade pill (rock_grade) reads 5.11 while the TECHNICAL STATS crux grade reads 5.10b.",
+     "internal_resolution": "rock_grade, the P1 crux row and the overview agree on 5.11; grade is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Bolted anchors for retreat",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "Bolted stances exist partway up the route (e.g., P1, P3) allowing retreat with a single rope if needed."
+      },
+      {
+       "field": "beta",
+       "says": "Three fixed protection bolts and one bolted anchor supplement gear."
+      }
+     ],
+     "why": "BAILOUT promises bolted stances at P1 and P3 while beta and pro_needs say the route has only one bolted anchor.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_var_right_directisimo",
+   "name": "North Face Var. Right (Directisimo)",
+   "area": "Concord Tower",
+   "contradictions": [
+    {
+     "fact": "Which way the variation leaves the standard line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "staying direct through steeper crack/corner terrain (5.8) rather than stepping right on the standard 5.6-5.7 line"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "continue straight up the corner system instead of stepping right onto the standard 5.6-5.7 line"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the standard line steps LEFT, and this variation continues RIGHT, up steeper crack and corner terrain"
+      },
+      {
+       "field": "beta",
+       "says": "on pitch 2 continues up and right to a prominent vertical crack before traversing left across the face to a large boulder"
+      }
+     ],
+     "why": "Overview and pro tip say the standard route steps right and this line goes straight, while the approach variant says the standard steps left and this line goes right.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch 2 and pitch 3 description",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The final pitch climbs a bolted ramp up and left to the summit."
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Gain the arête and follow its exposed crest back up, rejoining the standard North Face's final moves near the summit block."
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "break right into a sustained 5.8 crack-to-chimney crux pitch, finishing up an exposed arete pitch to the summit"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "a sustained crack running hands to off-width to chimney size"
+      }
+     ],
+     "why": "Beta describes P2 as a wandering right-then-left traverse to a boulder and P3 as a bolted ramp, while ROUTE BREAKDOWN and the itinerary describe a straight offwidth-to-chimney crack and an exposed arête.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent method and rope",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Single-rope raps off the summit, preferring the south side"
+      },
+      {
+       "field": "rappels",
+       "says": "Rappel north or south face; single-rope raps recommended on the south side"
+      },
+      {
+       "field": "descent_text",
+       "says": "rappel chains at the summit allow a doubled-rope rappel toward the notch, or downclimb/scramble back to the notch"
+      },
+      {
+       "field": "rope_type",
+       "says": "single dynamic"
+      }
+     ],
+     "why": "The displayed DESCENT (the longer descent_text) calls for a doubled-rope rappel while the kit is a single rope and RAPPELS recommends single-rope raps on the south side.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which gully the approach uses",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "follow Blue Lake Trail then the climber's path up to the Concord-Lexington gully"
+      },
+      {
+       "field": "approach",
+       "says": "Climb the gully to the notch between Liberty Bell and Concord Tower, where this route starts alongside the standard North Face."
+      }
+     ],
+     "why": "The trailhead waypoint sends the party to the Concord-Lexington gully, the wrong saddle for a North Face route.",
+     "internal_resolution": "approach, approach_variants and the North Face start agree on the Liberty Bell-Concord notch; the waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "~0.25 mile west of the Washington Pass Overlook"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Signed trailhead on SR-20 ~1 mi west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass, 5,400 ft"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed 0.25, 0.5, 1 and 1.5 miles from the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness status",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No climbing permit required; self-issue wilderness rules apply"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "This is general Okanogan-Wenatchee National Forest land outside any wilderness boundary"
+      }
+     ],
+     "why": "One ACCESS line invokes wilderness rules while another says the area is outside any wilderness boundary.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "name": "Tooth and Claw",
+   "area": "Lexington Tower",
+   "contradictions": [
+    {
+     "fact": "Pitch numbering: which pitches are bolted slab and which is the crux",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "The route alternates bolt-protected technical slab pitches (P1, P2, P5) with crack pitches (P3, P4, P6-P7)"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "copperhead + 6 bolts on P1, bolted slab on P2 and the P5 crux"
+      },
+      {
+       "field": "rappel_detail[1].station",
+       "says": "The bolted anchor at the top of pitch 5, immediately above the route's very thin slab crux."
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Optional roped approach pitch around a protruding block onto the treed ledge"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "climb cracks then move up and right across the slab past a fixed copperhead and six bolts"
+      },
+      {
+       "field": "pitch_detail[5].grade",
+       "says": "5.12a"
+      },
+      {
+       "field": "pitch_detail[5].crux",
+       "says": "true"
+      }
+     ],
+     "why": "ROUTE BREAKDOWN counts the 5.8 approach pitch as P1, so the copperhead pitch is P2 and the 5.12a crux is P6, while beta, rack and rappel table put the copperhead on P1 and the crux on P5.",
+     "internal_resolution": "beta, detailed_rack, rappel_detail and bail (P5 crux station) agree on numbering from the treed ledge with the crux on P5; pitch_detail is shifted by one.",
+     "needs_research": true
+    },
+    {
+     "fact": "Character of the 8 pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "8 pitches of stout, sometimes runout 5.12 slab climbing"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].label",
+       "says": "Climb 8 pitches of sustained 5.12 slab"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "grades 5.8, 5.11, 5.10, 5.11, 5.10, 5.12a, 5.9, 5.9 with crack pitches"
+      }
+     ],
+     "why": "The itinerary calls every pitch 5.12 slab, while ROUTE BREAKDOWN and beta have one 5.12a pitch and several crack pitches.",
+     "internal_resolution": "pitch_detail and beta agree; the itinerary wording is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time and distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "30-45 minutes total from the car to the base per most trip reports"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "+1-1.25 hr"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6.3"
+      }
+     ],
+     "why": "APPROACH gives 30-45 minutes car-to-base while the itinerary allows 1-1.25 hr, and a 6.3-mile day does not fit a sub-hour approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Parking spot",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.name",
+       "says": "Washington Pass Overlook pullout, SR-20 (North Cascades Highway)"
+      },
+      {
+       "field": "road.status",
+       "says": "Informal pullout on the north shoulder of SR-20 about 1.2 miles east of Washington Pass"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "Blue Lake trailhead roadside bivy"
+      }
+     ],
+     "why": "GETTING THERE names the Washington Pass Overlook pullout, and the camp is the Blue Lake trailhead, while every approach field uses the hairpin pond pullout 1.2 miles east of the pass.",
+     "internal_resolution": "approach, approach_variants, road.status and the trailhead waypoint agree on the hairpin pond pullout; road.name is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "Expect on the order of 6-7 double-rope rappels to cover the full 8 pitches this way."
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "No source publishes a rappel total for this route"
+      }
+     ],
+     "why": "DESCENT gives a rappel count that the RAPPELS note says no source publishes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Topout waypoint note names the wrong route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].note",
+       "says": "This route climbs Lexington Tower's East Face, Washington Pass."
+      },
+      {
+       "field": "overview",
+       "says": "Tooth and Claw climbs the steep, sustained slabs directly right of the East Face"
+      }
+     ],
+     "why": "The waypoint says this route climbs the East Face while the overview and approach separate it from the East Face route.",
+     "internal_resolution": "overview and approach_variants baseFinding distinguish Tooth and Claw from the East Face; the waypoint note is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_lexington_tower_south_face",
+   "name": "South Face",
+   "area": "Lexington Tower",
+   "contradictions": [
+    {
+     "fact": "Which tower and face this route climbs",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "A short, moderate 3-pitch 5.6 up Lexington Tower's south side, starting from the Concord-Lexington notch"
+      },
+      {
+       "field": "aspect",
+       "says": "S"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THE CONCORD WALL IN FRONT OF YOU GIVES ONTO LOW-ANGLE, GRAVELLY LEDGES RATHER THAN A STEEP CRACK SYSTEM"
+      },
+      {
+       "field": "beta",
+       "says": "P1 is a gravelly, gently down-sloping traverse to trees, staying right — considered the 'price of admission' pitch. ... 'shark fin'"
+      },
+      {
+       "field": "fa",
+       "says": "Donald Cramer, Donald Anderson, Bruce Schuler, and Fred Stanley, 1965"
+      }
+     ],
+     "why": "The Concord-Lexington notch lies on Lexington's north side, so a south-facing route cannot start there; the beta, pitch names and FA are those of Concord Tower's South Face, and the approach text itself calls the gravelly ledges the Concord wall.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "First ascent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "Donald Cramer, Donald Anderson, Bruce Schuler, and Fred Stanley, 1965"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "accounts disagree about the first ascent: one gives Cramer, Anderson, Schuler and Stanley in 1965, another Anderson and Scott in 1964 at 5.7"
+      }
+     ],
+     "why": "The approach text disputes the FA party, year and grade that the fa field and grade state as fact.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "name": "East Face",
+   "area": "Lexington Tower",
+   "contradictions": [
+    {
+     "fact": "Trailhead elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "5450"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft)"
+      }
+     ],
+     "why": "The pond pullout is given as 5,450 ft on the waypoint and ~5,100 ft on the TRAILHEAD card, a 350 ft difference.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "gaining several hundred feet over roughly a third of a mile"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1.2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6.5"
+      }
+     ],
+     "why": "APPROACH says the base is a third of a mile from the car, while the waypoint puts the notch 1.2 mi away and the day totals 6.5 miles.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether a 6-inch cam is needed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "doubles to #3, single #5-6 cams critical"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "a 6-inch piece helps the wide sections, though confident wide-crack climbers can skip it"
+      }
+     ],
+     "why": "Beta calls the #5-6 cams critical while PROTECTION says the 6-inch piece can be skipped.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Bolts at the crux",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "Two newer bolts ease the crux."
+      },
+      {
+       "field": "pitch_detail[4].bolts",
+       "says": "0"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "The crux comes at pitch 5 — an exposed traverse into a lieback — and the offwidth pitch above it has two bolts"
+      }
+     ],
+     "why": "PROTECTION puts two bolts at the crux, while ROUTE BREAKDOWN and pro tips put them on the offwidth pitch above it.",
+     "internal_resolution": "pitch_detail and pro_tips agree the two bolts are on P6; detailed_rack is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "Late June through September once the base snowfield recedes."
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Late June through September once the base snowfield recedes"
+      }
+     ],
+     "why": "The season chip starts in July while SEASONAL GUIDANCE's optimal window starts in late June.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_north_face_3",
+   "name": "North Face",
+   "area": "Lexington Tower",
+   "contradictions": [
+    {
+     "fact": "Wilderness permit at the trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue wilderness permit and NW Forest Pass required at the kiosk"
+      },
+      {
+       "field": "permit",
+       "says": "No climbing or wilderness permit required"
+      },
+      {
+       "field": "access.permitZone",
+       "says": "Not in designated wilderness; Liberty Bell Group area, Washington Pass"
+      }
+     ],
+     "why": "The trailhead waypoint requires a wilderness permit that PERMIT and ACCESS say is not required because the area is not in wilderness.",
+     "internal_resolution": "permit, access.permitZone and access.rules agree no wilderness permit applies; the waypoint note and directions are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Side the climbers' path branches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a cairned, well-worn climbers' boot path splitting off uphill to the right toward the Liberty Bell group cirque"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "pick up the well-established climbers' path branching left at a large cairn"
+      }
+     ],
+     "why": "The same junction is described as branching right and branching left.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cam range",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "A single rack of cams to 2 inches"
+      },
+      {
+       "field": "rack[0]",
+       "says": "Cams to 3in (standard rack; some add a single #4)"
+      }
+     ],
+     "why": "PROTECTION caps the rack at 2 in while the rack list goes to 3 in plus an optional #4.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a small pullout on SR-20 just west of Washington Pass"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "about 0.25 mi west of the Washington Pass Overlook"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "about 1.5 mi west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed 'just west', 0.25 mile and 1.5 miles from the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "SR-20 winter closure start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "Typically closed roughly mid-November through late April/May"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      }
+     ],
+     "why": "GETTING THERE and ACCESS give different typical closing months for the same highway gate.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_freedom_rider",
+   "name": "Freedom Rider",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Whether Medusa's Roof (P12) is a crux",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[2]",
+       "says": "Medusa's Roof (P12) is a notable technical/psychological crux late in a long day"
+      },
+      {
+       "field": "pitch_detail[11].notes",
+       "says": "Medusa's Roof: exposed but secure climbing up and around a chockstone at the top of the chimney. The position is the memorable part; the moves are well within the grade of the pitches below."
+      }
+     ],
+     "why": "KNOWN HAZARDS call P12 a technical crux while ROUTE BREAKDOWN grades it 5.8+ and says the moves are well within the grade of the pitches below.",
+     "internal_resolution": "pitch_detail (5.8+, 'well within the grade') and beta (crux at P3a) agree; the hazard's 'technical crux' is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "name": "Live Free or Die!™",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Descent line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "from M&M Ledge, rappel with two ropes off a fixed pin/wire, then work climber's-left to a set of bolted anchors and make four double-rope rappels back to the ground/talus at the base of the East Face"
+      },
+      {
+       "field": "descent",
+       "says": "Join Thin Red Line's descent from M&M Ledge to the summit, then standard Liberty Bell rappels"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "descend via the standard Beckey-side rappels/downclimb"
+      }
+     ],
+     "why": "The displayed DESCENT rappels the East Face from M&M Ledge back to the east-side talus, while the itinerary and the descent column send the party over the summit and down the west-side Beckey rappels.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count and where the route ends",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "11"
+      },
+      {
+       "field": "overview",
+       "says": "a full 11-pitch, roughly 1,200-foot free route"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "An 8-pitch multi-pitch line on Liberty Bell"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Climb the 8-pitch line to the summit area"
+      }
+     ],
+     "why": "The header and overview say 11 pitches to the summit while the itinerary and PUBLISHED TIMES call it an 8-pitch line (and the totalNote says the time was estimated from that count).",
+     "internal_resolution": "pitches, overview, beta (P9-11 follow Thin Red Line) and partner_requirements agree on 11 pitches; the itinerary's '8-pitch' is the outlier (8 is only the route's own pitches to M&M Ledge).",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope for the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "small wires, a 70 m rope, and numerous slings/quickdraws"
+      },
+      {
+       "field": "what_to_bring[1]",
+       "says": "70m rope"
+      },
+      {
+       "field": "approach_variants[0].hazards[3]",
+       "says": "Two ropes needed for the descent"
+      },
+      {
+       "field": "descent_text",
+       "says": "rappel with two ropes off a fixed pin/wire ... make four double-rope rappels"
+      }
+     ],
+     "why": "The kit lists a single 70 m rope while the descent requires two ropes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux pitch grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "P4 (5.11, V5 crux) is height-dependent rightward crimping"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.12b (V5, height-dependent)"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Crux pitch (P4, 5.12, V5 boulder problem)"
+      }
+     ],
+     "why": "Beta grades the crux pitch 5.11 while ROUTE BREAKDOWN and hazards grade it 5.12/5.12b.",
+     "internal_resolution": "grade (5.12-), hazards and pitch_detail agree the crux is 5.12-range; beta's 5.11 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route treated as a boulder problem",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "Live Free or Die! is NOT a boulder problem — it is a full 11-pitch, roughly 1,200-foot free route"
+      },
+      {
+       "field": "watch_out",
+       "says": "Boulder problem grade terrain - V5+ requires high technical difficulty and commitment\nLimited protection on bouldering sections; serious consequences for falls"
+      }
+     ],
+     "why": "KNOWN HAZARDS describe the route as bouldering terrain with limited protection, which the overview explicitly says it is not.",
+     "internal_resolution": "overview, pitch_detail and beta describe a bolted/trad multi-pitch; watch_out is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2700"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2400"
+      }
+     ],
+     "why": "The header gain and the itinerary day disagree by 300 ft (12%).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_freedom_or_death",
+   "name": "Freedom or Death",
+   "area": "Liberty Bell Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_liberty_bell_sidewinder",
+   "name": "Sidewinder (Southwest Corner)",
+   "area": "Liberty Bell Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "name": "NW Face Var. (Remsberg Variation)",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Extent of the variation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "Adds flaring 5.10d crack climbing through the upper half of the face in place of the standard route's easier finish."
+      },
+      {
+       "field": "beta",
+       "says": "On P3, rather than the 5.8+ flakes pitch to the right ... P4-5 rejoin the standard Northwest Face to the west summit."
+      },
+      {
+       "field": "approach",
+       "says": "this is a single-pitch variation on it"
+      }
+     ],
+     "why": "The overview says the variation replaces the upper half and the finish, while beta, approach and ROUTE BREAKDOWN make it a single P3 pitch that rejoins the standard route for P4-5.",
+     "internal_resolution": "beta, approach, descent_text and pitch_detail agree it is a one-pitch P3 variation; the overview is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Standard Liberty Bell descent — 2 single-rope rappels from fixed anchors to the Liberty-Concord notch"
+      },
+      {
+       "field": "rappels",
+       "says": "3"
+      },
+      {
+       "field": "descent_text",
+       "says": "a tree-anchor single-rope rappel (60m) to a flat stance, then a bolted double-rope rappel (or two single-rope raps)"
+      }
+     ],
+     "why": "The descent column says 2 single-rope rappels while RAPPELS says 3 and DESCENT gives 3 single-rope or 2 with a double rope; the kit is a single 60 m rope.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass (Blue Lakes Trailhead, 1 mile west of Washington Pass)"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass, 5,400 ft"
+      }
+     ],
+     "why": "ACCESS and the TRAILHEAD card place the same trailhead 1 and 1.5 miles from the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "name": "Overexposure",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Difficulty of the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II, 5.8"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.8"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "5.10-5.11 sustained face/crack leading"
+      },
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "Strong 5.10-5.11 free climber comfortable with high exposure on a short but sustained route"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "A short, hard test-piece that draws only strong free climbers"
+      }
+     ],
+     "why": "PARTNER REQUIREMENTS demand a 5.10-5.11 leader for a route every grade field and pitch row rates 5.8.",
+     "internal_resolution": "grade, rock_grade, pitch_detail and approach_variants ('Grade II 5.8') agree on 5.8; partner_requirements and crowds are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "4"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "Light trad rack for a 2-pitch route, roughly 8-10 lb"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "despite being only 2 pitches"
+      }
+     ],
+     "why": "The header says 4 pitches while PARTNER REQUIREMENTS and SEASONAL HAZARDS call it a 2-pitch route.",
+     "internal_resolution": "pitches and pitch_detail give 2 roped pitches plus 2 scrambling pitches; the 2-pitch wording counts only the technical pitches.",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade vs alpine grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "alpine_grade",
+       "says": "D"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      },
+      {
+       "field": "grade",
+       "says": "Grade II, 5.8"
+      }
+     ],
+     "why": "The grade chips show an alpine grade of 'D' (Difficile) beside a Grade II, 5.8 commitment on a short rock route.",
+     "internal_resolution": "grade and commitment agree on Grade II; alpine_grade 'D' is the outlier.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "name": "A Servant To Liberty",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Descent line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "rappel with two ropes off M&M Ledge (fixed pin/wire anchor), then move climber's-left to bolted anchors for four double-rope rappels back to the base — five rappels total"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Descend the standard Beckey-side rappels."
+      },
+      {
+       "field": "descent",
+       "says": "Possible to scramble to the top staying roped up, or rappel the route using two ropes."
+      }
+     ],
+     "why": "The itinerary sends the party down the west-side Beckey rappels, while DESCENT and RAPPELS return them down the East Face to the base where they started.",
+     "internal_resolution": "descent_text, rappel_detail, rappels ('5') and approach_variants baseFinding agree on the five East Face rappels from M&M Ledge; the itinerary note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Upper pitches: new pitches or Thin Red Line's",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "then breaks right to join Thin Red Line just below its third-pitch anchor before launching into eight new pitches (four rated 5.12) up the East Face"
+      },
+      {
+       "field": "descent_text",
+       "says": "then steps right to join Thin Red Line for its upper pitches"
+      },
+      {
+       "field": "rappel_detail[0].notes",
+       "says": "where the route joins Thin Red Line's upper pitches and descent"
+      }
+     ],
+     "why": "The overview and ROUTE BREAKDOWN describe eight new pitches (P4-P11), while DESCENT and the rappel table say the route climbs Thin Red Line's upper pitches.",
+     "internal_resolution": "overview, beta and pitch_detail (eight new pitches to 5.13-) agree; the 'joins Thin Red Line for its upper pitches' wording in descent_text/approach_variants is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "First-ascent style",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "Mikey Schaefer, with Shanjean Lee belaying, August 6, 2016"
+      },
+      {
+       "field": "overview",
+       "says": "completed a one-day free ascent, leading every pitch, in early August 2016 with Shanjean Lee's support"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Mikey Schaefer rope-soloed the FA specifically to make it more challenging"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "This route was established rope-solo in August 2016"
+      }
+     ],
+     "why": "The FA is described both as belayed by Shanjean Lee and as a rope-solo.",
+     "internal_resolution": "fa and overview agree on a belayed ascent with Shanjean Lee; pro_tips and approach_variants are the outliers.",
+     "needs_research": true
+    },
+    {
+     "fact": "Total day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "11.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 11-12 hrs car-to-car including approach and descent"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "4:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "7:00-8:00 PM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].detail",
+       "says": "~11 hrs on route, per FA timing"
+      }
+     ],
+     "why": "The schedule runs 4:00 AM to 7-8 PM (15-16 hrs) with 11 hrs on route alone, while PUBLISHED TIMES and the totalNote give 11.5 / 11-12 hrs car-to-car.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Repeat ascents",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "One documented repeat ascent (Alex Honnold, per the FA account)"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "no documented repeat parties to reference for bail points"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[2]",
+       "says": "Self-sufficient bailing/retreat judgment (no documented repeat parties to reference)"
+      }
+     ],
+     "why": "CROWDS records a documented repeat while hazards and partner requirements say there are none.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Cams #1-#3: singles or doubles",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "two sets #1 to #3"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "1x #1 to #3"
+      },
+      {
+       "field": "rack[1]",
+       "says": "Cams #1–#3 (single set)"
+      }
+     ],
+     "why": "The gear list says doubles of #1-#3 while PROTECTION + RACK say a single set.",
+     "internal_resolution": "detailed_rack, rack and sling_rack agree on a single set; gear[1] is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux pitch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "a traverse with layback flakes and a mantle (P5, 5.12- crux)"
+      },
+      {
+       "field": "pitch_detail[7].crux",
+       "says": "true"
+      },
+      {
+       "field": "overview",
+       "says": "with the crux 5.13 slab on pitch 8"
+      }
+     ],
+     "why": "Beta labels P5 the crux while the overview and ROUTE BREAKDOWN put the crux on P8.",
+     "internal_resolution": "overview, hazards and pitch_detail agree the crux is P8 (5.13-); beta's 'P5 crux' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass at the hairpin pullout",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "No parking pass required — this route's approach starts at a free roadside pullout on SR-20 east of Washington Pass"
+      },
+      {
+       "field": "access.fees",
+       "says": "No climbing permit; NW Forest Pass $5 (day) or $30 (annual)"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "A Northwest Forest Pass or day-use fee is needed to park"
+      }
+     ],
+     "why": "ACCESS says no pass is needed at this pullout while the fee line and overnight note say a Northwest Forest Pass is needed to park.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "name": "Thin Red Line",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach side",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From Highway 20 hairpin curve on east side of Washington Pass, locate small pond on south side of road; trailhead pullout on north side of highway"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot."
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path ... toward Liberty Bell's west side."
+      },
+      {
+       "field": "waypoints[3].name",
+       "says": "West face base / sloping bench"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Approach from Blue Lake TH to the base (about 45 min-1 hr on the climbers' trail/snowfield)"
+      },
+      {
+       "field": "road.name",
+       "says": "WA-20 (North Cascades Highway) to Blue Lake Trailhead"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "Blue Lake Trailhead approach to the west face"
+      }
+     ],
+     "why": "APPROACH, the TRAILHEAD card and approach_variants use the east-side hairpin pullout, while the hairpin waypoint's note, the other WAYPOINTS, GETTING THERE, the itinerary and partner requirements describe the Blue Lake Trailhead and the west side.",
+     "internal_resolution": "approach, approach_logistics, approach_variants, descent_text and rappel_detail (rappels land at the East Face base 'where your pack is') agree on the East Face hairpin approach; the Blue Lake/west-face fields are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which face the route climbs",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "face",
+       "says": "East Face"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "high exposure on the west face"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "sustained thin crack climbing at 5.12 with high exposure on the west face"
+      }
+     ],
+     "why": "KNOWN HAZARDS and SEASONAL HAZARDS place the route on the west face; every other field says East Face.",
+     "internal_resolution": "face, aspect, overview and beta agree on the East Face; the hazard texts are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Crux pitch",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[5].grade",
+       "says": "5.12c"
+      },
+      {
+       "field": "pitch_detail[5].crux",
+       "says": "true"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "climb the sustained free line (5.10-5.12, crux by pitch 9)"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Free-climb Thin Red Line to the crux at pitch 9"
+      },
+      {
+       "field": "pitch_detail[8].grade",
+       "says": "5.9"
+      }
+     ],
+     "why": "The itinerary puts the crux at pitch 9, which ROUTE BREAKDOWN grades 5.9; the 5.12c crux is pitch 6.",
+     "internal_resolution": "pitch_detail and overview (the 2008 freed crux pitch) agree on P6; the itinerary is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent recommendation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Descend the standard Beckey Route rappels/downclimb on the southwest side back to the gully."
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "descend via the standard Beckey Route rappels/downclimb into the gully, not back down the route."
+      },
+      {
+       "field": "descent_text",
+       "says": "(1) From the top of the route near M&M Ledge, work climber's left to good bolts and make four double-rope rappels ... this is the faster option and returns you directly to your pack"
+      },
+      {
+       "field": "pitch_detail[10].notes",
+       "says": "most parties instead rappel from M&M Ledge (four double-rope raps via bolts) rather than finish this far"
+      }
+     ],
+     "why": "The summit waypoint tells parties not to rappel the route, while DESCENT and ROUTE BREAKDOWN say rappelling the East Face from M&M Ledge is what most parties do.",
+     "internal_resolution": "descent_text, rappels ('4'), rappel_detail, rappel_count_note and pitch_detail agree the East Face rappels are the usual descent; the summit waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Gain and distance in the header",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1312"
+      },
+      {
+       "field": "loss_ft",
+       "says": "2400"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "2400"
+      },
+      {
+       "field": "dist_km",
+       "says": "1.6"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5"
+      }
+     ],
+     "why": "The header shows 1,312 ft gain and 1.0 mi while the itinerary (and loss_ft) give 2,400 ft and 5 miles.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "commitment",
+       "says": "IV"
+      },
+      {
+       "field": "grade",
+       "says": "Grade IV, 5.12 free (orig. aid V, 5.9 A3)"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Grade V outing tops out on the true summit"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "A serious grade V test-piece"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "D"
+      }
+     ],
+     "why": "The summit waypoint and CROWDS call the free route Grade V (the original aid grade) while the grade columns say Grade IV.",
+     "internal_resolution": "grade, commitment and beta agree on Grade IV for the free route; the 'Grade V' mentions are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total day length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "10.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "4:30-5:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "4:30-6:00 PM"
+      }
+     ],
+     "why": "The schedule spans 11.5-13.5 hours while PUBLISHED TIMES and the totalNote give 10.5 / 10-11 hrs.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_east_face",
+   "name": "East Face",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Beta describes a different route",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Ten pitches of varied crack, chimney and face climbing on the East Face, with a difficult-to-protect slopey pitch 1 traverse and an offwidth crux (pitch 6) passing a fixed 2x4 and two bolts to an alcove."
+      },
+      {
+       "field": "pitches",
+       "says": "4"
+      },
+      {
+       "field": "grade",
+       "says": "Grade II, 5.6"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "The technical crux of this shorter, lower-grade East Face line"
+      }
+     ],
+     "why": "The beta describes a 10-pitch route with an offwidth crux past a 2x4 (Lexington Tower's East Face), while every other field describes a 4-pitch 5.6.",
+     "internal_resolution": "pitches, grade, pitch_detail, descent_text ('shorter (4-pitch) line') and itinerary agree on 4 pitches of 5.6; beta is copied from another route.",
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead and approach",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass ... after roughly 20-30 minutes and 0.5 mile"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot."
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path ... toward the Liberty Bell-Concord notch."
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Base for the east side; gain the east aspect from here rather than the SW-facing Beckey gully."
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Approach from Blue Lake TH into the basin below the east face (about 1.5-2 hr)"
+      },
+      {
+       "field": "road.name",
+       "says": "WA-20 (North Cascades Highway) to Blue Lake Trailhead"
+      },
+      {
+       "field": "access.fees",
+       "says": "Northwest Forest Pass at the Blue Lake Trailhead"
+      }
+     ],
+     "why": "APPROACH, approach_variants and the TRAILHEAD card start at the east-side hairpin pullout with a 20-60 minute walk, while the WAYPOINTS, itinerary, GETTING THERE, ACCESS and partner requirements route the party from Blue Lake Trailhead via the Liberty Bell-Concord notch in 1.5-2 hr.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Popularity",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "A popular, lower-grade line on the formation."
+      },
+      {
+       "field": "crowds.peakTraffic",
+       "says": "Rarely climbed"
+      }
+     ],
+     "why": "The overview calls the route popular while CROWDS says it is rarely climbed.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "name": "Dark Side of Liberty",
+   "area": "Liberty Bell Mountain",
+   "contradictions": [
+    {
+     "fact": "Crux grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade IV, 5.13+, 1,100 ft"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "5.13+"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Free-climb Dark Side of Liberty (5.13d)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "11 pitches, crux pitch 4 (5.12 boulder problems)"
+      }
+     ],
+     "why": "The itinerary gives the route as 5.13d and the crux pitch as 5.12 while the grade, chips and ROUTE BREAKDOWN say 5.13+ with a V9/V10 crux.",
+     "internal_resolution": "grade, rock_grade, pitch_detail and overview agree on 5.13+ with a V9/V10 P4 crux; the itinerary values are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "10"
+      },
+      {
+       "field": "beta",
+       "says": "Ten pitches"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "11 pitches, crux pitch 4 (5.12 boulder problems)"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "topped out pitch 11 about 11 hrs after starting"
+      }
+     ],
+     "why": "The header, beta and ROUTE BREAKDOWN have 10 pitches while the itinerary says 11.",
+     "internal_resolution": "pitches, beta, pitch_detail and approach_variants agree on 10; the itinerary is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead and approach time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "'about 20 minutes from the road' ... Park at the hairpin turn on WA-20 east of Washington Pass"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~1.5–2.5 hrs from Blue Lake trailhead toward the East/NE Face"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "5:30 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "4:00 AM"
+      }
+     ],
+     "why": "APPROACH gives a 20-minute walk from the hairpin pullout, while PARTNER REQUIREMENTS start from Blue Lake Trailhead at 1.5-2.5 hr and the schedule allows 1.5 hr to the base.",
+     "internal_resolution": "approach, approach_variants, approach_logistics and road agree on the hairpin pullout and ~20 min; partner_requirements and the schedule are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total day length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "4:00 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "7:00-8:00 PM"
+      }
+     ],
+     "why": "The schedule spans 15-16 hours while PUBLISHED TIMES and the totalNote give 12 / 12-13 hrs.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,830 @@
+{
+ "applied": [
+  {
+   "id": "wa_liberty_bell_freedom_rider",
+   "column": "hazards",
+   "path": [
+    2
+   ],
+   "fact": "Whether Medusa's Roof (P12) is a crux"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Pitch count and where the route ends"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Pitch count and where the route ends"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Pitch count and where the route ends"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    3
+   ],
+   "fact": "Rope for the descent"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "beta",
+   "path": [],
+   "fact": "Crux pitch grade"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Route treated as a boulder problem"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Route treated as a boulder problem"
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "column": "overview",
+   "path": [],
+   "fact": "Extent of the variation"
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    0
+   ],
+   "fact": "Difficulty of the route"
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Difficulty of the route"
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Difficulty of the route"
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "column": "overview",
+   "path": [],
+   "fact": "Difficulty of the route"
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Upper pitches: new pitches or Thin Red Line's"
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Upper pitches: new pitches or Thin Red Line's"
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Upper pitches: new pitches or Thin Red Line's"
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "First-ascent style"
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "First-ascent style"
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "column": "gear",
+   "path": [
+    1
+   ],
+   "fact": "Cams #1-#3: singles or doubles"
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "column": "beta",
+   "path": [],
+   "fact": "Crux pitch"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead and approach side"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead and approach side"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead and approach side"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead and approach side"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead and approach side"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Trailhead and approach side"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Trailhead and approach side"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Which face the route climbs"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Which face the route climbs"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Crux pitch"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Crux pitch"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Crux pitch"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Descent recommendation"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Crux grade"
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "climb"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Trailhead and approach time"
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "time"
+   ],
+   "fact": "Trailhead and approach time"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_liberty_bell_freedom_rider",
+   "before": {
+    "hazards": [
+     "Rock quality is often poor — loose/suspect rock is a real concern",
+     "Few bolted belay stances mean natural-gear anchors for most of the route",
+     "Medusa's Roof (P12) is a notable technical/psychological crux late in a long day"
+    ]
+   }
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "before": {
+    "descent_text": "Live Free or Die climbs the East Face for 8 pitches to M&M Ledge (roughly mid-height), then shares its final 3-4 pitches to the summit with the upper section of Thin Red Line (and, alternatively, Dark Side of Liberty). In practice this means finishing up Thin Red Line's upper pitches and descending via Thin Red Line's rap line: from M&M Ledge, rappel with two ropes off a fixed pin/wire, then work climber's-left to a set of bolted anchors and make four double-rope rappels back to the ground/talus at the base of the East Face. No natural or v-thread anchors are involved — all stations on this exit are bolted.",
+    "approach_variants": [
+     {
+      "name": "The hairpin pond pullout and the East Face path, to the ground between Thin Red Line and the Independence Route",
+      "notes": "Same East Face approach as Liberty Crack: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond on the south side of the road, and follow the cairned climbers' path from the pond's east end about a mile through forest to the talus below the East Face.\n\nEleven pitches, climbed in 2017. The route takes the East Face for eight pitches to M&M Ledge at roughly mid-height, then shares its final three or four pitches to the summit with the upper section of Thin Red Line.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "The route's identifying crack pitches sit roughly 700 ft up the wall, not at its base",
+       "A start defined only by the two routes on either side of it",
+       "A fixed pin and wire as the first rappel anchor off M&M Ledge",
+       "Two ropes needed for the descent",
+       "Loose talus in the upper approach"
+      ],
+      "baseFinding": "THE ROUTE IS SANDWICHED, AND THE SANDWICH IS THE TEST: IT LIES TO THE LEFT OF THE INDEPENDENCE ROUTE AND TO THE RIGHT OF THIN RED LINE. Those two neighbours are the most identifiable lines at that end of the face, so bound the ground between them and the route is inside it.\n\nTHE RIGHT-HAND BOUND IS THE ONE YOU CAN SEE FROM FURTHEST AWAY: the Independence Route starts at the FAR RIGHT, or NORTH, EDGE of the East Face, and a RED-COLOURED ROOF AND ALCOVE, the Baer Ceiling, sits about 85 m above its start. If a red roof is above you, you have walked one route too far right.\n\nTHE LEFT-HAND BOUND: Thin Red Line is climber's right of Liberty Crack, and Liberty and Injustice for All sits about 10 m right of Thin Red Line on two-bolt anchors with fixed biners. If you are at a two-bolt anchor with fixed biners a rope length up, you started too far left.\n\nAN HONEST WARNING FROM THE FIRST ASCENT, AND IT CHANGES HOW YOU READ THE WALL: the party recorded that the route's initial crack pitches WERE 700 FT UP THE WALL and seemed to have been reached by rappel from other routes, with no obvious way to reach them from below. So the visible feature that names this route is not at its base. Do not try to identify the line by the cracks; identify the ground between Thin Red Line and Independence and start there.\n\nDESCENT, WHICH IS THIN RED LINE'S: from M&M Ledge, rappel with two ropes off a fixed pin and wire, then work climber's-left to a set of bolted anchors and make four double-rope rappels back to the talus at the base of the East Face. All stations on that exit are bolted; no natural or v-thread anchors are involved."
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "An 8-pitch multi-pitch line on Liberty Bell; approach to the base, climb the route, then descend via the standard Beckey-side rappels/downclimb.",
+       "hours": 10,
+       "miles": 5,
+       "title": "Car-to-car day climb",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 18,
+       "objective": "Climb the 8-pitch line to the summit area"
+      }
+     ],
+     "totalNote": "A single day, roughly 10 hrs car-to-car (estimated from the pitch count)."
+    },
+    "timing": {
+     "totalHrs": 10,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Pre-dawn start",
+     "sectionBreakdown": [
+      {
+       "hrs": 10,
+       "note": "An 8-pitch multi-pitch line on Liberty Bell; approach to the base, climb the route, then descend via the standard Beckey-side rappels/downclimb.",
+       "fromTo": "Car-to-car day climb",
+       "section": "Climb"
+      }
+     ]
+    },
+    "beta": "P1-3 (5.8-5.11) climb bolted overlaps; P4 (5.11, V5 crux) is height-dependent rightward crimping with an optional pendulum; P5 (5.11) is mostly bolted with a delicate V3 mantle finish; P6 (~5.11d) is a thin crack needing small gear; P7 (5.11+) roof climbing into a 5.10 slab traverse; P8 (5.10) a splitter hands crack to M&M Ledge; P9-11 follow Thin Red Line to the summit.",
+    "watch_out": "Boulder problem grade terrain - V5+ requires high technical difficulty and commitment\nLimited protection on bouldering sections; serious consequences for falls\nExposure on vertical sections with runout potential\nDescent requires careful navigation of rappels or scrambling\nWeather exposure on exposed bouldering terrain creates instability risk"
+   }
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "before": {
+    "overview": "A harder finish variation to the standard Northwest Face route, established by Dale Remsberg and Scott Stimpson. Adds flaring 5.10d crack climbing through the upper half of the face in place of the standard route's easier finish.",
+    "approach_logistics": {
+     "peakLat": 48.515435,
+     "peakLng": -120.658365,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    }
+   }
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Blue Lake Trailhead approach to the west face",
+      "packWeight": "Light trad rack for a 2-pitch route, roughly 8-10 lb"
+     },
+     "approachTime": "Roughly 1.5-2 hours from the Blue Lake Trailhead",
+     "requiredSkills": [
+      "5.10-5.11 sustained face/crack leading",
+      "comfort with high exposure on a short route",
+      "efficient 2-pitch multi-pitch transitions",
+      "rappel descent"
+     ],
+     "experienceLevel": "Strong 5.10-5.11 free climber comfortable with high exposure on a short but sustained route"
+    },
+    "crowds": {
+     "peakTraffic": "Rarely climbed",
+     "solitudeRating": 4,
+     "estimatePerSeason": "A short, hard test-piece that draws only strong free climbers looking for a quick, exposed outing; low overall traffic"
+    },
+    "overview": "An aptly named, exposed hard free climb on Liberty Bell's west face. Sustained, technical crack and face climbing on outstanding Washington Pass granite, with the airy position that gives the route its name."
+   }
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "before": {
+    "descent_text": "A Servant to Liberty (earlier known as 'A Slave to Liberty') climbs the first three pitches of Freedom or Death (5.10, 5.11, 5.11), then steps right to join Thin Red Line for its upper pitches. Descent therefore follows Thin Red Line's exit: rappel with two ropes off M&M Ledge (fixed pin/wire anchor), then move climber's-left to bolted anchors for four double-rope rappels back to the base — five rappels total, all on bolted stations.",
+    "approach_variants": [
+     {
+      "name": "The hairpin pond pullout and the East Face path, to the Freedom or Death ramp",
+      "notes": "Same East Face approach as Freedom or Death and Thin Red Line: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond, and follow the cairned climbers' path from the pond's east end about a mile through forest to the East Face talus.\n\nThis route was established rope-solo in August 2016 and originally documented under an earlier name. It climbs the first three pitches of Freedom or Death, then steps right to join Thin Red Line for its upper pitches.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "No independent start; a party that mislocates Freedom or Death mislocates this route",
+       "A fixed pin and wire as the first rappel anchor off M&M Ledge",
+       "Two ropes needed for the descent",
+       "Loose talus in the upper approach"
+      ],
+      "baseFinding": "THIS ROUTE DOES NOT HAVE A START OF ITS OWN. IT STARTS ON FREEDOM OR DEATH, AND THAT IS THE FACT TO CARRY UP THE TALUS. So the base finding is Freedom or Death's base finding: A SMALL LEFTWARD-TRENDING RAMP JUST TO THE RIGHT OF LIBERTY CRACK, WITH BOLTS VISIBLE ON THE FACE ABOVE IT.\n\nWHY THAT IS ACTUALLY USEFUL RATHER THAN A DODGE: it means you are not hunting for a fifth start among the East Face cluster. There are three pitches of shared, well-bolted climbing before this route becomes its own thing, and the decision point is up on the wall where you can see it, not down in the talus where you cannot.\n\nTHE NEGATIVE TEST: LIBERTY CRACK IS 40 FT LEFT ALONG THIRD AND FOURTH CLASS LEDGES FROM THE BASE OF THE TALUS. If you are scrambling left on ledges you are heading for Liberty Crack. If you have walked well right past a series of starts you are among the Thin Red Line, Liberty and Injustice and Independence lines.\n\nCOUNTABLE ON THE CLIMB: three pitches of 5.10, 5.11 and 5.11, then a step RIGHT. If you are still going straight up after three pitches you have missed the junction with Thin Red Line.\n\nAND THE DESCENT FOLLOWS THIN RED LINE'S, NOT FREEDOM OR DEATH'S: rappel with two ropes off M&M Ledge from a fixed pin and wire, then move climber's-left to bolted anchors for four double-rope rappels back to the base. Five rappels, all on bolted stations after the first."
+     }
+    ],
+    "rappel_detail": [
+     {
+      "n": 1,
+      "notes": "First rappel off M&M Ledge using two ropes, where the route joins Thin Red Line's upper pitches and descent.",
+      "anchor": "fixed pin/wire anchor (M&M Ledge)",
+      "lengthM": 55
+     },
+     {
+      "n": 2,
+      "notes": "Moves onto Thin Red Line's four bolted double-rope rappels down the East Face.",
+      "anchor": "bolted anchor, climber's-left of M&M Ledge",
+      "lengthM": 55
+     },
+     {
+      "n": 3,
+      "notes": "Continues down the East Face line on double ropes.",
+      "anchor": "bolted anchor",
+      "lengthM": 55
+     },
+     {
+      "n": 4,
+      "notes": "Continues down the East Face line on double ropes.",
+      "anchor": "bolted anchor",
+      "lengthM": 55
+     },
+     {
+      "n": 5,
+      "notes": "Final rappel, reaching the ground at the base of the East Face.",
+      "anchor": "bolted anchor",
+      "lengthM": 55
+     }
+    ],
+    "pro_tips": [
+     "Mikey Schaefer rope-soloed the FA specifically to make it more challenging — expect a serious, committing outing",
+     "The mega-slab P7 has 14 bolts and an amazing small 'bonsai tree' feature worth knowing about for route-finding"
+    ],
+    "gear": [
+     "two sets #0 C3 to #.75",
+     "two sets #1 to #3",
+     "one set small-to-medium nuts",
+     "8 quickdraws",
+     "6 shoulder-length slings",
+     "two ropes for rappel"
+    ],
+    "beta": "Climbs the first three pitches of Freedom or Death (5.10, 5.11, 5.11), then a right-leaning overlap (P4, 5.12-) into a traverse with layback flakes and a mantle (P5, 5.12- crux), an arete with a big hand-rail traverse (P6, 5.12), a 165 ft 'mega slab' pitch with 14 bolts and 4 crux moves (P7, 5.12+), and a razor-thin slab crux (P8, 5.13-) before easing off through P9-P11 (5.10-5.10+)."
+   }
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5200,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "note": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Highway 20 to the hairpin curve on the east side of Washington Pass and look for the small pond on the south side of the road; the pullout you want is on the north side of the highway, at about 5,200 ft. Park there and pick up the cairned climbers' path leaving the pond, which runs east into the forest and up to the East Face talus. The season for this line is roughly June through September."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5750,
+      "name": "Stream crossing near meadow",
+      "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+      "type": "Water",
+      "distMi": 1.5
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5800,
+      "name": "Climbers' path junction",
+      "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward Liberty Bell's west side.",
+      "type": "Junction",
+      "distMi": 1.6
+     },
+     {
+      "lat": 48.514633,
+      "lng": -120.658546,
+      "elev": 7150,
+      "name": "West face base / sloping bench",
+      "note": "Scramble left off the approach gully onto the sloping west-side bench, then traverse left at the base of the slabs to the start of the west face lines.",
+      "type": "Junction",
+      "distMi": 2.3
+     },
+     {
+      "lat": 48.514666,
+      "lng": -120.658696,
+      "elev": 7300,
+      "name": "Sustained thin-crack pitches",
+      "note": "Sustained thin finger and hand cracks at 5.10-5.11 on excellent but highly exposed rock; retreating typically means leaving gear behind.",
+      "type": "Hazard",
+      "distMi": 2.4
+     },
+     {
+      "lat": 48.515435,
+      "lng": -120.658365,
+      "elev": 7720,
+      "name": "Liberty Bell summit",
+      "note": "Grade V outing tops out on the true summit; descend via the standard Beckey Route rappels/downclimb into the gully, not back down the route.",
+      "type": "Summit",
+      "distMi": 2.7
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Approach from Blue Lake TH to the base (about 45 min-1 hr on the climbers' trail/snowfield), climb the sustained free line (5.10-5.12, crux by pitch 9), then rappel the route/standard Beckey-side descent back to the car.",
+       "hours": 10.5,
+       "miles": 5,
+       "title": "Long car-to-car day climb",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "4:30-5:00 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Start climbing",
+         "detail": ""
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Top out / begin rappels",
+         "detail": ""
+        },
+        {
+         "time": "4:30-6:00 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Free-climb Thin Red Line to the crux at pitch 9"
+      }
+     ],
+     "totalNote": "A single long day, roughly 10-11 hrs car-to-car."
+    },
+    "timing": {
+     "totalHrs": 10.5,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 1,
+     "recommendedStart": "4:30-5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10.5,
+       "note": "Approach from Blue Lake TH to the base (about 45 min-1 hr on the climbers' trail/snowfield), climb the sustained free line (5.10-5.12, crux by pitch 9), then rappel the route/stand…",
+       "fromTo": "Long car-to-car day climb",
+       "section": "Climb"
+      }
+     ]
+    },
+    "road": {
+     "name": "WA-20 (North Cascades Highway) to Blue Lake Trailhead",
+     "status": "Open seasonally",
+     "driveNote": "From the east (Mazama/Winthrop) or west via Highway 20 to the Blue Lake Trailhead near Washington Pass.",
+     "seasonalGate": "Washington Pass closed in winter (typically late fall to spring)"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Blue Lake Trailhead approach to the west face",
+      "packWeight": "Trad rack weighted toward thin gear (small cams/stoppers), roughly 18-20 lb"
+     },
+     "approachTime": "Roughly 1.5-2 hours from the Blue Lake Trailhead",
+     "requiredSkills": [
+      "5.12 sustained thin crack leading",
+      "big multi-pitch endurance across 11 pitches",
+      "expert rope management/efficiency to beat afternoon weather",
+      "confident retreat/bail judgment given serious commitment"
+     ],
+     "experienceLevel": "Expert-level 5.12 crack climber with prior big multi-pitch/alpine experience; must be comfortable on sustained thin cracks with high exposure across 11 pitches"
+    },
+    "hazards": [
+     "sustained thin crack climbing",
+     "high exposure on the west face",
+     "afternoon thunderstorms"
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Sunny east-slope granite with afternoon thunderstorms common in summer",
+      "probability": "Getting caught high on this long, hard route in a storm is a serious hazard given the sustained thin-crack climbing"
+     },
+     "exposure": "Very high consequence - sustained thin crack climbing at 5.12 with high exposure on the west face and a long, complex rappel descent",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer rock route",
+      "byMonth": {
+       "July": "N/A",
+       "June": "Low",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "crowds": {
+     "peakTraffic": "Very rarely climbed",
+     "solitudeRating": 5,
+     "estimatePerSeason": "A serious grade V test-piece with sustained thin cracks; likely only a few ascents logged per season among strong free climbers"
+    }
+   }
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "One of the hardest multi-pitch free routes in Washington. The first ascent (Schaefer/Lee, Aug 2019) topped out pitch 11 about 11 hrs after starting. Most parties rappel the route on a single 80m rope rather than finishing the 4th-class scramble to the true summit.",
+       "hours": 12,
+       "miles": 2.2,
+       "title": "Very long single day",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Reach base",
+         "detail": ""
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start climbing",
+         "detail": "11 pitches, crux pitch 4 (5.12 boulder problems)"
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Top out / begin rappels",
+         "detail": "~11 hrs on route, per the FA timing"
+        },
+        {
+         "time": "7:00-8:00 PM",
+         "label": "Back at car",
+         "detail": "Single 80m-rope rappel line"
+        }
+       ],
+       "objective": "Free-climb Dark Side of Liberty (5.13d)"
+      }
+     ],
+     "totalNote": "A single very long day for the rare parties capable of it: roughly 12-13 hrs car-to-car including approach and rappel descent."
+    },
+    "timing": {
+     "totalHrs": 12,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "4:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 12,
+       "note": "One of the hardest multi-pitch free routes in Washington. The first ascent (Schaefer/Lee, Aug 2019) topped out pitch 11 about 11 hrs after starting. Most parties rappel the route o…",
+       "fromTo": "Very long single day",
+       "section": "Climb"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "day": "Full-day alpine push in cold, shaded conditions",
+      "climb": "Sustained 5.13+ face/crack climbing over 10–11 pitches, 1,100 ft"
+     },
+     "approachTime": "~1.5–2.5 hrs from Blue Lake trailhead toward the East/NE Face (estimate based on neighboring East Face routes — no route-specific approach beta documented)",
+     "requiredSkills": [
+      "Redpoint-level 5.13+ trad/face climbing",
+      "Comfort climbing in cold, perpetually shaded conditions",
+      "Long multi-pitch endurance and self-sufficient route-finding"
+     ],
+     "experienceLevel": "Elite free climber — WA's hardest documented multipitch free route (5.13+); realistically out of range for all but a handful of climbers"
+    },
+    "hazards": [
+     "Northeast-facing 'dark side' aspect stays shaded and cold most of the day; rock and cracks can stay damp/cold even in high summer",
+     "Final ~6 of the 10-11 pitches are noticeably lower rock quality than the lower crux pitches, per the first-ascent account",
+     "Extremely committing Grade IV route — retreat/bail options are limited and effectively undocumented given no known repeat ascents"
+    ]
+   }
+  }
+ ]
+}

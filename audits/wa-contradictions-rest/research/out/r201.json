@@ -1,0 +1,498 @@
+{
+ "file": "r201.json",
+ "results": [
+  {
+   "id": "wa_east_face_3",
+   "fact": "Trailhead and approach",
+   "verdict": "fixed",
+   "correct_value": "East-side pond pullout a few hundred yards east of Washington Pass (~5,400 ft), about 1 hour to the base, not the Blue Lake Trailhead",
+   "evidence": "StephAbegg's Minuteman East Face page: park by the small pond just east of the pass crest, skirt its left side and head SSW through forest to the talus under Liberty Bell/Minuteman, about one hour to the base. SummitPost's East Face page (via search extract) gives the same pond start at ~5,400 ft, talus ~6,000 ft, base 6,600 ft, ~1 hr. The approach text had been copied from Liberty Bell's Beckey Route (Blue Lake TH). NOTE: the Trailhead pin coordinate still sits at the Blue Lake TH lot; renamed only (coords out of scope) - the pin needs moving by the pin workstream.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://www.summitpost.org/east-face/164802",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/east-face-of-minuteman-tower/"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_3",
+     "fact": "Trailhead and approach",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Park at the Blue Lake Trailhead (about 5,200 ft, Northwest Forest Pass required), on the south side of the highway roughly 1.5 miles west of the Washington Pass overlook. Follow the Blue Lake Trail #314 about 1.5 miles to a small meadow, then branch off left onto the well-worn climbers' path, which climbs steeply through slabs, talus, and meadow (with short 3rd-class scrambling) into the basin below the Liberty Bell Group — roughly 3 miles and 2,000 ft of gain, 1.5-2.5 hours total. The classic Beckey Route starts from the notch (about 7,300 ft) between Liberty Bell and Concord Tower, reached via the gully splitting off the climbers' path.",
+     "replace": "Park beside the small pond on SR-20 a few hundred yards east of Washington Pass (about 5,400 ft). Walk around the pond's left side and take the climbers' path into the forest, heading roughly south-southwest; it comes out onto talus beneath the east walls of Liberty Bell and Minuteman near 6,000 ft. Work up the talus to Minuteman's lower left corner, around 6,600 ft. Plan on about an hour and roughly 1,200 ft of climbing from the car."
+    },
+    {
+     "id": "wa_east_face_3",
+     "fact": "Trailhead and approach",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Blue Lake Trailhead (SR-20)",
+     "value": "Pond pullout east of Washington Pass (SR-20)"
+    },
+    {
+     "id": "wa_east_face_3",
+     "fact": "Trailhead and approach",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Blue Lake Trailhead (SR-20)",
+     "value": "Pond pullout east of Washington Pass (SR-20)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_3",
+   "fact": "Rappel descent: count and ropes",
+   "verdict": "fixed",
+   "correct_value": "Rappels on a single 60 m rope (anchors roughly every 30 m); no second rope needed",
+   "evidence": "StephAbegg: descend by rappelling with a single 60 m rope, anchors every ~30 m on trees and horns into the gully toward Liberty Bell. Chossclimbers: rappel from slings at the catwalk ~100 ft west of the summit (no second rope mentioned). The 'four double-rope rappels' in rappels/gear is the outlier; descent, descent_text, rappel_detail, detailed_rack and itinerary already say single 60 m, ~3 raps. The exact count (~3) is left as the row's own figure.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/east-face-of-minuteman-tower/"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_3",
+     "fact": "Rappel descent: count and ropes",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "4 double-rope rappels from slung anchors",
+     "replace": "About three single-rope (60m) rappels from slung anchors"
+    },
+    {
+     "id": "wa_east_face_3",
+     "fact": "Rappel descent: count and ropes",
+     "op": "set",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "expect": "two 60m ropes (the descent is 4 double-rope rappels)",
+     "value": "single 60m rope (the rappel descent works on one rope)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_3",
+   "fact": "Approach gain vs summit height",
+   "verdict": "fixed",
+   "correct_value": "About 1,200 ft from the pond (5,400 ft) to the base (6,600 ft)",
+   "evidence": "The 2,000 ft figure belonged to the Blue Lake/Beckey approach. SummitPost (search extract) gives pond ~5,400 ft and base 6,600 ft; StephAbegg confirms the pond start and ~1 hr. Fixed by the approach rewrite in 'Trailhead and approach'; gain_ft 1600 (car to summit) left untouched.",
+   "sources": [
+    "https://www.summitpost.org/east-face/164802",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_3",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "About 5,400 ft at the pond pullout",
+   "evidence": "The 5,200 ft figure was the Blue Lake TH elevation from the copied approach; the rewritten approach now says ~5,400 ft for the pond pullout (SummitPost extract). The waypoint's 5,477 ft is the Washington Pass crest height, within rounding of the pullout just below it; bivy[] not touched (owned by camping clean-up).",
+   "sources": [
+    "https://www.summitpost.org/east-face/164802",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_3",
+   "fact": "Which gully separates Minuteman",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Two different gullies: the start is at the foot of the gully between Minuteman and Lexington Tower, and the descent crosses the gully between Minuteman and Liberty Bell (StephAbegg describes both; chossclimbers shows the Liberty Bell-side gully).",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/east-face-of-minuteman-tower/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Descent line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both lines exist: the Southwest Face/chockstone descent is described as the traditional descent and a bolted six-station West Face line as the alternative (SummitPost search extract; MP West Face; NCMG). No source says which line Labor Pains parties normally use, so neither 'descend the Chockstone' nor 'most parties use the West Face' can be settled.",
+   "sources": [
+    "https://www.summitpost.org/north-early-winters-spire/151550",
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://ncmountainguides.com/routes/climbing-routes/north-early-winter-spire-northwest-corner"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Rope(s) for the descent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Depends on the unresolved descent line. The bolted West Face line is 'best done with a 70m' / 'single 70m recommended' (MP West Face, MP NW Corner) though one report found a 60 m worked; the chockstone line includes a double-rope rappel per a trip report, while MP's Chockstone page says 4 bolted stations with a 60 m. No source gives Labor Pains' own rope.",
+   "sources": [
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route",
+    "https://trailcatjim.com/north-early-winters-spire-via-chockstone-route/",
+    "https://www.mountainproject.com/route/111959715/chockstone-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": "5 pitches",
+   "evidence": "Mountain Project and the SummitPost/guidebook listing both give 5 pitches, so pitches=5 and overview are right. pitch_detail has 4 rows because the only published pitch beta describes P1-P4 and leaves P5 undescribed; a fifth row cannot be written without inventing it.",
+   "sources": [
+    "https://www.mountainproject.com/route/110902345/labor-pains",
+    "https://www.summitpost.org/north-early-winters-spire/151550"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Number of 5.11 pitches",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: Mountain Project says three 5.11a pitches; the SummitPost/guidebook listing says five pitches with two of them 5.10 and 5.11. No second source for either figure.",
+   "sources": [
+    "https://www.mountainproject.com/route/110902345/labor-pains",
+    "https://www.summitpost.org/north-early-winters-spire/151550"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_labor_pains",
+   "fact": "Chockstone descent anchors",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "MP's Chockstone Route page mentions rappel bolts on the chockstone and 4 bolted rap stations; a trip report does not state anchor type; this catalog's own Northwest Corner row describes webbing around the chockstone. Only one source for 'bolted', and a sibling row contradicts it.",
+   "sources": [
+    "https://www.mountainproject.com/route/111959715/chockstone-route",
+    "https://trailcatjim.com/north-early-winters-spire-via-chockstone-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "fact": "Trailhead",
+   "verdict": "fixed",
+   "correct_value": "SR-20 hairpin pullout east of Washington Pass",
+   "evidence": "Mountain Project's Flycatcher page: approach from the hairpin as for the Direct East Buttress on SEWS, staying right of the dividing gully. MP's Direct East Buttress page: park at the hairpin and hike up Spire Gully. Only road.name/road.status said Blue Lake TH.",
+   "sources": [
+    "https://www.mountainproject.com/route/118228852/flycatcher-buttress",
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress"
+   ],
+   "patches": [
+    {
+     "id": "wa_flycatcher_buttress",
+     "fact": "Trailhead",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Blue Lake Trailhead, SR-20, Washington Pass",
+     "value": "SR-20 hairpin pullout, east of Washington Pass"
+    },
+    {
+     "id": "wa_flycatcher_buttress",
+     "fact": "Trailhead",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved highway parking at the Blue Lake Trailhead; no unpaved road driving required.",
+     "value": "Paved highway parking at the SR-20 hairpin pullout east of Washington Pass; no unpaved road driving required."
+    }
+   ]
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "fact": "Which rappel line needs 70 m",
+   "verdict": "fixed",
+   "correct_value": "The 70 m bolted line is the West Face rappel line, not a line of Flycatcher's own",
+   "evidence": "MP Flycatcher lists the descent as the Chockstone Route (60 m) or 'bolted rap anchors' (70 m). MP West Face and MP Northwest Corner both identify that bolted line as six rappels straight down the West Face, 70 m recommended.",
+   "sources": [
+    "https://www.mountainproject.com/route/118228852/flycatcher-buttress",
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_flycatcher_buttress",
+     "fact": "Which rappel line needs 70 m",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Flycatcher's own newer bolted rap-anchor line",
+     "replace": "the newer bolted West Face rappel line"
+    },
+    {
+     "id": "wa_flycatcher_buttress",
+     "fact": "Which rappel line needs 70 m",
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      4
+     ],
+     "find": "70m via Flycatcher's own line",
+     "replace": "70m via the bolted West Face line"
+    }
+   ]
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The hairpin (~5,100 ft) to summit (7,760 ft) rise is ~2,660 ft, above gain_ft 2,400, but no outside source states a car-to-car gain for this route (MP gives only the 1,100 ft route length). Per the rules gain_ft is not recomputed.",
+   "sources": [
+    "https://www.mountainproject.com/route/118228852/flycatcher-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "fact": "Bolted West Face rappel count and anchors",
+   "verdict": "fixed",
+   "correct_value": "Six bolted single-rope rappels down the West Face; 60 m barely works, 70 m recommended",
+   "evidence": "MP Northwest Corner: '6 rappels directly down the west face. Single 70m rope recommended.' MP West Face: six fairly new bolted rap stations, best done with a 70 m. NCMG: half a dozen rappels on the bolted West Face line. The '4 bolted stations plus a tree' figure is an older description; the itinerary's '3 rappels' was wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route",
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://ncmountainguides.com/routes/climbing-routes/north-early-winter-spire-northwest-corner"
+   ],
+   "patches": [
+    {
+     "id": "wa_news_nw_corner",
+     "fact": "Bolted West Face rappel count and anchors",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "~5 rappels by either line: the bolted West Face (4 bolted stations plus a tree rappel), all single-rope",
+     "replace": "Two lines: the bolted West Face (six bolted stations), all single-rope"
+    },
+    {
+     "id": "wa_news_nw_corner",
+     "fact": "Bolted West Face rappel count and anchors",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "3 rappels with a single 60m rope, or up to half a dozen with shorter ropes, land back at the packs.",
+     "replace": "About six single-rope rappels on bolts land back at the packs; a 70m rope is more comfortable than a 60m."
+    },
+    {
+     "id": "wa_news_nw_corner",
+     "fact": "Bolted West Face rappel count and anchors",
+     "op": "set",
+     "column": "rappel_count_note",
+     "path": [],
+     "expect": "Two established descents, both about 5 rappels, which is why the stored figures differed. One published West Face description: \"Three single rope raps bring you down to the notch, another gets you off the large chockstone (a fun, free-hanging rappel), and some scrambling and down-climbing (or a short 30 foot rap on a tree) get you back on the ground\", and separately \"There is four fairly new bolted rap stations and a tree rappel for the last section.\" A 60 m rope just barely works on the bolted line; 70 m is more comfortable.",
+     "value": "Two established descents. The bolted West Face line is six bolted single-rope stations; a 60 m rope only just reaches and a 70 m is the comfortable choice. The classic line is three single-rope rappels to the notch, a free-hanging double-rope rappel past the chockstone, then a short tree rappel or a downclimb to the ground; the table below lists the classic line."
+    }
+   ]
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "fact": "Trailhead location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on the Blue Lake TH's distance from the overlook: USFS says about 0.25 mi beyond the Washington Pass Overlook; WTA says a little under a mile past the overlook; other descriptions say ~1.5 mi west of Washington Pass (the crest, a different reference point). No two agree on one figure.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail",
+    "https://www.wta.org/go-hiking/hikes/blue-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "fact": "Shared start with the West Face",
+   "verdict": "fixed",
+   "correct_value": "The Northwest Corner and West Face share the first pitch; you do not walk past the West Face start",
+   "evidence": "NCMG: the Northwest Corner 'shares the first pitch with the West face'. Mountain Project's West Face page describes P1 as the dirty chimney/trees to the sandy ledge, the same pitch the West Face row calls shared with the NW Corner; MP NW Corner describes traversing north along the base to that corner. Removed the 'past the start of the West Face route' phrase.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing-routes/north-early-winter-spire-northwest-corner",
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_news_nw_corner",
+     "fact": "Shared start with the West Face",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "North Early Winters Spire's west side, past the start of the West Face route, to a distinctive",
+     "replace": "North Early Winters Spire's west side to a distinctive"
+    },
+    {
+     "id": "wa_news_nw_corner",
+     "fact": "Shared start with the West Face",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Keep traversing north along the base past the start of the West Face route. The",
+     "replace": "Keep traversing north along the base. The"
+    }
+   ]
+  },
+  {
+   "id": "wa_news_nw_corner",
+   "fact": "Best months",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source names specific best months; NCMG only notes the dihedral stays shaded into the afternoon and a trip report notes the north-facing line stays wet longer than neighbouring routes. July-Aug vs Aug-Sep cannot be settled from two sources.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing-routes/north-early-winter-spire-northwest-corner",
+    "https://climberkyle.com/2019/05/11/north-early-winters-spire-nw-corner-5-9/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_west_face",
+   "fact": "Bolted rappel line count",
+   "verdict": "fixed",
+   "correct_value": "Six bolted rappel stations",
+   "evidence": "MP West Face: 'six fairly new bolted rap stations down the face, best done with a 70m'. MP Northwest Corner: 6 rappels directly down the west face. NCMG: half a dozen rappels. rappels/rappel_detail/rappel_count_note already said six.",
+   "sources": [
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route",
+    "https://ncmountainguides.com/routes/climbing-routes/north-early-winter-spire-west-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_west_face",
+     "fact": "Bolted rappel line count",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "a newer line uses four bolted rappel stations plus a tree rappel, starting",
+     "replace": "a newer line uses six bolted rappel stations, starting"
+    },
+    {
+     "id": "wa_the_west_face",
+     "fact": "Bolted rappel line count",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "four rap stations starting about 15 feet right",
+     "replace": "six bolted rap stations starting about 15 feet right"
+    },
+    {
+     "id": "wa_the_west_face",
+     "fact": "Bolted rappel line count",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "The bolted 4-rap descent",
+     "replace": "The bolted 6-rap descent"
+    },
+    {
+     "id": "wa_the_west_face",
+     "fact": "Bolted rappel line count",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "FOUR RAP STATIONS STARTING",
+     "replace": "SIX BOLTED RAP STATIONS STARTING"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_west_face",
+   "fact": "Rope length",
+   "verdict": "fixed",
+   "correct_value": "Single 70 m rope",
+   "evidence": "MP West Face: bolted descent 'best done with a 70m'. MP Northwest Corner: 'Single 70m rope recommended' for the same six-rap line. rope_length_m, what_to_bring and rappel_detail already say 70 m; rack was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_west_face",
+     "fact": "Rope length",
+     "op": "set",
+     "column": "rack",
+     "path": [
+      4
+     ],
+     "expect": "Single 60m dynamic rope",
+     "value": "Single 70m dynamic rope"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_west_face",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: Mountain Project and NCMG say 6 pitches (though MP's own pitch list has only P1-P5, P5 reaching the top), while another listing gives 5 pitches / 660 ft. Cannot settle or invent a sixth row.",
+   "sources": [
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://ncmountainguides.com/routes/climbing-routes/north-early-winter-spire-west-face",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772605"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_west_face",
+   "fact": "Route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project says 500 ft; theCrag says 200 m and another listing 660 ft; MP's own pitch lengths sum to ~610 ft. No two independent sources agree on one figure.",
+   "sources": [
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772605"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_west_face",
+   "fact": "Summit distance from trailhead",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "More than 1.5 mi (1.5 mi of Blue Lake Trail before the climbers' path); exact figure not sourced, so cleared",
+   "evidence": "approach, approach_variants and waypoints[0].directions all put the climbers' path junction 1.5 mi up the Blue Lake Trail, and outside descriptions give the junction at ~1.5-1.7 mi, so a 1-mile summit distance is impossible. No source states the trailhead-to-summit distance, so distMi is cleared rather than replaced with a computed number.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-northwest-face",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_west_face",
+     "fact": "Summit distance from trailhead",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 1,
+     "value": null
+    }
+   ]
+  }
+ ]
+}

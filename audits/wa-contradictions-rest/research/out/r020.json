@@ -1,0 +1,739 @@
+{
+ "file": "r020.json",
+ "results": [
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Which line this route is (East Fury traverse vs NW glacier/ledges vs Perfect Pass chimneys)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Trip reports and route pages agree the commonly climbed way to West Fury is over East Fury and along the three-tower connecting ridge. The northwest glacier-and-ledges line in climbing_route/approach_variants is documented mainly as a descent, and the ROUTE BREAKDOWN describes the 1958 first-ascent approach from Whatcom Pass/Perfect Pass to chimneys below the west summit. The row mixes three different lines; choosing which one this row represents (and rewriting the other sections) is a structural decision, not a single-value fix.",
+   "sources": [
+    "https://www.mountainproject.com/route/119898481/ridge-traverse-from-east-fury",
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Route distance (trailhead to Luna Col / round trip)",
+   "verdict": "fixed",
+   "correct_value": "About 18 mi each way to Luna Col with the water taxi (~41 mi round trip including the summit day)",
+   "evidence": "A 3-day East+West Fury trip report gives ~41 miles round trip with a Luna Col camp; a Luna Peak hike page gives Luna Camp 10 miles from the boat landing and 36.5 miles round trip to Luna's summit just beyond Luna Col; another report gives ten miles to Luna Camp plus ~1.5 miles to the bushwhack. Day 1/3 at 12 mi cannot hold 10 trail miles plus the Access Creek climb to Luna Col; 18 each way makes the days sum to 40.5, matching totalNote. dist_km (24 mi) and the waypoint distMi values appear to follow a walk-in without the boat and were left untouched (no source for that one-way figure).",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://www.wta.org/go-hiking/hikes/luna-peak",
+    "https://www.jessb.org/luna-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 12,
+     "value": 18,
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Route distance (trailhead to Luna Col / round trip)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 12,
+     "value": 18,
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Route distance (trailhead to Luna Col / round trip)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Northwest Forest Pass at Ross Dam Trailhead",
+   "verdict": "fixed",
+   "correct_value": "No parking pass is needed at the Ross Dam Trailhead",
+   "evidence": "The NPS FAQ says there are no trailhead or parking fees for trails that begin on National Park Service lands, and the Ross Dam Trail hike page lists the parking pass as 'None'. The waypoint's NW Forest Pass claim is wrong; access.passRequired is right.",
+   "sources": [
+    "https://www.nps.gov/noca/faqs.htm",
+    "https://www.wta.org/go-hiking/hikes/ross-dam-trail",
+    "https://cascadesfieldguide.com/topics/north-cascades-fees-passes-permits"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "SR 20 milepost 134 parking lot; Northwest Forest Pass required.",
+     "replace": "SR 20 milepost 134 parking lot; no parking pass is needed.",
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Northwest Forest Pass at Ross Dam Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "A Northwest Forest Pass is required to leave a car here.",
+     "replace": "No parking pass is needed to leave a car here.",
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Northwest Forest Pass at Ross Dam Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Luna zone permit reservable in advance vs walk-up only",
+   "verdict": "unresolved",
+   "correct_value": "Luna cross-country zone is walk-up only (per NPS)",
+   "evidence": "The NPS cross-country zones page and its backcountry-reservations page both say only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved and all other cross-country zones (Luna included) are walk-up only. Both are the same publisher, and no independent second source naming the Luna zone was found, so itinerary.cal/access.permit were not changed.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Route high point (East Fury 8,356 vs West Fury 8,303)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": 8356,
+   "evidence": "The row's overview, East Fury waypoint (8,356, 'Higher of Fury's twin summits') agree East Fury is the higher summit, and the route crosses it. The 2022 theodolite survey gives East 8,356 / West 8,305, and a later dGPS/lidar list still has East Fury (8,321.5) above West Fury (8,298). high_point_ft set to the row's own East Fury figure.",
+   "sources": [
+    "https://www.countryhighpoints.com/luna-east-fury-west-fury-theodolite-survey/",
+    "https://www.countryhighpoints.com/the-lidar-dgps-washington-top-100-list/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "high_point_ft",
+     "path": [],
+     "expect": 8303,
+     "value": 8356,
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Route high point (East Fury 8,356 vs West Fury 8,303)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "High point of the route.",
+     "replace": "Summit of the West Peak; East Fury, crossed earlier in the day, is the higher summit.",
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Route high point (East Fury 8,356 vs West Fury 8,303)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "East Fury's elevation (8,356 theodolite vs 8,321.5 dGPS)",
+   "verdict": "unresolved",
+   "correct_value": "8,356 (2022 theodolite) or 8,321.5 (later dGPS rocky summit)",
+   "evidence": "The 2022 theodolite survey gives East Fury 8,356 ft; the same surveyor's later dGPS measurement of the rocky summit gives 8,321.5 ft (the old icecap summit has melted ~30 ft), and his lidar list gives West Fury 8,298. Only one surveyor behind both figures, so the row's 8,356 was left.",
+   "sources": [
+    "https://www.countryhighpoints.com/east-fury-survey/",
+    "https://www.countryhighpoints.com/the-lidar-dgps-washington-top-100-list/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "West Fury push: separate extra day vs one day with East Fury",
+   "verdict": "fixed",
+   "correct_value": "East and West Fury are done in one long day from Luna Col; the traverse takes roughly 2.5 hours each way",
+   "evidence": "A 3-day trip report did East Fury, the traverse (about 2.5 hours to West Fury) and the return to Luna Col in one day, finishing in the dark; a route page reports a party taking 2.5 hours from East to West Fury and advises a full day for the traverse and back if roped. The itinerary's single 14-hour day is right; partner_requirements' 'additional 16+ hour day' is the outlier.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://www.summitpost.org/mount-fury/152299"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "reaching West Fury itself typically adds a full additional 16+ hour day (with possible forced bivouac) beyond the East Fury summit",
+     "replace": "reaching West Fury adds roughly two and a half hours of loose ridge each way beyond the East Fury summit, turning the summit day into a 12-16 hour effort (with possible forced bivouac)",
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "West Fury push: separate extra day vs one day with East Fury"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Number of rappels",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report mentions a single rappel station on the towers; a route page describes a 30 m rappel between towers 1 and 2 plus a rope-stretcher rappel; a Mongo Ridge party returning along the traverse rappelled the back side of each of the three towers. Sources give 1 to 3+; no two agree on a count.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://www.summitpost.org/mount-fury/152299",
+    "https://www.theclimbingguides.com/post/mongo-ridge-and-the-pole-of-remoteness-7-09-2022-7-14-2022"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "High camp location/elevation (Access Col ~6,100 vs Luna Col 7,200)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The approach gives the distance to a camp near Access Col (the Access Creek basin camp) as a milestone and then continues to Luna Col; the itinerary chooses the Luna Col camp (7,200 ft, confirmed by a trip report). Two genuine camps on one line, not incompatible claims.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Access Creek crossing elevation vs Luna Camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The crossing is upstream of Luna Camp, so 2,000 ft below Luna Camp's 2,432 ft cannot be right; one search summary puts the Big Beaver crossing near 2,460 ft, but no fetched page stated it (trip reports give only the higher Access Creek bank crossing at 3,700-3,900 ft). No two sources for a replacement value.",
+   "sources": [
+    "https://onehikeaweek.com/2016/06/27/luna-peak/",
+    "https://havetent.com/2018/06/25/luna-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "fact": "Rock quality/protection",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Loose rock that protects poorly",
+   "evidence": "hazards, beta, climbing_route and descent_text all describe loose choss that takes gear poorly; the traverse's route page calls the rock choss and says finding solid rock for gear would be difficult. pro_needs' 'basic anchors in the granite' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/119898481/ridge-traverse-from-east-fury"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "most experienced climbers can protect themselves with basic anchors in the granite",
+     "replace": "the rock is loose and takes gear poorly, so expect to build anchors from natural horns and slung blocks",
+     "id": "wa_mount_fury_west_west_ridge",
+     "fact": "Rock quality/protection"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Access text copied from an Olympic Mountains route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Remove the Glacier Meadows sentence from access.closures",
+   "evidence": "Glacier Meadows, Elk Lake and the Blue Glacier are on the Hoh River approach to Mount Olympus in Olympic National Park, not in the Picket Range; the rest of the row describes Pickets access. The contaminated leading sentence is removed from the rendered closures text (the non-rendered _raw scrape is left).",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+    "https://www.oregonhikers.org/field_guide/Hoh_River_to_Blue_Glacier_Hike"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "Best June-August; winter snow closure typical Nov-May; Glacier Meadows permits limited and first-come first-served. Luna Fire closure",
+     "replace": "Luna Fire closure",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Access text copied from an Olympic Mountains route"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Luna Camp elevation / identity",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Luna Camp is a valley camp (~2,432 ft), not 7,200 ft",
+   "evidence": "The row's bivy (2,432 ft) and Luna Col waypoint (7,200 ft) show the itinerary gave Luna Camp the col's height. Trip reports describe the 10 miles to Luna Camp as nearly flat valley trail with a single switchback. The wrong elevation is removed.",
+   "sources": [
+    "https://havetent.com/2018/06/25/luna-peak/",
+    "https://www.wta.org/go-hiking/hikes/luna-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "hike 9.4 miles to Luna Camp (7,200 ft)",
+     "replace": "hike 9.4 miles to Luna Camp",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Luna Camp elevation / identity"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Summit-day timing from Luna Camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The timing block's 5 hours (0.5 + 2.5 + 2) fits the traverse alone, which trip reports put at ~2.5 hours each way, but its start is given as Luna Camp, a valley camp a day below East Fury. No source states a start point or time for this block, so it was not rewritten.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://www.countryhighpoints.com/east-fury-survey/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Trip length (days)",
+   "verdict": "fixed",
+   "correct_value": "Three to five days",
+   "evidence": "A West+East Fury trip report took 3 days; a Luna Peak guide gives 4-5 days as typical; other Luna/Fury trips took 4 days. 'About a week' overstates it; the itinerary's 4 days sits in that range.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://www.trailgroove.com/blogs/entry/561-luna-peak-hiking-the-heart-of-the-wild-north-cascades/",
+    "http://ericsbasecamp.net/trips/Luna/Luna.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Allow about a week for the round trip.",
+     "replace": "Allow three to five days for the round trip.",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Trip length (days)"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Traverse duration / roped vs solo",
+   "verdict": "fixed",
+   "correct_value": "About 2.5 hours each way",
+   "evidence": "One trip report took about 2.5 hours from East to West Fury; a route page reports a party taking 2.5 hours and another taking almost 5 hours to the top of the third tower. 'Under an hour' is the outlier; summitTimeHrs 2.5 agrees.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/02/mount-fury/",
+    "https://www.summitpost.org/mount-fury/152299"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "find": "Most experienced parties can complete the traverse in under an hour, but allow a full day if rope work is needed",
+     "replace": "Expect the traverse to take about two and a half hours each way, and allow a full day for the round trip if rope work is needed",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Traverse duration / roped vs solo"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Permit fee",
+   "verdict": "fixed",
+   "correct_value": "$10 per person (16+) plus a $6 non-refundable reservation fee; no entrance fee",
+   "evidence": "NPS lists a $10 per-person recreation fee for adults 16+ plus a $6 non-refundable reservation fee; a hike page and a permit-alert page give the same figures.",
+   "sources": [
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.wta.org/go-hiking/hikes/luna-peak",
+    "https://campflare.com/permit/north-cascades"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "N/A",
+     "value": "Backcountry permit: $10 per person aged 16 and over, plus a $6 non-refundable reservation fee. The park has no entrance fee.",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Permit fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Luna zone permit reservable vs walk-up only",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "access.notes states the park-wide split (about 60% of sites reservable, 40% walk-up), which is true park-wide; it does not claim the Luna zone is reservable. NPS lists Luna among the walk-up-only cross-country zones, consistent with the bivy entry.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Trailhead elevation / cell coverage note",
+   "verdict": "fixed",
+   "correct_value": "Ross Dam Trailhead about 2,100 ft",
+   "evidence": "The Ross Dam Trail page lists its highest point (the trailhead) as 2,100 ft, and NPS describes the 1.3-mile trail to the lake as a 500 ft descent to Ross Lake (~1,600 ft full pool). The 8,000+ ft in comms and the 1,602 ft (lake level) on the trailhead waypoint are both wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/ross-dam-trail",
+    "https://home.nps.gov/noca/planyourvisit/big-beaver-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "comms",
+     "path": [],
+     "find": "(8,000+ ft)",
+     "replace": "(about 2,100 ft)",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Trailhead elevation / cell coverage note"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1602,
+     "value": 2100,
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Trailhead elevation / cell coverage note"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 1602,
+     "value": 2100,
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Trailhead elevation / cell coverage note"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "Winter road access",
+   "verdict": "fixed",
+   "correct_value": "The trailhead is at the western winter closure point (MP 134), which later moves down to Newhalem (MP 120)",
+   "evidence": "WSDOT's closure notice says SR 20 closes between the Ross Dam trailhead (MP 134) and the Silver Star gate, and that closure points are typically moved later in the season to the Newhalem gate (MP 120) on the west side; news coverage says the same. The road is not open year-round to the trailhead.",
+   "sources": [
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://komonews.com/news/local/north-cascades-highway-reopen-spring-state-route-20-snow-winter-closure-ross-dam-trailhead-early-winters-gate-washington-state-department-of-transportation-wsdot"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Highway 20 is fully paved to the Ross Lake trailhead pullout near Newhalem; this lower-elevation western section of Highway 20 is open year-round (unlike the high pass near Washington Pass).",
+     "replace": "Highway 20 is fully paved to the Ross Lake trailhead pullout; the trailhead sits at the western end of the seasonal winter closure (milepost 134), and later in winter the closure point is usually moved down to Newhalem (milepost 120), which cuts off road access to the trailhead.",
+     "id": "wa_ridge_traverse_from_east_fury",
+     "fact": "Winter road access"
+    }
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "fact": "East Fury elevation vs route high point (overview 8,280 < West 8,305)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The overview gives East Fury 8,280 ft, lower than West Fury, but both of the surveyor's measurements put East Fury higher (8,356 theodolite; 8,321.5 dGPS vs West 8,298 lidar), so on this traverse high_point_ft (8,305) should be East Fury. Only one surveyor behind the figures and they differ, so no value was written.",
+   "sources": [
+    "https://www.countryhighpoints.com/luna-east-fury-west-fury-theodolite-survey/",
+    "https://www.countryhighpoints.com/the-lidar-dgps-washington-top-100-list/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent",
+   "verdict": "fixed",
+   "correct_value": "The dozen rappels, including the one off the Pole of Remoteness, are made during the ascent of Mongo Ridge; the descent is the three-tower connecting ridge back to East Fury",
+   "evidence": "The first-ascent writeup describes a dozen rappels during the ascent off Pinnacles 1-3, the Rooster Comb and the Pole of Remoteness before the final 500 ft to West Fury; a second-ascent report lists 8 rappels between the towers on the way up, then returned over the three towers of the Fury traverse; the route page says the descent traverses from West Fury to East Fury and out Access Creek. descent_text, rappel_detail and the approach baseFinding wrongly put the dozen rappels on the return.",
+   "sources": [
+    "https://alpinist.com/climbing-notes/mt-fury/",
+    "https://www.theclimbingguides.com/post/mongo-ridge-and-the-pole-of-remoteness-7-09-2022-7-14-2022",
+    "https://www.mountainproject.com/route/120989922/southwest-ridge-mongo-ridge",
+    "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "The technical crux of the descent is the ridge traverse itself: getting off each of the roughly half-dozen major gendarmes and pinnacles (including the tower nicknamed the 'Pole of Remoteness') requires rappelling, and — per the first-ascent account and subsequent trip reports — this adds up to roughly a dozen rappels total along the ridge crest before regaining East Fury.",
+     "replace": "The technical crux of the descent is the connecting ridge back to East Fury: it crosses three loose towers, climbing over each and rappelling down its far side. The dozen-odd rappels off Mongo Ridge's own gendarmes, including the Pole of Remoteness, come during the ascent, not on the way down.",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "(one FA account describes a rap rope being severed by rockfall mid-descent)",
+     "replace": "(a rappel rope was severed by rockfall on the first ascent)",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "First rappel off a major gendarme on the ridge crest heading toward East Fury.",
+     "replace": "First rappel off a major gendarme on the ridge crest, on the way up the buttress.",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      8,
+      "notes"
+     ],
+     "find": "Nearing the East Fury side of the traverse.",
+     "replace": "Higher on the ridge crest.",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      10,
+      "notes"
+     ],
+     "find": "Second-to-last rappel before regaining East Fury's upper terrain.",
+     "replace": "Second-to-last rappel on the ridge.",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      11,
+      "notes"
+     ],
+     "find": "Final rappel regaining East Fury, after which the descent continues via the Southeast Glacier route toward Luna Pass.",
+     "replace": "Final rappel on the ridge; easier ground then leads toward West Fury's summit.",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "getting off gendarmes/pinnacles along the connecting ridge",
+     "replace": "getting off gendarmes/pinnacles along Mongo Ridge",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Getting off each of them takes a rappel, and roughly a dozen rappels total along the crest before you regain East Fury.",
+     "replace": "Getting off each of them takes a rappel, roughly a dozen along the crest before you reach West Fury.",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Glacier travel on approach/descent",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The standard approach and descent cross East Fury's crevassed Southeast Glacier",
+   "evidence": "hazards, obj_haz, approach, descent_text and gear agree the approach and descent cross the Southeast Glacier with a bergschrund; the second-ascent report describes a moat crossing on the glacier where a picket would have helped, and an accident report is filed under 'Mount Fury/Southeast Glacier'.",
+   "sources": [
+    "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/",
+    "https://www.mountaineers.org/activities/trip-reports/mount-fury-southeast-glacier-6-29-2025-accident-report"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel on the ridge itself, though some approach variations may cross glaciated terrain",
+     "value": "No glacier travel on the ridge itself, but the standard approach and descent cross East Fury's crevassed Southeast Glacier and its bergschrund",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Glacier travel on approach/descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "non-glaciated summer alpine rock route",
+     "replace": "summer alpine rock route with a glaciated approach",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Glacier travel on approach/descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Location of the technical crux",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route has several named cruxes: getting onto the ridge, Tower 3 (the 5.10 pitch) and the Rooster Comb section near the end, which can be bypassed on low fifth class with a rappel. The 5.11 headwall is on the Pole of Remoteness near the top and was avoided by a 5.7 notch on the first ascent, matching watch_out. rope_note calling the Rooster Comb 'the crux section' and pitch 13 being the 5.10 crux are both consistent with this.",
+   "sources": [
+    "https://www.mountainproject.com/route/120989922/southwest-ridge-mongo-ridge",
+    "https://alpinist.com/climbing-notes/mt-fury/",
+    "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Distance units/total",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach on screen; 38.6 km (24 mi) is about half of the 48-mile upper end of totalNote, and 24 mi one way roughly matches the walk without the boat. No source states the one-way distance for this approach, so it was not changed.",
+   "sources": [
+    "https://www.countryhighpoints.com/luna-east-fury-west-fury-theodolite-survey/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "About 2,100 ft",
+   "evidence": "The Ross Dam Trail page gives its high point (the trailhead) as 2,100 ft; NPS describes a 500 ft descent over 1.3 miles to Ross Lake (~1,600 ft). 1,640 ft is close to lake level, and 2,150 is slightly high.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/ross-dam-trail",
+    "https://home.nps.gov/noca/planyourvisit/big-beaver-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1640,
+     "value": 2100,
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 1640,
+     "value": 2100,
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(~milepost 134, 2,150 ft)",
+     "replace": "(~milepost 134, about 2,100 ft)",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Trailhead elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Total gain vs loss on a round trip",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A car-to-car survey trip to Luna/East Fury/West Fury logged about 10,000 ft of gain, but no source states the car-to-car loss figure for this route; per the rules loss_ft is not equalised to gain_ft.",
+   "sources": [
+    "https://www.countryhighpoints.com/luna-east-fury-west-fury-theodolite-survey/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Day-1 schedule vs approach times",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A second-ascent party did take a 2 PM boat to Big Beaver and bivied in the Access Creek basin the same day, so the 2 PM taxi and evening basin camp are plausible; the 8 AM trailhead departure six hours before the boat is odd but no source gives times to replace it.",
+   "sources": [
+    "https://alpinevagabonds.com/mount-furys-mongo-ridge-a-second-ascent/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "First-ascent date",
+   "verdict": "fixed",
+   "correct_value": "Wayne Wallace, solo — August 24-27, 2006",
+   "evidence": "The first-ascent writeup dates the climb August 24-27, and the AAJ report places it in August 2006 (the TR is dated 8/28/2006). One route page says July 2006, which appears to be the origin of the 'month uncertain' note; the primary accounts agree on August.",
+   "sources": [
+    "https://alpinist.com/climbing-notes/mt-fury/",
+    "http://publications.americanalpineclub.org/articles/12200713002/North-America-United-States-Washington-Cascade-Range-Mt-Fury-West-Peak-Mongo-Ridge",
+    "https://cascadeclimbers.com/forum/topic/44693-tr-mongo-ridge-wfury-fa-vi-510-8282006/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "fa",
+     "path": [],
+     "expect": "Wayne Wallace, solo — 2006 (month uncertain: July or August)",
+     "value": "Wayne Wallace, solo — August 24-27, 2006",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "First-ascent date"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "fact": "Rack size",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Rack to about 3 in",
+   "evidence": "detailed_rack, sling_rack and rack agree on cams to ~3 in; a party's report of their ascent lists singles to #2 and doubles .3-.75, nothing to 4 in.",
+   "sources": [
+    "https://www.theclimbingguides.com/post/mongo-ridge-and-the-pole-of-remoteness-7-09-2022-7-14-2022"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      7
+     ],
+     "expect": "Single rack to 4in (doubles in finger/hand sizes)",
+     "value": "Single rack to 3in (doubles in finger/hand sizes)",
+     "id": "wa_mount_fury_east_mongo_ridge",
+     "fact": "Rack size"
+    }
+   ]
+  }
+ ]
+}

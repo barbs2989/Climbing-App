@@ -1,0 +1,268 @@
+{
+ "file": "r503.json",
+ "results": [
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Elwha Snowfinger exit",
+   "verdict": "fixed",
+   "correct_value": "The Elwha Snowfinger is no longer a permanent snow gully; its snow has largely melted out, leaving a steep-sided canyon of banks, boulders and stream crossings that leads down to the Elwha River trail near Chicago Camp, below Low Divide.",
+   "evidence": "A 2014 traverse account describes the Snow Finger as withered away, forcing steep bank traverses, rock-hopping and a river wade before reaching the Elwha River trail, then continuing down to Chicago Camp and up to Low Divide. A 2023 traverse report says the snowfinger is gone save a tiny patch at the top, leaving a very steep-sided canyon. A 2020 traverse report also reached the Elwha basin, then Chicago Camp, then exited the North Fork Quinault.",
+   "sources": [
+    "https://www.trailgroove.com/blogs/entry/498-a-bailey-range-traverse-hiking-in-olympic-national-park/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-05.8599228204",
+    "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Elwha Snowfinger exit",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "note"
+     ],
+     "find": "descend the Elwha Snowfinger (a permanent snow gully) to reconnect with maintained trail at Low Divide, then continue to a trail camp.",
+     "replace": "descend the Elwha Snowfinger gully, now largely melted out into a steep-sided canyon of banks, boulders and stream crossings, to reach the maintained Elwha River trail near Chicago Camp, then climb to Low Divide and a trail camp."
+    },
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Elwha Snowfinger exit",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      3,
+      "note"
+     ],
+     "find": "descend the Elwha Snowfinger (a permanent snow gully) to reconnect with maintained trail at Low Divide",
+     "replace": "descend the Elwha Snowfinger gully, now largely melted out into a steep-sided canyon, to reach the maintained Elwha River trail near Chicago Camp and climb to Low Divide"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Summit ascent line",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The summit is climbed from Ferry Basin up the loose scree of the peak's south-east side (bench east of the summit / SE ridge), with the easier south slope used for descent; the Ferry-Pulitzer col is the onward traverse, not the ascent start.",
+   "evidence": "One traverse report climbed Ferry by the Southeast Ridge and descended the South Slope; another stashed gear at the Ferry Basin lakes and climbed loose scree north from there to the ridge, then scrambled right to the summit. The row's approach, climbing_route, approach_variants and itinerary all start the climb from camp in Ferry Basin via the bench/SE side; only the overview starts it at the Ferry-Pulitzer col, which approach_variants explicitly calls the onward traverse. The route name 'South Slopes' is out of scope (name is not patched).",
+   "sources": [
+    "https://trailcatjim.com/olympus-bailey-traverse-mt-olympus-stephen-peak-mt-carrie/",
+    "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Summit ascent line",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "walk-up over loose 'Olympics dagger' scree from the Ferry-Pulitzer col;",
+     "replace": "walk-up over loose 'Olympics dagger' scree from Ferry Basin;"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)",
+   "verdict": "fixed",
+   "correct_value": "Heading south from Sol Duc, Stephen Lake comes before Ferry Basin; after Ferry the route continues over Lone Tree Pass and Bear Pass to Queets Basin. Day 2 camps in Ferry Basin and day 3 runs Ferry Basin to Queets Basin.",
+   "evidence": "One traverse lists the order Cat Peak, Mt Carrie, Stephen Lake, Ferry Basin, Lone Tree Pass, Mt Childs, Bear Pass, Queets Basin. A second party camped at Stephen Lake on day 2 and Upper Ferry Basin on day 3, then Bear Pass. A third, travelling north, went Lone Tree Pass, Ferry Basin, then Stephen Lake. The row's approach, waypoints and bivy also put Ferry Basin past Stephen Peak.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/",
+    "https://trailcatjim.com/olympus-bailey-traverse-mt-olympus-stephen-peak-mt-carrie/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "descending the easier south slope back to the Bailey Range route before continuing to camp near Stephen/Cream Lake.",
+     "replace": "descending the easier south slope back to camp in Ferry Basin."
+    },
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "find": "Easier, milder terrain regains the Bailey Range route toward Stephen/Cream Lake.",
+     "replace": "Easier, milder terrain leads back down to camp in Ferry Basin."
+    },
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "title"
+     ],
+     "expect": "Stephen Lake / Cream Lake to Queets Basin",
+     "value": "Ferry Basin to Queets Basin"
+    },
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "past Stephen Peak's flanks and Bear Pass",
+     "replace": "over Lone Tree Pass and Bear Pass"
+    },
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "fromTo"
+     ],
+     "expect": "Stephen Lake / Cream Lake to Queets Basin",
+     "value": "Ferry Basin to Queets Basin"
+    },
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Traverse order (Stephen/Cream Lake vs Ferry Basin)",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "past Stephen Peak's flanks and Bear Pass",
+     "replace": "over Lone Tree Pass and Bear Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Parking pass at Sol Duc",
+   "verdict": "fixed",
+   "correct_value": "The Sol Duc trailhead is inside Olympic National Park; parking requires the park entrance pass (or an interagency pass), not a Northwest Forest Pass.",
+   "evidence": "The park's fee page lists the $30 7-day vehicle pass and $55 annual park pass. The Sol Duc Falls hike page states a National Park or Interagency Pass is required at the trailhead. access.parking_pass already says this.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/fees.htm",
+    "https://www.wta.org/go-hiking/hikes/sol-duc-falls"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Parking pass at Sol Duc",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Northwest Forest Pass required for parking",
+     "replace": "Olympic National Park entrance pass required for parking"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 4,495 equals only day 2 of the 5-day itinerary (itinerary sum 10,744 ft). No outside source states a car-to-car gain for this specific Sol Duc to North Fork Quinault Ferry itinerary; a related loop variant is reported at 26k ft over 61 mi, which is a different route. Per the rules no computed total is written.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Exit leg to trailhead",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The North Fork Quinault trail runs about 16.1 mi from Low Divide to its trailhead, so a 5-mile final day from Low Divide cannot reach it; one party instead camped at Elip Creek and walked the last 6 miles out. Fixing day 5 needs new miles, hours and totals (and timing) that no source states for this itinerary, so no patch is written. The Snowfinger's connection point (Elwha River trail near Chicago Camp, below Low Divide) was corrected under the Snowfinger item.",
+   "sources": [
+    "https://www.protrails.com/trail/840/olympic-national-park-north-fork-quinault-river-trail",
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Wilderness permit channel",
+   "verdict": "fixed",
+   "correct_value": "Trail camps (e.g. the Sol Duc corridor) are reserved on Recreation.gov; cross-country Bailey Range camps are not listed online and are booked by phone with the Wilderness Information Center. The park's quota areas include Sol Duc/Seven Lakes Basin and the East Fork Quinault, not Cream Lake, Ferry Basin or Elwha Basin.",
+   "evidence": "The park's wilderness reservations page says cross-country routes such as the Bailey Range must be arranged by calling the WIC at (360) 565-3100, and its quota list (Ozette, Royal Basin, Lake Constance, Upper Lena, East Fork Quinault, Flapjack, Grand/Badger, Sol Duc/Seven Lakes, Hoh) names no Bailey Range zone. An independent permit guide likewise says Bailey Range cross-country trips must be booked through the WIC by phone. The waypoint's Recreation.gov note for Sol Duc corridor trail camps is correct and is left alone.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://lastingadventures.org/olympic-national-park-backpacking-permits-complete-guide/",
+    "https://campflare.com/permit/olympic"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Wilderness permit channel",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+     "replace": "all overnight wilderness stays require a wilderness camping permit, and cross-country Bailey Range camps are booked by phone with the Wilderness Information Center."
+    },
+    {
+     "id": "wa_mount_ferry_standard",
+     "fact": "Wilderness permit channel",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "(quota zones at Cream Lake, Ferry Basin, Elwha Basin)",
+     "replace": "(cross-country camps booked by phone with the Wilderness Information Center)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Glacier kit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The crevasse card is scoped to Mount Ferry itself and explicitly notes crevassed glacier terrain on the Olympus portion of the broader traverse; the rack's light crevasse kit is likewise for glacier crossings elsewhere on the traverse, not the Ferry line, so the two agree. (Traverse variants do cross crevassed ice on the Carrie, Humes and Hoh glaciers.)",
+   "sources": [
+    "http://eileensadventures.com/2020/07/baileys-high-traverse-in-the-olympic-mountains",
+    "https://www.pacificalpineguides.com/bailey-range-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "fact": "Sol Duc to Heart Lake",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Via the Sol Duc River trail, Heart Lake is 8.0 mi from the trailhead (7.85 mi on another trail database) at 4,744 ft, matching the itinerary's 8 mi and the waypoint. But the approach text and waypoints route the day past Deer Lake and the High Divide toward Bogachiel Peak, a different and longer line for which 9-11 mi may be right; the Deer Lake waypoint at 3.4 mi followed by Heart Lake at 8 mi mixes the two. Which trail the route intends is a choice the row does not settle, so no patch is written.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/sol-duc-river",
+    "https://www.protrails.com/trail/842/olympic-national-park-heart-lake"
+   ],
+   "patches": []
+  }
+ ]
+}

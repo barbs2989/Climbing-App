@@ -1,0 +1,31 @@
+{"file": "r464.json", "results": [
+ {"id": "wa_west_craggy_peak_standard_route", "fact": "Parking pass at Copper Glance Trailhead", "verdict": "fixed",
+  "correct_value": "No parking pass or fee is required at the Copper Glance Trailhead.",
+  "evidence": "The Forest Service's Copper Glance Trailhead page states no fees are required at the site (trailhead 3,800 ft). The WTA hike page for Copper Glance Lake lists Parking Pass/Entry Fee: None required. access.fees, access.passRequired, road.status and the trailhead waypoint already agree; the `permit` column's 'Northwest Forest Pass at some trailheads' sentence is patched. bivy[0].permit also says an NW Forest Pass is required but bivy is owned by the camping clean-up, so it is NOT patched here and remains wrong.",
+  "sources": ["https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/copper-glance-trailhead", "https://www.wta.org/go-hiking/hikes/copper-glance-lake"],
+  "patches": [
+   {"id": "wa_west_craggy_peak_standard_route", "fact": "Parking pass at Copper Glance Trailhead", "op": "replace_text", "column": "permit", "path": [], "find": "Northwest Forest Pass at some trailheads.", "replace": "No parking pass is needed at the Copper Glance Trailhead."}
+  ]},
+ {"id": "wa_west_craggy_peak_standard_route", "fact": "Copper Glance Creek crossing position", "verdict": "fixed",
+  "correct_value": "waypoints[1].distMi unknown (null); the pin's coordinates and 6,400 ft elevation describe the upper-basin water source, not the low crossing",
+  "evidence": "The pin's own coordinates lie about 1.8 mi in a straight line from the trailhead pin, so a trail distance of 1.6 mi is impossible; it sits beside the basin camp, matching the 'creek crossing near 6,400 ft' water source in approach_variants. The low crossing of Copper Glance Creek is far lower: the WTA hike description puts it at 0.4 mi (log crossing replacing a washed-out jeep bridge), while another trip report puts it near 1.6 mi by the mine, so the low crossing's exact position is not settled and the approach prose is left alone. No source gives a trail distance for the 6,400 ft basin crossing, so per the rule its distMi is set to null.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/copper-glance-lake", "http://ericsbasecamp.net/trips/Craggies/Craggies.htm", "https://trailcatjim.com/big-craggy-peak-west-craggy-peak-via-copper-glance-basin/"],
+  "patches": [
+   {"id": "wa_west_craggy_peak_standard_route", "fact": "Copper Glance Creek crossing position", "op": "set", "column": "waypoints", "path": [1, "distMi"], "expect": 1.6, "value": null}
+  ]},
+ {"id": "wa_west_craggy_peak_standard_route", "fact": "Length of the mining-road section", "verdict": "bivy_zone_list",
+  "correct_value": "about 1.5-1.6 mi of old mine road to the mine (approach and pro_tips are right)",
+  "evidence": "Only bivy[0].notes says 2.5 miles; the WTA hike description puts the mine adit at about 1.6 mi, consistent with the approach and pro_tips 'about 1.5 miles'. bivy is owned by the camping clean-up, so no patch. Copper Glance Lake does serve this route; the 'Copper Glance Basin camp' entry serves it too.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/copper-glance-lake"],
+  "patches": []},
+ {"id": "wa_west_craggy_peak_standard_route", "fact": "Distance", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The lake/basin is about 3.4-3.5 mi one way (WTA: 6.8 mi round trip; another report: 3.5 mi one way to the lake camp), and combined Big + West Craggy outings run about 10-11 mi round trip. No source states a one-way trailhead-to-West-Craggy-summit figure, so whether 8.9 km (5.5 mi) is the one-way summit distance or a different quantity cannot be settled; no patch.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/copper-glance-lake", "https://havetent.com/2021/06/25/big-craggy-west-craggy/", "https://trailcatjim.com/big-craggy-peak-west-craggy-peak-via-copper-glance-basin/", "http://ericsbasecamp.net/trips/Craggies/Craggies.htm"],
+  "patches": []},
+ {"id": "wa_west_craggy_peak_standard_route", "fact": "Ridge used to reach the summit", "verdict": "bivy_zone_list",
+  "correct_value": null,
+  "evidence": "Only bivy[0].notes (a shared camp card describing the combined Big Craggy traverse) mentions West Craggy's east ridge. A trip report of the saddle variant describes traversing below the crest on the south side to a notch and a talus gully, matching the approach_variants text and the route name. bivy is owned by the camping clean-up; no patch.",
+  "sources": ["http://ericsbasecamp.net/trips/Craggies/Craggies.htm"],
+  "patches": []}
+]}

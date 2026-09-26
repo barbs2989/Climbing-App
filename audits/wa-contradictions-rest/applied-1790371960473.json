@@ -1,0 +1,59 @@
+{
+ "applied": [
+  {
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "column": "grade",
+   "path": [],
+   "fact": "Commitment grade (I vs II)"
+  },
+  {
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "before": {
+    "grade": "Grade I, snow to 50°",
+    "approach_logistics": {
+     "peakLat": 48.512275,
+     "peakLng": -120.655395,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    },
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail into the west basin (snow)",
+      "hours": "1.5-2.5",
+      "notes": "From the Blue Lake Trailhead on SR-20 about 1.5 miles west of Washington Pass, follow the main trail roughly a mile and a half to the well-worn climbers' trail and take it up into the basin on the west side of the Liberty Bell group. Early in the season the trailhead lot itself may still be snowed in.\n\nOn a cold morning parties approach in boots and crampons without flotation; later in the day the same snow softens badly. Start early and plan to be off the couloir before the afternoon.\n\nThis is the quickest line to the summit of the south spire, and it exists only for a short window: it comes into condition once the highway opens and deteriorates as the snow goes. Late in the season the couloir empties out into loose rock and is not worth climbing.",
+      "season": "A few weeks to a couple of months after SR-20 reopens — roughly May-Jun",
+      "hazards": [
+       "avalanche and wet-slide hazard on a sun-affected slope, worsening through the day",
+       "snow and occasional ice to around 50 degrees in the upper narrows",
+       "late season the couloir fills with loose rock and becomes a rockfall trap — not recommended once melted out",
+       "route depends entirely on SR-20 reopening, typically mid-April to early May"
+      ],
+      "baseFinding": "From the basin, the couloir is the snow gully rising on the southwest side of South Early Winters Spire, immediately left of the South Arete rib as you look up. It broadens low down at a modest 25 to 30 degrees, and the identifying feature is the FORK higher up where the gully splits — the right-hand branch is the route, and it steepens to 40 to 50 degrees and narrows above the split. If you are in a gully that never forks, you are in the wrong drainage. Because the whole thing is a snow feature there is no rock start to find; the transition is simply from basin snow into the gully bed, so the navigational work is choosing the correct gully from the basin, in daylight, before the ground steepens."
+     }
+    ]
+   }
+  }
+ ]
+}

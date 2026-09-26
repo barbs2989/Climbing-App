@@ -1,0 +1,222 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Trail mileages to camps"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Trail mileages to camps"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Trail mileages to camps — Camp Wilder distance"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Trail mileages to camps — Camp Wilder distance"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Trail mileages to camps — Camp Wilder distance"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "miles"
+   ],
+   "fact": "Trail mileages to camps — Camp Wilder distance"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Trail mileages to camps — Camp Wilder distance"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "what_to_bring",
+   "path": [
+    3
+   ],
+   "fact": "Food storage rule"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Food storage rule"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Road closure date"
+  },
+  {
+   "id": "wa_mount_wilder_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Road walk to Whiskey Bend"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_wilder_scramble",
+   "before": {
+    "approach": "Mount Wilder sits deep in the Elwha drainage and this is a genuine multi-day backpack approach, not a day hike-in. From the Whiskey Bend trailhead (reached by an extra ~7-mile road-walk/bike-in from Madison Falls, where Olympic Hot Springs Road has been closed to vehicles since November 2017 flood damage), follow the Elwha River Trail south along the river's east bank through old-growth lowland forest. Established waypoints/camps along the way (mileages approximate, gathered from NPS and trip-report cross-referencing): the Humes Ranch cutoff around 2.7 mi, Lillian River Camp around 4.9 mi (reliable water, log crossing of the Lillian River), Mary's Falls around 6.9 mi, Canyon Camp around 9.6 mi (trail narrows through a rocky gorge section), Elkhorn around 11.4 mi (old guard-station clearing, bear wire), and Hayes River Guard Station around 12 mi (junction with the Hayes River/Dodger Point trail). Continue upriver to Camp Wilder, roughly 16-17 miles from Whiskey Bend (established campsites, bear wire, small shelter), which sits in the river bottom directly below the peak's steep south face and is the logical base camp for the climb. Water is abundant along the river trail (numerous tributary crossings) but there is no bridge maintenance guarantee on side creeks — expect to rock-hop or ford minor tributaries, higher and faster in early season. From Camp Wilder there is no maintained trail to the summit: leave the river trail and climb north/northeast off-trail, first through streamside brush and old forest, then heather benches and talus, to gain the peak's south ridge. The south aspect of Mount Wilder rises nearly 3,800 feet in under two miles, so expect sustained, steep, trail-less travel on a mix of open slope, talus, and brush, with real route-finding needed to link the cleanest line to the ridge crest — there is no cairned or established scramble path, and this peak has no recorded first ascent date, reflecting how rarely it's visited. Top off water at Camp Wilder or a tributary before starting the climb, since it is scarce higher on the ridge.",
+    "descent_text": "Descend via the same south ridge/slope line used on the ascent — this is a class 2 walk-off scramble with no technical downclimbing and no rappelling required. The main hazards are route-finding (it is easy to drift off the true ridge crest onto steeper, brushier terrain or loose rock bands in the talus/heather zone, especially in poor visibility) and loose rock and scree on the steep upper slopes underfoot. Take careful mental notes of ascent landmarks — drainages, rock outcrops, benches — since the featureless heather/talus terrain looks different in descent light and it's easy to cliff out above the steep lower slopes if you wander from the ascent line. The terrain naturally funnels back toward the river valley, so keep trending toward the Elwha drainage to return to Camp Wilder. From Camp Wilder, retrace the Elwha River Trail roughly 16-17 miles back to Whiskey Bend (plus the current road-walk/bike-in if the Whiskey Bend Road washout is still in effect).",
+    "itinerary": {
+     "cal": "The Elwha (Olympic Hot Springs) Road has been closed to vehicles beyond Madison Falls since a 2021 washout, adding roughly 7 miles of road-walking/biking each way (about 14 miles round trip) before the Whiskey Bend trailhead is even reached — check current NPS Elwha closure status before planning. Best window is July–September once the Elwha fords and upper slopes are snow-free.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Easy, well-graded river-valley trail from the Whiskey Bend trailhead through old-growth forest and the Geyser Valley area. Gentle warm-up day with a full multi-day pack.",
+       "hours": 5,
+       "miles": 9,
+       "title": "Up the lower Elwha valley",
+       "gainFt": 800,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach Mary's Falls Camp"
+      },
+      {
+       "n": 2,
+       "note": "The biggest mileage day of the trip, continuing up the Elwha River Trail past Elkhorn and Hayes River toward the head of the valley. Camp Wilder sits near the base of Mount Wilder's steep south/east flank, just below Chicago Camp and Low Divide.",
+       "hours": 8.5,
+       "miles": 15,
+       "title": "Long push to Camp Wilder",
+       "gainFt": 1400,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach Camp Wilder, base camp for the peak"
+      },
+      {
+       "n": 3,
+       "note": "Leave camp with a light day pack and climb cross-country up steep heather, scree and brushy rock bands on Wilder's south/east aspect — no maintained trail, expect route-finding and Olympic-style bushwhacking low down giving way to open class 2-3 slopes near the ridge and summit.",
+       "hours": 9,
+       "miles": 4.5,
+       "title": "Summit day: Mount Wilder",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Camp Wilder",
+         "detail": "Light day pack, early start to beat afternoon thunderstorm risk and soften brush with morning cool."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Clear treeline brush, gain the ridge",
+         "detail": "Steepest, densest bushwhacking is in the lower 1,500 ft; terrain opens onto heather and rock above."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Summit Mount Wilder",
+         "detail": "5,939 ft — views into the Bailey Range and down the Elwha and Queets drainages."
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line; downclimb loose rock bands carefully."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at Camp Wilder",
+         "detail": "Rest and refill water for the hike out."
+        }
+       ],
+       "objective": "Climb Mount Wilder and return to Camp Wilder"
+      },
+      {
+       "n": 4,
+       "note": "Reverse Day 2's route back down the Elwha River Trail. Mostly downhill/flat but long, with tired legs from the summit push the day before.",
+       "hours": 7,
+       "miles": 15,
+       "title": "Retreat down the valley",
+       "gainFt": 200,
+       "lossFt": 1400,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to Mary's Falls Camp"
+      },
+      {
+       "n": 5,
+       "note": "Easy final morning back down the lower valley trail to the car (or the current end-of-road walk if the Elwha Road closure is still in effect).",
+       "hours": 4.5,
+       "miles": 9,
+       "title": "Out to the trailhead",
+       "gainFt": 200,
+       "lossFt": 800,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Hike out to Whiskey Bend"
+      }
+     ],
+     "totalNote": "A genuine wilderness backpack, not a day trip: roughly 50+ trail miles round trip up the Elwha valley to Camp Wilder plus a steep, off-trail summit scramble, typically done in 5 days by parties visiting this remote, rarely-climbed interior Olympics summit — usually as a side trip from Bailey Range/Elwha travel rather than for peak-list credit; Mount Wilder is not on Washington's Bulger List (100 highest peaks), whose lowest-ranked entries sit above 8,300 ft, far above Wilder's 5,939 ft."
+    },
+    "what_to_bring": [
+     "Ice axe (lingering snow on upper slopes, especially before August)",
+     "Trekking poles (river fords)",
+     "Sturdy boots suited to cross-country talus, heather, and brush",
+     "Wilderness permit and a bear-resistant food storage plan (canister or use camp bear wire — confirm which is required at your camp)",
+     "Map/compass or GPS — no cell signal and no maintained tread once off the Elwha River Trail"
+    ],
+    "access": {
+     "fees": "Park entrance fee $30/vehicle (or $15/person on foot or bike), valid 7 days; a $55 Olympic National Park annual pass or an America the Beautiful pass is also accepted. The park is cashless (credit/debit only).",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Food storage requirements vary by campsite — consult the current Olympic Wilderness Trip Planner map; some Elwha camps have bear wires, others require a hard-sided canister (free loaner canisters available at the Port Angeles Wilderness Information Center). The Elwha River and its tributaries are closed to fishing.",
+     "permit": "Wilderness camping permit required for any overnight stay (essentially mandatory given the trail mileage involved); reserve via Recreation.gov. Cost is $8 per adult per night plus a non-refundable $6 reservation fee, or cover nightly fees with a $45 annual Olympic Wilderness Pass (reservation fee still applies). Summer-season (May 15-Oct 15) permit reservations release around mid-April.",
+     "closures": "Olympic Hot Springs Road has been closed to vehicles beyond Madison Falls since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, so reaching the Whiskey Bend trailhead adds roughly 7 miles of road approach each way — check NPS alerts before you go.",
+     "group_limit": 12,
+     "landManager": "National Park Service — Olympic National Park, Daniel J. Evans Wilderness",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance pass/fee at the park boundary",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    },
+    "approach_logistics": {
+     "peakLat": 47.767725,
+     "peakLng": -123.519805,
+     "trailhead": "Whiskey Bend Trailhead (Elwha)",
+     "trailheadLat": 47.968,
+     "trailheadLng": -123.583,
+     "trailheadDirection": "Via the Elwha Valley: Olympic Hot Springs Road is closed to vehicles at Madison Falls — walk or bike ~8 miles to the Whiskey Bend Trailhead"
+    }
+   }
+  }
+ ]
+}

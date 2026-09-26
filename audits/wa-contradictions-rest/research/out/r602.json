@@ -1,0 +1,222 @@
+{
+ "file": "r602.json",
+ "results": [
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Day-1 gain to Upper Royal Basin",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: 1,800 ft cannot be right for trailhead (~2,500) to a 5,600-5,800 ft camp; the park's own trail page gives 2,550 ft to 5,100 ft at Royal Lake alone. But no outside source states both a Day-1 figure and a car-to-car total for this route, and raising Day 1 (and Day 3 loss) to ~3,100 would push the itinerary total to ~5,800 against gain_ft 5,180, trading one contradiction for another. Needs a sourced car-to-car gain for Johnson from Upper Royal Basin.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Direction from Royal Lake to the col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: the stored pins put Upper Royal Basin due west of Royal Lake and the col/summit to the west-northwest, and Mount Deception lies south of Johnson (so the basin sits below Deception's north side, not its south face), while the approach says 'north' then 'east/northeast'. Research was cut short by a tool limit before two sources on the travel directions and on where Surprise Basin lies could be found, so no prose was changed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Approach drainage",
+   "verdict": "fixed",
+   "correct_value": "Royal Basin via the Upper Dungeness trailhead (not the Dosewallips)",
+   "evidence": "Mount Johnson is climbed from Royal Basin; the Clark/Johnson climbers' camp is Upper Royal Basin, reached from the Upper Dungeness trailhead via the Royal Basin trail. Every other field on the row (approach, waypoints, itinerary, approach_variants, road) agrees; only partner_requirements named the Dosewallips.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Approach drainage",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "(Dosewallips/Deception basin)",
+     "replace": "(Upper Dungeness trail into Royal Basin)"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Approach drainage",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "into the Dosewallips/Deception basin high camp",
+     "replace": "into the Upper Royal Basin high camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Final moves to the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Research shows the 'corkscrew' route — ledges from the Clark/Johnson col around the south and east sides, a cairned class 3 downclimb crack where it seems to cliff out, and an exposed class 3/4 finish on the north side of the summit block — is the standard route on Mount CLARK, not Johnson. So pitch_detail (north-side finish) and the itinerary/descent (SE-ridge gully) both appear to describe Clark's route; Johnson's own line (per the row's beta: ramps toward Sweat Spire, right of Gasp Pinnacle, class 4 to the top) is different. Neither finish can be adopted for Johnson without Johnson-specific sources; see the discovered finding below.",
+   "sources": [
+    "https://stevensong.com/usa/washington/mount-clark-olympics-wa/",
+    "https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Royal Basin permit season",
+   "verdict": "fixed",
+   "correct_value": "Advance reservations for Royal Basin cover June 15 – Oct 15, released on Recreation.gov April 15 (outside that window permits are issued by the Wilderness Information Center)",
+   "evidence": "The park's news release says high-elevation east-side camps such as Royal Basin only allow advance reservations for June 15 through October 15. WTA's permit page and an independent PNW permit guide both list Royal Basin's season as June 15 – Oct. 15, with summer reservations opening April 15. The approach's 'May 1–Sept 30' is an outdated window; bivy[1].permit's 'mid-May through mid-October' is the park-wide season, not Royal Basin's — bivy is owned by the camping clean-up and was not patched.",
+   "sources": [
+    "https://www.nps.gov/olym/learn/news/advanced-reservations-for-wilderness-backpacking-in-olympic-national-park.htm",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info",
+    "https://www.iheartpacificnorthwest.com/blog_post/guide-to-backcountry-permits-for-oregon-washington/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Royal Basin permit season",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "permits needed May 1–Sept 30",
+     "replace": "advance reservations cover June 15–Oct 15"
+    },
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Royal Basin permit season",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "(online booking opens roughly mid-June through mid-October)",
+     "replace": "(online reservations cover June 15 through October 15 and are released each April 15)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "How to book Upper Royal Basin and whether camping is allowed there",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Upper Royal Basin is not bookable online; permits by calling the Wilderness Information Center (360-565-3100). No designated sites there; camp on bare ground or gravel, away from Imperial Tarn.",
+   "evidence": "Two independent trip write-ups say Upper Royal Basin permits are not on Recreation.gov and are issued through the park's ranger/Wilderness Information Center, so access.permit is CORRECT and bivy[0].permit ('booked as the upper basin… advance reservation only') is the wrong copy — bivy is owned by the camping clean-up, so no patch. One source says the upper basin has no designated sites (camp on bare ground/gravel), which matches bivy[0].capacity; access.rules' blanket 'designated sites' matches the park's general Royal Basin rule. Only one source for the upper-basin exception, so access.rules was left unchanged.",
+   "sources": [
+    "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views",
+    "https://www.cynhw.com/blog/hiking-and-backpacking-royal-lake",
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Trailhead road",
+   "verdict": "fixed",
+   "correct_value": "FR 2880 then FR 2870 to the Upper Dungeness Trailhead",
+   "evidence": "WTA's driving directions go Palo Alto Rd → FR 2880 → across the Dungeness River bridge → FR 2870 to the trailhead parking at the second river crossing; an independent Olympic hiking site gives FR 2880 then left onto FR 2870 for 6.5 mi, and a third trip write-up names NF-2880 and NF-2870. FR 2860/FR 270 in the trailhead pin note is wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "http://www.willhiteweb.com/olympic_mountains/royal_basin/dungeness_river_trail_242.htm",
+    "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Trailhead road",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "on FR 2860/FR 270 just past",
+     "replace": "on FR 2870 just past"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Campfires in Royal Basin",
+   "verdict": "fixed",
+   "correct_value": "Fires allowed only at the first two Royal Creek camps (~3,500 ft, below the basin, subject to seasonal bans); prohibited above them, throughout Royal Basin proper and above 3,500 ft",
+   "evidence": "The park's Royal Basin page says no campfires in Royal Basin and none above 3,500 ft. Two independent trip write-ups say the first two Royal Creek camps (~3,500 ft) are the last places on the trail where fires are allowed, with a sign beyond. So waypoint[2] and waypoint[3] are both right; access.rules' 'anywhere in Royal Basin' read as including the Royal Creek camps, and it was narrowed.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/royal-basin.htm",
+    "https://www.hikewithkurt.com/backpacking-royal-basin-in-olympic-national-park-epic-views",
+    "https://www.adventurehiketravel.com/royal-basin-royal-lake-backpacking-in-olympic-national-park/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Campfires in Royal Basin",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "No campfires anywhere in Royal Basin, and",
+     "replace": "No campfires in Royal Basin beyond the two lower Royal Creek camps, and"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Driving distances on Palo Alto Rd and FR-2880",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Palo Alto Rd is the long leg (~6 mi); FR-2880 is short (about 1-2 mi) before the bridge onto FR-2870",
+   "evidence": "road.driveNote has Palo Alto Rd 0.9 mi and FR-2880 5.8 mi. WTA gives Palo Alto Rd 5.8 mi then FR 2880 0.9 mi; an independent Olympic hiking site gives Palo Alto Rd about 6 mi then FR 2880 1.7 mi. Both agree the two legs are swapped in the row.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/royal-basin",
+    "http://www.willhiteweb.com/olympic_mountains/royal_basin/dungeness_river_trail_242.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_johnson_standard",
+     "fact": "Driving distances on Palo Alto Rd and FR-2880",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then Palo Alto Rd 0.9 mi to FR-2880; follow FR-2880 5.8 mi,",
+     "replace": "then Palo Alto Rd about 6 mi to FR-2880; follow FR-2880 1-2 mi,"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Summit route: the row's ledge route is Mount Clark's corkscrew",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Beta and approach_variants describe Johnson via ramps toward Sweat Spire, skirting right of Gasp Pinnacle, then class 4 to the summit; but itinerary day 2, pitch_detail, waypoint 'Corkscrew ledge crux', hazards[4], obj_haz, descent and timing describe the corkscrew ledge route (south/east ledges from the col, cairned class 3 downclimb crack, north-side finish), which two sources identify as Mount Clark's standard route. The summit-day content likely belongs to Clark; needs Johnson-specific research before rewriting.",
+   "sources": [
+    "https://stevensong.com/usa/washington/mount-clark-olympics-wa/",
+    "https://trailcatjim.com/gunsight-pass-loop-mt-clark-via-corkscrew-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "fact": "Summit-day hours from high camp",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "partner_requirements.approachTime says ~11 hrs from high camp while timing.summitTimeHrs and itinerary day 2 give 9 hrs. Not researched (tool limit); no source found.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,235 @@
+{
+ "applied": [
+  {
+   "id": "wa_dirty_sanchez",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Bolted anchors on the lower pitches"
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Bolted anchors on the lower pitches"
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "column": "bail",
+   "path": [],
+   "fact": "Rappel anchors along the route"
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "column": "pitch_detail",
+   "path": [
+    6,
+    "grade"
+   ],
+   "fact": "Crux pitch grade"
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "column": "bail",
+   "path": [],
+   "fact": "Rappelling the route as a descent"
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "column": "descent",
+   "path": [],
+   "fact": "Rappelling the route as a descent"
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Rock type"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "approach",
+   "path": [],
+   "fact": "Gain from trailhead to base of technical climbing"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Approach season vs optimal window"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "beta",
+   "path": [],
+   "fact": "Which pitch is the crux / pitch structure"
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Fees beyond the entrance fee"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_dirty_sanchez",
+   "before": {
+    "pro_tips": [
+     "Identify the correct rib (the second one) before starting—the left rib has poor rock quality",
+     "The Jenga Traverse on the final pitch is the crux and features loose blocks; move carefully and minimize weight on any single hold",
+     "Lower pitches have bolted anchors; upper pitches rely on gear placement for anchors",
+     "Total climbing time is approximately 5 hours; plan for 8-9 hours car-to-car including approach and descent",
+     "Watch for lichen on rock which reduces grip; wet conditions significantly increase difficulty"
+    ],
+    "approach_variants": [
+     {
+      "name": "Tieton Road spring, climbers' trail, then left along the base",
+      "notes": "Drive past the Rimrock Lake dam, turn south onto the reservoir road, and park in a pullout a short distance past the SPRING with the SPLIT-RAIL FENCE around it. Walk back to the spring and take the steep climbers' trail leaving its right-hand side. That trail does not go to this route — it goes to the neighbouring line — so plan on a traverse along the base once it runs out. Watch for rattlesnakes on the approach and at the cliff foot.",
+      "season": "May to October.",
+      "hazards": [
+       "Loose material on the slopes above the cliff, with rockfall from parties above",
+       "Rattlesnakes documented on the approach and at the cliff base",
+       "A past rockfall event closed part of this area for over a month — treat the exposure as recurring",
+       "Traversing the cliff base is on loose ground below the routes; a helmet from the spring onward is the sensible call",
+       "The upper pitches include an exposed knife-edge traverse with loose blocks and thin protection"
+      ],
+      "baseFinding": "Do NOT stop where the climbers' trail ends: that is the neighbouring route's base, on the right-hand end of the cliff. Continue LEFT along the foot of the wall. The start is on the SECOND OBVIOUS RIB you come to — count ribs, not steps or minutes. Confirm from the rock immediately above: the first pitch here is easy, on face holds and MOSS-COVERED SLAB, and it finishes at a TREE BELAY. That combination — mossy low-angle slab to a tree — is the test. Negative markers: if the wall above you is steep and relatively clean with a PROMINENT ROOF overhead and bolted belay stations on the first few pitches, you are back at the right-hand route where the trail ended; if you have counted only one rib, keep going."
+     }
+    ],
+    "bail": "Full retreat is possible at any pitch via rappel. Multiple rappel anchors exist throughout the route. Escape left or right off upper pitches is not viable; descent must be via rappel.",
+    "pitch_detail": [
+     {
+      "grade": "5.3",
+      "notes": "Face and moss slab climbing to tree belay",
+      "pitch": "1"
+     },
+     {
+      "grade": "5.8",
+      "notes": "Bolted climbing with run-out section near top",
+      "pitch": "2"
+     },
+     {
+      "grade": "5.7",
+      "notes": "Trad climbing with poor crack quality; tricky protection",
+      "pitch": "3"
+     },
+     {
+      "grade": "5.7",
+      "notes": "Gear and bolted climbing; anchors can be hard to find",
+      "pitch": "4"
+     },
+     {
+      "grade": "5.7",
+      "notes": "Difficult protection; finger crack section; harder than grade suggests",
+      "pitch": "5"
+     },
+     {
+      "grade": "5.8",
+      "notes": "Sporty climbing; sparse bolts; exposed slab",
+      "pitch": "6"
+     },
+     {
+      "grade": "5.8",
+      "notes": "The Jenga Traverse—knife-edge crossing with loose blocks and minimal protection; the crux of the route; 5.5 climbing but PG protection makes it feel harder",
+      "pitch": "7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "before": {
+    "bail": "Rappel descent is possible from any pitch via existing anchors or fixed gear. Multiple rap stations exist; ensure adequate rope length for descent.",
+    "descent": "Walk off climber's left via an obvious gully with one rappel required midway. Alternatively, rappel the route via existing anchors.",
+    "access": {
+     "_raw": {
+      "permit_type": "Summer day/backcountry: no permit required. Winter: Sno-Park permit required December 1 - March 31",
+      "land_manager": "U.S. Forest Service (Okanogan-Wenatchee National Forest, Naches Ranger District)",
+      "cost_structure": "Day use: $5 day pass or Northwest Forest Pass. Winter Sno-Park permit required but no additional fee beyond parking",
+      "special_hazards": "Winter snow conditions during Sno-Park season; summer hiking typically clear",
+      "wilderness_zone": "Okanogan-Wenatchee National Forest (Naches Ranger District); not within designated wilderness",
+      "group_size_limits": "No specified wilderness group limits (not in designated wilderness)",
+      "seasonal_closures": "Winter Sno-Park season December 1 - March 31; access typically May-November for summer hiking",
+      "permit_pickup_hours": "Ranger District: Monday-Friday 8:00 AM - 4:30 PM (closed 12:00 PM - 12:30 PM lunch). Sno-Park permits at various vendors or online",
+      "altitude_restrictions": "Goose Egg Mountain elevation 4,531 feet",
+      "parking_pass_required": "Northwest Forest Pass ($5 day / $35 annual) or $5 day-use parking fee",
+      "permit_pickup_location": "Naches Ranger District office at 10237 Highway 12, Naches, WA 98937; trailhead"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "A popular multi-pitch basalt crag with hundreds of bolted routes — outside any wilderness boundary.",
+     "permit": "Summer day/backcountry: no permit required. Winter: Sno-Park permit required December 1 - March 31",
+     "closures": "N/A",
+     "permitZone": "Okanogan-Wenatchee National Forest (Naches Ranger District); not within designated wilderness",
+     "landManager": "U.S. Forest Service (Okanogan-Wenatchee National Forest, Naches Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Naches Ranger District)",
+     "passRequired": "Northwest Forest Pass ($5 day / $35 annual) or $5 day-use parking fee"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_cruiser_south_corner",
+   "before": {
+    "approach": "From the Staircase Ranger Station (~770-850 ft, at the end of Lake Cushman Rd/North Fork Skokomish Rd), the approach starts on the North Fork Skokomish River Trail, a gently graded old decommissioned roadbed that runs up-valley through old-growth forest for about 3.7-3.8 miles to the former road-end/Spike Camp junction with the Flapjack Lakes Trail. Bear onto the Flapjack Lakes Trail, which climbs steadily and then steeply (with one rough slide/washout bypass to pick through) for roughly 3.4-4.1 more miles, gaining about 2,000 ft, to reach Flapjack Lakes (~3,850 ft, about 7.5-8 miles from the trailhead) - the standard base camp. Flapjack Lakes is a designated, permit-limited backcountry camp, so reserve ahead for summer weekends. Reliable water is available at the lakes and at several creek crossings on the lower trail; treat before drinking. From camp, continue about 1.5 miles on maintained trail up-basin toward Gladys Divide; just before the divide, leave the trail and climb southeast up a steep snow/scree couloir (several hundred feet of gain, often 35-40+ degrees) to Needle Pass. This couloir holds firm, icy snow well into summer, and crampons plus an ice axe are advisable for most of the season - it's the single biggest hazard of the approach, since a slip on hard snow here has real consequences. From Needle Pass, turn left (east) and scramble exposed Class 3 terrain to the summit of Beta Peak, descend through its right-most summit notch (one Class 4 move and a short gully), traverse high toward Cruiser, then drop down a longer connecting gully to reach Cruiser's base, where the roped climbing begins (a Class 4 gully leads to a large chockstone; go left around it and squeeze through a short tunnel to reach the platform below the 5.0 pitch). All told this is roughly 8-9 miles and 3,600-3,900 ft of gain from the trailhead to the base of the technical climbing, typically 5-7 hours to camp and another push to the base the next day. Fog and low cloud are common on the ridge and ridge-basin route-finding above Flapjack Lakes is easy to lose in flat light, so know the boot-tread line before committing.",
+    "approach_variants": [
+     {
+      "name": "Flapjack Lakes and the Needle Pass couloir",
+      "notes": "Old roadbed grade up the valley to the Flapjack Lakes Trail, a steep climb with one slide bypass to pick through, and camp at the lakes. From camp, up-basin toward Gladys Divide, then a steep snow and scree couloir of several hundred feet — often 35 to 40 degrees and firm — to Needle Pass. Access on this side has been closed by fire damage; confirm the trail itself is open, not only the road.",
+      "season": "Mid-July to September",
+      "hazards": [
+       "Firm, icy snow in the Needle Pass couloir — often the real crux of the day",
+       "Late-season moat opening between snow and rock in that couloir",
+       "Loose rock in the Class 4 approach gully and around the chockstone",
+       "Old rusted quarter-inch bolts and pitons beside the newer station",
+       "Sparse, run-out protection on the face pitch and marine fog on the crest"
+      ],
+      "baseFinding": "From Needle Pass turn east and scramble the exposed crest to Beta Peak, drop through its right-most summit notch on one Class 4 move and a short gully, traverse high toward Cruiser, then take the longer connecting gully down to Cruiser's south side. The base of the roped climbing is the mouth of a Class 4 gully and you identify it by the large chockstone wedged in it above you — pass that block on its left and squeeze through the short tunnel behind it. That tunnel is the Cannon Hole, and coming out of it puts you on the broad, airy platform where the rope comes out; from the far end of the platform the low-fifth face pitch runs to a belay on the summit crest. Two decoys: the couloir up from Gladys Divide has more than one apparent exit and the correct one is Needle Pass itself, not the first gap in the rock, and Beta Peak's other notches cliff out below. Above the platform, look hard at the anchor before you weight it — the good two-bolt station sits near older rusted hardware that should not be trusted."
+     }
+    ],
+    "beta": "From a high camp at Flapjack Lakes (or Mildred Lakes), climbers traverse toward Gladys Divide, ascend a snow/scree gully to Needle Pass, and follow a boot-marked but exposed Class 3 ridge crest north to the base of Mt. Cruiser's south side. A short low-5th-class face pitch, protected by small cams/nuts plus a bolt and reportedly an old piton partway up, leads through or past the cannon-hole chockstone to a ledge; an easy but very exposed ridge-crest pitch then reaches the true summit. Rock quality is good for the Olympics but protection is sparse and runout in places.",
+    "access": {
+     "_raw": {
+      "permit_cost": "$10 park entry fee (7 days) + $5 group fee + $2 per night camping",
+      "permit_type": "Day-use: Park entry fee; Overnight: Backcountry permit",
+      "land_manager": "National Park Service (Olympic National Park)",
+      "group_size_limit": "12 people maximum",
+      "permit_pickup_hours": "Contact Staircase Ranger Station 360-877-5569 for hours",
+      "special_requirements": "Technical climbing destination; Class 3-4 rock; located in Staircase ranger district of Olympic NP",
+      "wilderness_zone_name": "Staircase / Mount Cruiser area",
+      "parking_pass_required": "Park entry fee covers parking",
+      "permit_pickup_location": "Olympic National Park / Staircase Ranger Station",
+      "seasonal_closure_dates": "Staircase area typically open year-round but snow/weather dependent; check conditions"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers.",
+     "permit": "Day-use: Park entry fee; Overnight: Backcountry permit",
+     "closures": "The road is open (FS-24 reopened July 8, 2026), but the North Fork Skokomish trail out of Staircase remains CLOSED beyond the Staircase Rapids Loop after the 2025 Bear Gulch Fire, with no end date given as of the Olympic National Park fire-conditions page updated September 18, 2026 — check current trail status before committing to this approach.",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "Approach trail (Staircase, North Fork Skokomish River Trail, Flapjack Lakes Trail, Gladys Divide) is within Olympic National Park (NPS); the summit and Sawtooth Ridge itself sit just south of the park boundary in the Mount Skokomish Wilderness, Olympic National Forest.",
+     "land_manager": "U.S. Forest Service -- Mount Skokomish Wilderness, Olympic National Forest (summit/Sawtooth Ridge); the approach trail via Staircase lies within Olympic National Park.",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Park entry fee covers parking",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    }
+   }
+  }
+ ]
+}

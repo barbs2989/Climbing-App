@@ -1,0 +1,569 @@
+{
+ "applied": [
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "pitch_detail",
+   "path": [],
+   "fact": "Pitch numbering: which pitches are bolted slab and which is the crux"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch numbering: which pitches are bolted slab and which is the crux"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "beta",
+   "path": [],
+   "fact": "Pitch numbering: which pitches are bolted slab and which is the crux"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Pitch numbering: which pitches are bolted slab and which is the crux"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Pitch numbering: which pitches are bolted slab and which is the crux"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Character of the 8 pitches"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Character of the 8 pitches"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Character of the 8 pitches"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Character of the 8 pitches"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "time"
+   ],
+   "fact": "Approach time and distance"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Approach time and distance"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach time and distance"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Parking spot"
+  },
+  {
+   "id": "wa_tooth_and_claw",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Topout waypoint note names the wrong route"
+  },
+  {
+   "id": "wa_lexington_tower_south_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "First ascent"
+  },
+  {
+   "id": "wa_lexington_tower_south_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards"
+   ],
+   "fact": "First ascent"
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "column": "beta",
+   "path": [],
+   "fact": "Whether a 6-inch cam is needed"
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Bolts at the crux"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Blue Lake Trailhead distance from Washington Pass"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "approach",
+   "path": [],
+   "fact": "Side the climbers' path branches"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Cam range"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure start"
+  },
+  {
+   "id": "wa_north_face_3",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure start"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_tooth_and_claw",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Optional roped approach pitch around a protruding block onto the treed ledge where the technical climbing begins; some parties instead scramble a flanking gully.",
+      "pitch": 1,
+      "anchor": "Tree",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 6,
+      "grade": "5.11",
+      "notes": "From the treed ledge, climb cracks then move up and right across the slab past a fixed copperhead and six bolts to a bolted belay; sustained, heady, and delicate with some alpine crumbliness.",
+      "pitch": 2,
+      "anchor": "Bolted anchor (above tree)",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 3,
+      "grade": "5.10",
+      "notes": "A shorter, slightly runout slab pitch leading to another bolted station.",
+      "pitch": 3,
+      "anchor": "Bolted anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.11",
+      "notes": "Varied crack climbing to a cruxy traverse left and up over a small roof onto a slab; slightly runout but easier slab leads to a heavily slung tree belay.",
+      "pitch": 4,
+      "anchor": "Tree (many slings)",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 1,
+      "grade": "5.10",
+      "notes": "A stepped left-facing corner past three fixed pins to a bolt near a larger roof.",
+      "pitch": 5,
+      "anchor": "Bolted anchor",
+      "lengthM": 30
+     },
+     {
+      "crux": true,
+      "bolts": 3,
+      "grade": "5.12a",
+      "notes": "The route's technical crux: steep flaring cracks give way to a difficult slab move, then very thin slab climbing past bolts to a horizontal, finishing at a bolted belay in an alcove/cave.",
+      "pitch": 6,
+      "anchor": "Bolted anchor (alcove/cave)",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.9",
+      "notes": "Climb steeply out of the shattered-looking cave via a wild hand-and-finger crack with varied jamming to a ledge with a fixed nut anchor.",
+      "pitch": 7,
+      "anchor": "Fixed nut + sling / ledge",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.9",
+      "notes": "Continue the hand/finger crack system to the final bolted anchor near the top of the route.",
+      "pitch": 8,
+      "anchor": "Bolted anchor (top)",
+      "lengthM": 30
+     }
+    ],
+    "pitches": 8,
+    "beta": "Eight-pitch, 800-ft Grade IV 5.12a on the east side of the tower. The route alternates bolt-protected technical slab pitches (P1, P2, P5) with crack pitches (P3, P4, P6-P7) that need a full trad rack. Rock quality is noted as inconsistent, with looser sections on P1 and the P4 roof traverse. Descent is either a rappel of the route with two 70m ropes, or an exposed 4th-class traverse west from the East Shoulder to the same gully used by East Face parties.",
+    "descent_text": "Two real options, and most parties take the walk-off. Option 1 (walk-off): from the East Shoulder, make an exposed, somewhat sketchy 4th-class traverse west (it borders on unprotected 5th-class slab in spots, so many parties stay roped) to gain the same descent gully used off the East Face. Downclimb the gully, then traverse north (right) to pick up the climbers'/cattle trail that runs up to Liberty Bell, which drops you onto the Blue Lake Trail; a faint climbers' path cuts off a final stretch of trail before the highway. Option 2 (rappel the route): from the top, the first anchor is a bolted station roughly 20-30 feet above the old P6 slung-block anchor. With double 70m ropes (a 70m lead line plus a 70m tag line) you can rappel from the very top of the route; doubled 60m ropes will not reach that first station. If you're bailing from above the P5 crux rather than finishing the route, two 60m ropes are workable using a fixed nut-and-sling anchor partway down P6 as an intermediate station — anything shorter risks coming up short between anchors. Lower down, rappel stations are described as \"obvious, good-quality anchors\" on trees or bolts. Expect on the order of 6-7 double-rope rappels to cover the full 8 pitches this way. Hardware is mixed vintage: some original 1989 5/16\" bolts remain despite a post-2016 rebolting push, and at least one older fixed-nut/sling anchor is noted as aging — back up or inspect any anchor you didn't place yourself before weighting it.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long, sustained day from the car: 8 pitches of stout, sometimes runout 5.12 slab climbing sharing the East Face's start. Bring a doubles rack to .75 plus singles of #1-3 — falls are undesirable in several spots, so most parties move deliberately and expect a full day.",
+       "hours": 11,
+       "miles": 6.3,
+       "title": "Tooth and Claw, car-to-car",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:30-5:00 AM",
+         "label": "Leave the trailhead",
+         "detail": "An earlier alpine start than the North Face or East Face given the route's length and difficulty."
+        },
+        {
+         "time": "+1-1.25 hr",
+         "label": "Approach to the base",
+         "detail": "Shares the same or a similar start with the East Face route."
+        },
+        {
+         "time": "+8-9 hr",
+         "label": "Climb 8 pitches of sustained 5.12 slab",
+         "detail": "Stout grades on several pitches; scruffier and more runout in places than the neighboring East Face."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Top out near the notch below the summit",
+         "detail": ""
+        },
+        {
+         "time": "+1-1.5 hr",
+         "label": "Descend via the East Face's gully system or by rappel",
+         "detail": "Traverse west across exposed 4th-class terrain to pick up the same descent used by the East Face."
+        }
+       ],
+       "objective": "Climb the 8-pitch Grade IV 5.12 line right of the East Face and return same day"
+      }
+     ],
+     "totalNote": "A long single day: 8 sustained, stout 5.12 pitches make this one of the harder outings on the tower — plan on 10-12+ hours car-to-car for a party climbing efficiently at the grade."
+    },
+    "timing": {
+     "totalHrs": 11,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "4:30-5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 11,
+       "note": "A long, sustained day from the car: 8 pitches of stout, sometimes runout 5.12 slab climbing sharing the East Face's start. Bring a doubles rack to .75 plus singles of #1-3 — falls …",
+       "fromTo": "Tooth and Claw, car-to-car",
+       "section": "Climb"
+      }
+     ]
+    },
+    "approach": "Same start as the East Face: from SR-20, park at the informal pullout on the north shoulder of the highway a short walk east of the small pond, about 1.2 miles east of Washington Pass (no permit needed). A well-beaten climbers' trail leaves the east end of the pond and climbs steeply through timber; in roughly 30 minutes it breaks out at the edge of the large boulder/talus field that lines the eastern base of the Liberty Bell group (Liberty Bell, Minuteman, Concord and Lexington Towers). From there, work up and left across the talus toward Lexington Tower's east side — 30-45 minutes total from the car to the base per most trip reports. There is no reliable water source along this approach (the roadside pond is not a water source worth using); carry what you need from the car. Snow can linger in the talus and at the base of the wall into early-mid summer and affects whether you gain the treed ledge from the left or right side. To reach the ledge itself, either climb a roped 5.8 pitch around a protruding block, or scramble one of the gullies flanking the ledge — both gullies see fairly frequent rockfall, so helmet up well before committing to them. Tooth and Claw begins near the left side of the treed ledge and angles rightward across slabs to the first bolt.",
+    "road": {
+     "name": "Washington Pass Overlook pullout, SR-20 (North Cascades Highway)",
+     "status": "Informal pullout on the north shoulder of SR-20 about 1.2 miles east of Washington Pass, no permit needed; a well-beaten climbers' trail climbs through timber to the boulder/talus field beneath the Liberty Bell group (Liberty Bell, Minuteman, Concord, and Lexington Towers), roughly 30-45 minutes car-to-base.",
+     "driveNote": "About 3.5-4 hours from Seattle via I-5 and SR-20 to Washington Pass.",
+     "seasonalGate": "SR-20 over Washington Pass closes every winter (typically early-mid December to mid-April/May depending on snowpack and highway repairs); snow can also linger in the approach talus into early-mid summer."
+    },
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "type": "Trailhead",
+      "directions": "Park at the informal pullout on the north shoulder of SR-20, about 1.2 miles east of Washington Pass and a short walk east of the small roadside pond — the same start used for the East Face. No permit is needed here."
+     },
+     {
+      "lat": 48.5144,
+      "lng": -120.6575,
+      "elev": 7560,
+      "name": "Lexington Tower East Shoulder (topout)",
+      "note": "This route climbs Lexington Tower's East Face, Washington Pass.",
+      "type": "Topout",
+      "distMi": 0
+     },
+     {
+      "lat": 48.5144,
+      "lng": -120.6575,
+      "name": "Lexington Tower / Tooth and Claw (marker)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null
+     },
+     {
+      "lat": 48.514154,
+      "lng": -120.65743,
+      "name": "Lexington Tower summit",
+      "type": "Summit"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_lexington_tower_south_face",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail to the Concord-Lexington notch, then its FAR EASTERN edge",
+      "notes": "Reach the Concord-Lexington notch via the standard Blue Lake Trailhead approach, trending toward the col between Concord and Lexington Towers rather than toward the Liberty Bell-Concord gully. Higher in that gully a climbers' path appears along its left side and is better than the gully bed. Three pitches. accounts disagree about the first ascent: one gives Cramer, Anderson, Schuler and Stanley in 1965, another Anderson and Scott in 1964 at 5.7.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "Two notches a few hundred feet apart on one ridge",
+       "A gully bed better avoided in favour of the path along its left side",
+       "Far less traffic than the Liberty Bell-Concord col, so fainter tread",
+       "Conflicting first-ascent records, which is a sign the route documentation is thin"
+      ],
+      "baseFinding": "THE ROUTE'S FIRST BELAY STARTS FROM THE FAR EASTERN EDGE OF THE NOTCH. So there are two finds and they nest: the right notch, then the right end of it.\n\nWHICH NOTCH: THE CONCORD-LEXINGTON NOTCH IS THE ONE WHERE CONCORD IS ON ONE SIDE OF YOU AND LEXINGTON ON THE OTHER, AND THE CONCORD WALL IN FRONT OF YOU GIVES ONTO LOW-ANGLE, GRAVELLY LEDGES RATHER THAN A STEEP CRACK SYSTEM. IF YOU ARE FACING A STEEP CRACK SYSTEM, YOU ARE AT THE LIBERTY BELL-CONCORD NOTCH, ONE SADDLE BACK, AND LOOKING AT CONCORD'S NORTH FACE.\n\nWHICH END OF IT: the FAR EASTERN edge. The notch is a gap with two ends; walk to the eastern one before racking up. Concord's south-face routes go the other way, up the wall on the notch's Concord side.\n\nCONFIRM BY HARDWARE, BECAUSE THIS ROUTE HAS A DISTINCTIVE ONE: THERE IS A BOLTED SUMMIT ANCHOR. Parties either make one single-rope rappel to an intermediate bolted anchor partway down the face and continue down, or run a full double-rope rappel directly back to the Concord-Lexington notch. A bolted top and a bolted mid-face station on a three-pitch route is what this line offers.\n\nFROM THE NOTCH THE APPROACH GULLY AND CLIMBERS' TRAIL LEAD BACK TO THE BLUE LAKE TRAILHEAD, which is the same car you started from. That is not true of Lexington's east-side routes, which start at the hairpin pond pullout on the other side of the ridge."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_lexington_tower_east_face",
+   "before": {
+    "beta": "Start on low-angle dihedral left of Lexington-Minuteman gully. Ascend via cracks and chimneys; crux is pitch 5 with exposed traverse. Upper pitches are off-width and chimney climbing. Exit via notch, descend west gully. Standard trad rack essential; doubles to #3, single #5-6 cams critical.",
+    "detailed_rack": "A standard rack with gear to 6 inches; a #4 Camalot gets used a lot and a 6-inch piece helps the wide sections, though confident wide-crack climbers can skip it. Two newer bolts ease the crux. Bring long runners."
+   }
+  },
+  {
+   "id": "wa_north_face_3",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.518965,
+      "lng": -120.67436,
+      "elev": 5400,
+      "name": "Blue Lake Trailhead",
+      "note": "Signed USFS trailhead on SR-20 about 1.5 mi west of Washington Pass; self-issue wilderness permit and NW Forest Pass required at the kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park at the signed Blue Lake Trailhead on SR-20, a small pullout about 1.5 miles west of Washington Pass at roughly 5,400 feet. A self-issue wilderness permit and a Northwest Forest Pass are required at the trailhead kiosk. SR-20 is gated over Washington Pass each winter, typically closing in late November or early December and reopening between mid-April and early May, so there is no vehicle access until the highway reopens."
+     },
+     {
+      "lat": 48.515661,
+      "lng": -120.662634,
+      "elev": 6000,
+      "name": "Climber's path split (large cairn)",
+      "note": "About 2 mi up the maintained Blue Lake Trail the terrain opens up; leave the trail here on the well-cairned climber's path branching toward Liberty Bowl.",
+      "type": "Junction",
+      "distMi": 2
+     },
+     {
+      "lat": 48.514991,
+      "lng": -120.660321,
+      "elev": 6800,
+      "name": "Liberty Bowl scree/talus gully",
+      "note": "Climber's path climbs through heather and larch into loose scree and talus below Concord and Lexington Towers; watch for rockfall from parties higher in the gully.",
+      "type": "Hazard",
+      "distMi": 2.4
+     },
+     {
+      "lat": 48.514489,
+      "lng": -120.658587,
+      "elev": 7350,
+      "name": "Concord-Lexington Col",
+      "note": "Broad notch between the two towers gained by zig-zagging the couloir; roughly 2.2 hrs and 1,950 ft above the trailhead, and the usual roping-up/rack-up spot.",
+      "type": "Junction",
+      "distMi": 2.7
+     },
+     {
+      "lat": 48.514321,
+      "lng": -120.658008,
+      "elev": 7500,
+      "name": "Notch below summit ridge",
+      "note": "Top of pitch 2, a small nook right below the summit ridge where the route meets the base of the exposed 'Stegosaur' crest for pitch 3.",
+      "type": "Junction",
+      "distMi": 2.8
+     },
+     {
+      "lat": 48.514154,
+      "lng": -120.65743,
+      "elev": 7560,
+      "name": "Lexington Tower summit",
+      "note": "True summit atop the knife-edge 'Stegosaur' ridge pitch; descend by downclimbing back to the notch then two single-rope rappels off slung horns to the col.",
+      "type": "Summit",
+      "distMi": 2.9
+     }
+    ],
+    "road": {
+     "name": "SR-20 / North Cascades Highway",
+     "status": "Seasonally closed to vehicles",
+     "driveNote": "Blue Lake Trailhead is a small pullout (~20 spaces) on SR-20 about 0.25 mi west of the Washington Pass Overlook; it fills early on summer weekends.",
+     "seasonalGate": "Typically closed roughly mid-November through late April/May; exact dates vary by winter (recent seasons have closed as early as December and, after storm damage, not fully reopened until mid-June)."
+    },
+    "approach_logistics": {
+     "peakLat": 48.514255,
+     "peakLng": -120.657465,
+     "trailhead": "Blue Lake Trailhead (SR-20)",
+     "trailheadLat": 48.518965,
+     "trailheadLng": -120.67436,
+     "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+    },
+    "approach_variants": [
+     {
+      "name": "Blue Lake Trail and the Concord-Lexington gully",
+      "hours": "1.5-2",
+      "notes": "Start at the Blue Lake Trailhead (~5,200 ft) on SR-20 roughly 1.5 miles west of Washington Pass. Follow the maintained Blue Lake Trail until the terrain opens up — around a mile and a half to two miles — and pick up the well-established climbers' path branching left at a large cairn.\n\nFrom there, trend LEFT of the line most parties take toward the Liberty Bell-Concord notch, and work up into the gully that separates Lexington Tower from Concord Tower. As you gain height in that gully a decent boot path shows up along its left side; use it. It brings you to the Concord-Lexington col.\n\nCarry water from the trailhead. Snowmelt trickles low in the basin dry up by mid-summer.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "loose rock in the Concord-Lexington gully",
+       "lingering firm snow or névé in the upper gully into early summer — axe or traction useful",
+       "the descent uses slung horns rather than fixed anchors, so carry spare webbing"
+      ],
+      "primary": true,
+      "baseFinding": "The route does not start from the high point of the col. From the crest, move slightly WEST and drop a couple of feet: the first pitch begins at an obvious slanting, right-leaning crack in the Lexington side of the notch, and the 5.7 crux is the very first thing you climb — awkward moves straight off the ground. Follow the leaning crack for about 15 to 20 feet and it eases into stemming up a chimney at around 5.6. If your first moves are easy you are probably on the Concord wall opposite, which is the South Face of Concord and starts by walking gravelly ledges rather than pulling on a crack. A hard start on a right-leaning crack, just below and west of the col, is the confirmation."
+     },
+     {
+      "name": "Early-season snow to the Concord-Lexington col",
+      "hours": "1.5-2",
+      "notes": "Same approach, but the upper gully to the col commonly holds firm snow into early summer, which buries the boot path along its left side and turns the last stretch into a snow climb. Carry an axe, and crampons if it is refrozen.\n\nSR-20 is gated across Washington Pass through the winter — typically closing in late November or early December and reopening between mid-April and early May — so there is no drive-up access until the highway reopens.",
+      "season": "Highway opening through late Jun",
+      "hazards": [
+       "firm snow in the gully below the col",
+       "moat where snow meets the Lexington wall",
+       "SR-20 closed in winter — no vehicle access until reopening"
+      ],
+      "baseFinding": "With snow in the col the slanting crack that starts the route can be partly buried, and the couple of feet of drop west from the high point may instead be a step down into a moat. The feature to hold onto is that the start is on the LEXINGTON side, slightly west of and just below the crest, at a right-leaning crack, and the hardest climbing of the first pitch is immediately off the deck. If snow has filled the crack's base, expect to start higher up it than the summer start and to be dealing with wet rock for the first body length."
+     }
+    ],
+    "approach": "Start at the Blue Lake Trailhead, a small pullout on SR-20 just west of Washington Pass. Follow the main, well-graded Blue Lake Trail through forest for about 1.5 miles. Watch for a cairned, well-worn climbers' boot path splitting off uphill to the right toward the Liberty Bell group cirque — this junction is easy to miss if you're not watching for it. From the split, the climbers' path steepens considerably, switchbacking up talus and heather benches beneath Concord and Lexington Towers. Budget roughly 1.5-2 hours and about 1,900-2,000 ft of gain from the trailhead to reach the Concord-Lexington col (the notch between the two towers), which is the start of the North Face route. Snowmelt trickles low in the basin can provide water in early season but are unreliable by mid-to-late summer — carry water from the trailhead. Lingering snow/firm névé in the upper gully approaching the col is common into early summer and may warrant an axe or traction.",
+    "detailed_rack": "A single rack of cams to 2 inches plus a handful of slings covers the crux hand crack and the wandering, blocky second pitch; minimal gear is needed for the 4th-class ridge finish, though a rack should still be carried if leading it roped.",
+    "access": {
+     "_raw": {
+      "notes": "Part of Liberty Bell Group; multiple aspect routes (north face and east face most common); popular climbing destination",
+      "elevation": "7,560 feet",
+      "permit_cost": "Free",
+      "permit_type": "No overnight permit required",
+      "land_manager": "USFS Okanogan-Wenatchee National Forest",
+      "forest_contact": "(509) 664-9200 - Okanogan-Wenatchee National Forest",
+      "wilderness_zone": "Not in designated wilderness; Liberty Bell Group area, Washington Pass",
+      "parking_pass_cost": "$5 per day or $30 annual",
+      "seasonal_closures": "Washington Pass (SR 20) typically closed mid-November to mid-April; 2026 typical dates: April 15-25 opening, November 10-30 closing",
+      "special_requirements": "Standard Forest Service regulations apply; best climbing season late June-September",
+      "parking_pass_required": "Northwest Forest Pass"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No overnight permit required",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Not in designated wilderness; Liberty Bell Group area, Washington Pass",
+     "landManager": "USFS Okanogan-Wenatchee National Forest",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Same Okanogan-Wenatchee National Forest corridor as the rest of the Liberty Bell group; parties bivy informally at the trailhead or a highway pullout. A Northwest Forest Pass or day-use fee is needed to park."
+     }
+    }
+   }
+  }
+ ]
+}

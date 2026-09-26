@@ -1,0 +1,70 @@
+{"file": "r382.json", "results": [
+ {"id": "wa_sherman_peak_baker_route", "fact": "Route distance", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "dist_km 3.9 km (2.4 mi) matches no quantity on the row (camp is 4 mi, summit pin 7.2 mi). Outside figures for the one-way distance to Sherman Peak disagree: a Sherman Peak route page gives about 5.5 mi one way / 6,600 ft for the Easton line, while guide figures give ~4 mi to Sandy Camp plus ~3.5 mi camp-to-Baker-summit (Sherman is short of that). No two sources agree on a one-way figure for THIS route, so dist_km and the 7.2 mi summit pin are left alone.",
+  "sources": ["https://www.summitpost.org/sherman-peak/780602", "https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/", "https://backcountrysights.com/mount-baker-easton-glacier-route/"],
+  "patches": []},
+ {"id": "wa_sherman_peak_baker_route", "fact": "Where the glacier starts / rope-up elevation", "verdict": "fixed",
+  "correct_value": "The Easton Glacier is gained and parties rope up at roughly 6,500-7,200 ft, just above Sandy Camp",
+  "evidence": "One Easton route description has climbers stepping onto the Easton Glacier and roping up around 6,700 ft; a club trip report puts glacier entry at about 6,500 ft just above Sandy Camp, with a nunatak near 7,000 ft already on the glacier. The row's approach, climbing_route and rope-up waypoint (6,700) agree; only pitch_detail[1] says 8,000-9,000 ft.",
+  "sources": ["https://www.theoutbound.com/washington/backpacking/backpack-the-easton-glacier-railroad-grade", "https://www.mountaineers.org/activities/trip-reports/glacier-climb-mount-baker-easton-glacier-6", "https://backcountrysights.com/mount-baker-easton-glacier-route/"],
+  "patches": [
+   {"id": "wa_sherman_peak_baker_route", "fact": "Where the glacier starts / rope-up elevation", "op": "replace_text", "column": "pitch_detail", "path": [1, "notes"], "find": "Ridge walk above treeline to roughly 8,000-9,000 ft,", "replace": "Ridge walk above treeline to roughly 6,700-7,200 ft,"}
+  ]},
+ {"id": "wa_sherman_peak_baker_route", "fact": "Descent via the Roman Wall", "verdict": "fixed",
+  "correct_value": "Descent reverses the Sherman summit snow / West Ridge to the crater rim, then the Easton Glacier; the Roman Wall is not on this route",
+  "evidence": "Easton route descriptions place the Roman Wall above Sherman Crater, between the crater and Baker's summit plateau. The Sherman Peak route goes right at the crater rim, around a jagged high point and up the West Ridge to Sherman's summit, never touching the Roman Wall. The row's descent, beta and approach_variants agree; descent_text was written for Baker's summit.",
+  "sources": ["https://backcountrysights.com/mount-baker-easton-glacier-route/", "https://www.summitpost.org/sherman-peak/780602", "https://www.theoutbound.com/washington/backpacking/climb-mt-baker-via-squak-glacier"],
+  "patches": [
+   {"id": "wa_sherman_peak_baker_route", "fact": "Descent via the Roman Wall", "op": "replace_text", "column": "descent_text", "path": [], "find": "downclimb the steep snow of the upper Easton Glacier past the Roman Wall section first — most parties find this the psychologically hardest part of the day simply because of sustained steepness (roughly 30 degrees) right off the summit plateau;", "replace": "downclimb the summit snow slope and the West Ridge back to the crater rim first — most parties find this the psychologically hardest part of the day simply because of the steep snow right below the summit;"}
+  ]},
+ {"id": "wa_sherman_peak_baker_route", "fact": "Distance and gain to camp", "verdict": "fixed",
+  "correct_value": "~4 miles and ~2,500 ft to Sandy Camp",
+  "evidence": "A guide service gives ~4 mi and ~2,600 ft from Schriebers Meadow to Sandy Camp (5,900 ft); a detailed trip report logged 3.7 mi/+2,300 ft to a first camp plus 0.5 mi/+500 ft to Sandy Camp. The row's itinerary (4 mi) and waypoints (3,400 to 5,900 ft) agree; only partner_requirements says 7 mi and 4,300 ft.",
+  "sources": ["https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/", "https://backcountrysights.com/mount-baker-easton-glacier-route/"],
+  "patches": [
+   {"id": "wa_sherman_peak_baker_route", "fact": "Distance and gain to camp", "op": "replace_text", "column": "partner_requirements", "path": ["fitnessSpec", "hiking"], "find": "~7 miles and ~4,300 ft to camp", "replace": "~4 miles and ~2,500 ft to camp"}
+  ]},
+ {"id": "wa_sherman_peak_baker_route", "fact": "Pass purchase at the trailhead", "verdict": "fixed",
+  "correct_value": "No climbing or wilderness permit is required; a recreation pass is required at Park Butte and is not sold at the lot (buy ahead or pay by phone app)",
+  "evidence": "The Forest Service Mt. Baker climbing page says no permits are required to climb Baker (some trailheads have registers) and that recreation passes are not available onsite at Park Butte. The Forest Service Park Butte trailhead page lists only the recreation pass (digital scan-and-pay) and no wilderness permit, and a hiking-trail database lists only the NW Forest / America the Beautiful pass for Park Butte. The trailhead waypoint's 'self-issue pass and wilderness permit kiosk' and the permit column's 'self-issue wilderness permit' are wrong.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing", "https://www.fs.usda.gov/r06/mbs/recreation/park-butte-trailhead", "https://www.wta.org/go-hiking/hikes/park-butte"],
+  "patches": [
+   {"id": "wa_sherman_peak_baker_route", "fact": "Pass purchase at the trailhead", "op": "replace_text", "column": "permit", "path": [], "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.", "replace": "No climbing or wilderness permit is required; some trailheads have a sign-in register."},
+   {"id": "wa_sherman_peak_baker_route", "fact": "Pass purchase at the trailhead", "op": "replace_text", "column": "waypoints", "path": [0, "note"], "find": "self-issue Northwest Forest Pass and wilderness permit kiosk at the lot,", "replace": "a recreation pass is required to park and is not sold at the lot, so buy it ahead or pay by phone;"},
+   {"id": "wa_sherman_peak_baker_route", "fact": "Pass purchase at the trailhead", "op": "replace_text", "column": "waypoints", "path": [0, "directions"], "find": "Park at the trailhead lot, where a self-issue kiosk covers the Northwest Forest Pass and the wilderness permit.", "replace": "Park at the trailhead lot; a recreation pass is required and is not sold on site, so buy it ahead or pay by phone. No wilderness permit is needed."}
+  ]},
+ {"id": "wa_sherman_peak_baker_route", "fact": "Sherman Peak bearing from Grant Peak", "verdict": "fixed",
+  "correct_value": "Sherman Peak is about two-thirds of a mile (1 km) due south of Grant Peak",
+  "evidence": "A topo peak database places Sherman Peak at 48.7672 N, 121.8139 W, 1.0 km from its parent Mount Baker; Mount Baker's summit is at 48.7766 N, 121.8145 W, which puts Sherman ~1.05 km almost due south (about 40 m east). An encyclopedia photo caption describes looking south into Sherman Crater from Grant Peak. Both 'southeast' and 'southwest' are off; 'half a mile' understates ~0.65 mi.",
+  "sources": ["https://peakvisor.com/peak/sherman-peak-united-states.html", "https://en.wikipedia.org/wiki/Mount_Baker", "https://en.wikipedia.org/wiki/Sherman_Crater"],
+  "patches": [
+   {"id": "wa_sherman_peak_baker_route", "fact": "Sherman Peak bearing from Grant Peak", "op": "replace_text", "column": "overview", "path": [], "find": "about half a mile southeast of Baker's true summit", "replace": "about two-thirds of a mile south of Baker's true summit"},
+   {"id": "wa_sherman_peak_baker_route", "fact": "Sherman Peak bearing from Grant Peak", "op": "replace_text", "column": "waypoints", "path": [6, "note"], "find": "just southwest of and lower than the true summit", "replace": "just south of and lower than the true summit"}
+  ]},
+ {"id": "wa_sherman_peak_baker_squak_glacier", "fact": "Pass/permit: self-issue wilderness permit vs no permit", "discovered": true, "verdict": "fixed",
+  "correct_value": "No climbing or wilderness permit is required",
+  "evidence": "Same as the sibling route: the Forest Service Mt. Baker climbing page says no permits are required to climb Baker (some trailheads have registers), and the Park Butte trailhead page lists only a recreation pass. This row's permit column claims a free self-issue wilderness permit while its own access.permit and overnight_permit say no permit.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing", "https://www.fs.usda.gov/r06/mbs/recreation/park-butte-trailhead", "https://www.wta.org/go-hiking/hikes/park-butte"],
+  "patches": [
+   {"id": "wa_sherman_peak_baker_squak_glacier", "fact": "Pass/permit: self-issue wilderness permit vs no permit", "op": "replace_text", "column": "permit", "path": [], "find": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee.", "replace": "No climbing or wilderness permit is required; some trailheads have a sign-in register."}
+  ]},
+ {"id": "wa_sherman_peak_baker_squak_glacier", "fact": "Line to the summit (Roman Wall saddle vs south ridge)", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "A club route page says to make a rising traverse of the Squak toward Sherman's south ridge and climb steep snow on the ridge (matching the camp card); a club trip report noted that south-ridge line was snow-free and not feasible in August. Other Squak descriptions lead toward the Roman Wall / Easton line under Sherman Crater, which is Baker's summit route; the row's beta (saddle below the Roman Wall, rime-knob ridge) likely comes from one party's variant. Only one source states the Sherman line explicitly, and the bivy card is out of scope for patches.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker", "https://www.theoutbound.com/washington/backpacking/climb-mt-baker-via-squak-glacier", "https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/"],
+  "patches": []},
+ {"id": "wa_sherman_peak_baker_squak_glacier", "fact": "Season: early-season route vs Jun-Sep", "verdict": "fixed",
+  "correct_value": "The Squak is chiefly an early-season climb; a bergschrund develops across the route as the season goes on",
+  "evidence": "The Forest Service Squak route page says the Squak is limited to early-season climbing because a bergschrund develops along the route as the season progresses. A guide service calls it the best route for early season because a hard-to-navigate bergschrund can develop later. The season chip Jun-Sep is left as the outer window; the prose that calls June-September the most stable period is corrected.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route", "https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/"],
+  "patches": [
+   {"id": "wa_sherman_peak_baker_squak_glacier", "fact": "Season: early-season route vs Jun-Sep", "op": "replace_text", "column": "climate", "path": ["summer"], "find": "June-September is the primary climbing season with the most stable glacier-travel conditions.", "replace": "Early summer is the main window; as the season goes on a bergschrund opens across the route and can block it by late summer."},
+   {"id": "wa_sherman_peak_baker_squak_glacier", "fact": "Season: early-season route vs Jun-Sep", "op": "replace_text", "column": "best_season", "path": [], "find": "Standard season is roughly June through September;", "replace": "This is chiefly an early-season climb, because a bergschrund develops across the line as summer goes on and can shut it by late season;"}
+  ]},
+ {"id": "wa_sherman_peak_baker_squak_glacier", "fact": "Camping below 6,000 ft", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "Both statements are Forest Service rules at different scopes: across the Mt. Baker NRA, camping below 6,000 ft is allowed only at designated tent-pad sites, and the Squak route itself (which has no designated sites) says camping below 6,000 ft is prohibited. The bivy card is out of scope for patches in any case.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing", "https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route"],
+  "patches": []}
+]}

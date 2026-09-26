@@ -1,0 +1,139 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_claywood_standard",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Road description"
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Gain to Grand Pass"
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Permit registration"
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "what"
+   ],
+   "fact": "Overnight permit quota area"
+  },
+  {
+   "id": "wa_mount_claywood_standard",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Overnight permit quota area"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_claywood_standard",
+   "before": {
+    "road": {
+     "name": "Obstruction Point Road (off Hurricane Ridge Road)",
+     "status": "Unpaved, narrow gravel road with steep drop-offs; single-lane in places, not recommended for large RVs or trailers.",
+     "driveNote": "Vehicles can only reach the washout point, about 5.5 miles short of the historic Dosewallips trailhead/ranger station; the National Forest Service has indicated the road will not be repaired, so the remainder must be walked or biked.",
+     "seasonalGate": "Typically open mid-July through October depending on snowpack; closes for winter and is subject to weather/damage closures without notice."
+    },
+    "approach": "From the Obstruction Point Trailhead (6,150 ft) — reached via the narrow, unpaved Obstruction Point Road that branches off Hurricane Ridge Road just below Hurricane Ridge — follow the Grand Pass Trail as it climbs onto and traverses Lillian Ridge. The first mile-plus is an easy, open ridge walk (the unmarked boot path up the Lillian Ridge Way / Elk Mountain high route splits off here for those doing the ridge-top variation instead). The trail then drops into the Grand Lake basin before climbing steadily to Grand Pass (6,488 ft) at roughly 5.95 mi and about 1,300 ft of net gain from the trailhead, with several hundred additional feet of up-and-down along the ridge itself. Seasonal tarns in the Grand Lake basin below the pass are the last reliable water before the climb to the pass — fill up there, since water on the open ridge is unreliable. From Grand Pass the maintained trail ends for this objective: the route to Claywood's summit continues cross-country, dropping a few hundred feet down loose scree and shale on the pass's east side into the upper Cameron Creek/Lillian Basin drainage (moderately steep and loose underfoot, worse when wet — this gully is the one approach-specific hazard called out by parties doing this same descent off Grand Pass in trip reports). From the basin floor, contour and climb generally east-northeast across open alpine benches and talus toward the Cameron–Claywood divide, staying below Mount Cameron's north ridge and aiming for the shoulder immediately west/southwest of Claywood's summit block (Claywood's nearest higher neighbor, Mount Cameron, sits about 2.4 mi northeast; Mt. Fromme and Sentinel Peak are just southeast of Claywood in the same cluster). The final several hundred feet to the 6,836 ft summit are class 2–3 scrambling on broken shale and loose scree — similar in character to the well-documented scramble route on neighboring Lost Peak in the same basin system. This whole cross-country stretch beyond Grand Pass (roughly 4–5 mi round trip of the route's total ~21.5 mi) is unmarked, off-trail, and route-finding is real: bring a topo/GPS track and only attempt it with good visibility, since the terrain is used almost exclusively by peak-baggers linking Claywood with Cameron, Fromme, Lost, and Sentinel rather than by any constructed path.",
+    "waypoints": [
+     {
+      "lat": 47.9183,
+      "lng": -123.3822,
+      "elev": 6150,
+      "name": "Obstruction Point Trailhead",
+      "note": "End of the 8-mile Obstruction Point Road off Hurricane Ridge; self-issue wilderness permit and bear canister required, available at the Wilderness Information Center in Port Angeles.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.8876598,
+      "lng": -123.3661394,
+      "elev": 6350,
+      "name": "Lillian Ridge crest",
+      "note": "Grand Pass Trail crests this narrow, wind-exposed ridge with steep drop-offs into the Badger and Lillian River valleys on either side.",
+      "type": "Junction",
+      "distMi": 0.7
+     },
+     {
+      "lat": 47.8771738,
+      "lng": -123.3572629,
+      "elev": 5490,
+      "name": "Gladys Lake",
+      "note": "Small subalpine lake roughly 1.5 miles and 1,000 ft below Grand Pass; treat before filling, it's the last reliable water before the final push to the pass.",
+      "type": "Water",
+      "distMi": 4.45
+     },
+     {
+      "lat": 47.8793929,
+      "lng": -123.3577144,
+      "elev": 6488,
+      "name": "Grand Pass",
+      "note": "High alpine col dividing the Grand Valley/Lillian Ridge drainage from Cameron Creek; trail turns south here and drops into Cameron Basin toward Cameron Pass.",
+      "type": "Junction",
+      "distMi": 5.95
+     },
+     {
+      "lat": 47.9485,
+      "lng": -123.2591,
+      "elev": 6448,
+      "name": "Cameron Pass",
+      "note": "Highest trail-served pass in Olympic National Park; the north-facing approach holds snow into late July/August and NPS advises carrying an ice axe for self-arrest.",
+      "type": "Hazard",
+      "distMi": 7.6
+     },
+     {
+      "elev": 5450,
+      "name": "Upper Cameron Basin high camp",
+      "note": "Established high camp in the Cameron Creek/Lost Basin area beyond the pass; bear canister required (trees too short to hang food) and notoriously buggy in season.",
+      "type": "Campsite",
+      "distMi": 9.9
+     },
+     {
+      "lat": 47.800795,
+      "lng": -123.370435,
+      "elev": 6836,
+      "name": "Mount Claywood Summit",
+      "note": "Class 2-3 scramble up open talus slopes from the high camp; cairns mark the easiest line through occasional Class 3 steps to the true summit.",
+      "type": "Summit"
+     }
+    ],
+    "access": {
+     "fees": "$8 per person per night plus a one-time $6 non-refundable reservation fee; alternatively a $45/person annual wilderness pass covers 12 months of nightly camping fees (reservation fee still applies). Separate from this, the park entrance fee is $30 per vehicle for 7 days.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers.",
+     "permit": "Wilderness permit required year-round for any overnight stay. Reserve online via recreation.gov (summer-season permits for May 15–Oct 15 release April 15 at 7:00am Pacific), or obtain by phone/in-person through the Port Angeles Wilderness Information Center, (360) 565-3100. No trailhead self-registration is available.",
+     "closures": "Obstruction Point Road, the standard approach road, is unpaved and typically only open mid-July through October depending on snowpack; it is subject to weather/damage closures without notice — call (360) 565-3131 for current road-condition recordings before driving in.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance pass/fee for vehicle access to the trailhead area",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    }
+   }
+  }
+ ]
+}

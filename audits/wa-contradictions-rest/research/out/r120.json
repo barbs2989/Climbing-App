@@ -1,0 +1,506 @@
+{
+ "file": "r120.json",
+ "results": [
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Ascent line (which side of the peak / which notch)",
+   "verdict": "fixed",
+   "correct_value": "Southwest Ridge via Heather Pass, south of Lewis Lake, Lewis Glacier east moraine, ~7,500 ft ridge notch, second notch, ~400 ft downclimb into the west-face cirque, easy gully to a large notch on the SW ridge, ridge to summit",
+   "evidence": "The Mountaineers' Southwest Ridge route description, and two independent trip reports (one Heather Pass-Lewis Glacier ascent, one from Wing Lake) all describe the Lewis Glacier -> ~7,500-7,600 ft notch -> west cirque -> gully to a large notch on the SW/south ridge line, matching the row's waypoints, itinerary, timing, hazards and descent. The approach/climbing_route/approach_variants text (Horsefly Pass traverse, SE ridge at 7,000 ft, 7,920 ft notch east of summit, north-ridge finish) matches a different east-side route documented in a separate trip report; the beta's south-slope traverse to the SW ridge at 7,400 ft is a real alternate (one report) and is kept as an alternate only.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/corteo-peak-southwest-ridge",
+    "https://trailcatjim.com/corteo-peak-via-lewis-glacier-southwest-ridge/",
+    "https://wenatcheeoutdoors.org/2022/09/07/black-peak-corteo-peak/",
+    "https://www.lemkeclimbs.com/corteo-peak.html",
+    "https://onehikeaweek.com/2018/09/08/corteo-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Leave the maintained trail here and traverse climber's-left (south) below Horsefly Pass, holding around 6,400 ft across a broad talus and scree basin beneath the face. Pick a rising traverse line across scree benches and a scree ramp that threads between two low cliff bands to gain Corteo's southeast ridge at about 7,000 ft. From the ridge, work climber's-left up ledges and short rock steps toward a notch at roughly 7,900-7,920 ft just east of the summit block, then finish through blocky class 3 terrain (some parties rope up for a few class 4 moves near the top) to the 8,107 ft summit. All-in, the approach from the trailhead to the base of the face is about 4-5 miles with roughly 2,500 ft of gain to reach the 7,000 ft ridge. Underfoot is loose, downsloping talus and scree for most of the off-trail traverse — a helmet is worth carrying, since the east face sheds rock, especially as the day warms. Snow can linger in the Horsefly Pass basin and across the traverse well into July, so an axe (and possibly crampons) is worth having for early-season attempts.",
+     "replace": "Leave the maintained trail here and head west across talus, keeping south of Lewis Lake (~5,700 ft), to the crest of the Lewis Glacier's east lateral moraine near 6,400 ft. Follow the moraine onto the glacier remnant and climb southeast, bearing left near the top, to a notch in the ridge at about 7,500 ft. Work west along the ridge to a second notch, downclimb roughly 400 ft of dirt or snow into the cirque under the west face, then take an easy gully up to a large notch on the Southwest Ridge and follow the crest (exposed class 3 with a few class 4 moves) to the 8,107 ft summit. Loose talus and scree cover much of the off-trail travel, and the downclimb sheds rock onto anyone below, so a helmet is worth carrying. Snow lingers on the glacier and on the traverse out of Heather Pass well into July, so bring an axe and crampons for early-season attempts."
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "where Corteo's east/southeast face comes into full view across the basin. ",
+     "replace": ""
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "set",
+     "column": "beta",
+     "path": [],
+     "expect": "This is Corteo Peak's easiest and most commonly climbed line. After significant off-trail travel from the Maple Pass Loop trail, the route crosses the southeast ridge near 6,900 ft, traverses the south slopes, and gains the southwest ridge around 7,400 ft; from there it follows the ridge crest — sustained class 3 scrambling with real exposure in places and some loose rock — to the 8,107 ft summit. A more technical alternate approach (Lewis Glacier to a notch in the northwest ridge, then the west basin) reaches the same southwest ridge with class 2-4 terrain and a short roped/protected section, but the Maple/Heather Pass line described here is the standard way up.",
+     "value": "This is Corteo Peak's standard line. From Heather Pass on the Maple Pass Loop trail, it passes south of Lewis Lake, follows the Lewis Glacier's east moraine onto the glacier remnant, and climbs to a notch in the ridge at about 7,500 ft; it then works west to a second notch, downclimbs about 400 ft into the west-face cirque, and takes an easy gully to a large notch on the southwest ridge. From there it follows the ridge crest — sustained class 3 scrambling with real exposure in places, a few class 4 moves and some loose rock — to the 8,107 ft summit. An alternate from Maple Pass traverses below Horsefly Pass, crosses the southeast ridge near 6,900 ft and works across the south slopes to join the southwest ridge around 7,400 ft."
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": ", crossing the peak's southeast ridge/basin en route",
+     "replace": ""
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "label"
+     ],
+     "expect": "Southeast ridge to the notch",
+     "value": "Lewis Glacier to the Southwest Ridge notch"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "From the ridge, gained at about 7,000 ft, work climber's-left up ledges and short rock steps toward a notch at roughly 7,900-7,920 ft just east of the summit block. The east face sheds rock, especially as the day warms, so a helmet is worth carrying; snow can linger across the traverse well into July, so an axe (and possibly crampons) is worth having for early-season attempts.",
+     "value": "From the Lewis Glacier's east moraine near 6,400 ft, climb the glacier remnant southeast, bearing left near the top, to a ridge notch at about 7,500 ft. Follow the ridge west to a second notch, downclimb roughly 400 ft of dirt or snow into the west-face cirque, and take an easy gully up to a large notch on the southwest ridge. Crampons and an axe are needed while snow lingers, and the downclimb is loose, so space the party out."
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "from roughly 7,400 ft (where the ridge is gained after the southeast-ridge crossing and south-slope traverse)",
+     "replace": "from the large notch reached by an easy gully out of the west-face cirque"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "Southeast Face/Southwest Ridge",
+     "replace": "Southwest Ridge"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "The ascent line on the southeast face itself is not glaciated, but the standard descent via the Southwest Ridge passes the Lewis Glacier remnant/moraine",
+     "replace": "The standard line crosses the Lewis Glacier remnant/moraine on both the ascent and the descent"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "This line trades the southeast face's rockfall exposure for glacier/snowfield travel past the Lewis Glacier remnant — rope up or use an axe/crampons if it's icy — and the Horsefly Pass basin can hold avalanche-prone snow into early summer.",
+     "replace": "This line involves glacier/snowfield travel past the Lewis Glacier remnant — rope up or use an axe/crampons if it's icy — and lingering snow on these slopes can be avalanche-prone in early summer."
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Rainy Pass and the Lake Ann/Maple Pass Trail to Heather Pass, then the 6,400 ft traverse and the scree ramp between two cliff bands",
+     "value": "Rainy Pass and the Lake Ann/Maple Pass Trail to Heather Pass, then Lewis Lake and the Lewis Glacier moraine"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "From the paved pullout at Rainy Pass at 4,855 ft on SR-20, signed Rainy Pass Trailhead, 52 miles east of Marblemount and right where the PCT crosses the highway, start on the Lake Ann and Maple Pass Trail, well-graded and heavily used. AGAIN, THIS IS THE RAINY PASS LAKE ANN, NOT THE ONE BELOW MOUNT SHUKSAN. At roughly 1.5 miles, STAY RIGHT at the Lake Ann junction; the lake itself, just below the junction, IS THE LAST RELIABLE ON-TRAIL WATER SOURCE. Continue climbing switchbacks through heather meadows to Heather Pass at about 6,080 ft, roughly 2 miles in, WHERE CORTEO'S EAST AND SOUTHEAST FACE COMES INTO FULL VIEW ACROSS THE BASIN. Leave the maintained trail there. About 4-5 miles and 2,500 ft of gain from the trailhead to reach the 7,000 ft ridge.",
+     "value": "From the Rainy Pass trailhead (4,855 ft) on SR-20, 52 miles east of Marblemount where the PCT crosses the highway, take the Lake Ann/Maple Pass Trail. This is the Rainy Pass Lake Ann, not the one below Mount Shuksan. At roughly 1.25 miles stay right at the Lake Ann junction; the lake just below it is the last reliable on-trail water. Switchbacks through heather meadows lead to Heather Pass at about 6,080 ft, roughly 2 miles in, where the maintained trail ends and the off-trail travel to Lewis Lake and the glacier begins."
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards"
+     ],
+     "expect": [
+      "Loose, downsloping talus and scree for most of the off-trail traverse",
+      "The east face sheds rock as the day warms; cross the basin early and carry a helmet",
+      "Snow can linger in the Horsefly Pass basin and across the traverse well into July",
+      "One distinctly steeper class 4 step on the descent, with no fixed anchor reported",
+      "Glacier and snowfield travel past the Lewis Glacier remnant on the descent",
+      "Lake Ann is the last reliable on-trail water"
+     ],
+     "value": [
+      "Loose talus and scree on the off-trail travel beyond Heather Pass",
+      "Snow, bare ice and moats on the Lewis Glacier remnant; carry an axe and crampons early season",
+      "Snow lingers on the traverse out of Heather Pass well into July",
+      "Loose ground on the 400 ft downclimb into the west-face cirque; move one at a time",
+      "One distinctly steeper class 4 step on the descent, with no fixed anchor reported",
+      "Lake Ann is the last reliable on-trail water"
+     ]
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "expect": "THE TRAVERSE IS HELD AT A HEIGHT AND THE ENTRY TO THE RIDGE IS A RAMP BETWEEN TWO CLIFF BANDS, WHICH IS THE ONE DETAIL THAT MAKES THIS FINDABLE. From Heather Pass, traverse climber's-LEFT, south, BELOW HORSEFLY PASS, HOLDING AROUND 6,400 FT across a broad talus and scree basin beneath the face. Then pick a rising traverse across scree benches and A SCREE RAMP THAT THREADS BETWEEN TWO LOW CLIFF BANDS to gain Corteo's southeast ridge AT ABOUT 7,000 FT.\n\nSO THERE ARE TWO NUMBERS AND ONE SHAPE: HOLD 6,400 FT ACROSS THE BASIN, FIND A RAMP BETWEEN TWO CLIFF BANDS, AND GAIN THE RIDGE AT 7,000 FT. In cloud the altimeter does most of the work and the ramp is the only thing you have to see.\n\nIF YOU CANNOT FIND A WAY THROUGH THE CLIFF BANDS, YOU ARE NOT AT THE RAMP. There is one threading line; forcing a cliff band elsewhere is how this approach goes wrong.\n\nFROM THE RIDGE, work climber's-LEFT up ledges and short rock steps toward A NOTCH AT ROUGHLY 7,900-7,920 FT JUST EAST OF THE SUMMIT BLOCK, then finish through blocky class 3 terrain, with some parties roping up for a few class 4 moves near the top, to the 8,107 ft summit.\n\nSO THE SEQUENCE OF HEIGHTS IS 6,400, 7,000, 7,900, 8,107, AND EACH ONE IS A CHANGE OF GROUND: basin traverse, ridge gained, notch, summit block.\n\nA HAZARD THAT IS ALSO A TIMING INSTRUCTION: underfoot is loose, downsloping talus and scree for most of the off-trail traverse, AND THE EAST FACE SHEDS ROCK ESPECIALLY AS THE DAY WARMS. Cross the basin early.\n\nTHE DESCENT USES DIFFERENT GROUND FROM THE ASCENT AND THAT IS WORTH PLANNING FOR: it drops southwest along the ridge crest to a large notch roughly a third of the way down at about 7,600-7,700 ft, reached through an easy connecting gully with ONE DISTINCTLY STEEPER STEP, commonly protected with a single-strand rappel on one 30 m rope off natural gear since no fixed anchor has been reported. Below the step, the gully and talus lead into the west-face cirque near the Lewis Glacier's east moraine at about 6,400 ft, then talus and intermittent boot path south past Lewis Lake rejoin the trail near Heather Pass.",
+     "value": "THE ROUTE IS A CHAIN OF NOTCHES, AND THE FIRST ONE DECIDES THE DAY. From Heather Pass, head west across talus, passing south of Lewis Lake (about 5,700 ft), to the crest of the Lewis Glacier's east lateral moraine near 6,400 ft. Follow the moraine onto the glacier remnant and climb southeast, BEARING LEFT NEAR THE TOP, to a notch in the ridge at about 7,500 ft. Bearing right instead puts a party on narrow, sand-covered ledges and a steep, constricted snow gully — a much harder line.\n\nFROM THE FIRST NOTCH, follow the ridge west to a second notch, then DOWNCLIMB ROUGHLY 400 FT of dirt or snow into the cirque under the west face. The ground is loose; space the party out.\n\nFROM THE CIRQUE, an easy gully leads to a large notch on the Southwest Ridge, and the ridge crest — exposed class 3 with a few class 4 moves — goes to the 8,107 ft summit.\n\nSO THE SEQUENCE OF HEIGHTS IS 6,400, 7,500, THE CIRQUE BELOW IT, THE RIDGE NOTCH, 8,107: moraine, first notch, downclimb, ridge gained, summit.\n\nTHE DESCENT REVERSES THE SAME LINE, INCLUDING THE CLIMB BACK OUT OF THE CIRQUE TO THE 7,500 FT NOTCH. Fix the notches in your mind on the way up; they are easy to lose from above."
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "roughly 2-3 hours from the Maple Pass trailhead to the base of the southeast ridge/face before technical scrambling begins",
+     "replace": "roughly 3.5 hours from the Maple Pass trailhead to Lewis Lake, where the glacier approach begins"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "(no glacier or overnight gear required)",
+     "replace": "plus axe and crampons for the Lewis Glacier; heavier if camping at Lewis Lake"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "above Maple/Heather Pass",
+     "replace": "beyond Heather Pass"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Ascent line (which side of the peak / which notch)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      4
+     ],
+     "find": "on the approach and face",
+     "replace": "on the approach and the Lewis Glacier"
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Descent rappel step location and nature",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report describes a 3-ft-wide, ~70-degree snow strand near the northwest-ridge notch on the glacier side (matching descent/hazards); another descended the ridge crest with running belays and no rappel. No source describes the class-4 gully step to a 7,600-7,700 ft notch that descent_text names, nor places a rappel there, so which step (or both) is the rappel spot cannot be settled by two sources.",
+   "sources": [
+    "https://trailcatjim.com/corteo-peak-via-lewis-glacier-southwest-ridge/",
+    "https://wenatcheeoutdoors.org/2022/09/07/black-peak-corteo-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found assigns a commitment grade (II or III) to the Southwest Ridge; descriptions give only class 3-4 and 10-12 hr for a one-day push. Left as is.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/corteo-peak-southwest-ridge",
+    "https://en.wikipedia.org/wiki/Corteo_Peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Total elevation gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "5,100 ft total gain (car to car); net summit-to-car loss ~3,250 ft",
+   "evidence": "A Heather Pass-Lewis Glacier-SW Ridge trip report gives ~11 mi and 5,100 ft gain/loss round trip. The row's itinerary days (1,550 + 3,550), totalNote and waypoint profile (trailhead 4,855 -> Heather Pass 6,080 -> Lewis Lake 5,707 -> 7,500 notch -> ~400 ft downclimb -> 8,107, then regaining the notch and Heather Pass on the way out, ~4,800-5,100 ft) all agree; gain_ft 3,245 is only trailhead-to-summit net. descent_text's '3,700 ft net loss' corrected to the arithmetic 8,107-4,855.",
+   "sources": [
+    "https://trailcatjim.com/corteo-peak-via-lewis-glacier-southwest-ridge/"
+   ],
+   "patches": [
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Total elevation gain",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 3245,
+     "value": 5100
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Total elevation gain",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "about 3,700 ft of net loss",
+     "replace": "about 3,250 ft of net loss"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Total elevation gain",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "8-10+ mile round trip with roughly 4,000+ ft of gain",
+     "replace": "about 11-mile round trip with roughly 5,100 ft of gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Glacier / avalanche terrain",
+   "verdict": "fixed",
+   "correct_value": "Route crosses the Lewis Glacier remnant/snowfield",
+   "evidence": "The Mountaineers route and two trip reports all cross the Lewis Glacier (now largely a snowfield) with crampons, so 'non-glaciated' is wrong.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/corteo-peak-southwest-ridge",
+    "https://trailcatjim.com/corteo-peak-via-lewis-glacier-southwest-ridge/",
+    "https://wenatcheeoutdoors.org/2022/09/07/black-peak-corteo-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Glacier / avalanche terrain",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer scramble route",
+     "replace": "N/A - summer scramble with a small Lewis Glacier/snowfield crossing"
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Land manager / park boundary / overnight permit",
+   "verdict": "fixed",
+   "correct_value": "Trail and the Lewis/Wing Lake camps are Okanogan-Wenatchee NF (no overnight permit); the summit is on the North Cascades NP eastern boundary",
+   "evidence": "Corteo Peak is described as sitting on the eastern boundary line of North Cascades National Park. Wing Lake backpacking guides state Wing/Lewis Lakes are national forest with no permit needed, and the Heather-Maple loop lies in Okanogan-Wenatchee NF. So 'entirely NF' and 'most of the route inside the park' were both wrong; the row's own overnight_permit entry already matched.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Corteo_Peak",
+    "https://explorewithalec.com/wing-lake/",
+    "https://www.hesperosflown.com/heather-pass-maple-pass-lake-ann-rainy-lake/"
+   ],
+   "patches": [
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Land manager / park boundary / overnight permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "value": "The trail corridor and the usual camps at Lewis and Wing Lakes are Okanogan-Wenatchee National Forest (Methow Valley Ranger District); the summit sits on the eastern boundary of North Cascades National Park. No Mount Rainier-style climbing fee applies here."
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Land manager / park boundary / overnight permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "day travel on the National Forest land near the trailhead needs no permit, but most of the route (Lewis Glacier basin, ridge, and summit) lies within North Cascades National Park/Stephen Mather Wilderness, where overnight camping requires a backcountry permit.",
+     "replace": "day travel needs no permit, and the usual camps at Lewis and Wing Lakes are national forest land that needs none either; the summit sits on the North Cascades National Park boundary, and camping inside the park requires a backcountry permit."
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Land manager / park boundary / overnight permit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "find": "North Cascades National Park Complex/Stephen Mather Wilderness (upper peak and glacier basin); Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Rainy Pass trailhead and lower trail).",
+     "replace": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District (trailhead, trail, and the Lewis and Wing Lake camps); the summit sits on the North Cascades National Park Complex boundary."
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Trailhead identity",
+   "verdict": "fixed",
+   "correct_value": "Rainy Pass / Lake Ann–Maple Pass Trailhead",
+   "evidence": "Route descriptions and trip reports start on the Lake Ann/Maple Pass trail from the Rainy Pass trailhead, not the PCT north trailhead; the row's waypoint and approach agree.",
+   "sources": [
+    "https://trailcatjim.com/corteo-peak-via-lewis-glacier-southwest-ridge/",
+    "https://www.earthtrekkers.com/maple-pass-loop/"
+   ],
+   "patches": [
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Trailhead identity",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Rainy Pass PCT North Trailhead",
+     "value": "Rainy Pass / Lake Ann–Maple Pass Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Distance to Heather Pass / Lake Ann junction",
+   "verdict": "fixed",
+   "correct_value": "Lake Ann junction ~1.25 mi; Heather Pass ~2-2.25 mi",
+   "evidence": "Two loop guides put the Lake Ann junction at 1.25-1.3 mi; Heather Pass is ~2 mi (Mountaineers route) / ~2.25 mi (a loop guide) (another guide 2.6). The waypoint's 3.25 mi was the outlier; set to 2.25 and the approach junction figure corrected to 1.25.",
+   "sources": [
+    "https://followthatnerd.com/heather-pass-maple-pass-loop/",
+    "https://www.earthtrekkers.com/maple-pass-loop/",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/corteo-peak-southwest-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Distance to Heather Pass / Lake Ann junction",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "At roughly 1.5 miles, stay right",
+     "replace": "At roughly 1.25 miles, stay right"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Distance to Heather Pass / Lake Ann junction",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 3.25,
+     "value": 2.25
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Distance to Heather Pass / Lake Ann junction",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "find": "Two more miles of switchbacks",
+     "replace": "About another mile of switchbacks"
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Required climbing grade",
+   "verdict": "fixed",
+   "correct_value": "Exposed Class 3 with a few Class 4 moves (no 5th class)",
+   "evidence": "The Mountaineers route gives exposed Class 3 with a few Class 4 moves; the peak summary gives class 4 scrambling; trip reports describe Class 3-4. None mention 5th-class/5.2 moves.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/corteo-peak-southwest-ridge",
+    "https://en.wikipedia.org/wiki/Corteo_Peak",
+    "https://wenatcheeoutdoors.org/2022/09/07/black-peak-corteo-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Required climbing grade",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "find": "unroped Class 4 / low-5th-class scrambling",
+     "replace": "unroped, exposed Class 3-4 scrambling"
+    },
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Required climbing grade",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "exposed Class 4 terrain and short 5.2 moves on loose rock",
+     "replace": "exposed Class 4 moves on loose rock"
+    }
+   ]
+  },
+  {
+   "id": "wa_corteo_peak_southwest_ridge",
+   "fact": "Parking pass locations",
+   "verdict": "fixed",
+   "correct_value": "Northwest Forest Pass at the Rainy Pass trailhead",
+   "evidence": "Loop guides state a Northwest Forest Pass is required at the Rainy Pass trailhead used by this route; the listed Washington Pass/Blue Lake/Cutthroat trailheads belong to other routes.",
+   "sources": [
+    "https://www.hesperosflown.com/heather-pass-maple-pass-lake-ann-rainy-lake/",
+    "https://www.earthtrekkers.com/maple-pass-loop/"
+   ],
+   "patches": [
+    {
+     "id": "wa_corteo_peak_southwest_ridge",
+     "fact": "Parking pass locations",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "value": "Northwest Forest Pass required at the Rainy Pass trailhead — $5/day or $30/annual (America the Beautiful pass also honored)."
+    }
+   ]
+  }
+ ]
+}

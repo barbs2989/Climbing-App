@@ -1,0 +1,479 @@
+{
+ "file": "r322.json",
+ "results": [
+  {
+   "id": "wa_hagan_mountain_south",
+   "fact": "Trailhead and approach line",
+   "verdict": "unresolved",
+   "correct_value": "The south-slopes approach starts at the Watson Lakes trailhead (~4,000-4,200 ft, end of FR 1107), crosses the ~5,300 ft saddle below Mt. Watson to Diobsud Lakes, continues past Bacon Peak to the Hidden Lake saddle (~4,553-4,560 ft), then bushwhacks north through two cliffbands to Hagan's south benches.",
+   "evidence": "A Bacon-Hagan-Blum trip report starts at the Watson Lakes trailhead (4,200 ft), crosses the 5,300 ft saddle below Mt. Watson to Diobsud Lakes and reaches Hidden Lake (~4,553 ft) at the Bacon-Hagan low point; a Watson-Blum traverse report likewise starts at Watson Lakes (~4,000 ft) and ends at the Baker River trailhead (800 ft); the peak's route page describes the south approach from the Bacon-Hagan saddle bushwhacking north through two cliffbands. No source describes a bushwhack from Sulphide Creek Camp to Hidden Lake — the Baker River trail approach is the NORTHERN (Blum Lakes) line leaving near Blum Creek. The row's approach, descent_text and approach_logistics therefore describe an undocumented line, but a correct rewrite needs the Diobsud-to-Hidden-Lake leg (around/over Bacon Peak, which itinerary day 2 also omits) and the trailhead pin/approach_logistics coordinates sit at the Baker River trailhead (out of scope), so no patch is written; this needs a coordinated rewrite of approach, descent_text, approach_logistics, waypoints[0] (name/elev/coords) and itinerary day 2.",
+   "sources": [
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/",
+    "https://engineeredforadventure.com/watson-blum-traverse/",
+    "https://www.summitpost.org/hagan-mountain/1064993",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "fact": "Glacier travel required or not",
+   "verdict": "fixed",
+   "correct_value": "The standard south-slopes route itself crosses a short section of the Hagan Glacier (around its ice apron) below the summit slabs.",
+   "evidence": "A traverse report describes crossing firm snow around the Hagan Glacier's ice apron with crampons to a dike-notch, then Class 3 to the summit; a second traverse report describes crossing the glacier on the Hagan massif; the peak's route description has parties scrambling slabs to the summit from the glacier. So the route is not non-glaciated and the glacier hazard is not only for parties extending to Blum/Bacon. Whether to rope is left as is (one report found the glacier flat enough to cross without crampons).",
+   "sources": [
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/",
+    "https://engineeredforadventure.com/watson-blum-traverse/",
+    "https://drdirtbag.com/2021/07/29/blum-hagan-bacon/",
+    "https://www.summitpost.org/hagan-mountain/1064993"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "expect": "N/A - non-glaciated summer scramble route",
+     "value": "N/A - summer scramble route with a short Hagan Glacier crossing",
+     "id": "wa_hagan_mountain_south",
+     "fact": "Glacier travel required or not"
+    },
+    {
+     "op": "set",
+     "column": "hazards",
+     "path": [
+      5
+     ],
+     "expect": "crevasse/glacier hazard on the adjacent Hagan Glacier for parties extending toward Mount Blum or Bacon Peak",
+     "value": "crevasse and moat hazard on the short Hagan Glacier crossing below the twin-summit col",
+     "id": "wa_hagan_mountain_south",
+     "fact": "Glacier travel required or not"
+    }
+   ]
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "fact": "Rock protection",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources describe the summit as Class 3 scrambling (a rotten bedrock gully / slabs) with glacier travel; none mentions carrying or not carrying a rock rack, rope length or belays. Without a source on the rack, neither pro_needs ('rather than rock protection') nor rope_note/rack/sling_rack (a small rack for the Class 3 slabs) can be confirmed.",
+   "sources": [
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/",
+    "https://drdirtbag.com/2021/07/29/blum-hagan-bacon/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "fact": "Permit for the camps",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service says a recreation pass is required at Watson Lakes trailhead and Watson Lakes camping is in designated sites within the Noisy-Diobsud Wilderness; the NPS requires a backcountry permit for all overnight stays inside the park. No source located states whether the Diobsud Lakes camp lies inside the park, nor confirms a self-issue wilderness permit at the kiosk, so the itinerary's blanket NPS-permit claim vs access.permit cannot be settled.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/anderson-and-watson-lakes",
+    "https://www.fs.usda.gov/r06/mbs/recreation/watson-lakes-trailhead",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "fact": "Hidden Lake drop below the south bench",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Hidden Lake sits at ~4,553-4,560 ft, so dropping to it from a ~5,800 ft bench gives back ~1,250 ft, not 400.",
+   "evidence": "Two traverse reports put Hidden Lake / the Bacon-Hagan saddle at about 4,553 ft and 4,560 ft; the bench is stored at 5,800 ft (approach puts the benches at 6,000-6,400 ft). The error is inside bivy[1].notes, which is owned by the camping clean-up; no patch written. Bivy[0] (south bench) and bivy[1] (Hidden Lake) serve this route; bivy[2] (Sulphide Camp) does not.",
+   "sources": [
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/",
+    "https://drdirtbag.com/2021/07/29/blum-hagan-bacon/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "fact": "Which finish is the route: Class 4 summit gully or exposed NW Ridge",
+   "verdict": "unresolved",
+   "correct_value": "The row mixes two finishes: the common 100-ft Class 4 gully (tops out on the NW summit) and the rarer steep snow to the NW-SE notch then the SE peak's exposed Class 4 NW Ridge (the route's namesake).",
+   "evidence": "The Ruth-Icy Traverse route page describes ~500 ft of 2nd-3rd class to a 100-ft 4th-class gully that can be rappelled or downclimbed; the peak page says most parties climb the NW peak, which holds the register. The one detailed account of the Northwest Ridge line climbed steep snow directly to the NW-SE notch and then the SE peak's steep, loose, wildly exposed NW Ridge with a Class 4 knife-edge, explicitly not the gully. climbing_route steps 5-6 therefore describe the gully route, not the named NW Ridge; rewriting them needs more than one source on the ridge line, so no patch (beta's summit identity is fixed separately).",
+   "sources": [
+    "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+    "https://www.summitpost.org/icy-peak/758631",
+    "https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "fact": "Which summit the summit gully reaches (beta)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The 100-ft gully tops out on the Northwest summit; the true Southeast summit is reached from the NW-SE notch by the SE peak's Northwest Ridge.",
+   "evidence": "The peak page says the register and the summit most parties climb is the NW peak; a traverse report reached the western tower via the gully and then crossed to the SE summit, 11 ft higher; the route page places the 100-ft gully on the northwest side. Beta said the gully leads to the true SE summit.",
+   "sources": [
+    "https://www.summitpost.org/icy-peak/758631",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/",
+    "https://www.mountainproject.com/route/112189865/ruth-icy-traverse"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "leads to a 100-ft 4th-class summit gully and the true (Southeast) summit. A harder, rarely climbed alternative goes from the notch",
+     "replace": "leads to a 100-ft 4th-class summit gully and the Northwest summit, which holds the register. The true (Southeast) summit takes a harder, less often climbed line from the notch",
+     "id": "wa_icy_peak_ruth_icy_traverse",
+     "fact": "Which summit the summit gully reaches (beta)"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "fact": "Rope length vs gully rappel",
+   "verdict": "fixed",
+   "correct_value": "A 75-ft rope covers the short belays on the NW Ridge, but a single rappel of the ~100-ft summit gully needs a 60m rope doubled; with a short rope, downclimb the gully.",
+   "evidence": "The Northwest Ridge account belayed back down the ridge on a 75-ft rope. The gully is 100 ft high and can be rappelled or downclimbed; a traverse report found a 60m rope doubled perfect for rappelling it, and a club report describes a full 60m double-rope rappel to the base of the gully.",
+   "sources": [
+    "https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/",
+    "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-ruth-mountain-icy-peak-traverse-1"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "A 75-ft/23m rope is enough for the short belays/lowers this route calls for — no need to carry a full-length rope",
+     "replace": "A 75-ft/23m rope is enough for the short belays/lowers on the Northwest Ridge, but rappelling the 100-ft summit gully in one go takes a 60m rope doubled — with the short rope, plan to downclimb the gully",
+     "id": "wa_icy_peak_ruth_icy_traverse",
+     "fact": "Rope length vs gully rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "fact": "Summit time",
+   "verdict": "fixed",
+   "correct_value": "4.7 hours is measured from a camp on Ruth Mountain's summit, not from the road.",
+   "evidence": "The account this route follows took 4.7 hours from the Ruth Mountain summit camp to the SE summit; a route guide gives 3-6 hours Ruth to Icy, and the peak's route page gives 3-5 hours from camp. The stored 4.7 is therefore a from-camp figure with no start stated, which is what made it read against the 5-6 hour approach.",
+   "sources": [
+    "https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/",
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+    "https://www.summitpost.org/icy-peak-via-ruth-mountain/855906"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": null,
+     "value": "From a camp on Ruth Mountain's summit",
+     "id": "wa_icy_peak_ruth_icy_traverse",
+     "fact": "Summit time"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Approach line (Nooksack Cirque vs Hannegan Pass and Ruth Mountain)",
+   "verdict": "fixed",
+   "correct_value": "This route approaches via Hannegan Pass and Ruth Mountain to the Ruth-Icy saddle, then talus and slabs onto Icy's glacier.",
+   "evidence": "The Ruth-Icy route page and a traverse report both reach Icy from Hannegan Pass over Ruth Mountain, down to the Ruth-Icy saddle and then onto Icy's glacier; the whole row (approach, variants, waypoints, itinerary, descent, bail) uses that line. The Nooksack Cirque is a separate approach; pitch_detail[0] was the lone outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "Riverbed and brush travel up Nooksack Cirque, then moraine debris onto Icy's western arm - the route's hardest navigation.",
+     "value": "From the Ruth-Icy saddle, talus and slabs beneath a rock ridge lead onto Icy's glacier - the route's hardest navigation, especially in poor visibility.",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Approach line (Nooksack Cirque vs Hannegan Pass and Ruth Mountain)"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "pitch"
+     ],
+     "expect": "Cirque to moraine",
+     "value": "Saddle to glacier",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Approach line (Nooksack Cirque vs Hannegan Pass and Ruth Mountain)"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Rope length for the summit-gully rappel",
+   "verdict": "fixed",
+   "correct_value": "The single optional rappel is ~100 ft (the full gully) and needs a 60m rope doubled.",
+   "evidence": "The gully is 100 ft high and can be rappelled or downclimbed; a traverse report found a 60m rope perfect for rappelling it, and a club report describes a full 60m double-rope rappel reaching the base of the gully. A 30m rope doubled gives only ~50 ft, and the 75-ft figure matches no source.",
+   "sources": [
+    "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-ruth-mountain-icy-peak-traverse-1"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      4
+     ],
+     "expect": "Short rope (30m is enough) for the single ~100 ft rappel off the summit gully — many parties downclimb it instead",
+     "value": "A 60m rope, doubled, for the single ~100 ft rappel off the summit gully — many parties downclimb it instead",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Rope length for the summit-gully rappel"
+    },
+    {
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "75 feet (single rappel possible on descent)",
+     "value": "One optional rappel of about 100 ft down the summit gully off a slung horn (60m rope doubled); many parties downclimb it instead",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Rope length for the summit-gully rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Ruth-Icy saddle elevation",
+   "verdict": "fixed",
+   "correct_value": "The Ruth-Icy saddle (low point) is ~5,700 ft; ~6,600 ft is the notch camp.",
+   "evidence": "A route guide gives the Ruth-Icy saddle at 5,700 ft with bivy sites around 6,600 ft; a club trip report gives the lowest spot on the ridge as 5,700 ft (900 ft below camp); the peak's route page puts the saddle area at ~5,800 ft. The waypoint[5] elev (6,600) belongs to a mis-positioned 'col descent' pin and is left alone; the '~2,000 ft of regain' prose is not changed here.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-ruth-mountain-icy-peak-traverse-1",
+    "https://www.summitpost.org/icy-peak-via-ruth-mountain/855906"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "down to the Ruth–Icy saddle (~6,600 ft)",
+     "replace": "down to the Ruth–Icy saddle (~5,700 ft)",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Ruth-Icy saddle elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "to the Ruth-Icy saddle near 6,600 ft",
+     "replace": "to the Ruth-Icy saddle near 5,700 ft",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Ruth-Icy saddle elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Gain, loss and distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two reports agree on ~16 mi round trip and ~8,000 ft of gain via Ruth (gain_ft 8000 is supported and left). Only one report states the loss (8,000 ft gain/loss), so loss_ft 3963 cannot be changed under the rules; the itinerary day gains (3,600 + 2,200) cannot be edited to match; dist_km 7.2 km (~4.5 mi) is not clearly a different quantity from a one-way approach figure, so it is left.",
+   "sources": [
+    "https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Which summit the gully reaches",
+   "verdict": "fixed",
+   "correct_value": "The gully tops out on the Northwest summit (register); the Southeast summit, listed at 7,073 ft, takes more 3rd-4th class scrambling.",
+   "evidence": "The peak page says the register and most-climbed summit is the NW peak; a traverse report reached the western tower via the gully and crossed to the SE summit, 11 ft higher; the route page places the gully on the northwest side. The row's approach and variant already say this; overview and the itinerary were the outliers.",
+   "sources": [
+    "https://www.summitpost.org/icy-peak/758631",
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/",
+    "https://www.mountainproject.com/route/112189865/ruth-icy-traverse"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "the true, higher Southeast summit (7,073 ft) reached by this route",
+     "replace": "the true, higher Southeast summit (7,073 ft), reached by extra scrambling beyond the top of this route's gully",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Which summit the gully reaches"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "expect": "7,073 ft, via ~500 ft of 2nd-3rd class then the 100-ft Class 4 summit gully; helmets on for rockfall.",
+     "value": "Northwest summit via ~500 ft of 2nd-3rd class then the 100-ft Class 4 summit gully; the true Southeast summit (7,073 ft) takes more 3rd-4th class scrambling. Helmets on for rockfall.",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Which summit the gully reaches"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Season window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Jul-Sep",
+   "evidence": "best_season, seasonal_guidance (June risky, September good) and climate all give mid-July to September; the peak's encyclopedia entry says July-September offers the most favorable climbing conditions.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Icy_Peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Aug",
+     "value": "Jul-Sep",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Season window"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "expect": "Roughly Jun-Aug",
+     "value": "Roughly Jul-Sep",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Day-two timing and single-push length",
+   "verdict": "fixed",
+   "correct_value": "Camp to Icy's summit is about 3-5 hours one way (the schedule's 4 h up, ~8.5 h camp-to-camp); summitTimeHrs held the whole of day two.",
+   "evidence": "The peak's route page gives 3-5 hours from camp to Icy's summit; a route guide gives 3-6 hours Ruth to Icy; the Northwest Ridge account took 4.7 hours from Ruth's summit. So '3-5 hours' is one way, not round trip, and the day-two schedule (4 AM out, 8 AM summit, 12:30 back) is consistent with that. summitTimeHrs 10.5 equals the whole summit-plus-hike-out day and is nulled rather than replaced with a computed figure. The single-push length (~12 h vs 15-20 h) has only one source each and is left.",
+   "sources": [
+    "https://www.summitpost.org/icy-peak-via-ruth-mountain/855906",
+    "https://www.theoutbound.com/washington/hiking/climb-ruth-mountain-and-icy-peak",
+    "https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "(roughly 4-5 hours round trip)",
+     "replace": "(roughly 8-9 hours round trip)",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Day-two timing and single-push length"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "(~4-5 hr round trip)",
+     "replace": "(~4-5 hr back from the summit)",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Day-two timing and single-push length"
+    },
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "the summit day to about 3-5 hours round trip",
+     "replace": "the climb to about 3-5 hours from camp to the summit",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Day-two timing and single-push length"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 10.5,
+     "value": null,
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Day-two timing and single-push length"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Water at the notch camp",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No running water past Hannegan Camp; the notch camp relies on melted snow.",
+   "evidence": "A traverse report stresses there is no running water past the signed Hannegan Camp and relied on melting snow; the row's approach, variant hazards, waypoint note and bivy all agree. The pro tip calling the notch a reliable late-season water source was the outlier.",
+   "sources": [
+    "https://havetent.com/2020/08/11/ruth-icy-traverse/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "it's a reliable late-season water source and cuts",
+     "replace": "there is no running water there, so plan to melt snow, but it cuts",
+     "id": "wa_icy_peak_southwest_route",
+     "fact": "Water at the notch camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Waypoint positions vs order",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 'Ruth-Icy col descent' and 'Icy Glacier crevasse traverse' pins sit north-west of Ruth, back toward the trailhead, while the saddle and glacier lie between Ruth and Icy to the south; their distMi order is plausible. Pin coordinates are out of scope for this pass, so this is flagged for the pin audit.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_icy_peak_southwest_route",
+   "fact": "Where to collect the overnight permit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Both are genuine options: the park names the Marblemount Wilderness Information Center as its main permit office and also issues permits for Mt. Baker Highway zones (Hannegan) at the Glacier Public Service Center on set days in summer.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,1838 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "commitment",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Distance to summit"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Distance to summit"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Distance to summit"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction at the Railroad Grade junction"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Direction at the Railroad Grade junction"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Group-size limit"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Water above Morovitz Meadows"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Water above Morovitz Meadows"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Gain to Sandy Camp"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Gain to Sandy Camp"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Gain to Sandy Camp"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Which road is Baker Lake Road"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "commitment",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Distance to summit"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Distance to summit"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "gainFt"
+   ],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Ice screw count"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Which side is east when crossing the Coleman"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which side is east when crossing the Coleman"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "descent",
+   "path": [],
+   "fact": "Rappels on the descent"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Distance to summit"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Distance to summit"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Glacier Creek Road washout"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Group-size limit"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "descent",
+   "path": [],
+   "fact": "High camp elevation and location"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "High camp elevation and location"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "gear",
+   "path": [
+    "gearTiers",
+    "recommended",
+    2
+   ],
+   "fact": "Hogsback camp named on an east-side route"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Distance"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Distance"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Cleaver base elevation"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "approach",
+   "path": [],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "gainFt"
+   ],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Gain to Hogsback camp"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Crater rim on the route line"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Crater rim on the route line"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Summit-day gain"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "approach_logistics",
+   "path": [
+    "permits"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Group-size limit"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    4
+   ],
+   "fact": "High camp elevation"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Distance to summit"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach time to camp"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "permit",
+   "path": [],
+   "fact": "Climbing permit / registration"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Climbing permit / registration"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "Climbing permit / registration"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent route"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Approach duration"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Location of the route"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Wilderness permit"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent route and where it ends"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent route and where it ends"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Descent route and where it ends"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction of the Ptarmigan Ridge approach"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Trailhead name"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Approach duration"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "beta",
+   "path": [],
+   "fact": "Route grade in the beta"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "before": {
+    "alpine_grade": "Grade I",
+    "commitment": "I",
+    "waypoints": [
+     {
+      "lat": 48.70681,
+      "lng": -121.81225,
+      "elev": 3360,
+      "name": "Park Butte / Schreiber's Meadow",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive to the end of Forest Road 13 (Sulfur Creek Road), which ends at the Park Butte / Schreiber's Meadow trailhead at about 3,360 feet. From the parking area, pick up Park Butte Trail 603 and cross Sulfur Creek on a footbridge or log crossing near the start — this can become a genuine ford during peak snowmelt."
+     },
+     {
+      "lat": 48.7985,
+      "lng": -121.88,
+      "elev": 5900,
+      "name": "Sandy Camp / Railroad Grade Camp",
+      "type": "Campsite",
+      "distMi": 4
+     },
+     {
+      "lat": 48.776797,
+      "lng": -121.814467,
+      "elev": 10781,
+      "name": "Mount Baker Summit",
+      "type": "Summit",
+      "distMi": 8.8
+     }
+    ],
+    "itinerary": {
+     "cal": "Best conditions are typically June-August before the Railroad Grade moraine gets too loose and before the glacier opens up late season.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Railroad Grade moraine from Schriebers Meadow up to one of the established high camps near 5,900-6,500 ft, leaving a long summit day for tomorrow. Water and flat sandy tent sites are available at several spots along the ridge.",
+       "hours": 3.5,
+       "miles": 3.8,
+       "title": "Approach to high camp",
+       "gainFt": 2300,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Railroad Grade / Sandy Camp high camp"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start well before dawn to be off the upper glacier before the sun softens the snow. Rope up on the Easton Glacier, trend past Sherman Peak and along the base of the Roman Wall, then climb steep snow to the summit plateau and Grant Peak; reverse the route back to camp and continue out to the trailhead the same day.",
+       "hours": 10.5,
+       "miles": 8.8,
+       "title": "Summit push and hike out",
+       "gainFt": 5100,
+       "lossFt": 7400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "2:30 AM",
+         "label": "Leave high camp",
+         "detail": "Roped up for glacier travel."
+        },
+        {
+         "time": "4:15 AM",
+         "label": "Climbing steadily",
+         "detail": "Typical pace reported by parties on the lower Easton Glacier."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Saddle above the crater (~9,800 ft)",
+         "detail": ""
+        },
+        {
+         "time": "8:30-9:00 AM",
+         "label": "Summit (Grant Peak)",
+         "detail": ""
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Begin descent",
+         "detail": "Aim to be off the glacier by mid-morning before the snow turns to slush."
+        },
+        {
+         "time": "1:00-3:00 PM",
+         "label": "Back at high camp, hike out",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the Easton Glacier to Grant Peak, then descend to the trailhead"
+      }
+     ],
+     "totalNote": "A classic 2-day glacier climb: ~12-13 miles round trip with about 7,400-7,600 ft of gain, camp-to-summit-to-car in one long second day."
+    },
+    "approach": "From the Park Butte/Schriebers Meadow Trailhead (~3,360 ft, end of FR 13/Sulfur Creek Road), the route follows Park Butte Trail 603. Cross Sulfur Creek on a footbridge/log crossing near the start (can be a ford in high water), then climb through Schriebers Meadow and forest switchbacks to Morovitz Meadows (~2 miles in). For the Easton Glacier route, leave the Park Butte trail here and bear left onto Railroad Grade Trail 603.2, which climbs the crest of a lateral moraine (the 'railroad grade') with the Easton Glacier dropping away on the right. High camp options are at established sites around 5,600 ft (roughly 3.75 miles from the trailhead) or at Sandy Camp, a cluster of rock-walled tent pads at the moraine's end near 5,900-6,000 ft where the maintained trail effectively ends and glacier travel begins. From Sandy Camp, gain the toe of the Easton Glacier, rope up, and ascend the broad glacier, generally staying climbers' right (east) of the major crevasse bands, to the base of the Roman Wall. Hazards: exposed moraine crest can be loose/exposed in wind, Sulfur Creek crossing can be difficult during peak snowmelt, and there is no reliable water source above Morovitz Meadows other than melting snow.",
+    "pitch_detail": [
+     {
+      "grade": "Trail",
+      "notes": "Park Butte Trail 603 crosses Sulfur Creek early (a log or footbridge that can turn into a ford at peak melt), then climbs through meadow and forest switchbacks to Morovitz Meadow about 2 miles in. Leave the Park Butte trail there and bear left onto the Railroad Grade trail. Morovitz is the last dependable running water.",
+      "pitch": "Schreiber Meadow → Railroad Grade"
+     },
+     {
+      "grade": "Moraine crest",
+      "notes": "Follow the narrow crest of the lateral moraine with the Easton Glacier falling away on the right; the edge is loose and exposed in wind. Camps sit around 5,600 ft or at Sandy Camp, rock-walled tent pads near 5,900–6,000 ft where the trail ends. Expect to melt snow for water from here up.",
+      "pitch": "Railroad Grade → camp"
+     },
+     {
+      "grade": "Glacier 20–30°, crevassed",
+      "notes": "Rope up at the glacier edge and climb roughly north toward Sherman Peak, keeping east (climber's right) of the main crevasse bands. Cracks grow larger and more frequent higher up, so expect end-runs and snow-bridge crossings that shift through the season. Leave camp in the small hours for firm bridges, and wand the track: the slope is broad and featureless in whiteout.",
+      "pitch": "Easton Glacier"
+     },
+     {
+      "grade": "Glacier, rockfall zone",
+      "notes": "Around 9,400–9,700 ft the route reaches the rim of steaming Sherman Crater, where sulfur gas is obvious; do not linger or descend toward the vents. Below Sherman Peak the slope is swept by rockfall, so cross it quickly, then trend west across the saddle to the eastern foot of the Roman Wall. This is the usual regroup and refuel spot.",
+      "pitch": "Sherman Crater → Roman Wall base"
+     },
+     {
+      "crux": true,
+      "grade": "35–45° snow/ice",
+      "notes": "About 1,000 vertical ft of sustained snow, mostly 35–40° with portions near 45°, the steepest ground on the route. It turns icy in cold or late-season conditions, and a rock outcrop above sheds stones, so stay right of the rocky rib and move steadily. Many parties face in to downclimb it on the way back.",
+      "pitch": "Roman Wall"
+     },
+     {
+      "grade": "Snow walk",
+      "notes": "The angle eases onto a very broad, nearly flat summit plateau. The true summit, Grant Peak, is a small snow bump at the far east-northeast edge rising only about 80 ft above the rest of the plateau. In cloud the plateau is easy to wander on, so follow your wands and a compass bearing back to the top of the Roman Wall.",
+      "pitch": "Summit dome"
+     }
+    ],
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No published numeric group-size cap for Baker specifically — don’t assume one.",
+     "rules": "No camping below 6,000 ft except at designated tent pads; no camping within 1 mile of Mazama, Iceberg, Hayes, and Arbuthnot Lakes and several named trails. Campfires banned (stoves only) within 1 mile of ~17 listed trails, including Heliotrope Ridge. Pack out human waste (blue bags) — no burial or glacier deposition.",
+     "permit": "No climbing permit required; Northwest Forest Pass for parking, free self-issue Wilderness permit at trailhead (optional climbing register recommended)",
+     "seasonal": "Baker Lake Road (FSR 11) and FSR 12 (Park Butte/Schriebers Meadow access) have had seasonal bridge-work closures — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "what": "No overnight permit required",
+      "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge, Park Butte and Artist Point trailheads; buy it ahead or on the Recreation.gov app."
+     }
+    },
+    "timing": {
+     "totalHrs": 14,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3.5,
+     "recommendedStart": "2:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 3.5,
+       "note": "Hike the Railroad Grade moraine from Schriebers Meadow up to one of the established high camps near 5,900-6,500 ft, leaving a long summit day for tomorrow. Water and flat sandy ten…",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10.5,
+       "note": "Alpine start well before dawn to be off the upper glacier before the sun softens the snow. Rope up on the Easton Glacier, trend past Sherman Peak and along the base of the Roman Wa…",
+       "fromTo": "Summit push and hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "road": {
+     "name": "Forest Road 13 (Baker Lake Rd/Sulfur Creek Rd) to Park Butte Trailhead",
+     "status": "Prone to potholes and slide debris; the Rocky Creek crossing near Schriebers Meadow has an unreliable seasonal bridge and can be a difficult, hazardous ford in high runoff — check current conditions before relying on an easy crossing.",
+     "driveNote": "Typically gated about 2 miles below the trailhead in winter/early spring. Call the Mt. Baker Ranger District (360-856-5700) to confirm current status before driving out."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "before": {
+    "commitment": "II",
+    "descent": "Descend via the Coleman-Deming Glacier route. From the ridge summit section, carefully descend back to the ridge base at 7,500 feet, then retrace glacier travel back to Coleman Glacier and Heliotrope Ridge base camp.",
+    "waypoints": [
+     {
+      "lat": 48.80201,
+      "lng": -121.89597,
+      "elev": 3437,
+      "name": "Heliotrope Ridge Trailhead",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.795,
+      "lng": -121.885,
+      "elev": 6000,
+      "name": "Heliotrope Ridge Camp",
+      "type": "Campsite",
+      "distMi": 3
+     },
+     {
+      "lat": 48.788,
+      "lng": -121.872,
+      "elev": 7500,
+      "name": "North Ridge Base / Coleman Glacier Junction",
+      "type": "Junction",
+      "distMi": 8
+     },
+     {
+      "lat": 48.776797,
+      "lng": -121.814467,
+      "elev": 10781,
+      "name": "Mount Baker Summit",
+      "type": "Summit",
+      "distMi": 12
+     }
+    ],
+    "approach": "Shares the Heliotrope Ridge Trailhead (~3,500-3,700 ft) and the same Trail 677 approach as the Coleman-Deming route: switchback through old growth to the Kulshan Cabin site/treeline fork (~2.25 mi), then up the Hogsback moraine to the standard high camp at ~6,000 ft (about 2.5 mi and 2,800 ft of gain, 4-5 hours for a laden party). From high camp, the North Ridge approach diverges from Coleman-Deming: rope up and cross the Coleman Glacier heading climbers' right (east), navigating the icefall below Colfax Peak, to gain the base of the North Ridge proper on the glacier's true right side. The standard start crosses a double bergschrund via a bridge or narrow snow ramp (can be a difficult, exposed step depending on the season) and climbs a broad 40-degree snow gully to the crest of the ridge. Hazards: crevasse and bergschrund crossing is the technical crux of the approach and is season-dependent (can close out entirely by late summer), icefall/rockfall exposure traversing below Colfax Peak, and the route sees far less traffic than Coleman-Deming so tracks/bridges may be unbroken.",
+    "approach_variants": [
+     {
+      "name": "Heliotrope Ridge and the Coleman Glacier crossing",
+      "notes": "Identical to Coleman-Deming as far as camp: Glacier Creek Road to the Heliotrope Ridge trailhead, Trail 677 through old growth to the fork at about two and a quarter miles, then the moraine crest to the Hogsback camps at around 6,000 ft — two and a half miles and 2,800 ft, four to five hours with a heavy pack. There are dry pitches at the top of the Hogsback.\n\nFrom camp the two routes part company. The North Ridge crosses the Coleman toward the toe of the ridge, threading between hundred-foot seracs and large open crevasses. This crossing changes year to year and is genuine route-finding, not a bootpack — and because this route sees far less traffic than Coleman-Deming, there may be no track and no established bridges to follow.",
+      "distMi": 2.5,
+      "gainFt": 2800,
+      "season": "May-Aug",
+      "hazards": [
+       "double bergschrund with a reported hidden third crevasse between the two visible ones",
+       "serac and crevasse navigation crossing the Coleman with no established track",
+       "icefall and rockfall exposure near the ice cliff",
+       "the schrund can close the standard start out entirely by late summer",
+       "far less traffic than the standard route, so no broken trail"
+      ],
+      "baseFinding": "The toe of the ridge is guarded by a DOUBLE bergschrund, and that pair of cracks is the thing to look for — it is the standard start and it is what tells you that you have arrived rather than stopped early on the glacier. Probe as you approach: parties have found a third, hidden crevasse tucked between the two obvious ones.\n\nAbove the schrunds the standard line goes up a broad snow gully of about forty degrees to gain the crest. Confirm before committing: the ground above should narrow into a defined snow-and-ice crest, and the enormous ice cliff that spans the north face should be overhead higher up. That ice cliff is the route's crux and its base is guarded by a big crevasse most parties turn on the left.\n\nThe usual error is being drawn onward by the boot track that keeps going up-glacier toward the Coleman-Deming col. If the ground ahead of you is broad open glacier trending toward a saddle, you have walked past the ridge. If the schrund is impassable or the snow is bottomless, parties have traversed hard toward the rock bands, on the reasoning that there are no crevasses in rock — but that is a fallback, not the route."
+     }
+    ],
+    "detailed_rack": "2-4 ice screws, a handful of pickets, two ice tools per person, rope and crevasse-rescue kit for the glacier approach, plus gear for 2-6 belayed ice pitches at the crux cliff.",
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "glacier travel",
+      "notes": "Rope up at high camp and cross the Coleman Glacier climbers' right (east) below Colfax Peak to reach the base of the North Ridge; icefall and rockfall exposure below Colfax is a recognized hazard on this traverse, and crevasse navigation is required throughout.",
+      "pitch": 1,
+      "anchor": "Glacier travel (roped, no belay)",
+      "lengthM": 400
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "30-40°",
+      "notes": "Cross the double bergschrund at the base of the ridge via a snow bridge or narrow ramp — season-dependent, and sometimes a committing, exposed step — then climb a broad snow gully to gain the ridge crest.",
+      "pitch": 2,
+      "anchor": "Picket",
+      "lengthM": 150
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "60-70° (AI3+)",
+      "notes": "The route's technical crux: recent parties describe roughly 15 ft of dead-vertical ice followed by a small bulge and another ~20 ft of near-vertical climbing, protected with a full screw rack (6-7 screws typical) and back-cleaning as needed. Ice quality is often brittle and steep here.",
+      "pitch": 3,
+      "anchor": "Ice screws",
+      "lengthM": 55
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "60-65° (AI2-3)",
+      "notes": "Continuation above the initial bulge on sustained 60-65 degree ice that eases slightly; the exact line and ice quality vary by year — a lower-angle 'secret passage' opens on the left later in the season, while a steeper alternate (WI4) exists further right on the serac wall.",
+      "pitch": 4,
+      "anchor": "Ice screws",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "30-40°",
+      "notes": "Above the ice cliff the angle relents to moderate snow/ice; trend climbers' left through crevasses on the upper ice cap, watching for cornices and a possible crevasse crossing just below the summit plateau before joining the standard Coleman-Deming descent.",
+      "pitch": 5,
+      "anchor": "Picket",
+      "lengthM": 300
+     }
+    ],
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads."
+   }
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "before": {
+    "descent": "Descend via the Coleman-Deming Glacier route. Rappel or downclimb from the upper ice face, navigate bergshrunds, and traverse back across the Coleman Glacier to Heliotrope Ridge camp. Multiple rappels on ice or snow anchors may be necessary depending on the descent line chosen.",
+    "pitches": 14,
+    "waypoints": [
+     {
+      "lat": 48.80201,
+      "lng": -121.89597,
+      "elev": 3437,
+      "name": "Heliotrope Ridge Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead sits at roughly 3,400 to 3,700 ft on Glacier Creek Road 39. Check the road status before committing: the washout adds about nine miles and 2,000 ft of travel on foot or bike before you even reach the sign-in kiosk."
+     },
+     {
+      "lat": 48.795,
+      "lng": -121.885,
+      "elev": 6000,
+      "name": "Heliotrope Ridge Camp",
+      "type": "Campsite",
+      "distMi": 3,
+      "directions": "Trail 677 climbs through old-growth forest and flower-filled avalanche chutes, with a couple of unbridged creek crossings that are awkward early season or after rain. At about 2.25 miles the maintained trail forks; the left branch goes to the Coleman Glacier overlook, so take the RIGHT climbers' path that drops toward the moraine. Past the former Kulshan Cabin site near 4,800 to 5,000 ft, the last reliable running water, the path climbs steeply up the crest of the Hogsback lateral moraine to the usual camps between about 6,500 and 7,200 ft, roughly 3 to 3.5 miles and 3,000 ft above the car. Above camp there is no water except what you melt."
+     },
+     {
+      "lat": 48.781,
+      "lng": -121.865,
+      "elev": 8500,
+      "name": "Coleman Headwall Base",
+      "type": "Hazard",
+      "distMi": 10,
+      "directions": "Rope up for glacier travel and cross the broken lower Coleman, generally trending up toward 8,000 ft to meet the North Ridge tracks before dropping back down and cutting under the Roman Nose to reach the base near 8,500 ft. This crossing is a real route-finding crux that changes year to year, with big crevasses to weave around, questionable snow bridges, and sometimes a committing, barely-reversible jump or a short vertical step to get established. Leave camp in the dark (starts between 11 p.m. and 4:30 a.m. are typical) so you are past the exposed crossing and the lower face before the sun brings rock and ice down off the headwall and the Black Buttes."
+     },
+     {
+      "lat": 48.776797,
+      "lng": -121.814467,
+      "elev": 10781,
+      "name": "Mount Baker Summit",
+      "type": "Summit",
+      "distMi": 12.5,
+      "directions": "Roughly a dozen pitches of sustained 45 to 50 degree neve and ice lead up the face: hard, dirty ice on leftward-trending traverses low down with rockfall exposure from a choss band above, then short steeper steps and an 800 ft band of brittle, plated 60 to 80 degree ice that takes screws well despite looking suspect. A bergschrund near 10,000 ft is the other crux and its lip often forces a short, occasionally overhanging step, sometimes belayed or lowered across off a screw or picket. Above it the angle relents to moderate snow and then an easy slope onto the summit plateau; 8 to 12 hours camp-to-summit is typical."
+     }
+    ],
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No published numeric group-size cap for Baker specifically — don’t assume one.",
+     "rules": "No camping below 6,000 ft except at designated tent pads; no camping within 1 mile of Mazama, Iceberg, Hayes, and Arbuthnot Lakes and several named trails. Campfires banned (stoves only) within 1 mile of ~17 listed trails, including Heliotrope Ridge. Pack out human waste (blue bags) — no burial or glacier deposition.",
+     "permit": "No climbing permit is required. The Forest Service does not require permits for climbing Mount Baker.",
+     "closures": "Group size limited to 12 in Mt. Baker Wilderness; no campfires; no toilets — pack out human waste.",
+     "seasonal": "Baker Lake Road (FSR 11) and FSR 12 (Park Butte/Schriebers Meadow access) have had seasonal bridge-work closures — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "landManager": "Mt. Baker-Snoqualmie National Forest — Mt. Baker Wilderness (USFS)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest — Mt. Baker Wilderness (USFS)",
+     "parking_pass": "Northwest Forest Pass",
+     "passRequired": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "what": "No overnight permit required",
+      "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge, Park Butte and Artist Point trailheads; buy it ahead or on the Recreation.gov app."
+     }
+    },
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "itinerary": {
+     "cal": "Best ice conditions are typically late winter through spring (Feb-May); the headwall can go bare/rotten by mid-late summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach as Coleman-Deming and North Ridge, pushed slightly higher to stage below the headwall. Some parties scout the glacier approach the afternoon before to speed up the alpine start.",
+       "hours": 4.5,
+       "miles": 3.5,
+       "title": "Approach to high camp",
+       "gainFt": 3000,
+       "lossFt": 0,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Heliotrope Ridge trailhead to Coleman Glacier camp (~6,700 ft)"
+      },
+      {
+       "n": 2,
+       "note": "A very early alpine start (1-2 AM) to travel up the center of the broken Coleman Glacier to the base of the headwall (~8,500 ft), then climb roughly 12 pitches of 45-50 degree ice with short steeper steps and a bergschrund crossing. Descend the non-technical Coleman-Deming route back to camp and hike out; this is a long, sustained technical day.",
+       "hours": 13,
+       "miles": 9.5,
+       "title": "Climb the headwall and hike out",
+       "gainFt": 4100,
+       "lossFt": 7100,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "1:00-2:00 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start, headlamps."
+        },
+        {
+         "time": "~2-3 hrs later",
+         "label": "Reach base of headwall (~8,500 ft)",
+         "detail": ""
+        },
+        {
+         "time": "Morning-midday",
+         "label": "Climb the headwall",
+         "detail": "~12 pitches, 60-70m rope stretches, 45-50 degree ice with steeper sections; 8-12 hrs total to the top is typical."
+        },
+        {
+         "time": "Early-mid afternoon",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "Afternoon",
+         "label": "Descend Coleman-Deming to camp",
+         "detail": ""
+        },
+        {
+         "time": "Evening",
+         "label": "Hike out to trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the Coleman Headwall to the summit, descend Coleman-Deming, hike out"
+      }
+     ],
+     "totalNote": "A committing 2-day ice route (guided trips sometimes run 3 days for a rest/buffer day); very strong parties occasionally push it car-to-car in a single ~14 hr day."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "before": {
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads."
+   }
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "before": {
+    "descent": "Descend via the Boulder Glacier and cleaver back to the high camp below the cleaver at approximately 7,800-8,000 feet (described as one of the best bivouac sites on Mount Baker), then return to Boulder Ridge trailhead via the approach route.",
+    "waypoints": [
+     {
+      "lat": 48.73525,
+      "lng": -121.71027,
+      "elev": 2700,
+      "name": "Boulder Ridge Trailhead (Trail #605, FR-1131)",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Baker Lake Road to FR-1130, then follow FR-1131 to its end at the Boulder Ridge Trailhead, around 2,700 ft. Boulder Ridge Trail #605 starts from the road's end. This is the lowest trailhead on the mountain, which is why the climb adds up to about 8,000 ft of cumulative gain — the biggest of any Baker route."
+     },
+     {
+      "lat": 48.79,
+      "lng": -121.84,
+      "elev": 8000,
+      "name": "High Camp below Boulder-Park Cleaver",
+      "type": "Campsite",
+      "distMi": 8
+     },
+     {
+      "lat": 48.776797,
+      "lng": -121.814467,
+      "elev": 10781,
+      "name": "Mount Baker Summit",
+      "type": "Summit",
+      "distMi": 11
+     }
+    ],
+    "gear": {
+     "rack": [
+      "30m glacier rope (per team)",
+      "1 picket each",
+      "Crampons & ice axe",
+      "Crevasse rescue kit",
+      "Helmet (highly recommended)",
+      "Harness"
+     ],
+     "gearTiers": {
+      "optional": [
+       "Skis for descent (spring snow)",
+       "Wands to mark route in whiteout",
+       "Satellite communicator"
+      ],
+      "required": [
+       "Glacier rope (30m per team)",
+       "Mountaineering crampons & ice axe",
+       "1 picket anchor per person",
+       "Crevasse-rescue kit (4-6 pickets, 1 screw, slings, ascenders)",
+       "Helmet",
+       "Locking carabiners & belay device"
+      ],
+      "recommended": [
+       "Map and compass or GPS (route-finding can be tricky)",
+       "Second tool for direct line (early season)",
+       "Overnight kit for high camp at Hogsback"
+      ]
+     }
+    },
+    "approach_variants": [
+     {
+      "name": "Boulder Ridge Trail #605 to ridge camp, then across the lower Boulder Glacier to the toe of the cleaver",
+      "notes": "The drive and the walk in are identical to the Boulder Glacier route: Baker Lake Road to FR-1130, then FR-1131 to the Boulder Ridge Trailhead near 2,700 ft, and Trail #605 for about two flat miles through clear-cut and timber to the boggy clearing at the wilderness boundary. Above that the user path climbs steep heather and takes a Class 3 rock step — the one parties have found with a fixed line on it — to a camp on the ridge where it meets snow and ice. A second, higher camp exists on a flat shelf sheltered by the cleaver itself around 7,500 ft, which shortens summit day considerably and is the reason some parties carry over. From camp the day begins with a glacier crossing rather than a glacier climb: cross the lower Boulder heading northwest to the toe of the cleaver, then follow the cleaver up to just below a large rock buttress near 9,300 ft, where several finishes are possible. This is Joe Morovits's 1894 line, and it is a different climb from the Boulder Glacier route despite sharing a trailhead, a camp and a name, and published first-ascent records for the two are muddled.",
+      "season": "Roughly May-Aug — a longer usable window than the pure glacier line beside it, because the cleaver stays climbable after the ice below it has broken up",
+      "hazards": [
+       "A Class 3 rock step on the approach with an unknown fixed line sometimes in place",
+       "Crevasse navigation on the short crossing of the lower Boulder to the toe, which changes year to year",
+       "Rockfall exposure near the 9,300 ft buttress, going up and coming down",
+       "The 7,500 ft high camp sits on the mountain with no bail-out short of reversing the cleaver",
+       "8,000 ft of cumulative gain — the biggest gain of any Baker route because the trailhead is the lowest"
+      ],
+      "baseFinding": "THE BASE IS A ROCK RIB THAT RISES OUT OF THE GLACIER, AND YOU FIND IT BY BEARING NORTHWEST OFF CAMP AND STOPPING WHEN THE ICE ENDS. That is the whole test and it works blind: from the ridge camp the crossing is a short one, the bearing is northwest, and the thing you are walking toward is the only rock rib coming down into the glacier on that side. Walk until the ice runs into rock. Do not look for a summit.\n\nCONFIRM IT: at the toe you should be able to get off the ice and onto rock without climbing anything — the cleaver's foot is a walk-on, not a step. If you are standing under a wall you have to climb to get established, you are somewhere else on the glacier margin.\n\nTHE DISCRIMINATOR AGAINST THE ROUTE THAT SHARES THIS CAMP: the Boulder Glacier route never leaves the ice. If you are still roped up on glacier at 8,000 ft with no rock under you, you are on that route rather than this one. Conversely if you are on a rock spine with glacier falling away on BOTH sides, you are on the cleaver and you are right.\n\nWHAT TOO HIGH LOOKS LIKE: the cleaver runs into a large rock buttress around 9,300 ft. That buttress is a decision point, not a base — it is where the finishes diverge, and if you have reached it you are 3,600 ft above the start of the route."
+     }
+    ],
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads."
+   }
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "before": {
+    "approach": "Coleman-Deming on Mount Baker starts at Heliotrope Ridge TH (3,650 ft) via Glacier Creek Road (FS 39). Gain 2,800 ft over 2.5 miles through forest and alpine meadows, crossing Grouse, Kulshan, and Heliotrope Creeks to reach Hogsback Camp (6,000 ft). Cross creeks in early morning before afternoon glacial melt surge. From Hogsback, rope up on Coleman and Deming Glaciers (crevasses, route-finding). Roman Wall (~40°) is the crux—steep snow between Deming Glacier and summit plateau. Most parties summit on day two.",
+    "approach_variants": [
+     {
+      "name": "Heliotrope Ridge Trail #677 to the Hogsback",
+      "notes": "Glacier Creek Road (FS 39) to the Heliotrope Ridge trailhead. Trail 677 switchbacks up through old growth and avalanche chutes, crossing Grouse, Kulshan and Heliotrope Creeks. Those crossings are fed by glacier melt and run highest in the afternoon, so cross early on the way in and expect them to be worse coming out.\n\nAt roughly two and a quarter miles the trail forks: left continues to the Coleman Glacier overlook, right is the climbers' path onto the moraine crest known as the Hogsback. Standard camp sits at about 6,000 ft, around two and a half miles and 2,800 ft above the car. There is running water up to about the old Kulshan Cabin site; above the camp there is nothing but what you melt. Some parties camp higher, toward the Black Buttes at around 7,200 ft.\n\nGlacier Creek Road has a history of washing out; when it has been closed low, parties have added several miles of road on foot or bike before reaching the sign-in kiosk.",
+      "distMi": 2.5,
+      "gainFt": 2800,
+      "season": "May-Sep",
+      "hazards": [
+       "creek crossings surge with afternoon glacial melt",
+       "annual avalanche debris off the Colfax Peak ridge across the standard track",
+       "crevasses on the Coleman and upper Deming",
+       "whiteout navigation on the featureless upper glacier and summit plateau",
+       "no water above the Hogsback camp"
+      ],
+      "baseFinding": "The climbing begins where the Hogsback's crest gives out and you step onto the Coleman — rope up when the snow slope steepens rather than at a fixed altitude, because the transition moves with the snowline.\n\nThe feature that actually matters for navigation is the saddle between Colfax Peak and Baker's summit cone. From the top of the moraine head roughly east up the glacier, curving south as the crevasses dictate, staying near the Colfax ridge but not under it — that flank avalanches every year and has left debris blocks as big as cars strewn across the track. When you reach the saddle, turn left, east and slightly north, and go up the pumice ridge that leads to the foot of the Roman Wall.\n\nThe negative marker is the one that catches people in cloud: if you are climbing steepening snow with rock close on one side and you have NOT passed through a broad, obvious col, you are on the flank below Colfax, not on the Roman Wall. The Roman Wall is approached across open ground with the saddle behind you and nothing beside you. This stretch has almost no natural handrails, the summit plateau on top is very large and flat, and parties get lost here in whiteout more than anywhere else on the mountain — wand it on the way up."
+     }
+    ],
+    "pitch_detail": [
+     {
+      "grade": "Trail, then snow",
+      "notes": "Heliotrope Ridge trail climbs about 2,800 ft through forest and meadow, crossing Grouse, Kulshan and Heliotrope creeks, to camps on and around the Hogsback moraine near 6,000 ft. The creeks swell with afternoon melt, so cross them early in the day.",
+      "pitch": "Trailhead → Hogsback camp"
+     },
+     {
+      "grade": "Glacier 20–30°, crevassed",
+      "notes": "Rope up and climb south then southeast toward the Black Buttes, weaving through crevasse zones; late in the season some cracks span the whole slope and leave a single snowbridge. Higher up the track swings east under Colfax Peak, where the icefall off Colfax threatens the route: cross beneath it without stopping. Gain about 3,000 ft to the saddle.",
+      "pitch": "Coleman Glacier"
+     },
+     {
+      "grade": "Ice saddle, pumice ridge",
+      "notes": "The broad ice saddle at about 9,000 ft sits between Colfax Peak and the summit cone; it is a common rest stop. From it, climb roughly 300 ft east up the exposed pumice ridge on a boot-beaten path, where the terrain turns noticeably steeper and the Deming side opens up on the right.",
+      "pitch": "Black Buttes saddle / Pumice Ridge"
+     },
+     {
+      "crux": true,
+      "grade": "Snow/ice to 40°",
+      "notes": "From the top of the pumice ridge, climb the steep snow slope to the right of the Roman Wall's rock, roughly 9,300 to 10,400 ft. In low-snow years or after a freeze it is hard ice that demands careful crampon work, and it is the most exposed ground on the route. Descending, most parties face in on the steepest part, especially in whiteout.",
+      "pitch": "Roman Wall"
+     },
+     {
+      "grade": "Snow walk",
+      "notes": "The slope relents onto a flat snowfield between the old crater and the true summit, about ten minutes of walking to the Grant Peak high point. The plateau is fully exposed to wind and loses all definition in cloud, so mark the top of the Roman Wall before heading across.",
+      "pitch": "Summit dome"
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.80218056,
+      "lng": -121.894725,
+      "elev": 3700,
+      "name": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 3700,
+      "directions": "From the Mount Baker Highway (SR 542), turn onto Glacier Creek Road (FS 39) and follow it to the Heliotrope Ridge trailhead for Trail #677, at roughly 3,700 ft. Check the road first: FS 39 is closed to vehicles through October 2026 after washouts, though it stays open to pedestrians, and parties have had to add several miles of road on foot or bike to reach the sign-in kiosk. When it is drivable, parking is limited and fills at weekends, and costs $5 a day or $30 for an annual pass. The wilderness permit is free and self-issued. Glacier is the nearest supplies at 12 miles, with fuel in Maple Falls at 20 miles."
+     },
+     {
+      "lat": 48.788,
+      "lng": -121.85,
+      "elev": 6000,
+      "name": "Hogsback Camp",
+      "type": "Campsite",
+      "distMi": 2.5,
+      "elevFt": 6000
+     },
+     {
+      "lat": 48.783,
+      "lng": -121.83,
+      "elev": 9200,
+      "name": "Black Buttes Saddle",
+      "type": "Junction",
+      "distMi": 4,
+      "elevFt": 9200
+     },
+     {
+      "lat": 48.776797,
+      "lng": -121.814467,
+      "elev": 10781,
+      "name": "Mt. Baker summit (Grant Peak)",
+      "type": "Summit",
+      "distMi": 5.5,
+      "elevFt": 10781
+     }
+    ],
+    "itinerary": {
+     "cal": "Late July-August the bergschrund and crevasses near the crater rim open up and route-finding gets trickier; check recent reports.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A straightforward forested and moraine approach to the Hogsback camp around 5,800-6,000 ft, the standard staging point for Baker's most popular route.",
+       "hours": 3.5,
+       "miles": 2.9,
+       "title": "Approach to Hogsback camp",
+       "gainFt": 2200,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Heliotrope Ridge trailhead to Hogsback camp"
+      },
+      {
+       "n": 2,
+       "note": "Early alpine start, crampons on at camp, roped travel up the Coleman Glacier and around the crater rim to the summit; descend the same way back to camp, break down camp, and hike out the same day.",
+       "hours": 10.5,
+       "miles": 8.4,
+       "title": "Summit and hike out",
+       "gainFt": 4700,
+       "lossFt": 6900,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Wake at camp",
+         "detail": ""
+        },
+        {
+         "time": "5:15 AM",
+         "label": "Leave camp on crampons",
+         "detail": ""
+        },
+        {
+         "time": "9:45 AM",
+         "label": "Summit",
+         "detail": "~4.5 hr push from camp in a reported June ascent."
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Begin descent",
+         "detail": ""
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at Hogsback camp",
+         "detail": ""
+        },
+        {
+         "time": "4:00 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the Coleman and Deming Glaciers to the summit, descend to the car"
+      }
+     ],
+     "totalNote": "The standard 2-day glacier climb on Baker: ~10-12 miles round trip and 6,900-7,300 ft gain, most parties camp one night at the Hogsback."
+    },
+    "timing": {
+     "totalHrs": 14,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3.5,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 3.5,
+       "note": "A straightforward forested and moraine approach to the Hogsback camp around 5,800-6,000 ft, the standard staging point for Baker's most popular route.",
+       "fromTo": "Approach to Hogsback camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10.5,
+       "note": "Early alpine start, crampons on at camp, roped travel up the Coleman Glacier and around the crater rim to the summit; descend the same way back to camp, break down camp, and hike o…",
+       "fromTo": "Summit and hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate-strong; roughly 7,000 ft of gain round trip on summit day after the approach",
+      "packWeight": "30-40 lb approach pack"
+     },
+     "approachTime": "~4-5 hrs to Hogsback camp (~6,000 ft) via Heliotrope Ridge",
+     "requiredSkills": [
+      "Basic glacier/rope-team travel",
+      "Self-arrest with an ice axe",
+      "Crevasse rescue fundamentals (strongly recommended)",
+      "Comfort on moderate snow to ~40° (Roman Wall)",
+      "Alpine-start endurance and night navigation"
+     ],
+     "experienceLevel": "Beginner-to-intermediate glacier mountaineering; a common first big glacier climb"
+    },
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "approach_logistics": {
+     "parking": "Limited; fills weekends. $5/day or $30 annual pass",
+     "peakLat": 48.776797,
+     "peakLng": -121.814467,
+     "permits": "Free self-issue wilderness permit",
+     "supplies": "Glacier, WA (12 mi); Maple Falls (20 mi) for fuel",
+     "trailhead": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+     "access_road": "Mount Baker Hwy (SR 542) to Glacier Creek Road (FS 39)",
+     "trailheadLat": 48.80218056,
+     "trailheadLng": -121.894725,
+     "seasonalNotes": "Open May-Sep; FS 39 closed to vehicles through Oct 2026 (washouts); pedestrians OK",
+     "trailhead_gps": "48.8022, -121.8956",
+     "trailhead_name": "Heliotrope Ridge Trailhead",
+     "trailheadDirection": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677",
+     "trailhead_elevation_ft": 3650
+    },
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "No published numeric group-size cap for Baker specifically — don’t assume one.",
+     "rules": "No camping below 6,000 ft except at designated tent pads; no camping within 1 mile of Mazama, Iceberg, Hayes, and Arbuthnot Lakes and several named trails. Campfires banned (stoves only) within 1 mile of ~17 listed trails, including Heliotrope Ridge. Pack out human waste (blue bags) — no burial or glacier deposition.",
+     "permit": "No climbing permit is required. The Forest Service does not require permits for climbing Mount Baker.",
+     "seasonal": "Baker Lake Road (FSR 11) and FSR 12 (Park Butte/Schriebers Meadow access) have had seasonal bridge-work closures — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "what": "No overnight permit required",
+      "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge, Park Butte and Artist Point trailheads; buy it ahead or on the Recreation.gov app."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.73521,
+      "lng": -121.71027,
+      "elev": 2200,
+      "name": "Boulder Ridge Trailhead",
+      "note": "Boulder Ridge Trail #605 off Baker Lake Rd/FS 1130/1131.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.776797,
+      "lng": -121.814467,
+      "elev": 10781,
+      "name": "Mt. Baker summit (Grant Peak)",
+      "type": "Summit",
+      "distMi": 6.35,
+      "elevFt": 10781,
+      "distFrom": "track"
+     }
+    ],
+    "itinerary": {
+     "cal": "A less-traveled, drier east-side route; conditions and the boot path are less established than the Coleman-Deming or Easton sides, so allow extra route-finding time.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long, arduous east-side approach through clearcut and timber onto Boulder Ridge; most parties push up to a sheltered site around 6,800-7,500 ft near the base of the cleaver to shorten the summit day, rather than stopping at the lower 5,200-5,700 ft options.",
+       "hours": 4.5,
+       "miles": 6.5,
+       "title": "Approach to high camp",
+       "gainFt": 3800,
+       "lossFt": 0,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Boulder Ridge trailhead to camp at the toe of the Cleaver"
+      },
+      {
+       "n": 2,
+       "note": "From camp, climb the glacier alongside the cleaver, negotiating crevasses and a bergschrund, then finish up steep snow for the last ~500 ft to the summit. Reverse the route back to camp and continue out to the trailhead.",
+       "hours": 12,
+       "miles": 9.5,
+       "title": "Summit and hike out",
+       "gainFt": 3200,
+       "lossFt": 7000,
+       "packLb": 18,
+       "schedule": [],
+       "objective": "Climb the Boulder Glacier/Cleaver to the summit, descend to the car"
+      }
+     ],
+     "totalNote": "A quieter, longer approach than the standard routes: 4-5 hrs to camp, then a 5-7 hr summit push followed by the full hike out, for roughly 16 miles and 7,000 ft round trip."
+    },
+    "timing": {
+     "totalHrs": 16.5,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 4.5,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "A long, arduous east-side approach through clearcut and timber onto Boulder Ridge; most parties push up to a sheltered site around 6,800-7,500 ft near the base of the cleaver to sh…",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "From camp, climb the glacier alongside the cleaver, negotiating crevasses and a bergschrund, then finish up steep snow for the last ~500 ft to the summit. Reverse the route back to…",
+       "fromTo": "Summit and hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "approach_variants": [
+     {
+      "name": "Boulder Ridge Trail #605 to the moraine, then the lower Boulder Glacier",
+      "notes": "From the Boulder Ridge Trailhead at the end of FR-1131 off Baker Lake Road (about 2,700 ft — the lowest trailhead of any Baker route, which is where the 7,000+ ft of gain comes from), follow Boulder Ridge Trail #605. The first two miles are nearly flat through old clear-cut and timber and end at a boggy clearing at the Mount Baker Wilderness boundary; the maintained tread effectively stops there. Beyond it the route is a steep, unmaintained boot path up heather. Around 4,700 ft it crosses a Class 3 rock band, which parties have sometimes found protected by a fixed line left by an earlier team — treat any fixed line as unknown gear, not as trail furniture. Above the rock band the path gains the crest of a lateral moraine and follows it. Between the meadow and the basalt cliff, stay on or near the moraine crest north of Boulder Creek: the game trails here drop toward the creek and lead nowhere useful. Camp is on the ridge. Two elevations are published for it and they do not agree — so plan to camp where the ridge runs out into snow rather than at a number.",
+      "season": "Roughly May-Jul. This is a short-season route: the Boulder shrinks and breaks up early, and by August the crevasse field that is walkable in June is a maze",
+      "hazards": [
+       "A Class 3 rock band around 4,700 ft on an unmaintained boot path, sometimes with an unknown fixed line on it",
+       "Losing the moraine crest onto game trails that drop to Boulder Creek",
+       "A crevasse field that opens fast — this route has one of the shortest usable seasons on the mountain",
+       "Rockfall from the buttress near 9,300 ft on the upper mountain, on the way down as well as up",
+       "7,000 ft of gain from the lowest trailhead on the peak, so a late turnaround is a long descent in the dark"
+      ],
+      "baseFinding": "THE MORAINE CREST IS THE HANDRAIL, AND THE ROUTE STARTS WHERE IT DIES. Everything from the rock band upward is a walk along a single narrow spine of moraine with the drop into Boulder Creek on one side. In cloud you do not need to see anything: keep the crest under your feet and keep the creek noise on the same side of you the whole way. If the ground under you goes flat and broad, or you are suddenly walking with the creek on the other side, you have come off the moraine and are on the game trails below it.\n\nARRIVAL: the ridge runs out into snow and ice near 6,300 ft, and that transition — trail-and-heather to glacier — is the base of the route. There is nothing subtle about it; the ground stops being walkable in boots.\n\nTHE DISCRIMINATOR AGAINST THE OTHER ROUTE FROM THIS CAMP, and it matters because both start from the same spot: this route stays ON THE GLACIER. The Boulder-Park Cleaver route crosses the lower glacier northwest to the toe of a rock cleaver and gets onto rock. If you find yourself walking toward a rock rib and looking for a place to step off the ice, you are on the cleaver route, not this one. This route goes up the ice.\n\nWHAT GOING TOO FAR LOOKS LIKE: contouring so far northwest that the Park Glacier headwall comes into view above you. That is the neighbouring aspect and its own set of routes."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong; long approach on the east side to a high camp before the summit push",
+      "packWeight": "35-45 lb (multi-day)"
+     },
+     "approachTime": "~6-8 hrs from the Baker Lake/Boulder Creek side to a high camp",
+     "requiredSkills": [
+      "Glacier travel and crevasse rescue",
+      "Moderate snow/ice climbing to alpine Grade II-III",
+      "Route-finding on the Boulder Cleaver",
+      "Stamina for a long, less-established approach"
+     ],
+     "experienceLevel": "Intermediate glacier mountaineering with comfort on a longer, less-traveled approach"
+    },
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Group size capped at 12 (see group_limit).",
+     "rules": "No camping below 6,000 ft except at designated tent pads; no camping within 1 mile of Mazama, Iceberg, Hayes, and Arbuthnot Lakes and several named trails. Campfires banned (stoves only) within 1 mile of ~17 listed trails, including Heliotrope Ridge. Pack out human waste (blue bags) — no burial or glacier deposition.",
+     "permit": "Mount Baker Climbing",
+     "seasonal": "Baker Lake Road (FSR 11) and FSR 12 (Park Butte/Schriebers Meadow access) have had seasonal bridge-work closures — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "what": "No overnight permit required",
+      "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge, Park Butte and Artist Point trailheads; buy it ahead or on the Recreation.gov app."
+     }
+    },
+    "emergency": {
+     "notes": "Call 911; Whatcom County SAR is coordinated via the Sheriff's Office.",
+     "county": "Whatcom",
+     "rangerStation": "Mt. Baker Ranger Station, 810 State Route 20, Sedro-Woolley, WA 98284 - (360) 854-2553. Climbers must sign the climbers' register at this office before attempting a climb.",
+     "nearestHospital": null,
+     "sheriffDispatch": "911"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "before": {
+    "approach": "Drive the Mount Baker Highway (SR 542) to its end at Artist Point. Start on Chain Lakes Trail 682 for about a mile to the Ptarmigan Ridge junction, then follow Ptarmigan Ridge Trail 682.1 along the crest, passing beneath Coleman Pinnacle, to Camp Kiser at roughly 5 miles. Past Camp Kiser the maintained tread ends and a primitive climbers' boot path takes over. Leave the crest on snow to climber's right, traverse below the ridgeline to a rocky saddle, cross to its far side and work beneath the cliff bands down onto the Rainbow Glacier. Cross the Rainbow and climb onto the Park Glacier; most parties camp near The Portals. From camp, ascend the Park Glacier through the crevasses toward the Park Glacier Headwall, with the Cockscomb rising above it, and follow the ridge to the summit plateau. Note that the Coleman and Roosevelt Glaciers are on Baker's west and northwest flanks and are not crossed on this approach.",
+    "approach_variants": [
+     {
+      "name": "Artist Point, Ptarmigan Ridge and the Portals",
+      "notes": "The same walk in as the Park Glacier Headwall: Chain Lakes Trail 682 from Artist Point for about a mile to the Ptarmigan Ridge junction, then Trail 682.1 along the crest past Coleman Pinnacle to Camp Kiser at roughly five miles. Past Camp Kiser the maintained trail ends and a primitive bootpath takes over through the Portals.\n\nFrom there leave the crest on snow, traverse below the ridgeline to a rocky saddle, cross to its far side, work beneath the cliff bands down onto the Rainbow Glacier, cross it and climb onto the Park Glacier. Camps are usually near the Portals.\n\nSnow lingers here into late season, which makes the walk long early and the navigation harder later.",
+      "season": "spring to early summer",
+      "hazards": [
+       "steep snow chutes and long snow travel early in the season",
+       "unmarked bootpath braid through the Portals",
+       "crevasses on both the Rainbow and the Park",
+       "cliff bands to be turned between the rocky saddle and the Rainbow Glacier"
+      ],
+      "baseFinding": "The Cockscomb is the formation above the Park Glacier Headwall — the ridge is gained by going up the Park Glacier through the crevasses toward the headwall with the Cockscomb standing above it, then following the ridge to the summit plateau.\n\nUse the Cockscomb itself as the aiming mark rather than any point on the glacier: it is the only thing on this side of the mountain that reads as a serrated rock crest above a headwall. If you are on a glacier with no rock crest above the wall in front of you, you are on the Rainbow rather than the Park and have not finished the crossing.\n\nOne durable negative check: the Coleman and Roosevelt Glaciers lie on Baker's west and north-west flanks and are not crossed on this approach at any point."
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.7797,
+     "peakLng": -121.8204,
+     "trailhead": "Artist Point (Ptarmigan Ridge Trailhead)",
+     "trailheadLat": 48.8465,
+     "trailheadLng": -121.6927,
+     "trailheadDirection": "Start at Artist Point parking area (elevation 5,075 ft)"
+    },
+    "waypoints": [
+     {
+      "lat": 48.8465,
+      "lng": -121.6927,
+      "elev": 3437,
+      "name": "Artist Point (Ptarmigan Ridge Trailhead)",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive the Mount Baker Highway (SR 542) to its end at the Artist Point parking area, which is the Ptarmigan Ridge trailhead for this route. The walk in leaves the lot on Chain Lakes Trail 682 and reaches the Ptarmigan Ridge junction after about a mile."
+     },
+     {
+      "lat": 48.795,
+      "lng": -121.885,
+      "elev": 6000,
+      "name": "Heliotrope Ridge Camp",
+      "type": "Campsite",
+      "distMi": 3
+     },
+     {
+      "lat": 48.785,
+      "lng": -121.868,
+      "elev": 7800,
+      "name": "Cockscomb Ridge Base (Coleman/Roosevelt Glacier Junction)",
+      "type": "Junction",
+      "distMi": 9.5
+     },
+     {
+      "lat": 48.782,
+      "lng": -121.865,
+      "elev": 9200,
+      "name": "Cockscomb Tower",
+      "type": "Hazard",
+      "distMi": 11
+     },
+     {
+      "lat": 48.776797,
+      "lng": -121.814467,
+      "elev": 10781,
+      "name": "Mount Baker Summit",
+      "type": "Summit",
+      "distMi": 12.5
+     }
+    ],
+    "descent": "The standard exit reverses the climb: drop off the summit plateau past the headwall, descend the Park Glacier, recross the Rainbow to camp near The Portals, then retrace the boot path and Ptarmigan Ridge Trail to Artist Point. On the way out most parties take a lower line around the north side of Coleman Pinnacle to avoid regaining elevation. Descending the Coleman-Deming instead puts you on Baker's west side at Heliotrope Ridge, reached by Glacier Creek Road roughly 40 road miles from Artist Point — that carryover is the Watson Traverse variation and only works with a car shuttle arranged in advance.",
+    "timing": {
+     "totalHrs": 17.5,
+     "summitTimeHrs": 13,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 7,
+     "recommendedStart": "2:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "Standard Heliotrope Ridge approach to a Coleman Glacier camp near the Hogsback (~6,000 ft), the same camp used for Coleman-Deming and North Ridge parties. This positions you for th…",
+       "fromTo": "Approach to Coleman/Hogsback camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 13,
+       "note": "An early, roped start to cross the Coleman/Roosevelt glaciers and reach the ridge crest around 7,500 ft, threading thin snow bridges through a maze of crevasses and contouring east…",
+       "fromTo": "Climb the ridge and descend",
+       "section": "Climb"
+      }
+     ]
+    },
+    "crowds": {
+     "peakTraffic": "Occasional attempts in May-June",
+     "solitudeRating": 5,
+     "estimatePerSeason": "Very low - likely single digits to low double digits of ascents per season; an obscure mixed line near the Boulder Glacier"
+    },
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Northwest Forest Pass ($5 day use or $30 annual) or America the Beautiful Pass required. Free self-issue wilderness permit available at trailhead (day use or overnight). Group size limit 12 people maximum. Vault toilets and parking for ~160 vehicles at Artist Point. No water available. Seasonal: Route becomes significantly more hazardous (loose rock) after early summer; spring/early summer strongly recommended. Glacier conditions variable year to year.",
+     "rules": "No camping below 6,000 ft except at designated tent pads; no camping within 1 mile of Mazama, Iceberg, Hayes, and Arbuthnot Lakes and several named trails. Campfires banned (stoves only) within 1 mile of ~17 listed trails, including Heliotrope Ridge. Pack out human waste (blue bags) — no burial or glacier deposition.",
+     "permit": "No climbing permit is required. The Forest Service does not require permits for climbing Mount Baker.",
+     "seasonal": "Baker Lake Road (FSR 11) and FSR 12 (Park Butte/Schriebers Meadow access) have had seasonal bridge-work closures — check current Forest Service alerts before a trip.",
+     "group_limit": 12,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "what": "No overnight permit required",
+      "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Heliotrope Ridge, Park Butte and Artist Point trailheads; buy it ahead or on the Recreation.gov app."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "before": {
+    "descent": "Descend the Coleman-Deming route",
+    "descent_text": "Descend Coleman-Deming to Heliotrope Ridge",
+    "pro_tips": [
+     "Early-season firm ice gives the best and safest conditions",
+     "Manage serac exposure with cold timing",
+     "A standard-route descent simplifies the day"
+    ],
+    "approach": "Southeast via Chain Lakes Trail to Ptarmigan Ridge. From Artist Point parking, take Chain Lakes Trail (682) to Ptarmigan Ridge Trail (682.1) junction. Continue 3 miles east to Coleman Pinnacle base, then 0.5 miles to Camp Kiser (~7,000 ft).",
+    "itinerary": {
+     "cal": "Best done early season (May-June) while the snow bridges over the moat/bergschrund near 9,500 ft are still intact.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Climb over the Table Mountain shoulder and past the saddle near Coleman Pinnacle to reach the Portals camp, a sandy, sheltered site with running water tucked among the glaciers.",
+       "hours": 4,
+       "miles": 4.5,
+       "title": "Approach to the Portals camp",
+       "gainFt": 1800,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Heather Meadows trailhead to high camp below the Park Glacier"
+      },
+      {
+       "n": 2,
+       "note": "An early start is essential to beat the sun on this northeast-facing headwall, which turns to mush once the sky clears. Cross a crevassed moat/bergschrund near 9,500 ft, then make a long rising traverse up the headwall (several sustained ice pitches) to the summit ridge; descend back to camp and hike out the same day.",
+       "hours": 12.5,
+       "miles": 8.5,
+       "title": "Climb the headwall and hike out",
+       "gainFt": 5000,
+       "lossFt": 5700,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": ""
+        },
+        {
+         "time": "~7:30-8:00 AM",
+         "label": "Cross the bergschrund/moat (~9,500 ft)",
+         "detail": "Narrow snow bridge; crux route-finding section."
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Summit",
+         "detail": "~5 hrs from camp in a reported late-May ascent."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at camp",
+         "detail": ""
+        },
+        {
+         "time": "5:30 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the Park Glacier headwall to the summit, descend, and drive out"
+      }
+     ],
+     "totalNote": "A 2-day glacier/ice route with one night at a high camp below the headwall; the summit day is long (12+ hrs) and very sun/timing-sensitive."
+    },
+    "timing": {
+     "totalHrs": 16.5,
+     "summitTimeHrs": 12.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 3.5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4,
+       "note": "Climb over the Table Mountain shoulder and past the saddle near Coleman Pinnacle to reach the Portals camp, a sandy, sheltered site with running water tucked among the glaciers.",
+       "fromTo": "Approach to the Portals camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12.5,
+       "note": "An early start is essential to beat the sun on this northeast-facing headwall, which turns to mush once the sky clears. Cross a crevassed moat/bergschrund near 9,500 ft, then make …",
+       "fromTo": "Climb the headwall and hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "beta": "Grade II glacier travel with crevasse rescue. Longest climb of the northern approaches. From Camp Kiser, primitive boot path leads to Park Glacier and climbing terrain. High exposure with extensive glacier and numerous crevasses. 100+ km² of glaciers and permanent snowfields; iciest mountain in Cascade Range.",
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads."
+   }
+  }
+ ]
+}

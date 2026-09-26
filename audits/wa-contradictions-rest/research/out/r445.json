@@ -1,0 +1,227 @@
+{
+ "file": "r445.json",
+ "results": [
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Which route the page describes",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both lines are real and documented: a Mill Creek approach from the Canyon Creek trailhead to a camp near the Azurite Mine, then scrambling Ballard's south flank (class 3 easiest route); and a separate East Ridge / East Cirque / West Face route from the Slate Creek road gate at 3,800 ft via the South Fork bridge and a 4,800 ft basin (class 4 slot, class 3.5 summit block, 2 days). The row's name, climbing_route, descent, itinerary, timing and primary approach describe the south side, while beta, pitch_detail, face, max_angle, turnaround and detailed_rack describe the East Ridge. Making them agree needs either new south-side beta/breakdown prose (not available in enough detail to write without inventing) or a separate East Ridge row - an owner decision, so no patch.",
+   "sources": [
+    "https://onehikeaweek.com/2012/08/19/mount-ballard/",
+    "https://trailcatjim.com/mt-ballard-via-slate-creek-east-ridge-west-face/",
+    "https://en.wikipedia.org/wiki/Mount_Ballard_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Trailhead",
+   "verdict": "fixed",
+   "correct_value": "Canyon Creek Trailhead on SR 20 near milepost 141, ~1,900 ft, is the start of this (Mill Creek / south side) route",
+   "evidence": "The Forest Service page puts the Canyon Creek Trailhead near milepost 141 on SR 20 at 1,900 ft. A Mill Creek ascent of Ballard started at the Canyon Creek trailhead at 1,880 ft, hiking 6 miles to the Mill Creek Trail then ~5 more toward the Azurite Mine; the Azurite Peak route description gives the same 6 + 5 mile sequence. So the waypoint's claim that Canyon Creek does not access Ballard, and its 6,760 ft elevFt, are wrong; the Slate Creek gate (3,800 ft) belongs to the other (East Ridge) route. Emergency note's 'Harts Pass Road is the only vehicle access' is likewise wrong for this approach.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/canyon-creek-trailhead",
+    "https://onehikeaweek.com/2012/08/19/mount-ballard/",
+    "https://www.summitpost.org/azurite-peak/154496",
+    "https://trailcatjim.com/mt-ballard-via-slate-creek-east-ridge-west-face/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "elevFt"
+     ],
+     "expect": 6760,
+     "value": 1900,
+     "id": "wa_mount_ballard_south",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "Standard access: park at Harts Pass (gate/end of maintained Harts Pass Rd), descend Slate Creek Road ~5+ mi west to South Fork Slate Creek bridge, then bushwhack/scramble up the east ridge to the summit. Note that the 'Canyon Creek Trailhead' ~10 mi away on Hwy 20 is a real but unrelated trailhead that does not access Mount Ballard.",
+     "replace": "Large parking lot on SR 20 just east of milepost 141, west of Rainy Pass. The trail follows Canyon Creek about 6 miles to the Mill Creek Trail junction, the start of this route's approach. The east-side line up the East Ridge starts elsewhere, at a locked gate on the Slate Creek road below Harts Pass (about 3,800 ft).",
+     "id": "wa_mount_ballard_south",
+     "fact": "Trailhead"
+    },
+    {
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "notes"
+     ],
+     "find": "cell coverage is unreliable in the Slate Creek drainage. Harts Pass Road is the only vehicle access and any rescue",
+     "replace": "cell coverage is unreliable in the Canyon Creek and Mill Creek drainages. Vehicle access is from SR 20 (or Harts Pass Road for the Slate Creek side), and any rescue",
+     "id": "wa_mount_ballard_south",
+     "fact": "Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Canyon Creek Trailhead location",
+   "verdict": "fixed",
+   "correct_value": "Canyon Creek Trailhead is on SR 20 near milepost 141, west of Rainy Pass (not near Mazama)",
+   "evidence": "The Forest Service locates the trailhead near milepost 141, 55.1 miles west of Winthrop and 32.8 miles east of Marblemount. The Azurite Peak route description places it 22 miles east of Newhalem / 16 miles west of Rainy Pass. Mazama is east of Washington Pass, so 'near Mazama' is wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/canyon-creek-trailhead",
+    "https://www.summitpost.org/azurite-peak/154496"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "Canyon Creek Trailhead near Mazama",
+     "replace": "Canyon Creek Trailhead near milepost 141, west of Rainy Pass",
+     "id": "wa_mount_ballard_south",
+     "fact": "Canyon Creek Trailhead location"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Canyon Creek Trailhead near Mazama",
+     "replace": "Canyon Creek Trailhead near milepost 141, west of Rainy Pass",
+     "id": "wa_mount_ballard_south",
+     "fact": "Canyon Creek Trailhead location"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Difficulty and commitment",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The easiest (south-side) route is class 3 scrambling; the Mill Creek account describes steep rocky gullies with a couple of steps. The East Ridge account rates the crux vegetated slot class 4 and the summit block class 3.5 - neither source reports 5th class, which appears only as a single party's claim in beta. The low-5th and 45-50 degree snow text belong to the East Ridge content (see the route-identity finding). No source gives a commitment grade for either line, so the Grade IV cannot be confirmed or replaced.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Ballard_(Washington)",
+    "https://onehikeaweek.com/2012/08/19/mount-ballard/",
+    "https://trailcatjim.com/mt-ballard-via-slate-creek-east-ridge-west-face/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Approach mileage",
+   "verdict": "fixed",
+   "correct_value": "About 11 miles (6 up Canyon Creek + ~5 up Mill Creek) to the Azurite Mine site, ~14 at the leave-trail point",
+   "evidence": "The Azurite Peak route description gives 6 miles up Canyon Creek to the Mill Creek Trail, the Azurite Mine about 5 miles further, and a point 3 miles past the mine at 14 miles from the car. The Mill Creek Ballard account gives the same 6 + 5 miles to the Azurite Mine camp. The approach text's 'about 5 miles to the Azurite Mine' counted only the Mill Creek leg, contradicting its own 14-mile mark and the itinerary/waypoints (11 mi). Left unresolved: totalNote's ~31 mi vs the days' 27.5 mi, and turnaround's 8.5-10 hr round trips (these belong to the East Ridge/Slate Creek side) - no source states a round-trip total for this approach.",
+   "sources": [
+    "https://www.summitpost.org/azurite-peak/154496",
+    "https://onehikeaweek.com/2012/08/19/mount-ballard/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 5 miles to the site of the defunct Azurite Mine",
+     "replace": "about 11 miles (roughly 6 along Canyon Creek, then 5 up Mill Creek) to the site of the defunct Azurite Mine",
+     "id": "wa_mount_ballard_south",
+     "fact": "Approach mileage"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Wilderness permit",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No wilderness permit for the Ballard route; the Pasayten self-issue permit at the Canyon Creek lot is only for trips entering the Pasayten (e.g. Jackita Ridge)",
+   "evidence": "permit, access.permit, access.rules and access.landManager all say the route is outside the Pasayten Wilderness. The Forest Service trailhead page says the Pasayten permit at the Canyon Creek lot is for entering the wilderness via the Jackita Ridge trail, and the peak is described as ordinary Okanogan-Wenatchee National Forest land. Reworded the overnight-permit entry so it no longer tells every party to take one.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/canyon-creek-trailhead",
+    "https://en.wikipedia.org/wiki/Mount_Ballard_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Fill one out at the trailhead.",
+     "replace": "Fill one out at the trailhead only if your trip enters the Pasayten Wilderness; the Mill Creek route to Ballard stays outside it.",
+     "id": "wa_mount_ballard_south",
+     "fact": "Wilderness permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "fact": "Ballard's position relative to Azurite Pass",
+   "verdict": "fixed",
+   "correct_value": "Ballard is about 2 miles north of Azurite Peak; Azurite Pass lies south of Azurite Peak, so the climb starts from the basin above the Azurite Mine, not from the pass",
+   "evidence": "Azurite Peak is the higher neighbor about 2 miles south of Ballard, and Azurite Pass lies south of Azurite Peak. The Azurite route description puts the pass 1.5 miles beyond the point (14 miles in) where one leaves the trail for Azurite's west slopes, i.e. past Azurite. The Mill Creek Ballard ascent camped near the Azurite Mine at the foot of Ballard and climbed from there, noting the brush continuing on up toward Azurite Pass. So the overview's 'about 2 miles south of Azurite Pass' and the climbing route/descent starting from Azurite Pass are wrong; the row's own primary approach variant and waypoints already put the base in the basin (~6,600 ft) above the mine.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Ballard_(Washington)",
+    "https://en.wikipedia.org/wiki/Azurite_Peak",
+    "https://www.summitpost.org/azurite-peak/154496",
+    "https://onehikeaweek.com/2012/08/19/mount-ballard/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "about 2 miles south of Azurite Pass",
+     "replace": "about 2 miles north of Azurite Peak",
+     "id": "wa_mount_ballard_south",
+     "fact": "Ballard's position relative to Azurite Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "label"
+     ],
+     "find": "South slopes and gullies from Azurite Pass",
+     "replace": "South slopes and gullies from the Mill Creek basin",
+     "id": "wa_mount_ballard_south",
+     "fact": "Ballard's position relative to Azurite Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From Azurite Pass (6,680+ ft), leave the trail and scramble northeast/east up",
+     "replace": "From the basin above the old Azurite Mine (about 6,600 ft), leave the trail and scramble north up",
+     "id": "wa_mount_ballard_south",
+     "fact": "Ballard's position relative to Azurite Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "back down to Azurite Pass (~6,680 ft)",
+     "replace": "back down to the basin above the Azurite Mine (~6,600 ft)",
+     "id": "wa_mount_ballard_south",
+     "fact": "Ballard's position relative to Azurite Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "From the pass, reverse whichever approach trail was used (Mill Creek Trail, or Mill Creek plus West Fork Methow River Trail/PCT)",
+     "replace": "From the basin, reverse whichever approach was used (Mill Creek Trail, or Mill Creek plus West Fork Methow River Trail/PCT)",
+     "id": "wa_mount_ballard_south",
+     "fact": "Ballard's position relative to Azurite Pass"
+    }
+   ]
+  }
+ ]
+}

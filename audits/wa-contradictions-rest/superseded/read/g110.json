@@ -1,0 +1,1888 @@
+{
+ "batches": [
+  "b437.json",
+  "b438.json",
+  "b439.json",
+  "b440.json"
+ ],
+ "routes_read": 15,
+ "routes": [
+  {
+   "id": "wa_blood_orgy",
+   "name": "Blood Orgy",
+   "area": "Mamie Peak",
+   "contradictions": [
+    {
+     "fact": "FR-32 length from SR-542 to Hannegan Pass Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "FS-32 is a maintained forest road running 4 miles from SR-542 to the Hannegan Pass Trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "a left onto Forest Road 32 (Hannegan Pass Road) for about 4 miles to the Hannegan Pass Trailhead"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "up Hannegan Pass Road (FR-32) 5.3 miles to the road-end trailhead"
+      },
+      {
+       "field": "access.closures",
+       "says": "beyond ~mile 5.2"
+      }
+     ],
+     "why": "The road to the trailhead is given as 4 miles in two fields and 5.3 miles in the trailhead card, with a closure point at mile 5.2 that could not exist on a 4-mile road.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Walk from the trailhead to the climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "the peak itself is only a few minutes' walk up-trail from the parking area"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1200"
+      }
+     ],
+     "why": "The road card says the crag is a few minutes from the car, while timing and gain describe about an hour and 1,200 ft of bushwhacking approach.",
+     "internal_resolution": "timing, gain_ft and the approach prose/hazards agree on ~1 hr / 1,200 ft; the driveNote is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which park/permit office governs this area",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov ... Wilderness Information Center in Marblemount"
+      },
+      {
+       "field": "access.rules",
+       "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Mount Baker Ranger District / Glacier Public Service Center)"
+      },
+      {
+       "field": "access.permit",
+       "says": "a backcountry permit from the Glacier Public Service Center is required only for overnight stays within North Cascades National Park"
+      }
+     ],
+     "why": "access.notes/rules are North Cascades NP Boston Basin/Marblemount text copied onto a Mount Baker-Snoqualmie NF crag reached from Hannegan Pass, contradicting the land manager and permit office named beside them.",
+     "internal_resolution": "landManager, emergency.rangerStation and road all point to MBSNF / Glacier PSC; access.notes and access.rules are contaminated.",
+     "needs_research": false
+    },
+    {
+     "fact": "Top-of-climb and summit elevation for a single-pitch route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev (Top of Mamie Peak wall)",
+       "says": "5000"
+      },
+      {
+       "field": "waypoints[3] (type Summit)",
+       "says": "Mamie Peak crag (single-pitch wall) elev 5000"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Mamie Peak's true summit (6,108') is easy scrambling above"
+      },
+      {
+       "field": "length_m",
+       "says": "27"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1200"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3100"
+      }
+     ],
+     "why": "A 27 m single pitch reached with 1,200 ft of gain from a 3,100 ft trailhead tops out near 4,400 ft, not 5,000 ft (the top of the 8-pitch Ellation), and the waypoint typed Summit at 5,000 ft conflicts with the note giving the true summit as 6,108 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ellation",
+   "name": "Ellation",
+   "area": "Mamie Peak",
+   "contradictions": [
+    {
+     "fact": "FR-32 length from SR-542 to Hannegan Pass Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "FS-32 is a maintained forest road running 4 miles from SR-542 to the Hannegan Pass Trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "a left onto Forest Road 32 (Hannegan Pass Road) for about 4 miles to the Hannegan Pass Trailhead"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "up Hannegan Pass Road (FR-32) 5.3 miles to the road-end trailhead"
+      },
+      {
+       "field": "access.closures",
+       "says": "beyond ~mile 5.2"
+      }
+     ],
+     "why": "The road to the trailhead is given as 4 miles in two fields and 5.3 miles in the trailhead card, with a closure point at mile 5.2 that could not exist on a 4-mile road.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Walk from the trailhead to the climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "the peak itself is only a few minutes' walk up-trail from the parking area"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1200"
+      }
+     ],
+     "why": "The road card says the crag is a few minutes from the car, while timing and gain describe about an hour and 1,200 ft of bushwhacking approach.",
+     "internal_resolution": "timing, gain_ft and the approach prose/hazards agree on ~1 hr / 1,200 ft; the driveNote is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which park/permit office governs this area",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov ... Wilderness Information Center in Marblemount"
+      },
+      {
+       "field": "access.rules",
+       "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Mount Baker Ranger District / Glacier Public Service Center)"
+      },
+      {
+       "field": "access.permit",
+       "says": "a backcountry permit from the Glacier Public Service Center is required only for overnight stays within North Cascades National Park"
+      }
+     ],
+     "why": "access.notes/rules are North Cascades NP Boston Basin/Marblemount text copied onto a Mount Baker-Snoqualmie NF crag reached from Hannegan Pass, contradicting the land manager and permit office named beside them.",
+     "internal_resolution": "landManager, emergency.rangerStation and road all point to MBSNF / Glacier PSC; access.notes and access.rules are contaminated.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Oct"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jun-Oct"
+      }
+     ],
+     "why": "The approach card opens the season in June while the header season starts in July.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "An 8-pitch, roughly 800 ft outing"
+      },
+      {
+       "field": "length_m",
+       "says": "244"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "8-pitch, ~700' 5.11a (or 5.10 A0)"
+      }
+     ],
+     "why": "The waypoint note gives ~700 ft while overview and length_m give ~800 ft.",
+     "internal_resolution": "overview and length_m (244 m = 800 ft) agree; the waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit requirement",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "a backcountry permit from the Glacier Public Service Center is required only for overnight stays within North Cascades National Park"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required in the Mount Baker Wilderness"
+      },
+      {
+       "field": "access.notes",
+       "says": "remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No overnight backcountry permit is needed to sleep here or anywhere between the road and the pass"
+      }
+     ],
+     "why": "The Plan tab variously says overnight permits come from Glacier PSC, are not required, or are quota permits from Marblemount.",
+     "internal_resolution": "overnight_permit and bivy agree no permit is needed in the Mount Baker Wilderness; access.notes is copied NCNP text.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hail_satan",
+   "name": "Hail Satan",
+   "area": "Mamie Peak",
+   "contradictions": [
+    {
+     "fact": "FR-32 length from SR-542 to Hannegan Pass Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "FS-32 is a maintained forest road running 4 miles from SR-542 to the Hannegan Pass Trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "a left onto Forest Road 32 (Hannegan Pass Road) for about 4 miles to the Hannegan Pass Trailhead"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "up Hannegan Pass Road (FR-32) 5.3 miles to the road-end trailhead"
+      },
+      {
+       "field": "access.closures",
+       "says": "beyond ~mile 5.2"
+      }
+     ],
+     "why": "The road to the trailhead is given as 4 miles in two fields and 5.3 miles in the trailhead card, with a closure point at mile 5.2 that could not exist on a 4-mile road.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Walk from the trailhead to the climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "the peak itself is only a few minutes' walk up-trail from the parking area"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1200"
+      }
+     ],
+     "why": "The road card says the crag is a few minutes from the car, while timing and gain describe about an hour and 1,200 ft of bushwhacking approach.",
+     "internal_resolution": "timing, gain_ft and the approach prose/hazards agree on ~1 hr / 1,200 ft; the driveNote is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which park/permit office governs this area",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov ... Wilderness Information Center in Marblemount"
+      },
+      {
+       "field": "access.rules",
+       "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Mount Baker Ranger District / Glacier Public Service Center)"
+      },
+      {
+       "field": "access.permit",
+       "says": "a backcountry permit from the Glacier Public Service Center is required only for overnight stays within North Cascades National Park"
+      }
+     ],
+     "why": "access.notes/rules are North Cascades NP Boston Basin/Marblemount text copied onto a Mount Baker-Snoqualmie NF crag reached from Hannegan Pass, contradicting the land manager and permit office named beside them.",
+     "internal_resolution": "landManager, emergency.rangerStation and road all point to MBSNF / Glacier PSC; access.notes and access.rules are contaminated.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route type in the topout waypoint",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].note",
+       "says": "Multi-pitch line on the same crag as Ellation and Blood Orgy."
+      },
+      {
+       "field": "pitches",
+       "says": "1"
+      },
+      {
+       "field": "overview",
+       "says": "A short, punchy single-pitch sport line"
+      }
+     ],
+     "why": "The waypoint calls Hail Satan a multi-pitch line, but every other field says it is one pitch.",
+     "internal_resolution": "pitches, overview, beta, length_m and descent all say single pitch; the waypoint note is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Top-of-climb elevation for a single-pitch route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev (Top of Mamie Peak wall)",
+       "says": "5000"
+      },
+      {
+       "field": "waypoints[3] (type Summit)",
+       "says": "Mamie Peak crag (single-pitch wall) elev 5000"
+      },
+      {
+       "field": "length_m",
+       "says": "27"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1200"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3100"
+      }
+     ],
+     "why": "A 27 m pitch reached with 1,200 ft of gain from a 3,100 ft trailhead cannot top out at 5,000 ft (the top of the 8-pitch Ellation).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_woodland_critter_christmas",
+   "name": "Woodland Critter Christmas",
+   "area": "Mamie Peak",
+   "contradictions": [
+    {
+     "fact": "FR-32 length from SR-542 to Hannegan Pass Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "FS-32 is a maintained forest road running 4 miles from SR-542 to the Hannegan Pass Trailhead"
+      },
+      {
+       "field": "approach",
+       "says": "a left onto Forest Road 32 (Hannegan Pass Road) for about 4 miles to the Hannegan Pass Trailhead"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "up Hannegan Pass Road (FR-32) 5.3 miles to the road-end trailhead"
+      },
+      {
+       "field": "access.closures",
+       "says": "beyond ~mile 5.2"
+      }
+     ],
+     "why": "The road to the trailhead is given as 4 miles in two fields and 5.3 miles in the trailhead card, with a closure point at mile 5.2 that could not exist on a 4-mile road.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Walk from the trailhead to the climb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.driveNote",
+       "says": "the peak itself is only a few minutes' walk up-trail from the parking area"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "1"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1200"
+      }
+     ],
+     "why": "The road card says the crag is a few minutes from the car, while timing and gain describe about an hour and 1,200 ft of bushwhacking approach.",
+     "internal_resolution": "timing, gain_ft and the approach prose/hazards agree on ~1 hr / 1,200 ft; the driveNote is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which park/permit office governs this area",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov ... Wilderness Information Center in Marblemount"
+      },
+      {
+       "field": "access.rules",
+       "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Mount Baker Ranger District / Glacier Public Service Center)"
+      },
+      {
+       "field": "access.permit",
+       "says": "a backcountry permit from the Glacier Public Service Center is required only for overnight stays within North Cascades National Park"
+      }
+     ],
+     "why": "access.notes/rules are North Cascades NP Boston Basin/Marblemount text copied onto a Mount Baker-Snoqualmie NF crag reached from Hannegan Pass, contradicting the land manager and permit office named beside them.",
+     "internal_resolution": "landManager, emergency.rangerStation and road all point to MBSNF / Glacier PSC; access.notes and access.rules are contaminated.",
+     "needs_research": false
+    },
+    {
+     "fact": "Top-of-climb elevation for a single-pitch route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev (Top of Mamie Peak wall)",
+       "says": "5000"
+      },
+      {
+       "field": "waypoints[3] (type Summit)",
+       "says": "Mamie Peak crag (near base of Ellation) elev 5000"
+      },
+      {
+       "field": "length_m",
+       "says": "27"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1200"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3100"
+      }
+     ],
+     "why": "A 27 m pitch 'near the base of Ellation' reached with 1,200 ft of gain from a 3,100 ft trailhead cannot be at 5,000 ft, which is the top of the 8-pitch Ellation.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_austera_peak",
+   "name": "Austera Peak",
+   "area": "Austera Peak",
+   "contradictions": [
+    {
+     "fact": "Total gain and distance of the route",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1280"
+      },
+      {
+       "field": "loss_ft",
+       "says": "592"
+      },
+      {
+       "field": "dist_km",
+       "says": "4.5"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2100"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "8339"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "8.3"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1: hike ... to East Ridge high camp (~7,600 ft), 5-6 hrs. Day 2: traverse ... Day 3: descend to the trailhead."
+      }
+     ],
+     "why": "The header Gain (1,280 ft) and Dist (4.5 km / 2.8 mi) are only the high-camp-to-Austera leg, while the waypoints and itinerary describe a 3-day trip from a 2,100 ft trailhead to an 8,339 ft summit 8.3 miles in.",
+     "internal_resolution": "Waypoints and itinerary agree on the full trip; gain_ft/loss_ft/dist_km carry the camp-to-summit leg only.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the 75-ft rappel is (Klawatti Col vs the second break)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].name",
+       "says": "Klawatti col"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "Break in the ridge above the McAllister Glacier; rappel ~75 ft to the Klawatti Glacier."
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "7900"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "A gap you strolled through is Klawatti Col, one col short, at about 7,800 ft."
+      },
+      {
+       "field": "beta",
+       "says": "traverse the Inspiration Glacier to Klawatti Col, pass through the col, and follow the north ridge ... to a break at about 7,900 ft, where climbers rappel 75 ft"
+      }
+     ],
+     "why": "The waypoint names the 7,900 ft rappel break 'Klawatti col', while the beta and base-finding card say Klawatti Col is a separate walk-through gap ~100 ft lower and warn against confusing the two.",
+     "internal_resolution": "beta, approach_variants and climbing_route agree the rappel is at a second break past Klawatti Col; the waypoint name is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "0"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "2 rows: Sub-summit scramble (4th/low 5th), Summit tower (5.5)"
+      }
+     ],
+     "why": "The header shows 0 pitches while the Route Breakdown lists two roped sections.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Climb length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "390"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "~150 ft to gain the sub-summit"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "~50 ft of well-protected but loose-rock climbing"
+      }
+     ],
+     "why": "Climb length 390 m (1,280 ft) equals the camp-to-summit gain figure, not the ~200 ft of climbing in the breakdown.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Length of the final summit-tower pitch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "a further short pitch (roughly 50 ft, reported as well-protected 5.5)"
+      },
+      {
+       "field": "watch_out[0]",
+       "says": "only about 50 ft of technical climbing"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "Final 30 ft of low 5th-class climbing on the northeast face."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "about 30 to 50 ft of low fifth"
+      }
+     ],
+     "why": "The final pitch is given as 50 ft in beta but 30 ft in the summit waypoint.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Cost of the wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "the wilderness permit itself is free to obtain in person at Marblemount"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "Any overnight needs a free North Cascades backcountry permit"
+      },
+      {
+       "field": "approach",
+       "says": "Any overnight stay requires a free North Cascades National Park backcountry permit"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades National Park Complex wilderness permit — quota, not free"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "$10 per person plus a $6 reservation fee"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Not free — confirm current pricing when booking."
+      }
+     ],
+     "why": "Three fields call the overnight permit free while the permit card and camp card say it costs $10/person plus $6.",
+     "internal_resolution": "overnight_permit and bivy (the newer, specific figures) say not free; access.fees, waypoint directions and approach carry the outdated 'free' claim.",
+     "needs_research": false
+    },
+    {
+     "fact": "Area filing claimed in prose",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "IMPORTANT — this route is NOT on Eldorado Peak itself, despite being filed under the same area"
+      },
+      {
+       "field": "climbing_route[1].notes",
+       "says": "This route is NOT on Eldorado Peak itself, despite being filed under the same area."
+      },
+      {
+       "field": "area",
+       "says": "Austera Peak"
+      }
+     ],
+     "why": "The prose says the route is filed under Eldorado Peak's area, but it is filed on Austera Peak, and the approach prose goes on to describe Eldorado's own summit route (its 8,868-ft summit, 3-5 hours).",
+     "internal_resolution": "The row's area is Austera Peak; the 'filed under the same area' sentences are carried over from an earlier filing.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "name": "Southwest Ridge / McAllister Glacier",
+   "area": "Austera Peak",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II, 5.2"
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      }
+     ],
+     "why": "The grade column gives Grade II while the commitment chip gives III.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain of the trip",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1280"
+      },
+      {
+       "field": "loss_ft",
+       "says": "592"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "5400 + 1800 + 0 = 7200"
+      },
+      {
+       "field": "itinerary.days[*].lossFt",
+       "says": "0 + 1800 + 5400 = 7200"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~7,000+ ft of cumulative gain"
+      }
+     ],
+     "why": "The header and Technical Stats show 1,280 ft of gain, but the itinerary and its total note describe about 7,200 ft for the trip.",
+     "internal_resolution": "The itinerary and totalNote agree; gain_ft/loss_ft are the one-way camp-to-notch figures quoted in the approach prose.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance of the trip",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4.5"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "6 + 6.5 + 6 = 18.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 18 miles round trip"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "9.2"
+      }
+     ],
+     "why": "Technical Stats distance (4.5 km / 2.8 mi) is only the camp-to-notch leg, while the header (itinerary) shows 18.5 mi and the summit waypoint is 9.2 mi out.",
+     "internal_resolution": "The itinerary, totalNote and waypoints agree; dist_km is the one-way glacier-traverse leg.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which camp is the high camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].name",
+       "says": "Roush Creek Basin (Eldorado high camp)"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "the standard high camp (6,100-6,400 ft) at the toe of the Eldorado Glacier"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach high camp on the Eldorado/Inspiration Glacier (~7,500 ft)"
+      },
+      {
+       "field": "approach",
+       "says": "Parties camp either lower, at Eldorado Creek Basin (~5,600 ft) or Roush Creek Basin (~6,100–6,400 ft), or push on to a high camp near Eldorado's East Ridge/upper Eldorado Glacier (~7,200–7,600 ft)"
+      }
+     ],
+     "why": "The waypoint calls Roush Creek Basin (6,300 ft) the standard high camp, while the itinerary and approach put high camp on the Inspiration Glacier at ~7,500 ft and call Roush a lower option.",
+     "internal_resolution": "The itinerary, timing, approach and bivy list all put high camp at ~7,500 ft; the waypoint label is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Eldorado Creek Basin camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].elev",
+       "says": "5600"
+      },
+      {
+       "field": "approach",
+       "says": "Eldorado Creek Basin (~5,600 ft)"
+      },
+      {
+       "field": "what_to_bring[7]",
+       "says": "Eldorado Basin ~6,000ft"
+      }
+     ],
+     "why": "Gear list puts Eldorado Basin camp at ~6,000 ft vs 5,600 ft in the waypoint and approach.",
+     "internal_resolution": "Waypoint and approach agree on ~5,600 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Grade of the pitch climbed out of the Klawatti Glacier on the return",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Easy 5th (roughly 5.2-5.4, short sections)"
+      },
+      {
+       "field": "grade",
+       "says": "Grade II, 5.2"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "the return traverse's 75ft of 5.5 climbing"
+      },
+      {
+       "field": "descent_text",
+       "says": "climb back up roughly 75 ft of well-protected 5.5"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "a belayed pitch of steep rock (up to 5.6) to regain the Klawatti-Austera col from below"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "Belayed pitch of steep rock (up to 5.6)"
+      }
+     ],
+     "why": "The route's stated hardest grade is 5.2 (5.2-5.4), but its own return pitch is given as 5.5 in the kit/descent fields and 5.6 in the itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "a long summit push (7 total hrs from high camp)"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "typically 2+ days from Cascade River Road/Eldorado trailhead to a McAllister Glacier high camp before the 7-hour round-trip summit day"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "6"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[1].schedule[5].detail",
+       "says": "total day roughly 11-13 hours"
+      }
+     ],
+     "why": "Partner requirements describe a 2+ day approach to a McAllister Glacier camp and a 7-hour summit day, while timing and itinerary give a 6-hour one-day approach to an Inspiration Glacier camp and an 11-13 hour summit day.",
+     "internal_resolution": "timing and itinerary agree (6 h approach, 11 h summit day); partner_requirements is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season: is June in or out",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "Cascade River Road often still gated by snow; full winter glacier conditions"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "glacier travel is safest June–early Sept before crevasses open up"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.September.status",
+       "says": "marginal"
+      },
+      {
+       "field": "best_season",
+       "says": "Mid-July through August"
+      }
+     ],
+     "why": "The itinerary calls June safest for glacier travel, while seasonal guidance marks June risky (road gated, winter conditions) and September marginal.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Anchors at the summit chimney",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "the chockstone notch/summit tower can be downclimbed or rappelled off a sling/cordelette on natural rock (no fixed anchor reported)"
+      },
+      {
+       "field": "descent_text",
+       "says": "parties commonly rappel this in two rappels using anchors already in place at the top of the chockstone gully"
+      },
+      {
+       "field": "pitch_detail[2].anchor",
+       "says": "Gear (slung horn/chockstone — aging tat, back it up)"
+      }
+     ],
+     "why": "The rappels field says no fixed anchor has been reported at the chimney, while descent_text and the breakdown say anchors (aging tat) are already in place.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of rappels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "There is one rappel of ~75ft (about 23m) down to the Klawatti Glacier"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "3 rows: 30 m, 30 m, 25 m"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "2-3 total rappels"
+      },
+      {
+       "field": "pitch_detail[2].lengthM",
+       "says": "20 (chimney ~60 ft)"
+      }
+     ],
+     "why": "The rope note says the route has one rappel, while the rappel table lists three, and it gives two 30 m rappels down a chimney the breakdown says is about 60 ft (20 m) long.",
+     "internal_resolution": "rappel_detail, rappel_count_note and descent_text agree on 2-3 rappels; rope_note is the outlier. The 30 m chimney rappel lengths still need checking.",
+     "needs_research": true
+    },
+    {
+     "fact": "Side on which Klawatti Peak is passed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "pass Klawatti Peak on its left through the col"
+      },
+      {
+       "field": "climbing_route[1].notes",
+       "says": "Pass Klawatti Peak on its left through the col"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "Keep Klawatti Peak on your right"
+      }
+     ],
+     "why": "The approach says pass Klawatti on its left while the base-finding card says keep it on your right; the two phrasings can be read as opposite directions.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which approach this route uses",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "the north-side approach (which this glacier route effectively uses) rarely sees anyone, though the south approach shared with standard Eldorado routes sees more traffic"
+      },
+      {
+       "field": "approach",
+       "says": "Drive the Cascade River Road to the Eldorado Creek trailhead ... cross the Eldorado/Inspiration Glacier"
+      }
+     ],
+     "why": "Crowds says the route uses the north-side approach, while every approach field uses the Eldorado approach from the south.",
+     "internal_resolution": "approach, waypoints and itinerary all use the Eldorado Creek approach; the crowds line is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Road access to the trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the flood-related closure near the park boundary that has, in recent years, added a bike or walk-in stretch"
+      },
+      {
+       "field": "road.status",
+       "says": "Gravel, summer-passable"
+      }
+     ],
+     "why": "The road card says the road is passable in summer, while the approach warns of a closure that adds a bike or walk-in stretch.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "name": "Chockstone Route",
+   "area": "Austera Peak",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "3"
+      },
+      {
+       "field": "beta",
+       "says": "A short, moderate 2-3 pitch rock climb"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "1 row: Chockstone chimney (crux)"
+      }
+     ],
+     "why": "The header says 3 pitches and the beta says 2-3, but the breakdown lists a single pitch.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Distance covered by dist_km",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "11.3"
+      },
+      {
+       "field": "approach",
+       "says": "approximately 7 miles and 6,000 ft of elevation gain leads to an East Ridge of Eldorado high camp. From camp, cross the Inspiration, McAllister, and Klawatti Glaciers ... to reach the base of Austera's rock tower"
+      }
+     ],
+     "why": "dist_km (7 mi) and gain_ft (6,000) are the trailhead-to-high-camp figures, but the page shows them as the route's distance and gain, and the glacier traverse beyond camp is extra.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness Information Center location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.rangerStation",
+       "says": "North Cascades National Park HQ / Wilderness Information Center: 360-854-7200, 810 State Route 20, Sedro-Woolley, WA 98284"
+      },
+      {
+       "field": "access.permit",
+       "says": "obtained at the Wilderness Information Center in Marblemount"
+      }
+     ],
+     "why": "The emergency card gives the Wilderness Information Center a Sedro-Woolley address, while the permit fields place it in Marblemount.",
+     "internal_resolution": "access.permit and overnight_permit agree the WIC is in Marblemount; the emergency line is the Sedro-Woolley park HQ.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_booker_mountain_south_ridge",
+   "name": "South Ridge",
+   "area": "Booker Mountain",
+   "contradictions": [
+    {
+     "fact": "Fixed rappel slings on the ridge",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "The route has no fixed rappel stations"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "a party who ABANDONED the South Ridge ... finding existing rappel slings on the ridge"
+      }
+     ],
+     "why": "The bail section says there are no fixed rappel stations, but the base-finding card reports rappel slings found on the ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_booker_mountain_northeast_face",
+   "name": "Northeast Face",
+   "area": "Booker Mountain",
+   "contradictions": [
+    {
+     "fact": "Direction of the icefall traverse",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "then traverse left across an icefall"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "ascend LEFT up that glacier to an icefall, then traverse RIGHT through the icefall to reach the main rock wall"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "left to reach the icefall, right to get through it"
+      }
+     ],
+     "why": "The beta says to traverse left across the icefall, while the approach card, which stresses the reversal as the key check, says to traverse right through it.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_booker_mountain_northwest_route",
+   "name": "Northwest Route",
+   "area": "Booker Mountain",
+   "contradictions": [
+    {
+     "fact": "Camping at Park Creek Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From a camp at or near Park Creek Pass"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1 backpack in via Thunder Creek to a Park Creek Pass-area camp"
+      },
+      {
+       "field": "descent_text",
+       "says": "back toward Park Creek Pass camp"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "CAMPING IS PROHIBITED AT PARK CREEK PASS ITSELF, so this is the last legal designated camp on the west approach"
+      }
+     ],
+     "why": "Beta, itinerary and descent all plan on a camp at Park Creek Pass, while the camping card says camping at the pass is prohibited.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Whether a rope is needed",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "climbing_route[0].notes",
+       "says": "Rope up for this section, sound the bridges"
+      },
+      {
+       "field": "gear",
+       "says": "Ice axe; Crampons (for col/snowbridge crossing); Helmet"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "No technical rack needed; this is an unroped scramble aside from the snow/glacier travel gear used to cross the col."
+      }
+     ],
+     "why": "The climbing route says to rope up for the crevassed col, but the gear list has no rope or crevasse-rescue kit.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_7",
+   "name": "North Ridge",
+   "area": "Aiguille de l'M",
+   "contradictions": [
+    {
+     "fact": "Crux grade and pitch sequence",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "4th"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.5"
+      },
+      {
+       "field": "overview",
+       "says": "three to four pitches of fourth-class scrambling with a final 40-foot 5.5 pitch to a short tower"
+      },
+      {
+       "field": "pitch_detail[1]",
+       "says": "pitch 4, 5.5, Final 40-foot pitch to tower top"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "2-3 pitches of nearly level ridge ... then a single steeper crux step (published descriptions call it 4th class, ~50-60ft; others describe it as up to 5.5) leading to a short tower, followed by one more short 4th class pitch to the summit"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "(5.3-5.5, half-day from camp)"
+      }
+     ],
+     "why": "The crux is 5.5 in the header pill but 4th class in the grade column. The rack note makes it a 50-60 ft step with another 4th-class pitch above it, while the overview and breakdown make it the final 40 ft pitch to the top.",
+     "internal_resolution": "overview, beta, pitch_detail, rope_note and rock_grade agree on 3-4 fourth-class pitches then a final 40 ft 5.5 pitch; `grade` and detailed_rack are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel anchor location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "1 rappel (~40 ft) from fixed slings near the summit"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "apart from rappel slings waiting at the descent notch"
+      },
+      {
+       "field": "descent_text",
+       "says": "From tower summit, establish anchor and rappel 40 feet."
+      }
+     ],
+     "why": "The rappel is described as off fixed slings near the summit, off slings at a notch, and off an anchor the party must build.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Boston Basin high camp elevation and approach length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the popular Boston Basin high camp around 6,000 ft — roughly 3-4 miles one-way with about 3,000-3,300 ft of elevation gain"
+      },
+      {
+       "field": "itinerary",
+       "says": "hike ~2.5 mi / ~3,000 ft gain to high camp (~6,400 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6400"
+      },
+      {
+       "field": "beta",
+       "says": "upper (6,400 ft) bivy sites"
+      }
+     ],
+     "why": "The approach puts high camp at ~6,000 ft and 3-4 miles in, while the itinerary, beta and bivy say ~6,400 ft and ~2.5 miles.",
+     "internal_resolution": "itinerary, beta, bivy and access rules agree on 6,400 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach prose describes a different route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From camp, West Ridge climbers continue cross-country over the glacier to a couloir that gains the ridge crest."
+      },
+      {
+       "field": "beta",
+       "says": "navigate toward Forbidden Gully or Cat Scratch Gullies and traverse toward the notch to the right of the North Ridge"
+      }
+     ],
+     "why": "The approach includes a sentence about West Ridge climbers (Forbidden Peak), which is not how this route is reached.",
+     "internal_resolution": "beta and approach_variants describe the Cat Scratch/notch approach; the West Ridge sentence is copied from a different route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Fees",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None beyond the parking or entrance fee this route already lists."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "None — there are no trailhead or parking fees"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades NP wilderness permit, quota, not free"
+      }
+     ],
+     "why": "Fees points to a parking/entrance fee that passRequired says does not exist, and says 'none' while the overnight permit is paid.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "name": "South Ridge",
+   "area": "Aiguille de l'M",
+   "contradictions": [
+    {
+     "fact": "Descent route",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "Descends via North Ridge: 1 rappel (~40 ft) from fixed slings"
+      },
+      {
+       "field": "itinerary",
+       "says": "then descend via the North Ridge back to camp"
+      },
+      {
+       "field": "descent",
+       "says": "Descend via same ridge or similar route depending on descent planning."
+      },
+      {
+       "field": "descent_text",
+       "says": "Descend exposed ridge via Class 4 scrambling and short 5.6 downclimbing."
+      }
+     ],
+     "why": "The rappels and itinerary say to descend the North Ridge, while the Descent section says to downclimb the South Ridge itself, including its 5.6 steps.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux pitch number and pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "5"
+      },
+      {
+       "field": "itinerary",
+       "says": "climb the 5 pitches to the top"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "2 rows: '1-3' Class 4 to 5.5, '4' 5.6"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "the 5.6 crux on pitch 3 (bypassing a gendarme on the right)"
+      },
+      {
+       "field": "pro_needs",
+       "says": "parties above on the pitch 3 crux"
+      }
+     ],
+     "why": "The breakdown has 4 pitches with the 5.6 crux on pitch 4, while the header and itinerary say 5 pitches and the rack/pro notes put the crux on pitch 3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1900"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3200"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "7200"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "7200"
+      }
+     ],
+     "why": "The header gain of 1,900 ft cannot get from the 3,200 ft trailhead to the 7,200 ft top, a 4,000 ft rise, which is the figure the sister North Ridge row uses.",
+     "internal_resolution": "The waypoints and high_point_ft imply ≥4,000 ft; gain_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Cam range",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "sling_rack.cams",
+       "says": "0.3-3 in, single set"
+      },
+      {
+       "field": "rack[0]",
+       "says": "Cams 0.3-2in, doubles 0.5-1in"
+      },
+      {
+       "field": "gear[1]",
+       "says": "cams ~0.3-2in (doubles 0.5-1in)"
+      }
+     ],
+     "why": "The sling_rack cam spec (0.3-3 in, singles) differs from the rack and gear list (0.3-2 in with doubles).",
+     "internal_resolution": "rack, gear and detailed_rack agree on 0.3-2 in with doubles 0.5-1 in.",
+     "needs_research": false
+    },
+    {
+     "fact": "Boston Basin high camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the popular Boston Basin high camp around 6,000 ft"
+      },
+      {
+       "field": "itinerary",
+       "says": "hike in to high camp (~6,400 ft)"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6400"
+      }
+     ],
+     "why": "The approach puts high camp at ~6,000 ft vs 6,400 ft in the itinerary, beta and bivy.",
+     "internal_resolution": "itinerary, beta, bivy agree on 6,400 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach prose describes a different route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From camp, West Ridge climbers continue cross-country over the glacier to a couloir that gains the ridge crest."
+      }
+     ],
+     "why": "The approach includes a sentence about Forbidden's West Ridge that does not apply to this route.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Fees",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None beyond the parking or entrance fee this route already lists."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "parking at the Cascade River Road pullouts is free"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades NP wilderness permit, quota, not free"
+      }
+     ],
+     "why": "Fees points to a parking fee that passRequired says does not exist, and says 'none' while the overnight permit is paid.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_boston_peak_southeast_face",
+   "name": "Southeast Face",
+   "area": "Boston Peak",
+   "contradictions": [
+    {
+     "fact": "Descent back to the trailhead",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "reverse the glacier traverse to the Sahale-Boston col and descend the Quien Sabe Glacier to camp"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Descent is three 25m rappels back to the glacier, then a walk-off to camp"
+      },
+      {
+       "field": "descent_text",
+       "says": "reverse the glacier traverse back up to the Sahale–Boston col and descend Sahale Arm and the Cascade Pass Trail back to the trailhead"
+      },
+      {
+       "field": "waypoints[3]",
+       "says": "Cascade Pass (Junction, distMi 4.2)"
+      }
+     ],
+     "why": "The longer descent_text (the one shown) sends the party down Sahale Arm and the Cascade Pass Trail to a different trailhead, while the descent field and itinerary return via the Quien Sabe Glacier to the Boston Basin camp and trailhead.",
+     "internal_resolution": "descent, itinerary, timing and the Boston Basin camp plan all agree on returning via Quien Sabe; descent_text's Sahale Arm finish is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Camp the glacier approach starts from",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "The standard approach from Sahale Glacier Camp requires roped travel across the lower Sahale/Quien Sabe Glacier"
+      },
+      {
+       "field": "approach",
+       "says": "Most parties camp at the basin's high camp (~6,400 ft) ... From high camp ... up the Quien Sabe Glacier"
+      }
+     ],
+     "why": "Seasonal hazards say the standard approach starts at Sahale Glacier Camp, while the approach, itinerary and camps all use Boston Basin high camp.",
+     "internal_resolution": "approach, itinerary, bivy and waypoints all use Boston Basin; the seasonal_hazards line is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Line from the col to the summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "then across the head of the Boston Glacier past the bergschrund to the base of the southeast-side ledges. From there, ascend unroped via loose, sandy 3rd/4th-class ledges on the east/southeast face"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From the col the route follows the connecting ridge toward Boston: flat at first, then widening onto loose rock, staying generally right and on the crest."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the crest steepens, widens, and then narrows to a KNIFE EDGE ... a FALSE SUMMIT ... YOU CROSS ABOUT 200 FT OF GLACIER ABOVE A BERGSCHRUND IMMEDIATELY BEFORE THE FINAL SUMMIT BLOCK"
+      }
+     ],
+     "why": "Approach, beta and climbing_route go from the col across the Boston Glacier to southeast-face ledges. The approach card instead follows the connecting ridge crest over a knife edge and past a false summit, with the glacier crossing only just below the summit block.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade II, Class 4"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.0"
+      },
+      {
+       "field": "overview",
+       "says": "The climbing is not hard (Class 4, one roped pitch)"
+      },
+      {
+       "field": "pro_tips[6]",
+       "says": "The route's only Class 4 move is a 10-15 ft chimney about 50 ft below the summit"
+      }
+     ],
+     "why": "The header grade pill shows 5.0 (rock_grade), while the grade column, overview and tips call the hardest move Class 4.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "3.2 + 5.5 + 3.2 = 11.9"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "4.2 (Sahale-Boston col)"
+      }
+     ],
+     "why": "Technical Stats distance (4 km / 2.5 mi) is shorter than the col waypoint alone (4.2 mi) and far below the itinerary's 11.9 mi shown in the header.",
+     "internal_resolution": "The itinerary and waypoints agree; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time from camp to the base of the face",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 4-5 hrs to Boston Basin camp, plus 1-2 hrs further to the base of the Southeast Face"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].time",
+       "says": "+3 hr (Reach Sahale-Boston col)"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].time",
+       "says": "+1 hr (Cross Boston Glacier to the face)"
+      }
+     ],
+     "why": "Partner requirements give 1-2 hours from camp to the base of the face; the itinerary schedule gives about 4.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead mile marker / road end",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Small pullout on Cascade River Road, mile ~21.7"
+      },
+      {
+       "field": "approach",
+       "says": "From the Boston Basin Trailhead at the end of Cascade River Road (~3,200 ft, roughly mile 21.7)"
+      },
+      {
+       "field": "road.status",
+       "says": "the Boston Basin trailhead (mile 22.5) and Cascade Pass trailhead (mile 23.1, 3,660 ft)"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "drive Cascade River Road 23.1 miles to its end at the Cascade Pass trailhead; the Boston Basin climbers' path leaves the road near mile 22.5"
+      }
+     ],
+     "why": "The Boston Basin trailhead is placed at mile 21.7 and at the road's end in the waypoint/approach but at mile 22.5, short of the road end at 23.1, in the road card.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_boston_peak_west_face",
+   "name": "West Face of Boston",
+   "area": "Boston Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead named on the Trailhead card",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Eldorado Creek trailhead (Cascade River Road mile 20)"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Eldorado Creek trailhead (Cascade River Road mile 20)"
+      },
+      {
+       "field": "approach",
+       "says": "Cascade River Road to the Eldorado Trailhead gate, then bike/ski up Cascade Pass trail ... Summer access would follow the standard Boston Basin approach"
+      },
+      {
+       "field": "access.permit",
+       "says": "backcountry permit required for overnight camping in Boston Basin"
+      }
+     ],
+     "why": "The trailhead card and waypoint name the Eldorado Creek trailhead (the Eldorado Peak climbers' path), but the approach only uses the Eldorado road gate as a winter start and then the Cascade Pass trail, or the Boston Basin trail in summer.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Road status",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Open to Eldorado Trailhead (MP 20) as of mid-2026; gated there following spring-2026 landslide/storm damage near MP 18"
+      }
+     ],
+     "why": "The road status says the road is open to MP 20 but damaged near MP 18, which would be below the point it claims is open.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Technical grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "ice_grade",
+       "says": "M1"
+      },
+      {
+       "field": "beta",
+       "says": "A winter ascent found the climbing ranging from low-angle snow to vertical mixed terrain near the top"
+      }
+     ],
+     "why": "M1 is the lowest mixed grade, but the beta reports vertical mixed terrain near the top.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "name": "Northwest Ridge",
+   "area": "Boston Peak",
+   "contradictions": [
+    {
+     "fact": "First-ascent date",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "Boyce–Willis, July 2018"
+      },
+      {
+       "field": "overview",
+       "says": "Sam Boyce and Kyle Willis's August 2018 'Boston Marathon'"
+      },
+      {
+       "field": "best_season",
+       "says": "the only documented ascent was in August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August.reason",
+       "says": "the one known ascent was in this window"
+      }
+     ],
+     "why": "The FA field says July 2018; overview and season guidance say August 2018.",
+     "internal_resolution": "Three fields say August; fa is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "What the FA party did after the summit",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "The FA party continued their traverse onward rather than descending the ridge"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "the FA party simply continued their traverse rather than downclimbing"
+      },
+      {
+       "field": "descent_text",
+       "says": "the first-ascent party continued their traverse onward (toward/over Sharkfin Tower and Forbidden)"
+      },
+      {
+       "field": "climbing_route[2].notes",
+       "says": "the party ... reported the rock too poor to rappel reliably and ultimately abandoned their intended continuation of the ridge traverse, descending instead by rappels and traversing to the Quien Sabe Glacier"
+      },
+      {
+       "field": "overview",
+       "says": "a west-to-east enchainment that circled Boston Basin over Forbidden Peak, Sharkfin Tower, Boston Peak, and beyond"
+      }
+     ],
+     "why": "Some fields say the party carried on past Boston, and descent_text says 'toward Sharkfin and Forbidden', which is the way they came. The climbing route says they abandoned the traverse and rappelled to the Quien Sabe Glacier.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent line off the summit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "3–5 rappels down the standard south-face route, threading around several gendarmes back toward the Boston–Sahale col"
+      },
+      {
+       "field": "descent_text",
+       "says": "descend via the Southwest Face's established rappel line (3 rappels down the southeast/east face on fixed slings to the Boston Glacier"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "walk off via the standard southeast-side ledges and three 25m rappels shared with the Southwest Face route"
+      },
+      {
+       "field": "descent",
+       "says": "A retreat would likely require reversing the ridge by rappel/downclimb"
+      }
+     ],
+     "why": "The descent is called the south-face, Southwest Face and southeast-side line, with 3-5 or 3 rappels. The short descent field says reversing the ridge, though the other fields reject that.",
+     "internal_resolution": "Boston's standard route on this page family is the Southeast Face with 3 rappels (itinerary + descent_text body); 'Southwest Face' and 'south-face, 3–5' are mislabels.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach distance to Boston Basin camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "3.2"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Camp at the high site (~6,400 ft)"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "5.3 (Lower Boston Basin Camp)"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "6.3 (Western edge of Quien Sabe Glacier, 6,400 ft)"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "7.9 (summit)"
+      }
+     ],
+     "why": "The itinerary reaches high camp at 6,400 ft in 3.2 miles, but the waypoints put the lower camp 5.3 miles in and 6,400 ft 6.3 miles in.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Lower Boston Basin camp elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[3].elev",
+       "says": "5700 (Lower Boston Basin Camp)"
+      },
+      {
+       "field": "approach",
+       "says": "a low camp around 5,300 ft"
+      },
+      {
+       "field": "bivy[1].elev",
+       "says": "5300"
+      }
+     ],
+     "why": "The waypoint puts the lower camp at 5,700 ft, while the approach and bivy card say 5,300 ft. The bivy card notes that sources quote 5,300-5,700.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Seasonal road closure",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "Open year-round; peak climbing June-September"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Gated at Eldorado (mile 20) through winter"
+      },
+      {
+       "field": "climate.winter",
+       "says": "Cascade River Road is typically gated well below the trailhead"
+      }
+     ],
+     "why": "Access says open year-round while the road and climate fields say the road is gated all winter.",
+     "internal_resolution": "road and climate agree on winter gating; access.closures is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead mile marker",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "roughly mile 22 of Cascade River Road"
+      },
+      {
+       "field": "road.status",
+       "says": "the Boston Basin trailhead (mile 22.5)"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "the Cascade River Road pullout near mile 21.7"
+      }
+     ],
+     "why": "The Boston Basin pullout is placed at mile ~22, 22.5 and 21.7 in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Fees",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.fees",
+       "says": "None beyond the parking or entrance fee this route already lists."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "No (North Cascades NP has no entry or parking fees)"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades NP wilderness permit, quota, not free"
+      }
+     ],
+     "why": "Fees points to a parking/entrance fee that passRequired says does not exist, and says 'none' while the overnight permit is paid.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

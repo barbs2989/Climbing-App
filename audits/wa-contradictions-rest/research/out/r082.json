@@ -1,0 +1,1091 @@
+{
+ "file": "r082.json",
+ "results": [
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Grade and route identity (North Buttress 5.7 vs Stoddard Buttress 5.8)",
+   "verdict": "fixed",
+   "correct_value": "This route is the original 1961 line, III 5.7 (a 5.8 variant reported near the chimney); the Stoddard Buttress (IV 5.8, 1984) is a separate line left of it and has its own route.",
+   "evidence": "The route-database page for the Stoddard Buttress and the AAC account of the 1961 ascent both give the Bell-Cooper-Hiser-Swayne line as III 5.7 following a faint buttress on the right, and say Stoddard's 1984 solo traversed left of it to a separate crest at 5.8. The itinerary and one climbing_route note had merged the two; they are corrected to the 1961 line and its 5.7 grade.",
+   "sources": [
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress",
+    "http://publications.americanalpineclub.org/articles/12196206500/",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "title"
+     ],
+     "find": "North Face / Stoddard-North Buttress summit push",
+     "replace": "North Face / North Buttress summit push",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Grade and route identity (North Buttress 5.7 vs Stoddard Buttress 5.8)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "fromTo"
+     ],
+     "find": "North Face / Stoddard-North Buttress summit push",
+     "replace": "North Face / North Buttress summit push",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Grade and route identity (North Buttress 5.7 vs Stoddard Buttress 5.8)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "Start of the 2,500 ft Stoddard/North Buttress line, 5.8.",
+     "replace": "Start of the 2,500 ft North Face / North Buttress line, 5.7.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Grade and route identity (North Buttress 5.7 vs Stoddard Buttress 5.8)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "then climb the sustained buttress (5.8, much of it simul-climbed)",
+     "replace": "then climb the face and its right-hand buttress (5.7, much of it simul-climbed)",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Grade and route identity (North Buttress 5.7 vs Stoddard Buttress 5.8)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "then climb the sustained buttress (5.8, much of it…",
+     "replace": "then climb the face and its right-hand buttress (5.7, much of it…",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Grade and route identity (North Buttress 5.7 vs Stoddard Buttress 5.8)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "on the 2,500 ft North Face/Stoddard-North Buttress line",
+     "replace": "on the 2,500 ft North Face / North Buttress line",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Grade and route identity (North Buttress 5.7 vs Stoddard Buttress 5.8)"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "with the route as a whole graded around III-IV, 5.8.",
+     "replace": "with the original line as a whole graded III, 5.7.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Grade and route identity (North Buttress 5.7 vs Stoddard Buttress 5.8)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The technical North Face/Stoddard Buttress start is reached via a traverse from Terror Basin over the Chopping Block col through McMillan Cirque — a steep, brushy descent past slabs and heather beneath Inspiration Peak and the McMillan Spires before rounding into position under Terror's wall.",
+     "replace": "The technical start of the North Face is reached from the Crescent Creek Basin camp by crossing the Ottohorn-Himmelhorn col and descending the Mustard Glacier into McMillan Cirque to the foot of Terror's wall, a 2-3 hour trip even for fast parties.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Grade and route identity (North Buttress 5.7 vs Stoddard Buttress 5.8)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Approach to the base of the north face",
+   "verdict": "fixed",
+   "correct_value": "From a camp in Crescent Creek Basin (reached from Terror Basin over the Barrier), cross the Ottohorn-Himmelhorn col and descend the Mustard Glacier into McMillan Cirque to the base of the north face, about 2-3 hours from camp.",
+   "evidence": "A detailed trip report of the Stoddard Buttress records leaving the Crescent Creek camp, reaching the Ottohorn-Himmelhorn col in about an hour, then descending and traversing the Mustard Glacier to the base. The peak's main route page says the north side is reached from Crescent Creek Basin over the Otto-Himmel col and down snow below the Twin Spires and the Rake, 2-3 hours even for fast parties; an AAC accident report likewise has a party leaving Crescent Creek at dawn via the Ottohorn-Himmelhorn col. The Terror-Degenhardt saddle line in `approach` describes the East Ridge, and the Chopping Block col only leads into Crescent Creek Basin, not McMillan Cirque; the itinerary and turnaround were already right.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://www.summitpost.org/mount-terror/155359",
+    "http://publications.americanalpineclub.org/articles/13201008902/Falling-Rock-Rock-Came-Loose-Fall-on-Rock-Washington-North-Cascades-Pickett-Range-Mount-Terror"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From this Terror Basin camp, the North Face/North Ridge is reached by ascending slabs and snow to the saddle between Mount Terror and Mount Degenhardt, then following the short, steep ridge crest directly to the summit.",
+     "replace": "From this Terror Basin camp, parties continue over the Barrier into Crescent Creek Basin and camp again there before the climb.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Approach to the base of the north face"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "then over the Chopping Block col through McMillan Cirque to the foot of the wall",
+     "replace": "then over the Barrier to Crescent Creek Basin and the Ottohorn-Himmelhorn col to the foot of the wall",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Approach to the base of the north face"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "From Terror Basin the technical start is reached by traversing over the Chopping Block col through McMillan Cirque, a steep, brushy descent past slabs and heather beneath Inspiration Peak and the McMillan Spires, before rounding into position under Terror's wall.",
+     "replace": "From the Crescent Creek Basin camp the technical start is reached by crossing the Ottohorn-Himmelhorn col and descending the Mustard Glacier into McMillan Cirque, then rounding into position under Terror's wall.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Approach to the base of the north face"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 6,000 matches only the approach to camp, while the itinerary days sum to 9,000 ft. No outside source states a car-to-car gain figure for this route, and the rules forbid computing one from camp and summit elevations, so no patch is written.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Descent: reverse the face vs West Ridge",
+   "verdict": "fixed",
+   "correct_value": "Parties descend the West Ridge to the Terror-Rake notch, then rappel and downclimb the loose gully into Crescent Creek Basin; the face is not reversed.",
+   "evidence": "The route-database page for the neighbouring north-face line gives the descent as the West Ridge to the Blob-Terror notch, then the gully to Crescent Creek Cirque with several rappels; a Stoddard Buttress trip report likewise descended the west ridge gully back to the Crescent Creek camp. The row's descent_text, rappels, rappel_detail and summit waypoint already said so; the short descent field and the itinerary are corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Rappel and downclimb the route or descend the southern side",
+     "value": "Descend the West Ridge to the notch above the descent gully, then rappel and downclimb the gully into Crescent Creek Basin.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Descent: reverse the face vs West Ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Rappel/downclimb the route, or drop to the south side toward camp.",
+     "replace": "Descend the West Ridge and rappel the gully back into Crescent Creek Basin.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Descent: reverse the face vs West Ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "before reversing the route or dropping to the south side to get back to camp.",
+     "replace": "before descending the West Ridge gully to get back to camp.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Descent: reverse the face vs West Ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Top of the West Ridge descent gully (notch name)",
+   "verdict": "fixed",
+   "correct_value": "The descent gully tops out at the low notch between Terror and The Rake (the Blob), not at the notch between Terror's true and false summits.",
+   "evidence": "The north-face route page describes descending the West Ridge to the Blob-Terror notch before the gully; a West Ridge trip report places the top of the gully at the notch between Terror and The Rake, and the West Ridge route page starts the ridge climbing at the notch on Terror's west side, with the false-true summit notch much higher on the ridge. descent_text is corrected; the Stoddard row already names the Blob-Terror notch.",
+   "sources": [
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm",
+    "https://www.mountainproject.com/route/121100279/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "toward the notch between Terror's true and false summits, where a large chockstone marks the top of the descent gully system",
+     "replace": "toward the low notch between Terror and The Rake, where a large chockstone marks the top of the descent gully system",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Top of the West Ridge descent gully (notch name)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Glacier at the base of the face (name)",
+   "verdict": "fixed",
+   "correct_value": "The glacier crossed to reach the north face is the Mustard Glacier (below the Ottohorn-Himmelhorn col in McMillan Cirque). The Terror Glacier lies on the south slope of Mount Degenhardt, on the Crescent Creek side, and the Degenhardt name does not apply to this approach.",
+   "evidence": "A Stoddard Buttress trip report crosses the Ottohorn-Himmelhorn col and traverses the Mustard Glacier to the base of the route, and the peak's main route page names the Mustard Glacier as the problem crossing on the approach to the North Buttress. The Terror Glacier's own entry places it on the south slope of Mount Degenhardt, southeast of Terror, i.e. not below the north face. All copies of the glacier name are unified on Mustard. NOTE (not patched, pin positions out of scope): waypoints[5] 'Terror Glacier crossing' is pinned south of the summit, on the real Terror Glacier, yet its note describes the traverse to the north face base — the pin and its label need a separate look.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://www.summitpost.org/mount-terror/155359",
+    "https://en.wikipedia.org/wiki/Terror_Glacier_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "find": "for the Terror Glacier remnant",
+     "replace": "for the Mustard Glacier",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Glacier at the base of the face (name)"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "find": "Heavily crevassed Terror Glacier remnant with mostly unbridged ice by late summer",
+     "replace": "Heavily crevassed Mustard Glacier ice on the way to the base, mostly unbridged by late summer",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Glacier at the base of the face (name)"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "Mustard/Terror Glacier crossing",
+     "replace": "Mustard Glacier crossing",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Glacier at the base of the face (name)"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Approach via Degenhardt Glacier requiring ice axe/crampons.",
+     "replace": "Approach via the Mustard Glacier requiring ice axe/crampons.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Glacier at the base of the face (name)"
+    },
+    {
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      4
+     ],
+     "find": "for the Degenhardt/Terror Glacier approach",
+     "replace": "for the Mustard Glacier approach",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Glacier at the base of the face (name)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "By mid-to-late summer the Terror Glacier remnant at the base is heavily crevassed",
+     "replace": "By mid-to-late summer the Mustard Glacier below the face is heavily crevassed",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Glacier at the base of the face (name)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      1
+     ],
+     "find": "A heavily crevassed, mostly unbridged Terror Glacier remnant at the base by mid-season",
+     "replace": "A heavily crevassed, mostly unbridged Mustard Glacier below the face by mid-season",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Glacier at the base of the face (name)"
+    },
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "while the Terror Glacier remnant is usually still crossable",
+     "replace": "while the Mustard Glacier is usually still crossable",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Glacier at the base of the face (name)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Glacier on the route (avalanche zone)",
+   "verdict": "fixed",
+   "correct_value": "The route crosses glacier ice (the Mustard Glacier) on the way to the base, so the avalanche card must not call it non-glaciated.",
+   "evidence": "The same two sources (a Stoddard Buttress trip report and the peak's main route page) describe the Mustard Glacier crossing to the base of the north face; the hazards, approach and crevasse card already treat it as glacier travel. Only the avalanche-zone wording is changed.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://www.summitpost.org/mount-terror/155359"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer route (",
+     "replace": "N/A - summer route (",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Glacier on the route (avalanche zone)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Relief of the south side",
+   "verdict": "fixed",
+   "correct_value": "The summit (8,151 ft) stands roughly 2,000 ft above the Crescent Creek Basin camps (about 6,000-6,400 ft).",
+   "evidence": "The summit elevation is 8,151 ft. One Stoddard Buttress trip report camps in Crescent Creek Basin at 6,200 ft, and a West Ridge report camps at 6,400 ft on the Chopping Block saddle above the basin, so the south side rises about 2,000 ft from the camps; the 1,000 ft figure seems to have been measured from the upper cirque at the foot of the gully, not from the basin.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "the south side rises only about 1,000 feet from Crescent Creek Basin",
+     "replace": "the south side rises only about 2,000 feet from the Crescent Creek Basin camps",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Relief of the south side"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "fact": "Permit: reservation and fee",
+   "verdict": "fixed",
+   "correct_value": "Walk-up only (not reservable), issued in person at the Marblemount WIC the day of or the day before; $10 per person plus a $6 fee, including walk-ups.",
+   "evidence": "The park's cross-country zone page and its reservations page both say only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and every other zone, including Terror Basin and Crescent Creek (6 per party, 6 parties a night), is walk-up only. The park's permit pages give the cost as $10 per person plus a $6 fee, youth 15 and under free, and say the $6 fee also applies to walk-up permits. A 2020 party picked its permit up in person at the Marblemount ranger station. Access text claiming a free permit, free walk-ups, Recreation.gov booking or self-issue is corrected; bivy[] is left to the camping clean-up.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Free wilderness/climbing permit required for any overnight stay in the park backcountry. As of the 2025–26 permit system, advance reservations are booked on Recreation.gov (a mandatory safety video must be completed, then email noca_wilderness@nps.gov within 3 days of the trip); walk-up permits are otherwise picked up in person at the Wilderness Information Center in Marblemount, which covers the Terror Basin/McMillan Cirque cross-country zones.",
+     "value": "A wilderness permit is required for any overnight stay in the park backcountry, at $10 per person plus a $6 fee per permit (youth 15 and under free). The Terror Basin and Crescent Creek cross-country zones cannot be reserved in advance: the permit is walk-up only, issued in person at the Wilderness Information Center in Marblemount the day of or the day before the trip.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$10 per person plus a $6 reservation fee for advance Recreation.gov bookings (youth 15 and under free); walk-up permits at the WIC are free.",
+     "value": "$10 per person plus a $6 fee per permit (youth 15 and under free); walk-up permits cost the same.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(this cross-country zone is walk-up only, issued in person at the Marblemount Wilderness Information Center)",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "self-register a wilderness permit at the Marblemount Wilderness Info Center",
+     "replace": "pick up a walk-up wilderness permit in person at the Marblemount Wilderness Info Center",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "self-register at the Marblemount Wilderness Info Center, and no advance reservation is needed for this zone.",
+     "replace": "pick it up in person at the Marblemount Wilderness Info Center, since this zone cannot be reserved in advance.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "NPS caps overnight parties here at ~6, so book ahead in peak season.",
+     "replace": "the zone takes only 6 parties a night and cannot be reserved, so be at Marblemount early in peak season.",
+     "id": "wa_mount_terror_north_face",
+     "fact": "Permit: reservation and fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "fact": "Rock grade",
+   "verdict": "fixed",
+   "correct_value": "The pitch above the notch goes at about 5.0/low fifth by the easiest line and about 5.6 by the crack system many parties take; the route is rated 5.6.",
+   "evidence": "The route-database page rates the West Ridge 5.6 for a roughly 30 m crack pitch above the notch and notes easier options may exist. A West Ridge trip report calls the same pitch low fifth (a layback), and a second report found it class 4 with snow and low fifth without; the peak's main route page gives about 5.0 for the first hundred feet. Both numbers are real, so the header 5.6 is kept and the beta and pitch table now say 5.0-5.6 depending on the line.",
+   "sources": [
+    "https://www.mountainproject.com/route/121100279/west-ridge",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://www.summitpost.org/mount-terror/155359"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "climb a crack (5.0, a piton or two useful)",
+     "replace": "climb a crack (5.0 to 5.6 depending on the line taken; a piton or two useful)",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Rock grade"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "grade"
+     ],
+     "expect": "5.0",
+     "value": "5.0-5.6",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Rock grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "fact": "Notch at the top of the gully",
+   "verdict": "fixed",
+   "correct_value": "The gully tops out at the low notch between Terror and The Rake; the notch between the true and false summits is higher up the ridge.",
+   "evidence": "A West Ridge trip report puts the top of the gully at the notch between Terror and The Rake (the Blob), and the north-face route page likewise describes the West Ridge descent reaching the Blob-Terror notch before the gully. The West Ridge route page reaches the false-true summit notch only after the first pitch and the ledges above. The overview and beta were right; the approach note is corrected.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm",
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress",
+    "https://www.mountainproject.com/route/121100279/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "the west gully system climbs to the notch between Terror's TRUE and FALSE summits, and a large chockstone sits at the head of it.",
+     "replace": "the west gully system climbs to the low notch between Terror and The Rake, and a large wedged chockstone sits near the head of it.",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Notch at the top of the gully"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "fact": "Rappels needed in the gully",
+   "verdict": "fixed",
+   "correct_value": "Descending, parties downclimb or rappel the summit tower and the notch pitch, then make two or three rappels in the gully with downclimbing between them.",
+   "evidence": "One West Ridge party made five rappels in all: two to reach the top of the gully and three in the gully, downclimbing between them. Another rappelled from two gully anchors a little under one 60 m rope-length apart, and the route-database page lists rappels on the summit block, the first pitch and at several points in the gully. The rappels, descent and descent_text fields left out the gully rappels and are corrected; the bail line is left as it is.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://www.mountainproject.com/route/121100279/west-ridge"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "then return to the notch using existing sling anchors",
+     "replace": "then return to the notch using existing sling anchors, and make two or three more rappels down the gully, downclimbing between stations",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Rappels needed in the gully"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "and down the gully",
+     "replace": "and down the gully, rappelling its steeper steps",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Rappels needed in the gully"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "then descend the steep choss gully back toward Crescent Creek Basin —",
+     "replace": "then descend the steep choss gully back toward Crescent Creek Basin with two or three rappels and downclimbing between them —",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Rappels needed in the gully"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Roughly 3-5 rappels get parties down it,",
+     "replace": "Two or three rappels in the gully, plus one or two above the notch, get parties down,",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Rappels needed in the gully"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "fact": "Approach gain to Crescent Creek Basin",
+   "verdict": "fixed",
+   "correct_value": "From the ~600 ft trailhead the approach gains roughly 5,500-6,000 ft to the Crescent Creek Basin camps (about 6,000-6,400 ft); the 1,600 ft figure cannot reach the basin.",
+   "evidence": "One West Ridge report records a 600 ft trailhead and a camp at 6,400 ft, about 5,800 ft of gain, and a Stoddard Buttress report camps in Crescent Creek Basin at 6,200 ft. Both agree with the row's own 'nearly 6,000 ft' total. The contradictory 1,600 ft figure for the climbers' track is removed and the total is kept.",
+   "sources": [
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(pink flagging, moss-covered cliffs) gaining roughly 1,600 ft to reach Crescent Creek Basin;",
+     "replace": "(pink flagging, moss-covered cliffs) to reach Crescent Creek Basin;",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Approach gain to Crescent Creek Basin"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "past moss-covered cliffs, gaining roughly 1,600 ft, to reach Crescent Creek Basin.",
+     "replace": "past moss-covered cliffs to reach Crescent Creek Basin.",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Approach gain to Crescent Creek Basin"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "fact": "Whether the camp zone permit can be reserved in advance",
+   "verdict": "fixed",
+   "correct_value": "Walk-up only (not reservable), issued in person at the Marblemount WIC; $10 per person plus a $6 fee, including walk-ups.",
+   "evidence": "The park's cross-country zone page and its reservations page both say only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and every other zone, including Terror Basin and Crescent Creek (6 per party, 6 parties a night), is walk-up only. The park's permit pages give the cost as $10 per person plus a $6 fee, youth 15 and under free, and say the $6 fee also applies to walk-up permits. A 2020 party picked its permit up in person at the Marblemount ranger station. Access text claiming a free permit, free walk-ups, Recreation.gov booking or self-issue is corrected; bivy[] is left to the camping clean-up.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Backcountry permit required for overnight stays; reserve on Recreation.gov or self-issue at the Marblemount Wilderness Information Center when unstaffed",
+     "value": "Backcountry permit required for overnight stays. The Terror Basin and Crescent Creek cross-country zones cannot be reserved in advance: the permit is walk-up only, issued in person at the Marblemount Wilderness Information Center the day of or the day before the trip.",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$10 per person plus a $6 reservation fee for a backcountry permit via Recreation.gov",
+     "value": "$10 per person plus a $6 fee per permit (youth 15 and under free); walk-up permits cost the same.",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip.",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(this cross-country zone is walk-up only, issued in person at the Marblemount Wilderness Information Center)",
+     "id": "wa_mount_terror_west_ridge",
+     "fact": "Whether the camp zone permit can be reserved in advance"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The grade column says Grade III-IV while commitment and alpine_grade say II. The sources found (a 2020 trip report quoting the standard guide, and the East Ridge route page) give the route as a 4-pitch 5.6 but state no commitment numeral, so which numeral is right cannot be settled; no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982",
+    "https://www.summitpost.org/mount-terror-east-ridge/871460"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Pitch count",
+   "verdict": "fixed",
+   "correct_value": "4 pitches",
+   "evidence": "A 2020 party on the East Ridge quotes the standard guide as describing a 4-pitch 5.6 route and itself climbed four pitches (a hard crack start, a traverse, a third pitch and a final exposed pitch to the summit); the East Ridge route page describes two pitches, a traverse onto the south face, then two more. pitch_detail and the itinerary already had four; the header and the approach note are corrected.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982",
+    "https://www.summitpost.org/mount-terror-east-ridge/871460"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 5,
+     "value": 4,
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Pitch count"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Five pitches at Grade III-IV 5.6 follow.",
+     "replace": "Four pitches at Grade III-IV 5.6 follow.",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Route identity / face (East Ridge vs South Ridge / SE Face)",
+   "verdict": "fixed",
+   "correct_value": "The route is the East Ridge, climbed from the Terror-Degenhardt saddle.",
+   "evidence": "A 2020 trip report crosses the saddle between Degenhardt and Terror to climb Terror's East Ridge, and the East Ridge route page describes slabs to the Terror-Degenhardt saddle and then the short, steep ridge to the summit. The row's name, aspect, face, overview, beta and pitch table all agree; the itinerary, timing label and crevasse card that said South Ridge/SE Face are corrected, and a pipeline note about the row's id is removed from the approach text.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982",
+    "https://www.summitpost.org/mount-terror-east-ridge/871460"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "title"
+     ],
+     "find": "Southeast Face / South Ridge summit push",
+     "replace": "East Ridge summit push",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Route identity / face (East Ridge vs South Ridge / SE Face)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "fromTo"
+     ],
+     "find": "Southeast Face / South Ridge summit push",
+     "replace": "East Ridge summit push",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Route identity / face (East Ridge vs South Ridge / SE Face)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "objective"
+     ],
+     "find": "Climb the 4-pitch South Ridge to the summit and return",
+     "replace": "Climb the 4-pitch East Ridge to the summit and return",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Route identity / face (East Ridge vs South Ridge / SE Face)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "Rope up at the base of the South Ridge/SE Face",
+     "replace": "Rope up at the base of the East Ridge",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Route identity / face (East Ridge vs South Ridge / SE Face)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "on the short, steep 4-pitch South Ridge/SE Face directly above camp",
+     "replace": "on the short, steep 4-pitch East Ridge above camp",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Route identity / face (East Ridge vs South Ridge / SE Face)"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "on the south ridge line itself",
+     "replace": "on the East Ridge line itself",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Route identity / face (East Ridge vs South Ridge / SE Face)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": " Note that this route is filed as southeast face while its name and aspect both say EAST RIDGE.",
+     "replace": "",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Route identity / face (East Ridge vs South Ridge / SE Face)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Descent (reverse the ridge vs West Ridge gully)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Descend by the West Ridge and its gully back into Crescent Creek Basin, not by reversing the East Ridge.",
+   "evidence": "A 2020 party that climbed the East Ridge descended the standard West Ridge and its gully back into Crescent Creek Basin. Inside the row, descent_text, rappels, rappel_detail, rappel_count_note and the approach note all give the West Ridge gully; only the itinerary reverses the ridge, so it is corrected.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "reversed by rappel and downclimbing back to the saddle and camp.",
+     "replace": "then descended by the West Ridge gully, with rappels, back into Crescent Creek Basin and camp.",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Descent (reverse the ridge vs West Ridge gully)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "schedule",
+      4,
+      "label"
+     ],
+     "find": "Begin rappels/downclimb back to the saddle",
+     "replace": "Begin the West Ridge descent",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Descent (reverse the ridge vs West Ridge gully)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Total gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 6,000 and loss_ft 7,550 disagree with the itinerary sums (8,300 / 8,400). No outside source states a car-to-car gain or loss figure for this route, and the rules forbid computing one or equalising loss with gain; no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Glacier travel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The watch_out entry calls for roped glacier travel and a bergschrund at the ridge base, while the crevasse and avalanche cards say no glacier. A 2020 party on this route describes the approach as a descent into Crescent Creek Basin on snow and talus, a rising traverse and about 400 ft of wet slabs, with no glacier; but the small Terror Glacier sits on Degenhardt's south slope just southeast of Terror, near the approach to the saddle, and no second source says whether it is crossed. Left unresolved; no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982",
+    "https://en.wikipedia.org/wiki/Terror_Glacier_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "High point / elevation gain to base in watch_out",
+   "verdict": "fixed",
+   "correct_value": "The summit is 8,151 ft; the approach gains roughly 6,000 ft to camp, not 7,000+ ft.",
+   "evidence": "The summit elevation is 8,151 ft, matching the row's high_point_ft and summit waypoint. A trip report from the same trailhead records 600 ft to a 6,400 ft camp, about 5,800 ft of gain, agreeing with the row's own 'roughly 6,000 ft of gain to camp' approach hazard. The two generic watch_out figures are corrected.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      4
+     ],
+     "find": "altitude gain to 8400 ft",
+     "replace": "altitude gain to 8,151 ft",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "High point / elevation gain to base in watch_out"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      6
+     ],
+     "find": "7000+ ft elevation gain to base",
+     "replace": "roughly 6,000 ft of elevation gain to camp",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "High point / elevation gain to base in watch_out"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "fact": "Permit: reservation and fee",
+   "verdict": "fixed",
+   "correct_value": "Walk-up only (not reservable), issued in person at the Marblemount WIC; $10 per person plus a $6 fee, including walk-ups.",
+   "evidence": "The park's cross-country zone page and its reservations page both say only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and every other zone, including Terror Basin and Crescent Creek (6 per party, 6 parties a night), is walk-up only. The park's permit pages give the cost as $10 per person plus a $6 fee, youth 15 and under free, and say the $6 fee also applies to walk-up permits. A 2020 party picked its permit up in person at the Marblemount ranger station. Access text claiming a free permit, free walk-ups, Recreation.gov booking or self-issue is corrected; bivy[] is left to the camping clean-up.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "A wilderness/climbing permit is required for overnight stays and costs $10 per person plus a $6 reservation fee, youth 15 and under free; Crescent Creek Basin is its own cross-country zone. Advance reservations go through Recreation.gov (safety video + email confirmation to noca_wilderness@nps.gov); walk-up permits are issued at the Wilderness Information Center in Marblemount.",
+     "value": "A wilderness/climbing permit is required for overnight stays and costs $10 per person plus a $6 fee per permit, youth 15 and under free; Crescent Creek Basin is its own cross-country zone. It cannot be reserved in advance: the permit is walk-up only, issued in person at the Wilderness Information Center in Marblemount the day of or the day before the trip.",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$10 per person plus a $6 reservation fee for advance Recreation.gov bookings (youth 15 and under free); walk-up permits at the WIC are free.",
+     "value": "$10 per person plus a $6 fee per permit (youth 15 and under free); walk-up permits cost the same.",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "value": "The Southern Pickets cross-country zones (Terror Basin and Crescent Creek) cannot be reserved in advance; permits are walk-up only, issued in person at the Wilderness Information Center in Marblemount the day of or the day before the trip.",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip.",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(this cross-country zone is walk-up only, issued in person at the Marblemount Wilderness Information Center)",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Permit: reservation and fee"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "self-register a wilderness permit at the Marblemount Wilderness Info Center",
+     "replace": "pick up a walk-up wilderness permit in person at the Marblemount Wilderness Info Center",
+     "id": "wa_mount_terror_southeast_face",
+     "fact": "Permit: reservation and fee"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 6,000 equals only the approach to camp; the summit day from a ~6,000-6,200 ft camp over the Ottohorn-Himmelhorn col to 8,151 ft adds more. No outside source states a car-to-car gain for this route, and computing one is not allowed; no patch.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "https://www.mountainproject.com/route/201414450/stoddard-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "fact": "Whether the camp zone permit can be reserved in advance",
+   "verdict": "fixed",
+   "correct_value": "Walk-up only (not reservable), issued in person at the Marblemount WIC; $10 per person plus a $6 fee, including walk-ups.",
+   "evidence": "The park's cross-country zone page and its reservations page both say only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and every other zone, including Terror Basin and Crescent Creek (6 per party, 6 parties a night), is walk-up only. The park's permit pages give the cost as $10 per person plus a $6 fee, youth 15 and under free, and say the $6 fee also applies to walk-up permits. A 2020 party picked its permit up in person at the Marblemount ranger station. Access text claiming a free permit, free walk-ups, Recreation.gov booking or self-issue is corrected; bivy[] is left to the camping clean-up.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+    "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-08-04-1784411982"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Backcountry permit required for overnight stays; reserve on Recreation.gov or self-issue at the Marblemount Wilderness Information Center when unstaffed",
+     "value": "Backcountry permit required for overnight stays. The Terror Basin and Crescent Creek cross-country zones cannot be reserved in advance: the permit is walk-up only, issued in person at the Marblemount Wilderness Information Center the day of or the day before the trip.",
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Whether the camp zone permit can be reserved in advance"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$10 per person plus a $6 reservation fee for a backcountry permit via Recreation.gov",
+     "value": "$10 per person plus a $6 fee per permit (youth 15 and under free); walk-up permits cost the same.",
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Whether the camp zone permit can be reserved in advance"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+     "value": "Walk-up only for this cross-country zone: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before the trip.",
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Whether the camp zone permit can be reserved in advance"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "(reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)",
+     "replace": "(this cross-country zone is walk-up only, issued in person at the Marblemount Wilderness Information Center)",
+     "id": "wa_mount_terror_stoddard_buttress",
+     "fact": "Whether the camp zone permit can be reserved in advance"
+    }
+   ]
+  }
+ ]
+}

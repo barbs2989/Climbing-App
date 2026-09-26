@@ -1,0 +1,39 @@
+{"file": "r124.json", "results": [
+ {"id": "wa_north_ridge_west_side", "fact": "Hardest rock grade", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The area page on one climbing database grades North Ridge - West Side 5.4, and a club route page describes it as several short low-5th-class pitches up the west rib and more to the summit. A 1994 AAC journal note on a traverse says the party gained the north ridge and climbed two or three pitches of 5.7 and 5.8 to the summit, then worked southwest to an 80-foot rappel, which is where the 5.7-5.8 in pitch_detail and beta comes from. It is unclear whether the 1994 line is the same as the west-side line, so no two sources settle the crux grade; Wikipedia's 'class 4 easiest route' is about the peak, not this route.",
+  "sources": ["https://www.mountainproject.com/area/117649096/molar-tooth", "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside", "http://publications.americanalpineclub.org/articles/12199413501/North-America-United-States-Washington-Traverse-of-Molar-Tooth-North-Peak-Cutthroat-Peak-and-Whistler", "https://en.wikipedia.org/wiki/Molar_Tooth_(Washington)"],
+  "patches": []},
+ {"id": "wa_north_ridge_west_side", "fact": "Summit elevation", "verdict": "fixed",
+  "correct_value": "7547 ft (summit waypoint elev should be 7547, matching high_point_ft)",
+  "evidence": "The USGS topo labels the summit only as point 7547; listsofjohn lists 'Molar Tooth' at 7,547 ft and Wikipedia gives 7,547 ft (2,300 m). One climbing database's area page shows 7,077 ft, the outlier the waypoint copied; Cutthroat Pass itself is ~6,800 ft, so 7,077 is implausible for a peak rising well above it.",
+  "sources": ["https://www.listsofjohn.com/peak/49165", "https://en.wikipedia.org/wiki/Molar_Tooth_(Washington)", "https://www.mountainproject.com/area/117649096/molar-tooth"],
+  "patches": [
+   {"id": "wa_north_ridge_west_side", "fact": "Summit elevation", "op": "set", "column": "waypoints", "path": [1, "elev"], "expect": 7077, "value": 7547}
+  ]},
+ {"id": "wa_north_ridge_west_side", "fact": "Trailhead used", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "Two genuine approaches exist (PCT from Rainy Pass and the Cutthroat Lake/Cutthroat Creek trailhead), both listed for Molar Tooth, and the approach prose presents both; GETTING THERE describing one and the trailhead card the other is incomplete, not contradictory.",
+  "sources": ["https://www.mountainproject.com/area/117649096/molar-tooth"],
+  "patches": []},
+ {"id": "wa_north_ridge_west_side", "fact": "Protection quality", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The only source found on protection is the club route page quoted in rope_note ('if you were to lead this you may not find much pro'; light alpine rack with slings). No second source describes protection on this route, and the row itself is split (rope_note, watch_out and the Runout feature vs pro_needs, detailed_rack and pitch_detail notes), so it cannot be settled internally either.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside"],
+  "patches": []},
+ {"id": "wa_north_ridge_west_side", "fact": "Permit requirement", "verdict": "fixed",
+  "correct_value": "No wilderness permit required; Northwest Forest Pass / $5 day-use fee to park",
+  "evidence": "The Forest Service Cutthroat Trailhead page lists only the parking pass/day-use fee and the no-camping-near-the-lake rule, with no wilderness permit. A Cutthroat Lake/Pass hiking guide states day trips need no separate wilderness permit or PCT permit, and the WTA Cutthroat Pass page lists only a Northwest Forest Pass or America the Beautiful pass. The area is outside designated wilderness.",
+  "sources": ["https://fs.usda.gov/r06/okanogan-wenatchee/recreation/cutthroat-trailhead", "https://cascadesfieldguide.com/topics/cutthroat-lake-cutthroat-pass-hiking-guide", "https://www.wta.org/go-hiking/hikes/cutthroat-pass"],
+  "patches": [
+   {"id": "wa_north_ridge_west_side", "fact": "Permit requirement", "op": "set", "column": "access", "path": ["permit"], "expect": "Free self-issue day-use wilderness permit (May 15 - Oct 31)", "value": "No wilderness permit required; Northwest Forest Pass or day-use fee to park"},
+   {"id": "wa_north_ridge_west_side", "fact": "Permit requirement", "op": "set", "column": "access", "path": ["_raw", "permit_type"], "expect": "Free self-issue day-use wilderness permit (May 15 - Oct 31)", "value": "No wilderness permit required"},
+   {"id": "wa_north_ridge_west_side", "fact": "Permit requirement", "op": "set", "column": "access", "path": ["_raw", "permit_pickup_location"], "expect": "Self-issue at Cutthroat Pass trailhead", "value": "None required"},
+   {"id": "wa_north_ridge_west_side", "fact": "Permit requirement", "op": "set", "column": "access", "path": ["_raw", "permit_application_method"], "expect": "Self-issue at trailhead", "value": "None required"}
+  ]},
+ {"id": "wa_north_ridge_west_side", "fact": "Total gain vs the route's own pins", "verdict": "unresolved", "discovered": true,
+  "correct_value": null,
+  "evidence": "gain_ft is 2300, but the trailhead pin is 4855 ft and the summit 7547 ft, a net rise of ~2,690 ft; the 2,300 figure in the approach prose is measured from ~5,250 ft near Porcupine Creek, not the car. No outside source states a car-to-car gain for this route, so it is not patched (no arithmetic totals allowed).",
+  "sources": ["https://www.listsofjohn.com/peak/49165"],
+  "patches": []}
+]}

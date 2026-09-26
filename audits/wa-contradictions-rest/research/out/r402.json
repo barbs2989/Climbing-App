@@ -1,0 +1,44 @@
+{"file": "r402.json", "results": [
+ {"id": "wa_table_mountain_standard_scramble", "fact": "rope_note describes a different Table Mountain", "verdict": "fixed",
+  "correct_value": "rope_note describes the Artist Point Table Mountain Trail #681 (a hiking trail with exposed switchbacks), not the Blewett Pass Table Mountain / Tronsen Head trail",
+  "evidence": "The Forest Service trail page for Table Mountain Trail 681 describes a trail from Artist Point up switchbacks on the southeast cliff face onto the plateau; WTA describes the same Artist Point route. Tronsen Head and a burn area belong to the unrelated Table Mountain near Blewett Pass, so the rope_note text is contamination from another record.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/table-mountain-trail-681", "https://www.wta.org/go-hiking/hikes/table-mountain"],
+  "patches": [
+   {"id": "wa_table_mountain_standard_scramble", "fact": "rope_note describes a different Table Mountain", "op": "replace_text", "column": "rope_note", "path": [], "find": "Blewett Pass Table Mountain trail through a burn area to Tronsen Head/larch meadows; this is effectively a hiking trail", "replace": "The trail from Artist Point is a maintained hiking trail with some exposed switchbacks; it is effectively a hike"}
+  ]},
+ {"id": "wa_table_mountain_standard_scramble", "fact": "Direction of travel across the plateau", "verdict": "fixed",
+  "correct_value": "From the top of the switchbacks the trail runs west across the plateau (final stretch to the tarns turns north); itinerary 'east' is wrong. pro_tips 'north ... to the twin tarns' is consistent and left alone.",
+  "evidence": "The Forest Service trail page says the plateau trail continues westward into the Mount Baker Wilderness. The encyclopedia entry places the summit west of Artist Point at the west end of the mountain (48.848, -121.714 vs the trailhead at -121.693), matching the row's own pins. WTA describes following the south rim and then going north to the tarns, so the pro_tips 'north' wording is not a contradiction; only the itinerary's 'east' is wrong.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/table-mountain-trail-681", "https://en.wikipedia.org/wiki/Table_Mountain_(Whatcom_County,_Washington)", "https://www.wta.org/go-hiking/hikes/table-mountain"],
+  "patches": [
+   {"id": "wa_table_mountain_standard_scramble", "fact": "Direction of travel across the plateau", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "walk the open tableland east with big views", "replace": "walk the open tableland west with big views"}
+  ]},
+ {"id": "wa_table_mountain_standard_scramble", "fact": "Switchback length and plateau-top elevation", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Sources do not agree on where the switchbacks top out. The Forest Service says the plateau is reached after less than a mile; SummitPost (via search summary) describes about 600 ft of gain up the southeast face to the eastern plateau over about 1.0 mi one way; WTA gives only 725 ft total gain and a 5,700 ft high point; 10adventures says switchbacks start at 0.5 km. No two sources confirm either the approach's ~400 ft / 0.4-0.5 mi or the beta's 0.6-1 mi / ~5,700 ft plateau figure, so no patch.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/table-mountain-trail-681", "https://www.summitpost.org/table-mountain/222045", "https://www.wta.org/go-hiking/hikes/table-mountain", "https://www.10adventures.com/hikes/mount-baker/table-mountain/"],
+  "patches": []},
+ {"id": "wa_table_mountain_standard_scramble", "fact": "Artist Point road opening timing", "verdict": "fixed",
+  "correct_value": "The road to Artist Point usually reopens mid-to-late June (June 10, 2026; June 27, 2025; June 21, 2024; about a week later in 2023)",
+  "evidence": "WSDOT news releases announce reopening on June 10, 2026 and June 21, 2024, and 2025 coverage (Cascadia Daily News/Spokesman) confirms June 27, 2025; the 2024 coverage notes it opened a week earlier than 2023. The July and mid-July claims are therefore wrong.",
+  "sources": ["https://wsdot.wa.gov/about/news/2026/sr-542-road-artist-point-mount-baker-reopens-season-wednesday-june-10", "https://wsdot.wa.gov/about/news/2024/sr-542-road-artist-point-will-open-season-friday-june-21", "https://www.cascadiadaily.com/2025/jun/25/road-to-artist-point-reopens-on-friday/", "https://www.seattletimes.com/seattle-news/transportation/road-to-mount-bakers-artist-point-reopens-for-summer-2024/"],
+  "patches": [
+   {"id": "wa_table_mountain_standard_scramble", "fact": "Artist Point road opening timing", "op": "replace_text", "column": "seasonal_guidance", "path": ["monthBreakdown", "July", "reason"], "find": "Artist Point road often only opens mid-July;", "replace": "Artist Point road has usually reopened by late June;"},
+   {"id": "wa_table_mountain_standard_scramble", "fact": "Artist Point road opening timing", "op": "replace_text", "column": "itinerary", "path": ["cal"], "find": "often not until July;", "replace": "usually in mid-to-late June;"}
+  ]},
+ {"id": "wa_table_mountain_standard_scramble", "fact": "Dogs on the trail", "verdict": "fixed",
+  "correct_value": "No pets are allowed on the Table Mountain Trail",
+  "evidence": "The Forest Service (land manager) page states no pets are allowed on the Table Mountain Trail; WTA lists dogs not allowed; 10adventures says dogs are prohibited. One Canadian blog says dogs are welcome, but the land manager's rule governs. access.rules is correct; beta and watch_out wrongly frame dogs as merely not recommended.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/table-mountain-trail-681", "https://www.wta.org/go-hiking/hikes/table-mountain", "https://www.10adventures.com/hikes/mount-baker/table-mountain/"],
+  "patches": [
+   {"id": "wa_table_mountain_standard_scramble", "fact": "Dogs on the trail", "op": "replace_text", "column": "beta", "path": [], "find": "not recommended for those uneasy with exposure, small children, or dogs.", "replace": "not recommended for those uneasy with exposure or for small children; dogs are not allowed."},
+   {"id": "wa_table_mountain_standard_scramble", "fact": "Dogs on the trail", "op": "replace_text", "column": "watch_out", "path": [0], "find": "not recommended for anyone uneasy with heights, small children, or dogs", "replace": "not recommended for anyone uneasy with heights or for small children; dogs are not allowed"}
+  ]},
+ {"id": "wa_table_mountain_standard_scramble", "fact": "Drive time Bellingham to Artist Point", "verdict": "fixed",
+  "correct_value": "About 58 miles / roughly 1.5 hrs from Bellingham",
+  "evidence": "A Washington tour guide gives 59 miles and an estimated 1.5 hours from Bellingham to Artist Point; another Artist Point guide says the drive from downtown Bellingham takes about an hour and a half. Bellingham's tourism site notes the highway ends at milepost 58 at the Artist Point lot, consistent with the row's own 34 + 24 mi. The ~1 hr / ~53 mi hospital figure is the outlier.",
+  "sources": ["https://revisitwa.org/tour/8a-bellingham-artist-point/", "https://explorewithalec.com/artist-point-guide/", "https://www.bellingham.org/drive-and-hike-mt-baker-scenic-byway"],
+  "patches": [
+   {"id": "wa_table_mountain_standard_scramble", "fact": "Drive time Bellingham to Artist Point", "op": "replace_text", "column": "emergency", "path": ["nearestHospital"], "find": "(~53 miles / ~1 hr drive from Artist Point)", "replace": "(~58 miles / ~1.5 hr drive from Artist Point)"}
+  ]}
+]}

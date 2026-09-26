@@ -1,0 +1,323 @@
+{
+ "file": "r401.json",
+ "results": [
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "Parking pass at Copper Glance TH",
+   "verdict": "bivy_zone_list",
+   "correct_value": "No parking fee or pass is required at Copper Glance Trailhead.",
+   "evidence": "The Forest Service trailhead page states no fees are required at this site, and the WTA hike page lists the parking pass as none. permit, access.fees, access.passRequired and the trailhead waypoint are therefore correct; the only outlier is bivy[0].permit, which is owned by the separate camping clean-up, so no patch is written. (access.parking_pass speaks of other trailheads such as Andrews Creek and Chewuch River, not Copper Glance.)",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/copper-glance-trailhead",
+    "https://www.wta.org/go-hiking/hikes/copper-glance-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "About 11-12 mi round trip and about 5,600-5,800 ft of gain for Big + West Craggy (the trip the itinerary describes); 12-16 mi and a 4,500 ft floor are wrong.",
+   "evidence": "The Mountaineers route page gives 12 mi and 5,800 ft for scrambling Big and West Craggy; HippoHamster gives 11.6 mi and 5,600 ft for the same two-day trip; trailcatjim gives ~11 mi and 5,600 ft gained/lost with a 3.3 hr / 2,800 ft day 1 to a 6,600 ft basin camp (the exact itinerary stored here). The approach's 12-16 mi and the totalNote's 10 mi / 4,500 ft are corrected; day 2 miles/gain/loss are set so the itinerary TOTAL reads 11.6 mi, 5,600 ft up and down. dist_km (6.4 km one-way) was left alone: no source gives a Big-Craggy-only one-way distance, so the one-way figure is not established.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/big-craggy-west-craggy-peaks",
+    "https://www.hippohamster.com/posts/big-craggy-peak-and-west-craggy-peak",
+    "https://trailcatjim.com/big-craggy-peak-west-craggy-peak-via-copper-glance-basin/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Total car-to-summit distance/gain runs roughly 12–16 miles round trip with 4,500–5,800 ft of gain depending on the exact line taken and whether West Craggy is tagged in the same push.",
+     "replace": "Total car-to-car distance/gain runs roughly 11–12 miles round trip with about 5,600–5,800 ft of gain when West Craggy is tagged in the same push, as most parties do; Big Craggy alone is somewhat shorter but still needs at least 4,700 ft of gain.",
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Round-trip distance"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 10 mi and 4,500+ ft total",
+     "replace": "roughly 11-12 mi and 5,600 ft total",
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Round-trip distance"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 6.8,
+     "value": 8.3,
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "Drive distance on Eightmile Creek Road",
+   "verdict": "fixed",
+   "correct_value": "About 9 mi on West Chewuch Road, then about 12.5 mi on FR 5130.",
+   "evidence": "WTA: 6.8 mi on West Chewuch Rd plus 2.5 mi on FR 51 (9.3 mi), then 12.4 mi on FR 5130 to the pullout on the right. The Forest Service Copper Glance Trail page: 9 mi on County Road 1213 to Eightmile Ranch, then 13 mi on FR 5130. A Mountaineers-derived summary gives 12.3 mi on FR 5130. Only the Forest Service trailhead page carries 8 / 15 mi, which is what road.driveNote copied; the majority and the bivy note put FR 5130 at 12-13 mi.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/copper-glance-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/copper-glance-trail",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/copper-glance-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "north about 8 miles, then continue onto FR 5130 (Eightmile Creek Road) for about 15 miles",
+     "replace": "north about 9 miles, then turn left onto FR 5130 (Eightmile Creek Road) for about 12.5 miles",
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Drive distance on Eightmile Creek Road"
+    }
+   ]
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "fact": "Gain vs net rise",
+   "verdict": "fixed",
+   "correct_value": "gain_ft and loss_ft 5,600 (car-to-car for the Big + West Craggy trip the itinerary describes); itinerary day 2 gain 2,800 / loss 5,600.",
+   "evidence": "gain_ft 4,570 is below the row's own 4,668 ft net rise (3,810 ft trailhead to 8,478 ft summit), so it is impossible. Two trip reports of the same two-day Big + West Craggy trip give 5,600 ft gained (HippoHamster) and 5,600 ft gained and lost (trailcatjim), and The Mountaineers gives 5,800 ft. Day 1 is 2,800 ft, so day 2 carries the remaining 2,800 ft up and all 5,600 ft down, making the itinerary TOTAL equal gain_ft/loss_ft.",
+   "sources": [
+    "https://trailcatjim.com/big-craggy-peak-west-craggy-peak-via-copper-glance-basin/",
+    "https://www.hippohamster.com/posts/big-craggy-peak-and-west-craggy-peak",
+    "https://www.mountaineers.org/activities/routes-places/big-craggy-west-craggy-peaks"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4570,
+     "value": 5600,
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Gain vs net rise"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4500,
+     "value": 5600,
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Gain vs net rise"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 1900,
+     "value": 2800,
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Gain vs net rise"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 4700,
+     "value": 5600,
+     "id": "wa_big_craggy_peak_scramble",
+     "fact": "Gain vs net rise"
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Approach line and first camp",
+   "verdict": "fixed",
+   "correct_value": "Buckskin Ridge Trail over Slate Pass 0.9 mi, Whistler Cutoff down to Middle Fork Pasayten Trail #478 (~4 mi), north (downstream) along the Middle Fork, up to Fred's Lake as the usual first camp, then Rolo Pass, upper Eureka Creek and Shellrock Basin. Robinson Pass belongs to the separate, longer Robinson Creek approach.",
+   "evidence": "WTA's Whistler Cutoff page: from the Slate Pass trailhead descend the Buckskin Ridge Trail 0.9 mi to the Whistler Cutoff, then 2.7 mi to the Middle Fork Pasayten crossing and 0.4 mi to the Robinson Creek trail (matching waypoint[1] at 4 mi). trailcatjim's Shellrock Basin/Lago/Carru/Blackcap report starts at the Buckskin Ridge Trailhead (6,900 ft), camps first at Fred's Lake (~5.1 hr from the car) and reaches Shellrock Basin via Rolo Pass and Eureka Creek; his Lost Peak loop shows Robinson Pass is the route from the Robinson Creek Trailhead on Lost River Road, then down-river past Fred's Lake. The approach prose, which crossed into the West Fork and passed Robinson Pass, is rewritten; the descent line and waypoint[2]'s 'up-valley' (the Middle Fork runs north, so the walk to Fred's Lake is down-valley) are aligned.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/whistler-cutoff",
+    "https://trailcatjim.com/shellrock-basin-mt-lago-mt-carru-blackcap-mtn/",
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/",
+    "https://trailcatjim.com/osceola-peak-mt-rolo/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From the trailhead, follow the ridge/trail over Slate Pass and drop down into the West Fork Pasayten drainage, picking up Robinson Creek/Middle Fork Pasayten Trail #478 (the full trail runs ~23 miles one-way through this country). Continue down-valley past Robinson Pass to the Middle Fork Pasayten River (roughly 9 miles in, then a further ~3-mile descent to the river) — most parties camp here or push on the first day (about 5 hours trailhead-to-camp at a backpacking pace). Day two, follow the Middle Fork Pasayten downstream, then turn up past Fred's Lake (a reliable water source and common camp) and climb to 7,100-ft Rolo Pass",
+     "replace": "From the trailhead, follow the Buckskin Ridge Trail over Slate Pass for about 0.9 mile, then take the Whistler Cutoff down into the Middle Fork Pasayten valley to Robinson Creek/Middle Fork Pasayten Trail #478, about 4 miles in. Follow the Middle Fork downstream (north) for about five miles, then climb to Fred's Lake, a reliable water source and the usual first-night camp (about 5 hours trailhead-to-camp at a backpacking pace). A longer alternative starts low at the Robinson Creek Trailhead on the Lost River Road and crosses Robinson Pass into the same valley. Day two, climb from Fred's Lake to 7,100-ft Rolo Pass",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Approach line and first camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "past Fred's Lake, down to and along the Middle Fork Pasayten River, back up over Slate Pass, and out to the Robinson Creek/Buckskin Ridge Trailhead.",
+     "replace": "past Fred's Lake, down to and along the Middle Fork Pasayten River, back up the Whistler Cutoff and over Slate Pass, and out to the Buckskin Ridge Trailhead.",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Approach line and first camp"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "find": "About five miles up-valley on trail #478",
+     "replace": "About five miles down-valley on trail #478",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Approach line and first camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Trailhead name",
+   "verdict": "fixed",
+   "correct_value": "Buckskin Ridge Trailhead at Slate Pass (~6,900 ft, Slate Peak Road). Robinson Creek Trailhead is a different trailhead on Lost River Road at ~2,550 ft.",
+   "evidence": "trailcatjim names the start 'Buckskin Ridge Trailhead on Slate Peak Road #54-600 (6,900 ft)' in two separate reports, and places 'Robinson Creek Trailhead on Lost River Road (2,550 ft)' in a third; WTA's Whistler Cutoff page starts at 'the Slate Pass trailhead'. The approach sentence naming a 'Robinson Creek/Buckskin Ridge Trailhead' is corrected (the descent_text copy is fixed under the approach-line result). access.passRequired, which names Robinson Creek Trailhead as one example of a pass-required trailhead, was not changed because no source confirms the pass rule at either trailhead.",
+   "sources": [
+    "https://trailcatjim.com/osceola-peak-mt-rolo/",
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/",
+    "https://www.wta.org/go-hiking/hikes/whistler-cutoff"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The standard approach starts at the Robinson Creek/Buckskin Ridge Trailhead (~6,900 ft) at the end of Slate Peak Road (FS-5400, the spur above Harts Pass), the highest trailhead in Washington reached by road.",
+     "replace": "The standard approach starts at the Buckskin Ridge Trailhead at Slate Pass (~6,900 ft) on Slate Peak Road, the spur above Harts Pass off FS-5400 and the highest trailhead in Washington reached by road.",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Trailhead name"
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Harts Pass / Slate Peak road opening",
+   "verdict": "fixed",
+   "correct_value": "The road typically opens in early July (sometimes mid-July) once snow clears.",
+   "evidence": "Ordealist's Harts Pass guide says the pass opens in early July as snow clears and closes with fall snow in October; Explore Washington says the road is typically passable from early or mid July through September or October. road.seasonalGate, best_season and the bivy note already say early (to mid) July; the two 'mid-to-late June' copies (itinerary.cal, trailhead waypoint directions) are corrected.",
+   "sources": [
+    "https://ordealist.com/guides/harts-pass",
+    "https://explore-wa.com/harts-pass-and-slate-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "typically isn't snow-free until mid-to-late June",
+     "replace": "typically isn't snow-free until early July",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Harts Pass / Slate Peak road opening"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "and the Slate Peak spur climbs a further 3.5 miles to the road end at roughly 6,900 ft — the highest drivable road in Washington. It is usually not snow-free until mid-to-late June, and parking at the top is limited.",
+     "replace": "and the Slate Peak spur climbs on to the trailhead at Slate Pass, roughly 6,900 ft, below the gate under Slate Peak that ends the highest drivable road in Washington. It usually opens in early July once the snow clears, and parking at the top is limited.",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Harts Pass / Slate Peak road opening"
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Total trip mileage",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 30-35 miles round trip.",
+   "evidence": "itinerary TOTAL (34 mi), totalNote (30-34), approach (30-35+) and the summit waypoint (15.1 mi one-way) agree; trailcatjim's 4-day Shellrock Basin trip that also took Lago and Carru was 35 miles, and his Osceola/Lake Doris trip from the same trailhead 28 miles. Only partner_requirements' '50+ miles' disagrees (50+ fits much larger loops such as a 51-62 mi Pasayten peakbagging circuit, not this route).",
+   "sources": [
+    "https://trailcatjim.com/shellrock-basin-mt-lago-mt-carru-blackcap-mtn/",
+    "https://trailcatjim.com/osceola-peak-mt-rolo/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "typical itineraries cover 50+ miles",
+     "replace": "typical itineraries cover 30-35 miles round trip",
+     "id": "wa_blackcap_mountain_scramble",
+     "fact": "Total trip mileage"
+    }
+   ]
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Where to leave the trail for the col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree with both fields and with each other: a route summary surfaced in search says to follow trail 474 east to below Shellrock Pass at about 6,400 ft and then traverse SSW below the cliffs; Country Highpoints followed the ridge southwest from a camp at Shellrock Pass to the col. Neither matches approach_variants' 7,100 ft, and the variant's claim that crossing the pass drops into Eureka Creek conflicts with the approach/waypoints (and trailcatjim) that put Eureka Creek before Shellrock Basin. Could not get 2 agreeing sources; no patch.",
+   "sources": [
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://trailcatjim.com/shellrock-basin-mt-lago-mt-carru-blackcap-mtn/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Road-end elevation at Slate Peak",
+   "verdict": "fixed",
+   "correct_value": "The ~6,900 ft point is the Slate Pass (Buckskin Ridge) trailhead, not the road end; the road continues to a gate at the base of Slate Peak (summit 7,488 ft).",
+   "evidence": "trailcatjim puts the Buckskin Ridge Trailhead on Slate Peak Road at 6,900 ft; Explore Washington says the road is gated at the base of Slate Peak (7,488 ft) with a short walk to the lookout, and Ordealist gives 3 miles from Harts Pass to Slate Peak. The waypoint's '3.5 miles to the road end at roughly 6,900 ft' is replaced (in the road-opening patch on the same string) by wording that places the trailhead below the gate and drops the unsourced 3.5 mi. road.driveNote's '3 more miles to Slate Peak (7,488 ft)' matches Ordealist and is left; the bivy note's 7,440 ft gate is bivy-owned and unverified.",
+   "sources": [
+    "https://trailcatjim.com/osceola-peak-mt-rolo/",
+    "https://explore-wa.com/harts-pass-and-slate-peak/",
+    "https://ordealist.com/guides/harts-pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "dist_km holds the round trip, not the one-way approach",
+   "verdict": "unresolved",
+   "correct_value": "One-way is about 15 mi (~24 km) per the summit waypoint; dist_km 48.6 km = 30.2 mi is the round trip.",
+   "evidence": "The summit waypoint is at 15.1 mi one-way and the itinerary/approach give 30-35 mi round trip, so dist_km (shown as 'Approach (one way)') appears to hold the round trip. No external source gives a one-way figure for this exact line, so it is not patched.",
+   "sources": [],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "fact": "Parking pass at the Slate Pass trailhead",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[0].note says a Northwest Forest Pass is bought/displayed at the Slate Pass kiosk, but WTA's Whistler Cutoff page (starting at the Slate Pass trailhead) lists no parking pass required. Only one external source; not patched.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/whistler-cutoff"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

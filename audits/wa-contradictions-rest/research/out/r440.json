@@ -1,0 +1,52 @@
+{"file": "r440.json", "results": [
+ {"id": "wa_ne_ridge", "fact": "Road surface to Andrews Creek Trailhead", "verdict": "fixed",
+  "correct_value": "The road is paved the whole way from Winthrop to the Andrews Creek Trailhead, which sits at the end of the pavement.",
+  "evidence": "The Forest Service trailhead page (and the WTA hike page carrying the same directions) says to drive County Road 1213 to FR 51 and continue to the end of the paved road, then turn right into the Andrews Creek Trailhead. An independent regional guide states the road is paved for 23.5 miles to the Andrews Creek Trailhead. The row's approach prose is right; road.status and road.driveNote wrongly call the FR 51 stretch gravel.",
+  "sources": ["https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead", "https://www.wta.org/go-hiking/hikes/andrews-creek", "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/"],
+  "patches": [
+   {"id": "wa_ne_ridge", "fact": "Road surface to Andrews Creek Trailhead", "op": "replace_text", "column": "road", "path": ["status"], "find": "paved for the first ~6 miles from Winthrop (Okanogan County Rd 1213/West Chewuch Rd), then gravel Forest Road 51 for ~22 miles to the trailhead at the end of the pavement", "replace": "paved the whole way from Winthrop: ~6 miles on Okanogan County Rd 1213/West Chewuch Rd, then Forest Road 51 for ~22 miles to the trailhead at the end of the pavement"},
+   {"id": "wa_ne_ridge", "fact": "Road surface to Andrews Creek Trailhead", "op": "replace_text", "column": "road", "path": ["driveNote"], "find": "continue ~22 miles of gravel to the Andrews Creek Trailhead", "replace": "continue ~22 miles of pavement to the Andrews Creek Trailhead"},
+   {"id": "wa_ne_ridge", "fact": "Road surface to Andrews Creek Trailhead", "op": "replace_text", "column": "road", "path": ["driveNote"], "find": "Road can be rough/washboarded but", "replace": "Road can be potholed but"}
+  ]},
+ {"id": "wa_ne_ridge", "fact": "Number of roped 5.3 pitches", "verdict": "fixed_internal_plus_one",
+  "correct_value": "Seven pitches, each with a move or two of 5.3 amid scrambling; the crux is the two short pitches above the dike.",
+  "evidence": "pitches (7), beta, pitch_detail and approach_variants.baseFinding all describe seven pitches each with 5.3 moves; the Mountain Project route page gives 7 pitches, 'each pitch has a move or two of (old school) 5.3', crux on the two short pitches after the dike. Only rope_note, rope_type and the rope line of rack describe a single short 5.3 step / one roped pitch.",
+  "sources": ["https://www.mountainproject.com/route/109095842/ne-ridge"],
+  "patches": [
+   {"id": "wa_ne_ridge", "fact": "Number of roped 5.3 pitches", "op": "replace_text", "column": "rope_note", "path": [], "find": "with a short 5.3 step. Light rack for the one roped pitch.", "replace": "with a move or two of 5.3 on each of its seven pitches. Light rack for the roped pitches."},
+   {"id": "wa_ne_ridge", "fact": "Number of roped 5.3 pitches", "op": "set", "column": "rope_type", "path": [], "expect": "single dynamic (optional for short 5th-class step)", "value": "single dynamic (for the brief 5.3 moves on each pitch)"},
+   {"id": "wa_ne_ridge", "fact": "Number of roped 5.3 pitches", "op": "set", "column": "rack", "path": [4], "expect": "Single dynamic rope (optional, for the short 5.3 step)", "value": "Single dynamic rope (for the brief 5.3 moves on each pitch)"}
+  ]},
+ {"id": "wa_cathedral_peak_last_rites", "fact": "First-ascent year", "verdict": "fixed",
+  "correct_value": "2011 (August 2011, Scott Bennett and Blake Herrington)",
+  "evidence": "Scott Bennett's own blog post dated August 26, 2011 reports the week-long Pasayten trip and the new route on the right side of Cathedral's main face. The American Alpine Journal 2012 (which reports the 2011 season) credits Bennett and Herrington with Last Rites (300m, 5.11+) in August. The fa column already says August 2011; the overview's 2012 is the publication year.",
+  "sources": ["http://thebigwidewest.blogspot.com/", "http://publications.americanalpineclub.org/articles/12201209200/North-America-United-States-Washington-Pasayten-Wilderness-Amphitheater-Peak-Cathedral-Peak-Deacon-Peak-Three-New-Routes"],
+  "patches": [
+   {"id": "wa_cathedral_peak_last_rites", "fact": "First-ascent year", "op": "replace_text", "column": "overview", "path": [], "find": "South Face established in 2012", "replace": "South Face established in 2011"}
+  ]},
+ {"id": "wa_cathedral_peak_last_rites", "fact": "Whether the 17-20 mile hike-in is done in one day", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "A 2025 climbing trip report did the 18+ mile Chewuch approach to Upper Cathedral Lake in one sunrise-to-sundown day, which contradicts 'Nobody does this in a day', but it used a different trail. A regional hiking guide recommends 3-4+ days round trip for Upper Cathedral Lakes, and another trip report split the Chewuch approach over two days. No two sources establish either 'most parties' or 'nobody' for the Andrews Creek hike-in, so no patch.",
+  "sources": ["https://spokalpine.com/2025/09/23/cathedral-peak-southeast-buttress-iii-5-10a/", "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/", "https://trailcatjim.com/cathedral-peak-remmel-mtn-cathedral-lakes-loop-2022/"],
+  "patches": []},
+ {"id": "wa_cathedral_peak_last_rites", "fact": "Condition of the approach trail", "verdict": "fixed",
+  "correct_value": "The approach trails are well graded with no bushwhacking; stretches of Andrews Creek through the burn can be overgrown.",
+  "evidence": "A regional guide describes the Cathedral Lakes trails as in good shape and well graded; a 2025 climbing trip report says the Chewuch trail is well maintained with no bushwhacking or scrambling. A 2022 hiker report (seen only in search summary) says Andrews Creek was clear of deadfall but overgrown in the burn zones, so the approach card's overgrown tread holds. The pro_tip overclaims ('every trip report', 'well-maintained') and cites reports as a source; reworded to the supported, non-conflicting fact.",
+  "sources": ["https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/", "https://spokalpine.com/2025/09/23/cathedral-peak-southeast-buttress-iii-5-10a/", "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-09-27.2215452516"],
+  "patches": [
+   {"id": "wa_cathedral_peak_last_rites", "fact": "Condition of the approach trail", "op": "replace_text", "column": "pro_tips", "path": [2], "find": "every trip report calls the approach mellow, well-maintained trail with no bushwhacking.", "replace": "the approach trails are well graded with no bushwhacking, though stretches through the burn can be overgrown."}
+  ]},
+ {"id": "wa_cathedral_peak_last_rites", "fact": "Road surface to Andrews Creek Trailhead", "verdict": "fixed",
+  "correct_value": "Paved all the way to the Andrews Creek Trailhead (end of pavement); gravel only beyond it toward Thirtymile.",
+  "evidence": "The Forest Service trailhead page (same directions on WTA) puts the Andrews Creek Trailhead at the end of the paved road on FR 51. An independent regional guide says the road is paved for 23.5 miles to the Andrews Creek Trailhead. So 'paved most of the way' and 'then well-maintained gravel' are wrong for the Andrews Creek drive; the gravel is the continuation to Thirtymile, which the road column also covers.",
+  "sources": ["https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/andrews-creek-trailhead", "https://www.wta.org/go-hiking/hikes/andrews-creek", "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/"],
+  "patches": [
+   {"id": "wa_cathedral_peak_last_rites", "fact": "Road surface to Andrews Creek Trailhead", "op": "replace_text", "column": "road", "path": ["status"], "find": "Paved out of Winthrop, then well-maintained gravel;", "replace": "Paved from Winthrop to the Andrews Creek Trailhead, then well-maintained gravel beyond it toward Thirtymile;"},
+   {"id": "wa_cathedral_peak_last_rites", "fact": "Road surface to Andrews Creek Trailhead", "op": "replace_text", "column": "approach_variants", "path": [0, "notes"], "find": "and it is paved most of the way.", "replace": "and it is paved the whole way."}
+  ]},
+ {"id": "wa_cathedral_peak_last_rites", "fact": "Approach time", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "The 0.7 h approachTimeHrs is the camp-to-base leg: the same PUBLISHED TIMES block's recommendedStart says to leave camp at Upper Cathedral Lake, and baseFinding gives thirty to sixty minutes from camp, so it does not claim to cover the 17-20 mile hike-in.",
+  "sources": [],
+  "patches": []}
+]}

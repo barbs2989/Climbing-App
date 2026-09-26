@@ -1,0 +1,821 @@
+{
+ "file": "r043.json",
+ "results": [
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Approach line (Easy Ridge vs Whatcom Pass/Brush Creek)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: the itinerary and PUBLISHED TIMES reproduce a documented 4-day Easy Ridge-in / Whatcom Pass-out loop that climbs the peak from Perfect Pass and only crosses the Whatcom Glacier on day 3, while the approach, variant, waypoints and climbing route ascend from Whatcom Pass across the glacier. Both lines are real, but making the itinerary match the Whatcom Pass ascent would need a whole new sourced day-by-day plan (miles, gain, hours) that no source provides for this line, so no patch.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://fastestknowntime.com/route/whatcom-peak-wa",
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Chilliwack River crossing (ford vs cable car)",
+   "verdict": "fixed",
+   "correct_value": "The Easy Ridge line fords the Chilliwack; the Whatcom Pass/Brush Creek line crosses by the hand-pulled cable car near US Cabin Camp.",
+   "evidence": "The Copper Ridge/Chilliwack trail descriptions put a two-seat cable car across the Chilliwack near US Cabin Camp on the Brush Creek line. Easy Ridge accounts ford the river just below the old climbers' trail (thigh- to calf-deep). So the approach is right for its line, and the ford hazard, gear and waypoint belong to the Easy Ridge approach; they are now labelled that way.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/copper-ridge-loop",
+    "https://www.hikingproject.com/trail/7091651/copper-ridge-loop",
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/",
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "Chilliwack River ford — thigh-deep and swift in midsummer",
+     "replace": "Chilliwack River ford on the Easy Ridge approach — thigh-deep and swift in midsummer (the Whatcom Pass line crosses by cable car instead)",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Chilliwack River crossing (ford vs cable car)"
+    },
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      3
+     ],
+     "find": "and the Chilliwack River ford",
+     "replace": "and, if approaching via Easy Ridge, the Chilliwack River ford",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Chilliwack River crossing (ford vs cable car)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "find": "Unbridged ford of the Chilliwack River reported",
+     "replace": "Unbridged ford of the Chilliwack River on the Easy Ridge approach (the Whatcom Pass line uses the cable car near US Cabin Camp instead), reported",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Chilliwack River crossing (ford vs cable car)"
+    }
+   ]
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "dist_km = 25.7 (about 16 mi one way, trailhead to Whatcom Pass)",
+   "evidence": "One route-mapping source gives 16.0 mi one way from the Hannegan trailhead to Whatcom Pass; the park's camp mileages put Whatcom Camp, just below the pass, at 15.9 mi. The stored 13.7 km (8.5 mi) matches no leg of this approach, so dist_km is set to the one-way figure; the ~36 mi round-trip itinerary stays.",
+   "sources": [
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/",
+    "https://www.pnt.org/wp-content/uploads/2023/03/PNT-Permits-North-Cascades-NP.pdf",
+    "https://www.hikingproject.com/trail/7091651/copper-ridge-loop"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 13.7,
+     "value": 25.7,
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Distances along the Brush Creek approach",
+   "verdict": "fixed",
+   "correct_value": "Graybeal roughly 13-15 mi from the trailhead (pin distance unknown); Whatcom Pass about 16-17 mi; Graybeal to the pass about 3 mi.",
+   "evidence": "Park camp mileages put Graybeal at 13.4 mi and Whatcom Camp at 15.9 mi from the Hannegan trailhead; loop mileages imply ~14.9 mi to Graybeal. Graybeal sits about 2 mi up the ~5.1-5.4 mi Brush Creek Trail, so ~3 mi remain to the pass — the approach prose is right. The Graybeal pin's 9 mi is wrong but no two sources agree on its exact figure, so it is set to unknown; partner requirements' 10-14 mi is corrected to 16-17.",
+   "sources": [
+    "https://www.pnt.org/wp-content/uploads/2023/03/PNT-Permits-North-Cascades-NP.pdf",
+    "https://www.wta.org/go-hiking/hikes/copper-ridge-loop",
+    "https://www.hikingproject.com/trail/7091651/copper-ridge-loop",
+    "https://www.hikingproject.com/trail/7015238/brush-creek-trail",
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 9,
+     "value": null,
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Distances along the Brush Creek approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "(roughly 10-14 miles)",
+     "replace": "(roughly 16-17 miles)",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Distances along the Brush Creek approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Total elevation gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car gain or loss for the Whatcom Pass/Whatcom Glacier line. Figures found are for the Easy Ridge loop (13,700 ft in one account, 12,000 ft in another), which disagree with each other and describe a different line. The stored 6,840 ft is likely too low, but gain_ft/loss_ft are left alone per the no-arithmetic rule.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://fastestknowntime.com/route/whatcom-peak-wa"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Day 1 elevation loss",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "2700",
+   "evidence": "The day's own note, the section note, the approach (a steep drop into the Chilliwack valley) and the Hannegan Pass (5,066 ft) and ford (2,700 ft) pins all put the day 1 drop well over 2,000 ft. A trailhead-to-Easy-Saddle account records 4,700 ft gained and 2,700 ft lost for this exact leg, which also matches the day's stored 4,600 ft gain.",
+   "sources": [
+    "https://trailcatjim.com/hannegan-pass-easy-ridge-lookout-easy-peak-via-northwest-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 300,
+     "value": 2700,
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Day 1 elevation loss"
+    }
+   ]
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Name of the Easy Ridge obstacle",
+   "verdict": "fixed",
+   "correct_value": "Imperfect Impasse",
+   "evidence": "Most descriptions of the Easy Ridge approach call it the Imperfect Impasse (speed-record route page, first-ascent write-up of Castle in the Sky, trip reports and a named high-route page); one account prefers 'Perfect Impasse'. Hazards and beta already say Imperfect, so every itinerary/timing copy is brought into line.",
+   "sources": [
+    "https://fastestknowntime.com/route/whatcom-peak-wa",
+    "http://publications.americanalpineclub.org/articles/13201216381",
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/",
+    "https://www.summitpost.org/imperfect-impasse-high-route/783854",
+    "https://cascadeclimbers.com/forum/topic/95583-tr-mount-challenger-challenger-gl-via-easy-ridgeimperfect-impasse-7292014/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "bypass the cliff-bound Perfect Impasse",
+     "replace": "bypass the cliff-bound Imperfect Impasse",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Name of the Easy Ridge obstacle"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "label"
+     ],
+     "find": "Descend and bypass Perfect Impasse",
+     "replace": "Descend and bypass the Imperfect Impasse",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Name of the Easy Ridge obstacle"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "Cross Perfect Impasse",
+     "replace": "Cross the Imperfect Impasse",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Name of the Easy Ridge obstacle"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "the notorious Perfect Impasse",
+     "replace": "the notorious Imperfect Impasse",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Name of the Easy Ridge obstacle"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "bypass the cliff-bound Perfect Impasse",
+     "replace": "bypass the cliff-bound Imperfect Impasse",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Name of the Easy Ridge obstacle"
+    }
+   ]
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Whatcom Camp elevation relative to Whatcom Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Bivy-only dispute (bivy[0].elev); bivy[] is owned by the camping clean-up. Whatcom Camp serves this route's Whatcom Pass approach but is currently closed; Perfect Pass serves it directly. Whatcom Pass itself is ~5,202-5,206 ft.",
+   "sources": [
+    "https://www.hikingproject.com/trail/7015238/brush-creek-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Camps recommended vs closed",
+   "verdict": "fixed",
+   "correct_value": "Whatcom Camp and Graybeal Camp are closed until further notice; the route's camp is near Perfect Pass.",
+   "evidence": "The park's fire-closure page (updated September 2026) lists Whatcom Camp and Graybeal Camp as closed until further notice for hazard trees and ground hazards from past fires, and a long-trail alert (August 2026) says the same. The descent text's recommendation is corrected.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fire-closures.htm",
+    "https://www.pnt.org/pnta/know-before-you-go/plan-your-trip/trail-alerts/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "most parties camp at Graybeal, Whatcom Camp, or near Perfect Pass and treat",
+     "replace": "most parties camp near Perfect Pass (Graybeal and Whatcom Camp are closed until further notice after fire damage) and treat",
+     "id": "wa_whatcom_peak_southwest_route",
+     "fact": "Camps recommended vs closed"
+    }
+   ]
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "fact": "Best month",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Documented ascents of the south side/Whatcom Glacier area fall in both late July and early-to-mid August, and a late-August party found bare ice; no source ranks July against August for this line, so neither CLIMATE nor SEASONAL GUIDANCE is changed.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/",
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/",
+    "https://fastestknowntime.com/route/whatcom-peak-wa"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Grade of the summit ridge",
+   "verdict": "fixed",
+   "correct_value": "Route graded 4th class; the summit crest itself is exposed Class 3-4 scrambling.",
+   "evidence": "The route is graded 4th class PG13 on the peak's main route list, while a detailed trip report calls the south-ridge finish a very exposed Class 3 scramble and another notes little 4th class on the easiest line. Class 3-4 fits both, so the Class 3-only wording is widened rather than contradicting the 4th-class grade.",
+   "sources": [
+    "https://www.mountainproject.com/area/112032394/whatcom-peak",
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "exposed but enjoyable Class 3 scramble",
+     "replace": "exposed but enjoyable Class 3-4 scramble",
+     "id": "wa_south_spur",
+     "fact": "Grade of the summit ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "label"
+     ],
+     "find": "Exposed Class 3 scramble",
+     "replace": "Exposed Class 3-4 scramble",
+     "id": "wa_south_spur",
+     "fact": "Grade of the summit ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "climbs the exposed Class 3 south ridge crest",
+     "replace": "climbs the exposed Class 3-4 south ridge crest",
+     "id": "wa_south_spur",
+     "fact": "Grade of the summit ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "an exposed but straightforward Class 3 scramble",
+     "replace": "an exposed Class 3-4 scramble",
+     "id": "wa_south_spur",
+     "fact": "Grade of the summit ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "3rd-class rock",
+     "replace": "3rd- to 4th-class rock",
+     "id": "wa_south_spur",
+     "fact": "Grade of the summit ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Whether a rope is carried/used",
+   "verdict": "fixed",
+   "correct_value": "A short single rope is carried (handline or belay on the crest and the Impasse step).",
+   "evidence": "The route is rated PG13 4th class; the Impasse bypass is a sketchy class 4 face that some parties rope up and belay, and the south snowfield is the margin of the crevassed Whatcom Glacier. The rope card saying 'none' is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/area/112032394/whatcom-peak",
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://www.summitpost.org/imperfect-impasse-high-route/783854",
+    "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "none (occasional handline)",
+     "value": "single, short (handline or belay)",
+     "id": "wa_south_spur",
+     "fact": "Whether a rope is carried/used"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "occasionally protected with a short handline on steeper steps.",
+     "replace": "occasionally protected with a short handline or belay on steeper steps; the same rope serves the Impasse's 4th-class step.",
+     "id": "wa_south_spur",
+     "fact": "Whether a rope is carried/used"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "dist_km = 25.7 (about 16 mi one way to Perfect Pass via Easy Ridge); round trip about 37 mi.",
+   "evidence": "The first-ascent write-up of the neighbouring buttress route describes a 16-mile approach via Easy Ridge and the Impasse; an Easy Ridge trip gives 16-17 mi to Perfect Pass; a third gives ~15 mi (10 trail + 5 ridge). Several put the round trip at 37 mi. The stored 13.7 km (8.5 mi) matches no leg, so dist_km is set to the one-way figure.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216381",
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/",
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/",
+    "https://fastestknowntime.com/route/whatcom-peak-wa"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 13.7,
+     "value": 25.7,
+     "id": "wa_south_spur",
+     "fact": "Round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Distance and time from the trailhead to Perfect Pass",
+   "verdict": "fixed",
+   "correct_value": "About 16 miles; usually the end of a second day, though fast parties reach it in one.",
+   "evidence": "Perfect Pass is about 16 mi in via Easy Ridge (16-mile approach in one account, 16-17 in another). A detailed 4-day account took 8.6 h to Easy Saddle and 8.4 more to Perfect Pass; other parties camped at Copper Creek then Perfect Pass, while fast parties did it in one day. The '8-9 hours/12-13 miles' figure is wrong in both copies.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216381",
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/",
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 8-9 hours/12-13 miles in from the trailhead for a strong party",
+     "replace": "about 16 miles in from the trailhead, commonly the end of a second day, though fast parties reach it in one",
+     "id": "wa_south_spur",
+     "fact": "Distance and time from the trailhead to Perfect Pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "about 8-9 hours and 12-13 miles in for a strong party",
+     "replace": "about 16 miles in, commonly the end of a second day, though fast parties reach it in one",
+     "id": "wa_south_spur",
+     "fact": "Distance and time from the trailhead to Perfect Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Gain vs loss on a loop that ends at the trailhead",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A detailed account of exactly this 4-day loop gives 13,700 ft gained and lost; a speed-record route page gives 12,000 ft of gain for the 37-mile trip. The two do not agree, so gain_ft/loss_ft are left unchanged.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://fastestknowntime.com/route/whatcom-peak-wa"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Season / best month",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "South-side ascents are documented in late July and in early and mid August (one mid-August car-to-car record), while a late-August party was turned back by bare ice and a wide moat. No source settles a month-by-month rating or whether September belongs in the working window, so nothing is changed.",
+   "sources": [
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/",
+    "https://fastestknowntime.com/route/whatcom-peak-wa",
+    "https://havetent.com/2022/08/01/mt-challenger-whatcom-peak/",
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Impasse bypass drop",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The approach's 800 ft is measured from the Impasse notch (~5,200 ft) down to ~4,400 ft, as one detailed account gives; the bivy note's 'roughly 1,000 ft' is a round figure other accounts also use, and the bypass line varies with snow. Both are approximations of the same detour, and bivy[] is out of scope.",
+   "sources": [
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/",
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "East-side approach trail from Ross Lake",
+   "verdict": "fixed",
+   "correct_value": "Little Beaver Trail",
+   "evidence": "The east-side approach to Whatcom Pass starts at the Little Beaver trailhead on Ross Lake (by boat) and follows the Little Beaver Trail; route mappings name it 'Whatcom via Little Beaver Trail'. GETTING THERE is corrected to match the approach.",
+   "sources": [
+    "https://fastestknowntime.com/route/whatcom-peak-wa",
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "find": "Ross Lake water taxi + Big Beaver Trail",
+     "replace": "Ross Lake water taxi + Little Beaver Trail",
+     "id": "wa_south_spur",
+     "fact": "East-side approach trail from Ross Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)",
+   "verdict": "fixed",
+   "correct_value": "Imperfect Impasse",
+   "evidence": "Hazards, approach, variants and beta say Imperfect Impasse; the itinerary, timing and route breakdown say Perfect Impasse. Most descriptions use Imperfect Impasse, so the remaining copies are aligned.",
+   "sources": [
+    "https://fastestknowntime.com/route/whatcom-peak-wa",
+    "http://publications.americanalpineclub.org/articles/13201216381",
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/",
+    "https://www.summitpost.org/imperfect-impasse-high-route/783854"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "bypass the Perfect Impasse cliff band",
+     "replace": "bypass the Imperfect Impasse cliff band",
+     "id": "wa_south_spur",
+     "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "label"
+     ],
+     "find": "bypass Perfect Impasse",
+     "replace": "bypass the Imperfect Impasse",
+     "id": "wa_south_spur",
+     "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "Bypass Perfect Impasse",
+     "replace": "Bypass the Imperfect Impasse",
+     "id": "wa_south_spur",
+     "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "bypass the Perfect Impasse cliff band",
+     "replace": "bypass the Imperfect Impasse cliff band",
+     "id": "wa_south_spur",
+     "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Perfect Impasse to Perfect Pass camp",
+     "replace": "Imperfect Impasse to Perfect Pass camp",
+     "id": "wa_south_spur",
+     "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_south_spur",
+   "fact": "Day 1 elevation loss (300 ft over Hannegan Pass to the Chilliwack ford)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same itinerary as the Southwest Route: one account records 2,700 ft lost from the trailhead to Easy Saddle, but this row lacks the waypoint elevations that corroborate it internally, so it is flagged rather than patched here.",
+   "sources": [
+    "https://trailcatjim.com/hannegan-pass-easy-ridge-lookout-easy-peak-via-northwest-ridge/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_castle_in_the_sky",
+   "fact": "Summit reached / high point",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route tops out on the west summit of Whatcom Peak (route page and first-ascent write-up); the northeast point is the higher, 7,574 ft summit. No source gives the west summit's own elevation, so high_point_ft and the summit pin cannot be corrected.",
+   "sources": [
+    "https://www.mountainproject.com/route/122896783/castle-in-the-sky",
+    "https://www.theclimbingguides.com/post/castle-in-the-sky-first-ascent-of-the-south-buttress-of-whatcom-peak-iv-5-10b-td",
+    "http://publications.americanalpineclub.org/articles/13201216381"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_castle_in_the_sky",
+   "fact": "P3 protection rating",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent party's own write-up rates pitch 3 '5.9 PG-13', while the route's database page lists it '5.9R'. The sources disagree, so neither field is changed.",
+   "sources": [
+    "https://www.theclimbingguides.com/post/castle-in-the-sky-first-ascent-of-the-south-buttress-of-whatcom-peak-iv-5-10b-td",
+    "https://www.mountainproject.com/route/122896783/castle-in-the-sky"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "Distance to Whatcom Pass",
+   "verdict": "fixed",
+   "correct_value": "Whatcom Pass about 16 mi from the trailhead; summit pin distance unknown.",
+   "evidence": "A route mapping gives 16.0 mi one way from the Hannegan trailhead to Whatcom Pass, and the park's camp mileages put Whatcom Camp, just below the pass, at 15.9 mi. The pass pin is set to 16; the summit pin's unsourced 14.5 would then fall before the pass, so it is set to unknown.",
+   "sources": [
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/",
+    "https://www.pnt.org/wp-content/uploads/2023/03/PNT-Permits-North-Cascades-NP.pdf"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 13,
+     "value": 16,
+     "id": "wa_north_ridge_2",
+     "fact": "Distance to Whatcom Pass"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 14.5,
+     "value": null,
+     "id": "wa_north_ridge_2",
+     "fact": "Distance to Whatcom Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "Days to reach Whatcom Pass",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The approach says 'a long day or more, typically split over 2 days'; the itinerary takes the one-long-day option and warns that a late start ended at 9 PM. Two genuine options, not a contradiction.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "Day 1 elevation loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Segment figures (about 2,000 ft up to Hannegan Pass; Brush Creek Trail low point ~2,733 ft rising 2,721 ft to the pass) suggest roughly 2,500 ft lost and 4,700 ft gained on day 1, but no source states this day's totals, and changing them would also move day 3 and the whole-outing totals, so no patch.",
+   "sources": [
+    "https://www.hikingproject.com/trail/7015238/brush-creek-trail",
+    "https://www.hikingproject.com/trail/7091651/copper-ridge-loop"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "Season / best months",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "An August ascent that descended the North Ridge is documented, but no source rates August or September for this ridge, so SEASONAL GUIDANCE and the season are left as they are.",
+   "sources": [
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "Base camp at Whatcom Pass vs closed Whatcom Camp",
+   "verdict": "fixed",
+   "correct_value": "Whatcom Camp (the Whatcom Pass camp) and Graybeal are closed until further notice.",
+   "evidence": "The park's fire-closure page (updated September 2026) lists Whatcom Camp and Graybeal Camp closed until further notice for hazard trees from past fires; an August 2026 long-trail alert agrees. The trip-plan note now says so instead of describing the camp as open and popular.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fire-closures.htm",
+    "https://www.pnt.org/pnta/know-before-you-go/plan-your-trip/trail-alerts/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Whatcom Pass camp is inside North Cascades NP and requires a wilderness permit from the Marblemount Wilderness Information Center; permits for this popular camp can be competitive in July-August.",
+     "replace": "Whatcom Camp, the trail camp just below Whatcom Pass, and Graybeal Camp on Brush Creek are closed until further notice because of fire-damaged hazard trees, so the Whatcom Pass base camp in this plan needs a different permitted site; every overnight inside North Cascades NP requires a wilderness permit from the Marblemount Wilderness Information Center.",
+     "id": "wa_north_ridge_2",
+     "fact": "Base camp at Whatcom Pass vs closed Whatcom Camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "Which glacier the route passes",
+   "verdict": "fixed",
+   "correct_value": "Whatcom Glacier",
+   "evidence": "The Whatcom Glacier descends the peak's northeast slopes beside the north ridge; the Challenger Glacier belongs to Mount Challenger and is reached from Perfect Pass. SEASONAL HAZARDS and PARTNER REQUIREMENTS are corrected to the Whatcom Glacier.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Whatcom_Peak",
+    "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/",
+    "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses",
+      "location"
+     ],
+     "find": "Route passes near Challenger Glacier",
+     "replace": "Route passes near Whatcom Glacier",
+     "id": "wa_north_ridge_2",
+     "fact": "Which glacier the route passes"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "route passes near Challenger Glacier crevasse terrain",
+     "replace": "route passes near Whatcom Glacier crevasse terrain",
+     "id": "wa_north_ridge_2",
+     "fact": "Which glacier the route passes"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "East-side approach trail from Ross Lake",
+   "verdict": "fixed",
+   "correct_value": "Little Beaver Trail",
+   "evidence": "The eastern approach to Whatcom Pass starts at the Little Beaver trailhead on Ross Lake and follows the Little Beaver Trail. GETTING THERE is corrected to match the approach and variants.",
+   "sources": [
+    "https://fastestknowntime.com/route/whatcom-peak-wa",
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "find": "Ross Lake water taxi + Big Beaver Trail",
+     "replace": "Ross Lake water taxi + Little Beaver Trail",
+     "id": "wa_north_ridge_2",
+     "fact": "East-side approach trail from Ross Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "Whatcom Camp elevation relative to Whatcom Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Bivy-only dispute (bivy[0].elev); bivy[] is owned by the camping clean-up. Whatcom Camp serves this route's west approach but is closed; Twin Rocks/Stillwell serve the east approach.",
+   "sources": [
+    "https://www.hikingproject.com/trail/7015238/brush-creek-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "fact": "East approach offered while the Little Beaver Trail is closed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "bivy[1] says the Little Beaver camps are closed, and the park's fire-closure page lists the Little Beaver Trail closed from Little Beaver Camp to the Big Beaver junction, yet the approach variant offers this line without a caveat. Only one current source was found, so no patch.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fire-closures.htm"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

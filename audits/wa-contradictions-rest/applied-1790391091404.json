@@ -1,0 +1,459 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "beta",
+   "path": [],
+   "fact": "Flypaper Pass snow finger angle"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Flypaper Pass snow finger angle"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "approach",
+   "path": [],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "descent",
+   "path": [],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    5
+   ],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Road distances and trailhead elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Approach mileage"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Approach mileage"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "West Fork crossing"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "West Fork crossing"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Camp-to-summit round-trip time"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Camp-to-summit round-trip time"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Flypaper Pass elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Camp Siberia elevation"
+  },
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "notes"
+   ],
+   "fact": "Route to Flypaper Pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_anderson_eel_glacier",
+   "before": {
+    "beta": "Grade I alpine climb requiring glacier travel experience, crampons, ice axe, rope, and proper avalanche awareness. Spring conditions ideal. Anderson Glacier has minimal crevasse hazard due to 50 percent recession since 1920. Late-season bergschrund can be difficult. Olympic rock is notably loose and crumbly, requiring careful footwork. Flypaper Pass snow finger runs about 30 degrees, 300 vertical feet.",
+    "pitch_detail": [
+     {
+      "grade": "Class 1 hike/bike",
+      "notes": "5 miles on closed road from parking to Ranger Station (1,611 ft). Road in good hiking condition despite washouts further up.",
+      "pitch": "Approach 1: Dosewallips Road (closed to vehicles)"
+     },
+     {
+      "grade": "Class 1-2",
+      "notes": "1.4 miles of trail through old-growth forest alongside river to junction (1,750 ft). Well-maintained tread.",
+      "pitch": "Approach 2: Dosewallips River Trail to West Fork junction"
+     },
+     {
+      "grade": "Class 1-2",
+      "notes": "8 miles through montane forest with elevation gain to Honeymoon Meadows camp (3,527 ft). Includes river ford. Trail moderately steep in upper sections.",
+      "pitch": "Approach 3: West Fork Dosewallips River Trail to Honeymoon Meadows"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "1.2 miles with 937 ft of gain to Anderson Pass (4,464 ft). Trail becomes steeper and more exposed, gaining alpine meadows.",
+      "pitch": "Approach 4: Honeymoon Meadows to Anderson Pass"
+     },
+     {
+      "grade": "Class 2-3 snow/ice",
+      "notes": "From Anderson Pass, ascend moraine to glacier at 5,200 ft. Rope up and traverse right side of Anderson Glacier to Flypaper Pass (6,500 ft). Main feature: 30-degree snow finger (300 vertical ft).",
+      "pitch": "Glacier traverse: Anderson Glacier moraine to Flypaper Pass"
+     },
+     {
+      "grade": "Class 2-3 snow/rock",
+      "notes": "From Flypaper Pass, drop 200 ft onto Eel Glacier, traverse north around rock buttress, climb east on upper glacier to saddle north of summit (7,200 ft).",
+      "pitch": "Upper Eel Glacier to summit ridge"
+     },
+     {
+      "grade": "Class 3 rock",
+      "notes": "Final 121 ft to summit via loose meta-sedimentary rock and snow patches. Exposed scramble with poor quality holds. Rock improves near summit block.",
+      "pitch": "Summit approach"
+     }
+    ],
+    "approach": "From US-101 at Brinnon, turn onto Dosewallips Road and drive roughly 5.5 miles to the washed-out gate — the road has been closed to vehicles since a 2002 flood and remains closed indefinitely as of recent seasons; park here (a mountain bike is a real time-saver for the road-walk ahead). Follow the bypass trail around the washout — a short ~0.3-mile detour with a few switchbacks past old-growth trees — then rejoin the abandoned roadbed and continue roughly 5.6 more miles to the Dosewallips Ranger Station (1,600 ft). From the ranger station, pick up the Dosewallips River Trail for 1.4 miles to its junction with the West Fork Dosewallips Trail (Trail #1010); bear onto the West Fork Trail and follow the river upstream past a string of established camps — Dose Forks, Big Timber, Diamond Meadows — to Honeymoon Meadows (3,527 ft, about 8 trail-miles from the ranger station). Expect at least one calf-to-knee-deep ford of the West Fork in this stretch depending on season and snowmelt. Beyond Honeymoon Meadows the trail climbs past Camp Siberia toward Anderson Pass (4,464 ft), the low divide between the Quinault and Dosewallips drainages. Leave the maintained trail here and follow the climbers' path up the moraine to a high camp on a snowy saddle above a small tarn (Anderson/Valkyrie Lake, ~5,100 ft) — most parties budget 7-9 hours trailhead-to-camp. From high camp, traverse above the tarn (often still frozen) and climb the steep snow finger leading up to Flypaper Pass (~6,500 ft); glacier recession has steepened this finger considerably beyond older published descriptions, with the crux section now estimated at 40+ degrees late in the season — plan to be through it before it melts out (ideally spring/early summer) and expect firm or icy snow requiring an ice axe and crampons. Water is reliable along the West Fork the entire way in and again at the tarn near high camp; carry what you need above that.",
+    "pro_tips": [
+     "A mountain bike can meaningfully cut travel time through the ~1-mile washout detour and the ~6.5 miles of old roadbed to Dose Forks in dry conditions; many parties ride most of the way in and out.",
+     "A high camp on the moraine/tarns near Anderson (Valkyrie) Lake below Flypaper Pass (~5,000-5,300 ft) shortens summit day significantly compared to camping at Honeymoon Meadows or Camp Siberia.",
+     "Start early — postholing and wet-slide risk rise quickly once the sun hits the Flypaper finger and upper Eel Glacier.",
+     "Don't confuse this route's objective (East Peak, ~7,323-7,330 ft) with West Peak (~7,365 ft), the true high point of the massif and a separate, harder rock climb.",
+     "Bear canisters are required and available free on loan from the Port Angeles Wilderness Information Center."
+    ],
+    "descent": "Reverse the route: down-climb the Class 3 summit rocks, cross back over the upper Eel Glacier watching for the bergschrund and eastern-slope crevasses, re-climb to Flypaper Pass (6,500 ft), then descend the snow finger — favor the left (skier's left / climber's left) side near the rock buttress to avoid moats and glide cracks — glissading only where the runout is clean and snow isn't icy or rotten. From the base of the finger, retrace the approach past Anderson (Valkyrie) Lake, Anderson Pass, Honeymoon Meadows, and the West Fork Dosewallips Trail back to Dose Forks, then the extra ~6.5 mi of old roadbed out to the current road-end trailhead.",
+    "approach_variants": [
+     {
+      "name": "Dosewallips road walk, West Fork to Anderson Pass and the tarn camp",
+      "notes": "From US-101 at Brinnon, drive Dosewallips Road to the washout gate — closed to vehicles since the 2002 flood and still closed. Park there. A mountain bike genuinely saves hours on the road miles. A short bypass trail with a few switchbacks gets round the washout, then the abandoned roadbed resumes for roughly 5.6 miles to the Dosewallips Ranger Station at about 1,600 ft.\n\nFrom the ranger station take the Dosewallips River Trail 1.4 miles to the West Fork junction, then the West Fork Trail upstream past Dose Forks, Big Timber and Diamond Meadows to Honeymoon Meadows at 3,527 ft, roughly 8 trail miles on. Expect at least one calf-to-knee ford of the West Fork depending on snowmelt, and substantial blowdown — maintenance has lagged since the road closed. Beyond Honeymoon Meadows the trail climbs past Camp Siberia to Anderson Pass at 4,464 ft.\n\nLeave the maintained trail at the pass and follow the climbers' path up the moraine to a camp on the snowy saddle above a small tarn at about 5,100 ft (Anderson or Valkyrie Lake). Most parties take 7-9 hours trailhead to camp. Fill up at the tarn; there is nothing above it.",
+      "season": "Best spring to early summer, while the snow finger below Flypaper Pass is still continuous. By late summer that finger has thinned and steepened and the bergschrund above it has opened",
+      "hazards": [
+       "Crevasses on the upper Eel Glacier, including large ones on its eastern slopes",
+       "A bergschrund at the head of the Eel that is hardest to cross late in the season, with a short steep step above it",
+       "The Flypaper Pass snow finger at 40-45 degrees, firm or icy, steeper than older descriptions state",
+       "Glide avalanches and cornice-triggered slides off the cliffs above the glacier terminus",
+       "Loose, crumbly meta-sedimentary rock on the final summit scramble",
+       "Unbridged fords and heavy blowdown on the West Fork trail, plus roughly 11 miles of closed road at each end"
+      ],
+      "primary": true,
+      "baseFinding": "THE BASE OF THE CLIMB IS FLYPAPER PASS, AND THE TEST IS WHICH THINGS ARE ON WHICH SIDE OF IT. Flypaper Pass at about 6,500 ft is the notch between MOUNT ANDERSON on the east and ECHO ROCK (7,033 ft) on the west. Standing in the notch, Anderson is on your right and Echo Rock on your left when you are facing north through it. If both walls beside you are the same mountain, you are in a gully on a flank rather than in the pass.\n\nTHE APPROACH TEST, done before you can see the notch, is the tarn. From the camp saddle, traverse ABOVE the tarn — often still frozen — and take the single steep snow finger that runs up from the far side of it. There is one finger and it goes to one notch. If you are walking round the tarn at its level rather than above it, you have dropped too low and will meet cliffs.\n\nSECOND TEST, and it is the one that says the pass is in the condition you planned for: the finger's steepest section now runs 40 degrees or more. Glacier recession has steepened it well beyond the older published figure of about 30 degrees over 300 vertical feet, so a party that finds it far steeper than the book has not gone the wrong way — those descriptions are old. If it has melted out to bare scree and ice, that is the season telling you to come back earlier, not a route-finding error.\n\nWHAT GOING TOO FAR LOOKS LIKE: over the pass the ground drops onto the Eel Glacier and a bergschrund cuts across below the headwall, forcing an end-around to one side. If you are on glacier and looking for a way past a schrund, you are past the base and onto the climb."
+     },
+     {
+      "name": "East Fork Quinault and Enchanted Valley to Anderson Pass from the west",
+      "notes": "Anderson Pass is a divide, and the Quinault side of it is a maintained trail too. From the Graves Creek trailhead at the end of the South Shore Quinault road, the East Fork Quinault Trail runs up the valley through Enchanted Valley to the pass. It is a longer valley walk than the Dosewallips side but it is a TRAIL the whole way, with no closed road at the start and no West Fork fords, which in a wet year is the difference between the two.\n\nAt Anderson Pass the two approaches become one: leave the maintained trail and follow the climbers' path up the moraine to the tarn camp at about 5,100 ft, then the snow finger to Flypaper Pass.\n\nMileages published for the Quinault side vary widely with where the count starts and with the current state of the road, so none is quoted here.",
+      "season": "Same window as the standard side — the pass and the snow finger above it decide the season, not the valley",
+      "hazards": [
+       "Everything above the pass is the same: the 40-45 degree snow finger, the Eel Glacier crevasses and bergschrund, and loose summit rock",
+       "A long valley walk with river crossings and blowdown of its own",
+       "Arriving at the pass from the west means the shelter and the climbers' path are both below and behind you as you crest it",
+       "No cell coverage anywhere on either side"
+      ],
+      "baseFinding": "IDENTICAL TO THE DOSEWALLIPS VARIANT ABOVE, because both arrive at Anderson Pass and everything above the pass is shared: traverse above the tarn, take the one steep snow finger from its far side, and know you are at Flypaper Pass when MOUNT ANDERSON is on one side of the notch and ECHO ROCK on the other.\n\nTHE EXTRA TEST THIS SIDE NEEDS is at the pass itself, because you arrive there from the opposite direction. Anderson Pass is a signed trail junction — the West Fork Dosewallips and East Fork Quinault trails meet there, with the Anderson Pass shelter (Camp Siberia) just below on the Dosewallips side at roughly 4,180 ft. The climbers' path leaves NORTH off the pass and up the moraine. If you have walked over the pass and begun descending the other valley, you have missed the turn; it is a boot path, not a signed one."
+     }
+    ],
+    "access": {
+     "fees": "$8 per person per night plus a non-refundable $6 reservation fee per permit (2026 rates); an optional $45 Annual Wilderness Pass covers per-night camping fees but the $6 reservation fee still applies. Free for youth 15 and under.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are required for food storage at all designated camps in this corridor (free loaner canisters available at the Wilderness Information Center). No campfires at or above Honeymoon Meadows. Camp only in designated sites: Dose Forks, Big Timber, Diamond Meadows, Honeymoon Meadows, LaCrosse Pass Junction, and Camp Siberia.",
+     "permit": "Wilderness camping permit required for all overnight stays along the Dosewallips/West Fork Dosewallips corridor. Reserve in advance via Recreation.gov (Olympic National Park Wilderness Permit) or obtain by phone/in person at the Wilderness Information Center in Port Angeles, (360) 565-3100.",
+     "closures": "Dosewallips River Road has been closed to motor vehicles since a January 2002 washout roughly 1 mile past the current road-end parking (~8.5 mi from US-101); it remains open to foot, bike, and horse traffic only, adding about 6.5-7 miles (13-14 mi round trip) of extra travel each way to the historic Dose Forks trailhead. As of 2026 there is no announced timeline for repair.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.recreation.gov/permits/4098362",
+      "what": "Olympic National Park wilderness permit — reservable, not free",
+      "where": "Book on Recreation.gov; $8 per person per night plus a $6 reservation fee, or cover it with an annual Olympic Wilderness Pass. Summer-season reservations open in mid-April."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 47.7413,
+      "lng": -123.0474,
+      "elev": 1550,
+      "name": "Dosewallips Road-End (Ranger Station/Campground, post-washout)",
+      "note": "Dosewallips Rd washed out ~1mi past this point; Dosewallips Trail to West Fork Dosewallips Trail to Anderson Pass to Eel Glacier.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From US-101 at Brinnon, turn onto Dosewallips Road and follow it inland to the closure at the washout, which is as far as a car goes; the road has been shut to vehicles since the 2002 flood and remains so. Park here, and note that a mountain bike saves real time on the road miles beyond."
+     },
+     {
+      "lat": 47.6961,
+      "lng": -123.3265,
+      "elev": 4464,
+      "name": "Anderson Pass",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 4464
+     },
+     {
+      "lat": 47.710261,
+      "lng": -123.337461,
+      "elev": 6600,
+      "name": "Flypaper Pass",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": 6600
+     },
+     {
+      "lat": 47.721165,
+      "lng": -123.331655,
+      "elev": 7323,
+      "name": "Mount Anderson (East Peak)",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 7323
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 47.721165,
+     "peakLng": -123.331655,
+     "trailhead": "Dosewallips Road-End (Ranger Station/Campground, post-washout)",
+     "trailheadLat": 47.7413,
+     "trailheadLng": -123.0474,
+     "trailheadDirection": "From the Dosewallips Road (FR-2610) washout parking near Brinnon: road-walk/bike toward the Olympics east-side trails"
+    },
+    "itinerary": {
+     "cal": "Best climbed late spring to mid-summer before the Flypaper Pass snow finger melts out; Olympic National Park requires a paid overnight wilderness permit for all the camp options along this route.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Bike the washed-out lower Dosewallips Road, then hike the West Fork Dosewallips Trail through Honeymoon Meadows and over Anderson Pass to a high camp near Anderson Tarn or Camp Siberia. Good trail throughout with one easy rock-hop river crossing.",
+       "hours": 9,
+       "miles": 11,
+       "title": "Approach to high camp",
+       "gainFt": 4600,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "7:00-9:00 AM",
+         "label": "Leave trailhead / bike washout",
+         "detail": "Pedal or push bikes a few miles up the closed lower Dosewallips Road to the true trailhead."
+        },
+        {
+         "time": "Midday",
+         "label": "Honeymoon Meadows",
+         "detail": "Rock-hop the river crossing and continue up the valley."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Anderson Pass",
+         "detail": "Crest the pass and drop slightly into the Anderson Glacier basin."
+        },
+        {
+         "time": "5:00-6:00 PM",
+         "label": "Make camp",
+         "detail": "Camp Siberia or Anderson Tarn, roughly 5,100 ft, below Flypaper Pass."
+        }
+       ],
+       "objective": "Reach camp near Anderson Pass / Anderson Tarn (~5,100 ft)"
+      },
+      {
+       "n": 2,
+       "note": "An alpine-start, roped glacier day: climb the Anderson Glacier moraine and a steep rock rib to Flypaper Pass, then traverse north across the upper Eel Glacier to a snow arete and short Class 2-3 scramble to the summit. Round trip to camp typically runs 10-13 hours.",
+       "hours": 12,
+       "miles": 6,
+       "title": "Summit push via Flypaper Pass and Eel Glacier",
+       "gainFt": 2700,
+       "lossFt": 2700,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00-7:00 AM",
+         "label": "Leave high camp",
+         "detail": "Alpine start; cross the Anderson Glacier moraine toward the base of Flypaper Pass."
+        },
+        {
+         "time": "+1-2 hr",
+         "label": "Climb the rock rib to Flypaper Pass",
+         "detail": "A steep rib/snow finger gains the pass at roughly 6,800 ft; rope up here for the glacier."
+        },
+        {
+         "time": "Mid-morning",
+         "label": "Traverse the upper Eel Glacier",
+         "detail": "Cross north below the bergschrund, watching for crevasses on the eastern slopes, which have grown steeper (40+ degrees in spots) as the glacier has receded."
+        },
+        {
+         "time": "~11 AM-1 PM",
+         "label": "Summit East Peak",
+         "detail": "Final snow arete and a short Class 2-3 scramble to the 7,323 ft high point."
+        },
+        {
+         "time": "Afternoon-evening",
+         "label": "Descend to camp",
+         "detail": "Reverse the glacier crossing and rib; in good snow many parties downclimb Flypaper Pass without setting up a belay."
+        }
+       ],
+       "objective": "Reach East Peak summit (7,323 ft)"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: descend from Anderson Pass through Honeymoon Meadows to the Dosewallips trailhead, remounting bikes for the final road-walk section.",
+       "hours": 7,
+       "miles": 11.5,
+       "title": "Hike out",
+       "gainFt": 100,
+       "lossFt": 4700,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A standard 3-day trip: ~9 hrs to a high camp near Anderson Pass, a long 10-13 hr roped glacier summit push via Flypaper Pass and the upper Eel Glacier, then hike out — strong/fast parties compress this to 2 days by biking the road and pushing straight to a bivy near the summit."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high endurance: reports cite roughly 7-9 hours trailhead-to-camp and another 5-7 hours camp-to-summit round trip, over a long approach with elevation gain through the Anderson Pass area",
+      "packWeight": "Heavy overnight glacier-climbing load (multi-day food/camp gear plus rope, harness, crevasse rescue kit, and ice axe/crampons) - expect a full mountaineering pack, not a light day load"
+     },
+     "approachTime": "Roughly 7-9 hours trailhead to camp, per available trip reports, with camp-to-summit taking an additional 5-7 hours round trip - a multi-day trip overall",
+     "requiredSkills": [
+      "Roped glacier travel and crevasse rescue",
+      "Self-arrest and steep snow climbing technique (reported crux slopes now 40+ degrees at Flypaper Pass due to glacier recession)",
+      "Class 3 scrambling on loose summit rock",
+      "Multi-day wilderness backpacking / route-finding without maintained trail on the upper mountain",
+      "Wilderness permit and bear-canister logistics for Olympic National Park overnight travel"
+     ],
+     "experienceLevel": "Experienced glacier mountaineer - comfortable with roped glacier travel, crevasse rescue, and steep snow climbing on a committing multi-day wilderness objective (not a beginner route)"
+    }
+   }
+  }
+ ]
+}

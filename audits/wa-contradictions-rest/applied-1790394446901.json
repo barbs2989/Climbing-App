@@ -1,0 +1,370 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "objective"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Trailhead"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Wilderness permit issuance"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Wilderness permit issuance"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Wilderness permit issuance"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Access forest road"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Access forest road"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Lake Sundown elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_olson_standard",
+   "before": {
+    "timing": {
+     "totalHrs": 20,
+     "summitTimeHrs": 7.5,
+     "descentTimeHrs": 5.5,
+     "approachTimeHrs": 7,
+     "recommendedStart": "6:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "From the Wynoochee Pass trailhead (high-clearance road access), cross Wynoochee Pass to Sundown Lake, then pick up the primitive, largely unmaintained Six Ridge Trail over Six Ridg…",
+       "fromTo": "Approach to high camp near McGravey Lakes / Camp Bellevue",
+       "section": "Approach"
+      },
+      {
+       "hrs": 7.5,
+       "note": "From camp, sidehill the faint Mount Olson Way Trail across broken, exposed ground to a small tarn at the base of the peak, then scramble roughly 1,000 ft up steep meadow and heathe…",
+       "fromTo": "Summit push via the Mount Olson Way Trail and boot path",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5.5,
+       "note": "Reverse the Six Ridge / Wynoochee Pass approach back to the car. It's mostly net downhill, but the primitive tread, brush, and repeated ridge undulations still make it a full day.",
+       "fromTo": "Hike out to the trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "itinerary": {
+     "cal": "Wynoochee Pass TH needs a high-clearance vehicle (spur 2270-400); the trail beyond Sundown Lake is essentially unmaintained (heavy blowdown, faint tread, easy to lose) and dry beyond Camp Bellevue, so this is best done July-September after snow/blowdown clears, carrying/caching all water for the final push.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Wynoochee Pass trailhead (high-clearance road access), cross Wynoochee Pass to Sundown Lake, then pick up the primitive, largely unmaintained Six Ridge Trail over Six Ridge Pass to McGravey Lakes. Parties describe near-constant route-finding through overgrown meadows, faded cairns, and repeated ridge undulations; camp near McGravey Lakes or Camp Bellevue, the last reliable water before the peak.",
+       "hours": 7,
+       "miles": 8,
+       "title": "Approach to high camp near McGravey Lakes / Camp Bellevue",
+       "gainFt": 2700,
+       "lossFt": 300,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach a high camp below Mount Olson via Wynoochee Pass and the primitive Six Ridge Trail"
+      },
+      {
+       "n": 2,
+       "note": "From camp, sidehill the faint Mount Olson Way Trail across broken, exposed ground to a small tarn at the base of the peak, then scramble roughly 1,000 ft up steep meadow and heather (55-60 degrees in spots, hands-on rock, rated class 3 in the published description) to the summit block. Descend the same way back to camp.",
+       "hours": 7.5,
+       "miles": 3.5,
+       "title": "Summit push via the Mount Olson Way Trail and boot path",
+       "gainFt": 1300,
+       "lossFt": 1300,
+       "packLb": 10,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave high camp",
+         "detail": "Start along the faint Mount Olson Way Trail toward the peak."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Reach the tarn below Mount Olson",
+         "detail": "Steep, faint side-hill traverse over a ridge/saddle to the small tarn at the peak's base."
+        },
+        {
+         "time": "+2.5 hr",
+         "label": "Start the boot path",
+         "detail": "Class 2-3 scramble up steep meadow and heather on the SE-facing slope."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Summit (5,289 ft)",
+         "detail": "Curve around a heather bench near the top to the true summit; views across the interior Olympics."
+        },
+        {
+         "time": "+4.5 hr",
+         "label": "Begin descent",
+         "detail": "Reverse the boot path and ridge back down to the tarn."
+        },
+        {
+         "time": "~1:30 PM",
+         "label": "Back at high camp",
+         "detail": "Reverse the Mount Olson Way Trail traverse to camp."
+        }
+       ],
+       "objective": "Climb Mount Olson (5,289 ft) via the tarn and SE-face boot path"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the Six Ridge / Wynoochee Pass approach back to the car. It's mostly net downhill, but the primitive tread, brush, and repeated ridge undulations still make it a full day.",
+       "hours": 5.5,
+       "miles": 8,
+       "title": "Hike out to the trailhead",
+       "gainFt": 300,
+       "lossFt": 2700,
+       "packLb": 26,
+       "schedule": [],
+       "objective": "Return to the Wynoochee Pass trailhead"
+      }
+     ],
+     "totalNote": "A rugged ~3-day, ~19-mile round trip via Wynoochee Pass and the primitive Six Ridge/Mount Olson Way Trail, with a high camp near McGravey Lakes/Camp Bellevue and a steep class 2-3 scramble to the 5,289 ft summit — not a car-to-car day trip."
+    },
+    "access": {
+     "fees": "No NPS entrance station on this approach; a Northwest Forest Pass (or Interagency/America the Beautiful pass) is required for day use at the Forest Service trailhead; NPS wilderness camping fees apply separately for the backcountry portion inside the park.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Olympic National Forest rules on the approach, National Park wilderness regulations once past the forest boundary; bear-resistant food storage (canister) mandatory in the park; fires prohibited above 3,500 ft; pack it in/pack it out.",
+     "permit": "NPS wilderness camping permit required for overnight stays inside the park (reserve via recreation.gov or get a walk-up permit at a Wilderness Information Center).",
+     "closures": "The 2025 Bear Gulch Fire (~20,000+ acres) burned into the Staircase/Lake Cushman and North Fork Skokomish area; several trails there (Mt. Rose, Mildred Lakes, Dry Creek, Copper Creek) remain closed through Oct 1, 2026, though FS-24 and the Staircase developed area reopened July 8, 2026. This is a different drainage from the South Fork Skokomish/Six Ridge approach used for Olson and doesn't directly affect it, but verify current trail and road status before a trip.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (trailhead and lower approach), transitioning into Olympic National Park (Six Ridge Trail and the peak itself)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 47.48632,
+      "lng": -123.45775,
+      "name": "Upper South Fork Skokomish Trailhead (Trail #873)",
+      "note": "Reached via Skokomish Valley Rd / FS-23 / FS-2361 from Shelton; FS-2361 gated Oct 1-Apr 30. Standard route follows Trail 873 to Sundown Lake, then the Six Ridge crest ~11 miles to the overgrown 'Mount Olson Way' spur.",
+      "type": "Trailhead"
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 1450,
+      "name": "South Fork Skokomish River ford",
+      "note": "Unbridged ford of the Skokomish's south bank; safely crossable (ankle-deep) only in late summer/early fall low water, otherwise a serious hazard.",
+      "type": "Hazard",
+      "distMi": 2.4
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 2500,
+      "name": "Olympic National Park boundary",
+      "note": "Trail leaves Olympic National Forest and enters Olympic National Park/Wilderness; self-issue backcountry camping permit required beyond this point, tread grows fainter above here.",
+      "type": "Junction",
+      "distMi": 5.1
+     },
+     {
+      "lat": 47.5312,
+      "lng": -123.51323,
+      "elev": 4125,
+      "name": "Sundown Pass",
+      "note": "Forested saddle marked by a broken signpost, reached via steep, faint tread through wet subalpine meadows; junction with the Six Ridge Trail heading east along the crest toward Mount Olson.",
+      "type": "Junction",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.53554,
+      "lng": -123.51033,
+      "elev": 3810,
+      "name": "Lake Sundown",
+      "note": "Short spur off the pass to a subalpine basin lake on Six Ridge's western flank; last dependable water and the standard base camp for an Olson attempt.",
+      "type": "Campsite",
+      "distMi": 7.6
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4650,
+      "name": "Six Ridge crest / Mount Olson boot-path junction",
+      "note": "Point on Six Ridge's sawtooth crest closest to Olson where an unsigned, unofficial boot path ('Mount Olson Way') leaves the trail for the peak; faint and overgrown with blowdowns and lingering snowfields into midsummer.",
+      "type": "Junction",
+      "distMi": 8.7
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 5100,
+      "name": "Tarn below Olson's summit block",
+      "note": "Boulder-field tarn just below the summit block is the last water and a common bivy spot; the final gully above it to the top is steep, loose, and exposed.",
+      "type": "Campsite",
+      "distMi": 9.5
+     },
+     {
+      "lat": 47.5784,
+      "lng": -123.4712,
+      "elev": 5292,
+      "name": "Mount Olson",
+      "type": "Summit",
+      "elevFt": 5292
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "South Fork Skokomish Trail #873 to Sundown Pass, then the Six Ridge crest and the Mount Olson Way",
+      "notes": "Mount Olson sees very few ascents and is normally reached as a side trip off the long Six Ridge traverse. From the Upper South Fork Skokomish Trailhead (Trail #873), reached via Skokomish Valley Road, FS-23 and FS-2361 from Shelton — FS-2361 is gated 1 October to 30 April — the trail runs up the valley. There is an unbridged FORD of the South Fork at about 2.4 miles and 1,450 ft that is only ankle-deep and safely crossable in late summer or early autumn low water; at other times it is a serious hazard. The Olympic National Park boundary comes near 5.1 miles, after which tread grows fainter and a self-issue backcountry permit is required.\n\nSundown Pass, a forested saddle marked by a broken signpost, comes at about 7.2 miles and 4,125 ft — this is the junction with the Six Ridge Trail heading east along the crest. Lake Sundown is a short spur off the pass at about 7.6 miles and 4,030 ft: the last dependable water and the standard basecamp.\n\nFollow the Six Ridge Trail east along its sawtooth crest — a ridge either side with a gully in the middle, and brutal uphill for every downhill — to about 8.7 miles and 4,650 ft, where an unsigned, unofficial boot path known as the MOUNT OLSON WAY leaves the trail for the peak. It is faint and overgrown with blowdown and lingering snowfields into midsummer. A boulder-field tarn at about 5,100 ft below the summit block is the last water and a common bivy.",
+      "season": "Roughly Jul-Sep, and gated by two fords that are only reliably safe in late summer and early autumn low water",
+      "hazards": [
+       "Two unbridged fords only safely crossable in late summer and early autumn low water",
+       "Route-finding on trail-less and boot-path terrain with an unsigned departure from Six Ridge",
+       "Dense brush and blowdown along the Six Ridge approach",
+       "A 55-60 degree grass and heather summit pitch that is loose and exposed, and worse descending",
+       "FS-2361 is gated 1 October to 30 April",
+       "Afternoon weather on an exposed crest, and a multi-day return from a very lightly visited peak"
+      ],
+      "baseFinding": "THE BASE OF THE CLIMB IS THE PASS IMMEDIATELY EAST OF THE SUMMIT, AND THE TEST IS THAT THE CLIMBING STARTS THE MOMENT YOU STAND IN IT. From the pass, the final ascent to Olson's 5,289 ft top is a steep, unmarked scramble up a GRASSY AND HEATHER SLOPE pitched around 55-60 degrees in places — hands-on, solid Class 3 — directly above you. Grass and heather at that angle is a distinctive surface: it is neither talus nor rock, and you are either on it or you are not.\n\nSECOND TEST, and it is what tells you the slope is easing correctly rather than that you have wandered: the pitch EASES AND CURVES ROUND THE NORTH SIDE of the peak onto a HEATHER BENCH, and then it is an easy stroll to the true summit. So the sequence is steep grass, then a bench that takes you leftward round the peak, then a walk. If the ground stays steep all the way to a top, or if you are on rock and scree rather than heather, you are on the wrong side.\n\nTHE APPROACH TEST BEFORE ANY OF THAT is the departure from Six Ridge, because it is the thing people miss: the Mount Olson Way leaves the Six Ridge Trail at the point on the sawtooth crest CLOSEST TO OLSON, at about 4,650 ft, and it is UNSIGNED. It is faint, overgrown and blowdown-choked. If you are still on obvious trail after passing the point where the crest is nearest the peak, you have walked past the turn.\n\nHONEST LIMIT: there is no documented roped climbing route, rack or pitch-by-pitch description for this peak. It is recorded as a summit without a route write-up. This is a bushwhack and scramble objective for peak-baggers, and the markers above are the sum of what has been written down. Treat the notch and the upper summit meadow as the crux going both ways: both are loose and exposed and better handled with an axe or a pole for self-arrest, especially wet or under late snow."
+     }
+    ],
+    "road": {
+     "name": "South Fork Skokomish Road (Forest Roads 23 and 2353) to the Skokomish Lower/Upper South Fork Trailhead",
+     "driveNote": "From Shelton: US 101 north ~6 mi, west on Skokomish Valley Road ~5.3 mi, then FR 23 ~9 mi and FR 2353 ~0.75 mi to the trailhead. This is a different drainage from the Hamma Hamma Road approach (used for Mount Skokomish/Mount Stone); verify current road status before driving."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,221 @@
+{
+ "applied": [
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Where the glacier starts / rope-up elevation"
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent via the Roman Wall"
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Distance and gain to camp"
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Pass purchase at the trailhead"
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Pass purchase at the trailhead"
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Pass purchase at the trailhead"
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "overview",
+   "path": [],
+   "fact": "Sherman Peak bearing from Grant Peak"
+  },
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Sherman Peak bearing from Grant Peak"
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "column": "permit",
+   "path": [],
+   "fact": "Pass/permit: self-issue wilderness permit vs no permit"
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Season: early-season route vs Jun-Sep"
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "column": "best_season",
+   "path": [],
+   "fact": "Season: early-season route vs Jun-Sep"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_sherman_peak_baker_route",
+   "before": {
+    "pitch_detail": [
+     {
+      "grade": "Class 1 (trail)",
+      "notes": "Park Butte Trailhead through Schriebers Meadow to the creek crossing (~3,600 ft), then up onto Railroad Grade Ridge.",
+      "pitch": "Trailhead to Railroad Grade"
+     },
+     {
+      "grade": "Class 1-2",
+      "notes": "Ridge walk above treeline to roughly 8,000-9,000 ft, where the route leaves rock/moraine and gains the Easton Glacier.",
+      "pitch": "Railroad Grade to glacier"
+     },
+     {
+      "grade": "Glacier travel, roped",
+      "notes": "Moderately sloped glacier travel avoiding crevasses, ascending to the crater rim below Baker's summit plateau.",
+      "pitch": "Easton Glacier to crater rim"
+     },
+     {
+      "grade": "Class 2, exposed",
+      "notes": "Rising traverse around the south rim of Sherman Crater past active fumaroles to a saddle on Sherman Peak's ridge.",
+      "pitch": "Crater rim traverse to Sherman saddle"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Final ~400 ft of steep snow (firm step-kicking when in condition) or loose scree/rock if snow-free, to the small summit.",
+      "pitch": "Saddle to Sherman Peak summit"
+     }
+    ],
+    "descent_text": "This is a glacier walk-up/scramble with no fixed rappel stations anywhere on the standard line — descent is a walk-off, reversing the ascent route. From the Sherman Peak/crater-rim high point, downclimb the steep snow of the upper Easton Glacier past the Roman Wall section first — most parties find this the psychologically hardest part of the day simply because of sustained steepness (roughly 30 degrees) right off the summit plateau; face-in plunge-stepping or a careful glissade (only when runout and snow conditions are safe, and never near crevasses or the crater's exposed rock) is typical. Continue back down through the Sherman Crater rim area, staying alert for the same fumarole/loose-rock hazard noted on the approach, then re-rope for the descent back through the Easton Glacier's crevasse field, following your ascent wands/tracks rather than freelancing a new line, since crevasse bridges can fail or shift through the day. Below the glacier's toe, pick up the Railroad Grade moraine-crest trail back to Sandy/High Camp and down through Morovitz Meadows to the Park Butte Trailhead, re-fording Sulfur Creek near the end. In good visibility this is a straightforward reverse of the route; in Baker's characteristic cloud cap or whiteout conditions, GPS/wands become essential since the moraine crest and crater rim offer little natural handrail. There is no roped rappelling on this route in normal conditions.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong - typically a 2-day trip with ~7 miles and ~4,300 ft to camp at Sandy Camp/Railroad Grade, then a long summit push (10-14 hrs round trip) on snow/glacier to the crater rim and back",
+      "packWeight": "Overnight glacier-camping load (tent, glacier gear, fuel, food) - roughly 35-45 lb"
+     },
+     "approachTime": "Long - typically split over 2 days (approach/camp day, then a 10-14 hr summit day) rather than a single push",
+     "requiredSkills": [
+      "Roped glacier travel and crevasse rescue",
+      "Crampon and ice axe self-arrest technique on moderate snow slopes",
+      "Whiteout/glacier navigation (map, compass, GPS)",
+      "Comfort with loose, exposed volcanic rock scrambling along the crater rim",
+      "Awareness of volcanic gas hazard near Sherman Crater fumaroles"
+     ],
+     "experienceLevel": "Prior glaciated-volcano experience required; partner should have done at least one roped glacier climb before (e.g. Mount Baker, Rainier, or similar) given the crevassed Easton Glacier approach and Sherman Crater's loose volcanic rim"
+    },
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "waypoints": [
+     {
+      "lat": 48.706691,
+      "lng": -121.811804,
+      "elev": 3400,
+      "name": "Park Butte Trailhead",
+      "note": "End of FS Road 13; self-issue Northwest Forest Pass and wilderness permit kiosk at the lot, start up Park Butte Trail 603.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Reach the Park Butte Trailhead at the end of Forest Service Road 13, via the Baker Lake Highway and the Sulfur Creek Road turnoff. Park at the trailhead lot, where a self-issue kiosk covers the Northwest Forest Pass and the wilderness permit."
+     },
+     {
+      "lat": 48.685559,
+      "lng": -121.753721,
+      "elev": 3600,
+      "name": "Sulphur Creek crossing, Schriebers Meadow",
+      "note": "Ford Sulphur Creek on a log/plank crossing at the edge of Schriebers Meadow, then turn north toward Railroad Grade; last reliable running water before high camp.",
+      "type": "Water",
+      "distMi": 1
+     },
+     {
+      "lat": 48.69125,
+      "lng": -121.774356,
+      "elev": 4900,
+      "name": "Railroad Grade Trail 603.2 junction",
+      "note": "Park Butte Trail splits here; leave it for Railroad Grade Trail 603.2, which climbs directly onto the crest of the lateral moraine.",
+      "type": "Junction",
+      "distMi": 2.4
+     },
+     {
+      "lat": 48.708906,
+      "lng": -121.81071,
+      "elev": 5900,
+      "name": "Sandy Camp",
+      "note": "Terminus of Railroad Grade Trail and the standard high camp for the Easton Glacier route; last established, durable tent sites before glacier travel.",
+      "type": "Campsite",
+      "distMi": 4
+     },
+     {
+      "lat": 48.721021,
+      "lng": -121.804451,
+      "elev": 6700,
+      "name": "Easton Glacier toe / rope-up point",
+      "note": "Rope up for glacier travel here; head northwest toward the crater rim, weaving around open crevasses and snow bridges on the lower Easton Glacier.",
+      "type": "Hazard",
+      "distMi": 4.6
+     },
+     {
+      "lat": 48.76512,
+      "lng": -121.822075,
+      "elev": 9800,
+      "name": "Sherman Crater rim / Sherman Peak spur",
+      "note": "Sulfur smell from active fumaroles vents near the crater rim; a short spur off the main Easton Glacier line leads to the Sherman Peak high point instead of continuing to Grant Peak.",
+      "type": "Junction",
+      "distMi": 7
+     },
+     {
+      "lat": 48.767218,
+      "lng": -121.813908,
+      "elev": 10133,
+      "name": "Sherman Peak summit",
+      "note": "False-summit high point on Mount Baker's crater rim, just southwest of and lower than the true summit (Grant Peak, 10,781 ft).",
+      "type": "Summit",
+      "distMi": 7.2
+     }
+    ],
+    "overview": "Sherman Peak is the high point on the south rim of Sherman Crater, Mount Baker's persistently active volcanic vent, sitting roughly 650 ft below and about half a mile southeast of Baker's true summit, Grant Peak (10,781 ft). A July 2023 differential-GPS survey fixed its elevation at 10,133 ft with 395.4 ft of prominence — just a few feet short of the 400-ft threshold for Washington's Top 100 peaks list. Almost nobody climbs it as a dedicated objective; it's typically tagged as a short detour off the standard Easton Glacier or Squak Glacier routes on Baker, reached by traversing the crater rim past steaming sulfur fumaroles instead of continuing straight up to Grant Peak."
+   }
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "before": {
+    "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "climate": {
+     "fall": "Shortening weather windows; the route has been climbed as late as November in at least one documented trip report, with full winter conditions.",
+     "spring": "Deep, often unstable snowpack; the route has been climbed/skied in spring conditions by experienced parties.",
+     "summer": "June-September is the primary climbing season with the most stable glacier-travel conditions.",
+     "winter": "Generally inaccessible except to well-equipped ski-mountaineering parties.",
+     "typical": "Wet, maritime volcano climate with a heavy winter snowpack and a comparatively short, drier summer climbing window.",
+     "forecastZone": "NWAC West Slopes North"
+    },
+    "best_season": "Standard season is roughly June through September; the route has also been climbed/skied in spring and as late as November by experienced parties, though crevasse and avalanche hazard increase outside the main summer window."
+   }
+  }
+ ]
+}

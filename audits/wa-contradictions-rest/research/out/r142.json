@@ -1,0 +1,219 @@
+{
+ "file": "r142.json",
+ "results": [
+  {
+   "id": "wa_golden_horn_north_face",
+   "fact": "Trailhead and approach line",
+   "verdict": "fixed",
+   "correct_value": "The standard approach is the PCT north from the Rainy Pass PCT North trailhead to Snowy Lakes; Swamp Creek is a rougher off-trail alternative, not the standard start.",
+   "evidence": "WTA's Golden Horn - Snowy Lakes page starts at Rainy Pass and follows the PCT north over the passes to the lakes; ClimberKyle's Golden Horn report says the approach starts with about 10 miles on the PCT from Rainy Pass; the Mountaineers route page describes the same PCT approach. SummitPost and a CascadeClimbers trip report describe Swamp Creek (pullout ~3 mi before Rainy Pass) only as a bushwhack alternative. So the trailhead card/waypoint are right and the approach prose's 'standard' claim is the outlier; the Swamp Creek option is kept as an alternative.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/golden-horn",
+    "https://climberkyle.com/2016/08/27/golden-horn/",
+    "https://www.mountaineers.org/activities/routes-places/pacific-crest-trail-routes/rainy-pass-to-snowy-lakes",
+    "https://www.summitpost.org/golden-horn/823263",
+    "https://cascadeclimbers.com/forum/topic/104509-tr-mount-hardy-8038-golden-horn-8366%E2%80%99-swamp-creek-to-snowy-lakes-07302022/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The standard access to Golden Horn's north side starts from the Swamp Creek pullout on Hwy 20 (about 3 miles before Rainy Pass), bushwhacking up Swamp Creek to Snowy Lakes on the PCT (~6,700 ft).",
+     "replace": "The standard access to Golden Horn's north side starts from the Rainy Pass PCT North trailhead on Hwy 20, following the PCT north over Cutthroat and Granite Passes and up the signed spur to Snowy Lakes (~6,700 ft); a rougher, off-trail alternative bushwhacks up Swamp Creek from a highway pullout about 3 miles before Rainy Pass.",
+     "id": "wa_golden_horn_north_face",
+     "fact": "Trailhead and approach line"
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "fact": "Approach line to Snowy Lakes",
+   "verdict": "fixed",
+   "correct_value": "Snowy Lakes is reached either on the PCT from Rainy Pass (standard) or off-trail up Swamp Creek (the first-ascent party's approach) — two separate approaches, not one line.",
+   "evidence": "The AAJ report by Sambataro says he and Schilling approached up Swamp Creek to reach Snowy Lakes, a camp off the PCT; WTA and ClimberKyle give the standard approach as the PCT north from Rainy Pass; SummitPost describes Swamp Creek as a separate bushwhack start from a highway pullout. The prose merged the two into one line; the patch presents them as alternatives, consistent with road.driveNote.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213719/Golden-Horn-East-Face",
+    "http://www.alpinist.com/doc/web15x/newswire-new-route-on-golden-horn",
+    "https://www.wta.org/go-hiking/hikes/golden-horn",
+    "https://climberkyle.com/2016/08/27/golden-horn/",
+    "https://www.summitpost.org/golden-horn/823263"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(reached via Swamp Creek and the PCT from Rainy Pass)",
+     "replace": "(reached either on the PCT from Rainy Pass or, as the first-ascent party did, off-trail up Swamp Creek)",
+     "id": "wa_golden_horn_east_face",
+     "fact": "Approach line to Snowy Lakes"
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "fact": "Descent: the east snow couloir was the way DOWN TO THE FACE, not the descent from the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The AAJ report says the party scrambled up the ridge and dropped east via a snow couloir (a straightforward descent with crampons and axe) and THEN climbed the face; Alpinist likewise says they went up the southwest scree and down the east side to the face before starting to climb at 6:30. The row's descent and descent_text present that couloir as the descent from the route back to Snowy Lakes, and its own approach says they descended to the base before roping up. Neither source states how the party got down from the summit, so no replacement descent can be written without inventing one; flagged, no patch.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213719/Golden-Horn-East-Face",
+    "http://www.alpinist.com/doc/web15x/newswire-new-route-on-golden-horn"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_golden_horn_southwest_route",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": "gain_ft 2,700 is the one-way trailhead-to-Snowy-Lakes figure, not a car-to-car summit total; the true total is roughly 4,000-5,000+ ft but sources do not agree on one number.",
+   "evidence": "WTA (23 mi RT, 2,700 ft gain, high point 6,900) and the Mountaineers (Day 1: 11 mi, 2,700 ft; return day 600 ft) confirm 2,700 is the gain to the lakes only. Car-to-car figures for the summit disagree: Dr. Dirtbag gives 'something like 25 miles and 4,000 feet', Mazamas lists 5,500 ft (a Golden Horn + Tower trip), AllTrails gives 4,038 ft round trip to the lakes alone, and the Mountaineers' 2,700+600 plus lakes (6,700) to summit (8,366) implies ~5,000. The contradiction is real (pins 4,880 to 8,366 need at least 3,486 ft) but no two sources agree on the replacement total, so no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/golden-horn",
+    "https://www.mountaineers.org/activities/routes-places/pacific-crest-trail-routes/rainy-pass-to-snowy-lakes",
+    "http://drdirtbag.com/2015/06/22/golden-horn/",
+    "https://mazamas.org/activity/instance/1951/detail/",
+    "https://www.alltrails.com/trail/us/washington/golden-horn-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_iceman",
+   "fact": "Trailhead and approach to the crag",
+   "verdict": "unresolved",
+   "correct_value": "Probably: park at the apex of the SR-20 hairpin below Washington Pass, take the climbers' trail toward Quicksilver Slab/Spire Gully, cut right into a dry creek bed and climb slabs (upper one fixed-lined) to the Ice Box — not the Alpenkuhl/Spire Gully-right approach, the Blue Lake TH, or the Cutthroat Lake TH.",
+   "evidence": "Mountain Project's Ice Box (Left Side) page says to park at the apex of the hairpin, follow the trail up to Quicksilver Slab and Spire Gully, cut right into a dry creek bed and climb slabs (one with a fixed line) to the Ice Box; the row's itinerary, waypoint note and obj_haz match that. The approach prose is copied from the Alpenkuhl rows, road names the Cutthroat Lake TH and the trailhead pin (name AND coordinates) is the Blue Lake TH. No second independent source describing the Ice Box access was found (stephabegg and others only confirm the hairpin as a start for the Early Winter Spires), and the waypoint pin's coordinates sit at Blue Lake TH and are out of scope, so no patch; flagged for a pin + approach fix together.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_iceman",
+   "fact": "Approach length and gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Depends on the unresolved trailhead: the 1.8 mi / 5,200 ft pin describes a Blue Lake TH start, the 10-15 minute figure belongs to the Alpenkuhl approach. Mountain Project gives the crag at 5,490 ft (matching the base pin) but no approach time or distance from the hairpin; no sources give the walk's length or gain, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_iceman",
+   "fact": "Parking pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Depends on the unresolved parking spot: a Northwest Forest Pass is required at the developed Washington Pass trailheads (Blue Lake, Cutthroat) as parking_pass says, but the Ice Box is reached from the SR-20 hairpin, a highway pullout; no source was found stating whether a pass is required there, so passRequired 'None' and parking_pass may both be true. No patch until the trailhead is settled.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_iceman",
+   "fact": "Watch-out list describes a waterfall ice climb",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Watch-outs for a one-pitch summer granite route: slick approach slabs, gear-protected upper section, occasional loose rock.",
+   "evidence": "Mountain Project describes the Ice Box as a shady summer rock crag and Iceman as an 80 ft trad pitch protected by 3 bolts and gear from BD .3 to #1; every other field of the row (season, beta, pitch_detail, rack, hazards, obj_haz) describes the same summer rock pitch. The watch_out text (waterfall ice, avalanche slopes, 80-degree ice pitches, whiteout gully navigation) is plainly copied from an ice route. Replaced with watch-outs drawn from the row's own hazards and rack.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.mountainproject.com/route/117767212/iceman"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "watch_out",
+     "path": [],
+     "expect": "Ephemeral waterfall ice formation—flow dependent on consistent freezing temperatures and water source; inconsistent conditions season-to-season; may not form or may be fragile\nDiurnal freeze-thaw cycles determine quality—afternoon warming melts ice; evening refreezing creates variable conditions; early morning climbing critical for optimal ice\nAvalanche terrain exposure—upper drainage may load with wind slab; assess stability before committing to climb; wide gully presents potential for slide if conditions unstable\nFalling ice hazard from above—ice deterioration and calving risk as temperatures rise; position carefully and move quickly through gully; afternoon climbing extremely hazardous\nSteep ice pitches (80+ degrees) with protection challenges—quality ice and anchor placement critical; poor conditions = unprotectable climbing with high consequence\nRoute-finding in whiteout conditions—gully system can be confusing in poor visibility; GPS/map essential; easy to enter wrong drainage\nLimited bailout options once committed—terrain traps in lower gully; retreat can be difficult; commit only in established conditions\nApproach hazards including avalanche exposure—approach gully subject to slides; assess slope stability; time approach carefully in safe hours",
+     "value": "Approach slabs above the dry creek bed are smooth and slippery, and the lower slab has no hand-line — worse when wet.\nOnly the crux face and finger crack are bolted; the horizontal cracks and left-facing corner above need your own small-to-mid cams.\nAlpine granite can shed occasional loose rock off-route.",
+     "id": "wa_iceman",
+     "fact": "Watch-out list describes a waterfall ice climb"
+    }
+   ]
+  },
+  {
+   "id": "wa_iceman",
+   "fact": "Sport vs trad protection",
+   "verdict": "unresolved",
+   "correct_value": "trad",
+   "evidence": "Mountain Project types Iceman as 'Trad, Alpine' with protection '3 bolts and gear from .3 to #1 bd', matching the row's beta, detailed_rack and pro_needs. The outlier is `discipline: sport`, but `discipline` is out of scope for these patches, so it is flagged rather than changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/117767212/iceman",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_c",
+   "fact": "Trailhead and approach to the crag",
+   "verdict": "unresolved",
+   "correct_value": "Probably: park at the apex of the SR-20 hairpin below Washington Pass, take the climbers' trail toward Quicksilver Slab/Spire Gully, cut right into a dry creek bed and climb slabs (upper one fixed-lined) to the Ice Box — not the Alpenkuhl/Spire Gully-right approach, the Blue Lake TH, or the Cutthroat Lake TH.",
+   "evidence": "Mountain Project's Ice Box (Left Side) page says to park at the apex of the hairpin, follow the trail up to Quicksilver Slab and Spire Gully, cut right into a dry creek bed and climb slabs (one with a fixed line) to the Ice Box; the row's itinerary, waypoint note and obj_haz match that. The approach prose is copied from the Alpenkuhl rows, road names the Cutthroat Lake TH and the trailhead pin (name AND coordinates) is the Blue Lake TH. No second independent source describing the Ice Box access was found (stephabegg and others only confirm the hairpin as a start for the Early Winter Spires), and the waypoint pin's coordinates sit at Blue Lake TH and are out of scope, so no patch; flagged for a pin + approach fix together.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_c",
+   "fact": "Approach length and gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Depends on the unresolved trailhead: the 1.8 mi / 5,200 ft pin describes a Blue Lake TH start, the 10-15 minute figure belongs to the Alpenkuhl approach. Mountain Project gives the crag at 5,490 ft (matching the base pin) but no approach time or distance from the hairpin; no sources give the walk's length or gain, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_c",
+   "fact": "Parking pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Depends on the unresolved parking spot: a Northwest Forest Pass is required at the developed Washington Pass trailheads (Blue Lake, Cutthroat) as parking_pass says, but the Ice Box is reached from the SR-20 hairpin, a highway pullout; no source was found stating whether a pass is required there, so passRequired 'None' and parking_pass may both be true. No patch until the trailhead is settled.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_d",
+   "fact": "Trailhead and approach to the crag",
+   "verdict": "unresolved",
+   "correct_value": "Probably: park at the apex of the SR-20 hairpin below Washington Pass, take the climbers' trail toward Quicksilver Slab/Spire Gully, cut right into a dry creek bed and climb slabs (upper one fixed-lined) to the Ice Box — not the Alpenkuhl/Spire Gully-right approach, the Blue Lake TH, or the Cutthroat Lake TH.",
+   "evidence": "Mountain Project's Ice Box (Left Side) page says to park at the apex of the hairpin, follow the trail up to Quicksilver Slab and Spire Gully, cut right into a dry creek bed and climb slabs (one with a fixed line) to the Ice Box; the row's itinerary, waypoint note and obj_haz match that. The approach prose is copied from the Alpenkuhl rows, road names the Cutthroat Lake TH and the trailhead pin (name AND coordinates) is the Blue Lake TH. No second independent source describing the Ice Box access was found (stephabegg and others only confirm the hairpin as a start for the Early Winter Spires), and the waypoint pin's coordinates sit at Blue Lake TH and are out of scope, so no patch; flagged for a pin + approach fix together.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_d",
+   "fact": "Approach length and gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Depends on the unresolved trailhead: the 1.8 mi / 5,200 ft pin describes a Blue Lake TH start, the 10-15 minute figure belongs to the Alpenkuhl approach. Mountain Project gives the crag at 5,490 ft (matching the base pin) but no approach time or distance from the hairpin; no sources give the walk's length or gain, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_route_d",
+   "fact": "Parking pass requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Depends on the unresolved parking spot: a Northwest Forest Pass is required at the developed Washington Pass trailheads (Blue Lake, Cutthroat) as parking_pass says, but the Ice Box is reached from the SR-20 hairpin, a highway pullout; no source was found stating whether a pass is required there, so passRequired 'None' and parking_pass may both be true. No patch until the trailhead is settled.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,147 @@
+{
+ "applied": [
+  {
+   "id": "wa_osceola_peak_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Current Harts Pass Road status"
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Current Harts Pass Road status"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_osceola_peak_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.737833,
+      "lng": -120.6785,
+      "elev": 7170,
+      "name": "Slate Pass / Buckskin Ridge Trailhead",
+      "note": "End of Harts Pass Road (FR-5400) near Slate Peak; self-issue Pasayten Wilderness permit at the kiosk, road typically open only July-Sept.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Forest Road 5400 from Mazama up to Harts Pass, published at roughly 6,181-6,204 feet - trailers are prohibited past the 5400000/5400060 junction because the road is narrow and steep with few turnouts, and whether an ordinary car should attempt it is genuinely disputed, so judge it on the day. At the guard station turn right onto FR 5400-600; the Pacific Crest Trail trailhead is at the first switchback and Slate Pass, at about 6,900 feet, is at the second. Early in the season you may have to walk the last half mile or so if the road isn't yet clear, and the road itself typically doesn't open until early-to-mid July depending on snowpack. Self-issue a Pasayten Wilderness permit at the kiosk here."
+     },
+     {
+      "lat": 48.7697,
+      "lng": -120.6393,
+      "elev": 5280,
+      "name": "Middle Fork Pasayten (Robinson Creek) Trail junction",
+      "note": "Reached via Buckskin Ridge Trail (0.9 mi) then Whistler Cutoff Trail (3.1 mi), dropping ~1,900 ft off the pass before turning south down the Middle Fork Pasayten drainage.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "This leg is all downhill: drop off the pass on the Buckskin Ridge tread, then swing onto the Whistler Cutoff for a well-graded cruise to the valley floor. The first pitch below the pass holds snow well into summer and some parties carry an axe for it. The Middle Fork is crossed unbridged, usually ankle to shin deep in normal summer flow, but it deserves respect during snowmelt or after heavy rain."
+     },
+     {
+      "lat": 48.803233,
+      "lng": -120.606433,
+      "name": "Eureka Creek Trail (#484) junction",
+      "note": "Leave the Middle Fork Pasayten Trail here and start climbing east up Eureka Creek toward Freds Lake; the way tread is brushy and blowdown-choked beyond this point.",
+      "type": "Junction",
+      "distMi": 10,
+      "directions": "Turn south and follow the Middle Fork Pasayten trail up the valley. Tread through here is generally good and brush-free, and it is the fastest walking of the trip. Watch for the signed turnoff, which is easy to stride past when the miles are going quickly."
+     },
+     {
+      "lat": 48.82287,
+      "lng": -120.59824,
+      "elev": 6507,
+      "name": "Freds Lake",
+      "note": "Larch-ringed lake with reliable water and informal camping, the usual overnight stop before pushing on to Freds Pass.",
+      "type": "Water",
+      "distMi": 12,
+      "directions": "Climb east up the Eureka Creek drainage. This is where the trip changes character: tread narrows, brush closes in and stepping over blowdown becomes routine, so expect the pace to drop noticeably. The grade is steady rather than steep, gaining roughly 1,200 ft to the lake basin."
+     },
+     {
+      "lat": 48.817206,
+      "lng": -120.592739,
+      "elev": 7110,
+      "name": "Freds Pass",
+      "note": "Trail contours Freds Lake's north shore then climbs the head of the basin to this saddle, the gateway into the upper Eureka Creek / Lake Doris basin.",
+      "type": "Junction",
+      "distMi": 12.5,
+      "directions": "Roughly 600 ft of climbing packed into half a mile, which makes this the steepest sustained trail section of the approach. The saddle is open and exposed with no water on it, so top off at the lake before starting up."
+     },
+     {
+      "lat": 48.82225,
+      "lng": -120.59164,
+      "elev": 6975,
+      "name": "Lake Doris",
+      "note": "Alpine lake basin serving as the standard base camp for Osceola's west slopes; the scramble route starts on the ridge north of the lake.",
+      "type": "Campsite",
+      "distMi": 13,
+      "directions": "Drop off the far side of the pass and contour down into the next basin, only a couple of hundred feet of loss over about half a mile. Snow can linger on this side early in the season. This is the last water and the standard camp, and everything above it is dry."
+     },
+     {
+      "lat": 48.825467,
+      "lng": -120.583323,
+      "elev": 7800,
+      "name": "Southwest talus/slab slope",
+      "note": "Loose, sharp talus mixed with slabs that get slick with wet lichen; stay on the faint use-trail through the least-bad line rather than the slabs.",
+      "type": "Hazard",
+      "distMi": 13.5,
+      "directions": "From the lake head northeast through open forest and onto the slope above, aiming for the southwest ridge rather than straight up the south-face boulder field. There is a faint use trail on the ridge and it is far better going than the slabs, which turn genuinely slick where lichen is wet. Figure about 800 ft of gain to reach this point."
+     },
+     {
+      "lat": 48.83066,
+      "lng": -120.57651,
+      "elev": 8584,
+      "name": "Osceola Peak",
+      "note": "True summit (8,587 ft); broad talus top with views to Mount Lago and Carru across upper Eureka Creek.",
+      "type": "Summit",
+      "distMi": 14,
+      "directions": "Continue up on big talus broken by short sections of scree, staying on the faint trail wherever it shows rather than drifting onto the slabs. It is Class 2 with occasional Class 3 steps and about another 800 ft of gain to the broad summit. Nothing here needs a rope, and the descent reverses the same line."
+     }
+    ],
+    "season": "Jun-Oct",
+    "road": {
+     "name": "Harts Pass Road / FR-5400 to Slate Pass",
+     "status": "Reopened to vehicles around mid-June 2026 after Dec 2025 storm/flood damage closed it from Monument Creek Trailhead to Harts Pass; confirm current status with the Methow Valley Ranger District before driving.",
+     "driveNote": "Narrow, rugged; high-clearance vehicle recommended. The road continues past Harts Pass (~6,198 ft) to Slate Peak (7,488 ft), the highest drivable point in Washington; park at Slate Pass for the Osceola approach.",
+     "seasonalGate": "Typically snowed in from late October to early July, opening as snow clears in early July most years."
+    },
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Standard Pasayten Wilderness rules apply: group size limits, camp at least 200 ft from water and trails, avoid campfires in fragile alpine terrain, pack out all trash, and store food securely (black bear country).",
+     "permit": "Free, self-issue wilderness permit required at the trailhead; no advance reservation or fee",
+     "closures": "Harts Pass Road (FR-5400) was closed to vehicles from Monument Creek Trailhead to Harts Pass after Dec 2025 rain/flood damage, and reopened after repairs around mid-June 2026. The road is prone to storm/washout damage and also has a routine seasonal snow closure roughly late October to early July — check Okanogan-Wenatchee NF alerts before driving to Slate Pass.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "Northwest Forest Pass required at trailheads (e.g. Andrews Creek, Chewuch River) — $5/day or $30/annual.",
+     "passRequired": "None — a Northwest Forest Pass is not required at Harts Pass/Slate Pass trailheads",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at the trailhead registration box. No reservation is needed."
+     }
+    }
+   }
+  }
+ ]
+}

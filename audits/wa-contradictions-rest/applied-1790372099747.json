@@ -1,0 +1,852 @@
+{
+ "applied": [
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Chilliwack River crossing (ford vs cable car)"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Chilliwack River crossing (ford vs cable car)"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "note"
+   ],
+   "fact": "Chilliwack River crossing (ford vs cable car)"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Distances along the Brush Creek approach"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Distances along the Brush Creek approach"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Day 1 elevation loss"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Name of the Easy Ridge obstacle"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "label"
+   ],
+   "fact": "Name of the Easy Ridge obstacle"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Name of the Easy Ridge obstacle"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Name of the Easy Ridge obstacle"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Name of the Easy Ridge obstacle"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Camps recommended vs closed"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Grade of the summit ridge"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "label"
+   ],
+   "fact": "Grade of the summit ridge"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Grade of the summit ridge"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Grade of the summit ridge"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Grade of the summit ridge"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "rope_type",
+   "path": [],
+   "fact": "Whether a rope is carried/used"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Whether a rope is carried/used"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance and time from the trailhead to Perfect Pass"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance and time from the trailhead to Perfect Pass"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "East-side approach trail from Ross Lake"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    0,
+    "label"
+   ],
+   "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+  },
+  {
+   "id": "wa_south_spur",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Name of the Easy Ridge obstacle (Imperfect vs Perfect Impasse)"
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Distance to Whatcom Pass"
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Distance to Whatcom Pass"
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Base camp at Whatcom Pass vs closed Whatcom Camp"
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses",
+    "location"
+   ],
+   "fact": "Which glacier the route passes"
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Which glacier the route passes"
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "East-side approach trail from Ross Lake"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "before": {
+    "hazards": [
+     "Whatcom Glacier crevasses and a bergschrund whose difficulty varies year to year and can be bare ice by late summer",
+     "Chilliwack River ford — thigh-deep and swift in midsummer",
+     "Deep moats/wet 4th-class slabs at the Imperfect Impasse if combined with the Easy Ridge approach",
+     "Loose, chossy rock at the summit notch in low-snow years"
+    ],
+    "gear": [
+     "Rope, harness, and a basic crevasse-rescue kit for the Whatcom Glacier crossing",
+     "Ice axe and crampons",
+     "Helmet for the summit scramble/notch",
+     "Trekking poles for the long approach and the Chilliwack River ford"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.9101,
+      "lng": -121.5927,
+      "elev": 3100,
+      "name": "Hannegan Pass Trailhead",
+      "note": "Same trailhead. NPS trip account describes traversing Whatcom Peak's east side / 'Whatcom Glacier route' from Whatcom Pass (reached via Hannegan Pass Trailhead).",
+      "type": "Trailhead",
+      "elevFt": 3100,
+      "directions": "The trailhead is at the end of Ruth Creek Road (FR-32), which turns off the Mt. Baker Highway (SR 542), at about 3,100 feet."
+     },
+     {
+      "lat": 48.8837,
+      "lng": -121.5335,
+      "elev": 5066,
+      "name": "Hannegan Pass",
+      "note": "High point of the maintained Hannegan Pass Trail; the route leaves good tread here and drops steeply into the Chilliwack River valley toward the Brush Creek approach.",
+      "type": "Junction",
+      "distMi": 4.6
+     },
+     {
+      "lat": 48.881137,
+      "lng": -121.466565,
+      "elev": 2700,
+      "name": "Chilliwack River ford",
+      "note": "Unbridged ford of the Chilliwack River reported thigh-deep at typical mid-summer flow; can run much higher and more dangerous during snowmelt or after rain.",
+      "type": "Hazard",
+      "distMi": 7
+     },
+     {
+      "lat": 48.8790008,
+      "lng": -121.4107855,
+      "elev": 3400,
+      "name": "Graybeal Camp",
+      "note": "Established camp about 2 miles up the Brush Creek Trail; the camp itself is dry by late summer, so fill water bottles at Brush Creek roughly a half mile before arriving.",
+      "type": "Campsite",
+      "distMi": 9
+     },
+     {
+      "lat": 48.8754053,
+      "lng": -121.3645777,
+      "elev": 5210,
+      "name": "Whatcom Pass",
+      "note": "Trail high point and standard base-camp area for the climb; junction with the Tapto Lakes path and the climbers' route onto the Whatcom Glacier.",
+      "type": "Junction",
+      "distMi": 16.5
+     },
+     {
+      "lat": 48.866521,
+      "lng": -121.369063,
+      "elev": 5500,
+      "name": "Whatcom Glacier traverse",
+      "note": "Traverse the east side of the retreating Whatcom Glacier around 5,200-5,500 ft; NPS warns of icefall and crevasse hazard here, worsening after mid-summer as the ice has thinned.",
+      "type": "Hazard",
+      "distMi": 18
+     },
+     {
+      "lat": 48.8576357,
+      "lng": -121.373549,
+      "elev": 7574,
+      "name": "Whatcom Peak",
+      "note": "",
+      "type": "Summit",
+      "elevFt": 7574
+     }
+    ],
+    "dist_km": 13.7,
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong, sustained multi-day backpacking fitness for a 10+ mile approach with heavy elevation gain to Whatcom Pass or Perfect Pass camp, followed by a long, glacier-crossing summit day",
+      "packWeight": "Moderate-heavy overnight pack (roughly 30-40 lb) for the approach, carrying camp gear plus rope/glacier kit; lighter summit-day pack for the push from camp"
+     },
+     "approachTime": "1-2 days of backpacking to a Whatcom Pass or Perfect Pass camp (roughly 10-14 miles), then a long summit day from camp involving heather/scree, snow, the small Whatcom Glacier, and a final rock scramble",
+     "requiredSkills": [
+      "Glacier travel and crevasse rescue",
+      "Self-arrest and ice axe use",
+      "Exposed Class 3 scrambling / ridge crest route-finding",
+      "Remote backcountry navigation (unmarked terrain, no cell coverage)",
+      "Wilderness permit logistics for a multi-day trip"
+     ],
+     "experienceLevel": "Intermediate-to-advanced mountaineer: needs prior glacier travel and multi-day wilderness backpacking experience, plus comfort with exposed, unroped Class 3 scrambling above a glacier"
+    },
+    "itinerary": {
+     "cal": "Overnight camps (Easy Saddle, Perfect Pass, US Cabin Camp) are inside North Cascades NP and require a wilderness permit from the Marblemount Wilderness Information Center; the Chilliwack ford and Whatcom Glacier traverse are most manageable July-September, and low water in the morning makes the ford easier.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Hannegan Trailhead, cross Hannegan Pass, descend to the Chilliwack River and ford it (thigh-deep at typical midsummer flow), then pick up the old climbers' trail and grind up onto Easy Ridge to camp on the snowy, semi-open crest.",
+       "hours": 8.5,
+       "miles": 9,
+       "title": "Trailhead to Easy Ridge camp",
+       "gainFt": 4600,
+       "lossFt": 300,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach a camp near Easy Saddle on Easy Ridge"
+      },
+      {
+       "n": 2,
+       "note": "Traverse Easy Ridge over Easy Peak (6,613 ft), then bypass the cliff-bound Perfect Impasse by dropping to about 4,400 ft and re-ascending through cliff bands (some parties use a hand line). From Perfect Pass, climb long snow slopes/the Whatcom Glacier's edge to a saddle below the summit and scramble the final couple hundred feet to the top.",
+       "hours": 9.3,
+       "miles": 7,
+       "title": "Easy Ridge to Perfect Pass, climb Whatcom Peak",
+       "gainFt": 3200,
+       "lossFt": 2600,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "Morning",
+         "label": "Leave Easy Saddle camp, cross Easy Peak",
+         "detail": "Old radio-antenna remnants mark the summit; often fogged in."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Descend and bypass Perfect Impasse",
+         "detail": "Drop to roughly 4,400 ft and re-climb cliff bands to regain the ridge."
+        },
+        {
+         "time": "+8.4 hr total",
+         "label": "Reach Perfect Pass, drop packs",
+         "detail": "Camp on the rock knoll north of the pass."
+        },
+        {
+         "time": "+0.9 hr",
+         "label": "Snow slopes/glacier edge to the summit saddle, final scramble to the top",
+         "detail": "Whatcom Peak, 7,574-7,579 ft."
+        }
+       ],
+       "objective": "Cross Perfect Impasse, reach Perfect Pass, and summit Whatcom Peak"
+      },
+      {
+       "n": 3,
+       "note": "Traverse the Whatcom Glacier's east-side snow slopes from Perfect Pass to Whatcom Pass (published descriptions warn this gets tricky late season, but it's often a straightforward walk in good conditions), then descend the maintained Brush Creek/Chilliwack River Trail, crossing the river by cable car, to camp near US Cabin.",
+       "hours": 8.8,
+       "miles": 11,
+       "title": "Perfect Pass to US Cabin Camp",
+       "gainFt": 300,
+       "lossFt": 4400,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Traverse the Whatcom Glacier to Whatcom Pass and descend to the Chilliwack River"
+      },
+      {
+       "n": 4,
+       "note": "Follow the Chilliwack River Trail back up to Hannegan Pass and down Ruth Creek to the trailhead.",
+       "hours": 5.4,
+       "miles": 9,
+       "title": "Out to the trailhead",
+       "gainFt": 2900,
+       "lossFt": 2000,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Hike out via Hannegan Pass"
+      }
+     ],
+     "totalNote": "A 4-day/3-night loop via Easy Ridge in and Whatcom Pass out: roughly 36-39 mi round trip with well over 10,000 ft of cumulative gain, a mandatory Chilliwack River ford, and the notorious Perfect Impasse cliff-band bypass — not a route to compress into fewer days for most parties."
+    },
+    "timing": {
+     "totalHrs": 32,
+     "summitTimeHrs": 9.3,
+     "descentTimeHrs": 14.2,
+     "approachTimeHrs": 8.5,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 8.5,
+       "note": "From the Hannegan Trailhead, cross Hannegan Pass, descend to the Chilliwack River and ford it (thigh-deep at typical midsummer flow), then pick up the old climbers' trail and grind…",
+       "fromTo": "Trailhead to Easy Ridge camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9.3,
+       "note": "Traverse Easy Ridge over Easy Peak (6,613 ft), then bypass the cliff-bound Perfect Impasse by dropping to about 4,400 ft and re-ascending through cliff bands (some parties use a ha…",
+       "fromTo": "Easy Ridge to Perfect Pass, climb Whatcom Peak",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8.8,
+       "note": "Traverse the Whatcom Glacier's east-side snow slopes from Perfect Pass to Whatcom Pass (this can get tricky late season, but it's often a straightforward walk in good …",
+       "fromTo": "Perfect Pass to US Cabin Camp",
+       "section": "Descent"
+      },
+      {
+       "hrs": 5.4,
+       "note": "Follow the Chilliwack River Trail back up to Hannegan Pass and down Ruth Creek to the trailhead.",
+       "fromTo": "Out to the trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "descent_text": "This is a walk-off/downclimb — there is no rappelling on this route. From the summit, reverse the exposed Class 3 south-ridge scramble down to the top of the south snowfield, then descend the snowfield back onto the Whatcom Glacier at roughly 5,200-5,500 ft. Rope back up for glacier travel and reverse the traverse across the east/south side of the peak toward Perfect Pass and back to Whatcom Pass; crevasses and moats are typically more open on the descent as the afternoon sun softens the snowpack, so budget time for careful navigation rather than a quick glissade — the glacier can deteriorate to bare ice with gaping moats later in the season. From Whatcom Pass, descend the same trail system used on approach: the climbers' path down to Graybeal Camp, the Brush Creek/Chilliwack River Trail back to the cable-car crossing of the Chilliwack River, then back up and over Hannegan Pass and down the Hannegan Pass Trail to the trailhead. Given the roughly 17+ trail miles one-way just to reach Whatcom Pass, most parties camp at Graybeal, Whatcom Camp, or near Perfect Pass and treat this as a multi-day trip rather than a car-to-car push, descending only as far as the next camp on summit day. If the summit notch is badly melted out and choss-prone, an alternate descent drops about 200 ft north of Peak 7347 to reach the Wiley Glacier instead of reversing through the notch."
+   }
+  },
+  {
+   "id": "wa_south_spur",
+   "before": {
+    "itinerary": {
+     "cal": "Overnight camps (Easy Saddle, Perfect Pass, US Cabin Camp) require a North Cascades NP wilderness permit from the Marblemount Wilderness Information Center; best conditions on the south-face snowfield are typically July-August before it thins out.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Hannegan Trailhead, cross Hannegan Pass, ford the Chilliwack River, and climb the old climbers' trail onto Easy Ridge to camp near Easy Saddle.",
+       "hours": 8.5,
+       "miles": 9,
+       "title": "Trailhead to Easy Ridge camp",
+       "gainFt": 4600,
+       "lossFt": 300,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach a camp near Easy Saddle on Easy Ridge"
+      },
+      {
+       "n": 2,
+       "note": "Traverse Easy Ridge, bypass the Perfect Impasse cliff band (drop to ~4,400 ft and re-climb), and continue to Perfect Pass. From there, a long straightforward snowfield on the south face leads to the base of the south ridge, followed by an exposed but enjoyable Class 3 scramble along the ridge crest to the summit.",
+       "hours": 9.3,
+       "miles": 7,
+       "title": "Easy Ridge to Perfect Pass, climb the South Spur",
+       "gainFt": 3200,
+       "lossFt": 2600,
+       "packLb": 35,
+       "schedule": [
+        {
+         "time": "Morning",
+         "label": "Leave camp, cross Easy Peak, bypass Perfect Impasse",
+         "detail": ""
+        },
+        {
+         "time": "+8.4 hr total",
+         "label": "Reach Perfect Pass, drop overnight gear",
+         "detail": "Camp on the rock knoll north of the pass."
+        },
+        {
+         "time": "+0.5 hr",
+         "label": "South-face snowfield to the base of the south ridge",
+         "detail": ""
+        },
+        {
+         "time": "+0.9 hr",
+         "label": "Exposed Class 3 scramble up the south ridge crest to the summit",
+         "detail": "7,574 ft; often a foggy summit."
+        }
+       ],
+       "objective": "Bypass Perfect Impasse, reach Perfect Pass, and climb the south ridge to the summit"
+      },
+      {
+       "n": 3,
+       "note": "Descend from Perfect Pass toward Whatcom Pass (via the low east-side traverse or the Whatcom Glacier if conditions allow), then follow the Brush Creek/Chilliwack River Trail, crossing the river by cable car, to camp near US Cabin.",
+       "hours": 8.8,
+       "miles": 11,
+       "title": "Perfect Pass to US Cabin Camp",
+       "gainFt": 300,
+       "lossFt": 4400,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Descend to Whatcom Pass and out toward the Chilliwack River"
+      },
+      {
+       "n": 4,
+       "note": "Climb back up to Hannegan Pass and descend Ruth Creek to the trailhead.",
+       "hours": 5.4,
+       "miles": 9,
+       "title": "Out to the trailhead",
+       "gainFt": 2900,
+       "lossFt": 2000,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Hike out via Hannegan Pass"
+      }
+     ],
+     "totalNote": "A 4-day/3-night loop via Easy Ridge in and Whatcom Pass out — essentially the same approach as the Southwest Route, but the summit day climbs the exposed Class 3 south ridge crest directly rather than traversing the glacier. Roughly 37-39 mi round trip with over 10,000 ft of cumulative gain."
+    },
+    "descent_text": "This is a non-technical walk-off/downclimb with no rappelling involved. From the summit (7,574 ft), reverse the south ridge crest — an exposed but straightforward Class 3 scramble — down to the top of the south-facing snowfield, then descend the snowfield (glissade-able in the right conditions, early-mid season) back to Perfect Pass. From Perfect Pass, most parties simply reverse the Easy Ridge approach (down through the Impasse workaround to Easy Saddle, then out via Hannegan Pass). Parties doing a Picket-range traverse or looping back toward Whatcom Pass instead descend via the low-orbit traverse around the peak's east side, or cross the Whatcom Glacier directly when it is 'in' and consolidated (rope up for glacier travel and watch for moats near the pass) — parties describe this glacier crossing as straightforward in good late-summer conditions but it should not be treated as guaranteed snow-covered/moat-free. No fixed anchors or rappel stations exist on this route; rappels = 0.",
+    "waypoints": [
+     {
+      "lat": 48.9101,
+      "lng": -121.5941,
+      "elev": 3120,
+      "name": "Hannegan Pass Trailhead",
+      "note": "End of Forest Road 32; alternate approach via the Chilliwack River Trail then the Easy Ridge climbers' path.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.8576357,
+      "lng": -121.373549,
+      "elev": 7574,
+      "name": "Whatcom Peak",
+      "note": "Approach crosses Easy Ridge, Easy Peak, and the Imperfect Impasse to Perfect Pass (~6,300 ft), then snowfields and 3rd-class rock up the south face/spur.",
+      "type": "Summit",
+      "distMi": 15
+     }
+    ],
+    "rope_type": "none (occasional handline)",
+    "rope_note": "4th-class variation on the same peak as the North Ridge; typically unroped scrambling with exposure, occasionally protected with a short handline on steeper steps.",
+    "dist_km": 13.7,
+    "approach": "The standard approach begins at the Hannegan Pass Trailhead (end of Hannegan Pass Rd/FS-32 off SR 542, ~3,100 ft), following Hannegan Pass Trail #674 about 4 miles and 2,000 ft of gain to Hannegan Pass (~5,050-5,100 ft). From the pass, the trail switchbacks down the far side into the Chilliwack River valley to Boundary Camp, then continues down-valley to the Chilliwack River crossing — a ford that can be thigh-deep and swift at mid-summer flow and is the approach's main hazard; check levels before committing, and expect it to be harder earlier in the season or after rain. From the ford, leave the maintained trail system and pick up the old, unmaintained Easy Ridge climbers' trail, which climbs steeply out of the valley to Easy Saddle (~5,200 ft, a common camp, roughly 5.5-8.5 hours/8-9 miles from the trailhead depending on pace and the ford). From Easy Saddle the route follows the crest of Easy Ridge, over or around Easy Peak (6,613 ft, ascend its south ridge), to the notorious 'Imperfect Impasse' — a notch guarded by deep snow moats on both sides and down-sloping, often-wet slabs. In many seasons the direct crossing is unsafe or impassable; the established workaround drops roughly 800 ft down to about 4,400 ft and re-climbs a exposed Class 4 rock step (many parties belay this) to regain the ridge on the far side. Beyond the Impasse the trail continues to Perfect Pass (~6,200 ft), the standard high camp for Whatcom Peak, about 8-9 hours/12-13 miles in from the trailhead for a strong party. There is no reliable water at Perfect Pass itself in late season — plan to fill up at Easy Saddle or from snowmelt. An alternative approach skips Easy Ridge entirely: from Whatcom Pass (reached via the Chilliwack River/Brush Creek trail or the Little Beaver Creek Trail from Ross Lake — see the North Ridge route for that approach), a 'low orbit' traverse around Whatcom Peak's east side on scree and snow reaches the same south-side snowfields without crossing the Impasse, but it exposes climbers to the moats and possible crevasses at the edge of the Whatcom Glacier and should be treated as glacier travel (rope/crevasse-rescue gear) in early season.",
+    "approach_variants": [
+     {
+      "name": "Hannegan Pass, the Chilliwack ford and Easy Ridge over the Imperfect Impasse to Perfect Pass",
+      "notes": "From the Hannegan Pass Trailhead at the end of Hannegan Pass Road, FS-32, off SR-542 at about 3,100 ft, Trail #674 runs about 4 miles and 2,000 ft to Hannegan Pass at roughly 5,050-5,100 ft. The trail then switchbacks down the far side into the Chilliwack River valley to Boundary Camp and continues down-valley to the Chilliwack River crossing.\n\nThat ford is the approach's main hazard: it can be thigh-deep and swift at mid-summer flow, and is harder earlier in the season or after rain. From the ford, leave the maintained trail system and pick up the old, unmaintained Easy Ridge climbers' trail, which climbs steeply out of the valley to Easy Saddle at about 5,200 ft, a common camp, roughly 5.5 to 8.5 hours and 8-9 miles in depending on pace and the ford.\n\nFrom Easy Saddle the route follows the crest over or around Easy Peak at 6,613 ft to the Imperfect Impasse, then continues to Perfect Pass at about 6,200 ft, the standard high camp, about 8-9 hours and 12-13 miles in for a strong party. There is no reliable water at Perfect Pass in late season; fill at Easy Saddle or from snowmelt.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "A thigh-deep, swift ford of the Chilliwack River at mid-summer flow",
+       "The Imperfect Impasse: snow moats, wet down-sloping slabs, and an 800 ft descent to an exposed class 4 step as the workaround",
+       "Moats where the south snowfield meets the summit rock, worse late season",
+       "A short but very exposed summit crest on poor rock with limited protection",
+       "No reliable water at Perfect Pass in late season"
+      ],
+      "primary": true,
+      "baseFinding": "THE ROUTE STARTS WHERE THE CAMP ENDS: FROM PERFECT PASS, HEAD NORTH AND UP ONTO THE BROAD SOUTH SNOWFIELD. That snowfield is the lower margin of the Whatcom Glacier, the angle is moderate, and the line aims at a CONSPICUOUS COL IN THE SUMMIT RIDGE above. Reports describe it as long but straightforward, roughly an hour from the pass.\n\nSO THE AIMING POINT IS A NOTCH IN A SKYLINE, AND IN CLOUD THE SUBSTITUTE FOR IT IS THIS: keep climbing snow at a moderate angle until the snow RUNS OUT AGAINST ROCK. The snowfield is left at the col. Where snow meets rock is where a moat or a lip of hard snow is most likely to be awkward, and it is worse late in the season, which is exactly why you will notice it.\n\nCONFIRM ABOVE: the final stretch along the crest is SHORT, on the order of a hundred feet, but very exposed with drops on both sides, on poor rock with limited protection. Many parties belay it even though the moves are only third to fourth class. If you are on a long ridge rather than a hundred-foot one, you are not on this route.\n\nTHE VARIATION THAT IS NOT AN ERROR: some parties break out onto ramps and ledges to the NORTHEAST of the col and rejoin the crest higher. Both reach the same place.\n\nTHE IMPASSE, WHICH IS THE OTHER THING YOU HAVE TO FIND ON THIS APPROACH: it is a notch guarded by deep snow moats on both sides and down-sloping, often wet slabs. In many seasons the direct crossing is unsafe or impassable; the established workaround drops roughly 800 ft to about 4,400 ft and re-climbs an exposed class 4 rock step, which many parties belay, to regain the ridge on the far side. Dropping 800 ft to get past a notch feels wrong and is correct."
+     },
+     {
+      "name": "The low-orbit traverse from Whatcom Pass, skipping Easy Ridge and the Impasse entirely",
+      "notes": "An alternative that avoids the Impasse. From Whatcom Pass, reached via the Chilliwack River and Brush Creek trails or via the Little Beaver Creek Trail from Ross Lake, a low-orbit traverse around Whatcom Peak's east side on scree and snow reaches the same south-side snowfields.",
+      "season": "Jul-Sep; treat as glacier travel in early season",
+      "hazards": [
+       "Moats and possible crevasses at the edge of the Whatcom Glacier; treat as glacier travel in early season",
+       "Scree and snow sidehilling with no path",
+       "The same summit crest exposure as the Easy Ridge variant"
+      ],
+      "baseFinding": "THIS VARIANT IS DEFINED BY WHAT IT AVOIDS, AND THAT IS THE TEST: IF YOU HAVE CROSSED THE IMPASSE, YOU ARE NOT ON IT. The low orbit contours around the peak's east side instead of over the ridge crest, and delivers you onto the same south-side snowfields the Easy Ridge line reaches from Perfect Pass.\n\nARRIVAL IS THE SAME ARRIVAL: broad moderate snow below a conspicuous col in the summit ridge, and the route is where the snow runs out against rock.\n\nWHAT YOU TRADE FOR IT, AND WHY THE CHOICE IS A CONDITIONS CALL RATHER THAN A PREFERENCE: the low orbit exposes you to the moats and possible crevasses at the edge of the WHATCOM GLACIER, so it should be treated as glacier travel with a rope and crevasse-rescue gear in early season. The Impasse is a rock problem; this is a glacier problem. Pick the one your party is equipped for."
+     }
+    ],
+    "road": {
+     "name": "Hannegan Pass Trailhead (end of FS-32, off SR-542) for the west-side approach, or Ross Lake water taxi + Big Beaver Trail for the east-side approach",
+     "status": "FS-32 is a maintained gravel forest road to the Hannegan Pass TH. Both approaches to Whatcom Pass are long (~16-20 miles one-way) wilderness trail hikes beyond the trailhead/water taxi drop-off.",
+     "driveNote": "Roughly 2-2.5 hours from Seattle/Bellingham via SR-542 to Hannegan Pass TH (west option); or ~3 hours via SR-20 to Ross Dam plus a water taxi (east option).",
+     "seasonalGate": "Typically snowed-in/gated in winter and spring; opens roughly June depending on snowpack"
+    },
+    "timing": {
+     "totalHrs": 32,
+     "summitTimeHrs": 9.3,
+     "descentTimeHrs": 14.2,
+     "approachTimeHrs": 8.5,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 8.5,
+       "note": "From the Hannegan Trailhead, cross Hannegan Pass, ford the Chilliwack River, and climb the old climbers' trail onto Easy Ridge to camp near Easy Saddle.",
+       "fromTo": "Trailhead to Easy Ridge camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9.3,
+       "note": "Traverse Easy Ridge, bypass the Perfect Impasse cliff band (drop to ~4,400 ft and re-climb), and continue to Perfect Pass. From there, a long straightforward snowfield on the south…",
+       "fromTo": "Easy Ridge to Perfect Pass, climb the South Spur",
+       "section": "Climb"
+      },
+      {
+       "hrs": 8.8,
+       "note": "Descend from Perfect Pass toward Whatcom Pass (via the low east-side traverse or the Whatcom Glacier if conditions allow), then follow the Brush Creek/Chilliwack River Trail, cross…",
+       "fromTo": "Perfect Pass to US Cabin Camp",
+       "section": "Descent"
+      },
+      {
+       "hrs": 5.4,
+       "note": "Climb back up to Hannegan Pass and descend Ruth Creek to the trailhead.",
+       "fromTo": "Out to the trailhead",
+       "section": "Descent"
+      }
+     ]
+    },
+    "pitch_detail": [
+     {
+      "grade": "Trail/scramble, one Class 4 step",
+      "notes": "Hannegan Pass, Chilliwack ford, Easy Ridge, Perfect Impasse to Perfect Pass camp (6,200 ft)",
+      "pitch": "Approach to Perfect Pass"
+     },
+     {
+      "grade": "Low-angle snow/glacier",
+      "notes": "North from Perfect Pass toward the col in the summit ridge",
+      "pitch": "Snowfield/glacier"
+     },
+     {
+      "grade": "Class 4, poor rock",
+      "notes": "Final ~100 ft to the col/summit ridge; protection recommended",
+      "pitch": "Summit spur"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.9101,
+      "lng": -121.5941,
+      "elev": 3120,
+      "name": "Hannegan Pass Trailhead",
+      "note": "End of Forest Road 32, off Mt. Baker Highway SR-542.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead is at the end of Forest Road 32 (Hannegan Pass Road), which turns off SR 542, the Mt. Baker Highway, at about 3,100 feet."
+     },
+     {
+      "lat": 48.875,
+      "lng": -121.3617,
+      "elev": 5206,
+      "name": "Whatcom Pass",
+      "note": "Via the Chilliwack River Trail through Boundary, Copper Creek, US Cabin, and Graybeal camps.",
+      "type": "Junction",
+      "distMi": 13
+     },
+     {
+      "lat": 48.8576357,
+      "lng": -121.373549,
+      "elev": 7574,
+      "name": "Whatcom Peak",
+      "note": "North Ridge climbed directly south from Whatcom Pass; generally the faster of the two standard routes.",
+      "type": "Summit",
+      "distMi": 14.5
+     }
+    ],
+    "itinerary": {
+     "cal": "Whatcom Pass camp is inside North Cascades NP and requires a wilderness permit from the Marblemount Wilderness Information Center; permits for this popular camp can be competitive in July-August.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Hannegan Trailhead, cross Hannegan Pass, drop about 2,500 ft to the Chilliwack River drainage, and climb the Brush Creek Trail to camp at Whatcom Pass. Start early (by 6-7 AM) — a party that left near noon didn't reach camp until 9 PM.",
+       "hours": 8,
+       "miles": 16,
+       "title": "Trailhead to Whatcom Pass camp",
+       "gainFt": 3600,
+       "lossFt": 1700,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "Early AM",
+         "label": "Leave Hannegan trailhead",
+         "detail": ""
+        },
+        {
+         "time": "+2 hr",
+         "label": "Top of Hannegan Pass (5,066 ft)",
+         "detail": ""
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Down to the Chilliwack drainage, pick up Brush Creek Trail",
+         "detail": ""
+        },
+        {
+         "time": "+3-4 hr",
+         "label": "Arrive Whatcom Pass camp",
+         "detail": "Camp near the pass (~5,200 ft), with views of Whatcom Peak and Challenger Glacier."
+        }
+       ],
+       "objective": "Establish base camp at Whatcom Pass"
+      },
+      {
+       "n": 2,
+       "note": "Head south from camp toward the ridge and scramble the loose, exposed 3rd-class North Ridge to the summit. Some parties find it a quick, fun scramble; others describe it as loose and committing — go early, move carefully on the choss, and give yourself more time than the published description suggests.",
+       "hours": 5.5,
+       "miles": 4,
+       "title": "North Ridge summit day",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 10,
+       "schedule": [
+        {
+         "time": "6:30 AM",
+         "label": "Leave Whatcom Pass camp",
+         "detail": "Head south toward the base of the ridge."
+        },
+        {
+         "time": "+1-2 hr",
+         "label": "Gain the North Ridge crest, begin 3rd-class scrambling",
+         "detail": "Loose rock; route-finding is the crux for most parties."
+        },
+        {
+         "time": "Midday",
+         "label": "Reach the summit (7,574 ft)",
+         "detail": ""
+        },
+        {
+         "time": "Afternoon",
+         "label": "Reverse the ridge back to camp",
+         "detail": "Described by one party as 'a chossy nightmare' to downclimb — take care."
+        }
+       ],
+       "objective": "Climb the North Ridge to the summit and back"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: down Brush Creek to the Chilliwack, back up to Hannegan Pass, and out to the trailhead. A leisurely exit day took one party 7.5 hours with breaks.",
+       "hours": 7.5,
+       "miles": 16,
+       "title": "Out to the trailhead",
+       "gainFt": 1700,
+       "lossFt": 3600,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Hike out via Whatcom Pass and Hannegan Pass"
+      }
+     ],
+     "totalNote": "A 3-day/2-night out-and-back via a Whatcom Pass base camp: roughly 36 mi round trip (the approach alone runs close to 16 miles each way) with about 7,500-8,000 ft of cumulative gain. The ridge climb itself is short (a few hours round trip from camp) but trip reports disagree sharply on how easy it is, so budget generously."
+    },
+    "seasonal_hazards": {
+     "exposure": "Ridge-crest exposure steepens noticeably in the final ~400 ft; loose/chossy rock reported in places in trip reports",
+     "avalanche": {
+      "zone": "NWAC West Slopes North (Mt. Baker zone) — most relevant to shoulder-season snow travel on approach"
+     },
+     "crevasses": {
+      "timing": "Glacier terrain reported increasingly bare-ice/crevassed by late August (2017 NPS ranger account)",
+      "location": "Route passes near Challenger Glacier"
+     }
+    },
+    "partner_requirements": {
+     "fitnessSpec": "Multi-day backcountry fitness for the remote Whatcom Pass approach with an overnight pack",
+     "approachTime": "Multi-day approach via Whatcom Pass, North Cascades NP backcountry",
+     "requiredSkills": [
+      "3rd–4th class scrambling with sustained exposure in the final ~400 ft",
+      "Self-arrest",
+      "Glacier-travel awareness — route passes near Challenger Glacier crevasse terrain",
+      "Strong routefinding; Staying on the ridge crest matters, especially higher up"
+     ],
+     "experienceLevel": "Advanced alpine scrambler — remote, glacier-adjacent terrain with real exposure"
+    },
+    "road": {
+     "name": "Hannegan Pass Trailhead (end of FS-32, off SR-542) for the west-side approach, or Ross Lake water taxi + Big Beaver Trail for the east-side approach",
+     "status": "FS-32 is a maintained gravel forest road to the Hannegan Pass TH. Both approaches to Whatcom Pass are long (~16-20 miles one-way) wilderness trail hikes beyond the trailhead/water taxi drop-off.",
+     "driveNote": "Roughly 2-2.5 hours from Seattle/Bellingham via SR-542 to Hannegan Pass TH (west option); or ~3 hours via SR-20 to Ross Dam plus a water taxi (east option).",
+     "seasonalGate": "Typically snowed-in/gated in winter and spring; opens roughly June depending on snowpack — check current status before driving"
+    }
+   }
+  }
+ ]
+}

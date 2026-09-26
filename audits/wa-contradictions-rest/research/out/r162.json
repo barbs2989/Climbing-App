@@ -1,0 +1,29 @@
+{"file": "r162.json", "results": [
+ {"id": "wa_spontaneous_distraction", "fact": "Crux rock grade", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The only detailed source found gives the route a headline grade of 5.10a/b while grading every individual pitch 5.10a, so the row's split (rock_grade 5.10a/b vs grade/pitches 5.10a) mirrors that one source exactly. No second independent source with a grade was found, so neither value can be adopted over the other.",
+  "sources": ["https://www.mountainproject.com/route/107745728/spontaneous-distraction"],
+  "patches": []},
+ {"id": "wa_spontaneous_distraction", "fact": "Access notes describe the neighbouring route", "verdict": "fixed_internal_plus_one",
+  "correct_value": "4 pitches",
+  "evidence": "The row's pitches, pitch_detail, overview, beta and approach_variants baseFinding all say four pitches; the route's own description page lists 4 pitches (400 ft) with the same FA party. The _raw note (which does not render) was copied from Spontaneity Arete.",
+  "sources": ["https://www.mountainproject.com/route/107745728/spontaneous-distraction"],
+  "patches": [
+   {"id": "wa_spontaneous_distraction", "fact": "Access notes describe the neighbouring route", "op": "replace_text", "column": "access", "path": ["_raw", "notes"], "find": "Multi-pitch climbing route (7 pitches reported) at Washington Pass; Spontaneity Arete route", "replace": "Multi-pitch climbing route (4 pitches) at Washington Pass, beside Spontaneity Arete"}
+  ]},
+ {"id": "wa_spontaneity_arete", "fact": "Pitch count", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "The overview explicitly frames the route as six pitches plus an optional seventh, which totals the header's 7, and pitch_detail labels pitch 7 as optional; the waypoint note's '6-pitch' is the required count. Outside sources vary between 5 and 8 pitches depending on how scrambling is linked, and several call it a 7-pitch route, so no single value is contradicted.",
+  "sources": ["https://www.ukclimbing.com/logbook/crags/washington_pass-7098/spontaneity_arete-431573", "https://havetent.com/2018/07/02/le-petit-cheval-spontaneity-arete/"],
+  "patches": []},
+ {"id": "wa_first_amendment", "fact": "Fixed gear on the route", "verdict": "fixed",
+  "correct_value": "Natural gear with two bolted belays (the cave ledge and the slabby ledge above it) and a single protection bolt at the crux; the first pitch has no bolts.",
+  "evidence": "The route's description page says pitch 3 begins from a big choss cave with bolts, pitch 4 ends on a large sloping ledge with two belay bolts, and a bolt is clipped on the upper pitch. A second, independent route write-up states the first ascensionist returned in 2011 to add bolts to two of the belays and one bolt to the crux pitch, which is protected by small gear and that bolt. So 'nothing on this route is bolted' is wrong; the 5.4 first pitch is still unbolted, so the negative marker against the neighbouring bolted line still works.",
+  "sources": ["https://www.mountainproject.com/route/109581071/first-amendment", "http://www.supertopo.com/rock-climbing/Washington-Pass-Le-Petit-Cheval-The-First-Amendement", "http://publications.americanalpineclub.org/articles/12201108900/Le-Petit-Cheval-First-Amendment"],
+  "patches": [
+   {"id": "wa_first_amendment", "fact": "Fixed gear on the route", "op": "replace_text", "column": "approach_variants", "path": [0, "baseFinding"], "find": "you are on the partly bolted four-pitch line beside the gully; nothing on this route is bolted.", "replace": "you are on the partly bolted four-pitch line beside the gully; this route's first pitch has no bolts, and its only fixed hardware is higher up — two bolted belays and a single bolt at the crux."},
+   {"id": "wa_first_amendment", "fact": "Fixed gear on the route", "op": "replace_text", "column": "watch_out", "path": [1], "find": "little to no fixed gear beyond the bolted cave belay.", "replace": "little fixed gear beyond two bolted belays (the cave ledge and the slabby ledge above it) and a single bolt at the crux."},
+   {"id": "wa_first_amendment", "fact": "Fixed gear on the route", "op": "replace_text", "column": "pitch_detail", "path": [2, "notes"], "find": "a ledge with a cave, a loose, chossy belay.", "replace": "a ledge with a cave, a loose, chossy belay with bolts."},
+   {"id": "wa_first_amendment", "fact": "Fixed gear on the route", "op": "replace_text", "column": "pitch_detail", "path": [3, "notes"], "find": "Good finger cracks lead to a large, slabby ledge.", "replace": "Good finger cracks lead to a large, slabby ledge with a two-bolt belay."}
+  ]}
+]}

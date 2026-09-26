@@ -1,0 +1,271 @@
+{
+ "batches": ["b021.json", "b022.json", "b023.json", "b024.json"],
+ "routes_read": 8,
+ "routes": [
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "name": "South Route",
+   "area": "Mount Mastiff",
+   "contradictions": [
+    {
+     "fact": "Time to reach summit vs total car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.summitTimeHrs", "says": "8.5"},
+      {"field": "timing.totalHrs", "says": "8.5"},
+      {"field": "itinerary.days[0].schedule[3] (label 'Summit Mount Mastiff')", "says": "+5 hr"}
+     ],
+     "why": "summitTimeHrs is identical to totalHrs (the whole car-to-car day), but the itinerary's own hour-by-hour schedule places the summit at +5 hours from the trailhead, not +8.5.",
+     "internal_resolution": "The itinerary schedule's +5 hr summit entry (11 AM from a 6 AM start) is the more specific figure; summitTimeHrs duplicating totalHrs looks like a data default rather than a real measurement.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8.05 (≈ 5.0 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "10"},
+      {"field": "approach", "says": "roughly 10 miles round trip, ~3,300 ft gain for Mastiff alone"}
+     ],
+     "why": "dist_km is almost exactly half the itinerary's/approach's stated 10-mile round trip — a one-way vs round-trip mismatch presented as two different route distances.",
+     "internal_resolution": "itinerary.miles (10), approach text, and the waypoint distances (4.5 mi one-way to the summit) agree with each other; dist_km reads as the one-way figure.",
+     "needs_research": false
+    },
+    {
+     "fact": "Fee/pass required at Merritt Lake Trailhead",
+     "severity": "low",
+     "claims": [
+      {"field": "permit", "says": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads."},
+      {"field": "access.passRequired", "says": "No fee currently required at Merritt Lake Trailhead per USFS (self-register; no toilet or water on site) — confirm before visiting since fee requirements can change."}
+     ],
+     "why": "The generic permit field implies a Northwest Forest Pass/day fee applies at 'developed trailheads,' while the route's own access section says no fee is currently charged at this specific trailhead; unclear whether Merritt Lake TH counts as 'developed.'",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Avalanche relevance in July",
+     "severity": "low",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route; the nearest NWAC coverage is the Stevens Pass zone, which is only relevant to spring/winter travel here, not this route's July-September climbing window"},
+      {"field": "seasonal_hazards.avalanche.byMonth.July", "says": "Low"}
+     ],
+     "why": "The zone text says avalanche coverage is not relevant to any month in the route's July-September window, but byMonth still assigns July a non-N/A rating ('Low') unlike August/September.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "name": "West Route (Rock Mountain Trail)",
+   "area": "Rock Mountain",
+   "contradictions": [
+    {
+     "fact": "Which Nason Ridge trailheads charge a fee",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0].permit (Rock Lake)", "says": "...of the trailheads serving this crest only Nason Ridge is a fee site, at $5 a day or $30 a year."},
+      {"field": "bivy[1].permit (Crescent Lake)", "says": "No pass is required at the Rock Mountain or Merritt Lake trailheads; Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year."},
+      {"field": "bivy[3].permit (Alpine Lookout — day use only)", "says": "A Northwest Forest Pass or equivalent annual pass is required at the Round Mountain trailhead."},
+      {"field": "bivy[4].permit (Mount Howard summit-area bivouac)", "says": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year."}
+     ],
+     "why": "Three of this route's own CAMPING & BIVY entries state Nason Ridge is the ONLY fee trailhead on the crest, while a fourth bivy entry on the same route says the Round Mountain trailhead also requires a pass.",
+     "internal_resolution": "3 of 4 bivy entries agree only Nason Ridge charges a fee; the Alpine Lookout entry is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time to reach summit vs total car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.summitTimeHrs", "says": "8.5"},
+      {"field": "itinerary.days[0].schedule[4] (label 'Summit (6,852 ft)')", "says": "~9:30 AM"}
+     ],
+     "why": "summitTimeHrs equals the full 8.5-hour car-to-car totalHrs, but the itinerary schedule places the summit about 4.5 hours after the 5:00 AM start.",
+     "internal_resolution": "The itinerary's own labeled summit time (~9:30 AM, 4.5 hr from a 5 AM start) is more specific than summitTimeHrs, which duplicates totalHrs.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6.44 (≈ 4.0 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "8"}
+     ],
+     "why": "dist_km is almost exactly half the itinerary's stated 8-mile round trip — a one-way vs round-trip mismatch.",
+     "internal_resolution": "approach text puts the true summit at '3.95-4.0 miles one-way,' matching dist_km as the one-way figure; itinerary.miles (8) is the round trip.",
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche relevance in July",
+     "severity": "low",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route; climbed mid-July through October, after the NWAC-forecasted avalanche season for the nearest zone (Stevens Pass) has ended"},
+      {"field": "seasonal_hazards.avalanche.byMonth.July", "says": "Low"}
+     ],
+     "why": "The zone text says the entire mid-July-October climbing window falls after avalanche season, but byMonth still rates July 'Low' instead of 'N/A' like the other listed months.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Route name ('West Route') vs its stated aspect/face",
+     "severity": "low",
+     "claims": [
+      {"field": "name", "says": "West Route (Rock Mountain Trail)"},
+      {"field": "aspect", "says": "S"},
+      {"field": "face", "says": "South/southwest slope above Schilling Creek to the Nason Ridge crest, then the final ridge/summit block"}
+     ],
+     "why": "The route is named 'West Route' but its aspect/face fields and the approach prose ('open south/southwest-facing slope with zero shade') consistently describe a south-facing climb with no west-facing element mentioned.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_rock_mountain_northeast_ridge",
+   "name": "Northeast Ridge (Nason Ridge Traverse)",
+   "area": "Rock Mountain",
+   "contradictions": [
+    {
+     "fact": "Which Nason Ridge trailheads charge a fee",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0].permit (Rock Lake)", "says": "...only Nason Ridge is a fee site, at $5 a day or $30 a year."},
+      {"field": "bivy[1].permit (Crescent Lake)", "says": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year."},
+      {"field": "bivy[3].permit (Alpine Lookout — day use only)", "says": "A Northwest Forest Pass or equivalent annual pass is required at the Round Mountain trailhead."}
+     ],
+     "why": "Same internal contradiction as the West Route — this route's own bivy entries disagree about whether the Round Mountain trailhead also charges a fee.",
+     "internal_resolution": "3 of 4 bivy entries agree only Nason Ridge charges; Alpine Lookout is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "name": "North Ridge",
+   "area": "Abernathy Peak",
+   "contradictions": [
+    {
+     "fact": "Whether a self-issue wilderness permit is required at this trailhead",
+     "severity": "high",
+     "claims": [
+      {"field": "permit", "says": "Free self-issue Lake Chelan-Sawtooth Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at developed trailheads."},
+      {"field": "access.permit", "says": "No self-issue wilderness permit is required for Lake Chelan-Sawtooth Wilderness via this Forest Service trailhead (self-issue permits are only required when entering the wilderness via the North Cascades National Park Complex, which does not apply to this Twisp River Road approach)"}
+     ],
+     "why": "The top-level permit field tells a climber to get a free self-issue permit at the trailhead, while the ACCESS section explicitly says no self-issue permit is required at this trailhead — directly opposite instructions on the same Plan tab.",
+     "internal_resolution": "access.permit is the detailed, specific, reasoned statement; the top-level permit field reads as reused boilerplate and is wrong for this trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach mileage/gain figures citing the wrong route's trailhead (Scatter Lake)",
+     "severity": "medium",
+     "claims": [
+      {"field": "partner_requirements.approachTime", "says": "5-6+ hours to reach the base of the North Ridge (roughly 4.2 mi to Scatter Lake plus scrambling beyond, or ~11 mi to Gardner Meadows via Wolf Creek Trail before the ridge itself)"},
+      {"field": "partner_requirements.fitnessSpec.hiking", "says": "typical day is 10-12+ miles round trip with roughly 4500-5500 ft of gain (Scatter Lake approach is ~11 mi RT / 5200 ft; Wolf Creek/Gardner Meadows approach is longer at ~11 mi one-way to the saddle)"},
+      {"field": "approach", "says": "From the North Creek Trailhead (officially the Gilbert Trailhead; ~3,660 ft...) pick up North Creek Trail #413..."}
+     ],
+     "why": "This route's own approach/beta/approach_variants describe only the North Creek Trail / Gardner Meadows approach and never mention Scatter Lake, yet partner_requirements repeatedly cites 'Scatter Lake' mileage/gain figures (matching the separate South Ridge route's own gain_ft of 5200) as if they applied to this route.",
+     "internal_resolution": "This route's approach/beta/approach_variants unanimously describe North Creek Trail #413 and Gardner Meadows; the Scatter Lake figures belong to the separate wa_abernathy_peak_south_ridge route and look copied in.",
+     "needs_research": false
+    },
+    {
+     "fact": "Is June part of the climbing season?",
+     "severity": "low",
+     "claims": [
+      {"field": "season", "says": "Jul-Oct"},
+      {"field": "seasonal_guidance.monthBreakdown.June", "says": "Lingering snow on the ridge and approach trail is likely ('snow-covered; trails snowbound' in spring); road/trailhead access may also still be affected by late snowpack (status: marginal)"}
+     ],
+     "why": "The season field excludes June entirely, but seasonal_guidance rates June as a recognized (if marginal) climbing month rather than omitting or closing it.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance: dist_km vs itinerary miles",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "6.9 (≈ 4.29 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "8.7"}
+     ],
+     "why": "dist_km is roughly half the itinerary's round-trip mileage — one-way vs round-trip mismatch.",
+     "internal_resolution": "consistent with dist_km being one-way and itinerary miles being round-trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_abernathy_peak_south_ridge",
+   "name": "South Ridge (Scatter Lake)",
+   "area": "Abernathy Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_cardinal_peak_se_slopes",
+   "name": "Southeast Slopes",
+   "area": "Cardinal Peak",
+   "contradictions": [
+    {
+     "fact": "Is the true (south) summit part of this route, or beyond its scope?",
+     "severity": "high",
+     "claims": [
+      {"field": "overview", "says": "though a June 2023 theodolite survey found the south summit is roughly 7 inches taller and is technically the true highpoint, reachable only via a short technical 5th-class scramble beyond the scope of this route"},
+      {"field": "beta", "says": "many scramblers stop at the middle summit rather than commit to it"},
+      {"field": "high_point_ft", "says": "8596 (equal to the true south summit / area elevation_ft, not the middle summit's ~8,590 ft)"},
+      {"field": "waypoints[6] (Cardinal Peak summit)", "says": "elev 8596, note: 'True summit of the Chelan Mountains' highest point... exposed class 3 moves near the top'"},
+      {"field": "rock_grade", "says": "5th class (short, unrated step near the true summit)"},
+      {"field": "pitch_detail[2]", "says": "pitch 'Middle summit to true (south) summit', grade 'Class 4-5', lengthM 77"}
+     ],
+     "why": "The Overview explicitly says the technical step to the true summit is 'beyond the scope of this route,' yet the route's own header grade (rock_grade, which wins the header pill), high_point_ft, final waypoint, and pitch_detail all treat that 5th-class step and the true summit as officially part of this route's stats — a climber reading the Overview would think this route tops out at the lower, non-technical middle summit, while the header/stats say otherwise.",
+     "internal_resolution": "pitch_detail's three pitch lengths (230+150+77) sum exactly to length_m (457), showing the true-summit step is counted as part of the route's own official length/grade rather than excluded.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season window vs best_season start",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jun-Sep"},
+      {"field": "best_season", "says": "Late May through September. Early-season (late May–June) ascents are effectively a snow climb — the standard gully holds 40–50° snow requiring ice axe and crampons..."}
+     ],
+     "why": "best_season recommends/describes ascents starting in 'late May,' which falls before the stated season window's June start.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+   "name": "Northwest Couloir–North Ridge",
+   "area": "Cardinal Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_chelan_butte_chelan_butte_trail",
+   "name": "Chelan Butte Trail",
+   "area": "Chelan Butte",
+   "contradictions": [
+    {
+     "fact": "Parking pass type required (Northwest Forest Pass vs Discover Pass)",
+     "severity": "medium",
+     "claims": [
+      {"field": "permit", "says": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads."},
+      {"field": "access.parking_pass", "says": "Discover Pass (Washington state parking pass) required, not a Northwest Forest Pass."},
+      {"field": "access.passRequired", "says": "Discover Pass or WDFW Vehicle Access Pass"}
+     ],
+     "why": "The top-level permit field says a Northwest Forest Pass (or day fee) covers parking, but the route's own access section explicitly states this is WDFW land requiring a Discover Pass and specifically says 'not a Northwest Forest Pass.'",
+     "internal_resolution": "access.parking_pass/passRequired/landManager are specific and self-correcting (WDFW state land, not USFS); the top-level permit field is generic USFS boilerplate that doesn't apply here.",
+     "needs_research": false
+    },
+    {
+     "fact": "Is March open or closed to hiking?",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Mar-Oct (best Apr-May and fall); voluntary closure Feb 1-Mar 31 for wintering deer; also used for winter snowshoeing"},
+      {"field": "access.closures", "says": "Walk-in access (hiking, snowshoeing, etc.) is discouraged Feb 1 - Mar 31 to protect wintering mule deer"},
+      {"field": "best_season", "says": "...Walk-in access is discouraged Feb 1 - Mar 31 to protect wintering mule deer in the Chelan Butte Wildlife Area."}
+     ],
+     "why": "The season field's own start month (March) falls entirely inside the Feb 1-Mar 31 window that the same field (and access.closures/best_season) says walk-in access is discouraged for — so 'Mar-Oct' and the closure note contradict each other about whether March is open.",
+     "internal_resolution": "the closure note (Feb 1-Mar 31) is corroborated three times and is specific; the season field's 'Mar' start appears to be an off-by-one that should read 'Apr-Oct.'",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

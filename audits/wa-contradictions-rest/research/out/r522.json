@@ -1,0 +1,176 @@
+{
+ "file": "r522.json",
+ "results": [
+  {
+   "id": "wa_mount_seattle_south",
+   "fact": "Trailhead / approach side",
+   "verdict": "unresolved",
+   "correct_value": "The standard approach is from the North Fork Quinault trailhead (16 mi to Low Divide by the river trail); the Elwha from Whiskey Bend is a much longer alternative (about 28 mi to Low Divide plus a ~7 mi closed-road walk).",
+   "evidence": "NPS's North Fork Quinault page gives 16 mi from the trailhead (519 ft) to Low Divide (3,602 ft); the Mazamas route listing describes Mount Seattle as a ~19 mi approach along the North Fork Quinault. The row's trailhead card, waypoints, beta and route breakdown use the Quinault side, but the entire itinerary (6 days, per-day miles/gain/loss), timing.sectionBreakdown, road card, pro_tips, partner_requirements and descent are a coherent Elwha plan. Making them agree means rebuilding the itinerary and timing for the Quinault side with per-day gain/loss figures no source states, so no patch is written; needs a rebuild of the itinerary/timing/road for the North Fork Quinault approach.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://mazamas.org/activity/286/",
+    "https://trailsnw.com/trails/olympics/skyline"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "fact": "Season window",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Jul-Sep",
+   "evidence": "best_season, seasonal_guidance (Jul/Aug/Sep only), climate.summer, climate.bySeason.summer and approach_variants[0].season all put the window in July-September; season Jun-Aug is the outlier. NPS's North Fork Quinault page says the upper trail is usually snow-covered through late June, supporting a July start. The June-August line in climate.typical is a generic regional-weather statement that contradicts the same sentence's mid-July-September window, so it is removed (along with its source attribution).",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://en.wikipedia.org/wiki/Mount_Seattle_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Aug",
+     "value": "Jul-Sep",
+     "id": "wa_mount_seattle_south",
+     "fact": "Season window"
+    },
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "typical"
+     ],
+     "find": "June through August is the most favorable period for viewing or climbing the peak; the standard scramble is typically driest and most snow-free from mid-July through September, per NPS sources.",
+     "replace": "The standard scramble is typically driest and most snow-free from mid-July through September.",
+     "id": "wa_mount_seattle_south",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "fact": "Order of Promise Creek Bench vs Low Divide",
+   "verdict": "fixed",
+   "correct_value": "Promise Creek Bench/Pass lies on the Skyline trail between Kimta Peak and Lake Beauty, well before Low Divide; it is not crossed between Low Divide and Seattle Meadows.",
+   "evidence": "NPS's Skyline Ridge Primitive Trail page places Promise Creek Pass between Kimta Peak and the Lake Beauty junction, with Low Divide 7.6 mi further on at the trail's end. An Oregon Hikers trip report likewise puts the rough trail above Promise Creek on the Kimta-Lake Beauty stretch. The row's own waypoints (Promise Creek Bench at 19 mi, Low Divide at 27) agree; Low Divide (3,602 ft) to Seattle Meadows (4,550 ft) is a climb, so 'down to camp' is also corrected to 'up'.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/skyline-ridge-primitive-trail.htm",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=26205"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Via the Skyline Trail system into Seattle Creek Basin, over intermediate high points like Promise Creek Bench (~5,340 ft), down to camp near 4,550 ft below the peak's west slopes.",
+     "replace": "Via the Skyline Trail system into Seattle Creek Basin, climbing to camp near 4,550 ft below the peak's west slopes.",
+     "id": "wa_mount_seattle_south",
+     "fact": "Order of Promise Creek Bench vs Low Divide"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "fact": "Low Divide mileage",
+   "verdict": "unresolved",
+   "correct_value": "16 mi by the North Fork Quinault River trail (pitch_detail[0] is correct); roughly 29-31 mi by the Skyline Ridge line the waypoints follow, so waypoints[5].distMi 27 and the approach's '16-20 miles depending on the line chosen' both understate the Skyline option.",
+   "evidence": "NPS gives 16 mi trailhead-to-Low Divide on the North Fork Quinault trail (trailsnw also calls the North Fork leg 16 miles). NPS gives ~22.8 mi from Three Lakes to Low Divide on the Skyline, and full Skyline-North Fork loop totals of 45 mi (WTA, trailsnw) and 47 mi (seekingultra) imply ~29-31 mi on the Skyline side, not 27. The 16 vs 27 difference is two different lines, not an error in pitch_detail; but the Skyline pin distances (Low Divide 27, Seattle Meadows 28.5, summit 30.5) are all keyed off the understated figure and the trailhead-to-Three Lakes leg is not firmly sourced, so no patch is written.",
+   "sources": [
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "https://home.nps.gov/olym/planyourvisit/skyline-ridge-primitive-trail.htm",
+    "https://www.wta.org/go-hiking/hikes/skyline-primitive-quinault",
+    "http://seekingultra.blogspot.com/2015/06/skyline-north-fork-quinault-loop.html",
+    "https://trailsnw.com/trails/olympics/skyline"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "fact": "Summit line description",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Both fields describe the same line: scree up the west side, over the south ridge (via the southwest couloir) onto the east side, then a Class 2-3 finish on the east ridge of the summit, which is the slightly higher south peak. A trip report of this exact route gives that sequence, and the Mazamas/Wikipedia descriptions confirm the south peak is the slightly higher one.",
+   "sources": [
+    "https://trailcatjim.com/skyline-trail-loop-three-lakes-low-divide-mt-seattle/",
+    "https://mazamas.org/activity/286/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "fact": "Wilderness permit booking",
+   "verdict": "fixed",
+   "correct_value": "Overnight permits must be reserved in advance on Recreation.gov; Elk Lake, Martin Creek and Glacier Meadows are quota sites; there is no self-issue permit at trailheads.",
+   "evidence": "NPS's wilderness reservations page states all wilderness permits must be obtained in advance through Recreation.gov, that paper self-registration permits are no longer available at trailheads, and that Elk Lake, Martin Creek and Glacier Meadows are quota sites on the Hoh River Trail. NPS's Hoh River Trail page likewise directs overnight campers to reserve on Recreation.gov. The row's permit, access and bivy fields already agree; the waypoint note and itinerary.cal were the outliers.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Self-issue wilderness permit and register at the trailhead kiosk by the visitor center",
+     "replace": "Overnight wilderness permits must be reserved in advance — none are issued at the trailhead kiosk by the visitor center",
+     "id": "wa_mount_tom_scramble",
+     "fact": "Wilderness permit booking"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "Glacier Meadows/Elk Lake wilderness permits are first-come, first-served and can run out on summer weekends",
+     "replace": "Glacier Meadows and Elk Lake are quota camps whose wilderness permits must be reserved in advance and are often gone for summer weekends",
+     "id": "wa_mount_tom_scramble",
+     "fact": "Wilderness permit booking"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "fact": "Summit scramble grade",
+   "verdict": "unresolved",
+   "correct_value": "Likely Class 3 (glacier + class 3 is the commonly listed easiest route); the Class 3-4 and ~5.3/5.7 variant claims could not be confirmed or refuted.",
+   "evidence": "Wikipedia (drawing on peak databases) lists the easiest route as glacier plus class 3 scrambling. No second independent source describing Mount Tom's summit block difficulty was retrievable (SummitPost and a traverse trip report returned 403), and no source was found for the 5.7/5.3 variation in pro_tips/watch_out. No patch written.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Tom_(Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "fact": "Lewis Meadow location",
+   "verdict": "fixed",
+   "correct_value": "Five Mile Island is about mile 5; Lewis Meadow is about mile 10.5-10.8, so the 5.6-mile waypoint is Five Mile Island only.",
+   "evidence": "A Hoh River backpacking guide gives Five Mile Island at 5 mi and Lewis Meadows at 10.5 mi; an independent day-by-day trip account puts Five Mile Island about 5 mi in and Lewis Meadow about 6 mi beyond it (~11 mi), and a Hoh trail page gives Five Mile Island as a 10.6 mi round trip. The row's approach text (5 Mile Island mile 5, Lewis Meadow mile 10.3) and bivy (~ten miles in) agree; only the waypoint name merged the two places.",
+   "sources": [
+    "https://www.myopencountry.com/hoh-river-backpacking-guide/",
+    "https://ecmarchitect.com/archive/travel/hoh-river-trail-to-the-blue-glacier/hoh-river-trail-to-the-blue-glacier-day-by-day",
+    "https://www.hikeolympic.com/hoh-river-trail"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "name"
+     ],
+     "expect": "Five Mile Island / Lewis Meadow area",
+     "value": "Five Mile Island",
+     "id": "wa_mount_tom_scramble",
+     "fact": "Lewis Meadow location"
+    }
+   ]
+  }
+ ]
+}

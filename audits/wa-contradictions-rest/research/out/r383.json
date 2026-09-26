@@ -1,0 +1,425 @@
+{
+ "file": "r383.json",
+ "results": [
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek",
+   "verdict": "fixed",
+   "correct_value": "Approach is the Elbow Lake Trail (north trailhead, FR 38), ford of the Middle Fork Nooksack, then the blazed Green Creek climbers' path into the Green Creek Cirque; no logging-road/timberland-gate approach.",
+   "evidence": "A Green Creek Circuit trip report starts at the Elbow Lake Trailhead, crosses the Middle Fork Nooksack and follows the blue-marked Green Creek climbers' trail into the cirque before reaching Skookum via Jaws' Tooth. A separate guide-service trip report gives the same approach: FR 38 to the Elbow Lake trailhead (2,100 ft), river crossing, then leaving the trail at a switchback near Hildebrand Creek into Green Creek. The 'Skookum Pasture logging road' could not be found anywhere; the bike-the-logging-road text matches the west-side Dailey Prairie approach to the Twin Sisters and was copied from another route. Ridge-specific beta in the same itinerary note ('stay left/west of the crest', 2nd-3rd class) is also likely copied but is tied to the unresolved grade question and was left untouched.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.alpineinstitute.com/green-creek-glacier-exploratory-trip/",
+    "https://www.mountainproject.com/route/126696768/green-creek-circuit"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "parties bike or hike ~6-7 miles up the steep Skookum Pasture logging road, then scramble a brushy climbers' trail onto the ridge",
+     "replace": "parties hike the Elbow Lake Trail, ford the Middle Fork Nooksack and follow the blazed Green Creek climbers' path into the Green Creek Cirque, then scramble loose third and fourth class ground out of the cirque onto the ridge",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "parties bike or hike ~6-7 miles up the steep Skookum Pasture logging road, then scramble a brushy climbers' trail onto the ridge",
+     "replace": "parties hike the Elbow Lake Trail, ford the Middle Fork Nooksack and follow the blazed Green Creek climbers' path into the Green Creek Cirque, then scramble loose third and fourth class ground out of the cirque onto the ridge",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "find": "Skookum Pasture road",
+     "replace": "Elbow Lake Trail and Green Creek Cirque",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "find": "Skookum Pasture road",
+     "replace": "Elbow Lake Trail and Green Creek Cirque",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "via the Twin Sisters logging-road approach and olivine",
+     "replace": "via the Elbow Lake Trail, the Green Creek Cirque and the olivine",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "label"
+     ],
+     "expect": "Leave the car / gate",
+     "value": "Leave the trailhead",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "expect": "Start hiking or pedaling the steep logging road while it's still dark to bank time.",
+     "value": "Start hiking in the dark to bank time; the Middle Fork Nooksack ford comes within the first quarter mile.",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "label"
+     ],
+     "expect": "Reach end of road / stash bike",
+     "value": "Leave the trail for the Green Creek path",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "expect": "Road gives way to a brushy climbers' trail heading for the ridge base.",
+     "value": "At a switchback near Hildebrand Creek the blazed climbers' path leaves the maintained trail and heads into the Green Creek Cirque.",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "expect": "Coasting the logging road downhill on a bike (if brought up) saves significant time and effort on the way out.",
+     "value": "Retrace the Green Creek path and the Elbow Lake Trail, fording the Middle Fork again on the way out.",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "mixing a steep logging-road approach with",
+     "replace": "mixing a long trail and climbers'-path approach with",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "; add 2-4+ hours round trip if the timberland gate is locked and the road must be hiked or biked",
+     "replace": ", plus an unbridged ford of the Middle Fork Nooksack near the trailhead",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "long approach/scramble day, and materially longer if the timberland gate is closed and the road must be walked or biked in",
+     "replace": "long approach/scramble day on an unmaintained climbers' path",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "unmarked climbers' paths and old logging-road networks",
+     "replace": "sparsely marked climbers' paths",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      3
+     ],
+     "expect": "navigation via map/GPS on gated, sometimes unsigned timberland roads",
+     "value": "navigation via map/GPS through brush and talus off-trail",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      4
+     ],
+     "expect": "mountain-bike handling useful if the access gate is closed",
+     "value": "judging whether a river ford is safe at the current flow",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "No climbing permit; the approach crosses private and DNR timberland - check current access, and carry a Discover Pass where parking on DNR land.",
+     "value": "No climbing permit; a Northwest Forest Pass is required at the Elbow Lake Trail's north trailhead.",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "expect": "long approach on gated logging roads",
+     "value": "long approach with an unbridged river ford",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "set",
+     "column": "bail",
+     "path": [],
+     "expect": "Descend the ridge to the approach roads and walk out.",
+     "value": "Descend the ridge into the Green Creek Cirque and walk out via the climbers' path and the Elbow Lake Trail.",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Mount Baker-Snoqualmie National Forest and private timberland; no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping.",
+     "replace": "Mount Baker-Snoqualmie National Forest land; no wilderness permit or registration is needed.",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "day use and backcountry camping; respect gate closures on privately owned logging spurs off the main road.",
+     "replace": "day use and backcountry camping.",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "find": "(Sedro-Woolley, WA). The logging-road approach network also crosses land held by private timber and olivine-mining interests (including Olivine Corporation holdings), and relations over road access have historically been contentious — some spurs are gated at the landowners' discretion.",
+     "replace": "(Sedro-Woolley, WA).",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "probability"
+     ],
+     "find": "makes the gated timberland approach roads slick and can worsen washouts, compounding gated and uncertain road access",
+     "replace": "raises the Middle Fork Nooksack and makes the ford harder, on top of flood-damaged road access",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Approach: Skookum Pasture logging road vs Elbow Lake Trail / Green Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Grade: Class 3-4 scramble vs 5.4 north ridge",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources agree Skookum's north ridge, reached by rappelling off Jaws' Tooth, is 5.4 on solid olivine (Green Creek Circuit trip report; the circuit overall is rated IV 5.6). No source documents a standalone Class 3-4 'standard' route up Skookum; the only non-technical terrain described is the loose south/southwest face used as a descent on the circuit. Whether this row is the 5.4 north ridge or a Class 3-4 scramble is a route-identity decision (name and discipline say scramble; beta, face, rock_grade and pro_needs describe the north ridge), so no patch.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.mountainproject.com/route/126696768/green-creek-circuit"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Rope needed (rappel off Jaws' Tooth)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report confirms a ~15 m rappel off Jaws' Tooth to reach Skookum's north ridge, for which a 30 m rope barely suffices. Whether rope_type 'none' or pro_needs' 30 m rope is right depends on whether this row is the north ridge or a scramble, which is unresolved above.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Descent: reverse vs committing past Jaws' Tooth",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both circuit sources descend Skookum by its south/southwest face (described as loose) toward the col east of Hayden, not by reversing the north ridge; reversing would mean re-climbing Jaws' Tooth. The row, however, explicitly warns against the south slopes. Which descent applies depends on the unresolved route identity, and changing a safety-relevant descent needs that settled first.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.mountainproject.com/route/126696768/green-creek-circuit"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Distance / Green Creek junction mileage",
+   "verdict": "fixed",
+   "correct_value": "The Green Creek climbers' path leaves the Elbow Lake Trail at a switchback near Hildebrand Creek, about 1.5 miles past the river crossing — not at Elbow Lake after ~8 miles.",
+   "evidence": "A guide-service trip report puts the departure from the Elbow Lake trail at a switchback (~2,650 ft) about 1.5 miles after the Middle Fork crossing, near Hildebrand Creek. A range overview and the circuit trip report likewise describe a blazed climbers' trail branching off the Elbow Lake trail at a switchback near Hildebrand Creek; the row's own junction waypoint agrees. Round-trip mileage was not settled: whole-circuit sources give 11-13 miles, below both the itinerary's 14 and watch_out's ~16, so those figures and dist_km were left alone.",
+   "sources": [
+    "https://www.alpineinstitute.com/green-creek-glacier-exploratory-trip/",
+    "https://www.summitpost.org/twin-sisters-range/171190",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "follow Elbow Lake Trail #697 (~8 miles, passing Lake Doreen) to Elbow Lake, then pick up the unmaintained Green Creek climbers' path",
+     "replace": "follow Elbow Lake Trail #697 across the Middle Fork Nooksack and up to a switchback near Hildebrand Creek, then pick up the unmaintained Green Creek climbers' path",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Distance / Green Creek junction mileage"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "follow the maintained trail past Lake Doreen to Elbow Lake, then pick up the unmaintained, sparsely blue-blazed Green Creek climbers' path where it leaves at a switchback near Hildebrand Creek — it is easy to walk past.",
+     "replace": "follow the maintained trail across the Middle Fork and up to a switchback near Hildebrand Creek, where the unmaintained, sparsely blue-blazed Green Creek climbers' path leaves it — it is easy to walk past.",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "Distance / Green Creek junction mileage"
+    }
+   ]
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Gain less than trailhead-to-summit rise",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source states a car-to-car gain for Skookum alone; the only published totals are for the full Green Creek Circuit (7,000-8,000 ft). Per the rules gain_ft is not recomputed from pin arithmetic. The summit elevation itself is also disputed across sources (see discovered entry).",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.mountainproject.com/route/126696768/green-creek-circuit"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "River crossing rig status",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The unofficial log/rope crossing was destroyed in the December 2025 floods and not replaced.",
+   "evidence": "A June 2026 regional news report states the log crossing with rope handrails at the Elbow Lake Trailhead was lost in the December storms, with no repair timeline for FSR 38. hazards, pro_tips, approach and access.closures on the row all agree; only the waypoint note still told climbers to use the rig.",
+   "sources": [
+    "https://www.cascadiadaily.com/2026/jun/16/flood-damaged-forest-roads-are-eroding-access-for-outdoor-enthusiasts/",
+    "https://www.fs.usda.gov/r06/mbs/alerts/middle-fork-nooksack-fsr-38-road-closure"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "expect": "No bridge on this side — cross via an unofficial log/rope rig a few hundred yards up or downstream; can be unfordable at high flow, and the log has washed out in past seasons.",
+     "value": "No bridge on this side — the unofficial log crossing with rope handrails was destroyed in the December 2025 floods and has not been replaced, so this is a ford that can be unfordable at high flow.",
+     "id": "wa_skookum_peak_twinsisters_scramble",
+     "fact": "River crossing rig status"
+    }
+   ]
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "fact": "Skookum summit elevation (high_point_ft / summit waypoint 6534)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "Sources disagree: a range overview gives 6,616 ft, the state geographic-names proposal summary for Kloke Peak gives 6,480 ft, and a climbing database lists 5,962 ft; none matches the row's 6,534. No two independent topo-derived figures agree, so no change.",
+   "sources": [
+    "https://www.summitpost.org/twin-sisters-range/171190",
+    "https://dnr.wa.gov/sites/default/files/2025-06/em_bc_bnr_bgnprop_10042022.pdf",
+    "https://www.mountainproject.com/area/120237761/skookum-peak"
+   ],
+   "patches": []
+  }
+ ]
+}

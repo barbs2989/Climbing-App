@@ -1,0 +1,337 @@
+{
+ "applied": [
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Colonial Glacier crevasses"
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "column": "waypoints",
+   "path": [
+    7,
+    "directions"
+   ],
+   "fact": "Height where the glacier is left / length of summit scramble"
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Moraine camp elevation"
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Where the Pyramid Lake Trail starts"
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Rules copied from another area"
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Winter road status"
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "column": "climate",
+   "path": [
+    "winter"
+   ],
+   "fact": "Winter road status"
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Summit distance vs camp distance"
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Summit distance vs camp distance"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "before": {
+    "descent_text": "Descent reverses the ascent line rather than following an independent route. From the summit, downclimb the exposed class 3 (occasionally low class 4) notch and gully back down to the rocks above the Neve Glacier, then retrace the glacier crossing - roped, watching for crevasses and softening snow bridges later in the day - back up to the Colonial-Neve col. From the col, descend the Colonial Glacier (many parties glissade the moderate, crevasse-free snow slopes where safe) back to the moraine-lake camp, then reverse the climbers' path and ridge crest over Point 4,555 ft down to Pyramid Lake, finishing on the maintained Pyramid Lake Trail back to the trailhead. In standard summer conditions this is a walk-off/downclimb with no rappelling required - the summit notch is a class 3 downclimb reversed on the way out. In early-season, icy, or thin-snow conditions, however, parties have rappelled the notch instead of downclimbing it: one winter party describes building a two-picket snow anchor and making a single-strand rappel with a 30m rope (noting 30m was plenty of length for that pitch), then prusiking back up the same line on their return ascent. Treat that rappel as conditions-dependent rather than a fixed feature of the route - there are no bolted or fixed anchors anywhere on this route, so a party that might need it should carry a picket or two and a single 30m-or-longer rope as a contingency. Primary descent hazards are crevasse fall on both the Colonial and Neve glaciers (rope up and probe softening snow bridges, especially in the afternoon), loose rock on the ridge and gully sections, and North Cascades whiteout/navigation risk - the Pyramid Peak ridge and glacier crossings have few visual reference points in cloud, so many parties track their ascent line with GPS for the return.",
+    "waypoints": [
+     {
+      "lat": 48.7098,
+      "lng": -121.1452,
+      "elev": 1150,
+      "name": "Pyramid Lake Trailhead",
+      "note": "Roadside pullout on the north side of SR-20 near milepost 126.8, just east of Gorge Lake; day hiking needs no permit, but overnight camps in the park require a backcountry permit from the Marblemount Wilderness Information Center.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The Pyramid Lake Trailhead is a signed gravel pullout on the north side of SR-20 near milepost 126.8, about 21 miles east of Marblemount and 6.4 miles past Newhalem, just past the Diablo turnoff at roughly 1,150-1,200 ft. The maintained Pyramid Lake Trail starts from the pullout. Day hiking needs no permit, but an overnight camp in the park does: pick up the free NPS wilderness permit from the Marblemount Wilderness Information Center on your way through."
+     },
+     {
+      "lat": 48.6948167,
+      "lng": -121.1232137,
+      "elev": 2600,
+      "name": "Pyramid Lake",
+      "note": "Small landslide-dammed tarn with floating carnivorous sundew mats reached via well-graded trail; camping is prohibited at the lake or along the trail corridor, so treat it as a water stop only.",
+      "type": "Water",
+      "distMi": 2.1,
+      "directions": "The Pyramid Lake Trail is maintained the whole way and climbs at a steady grade through old-growth forest, about 1,500 ft over 2.1 miles with no navigational decisions to make. Rock-hop the creek at roughly the 1-mile mark. That crossing and the lake itself are the last easy water you pass, because the climbers' path above offers almost nothing for the next several hours."
+     },
+     {
+      "lat": 48.679753,
+      "lng": -121.133887,
+      "elev": 4555,
+      "name": "Point 4555' / Pyramid Peak east ridge",
+      "note": "Boot path leaves the lakeshore and climbs a steep, often overgrown climber's trail (slide alder, class 2-3 rock and dirt) onto Pyramid Peak's east ridge; easy to lose in fog or on lingering snow.",
+      "type": "Junction",
+      "distMi": 3.2,
+      "directions": "Leave the maintained trail on the lake's south, right-hand side and pick up the unmaintained climbers' path. It is steep and brushy from the first steps and gains roughly 2,000 ft in switchbacks onto Pyramid Peak's east ridge near 4,000 ft, then follows the narrow, knolly crest with loose rock and short route-finding steps. Lingering snow or cloud on that crest is where parties lose the line."
+     },
+     {
+      "lat": 48.665939,
+      "lng": -121.138016,
+      "elev": 5900,
+      "name": "Colonial Glacier moraine camp",
+      "note": "Established tent sites on the terminal-moraine benches above the shrinking Colonial Glacier's meltwater tarn; last reliable camping before the col, exposed to wind.",
+      "type": "Campsite",
+      "distMi": 4.4,
+      "directions": "Short of Pyramid Peak itself, do not climb it. Drop slightly off the ridge and traverse across scree and boulders, often on lingering snow, to the terminal moraine and its meltwater tarn at the foot of the Colonial Glacier. The moraine benches are the standard first camp and the tarn is the water; the ground is open and takes the wind."
+     },
+     {
+      "lat": 48.66009,
+      "lng": -121.143405,
+      "elev": 6840,
+      "name": "Colonial-Neve col",
+      "note": "Broad saddle gained by a short 30-degree snow climb around the moraine lake; rope up for glacier travel here before dropping onto the Neve Glacier.",
+      "type": "Junction",
+      "distMi": 4.9,
+      "directions": "Rope up before leaving camp, as the Colonial Glacier is crevassed. Climb it south past the east flank of Paul Bunyan's Stump on snow up to about 30 degrees, working around the moraine lake, to the broad col near 6,840 ft. A stream at the col makes it a usable second camp and water source."
+     },
+     {
+      "lat": 48.651258,
+      "lng": -121.144741,
+      "elev": 7700,
+      "name": "Neve Glacier crossing",
+      "note": "Roped traverse of one of Washington's largest non-volcanic glaciers toward Snowfield's NW ridge; crevasses are usually well-bridged by midsummer but require active route-finding around open slots.",
+      "type": "Hazard",
+      "distMi": 5.6,
+      "directions": "From the col drop roughly 150-250 ft onto the Neve Glacier and cross it roped. The cleanest line runs through the centre of the crevasse field; bridges are usually sound by midsummer but need active route-finding around open slots and soften through the afternoon. There are very few visual reference points out here, so track your line for the return, because whiteout navigation is the standing problem on this crossing."
+     },
+     {
+      "lat": 48.644282,
+      "lng": -121.145344,
+      "elev": 7950,
+      "name": "West ridge / NW face gully",
+      "note": "Leave the glacier and gain the west ridge via a class 3 gully with an exposed rib crossing about 300-400 vertical feet below the summit.",
+      "type": "Junction",
+      "distMi": 6.1,
+      "directions": "Leave the glacier on Snowfield's northwest side near The Horseman, around 7,700 ft, and gain the west ridge by a class 3 gully with one exposed rib crossing. This puts you 300-400 vertical feet below the summit. Early in the season the rock through here can carry verglas or rime."
+     },
+     {
+      "lat": 48.635339,
+      "lng": -121.138799,
+      "elev": 8351,
+      "name": "Snowfield Peak",
+      "note": "True summit reached by a final class 3-4 blocky scramble; broad views over Colonial, Pyramid, and the peak's namesake permanent snowfields.",
+      "type": "Summit",
+      "distMi": 7,
+      "directions": "A long class 3 gully leads up to a notch just below the true summit, then a short exposed traverse onto the south side and 400-600 ft of blocky scrambling finishes it. One move is occasionally low class 4, and harder lines exist to either side, so stay on the easiest ground. You downclimb that notch on the way out, so read it as you pass."
+     }
+    ],
+    "pitch_detail": [
+     {
+      "grade": null,
+      "notes": "Pyramid Lake Trail (~2 mi) then a steep climbers' trail up the East Ridge of Pyramid Peak to a camp around 5,500-5,700 ft at the Colonial Glacier moraine.",
+      "pitch": "Approach"
+     },
+     {
+      "grade": "Easy glacier travel, ~30° snow",
+      "notes": "Rope up and cross the Colonial Glacier past the east flank of Paul Bunyan's Stump, climbing ~30-degree snow to the Colonial-Neve col (~6,800-6,840 ft).",
+      "pitch": "Colonial Glacier / col"
+     },
+     {
+      "grade": "Glacier travel, short ice steps to ~I2",
+      "notes": "Descend ~150-250 ft from the col onto the Neve Glacier and cross roped through its central, less-crevassed section to the ridge near The Horseman on Snowfield's west side (~7,700 ft).",
+      "pitch": "Neve Glacier crossing"
+     },
+     {
+      "grade": "Class 3-4 (up to 5.0 on variants)",
+      "notes": "Final ~400-600 ft of class 3-4 rock scrambling, occasionally verglas/rime-covered early season, to the summit; can be taken as difficult as class 5 on alternate lines.",
+      "pitch": "Summit gully/ridge"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry overnight permit (no day-use permit required)",
+      "land_manager": "National Park Service (North Cascades National Park)",
+      "wilderness_zone": "North Cascades National Park Service Complex",
+      "permit_pickup_hours": "Check nps.gov/noca/planyourvisit/hours for current hours",
+      "special_requirements": "Mandatory video about park rules before permit issuance. 60% of backcountry sites available for advance reservation; 40% first-come first-served",
+      "parking_pass_required": "No (North Cascades NP has no entry or parking fees)",
+      "permit_pickup_location": "Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267",
+      "seasonal_closure_dates": "Open year-round for permits; peak season June-September",
+      "permit_application_method": "Email via Recreation.gov (advance) or walk-up"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry overnight permit (no day-use permit required)",
+     "closures": "Open year-round for permits; peak season June-September",
+     "seasonal": "",
+     "permitZone": "North Cascades National Park Service Complex",
+     "group_limit": 6,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "No (North Cascades NP has no entry or parking fees)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    },
+    "road": {
+     "name": "North Cascades Highway (SR-20) to Pyramid Lake Trailhead",
+     "status": "Open seasonally; closed in winter",
+     "driveNote": "Trailhead pullout is on the north side of SR-20 at milepost 126.8, just east of Gorge Lake and about 7 miles east of Newhalem; the signed Pyramid Lake Trail starts across the highway from the parking area.",
+     "seasonalGate": "SR-20 is gated and closed each winter through the Ross Lake/Diablo Lake corridor (roughly milepost 134 eastward), typically from mid-November into April; reopening is weather- and damage-dependent — in 2026 storm washouts and a rockslide near Diablo Lake pushed the reopening to June 14, the latest on record."
+    },
+    "climate": {
+     "fall": "Rock sections often icy or verglassed after early storms; shorter daylight",
+     "spring": "Deep, unstable snowpack on the approach and glaciers; avalanche hazard on steep sections",
+     "summer": "Best climbing window; glacier melt-out exposes crevasses on the Neve and Colonial Glaciers",
+     "winter": "Highway access closed; not a winter objective",
+     "typical": "Maritime Cascade weather — cool and often wet or cloudy even in midsummer, with conditions that can change quickly on the glacier; the Neve Glacier holds snow well into August.",
+     "forecastZone": "NWAC West Slopes North (Mount Baker Highway/North Cascades Highway corridor) is the closest published avalanche/mountain-weather zone for early-season conditions."
+    },
+    "waypoints": [
+     {
+      "lat": 48.7098,
+      "lng": -121.1452,
+      "elev": 1150,
+      "name": "Pyramid Lake Trailhead",
+      "note": "North Cascades Highway (SR-20), 6.4mi east of Newhalem; brushy climbers trail up from Pyramid Lake to Pyramid-Colonial col.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.635339,
+      "lng": -121.138799,
+      "elev": 8351,
+      "name": "Snowfield Peak summit",
+      "note": "",
+      "type": "Summit",
+      "distMi": 5
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach as the standard Neve Glacier line: Pyramid Lake Trail (2.1 mi, 1,500 ft) from SR-20, then a brushy climbers' trail up the ridge above the lake to a treeline or on-snow camp around 5,400-5,900 ft, or Colonial Basin.",
+       "hours": 5.5,
+       "miles": 5,
+       "title": "Approach to high camp",
+       "gainFt": 4600,
+       "lossFt": 100,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach treeline/Colonial Basin camp (~5,800-6,000 ft)"
+      },
+      {
+       "n": 2,
+       "note": "From camp, cross the col, ascend the Colonial Glacier to the ~6,800 ft pass, and traverse the Neve Glacier to gain the ridge just west of the summit. The finish is a short, exposed scramble: traverse into a northwest-facing gully, work left onto the arete, then up and around a pinnacle via ledges to the final summit gully. Descend by reversing the ridge and glaciers, then hike out to the trailhead the same day.",
+       "hours": 9,
+       "miles": 9.8,
+       "title": "Summit via Colonial/Neve Glaciers and the West Ridge",
+       "gainFt": 2650,
+       "lossFt": 7150,
+       "packLb": 32,
+       "schedule": [
+        {
+         "time": "~8,200 ft",
+         "label": "Leave the glacier for the ridge",
+         "detail": "Traverse left ~100 ft into an obvious NW-facing gully."
+        },
+        {
+         "time": "+15 min",
+         "label": "Gain the arete",
+         "detail": "Scramble the gully, then traverse left onto the arete for ~75 ft."
+        },
+        {
+         "time": "+20 min",
+         "label": "Pass the pinnacle",
+         "detail": "Traverse left, climb the north side ~150 ft to the notch below the pinnacle."
+        },
+        {
+         "time": "+15 min",
+         "label": "Summit gully",
+         "detail": "Traverse right on ledges to an easy gully; follow it ~150 ft to the top."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Reverse to camp",
+         "detail": "Downclimb/glissade the same line back across both glaciers."
+        },
+        {
+         "time": "Evening",
+         "label": "Hike out",
+         "detail": "Break camp and descend to the Pyramid Lake trailhead."
+        }
+       ],
+       "objective": "Cross both glaciers and finish the class 3-4 west ridge to the summit"
+      }
+     ],
+     "totalNote": "Functionally the same 2-day/1-night trip as the standard Neve Glacier route, just named for its class 3-4 west-ridge finish (~14 mi, ~7,250 ft gain round trip); no roped rock pitches are involved, only glacier travel plus a short scramble."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,330 @@
+{
+ "file": "r261.json",
+ "results": [
+  {
+   "id": "wa_east_face_2",
+   "fact": "Rope kit for the descent",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Two 60 m ropes for two double-rope rappels",
+   "evidence": "The route description says both rappels are double-rope raps and to bring two 60 m ropes. On the row, gear, pro_needs, detailed_rack, rack, rappels, descent, rappel_detail and rappel_count_note all require two ropes; rope_type alone offers a single doubled rope. Only one independent external source could be read (others unreachable).",
+   "sources": [
+    "https://www.mountainproject.com/route/109228122/east-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_2",
+     "fact": "Rope kit for the descent",
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "twin/double-strand rappel setup (single 60m rope doubled, or two ropes)",
+     "value": "double-rope rappel setup (two 60m ropes)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Number of rappels",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Two double-rope rappels (horn below the notch -> slung horn at top of P2 -> base)",
+   "evidence": "The route description: downclimb 15 ft to rap slings on a horn, a double-rope rap to the slung horn at the top of P2, then a second double-rope rap to the base. Row fields rappels, descent, descent_text, rappel_detail and rappel_count_note all say two; rope_note is the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/109228122/east-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_2",
+     "fact": "Number of rappels",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "then a double-rope rappel to the base.",
+     "replace": "then two double-rope rappels to the base, the second from the slung horn at the top of pitch 2."
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Total gain vs trailhead and summit elevations",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The contradiction is real (4,300 ft pullout to 8,350 ft summit cannot be 2,850 ft of gain). No source states a car-to-car gain for this route; related figures are ~3,500 ft to Burgundy Col (Chianti trip report) and 4,500 ft for Silver Star via the same approach, which cannot be transferred to this route under the no-arithmetic rule.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/chianti-rebel-yell/",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree on the approach length: one trip report gives under 5 miles to Burgundy Col, another logged 5.68 miles round trip to the Silver Star summit via the same col, implying well under 3 miles one way. No source gives a one-way figure for Chablis, so neither dist_km (2.8 mi) nor the summit pin's 4 mi could be settled.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/chianti-rebel-yell/",
+    "https://www.lucasmountainknowledge.com/post/silver-star-mountain-june-2019"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Creek crossed at the start of the approach",
+   "verdict": "fixed",
+   "correct_value": "Early Winters Creek",
+   "evidence": "Both trip reports describe leaving the highway pullout and crossing Early Winters Creek on a log at the start of the Burgundy Col climbers' trail; one notes Burgundy Col sits ~3,600 ft above Early Winters Creek.",
+   "sources": [
+    "https://www.lucasmountainknowledge.com/post/silver-star-mountain-june-2019",
+    "https://thepeakoftheweek.com/2017/07/21/north-face-burgundy-spire-washington-pass/"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_2",
+     "fact": "Creek crossed at the start of the approach",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "immediately crosses Burgundy Creek,",
+     "replace": "immediately crosses Early Winters Creek,"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Which pullout is the trailhead",
+   "verdict": "fixed",
+   "correct_value": "The Wine Spires pullout near milepost 166, about 2.8 miles east of the hairpin turn",
+   "evidence": "One source: from the east, 0.7 mi past Cutthroat Lake Road is the Burgundy Col pullout, and the hairpin turn is another 2.8 mi on. A trip report puts the pullout 2-3 miles beyond the hairpin coming from the pass. The hairpin is not the trailhead.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://www.lucasmountainknowledge.com/post/silver-star-mountain-june-2019"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_2",
+     "fact": "Which pullout is the trailhead",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass",
+     "value": "From the Wine Spires pullout on SR-20 near milepost 166, about 2.8 miles east of the hairpin turn"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_2",
+   "fact": "Side of the highway the pullout is on",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "South side of SR-20",
+   "evidence": "Approach text puts the MP 166 pullout on the north side of the highway; the Chianti rows on the same pullout say south. One source says the pullout is on your left driving west from Winthrop (south side); another says drive 4 miles east of Washington Pass to a wide pullout on the right (south) side at 4,250 ft.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://stephabegg.com/trip-reports/washington/paisano-burgundy/"
+   ],
+   "patches": [
+    {
+     "id": "wa_east_face_2",
+     "fact": "Side of the highway the pullout is on",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "on the north side of the highway",
+     "replace": "on the south side of the highway"
+    }
+   ]
+  },
+  {
+   "id": "wa_chianti_spire_north_face",
+   "fact": "Hardest grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route is published as II 5.6 (Hieb-Maki 1952). The summit block shared with the east-face routes is given as 5.7 in Rebel Yell pitch lists, and a 1989 note calls the finish from the notch the 'normal route' with no separate grade. No two sources settle whether the North Face's summit move is 5.6 or 5.7.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star",
+    "http://publications.americanalpineclub.org/articles/12198914304/North-America-United-States-WashingtonCascade-Mountains-Chianti-Spire-East-Face",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/rebel-yell/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chianti_spire_north_face",
+   "fact": "First-ascent approach history",
+   "verdict": "unresolved",
+   "correct_value": "Party reached the Chianti-Pernod notch via 500 ft of rock from the east, rappelled 250 ft down the west face, then followed a loose gully to the Chianti-Burgundy notch",
+   "evidence": "The original account says the party climbed moraine and ice to the eastern walls, climbed 500 ft to the notch between Chianti and Pernod, rappelled 250 ft on the west face and followed a loose gully to the Chianti-Burgundy notch - matching approach_variants, not beta/overview. Every other page found restates that single account, so only one independent source; no patch written.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Number of rappels",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "4 double-rope rappels",
+   "evidence": "A trip report records 4 double-rope rappels on two 60 m ropes; another page confirms the descent rappels the route on fixed anchors with two ropes. Row fields rappels, beta, descent_text, pro_tips, pitch_detail[6], rappel_detail and approach_variants all say 4; the itinerary's ~7 is the outlier.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/chianti-rebel-yell/",
+    "https://www.mountainproject.com/route/106256230/east-face-rebel-yell"
+   ],
+   "patches": [
+    {
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Number of rappels",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "(double ropes, ~7 raps)",
+     "replace": "(double ropes, 4 raps)"
+    }
+   ]
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Number of pitches",
+   "verdict": "fixed",
+   "correct_value": "7 pitches",
+   "evidence": "A trip report and a guide service both describe seven pitches; another database lists 6 (counting the start options differently), which the overview's 6-to-7 note already covers. The row's pitches column and pitch table say 7.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/chianti-rebel-yell/",
+    "https://ncmountainguides.com/routes/climbing-routes/chianti-spire-rebel-yell"
+   ],
+   "patches": [
+    {
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Number of pitches",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "six pitches with exposed belays",
+     "replace": "seven pitches with exposed belays"
+    },
+    {
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Number of pitches",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "find": "6-pitch rope management",
+     "replace": "7-pitch rope management"
+    }
+   ]
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Approach distance to Burgundy Col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report gives under 5 miles and 3,500 ft to the col; another logged 5.68 miles round trip to Silver Star's summit via the same col, which implies under ~3 miles one way to the col. The sources disagree, so neither 'just under 5 miles' nor 3.9 mi is settled.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/chianti-rebel-yell/",
+    "https://www.lucasmountainknowledge.com/post/silver-star-mountain-june-2019"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Trailhead location relative to the hairpin",
+   "verdict": "fixed",
+   "correct_value": "Pullout is about 2.8 miles east of the hairpin turn and 0.7 mile west of the Cutthroat Lake Road turnoff",
+   "evidence": "One source (driving west from Winthrop): pass Cutthroat Lake Road, 0.7 mi later the Burgundy Col pullout, then 2.8 mi to the hairpin. A trip report puts the pullout 2-3 miles beyond the hairpin coming from the pass. The hairpin is not near Cutthroat Lake Road, and 'past' the Cutthroat turnoff only holds driving west.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://www.lucasmountainknowledge.com/post/silver-star-mountain-june-2019"
+   ],
+   "patches": [
+    {
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Trailhead location relative to the hairpin",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "and ~2.8 miles before the highway's 'hairpin turn' near Cutthroat Lake Road",
+     "replace": "- about 2.8 miles east of the highway's hairpin turn and 0.7 mile west of the Cutthroat Lake Road turnoff"
+    },
+    {
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Trailhead location relative to the hairpin",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(~0.7 mile past the Cutthroat Lake Road turnoff)",
+     "replace": "(~0.7 mile west of the Cutthroat Lake Road turnoff)"
+    },
+    {
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Trailhead location relative to the hairpin",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "about 0.7 mile past the Cutthroat Lake Road turnoff",
+     "replace": "about 0.7 mile west of the Cutthroat Lake Road turnoff"
+    }
+   ]
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Glacier travel",
+   "verdict": "fixed",
+   "correct_value": "The approach crosses the upper Silver Star Glacier",
+   "evidence": "A trip report on this route traverses the upper Silver Star Glacier to reach Chianti; the hiking page for the same approach says the glacier crossing needs crampons and axe, at least late season.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/chianti-rebel-yell/",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan"
+   ],
+   "patches": [
+    {
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Glacier travel",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer rock route;",
+     "replace": "N/A - summer rock route;"
+    }
+   ]
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "fact": "Recommended start time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Start early; timing and itinerary both give 5:00 AM from camp",
+   "evidence": "The weather card cites a 04:00 'recommended start' that no field on the row holds; timing.recommendedStart and the itinerary schedule both say 5:00 AM. The patch only removes the false cross-reference and asserts no new time; no external source publishes a start time for this route.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_chianti_spire_east_face",
+     "fact": "Recommended start time",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "probability"
+     ],
+     "find": "start early (per the 04:00 recommended start) to be off",
+     "replace": "start early to be off"
+    }
+   ]
+  }
+ ]
+}

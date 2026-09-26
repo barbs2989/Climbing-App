@@ -1,0 +1,254 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach drainage"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach drainage"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Royal Basin permit season"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Royal Basin permit season"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead road"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "Campfires in Royal Basin"
+  },
+  {
+   "id": "wa_mount_johnson_standard",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Driving distances on Palo Alto Rd and FR-2880"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_johnson_standard",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day fitness for a long interior approach (Dosewallips/Deception basin) to a high camp before the climb itself",
+      "packWeight": "Overnight/multi-day pack (camp, food, fuel) plus a light scrambling rack for the summit push"
+     },
+     "approachTime": "Multi-day: long approach into the Dosewallips/Deception basin high camp is required before a summit day (total route time ~11 hrs from high camp)",
+     "requiredSkills": [
+      "Class 3-4 scrambling on loose rock",
+      "off-trail route finding / navigation in remote alpine terrain",
+      "exposure management without a rope (or comfort with a short rope/handline on select moves)",
+      "wilderness overnight/backcountry camping competence",
+      "self-rescue and remote first aid awareness given long evacuation times"
+     ],
+     "experienceLevel": "Experienced alpine scrambler comfortable with sustained Class 4 terrain, loose rock, and route-finding well off-trail; this is not a beginner objective"
+    },
+    "approach": "From the Upper Dungeness Trailhead, start on Upper Dungeness Trail #833.2 through second-growth and then old-growth forest along the Dungeness River. At about 1 mile, bear right at the signed junction onto the Royal Basin Trail (the left fork continues up-valley toward Boulder Shelter/Constance Pass). The Royal Basin trail then climbs gradually for several miles alongside Royal Creek — the main water source for the approach — crossing it on log/plank bridges more than once; these crossings can run fast and cold during early-season snowmelt (June). Around mile 6 the grade steepens sharply for the push to Royal Lake (7.2 mi, roughly 2,500 ft gained from the trailhead), with the final mile gaining about 500 ft on looser, sometimes-eroded tread. From Royal Lake continue north on the scramblers'/climbers' path roughly another 0.8 mile and 500 ft to Upper Royal Basin (about 8 mi in, ~5,600 ft), a broad heather-and-tarn basin below Mount Deception's south face that most parties use as base camp (NPS wilderness permit and bear canister required; no fires; permits needed May 1–Sept 30). From Upper Royal Basin the maintained trail ends; head cross-country east/northeast up heather benches and talus to the rim of the glacial moraine ringing Surprise Basin, the small hanging cirque between Mount Martin, Mount Johnson, and Mount Clark. Drop into Surprise Basin and cross its snowfields (crampons/axe often useful into July) toward the roughly 6,900 ft notch/col between Johnson (climber's left) and Clark (climber's right) — this is the standard gateway to Johnson's upper mountain. This off-trail stretch above Upper Royal Basin is loose talus and scree with genuine rockfall and route-finding hazard; helmets on from the moraine rim upward. Given the total distance (~19 miles / 30.9 km round trip) and elevation gain, most parties backpack in and camp at Upper Royal Basin, climbing Johnson as a long day from camp rather than attempting it car-to-car.",
+    "itinerary": {
+     "cal": "Royal Basin requires a reservable wilderness permit (online booking opens roughly mid-June through mid-October) and a bear canister; best conditions are typically July-September once seasonal snow/ice in the Johnson-Clark notch and bowl has diminished.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Upper Dungeness trailhead, hike the Royal Basin trail past Royal Lake and up into Upper Royal Basin, camping near Imperial Tarn at roughly 5,800 ft. This is a moderate, well-graded backpack with no exposure — most parties take it at a leisurely pace and arrive with time to scout tomorrow's route.",
+       "hours": 4.5,
+       "miles": 8,
+       "title": "Hike in to Upper Royal Basin camp",
+       "gainFt": 1800,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Establish high camp near Imperial Tarn in Upper Royal Basin"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp before dawn, climb to the ~6,900 ft notch between Johnson and Clark, drop into the bowl below, then pick up the cairned ledge system that corkscrews around toward the SE ridge. A short class 3 crack downclimb accesses the ledge traverse, followed by a loose gully and class 3-4 moves onto the summit block. Reverse the entire route to descend, including re-locating the cairned crack and re-crossing the notch back to camp.",
+       "hours": 9,
+       "miles": 3.2,
+       "title": "Summit day: Johnson via the Corkscrew ledge route",
+       "gainFt": 2700,
+       "lossFt": 2700,
+       "packLb": 14,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave high camp",
+         "detail": "Light summit packs; climb toward the Johnson-Clark notch."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach the 6,900 ft notch",
+         "detail": "Cross any remaining snow/ice field and drop into the bowl below."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Pick up the ledge system",
+         "detail": "Locate the cairned class 3 crack and downclimb onto the corkscrew ledge traverse."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Gully and SE ridge",
+         "detail": "Climb the loose gully and class 3-4 moves toward the summit block."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit",
+         "detail": "7,680 ft, high point of The Needles."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at camp",
+         "detail": "Full reversal of the route, including re-finding the crack and ledge."
+        }
+       ],
+       "objective": "Climb Mount Johnson (7,680 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the Royal Basin trail back down past Royal Lake to the trailhead.",
+       "hours": 4.5,
+       "miles": 8,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 1800,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the Upper Dungeness trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip: two roughly 8-mile approach days on maintained trail bracket one long, technical summit day (~2,700 ft gain, class 3-4 terrain) between the Johnson-Clark notch and the summit block."
+    },
+    "waypoints": [
+     {
+      "lat": 47.877572,
+      "lng": -123.136927,
+      "elev": 2500,
+      "name": "Upper Dungeness Trailhead",
+      "note": "Northwest Forest Pass required; ~12-car lot at road end on FR 2860/FR 270 just past the Dungeness River bridge.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.869049,
+      "lng": -123.15061,
+      "elev": 2650,
+      "name": "Royal Basin Trail junction",
+      "note": "Leave the easy Dungeness River Trail here and turn south onto the Royal Creek/Royal Basin Trail toward Royal Basin.",
+      "type": "Junction",
+      "distMi": 1
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 3500,
+      "name": "Royal Creek Camp",
+      "note": "First two designated trailside campsites on Royal Creek at ~3,500 ft with reliable creek water; fires allowed only here, not at the third site 3/4 mile farther up.",
+      "type": "Campsite",
+      "distMi": 3
+     },
+     {
+      "lat": 47.83201,
+      "lng": -123.21073,
+      "elev": 5100,
+      "name": "Royal Lake",
+      "note": "Basecamp for the Johnson/Clark climb at 5,100 ft; composting toilet, bear canisters required, and campfires are prohibited throughout Royal Basin.",
+      "type": "Campsite",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.831319199999996,
+      "lng": -123.2214404,
+      "elev": 5600,
+      "name": "Upper Royal Basin",
+      "note": "Maze of tarns, snowfields and meadows below the north faces of Johnson and Clark; leave the maintained trail here and go cross-country toward the Clark-Johnson col.",
+      "type": "Junction",
+      "distMi": 8
+     },
+     {
+      "lat": 47.83519,
+      "lng": -123.234024,
+      "elev": 6900,
+      "name": "Clark-Johnson col",
+      "note": "Obvious saddle between the two peaks gained via scree/ramps above the basin; Johnson is on climber's left, Clark on the right.",
+      "type": "Junction",
+      "distMi": 8.6
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 7300,
+      "name": "Corkscrew ledge crux",
+      "note": "Ledge system wraps the south/east side of the summit block; where it looks like it cliffs out at a corner, a cairned Class 3 crack marks the correct up/downclimb — easy to miss in fog.",
+      "type": "Hazard",
+      "distMi": 9.2
+     },
+     {
+      "lat": 47.832625,
+      "lng": -123.237265,
+      "elev": 7680,
+      "name": "Mount Johnson",
+      "note": "True summit, 4th-highest peak in the Olympics; sign the register, then reverse the ledge system and col to descend.",
+      "type": "Summit",
+      "distMi": 9.6
+     }
+    ],
+    "access": {
+     "fees": "$6 Recreation.gov reservation fee plus $8 per person per night wilderness camping fee (ages 16+, youth 15 and under free); Northwest Forest Pass or America the Beautiful Pass required for trailhead parking.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "No campfires anywhere in Royal Basin, and no fires above 3,500 ft park-wide; bear canisters are mandatory for all food, garbage, and scented items; camp only in designated sites (composting toilets at Royal Lake only).",
+     "permit": "Overnight wilderness permit required for Royal Basin. The Royal Creek, Lower Royal Meadow, and Royal Lake camping zones are bookable on Recreation.gov; the Upper Royal Basin zone (closest to the Needles) is not bookable online — reserve it by calling the Olympic Wilderness Information Center directly at 360-565-3100.",
+     "closures": "Royal Basin operates under a camping quota in peak season; bear canisters are required and campfires are prohibited",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness); trailhead access is via Olympic National Forest land (Northwest Forest Pass required for parking)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Northwest Forest Pass, Interagency Pass or Scan & Pay at the Upper Dungeness Trailhead — $5 per vehicle per day or $30 annual. The trailhead is on Olympic National Forest land (Quilcene Ranger District), so no Olympic National Park entrance fee is charged to park there.",
+     "passRequired": "Northwest Forest Pass or Interagency Recreation Pass for trailhead parking; wilderness permit for overnight camping",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+      "where": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin."
+     }
+    },
+    "road": {
+     "name": "Forest Roads NF-2880 / NF-2870 to Upper Dungeness Trailhead",
+     "status": "Gravel forest road, generally passable to standard passenger cars in dry conditions",
+     "driveNote": "From the Longhouse Deli junction on US 101 near Blyn, take Louella Rd 1.7 mi, then Palo Alto Rd 0.9 mi to FR-2880; follow FR-2880 5.8 mi, cross the Dungeness River bridge onto FR-2870, and continue roughly 9 miles total from Palo Alto Rd to the Upper Dungeness Trailhead.",
+     "seasonalGate": "Subject to seasonal winter closure and washout within Olympic National Forest; check current FS alerts before driving"
+    }
+   }
+  }
+ ]
+}

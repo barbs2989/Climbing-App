@@ -1,0 +1,363 @@
+{
+ "file": "r220.json",
+ "results": [
+  {
+   "id": "wa_chockstone_route",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One route database lists the line as 600 ft, 6 pitches (slab, 5.7 chockstone bypass, 5.0 ramp, then ~2 simul-climbed gully/chimney pitches). A detailed trip report broke the same climb into 4 pitches. No second source confirms 6, and the pitch count depends on how the walking/simul sections are split, so the breakdown's P1-P5 labelling was not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/111959715/chockstone-route",
+    "https://trailcatjim.com/north-early-winters-spire-via-chockstone-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chockstone_route",
+   "fact": "Location of the tree rappel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The reader's internal resolution (tree rap at the TOP) is contradicted externally. The route's own database page says the rappels start 30m down and skier's right of the top-out, 4 bolted stations 'and one tree rap down the 5.0 slab at the start' (the route's first pitch is the 5.0 slab). The West Face page describes the original descent as three raps to the notch, the free-hanging chockstone rap, then downclimbing 'or a short 30 foot rap on a tree' to get back on the ground, and the area page says 'one more short rappel' brings you back to the ground. That points to the tree rap being the LAST rappel at the bottom, which would make rappel_detail[0], descent_text and rappel_count_note wrong rather than rope_note/descent/sling_rack. All three statements come from one site, and fixing it means reordering the rappel_detail table, so no patch is written; flagged for a human decision.",
+   "sources": [
+    "https://www.mountainproject.com/route/111959715/chockstone-route",
+    "https://www.mountainproject.com/route/105847147/the-west-face",
+    "https://www.mountainproject.com/area/105792196/north-early-winter-spire"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chockstone_route",
+   "fact": "Trailhead distance from Washington Pass",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "The dispute is only in bivy[0].notes, which is owned by the separate camping clean-up; no bivy patch written. Note for that clean-up: the trailhead is just under a mile west of the Washington Pass Overlook (the overlook itself is 0.8 mi east of it), so neither 'half a mile' (bivy) nor '1.5 mi' (waypoint note, approach_variants, trailheadDirection) is exact; see the discovered entry.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chockstone_route",
+   "fact": "Approach distance to the gully",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two sources put the climbers' path junction on the Blue Lake Trail at about 1.7 mi (2.7 km) from the trailhead, so the prose's 'about 1.5 miles' is roughly right and the waypoint distMi values (0.6 to the gully base, 1.0 to the summit) are clearly too short. A trip report gives ~5 mi round trip, i.e. ~2.5 mi to the summit, but no second source gives the one-way distance to the gully base or summit, so the waypoint distances were not rewritten.",
+   "sources": [
+    "https://www.10adventures.com/hikes/north-cascades-national-park/blue-lake/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail",
+    "https://trailcatjim.com/north-early-winters-spire-via-chockstone-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chockstone_route",
+   "fact": "Rack size",
+   "verdict": "fixed",
+   "correct_value": "Single rack of cams to 2 in plus nuts",
+   "evidence": "The route's database page lists 'single rack to 2 inches, draws for fixed pins'. A trip report carried .5-3 with doubles of .5 and .75 (the source of the 3in figure) but says a set of nuts and cams .5-2 is more than sufficient for this route. gear[0] was right; detailed_rack and rack[0] copied the reporter's larger rack.",
+   "sources": [
+    "https://www.mountainproject.com/route/111959715/chockstone-route",
+    "https://spokalpine.com/2016/09/12/north-early-winters-spire-chockstone-route-ii-5-7/"
+   ],
+   "patches": [
+    {
+     "id": "wa_chockstone_route",
+     "fact": "Rack size",
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "A single cam rack from 0.5-3in (with doubles of the 0.5 and 0.75in sizes) plus a nut set covers the route",
+     "replace": "A single cam rack from 0.5-2in plus a nut set covers the route"
+    },
+    {
+     "id": "wa_chockstone_route",
+     "fact": "Rack size",
+     "op": "set",
+     "column": "rack",
+     "path": [
+      0
+     ],
+     "expect": "Cams 0.5–3in (single set, doubles of 0.5 & 0.75in)",
+     "value": "Cams 0.5–2in (single set)"
+    }
+   ]
+  },
+  {
+   "id": "wa_chockstone_route",
+   "fact": "Blue Lake Trailhead elevation",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[0].elev and approach_variants say ~5,200 ft; approach, trailheadDirection and bivy[0] say 5,400 ft. The lake is 6,254 ft with 1,050 ft of gain (implying ~5,200 ft), but one search summary gave 5,400 ft and one hiking site gave an obviously wrong 6,250 ft; no two sources state the trailhead height directly.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://www.thehikermama.com/hikes-for-kids/highway-20-north-cascades-highway/blue-lake-washington-pass-area/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chockstone_route",
+   "fact": "Trailhead distance west of Washington Pass (waypoint note / approach_variants / trailheadDirection say 1.5 mi)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The trail guide says the trailhead is just under a mile past the Washington Pass Overlook, which sits 0.8 mi east of it; that suggests ~1 mi rather than 1.5 mi from the pass. Only one source, so unchanged.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chockstone_route",
+   "fact": "SR-20 2025-26 closure dates in road.seasonalGate",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "SR-20 closes seasonally over Washington Pass due to avalanche danger. In 2025-26 it closed Dec 4, 2025; the east side through Washington Pass reopened April 30, 2026, and the whole highway on June 14, 2026 after storm-damage repairs. Dates vary by year.",
+   "evidence": "WSDOT's project page lists the 2025-26 winter closure on Dec 4, 2025, a partial reopening from the east side to Porcupine Creek (MP 156, west of Rainy Pass and of Washington Pass at MP 162) on April 30, 2026, and full reopening June 14, 2026. A news report confirms the east-side reopening to Porcupine Creek and that only MP 130-156 stayed closed; another confirms the June 14 full reopening. The stored card gave a wrong closure date and implied Washington Pass was unreachable until mid-June.",
+   "sources": [
+    "https://wsdot.wa.gov/construction-planning/search-projects/sr-20-north-cascades-highway-emergency-repairs",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://www.kiro7.com/news/local/sr-20-north-cascades-highway-partially-reopens/NT4S5RIDNBBLZPLZ3MOG7QQW44/",
+    "https://www.cascadiadaily.com/2026/jun/14/north-cascades-highway-reopens-ahead-of-schedule/"
+   ],
+   "patches": [
+    {
+     "id": "wa_chockstone_route",
+     "fact": "SR-20 2025-26 closure dates in road.seasonalGate",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "expect": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year).",
+     "value": "SR-20 closes seasonally over Washington Pass due to avalanche danger. In 2025-26 it closed Dec 4, 2025; the east side through Washington Pass reopened April 30, 2026, and the whole highway on June 14, 2026 after storm-damage repairs. Dates vary by year."
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "fact": "Trailhead / road",
+   "verdict": "fixed",
+   "correct_value": "SR-20 hairpin pullout east of Washington Pass",
+   "evidence": "Every other field on the row starts from the SR-20 hairpin. Two independent trip reports both start the climb from the hairpin on Highway 20 and walk straight up the snow to the couloir; the Blue Lake Trailhead serves the west side.",
+   "sources": [
+    "https://spokalpine.com/2019/04/22/north-early-winters-spire-early-winters-couloir-iii-ai3-m4/",
+    "https://gethighonaltitude.com/2021/05/16/north-early-winter-spire-early-winter-couloir/"
+   ],
+   "patches": [
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Blue Lake Trailhead, SR-20, Washington Pass",
+     "value": "SR-20 hairpin pullout, east of Washington Pass"
+    },
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved highway parking at the Blue Lake Trailhead; no unpaved road driving required.",
+     "value": "Roadside parking at the paved SR-20 hairpin pullout; no unpaved road driving required."
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "fact": "KNOWN HAZARDS copied from another route",
+   "verdict": "fixed",
+   "correct_value": "Washington Pass, east-facing couloir; no Snoqualmie/Alpental hazards",
+   "evidence": "Phantom Slide, the Alpental ski area and the Snoqualmie Pass forecast are all at Snoqualmie Pass, ~100 miles south. Both trip reports place the route above the SR-20 hairpin at Washington Pass, climbed from the highway side (east), matching aspect E and the NWAC East Slopes zone on the row. The three foreign lines are removed/rewritten; the rest of watch_out is kept.",
+   "sources": [
+    "https://spokalpine.com/2019/04/22/north-early-winters-spire-early-winters-couloir-iii-ai3-m4/",
+    "https://gethighonaltitude.com/2021/05/16/north-early-winter-spire-early-winter-couloir/"
+   ],
+   "patches": [
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "KNOWN HAZARDS copied from another route",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Active avalanche path crossing (Phantom Slide approach) — check NWAC Snoqualmie Pass forecast, time crossing carefully",
+     "replace": "Avalanche and wet-slide path on the approach snow and in the couloir — check the NWAC East Slopes forecast and climb on a cold, firm morning"
+    },
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "KNOWN HAZARDS copied from another route",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "\nCold northwest-facing aspect — expect winter temperatures even on clear days\nAvalanche patrol explosives nearby (Alpental) — stay clear of ski area boundary during control operations",
+     "replace": ""
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "fact": "Descent rappel line",
+   "verdict": "fixed",
+   "correct_value": "Bolted West Couloir line (Chockstone Route side), not the West Face line",
+   "evidence": "A trip report on this route descended 'four rappels down the West Couloir using bolted anchors' plus the chockstone rappel off a piton-and-nut anchor in the skier's-right wall. The West Face route page separately describes the original descent (raps to the notch, then off the chockstone) and a newer, different line of six bolted stations down the face itself. So the 4-rap descent is the West Couloir line, and 'West Face' is a mislabel in rappels, descent_text, pro_tips and itinerary.",
+   "sources": [
+    "https://spokalpine.com/2019/04/22/north-early-winters-spire-early-winters-couloir-iii-ai3-m4/",
+    "https://www.mountainproject.com/route/105847147/the-west-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Descent rappel line",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "down the bolted West Face line",
+     "replace": "down the bolted West Couloir line"
+    },
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Descent rappel line",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "the bolted rappel line on the West Face/Chockstone Route side",
+     "replace": "the bolted rappel line down the West Couloir, on the Chockstone Route side"
+    },
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Descent rappel line",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "bolted West Face/Chockstone Route rappels",
+     "replace": "bolted West Couloir/Chockstone Route rappels"
+    },
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Descent rappel line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "the West Face/Chockstone bolted rappels",
+     "replace": "the West Couloir/Chockstone bolted rappels"
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "fact": "Fixed rappel anchors on the descent",
+   "verdict": "fixed",
+   "correct_value": "No fixed anchors only if descending the couloir itself; the West Couloir descent is bolted",
+   "evidence": "The trip report descended on bolted West Couloir anchors, and the route database's descent notes confirm a bolted rap line on that side; the absence of anchors applies only to reversing the Early Winter Couloir, as descent, descent_text and obj_haz already say.",
+   "sources": [
+    "https://spokalpine.com/2019/04/22/north-early-winters-spire-early-winters-couloir-iii-ai3-m4/",
+    "https://www.mountainproject.com/route/111959715/chockstone-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Fixed rappel anchors on the descent",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "find": "No established rappel stations exist on this descent, forcing ad hoc anchors in poor rock",
+     "replace": "No established rappel stations exist for a descent back down the couloir itself, forcing ad hoc anchors in poor rock"
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "fact": "SR-20 reopening vs the route's window",
+   "verdict": "fixed",
+   "correct_value": "SR-20 closes seasonally over Washington Pass due to avalanche danger. In 2025-26 it closed Dec 4, 2025; the east side through Washington Pass reopened April 30, 2026, and the whole highway on June 14, 2026 after storm-damage repairs. Dates vary by year.",
+   "evidence": "WSDOT's project page lists the 2025-26 winter closure on Dec 4, 2025, a partial reopening from the east side to Porcupine Creek (MP 156, west of Rainy Pass and of Washington Pass at MP 162) on April 30, 2026, and full reopening June 14, 2026. A news report confirms the east-side reopening to Porcupine Creek and that only MP 130-156 stayed closed; another confirms the June 14 full reopening. The stored card gave a wrong closure date and implied Washington Pass was unreachable until mid-June. With the east side open from April 30, 2026, the April-early May window in season is consistent.",
+   "sources": [
+    "https://wsdot.wa.gov/construction-planning/search-projects/sr-20-north-cascades-highway-emergency-repairs",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://www.kiro7.com/news/local/sr-20-north-cascades-highway-partially-reopens/NT4S5RIDNBBLZPLZ3MOG7QQW44/",
+    "https://www.cascadiadaily.com/2026/jun/14/north-cascades-highway-reopens-ahead-of-schedule/"
+   ],
+   "patches": [
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "SR-20 reopening vs the route's window",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "expect": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year).",
+     "value": "SR-20 closes seasonally over Washington Pass due to avalanche danger. In 2025-26 it closed Dec 4, 2025; the east side through Washington Pass reopened April 30, 2026, and the whole highway on June 14, 2026 after storm-damage repairs. Dates vary by year."
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "fact": "Where the technical climbing starts",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The 40-degree ramp in beta/baseFinding is the approach feature that leads into the couloir's base; P2's snow is a different stretch inside the couloir between the first and second chockstones. A trip report confirms the order: an easy ice/mixed step past the first chockstone to a tree anchor, then several hundred feet of 45-60 degree snow, then the second chockstone.",
+   "sources": [
+    "https://spokalpine.com/2019/04/22/north-early-winters-spire-early-winters-couloir-iii-ai3-m4/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "fact": "Chockstone rappel anchor",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Anchor is a piton-and-nut station in the skier's-right wall; the rappel goes past the chockstone",
+   "evidence": "station and descent on the row say the anchor is a fixed piton-and-nut station beside the chockstone; the trip report says 'one rappel past the chockstone using a piton and nut anchor' on the skier's-right wall.",
+   "sources": [
+    "https://spokalpine.com/2019/04/22/north-early-winters-spire-early-winters-couloir-iii-ai3-m4/"
+   ],
+   "patches": [
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Chockstone rappel anchor",
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "free rappel off the 'giant chockstone'",
+     "replace": "free rappel past the 'giant chockstone'"
+    },
+    {
+     "id": "wa_early_winter_couloir",
+     "fact": "Chockstone rappel anchor",
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      3,
+      "anchor"
+     ],
+     "expect": "fixed piton-and-nut/chockstone anchor",
+     "value": "fixed piton-and-nut anchor in the wall beside the chockstone"
+    }
+   ]
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "fact": "Hairpin trailhead elevation",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[0].elev says 5,200 ft while its own directions and trailheadDirection say about 5,100 ft. Not researched to two sources.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

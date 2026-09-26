@@ -1,0 +1,31 @@
+{"file": "r502.json", "results": [
+ {"id": "wa_mount_dana_scramble", "fact": "Trailhead and approach line",
+  "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "The contradiction is real: waypoints, approach_logistics, road, access, approach and descent_text use Whiskey Bend and the Elwha Snowfinger, while all six itinerary days, itinerary.cal and timing.sectionBreakdown run a Sol Duc/High Divide/Catwalk trip. No external source describes an approach specifically to Mount Dana; Wikipedia and PeakVisor only place it in the Bailey Range draining to the Elwha (47.7913,-123.4859, Mount Norton 6.3 km SE), which puts it well east of the main Bailey crest and ~5 mi east of Dodwell-Rixon Pass, so even the Elwha/Dodwell-Rixon line in the row is doubtful. Fixing it means rewriting the entire 6-day itinerary and timing (titles, notes, miles, gain/loss, hours) with no sourced figures, so no patch is written.",
+  "sources": ["https://en.wikipedia.org/wiki/Mount_Dana_(Washington)", "https://peakvisor.com/peak/mount-dana-united-states.html"],
+  "patches": []},
+ {"id": "wa_mount_dana_scramble", "fact": "Total gain",
+  "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "gain_ft 5414 (and loss_ft 5414) disagree with the itinerary sums (14,400 gain / 15,800 loss) and the totalNote's 14,000-16,000 ft. No outside source states a car-to-car gain or loss for Mount Dana by any approach, and the itinerary itself describes a different trailhead (see the trailhead contradiction), so neither figure can be confirmed.",
+  "sources": [],
+  "patches": []},
+ {"id": "wa_mount_dana_scramble", "fact": "Madison Falls road walk",
+  "verdict": "fixed",
+  "correct_value": "about 7 miles each way from Madison Falls to Whiskey Bend",
+  "evidence": "The NPS Whiskey Bend trailhead page gives 6.9 mi total walking up the road from Madison Falls. A trail-running route description gives 0.7 mi of paved road, the bypass trail, ~0.8 mi more to Whiskey Bend Road, then the 4.5 mi Whiskey Bend Road (about 7 mi total); another guide calls it a ~6.5 mi road/trail route. The ~8 mi on the trailhead card is the outlier; approach, access.closures and road.driveNote already say ~7.",
+  "sources": ["https://www.nps.gov/places/000/whiskey-bend-trailhead.htm", "https://www.trailrunproject.com/trail/7001969/elwha-river-trail", "http://visitonp.kaleberg.com/places-to-visit/elwha/elwha---out-of-whiskey-bend.html"],
+  "patches": [
+   {"id": "wa_mount_dana_scramble", "fact": "Madison Falls road walk", "op": "replace_text", "column": "approach_logistics", "path": ["trailheadDirection"], "find": "walk or bike ~8 miles to the Whiskey Bend Trailhead", "replace": "walk or bike ~7 miles to the Whiskey Bend Trailhead"}
+  ]},
+ {"id": "wa_mount_dana_scramble", "fact": "Wilderness permit channel",
+  "verdict": "fixed",
+  "correct_value": "Permits are created through Recreation.gov, by phone with the WIC, or in person at a WIC; no same-day walk-ups are held; cross-country trips (e.g. Bailey Range) cannot be booked online and must be arranged by calling the WIC.",
+  "evidence": "The NPS wilderness reservations page says all permits are created through Recreation.gov, can be arranged by phone or in person at a WIC, no sites are held as same-day walk-ups, and cross-country trips such as the Bailey Range must be booked by contacting the WIC at (360) 565-3100. Campflare independently states cross-country trips (e.g. Bailey Range) must be booked through the WIC by phone. The three channels are not contradictory in general, but access.permit and itinerary.cal present Recreation.gov/quota booking as the route's channel although its high nights are in cross-country zones, so both get the phone requirement; bivy is not touched.",
+  "sources": ["https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm", "https://campflare.com/permit/olympic"],
+  "patches": [
+   {"id": "wa_mount_dana_scramble", "fact": "Wilderness permit channel", "op": "replace_text", "column": "access", "path": ["permit"], "find": "required practically for this route given the multi-day approach.", "replace": "required practically for this route given the multi-day approach. Nights in the cross-country zones beyond Chicago Camp cannot be booked online; arrange them by calling the WIC."},
+   {"id": "wa_mount_dana_scramble", "fact": "Wilderness permit channel", "op": "replace_text", "column": "itinerary", "path": ["cal"], "find": "Olympic National Park wilderness permit (recreation.gov quota zone)", "replace": "Olympic National Park wilderness permit (cross-country nights are arranged by phone with the Wilderness Information Center)"}
+  ]}
+]}

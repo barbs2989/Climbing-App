@@ -1,0 +1,304 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Approach trailhead and base camp"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach trailhead and base camp"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach trailhead and base camp"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach trailhead and base camp"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    5,
+    "note"
+   ],
+   "fact": "Elwha Snowfinger usable on the exit"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    5,
+    "note"
+   ],
+   "fact": "Elwha Snowfinger usable on the exit"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Whiskey Bend to Elwha Basin mileage"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Glacier travel"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "permit",
+   "path": [],
+   "fact": "Permit booking channel and vetting"
+  },
+  {
+   "id": "wa_mount_barnes_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Permit booking channel and vetting"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_barnes_scramble",
+   "before": {
+    "beta": "There is no maintained trail on Mount Barnes itself. Parties approach via the long Elwha River Trail to a camp in or near Elwha Basin, then leave the trail entirely and travel cross-country up open slopes/heather benches toward the summit ridge, following the class 2 line. No rope or rack is used on the standard line; the challenge is routefinding and the length/remoteness of the approach, not technical difficulty.",
+    "pitch_detail": [
+     {
+      "grade": "Class 2",
+      "notes": "Off-trail scramble on open slopes and heather benches from Elwha Basin camp to the summit; no roped climbing on the standard line.",
+      "pitch": "Basin to Summit",
+      "lengthM": 975
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day hiking fitness; long approach mileage via the Elwha River trail to the upper basin before any scrambling begins",
+      "packWeight": "Heavy - multi-day backpacking load (shelter, food, bear canister) plus scramble gear"
+     },
+     "approachTime": "Multi-day - long approach up the Elwha River trail to the upper basin (historically well over a full day of hiking each way) before leaving the trail to scramble; plan for a multi-day trip",
+     "requiredSkills": [
+      "off-trail route finding and navigation (map/compass or GPS) once leaving the maintained trail",
+      "Class 2-3 scrambling on variable terrain",
+      "multi-day wilderness self-sufficiency and river/creek crossing judgment",
+      "wilderness permit and bear canister logistics for Olympic NP interior travel"
+     ],
+     "experienceLevel": "Experienced backcountry scrambler comfortable with Class 2-3 off-trail terrain and multi-day, self-sufficient wilderness travel; not a beginner objective given the remote interior approach"
+    },
+    "itinerary": {
+     "cal": "Best mid-August through mid-September once high-elevation snow has melted enough for the off-trail ridge sections; requires an Olympic NP wilderness permit (quota + required bear canister) via recreation.gov, and the Elwha River Trail exit can be affected by seasonal washouts or a Dodger Point closure that forces a longer alternate route.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Well-graded trail from the Sol Duc trailhead up through Deer Lake and along High Divide to a camp near Cat Basin, staged at the start of the off-trail traverse. Last easy water and maintained tread of the trip.",
+       "hours": 6,
+       "miles": 7.5,
+       "title": "Sol Duc to High Divide / Cat Basin",
+       "gainFt": 4300,
+       "lossFt": 200,
+       "packLb": 38,
+       "objective": "Reach the base of the Bailey Range crest"
+      },
+      {
+       "n": 2,
+       "note": "Off-trail route-finding begins here: the exposed 'Catwalk' traverse between Cat Peak and Mount Carrie, then sidehilling brushy meadows and gullies down to a beach camp on Stephen Lake.",
+       "hours": 7,
+       "miles": 7,
+       "title": "The Catwalk to Stephen Lake",
+       "gainFt": 3200,
+       "lossFt": 1400,
+       "packLb": 38,
+       "objective": "Cross the Catwalk and flank Mount Carrie"
+      },
+      {
+       "n": 3,
+       "note": "Climb out of the Stephen Lake basin and traverse post-glacial moraine and meadow terrain to camp in Upper Ferry Basin, with Stephen Peak an optional short side-scramble along the way.",
+       "hours": 6,
+       "miles": 5,
+       "title": "Stephen Lake to Ferry Basin",
+       "gainFt": 2600,
+       "lossFt": 1200,
+       "packLb": 36,
+       "objective": "Push south along the Bailey Range crest"
+      },
+      {
+       "n": 4,
+       "note": "Loose scree and talus lead over a shoulder near Mount Ferry into what parties often nickname 'Junkyard Basin,' then down to a grassy meadow camp near Bear Pass — the staging point for the Barnes side-trip.",
+       "hours": 5.5,
+       "miles": 5,
+       "title": "Ferry Basin to a high camp near Bear Pass",
+       "gainFt": 2400,
+       "lossFt": 1000,
+       "packLb": 35,
+       "objective": "Reach the meadow camp below Mount Barnes"
+      },
+      {
+       "n": 5,
+       "note": "Stash overnight gear in the meadow and go light. Scree and lingering snow patches lead southwest of the peak, then a moderate scree slope and a boot track curl left through brief brush to the summit, with big views of Olympus, Queets, Noyes, and Seattle — often shared with swarms of flying ants in late summer.",
+       "hours": 6,
+       "miles": 5.5,
+       "title": "Side-trip: climb Mount Barnes",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave camp, stash overnight gear",
+         "detail": "Cache tents/sleeping gear in the meadow southeast of Barnes and continue with a light daypack."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Scree and snow patches to southwest of peak",
+         "detail": "Mixed scree and residual snow, no technical difficulty in late summer."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Boot-track ridge, brief bushwhacking",
+         "detail": "Moderate scree slope, then a visible boot track curling left through short brushy sections."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Summit Mount Barnes",
+         "detail": "360-degree views; parties sometimes continue toward Mount Queets from here if conditions and time allow."
+        },
+        {
+         "time": "+5-6 hr",
+         "label": "Retrace route to gear stash and camp",
+         "detail": "Same line in reverse back to the meadow cache."
+        }
+       ],
+       "objective": "Tag the Mount Barnes summit and return to camp"
+      },
+      {
+       "n": 6,
+       "note": "A long, punishing grind: down the Elwha Snowfinger snowfield into the tangled brush and stream crossings of the Elwha Basin ('the maze') to Chicago Camp, then a fast, well-graded push down the Elwha River Trail to the Whiskey Bend trailhead near Madison Falls. Tired parties often split this into two days at Hayes River instead; if the southern trail is fire-closed, exit via Dodger Point, which adds mileage and elevation change.",
+       "hours": 13,
+       "miles": 25.5,
+       "title": "Descend the Elwha Snowfinger and out to Whiskey Bend",
+       "gainFt": 1000,
+       "lossFt": 7400,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Exit via the Elwha Basin maze and Elwha River Trail"
+      }
+     ],
+     "totalNote": "A 6-day, roughly 55-mile off-trail Bailey Range traverse with 17,000+ ft of cumulative gain; Mount Barnes itself is only a half-day out-and-back scramble tacked onto a high camp near Bear Pass, usually paired with (or offered as an alternative to) Mount Queets, and the trip finishes with a very long exit day down the Elwha."
+    },
+    "timing": {
+     "totalHrs": 43.5,
+     "summitTimeHrs": 6,
+     "descentTimeHrs": 13,
+     "approachTimeHrs": 24.5,
+     "recommendedStart": "7:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Well-graded trail from the Sol Duc trailhead up through Deer Lake and along High Divide to a camp near Cat Basin, staged at the start of the off-trail traverse. Last easy water and…",
+       "fromTo": "Sol Duc to High Divide / Cat Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 7,
+       "note": "Off-trail route-finding begins here: the exposed 'Catwalk' traverse between Cat Peak and Mount Carrie, then sidehilling brushy meadows and gullies down to a beach camp on Stephen L…",
+       "fromTo": "The Catwalk to Stephen Lake",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "Climb out of the Stephen Lake basin and traverse post-glacial moraine and meadow terrain to camp in Upper Ferry Basin, with Stephen Peak an optional short side-scramble along the w…",
+       "fromTo": "Stephen Lake to Ferry Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 5.5,
+       "note": "Loose scree and talus lead over a shoulder near Mount Ferry into what parties often nickname 'Junkyard Basin,' then down to a grassy meadow camp near Bear Pass — the staging point …",
+       "fromTo": "Ferry Basin to a high camp near Bear Pass",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "Stash overnight gear in the meadow and go light. Scree and lingering snow patches lead southwest of the peak, then a moderate scree slope and a boot track curl left through brief b…",
+       "fromTo": "Side-trip: climb Mount Barnes",
+       "section": "Climb"
+      },
+      {
+       "hrs": 13,
+       "note": "A long, punishing grind: down the Elwha Snowfinger snowfield into the tangled brush and stream crossings of the Elwha Basin ('the maze') to Chicago Camp, then a fast, well-graded p…",
+       "fromTo": "Descend the Elwha Snowfinger and out to Whiskey Bend",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach": "No maintained trail leads directly to Mount Barnes — it is a cross-country side-trip off the Bailey Range Traverse. Two main approaches: (1) West via Sol Duc Trailhead — Sol Duc River Trail up to Bogachiel Peak/High Divide (filling water at Heart Lake, the last reliable source for miles), then off-trail east along the Bailey Range crest through Cat Basin, Ferry Basin, and Stephen Peak to Bear Pass — roughly 3-5 days of travel before reaching Barnes. (2) East via the Elwha River Trail — historically from Whiskey Bend Trailhead (26 mi round trip with ~6,100 ft gain to the trail's end near Elwha Basin/Dodwell-Rixon Pass); as of the September 2024 Olympic Hot Springs Road washout, Whiskey Bend is closed to vehicles, adding an extra 6.2 mi one-way walk or bike from the Madison Falls parking area just to reach the trailhead. From a camp near Bear Pass or a nearby meadow, the final summit push contours scree and lingering snow patches southeast, then curls north on a boot track up a moderate scree slope to the Class 2 summit — a few hours round trip once camp is established.",
+    "season": "Jun-Aug",
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Wet maritime climate overall; summer scramble window is the primary dry period, but the deep interior location means weather can change quickly with limited visibility reference points",
+      "probability": "Afternoon convective buildup and thunderstorms are possible in the interior during summer"
+     },
+     "exposure": "Class 2-3 scrambling on remote, committing terrain; the main consequence is not technical fall exposure but the long self-evacuation distance and deep interior isolation - an injury or bad-weather turn-back is a multi-day extraction problem",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route; NWAC's Olympics zone only issues daily forecasts roughly mid-November through spring, outside this route's July-September season",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "October": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov."
+   }
+  }
+ ]
+}

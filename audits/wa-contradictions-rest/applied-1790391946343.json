@@ -1,0 +1,114 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_lincoln_standard",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_mount_lincoln_standard",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Land manager"
+  },
+  {
+   "id": "wa_mount_lincoln_standard",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Season"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_lincoln_standard",
+   "before": {
+    "rock_grade": "Class 2, with Class 3 sections",
+    "access": {
+     "fees": "Northwest Forest Pass at Forest trailheads; National Park fees if approaching via Staircase in Olympic National Park",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Follow wilderness regulations and Leave No Trace; bear canisters are required for food storage at Flapjack Lakes.",
+     "permit": "Wilderness camping permits are limited and reservable year-round (early reservations recommended for the 6/15-9/30 season) if camping within Olympic National Park at Flapjack Lakes; self-issued wilderness registration on Forest land",
+     "closures": "As of mid-2026, the Flapjack Lakes/North Fork Skokomish Trail and surrounding backcountry remain closed following the 2025 Bear Gulch Fire (20,233 acres, 100% contained Nov 2025); the developed Staircase area itself reopened July 8, 2026, but wilderness trail closures were continuing during recovery - confirm current status with Olympic National Park before attempting this route.",
+     "closureNote": "As of the NPS trail-conditions update on 6/5/26, the Flapjack Lakes Trail and North Fork Skokomish River Trail are CLOSED due to the 2025 Bear Gulch Fire, with no reopening date given — verify current status with Olympic National Park before this trip.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness, trail/approach) and Mount Skokomish Wilderness, Olympic National Forest (summit block)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance pass, or an America the Beautiful interagency pass, plus an NPS wilderness permit for overnight travel. No Northwest Forest Pass - Staircase is inside the national park.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    },
+    "itinerary": {
+     "cal": "Best done on a long, dry summer day (roughly June-September) since the route-finding crux above camp eats daylight and afternoon storms or wet rock add real risk on the Class 3 terrain.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Staircase Ranger Station, follow the North Fork Skokomish River trail through old-growth forest and switchbacks up to the established camp at Flapjack Lakes (bear wire and toilet on site). This is a well-maintained, moderate-grade trail with no route-finding difficulty.",
+       "hours": 4.5,
+       "miles": 7.7,
+       "title": "Approach to Flapjack Lakes camp",
+       "gainFt": 3050,
+       "lossFt": 100,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Hike in and establish camp at Flapjack Lakes"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start with a light pack gets you up the steep climbers' path onto Sawtooth Ridge and into the Class 3 terrain below Lincoln's summit block, where route-finding — not the climbing itself — is the real crux; parties have gotten cliffed out and burned hours here even in good conditions. After tagging the summit, reverse the route back to camp, break down camp, and continue all the way out to the trailhead, making this a long full day.",
+       "hours": 11,
+       "miles": 10.9,
+       "title": "Summit push, then hike all the way out",
+       "gainFt": 2200,
+       "lossFt": 5250,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave camp, light pack",
+         "detail": "Alpine start with headlamps to leave maximum daylight for route-finding higher up."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Gain Sawtooth Ridge",
+         "detail": "Steep climbers' path above Flapjack Lakes onto the ridge crest."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Reach the summit block",
+         "detail": "Class 3 scrambling; this is where parties commonly lose the correct line among scree and short headwalls."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Depart summit",
+         "detail": "Downclimb the same line carefully rather than exploring new terrain."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at camp, break it down",
+         "detail": "Repack overnight gear for the hike out."
+        },
+        {
+         "time": "6:30 PM",
+         "label": "Arrive trailhead",
+         "detail": "Full pack for the final descent to Staircase."
+        }
+       ],
+       "objective": "Climb Mount Lincoln via the Class 3 north ridge/couloir above Flapjack Lakes, then hike out to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day trip: hike in and camp at Flapjack Lakes on day one (~7.7 mi, ~3,050 ft), then a long summit day (~11 mi, ~2,200 ft up / ~5,250 ft down) that finishes by hiking all the way out — route-finding above camp, not distance, is the real crux."
+    }
+   }
+  }
+ ]
+}

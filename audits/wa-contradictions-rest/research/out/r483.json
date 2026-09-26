@@ -1,0 +1,352 @@
+{
+ "file": "r483.json",
+ "results": [
+  {
+   "id": "wa_mount_carrie_se_route",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Jul-Sep",
+   "evidence": "Organised and private parties summit Carrie in late July (a club scramble on July 27 via the Catwalk; a July 30, 2018 ascent via Heart Lake), and the row's own best_season, seasonal_guidance, itinerary.cal and climate all include July. The season header and the approach variant's season were the only fields excluding July.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-mount-carrie-seven-lakes-loop-1",
+    "https://peakery.com/mount-carrie-washington/summits/178897/",
+    "https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Aug-Sep",
+     "value": "Jul-Sep",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Season window"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "season"
+     ],
+     "find": "August to September, once the high traverse is clear of snow",
+     "replace": "Late July to September, once the high traverse is clear of snow",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "fact": "Route name vs content",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Every source (club scramble reports, trip reports, Wikipedia) climbs Carrie from Sol Duc via the High Divide, the Catwalk and the southwest ridge / south-facing basin; none describes a Hurricane Ridge approach. The overview already states the name is misleading. The route name is out of scope for patching, and aspect 'SE' is tied to that name; the true climbing aspect (SW ridge, S-facing basin) needs an owner decision on renaming, so no patch.",
+   "sources": [
+    "https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/",
+    "https://en.wikipedia.org/wiki/Mount_Carrie"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "fact": "Order of Cat Basin and the Catwalk",
+   "verdict": "fixed",
+   "correct_value": "Cat Basin lies before the Catwalk; Boston Charlie's Camp lies beyond it",
+   "evidence": "Trip reports describe the sequence Heart Lake -> High Divide -> Cat Basin -> Cat Peak -> Catwalk -> Boston Charlie's -> Carrie; one party camped at Cat Basin and crossed the Catwalk the next morning. Boston Charlie's Camp is on the far side of the Catwalk. Patched the overview, approach, approach variant name and notes so Cat Basin precedes the Catwalk.",
+   "sources": [
+    "https://www.turns-all-year.com/trip-reports/august-4-8-2011-onp-mt-carrie-mt-ruth",
+    "https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/",
+    "https://mountainflamingo.com/2017-08-26-27-seven-lakes-basin-loop-and-mount-carrie/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "via Heart Lake, High Divide, the exposed \"Catwalk\" ridge crossing, and Boston Charlie's Camp/Cat Basin, before",
+     "replace": "via Heart Lake, High Divide, Cat Basin, the exposed \"Catwalk\" ridge crossing, and Boston Charlie's Camp, before",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Order of Cat Basin and the Catwalk"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "High Divide and the Catwalk to Cat Basin",
+     "replace": "High Divide and Cat Basin to the Catwalk",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Order of Cat Basin and the Catwalk"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Climb to the High Divide crest and follow it south and west to the end of the maintained trail, then take the unmaintained path over the exposed south side of the peak at the divide's end and across the CATWALK to Cat Basin.",
+     "replace": "Climb to the High Divide crest and follow the primitive trail east from the junction above the lake toward Cat Basin, then take the unmaintained path over the exposed south side of the peak beyond it and across the CATWALK to the first camp on its far side.",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Order of Cat Basin and the Catwalk"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "fact": "Direction along the High Divide",
+   "verdict": "fixed",
+   "correct_value": "From the High Divide junction above Heart Lake the route heads EAST on the Cat Basin trail; Bogachiel Peak is to the west",
+   "evidence": "The Cat Basin primitive trail leaves the High Divide trail just above Heart Lake and runs eastward along the ridge toward Cat Basin, with the Bailey Range way branching southeast toward Cat Peak. A trip report went east from Heart Lake to Cat Basin for Carrie and later west along the High Divide to Bogachiel Peak. The row's own waypoints place Cat Basin and Carrie east of Heart Lake. The unsourced '3 mi' leg was dropped rather than replaced.",
+   "sources": [
+    "https://www.trailrunproject.com/trail/7001988/cat-basin-primitive-trail",
+    "https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/",
+    "https://www.wta.org/go-hiking/hikes/cat-basin-primitive"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "traverses south along the High Divide for 3 miles before ascending the Catwalk",
+     "replace": "heads east along the Cat Basin trail toward Cat Peak before crossing the Catwalk",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Direction along the High Divide"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "→ south along High Divide (+3 mi) to the maintained trail's end near Bogachiel Peak → an unmaintained path over Cat Peak's exposed south side and across the airy \"Catwalk\" ridge (Class 3) to Cat Basin/Boston Charlie's Camp.",
+     "replace": "→ east on the Cat Basin trail toward Cat Basin → an unmaintained path over Cat Peak's exposed south side and across the airy \"Catwalk\" ridge (Class 3) to Boston Charlie's Camp.",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Direction along the High Divide"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Follow High Divide crest south ~3 mi to trail's end, descend into Cat Basin",
+     "replace": "Follow the Cat Basin trail east from the High Divide toward Cat Peak and Cat Basin",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Direction along the High Divide"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_se_route",
+   "fact": "Approach days",
+   "verdict": "fixed",
+   "correct_value": "One day on trail to camp (Heart Lake or Cat Basin), then the summit day",
+   "evidence": "Parties reach Heart Lake or Cat Basin in a single day from the Sol Duc trailhead (one in 8.2 hr to Cat Basin, another arriving at Heart Lake the same afternoon) and summit the next morning; a whole 3-day loop including Carrie is about 18.5 miles, so '2+ day backpack' and '15+ off-trail miles' are wrong. Off-trail travel is limited to the few miles beyond the Cat Basin trail.",
+   "sources": [
+    "https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/",
+    "https://peakery.com/mount-carrie-washington/summits/178897/",
+    "https://mountainflamingo.com/2017-08-26-27-seven-lakes-basin-loop-and-mount-carrie/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "typically a 2+ day backpack (roughly 15+ off-trail miles with major elevation gain/loss) through Cat Basin/High Divide to a high camp before the scramble",
+     "replace": "typically one full day on trail to a camp at Heart Lake or Cat Basin, followed by a very long summit day across the Catwalk",
+     "id": "wa_mount_carrie_se_route",
+     "fact": "Approach days"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Aspect / face of the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Carrie Glacier lies in the peak's northeast cirque, flowing north-northeast from about 6,800 ft, while the standard ascent climbs the southwest ridge via the Catwalk. The row mixes both: its approach and face follow the SW-ridge line while beta/itinerary describe a NE glacier entry. No source documents this glacier variation as a climbing line, so the correct aspect/face cannot be settled; the row's own corrections note flags the same identity problem.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Carrie_Glacier",
+    "https://en.wikipedia.org/wiki/Mount_Carrie"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Whether the route crosses the Catwalk",
+   "verdict": "fixed",
+   "correct_value": "Yes, every Sol Duc approach to Carrie, including to the Carrie Glacier, crosses the Catwalk",
+   "evidence": "The only documented approach to Carrie is the High Divide and Cat Walk; a party that went on to ski the Carrie Glacier crossed the Catwalk first, and Bailey Range traverses all cross it between Cat Peak and Carrie. Beta's 'instead of exposed Catwalk' was the outlier.",
+   "sources": [
+    "https://www.turns-all-year.com/trip-reports/august-4-8-2011-onp-mt-carrie-mt-ruth",
+    "https://en.wikipedia.org/wiki/Mount_Carrie",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Summit approach similar to the SE route, but entry via glacier instead of exposed Catwalk.",
+     "replace": "The approach, Catwalk included, is the same as the southwest ridge line; only the final entry to the summit differs, via the glacier.",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Whether the route crosses the Catwalk"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Direction and length of the High Divide leg",
+   "verdict": "fixed",
+   "correct_value": "From the junction just above Heart Lake the Cat Basin trail heads EAST toward Cat Peak; Bogachiel Peak is west",
+   "evidence": "The Cat Basin primitive trail leaves the High Divide trail just above Heart Lake and runs eastward; the Bailey Range way branches southeast toward Cat Peak. Trip reports go east from Heart Lake to Cat Basin and west to Bogachiel. This agrees with the junction waypoint 0.45 mi past Heart Lake and Cat Peak lying east. Patched the approach, the junction note and the approach variant notes; the unsourced '3 miles' was dropped.",
+   "sources": [
+    "https://www.trailrunproject.com/trail/7001988/cat-basin-primitive-trail",
+    "https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/",
+    "https://www.wta.org/go-hiking/hikes/cat-basin-primitive"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "and follow High Divide south/west about 3 miles to where the maintained trail ends near Bogachiel Peak. From there",
+     "replace": "and turn east onto the primitive Cat Basin trail toward Cat Basin and Cat Peak. From there",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Direction and length of the High Divide leg"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "a boot path continues west along the divide crest toward Cat Peak",
+     "replace": "a primitive trail continues east along the divide crest toward Cat Peak",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Direction and length of the High Divide leg"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "gain the High Divide crest and follow it south and west to where the maintained trail ends.",
+     "replace": "gain the High Divide crest and follow the primitive trail east from the junction above the lake toward Cat Basin.",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Direction and length of the High Divide leg"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Trailhead pass and permit",
+   "verdict": "fixed",
+   "correct_value": "Olympic National Park entrance fee (or America the Beautiful pass); overnight stays need an ONP wilderness permit reserved for this quota area",
+   "evidence": "Sol Duc lies inside Olympic National Park: the park entrance fee ($30 or an interagency pass) is checked on Sol Duc Hot Springs Road and a Northwest Forest Pass is not valid there. Sol Duc/Seven Lakes Basin is a quota wilderness area reserved on Recreation.gov, not a self-issue permit.",
+   "sources": [
+    "https://gowanderwild.com/sol-duc-falls-trail-guide/",
+    "https://parkscollecting.com/sol-duc-falls-trail/",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Northwest Forest Pass and a self-issue wilderness permit are required.",
+     "replace": "an Olympic National Park entrance pass is required, and overnight stays need a reserved wilderness permit.",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Trailhead pass and permit"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "You need a Northwest Forest Pass and a self-issue wilderness permit, and cross-country camping in the Bailey Range needs an Olympic National Park wilderness permit,",
+     "replace": "You need an Olympic National Park entrance pass, and any overnight stay, including cross-country camping in the Bailey Range, needs an Olympic National Park wilderness permit,",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Trailhead pass and permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Glacier head location / elevation",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Carrie Glacier heads at about 6,800 ft in the northeast cirque",
+   "evidence": "The glacier heads at about 6,800 ft in Carrie's northeast cirque and flows north-northeast. Overview, beta, the glacier waypoint note and the approach variant all say northeast cirque; pitch_detail's 'just south of the summit' is the lone outlier. The two encyclopedia pages share one origin, so this counts as one external source plus the row.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Carrie_Glacier",
+    "https://en.wikipedia.org/wiki/Mount_Carrie"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "near the glacier head just south of the summit",
+     "replace": "near the glacier head in the northeast cirque below the summit",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Glacier head location / elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_carrie_standard",
+   "fact": "Order of Cat Basin and the Catwalk (approach variant)",
+   "verdict": "fixed",
+   "correct_value": "Cat Basin lies before the Catwalk",
+   "evidence": "Same sequence as on the sibling route: Heart Lake -> High Divide -> Cat Basin -> Cat Peak -> Catwalk -> Boston Charlie's. The approach variant name and notes put Cat Basin beyond the Catwalk, contradicting this row's pitch_detail (TH to Cat Basin, then the Catwalk).",
+   "sources": [
+    "https://www.turns-all-year.com/trip-reports/august-4-8-2011-onp-mt-carrie-mt-ruth",
+    "https://trailcatjim.com/mt-carrie-via-southwest-ridge-seven-lakes-loop-bogachiel-peak/",
+    "https://mountainflamingo.com/2017-08-26-27-seven-lakes-basin-loop-and-mount-carrie/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "High Divide and the Catwalk to Cat Basin",
+     "replace": "High Divide and Cat Basin to the Catwalk",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Order of Cat Basin and the Catwalk (approach variant)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "linking the divide to the Bailey Range, to reach Cat Basin.",
+     "replace": "linking the divide to the Bailey Range, to reach the first camp beyond it.",
+     "id": "wa_mount_carrie_standard",
+     "fact": "Order of Cat Basin and the Catwalk (approach variant)"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "applied": [
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Days of approach"
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Days of approach"
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Rope note describes a different White Mountain"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "very high fitness required; approach is a multi-day backpack through the Duckabush / La Crosse-area trail system into the southern interior of the park before any scrambling begins",
+      "packWeight": "multi-day/overnight backpacking load (tent, food, navigation gear) rather than a single-push day pack, given the remote approach"
+     },
+     "approachTime": "multi-day approach (likely 2+ days each way) via Duckabush / La Crosse Basin / O'Neil Pass trails into the southern interior before the Class 2-3 summit scramble",
+     "requiredSkills": [
+      "off-trail routefinding and navigation (map/compass/GPS) in a remote, sparsely-traveled area",
+      "Class 2-3 scrambling on unmarked terrain",
+      "snow travel / ice axe self-arrest for lingering snowfields",
+      "wilderness self-sufficiency and self-rescue judgment, since access is committing and self-evacuation distances are long",
+      "backcountry camping/permit logistics for a multi-day Olympic National Park trip"
+     ],
+     "experienceLevel": "intermediate-to-advanced scrambler comfortable with off-trail Class 2-3 terrain and committing, self-supported wilderness travel - not a beginner objective given the remote access and long self-evacuation distances already noted"
+    },
+    "rope_note": "Could not find a route-specific source for this particular White Mountain (Olympic Mountains, Grand Valley/Hurricane Ridge area); inferred as a non-technical Class 2 talus/ridge scramble."
+   }
+  }
+ ]
+}

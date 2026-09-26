@@ -1,0 +1,284 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "column": "season",
+   "path": [],
+   "fact": "Season: June"
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Season: June"
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Season: June"
+  },
+  {
+   "id": "wa_tower_arete",
+   "column": "rope_length_m",
+   "path": [],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_tower_arete",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Rope length"
+  },
+  {
+   "id": "wa_tower_arete",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_tower_arete",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "column": "alpine_grade",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "column": "sling_rack",
+   "path": [
+    "cams"
+   ],
+   "fact": "Cam sizes for the offwidth crux"
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "column": "climate",
+   "path": [
+    "spring"
+   ],
+   "fact": "Road opening"
+  },
+  {
+   "id": "wa_ne_couloir",
+   "column": "road",
+   "path": [
+    "name"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_ne_couloir",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead / road"
+  },
+  {
+   "id": "wa_ne_couloir",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Grade"
+  },
+  {
+   "id": "wa_ne_couloir",
+   "column": "climate",
+   "path": [
+    "spring"
+   ],
+   "fact": "Road opening"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "before": {
+    "season": "Jun-Sep",
+    "waypoints": [
+     {
+      "lat": 47.685162,
+      "lng": -123.039683,
+      "elev": 270,
+      "name": "Duckabush Trailhead",
+      "note": "Northwest Forest Pass or $5 day-use fee required at this vault-toilet trailhead; overnight parties need an Olympic NP wilderness permit once the trail crosses the park boundary.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.69273,
+      "lng": -123.10875,
+      "elev": 1100,
+      "name": "Five Mile Camp",
+      "note": "Established riverside camp along the Duckabush River Trail; reliable river water, treat before drinking.",
+      "type": "Campsite",
+      "distMi": 5
+     },
+     {
+      "lat": 47.676317,
+      "lng": -123.201467,
+      "elev": 1400,
+      "name": "Ten Mile Camp",
+      "note": "Last established campsite before the trail turns south for La Crosse Pass; sits at 1,400 ft with river water nearby.",
+      "type": "Campsite",
+      "distMi": 10.7
+     },
+     {
+      "lat": 47.633283,
+      "lng": -123.2974,
+      "elev": 2600,
+      "name": "La Crosse Pass Trail Junction",
+      "note": "Duckabush River Trail forks here onto the La Crosse Pass Trail, which immediately switchbacks steeply up the valley wall toward the pass.",
+      "type": "Junction",
+      "distMi": 16.7
+     },
+     {
+      "lat": 47.6858925,
+      "lng": -123.2907027,
+      "elev": 5566,
+      "name": "La Crosse Pass",
+      "note": "No water at the pass (dry for miles either direction); leave the maintained trail here and start the cross-country climb north across heather and talus toward the summit ridge.",
+      "type": "Junction",
+      "distMi": 23.1
+     },
+     {
+      "lat": 47.684773,
+      "lng": -123.312194,
+      "elev": 6417,
+      "name": "Mount La Crosse",
+      "note": "True summit reached via open heather benches and talus on the broad ridge crest, Class 2-3; best climbed June-September before snow returns.",
+      "type": "Summit",
+      "distMi": null
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Duckabush River Trail to La Crosse Pass",
+      "notes": "A long valley walk to the La Crosse Pass junction, then a steep switchbacking climb of roughly three thousand feet in about a mile to the pass — loose and eroded in places and considerably harder coming down on tired legs. The West Fork Dosewallips reaches the same pass on a gentler grade and is the kinder exit if you are through-hiking.",
+      "season": "Late June to September",
+      "hazards": [
+       "No water at the pass or above it — carry from a creek far below",
+       "Open, sparsely cairned country that is easy to lose in fog",
+       "Snow on north-facing slopes and gullies into early July",
+       "Loose talus that is more hazardous descending than climbing",
+       "Bear canisters required and a self-rescue distance measured in days"
+      ],
+      "baseFinding": "La Crosse Pass is a bald, waterless saddle on the Duckabush–Dosewallips divide, with maintained trail crossing it and dropping steeply away on both sides — there is nothing else like it for miles and you cannot arrive at it by accident. Leave the tread at the top of the pass and head north onto open heather and talus. There is no gully mouth or rock step to find here: the climb begins straight off the trail, so the thing to identify is the correct ridge rather than a base. The line is the broad crest running north out of the saddle, and once the heather benches give way to talus that crest is the handrail all the way to the top. Two things pull people the wrong way. White Mountain stands less than a mile southwest and is the more obvious summit from the pass. And the Anderson massif filling the northern skyline is much further off than it looks, so do not use it as your aiming point. In early summer lingering snowfields bury the ground around the pass and the tread is routinely lost on the way back down — take a bearing off the saddle before you leave it."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_tower_arete",
+   "before": {
+    "rope_length_m": 30,
+    "rope_note": "4th-class arete/ridge scramble; a short rope may be carried for exposed sections, but many parties solo it unroped.",
+    "road": {
+     "name": "Freezeout Ridge Trailhead, via East Chewuch Road / FS-37 / FS-39, north of Winthrop",
+     "status": "Paved/gravel out of Winthrop for the first stretch, becoming rough gravel for the final ~3.2 miles up FS-39 to Freezeout Pass; limited parking at the trailhead.",
+     "driveNote": "Several hours from Seattle via Hwy 20 to Winthrop, then roughly 45 min-1 hour further up the Chewuch River road system.",
+     "seasonalGate": "Snow-free roughly late June through end of September; snowbound/impassable most of the rest of the year"
+    }
+   }
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "before": {
+    "alpine_grade": "VI-",
+    "sling_rack": {
+     "cams": "light rack 0.3-2in (small-mid)",
+     "nuts": "small nut set",
+     "runners": "4-6 shoulder slings, 2 double-length"
+    },
+    "road": {
+     "name": "Freezeout Ridge Trailhead, via East Chewuch Road / FS-37 / FS-39, north of Winthrop",
+     "status": "Paved/gravel out of Winthrop for the first stretch, becoming rough gravel for the final ~3.2 miles up FS-39 to Freezeout Pass; limited parking at the trailhead.",
+     "driveNote": "Several hours from Seattle via Hwy 20 to Winthrop, then roughly 45 min-1 hour further up the Chewuch River road system.",
+     "seasonalGate": "Snow-free roughly late June through end of September; snowbound/impassable most of the rest of the year"
+    },
+    "climate": {
+     "fall": "Dry, stable weather early fall (September); rapidly deteriorating by late September",
+     "spring": "Lower sections may have snow; roads may not be accessible until mid-May",
+     "summer": "Generally dry rock conditions; occasional afternoon storms; best climbing conditions June-August",
+     "winter": "Snow and ice on route; not typically attempted",
+     "typical": "High alpine environment; afternoon thunderstorms common in summer; wind exposure on ridge",
+     "forecastZone": "WAZ049 (Western Okanogan County)"
+    }
+   }
+  },
+  {
+   "id": "wa_ne_couloir",
+   "before": {
+    "road": {
+     "name": "Freezeout Ridge Trailhead, via East Chewuch Road / FS-37 / FS-39, north of Winthrop",
+     "status": "Paved/gravel out of Winthrop for the first stretch, becoming rough gravel for the final ~3.2 miles up FS-39 to Freezeout Pass; limited parking at the trailhead.",
+     "driveNote": "Several hours from Seattle via Hwy 20 to Winthrop, then roughly 45 min-1 hour further up the Chewuch River road system.",
+     "seasonalGate": "Snow-free roughly late June through end of September; snowbound/impassable most of the rest of the year"
+    },
+    "waypoints": [
+     {
+      "lat": 48.7004,
+      "lng": -119.954,
+      "elev": 6760,
+      "name": "Tiffany Springs Campground",
+      "note": "Follow Trail #373 east past Tiffany Lake to Honeymoon Pass (~45 min), then traverse south to the base of the North Face.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.67089,
+      "lng": -119.9321,
+      "elev": 8245,
+      "name": "Tiffany Mountain",
+      "note": "NE Couloir is a moderate snow/scramble line (low 5th/AI1-2) up the north-facing gully to the summit slope.",
+      "type": "Summit",
+      "distMi": 3
+     }
+    ],
+    "climate": {
+     "fall": "Rapidly clearing conditions; window closes by late September as new snow arrives",
+     "spring": "Heavy snow coverage; roads may not be accessible until May",
+     "summer": "Snow field conditions June-July; bare by late August; wildflowers peak mid-June through July",
+     "winter": "Heavy snow accumulation; not typically attempted",
+     "typical": "High alpine environment with persistent snow into June-July; dry in August-September",
+     "forecastZone": "WAZ049 (Western Okanogan County)"
+    }
+   }
+  }
+ ]
+}

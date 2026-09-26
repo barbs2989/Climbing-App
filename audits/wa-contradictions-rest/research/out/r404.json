@@ -1,0 +1,348 @@
+{
+ "file": "r404.json",
+ "results": [
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Gold Run Pass elevation and position",
+   "verdict": "fixed",
+   "correct_value": "The Yellow Aster Butte trail leaves the Tomyhoi Lake Trail at a signed fork about 1.5 mi from the trailhead; Gold Run Pass (~5,400 ft, GNIS 5,426 ft) lies about 0.5 mi up the RIGHT (Tomyhoi Lake) branch and is not on this route.",
+   "evidence": "Both Forest Service trail pages put the Yellow Aster Butte junction about 1.5 mi from the trailhead, with the Tomyhoi Lake branch continuing up to Gold Run Pass. The WTA Tomyhoi Lake page puts Gold Run Pass half a mile past that junction with a high point of 5,400 ft; GNIS/topo listings give 5,426 ft. The waypoint (5,427 ft, 1.5 mi fork) is right; the approach prose's 2.3-2.5 mi junction and ~5,900 ft pass, and the descent 'through Gold Run Pass', are wrong. The pitch_detail 5,900 ft figure is the Yellow Aster trail's high point (Mountaineers wording 'Gold Run Pass Trail to 5,900 ft'), so only the pass name is removed there.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/tomyhoi-lake-trail-686",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/yellow-aster-butte-trail-6861",
+    "https://www.wta.org/go-hiking/hikes/tomyhoi-lake",
+    "https://www.wta.org/go-hiking/hikes/yellow-aster-butte",
+    "https://www.topozone.com/washington/whatcom-wa/gap/gold-run-pass/",
+    "https://www.mountaineers.org/activities/routes-places/tomyhoi-peak-southeast-route"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "At roughly 2.3-2.5 miles (~5,400 ft) you reach the signed junction with the Tomyhoi Lake Trail, which splits off to the right; stay left/straight, continuing up toward Gold Run Pass (~5,900 ft). From the pass area the trail contours",
+     "replace": "At roughly 1.5 miles you reach the signed junction with the Tomyhoi Lake Trail, which splits off to the right toward Gold Run Pass (~5,400 ft); stay left on the Yellow Aster Butte Trail. Beyond the junction the trail contours",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Gold Run Pass elevation and position"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "At roughly 2.3-2.5 miles near 5,400 ft the signed Tomyhoi Lake Trail splits off RIGHT. Stay left and continue toward Gold Run Pass near 5,900 ft, then contour",
+     "replace": "At roughly 1.5 miles the signed Tomyhoi Lake Trail splits off RIGHT toward Gold Run Pass near 5,400 ft. Stay left, then contour",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Gold Run Pass elevation and position"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "Yellow Aster Butte Trail #686 over Gold Run Pass, then",
+     "replace": "Yellow Aster Butte Trail, then",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Gold Run Pass elevation and position"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Maintained Yellow Aster Butte/Gold Run Pass Trail to ~5,900 ft",
+     "replace": "Maintained trail, staying left at the Tomyhoi Lake Trail fork, on the Yellow Aster Butte Trail to ~5,900 ft",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Gold Run Pass elevation and position"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "back down through Gold Run Pass and the Yellow Aster Butte Trail",
+     "replace": "back down the Yellow Aster Butte Trail",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Gold Run Pass elevation and position"
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "The Yellow Aster Butte/Tomyhoi Lake trailhead is at ~3,600-3,700 ft. The Keep Kool trailhead is a different, older trailhead lower on Twin Lakes Road (~2,960-3,150 ft) and is not this route's start.",
+   "evidence": "Steph Abegg's report puts the Yellow Aster Butte trailhead at about 3,600 ft; the Mountaineers route page gives 3,700 ft; the WTA Tomyhoi Lake page puts Gold Run Pass (5,400 ft) 1,800 ft above the trailhead, i.e. ~3,600 ft. SummitPost's Keep Kool Trail page places the abandoned Keep Kool trailhead 2.4 mi up Twin Lakes Road at 2,960 ft, and a trip report starting there cites 3,150 ft — so the 3,150 figure and the 'also called Keep Kool' label both come from conflating the two trailheads.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/tomyhoi/",
+    "https://www.mountaineers.org/activities/routes-places/tomyhoi-peak-southeast-route",
+    "https://www.wta.org/go-hiking/hikes/tomyhoi-lake",
+    "https://www.summitpost.org/keep-kool-trail/566056",
+    "https://trailcatjim.com/tomyhoi-peak-via-southeast-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "trailhead (also called the \"Keep Kool\" trailhead, ~3,600-3,700 ft)",
+     "replace": "trailhead (~3,600-3,700 ft)",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "trailhead (also called the \"Keep Kool\" trailhead, ~3,600-3,700 ft)",
+     "replace": "trailhead (~3,600-3,700 ft)",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "trailhead — also called the Keep Kool trailhead, around 3,600-3,700 ft — on",
+     "replace": "trailhead, around 3,600-3,700 ft, on",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "from the Keep Kool (Twin Lakes Road) trailhead",
+     "replace": "from the Yellow Aster Butte (Twin Lakes Road) trailhead",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "from the Keep Kool (Twin Lakes Road) trailhead",
+     "replace": "from the Yellow Aster Butte (Twin Lakes Road) trailhead",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "label"
+     ],
+     "find": "Leave Keep Kool trailhead",
+     "replace": "Leave Yellow Aster Butte trailhead",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "Elev. ~3,150 ft on Twin Lakes Road",
+     "replace": "Elev. ~3,600 ft on Twin Lakes Road",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Trailhead elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "from trailheads at 3,150–3,700 ft",
+     "replace": "from the trailhead at about 3,600-3,700 ft",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Trailhead elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Glacier travel",
+   "verdict": "fixed",
+   "correct_value": "No roped glacier travel, but the route does traverse the top edge of the small Tomyhoi Glacier remnant below the false summit.",
+   "evidence": "The Mountaineers route description has parties traverse the top edge of the glacier to avoid several rock pinnacles; a detailed trip report describes the path above the Tomyhoi Glacier and a shallow moat between rock and ice. Every other field on the row (beta, approach, approach_variants, pitch_detail, waypoints, obj_haz) agrees; only seasonal_hazards.crevasses said the route does not cross it.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/tomyhoi-peak-southeast-route",
+    "https://trailcatjim.com/tomyhoi-peak-via-southeast-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "the approach passes near/below a small permanent snowfield (sometimes called the Tomyhoi Glacier); early-season snow bridges or moats near its edge warrant caution even though the route itself does not cross it",
+     "replace": "the route traverses the top edge of a small permanent snowfield (the Tomyhoi Glacier remnant) below the false summit; moats and early-season snow bridges along its edge warrant caution",
+     "id": "wa_tomyhoi_peak_southeast_ridge",
+     "fact": "Glacier travel"
+    }
+   ]
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Moat/notch waypoint coordinates",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The moat and notch pins do sit far from the summit their 6-6.5 mi distances and prose describe, but pin positions (lat/lng) are out of scope for this pass; elevations, names and distMi are consistent with the prose. Left for the pin-repair workflow.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_tomyhoi_peak_southeast_ridge",
+   "fact": "Wilderness permit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Forest Service trail pages for Tomyhoi Lake #686 and Yellow Aster Butte #686.1 list only a recreation pass and say wilderness regulations apply; the MBS permit/regulation pages describe mandatory self-issue permits only for the Alpine Lakes Wilderness. WTA says only that other national-forest wilderness trailheads 'may' have a self-registration kiosk. No two sources settle whether a self-issue wilderness permit is required here, and the conflicting text is in bivy[0].permit, which this pass may not patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/tomyhoi-lake-trail-686",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "Which way at the High Pass Trail junction",
+   "verdict": "fixed",
+   "correct_value": "Stay LEFT (straight) at the High Pass Trail #676 junction for Winchester; #676 goes right.",
+   "evidence": "The Forest Service Winchester Mountain Trail 685 page says to stay left at the High Pass junction to continue to the lookout; the High Pass Trail 676 page says to take a right for High Pass and that the left fork continues to the Winchester Lookout. WTA says to continue straight at the junction. The waypoint note and itinerary schedule saying right are wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/winchester-mountain-trail-685",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676",
+    "https://www.wta.org/go-hiking/hikes/winchester-mountain"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "bear right/uphill onto Winchester Mountain Trail 685 while High Pass Trail continues north toward Mount Larrabee",
+     "replace": "stay left on Winchester Mountain Trail 685 while High Pass Trail 676 branches right toward Mount Larrabee",
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Which way at the High Pass Trail junction"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "Stay straight/right for Winchester",
+     "replace": "Stay left/straight for Winchester",
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Which way at the High Pass Trail junction"
+    }
+   ]
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "Where the lingering snow lies",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Forest Service and Wikipedia say only that steep, exposed snowfields linger into July/August, with no aspect. One source describes the trail crossing the treeless southeast slope, which supports the approach's 'southeast slopes' but no second source names the aspect of the snow, so the north/east (hazards[0]) and south/west (partner_requirements, seasonal_guidance, seasonal_hazards.exposure) wording is left unpatched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/winchester-mountain-trail-685",
+    "https://en.wikipedia.org/wiki/Winchester_Mountain_Lookout"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "Lookout restoration club name",
+   "verdict": "fixed",
+   "correct_value": "Mount Baker Club (it operated for a period under the name Mount Baker Hiking Club before regaining its original name).",
+   "evidence": "Wikipedia says the Mount Baker Club, led by Gary Haufle, restored the lookout in 1982 and maintains it with two work parties a year. WhatcomTalk's history of the Mount Baker Club confirms Haufle led the club's 1982 Winchester restoration and that the club was called 'Mount Baker Hiking Club' for a time before regaining its original name. WTA still uses the older 'Mount Baker Hiking Club' name. Same club; adopt its current name.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Winchester_Mountain_Lookout",
+    "https://www.whatcomtalk.com/2019/11/04/mount-baker-club-bellinghams-oldest-outdoor-recreational-organization/",
+    "https://www.wta.org/go-hiking/hikes/winchester-mountain"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "maintained by Mount Baker Hiking Club volunteers",
+     "replace": "maintained by Mount Baker Club volunteers",
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Lookout restoration club name"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "typical"
+     ],
+     "find": "the historic Mount Baker Hiking Club lookout",
+     "replace": "the historic lookout",
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "Lookout restoration club name"
+    }
+   ]
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "fact": "dist_km vs one-way distance",
+   "verdict": "fixed",
+   "correct_value": "2.7 km (1.7 mi one way)",
+   "evidence": "WTA gives 3.4 miles round trip and other trail listings 3.4-3.5 mi, i.e. ~1.7 mi (2.7 km) one way, matching the summit waypoint distMi 1.7, the approach prose and the itinerary. The stored 2.1 km (1.3 mi) is the distance to the ridge saddle, not the trailhead-to-summit leg.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/winchester-mountain",
+    "https://www.alltrails.com/trail/us/washington/winchester-mountain-trail"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 2.1,
+     "value": 2.7,
+     "id": "wa_winchester_mountain_south_trail",
+     "fact": "dist_km vs one-way distance"
+    }
+   ]
+  }
+ ]
+}

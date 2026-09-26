@@ -1,0 +1,1772 @@
+{
+ "batches": [
+  "b045.json",
+  "b046.json",
+  "b047.json",
+  "b048.json"
+ ],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "name": "Southwest Couloir",
+   "area": "South Early Winters Spire",
+   "contradictions": [
+    {
+     "fact": "Commitment grade (I vs II)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade I, snow to 50°"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade II (sometimes rated Grade I)"
+      }
+     ],
+     "why": "The crux/grade column calls it Grade I while commitment and alpine_grade (which renders as the header pill) call it Grade II.",
+     "internal_resolution": "commitment and alpine_grade both say II; alpine_grade itself notes I as an alternative rating, so `grade` is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Blue Lake Trailhead distance from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From the Blue Lake Trailhead (1 mile west of Washington Pass on SR-20)"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "about 1 mi west of Washington Pass"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "~1.5 miles west of Washington Pass, 5,400 ft"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "From the Blue Lake Trailhead on SR-20 about 1.5 miles west of Washington Pass"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "roughly half a mile west of Washington Pass"
+      }
+     ],
+     "why": "The same trailhead is placed 0.5, 1 and 1.5 miles west of Washington Pass in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_golden_age",
+   "name": "Golden Age",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "established May-Jun (top-down, using spring snow); climbable through summer"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Summer, once the wall has dried; the pitches used to reach it are the same ones that seep into early summer in wet years."
+      },
+      {
+       "field": "best_season",
+       "says": "climbable through summer once the gully has melted out"
+      }
+     ],
+     "why": "The season column leads with May-Jun, which is when the first ascent was established, not when the route is climbable; the header's short season can therefore read May-Jun while the approach says summer only.",
+     "internal_resolution": "approach_variants and best_season both give summer; the May-Jun in `season` is FA history.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_ellen_pea",
+   "name": "Ellen Pea",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "7"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "7 numbered rows"
+      },
+      {
+       "field": "overview",
+       "says": "a sustained 7-pitch 5.11c"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "The 'Supercave' route: 8 pitches of 5.11c passing beneath the wall's huge signature cave"
+      }
+     ],
+     "why": "The waypoint note says 8 pitches while the pitches column, the breakdown and the overview say 7.",
+     "internal_resolution": "pitches, pitch_detail and overview agree on 7; the waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel descent time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.descentTimeHrs",
+       "says": "1"
+      },
+      {
+       "field": "rappels",
+       "says": "Two-rope rappel back down the route (~1 hour)"
+      },
+      {
+       "field": "descent_text",
+       "says": "Figure roughly an hour from the summit/top of the route back to the base."
+      },
+      {
+       "field": "itinerary",
+       "says": "then 2–3+ hours of double-rope rappelling back to the base and the descent gully to the car"
+      }
+     ],
+     "why": "The descent is given as about 1 hour in three fields and 2–3+ hours in the itinerary.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "0.75"
+      },
+      {
+       "field": "approach",
+       "says": "it takes roughly 1 hour to reach the lower ledge and about 1 hour 10 minutes to reach the upper ledge and base of the longer routes"
+      },
+      {
+       "field": "itinerary",
+       "says": "roughly 1–1.2 hour approach"
+      }
+     ],
+     "why": "PUBLISHED TIMES gives a 45-minute approach while the approach prose and itinerary give 1–1.2 hours to the upper ledge where this route starts.",
+     "internal_resolution": "approach, road.status and itinerary agree on ~1h10 to the upper ledge; timing.approachTimeHrs is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "M&M Wall pullout (milepost 166) elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "4900"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "the broad pullout further east sits at roughly 4,300 ft and serves the M&M Wall"
+      }
+     ],
+     "why": "The same parking pullout is given as 4,900 ft in the waypoint list and ~4,300 ft in the camping card, a 600 ft gap that also drives gain_ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "'Upper ledge' waypoint typed Topout at the base",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].type",
+       "says": "Topout"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Upper ledge, M&M Wall"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5895"
+      },
+      {
+       "field": "waypoints[2].name",
+       "says": "M&M Wall (Supercave) base area"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "5895"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "The 'Supercave' route: 8 pitches of 5.11c"
+      }
+     ],
+     "why": "The waypoint named for the upper ledge (where the long routes START) is typed Topout and sits at the exact coordinates and elevation of the Base waypoint, so the list shows the top of the climb at the height of its base.",
+     "internal_resolution": "approach and approach_variants both describe the upper ledge as the base of the long routes; the Topout type is the error.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "SR-20 closed seasonally (roughly Nov-Apr)"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "typically early-mid December to mid-April/May"
+      }
+     ],
+     "why": "ACCESS says the highway closes from November while two other fields say early-mid December.",
+     "internal_resolution": "Two fields (access.seasonal, road.seasonalGate) agree on early/mid December; access.closures is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "name": "The L & H Route (Free Variation)",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "8"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "8 numbered rows"
+      },
+      {
+       "field": "overview",
+       "says": "an 8-pitch outing on immaculate granite"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "7-pitch 5.12 (7b+) free variation of the original L&H aid line."
+      }
+     ],
+     "why": "The waypoint note says 7 pitches while the pitches column, breakdown and overview say 8.",
+     "internal_resolution": "pitches, pitch_detail and overview agree on 8; the waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "M&M Wall pullout (milepost 166) elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "4900"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "the broad pullout further east sits at roughly 4,300 ft and serves the M&M Wall"
+      }
+     ],
+     "why": "The same parking pullout is given as 4,900 ft in the waypoint list and ~4,300 ft in the camping card, a 600 ft gap that also drives gain_ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "'Upper ledge' waypoint typed Topout at the base",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].type",
+       "says": "Topout"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Upper ledge, M&M Wall"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5895"
+      },
+      {
+       "field": "waypoints[2].name",
+       "says": "M&M Wall (Supercave) base area"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "5895"
+      }
+     ],
+     "why": "The waypoint named for the upper ledge (where the long routes START) is typed Topout and sits at the exact coordinates and elevation of the Base waypoint, so the list shows the top of the climb at the height of its base.",
+     "internal_resolution": "approach and approach_variants both describe the upper ledge as the base of the long routes; the Topout type is the error.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "SR-20 closed seasonally (roughly Nov-Apr)"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "typically early-mid December to mid-April/May"
+      }
+     ],
+     "why": "ACCESS says the highway closes from November while two other fields say early-mid December.",
+     "internal_resolution": "Two fields (access.seasonal, road.seasonalGate) agree on early/mid December; access.closures is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_tiger",
+   "name": "The Tiger",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.12-"
+      },
+      {
+       "field": "pitch_detail[6].grade",
+       "says": "5.12-"
+      },
+      {
+       "field": "beta",
+       "says": "a bouldery 5.12- crux (underclings under a roof) at pitch 7"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.12b"
+      }
+     ],
+     "why": "The header pill (rock_grade) shows 5.12b while the crux column, the breakdown and the beta all give 5.12-.",
+     "internal_resolution": "grade, pitch_detail and beta agree on 5.12-; rock_grade's 5.12b is a sharper claim no other field supports.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "40–60 minute approach"
+      },
+      {
+       "field": "approach",
+       "says": "about 1 hour 10 minutes to reach the upper ledge and base of the longer routes"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "~1 hr 10 min to the upper ledge"
+      }
+     ],
+     "why": "The itinerary allows 40–60 minutes for an approach the prose and waypoint put at 1h10 to this route's start.",
+     "internal_resolution": "approach, road.status and the trailhead waypoint agree on ~1h10.",
+     "needs_research": false
+    },
+    {
+     "fact": "M&M Wall pullout (milepost 166) elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "4900"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "the broad pullout further east sits at roughly 4,300 ft and serves the M&M Wall"
+      }
+     ],
+     "why": "The same parking pullout is given as 4,900 ft in the waypoint list and ~4,300 ft in the camping card, a 600 ft gap that also drives gain_ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "'Upper ledge' waypoint typed Topout at the base",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].type",
+       "says": "Topout"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Upper ledge, M&M Wall"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "5895"
+      },
+      {
+       "field": "waypoints[2].name",
+       "says": "M&M Wall (Supercave) base area"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "5895"
+      }
+     ],
+     "why": "The waypoint named for the upper ledge (where the long routes START) is typed Topout and sits at the exact coordinates and elevation of the Base waypoint, so the list shows the top of the climb at the height of its base.",
+     "internal_resolution": "approach and approach_variants both describe the upper ledge as the base of the long routes; the Topout type is the error.",
+     "needs_research": false
+    },
+    {
+     "fact": "SR-20 winter closure start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "Access via SR-20 is closed seasonally (roughly Nov-Apr) by WSDOT avalanche-safety gates"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "typically early-mid December to mid-April/May"
+      }
+     ],
+     "why": "ACCESS says the highway closes from November while two other fields say early-mid December.",
+     "internal_resolution": "Two fields (access.seasonal, road.seasonalGate) agree on early/mid December; access.closures is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "name": "The Exorcism of Mark Hanna",
+   "area": "M&M wall (AKA \"Supercave Wall\")",
+   "contradictions": [
+    {
+     "fact": "Start ledge / base elevation and gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].name",
+       "says": "Supercave gully to the LOWER ledge"
+      },
+      {
+       "field": "face",
+       "says": "Lower apron of the wall, beneath the start of Ellen Pea"
+      },
+      {
+       "field": "waypoints[2].name",
+       "says": "M&M Wall (Supercave) base area"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "5895"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Upper ledge, M&M Wall"
+      },
+      {
+       "field": "gain_ft",
+       "says": "1900"
+      }
+     ],
+     "why": "This 3-pitch (91 m) route starts from the LOWER ledge, yet its Base waypoint is at the upper-ledge elevation 5,895 ft and gain_ft is the same 1,900 ft as the 300 m routes above it; 4,900→5,895 ft plus 300 ft of climbing cannot total 1,900 ft.",
+     "internal_resolution": "approach_variants, face and baseFinding all place the start on the lower ledge; the waypoint/gain were copied from the long routes.",
+     "needs_research": true
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "0.75"
+      },
+      {
+       "field": "approach",
+       "says": "it takes roughly 1 hour to reach the lower ledge"
+      }
+     ],
+     "why": "PUBLISHED TIMES says 45 minutes to a start the approach prose puts at about 1 hour.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "M&M Wall pullout (milepost 166) elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "4900"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "the broad pullout further east sits at roughly 4,300 ft and serves the M&M Wall"
+      }
+     ],
+     "why": "The same parking pullout is given as 4,900 ft in the waypoint list and ~4,300 ft in the camping card, a 600 ft gap that also drives gain_ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "SR-20 winter closure start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "SR-20 closed seasonally (roughly Nov-Apr)"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "closes gate-to-gate roughly early December–mid/late April"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "typically early-mid December to mid-April/May"
+      }
+     ],
+     "why": "ACCESS says the highway closes from November while two other fields say early-mid December.",
+     "internal_resolution": "Two fields (access.seasonal, road.seasonalGate) agree on early/mid December; access.closures is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mcgregor_mountain_scramble",
+   "name": "Summit Block Scramble (from Stehekin)",
+   "area": "McGregor Mountain",
+   "contradictions": [
+    {
+     "fact": "Heaton Camp elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[3].elev",
+       "says": "7000"
+      },
+      {
+       "field": "overview",
+       "says": "to Heaton Camp at 7,000 ft"
+      },
+      {
+       "field": "approach",
+       "says": "to Heaton Camp at about 7,000 ft"
+      },
+      {
+       "field": "access.permit",
+       "says": "Heaton Camp, a single-party site for up to 12 people/stock at 7,000 ft"
+      },
+      {
+       "field": "beta",
+       "says": "Heaton Camp (~6,700 ft), the only established camp"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Camp and get water at Heaton Camp (~6,700 ft)"
+      }
+     ],
+     "why": "Heaton Camp is given as 7,000 ft in four fields and ~6,700 ft in two.",
+     "internal_resolution": "The waypoint, overview, approach and access.permit agree on 7,000 ft.",
+     "needs_research": true
+    },
+    {
+     "fact": "Gain to Heaton Camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "gaining roughly 6,500 ft over the next 5.5-6 miles to Heaton Camp at about 7,000 ft"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "5100"
+      },
+      {
+       "field": "waypoints",
+       "says": "High Bridge 1627 ft -> Heaton Camp 7000 ft (~5,370 ft)"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "~5,700-6,700 ft gain to trail's end/Heaton Camp"
+      }
+     ],
+     "why": "The approach says ~6,500 ft of gain to Heaton Camp (which is nearly the summit total), while the itinerary and the waypoint elevations give ~5,100–5,400 ft.",
+     "internal_resolution": "itinerary day 1 (5,100) and the waypoint elevations (1,627→7,000) agree; 6,500 ft is the trailhead-to-summit figure misapplied to camp.",
+     "needs_research": false
+    },
+    {
+     "fact": "Order of the McGregor junction vs Coon/Howard Lakes",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "at about 1.3 miles reach the signed junction where the McGregor Mountain Trail forks right and climbs past Coon Lake toward Howard Lake"
+      },
+      {
+       "field": "waypoints[1].directions",
+       "says": "passes Coon Lake and reaches Howard Lake. The signed McGregor Mountain junction is a short way past the lake"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "climbs steadily past Coon Lake to Howard Lake, and reaches the signed McGregor Mountain junction a short way past the lake"
+      },
+      {
+       "field": "overview",
+       "says": "past Howard Lake (historically Coon Lake)"
+      }
+     ],
+     "why": "The approach puts the junction before the lakes, the waypoint and approach variant put it after Howard Lake, and the overview treats Howard and Coon Lake as one lake.",
+     "internal_resolution": "waypoints[1] and approach_variants agree the junction is just past Howard Lake.",
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier travel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel on this route"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route"
+      },
+      {
+       "field": "approach",
+       "says": "Carry an ice axe if snow still covers the talus or the glacier traverse"
+      },
+      {
+       "field": "obj_haz[2]",
+       "says": "snow/glacier terrain"
+      },
+      {
+       "field": "climbing_route[1].notes",
+       "says": "carry an ice axe if snow still covers the talus or the glacier traverse"
+      }
+     ],
+     "why": "Safety says the route is non-glaciated with no glacier travel while the approach and route breakdown describe a 'glacier traverse' above the Sandalee Glacier.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Backcountry permit: where issued and whether it costs",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads."
+      },
+      {
+       "field": "access.permit",
+       "says": "Free NPS backcountry permit required for any overnight stay ... walk-up permits are issued at the Golden West Visitor Center in Stehekin"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "a free backcountry permit for Heaton Camp is required from the Golden West Visitor Center"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "backcountry permit required for overnight stays at the Golden West Visitor Center"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades National Park Service Complex backcountry permit, fee charged"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "there is no permit office or cell service in Stehekin"
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "The Golden West Visitor Center in Stehekin is closed."
+      },
+      {
+       "field": "bivy[2].permit",
+       "says": "THERE IS NO PERMIT OFFICE IN STEHEKIN"
+      }
+     ],
+     "why": "The row says both that no wilderness permit is needed and that one is required, that it is free and that a fee is charged, and that walk-up permits come from the Golden West Visitor Center while three other fields say that centre is closed and there is no permit office in Stehekin.",
+     "internal_resolution": "The 2-day itinerary camps at Heaton Camp, so a permit is required; overnight_permit, emergency and bivy agree there is no permit office in Stehekin.",
+     "needs_research": true
+    },
+    {
+     "fact": "Parking pass / highway closure copied from Washington Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads"
+      },
+      {
+       "field": "access.seasonal",
+       "says": "WA-20 (North Cascades Highway) closes gate-to-gate ... the entire Washington Pass corridor is car-inaccessible in winter."
+      },
+      {
+       "field": "road.status",
+       "says": "Gravel valley road served by NPS shuttle bus only — Stehekin itself has no highway connection"
+      }
+     ],
+     "why": "ACCESS lists Washington Pass parking passes and the SR-20 closure for a trip that starts by ferry at Stehekin with no car access.",
+     "internal_resolution": "road, approach and access.notes all place the trip in the Stehekin valley; the SR-20 text belongs to another corridor.",
+     "needs_research": false
+    },
+    {
+     "fact": "Stehekin Landing to High Bridge distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "11 miles up the Stehekin Valley Road to its end at High Bridge"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "the valley road runs eleven miles up to its end at High Bridge"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "some parties ride the fourteen miles up rather than wait for a shuttle"
+      }
+     ],
+     "why": "The valley road is 11 miles in three fields and fourteen miles in the camping card.",
+     "internal_resolution": "Three fields agree on 11 miles.",
+     "needs_research": false
+    },
+    {
+     "fact": "Length of the final scramble",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "The final ~1-mile summit scramble above the maintained Stehekin-side trail"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "7.5"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "7.8"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "the final quarter-to-half mile of exposed, technical scrambling"
+      }
+     ],
+     "why": "rope_note calls the scramble ~1 mile while the waypoints (7.5→7.8 mi) and itinerary put it at a quarter to half a mile.",
+     "internal_resolution": "Waypoints and itinerary agree on under half a mile.",
+     "needs_research": false
+    },
+    {
+     "fact": "Best months",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "optimal"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through September-September window"
+      },
+      {
+       "field": "best_season",
+       "says": "August-early September"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "August into early September is the reliable window"
+      }
+     ],
+     "why": "SEASONAL GUIDANCE rates July optimal while best_season and the approach say the reliable window starts in August.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "name": "Southwest Slopes",
+   "area": "Mount Arriva",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "4500"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "5600"
+      },
+      {
+       "field": "itinerary.days[1].gainFt",
+       "says": "1900"
+      },
+      {
+       "field": "itinerary.days[2].gainFt",
+       "says": "2400"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 5,600 ft of cumulative approach gain to a Silent Lakes camp at 7,000 ft, a short ~5 hr summit day on Arriva's south ridge (1,900 ft round trip)"
+      }
+     ],
+     "why": "The header gain is 4,500 ft while the itinerary totals 9,900 ft (and ~7,500 ft one-way to the summit), far more than rounding or a one-way/round-trip split explains.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day-1 gain/loss vs its own note",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Hike the Easy Pass Trail to the pass (~2.3 hr, +2,800 ft), then drop about 1,300 ft into Fisher Creek Basin"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "5600"
+      },
+      {
+       "field": "itinerary.days[0].lossFt",
+       "says": "2400"
+      }
+     ],
+     "why": "The day's own note gives +2,800 then -1,300 then a climb to a 7,000 ft camp (~4,600 gain / 1,300 loss), not 5,600 / 2,400.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8.1"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "7.2"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "7.2"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 14-16 mile round trip"
+      },
+      {
+       "field": "itinerary days sum",
+       "says": "16.9"
+      }
+     ],
+     "why": "dist_km is 5.0 mi, while the summit waypoint sits at 7.2 mi one-way and the itinerary totals 14–17 mi.",
+     "internal_resolution": "Waypoints and itinerary agree on ~7+ mi one-way; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager / National Park status",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District)."
+      },
+      {
+       "field": "access.landManager",
+       "says": "North Cascades National Park (Stephen Mather Wilderness)"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      },
+      {
+       "field": "overview",
+       "says": "at the east end of the Ragged Ridge group in North Cascades National Park"
+      },
+      {
+       "field": "access.permit",
+       "says": "A wilderness/backcountry permit is required for all overnight stays"
+      }
+     ],
+     "why": "One access field says the route is not in the National Park while the land manager, overview and permit fields say it is, which decides whether an NPS quota permit is needed.",
+     "internal_resolution": "overview, access.landManager, permit, itinerary.cal and bivy all place the peak in North Cascades NP; access.notes and access.land_manager describe only the trailhead side.",
+     "needs_research": false
+    },
+    {
+     "fact": "How to get the wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue NPS wilderness permit if bivying beyond the pass"
+      },
+      {
+       "field": "access.permit",
+       "says": "reserve on recreation.gov and pick it up in person at the Wilderness Information Center in Marblemount by 11am on the trip's start date"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "permits must be picked up by 11am on the start date"
+      }
+     ],
+     "why": "The trailhead waypoint says the permit is self-issued at the trailhead while ACCESS and the itinerary require an in-person pickup in Marblemount.",
+     "internal_resolution": "access.permit, overnight_permit and itinerary.cal agree on reservation/pickup; the waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Line from Fisher Creek Basin to the notch",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "climb the roughly 1,000-ft headwall to Silent Lakes (~7,000 ft) ... a roughly 1-mile westerly traverse across heather leads to a 7,200-ft saddle"
+      },
+      {
+       "field": "waypoints[3].name",
+       "says": "Fisher Creek Basin (below Arriva)"
+      },
+      {
+       "field": "waypoints[4].name",
+       "says": "Talus and snow apron below the SW slopes"
+      },
+      {
+       "field": "waypoints[5].name",
+       "says": "Notch gaining the south/southwest ridge"
+      }
+     ],
+     "why": "The waypoints go straight from Fisher Creek Basin (5,600 ft) up a talus apron to the notch, with no Silent Lakes camp, headwall or 7,200 ft saddle, which is the line every other field describes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of days / pack",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days",
+       "says": "3 days, packLb 38"
+      },
+      {
+       "field": "approach",
+       "says": "the standard approach is a 2-3 day off-trail trip"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "commonly done car-to-car in one long day or broken with a basin camp"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "Light single-push day pack (roughly 15-25 lbs) is typical"
+      }
+     ],
+     "why": "PARTNER REQUIREMENTS calls it a typical one-day light-pack push while the itinerary, approach and timing (19.2 hr over 3 days) describe a 2–3 day trip with a 38 lb pack.",
+     "internal_resolution": "itinerary, approach, timing and access all describe a multi-day trip.",
+     "needs_research": false
+    },
+    {
+     "fact": "Dogs at Easy Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "No dogs beyond the national park boundary, including at Easy Pass."
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "Dogs may come only as far as the pass"
+      }
+     ],
+     "why": "One field bans dogs at Easy Pass; the other allows them as far as the pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "name": "Southwest Slopes (Snow/Scramble)",
+   "area": "Mount Hardy",
+   "contradictions": [
+    {
+     "fact": "Which line the route describes",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Southwest Slopes (Snow/Scramble)"
+      },
+      {
+       "field": "face",
+       "says": "Southwest Slopes"
+      },
+      {
+       "field": "pitch_detail[0].pitch",
+       "says": "1: Forest Approach"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "Ridge crest and slabs; stay climber's right to avoid 5,200-foot cliff band"
+      },
+      {
+       "field": "approach",
+       "says": "From the PCT-Northbound (Rainy Pass) trailhead ... Leave the trail here: travel west/southwest, off-trail ... toward Mount Hardy's east ridge"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "head cross-country up the scree/talus benches on Hardy's southeast slope"
+      },
+      {
+       "field": "climbing_route[0].label",
+       "says": "East ridge to the saddle"
+      },
+      {
+       "field": "approach_variants[1].name",
+       "says": "Swamp Creek pullout and the south ridge"
+      }
+     ],
+     "why": "ROUTE BREAKDOWN is the Swamp Creek south ridge (forest, 5,200 ft cliff band), while APPROACH, waypoints, itinerary, CLIMBING ROUTE and DESCENT follow the Rainy Pass PCT to the east ridge/southeast slope, and the route is named Southwest Slopes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Granite Pass elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "drops slightly to Granite Pass (~6,700 ft)"
+      },
+      {
+       "field": "bivy[3].elev",
+       "says": "6300"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "Trail descends ~700 ft from Cutthroat Pass to this saddle"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "6200"
+      }
+     ],
+     "why": "Granite Pass is ~6,700 ft (a slight drop) in the approach and 6,300 ft in the camping card, with the adjacent waypoint 700 ft below Cutthroat Pass.",
+     "internal_resolution": "bivy (6,300) and the waypoint (a 700 ft drop to 6,200) agree; the approach's ~6,700 is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Water at Cutthroat Pass / Porcupine Creek",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "reaching Cutthroat Pass (6,820 ft) ... This is the last reliable water before the high country dries out in late summer, so top off here or at Porcupine Creek below."
+      },
+      {
+       "field": "bivy[2].water",
+       "says": "NONE AT THE PASS ... The last certain water is on the climb up, roughly three miles from the trailhead"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Last reliable, easy water before a long dry 7-8 mile stretch of switchbacks up to Cutthroat Pass"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "2"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "5"
+      }
+     ],
+     "why": "The approach says to fill up at Cutthroat Pass while the camping card says there is no water there; the Porcupine Creek waypoint calls the 3 miles to the pass a '7-8 mile' dry stretch.",
+     "internal_resolution": "bivy and the waypoint agree the last water is Porcupine Creek below the pass.",
+     "needs_research": false
+    },
+    {
+     "fact": "Snowy Lakes side trail: up or down",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[4].note",
+       "says": "descend/traverse west on the 0.8-mile Snowy Lakes side trail"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "6500"
+      },
+      {
+       "field": "waypoints[5].elev",
+       "says": "6900"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "before a short side-trail climb to a camp on the rocky bench above Upper Snowy Lake"
+      }
+     ],
+     "why": "The junction waypoint says the side trail descends while its elevations (6,500→6,900) and the itinerary say it climbs.",
+     "internal_resolution": "The elevations and itinerary agree it climbs.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance to Snowy Lakes camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "9.5"
+      },
+      {
+       "field": "waypoints[5].distMi",
+       "says": "10.3"
+      }
+     ],
+     "why": "Day 1 ends at the Snowy Lakes camp after 9.5 miles, but the camp waypoint is at 10.3 miles.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "When SR-20 opens",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "typically only accessible from around late May/June through October"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "access typically runs late May or June through October"
+      },
+      {
+       "field": "road.status",
+       "says": "Open seasonally only, typically ~May-November"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "SR-20 ... typically opens for the season in mid-to-late April"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "normally reopens between mid April and early May"
+      }
+     ],
+     "why": "The highway's opening is given as mid-April, May, and late May/June in different fields.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "No climbing or wilderness permit required"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No wilderness camping permit required"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[4]",
+       "says": "Basic wilderness permit self-issue know-how for the Rainy Pass approach"
+      }
+     ],
+     "why": "PARTNER REQUIREMENTS asks for permit self-issue know-how on an approach every access field says needs no permit.",
+     "internal_resolution": "permit, access and bivy all say no permit.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_house_buttress",
+   "name": "House Buttress",
+   "area": "Poster Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "name": "Blue's Buttress",
+   "area": "Poster Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach (Blue Lake TH / Liberty Bell vs Hairpin / Poster Peak)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Park at the Blue Lake Trailhead (about 5,200 ft ...) ... into the basin below the Liberty Bell Group ... The classic Beckey Route starts from the notch (about 7,300 ft) between Liberty Bell and Concord Tower"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Blue Lake Trailhead (SR-20)"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Blue Lake Trailhead (SR-20)"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "park at/near the Hairpin pullout on SR-20 just west of Washington Pass"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Park at the large hairpin-turn pullout on SR-20 about a mile east of Washington Pass — not the Blue Lake Trailhead, which serves the far side of the Liberty Bell group and puts you on the wrong mountain."
+      },
+      {
+       "field": "itinerary",
+       "says": "drive to the hairpin turnout"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "5:30 AM from Hairpin parking"
+      }
+     ],
+     "why": "APPROACH and the trailhead card send the party up the Blue Lake Trail to Liberty Bell's Beckey Route, while the approach variant, itinerary and timing start at the Hairpin and explicitly call Blue Lake the wrong mountain; the waypoint also puts the hairpin west of the pass.",
+     "internal_resolution": "approach_variants, itinerary, timing, access._raw and bivy context all use the Hairpin pullout east of Washington Pass; `approach` is text copied from a Liberty Bell route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "5477"
+      },
+      {
+       "field": "approach",
+       "says": "Blue Lake Trailhead (about 5,200 ft"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "5200"
+      }
+     ],
+     "why": "The trailhead waypoint is at 5,477 ft (the Washington Pass summit height) versus 5,200 ft elsewhere.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit / high point elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "7565"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "7840"
+      },
+      {
+       "field": "waypoints[1].name",
+       "says": "Poster Peak - Summit"
+      }
+     ],
+     "why": "TECHNICAL STATS says 7,565 ft while the summit waypoint is at 7,840 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "1365"
+      },
+      {
+       "field": "waypoints",
+       "says": "trailhead 5477 ft -> summit 7840 ft (2,363 ft)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "7565"
+      }
+     ],
+     "why": "gain_ft 1,365 ft is well below any trailhead-to-summit difference the row states (2,088–2,363 ft).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "12"
+      },
+      {
+       "field": "pitch_detail[2].pitch",
+       "says": "5-10"
+      },
+      {
+       "field": "beta",
+       "says": "approximately 9-10 pitches when simul-climbing"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "Blue's Buttress, moderate 8-10 pitch route"
+      }
+     ],
+     "why": "The pitches column says 12 while the breakdown ends at pitch 10 and prose says 8–10.",
+     "internal_resolution": "pitch_detail, beta and the waypoint agree on ≤10.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_length_m",
+       "says": "60"
+      },
+      {
+       "field": "rope_type",
+       "says": "single"
+      },
+      {
+       "field": "gear[3]",
+       "says": "Two 70m ropes"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "Two 70-meter ropes are sufficient for simul-climbing most of the route."
+      },
+      {
+       "field": "rack[3]",
+       "says": "Two 70m ropes (for simul-climbing)"
+      },
+      {
+       "field": "rope_note",
+       "says": "descent is a summit walk-off ... no rappel needed"
+      }
+     ],
+     "why": "The rope fields say one 60 m rope while the gear list, rack and detailed rack say two 70 m ropes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent / total time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.descentTimeHrs",
+       "says": "1"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "5"
+      },
+      {
+       "field": "descent_text",
+       "says": "Descent typically takes 30 minutes to over an hour"
+      },
+      {
+       "field": "itinerary",
+       "says": "descend via the SE col and scree gully back to the car (~2 hrs) — typically 5-6 hours round trip"
+      }
+     ],
+     "why": "PUBLISHED TIMES and descent_text give ~1 hour down; the itinerary gives ~2 hours.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "County / emergency jurisdiction",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "emergency.county",
+       "says": "Skagit County, Washington"
+      },
+      {
+       "field": "emergency.notes",
+       "says": "Skagit County Sheriff SAR covers this area."
+      },
+      {
+       "field": "emergency.nearestHospital",
+       "says": "Skagit Valley Hospital, ... Mount Vernon"
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "North Cascades National Park Ranger Station (Marblemount)"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      },
+      {
+       "field": "climate.forecastZone",
+       "says": "National Weather Service Eastern Washington (Okanogan County)"
+      },
+      {
+       "field": "access.notes",
+       "says": "this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      }
+     ],
+     "why": "EMERGENCY names Skagit County, its sheriff, a Mount Vernon hospital and a Park ranger station while access and climate place the peak in Okanogan County / Methow Valley RD.",
+     "internal_resolution": "access, climate and the sibling House Buttress row all give Okanogan County / Methow Valley RD.",
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager / pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "N/A"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "None"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads"
+      },
+      {
+       "field": "permit",
+       "says": "Northwest Forest Pass (or day fee) to park at developed trailheads."
+      }
+     ],
+     "why": "ACCESS says the land manager is N/A and no pass is required while other fields name the forest and a Northwest Forest Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock quality on the crest",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "Known for delightful rock quality on the ridge crest"
+      },
+      {
+       "field": "face",
+       "says": "The more solid (southerly)"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "improves significantly on the ridge crest"
+      },
+      {
+       "field": "approach_variants[0].hazards[0]",
+       "says": "Considerable loose rock on the buttress crest"
+      }
+     ],
+     "why": "The approach hazards say the crest has considerable loose rock while overview and hazards say the crest has the good rock.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "late Jun-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "The best climbing season is mid-June through September"
+      }
+     ],
+     "why": "best_season starts in mid-June, before the late-June start of the season column.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "name": "North Face",
+   "area": "Burgundy Spire",
+   "contradictions": [
+    {
+     "fact": "Approach and car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[2]",
+       "says": "7:00 AM Burgundy Col (7,770 ft)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "4:30 AM"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 3-4 hours one-way to Burgundy Col"
+      },
+      {
+       "field": "approach_variants[0].hours",
+       "says": "4-6"
+      },
+      {
+       "field": "itinerary.days[0].schedule[5].time",
+       "says": "11:50 AM – 2:00 PM"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "12.5"
+      }
+     ],
+     "why": "The schedule reaches the col in 2.5 hours and is back at the car by 2 PM (9.5 h), while partner requirements give 3–4 h to the col, the approach variant 4–6 h, and timing 12.5 h car-to-car.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope recommendation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[5].detail",
+       "says": "5-rappel line (60m works, 70m preferred)"
+      },
+      {
+       "field": "rope_type",
+       "says": "double (2x 60m) strongly preferred for rappel descent"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "60m rope x2 (doubles strongly preferred ... single-rope parties need an intermediate anchor at the big ledge)"
+      },
+      {
+       "field": "rope_note",
+       "says": "doubles remain the majority-recommended approach"
+      }
+     ],
+     "why": "The itinerary recommends a single 70 m rope while the rope and rack fields strongly prefer double 60 m ropes.",
+     "internal_resolution": "rope_type, rope_note, detailed_rack, what_to_bring and rack all prefer two 60 m ropes.",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of rappels",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Descent is accomplished via 5-6 rappels"
+      },
+      {
+       "field": "rappels",
+       "says": "~5 rappels"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "5 rows"
+      },
+      {
+       "field": "descent_text",
+       "says": "5 double-rope rappels"
+      }
+     ],
+     "why": "The beta says 5–6 rappels while every descent field lists 5.",
+     "internal_resolution": "rappels, rappel_detail, descent_text and rappel_count_note agree on 5.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch 5 grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[4].grade",
+       "says": "5.fun (~5.6)"
+      },
+      {
+       "field": "pitch_detail[4].notes",
+       "says": "then exposed 5.7-5.8 face climbing"
+      }
+     ],
+     "why": "Pitch 5 is graded ~5.6 while its own notes describe 5.7–5.8 climbing.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "October climbability",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "climate.bySeason.fall",
+       "says": "Good climbing into early-to-mid October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.October.status",
+       "says": "risky"
+      }
+     ],
+     "why": "The climate card calls early-to-mid October good while the season ends in September and seasonal guidance rates October risky.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_action_potential",
+   "name": "Action Potential",
+   "area": "Burgundy Spire",
+   "contradictions": [
+    {
+     "fact": "Grade in the itinerary",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.10c"
+      },
+      {
+       "field": "rock_grade",
+       "says": "5.10c"
+      },
+      {
+       "field": "pitch_detail[2].grade",
+       "says": "5.10c"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].detail",
+       "says": "8 pitches, up to 5.8."
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Climb Action Potential (5.8, 8 pitches)"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "widely regarded as the standard, easiest way up Burgundy Spire"
+      }
+     ],
+     "why": "The itinerary calls this a 5.8 route and the standard, easiest way up Burgundy Spire, text belonging to the North Face, while every grade field gives 5.10c.",
+     "internal_resolution": "grade, rock_grade, pitch_detail, overview and beta agree on 5.10c; the itinerary text was copied from the North Face route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route length vs pitch lengths",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "244"
+      },
+      {
+       "field": "overview",
+       "says": "8 pitches, ~800 ft"
+      },
+      {
+       "field": "pitch_detail lengthM sum",
+       "says": "330 m (45+30+45+35+60+30+45+40)"
+      }
+     ],
+     "why": "The eight pitch lengths add to ~330 m while the climb length is 244 m (~800 ft).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water at the Bench",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "water is reliable at Early Winter Creek and the Bench but not higher"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "Last reliable water."
+      },
+      {
+       "field": "approach",
+       "says": "Water is available at Early Winters Creek and a trickle near the col"
+      },
+      {
+       "field": "waypoints[1].directions",
+       "says": "this is the last easy water before the climb, with only an unreliable trickle near the col above"
+      },
+      {
+       "field": "approach_variants[0].hazards[4]",
+       "says": "Water only at Early Winters Creek and a trickle near the col"
+      }
+     ],
+     "why": "The itinerary makes the Bench the last reliable water while the approach, the creek waypoint and the approach hazards say the creek is the last water and omit the Bench.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Silver Star Creek Trailhead"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "SR-20 Burgundy Col Pullout"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Note that this route's stored trailhead record names a different trailhead than this prose does."
+      }
+     ],
+     "why": "The trailhead card names Silver Star Creek Trailhead while the waypoint and approach use the milepost-166 Burgundy Col pullout (same coordinates).",
+     "internal_resolution": "The coordinates are identical and all prose uses the milepost-166 pullout; only the name differs.",
+     "needs_research": false
+    },
+    {
+     "fact": "Where the rope-trap constriction is",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappel_detail[0].hazards[1]",
+       "says": "This is the rappel where a party got a rope end stuck in a constriction above a wide crack and had to lead 5.8 back up to free it"
+      },
+      {
+       "field": "rappel_detail[2].anchor",
+       "says": "Sling at a rock constriction"
+      }
+     ],
+     "why": "The constriction rope trap is placed on rappel 1 in one row while the constriction is rappel 3's anchor.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

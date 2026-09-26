@@ -1,0 +1,505 @@
+{
+ "file": "r281.json",
+ "results": [
+  {
+   "id": "wa_silver_star_west_face_couloir",
+   "fact": "Parking pass requirement",
+   "verdict": "fixed",
+   "correct_value": "No parking pass is needed at the SR-20 pullout near MP 165-166 (access.* 'None currently required' is right; the permit line is the outlier).",
+   "evidence": "SummitPost's Silver Star page states no parking pass is presently required at either major access point (Silver Star Creek or the highway shoulder/overlook near MP 166); WTA's Silver Star (Okanogan) page, whose trailhead is that same MP 165 pullout, lists Parking Pass/Entry Fee: None. The Forest Service requires the pass at developed recreation sites, which this unsigned highway shoulder is not. One dissent: the Mountaineers route page lists a Northwest Forest Pass in its generic permit field.",
+   "sources": [
+    "https://www.summitpost.org/silver-star-mountain-okanogan/150893",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Northwest Forest Pass (or day fee) to park at developed trailheads.",
+     "replace": "no parking pass is needed at the SR-20 pullout.",
+     "id": "wa_silver_star_west_face_couloir",
+     "fact": "Parking pass requirement"
+    }
+   ]
+  },
+  {
+   "id": "wa_silver_star_northwest_face",
+   "fact": "Parking pass requirement",
+   "verdict": "fixed",
+   "correct_value": "No parking pass is needed at the SR-20 pullout near MP 165-166 (access.* 'None currently required' is right; the permit line is the outlier).",
+   "evidence": "SummitPost's Silver Star page states no parking pass is presently required at either major access point (Silver Star Creek or the highway shoulder/overlook near MP 166); WTA's Silver Star (Okanogan) page, whose trailhead is that same MP 165 pullout, lists Parking Pass/Entry Fee: None. The Forest Service requires the pass at developed recreation sites, which this unsigned highway shoulder is not. One dissent: the Mountaineers route page lists a Northwest Forest Pass in its generic permit field.",
+   "sources": [
+    "https://www.summitpost.org/silver-star-mountain-okanogan/150893",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Northwest Forest Pass (or day fee) to park at developed trailheads.",
+     "replace": "no parking pass is needed at the SR-20 pullout.",
+     "id": "wa_silver_star_northwest_face",
+     "fact": "Parking pass requirement"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)",
+   "verdict": "fixed",
+   "correct_value": "The climb starts at the Cedar Creek Trailhead (end of FR 200 / Sandy Butte-Cedar Creek Road, off SR-20 between MP 175 and 176, ~4.25 mi west of Mazama); the Hwy 20 pullout near MP 166 is only where the Burgundy Col descent comes out.",
+   "evidence": "The first-ascent account (NWMJ) has both the 2000 and 2005 parties starting from the Cedar Creek trailhead/parking lot, and Mountain Project's East Ridge page says to approach from the Cedar Creek Trailhead via the old horse packers' trail. The Forest Service and WTA place Cedar Creek TH at the end of FR 200 (Sandy Butte-Cedar Creek Rd), 0.8 mi off SR-20 between MP 175-176, ~4.25 mi west of Mazama and 17-18 mi from Winthrop. The pin sits at the MP 166 pullout (coordinates out of scope), so it is relabelled as the descent finish; USGS 1 m DEM puts that pin at ~4,230 ft, not 5,400.",
+   "sources": [
+    "https://www.mountainproject.com/route/119482513/east-ridge",
+    "http://www.alpenglow.org/nwmj/06/061_SilverStar2.html",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/cedar-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/cedar-creek",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "Silver Star Creek Trailhead (Hwy 20 pullout, ~MP 165-166)",
+     "replace": "Hwy 20 pullout near MP 166 (descent finish)",
+     "id": "wa_east_ridge_3",
+     "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "The long East Ridge, traversing over the Silver Horn sub-summit, starts via the Silver Star Creek approach from this same Hwy 20 pullout used by the North-East Ridge and Glacier routes. A separate, easier South-East Face and East Ridge variant starts instead from the Cedar Creek trailhead near milepost 175-176, so confirm which line you intend before you drive.",
+     "value": "This roadside pullout is where the descent over Burgundy Col comes back to the highway, not where the East Ridge starts. The climb begins at the Cedar Creek Trailhead near Mazama, several highway miles east, so leave a car here or plan the road walk back.",
+     "id": "wa_east_ridge_3",
+     "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 5400,
+     "value": 4300,
+     "id": "wa_east_ridge_3",
+     "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 5400,
+     "value": 4300,
+     "id": "wa_east_ridge_3",
+     "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Silver Star Creek / Highway 20 pullout, Washington Pass",
+     "value": "Sandy Butte-Cedar Creek Road (FR 200) to the Cedar Creek Trailhead",
+     "id": "wa_east_ridge_3",
+     "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Highway 20 is fully paved to the roadside pullouts (near milepost 166, about 4 miles east of Washington Pass, and at the Silver Star Creek crossing); no rough-road driving required to reach the start of the climbers' trail.",
+     "value": "Forest Road 200 leaves Highway 20 on the south side between mileposts 175 and 176 and runs about 0.8 mile to the trailhead parking at its end.",
+     "id": "wa_east_ridge_3",
+     "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "or about 45 minutes from Mazama/Winthrop.",
+     "replace": "or about 4 miles west of Mazama (17-18 miles from Winthrop).",
+     "id": "wa_east_ridge_3",
+     "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": " The route's stored waypoint names the Silver Star Creek pullout while its approach text names Cedar Creek.",
+     "replace": "",
+     "id": "wa_east_ridge_3",
+     "fact": "Trailhead (Cedar Creek vs Silver Star Creek / Hwy 20 pullout)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "V (for the 5.9+ line the row grades); IV applies only to the 5.8 style that skirts sub-summits, as pro_tips already explains",
+   "evidence": "Mountain Project lists the East Ridge as Trad/Alpine Grade V, 5.9+, noting the FA party graded their skirting solo IV 5.8 but that roping up or staying on the crest makes it 5.9+ V or harder. The NWMJ record lists the on-crest East Ridge (Silver Horn) as Grade V, 5.9+ and the 2000 skirting line as IV 5.8. The row's grade/rock_grade are 5.9+, so its commitment is V; alpine_grade IV was the outlier chip.",
+   "sources": [
+    "https://www.mountainproject.com/route/119482513/east-ridge",
+    "http://www.alpenglow.org/nwmj/06/061_SilverStar2.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "IV",
+     "value": "V",
+     "id": "wa_east_ridge_3",
+     "fact": "Commitment grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "fact": "Climb length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "~3.5 miles (5,633 m)",
+   "evidence": "overview, approach, approach_variants[0] and partner_requirements all give the ridge as about 3.5 miles; the NWMJ first-ascent article says the east ridge stretches over 3.5 miles from the Cedar/Early Winters confluence to the summit. length_m 1609 (exactly 1 mile) is the lone outlier.",
+   "sources": [
+    "http://www.alpenglow.org/nwmj/06/061_SilverStar.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 1609,
+     "value": 5633,
+     "id": "wa_east_ridge_3",
+     "fact": "Climb length"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "4,400 ft is impossible: the Cedar Creek trailhead sits at ~2,985 ft (USGS 1 m DEM at WTA's trailhead coordinate 48.5792,-120.4787; WTA gives Cedar Falls, 500 ft above, as 3,500 ft), so the net rise to the 8,876 ft summit alone is ~5,900 ft before the ridge's many sub-summit ups and downs. No source found states the route's total gain, so no number is written.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/cedar-creek",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.mountainproject.com/route/119482513/east-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "fact": "FA style (roped vs unroped)",
+   "verdict": "fixed",
+   "correct_value": "Childs & Goldie, Sept 14 2000, soloed the ridge unroped (no gear placed, no pitch belayed, two short rappels); Beckey & Beckstead's 1986 route was the Northeast Spur joining the upper east ridge, III 5.8",
+   "evidence": "Mountain Project's East Ridge page credits the FA to Geof Childs and Larry Goldie 9/14/2000 and says they soloed the entire ridge. The NWMJ first-person account says they went 14 hours car-to-car without placing gear or belaying a pitch, with two short rappels, and records Beckey/Beckstead (Sept 12, 1986) as the Northeast Spur & East Ridge, Grade III 5.8, approached via Varden Creek; SummitPost and Wikipedia also list the NE Spur & E Ridge as Grade III 5.8. The fa column's 'first continuous roped ascent' and its 'soloed unroped ... Grade IV' for 1986 were both wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/119482513/east-ridge",
+    "http://www.alpenglow.org/nwmj/06/061_SilverStar.html",
+    "http://www.alpenglow.org/nwmj/06/061_SilverStar2.html",
+    "https://www.summitpost.org/silver-star-mountain-okanogan/150893",
+    "https://en.wikipedia.org/wiki/Silver_Star_Mountain_(Okanogan_County,_Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "fa",
+     "path": [],
+     "find": "(first continuous roped ascent); the ridge was earlier soloed unroped by Fred Beckey & Dave Beckstead in 1986 at roughly 5.8/Grade IV as the 'NE Spur & East Ridge,'",
+     "replace": "(probable first complete ascent, soloed unroped apart from two short rappels); Fred Beckey & Dave Beckstead had earlier reached the upper ridge by its Northeast Spur in 1986 (III, 5.8),",
+     "id": "wa_east_ridge_3",
+     "fact": "FA style (roped vs unroped)"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "fact": "FA date vs crowds history",
+   "verdict": "fixed",
+   "correct_value": "The 2006 account came six years after the 2000 FA",
+   "evidence": "Mountain Project and the NWMJ article (published 2006) both date the FA to September 14, 2000, matching the row's fa, overview and seasonal_guidance; the 'seldom visited' remark in that 2006 article therefore came six years after the FA, not nearly two decades.",
+   "sources": [
+    "https://www.mountainproject.com/route/119482513/east-ridge",
+    "http://www.alpenglow.org/nwmj/06/061_SilverStar.html",
+    "http://www.alpenglow.org/nwmj/06/061_SilverStar2.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "find": "nearly two decades after the FA",
+     "replace": "six years after the 2000 FA",
+     "id": "wa_east_ridge_3",
+     "fact": "FA date vs crowds history"
+    }
+   ]
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Route distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Only one external figure was found: a hiking site gives 'Distance: 3.5 miles' without saying one-way or round trip. No second source gives the one-way distance or the distance to Burgundy Col. The row's own figures (col at 2.7 or 3.5 mi, summit 3.5 or 4.0 mi, round trip 7 or 11.3 mi) cannot be settled from that.",
+   "sources": [
+    "http://www.willhiteweb.com/north_cascades/silver_star_mountain/map_142.htm",
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 4,000 is below the net rise: USGS 1 m DEM puts the trailhead pullout at ~4,315 ft, so reaching 8,876 ft takes ~4,560 ft before the 150-200 ft drop to the creek and the reclimb to the col. Published totals disagree: WTA 4,500 (≈ net rise), the Mountaineers 5,200 (2,600 + 2,600), a hiking site 6,000. No two agree on a car-to-car total, so no value is written.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "http://www.willhiteweb.com/north_cascades/silver_star_mountain/map_142.htm",
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Summit-block grade",
+   "verdict": "fixed",
+   "correct_value": "Class 3-4 via the ramp about 40 ft below the summit; low 5th only if the ramp is missed",
+   "evidence": "The Mountaineers route page says to look for the easy ramp about 40 feet below the summit, otherwise you may meet a short pitch of low 5th class. SummitPost gives the glacier route's finish as Class 3-4 rock from the col to the summit, and Mountain Project grades the route 4th class. pitch_detail[3] stating the true summit is 5th class unconditionally was the outlier.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "https://www.summitpost.org/silver-star-mountain-okanogan/150893",
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "true east summit is 5th class with serious fall exposure",
+     "replace": "true east summit goes at class 3-4 by the easy ramp about 40 ft below the top, low 5th class if the ramp is missed, with serious fall exposure",
+     "id": "wa_silver_star_glacier",
+     "fact": "Summit-block grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Overnight permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or overnight permit required",
+   "evidence": "SummitPost states no permits are required to climb Silver Star; the route's own overnight_permit, access.notes and every bivy entry say camping needs no permit on this non-wilderness National Forest land, and no source found mentions a self-issued wilderness permit for this approach.",
+   "sources": [
+    "https://www.summitpost.org/silver-star-mountain-okanogan/150893",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "No climbing permit required; free self-issued wilderness permit for overnight",
+     "value": "No climbing or overnight permit required",
+     "id": "wa_silver_star_glacier",
+     "fact": "Overnight permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Parking pass",
+   "verdict": "fixed",
+   "correct_value": "No parking pass needed at the SR-20 pullout",
+   "evidence": "SummitPost's Silver Star page states no parking pass is presently required at either major access point (Silver Star Creek or the highway shoulder/overlook near MP 166); WTA's Silver Star (Okanogan) page, whose trailhead is that same MP 165 pullout, lists Parking Pass/Entry Fee: None. The Forest Service requires the pass at developed recreation sites, which this unsigned highway shoulder is not. One dissent: the Mountaineers route page lists a Northwest Forest Pass in its generic permit field.",
+   "sources": [
+    "https://www.summitpost.org/silver-star-mountain-okanogan/150893",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "; Northwest Forest Pass needed to park.",
+     "replace": "; no parking pass is needed here.",
+     "id": "wa_silver_star_glacier",
+     "fact": "Parking pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "A Northwest Forest Pass is needed to park there.",
+     "replace": "No parking pass is needed there.",
+     "id": "wa_silver_star_glacier",
+     "fact": "Parking pass"
+    },
+    {
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "expect": "Carry a Northwest Forest Pass - the SR-20 pullout has no fee station but the trailhead requires one",
+     "value": "No parking pass is needed at the SR-20 pullout; the developed trailheads nearby, such as Blue Lake and Cutthroat, do require a Northwest Forest Pass",
+     "id": "wa_silver_star_glacier",
+     "fact": "Parking pass"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Northwest Forest Pass (or day fee) to park at developed trailheads.",
+     "replace": "no parking pass is needed at the SR-20 pullout.",
+     "id": "wa_silver_star_glacier",
+     "fact": "Parking pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Approach drainage (Silver Star Creek vs Burgundy Creek)",
+   "verdict": "fixed",
+   "correct_value": "Burgundy Creek to Burgundy Col",
+   "evidence": "Mountain Project, SummitPost and the Mountaineers all describe this route's approach as crossing Early Winters Creek from the MP 166 pullout and climbing the rib beside Burgundy Creek to Burgundy Col; Silver Star Creek is a separate approach with its own route page. partner_requirements.approachTime was the outlier. hazards[4] is left as it describes the alternative Silver Star Creek approach the descent_text mentions.",
+   "sources": [
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "https://www.summitpost.org/silver-star-mountain-okanogan/150893"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Long approach via Silver Star Creek to the glacier basin",
+     "replace": "Long approach via Burgundy Col to the glacier basin",
+     "id": "wa_silver_star_glacier",
+     "fact": "Approach drainage (Silver Star Creek vs Burgundy Creek)"
+    }
+   ]
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Standard camp and its wind protection",
+   "verdict": "fixed",
+   "correct_value": "Most parties camp at the larch bench; Burgundy Col is the windier option that shortens summit day",
+   "evidence": "North Cascade Mountain Guides describe reaching the larch bench where most parties set up camp; the Mountaineers and WTA give the bench (~6,400 ft) as the first camp with the col as the alternative. pro_tips, approach and approach_variants[1] agree the bench is the standard camp; the itinerary note (and its copy in timing.sectionBreakdown) was the outlier.",
+   "sources": [
+    "https://ncmountainguides.com/routes/climbing/silver-star-mountain-silver-star-glacier",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "https://www.wta.org/go-hiking/hikes/silver-star-mountain-okanogan"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Most parties push to Burgundy Col for a shorter summit day and better wind protection on a flat snowfield below the Chianti Spires; parties wanting a shorter first day stop at the larch bench instead.",
+     "replace": "Most parties camp at the more sheltered larch bench; pushing on to the windier Burgundy Col instead makes for a shorter summit day.",
+     "id": "wa_silver_star_glacier",
+     "fact": "Standard camp and its wind protection"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Most parties push to Burgundy Col for a shorter summit day and better wind protection on a …",
+     "replace": "Most parties camp at the more sheltered larch bench; pushing on to the windier Burgundy Col instead makes for a shorter summit day.",
+     "id": "wa_silver_star_glacier",
+     "fact": "Standard camp and its wind protection"
+    }
+   ]
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Water at the Bench and the col",
+   "verdict": "bivy_zone_list",
+   "correct_value": "Waypoints are right: seasonal water at the bench and snowmelt at the col, both until late summer",
+   "evidence": "The Mountaineers route page says water is available at both the bench and Burgundy Col until late summer, and Mountain Project says to grab water at the col. That supports waypoints[2] and waypoints[3]; the conflicting claims (no water at the col; a spring running well into September) are in bivy[0] and bivy[1], which are owned by the camping clean-up, so no patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "fact": "Early Winters Creek crossing elevation",
+   "verdict": "fixed",
+   "correct_value": "~4,200 ft (about 200 ft below the pullout)",
+   "evidence": "USGS 1 m DEM gives ~4,080 ft at the crossing pin and ~4,315 ft at the pullout; a hiking route description says the trail drops 200 ft to the river, and the route's own approach text says 150-200 ft. 4,450 ft (above the trailhead) is impossible.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json",
+    "http://www.willhiteweb.com/north_cascades/silver_star_mountain/map_142.htm",
+    "https://ncmountainguides.com/routes/climbing/silver-star-mountain-silver-star-glacier"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 4450,
+     "value": 4200,
+     "id": "wa_silver_star_glacier",
+     "fact": "Early Winters Creek crossing elevation"
+    }
+   ]
+  }
+ ]
+}

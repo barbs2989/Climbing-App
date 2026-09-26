@@ -1,0 +1,195 @@
+{
+ "file": "r107.json",
+ "results": [
+  {
+   "id": "wa_vanishing_point",
+   "fact": "commitment grade vs alpine grade",
+   "verdict": "fixed",
+   "correct_value": "VI (commitment VI, alpine_grade VI)",
+   "evidence": "Blake Herrington's 2012 ascent write-up says the route was established as grade VI 5.12b; Nathan Hadley's 2017 trip report (also posted on CascadeClimbers) titles it VI 5.12b, and Climbing.com calls it VI 5.12b. Mountain Project alone lists Grade V. The FA grade VI is adopted, matching alpine_grade and the fa field.",
+   "sources": [
+    "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html",
+    "https://nathanhadley.com/stories/2017/9/22/vanishing-point-vi-512b-dolomite-tower",
+    "https://cascadeclimbers.com/forum/topic/101032-tr-dolomite-tower-mt-baring-vanishing-point-vi-512b-9222017/",
+    "https://www.climbing.com/travel/long-moderate-sport-climbs-in-washington/"
+   ],
+   "patches": [
+    {
+     "id": "wa_vanishing_point",
+     "fact": "commitment grade vs alpine grade",
+     "op": "set",
+     "column": "commitment",
+     "path": [],
+     "expect": "V",
+     "value": "VI"
+    }
+   ]
+  },
+  {
+   "id": "wa_vanishing_point",
+   "fact": "pitch count (14 vs 20)",
+   "verdict": "fixed",
+   "correct_value": "14 pitches",
+   "evidence": "Herrington's write-up gives 14 pitches total with the last anchor at the edge of the woods on pitch 14; Mountain Project's pitch-by-pitch description runs pitches 1-14 (its header says 20). The row's own pitches, pitch_detail and beta use 14, so the itinerary's '20-pitch' is changed to match.",
+   "sources": [
+    "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html",
+    "https://www.mountainproject.com/route/119221029/vanishing-point"
+   ],
+   "patches": [
+    {
+     "id": "wa_vanishing_point",
+     "fact": "pitch count (14 vs 20)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "climb the full 20-pitch route",
+     "replace": "climb the full 14-pitch route"
+    }
+   ]
+  },
+  {
+   "id": "wa_vanishing_point",
+   "fact": "crux pitch location",
+   "verdict": "fixed",
+   "correct_value": "Pitch 11 (5.12 roof) is the crux; pitch 5 was graded 5.11c but its original line felt harder before part of it fell away",
+   "evidence": "Mountain Project and Hadley's 2020 modernization write-up both name pitch 11, the 5.12 pitch out the huge roof, as the crux. Herrington (2012) felt pitch 5 ('5.11c') was techy 5.12+, but Hadley reports a large part of pitch 5 has since fallen off and is climbed around; pitch_detail now grades it 5.11-. pro_tips[0] reworded so it no longer calls pitch 5 the crux.",
+   "sources": [
+    "https://www.mountainproject.com/route/119221029/vanishing-point",
+    "https://nathanhadley.com/stories/vanishing-point-2-0-a-classic-route-modernized/",
+    "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_vanishing_point",
+     "fact": "crux pitch location",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "Pitch 5 is the crux at 5.12+ (graded 5.11c on FA, but climbers report it as significantly harder).",
+     "replace": "Pitch 11, a 5.12 boulder problem out the big roof, is the crux. Pitch 5 is graded 5.11c, and its original line felt far harder before part of it fell away."
+    }
+   ]
+  },
+  {
+   "id": "wa_vanishing_point",
+   "fact": "collapsed-roof pitch location",
+   "verdict": "fixed",
+   "correct_value": "The collapsed section is on pitch 5; the 2020 reroute higher up avoids the loose 'death flake'",
+   "evidence": "Hadley's 2020 write-up says a whole part of pitch 5 had fallen off, taking bolts with it, and separately that the route was rerouted to avoid the death flake higher on the route. Mountain Project places the old death-flake anchor on pitch 10. pro_tips[1] now places the collapse on pitch 5 and the reroute at the flake.",
+   "sources": [
+    "https://nathanhadley.com/stories/vanishing-point-2-0-a-classic-route-modernized/",
+    "https://www.mountainproject.com/route/119221029/vanishing-point"
+   ],
+   "patches": [
+    {
+     "id": "wa_vanishing_point",
+     "fact": "collapsed-roof pitch location",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "The collapsed roof section on pitch 9/10 (rerouted in 2020) demonstrates route changes since FA",
+     "replace": "The partly collapsed roof on pitch 5, and the 2020 reroute around a loose flake higher up, show how the route has changed since the FA"
+    }
+   ]
+  },
+  {
+   "id": "wa_vanishing_point",
+   "fact": "approach distance to the tower base",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project and Herrington describe the approach as ~1 mile on the Barclay Creek trail to the bridge, then off-trail up the wash, forested rib and ~800 ft of roped slab (3-3.5 hr), but no source gives a total mileage. The row's waypoint chain routes via Barclay Lake (2.2 mi), which the approach leaves the trail before reaching, so the 3.8 mi figure is doubtful too; straight-line trailhead-to-tower is ~1.4 mi. No two sources give a distance.",
+   "sources": [
+    "https://www.mountainproject.com/route/119221029/vanishing-point",
+    "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_vanishing_point",
+   "fact": "route high point vs Topout waypoint elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No topo-derived elevation for the top of Dolomite Tower or the route's exit was found (Peakbagger lists Baring Mountain, not the tower; AAC and Mountain Project give only a 1,300-1,400 ft wall height). Cannot settle 5708 vs 5900 with two sources.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12199413601/North-America-United-States-Washington-Mount-Baring-and-Dolomite-Tower-1992",
+    "https://www.mountainproject.com/route/119221029/vanishing-point"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_vanishing_point",
+   "fact": "Topout waypoint note describes the route START, not the topout",
+   "verdict": "fixed",
+   "correct_value": "Note describes the finish: last anchor at the lip by the woods, then heather down to the BASE-jumper trail",
+   "evidence": "Herrington says the pitch-14 anchor sits at the edge of the woods; Mountain Project says from the summit belay you slide down heather to a BASE-jumper trail. The row's own pitch 14 notes say the same. The misplaced start description is replaced with the finish.",
+   "sources": [
+    "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html",
+    "https://www.mountainproject.com/route/119221029/vanishing-point"
+   ],
+   "patches": [
+    {
+     "id": "wa_vanishing_point",
+     "fact": "Topout waypoint note describes the route START, not the topout",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "Grade VI 5.12b established over many bolted pitches in the late 1990s; starts left of the prominent arete.",
+     "replace": "The final two-bolt anchor sits right at the lip where the wall meets the woods; scramble down the heather from here to reach the BASE-jumper descent trail."
+    }
+   ]
+  },
+  {
+   "id": "wa_deep_blue",
+   "fact": "discipline label vs fully-bolted description",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row itself says the technical pitches are fully bolted with cams only for the shared roped approach, which reads as a bolted big-wall/alpine sport line rather than trad; Mountain Project's Dolomite Tower page could not be fetched and no second source describing Deep Blue's protection was found. `discipline` is also outside what this pass may change, so it is flagged for an owner decision.",
+   "sources": [
+    "https://www.mountainproject.com/area/119221018/dolomite-tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dome_peak_dome_glacier",
+   "fact": "dist_km (~10 mi) vs itinerary round-trip total (29 mi)",
+   "verdict": "fixed",
+   "correct_value": "dist_km 23.3 (about 14.5 mi one way, half the ~29 mi round trip)",
+   "evidence": "A WTA trip report for Dome Peak via Downey Creek gives about 28 miles round trip, and Jeff Hebert's Dome Glacier trip report measured about 31 miles and 8,400 ft by GPS, i.e. roughly 14-15.5 mi one way. The row's itinerary (12 mi to camp + half of a 5 mi summit day = 14.5 mi) sits in that range; the stored 16.1 km (10 mi) is well short of both.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2006070138",
+    "https://www.jeffreyjhebert.com/adventures/dome-glacier-on-dome-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_dome_peak_dome_glacier",
+     "fact": "dist_km (~10 mi) vs itinerary round-trip total (29 mi)",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 16.1,
+     "value": 23.3
+    }
+   ]
+  },
+  {
+   "id": "wa_dome_peak_dome_glacier",
+   "fact": "waypoint distMi vs itinerary/approach mileage",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Waypoints put Cub Lake at 12 mi, Itswoot Ridge camp at 14.5 mi and the summit at 17 mi (34 mi round trip), while itinerary day 1 reaches Itswoot Ridge in 12 mi, approach_variants puts Cub Lake ~14 mi in, and the ~28-31 mi round trips reported imply ~14-15.5 mi to the summit. No source gives per-landmark mileages to settle each waypoint.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/dome-glacier-on-dome-peak",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2006070138"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "applied": [
+  {
+   "id": "wa_mushroom_tower_standard",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs held the car-to-car total"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mushroom_tower_standard",
+   "before": {
+    "timing": {
+     "totalHrs": 7,
+     "summitTimeHrs": 7,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "This is a roadside outing done in a single day, not a backpack — start early from the Hairpin Turn pullout, climb through trees and up the approach gully onto the ridge, traverse b…",
+       "fromTo": "Car-to-car: approach, climb, tag summit, descend",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,330 @@
+{
+ "applied": [
+  {
+   "id": "wa_northwest_face_2",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rappel rope and rappel sequence"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Rappel rope and rappel sequence"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance to Kangaroo Pass / round-trip distance"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Distance to Kangaroo Pass / round-trip distance"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Summit time within the day"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rappel anchor type"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Rappel anchor type"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Rappel anchor type"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "anchor"
+   ],
+   "fact": "Rappel anchor type"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "rappel_detail",
+   "path": [
+    1,
+    "anchor"
+   ],
+   "fact": "Rappel anchor type"
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "column": "rappel_detail",
+   "path": [
+    2,
+    "anchor"
+   ],
+   "fact": "Rappel anchor type"
+  },
+  {
+   "id": "wa_koala_krack",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Route length / pitch count"
+  },
+  {
+   "id": "wa_koala_krack",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Approach base-finding text describes another route"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "rack",
+   "path": [
+    0
+   ],
+   "fact": "Cam rack (doubles vs single standard rack)"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "sling_rack",
+   "path": [
+    "cams"
+   ],
+   "fact": "Cam rack (doubles vs single standard rack)"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Commitment grade"
+  },
+  {
+   "id": "wa_south_face_4",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Rock quality"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_northwest_face_2",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5143,
+      "lng": -120.6425,
+      "elev": 5160,
+      "name": "Washington Pass Hairpin Turnout",
+      "note": "Park in the large turnout on the SR-20 hairpin switchback just east of Washington Pass; follow the boulder-field climber's trail south toward Kangaroo Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.50217,
+      "lng": -120.60989,
+      "elev": 7238,
+      "name": "Kangaroo Temple",
+      "note": "5-pitch Northwest Face route tops out on the summit block.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ],
+    "rope_note": "6-pitch 5.7+ face route (first ascent Beckey brothers, 1942); pitches wander so extra long slings recommended. Descent: two 30m raps to a scramble-off ledge, or three raps to the notch with a 60m rope.",
+    "descent_text": "From the summit, downclimb or scramble to the fixed rappel anchors on the north side of the formation. Accounts differ slightly — some parties do two 30m/50m rappels, others do three shorter single-rope rappels (roughly 150-160+ ft total) to avoid rope-stuck issues — landing at or near the North Ridge notch. From the notch, continue the standard descent gully back down to Kangaroo Pass and retrace the approach trail to the trailhead.",
+    "approach_variants": [
+     {
+      "name": "The Hairpin turnout and Kangaroo Pass, then break off the gully about 200 ft BELOW the notch",
+      "notes": "The Temple is reached from the large pullout at the hairpin turns on SR-20 just east of Washington Pass, the same parking used for the neighbouring Hairpin Crags and Spire Gully climbs. From the pullout, a climber's trail heads south across a boulder field, through forest and more talus, faint and intermittently cairned, up to Kangaroo Pass, about an hour.\n\nFrom the pass, an intermittent trail traverses to a gully between Kangaroo Temple and Little Finger; ascending or descending that gully reaches the base of the North Face, Northwest Face or Southwest Face routes, roughly another hour. Total trailhead-to-summit time runs about 7-8 hours round trip.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "A 200 ft window in which to leave the gully, above and below which you are on a different route",
+       "Loose talus and a boulder-choked gully",
+       "Rope-stuck issues on the descent, which is why some parties break it into three shorter rappels",
+       "Early-season snow or ice in the approach gully",
+       "No reliable water on the approach"
+      ],
+      "baseFinding": "THE NORTHWEST FACE BREAKS OFF ONTO A CLIMBER'S TRAIL ABOUT 200 FT BELOW THE NOTCH, INSTEAD OF CONTINUING INTO THE BOULDER-CHOKED GULLY. That is the whole find and it is a measured one: two hundred feet short of the top of the gully, an obvious bench and trail splits off RIGHT.\n\nSO THE NEGATIVE TEST IS: IF YOU HAVE REACHED THE NOTCH, YOU HAVE GONE ROUGHLY 200 FT TOO FAR AND YOU ARE AT THE START OF THE NORTH FACE. And if you are fighting up a boulder-choked gully bed rather than walking a bench, you have missed the split.\n\nGETTING TO THE GULLY IN THE FIRST PLACE: from Kangaroo Pass, traverse left to the GULLY BETWEEN KANGAROO TEMPLE AND LITTLE FINGER, then ascend toward the notch. Do not drop straight down the far side of the pass; contour south below the slabs descending from Wallaby Peak, losing about 20 ft below the pass, on a good well-cairned trail beneath the slab bands.\n\nWHAT THE OTHER TWO ROUTES DO FROM THE SAME PLACE, SO THE THREE ARE SEPARABLE: the NORTH FACE goes all the way up the gully to the high notch. THIS ROUTE takes the bench 200 ft below it. THE SOUTH FACE never crosses Kangaroo Pass at all; it hikes southeast on the right side of the creek, and its face is not even visible from the highway.\n\nDESCENT: from the summit, downclimb or scramble to the fixed rappel anchors on the NORTH side of the formation. Accounts differ slightly, with some parties making two rappels of 30 m and 50 m and others three shorter single-rope rappels, roughly 150-160-plus ft in total, to avoid rope-stuck issues, landing at or near the North Ridge notch. From the notch, the standard descent gully leads back down to Kangaroo Pass."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "before": {
+    "approach": "Start from the Hairpin turnout on SR-20 (elev. ~5,150 ft), about 1 mile east of/beyond Washington Pass on the North Cascades Highway. From the large pullout, pick up the climber's trail that switchbacks up into the valley to the southeast — it's faint and boulder-hopping at first through talus and sandy gullies (look for cairns; the tread firms up after the first quarter mile), passing a small dried-up tarn. Stay along the right-hand (west) edge of the timber as you gain the valley headwall. This climber's path/trail gains roughly 2,000 ft over about 3 miles to Kangaroo Pass, a broad, view-filled saddle that's the key approach landmark (budget 1–1.5 hrs from the car at a moderate pace; there is no reliable water along this stretch, so carry what you need from the trailhead). From Kangaroo Pass, do not drop straight down the far side — instead contour/traverse south along the base of the slabs descending from Wallaby Peak, losing about 20 ft below the level of the pass, to pick up a good, well-cairned climber's trail. Follow this trail close beneath the slabs, staying below all the major slab bands, traversing toward Kangaroo Temple until you reach a gully system leading up to the high notch at the base of the North Face (about 200 ft below the notch an obvious bench/trail also splits off right toward the Northwest Face for parties headed there instead). Ascend the gully to the notch, which is the start of the North Face route. Hazards are mostly route-finding (the boulder-field tread disappears and reappears repeatedly before the pass) plus loose talus/scree underfoot and, early season, potential snow/ice in the approach gully warranting an ice axe. Total car-to-base time is typically 1.5–2.5 hours; guided/club trip reports cite 7–8 hours car-to-summit-and-back for the full outing.",
+    "approach_variants": [
+     {
+      "name": "The Hairpin turnout, the boulder-field path to Kangaroo Pass, then the traverse below Wallaby's slabs to the high notch",
+      "notes": "Start from the Hairpin turnout on SR-20 at about 5,150 ft, roughly a mile east of Washington Pass. From the large pullout, pick up the climber's trail that switchbacks up into the valley to the southeast; it is faint and boulder-hopping at first through talus and sandy gullies, with cairns, and the tread firms up after the first quarter mile, passing a small dried-up tarn. STAY ALONG THE RIGHT-HAND, WEST, EDGE OF THE TIMBER as you gain the valley headwall.\n\nThis path gains roughly 2,000 ft over about 3 miles to Kangaroo Pass, a broad view-filled saddle that is the key approach landmark; budget 1-1.5 hours from the car. No reliable water on this stretch. Car-to-base is typically 1.5-2.5 hours.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "Route-finding where the boulder-field tread disappears and reappears repeatedly before the pass",
+       "Loose talus and scree underfoot throughout",
+       "Early-season snow or ice in the approach gully, warranting an ice axe",
+       "A 50 m rope barely reaches the second rappel station; the descent line goes over a sharp lip onto vertical face",
+       "Queues at the rap stations; this is a popular club route and weekend backups are common",
+       "No reliable water on the approach"
+      ],
+      "baseFinding": "AT KANGAROO PASS, DO NOT DROP STRAIGHT DOWN THE FAR SIDE. THAT IS THE INSTRUCTION AND IT IS THE ONE PARTIES GET WRONG. Instead CONTOUR AND TRAVERSE SOUTH ALONG THE BASE OF THE SLABS DESCENDING FROM WALLABY PEAK, LOSING ABOUT 20 FT BELOW THE LEVEL OF THE PASS, to pick up a good, well-cairned climber's trail.\n\nSO THE TEST IS TWENTY FEET, AND IT IS AN ALTIMETER-SCALE MEASUREMENT YOU CAN MAKE BY EYE: barely below the pass, not down into the valley beyond it. Follow that trail CLOSE BENEATH THE SLABS, STAYING BELOW ALL THE MAJOR SLAB BANDS, traversing toward Kangaroo Temple.\n\nARRIVAL: a GULLY SYSTEM LEADING UP TO THE HIGH NOTCH AT THE BASE OF THE NORTH FACE. Ascend that gully to the notch. THE NOTCH IS THE START OF THE ROUTE.\n\nTHE DISCRIMINATOR AGAINST THE NORTHWEST FACE, AND IT IS COUNTABLE IN FEET: ABOUT 200 FT BELOW THE NOTCH, AN OBVIOUS BENCH AND TRAIL SPLITS OFF RIGHT TOWARD THE NORTHWEST FACE. If you have taken a bench off to the right, you are on the Northwest Face approach. This route keeps going up the boulder-choked gully to the notch itself.\n\nAND THE SOUTH FACE USES A COMPLETELY DIFFERENT LINE FROM THE SAME CAR, WHICH IS THE OTHER WAY TO END UP IN THE WRONG PLACE: it hikes southeast on the RIGHT side of the creek and NEVER CROSSES KANGAROO PASS AT ALL. If you have not been over Kangaroo Pass, you are not on the North Face approach.\n\nCONFIRM ON THE DESCENT, WHICH IS COUNTABLE HARDWARE: three single-rope rappels on a 60 m rope from FIXED BOLTED CHAINS, landing on downclimbable low-fifth and fourth-class terrain just above the high notch where the route began. A 50 M ROPE ONLY JUST BARELY REACHES THE SECOND STATION, so a 60 m is strongly preferred. All anchors are fixed chains; no natural anchor building is needed."
+     }
+    ],
+    "timing": {
+     "totalHrs": 9,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:30 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "This is a single-day outing, not a backpack — parties drive to the Washington Pass hairpin turnout, hike ~1.5-2 hrs up through forest, meadows, and a boulder/scree gully to Kangaro…",
+       "fromTo": "Car-to-car climb",
+       "section": "Climb"
+      }
+     ]
+    },
+    "descent_text": "Descend by rappel back down the North Face line to the notch, then reverse the approach trail to the Hairpin. From the summit, the standard descent is three single-rope rappels using a 60 m rope: rap 1 from chain anchors at the top of the North Face; rap 2 from a second set of chains (or, per some trip reports, an alternate flake-and-tree anchor roughly 30 ft below/near those chains) — note a 50 m rope only just barely reaches this station, so a 60 m rope is strongly preferred; the descent line goes over a sharp lip onto vertical face, so manage rope-pull and stance carefully. Rap 3 from the next station lands you on down-climbable low-5th/4th-class terrain just above the high notch where the route began — from there it's an easy scramble/walk back down into the notch and gully. All anchors reported are fixed (bolted chains), not natural gear anchors, so no v-thread/natural-anchor building is needed. Once back at the notch, reverse the approach: descend the gully, pick up the climber's trail along the base of the slabs back to Kangaroo Pass, then follow the boulder-field/forest climber's trail down to the Hairpin trailhead. Watch for other parties queued at the rap stations — this is a popular Mountaineers/club route and backups at the anchors are common on weekends.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "It is possible to skip a station with a double-length rappel from the summit, and it is a bad idea: the first ledge below is blocky and loose, ropes jam there readily, and going back up to free one showers the notch with rock. Wind is a real factor on this face — one party had a strand blown into a crack about 15 m (50 ft) off the descent line and had to detour to retrieve it, so lower the ends in a saddlebag rather than throwing them on a breezy day.",
+      "notes": "From chain anchors at the top of the North Face, the first of three single-rope rappels back toward the notch.",
+      "anchor": "bolted chain station",
+      "hazards": [
+       "The traverse to reach the station is exposed scrambling that most parties do unroped.",
+       "The rappel goes over a sharp lip straight onto vertical face. Parties have called it the mental crux of the whole climb. Get the rope onto the least sharp part of the edge and have the transition over the lip rehearsed before the first person commits.",
+       "One party found a leg of the anchor cord running directly through a hanger. Re-rig rather than accept it."
+      ],
+      "lengthM": null,
+      "station": "Finding this anchor is the real crux of the descent — it cannot be seen from the summit. From the summit block move onto the western side and scramble down and across one narrow, tricky, exposed step to the top of the North Face; the station does not come into view until you are a few feet from it. One published description gives three good bolts with hangers and no chains, another chains atop the North Face, so expect that it may have been rebuilt and judge what is actually there."
+     },
+     {
+      "n": 2,
+      "pull": "Keep the strands off the blocky ledge edges — this is the terrain where ropes on this descent are documented to stick.",
+      "notes": "Goes over a sharp lip onto vertical face; a 50m rope only just barely reaches this station, so a 60m rope is strongly preferred.",
+      "anchor": "bolted chain station (or flake-and-tree ~30 ft below)",
+      "hazards": [
+       "On a 50 m rope you arrive on the knots. Knot the ends regardless.",
+       "The ledges here are blocky and hold loose rock that goes down the fall line onto the notch and the approach gully."
+      ],
+      "lengthM": null,
+      "station": "The next of a series of ledges below the sharp lip, each carrying a slung rappel anchor. This is the station a 50 m rope only just reaches, which is why 60 m is the near-universal recommendation."
+     },
+     {
+      "n": 3,
+      "notes": "Lands on downclimbable low-5th/4th-class terrain just above the high notch where the route began.",
+      "anchor": "bolted chain station",
+      "hazards": [
+       "The scramble from the last rappel down into the notch is loose, and the approach gully below it is the line other parties climb.",
+       "This is a popular club route; expect a queue at the stations on weekends and keep helmets on while waiting."
+      ],
+      "lengthM": null,
+      "station": "Lowest of the slung ledge stations. The rappel from it lands on downclimbable low-5th and 4th-class ground just above the high notch between Kangaroo Temple and Little Finger where the route starts. Some parties skip the last one or two rappels here and simply downclimb back to the col."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_koala_krack",
+   "before": {
+    "rope_note": "Short easy multi-pitch granite route on Kangaroo Temple. No dedicated route-specific beta found; inferred from the comparable/easier North Face (5.6, 3 pitches, standard rack to 3in, chain-rappel descent) on the same formation.",
+    "approach_variants": [
+     {
+      "name": "Hairpin pullout, Kangaroo Pass and the Temple-Little Finger gully",
+      "notes": "From the large pullout at the hairpin turns on SR-20 just east of Washington Pass, walk south across the boulder field and pick up the faint, intermittently cairned climbers' path through forest and more talus to Kangaroo Pass, about an hour. From the pass an on-and-off trail traverses to the gully between Kangaroo Temple and Little Finger, which leads up to the notch on the Temple's north side; the north, northwest and southwest face routes all start off this gully, roughly another hour. Koala Krack is the last short pitch on the summit block, so you reach it by finishing whichever line you have climbed rather than by a separate approach.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Loose rock and rockfall in the gully between the Temple and Little Finger",
+       "The path across the slabs below Kangaroo Pass fades in fog or fresh snow",
+       "Fixed rappel anchors at the top of the pitch — inspect before loading"
+      ],
+      "baseFinding": "TWO TESTS: ONE IN THE APPROACH GULLY, ONE ON THE SUMMIT BLOCK. In the gully between Kangaroo Temple and Little Finger, watch for a faint trail breaking off to the RIGHT roughly 200 ft below the notch. If you have started scrambling up and over boulders in the gully bed, you have gone too far and must drop back down to find it. That branch traverses and downclimbs slightly to a flat, table-like rock, which is where the face climbing begins. On the summit block itself, Koala Krack is the wide, LEFT-trending diagonal crack: start on the slab immediately to its right, traverse onto the crack, follow it up and left to a small sandy flat, then traverse left to a cairn marking the bolted rappel station. If the crack in front of you leans right instead of left, or there is no slab beneath it to start from, you are on a different feature of the block."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_south_face_4",
+   "before": {
+    "rack": [
+     "Cams, standard rack to 3in",
+     "Nuts, full set",
+     "10 alpine draws",
+     "Single 60m rope for rappel descent"
+    ],
+    "sling_rack": {
+     "cams": "standard rack to 3 inches",
+     "nuts": "set"
+    },
+    "rope_note": "7-pitch III-IV 5.8 route up slabs/cracks/chimneys (also referenced as Southwest Face). Descent via hidden 3-bolt anchors (no chains) atop the North Face and at the P1 belay, 3 single-rope raps with a 60m rope.",
+    "waypoints": [
+     {
+      "lat": 48.5143,
+      "lng": -120.6425,
+      "elev": 5160,
+      "name": "Washington Pass Hairpin Turnout",
+      "note": "Park in the large turnout on the SR-20 hairpin switchback just east of Washington Pass; follow the boulder-field climber's trail south toward Kangaroo Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.50217,
+      "lng": -120.60989,
+      "elev": 7572,
+      "name": "Kangaroo Temple",
+      "note": "South Face (5.8 R) is runout in sections despite solid rock; tops out on the summit block.",
+      "type": "Summit",
+      "distMi": 2
+     }
+    ]
+   }
+  }
+ ]
+}

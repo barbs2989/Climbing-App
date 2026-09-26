@@ -1,0 +1,35 @@
+{
+ "applied": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "summitTimeHrs held the car-to-car total (settled convention: null it)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "before": {
+    "timing": {
+     "totalHrs": 10.5,
+     "summitTimeHrs": 10.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 10.5,
+       "note": "A long roadside day, no camp: from the Hwy 20 Hairpin pullout near Washington Pass, follow cairns/boot path through brush staying above Early Winters Creek toward Kangaroo Pass, th…",
+       "fromTo": "Car-to-car scramble via Kangaroo Pass approach",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

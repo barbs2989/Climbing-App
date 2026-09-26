@@ -1,0 +1,830 @@
+{
+ "applied": [
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "time"
+   ],
+   "fact": "Approach and car-to-car time"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    5,
+    "detail"
+   ],
+   "fact": "Rope recommendation"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "beta",
+   "path": [],
+   "fact": "Number of rappels"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "grade"
+   ],
+   "fact": "Pitch 5 grade"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Water at the Bench"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Water at the Bench"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Grade in the itinerary"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Grade in the itinerary"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Grade in the itinerary"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Water at the Bench"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Water at the Bench"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "approach",
+   "path": [],
+   "fact": "Water at the Bench"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hazards",
+    4
+   ],
+   "fact": "Water at the Bench"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Trailhead name"
+  },
+  {
+   "id": "wa_action_potential",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Trailhead name"
+  },
+  {
+   "id": "wa_golden_age",
+   "column": "season",
+   "path": [],
+   "fact": "Season window"
+  },
+  {
+   "id": "wa_ellen_pea",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_ellen_pea",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "M&M Wall pullout (milepost 166) elevation"
+  },
+  {
+   "id": "wa_ellen_pea",
+   "column": "waypoints",
+   "path": [
+    1,
+    "type"
+   ],
+   "fact": "'Upper ledge' waypoint typed Topout at the base"
+  },
+  {
+   "id": "wa_ellen_pea",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure start"
+  },
+  {
+   "id": "wa_ellen_pea",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure start"
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "M&M Wall pullout (milepost 166) elevation"
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "column": "waypoints",
+   "path": [
+    1,
+    "type"
+   ],
+   "fact": "'Upper ledge' waypoint typed Topout at the base"
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure start"
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure start"
+  },
+  {
+   "id": "wa_the_tiger",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest rock grade"
+  },
+  {
+   "id": "wa_the_tiger",
+   "column": "pitch_detail",
+   "path": [
+    6,
+    "grade"
+   ],
+   "fact": "Hardest rock grade"
+  },
+  {
+   "id": "wa_the_tiger",
+   "column": "beta",
+   "path": [],
+   "fact": "Hardest rock grade"
+  },
+  {
+   "id": "wa_the_tiger",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "M&M Wall pullout (milepost 166) elevation"
+  },
+  {
+   "id": "wa_the_tiger",
+   "column": "waypoints",
+   "path": [
+    1,
+    "type"
+   ],
+   "fact": "'Upper ledge' waypoint typed Topout at the base"
+  },
+  {
+   "id": "wa_the_tiger",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure start"
+  },
+  {
+   "id": "wa_the_tiger",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure start"
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "M&M Wall pullout (milepost 166) elevation"
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "SR-20 winter closure start"
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "SR-20 winter closure start"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "before": {
+    "itinerary": {
+     "cal": "Climb July-September; water is reliable at Early Winter Creek and the Bench but not higher, so tank up before the Col.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard approach to Burgundy Col followed by 6-7 pitches of face and crack climbing (up to 5.8) to the summit, then a 5-rappel descent. The large majority of parties do this car-to-car in one long day; a minority split it with a bivy at the Bench or the Col for a more relaxed pace.",
+       "hours": 12.5,
+       "miles": 6,
+       "title": "Car-to-car: North Face",
+       "gainFt": 4000,
+       "lossFt": 4000,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave the pullout",
+         "detail": "Cross Early Winter Creek and start up the climbers' trail."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Bench (6,460 ft)",
+         "detail": "Last reliable water."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Burgundy Col (7,770 ft)",
+         "detail": "Rack up."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Start climbing",
+         "detail": "Pitch 1 of the North Face."
+        },
+        {
+         "time": "10:50 AM",
+         "label": "Summit (8,400 ft)",
+         "detail": ""
+        },
+        {
+         "time": "11:50 AM – 2:00 PM",
+         "label": "Descend and hike out",
+         "detail": "5-rappel line (60m works, 70m preferred), then back over the Col and down to the car."
+        }
+       ],
+       "objective": "Summit Burgundy Spire (8,483 ft) via the North Face"
+      }
+     ],
+     "totalNote": "A long single day for fit parties, roughly 11-13 hrs car-to-car (real trip reports range from ~12 to 17 hrs depending on pace and party size); some parties instead split it with a bivy at the Bench (6,460 ft) or Burgundy Col (7,770 ft)."
+    },
+    "beta": "This is considered the standard and easiest route up Burgundy Spire. Descent is accomplished via 5-6 rappels down the middle of the upper face. Recommended for climbers experienced in alpine rock and comfortable with route-finding on exposed terrain. The route features many traverses, down-climbs, and loose features that demand careful attention.",
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "4th-5.0",
+      "notes": "Scramble up 4th class with occasional mid-5th moves to the broad sandy ledge connecting to Paisano Pinnacle.",
+      "pitch": 1,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.5",
+      "notes": "Continue up moderate terrain along the ledge system toward the wide bowl.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Climb the right side of the wide bowl on loose, exfoliating flakes toward an obvious horn slung with tat — the route's crux, more due to rock quality than raw difficulty.",
+      "pitch": 3,
+      "anchor": "Sling (horn)",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "Continue past the horn on featured but sometimes loose granite.",
+      "pitch": 4,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.fun (~5.6)",
+      "notes": "A clean hand crack in a flare (or a scramble around it), then exposed 5.7-5.8 face climbing with some old fixed protection to a slung-block belay.",
+      "pitch": 5,
+      "anchor": "Sling (block)",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "Ridge climbing with hand cracks and sharp arête moves, punctuated by mandatory downclimbing; wildly exposed and position-dependent for anchors.",
+      "pitch": 6,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "A 5.10 offwidth variation exists here, but most parties continue scrambling/wide-crack climbing to the heavily slung summit boulder.",
+      "pitch": 7,
+      "anchor": "Sling (summit boulder)",
+      "lengthM": 34
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_action_potential",
+   "before": {
+    "itinerary": {
+     "cal": "Climb July-September; water is reliable at Early Winter Creek and the Bench but not higher — tank up before the Col.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From Burgundy Col, a short scramble down and around the north face on loose rock or snow leads to a clean splitter flake marking the start. Eight pitches of varied flakes, cracks and traverses top out either by rambling up 5.7 terrain to the summit or by traversing Burgundy Ledge into the standard North Face rappel line.",
+       "hours": 13,
+       "miles": 6.6,
+       "title": "Car-to-car: Action Potential",
+       "gainFt": 4300,
+       "lossFt": 4300,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave the pullout",
+         "detail": "Climbers' trail to the Bench."
+        },
+        {
+         "time": "6:45 AM",
+         "label": "Bench camp (6,460 ft)",
+         "detail": "Last reliable water."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Burgundy Col (7,770 ft)",
+         "detail": "Scramble 5-10 min down/around the north face to the start."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Start climbing",
+         "detail": "8 pitches, up to 5.8."
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Top out",
+         "detail": "Traverse Burgundy Ledge to the rap line, or continue up to 5.7 terrain to the true summit."
+        },
+        {
+         "time": "~5:00 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Action Potential (5.8, 8 pitches) and top out via Burgundy Ledge"
+      }
+     ],
+     "totalNote": "A long single day, roughly 12-13 hrs car-to-car for a fit party; widely regarded as the standard, easiest way up Burgundy Spire."
+    },
+    "approach": "Shares the Burgundy Col approach used by Burgundy's other routes. From the SR-20 pullout (~4,310 ft, near milepost 166, ~3.75 mi east of Washington Pass, opposite Silver Star), a boot path drops through talus into forest, passes a register box, and crosses Early Winters Creek on logs at ~4,080 ft. The trail climbs east (~2,200 ft) to a flat bench/campsite at ~6,460 ft — roughly the halfway point and a common high camp — then works up through loose scree gullies and a final cairned stretch of unstable scree-over-slab to Burgundy Col (~7,770–7,800 ft): about 3 miles and 3,500 ft one-way. Action Potential does not start at the col: from the col, scramble down and around the base of Burgundy's north face (loose rock, sometimes steep snow requiring an axe into midsummer) for about 5–10 minutes until you're below a clean splitter flake — this is the route start, between the North Face's start and Ultramega OK's further-around start. Water is available at Early Winters Creek and a trickle near the col; the col's east side sometimes holds snow/ice into summer. The loose scree below the col is the approach's main hazard in both directions.",
+    "approach_variants": [
+     {
+      "name": "The Wine Spires pullout and Burgundy Col, then 5-10 minutes around the north face to the splitter flake",
+      "notes": "From the SR-20 pullout at about 4,310 ft near milepost 166, roughly 3.75 miles east of Washington Pass and opposite Silver Star, a boot path drops through talus into forest, passes a register box, and crosses Early Winters Creek on logs at about 4,080 ft. The trail climbs east, roughly 2,200 ft, to a flat bench and campsite at about 6,460 ft, the halfway point and a common high camp, then works up through loose scree gullies and a final cairned stretch of unstable scree-over-slab to Burgundy Col at about 7,770-7,800 ft. Roughly 3 miles and 3,500 ft one-way. Note that this route's stored trailhead record names a different trailhead than this prose does.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Unstable cairned scree-over-slab on the final stretch to Burgundy Col, the approach's main hazard in both directions",
+       "Loose rock and sometimes steep snow on the walk around the base of the north face",
+       "Anchors on the descent are a mix of slung boulders and horns with fixed bolts; watch for old webbing",
+       "Ledges on the face that catch a pulled rope",
+       "Water only at Early Winters Creek and a trickle near the col"
+      ],
+      "baseFinding": "ACTION POTENTIAL DOES NOT START AT THE COL. FROM BURGUNDY COL, SCRAMBLE DOWN AND AROUND THE BASE OF BURGUNDY'S NORTH FACE FOR ABOUT 5 TO 10 MINUTES UNTIL YOU ARE BELOW A CLEAN SPLITTER FLAKE. THAT FLAKE IS THE ROUTE START.\n\nSO THE THREE THINGS TO CHECK ARE A DIRECTION, A DURATION AND A FEATURE: DOWN and AROUND the north face, FIVE TO TEN MINUTES, and a CLEAN SPLITTER FLAKE. Clean is the operative word on a peak where most of the rock is not.\n\nTHE ORDER ALONG THE BASE, WHICH IS WHAT MAKES THIS ONE PLACEABLE: THIS ROUTE SITS BETWEEN THE NORTH FACE'S START AND ULTRAMEGA OK'S. Ultramega OK is FURTHER AROUND, well climber's-left of both, at a TWIN-CRACK SYSTEM MARKED BY OBVIOUS LOOSE BLOCKS ABOUT 60 FT UP. So: IF YOU ARE LOOKING AT TWO CRACKS WITH LOOSE BLOCKS SIXTY FEET ABOVE YOU, YOU HAVE WALKED PAST THIS ROUTE.\n\nAND IF YOU HAVE NOT WALKED AT ALL, YOU ARE ON THE NORTH FACE: that line starts at a first-pitch chimney at the col end of the base, which is also where the last rappel of the standard descent lands. A chimney at the near end, a splitter flake five to ten minutes along, twin cracks with loose blocks further still.\n\nEARLY IN THE SEASON THE WALK ALONG THE BASE MAY BE SNOW RATHER THAN SCREE, sometimes steep enough to want an axe into midsummer. That does not change the count; it changes the footing.\n\nDESCENT IS THE NORTH FACE'S, WHICH RETURNS YOU TO THIS ROUTE'S OWN START: five double-rope rappels from the summit area, ending with a final 60 m to the base of the first-pitch chimney, near where Action Potential and the North Face begin."
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 48.55186,
+     "peakLng": -120.59014,
+     "trailhead": "Silver Star Creek Trailhead",
+     "trailheadLat": 48.55,
+     "trailheadLng": -120.6306
+    }
+   }
+  },
+  {
+   "id": "wa_golden_age",
+   "before": {
+    "season": "established May-Jun (top-down, using spring snow); climbable through summer"
+   }
+  },
+  {
+   "id": "wa_ellen_pea",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4900,
+      "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+      "note": "Park roadside ~3 mi east of the Washington Pass hairpin; ascend talus directly uphill (north) toward the Supercave gully, ~1 hr to the lower ledge.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the roadside pullout near milepost 166, about 3 miles east of the hairpin turns and a similar distance from the Washington Pass summit. Park at the pullout itself — this is one of the largest roadside walls at Washington Pass, so the parking is the trailhead and there is no spur road to find. From the shoulder the talus and the Supercave gully are directly above you."
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "Upper ledge, M&M Wall",
+      "note": "The 'Supercave' route: 8 pitches of 5.11c passing beneath the wall's huge signature cave; regarded as among the state's finest lines.",
+      "type": "Topout",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "M&M Wall (Supercave) base area",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": 5895
+     }
+    ],
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "closures": "SR-20 closed seasonally (roughly Nov-Apr)",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    },
+    "road": {
+     "name": "SR-20 roadside pullout near milepost 166 (North Cascades Highway), ~3 miles east of the Washington Pass Hairpin Turn - M&M Wall / Supercave",
+     "status": "SR-20 is a fully paved state highway; park at the milepost-166 pullout and hike directly uphill through talus/forest toward the Supercave gully (roughly 1 hour to the lower ledge, 1h10 to the upper ledge).",
+     "driveNote": "About 3.5-4 hours from Seattle via I-5 and SR-20 to Washington Pass.",
+     "seasonalGate": "SR-20 over Washington Pass closes every winter (typically early-mid December to mid-April/May depending on snowpack and highway repairs)."
+    }
+   }
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4900,
+      "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+      "note": "Park roadside ~3 mi east of the Washington Pass hairpin; ascend talus directly uphill (north) toward the Supercave gully.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the roadside pullout near milepost 166, about 3 miles east of the hairpin turns and a similar distance from the Washington Pass summit. Park at the pullout itself — this is one of the largest roadside walls at Washington Pass, so the parking is the trailhead and there is no spur road to find. From the shoulder the talus and the Supercave gully are directly above you."
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "Upper ledge, M&M Wall",
+      "note": "7-pitch 5.12 (7b+) free variation of the original L&H aid line.",
+      "type": "Topout",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "M&M Wall (Supercave) base area",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": 5895
+     }
+    ],
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "closures": "SR-20 closed seasonally (roughly Nov-Apr)",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    },
+    "road": {
+     "name": "SR-20 roadside pullout near milepost 166 (North Cascades Highway), ~3 miles east of the Washington Pass Hairpin Turn - M&M Wall / Supercave",
+     "status": "SR-20 is a fully paved state highway; park at the milepost-166 pullout and hike directly uphill through talus/forest toward the Supercave gully (roughly 1 hour to the lower ledge, 1h10 to the upper ledge).",
+     "driveNote": "About 3.5-4 hours from Seattle via I-5 and SR-20 to Washington Pass.",
+     "seasonalGate": "SR-20 over Washington Pass closes every winter (typically early-mid December to mid-April/May depending on snowpack and highway repairs)."
+    }
+   }
+  },
+  {
+   "id": "wa_the_tiger",
+   "before": {
+    "grade": "5.12-",
+    "pitch_detail": [
+     {
+      "grade": "5.8",
+      "notes": "Easy scrambling moves past flakes and a pruned tree, about 8 m up, gain a clean, slabby left-facing corner that leads to a two-bolt anchor. The approach ledge is a lower one; the highest ledge out of the gully leads to the start of P4 instead.",
+      "pitch": "1",
+      "anchor": "bolted",
+      "lengthM": 25
+     },
+     {
+      "grade": "5.10+",
+      "notes": "A few metres up the corner, make awkward moves over the roof onto the golden slab above. Zigzag past bolts, first left on crack features and then back right, pull a bulge, and follow thin crack features up and left. The moves after the bulge are thin and sustained; easier ground leads to the anchor. Graded 5.10+ to 5.10d.",
+      "pitch": "2",
+      "anchor": "bolted",
+      "lengthM": 45
+     },
+     {
+      "grade": "5.11",
+      "notes": "Up the left-facing corner past flakes and a bolt, then step right to a second bolt and pull into the upper left-facing corner. Sustained and technical with finicky gear, to a two-bolt anchor at a large ledge. Walk the belay left 10–15 m along the ledge to a cairn at the start of P4. Given as 5.11 to 5.11c.",
+      "pitch": "3",
+      "anchor": "bolted",
+      "lengthM": 45
+     },
+     {
+      "grade": "5.10",
+      "notes": "Another left-facing, slabby corner to a bolt, then face moves right past steep, flexing flakes and a solid layback flake. Pull around the arete to the right to the anchor.",
+      "pitch": "4",
+      "anchor": "bolted",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.11-",
+      "notes": "A thin, technical finger corner leads into the big cave, Tiger Belly's Lair; the anchor is on the right side of the cave. Sustained and stout for its grade, which is given from 5.11- to 5.11a.",
+      "pitch": "5",
+      "anchor": "bolted",
+      "lengthM": 35
+     },
+     {
+      "grade": "5.10-",
+      "notes": "Traverse right out of the cave, clip a bolt, and climb a steep wall on positive holds, trending slightly right to a stance below the leaning roof. The Eye of the Tiger variation (5.12c/5.12+) climbs the orange corner straight out of the cave for about 40 m and rejoins the route above; accounts differ on whether it rejoins after P7 or P8.",
+      "pitch": "6",
+      "anchor": "bolted",
+      "lengthM": 15
+     },
+     {
+      "crux": true,
+      "grade": "5.12-",
+      "notes": "The crux: follow the exposed, stepped roof leftward past two bolts, alternating strenuous underclings with holds above the lip. At the end of the roof (a BD #2 fits), reachy but easier moves past a pin reach the anchor. Grades given are 5.12- to 5.12b.",
+      "pitch": "7",
+      "anchor": "bolted",
+      "lengthM": 15
+     },
+     {
+      "grade": "5.11+",
+      "notes": "A short, steep, strenuous layback in the left-facing corner past a fixed piece and two bolts, then a rest on a stance. From a bolt, hand-traverse left past another bolt, with poor feet at first, onto the slab and a sloping belay. A second two-bolt anchor about 7 m up and right is off route.",
+      "pitch": "8",
+      "anchor": "bolted",
+      "lengthM": 25
+     },
+     {
+      "grade": "5.11",
+      "notes": "Straight up cracks and flakes until you can trend left on twin thin cracks, balancy and protected by two fixed nuts. An easier ramp leads left to the anchor at the base of the Tiger Flake. Given as 5.11 to 5.11b.",
+      "pitch": "9",
+      "anchor": "bolted",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.10",
+      "notes": "Clip the bolt left of the anchor and make committing moves to a small ledge, then undercling and jam left around the giant Tiger Flake and continue to its final steep, wide section. Keep a BD #5 for after the first section, to protect the follower, and a #6 for the end. Manage the rope carefully; belay on a big ledge.",
+      "pitch": "10",
+      "anchor": "bolted",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.10-",
+      "notes": "Broken cracks and blocky features lead up and right to a final bulge and onto the ridge; anchor from a tree. The weakest pitch on the route. Descend by rappelling the route with two ropes, including diagonal rappels, or by the third-class ramp on the left side of the wall.",
+      "pitch": "11",
+      "anchor": "tree",
+      "lengthM": 30
+     }
+    ],
+    "beta": "Technical, slabby corners low on the route give way to steep, physical, and strenuous climbing higher up. All but one of the 11 pitches is rated 5.10 or harder, with a bouldery 5.12- crux (underclings under a roof) at pitch 7. Well-placed bolts protect the hardest moves, but some 5.11- sections require finicky natural gear.",
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4900,
+      "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+      "note": "Park roadside ~3 mi east of the Washington Pass hairpin; ascend talus directly uphill (north) toward the Supercave gully, ~1 hr 10 min to the upper ledge.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the roadside pullout near milepost 166, about 3 miles east of the hairpin turns and a similar distance from the Washington Pass summit. Park at the pullout itself — this is one of the largest roadside walls at Washington Pass, so the parking is the trailhead and there is no spur road to find. From the shoulder the talus and the Supercave gully are directly above you."
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "Upper ledge, M&M Wall",
+      "note": "11-pitch 5.12 up the wall's south face, one of the longer lines on M&M Wall.",
+      "type": "Topout",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "M&M Wall (Supercave) base area",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": 5895
+     }
+    ],
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "closures": "Access via SR-20 is closed seasonally (roughly Nov-Apr) by WSDOT avalanche-safety gates",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    },
+    "road": {
+     "name": "SR-20 roadside pullout near milepost 166 (North Cascades Highway), ~3 miles east of the Washington Pass Hairpin Turn - M&M Wall / Supercave",
+     "status": "SR-20 is a fully paved state highway; park at the milepost-166 pullout and hike directly uphill through talus/forest toward the Supercave gully (roughly 1 hour to the lower ledge, 1h10 to the upper ledge).",
+     "driveNote": "About 3.5-4 hours from Seattle via I-5 and SR-20 to Washington Pass.",
+     "seasonalGate": "SR-20 over Washington Pass closes every winter (typically early-mid December to mid-April/May depending on snowpack and highway repairs)."
+    },
+    "grade_num": 12
+   }
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.549,
+      "lng": -120.630965,
+      "elev": 4900,
+      "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+      "note": "Park roadside ~3 mi east of the Washington Pass hairpin; ascend talus directly uphill (north) toward the Supercave gully.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 to the roadside pullout near milepost 166, about 3 miles east of the hairpin turns and a similar distance from the Washington Pass summit. Park at the pullout itself — this is one of the largest roadside walls at Washington Pass, so the parking is the trailhead and there is no spur road to find. From the shoulder the talus and the Supercave gully are directly above you."
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "Upper ledge, M&M Wall",
+      "note": "5.11a trad line on the same south-facing wall.",
+      "type": "Topout",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.54793,
+      "lng": -120.63975,
+      "elev": 5895,
+      "name": "M&M Wall (Supercave) base area",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": 5895
+     }
+    ],
+    "access": {
+     "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "None required for day climbing",
+     "closures": "SR-20 closed seasonally (roughly Nov-Apr)",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+     }
+    },
+    "road": {
+     "name": "SR-20 roadside pullout near milepost 166 (North Cascades Highway), ~3 miles east of the Washington Pass Hairpin Turn - M&M Wall / Supercave",
+     "status": "SR-20 is a fully paved state highway; park at the milepost-166 pullout and hike directly uphill through talus/forest toward the Supercave gully (roughly 1 hour to the lower ledge, 1h10 to the upper ledge).",
+     "driveNote": "About 3.5-4 hours from Seattle via I-5 and SR-20 to Washington Pass.",
+     "seasonalGate": "SR-20 over Washington Pass closes every winter (typically early-mid December to mid-April/May depending on snowpack and highway repairs)."
+    }
+   }
+  }
+ ]
+}

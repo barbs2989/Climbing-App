@@ -1,0 +1,271 @@
+{
+ "batches": ["b009.json", "b010.json", "b011.json", "b012.json"],
+ "routes_read": 11,
+ "routes": [
+  {
+   "id": "wa_fortress_mountain_southwest_face",
+   "name": "Southwest Face",
+   "area": "Fortress Mountain",
+   "contradictions": [
+    {
+     "fact": "Total route distance shown as header Dist",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "14.5 (≈9.0 mi)"},
+      {"field": "waypoints[1] (Fortress Mountain summit).distMi", "says": "11"},
+      {"field": "itinerary", "says": "Day 1, hike in ~9-9.5 miles to camp at Buck Creek Pass or the alpine basin below Pass No Pass; Day 2, climb Fortress... from camp; Day 3, hike out."}
+     ],
+     "why": "The header Dist field (dist_km, ~9 mi) matches only the one-way approach distance to camp, not the one-way distance to the summit (11 mi per the route's own waypoint) or the round-trip distance implied by a 3-day itinerary, understating what a climber should expect by roughly half.",
+     "internal_resolution": "The summit waypoint's own distMi (11) and the 3-day itinerary both point to a longer route than dist_km implies; dist_km appears to capture only the approach-to-basin leg.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "name": "East Ridge",
+   "area": "Fortress Mountain",
+   "contradictions": [
+    {
+     "fact": "Gain vs loss for an out-and-back route",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "5884"},
+      {"field": "loss_ft", "says": "7900"},
+      {"field": "descent", "says": "Reverse the East Ridge and gully back to the Chiwawa-Fortress col, then descend to the bench and back down to the Chiwawa River/Buck Creek Trail to Trinity Trailhead."},
+      {"field": "descent_text", "says": "From the col, either continue on to Chiwawa Mountain... or drop back to the ~6,580 ft bench and retrace the cross-country line down to the Chiwawa River Trail, then out via the Buck Creek Trail to Trinity Trailhead."}
+     ],
+     "why": "The route explicitly describes descending the same line used on ascent back to the same trailhead (net elevation change = 0), so total gain and total loss should be roughly equal; a 2,016 ft (34%) imbalance is unexplained by any described extra terrain.",
+     "internal_resolution": "Other symmetric out-and-back routes on the same peak (e.g. the Southwest Face route, gain 5884/loss 6000) show near-equal gain/loss; loss_ft here looks like the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Headline total trip time (timing.totalHrs) for this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "9.27"},
+      {"field": "itinerary", "says": "Typically a 2-3 day trip: hike in via the Chiwawa River/Buck Creek Trail to camp at the ~7,200 ft Chiwawa-Fortress col..., climb Fortress and often Chiwawa Mountain from camp, then hike back out. A car-to-car speed-traverse of both peaks (25+ miles, off-trail) has been done in just over 9 hours by a strong trail runner."}
+     ],
+     "why": "The route's own PUBLISHED TIMES field (9.27 hrs) is drawn from an outlier speed-record for traversing TWO peaks (Fortress and Chiwawa) by a strong trail runner, not from a typical single-peak East Ridge ascent, which the same route's itinerary frames as a normal 2-3 day trip.",
+     "internal_resolution": "The itinerary text itself frames the 9-hour figure as an exceptional record for a two-peak traverse, not the expected time for this route alone.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_fortress_mountain_northeast_face",
+   "name": "Northeast Ridge",
+   "area": "Fortress Mountain",
+   "contradictions": [
+    {
+     "fact": "Climbing season window",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep (summer); winter ascents documented but far more serious"},
+      {"field": "best_season", "says": "Summer (roughly June-September) for the driest rock conditions on the chimney; also climbed/skied in winter (mid-February ascents recorded) under stable avalanche conditions."}
+     ],
+     "why": "best_season names June as part of the best window for dry-rock conditions, but June falls outside the stated season range of Jul-Sep.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_greenwood_mountain_west_ridge",
+   "name": "West Ridge",
+   "area": "Greenwood Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "name": "West Ridge",
+   "area": "Martin Peak",
+   "contradictions": [
+    {
+     "fact": "Which line the route actually climbs (West Ridge crest vs. a different 'Southeast Slopes' gully)",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[1].title", "says": "Summit day: Martin Peak via Southeast Slopes"},
+      {"field": "itinerary.days[1].note", "says": "From Holden Pass, traverse east along the connecting ridge toward Bonanza, then cut right onto the south-facing slopes into a loose scree gully. Climb the gully and exit via a short Class 3-4 rock step near its top just below an overhang to reach the summit block."},
+      {"field": "timing.sectionBreakdown[1].note", "says": "From Holden Pass, traverse east along the connecting ridge toward Bonanza, then cut right onto the south-facing slopes into a loose scree gully..."},
+      {"field": "beta", "says": "From Holden Pass (the saddle shared with Bonanza Peak), gain the ridge via a series of gullies, scrambling on the right (south) side of the crest and repeating this pattern upward."},
+      {"field": "pitch_detail[1].notes", "says": "Ridge crest scramble easterly; easier terrain lies on climber's right (south side) of the crest, through ribs and a loose, beige-marble gully."},
+      {"field": "approach_variants[0].baseFinding", "says": "THE POSITIVE TEST IS WHICH SIDE OF THE CREST YOU ARE ON... Gain the ridge by a series of gullies and scramble on the RIGHT — the SOUTH — side of the crest, then repeat that pattern upward."}
+     ],
+     "why": "The itinerary's summit-day schedule and its matching timing.sectionBreakdown entry name a different route ('Southeast Slopes') and describe traversing toward Bonanza and climbing a loose scree gully, while beta, pitch_detail, approach_variants and bail all consistently describe climbing the West Ridge crest itself via a repeating series of gullies on its south flank — a different line with a different entry point and hazard picture.",
+     "internal_resolution": "Five other fields (beta, pitch_detail, descent_text, bail, approach_variants) independently agree on the West Ridge crest line; itinerary.days[1] and timing.sectionBreakdown[1] are the outliers and look copied from a different route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether Martin Peak has a drive-to trailhead requiring a self-issue permit",
+     "severity": "high",
+     "claims": [
+      {"field": "permit", "says": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads."},
+      {"field": "access.permit", "says": "null"},
+      {"field": "access.closures", "says": "Forest Road 8301 was made unusable by flooding and mudslides in mid-December 2025; Holden Village was evacuated on 13 December 2025 and remains closed to guests through at least summer 2026... Until the order is lifted it is illegal to access the Lucerne dock or travel on FSR 8301"},
+      {"field": "road.driveNote", "says": "There is no drive-in trailhead. Ferry to Lucerne Landing, then an 11-mile gravel road with 12 switchbacks by Holden Village shuttle bus to reach Holden Village and the Railroad Creek Trail."}
+     ],
+     "why": "The top-level permit field describes a normal drive-to trailhead with a self-issue permit kiosk, but Martin Peak has no vehicle trailhead at all (ferry + shuttle only), that shuttle/ferry access is currently prohibited by closure order, and the route's own access.permit field is null.",
+     "internal_resolution": "road.driveNote and access.closures both explicitly state there is no drivable trailhead and that boat/shuttle access is currently illegal; the top-level permit field looks like boilerplate copied from a drive-in-trailhead route.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "name": "West Route",
+   "area": "Massie Peak",
+   "contradictions": [
+    {
+     "fact": "Which approach and camp are used to reach Massie Peak's West Ridge",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[0].title", "says": "Approach to Buck Creek Pass"},
+      {"field": "itinerary.days[0].note", "says": "From the Trinity Trailhead, follow the Buck Creek Trail through forest and along the Chiwawa River, then climb steadily to the open meadows of Buck Creek Pass."},
+      {"field": "itinerary.days[1].note", "says": "Break camp and continue past High Pass toward Massie Peak's south basin (~6,600 ft), where most parties make their second camp near a small stream in the east gully."},
+      {"field": "itinerary.totalNote", "says": "roughly 29 miles round trip with about 5,500 ft of cumulative gain"},
+      {"field": "approach", "says": "From the Trinity Trailhead..., pick up the Chiwawa River Trail #1550... Watch the left (west) side of the trail for an 'M' blazed/carved into a tree... Ford the Chiwawa River at this point... and pick up the old sheep-drive trail, which climbs steeply... to Massie Lake (~6,600-6,700 ft)."},
+      {"field": "waypoints", "says": "Massie Lake junction ('M' tree marker) distMi 2.8; Massie Lake distMi 4.7; Ridge gain off the Massie Lake High Route distMi 5.9; Massie Peak summit distMi 6.3"},
+      {"field": "dist_km", "says": "20.28 (≈12.6 mi)"}
+     ],
+     "why": "The itinerary sends the party up the Buck Creek Trail to Buck Creek Pass and High Pass to a camp in a 'south basin'/'east gully' (29 mi round trip total), while approach, beta, descent_text, bail, climbing_route, approach_variants and the route's own waypoints all describe a shorter, different approach: the Chiwawa River Trail, a river ford, and a sheepherder's path to a Massie Lake camp (~12.6 mi round trip per dist_km and the waypoint distances).",
+     "internal_resolution": "Approach, beta, descent_text, bail, climbing_route, approach_variants and the waypoint chain (all summing to ~6.3 mi one-way / dist_km 20.28 km) agree with each other; itinerary.days and its 29-mile total are the outlier and describe an unrelated Buck Creek Pass approach.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "name": "Southeast Face / Leroy Basin",
+   "area": "Mount Fernow",
+   "contradictions": [
+    {
+     "fact": "Total round-trip distance shown as header Dist",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "8 (≈5.0 mi)"},
+      {"field": "itinerary.days", "says": "day1 miles 5.4, day2 miles 6.9, day3 miles 5.3 (sums to 17.6 mi)"},
+      {"field": "itinerary.totalNote", "says": "A 3-day, ~17.5-mile round-trip backpack with about 8,100 ft of cumulative gain..."},
+      {"field": "gain_ft / loss_ft", "says": "8100 / 8100 (matches the itinerary day gain/loss sums exactly)"},
+      {"field": "waypoints (Mount Fernow Summit).distMi", "says": "7.8"}
+     ],
+     "why": "The header Dist field (dist_km, 5 mi) is roughly a third of the route's actual ~17.6-mile round trip, which is corroborated by the itinerary's own day-by-day miles/gain (which exactly match gain_ft/loss_ft) and by the summit waypoint's one-way distance of 7.8 mi.",
+     "internal_resolution": "itinerary.days and gain_ft/loss_ft agree with each other precisely; dist_km is the clear outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether this route involves any rappelling",
+     "severity": "medium",
+     "claims": [
+      {"field": "rappels", "says": "0"},
+      {"field": "descent_text", "says": "some parties, especially in wet rock or with a less experienced group, sling a horn or block on the north side of the block for a quick single rappel instead of downclimbing the crux moves — there are no fixed or bolted anchors on this route, so bring a couple of slings/rap rings to build a natural anchor, and a 30 m rope is sufficient"},
+      {"field": "rope_note", "says": "if you rappel the crux rather than downclimb it - which parties do on wet rock or with a less experienced group - you build the anchor yourself off a slung horn, and a couple of rap rings are worth the weight."}
+     ],
+     "why": "The rappels field states zero rappels, but the route's own descent narrative and gear note both describe an optional single rappel off the summit block that some parties actually use, and specifically recommend carrying rap rings for it.",
+     "internal_resolution": "descent_text and rope_note agree with each other that an optional rappel exists; rappels: 0 contradicts both.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether a parking pass/fee is required at this trailhead",
+     "severity": "low",
+     "claims": [
+      {"field": "permit", "says": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads."},
+      {"field": "access.fees", "says": "None — Phelps Creek Trailhead is a no-fee USFS site."},
+      {"field": "access.permit", "says": "...No Northwest Forest Pass or trailhead fee is required at Phelps Creek Trailhead."}
+     ],
+     "why": "The generic top-level permit field hedges that a Northwest Forest Pass may apply, while this route's own access fields say plainly that no pass or fee is required at its specific trailhead.",
+     "internal_resolution": "access.fees and access.permit are specific to this trailhead and agree with each other; the top-level permit field looks like shared boilerplate.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "name": "Southwest Ridge Route",
+   "area": "Mount Lyall",
+   "contradictions": [
+    {
+     "fact": "Whether Mount Lyall has a drive-to trailhead requiring a self-issue permit",
+     "severity": "high",
+     "claims": [
+      {"field": "permit", "says": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads."},
+      {"field": "access.permit", "says": "NPS wilderness permit (reservation via recreation.gov, lottery + walk-up) for camping near High Bridge/Agnes Creek inside the park; USFS self-issue permit once in Glacier Peak Wilderness"},
+      {"field": "access.passRequired", "says": "No Forest Service trailhead pass needed at High Bridge (reached via boat/PCT, not a drive-to trailhead); NPS wilderness permit required for in-park camping"},
+      {"field": "road.status", "says": "No public through-road; Stehekin is roadless and reached only by boat, floatplane, or trail"}
+     ],
+     "why": "The top-level permit field implies a normal self-issue kiosk and a possible Northwest Forest Pass requirement 'at the trailhead,' but Mount Lyall is reached only by a scheduled Lake Chelan ferry plus trail, and the actual permit process is an NPS backcountry-permit lottery/reservation system, not a self-issue trailhead kiosk.",
+     "internal_resolution": "access.permit, access.passRequired and road.status all agree on the ferry-only, NPS-permit access model; the top-level permit field is boilerplate that does not apply here.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "name": "Entiat Ice Fall",
+   "area": "Mount Maude",
+   "contradictions": [
+    {
+     "fact": "Total route distance shown as header Dist",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "8.05 (≈5.0 mi)"},
+      {"field": "approach", "says": "...up the Phelps Creek Trail to the Leroy Creek crossing, then the climber's trail into Leroy Creek Basin (~6,100-6,200 ft, ~5 miles). From camp, continue toward the Seven Fingered Jack-Maude col/Icy Lake area and descend to the Entiat Glacier to reach the icefall."}
+     ],
+     "why": "dist_km (5.0 mi) matches only the one-way distance to Leroy Creek Basin quoted in the approach text; the route continues well beyond the basin across the col, glacier and icefall to the summit and back, so the header Dist likely understates the real round-trip distance.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_maude_r3",
+   "name": "Nothing Couloir",
+   "area": "Mount Maude",
+   "contradictions": []
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "name": "North Face",
+   "area": "Mount Maude",
+   "contradictions": [
+    {
+     "fact": "Total round-trip distance shown as header Dist",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "6.4 (≈4.0 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "14.3"},
+      {"field": "itinerary.totalNote", "says": "roughly 14 miles and ~5,600-6,000 ft of gain/loss"}
+     ],
+     "why": "The header Dist field (4.0 mi) is less than a third of the itinerary's stated 14.3-mile car-to-car round trip.",
+     "internal_resolution": "itinerary.days[0].miles and totalNote agree with each other and with gainFt/lossFt (6000/6000, close to route-level gain_ft/loss_ft 5580/5580); dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "End of the reliable snow/ice season on the face",
+     "severity": "medium",
+     "claims": [
+      {"field": "best_season", "says": "the face now most reliably holds continuous, climbable snow from about early June to mid-July; by late July conditions are frequently patchy..."},
+      {"field": "climate.summer / climate.bySeason.summer", "says": "Continuous snow/ice on the face typically persists only into about mid-July in recent years; by late summer the route is largely bare rock, broken ice, and scree."},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Late May through June is the reliable window, before the face degrades into rotten, rockfall-prone conditions by midsummer"},
+      {"field": "seasonal_guidance.monthBreakdown.July", "says": "Face can still hold into early July, but by midsummer it is described as melting out and turning rotten with rising rockfall danger (status: marginal)"}
+     ],
+     "why": "best_season and climate.summer both put the reliable window through mid-July, while seasonal_guidance.optimalWindow says the reliable window ends in June and rates July only 'marginal' — a real disagreement about whether a July attempt should expect continuous snow/ice.",
+     "internal_resolution": "best_season and climate.summer agree with each other (mid-July cutoff); seasonal_guidance is the outlier restricting the optimal window to May-June.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ice grade of the route (header grade pill)",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Moderate alpine ice, AI2-3"},
+      {"field": "ice_grade", "says": "AI2"},
+      {"field": "pitch_detail (Upper face).grade", "says": "Up to 55-65° snow/ice (AI2-3 in harder conditions)"}
+     ],
+     "why": "The header grade pill reads ice_grade before the generic grade field (per the site's rock_grade→ice_grade→alpine_grade→grade priority), so with no rock_grade present it would show 'AI2' — understating the AI2-3 difficulty the route's own grade field and its upper-face pitch both state.",
+     "internal_resolution": "The top-level grade field and the upper-face pitch_detail entry agree on AI2-3; ice_grade alone is the outlier and would surface as the header value.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

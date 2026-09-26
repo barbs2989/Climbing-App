@@ -1,0 +1,259 @@
+{
+ "applied": [
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Side of the col descended"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead location"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead location"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether the camp zone permit can be reserved in advance"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the camp zone permit can be reserved in advance"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether the camp zone permit can be reserved in advance"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "column": "what_to_bring",
+   "path": [
+    0
+   ],
+   "fact": "Whether the camp zone permit can be reserved in advance"
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Cairn / turnoff elevation and distance"
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "column": "obj_haz",
+   "path": [],
+   "fact": "Glacier on the approach"
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Whether the camp zone permit can be reserved in advance"
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether the camp zone permit can be reserved in advance"
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Whether the camp zone permit can be reserved in advance"
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether the camp zone permit can be reserved in advance"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "before": {
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "3",
+      "label": "Scramble from the Himmelhorn-Ottohorn col",
+      "notes": "From the col the summit is reported as easy scrambling — accounts consistently call the peak class 3 and describe it as one of the few Southern Picket summits that is not fifth class. Parties have climbed it from the col in roughly an hour round trip, some without taking rope or rack out of camp. Picket rock is broken and the col itself is loose, so helmets and careful block-testing matter more than the grade suggests; the col is also the retreat point, and getting back down its north side late in the season can be harder than the scramble above."
+     },
+     {
+      "n": 2,
+      "class": "5.7",
+      "label": "Rockfall scar below the summit ridge",
+      "notes": "At least one party found the easy line broke into a fresh rockfall zone about 30 ft below the summit ridge and backed off rather than cross it, returning with a rope and climbing a roped alternative of about two pitches of juggy 5.7 to the top. Treat this as conditions-dependent rather than fixed: the scar is recent enough that the terrain here may have changed again, and a scramble party arriving without gear may find no acceptable line through the unstable blocks. Carry enough to retreat or to protect a short 5th-class variation, and do not commit to the last 100 ft until you can see it."
+     }
+    ],
+    "approach": "There is no trail to this peak; the approach is the trip. From SR 20 just west of Newhalem, turn north opposite the North Cascades Visitor Center entrance road, go left at the immediate T-junction, past a gravel quarry, then right and uphill on a narrow but well-graded gravel road to the signed Goodell Creek climbers' trailhead (48.6733, -121.2658, about 600 ft). Follow the old roadbed up Goodell Creek for roughly 3.5-4 miles. At about 1,700 ft a stone arrow on the ground marks the unsigned turnoff for the Terror Creek climbers' path — it is easy to walk straight past it, so waypoint it in advance. From the arrow the boot-beaten path climbs relentlessly and steeply up the hillside, gaining about 5,000 ft with essentially no reliable water, to timberline at 5,000-5,200 ft. Above treeline make a rising traverse over meadows, slabs and snowfields toward a 6,200 ft saddle; the standard Terror Basin camp sits about 400 ft below the saddle at roughly 5,800 ft. One party took about 6.5 hours from the trailhead to Terror Basin. For Ottohorn you must keep going west: traverse Terror Basin holding roughly the 6,000 ft contour, then cross the Barrier — the ridge dividing Terror Basin from Crescent Creek Basin — at about 6,100 ft. The Barrier crossing is the non-technical crux of the whole trip: steep, loose, grassy 'serious Class 3' ledges where a slip is not survivable. Drop into Crescent Creek Basin and camp at about 6,200 ft (a good alternative camp sits at 6,400 ft on the Chopping Block ridge overlooking the basin). From that camp, snow and small glacier slopes lead northwest in about an hour to the Ottohorn-Himmelhorn col at roughly 7,400 ft, where the route proper begins. Note on the numbers: the listed 7,240 ft is the net trailhead-to-summit gain from recorded elevations; the Barrier crossing and the Terror Basin traverse add several hundred feet of extra up-and-down each way, and the near-identical Goodell Creek / Terror Basin / Barrier approach to Mount Terror is recorded at 20 miles and 10,000 ft round trip.",
+    "road": {
+     "name": "Goodell Creek Campground access road off SR 20 (North Cascades Highway) at Newhalem",
+     "status": "Open — paved SR 20 to Newhalem, then a short gravel spur past a gravel quarry to a developed climbers' trailhead with parking and a sign noting this is a climbers' trail, not a hikers' trail. Passable to any passenger car.",
+     "driveNote": "From Marblemount follow SR 20 east about 14 miles to Newhalem. Turn north opposite the North Cascades Visitor Center entrance road, go left at the immediate T-junction, continue past a gravel quarry where the pavement ends, then take the right fork uphill on a narrow but well-graded gravel road; the trailhead is on the right within about a mile. Trailhead at 48.6733, -121.2658, roughly 600 ft.",
+     "seasonalGate": "None affecting this approach. SR 20's winter closure gates sit east of Newhalem — the initial closure is between the Ross Dam trailhead (MP 134) and the Silver Star gate (MP 171), moving down to the Newhalem gate (MP 120) and Early Winters (MP 178) in deep winter. Access to Goodell Creek from Marblemount and the west is open year-round."
+    },
+    "access": {
+     "fees": "Summer backcountry permits cost $10 per person plus a $6 non-refundable reservation fee; youth 15 and under are free. Fees apply mid-May through early October; permits are free from early October to mid-May. There is no park entrance fee and no parking fee on North Cascades National Park land.",
+     "permit": "A backcountry/wilderness permit is required for every overnight stay, including bivouacs — which means every realistic ascent of this peak. Reserve on Recreation.gov (watch the mandatory safety video and email noca_wilderness@nps.gov within three days of your trip start, then print the permit), or take your chances on walk-ups: roughly 40% of sites are held for same-day or next-day issue. The Wilderness Information Center at 7280 Ranger Station Road, Marblemount WA 98267 (360-854-7200) issues permits, lends bear canisters and gives current conditions.",
+     "closures": "No standing closure on this approach. Practical constraints instead: no campfires anywhere in the backcountry zones (stoves only), food must be stored in a bear canister or hung, human waste must be packed out in blue bags on snow and bare rock and never buried in snow or crevasses, and all flagging and webbing left behind counts as trash. Cutting vegetation is illegal and citable. Check with the Wilderness Information Center for temporary closures before each trip.",
+     "landManager": "North Cascades National Park (National Park Service) — the Southern Picket Range cross-country zone. Trailhead and approach are within the North Cascades National Park Complex.",
+     "passRequired": "No Northwest Forest Pass or America the Beautiful pass is needed to park at the Goodell Creek climbers' trailhead — it is on park land, where NPS charges no entry or parking fee. (Note that many other North Cascades-area trailheads on adjacent Forest Service land do require a Northwest Forest Pass.)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    },
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "what_to_bring": [
+     "North Cascades backcountry permit, reserved on Recreation.gov and printed before you go",
+     "Satellite messenger or PLB — there is no cell coverage on any part of this route",
+     "Bear canister or a proper hang bag (NPS food-storage rules apply)",
+     "Blue bags for human waste on snow and bare rock — never bury it in snow",
+     "3-4 L water capacity; the climbers' path has essentially no water for 5,000 ft",
+     "GPX or waypoint for the stone arrow at ~1,700 ft where the Terror Creek path leaves the roadbed",
+     "Approach shoes for the roadbed plus boots that take crampons",
+     "Full storm shell and insulation — maritime squalls hit the Pickets even in August",
+     "Sun protection and glacier glasses for the snow basins",
+     "Trekking poles for the 5,000 ft climbers' path and the brutal descent of it",
+     "Map of the Barrier crossing; it is the single easiest place on the trip to get cliffed out"
+    ]
+   }
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.68276,
+      "lng": -121.26928,
+      "name": "Goodell Creek Trailhead",
+      "note": "Unpaved pullout off Goodell Creek Rd, just before Goodell Creek Campground, across SR-20 from Newhalem; standard access for all Southern Pickets objectives via the Terror Creek climbers' trail.",
+      "type": "Trailhead",
+      "directions": "Take the gravel road that forks off Highway 20 across from Newhalem and follow it to where it dead-ends at a gravel pit, at about 600 feet — there is parking here but no trailhead sign. The unpaved pullout sits just before Goodell Creek Campground and is the standard access point for Southern Pickets objectives via the Terror Creek climbers' path. A North Cascades National Park backcountry permit for the Crescent Creek Basin zone is required."
+     },
+     {
+      "lat": 48.721092,
+      "lng": -121.288257,
+      "elev": 3200,
+      "name": "Large cairn off the old roadbed",
+      "note": "Cairn/arrow marks where the climbers' path leaves the Goodell Creek roadbed toward Terror Creek and Crescent Creek Basin.",
+      "type": "Junction",
+      "distMi": 4
+     },
+     {
+      "lat": 48.724699,
+      "lng": -121.289851,
+      "elev": 2600,
+      "name": "Terror Creek ford",
+      "note": "Ford on foot near a cairn on the far bank; typically no more than calf-deep by midsummer but can run high and cold earlier in the season.",
+      "type": "Water",
+      "distMi": 4.3
+     },
+     {
+      "lat": 48.733115,
+      "lng": -121.293572,
+      "elev": 3800,
+      "name": "Forested ridge crest, toe of the Barrier",
+      "note": "Steep climbers' path tops out on the ridge between Terror and Crescent Creeks here; this is the base of 'the Barrier' rock rib you cross next.",
+      "type": "Junction",
+      "distMi": 5
+     },
+     {
+      "lat": 48.751149,
+      "lng": -121.301543,
+      "elev": 6100,
+      "name": "The Barrier crossing",
+      "note": "Loose, dirty Class 3 traverse with exposed moves crossing the Barrier's rock rib into the Terror/Crescent Creek basins; rockfall risk on the loose sections.",
+      "type": "Hazard",
+      "distMi": 6.5
+     },
+     {
+      "lat": 48.763172,
+      "lng": -121.306857,
+      "elev": 6200,
+      "name": "Crescent Creek Basin camp",
+      "note": "Established basin camp used for Ottohorn, Himmelhorn, and the Chopping Block; reached after crossing the Barrier.",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 7400,
+      "name": "Ottohorn-Himmelhorn col",
+      "note": "About an hour above camp with some dicey scrambling near the top; gain the col here then follow the 1961 line onto Ottohorn's east ridge (Class III). South side of the col is the easier descent, the north side turns to loose low-5th once melted out.",
+      "type": "Junction",
+      "distMi": 8
+     },
+     {
+      "lat": 48.7764,
+      "lng": -121.3125,
+      "elev": 7840,
+      "name": "Ottohorn summit",
+      "type": "Summit",
+      "elevFt": 7840
+     }
+    ],
+    "obj_haz": [
+     "loose rock at and above the col",
+     "bergschrund/moat at the col late season",
+     "crevasses on the Mustard Glacier approach",
+     "rockfall"
+    ],
+    "access": {
+     "fees": "$10 per person plus a nonrefundable $6 permit fee during the summer season (roughly mid-May through early October); no fee is charged the rest of the year; youth 15 and under are free.",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Overnight camping in Crescent Creek Basin requires an NPS wilderness/backcountry permit (day climbing itself needs no separate permit, but no one climbs Ottohorn car-to-car). As of the park's current process, reserve on Recreation.gov or request via email to noca_wilderness@nps.gov, watch the mandatory backcountry video, and print/carry the signed permit.",
+     "closures": "The Goodell Creek trailhead itself is reachable whenever WA-20 is open at Newhalem, which is normally year-round; only the highway east of Ross Dam (~milepost 134) closes for winter. Check NPS road-conditions and WSDOT pages before shoulder-season trips.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (National Park Service)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "No separate day-use pass — access is via Goodell Creek Road inside the park, so only the wilderness camping permit applies.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+      "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before."
+     }
+    },
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)."
+   }
+  }
+ ]
+}

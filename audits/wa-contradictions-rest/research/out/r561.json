@@ -1,0 +1,723 @@
+{
+ "file": "r561.json",
+ "results": [
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "fact": "Total elevation loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The itinerary days sum to 7,550 ft of loss against loss_ft 6,550. No outside source states a car-to-car descent figure for this traverse (one 3-day report gives 7,400 ft gain with the summit, another 9,000 ft gain, neither gives loss), so loss_ft is left untouched per the loss_ft rule.",
+   "sources": [
+    "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/",
+    "https://explorerron.com/2024/09/04/the-putvin-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "fact": "Mount Stone summit side-trip time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 3 hours round trip for the summit side-trip",
+   "evidence": "A detailed 3-day trip report of this traverse logs the Mt Stone side trip at 3.0 hours round trip and 1,100 ft of gain, matching the beta (~3 hrs, 1,100 ft) and the 10:30 AM to 2:00 PM schedule block; the '~1.5 hr' schedule detail is the lone outlier. Only one independent external source found, plus beta and both schedule times.",
+   "sources": [
+    "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "expect": "Side-trip via South Face gully, ~1.5 hr round trip, Class 3.",
+     "value": "Side-trip via South Face gully, ~3 hr round trip, Class 3-4.",
+     "id": "wa_lena_lake_to_mt_stone_traverse",
+     "fact": "Mount Stone summit side-trip time"
+    }
+   ]
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "fact": "Difficulty of the summit side-trip gully",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Class 3-4 (south-face gully)",
+   "evidence": "A 3-day trip report of this exact traverse rates the south-face gully Class 3-4, agreeing with beta, pitch_detail[4], climbing_route[0], the approach and the summit waypoint note (5 fields). The grade and rock_grade columns and the itinerary detail said Class 3; they are raised to Class 3-4 (the itinerary detail is fixed by the side-trip-time patch). grade_num is derived and not patched.",
+   "sources": [
+    "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 3",
+     "value": "Class 3-4",
+     "id": "wa_lena_lake_to_mt_stone_traverse",
+     "fact": "Difficulty of the summit side-trip gully"
+    },
+    {
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Class 3",
+     "value": "Class 3-4",
+     "id": "wa_lena_lake_to_mt_stone_traverse",
+     "fact": "Difficulty of the summit side-trip gully"
+    }
+   ]
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "fact": "One-day outing vs multi-day trip",
+   "verdict": "fixed",
+   "correct_value": "A two- to three-day backpack (single-push only for very strong parties)",
+   "evidence": "Three independent trip reports of this traverse took 3 days / 2 nights (one 25 mi & 9,000 ft over 3 days, one 3 days 15.1 mi, one May 23-25 16.3 mi), matching the itinerary, what_to_bring and partner_requirements. The overview's 'full day out' and hazards[2]'s 'very long day' are reworded to multi-day framing.",
+   "sources": [
+    "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/",
+    "https://explorerron.com/2024/09/04/the-putvin-traverse/",
+    "https://thirst4adventure.com/2015/05/28/lake-of-angels-upper-lena-traverse/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "It is a full, demanding day out rather than a technical climb",
+     "replace": "It is usually done as a demanding two- to three-day backpack rather than a technical climb",
+     "id": "wa_lena_lake_to_mt_stone_traverse",
+     "fact": "One-day outing vs multi-day trip"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "A very long day (up to 16 miles",
+     "replace": "A very long outing (up to 16 miles",
+     "id": "wa_lena_lake_to_mt_stone_traverse",
+     "fact": "One-day outing vs multi-day trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "fact": "Distance from Upper Lena Lake to St. Peter's Gate",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One GPS-logged trip report gives about 5.3 miles and 2,200 ft from Upper Lena Lake to St. Peter's Gate; another report's day 2 covered about 5 miles (including the drop to Lake of the Angels). Both say the stored '2.2 miles' is too short, but no two sources agree on a figure for this segment, and the waypoint distMi values (3.8 mi) also disagree with them, so nothing is patched.",
+   "sources": [
+    "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/",
+    "https://explorerron.com/2024/09/04/the-putvin-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "fact": "Gain from Lena Lake to Upper Lena Lake",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 2,700 ft from Lena Lake to Upper Lena Lake",
+   "evidence": "WTA gives Upper Lena Lake at 4,600 ft, 3,900 ft total gain, with about 1,300 ft of it in the first 3 miles to Lena Lake, leaving roughly 2,600 ft above Lena Lake; the row's own waypoints (1,800 to 4,550 ft), bivy (4,500) and '~4,000 ft total from the trailhead' give about 2,750. The '2,200 ft' figure is the outlier in both approach and approach_variants[0].",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/upper-lena-lake",
+    "https://explorerron.com/2024/09/04/the-putvin-traverse/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 2,200 additional feet to Upper Lena Lake",
+     "replace": "about 2,700 additional feet to Upper Lena Lake",
+     "id": "wa_lena_lake_to_mt_stone_traverse",
+     "fact": "Gain from Lena Lake to Upper Lena Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "roughly 3.5 more miles and 2,200 ft to Upper Lena Lake",
+     "replace": "roughly 3.5 more miles and 2,700 ft to Upper Lena Lake",
+     "id": "wa_lena_lake_to_mt_stone_traverse",
+     "fact": "Gain from Lena Lake to Upper Lena Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "fact": "Where to cache overnight packs",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The one detailed external report of this traverse cached packs at the base of the basalt cliff about 300 ft BELOW St. Peter's Gate (which is what pro_tips and descent_text say), not at the Gate as approach, approach_variants and climbing_route say. That reverses the reader's internal resolution, and with only one external source nothing is patched.",
+   "sources": [
+    "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lena_lake_to_mt_stone_traverse",
+   "fact": "Location of the handline / tree-root headwall",
+   "verdict": "fixed",
+   "correct_value": "The handline / tree-root headwall is on the Putvin Trail below Lake of the Angels",
+   "evidence": "A traverse report places the handline rope and the large tree root on the Day 3 Putvin descent, and Lake of the Angels trail descriptions put the rope-and-root headwall on the Putvin Trail below the lake. hazards[4] and the identical approach_variants[0].hazards[4] wrongly placed it at the Lena Lake / Lake of the Angels transition.",
+   "sources": [
+    "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/",
+    "https://hike734.com/hikingolympic/lake-of-the-angels/",
+    "https://www.theoutbound.com/washington/hiking/hike-to-lake-of-the-angels"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      4
+     ],
+     "find": "near the Lena Lake/Lake of the Angels basin transition",
+     "replace": "on the Putvin Trail below Lake of the Angels",
+     "id": "wa_lena_lake_to_mt_stone_traverse",
+     "fact": "Location of the handline / tree-root headwall"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      4
+     ],
+     "find": "near the Lena Lake / Lake of the Angels transition",
+     "replace": "on the Putvin Trail below Lake of the Angels",
+     "id": "wa_lena_lake_to_mt_stone_traverse",
+     "fact": "Location of the handline / tree-root headwall"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Line climbed above Lake of the Angels",
+   "verdict": "fixed",
+   "correct_value": "Cliff-base traverse short of St. Peter's Gate to a notch in the west ridge, then the west ridge to the summit",
+   "evidence": "The standard route description has parties traverse along the base of the cliff to the west ridge and climb the ridge to the summit; another account reaches a notch in the west ridge and scrambles Class 3 to the top. No source sends the route up a gully. The itinerary note, its schedule label and the timing note are reworded; the face field is left as the route's name.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "climb the gully/South Couloir to the summit",
+     "replace": "climb the cliff-base traverse and west ridge to the summit",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Line climbed above Lake of the Angels"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "label"
+     ],
+     "find": "start toward the couloir",
+     "replace": "start toward the west-ridge notch",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Line climbed above Lake of the Angels"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "climb the gully/South Couloir to the summit",
+     "replace": "climb the cliff-base traverse and west ridge to the summit",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Line climbed above Lake of the Angels"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Summit-block difficulty (Class 3 throughout vs Class 4 moves)",
+   "verdict": "fixed",
+   "correct_value": "Class 3, with a few summit-block moves some parties rate Class 4",
+   "evidence": "One route description notes class 4 scrambling moves on the summit block, while two trip accounts call the finish Class 3 / Class 2-3. Sources agree the route is Class 3 below the summit block and disagree only about the top moves, so 'Class 3 throughout' is softened to match rock_grade, pitch_detail, beta and watch_out.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm",
+    "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "The route is Class 3 throughout",
+     "replace": "The route is Class 3, with a few moves on the summit block that some parties rate Class 4",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Summit-block difficulty (Class 3 throughout vs Class 4 moves)"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "The route is Class 3 throughout",
+     "replace": "The route is Class 3, with a few moves on the summit block that some parties rate Class 4",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Summit-block difficulty (Class 3 throughout vs Class 4 moves)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No accessible external source gives a I/II commitment grade for this route; the Grade I figure is quoted only from the row's own prose. Nothing patched.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "https://en.wikipedia.org/wiki/Mount_Stone"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "External round-trip figures disagree: about 10 mi, 11 mi, 9 mi, 8 mi and c.14 mi across five sources; the lake alone is 7-7.5 mi round trip. No two independent sources agree on a figure, so neither 9.3 nor 11 is adopted.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "https://en.wikipedia.org/wiki/Mount_Stone",
+    "https://fastestknowntime.com/route/mt-stone-wa",
+    "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/",
+    "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Parking pass at the Putvin trailhead",
+   "verdict": "fixed",
+   "correct_value": "No parking pass or fee is needed at the Putvin Trailhead",
+   "evidence": "The Forest Service's Putvin Trailhead page says no fees are required for the site, and WTA lists no parking pass or entry fee for the Lake of the Angels hike (one older blog still says a NW Forest Pass). access.passRequired pointed at a different trailhead and access.parking_pass listed a park entrance fee; both now match the camp card.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/putvin-trailhead",
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://www.hikingwithmybrother.com/lake-of-the-angels-via-putvin-trail-813.html"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Northwest Forest Pass or America the Beautiful interagency pass for parking at the Lena Lake Trailhead you pass en route on FS 25.",
+     "value": "None — no parking pass or fee is needed at the Putvin Trailhead.",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Parking pass at the Putvin trailhead"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "value": "No parking pass or fee is needed at the Putvin Trailhead.",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Parking pass at the Putvin trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Trail number",
+   "verdict": "fixed",
+   "correct_value": "The Putvin Trail is Forest Service trail #813",
+   "evidence": "The Forest Service trail page is titled 'Putvin Trail #813', and WTA and other guides also list it as #813. The approach and the trailhead waypoint's directions wrongly said it has no official number.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/putvin-trail-813",
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "https://www.hikingwithmybrother.com/lake-of-the-angels-via-putvin-trail-813.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the Putvin Trail is an unmaintained, primitive user trail (no official number) that climbs",
+     "replace": "the Putvin Trail (#813) is a steep, primitive trail, unmaintained in its upper reaches, that climbs",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Trail number"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "The Putvin Trail itself is an unmaintained, primitive user path with no official number, and it starts",
+     "replace": "The Putvin Trail itself (#813) is a steep, primitive path, unmaintained in its upper reaches, and it starts",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Trail number"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Wilderness permit booking note describes another camp",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Permit note without the Upper Lena Lake sentence",
+   "evidence": "Every other field camps at Lake of the Angels, and WTA confirms camping there needs an Olympic National Park wilderness permit; the Upper Lena Lake quota sentence was copied from a different route and is removed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center. Upper Lena Lake is quota-limited, so book early for July to September.",
+     "value": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center.",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Wilderness permit booking note describes another camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Glacier features vs no glacier travel",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No glacier; a small lingering snowfield near the summit",
+   "evidence": "Route descriptions mention only a small permanent snowfield below the summit block and snow patches, no glacier; the row's seasonal_hazards (no glacier travel), avalanche note (non-glaciated) and pitch_detail[4] (small lingering snowfield) agree. 'bergschrund' is replaced with a moat at the snowfield edge.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "expect": "Moat/bergschrund near summit snowfield",
+     "value": "Moat at the edge of the lingering snowfield near the summit",
+     "id": "wa_mount_stone_lake_of_angels",
+     "fact": "Glacier features vs no glacier travel"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_lake_of_angels",
+   "fact": "Aspect of the snow-holding basin",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Route descriptions have parties go north from the lake toward St. Peter's Gate, which suggests the slopes above the lake face roughly south, but no source states the basin's aspect or calls it north-facing, so the variant's 'north-facing' is left for review.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Round-trip figures disagree across sources: about 10 mi, 11 mi, 9 mi, 8 mi and c.14 mi, and the lake alone is 7-7.5 mi round trip (3.5-3.6 mi one way). No two independent sources agree, so none of 8.5, 9.6 or 11 is adopted.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "https://en.wikipedia.org/wiki/Mount_Stone",
+    "https://fastestknowntime.com/route/mt-stone-wa",
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+    "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Length of the car-to-car day",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report logs 4.3 h trailhead to lake, 1.9 h lake to summit and 1.5 h back to the lake (plus the trail descent), about 10 hours; no second independent source gives car-to-car hours. The 9 h figure and the 12-13 h schedule stay unreconciled.",
+   "sources": [
+    "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Line climbed above Lake of the Angels",
+   "verdict": "fixed",
+   "correct_value": "Rock rib / cliff-base line to the west-ridge notch, then the summit block — not a gully",
+   "evidence": "The standard route goes from the lake along the cliff base to the west ridge; another account climbs about 800 ft, crosses to the north side of a rock rib and reaches the west ridge. No source describes a gully/couloir ascent. Itinerary title/note/cal/schedule and timing are reworded; the face field is left as the route's name.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "expect": "Car-to-car scramble via Putvin Trail and South Couloir",
+     "value": "Car-to-car scramble via Putvin Trail and the west ridge",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line climbed above Lake of the Angels"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "then boots-and-axe up a gully/couloir onto the South Couloir/west ridge terrain to the summit block",
+     "replace": "then boots-and-axe up the rock rib and on to the west-ridge terrain to the summit block",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line climbed above Lake of the Angels"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "lingering snow in the gully into mid-summer",
+     "replace": "lingering snow above the lake into mid-summer",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line climbed above Lake of the Angels"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "expect": "Transition to axe/boots, start gully/couloir",
+     "value": "Transition to axe/boots, head for the rock rib",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line climbed above Lake of the Angels"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Reverse the couloir and Putvin Trail",
+     "replace": "Reverse the scramble line and Putvin Trail",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line climbed above Lake of the Angels"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "The South Couloir/gully often holds snow into July",
+     "replace": "The ground above Lake of the Angels often holds snow into July",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line climbed above Lake of the Angels"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "expect": "Car-to-car scramble via Putvin Trail and South Couloir",
+     "value": "Car-to-car scramble via Putvin Trail and the west ridge",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line climbed above Lake of the Angels"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "then boots-and-axe up a gully/couloir onto the South Couloir/west ridge terrain",
+     "replace": "then boots-and-axe up the rock rib and on to the west-ridge terrain",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Line climbed above Lake of the Angels"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Parking pass at the Putvin trailhead",
+   "verdict": "fixed",
+   "correct_value": "No parking pass or fee is needed at the Putvin Trailhead",
+   "evidence": "The Forest Service's Putvin Trailhead page says no fees are required for the site, and WTA lists no parking pass or entry fee for the Lake of the Angels hike. access.passRequired, access.parking_pass and what_to_bring[0] are aligned with the camp card.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/putvin-trailhead",
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Northwest Forest Pass at the trailhead",
+     "value": "None — no parking pass or fee is needed at the Putvin Trailhead.",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Parking pass at the Putvin trailhead"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "value": "No parking pass or fee is needed at the Putvin Trailhead.",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Parking pass at the Putvin trailhead"
+    },
+    {
+     "op": "set",
+     "column": "what_to_bring",
+     "path": [
+      0
+     ],
+     "expect": "Northwest Forest Pass / park permit as required",
+     "value": "Olympic NP wilderness permit if camping at Lake of the Angels",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Parking pass at the Putvin trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Where the trail enters Olympic National Park",
+   "verdict": "fixed",
+   "correct_value": "The trail enters the Mount Skokomish Wilderness early and Olympic National Park at about 3 miles, below the lake",
+   "evidence": "The Forest Service trail page says the trail enters the Mount Skokomish Wilderness and after 3 miles enters Olympic National Park; a hike write-up puts the park boundary at 2.8 miles. The approach wrongly put the park boundary at the 1.3-mile logging-road crossing.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/trails/putvin-trail-813",
+    "https://www.hikeoftheweek.com/2023/08/03/lake-of-the-angels/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "and enters the Skokomish Wilderness/Olympic National Park boundary.",
+     "replace": "and enters the Mount Skokomish Wilderness; the Olympic National Park boundary comes at about 3 miles.",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Where the trail enters Olympic National Park"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Wilderness permit booking note describes another camp",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Permit note without the Upper Lena Lake sentence",
+   "evidence": "All other fields camp at Lake of the Angels, and WTA confirms camping there needs an Olympic National Park wilderness permit; the Upper Lena Lake quota sentence was copied from another route and is removed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-of-the-angels"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center. Upper Lena Lake is quota-limited, so book early for July to September.",
+     "value": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center.",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Wilderness permit booking note describes another camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Glacier features vs no glacier travel",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No glacier; a small lingering snowfield near the summit",
+   "evidence": "Route descriptions mention only a small permanent snowfield below the summit block, no glacier; the row's crevasse and avalanche notes agree there is no glacier travel. 'bergschrund' is replaced with a moat at the snowfield edge.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+    "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "expect": "Moat/bergschrund near summit snowfield",
+     "value": "Moat at the edge of the lingering snowfield near the summit",
+     "id": "wa_mount_stone_putvin",
+     "fact": "Glacier features vs no glacier travel"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "fact": "Aspect of the snow-holding basin",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach, pitch_detail[4], climbing_route[0] and approach_variants[0].season call the basin above Lake of the Angels north-facing while aspect is S and descriptions go north from the lake toward the Gate (implying south-facing slopes). No source states the aspect; left for review.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

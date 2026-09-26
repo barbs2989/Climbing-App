@@ -1,0 +1,194 @@
+{
+ "file": "r243.json",
+ "results": [
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "Which line the route describes",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The south-side line from the Swamp Creek pullout (brushy forest, stay climber's right of the ~5,200 ft cliff bands, leave the ridge ~7,200 ft for a notch and summit gully) is the standard short route documented as Mount Hardy's South Face/South Ridge (~4-4.5 mi, ~4,100-4,200 ft); ROUTE BREAKDOWN and beta match it and approach_variants marks it primary. APPROACH, waypoints, itinerary, timing, CLIMBING ROUTE, DESCENT, gain_ft and dist_km instead describe the long Rainy Pass PCT / Methow Pass / southeast-slope approach, which is also a documented way up. Reconciling means choosing one line for the whole row and rewriting many fields (or re-splitting into two routes) — not a minimal patch; left for an owner decision.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-hardy-south-face",
+    "https://trailcatjim.com/mount-hardy-upper-methow-mountains-2/",
+    "https://trailcatjim.com/mount-hardy-upper-methow-mountains/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "Granite Pass elevation",
+   "verdict": "fixed",
+   "correct_value": "Granite Pass ~6,300 ft",
+   "evidence": "One trail write-up gives Granite Pass as 6,300 ft; another gives 6,270 ft. Both agree with the camp card (6,300) and put the pass roughly 500 ft below Cutthroat Pass, so the approach's '~6,700 ft' and 'drops slightly' are wrong.",
+   "sources": [
+    "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes",
+    "https://musthikemusteat.com/sr-20-north-cascade-hwy/snowy-lakes/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "drops slightly to Granite Pass (~6,700 ft)",
+     "replace": "drops to Granite Pass (~6,300 ft)",
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "Granite Pass elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "Water at Cutthroat Pass / Porcupine Creek",
+   "verdict": "fixed",
+   "correct_value": "No water at Cutthroat Pass; Porcupine Creek (~mile 2) is the last reliable water, then a dry 7-8 miles over Cutthroat and Granite Passes",
+   "evidence": "A PCT section description says to fill up at the Porcupine Creek crossing (mile 2) and carry water for at least 7-8 miles, with no water noted at Cutthroat or Granite Pass. A Cutthroat Pass trail guide says there are no water sources at the pass and the Porcupine Creek area is the last good water. The 7-8 miles is the dry stretch onward toward Snowy Lakes, not the ~3 miles up to Cutthroat Pass.",
+   "sources": [
+    "https://pctwashington.com/descriptions/section_l1",
+    "https://explorenborgen.com/cutthroat-pass-north-cascades/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "This is the last reliable water before the high country dries out in late summer, so top off here or at Porcupine Creek below.",
+     "replace": "There is no water at the pass itself; Porcupine Creek below is the last reliable source before the high country dries out in late summer, so top off there.",
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "Water at Cutthroat Pass / Porcupine Creek"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "a long dry 7-8 mile stretch of switchbacks up to Cutthroat Pass",
+     "replace": "a long dry 7-8 mile stretch over Cutthroat and Granite Passes",
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "Water at Cutthroat Pass / Porcupine Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "Snowy Lakes side trail: up or down",
+   "verdict": "fixed",
+   "correct_value": "The 0.8-mile side trail climbs (~500 ft) from the PCT to the lakes",
+   "evidence": "Several trail guides describe the Snowy Lakes spur as climbing: well-graded switchbacks up to Lower then Upper Snowy Lake, a gain of 500+ ft in about half a mile, and 'short and steep' on scree. This agrees with the waypoint elevations and itinerary; the 'descend' wording in two waypoint texts is wrong.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/golden-horn",
+    "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes",
+    "https://www.theoutbound.com/washington/backpacking/camp-at-snowy-lakes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "descend/traverse west on the 0.8-mile Snowy Lakes side trail",
+     "replace": "climb west on the 0.8-mile Snowy Lakes side trail",
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "Snowy Lakes side trail: up or down"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "directions"
+     ],
+     "find": "Descend and traverse west on the 0.8-mile Snowy Lakes side trail",
+     "replace": "Climb west on the 0.8-mile Snowy Lakes side trail",
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "Snowy Lakes side trail: up or down"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "When SR-20 opens",
+   "verdict": "fixed",
+   "correct_value": "SR 20 typically reopens mid/late April to early May and closes late November to mid December",
+   "evidence": "A regional tourism update relaying the highway's pattern says spring reopening is usually accomplished by early May and avalanches typically close it between late November and mid December. A news explainer says it typically reopens mid-to-late April or early May (recent years April 19-20, 2023 May 10) and shuts in late November or early December. The approach's and trailhead card's 'late May/June through October' is therefore too narrow on both ends, and 'typically just reopened' in June is wrong.",
+   "sources": [
+    "https://www.bellingham.org/update-on-sr-20-north-cascades-highway",
+    "https://www.kiro7.com/news/local/when-will-north-cascades-highway-reopen/SH5LSVS4SNBCLDUA6VTLRSC2FY/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "typically only accessible from around late May/June through October depending on snowpack",
+     "replace": "typically only accessible from around late April or May through November depending on snowpack",
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "When SR-20 opens"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "access typically runs late May or June through October depending on snowpack",
+     "replace": "access typically runs late April or May through November depending on snowpack",
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "When SR-20 opens"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "SR 20 typically just reopened; upper mountain",
+     "replace": "SR 20 is normally open, but the upper mountain",
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "When SR-20 opens"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "fact": "Wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "No overnight or wilderness permit on the Rainy Pass PCT approach; only a parking pass",
+   "evidence": "One backpacking guide states no overnight permit is needed to camp at Snowy Lakes, only a Northwest Forest Pass for parking; another trip write-up lists only the Northwest Forest Pass. The row's permit, access and camp fields all agree, so the partner skill asking for permit self-issue know-how is the outlier and is removed.",
+   "sources": [
+    "https://www.theoutbound.com/washington/backpacking/camp-at-snowy-lakes",
+    "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills"
+     ],
+     "expect": [
+      "Self-arrest and steep snow travel with an ice axe (steep snow and cornices early season)",
+      "Off-trail routefinding once leaving the PCT near Methow Pass",
+      "Loose rock scrambling judgment (Class 2-3 terrain)",
+      "Weather awareness / turnaround discipline for afternoon thunderstorms",
+      "Basic wilderness permit self-issue know-how for the Rainy Pass approach"
+     ],
+     "value": [
+      "Self-arrest and steep snow travel with an ice axe (steep snow and cornices early season)",
+      "Off-trail routefinding once leaving the PCT near Methow Pass",
+      "Loose rock scrambling judgment (Class 2-3 terrain)",
+      "Weather awareness / turnaround discipline for afternoon thunderstorms"
+     ],
+     "id": "wa_mount_hardy_snow_scramble",
+     "fact": "Wilderness permit"
+    }
+   ]
+  }
+ ]
+}

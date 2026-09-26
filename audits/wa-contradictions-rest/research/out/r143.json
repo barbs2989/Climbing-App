@@ -1,0 +1,183 @@
+{
+ "file": "r143.json",
+ "results": [
+  {
+   "id": "wa_particulate_matter",
+   "fact": "Approach describes a different crag (Spire Gully right / Alpenkuhl)",
+   "verdict": "fixed",
+   "correct_value": "Approach into the Ice Box: from the hairpin pullout, climbers' path toward Spire Gully/Quicksilver Slabs, right into the dry creek bed, 3rd-class up the left margin of the slabs into the Ice Box, ~15 min.",
+   "evidence": "The Ice Box right side area page places the wall at 48.51379,-120.64526 (5,305 ft) and describes the approach as a trail toward the chasm right of the drainage, crossing left below a slab and scrambling 3rd class up the left margin of the slabs into the Icebox, 15 min. The Ice Box left side page (different contributor wording) describes parking at the hairpin apex, following the trail toward Quicksilver Slab and Spire Gully, cutting right into a dry creek bed and climbing smooth slabs, one with a fixed line, into the Ice Box. Spire Gully (Alpenkuhl/Tiger Wall) is a separate sibling sub-area of Hairpin Crags, so the stored approach describes a different crag; the row's itinerary, face, overview and waypoints all describe the Ice Box.",
+   "sources": [
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.mountainproject.com/area/113263587/hairpin-crags"
+   ],
+   "patches": [
+    {
+     "id": "wa_particulate_matter",
+     "fact": "Approach describes a different crag (Spire Gully right / Alpenkuhl)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+     "replace": "From the large pullout at the SR-20 hairpin turn east of Washington Pass, follow the climbers' path uphill toward Spire Gully and the Quicksilver Slabs, then cut right into the dry creek bed below the chasm. Cross left beneath the first slab and scramble 3rd-class ground up the left edge of the smooth, slippery slabs into the Ice Box (a fixed line has been in place on the entry slab). Allow about 15 minutes from the car; expect snow on the approach early in the season."
+    }
+   ]
+  },
+  {
+   "id": "wa_particulate_matter",
+   "fact": "Wilderness, ranger district and permit",
+   "verdict": "fixed",
+   "correct_value": "Okanogan-Wenatchee NF, Methow Valley Ranger District; not in Glacier Peak Wilderness; no climbing or wilderness permit for day climbing.",
+   "evidence": "The Forest Service's Highway 20 closure notice lists Washington Pass Overlook, Cutthroat and Rainy Pass sites under the Methow Valley Ranger District, and the Mountaineers' Kangaroo Temple page (same hairpin parking) gives the land manager as Okanogan-Wenatchee NF, Methow Valley RD, with no wilderness permit. The Glacier Peak Wilderness / Chelan RD / self-issued permit values come from access._raw, which describes Ice Box the 8,112 ft peak between Ice Creek and Box Creek in the Entiat Mountains, Chelan County (Image Lake, Ice Creek Ridge) — a different place from this Okanogan County roadside crag. access._raw (not rendered) still holds that other peak's data and was left untouched.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/newsroom/releases/temporary-trailhead-and-campground-closures-planned-along",
+    "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face",
+    "https://en.wikipedia.org/wiki/Ice_Box_(Washington)",
+    "https://www.mountainproject.com/area/113263587/hairpin-crags"
+   ],
+   "patches": [
+    {
+     "id": "wa_particulate_matter",
+     "fact": "Wilderness, ranger district and permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Free self-issued wilderness permit (required)",
+     "value": "None required for day climbing"
+    },
+    {
+     "id": "wa_particulate_matter",
+     "fact": "Wilderness, ranger district and permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "expect": "USFS Okanogan-Wenatchee National Forest (Chelan Ranger District)",
+     "value": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)"
+    },
+    {
+     "id": "wa_particulate_matter",
+     "fact": "Wilderness, ranger district and permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "Glacier Peak Wilderness",
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_particulate_matter",
+   "fact": "Parking pass at the hairpin pullout",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: the Mountaineers' Kangaroo Temple page (which parks at the same hairpin) lists a Northwest Forest Pass as the parking permit, while a search-indexed Kangaroo Temple description states no permit is needed to park at the hairpin turn and that the Blue Lake/Cutthroat/Rainy Pass trailheads are the ones requiring a pass (the Wenatchee Outdoors page likewise names only the Blue Lake trailhead as needing the pass). Could not confirm the hairpin pullout's status with two agreeing fetched sources; sibling row wa_ephemeral already says no pass is reported for the hairpin.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://www.summitpost.org/kangaroo-temple/815101"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_particulate_matter",
+   "fact": "Base/top elevation of the wall",
+   "verdict": "unresolved",
+   "correct_value": "high_point_ft 5305 is correct (base convention); topout pin elevation unknown (~5,385 implied by base + 24 m)",
+   "evidence": "The Ice Box right side area is recorded at 5,305 ft, which is the base; high_point_ft tracks the base of crag routes by settled catalog convention, so it is not in error. The topout pin's 5,500 ft matches no source (the left-side area is 5,490 ft) and is ~115 ft above base + route length, but no external figure for the top of the right-side wall was found, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ephemeral",
+   "fact": "Route grade",
+   "verdict": "unresolved",
+   "correct_value": "5.11c (likely)",
+   "evidence": "The route's own page gives 5.11c (sport, 60 ft, FA Gabe Grayum Sept 2017), agreeing with rock_grade and pitch_detail; `grade` says 5.11d. Only one independent external source could be reached (theCrag blocked, no other online listing found), and the row has only two fields for 5.11c, short of the internal-overwhelming bar, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/117797479/ephemeral",
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ephemeral",
+   "fact": "Watch-out list describes a waterfall ice climb",
+   "verdict": "fixed",
+   "correct_value": "Watch-outs for a summer bolted 5.11 pitch (wet polished rock, traverse, slick approach slabs), not WI3-4 ice",
+   "evidence": "The route's page describes a bolted sport pitch on slick, polished stone with a leftward traverse to the anchor that does not dry until late summer; the Ice Box area pages describe a summer-only crag reached over smooth, slippery slabs. The stored watch_out (WI3-4 ice, Dec-Jan window, avalanche approach) is copied from an ice route and contradicts discipline, season and every other field. Replacement text uses only facts already in the row's obj_haz/hazards/pro_tips.",
+   "sources": [
+    "https://www.mountainproject.com/route/117797479/ephemeral",
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": [
+    {
+     "id": "wa_ephemeral",
+     "fact": "Watch-out list describes a waterfall ice climb",
+     "op": "set",
+     "column": "watch_out",
+     "path": [],
+     "expect": "Ultra-ephemeral ice formation—even less consistent than Iceman; highly dependent on unusual weather patterns; often forms only in coldest, snowiest years\nWater source limited and variable—snowmelt dependency means formation marginal in warm years; verify conditions from recent reports before committing\nHighly condition-dependent climbing—ice quality can range from nil to excellent depending on recent weather; check NWAC and recent trip reports before approach\nTechnical grade masks variable protection—WI3-4 rating assumes quality ice; poor ice conditions create unprotectable runouts with serious consequences\nAfternoon deterioration extreme—late morning climbing risky; even slight warming weakens ice; must climb in pre-dawn cold hours only\nSignificant avalanche exposure in approach—gully terrain subject to slides; assess stability; early start essential for safe approach\nApproach terrain variable and sometimes snow-choked—route-finding difficult; terrain traps in gullies; potential for slide; microspikes/crampons needed\nLimited climbing window in season—typically Dec-Jan only in most years; highly weather-dependent; low probability of climbable conditions",
+     "value": "Water-polished holds low on the route stay slick when damp, and this wall is one of the last at the crag to dry out\nThe leftward traverse to the anchors adds pendulum-fall potential, especially for a follower\nThe 3rd-class approach slabs are smooth and slippery, and treacherous when wet"
+    }
+   ]
+  },
+  {
+   "id": "wa_ephemeral",
+   "fact": "Approach describes a different crag (Spire Gully right / Alpenkuhl)",
+   "verdict": "fixed",
+   "correct_value": "Approach into the Ice Box: from the hairpin pullout, climbers' path toward Spire Gully/Quicksilver Slabs, right into the dry creek bed, 3rd-class up the left margin of the slabs into the Ice Box, ~15 min.",
+   "evidence": "The Ice Box right side area page places the wall at 48.51379,-120.64526 (5,305 ft) and describes the approach as a trail toward the chasm right of the drainage, crossing left below a slab and scrambling 3rd class up the left margin of the slabs into the Icebox, 15 min. The Ice Box left side page (different contributor wording) describes parking at the hairpin apex, following the trail toward Quicksilver Slab and Spire Gully, cutting right into a dry creek bed and climbing smooth slabs, one with a fixed line, into the Ice Box. Spire Gully (Alpenkuhl/Tiger Wall) is a separate sibling sub-area of Hairpin Crags, so the stored approach describes a different crag; the row's itinerary, face, overview and waypoints all describe the Ice Box.",
+   "sources": [
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.mountainproject.com/area/113263587/hairpin-crags"
+   ],
+   "patches": [
+    {
+     "id": "wa_ephemeral",
+     "fact": "Approach describes a different crag (Spire Gully right / Alpenkuhl)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+     "replace": "From the large pullout at the SR-20 hairpin turn east of Washington Pass, follow the climbers' path uphill toward Spire Gully and the Quicksilver Slabs, then cut right into the dry creek bed below the chasm. Cross left beneath the first slab and scramble 3rd-class ground up the left edge of the smooth, slippery slabs into the Ice Box (a fixed line has been in place on the entry slab). Allow about 15 minutes from the car; expect snow on the approach early in the season."
+    }
+   ]
+  },
+  {
+   "id": "wa_ephemeral",
+   "fact": "Elevation of the wall",
+   "verdict": "unresolved",
+   "correct_value": "base 5,305 ft (high_point_ft correct by base convention); top-of-wall pins 5,500/5,490 unsupported",
+   "evidence": "The Ice Box right side is recorded at 5,305 ft, matching high_point_ft and the base pin (high_point_ft tracks the base by settled convention). The 5,490 'Summit' pin is admittedly borrowed from the Ice Box left side area (recorded at 5,490 ft), and the 5,500 topout pin matches no source; with an 18 m pitch the top should be near 5,365 ft, but no external figure for the right-side top was found, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_on_the_prowl",
+   "fact": "Trad vs bolted protection",
+   "verdict": "unresolved",
+   "correct_value": "sport (bolt-protected, ~7 bolts, hook anchors)",
+   "evidence": "The route's own page lists On the Prowl (D) as Sport, 5.10-, 70 ft with about 7 bolts and hooked bolted anchors, and the Ice Box right side area page lists it as Sport; every protection field on the row agrees. The only wrong field is `discipline` ('trad'), which is out of scope for patching under the rules, so it is flagged for the owner rather than patched.",
+   "sources": [
+    "https://www.mountainproject.com/route/126509881/on-the-prowl-d",
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,440 @@
+{
+ "file": "r021.json",
+ "results": [
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Total gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 1,916 is the summit minus the 6,100-ft saddle and loss_ft 1,000 is the camp-to-saddle traverse; neither is a car-to-car figure. No outside source states a car-to-car gain or loss for this route alone (one multi-peak trip report gives 18,600 ft gained and lost for three summits over 54 miles, which cannot be attributed to this route). Per the rules, no computed total is written.",
+   "sources": [
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Trailhead / road",
+   "verdict": "fixed",
+   "correct_value": "Primary access is the Hannegan Pass Trailhead at the end of Hannegan Pass Road (FR-32), 5.3 mi off the Mount Baker Highway (SR-542); the Big Beaver option starts from Ross Lake off SR-20. Goodell Creek (a Southern Pickets approach) and the Nooksack Cirque Trailhead on FR-34 are wrong.",
+   "evidence": "The Forest Service Hannegan Pass Trail page puts the trailhead at the end of Hannegan Pass Road (FR 32), 5.3 miles from SR 542. The Forest Service Nooksack Cirque page puts that separate trailhead at the end of FR 34, a spur 1.4 miles up Road 32. A Whatcom Pass trip report reaches Phantom from the Hannegan trailhead, while a Northern Pickets traverse report and the Luna Glacier route page show the Ross Lake / Big Beaver side as the other real approach, so the waypoint note's 'not from Ross Lake' is also wrong.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/hannegan-pass-trail-674",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/nooksack-cirque-trail-750",
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/",
+    "https://onehikeaweek.com/2017/08/06/picket-traverse/",
+    "https://www.mountainproject.com/route/120289407/luna-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Goodell Creek / Ross Lake access",
+     "value": "Mount Baker Highway (SR-542) and Hannegan Pass Road (FR-32); SR-20 to Ross Lake for the Big Beaver option"
+    },
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "From the Nooksack Cirque Trailhead at the end of FR-34 off Hannegan Pass Road (FR-32)",
+     "value": "From the Mount Baker Highway (SR-542), turn onto Hannegan Pass Road (FR-32) and drive 5.3 miles to the trailhead at the end of the road"
+    },
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Trailhead / road",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "This route is reached from the west side of the range over Hannegan Pass, not from Ross Lake.",
+     "replace": "The main approach reaches this route from the west side of the range over Hannegan Pass; the alternative comes from Ross Lake up the Big Beaver Trail."
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Hannegan TH to Whatcom Pass: one 9-mile day vs several days",
+   "verdict": "fixed",
+   "correct_value": "Hannegan Trailhead to Whatcom Pass is about 16 miles one way on trail, typically one long or two days.",
+   "evidence": "A mapped route of the trail from the Hannegan trailhead to Whatcom Pass measures 16.0 miles one way with about 2,740 ft of gain; the Forest Service/NPS trail mileage (5.1 mi to Boundary Camp, about 7 more to the Brush Creek trail, then about 5 up Brush Creek) gives roughly 17. A Whatcom Pass trip report took two days (Copper Creek Camp, then the pass). The itinerary's 9 miles per trail day is corrected to 16 and the trip total to ~44 mi; the day's 6-hour figure is left as is (no source states a laden time), and the bivy card's 'three or four days' is not patched because bivy is owned elsewhere.",
+   "sources": [
+    "https://www.gaiagps.com/hike/474646/whatcom-pass-via-chilliwack-river-trail-and-hannegan-pass-trail/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/hannegan-pass-trail-674",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Hannegan TH to Whatcom Pass: one 9-mile day vs several days",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 9,
+     "value": 16
+    },
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Hannegan TH to Whatcom Pass: one 9-mile day vs several days",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      4,
+      "miles"
+     ],
+     "expect": 9,
+     "value": 16
+    },
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Hannegan TH to Whatcom Pass: one 9-mile day vs several days",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "A 5-day, ~30-32 mile round trip via Whatcom Pass",
+     "replace": "A 5-day, ~44 mile round trip via Whatcom Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle",
+   "verdict": "fixed",
+   "correct_value": "The Crooked Thumb Glacier moraine camp is at roughly 6,800 ft; the 1,000-ft descending traverse bottoms out near 5,800 ft before the climb to the 6,100-ft saddle.",
+   "evidence": "A trip report on this exact route describes a 1,000-ft descending traverse from the Crooked Thumb moraine camp, dropping to 5,800 ft, then a snowfield and easy rock to the 6,100-ft saddle, which puts the camp near 6,800 ft. A separate Northern Pickets traverse report camped at 6,800 ft on the Crooked Thumb Glacier. 7,800 ft is the outlier; every copy is corrected.",
+   "sources": [
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/",
+    "https://onehikeaweek.com/2017/08/06/picket-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 7800,
+     "value": 6800
+    },
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "at roughly 7,800 ft",
+     "replace": "at roughly 6,800 ft"
+    },
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "at roughly 7,800 ft",
+     "replace": "at roughly 6,800 ft"
+    },
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "(~7,800 ft)",
+     "replace": "(~6,800 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Distance to Luna Camp",
+   "verdict": "fixed",
+   "correct_value": "Luna Camp is about 9-10 miles up the Big Beaver Trail from the Ross Lake landing.",
+   "evidence": "An Access Creek trip report calls it a 9.5-mile hike up the Big Beaver Creek trail to Luna Camp; another Luna Peak report calls it a ten-mile hike, and a third says the trail climbs a gradual thousand feet over 9 miles to Luna Camp. The approach text and approach variant's 'about 14 miles' is the outlier.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Luna/Luna.htm",
+    "https://www.jessb.org/luna-peak/",
+    "https://drdirtbag.com/2015/06/27/luna-fail/"
+   ],
+   "patches": [
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Distance to Luna Camp",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From there it's about 14 miles of maintained",
+     "replace": "From there it's about 9-10 miles of maintained"
+    },
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Distance to Luna Camp",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "From there it is about 14 miles of maintained",
+     "replace": "From there it is about 9 to 10 miles of maintained"
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Avalanche/glacier status",
+   "verdict": "fixed",
+   "correct_value": "The route crosses a pocket glacier and bergschrund; it is not a non-glaciated route (avalanche forecasts simply do not run in the summer season).",
+   "evidence": "A trip report on this route crampons up a pocket glacier and crosses a bergschrund protected with snow flukes; a Northern Pickets traverse report camps on the Crooked Thumb Glacier and crosses glacier to reach Phantom. The avalanche zone's 'non-glaciated' label is the only field that says otherwise.",
+   "sources": [
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/",
+    "https://onehikeaweek.com/2017/08/06/picket-traverse/"
+   ],
+   "patches": [
+    {
+     "id": "wa_phantom_peak_south_route",
+     "fact": "Avalanche/glacier status",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer route (",
+     "replace": "N/A in the summer climbing season ("
+    }
+   ]
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "fact": "Season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: the season chip ends in August while September is rated good and inside the optimal window. Documented ascents found were late June to early July and late July to early August; no source was found establishing whether September is a normal part of the season for this route, so no change is made.",
+   "sources": [
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/",
+    "https://onehikeaweek.com/2017/08/06/picket-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "fact": "Glacier gear vs glaciated approach",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: the approach crosses the crevassed Challenger Glacier and steep snow, yet the gear list names approach shoes or light boots and no axe, crampons or crevasse gear. The first-ascent account describes the approach and the rack (cams, nuts, slings) but does not say what snow or glacier gear the party carried, and no second account of this route exists, so no gear is added.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216005",
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Access Creek approach trailhead",
+   "verdict": "fixed",
+   "correct_value": "The Access Creek approach leaves the Big Beaver Trail about a mile past Luna Camp; there is no Thunder Creek or Diablo trailhead for it.",
+   "evidence": "An Access Creek trip report leaves the Big Beaver Trail at a log crossing about 29 minutes past Luna Camp, having started from the Ross Dam trailhead and Big Beaver landing. A second Luna Peak account says to go about a mile past Luna Camp, somewhat past Access Creek, then leave the trail. Neither starts anywhere near Thunder Creek.",
+   "sources": [
+    "https://trailcatjim.com/mt-fury-east-peak-luna-peak-via-access-creek/",
+    "https://www.trailgroove.com/blogs/entry/561-luna-peak-hiking-the-heart-of-the-wild-north-cascades/"
+   ],
+   "patches": [
+    {
+     "id": "wa_luna_glacier",
+     "fact": "Access Creek approach trailhead",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "North Cascades Highway (SR-20) to Ross Lake trailheads (via Ross Dam/water taxi) or the Access Creek/Thunder Creek trailheads near Diablo",
+     "value": "North Cascades Highway (SR-20) to the Ross Dam trailhead and Ross Lake (water taxi or trail to the Big Beaver Trail)"
+    },
+    {
+     "id": "wa_luna_glacier",
+     "fact": "Access Creek approach trailhead",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "; the Access Creek approach instead starts from a Thunder Creek-corridor trailhead off SR-20.",
+     "replace": "; the Access Creek approach leaves the same Big Beaver Trail about a mile past Luna Camp."
+    }
+   ]
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Distance from Luna Camp to the Access Creek turnoff",
+   "verdict": "fixed",
+   "correct_value": "About a mile past Luna Camp (the 17.5 mi figure is the whole walk from the Ross Dam trailhead to the turnoff without the water taxi).",
+   "evidence": "One Access Creek account reaches the log crossing 29 minutes past Luna Camp; another says to go about a mile farther up the trail from Luna Camp. A third account gives 17.5 miles of trail from the road around Ross Lake to the Access Creek junction, which is where the stored figure came from.",
+   "sources": [
+    "https://trailcatjim.com/mt-fury-east-peak-luna-peak-via-access-creek/",
+    "https://www.trailgroove.com/blogs/entry/561-luna-peak-hiking-the-heart-of-the-wild-north-cascades/",
+    "http://drdirtbag.com/2015/07/15/luna-18h50/"
+   ],
+   "patches": [
+    {
+     "id": "wa_luna_glacier",
+     "fact": "Distance from Luna Camp to the Access Creek turnoff",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "parties continue on the maintained trail roughly 15-17.5 miles past Luna Camp to",
+     "replace": "parties continue on the maintained trail roughly a mile past Luna Camp to"
+    }
+   ]
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Approach line (Wiley Ridge vs Access Creek/Luna Creek)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Two genuine options: Wiley Ridge is a documented way into and out of Luna Cirque (a Luna Cirque loop goes in by Access Creek and out over Challenger Gap and Wiley Ridge to the Big Beaver Trail), and the row's own bivy card and itinerary calendar describe that line. The approach text naming the more common Access Creek line does not make the Wiley Ridge trip plan false.",
+   "sources": [
+    "https://trailcatjim.com/luna-cirque-loop-via-access-creek-luna-pass-wiley-ridge-2024/",
+    "https://stephabegg.com/trip-reports/washington/pickets/northern-pickets-1/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Which face the glacier is on",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The route climbs the hanging glacier just south of Phantom, on the east side of the range above Luna Cirque.",
+   "evidence": "The route page for this climb says to ascend the glacier south of Phantom from Luna Cirque, on the east side of the Northern Pickets. aspect, face, climbing_route and approach_variants all say south; only the overview says 'east face'. The overview is reworded to 'just south of the peak' while keeping Luna Cirque.",
+   "sources": [
+    "https://www.mountainproject.com/route/120289407/luna-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_luna_glacier",
+     "fact": "Which face the glacier is on",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "the small hanging glacier that clings to the peak's east face above Luna Cirque",
+     "replace": "the small hanging glacier that lies just south of the peak above Luna Cirque"
+    }
+   ]
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Season opening (June)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: season and guidance rate June good while the itinerary calendar says Northern Pickets approaches are not in condition until mid-July. The route page only says the glacier may be impassable late season; no source found states when the approach is in condition for this route.",
+   "sources": [
+    "https://www.mountainproject.com/route/120289407/luna-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Permit fees",
+   "verdict": "fixed",
+   "correct_value": "$10 per person plus a $6 fee for the overnight backcountry permit, charged mid-May through early October; youth 15 and under free.",
+   "evidence": "The NPS backcountry permits page states permits cost $10 per person plus a $6 fee, youth 15 and under free; the NPS fees/news pages and a regional news article state fees are charged mid-May through early October. 'None beyond the parking fee' is wrong for this overnight route.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://www.nps.gov/noca/learn/news/backcountry-permit-fee-structure-change.htm",
+    "https://lakechelannow.com/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_luna_glacier",
+     "fact": "Permit fees",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "None beyond the parking or entrance fee this route already lists.",
+     "value": "Overnight backcountry permit: $10 per person plus a $6 fee, charged mid-May through early October; youth 15 and under are free."
+    }
+   ]
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Rock grade of the slab pitches",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: CLIMBING ROUTE rates the slabs class 4 while ROUTE BREAKDOWN and beta call them low/easy 5th (5.2-5.4). The only route description found says 'a few leads of class 4 rock' yet rates the route Easy 5th overall and calls the slabs 'easy slab climbing', without saying which pitch holds the 5th-class move; the 5.2-5.4 figures appear nowhere. With one ambiguous source, no change is made.",
+   "sources": [
+    "https://www.mountainproject.com/route/120289407/luna-glacier"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Day-1 gain on a 'nearly flat' trail",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: day 1 gains 1,800 ft, while the landing sits near 1,600 ft and Luna Camp near 2,400 ft. One account says the trail climbs a gradual thousand feet over 9 miles to Luna Camp and another puts the lakeshore at 1,618 ft, but no second source states the day's gain, and changing it would break agreement with the 7,800-ft gain_ft total, which no source states either.",
+   "sources": [
+    "https://drdirtbag.com/2015/06/27/luna-fail/",
+    "https://www.trailgroove.com/blogs/entry/561-luna-peak-hiking-the-heart-of-the-wild-north-cascades/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_luna_glacier",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "The Ross Dam trailhead on SR-20 is at about 2,150 ft, roughly 500 ft above Ross Lake.",
+   "evidence": "A Luna Cirque trip report gives the Ross Dam Trailhead at Happy Flats as 2,150 ft; an Access Creek report gives the start as about 2,100 ft; the NPS Big Beaver Trail page says the 1.3 miles from SR-20 to Ross Dam lose 500 ft, putting the road well above the ~1,600-ft lake. 1,480 ft is impossible (below the lake).",
+   "sources": [
+    "https://trailcatjim.com/luna-cirque-loop-via-access-creek-luna-pass-wiley-ridge-2024/",
+    "http://ericsbasecamp.net/trips/Luna/Luna.htm",
+    "https://www.nps.gov/noca/planyourvisit/big-beaver-trail.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_luna_glacier",
+     "fact": "Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1480,
+     "value": 2150
+    }
+   ]
+  }
+ ]
+}

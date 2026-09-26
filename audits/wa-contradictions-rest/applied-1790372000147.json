@@ -1,0 +1,698 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Route distance (trailhead to Luna Col / round trip)"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Route distance (trailhead to Luna Col / round trip)"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Northwest Forest Pass at Ross Dam Trailhead"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Northwest Forest Pass at Ross Dam Trailhead"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "Route high point (East Fury 8,356 vs West Fury 8,303)"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Route high point (East Fury 8,356 vs West Fury 8,303)"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "West Fury push: separate extra day vs one day with East Fury"
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Rock quality/protection"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Access text copied from an Olympic Mountains route"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Luna Camp elevation / identity"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "approach",
+   "path": [],
+   "fact": "Trip length (days)"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "pro_tips",
+   "path": [
+    3
+   ],
+   "fact": "Traverse duration / roped vs solo"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Permit fee"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "comms",
+   "path": [],
+   "fact": "Trailhead elevation / cell coverage note"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation / cell coverage note"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead elevation / cell coverage note"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Winter road access"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "rappel_detail",
+   "path": [
+    8,
+    "notes"
+   ],
+   "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "rappel_detail",
+   "path": [
+    10,
+    "notes"
+   ],
+   "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "rappel_detail",
+   "path": [
+    11,
+    "notes"
+   ],
+   "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier travel on approach/descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Glacier travel on approach/descent"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "fa",
+   "path": [],
+   "fact": "First-ascent date"
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "column": "gear",
+   "path": [
+    7
+   ],
+   "fact": "Rack size"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "before": {
+    "itinerary": {
+     "cal": "NPS wilderness permits (advance reservation via recreation.gov) and a Ross Lake water taxi reservation are both required and often the limiting factor for scheduling this trip; best conditions are typically mid-July through August.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Take the Ross Lake water taxi from Ross Dam to Big Beaver Landing to cut several miles of road-walk, then follow the Big Beaver Trail roughly 9-10 miles to Luna Camp. Leave the trail there, bushwhack across Big Beaver Creek and up the notorious Access Creek drainage (devil's club, slide alder, then scree/heather), and climb a steep snow/scree gully to the ridge crest and Luna Col. This is a long, grueling day even before any climbing begins.",
+       "hours": 9,
+       "miles": 12,
+       "title": "Water taxi + approach to Luna Col",
+       "gainFt": 5600,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach high camp at Luna Col (~7,200 ft)"
+      },
+      {
+       "n": 2,
+       "note": "From Luna Col, cross over Point 7360 and down a red ledge system to a low-5th-class crux tower, then up the East Mount Fury Glacier/arete to East Fury's summit. Continue the exposed ridge traverse over three towers (short rappels/downclimbs between them) to reach West Fury's summit, then reverse the entire traverse back to camp. Most parties treat this as a full 12-16+ hour day and it is the technical and physical crux of the trip.",
+       "hours": 14,
+       "miles": 4.5,
+       "title": "Traverse to East and West Fury",
+       "gainFt": 3200,
+       "lossFt": 3200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Luna Col",
+         "detail": "Light rack, rope, crampons/axe for the glacier sections."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Crux tower",
+         "detail": "Low-5th-class moves past Point 7360 via the red ledge."
+        },
+        {
+         "time": "~11 AM-12 PM",
+         "label": "East Fury summit",
+         "detail": "Via the East Mount Fury Glacier/arete."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Three-tower ridge traverse",
+         "detail": "Short rappels/downclimbs connecting East and West Fury."
+        },
+        {
+         "time": "~2-3 PM",
+         "label": "West Fury summit (8,303 ft)",
+         "detail": "High point of the route."
+        },
+        {
+         "time": "by dark",
+         "label": "Back at Luna Col",
+         "detail": "Full reversal of the traverse; parties on a full Pickets traverse may instead cache packs at the East-West saddle."
+        }
+       ],
+       "objective": "Climb East Fury, traverse to West Fury, and return to Luna Col"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the Access Creek descent and Big Beaver Trail back to Big Beaver Landing to catch the water taxi to Ross Dam. Legs are tired from the previous day's traverse, so this out day often takes as long or longer than the approach.",
+       "hours": 9,
+       "miles": 12,
+       "title": "Exit to trailhead",
+       "gainFt": 300,
+       "lossFt": 5600,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Return to Ross Dam / water taxi dock"
+      }
+     ],
+     "totalNote": "A 3-day trip (some guided groups take 4): ~41 miles round trip with roughly 9,000+ ft of cumulative gain, one night in at Luna Col and a single massive summit-traverse day covering both East and West Fury."
+    },
+    "waypoints": [
+     {
+      "lat": 48.7278,
+      "lng": -121.0628,
+      "elev": 2150,
+      "name": "Ross Dam Trailhead",
+      "note": "SR 20 milepost 134 parking lot; Northwest Forest Pass required. Descend the Ross Dam Trail toward the lake to reach Ross Lake Resort and arrange a paid water-taxi pickup.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR 20 to the parking lot at milepost 134, roughly 28 miles east of Marblemount. A Northwest Forest Pass is required to leave a car here."
+     },
+     {
+      "lat": 48.77563,
+      "lng": -121.0658,
+      "elev": 1602,
+      "name": "Big Beaver Landing (water-taxi drop)",
+      "note": "Ross Lake Resort's boat drops climbers here to skip miles of lakeshore trail; self-issue wilderness permit kiosk and start of the Big Beaver Creek Trail.",
+      "type": "Junction",
+      "distMi": 9,
+      "directions": "Walk down the Ross Dam Trail toward the lake and arrange a paid water-taxi pickup with Ross Lake Resort; the boat runs seasonally, costs about $35 one way, and drops climbers at Big Beaver Landing. Parties who cannot get a boat hike roughly 6 miles of lakeshore trail up the west side of Ross Lake instead."
+     },
+     {
+      "lat": 48.834423,
+      "lng": -121.20174,
+      "elev": 2432,
+      "name": "Luna Camp",
+      "note": "Established backcountry camp on the maintained Big Beaver Creek Trail through old-growth forest, roughly 8 trail miles above Big Beaver Landing.",
+      "type": "Campsite",
+      "distMi": 17,
+      "directions": "Self-issue a wilderness permit at the kiosk, then follow the maintained Big Beaver Creek Trail up-valley through old-growth cedar. It is about 8 to 10 trail miles of easy walking, passing the Big Beaver backcountry camp, to reach Luna Camp."
+     },
+     {
+      "lat": 48.80007417857143,
+      "lng": -121.24039371428572,
+      "elev": 2000,
+      "name": "Access Creek crossing",
+      "note": "About 1.5 miles past Luna Camp, leave the maintained trail and ford Big Beaver Creek to pick up the faint, cairned Access Creek climbers' path.",
+      "type": "Junction",
+      "distMi": 18.5,
+      "directions": "Stay on the maintained trail about another 1.5 miles past Luna Camp, then leave it and ford Big Beaver Creek to pick up the faint, cairned climbers' path up Access Creek. This is the single easiest place on the trip to go wrong: in poor visibility parties have committed to the wrong drainage, so find the cairns marking the correct crossing before you commit."
+     },
+     {
+      "lat": 48.80522032142857,
+      "lng": -121.27715028571428,
+      "elev": 5800,
+      "name": "Access Creek headwaters basin",
+      "note": "Cairned climbers' path up the north flank crosses to the creek's south bank near 3,700 ft where brush thickens, then continues to good camping at the basin below the Luna-McMillan col.",
+      "type": "Campsite",
+      "distMi": 20.5,
+      "directions": "Climb steep, pathless forest and heather along the north flank of Access Creek. The cairned path crosses to the south bank near 3,700 ft where the brush thickens, then continues to break out of the timber into the open, meadow-floored basin below Luna Peak, which is far less brushy than the drainages either side of it. Reports call it a few hours of reasonable but sustained hiking."
+     },
+     {
+      "lat": 48.82374,
+      "lng": -121.27636,
+      "elev": 7200,
+      "name": "Luna Col",
+      "note": "Notch between Luna Peak and a small tower on the Luna-McMillan arm; a small snowfield at the saddle usually provides running water and there's a good camp spot here or ~150 ft below on the east side.",
+      "type": "Campsite",
+      "distMi": 22,
+      "directions": "Continue up-basin past the camping area at the headwaters, then climb a steep gully and heather system to the notch near 6,100 ft that first opens the view north into Luna Cirque. From there a long sidehill traverse of steep heather and talus works around Luna Peak toward Luna Pass, with one short genuinely steep section and cliff-band route-finding, before gaining the connecting ridge to the col. A small snowfield on the saddle usually gives running water."
+     },
+     {
+      "lat": 48.811653,
+      "lng": -121.323096,
+      "elev": 8356,
+      "name": "East Fury (ridge traverse start)",
+      "note": "Higher of Fury's twin summits and the start of the ~5.4 YDS, Grade III ridge traverse over three towers to West Fury; loose, exposed rock — rope up for the gendarmes.",
+      "type": "Hazard",
+      "distMi": 23,
+      "directions": "Leave the col early on a light rack. Cross over Point 7360 and drop a red ledge system to a low-fifth-class crux tower, then climb the East Fury Glacier and arete to the summit. Most parties reach it around four to five hours out of camp."
+     },
+     {
+      "lat": 48.8119818,
+      "lng": -121.3233201,
+      "elev": 8303,
+      "name": "West Fury (Mount Fury, West Peak)",
+      "note": "True, officially-named summit of Mount Fury. Descend by reversing the ridge traverse to East Fury, then drop East Fury's east-side glacier/scree gully back to Luna Col.",
+      "type": "Summit",
+      "distMi": 23.3,
+      "directions": "Traverse the ridge over three loose towers, with short downclimbs and rappels connecting them. It is roughly 5.4 at its hardest, wildly exposed, and the rock is notoriously mobile choss rather than anything solid, so rope up for the gendarmes and expect two to three hours. Anchors are natural horns and slings you leave behind."
+     }
+    ],
+    "high_point_ft": 8303,
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Must sustain 10-16+ hour days of bushwhacking, glacier travel, and scrambling on consecutive days with a loaded pack; the East-to-West Fury traverse alone typically takes 2.5+ hours one-way on top of an already long day",
+      "packWeight": "Multi-day expedition load (glacier/crevasse rescue gear, technical rack, bivy gear, several days of food) - expect 40+ lb packs"
+     },
+     "approachTime": "Multi-day approach (commonly 3-5+ days round trip as part of a Northern Pickets traverse); reaching West Fury itself typically adds a full additional 16+ hour day (with possible forced bivouac) beyond the East Fury summit",
+     "requiredSkills": [
+      "glacier travel and crevasse rescue",
+      "route-finding in trackless alpine terrain",
+      "low 5th class rock scrambling with exposure",
+      "self-arrest and steep snow travel",
+      "multi-day backcountry navigation off-trail",
+      "bivouac/emergency overnight competence"
+     ],
+     "experienceLevel": "Expedition-level alpine climber with multi-day glacier travel and Grade III-IV alpine rock experience; this is not a route for anyone without prior North Cascades or comparably remote alpine terrain"
+    },
+    "pro_needs": "Protection needs are moderate for the Class 5 pitches; most experienced climbers can protect themselves with basic anchors in the granite. Pitons are primarily useful for backup anchors on sketchy sections, though modern climbers typically use cams and nuts. The low angle and moderate protection requirements mean self-rescue capability is more critical than full pro redundancy; if ground-up climbing is necessary, climbers must have experience with trad anchors in granite."
+   }
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "before": {
+    "access": {
+     "_raw": {
+      "special_requirements": "Experienced mountaineers only. Glacier travel expertise and crevasse rescue required. Ice axe and crampons often necessary. Limited permits for Elk Lake and Glacier Meadows basecamp. Groups exceeding 6 people need designated group sites. Bear canisters mandatory. No camping between Glacier Meadows and Blue Glacier.",
+      "seasonal_closure_dates": "Best June-August; winter snow closure typical Nov-May; Glacier Meadows permits limited and first-come first-served",
+      "permit_application_method": "Recreation.gov or in-person at visitor centers"
+     },
+     "fees": "N/A",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+     "closures": "Best June-August; winter snow closure typical Nov-May; Glacier Meadows permits limited and first-come first-served. Luna Fire closure, read from the NPS North Cascades fire-closures page on 17 September 2026 (page last updated 14 September 2026): the Big Beaver Trail is closed from Big Beaver Stock Camp to Stillwell Camp, and Luna Camp, Beaver Pass Camp (with its stock and group camps) and 39 Mile Camp (with 39 Mile Stock) are closed; cross-country zone access from closed trails is prohibited. This is a dated snapshot of a moving closure - re-read the NPS closure page before relying on it.",
+     "group_limit": 6,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    },
+    "itinerary": "Day 1: Water taxi from Ross Dam to Big Beaver, hike 9.4 miles to Luna Camp (7,200 ft). Day 2: Ascend to East Fury summit, traverse to West Fury, return to East Fury summit. Day 3: Descend to Luna Camp, begin exit. Day 4: Complete descent to Ross Lake and water taxi return.",
+    "approach": "Drive SR-20 (North Cascades Highway) to the Ross Dam Trailhead and walk down to Ross Lake, where most parties take the paid water taxi from Ross Lake Resort to the Big Beaver landing rather than walking the lakeshore trail. From the landing it is about 9.4 miles of nearly flat old-growth trail up the Big Beaver valley to Luna Camp, the usual first night. A short way beyond camp, leave the trail on a small boot path and cross Big Beaver Creek just north of where Access Creek comes in, around 2,460 ft. Depending on the year this is a log or a wade. Then climb the north side of Access Creek on a faint, brushy climbers' path through Access Creek basin, up the south gully and around the south side of Luna Peak to Luna Col, the usual high camp. From Luna Col, follow the ridge toward Fury over class 3 ground with many short ups and downs. Drop to traverse heather slopes on its south side to the Southeast Glacier near 6,700 ft, then climb the right side of the glacier to steeper snow and a possible bergschrund below East Fury's summit, where the traverse to the West Peak begins. Allow about a week for the round trip. In summer 2026 wildfire closed the Big Beaver Trail from Big Beaver Stock Camp to Stillwell Camp, including Luna Camp, with no cross-country travel from closed trails, so check current closures with North Cascades National Park before planning.",
+    "pro_tips": [
+     "This traverse is almost always soloed due to the difficulty of protecting on chossy rock",
+     "Bring extra cordage for redundant rappel anchors",
+     "Scout the descent route carefully before committing; retreat becomes progressively difficult",
+     "Most experienced parties can complete the traverse in under an hour, but allow a full day if rope work is needed",
+     "Excellent scrambling skills and comfort with exposure are essential"
+    ],
+    "comms": "No cellular service available on the peak. Satellite communication device (e.g., Garmin InReach, SPOT) recommended for emergency communication in this remote area. Verizon occasionally has coverage at Ross Lake trailhead (8,000+ ft).",
+    "waypoints": [
+     {
+      "lat": 48.7278,
+      "lng": -121.0628,
+      "elev": 1602,
+      "name": "Ross Dam Trailhead (SR-20) — via Ross Lake water taxi/hike to Big Beaver, then off-trail to Access Creek/Luna Camp",
+      "note": "Road-accessible trailhead on SR-20 (MP 134-135) at Ross Dam/Ross Lake Resort. Parties either walk ~6 mi along the west shore of Ross Lake or take the Ross Lake Resort water taxi to the Big Beaver Trail junction, hike ~9.4 mi up Big Beaver Trail to Luna Camp, then go off-trail up Access Creek to the Luna-Fury col before climbing East Fury and traversing the connecting ridge (three towers) to reach West Fury.",
+      "type": "Trailhead",
+      "elevFt": 1602,
+      "directions": "Drive SR-20, the North Cascades Highway, to the Ross Dam Trailhead near milepost 134-135; this is the last road access of the trip and the car stays here for the duration. From the parking it is a 15-20 minute descent to Ross Lake. Most parties then arrange a paid water taxi from Ross Lake Resort to the Big Beaver Trail landing rather than walking the roughly 6 miles of west-shore lakeshore trail, and the same taxi is how you get back out."
+     },
+     {
+      "lat": 48.76,
+      "lng": -121.14,
+      "elev": 2200,
+      "name": "Access Creek Junction",
+      "note": "Leave Big Beaver Trail to ascend Access Creek toward the Southern Pickets.",
+      "type": "Junction",
+      "distMi": 15
+     },
+     {
+      "lat": 48.79,
+      "lng": -121.2,
+      "elev": 6800,
+      "name": "Access Col",
+      "note": "Gains the crest between Access Creek and Luna Cirque.",
+      "type": "Junction",
+      "distMi": 19
+     },
+     {
+      "lat": 48.82374,
+      "lng": -121.27636,
+      "elev": 7200,
+      "name": "Luna Col",
+      "note": "High col below Luna Peak; standard approach to the Fury massif.",
+      "type": "Junction",
+      "distMi": 22
+     },
+     {
+      "lat": 48.811,
+      "lng": -121.32,
+      "elev": 8100,
+      "name": "Loose Tower Traverse",
+      "note": "Descend to a low saddle then climb over three loose towers, low 5th class; rope recommended for rappels.",
+      "type": "Hazard",
+      "distMi": 25
+     },
+     {
+      "lat": 48.81222,
+      "lng": -121.32306,
+      "elev": 8301,
+      "name": "West Fury (Mount Fury, official/USGS-named summit)",
+      "type": "Summit",
+      "elevFt": 8301
+     }
+    ],
+    "road": {
+     "name": "Ross Lake Trailhead (Highway 20) + Ross Lake Resort water taxi to Big Beaver Trailhead",
+     "status": "Highway 20 is fully paved to the Ross Lake trailhead pullout near Newhalem; this lower-elevation western section of Highway 20 is open year-round (unlike the high pass near Washington Pass). Most parties use the Ross Lake Resort water taxi (fee, reservation required) to avoid roughly 6 miles of lakeshore hiking to reach the Big Beaver Trailhead, since there is no direct road/trail shortcut.",
+     "driveNote": "Trailhead is about 13.4 miles east of Newhalem on Highway 20 — roughly 2.5-3 hours from Seattle. This is a multi-day expedition approach beyond the trailhead (9+ miles of maintained trail to Luna Camp, then off-trail travel).",
+     "seasonalGate": "The Ross Lake Resort water taxi operates seasonally (roughly summer only); outside that season parties must hike the lakeshore trail instead."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "before": {
+    "descent_text": "From the West Fury summit, reverse across the long, gendarme-studded connecting ridge back to East Fury, then descend East Fury via the Southeast Glacier route toward Luna Pass/Access Creek (downclimb/running-belay the summit snow, retrace the glacier, regain the Northeast Ridge, and reverse the heather-chute/rocky-rib traverse back to Luna Pass). The technical crux of the descent is the ridge traverse itself: getting off each of the roughly half-dozen major gendarmes and pinnacles (including the tower nicknamed the 'Pole of Remoteness') requires rappelling, and — per the first-ascent account and subsequent trip reports — this adds up to roughly a dozen rappels total along the ridge crest before regaining East Fury. Anchors are almost entirely improvised: loose blocks, horns, and existing tat/slings left by prior parties rather than bolted or fixed stations, so bring a rack of slings/cord and expect to build or reinforce anchors yourself. Rockfall and rope damage on marginal block anchors have been reported (one FA account describes a rap rope being severed by rockfall mid-descent), so treat every anchor with suspicion and back it up where the rock quality is poor. Because each rappel is essentially irreversible once ropes are pulled, retreat gets progressively harder the farther a party commits along the ridge — this is a significant objective hazard if weather deteriorates. Once back at Luna Pass, retrace the approach: heather/talus traverse and scree descent to Access Col, the steep 1,800-ft descent into Access Basin, the Access Creek bushwhack back down to Big Beaver Creek, and the 11.5-mile Big Beaver Creek Trail out to the Ross Lake water taxi and Ross Dam Trailhead.",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "Short — the least demanding of the tower rappels, and the one that sets expectations too low for the three above it.",
+      "notes": "First rappel off a major gendarme on the ridge crest heading toward East Fury.",
+      "anchor": "natural (loose block/horn, possible tat)",
+      "lengthM": null,
+      "station": "Off the first tower on the ridge."
+     },
+     {
+      "n": 2,
+      "pull": "About 40 m, so a single 60 m doubled does not reach. Parties either carry a second line, or rappel as far as one rope allows and then build a second station or belay the last stretch of low fifth class down to the notch.",
+      "notes": "Continues past another pinnacle; anchors are improvised rather than fixed stations.",
+      "anchor": "natural (block/horn, inspect existing tat)",
+      "lengthM": null,
+      "station": "Off the second tower into the notch below it."
+     },
+     {
+      "n": 3,
+      "pull": "About 40 m again — same problem and same two workarounds if you are on a single rope.",
+      "notes": "Rockfall risk noted along this ridge; back up marginal-looking anchors where possible.",
+      "anchor": "natural (block/horn)",
+      "lengthM": null,
+      "station": "Off the third tower."
+     },
+     {
+      "n": 4,
+      "pull": "Closer to 50 m, the longest of the tower rappels. On one rope this is the one most likely to leave you hanging above the notch.",
+      "notes": "Getting off this notch/gendarme is effectively irreversible once ropes are pulled.",
+      "anchor": "natural (block/horn or tat)",
+      "lengthM": null,
+      "station": "Off the fourth tower."
+     },
+     {
+      "n": 5,
+      "pull": "Carry a good length of cord. The single-strand anchors left here have been found in poor shape a year later, and have since been rebuilt redundant — assume you will be replacing rather than clipping.",
+      "notes": "Passes near the tower nicknamed the 'Pole of Remoteness'.",
+      "anchor": "natural (block/horn)",
+      "hazards": [
+       "Rockfall on this rappel severed a rope on the first ascent. Having a second line in the system is what made that survivable"
+      ],
+      "lengthM": null,
+      "station": "Off the top of the Pole of Remoteness. The anchor is a large block on the summit of the tower; parties have tested it deliberately before committing to it."
+     },
+     {
+      "n": 6,
+      "notes": "Mid-ridge rappel; retreat becomes progressively harder the farther the party commits.",
+      "anchor": "natural (block/horn, possible tat)",
+      "lengthM": null
+     },
+     {
+      "n": 7,
+      "notes": "Continuing gendarme-to-gendarme along the crest.",
+      "anchor": "natural (block/horn)",
+      "lengthM": null
+     },
+     {
+      "n": 8,
+      "notes": "Another notch crossing; watch for loose rock dislodged by the rope.",
+      "anchor": "natural (block/horn or gear anchor)",
+      "lengthM": null
+     },
+     {
+      "n": 9,
+      "notes": "Nearing the East Fury side of the traverse.",
+      "anchor": "natural (block/horn)",
+      "lengthM": null
+     },
+     {
+      "n": 10,
+      "notes": "Later-stage rappel of the ridge crossing.",
+      "anchor": "natural (block/horn, tat possible)",
+      "lengthM": null
+     },
+     {
+      "n": 11,
+      "notes": "Second-to-last rappel before regaining East Fury's upper terrain.",
+      "anchor": "natural (block/horn)",
+      "lengthM": null
+     },
+     {
+      "n": 12,
+      "notes": "Final rappel regaining East Fury, after which the descent continues via the Southeast Glacier route toward Luna Pass.",
+      "anchor": "natural (block/horn or gear anchor)",
+      "lengthM": null
+     }
+    ],
+    "rappel_count_note": "Roughly a dozen rappels (12-13) are described getting off gendarmes/pinnacles along the connecting ridge; a rap rope has been reported severed by rockfall on a marginal anchor somewhere along this stretch, so treat every anchor with suspicion. Individual rappel lengths are not known, so no per-station length is shown.",
+    "approach_variants": [
+     {
+      "name": "The backdoor: over the summit of East Fury and down the connecting ridge to the toe of the Southwest Buttress",
+      "notes": "The approach is identical to the standard East Peak route for its first 12-plus miles and then continues much farther. From the Ross Dam Trailhead at Happy Flats on SR-20 near milepost 134, walk about a mile to the Ross Lake water taxi dock and cross to Big Beaver Landing, then follow the Big Beaver Creek Trail 11.5 miles up-valley, passing Luna Camp at roughly the 4.7-hour mark.\n\nAbout 29 minutes past Luna Camp, leave the trail at a large log crossing of Big Beaver Creek and turn up the Access Creek drainage: roughly a mile and 1,900 ft of gain through devil's club, a mid-height creek crossing near 3,800 ft, then huckleberry and talus into Access Basin. From the basin, a long grungy scree chute gains about 1,800 ft to Access Col at 6,100 ft.\n\nFrom Access Col most Mongo Ridge parties do not stop at Luna Pass. They continue over the connecting terrain and up the Southeast Glacier route to the summit of East Fury, then descend north along the connecting ridge to the base of the Southwest Buttress to rack up. Most parties treat this as a multi-day expedition with a camp at Luna Pass or on the connecting ridge.",
+      "season": "Jul-Aug",
+      "hazards": [
+       "Roughly a dozen rappels along the crest, almost entirely off improvised anchors: loose blocks, horns and old tat",
+       "Retreat gets progressively harder the farther along the ridge a party commits",
+       "A rappel rope has been reported severed by rockfall mid-descent on this ridge",
+       "The Access Creek bushwhack and the loose scree chute to Access Col before any of it",
+       "A full ascent of East Fury simply to reach the start"
+      ],
+      "baseFinding": "YOU ARRIVE AT THIS ROUTE FROM ABOVE, AND THAT IS THE WHOLE POINT OF THE MODERN APPROACH. The buttress toe sits at the bottom of the Goodell Creek side, and the historically brutal, brush-choked Goodell approach is what the backdoor exists to avoid. So the sequence is: summit East Fury, then GO DOWN the connecting ridge to the base of the Southwest Buttress. If you are still gaining height after East Fury's summit, you have not started descending to the base yet.\n\nWHY THAT MAKES THE BASE UNMISTAKABLE: there is exactly one summit between you and the start, and it is one you have to climb. A party that has not stood on East Fury has not reached the base of Mongo Ridge by this approach, whatever else it has found.\n\nTHE DECISION POINT, WHICH MATTERS MORE HERE THAN THE LANDMARK: the descent to the toe is time you will have to buy back, and the ridge above it holds roughly half a dozen major gendarmes and pinnacles including the tower nicknamed the Pole of Remoteness. Getting off each of them takes a rappel, and roughly a dozen rappels total along the crest before you regain East Fury. Every one of them is irreversible once the ropes are pulled.\n\nWHAT ARRIVAL AT THE CLIMBING LOOKS LIKE: rack up where the ridge stops descending and the first tower rises in front of you. Above that point the route is 25 pitches to Grade VI, 5.10."
+     }
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Requires a rare multi-day stretch of dry, stable weather in a route that offers little easy retreat; this is 'the only realistic window' each year",
+      "probability": "A single storm system mid-route can strand or endanger a party on exposed towers; afternoon instability is a recurring concern through the summer"
+     },
+     "exposure": "Very high - sustained exposure across a long, committing ridge with loose gendarmes and difficult downclimbs; retreat is slow and difficult, and the extreme isolation magnifies the consequences of any fall or injury",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer alpine rock route; no NWAC zone applies once rock is dry, though residual snow/ice on the approach in June can pose a slide hazard",
+      "byMonth": {
+       "July": "Low",
+       "June": "Moderate",
+       "August": "Low",
+       "September": "Low"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on the ridge itself, though some approach variations may cross glaciated terrain"
+    },
+    "waypoints": [
+     {
+      "lat": 48.7278,
+      "lng": -121.0628,
+      "elev": 1640,
+      "name": "Ross Dam Trailhead (SR-20)",
+      "note": "Same trailhead used for all Northern Pickets objectives (Fury, Challenger, Luna Peak) via boat taxi or ~7mi walk around Ross Lake to Big Beaver Trailhead, then Big Beaver Trail + off-trail Access Creek approach to Luna Col/East Fury;",
+      "type": "Trailhead",
+      "elevFt": 1640
+     },
+     {
+      "lat": 48.8122,
+      "lng": -121.3231,
+      "elev": 8301,
+      "name": "West Fury (Mount Fury, West Peak) summit",
+      "type": "Summit",
+      "elevFt": 8301
+     }
+    ],
+    "approach": "The approach is identical to the standard East Peak route for its first 12+ miles, then continues much farther. From the Ross Dam Trailhead at Happy Flats on SR 20 (~milepost 134, 2,150 ft), walk about 1 mile down to the Ross Lake water taxi dock and cross to Big Beaver Landing. From there follow the Big Beaver Creek Trail 11.5 miles up-valley (flat, well-graded, ~5 hours), passing Luna Camp at roughly the 4.7-hour mark. About 29 minutes past Luna Camp, leave the trail at a large (~15-inch) log crossing of Big Beaver Creek and turn up the Access Creek drainage. This is a genuine bushwhack: roughly 1 mile and 1,900 ft of gain (2,400 ft to 4,300 ft) through valley-bottom devil's club, a mid-height creek crossing near 3,800 ft where the brush pinches down to the water, then huckleberry brush and talus for the final half-mile into Access Basin. From the basin, climb a long, steep, grungy scree chute gaining ~1,800 ft to 6,100-ft Access Col — expect loose footing and, in season, hot afternoon sun with no shade. From Access Col, most Mongo Ridge parties do not stop at Luna Pass but instead continue over/around the connecting terrain and up the Southeast Glacier route to the summit of East Fury (see the Southeast Glaciers route for that terrain in detail: heather/talus traverse, Northeast Ridge, a rocky-rib traverse, and the crevassed Southeast Glacier with a ~7,900-ft bergschrund). From East Fury's summit, descend north along the connecting ridge and down to the base of the Southwest Buttress (Mongo Ridge) proper to rack up — this backdoor approach avoids the historically brutal, brush-choked Goodell Creek approach that early parties used to reach the ridge's true toe. Expect this whole approach, camp to base of technical climbing, to take a long day or two on its own; most parties treat it as a multi-day expedition with a camp at Luna Pass or on the connecting ridge.",
+    "fa": "Wayne Wallace, solo — 2006 (month uncertain: July or August)",
+    "gear": [
+     "alpine rock rack",
+     "rope",
+     "crampons",
+     "ice axe",
+     "helmet",
+     "minimal bivy kit",
+     "tag line or twin/double ropes recommended for the numerous gendarme rappels",
+     "Single rack to 4in (doubles in finger/hand sizes)",
+     "60m ropes (doubles recommended for rappels)",
+     "Extra slings/cordelette for rappel anchors",
+     "Ice axe and crampons for glacier approach",
+     "Multi-day bivy gear"
+    ]
+   }
+  }
+ ]
+}

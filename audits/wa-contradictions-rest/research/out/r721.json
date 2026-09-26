@@ -1,0 +1,244 @@
+{
+ "file": "r721.json",
+ "results": [
+  {
+   "id": "wa_east_ridge_8",
+   "fact": "Whether a single 60 m rope makes the south-face rappel",
+   "verdict": "fixed",
+   "correct_value": "The 60 m caveat concerns pitch 3 (a 60 m rope may not stretch from the pitch-2 anchor to the true summit); the pitch-2 south-face rappel is a standard descent option with a single 60 m rope, with no stated rope-length problem.",
+   "evidence": "The route's own description on Mountain Project says a 60 m rope may not make it to the true summit depending on where the anchor is set, and that the mellow terrain makes this a non-issue; it lists the rappel anchor on the south face at the pitch-2 belay as a descent without any rope caveat. The Mountaineers route page gives the same two descents (rappel the south face from the pitch-2 anchor, or over the summit and down the south scramble) with no rope-length warning, and the Mazamas trip page lists a single 60 m rope as the rope required. The 'rappel may not reach the ground' wording was a misreading of the pitch-3 note.",
+   "sources": [
+    "https://www.mountainproject.com/route/120564032/east-ridge",
+    "https://www.mountaineers.org/activities/routes-places/copy_of_pinnacle-peak-the-castle",
+    "https://mazamas.org/activity/instance/5924/detail/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "1 rappel from the Pitch 2 bench down the south face (rope-stretching; a 60m rope may not reach the ground depending on anchor placement)",
+     "value": "1 rappel from the fixed anchor on the Pitch 2 bench down the south face",
+     "id": "wa_east_ridge_8",
+     "fact": "Whether a single 60 m rope makes the south-face rappel"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "single rope (a 60m may not reach the true summit from the pitch-2 anchor depending on rope length and placement).",
+     "replace": "single 60m rope (on pitch 3 it may not stretch from the pitch-2 anchor all the way to the true summit, depending on where the anchor is built; the ground there is easy enough that this rarely matters).",
+     "id": "wa_east_ridge_8",
+     "fact": "Whether a single 60 m rope makes the south-face rappel"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      2
+     ],
+     "expect": "A rope-stretching rappel that a 60 m rope may not complete",
+     "value": "Pitch 3 can run longer than a 60 m rope from the pitch-2 anchor to the true summit",
+     "id": "wa_east_ridge_8",
+     "fact": "Whether a single 60 m rope makes the south-face rappel"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "the rappel off the pitch-2 bench is rope-stretching, and a 60 m rope may not reach the ground depending on where the anchor sits. Know that before you commit to it as your descent.",
+     "replace": "from the pitch-2 bench, a 60 m rope may come up short of the true summit on pitch 3, depending on where the anchor sits; the ground above is easy, so this is rarely a problem. The rappel from that bench down the south face is the quicker of the two descents.",
+     "id": "wa_east_ridge_8",
+     "fact": "Whether a single 60 m rope makes the south-face rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_8",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Mazamas route page states 1,700 ft of elevation gain for the East Ridge; The Mountaineers route page gives ~1,500 ft trailhead to the Castle-Pinnacle col plus ~300 ft col to summit (~1,800 ft). Neither states 2,150, but the two sources do not agree on a single figure, and neither states a car-to-car descent figure for loss_ft, so no patch (changing gain_ft alone would also split it from loss_ft).",
+   "sources": [
+    "https://mazamas.org/activity/instance/5924/detail/",
+    "https://www.mountaineers.org/activities/routes-places/copy_of_pinnacle-peak-the-castle"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "fact": "Direction from Pinnacle Saddle to the summit gully",
+   "verdict": "fixed",
+   "correct_value": "From Pinnacle Saddle, Pinnacle Peak is to the east (Plummer is west); head east to the south-side gullies.",
+   "evidence": "A Mountaineers/WTA trip report describes the path from Pinnacle Saddle going east toward the loose slopes and the summit gully, and says Plummer is reached by heading right (west) from the saddle. Visit Rainier's trail page says the path east from the saddle is the climbers' path to Pinnacle Peak. The beta's 'west/southwest' was the lone outlier against the approach, climbing_route and baseFinding.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-pinnacle-plummer-peaks",
+    "https://visitrainier.com/pinnacle-saddle-plummer-peak-2/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-21.9058537082"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "scramble west/southwest up obvious gullies",
+     "replace": "head east and scramble up obvious gullies on the peak's south side",
+     "id": "wa_pinnacle_peak_tatoosh_r1",
+     "fact": "Direction from Pinnacle Saddle to the summit gully"
+    }
+   ]
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "fact": "North vs south gully",
+   "verdict": "fixed",
+   "correct_value": "The standard route is the south gully / south face.",
+   "evidence": "Wikipedia's Pinnacle Peak article gives the easiest route as a scramble of the south face; a hiking guide and trip reports describe the scramble as the south gully, mostly class 2 with a few class 3 moves. The row's aspect, name, face, approach and pro_tips already say south; three fields said north.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pinnacle_Peak_(Lewis_County,_Washington)",
+    "https://thefroggyadventures.com/pinnacle-peak-mount-rainier/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "North/South Gully",
+     "replace": "South Gully",
+     "id": "wa_pinnacle_peak_tatoosh_r1",
+     "fact": "North vs south gully"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "through the North Gully",
+     "replace": "through the South Gully",
+     "id": "wa_pinnacle_peak_tatoosh_r1",
+     "fact": "North vs south gully"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "find": "North-facing gully commonly",
+     "replace": "The summit gully commonly",
+     "id": "wa_pinnacle_peak_tatoosh_r1",
+     "fact": "North vs south gully"
+    }
+   ]
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "fact": "Total gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "1700",
+   "evidence": "gain_ft 1,050 is the trailhead-to-saddle figure (NPS: 1,050 ft to the 5,920 ft saddle). The row's itinerary day gainFt, totalNote and the trailhead (4,870) and summit (6,562) waypoints all give ~1,700 ft to the summit. The Mazamas page for the same summit from the same trailhead states 1,700 ft; an Oregon Hikers report gives ~1,150 + ~600 ft and a hiking guide ~1,000 + 600 ft, bracketing it. loss_ft left unchanged per the loss rule (see discovered entry).",
+   "sources": [
+    "https://home.nps.gov/mora/planyourvisit/pinacle-peak.htm",
+    "https://mazamas.org/activity/instance/5924/detail/",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=16651",
+    "https://thefroggyadventures.com/pinnacle-peak-mount-rainier/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 1050,
+     "value": 1700,
+     "id": "wa_pinnacle_peak_tatoosh_r1",
+     "fact": "Total gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "fact": "Total loss (loss_ft vs itinerary lossFt)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "loss_ft 1,050 is the saddle-only figure while the itinerary day's lossFt is 1,700. No outside source states a car-to-car descent figure for this route, so loss_ft is left for review.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "NPS gives 2.5 mi round trip to the saddle only (matching dist_km 2.1 km / 1.3 mi one way to the saddle and the itinerary's 2.6 mi). To the summit, a hiking guide says about 3 mi out and back, and an Oregon Hikers report says 1.3 mi to the saddle plus about 1/3 mi more to the top (~3.2-3.3 mi round trip). Both contradict the summit pin's 1.9 mi one way (3.8 RT), but they do not agree on one figure, and the intermediate pins' distances are unsourced; no patch.",
+   "sources": [
+    "https://home.nps.gov/mora/planyourvisit/pinacle-peak.htm",
+    "https://thefroggyadventures.com/pinnacle-peak-mount-rainier/",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=16651"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "fact": "Scramble difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split: a hiking guide calls the south gully mostly class 2 with a few class 3 moves, a trip report calls the gully upper class 3, while an Oregon Hikers report describes class 3/4 scrambling and Wikipedia says some scrambling and rock climbing is needed. No two sources agree on a single maximum class that would settle the 4th Class pill versus the Class 2-3 descriptions, so no patch.",
+   "sources": [
+    "https://thefroggyadventures.com/pinnacle-peak-mount-rainier/",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=16651",
+    "https://en.wikipedia.org/wiki/Pinnacle_Peak_(Lewis_County,_Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "fact": "Pinnacle's rank in the Tatoosh Range",
+   "verdict": "fixed",
+   "correct_value": "Do not state 'second-highest'; Unicorn (6,971), West Unicorn (6,840) and Boundary (6,780) all stand higher than Pinnacle (6,562).",
+   "evidence": "NPS's Pinnacle Peak Trail page calls Pinnacle the third-highest peak in the range; Wikipedia's West Unicorn Peak article gives West Unicorn (6,840 ft) as the second-highest point, and Boundary Peak is 6,780 ft — all above 6,562. Only Wikipedia's Pinnacle article says second, which the elevations refute. The waypoint note's rank claim is removed rather than replaced with a disputed ordinal.",
+   "sources": [
+    "https://home.nps.gov/mora/planyourvisit/pinacle-peak.htm",
+    "https://en.wikipedia.org/wiki/West_Unicorn_Peak",
+    "https://en.wikipedia.org/wiki/Unicorn_Peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "True summit and second-highest point in the Tatoosh Range, with",
+     "replace": "True summit, with",
+     "id": "wa_pinnacle_peak_tatoosh_r1",
+     "fact": "Pinnacle's rank in the Tatoosh Range"
+    }
+   ]
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "fact": "Pinnacle Saddle pin location",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 5,920 ft saddle elevation is right (NPS). The contradiction is the pin's lat/lng, which sits ~40 m from the summit pin (as do the 'Base of Summit Gully' and 'Summit Gully Scramble' pins); pin coordinates are out of scope for this pass, so it is left for the pin audits.",
+   "sources": [
+    "https://home.nps.gov/mora/planyourvisit/pinacle-peak.htm"
+   ],
+   "patches": []
+  }
+ ]
+}

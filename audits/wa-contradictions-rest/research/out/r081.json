@@ -1,0 +1,254 @@
+{
+ "file": "r081.json",
+ "results": [
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Summit elevation",
+   "verdict": "fixed",
+   "correct_value": "8,000-plus ft (consistent with the stored 8,107 ft); not 7,800 ft",
+   "evidence": "The peak's encyclopedia entry gives 8,000+ ft (topo contour), and two independent trip reports (one-hike-a-week, Jim Brisbine) give 8,000 ft / 8,000+ ft. No source puts the summit near 7,800 ft; the lone outlier sentence is changed to agree with high_point_ft, the summit waypoint and the overview.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Degenhardt",
+    "https://onehikeaweek.com/2020/08/09/mount-degenhardt/",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Summit elevation",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "roughly 7,800 ft summit",
+     "replace": "8,000-plus ft summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Terror Creek crossing elevation and distance",
+   "verdict": "fixed",
+   "correct_value": "The climbers' path leaves the Goodell Creek roadbed at a cairn roughly 4-4.5 miles in, near Terror Creek; the crossing is at about 2,000 ft",
+   "evidence": "Crossing elevation: 2,040 ft (one-hike-a-week Terror report), 2,000 ft (Brisbine), ~1,700 ft (Eric's Base Camp) - all far above the waypoint's 900 ft. Distance: the old roadbed parallels Goodell Creek for about 4.5 miles to the cairn where the steep path starts (The Outbound; one-hike-a-week), and Eric's Base Camp puts the crossing ~3.5 miles in, so the waypoint distMi (4.3/4.5) and the bivy note (~4 miles) are right and the approach prose's '1.5-2 miles in, near Roost Creek (~1600 ft)' junction is the outlier; the Roost Creek name could not be confirmed and is dropped. Note: the pin coordinates themselves sit on ~3,400-3,700 ft ground (USGS EPQS) and are out of scope.",
+   "sources": [
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Terror Creek crossing elevation and distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 900,
+     "value": 2000
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Terror Creek crossing elevation and distance",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 1000,
+     "value": 2100
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Terror Creek crossing elevation and distance",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Roughly 1.5-2 miles in, near Roost Creek (~1600 ft), watch",
+     "replace": "Roughly 4 miles in, near Terror Creek, watch"
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Terror Creek crossing elevation and distance",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Roughly 1.5-2 miles in, near Roost Creek at about 1,600 ft, watch",
+     "replace": "Roughly 4 miles in, near Terror Creek, watch"
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Terror Creek crossing elevation and distance",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "A mile or two in, near Roost Creek, the Terror Creek",
+     "replace": "About four miles in, near Terror Creek, the Terror Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Treeline elevation",
+   "verdict": "fixed",
+   "correct_value": "3,640 ft is a rest point on the forested south ridge crest; the path breaks out of the trees much higher (roughly 5,400-6,000 ft)",
+   "evidence": "The 3,640 ft figure comes from a trip report that rested on the ridge at 3,640 ft and only later, above a brushy band below treeline, broke into the open; the same author's Terror report puts treeline around 5,400 ft. Eric's Base Camp describes talus and rock bands appearing around 4,000-4,800 ft, and The Outbound counts the 4,700 ft steep gain from the cairn to treeline near the 6,200 ft notch. All agree the forest does not end at 3,640 ft, so the waypoint keeps its elevation but no longer claims to be the treeline break.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/09/mount-degenhardt/",
+    "https://onehikeaweek.com/2018/08/06/mount-terror/",
+    "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Treeline elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "name"
+     ],
+     "expect": "South Ridge Treeline Break",
+     "value": "South Ridge Crest (in forest)"
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Treeline elevation",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "crests The Barrier's south ridge and breaks out of forest onto open slopes with views north to Chopping Block (Pinnacle Peak); route-finding gets ambiguous here.",
+     "replace": "gains The Barrier's south ridge while still in timber; keep to the crest through a brushier band until it opens onto heather far higher up, where route-finding gets ambiguous."
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Treeline elevation",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      3,
+      "directions"
+     ],
+     "find": "The trail crests the south ridge and breaks out of the trees with views north to the Chopping Block; route-finding gets ambiguous right here.",
+     "replace": "Here the path gains the south ridge, still in the trees; stay on the crest through a brushier stretch until it breaks into the open well above, with views north to the Chopping Block and ambiguous route-finding."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Distance to high camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One report gives 18.7 mi round trip for Degenhardt over three days, which matches the itinerary's 8.5 + 1.7 + 8.5, and Brisbine logged ~20 mi for Terror plus Degenhardt. But The Outbound puts the Terror Basin camp at about 7 mi (4.5 mi of roadbed + 2.5 mi steep), closer to the waypoint's 6.5. No two sources state the one-way distance to the Chopping Block/Stump Hollow camp, so no patch.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/09/mount-degenhardt/",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Which camp the route is climbed from",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Outside bivy, the waypoint (Chopping Block Saddle Camp, 6,400 ft), the approach (~6,000-6,400 ft) and the itinerary (Terror Basin/Stump Hollow, 5,800-6,200 ft) name neighbouring camps that parties genuinely use (Chopper Block Camp 6,400 ft in one report, Stump Hollow 6,000 ft in another). The outlier is bivy[0] Crescent Creek Basin marked 'main', which serves the north-side peaks rather than this route; Chopping Block Saddle, Terror Basin, Stump Hollow, the roadbed and Goodell Creek entries do serve it. Left to the camping clean-up.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/09/mount-degenhardt/",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Line followed above the notch (south ridge vs corkscrew/north ridge)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources describe different lines: Brisbine's Corkscrew goes class 4 slot to the north ridge, class 4-5 face to the west ridge, exposed class 3 ledge to the south ridge; a one-hike-a-week report came up the NW ridge from the Terror side and turned the final tower with class 4 moves; an NPS ranger report used the couloir between Terror's SE ridge and Degenhardt. None clearly describes the row's 'notch south of the summit, then ridge north' line, and whether 'Southwest Route' is the Corkscrew cannot be settled from two agreeing sources.",
+   "sources": [
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/",
+    "https://onehikeaweek.com/2020/08/09/mount-degenhardt/",
+    "https://www.nps.gov/noca/blogs/crescent-creek-basin-degenhardt-peak.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Crux difficulty",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split: one report turned the final tower with 'a few class 4 moves', Brisbine rates a class 4-5 face, and an NPS ranger report calls the summit a 'short class 5 climb' on loose rock. climbing_route already notes some parties find the finish low fifth; with no two sources agreeing on a single rating, neither the 5.6 header nor the 4th-class prose is changed.",
+   "sources": [
+    "https://onehikeaweek.com/2020/08/09/mount-degenhardt/",
+    "https://trailcatjim.com/mt-terror-terror-couloir-west-ridge-degenhardt-corkscrew-route/",
+    "https://www.nps.gov/noca/blogs/crescent-creek-basin-degenhardt-peak.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "fact": "Permits: reservable vs walk-up, and self-issue vs in person",
+   "verdict": "fixed",
+   "correct_value": "No self-issue permit at the Goodell trailhead; the overnight permit comes from the Marblemount Wilderness Information Center (walk-up permits for SR 20 trailheads in person only; a reserved permit can be issued by email or in person). Whether Terror Basin itself is reservable is a bivy-only dispute and left alone.",
+   "evidence": "The NPS permits page says walk-up permits for SR 20 trailheads are issued only in person at the Marblemount WIC, that reserved permits can be issued by email (since 2025), and describes no trailhead self-issue for overnight stays. The Washington's National Park Fund guide says permits are issued in person or remotely by a ranger and the only self-issue option is outside the Marblemount station when it is closed; The Outbound says to pick the permit up at the ranger station before starting. So the trailhead 'self-issue kiosk' and the access.permit 'not by email' parenthetical are wrong; overnight_permit.where already agrees.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/",
+    "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Permits: reservable vs walk-up, and self-issue vs in person",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "; self-issue wilderness permit kiosk here, then onto",
+     "replace": "; no permits are issued here, so bring the one you got in Marblemount, then head onto"
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Permits: reservable vs walk-up, and self-issue vs in person",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "the start is an unmarked pullout with a self-issue wilderness permit kiosk.",
+     "replace": "the start is an unmarked pullout."
+    },
+    {
+     "id": "wa_mount_degenhardt_southwest_route",
+     "fact": "Permits: reservable vs walk-up, and self-issue vs in person",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "find": "(climbing-zone permits generally must be issued in person, not by phone/email)",
+     "replace": "(walk-up permits for SR 20 trailheads are issued there in person only; a reserved permit can be issued by email or in person)"
+    }
+   ]
+  }
+ ]
+}

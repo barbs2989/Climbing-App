@@ -1,0 +1,64 @@
+{
+ "applied": [
+  {
+   "id": "wa_gato_negro",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Hardest grade"
+  },
+  {
+   "id": "wa_gato_negro",
+   "column": "commitment",
+   "path": [],
+   "fact": "Commitment grade IV+ vs alpine_grade IV"
+  },
+  {
+   "id": "wa_gato_negro",
+   "column": "emergency",
+   "path": [
+    "county"
+   ],
+   "fact": "County / ranger district / SAR"
+  },
+  {
+   "id": "wa_gato_negro",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "County / ranger district / SAR"
+  },
+  {
+   "id": "wa_gato_negro",
+   "column": "emergency",
+   "path": [
+    "sheriffDispatch"
+   ],
+   "fact": "County / ranger district / SAR"
+  },
+  {
+   "id": "wa_gato_negro",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach text names a different formation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_gato_negro",
+   "before": {
+    "rock_grade": "5.10d",
+    "commitment": "IV+",
+    "emergency": {
+     "notes": "Cell service is unreliable in the Washington Pass area. Satellite communication device recommended. Emergency helicopter access possible via NWSRU.",
+     "county": "Skagit County",
+     "rangerStation": "Okanogan-Wenatchee National Forest - Marblemount Ranger District",
+     "nearestHospital": "Skagit Valley Hospital, Mount Vernon, WA (about 60 miles)",
+     "sheriffDispatch": "Skagit County Sheriff (non-emergency): 360-428-3211"
+    },
+    "approach": "From the pullout, find a faint boot path descending loose talus/scree to the east into the trees, passing a trail register, then crossing Early Winters Creek on a log (~4,080 ft). The trail climbs the timbered rib north of Burgundy Creek, steeply gaining elevation to a basin/camp bench around 6,500 ft (roughly 2 hours from the car), then continues up to Burgundy Col (~7,720 ft, ~3 hours). Burgundy Spire is reached from the basin/col area with a short additional scramble; good camping and a late-season spring are near 6,400-6,500 ft."
+   }
+  }
+ ]
+}

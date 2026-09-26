@@ -1,0 +1,159 @@
+{
+ "applied": [
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "column": "overview",
+   "path": [],
+   "fact": "Direction of Dot Mountain"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Direction of Dot Mountain"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Trailhead name and elevation"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "column": "descent",
+   "path": [],
+   "fact": "North side of the peak"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "column": "face",
+   "path": [],
+   "fact": "North side of the peak"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "before": {
+    "overview": "Ptarmigan Peak is one of the most remote of Washington's Bulger peaks (the state's roughly 100 highest), sitting deep in the central Pasayten Wilderness less than a mile from the most isolated point in the entire wilderness. It ranks as the third-highest summit in the central Pasayten after Robinson Mountain, and lies near the Carru/Osceola/Lago cluster of high peaks, connected to Dot Mountain by a mile-long ridge just to the north. Seen from the south it's a high, rounded, tundra-covered massif with easy scrambling; its north side is a seldom-seen, precipitous face. The real crux is the approach — long brushy valley travel and rough ridge traverses just to reach the base — not the climbing itself.",
+    "pro_tips": [
+     "Most parties combine Ptarmigan with neighboring Dot Mountain (1 mile north along a connecting ridge) and/or Mount Lago via the Lago-Carru col, since all three are reachable from the same high camp.",
+     "A tarn near 7,800 ft on Ptarmigan's south slopes and another near 7,400 ft below Mount Lago are the only dependable water sources on that side of the peak — plan camp around them.",
+     "The north side of Ptarmigan is a sheer, rarely-seen face — stay south/southeast of the summit ridge and don't wander toward the north rim in poor visibility."
+    ],
+    "waypoints": [
+     {
+      "lat": 48.737833,
+      "lng": -120.6785,
+      "elev": 7170,
+      "name": "Slate Peak Trailhead",
+      "note": "Gated end of FR-5400 past Harts Pass (highest driveable road in WA); the Robinson Creek (Middle Fork Pasayten) Trail #478 drops from here into the Pasayten Wilderness.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.8649,
+      "lng": -120.532275,
+      "elev": 4400,
+      "name": "Berk Creek Trail junction",
+      "note": "Low point of the Robinson Creek/Middle Fork Pasayten valley where the Berk Creek Trail forks north toward Freds Lake and Freds Pass; expect heavy blowdown on this stretch even by Pasayten standards.",
+      "type": "Junction",
+      "distMi": 9
+     },
+     {
+      "lat": 48.817206,
+      "lng": -120.592739,
+      "elev": 7100,
+      "name": "Freds Pass",
+      "note": "7,100-ft pass gained via the Berk Creek Trail, dividing the Berk Creek and Eureka Creek drainages — the key navigation point of the cross-country approach.",
+      "type": "Junction",
+      "distMi": 13
+     },
+     {
+      "lat": 48.852889,
+      "lng": -120.537253,
+      "elev": 7500,
+      "name": "Shellrock Pass bench",
+      "note": "Roughly half-acre bench just southwest of 7,487-ft Shellrock Pass, the standard staging camp used for Ptarmigan and the other Pasayten Eleven summits.",
+      "type": "Campsite",
+      "distMi": 15
+     },
+     {
+      "lat": 48.85093,
+      "lng": -120.536672,
+      "elev": 7800,
+      "name": "7,800-ft tarn, Ptarmigan south slopes",
+      "note": "Small tarn reported reliable into late season — the last dependable water before the final summit push.",
+      "type": "Water",
+      "distMi": 16
+     },
+     {
+      "lat": 48.850096,
+      "lng": -120.535444,
+      "elev": 8000,
+      "name": "South ridge gain point",
+      "note": "Leave the tarn basin and scramble cross-country over talus onto the crest of Ptarmigan's south ridge.",
+      "type": "Junction",
+      "distMi": 16.5
+     },
+     {
+      "lat": 48.866313,
+      "lng": -120.53255,
+      "elev": 8614,
+      "name": "Ptarmigan Peak",
+      "note": "True summit (8,614 ft per recent lidar survey); Class 2-3 talus and short rock steps for the final stretch, with views across the remote Pasayten Eleven.",
+      "type": "Summit",
+      "distMi": 17.5
+     }
+    ],
+    "approach": "There is no short trailhead-to-base approach for Ptarmigan Peak — it's a deep-interior Pasayten summit reached on a multi-day backpack, and the standard approach is the same trail system used to stage a high camp near Shellrock Pass. From the Slate Pass trailhead (~6,800 ft, reached via the Hart's Pass Road/FR-5400 past the Hart's Pass Guard Station), start on the Slate Pass Trail (#498), which drops steeply through larch stands and avalanche-lily meadows for a few miles, losing roughly 1,500 ft, to its junction with the Middle Fork Pasayten River Trail / Robinson Creek Trail (#478) at around 5,300–5,400 ft. Turn north (right) on Trail #478 and follow the Middle Fork Pasayten valley downstream, fording several tributary creeks (can run high and be a real obstacle in early-season/high-runoff conditions) and passing the side junction to Tatoosh Buttes (Trail #485) around the 8–9 mile mark; this stretch has a long-standing reputation for heavy blowdown (parties describe a thousand or so downed logs), so expect slow, log-hopping travel. Continue north to the Berk Creek junction, then climb east on the Freds Pass trail, passing Freds Lake (reliable water and a common overnight stop) around mile 14–15, over Freds Pass, and across the head of the Eureka Creek basin — parties note the tread here is faint or completely obscured by blowdown near the Eureka Creek turn, so cairns and map/GPS work are needed — to Shellrock Pass around mile 17–18 (roughly 7,400–7,500 ft). A broad half-acre bench just southwest of Shellrock Pass is the standard high camp and staging area for Ptarmigan and neighboring peaks (Lago, Carru, Osceola). From camp it's off-trail: gain the ridge crest north of camp and follow open alpine tundra and talus across the shoulder of Mount Lago (via the Lago–Carru col on some variations) to Ptarmigan's south ridge — roughly 2–3 more cross-country miles and 1,000–1,200 ft of gain, mostly class 2 over tundra and talus with some loose rock on the ridge crest. A shorter, less-traveled alternative approaches from the east via the end of Eightmile Creek Road and the Eightmile Pass–Hidden Lake Trail (~15 miles) to Ptarmigan Creek, then 2–3 miles cross-country through brush to the base — shorter on paper but rougher, brushier, and far less maintained than the Slate Pass line, which is the de facto standard.",
+    "road": {
+     "name": "Forest Road 5400 (Harts Pass Road) to the Slate Peak spur",
+     "status": "Gravel, narrow, and rough in sections; high-clearance vehicle recommended, especially near Harts Pass and on the Slate Peak spur",
+     "driveNote": "From Winthrop: WA-20 west, then Lost River Road (FR-5400) about 7.5 miles, then FR-5400 climbs roughly 8-9 miles to Harts Pass (6,198 ft); the Slate Peak spur continues 2.7 miles further to the trailhead (7,170 ft) near the gated road-end — Slate Peak is the highest point in Washington reachable by road.",
+     "seasonalGate": "Typically impassable with snow until early-mid July; closes again with fall snow, often by October"
+    },
+    "descent": "Reverse the ascent ridge/talus line back to camp; the north side is cliffed and is not a descent option.",
+    "face": "South Slopes (standard line); North Ridge from the Lago-Dot connecting ridge is the common alternative"
+   }
+  }
+ ]
+}

@@ -1,0 +1,217 @@
+{
+ "file": "r642.json",
+ "results": [
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Aspect / line of the route",
+   "verdict": "fixed",
+   "correct_value": "The scramble follows the northwest (north) ridge from the Old Snowy-Ives col and finishes on the south/southwest face; it is not a northeast-side route.",
+   "evidence": "One trip report describes the ascent as the northwest ridge (Class 1-2) over a rounded crest, then the south face (Class 3). A second describes gaining the north-ridge saddle, following the ridge to the summit wall, then dropping onto a ramp to the southwest face; a third summary lists the route as Northwest Ridge-South Face. Beta and face were rewritten and the crevasses line no longer calls the route 'NE Slopes'. The route NAME ('Northeast Slopes') and aspect 'NE' still disagree with this but name is out of scope for patches and aspect was left to match the name; flag for the owner.",
+   "sources": [
+    "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/",
+    "https://www.hippohamster.com/posts/south_cascades/ives_peak/",
+    "https://www.summitpost.org/ives-peak/867229"
+   ],
+   "patches": [
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "Aspect / line of the route",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "then leaves the crest to climb the northeast side to the summit",
+     "replace": "then leaves the crest at the col northwest of the peak and follows the northwest ridge and a short south-face scramble to the summit"
+    },
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "Aspect / line of the route",
+     "op": "set",
+     "column": "face",
+     "path": [],
+     "expect": "Northeast side of Ives Peak, reached along the Goat Rocks crest between Old Snowy Mountain and the summit",
+     "value": "Northwest ridge and upper south face of Ives Peak, reached from the Old Snowy-Ives col on the Goat Rocks crest"
+    }
+   ]
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "PCT junction elevation and distance",
+   "verdict": "fixed",
+   "correct_value": "The Snowgrass Trail meets the PCT at about 6,400 ft, roughly 5 mi in (waypoint is right); parties then follow the PCT north to about 6,700 ft before leaving it for the col.",
+   "evidence": "A PCT section guide puts the junction with the Snowgrass Trail at 6,400 ft; a trail guide puts lower Snowgrass Flat at 4.1 mi with the PCT 400+ ft higher in under a mile, matching the 6,400 ft / 5 mi waypoint. Route descriptions say to take the PCT north from Snowgrass Flat to about 6,700 ft before turning east off-trail, and another gives the PCT departure point as 6,666 ft. The approach prose had merged the junction with the departure point; it now says the junction, then follow the PCT to ~6,700 ft.",
+   "sources": [
+    "https://www.oregonhikers.org/field_guide/Goat_Rocks_Traverse_Hike",
+    "https://www.wta.org/go-hiking/hikes/snowgrass",
+    "https://www.summitpost.org/ives-peak/867229",
+    "https://www.hippohamster.com/posts/south_cascades/ives_peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "PCT junction elevation and distance",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "junction with the Pacific Crest Trail at roughly 6,700–7,100 ft (~4.3 miles in). Leave the PCT here and head off-trail to the northeast",
+     "replace": "junction with the Pacific Crest Trail. Follow the PCT north to about 6,700 ft, then leave it and head off-trail to the northeast"
+    },
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "PCT junction elevation and distance",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "to the PCT junction at roughly 6,700-7,100 ft. Leave the PCT and head off-trail northeast",
+     "replace": "to the PCT junction, follow the PCT north to about 6,700 ft, then leave it and head off-trail northeast"
+    },
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "PCT junction elevation and distance",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Leave the PCT at the junction area, roughly 6,700-7,100 ft, and go off-trail",
+     "replace": "Leave the PCT north of the Snowgrass Trail junction, at roughly 6,700 ft, and go off-trail"
+    }
+   ]
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Camp location, elevation and camping rules",
+   "verdict": "fixed",
+   "correct_value": "Camping within Snowgrass Flat is prohibited; the approach must not recommend camping in the flat. The itinerary's higher camp (~7,100-7,200 ft, above the flat) is unaffected.",
+   "evidence": "The Gifford Pinchot wilderness regulations prohibit camping within Snowgrass Flat and Shoe Lake Basin; a trail guide repeats that camping at Snowgrass Flat is prohibited and places the lower portion of the flat at the Lily Basin junction (4.1 mi). A trip report camped near 7,200 ft above the basin, consistent with the itinerary. Approach, approach variant and the Lily Basin junction waypoint note no longer present the flat as a camp. The waypoint's type is still 'Campsite' (type not patched) and bivy is out of scope.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/wilderness/wilderness-regulations",
+    "https://www.wta.org/go-hiking/hikes/snowgrass",
+    "https://onehikeaweek.com/2022/07/10/ives-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "Camp location, elevation and camping rules",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "a broad, popular wildflower meadow with good camping and multiple small creeks",
+     "replace": "a broad, popular wildflower meadow, closed to camping, with multiple small creeks"
+    },
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "Camp location, elevation and camping rules",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "a broad wildflower meadow with good camping and small creeks",
+     "replace": "a broad wildflower meadow, closed to camping, with small creeks"
+    },
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "Camp location, elevation and camping rules",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "find": "Established campsites near the Lily Basin Trail junction;",
+     "replace": "The lower edge of Snowgrass Flat, which is closed to camping;"
+    }
+   ]
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Day-1 mileage vs waypoint distances",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report gives 14.2 mi round trip for the two-summit trip (matching totalNote) and a camp near 7,200 ft, but no source gives the trailhead-to-camp or camp-to-trailhead distance, so the 7 mi in vs 6.5 mi out vs summit-at-7-mi cannot be settled.",
+   "sources": [
+    "https://onehikeaweek.com/2022/07/10/ives-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Day-2 duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule (5:30 AM to ~4:30-5 PM) implies ~11 h against 8 h in the day and timing. One trip report took 7.3 h for the Old Snowy/Ives loop from camp alone, which supports a longer day than 8 h with the hike-out, but no two sources state the day length, and changing it would cascade into timing.totalHrs.",
+   "sources": [
+    "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Day-2 gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One trip report gives ~2,400 ft for the Old Snowy/Ives loop from a lower camp; the stored 900 ft looks too low, but the itinerary total (2,500+900) equals gain_ft 3,400 and no source states this route's car-to-car gain for the two-summit plan, so per the rules no day figure is changed.",
+   "sources": [
+    "https://trailcatjim.com/mt-curtis-gilbert-old-snowy-mtn-ives-peak-snowgrass-flats/",
+    "https://mazamas.org/activity/43/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Goat Creek crossing",
+   "verdict": "fixed",
+   "correct_value": "Goat Creek is crossed on a footbridge just before the 2-mile mark (not a ford).",
+   "evidence": "One trail guide says a sturdy bridge crosses Goat Creek just before 2 mi; another says a sturdy footbridge at 1.9 mi; a trip report also records the Goat Creek bridge crossing under two miles.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/snowgrass",
+    "https://www.oregonhikers.org/field_guide/Snowgrass_Flat_Hike",
+    "https://onehikeaweek.com/2022/07/10/ives-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "Goat Creek crossing",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "Ford of Goat Creek",
+     "replace": "Bridge crossing of Goat Creek"
+    }
+   ]
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "fact": "Glacier/moat travel",
+   "verdict": "fixed",
+   "correct_value": "No crevassed glacier travel, but the McCall Glacier's moat or edge near the Old Snowy-Ives col may have to be crossed early in the season.",
+   "evidence": "A trip report traversed steep snow and a narrow moat of the McCall Glacier on the way to Ives; a route description says the boot path from Old Snowy toward Ives runs until the McCall Glacier blocks it, with the moat, the glacier edge or dropping south as options. The crevasses line was reworded so it no longer says 'N/A' against the hazards and watch-out entries (and no longer calls the route 'NE Slopes').",
+   "sources": [
+    "https://onehikeaweek.com/2022/07/10/ives-peak/",
+    "https://www.mountaineers.org/activities/activities/alpine-scramble-old-snowy-mountain2013ives-peak-traverse",
+    "https://www.hippohamster.com/posts/south_cascades/ives_peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_ives_peak_r1",
+     "fact": "Glacier/moat travel",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel on the standard NE Slopes/crest scramble route; the McCall Glacier lies below the ridge on the NE flank and is generally avoided by staying on rock, though traverse variants toward Old Snowy can pass near its moat/edge",
+     "value": "No crevassed glacier travel on the standard northwest ridge/crest scramble, but the McCall Glacier on the NE flank reaches up toward the Old Snowy-Ives col, and early in the season its moat or edge may have to be crossed or skirted on the traverse from Old Snowy; stay on rock where you can"
+    }
+   ]
+  }
+ ]
+}

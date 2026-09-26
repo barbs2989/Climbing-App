@@ -1,0 +1,118 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_hopper_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Route grade"
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Snow-free window"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_hopper_standard",
+   "before": {
+    "descent_text": "Descend by reversing the ascent line: downclimb the same gully/rib system off the summit rockwall back down through the class 3-4 crux step, then the sustained class 3 terrain below it, back to the basin and First Divide (4,688 ft). This is a scramble route with no fixed anchors or bolted stations reported anywhere on it — the standard descent is careful downclimbing, facing in through the steeper class 3+/4 sections near the top where the wall lays back into a short climbable face. Some parties uncomfortable reversing that headwall step opt for a single, short rappel off a natural anchor (slung horn or block — bring webbing/cord, since none is fixed in place) to protect the crux; this is optional, not required, so plan on 0 fixed rappels for a typical descent. Watch for loose rock and rockfall onto any party below in the gully system, and re-identify your ascent gully carefully from above — the same routefinding hazard (many similar-looking gullies and ribs) applies in reverse and is arguably worse on the way down. From First Divide, drop back through Home Sweet Home meadow and follow the connector trail down to Marmot Lake, then reverse the Duckabush Trail #803 all the way to the Duckabush Trailhead (an easier but long walk-out, ~29 miles from the high basin). If the historic Staircase approach reopens in the future, the equivalent reversal would instead drop from First Divide down the North Fork Skokomish Trail to Staircase.",
+    "itinerary": {
+     "cal": "Best snow-free window is roughly late June through early October; an Olympic National Park wilderness permit is required for the overnight camps, and some parties extend to 5 days to also tag nearby Mount Steel from a First Divide camp.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Staircase Ranger Station (~850 ft) the North Fork Skokomish River Trail climbs gently and steadily through old-growth forest, with several creek crossings, to Nine Stream Camp. This is the easy, graded part of the trip — save energy for the steep push later.",
+       "hours": 5.5,
+       "miles": 9.8,
+       "title": "Approach up the North Fork Skokomish",
+       "gainFt": 1200,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach Nine Stream Camp"
+      },
+      {
+       "n": 2,
+       "note": "A short, steeper day up the valley to a high camp around the unmaintained Mount Hopper Way Trail junction (roughly the Two Bear Camp area, ~3,680 ft). Arriving early leaves time to scout the start of tomorrow's climbers' path before dark.",
+       "hours": 3,
+       "miles": 2.4,
+       "title": "Push to high camp below Mount Hopper",
+       "gainFt": 1650,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach a high camp near Two Bear Camp / the Mount Hopper Way Trail junction"
+      },
+      {
+       "n": 3,
+       "note": "The 'Way Trail' is an unmaintained, brushy, route-finding climb of roughly 2 miles and 2,400+ ft from the valley junction to the summit — steep forest giving way to open slopes near the top. Trip reports flag genuine route-finding difficulty, so budget extra time versus a maintained trail.",
+       "hours": 7.5,
+       "miles": 4,
+       "title": "Summit day",
+       "gainFt": 2440,
+       "lossFt": 2440,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave high camp",
+         "detail": "Early start for cool temps on the brushy lower climb."
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Reach Way Trail junction",
+         "detail": "Begin the steep, unmaintained climbers' path."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Break into open slopes",
+         "detail": "Forest gives way to more open terrain; route-finding gets easier to read."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Gain the summit ridge",
+         "detail": "Short final scramble to the top."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Summit (6,120 ft)",
+         "detail": "Views toward the Sawtooth Range and Lake of the Angels."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at high camp",
+         "detail": "Descend the same way, watching for the correct brush corridor."
+        }
+       ],
+       "objective": "Climb Mount Hopper via the Mount Hopper Way Trail and return to high camp"
+      },
+      {
+       "n": 4,
+       "note": "A long but mostly gentle, downhill-trending day back down the North Fork Skokomish trail to the car.",
+       "hours": 6.5,
+       "miles": 12.2,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2830,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to the Staircase trailhead"
+      }
+     ],
+     "totalNote": "A 4-day backpack: ~28.4 mi round trip and ~5,300 ft of net gain to the 6,120 ft summit, most of it easy river-valley trail plus one genuinely steep, route-finding summit day on an unmaintained 'way trail'."
+    }
+   }
+  }
+ ]
+}
