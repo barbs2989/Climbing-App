@@ -1,0 +1,40 @@
+[
+ {
+  "id": "wa_west_face",
+  "seasonal_guidance": {
+   "optimalWindow": "Late July to late August, when the approach has melted out but the glacier snow bridges are still intact",
+   "monthBreakdown": {
+    "June": {
+     "status": "risky",
+     "reason": "The long approach is still under deep snow, the creek crossings run high, and the granite faces are wet and icy near the base."
+    },
+    "July": {
+     "status": "good",
+     "reason": "The approach snow is melting and the glacier is well bridged, but early in the month the west face and moat at its base are often wet."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "The rock is dry and daylight is long for the multi-day approach; glacier snow bridges thin and can fail by the end of the month."
+    },
+    "September": {
+     "status": "marginal",
+     "reason": "Snow bridges have melted, exposing open crevasses and a wide bergschrund, and shorter days stretch an already long approach."
+    },
+    "October": {
+     "status": "risky",
+     "reason": "Early snowstorms can bury the granite and close off the long off-trail approach, leaving no easy way out."
+    }
+   }
+  },
+  "evidence": [
+   "Abegg, North Gunsight WF Aug 1-5 2018 via Downey/Bachelor Creek; Chickamin Glacier snow bridge melted out a couple of weeks later https://stephabegg.com/trip-reports/washington/north-gunsight-wf/"
+  ],
+  "flags": [
+   "Route identity is uncertain: 'South Peak' next to 'North Peak' West Face (5.11+) looks like the Gunsight Peaks near Dome Peak, but I could find no documentation of a South Peak West Face 5.9+; breakdown inferred from the shared approach and glacier. Worth a human look.",
+   "best_season is null; beta and hazards are also null, so there is little row evidence to cross-check.",
+   "Row approach calls it the 'southern end of the Ptarmigan Traverse'; the Gunsight approach is via Downey/Bachelor Creek to Itswoot Ridge and the Chickamin Glacier.",
+   "Suiattle River Road washout closure (to Jan 2028) and Downey Creek Trail fire closure (through 2026) currently block the approach - current-year specifics, not shipped."
+  ],
+  "held": "Route identity unclear: no documented South Peak (Gunsight) West Face 5.9+ found; best_season, beta and hazards all null, so a breakdown would be pure inference."
+ }
+]
