@@ -351,6 +351,29 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+- **`check:catalog-duplicates`** asks whether the catalog can gain a **duplicate route** again, and
+  whether one already has. Built 2026-09-25 after `import-mp-grades --create-areas` filed MP's
+  `North Cascades › Mt. Baker` beside our `Bellingham and Mt Baker Hwy › Mount Baker` (~225 copy
+  areas, 27 states; cleaned by 0213/0215/0217). The user: *"make sure the duplicate routes don't
+  happen again"*. **Hand-run, not in build** — a property of the DATABASE, not the checkout (same
+  reasoning as `check:counts`). Two halves:
+  - **The refusal is still there.** `trg_refuse_duplicate_area` / `trg_refuse_duplicate_route`
+    exist, are enabled, BEFORE, and fire on **INSERT and UPDATE** (0216 was INSERT-only; 0218 adds
+    moves and renames). Read through `supabase db query --linked` — a worktree needs
+    `supabase/.temp` symlinked, or it exits 2 with that instruction.
+  - **None got past it.** Two routes in ONE area with the same `catalog_key` (0214), placeholders
+    excluded — against a LIST of the 48 pre-trigger groups in
+    `scripts/data/catalog-duplicates-baseline.json`, never a count (a count holds level when one
+    is fixed and another lands). Routes have no `created_at`, which is why it is a list at all.
+  - **catalog_key is recomputed in JS** (`lib/search.js` `searchCanon` + 0214's stoplist). In SQL
+    it does not finish over 211k routes: measured `57014` at the default timeout, then a gateway
+    **524** with `statement_timeout = 300s`. `check:search-norm` keeps the JS and SQL tables one.
+  - **Cannot see** a copy filed under a DIFFERENT area (MP's copy area beside ours) — a pairwise
+    neighbourhood scan is too costly here; that shape is what the trigger's 5 km / 0.3 km test
+    refuses, so half 1 is its coverage. Anon key for routes; refuses a read under 100k rows.
+  - Never add a new duplicate to the baseline: merge it (0213 is the pattern), then
+    `--write-baseline` only to record groups that were FIXED.
+
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
   not in the build. `route_count` is maintained by a trigger on the **routes**
