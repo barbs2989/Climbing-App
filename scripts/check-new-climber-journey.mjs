@@ -147,6 +147,16 @@ try {
   const page = await browser.newPage({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
   const pageErrors = [];
   page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
+  // EVERY profiles request the app makes, with its status. A FAIL below then says whether the
+  // read or the write went out at all and what came back, rather than leaving it to be reasoned
+  // out of the code afterwards.
+  const t0 = Date.now();
+  const profileTraffic = [];
+  page.on("response", (r) => {
+    const u = r.url();
+    if (u.includes("/rest/v1/profiles")) profileTraffic.push(`${((Date.now() - t0) / 1000).toFixed(1)}s ${r.request().method()} ${r.status()}`);
+  });
+  const traffic = () => (profileTraffic.length ? " [profiles traffic: " + profileTraffic.join(", ") + "]" : " [no profiles request was made]");
   // Re-applied on every navigation, so the RELOAD below stays signed in -- which is the whole test.
   await page.addInitScript(
     ({ k, v }) => { try { window.localStorage.setItem(k, v); } catch {} },
@@ -195,10 +205,15 @@ try {
   // !realAuthGate DEMO branch -- so it could never fire for a real session. It keys on the ACCOUNT
   // now: no disciplines recorded means onboarding was never completed, which is durable and right
   // on a second device, where the session-only `onboarded` flag said nothing at all.
+  // WAIT FOR THE PROFILE READ, not for the text to settle. `accountNeedsOnboarding` waits on
+  // profileLoaded, which turns true only when getProfile resolves, and nothing spins while it is
+  // pending -- so settledText returns before the read does, and on a loaded box the sheet opened
+  // AFTER this assertion had already failed it.
+  await page.waitForFunction(() => /Takes about 30 seconds\.|WHAT DO YOU DO\?/.test(document.body.innerText || ""), null, { timeout: 60000 }).catch(() => {});
   const firstScreen = await page.evaluate(() => document.body.innerText || "");
   const autoOpened = firstScreen.includes("Takes about 30 seconds.") || firstScreen.includes("WHAT DO YOU DO?");
   if (autoOpened) ok("onboarding AUTO-OPENED for a brand-new real account");
-  else bad("onboarding did not auto-open for a brand-new real account. The account has no disciplines and the profile read resolved, so accountNeedsOnboarding should be true — check that the effect keys on it and that the device preference is not already set for this profile");
+  else bad("onboarding did not auto-open for a brand-new real account. The account has no disciplines and the profile read resolved, so accountNeedsOnboarding should be true — check that the effect keys on it and that the device preference is not already set for this profile" + traffic());
 
   // SKIP RATHER THAN COMPLETE, because the card assertion below depends on still needing it.
   // `onSkip` is ()=>setOnboardOpen(false) and does NOT mark them onboarded, so a climber who
@@ -211,10 +226,11 @@ try {
   // THE CARD IS ON HOME. Asked of the page TEXT, not of a control selector -- an earlier pass
   // concluded "the card is absent" from a list of controls, which cannot tell a card that did not
   // render from one the selector did not match.
+  await page.waitForFunction(() => (document.body.innerText || "").includes("Set up your climbing profile"), null, { timeout: 30000 }).catch(() => {});
   const homeText = await page.evaluate(() => document.body.innerText || "");
   if (homeText.includes("Set up your climbing profile"))
     ok("the 'Set up your climbing profile' card is on HOME — the screen a new climber lands on");
-  else bad("the setup card is not on Home. It is gated on (accountNeedsOnboarding && !dismissed); the account has no disciplines and homeDismiss starts empty, so both are satisfied and it should be here");
+  else bad("the setup card is not on Home. It is gated on (accountNeedsOnboarding && !dismissed); the account has no disciplines and homeDismiss starts empty, so both are satisfied and it should be here" + traffic());
 
   // AND NOT ON CLIMBS, or the move left a copy behind. A card in two places is worse than a card
   // in the wrong place: the dismiss button writes one key, so dismissing one would blank both.
@@ -296,11 +312,17 @@ try {
 
   // ---- THE ACTUAL QUESTION: DID IT REACH THE DATABASE? -----------------------------------------
   // Asked of the DB, not the screen. The screen showed it correctly the whole time this was broken.
-  await new Promise((r) => setTimeout(r, 2500));
-  const after = await profileRow(uid);
+  // POLLED, not a fixed sleep: a 2.5s wait read the row before a slow write had landed and
+  // reported a write that never happened. A write that has not landed in 30s is a failure.
+  let after = null;
+  for (let i = 0; i < 30; i++) {
+    after = await profileRow(uid);
+    if (after && after.disciplines && after.disciplines.length) break;
+    await new Promise((r) => setTimeout(r, 1000));
+  }
   const gotDiscs = !!(after && after.disciplines && after.disciplines.length);
   if (gotDiscs) ok(`disciplines reached the database: ${JSON.stringify(after.disciplines)}`);
-  else bad("onboarding's disciplines never reached the database — they are lost on reload, and compat() scores them at 16 points each");
+  else bad("onboarding's disciplines never reached the database — they are lost on reload, and compat() scores them at 16 points each" + traffic());
   if (after && after.sport_grade) ok(`the sport grade reached the database: ${after.sport_grade}`);
   else bad("onboarding's sport grade never reached the database");
 
