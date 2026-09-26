@@ -1,0 +1,192 @@
+{
+  "wa_north_face_left_buttress": {
+    "area": "wa_castle_peak_pasayten",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.8", "lengthM": 70, "notes": "Cross the moat and start in the blocky line of face holds just left of the gully/chimney that bounds the left edge of the buttress. Most of the pitch is low fifth class on clean granite; a wide crack near the top holds the harder moves. The moat at the start can be awkward and changes through the season." },
+      { "pitch": "2", "grade": "Low 5th", "lengthM": 20, "notes": "Trend up and right to the top of the lingering snow patch, aiming for the clean wall beneath a shallow left-facing corner. How much snow sits here varies a lot year to year, and in a big year it can bury this ground; belay at the base of the clean wall." },
+      { "pitch": "3", "grade": "5.10+", "lengthM": 30, "notes": "Unprotected but balancy face climbing leads to the corner, which takes good gear and has had a fixed piton in it. Above the top of the crack, hard face climbing on good gear finishes at a belay ledge. The runout off the belay comes before the first solid piece, so move carefully." },
+      { "pitch": "4", "grade": "5.10-", "lengthM": 40, "notes": "Face climb left off the belay on positive holds with little protection, then pull into a steep dihedral split by twin cracks and follow clean flakes and cracks to a pedestal. Among the best pitches on the route; gear is mostly small." },
+      { "pitch": "5", "grade": "5.7", "lengthM": 30, "notes": "Step down and left from the belay into a hidden corner, climb it, and work back up and right to belay at a spot directly above the previous stance. The corner is not visible from the pedestal, so traverse down to find it rather than forcing straight up." },
+      { "pitch": "6", "grade": "5.10", "lengthM": 45, "notes": "Move left and up to the base of a long seam and finger crack, which protects well as the moves get harder. From its base work left and up around a series of left-facing corners and small roofs toward the left edge of the wall, belaying low beside the chimney/gully." },
+      { "pitch": "7", "grade": "5.10", "lengthM": 30, "notes": "Climb the featured arête right of the chimney/gully, then a clean white shallow dihedral, and undercling right to the belay. Protection on the arête is sparse and relies on small cams (TCU sizes); expect a long, committing stretch that some find runout." },
+      { "pitch": "8", "notes": "A strenuous left-facing corner with sustained finger locks leads on up the left side of the buttress. Above this pitch the rock turns noticeably mossier, especially in the obvious dihedrals, so avoid the corners and look for cleaner flakes and cracks." },
+      { "pitch": "9-12", "notes": "Follow flakes and cracks left onto a bright quartz dike, which gives about two pitches of continuous positive holds with only occasional gear. From a small ledge below the summit, a hidden snow patch and a steep final rock wall with an overhanging pull-up move lead to the top; an ice tool helps if that snow is still there." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Stored notes were 4-8 word fragments carrying the length as text; lengths moved to lengthM (source gives approximate lengths for P1-P7 only) and each pitch rewritten with direction, features and protection. The single 'P8-12' row is split into '8' (the left-facing finger-crack corner, stated as the pitch after the arête) and '9-12' (quartz dike and summit wall), since the exact boundaries above P8 are not documented. No grades are given anywhere for pitches 8-12, so those rows carry none (stored had null too). No crux flag set: the P3 grade (5.10+) is the highest stated, but no source names a route crux pitch. No bolts or anchor types — none stated.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106464656/north-face-left-buttress",
+        "https://alpinist.com/newswire/accidental-first-ascent-fight-or-flight-in-the-north-cascades/",
+        "https://www.mountainproject.com/area/106464644/castle-peak"
+      ],
+      "other_findings": "pitches = 14, but the route description gives 12 pitches (P1-P7 described, then P8-P12) for about 1,400 ft; nothing supports 14. Stored descent_text says descend 'the east ridge to an obvious col, then down a snow finger'; the route page says only 'East ridge and snow slopes to the North', with crampons/axe helpful but optional. Two sources, but the pitch-level lengths and grades come from one route page (whose lengths are stated as approximate) — the second source confirms features and order only."
+    }
+  },
+  "wa_gato_negro": {
+    "area": "wa_whine_spire",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.10", "notes": "Start right of the big yellow scar, after crossing the firm snow patch and scree moat at the base. A 5.8 splitter crack leads to a layback up the left side of a big flake, then a pumpy crux with good finger locks and jams; keep the placements out of the finger slots. Do not take the clean, blocky chimney around the corner to the right — it looks easier and is off route." },
+      { "pitch": "2", "grade": "5.10a", "bolts": 10, "anchor": "bolted", "notes": "From the ledge, move the belay uphill beneath the bolt line; this bolted variation is now standard and avoids the rotten corner to the left. Sustained 5.9-5.10a face on dishes, flakes and huecos, some of them fragile-feeling, with the crux a mantel near the top before a two-bolt belay in a small alcove. Grades given for it range 5.10a-5.10b." },
+      { "pitch": "3", "notes": "Traverse left and up from the alcove to a ledge beneath the obvious chimney and belay there. Parties commonly lose the line on this lower section, so match the ground to a topo before committing." },
+      { "pitch": "4", "grade": "5.10d", "crux": true, "anchor": "tree", "notes": "The crux pitch. A 5.8+/5.9 squeeze chimney with a hard 5.9+ offwidth section is hard to protect; chockstones can be slung (old tat on the first one is unreliable), but a 4-5 inch cam pushed along is better. Exit on yellow flakes into the short, steep double overhanging corners, which are well protected, then belay at a tree on a small ledge." },
+      { "pitch": "5", "notes": "Route-finding pitch: do not get drawn up and to the right. Retreat from the lower route is possible off trees, but above this point bailing means leaving gear, and loose rock and rope-snagging flakes make it serious." },
+      { "pitch": "6", "notes": "Do not go through the hole up and to the left; instead go around the corner, past a few trees, and up a finger crack to a ledge. From this ledge the route-finding becomes more straightforward." },
+      { "pitch": "7", "notes": "Climb the dihedral system above the ledge, make a short walking traverse across, then follow a 5.7 hand crack that ends below an alcove." },
+      { "pitch": "8", "grade": "5.10b", "notes": "The second-hardest pitch: a strenuous 5.10b finger-crack layback, then a rising traverse under a large greenish roof with a powerful high step; both cruxes protect well. Beyond the roof the climbing eases but becomes poorly protected face on grainy, loose granite, with only one solid flake to build the belay on." },
+      { "pitch": "9", "notes": "Climb the corner above, whose 2-inch crack is actually flaring and grainy: gear is only fair and the rock is hard on the hands. Near the top the moves get a little harder, but the crack turns parallel-sided up to the belay. Some parties link pitches 8-10 into two long leads." },
+      { "pitch": "10", "notes": "Continue up the same corner system, pull past a block on the right, then face-traverse out to the ridge crest and follow it toward the final summit tower." },
+      { "pitch": "11", "notes": "The final headwall on the summit tower, one of the best pitches on the route: a few committing moves low down lead into clean splitter cracks and good features on the face." },
+      { "pitch": "12", "notes": "A lichen-covered last pitch to the top of Whine Spire. Many parties skip it to save time for the long, loose descent; it is worthwhile only if daylight allows." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Rewrote all 12 rows and filled the five that were empty (P3, P5, P6, P7) or boilerplate (P9, P10, P12). Fixed a misplacement: the stored P8 described the 5.9+ offwidth/chimney, which every source puts on the P4 crux pitch; P8 is the 5.10b layback and green-roof traverse. The stored P11 'some parties skip this pitch' note belongs to P12 and was moved. P2 grade token set to 5.10a (range noted), 10 bolts and bolted anchor as stated; P4 given 5.10d, crux and tree belay as stated. P1 keeps the stored 5.10 (not contradicted, but no source states P1's grade explicitly). P3, P5-P7 and P9-P12 carry no grade: none stated. No lengths: sources say only that pitches run 150-190 ft.",
+      "sources_consulted": [
+        "http://www.supertopo.com/rock-climbing/Washington-Pass-Whine-Spire-Gato-Negro",
+        "https://www.mountainproject.com/route/113324178/gato-negro",
+        "https://publications.americanalpineclub.org/articles/12200319301",
+        "http://iannicholsonslife.blogspot.com/2010/09/gato-negro-iv-510d-with-rebecca.html",
+        "https://waynewallace.wordpress.com/2013/09/04/gato-negro-whine-spire/"
+      ],
+      "other_findings": "grade is 5.10; sources give the route IV+ 5.10d (the P4 double corners), with the AAJ first-ascent note calling it 5.10+. beta says '11 long pitches' while pitches = 12 — both counts appear (11 in the FA report, 12 on the topo, the 12th being the often-skipped last pitch). overview calls it the 'East Face'; the AAJ first-ascent report places Whine Spire on Silver Star's west face (the route is approached from Burgundy Col on the Early Winters side). A comment offers an alternative descent: simul-climb ~300 ft of moderate class 5 to the ridge and descend the scree gully between the west peak and the true summit."
+    }
+  },
+  "wa_ellation": {
+    "area": "wa_mamie_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.8", "notes": "Start in the series of shallow grooves above and left of the single-pitch crag, marked by a bolt near the ground. Climb the bolted groove to a spacious tree ledge. Dirt washes onto this pitch from the ledge above, so expect it to be a little grungy." },
+      { "pitch": "2", "grade": "5.10-", "anchor": "bolted", "notes": "A flake leads into a thin crack whose harder middle section takes small cams, then face moves. Above, easier ground on poorer rock runs out to a bolted belay; test holds before weighting them." },
+      { "pitch": "3", "grade": "5.10+", "anchor": "tree", "notes": "Creep right along right-leaning seams on bolts and small cams (offsets are useful), finishing with a sideways slab move protected by a bolt. Then climb straight up a steep face on hard friction past spaced bolts that cannot simply be aided; this friction finish is the most committing section of the route. Belay off a tree on a large ledge." },
+      { "pitch": "4", "grade": "5.10", "notes": "From the tree, hike up and right through brush toward the upper wall and scramble a 4th-class ramp that cuts back left to a bolt just above eye level below a small roof; build a gear belay. Do not take the loose gully that heads up and right from the ledge — it does not reconnect with the route. The pitch goes right on knobs, then up and right on well-bolted face holds, with a few hard moves above the bolts." },
+      { "pitch": "5", "grade": "5.9", "notes": "Climb a corner — the most crack climbing on the route — and finish with a short bolted layback. Expect some dirt and large hollow-sounding blocks; test before pulling." },
+      { "pitch": "6", "grade": "5.10-", "notes": "A slabby 5.7 ramp/corner heads left from the belay: one bolt, then a long stretch where the corner is a seam and the only gear is small hidden placements such as a pocket under a bulge. At the end of the corner, clip a bolt and climb a steep bolted face to the belay. On the rappel this pitch jams ropes." },
+      { "pitch": "7", "grade": "5.10+", "notes": "Sustained friction climbing, well bolted through the first half with a few small cams in a short flake; the upper part is easier, solid and more runout to the anchor." },
+      { "pitch": "8", "grade": "5.11a", "crux": true, "notes": "A boulder move about 10 ft off the anchor on an undercling flake reaches the first bolt; a steep juggy face (2 bolts) leads into a flaring corner where the 5.11a moves are, which can be aided on gear at 5.10 A0. Every move protects well. An easier low-angle crack then slabs out onto the top of the wall." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "All 8 grades carried over (two sources agree on every one); P8 grade token '5.11a' (the stored '5.11a / 5.10 A0' alternative moved into notes). Notes expanded with start location, direction, protection and the approach from the P3 ledge to the P4 gear belay, including the loose 4th-class gully trap. Anchors added only where stated (P2 bolted, P3 tree). P8 keeps the crux flag: it holds the route's 5.11a grade. No lengths or bolt counts per pitch are published (only P8's '2 bolts' on the lower face, kept in notes rather than as a total).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/110668845/ellation",
+        "http://web.archive.org/web/20251212122444/https://stephabegg.com/trip-reports/washington/mamie-ellation/",
+        "https://www.yuvalboss.com/trip-reports/2017-07-30-ellation/",
+        "https://muntanyaverda.wordpress.com/2012/09/03/mamie-peak-ellation-wa-5-11/"
+      ],
+      "other_findings": "beta says the route is 'Named for FA climber Matt Alford's daughter Ella'; one web summary attributes Ella to Darin Berdinka and the trip reports say only 'one of the FA climbers' — the attribution in beta is unverified. The rappel tree off the P3 ledge is given as ~30 ft left of the P3 top on the route page and ~40 ft in another report — descent_text says 30-40 ft, consistent. length_m 244 (800 ft) vs 700 ft given in one trip report — minor."
+    }
+  },
+  "wa_garfield_mountain_infinite_bliss": {
+    "area": "wa_garfield_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1-7", "grade": "5.8", "notes": "Low-angle, sometimes water-polished slab at 5.4-5.8, with runouts that can be long but on easy ground; P7 climbs a short 5.7 wall before easing back. Competent parties often simul-climb the first six pitches. The whole route follows a gully slab, so anything knocked off above funnels straight down these pitches — the many bent hangers show it; do not linger below other parties." },
+      { "pitch": "P8", "grade": "5.5", "notes": "A fun blocky ramp cutting through the steeper wall above the lower slabs. Protection is sparse — a bolt about halfway and a fixed pin about 15 ft below the belay — but the climbing is easy." },
+      { "pitch": "P9", "grade": "5.9", "notes": "The first 5.9 pitch, on steeper rock where the bolts are closer together as the moves get harder. It ends on a large ledge." },
+      { "pitch": "P10", "grade": "5.7", "anchor": "flake, gear", "notes": "Easy climbing above the ledge. Bypass the chain anchors and scramble up to the base of the steep wall on the left, belaying on a flake below the bolt line of the next pitch." },
+      { "pitch": "P11", "grade": "5.10b", "notes": "The first 5.10 pitch: well-bolted, balancy face climbing that is a fair test for the upper crux. Stay on the bolt line; forcing moves off it makes the pitch harder." },
+      { "pitch": "P12", "lengthM": 30, "anchor": "chains", "notes": "A more moderate pitch up to chains. The top of this pitch makes a worthwhile objective on its own; above it the rock and climbing are poorer." },
+      { "pitch": "P13-18", "notes": "Easy (about 5.0-5.8) but the most runout section, on fair, slightly polished rock that sheds stones onto parties below; P15's two bolts are easy to miss and P16-17 have only the stations. Where the wall kicks back, go left to a bolt, up and right to a belay between a stand of trees and a heather patch, then right along an obvious ramp to the headwall. Parties most often get lost here." },
+      { "pitch": "P19", "notes": "The first pitch of the upper headwall, where the bolt line picks back up, finishing on a tricky friction slab." },
+      { "pitch": "P20", "grade": "5.10", "crux": true, "notes": "The crux: a steep, sustained wall nearly a full 60 m rope length, needing around 17 draws (bring long ones or back-clean). Its anchor has no chains; a chained station about 10 m higher lets two 60 m ropes reach the base of this pitch on the descent." },
+      { "pitch": "P21", "grade": "5.10a", "notes": "A chimney climbed by stemming and scrounging; it is often wet and can feel harder than the crux late in the day. Grades given for it range from 5.9 to 5.10a." },
+      { "pitch": "P22", "notes": "An easier, fun pitch up blocky ground, ending about 30 m below the summit." },
+      { "pitch": "P23", "grade": "5.10a", "notes": "A steep friction finish to the summit that looks easy from the belay but has few holds; well bolted and airy. Grades given for it range from 5.9 to 5.10a." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Four grouped rows (three with no grade) become 12: the stored 'P1-7' and 'P13-18' groups keep their labels, and 'P8-12' and 'P19-23' are split into single pitches where sources describe each. Grades added only where a source states them for that pitch (P8 5.5, P9 5.9, P10 5.7, P11 5.10b, P20 5.10, P21/P23 5.10a with the 5.9 alternative noted). The stored '5.10c (crux pitches)' is not carried: no source attributes 5.10c to a specific pitch; P20 is named the crux and graded only '5.10'. Left out: grades for P12 and P19 (given only with question marks), P13-18 as a group (a range, not a token), lengths except P12's 30 m, and all bolt counts (only a route-wide 'most bolts on one pitch is 17').",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/108170867/infinite-bliss",
+        "http://www.alpinedave.com/garfield/infinite_bliss.htm",
+        "https://stephabegg.com/trip-reports/washington/garfield-infinite-bliss/"
+      ],
+      "other_findings": "descent_text says 'one station 10 m above the crux anchor lets you make the last pull to the base' — the source says that station lets two 60 m ropes reach the base of the CRUX PITCH, not the base of the route; the wording overstates it. Route length stored 792 m (2,600 ft) is the vertical figure, consistent with sources. Grades within the upper five pitches disagree between sources (P21 5.9? vs 5.10a; P23 5.10a vs 5.9)."
+    }
+  },
+  "wa_dirty_sanchez": {
+    "area": "wa_goose_egg_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Scramble to the first belay", "grade": "Class 3", "lengthM": 46, "notes": "The route begins on the second obvious rib, not the first, below a huge tree that marks the top of pitch 1. Scramble loose ground from the base to a small tree and belay there; the rib is easy to misidentify, so look for the big tree above before starting." },
+      { "pitch": "1", "grade": "5.3", "lengthM": 30, "anchor": "tree", "notes": "Face and mossy slab up and right on flakes to the route's only bolt on this pitch, just below a huge tree. The tree is too thick for a short cordelette — bring a long sling or about 10 ft of cord to go around it. Given as 5.3-5.4." },
+      { "pitch": "2", "grade": "5.8", "lengthM": 40, "bolts": 8, "anchor": "bolted", "notes": "Climb up and right to a left-facing corner on small ledges; the bolts are close together low and spread out near the top, where small gear (under 3/4 inch) can supplement them. Ends at a two-bolt anchor." },
+      { "pitch": "3", "grade": "5.7", "lengthM": 27, "anchor": "bolted", "notes": "Follow a right-facing corner to a crack/face feature that can be face-climbed on the left or jammed on the right. Many of the cracks are small, dirty or flaring gaps between detached blocks, so good placements take searching. Top out on the corner to a two-bolt anchor in a left-facing corner." },
+      { "pitch": "4", "grade": "5.6", "lengthM": 27, "anchor": "bolted", "notes": "Follow a left-facing corner on relatively good rock until it fades about 80 ft up, then look immediately right for a three-bolt anchor — it sits just before the half-rope mark on a 60 m rope and is easy to climb past." },
+      { "pitch": "5", "grade": "5.7", "lengthM": 40, "anchor": "gear", "notes": "Leave the anchor with scarce protection straight up toward a prominent right-facing corner; one bolt protects the moves into a tricky notch, then jam the corner as it narrows to a finger crack. Lichen and smeary feet make it feel harder than 5.7. Build a gear anchor in the deep notch; the blocks there need care." },
+      { "pitch": "6", "grade": "5.8", "lengthM": 15, "bolts": 4, "anchor": "bolted", "notes": "Short, steep face past four bolts to a two-bolt anchor. The clips above the first bolt are awkward, and holds here can break off — test everything and keep your belayer out of the fall line." },
+      { "pitch": "7", "grade": "5.5", "lengthM": 49, "anchor": "single bolt", "notes": "The Jenga Traverse: cross an exposed knife-edge with little or no protection (a projecting block about halfway can be slung), then climb up through loose blocks and rubble. Place a couple of solid pieces just before topping out and finish at a single bolt; back it up with gear. Easy climbing, but the protection and rock make it feel much harder than 5.5." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Added the Class 3 scramble to the first belay as a leading stage (the start is a known route-finding problem). Lengths, bolt counts (P2 8, P6 4) and anchors added as stated. P4 grade 5.7 → 5.6 and P7 grade 5.8 → 5.5 (the stored P7 note itself said 5.5 climbing; both sources grade it 5.5). P1 keeps 5.3 with the 5.4 alternative noted. The stored P7 note's claim that the traverse is 'the crux of the route' is dropped and no crux flag set — sources call P6 the short crux pitch and P7 the psychological/PG one, so the claim was contested.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/119210014/the-dirty",
+        "http://web.archive.org/web/20240418012640/https://www.jessb.org/cracking-the-goose-egg-dirty-sanchez/",
+        "https://chossclimbers.com/testing/us/washington/tieton-cragging/10681-2/",
+        "https://rocknropenw.com/2023/05/09/the-dirty/"
+      ],
+      "other_findings": "NAME: the first ascensionist has asked for the route to be called 'The Dirty' (the name used while it was being established), and the route page now uses that name; the stored name is 'Dirty Sanchez'. discipline is 'trad' but beta/overview call it an 'alpine rock route'. Stored beta says it 'ascends primarily bolted sections' — only P2 and P6 are bolted pitches; the rest are gear. rappels says 'anchor reliability is unconfirmed' for Gangsta Rap (unchanged; not researched)."
+    }
+  },
+  "wa_summertime": {
+    "area": "wa_summertime_crag",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "5.10", "notes": "Start just right of Caravan (the routes to its left share their first few bolts). All bolts to chains, then trend left past two more sets of chains — the tops of Caravan and Django — to the anchor atop Django's second pitch." },
+      { "pitch": "P2", "notes": "From the top of Django, step left and climb a corner on trad gear, then move right across a slab past bolts to a ledge. Walk to the far right side of the ledge to belay below the crux." },
+      { "pitch": "P3 (crux)", "grade": "5.11c", "crux": true, "notes": "The standout pitch: bolts supplemented by small trad gear up a series of right-trending corners, then over a roof to an anchor. Pitch numbering varies with how parties link the lower pitches." },
+      { "pitch": "P4-P5", "grade": "5.10", "notes": "An easier, slabby and somewhat scrappy pitch of about 5.10 to the top of the cliff." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same four rows and labels (stored 'P3 (crux)' kept so comments stay keyed); notes rewritten with the start, the Caravan/Django anchors passed on P1, and the move to the far right of the ledge before the crux. crux:true added to P3 (stated as the 11c pitch). P2 still has no grade — none published. Single source (the route page is brief and says pitch numbering depends on how pitches are combined), so medium at most.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/110728801/summertime",
+        "https://www.mountainproject.com/area/110728644/summertime-crag",
+        "https://www.mountainproject.com/route/110728691/caravan",
+        "https://www.mountainproject.com/route/110728672/django"
+      ],
+      "other_findings": "approach says to park at a small pullout just before the Spires Gully parking area; the crag page now says park in the largest pullout below the Hairpin Curve of SR-20 and walk down the highway, 20-30 min with a log creek crossing. The crag page says 'shade until mid day', the stored approach says 'until mid-afternoon'. The route description also calls it 'original route on crag' and gives only 'P1 all bolts, mixed gear and bolts above' — 5 pitches is not stated explicitly."
+    }
+  },
+  "wa_wild_wild_west": {
+    "area": "wa_west_face_6",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.7", "lengthM": 37, "notes": "Start at the first two bolts on a short prow at the lowest toe of the West Face. Climb the short opening face, then a series of fairly clean ramps and ribs to a belay on a good ledge. Extend a draw or two to keep rope drag down." },
+      { "pitch": "2", "grade": "5.6", "lengthM": 34, "anchor": "chains", "notes": "Follow bolts up a shallow groove left of the belay, traverse the right side of a small saddle to another bolt, then scramble up and left a short way to a good belay with chains." },
+      { "pitch": "3", "grade": "5.8", "lengthM": 24, "crux": true, "notes": "Bolts lead up and right onto the exposed face; the crux is a slightly overhanging section about three-quarters of the way up. Ends at a semi-hanging belay on a small ledge. Can be linked with pitch 4 using alpine draws." },
+      { "pitch": "4", "grade": "5.7", "lengthM": 27, "notes": "Clip a bolt up and left of the belay and step out onto the face with big exposure right away, then climb through a band of basalt to the top. Walk up and right to the true summit and its register." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Grades added for P1 (5.7), P2 (5.6) and P3 (5.8), which were null; P4 corrected 5.8 → 5.7 (the 5.8 is P3, where the crux is). Lengths added from the stated 120/110/80/90 ft. Chain anchor on P2 and crux flag on P3 as stated. Pitch descriptions and grades come from one route page; a user comment there independently confirms P3 5.8 (crux) and P4 5.7, so medium.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/110943576/wild-wild-west"
+      ],
+      "other_findings": "rappels says 'descend up and left on the back (north) side near a stand of fir trees to regain the base'; a comment adds the rappel chains are marked by a blue runner on a tree, double 70 m ropes reach the ground (knot the ends), intermediate chains are down and to climber's right, and the pull is prone to snagging. discipline 'sport' is fine (fully bolted), though the route page lists it as Trad/Sport."
+    }
+  },
+  "wa_cascade_peak_nw_chimney": {
+    "area": "wa_cascade_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.8", "notes": "From the moat below the northwest side, climb a badly broken, loose crack of roughly 5-6 inches that takes very little protection — bring slings and a few nuts, and test every hold. Grades given for this pitch range from 5.8 to 5.10, the loose rock making it climb well above its published grade. The exact start is poorly defined, so identify the chimney above before committing." },
+      { "pitch": "2", "grade": "5.8", "notes": "An aesthetic chimney with almost no protection unless a very large cam or tube chock (Big Bro size) is carried. A pack is awkward in it; plan how to carry or clip it before starting." },
+      { "pitch": "3", "notes": "The last roped pitch is technically easy but very loose; use smaller solid holds rather than the big blocks. It ends at a false summit." },
+      { "pitch": "False summit to summit", "grade": "Loose rock", "notes": "Continue from the false summit to the true summit on loose ground, which can be simul-climbed. There are no fixed anchors, slings or pitons anywhere on the route, so every rappel on the way down is built from your own gear." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Grades are tokens now: P1 '5.8' (the 2013 'felt closer to 5.10' testimony becomes a stated grade range in notes), P2 '5.8' carried, P3's sentence-grade removed (no grade is published for it). The false-summit-to-summit ground, previously folded into P3, is split out as its own stage so P3 describes one roped pitch. All first-person/party testimony removed. Single source for pitch-level detail — one trip report whose party was unsure it was on route for P1 — so medium at most, and no lengths, bolts or anchors.",
+      "sources_consulted": [
+        "http://web.archive.org/web/20230329034018/https://cascadeclimbers.com/forum/topic/92261-tr-johannesburg-mountain-and-cascade-peak-cj-couloir-to-east-ridge-and-nw-chimney-7272013/?tab=comments"
+      ],
+      "other_findings": "grade column holds a sentence ('5.8 (a 2013 party found pitch 1 harder, closer to 5.10, due to loose rock)') — it should be the token '5.8'. beta, approach ('one documented party started up around 9 a.m.'), descent_text ('One party's descent ... took about 4.5 hours') and rappels ('as of a 2013 ascent') all carry party testimony. The only published description found is the guidebook's '5.8 NW Chimney' as quoted in that report; no route page, AAJ note or second trip report turned up."
+    }
+  }
+}

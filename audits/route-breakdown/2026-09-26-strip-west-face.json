@@ -1,0 +1,29 @@
+{
+  "wa_west_face": {
+    "area": "wa_south_peak",
+    "pitch_detail": [
+      {
+        "notes": "Left-side chimney start.",
+        "pitch": "P1"
+      },
+      {
+        "grade": "5.9+",
+        "notes": "Traverse right onto the face.",
+        "pitch": "P2"
+      },
+      {
+        "grade": "5.9+",
+        "notes": "Right-facing dihedral high on the route.",
+        "pitch": "P3"
+      },
+      {
+        "notes": "Finish up the face and left to the summit.",
+        "pitch": "P4"
+      }
+    ],
+    "replace_pitch_detail": true,
+    "review": {
+      "changed": "Removed four identical lengthM values (38 m each = the 152 m total split four ways; no source gives pitch lengths). Nothing else changed. Also removed the placeholder grade \"5.?\" on P1 and P4."
+    }
+  }
+}

@@ -1,0 +1,1379 @@
+{
+  "id": "wa_lemah_two_scramble",
+  "area_id": "wa_lemah_two",
+  "name": "Standard Scramble",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "grade_system": "class",
+  "grade_num": 4,
+  "pitches": null,
+  "length_m": 1244,
+  "sort_order": null,
+  "stars": null,
+  "fa": null,
+  "lat": null,
+  "lng": null,
+  "aspect": "E",
+  "season": "Jul-Sep",
+  "description": null,
+  "gear": [
+    "ice axe (glacier remnant and permanent snow near the col make this needed in every season, not just early season)",
+    "crampons",
+    "helmet",
+    "light rock rack",
+    "30m rope (optional, for the crux band or a rappel if conditions warrant)"
+  ],
+  "hazards": [
+    "loose, blocky rock on the cliff bands below the Two-Main col",
+    "exposed fourth-class climbing on the crux band beside the wet summit chimney",
+    "route-finding among towers and cliff bands with no cairns or markers",
+    "a snow/rock moat and occasional crevasses on the small Lemah Glacier remnant, more difficult to cross late season",
+    "faint, brushy, unmaintained climbers' trail along Lemah Creek with deadfall and a slide-alder thicket near camp",
+    "a long summit day; many parties finish the descent to camp after dark"
+  ],
+  "verif": null,
+  "overview": "Lemah Two (7,280 ft) is the second-highest of five distinct summits along the serrated, mile-long Lemah crest — Lemah One (6,960'), Lemah Two (7,280'), the Main/Lemah Three summit (7,512', the massif's true high point), Lemah Four (7,200'), and Lemah Five (7,040') — rising above Spectacle Lake and Pete Lake in the Alpine Lakes Wilderness. Part of the Snoqualmie Crest section of the North Cascades roughly 7.7 miles east of Snoqualmie Pass, the massif carries a small remnant glacier (Lemah Glacier) on its east face. Lemah Two is typically climbed as a natural add-on from the col shared with the main summit, or as a standalone objective for parties working through the multi-peaked massif.",
+  "beta": "From the Lemah Creek meadow (~3,600 ft), traverse toward the base of the peaks and climb a series of Class 2-3 cliff bands toward the col between Lemah Two and the Main Peak (Lemah Three). A snow slope and chute lead up to the col; the chute itself -- a mix of steep snow/ice and Class 3-4 rock, often with water running down it -- is the technical crux. Crampons and an ice axe are commonly used even in summer. From the col, a short 3rd/4th-class rock section leads to Lemah Two's summit.",
+  "turnaround": "Set a firm turnaround time based on your party's pace, snow conditions, and forecast -- the crux chute and cliff bands become more hazardous to downclimb once afternoon sun softens snow or exposes wet rock, and this is a long day with a long walk out.",
+  "auto_generated": true,
+  "alpine_grade": "II",
+  "rock_grade": "Class 4 (short exposed 3rd/4th class rock step)",
+  "ice_grade": null,
+  "gain_ft": 4480,
+  "loss_ft": 4480,
+  "dist_km": 12.9,
+  "max_angle": 45,
+  "rappels": "Some parties place a single rappel down the crux chute on one rope length rather than downclimbing wet rock; otherwise the route is reversed by downclimbing.",
+  "commitment": "II",
+  "face": "East Face / East Buttress",
+  "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+  "comms": "This is a deep, remote section of the Alpine Lakes Wilderness; expect no reliable cell coverage in the Lemah Creek valley or on the peak. A satellite communicator or PLB is recommended for emergencies.",
+  "descent": "Reverse the ascent: downclimb from the summit back to the col, then down the chute and its Class 3-4 band, re-cross the moat onto the glacier remnant, and descend the snow/glacier back to about 5,000 ft and on to camp. Summit day is long, and parties frequently finish the descent to camp after dark — carry headlamps and know the crux downclimb before committing.",
+  "obj_haz": [
+    "Rockfall/loose rock (\"choss\") in the summit gully and buttress",
+    "Minor crevasses on the remnant Lemah Glacier",
+    "Steep snow/ice up to ~45° in the summit chute",
+    "Moat crossing at the glacier margin",
+    "Dense brush/bushwhacking on the lower approach"
+  ],
+  "waypoints": [
+    {
+      "lat": 47.4341,
+      "lng": -121.1869,
+      "elev": 2800,
+      "name": "Pete Lake Trailhead",
+      "note": "Self-issue wilderness permit at the kiosk plus a Northwest Forest Pass or $5 day-use fee for parking; reached via I-90 exit 80, SR-903, FR-46, FR-4616.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From I-90 Exit 80 at Roslyn/Salmon la Sac, drive north on SR-903 for 16.8 miles through Roslyn and past Cle Elum Lake, then west on Forest Road 46 for 4.7 miles, and turn right on FR-4616 for one mile to the Cooper Lake/Pete Lake trailhead. Self-issue a wilderness permit at the trailhead kiosk, and bring a Northwest Forest Pass or pay the $5 day-use fee for parking."
+    },
+    {
+      "lat": 47.475873,
+      "lng": -121.235953,
+      "elev": 2984,
+      "name": "Pete Lake",
+      "note": "Established lakeside campsites and the last easy, reliable water before climbing toward the PCT and Lemah basin.",
+      "type": "Water",
+      "distMi": 4
+    },
+    {
+      "lat": 47.478625,
+      "lng": -121.253827,
+      "elev": 3000,
+      "name": "Lemah Creek ford at PCT junction",
+      "note": "The old footbridge is washed out; ford cold, sometimes shin-to-thigh-deep Lemah Creek where the Pete Lake trail meets the PCT.",
+      "type": "Hazard",
+      "distMi": 6.5
+    },
+    {
+      "lat": 47.473334,
+      "lng": -121.223877,
+      "elev": 4800,
+      "name": "Lemah Meadows basin camp",
+      "note": "Climbers' bivy sites in the boggy meadow below Lemah's east face, reached via an overgrown climbers' path north of the creek; last reliable water before the basin.",
+      "type": "Campsite",
+      "distMi": 7
+    },
+    {
+      "lat": 47.4533,
+      "lng": -121.208288,
+      "elev": 6200,
+      "name": "Basin between Lemah One and Lemah Two",
+      "note": "Gain the crest here and contour north around Lemah Two's east buttress toward the base of the summit cliff bands, per route beta.",
+      "type": "Junction",
+      "distMi": 7.5
+    },
+    {
+      "lat": 47.442969,
+      "lng": -121.19885,
+      "elev": 6800,
+      "name": "Class 3-4 cliff band / chute below the col",
+      "note": "Crux of the climb: loose rock and often lingering steep snow/ice in the chute leading up toward the col between Lemah Two and Lemah Main.",
+      "type": "Hazard",
+      "distMi": 7.8
+    },
+    {
+      "lat": 47.494048,
+      "lng": -121.3009,
+      "elev": 7280,
+      "name": "Lemah Two",
+      "note": "Highest of the two southern false summits on the Lemah massif ridge; short exposed ledges lead to the top.",
+      "type": "Summit",
+      "distMi": 8
+    }
+  ],
+  "gpx": [
+    [
+      47.433782,
+      -121.186095
+    ],
+    [
+      47.434217,
+      -121.187147
+    ],
+    [
+      47.435143,
+      -121.188305
+    ],
+    [
+      47.437012,
+      -121.190815
+    ],
+    [
+      47.438214,
+      -121.192714
+    ],
+    [
+      47.440197,
+      -121.195044
+    ],
+    [
+      47.442314,
+      -121.198038
+    ],
+    [
+      47.444264,
+      -121.199664
+    ],
+    [
+      47.44592,
+      -121.201276
+    ],
+    [
+      47.44822,
+      -121.203576
+    ],
+    [
+      47.45064,
+      -121.206487
+    ],
+    [
+      47.452635,
+      -121.207795
+    ],
+    [
+      47.454481,
+      -121.208986
+    ],
+    [
+      47.456829,
+      -121.211706
+    ],
+    [
+      47.458105,
+      -121.212926
+    ],
+    [
+      47.459623,
+      -121.214428
+    ],
+    [
+      47.461688,
+      -121.215247
+    ],
+    [
+      47.464026,
+      -121.216712
+    ],
+    [
+      47.466299,
+      -121.216479
+    ],
+    [
+      47.468223,
+      -121.216058
+    ],
+    [
+      47.470683,
+      -121.216807
+    ],
+    [
+      47.472103,
+      -121.218623
+    ],
+    [
+      47.472762,
+      -121.22123
+    ],
+    [
+      47.472868,
+      -121.22313
+    ],
+    [
+      47.474234,
+      -121.225561
+    ],
+    [
+      47.475306,
+      -121.225727
+    ],
+    [
+      47.475353,
+      -121.22776
+    ],
+    [
+      47.476502,
+      -121.229167
+    ],
+    [
+      47.477126,
+      -121.23204
+    ],
+    [
+      47.47817,
+      -121.234922
+    ],
+    [
+      47.477666,
+      -121.237881
+    ],
+    [
+      47.47787,
+      -121.240824
+    ],
+    [
+      47.478189,
+      -121.243296
+    ],
+    [
+      47.477113,
+      -121.244725
+    ],
+    [
+      47.47643,
+      -121.246574
+    ],
+    [
+      47.477074,
+      -121.249172
+    ],
+    [
+      47.477951,
+      -121.251676
+    ],
+    [
+      47.476855,
+      -121.252728
+    ],
+    [
+      47.478027,
+      -121.253847
+    ],
+    [
+      47.479694,
+      -121.253975
+    ],
+    [
+      47.480719,
+      -121.254388
+    ],
+    [
+      47.482177,
+      -121.256685
+    ],
+    [
+      47.483882,
+      -121.259018
+    ],
+    [
+      47.482219,
+      -121.259484
+    ],
+    [
+      47.480447,
+      -121.259289
+    ],
+    [
+      47.479343,
+      -121.260396
+    ],
+    [
+      47.47752,
+      -121.261304
+    ],
+    [
+      47.476776,
+      -121.262422
+    ],
+    [
+      47.476102,
+      -121.263615
+    ],
+    [
+      47.475876,
+      -121.264281
+    ],
+    [
+      47.475742,
+      -121.264803
+    ],
+    [
+      47.475514,
+      -121.265594
+    ],
+    [
+      47.475802,
+      -121.266267
+    ],
+    [
+      47.476052,
+      -121.267225
+    ],
+    [
+      47.476396,
+      -121.268121
+    ],
+    [
+      47.477327,
+      -121.269056
+    ],
+    [
+      47.477754,
+      -121.269667
+    ],
+    [
+      47.477994,
+      -121.26962
+    ],
+    [
+      47.478343,
+      -121.271469
+    ],
+    [
+      47.478628,
+      -121.272082
+    ],
+    [
+      47.478737,
+      -121.271872
+    ],
+    [
+      47.478729,
+      -121.271808
+    ],
+    [
+      47.478849,
+      -121.27166
+    ],
+    [
+      47.478764,
+      -121.272366
+    ],
+    [
+      47.479857,
+      -121.273326
+    ],
+    [
+      47.480638,
+      -121.274578
+    ],
+    [
+      47.481442,
+      -121.274889
+    ],
+    [
+      47.481712,
+      -121.275406
+    ],
+    [
+      47.482353,
+      -121.275516
+    ],
+    [
+      47.482812,
+      -121.275601
+    ],
+    [
+      47.483623,
+      -121.27652
+    ],
+    [
+      47.484935,
+      -121.277358
+    ],
+    [
+      47.48583,
+      -121.278533
+    ],
+    [
+      47.48661,
+      -121.279454
+    ],
+    [
+      47.487675,
+      -121.280689
+    ],
+    [
+      47.488834,
+      -121.281543
+    ],
+    [
+      47.489632,
+      -121.283013
+    ],
+    [
+      47.490503,
+      -121.284242
+    ],
+    [
+      47.491286,
+      -121.284855
+    ],
+    [
+      47.491779,
+      -121.28483
+    ],
+    [
+      47.492419,
+      -121.285395
+    ],
+    [
+      47.493121,
+      -121.28641
+    ],
+    [
+      47.493714,
+      -121.28696
+    ],
+    [
+      47.494324,
+      -121.287548
+    ],
+    [
+      47.49502,
+      -121.28836
+    ],
+    [
+      47.495793,
+      -121.28899
+    ],
+    [
+      47.49643,
+      -121.289451
+    ],
+    [
+      47.49708,
+      -121.290083
+    ],
+    [
+      47.49768,
+      -121.290773
+    ],
+    [
+      47.498212,
+      -121.291375
+    ],
+    [
+      47.498644,
+      -121.292034
+    ],
+    [
+      47.498987,
+      -121.292634
+    ],
+    [
+      47.499114,
+      -121.293273
+    ],
+    [
+      47.49904,
+      -121.2939
+    ],
+    [
+      47.498759,
+      -121.293869
+    ],
+    [
+      47.497479,
+      -121.293862
+    ],
+    [
+      47.496786,
+      -121.294108
+    ],
+    [
+      47.494809,
+      -121.295143
+    ],
+    [
+      47.493319,
+      -121.295562
+    ],
+    [
+      47.491782,
+      -121.296074
+    ],
+    [
+      47.491213,
+      -121.296331
+    ],
+    [
+      47.490946,
+      -121.29668
+    ],
+    [
+      47.491073,
+      -121.297223
+    ],
+    [
+      47.491172,
+      -121.297628
+    ],
+    [
+      47.491289,
+      -121.29804
+    ],
+    [
+      47.491491,
+      -121.298479
+    ],
+    [
+      47.491741,
+      -121.298867
+    ],
+    [
+      47.49188,
+      -121.299214
+    ],
+    [
+      47.491998,
+      -121.299543
+    ],
+    [
+      47.492067,
+      -121.299883
+    ],
+    [
+      47.492109,
+      -121.300233
+    ],
+    [
+      47.492238,
+      -121.300557
+    ],
+    [
+      47.492477,
+      -121.300887
+    ],
+    [
+      47.492801,
+      -121.301062
+    ],
+    [
+      47.493061,
+      -121.301099
+    ],
+    [
+      47.493253,
+      -121.301179
+    ],
+    [
+      47.493391,
+      -121.301249
+    ],
+    [
+      47.493677,
+      -121.301108
+    ],
+    [
+      47.493833,
+      -121.300922
+    ],
+    [
+      47.494046,
+      -121.300935
+    ],
+    [
+      47.493942,
+      -121.300856
+    ],
+    [
+      47.493835,
+      -121.301054
+    ],
+    [
+      47.493492,
+      -121.30121
+    ],
+    [
+      47.493123,
+      -121.301425
+    ],
+    [
+      47.492513,
+      -121.300922
+    ],
+    [
+      47.492077,
+      -121.300493
+    ],
+    [
+      47.491893,
+      -121.300276
+    ],
+    [
+      47.492067,
+      -121.299963
+    ],
+    [
+      47.491769,
+      -121.298972
+    ],
+    [
+      47.491183,
+      -121.297631
+    ],
+    [
+      47.491085,
+      -121.296476
+    ],
+    [
+      47.492176,
+      -121.296121
+    ],
+    [
+      47.493669,
+      -121.29545
+    ],
+    [
+      47.495384,
+      -121.294894
+    ],
+    [
+      47.496844,
+      -121.293997
+    ],
+    [
+      47.497859,
+      -121.293684
+    ],
+    [
+      47.498919,
+      -121.2939
+    ],
+    [
+      47.498902,
+      -121.292854
+    ],
+    [
+      47.498256,
+      -121.291728
+    ],
+    [
+      47.497232,
+      -121.290849
+    ],
+    [
+      47.496254,
+      -121.289749
+    ],
+    [
+      47.495185,
+      -121.288348
+    ],
+    [
+      47.494317,
+      -121.287459
+    ],
+    [
+      47.493322,
+      -121.286521
+    ],
+    [
+      47.492103,
+      -121.285138
+    ],
+    [
+      47.491533,
+      -121.285079
+    ],
+    [
+      47.490327,
+      -121.284125
+    ],
+    [
+      47.488976,
+      -121.281916
+    ],
+    [
+      47.487243,
+      -121.280124
+    ],
+    [
+      47.486282,
+      -121.279069
+    ],
+    [
+      47.486062,
+      -121.278689
+    ],
+    [
+      47.485226,
+      -121.277759
+    ],
+    [
+      47.483679,
+      -121.276532
+    ],
+    [
+      47.48297,
+      -121.275629
+    ],
+    [
+      47.482608,
+      -121.27555
+    ],
+    [
+      47.482033,
+      -121.275341
+    ],
+    [
+      47.481163,
+      -121.274849
+    ],
+    [
+      47.479911,
+      -121.273354
+    ],
+    [
+      47.478597,
+      -121.272116
+    ],
+    [
+      47.47879,
+      -121.271749
+    ],
+    [
+      47.478547,
+      -121.272016
+    ],
+    [
+      47.478304,
+      -121.270644
+    ],
+    [
+      47.477711,
+      -121.269209
+    ],
+    [
+      47.477067,
+      -121.268502
+    ],
+    [
+      47.476128,
+      -121.267789
+    ],
+    [
+      47.475972,
+      -121.266499
+    ],
+    [
+      47.475526,
+      -121.265465
+    ],
+    [
+      47.47562,
+      -121.264513
+    ],
+    [
+      47.475994,
+      -121.264131
+    ],
+    [
+      47.476717,
+      -121.262773
+    ],
+    [
+      47.477269,
+      -121.261739
+    ],
+    [
+      47.479079,
+      -121.260776
+    ],
+    [
+      47.480582,
+      -121.259962
+    ],
+    [
+      47.481689,
+      -121.258993
+    ],
+    [
+      47.483681,
+      -121.259551
+    ],
+    [
+      47.483712,
+      -121.258979
+    ],
+    [
+      47.482221,
+      -121.25677
+    ],
+    [
+      47.480831,
+      -121.254604
+    ],
+    [
+      47.479723,
+      -121.254003
+    ],
+    [
+      47.478397,
+      -121.25379
+    ],
+    [
+      47.476976,
+      -121.252853
+    ],
+    [
+      47.477928,
+      -121.251875
+    ],
+    [
+      47.477315,
+      -121.249849
+    ],
+    [
+      47.476463,
+      -121.247324
+    ],
+    [
+      47.476256,
+      -121.245077
+    ],
+    [
+      47.477496,
+      -121.243742
+    ],
+    [
+      47.477992,
+      -121.242732
+    ],
+    [
+      47.477884,
+      -121.240566
+    ],
+    [
+      47.477876,
+      -121.238381
+    ],
+    [
+      47.477837,
+      -121.236549
+    ],
+    [
+      47.478104,
+      -121.234219
+    ],
+    [
+      47.477169,
+      -121.232381
+    ],
+    [
+      47.476696,
+      -121.230093
+    ],
+    [
+      47.475709,
+      -121.228204
+    ],
+    [
+      47.475778,
+      -121.226812
+    ],
+    [
+      47.474761,
+      -121.226161
+    ],
+    [
+      47.473333,
+      -121.223875
+    ],
+    [
+      47.47271,
+      -121.222144
+    ],
+    [
+      47.47279,
+      -121.219477
+    ],
+    [
+      47.47171,
+      -121.218044
+    ],
+    [
+      47.470195,
+      -121.21658
+    ],
+    [
+      47.467787,
+      -121.215943
+    ],
+    [
+      47.465997,
+      -121.216632
+    ],
+    [
+      47.464283,
+      -121.216832
+    ],
+    [
+      47.462983,
+      -121.215716
+    ],
+    [
+      47.460907,
+      -121.215282
+    ],
+    [
+      47.459608,
+      -121.214415
+    ],
+    [
+      47.458186,
+      -121.212994
+    ],
+    [
+      47.457054,
+      -121.211968
+    ],
+    [
+      47.454682,
+      -121.209519
+    ],
+    [
+      47.452658,
+      -121.207717
+    ],
+    [
+      47.450558,
+      -121.206384
+    ],
+    [
+      47.448658,
+      -121.2045
+    ],
+    [
+      47.446796,
+      -121.202311
+    ],
+    [
+      47.445265,
+      -121.199873
+    ],
+    [
+      47.443563,
+      -121.199718
+    ],
+    [
+      47.441381,
+      -121.196531
+    ],
+    [
+      47.439047,
+      -121.193809
+    ],
+    [
+      47.436948,
+      -121.190453
+    ],
+    [
+      47.434954,
+      -121.188311
+    ],
+    [
+      47.434002,
+      -121.186176
+    ]
+  ],
+  "elev_pts": null,
+  "disciplines": [
+    "scrambling",
+    "alpine"
+  ],
+  "timing": {
+    "totalHrs": 20,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": 4.5,
+    "approachTimeHrs": 5.5,
+    "recommendedStart": "Early AM from camp",
+    "sectionBreakdown": [
+      {
+        "hrs": 5.5,
+        "note": "From the Cooper Lake trailhead, follow the mellow Cooper River / Pete Lake Trail (~4 mi) to Pete Lake, continue to the PCT junction, then head north on the PCT about a mile to the …",
+        "fromTo": "Approach to Lemah Creek high camp",
+        "section": "Approach"
+      },
+      {
+        "hrs": 10,
+        "note": "Rope up and cross the glacier remnant into the basin between the false summits, contour north around Lemah Two's east buttress, and climb the snow slope/chute on the east face (the…",
+        "fromTo": "Summit push to Lemah Two",
+        "section": "Climb"
+      },
+      {
+        "hrs": 4.5,
+        "note": "Reverse Day 1: back down Lemah Creek to the PCT, south past Pete Lake, and out the Cooper River trail to the car. Strong/fit parties sometimes skip this third day by pushing straig…",
+        "fromTo": "Hike out",
+        "section": "Descent"
+      }
+    ]
+  },
+  "detailed_rack": "No technical rock rack is required for the standard line -- most parties carry an ice axe and crampons for the snow slope/chute below the col, plus a helmet for the loose cliff-band terrain. A light rack (a few slings/a short rope) is sometimes carried in case a party wants to rappel the crux chute rather than downclimb it.",
+  "what_to_bring": [
+    "light rock rack",
+    "helmet",
+    "rope (optional)",
+    "satellite communicator"
+  ],
+  "pro_tips": [
+    "many parties tag Lemah Two as a side trip while climbing the main summit, since both share the same approach to the Two/Main col",
+    "the meadow camp at ~3,600 ft has better tent sites past the slide-alder band in the timber to the north, away from the crowded Pete Lake shoreline",
+    "carry a rope and light rack for the crux band even though most of the route is scrambling, especially if snow or verglas coats the rock"
+  ],
+  "watch_out": [
+    "the unmarked climbers' trail leaving the PCT on the north side of Lemah Creek is easy to miss and easy to lose again once on it",
+    "the wet rock chimney at the col often has water (or verglas in cool weather) running down it even in summer",
+    "downclimbing the Class 3-4 band above the glacier remnant in the dark on the return"
+  ],
+  "pro_needs": "Minimal fixed protection is used; this is an unroped scramble/snow climb for most parties rather than a pitched rock route. Ice axe and crampons substitute for rock protection on the summit snow/ice chute.",
+  "best_season": "August",
+  "high_point_ft": 7280,
+  "aid_grade": null,
+  "approach": "From I-90 exit 80 (Roslyn/Salmon la Sac), drive north on SR-903 for 16.8 miles through Roslyn and past Cle Elum Lake, then west on Forest Road 46 for 4.7 miles and right on FR-4616 for 1 mile to the Cooper Lake/Pete Lake trailhead. Follow the Pete Lake Trail #1323 along the Cooper River about 4 miles to Pete Lake, continue past the lake about 1.2 miles to the PCT, then turn right (north) on the PCT for about a mile to the Lemah Creek crossing, where a faint, unmaintained climbers' trail leaves on the north side of Lemah Creek (marked by occasional flagging; expect deadfall/brush for the first ~400 vertical feet). This path passes a series of waterfalls and swimming holes before reaching a meadow at roughly 3,600 ft where the creek breaks into shallow ponds — a common camp, though a thick band of slide alder guards the far end and is best bypassed through the timber to the north. From camp, follow the drainage up to about 5,000 ft where the Lemah Glacier remnant begins, climb to roughly 6,200 ft, exit south (climber's left) up a short cliff onto glacial remnants on the peak's southeast side, then traverse northwest toward the base of the Main Peak/Lemah Two col.",
+  "descent_text": "From the traverse below Main Peak, climb a series of Class 2-3 cliff bands toward the col between Lemah Two and Lemah Main. A moat typically separates the glacier remnant from the rock here, worse late season — exit the snow below and right of an obvious wet rock chimney, then climb mostly Class 3 with a short Class 4 step to the chimney's right to reach the col. From the col, turn south and finish on the short 3rd/4th-class rock section to Lemah Two's summit.",
+  "bail": "Retreat is possible at essentially any point on the cliff bands or col below the summit by reversing the ascent line back down to the Lemah Creek meadow; there are no fixed bail anchors, so retreat means downclimbing (or rappelling) the same terrain just climbed.",
+  "pitch_detail": [
+    {
+      "grade": "Trail",
+      "notes": "~4 miles, mostly flat forest trail along the Cooper River.",
+      "pitch": "Trailhead - Pete Lake"
+    },
+    {
+      "grade": "Trail",
+      "notes": "~1.2 miles.",
+      "pitch": "Pete Lake - PCT junction"
+    },
+    {
+      "grade": "Trail",
+      "notes": "~1 mile north on the PCT.",
+      "pitch": "PCT - Lemah Creek crossing"
+    },
+    {
+      "grade": "Off-trail, Class 1-2",
+      "notes": "Climber's path on the north side of the creek past waterfalls and swimming holes to the ~3,600 ft meadow.",
+      "pitch": "Lemah Creek climber's trail to meadow"
+    },
+    {
+      "grade": "Class 2-4 / steep snow",
+      "notes": "Cliff bands, then a snow slope and chute (the crux), lead up to the col between Lemah Two and the Main Peak.",
+      "pitch": "Meadow to Lemah Two-Main col"
+    },
+    {
+      "grade": "Class 3-4",
+      "notes": "Short 3rd/4th-class rock section from the col to Lemah Two's summit ridge and top.",
+      "pitch": "Col to summit"
+    }
+  ],
+  "itinerary": {
+    "cal": "The SE face chute crux is typically climbed as a snow feature and is most straightforward early-mid summer (roughly late June-August) before it melts out to bare rock/ice; check current trip reports for snow coverage before committing to the standard line.",
+    "days": [
+      {
+        "n": 1,
+        "note": "From the Cooper Lake trailhead, follow the mellow Cooper River / Pete Lake Trail (~4 mi) to Pete Lake, continue to the PCT junction, then head north on the PCT about a mile to the Lemah Creek crossing. Leave the trail before the footbridge and work up along Lemah Creek roughly a mile cross-country to a bench/meadow camp (commonly cited around 4,000-4,500 ft, sometimes lower near 3,600 ft at the Lemah Meadows/PCT junction).",
+        "hours": 5.5,
+        "miles": 7,
+        "title": "Approach to Lemah Creek high camp",
+        "gainFt": 1600,
+        "lossFt": 100,
+        "packLb": 35,
+        "schedule": [
+          {
+            "time": "Morning",
+            "label": "Leave Cooper Lake trailhead",
+            "detail": "~2,840 ft; flat, well-graded trail for the first 6 miles."
+          },
+          {
+            "time": "+2 hr",
+            "label": "Pass Pete Lake",
+            "detail": "Popular backpacking destination; good water/rest stop."
+          },
+          {
+            "time": "+4 hr",
+            "label": "Reach PCT junction, head north",
+            "detail": "About a mile north on the PCT to the Lemah Creek crossing."
+          },
+          {
+            "time": "+5-6 hr",
+            "label": "Leave trail, camp near Lemah Creek",
+            "detail": "Cross-country up Lemah Creek to a bench/meadow camp below the peak."
+          }
+        ],
+        "objective": "Backpack in to a camp near Lemah Creek / Lemah Meadows"
+      },
+      {
+        "n": 2,
+        "note": "Rope up and cross the glacier remnant into the basin between the false summits, contour north around Lemah Two's east buttress, and climb the snow slope/chute on the east face (the crux — Class 3-4 scrambling, sometimes firm snow or ice) to the col, then finish on 3rd/4th-class rock to the summit. Reverse the whole route back to camp; this is the long day of the trip.",
+        "hours": 10,
+        "miles": 2,
+        "title": "Summit push to Lemah Two",
+        "gainFt": 2900,
+        "lossFt": 2900,
+        "packLb": 15,
+        "schedule": [
+          {
+            "time": "Early AM",
+            "label": "Alpine start from camp",
+            "detail": "Aim to be moving well before sunrise to cross snow while it's firm and beat afternoon softening/rockfall."
+          },
+          {
+            "time": "+2-3 hr",
+            "label": "Cross glacier remnant into upper basin",
+            "detail": "Rope/crampons/axe typically used here depending on season and snow coverage."
+          },
+          {
+            "time": "+4-5 hr",
+            "label": "Ascend the SE face chute to the col",
+            "detail": "Crux of the route — steep snow or Class 3-4 rock; some parties find hard ice late season."
+          },
+          {
+            "time": "+5-6 hr",
+            "label": "Class 3-4 scramble to the summit",
+            "detail": "Final short ridge/rock section from the col."
+          },
+          {
+            "time": "Afternoon",
+            "label": "Descend reverse route to camp",
+            "detail": "Downclimb the crux band, re-cross the moat and glacier remnant."
+          }
+        ],
+        "objective": "Climb Lemah Two and return to camp"
+      },
+      {
+        "n": 3,
+        "note": "Reverse Day 1: back down Lemah Creek to the PCT, south past Pete Lake, and out the Cooper River trail to the car. Strong/fit parties sometimes skip this third day by pushing straight from the summit back to the trailhead on Day 2, making it a long (12+ hour) two-day car-to-car trip instead.",
+        "hours": 4.5,
+        "miles": 7,
+        "title": "Hike out",
+        "gainFt": 100,
+        "lossFt": 1600,
+        "packLb": 35,
+        "schedule": [],
+        "objective": "Return to the Cooper Lake trailhead"
+      }
+    ],
+    "totalNote": "A 3-day standard trip is typical: ~16 miles round trip with roughly 5,000 ft of total gain/loss, one (sometimes two) nights camped near Lemah Creek, and a long glacier/snow-chute summit day; strong parties compress the summit push and hike-out into one big day for a 2-day version instead."
+  },
+  "access": {
+    "fees": "Northwest Forest Pass, America the Beautiful interagency pass, or a day-use fee required to park at the trailhead",
+    "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party where the peak is inside Alpine Lakes Wilderness.",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit at the Cooper Lake/Pete Lake trailhead",
+    "group_limit": 12,
+    "land_manager": "Okanogan-Wenatchee National Forest (Cle Elum Ranger District)",
+    "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie",
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk and carry your copy."
+    }
+  },
+  "road": {
+    "name": "FR-46 (Salmon la Sac Rd) to FR-4616 (Cooper Lake Rd)",
+    "status": "Paved SR-903/Salmon la Sac Rd to Cle Elum Lake, then maintained gravel Forest Roads 46 and 4616 to the trailhead",
+    "driveNote": "From I-90 exit 80 (Roslyn/Salmon la Sac), go north on SR-903 16.8 miles through Roslyn past Cle Elum Lake, turn west (left) on FR-46 for 4.7 miles, then right on FR-4616 for 1 mile to the Pete Lake/Cooper Lake trailhead."
+  },
+  "climate": {
+    "typical": "Approach and route are generally snow-free late July through September; permanent snow/ice on the small Lemah Glacier remnant near the Two-Main col means an ice axe and crampons are recommended in every season, not just early season.",
+    "forecastZone": "NWAC Snoqualmie Pass zone (nearest official NWAC avalanche forecast zone; Lemah sits ~7.7 mi east of Snoqualmie Pass)"
+  },
+  "emergency": {
+    "notes": "No cell coverage in the Lemah Creek valley; this is a remote, rarely-patrolled wilderness route. Self-rescue capability and a satellite communicator are strongly recommended.",
+    "county": "Kittitas County",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest",
+    "nearestHospital": "Kittitas Valley Healthcare, 603 S Chestnut St, Ellensburg, WA — Cle Elum only has urgent-care/family-medicine clinics, no ER, so Ellensburg is the nearest full hospital"
+  },
+  "lists": null,
+  "crowds": {
+    "peakTraffic": "Rare even in-season; mostly visited as part of a Lemah crest traverse or a dedicated multi-day scramble trip, occasional July-August weekends",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely only a handful to low dozens of parties per season"
+  },
+  "partner_requirements": {
+    "fitnessSpec": {
+      "hiking": "Very high - long approach with significant off-trail travel, elevation gain, and at least one stream crossing (Lemah Creek); typically done as an overnight or multi-day trip rather than a day push",
+      "packWeight": "Overnight/multi-day pack (camp gear + several days food) is typical given the remote approach into the Lemah basin"
+    },
+    "approachTime": "Long, multi-day approach - roughly 8 miles one-way via the Pete Lake Trail to the Spectacle Lake/Lemah Meadows area, plus additional off-trail travel to gain the Lemah crest and traverse to Lemah Two; most parties camp in the Lemah basin rather than attempting it as a single day push",
+    "requiredSkills": [
+      "Class 4 scrambling and exposure tolerance",
+      "route-finding on loose rock among towers",
+      "off-trail navigation (basin to crest)",
+      "stream crossing (Lemah Creek)",
+      "judgment for short exposed steps that may warrant a handline"
+    ],
+    "experienceLevel": "Experienced alpine scrambler comfortable with exposed Class 4 terrain, loose rock, and route-finding among towers; prior Cascades scrambling experience strongly recommended before attempting the Lemah crest"
+  },
+  "seasonal_guidance": {
+    "optimalWindow": "Late July through September, with August the most reliable month; consistent dry-rock conditions typically don't arrive until late July",
+    "monthBreakdown": {
+      "July": {
+        "reason": "Route only comes into season late in the month; early July can still have lingering snow on the approach and summit ledges",
+        "status": "marginal"
+      },
+      "August": {
+        "reason": "In season; driest rock and most stable maritime-summer weather for the exposed fourth-class terrain",
+        "status": "optimal"
+      },
+      "September": {
+        "reason": "Still within the season window with a short clear weather stretch, but shortening days and the first fall weather systems reduce the margin versus August",
+        "status": "good"
+      }
+    }
+  },
+  "seasonal_hazards": {
+    "weather": {
+      "typical": "Maritime Cascades climate - clearest and driest in mid-to-late summer, with full winter conditions and snow cover outside the scramble season",
+      "probability": "Afternoon thunderstorms are a possibility during the July-August window typical of Cascade summer weather"
+    },
+    "exposure": "Exposed fourth-class climbing on ledges and short steps with loose rock; route-finding among towers is a real risk of getting cliffed out, and a fall on the exposed sections would be serious",
+    "avalanche": {
+      "zone": "N/A - non-glaciated summer route (nearest NWAC forecast zone is Snoqualmie Pass, used only as a general regional proxy since this route is not climbed in avalanche season)",
+      "byMonth": {
+        "July": "N/A",
+        "August": "N/A",
+        "September": "N/A"
+      }
+    },
+    "crevasses": "The route crosses the small Lemah Glacier remnant en route to the Two-Main col; a snow/rock moat and occasional crevasses form at the glacier-to-rock transition, harder to negotiate late season - carry glacier travel gear and rope up if crevasses are open."
+  },
+  "data_quality": {
+    "gaps": [
+      "Exact party-per-season crowd counts for Lemah Two specifically were not found in indexed sources; estimate is inferred from its remote, off-trail character relative to more popular nearby scrambles",
+      "No NWAC forecast zone precisely covers this off-trail summit; Snoqualmie Pass is the nearest zone and is used only as a loose regional reference, not a verified route-specific rating",
+      "Precise one-way mileage/time from trailhead to the Lemah Two summit itself is not documented in sources found; only mileage to Spectacle Lake/Pete Lake (well-documented) could be confirmed, with the basin-to-crest leg extrapolated",
+      "GPS track sourced from public CalTopo map: https://caltopo.com/m/UMHAP",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+  },
+  "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 3,
+    "commitment": 3,
+    "routefinding": 5
+  },
+  "approach_logistics": {
+    "peakLat": 47.494048,
+    "peakLng": -121.3009,
+    "trailhead": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+    "trailheadLat": 47.435,
+    "trailheadLng": -121.1855,
+    "trailheadDirection": "From I-90 exit 80 (Roslyn/Salmon la Sac), drive north on SR-903 for 16.8 miles through Roslyn and past Cle Elum Lake, then west on Forest Road 46 for 4.7 miles and right on FR-4616 for 1 mile to the Cooper Lake/Pete Lake trailhead."
+  },
+  "sling_rack": {
+    "cams": {
+      "size": "small",
+      "count": "a couple, optional"
+    },
+    "nuts": {
+      "size": "small",
+      "count": "optional"
+    }
+  },
+  "alpine_draws": 0,
+  "rope_type": "light glacier/scramble rope (optional)",
+  "rope_length_m": 30,
+  "rope_note": "Optional rope for the glacier crossing/col approach shared with Lemah Main; crux Class 4 moves are typically unroped.",
+  "ascender": null,
+  "corrections": "No route-specific source for 'Lemah Two Standard Scramble'; inferred from shared approach terrain with Lemah Mountain's East Route.",
+  "gear_confidence": "inferred",
+  "rappel_detail": null,
+  "rappel_count_note": null,
+  "rack": [
+    "Ice axe and crampons for the summit snow/ice chute",
+    "A couple of small cams and nuts, optional, for the crux chute band",
+    "30m rope, optional, for rappelling the crux chute"
+  ],
+  "features": [
+    "Chimney",
+    "Exposed",
+    "Adventurous",
+    "Committing"
+  ],
+  "classic": false,
+  "gear_bucket": null,
+  "assumed_gear": null,
+  "gps_contributor_name": null,
+  "outing_shape": null,
+  "approach_variants": [
+    {
+      "name": "Pete Lake and the PCT to the Lemah Creek climbers' path, then the col below the Main Peak",
+      "notes": "From I-90 exit 80 at Roslyn / Salmon la Sac, drive SR-903 north 16.8 miles through Roslyn and past Cle Elum Lake, then west on FR-46 for 4.7 miles and right on FR-4616 for a mile to the Cooper Lake / Pete Lake trailhead.\n\nFollow Pete Lake Trail #1323 along the Cooper River about 4 miles to Pete Lake, continue past it about 1.2 miles to the PCT, then turn right (north) on the PCT for about a mile to the Lemah Creek crossing.\n\nA faint, unmaintained climbers' trail leaves on the NORTH side of Lemah Creek, marked by occasional flagging, with deadfall and brush for the first 400 vertical feet. It passes waterfalls and swimming holes and reaches a meadow at about 3,600 ft where the creek breaks into shallow ponds — the common camp. A thick band of slide alder guards the far end of that meadow and is best bypassed through the timber to the north.\n\nAbout 12.9 km and 4,480 ft.",
+      "gainFt": 4480,
+      "season": "July to September",
+      "hazards": [
+        "A faint, unmaintained climbers' trail with deadfall and brush for the first 400 vertical feet",
+        "A thick band of slide alder at the far end of the meadow camp",
+        "Steep snow or ice and class 3-4 rock in the crux chute, often with water running down it",
+        "A moat where the glacier remnant meets the rock",
+        "A long summit day with descents routinely finishing after dark — carry headlamps",
+        "Remote terrain with a multi-day walk out"
+      ],
+      "baseFinding": "THE ARRIVAL YOU ARE AIMING FOR IS A COL, AND IT IS THE COL BETWEEN LEMAH TWO AND THE MAIN PEAK. From the 3,600 ft meadow camp, follow the drainage to about 5,000 ft where the Lemah Glacier remnant begins, climb to roughly 6,200 ft, then exit SOUTH — climbers' left — up a short cliff onto glacial remnants on the peak's southeast side, and traverse northwest to the base of that col. The technical ground is the climb up to the col; below that you are walking, scrambling class 2-3 cliff bands, and crossing snow.\n\nTHE CONFIRMING FEATURE BELOW THE COL IS A CHUTE, AND ITS CHARACTER IS DISTINCTIVE: a snow slope and then a chute of mixed steep snow or ice and class 3-4 rock, OFTEN WITH WATER RUNNING DOWN IT. Running water in the chute is the signature of this line and is why parties carry crampons and an axe even in summer. That chute is the technical crux of the route.\n\nTHE ALTITUDE SEQUENCE IS THE FOG TEST: 3,600 ft camp, 5,000 ft glacier remnant, 6,200 ft, then exit left up a short cliff. Four altimeter checks and one turn, none of which needs the summit to be visible.\n\nAND THE NEGATIVE: if you are climbing toward a summit without having stood in a col between two distinct peaks, you are on the wrong feature. Lemah Two is the second of the Lemah summits and the Main Peak — Lemah Three — is the one across the col from you.\n\nPLAN THE DOWNCLIMB BEFORE YOU COMMIT TO THE CHUTE. Summit day here is long and parties frequently finish the descent to camp after dark."
+    }
+  ],
+  "climbing_route": null,
+  "bivy": [
+    {
+      "elev": 2986,
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "role": "main",
+      "type": "camp",
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more to the Lemah Meadows area and the Pacific Crest Trail junction. Parties bound for Lemah Mountain and Lemah Two leave the trail here and follow a climbers' path up the north side of Lemah Creek past waterfalls to the meadow at about 3,600 ft, where the creek spreads into shallow ponds; camp at the far end, and expect a thicket of slide alder that is best turned in the timber to the north rather than fought through. Parties bound for Chimney Rock also pass through, but leave the PCT further north — see the Chimney Glacier basin entry. Pete Lake itself is low, forested and mosquito-ridden in early summer, and it is a long way from any summit, so it works as a first-night camp or a bail-out rather than a climbing base. Season is roughly July into October; the valley clears early but the basins above hold snow well into July. The Cooper River road is paved then gravel and passenger-car friendly. Honest caveat for 2026: the Pete Lake trail was inside a large wildfire closure on the Cle Elum Ranger District through late summer, with the closure scheduled to run to the end of October and subject to change — confirm the trail is open before driving out.",
+      "water": "Reliable all season — the lake itself, the Cooper River along the trail, and Lemah Creek and its north fork above the meadows",
+      "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead board, filled out and carried. Northwest Forest Pass to park. Group limit twelve including stock. Campfires are legal at these elevations but the lakeshore is heavily used and a stove is the better manners; no fires above 5,000 ft anywhere in this wilderness.",
+      "capacity": "Numerous established sites around Pete Lake, enough for a dozen or more parties on a summer weekend; the meadow camps beyond are informal and hold two or three tents each"
+    },
+    {
+      "name": "Lemah Meadows basin camp",
+      "role": "main",
+      "type": "camp"
+    }
+  ],
+  "prot_rating": null,
+  "start_type": null,
+  "landing": null,
+  "pads": null,
+  "rock": null,
+  "crux": null,
+  "access_checked_at": null,
+  "name_search": "standard scramble",
+  "ice_grade_num": null,
+  "mixed_grade_num": null,
+  "aid_grade_num": null
+}
