@@ -28471,3 +28471,73 @@ so no new PR was opened). Both research subagents this batch again reported WebF
 nps.gov/fs.usda.gov/Wikipedia/SummitPost/CascadeClimbers/mshinstitute.org/mountainproject.com as
 egress-blocked in this environment — verification rested on WebSearch snippets citing those same
 domains rather than direct fetches.
+
+## Batch 352 (2026-09-26) — pass 6
+
+Routes: `wa_mount_stuart_the_gendarme`, `wa_mount_stuart_west_ridge`,
+`wa_mount_teneriffe_kamikaze_trail`, `wa_mount_teneriffe_standard_route`,
+`wa_mount_terror_north_face`, `wa_mount_terror_southeast_face`,
+`wa_mount_terror_stoddard_buttress`, `wa_mount_terror_west_ridge`.
+
+**Fixed (3 routes, 4 UPDATEs):** `wa_mount_teneriffe_kamikaze_trail` and
+`wa_mount_teneriffe_standard_route` each stored the same physical point (Teneriffe/Kamikaze
+Falls, 47.50209/-121.70807, 2,633 ft) TWICE in their `waypoints` array, with two disagreeing
+distances from the trailhead — 2.4 mi vs 2.8 mi on the Kamikaze route, 2.7 mi vs 2.8 mi on the
+standard route. Each row's own `approach` prose independently states the falls junction sits
+"at about 2.8 miles" / "roughly 2.8 miles," so the stray duplicate entry (2.4 mi / 2.7 mi) was
+removed from both rows rather than guessed at externally. `wa_mount_terror_north_face`'s
+`comms` field claimed "a call from the summit area was critical in a 2009 rescue after a
+rockfall accident on this face" — but that accident (Steve Trent, ~60 ft fall, femur fracture,
+July 2009) happened during an attempt on the **Stoddard Buttress**, per National Parks
+Traveler's contemporaneous article and Steph Abegg's own trip report of the incident, not on
+the original 1961 North Buttress line this row describes. Removed the misattributed anecdote
+from `north_face` and moved the corrected version into `wa_mount_terror_stoddard_buttress`'s
+own `comms` field, where the accident actually happened.
+
+Note: the Stoddard Buttress `comms` UPDATE could not be auto-verified by `npm run check:sql`
+— its guard clause matches the live value verbatim, which itself contains a semicolon
+("...basins; carry a satellite..."), and the checker's statement-splitter breaks statements on
+every semicolon including ones inside string literals. Confirmed by hand instead: re-read both
+`comms` values live via curl immediately before writing the SQL file, and they matched exactly
+what the fix guards against. The other three UPDATEs in this batch's file passed `check:sql`
+cleanly (all target ids exist; file flagged only for its ~5.5KB paste size, over the 4KB soft
+limit — split it into two pastes when applying).
+
+**Flagged for human review (5):** `wa_mount_stuart_the_gendarme` — a fixed #4 Camalot at the
+offwidth crux is well-corroborated independently, but a second fixed #1 alongside it could not
+be confirmed one way or the other; minor, cosmetic. `wa_mount_stuart_west_ridge` — stored Longs
+Pass elevation (6,400 ft) runs a bit high against a 6,200-6,240 ft consensus across several
+sources (real but modest spread); separately, `gain_ft` (5,175 ft) matches the simple
+trailhead-to-summit net elevation difference (9,415 − 4,243 ≈ 5,172 ft) almost exactly, which
+looks suspicious for a ~20-mile loop that drops into Ingalls Creek and climbs back out via
+Longs Pass — plausibly an undercount of true cumulative gain, but no single authoritative
+cumulative-gain figure for this exact loop was found to correct it against, so left unchanged.
+`wa_mount_teneriffe_kamikaze_trail` — `dist_km` (5.95 km / 3.7 mi one-way) looks short against
+the route's own stated segment mileages (2.8 mi to the falls junction alone, before the steep
+track and summit push), and its `gain_ft`/`loss_ft` asymmetry (3,800/3,927) may or may not
+reflect a real loop-vs-out-and-back difference — no authoritative figure was found to correct
+either against. `wa_mount_terror_southeast_face` — this row's own `corrections` field already
+flags that it stores the route name "East Ridge" under an id containing `southeast_face`; a
+pre-existing, self-documented id/name mismatch, not something this audit fixes, since renaming
+a route id is an identity change outside its remit (see the repo's route-identity rules).
+`wa_mount_terror_stoddard_buttress` — separately from the `comms` fix above, the exact split
+between a solo FA on July 16, 1984 and a distinct "Left Side" variant climbed July 14-17, 1985
+could not be confirmed: sources disagree on whether the July 14-17 climb was itself 1984 or
+1985, and the primary AAC Publications/AAJ text was unreachable to adjudicate.
+
+**Clean (2):** `wa_mount_terror_north_face`'s FA (Bell/Cooper/Hiser/Swayne, 1961, III 5.7) and
+wall height (762 m / ~2,500 ft) both independently confirmed. `wa_mount_terror_west_ridge`
+confirmed as the standard/easiest route to Terror's summit, with a corroborated II 5.6 grade
+and its 8,151 ft summit elevation matching Wikipedia.
+
+`last_processed_id` advanced to `wa_mount_terror_west_ridge`; re-confirmed scope this batch:
+still 698 in-scope, 751 total wa_ alpine/mountaineering tagged (both unchanged from batch 351);
+233 in-scope routes remain unaudited this pass (next up: Mount Thomson, Mount Tom, Mount
+Torment, Mount Townsend, Mount Triumph). No `.env`/`.env.local` present at run start (fresh
+clone); wrote a local `.env.local` with just the anon read key supplied in the task prompt to
+run `check:sql` before committing the fix file (no service key used or needed — this run made
+no writes). PR for this branch was already open (see below), so no new PR was opened. All three
+research subagents this batch again reported WebFetch to nps.gov, wta.org, dnr.wa.gov,
+summitpost.org, cascadeclimbers.com, mountainproject.com, and americanalpineclub.org as
+egress-blocked in this environment — verification rested on WebSearch snippets citing those
+domains rather than direct fetches.
