@@ -1,0 +1,1336 @@
+#109 usa.colorado keep co_eldora [Colorado]
+  fold co_eldora_2 "Eldora" into co_eldora "Eldora"
+    parent co_hessie -> co_eldora
+    delete co_eldora_2
+#186 usa.new_hampshire keep nh_cathedral_ledge [New Hampshire]
+  fold nh_cathedral_ledge_ice_climbs "Cathedral Ledge Ice Climbs" into nh_cathedral_ledge "Cathedral Ledge"
+  fold nh_cathedral_ledge_ice_climbs "Cathedral Ledge Ice Climbs" into nh_cathedral_ledge_bouldering "Cathedral Ledge Bouldering"
+    parent nh_cathedral_ledge_ice_climbs -> nh_cathedral_ledge_bouldering
+#131 usa.colorado keep co_silverton_area [Colorado]
+  fold co_silverton "Silverton" into co_silverton_area "Silverton area"
+    parent co_us_highway_550_south_of_silverton -> co_silverton_area
+  fold co_south_mineral_creek_2 "South Mineral Creek" into co_south_mineral_creek "South Mineral Creek"
+    rename co_south_mineral_creek_2 "South Mineral Creek" -> "South Mineral Creek Ice Climbs"
+    parent co_south_mineral_creek_2 -> co_south_mineral_creek
+    parent co_cement_creek_2 -> co_silverton_area
+    parent co_deer_park_creek_falls -> co_silverton_area
+    parent co_arrastra_gulch -> co_silverton_area
+    parent co_electric_peak -> co_silverton_area
+    parent co_maggie_gulch -> co_silverton_area
+    parent co_minnie_gulch -> co_silverton_area
+  fold co_cunningham_gulch_2 "Cunningham Gulch" into co_cunningham_gulch "Cunningham Gulch"
+    rename co_cunningham_gulch_2 "Cunningham Gulch" -> "Cunningham Gulch Ice Climbs"
+    parent co_cunningham_gulch_2 -> co_cunningham_gulch
+  fold co_eureka "Eureka" into co_eureka_area "Eureka area"
+    parent co_eureka -> co_eureka_area
+    delete co_silverton
+#195 usa.new_hampshire keep nh_rumney [New Hampshire]
+  fold nh_rumney_ice_climbs "* Rumney Ice Climbs" into nh_rumney "Rumney"
+    parent nh_polar_caves_closed -> nh_rumney
+    parent nh_jobsite_the -> nh_rumney
+  fold nh_the_jobsite "The Jobsite" into nh_jobsite_the "Jobsite, The"
+    delete nh_the_jobsite
+    parent nh_apocalypse_wall -> nh_rumney
+    parent nh_main_cliff_left_venus_wall -> nh_rumney
+  fold nh_parking_lot_wall "Parking Lot Wall" into nh_the_parking_lot_wall "The Parking Lot Wall"
+    keep both: Centerfold (WI3) — different climb: 5.4 vs WI3
+    keep both: Percolator (WI3+) — different climb: 5.7 vs WI3+
+    delete nh_parking_lot_wall
+  fold nh_triple_corners_2 "Triple Corners" into nh_triple_corners "Triple Corners"
+    rename nh_triple_corners_2 "Triple Corners" -> "Triple Corners Ice Climbs"
+    parent nh_triple_corners_2 -> nh_triple_corners
+  fold nh_orange_crush_crag "Orange Crush Crag" into nh_orange_crush "Orange Crush"
+    delete nh_orange_crush_crag
+    parent nh_true_summit_ledges_utopia_area -> nh_rumney
+    parent nh_upper_darth_vader_aka_hendrix_lee -> nh_rumney
+  fold nh_infinity_wall_2 "Infinity Wall" into nh_infinity_wall "Infinity Wall"
+    rename nh_infinity_wall_2 "Infinity Wall" -> "Infinity Wall Ice Climbs"
+    parent nh_infinity_wall_2 -> nh_infinity_wall
+    parent nh_beyond_infinity_wall -> nh_rumney
+    parent nh_yellowknife_gully -> nh_rumney
+    parent nh_summit_cliff_ice_and_mixed -> nh_rumney
+    parent nh_roadside_ice -> nh_rumney
+    delete nh_rumney_ice_climbs
+#4 usa.alaska keep ak_purinton_creek_2 [Alaska › Anchorage & South Central Alaska]
+  fold ak_purinton_creek_3 "Purinton Creek" into ak_purinton_creek_2 "Purinton Creek"
+    rename ak_purinton_creek_3 "Purinton Creek" -> "Purinton Creek Ice Climbs"
+    parent ak_purinton_creek_3 -> ak_purinton_creek_2
+#104 usa.colorado keep co_big_meadows [Colorado › San Luis Valley]
+  fold co_big_meadows_2 "Big Meadows" into co_big_meadows "Big Meadows"
+    parent co_upper_tier_6 -> co_big_meadows
+    parent co_lower_tier_5 -> co_big_meadows
+    delete co_big_meadows_2
+#112 usa.colorado keep co_flatirons [Colorado › Boulder]
+  fold co_flatirons_2 "Flatirons" into co_flatirons "Flatirons"
+    rename co_flatirons_2 "Flatirons" -> "Flatirons Ice Climbs"
+    parent co_flatirons_2 -> co_flatirons
+#120 usa.colorado keep co_long_s_peak [Colorado › Alpine Rock › RMNP - Rock]
+  fold co_longs_peak "Longs Peak" into co_long_s_peak "Long's Peak"
+    rename co_longs_peak "Longs Peak" -> "Long's Peak Other Climbs"
+    parent co_longs_peak -> co_long_s_peak
+#124 usa.colorado keep co_north_cheyenne_canyon_2 [Colorado › Colorado Springs]
+  fold co_north_cheyenne_canyon "North Cheyenne Canyon" into co_north_cheyenne_canyon_2 "North Cheyenne Canyon"
+    rename co_north_cheyenne_canyon "North Cheyenne Canyon" -> "North Cheyenne Canyon Ice Climbs"
+    parent co_north_cheyenne_canyon -> co_north_cheyenne_canyon_2
+#188 usa.new_hampshire keep nh_humphrey_s_ledge_2 [New Hampshire › WM: North Conway]
+  fold nh_humphrey_s_ledge "Humphrey's Ledge" into nh_humphrey_s_ledge_2 "Humphrey's Ledge"
+    rename nh_humphrey_s_ledge "Humphrey's Ledge" -> "Humphrey's Ledge Ice Climbs"
+    parent nh_humphrey_s_ledge -> nh_humphrey_s_ledge_2
+#192 usa.new_hampshire keep nh_north_bald_cap [New Hampshire › Great North Woods Region]
+  fold nh_north_bald_cap_ice "North Bald Cap ICE" into nh_north_bald_cap "North Bald Cap"
+    parent nh_3_yukon_gold_butress -> nh_north_bald_cap
+    parent nh_3_yukon_gold_buttress -> nh_north_bald_cap
+    parent nh_2_bald_cap_slabs -> nh_north_bald_cap
+    parent nh_1_the_motherlode -> nh_north_bald_cap
+    delete nh_north_bald_cap_ice
+#196 usa.new_hampshire keep nh_sandwich_notch [New Hampshire › Lakes Region]
+  fold nh_sandwich_notch_ice "Sandwich Notch Ice" into nh_sandwich_notch "Sandwich Notch"
+    parent nh_sandwich_notch_ice -> nh_sandwich_notch
+#208 usa.north_carolina keep nc_whiteside_mountain [North Carolina › 1. Southern Mountains Region]
+  fold nc_whiteside_ice "Whiteside (ice)" into nc_whiteside_mountain "Whiteside Mountain"
+    parent nc_whiteside_ice -> nc_whiteside_mountain
+#224 usa.vermont keep vt_bone_mountain_2 [Vermont › 1. Northern Vermont › Bolton Area]
+  fold vt_bone_mountain "Bone Mountain" into vt_bone_mountain_2 "Bone Mountain"
+    parent vt_solstice_slab -> vt_bone_mountain_2
+    parent vt_big_splint_area -> vt_bone_mountain_2
+    delete vt_bone_mountain
+#113 usa.colorado keep co_flatirons [Colorado › Boulder]
+  fold co_flatirons_ice_climbing "Flatirons Ice Climbing" into co_flatirons "Flatirons"
+  fold co_flatirons_ice_climbing "Flatirons Ice Climbing" into co_flatirons_2 "Flatirons Ice Climbs"
+    merge  Fourth Flatiron East Face AKA The Watercourse (5.6 M4 R) into co_fourth_flatiron_east_face_aka_the_watercourse (5.6)
+    delete co_flatirons_ice_climbing
+#125 usa.colorado keep co_ophir [Colorado › Telluride/Norwood area]
+  fold co_ophir_area "Ophir Area" into co_ophir "Ophir"
+    parent co_ophir_area -> co_ophir
+#129 usa.colorado keep co_quandary_peak [Colorado › Alpine Rock]
+  fold co_quandary_ice_crag "Quandary Ice Crag" into co_quandary_peak "Quandary Peak"
+    delete co_quandary_ice_crag
+#133 usa.colorado keep co_split_rock [Colorado › Buena Vista]
+  fold co_split_rock_area "Split Rock Area" into co_split_rock "Split Rock"
+    delete co_split_rock_area
+#177 usa.minnesota keep mn_south_quarry_area [Minnesota › Blue Mounds State Park (Luverne)]
+  fold mn_south_quarry_area_2 "South Quarry Area" into mn_south_quarry_area "South Quarry Area"
+    parent mn_craig_s_cave -> mn_south_quarry_area
+    parent mn_blank_the -> mn_south_quarry_area
+    delete mn_south_quarry_area_2
+#213 usa.tennessee keep tn_asteroid_2 [Tennessee › Boulders on Old Wauhatchie Pike, The]
+  fold tn_asteroid "Asteroid" into tn_asteroid_2 "Asteroid"
+    delete tn_asteroid
+#221 usa.vermont keep vt_black_mountain_2 [Vermont › 1. Northern Vermont]
+  fold vt_black_mountain "Black Mountain" into vt_black_mountain_2 "Black Mountain"
+    parent vt_black_mountain_central -> vt_black_mountain_2
+    delete vt_black_mountain
+#225 usa.vermont keep vt_pisgah_crag [Vermont › 1. Northern Vermont]
+  fold vt_mount_pisgah "Mount Pisgah" into vt_pisgah_crag "Pisgah Crag"
+    delete vt_mount_pisgah
+#98 usa.colorado keep co_almost_a_tunnel [Colorado › Buena Vista]
+  fold co_almost_a_tunnel_2 "Almost a tunnel" into co_almost_a_tunnel "Almost A Tunnel"
+    delete co_almost_a_tunnel_2
+#102 usa.colorado keep co_bear_creek [Colorado › Telluride/Norwood area]
+  fold co_bear_creek_2 "Bear Creek" into co_bear_creek "Bear Creek"
+    rename co_bear_creek_2 "Bear Creek" -> "Bear Creek Ice Climbs"
+    parent co_bear_creek_2 -> co_bear_creek
+#106 usa.colorado keep co_clear_creek_canyon [Colorado › Golden]
+  fold co_clear_creek_canyon_ice "Clear Creek Canyon - Ice" into co_clear_creek_canyon "Clear Creek Canyon"
+    parent co_coors_ultra_light -> co_clear_creek_canyon
+    parent co_beer_garden_2 -> co_clear_creek_canyon
+    parent co_aqueduct_flows -> co_clear_creek_canyon
+    parent co_mayhem_gulch -> co_clear_creek_canyon
+    parent co_blue_moon -> co_clear_creek_canyon
+    parent co_secret_waterfall_aka_windy_saddle_ice_flow -> co_clear_creek_canyon
+  fold co_little_eiger_area_ice "Little Eiger area - ice" into co_little_eiger "Little Eiger"
+    delete co_little_eiger_area_ice
+    parent co_m3_crag -> co_clear_creek_canyon
+    delete co_clear_creek_canyon_ice
+#110 usa.colorado keep co_elephant_rock [Colorado › Buena Vista]
+  fold co_elephant_rock_2 "Elephant Rock" into co_elephant_rock "Elephant Rock"
+    delete co_elephant_rock_2
+#126 usa.colorado keep co_pike_s_peak_2 [Colorado › Colorado Springs]
+  fold co_pike_s_peak "Pike's Peak" into co_pike_s_peak_2 "Pike's Peak"
+    parent co_pike_s_peak -> co_colorado_springs  (takes the kept area's place)
+    rename co_pike_s_peak_2 "Pike's Peak" -> "Pike's Peak Routes"
+    parent co_pike_s_peak_2 -> co_pike_s_peak
+#130 usa.colorado keep co_rifle_mountain_park [Colorado › Rifle]
+  fold co_rifle_mountain_park_2 "Rifle Mountain Park" into co_rifle_mountain_park "Rifle Mountain Park"
+    parent co_west_side_of_the_canyon -> co_rifle_mountain_park
+    delete co_rifle_mountain_park_2
+#146 usa.connecticut keep ct_webb_mountain_park [Connecticut › Western Coastal Slope]
+  fold ct_webb_mountain_park_2 "Webb Mountain Park" into ct_webb_mountain_park "Webb Mountain Park"
+    parent ct_old_fish_house_road -> ct_webb_mountain_park
+    parent ct_red_trail_section -> ct_webb_mountain_park
+  fold ct_blue_trail_section_2 "Blue Trail Section" into ct_blue_trail_section "Blue Trail Section"
+    delete ct_blue_trail_section_2
+    delete ct_webb_mountain_park_2
+#190 usa.new_hampshire keep nh_iron_mountain [New Hampshire › WM: Bartlett / Jackson Area]
+  fold nh_iron_mtn "Iron Mtn" into nh_iron_mountain "Iron Mountain"
+    rename nh_iron_mtn "Iron Mtn" -> "Iron Mountain Ice Climbs"
+    parent nh_iron_mtn -> nh_iron_mountain
+#214 usa.texas keep tx_emerald_pools_sector_2 [Texas › Continental Ranch › Shumla Bend Area]
+  fold tx_emerald_pools_sector "Emerald Pools Sector" into tx_emerald_pools_sector_2 "Emerald Pools Sector"
+    rename tx_emerald_pools_sector "Emerald Pools Sector" -> "Emerald Pools Sector Other Climbs"
+    parent tx_emerald_pools_sector -> tx_emerald_pools_sector_2
+#242 usa.wisconsin keep wi_eau_claire [Wisconsin › Buildering Sites (statewide)]
+  fold wi_eau_claire_ice "Eau Claire Ice" into wi_eau_claire "Eau Claire"
+    delete wi_eau_claire_ice
+#3 usa.alaska keep ak_portage_2 [Alaska › Anchorage & South Central Alaska]
+  fold ak_portage_4 "Portage" into ak_portage_2 "Portage"
+    rename ak_portage_4 "Portage" -> "Portage Ice Climbs"
+    parent ak_portage_4 -> ak_portage_2
+#31 usa.california keep ca_buck_rock [California › Sequoia & Kings Canyon NP]
+  fold ca_buck_rock_2 "Buck Rock" into ca_buck_rock "Buck Rock"
+    delete ca_buck_rock_2
+#103 usa.colorado keep co_mt_bierstadt [Colorado › Alpine Rock]
+  fold co_bierstadt_ice "Bierstadt Ice" into co_mt_bierstadt "Mt. Bierstadt"
+    parent co_bierstadt_ice -> co_mt_bierstadt
+#135 usa.colorado keep co_staunton_state_park [Colorado › South Platte]
+  fold co_staunton_state_park_ice "Staunton State Park Ice" into co_staunton_state_park "Staunton State Park"
+    parent co_staunton_state_park_ice -> co_staunton_state_park
+#147 usa.connecticut keep ct_west_rock_state_park [Connecticut › Western Coastal Slope]
+  fold ct_west_rock_state_park_2 "West Rock State Park" into ct_west_rock_state_park "West Rock State Park"
+    parent ct_toni_harp_bloc -> ct_west_rock_state_park
+    parent ct_wintergreen -> ct_west_rock_state_park
+    parent ct_judges_cave -> ct_west_rock_state_park
+    parent ct_tj_s_bar_and_grill -> ct_west_rock_state_park
+    parent ct_god_s_country -> ct_west_rock_state_park
+    delete ct_west_rock_state_park_2
+#175 usa.minnesota keep mn_mini_fortress_area [Minnesota › Blue Mounds State Park (Luverne)]
+  fold mn_mini_fortress "Mini Fortress" into mn_mini_fortress_area "Mini Fortress Area"
+    parent mn_no_name_balancing_boulder -> mn_mini_fortress_area
+    parent mn_lover_s_fortress -> mn_mini_fortress_area
+    parent mn_tetris -> mn_mini_fortress_area
+    parent mn_red_green_show -> mn_mini_fortress_area
+    parent mn_trump_boulders -> mn_mini_fortress_area
+    delete mn_mini_fortress
+#187 usa.new_hampshire keep nh_echo_crag [New Hampshire › WM: Franconia Notch]
+  fold nh_echo_crag_ice_climbs "Echo Crag Ice Climbs" into nh_echo_crag "Echo Crag"
+    parent nh_echo_crag_ice_climbs -> nh_echo_crag
+#215 usa.texas keep tx_painted_canyon_sector_2 [Texas › Continental Ranch › Shumla Bend Area]
+  fold tx_painted_canyon_sector "Painted Canyon Sector" into tx_painted_canyon_sector_2 "Painted Canyon Sector"
+    rename tx_painted_canyon_sector "Painted Canyon Sector" -> "Painted Canyon Sector Other Climbs"
+    parent tx_painted_canyon_sector -> tx_painted_canyon_sector_2
+#223 usa.vermont keep vt_bolton_quarry_2 [Vermont › 1. Northern Vermont › Bolton Area]
+  fold vt_bolton_quarry "Bolton Quarry" into vt_bolton_quarry_2 "Bolton Quarry"
+    parent vt_schoolyard -> vt_bolton_quarry_2
+    parent vt_main_quarry -> vt_bolton_quarry_2
+    parent vt_lower_quarry -> vt_bolton_quarry_2
+    delete vt_bolton_quarry
+suffix Grotto ~ The Grotto (Bouldering) usa.alabama keep al_grotto [Alabama › Sand Rock]
+  fold al_the_grotto_bouldering "The Grotto (Bouldering)" into al_grotto "Grotto"
+    delete al_the_grotto_bouldering
+suffix Grotto ~ Grotto (Bouldering), The usa.alabama keep al_grotto [Alabama › Sand Rock]
+  fold al_grotto_bouldering_the "Grotto (Bouldering), The" into al_grotto "Grotto"
+    delete al_grotto_bouldering_the
+suffix Central Joshua Tree ~ Central Joshua Tree Bouldering usa.california keep ca_central_joshua_tree [California › Joshua Tree National Park]
+  fold ca_central_joshua_tree_bouldering "Central Joshua Tree Bouldering" into ca_central_joshua_tree "Central Joshua Tree"
+    parent ca_cap_rock_bouldering -> ca_central_joshua_tree
+  fold ca_echo_rock_bouldering "Echo Rock Bouldering" into ca_echo_rock_area "Echo Rock Area"
+  fold ca_echo_rock_boulders "Echo Rock Boulders" into ca_echo_rock "Echo Rock"
+    parent ca_necco_boulder -> ca_echo_rock
+    parent ca_beak_rock -> ca_echo_rock
+    parent ca_big_dike_boulders -> ca_echo_rock
+    parent ca_echo_rock_proper -> ca_echo_rock
+    parent ca_gumdrop_the_2 -> ca_echo_rock
+    parent ca_master_cylinder -> ca_echo_rock
+    parent ca_value_boulder -> ca_echo_rock
+    delete ca_echo_rock_boulders
+  fold ca_echo_cove_bouldering "Echo Cove Bouldering" into ca_echo_cove "Echo Cove"
+    parent ca_classic_thin_crack_boulder -> ca_echo_cove
+    parent ca_arete_boulders -> ca_echo_cove
+    parent ca_big_moe_wall -> ca_echo_cove
+    parent ca_coyote_corner_2 -> ca_echo_cove
+    parent ca_igneous_boulder -> ca_echo_cove
+    parent ca_land_of_the_lost_boulder -> ca_echo_cove
+    parent ca_smith_rock_2 -> ca_echo_cove
+    delete ca_echo_cove_bouldering
+    delete ca_echo_rock_bouldering
+    parent ca_hall_of_horrors_bouldering -> ca_central_joshua_tree
+    parent ca_lonesome_crowded_west -> ca_central_joshua_tree
+    parent ca_stonehenge_and_fry_boulders -> ca_central_joshua_tree
+    parent ca_planet_x_bouldering -> ca_central_joshua_tree
+  fold ca_barker_dam_bouldering "Barker Dam Bouldering" into ca_barker_dam_area "Barker Dam Area"
+    parent ca_yoda_head_boulder -> ca_barker_dam_area
+  fold ca_gunsmoke_area_2 "Gunsmoke Area" into ca_gunsmoke_area "Gunsmoke Area"
+    parent ca_gunsmoke_area_2 -> ca_barker_dam_area  (takes the kept area's place)
+    rename ca_gunsmoke_area "Gunsmoke Area" -> "Gunsmoke Area Routes"
+    parent ca_gunsmoke_area -> ca_gunsmoke_area_2
+    parent ca_indian_wave_boulders -> ca_barker_dam_area
+    parent ca_barker_dam_boulders -> ca_barker_dam_area
+    parent ca_alisters_cave -> ca_barker_dam_area
+    parent ca_crack_a_no_no_area -> ca_barker_dam_area
+    parent ca_lost_and_found_corridor -> ca_barker_dam_area
+    delete ca_barker_dam_bouldering
+    parent ca_ryan_campground_bouldering -> ca_central_joshua_tree
+    delete ca_central_joshua_tree_bouldering
+suffix Hidden Valley Area ~ Hidden Valley Area Bouldering usa.california keep ca_hidden_valley_area [California › Joshua Tree National Park]
+  fold ca_hidden_valley_area_bouldering "Hidden Valley Area Bouldering" into ca_hidden_valley_area "Hidden Valley Area"
+  fold ca_hidden_valley_campground_bouldering "Hidden Valley Campground Bouldering" into ca_hidden_valley_campground "Hidden Valley Campground"
+    parent ca_hvcg_bouldering_circuit -> ca_hidden_valley_campground
+    parent ca_manx_asteroid_belt_circuit -> ca_hidden_valley_campground
+    delete ca_hidden_valley_campground_bouldering
+  fold ca_roadside_rocks_bouldering "Roadside Rocks Bouldering" into ca_roadside_rocks_4 "Roadside Rocks"
+    parent ca_pacifier_and_the_nostril -> ca_roadside_rocks_4
+    parent ca_chunky_boulder_and_trance_stone -> ca_roadside_rocks_4
+    parent ca_jbmf_boulders -> ca_roadside_rocks_4
+    parent ca_pepboys_boulder -> ca_roadside_rocks_4
+    parent ca_texas_boulder -> ca_roadside_rocks_4
+    parent ca_melon_boulder -> ca_roadside_rocks_4
+    parent ca_bullet_proof_boulder -> ca_roadside_rocks_4
+    delete ca_roadside_rocks_bouldering
+  fold ca_real_hidden_valley_bouldering "Real Hidden Valley Bouldering" into ca_real_hidden_valley "Real Hidden Valley"
+    parent ca_turtle_rock_circuit -> ca_real_hidden_valley
+    parent ca_semi_precious_bouldering -> ca_real_hidden_valley
+    parent ca_real_hidden_valley_circuit -> ca_real_hidden_valley
+    delete ca_real_hidden_valley_bouldering
+  fold ca_outback_bouldering "Outback Bouldering" into ca_outback_the_2 "Outback, The"
+    parent ca_under_lizzy_boulder -> ca_outback_the_2
+    parent ca_yabba_dabba_don_t_boulder -> ca_outback_the_2
+    parent ca_cole_boulder -> ca_outback_the_2
+    parent ca_gizmo_boulder -> ca_outback_the_2
+    parent ca_hobbit_hole_boulder -> ca_outback_the_2
+    parent ca_hooker_boulder -> ca_outback_the_2
+    parent ca_miledi_rock -> ca_outback_the_2
+    parent ca_powell_boulder -> ca_outback_the_2
+    parent ca_tilt_o_meter_boulder -> ca_outback_the_2
+    parent ca_iron_door_cave_boulder -> ca_outback_the_2
+    parent ca_laura_scudder_boulder -> ca_outback_the_2
+    parent ca_lizzie_boulder -> ca_outback_the_2
+    parent ca_amoeba_boulder -> ca_outback_the_2
+    parent ca_family_boulder_2 -> ca_outback_the_2
+    parent ca_dino_s_egg -> ca_outback_the_2
+    parent ca_white_rastafarian_boulder -> ca_outback_the_2
+    parent ca_voices_boulder -> ca_outback_the_2
+    parent ca_tidal_wave_boulder -> ca_outback_the_2
+    parent ca_mutant_boulder -> ca_outback_the_2
+    parent ca_without_a_trace_boulder -> ca_outback_the_2
+    parent ca_romp_roof -> ca_outback_the_2
+    parent ca_scorpion_roof -> ca_outback_the_2
+    parent ca_wilson_boulder -> ca_outback_the_2
+    parent ca_purina_wall -> ca_outback_the_2
+    parent ca_rasta_city -> ca_outback_the_2
+    parent ca_chuckawalla_boulder -> ca_outback_the_2
+    parent ca_animal_boulder_3 -> ca_outback_the_2
+    parent ca_false_hueco_boulder -> ca_outback_the_2
+    parent ca_dike_boulder_3 -> ca_outback_the_2
+    delete ca_outback_bouldering
+    delete ca_hidden_valley_area_bouldering
+suffix Hospital Rock Area ~ Hospital Rock Boulders usa.california keep ca_hospital_rock_area [California › Sequoia & Kings Canyon NP]
+  fold ca_hospital_rock_boulders "Hospital Rock Boulders" into ca_hospital_rock_area "Hospital Rock Area"
+    parent ca_parking_lot_boulder_the -> ca_hospital_rock_area
+    parent ca_fat_darrell_sandwich -> ca_hospital_rock_area
+    parent ca_cave_boulder_4 -> ca_hospital_rock_area
+    delete ca_hospital_rock_boulders
+suffix Indian Cove ~ Indian Cove Bouldering usa.california keep ca_indian_cove [California › Joshua Tree National Park]
+  fold ca_indian_cove_bouldering "Indian Cove Bouldering" into ca_indian_cove "Indian Cove"
+  fold ca_rattlesnake_canyon_2 "Rattlesnake Canyon" into ca_rattlesnake_canyon "Rattlesnake Canyon"
+    parent ca_tuolumne_boulder -> ca_rattlesnake_canyon
+    delete ca_rattlesnake_canyon_2
+    parent ca_49_palms_oasis_area -> ca_indian_cove
+  fold ca_group_campsites_road_2 "Group Campsites Road" into ca_group_campsites_road "Group Campsites Road"
+  fold ca_group_camp_short_wall_2 "Group Camp Short Wall" into ca_group_camp_short_wall "Group Camp Short Wall"
+    delete ca_group_camp_short_wall_2
+    parent ca_group_camp_1_boulders -> ca_group_campsites_road
+    delete ca_group_campsites_road_2
+  fold ca_indian_cove_campground_2 "Indian Cove Campground" into ca_indian_cove_campground "Indian Cove Campground"
+    parent ca_western_wilderness_boulders -> ca_indian_cove_campground
+  fold ca_varnished_wall_boulders "Varnished Wall Boulders" into ca_varnished_wall "Varnished Wall"
+    parent ca_varnished_wall_boulders -> ca_indian_cove_campground  (takes the kept area's place)
+    rename ca_varnished_wall_boulders "Varnished Wall Boulders" -> "Varnished Wall"
+    rename ca_varnished_wall "Varnished Wall" -> "Varnished Wall Routes"
+    parent ca_varnished_wall -> ca_varnished_wall_boulders
+    parent ca_picnic_boulder -> ca_indian_cove_campground
+    parent ca_feudal_boulder -> ca_indian_cove_campground
+    parent ca_campfire_crag_boulder -> ca_indian_cove_campground
+    parent ca_callous_boulder -> ca_indian_cove_campground
+    parent ca_pixie_boulder -> ca_indian_cove_campground
+    delete ca_indian_cove_campground_2
+    parent ca_lehi_s_wilderness -> ca_indian_cove
+    delete ca_indian_cove_bouldering
+suffix Lost Horse Area ~ Lost Horse Bouldering usa.california keep ca_lost_horse_area [California › Joshua Tree National Park]
+  fold ca_lost_horse_bouldering "Lost Horse Bouldering" into ca_lost_horse_area "Lost Horse Area"
+    parent ca_atlantis_boulder_2 -> ca_lost_horse_area
+    parent ca_cheese_boulder -> ca_lost_horse_area
+    parent ca_yabo_boulder_the -> ca_lost_horse_area
+    parent ca_lost_horse_mantle_boulder -> ca_lost_horse_area
+    parent ca_mel_s_diner_boulder -> ca_lost_horse_area
+    parent ca_blas_beemer_area -> ca_lost_horse_area
+    parent ca_hemingway_boulders -> ca_lost_horse_area
+    parent ca_big_bud_boulder -> ca_lost_horse_area
+  fold ca_jimmy_cliff_area "Jimmy Cliff Area" into ca_jimmy_cliff "Jimmy Cliff"
+    parent ca_penguins_boulder -> ca_jimmy_cliff
+    parent ca_scoop_boulder_2 -> ca_jimmy_cliff
+    parent ca_ankle_breaker_rock -> ca_jimmy_cliff
+    parent ca_doctor_boulder_the -> ca_jimmy_cliff
+    parent ca_north_of_jerry_cliff -> ca_jimmy_cliff
+    parent ca_marley_boulder -> ca_jimmy_cliff
+    parent ca_dysfunction_boulder -> ca_jimmy_cliff
+    parent ca_equine_boulder -> ca_jimmy_cliff
+    parent ca_bandulo_block -> ca_jimmy_cliff
+    parent ca_jimmy_cliff_boulder -> ca_jimmy_cliff
+    parent ca_humanitarian_boulder -> ca_jimmy_cliff
+    parent ca_unmentionable_the_2 -> ca_jimmy_cliff
+    delete ca_jimmy_cliff_area
+    delete ca_lost_horse_bouldering
+suffix Quail Springs Area ~ Quail Springs Bouldering usa.california keep ca_quail_springs_area [California › Joshua Tree National Park]
+  fold ca_quail_springs_bouldering "Quail Springs Bouldering" into ca_quail_springs_area "Quail Springs Area"
+    parent ca_west_entrance_boulder -> ca_quail_springs_area
+    parent ca_psycho_boulders -> ca_quail_springs_area
+    parent ca_chocolate_boulders -> ca_quail_springs_area
+    parent ca_embryo_area -> ca_quail_springs_area
+    parent ca_lonely_stones_1 -> ca_quail_springs_area
+    parent ca_miledi_boulders -> ca_quail_springs_area
+    parent ca_outer_rim_the -> ca_quail_springs_area
+  fold ca_trashcan_rock_area "Trashcan Rock Area" into ca_trashcan_rock "Trashcan Rock"
+    parent ca_zen_boulder -> ca_trashcan_rock
+    parent ca_dover_cliffs_boulder -> ca_trashcan_rock
+    parent ca_trashcan_boulders -> ca_trashcan_rock
+    parent ca_forgotten_boulders -> ca_trashcan_rock
+    delete ca_trashcan_rock_area
+  fold ca_afpa_rock_area "AFPA Rock Area" into ca_afpa_rock "AFPA Rock"
+    parent ca_afpa_rock_area -> ca_quail_springs_area  (takes the kept area's place)
+    parent ca_afpa_rock -> ca_afpa_rock_area
+    delete ca_quail_springs_bouldering
+suffix Diamond Ledge ~ Diamond Ledge Bouldering usa.connecticut keep ct_diamond_ledge [Connecticut › Western Highlands]
+  fold ct_diamond_ledge_bouldering "Diamond Ledge Bouldering" into ct_diamond_ledge "Diamond Ledge"
+    parent ct_diamond_ledge_bouldering -> ct_western_highlands  (takes the kept area's place)
+    rename ct_diamond_ledge_bouldering "Diamond Ledge Bouldering" -> "Diamond Ledge"
+    rename ct_diamond_ledge "Diamond Ledge" -> "Diamond Ledge Routes"
+    parent ct_diamond_ledge -> ct_diamond_ledge_bouldering
+suffix Mattatuck State Forest ~ Mattatuck State Forest Bouldering usa.connecticut keep ct_mattatuck_state_forest [Connecticut › Western Highlands]
+  fold ct_mattatuck_state_forest_bouldering "Mattatuck State Forest Bouldering" into ct_mattatuck_state_forest "Mattatuck State Forest"
+    parent ct_sunset_boulders -> ct_mattatuck_state_forest
+    parent ct_east_of_naugatuck_river -> ct_mattatuck_state_forest
+    parent ct_d_d_cave -> ct_mattatuck_state_forest
+    delete ct_mattatuck_state_forest_bouldering
+suffix Ross Park ~ Ross Park Bouldering usa.idaho keep id_ross_park [Idaho › East Idaho]
+  fold id_ross_park_bouldering "Ross Park Bouldering" into id_ross_park "Ross Park"
+    parent id_aquatic_complex_zoo -> id_ross_park
+    delete id_ross_park_bouldering
+suffix Ely's Peak ~ Ely's Peak Bouldering usa.minnesota keep mn_ely_s_peak [Minnesota › Duluth Area (Rock and Ice)]
+  fold mn_ely_s_peak_bouldering "Ely's Peak Bouldering" into mn_ely_s_peak "Ely's Peak"
+    parent mn_ely_s_peak_bouldering -> mn_duluth_area_rock_and_ice  (takes the kept area's place)
+    rename mn_ely_s_peak_bouldering "Ely's Peak Bouldering" -> "Ely's Peak"
+    rename mn_ely_s_peak "Ely's Peak" -> "Ely's Peak Routes"
+    parent mn_ely_s_peak -> mn_ely_s_peak_bouldering
+suffix Meadows Bouldering, The ~ The Meadows usa.new_hampshire keep nh_the_meadows [New Hampshire › Rumney]
+  fold nh_meadows_bouldering_the "Meadows Bouldering, The" into nh_the_meadows "The Meadows"
+    parent nh_hells_kitchen -> nh_the_meadows
+    parent nh_apocalypse_boulder -> nh_the_meadows
+    parent nh_meat_grinder_boulders_the -> nh_the_meadows
+    delete nh_meadows_bouldering_the
+suffix Monsters from the Id ~ Monsters From the Id Bouldering usa.new_hampshire keep nh_monsters_from_the_id [New Hampshire › Rumney]
+  fold nh_monsters_from_the_id_bouldering "Monsters From the Id Bouldering" into nh_monsters_from_the_id "Monsters from the Id"
+    parent nh_monsters_from_the_id_bouldering -> nh_rumney  (takes the kept area's place)
+    rename nh_monsters_from_the_id_bouldering "Monsters From the Id Bouldering" -> "Monsters from the Id"
+    rename nh_monsters_from_the_id "Monsters from the Id" -> "Monsters from the Id Routes"
+    parent nh_monsters_from_the_id -> nh_monsters_from_the_id_bouldering
+suffix Newbury Cut Ice & Mixed ~ Newbury Cut, The usa.new_hampshire keep nh_newbury_cut_the [New Hampshire › Dartmouth / Lake Sunapee]
+  fold nh_newbury_cut_ice_mixed "Newbury Cut Ice & Mixed" into nh_newbury_cut_the "Newbury Cut, The"
+    parent nh_newbury_cut_ice_mixed -> nh_newbury_cut_the
+suffix Sunshine Wall ~ Sunshine Wall Boulders usa.utah keep ut_sunshine_wall [Utah › Southeast Utah]
+  fold ut_sunshine_wall_boulders "Sunshine Wall Boulders" into ut_sunshine_wall "Sunshine Wall"
+    parent ut_sunshine_wall_boulders -> ut_sunshine_wall
+#0 usa.alaska keep ak_19_mile_wall_2 [Alaska › Anchorage & South Central Alaska › Valdez Area Rock]
+  fold ak_19_mile_wall "19 Mile Wall" into ak_19_mile_wall_2 "19 Mile Wall"
+    merge  Unknown 1 (WI2-3) into ak_19_mile_wall_3_unknown_1 (WI2-3)
+    delete ak_19_mile_wall
+#36 usa.california keep ca_castle_rock_proper [California › San Francisco Bay Area › Castle Rock Area]
+  fold ca_castle_rock_proper_2 "Castle Rock Proper" into ca_castle_rock_proper "Castle Rock Proper"
+    delete ca_castle_rock_proper_2
+#60 usa.california keep ca_potter_s_point [California › Central Coast › Santa Barbara]
+  fold ca_potter_s_point_2 "Potter's Point" into ca_potter_s_point "Potter's Point"
+    parent ca_potter_s_point_2 -> ca_santa_barbara  (takes the kept area's place)
+    rename ca_potter_s_point "Potter's Point" -> "Potter's Point Routes"
+    parent ca_potter_s_point -> ca_potter_s_point_2
+#100 usa.colorado keep co_arapahoe_peaks [Colorado › Alpine Rock › Indian Peaks]
+  fold co_arapahoe_peaks_2 "Arapahoe Peaks" into co_arapahoe_peaks "Arapahoe Peaks"
+    delete co_arapahoe_peaks_2
+#152 usa.illinois keep il_a_gill_roof_area [Illinois › Giant City State Park › B. Devils Standtable Area]
+  fold il_a_gill_roof "A: Gill Roof" into il_a_gill_roof_area "A: Gill Roof Area"
+    delete il_a_gill_roof
+#172 usa.minnesota keep mn_bur_oak_trail [Minnesota › Blue Mounds State Park (Luverne) › South Quarry Area]
+  fold mn_bur_oak_trail_2 "Bur Oak Trail" into mn_bur_oak_trail "Bur Oak Trail"
+    parent mn_bur_oak_trail_2 -> mn_south_quarry_area  (takes the kept area's place)
+    rename mn_bur_oak_trail "Bur Oak Trail" -> "Bur Oak Trail Routes"
+    parent mn_bur_oak_trail -> mn_bur_oak_trail_2
+#200 usa.new_york keep ny_crane_mountain [New York › Adirondacks › G: Indian Lake Region]
+  fold ny_crane_mountain_2 "Crane Mountain" into ny_crane_mountain "Crane Mountain"
+    parent ny_southeast_slopes -> ny_crane_mountain
+    parent ny_southwest_slopes -> ny_crane_mountain
+    delete ny_crane_mountain_2
+#1 usa.alaska keep ak_cracked_ice [Alaska › Anchorage & South Central Alaska › Anchorage & South Central Alaska Ice › Valdez › Thompson Pass]
+  fold ak_cracked_ice_2 "Cracked ice" into ak_cracked_ice "Cracked Ice"
+    delete ak_cracked_ice_2
+#5 usa.alaska keep ak_sunshine_ridge [Alaska › Anchorage & South Central Alaska › Seward Highway]
+  fold ak_sunshine_ridge_area "Sunshine Ridge Area" into ak_sunshine_ridge "Sunshine Ridge"
+    delete ak_sunshine_ridge_area
+#9 usa.arizona keep az_granite_mountain [Arizona › Central Arizona › **Prescott Area]
+  fold az_granite_mountain_2 "Granite Mountain" into az_granite_mountain "Granite Mountain"
+    parent az_granite_basin_lake -> az_granite_mountain
+    parent az_mint_wash -> az_granite_mountain
+    parent az_serengeti -> az_granite_mountain
+    delete az_granite_mountain_2
+#17 usa.arizona keep az_sullivan_s_canyon [Arizona › Central Arizona › **Prescott Area]
+  fold az_sullivan_s_canyon_2 "Sullivan's Canyon" into az_sullivan_s_canyon "Sullivan's Canyon"
+    parent az_gully_boulders_the -> az_sullivan_s_canyon
+    delete az_sullivan_s_canyon_2
+#45 usa.california keep ca_horseshoe_lake_area [California › Sierra Eastside › Mammoth Lakes Area]
+  fold ca_horseshoe_lake "Horseshoe Lake" into ca_horseshoe_lake_area "Horseshoe Lake Area"
+    parent ca_horseshoe_slabs_boulder -> ca_horseshoe_lake_area
+    parent ca_dog_boulder -> ca_horseshoe_lake_area
+    delete ca_horseshoe_lake
+#101 usa.colorado keep co_bambi_s_trail [Colorado › Gunnison › Hartman Rocks]
+  fold co_bambi_s_trail_area "Bambi's Trail Area" into co_bambi_s_trail "Bambi's Trail"
+    parent co_bambi_s_trail_area -> co_hartman_rocks  (takes the kept area's place)
+    parent co_bambi_s_trail -> co_bambi_s_trail_area
+#149 usa.idaho keep id_checkered_demon [Idaho › South Idaho › City of Rocks]
+  fold id_checkered_demon_2 "Checkered Demon" into id_checkered_demon "Checkered Demon"
+    parent id_checkered_demon_2 -> id_city_of_rocks  (takes the kept area's place)
+    rename id_checkered_demon "Checkered Demon" -> "Checkered Demon Routes"
+    parent id_checkered_demon -> id_checkered_demon_2
+#185 usa.nevada keep nv_white_rock_spring [Nevada › Southern Nevada › Red Rocks]
+  fold nv_white_rock_spring_2 "White Rock Spring" into nv_white_rock_spring "White Rock Spring"
+    parent nv_stooge_boulders -> nv_white_rock_spring
+    parent nv_space_oddity -> nv_white_rock_spring
+    parent nv_supple_leopard -> nv_white_rock_spring
+    parent nv_ziggy_stardust -> nv_white_rock_spring
+    delete nv_white_rock_spring_2
+#201 usa.new_york keep ny_loon_lake_mtn [New York › Adirondacks › K: Northern Region]
+  fold ny_loon_lake_mt "Loon Lake Mt" into ny_loon_lake_mtn "Loon Lake Mtn"
+    delete ny_loon_lake_mt
+#205 usa.new_york keep ny_upper_washbowl_cliff [New York › Adirondacks › B: Chapel Pond Pass]
+  fold ny_upper_washbowl_cliff_ice "Upper Washbowl Cliff Ice" into ny_upper_washbowl_cliff "Upper Washbowl Cliff"
+    delete ny_upper_washbowl_cliff_ice
+#217 usa.utah keep ut_middle_fork [Utah › Central Utah › Maple Canyon]
+  fold ut_the_middle_fork_ice_climbs "The Middle Fork Ice Climbs" into ut_middle_fork "Middle Fork"
+    parent ut_the_middle_fork_ice_climbs -> ut_middle_fork
+#241 usa.wisconsin keep wi_cox_hollow_2 [Wisconsin › South › Governor Dodge State Park]
+  fold wi_cox_hollow "Cox Hollow" into wi_cox_hollow_2 "Cox Hollow"
+    rename wi_cox_hollow "Cox Hollow" -> "Cox Hollow Ice Climbs"
+    parent wi_cox_hollow -> wi_cox_hollow_2
+#62 usa.california keep ca_rainbow [California › Lake Tahoe › I-80 Corridor]
+  fold ca_rainbow_2 "Rainbow" into ca_rainbow "Rainbow"
+    parent ca_parking_lot_boulder_3 -> ca_rainbow
+    parent ca_main_boulders_2 -> ca_rainbow
+    parent ca_soda_punk_boulder -> ca_rainbow
+    parent ca_upper_rainbow -> ca_rainbow
+    parent ca_double_wide -> ca_rainbow
+    parent ca_trigantor -> ca_rainbow
+    parent ca_ginja_ninja -> ca_rainbow
+    parent ca_sugar_cube -> ca_rainbow
+    delete ca_rainbow_2
+#74 usa.california keep ca_t_j_lake [California › Sierra Eastside › Mammoth Lakes Area]
+  fold ca_t_j_lake_2 "T J Lake" into ca_t_j_lake "T J Lake"
+    parent ca_t_j_slabs -> ca_t_j_lake
+    parent ca_lake_boulder -> ca_t_j_lake
+    parent ca_medicine_boulder -> ca_t_j_lake
+    parent ca_spoon_boulder -> ca_t_j_lake
+    parent ca_killer_wall -> ca_t_j_lake
+    delete ca_t_j_lake_2
+#134 usa.colorado keep co_stanley_canyon [Colorado › Colorado Springs › Air Force Academy]
+  fold co_stanley_canyon_ice "Stanley Canyon Ice" into co_stanley_canyon "Stanley Canyon"
+    parent co_stanley_canyon_ice -> co_stanley_canyon
+#150 usa.idaho keep id_dungeon_the [Idaho › South Idaho › City of Rocks]
+  fold id_dungeon_the_2 "Dungeon, The" into id_dungeon_the "Dungeon, The"
+    parent id_dungeon_the_2 -> id_city_of_rocks  (takes the kept area's place)
+    rename id_dungeon_the "Dungeon, The" -> "The Dungeon Routes"
+    parent id_dungeon_the -> id_dungeon_the_2
+#202 usa.new_york keep ny_silver_lake [New York › Adirondacks › K: Northern Region]
+  fold ny_silver_lake_2 "Silver Lake" into ny_silver_lake "Silver Lake"
+    parent ny_center_of_progress -> ny_silver_lake
+    parent ny_tsunami_wall -> ny_silver_lake
+    parent ny_potter_mountain -> ny_silver_lake
+    delete ny_silver_lake_2
+#222 usa.vermont keep vt_bolton_dome [Vermont › 1. Northern Vermont › Bolton Area]
+  fold vt_bolton_dome_the "Bolton Dome, The" into vt_bolton_dome "Bolton Dome"
+    parent vt_interstate_boulder -> vt_bolton_dome
+    parent vt_something_chossy_boulder -> vt_bolton_dome
+    parent vt_grandma_s_house -> vt_bolton_dome
+    parent vt_randy_bobandy -> vt_bolton_dome
+    parent vt_shenanigans_boulder_the -> vt_bolton_dome
+    delete vt_bolton_dome_the
+#226 usa.vermont keep vt_revolution_wall [Vermont › 1. Northern Vermont › Bolton Area]
+  fold vt_revolution_wall_2 "Revolution Wall" into vt_revolution_wall "Revolution Wall"
+    delete vt_revolution_wall_2
+#7 usa.arizona keep az_mt_elden_crags [Arizona › Northern Arizona › Flagstaff Area]
+  fold az_mt_elden_areas "Mt. Elden Areas" into az_mt_elden_crags "Mt. Elden Crags"
+    parent az_skyline_boulders -> az_mt_elden_crags
+    parent az_dragon_eggz -> az_mt_elden_crags
+    parent az_pipeline_trail_boulders -> az_mt_elden_crags
+    parent az_bird_sanctuary -> az_mt_elden_crags
+    parent az_middle_elden -> az_mt_elden_crags
+  fold az_west_elden_2 "West Elden" into az_west_elden "West Elden"
+    rename az_west_elden_2 "West Elden" -> "West Elden Bouldering"
+    parent az_west_elden_2 -> az_west_elden
+    parent az_elden_springs -> az_mt_elden_crags
+  fold az_solitude_canyon_2 "Solitude Canyon" into az_solitude_canyon "Solitude Canyon"
+    rename az_solitude_canyon_2 "Solitude Canyon" -> "Solitude Canyon Bouldering"
+    parent az_solitude_canyon_2 -> az_solitude_canyon
+    parent az_east_elden_below_lost_elden -> az_mt_elden_crags
+    parent az_gloria_s -> az_mt_elden_crags
+    parent az_fatmans_loop -> az_mt_elden_crags
+    parent az_elysian_boulders -> az_mt_elden_crags
+    delete az_mt_elden_areas
+#19 usa.arizona keep az_west_clear_creek [Arizona › Northern Arizona › Central Mogollon Rim]
+  fold az_west_clear_creek_2 "West Clear Creek" into az_west_clear_creek "West Clear Creek"
+    parent az_northern_satellite_area -> az_west_clear_creek
+    parent az_main_creek -> az_west_clear_creek
+    parent az_southern_satellite_area -> az_west_clear_creek
+    delete az_west_clear_creek_2
+#35 usa.california keep ca_carson_peak [California › Sierra Eastside › June Lake Area]
+  fold ca_carson_peak_ice_2 "Carson Peak Ice" into ca_carson_peak "Carson Peak"
+  fold ca_carson_peak_ice_2 "Carson Peak Ice" into ca_carson_peak_ice "Carson Peak Ice"
+    delete ca_carson_peak_ice_2
+#51 usa.california keep ca_lake_george [California › Sierra Eastside › Mammoth Lakes Area]
+  fold ca_lake_george_2 "Lake George" into ca_lake_george "Lake George"
+    parent ca_family_boulders -> ca_lake_george
+    delete ca_lake_george_2
+#99 usa.colorado keep co_apache_peak [Colorado › Alpine Rock › Indian Peaks]
+  fold co_apache_peak_2 "Apache Peak" into co_apache_peak "Apache Peak"
+    delete co_apache_peak_2
+#115 usa.colorado keep co_glacier_gorge [Colorado › Alpine Rock › RMNP - Rock]
+  fold co_glacier_gorge_2 "Glacier Gorge" into co_glacier_gorge "Glacier Gorge"
+    parent co_thatchtop_mt_se_aspect -> co_glacier_gorge
+    parent co_glacier_creek_drainage_including_black_lake_area -> co_glacier_gorge
+    parent co_overflow_and_jewell_lake -> co_glacier_gorge
+    parent co_long_s_peak_western_aspect -> co_glacier_gorge
+  fold co_mchenry_s_peak_2 "McHenry's Peak" into co_mchenry_s_peak "McHenry's Peak"
+    delete co_mchenry_s_peak_2
+    parent co_chief_s_head_peak -> co_glacier_gorge
+    delete co_glacier_gorge_2
+#143 usa.connecticut keep ct_right_knee [Connecticut › Western Coastal Slope › Sleeping Giant State Park]
+  fold ct_right_knee_2 "Right Knee" into ct_right_knee "Right Knee"
+    delete ct_right_knee_2
+#151 usa.idaho keep id_elephant_rock [Idaho › South Idaho › City of Rocks]
+  fold id_elephant_rock_2 "Elephant Rock" into id_elephant_rock "Elephant Rock"
+    rename id_elephant_rock_2 "Elephant Rock" -> "Elephant Rock Bouldering"
+    parent id_elephant_rock_2 -> id_elephant_rock
+#199 usa.new_york keep ny_azure_mountain [New York › Adirondacks › K: Northern Region]
+  fold ny_azure_mountain_2 "Azure Mountain" into ny_azure_mountain "Azure Mountain"
+    parent ny_azure_mountain_2 -> ny_k_northern_region  (takes the kept area's place)
+    rename ny_azure_mountain "Azure Mountain" -> "Azure Mountain Routes"
+    parent ny_azure_mountain -> ny_azure_mountain_2
+#203 usa.new_york keep ny_starbuck_mountain [New York › Adirondacks › G: Indian Lake Region]
+  fold ny_starbuck_mountain_2 "Starbuck Mountain" into ny_starbuck_mountain "Starbuck Mountain"
+  fold ny_starbuck_left_2 "Starbuck Left" into ny_starbuck_left "Starbuck Left"
+    delete ny_starbuck_left_2
+  fold ny_starbuck_central_2 "Starbuck Central" into ny_starbuck_central "Starbuck Central"
+    delete ny_starbuck_central_2
+  fold ny_starbuck_right_2 "Starbuck Right" into ny_starbuck_right "Starbuck Right"
+    rename ny_starbuck_right_2 "Starbuck Right" -> "Starbuck Right Ice Climbs"
+    parent ny_starbuck_right_2 -> ny_starbuck_right
+    delete ny_starbuck_mountain_2
+suffix Mendenhall Towers ~ Mendenhall Towers Ice/Mixed usa.alaska keep ak_mendenhall_towers [Alaska › Southeastern Alaska/Coastal Range › Juneau]
+  fold ak_mendenhall_towers_ice_mixed "Mendenhall Towers Ice/Mixed" into ak_mendenhall_towers "Mendenhall Towers"
+    parent ak_mendenhall_towers_ice_mixed -> ak_mendenhall_towers
+suffix Thumb Butte ~ Thumb Butte Boulders usa.arizona keep az_thumb_butte [Arizona › Central Arizona › **Prescott Area]
+  fold az_thumb_butte_boulders "Thumb Butte Boulders" into az_thumb_butte "Thumb Butte"
+    parent az_outfrumunders -> az_thumb_butte
+    parent az_upper_outfromunder_boulder -> az_thumb_butte
+    parent az_new_outfromunder_boulders -> az_thumb_butte
+    delete az_thumb_butte_boulders
+suffix Turkey Flat ~ Turkey flat boulders usa.arizona keep az_turkey_flat [Arizona › Southern Arizona › Pinaleno mtns. (Mt. Graham)]
+  fold az_turkey_flat_boulders "Turkey flat boulders" into az_turkey_flat "Turkey Flat"
+    delete az_turkey_flat_boulders
+suffix Bigcone and Ladybug Canyons ~ Bigcone and Ladybug Canyons (bouldering) usa.california keep ca_bigcone_and_ladybug_canyons [California › Central Coast › Hwy 33/Ojai]
+  fold ca_bigcone_and_ladybug_canyons_bouldering "Bigcone and Ladybug Canyons (bouldering)" into ca_bigcone_and_ladybug_canyons "Bigcone and Ladybug Canyons"
+    parent ca_in_the_beginning -> ca_bigcone_and_ladybug_canyons
+    delete ca_bigcone_and_ladybug_canyons_bouldering
+suffix Drug Dome ~ Drug Dome Boulders usa.california keep ca_drug_dome [California › Yosemite National Park › Tuolumne Meadows]
+  fold ca_drug_dome_boulders "Drug Dome Boulders" into ca_drug_dome "Drug Dome"
+    parent ca_drug_dome_boulders -> ca_tuolumne_meadows  (takes the kept area's place)
+    rename ca_drug_dome_boulders "Drug Dome Boulders" -> "Drug Dome"
+    rename ca_drug_dome "Drug Dome" -> "Drug Dome Routes"
+    parent ca_drug_dome -> ca_drug_dome_boulders
+suffix Geology Tour Road ~ Geology Tour Road Bouldering usa.california keep ca_geology_tour_road [California › Joshua Tree National Park › Queen Valley Area]
+  fold ca_geology_tour_road_bouldering "Geology Tour Road Bouldering" into ca_geology_tour_road "Geology Tour Road"
+  fold ca_towers_of_uncertainty_2 "Towers of Uncertainty" into ca_towers_of_uncertainty "Towers of Uncertainty"
+    parent ca_arete_boulder_2 -> ca_towers_of_uncertainty
+    parent ca_base_layer_boulder -> ca_towers_of_uncertainty
+  fold ca_sunlight_rock_2 "Sunlight Rock" into ca_sunlight_rock "Sunlight Rock"
+    delete ca_sunlight_rock_2
+    parent ca_uncertain_boulder -> ca_towers_of_uncertainty
+    parent ca_uncertain_traverse_boulder -> ca_towers_of_uncertainty
+    parent ca_stoney_point_boulder -> ca_towers_of_uncertainty
+  fold ca_cave_rock_3 "Cave Rock" into ca_cave_rock_2 "Cave Rock"
+    rename ca_cave_rock_3 "Cave Rock" -> "Cave Rock Bouldering"
+    parent ca_cave_rock_3 -> ca_cave_rock_2
+    parent ca_side_kick_boulder -> ca_towers_of_uncertainty
+    parent ca_scum_bag_boulder -> ca_towers_of_uncertainty
+    parent ca_pinched_egg_boulder -> ca_towers_of_uncertainty
+    delete ca_towers_of_uncertainty_2
+  fold ca_virgin_islands_area_2 "Virgin Islands Area" into ca_virgin_islands_area "Virgin Islands Area"
+    parent ca_lechlinksi_cracks_area -> ca_virgin_islands_area
+    parent ca_shark_fin_area -> ca_virgin_islands_area
+  fold ca_volcano_area_the "Volcano Area, The" into ca_volcano_the "Volcano, The"
+    parent ca_volcano_area_the -> ca_virgin_islands_area  (takes the kept area's place)
+    parent ca_volcano_the -> ca_volcano_area_the
+    delete ca_virgin_islands_area_2
+    parent ca_western_belt -> ca_geology_tour_road
+    delete ca_geology_tour_road_bouldering
+suffix Lake Audrain ~ Lake Audrain Bouldering usa.california keep ca_lake_audrain [California › Lake Tahoe › South Shore]
+  fold ca_lake_audrain_bouldering "Lake Audrain Bouldering" into ca_lake_audrain "Lake Audrain"
+    parent ca_lake_audrain_bouldering -> ca_south_shore_2  (takes the kept area's place)
+    rename ca_lake_audrain_bouldering "Lake Audrain Bouldering" -> "Lake Audrain"
+    rename ca_lake_audrain "Lake Audrain" -> "Lake Audrain Other Climbs"
+    parent ca_lake_audrain -> ca_lake_audrain_bouldering
+suffix Loveland ~ Loveland Bouldering usa.california keep ca_loveland [California › Joshua Tree National Park › Pinto Basin]
+  fold ca_loveland_bouldering "Loveland Bouldering" into ca_loveland "Loveland"
+    parent ca_rosetta_stone_the -> ca_loveland
+    parent ca_xenolithic_boulder -> ca_loveland
+    parent ca_boulder_2_4 -> ca_loveland
+    parent ca_lessons_boulder -> ca_loveland
+    delete ca_loveland_bouldering
+suffix Malibu Creek State Park ~ Malibu Creek State Park Bouldering usa.california keep ca_malibu_creek_state_park [California › Los Angeles Basin › Santa Monica Mountains]
+  fold ca_malibu_creek_state_park_bouldering "Malibu Creek State Park Bouldering" into ca_malibu_creek_state_park "Malibu Creek State Park"
+  fold ca_stumbling_blocks_area "Stumbling Blocks Area" into ca_stumbling_blocks "Stumbling Blocks"
+    parent ca_stumbling_blocks_area -> ca_malibu_creek_state_park  (takes the kept area's place)
+    parent ca_stumbling_blocks -> ca_stumbling_blocks_area
+    parent ca_planet_of_the_apes_area -> ca_malibu_creek_state_park
+  fold ca_ghetto_wall_boulders_the "Ghetto Wall Boulders, The" into ca_ghetto_wall "Ghetto Wall"
+    parent ca_ghetto_wall_boulders_the -> ca_malibu_creek_state_park  (takes the kept area's place)
+    rename ca_ghetto_wall_boulders_the "Ghetto Wall Boulders, The" -> "Ghetto Wall"
+    rename ca_ghetto_wall "Ghetto Wall" -> "Ghetto Wall Routes"
+    parent ca_ghetto_wall -> ca_ghetto_wall_boulders_the
+    parent ca_matts_boulders_aka_the_nest -> ca_malibu_creek_state_park
+    delete ca_malibu_creek_state_park_bouldering
+suffix Muffins Boulders ~ Muffins, The usa.california keep ca_muffins_the [California › San Francisco Bay Area › Castle Rock Area]
+  fold ca_muffins_boulders "Muffins Boulders" into ca_muffins_the "Muffins, The"
+  fold ca_lower_muffins_boulders "Lower Muffins Boulders" into ca_lower_muffins "Lower Muffins"
+    delete ca_lower_muffins_boulders
+    delete ca_muffins_boulders
+suffix Queen Mountain ~ Queen Mountain Bouldering usa.california keep ca_queen_mountain [California › Joshua Tree National Park › Queen Valley Area]
+  fold ca_queen_mountain_bouldering "Queen Mountain Bouldering" into ca_queen_mountain "Queen Mountain"
+    parent ca_watchtower_the_5 -> ca_queen_mountain
+    parent ca_underground_the -> ca_queen_mountain
+    parent ca_queen_mountain_base -> ca_queen_mountain
+    delete ca_queen_mountain_bouldering
+suffix Summit Rock ~ Summit Rock boulders usa.california keep ca_summit_rock [California › San Francisco Bay Area › Castle Rock Area]
+  fold ca_summit_rock_boulders "Summit Rock boulders" into ca_summit_rock "Summit Rock"
+    parent ca_summit_rock_boulders -> ca_castle_rock_area  (takes the kept area's place)
+    rename ca_summit_rock_boulders "Summit Rock boulders" -> "Summit Rock"
+    rename ca_summit_rock "Summit Rock" -> "Summit Rock Routes"
+    parent ca_summit_rock -> ca_summit_rock_boulders
+suffix Tenaya Lake Area ~ Tenaya Lake Boulders usa.california keep ca_tenaya_lake_area [California › Yosemite National Park › Tuolumne Meadows]
+  fold ca_tenaya_lake_boulders "Tenaya Lake Boulders" into ca_tenaya_lake_area "Tenaya Lake Area"
+    parent ca_tenaya_hillside -> ca_tenaya_lake_area
+    parent ca_big_lebowski_area -> ca_tenaya_lake_area
+    delete ca_tenaya_lake_boulders
+suffix Western Wilderness ~ Western Wilderness Boulders usa.california keep ca_western_wilderness [California › Joshua Tree National Park › Indian Cove]
+  fold ca_western_wilderness_boulders "Western Wilderness Boulders" into ca_western_wilderness "Western Wilderness"
+    parent ca_western_wilderness_boulders -> ca_indian_cove  (takes the kept area's place)
+    rename ca_western_wilderness_boulders "Western Wilderness Boulders" -> "Western Wilderness"
+    rename ca_western_wilderness "Western Wilderness" -> "Western Wilderness Routes"
+    parent ca_western_wilderness -> ca_western_wilderness_boulders
+suffix Almost Asshole Rock ~ Almost Asshole Rock Bouldering usa.colorado keep co_almost_asshole_rock [Colorado › South Platte › Buffalo Creek]
+  fold co_almost_asshole_rock_bouldering "Almost Asshole Rock Bouldering" into co_almost_asshole_rock "Almost Asshole Rock"
+    parent co_almost_asshole_rock_bouldering -> co_buffalo_creek  (takes the kept area's place)
+    rename co_almost_asshole_rock_bouldering "Almost Asshole Rock Bouldering" -> "Almost Asshole Rock"
+    rename co_almost_asshole_rock "Almost Asshole Rock" -> "Almost Asshole Rock Routes"
+    parent co_almost_asshole_rock -> co_almost_asshole_rock_bouldering
+suffix Anarchy Wall ~ Anarchy Wall Boulders usa.colorado keep co_anarchy_wall_2 [Colorado › Golden › Clear Creek Canyon]
+  fold co_anarchy_wall_boulders "Anarchy Wall Boulders" into co_anarchy_wall_2 "Anarchy Wall"
+    delete co_anarchy_wall_boulders
+suffix Asshole Rock ~ Asshole Rock Bouldering usa.colorado keep co_asshole_rock [Colorado › South Platte › Buffalo Creek]
+  fold co_asshole_rock_bouldering "Asshole Rock Bouldering" into co_asshole_rock "Asshole Rock"
+    parent co_asshole_rock_bouldering -> co_buffalo_creek  (takes the kept area's place)
+    rename co_asshole_rock_bouldering "Asshole Rock Bouldering" -> "Asshole Rock"
+    rename co_asshole_rock "Asshole Rock" -> "Asshole Rock Routes"
+    parent co_asshole_rock -> co_asshole_rock_bouldering
+suffix Da Butts ~ Da Butts Bouldering usa.colorado keep co_da_butts [Colorado › South Platte › Buffalo Creek]
+  fold co_da_butts_bouldering "Da Butts Bouldering" into co_da_butts "Da Butts"
+    parent co_da_butts_bouldering -> co_buffalo_creek  (takes the kept area's place)
+    rename co_da_butts_bouldering "Da Butts Bouldering" -> "Da Butts"
+    rename co_da_butts "Da Butts" -> "Da Butts Routes"
+    parent co_da_butts -> co_da_butts_bouldering
+suffix Diamond Head ~ Diamond Head Bouldering usa.colorado keep co_diamond_head [Colorado › Boulder › Eldorado Canyon State Park]
+  fold co_diamond_head_bouldering "Diamond Head Bouldering" into co_diamond_head "Diamond Head"
+    delete co_diamond_head_bouldering
+suffix Little Eiger ~ Little Eiger Bouldering usa.colorado keep co_little_eiger [Colorado › Golden › Clear Creek Canyon]
+  fold co_little_eiger_bouldering "Little Eiger Bouldering" into co_little_eiger "Little Eiger"
+    delete co_little_eiger_bouldering
+suffix New Economy Cliff ~ New Economy Cliff Bouldering usa.colorado keep co_new_economy_cliff [Colorado › Golden › Clear Creek Canyon]
+  fold co_new_economy_cliff_bouldering "New Economy Cliff Bouldering" into co_new_economy_cliff "New Economy Cliff"
+    delete co_new_economy_cliff_bouldering
+suffix New River Wall Bouldering ~ New River Wall, The usa.colorado keep co_new_river_wall_the [Colorado › Golden › Clear Creek Canyon]
+  fold co_new_river_wall_bouldering "New River Wall Bouldering" into co_new_river_wall_the "New River Wall, The"
+    delete co_new_river_wall_bouldering
+suffix Nomad's Cave ~ Nomad's Cave Bouldering usa.colorado keep co_nomad_s_cave [Colorado › Golden › Clear Creek Canyon]
+  fold co_nomad_s_cave_bouldering "Nomad's Cave Bouldering" into co_nomad_s_cave "Nomad's Cave"
+    delete co_nomad_s_cave_bouldering
+suffix West Ridge Boulders ~ West Ridge, The usa.colorado keep co_west_ridge_the [Colorado › Boulder › Eldorado Canyon State Park]
+  fold co_west_ridge_boulders "West Ridge Boulders" into co_west_ridge_the "West Ridge, The"
+    parent co_west_ridge_boulders -> co_west_ridge_the
+suffix Owl Rock ~ Owl Rock Bouldering usa.idaho keep id_owl_rock [Idaho › South Idaho › City of Rocks]
+  fold id_owl_rock_bouldering "Owl Rock Bouldering" into id_owl_rock "Owl Rock"
+    parent id_nest_boulder_the -> id_owl_rock
+    parent id_songbird_boulder -> id_owl_rock
+    delete id_owl_rock_bouldering
+suffix Presque Isle ~ Presque Isle Bouldering usa.michigan keep mi_presque_isle [Michigan › Upper Peninsula › Marquette (and Central UP) Roped]
+  fold mi_presque_isle_bouldering "Presque Isle Bouldering" into mi_presque_isle "Presque Isle"
+    parent mi_black_rocks -> mi_presque_isle
+  fold mi_pinnacle_area_bouldering "Pinnacle area bouldering" into mi_pinnacle_area_the "Pinnacle area, The"
+    delete mi_pinnacle_area_bouldering
+    delete mi_presque_isle_bouldering
+suffix Secret Crag ~ Secret Crag bouldering usa.michigan keep mi_secret_crag [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › Big Bay]
+  fold mi_secret_crag_bouldering "Secret Crag bouldering" into mi_secret_crag "Secret Crag"
+    delete mi_secret_crag_bouldering
+suffix Black Velvet Canyon ~ Black Velvet Canyon Boulders usa.nevada keep nv_black_velvet_canyon [Nevada › Southern Nevada › Red Rocks]
+  fold nv_black_velvet_canyon_boulders "Black Velvet Canyon Boulders" into nv_black_velvet_canyon "Black Velvet Canyon"
+    parent nv_natasha_s_highball_boulder -> nv_black_velvet_canyon
+    parent nv_wet_dream_boulder -> nv_black_velvet_canyon
+    parent nv_normal_dream -> nv_black_velvet_canyon
+    parent nv_twin_towers_2 -> nv_black_velvet_canyon
+    parent nv_red_dragon_boulder_the -> nv_black_velvet_canyon
+    parent nv_creek_boulder -> nv_black_velvet_canyon
+    parent nv_in_our_time_boulder -> nv_black_velvet_canyon
+    parent nv_fountainhead_the -> nv_black_velvet_canyon
+    parent nv_black_boulder -> nv_black_velvet_canyon
+    delete nv_black_velvet_canyon_boulders
+suffix Bone Daddy Dome ~ Bone Daddy Dome Bouldering usa.nevada keep nv_bone_daddy_dome [Nevada › Southern Nevada › Moon (aka Knob Hill), The]
+  fold nv_bone_daddy_dome_bouldering "Bone Daddy Dome Bouldering" into nv_bone_daddy_dome "Bone Daddy Dome"
+    parent nv_bone_daddy_dome_bouldering -> nv_moon_aka_knob_hill_the  (takes the kept area's place)
+    rename nv_bone_daddy_dome_bouldering "Bone Daddy Dome Bouldering" -> "Bone Daddy Dome"
+    rename nv_bone_daddy_dome "Bone Daddy Dome" -> "Bone Daddy Dome Routes"
+    parent nv_bone_daddy_dome -> nv_bone_daddy_dome_bouldering
+suffix Calico Basin ~ Calico Basin Boulders usa.nevada keep nv_calico_basin [Nevada › Southern Nevada › Red Rocks]
+  fold nv_calico_basin_boulders "Calico Basin Boulders" into nv_calico_basin "Calico Basin"
+    parent nv_honeycomb_boulder -> nv_calico_basin
+    parent nv_stone_age_traverse -> nv_calico_basin
+    parent nv_swingers_boulder -> nv_calico_basin
+    parent nv_qq_boulder -> nv_calico_basin
+    parent nv_strategic_arms_boulder -> nv_calico_basin
+  fold nv_moderate_mecca "Moderate Mecca" into nv_moderate_mecca_2 "Moderate Mecca"
+    rename nv_moderate_mecca "Moderate Mecca" -> "Moderate Mecca Bouldering"
+    parent nv_moderate_mecca -> nv_moderate_mecca_2
+    parent nv_bone_grinder_boulder -> nv_calico_basin
+    parent nv_mr_smiley_boulders -> nv_calico_basin
+    parent nv_biscuits_and_gravy -> nv_calico_basin
+    parent nv_ash_creek_spring_boulders -> nv_calico_basin
+    parent nv_ash_canyon -> nv_calico_basin
+    parent nv_ruby_slipper_area -> nv_calico_basin
+    parent nv_fin_du_monde_drainage -> nv_calico_basin
+  fold nv_moderate_mecca_boulders "Moderate Mecca Boulders " into nv_moderate_mecca_2 "Moderate Mecca"
+    parent nv_friends_boulder_2 -> nv_moderate_mecca_2
+    parent nv_handcrack_boulder -> nv_moderate_mecca_2
+    delete nv_moderate_mecca_boulders
+    delete nv_calico_basin_boulders
+suffix Juniper Canyon ~ Juniper Canyon Boulders usa.nevada keep nv_juniper_canyon [Nevada › Southern Nevada › Red Rocks]
+  fold nv_juniper_canyon_boulders "Juniper Canyon Boulders" into nv_juniper_canyon "Juniper Canyon"
+    parent nv_superfly -> nv_juniper_canyon
+    parent nv_cubicle_the -> nv_juniper_canyon
+    parent nv_shoulder_boulder -> nv_juniper_canyon
+    parent nv_streak_sauce -> nv_juniper_canyon
+    delete nv_juniper_canyon_boulders
+suffix Lower Canyon ~ Lower Canyon Bouldering usa.nevada keep nv_lower_canyon [Nevada › Southern Nevada › Keyhole Canyon]
+  fold nv_lower_canyon_bouldering "Lower Canyon Bouldering" into nv_lower_canyon "Lower Canyon"
+    parent nv_jimbo_rocks -> nv_lower_canyon
+  fold nv_first_waterfall_bouldering "First Waterfall Bouldering" into nv_first_waterfall_area "First Waterfall Area"
+    delete nv_first_waterfall_bouldering
+    parent nv_front_boulder_wall -> nv_lower_canyon
+    parent nv_snake_eyes_corridor_bouldering -> nv_lower_canyon
+  fold nv_chicken_leg_bouldering "Chicken Leg Bouldering" into nv_chicken_leg "Chicken Leg"
+    parent nv_chicken_leg_bouldering -> nv_lower_canyon  (takes the kept area's place)
+    rename nv_chicken_leg_bouldering "Chicken Leg Bouldering" -> "Chicken Leg"
+    rename nv_chicken_leg "Chicken Leg" -> "Chicken Leg Routes"
+    parent nv_chicken_leg -> nv_chicken_leg_bouldering
+    delete nv_lower_canyon_bouldering
+suffix Oak Creek Canyon ~ Oak Creek Canyon Boulders usa.nevada keep nv_oak_creek_canyon [Nevada › Southern Nevada › Red Rocks]
+  fold nv_oak_creek_canyon_boulders "Oak Creek Canyon Boulders" into nv_oak_creek_canyon "Oak Creek Canyon"
+    parent nv_american_boulder -> nv_oak_creek_canyon
+    parent nv_areola_boulder -> nv_oak_creek_canyon
+    parent nv_cabana_boulder -> nv_oak_creek_canyon
+    parent nv_drunken_monkey_boulder -> nv_oak_creek_canyon
+    parent nv_get_moist_boulder -> nv_oak_creek_canyon
+    parent nv_kissed_boulder -> nv_oak_creek_canyon
+    parent nv_galaxy_gully -> nv_oak_creek_canyon
+    parent nv_beehive_knoll_area -> nv_oak_creek_canyon
+    parent nv_any_port_in_a_storm_area -> nv_oak_creek_canyon
+    parent nv_bees_knees_the -> nv_oak_creek_canyon
+    parent nv_blood_trails -> nv_oak_creek_canyon
+    parent nv_carapace_the -> nv_oak_creek_canyon
+    parent nv_desert_serenade -> nv_oak_creek_canyon
+    parent nv_get_burnt -> nv_oak_creek_canyon
+    parent nv_get_to_da_choppa -> nv_oak_creek_canyon
+    parent nv_group_decision_boulder -> nv_oak_creek_canyon
+    parent nv_headless_horseman_boulder -> nv_oak_creek_canyon
+    parent nv_shiatsu_boulder -> nv_oak_creek_canyon
+    parent nv_silly_patch_boulders -> nv_oak_creek_canyon
+    parent nv_sundial_the_3 -> nv_oak_creek_canyon
+    parent nv_tilt_shift_boulder -> nv_oak_creek_canyon
+    delete nv_oak_creek_canyon_boulders
+suffix Pine Creek Canyon ~ Pine Creek Canyon Boulders usa.nevada keep nv_pine_creek_canyon [Nevada › Southern Nevada › Red Rocks]
+  fold nv_pine_creek_canyon_boulders "Pine Creek Canyon Boulders" into nv_pine_creek_canyon "Pine Creek Canyon"
+    parent nv_terrace_canyon_boulders -> nv_pine_creek_canyon
+  fold nv_stick_gully_boulders "Stick Gully Boulders" into nv_stick_gully "Stick Gully"
+    parent nv_stick_gully_boulders -> nv_pine_creek_canyon  (takes the kept area's place)
+    rename nv_stick_gully_boulders "Stick Gully Boulders" -> "Stick Gully"
+    rename nv_stick_gully "Stick Gully" -> "Stick Gully Routes"
+    parent nv_stick_gully -> nv_stick_gully_boulders
+    parent nv_abutment -> nv_pine_creek_canyon
+    parent nv_crack_of_fire -> nv_pine_creek_canyon
+    delete nv_pine_creek_canyon_boulders
+suffix Sandstone Canyon ~ Sandstone Canyon Boulders usa.nevada keep nv_sandstone_canyon [Nevada › Southern Nevada › Red Rocks]
+  fold nv_sandstone_canyon_boulders "Sandstone Canyon Boulders" into nv_sandstone_canyon "Sandstone Canyon"
+    parent nv_crack_of_dawn -> nv_sandstone_canyon
+    parent nv_optimist_the -> nv_sandstone_canyon
+    parent nv_red_roof_inn -> nv_sandstone_canyon
+    parent nv_skeletons_on_the_zahara -> nv_sandstone_canyon
+    parent nv_under_the_desert_sky -> nv_sandstone_canyon
+    delete nv_sandstone_canyon_boulders
+suffix Sandstone Quarry ~ Sandstone Quarry Boulders usa.nevada keep nv_sandstone_quarry [Nevada › Southern Nevada › Red Rocks]
+  fold nv_sandstone_quarry_boulders "Sandstone Quarry Boulders" into nv_sandstone_quarry "Sandstone Quarry"
+    parent nv_java_boulder -> nv_sandstone_quarry
+    parent nv_monstro_s_gaping_maw -> nv_sandstone_quarry
+    parent nv_pier_boulders_the -> nv_sandstone_quarry
+    parent nv_propane_tank_boulder_the -> nv_sandstone_quarry
+    parent nv_trophy_crack -> nv_sandstone_quarry
+  fold nv_wake_up_wall_boulders "Wake-up Wall Boulders" into nv_the_wake_up_wall "The Wake-Up Wall"
+    delete nv_wake_up_wall_boulders
+    delete nv_sandstone_quarry_boulders
+suffix Southern Outcrops ~ Southern Outcrops (Bouldering) usa.nevada keep nv_southern_outcrops [Nevada › Southern Nevada › Red Rocks]
+  fold nv_southern_outcrops_bouldering "Southern Outcrops (Bouldering)" into nv_southern_outcrops "Southern Outcrops"
+    parent nv_southern_outcrops_bouldering -> nv_southern_outcrops
+suffix Western Fringe ~ Western Fringe Bouldering usa.nevada keep nv_western_fringe [Nevada › Southern Nevada › Keyhole Canyon]
+  fold nv_western_fringe_bouldering "Western Fringe Bouldering" into nv_western_fringe "Western Fringe"
+    parent nv_paiute_boulders -> nv_western_fringe
+    parent nv_hillside_boulders -> nv_western_fringe
+    delete nv_western_fringe_bouldering
+suffix Positron ~ Positron Bouldering usa.south_dakota keep sd_positron [South Dakota › East Side SD › Palisades State Park]
+  fold sd_positron_bouldering "Positron Bouldering" into sd_positron "Positron"
+    delete sd_positron_bouldering
+suffix Cone Area, The ~ Cone Bouldering, The usa.utah keep ut_cone_area_the [Utah › Southwest Utah › Cedar City]
+  fold ut_cone_bouldering_the "Cone Bouldering, The" into ut_cone_area_the "Cone Area, The"
+    delete ut_cone_bouldering_the
+suffix Upper West ~ Upper West Bouldering usa.vermont keep vt_upper_west [Vermont › 1. Northern Vermont › Bolton Area]
+  fold vt_upper_west_bouldering "Upper West Bouldering" into vt_upper_west "Upper West"
+    parent vt_boulders_south -> vt_upper_west
+    parent vt_boulders_north -> vt_upper_west
+    parent vt_boulders_central -> vt_upper_west
+    delete vt_upper_west_bouldering
+suffix Morning Rock ~ Morning Rock Bouldering usa.washington keep wa_morning_rock [Washington › Okanogan › Kettle Valley (Curlew)]
+  fold wa_morning_rock_bouldering "Morning Rock Bouldering" into wa_morning_rock "Morning Rock"
+    parent wa_roadside_boulders_the -> wa_morning_rock
+    parent wa_talus_boulders -> wa_morning_rock
+    delete wa_morning_rock_bouldering
+suffix Sandstone Boulders ~ Sandstone, The usa.wyoming keep wy_sandstone_the [Wyoming › Lander Area › Sinks Canyon]
+  fold wy_sandstone_boulders "Sandstone Boulders" into wy_sandstone_the "Sandstone, The"
+    parent wy_nature_center_boulders -> wy_sandstone_the
+    delete wy_sandstone_boulders
+#44 usa.california keep ca_hall_of_horrors_area [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area]
+  fold ca_hall_of_horrors_area_2 "Hall of Horrors Area" into ca_hall_of_horrors_area "Hall of Horrors Area"
+    parent ca_big_brother_boulders -> ca_hall_of_horrors_area
+    parent ca_cilley_rock -> ca_hall_of_horrors_area
+    parent ca_dwarf_the -> ca_hall_of_horrors_area
+    parent ca_garden_angel_boulder -> ca_hall_of_horrors_area
+    parent ca_horrors_boulder -> ca_hall_of_horrors_area
+    parent ca_alien_arete_boulder -> ca_hall_of_horrors_area
+    parent ca_real_hall_of_horrors_the -> ca_hall_of_horrors_area
+    parent ca_zarmog -> ca_hall_of_horrors_area
+    delete ca_hall_of_horrors_area_2
+#48 usa.california keep ca_intersection_rock [California › Joshua Tree National Park › Hidden Valley Area › Hidden Valley Campground]
+  fold ca_intersection_rock_2 "Intersection Rock" into ca_intersection_rock "Intersection Rock"
+    delete ca_intersection_rock_2
+#144 usa.connecticut keep ct_split_boulder_2 [Connecticut › CT Bouldering › Hurd Park › Hillside Boulders]
+  fold ct_split_boulder "Split Boulder" into ct_split_boulder_2 "Split Boulder"
+    delete ct_split_boulder
+#168 usa.michigan keep mi_hogback_mountain [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › 550 Roped]
+  fold mi_hogback "Hogback" into mi_hogback_mountain "Hogback Mountain"
+    parent mi_hogback -> mi_hogback_mountain
+#184 usa.nevada keep nv_sundial_the [Nevada › Southern Nevada › Red Rocks › First Pullout (Calico I)]
+  fold nv_sundial_the_2 "Sundial, The" into nv_sundial_the "Sundial, The"
+    keep both: Sundial (V0) — different climb: 5.12a vs V0
+    delete nv_sundial_the_2
+#212 usa.south_dakota keep sd_veiny [South Dakota › Needles Of Rushmore, The › Mount Rushmore National Memorial › Chopping Block]
+  fold sd_veiny_2 "Veiny" into sd_veiny "Veiny"
+    delete sd_veiny_2
+#216 usa.utah keep ut_box_canyon [Utah › Central Utah › Maple Canyon › Maple Canyon Road]
+  fold ut_the_box_canyon_ice_climbs "The Box Canyon Ice Climbs" into ut_box_canyon "Box Canyon"
+    parent ut_the_box_canyon_ice_climbs -> ut_box_canyon
+#232 usa.washington keep wa_clamshell_cave [Washington › Central-East Cascades, Wenatchee & Leavenworth › Leavenworth › Icicle Creek]
+  fold wa_clamshell_cave_2 "Clamshell Cave" into wa_clamshell_cave "Clamshell Cave"
+    delete wa_clamshell_cave_2
+#236 usa.washington keep wa_summit_area [Washington › Northwest Region › San Juan, Fidalgo & Whidbey Islands › Mount Erie]
+  fold wa_summit_area_2 "Summit Area" into wa_summit_area "Summit Area"
+    parent wa_green_wall_2 -> wa_summit_area
+    parent wa_lookout_slabs -> wa_summit_area
+    delete wa_summit_area_2
+#240 usa.wisconsin keep wi_bird_foot_buttress [Wisconsin › Baraboo Range › Devil's Lake › East Bluff 03 - West of the Quarry]
+  fold wi_bird_foot_buttress_2 "Bird-Foot Buttress" into wi_bird_foot_buttress "Bird-Foot Buttress"
+    delete wi_bird_foot_buttress_2
+#244 usa.wisconsin keep wi_tree_tower [Wisconsin › Baraboo Range › Devil's Lake › West Bluff 06 - West Bluff Towers]
+  fold wi_tree_tower_2 "Tree Tower" into wi_tree_tower "Tree Tower"
+    delete wi_tree_tower_2
+#25 usa.california keep ca_boreal_area [California › Lake Tahoe › I-80 Corridor › Donner Summit]
+  fold ca_boreal_area_2 "Boreal Area" into ca_boreal_area "Boreal Area"
+    parent ca_party_bus -> ca_boreal_area
+    parent ca_flying_saucer -> ca_boreal_area
+    delete ca_boreal_area_2
+#65 usa.california keep ca_reggie_dome [California › Joshua Tree National Park › Wonderland of Rocks › Wonderland North › North Wonderland Approach]
+  fold ca_reggie_dome_2 "Reggie Dome" into ca_reggie_dome "Reggie Dome"
+    delete ca_reggie_dome_2
+#105 usa.colorado keep co_buoux_block [Colorado › Denver Metropolitan Area Bouldering and Buildering › Denver South › Castlewood Canyon SP]
+  fold co_buoux_block_area "Buoux Block area" into co_buoux_block "Buoux Block"
+    parent co_buoux_block_area -> co_castlewood_canyon_sp  (takes the kept area's place)
+    parent co_buoux_block -> co_buoux_block_area
+#169 usa.michigan keep mi_sugar_cube [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › 550 Roped]
+  fold mi_sugar_cube_the "Sugar Cube, The" into mi_sugar_cube "Sugar Cube"
+    delete mi_sugar_cube_the
+#181 usa.nevada keep nv_echo_falls_2 [Nevada › Southern Nevada › Mount Charleston › Mount Charleston Winter › Echo Falls Area]
+  fold nv_echo_falls_area_2 "Echo Falls Area" into nv_echo_falls_2 "Echo Falls"
+    parent nv_echo_falls_area_2 -> nv_echo_falls_area_3  (takes the kept area's place)
+    parent nv_echo_falls_2 -> nv_echo_falls_area_2
+#229 usa.washington keep wa_barney_s_rubble [Washington › Central-East Cascades, Wenatchee & Leavenworth › Leavenworth › Icicle Creek]
+  fold wa_barney_s_rubble_2 "Barney's Rubble" into wa_barney_s_rubble "Barney's Rubble"
+    delete wa_barney_s_rubble_2
+#245 usa.wisconsin keep wi_white_wall [Wisconsin › Baraboo Range › Devil's Lake › East Bluff 03 - West of the Quarry]
+  fold wi_white_wall_2 "White Wall" into wi_white_wall "White Wall"
+    delete wi_white_wall_2
+#2 usa.alaska keep ak_monolith_the [Alaska › Anchorage & South Central Alaska › Hatcher Pass › Archangel Valley Sport and Traditional Climbing]
+  fold ak_monolith_area "Monolith Area" into ak_monolith_the "Monolith, The"
+    parent ak_monolith_area -> ak_archangel_valley_sport_and_traditional_climbing  (takes the kept area's place)
+    parent ak_monolith_the -> ak_monolith_area
+#6 usa.arizona keep az_council_rocks_2 [Arizona › Southern Arizona › Cochise Stronghold › West Stronghold]
+  fold az_council_rocks "Council Rocks" into az_council_rocks_2 "Council Rocks"
+    parent az_entrance_boulders_5 -> az_council_rocks_2
+    parent az_laundry_basket_the -> az_council_rocks_2
+    parent az_the_bean_field -> az_council_rocks_2
+    parent az_susurradores -> az_council_rocks_2
+    delete az_council_rocks
+#18 usa.arizona keep az_sweet_rock [Arizona › Southern Arizona › Cochise Stronghold › West Stronghold]
+  fold az_sweet_rock_2 "Sweet Rock" into az_sweet_rock "Sweet Rock"
+    parent az_sweet_rock_2 -> az_west_stronghold  (takes the kept area's place)
+    rename az_sweet_rock "Sweet Rock" -> "Sweet Rock Routes"
+    parent az_sweet_rock -> az_sweet_rock_2
+#34 usa.california keep ca_cap_rock_area [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area]
+  fold ca_cap_rock_3 "Cap Rock" into ca_cap_rock_area "Cap Rock Area"
+  fold ca_cap_rock_3 "Cap Rock" into ca_cap_rock_2 "Cap Rock"
+    rename ca_cap_rock_3 "Cap Rock" -> "Cap Rock Bouldering"
+    parent ca_cap_rock_3 -> ca_cap_rock_2
+#170 usa.michigan keep mi_wetmore_pond_3 [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › 550 Roped]
+  fold mi_wetmore_pond_2 "Wetmore Pond" into mi_wetmore_pond_3 "Wetmore Pond"
+    parent mi_wetmore_pond_2 -> mi_550_roped  (takes the kept area's place)
+    rename mi_wetmore_pond_3 "Wetmore Pond" -> "Wetmore Pond Other Climbs"
+    parent mi_wetmore_pond_3 -> mi_wetmore_pond_2
+#174 usa.minnesota keep mn_cube_the [Minnesota › Blue Mounds State Park (Luverne) › Bouldering @ Blue Mounds › North Quarry Area]
+  fold mn_cube_the_2 "Cube, The" into mn_cube_the "Cube, The"
+    delete mn_cube_the_2
+#59 usa.california keep ca_planet_x_area [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area]
+  fold ca_planet_x_area_2 "Planet X Area" into ca_planet_x_area "Planet X Area"
+    parent ca_boulder_crack_rock -> ca_planet_x_area
+    parent ca_newton_s_law_boulder -> ca_planet_x_area
+    parent ca_ok_corridor -> ca_planet_x_area
+    parent ca_planet_x_boulder -> ca_planet_x_area
+    parent ca_jerry_s_boulder -> ca_planet_x_area
+    parent ca_satellite_boulder -> ca_planet_x_area
+    delete ca_planet_x_area_2
+#71 usa.california keep ca_sports_challenge_rock [California › Joshua Tree National Park › Hidden Valley Area › Real Hidden Valley]
+  fold ca_sports_challenge_rock_2 "Sports Challenge Rock" into ca_sports_challenge_rock "Sports Challenge Rock"
+    rename ca_sports_challenge_rock_2 "Sports Challenge Rock" -> "Sports Challenge Rock Bouldering"
+    parent ca_sports_challenge_rock_2 -> ca_sports_challenge_rock
+#75 usa.california keep ca_talking_heads [California › San Jacinto Mountains › Black Mountain › Boulder Basin]
+  fold ca_talking_heads_area "Talking Heads Area" into ca_talking_heads "Talking Heads"
+    parent ca_and_she_was_boulder -> ca_talking_heads
+    parent ca_born_boulder -> ca_talking_heads
+    delete ca_talking_heads_area
+#167 usa.michigan keep mi_blueberry_boulders [Michigan › Upper Peninsula › Marquette (and Central UP) Bouldering › 550 Bouldering]
+  fold mi_blueberry_boulders_2 "Blueberry boulders" into mi_blueberry_boulders "Blueberry Boulders"
+    rename mi_blueberry_boulders_2 "Blueberry boulders" -> "Blueberry Boulders Ice Climbs"
+    parent mi_blueberry_boulders_2 -> mi_blueberry_boulders
+#171 usa.michigan keep mi_wetmore_pond_2 [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › 550 Roped]
+  fold mi_wetmore_pond "Wetmore Pond" into mi_wetmore_pond_2 "Wetmore Pond"
+    parent mi_ar_tection_boulder -> mi_wetmore_pond_2
+    parent mi_rock_loop_outcrops -> mi_wetmore_pond_2
+    parent mi_man_in_the_chair -> mi_wetmore_pond_2
+    parent mi_death_star_boulder -> mi_wetmore_pond_2
+    delete mi_wetmore_pond
+#231 usa.washington keep wa_castle_rock_2 [Washington › Central-East Cascades, Wenatchee & Leavenworth › Leavenworth › Tumwater Canyon]
+  fold wa_castle_rock_3 "Castle Rock" into wa_castle_rock_2 "Castle Rock"
+    rename wa_castle_rock_3 "Castle Rock" -> "Castle Rock Bouldering"
+    parent wa_castle_rock_3 -> wa_castle_rock_2
+#239 usa.west_virginia keep wv_cotton_top_2 [West Virginia › New River Gorge, The › New River Gorge Proper › Cotton Hill]
+  fold wv_cotton_top "Cotton Top" into wv_cotton_top_2 "Cotton Top"
+    parent wv_cotton_top -> wv_cotton_hill  (takes the kept area's place)
+    rename wv_cotton_top_2 "Cotton Top" -> "Cotton Top Routes"
+    parent wv_cotton_top_2 -> wv_cotton_top
+#243 usa.wisconsin keep wi_poison_ivy_wall [Wisconsin › Baraboo Range › Devil's Lake › East Bluff 03 - West of the Quarry]
+  fold wi_poison_ivy_wall_2 "Poison Ivy Wall" into wi_poison_ivy_wall "Poison Ivy Wall"
+    delete wi_poison_ivy_wall_2
+suffix Wasteland Bouldering, The ~ Wasteland, The usa.arizona keep az_wasteland_the [Arizona › Southern Arizona › Cochise Stronghold › East Stronghold]
+  fold az_wasteland_bouldering_the "Wasteland Bouldering, The" into az_wasteland_the "Wasteland, The"
+    parent az_wasteland_bouldering_the -> az_east_stronghold  (takes the kept area's place)
+    rename az_wasteland_bouldering_the "Wasteland Bouldering, The" -> "Wasteland, The"
+    rename az_wasteland_the "Wasteland, The" -> "The Wasteland Routes"
+    parent az_wasteland_the -> az_wasteland_bouldering_the
+suffix Watson Lake ~ Watson Lake Bouldering usa.arizona keep az_watson_lake [Arizona › Central Arizona › **Prescott Area › Granite Dells]
+  fold az_watson_lake_bouldering "Watson Lake Bouldering" into az_watson_lake "Watson Lake"
+    parent az_livin_large_area_3rd_degree_wall -> az_watson_lake
+    parent az_box_canyon_dome_and_dread_wall -> az_watson_lake
+    parent az_jetty_the -> az_watson_lake
+    parent az_leaning_pillar -> az_watson_lake
+    parent az_giant_steps -> az_watson_lake
+    parent az_outback_boulder -> az_watson_lake
+    parent az_basking_lizard_wall -> az_watson_lake
+    parent az_zen_ledges_the -> az_watson_lake
+    parent az_cranium_crack_area -> az_watson_lake
+    parent az_thor_s_chasm -> az_watson_lake
+    parent az_thor_s_marbles -> az_watson_lake
+    parent az_thor_s_right -> az_watson_lake
+    parent az_sanctuary_the -> az_watson_lake
+    parent az_hot_rock_and_the_gutter -> az_watson_lake
+    delete az_watson_lake_bouldering
+suffix Kindergarten Boulder ~ Kindergarten Boulder (Bouldering) usa.arkansas keep ar_kindergarten_boulder [Arkansas › North-Central Arkansas › Horseshoe Canyon Ranch › North Side]
+  fold ar_kindergarten_boulder_bouldering "Kindergarten Boulder (Bouldering)" into ar_kindergarten_boulder "Kindergarten Boulder"
+    delete ar_kindergarten_boulder_bouldering
+suffix Cap Rock ~ Cap Rock Bouldering usa.california keep ca_cap_rock_2 [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area › Cap Rock Area]
+  fold ca_cap_rock_bouldering "Cap Rock Bouldering" into ca_cap_rock_2 "Cap Rock"
+    parent ca_vibrator_boulder -> ca_cap_rock_2
+    parent ca_ayatollah_boulder -> ca_cap_rock_2
+    parent ca_collieherb_boulder -> ca_cap_rock_2
+    parent ca_four_corners_boulder -> ca_cap_rock_2
+    parent ca_french_roast_boulder -> ca_cap_rock_2
+    parent ca_gram_parsons_memorial_boulder -> ca_cap_rock_2
+    parent ca_hatrack_the -> ca_cap_rock_2
+    parent ca_parking_lot_boulder_8 -> ca_cap_rock_2
+    parent ca_pumping_monzonite_boulder -> ca_cap_rock_2
+    parent ca_sandy_wash_corridor -> ca_cap_rock_2
+    parent ca_powell_pinch_boulder -> ca_cap_rock_2
+    delete ca_cap_rock_bouldering
+suffix Hall of Horrors ~ Hall of Horrors Bouldering usa.california keep ca_hall_of_horrors [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area › Hall of Horrors Area]
+  fold ca_hall_of_horrors_bouldering "Hall of Horrors Bouldering" into ca_hall_of_horrors "Hall of Horrors"
+    parent ca_king_dome_area -> ca_hall_of_horrors
+    parent ca_meadows_boulder -> ca_hall_of_horrors
+    delete ca_hall_of_horrors_bouldering
+suffix North Star Wall ~ North Star Wall Bouldering usa.california keep ca_north_star_wall [California › Lake Tahoe › I-80 Corridor › Donner Summit]
+  fold ca_north_star_wall_bouldering "North Star Wall Bouldering" into ca_north_star_wall "North Star Wall"
+    delete ca_north_star_wall_bouldering
+suffix Planet X Area ~ Planet X Bouldering usa.california keep ca_planet_x_area [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area]
+  fold ca_planet_x_bouldering "Planet X Bouldering" into ca_planet_x_area "Planet X Area"
+  fold ca_love_nest_area_2 "Love Nest Area" into ca_love_nest_area "Love Nest Area"
+    parent ca_transplants_boulder -> ca_love_nest_area
+    parent ca_adolescents_block -> ca_love_nest_area
+    parent ca_wood_block_the -> ca_love_nest_area
+    delete ca_love_nest_area_2
+    parent ca_hang_the -> ca_planet_x_area
+    delete ca_planet_x_bouldering
+suffix Ryan Campground ~ Ryan Campground Bouldering usa.california keep ca_ryan_campground [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area]
+  fold ca_ryan_campground_bouldering "Ryan Campground Bouldering" into ca_ryan_campground "Ryan Campground"
+    parent ca_sacred_land -> ca_ryan_campground
+    parent ca_fidelman_boulder -> ca_ryan_campground
+    parent ca_camp_boulder_2 -> ca_ryan_campground
+    parent ca_chipped_bulge_the -> ca_ryan_campground
+    parent ca_facet_boulder_2 -> ca_ryan_campground
+    parent ca_flight_attendant_rock -> ca_ryan_campground
+    parent ca_master_boulder_2 -> ca_ryan_campground
+    parent ca_matatte_boulder -> ca_ryan_campground
+    parent ca_moffat_boulder -> ca_ryan_campground
+    parent ca_northern_headstone_boulders -> ca_ryan_campground
+    parent ca_powers_boulder_2 -> ca_ryan_campground
+    parent ca_roof_boulder_3 -> ca_ryan_campground
+    delete ca_ryan_campground_bouldering
+suffix School Rock ~ School Rock Bouldering usa.california keep ca_school_rock [California › Lake Tahoe › I-80 Corridor › Donner Summit]
+  fold ca_school_rock_bouldering "School Rock Bouldering" into ca_school_rock "School Rock"
+    parent ca_school_rock_4 -> ca_school_rock
+    parent ca_drawing_of_the_three_the -> ca_school_rock
+    delete ca_school_rock_bouldering
+suffix Tombstone ~ Tombstone Area Bouldering usa.california keep ca_tombstone [California › San Diego County › South San Diego County › Valley of the Moon]
+  fold ca_tombstone_area_bouldering "Tombstone Area Bouldering" into ca_tombstone "Tombstone"
+    delete ca_tombstone_area_bouldering
+suffix Chaos Canyon ~ Chaos Canyon Bouldering usa.colorado keep co_chaos_canyon_bouldering [Colorado › Alpine Rock › RMNP - Rock › RMNP Bouldering Areas]
+  fold co_chaos_canyon "Chaos Canyon" into co_chaos_canyon_bouldering "Chaos Canyon Bouldering"
+    parent co_chaos_creek -> co_chaos_canyon_bouldering
+    parent co_hallett_south_side -> co_chaos_canyon_bouldering
+    delete co_chaos_canyon
+suffix Parking Lot Boulders, The ~ Parking Lot, The usa.colorado keep co_parking_lot_the [Colorado › South Platte › Elevenmile Canyon › Heaven's Gate › Heaven's Gate Bouldering]
+  fold co_parking_lot_boulders_the "Parking Lot Boulders, The" into co_parking_lot_the "Parking Lot, The"
+    delete co_parking_lot_boulders_the
+suffix Hogback ~ Hogback Bouldering usa.michigan keep mi_hogback [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › 550 Roped › Hogback Mountain]
+  fold mi_hogback_bouldering "Hogback Bouldering" into mi_hogback "Hogback"
+    parent mi_hogback_bouldering -> mi_hogback_mountain  (takes the kept area's place)
+    rename mi_hogback_bouldering "Hogback Bouldering" -> "Hogback"
+    rename mi_hogback "Hogback" -> "Hogback Ice Climbs"
+    parent mi_hogback -> mi_hogback_bouldering
+suffix Flying Buttress ~ Flying Buttress Boulders usa.montana keep mt_flying_buttress [Montana › Southwest Region › Madison River Area › Bear Trap Road Routes]
+  fold mt_flying_buttress_boulders "Flying Buttress Boulders" into mt_flying_buttress "Flying Buttress"
+    parent mt_flying_buttress_boulders -> mt_bear_trap_road_routes  (takes the kept area's place)
+    rename mt_flying_buttress_boulders "Flying Buttress Boulders" -> "Flying Buttress"
+    rename mt_flying_buttress "Flying Buttress" -> "Flying Buttress Routes"
+    parent mt_flying_buttress -> mt_flying_buttress_boulders
+suffix Frigid Air Buttress ~ Frigid Air Buttress Boulders usa.nevada keep nv_frigid_air_buttress [Nevada › Southern Nevada › Red Rocks › Icebox Canyon]
+  fold nv_frigid_air_buttress_boulders "Frigid Air Buttress Boulders" into nv_frigid_air_buttress "Frigid Air Buttress"
+    delete nv_frigid_air_buttress_boulders
+suffix Snake Eyes Wall ~ Snake Eyes Wall Bouldering usa.nevada keep nv_snake_eyes_wall [Nevada › Southern Nevada › Keyhole Canyon › Lower Canyon]
+  fold nv_snake_eyes_wall_bouldering "Snake Eyes Wall Bouldering" into nv_snake_eyes_wall "Snake Eyes Wall"
+    delete nv_snake_eyes_wall_bouldering
+suffix Green Adjective Gully ~ Green Adjective Gully Bouldering usa.utah keep ut_green_adjective_gully [Utah › Wasatch Range › Central Wasatch › Little Cottonwood Canyon]
+  fold ut_green_adjective_gully_bouldering "Green Adjective Gully Bouldering" into ut_green_adjective_gully "Green Adjective Gully"
+    delete ut_green_adjective_gully_bouldering
+suffix Carnival Boulders, The ~ Carnival Crag usa.washington keep wa_carnival_crag [Washington › Central-East Cascades, Wenatchee & Leavenworth › Leavenworth › Icicle Creek]
+  fold wa_carnival_boulders_the "Carnival Boulders, The" into wa_carnival_crag "Carnival Crag"
+    delete wa_carnival_boulders_the
+suffix Far Side ~ Far Side Boulders usa.washington keep wa_far_side [Washington › Central-West Cascades & Seattle › North Bend & Vicinity › Exit 38]
+  fold wa_far_side_boulders "Far Side Boulders" into wa_far_side "Far Side"
+    parent wa_rhino_boulders -> wa_far_side
+    parent wa_pistol_boulders -> wa_far_side
+    parent wa_bow_boulder_the -> wa_far_side
+    parent wa_mile_high_club_boulders -> wa_far_side
+    delete wa_far_side_boulders
+#40 usa.california keep ca_eastern_rim [California › Sierra Eastside › Bishop Area › Volcanic Tablelands (Happy/Sad Boulders) › Sad Boulders]
+  fold ca_eastern_rim_2 "Eastern Rim" into ca_eastern_rim "Eastern Rim"
+    rename ca_eastern_rim_2 "Eastern Rim" -> "Eastern Rim Other Climbs"
+    parent ca_eastern_rim_2 -> ca_eastern_rim
+#13 usa.arizona keep az_oasis_the [Arizona › Central Arizona › **Prescott Area › Granite Dells › Granite Gardens]
+  fold az_oasis_the_2 "Oasis, The" into az_oasis_the "Oasis, The"
+    parent az_field_the -> az_oasis_the
+    delete az_oasis_the_2
+#61 usa.california keep ca_rabbit_warren [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area › Cap Rock Area]
+  fold ca_rabbit_warren_the "Rabbit Warren, The" into ca_rabbit_warren "Rabbit Warren"
+    parent ca_rabbit_warren_the -> ca_rabbit_warren
+#10 usa.arizona keep az_high_rappel_area [Arizona › Central Arizona › **Prescott Area › Granite Dells › Granite Gardens]
+  fold az_high_rappel_area_2 "High Rappel Area" into az_high_rappel_area "High Rappel Area"
+    rename az_high_rappel_area_2 "High Rappel Area" -> "High Rappel Area Bouldering"
+    parent az_high_rappel_area_2 -> az_high_rappel_area
+#46 usa.california keep ca_hungover_wall_2 [California › San Bernardino Mountains › Running Springs Area › Keller Peak › (h) Hungover Wall Area]
+  fold ca_hungover_wall "Hungover Wall" into ca_hungover_wall_2 "Hungover Wall"
+    rename ca_hungover_wall "Hungover Wall" -> "Hungover Wall Bouldering"
+    parent ca_hungover_wall -> ca_hungover_wall_2
+#50 usa.california keep ca_king_dome_area [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area › Hall of Horrors Area › Hall of Horrors]
+  fold ca_king_dome "King Dome" into ca_king_dome_area "King Dome Area"
+    parent ca_king_dome_east_face -> ca_king_dome_area
+    parent ca_king_dome_west_face -> ca_king_dome_area
+    delete ca_king_dome
+#82 usa.california keep ca_volcano_boulder_area [California › Joshua Tree National Park › Queen Valley Area › Geology Tour Road › Virgin Islands Area › Volcano Area, The]
+  fold ca_volcano_boulder "Volcano Boulder" into ca_volcano_boulder_area "Volcano Boulder Area"
+    parent ca_volcano_boulder -> ca_volcano_boulder_area
+#15 usa.arizona keep az_rappel_rock_2 [Arizona › Southern Arizona › Mount Lemmon (Santa Catalina Mountains) › Mount Lemmon (Catalina Highway) › 8 - Summit Crags]
+  fold az_rappel_rock "Rappel Rock" into az_rappel_rock_2 "Rappel Rock"
+    parent az_rappel_rock_gulley -> az_rappel_rock_2
+    parent az_crossbones_boulder -> az_rappel_rock_2
+    parent az_royale_boulder -> az_rappel_rock_2
+    parent az_skull_boulder -> az_rappel_rock_2
+    parent az_quartzite_spring_boulder -> az_rappel_rock_2
+    parent az_trailside_boulder -> az_rappel_rock_2
+    delete az_rappel_rock
+suffix East Creek Day Use Bouldering ~ East Creek Day Use Climbing usa.colorado keep co_east_creek_day_use_climbing [Colorado › Grand Junction Area › Unaweep Canyon › Nine Mile Hill › Nine Mile Roped › East Creek Day Use Area]
+  fold co_east_creek_day_use_bouldering "East Creek Day Use Bouldering" into co_east_creek_day_use_climbing "East Creek Day Use Climbing"
+    parent co_east_creek_day_use_bouldering -> co_east_creek_day_use_area  (takes the kept area's place)
+    rename co_east_creek_day_use_bouldering "East Creek Day Use Bouldering" -> "East Creek Day Use Climbing"
+    rename co_east_creek_day_use_climbing "East Creek Day Use Climbing" -> "East Creek Day Use Climbing Routes"
+    parent co_east_creek_day_use_climbing -> co_east_creek_day_use_bouldering
+suffix Four Blocks Bouldering ~ Four Blocks Crag usa.colorado keep co_four_blocks_crag [Colorado › Grand Junction Area › Unaweep Canyon › Nine Mile Hill › Nine Mile Roped]
+  fold co_four_blocks_bouldering "Four Blocks Bouldering" into co_four_blocks_crag "Four Blocks Crag"
+    parent co_four_blocks_bouldering -> co_nine_mile_roped  (takes the kept area's place)
+    rename co_four_blocks_bouldering "Four Blocks Bouldering" -> "Four Blocks Crag"
+    rename co_four_blocks_crag "Four Blocks Crag" -> "Four Blocks Crag Routes"
+    parent co_four_blocks_crag -> co_four_blocks_bouldering
+suffix Bread Loaf ~ Bread Loaf Bouldering usa.michigan keep mi_bread_loaf [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › 550 Roped › Sugarloaf Mtn Roped]
+  fold mi_bread_loaf_bouldering "Bread Loaf Bouldering" into mi_bread_loaf "Bread Loaf"
+    delete mi_bread_loaf_bouldering
+suffix Flying Frog Area ~ Flying Frog Bouldering usa.michigan keep mi_flying_frog_area [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › 550 Roped › Sugarloaf Mtn Roped]
+  fold mi_flying_frog_bouldering "Flying Frog Bouldering" into mi_flying_frog_area "Flying Frog Area"
+    delete mi_flying_frog_bouldering
+suffix Second Buttress ~ Second Buttress Bouldering usa.michigan keep mi_second_buttress [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › 550 Roped › Hogback Mountain]
+  fold mi_second_buttress_bouldering "Second Buttress Bouldering" into mi_second_buttress "Second Buttress"
+    delete mi_second_buttress_bouldering
+suffix Sunset Gully ~ Sunset Gully Bouldering usa.michigan keep mi_sunset_gully [Michigan › Upper Peninsula › Marquette (and Central UP) Roped › 550 Roped › Sugarloaf Mtn Roped]
+  fold mi_sunset_gully_bouldering "Sunset Gully Bouldering" into mi_sunset_gully "Sunset Gully"
+    delete mi_sunset_gully_bouldering
+suffix Pier Boulders, The ~ The Pier usa.nevada keep nv_the_pier [Nevada › Southern Nevada › Red Rocks › Sandstone Quarry › Parking Lot Area]
+  fold nv_pier_boulders_the "Pier Boulders, The" into nv_the_pier "The Pier"
+    delete nv_pier_boulders_the
+suffix Icicle Buttress ~ Icicle Buttress Boulders usa.washington keep wa_icicle_buttress [Washington › Central-East Cascades, Wenatchee & Leavenworth › Leavenworth › Icicle Creek › Icicle Buttress and Bob's Wall]
+  fold wa_icicle_buttress_boulders "Icicle Buttress Boulders" into wa_icicle_buttress "Icicle Buttress"
+    parent wa_icicle_buttress_boulders -> wa_icicle_buttress_and_bob_s_wall  (takes the kept area's place)
+    rename wa_icicle_buttress_boulders "Icicle Buttress Boulders" -> "Icicle Buttress"
+    rename wa_icicle_buttress "Icicle Buttress" -> "Icicle Buttress Routes"
+    parent wa_icicle_buttress -> wa_icicle_buttress_boulders
+#64 usa.california keep ca_real_hall_of_horrors_the [California › Joshua Tree National Park › Central Joshua Tree › Sheep Pass Area › Hall of Horrors Area]
+  fold ca_real_hall_of_horrors "Real Hall of Horrors" into ca_real_hall_of_horrors_the "Real Hall of Horrors, The"
+    delete ca_real_hall_of_horrors
+suffix Central Pinnacles ~ Central Pinnacles Bouldering usa.california keep ca_central_pinnacles [California › San Bernardino Mountains › Big Bear Lake Area › Big Bear North › Big Bear City Area › Holcomb Valley Pinnacles]
+  fold ca_central_pinnacles_bouldering "Central Pinnacles Bouldering" into ca_central_pinnacles "Central Pinnacles"
+    parent ca_overhung_knobs_boulder -> ca_central_pinnacles
+    parent ca_lost_orbit_bouldering -> ca_central_pinnacles
+    delete ca_central_pinnacles_bouldering
+suffix Voodoo Garden ~ Voodoo Garden Bouldering Area usa.california keep ca_voodoo_garden [California › San Bernardino Mountains › Big Bear Lake Area › Big Bear North › Big Bear City Area › Holcomb Valley Pinnacles › Pinnacles North]
+  fold ca_voodoo_garden_bouldering_area "Voodoo Garden Bouldering Area" into ca_voodoo_garden "Voodoo Garden"
+    parent ca_thunder_down_under -> ca_voodoo_garden
+    parent ca_chip_off_the_old_block -> ca_voodoo_garden
+    parent ca_deadwood_boulder -> ca_voodoo_garden
+    parent ca_tortoise_boulder -> ca_voodoo_garden
+    parent ca_broken_heart_boulder -> ca_voodoo_garden
+    delete ca_voodoo_garden_bouldering_area
+  emptied: ak_glenn_highway_2 "Glenn Highway"
+    delete ak_glenn_highway_2
+  emptied: tn_upper_boulders_at_old_wauhatchie_pike "Upper Boulders at Old Wauhatchie Pike"
+    delete tn_upper_boulders_at_old_wauhatchie_pike
+  emptied: vt_revolution_hills "Revolution Hills"
+    delete vt_revolution_hills
+  emptied: ca_carson_peak_2 "Carson Peak"
+    delete ca_carson_peak_2
+  emptied: ca_camoflage_forest_and_lake_audrain "Camoflage Forest and Lake Audrain"
+    delete ca_camoflage_forest_and_lake_audrain
+  emptied: nv_keyhole_canyon_bouldering "* Keyhole Canyon Bouldering"
+    delete nv_keyhole_canyon_bouldering
+  emptied: wa_kettle_valley_bouldering "Kettle Valley Bouldering"
+    delete wa_kettle_valley_bouldering
+  emptied: sd_north_park "North Park"
+    delete sd_north_park
+  emptied: az_granite_dells_bouldering "Granite Dells Bouldering"
+    delete az_granite_dells_bouldering
+
+SKIPPED:
+#128 (one side already folded/deleted)
+#189 (already one area)
+#193 (one side already folded/deleted)
+#197 (already one area)
+#194 (one side already folded/deleted)
+#111 (now nested)
+#24 (now nested)
+#41 (one side already folded/deleted)
+#49 (one side already folded/deleted)
+#142 (one side already folded/deleted)
+#47 (one side already folded/deleted)
+#63 (one side already folded/deleted)
+#79 (one side already folded/deleted)
+#119 (one side already folded/deleted)
+suffix Barker Dam Area ~ Barker Dam Bouldering (one side already folded/deleted)
+suffix Barker Dam Area ~ Barker Dam Boulders (now nested)
+suffix Echo Rock Area ~ Echo Rock Boulders (one side already folded/deleted)
+suffix Echo Rock Area ~ Echo Rock Bouldering (one side already folded/deleted)
+suffix Hidden Valley Campground ~ Hidden Valley Campground Bouldering (one side already folded/deleted)
+suffix Outback Bouldering ~ Outback, The (one side already folded/deleted)
+suffix Real Hidden Valley ~ Real Hidden Valley Bouldering (one side already folded/deleted)
+suffix Roadside Rocks ~ Roadside Rocks Bouldering (one side already folded/deleted)
+#16 (already one area)
+#20 (already one area)
+#72 (now nested)
+#80 (one side already folded/deleted)
+#204 (already one area)
+#77 (one side already folded/deleted)
+#42 (already one area)
+#122 (one side already folded/deleted)
+#182 (already one area)
+suffix Cap Rock Area ~ Cap Rock Bouldering (one side already folded/deleted)
+suffix Echo Cove ~ Echo Cove Bouldering (one side already folded/deleted)
+suffix Echo Rock ~ Echo Rock Boulders (one side already folded/deleted)
+suffix Echo Rock ~ Echo Rock Bouldering (one side already folded/deleted)
+suffix Ghetto Wall ~ Ghetto Wall Boulders, The (already one area)
+suffix Hall of Horrors Area ~ Hall of Horrors Bouldering (one side already folded/deleted)
+suffix Lower Muffins ~ Lower Muffins Boulders (one side already folded/deleted)
+suffix Hogback Bouldering ~ Hogback Mountain (now nested)
+suffix Pinnacle area bouldering ~ Pinnacle area, The (one side already folded/deleted)
+suffix Chicken Leg ~ Chicken Leg Bouldering (already one area)
+suffix First Waterfall Area ~ First Waterfall Bouldering (one side already folded/deleted)
+suffix Moderate Mecca ~ Moderate Mecca Boulders  (one side already folded/deleted)
+suffix Stick Gully ~ Stick Gully Boulders (already one area)
+suffix The Wake-Up Wall ~ Wake-up Wall Boulders (one side already folded/deleted)
+#33 (already one area)
+#37 (already one area)
+#53 (one side already folded/deleted)
+#73 (one side already folded/deleted)
+#81 (now nested)
+#54 (one side already folded/deleted)
+#43 (one side already folded/deleted)
+suffix East Creek Day Use Area ~ East Creek Day Use Bouldering (now nested)
+suffix Moderate Mecca Bouldering ~ Moderate Mecca Boulders  (one side already folded/deleted)
+#14 (one side already folded/deleted)
