@@ -1582,6 +1582,13 @@ export const ProvChip=({prov})=>prov&&prov.label?<span title={"How this section 
    renders NOTHING: a section with no data must not carry a rating, which is why callers pass
    the result through untouched rather than defaulting it. */
 const SL=({children,action,prov})=><div style={{display:"flex",alignItems:"center",gap:7,marginTop:18,marginBottom:9}}><span style={{width:3,height:14,borderRadius:2,background:C.blueSolid,flexShrink:0}}/><span role="heading" aria-level={2} style={{fontSize:13,fontWeight:800,color:C.text,letterSpacing:0.4,textTransform:"uppercase"}}>{children}</span><ProvChip prov={prov}/>{action?<span style={{marginLeft:"auto",display:"inline-flex",alignItems:"center",flexShrink:0}}>{action}</span>:null}</div>;
+/* ONE LOOK FOR A CARD'S TITLE AND ONE FOR A LABEL INSIDE IT. The route page had 20 card titles in six
+   colours of blue/red/green/teal/purple text and 8 in-card labels in three greys at three sizes, so no two
+   cards read as one system — and a label at #8b949e over copy at #99a3ad could not be told from it. The
+   title is now SL's look one size down (white, tracked, uppercase, a coloured bar), and the colour a card
+   used to carry in its text survives as `tone` on the bar, so KNOWN HAZARDS still reads red at a glance. */
+export const CardHead=({tone,children,style})=><div role="heading" aria-level={3} style={Object.assign({display:"flex",alignItems:"center",gap:7,minWidth:0,fontSize:12,fontWeight:800,color:C.text,letterSpacing:0.5,textTransform:"uppercase"},style)}><span aria-hidden="true" style={{width:3,height:12,borderRadius:2,background:tone||C.blueSolid,flexShrink:0}}/><span style={{minWidth:0}}>{children}</span></div>;
+export const SUB_LABEL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6};
 const MeH=SL;
 
 /* ── Text boxes: grow while you type, and format what you write. ─────────────────────────
