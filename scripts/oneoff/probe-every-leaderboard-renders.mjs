@@ -22,16 +22,21 @@ const LB = JSON.stringify(path.join(ROOT, "lib", "Leaderboards.jsx"));
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ROUTES, ME } from ${CORE};
 import Leaderboards from ${LB};
 const noop = () => {};
 export { ROUTES, ME };
+// Ranks reads the real boards through react-query now, so it must render inside a provider or it
+// throws "No QueryClient set" -- which is how this probe went red on main without anyone noticing.
+// No query data is seeded, so this walks the demo boards, the population it was written for.
 export function render(disc, board, logs, myTrust) {
-  return renderToStaticMarkup(React.createElement(Leaderboards, {
+  const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+  return renderToStaticMarkup(React.createElement(QueryClientProvider, { client: qc }, React.createElement(Leaderboards, {
     myTrust: myTrust == null ? null : myTrust, meLive: ME, onView: noop, onClimb: noop, logs, connections: [], friendState: () => "none",
     onFriend: noop, catchCredits: {}, onMessage: noop, showOnRanks: true, blocked: [],
     rankDisc: disc, setRankDisc: noop, rankBoard: board, setRankBoard: noop,
-  }));
+  })));
 }`;
 const dir = fs.mkdtempSync(path.join(ROOT, ".probe-lb-"));
 process.on("exit", () => fs.rmSync(dir, { recursive: true, force: true }));
