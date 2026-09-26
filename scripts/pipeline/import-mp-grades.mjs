@@ -33,6 +33,15 @@ const norm = s => String(s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").repl
 // Area names only: our Adirondack areas carry sorting prefixes ("D: Keene Valley and Chapel Pond",
 // "* Adirondack Ice & Mixed") that the export's location path does not.
 const areaNorm = s => norm(s).replace(/^(?:[a-z]\s*:\s*|\*\s*)/, "").trim();
+// The DATABASE's own name key (catalog_key: "Flintstone, The" = "The Flintstone"), which its
+// refuse_duplicate_area / refuse_duplicate_route triggers compare by. Asked of the database rather
+// than re-implemented, so the importer and the triggers cannot disagree about what is a duplicate.
+const CK = new Map();
+function catalogKeys(names) {
+  const todo = [...new Set(names.filter(n => n && !CK.has(n)))];
+  for (let i = 0; i < todo.length; i += 800) for (const x of sql(`select t, catalog_key(t) as k from unnest(array[${todo.slice(i, i + 800).map(q).join(",")}]::text[]) t`)) CK.set(x.t, x.k);
+}
+const ck = s => CK.get(s) ?? areaNorm(s);
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 
@@ -95,7 +104,7 @@ function tokens(rating) {
 // by runState only if a route actually lands under a new sub-area. Created areas are PLANNED here and reused by the
 // next route that names them; runState inserts them, parents first, before any route.
 function resolver(stateId, stateName, planned, splits) {
-  const rows = sql(`select a.id, a.name, a.parent_id, a.lat, a.lng, a.path::text as path from areas a where a.path <@ (select path from areas where id = ${q(stateId)})`);
+  const rows = sql(`select a.id, a.name, a.parent_id, a.lat, a.lng, a.path::text as path, catalog_key(a.name) as k from areas a where a.path <@ (select path from areas where id = ${q(stateId)})`);
   const direct = new Set(sql(`select distinct r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(stateId)})`).map(r => r.area_id));
   const kids = new Map(), hasKids = new Set(rows.map(r => r.parent_id)), ids = new Set(rows.map(r => r.id));
   for (const r of rows) { const k = r.parent_id + "|" + areaNorm(r.name); (kids.get(k) || kids.set(k, []).get(k)).push(r); }
@@ -114,17 +123,37 @@ function resolver(stateId, stateName, planned, splits) {
   // a new area for every level below the first mismatch made al_fireplace_rock_2 and added its routes
   // again (168 in Alabama, ~1,069 in Alaska). So before a level is created, an EXISTING area of the
   // same name within NEAR_KM of the route's own MP coordinates is used instead — if exactly one.
-  const byId = new Map(rows.map(r => [r.id, r])), byName = new Map();
-  for (const r of rows) { const k = areaNorm(r.name); (byName.get(k) || byName.set(k, []).get(k)).push(r); }
+  // Names compare by the database's catalog_key (see CK): a child "Flintstone, The" IS MP's "The
+  // Flintstone", and refuse_duplicate_area would reject the second one anyway.
+  const keyOf = x => x.k ?? ck(x.name);
+  const byId = new Map(rows.map(r => [r.id, r])), byName = new Map(), kidsK = new Map();
+  const index = r => { const k = keyOf(r); (byName.get(k) || byName.set(k, []).get(k)).push(r); const kk = r.parent_id + "|" + k; (kidsK.get(kk) || kidsK.set(kk, []).get(kk)).push(r); };
+  for (const r of rows) index(r);
   const coordOf = id => { for (let x = byId.get(id); x; x = byId.get(x.parent_id)) if (x.lat != null && x.lng != null) return x; return null; };
   const sameNear = (name, geo) => {
     if (!geo || geo.lat == null) return [];
-    return (byName.get(areaNorm(name)) || []).filter(r => r.path && r.lat != null && r.lng != null && km(r, geo) <= NEAR_KM);
+    return (byName.get(ck(name)) || []).filter(r => r.path && r.lat != null && r.lng != null && km(r, geo) <= NEAR_KM);
+  };
+  // The same test refuse_duplicate_route runs on insert, against the state's routes (existing, and
+  // added earlier in this run): same key in the same area, in a same-named area within 5 km, or in
+  // any area within 0.3 km — plus ours: the same name within ROUTE_NEAR_KM in any other area.
+  const routeClash = (list, areaId) => {
+    const t = byId.get(areaId), tk = keyOf(t), tc = coordOf(areaId);
+    for (const o of list || []) {
+      const a = byId.get(o.area_id); if (!a) continue;
+      if (a.id === t.id) return o;
+      if (keyOf(a) === tk && (t.lat == null || a.lat == null || km(t, a) <= 5)) return o;
+      if (t.lat != null && a.lat != null && km(t, a) <= 0.3) return o;
+      const ac = coordOf(a.id);
+      if (tc && ac && km(tc, ac) <= ROUTE_NEAR_KM) return o;
+    }
+    return null;
   };
   const placeInner = (chain, create, geo) => {
     let cur = stateId, skips = 0, created = false;
     for (let i = 0; i < chain.length; i++) {
-      const c = kids.get(cur + "|" + areaNorm(chain[i])) || [];
+      let c = kids.get(cur + "|" + areaNorm(chain[i])) || [];
+      if (!c.length) c = kidsK.get(cur + "|" + ck(chain[i])) || [];
       if (c.length === 1) { cur = c[0].id; continue; }
       if (c.length > 1) return { why: "ambiguous area name" };
       const nxt = i + 1 < chain.length ? (kids.get(cur + "|" + areaNorm(chain[i + 1])) || []) : [];
@@ -143,8 +172,11 @@ function resolver(stateId, stateName, planned, splits) {
         splits.set(cur, s);
       }
       const leaf = i === chain.length - 1;
+      // refuse_duplicate_area: a same-key area within 1.5 km under another parent. An existing one was
+      // matched above; this catches two NEW areas MP files apart that the database would call one.
+      if (leaf && geo.lat != null && (byName.get(ck(chain[i])) || []).some(x => x.parent_id !== cur && x.lat != null && km(x, geo) <= 1.5)) return { why: "a same-named area within 1.5 km is filed elsewhere" };
       const a = { id: mint(chain[i]), name: chain[i], parent_id: cur, area_type: leaf ? "crag" : "region", region: stateName, lat: leaf ? geo.lat : null, lng: leaf ? geo.lng : null };
-      planned.push(a); rows.push(a); byId.set(a.id, a); hasKids.add(cur);
+      planned.push(a); rows.push(a); byId.set(a.id, a); hasKids.add(cur); index(a);
       const k = cur + "|" + areaNorm(a.name); (kids.get(k) || kids.set(k, []).get(k)).push(a);
       cur = a.id; created = true;
     }
@@ -157,11 +189,9 @@ function resolver(stateId, stateName, planned, splits) {
     }
     return { areaId: cur };
   };
-  return Object.assign(place, { coordOf });
+  return Object.assign(place, { coordOf, routeClash });
 }
 
-// The route's own area coordinates from the export (0 / blank = unknown).
-const geoOf = r => { const lat = +r["Area Latitude"], lng = +r["Area Longitude"]; return Number.isFinite(lat) && lat !== 0 && Number.isFinite(lng) && lng !== 0 ? { lat, lng } : null; };
 // Great-circle km between two {lat, lng}.
 const km = (a, b) => { const R = 6371, r = x => x * Math.PI / 180, dLat = r(b.lat - a.lat), dLng = r(b.lng - a.lng); const h = Math.sin(dLat / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLng / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
 // An existing area this close, with the same name, IS the area MP names. A route this close, with the
@@ -207,6 +237,10 @@ async function runState(st) {
     if (!done) { console.log(`${st.name}: crawl not finished (${f} is at the cap and not yet split) — skipped`); return {}; }
   }
   const planned = [], splits = new Map();
+  const mpName = r => decode(r.Route).replace(/\s*\|\s*\d+$/, ""); // " | 8010" is MP's disambiguation suffix
+  const allNames = [];
+  for (const r of byUrl.values()) { allNames.push(mpName(r)); for (const a of String(r.Location || "").split(" > ")) allNames.push(a.trim()); }
+  catalogKeys(allNames);
   const place = resolver(st.id, st.name, planned, splits);
   const refused = {}, matched = [], added = [];
   const cand = [];
@@ -233,8 +267,10 @@ async function runState(st) {
   }
   const areaIds = [...new Set(cand.map(c => c.areaId))];
   const existing = [];
-  for (let i = 0; i < areaIds.length; i += 400) existing.push(...sql(`select id, area_id, name, grade, grade_system, ice_grade, aid_grade, ice_grade_num, mixed_grade_num, aid_grade_num from routes where area_id in (${areaIds.slice(i, i + 400).map(q).join(",")})`));
+  for (let i = 0; i < areaIds.length; i += 400) existing.push(...sql(`select id, area_id, name, catalog_key(name) as k, grade, grade_system, ice_grade, aid_grade, ice_grade_num, mixed_grade_num, aid_grade_num from routes where area_id in (${areaIds.slice(i, i + 400).map(q).join(",")})`));
   const byKey = new Map(existing.map(e => [e.area_id + "|" + norm(e.name), e]));
+  // ...and by catalog_key, so "Drip, The" on the same area is a MATCH, not a refusal.
+  const byCk = new Map(); for (const e of existing) { const k = e.area_id + "|" + e.k; byCk.set(k, byCk.has(k) ? null : e); }
   const taken = new Set(existing.map(e => e.id)), seenNew = new Set();
   const patches = [], inserts = [], nearDup = [];
   // The near-duplicate test compares against one area's routes, never the state's (California's
@@ -243,11 +279,10 @@ async function runState(st) {
   const looseByArea = new Map();
   for (const x of existing) (looseByArea.get(x.area_id) || looseByArea.set(x.area_id, []).get(x.area_id)).push({ xn: loose(x.name), name: x.name });
   const stateNames = new Map();
-  for (const x of sql(`select r.name, r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(st.id)})`)) { const k = loose(x.name); (stateNames.get(k) || stateNames.set(k, []).get(k)).push(x); }
+  for (const x of sql(`select r.name, catalog_key(r.name) as k, r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(st.id)}) and not route_name_is_placeholder(r.name)`)) (stateNames.get(x.k) || stateNames.set(x.k, []).get(x.k)).push(x);
   for (const { r, tk, areaId } of cand) {
-    // " | 8010" on 26 names is MP's own disambiguation suffix, not part of the name.
-    const name = decode(r.Route).replace(/\s*\|\s*\d+$/, "");
-    const e = byKey.get(areaId + "|" + norm(name));
+    const name = mpName(r);
+    const e = byKey.get(areaId + "|" + norm(name)) || byCk.get(areaId + "|" + ck(name));
     if (e) {
       const p = {};
       if (tk.wi && e.ice_grade_num == null) { p.ice_grade_num = tk.wi.num; if (!e.ice_grade) p.ice_grade = tk.wi.tok; }
@@ -268,9 +303,8 @@ async function runState(st) {
     if (near) { refused["possible duplicate of an existing route"] = (refused["possible duplicate of an existing route"] || 0) + 1; if (SAMPLE) nearDup.push(name + "  ~  " + near.name + "  (" + areaId + ")"); continue; }
     // ...and the same name within ROUTE_NEAR_KM in ANOTHER area of the state is refused too: our tree
     // may file that crag under a different parent than MP does.
-    const here = place.coordOf(areaId) || geoOf(r);
-    const twin = here && (stateNames.get(nn) || []).find(o => o.area_id !== areaId && (o.c = place.coordOf(o.area_id)) && km(here, o.c) <= ROUTE_NEAR_KM);
-    if (twin) { refused["same name within 1 km in another area"] = (refused["same name within 1 km in another area"] || 0) + 1; if (SAMPLE) nearDup.push(name + "  ==  " + twin.name + "  (" + twin.area_id + ")"); continue; }
+    const twin = place.routeClash(stateNames.get(ck(name)), areaId);
+    if (twin) { refused["same name nearby in another area"] = (refused["same name nearby in another area"] || 0) + 1; if (SAMPLE) nearDup.push(name + "  ==  " + twin.name + "  (" + twin.area_id + ")"); continue; }
     const disc = disciplineOf(r["Route Type"], tk);
     if (!disc) { refused["type and grade do not agree"] = (refused["type and grade do not agree"] || 0) + 1; continue; }
     const primary = PRIMARY[disc](tk);
@@ -284,6 +318,7 @@ async function runState(st) {
       pitches: +r.Pitches > 0 ? +r.Pitches : 0, length_m: +r.Length > 0 ? Math.round(+r.Length / 3.28084) : null,
       disciplines: [...new Set([disc, ...types.map(t => TYPE_DISC[t]).filter(Boolean)])], auto_generated: false,
     });
+    const nk = ck(name); (stateNames.get(nk) || stateNames.set(nk, []).get(nk)).push({ name, area_id: areaId });
   }
   const nRef = Object.values(refused).reduce((a, b) => a + b, 0);
   // Keep only planned areas an added route actually lands in, plus their planned ancestors — a
@@ -346,8 +381,8 @@ async function runState(st) {
     const got = r.ok ? JSON.parse(await r.text()) : null;
     if (!got || got.length !== 1) throw new Error(`${st.name}: patch ${id} did not land (${r.status})`);
   }
-  for (let i = 0; i < inserts.length; i += 200) {
-    const batch = inserts.slice(i, i + 200);
+  for (let i = 0; i < inserts.length; i += 25) {
+    const batch = inserts.slice(i, i + 25);
     const r = await fetchRetry(`${SUPABASE_URL}/rest/v1/routes`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(batch) });
     const txt = await r.text();
     if (!r.ok) throw new Error(`${st.name}: insert failed ${r.status} ${txt.slice(0, 300)}`);
