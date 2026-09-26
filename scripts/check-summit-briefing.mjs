@@ -114,8 +114,16 @@ ok(bakerHtml.includes("mountaineering"), "names the discipline");
 ok(/Approach/.test(bakerHtml), "gives an approach range");
 ok(bakerHtml.includes("Shortest is"), "names the shortest route rather than averaging");
 ok(/Elevation gain/.test(bakerHtml), "gives a gain range");
-// The permit is identical on all nine, so the panel must STATE it, not hedge.
-ok(bakerHtml.includes("Free self-issue Mount Baker Wilderness permit"), "states the shared permit verbatim");
+// The permit is identical on all nine, so the panel must STATE it, not hedge. The expected text is
+// read off the FIXTURE, not pinned here: a literal copy of the live string went red on main the day
+// a sourced correction changed all nine rows to a new, still-shared sentence — the invariant ("one
+// shared permit is stated") held, and only the copy of the data rotted. If the rows ever stop
+// agreeing, this peak no longer exercises the assertion, so the run fails loudly rather than passing.
+const bakerPermits = [...new Set(baker.map(r => String(r.permit || "").trim()).filter(Boolean))];
+if (bakerPermits.length !== 1) dead(`the ${baker.length} Mount Baker routes now carry ${bakerPermits.length} different permit texts — this fixture no longer tests a SHARED permit`);
+const escHtml = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
+const bakerPermitHead = bakerPermits[0].slice(0, 60);
+ok(bakerHtml.includes(bakerPermitHead) || bakerHtml.includes(escHtml(bakerPermitHead)), "states the shared permit verbatim");
 // The nine name one agency at four levels of detail — "U.S. Forest Service", "USDA Forest
 // Service — Mount Baker-Snoqualmie National Forest, Mt. Baker NRA", and two leading with the
 // forest instead of the agency. None of that is a conflict, so nothing here may hedge, and

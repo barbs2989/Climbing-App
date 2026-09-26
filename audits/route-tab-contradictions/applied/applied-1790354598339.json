@@ -1,0 +1,376 @@
+{
+ "applied": [
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "gainFt"
+   ],
+   "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "column": "approach",
+   "path": [],
+   "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)"
+  },
+  {
+   "id": "wa_doorway_flake",
+   "column": "waypoints",
+   "path": [
+    1,
+    "type"
+   ],
+   "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'"
+  },
+  {
+   "id": "wa_skeena26",
+   "column": "waypoints",
+   "path": [
+    1,
+    "type"
+   ],
+   "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'"
+  },
+  {
+   "id": "wa_western_dihedral",
+   "column": "waypoints",
+   "path": [
+    1,
+    "type"
+   ],
+   "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'"
+  },
+  {
+   "id": "wa_concerto_in_c_for_drill_and_hammer",
+   "column": "descent",
+   "path": [],
+   "fact": "DESCENT field describes glacier/crevasse terrain on a 14-pitch rock rappel route"
+  },
+  {
+   "id": "wa_concerto_in_c_for_drill_and_hammer",
+   "column": "waypoints",
+   "path": [
+    1,
+    "type"
+   ],
+   "fact": "Grassy saddle waypoint (start of the route) typed 'Topout'"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_dome_peak_dome_glacier",
+   "fact": "dist_km (~10 mi) vs itinerary round-trip total (29 mi)",
+   "op": "set",
+   "column": "dist_km",
+   "path": [],
+   "expect": 16.1,
+   "value": 24.1,
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/dome-glacier-on-dome-peak",
+    "http://ericsbasecamp.net/trips/DomePk/DomePk.htm"
+   ],
+   "why": "expect mismatch at dist_km[]: live 23.3"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "before": {
+    "itinerary": {
+     "cal": "Currently accessed via the North Fork Sauk Trailhead since the White Chuck River Road (FR 23) remains washed out; best conditions are typically July-September once the Gerdine/Cool glacier crevasses are well-bridged.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the North Fork Sauk Trailhead, hike through old-growth to Mackinaw Shelter, climb steeply to the PCT at White Pass, then traverse and climb to a rocky camp at Glacier Gap with views south to Rainier.",
+       "hours": 7.5,
+       "miles": 11,
+       "title": "Approach to Glacier Gap camp",
+       "gainFt": 5100,
+       "lossFt": 100,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach high camp at Glacier Gap (~7,200 ft)"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start from Glacier Gap, drop to rocky Gerdine Ridge, then rope up on the Gerdine Glacier where it's reached (~8,500 ft), following it to a bend where it merges with the Cool Glacier and climbing to the Disappointment/Glacier Peak saddle and the summit. Move briskly under the rockfall-prone cliffs of Disappointment Peak.",
+       "hours": 8,
+       "miles": 7,
+       "title": "Summit via Gerdine Ridge / Cool Glacier",
+       "gainFt": 2650,
+       "lossFt": 2650,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave Glacier Gap camp",
+         "detail": "Crampons on for the descent to Gerdine Ridge."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Rope up at ~8,500 ft",
+         "detail": "Climber's trail ends at a gendarme; step onto the Gerdine Glacier."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Merge onto Cool Glacier",
+         "detail": "Two small, easily-avoided crevasses at the bend."
+        },
+        {
+         "time": "9:00-10:00 AM",
+         "label": "Summit",
+         "detail": "Via the Disappointment/Glacier Peak saddle."
+        },
+        {
+         "time": "Early afternoon",
+         "label": "Back at Glacier Gap camp",
+         "detail": "Reverse the glacier and ridge."
+        }
+       ],
+       "objective": "Summit Glacier Peak (10,541 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and reverse the full approach back to the North Fork Sauk Trailhead.",
+       "hours": 6.5,
+       "miles": 12,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 5050,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip for most parties (~30-32 miles RT, ~7,650-7,750 ft gain); fast/fit or ski-equipped parties have done it car-to-car-plus-camp in 2 days."
+    },
+    "approach": "From the North Fork Sauk River Trailhead (2,050 ft, off FR 49/Sloan Creek Road), hike ~9 mi to White Pass on the PCT. Continue east on the Foam Creek Trail ~2 mi, cross a ridge saddle near 6,600 ft, then traverse the White Chuck Glacier basin trending NE to Glacier Gap (~7,300 ft), the standard high camp where the Suiattle and White Chuck glaciers meet. Summit day is roughly 5.25 mi with about 2,350 ft of gain and 835 ft of intermediate descent: climb gentle snow above camp, follow a climber's track on volcanic scree onto the Gerdine and Cool glaciers, end-run a crevasse or two, then rejoin the climber's trail for the final steep pitch to the summit."
+   }
+  },
+  {
+   "id": "wa_doorway_flake",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.2088,
+      "lng": -121.6298,
+      "elev": 1900,
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "note": "",
+      "type": "Trailhead",
+      "elevFt": 1900,
+      "directions": "From I-5 take the Arlington exit and drive SR 530 east through Oso to Darrington. Leave town on Squire Creek Road and follow it to the washout gate, which is where the road ends for vehicles and where you park. Everything past the gate is walked, starting along the old roadbed past the flagged landslide crossing."
+     },
+     {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "Grassy saddle (South Face routes)",
+      "note": "Shares the same ~3 hr approach as the wall's other South Face routes.",
+      "type": "Topout",
+      "distMi": 3
+     },
+     {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "South Face grassy saddle",
+      "type": "Base/bivy",
+      "distMi": null,
+      "elevFt": 3249
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4958,
+      "name": "Squire Creek Wall (true summit/high point)",
+      "type": "Summit",
+      "elevFt": 4958
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_skeena26",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.2088,
+      "lng": -121.6298,
+      "elev": 1900,
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "note": "",
+      "type": "Trailhead",
+      "elevFt": 1900,
+      "directions": "Take I-5 to the Arlington exit, then SR 530 east through Oso to Darrington. From town, follow Squire Creek Road until it is blocked by the washout and park at the gated area there, around 1,900 feet. You cannot drive past that point; the climbers' path toward the Squire Creek Walls starts from the parking area, beginning on the old roadbed beyond the gate."
+     },
+     {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "Grassy saddle (South Face routes)",
+      "note": "Brilliant white slab starting near the saddle, mostly 5.4-5.6 with a 5.9 opening pitch.",
+      "type": "Topout",
+      "distMi": 3
+     },
+     {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "South Face grassy saddle",
+      "type": "Base/bivy",
+      "distMi": null,
+      "elevFt": 3249
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4958,
+      "name": "Squire Creek Wall (true summit/high point)",
+      "type": "Summit",
+      "elevFt": 4958
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_western_dihedral",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.2088,
+      "lng": -121.6298,
+      "elev": 1900,
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "note": "~4 hours trailhead-to-base, then Class 4 scrambling via Skeena26's base to reach this route.",
+      "type": "Trailhead",
+      "elevFt": 1900,
+      "directions": "Take I-5 to the Arlington exit, then follow SR 530 east through Oso to Darrington. Out of Darrington, follow Squire Creek Road until a washout gates it; the parking area is at that closure. Nothing beyond is driveable, so park there and continue on foot up the old roadbed past the flagged landslide crossing."
+     },
+     {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "Grassy saddle (South Face routes)",
+      "note": "Climbs the obvious reddish right-facing corner visible from the saddle; crux liebacking/stemming and a finger traverse on pitches 2-3.",
+      "type": "Topout",
+      "distMi": 3
+     },
+     {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "South Face grassy saddle",
+      "type": "Base/bivy",
+      "distMi": null,
+      "elevFt": 3249
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4958,
+      "name": "Squire Creek Wall (true summit/high point)",
+      "type": "Summit",
+      "elevFt": 4958
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_concerto_in_c_for_drill_and_hammer",
+   "before": {
+    "descent": "Retrace the ascent route for descent, utilizing established snow/ice slopes or scramble terrain. Watch for crevasse hazards and falling rock. Allow ample time for safe descent.",
+    "waypoints": [
+     {
+      "lat": 48.2088,
+      "lng": -121.6298,
+      "elev": 1900,
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "note": "Road is badly washed out near the end (2002 Jumbo Mountain slide); many parties now park ~1/3 mile short at an informal pullout.",
+      "type": "Trailhead",
+      "elevFt": 1900,
+      "directions": "From I-5 take the Arlington exit and follow SR 530 east through Oso to Darrington. From Highway 530 in town, go south on Madison Avenue to the T, turn right onto Darrington Street, and stay on it as it becomes Squire Creek Road. Drive to the washout that gates the road and park there. The road is badly washed out near its end from the 2002 Jumbo Mountain slide, and many parties now park about a third of a mile short at an informal pullout."
+     },
+     {
+      "lat": 48.19575,
+      "lng": -121.65485,
+      "elev": 3249,
+      "name": "Grassy saddle (South Face routes)",
+      "note": "~3 hr approach through forest, a tributary crossing, and two gullies to the saddle below Squire Creek Wall's South Face; 14-pitch 5.8 friction slab leads to the summit crest above Buckeye Basin.",
+      "type": "Topout",
+      "distMi": 3
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4958,
+      "name": "Squire Creek Wall (true summit/high point)",
+      "type": "Summit",
+      "elevFt": 4958
+     }
+    ]
+   }
+  }
+ ]
+}

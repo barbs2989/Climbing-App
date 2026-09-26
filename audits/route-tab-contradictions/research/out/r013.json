@@ -1,0 +1,423 @@
+{
+ "file": "r013.json",
+ "results": [
+  {
+   "id": "wa_enchantment_peak_east_ridge",
+   "fact": "Grade of the (non-taken) SW sub-summit",
+   "verdict": "fixed",
+   "correct_value": "The SW summit is a very exposed 4th-class scramble (some rate it low 5th); watch_out should say fourth class, like baseFinding and hazards.",
+   "evidence": "A 2023 survey write-up of Enchantment Peak describes the SW summit as about 1,500 ft away and reached by a very exposed 4th-class scramble, noting some climbers rate it low 5th. An independent trip report calls the SW summit a class 4 climb with exposure. Neither supports a flat low-5th label.",
+   "sources": [
+    "https://www.countryhighpoints.com/enchantment-peak-survey/",
+    "http://ericsbasecamp.net/trips/EnchantmentPk/EnchantmentPk.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "a distinctly harder, more exposed low-5th-class climb about 1,500 ft away",
+     "replace": "a distinctly harder, very exposed fourth-class scramble about 1,500 ft away",
+     "id": "wa_enchantment_peak_east_ridge",
+     "fact": "Grade of the (non-taken) SW sub-summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "Total elevation gain — three disagreeing figures",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 6,650 ft of total gain (and loss) round trip; ~5,100 ft is only the net rise from trailhead to summit.",
+   "evidence": "5,138 ft is exactly summit (8,538) minus trailhead (3,400): a net rise, not a round-trip total. Trailhead ~3,400-3,500 ft to Aasgard Pass 7,841 ft alone is ~4,350 ft; dropping to a Core camp near 7,000-7,100 ft (Inspiration Lake area ~7,066 ft), climbing to 8,538 ft and reclimbing to Aasgard on the way out adds ~2,200-2,300 ft, giving ~6,650 ft, which is what the itinerary days (4,300+1,650+700 gain; 700+1,650+4,300 loss) and the waypoint elevations say. gain_ft/loss_ft 7,250 are the outliers. Only the external pass/lake elevations support this, not a published round-trip total, hence internal-plus-one.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/aasgard-pass",
+    "https://stevensong.com/usa/washington/little-annapurna/",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-aasgard-pass"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 7250,
+     "value": 6650,
+     "id": "wa_enchantment_peak_southwest_scramble",
+     "fact": "Total elevation gain — three disagreeing figures"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 7250,
+     "value": 6650,
+     "id": "wa_enchantment_peak_southwest_scramble",
+     "fact": "Total elevation gain — three disagreeing figures"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "with about 5,100 ft of gain, matching the ~15.5-mile, 5,138-ft round trip most parties log for a car-to-car push",
+     "replace": "with about 5,100 ft of net rise from trailhead to summit; counting the drop into the basin and the reclimb to Aasgard Pass on the way out, the round trip comes to roughly 6,650 ft of gain for a car-to-car push",
+     "id": "wa_enchantment_peak_southwest_scramble",
+     "fact": "Total elevation gain — three disagreeing figures"
+    }
+   ]
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "Day-2 summit-day duration",
+   "verdict": "fixed",
+   "correct_value": "Day 2 is 5.5 hours; back at camp ~12:30 PM.",
+   "evidence": "Internal arithmetic, no external dispute: itinerary days[1].hours, timing.summitTimeHrs and the Climb sectionBreakdown all say 5.5 h and totalHrs 19.5 = 7.5+5.5+6.5. Only the schedule clock (7:00 AM to 2:00 PM = 7 h) disagrees; with the summit at ~11:00 AM, a 12:30 PM return matches 5.5 h. No external source was used for this one-field clock correction.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "time"
+     ],
+     "find": "2:00 PM",
+     "replace": "12:30 PM",
+     "id": "wa_enchantment_peak_southwest_scramble",
+     "fact": "Day-2 summit-day duration"
+    }
+   ]
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "Which summit this route finishes on (baseFinding written as if the route targets the SW summit)",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "This route finishes on the NE (true) summit via a short 3rd-class step; the SW summit is a separate, very exposed 4th-class objective.",
+   "evidence": "overview, grade (Class 2-3), rock_grade, descent_text (\"This route tops out on the NORTHEAST summit\"), watch_out, the day-2 itinerary note and the summit waypoint coordinates all place the finish on the NE summit, but approach_variants[0].baseFinding tells the reader that a class 2-3 finish means they are NOT on the SW summit, as if the SW summit were the goal. Externally, the NE summit is the 3rd-class true high point and the SW summit is a very exposed 4th-class scramble.",
+   "sources": [
+    "https://www.countryhighpoints.com/enchantment-peak-survey/",
+    "http://ericsbasecamp.net/trips/EnchantmentPk/EnchantmentPk.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "The southwest summit is reached by a very exposed fourth-class scramble. If what you are on is class 2-3 with a fifteen-foot third-class finish onto a small flat block, you are NOT on the southwest summit — you are on the northeast summit, roughly 1,500 ft away along the crest, which a 2023 survey found to be six or seven feet higher. Those are two different tops and two different days.",
+     "replace": "This route finishes on the northeast summit: class 2-3 ground and a short third-class finish onto a small flat block, which a 2023 survey found to be six or seven feet higher than the southwest summit. The southwest summit, roughly 1,500 ft away along the crest, is a very exposed fourth-class scramble and is not part of this route — if the crest ahead turns into sustained, exposed fourth-class ground, you have gone past your summit.",
+     "id": "wa_enchantment_peak_southwest_scramble",
+     "fact": "Which summit this route finishes on (baseFinding written as if the route targets the SW summit)"
+    }
+   ]
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "SW sub-summit grade in rock_grade (flat low 5th vs exposed 4th class elsewhere on the row)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Exposed 4th class (some rate it low 5th).",
+   "evidence": "overview says \"exposed class 4 (some say low 5th)\" and baseFinding says \"very exposed fourth-class\"; rock_grade alone calls it a low-5th option. Two independent accounts describe the SW summit as a very exposed 4th-class scramble (one noting some rate it low 5th) and a class 4 climb.",
+   "sources": [
+    "https://www.countryhighpoints.com/enchantment-peak-survey/",
+    "http://ericsbasecamp.net/trips/EnchantmentPk/EnchantmentPk.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rock_grade",
+     "path": [],
+     "find": "a low-5th-class option exists onto",
+     "replace": "an exposed 4th-class (some say low 5th) option exists onto",
+     "id": "wa_enchantment_peak_southwest_scramble",
+     "fact": "SW sub-summit grade in rock_grade (flat low 5th vs exposed 4th class elsewhere on the row)"
+    }
+   ]
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "Whether the approach goes via Prusik Pass (beta) or deliberately avoids it (approach / baseFinding)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "beta says climbers cross to Prusik Pass then work up the southwest/south flank, while approach and baseFinding say the line leaves the basin between Lake Reginleif and Lake Sigrun, avoiding Prusik Pass, and baseFinding says the Prusik Pass option \"does not lead to this scramble\". The survey write-up and trip reports found describe the Prusik Pass/east-arm line to the NE summit and do not document the Reginleif/Sigrun south-side line well enough to settle which the beta should describe. No patch.",
+   "sources": [
+    "https://www.countryhighpoints.com/enchantment-peak-survey/",
+    "https://www.thewildoutsiders.com/adventure-journal/enchantment-slam"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_fifth_of_july_mountain_scramble",
+   "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)",
+   "verdict": "fixed",
+   "correct_value": "Two real approaches reach the same south ridge: the Entiat River/Myrtle Lake/Cow Creek line (the one this row plans around) and a shorter Basalt Pass/Basalt Ridge line past Devils Smoke Stack. Label the Basalt material as the alternative and drop the unsupported \"most parties\" claim.",
+   "evidence": "One trip report (Entiat River TH 3,150 ft, Myrtle Lake, Larch Lakes, Cow Creek Pass, south ridge; ~20 mi loop, 5,500 ft) documents the Entiat line; another (Basalt Pass TH, Basalt Ridge past Devils Smoke Stack, 7,480 ft col, boulder basin, Fifth of July Pass, south ridge; 15 mi RT) documents the Basalt line, and a WTA report also covers the Basalt Ridge route. Both end on the same south ridge, so both are genuine options, but nothing establishes that \"most parties\" use Basalt Pass, and the row's approach, waypoints, itinerary and descent are all built on the Entiat line.",
+   "sources": [
+    "https://trailcatjim.com/fifth-of-july-mtn-cow-creek-pass-loop-larch-lakes/",
+    "https://onehikeaweek.com/2023/09/02/fifth-of-july-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-02-14.0727446458"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Most parties reach it via the Basalt Pass Trailhead, following",
+     "replace": "One approach starts at the Basalt Pass Trailhead, following",
+     "id": "wa_fifth_of_july_mountain_scramble",
+     "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "An alternative, longer approach comes from the Entiat River Trailhead",
+     "replace": "The longer approach, the one this route plan follows, comes from the Entiat River Trailhead",
+     "id": "wa_fifth_of_july_mountain_scramble",
+     "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "This is the side on which the start of the climbing is actually described. From",
+     "replace": "This is the shorter alternative to the Entiat River approach. From",
+     "id": "wa_fifth_of_july_mountain_scramble",
+     "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": ", but where that approach leaves the trail, and how the south ridge is identified from it, are unclear — so the marks below are written for this side.",
+     "replace": " — that is the line the main approach and waypoints describe; the marks below are written for this Basalt Ridge side.",
+     "id": "wa_fifth_of_july_mountain_scramble",
+     "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From the basin below the saddle west of Devils Smoke Stack",
+     "replace": "On the Basalt Ridge approach, from the basin below the saddle west of Devils Smoke Stack",
+     "id": "wa_fifth_of_july_mountain_scramble",
+     "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "to the 7,696 ft summit.",
+     "replace": "to the 7,696 ft summit. On the Entiat River approach, leave the trail at Cow Creek Pass and work west up open talus and heather to the same south ridge.",
+     "id": "wa_fifth_of_july_mountain_scramble",
+     "fact": "Which trailhead/approach this route actually describes (Entiat River/Cow Creek Pass vs Basalt Pass/Devils Smoke Stack)"
+    }
+   ]
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "fact": "season window (Jun-Sep) doesn't include the best_season's recommended October",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Dated ascents found are early July 2010 (snow climb on the southwest slope, cold) and 20-24 July 2018 (dry talus), plus an August 2022 trip; none found in October, and no source states a season window for the route. The row's own Company Creek bivy entry says July into early October, and east-side larch color peaks in early October, but no two independent sources settle whether the window ends in September or October. No patch.",
+   "sources": [
+    "https://trailcatjim.com/riddle-peak-via-south-ridge-flora-mtn-via-southwest-slope/",
+    "https://www.countryhighpoints.com/tupshin-peak-devore-peak-and-flora-mountain/",
+    "https://havetent.com/2022/08/17/stehekin-slam-flora-exit-via-tenmile-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "fact": "whether overnight camping at Bird Creek Camp requires a wilderness permit",
+   "verdict": "fixed",
+   "correct_value": "Permits are required for overnight stays in the NPS complex (incl. Lake Chelan NRA camps), but Bird Creek Camp is inside the Glacier Peak Wilderness (USFS), where no wilderness permit is needed.",
+   "evidence": "The Park Service states permits are required year-round for overnight stays in the North Cascades NPS complex, including Lake Chelan NRA. The Devore Creek trail enters the Glacier Peak Wilderness about a mile up from the Stehekin River trail, and Bird Creek Camp lies further along, beyond that boundary. The Okanogan-Wenatchee NF says no wilderness permits are required for Glacier Peak Wilderness (visitors sign the register), WTA lists no permit for Devore Creek, and a Flora route page says there is no red tape on this part of the wilderness. So access.permit is right and the blanket \"all overnight stays\" line in permit is too broad for this trip. (Aside, not patched: WTA notes the Devore Creek trail closed for the Sisi Fire as of 2026-08-27, while access.closures is null.)",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/permitsandreservations.htm",
+    "https://home.nps.gov/noca/planyourvisit/camping-in-stehekin.htm",
+    "https://www.wta.org/go-hiking/hikes/devore-creek",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/wilderness",
+    "https://www.summitpost.org/flora-mountain/155323"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "all overnight backcountry stays require a backcountry permit",
+     "replace": "overnight stays at park-complex camps, including Lake Chelan NRA sites in the Stehekin valley, require a backcountry permit",
+     "id": "wa_flora_mountain_southwest_slope",
+     "fact": "whether overnight camping at Bird Creek Camp requires a wilderness permit"
+    },
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Wilderness Information Center).",
+     "replace": "Wilderness Information Center). Bird Creek Camp lies inside the Glacier Peak Wilderness, where no wilderness permit is needed.",
+     "id": "wa_flora_mountain_southwest_slope",
+     "fact": "whether overnight camping at Bird Creek Camp requires a wilderness permit"
+    }
+   ]
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "fact": "bivy list mostly for unrelated peaks",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Shared Stehekin-zone camp list. Purple Point/Harlequin (landing camps) are on the way in and do serve this trip; High Bridge (McGregor), Fivemile/Agnes Creek (Agnes, Dark Peak), Swamp Creek (Needle, Lyall) and the West Fork Agnes bivy (Agnes Mountain) do not serve Flora. The Company Creek/Hilgard Pass entry is a genuine Flora alternate; this route's own Bird Creek Camp has no entry. Handled as one class; no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "fact": "Land manager / ranger district for this route's own access section",
+   "verdict": "fixed",
+   "correct_value": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District (600 Sherbourne St, Leavenworth, WA 98826, (509) 548-2550); Northwest Forest Pass at the Trinity Trailhead. Neither Darrington/Mountain Loop NOR the Chelan Ranger District.",
+   "evidence": "The Forest Service Trinity Trailhead page lists the Wenatchee River Ranger District (600 Sherbourne, Leavenworth, (509) 548-2550), a $5/day or $30/year pass and a free wilderness permit at the trailhead. WTA lists Buck Creek Trail #1513 under Okanogan-Wenatchee NF, Wenatchee River Ranger District, with a Northwest Forest Pass. The May 20, 2026 closure of FR 6200 beyond Atkinson Flat is a Wenatchee River District closure order. So the reader's proposed resolution (Chelan RD) is also wrong: every Chelan RD and Darrington/Mountain Loop reference on this row needs correcting.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trinity-trailhead",
+    "https://www.wta.org/go-hiking/hikes/buck-creek-pass",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/storm-damaged-roads-closure-wenatchee-river-district",
+    "https://www.leavenworthecho.com/stories/chiwawa-river-road-closed-just-past-atkinson-flat-campground-due-to-flood-damage,51250"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "landManager"
+     ],
+     "find": "(Chelan Ranger District, east side); the Trinity/Buck Creek Pass approach is managed by the Chelan Ranger District",
+     "replace": "(east side); the Trinity/Buck Creek Pass approach is managed by the Wenatchee River Ranger District",
+     "id": "wa_helmet_butte_standard_route",
+     "fact": "Land manager / ranger district for this route's own access section"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "expect": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+     "value": "Okanogan-Wenatchee National Forest (Wenatchee River Ranger District)",
+     "id": "wa_helmet_butte_standard_route",
+     "fact": "Land manager / ranger district for this route's own access section"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "at Mountain Loop Highway trailheads",
+     "replace": "at the Trinity Trailhead",
+     "id": "wa_helmet_butte_standard_route",
+     "fact": "Land manager / ranger district for this route's own access section"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "with the Chelan Ranger District",
+     "replace": "with the Wenatchee River Ranger District",
+     "id": "wa_helmet_butte_standard_route",
+     "fact": "Land manager / ranger district for this route's own access section"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "with the Chelan Ranger District",
+     "replace": "with the Wenatchee River Ranger District",
+     "id": "wa_helmet_butte_standard_route",
+     "fact": "Land manager / ranger district for this route's own access section"
+    },
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "rangerStation"
+     ],
+     "expect": "Chelan Ranger District, Okanogan-Wenatchee National Forest, 428 W. Woodin Ave, Chelan, WA - (509) 682-4900",
+     "value": "Wenatchee River Ranger District, Okanogan-Wenatchee National Forest, 600 Sherbourne St, Leavenworth, WA 98826 - (509) 548-2550",
+     "id": "wa_helmet_butte_standard_route",
+     "fact": "Land manager / ranger district for this route's own access section"
+    }
+   ]
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Helmet Butte-specific",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Shared Glacier Peak zone list. Buck Creek Pass and the High Pass camps serve this route directly; Mackinaw Shelter, White Pass/Foam Creek, Glacier Gap, Kennedy Ridge and Boulder Basin are Glacier Peak camps on the west/Suiattle side and do not; Napeequa, Butterfly Butte and Boulder Pass/Thunder Basin serve other Dakobed-area objectives. Handled as one class; no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_scramble",
+   "fact": "Route line above the cabin — via Libby Lake's south shore to a 'southwest ridge' vs leaving the trail at the cabin without ever reaching the lake, onto a 'west ridge'",
+   "verdict": "fixed",
+   "correct_value": "The route leaves Libby Creek Trail at the old cabin (~4.5-5 mi), takes a faint path right into open forest, climbs the boulder field/gully to a pass on the ridge south of the summit, then goes north to the top. It does not go to Libby Lake.",
+   "evidence": "One trip report left the trail at about five miles, went up talus to the pass between Hoodoo Peak and Libby Mountain and up the south ridge, reaching Libby Lake only afterward. A second leaves at the decaying cabin in the forest and heads west to the base of the climb. A third says to turn right at the old building just before the final hill to the lake, cross boulders to an obvious pass, and find the summit pyramid to the north. None routes via the Libby Lake shore.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Libby/Libby.htm",
+    "https://mountainflamingo.com/2016-07-02-03-libby-lake-hoodoo-peak/",
+    "https://hike2hike.com/day-hikes/hoodoo-peak-washington-north-cascades/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Most parties follow the trail to Libby Lake, traverse around its south shore, then locate two parallel gullies splitting the talus/boulder slope above the lake; take the narrower gully on climber's right and follow it to the crest of the southwest ridge.",
+     "replace": "The route does not go to Libby Lake: take the faint boot path to the right of the cabin into open forest, then pick a line up the boulder field and loose gully to the pass on the ridge south of the summit.",
+     "id": "wa_hoodoo_peak_sawtooth_scramble",
+     "fact": "Route line above the cabin — via Libby Lake's south shore to a 'southwest ridge' vs leaving the trail at the cabin without ever reaching the lake, onto a 'west ridge'"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "back down the summit boulder field to the southwest ridge, down the entry gully to the shore of Libby Lake, around the lake, and out Libby Creek Trail No. 415 to the trailhead.",
+     "replace": "back down the summit boulder field to the pass south of the summit, down the entry gully and boulder field to the old cabin, and out Libby Creek Trail No. 415 to the trailhead.",
+     "id": "wa_hoodoo_peak_sawtooth_scramble",
+     "fact": "Route line above the cabin — via Libby Lake's south shore to a 'southwest ridge' vs leaving the trail at the cabin without ever reaching the lake, onto a 'west ridge'"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "not to this standard southwest-ridge scramble",
+     "replace": "not to this standard scramble",
+     "id": "wa_hoodoo_peak_sawtooth_scramble",
+     "fact": "Route line above the cabin — via Libby Lake's south shore to a 'southwest ridge' vs leaving the trail at the cabin without ever reaching the lake, onto a 'west ridge'"
+    }
+   ]
+  }
+ ]
+}

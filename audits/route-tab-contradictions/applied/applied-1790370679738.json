@@ -1,0 +1,526 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_prophet_east",
+   "column": "approach",
+   "path": [],
+   "fact": "Round-trip / total distance"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Total route distance (dist_km)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    0,
+    "label"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Glacier crossing on the standard route (content contamination)"
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "column": "aspect",
+   "path": [],
+   "fact": "Route aspect/face vs. described side of the mountain"
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "column": "face",
+   "path": [],
+   "fact": "Route aspect/face vs. described side of the mountain"
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Ruby Mountain summit elevation (waypoint vs high_point_ft)"
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Ruby Mountain summit elevation (waypoint vs high_point_ft)"
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "pitch"
+   ],
+   "fact": "Ruby Mountain summit elevation (waypoint vs high_point_ft)"
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation loss (loss_ft) vs itinerary"
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Cyclone Lake camp elevation"
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "column": "permit",
+   "path": [],
+   "fact": "Permit field names North Cascades NP on a Forest Service peak"
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "column": "access",
+   "path": [
+    "group_limit"
+   ],
+   "fact": "Group size limit (access.group_limit vs access.rules)"
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Avalanche zone claim on a glaciated route"
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Cyclone Lake camp elevation"
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Cyclone Lake camp elevation"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_prophet_east",
+   "before": {
+    "approach": "From Ross Dam Trailhead (SR-20, MP 134) hike the Ross Lake shoreline trail ~7 mi to the Big Beaver Trail junction (or take the Ross Lake Resort water taxi to Big Beaver Landing to shorten this), then continue ~5 mi up Big Beaver Trail to Thirtynine Mile Creek/Camp. Leave the trail there and climb a brushy forested rib to gain the south ridge at a ~6,600 ft saddle. Round trip is roughly 18 miles with 7,000+ ft of elevation gain, typically done over 2-3 days. From the saddle, follow the ridge crest (Class 1-2) past points 7,361 ft and 7,547 ft to a short Class 3 step below the true summit; Luna Camp, about 5 miles farther up Big Beaver Trail, is the start of the separate Southwest Rib route, not this one."
+   }
+  },
+  {
+   "id": "wa_pyramid_peak_colonial_standard",
+   "before": {
+    "dist_km": 3.4,
+    "itinerary": {
+     "cal": "North Cascades NP requires a backcountry camping permit for the Pyramid/Colonial basin; best conditions are typically mid-July through September once the Colonial-Neve glacier crossing firms up but before it gets too bare/crevassed.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Pyramid Lake trailhead on Highway 20, climb steadily through forest to Pyramid Lake, then follow the climbers' boot path up the open ridge above it to a campsite around 5,400-5,600 ft, generally the last flat, sheltered ground before the route opens onto glacier terrain. Most parties treat this as a moderate-to-strenuous half-day with full overnight and glacier gear on their backs.",
+       "hours": 5.5,
+       "miles": 4.6,
+       "title": "Approach to ridge camp",
+       "gainFt": 4300,
+       "lossFt": 100,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a ridge camp above Pyramid Lake"
+      },
+      {
+       "n": 2,
+       "note": "Break camp early, cross the Colonial-Neve glacier basin (rope up; it is crevassed with bergschrunds/moats late season) to the base of Pyramid's southeast slopes, then scramble a loose rock-and-snow finger to the summit ridge. Most parties tag the summit, downclimb to camp, pack up, and continue the full descent to the trailhead the same day, making for a long second day.",
+       "hours": 8.5,
+       "miles": 8,
+       "title": "Summit push and hike out",
+       "gainFt": 1950,
+       "lossFt": 6250,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Break camp, rope up",
+         "detail": "Cross the Colonial-Neve glacier basin toward Pyramid's southeast side."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Start final scramble",
+         "detail": "Loose rock/snow finger leads up to the summit ridge."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Summit Pyramid Peak",
+         "detail": "Broad, nearly flat summit at 7,189 ft."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Back at camp",
+         "detail": "Break down camp for the hike out."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Begin descent to trailhead",
+         "detail": "Reverse the ridge trail past Pyramid Lake."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Reach trailhead",
+         "detail": "~9 hr round trip from camp, ~14 hr car-to-car for the day."
+        }
+       ],
+       "objective": "Summit Pyramid Peak via the Colonial-Neve glacier basin, then hike all the way out"
+      }
+     ],
+     "totalNote": "A 2-day trip: ~4,300 ft up to a ridge camp above Pyramid Lake on day one, then a long second day crossing the Colonial-Neve glacier basin to the 7,189 ft summit and all the way back to the car (~12.4 mi, ~6,300 ft round trip total)."
+    },
+    "timing": {
+     "totalHrs": 14,
+     "summitTimeHrs": 8.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "5:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "From the Pyramid Lake trailhead on Highway 20, climb steadily through forest to Pyramid Lake, then follow the climbers' boot path up the open ridge above it to a campsite around 5,…",
+       "fromTo": "Approach to ridge camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8.5,
+       "note": "Break camp early, cross the Colonial-Neve glacier basin (rope up; it is crevassed with bergschrunds/moats late season) to the base of Pyramid's southeast slopes, then scramble a lo…",
+       "fromTo": "Summit push and hike out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "rope_note": "Approach crosses the Colonial Glacier basin (crevasses, steep snow finger) - carry ice axe, crampons, and consider a rope for glacier travel; final ridge/summit is a Class 3 rock scramble, typically unroped."
+   }
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "before": {
+    "aspect": "E",
+    "face": "East Face / Happy Creek drainage",
+    "waypoints": [
+     {
+      "lat": 48.694408,
+      "lng": -121.042952,
+      "elev": 7426,
+      "name": "Ruby Mountain summit",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 7426
+     }
+    ],
+    "pitch_detail": [
+     {
+      "grade": "Road walk/skin",
+      "notes": "Roughly 10 minutes along the highway before leaving it just east of Happy Creek.",
+      "pitch": "Highway/closure gate to Happy Creek Nature Trail split"
+     },
+     {
+      "grade": "Class 1, built trail",
+      "notes": "Follows the well-built nature trail up the east side of Happy Creek to a cascading waterfall.",
+      "pitch": "Happy Creek Nature Trail to waterfall (~1.5 mi)"
+     },
+     {
+      "grade": "Class 2, faint bootpath",
+      "notes": "Path steepens and grows fainter but stays followable; crosses a boulder field that is hazardous without snow cover.",
+      "pitch": "Above the waterfall to ~2,800 ft"
+     },
+     {
+      "grade": "Class 2-3, snow/scramble",
+      "notes": "Snow cover typically begins near 2,800 ft; continue up the north-side terrain to the summit.",
+      "pitch": "~2,800 ft to summit (7,426 ft)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "before": {
+    "loss_ft": 1100,
+    "itinerary": {
+     "cal": "Same FR-1570 washout access as the standard route; crampons/axe are typically still needed on the ridge's upper snow slopes even in summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same brushy FR-1570/Kindy Ridge approach as the standard route to a camp near Cyclone Lake; some parties instead push higher to a bivy at 6,300 ft on the ridge itself to shorten summit day.",
+       "hours": 6,
+       "miles": 6,
+       "title": "Approach to Cyclone Lake camp",
+       "gainFt": 4700,
+       "lossFt": 300,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Reach camp near Cyclone Lake (~4,800 ft)"
+      },
+      {
+       "n": 2,
+       "note": "From camp, cross heather and easy slabs onto Snowking's East Ridge, staying off the glacier to the right; the final few hundred feet steepens to about 30 degrees below the summit block (easy 3rd class). Round trip to the summit runs about 2 hours per multiple trip reports; the team then breaks camp and hikes all the way out.",
+       "hours": 8.5,
+       "miles": 8,
+       "title": "East Ridge summit push and hike-out",
+       "gainFt": 2600,
+       "lossFt": 6100,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Cyclone Lake camp",
+         "detail": "Crampons/axe on for the ridge's snow sections."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Summit (7,433 ft)",
+         "detail": "Via the East Ridge, Class 2-3 near the top."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Begin descent to camp",
+         "detail": ""
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Back at camp, pack up",
+         "detail": ""
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Reach trailhead/car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the East Ridge to the 7,433 ft summit, then hike out"
+      }
+     ],
+     "totalNote": "A 2-day trip is standard: ~6 mi and ~4,700 ft to a Cyclone Lake camp on day 1, then a fast, non-technical East Ridge summit push (~2 hrs, ~2,000-2,600 ft per real trip reports) plus the full hike-out on day 2; very fit parties have done the whole thing car-to-car in about 9 hours, but most treat it as an overnight."
+    },
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "access": {
+     "fees": "Northwest Forest Pass (or $8 day-use fee) recommended for parking at the Cascade River Road/FR-1570 trailhead.",
+     "notes": "No reservation, lottery, or quota system applies to this Glacier Peak Wilderness approach; access is via the free self-issued trailhead permit noted under \"permit.\"",
+     "rules": "Standard Wilderness Act group-size limit (12) applies; no bear-canister requirement or NPS-style off-trail cross-country zone cap is documented for this Forest Service approach.",
+     "permit": "No climbing permit required, but a free self-issued wilderness travel permit must be filled out at the trailhead register when entering the Glacier Peak Wilderness. Overnight camping along the route (Cyclone Lake basin, ridge bivies) is dispersed/undesignated.",
+     "closures": "FR-1570 has a long-standing washout near the Cascade River crossing that keeps vehicles from reaching the historical trailhead; verify current road status with the Mt. Baker Ranger District before driving in.",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "group_limit": 6,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District (Sedro-Woolley office, 810 State Route 20, Sedro-Woolley, WA 98284)",
+     "land_manager": "Mount Baker-Snoqualmie National Forest — Glacier Peak Wilderness (Mt. Baker Ranger District)",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Sign the wilderness register at the trailhead where one exists."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Typical North Cascades alpine summer weather within the best-season window; consistent with the existing climate/access data for this remote, glaciated peak",
+      "probability": "Afternoon thunderstorms are a known hazard on this route, most common in July-August"
+     },
+     "exposure": "Moderate - Class 2-3 terrain is not steep/technical, but the long, committing approach and the crevassed glacier crossing mean the main consequence of a mistake is a remote rescue scenario rather than a rock-fall-exposure scenario",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route (climbed in the Jul-Sep snow-free/glacier-travel window, outside NWAC's Nov-Apr winter forecast season; nearest NWAC coverage for this area is the West Slopes North zone)",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Real hazard, not N/A - the existing hazards list names crevasse fall on the Snowking Glacier specifically; the glacier is best traveled once well-covered (mid-summer) and roped travel is warranted even where snow appears to bridge crevasses"
+    },
+    "itinerary": {
+     "cal": "FR-1570 (Kindy Creek Rd) has a washout, so parking is below the road-end, adding mileage; best done June-September when the Snowking Glacier has consolidated snow and the approach trail is mostly clear.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the FR-1570 washout parking, follow the old logging road and then the boot-beaten Kindy Ridge climbers' trail up through brush and subalpine terrain, topping out around Point 5,791 before dropping to camp near Cyclone Lake. Expect a rough, steep, brushy trail with little flat ground.",
+       "hours": 6.5,
+       "miles": 6.5,
+       "title": "Approach to Cyclone Lake camp",
+       "gainFt": 4700,
+       "lossFt": 300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach camp in the meadows near Cyclone Lake (~4,800 ft)"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start gets the rope team onto the Snowking Glacier while the snow is firm; climbers rope up for crevasse hazard on the ascent. After summiting, the team downclimbs to camp, breaks it down, and continues the long hike out the same day — though many parties instead camp a second night and hike out on a third day.",
+       "hours": 9.5,
+       "miles": 8.5,
+       "title": "Snowking Glacier summit push and full hike-out",
+       "gainFt": 2700,
+       "lossFt": 6200,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave Cyclone Lake camp",
+         "detail": "Alpine start to catch firm snow on the glacier."
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Rope up at the glacier toe",
+         "detail": "Crevasse hazard begins here; team travels roped."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "\"Summit (7,433 ft)\"",
+         "detail": "Via the Snowking Glacier."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Begin descent, unrope off glacier",
+         "detail": ""
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at camp, break down tents",
+         "detail": "Some parties stop here for a second night instead of hiking out."
+        },
+        {
+         "time": "4:00 PM",
+         "label": "Reach trailhead/car",
+         "detail": "Long day if hiking all the way out."
+        }
+       ],
+       "objective": "\"Climb the Snowking Glacier to the 7,433 ft summit, then descend all the way to the car\""
+      }
+     ],
+     "totalNote": "A 2-day overnight trip is the standard: ~6.5 mi and ~4,700 ft to a Cyclone Lake camp on day 1, then a roped glacier summit push plus the full hike-out (~8.5 mi, ~2,700 ft gain / ~6,200 ft loss) on day 2; some parties split the hike-out into a third day."
+    },
+    "pro_tips": [
+     "Go early-to-mid summer for the most continuous, safest glacier travel — by August the glacier opens up and crevasse hazard rises noticeably.",
+     "Camp at Cyclone Lake (~4,800 ft) to split the trip into two easier days in one of the nicer basins in the area.",
+     "Budget extra time versus older trip reports — the FR-1570 washout means most parties now gain more elevation than historical route descriptions assume.",
+     "A drier, non-glacier alternative approaches via the West Ridge from Illabot Creek — used by some parties in late season once the Snowking Glacier route is mostly bare and awkward."
+    ]
+   }
+  }
+ ]
+}

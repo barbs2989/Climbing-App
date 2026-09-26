@@ -537,6 +537,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     once — the objectives one (*"Climbers who share one of your saved objectives — your tightest
     matches"*) mis-describes the interposed list for the same reason, since `_cand` cannot carry an
     objective.
+  - **REMOVED 2026-09-25 at the user's request** ("I don't need any text like this in the app"): every note telling a climber that profiles or listings are EXAMPLES, including the caveats above. The probes that asserted them (`probe-leaderboard-example-caveat`, `probe-partner-filters-say-what-they-narrow`) are deleted. The Partners intro ("Use the filters below…" / "Climbers who share one of your saved objectives…") now renders only when no real-accounts list sits between it and the filters, so it cannot describe the wrong list. Do not re-add an example caveat.
   - **THE AVAILABILITY FILTER EXCLUDING UNKNOWNS IS A DOCUMENTED DECISION AND WAS DELIBERATELY LEFT
     ALONE.** `if(!_av.length||!availMatch(...))return false` drops a climber whose availability is
     unknown — the mirror of the pace defect — but #532 chose that, the comment above `dateFit` records
@@ -545,7 +546,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     climbers carry no availability is a product argument, not evidence of a defect. Recorded so it is
     not re-derived as one — and note the five `availability:` fields that look like counter-examples
     are **guides**, where it is a STRING (*"Booking ~2 weeks out"*) that `availOf` correctly refuses.
-  - Proven by `scripts/oneoff/probe-partner-filters-say-what-they-narrow.mjs` — 23 assertions,
+  - Was proven by `probe-partner-filters-say-what-they-narrow` (deleted 2026-09-25 with the caption it checked) — 23 assertions,
     **source-only**, and the reason is stated rather than implied: the real-accounts block is gated on
     `USE_DB && DB_UID`, so reaching it means stubbing `./lib/supabase` to flip a module constant AND
     standing up PartnerSearch's full prop set, which is far more than a copy claim is worth.

@@ -1,0 +1,456 @@
+{
+ "applied": [
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "descent",
+   "path": [],
+   "fact": "Which drainage/trailhead the descent ends at"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Which drainage/trailhead the descent ends at"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "title"
+   ],
+   "fact": "Which drainage/trailhead the descent ends at"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    3,
+    "note"
+   ],
+   "fact": "Which drainage/trailhead the descent ends at"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "note"
+   ],
+   "fact": "Which drainage/trailhead the descent ends at"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    2,
+    "fromTo"
+   ],
+   "fact": "Which drainage/trailhead the descent ends at"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    3,
+    "note"
+   ],
+   "fact": "Which drainage/trailhead the descent ends at"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "obj_haz",
+   "path": [
+    5
+   ],
+   "fact": "Glacier/crevasse exposure on approach"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Glacier/crevasse exposure on approach"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Glacier/crevasse exposure on approach"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Glacier/crevasse exposure on approach"
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "column": "approach",
+   "path": [],
+   "fact": "Primary approach trailhead (Easy Pass vs Thunder Creek)"
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Trailhead direction text names the wrong place"
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Cumulative gain/loss for an out-and-back route"
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Cumulative gain/loss for an out-and-back route"
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Cumulative gain/loss for an out-and-back route"
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Cumulative gain/loss for an out-and-back route"
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Cumulative gain/loss for an out-and-back route"
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "gainFt"
+   ],
+   "fact": "Cumulative gain/loss for an out-and-back route"
+  },
+  {
+   "id": "wa_mount_logan_r2",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Cumulative gain/loss for an out-and-back route"
+  },
+  {
+   "id": "wa_mount_logan_r2",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Cumulative gain/loss for an out-and-back route"
+  },
+  {
+   "id": "wa_mount_logan_r2",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Which approach/trailhead this route uses"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "before": {
+    "descent": "Descend the Southwest Couloir (standard route) toward the approach side.",
+    "itinerary": {
+     "cal": "Same NPS backcountry permit zone; a committing IV+ 5.10 outing best attempted mid-July through September when the glacier/moat is most passable and rock is driest.",
+     "days": [
+      {
+       "n": 1,
+       "note": "PCT south from Bridge Creek trailhead, up North Fork Bridge Creek, then a brushy, off-trail approach (the first-ascent party logged roughly 3,000 ft of bushwhacking) to a camp near the Goode Glacier below the ridge's start.",
+       "hours": 9,
+       "miles": 13,
+       "title": "Approach to high camp/bivy",
+       "gainFt": 4700,
+       "lossFt": 0,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a bivy below the ridge"
+      },
+      {
+       "n": 2,
+       "note": "A long, sustained alpine rock climb along the crest with 4,000-5,000 ft of exposure on either side; simul-climbing up to 5.8 with harder pitches (up to 5.10) higher on the ridge. The first-ascent party spent about 11-12 hours climbing before bivying on the summit, the highest point in North Cascades National Park.",
+       "hours": 12,
+       "miles": 2,
+       "title": "Climb Megalodon Ridge to a summit bivy",
+       "gainFt": 2800,
+       "lossFt": 0,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "Pre-dawn",
+         "label": "Leave bivy",
+         "detail": "Approach the base of the ridge across the glacier."
+        },
+        {
+         "time": "Early",
+         "label": "Start climbing",
+         "detail": "Simul-climb easier 4th/low-5th terrain on the lower ridge."
+        },
+        {
+         "time": "Midday",
+         "label": "Crux pitches",
+         "detail": "Sustained 5.8-5.10 crack and stemming moves on the ridge crest."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Upper ridge",
+         "detail": "Continued exposed climbing; route eases somewhat near the top."
+        },
+        {
+         "time": "~11-12 hr on route",
+         "label": "Reach the summit",
+         "detail": ""
+        },
+        {
+         "time": "Night",
+         "label": "Bivy on the summit",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the full ridge to the summit"
+      },
+      {
+       "n": 3,
+       "note": "Descend the standard Southwest Couloir descent line, then keep losing elevation toward the Bridge Creek drainage rather than returning to the Day 1 camp. Expect several rappels and tired legs after the previous day's long climb.",
+       "hours": 10,
+       "miles": 10,
+       "title": "Descend toward Bridge Creek",
+       "gainFt": 0,
+       "lossFt": 7500,
+       "packLb": 22,
+       "schedule": [],
+       "objective": "Rappel/downclimb the Southwest Couloir toward the valley"
+      },
+      {
+       "n": 4,
+       "note": "Finish down North Fork Bridge Creek and the PCT back to Highway 20.",
+       "hours": 5,
+       "miles": 10,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 1200,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to the Bridge Creek trailhead"
+      }
+     ],
+     "totalNote": "A serious 4-day, grade IV+ 5.10 alpine outing: a brushy approach, an 11-12 hour technical ridge climb to a summit bivy, then a long multi-day descent and hike-out via the Southwest Couloir — roughly 35 mi and 7,500 ft of gain round trip."
+    },
+    "timing": {
+     "totalHrs": 36,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": 15,
+     "approachTimeHrs": 9,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "PCT south from Bridge Creek trailhead, up North Fork Bridge Creek, then a brushy, off-trail approach (the first-ascent party logged roughly 3,000 ft of bushwhacking) to a camp near…",
+       "fromTo": "Approach to high camp/bivy",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "A long, sustained alpine rock climb along the crest with 4,000-5,000 ft of exposure on either side; simul-climbing up to 5.8 with harder pitches (up to 5.10) higher on the ridge. T…",
+       "fromTo": "Climb Megalodon Ridge to a summit bivy",
+       "section": "Climb"
+      },
+      {
+       "hrs": 10,
+       "note": "Descend the standard Southwest Couloir descent line, then keep losing elevation toward the Bridge Creek drainage rather than returning to the Day 1 camp. Expect several rappels and…",
+       "fromTo": "Descend toward Bridge Creek",
+       "section": "Descent"
+      },
+      {
+       "hrs": 5,
+       "note": "Finish down North Fork Bridge Creek and the PCT back to Highway 20.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "obj_haz": [
+     "long, remote approach with significant bushwhacking",
+     "an icy moat near the final gendarmes",
+     "overhanging 5.10 climbing directly above the Goode Glacier",
+     "exposed bivy on a narrow bench",
+     "loose/tenuous blocks near the Southeast Peak",
+     "glacier crevasse hazard on approach"
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cold North Cascades alpine; afternoon clouds and showers common",
+      "probability": "Afternoon clouds/showers can turn a long ridge day into a forced, unplanned bivy"
+     },
+     "exposure": "Extreme - sustained, highly exposed climbing over many towers deep in NCNP; a fall, injury, or delay on the ridge creates serious benightment and rescue risk on a very long route",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer rock ridge route",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel is documented for this ridge route; approach details near any glaciated terrain are not fully verified"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "before": {
+    "approach": "Follow Thunder Creek Trail from Colonial Creek Campground (SR-20 MP130) about 9 miles to the Fisher Creek Trail junction, then Fisher Creek Trail about 3 miles to a lake camp near 5,160 ft below the Banded Glacier.",
+    "approach_logistics": {
+     "peakLat": 48.5367,
+     "peakLng": -120.9519,
+     "trailhead": "Thunder Creek Trailhead (Colonial Creek Campground)",
+     "trailheadLat": 48.6855,
+     "trailheadLng": -121.0925,
+     "trailheadDirection": "From the PCT North trailhead parking at Rainy Pass on SR-20 (~4,860 ft)"
+    },
+    "gain_ft": 7027,
+    "loss_ft": 13000,
+    "itinerary": {
+     "cal": "Easy Pass Trail typically isn't snow-free until July. Highway 20 access to the Easy Pass Trailhead is seasonal — typically open mid-April/May through early December, but exact dates vary by year and by winter storm damage (confirm via WSDOT); the trailhead sits inside the MP134-171 winter closure zone. The longer Thunder Creek Trailhead alternate is open year-round if Easy Pass is still gated. An NPS backcountry permit is required for the lake camp.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Easy Pass Trail up and over the pass (~6,600 ft), descend into the Fisher Creek drainage, then leave trail to reach a basin lake camp near the toe of the Banded Glacier — expect a sketchy log-bridge creek crossing and boggy ground near the lake.",
+       "hours": 6.5,
+       "miles": 12.5,
+       "title": "Approach to Banded Glacier basin camp",
+       "gainFt": 4600,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach the lake camp below the Banded Glacier"
+      },
+      {
+       "n": 2,
+       "note": "A long alpine day: climb loose talus and a rockfall-prone gully to the obscure, hard-to-spot Christmas Tree Col, drop into the Banded Glacier basin, rope up and stay climber's-left of the crevasses to the Banded-Douglas col, then follow a loose Class 2-3 ridge to the summit before reversing the entire route.",
+       "hours": 13,
+       "miles": 6,
+       "title": "Summit via Christmas Tree Col and the Banded Glacier",
+       "gainFt": 3200,
+       "lossFt": 3200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Wake / alpine start",
+         "detail": ""
+        },
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": ""
+        },
+        {
+         "time": "~7:00 AM",
+         "label": "Reach Christmas Tree Col",
+         "detail": "Not obvious from the lake — look for an orange-brown notch above the snowfields."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Rope up on the Banded Glacier",
+         "detail": "Stay climber's-left to avoid the worst crevasses."
+        },
+        {
+         "time": "~11-12 PM",
+         "label": "Summit",
+         "detail": "Via the Banded-Douglas col and NE ridge."
+        },
+        {
+         "time": "6-7 PM",
+         "label": "Back at camp",
+         "detail": "12-14 hr round trip is typical."
+        }
+       ],
+       "objective": "Reach the true summit and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach over Easy Pass back to the trailhead.",
+       "hours": 7,
+       "miles": 12.5,
+       "title": "Hike out",
+       "gainFt": 300,
+       "lossFt": 4600,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Return to the Easy Pass Trailhead"
+      }
+     ],
+     "totalNote": "A strenuous 3-day, ~29-mile round trip (~12,500 ft gain) via Easy Pass; the crux is a very long (12+ hr) summit day through the loose, hard-to-find Christmas Tree Col and a roped glacier crossing. Very strong parties have linked the whole route car-to-car in a single ~13.5 hr day, but that is an outlier push, not the standard plan."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_logan_r2",
+   "before": {
+    "gain_ft": 7000,
+    "loss_ft": 1500,
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day backpacking fitness for the same long, remote Thunder Creek / Park Creek Pass approach used by the other Logan routes",
+      "packWeight": "Heavy overnight glacier-mountaineering pack, plus any additional ice tools/protection for the steeper sections, roughly 35-45+ lbs"
+     },
+     "approachTime": "Long approach (multi-day), same remote North Cascades approach as the Banded Glacier route",
+     "requiredSkills": [
+      "roped glacier travel",
+      "crevasse rescue",
+      "steeper ice/snow climbing technique (\"steeper ice\")",
+      "self-arrest",
+      "comfort with a long, committing, remote approach"
+     ],
+     "experienceLevel": "Advanced alpine climber — beyond general glacier-mountaineering competence, partners need comfort on steeper ice/snow steps, consistent with the harder character versus the standard routes"
+    }
+   }
+  }
+ ]
+}

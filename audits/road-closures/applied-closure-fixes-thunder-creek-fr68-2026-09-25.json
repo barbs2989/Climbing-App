@@ -1,0 +1,349 @@
+{
+ "wa_bald_eagle_peak_scramble": {
+  "area_id": "wa_bald_eagle_peak",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Foss River Road (FR 68) and West Fork Foss Road (FR 6835)",
+     "status": "Open seasonally; the upper section has experienced road damage limiting access, and weekday construction delays (~30 min) are posted May-September",
+     "driveNote": "From Skykomish, follow US-2 east about 2 miles to Foss River Road (FR 68), then continue about 4.7 miles and turn left onto FR 6835 (West Fork Foss Road); park on its shoulder about half a mile on, just after the concrete bridge over the East Fork Foss River. Expect ~30-minute delays for road construction May–September on weekdays 6am–8pm (per USFS alert)."
+    },
+    "value": {
+     "name": "Foss River Road (FR 68) and West Fork Foss Road (FR 6835)",
+     "status": "Open seasonally. The Forest Service's Skykomish District road-damage alert of June 30, 2026 reports road damage high on Foss River Road (FR 68) that prevents access to the top of the road; it gives no milepost and no end date. Skykomish Ranger District: (360) 677-2414.",
+     "driveNote": "From Skykomish, follow US-2 east about 2 miles to Foss River Road (FR 68), then continue about 4.7 miles and turn left onto FR 6835 (West Fork Foss Road); park on its shoulder about half a mile on, just after the concrete bridge over the East Fork Foss River."
+    }
+   }
+  },
+  "why": "Road is FR 68 ~4.7 mi then FR 6835. road.status carried an undated 'upper section has experienced road damage' plus 'weekday construction delays May-September'; the construction-delay alert is no longer posted (its URL now 404s and the MBS alerts list of September 25, 2026 has no FR 68 construction item), so the status is replaced with the dated June 30, 2026 damage entry. Medium because the alert gives no milepost, so whether the damage is above mile 4.7 cannot be stated. access.closures and driveNote (which repeat the delay claim, undated) are not touched.",
+  "confidence": "medium"
+ },
+ "wa_booker_mountain_northeast_face": {
+  "area_id": "wa_booker_mountain",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "$10 per person backcountry recreation fee (mid-May through early October) plus $6 reservation fee",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry permit required for the overnight approach; reservable via Recreation.gov or walk-up at the Marblemount Wilderness Information Center",
+     "closures": null,
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    },
+    "value": {
+     "fees": "$10 per person backcountry recreation fee (mid-May through early October) plus $6 reservation fee",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry permit required for the overnight approach; reservable via Recreation.gov or walk-up at the Marblemount Wilderness Information Center",
+     "closures": "Thunder Creek Fire: North Cascades National Park's fire-closure list (updated September 14, 2026; no end date given) closes the Thunder Creek Trail from the Fisher Creek Trail junction to Park Creek Pass for the Thunder Creek Fire, along with Junction Camp, Skagit Queen Camp and Thunder Basin Camp (hiker and stock sites), and prohibits cross-country travel from the closed trail. The Thunder Creek approach to Park Creek Pass cannot be used while this stands. The southern approach from Stehekin is closed too: the same list closes the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge, and the High Bridge area, for the Sisi Fire. North Cascades National Park: (360) 854-7200.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    }
+   }
+  },
+  "why": "Approach is a multi-day backpack up the Thunder Creek Trail to Park Creek Pass / head of Park Creek (or a Buckner-area traverse); the Thunder Creek section beyond Fisher Creek is closed and the Stehekin side (Park Creek trail via High Bridge) is closed by the Sisi Fire road closure. access.closures was null. The cross-country Buckner traverse is not claimed closed.",
+  "confidence": "high"
+ },
+ "wa_booker_mountain_northwest_route": {
+  "area_id": "wa_booker_mountain",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "$10 per person backcountry recreation fee (mid-May through early October) plus $6 reservation fee",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry permit required for the overnight Thunder Creek/Park Creek Pass approach; reservable via Recreation.gov or walk-up at the Marblemount Wilderness Information Center",
+     "closures": null,
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    },
+    "value": {
+     "fees": "$10 per person backcountry recreation fee (mid-May through early October) plus $6 reservation fee",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry permit required for the overnight Thunder Creek/Park Creek Pass approach; reservable via Recreation.gov or walk-up at the Marblemount Wilderness Information Center",
+     "closures": "Thunder Creek Fire: North Cascades National Park's fire-closure list (updated September 14, 2026; no end date given) closes the Thunder Creek Trail from the Fisher Creek Trail junction to Park Creek Pass for the Thunder Creek Fire, along with Junction Camp, Skagit Queen Camp and Thunder Basin Camp (hiker and stock sites), and prohibits cross-country travel from the closed trail. The Thunder Creek approach to Park Creek Pass cannot be used while this stands. The southern approach from Stehekin is closed too: the same list closes the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge, and the High Bridge area, for the Sisi Fire. North Cascades National Park: (360) 854-7200.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": null,
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    }
+   }
+  },
+  "why": "Approach is the Thunder Creek Trail from Colonial Creek to Park Creek Pass (past Junction Camp), exactly the section NPS closes for the Thunder Creek Fire; access.closures was null.",
+  "confidence": "high"
+ },
+ "wa_la_bohn_peak_southwest_slopes": {
+  "area_id": "wa_la_bohn_peak",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Foss River Road (FR 68)",
+     "status": "Gravel, rough with potholes; passable to most passenger cars but high-clearance/AWD recommended",
+     "driveNote": "4.1–4.2 mi from US 2 (0.5 mi east of the Skykomish Ranger Station) to the East Fork Foss River/Necklace Valley trailhead (~1,600–1,650 ft); the last mile can hold snow into early summer.",
+     "seasonalGate": "No seasonal gate, but intermittent daytime closures/delays are posted for FR 68 from mid-July through fall 2026 for powerline trenching — check the Mt. Baker-Snoqualmie NF alerts page before driving up."
+    },
+    "value": {
+     "name": "Foss River Road (FR 68)",
+     "status": "Gravel, rough with potholes; passable to most passenger cars but high-clearance/AWD recommended. The Forest Service's Skykomish District road-damage alert of June 30, 2026 reports road damage high on Foss River Road (FR 68) that prevents access to the top of the road; it gives no milepost and no end date. Skykomish Ranger District: (360) 677-2414.",
+     "driveNote": "4.1–4.2 mi from US 2 (0.5 mi east of the Skykomish Ranger Station) to the East Fork Foss River/Necklace Valley trailhead (~1,600–1,650 ft); the last mile can hold snow into early summer.",
+     "seasonalGate": "No seasonal gate, but intermittent daytime closures/delays are posted for FR 68 from mid-July through fall 2026 for powerline trenching — check the Mt. Baker-Snoqualmie NF alerts page before driving up."
+    }
+   }
+  },
+  "why": "Trailhead is the East Fork Foss/Necklace Valley trailhead ~4.1 mi up FR 68; road.status did not mention the June 30, 2026 damage entry. Medium: the alert gives no milepost, so the sentence states only what the alert says. seasonalGate (dated powerline-trenching note) left as is.",
+  "confidence": "medium"
+ },
+ "wa_mount_hinman_hinman_glacier": {
+  "area_id": "wa_mount_hinman",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Foss River Road / Salmon La Sac approaches",
+     "status": "Paved to gravel",
+     "driveNote": "Confirm road status with the relevant ranger district.",
+     "seasonalGate": "Upper roads snow-gated in shoulder seasons"
+    },
+    "value": {
+     "name": "Foss River Road / Salmon La Sac approaches",
+     "status": "Paved to gravel. The Forest Service's Skykomish District road-damage alert of June 30, 2026 reports road damage high on Foss River Road (FR 68) that prevents access to the top of the road; it gives no milepost and no end date. Skykomish Ranger District: (360) 677-2414.",
+     "driveNote": "Confirm road status with the relevant ranger district.",
+     "seasonalGate": "Upper roads snow-gated in shoulder seasons"
+    }
+   }
+  },
+  "why": "Approach parks at the Necklace Valley Trailhead on FR 68; road.status was only 'Paved to gravel'. Same milepost caveat as La Bohn.",
+  "confidence": "medium"
+ },
+ "wa_mount_logan_fremont_glacier": {
+  "area_id": "wa_mount_logan",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "$10 per person plus a $6 nonrefundable permit fee, charged mid-May through early October; no charge the rest of the year; free for youth 15 and under.",
+     "notes": "No trailhead or parking fee - the Thunder Creek Trailhead at Colonial Creek begins on National Park Service land, where no Northwest Forest Pass is required. No specific climbing permit.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "NPS wilderness/backcountry permit required for all overnight stays. Reserve in advance on recreation.gov (roughly 15% odds in the 2025 early-access lottery) or get a walk-up permit in person (about 40% of sites are walk-up only) up to 24 hours ahead at the Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA (SR 20 milepost 105.3).",
+     "closures": "None — Colonial Creek/Thunder Creek trailhead is west of SR 20's winter closure gates (MP134-171) and is generally reachable by car year-round, independent of the climbing season.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (NPS) — Ross Lake National Recreation Area / North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    },
+    "value": {
+     "fees": "$10 per person plus a $6 nonrefundable permit fee, charged mid-May through early October; no charge the rest of the year; free for youth 15 and under.",
+     "notes": "No trailhead or parking fee - the Thunder Creek Trailhead at Colonial Creek begins on National Park Service land, where no Northwest Forest Pass is required. No specific climbing permit.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "NPS wilderness/backcountry permit required for all overnight stays. Reserve in advance on recreation.gov (roughly 15% odds in the 2025 early-access lottery) or get a walk-up permit in person (about 40% of sites are walk-up only) up to 24 hours ahead at the Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA (SR 20 milepost 105.3).",
+     "closures": "Thunder Creek Fire: North Cascades National Park's fire-closure list (updated September 14, 2026; no end date given) closes the Thunder Creek Trail from the Fisher Creek Trail junction to Park Creek Pass for the Thunder Creek Fire, along with Junction Camp, Skagit Queen Camp and Thunder Basin Camp (hiker and stock sites), and prohibits cross-country travel from the closed trail. This approach cannot be used past the Fisher Creek junction while it stands. The southern approach from Stehekin is closed too: the same list closes the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge, and the High Bridge area, for the Sisi Fire. The Colonial Creek trailhead itself is west of SR 20's winter closure gates (MP 134-171) and is reachable by car year-round. North Cascades National Park: (360) 854-7200.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (NPS) — Ross Lake National Recreation Area / North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    }
+   }
+  },
+  "why": "Approach is Thunder Creek Trail 16-18 mi to Thunder Basin camp and Park Creek Pass; the variant's southern alternative is High Bridge -> Park Creek trail. Both are closed. access.closures said 'None — ...', so it is replaced (its true trailhead sentence is kept).",
+  "confidence": "high"
+ },
+ "wa_mount_logan_r1": {
+  "area_id": "wa_mount_logan",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "$10 per person plus a $6 nonrefundable permit fee, mid-May through early October; free the rest of the year; free for youth 15 and under.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "NPS wilderness/backcountry permit required for all overnight stays; reserve on recreation.gov or get a walk-up permit at the Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA (SR 20 milepost 105.3).",
+     "closures": "Easy Pass Trailhead (primary approach, SR 20 MP151) sits INSIDE SR 20's winter closure zone (gates at MP134-171) and is unreachable roughly December through mid-spring; exact open/close dates vary year to year (2026 reopened unusually late, June 14, due to storm-repair work) — check WSDOT before a trip. The alternate Thunder Creek/Colonial Creek Campground trailhead (~SR 20 MP130) sits outside the closure gates and is open year-round, but is a longer approach (~13 mi one-way vs. Easy Pass's ~10 mi one-way to the lake camp).",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (NPS) — Ross Lake National Recreation Area / North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    },
+    "value": {
+     "fees": "$10 per person plus a $6 nonrefundable permit fee, mid-May through early October; free the rest of the year; free for youth 15 and under.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "NPS wilderness/backcountry permit required for all overnight stays; reserve on recreation.gov or get a walk-up permit at the Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA (SR 20 milepost 105.3).",
+     "closures": "Easy Pass Trailhead (primary approach, SR 20 MP151) sits INSIDE SR 20's winter closure zone (gates at MP134-171) and is unreachable roughly December through mid-spring; exact open/close dates vary year to year (2026 reopened unusually late, June 14, due to storm-repair work) — check WSDOT before a trip. The alternate Thunder Creek/Colonial Creek Campground trailhead (~SR 20 MP130) sits outside the closure gates and is open year-round, but is a longer approach (~13 mi one-way vs. Easy Pass's ~10 mi one-way to the lake camp). Thunder Creek Fire: North Cascades National Park's fire-closure list (updated September 14, 2026; no end date given) closes the Thunder Creek Trail from the Fisher Creek Trail junction to Park Creek Pass, and Junction Camp (hiker and stock sites) at that junction. The Thunder Creek approach turns onto the Fisher Creek Trail at the junction, which the list does not close, but Junction Camp cannot be used while this stands. North Cascades National Park: (360) 854-7200.",
+     "seasonal": "",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Service Complex (NPS) — Ross Lake National Recreation Area / North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    }
+   }
+  },
+  "why": "Year-round approach is Thunder Creek ~9 mi to the Fisher Creek junction, then the Fisher Creek Trail. The NPS closure starts at that junction and runs south to Park Creek Pass, so the route is not cut off, but Junction Camp (at the junction) is closed. Existing text describes the Thunder Creek trailhead as open year-round without mentioning the fire; appended. Medium because the effect on this route is only the camp.",
+  "confidence": "medium"
+ },
+ "wa_north_ridge_4": {
+  "area_id": "wa_primus_peak",
+  "fields": {
+   "access": {
+    "expect": {
+     "_raw": {
+      "contact": "(360) 854-7245",
+      "approach": "Thunder Creek Trailhead near Colonial Creek Campground",
+      "trip_stats": "19 miles roundtrip, 7,300 feet elevation gain",
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry camping permit (year-round)",
+      "land_manager": "NPS North Cascades National Park",
+      "youth_discount": "Youth 15 and under free",
+      "pickup_deadline": "Permits must be picked up by 11am on trip start date",
+      "pickup_location": "Wilderness Information Center, Marblemount, WA",
+      "special_hazards": "Exposed climbing and glacier travel required; exposed sections on route",
+      "wilderness_zone": "North Cascades National Park Backcountry",
+      "group_size_limits": "4-12 depending on camp capacity",
+      "seasonal_availability": "60% reserved online during peak season (approx May-Sept); 40% first-come-first-served",
+      "permit_reservation_method": "Recreation.gov (60% peak season) or walk-up (40%)"
+     },
+     "fees": "$10 per person plus a $6 non-refundable reservation fee for an overnight backcountry permit; youth 15 and under free. The fee season runs mid-May to early October.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry camping permit (year-round)",
+     "closures": "NPS North Cascades fire closures (page updated August 23, 2026): the Thunder Creek Fire closes 'Thunder Creek Trail from Junction Stock Camp to Park Creek Pass' and the Boston Glacier and Logan cross-country zones",
+     "seasonal": "",
+     "permitZone": "North Cascades National Park Backcountry",
+     "group_limit": 6,
+     "landManager": "NPS North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit — limited, with a fee",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead. Camps above Thunder Creek fall in cross-country zones."
+     }
+    },
+    "value": {
+     "_raw": {
+      "contact": "(360) 854-7245",
+      "approach": "Thunder Creek Trailhead near Colonial Creek Campground",
+      "trip_stats": "19 miles roundtrip, 7,300 feet elevation gain",
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry camping permit (year-round)",
+      "land_manager": "NPS North Cascades National Park",
+      "youth_discount": "Youth 15 and under free",
+      "pickup_deadline": "Permits must be picked up by 11am on trip start date",
+      "pickup_location": "Wilderness Information Center, Marblemount, WA",
+      "special_hazards": "Exposed climbing and glacier travel required; exposed sections on route",
+      "wilderness_zone": "North Cascades National Park Backcountry",
+      "group_size_limits": "4-12 depending on camp capacity",
+      "seasonal_availability": "60% reserved online during peak season (approx May-Sept); 40% first-come-first-served",
+      "permit_reservation_method": "Recreation.gov (60% peak season) or walk-up (40%)"
+     },
+     "fees": "$10 per person plus a $6 non-refundable reservation fee for an overnight backcountry permit; youth 15 and under free. The fee season runs mid-May to early October.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry camping permit (year-round)",
+     "closures": "Thunder Creek Fire: North Cascades National Park's fire-closure list (updated September 14, 2026; no end date given) closes the Thunder Creek Trail from the Fisher Creek Trail junction to Park Creek Pass for the Thunder Creek Fire, along with Junction Camp, Skagit Queen Camp and Thunder Basin Camp (hiker and stock sites), and prohibits cross-country travel from the closed trail. This route leaves the Thunder Creek Trail at Tricouni Camp, below the Fisher Creek junction, so its approach is outside the closed section. North Cascades National Park: (360) 854-7200.",
+     "seasonal": "",
+     "permitZone": "North Cascades National Park Backcountry",
+     "group_limit": 6,
+     "landManager": "NPS North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit — limited, with a fee",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead. Camps above Thunder Creek fall in cross-country zones."
+     }
+    }
+   }
+  },
+  "why": "Existing text is a stale August 23, 2026 snapshot ('from Junction Stock Camp to Park Creek Pass and the Boston Glacier and Logan cross-country zones'); the list updated September 14, 2026 scopes the closure from the Fisher Creek Trail junction and no longer names those cross-country zones. The route's approach (Thunder Creek to Tricouni Camp ~mile 8, then Lucky Ridge) is below the Fisher Creek junction (~mile 9.5 per the catalog's own mileages), so the replacement says the approach is outside the closed section. Medium: the relevance line rests on the route's own trail mileages.",
+  "confidence": "medium"
+ },
+ "wa_storm_king_southwest_scramble": {
+  "area_id": "wa_storm_king",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "Backcountry camping fee is $10/person plus a one-time $6 non-refundable reservation fee, charged mid-May through early October; no charge outside that window and none for youth 15 and under. There is no park entrance fee for North Cascades NP.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "A backcountry permit is required for any overnight stay in the park; get it at the Wilderness Information Center in Marblemount ((360) 854-7245) or the Golden West Visitor Center in Stehekin. About 60% of sites are reservable in advance on Recreation.gov; the remaining ~40% are walk-up only, issued in person up to 24 hours ahead.",
+     "closures": "Camping is prohibited at Park Creek Pass itself to protect fragile alpine turf — plan to camp at Thunder Basin, Park Creek, or the high basin instead. Trail washouts have periodically hit the Bridge Creek/North Fork corridor near Stehekin, sometimes requiring a bike-and-hike detour around damaged sections — check current NPS trail conditions before relying on that approach. A major December 2025 atmospheric-river flood also severely damaged Stehekin's Company Creek Road, power, and wastewater infrastructure, disrupting North Cascades Lodge services and the Stehekin shuttle/ferry into the 2026 season; an interim road repair was completed in June 2026 but services remain limited — check the NPS Stehekin Flood Response Update page before planning the Stehekin/Park Creek approach.",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Complex, Stephen Mather Wilderness (National Park Service).",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "No day-use pass; a paid/reserved backcountry permit is required for any overnight stay (see fees).",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    },
+    "value": {
+     "fees": "Backcountry camping fee is $10/person plus a one-time $6 non-refundable reservation fee, charged mid-May through early October; no charge outside that window and none for youth 15 and under. There is no park entrance fee for North Cascades NP.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "A backcountry permit is required for any overnight stay in the park; get it at the Wilderness Information Center in Marblemount ((360) 854-7245) or the Golden West Visitor Center in Stehekin. About 60% of sites are reservable in advance on Recreation.gov; the remaining ~40% are walk-up only, issued in person up to 24 hours ahead.",
+     "closures": "Camping is prohibited at Park Creek Pass itself to protect fragile alpine turf — plan to camp at Thunder Basin, Park Creek, or the high basin instead. Trail washouts have periodically hit the Bridge Creek/North Fork corridor near Stehekin, sometimes requiring a bike-and-hike detour around damaged sections — check current NPS trail conditions before relying on that approach. A major December 2025 atmospheric-river flood also severely damaged Stehekin's Company Creek Road, power, and wastewater infrastructure, disrupting North Cascades Lodge services and the Stehekin shuttle/ferry into the 2026 season; an interim road repair was completed in June 2026 but services remain limited — check the NPS Stehekin Flood Response Update page before planning the Stehekin/Park Creek approach. Thunder Creek Fire: North Cascades National Park's fire-closure list (updated September 14, 2026; no end date given) closes the Thunder Creek Trail from the Fisher Creek Trail junction to Park Creek Pass for the Thunder Creek Fire, along with Junction Camp, Skagit Queen Camp and Thunder Basin Camp (hiker and stock sites), and prohibits cross-country travel from the closed trail. The Thunder Creek approach cannot be used past the Fisher Creek junction while this stands. The same list also closes the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge, the High Bridge area, and the Pacific Crest Trail from the park boundary to Bridge Creek Camp for the Sisi Fire, so the Stehekin/High Bridge approach is closed as well. North Cascades National Park: (360) 854-7200.",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park Complex, Stephen Mather Wilderness (National Park Service).",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "No day-use pass; a paid/reserved backcountry permit is required for any overnight stay (see fees).",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+      "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead."
+     }
+    }
+   }
+  },
+  "why": "Most common approach is Thunder Creek past Junction, Skagit Queen and Thunder Basin camps to Park Creek Pass (all closed); the Stehekin/High Bridge alternative is closed by the Sisi Fire listings. The McAlester Pass/Rainbow Creek alternative is not claimed closed. Existing closures text (camping rule, Stehekin flood) is kept and the fire sentence appended.",
+  "confidence": "high"
+ }
+}

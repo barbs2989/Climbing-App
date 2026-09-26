@@ -1,0 +1,289 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_spickard_southwest",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "Hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "column": "overview",
+   "path": [],
+   "fact": "Hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "column": "partner_requirements",
+   "path": [
+    "experienceLevel"
+   ],
+   "fact": "Hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "Hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_torment_torment_forbidden_traverse",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "land manager listed as both known and unknown"
+  },
+  {
+   "id": "wa_mount_torment_torment_forbidden_traverse",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "whether a backcountry permit is required"
+  },
+  {
+   "id": "wa_mount_torment_torment_forbidden_traverse",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "fact": "Grade of the Torment South Ridge segment on the traverse"
+  },
+  {
+   "id": "wa_mount_torment_south_ridge",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "fact": "hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_torment_south_ridge",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "grade"
+   ],
+   "fact": "hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_torment_south_ridge",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "grade"
+   ],
+   "fact": "hardest rock grade on the route"
+  },
+  {
+   "id": "wa_mount_torment_south_ridge",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "land manager listed as both known and unknown"
+  },
+  {
+   "id": "wa_mount_torment_south_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "whether a backcountry permit is required"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_spickard_southwest",
+   "before": {
+    "grade": "Class 3-4 + glacier",
+    "hazards": [
+     "Crevasses on the Southwest Glacier, including a marginal snow bridge that persists in most seasons",
+     "Loose, sharp rock on the final Class 2-3/3-4 gullies, chimneys, and ribs near the summit",
+     "Slick, spray-soaked rock at the Depot Creek Falls crossing, aided by aging fixed hand-lines",
+     "Devil's club and slide alder brush hiding uneven footing on the lower approach",
+     "Extreme remoteness and lack of cell coverage complicating any self-rescue or evacuation"
+    ],
+    "overview": "Mount Spickard is a massive, heavily glaciated peak straddling the Skagit/Fraser drainage divide just 2 miles south of the Canadian border, part of the Chilliwack Group of the Skagit Range. It is the 5th-highest summit in North Cascades National Park and the 16th-highest in Washington, and its roughly 4,779 ft of prominence ranks 9th-greatest in the state. The mountain is built of Tertiary-age gneiss; the Silver Glacier drains north over a mile to Silver Lake, while a separate glacier system on the southwest side extends over 3 miles toward Mount Redoubt. First ascent is credited to Walter B. Reaburn in 1904; the peak's current name was applied in 1963 for climber Warren J. Spickard Jr., who died climbing a nearby peak in 1961. The standard Southwest Route/Silver Lake line climbs broad talus and a southwest glacier to a final short but loose Class 3-4 rock scramble, and is notable as much for its remote, cross-border approach as for its technical difficulty.",
+    "pro_needs": "Roped glacier travel and steep snow, then exposed Class 3-4 scrambling to the summit; minimal rock pro.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - multi-day, off-trail approach up the Depot Creek/Silver Lake drainage with significant elevation gain before the summit day itself",
+      "packWeight": "Moderate-heavy, roughly 35-45 lb for an overnight/multi-day approach carrying camping, glacier, and rock gear"
+     },
+     "approachTime": "Long - typically a 2-3 day approach into the basin below the peak before a summit push; round trip is often a 3-4 day outing",
+     "requiredSkills": [
+      "Glacier travel and crevasse rescue",
+      "Cramponing and self-arrest on sustained 40-degree snow",
+      "Exposed Class 3-4 scrambling",
+      "Off-trail/remote route-finding",
+      "Judgment for committing, hard-to-bail terrain given the long approach"
+     ],
+     "experienceLevel": "Experienced alpine climber comfortable with glacier travel and exposed 3rd/4th class rock in remote, trail-less terrain near the international border; not a beginner objective"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cool, changeable North Cascades alpine weather; the best-season note to climb mid-summer through early fall reflects the need to avoid lingering early-season or accumulating late-season snow",
+      "probability": "Afternoon thunderstorms are a hazard here - plan for early starts and being off exposed ridges and the glacier by early afternoon"
+     },
+     "exposure": "Sustained, high-consequence terrain: a long, committing off-trail approach near the Canadian border, a glacier crossing, and exposed Class 3-4 rock to the summit. A fall or injury anywhere on this route means a slow, remote rescue.",
+     "avalanche": {
+      "zone": "North Cascades / Chilliwack border region - not covered by a specific NWAC forecast zone in season; NWAC issues forecasts only Nov-Apr for winter backcountry travel, so no avalanche advisory applies to this Jul-Sep glacier climbing window",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Short but genuine glacier crossing below the south ridge notch, with crevasse-fall hazard. Bridges are less consolidated early season and more open (but more visible) late season; carry rope and rescue gear even though some parties travel this short section unroped when bridges look solid."
+    },
+    "grade_num": 4
+   }
+  },
+  {
+   "id": "wa_mount_torment_torment_forbidden_traverse",
+   "before": {
+    "access": {
+     "_raw": "Cascade River Road from Marblemount",
+     "fees": "N/A",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size limit is 12 in trail corridors and camps and in the eleven named cross-country zones — Boston Basin, Eldorado, Forbidden, Hidden Lake, Icy, Inspiration, Nooksack, Price, Sulphide Glacier, Torment Basin and Triad — one of which this route is in; 6 in the remaining cross-country zones. Limits include people and stock. Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "N/A",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "N/A",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit, quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead."
+     }
+    },
+    "pitch_detail": [
+     {
+      "grade": "4th/5.6",
+      "notes": "Ascend Torment's South Ridge (or SE Face) on loose 4th/low-5th terrain to a grassy ledge and V-shaped notch below the summit; leave packs, tag the summit, and downclimb back to the notch.",
+      "pitch": "1"
+     },
+     {
+      "grade": null,
+      "notes": "An overhanging rappel on fixed slings from the notch drops onto the Forbidden Glacier.",
+      "pitch": "2"
+     },
+     {
+      "grade": "up to ~50° snow/ice",
+      "notes": "Cross the Forbidden Glacier past bergschrunds, moats, and snow bridges to a saddle below Forbidden's north side; the route's most serious and season-dependent hazard.",
+      "pitch": "3"
+     },
+     {
+      "grade": "3rd/4th",
+      "notes": "Follow the exposed 'Sidewalk in the Sky' ridge crest, bypassing two gendarmes (first on the left, second on the right), to the West Ridge Notch.",
+      "pitch": "4"
+     },
+     {
+      "grade": "4th/5.6",
+      "notes": "Join Forbidden Peak's classic West Ridge (Fifty Classic Climbs route): 4th-class scrambling with a crux 5.6 tower pitch near the summit.",
+      "pitch": "5"
+     },
+     {
+      "grade": null,
+      "notes": "Descend the West Ridge (partial downclimb, ~1 rappel) then roughly 7 rappels down the Cat Scratch Gullies back toward Boston Basin.",
+      "pitch": "6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_torment_south_ridge",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.5",
+      "notes": "Climb an open book angling left off the notch that starts the ridge, turning right at its top to a ledge, then a short second open book gains the crest.",
+      "pitch": 1,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.4-5.5",
+      "notes": "Surmount a steeper tower via sloping, exposed ledges beneath a steep face; protection is sparse here.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.5",
+      "notes": "Weave among towers on the exposed crest, continuing leftward on the southwest face.",
+      "pitch": 3,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "Sustained low-5th and 4th-class climbing on good granite finishes the ridge to the summit; many parties simul-climb this last stretch.",
+      "pitch": 4,
+      "anchor": "Walk-off (no belay)",
+      "lengthM": 45
+     }
+    ],
+    "access": {
+     "_raw": "Cascade River Road from Marblemount",
+     "fees": "N/A",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size limit is 12 in trail corridors and camps and in the eleven named cross-country zones — Boston Basin, Eldorado, Forbidden, Hidden Lake, Icy, Inspiration, Nooksack, Price, Sulphide Glacier, Torment Basin and Triad — one of which this route is in; 6 in the remaining cross-country zones. Limits include people and stock. Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "N/A",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "N/A",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit, quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead."
+     }
+    }
+   }
+  }
+ ]
+}

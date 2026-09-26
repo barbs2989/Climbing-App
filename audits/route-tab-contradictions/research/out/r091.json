@@ -1,0 +1,393 @@
+{
+ "file": "r091.json",
+ "results": [
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "fact": "Which trailhead/valley is used to reach Trapper Lake",
+   "verdict": "fixed",
+   "correct_value": "The approach is from the Cascade Pass Trailhead (Cascade River Road) over Cascade Pass to Pelton Basin, then off-trail down to Trapper Lake; the Stehekin-valley side is a harder, less-used alternative.",
+   "evidence": "The reader's internal resolution picked the wrong side. A 2015 trip report describes going in and out from the Cascade Pass trailhead: maintained trail to Pelton Basin camp, then a boot path down toward Pelton Creek and a faint fisherman's trail to the lake (5.5 h in). A separate 2024 report from a party who tried from Stehekin/Old Cottonwood found that line sketchy and says the most-used route comes from Pelton Basin; the lake's reference page puts it off the upper Stehekin River Trail, which is the trail through Pelton Basin. The row's itinerary, beta, turnaround, timing breakdown, comms and climate already say Cascade Pass; the Harlequin trailhead is also geographically impossible at the stated 7.5 mi to the lake (roughly 16 mi straight-line). RESIDUAL NOT PATCHED (out of scope): waypoints[0] and approach_logistics still name and pin Harlequin Campground (lat 48.347744, lng -120.713821, elev 1184); they need a pin repair to the Cascade Pass Trailhead (~48.4755, -121.0750, ~3,660 ft) before the TRAILHEAD card agrees. Also patched: two 'Devore Creek' references (a Lake Chelan drainage nowhere near this peak) and ferry-dependent seasonal/fee/road/hospital text.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2015-07-26.8703905680",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-03-11.2795822533",
+    "https://en.wikipedia.org/wiki/Trapper_Lake_(Chelan_County,_Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "There is no road access to the Trapper Mountain area — reach Stehekin first via the Lady of the Lake ferry (Lake Chelan Boat Company) or floatplane (Chelan Airways) from Chelan, WA. From Stehekin Landing, take the Stehekin Valley Road (or park shuttle) about 4.5 miles to Harlequin Campground. Figure a full day of travel each way from Harlequin; most parties treat this as a 2-3 day trip with a camp at or below Trapper Lake.",
+     "replace": "Start at the Cascade Pass Trailhead at the end of Cascade River Road and follow the maintained trail over Cascade Pass and down the Stehekin side to Pelton Basin. From the lowest tent sites at Pelton Basin, leave the trail on a faint boot path dropping toward Pelton Creek; below that the fisherman's path to Trapper Lake appears and vanishes, so expect route-finding through brush and alder before a flat, marshy walk along the inlet stream to the lake. Most parties treat this as a 2-3 day trip with a camp at Trapper Lake. The lake can also be reached by a steep off-trail climb from the upper Stehekin valley, but that line is harder to locate and first requires reaching Stehekin by boat or floatplane.",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "access requires reaching Stehekin by boat or floatplane, then a long trail-and-bushwhack approach",
+     "replace": "access is a trail hike over Cascade Pass followed by a long off-trail bushwhack down to Trapper Lake",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Stehekin Valley Road",
+     "value": "Cascade River Road",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Gravel road within the Stehekin valley, drivable/shuttle-served roughly 4.5 miles to Harlequin Campground as of 2026; it is not connected to any outside highway — Stehekin itself is reachable only by boat, floatplane, or trail.",
+     "value": "Seasonal; gravel and narrow in its upper miles, ending at the Cascade Pass Trailhead.",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "There is no drive-in option for this trip — budget a half-day just to reach Harlequin Campground via ferry or floatplane plus shuttle (or bike/hike) before the actual climbing approach even starts.",
+     "value": "About 23 mi from Marblemount to the road-end trailhead; paved for roughly the first 10 mi, then rough gravel, with a narrow final stretch.",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "expect": "Shuttle/vehicle service is a summer operation (roughly May-October); the road is not maintained for winter travel.",
+     "value": "Closed through winter; the upper road typically opens to the trailhead by late June or early July and is prone to washouts.",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "No park entrance fee, but round-trip travel to Stehekin (Lady of the Lake ferry or a floatplane charter) is a paid service and the main real cost of this trip — check Lake Chelan Boat Company / Chelan Airways for current fares and schedules.",
+     "value": "No park entrance fee; an overnight stay needs the backcountry permit described under Permit.",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "a steep, poorly-marked fisherman's path/bushwhack up from the Upper Stehekin River Trail",
+     "replace": "a faint, poorly-marked fisherman's path and bushwhack down from Pelton Basin",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "high, cold creek crossings on the Devore Creek approach",
+     "replace": "high, cold creek crossings on the off-trail approach below Pelton Basin",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "spring"
+     ],
+     "find": "high stream crossings on Devore Creek and the Stehekin River",
+     "replace": "high stream crossings below Pelton Basin",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "fall"
+     ],
+     "find": "complicated by shortened daylight and reduced ferry schedules",
+     "replace": "complicated by shortened daylight",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "winter"
+     ],
+     "find": "the Stehekin Valley Road and trails are snowed in and ferry service is reduced",
+     "replace": "Cascade River Road is closed well below the trailhead and the trails are snowed in",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    },
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "nearestHospital"
+     ],
+     "expect": "Lake Chelan Health (Lake Chelan Community Hospital), Chelan, WA — a 25-bed critical-access hospital with a 24-hour ER, reachable from Stehekin only by boat/floatplane (~50 lake miles) or by helicopter evacuation",
+     "value": "PeaceHealth United General Medical Center, Sedro-Woolley, WA — the closest emergency department to the Cascade River Road trailhead; evacuation from Trapper Lake would realistically be by helicopter",
+     "id": "wa_trapper_mountain_south_slopes",
+     "fact": "Which trailhead/valley is used to reach Trapper Lake"
+    }
+   ],
+   "residual": "waypoints[0] + approach_logistics trailhead name/coords still Harlequin Campground; needs pin repair to Cascade Pass Trailhead."
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "fact": "Camps listed for this route",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Regional Cascade Pass/Horseshoe Basin camp list. Pelton Basin Camp does serve this route (the approach leaves the trail at Pelton Basin and it is a usable first/last night). Basin Creek and Cottonwood only relate to the Stehekin-valley alternative. Sahale Glacier Camp, Doubtful Lake Camp and the Buckner cross-country zone do not serve this route. Trapper Lake itself (the real base camp, a cross-country camp) is missing.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2015-07-26.8703905680"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "fact": "Trapper Lake camp elevation (~5,000 ft in itinerary/climate vs 4,170 ft waypoint)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": "Trapper Lake is at 4,170 ft",
+   "evidence": "Itinerary day-1 schedule ('~5,000 ft basin') and climate.bySeason.summer ('Trapper Lake (~5,000 ft)') contradict waypoints[1], beta and approach_variants (4,170 ft, matching the lake's reference elevation). Not patched because the itinerary day gains (2,400/2,700/700 = 5,800 = gain_ft) are built on a ~5,000 ft camp; with the lake at 4,170 ft and the 5,392-ft pass crossed each way, car-to-car gain is closer to ~6,300 ft and every day's gain/loss would need re-deriving together.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Trapper_Lake_(Chelan_County,_Washington)"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "fact": "dist_km (Approach one way) holds the round-trip figure",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "dist_km 30.58 km = 19 mi, equal to the itinerary's round-trip total, while the one-way approach is ~7 mi per itinerary day 1. No source found giving a measured one-way mileage for the off-trail leg, so not changed.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_trapper_mountain_north_couloir",
+   "fact": "Whether the route tops out on Trapper Mountain's summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both published trip reports (2012 first ski descent, and a 2024 car-to-car in 11h45m) say only that the party 'topped out' the couloir; neither describes reaching or not reaching the 7,530-ft true summit or the ground between. The climbing_route caveat is accurate; high_point_ft/summit waypoint cannot be confirmed or refuted from available sources.",
+   "sources": [
+    "https://www.turns-all-year.com/trip-reports/trapper-mountain-north-couloir",
+    "https://turns-all-year.com/trip-reports/n-couloir-trapper-mountain",
+    "https://engineeredforadventure.com/trapper-mountain-north-couloir/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_trapper_mountain_north_couloir",
+   "fact": "Camps listed for this route",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Same regional Horseshoe Basin/Cascade Pass list. Pelton Basin Camp is on this route's approach (via Cascade Pass) and serves it; Basin Creek/Cottonwood are on the Stehekin-side variant only; Sahale Glacier, Doubtful Lake and Buckner zone do not serve it. Trapper Lake (the stated base) is absent.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "Lucky Pass elevation",
+   "verdict": "fixed",
+   "correct_value": "~7,200 ft",
+   "evidence": "A 2021 trip report gives Lucky Pass at ~7,200 ft; the glacier's reference page has the Borealis Glacier running from nearly 7,200 ft (its head at the col) down to 6,000 ft. The row's own bivy entry (7,200 ft, 'another 1,200 ft' above a 6,000-ft camp) agrees; the 7,700-ft waypoint is the outlier.",
+   "sources": [
+    "https://www.countryhighpoints.com/tricouni-peak/",
+    "https://en.wikipedia.org/wiki/Borealis_Glacier"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "elev"
+     ],
+     "expect": 7700,
+     "value": 7200,
+     "id": "wa_tricouni_peak_southwest_slopes",
+     "fact": "Lucky Pass elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "Borealis Lake camp elevation",
+   "verdict": "fixed",
+   "correct_value": "~6,000 ft",
+   "evidence": "A 2021 trip report puts Borealis Lake at 6,000 ft; the glacier's reference page puts the glacier toe (where the proglacial lake formed) at 6,000 ft, and a Primus trip report notes camp at 6,000 ft drawing water from Lake Borealis. The itinerary's 5,000-ft day-1 gain from 1,240 ft and the bivy entry agree. (A 5,200-ft figure exists in one traverse report but for a snowline bench on the ridge below, not the lake.)",
+   "sources": [
+    "https://www.countryhighpoints.com/tricouni-peak/",
+    "https://en.wikipedia.org/wiki/Borealis_Glacier",
+    "https://www.summitpost.org/east-ridge-of-primus-peak-via-thunder-creek-and-lucky-ridge/1021975"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "elev"
+     ],
+     "expect": 5200,
+     "value": 6000,
+     "id": "wa_tricouni_peak_southwest_slopes",
+     "fact": "Borealis Lake camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "glacier camp near 5,200 ft",
+     "replace": "glacier camp near 6,000 ft",
+     "id": "wa_tricouni_peak_southwest_slopes",
+     "fact": "Borealis Lake camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "glacier camp near 5,200 ft",
+     "replace": "glacier camp near 6,000 ft",
+     "id": "wa_tricouni_peak_southwest_slopes",
+     "fact": "Borealis Lake camp elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "typical"
+     ],
+     "find": "~5,200 ft glacier camp",
+     "replace": "~6,000 ft glacier camp",
+     "id": "wa_tricouni_peak_southwest_slopes",
+     "fact": "Borealis Lake camp elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "Whether rappels are used on the descent",
+   "verdict": "fixed",
+   "correct_value": "No rappels; downclimb",
+   "evidence": "A 2021 party downclimbed the icy finger and plunge-stepped back to Borealis Lake with no rappels; a 2019 account describes ~200 ft of snow then ramps and ledges to the summit with no rappel on descent, and a traverse report lists rappels only on Austera and Dorado Needle, not Tricouni. descent_text, bail and detailed_rack in the row already agree.",
+   "sources": [
+    "https://www.countryhighpoints.com/tricouni-peak/",
+    "https://onehikeaweek.com/2019/07/14/tricouni-peak/",
+    "https://trailcatjim.com/inspiration-traverse-primus-peak-austera-peak-klawatti-peak-dorado-needle/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "Typically 1-2 rappels of 8-30m if using established anchors; downclimbing is possible without them on most sections",
+     "value": "None on the standard route — the descent downclimbs the rock ramps and snow finger back to Lucky Pass, and there are no fixed anchors.",
+     "id": "wa_tricouni_peak_southwest_slopes",
+     "fact": "Whether rappels are used on the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "What gates the start of the climbing season",
+   "verdict": "fixed",
+   "correct_value": "The season is gated by snow on the ridge/glacier, not a road; SR-20 to Colonial Creek is open year-round.",
+   "evidence": "Internal: road, access.closures and approach_logistics all place this route on SR-20/Thunder Creek, west of the Ross Dam winter gate; Tricouni trip reports start from Colonial Creek (one in April), so no road gate governs the season. access.seasonal and climate.bySeason.spring repeated the same wrong-corridor claim and were patched too.",
+   "sources": [
+    "https://www.countryhighpoints.com/tricouni-peak/",
+    "https://onehikeaweek.com/2019/07/14/tricouni-peak/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "for snow to clear the Cascade River Road gate at Eldorado Creek and for the glacier approach to firm up",
+     "replace": "for snow to clear the ridge above McAllister Camp and for the glacier approach to firm up",
+     "id": "wa_tricouni_peak_southwest_slopes",
+     "fact": "What gates the start of the climbing season"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "value": "SR-20 stays open to Colonial Creek Campground year-round; the highway's winter closure is further east near Ross Dam.",
+     "id": "wa_tricouni_peak_southwest_slopes",
+     "fact": "What gates the start of the climbing season"
+    },
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "bySeason",
+      "spring"
+     ],
+     "find": "; Cascade River Road to Eldorado Creek TH is typically still gated.",
+     "replace": ".",
+     "id": "wa_tricouni_peak_southwest_slopes",
+     "fact": "What gates the start of the climbing season"
+    }
+   ]
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "September: 'outside the best season' vs best_season/season Jul-Sep",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "seasonal_guidance.monthBreakdown.September calls September outside the best season while best_season and season include it. No sources found that settle the window specifically; left for a wording-level reconcile.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "Total gain: gain_ft 6862 vs itinerary 7,100 (5000+2000+100)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "gain_ft/totalNote (~6,862-6,900) equal simply summit minus trailhead, while itinerary days sum to 7,100 and one trip report logged 8,300 ft. Not settled by two agreeing sources.",
+   "sources": [
+    "https://www.countryhighpoints.com/tricouni-peak/",
+    "https://onehikeaweek.com/2019/07/14/tricouni-peak/"
+   ],
+   "patches": []
+  }
+ ]
+}

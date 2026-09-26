@@ -1,0 +1,220 @@
+{
+ "applied": [
+  {
+   "id": "wa_treen_peak_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Approach trailhead/route named in partner_requirements (Taylor River vs Green Ridge)"
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach trailhead/route named in partner_requirements (Taylor River vs Green Ridge)"
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain (gain_ft vs itinerary's net gain vs prose)"
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain (gain_ft vs itinerary's net gain vs prose)"
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain (gain_ft vs itinerary's net gain vs prose)"
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total elevation gain (gain_ft vs itinerary's net gain vs prose)"
+  },
+  {
+   "id": "wa_treen_peak_scramble",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance (dist_km vs itinerary miles)"
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "column": "watch_out",
+   "path": [
+    2
+   ],
+   "fact": "approach route named (Aasgard Pass vs Snow Lakes Trail)"
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "column": "best_season",
+   "path": [],
+   "fact": "approach route named (Aasgard Pass vs Snow Lakes Trail)"
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "column": "climate",
+   "path": [
+    "spring"
+   ],
+   "fact": "approach route named (Aasgard Pass vs Snow Lakes Trail)"
+  },
+  {
+   "id": "wa_witches_tower_southwest_corner",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total ascent gain_ft omits the final summit pitch"
+  },
+  {
+   "id": "wa_witches_tower_southwest_corner",
+   "column": "approach",
+   "path": [],
+   "fact": "total ascent gain_ft omits the final summit pitch"
+  },
+  {
+   "id": "wa_witches_tower_southwest_corner",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "total ascent gain_ft omits the final summit pitch"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_treen_peak_scramble",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong, sustained fitness for a long off-trail day: roughly 10+ miles round trip with several thousand feet of gain, much of it unmaintained tread, brush, and loose talus",
+      "packWeight": "Light day pack (~10-20 lbs) - water, layers, navigation tools; no technical rack needed for a Class 2-3 scramble"
+     },
+     "approachTime": "Long day - hike in via the Taylor River / Snoqualmie Lake trail system, then leave the trail for an unmarked, brushy scramble route to the summit; full car-to-car outing likely runs 8-12+ hours given the off-trail terrain",
+     "requiredSkills": [
+      "Off-trail routefinding/navigation (map, compass, and/or GPS) - approach relies on a faint, unofficial path",
+      "Class 3 scrambling on loose rock",
+      "Comfort with dense brush/bushwhacking",
+      "Sound judgment to retreat if afternoon thunderstorms build"
+     ],
+     "experienceLevel": "Advanced - this is described by route sources as suitable only for climbers with years of off-trail mountain travel experience, not a beginner scramble"
+    },
+    "gain_ft": 6500,
+    "itinerary": {
+     "cal": "Best done April-October per Mountaineers route page; expect lingering snow in the summit gully into early summer, when an ice axe (and possibly crampons) is recommended.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long, strenuous single-day scramble: a steep, unmaintained miners' trail gains Green Ridge, then it's off-trail cross-country travel through heather meadows and past several tarns/lakes (with real up-and-down 'roller coaster' terrain, not just steady gain) before a final gully/cliff-band scramble to the summit. Most parties treat this as car-to-car, not an overnight - there's no established camp on this route and trip reports consistently describe it as a one-day outing.",
+       "hours": 11,
+       "miles": 7,
+       "title": "Car-to-car scramble",
+       "gainFt": 4400,
+       "lossFt": 0,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave Green Ridge trailhead",
+         "detail": "TH at ~1,350 ft on NF-5620 off Middle Fork Snoqualmie Rd; start up the steep miners' trail."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Gain the ridge crest (~4,700 ft)",
+         "detail": "Trail fades; continue cross-country through open forest and heather meadows past a series of tarns."
+        },
+        {
+         "time": "+4.5 hr",
+         "label": "Traverse Upper Garfield Mountain Lake and Charlie Brown Lake",
+         "detail": "Involves descending/re-climbing several hundred feet - the route is not a steady uphill grind."
+        },
+        {
+         "time": "+6 hr",
+         "label": "Final scramble to the summit",
+         "detail": "Work through cliff bands to a talus field (~4,850 ft), find the obvious gully, then steep heather slopes to the top."
+        },
+        {
+         "time": "~11:30 AM",
+         "label": "Summit (5,765 ft)",
+         "detail": "Panoramic views over the Middle Fork Snoqualmie/Alpine Lakes Wilderness."
+        },
+        {
+         "time": "~4:30-5:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Descent retraces the ascent; expect ~4 hrs down given the undulating terrain and route-finding."
+        }
+       ],
+       "objective": "Summit Treen Peak and return to the Green Ridge trailhead"
+      }
+     ],
+     "totalNote": "A single, long car-to-car day: roughly 7 miles round trip with about 4,400 ft net gain, though real trip reports log 5,500-6,100+ ft of total up-and-down due to the undulating, off-trail terrain past the tarns and lakes - plan on 10-12 hours car to car."
+    },
+    "dist_km": 7.2
+   }
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "before": {
+    "watch_out": [
+     "Do not attempt to climb late in the day due to thunderstorm risk and fading light at alpine elevation",
+     "Descending in darkness on the trail from Viviane is hazardous; headlamps and navigation skills essential",
+     "Early season (May-June): Snow and avalanche danger on approach (Aasgard Pass) make route inaccessible; wait for conditions to stabilize",
+     "Afternoon weather deterioration can be rapid; if weather changes suddenly, descend immediately rather than waiting out conditions on the route"
+    ],
+    "best_season": "July through August offers the most stable alpine weather in the Enchantments, with minimal snow at lake level. September and early October are viable shoulder months but expect cooler temperatures and potential early season snow higher up. May-June and late October are not recommended due to significant snow accumulation, avalanche hazard on approaches (Aasgard Pass), and permit restrictions.",
+    "climate": {
+     "fall": "September-early October: Temperatures dropping (45-60 F day, 25-35 F night). Morning frost common. Increasing storm frequency. Late October: Significant weather deterioration, early snow possible at higher elevations above 7,000 feet.",
+     "spring": "Snow present at lake level through mid-June in most years. Cold temperatures (freezing at night, 30-40 F during day). Avalanche danger on Aasgard Pass approaches. Not recommended for climbing.",
+     "summer": "Best and most stable season (July-August). Daytime temperatures 55-70 F, nights 35-45 F. Low precipitation, clear skies common. Occasional afternoon thunderstorms. Ideal climbing window.",
+     "winter": "Deep snow and avalanche terrain make the basin a winter travel/ski objective only — not accessible for rock climbing.",
+     "typical": "Alpine environment with rapid weather changes. Temperatures range from 40-65 F during summer days, dropping to 20-40 F at night. Wind is common at altitude. Afternoon thunderstorms develop frequently June-September.",
+     "forecastZone": "NOAA Forecast Zone: Central Washington Cascades (Leavenworth area)"
+    }
+   }
+  },
+  {
+   "id": "wa_witches_tower_southwest_corner",
+   "before": {
+    "gain_ft": 4200,
+    "approach": "Same approach as the South Face route to Aasgard Pass (7,841 ft), then hike south toward the tower and ascend snow or Class 2 rock to the col just southwest of the peak (roughly 6-8 hours and about 4,200 ft of gain from the trailhead).",
+    "approach_variants": [
+     {
+      "name": "Aasgard Pass to the same southwest col, taking the corner rather than the face traverse",
+      "notes": "Identical to the south face approach as far as the col: Stuart Lake trailhead to Colchuck Lake at 5,570 ft, the boot path round the lake's east and south shore, Aasgard Pass at about 7,800 ft, then south across talus toward the tower and up snow or Class 2 rock to the col just southwest of it.\n\nPublished figures for the day put it at roughly six to eight hours and about 4,200 ft of gain from the trailhead to this point, which is a wide enough spread that it should be treated as a range rather than a plan.\n\nFrom the col the climbing is short: about 100 ft up the sharp ridge, a few feet right onto the south face at Class 4, a 5.5 step-up, a short face, and a scramble to the summit slot.\n\nWhat separates this route from the south face one is not where you stand but what you do from there, so the useful content is in the base finding rather than in the walk.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "Aasgard Pass: loose steep scree, snow into July",
+       "Exposure on the sharp ridge above the col",
+       "Hard-to-find protection on the 5.5 crux",
+       "A four-foot summit slot that must be jumped",
+       "Afternoon thunderstorms with no shelter",
+       "Downclimbing the south face back to the col is the usual descent and is Class 2-3 with one harder step"
+      ],
+      "baseFinding": "SAME COL, DIFFERENT FIRST MOVE — AND YOU SHOULD KNOW WHICH YOU ARE DOING BEFORE YOU LEAVE THE COL. From the col southwest of the tower, this line goes straight up the SHARP RIDGE ABOVE THE COL for about 100 ft. That ridge crest is the route. The south face line uses the same ground and then commits to the traverse right; both converge at the same Class 4 step and 5.5 move.\n\nSO THE ARRIVAL TEST IS THE COL, and it has three parts:\n  1. You reached it by ascending SNOW or CLASS 2 ROCK from the basin — not by crossing a steep snowfield, which is the west-side approach, and not by traversing across light rock under Dragontail's south ridge, which is the east face.\n  2. Above you the ground rises as a defined, narrow crest rather than as an open face.\n  3. The tower's summit block is directly above that crest, with the four-foot summit slot the last obstacle.\n\nIF THE CREST FEELS WRONG: the ridge is sharp and exposed, and the recorded warning about this line is that placements on the crux are tricky to find. That is a route-finding statement as much as a protection one — a leader who cannot find gear may be a few feet off the correct line, on ground with fewer features.\n\nAND THE COMMON MISTAKE: parties heading for the tower from Aasgard Pass drift too far EAST, toward Dragontail. If Dragontail's bulk is directly ahead of you rather than off to your right, you have gone past the tower."
+     }
+    ]
+   }
+  }
+ ]
+}

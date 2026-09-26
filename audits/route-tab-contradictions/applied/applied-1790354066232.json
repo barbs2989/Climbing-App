@@ -1,0 +1,96 @@
+{
+ "applied": [
+  {
+   "id": "wa_roofer_madness",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "gain_ft implies a 4,200 ft climb for a 2-pitch, 49-foot sport route"
+  },
+  {
+   "id": "wa_flight_of_the_falcon",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "hours"
+   ],
+   "fact": "Approach time to the route's base disagrees by 2.5-4 hours across fields"
+  },
+  {
+   "id": "wa_flight_of_the_falcon",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Approach time to the route's base disagrees by 2.5-4 hours across fields"
+  },
+  {
+   "id": "wa_flight_of_the_falcon",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Approach time to the route's base disagrees by 2.5-4 hours across fields"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_roofer_madness",
+   "before": {
+    "gain_ft": 4200
+   }
+  },
+  {
+   "id": "wa_flight_of_the_falcon",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Squire Creek road walk, white-boulder streambed and ford into Waterfall Basin",
+      "hours": "2",
+      "notes": "Darrington to the end of Squire Creek Road (Madison Ave south, T, right on Darrington Street). The road is gated by a washout.\n\nOn foot: old roadbed, flagged landslide crossing at about five minutes, original road end at 30-40 minutes, then 20-30 minutes more to the wide dry streambed full of white boulders. That is the turn-off, and it is the last one before the trail heads south out of the valley.\n\nDescend the bed roughly 200 feet, trend left into the alders to find the informal path, follow it about 30 minutes to the ford of Squire Creek, then keep on as the trail fades along the underground creek bed until the basin opens, about two hours from the car.",
+      "season": "Summer, once the ford drops and the basin snow has gone",
+      "hazards": [
+       "Ford of Squire Creek in high flow",
+       "Landslide crossing on the old roadbed",
+       "Path fades entirely in the basin",
+       "Residual avalanche snow at the base early in the season"
+      ],
+      "baseFinding": "All the Waterfall Basin lines are found from the same reference: follow the creek bed until the thin boulder-filled watercourse comes down directly from the wall, scramble it, and you are at the base with Martha's Place — the huge overhung boulder — beside you. From there pick the line off the wall. Note the route name is a bird reference, not a closure: there is no known raptor closure for this basin, so do not read the name as a seasonal restriction."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.2088,
+      "lng": -121.6298,
+      "elev": 1100,
+      "name": "Squire Creek Road Trailhead",
+      "note": "Access from Darrington via Squire Creek Road to blocked parking; road washed out ~2 mi in.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Seattle, take I-5 north to the Arlington exit and follow SR 530 east through Oso to Darrington. Turn south on Madison Avenue to the T, go right on Darrington Street, and follow it as it becomes Squire Creek Road at the west end of town. Drive to the end of the road, about 1,100 feet, where a washout roughly two miles in gates it and blocks the parking area. Park at the gate; the old roadbed beyond it is walking only."
+     },
+     {
+      "lat": 48.17241,
+      "lng": -121.67254,
+      "elev": 2659,
+      "name": "Waterfall Basin (base of walls)",
+      "note": "~3-3.5 hr approach via old roadbed, streambed, and a Squire Creek ford into the basin below Three Fingers' east face.",
+      "type": "Topout",
+      "distMi": 3.5
+     },
+     {
+      "lat": 48.17241,
+      "lng": -121.67254,
+      "elev": 2659,
+      "name": "Waterfall Basin (route reference point)",
+      "type": "Approach",
+      "distMi": null,
+      "elevFt": 2659
+     }
+    ]
+   }
+  }
+ ]
+}

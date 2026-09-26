@@ -1,0 +1,71 @@
+{"file": "r079.json", "results": [
+ {"id": "wa_mount_spickard_southwest", "fact": "Hardest rock grade on the route", "verdict": "fixed",
+  "correct_value": "Class 3 (easy 3rd-class rock, plus glacier and up to ~40 degree snow)",
+  "evidence": "The Mountaineers' route page for the Chilliwack peaks describes Spickard's standard south-side route as no harder than 40-degree snow and 3rd-class rock. Two independent trip reports of the Southwest Glacier/south ridge line describe the summit rock as class 2-3 (short gullies, chimneys and ribs, then an easy scree chute). rock_grade (Class 3), climbing_route, pitch_detail and the summit waypoint already say Class 3 or 2-3; the 'Class 3-4' copies were the outliers and are changed to Class 3.",
+  "sources": ["https://mountaineers.org/activities/routes-places/mount-redoubt-mount-spickard", "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/", "http://www.ericsbasecamp.net/trips/Spickard-Redoubt/Spickard-Redoubt.htm"],
+  "patches": [
+   {"id": "wa_mount_spickard_southwest", "fact": "Hardest rock grade on the route", "op": "set", "column": "grade", "path": [], "expect": "Class 3-4 + glacier", "value": "Class 3 + glacier"},
+   {"id": "wa_mount_spickard_southwest", "fact": "Hardest rock grade on the route", "op": "replace_text", "column": "hazards", "path": [1], "find": "Class 2-3/3-4 gullies", "replace": "Class 2-3 gullies"},
+   {"id": "wa_mount_spickard_southwest", "fact": "Hardest rock grade on the route", "op": "replace_text", "column": "overview", "path": [], "find": "loose Class 3-4 rock scramble", "replace": "loose Class 3 rock scramble"},
+   {"id": "wa_mount_spickard_southwest", "fact": "Hardest rock grade on the route", "op": "replace_text", "column": "pro_needs", "path": [], "find": "exposed Class 3-4 scrambling", "replace": "exposed Class 3 scrambling"},
+   {"id": "wa_mount_spickard_southwest", "fact": "Hardest rock grade on the route", "op": "set", "column": "partner_requirements", "path": ["requiredSkills", 2], "expect": "Exposed Class 3-4 scrambling", "value": "Exposed Class 3 scrambling"},
+   {"id": "wa_mount_spickard_southwest", "fact": "Hardest rock grade on the route", "op": "replace_text", "column": "partner_requirements", "path": ["experienceLevel"], "find": "exposed 3rd/4th class rock", "replace": "exposed 3rd class rock"},
+   {"id": "wa_mount_spickard_southwest", "fact": "Hardest rock grade on the route", "op": "replace_text", "column": "seasonal_hazards", "path": ["exposure"], "find": "exposed Class 3-4 rock", "replace": "exposed Class 3 rock"}
+  ]},
+ {"id": "wa_mount_spickard_southwest", "fact": "Total one-way/round-trip distance", "verdict": "unresolved", "correct_value": null,
+  "evidence": "The row disagrees with itself: dist_km 13.7 (8.5 mi one way), waypoints put the summit at 10.3 mi, the itinerary sums 21.5 mi round trip, and the approach prose says Ouzel Lake is 5-6 mi from the washout. One trip report gives roughly 10 mi round trip washout-to-Ouzel plus ~3 mi round trip lake-to-summit (~6.5 mi one way); another gives about 25 mi for a combined Redoubt+Spickard trip. The washout point moves year to year and no two sources agree on a current one-way figure, so no patch.",
+  "sources": ["http://www.ericsbasecamp.net/trips/Spickard-Redoubt/Spickard-Redoubt.htm", "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/"],
+  "patches": []},
+ {"id": "wa_mount_torment_torment_forbidden_traverse", "fact": "land manager listed as both known and unknown", "verdict": "fixed",
+  "correct_value": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+  "evidence": "Boston Basin and Mount Torment lie inside North Cascades National Park: the NPS backcountry permit page treats Boston Basin as park wilderness, and the Boston Basin logistics page and WTA both place the basin in the park. access.land_manager already says so; landManager 'N/A' gets the same value.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/permits.htm", "https://www.summitpost.org/boston-basin/243271", "https://www.wta.org/go-hiking/hikes/boston-basin"],
+  "patches": [
+   {"id": "wa_mount_torment_torment_forbidden_traverse", "fact": "land manager listed as both known and unknown", "op": "set", "column": "access", "path": ["landManager"], "expect": "N/A", "value": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)"}
+  ]},
+ {"id": "wa_mount_torment_torment_forbidden_traverse", "fact": "whether a backcountry permit is required", "verdict": "fixed",
+  "correct_value": "Overnight wilderness permit required (Boston Basin designated camps); none for day climbs",
+  "evidence": "The NPS backcountry permits page states permits are required to camp anywhere in North Cascades National Park and that Cascade River Road areas including Boston Basin are picked up in person at the Marblemount Wilderness Information Center. The Boston Basin logistics page and WTA agree camping is only at the two designated low/high camps and needs the park permit. access.permit 'N/A' is replaced with that requirement, matching the top-level permit field.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/permits.htm", "https://www.summitpost.org/boston-basin/243271", "https://www.wta.org/go-hiking/hikes/boston-basin"],
+  "patches": [
+   {"id": "wa_mount_torment_torment_forbidden_traverse", "fact": "whether a backcountry permit is required", "op": "set", "column": "access", "path": ["permit"], "expect": "N/A", "value": "A North Cascades National Park wilderness permit is required for any overnight stay, including the two designated Boston Basin camps (low camp ~5,300 ft, high camp ~6,400 ft); reserve on Recreation.gov or pick up a walk-up permit in person at the Wilderness Information Center in Marblemount. Day climbs need no permit."}
+  ]},
+ {"id": "wa_mount_torment_torment_forbidden_traverse", "fact": "Grade of the Torment South Ridge segment on the traverse", "discovered": true, "verdict": "fixed",
+  "correct_value": "4th/5.4",
+  "evidence": "pitch_detail[0] rates the Torment South Ridge segment '4th/5.6' while its own note calls it 4th/low-5th terrain; the traverse's 5.6 crux is Forbidden's West Ridge tower (pitch 5). Mountain Project and The Mountaineers both rate Torment's South Ridge 5.4.",
+  "sources": ["https://www.mountainproject.com/route/112057303/south-ridge", "https://www.mountaineers.org/activities/activities/intermediate-alpine-climb-mount-torment-south-ridge-1"],
+  "patches": [
+   {"id": "wa_mount_torment_torment_forbidden_traverse", "fact": "Grade of the Torment South Ridge segment on the traverse", "op": "set", "column": "pitch_detail", "path": [0, "grade"], "expect": "4th/5.6", "value": "4th/5.4"}
+  ]},
+ {"id": "wa_mount_torment_south_ridge", "fact": "hardest rock grade on the route", "verdict": "fixed",
+  "correct_value": "5.4",
+  "evidence": "The Mountain Project route page rates the South Ridge 5.4 and says it is no harder than 5.4 with sustained 4th and low 5th class. The Mountaineers' Torment South Ridge listing also rates it Grade II, 5.4. grade and rock_grade are correct; the 5.5 pitch grades were the outliers.",
+  "sources": ["https://www.mountainproject.com/route/112057303/south-ridge", "https://www.mountaineers.org/activities/activities/intermediate-alpine-climb-mount-torment-south-ridge-1"],
+  "patches": [
+   {"id": "wa_mount_torment_south_ridge", "fact": "hardest rock grade on the route", "op": "set", "column": "pitch_detail", "path": [0, "grade"], "expect": "5.5", "value": "5.4"},
+   {"id": "wa_mount_torment_south_ridge", "fact": "hardest rock grade on the route", "op": "set", "column": "pitch_detail", "path": [1, "grade"], "expect": "5.4-5.5", "value": "5.4"},
+   {"id": "wa_mount_torment_south_ridge", "fact": "hardest rock grade on the route", "op": "set", "column": "pitch_detail", "path": [2, "grade"], "expect": "5.5", "value": "5.4"}
+  ]},
+ {"id": "wa_mount_torment_south_ridge", "fact": "land manager listed as both known and unknown", "verdict": "fixed",
+  "correct_value": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+  "evidence": "Boston Basin and Mount Torment lie inside North Cascades National Park: the NPS backcountry permit page treats Boston Basin as park wilderness, and the Boston Basin logistics page and WTA both place the basin in the park. access.land_manager already says so; landManager 'N/A' gets the same value.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/permits.htm", "https://www.summitpost.org/boston-basin/243271", "https://www.wta.org/go-hiking/hikes/boston-basin"],
+  "patches": [
+   {"id": "wa_mount_torment_south_ridge", "fact": "land manager listed as both known and unknown", "op": "set", "column": "access", "path": ["landManager"], "expect": "N/A", "value": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)"}
+  ]},
+ {"id": "wa_mount_torment_south_ridge", "fact": "whether a backcountry permit is required", "verdict": "fixed",
+  "correct_value": "Overnight wilderness permit required (Boston Basin designated camps); none for day climbs",
+  "evidence": "The NPS backcountry permits page states permits are required to camp anywhere in North Cascades National Park and that Cascade River Road areas including Boston Basin are picked up in person at the Marblemount Wilderness Information Center. The Boston Basin logistics page and WTA agree camping is only at the two designated low/high camps and needs the park permit. access.permit 'N/A' is replaced with that requirement, matching the top-level permit field.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/permits.htm", "https://www.summitpost.org/boston-basin/243271", "https://www.wta.org/go-hiking/hikes/boston-basin"],
+  "patches": [
+   {"id": "wa_mount_torment_south_ridge", "fact": "whether a backcountry permit is required", "op": "set", "column": "access", "path": ["permit"], "expect": "N/A", "value": "A North Cascades National Park wilderness permit is required for any overnight stay, including the two designated Boston Basin camps (low camp ~5,300 ft, high camp ~6,400 ft); reserve on Recreation.gov or pick up a walk-up permit in person at the Wilderness Information Center in Marblemount. Day climbs need no permit."}
+  ]},
+ {"id": "wa_mutchler_peak_scramble", "fact": "Whether the route involves glacier travel / needs a rope and crevasse-rescue gear", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Only one detailed source was found: a 2026 Buckindy High Route report describes a straightforward ascent via the remnant Mutchler Glacier to the summit without a rope, and notes the ice now survives only on the highest north-facing slopes (the row's own bivy note says the same). No second independent source says whether the standard Kindy Ridge/Cyclone Lake line needs roped glacier travel, and the 'Basic Glacier Climb' claim in detailed_rack could not be verified (Mountaineers pages returned 403). The seasonal_hazards.crevasses 'no glacier travel' line looks doubtful but is left pending a second source.",
+  "sources": ["https://climberkyle.com/2026/06/19/buckindy-high-route/", "https://www.summitpost.org/snowking-mountain/152058"],
+  "patches": []},
+ {"id": "wa_mutchler_peak_scramble", "fact": "Round-trip distance", "verdict": "unresolved", "correct_value": null,
+  "evidence": "dist_km 24.78 renders as the one-way approach, yet the approach prose itself calls ~24.8 km the round trip; waypoints put the summit 7.7 mi one way and the itinerary sums 17.5 mi round trip. Snowking/Kindy Ridge sources give ~30 km round trip for Snowking, not Mutchler, and no two sources give a one-way car-to-Mutchler figure, so dist_km is not changed (it likely holds a round-trip value in a one-way slot).",
+  "sources": ["https://www.summitpost.org/snowking-mountain/152058", "https://climberkyle.com/2026/06/19/buckindy-high-route/"],
+  "patches": []}
+]}

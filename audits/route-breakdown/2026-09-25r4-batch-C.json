@@ -1,0 +1,72 @@
+{
+  "wa_prey": {
+    "area": "wa_osprey_wall",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1 – First Flight", "grade": "5.6", "lengthM": 30, "bolts": 4, "notes": "Scramble up dirty ledges until the first bolt shows on the cleanest black-and-white granite, then follow bolts up the slab into a chute between two stands of trees. Exit right, then shift the belay uphill and left to sit beneath a right-facing corner." },
+      { "pitch": "P2", "grade": "5.9+", "lengthM": 40, "bolts": 5, "notes": "Stem the brown right-facing corner up to a roof; the crux moves here are exposed but well protected. Above the roof step right onto a short bolted slab. Bolts plus a few optional small cams or nuts." },
+      { "pitch": "P3 – The Money Pitch", "grade": "5.10c", "bolts": 11, "notes": "The only fully bolted pitch: steep, thoughtful corner climbing on white marbled rock through two roof sections, finishing on a sustained arête face. A #1 or #2 cam is optional near the top. Stated length for this pitch varies between roughly 30 and 40 m." },
+      { "pitch": "P4", "grade": "5.9", "lengthM": 30, "bolts": 3, "notes": "Follow the corner ramp as it trends right and steepens into an open book, mixing bolts and gear. A variation traverses out to a slung horn for more exposure; either way ends at the belay below the final arête." },
+      { "pitch": "P5", "grade": "5.10c", "lengthM": 15, "bolts": 3, "notes": "Three bolts up a short, fun arête to the top anchor. Leave a #1 cam in the overhang section to protect the follower. The double-rope rappel starts from a tree anchor above this belay." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same five pitches and labels; notes expanded with the P1 start (dirty ledges, first bolt on clean granite), the P1-to-P2 belay shift, the P4 slung-horn variation and the P5 follower cam. Bolt counts moved from notes into the bolts field. P3 lengthM omitted (source gives 30-40 m, no single figure). No crux flag set: no source names a single crux pitch (P3 and P5 are both 5.10c). Single source.",
+      "sources_consulted": ["https://www.mountainproject.com/route/118562306/prey"],
+      "other_findings": "Stored route grade is '5.10'; the pitch grades top out at 5.10c and MP lists 5.10+. Descent per source is a double 60 m rope rappel trending slightly left from a tree anchor, consistent with the stored descent_text."
+    }
+  },
+  "wa_rise_and_fall": {
+    "area": "wa_central_wall_area",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": 1, "crux": false, "grade": "5.12a/b", "notes": "Reach the start via the first pitch of Davis-Holland (5.9 hand crack and fourth-class ledges) or Green Drag-on, and belay under a big right-facing corner with bolts and a flake at its base. Climb the corner past four bolts, make a hard traverse left onto the face, then lieback and face-climb a quartzite dike through a roof to the anchor." },
+      { "pitch": 2, "crux": false, "grade": "5.10a", "notes": "Short, fully bolted and airy: follow the dike past a roof on excellent rock to a belay on a small ledge. Older reports of a runout here do not match the current bolting." },
+      { "pitch": 3, "crux": true, "grade": "5.11d", "notes": "Short but widely considered the real crux of the route despite the grade (rated 5.11d with a double plus). Move right from the belay up quartz holds and knobs in a corner with a lieback crack, pull the roof on edges, then make a tenuous mantle onto a slab followed by very thin slab moves." },
+      { "pitch": 4, "crux": false, "grade": "5.11c", "notes": "A long, varied slab pitch: pockets (including a mono or two), small roofs and bulges, with a couple of thin crux sections along the way. Finger-sized cams supplement the bolts on this route." },
+      { "pitch": 5, "crux": false, "grade": "5.10b", "notes": "Overhanging, blocky rock to an anchor just below the top of the Upper Town Wall. Loose in places, and one bolt sits in a stack of hanging blocks weighing several tons — climb it gently and avoid outward pulls. Rappel the route on a single rope; a 70 m saves a rappel or two over a 60 m." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same five pitches and labels (numeric labels carried over as numbers). Crux flag removed from P1 and kept only on P3, which the source says climbers' consensus calls the crux. P3 grade token changed from '5.11d++' to '5.11d' with the '++' moved into notes. Notes expanded with the approach pitches, the P1 start, P2 bolting, the P3 sequence and the P5 hanging-block warning. No per-pitch lengths or bolt counts found (P1's four corner bolts stay in notes, not a bolts field, since the pitch total is unstated). Single source; one trip-report snippet agrees the grades are stiff.",
+      "sources_consulted": ["https://www.mountainproject.com/route/106875478/rise-and-fall", "https://stephabegg.com/trip-reports/washington/index/ (search snippet only; page returned 403)"],
+      "other_findings": "One trip report describes the route as four pitches at 5.12b ('sport-crag' 5.13b); the stored 5 pitches / 5.12 matches the MP page. Discipline 'trad' is arguable — the route is mostly bolted with finger-size cams required."
+    }
+  },
+  "wa_and_say": {
+    "area": "wa_lookout_point",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": 1, "crux": false, "grade": "5.7", "notes": "Use the fixed handline to reach the base of the corner, then climb the corner to the first belay. The easiest pitch of the route; save the thin cams for the next pitch." },
+      { "pitch": 2, "crux": false, "grade": "5.11b", "notes": "A clean splitter finger crack. Double up on thin cams (Metolius blue and yellow sizes or equivalent), the sizes the crack takes for most of the pitch." },
+      { "pitch": 3, "crux": false, "grade": "5.10a", "notes": "More splitter crack, easier and cruisey until a stiff finish at the top. A bolt now protects the exit where cams in pockets were once used." },
+      { "pitch": 4, "crux": false, "grade": "5.11+", "notes": "A crimpy start leads to a crystal pocket and a small overlap, then excellent friction slab. Carry one 0.2 cam; the crux can be aided at roughly 5.10. From the ledge atop this pitch, an easy corner out left avoids the last pitch." },
+      { "pitch": 5, "crux": false, "grade": "5.11+", "notes": "Tips splitter, only first-knuckle deep for about 20 ft, capped by a steep bolted finish. Descend by rappel; a single 60 m rope is enough." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same five pitches and labels. Crux flag removed from P5: no source names P5 (or any single pitch) as the crux, and P4 and P5 carry the same 5.11+ grade. Notes expanded with the P4 ledge escape left, the aid-able P4 crux, the 0.2 cam and the 60 m descent. No per-pitch lengths, bolt counts or anchors set (source says chain belays route-wide but not per pitch). Single source.",
+      "sources_consulted": ["https://www.mountainproject.com/route/110383269/and-say"],
+      "other_findings": "Stored route grade 5.11b is the P2 grade; P4 and P5 are both given as 5.11+, so the hardest pitches exceed the stored headline grade (MP headline is just '5.11'). A search-engine summary of the MP page lists four pitches, but the page itself lists five."
+    }
+  },
+  "wa_steel_pulse_2": {
+    "area": "wa_lookout_point",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": 1, "crux": false, "grade": "5.10c", "lengthM": 30, "anchor": "bolted", "notes": "Looks mossy from below but most of it is 5.8. A short slab traverse past three bolts leads into a right-facing, right-leaning corner; where the crack tapers off, leave it for a thin flake protected by two more bolts to the anchor. Cruxes are bolted, gear is good elsewhere; best on cool, dry days. A single 60 m rope reaches the ground from this anchor." },
+      { "pitch": 2, "crux": false, "grade": "5.10b", "lengthM": 18, "anchor": "bolted", "notes": "Slab crux right off the belay, around the first bolt, trending to the left end of a small overlap. A second, balancy crux on a short slab just below the bolted anchor." },
+      { "pitch": 3, "crux": false, "grade": "5.10c", "lengthM": 30, "anchor": "bolted", "notes": "Start up good layback cracks, then onto the upper slab. After the first slab bolt a hidden pocket takes a #2 cam; two more bolts protect the 5.10c crux, and gear protects the easier top. The rappel back to the P2 anchor is not a plumb line — do not swing into the gully." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three pitches, labels and lengths. Anchors added (source states a bolted anchor atop each pitch). Notes expanded with the P1 sequence (3 bolts, corner, 2 bolts on the flake), the P3 hidden #2 cam placement and the non-plumb rappel warning. No bolts field set: counts are given only for sections of each pitch, not whole pitches. Single primary source; a second guide listing confirms location (just right of Dukes of Stratosphere) and gives 5.10b.",
+      "sources_consulted": ["https://www.mountainproject.com/route/110182972/steel-pulse", "https://rakkup.com/guidebook/index-rock-climbing/steel-pulse/c39445"],
+      "other_findings": "Route grade is contested: an older guide rates 5.10c, a later one 5.10b (rakkup listing shows 5.10b). Stored 5.10c is supportable. Stored length_m 91 (300 ft) exceeds the sum of the stated pitch lengths (100+60+100 ft = 79 m)."
+    }
+  },
+  "wa_dirty_sanchez": { "skip_reason": "Not researched this round: the web search/fetch tools hit a session limit before any source for this route could be read. Retry in a later batch." },
+  "wa_summertime": { "skip_reason": "Not researched this round: the web search/fetch tools hit a session limit before any source for this route could be read. Retry in a later batch." },
+  "wa_wild_wild_west": { "skip_reason": "Not researched this round: the web search/fetch tools hit a session limit before any source for this route could be read. Retry in a later batch." },
+  "wa_cascade_peak_nw_chimney": { "skip_reason": "Not researched this round: the web search/fetch tools hit a session limit before any source for this route could be read. Retry in a later batch. Note for the retry: stored pitch grades are sentences ('5.8 published / felt closer to 5.10 to a 2013 party', '5th class, loose/variable') and the stored route grade carries testimony — both break the grade-token and no-testimony rules." }
+}

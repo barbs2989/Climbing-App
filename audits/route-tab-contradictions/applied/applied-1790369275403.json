@@ -1,0 +1,274 @@
+{
+ "applied": [
+  {
+   "id": "wa_cosho_peak_scramble",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "whether crevasse hazard is documented in the hazards list"
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "backcountry permit cost"
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass_required"
+   ],
+   "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass_cost"
+   ],
+   "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass_required"
+   ],
+   "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass_cost"
+   ],
+   "fact": "parking/entrance pass requirement at the Eldorado Creek trailhead"
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "backcountry permit cost"
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "backcountry permit cost"
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "parking pass at the Eldorado trailhead and whether the backcountry permit is free"
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "parking pass at the Eldorado trailhead and whether the backcountry permit is free"
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "parking pass at the Eldorado trailhead and whether the backcountry permit is free"
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "column": "what_to_bring",
+   "path": [
+    5
+   ],
+   "fact": "parking pass at the Eldorado trailhead and whether the backcountry permit is free"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_cosho_peak_scramble",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Alpine North Cascades weather with rapid changes possible; expect cold nights and variable conditions even in midsummer given the remote, high-elevation setting",
+      "probability": "Afternoon thunderstorms and fast-moving weather systems are a real risk on the long, exposed ridge traverse in summer"
+     },
+     "exposure": "Loose rock and a long, committing approach are the primary consequence drivers; a fall or injury on the ridge is a serious problem given the remote position with no easy retreat",
+     "avalanche": {
+      "zone": "No NWAC zone directly forecasts this specific peak; nearest reference is the Washington Pass/SR-20 corridor zone, and NWAC generally does not issue forecasts during the July-September climbing window",
+      "byMonth": {
+       "July": "Moderate",
+       "June": "Considerable",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Route reportedly skirts/crosses glacier ice near the Cosho-Kimtah col (the Kimtah/Mesahchie Glacier); minor crevasse hazard, greater when snow-covered early season, though this is not detailed in the on-file hazards list"
+    }
+   }
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "before": {
+    "access": {
+     "_raw": {
+      "notes": "Class 3 route with glacier crossings; Eldorado Area climb",
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry overnight permit",
+      "land_manager": "National Park Service - North Cascades National Park",
+      "wilderness_zone": "North Cascades National Park Complex (Ross Lake and Lake Chelan National Recreation Areas)",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "$30 per vehicle (7-day pass)",
+      "seasonal_closures": "Wilderness accessible mid-May through mid-October; Wilderness Information Center closed October 11 - May 14",
+      "permit_pickup_hours": "Daily, May 15 - October 10: 7:00-11:30am and 12:30-4:00pm",
+      "special_requirements": "Permit pickup required by 11am on start date or reservation cancelled; bear canister borrowers must pick up in person",
+      "parking_pass_required": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+      "permit_pickup_location": "Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size limit is 12 in trail corridors and camps and in the Mount Shuksan, Eldorado Peak and Forbidden Peak cross-country zones, which this route is in; 6 in the remaining cross-country zones. Limits include people and stock. Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry overnight permit",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "permitZone": "North Cascades National Park Complex (Ross Lake and Lake Chelan National Recreation Areas)",
+     "group_limit": 12,
+     "landManager": "National Park Service - North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park Complex wilderness permit — quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Wilderness Information Center in Marblemount; $10 per person plus a $6 reservation fee."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "before": {
+    "access": {
+     "_raw": {
+      "notes": "Class 3 route with glacier crossings; Eldorado Area climb",
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry overnight permit",
+      "land_manager": "National Park Service - North Cascades National Park",
+      "wilderness_zone": "North Cascades National Park Complex (Ross Lake and Lake Chelan National Recreation Areas)",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "$30 per vehicle (7-day pass)",
+      "seasonal_closures": "Wilderness accessible mid-May through mid-October; Wilderness Information Center closed October 11 - May 14",
+      "permit_pickup_hours": "Daily, May 15 - October 10: 7:00-11:30am and 12:30-4:00pm",
+      "special_requirements": "Permit pickup required by 11am on start date or reservation cancelled; bear canister borrowers must pick up in person",
+      "parking_pass_required": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+      "permit_pickup_location": "Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size limit is 12 in trail corridors and camps and in the Mount Shuksan, Eldorado Peak and Forbidden Peak cross-country zones, which this route is in; 6 in the remaining cross-country zones. Limits include people and stock. Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry overnight permit",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "permitZone": "North Cascades National Park Complex (Ross Lake and Lake Chelan National Recreation Areas)",
+     "group_limit": 12,
+     "landManager": "National Park Service - North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None — there are no trailhead or parking fees for trails that begin on National Park Service land, and there is no fee to enter the North Cascades National Park Service Complex.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park Complex wilderness permit — quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Wilderness Information Center in Marblemount; $10 per person plus a $6 reservation fee."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "before": {
+    "access": {
+     "_raw": {
+      "notes": "Class 3 route with glacier crossings; Eldorado Area climb",
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry overnight permit",
+      "land_manager": "National Park Service - North Cascades National Park",
+      "wilderness_zone": "North Cascades National Park Complex (Ross Lake and Lake Chelan National Recreation Areas)",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "\"N/A - North Cascades NP has no entrance fee\"",
+      "seasonal_closures": "Wilderness accessible mid-May through mid-October; Wilderness Information Center closed October 11 - May 14",
+      "permit_pickup_hours": "Daily, May 15 - October 10: 7:00-11:30am and 12:30-4:00pm",
+      "special_requirements": "Permit pickup required by 11am on start date or reservation cancelled; bear canister borrowers must pick up in person",
+      "parking_pass_required": "\"None - no entrance fee at North Cascades NP\"",
+      "permit_pickup_location": "Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267"
+     },
+     "fees": "N/A",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size limit is 12 in trail corridors and camps and in the Mount Shuksan, Eldorado Peak and Forbidden Peak cross-country zones, which this route is in; 6 in the remaining cross-country zones. Limits include people and stock. Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry overnight permit",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "permitZone": "North Cascades National Park Complex (Ross Lake and Lake Chelan National Recreation Areas)",
+     "group_limit": 12,
+     "landManager": "National Park Service - North Cascades National Park",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None - North Cascades NP has no entrance fee",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park Complex wilderness permit — quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Wilderness Information Center in Marblemount; $10 per person plus a $6 reservation fee."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "before": {
+    "access": {
+     "fees": "$10 per person + $6 non-refundable reservation fee for the required backcountry overnight permit, plus trailhead parking pass (Northwest Forest Pass or America the Beautiful Interagency Pass)",
+     "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+     "rules": "Group size limit is 12 in trail corridors and camps and in the Mount Shuksan, Eldorado Peak and Forbidden Peak cross-country zones, which this route is in; 6 in the remaining cross-country zones. Limits include people and stock. Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry overnight permit ($10/person + $6 reservation fee, per NPS fee structure in effect 2024+)",
+     "closures": "Cascade River Road has seasonal gate closures (typically opens late June/early July) and can close at various points for washouts, maintenance, or emergencies — check the NPS road conditions page before travel",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "group_limit": 12,
+     "landManager": "North Cascades National Park Service Complex (NPS), with Cascade River Road partly on Mt. Baker-Snoqualmie National Forest land",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Northwest Forest Pass / America the Beautiful Interagency Pass (trailhead parking)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park Complex wilderness permit — quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Wilderness Information Center in Marblemount; $10 per person plus a $6 reservation fee."
+     }
+    },
+    "what_to_bring": [
+     "Approach boots for glacier travel",
+     "Rock shoes for the crux pitches",
+     "Helmet",
+     "Overnight camp gear for the Eldorado high camp",
+     "Sun protection for extended glacier travel",
+     "Free NPS wilderness backcountry permit"
+    ]
+   }
+  }
+ ]
+}

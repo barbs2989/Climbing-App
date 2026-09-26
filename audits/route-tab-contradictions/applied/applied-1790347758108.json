@@ -1,0 +1,345 @@
+{
+ "applied": [
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "climbing_route",
+   "path": [
+    3,
+    "label"
+   ],
+   "fact": "Whether the south/southeast ridge line is a variation of this route or a separate route"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Whether this route is glaciated"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "beta",
+   "path": [],
+   "fact": "Overview BETA describes a glacier-free south-ridge line, not this route's Richardson Glacier / East Ridge line"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "obj_haz",
+   "path": [
+    0
+   ],
+   "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "gear",
+   "path": [
+    2
+   ],
+   "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "hazards",
+   "path": [
+    3
+   ],
+   "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "pro_tips",
+   "path": [
+    1
+   ],
+   "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "watch_out",
+   "path": [
+    1
+   ],
+   "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River"
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "totalNote understates both distance and gain vs. the itinerary's own days"
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Route distance (dist_km as one-way to base vs round-trip car-to-car mileage)"
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "column": "approach",
+   "path": [],
+   "fact": "Trail distance to Upper Eagle Lake stated as 5.9 mi (sister route and external sources: 6.2 mi)"
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Trail distance to Upper Eagle Lake stated as 5.9 mi (sister route and external sources: 6.2 mi)"
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "column": "waypoints",
+   "path": [
+    1,
+    "directions"
+   ],
+   "fact": "Trail distance to Upper Eagle Lake stated as 5.9 mi (sister route and external sources: 6.2 mi)"
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Trail distance to Upper Eagle Lake stated as 5.9 mi (sister route and external sources: 6.2 mi)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "before": {
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "Class 2",
+      "label": "Benches and ledges to the col west of Clark Mountain",
+      "notes": "From the 7,200 ft spur, a rising traverse across broad benches — often snow-covered well into summer — and easy ledges leads to the ~7,600 ft col west of Clark Mountain."
+     },
+     {
+      "n": 2,
+      "label": "Upper Richardson Glacier traverse",
+      "notes": "A rising traverse across the upper Richardson Glacier reaches Luahna's East Ridge. Real crevasse hazard — carry glacier travel gear; the glacier has been reported thinning/broken-up and less straightforward in recent years."
+     },
+     {
+      "n": 3,
+      "label": "East Ridge to the summit",
+      "notes": "Scramble the East Ridge west to the summit."
+     },
+     {
+      "n": 4,
+      "class": "Class 2-3",
+      "label": "Variation: south/southeast ridge (avoids the glacier)",
+      "notes": "Parties wanting to avoid the glacier crossing can stay on rock from the basin and scramble Luahna's south/southeast ridge directly; parties describe this as the more reliable line in low-snow years."
+     }
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Transitional Cascades climate; most stable in mid- to late summer",
+      "probability": ""
+     },
+     "exposure": "Loose scree and talus footing with route-finding difficulty; consequence of a slip or injury is elevated by the very remote, low-traffic, self-rescue-only character of the terrain rather than by technical fall exposure",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scree/talus route (Glacier Peak Wilderness has no dedicated NWAC zone for this remote sub-range; route is only climbed in dry season)",
+      "byMonth": {
+       "July": "Low",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "Real hazard — the standard line from the 7,600 ft col makes a rising traverse across the upper Richardson Glacier with real crevasse hazard (carry glacier travel gear); parties can avoid this by staying on rock via the south/southeast ridge instead in low-snow years."
+    },
+    "beta": "The standard line climbs scree, talus, and broken ledges on Luahna's east/south-facing slopes to gain the south ridge, then follows the ridge crest toward the summit. It is described as a 2nd-class line, but most parties encounter a short Class 3-3+ traverse or step to bypass a gap in the ridge below the true summit. The route is glacier-free but crosses persistent snow and loose rock well into summer, and is commonly combined with adjacent Clark Mountain in a single long day or overnight trip.",
+    "obj_haz": [
+     "Crevasses on the Pilz and Butterfly Glaciers",
+     "Loose schist rock on ledges and ridges",
+     "Long, remote approach with complex routefinding through multiple cirques",
+     "Afternoon thunderstorms typical of North Cascades summers"
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strenuous multi-day approach - long off-trail travel via Little Giant Pass and the Napeequa valley with significant elevation loss/regain before the summit day",
+      "packWeight": "Overnight/multi-day backpacking load (camp gear, several days food) rather than a single-push day pack"
+     },
+     "approachTime": "Multi-day approach typical (commonly 2+ days to a high camp such as Butterfly Butte before a summit push)",
+     "requiredSkills": [
+      "Off-trail navigation and route-finding in featureless, remote terrain",
+      "Backcountry river crossing (Napeequa River)",
+      "Loose scree/talus scrambling technique",
+      "Self-sufficiency for self-rescue given very remote, low-traffic terrain"
+     ],
+     "experienceLevel": "Experienced scrambler comfortable with remote, off-trail Class 2-3 terrain and multi-day wilderness travel; not a beginner objective"
+    },
+    "gear": [
+     "ice axe",
+     "helmet",
+     "crampons (early season, or for the Richardson/Pilz Glacier variant)",
+     "light rope for the short rappel/downclimb step (optional, route-dependent)",
+     "trekking poles (creek crossings, sidehill scree)",
+     "gaiters (bushwhacking, scree)"
+    ],
+    "hazards": [
+     "loose scree and rotten rock, especially just below the summit block",
+     "unmaintained route above roughly 5,700 ft — a faint sheepherder's path and cross-country travel with genuine route-finding difficulty",
+     "a brief class 3-4 step on the ridge, sometimes bypassed on exposed ledges",
+     "moat hazards where the route crosses the upper Richardson/Pilz Glacier margin",
+     "dense bushwhacking and avalanche/blowdown debris in the Boulder Creek and Thunder Creek drainages",
+     "early-season steep snow and avalanche terrain on approach slopes",
+     "very remote, multi-hour approach with serious self-rescue and evacuation implications; no cell coverage"
+    ],
+    "pro_tips": [
+     "Combine with Clark Mountain via the connecting ridge/col — most trip reports climb both peaks in one push since the approach alone is nearly a full day",
+     "Time any Richardson/Pilz Glacier crossing for morning while snow bridges are still firm",
+     "Note terrain features carefully on the way in — the sheepherder's path above the Boulder Pass Trail junction (~5,700 ft) is easy to lose, especially in fog or at dusk"
+    ],
+    "watch_out": [
+     "Losing the unmaintained boot path/sheepherder's trail above ~5,700 ft, especially in whiteout or dusk",
+     "Moats and open bergschrund opening on the Richardson/Pilz Glacier margins by late summer",
+     "Loose blocks on the class 3-4 ridge step — parties should not stack up below one another"
+    ],
+    "pro_needs": "None on the standard line -- it is climbed unroped. A rope, a few slings, and a light rack may be prudent for parties uncomfortable with the exposed Class 3+ traverse near the summit, or if approaching via the alternate, glaciated East Ridge/Richardson Glacier variant instead."
+   }
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "before": {
+    "itinerary": {
+     "cal": "Best July-September; the Little Giant Pass climb and the Napeequa ford are easiest once the steep pass trail and creek crossing are snow-free and lower, typically by mid-July.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Little Giant Trailhead on the Chiwawa River Road, climb switchbacks (500 ft/mi, then a steep 1,500 ft/mi pitch) to Little Giant Pass, then drop into the Napeequa Valley. Follow the Napeequa trail to where Berge's southwest-draining creek comes in, then grind up a steep, intermittent boot track to a flat spot at treeline with easy access to the peak's scramble routes.",
+       "hours": 9,
+       "miles": 10.5,
+       "title": "Approach to treeline camp",
+       "gainFt": 6200,
+       "lossFt": 2000,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a camp at treeline on Berge's southwest side"
+      },
+      {
+       "n": 2,
+       "note": "A loose, exposed scramble: broken ramps on the west side lead to pumice slopes on the southwest face, then a traverse to the summit ridge. The true summit is the north high point (7,948 ft); the south summit (~7,914 ft) is a short side trip. Down-climbing the loose terrain is often slower than the ascent.",
+       "hours": 7,
+       "miles": 3,
+       "title": "Summit day via the Southwest Route",
+       "gainFt": 1000,
+       "lossFt": 1000,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave treeline camp",
+         "detail": "Start up the loose west-side ramps while rock is cool and any overnight snow is still firm."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach the pumice slopes",
+         "detail": "Traverse onto the scree/pumice bench on Berge's southwest face."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Gain the summit ridge",
+         "detail": "Cross to the ridge below the true summit; loose and exposed in spots — helmet recommended."
+        },
+        {
+         "time": "+4.5 hr",
+         "label": "Summit (7,948 ft)",
+         "detail": "North summit is the true high point; visit the south summit (~7,914 ft) if time allows."
+        },
+        {
+         "time": "+6-7 hr",
+         "label": "Back at camp",
+         "detail": "Reverse the ascent line carefully; most parties call this route's crux the loose downclimb, not the up."
+        }
+       ],
+       "objective": "Climb Mount Berge (7,948 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse Day 1: descend to the Napeequa River, climb back over Little Giant Pass, then drop the steep switchbacks to the trailhead.",
+       "hours": 8,
+       "miles": 10.5,
+       "title": "Hike out",
+       "gainFt": 2000,
+       "lossFt": 6200,
+       "packLb": 36,
+       "schedule": [],
+       "objective": "Return to the Little Giant Trailhead"
+      }
+     ],
+     "totalNote": "A demanding ~20-22 mile round trip with roughly 7,000-8,000 ft of cumulative gain crossing two valleys — almost universally done as a 3-day backpack with a treeline camp on Berge's southwest side, not a day trip."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "before": {
+    "dist_km": 12.9,
+    "approach": "Drive to the Crater Creek Trailhead (4,750 ft, 48.2205 / -120.26801). From Twisp take SR 20 south 2 miles to the SR 153 junction, then SR 153 south about 12 miles to County Road 1029 and on to CR 1034 (Gold Creek Road). CR 1034 becomes Forest Road 4340 after roughly 5 miles; continue about 1.6 miles further on FR 4340, then turn onto FR 4340-300 (Crater Creek Road) and follow it 4.6 miles to the trailhead. An alternate description of the same drive starts from Carlton: south on SR 153 for 3.5 miles, right on Gold Creek Loop Road 1.6 miles, right on Gold Creek Road 5.0 miles (becomes FR 4340), 1.6 miles more, then left on FR 4340-300 for 4.4 miles. The gravel is washboarded in places — drive it slowly. From the trailhead take Eagle Lakes Trail #431. The first 0.7 mile climbs gently, rounds a bend into an opening with a view up the Eagle Creek valley, then descends slightly to the bridge over Crater Creek. From there the trail climbs at a consistently gentle grade through mature pine into subalpine fir and larch. At roughly 5 miles the trail reaches the Eagle Lakes area and forks: take the RIGHT fork toward Upper Eagle Lake (7,115 ft, 48.213553 / -120.346815, about 5.9 trail miles and 2,350–2,430 ft of gain from the car). Upper Eagle Lake has many campsites and a large horse camp, and is the last reliable water. From the lake, the East Face of Bigelow is the wall directly above to the northwest — bear northwest up talus and heather to the base of the golden granite, roughly 0.4–0.5 mile and 900–1,000 ft above the lake. The FA party logged the whole thing as '8 miles more or less from TH, ~3500' to base' and called it a great, fast trail. Scout the line from the lake and from the base before racking up; the crack systems are genuinely hard to read from below.",
+    "itinerary": "Best done as an overnight from Upper Eagle Lake, which is what the first-ascent party did. Day 1: drive in and hike the 5.9 miles of Eagle Lakes Trail #431 to Upper Eagle Lake (roughly 2 h 45 min of walking at the mapped trail estimate), make camp among the established sites, and spend the last of the light scoping the East Face from the lakeshore and picking your line — the crack systems are much easier to sort out with binoculars from the water than from the base. Day 2: leave camp at first light, scramble the 900–1,000 ft of talus and heather to the base, rack up, and climb the four pitches. Budget generously — the FA party's climbing was very slow because of the cleaning required, and even on a cleaned-up line this is not a fast route. Walk north to the summit, descend the standard scramble back to camp, strike the tent and hike out, or spend a second night and walk out fresh. A car-to-car day is possible for a strong, fast party but leaves no margin: it is about 13 trail-and-scramble miles with roughly 3,900 ft of gain plus four pitches of 5.10.",
+    "waypoints": [
+     {
+      "lat": 48.2205,
+      "lng": -120.26801,
+      "elev": 4750,
+      "name": "Crater Creek Trailhead (Eagle Lakes Trail #431)",
+      "type": "Trailhead",
+      "distMi": 0,
+      "elevFt": 4750,
+      "directions": "From Twisp take SR 20 south two miles to the SR 153 junction, follow SR 153 south about twelve miles to County Road 1029 and on to CR 1034 (Gold Creek Road), which becomes FR 4340 after roughly five miles. Continue about 1.6 miles further, then turn onto FR 4340-300 (Crater Creek Road) and follow it about 4.6 miles to the trailhead at 4,750 ft; the gravel is washboarded in places, so drive it slowly. From Carlton the equivalent is SR 153 south 3.5 miles, right on Gold Creek Loop Road for 1.6 miles, right on Gold Creek Road for five miles, 1.6 miles more, then left on FR 4340-300."
+     },
+     {
+      "lat": 48.213553,
+      "lng": -120.346815,
+      "elev": 7115,
+      "name": "Upper Eagle Lake — camp, last water, base-of-face scoping point",
+      "type": "Junction",
+      "distMi": 5.9,
+      "elevFt": 7115,
+      "directions": "Take Eagle Lakes Trail #431. The first 0.7 mile climbs gently, rounds a bend into an opening with a view up the Eagle Creek valley, then drops slightly to the bridge over Crater Creek, after which the grade stays consistently easy through mature pine into subalpine fir and larch. At roughly five miles the trail reaches the Eagle Lakes area and forks: take the RIGHT fork for Upper Eagle Lake, about 5.9 trail miles and 2,350 to 2,430 ft of gain from the car, with many campsites, a large horse camp, and the last reliable water."
+     },
+     {
+      "lat": 48.218253,
+      "lng": -120.353964,
+      "elev": 8449,
+      "name": "Mount Bigelow summit",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 8449,
+      "directions": "The East Face stands directly above the lake to the northwest; bear that way up talus and heather for roughly 0.4 to 0.5 mile and 900 to 1,000 ft to the base of the golden granite. Scope the line from the lakeshore before you go, because the crack systems are genuinely hard to read from below. Four pitches (an easy chimney and finger crack at 5.8, the fist-crack bulge and dihedral at 5.9, the balancy 5.10c 'S' crack crux, then a short stem between the face and a small tower) reach the summit ridge, where you unrope and walk north a short distance to the true 8,449 ft summit."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+{"file": "r066.json", "results": [
+{"id": "wa_ptarmigan_traverse", "fact": "Kool-Aid Lake elevation", "verdict": "fixed",
+ "correct_value": "~6,100 ft (6,120 on the waypoint, matching the bivy entry)",
+ "evidence": "Two trip reports independently give Kool-Aid Lake as 6,100 ft (one lists 'Campsite: Kool-Aid Lake (Elev. 6100 feet)', the other 'Kool-Aid Lake at 6100′'). The USGS elevation service at the route's own Kool-Aid Lake pin returns 6,124 ft. One older page says 6,320 and one low-quality page says 6,800; the ~7,000 in the itinerary is unsupported. The bivy entry (6,120) already agrees, so the itinerary and the waypoint are brought to it.",
+ "sources": ["https://trailcatjim.com/spider-mtn-via-cache-col-sf-col-southeast-gully/", "https://rocknropenw.com/2025/07/25/ptarmigan-traverse/", "https://epqs.nationalmap.gov/v1/json?x=-121.046228&y=48.439276&units=Feet&wkid=4326"],
+ "patches": [
+  {"id": "wa_ptarmigan_traverse", "fact": "Kool-Aid Lake elevation", "op": "replace_text", "column": "itinerary", "path": [], "find": "Kool-Aid Lake bivouac (elevation ~7,000 ft)", "replace": "Kool-Aid Lake bivouac (elevation ~6,100 ft)"},
+  {"id": "wa_ptarmigan_traverse", "fact": "Kool-Aid Lake elevation", "op": "set", "column": "waypoints", "path": [3, "elev"], "expect": 6320, "value": 6120}
+ ]},
+{"id": "wa_ptarmigan_traverse", "fact": "Distance from trailhead to Cascade Pass", "verdict": "fixed",
+ "correct_value": "3.7 miles",
+ "evidence": "A regional route guide gives the Cascade Pass Trail as 3.7 miles to the pass, and a second route guide's Day 1 also states 3.7 miles; a 2024 trip report gives about 3.6 miles and 1,800 ft. The approach, pitch_detail and waypoint already say 3.6-3.7; only the itinerary's 5.7 is wrong.",
+ "sources": ["https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/", "https://summitborn.com/ptarmigan-traverse-trail/", "https://edwardliphoto.com/trips/2024-07-04-ptarmigan-traverse/"],
+ "patches": [
+  {"id": "wa_ptarmigan_traverse", "fact": "Distance from trailhead to Cascade Pass", "op": "replace_text", "column": "itinerary", "path": [], "find": "the pass (5.7 miles)", "replace": "the pass (3.7 miles)"}
+ ]},
+{"id": "wa_ptarmigan_traverse", "fact": "Overall trip duration", "verdict": "fixed",
+ "correct_value": "4-7 days typical",
+ "evidence": "One route guide says most parties find 4 or 5 days enjoyable; another recommends a 6-7 day schedule for first-timers; a third says 5-7 days, and guided trips run 7 days. Fast parties sometimes do it in 3 days, but no source supports 2-3 days as the norm. what_to_bring already says 'typical 4-7 day traverse', so watch_out is aligned to that.",
+ "sources": ["https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/", "https://rocknropenw.com/2025/07/25/ptarmigan-traverse/", "https://summitborn.com/ptarmigan-traverse-trail/", "https://www.alpineascents.com/climbs/ptarmigan-traverse/itinerary/"],
+ "patches": [
+  {"id": "wa_ptarmigan_traverse", "fact": "Overall trip duration", "op": "replace_text", "column": "watch_out", "path": [], "find": "2-3 day alpine commitment", "replace": "4-7 day alpine commitment"}
+ ]},
+{"id": "wa_ptarmigan_traverse", "fact": "Which jurisdiction Cascade Pass itself sits in", "verdict": "fixed",
+ "correct_value": "Trailhead, Cascade Pass and the approach to Cache Col are in North Cascades National Park; south of Cache Col the traverse is in the Glacier Peak Wilderness (national forest)",
+ "evidence": "The encyclopedia entry for Cache Col and the traverse says Cache Col is the boundary between North Cascades National Park and Glacier Peak Wilderness. A 2025 trip report says Cache Col marks the park boundary, with ranger-issued permits needed before it and national forest / Glacier Peak Wilderness beyond it. A place listing puts Kool-Aid Lake in Glacier Peak Wilderness. The row's own Kool-Aid Lake bivy note agrees.",
+ "sources": ["https://en.wikipedia.org/wiki/Ptarmigan_Traverse", "https://en.wikipedia.org/wiki/Cache_Col", "https://rocknropenw.com/2025/07/25/ptarmigan-traverse/", "https://www.explorest.com/places/washington/concrete/kool-aid-lake-arts-knoll-along-ptarmigan-traverse"],
+ "patches": [
+  {"id": "wa_ptarmigan_traverse", "fact": "Which jurisdiction Cascade Pass itself sits in", "op": "replace_text", "column": "access", "path": ["notes"], "find": "the southern Cascade Pass-to-Yang Yang Lakes stretch is Mount Baker-Snoqualmie/Okanogan-Wenatchee National Forest (Glacier Peak Wilderness), and the northern Cascade Pass/Cache Col/Ptarmigan Traverse proper runs through North Cascades National Park (Stephen Mather Wilderness).", "replace": "the northern stretch from the trailhead over Cascade Pass up to Cache Col lies in North Cascades National Park (Stephen Mather Wilderness), and from Cache Col south the traverse proper runs through Mount Baker-Snoqualmie/Okanogan-Wenatchee National Forest (Glacier Peak Wilderness)."}
+ ]},
+{"id": "wa_ptarmigan_traverse", "fact": "Order of Red Ledge, Middle Cascade Glacier and Kool-Aid Lake in the itinerary", "discovered": true, "verdict": "fixed",
+ "correct_value": "Cascade Pass -> Cache Col -> Kool-Aid Lake (Day 1 camp) -> Red Ledge -> Middle Cascade Glacier -> Spider-Formidable Col -> Yang Yang Lakes",
+ "evidence": "Itinerary Day 1 has the party cross the red ledges and Middle Cascade Glacier before reaching Kool-Aid Lake, then Day 2 crosses the red ledges again after Spider-Formidable Col. A route guide gives the order Cache Col, Kool-Aid Lake, Red Ledge, Middle Cascade Glacier, and a detailed trip report describes the same sequence; the row's waypoints (Kool-Aid Lake at 7.5 mi, Red Ledges at 9 mi, Spider-Formidable Col at 13.5 mi) agree.",
+ "sources": ["https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/", "https://climberkyle.com/2019/07/09/the-extended-ptarmigan-traverse/"],
+ "patches": [
+  {"id": "wa_ptarmigan_traverse", "fact": "Order of Red Ledge, Middle Cascade Glacier and Kool-Aid Lake in the itinerary", "op": "replace_text", "column": "itinerary", "path": [], "find": "descend over red ledges and across Middle Cascade Glacier to ", "replace": "descend to "},
+  {"id": "wa_ptarmigan_traverse", "fact": "Order of Red Ledge, Middle Cascade Glacier and Kool-Aid Lake in the itinerary", "op": "replace_text", "column": "itinerary", "path": [], "find": "Traverse Spider-Formidable Col via Middle Cascade Glacier, cross exposed red ledges (Class 3 scrambling), descend", "replace": "Cross the exposed Red Ledge below Art's Knoll (Class 3 scrambling), climb the Middle Cascade Glacier to Spider-Formidable Col, descend"}
+ ]},
+{"id": "wa_ptarmigan_traverse", "fact": "Day 1 elevation gain (trailhead to Cache Col / Kool-Aid Lake)", "discovered": true, "verdict": "fixed",
+ "correct_value": "~3,300 ft gain",
+ "evidence": "Itinerary Day 1 says 1,700 ft gain, which is only the trail to Cascade Pass; the day continues to Cache Col (waypoint 6,903 ft from a 3,600 ft trailhead). A mapped route to Kool-Aid Lake gives 3,307 ft of gain, and a trip report reached Cache Col after 3,550 ft from the trailhead.",
+ "sources": ["https://www.gaiagps.com/hike/235287/kool-aid-lake-via-cascade-pass-trail-and-ptarmigan-traverse/", "https://trailcatjim.com/spider-mtn-via-cache-col-sf-col-southeast-gully/"],
+ "patches": [
+  {"id": "wa_ptarmigan_traverse", "fact": "Day 1 elevation gain (trailhead to Cache Col / Kool-Aid Lake)", "op": "replace_text", "column": "itinerary", "path": [], "find": "4-6 hours, 1,700 ft gain", "replace": "4-6 hours, ~3,300 ft gain"}
+ ]},
+{"id": "wa_ragged_ridge", "fact": "Total elevation gain for the traverse", "verdict": "unresolved",
+ "correct_value": null,
+ "evidence": "The contradiction is real: 2,900 ft is roughly the trail gain to Easy Pass alone (official figure 2,800 ft), and the route's own pins require 5,000+ ft just to reach Mesahchie. But published car-to-car totals differ a lot by style: a one-day Mesahchie-to-Cosho push reports about 8,000 ft over 15 miles (ending at Junction Camp, not the car), one climber logged 20,000 ft over two days, and a single-peak Katsuk trip logged 8,100 ft. No two sources agree on a car-to-car total for this route's itinerary, so no number was written.",
+ "sources": ["https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/", "https://trailcatjim.com/katsuk-peak-via-south-spur-east-ridge/", "https://www.nps.gov/noca/planyourvisit/easy-pass-trail.htm"],
+ "patches": []},
+{"id": "wa_ragged_ridge", "fact": "rope_note names the wrong peak", "verdict": "fixed",
+ "correct_value": "rope_note describes Ragged Ridge (Mesahchie-Katsuk-Kimtah-Cosho), which is scrambling plus glacier crossings, not Red Mountain",
+ "evidence": "Route descriptions for the traverse name the four peaks Mesahchie, Katsuk, Kimtah and Cosho and say no technical rock climbing or serious glacier travel is required, with a basin camp near 6,600 ft south of Mesahchie. The 'Red Mountain' note, like the Commonwealth Basin and I-90 references on this row, matches the Snoqualmie Pass Red Mountain and was copied from another route. The note is rewritten to describe this route with the row's own terrain facts.",
+ "sources": ["https://www.lemkeclimbs.com/ragged-ridge---katsuk-kimtah-and-cosho-peaks.html", "https://drdirtbag.com/2016/07/23/ragged-ridge-kitling-to-cosho-14h/", "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/"],
+ "patches": [
+  {"id": "wa_ragged_ridge", "fact": "rope_note names the wrong peak", "op": "set", "column": "rope_note", "path": [], "expect": "Short 5.5 rock scramble/climb on Red Mountain's ridge; single 60m rope sufficient for the low-5th-class sections, many parties simul-climb or scramble sections unroped.", "value": "Mostly Class 3-4 scrambling along Ragged Ridge with brief low-5th-class steps; a light rope covers the Katsuk and Kimtah glacier crossings and any short step a party wants protected, and most of the ridge is climbed unroped."}
+ ]},
+{"id": "wa_ragged_ridge", "fact": "Land manager and permit requirement", "verdict": "fixed",
+ "correct_value": "Trailhead to Easy Pass is Okanogan-Wenatchee National Forest; everything beyond the pass is North Cascades National Park, and any overnight stay there needs a park backcountry permit",
+ "evidence": "The Forest Service's Easy Pass Trail page (Okanogan-Wenatchee NF) says once you cross the pass you are in North Cascades National Park and a backcountry permit from the Marblemount office is required to camp. The park's own Easy Pass / Fisher Creek page says a backcountry permit is required for all overnight stays and that camping is not allowed at Easy Pass or in its meadows. Both contradict 'no permit, day-use only' and 'Mount Baker-Snoqualmie National Forest'.",
+ "sources": ["https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/easy-pass-trail", "https://www.nps.gov/noca/planyourvisit/easy-pass-trail.htm"],
+ "patches": [
+  {"id": "wa_ragged_ridge", "fact": "Land manager and permit requirement", "op": "set", "column": "access", "path": ["permit"], "expect": "No overnight wilderness permit required; day-use only", "value": "No permit for a day trip. Any overnight stay beyond Easy Pass requires a North Cascades National Park backcountry permit; camping is not allowed at the pass itself or in its meadows."},
+  {"id": "wa_ragged_ridge", "fact": "Land manager and permit requirement", "op": "set", "column": "access", "path": ["_raw", "permit_type"], "expect": "No overnight wilderness permit required; day-use only", "value": "No permit for a day trip. Any overnight stay beyond Easy Pass requires a North Cascades National Park backcountry permit; camping is not allowed at the pass itself or in its meadows."},
+  {"id": "wa_ragged_ridge", "fact": "Land manager and permit requirement", "op": "set", "column": "access", "path": ["_raw", "permit_application_method"], "expect": "No permit required", "value": "Day trips need none; overnight trips need a North Cascades National Park backcountry permit, reserved in advance and issued by the wilderness office in Marblemount."},
+  {"id": "wa_ragged_ridge", "fact": "Land manager and permit requirement", "op": "set", "column": "access", "path": ["landManager"], "expect": "USDA Forest Service (Mount Baker-Snoqualmie National Forest)", "value": "North Cascades National Park (everything beyond Easy Pass) / USDA Forest Service — Okanogan-Wenatchee National Forest (trailhead to Easy Pass)"},
+  {"id": "wa_ragged_ridge", "fact": "Land manager and permit requirement", "op": "set", "column": "access", "path": ["_raw", "land_manager"], "expect": "USDA Forest Service (Mount Baker-Snoqualmie National Forest)", "value": "North Cascades National Park (everything beyond Easy Pass) / USDA Forest Service — Okanogan-Wenatchee National Forest (trailhead to Easy Pass)"}
+ ]},
+{"id": "wa_ragged_ridge", "fact": "Parking-pass trailhead named in access", "verdict": "fixed",
+ "correct_value": "Northwest Forest Pass ($5/day or $30/year) or Interagency pass at the Easy Pass Trailhead",
+ "evidence": "The Forest Service Easy Pass Trail page gives the parking fee as $5 per vehicle per day or a $30 annual pass; the park's Easy Pass page says a Northwest Forest Pass or America the Beautiful pass is required to park there. Commonwealth Basin is a Snoqualmie Pass trailhead unrelated to this route.",
+ "sources": ["https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/easy-pass-trail", "https://www.nps.gov/noca/planyourvisit/easy-pass-trail.htm", "https://www.wta.org/go-hiking/hikes/easy-pass"],
+ "patches": [
+  {"id": "wa_ragged_ridge", "fact": "Parking-pass trailhead named in access", "op": "replace_text", "column": "access", "path": ["passRequired"], "find": "at Commonwealth Basin trailhead", "replace": "at the Easy Pass Trailhead"},
+  {"id": "wa_ragged_ridge", "fact": "Parking-pass trailhead named in access", "op": "replace_text", "column": "access", "path": ["_raw", "parking_pass_required"], "find": "at Commonwealth Basin trailhead", "replace": "at the Easy Pass Trailhead"}
+ ]},
+{"id": "wa_ragged_ridge", "fact": "Highway named in climate access notes", "verdict": "fixed",
+ "correct_value": "SR 20 (North Cascades Highway) winter closure, not I-90",
+ "evidence": "WSDOT closes SR 20 each winter between Ross Dam (MP 134) and the east-side gate for avalanche risk, and news coverage of the December 2025 closure describes the same gates; the Easy Pass Trailhead at MP 151 lies inside that section. I-90 plays no part in reaching this route. (The sentence lives in access.notes on this row.)",
+ "sources": ["https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm", "https://www.cascadiadaily.com/2025/dec/02/north-cascades-highway-to-close-for-winter-on-thursday/"],
+ "patches": [
+  {"id": "wa_ragged_ridge", "fact": "Highway named in climate access notes", "op": "replace_text", "column": "access", "path": ["notes"], "find": "frequent avalanche control closures on I-90", "replace": "the seasonal winter closure of SR 20"}
+ ]},
+{"id": "wa_ragged_ridge", "fact": "access.closures says 'Year-round access' while SR 20 is gated every winter", "discovered": true, "verdict": "fixed",
+ "correct_value": "SR 20 closes for winter, cutting off the Easy Pass Trailhead",
+ "evidence": "road.seasonalGate on the same row says the trailhead is inside the SR 20 winter closure; WSDOT and news coverage confirm the annual closure between Ross Dam and the east-side gate, typically from late November or early December until spring.",
+ "sources": ["https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm", "https://www.cascadiadaily.com/2025/dec/02/north-cascades-highway-to-close-for-winter-on-thursday/"],
+ "patches": [
+  {"id": "wa_ragged_ridge", "fact": "access.closures says 'Year-round access' while SR 20 is gated every winter", "op": "set", "column": "access", "path": ["closures"], "expect": "Year-round access; winter conditions may affect access", "value": "SR 20 closes for the winter, usually from late November or early December until spring, between Ross Dam and the east-side gate, which cuts off the Easy Pass Trailhead."},
+  {"id": "wa_ragged_ridge", "fact": "access.closures says 'Year-round access' while SR 20 is gated every winter", "op": "set", "column": "access", "path": ["_raw", "seasonal_closure_dates"], "expect": "Year-round access; winter conditions may affect access", "value": "SR 20 closes for the winter, usually from late November or early December until spring, between Ross Dam and the east-side gate, which cuts off the Easy Pass Trailhead."}
+ ]},
+{"id": "wa_ragged_ridge", "fact": "access.fees says no fee beyond parking, but overnight trips need a paid park permit", "discovered": true, "verdict": "fixed",
+ "correct_value": "Day trips: parking pass only; overnight: $10 per person (15 and under free) plus a $6 reservation fee in the summer season",
+ "evidence": "The park's backcountry permit page and a statewide trail-organisation permit guide both give $10 per person plus a $6 fee, youth 15 and under free, charged mid-May to early October. The row's own bivy entries say a per-person recreation fee and a booking fee apply.",
+ "sources": ["https://www.nps.gov/noca/planyourvisit/permits.htm", "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info"],
+ "patches": [
+  {"id": "wa_ragged_ridge", "fact": "access.fees says no fee beyond parking, but overnight trips need a paid park permit", "op": "set", "column": "access", "path": ["fees"], "expect": "None beyond the parking or entrance fee this route already lists.", "value": "No fee for a day trip beyond the parking pass. An overnight trip past Easy Pass needs a North Cascades National Park backcountry permit: $10 per person (youth 15 and under free) plus a $6 reservation fee, charged mid-May to early October."},
+  {"id": "wa_ragged_ridge", "fact": "access.fees says no fee beyond parking, but overnight trips need a paid park permit", "op": "set", "column": "access", "path": ["_raw", "permit_cost"], "expect": "No permit fee", "value": "None for a day trip; an overnight backcountry permit costs $10 per person (youth 15 and under free) plus a $6 reservation fee, mid-May to early October."}
+ ]},
+{"id": "wa_ragged_ridge", "fact": "Bivy list includes camps for a different peak/trailhead (Black Peak/Corteo via Rainy Pass)", "verdict": "bivy_zone_list",
+ "correct_value": null,
+ "evidence": "Wing Lake, Lewis Lake and the Rainy Pass trailhead lots serve Black Peak and Corteo from Rainy Pass and do not serve this route. Easy Pass trailhead, Mesahchie basin below the col, the Ragged Ridge crest bivy and Fisher Camp do serve it. Left for the catalog-wide camp-list handling; no patches.",
+ "sources": [],
+ "patches": []}
+]}

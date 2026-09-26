@@ -1,0 +1,1413 @@
+{
+ "applied": [
+  {
+   "id": "wa_chelan_butte_chelan_butte_trail",
+   "column": "permit",
+   "path": [],
+   "fact": "Parking pass type required (Northwest Forest Pass vs Discover Pass)"
+  },
+  {
+   "id": "wa_chelan_butte_chelan_butte_trail",
+   "column": "season",
+   "path": [],
+   "fact": "Is March open or closed to hiking?"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Total round-trip distance for the Walrus Glacier itinerary"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Total gain for the Walrus Glacier itinerary"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Total gain for the Walrus Glacier itinerary"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total gain for the Walrus Glacier itinerary"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Boulder Basin camp elevation"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Boulder Basin camp elevation"
+  },
+  {
+   "id": "wa_milk_n_honey",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total gain/loss - 4,760 ft (gain_ft/loss_ft) vs 4,100 ft (itinerary day)"
+  },
+  {
+   "id": "wa_milk_n_honey",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total gain/loss - 4,760 ft (gain_ft/loss_ft) vs 4,100 ft (itinerary day)"
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "column": "gear",
+   "path": [
+    1
+   ],
+   "fact": "Rope length recommended - 25-30 m (gear/rack) vs 60 m (detailed_rack/rope_length_m/pro_tips)"
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "column": "rack",
+   "path": [
+    4
+   ],
+   "fact": "Rope length recommended - 25-30 m (gear/rack) vs 60 m (detailed_rack/rope_length_m/pro_tips)"
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Overnight permit fee - 'none beyond parking' vs the lottery fees stated in the same access block"
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Does The Scoop reach the standard single-rappel walk-off? descent_text says NO, descent/rappel_count_note say YES"
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "column": "descent",
+   "path": [],
+   "fact": "Does The Scoop reach the standard single-rappel walk-off? descent_text says NO, descent/rappel_count_note say YES"
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Itinerary gain (4,600 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Itinerary gain (4,600 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "column": "grade",
+   "path": [],
+   "fact": "Crux/route grade - 5.11 (`grade`) vs 5.11+ (`rock_grade`) vs 5.11+/5.12- (pitch_detail crux)"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total ascent gain/loss - 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total ascent gain/loss - 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total ascent gain/loss - 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total ascent gain/loss - 2,200 ft (gain_ft/loss_ft) vs 4,500 ft (itinerary day sum)"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Partner requirements say a ~9-hour car-to-car day, 6 pitches and a multi-rappel descent; the itinerary/timing/pitch_detail say ~15.4 hrs, 9 pitches and a single ~30 m rappel"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    1
+   ],
+   "fact": "Partner requirements say a ~9-hour car-to-car day, 6 pitches and a multi-rappel descent; the itinerary/timing/pitch_detail say ~15.4 hrs, 9 pitches and a single ~30 m rappel"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "column": "partner_requirements",
+   "path": [
+    "requiredSkills",
+    2
+   ],
+   "fact": "Partner requirements say a ~9-hour car-to-car day, 6 pitches and a multi-rappel descent; the itinerary/timing/pitch_detail say ~15.4 hrs, 9 pitches and a single ~30 m rappel"
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "column": "descent",
+   "path": [],
+   "fact": "Whether the summit rappel is mandatory or optional"
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Itinerary gain (4,100 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Itinerary gain (4,100 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_let_it_burn",
+   "column": "beta",
+   "path": [],
+   "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+  },
+  {
+   "id": "wa_let_it_burn",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+  },
+  {
+   "id": "wa_let_it_burn",
+   "column": "watch_out",
+   "path": [
+    0
+   ],
+   "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+  },
+  {
+   "id": "wa_let_it_burn",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+  },
+  {
+   "id": "wa_let_it_burn",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+  },
+  {
+   "id": "wa_let_it_burn",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Pitch count and per-pitch grades (beta vs pitch_detail)"
+  },
+  {
+   "id": "wa_let_it_burn",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Itinerary gain (4,500 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_let_it_burn",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Itinerary gain (4,500 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_scarface_3",
+   "column": "descent",
+   "path": [],
+   "fact": "Whether the summit rappel is mandatory or optional"
+  },
+  {
+   "id": "wa_scarface_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_scarface_3",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Itinerary gain (4,300 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_the_tipping_point",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent describes only the mid-route bail, not the standard full-route (summit) finish"
+  },
+  {
+   "id": "wa_the_tipping_point",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent describes only the mid-route bail, not the standard full-route (summit) finish"
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "column": "descent",
+   "path": [],
+   "fact": "Whether the summit rappel is mandatory or optional"
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Itinerary gain (4,200 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Itinerary gain (4,200 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_the_tempest",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "section"
+   ],
+   "fact": "Published timing labels swap 'climb' and 'descent'"
+  },
+  {
+   "id": "wa_the_tempest",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "section"
+   ],
+   "fact": "Published timing labels swap 'climb' and 'descent'"
+  },
+  {
+   "id": "wa_the_tempest",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Published timing labels swap 'climb' and 'descent'"
+  },
+  {
+   "id": "wa_the_tempest",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Published timing labels swap 'climb' and 'descent'"
+  },
+  {
+   "id": "wa_the_tempest",
+   "column": "timing",
+   "path": [
+    "descentTimeHrs"
+   ],
+   "fact": "Published timing labels swap 'climb' and 'descent'"
+  },
+  {
+   "id": "wa_the_tempest",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Itinerary gain (2,280 + 2,200 = 4,480 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_the_tempest",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Itinerary gain (2,280 + 2,200 = 4,480 ft) vs gain_ft (4,760 ft)"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "column": "approach",
+   "path": [],
+   "fact": "Total elevation gain to the col"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain to the col"
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain to the col"
+  },
+  {
+   "id": "wa_the_balanced_rock",
+   "column": "approach",
+   "path": [],
+   "fact": "Boulder problem grade: V1 vs V2"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_chelan_butte_chelan_butte_trail",
+   "before": {
+    "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "season": "Mar-Oct (best Apr-May and fall); voluntary closure Feb 1-Mar 31 for wintering deer; also used for winter snowshoeing"
+   }
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "before": {
+    "itinerary": {
+     "cal": "Boulder Creek fords and lingering snow on the glacier approach are easiest from mid-July through August; the road to White River Trailhead is normally clear by late May but the glacier itself is best climbed before it opens up too much in late summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the White River Trailhead (2,300 ft), hike the White River Trail about 4 miles, then turn up the Boulder Creek/Boulder Pass Trail, fording Boulder Creek where it braids into several shallow channels. Camp in the forested basin around 5,600-6,000 ft with a view of Clark Mountain's south side.",
+       "hours": 5.6,
+       "miles": 7.5,
+       "title": "Approach to Boulder Basin camp",
+       "gainFt": 3100,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [
+        {
+         "time": "Morning",
+         "label": "Leave White River Trailhead",
+         "detail": "Elevation 2,300 ft; follow White River Trail ~4 miles."
+        },
+        {
+         "time": "",
+         "label": "Turn onto Boulder Creek/Boulder Pass Trail",
+         "detail": "Ford Boulder Creek's braided channels."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Reach Boulder Basin camp",
+         "detail": "Forested campsites around 5,600-6,000 ft; set up base camp."
+        }
+       ],
+       "objective": "Establish base camp in Boulder Basin"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start from Boulder Basin gains Boulder Pass and the east-ridge bench before dropping onto the Walrus Glacier. Rope up and pick a line up the moderately steep chute on the glacier's left (southern) margin, watching for narrow crevasses, then finish with a Class 3 scramble and a short 45-50 degree snow traverse to the summit block. Reverse the same line back to camp.",
+       "hours": 11.5,
+       "miles": 5,
+       "title": "Summit push via Walrus Glacier",
+       "gainFt": 3000,
+       "lossFt": 3000,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "~4:00 AM",
+         "label": "Leave Boulder Basin camp",
+         "detail": "Alpine start with light day packs; rope and glacier gear carried."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Gain Boulder Pass / east-ridge bench",
+         "detail": "Boulder Pass ~6,300 ft, bench ~6,700 ft."
+        },
+        {
+         "time": "+3-4 hr",
+         "label": "Onto the Walrus Glacier",
+         "detail": "Ascend the chute on the glacier's left margin, stepping over crevasses."
+        },
+        {
+         "time": "~5.9 hr from camp",
+         "label": "Summit block",
+         "detail": "Class 3 rock scramble plus a soft 45-50 degree snow traverse to the top."
+        },
+        {
+         "time": "~5.9 hr mark",
+         "label": "Summit (8,602 ft)",
+         "detail": ""
+        },
+        {
+         "time": "~5.6 hr descent",
+         "label": "Back at Boulder Basin camp",
+         "detail": "Reverse the glacier and ridge line; full round trip from camp runs roughly 11.5 hours."
+        }
+       ],
+       "objective": "Climb Clark Mountain (8,602 ft) via the Walrus Glacier and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the Boulder Creek/Boulder Pass Trail and White River Trail back to the car, re-fording Boulder Creek along the way.",
+       "hours": 4.6,
+       "miles": 7.5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3100,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Return to White River Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day backpack trip: ~8 mi/~3,100 ft up to Boulder Basin camp on day 1, an ~5-mile, ~11.5-hour round-trip summit push via the Walrus Glacier on day 2, and the ~8-mile hike out on day 3 — roughly 26 miles and 7,300 ft gained/lost total."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - roughly 25-26 miles round trip with on the order of 6,700 ft of cumulative gain; most parties split it into a 2-day overnight rather than a single push",
+      "packWeight": "Overnight backpacking load (shelter, food, glacier travel gear) for the typical 2-day itinerary; day-trippers attempting it in one push carry a lighter but still substantial pack"
+     },
+     "approachTime": "Long - Boulder Creek Trail over Boulder Pass or Napeequa River Trail over Little Giant Pass, converging near the Napeequa River roughly 3.7 miles east of Boulder Pass, before ascending to the glacier; most parties camp overnight rather than day-tripping",
+     "requiredSkills": [
+      "glacier travel and crevasse rescue",
+      "off-trail routefinding through brush, heather, slabs and morainal debris",
+      "basic snow travel with ice axe/crampons",
+      "Class 2-3 scrambling comfort, including loose rock near the summit",
+      "self-sufficiency for a long, remote wilderness approach with no cell coverage"
+     ],
+     "experienceLevel": "Intermediate-to-advanced scrambler with prior glacier travel experience; not a beginner objective given the remote approach and Walrus/Clark Glacier crossing"
+    },
+    "crowds": {
+     "peakTraffic": "Late July-August weekends, especially Mountaineers-affiliated club trips",
+     "solitudeRating": 4,
+     "estimatePerSeason": "unknown exact count - qualitatively 'popular' among Seattle-area alpine scramblers (a known Mountaineers club objective), but the ~25-26 mile round trip and remote Boulder Pass/Little Giant Pass approach filter out casual traffic; likely well under 50 total parties per season"
+    }
+   }
+  },
+  {
+   "id": "wa_milk_n_honey",
+   "before": {
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit; camping at the lake needs the Enchantments lottery permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A shorter trad line on the same wall; approach and descent dominate the day more than the climbing itself.",
+       "hours": 10.5,
+       "miles": 10.6,
+       "title": "Car-to-car day climb",
+       "gainFt": 4100,
+       "lossFt": 4100,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "5:45 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": ""
+        },
+        {
+         "time": "6:45 AM",
+         "label": "Start climbing",
+         "detail": ""
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Begin descent",
+         "detail": ""
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Milk n' Honey and return same day"
+      }
+     ],
+     "totalNote": "A single day, roughly 10-11 hrs car-to-car."
+    }
+   }
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "before": {
+    "gear": [
+     "light trad rack",
+     "a single 25-30m rope is sufficient for the descent rappel"
+    ],
+    "rack": [
+     "Light trad rack (small-to-medium cams and nuts)",
+     "Cordelette",
+     "2 double-length slings (120cm), 3 shoulder-length slings (60cm)",
+     "4 alpine quickdraws",
+     "Single 25-30m rope for descent rappel"
+    ],
+    "access": {
+     "_raw": {
+      "permit_cost": "$5 per person per day (May 15 - Oct 31)",
+      "permit_type": "Overnight wilderness permit (advanced lottery + daily lottery + first-come first-served)",
+      "land_manager": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+      "wilderness_zone": "Enchantments (Alpine Lakes Wilderness), Stuart Range, Chelan County",
+      "permit_pickup_hours": "N/A (Recreation.gov online; daily lottery must apply from location or previous day online)",
+      "special_requirements": "Max 8 people per permit in Colchuck Zone. Advanced lottery (75% of permits, Feb 15 - Mar 1): <10% success rate. Dogs prohibited. Campfires prohibited. Trail closed to stock.",
+      "parking_pass_required": "Northwest Forest Pass ($5 day pass or $30 annual) at Stuart Lake Trailhead",
+      "permit_pickup_location": "Recreation.gov online or within 1 mile of Wenatchee River Ranger District (Leavenworth, WA)",
+      "seasonal_closure_dates": "May 15 - Oct 31 (overnight); open for day use year-round",
+      "permit_application_method": "Recreation.gov (advanced lottery, daily lottery, or first-come first-served)"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+     "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+     "permit": "Overnight wilderness permit (advanced lottery + daily lottery + first-come first-served)",
+     "closures": "May 15 - Oct 31 (overnight); open for day use year-round",
+     "permitZone": "Enchantments (Alpine Lakes Wilderness), Stuart Range, Chelan County",
+     "group_limit": 8,
+     "landManager": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+     "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+     "passRequired": "Northwest Forest Pass ($5 day pass or $30 annual) at Stuart Lake Trailhead",
+     "overnight_permit": {
+      "url": "https://www.recreation.gov/permits/233273",
+      "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+      "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_the_scoop_2",
+   "before": {
+    "descent_text": "The Scoop does not use CBR's standard single-rappel/scree walk-off (the one used by the West Face and most other summit-block routes) because its line sits well right of that descent gully. Instead parties rappel the route itself: with two 60m ropes tied together, descend via a sequence of natural anchors — slung trees and horns down the crack systems below Launch Ledge — there are no bolts or fixed gear anywhere on the route, by design, so you are relying entirely on what you find or build (extra slings/cord are worth carrying). At roughly 900-1,000 ft (10 pitches) of route length, expect on the order of 6-7 rappels to get back to the basin, though exact station spacing isn't published and will depend on where prior parties' anchors sit; be ready to equalize a natural anchor yourself if a station looks marginal. Watch for rope-snag risk in the corner systems on the crux Scoop pitch and loose rock low in the gully system if you bail before topping out.",
+    "descent": "Rappel with two 60m ropes using natural tree/horn anchors to avoid loose terrain; a shorter single-rope rappel option from a slung horn also exists lower on the formation",
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "The longest free route on the wall at 10 pitches; strong parties still do it car-to-car in one very long day rather than camping, given how hard Enchantments overnight permits are to get.",
+       "hours": 15.5,
+       "miles": 10.6,
+       "title": "Car-to-car day climb",
+       "gainFt": 4600,
+       "lossFt": 4600,
+       "packLb": 24,
+       "schedule": [
+        {
+         "time": "1:30 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "3:15 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": ""
+        },
+        {
+         "time": "4:15 AM",
+         "label": "Start climbing",
+         "detail": "10 pitches, 5.11c."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Top out",
+         "detail": "~8.75 hrs of climbing."
+        },
+        {
+         "time": "1:15 PM",
+         "label": "Begin rappel descent",
+         "detail": "Two 60m ropes on tree/horn anchors to avoid loose rock."
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb The Scoop (10 pitches, 5.11c) and return same day"
+      }
+     ],
+     "totalNote": "A single very long day, roughly 15-16 hrs car-to-car for the full 10-pitch route."
+    }
+   }
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "before": {
+    "grade": "Grade IV, 5.11",
+    "gain_ft": 2200,
+    "loss_ft": 2200,
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit; most parties do this car-to-car rather than seeking the hard-to-get overnight Colchuck Lake permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same route as CBR's classic West Face line: long pre-dawn approach via Colchuck Lake, 9 pitches of sustained free climbing to the summit, then a single ~30m rappel plus a scree/talus walk-off around the peak — not a full rappel descent of the route.",
+       "hours": 15.4,
+       "miles": 10.4,
+       "title": "Car-to-car day climb",
+       "gainFt": 4500,
+       "lossFt": 4500,
+       "packLb": 24,
+       "schedule": [
+        {
+         "time": "1:45 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "3:33 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": ""
+        },
+        {
+         "time": "4:34 AM",
+         "label": "Reach the base of the route",
+         "detail": ""
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Summit at 8,240 ft",
+         "detail": ""
+        },
+        {
+         "time": "1:15 PM",
+         "label": "Single ~30m rappel, then walk off",
+         "detail": "Scree/talus around the peak."
+        },
+        {
+         "time": "5:10 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the West Face (9 pitches) to the 8,240 ft summit and return same day"
+      }
+     ],
+     "totalNote": "A single very long day: documented at 15:25 car-to-car for the West Face, topping out at the 8,240 ft summit."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong hiking fitness required — roughly 8-9 miles round trip and ~2,200+ ft of gain to Colchuck Lake, then an additional traverse/scramble above the lake to reach the base, all within a full ~9-hour car-to-car day",
+      "packWeight": "Light and fast — single rack, rope, and minimal overnight gear if not camping; roughly 20-25 lbs for a single-push day ascent"
+     },
+     "approachTime": "Roughly 3-4 hours from the Stuart Lake trailhead to the base of the route (Colchuck Lake Trail, then traversing ~400 ft above the lake toward the west face)",
+     "requiredSkills": [
+      "Confident trad leading up to 5.11",
+      "Efficient multi-pitch systems (6 pitches) to keep pace with the ~9-hour day",
+      "Multi-rappel descent competence, including managing rope-pull issues",
+      "Route-finding on featured granite with limited fixed protection",
+      "Comfort with remote alpine exposure and self-rescue readiness"
+     ],
+     "experienceLevel": "Experienced trad multi-pitch leader comfortable leading sustained 5.10 with a short 5.11+/12- crux; not appropriate for a climber's first alpine multi-pitch outing"
+    }
+   }
+  },
+  {
+   "id": "wa_rikki_tikki_tavi",
+   "before": {
+    "descent": "Single ~30 m rappel down the east side from a slung horn, then scree and snow slopes clockwise around the peak back to the base of the wall.",
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit; overnight camping at Colchuck Lake needs the Enchantments lottery permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard single-day outing on Colchuck Balanced Rock: long pre-dawn approach, 5 pitches of trad climbing, then reverse the approach to hike out.",
+       "hours": 11.5,
+       "miles": 10.6,
+       "title": "Car-to-car day climb",
+       "gainFt": 4300,
+       "lossFt": 4300,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "5:15 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": ""
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Start climbing",
+         "detail": ""
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "10:45 AM",
+         "label": "Begin descent",
+         "detail": ""
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Rikki Tikki Tavi (5 pitches) and return same day"
+      }
+     ],
+     "totalNote": "A single long day, roughly 11-12 hrs car-to-car with ~4,300 ft of gain/loss."
+    }
+   }
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "before": {
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit; overnight Colchuck Lake camping needs the Enchantments lottery permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Shares the approach with the other Tempest Wall/West Face routes. A fit party climbs the 5 pitches, then downclimbs/rappels and hikes all the way back to the car in one day.",
+       "hours": 11.5,
+       "miles": 10.6,
+       "title": "Car-to-car day climb",
+       "gainFt": 4300,
+       "lossFt": 4300,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "5:15 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": ""
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Start climbing",
+         "detail": "5 pitches on the Tempest Wall."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Begin descent",
+         "detail": ""
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Full Tilt (5 pitches) and return same day"
+      }
+     ],
+     "totalNote": "A single long day, roughly 11-12 hrs car-to-car for a 5-pitch route with a ~3 hr approach each way."
+    }
+   }
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "before": {
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A 4-pitch trad route that tops out on the summit ridge; descent is a 4th-class scramble rather than a rappel, which shaves time off the day compared to routes that need to be rapped.",
+       "hours": 10.5,
+       "miles": 10.8,
+       "title": "Car-to-car day climb",
+       "gainFt": 4100,
+       "lossFt": 4100,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "5:45 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": ""
+        },
+        {
+         "time": "6:45 AM",
+         "label": "Start climbing",
+         "detail": "4 pitches to the summit ridge."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Join the summit ridge",
+         "detail": ""
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Begin 4th-class scramble descent",
+         "detail": ""
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Leche La Vaca and scramble off via the summit ridge"
+      }
+     ],
+     "totalNote": "A single day, roughly 10-11 hrs car-to-car; the scramble descent is faster than the rappel descents used on neighboring routes."
+    }
+   }
+  },
+  {
+   "id": "wa_let_it_burn",
+   "before": {
+    "beta": "P1 (5.10): start as for West Face; blocky ledges then a splitter on the left. P2 (5.12a): wild, pumpy movement to 2 bolts leftward, then a splitter finish to a 2-bolt belay. P3 (5.11a): continue up the crack. P4 (5.11c): steep, strenuous moves up an obvious dihedral. P5 (5.11c): grasp a pancake-thin jug flake, move left to a crack, into a pleasant bouldery finish. P6 (5.10a): wandering traverse right, then a slab traverse back left.",
+    "pro_tips": [
+     "P2's bolts protect the leftward crux move — clip early and commit"
+    ],
+    "watch_out": [
+     "P2 (5.12a) and P4/P5 (5.11c) are sustained and pumpy with limited rest — pace the day"
+    ],
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A harder but slightly shorter sibling to The Scoop and West Face, sharing the approach and first pitch with West Face before splitting onto a thin crack system through a 5.12a crux pitch.",
+       "hours": 15,
+       "miles": 10.6,
+       "title": "Car-to-car day climb",
+       "gainFt": 4500,
+       "lossFt": 4500,
+       "packLb": 24,
+       "schedule": [
+        {
+         "time": "2:00 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "3:45 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": ""
+        },
+        {
+         "time": "4:45 AM",
+         "label": "Start climbing",
+         "detail": "8 pitches, crux 5.12a on pitch of ~130 ft."
+        },
+        {
+         "time": "1:15 PM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Begin descent",
+         "detail": "Optional 30m rappel from a slung horn, then scree/snow scramble back to the base (~45 min-1 hr)."
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Let it Burn (8 pitches, 5.12-) and return same day"
+      }
+     ],
+     "totalNote": "A single very long day, roughly 14-15 hrs car-to-car for a hard 8-pitch free route."
+    }
+   }
+  },
+  {
+   "id": "wa_scarface_3",
+   "before": {
+    "descent": "Single ~30 m rappel down the east side from a slung horn, then scree and snow slopes clockwise around the peak back to the base of the wall.",
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same long pre-dawn approach as the other trad lines on this wall, 5 pitches of climbing, then a full reversal of the approach to hike out.",
+       "hours": 11.5,
+       "miles": 10.6,
+       "title": "Car-to-car day climb",
+       "gainFt": 4300,
+       "lossFt": 4300,
+       "packLb": 22,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "5:15 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": ""
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Start climbing",
+         "detail": ""
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "10:45 AM",
+         "label": "Begin descent",
+         "detail": ""
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Scarface (5 pitches) and return same day"
+      }
+     ],
+     "totalNote": "A single long day, roughly 11-12 hrs car-to-car."
+    }
+   }
+  },
+  {
+   "id": "wa_the_tipping_point",
+   "before": {
+    "descent_text": "P4's anchor is the last point a rope reaches back down to; from there, two 40-meter rappels return to the base gully (stopping first at the Kerwin's Crack anchor if the rope is short of reaching the Sky Lounge in one rappel).",
+    "descent": "From the top of P4 (the 'last rappel point'), two 40m rappels return to the base gully; if the rope doesn't reach the Sky Lounge, stop first at the Kerwin's Crack anchor (under 40m below)."
+   }
+  },
+  {
+   "id": "wa_accendo_lunae_lib_west_face_var",
+   "before": {
+    "descent": "Single ~30 m rappel down the east side from a slung horn, then scree and snow slopes clockwise around the peak back to the base of the wall.",
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A variation linking sections of Let it Burn and the West Face; length and difficulty sit between the shorter trad lines and the full multi-pitch classics on this wall.",
+       "hours": 11,
+       "miles": 10.4,
+       "title": "Car-to-car day climb",
+       "gainFt": 4200,
+       "lossFt": 4200,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "5:15 AM",
+         "label": "Reach Colchuck Lake",
+         "detail": ""
+        },
+        {
+         "time": "6:15 AM",
+         "label": "Start climbing",
+         "detail": ""
+        },
+        {
+         "time": "9:45 AM",
+         "label": "Top out",
+         "detail": ""
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Begin descent",
+         "detail": ""
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb Accendo Lunae (Let it Burn/West Face variation) and return same day"
+      }
+     ],
+     "totalNote": "A single day, roughly 11 hrs car-to-car."
+    }
+   }
+  },
+  {
+   "id": "wa_the_tempest",
+   "before": {
+    "timing": {
+     "totalHrs": 20,
+     "summitTimeHrs": 3,
+     "descentTimeHrs": 17,
+     "approachTimeHrs": null,
+     "recommendedStart": "Early start",
+     "sectionBreakdown": [
+      {
+       "hrs": 3,
+       "note": "The Tempest is a serious 9-pitch aid line, slower per pitch than the free routes on this wall, so most parties base out of a Colchuck Lake camp rather than pushing it car-to-car.",
+       "fromTo": "Hike in to Colchuck Lake",
+       "section": "Climb"
+      },
+      {
+       "hrs": 14,
+       "note": "Alpine start from camp up to the base, then a long day of aid and free climbing on sustained 5.9-5.11/A2 terrain before rappelling back down to the basin.",
+       "fromTo": "Climb The Tempest",
+       "section": "Descent"
+      },
+      {
+       "hrs": 3,
+       "note": "An easy morning hike back down to the car after a long climbing day.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "itinerary": {
+     "cal": "Requires the Enchantments overnight lottery permit for Colchuck Lake (May 15-Oct 31); apply well in advance or plan around walk-up availability.",
+     "days": [
+      {
+       "n": 1,
+       "note": "The Tempest is a serious 9-pitch aid line, slower per pitch than the free routes on this wall, so most parties base out of a Colchuck Lake camp rather than pushing it car-to-car.",
+       "hours": 3,
+       "miles": 4.3,
+       "title": "Hike in to Colchuck Lake",
+       "gainFt": 2280,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Establish camp at Colchuck Lake"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start from camp up to the base, then a long day of aid and free climbing on sustained 5.9-5.11/A2 terrain before rappelling back down to the basin.",
+       "hours": 14,
+       "miles": 2.6,
+       "title": "Climb The Tempest",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "3:00 AM",
+         "label": "Leave camp",
+         "detail": ""
+        },
+        {
+         "time": "4:15 AM",
+         "label": "Start climbing",
+         "detail": "9 pitches, mixed aid and free."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Top out",
+         "detail": "~10.5 hrs of climbing is typical for this grade of aid route."
+        },
+        {
+         "time": "3:15 PM",
+         "label": "Begin rappel descent",
+         "detail": ""
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Aid/free climb all 9 pitches and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "An easy morning hike back down to the car after a long climbing day.",
+       "hours": 3,
+       "miles": 4.3,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2280,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip for most parties: hike in and camp, a long aid-climbing day, then hike out; very strong/fast aid teams could compress this to a single very long day."
+    }
+   }
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "before": {
+    "approach": "This is the approach/scramble route to the col above Colchuck Lake's east side, used to access objectives beyond Colchuck Balanced Rock (notably Dragontail Peak). Start at the Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road) and hike the Colchuck Lake Trail (#1599) 4 miles and 2,280 ft to the lake outlet (2.5-3 hours), the last reliable water. At the lake, take the left fork and stay high on the ridge, avoiding spur trails that drop to the water's edge. Continue to a small dam near the lake's north end and cross the outlet creek at or just below it; pick up the trail on the far side and follow it south roughly 100 yards to a slight clearing with boulders and talus on the left. Ascend the talus, angling slightly left into the woods, and negotiate a brief 3rd/4th-class rock step (using roots/branches as holds). From there the path climbs southward through open, cairned forest for about an hour to the col, which overlooks a boulder-strewn camp area with views of Dragontail and Colchuck peaks — consistent with the route's recorded 2,500 ft of gain.",
+    "itinerary": {
+     "cal": "Day-use only needs a self-issue trailhead permit.",
+     "days": [
+      {
+       "n": 1,
+       "note": "This is the access route rather than a summit climb: stay high on the ridge past the north end of the lake, cross the outlet creek near the dam, then follow the cairned path through talus and open forest up to the col — roughly an hour above the lake.",
+       "hours": 9,
+       "miles": 10.6,
+       "title": "Approach hike to the Colchuck-Balanced Rock col",
+       "gainFt": 2500,
+       "lossFt": 2500,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave trailhead",
+         "detail": ""
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Reach Colchuck Lake, east side",
+         "detail": "Take the left fork, staying high on the ridge, cross the outlet near the dam."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Reach the col",
+         "detail": "Cairned path through talus/open forest, ~1 hr above the lake."
+        },
+        {
+         "time": "9:15 AM",
+         "label": "Begin return",
+         "detail": ""
+        },
+        {
+         "time": "2:30 PM",
+         "label": "Back at car",
+         "detail": ""
+        }
+       ],
+       "objective": "Reach the col via the east side of Colchuck Lake"
+      }
+     ],
+     "totalNote": "A single day, roughly 9 hrs round trip to the col and back — this is the approach used to access CBR's climbing routes, not a summit itself."
+    }
+   }
+  },
+  {
+   "id": "wa_the_balanced_rock",
+   "before": {
+    "approach": "This is not a ground-up approach — 'The Balanced Rock' is the short V2 boulder problem on top of the balanced summit block of Colchuck Balanced Rock itself, at roughly 8,240 ft. It's reached only after climbing one of the peak's technical routes to the summit ridge (most commonly the West Face or Let It Burn, both approached via the Stuart Lake Trailhead/Colchuck Lake Trail and the Aasgard Pass climbers' trail — see those routes for the full trailhead-to-wall approach, roughly 3.5-4 hours). From the summit ridge, a short 3rd/4th-class scramble around the true high point leads to the base of the balanced boulder, where the problem climbs the exposed south-east crimpy arête, about 12 ft tall."
+   }
+  }
+ ]
+}

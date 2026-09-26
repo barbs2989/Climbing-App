@@ -896,7 +896,9 @@ async function runFilters() {
   else fail("the distance chip calls uDistMi rather than naming a unit");
   if (!/aria-label="[^"]*\bin miles\b/.test(mask)) ok("no aria-label still hardcodes miles");
   else fail("no aria-label still hardcodes miles");
-  if ((mask.match(/uDistMiUnitLong\(\)/g) || []).length >= 5) ok("every distance aria-label takes the unit word from the setting");
+  // 4, not 5: Partners' By Area "Near me" radius slider was REMOVED (a third distance control that
+  // read "Needs your location" for every signed-in climber), and its aria-label went with it.
+  if ((mask.match(/uDistMiUnitLong\(\)/g) || []).length >= 4) ok("every distance aria-label takes the unit word from the setting");
   else fail("every distance aria-label takes the unit word from the setting");
 
   // 5. THE *LIVE* LENGTH FILTER, WHICH EVERY ASSERTION ABOVE IS BLIND TO. Sections 1-4 are about

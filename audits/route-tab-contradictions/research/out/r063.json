@@ -1,0 +1,569 @@
+{
+ "file": "r063.json",
+ "results": [
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "fact": "whether a route-specific descent has been published",
+   "verdict": "fixed",
+   "correct_value": "Descend by the shared summit line: ~35 m rappel north, then a rappel east onto the Blue Glacier over the moat; do not downclimb or rappel the loose ascent line.",
+   "evidence": "The South Ridge listing on the same summit gives the descent as one 35 m rappel north from the summit then a rappel east to the glacier. The first-ascent party's AAJ note says they made the rappel descent to the Blue Glacier, and their Alpinist report describes a free-hanging rappel over a moat onto the Blue Glacier. None mention established anchors on the east wall or a downclimb of the South Ridge.",
+   "sources": [
+    "https://www.mountainproject.com/route/106324294/south-ridge",
+    "http://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner",
+    "https://alpinist.com/doc/ALP20/newswire-gunrunner-cascades-herrington"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Descend via established rappel routes on the south/east side. Rappel anchors exist on the eastern wall below the summit area. The descent requires technical rope skills and appropriate anchor setup. Alternative descent is to downclimb the South Ridge route if conditions allow.",
+     "value": "Rappel off the summit by the same line as the peak's other routes: about 35 m north, then a second rappel east onto the Blue Glacier. The last rappel can hang free over the moat at the foot of the face, so land beyond the lip and carry cord to build or back up anchors rather than relying on fixed gear. Do not plan on reversing the loose line of ascent.",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "whether a route-specific descent has been published"
+    }
+   ]
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "fact": "land manager / permit system for this route",
+   "verdict": "fixed",
+   "correct_value": "Glacier Peak Wilderness (Mt. Baker-Snoqualmie NF, Darrington RD from the Downey Creek side); free self-issue trailhead register; Northwest Forest Pass or Interagency pass to park.",
+   "evidence": "The Downey Creek Trailhead is a Mt. Baker-Snoqualmie NF (Darrington RD, (360) 436-1155) site on FS 26 needing a NW Forest Pass/Interagency pass, and the trail enters Glacier Peak Wilderness at 0.5 mi (FS page, WTA). The Forest Service Glacier Peak Wilderness page asks visitors only to sign the trailhead register; Ptarmigan Traverse accounts agree no park permit applies south of Cache Col. The Gunsight peaks are in Glacier Peak Wilderness outside the national park (Alpinist). O-W NF wilderness rule: 12 people+stock per group.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/downey-creek",
+    "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+    "https://www.summitpost.org/ptarmigan-traverse/154644",
+    "https://alpinist.com/doc/ALP20/newswire-gunrunner-cascades-herrington",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/wilderness"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw"
+     ],
+     "expect": {
+      "notes": "Alpine climbing area; exact location within North Cascades National Park Complex requires verification",
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry overnight permit",
+      "land_manager": "National Park Service - North Cascades National Park",
+      "wilderness_zone": "North Cascades National Park Complex",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "$30 per vehicle (7-day pass)",
+      "seasonal_closures": "Wilderness accessible mid-May through mid-October",
+      "permit_pickup_hours": "Daily, May 15 - October 10: 7:00-11:30am and 12:30-4:00pm",
+      "special_requirements": "Permit pickup required by 11am on start date; restrictions on motorized equipment and group size per campsite (4-12 people depending on site)",
+      "parking_pass_required": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+      "permit_pickup_location": "Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267"
+     },
+     "value": {
+      "notes": "Glacier Peak Wilderness, approached from the Downey Creek Trailhead on the Suiattle River Road",
+      "permit_cost": "Free",
+      "permit_type": "Self-issue wilderness permit (sign the trailhead register)",
+      "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+      "wilderness_zone": "Glacier Peak Wilderness",
+      "group_size_limit": "Maximum 12 per party (people and stock combined)",
+      "parking_pass_cost": "$5/day or $30/year",
+      "parking_pass_required": "Northwest Forest Pass or Interagency pass",
+      "permit_pickup_location": "Self-issue at the Downey Creek Trailhead register"
+     },
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "North Cascades National Park Complex",
+     "value": "Glacier Peak Wilderness",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+     "value": "Northwest Forest Pass or Interagency pass",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Backcountry overnight permit",
+     "value": "Free self-issue wilderness permit: sign the register at the Downey Creek Trailhead",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "value": "Northwest Forest Pass or Interagency pass required at the Downey Creek Trailhead — $5/day or $30/year.",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "replace": "Suiattle River Road (FS 26) is closed to vehicles at about milepost 4.5 after flood washouts, under an order running to January 1, 2028 unless lifted sooner — check current conditions before a trip.",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "set",
+     "column": "emergency",
+     "path": [
+      "rangerStation"
+     ],
+     "expect": "North Cascades National Park / Okanogan-Wenatchee National Forest",
+     "value": "Darrington Ranger District, Mt. Baker-Snoqualmie National Forest - Darrington Ranger Station, (360) 436-1155",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "land manager / permit system for this route"
+    }
+   ]
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "fact": "which road/trailhead this route uses",
+   "verdict": "fixed",
+   "correct_value": "Suiattle River Road (FS 26) to the Downey Creek Trailhead",
+   "evidence": "FS and WTA both put the Downey Creek Trailhead about 20 miles up the Suiattle River Road (FS 26) from SR 530 (FS: 8 miles north of Darrington). Both report the road closed to motor vehicles at about MP 4.5 after washouts; the FS alert's closure order runs April 2, 2026 to January 1, 2028 unless rescinded. Barlow Pass / Monte Cristo is an unrelated Mountain Loop Highway approach.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/downey-creek",
+    "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range",
+     "value": "Suiattle River Road (FS 26) to the Downey Creek Trailhead",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "which road/trailhead this route uses"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Mountain Loop Highway is paved to Barlow Pass; from there the Monte Cristo Road is gated to vehicles and must be walked or mountain-biked (~4 miles, flat) due to washouts, before continuing on trail into the Glacier Peak Wilderness.",
+     "value": "The Suiattle River Road is closed to motor vehicles at about milepost 4.5 after flood washouts, under a closure order running to January 1, 2028 unless lifted sooner. While it stands, the Downey Creek Trailhead, about 20 miles up the road, can be reached only on foot or by bike.",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "which road/trailhead this route uses"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to Barlow Pass; add significant additional hike/bike time on the closed road plus trail beyond Monte Cristo. A Northwest Forest Pass is required at Barlow Pass Trailhead.",
+     "value": "From Darrington, drive north on SR 530 about 8 miles to the Suiattle River Road (FS 26) and follow it east about 20 miles to the Downey Creek Trailhead, just past the Downey Creek bridge. A Northwest Forest Pass or Interagency pass is required to park.",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "which road/trailhead this route uses"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "expect": "Mountain Loop Highway itself is generally open beyond winter, but the Monte Cristo Road has been vehicle-closed long-term due to washout damage.",
+     "value": "The flood-damage closure at about milepost 4.5 is the controlling restriction on this road; check current Forest Service alerts before committing to the trip.",
+     "id": "wa_accidental_discharge_east_face",
+     "fact": "which road/trailhead this route uses"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge",
+   "fact": "which descent line to use, and whether to reverse the route",
+   "verdict": "fixed",
+   "correct_value": "Two rappels: ~35 m north off the summit, then east onto the Blue Glacier; do not reverse the ridge.",
+   "evidence": "The route's own published listing gives the descent as one 35 m rappel north from the summit followed by a rappel east to the glacier. The first-ascent party of the neighbouring east-face line (AAJ, Alpinist) independently describes the rappel descent from this summit to the Blue Glacier, the last rappel hanging free over a moat. No source describes rappelling or downclimbing the ridge itself.",
+   "sources": [
+    "https://www.mountainproject.com/route/106324294/south-ridge",
+    "http://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner",
+    "https://alpinist.com/doc/ALP20/newswire-gunrunner-cascades-herrington"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent_text",
+     "path": [],
+     "expect": "The most common descent is via rappel anchors on the eastern wall below the summit area. Alternatively, the route can be downclimbed (care needed on the cannon hole feature). Carry two 60 m ropes — joined, they give rappels of up to a full 60 m. Per-rappel lengths on this descent are not documented, so plan on roughly a pitch each.",
+     "value": "Do not reverse the ridge. Rappel about 35 m north off the summit, then make a second rappel east onto the Blue Glacier; a moat usually separates rock from ice at the bottom. Carry two 60 m ropes — joined, they give rappels of up to a full 60 m, enough to reach past the lip of the moat — and cord to leave an anchor.",
+     "id": "wa_south_ridge",
+     "fact": "which descent line to use, and whether to reverse the route"
+    },
+    {
+     "op": "set",
+     "column": "rappels",
+     "path": [],
+     "expect": "3",
+     "value": "2 — about 35 m north off the summit, then east onto the Blue Glacier",
+     "id": "wa_south_ridge",
+     "fact": "which descent line to use, and whether to reverse the route"
+    },
+    {
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "notes": "Plan on roughly one pitch. First rappel down the eastern wall, retracing the route.",
+       "anchor": "eastern wall rappel anchor (bolts/gear)",
+       "lengthM": null
+      },
+      {
+       "n": 2,
+       "notes": "Caution advised near the 'cannon hole' feature if downclimbing is mixed in instead.",
+       "anchor": "eastern wall rappel anchor (bolts/gear)",
+       "lengthM": null
+      },
+      {
+       "n": 3,
+       "notes": "Final rappel reaches the base of the route.",
+       "anchor": "eastern wall rappel anchor (bolts/gear)",
+       "lengthM": null
+      }
+     ],
+     "value": [
+      {
+       "n": 1,
+       "notes": "North off the summit.",
+       "anchor": "Summit anchor — carry cord to build or back it up",
+       "lengthM": 35
+      },
+      {
+       "n": 2,
+       "notes": "East onto the Blue Glacier. Expect a moat at the base; a rappel on this side has hung free over it, so plan to land beyond the lip.",
+       "anchor": "Not documented — carry cord to leave an anchor",
+       "lengthM": null
+      }
+     ],
+     "id": "wa_south_ridge",
+     "fact": "which descent line to use, and whether to reverse the route"
+    },
+    {
+     "op": "set",
+     "column": "rappel_count_note",
+     "path": [],
+     "expect": "Route text describes established rappel anchors on the eastern wall with doubled 50m ropes recommended, but gives no rappel-by-rappel breakdown. A count of 3 is inferred from the route's 3-pitch length (rappelling the line itself); the similarly-named South Peak formation at Big Kangaroo reverses its climb in three raps on a single 60m rope. Per-rappel lengths are not documented, so none are given here — plan on roughly one pitch each.",
+     "value": "Two rappels: about 35 m north off the summit, then east onto the Blue Glacier. The second rappel's length is not documented; with two 60 m ropes joined, plan to clear the moat at the bottom.",
+     "id": "wa_south_ridge",
+     "fact": "which descent line to use, and whether to reverse the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge",
+   "fact": "land manager / permit system for this route",
+   "verdict": "fixed",
+   "correct_value": "Glacier Peak Wilderness (Mt. Baker-Snoqualmie NF, Darrington RD); free self-issue trailhead register; Northwest Forest Pass or Interagency pass.",
+   "evidence": "The Downey Creek Trailhead is a Mt. Baker-Snoqualmie NF (Darrington RD, (360) 436-1155) site on FS 26 needing a NW Forest Pass/Interagency pass, and the trail enters Glacier Peak Wilderness at 0.5 mi (FS page, WTA). The Forest Service Glacier Peak Wilderness page asks visitors only to sign the trailhead register; Ptarmigan Traverse accounts agree no park permit applies south of Cache Col. The Gunsight peaks are in Glacier Peak Wilderness outside the national park (Alpinist). O-W NF wilderness rule: 12 people+stock per group.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/downey-creek",
+    "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+    "https://www.summitpost.org/ptarmigan-traverse/154644",
+    "https://alpinist.com/doc/ALP20/newswire-gunrunner-cascades-herrington",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/wilderness"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw"
+     ],
+     "expect": {
+      "notes": "Alpine climbing area; exact location within North Cascades National Park Complex requires verification",
+      "permit_cost": "$10 per person + $6 non-refundable reservation fee",
+      "permit_type": "Backcountry overnight permit",
+      "land_manager": "National Park Service - North Cascades National Park",
+      "wilderness_zone": "North Cascades National Park Complex",
+      "group_size_limit": "Maximum 12 people per party",
+      "parking_pass_cost": "$30 per vehicle (7-day pass)",
+      "seasonal_closures": "Wilderness accessible mid-May through mid-October",
+      "permit_pickup_hours": "Daily, May 15 - October 10: 7:00-11:30am and 12:30-4:00pm",
+      "special_requirements": "Permit pickup required by 11am on start date; restrictions on motorized equipment and group size per campsite (4-12 people depending on site)",
+      "parking_pass_required": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+      "permit_pickup_location": "Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267"
+     },
+     "value": {
+      "notes": "Glacier Peak Wilderness, approached from the Downey Creek Trailhead on the Suiattle River Road",
+      "permit_cost": "Free",
+      "permit_type": "Self-issue wilderness permit (sign the trailhead register)",
+      "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+      "wilderness_zone": "Glacier Peak Wilderness",
+      "group_size_limit": "Maximum 12 per party (people and stock combined)",
+      "parking_pass_cost": "$5/day or $30/year",
+      "parking_pass_required": "Northwest Forest Pass or Interagency pass",
+      "permit_pickup_location": "Self-issue at the Downey Creek Trailhead register"
+     },
+     "id": "wa_south_ridge",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permitZone"
+     ],
+     "expect": "North Cascades National Park Complex",
+     "value": "Glacier Peak Wilderness",
+     "id": "wa_south_ridge",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "America the Beautiful Annual ($80) or per-vehicle entrance fee",
+     "value": "Northwest Forest Pass or Interagency pass",
+     "id": "wa_south_ridge",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Backcountry overnight permit",
+     "value": "Free self-issue wilderness permit: sign the register at the Downey Creek Trailhead",
+     "id": "wa_south_ridge",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "value": "Northwest Forest Pass or Interagency pass required at the Downey Creek Trailhead — $5/day or $30/year.",
+     "id": "wa_south_ridge",
+     "fact": "land manager / permit system for this route"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "replace": "Suiattle River Road (FS 26) is closed to vehicles at about milepost 4.5 after flood washouts, under an order running to January 1, 2028 unless lifted sooner — check current conditions before a trip.",
+     "id": "wa_south_ridge",
+     "fact": "land manager / permit system for this route"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge",
+   "fact": "which road/trailhead this route uses",
+   "verdict": "fixed",
+   "correct_value": "Suiattle River Road (FS 26) to the Downey Creek Trailhead",
+   "evidence": "FS and WTA both put the Downey Creek Trailhead about 20 miles up the Suiattle River Road (FS 26) from SR 530 (FS: 8 miles north of Darrington). Both report the road closed to motor vehicles at about MP 4.5 after washouts; the FS alert's closure order runs April 2, 2026 to January 1, 2028 unless rescinded. Barlow Pass / Monte Cristo is an unrelated Mountain Loop Highway approach.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/downey-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/downey-creek",
+    "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range",
+     "value": "Suiattle River Road (FS 26) to the Downey Creek Trailhead",
+     "id": "wa_south_ridge",
+     "fact": "which road/trailhead this route uses"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Mountain Loop Highway is paved to Barlow Pass; from there the Monte Cristo Road is gated to vehicles and must be walked or mountain-biked (~4 miles, flat) due to washouts, before continuing on trail into the Glacier Peak Wilderness.",
+     "value": "The Suiattle River Road is closed to motor vehicles at about milepost 4.5 after flood washouts, under a closure order running to January 1, 2028 unless lifted sooner. While it stands, the Downey Creek Trailhead, about 20 miles up the road, can be reached only on foot or by bike.",
+     "id": "wa_south_ridge",
+     "fact": "which road/trailhead this route uses"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to Barlow Pass; add significant additional hike/bike time on the closed road plus trail beyond Monte Cristo. A Northwest Forest Pass is required at Barlow Pass Trailhead.",
+     "value": "From Darrington, drive north on SR 530 about 8 miles to the Suiattle River Road (FS 26) and follow it east about 20 miles to the Downey Creek Trailhead, just past the Downey Creek bridge. A Northwest Forest Pass or Interagency pass is required to park.",
+     "id": "wa_south_ridge",
+     "fact": "which road/trailhead this route uses"
+    },
+    {
+     "op": "set",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "expect": "Mountain Loop Highway itself is generally open beyond winter, but the Monte Cristo Road has been vehicle-closed long-term due to washout damage.",
+     "value": "The flood-damage closure at about milepost 4.5 is the controlling restriction on this road; check current Forest Service alerts before committing to the trip.",
+     "id": "wa_south_ridge",
+     "fact": "which road/trailhead this route uses"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge",
+   "fact": "commitment grade (alpine_grade III vs commitment II)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "alpine_grade says III while commitment says II. The route's published listing gives Grade II (3 pitches, 5.8), but no second independent source stating the grade was found, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/106324294/south-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "fact": "Approach distance from Pete Lake Trailhead to Vista Lakes camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: one route description gives ~5 + 0.6 + 4.5 mi (~10.1 mi) to the Vista Lakes tarns; a backpacking write-up gives 4.5 mi to Pete Lake plus 8.5 mi of PCT switchbacks (~13 mi); another account puts Little Vista Lakes at mile 11.6; a 1986 trip report gives 26 mi round trip including ~2 mi each way to the summit (~11 mi one-way). No two independent sources agree on one figure, so the row's 9 / 10 / 13 mi values are left for a later pass.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/summit-chief",
+    "https://www.backpacker.com/trips/summit-chiefescondido-lake-loop/",
+    "https://trailcatjim.com/summit-chief-mtn-via-southeast-face-east-ridge/",
+    "https://onehikeaweek.com/2023/08/13/summit-chief-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "fact": "Trailhead named for the approach / whether the trip involves camping",
+   "verdict": "fixed",
+   "correct_value": "Pete Lake Trailhead (Trail #1323) approach with a Vista Lakes camp",
+   "evidence": "Independent trip reports (1986 and 2023) both start at the Pete Lake Trailhead on Cooper Lake Road, follow the Pete Lake trail and PCT and camp at the Vista Lakes/Vista Meadows (~5,400-5,500 ft), with stats of 26 mi / 5,000 ft and 33.4 mi (with a Little Big Chief extension). A route description likewise uses trail #1323 and the PCT to the Vista Lakes. crowds.peakTraffic carried the same Dutch Miller Gap / Waptus wording and is corrected with it.",
+   "sources": [
+    "https://trailcatjim.com/summit-chief-mtn-via-southeast-face-east-ridge/",
+    "https://onehikeaweek.com/2023/08/13/summit-chief-mountain/",
+    "https://www.mountaineers.org/activities/routes-places/summit-chief"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "expect": "Fit for a long wilderness approach (Dutch Miller Gap or Waptus basin trailheads run well over 15-20 miles round trip with substantial elevation gain before the climbing even starts)",
+     "value": "Fit for a long wilderness approach (the Pete Lake Trailhead approach runs well over 25 miles round trip with about 5,000 ft of gain, most of it before the climbing starts)",
+     "id": "wa_summit_chief_mountain_south_route",
+     "fact": "Trailhead named for the approach / whether the trip involves camping"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "expect": "Overnight/multi-day pack (bivy or backpacking gear) typical, since most parties camp in the Dutch Miller Gap or Waptus basin rather than day-tripping",
+     "value": "Overnight/multi-day pack (bivy or backpacking gear) typical, since most parties camp at the Vista Lakes rather than day-tripping",
+     "id": "wa_summit_chief_mountain_south_route",
+     "fact": "Trailhead named for the approach / whether the trip involves camping"
+    },
+    {
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Long — typically a full day (or more) of hiking from the Dutch Miller Gap or Waptus trailheads just to reach a basin camp, before the summit push itself",
+     "value": "Long — typically a full day of hiking from the Pete Lake Trailhead just to reach the Vista Lakes camp, before the summit push itself",
+     "id": "wa_summit_chief_mountain_south_route",
+     "fact": "Trailhead named for the approach / whether the trip involves camping"
+    },
+    {
+     "op": "set",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "expect": "A handful of weekends in August when the Dutch Miller Gap / Waptus approach is fully snow-free",
+     "value": "A handful of weekends in August when the Pete Lake / PCT approach and the upper basin are fully snow-free",
+     "id": "wa_summit_chief_mountain_south_route",
+     "fact": "Trailhead named for the approach / whether the trip involves camping"
+    }
+   ]
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "fact": "CAMPING & BIVY entries actually usable for this route",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Only 'Pete Lake and the Lemah Meadows camps' lies on this route's approach; the Chimney Glacier basin, Escondido Ridge tarns, Waptus/Spade Lake, Park Lakes Basin, Hardscrabble camps, Williams Lake and Peggy's Pond serve other peaks. The route's actual high camp, the Vista Lakes (~5,400-5,600 ft, just east of the PCT), is missing from the list. Left for the catalog-wide bivy class.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "fact": "wilderness permit: itinerary says no permit required, permit/access say a free self-issue permit is required",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "A free self-issue Alpine Lakes Wilderness permit is required at the trailhead.",
+   "evidence": "The Forest Service Pete Lake Trailhead page says visitors entering the Alpine Lakes Wilderness fill out a free permit at the trailhead, and a wilderness overview of the Alpine Lakes says the same for non-Enchantment trailheads. The row's own permit, access.permit and trailhead waypoint note already say so; only itinerary.cal says no permit.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pete-lake-trailhead",
+    "https://www.summitpost.org/alpine-lakes-wilderness/434639"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "are standard Forest Service access with no permit required.",
+     "replace": "are standard Forest Service access; the only permit is the free self-issue wilderness permit at the trailhead.",
+     "id": "wa_summit_chief_mountain_south_route",
+     "fact": "wilderness permit: itinerary says no permit required, permit/access say a free self-issue permit is required"
+    }
+   ]
+  }
+ ]
+}

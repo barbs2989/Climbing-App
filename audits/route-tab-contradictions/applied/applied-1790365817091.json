@@ -1,0 +1,602 @@
+{
+ "applied": [
+  {
+   "id": "wa_kololo_peaks_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Which summit (east or west) is the true, higher summit"
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "notes"
+   ],
+   "fact": "Which summit (east or west) is the true, higher summit"
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "name"
+   ],
+   "fact": "Which summit (east or west) is the true, higher summit"
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "column": "waypoints",
+   "path": [
+    6,
+    "note"
+   ],
+   "fact": "Which summit (east or west) is the true, higher summit"
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Which summit (east or west) is the true, higher summit"
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Which summit (east or west) is the true, higher summit"
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Total round-trip distance"
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Elevation of White Pass"
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Elevation of White Pass"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest grade on the route (Class 3 vs Class 4)"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "waypoints",
+   "path": [
+    7,
+    "note"
+   ],
+   "fact": "Hardest grade on the route (Class 3 vs Class 4)"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain (trailhead to summit)"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain (trailhead to summit)"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total elevation gain (trailhead to summit)"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "One-way approach distance"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "waypoints",
+   "path": [
+    1,
+    "directions"
+   ],
+   "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "label"
+   ],
+   "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake"
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Where the 600-ft drop is: to Virgin Lake or from Virgin Lake down to Blanca Lake"
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Number of 4th-class sections on the route"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "fact": "Elevation of Cache Col",
+   "op": "set",
+   "column": "bivy",
+   "path": [
+    0,
+    "elev"
+   ],
+   "expect": 6400,
+   "value": 6900,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col",
+    "https://www.alpineinstitute.com/programs/the-ptarmigan-traverse-technical-backpacking-and-climbing/"
+   ],
+   "why": "expect mismatch at bivy[0,\"elev\"]: live 6800"
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "fact": "Elevation of Cache Col",
+   "op": "replace_text",
+   "column": "bivy",
+   "path": [
+    0,
+    "notes"
+   ],
+   "find": "Treat the elevation as approximate, since published figures for the col vary by a couple of hundred feet.",
+   "replace": "The col itself is about 6,900 ft; the shoulder sites below it sit a few hundred feet lower.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col",
+    "https://www.alpineinstitute.com/programs/the-ptarmigan-traverse-technical-backpacking-and-climbing/"
+   ],
+   "why": "find occurs 0x at bivy[0,\"notes\"]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_kololo_peaks_standard",
+   "before": {
+    "beta": "Kololo Peaks presents three viable multi-day approaches, all exceeding 12 miles and typically requiring 2-3 days with glacier travel. The standard route from the west via North Fork Sauk Trail offers the most established access, climbing through old-growth forest to the Pacific Crest Trail at White Pass, then traversing multiple glacier systems. The climb itself is straightforward Class 2-3 scrambling on talus and snow, with the primary challenge being glacier crevasse navigation and length of approach rather than technical difficulty. Neither summit presents hard climbing; the route involves walking across easy terrain between the west summit (8,240 ft, the true high point) and the slightly lower east summit.",
+    "pitch_detail": [
+     {
+      "grade": "Trail",
+      "notes": "White River Trail #1507 (or North Fork Sauk Trail #649 on the west side) for roughly 10-12 miles to the point you leave maintained trail.",
+      "pitch": "Approach trail"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Off-trail travel up open slopes and talus to the flat shoulder near 6,000 ft on the south ridge (or to White River Meadows/Foam Basin on the west-side variant).",
+      "pitch": "Cross-country ridge/talus"
+     },
+     {
+      "grade": "PD (glacier)",
+      "notes": "Roped travel across the upper White River Glacier (or White Chuck Glacier via Glacier Gap on the west variant), negotiating crevasses and, late season, a shallow icefall.",
+      "pitch": "Glacier crossing"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Scramble talus and ledges to the true summit; Kololo Peaks has twin summits (an east summit near 8,160+ ft and the higher west/main summit).",
+      "pitch": "Summit scramble"
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.0579,
+      "lng": -121.2882,
+      "elev": 2050,
+      "name": "North Fork Sauk Trailhead",
+      "note": "End of FR 49 (6.4 mi off the Mountain Loop Hwy area); Northwest Forest Pass required and a self-issue Glacier Peak Wilderness permit at the kiosk; start of North Fork Sauk Trail #649.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.0465622,
+      "lng": -121.25040584,
+      "elev": 2400,
+      "name": "Pilot Ridge Trail junction",
+      "note": "Trail #649 forks with Pilot Ridge Trail #652 here; stay on #649 (the lower, riverside route) toward Mackinaw Shelter.",
+      "type": "Junction",
+      "distMi": 2,
+      "directions": "The first two miles are the gentlest of the trip: an easy grade through old-growth forest along the North Fork Sauk River, gaining only a few hundred feet."
+     },
+     {
+      "lat": 48.042108,
+      "lng": -121.214073,
+      "elev": 2770,
+      "name": "Red Creek crossing",
+      "note": "Ford Red Creek on the climbers' path; hikers describe it as 'interesting but not difficult' at normal flow, tougher during peak snowmelt.",
+      "type": "Water",
+      "distMi": 4,
+      "directions": "Two more nearly flat miles up the valley on good tread, crossing several small tributaries on the way. Red Creek is the first crossing that can actually stop you — it is manageable at normal flow but runs considerably higher during snowmelt or after heavy rain, and a pole or a sturdy stick helps with balance."
+     },
+     {
+      "lat": 48.0295555,
+      "lng": -121.1937146,
+      "elev": 2950,
+      "name": "Mackinaw Shelter",
+      "note": "Historic three-sided log shelter beside the North Fork Sauk River; the last easy, reliable camp before the trail turns steep and switchbacked toward White Pass.",
+      "type": "Campsite",
+      "distMi": 5,
+      "directions": "A last easy mile beside the river brings you to the shelter clearing. Flat ground here is limited and a larger party will find it tight. Fill water before moving on, because the trail leaves the river from this point."
+     },
+     {
+      "lat": 48.03317,
+      "lng": -121.14955,
+      "elev": 5900,
+      "name": "White Pass (PCT junction)",
+      "note": "Trail #649 tops out on the Pacific Crest Trail after ~3.2 steep miles from Mackinaw Shelter; broad meadow/basin here with camping and a view down into Foam Basin.",
+      "type": "Junction",
+      "distMi": 8.7,
+      "directions": "The trail turns uphill in earnest and gains roughly 3,000 ft in sustained switchbacks through subalpine forest to a meadow junction with the Pacific Crest Trail, where Glacier Peak and the White Chuck side of the massif first come into view. Turn north on the PCT and follow it about a quarter mile to the pass. This is the last easy, reliable water before the high traverse."
+     },
+     {
+      "lat": 48.05432819047619,
+      "lng": -121.11383184126983,
+      "elev": 6433,
+      "name": "Glacier Gap crevasse crossing",
+      "note": "Crossing point between the White Chuck Glacier and White River Glacier near a tarn-dotted basin; crevasses open by late season here — rope up before continuing toward Kololo.",
+      "type": "Hazard",
+      "distMi": 13,
+      "directions": "The maintained trail ends here. Traverse north below the White Mountain ridge into Foam Basin and White River Meadows, the usual base camp, either by way of Red Pass or by crossing snowfields to the notch west of Point 6770 and dropping into the White Chuck basin. From camp climb to Foam Pass and cross the White Chuck Glacier to the gap — this is glacier travel on largely featureless snow, so carry a track or the navigation skill to retrace it in cloud, and be roped for the crevasses low on the glacier, which can be fully open."
+     },
+     {
+      "lat": 48.064555,
+      "lng": -121.095305,
+      "elev": 8240,
+      "name": "Kololo Peaks (west summit)",
+      "note": "True (west) summit gained by a short rock scramble off the White River Glacier after the final low-angle ice/snow pitch; some parties also tag the slightly lower east summit.",
+      "type": "Summit",
+      "distMi": 15,
+      "directions": "From the gap gain the flat shoulder at about 6,000 ft, then follow the connecting ridge north-northwest over a bulge near 7,200 ft, cross the small basin below the east summit, and continue west a quarter mile to a saddle at 7,400 ft. From the saddle, the ridge forming the east edge of the White River Glacier cirque leads to the final low-angle snow and a short talus-and-ledge scramble to the top. Expect a stretch of exposed blue ice a couple of hundred yards long on the White River Glacier — that section wants crampons and deliberate footwork rather than a plod."
+     }
+    ],
+    "itinerary": {
+     "cal": "Best climbed July-September once the North Fork Sauk trail, White Pass, and Foam Pass are snow-free enough for travel and glacier crevasses have opened up; a Northwest Forest Pass is required at the trailhead and the route lies in the Glacier Peak Wilderness.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the North Fork Sauk River Trailhead (2,080 ft), follow the North Fork Sauk Trail past Red Creek and the old Mackinaw Shelter site, then climb steeply (about 3,000 ft in 4 miles) to White Pass (5,400 ft). Continue over Foam Pass and drop into the White Chuck River basin, camping near Lake 6433 at roughly 6,700 ft. This is the longest, most grinding day of the trip.",
+       "hours": 7,
+       "miles": 13,
+       "title": "Approach to White Chuck Glacier basin camp",
+       "gainFt": 4900,
+       "lossFt": 300,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave trailhead",
+         "detail": "North Fork Sauk River Trailhead, 2,080 ft"
+        },
+        {
+         "time": "~2.5 hr in",
+         "label": "Red Creek bridge",
+         "detail": "Roughly mile 4.5"
+        },
+        {
+         "time": "~5-6 hr in",
+         "label": "Reach White Pass",
+         "detail": "5,400 ft; steep climb from Red Creek"
+        },
+        {
+         "time": "~6.5-7 hr in",
+         "label": "Cross Foam Pass, descend to camp",
+         "detail": "Camp near Lake 6433, ~6,700 ft"
+        }
+       ],
+       "objective": "Reach high camp (~6,700 ft) in the White Chuck River basin near Foam Pass"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start to cross the White Chuck Glacier with crampons, over Glacier Gap onto the White River Glacier, then scramble talus/ledges to the west summit before a short traverse to the higher east summit. Round trip from camp typically runs 9-10 hours.",
+       "hours": 9.5,
+       "miles": 4,
+       "title": "Summit push via White Chuck & White River Glaciers",
+       "gainFt": 1800,
+       "lossFt": 1800,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:30-6:30 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start; crampons on for glacier crossing"
+        },
+        {
+         "time": "+2 hr",
+         "label": "Cross Glacier Gap onto White River Glacier",
+         "detail": ""
+        },
+        {
+         "time": "~4.5 hr from camp",
+         "label": "Reach west summit",
+         "detail": "~8,200 ft"
+        },
+        {
+         "time": "~30 min later",
+         "label": "Traverse to true east summit",
+         "detail": "High point, 8,240 ft"
+        },
+        {
+         "time": "shortly after summit",
+         "label": "Begin descent",
+         "detail": ""
+        },
+        {
+         "time": "~5-5.5 hr later",
+         "label": "Back at camp",
+         "detail": "Round trip reported as 9-10 hrs camp-to-camp"
+        }
+       ],
+       "objective": "Climb Kololo Peaks' true (west) summit, 8,240 ft"
+      },
+      {
+       "n": 3,
+       "note": "Reverse Day 1: back over Foam Pass and White Pass, then down the North Fork Sauk Trail to the car. Fast parties have reported under 5 hours; a more typical pace with full packs is 6+ hours.",
+       "hours": 6,
+       "miles": 13,
+       "title": "Hike out to trailhead",
+       "gainFt": 300,
+       "lossFt": 4900,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to North Fork Sauk River Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, ~28-30 mile round trip with roughly 9,500 ft of cumulative gain/loss: one long approach day to a ~6,700 ft glacier-basin camp, an alpine-start summit day (9-10 hrs round trip) crossing the White Chuck and White River Glaciers, and a hike back out."
+    },
+    "approach_variants": [
+     {
+      "name": "North Fork Sauk Trail #649 to White Pass, then the Foam Basin traverse and the White Chuck Glacier",
+      "notes": "From the North Fork Sauk Trailhead near 2,050 ft at the end of FR-49, Trail #649 runs about 5.5 miles up the valley on an easy grade through old growth, fording several tributaries. Red Creek is the first crossing that can actually stop you: manageable at normal flow, considerably higher during snowmelt or after rain, and worth a pole. Mackinaw Shelter at 2,950 ft is a possible camp but tight for a big party, and it is where the trail leaves the river — fill water there. Above the shelter the trail climbs about 3.2 miles of sustained switchbacks to a meadow junction with the Pacific Crest Trail near 6,000 ft, then a quarter mile north on the PCT to White Pass at 5,900 ft. That is roughly nine miles and 4,800 ft from the car and the last easy water before the high traverse. Maintained trail ends at the pass. Traverse north below the White Mountain ridge into Foam Basin and White River Meadows around 6,300-6,500 ft — the usual base camp — either by way of Red Pass or by crossing snowfields to the notch west of Point 6770 and dropping into the White Chuck basin. Almost nobody does this from the car in a day, and the round trip is long enough that the two published distances for it disagree.",
+      "season": "Roughly Jul-Sep. Late summer opens the crevasses so you can see and weave them; early season covers them with bridges you cannot read, and puts Red Creek and Lightning Creek in flood",
+      "hazards": [
+       "Open crevasses and a roughly 200-yard band of exposed blue ice on the White River Glacier, worse late season",
+       "Red Creek and Lightning Creek run high and fast in snowmelt — the first is an ordinary ford at normal flow and a stopper at high water",
+       "Twelve-plus miles one way with the last several off any maintained trail, so a navigation error is measured in hours",
+       "Snow bridges over the White Chuck Glacier that are unreadable under early-season cover",
+       "Road closures on FR-49 and the Mountain Loop Highway that can shut the west approach entirely, turning this into a much longer trip from the east"
+      ],
+      "baseFinding": "THIS ROUTE HAS TWO ARRIVALS AND THEY ARE DIFFERENT KINDS OF THING. The first is where GLACIER TRAVEL starts, and the second is where the SCRAMBLING starts. Confusing them is how a party ends up unroped in the wrong place. GLACIER STARTS AT FOAM PASS. From camp climb to Foam Pass and step onto the White Chuck Glacier. Rope, axe and crampons go on here, not later — the crossing to Glacier Gap and then onto the White River Glacier is the whole of the day's crevasse exposure. SCRAMBLING STARTS AT THE 7,400 FT SADDLE, AND YOU GET THERE BY COUNTING RATHER THAN BY LOOKING. Off the glacier, gain the flat shoulder near 6,000 ft; follow the connecting ridge north-north-west over a bulge at 7,200 ft; cross the small basin below the east summit; then go WEST a quarter mile to a saddle at 7,400 ft. Shoulder, bulge, basin, saddle — four things in that order. If you have gone west without first crossing a basin, you are on the wrong side of the bulge. THE ARRIVAL TEST AT THE SADDLE: from it, one ridge runs away from you forming the EAST EDGE OF THE WHITE RIVER GLACIER CIRQUE. That ridge is the route. If the ground ahead does not have a glacier cirque falling away on one side of it, you are not on the saddle you want. WHAT TOO FAR LOOKS LIKE: continuing east instead of west from the 7,200 ft bulge takes you to the EAST summit rather than the summit ridge — and this peak's own record does not agree on which of its two tops is higher, so bagging one of them is not proof of anything. ONE THING TO EXPECT ON THE ICE RATHER THAN LOOK FOR: a roughly 200-yard band of exposed blue ice, a shallow icefall, on the White River Glacier. It is a crampon problem, not a navigation one, but it is the reason the descent takes longer than the map suggests."
+     }
+    ],
+    "approach": "The standard approach follows the North Fork Sauk River Trail (USFS Trail #649) from the North Fork Sauk River Trailhead (~2,050 ft), reached via Forest Road 49 off the Mountain Loop Highway south of Darrington. The trail climbs gently through old-growth forest along the river valley for about 5.5 miles to Mackinaw Shelter — a possible camp, though tight for a larger party — crossing several tributaries en route, including Red Creek, which parties describe as interesting but not difficult to ford in normal flow (a trekking pole/sturdy stick helps with balance); it can run considerably higher during spring snowmelt or after rain. Past the shelter the trail turns uphill in earnest, climbing roughly 3.2 miles of sustained switchbacks through subalpine forest to a junction with the Pacific Crest Trail in a meadow (~6,000 ft) with the first real views of Glacier Peak and the White Chuck/Kololo massif. Turn right (north) on the PCT and follow it about a quarter mile to White Pass (5,900 ft) — roughly 9 miles and 4,800+ ft of gain from the trailhead, and the last reliable, easy water source before the high traverse. From White Pass the maintained trail ends and the route becomes a boot path: traverse north below the White Mountain ridge into Foam Basin / White River Meadows (~6,300-6,500 ft), the common base camp, either via Red Pass (1.2 miles from the PCT junction) or by crossing snowfields to the notch west of Point 6770 and dropping into the White Chuck River basin (the 'Foam Pass' variant). From camp, climb to Foam Pass and cross the White Chuck Glacier and Glacier Gap onto the White River Glacier — this is glacier travel, and rope/crampons/axe are standard gear here; crevasses are typically open and visible to weave around by late summer but can be harder to read under early-season snow bridges. From the glacier, gain the flat shoulder at ~6,000 ft, then climb the connecting ridge NNW to a bulge at 7,200 ft, cross a small basin below Kololo's east summit, and continue west a quarter mile to a saddle at 7,400 ft, from which the ridge forming the east edge of the White River Glacier cirque leads to the final glacier/talus/ledge scramble to the summit (Class 2+). This is a long approach in its own right — the 46.99 km distance reflects a round trip in the 28-29 mile range — so almost all parties camp at White River Meadows or Foam Basin rather than attempting the trailhead-to-summit push in a single push. There are two long approaches: this North Fork Sauk line, and the alternate White River Trail approach from the east, which reaches a similar high basin by a comparably long trail-plus-cross-country line."
+   }
+  },
+  {
+   "id": "wa_kyes_peak_glaciated_scramble",
+   "before": {
+    "grade": "Class 3 + snow/glacier",
+    "waypoints": [
+     {
+      "lat": 47.914167,
+      "lng": -121.312222,
+      "elev": 1950,
+      "name": "Blanca Lake Trailhead",
+      "note": "USFS fee site off FR-63; pay day-use fee or display Northwest Forest/Interagency pass at the kiosk (WA Discover Pass not valid) — trail starts immediately into ~30 steep switchbacks.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Follow the North Fork Skykomish River Road (FR 63) to its end at the Blanca Lake Trailhead, about 1,950 feet. This is a Forest Service fee site: pay the day-use fee at the kiosk or display a Northwest Forest or Interagency pass, as a Washington Discover Pass is not valid here. Check the North Fork road status before you drive out; road and trail are usually clear from early to mid summer through fall."
+     },
+     {
+      "lat": 47.9281,
+      "lng": -121.3389,
+      "elev": 4600,
+      "name": "Virgin Lake",
+      "note": "Wilderness-boundary lake with established campsites and a pit toilet; this and the ridge above it are the only legal camping before Blanca Lake.",
+      "type": "Campsite",
+      "distMi": 3.5,
+      "directions": "Trail #1052 starts climbing almost at once and does not relent: roughly thirty switchbacks gain about 2,900 ft in the first three miles to a ridge crest, on tread that is muddy, rooty, and slick when wet, and that can be icy outside high summer. From the crest the trail gives back about 600 ft over the final half mile down to the lake. This is the steepest sustained ground on the outing and you climb it again on the way out."
+     },
+     {
+      "lat": 47.9403,
+      "lng": -121.34,
+      "elev": 3976,
+      "name": "Blanca Lake",
+      "note": "Turquoise, glacier-silted lake reached via a rough 500ft descent from Virgin Lake; cross/skirt the south shore on logs and boulders (trekking poles help) — camping banned within 0.5 mi of the lake.",
+      "type": "Water",
+      "distMi": 4
+     },
+     {
+      "lat": 47.947014,
+      "lng": -121.334531,
+      "elev": 4600,
+      "name": "Columbia Glacier toe",
+      "note": "Above Blanca Lake's north shore via boulder field and heather slopes; stay on the glacier's east side — the west side ice is noticeably steeper.",
+      "type": "Junction",
+      "distMi": 5.5
+     },
+     {
+      "lat": 47.952043,
+      "lng": -121.334167,
+      "elev": 5500,
+      "name": "Columbia Glacier crossing",
+      "note": "Low-angle but real crevasses present, especially where snow is soft; most parties skip rope-up only when hazards are small and visible — assess conditions before committing.",
+      "type": "Hazard",
+      "distMi": 6
+     },
+     {
+      "lat": 47.955095,
+      "lng": -121.333773,
+      "elev": 5800,
+      "name": "SW side of Kyes Peak (glacier exit)",
+      "note": "Exit the glacier via ~50ft of ledgy, somewhat loose class 3+ terrain onto rock, then traverse right toward the peak's southwest side.",
+      "type": "Junction",
+      "distMi": 6.3
+     },
+     {
+      "lat": 47.961861,
+      "lng": -121.335351,
+      "elev": 6500,
+      "name": "South Ridge climber's trail junction",
+      "note": "Standard South Ridge route joins here; loose 'kitty litter' pebble terrain and two narrow catwalks lead toward the summit block — snow patches can offer more secure footing than the scree.",
+      "type": "Junction",
+      "distMi": 7
+     },
+     {
+      "lat": 47.964655,
+      "lng": -121.333335,
+      "elev": 7282,
+      "name": "Kyes Peak summit",
+      "note": "Class 3 summit block climbed via a crack/seam system and moat-stemming to an airy, exposed true summit — Monte Cristo group's high point.",
+      "type": "Summit",
+      "distMi": 7.3
+     }
+    ],
+    "itinerary": {
+     "cal": "Road and trail are typically snow-free and accessible early-to-mid summer through fall; check North Fork Sky road status and expect lingering snow on the glacier/upper ridge into July.",
+     "days": [
+      {
+       "n": 1,
+       "note": "The near-universal way this route is done: a single long day from the Blanca Lake Trailhead. A good trail leads to Blanca Lake, then travel gets much slower off-trail past Virgin Lake on the glacier/moraine and the loose, ledgy Class 3 south ridge/face to the chossy summit block.",
+       "hours": 11,
+       "miles": 12,
+       "title": "Car-to-car ascent",
+       "gainFt": 5200,
+       "lossFt": 5200,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave Blanca Lake Trailhead",
+         "detail": "Early start to cross snow/glacier terrain while firm and be off the mountain before dark."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Arrive Blanca Lake (~1.5 hrs in)",
+         "detail": "Good maintained trail up switchbacks to this point; from here travel slows a lot."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Round the lake, reach Virgin Lake / base of Columbia Glacier",
+         "detail": "Faint climbers' trail, route-finding required; bring microspikes and ice axe for the glacier/snow."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Top out on Kyes Ridge (~6,400 ft)",
+         "detail": "Connect to the standard south ridge; loose, ledgy Class 3 terrain to the summit block."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Summit (7,282 ft)",
+         "detail": "Extremely chossy, exposed summit block — move carefully and watch for loose rock on others below."
+        },
+        {
+         "time": "3:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Reverse the route down; roughly 3 hrs from summit back to the lake and out."
+        }
+       ],
+       "objective": "Summit Kyes Peak (7,282 ft) via Blanca Lake, Virgin Lake and the Columbia Glacier/South Ridge"
+      }
+     ],
+     "totalNote": "A long single-day car-to-car outing: roughly 9-12 hours, ~12 miles round trip, ~5,200 ft gain — most parties do not camp."
+    },
+    "approach": "From the Blanca Lake Trailhead (elev. ~1,950 ft) at the end of North Fork Skykomish River Road (FR 63), follow Blanca Lake Trail #1052 north into the Henry M. Jackson Wilderness. The trail starts climbing almost immediately in a long, punishing series of roughly thirty switchbacks, gaining about 2,900 ft over the first ~3 miles to a ridge crest — this is the steepest, most sustained grind of the whole approach, and can be muddy, rooty, and icy in wet or early-season conditions (microspikes worth carrying outside of high summer). From the ridge the trail drops about 600 ft over 0.6 mile to Virgin Lake (~4,600 ft, roughly mile 3.5-4), a good camp for an overnight approach and the last easy, reliable water source before the off-trail climbing begins. At Virgin Lake, do NOT continue downhill on the main tread toward Blanca Lake — that is the single most common route-finding error here. Instead pick up the faint, unsigned climbers' path leaving the lake into the woods toward Kyes Ridge. This boot path gains Kyes Peak's south ridge and follows it northeast, staying on the ridge's east side to traverse around minor gendarmes; it levels out near 5,300 ft, crosses to the west side around 5,845 ft, then climbs steep heather and scree above, working around cliff bands. A boulder field near 6,300 ft leads to a notch by Point 7026, from which class 3-4 scrambling on so-so Monte Cristo-group rock gains the summit ridge and final block. Total elevation gain from trailhead to the 7,282-ft high point is roughly 5,200 ft over about 9-9.5 miles one-way, consistent with a ~19 km round-trip figure — this is a long single push with a likely-after-dark return, or better done as an overnight camped at Virgin Lake. An alternative approach/ascent line climbs the Columbia Glacier out of the Blanca Lake basin (low-angled but genuinely crevassed — rope, axe, and crampons are the safe call even though some parties skip them in low-snow years) and gains the upper mountain from the north; several trip reports pair this glacier line for the ascent with the south-ridge climbers' trail for the descent, or the reverse.",
+    "approach_variants": [
+     {
+      "name": "Blanca Lake Trail to Virgin Lake, then the south-ridge climbers' path",
+      "notes": "From the Blanca Lake trailhead at the end of the North Fork road, follow the lake trail north into the wilderness. It climbs immediately in a long series of roughly thirty switchbacks, gaining most of the day's easy elevation over the first three miles to a ridge crest — muddy, rooty and icy in wet or early-season conditions. From the ridge the trail DROPS about six hundred feet to Virgin Lake, a good overnight camp and the last easy reliable water before the off-trail climbing. This is where the single most common navigation error happens.",
+      "season": "July to October. Early season adds snow on the ridge and makes the glacier variant the safer of the two.",
+      "hazards": [
+       "The unsigned turnoff at Virgin Lake is the commonest error on this peak",
+       "Route-finding on the faint ridge path, which is easy to lose in brush",
+       "Loose, crumbly rock on the summit block with real exposure",
+       "Dense blueberry brush and heather on the ridge, worse late in the season",
+       "A long single push with a likely after-dark return unless camped at the lake"
+      ],
+      "primary": true,
+      "baseFinding": "At Virgin Lake, do NOT continue downhill on the main tread — that goes to the big turquoise lake below and away from the peak. Instead pick up the faint, UNSIGNED climbers' path leaving the lake into the woods toward the ridge. It gains the peak's south ridge and follows it northeast, staying on the ridge's EAST side to get round minor gendarmes, levels out around fifty-three hundred feet, crosses to the WEST side around fifty-eight hundred, then climbs steep heather and scree working around cliff bands. The technical ground starts at a NOTCH beside a subsidiary point, reached across a boulder field — the notch is the first place the ridge is blocked by a rock step you cannot walk around, and above it the rock turns loose and pebbly for the scramble to the summit ridge. Negative markers: if you are on obvious maintained tread descending toward a turquoise, silty lake, you took the main trail at Virgin Lake and are heading away from the peak; if you are roped up on a glacier, you are on the alternative line rather than this one."
+     },
+     {
+      "name": "Columbia Glacier from the Blanca Lake basin",
+      "notes": "The alternative line onto the upper mountain, and several parties pair it with the ridge path — one for the way up, one for the way down. From Virgin Lake, take the main tread down into the basin, cross or skirt the lake's south shore on logs and boulders (poles help), then work up the boulder field and heather slopes above the north shore to the glacier toe. Stay on the glacier's EAST side; the west-side ice is noticeably steeper.",
+      "season": "July to October. Best when the glacier is snow-covered enough to bridge but firm enough to travel; midday summer slush makes it slow and sliding.",
+      "hazards": [
+       "Crevasses on the Columbia Glacier — low-angle but real, especially where snow is soft",
+       "Soft, sliding midday slush in summer",
+       "Wading or log-crossing the lake outlet stream",
+       "Loose, crumbly rock on the lateral moraine and at the glacier exit",
+       "Camping is banned within half a mile of the big lake, so plan the overnight around Virgin Lake"
+      ],
+      "baseFinding": "The base of the rock is the glacier's exit, and it is a specific and short one: about fifty feet of ledgy, somewhat loose third-class ground taking you off the ice onto rock, after which you traverse RIGHT toward the peak's southwest side and join the ridge line higher up. The test is the exit itself — a short ledgy step, not a long climb; if you are looking at hundreds of feet of rock rising straight off the ice, you are at the wrong point on the glacier's edge. Once on rock, the pebbly, loose 'kitty litter' ground and two narrow catwalks leading toward the summit block confirm you are on the standard line. Negative marker: if you are still gaining height on ice with cliffs above you and the summit off to the side, you have gone too far up the glacier past the exit."
+     }
+    ],
+    "grade_num": 3
+   }
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "before": {
+    "rock_grade": "Class 4 (one short 4th-class step; remainder is ledge scrambling and snow)"
+   }
+  }
+ ]
+}

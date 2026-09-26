@@ -1,0 +1,321 @@
+{
+ "applied": [
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Kool-Aid Lake elevation"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "waypoints",
+   "path": [
+    3,
+    "elev"
+   ],
+   "fact": "Kool-Aid Lake elevation"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Distance from trailhead to Cascade Pass"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "watch_out",
+   "path": [],
+   "fact": "Overall trip duration"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Which jurisdiction Cascade Pass itself sits in"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Order of Red Ledge, Middle Cascade Glacier and Kool-Aid Lake in the itinerary"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Order of Red Ledge, Middle Cascade Glacier and Kool-Aid Lake in the itinerary"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Day 1 elevation gain (trailhead to Cache Col / Kool-Aid Lake)"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "rope_note",
+   "path": [],
+   "fact": "rope_note names the wrong peak"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Land manager and permit requirement"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_type"
+   ],
+   "fact": "Land manager and permit requirement"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_application_method"
+   ],
+   "fact": "Land manager and permit requirement"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager and permit requirement"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "_raw",
+    "land_manager"
+   ],
+   "fact": "Land manager and permit requirement"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking-pass trailhead named in access"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "_raw",
+    "parking_pass_required"
+   ],
+   "fact": "Parking-pass trailhead named in access"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Highway named in climate access notes"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "access.closures says 'Year-round access' while SR 20 is gated every winter"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "_raw",
+    "seasonal_closure_dates"
+   ],
+   "fact": "access.closures says 'Year-round access' while SR 20 is gated every winter"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "access.fees says no fee beyond parking, but overnight trips need a paid park permit"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_cost"
+   ],
+   "fact": "access.fees says no fee beyond parking, but overnight trips need a paid park permit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ptarmigan_traverse",
+   "before": {
+    "itinerary": "Day 1 (Cascade Pass to Kool-Aid Lake): 4-6 hours, 1,700 ft gain. Hike Cascade Pass Trail to the pass (5.7 miles), then off-trail south to Cache Col crossing on Cache Glacier, descend over red ledges and across Middle Cascade Glacier to Kool-Aid Lake bivouac (elevation ~7,000 ft). Day 2 (Kool-Aid to Yang-Yang Lakes): 8-11 hours, 2,500 ft gain/loss. Traverse Spider-Formidable Col via Middle Cascade Glacier, cross exposed red ledges (Class 3 scrambling), descend to Yang-Yang Lakes bivouac. Day 3 (Yang-Yang to White Rock Lakes): 7-11 hours, 2,000 ft gain/loss. Traverse Le Conte Ridge, cross Le Conte Glacier with crevasse hazards, descend to White Rock Lakes bivouac (visual highlight of entire route). Day 4 (White Rock rest day or peak day): Optional day to summit Dome Peak (8,924 ft) via Dome Glacier route (moderate ice climbing, 35-degree terrain) or rest for acclimatization. Day 5 (White Rock to Itswoot Ridge): 8-10 hours, 3,000 ft gain. Ascend Dana Glacier crossing bergschrund, summit Spire Point (8,264 ft) or traverse below on east face, descend to Itswoot Ridge bivouac. Day 6 (Itswoot to Downey Creek TH): 8-12 hours, 2,500 ft loss. Descend Bachelor Creek through forest, reach Downey Creek Trailhead. Alternative faster options: out-and-back from Cascade Pass (4-5 days), or extend to Dome Peak summit and add Sentinel Peak/Old Guard (7-8 days).",
+    "waypoints": [
+     {
+      "lat": 48.4754,
+      "lng": -121.0751,
+      "elev": 3600,
+      "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+      "note": "Also the standard trailhead for the reverse Ptarmigan Traverse exit at Downey Creek is different (Suiattle River Rd), but Cascade Pass is the traditional/most common starting trailhead.",
+      "type": "Trailhead",
+      "elevFt": 3600
+     },
+     {
+      "lat": 48.4683,
+      "lng": -121.06,
+      "elev": 5392,
+      "name": "Cascade Pass",
+      "note": "Maintained trail ends here; traverse continues cross-country.",
+      "type": "Junction",
+      "distMi": 3.6
+     },
+     {
+      "lat": 48.4484594,
+      "lng": -121.0528892,
+      "elev": 6903,
+      "name": "Cache Col",
+      "note": "Glacier-travel notch south of Cascade Pass; gateway to the traverse proper.",
+      "type": "Junction",
+      "distMi": 5.5
+     },
+     {
+      "lat": 48.439276,
+      "lng": -121.046228,
+      "elev": 6320,
+      "name": "Kool-Aid Lake",
+      "note": "First bivy; the exposed 'Red Ledges' traverse below Art's Knoll follows.",
+      "type": "Campsite",
+      "distMi": 7.5
+     },
+     {
+      "lat": 48.43,
+      "lng": -121.03,
+      "elev": 6900,
+      "name": "Red Ledges (Art's Knoll)",
+      "note": "Narrow, exposed ledge crossing; a fall here would be serious.",
+      "type": "Hazard",
+      "distMi": 9
+     },
+     {
+      "lat": 48.421,
+      "lng": -121.061,
+      "elev": 5852,
+      "name": "Yang-Yang Lakes",
+      "note": "Second common bivy, below Spider-Formidable Col.",
+      "type": "Campsite",
+      "distMi": 12
+     },
+     {
+      "lat": 48.4,
+      "lng": -121.03,
+      "elev": 7500,
+      "name": "Spider-Formidable Col",
+      "note": "High col crossing toward the LeConte Glacier and Sentinel/Old Guard Peaks.",
+      "type": "Junction",
+      "distMi": 13.5
+     },
+     {
+      "lat": 48.36,
+      "lng": -121.05,
+      "elev": 6500,
+      "name": "White Rock Lakes / South Cascade Glacier Col",
+      "note": "Third bivy; crosses the flat South Cascade Glacier en route to Spire Point.",
+      "type": "Campsite",
+      "distMi": 18
+     },
+     {
+      "lat": 48.335,
+      "lng": -121.06,
+      "elev": 8264,
+      "name": "Spire Point",
+      "note": "Prominent landmark near the Dome-Dana col.",
+      "type": "Junction",
+      "distMi": 21
+     },
+     {
+      "lat": 48.308,
+      "lng": -121.1,
+      "elev": 6400,
+      "name": "Cub Lake / Itswoot Ridge",
+      "note": "Fourth bivy on Itswoot Ridge above Cub and Itswoot Lakes.",
+      "type": "Campsite",
+      "distMi": 24
+     },
+     {
+      "lat": 48.3034,
+      "lng": -121.0295,
+      "elev": 8920,
+      "name": "Dome Peak",
+      "note": "Optional side summit near the traverse's south end; the traverse itself does not cross it.",
+      "type": "Landmark",
+      "distMi": null,
+      "elevFt": 8920
+     }
+    ],
+    "watch_out": "2-3 day alpine commitment with multiple peaks crossed\nMixed terrain with rock, ice, and snow\nExtensive glacier travel across multiple systems\nWeather exposure on high altitude ridge traverse\nNavigation complexity across multiple peaks and saddles\nSpider Glacier crossings and other technical sections",
+    "access": {
+     "fees": "N/A - no fee for day travel; overnight camping inside the North Cascades NP portion needs a wilderness permit costing $10 per person (youth 15 and under free), plus a $6 non-refundable reservation fee for advance reservations. A walk-up permit from the Marblemount Wilderness Information Center avoids the reservation fee, not the $10.",
+     "notes": "The traverse crosses two jurisdictions: the southern Cascade Pass-to-Yang Yang Lakes stretch is Mount Baker-Snoqualmie/Okanogan-Wenatchee National Forest (Glacier Peak Wilderness), and the northern Cascade Pass/Cache Col/Ptarmigan Traverse proper runs through North Cascades National Park (Stephen Mather Wilderness).",
+     "rules": "Group size capped at 6 in off-trail cross-country zones inside the park; 12 in on-trail National Forest corridors.",
+     "permit": "Wilderness permit required for any overnight stay inside North Cascades National Park (obtain from the Marblemount Wilderness Information Center); a free self-issue National Forest wilderness permit covers the southern, non-park portion.",
+     "closures": "Cascade River Road (the standard entry trailhead) has a history of seasonal washouts/closures — check the current NPS road-conditions page before a trip.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (Stephen Mather Wilderness) / Mount Baker-Snoqualmie National Forest (Glacier Peak Wilderness)",
+     "land_manager": "National Park Service — North Cascades National Park, and USDA Forest Service — Mount Baker-Snoqualmie National Forest",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit — quota, fee",
+      "where": "Reserve on Recreation.gov; permits for Cascade River Road trailheads must be picked up in person at the Marblemount Wilderness Information Center."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "before": {
+    "rope_note": "Short 5.5 rock scramble/climb on Red Mountain's ridge; single 60m rope sufficient for the low-5th-class sections, many parties simul-climb or scramble sections unroped.",
+    "access": {
+     "_raw": {
+      "permit_cost": "No permit fee",
+      "permit_type": "No overnight wilderness permit required; day-use only",
+      "land_manager": "USDA Forest Service (Mount Baker-Snoqualmie National Forest)",
+      "parking_pass_required": "Northwest Forest Pass ($5 day pass or $30 annual) at Commonwealth Basin trailhead",
+      "seasonal_closure_dates": "Year-round access; winter conditions may affect access",
+      "permit_application_method": "No permit required"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "permit": "No overnight wilderness permit required; day-use only",
+     "closures": "Year-round access; winter conditions may affect access",
+     "group_limit": 12,
+     "landManager": "USDA Forest Service (Mount Baker-Snoqualmie National Forest)",
+     "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+     "passRequired": "Northwest Forest Pass ($5 day pass or $30 annual) at Commonwealth Basin trailhead",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit — quota, fee",
+      "where": "Reserve on Recreation.gov; permits for Cascade River Road trailheads must be picked up in person at the Marblemount Wilderness Information Center."
+     }
+    }
+   }
+  }
+ ]
+}

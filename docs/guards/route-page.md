@@ -230,6 +230,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     legitimate state that renders perfectly. *A verification nobody runs is not a verification*, on
     a surface whose entire contract is when to speak and when not to. The promotion is the fix for
     that; the rule change below is the fix for what it found.
+  - **ITS EXPECTED PERMIT IS READ OFF THE FIXTURE, NOT PINNED (2026-09-25).** The "states the shared
+    permit verbatim" assertion used to hold a literal copy of Baker's live permit sentence. It went red
+    on main the day a sourced correction rewrote all nine rows to a new sentence they still SHARE — the
+    invariant held, only the copy of the data rotted. It now asserts the panel states whatever single
+    permit the rows carry, and dies loudly if they stop agreeing (the fixture then tests nothing).
+    Rule for this guard: assert the RELATION between rows and panel, never a copy of a row's text.
   - **AGREEMENT WAS A PREFIX TEST, AND A PREFIX IS ORDER-SENSITIVE.** `sharedFact` asked whether
     every stated value was a prefix of the longest once spelling was normalised — so one agency
     written **agency-first** and **place-first** read as a disagreement. Baker's nine routes carry
@@ -652,57 +658,29 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     APPROACH heading, a `TrailheadCard` that did not render, or a control detector that matches
     nothing anywhere — every "exactly one" assertion here is satisfied by a page that rendered
     nothing at all.
-  - **SECTION 7 — THE TILE SAID "ONE WAY" AND PRINTED THE STORED COLUMN, WHICH IS OFTEN THE ROUND
-    TRIP.** `lib/outing.js` exists because **two SCREENS** answered *how far is the approach*
-    differently — the peak page read `dist_km` raw while the route page preferred the route's own
-    itinerary. That fix landed on the route page's TECH STATS tile (`const distKm=effDistKm(route)`)
-    and **did not reach `TrailheadCard`**, whose tile is *labelled* `"Approach (one way)"` and read
-    `route.distKm`. So one page printed **two different one-way approaches for one climb**.
-    - **Measured rather than asserted** (`scripts/oneoff/measure-planner-distance-vs-the-tile.mjs`,
-      report-only, which re-derives every figure — **re-run it rather than quoting**): of the
-      **790** WA routes carrying both figures, **335 differ by more than 15%**, and on **215** of
-      those the stored column is the LARGER. `wa_mount_queets_south` showed **31.0 mi** on one tile
-      and **71.0 mi** on the other.
-    - **IT SETTLES NOTHING ABOUT THE COLUMN, and must not**: CLAUDE.md records that `dist_km` holds
-      two conventions at once and that a blanket transform breaks as many rows as it fixes. This
-      changes only **which SOURCE a reader prefers**, which is `lib/outing.js`'s own stated
-      contract, applied to the one reader that had been left behind.
-    - **TWO FIXTURES, because the rule is NOT "halve it".** An out-and-back halves its itinerary
-      total; a **recorded `point`** does not retrace, so its total IS the one-way distance and the
-      figure goes UP — `wa_mount_ferry_standard` moves **21.7 → 44.0 mi**. A guard rendering only
-      the first fixture is satisfied by an unconditional halving, which injection case 9 pins.
-    - **NON-VACUITY:** the tile must be **on screen** before it is judged, or *"does not show the
-      raw figure"* passes against a card that renders no approach at all.
-    - **THE FAILURE MESSAGE NAMES THE OBSERVATION, NOT A CAUSE.** Its first version said *"the tile
-      is halving unconditionally"* — which is a correct diagnosis of case 9 and **the wrong one on a
-      plain revert**, where the tile is not halving at all. *A guard that fires correctly can still
-      prescribe the wrong repair*, the trap `check:column-drift` records.
-    - **THE PLANNER HALF IS DONE — see section 8 — AND THE PARAGRAPH DEFERRING IT CARRIED THREE
-      WRONG FIGURES, WHICH IS THE MORE USEFUL HALF.** It read *"deliberately not touched … 215 of
-      them would get SHORTER (p50 −0.98 hr, worst −13.4 hr) … raised rather than swept"*. Re-run
-      against the live catalog rather than quoted, the move is **203 shorter and 118 LONGER**, p50
-      **−0.94**, worst **−10.39** — so the premise the deferral rested on, that the change errs
-      short on *are you down before dark*, was **not even one-directional**. A third of the
-      affected routes get a more conservative estimate.
-    - **AND THE #641 OBJECTION DOES NOT MATERIALISE AT ALL, measured rather than argued**
-      (`scripts/oneoff/measure-planner-distance-ab.mjs`): across 790 comparable WA routes, 326
-      estimates move and the "After dark" warning goes **464 → 465 — ZERO suppressed, one added**.
-      Robust rather than a knife-edge: the median mover sits **10.45 hr** from the 18.5 hr line and
-      only **14 of 326** are within two hours of it, because the routes that shorten are multi-day
-      walks estimated at 30-50 hr. The warning was never what moved — only the number a climber
-      reads.
-    - **A COUNT QUOTED IN PROSE IS A HAND-COPY OF A MEASUREMENT.** Those three figures sat here
-      long enough to be read back to a user as current, and every one was wrong. Re-run the script;
-      do not quote this line.
-    - Proven on **real rows** as well as fixtures by
-      `scripts/oneoff/probe-trailhead-approach-is-one-way.mjs`, which renders the real `RouteDetail`
-      because `dbRouteToCamel` and the card's own gating sit between the column and the screen:
-      **8/8 with the fix, 8/8 FAILING without it.**
-  - **SECTION 8 — THE PLANNER WAS THE LAST READER ON THIS PAGE STILL ON THE RAW COLUMN.** Section 7
-    pins the TILE; the planner is a second reader of the same fact on the same page, so
+  - **SECTION 7 — THE TRAILHEAD CARD CARRIES NO STAT TILES (2026-09-25, user request).** The card
+    used to print Elevation, `"Approach (one way)"` and a straight-line `"To the peak"` bearing
+    above its directions. The user asked for them gone: elevation and approach are already in
+    TECH STATS on the same page, and the card now answers only WHERE the trailhead is and HOW to
+    drive there (name, directions, one compact *Drive here* + copyable-coordinates row). The
+    fixture carries every input those tiles read — a placed Trailhead pin with an elevation, a
+    `distKm`, and `approachLogistics.peakLat/peakLng` — so a returning tile would render.
+    **NON-VACUITY:** the card must be found and must carry its coordinates first.
+    - **HISTORY, so it is not re-derived:** this section used to pin the Approach tile's SOURCE —
+      it was labelled "one way" and read raw `route.distKm`, which on hundreds of WA routes holds
+      the ROUND TRIP, so one page printed two different one-way approaches for one climb. Fixed by
+      reading `effDistKm` (with two fixtures, because an unconditional halving is wrong for a
+      recorded `point`). Removing the tile retired that assertion; TECH STATS and the planner
+      (section 8) still read `effDistKm`, and section 8 still pins the planner's reading
+      behaviourally in both directions. Measurement scripts from that work:
+      `scripts/oneoff/measure-planner-distance-vs-the-tile.mjs`,
+      `scripts/oneoff/probe-trailhead-approach-is-one-way.mjs` (the latter now anchors on a tile
+      that no longer exists — it is spent).
+  - **SECTION 8 — THE PLANNER WAS THE LAST READER ON THIS PAGE STILL ON THE RAW COLUMN.** TECH STATS
+    states the one-way approach; the planner is a second reader of the same fact on the same page, so
     `scarfHrs(route.distKm, …)` meant Est. summit, Est. return and the After-dark warning were
     computed from a distance the page did not show. Four readers already used `effDistKm` — TECH
-    STATS, the header strap, the TrailheadCard tile and the area browser's span — and this was the
+    STATS, the header strap, the (since removed) TrailheadCard tile and the area browser's span — and this was the
     holdout, so the page stated the approach distance two ways.
     - **THE CURRENT ARITHMETIC DOUBLE-COUNTED THE WALK OUT on the rows that move most.**
       `wa_blizzard_peak_standard` is a 64-mile round trip whose `dist_km` holds the whole 63, so
@@ -741,14 +719,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **WHAT IT DOES NOT CLAIM**: that `effDistKm` is the better number on every row. Among the 118
       that get LONGER are routes where `dist_km` may correctly hold the one-way while the itinerary
       covers more than the approach, and there it overstates — conservatively, and agreeing with
-      the tile above it, which is the property being bought.
-  - Injection-tested **14/14** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
+      TECH STATS, which is the property being bought.
+  - Injection-tested (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring every file it touches byte-identically. Cases 1-3 put
     the duplication back one piece at a time so the guard cannot pass on the strength of its
     neighbours; **case 4b reverts #1493's gate** and must fail on section 1b, so the closed gap
-    cannot quietly re-open. Cases 8-10 are section 7 — the real defect, the unconditional-halving
-    over-reach, and a **SILENT** rename, since the rule is about which source is read rather than
-    what the local is called. **Cases 11-13 are section 8** — the planner reverted to the raw
+    cannot quietly re-open. Case 8 is section 7 — the stat tiles put back on the card (cases 9-10,
+    which pinned the removed tile's source, were retired with it). **Cases 11-13 are section 8** — the planner reverted to the raw
     column, a **SILENT** hoist to a local (section 8 is behavioural, so it cannot be defeated by
     how the call is spelled), and the shape-blind halving, which is the one that edits
     `lib/outing.js` rather than the app file.
