@@ -339,10 +339,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **The regex is a heuristic, and the review was by hand.** Every drop and every keep outside
     mountaineering was read; the cases in the guard are the shapes that decided it. A new prose
     phrasing can still fool it — when a chip looks wrong, add the real string as a case first.
-  - **Data defects seen and NOT fixed here:** Bridge Creek Wall's closure sentence is pasted into
-    the hazards of `co_main_wall`, `ca_macondo_cliff` and `il_f_the_promised_land`, and Top Gun
-    (Pinto Rock sport) carries an alpine "Glacier/snow approach" hazard. The chips no longer read
-    them; the hazard text still renders.
+  - **Data defects it surfaced, since repaired:** the Bridge Creek Wall sentence rode inside a
+    whole foreign `watch_out` on three out-of-state rock routes (a Leavenworth mixed-ice list on
+    `co_highrise_buttress_left` and `ca_weasel_buttress_left`, an ice/avalanche list on
+    `il_hubba_hubba`) — nulled by `scripts/oneoff/fix-foreign-watch-out.mjs`, backup beside it.
+    Top Gun's alpine boilerplate had already been replaced by #1909.
+  - **The chip row was removed by #1940 and restored the same day** at the user's request; that
+    removal is what turned `check:field-renders` red (`lists` reached no screen).
   - **Stored `features`** (410 routes) were read against their own text by hand in 8 batches:
     13 chips were contradicted and removed (`scripts/oneoff/fix-contradicted-feature-chips.mjs`,
     backup beside it) — a chip taken from the NAME ("Notta Slab" is vertical), from a
