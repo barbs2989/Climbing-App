@@ -34,9 +34,11 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,uid,zi
   const toggleDisc=k=>setDraft(d=>({...d,disciplines:d.disciplines.includes(k)?d.disciplines.filter(x=>x!==k):[...d.disciplines,k]}));
   const DISC=[["sport",DL.sport],["trad",DL.trad],["bouldering",DL.bouldering],["scrambling",DL.scrambling],["alpine",DL.alpine],["mountaineering",DL.mountaineering],["ice",DL.ice],["mixed",DL.mixed],["aid",DL.aid]];
   const LEVELS=["Beginner","Intermediate","Advanced","Expert"];
+  const [uTouched,setUTouched]=useState(false);
   const uErr=draft.username.trim().length<3?"Username must be at least 3 characters.":hasVulgarity(draft.username)?"Please choose a different username.":"";
   const nErr=draft.name.trim().length<1;
   const ok=!uErr&&!nErr;
+  const uShow=uTouched&&uErr;
   const lbl={fontSize:12,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:5,marginTop:14};
   const inp={width:"100%",padding:"10px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box"};
   return (<div style={{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
@@ -49,8 +51,8 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,uid,zi
       <input aria-label="Your name" value={draft.name} onChange={e=>set("name",e.target.value)} placeholder="Your name" style={inp}/>
       {nErr?<div style={{fontSize:12,color:C.red,marginTop:4}}>Name cannot be empty.</div>:null}
       <div style={lbl}>Username</div>
-      <input aria-label="username" value={draft.username} onChange={e=>set("username",e.target.value.replace(/\s/g,""))} placeholder="username" style={{...inp,border:"1px solid "+(uErr?C.red:C.border)}}/>
-      <div style={{fontSize:12,color:uErr?C.red:C.textMuted,marginTop:4}}>{uErr||("Shown publicly as @"+(draft.username.trim()||"username")+". Hide your real name with the toggle below.")}</div>
+      <input aria-label="username" value={draft.username} onChange={e=>set("username",e.target.value.replace(/\s/g,""))} placeholder="username" onBlur={()=>setUTouched(true)} style={{...inp,border:"1px solid "+(uShow?C.red:C.border)}}/>
+      <div style={{fontSize:12,color:uShow?C.red:C.textMuted,marginTop:4}}>{uShow||("Shown publicly as @"+(draft.username.trim()||"username")+". Hide your real name with the toggle below.")}</div>
       <div style={lbl}>Bio</div>
       <textarea aria-label="Tell partners about your climbing" value={draft.bio} onChange={e=>set("bio",e.target.value)} rows={3} placeholder="Tell partners about your climbing..." style={{...inp,resize:"vertical",fontFamily:"inherit"}}/>
       {(()=>{var parts=(draft.location||"").split(",");var curCity=(parts[0]||"");var curAbbr=(parts[1]||"").trim().toUpperCase();var _regions=US_ST.concat(CA_PROV);var curFull=(_regions.find(function(p){return p[1]===curAbbr;})||["",""])[0];var setLoc=function(city,abbr){set("location",abbr?(city+", "+abbr):city);};return <div><div style={lbl}>Home city</div><input aria-label="Start typing your city" list="cm-cities" value={curCity} onChange={function(ev){setLoc(ev.target.value.replace(/,.*$/,""),curAbbr);}} placeholder="Start typing your city…" style={inp}/><datalist id="cm-cities">{US_CITIES.map(function(c){return <option key={c} value={c}/>;})}</datalist><div style={{...lbl,marginTop:11}}>State or province</div><select aria-label="Select your state or province" value={curFull} onChange={function(ev){var ab=(_regions.find(function(p){return p[0]===ev.target.value;})||["",""])[1];setLoc(curCity,ab);}} style={{...inp,color:C.text}}><option value="">Select your state or province…</option><optgroup label="United States">{US_ST.map(function(p){return <option key={p[1]} value={p[0]}>{p[0]}</option>;})}</optgroup><optgroup label="Canada">{CA_PROV.map(function(p){return <option key={p[1]} value={p[0]}>{p[0]}</option>;})}</optgroup></select></div>;})()}

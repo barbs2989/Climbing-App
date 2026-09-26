@@ -25,6 +25,7 @@
 // under the chrome no matter what z-index it asks for (see check:overlay-portals).
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { POP_CLOSE } from "./popupChrome.js";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle } from "./mapKit";
 import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi, FIRE_SOURCES } from "./fire";
 
@@ -145,6 +146,8 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
       // Same view the bbox was seeded from — see viewFor.
       const [vLat, vLng, vZoom] = viewFor(focus);
       const map = L.map(mapDiv.current, { attributionControl: false }).setView([vLat, vLng], vZoom);
+      // Clear the base-layer toggle in the top-left corner, as GPXMap does.
+      if (map.zoomControl) map.zoomControl.getContainer().style.marginTop = "46px";
       applyBaseLayer(map, tileRef, baseLayer);
       // Order matters: perimeters and weather zones are fills, incident points sit
       // on top so a marker inside a perimeter stays clickable.
@@ -328,8 +331,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
             <ActionIcon name="target" size={15} color={C.textSub} />
           </button>
         )}
-        <button onClick={onClose} aria-label="Close fire map"
-          style={{ padding: "8px 12px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Close</button>
+        <button onClick={onClose} aria-label="Close fire map" style={POP_CLOSE}>✕</button>
       </div>
 
       {/* headline fire-weather banner — the danger half, above the map so it is not

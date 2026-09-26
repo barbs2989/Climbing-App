@@ -215,7 +215,7 @@ try {
      count already in hand, and must not overwrite it with an error. */
   ran++;
   const populated = stateCatalogLine(8366, "Washington", true, " · 2h ago");
-  if (populated.includes("8366 climbs in the catalog") && !/couldn’t load/i.test(populated)) {
+  if (populated.includes((8366).toLocaleString() + " climbs in the catalog") && !/couldn’t load/i.test(populated)) {
     ok("stateCatalogLine: an already-loaded count still renders under the flag");
   } else {
     fail(`stateCatalogLine: the flag suppressed or overwrote a count already in hand — "${populated}"`);
