@@ -28011,3 +28011,49 @@ statements), aside from the routine paste-size WARN (4.6 KB against the 4 KB sof
 same as most other multi-fix batches this pass) — split into ~1.5 KB chunks before pasting.
 WebFetch was egress-blocked for en.wikipedia.org and other reference domains again this
 run; all research used WebSearch snippet synthesis only.
+
+## 2026-09-26 — Pass 6, Batch 344
+
+Checked: `wa_mount_goode_northeast_buttress`, `wa_mount_hardy_snow_scramble`,
+`wa_mount_herman_standard_scramble`, `wa_mount_hinman_hinman_glacier`,
+`wa_mount_hopper_standard`, `wa_mount_howard_south_slope`, `wa_mount_index_north_face`,
+`wa_mount_index_north_peak_traverse`, `wa_mount_index_northeast_buttress`,
+`wa_mount_la_crosse_scramble`.
+
+**Confirmed errors fixed:** none this batch — no SQL file.
+
+**Flagged for human review (not fixed) — 1 item:** `wa_mount_index_northeast_buttress`
+and `wa_mount_index_north_face` (both under area `wa_north_peak_2`) carry the identical
+1929 Chute/Kaartinen FA. That first looked like a misattributed duplicate — the FA
+party's published account describes finding a line up the peak's "steep northeast
+corner," and a separate, much harder aid-climbing history exists for a feature also
+sometimes called the North Peak's buttress — but the `northeast_buttress` row's own
+`corrections` field already documents this as the *same* physical route known under two
+names (Mountain Project calls it "North Face"; older guidebooks/trip reports call it
+"Northeast Buttress"/"NE Rib"), with a disputed grade (5.6–5.7, Grade II–IV across
+sources). So the shared FA is internally consistent, not an error — but the catalog
+carrying it as two separate route rows under one area is a structural duplication for a
+human to decide whether to merge, not a value this audit can patch.
+
+**Checked and confirmed correct, not touched:** Mount Goode's 9,220 ft summit, Aug 6,
+1966 Beckey/Stewart FA, and Grade IV/5.5 (several looser sources call it "5.6," but
+Grade IV 5.5 is the figure that actually corroborates); Mount Goode's and Mount Hardy's
+SR-20 winter-closure notes, including the 2026 emergency-repair reopening date (June
+14), which matches WSDOT/Cascadia Daily News reporting exactly; Mount Hardy's 8,099 ft
+summit and 1933 Schmerling/Ulrichs FA; Mount Herman's 6,285 ft (Wikipedia/PeakVisor give
+~6,279–6,280 ft — within normal LIDAR-vs-contour rounding, not a real discrepancy); Mount
+Hinman's 7,492 ft and 1928 FA; Mount Hopper's 6,120 ft (PeakVisor: 6,115 ft — same
+rounding-noise call) and its Staircase/North Fork Skokomish `access.closures` entry
+citing the 2025 Bear Gulch Fire trail closure, which is accurate and already correctly
+reflected, not stale; Mount Howard's 7,063 ft Nason Ridge high point; Mount Index North
+Face's Chute/Kaartinen 1929 FA and Grade III/5.6, matching Wikipedia and guidebook
+accounts of the route (including its reputation as sandbagged); the North Peak Traverse's
+5,991 ft Main Peak summit and Beckey/Schoening Aug 1950 full-traverse FA; Mount La
+Crosse's 6,417 ft, matching Wikipedia exactly.
+
+`last_processed_id` advanced to `wa_mount_la_crosse_scramble`; re-counted scope this
+batch: 701 in-scope routes (unchanged), 300 remain unaudited this pass. No `.env`/
+`.env.local` present at run start (fresh clone) — none needed this batch since no writes
+were made (read-only anon key query only). WebFetch was egress-blocked network-wide again
+this run (alpenglow.org, en.wikipedia.org, and others); all research used WebSearch
+snippet synthesis only.
