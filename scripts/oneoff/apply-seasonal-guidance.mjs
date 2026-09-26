@@ -61,13 +61,16 @@ if (errors.length) { console.error(`REFUSED — ${errors.length} problem(s):\n  
 console.log(`${batch.length} entries valid.`);
 if (!apply) { console.log("Dry run — pass --apply to write."); process.exit(0); }
 
-// Store months in calendar order, which is how the panel sorts them anyway.
+// The panel sorts months itself (monthRank); jsonb would not keep a calendar order anyway.
 const ordered = sg => ({ optimalWindow: sg.optimalWindow.trim(), monthBreakdown: Object.fromEntries(
   MONTHS.filter(m => sg.monthBreakdown[m]).map(m => [m, { status: sg.monthBreakdown[m].status, reason: sg.monthBreakdown[m].reason.trim() }])) });
 for (const e of batch) await patchRow("routes", e.id, { seasonal_guidance: ordered(e.seasonal_guidance) }, { filter: "seasonal_guidance=is.null" });
 
 const back = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,seasonal_guidance&id=in.(${ids.map(encodeURIComponent).join(",")})`, { headers: headers(key) });
 const after = new Map((await back.json()).map(r => [r.id, r]));
-const bad = batch.filter(e => JSON.stringify(after.get(e.id)?.seasonal_guidance) !== JSON.stringify(ordered(e.seasonal_guidance)));
+// jsonb does not keep key order (it stored "July, June, August" and "reason, status"), so compare canonically
+// — a JSON.stringify of each side failed all 18 rows of the first batch that had in fact landed exactly.
+const canon = v => v && typeof v === "object" ? Object.fromEntries(Object.keys(v).sort().map(k => [k, canon(v[k])])) : v;
+const bad = batch.filter(e => JSON.stringify(canon(after.get(e.id)?.seasonal_guidance)) !== JSON.stringify(canon(ordered(e.seasonal_guidance))));
 if (bad.length) { console.error(`RECONCILE FAILED for ${bad.map(e => e.id).join(", ")}`); process.exit(1); }
 console.log(`Wrote and re-read ${batch.length} rows; every one matches.`);
