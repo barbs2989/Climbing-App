@@ -28107,3 +28107,61 @@ not investigated further by this audit. No `.env`/`.env.local` present at run st
 (fresh clone) — none needed this batch since no writes were made (read-only anon key
 query only). WebFetch remained egress-blocked network-wide this run; all research used
 WebSearch snippet synthesis only.
+
+## Batch 346 (2026-09-26, pass 6)
+
+Audited: Mount Norton Scramble, Mount Olympus Blue Glacier / West Ridge, Mount Persis
+The Hexorcist / West Ridge, Mount Pilchuck East Ridge / Standard Route, Mount Price
+Hester Lake Route (8 routes).
+
+**Fixed (1):** `wa_mount_olympus_blue_glacier`'s `road.status` said the Dec 2024 Upper
+Hoh Road washout's repairs "reopened it in May 2026." The closure date is right, but the
+reopening year is off by one: KOMO News and the Washington State Standard both confirm
+construction began mid-April 2025 and the road reopened to traffic May 8, 2025 (a
+state-funded repair with a ribbon-cutting attended by Gov. Ferguson). The sibling
+`wa_mount_olympus_west_ridge` row — same physical road, audited in this same batch —
+already had the correct year, so the two routes sharing one road were contradicting each
+other. SQL in `audits/sql/2026-09-26-batch-346.sql`.
+
+**Flagged for human review (1):** `wa_mount_persis_west_ridge`'s access fields say a
+"Hampton Resources recreational access permit" is required for FR-62. Hampton Lumber
+does run a free recreational-forestland permit program (launched June 8, 2026), but the
+only dated announcement found names Pacific and Wahkiakum counties — southwest
+Washington, not the Skykomish valley/Index-area parcel this route actually crosses.
+Couldn't confirm whether that program (or whatever it succeeded from the Weyerhaeuser
+era) currently covers this specific tract, so left the row as-is; it already hedges with
+"verify current permit requirements and gate status before the trip."
+
+**Clean (6):** Mount Norton (6,397 ft and its 47.7625°N/123.4138°W summit coordinate
+both confirmed via Wikipedia; the Hayes River approach via Whiskey Bend and the Elwha
+River Trail matches the peak's real Hayes-River drainage; the "closed for roughly a
+decade" framing for the Olympic Hot Springs/Whiskey Bend Road vehicle closure at Madison
+Falls checks out — the road has been closed continuously since Nov 2017, after a brief
+2016–17 reopening); Mount Olympus Blue Glacier (7,980 ft and the Aug 13, 1907
+Mountaineers/L.A. Nelson first ascent of the West Peak both confirmed via
+Wikipedia/AAC Publications, aside from the road-date fix above); Mount Olympus West
+Ridge (same 7,980 ft/coordinate confirmed; the 1964 Maykut/Miller/Witte FA claim could
+be neither confirmed nor refuted by any source found — left alone, and the row's own
+`data_quality` already marks this MEDIUM confidence); The Hexorcist (5,464 ft and summit
+coordinate confirmed; the "Likely Bryan Burdo & Bill Enger, 1985" FA is already hedged
+with "Likely" and couldn't be corroborated either way — left as-is); Mount Persis West
+Ridge (same 5,464 ft/coordinate confirmed; the 1917 Harry B. Hinman first ascent of the
+peak independently confirmed via the Mountaineers' own Everett-branch history, aside from
+the FR-62 permit question flagged above); Mount Pilchuck East Ridge (5,324 ft and summit
+coordinate confirmed; Northwest Forest Pass at the Pinnacle Lake trailhead is correct —
+Mt. Baker-Snoqualmie NF land); Mount Pilchuck Standard Route (same 5,324 ft/coordinate
+confirmed; the Northwest-Forest-Pass-not-Discover-Pass distinction for this trailhead
+independently confirmed via the Forest Service's own trailhead page — the parking lot
+sits on NF land even though the upper trail and lookout are in Mount Pilchuck State
+Park; the cited 2015 ~400 ft fatal fall near the lookout independently confirmed via
+HeraldNet/KOMO coverage of Zachary Thorngren's death); Mount Price Hester Lake Route
+(5,587 ft and summit coordinate confirmed via multiple sources; the Alpine Lakes
+Wilderness free self-issue permit season, May 15–Oct 31, independently confirmed via the
+Forest Service's own wilderness-regulations page).
+
+`last_processed_id` advanced to `wa_mount_price_hester_lake_route`; re-confirmed scope
+this batch: still 698 in-scope, 751 total wa_ alpine/mountaineering tagged (both
+unchanged from batch 345). No `.env`/`.env.local` present at run start (fresh clone) —
+none needed this batch since no writes were made (read-only anon key query only). All
+research this run used WebSearch snippet synthesis; WebFetch wasn't exercised, so its
+egress status is not re-confirmed one way or the other this batch.
