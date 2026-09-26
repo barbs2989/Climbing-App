@@ -1,0 +1,342 @@
+{
+ "applied": [
+  {
+   "id": "wa_baldy_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead identity"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Trailhead identity"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Trailhead identity"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Trailhead identity"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Trailhead identity"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Trailhead identity"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Trailhead identity"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Water above Mueller Creek"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "waypoints",
+   "path": [
+    1,
+    "directions"
+   ],
+   "fact": "Water above Mueller Creek"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "waypoints",
+   "path": [
+    4,
+    "note"
+   ],
+   "fact": "Water above Mueller Creek"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Water above Mueller Creek"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "what_to_bring",
+   "path": [
+    5
+   ],
+   "fact": "Water above Mueller Creek"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "what_to_bring",
+   "path": [
+    1
+   ],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Day trip vs camping"
+  },
+  {
+   "id": "wa_baldy_standard",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Entrance fee / overnight permit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_baldy_standard",
+   "before": {
+    "itinerary": {
+     "cal": "Best done June through October; the steep upper trail and ridge crest can hold snow into early summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard car-to-car day hike/scramble from the Upper Dungeness trailhead: a relentlessly steep trail gains the ridge crest around 2.7 miles, then easy ridge walking and a short scramble lead to the summit. Almost all parties do this route in a single day; only groups continuing onto Gray Wolf Ridge, Gray Wolf Mountain, or looping to Tyler Peak/Peak B extend it into an overnight ridge trip.",
+       "hours": 6.5,
+       "miles": 7.2,
+       "title": "Baldy day hike",
+       "gainFt": 3800,
+       "lossFt": 3800,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Start at the trailhead at the end of FR 2870 and begin climbing via the Lower Maynard Burn Trail (#816)."
+        },
+        {
+         "time": "+2.5 hr",
+         "label": "Reach the ridge crest",
+         "detail": "Trail tops out around 2.7 mi / ~6,200 ft with the first big views to Vancouver Island and the Strait of Juan de Fuca."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Summit Baldy (6,808 ft)",
+         "detail": "Past a false summit (pt. 6537) to the true top; views of Gray Wolf Ridge, the Bailey Range, and distant Mt. Baker."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Break at summit",
+         "detail": "Lunch and photos before reversing the route."
+        },
+        {
+         "time": "+6.5 hr",
+         "label": "Back at trailhead",
+         "detail": "Descent is quick on the steep, well-defined trail."
+        }
+       ],
+       "objective": "Reach the summit of Baldy (6,808 ft) via the Baldy Trail"
+      }
+     ],
+     "totalNote": "A single long day hike/scramble: roughly 6-7 hours car-to-car for 7.2 miles round trip and 3,800 ft of gain to Baldy's summit alone; the standard route needs no overnight."
+    },
+    "timing": {
+     "totalHrs": 6.5,
+     "summitTimeHrs": 6.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "7:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "Standard car-to-car day hike/scramble from the Upper Dungeness trailhead: a relentlessly steep trail gains the ridge crest around 2.7 miles, then easy ridge walking and a short scr…",
+       "fromTo": "Baldy day hike",
+       "section": "Climb"
+      }
+     ]
+    },
+    "detailed_rack": "No technical rack needed - this is a hike/scramble with no roped climbing. The route follows the Upper Maynard Burn Trail or the older Baldy Trail from the Slab Camp/Deer Ridge trailhead area, gaining a ridge crest via steep, sometimes faint tread through subalpine meadows and scree/talus to the Baldy summit block. No cams, nuts, or fixed anchors are used or needed by parties climbing the standard route.",
+    "beta": "From the FR 270 trailhead, a steep boot path climbs through rhododendron forest and past an old fire-break (the Maynard Burn track) to reach meadows and then the crest of Gray Wolf Ridge around 2.7 miles (~6,200 ft). Formal trail tread ends shortly after (~2.85 mi), and the final push to the summit is a cross-country scramble over a minor sub-summit and along the open ridge, arriving at Baldy's rocky, view-packed top at 3.6 miles.",
+    "road": {
+     "name": "FR 2870 / FR 2870-120 (Maynard Burn Spur)",
+     "status": "Gravel, generally in good condition to the main Upper Dungeness/Baldy trailhead just past the Dungeness River bridge; the FR 2870-120 spur to the upper Maynard Burn trailhead is rougher and narrower, high-clearance vehicle recommended.",
+     "driveNote": "Check Olympic National Forest road status before an early-season trip — spur roads in this drainage can have winter washouts or downed trees not yet cleared."
+    },
+    "approach_logistics": {
+     "peakLat": 47.895015,
+     "peakLng": -123.189275,
+     "trailhead": "Tyler Peak Trailhead",
+     "trailheadDirection": "The climber/hiker trailhead is at the end of FR 2870 (signed Baldy/Tyler Peak trailhead, ~12-car gravel pullout, roughly 47.883, -123.143) in the Upper Dungeness drainage of the Hood Canal Ranger District."
+    },
+    "waypoints": [
+     {
+      "lat": 47.882612,
+      "lng": -123.143167,
+      "elev": 3300,
+      "name": "Lower Maynard Burn Trailhead",
+      "note": "End of FR 2870-120 off Palo Alto Rd; Northwest Forest Pass required to park here.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive FR 2870 off Palo Alto Road to its end at the signed Baldy/Tyler Peak trailhead, a gravel pullout for about a dozen cars in the Upper Dungeness drainage of the Hood Canal Ranger District."
+     },
+     {
+      "lat": 47.8862135,
+      "lng": -123.1527502,
+      "elev": 3600,
+      "name": "Mueller Creek crossing",
+      "note": "Rock-hop crossing just past the trailhead; the rocks here are slick.",
+      "type": "Water",
+      "distMi": 0.5,
+      "directions": "Follow the old roadbed a short distance from the lot; at about 0.3 mile the Baldy climbers' path (Lower Maynard Burn Trail #816) splits off to the right and begins climbing in earnest, and at roughly half a mile it crosses a decommissioned logging road. Mueller Creek parallels these early switchbacks and is the last dependable water on the mountain — top off here, especially late in the summer, since nothing above can be counted on."
+     },
+     {
+      "lat": 47.88848485483871,
+      "lng": -123.1621759548387,
+      "elev": 5200,
+      "name": "Maynard Burn fire-line clearing",
+      "note": "Flat clearing where the trail crosses an old decommissioned road/fire barrier; used as a camp before the steep push.",
+      "type": "Campsite",
+      "distMi": 1.3,
+      "directions": "Steep switchbacks gain roughly 1,600 ft in under a mile. At about 1.3 miles the path crosses the old Maynard Burn track near a short junction with the Upper Dungeness Trail (#833.2), and continues above it as the Upper Maynard Burn Trail (#816.2)."
+     },
+     {
+      "lat": 47.89047229032258,
+      "lng": -123.17042349032258,
+      "elev": 6300,
+      "name": "Eroded ravine section",
+      "note": "Steepest stretch of the climb -- crumbly, narrow (barely one-foot-wide) tread across a rocky ravine; the ~3,000 ft gain in the first 2 miles ends here.",
+      "type": "Hazard",
+      "distMi": 2,
+      "directions": "This is the relentless section: narrow tread, in places barely a foot wide, sidehilling an eroding slope on loose dirt and gravel, with crumbly footing where it crosses the rocky ravine. By about two miles the forest thins and Tyler Peak comes into view."
+     },
+     {
+      "lat": 47.892459725806454,
+      "lng": -123.17867102580645,
+      "elev": 6200,
+      "name": "Ridge crest water source",
+      "note": "Trail tops out on the ridge crest with an accessible water source; exposed to frequent wind blasts.",
+      "type": "Water",
+      "distMi": 2.7,
+      "directions": "Above the ravine the tread turns faint and muddy through boggy meadow benches where flagging and cairns are sparse, then breaks out onto the open ridge crest east of Baldy at roughly 2.7 miles. This is where the route leaves the trees for good and the first views north to the Strait of Juan de Fuca and Vancouver Island open up — fix the spot in your memory, because it is the key handrail on the way down in fog."
+     },
+     {
+      "lat": 47.89397,
+      "lng": -123.1822,
+      "elev": 6350,
+      "name": "Gray Wolf Ridge saddle",
+      "note": "Low point where the Baldy climbers' path joins Gray Wolf Ridge proper; Class 1-2 talus/ridge walking begins here.",
+      "type": "Junction",
+      "distMi": 2.85,
+      "directions": "A short step west along the crest ends the formal trail tread. Everything above is cross-country over talus and heather with no maintained path, fully exposed to wind and cloud."
+     },
+     {
+      "lat": 47.89416324193549,
+      "lng": -123.18574034193549,
+      "elev": 6537,
+      "name": "False summit (Pt. 6537)",
+      "note": "Marked as a separate high point on USGS maps -- traverse below it through open talus rather than over the top to save effort.",
+      "type": "Junction",
+      "distMi": 3.3,
+      "directions": "Continue west along the open crest on talus. In poor visibility this bump is routinely mistaken for the true top, and it is the spot people most often lose the line on the descent, so note how you pass it on the way up."
+     },
+     {
+      "lat": 47.895015,
+      "lng": -123.189275,
+      "elev": 6808,
+      "name": "Baldy summit",
+      "note": "True summit; 360-degree views of Mount Constance, the Strait of Juan de Fuca, and Vancouver Island.",
+      "type": "Summit",
+      "distMi": 3.6,
+      "directions": "A final few hundred feet of open ridge west from the bump reaches the true summit, which holds an old campsite. Lingering snow can bury the boot path through this section into June and the crest catches the full wind; carry a map or GPS track, since this is the stretch that causes trouble when cloud rolls in."
+     }
+    ],
+    "approach": "The climber/hiker trailhead is at the end of FR 2870 (signed Baldy/Tyler Peak trailhead, ~12-car gravel pullout, roughly 47.883, -123.143) in the Upper Dungeness drainage of the Hood Canal Ranger District. From the trailhead, follow the old roadbed a short distance; at about 0.3 mile the Baldy climber's path (Lower Maynard Burn Trail #816) splits off to the right and begins climbing in earnest. At roughly 0.5 mile (~3,600 ft) the trail crosses a decommissioned logging road. Mueller Creek parallels the route through these early switchbacks and is the last reliable water on the mountain — top off here, especially in late-summer conditions, since nothing dependable exists above. Around 1.3 miles the path crosses the old Maynard Burn track near a brief junction with the Upper Dungeness Trail (#833.2) before continuing up as the Upper Maynard Burn Trail (#816.2). Hikers describe this middle section as a relentless, eroded 'staircase' — expect a narrow tread (in spots barely a foot wide) sidehilling an eroding slope, crumbly footing crossing a rocky ravine, and faint, muddy tread through boggy meadow benches where flagging/cairns can be sparse. By about 2 miles the forest thins and Tyler Peak comes into view; by 2.7 miles (~6,200 ft) the trail gains the open ridge crest/saddle east of Baldy, with the first views north to the Strait of Juan de Fuca and Vancouver Island — this is also where the route leaves the trees for good, an important landmark for the return. From the saddle, a boot path continues west along the exposed ridge, over a false summit (roughly 6,500 ft, frequently mistaken for the true top and a common confusion point in poor visibility) to the actual summit at 3.6 miles / 6,808 ft, which has an old campsite. Total is about 7.2 miles and 3,800 ft round trip. The ridge is fully exposed to wind and cloud, and lingering snow can bury the boot path into June; carry a map/GPS track for the upper mountain.",
+    "approach_variants": [
+     {
+      "name": "Maynard Burn climbers' path from the Dungeness",
+      "notes": "From the gravel pullout at the end of the forest road, follow the old roadbed a short way; at about a third of a mile the climbers' path splits right and starts climbing in earnest. Mueller Creek in the first switchbacks is the last dependable water on the mountain. The middle section is a narrow, eroded staircase — tread barely a foot wide in places, sidehilling an eroding slope, with crumbly footing across a rocky ravine and faint muddy going through boggy meadow benches.",
+      "season": "Mid-June to October",
+      "hazards": [
+       "Narrow, eroded tread with genuine exposure below about 5,400 ft",
+       "Snow lingering on the open upper ridge into late June",
+       "Treeless, wind- and lightning-exposed crest with no shelter",
+       "Faint boot path across the meadow benches, easily lost in fog",
+       "Loose scree and rockfall on the continuation toward Gray Wolf Ridge"
+      ],
+      "baseFinding": "The moment the route stops being a trail is obvious and it is worth stopping to look around: at roughly 2.7 miles and about 6,200 ft the forest thins and quits, and the path gains the open ridge crest and saddle east of the peak. That is the base of the ridge walk, and the two markers are the last stunted trees behind you and the first view north across the Strait of Juan de Fuca to Vancouver Island. Fix this spot in your memory — coming back down in cloud, it is the doorway back into the trees and where the tread becomes obvious again. From the saddle a boot path runs west along the fully exposed crest. The decoy is a rocky bump at roughly 6,500 ft, mapped as a separate high point, which is repeatedly taken for the top; the path traverses beneath it through open talus rather than over it, and the true summit is another stretch west and carries an old campsite. You have gone too far if the ridge is dropping into loose scree and running on toward Gray Wolf."
+     }
+    ],
+    "what_to_bring": [
+     "map and compass or GPS - the boot path fades above treeline and in the summit meadows",
+     "trekking poles for the sustained steep grade (route gains ~3,000-3,400 ft)",
+     "helmet for the loose rock/scree near the summit",
+     "ice axe and microspikes if climbing in spring/early season when snow patches remain on the upper slopes/ridge",
+     "sun protection - much of the route is above treeline on an exposed ridge",
+     "ample water - no reliable water source high on the route"
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Fit for a 7-hour, multi-mile day with real elevation gain on trail and open ridge; many parties camp partway rather than day-hiking it",
+      "packWeight": "Day-pack to light overnight weight if using a camp on Gray Wolf Ridge; no technical gear to carry"
+     },
+     "approachTime": "~3 hours to Gray Wolf Ridge before the ridge walk to the summit",
+     "requiredSkills": [
+      "basic map/compass or GPS navigation on an open, featureless ridge",
+      "route-finding in fog since the summit area has few landmarks",
+      "weather judgment - willingness to turn back if the ridge is socked in or exposed to lightning/wind"
+     ],
+     "experienceLevel": "Comfortable with unmaintained trail navigation and sustained off-trail ridge walking in fog/whiteout; prior scramble or long-trail experience recommended given the remote interior-Olympics setting"
+    },
+    "access": {
+     "fees": "Northwest Forest Pass day ($5) or annual ($30) fee applies at the trailhead parking areas; no separate climbing/scrambling fee.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Group size capped at 12 people / 8 stock; groups of 7+ must use designated Group Sites. Bear-resistant food containers mandatory park-wide for overnight trips — free loaners at Wilderness Information Centers.",
+     "permit": "No wilderness permit is required for day use or backpacking in Buckhorn Wilderness (Olympic National Forest). If a trip crosses into Olympic National Park backcountry (e.g., continuing deep along Gray Wolf Ridge) and camps there, an NPS wilderness permit is required for that portion.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest, Hood Canal Ranger District (Buckhorn Wilderness); the summit sits on the boundary with Olympic National Park.",
+     "land_manager": "Olympic National Forest, Hood Canal Ranger District (Buckhorn Wilderness); the summit sits on the boundary with Olympic National Park.",
+     "parking_pass": "Northwest Forest Pass ($5/day or $30/annual)",
+     "passRequired": "Northwest Forest Pass (or America the Beautiful/interagency annual pass) to park at the Dungeness or Maynard Burn trailheads.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required on the Buckhorn Wilderness side",
+      "where": "The route is a day hike on national forest land; a recreation pass is needed at the trailhead."
+     }
+    }
+   }
+  }
+ ]
+}

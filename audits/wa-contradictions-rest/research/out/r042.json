@@ -1,0 +1,313 @@
+{
+ "file": "r042.json",
+ "results": [
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "fact": "Approach describes a different peak (Inspiration Peak via Terror Basin)",
+   "verdict": "fixed",
+   "correct_value": "Goodell Creek roadbed, Terror Creek climbers' path, across the Barrier into Crescent Creek Basin below the Blob",
+   "evidence": "The first-ascent report places the route on the Blob in the remote Crescent Creek Basin of the Southern Pickets. A Pickets reference site lists The Rake (The Blob) among the Southern Pickets and describes reaching Crescent Creek Basin from the Goodell Creek roadbed, including the Barrier crossing (low and high options, recommended from Terror Basin). An independent trip report reached Crescent Creek Basin from Goodell Creek via Terror Creek camp and a path up the Barrier, and calls the peak 'The Rake (aka The Blob)'. The approach text was copied from an Inspiration Peak row.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200713301",
+    "https://stephabegg.com/trip-reports/washington/pickets/",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Approach describes a different peak (Inspiration Peak via Terror Basin)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Inspiration Peak shares the same approach as West McMillan Spire: from Goodell Creek Campground, an unmaintained path climbs the Goodell Creek valley for roughly 4 to 4.5 miles before a steep, brushy climbers' track gains about 1,500 feet in under half a mile to reach the alpine notch above Terror Basin, the standard base camp for the Southern Pickets. From camp, reaching Inspiration Peak involves traversing heather and snow slopes and crossing a permanent snowfield near the col between it and West McMillan Spire before tackling a technical rock route (low 5th class up to 5.9 depending on the line).",
+     "replace": "From the Goodell Creek group-camp trailhead near Newhalem, walk the overgrown Goodell Creek roadbed for about 4 miles to the cairn near the Terror Creek crossing, then climb the Terror Creek climbers' path. The Blob stands above Crescent Creek Basin, so from the Terror Creek side you must cross the Barrier, the loose, brushy ridge dividing the Terror Creek drainage from Crescent Creek; it can be crossed low or high from Terror Basin. Descend into Crescent Creek Basin and camp within reach of the Himmelhorn and the Blob, then scramble to the base of the south buttress."
+    }
+   ]
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "fact": "Trailhead / road",
+   "verdict": "fixed",
+   "correct_value": "SR-20 to the Goodell Creek trailhead just west of Newhalem (no Ross Lake water taxi)",
+   "evidence": "Both the Pickets reference site and an independent Crescent Creek Basin trip report start the approach on the old Goodell Creek roadbed off SR-20 near Newhalem; the Ross Lake water taxi and Access Creek serve the Northern Pickets, not Crescent Creek Basin. The row's own waypoints, approach_logistics, itinerary and road.seasonalGate already use Goodell Creek.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/",
+    "http://ericsbasecamp.net/trips/Terror/Terror.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Ross Lake water taxi (from Ross Dam TH off SR-20) to Access Creek, Southern Pickets",
+     "value": "North Cascades Highway (SR-20) to the Goodell Creek trailhead near Newhalem"
+    },
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "SR-20 to Ross Dam Trailhead is paved; most parties use the Ross Lake Resort water taxi across the reservoir, then a multi-day cross-country approach into the Southern Pickets.",
+     "value": "SR-20 is paved to the Goodell Creek campground just west of Newhalem; from there the old Goodell Creek roadbed is walked, followed by a multi-day cross-country approach into the Southern Pickets."
+    },
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Trailhead / road",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "Roughly 3 hours from Seattle via SR-20 to Ross Dam, plus the water taxi crossing and a multi-day wilderness approach.",
+     "value": "Roughly 2.5 hours from Seattle via SR-20 to Goodell Creek, just west of Newhalem, followed by a multi-day wilderness approach."
+    }
+   ]
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "fact": "High point",
+   "verdict": "fixed",
+   "correct_value": "7840 ft (summit of The Rake / The Blob)",
+   "evidence": "The first-ascent report says the route tops out on the summit of the Blob. The Pickets reference site lists The Rake (The Blob) at 7,840 ft and the Picket Range encyclopedia entry lists The Rake at 7,840 ft (2,390 m). high_point_ft is right; the Summit pin's 7,337 is the outlier. (The area record and the Junction pin at the same coordinate also carry 7,337 - see the discovered entry.)",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200713301",
+    "https://stephabegg.com/trip-reports/washington/pickets/",
+    "https://en.wikipedia.org/wiki/Picket_Range"
+   ],
+   "patches": [
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "High point",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elev"
+     ],
+     "expect": 7337,
+     "value": 7840
+    },
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "High point",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "elevFt"
+     ],
+     "expect": 7337,
+     "value": 7840
+    }
+   ]
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "fact": "Permit fee / land manager",
+   "verdict": "fixed",
+   "correct_value": "No park entrance fee; overnight backcountry permit $10/person + $6 permit fee (summer season); land manager NPS",
+   "evidence": "The park's fees page says there is no fee to enter the North Cascades NPS Complex and that backcountry permits cost $10 per person plus a $6 non-refundable fee; the park's fee-change news release gives the same figures for the mid-May to early-October season. The Southern Pickets lie inside North Cascades National Park, so the Forest Service land manager and 'free self-issue permit' in _raw are wrong. fees is written as a scoped negative per the settled convention.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://www.nps.gov/noca/learn/news/backcountry-permit-fee-structure-change.htm",
+    "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Permit fee / land manager",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "N/A",
+     "value": "No park entrance fee; the overnight backcountry permit costs $10 per person plus a $6 permit fee in the summer season."
+    },
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Permit fee / land manager",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_cost"
+     ],
+     "expect": "Free",
+     "value": "$10 per person plus a $6 permit fee for overnight backcountry permits in the summer season"
+    },
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Permit fee / land manager",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "land_manager"
+     ],
+     "expect": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+     "value": "National Park Service (North Cascades National Park)"
+    },
+    {
+     "id": "wa_plan_9_from_outer_space",
+     "fact": "Permit fee / land manager",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "permit_application_method"
+     ],
+     "expect": "No permit required for climbing; free self-issue permit if entering wilderness",
+     "value": "No permit for day climbs; overnight stays need a North Cascades NP backcountry permit (reserved on Recreation.gov or walk-up at the Marblemount Wilderness Information Center)"
+    }
+   ]
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "fact": "Junction pin and area elevation 7337 vs summit 7840",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[1] (type Junction, same coordinate and name as the Summit pin) and, apparently, the area's elevation_ft carry 7,337 ft, while The Rake/Blob summit is 7,840 ft by two sources. The Junction pin's own height is unsourced and the area record is outside this row, so neither was patched; the header's peak elevation may still read 7,337.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/",
+    "https://en.wikipedia.org/wiki/Picket_Range"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "fact": "Hardest climbing grade on Swiss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only graded description found is of the SOUTH side from Pickell Pass: a straightforward ascent with some Class 3 rock at the top. The one account of the southwest face from the West Fury saddle calls the rock pleasantly solid but gives no class. Nothing found supports 'Class 3-4 (low 5th possible)' for the southwest face, and nothing gives it a class at all, so the pill and the breakdown cannot be reconciled on two sources.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/",
+    "https://drdirtbag.com/2017/08/08/northern-pickets-traverse-east-fury-to-challenger-vi-5-7-28h32/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "fact": "Total time for the climb",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No published total for the southwest-face route (2.5 hr is the south-side round trip from Pickell Pass)",
+   "evidence": "The 2.5-hour figure comes from an ascent of the south side from a Pickell Pass camp (2.5 hours round trip from the pass), not the named southwest-face route; the row's beta, pitch_detail[2] and itinerary all attribute it to the Pickell Pass variant. No source gives a time for the southwest face, so the unqualified PUBLISHED TIMES total is removed; the 2.5-hour figure stays where it is labelled.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/mystery-ridge-enchainment/"
+   ],
+   "patches": [
+    {
+     "id": "wa_swiss_peak_standard_route",
+     "fact": "Total time for the climb",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 2.5,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "fact": "Backcountry permit fee",
+   "verdict": "fixed",
+   "correct_value": "$10 per person plus a $6 permit fee (summer season)",
+   "evidence": "The park's fees page: no entrance fee; backcountry permits $10 per person plus a $6 non-refundable fee. The park's fee-change news release gives the same figures, charged mid-May through early October and free the rest of the year. The permit is not free.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/fees.htm",
+    "https://www.nps.gov/noca/learn/news/backcountry-permit-fee-structure-change.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_swiss_peak_standard_route",
+     "fact": "Backcountry permit fee",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "find": " (free, but a reservation fee applies for reserved permits via Recreation.gov).",
+     "replace": " ($10 per person plus a $6 permit fee from mid-May to early October; no charge the rest of the year)."
+    }
+   ]
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "fact": "Big Beaver Trail distance to Luna Camp",
+   "verdict": "fixed",
+   "correct_value": "roughly 10 miles from the Big Beaver landing",
+   "evidence": "One Luna Peak trip report reached Luna Camp after a 9.5-mile hike up the Big Beaver Creek trail from the water-taxi landing; another describes a ten-mile hike to Luna Camp from the landing; a third walked 11.5 miles from the landing to the Access Creek cut-off about a mile beyond Luna Camp. 'Roughly 10 miles' fits all three and the camp card's 8-10.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/Luna/Luna.htm",
+    "https://www.jessb.org/luna-peak/",
+    "https://trailcatjim.com/luna-peak-and-mount-fury-east-peak-via-luna-pass-northern-pickets/"
+   ],
+   "patches": [
+    {
+     "id": "wa_swiss_peak_standard_route",
+     "fact": "Big Beaver Trail distance to Luna Camp",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Follow it roughly 11 miles to Luna Camp",
+     "replace": "Follow it roughly 10 miles to Luna Camp"
+    },
+    {
+     "id": "wa_swiss_peak_standard_route",
+     "fact": "Big Beaver Trail distance to Luna Camp",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "follow it roughly 11 miles to Luna Camp",
+     "replace": "follow it roughly 10 miles to Luna Camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "fact": "Col gained from Access Creek",
+   "verdict": "fixed",
+   "correct_value": "Access Col (~6,100 ft) and Luna Col (~7,200 ft) are two places; Access Col is gained first",
+   "evidence": "One trip report climbs a scree chute from Access Creek Basin (4,300 ft) to the 6,100-ft Access Col southwest of the basin, then traverses onward toward Luna. The Luna Peak route description puts Luna Col at 7,200 ft, the notch beside Luna Peak reached across a basin at about 6,600 ft. They are separate cols, so the approach's 'Luna Col/Access Creek Col' is wrong; the bivy card's sequence is right.",
+   "sources": [
+    "https://trailcatjim.com/luna-peak-and-mount-fury-east-peak-via-luna-pass-northern-pickets/",
+    "https://www.summitpost.org/luna-peak/151781"
+   ],
+   "patches": [
+    {
+     "id": "wa_swiss_peak_standard_route",
+     "fact": "Col gained from Access Creek",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "From there, gain Luna Col/Access Creek Col and traverse",
+     "replace": "From there, climb to Access Col, cross to Luna Col, and traverse"
+    }
+   ]
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "fact": "Descent line off the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One Northern Pickets traverse account climbed the southwest face and descended near the northwest ridge, matching descent_text and beta; no second source describing the descent was found, and the short 'descent' field (which does not render beside the longer descent_text) was left unchanged.",
+   "sources": [
+    "https://drdirtbag.com/2017/08/08/northern-pickets-traverse-east-fury-to-challenger-vi-5-7-28h32/"
+   ],
+   "patches": []
+  }
+ ]
+}

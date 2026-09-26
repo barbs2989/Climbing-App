@@ -1,0 +1,592 @@
+{
+ "file": "r263.json",
+ "results": [
+  {
+   "id": "wa_south_face_2",
+   "fact": "Approach-day gain to Burgundy Col",
+   "verdict": "fixed",
+   "correct_value": "Day 1 (pullout to Burgundy Col) gains about 3,700 ft",
+   "evidence": "Burgundy Col approach is described as about 3,500 ft of gain from the highway pullout (net), and published elevations put the pullout at ~4,250 ft, Early Winters Creek ~170-300 ft below it, and the col at 7,720-7,950 ft, so the climb from the creek to the col is ~3,700 ft. The row's own waypoint note (3,700 ft above the creek) and approach text (creek 4,080 ft to col 7,770 ft) agree; 2,600 ft is roughly the gain to the ~6,400-6,500 ft bench camp, not the col.",
+   "sources": [
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+    "https://stephabegg.com/trip-reports/washington/paisano-burgundy/",
+    "https://www.summitpost.org/chianti-spire/229839",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_2",
+     "fact": "Approach-day gain to Burgundy Col",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2600,
+     "value": 3700
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_2",
+   "fact": "Rappel line used for descent / bail",
+   "verdict": "fixed",
+   "correct_value": "Rappel Pernod's south face to the Pernod-Chablis notch, scramble a short 4th-class link to the Chablis East Face rappel anchors, then two double-rope rappels down Chablis to the base.",
+   "evidence": "The South Face route page describes descending Pernod's south face (two ropes; a single 60 m leaves you several metres above the notch), then regaining the Chablis East Face raps with a short 4th-class scramble, and two double-rope raps from there to the base of the Chablis East Face. The Chablis East Face route page independently gives that line as two double-rope rappels back to the base. So `rappels` (two on Chablis) is right; descent_text wrongly put the two double-rope raps on Pernod's south face, bail implied Chablis anchors are reachable directly from the Pernod route, and the itinerary sent the rappels 'toward the col'.",
+   "sources": [
+    "https://www.mountainproject.com/route/119394671/south-face",
+    "https://www.mountainproject.com/route/109228122/east-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_2",
+     "fact": "Rappel line used for descent / bail",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Two double-rope rappels (60m ropes recommended; a single 70m can just barely work in spots, but a 60m single can leave you several meters short of the notch) bring you back down the south face.",
+     "replace": "Rappel the south face to the Pernod-Chablis notch on two ropes (60m ropes recommended; a single 70m can just barely work, but a 60m single can leave you several meters short of the notch)."
+    },
+    {
+     "id": "wa_south_face_2",
+     "fact": "Rappel line used for descent / bail",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Most parties reverse this rappel sequence to rejoin the East Face rappel line on Chablis (linked by a short 4th-class scramble) and ride those raps to the base, rather than re-climbing back over to Burgundy Col.",
+     "replace": "From the notch, a short 4th-class scramble regains the East Face rappel line on Chablis, and two double-rope rappels down that line reach the base, rather than re-climbing back over to Burgundy Col."
+    },
+    {
+     "id": "wa_south_face_2",
+     "fact": "Rappel line used for descent / bail",
+     "op": "replace_text",
+     "column": "bail",
+     "path": [],
+     "find": "From anywhere on the short 2-pitch route, two double-rope (60m) rappels from the Chablis East Face anchors return to the base.",
+     "replace": "From anywhere on the short 2-pitch route, rappel back to the Pernod-Chablis notch, scramble the short 4th-class link to the Chablis East Face anchors, and make two double-rope (60m) rappels from there to the base."
+    },
+    {
+     "id": "wa_south_face_2",
+     "fact": "Rappel line used for descent / bail",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Two double-rope (60m) rappels from the Chablis East Face anchors return climbers to the base.",
+     "replace": "Rappel the south face to the Pernod-Chablis notch, then two double-rope (60m) rappels from the Chablis East Face anchors return climbers to the base."
+    },
+    {
+     "id": "wa_south_face_2",
+     "fact": "Rappel line used for descent / bail",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "Standard rappel line off the spire back toward the col.",
+     "replace": "Rappel to the Pernod-Chablis notch, then two double-rope rappels down the Chablis East Face line."
+    },
+    {
+     "id": "wa_south_face_2",
+     "fact": "Rappel line used for descent / bail",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "two double-rope rappels on 60 m ropes bring you back down the south face. A single 70 m can just barely work in spots, but a single 60 m can leave you several metres short of the notch. Most parties reverse this sequence to rejoin the East Face rappel line on Chablis, linked by a short fourth-class scramble, and ride those raps to the base",
+     "replace": "rappel the south face to the notch on two 60 m ropes. A single 70 m can just barely work, but a single 60 m can leave you several metres short of the notch. From the notch a short fourth-class scramble regains the East Face rappel line on Chablis, and two double-rope rappels down it reach the base"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_2",
+   "fact": "Parking pass",
+   "verdict": "fixed",
+   "correct_value": "No pass needed at the SR-20 roadside pullout",
+   "evidence": "Two independent pages for the Wine Spires/Burgundy Col approach state that no Northwest Forest Pass is required at the SR-20 pullout because it is a state-highway shoulder, not a developed trailhead. One club route database lists 'Northwest Forest Pass' in its generic parking field for the area, which disagrees; the two specific statements are adopted, consistent with access.passRequired. The `permit` column is reworded so it no longer reads as requiring a pass for this route, and access.parking_pass now says the listed trailheads are elsewhere.",
+   "sources": [
+    "https://www.summitpost.org/burgundy-spire/151368",
+    "https://www.summitpost.org/chianti-spire/229839",
+    "https://www.mountaineers.org/activities/routes-places/wine-spires"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_2",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Northwest Forest Pass (or day fee) to park at developed trailheads.",
+     "replace": "no Northwest Forest Pass is needed to park at the SR-20 roadside pullout used for this approach (the pass applies at developed trailheads elsewhere in the corridor)."
+    },
+    {
+     "id": "wa_south_face_2",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads",
+     "replace": "Not needed at the SR-20 roadside pullout used for the Wine Spires. A Northwest Forest Pass is required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_2",
+   "fact": "Car-to-car gain_ft vs itinerary total (discovered)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "With day 1 corrected to ~3,700 ft to Burgundy Col, the itinerary days now total 4,600 ft (3,700 + 900) while gain_ft says 3,500. No outside source states a car-to-car gain for Pernod's South Face (one area page gives ~4,000 ft for the Wine Spires generally), so gain_ft is left for a sourced figure.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/wine-spires"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_2",
+   "fact": "Baseline says the Standard Route is reached from the bench (discovered)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Pernod's original 1952 route climbs from the notch between Pernod and Chianti on the northeast side; only the Direct West Face is reached from the bench gully.",
+   "evidence": "The 1952 first-ascent account has the party reach the notch between Pernod and Chianti from the east and start from a ledge on Pernod's northeast corner. A later trip account likewise climbs from Burgundy Col around to the north notch between Pernod and Chianti. The west-face gully from the bench is the Direct West Face approach.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star",
+    "https://www.summitpost.org/silver-star-mountain/297453",
+    "https://www.mountainproject.com/area/108106031/pernod-spire"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_2",
+     "fact": "Baseline says the Standard Route is reached from the bench (discovered)",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "West Face or Standard Route ground, not here. Those are reached from the BENCH, not from the col.",
+     "replace": "West Face ground, not here. That route is reached from the BENCH, not from the col."
+    }
+   ]
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only published grade found for Pernod's original route is an online comment calling Pernod and Chablis 'moderate 5.5-5.7, not sustained'. The 1952 first-ascent account describes a strenuous climb with direct aid, a bolt-protected insecure section, a pendulum and a bolted summit block, but gives no modern grade. The 5.8 / 5.9 (A0) pitch table and '5.9 (A0)' itinerary appear to be borrowed from the South Face route and have no source; no second source settles the free grade.",
+   "sources": [
+    "https://www.summitpost.org/chianti-spire/229839",
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Which face the route climbs / how it is approached",
+   "verdict": "unresolved",
+   "correct_value": "North/northeast side, from the notch between Pernod and Chianti (face and aspect are right)",
+   "evidence": "The 1952 first-ascent account: the party climbed from the Silver Star Creek side up the eastern walls to the notch between Pernod and Chianti, and the first lead went to a ledge on Pernod's northeast corner. A later trip account from a Burgundy Col camp climbs obliquely around to the north notch between Pernod and Chianti (~3 pitches of 4th/5th class). So `face`/`aspect` are correct, the approach and approach_variants (bench gully to the west face) describe the Direct West Face, and the itinerary/waypoint 'South Face' text describes the 1988 South Face. Rewriting the approach, approach_variants, itinerary and rappel_detail for this route is a structural rewrite beyond what the sources describe in detail (the approach from the col to the notch is only sketched), so it is flagged rather than patched.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star",
+    "https://www.summitpost.org/silver-star-mountain/297453",
+    "https://www.mountainproject.com/route/108106040/direct-west-face",
+    "https://www.mountainproject.com/route/119394671/south-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Descent line and rappel count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 1952 account says rappels led to the notch and then long rappels reached the glacier below (east side), which matches descent_text in direction; no count is given. rappel_detail and rappel_count_note describe the South Face descent (south face to the Chablis notch, then Chablis East Face raps), which belongs to another route. No second source gives the rappel count for this line.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star",
+    "https://www.mountainproject.com/route/119394671/south-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Commitment / length of day",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found giving a commitment grade for Pernod's original route. The 'easy day' line comes from a single online comment; the 1952 account calls it among the most strenuous climbs in the Cascades at the time. Nothing settles III vs III-IV vs a short day. (Separately, the beta sentence opens by crediting a guidebook, which the app's no-sources rule forbids.)",
+   "sources": [
+    "https://www.summitpost.org/chianti-spire/229839",
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Parking pass",
+   "verdict": "fixed",
+   "correct_value": "No pass needed at the SR-20 roadside pullout",
+   "evidence": "Two independent pages for the Wine Spires/Burgundy Col approach state that no Northwest Forest Pass is required at the SR-20 pullout because it is a state-highway shoulder, not a developed trailhead. One club route database lists 'Northwest Forest Pass' in its generic parking field for the area, which disagrees; the two specific statements are adopted, consistent with access.passRequired. The `permit` column is reworded so it no longer reads as requiring a pass for this route, and access.parking_pass now says the listed trailheads are elsewhere.",
+   "sources": [
+    "https://www.summitpost.org/burgundy-spire/151368",
+    "https://www.summitpost.org/chianti-spire/229839",
+    "https://www.mountaineers.org/activities/routes-places/wine-spires"
+   ],
+   "patches": [
+    {
+     "id": "wa_pernod_spire_standard",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Northwest Forest Pass (or day fee) to park at developed trailheads.",
+     "replace": "no Northwest Forest Pass is needed to park at the SR-20 roadside pullout used for this approach (the pass applies at developed trailheads elsewhere in the corridor)."
+    },
+    {
+     "id": "wa_pernod_spire_standard",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads",
+     "replace": "Not needed at the SR-20 roadside pullout used for the Wine Spires. A Northwest Forest Pass is required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads"
+    }
+   ]
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Approach-day gain to Burgundy Col (discovered)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Day 1 (pullout to Burgundy Col) gains about 3,700 ft",
+   "evidence": "Same approach and same error as the South Face row: day 1 targets the Burgundy Col bivy (~7,700-7,950 ft) from a ~4,250 ft pullout with a drop to the ~4,080 ft creek, which published figures put at ~3,500 ft net / ~3,700 ft above the creek; 2,600 ft is roughly the gain to the bench camp.",
+   "sources": [
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+    "https://stephabegg.com/trip-reports/washington/paisano-burgundy/",
+    "https://www.summitpost.org/chianti-spire/229839"
+   ],
+   "patches": [
+    {
+     "id": "wa_pernod_spire_standard",
+     "fact": "Approach-day gain to Burgundy Col (discovered)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 2600,
+     "value": 3700
+    }
+   ]
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "fact": "Car-to-car gain_ft vs itinerary total (discovered)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "With day 1 corrected to ~3,700 ft, the itinerary totals 4,600 ft while gain_ft says 4,000. One area page gives ~4,000 ft for the Wine Spires generally; no second source states a car-to-car figure for this route.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/wine-spires"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Crux pitch number and length",
+   "verdict": "fixed",
+   "correct_value": "Crux is pitch 3, 5.10+, a full 60 m pitch around the roof; pitch grades 5.8, 5.8, 5.10+, 5.9, 5.10, 5.9, 5.9, then 5.10 with an A0 summit block",
+   "evidence": "The first-ascent party's report names the third pitch as the crux — left around the big roof and up a steep off-fingers corner, a full 60 m at 5.10+ — and lists p1 5.8, p2 5.8, p3 5.10+, p4 5.9, p5 5.10, p6 5.9, p7 5.9, p8 5.10, with two old aid bolts on the summit block. The route's database page gives the same breakdown (P3 5.10+ crux, P5 5.10 with a 5.9R face finish, P8 two aid moves). The existing pitch table (crux on P6, P3 5.9/40 m, bolted belays) had no source and is replaced; unsourced pitch lengths are set to null.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/43697-tr-pernod-spire-direct-west-face-iii-iv-510/",
+    "https://www.mountainproject.com/route/108106040/direct-west-face",
+    "http://publications.americanalpineclub.org/articles/12200615300/North-America-United-States-Washington-The-Washington-Pass-Traverse"
+   ],
+   "patches": [
+    {
+     "id": "wa_direct_west_face",
+     "fact": "Crux pitch number and length",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.7",
+       "notes": "Access pitch off the talus/scree gully onto the lower west face, following corners and cracks on clean granite to establish the line up the tallest wall in the Wine Spires.",
+       "pitch": 1,
+       "anchor": "Gear",
+       "lengthM": 40
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.8",
+       "notes": "Sustained face and crack climbing continuing up the wall; solid rock with good pro in intermittent cracks between blanker sections.",
+       "pitch": 2,
+       "anchor": "Gear",
+       "lengthM": 45
+      },
+      {
+       "crux": false,
+       "bolts": 1,
+       "grade": "5.9",
+       "notes": "Technical face moves connect discontinuous crack systems; a single fixed bolt backs up the belay where natural gear placements thin out.",
+       "pitch": 3,
+       "anchor": "1-bolt + gear anchor",
+       "lengthM": 40
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.9+",
+       "notes": "Continues the sustained nature of the route noted by the first ascent party — high-quality but strenuous face climbing that keeps the grade well above moderate for a full rope-length.",
+       "pitch": 4,
+       "anchor": "Gear",
+       "lengthM": 45
+      },
+      {
+       "crux": false,
+       "bolts": 2,
+       "grade": "5.10-",
+       "notes": "Steep face climbing on the upper wall using small edges and side-pulls; two fixed bolts anchor the stance below the route's hardest pitch.",
+       "pitch": 5,
+       "anchor": "2-bolt anchor",
+       "lengthM": 35
+      },
+      {
+       "crux": true,
+       "bolts": 0,
+       "grade": "5.10+ R",
+       "notes": "The technical crux pitch: sustained, high-quality face climbing where protection opportunities thin out and the runout (the route's \"R\" rating) is most pronounced — confident face-climbing technique matters more than gear here.",
+       "pitch": 6,
+       "anchor": "Gear (sparse)",
+       "lengthM": 40
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.9",
+       "notes": "Easing slightly from the crux below, this pitch works up cracks and flakes toward the summit ridge, still sustained but with better protection than the pitch beneath it.",
+       "pitch": 7,
+       "anchor": "Gear",
+       "lengthM": 40
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.6",
+       "notes": "Final, easier pitch gaining the summit ridge at the route's only fixed rappel anchor (nuts left in place); old aid-era bolts nearby (one missing its hanger, another loose) should be treated as unreliable rather than used as pro or anchor.",
+       "pitch": 8,
+       "anchor": "Fixed nut anchor (summit ridge)",
+       "lengthM": 45
+      }
+     ],
+     "value": [
+      {
+       "crux": false,
+       "bolts": null,
+       "grade": "5.8",
+       "notes": "Starts just left of the toe of the face in an obvious corner: hand cracks and a corner on dark, solid rock up to slabs beneath the big wave-shaped roof.",
+       "pitch": 1,
+       "anchor": null,
+       "lengthM": null
+      },
+      {
+       "crux": false,
+       "bolts": null,
+       "grade": "5.8",
+       "notes": "A thin crack and slab angle up and right to a belay directly under the roof.",
+       "pitch": 2,
+       "anchor": null,
+       "lengthM": null
+      },
+      {
+       "crux": true,
+       "bolts": null,
+       "grade": "5.10+",
+       "notes": "The crux: traverse left on slabs around the roof, then climb a steep corner with an off-fingers crack and a bulge, with stemming, finishing left into a seam and grooves. A full 60 m pitch.",
+       "pitch": 3,
+       "anchor": null,
+       "lengthM": 60
+      },
+      {
+       "crux": false,
+       "bolts": null,
+       "grade": "5.9",
+       "notes": "Step left across a slab into more cracks; intermittent finger cracks run a full rope length between a corner and a large freestanding horn.",
+       "pitch": 4,
+       "anchor": null,
+       "lengthM": null
+      },
+      {
+       "crux": false,
+       "bolts": null,
+       "grade": "5.10",
+       "notes": "A committing move off the belay, then an arching corner with a thin finger crack under its lip; pull over the lip onto roughly 30 ft of runout face and slab.",
+       "pitch": 5,
+       "anchor": null,
+       "lengthM": null
+      },
+      {
+       "crux": false,
+       "bolts": null,
+       "grade": "5.9",
+       "notes": "Broken face through a small notch, then left onto good cracks.",
+       "pitch": 6,
+       "anchor": null,
+       "lengthM": null
+      },
+      {
+       "crux": false,
+       "bolts": null,
+       "grade": "5.9",
+       "notes": "A crack that seams out briefly leads to the ridge crest. The narrow crest does not connect to the summit; a fixed nut anchor there serves a 60 m rappel to sandy benches below.",
+       "pitch": 7,
+       "anchor": "Fixed nut rappel anchor on the ridge crest",
+       "lengthM": null
+      },
+      {
+       "crux": false,
+       "bolts": 2,
+       "grade": "5.10, A0",
+       "notes": "From the benches, a 5.10 corner leads to the summit block, which is climbed on two old aid bolts — one without a hanger, the other loose in its hole.",
+       "pitch": 8,
+       "anchor": "Old aid bolts (summit block)",
+       "lengthM": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Rope kit",
+   "verdict": "fixed",
+   "correct_value": "double (two 60 m ropes)",
+   "evidence": "The first-ascent report's gear notes list two 60 m ropes, and the route page requires two 60 m ropes; every other kit and descent field on the row agrees. rope_type 'single' was the outlier.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/43697-tr-pernod-spire-direct-west-face-iii-iv-510/",
+    "https://www.mountainproject.com/route/108106040/direct-west-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_direct_west_face",
+     "fact": "Rope kit",
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single",
+     "value": "double"
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Approach-day gain to the bench",
+   "verdict": "fixed",
+   "correct_value": "About 2,400 ft to the bench camp",
+   "evidence": "Published elevations put the pullout at ~4,250 ft, Early Winters Creek ~170-300 ft below it, and the bench camp at ~6,400-6,500 ft; one club route page lists the trailhead-to-camp segment at +2,600 ft, and the row's own approach says 'close to 2,400 ft' from the creek. 1,100 ft cannot reach a bench over 2,000 ft above the car.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/paisano-burgundy/",
+    "https://www.summitpost.org/chianti-spire/229839",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier"
+   ],
+   "patches": [
+    {
+     "id": "wa_direct_west_face",
+     "fact": "Approach-day gain to the bench",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 1100,
+     "value": 2400
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Overnight permit",
+   "verdict": "fixed",
+   "correct_value": "No climbing or overnight permit required",
+   "evidence": "Area pages state there is no red tape and no camping permit for the Wine Spires/Burgundy Col approach (Okanogan-Wenatchee NF, outside designated wilderness). The row's permit, access.rules, overnight_permit and every bivy card agree; access.permit was the outlier.",
+   "sources": [
+    "https://www.summitpost.org/chianti-spire/229839",
+    "https://www.summitpost.org/burgundy-spire/151368"
+   ],
+   "patches": [
+    {
+     "id": "wa_direct_west_face",
+     "fact": "Overnight permit",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "permit"
+     ],
+     "expect": "Free self-issued wilderness permit for overnight stays",
+     "value": "No climbing or overnight permit required"
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Parking pass",
+   "verdict": "fixed",
+   "correct_value": "No pass needed at the SR-20 roadside pullout",
+   "evidence": "Two independent pages for the Wine Spires/Burgundy Col approach state that no Northwest Forest Pass is required at the SR-20 pullout because it is a state-highway shoulder, not a developed trailhead. One club route database lists 'Northwest Forest Pass' in its generic parking field for the area, which disagrees; the two specific statements are adopted, consistent with access.passRequired. The `permit` column is reworded so it no longer reads as requiring a pass for this route, and access.parking_pass now says the listed trailheads are elsewhere.",
+   "sources": [
+    "https://www.summitpost.org/burgundy-spire/151368",
+    "https://www.summitpost.org/chianti-spire/229839",
+    "https://www.mountaineers.org/activities/routes-places/wine-spires"
+   ],
+   "patches": [
+    {
+     "id": "wa_direct_west_face",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Northwest Forest Pass (or day fee) to park at developed trailheads.",
+     "replace": "no Northwest Forest Pass is needed to park at the SR-20 roadside pullout used for this approach (the pass applies at developed trailheads elsewhere in the corridor)."
+    },
+    {
+     "id": "wa_direct_west_face",
+     "fact": "Parking pass",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads",
+     "replace": "Not needed at the SR-20 roadside pullout used for the Wine Spires. A Northwest Forest Pass is required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads"
+    }
+   ]
+  },
+  {
+   "id": "wa_direct_west_face",
+   "fact": "Car-to-car gain_ft vs itinerary total (discovered)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "With day 1 corrected to ~2,400 ft, the itinerary totals 4,700 ft (2,400 + 2,300) while gain_ft says 3,400. No source states a car-to-car gain for this route, so gain_ft is left for a sourced figure.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

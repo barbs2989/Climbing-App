@@ -1,0 +1,2460 @@
+{
+ "batches": [
+  "b129.json",
+  "b130.json",
+  "b131.json",
+  "b132.json"
+ ],
+ "routes_read": 18,
+ "routes": [
+  {
+   "id": "wa_little_tahoma_cowlitz_ingraham_glaciers",
+   "name": "Cowlitz/Ingraham Glaciers (South Face)",
+   "area": "Little Tahoma Peak",
+   "contradictions": [
+    {
+     "fact": "High camp: Camp Muir vs camps below it on the traverse",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "bivy[0].name",
+       "says": "Camp Muir"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "10188"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "From here the route traverses east across the Cowlitz and Ingraham glaciers to Little Tahoma."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "You step off the Camp Muir track while still about 1,500 ft BELOW Camp Muir. IF YOU REACH CAMP MUIR YOU HAVE GONE TOO FAR"
+      },
+      {
+       "field": "approach",
+       "says": "Camp is commonly made on the Cowlitz or Ingraham glacier, or on the more exposed Cathedral Rocks cleaver."
+      },
+      {
+       "field": "itinerary",
+       "says": "approach from Paradise to a camp on the Cowlitz/Ingraham glacier or Cathedral Rocks cleaver"
+      }
+     ],
+     "why": "The only camp card sends parties to Camp Muir and says the traverse leaves from there, but the approach says the traverse leaves the Muir track at 8,600 ft and that reaching Camp Muir means you have gone too far.",
+     "internal_resolution": "approach, approach_variants, beta, pro_tips and itinerary all agree: leave the Muir route at ~8,600 ft and camp on the Cowlitz/Ingraham glacier or the Cathedral Rocks cleaver. The Camp Muir bivy entry is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "name": "Frying Pan / Whitman Glaciers",
+   "area": "Little Tahoma Peak",
+   "contradictions": [
+    {
+     "fact": "Season window vs June optimal",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep (best early July-early Aug while glaciers are well-filled and rock is more often frozen)"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "June-early August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "Prime window / optimal"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "Best climbed June-August"
+      },
+      {
+       "field": "road.status",
+       "says": "Seasonal — typically opens late June to early July"
+      },
+      {
+       "field": "best_season",
+       "says": "Early July into early August is the genuinely optimal window"
+      }
+     ],
+     "why": "Seasonal guidance calls June the prime window, which is outside the Jul-Sep season, and the road to the trailhead usually isn't open until late June or early July.",
+     "internal_resolution": "season, best_season, pro_tips and the road opening date all put the window at July onward; the June 'optimal' rating is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead distance past White River entrance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "about 5 miles past the White River entrance station"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "about 2.9 mi past the White River entrance station"
+      }
+     ],
+     "why": "The two fields give different distances from the entrance station to the Fryingpan Creek Trailhead.",
+     "internal_resolution": "The East Shoulder row on the same trailhead also says 2.9 mi (road, waypoint, approach_logistics), so the 5-mile figure in approach is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass / climbing permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit."
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park)."
+      },
+      {
+       "field": "access.permit",
+       "says": "Climbing registration required for all travel above 10,000 ft or on any glacier"
+      }
+     ],
+     "why": "access.notes says a Northwest Forest Pass is required and no climbing permit is needed, which contradicts the parking_pass, permit and fees fields on the same card.",
+     "internal_resolution": "Every other access field, plus permit and bivy, says an NPS entrance fee applies (not a NWFP) and that the $82 climbing registration is required; access.notes is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit timing vs turnaround",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "aim to be on and off it by mid-morning"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].time",
+       "says": "~12:45 PM"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].label",
+       "says": "Reach the summit"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "6:30 AM from camp"
+      }
+     ],
+     "why": "The turnaround says to be on and off the summit block by mid-morning, but the schedule leaves camp at 6:30 AM and reaches the summit at about 12:45 PM.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Day-1 camp location vs mileage",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4.5"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "to a rocky camp overlooking the Fryingpan Glacier at roughly 7,350 ft"
+      },
+      {
+       "field": "approach",
+       "says": "reaching that popular alpine backcountry camp [Summerland] ... at about 4.5 miles and roughly 2,500 ft gain (~5,900 ft elevation)"
+      }
+     ],
+     "why": "Day 1 reaches a 7,350 ft camp above Meany Crest in 4.5 miles, but the approach says 4.5 miles only gets you to Summerland at 5,900 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "name": "East Shoulder",
+   "area": "Little Tahoma Peak",
+   "contradictions": [
+    {
+     "fact": "High camp elevation and distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "to a rocky bivy site around 7,900 ft"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach a high camp near Whitman Crest at ~7,900 ft"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4"
+      },
+      {
+       "field": "approach",
+       "says": "rock outcrops around 7,000-7,350 ft — the standard high camp"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "7500"
+      },
+      {
+       "field": "waypoints[1].distMi",
+       "says": "4.5 (Summerland)"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Toe of Fryingpan Glacier, elev 7900, distMi 6.2"
+      }
+     ],
+     "why": "The itinerary puts high camp at ~7,900 ft only 4 miles in, while the approach and camp card put the standard high camp at 7,000-7,500 ft, and the waypoints put 7,900 ft at 6.2 miles (Summerland alone is at 4.5 mi).",
+     "internal_resolution": "approach, climbing_route, pitch_detail, approach_variants and bivy agree the standard high camp is Meany Crest at ~7,000-7,500 ft; the itinerary's 7,900 ft / 4 mi camp is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rappel on descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "0"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "old anchors may be found, and a rappel is common on the way down."
+      },
+      {
+       "field": "descent",
+       "says": "downclimb the summit block"
+      }
+     ],
+     "why": "The rappel count says 0 and the descent says downclimb, but the summit-block pitch says a rappel is common on the way down.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit timing vs turnaround",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "aim to be on and off it by mid-morning"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].time",
+       "says": "Late morning"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].label",
+       "says": "Reach the summit"
+      }
+     ],
+     "why": "The turnaround says to be off the summit block by mid-morning, but the schedule reaches the summit in the late morning.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit block difficulty",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "a short but serious Class 4 scramble (30-40 feet)"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].detail",
+       "says": "Class 2-3 rock finish along the narrow, crumbly east ridge"
+      },
+      {
+       "field": "grade",
+       "says": "Grade II+, Class 3-4"
+      }
+     ],
+     "why": "The itinerary calls the summit finish Class 2-3, while the beta calls it serious Class 4.",
+     "internal_resolution": "grade, rock_grade, pitch_detail and climbing_route say Class 3-4; the itinerary's 'Class 2-3' understates it.",
+     "needs_research": false
+    },
+    {
+     "fact": "Fryingpan Creek crossing location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0]",
+       "says": "Fryingpan Creek crossing, elev 4300, distMi 2"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "At roughly 3.2 miles and about 1,400 ft of gain there is an established footlog crossing of Fryingpan Creek"
+      }
+     ],
+     "why": "The waypoint puts the creek crossing at 2 mi and 4,300 ft, while the approach puts it at 3.2 mi and ~1,400 ft above a ~3,800 ft trailhead (~5,200 ft).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing registration: self-issue or not",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "self-issued for free after paying the $82 climbing fee"
+      },
+      {
+       "field": "access.notes",
+       "says": "Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center"
+      },
+      {
+       "field": "access.notes",
+       "says": "Winter (Sept 16–May 21)"
+      }
+     ],
+     "why": "access.permit says registration is self-issued, but access.notes says summer registration can't be self-issued. The winter and summer date ranges also overlap from Sept 16 to 30.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "name": "Adams Glacier",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "High camp elevation",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach ~9,000 ft high camp below the Adams Glacier"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~5 hr approach to a 9,000 ft high camp"
+      },
+      {
+       "field": "approach",
+       "says": "continue about 1.0 mile further to its end at roughly 6,900 ft ... this is the standard High Camp"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6900"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "7000"
+      }
+     ],
+     "why": "The itinerary puts high camp at 9,000 ft, while the approach, camp card, waypoints and approach_variants put High Camp at ~6,900-7,100 ft (the icefall itself starts near 9,000-9,200 ft).",
+     "internal_resolution": "Every field except the itinerary agrees on High Camp at ~6,900-7,000 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance to High Camp",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "8.6"
+      },
+      {
+       "field": "approach",
+       "says": "Total approach is roughly 4 miles and ~2,300–2,500 ft of gain to camp"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "4.1"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "5"
+      }
+     ],
+     "why": "Day 1 is 8.6 miles to camp, roughly double the ~4 miles the approach, approach_variants and camp card give.",
+     "internal_resolution": "approach, approach_variants and the bivy card agree on ~4 mi and ~2,300 ft; the itinerary's 8.6 mi and 2,900 ft are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5150"
+      },
+      {
+       "field": "loss_ft",
+       "says": "7680"
+      },
+      {
+       "field": "itinerary.days[1].gainFt + days[0].gainFt",
+       "says": "7680"
+      },
+      {
+       "field": "approach",
+       "says": "Killen Creek Trailhead (~4,600 ft)"
+      }
+     ],
+     "why": "The header gain of 5,150 ft is far below the loss_ft and itinerary totals of 7,680 ft, which match the rise from the ~4,600 ft trailhead to the 12,276 ft summit.",
+     "internal_resolution": "loss_ft, the itinerary sum and the trailhead-to-summit difference all give ~7,680 ft; gain_ft 5,150 looks like camp-to-summit only.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier base elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[3].elev",
+       "says": "8000 (Adams Glacier Base)"
+      },
+      {
+       "field": "approach",
+       "says": "ascend the moraine/snow gully to the toe of the Adams Glacier (~7,000–7,300 ft)"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The base is the toe of the glacier at roughly 7,000–7,300 ft"
+      }
+     ],
+     "why": "The waypoint puts the glacier base at 8,000 ft, while the approach and approach_variants put the toe at 7,000-7,300 ft.",
+     "internal_resolution": "approach and approach_variants agree on 7,000-7,300 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Steepness of the route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "sustained 50-55° ice/snow with sections to ~65°"
+      },
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "typically a 45° ice slope of about two pitches"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "a series of ice steps around 45°"
+      },
+      {
+       "field": "hazards[2]",
+       "says": "Steep ice steps up to ~50°"
+      },
+      {
+       "field": "max_angle",
+       "says": "65"
+      }
+     ],
+     "why": "The gear list describes sustained 50-55° with sections to 65°, but the pitch breakdown and hazards describe 45° steps up to ~50°. Per the summit waypoint, 55-65° applies only to the left-hand upper-icefall option.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Nights at High Camp / trip shape",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "plan on a camp at High Camp both before and after the climb"
+      },
+      {
+       "field": "itinerary.days[1].title",
+       "says": "Climb the Adams Glacier icefall, descend to the car"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "descending all the way to the car by evening"
+      }
+     ],
+     "why": "The descent text says to plan on camping at High Camp before and after the climb, but the itinerary descends to the car on summit day.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit plateau traverse",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "tops out on the upper mountain ... close to the true summit (12,276 ft) rather than requiring a full crater traverse"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "it is a long, gentle traverse across the summit plateau to the true summit"
+      },
+      {
+       "field": "beta",
+       "says": "before a long traverse of the summit plateau to the true summit"
+      }
+     ],
+     "why": "The descent text says the route tops out close to the true summit, while the beta and pitch breakdown describe a long traverse across the plateau.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs 'top out early'",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].schedule[4].time",
+       "says": "Early-mid afternoon (Summit)"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Top out early; the icefall below gets more active as the day warms."
+      },
+      {
+       "field": "overview",
+       "says": "Climbers should top out early"
+      }
+     ],
+     "why": "The schedule summits in the early to mid afternoon, while the overview and pitch notes say to top out early.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Ice screw count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[1]",
+       "says": "3-4 long ice screws ... (some parties carry more, up to 6-8"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "6–8 ice screws"
+      }
+     ],
+     "why": "The gear list says 3-4 screws and the rack says 6-8.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead parking pass at Killen Creek",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "No trailhead parking pass is required at the Killen Creek Trailhead."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Northwest Forest Pass or equivalent for trailhead parking."
+      }
+     ],
+     "why": "The access card says no parking pass is needed at Killen Creek while the High Camp card tells climbers to display a Northwest Forest Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "name": "South Climb (South Spur)",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Grade I"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      }
+     ],
+     "why": "The grade column says Grade I while the commitment chip says II.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing pass season and purchase",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "required ... (June 1 to September 30 per the Forest Service) ... Both can be self-issued at the trailhead ... Weekend and weekday rates differ"
+      },
+      {
+       "field": "permit",
+       "says": "required above 7,000 ft May 1-Sep 30, sold per trip on Recreation.gov"
+      },
+      {
+       "field": "access.fees",
+       "says": "$20/person (age 16+) Mt. Adams Climbing Pass required above 7,000 ft, May 1–Sep 30 (purchased on Recreation.gov)"
+      },
+      {
+       "field": "access.notes",
+       "says": "Purchase online in advance — no cell coverage at the trailhead"
+      }
+     ],
+     "why": "approach_variants says the pass season starts June 1, can be self-issued at the trailhead and has weekday/weekend rates. The permit, access and bivy fields say May 1-Sep 30, a flat $20 bought in advance on Recreation.gov.",
+     "internal_resolution": "permit, access.fees/notes/overnight_permit and bivy all agree on May 1-Sep 30 and online purchase; approach_variants is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "best_season",
+       "says": "Late June through September is the standard window, once the access road has melted out"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "Prime window / optimal"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May",
+       "says": "Season opens / good"
+      },
+      {
+       "field": "season",
+       "says": "May-Sep"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Typically melted out and accessible by June"
+      }
+     ],
+     "why": "best_season starts the window in late June, but seasonal_guidance rates all of June optimal and May good.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Timing totals",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "12"
+      },
+      {
+       "field": "timing.approachTimeHrs",
+       "says": "4"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "7"
+      },
+      {
+       "field": "timing.descentTimeHrs",
+       "says": "5"
+      }
+     ],
+     "why": "The timing sections add up to 16 hours, but the total says 12.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "name": "North Face of the Northwest Ridge",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "Permit requirement (contaminated access note)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "No permit required. Free wilderness permit for overnight (optional). Mount Index, North Cascades area."
+      },
+      {
+       "field": "access.permit",
+       "says": "Cascade Volcano Pass / Mt. Adams Climbing Pass via recreation.gov"
+      },
+      {
+       "field": "permit",
+       "says": "Mt. Adams Climbing Pass (Cascade Volcano Pass) required above 7,000 ft"
+      }
+     ],
+     "why": "access.notes says no permit is required and names Mount Index in the North Cascades, which is text from a different peak. It contradicts the climbing-pass requirement stated everywhere else on this route.",
+     "internal_resolution": "All other permit and access fields require the Mt. Adams Climbing Pass; access.notes is contaminated text.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead parking (wrong trailhead)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "Cold Springs/South Climb Trailhead day-use fee: $5/vehicle/day or $30/year"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Killen Creek Trailhead (Trail #113, FR-2329)"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Northwest Forest Pass or equivalent for trailhead parking."
+      }
+     ],
+     "why": "The parking rule describes the Cold Springs/South Climb trailhead on the other side of the mountain, while this route starts at Killen Creek.",
+     "internal_resolution": "approach, approach_logistics, waypoints and road all use Killen Creek.",
+     "needs_research": false
+    },
+    {
+     "fact": "Side of the Adams Glacier",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "face",
+       "says": "Northwest Ridge, climber's right of Adams Glacier terminus"
+      },
+      {
+       "field": "beta",
+       "says": "between the Adams Glacier (on climber's right) and the Northwest Ridge crest (on climber's left"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THE ADAMS GLACIER SHOULD BE ON YOUR RIGHT AND THE CREST OF THE NORTHWEST RIDGE ON YOUR LEFT"
+      }
+     ],
+     "why": "The face field puts the route on climber's right of the Adams Glacier, but the beta and baseFinding put the glacier on climber's right, so the route is on its left.",
+     "internal_resolution": "beta and approach_variants agree the Adams Glacier is on climber's right.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which ridge crest the route joins",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "above that, escape onto the North Ridge crest once angle allows"
+      },
+      {
+       "field": "beta",
+       "says": "to the ridge crest near 10,000 ft"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the route joins the NORTHWEST RIDGE CREST near 10,000 ft"
+      },
+      {
+       "field": "pro_tips[1]",
+       "says": "until you need to exit onto it near 10,000 ft"
+      }
+     ],
+     "why": "The bail sends parties onto the North Ridge crest, but the route runs beside and exits onto the Northwest Ridge crest. The North Ridge lies on the far side of the Adams Glacier.",
+     "internal_resolution": "beta, pro_tips and approach_variants all say the Northwest Ridge crest.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "name": "North Ridge",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "High camp elevation",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach ~9,000 ft high camp below the North Ridge"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "before climbing onto snow to a high camp around 9,000 ft"
+      },
+      {
+       "field": "approach",
+       "says": "continues to High Camp — roughly 4 mi and 2,300 ft of gain total"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "6900"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "7000"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "High Camp (~6,900 ft)"
+      }
+     ],
+     "why": "The itinerary and timing put high camp at ~9,000 ft, while the approach, camp card, waypoint and partner fields put High Camp at ~6,900-7,000 ft.",
+     "internal_resolution": "All fields except the itinerary and sectionBreakdown agree on ~6,900-7,000 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance and total distance",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "8.6"
+      },
+      {
+       "field": "itinerary.days[2].miles",
+       "says": "8.6"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 4 mi and 2,300 ft of gain total from the trailhead"
+      },
+      {
+       "field": "approach_variants[0].distMi",
+       "says": "4.1"
+      },
+      {
+       "field": "dist_km",
+       "says": "5.6"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "11.5"
+      }
+     ],
+     "why": "The itinerary has 8.6 miles each way to High Camp against ~4 miles in the approach. The header distance of 5.6 km (3.5 mi) is shorter than the walk to camp, and the summit waypoint says 11.5 mi.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain/loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7691"
+      },
+      {
+       "field": "loss_ft",
+       "says": "7690"
+      },
+      {
+       "field": "itinerary days gainFt sum",
+       "says": "6200 (2900 + 3300)"
+      }
+     ],
+     "why": "The itinerary gains only 6,200 ft to the summit (built on the 9,000 ft camp), while gain_ft says 7,691 ft, which matches the trailhead-to-summit rise.",
+     "internal_resolution": "gain_ft matches the ~4,600 ft trailhead to 12,276 ft summit; the itinerary is off because of its 9,000 ft camp.",
+     "needs_research": false
+    },
+    {
+     "fact": "Standard descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "Most parties descend the South Climb to Cold Springs (requiring a car shuttle)"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "reversing the route back to High Camp"
+      },
+      {
+       "field": "descent",
+       "says": "Retrace route via North Ridge and Lava Glacier back to high camp."
+      }
+     ],
+     "why": "The descent text says most parties descend the South Climb with a shuttle, while the itinerary and the descent field make reversing the ridge to High Camp the default plan.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Last reliable water",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "crossing East Fork Adams Creek (last reliable water)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Killen Creek low on the trail is the last dependable water."
+      }
+     ],
+     "why": "The itinerary and approach_variants name different creeks as the last reliable water.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season end vs August rating",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Sep"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "June through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.August",
+       "says": "Outside the June-to-mid-July window ... / risky"
+      }
+     ],
+     "why": "The season runs through September, but seasonal guidance says August is outside the window and rates it risky.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Glaciers crossed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[1]",
+       "says": "Crevasses on the Lava and Lyman glacier approaches"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "rope for crevasses between Adams/Lava glaciers"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "separates the Adams Glacier on its west from the Lava Glacier ground on its east"
+      }
+     ],
+     "why": "The hazards list the Lyman Glacier, which lies beyond Lava Ridge and isn't on this route. Every other field names the Adams and Lava glaciers.",
+     "internal_resolution": "pitch_detail and approach_variants name the Adams/Lava glaciers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead parking pass at Killen Creek",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "No trailhead parking pass is required at the Killen Creek Trailhead."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Northwest Forest Pass or equivalent for trailhead parking."
+      }
+     ],
+     "why": "The access card says no parking pass is needed at Killen Creek while the High Camp card tells climbers to display a Northwest Forest Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "name": "Lyman Glacier",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "Trailhead (Killen Creek vs Muddy Meadows)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Muddy Meadows is the trailhead for this approach, not Killen Creek (which serves the due-north Adams Glacier route)."
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Killen Creek Trailhead (Trail #113, FR-2329)"
+      },
+      {
+       "field": "approach",
+       "says": "From the Killen Creek Trailhead (FS Rd 2329 ...), follow Killen Creek Trail #113"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Killen Creek Trailhead (Trail #113, FR-2329)"
+      }
+     ],
+     "why": "The trailhead waypoint's own note says this route starts from Muddy Meadows and not Killen Creek, while the approach, approach_logistics, approach_variants and itinerary all start at Killen Creek.",
+     "internal_resolution": "approach, approach_variants, approach_logistics, road and itinerary all use Killen Creek via High Camp; the waypoint note is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "III"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade II"
+      },
+      {
+       "field": "commitment",
+       "says": "II"
+      },
+      {
+       "field": "rope_note",
+       "says": "North Lyman Glacier, Grade II ice route."
+      }
+     ],
+     "why": "The grade column says III, while the alpine grade, commitment and rope note all say Grade II.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Jun"
+      },
+      {
+       "field": "best_season",
+       "says": "June to July"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "June to July"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May",
+       "says": "Deep spring snowpack; road/approach access may be limited / marginal"
+      },
+      {
+       "field": "access.closures",
+       "says": "Access roads typically snow-blocked into June"
+      }
+     ],
+     "why": "The season is May-Jun, but the best window is June-July. May is rated marginal with the roads snow-blocked, and July falls outside the season.",
+     "internal_resolution": "best_season, seasonal_guidance and approach_variants.season agree on Jun-Jul.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance / total distance",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "8.6"
+      },
+      {
+       "field": "itinerary.days[2].miles",
+       "says": "8.6"
+      },
+      {
+       "field": "dist_km",
+       "says": "37.3"
+      },
+      {
+       "field": "approach",
+       "says": "about 3.1 miles from the trailhead ... about 1.0 mile to High Camp"
+      }
+     ],
+     "why": "The itinerary walks 8.6 miles each way to High Camp and dist_km (37.3 km) follows it, while the approach puts High Camp about 4.1 miles from the trailhead.",
+     "internal_resolution": "approach, approach_variants and the bivy card agree on ~4 mi to High Camp.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5000"
+      },
+      {
+       "field": "loss_ft",
+       "says": "5000"
+      },
+      {
+       "field": "itinerary days gainFt sum",
+       "says": "6700 (2900 + 3800)"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4140"
+      }
+     ],
+     "why": "The gain columns say 5,000 ft and the itinerary 6,700 ft. Neither reaches the ~8,100 ft from the 4,140 ft trailhead to the 12,276 ft summit, and day 2's 3,800 ft from the 6,900 ft camp stops short of the summit.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rack: screws and pickets",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "A handful of pickets ... plus 2-3 ice screws"
+      },
+      {
+       "field": "sling_rack.pickets",
+       "says": "2"
+      },
+      {
+       "field": "sling_rack.ice_screws",
+       "says": "4-5 long screws"
+      },
+      {
+       "field": "gear[2]",
+       "says": "3-4 long ice screws"
+      },
+      {
+       "field": "gear[3]",
+       "says": "4 pickets"
+      }
+     ],
+     "why": "The rack fields give 2-3, 3-4 and 4-5 ice screws and 2, 4 or 'a handful' of pickets.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "retracing the ascent when possible"
+      },
+      {
+       "field": "descent_text",
+       "says": "Standard descent is the North Ridge (also called the North Cleaver)"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "you do not come back this way. The walk-off is the North Ridge"
+      }
+     ],
+     "why": "The short descent field says to retrace the ascent, while the descent text, gear note and approach_variants say the standard descent is the North Ridge, not a reversal.",
+     "internal_resolution": "descent_text (the rendered one), gear and approach_variants agree on the North Ridge.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "4140"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "reached by the Killen Creek trail from about 4,600 ft"
+      }
+     ],
+     "why": "The waypoint and the camp card give trailhead elevations about 460 ft apart.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead parking pass at Killen Creek",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "No trailhead parking pass is required at the Killen Creek Trailhead."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Northwest Forest Pass or equivalent for trailhead parking."
+      }
+     ],
+     "why": "The access card says no parking pass is needed at Killen Creek while the High Camp card tells climbers to display a Northwest Forest Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_mazama_glacier_headwall",
+   "name": "Mazama Glacier Headwall",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "Season vs access window",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "Spring or summer for optimal snow/ice conditions."
+      },
+      {
+       "field": "access.closures",
+       "says": "Non-tribal-member season restricted to roughly July 1–October 1"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "That window has historically run from about the start of July to the start of October"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "non-tribal access to this side has historically been limited to a mid-summer to early-autumn window"
+      }
+     ],
+     "why": "The season starts in May and best_season says spring, but non-tribal climbers can only reach the Bird Creek Meadows start from about July 1, which is the only way in from this side.",
+     "internal_resolution": "access, waypoint directions and approach_variants agree access is ~July 1-Oct 1.",
+     "needs_research": false
+    },
+    {
+     "fact": "Headwall elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2].elev",
+       "says": "11600 (Mazama Glacier Headwall)"
+      },
+      {
+       "field": "climbing_route[1].label",
+       "says": "Headwall at about 11,300 ft"
+      }
+     ],
+     "why": "The waypoint and the climbing route put the headwall about 300 ft apart.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "name": "Avalanche Glacier",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "Side of the mountain on the approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "traverse via round-the-mountain trail to the northwest side of Mount Adams, approach glacier directly from southwest"
+      },
+      {
+       "field": "approach_variants[0].name",
+       "says": "Cold Springs, then west around onto the southwest flank"
+      },
+      {
+       "field": "beta",
+       "says": "ascent on the SW slopes"
+      },
+      {
+       "field": "face",
+       "says": "Avalanche Glacier / South side, next to Southwest Chutes"
+      }
+     ],
+     "why": "The approach sends parties to the northwest side of the mountain, while approach_variants, beta and face all put the route on the southwest flank.",
+     "internal_resolution": "approach_variants, beta, turnaround and face all say southwest.",
+     "needs_research": false
+    },
+    {
+     "fact": "Drive direction to Cold Springs",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "South from Randle, WA; accessible via Forest Road 23"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "Access from Trout Lake toward Morrison Creek Campground/Cold Springs Trailhead area."
+      }
+     ],
+     "why": "The trailhead card says to drive south from Randle, while the road card says to drive from Trout Lake.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "5000"
+      },
+      {
+       "field": "bivy[0].elev",
+       "says": "5600 (Cold Springs / South Climb trailhead)"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "12276"
+      }
+     ],
+     "why": "A 5,000 ft gain doesn't fit a climb from the 5,600 ft Cold Springs trailhead to the 12,276 ft summit, which is about 6,700 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Camp and descent plan",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary",
+       "says": "Day 1: approach to a high camp near Mad Cat Meadow or Salt Creek. Day 2: ... descend via the South Spur to camp."
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "Reached by the Round the Mountain trail west from Cold Springs and then up the ridge beside the Avalanche Glacier. Parties usually place camp somewhere above 9,000 ft"
+      }
+     ],
+     "why": "The itinerary camps at Mad Cat Meadow/Salt Creek and descends the South Spur 'to camp', while the camp card puts the high bivy above 9,000 ft beside the Avalanche Glacier. A South Spur descent doesn't return to either west-side camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "County vs sheriff",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "emergency.county",
+       "says": "Skamania County (SW approach)"
+      },
+      {
+       "field": "emergency.sheriffDispatch",
+       "says": "911; Yakima County Sheriff Search & Rescue 1 (800) 572-0490"
+      }
+     ],
+     "why": "The emergency card names Skamania County but lists the Yakima County Sheriff for search and rescue.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "name": "Wilson Glacier Headwall",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "May to June"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "May to June"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July",
+       "says": "Outside the best-season window; expect an unstable, warmed-out headwall / risky"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly May-Jun for the headwall itself"
+      },
+      {
+       "field": "rope_note",
+       "says": "restricting the season to July 1-October 1 for non-tribal climbers"
+      }
+     ],
+     "why": "The season is Jul-Sep, while best_season, seasonal_guidance, approach_variants and crowds say May-June and call July risky. The Jul-Sep figure seems to come from the tribal access window in the rope note.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach line: Lunch Counter vs Round the Mountain traverse",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Establish camp at Lunch Counter (~9,250 ft)"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "An early alpine start from Lunch Counter, traversing toward Roosevelt Cliffs"
+      },
+      {
+       "field": "approach",
+       "says": "follow Round the Mountain Trail east and then north ... expect a full day just to reach a camp near the toe of the Wilson Glacier"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If you are climbing toward the Lunch Counter, you are on the standard South Climb and this route is already behind you."
+      }
+     ],
+     "why": "The itinerary and timing camp at Lunch Counter and traverse from there, but the approach and approach_variants take the Round the Mountain trail east to a camp at the Wilson toe and say heading for Lunch Counter means you're off route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Access side: Cold Springs vs Yakama/Bird Creek",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Cold Springs / South Climb Trailhead (FR-8040)"
+      },
+      {
+       "field": "rope_note",
+       "says": "Access from the Yakama Nation (Tract D) side requires a tribal-use permit"
+      },
+      {
+       "field": "bivy[0]",
+       "says": "Avalanche Valley ... reached from Bird Creek Meadows or by the Highline Trail ... permit: Yakama Nation Tract D permit"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Yakama Nation (Tract D, eastern Mount Adams)"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "U.S. Forest Service"
+      }
+     ],
+     "why": "The trailhead, waypoints and approach use Cold Springs on Forest Service land, while the rope note, main camp card and access.landManager describe a Yakama Tract D approach from Bird Creek Meadows. The access card lists two different land managers.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Descend the North Ridge (more direct from the NE side) or South Climb."
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Descend via the North Ridge (more direct from the NE side) or back down the South Climb."
+      },
+      {
+       "field": "descent_text",
+       "says": "The descent reverses back down the South Climb to Cold Springs"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "parties top out and come down the standard South Climb to Cold Springs"
+      }
+     ],
+     "why": "The itinerary offers a North Ridge descent, which ends at Killen Creek on the far side of the mountain, while the descent text and approach_variants say the descent is the South Climb back to Cold Springs, where the car is.",
+     "internal_resolution": "descent_text, approach_variants, pro_tips and the Cold Springs trailhead all point to a South Climb descent.",
+     "needs_research": false
+    },
+    {
+     "fact": "Parking pass / climbing permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit."
+      },
+      {
+       "field": "access.permit",
+       "says": "Mt. Adams Climbing Activity Pass"
+      },
+      {
+       "field": "permit",
+       "says": "Mt. Adams Climbing Pass (Cascade Volcano Pass) required above 7,000 ft"
+      }
+     ],
+     "why": "access.notes says no climbing permit is needed, which contradicts the climbing-pass requirement on the same card and in the permit field.",
+     "internal_resolution": "permit, access.permit and access.fees require the Climbing Pass.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Given the route's distance (~27 km) and gain (6,700 ft)"
+      },
+      {
+       "field": "dist_km",
+       "says": "9.98"
+      },
+      {
+       "field": "itinerary miles sum",
+       "says": "12.4 (3.5 + 8.9)"
+      }
+     ],
+     "why": "The approach says the route is ~27 km, the header distance is 9.98 km and the itinerary adds up to about 20 km.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_northwest_ridge",
+   "name": "North Ridge (West Face)",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "Rack: screws and pickets",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "A snow picket, at least one ice screw, a few thin pitons, and two ice tools."
+      },
+      {
+       "field": "sling_rack.ice_screws",
+       "says": "3-5"
+      },
+      {
+       "field": "sling_rack.pickets",
+       "says": "2-3"
+      },
+      {
+       "field": "sling_rack.second_tool",
+       "says": "possibly, depending on conditions"
+      }
+     ],
+     "why": "The rack says one picket, one screw and two tools, while sling_rack says 2-3 pickets, 3-5 screws and only 'possibly' a second tool.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead parking pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.passRequired",
+       "says": "No trailhead parking pass is required."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Northwest Forest Pass or equivalent for trailhead parking."
+      }
+     ],
+     "why": "The access card says no parking pass is needed at Killen Creek while the High Camp card tells climbers to display a Northwest Forest Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "name": "Lava Glacier Headwall",
+   "area": "Mount Adams",
+   "contradictions": [
+    {
+     "fact": "Gain vs loss",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "7800"
+      },
+      {
+       "field": "loss_ft",
+       "says": "5000"
+      },
+      {
+       "field": "itinerary days gainFt/lossFt",
+       "says": "6700 / 6700"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "4140"
+      }
+     ],
+     "why": "The route returns to the same trailhead, yet gain_ft says 7,800 and loss_ft 5,000. The itinerary says 6,700 for both, and none matches the ~8,100 ft from the 4,140 ft trailhead to the summit.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Approach distance / total distance",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "8.6"
+      },
+      {
+       "field": "dist_km",
+       "says": "26.55"
+      },
+      {
+       "field": "approach",
+       "says": "about 3.1 miles ... then the High Camp Trail #10 another 1.0 mile to High Camp"
+      }
+     ],
+     "why": "Day 1 is 8.6 miles to camp, while the approach puts High Camp about 4.1 miles in.",
+     "internal_resolution": "approach and approach_variants agree on ~4.1 mi.",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach a high camp below the headwall (between the North Ridge and Lava Ridge)"
+      },
+      {
+       "field": "approach",
+       "says": "High Camp/Adams Glacier Meadows (~6,900 ft). From High Camp ... traverse off-trail across the lava fields"
+      },
+      {
+       "field": "bivy[0].name",
+       "says": "High Camp (Adams Creek Meadows)"
+      }
+     ],
+     "why": "The itinerary camps below the headwall between the North Ridge and Lava Ridge, while the approach and camp card use High Camp at Adams Creek Meadows and traverse from there.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead (Killen Creek vs Muddy Meadows)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Muddy Meadows is the more specific, closer approach for the northeast glacier cluster (Lava/Lyman/Wilson/Rusk)."
+      },
+      {
+       "field": "approach",
+       "says": "Killen Creek Trail #113 from the Killen Creek Trailhead"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Killen Creek Trailhead #113"
+      }
+     ],
+     "why": "The trailhead waypoint's note steers climbers to Muddy Meadows while every other field starts at Killen Creek.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season vs best window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun"
+      },
+      {
+       "field": "best_season",
+       "says": "May to June"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.May",
+       "says": "optimal"
+      }
+     ],
+     "why": "The season is June only, but best_season and seasonal guidance rate May optimal. The access card says FR 2329 is usually snow-blocked into June.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "III-IV"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "Grade III"
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      }
+     ],
+     "why": "The grade column says III-IV while the alpine grade and commitment say III.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack: ice screws",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "Snow anchors (pickets); occasional ice screw for firmer or icy sections."
+      },
+      {
+       "field": "sling_rack.ice_screws",
+       "says": "4-6"
+      },
+      {
+       "field": "rack[0]",
+       "says": "4-6 ice screws"
+      }
+     ],
+     "why": "The rack text calls for an occasional ice screw, while sling_rack and rack list 4-6 screws.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time vs turnaround",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "Exit the headwall before midday warming"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].time",
+       "says": "Midday (Summit)"
+      }
+     ],
+     "why": "The turnaround says to be off the headwall before midday, but the schedule reaches the summit at midday.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Descent line",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "retracing the ascent when possible"
+      },
+      {
+       "field": "descent_text",
+       "says": "Descend the North Ridge back toward High Camp"
+      },
+      {
+       "field": "rope_note",
+       "says": "Nothing on the route is rappelled - the way off walks down the North Ridge"
+      }
+     ],
+     "why": "The short descent field says to retrace the ascent, while the descent text and rope note say the way off is the North Ridge.",
+     "internal_resolution": "descent_text (rendered), rope_note, approach_variants and pro_tips agree on the North Ridge.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "4140"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "reached by the Killen Creek trail from about 4,600 ft"
+      }
+     ],
+     "why": "The waypoint and the camp card give trailhead elevations about 460 ft apart.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead parking pass at Killen Creek",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.parking_pass",
+       "says": "No trailhead parking pass is required at the Killen Creek Trailhead."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Northwest Forest Pass or equivalent for trailhead parking."
+      }
+     ],
+     "why": "The access card says no parking pass is needed at Killen Creek while the High Camp card tells climbers to display a Northwest Forest Pass.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_bread_loaf",
+   "name": "Bread Loaf",
+   "area": "Mount Rainier",
+   "contradictions": [
+    {
+     "fact": "Climbing permit instructions",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "No climbing permit is required for this route."
+      },
+      {
+       "field": "access.notes",
+       "says": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person."
+      },
+      {
+       "field": "access.rules",
+       "says": "Check-out is required after every climb."
+      }
+     ],
+     "why": "The access card says no climbing permit is needed, then gives climbing-registration and check-out instructions copied from the glacier routes.",
+     "internal_resolution": "access.permit, access.fees and approach_variants agree no climbing permit applies.",
+     "needs_research": false
+    },
+    {
+     "fact": "Start point for the loop",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From the Ohanapecosh Campground day-use area (1,914 ft), follow the Silver Falls Loop Trail clockwise for about 1 mile"
+      },
+      {
+       "field": "approach",
+       "says": "The Silver Falls Trailhead inside Ohanapecosh Campground is closed in 2026 ... approach via the Eastside Trail from the Grove of the Patriarchs parking lot"
+      }
+     ],
+     "why": "The approach gives directions from the Ohanapecosh campground side and then says that side is closed in 2026, so the ~1-mile distance may not apply.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Start time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.recommendedStart",
+       "says": "Pre-dawn start"
+      },
+      {
+       "field": "overview",
+       "says": "a casual, low-commitment problem"
+      }
+     ],
+     "why": "The timing recommends a pre-dawn alpine-style start for a casual roadside V0 boulder.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "name": "Fuhrer Thumb",
+   "area": "Mount Rainier",
+   "contradictions": [
+    {
+     "fact": "Best season",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Apr-Jun"
+      },
+      {
+       "field": "best_season",
+       "says": "Spring (roughly April-June)"
+      },
+      {
+       "field": "beta",
+       "says": "best season June-September"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Couloir becomes increasingly bare/icy and rockfall-prone as the season progresses"
+      }
+     ],
+     "why": "The beta says the best season is June-September, while the season, best_season and climate fields say April-June and warn that summer melts the couloir out.",
+     "internal_resolution": "season, best_season, climate and approach_variants agree on Apr-Jun.",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Grade II alpine climb (50° snow/ice couloir)"
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      }
+     ],
+     "why": "The beta calls it a Grade II climb, but the commitment chip says III.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Climbing permit cost",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Free climbing permit at Paradise WIC"
+      },
+      {
+       "field": "access.fees",
+       "says": "$82/climber climbing cost-recovery fee (2024) plus entrance fee"
+      },
+      {
+       "field": "access.notes",
+       "says": "Mount Rainier National Park climbing permit required ($82 per person through Pay.gov)"
+      }
+     ],
+     "why": "access.permit says the climbing permit is free, while the fees and notes charge $82 per person.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Season vs access closure",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "typical season closure November-May due to snow"
+      },
+      {
+       "field": "season",
+       "says": "Apr-Jun"
+      },
+      {
+       "field": "road.status",
+       "says": "Paved"
+      },
+      {
+       "field": "climate.winter",
+       "says": "Cold but accessible via Paradise"
+      }
+     ],
+     "why": "access.notes says the season is closed November-May, which rules out most of the Apr-Jun season. The climate card calls Paradise accessible in winter.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Entrance fee",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "entrance fees waived for nonresidents in 2026"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "America the Beautiful pass or $30/vehicle entrance pass"
+      }
+     ],
+     "why": "access.notes says entrance fees are waived, but passRequired says a pass or $30 entrance fee is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "name": "Kautz Glacier",
+   "area": "Mount Rainier",
+   "contradictions": [
+    {
+     "fact": "Camp Hazard elevation",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[3].elev",
+       "says": "12500 (Camp Hazard)"
+      },
+      {
+       "field": "approach",
+       "says": "Camp Hazard (10,800 ft, on the climber's-left side at the top of the Turtle Snowfield)"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Camp Hazard sits at 10,800 ft."
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach Camp Hazard (~10,800 ft)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Camp Hazard (about 11,000–11,100 ft)"
+      }
+     ],
+     "why": "The Camp Hazard waypoint, which feeds the weather panel, says 12,500 ft, while the approach, pitch breakdown and itinerary say 10,800 ft (approach_variants says 11,000-11,100).",
+     "internal_resolution": "approach, pitch_detail and itinerary agree on 10,800 ft; the 12,500 ft waypoint is the outlier (it is above the ~12,000 ft ice chute).",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilson Gully elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].elev",
+       "says": "8800 (Wilson Gully (Crux))"
+      },
+      {
+       "field": "waypoints[2].directions",
+       "says": "climb it to the bench above at roughly 7,300 to 7,400 ft"
+      },
+      {
+       "field": "approach",
+       "says": "climb up the Nisqually/Wilson Glacier margin at 6,800 ft through an often-crevassed gully to the same 7,300–7,400 ft 'Wilson Bench.'"
+      }
+     ],
+     "why": "The gully waypoint is at 8,800 ft, but its own directions and the approach put the gully between 6,800 and 7,400 ft.",
+     "internal_resolution": "The waypoint's own directions and the approach agree on 6,800-7,400 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope length",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "Per rope team: 30–40 m rope"
+      },
+      {
+       "field": "gear[1]",
+       "says": "60 m rope per rope team"
+      },
+      {
+       "field": "rappels",
+       "says": "for a party on a single 60 m rope"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "4 is used here as a representative middle count for a party on a single 60m rope"
+      }
+     ],
+     "why": "The rack calls for a 30-40 m rope, while the gear list, rappel count and descent assume a 60 m rope. A 30-40 m rope would give much shorter rappels and more of them through the chute.",
+     "internal_resolution": "gear, rappels, rappel_count_note and descent_text all assume a single 60 m rope.",
+     "needs_research": false
+    },
+    {
+     "fact": "Turtle Snowfield side",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the Turtle Snowfield ... is climbed on its west (climber's-left) side"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "On the Turtle, keep to the western, climber's-right side"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "keep to its west side by the rock ridge"
+      }
+     ],
+     "why": "Both fields say keep to the west side, but one calls it climber's left and the other climber's right. On a north-bound ascent, west is climber's left.",
+     "internal_resolution": "approach and waypoint directions ('Stay to the west side') agree; west is climber's left heading north, so 'climber's-right' in approach_variants is the error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach line on day 1",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Hike the Muir Snowfield then traverse onto the Wilson/Kautz Glacier area to Camp Hazard"
+      },
+      {
+       "field": "approach",
+       "says": "follows the Skyline Trail to the Nisqually Moraine Trail ... drop onto the Nisqually Glacier itself"
+      },
+      {
+       "field": "waypoints[1].directions",
+       "says": "Glacier Vista ... This is where the Kautz route leaves the trail system for good."
+      }
+     ],
+     "why": "The itinerary routes day 1 up the Muir Snowfield, while the approach, waypoints, approach_variants and pitch breakdown leave the trail at Glacier Vista and cross the Nisqually Glacier.",
+     "internal_resolution": "approach, approach_variants, waypoints and pitch_detail agree on the Nisqually crossing.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ice chute grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[3]",
+       "says": "the ice chute, which the NPS route brief rates only AI2 and short"
+      },
+      {
+       "field": "grade",
+       "says": "Grade III, AI3"
+      },
+      {
+       "field": "pitch_detail[5].grade",
+       "says": "AI3"
+      },
+      {
+       "field": "pitch_detail[5].notes",
+       "says": "from a short pitch to more than 300 ft of sustained AI3"
+      }
+     ],
+     "why": "The gear list says the chute is only AI2 and short, while the grade and crux pitch say AI3, up to 300+ ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ice pitch lengths and angles",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "a first pitch of roughly 400 ft at 35–40 degrees ... then a second pitch of roughly 400 ft at 45–50 degrees"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "anything from a short pitch of steep snow to about 250 ft of alpine ice"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "one to two short, steep (40-45°) ice pitches in the chute"
+      },
+      {
+       "field": "waypoints[4].directions",
+       "says": "The chute is two or three pitches of roughly 40 to 50 degree snow and ice"
+      }
+     ],
+     "why": "The fields give different sizes for the chute steps: two ~400 ft pitches, up to 250 ft and 300+ ft, 'one to two short' pitches, or two to three pitches.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ice screw count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "detailed_rack",
+       "says": "4–6 ice screws (for the chute)"
+      },
+      {
+       "field": "waypoints[4].directions",
+       "says": "six to eight screws is a sensible rack"
+      },
+      {
+       "field": "gear[2]",
+       "says": "A few ice screws and 1-2 pickets per rope team"
+      }
+     ],
+     "why": "The rack says 4-6 screws, the summit waypoint 6-8, and the gear list 'a few'.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "Sustained fitness for a ~17-hr summit day"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "12"
+      }
+     ],
+     "why": "The partner requirements describe a ~17-hour summit day, while timing and the itinerary give 12 hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "alpine_grade",
+       "says": "III-IV"
+      },
+      {
+       "field": "commitment",
+       "says": "III"
+      },
+      {
+       "field": "grade",
+       "says": "Grade III, AI3"
+      }
+     ],
+     "why": "The alpine grade chip says III-IV while the commitment chip and grade say III.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance to Camp Hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "7"
+      }
+     ],
+     "why": "The itinerary reaches Camp Hazard in 5 miles, while the waypoint puts it at mile 7.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "name": "Edmunds Headwall",
+   "area": "Mount Rainier",
+   "contradictions": [
+    {
+     "fact": "Approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "Long approach (~10+ mi) via Westside Rd, South Puyallup Trail, Wonderland Trail to St. Andrews Park, then Puyallup Cleaver"
+      },
+      {
+       "field": "approach",
+       "says": "From Mowich Lake, hike through Spray Park and up the lower Ptarmigan Ridge to camps near 9,600 ft between the North Mowich and Edmunds glaciers"
+      },
+      {
+       "field": "approach_variants[0].name",
+       "says": "Mowich Lake and Spray Park to the 9,600 ft divide, then across to the Edmunds Glacier"
+      }
+     ],
+     "why": "The trailhead waypoint note describes a Westside Road / South Puyallup / Puyallup Cleaver approach, while the approach, approach_variants and pitch breakdown use Mowich Lake, Spray Park and Ptarmigan Ridge.",
+     "internal_resolution": "approach, approach_variants, pitch_detail and the waypoint's own name (Mowich Lake Trailhead) agree on the Spray Park/Ptarmigan Ridge line.",
+     "needs_research": true
+    },
+    {
+     "fact": "Mowich Lake road access",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Mowich Lake Road is unpaved and typically opens around July; highway access from the north has been interrupted for extended periods."
+      },
+      {
+       "field": "road.status",
+       "says": "No public vehicle, bike, or foot access via SR-165 — the Fairfax/Carbon River Bridge was permanently closed by WSDOT in April 2025"
+      },
+      {
+       "field": "access.closures",
+       "says": "SR 165 Fairfax Bridge permanently closed (April 2025) — no vehicle access to the Mowich Lake trailhead until further notice"
+      }
+     ],
+     "why": "approach_variants suggests the Mowich Lake Road normally opens in July, but the road and access cards say there has been no vehicle access since the 2025 bridge closure.",
+     "internal_resolution": "road, access.closures and bivy all say there has been no road access since 2025.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier dropped onto from camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "Bivy ground on lower Ptarmigan Ridge above Spray Park, from which parties drop onto the North Mowich Glacier."
+      },
+      {
+       "field": "approach",
+       "says": "then drop to the Edmunds Glacier and the base of the headwall"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "If your first ground is a tight mixed pinch ... you crossed the wrong glacier."
+      }
+     ],
+     "why": "The camp card has parties drop onto the North Mowich Glacier, while the approach and pitch breakdown drop onto the Edmunds Glacier. approach_variants says the North Mowich side is the wrong glacier for this route.",
+     "internal_resolution": "approach, pitch_detail and approach_variants agree on the Edmunds Glacier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "name": "Kautz Headwall",
+   "area": "Mount Rainier",
+   "contradictions": [
+    {
+     "fact": "Trailhead elevation / identity",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "waypoints[0].name",
+       "says": "Paradise (Skyline Trail)"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "3600"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "Distinct from Paradise lot; route goes via Van Trump Park"
+      },
+      {
+       "field": "approach",
+       "says": "From Paradise (5,400 ft), the most common approach uses the Camp Muir route"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From the Paradise parking lot"
+      }
+     ],
+     "why": "The trailhead waypoint is named Paradise but sits at 3,600 ft and says the route goes via Van Trump Park. The approach and trailhead card start from the Paradise lot at 5,400 ft (Comet Falls is ~3,650 ft).",
+     "internal_resolution": "approach, approach_variants and approach_logistics make the Paradise lot at 5,400 ft the primary trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ice step angles",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "the lower step runs around 50°, the upper around 70°"
+      },
+      {
+       "field": "climbing_route[2].notes",
+       "says": "The upper step runs around 70°"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "AI1-2, ~35-40°"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "AI2-AI3, up to ~45-50°"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].detail",
+       "says": "Up to ~40°, roughly 2 short pitches"
+      },
+      {
+       "field": "overview",
+       "says": "commonly climbed in two pitches with a 60m rope at up to about 50°"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the lower step around 50 degrees ... The lower step is broad and stepped out and rarely steeper than about 35-40 degrees"
+      }
+     ],
+     "why": "The angles disagree across fields: the lower step is ~50° or 35-40°, and the upper step ~70° or 45-50°. The itinerary caps the whole climb at ~40°, and the baseFinding contradicts itself about the lower step.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Headwall length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "259"
+      },
+      {
+       "field": "pitch_detail[0].lengthM + [1].lengthM",
+       "says": "90 (55 + 35)"
+      },
+      {
+       "field": "overview",
+       "says": "a roughly 300-foot wall commonly climbed in two pitches"
+      },
+      {
+       "field": "climbing_route[2].notes",
+       "says": "up to 400-450 ft of alpine ice"
+      }
+     ],
+     "why": "The climb length is 259 m (~850 ft), the two pitches add up to 90 m (~300 ft), and the climbing route allows up to 400-450 ft on the upper step alone.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route line: headwall instead of chute, or both",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "diverges onto a more direct, sustained line up the Kautz ice headwall instead of the standard ice-chute crux"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "climb the Kautz Headwall's 1-2 short ice pitches ... and the ice chute to the summit"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "essentially the Kautz Glacier route with 1-2 short ice pitches on the headwall itself"
+      }
+     ],
+     "why": "The beta says this line replaces the standard ice chute, while the itinerary climbs the headwall pitches and then the ice chute.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "III-IV"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "III"
+      },
+      {
+       "field": "commitment",
+       "says": "II-III"
+      }
+     ],
+     "why": "The three grade fields give III-IV, III and II-III.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Upper step ice grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climbing_route[2].class",
+       "says": "AI1-AI2"
+      },
+      {
+       "field": "pitch_detail[1].grade",
+       "says": "AI2-AI3, up to ~45-50°"
+      },
+      {
+       "field": "ice_grade",
+       "says": "AI2-3 (AI3 crux pitch)"
+      }
+     ],
+     "why": "The climbing route rates the upper step AI1-AI2, while the pitch breakdown and ice grade put the crux at AI3.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Season vs July rating",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Mid-May through early August"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Primary season, June–August"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July",
+       "says": "Typically bares out to harder ice / risky"
+      },
+      {
+       "field": "best_season",
+       "says": "May to June"
+      }
+     ],
+     "why": "The climate card calls June-August the primary season, while seasonal guidance rates July risky and best_season says May-June.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Camp Hazard elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach Camp Hazard (~11,100 ft)"
+      },
+      {
+       "field": "approach",
+       "says": "Camp Hazard (10,800 ft, at the top of the snowfield)"
+      }
+     ],
+     "why": "The itinerary and the approach give Camp Hazard elevations about 300 ft apart.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

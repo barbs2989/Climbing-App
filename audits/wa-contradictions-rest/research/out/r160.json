@@ -1,0 +1,163 @@
+{
+ "file": "r160.json",
+ "results": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Technical difficulty of the route (scramble vs low-5th/5.6 pitch)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Two sources agree the peak has no easy route: one says there are at least three difficult and no easy routes to the summit, and an encyclopedia entry rates the easiest route class 5+. That contradicts the header grade 'Class 3-4', overview, pro_needs, hazards and the disciplines=['scrambling'] framing, but no source describes a 'Southwest Slopes/Ridge' line, the 5.6 open-book pitch, or gives a specific YDS grade to adopt. The row's scramble identity appears to be synthesized; it needs a re-author of the whole route (grade, overview, pro_needs, hazards, waypoint 'Class 4 Step', partner requirements), not a minimal patch. Recommend human review; do not publish as a Class 3-4 scramble.",
+   "sources": [
+    "https://www.summitpost.org/half-moon/153612",
+    "https://en.wikipedia.org/wiki/Half_Moon_(Washington)",
+    "https://www.mountainproject.com/area/120749906/half-moon"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Rope needed for the summit rappel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only rappel description found is that parties rappel and down-climb from the summit toward the first tower on the ridge; no source gives the rappel length, anchor, or rope needed. The 100-150 ft figure in descent_text is unsourced, so rope_length_m 30 vs a doubled 60 m cannot be settled. Depends on the unresolved grade question above.",
+   "sources": [
+    "https://www.summitpost.org/half-moon/153612"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Approach line to the base (over Kangaroo Pass vs talus ramp left of the pass)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One source describes both lines, but for DIFFERENT routes: the talus gully/ledge angling left from the last soggy meadow to the notch north of Half Moon is the approach for the North Ridge, while the South Face approach continues to Kangaroo Pass and traverses east below Wallaby's south slope to cross the ridge at a low point. Other pages copy that text. No source describes a 'Southwest' route, so which approach belongs to this row cannot be settled until the route itself is identified (see grade finding).",
+   "sources": [
+    "https://www.summitpost.org/half-moon/153612",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Distance and time from the car to Kangaroo Pass",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: one page puts Kangaroo Pass 3 miles from the hairpin (2 miles to the route fork, 1 more to the pass); a trip report gives 4.4 miles round trip to Wallaby's summit via the pass (implying under ~2 mi to the pass); a hiking guide gives 6.0 miles round trip for Wallaby via the pass; a GPS trip report gives 3.54 mi round trip to the pass. No two agree on one figure, and none give the hiking time.",
+   "sources": [
+    "https://www.summitpost.org/half-moon/153612",
+    "https://onehikeaweek.com/2018/05/27/wallaby-peak/",
+    "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-11-3111130648"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Hairpin pullout position relative to Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "Hairpin pullout is about 1 mile EAST of Washington Pass (~MP 163); Blue Lake trailhead is on the west side of the pass.",
+   "evidence": "One source puts the parking at the large hairpin pullout near milepost 163 directly below and east of South Early Winters Spire; a hiking guide says that traveling east, just after the Washington Pass crest the road makes a hairpin turn; a trip report labels it the Highway 20 hairpin turn just east of Washington Pass. The Blue Lake trailhead is reached from the east a little under a mile past the Washington Pass Overlook, i.e. west of the pass, so the hairpin cannot be 0.25 mi east of it.",
+   "sources": [
+    "https://www.summitpost.org/half-moon/153612",
+    "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+    "https://www.yellowleaf.org/scramble/g/r/2006-09-23-kangaroo.html",
+    "https://www.wta.org/go-hiking/hikes/blue-lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_half_moon_southwest_slopes",
+     "fact": "Hairpin pullout position relative to Washington Pass",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "about 1 mile west of Washington Pass and 0.25 mile east of the Blue Lake trailhead",
+     "replace": "about 1 mile east of Washington Pass, where the highway makes its big switchback below Liberty Bell and the Early Winters Spires"
+    }
+   ]
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Summit time within the day",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Internally, summitTimeHrs (10.5) equals totalHrs and the itinerary's return-to-car time, while the itinerary summits at +6.5 hr, so summitTimeHrs holds the car-to-car total. No external source gives a summit time for this line to adopt. Recommend nulling timing.summitTimeHrs (the catalog's established repair for this class) rather than writing a computed number.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Dispersed camping stay limit",
+   "verdict": "fixed",
+   "correct_value": "14 consecutive days",
+   "evidence": "The forest's closure order prohibits camping or occupying a single location for longer than 14 consecutive days (renewed as a 2025 order with the same 14-day limit). A Washington camping guide gives national forest dispersed camping a 14-days-in-30 limit. No 10-day limit found.",
+   "sources": [
+    "https://www.fs.usda.gov/sites/nfs/files/r06/okanogan-wenatchee/publication/alerts/Order%2006-17-00-23-02%20camping%20restrictions%20on%20OkaWen%20&%20Colville%20NFs.pdf",
+    "https://explorewashingtonstate.com/free-camping-washington-state/"
+   ],
+   "patches": [
+    {
+     "id": "wa_half_moon_southwest_slopes",
+     "fact": "Dispersed camping stay limit",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Dispersed camping capped at 10 days",
+     "replace": "Dispersed camping capped at 14 consecutive days"
+    }
+   ]
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Elevation of Kangaroo Pass",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "6,671 ft (~6,670 ft)",
+   "evidence": "The approach prose says Kangaroo Pass is ~6,800 ft while the Kangaroo Pass waypoint says 6671. A hiking guide states the path reaches Kangaroo Pass at 6671 feet, and a separate trip report labels the pass 6671 on its route. The waypoint is correct; the approach figure is the outlier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+    "https://onehikeaweek.com/2018/05/27/wallaby-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_half_moon_southwest_slopes",
+     "fact": "Elevation of Kangaroo Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "(~6,800 ft, about",
+     "replace": "(~6,670 ft, about"
+    }
+   ]
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "fact": "Distance from the hairpin pullout to the Blue Lake trailhead",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Blue Lake Trailhead is on the west side of Washington Pass, not a quarter mile from the hairpin.",
+   "evidence": "access.passRequired calls Blue Lake Trailhead 'a quarter mile away' from the hairpin. The Blue Lake trailhead is just under a mile west of the Washington Pass Overlook, and the hairpin is on the east side just after the pass crest, so they are on opposite sides of the pass (their coordinates are ~1.4 mi apart in a straight line).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+    "https://www.summitpost.org/half-moon/153612"
+   ],
+   "patches": [
+    {
+     "id": "wa_half_moon_southwest_slopes",
+     "fact": "Distance from the hairpin pullout to the Blue Lake trailhead",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "find": "the neighboring, developed Blue Lake Trailhead a quarter mile away",
+     "replace": "the developed Blue Lake Trailhead on the west side of Washington Pass"
+    }
+   ]
+  }
+ ]
+}

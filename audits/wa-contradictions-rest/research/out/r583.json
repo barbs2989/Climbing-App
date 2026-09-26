@@ -1,0 +1,434 @@
+{
+ "file": "r583.json",
+ "results": [
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Which summit is the true high point",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A detailed traverse trip report reaches the 'true summit' first from Cameron Pass after many false summits, then continues on the ridge to the Middle Peak (class 3-4 spots) and on to the East Peak. The main topo database, however, titles the 7,190 ft high point 'Mount Cameron - East Peak' (page itself not fetchable, title only from search). Wikipedia and PeakVisor give only 'triple-summit, 7,190 ft'. The naming conflict (which top is called East) cannot be settled with two agreeing sources, so the East/Middle/true labels in overview, waypoints[5].name/note, pro_tips[3] and approach_variants[0].baseFinding are left as is. (The beta's 'Middle/true summit' wording is removed under the difficulty fix without asserting either label.)",
+   "sources": [
+    "https://climberkyle.com/2022/09/03/northern-olympic-high-route/",
+    "https://www.peakbagger.com/peak.aspx?pid=919",
+    "https://en.wikipedia.org/wiki/Mount_Cameron_(Washington)",
+    "https://peakvisor.com/peak/mount-cameron-united-states.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Route aspect / line",
+   "verdict": "fixed",
+   "correct_value": "The standard line is the long, gradual ridge climbed east from Cameron Pass (the peak's west ridge), not a southeast ridge/slope above Cameron Basin.",
+   "evidence": "A traverse trip report climbs Cameron from Cameron Pass along 'a long gradual ridge', mostly class 1-2 over many false summits; peakery's ascent summary likewise goes basin -> Cameron Pass -> up the ridge with light scrambling. Cameron Pass lies due west of the summit (pass ~47.8257,-123.358; summit ~47.8258,-123.334, PeakVisor 47.8252,-123.328), so the ridge from the pass is the west ridge. The route NAME and aspect 'N' are out of scope (name not editable; no source for a single aspect value) and are left.",
+   "sources": [
+    "https://climberkyle.com/2022/09/03/northern-olympic-high-route/",
+    "https://peakery.com/mount-cameron-washington/",
+    "https://peakvisor.com/peak/mount-cameron-united-states.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Route aspect / line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "gains the long, gradual southeast ridge above Cameron Basin",
+     "replace": "gains the long, gradual west ridge from Cameron Pass"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Route aspect / line",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "gains the long, gradual southeast ridge above Cameron Basin",
+     "replace": "gains the long, gradual west ridge from Cameron Pass"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Route aspect / line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "label"
+     ],
+     "find": "SE ridge crest",
+     "replace": "west ridge crest"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Route aspect / line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "via the SE slopes/long gradual ridge",
+     "replace": "via the long, gradual west ridge from Cameron Pass"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Route aspect / line",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "by Class 2 scree and talus slopes on the east peak's southeast side",
+     "replace": "by Class 2 scree and talus along the ridge that rises east from the pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Total gain and distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car gain, loss or one-way approach distance for Mount Cameron from Obstruction Point. Trail-loop figures found (Cameron Pass Trail 28.3 mi/8,110 ft; Cameron Basin loop 25.6 mi/7,959 ft; Cameron Creek loop 26.5 mi/7,654 ft) are for different hikes and disagree with each other and with the row's 9.3-9.9 mi one-way. Per rules gain_ft/loss_ft/dist_km are not recomputed.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/cameron-pass-trail",
+    "https://www.alltrails.com/trail/us/washington/cameron-basin-loop-via-elk-mountain-and-grand-pass"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Order of Cameron Basin and Cameron Pass",
+   "verdict": "fixed",
+   "correct_value": "From Grand Pass the trail drops to Cameron Creek, climbs into upper Cameron Basin, and Cameron Pass lies above the basin; camp is reached before the pass.",
+   "evidence": "Peakery's ascent summary runs Obstruction Point -> Grand Pass -> upper Cameron Basin -> Cameron Pass -> ridge. An independent loop trip report likewise reaches the Upper Cameron Basin before going on to Cameron Pass. The row's waypoints, approach_variants and bivy already agree; the itinerary Day 1/Day 3 notes, Day 1 schedule and their timing copies are brought in line.",
+   "sources": [
+    "https://peakery.com/mount-cameron-washington/",
+    "https://musthikemusteat.com/olympic-peninsula/deer-grey-wolf-lost-cameron-grand-pass-loop/",
+    "https://climberkyle.com/2022/09/03/northern-olympic-high-route/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Order of Cameron Basin and Cameron Pass",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "then drop a few hundred feet into the cirque below Lost Peak before climbing back up roughly 1,000 ft in a mile to Cameron Pass. Descend into Cameron Basin and set up camp",
+     "replace": "then drop steeply off the pass to the Cameron Creek meadows and follow the creek up into upper Cameron Basin, just below Cameron Pass. Set up camp"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Order of Cameron Basin and Cameron Pass",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "then drop a few hundred feet into the cirque below Lost P…",
+     "replace": "then drop steeply off the pass to the Cameron Creek meadows and up into Cameron B…"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Order of Cameron Basin and Cameron Pass",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "expect": "Top out at Cameron Pass (~6,500 ft)",
+     "value": "Cross the Cameron Creek meadows"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Order of Cameron Basin and Cameron Pass",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Views of Mt. Anderson and Olympus open up.",
+     "value": "Unbridged branches of the creek; reliable water, but the tread is easy to lose in brush or fog."
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Order of Cameron Basin and Cameron Pass",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "climb back out of Cameron Basin over Cameron Pass, drop into and back out of the cirque below Lost Peak, cross Grand Pass",
+     "replace": "walk down out of Cameron Basin along Cameron Creek, climb steeply back up to Grand Pass"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Order of Cameron Basin and Cameron Pass",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "climb back out of Cameron Basin over Cameron Pass, drop into and back out of the cirque below Lost Peak, cross Grand Pass",
+     "replace": "walk down out of Cameron Basin along Cameron Creek, climb steeply back up to Grand Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Cameron Basin camp character",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One traverse report camped in upper Cameron Basin on a flat sandy spot in 'moonscape' moraine with no tree cover; another hiker describes a 'lush, marshy basin'. Neither supports 'old-growth, mossy', but no second source directly confirms the treeless camp, and NPS requires bear canisters park-wide (not because of missing trees), so no patch.",
+   "sources": [
+    "https://climberkyle.com/2022/09/03/northern-olympic-high-route/",
+    "https://musthikemusteat.com/olympic-peninsula/deer-grey-wolf-lost-cameron-grand-pass-loop/",
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Summit difficulty",
+   "verdict": "fixed",
+   "correct_value": "The true summit is reached on Class 1-2 (Class 2) ground; Class 3-4 appears only on the traverse beyond it.",
+   "evidence": "A traverse trip report says the climb from Cameron Pass is a long gradual ridge, mostly class 1-2 over false summits to the true summit, with class 3-4 spots only on the ridge on to the Middle Peak. Wikipedia gives the easiest route as class 2 scrambling. grade 'Class 2-3', the waypoint and the itinerary already agree; beta, pitch_detail and the three baseFinding texts are corrected.",
+   "sources": [
+    "https://climberkyle.com/2022/09/03/northern-olympic-high-route/",
+    "https://en.wikipedia.org/wiki/Mount_Cameron_(Washington)"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Summit difficulty",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "on mostly Class 1-2 terrain before a short Class 3-4 section leads to the Middle/true summit; some parties continue the traverse east to Cameron's East Peak or west to its Southwest Peak.",
+     "replace": "on mostly Class 1-2 terrain to the true summit; the Class 3-4 spots come only for parties who continue the traverse along the crest to Cameron's other tops."
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Summit difficulty",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "with harder Class 3-4 moves reported near the Middle/true summit",
+     "replace": "with harder Class 3-4 moves only on the traverse beyond the true summit"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Summit difficulty",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "grade"
+     ],
+     "expect": "Class 2 (short Class 3-4 sections)",
+     "value": "Class 2 (Class 3-4 only on the traverse beyond)"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Summit difficulty",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "keep going until a short Class 3-4 section leads to the top — that step is the deciding feature of the peak.",
+     "replace": "keep going: the true top is still easy Class 1-2 ground, and steps of Class 3-4 mean you have passed it and are on the traverse."
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Summit difficulty",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      1,
+      "baseFinding"
+     ],
+     "find": "over many false summits, until a short Class 3-4 step leads to the top.",
+     "replace": "over many false summits, on Class 1-2 ground all the way to the top."
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Summit difficulty",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      2,
+      "baseFinding"
+     ],
+     "find": "over many false summits, to a short Class 3-4 step and the true top.",
+     "replace": "over many false summits, on Class 1-2 ground to the true top."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Season start vs road opening",
+   "verdict": "fixed",
+   "correct_value": "Jul-Sep",
+   "evidence": "Two independent road guides state Obstruction Point Road usually opens early/mid-July (one says mid-July) and closes mid-October; best_season, seasonal_guidance, access.closures and road.seasonalGate already say July. The season chip is set to Jul-Sep.",
+   "sources": [
+    "https://livethatadventure.com/how-to-drive-obstruction-point-road-washingtons-scariest-road/",
+    "https://www.dirtyshoesandepicviews.com/blog/obstruction-point-road-olympic-national-park"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Season start vs road opening",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Jun-Sep",
+     "value": "Jul-Sep"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Summit-day duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source gives a camp-to-summit round-trip time for Mount Cameron's standard route. Note (discovered in the same place): the Day 2 schedule itself runs 6:00 AM to ~1:00 PM (7 h) against hours 5.5, so the itinerary is internally inconsistent as well; not patched without a source.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Overnight permit quota area",
+   "verdict": "fixed",
+   "correct_value": "Wilderness permit required; Grand and Badger Valleys (on the Obstruction Point approach) are a quota area; Royal Basin is a different drainage.",
+   "evidence": "The NPS wilderness reservations page lists 'Grand and Badger Valleys' and 'Royal Basin/Royal Lake' as separate quota areas and does not list Cameron Basin; it says bear canisters are required in all wilderness camp areas. The Washington's National Park Fund permit guide also lists Grand Valley and Royal Lake as separate quota areas. The Royal Lake text is replaced with the Grand/Badger Valleys fact.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+    "https://wnpf.org/2025/01/09/backcountry-beginners-how-to-secure-an-olympic-backcountry-permit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Overnight permit quota area",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "what"
+     ],
+     "expect": "Olympic National Park wilderness permit — quota at Royal Lake, not free",
+     "value": "Olympic National Park wilderness permit — not free; Grand and Badger Valleys on the Obstruction Point approach are a quota area"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Overnight permit quota area",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "expect": "Reserve on Recreation.gov; the Royal Lake quota sells out quickly. Bear canisters are required in Royal Basin.",
+     "value": "Reserve on Recreation.gov; a night in Grand or Badger Valley on the way in needs its own quota reservation. Bear canisters are required in every wilderness camp."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Obstruction Point trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "~6,135 ft",
+   "evidence": "A road guide gives the road's high point at the trailhead as 6,135 ft; The Mountaineers' route page lists the Obstruction Point trailhead at about 6,100 ft (another listing 6,130). None supports 6,450 ft (that is Grand Pass).",
+   "sources": [
+    "https://livethatadventure.com/how-to-drive-obstruction-point-road-washingtons-scariest-road/",
+    "https://www.mountaineers.org/activities/routes-places/grand-ridge-olympics",
+    "https://www.oregonhikers.org/field_guide/Obstruction_Point_Trailhead"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Obstruction Point trailhead elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "Already starting near 6,450 ft",
+     "replace": "Already starting near 6,135 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_cameron_standard",
+   "fact": "Dosewallips washout location",
+   "verdict": "fixed",
+   "correct_value": "The 2002 washout is about a mile past the road-end parking, which is ~8.6 mi from US-101 (washout ~10 mi from US-101).",
+   "evidence": "A 2002 Peninsula Daily News report places the washout about 10 miles from US-101; a hiking guide puts the road-end parking 8.6 miles west of US-101, and a second hiking guide reaches the washout 1.2 miles from that trailhead. So '1 mile in' from Brinnon is wrong; it is about a mile past the parking.",
+   "sources": [
+    "https://www.peninsuladailynews.com/2002/04/08/jefferson-washout-keeps-dosewallips-road-closed/",
+    "https://hike734.com/hikingolympic/dosewallips-river-road/",
+    "https://modernhiker.com/hike/dosewallips-river-road/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Dosewallips washout location",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "the Dosewallips River Road is closed to vehicles at a washout about 1 mile in (closed since 2002)",
+     "replace": "the Dosewallips River Road has been closed to vehicles since 2002 at a washout about a mile past the road-end parking, some 8.5 miles from US-101"
+    },
+    {
+     "id": "wa_mount_cameron_standard",
+     "fact": "Dosewallips washout location",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "has been closed to vehicles at a washout about a mile in since 2002",
+     "replace": "has been closed to vehicles since 2002 at a washout about a mile past the road-end parking"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{"file": "r560.json", "results": [
+ {"id": "wa_mount_pershing_standard", "fact": "Where the rocky gully starts and where the 'small basin' sits",
+  "verdict": "fixed_internal_plus_one",
+  "correct_value": "The rocky gully is climbed TO a small basin at ~4,300 ft; from there straight up and left up a second gully to the basin east of the summit at ~5,400 ft.",
+  "evidence": "A detailed trip report of the Jefferson Creek route says the rocky gully 'is climbed until it reaches a small basin at ca.4300'', then the party went straight up and cut left up a gully into the basin east of the summit (ca.5400'). Within the row, approach, waypoints[2] (elev 4300 pin named for the basin), waypoints[3] (5,400 ft upper basin), approach_variants[0].baseFinding and climbing_route[0] all agree; only beta and pitch_detail[0] shift the basin to 5,400 ft. A second independent source with elevations was not reachable (SummitPost and Mountaineers returned 403), hence internal-plus-one.",
+  "sources": ["https://www.ericsbasecamp.net/trips/MtPershing/MtPershing.htm"],
+  "patches": [
+   {"id": "wa_mount_pershing_standard", "fact": "Where the rocky gully starts and where the 'small basin' sits", "op": "replace_text", "column": "beta", "path": [],
+    "find": "angling up into a rocky gully around 4,300 ft. The gully (talus, sometimes snow-filled) is followed to a small basin around 5,400 ft below the true (south) summit.",
+    "replace": "angling up into a rocky gully. The gully (talus, sometimes snow-filled) is followed to a small basin around 4,300 ft; from there the route continues straight up, then left up a second gully to the basin east of the true (south) summit at around 5,400 ft."},
+   {"id": "wa_mount_pershing_standard", "fact": "Where the rocky gully starts and where the 'small basin' sits", "op": "replace_text", "column": "pitch_detail", "path": [0, "notes"],
+    "find": "From ~4,300 ft, where the flagged boot path leaves the Jefferson Creek forest/brush approach and turns into a rocky gully, up to a small basin at ~5,400 ft below the true summit.",
+    "replace": "From where the flagged boot path leaves the Jefferson Creek forest/brush approach and turns into a rocky gully, up the gully to a small basin at ~4,300 ft, then straight up and left up a second gully to the basin east of the summit at ~5,400 ft."}
+  ]},
+ {"id": "wa_mount_pershing_standard", "fact": "Parking fee / Northwest Forest Pass at Jefferson Creek",
+  "verdict": "fixed_internal_plus_one",
+  "correct_value": "No fee or pass is required to park at the Jefferson Creek crossing / Jefferson Lake trailhead area.",
+  "evidence": "The Olympic National Forest recreation-site page for Jefferson Lake Trailhead states 'No fees are required for this site' and lists no restroom or water. The general Washington pass rule is that a Northwest Forest Pass is needed at national forest trailheads WITH facilities, which this undeveloped roadside turnout lacks. In the row, access.fees, access.notes, access.parking_pass and access.passRequired (four fields) all say no pass; only the trailhead waypoint's note and directions call it a Forest Pass area. overnight_permit.where speaks of other trailheads (Lena Lake, Brothers, Lake Cushman) and is left as is.",
+  "sources": ["https://www.fs.usda.gov/r06/olympic/recreation/jefferson-lake-trailhead", "https://www.wta.org/go-outside/passes"],
+  "patches": [
+   {"id": "wa_mount_pershing_standard", "fact": "Parking fee / Northwest Forest Pass at Jefferson Creek", "op": "replace_text", "column": "waypoints", "path": [0, "note"],
+    "find": "(Northwest Forest Pass area, no formal trailhead sign)",
+    "replace": "(no formal trailhead sign and no parking fee)"},
+   {"id": "wa_mount_pershing_standard", "fact": "Parking fee / Northwest Forest Pass at Jefferson Creek", "op": "replace_text", "column": "waypoints", "path": [0, "directions"],
+    "find": "there is no formal trailhead sign, and it is a Northwest Forest Pass area.",
+    "replace": "there is no formal trailhead sign, and no parking fee is charged."}
+  ]},
+ {"id": "wa_mount_pershing_standard", "fact": "Climbing season window",
+  "verdict": "fixed_internal_plus_one",
+  "correct_value": "June through September (best late July–September); drop the stray 'May–August' clause.",
+  "evidence": "season (Jun-Sep), climate.bySeason.summer (late June through September), seasonal_guidance (Aug and Sep optimal, June risky) and approach_variants season (mid-July to September) agree; only the last sentence of best_season says May–August, and it is written as an attribution. Logged ascents on a peak-log site fall in June, August and October (none in May), and a late-June ascent report found the gullies still snow-filled, consistent with a June–September window rather than one opening in May and closing in August.",
+  "sources": ["https://peakery.com/mount-pershing-washington/", "https://www.ericsbasecamp.net/trips/MtPershing/MtPershing.htm"],
+  "patches": [
+   {"id": "wa_mount_pershing_standard", "fact": "Climbing season window", "op": "replace_text", "column": "best_season", "path": [],
+    "find": " The general climbing season is listed as May–August.",
+    "replace": ""}
+  ]},
+ {"id": "wa_mount_pershing_standard", "fact": "Which side of the peak the approach gully/basin is on",
+  "verdict": "fixed_internal_plus_one",
+  "correct_value": "The approach gully and basins are on the east side of the peak.",
+  "evidence": "The Jefferson Creek route report takes the gully up into 'the basin east of the summit' (ca. 5,400 ft). The row's aspect (SE), face ('east-side entry gully/basin'), approach ('basins below Pershing's east side'), approach_variants and waypoints (trailhead and basin pins lie east/southeast of the summit) all agree; only climate.typical says north side.",
+  "sources": ["https://www.ericsbasecamp.net/trips/MtPershing/MtPershing.htm", "https://en.wikipedia.org/wiki/Mount_Pershing"],
+  "patches": [
+   {"id": "wa_mount_pershing_standard", "fact": "Which side of the peak the approach gully/basin is on", "op": "replace_text", "column": "climate", "path": ["typical"],
+    "find": "Pershing's north-side approach gully and basin hold snow later",
+    "replace": "Pershing's east-side approach gully and basins hold snow later"}
+  ]},
+ {"id": "wa_mount_pershing_standard", "fact": "Which trailhead area the crowds note describes",
+  "verdict": "fixed",
+  "correct_value": "The approach is from the Hamma Hamma / Jefferson Creek side, not Lake Cushman / Mount Rose; the crowds note should not frame visitors as Mount Rose hikers.",
+  "evidence": "The Forest Service directions and a detailed route report both reach Pershing via Hamma Hamma River Road (FR 25), FR 2480 and FR 2401 to the Jefferson Creek crossing; the encyclopedia entry places the peak between the Hamma Hamma River and Jefferson Creek. Mount Rose is climbed from Lake Cushman in a different drainage. The replacement reuses the row's own estimatePerSeason comparison with Ellinor and Washington.",
+  "sources": ["https://www.ericsbasecamp.net/trips/MtPershing/MtPershing.htm", "https://www.fs.usda.gov/r06/olympic/recreation/jefferson-lake-trailhead", "https://en.wikipedia.org/wiki/Mount_Pershing"],
+  "patches": [
+   {"id": "wa_mount_pershing_standard", "fact": "Which trailhead area the crowds note describes", "op": "replace_text", "column": "crowds", "path": ["peakTraffic"],
+    "find": "most visitors to the Lake Cushman/Mount Rose area stop at Mount Rose itself and never continue on to Pershing",
+    "replace": "the brushy Jefferson Creek approach keeps traffic far below the nearby Mount Ellinor and Mount Washington scrambles"}
+  ]},
+ {"id": "wa_mount_pershing_standard", "fact": "Round-trip distance",
+  "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "dist_km 6.4 km is the one-way approach (~4 mi, matching the summit pin's distMi 4) and the itinerary's ~8 miles is explicitly round trip; the two measure different, consistent quantities.",
+  "sources": [],
+  "patches": []}
+]}

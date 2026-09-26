@@ -1,0 +1,268 @@
+{
+ "applied": [
+  {
+   "id": "wa_andersons_thumb_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_andersons_thumb_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_andersons_thumb_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Distances"
+  },
+  {
+   "id": "wa_andersons_thumb_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Distances"
+  },
+  {
+   "id": "wa_andersons_thumb_standard",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Distances"
+  },
+  {
+   "id": "wa_andersons_thumb_standard",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Distances"
+  },
+  {
+   "id": "wa_andersons_thumb_standard",
+   "column": "obj_haz",
+   "path": [
+    1
+   ],
+   "fact": "Anderson Glacier present or gone"
+  },
+  {
+   "id": "wa_andersons_thumb_standard",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "Anderson Glacier present or gone"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_andersons_thumb_standard",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.740259,
+      "lng": -123.065764,
+      "elev": 700,
+      "name": "Dosewallips Road washout parking (FR-2610)",
+      "type": "Trailhead",
+      "elevFt": 1600,
+      "directions": "There is no drive to the trailhead proper — the Dosewallips River Road (FR-2610), off Hwy 101 near Brinnon, has been closed to vehicles at a washout since 2002, and the washout parking is where your car stops. From here it is roughly 5.5 miles of old roadbed up to the former ranger station and trailhead, which nearly every party bikes rather than walks; that stretch works out to about 11 miles over the round trip, so plan for it before you leave home. Sort out an Olympic National Park wilderness permit for the Anderson Pass / Camp Siberia zone in advance, since there is nothing to arrange at this parking spot."
+     },
+     {
+      "lat": 47.703671,
+      "lng": -123.314173,
+      "elev": 3527,
+      "name": "Honeymoon Meadows",
+      "note": "Forested backcountry camp with reliable creek water; the West Fork ford here can run high and hazardous in spring or after heavy rain, and mosquitoes are thick in summer.",
+      "type": "Water",
+      "distMi": 14.15
+     },
+     {
+      "lat": 47.69592,
+      "lng": -123.32628,
+      "elev": 4464,
+      "name": "Anderson Pass",
+      "note": "Trail junction where the West Fork Dosewallips and East Fork Quinault routes cross; the Anderson Pass Shelter (Camp Siberia) sits just below at roughly 4,180 ft.",
+      "type": "Junction",
+      "distMi": 16
+     },
+     {
+      "lat": 47.701764,
+      "lng": -123.330884,
+      "elev": 5100,
+      "name": "Anderson Tarn high camp",
+      "note": "Small tarn camp reached via a steep mile of wildflower slopes above the pass; last reliable camp before committing to the glacier.",
+      "type": "Campsite",
+      "distMi": 17
+     },
+     {
+      "lat": 47.710261,
+      "lng": -123.337461,
+      "elev": 6500,
+      "name": "Flypaper Pass",
+      "note": "Gain point onto the Eel Glacier via a snow finger, named for the dark rocks scattered across the ice below; the finger typically melts out by late summer, so climb it early season.",
+      "type": "Junction",
+      "distMi": 18.5
+     },
+     {
+      "lat": 47.713093,
+      "lng": -123.339653,
+      "elev": 6650,
+      "name": "Eel Glacier bergschrund / headwall",
+      "note": "Downward traverse around a rock buttress onto the upper Eel Glacier; the bergschrund opens wide late-season and glacier recession has steepened this slope to 40+ degrees in spots.",
+      "type": "Hazard",
+      "distMi": 19
+     },
+     {
+      "lat": 47.7211,
+      "lng": -123.3317,
+      "elev": 7330,
+      "name": "Mount Anderson summit",
+      "type": "Summit",
+      "elevFt": 7330
+     }
+    ],
+    "itinerary": {
+     "cal": "Best climbed July-September when the Eel Glacier's snow bridges are consolidated but not yet fully melted out; an Olympic NP wilderness permit (recreation.gov) is required for the Anderson Pass/Camp Siberia zone.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Since the 2002 washout, the Dosewallips Road is closed roughly 5.5 miles before the old trailhead, so most parties bike (or walk) that stretch first. From the ranger station it's a long, mostly gentle valley hike up the West Fork Dosewallips through Honeymoon Meadows (with a knee-to-thigh-deep river ford) to Anderson Pass, then a final push up onto the Anderson massif to a flat, snowy campsite near the Eel Glacier/Anderson Pass moraine.",
+       "hours": 9.5,
+       "miles": 15,
+       "title": "Washout approach to high camp",
+       "gainFt": 4600,
+       "lossFt": 150,
+       "packLb": 40,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Bike/walk the washed-out road",
+         "detail": "~5.5 mi to the old ranger station/trailhead."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Start West Fork Dosewallips Trail",
+         "detail": "Gentle valley trail through old growth."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Ford the river near Honeymoon Meadows",
+         "detail": "Can be thigh-deep in early season."
+        },
+        {
+         "time": "3:30 PM",
+         "label": "Anderson Pass",
+         "detail": "Turn off the main trail toward the Anderson Glacier moraine."
+        },
+        {
+         "time": "5:30 PM",
+         "label": "Make camp",
+         "detail": "Flat spot on the snowy moraine saddle near Eel Glacier."
+        }
+       ],
+       "objective": "Reach high camp near Anderson Pass / Eel Glacier moraine"
+      },
+      {
+       "n": 2,
+       "note": "A technical day-trip from camp: traverse above Anderson Lake to Flypaper Pass, drop onto the Eel Glacier and cross to the base of the spire, then climb the short but exposed sandstone pitch to the summit block and rappel back off. Afternoon convective weather is common, so an early start and a firm turnaround time matter.",
+       "hours": 7,
+       "miles": 4,
+       "title": "Flypaper Pass, Eel Glacier, and the Thumb",
+       "gainFt": 1650,
+       "lossFt": 1650,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave high camp",
+         "detail": "Light rack, rope, and glacier gear only."
+        },
+        {
+         "time": "7:15 AM",
+         "label": "Flypaper Pass",
+         "detail": "Traverse above frozen Anderson Lake to gain the pass."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Cross the Eel Glacier",
+         "detail": "Roped travel to the base of the Thumb; watch for open crevasses in late season."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Climb the spire",
+         "detail": "Short pitch of solid sandstone to the summit block."
+        },
+        {
+         "time": "10:15 AM",
+         "label": "Rappel from the summit",
+         "detail": "Single- or double-rope rappel off fixed anchor/bollard back to the glacier."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Back in camp",
+         "detail": "Reverse the glacier and pass before afternoon weather builds."
+        }
+       ],
+       "objective": "Climb Anderson's Thumb and return to high camp"
+      },
+      {
+       "n": 3,
+       "note": "A long reversal of Day 1: break camp, drop back through Anderson Pass and Honeymoon Meadows to the ranger station, then bike the washed-out road back to the car. Most parties treat this as a full day given the distance.",
+       "hours": 9,
+       "miles": 20,
+       "title": "Hike and bike out",
+       "gainFt": 150,
+       "lossFt": 4600,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to the trailhead/vehicle"
+      }
+     ],
+     "totalNote": "A 3-day, roughly 39-mile round trip (including the ~11 miles of washed-out road) with about 6,200 ft of net gain/loss; a long valley approach bookends one technical day climbing the spire via Flypaper Pass and the Eel Glacier."
+    },
+    "descent_text": "Descend Anderson's Thumb by reversing the ascent line: a single rappel from the summit block back down to the notch/col it rises from. The pinnacle is short (climbers describe it as \"a fun rock climb on good sandstone,\" essentially a one-pitch spire), so a single-strand rappel on a 30m rope or a doubled 60m rope is enough to reach the col; because this is an obscure, lightly-visited objective with no documented fixed hardware, expect a natural anchor — a sling around a horn, block, or chockstone — rather than bolts or chains, so carry cordage/rap rings and be prepared to leave gear or build your own anchor. From the col, downclimb/scramble back to Flypaper Pass and recross the upper Eel Glacier (rope up for crevasse hazard — parties have noted a bergschrund cutting across this descent line in recent seasons), then reverse the snow/scree slope down to the Anderson Glacier moraine camp. From there it's a full reversal of the approach: drop to Anderson Pass, follow the West Fork Dosewallips Trail back through Honeymoon Meadows to the Dosewallips Ranger Station, then the road-walk/bike-out. Given the ~39-mile round-trip distance and remote setting, most parties treat this as a multi-day trip and descend only to high camp the day of the climb, hiking out the following day rather than going car-to-car.",
+    "obj_haz": [
+     "rapid afternoon weather deterioration (rain/thunderstorms)",
+     "approach crosses glaciated terrain (Anderson Glacier / Eel Glacier) with crevasse and moat hazards",
+     "generally loose, crumbly rock on neighboring massif terrain"
+    ],
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Interior/eastern Olympics pattern: heavy winter snowpack that lingers into early summer, a best window once summer conditions arrive, and early fall storms that can shorten the season"
+     },
+     "exposure": "High consequence on the summit block - there is exposed Class 4/low-5th spire climbing with loose rock; a fall or injury here, combined with the extreme remoteness and unreliable cell coverage, means any accident likely requires a lengthy self-extraction or SAR response",
+     "avalanche": {
+      "zone": "Olympics (NWAC forecast zone) - NWAC does not publish a forecast specific to Mount Anderson/Anderson's Thumb; the general Olympics zone is the best available proxy",
+      "byMonth": {
+       "May": "Considerable",
+       "July": "Low",
+       "June": "Moderate",
+       "April": "Considerable",
+       "August": "Low",
+       "October": "Moderate",
+       "September": "Low"
+      }
+     },
+     "crevasses": "Real hazard - the route crosses the Anderson/Eel Glacier on approach; risk is highest in early season before snow bridges consolidate or thin out"
+    }
+   }
+  }
+ ]
+}

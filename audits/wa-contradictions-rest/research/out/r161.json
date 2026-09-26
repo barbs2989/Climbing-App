@@ -1,0 +1,435 @@
+{
+ "file": "r161.json",
+ "results": [
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Summit elevation",
+   "verdict": "fixed",
+   "correct_value": "7572",
+   "evidence": "The topo-derived peak list gives Kangaroo Temple 7,572 ft; the peak's climbing page and a trip report (elevation range 5,160-7,572 ft) agree. The 7,238 ft figure matches only the crag database's coordinate-derived area elevation, not the summit.",
+   "sources": [
+    "https://listsofjohn.com/peak/212054",
+    "https://www.summitpost.org/kangaroo-temple/815101",
+    "https://onehikeaweek.com/2012/09/08/kangaroo-temple/"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_face_2",
+     "fact": "Summit elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 7238,
+     "value": 7572
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "5 pitches",
+   "evidence": "The route database lists 5 pitches, 500 ft, matching the row's pitches, five pitch_detail rows, overview, length_m and summit waypoint note. Outside sources vary with how it is pitched (a club page says 6, a trip report climbed it in 4), so rope_note is aligned to the row's own 5-pitch breakdown.",
+   "sources": [
+    "https://www.mountainproject.com/route/112056599/northwest-face",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face",
+    "https://spokalpine.com/2023/07/25/kangaroo-temple-northwest-face-ii-5-7-r/"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_face_2",
+     "fact": "Pitch count",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "6-pitch 5.7+ face route",
+     "replace": "5-pitch 5.7+ face route"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Rappel rope and rappel sequence",
+   "verdict": "fixed",
+   "correct_value": "Either two full-length (~30 m, 60 m rope doubled) rappels to a ledge with easy scrambling/downclimbing above the notch, or three shorter single-rope rappels to the notch; there is no 30 m + 50 m combination.",
+   "evidence": "The route database says two 30 m rappels reach a ledge with easy scrambling below, or three raps to the notch proper. The club route page describes two double-length rappels ending on down-climbable terrain above the high notch, or three single-rope rappels to avoid stuck ropes. Neither describes a 30 m plus 50 m pair; that phrasing is a garble of 'two double-length (50 m rope) rappels'.",
+   "sources": [
+    "https://www.mountainproject.com/route/112056599/northwest-face",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_face_2",
+     "fact": "Rappel rope and rappel sequence",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "some parties do two 30m/50m rappels",
+     "replace": "some parties do two full-length 30 m rappels"
+    },
+    {
+     "id": "wa_northwest_face_2",
+     "fact": "Rappel rope and rappel sequence",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "some parties making two rappels of 30 m and 50 m",
+     "replace": "some parties making two full-length rappels of about 30 m"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Total gain vs total loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A Northwest Face trip report states 2,425 ft of gain; a North Face report on the same approach logged 754 m (~2,475 ft). No second source states a gain or a car-to-car loss figure for THIS route, so neither gain_ft 1900 nor loss_ft 2500 is changed.",
+   "sources": [
+    "https://www.yellowleaf.org/scramble/g/r/2006-09-23-kangaroo.html",
+    "https://www.francisbaileyh.com/2022/07/23/kangaroo-temple/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "fact": "Car-to-car and summit times",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A club route summary gives about 11 hours car-to-car for the Northwest Face; a 2006 Northwest Face trip report reached the summit roughly 7 hours after leaving the car and was back about 8.3 hours after leaving it. The route database gives ~2 hours to the base plus 3-4 hours of climbing. No two sources agree on a summit time or total, so summitTimeHrs 2.5 (clearly too short) and the 7-8 hr prose are left for review.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face",
+    "https://www.yellowleaf.org/scramble/g/r/2006-09-23-kangaroo.html",
+    "https://www.mountainproject.com/area/107811443/kangaroo-temple",
+    "https://www.mountainproject.com/route/112056599/northwest-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "fact": "Distance to Kangaroo Pass / round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "Kangaroo Pass is about 1.5-1.8 mi and ~1,500 ft above the hairpin; the whole Kangaroo Temple outing is about 4.5-6 mi round trip.",
+   "evidence": "One hiking report puts the hairpin-to-Kangaroo-Pass walk at about 1.5 miles; another logged 3.54 mi round trip and 1,572 ft of gain to the pass and back. Full-outing figures for the Temple run 4.4-6 mi round trip (5 mi, 7.89 km, 6.0 mi in a club listing), so itinerary miles 6 and dist_km are within the sourced range and are left; the '3 miles to the pass' claim is the error.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-30.0422221179",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-11-3111130648",
+    "https://onehikeaweek.com/2012/09/08/kangaroo-temple/",
+    "https://www.francisbaileyh.com/2022/07/23/kangaroo-temple/"
+   ],
+   "patches": [
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Distance to Kangaroo Pass / round-trip distance",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "gains roughly 2,000 ft over about 3 miles to Kangaroo Pass",
+     "replace": "gains roughly 1,500 ft over about 1.5 miles to Kangaroo Pass"
+    },
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Distance to Kangaroo Pass / round-trip distance",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "This path gains roughly 2,000 ft over about 3 miles to Kangaroo Pass",
+     "replace": "This path gains roughly 1,500 ft over about 1.5 miles to Kangaroo Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "fact": "Gain to Kangaroo Pass and total gain",
+   "verdict": "fixed",
+   "correct_value": "~1,500 ft to Kangaroo Pass (fixed by the same approach patches); gain_ft 2400 stands.",
+   "evidence": "A hiking report logged 1,572 ft of gain to Kangaroo Pass and back, matching the row's waypoints (5,150 to 6,672 ft) and partner_requirements (~1,500 ft). The approach and approach_variants text are corrected by the patches listed under the distance result. The itinerary's 2,800 ft total comes from a report that also climbed Big Kangaroo; single-route figures are 754 m (~2,475 ft) and a club listing of 2,500 ft, but no source states a car-to-car loss, so itinerary gainFt/lossFt are left for review.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-11-3111130648",
+    "https://www.francisbaileyh.com/2022/07/23/kangaroo-temple/",
+    "https://trailcatjim.com/kangaroo-temple-big-kangaroo-via-early-winters-creek/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "fact": "Summit time within the day",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "null (summitTimeHrs holds the car-to-car total)",
+   "evidence": "summitTimeHrs equals totalHrs (9), i.e. it holds the car-to-car total; the itinerary summits ~4.5-5 h after leaving. The route database gives ~1 h to the pass plus ~1 h to the route and 3 pitches, and a North Face party went car-to-car in under 7 h, so a 9 h summit is impossible. Nulled per the catalog convention for this defect rather than computing a number.",
+   "sources": [
+    "https://www.mountainproject.com/area/107811443/kangaroo-temple",
+    "https://www.mountainproject.com/route/109059579/north-face",
+    "https://www.francisbaileyh.com/2022/07/23/kangaroo-temple/"
+   ],
+   "patches": [
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Summit time within the day",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 9,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_kangaroo_temple_north_face",
+   "fact": "Rappel anchor type",
+   "verdict": "fixed",
+   "correct_value": "Stations are fixed but rigging varies: bolts with chains at some, bolts with slung cord (no chains) at others, plus a flake-and-tree option near the second station.",
+   "evidence": "The route database describes chains atop the North Face and at the P1 belay. The club route page describes three bolts with hangers at the top and a series of ledges each with slung rappel anchors, with a flake-and-tree alternative 30 ft below. A 2022 trip report found the top station rigged with cord running through a hanger. So 'all bolted chains, no natural anchors' is not supported.",
+   "sources": [
+    "https://www.mountainproject.com/route/109059579/north-face",
+    "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face",
+    "https://www.francisbaileyh.com/2022/07/23/kangaroo-temple/"
+   ],
+   "patches": [
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Rappel anchor type",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "All anchors reported are fixed (bolted chains), not natural gear anchors, so no v-thread/natural-anchor building is needed.",
+     "replace": "The stations are fixed, but their rigging varies (chains at some, bolts with slung cord at others), so inspect each one before loading; no anchor building should be needed."
+    },
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Rappel anchor type",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "from FIXED BOLTED CHAINS,",
+     "replace": "from FIXED STATIONS (chains at some, slung cord on bolts at others),"
+    },
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Rappel anchor type",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "All anchors are fixed chains; no natural anchor building is needed.",
+     "replace": "The stations are fixed, though rigging varies; inspect each before loading."
+    },
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Rappel anchor type",
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "anchor"
+     ],
+     "expect": "bolted chain station",
+     "value": "fixed bolted station (chains or slung cord)"
+    },
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Rappel anchor type",
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      1,
+      "anchor"
+     ],
+     "expect": "bolted chain station (or flake-and-tree ~30 ft below)",
+     "value": "fixed station, slung (or flake-and-tree ~30 ft below)"
+    },
+    {
+     "id": "wa_kangaroo_temple_north_face",
+     "fact": "Rappel anchor type",
+     "op": "set",
+     "column": "rappel_detail",
+     "path": [
+      2,
+      "anchor"
+     ],
+     "expect": "bolted chain station",
+     "value": "fixed station, slung"
+    }
+   ]
+  },
+  {
+   "id": "wa_koala_krack",
+   "fact": "Route length / pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Single pitch, ~30 ft (9 m)",
+   "evidence": "The route database lists Koala Krack as a single 30 ft (9 m) pitch, matching pitches, length_m, pitch_detail and overview. Only rope_note calls it multi-pitch.",
+   "sources": [
+    "https://www.mountainproject.com/route/119300522/koala-krack"
+   ],
+   "patches": [
+    {
+     "id": "wa_koala_krack",
+     "fact": "Route length / pitch count",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Short easy multi-pitch granite route on Kangaroo Temple.",
+     "replace": "Short, easy single-pitch granite route on Kangaroo Temple's summit block."
+    }
+   ]
+  },
+  {
+   "id": "wa_koala_krack",
+   "fact": "Approach base-finding text describes another route",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Koala Krack is reached after finishing the North Face's final pitch; the bench 200 ft below the notch leading to a table-like rock is the Northwest Face start.",
+   "evidence": "The route database says Koala Krack is approached after completing the North Face's final pitch, and its Northwest Face page describes the traverse and downclimb to the 'table like rock' start. The row's notes, overview and beta agree it is a summit-block pitch.",
+   "sources": [
+    "https://www.mountainproject.com/route/119300522/koala-krack",
+    "https://www.mountainproject.com/route/112056599/northwest-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_koala_krack",
+     "fact": "Approach base-finding text describes another route",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "In the gully between Kangaroo Temple and Little Finger, watch for a faint trail breaking off to the RIGHT roughly 200 ft below the notch. If you have started scrambling up and over boulders in the gully bed, you have gone too far and must drop back down to find it. That branch traverses and downclimbs slightly to a flat, table-like rock, which is where the face climbing begins.",
+     "replace": "In the gully between Kangaroo Temple and Little Finger, keep going up to the notch itself, where the North Face starts; the faint trail breaking off to the RIGHT roughly 200 ft below the notch leads to the Northwest Face instead. Either way, this pitch is only reached by finishing one of those lines."
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_4",
+   "fact": "Approach line (over Kangaroo Pass vs creek-side, never crossing Kangaroo Pass)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route database's South Face page says to hike southeast from the hairpin to Kangaroo Pass, then drop some elevation and traverse to the face (2-4 h); its area page says to go down the gully beyond the pass for the Southwest Face route. A route-beta listing says to hike southeast on the right side of the creek on a trail that improves past slide areas, and that the face is not visible from the highway, but none found says the approach avoids Kangaroo Pass. The weight of evidence suggests the 'never crossing Kangaroo Pass' claim is wrong, but only one site states the pass route explicitly, so no rewrite is made.",
+   "sources": [
+    "https://www.mountainproject.com/route/114267009/south-face",
+    "https://www.mountainproject.com/area/107811443/kangaroo-temple",
+    "http://www.supertopo.com/rock-climbing/route_beta.php?r=wakatesf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_4",
+   "fact": "Approach time and total day",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route database gives a 2-4 h approach for the South Face; a route-beta snippet gives 1.5-2 h. The 7-8 h round trip in the approach paragraph is the shared Temple text written for the short North Face. No two sources state the approach or total day for this 7-pitch route.",
+   "sources": [
+    "https://www.mountainproject.com/route/114267009/south-face",
+    "http://www.supertopo.com/rock-climbing/route_beta.php?r=wakatesf"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_4",
+   "fact": "Cam rack (doubles vs single standard rack)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Double set of cams 0.4-3\", one #4 (optional #5), nuts",
+   "evidence": "The route database's South Face page gives 'Double set of cams .4-3, one #4, Optional #5, nuts', matching detailed_rack, pro_needs and gear. rack[0] and sling_rack.cams are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/114267009/south-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_4",
+     "fact": "Cam rack (doubles vs single standard rack)",
+     "op": "set",
+     "column": "rack",
+     "path": [
+      0
+     ],
+     "expect": "Cams, standard rack to 3in",
+     "value": "Cams, double set 0.4-3in plus one #4 (optional #5)"
+    },
+    {
+     "id": "wa_south_face_4",
+     "fact": "Cam rack (doubles vs single standard rack)",
+     "op": "set",
+     "column": "sling_rack",
+     "path": [
+      "cams"
+     ],
+     "expect": "standard rack to 3 inches",
+     "value": "double set 0.4-3 inches, one #4 (optional #5)"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_4",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "III",
+   "evidence": "The route database grades the South Face III 5.8, and the route-beta listing is titled 'South Face III 5.8'. commitment and overview already say III.",
+   "sources": [
+    "https://www.mountainproject.com/route/114267009/south-face",
+    "http://www.supertopo.com/rock-climbing/route_beta.php?r=wakatesf"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_4",
+     "fact": "Commitment grade",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "7-pitch III-IV 5.8 route",
+     "replace": "7-pitch III 5.8 route"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_4",
+   "fact": "Rock quality",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Rock quality varies",
+   "evidence": "The route database's description says 'Rock quality varies, route finding is challenging'. The row's overview, beta, watch_out and pitch_detail agree; only the summit waypoint note calls the rock solid.",
+   "sources": [
+    "https://www.mountainproject.com/route/114267009/south-face"
+   ],
+   "patches": [
+    {
+     "id": "wa_south_face_4",
+     "fact": "Rock quality",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "is runout in sections despite solid rock",
+     "replace": "is runout in sections on rock of variable quality"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_4",
+   "fact": "Route identity (South Face vs Southwest Face)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route database lists four routes on the Temple (Koala Krack, North Face, Northwest Face, South Face) yet its approach text names a 'SouthWest Face route' reached by going down the gully beyond Kangaroo Pass, implying South Face and Southwest Face are the same route approached over the pass. That would make rope_note right and the 'never crossing Kangaroo Pass' approach wrong, but it rests on one site; tied to the unresolved approach dispute.",
+   "sources": [
+    "https://www.mountainproject.com/area/107811443/kangaroo-temple",
+    "https://www.mountainproject.com/route/114267009/south-face"
+   ],
+   "patches": []
+  }
+ ]
+}

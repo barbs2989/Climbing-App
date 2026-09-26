@@ -1,0 +1,163 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_pershing_standard",
+   "column": "beta",
+   "path": [],
+   "fact": "Where the rocky gully starts and where the 'small basin' sits"
+  },
+  {
+   "id": "wa_mount_pershing_standard",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where the rocky gully starts and where the 'small basin' sits"
+  },
+  {
+   "id": "wa_mount_pershing_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Parking fee / Northwest Forest Pass at Jefferson Creek"
+  },
+  {
+   "id": "wa_mount_pershing_standard",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Parking fee / Northwest Forest Pass at Jefferson Creek"
+  },
+  {
+   "id": "wa_mount_pershing_standard",
+   "column": "best_season",
+   "path": [],
+   "fact": "Climbing season window"
+  },
+  {
+   "id": "wa_mount_pershing_standard",
+   "column": "climate",
+   "path": [
+    "typical"
+   ],
+   "fact": "Which side of the peak the approach gully/basin is on"
+  },
+  {
+   "id": "wa_mount_pershing_standard",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "Which trailhead area the crowds note describes"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_pershing_standard",
+   "before": {
+    "beta": "From the Jefferson Creek trailhead pullout (~2,440 ft) a faint, flagged climber's path follows the north side of Jefferson Creek through forest, boulders and windfall, steepening and thickening into brush before angling up into a rocky gully around 4,300 ft. The gully (talus, sometimes snow-filled) is followed to a small basin around 5,400 ft below the true (south) summit. From there, either the center gully or a left-hand gully — the left option featuring 45-50° snow followed by a short, loose/brushy class 4 rock step — gains the south ridge. The ridge crest is class 2, occasionally class 3, with one distinctly exposed knife-edge section requiring a class 3/4 move near the 6,154 ft summit. Most parties treat the whole thing as a long, committing scramble rather than a roped climb, though a rope is commonly carried for the class 4 step and the ridge crux.",
+    "pitch_detail": [
+     {
+      "grade": "Class 2-3 (talus, sometimes snow-filled)",
+      "notes": "From ~4,300 ft, where the flagged boot path leaves the Jefferson Creek forest/brush approach and turns into a rocky gully, up to a small basin at ~5,400 ft below the true summit.",
+      "pitch": "Approach gully (basin approach)",
+      "lengthM": 335
+     },
+     {
+      "grade": "Class 3-4 (45-50° snow, short loose class 4 rock step, then class 2-3 ridge with an exposed class 3/4 knife-edge finish)",
+      "notes": "From the ~5,400 ft basin via center or left-hand gully option (left has steep snow then a short loose/brushy class 4 step) to gain the south ridge, then along the ridge crest — mostly class 2-3 with one exposed knife-edge class 3/4 move — to the 6,154 ft summit.",
+      "pitch": "Upper gully and summit ridge",
+      "lengthM": 230
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 47.545078,
+      "lng": -123.228973,
+      "elev": 2440,
+      "name": "Jefferson Creek Crossing (FR 2401)",
+      "note": "Faint climbers' path begins on the north side of the creek where FSR 2401 fords Jefferson Creek; park in the turnout just after the crossing (Northwest Forest Pass area, no formal trailhead sign).",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Hoodsport, drive about 14 miles north on US 101 to the Hamma Hamma River Road (FR 25) and follow it roughly 6.5 miles to FR 2480. Take FR 2480 about 3 miles to FR 2401, then FR 2401 another 7 to 7.5 miles to where it crosses Jefferson Creek, in the Jefferson Lake trailhead area at about 2,440 feet. Park in the turnout just after the crossing — there is no formal trailhead sign, and it is a Northwest Forest Pass area. Confirm current road status with Olympic National Forest before you drive: FR 2480 and FR 2401 have a history of washouts and were briefly closed during the 2025 Hamma Fire, though that closure has since been rescinded."
+     },
+     {
+      "lat": 47.545606525,
+      "lng": -123.230998,
+      "elev": 2600,
+      "name": "Jefferson Creek (last reliable water)",
+      "note": "Path follows the north bank through old-growth forest, boulders, and windfall — fill up here, as the route goes dry once it climbs into the gully and basins above.",
+      "type": "Water",
+      "distMi": 0.3
+     },
+     {
+      "lat": 47.5486015,
+      "lng": -123.24247299999999,
+      "elev": 4300,
+      "name": "Rocky gully to 4,300' basin",
+      "note": "After several hundred feet of forest/brush the path makes a rising traverse into a rocky gully; climb the gully to a small basin at roughly 4,300 ft — this is also the point to aim for on the descent before dropping back to the creek.",
+      "type": "Junction",
+      "distMi": 2
+     },
+     {
+      "lat": 47.5507156,
+      "lng": -123.250573,
+      "elev": 5400,
+      "name": "Upper basin (cut left below summit)",
+      "note": "From the 4,300' basin continue straight up then cut left up a second gully into the basin east of the summit at about 5,400 ft, staged at the base of the final snow/rock gully.",
+      "type": "Junction",
+      "distMi": 3.2
+     },
+     {
+      "lat": 47.5514203,
+      "lng": -123.253273,
+      "elev": 5800,
+      "name": "Snow gully + Class 4 rock step",
+      "note": "45–50 degree snow leads to a short pitch of loose, brushy Class 4 rock gaining the summit ridge; carry an ice axe/crampons — this step has caught unprepared parties.",
+      "type": "Hazard",
+      "distMi": 3.6
+     },
+     {
+      "lat": 47.551948825,
+      "lng": -123.255298,
+      "elev": 6000,
+      "name": "Knife-edge ridge traverse",
+      "note": "Ridge crest is mostly Class 2–3 but narrows to a genuinely knife-edge section with one or two exposed Class 3/4 moves just before the summit block.",
+      "type": "Hazard",
+      "distMi": 3.9
+     },
+     {
+      "lat": 47.55194,
+      "lng": -123.25596,
+      "elev": 6154,
+      "name": "Mount Pershing, South Peak",
+      "note": "True (south) summit of the Pershing massif's three tops, 1.3 mi NNW of Mount Washington; allow a full day, historically about 11 hours car-to-car.",
+      "type": "Summit",
+      "distMi": 4
+     }
+    ],
+    "best_season": "June through September; the final gully often holds snow into July, so many parties prefer late July–September once it's mostly melted out. The general climbing season is listed as May–August.",
+    "climate": {
+     "typical": "Marine west coast climate with heavy winter precipitation; Pacific storms wring out moisture as they hit the Olympics, so Pershing's north-side approach gully and basin hold snow later into the season than lower-elevation trails nearby.",
+     "bySeason": {
+      "fall": "Rock conditions are often good after full snowmelt, but shortening daylight and possible early-season snow become factors by October.",
+      "spring": "Steep, avalanche-prone snow climbing conditions; ice axe and crampons are mandatory.",
+      "summer": "Late June through September is the practical climbing window, though the approach gully and upper basin can still carry steep, consequential snow into July in a typical year.",
+      "winter": "Heavy snowfall and avalanche-prone terrain make this a full winter mountaineering objective, not a scramble."
+     }
+    },
+    "crowds": {
+     "peakTraffic": "Scattered weekend attempts July-September; most visitors to the Lake Cushman/Mount Rose area stop at Mount Rose itself and never continue on to Pershing",
+     "solitudeRating": 4,
+     "estimatePerSeason": "Roughly a handful to low dozens of parties per season (rough estimate) — well under neighboring Mount Ellinor/Mount Washington scrambles, which see far heavier traffic"
+    }
+   }
+  }
+ ]
+}

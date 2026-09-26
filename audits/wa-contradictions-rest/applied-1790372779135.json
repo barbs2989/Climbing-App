@@ -1,0 +1,370 @@
+{
+ "applied": [
+  {
+   "id": "wa_south_face_2",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rappel line used for descent / bail"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Rappel line used for descent / bail"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "bail",
+   "path": [],
+   "fact": "Rappel line used for descent / bail"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "descent",
+   "path": [],
+   "fact": "Rappel line used for descent / bail"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Rappel line used for descent / bail"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Rappel line used for descent / bail"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "permit",
+   "path": [],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_south_face_2",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Baseline says the Standard Route is reached from the bench (discovered)"
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "column": "permit",
+   "path": [],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_direct_west_face",
+   "column": "pitch_detail",
+   "path": [],
+   "fact": "Crux pitch number and length"
+  },
+  {
+   "id": "wa_direct_west_face",
+   "column": "rope_type",
+   "path": [],
+   "fact": "Rope kit"
+  },
+  {
+   "id": "wa_direct_west_face",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Overnight permit"
+  },
+  {
+   "id": "wa_direct_west_face",
+   "column": "permit",
+   "path": [],
+   "fact": "Parking pass"
+  },
+  {
+   "id": "wa_direct_west_face",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_south_face_2",
+   "before": {
+    "descent_text": "This is not a walk-off — the way down is by rappel. From the summit area, one commonly used anchor is a two-piton station equalized with cord; lower on the route (the short aid section) anchors have been a mix of one newer bolt and one old quarter-inch bolt with an aging hanger — treat the old bolt with real suspicion. Two double-rope rappels (60m ropes recommended; a single 70m can just barely work in spots, but a 60m single can leave you several meters short of the notch) bring you back down the south face. Watch for rope-eating cracks a few feet below a slung-horn rap station — build that anchor as high as practical so the rope doesn't jam on the pull. Most parties reverse this rappel sequence to rejoin the East Face rappel line on Chablis (linked by a short 4th-class scramble) and ride those raps to the base, rather than re-climbing back over to Burgundy Col. If you're descending independently instead of via Chablis, reverse the traverse below Chianti back to Burgundy Col and follow the climbers' path down the scree gullies to the bench camp and boot path to the highway.",
+    "bail": "From anywhere on the short 2-pitch route, two double-rope (60m) rappels from the Chablis East Face anchors return to the base.",
+    "descent": "Two double-rope (60m) rappels from the Chablis East Face anchors return climbers to the base.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same approach as the standard line: climbers' trail from the Hwy 20 pullout up through bench camp (~6,500 ft) to the col, where a few small bivy spots and year-round snowmelt water are available.",
+       "hours": 4.5,
+       "miles": 3,
+       "title": "Approach to Burgundy Col bivy",
+       "gainFt": 2600,
+       "lossFt": 100,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Reach the bivy sites at Burgundy Col (~7,950 ft)"
+      },
+      {
+       "n": 2,
+       "note": "A moderate multi-pitch day up the South Face, topping out on Pernod's summit, then rappelling the standard descent line before breaking camp at the col and hiking all the way back down to the highway.",
+       "hours": 10.5,
+       "miles": 3,
+       "title": "Climb the South Face, summit, hike out",
+       "gainFt": 900,
+       "lossFt": 3600,
+       "packLb": 26,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Burgundy Col bivy",
+         "detail": "Short approach to the base of the South Face."
+        },
+        {
+         "time": "5:45 AM",
+         "label": "Rope up and start climbing",
+         "detail": "2 pitches, 5.9 with a point of aid (A0)."
+        },
+        {
+         "time": "~10:00 AM",
+         "label": "Top out on the summit",
+         "detail": "About 4-4.5 hours of climbing."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Begin rappel descent",
+         "detail": "Standard rappel line off the spire back toward the col."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Back at Burgundy Col",
+         "detail": "Break down the bivy and shoulder full packs."
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at the car",
+         "detail": "Descend past bench camp to the Hwy 20 pullout."
+        }
+       ],
+       "objective": "Climb the 5.9 (A0) South Face and descend to the car"
+      }
+     ],
+     "totalNote": "Effectively the same outing as Pernod's standard line: a 2-day trip with a Burgundy Col bivy followed by a long climb-and-descend day; pitch and gain stats here are carried over from the same South Face feature."
+    },
+    "approach_variants": [
+     {
+      "name": "Burgundy Col, then the loose fourth-class traverse round the east side below Chianti to the Pernod-Chablis notch",
+      "notes": "From the SR-20 pullout near milepost 166, the climbers' trail drops off the highway, crosses Early Winters Creek almost immediately at around 4,080 ft via logs, and climbs steeply, gaining nearly 2,400 ft, to the bench camp at roughly 6,460-6,500 ft, the standard staging area for all the Wine Spires. From there the trail works up scree gullies to Burgundy Col at 7,770 ft.\n\nTwo pitches at 5.9 A0, Grade II. Carry a rope for the final approach moves and expect loose rock underfoot the whole way in.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "Loose fourth-class traverse around the east side of the ridge below Chianti",
+       "A two-piton summit anchor equalized with cord, and a mix of one newer bolt and one old quarter-inch bolt with an aging hanger lower down",
+       "A single 60 m rope can leave a party several metres short of the notch on the descent",
+       "Rope-eating cracks a few feet below a slung-horn rap station; build that anchor as high as practical",
+       "Loose rock underfoot for the whole approach"
+      ],
+      "baseFinding": "THE BASE IS THE NOTCH BETWEEN PERNOD AND CHABLIS, AND THERE ARE TWO WAYS TO IT THAT ARRIVE FROM OPPOSITE DIRECTIONS. Both are worth knowing before you leave camp, because the choice is made at the col and not at the base.\n\nOPTION ONE, FROM BURGUNDY COL: rather than dropping straight to Pernod's south side, most parties continue traversing and scrambling around the EAST, Silver Star Creek, side of the ridge BELOW CHIANTI, aiming for the Pernod-Chablis notch. Expect LOOSE FOURTH-CLASS TERRAIN on this stretch, which is itself the confirmation: if the ground you are on is walkable, you have not started the traverse.\n\nOPTION TWO, AND IT IS THE COMMON ONE BECAUSE THE ROUTE IS SHORT: climb CHABLIS SPIRE'S EAST FACE first, then downclimb or make a short rappel across loose rock to reach the base of Pernod's south face. That approach arrives from above rather than along.\n\nSO THE NEGATIVE TEST IS ABOUT WHICH SPIRE IS ABOVE YOU: this route sits TUCKED BETWEEN PERNOD'S BIGGER WEST FACE AND CHABLIS. If the wall above you is the tallest in the group, you are under Pernod's west face and on the Direct West Face or Standard Route ground, not here. Those are reached from the BENCH, not from the col.\n\nAND THE NOTCH IS A NAMED GAP BETWEEN TWO NAMED SPIRES, which is the most reliable kind of feature in this basin: Pernod on one side, Chablis on the other.\n\nDESCENT IS BY RAPPEL AND IT LINKS BACK ONTO CHABLIS: two double-rope rappels on 60 m ropes bring you back down the south face. A single 70 m can just barely work in spots, but a single 60 m can leave you several metres short of the notch. Most parties reverse this sequence to rejoin the East Face rappel line on Chablis, linked by a short fourth-class scramble, and ride those raps to the base rather than re-climbing back over to Burgundy Col."
+     }
+    ],
+    "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "access": {
+     "_raw": {
+      "permit_cost": "$0 for climbing/wilderness permit",
+      "permit_type": "Free self-issued wilderness permit for overnight stays",
+      "land_manager": "USFS - Okanogan-Wenatchee National Forest",
+      "parking_pass": "Northwest Forest Pass ($5 day / $30 annual)",
+      "permit_pickup": "Self-issued at trailhead or ranger stations",
+      "special_hazards": "Sharp granite spires; exposed climbing; weather dependent",
+      "wilderness_zone": "Alpine granite spire climbing area",
+      "group_size_limit": "Typically 6-12 depending on specific wilderness area",
+      "seasonal_closures": "Best late June-September; snow and avalanche danger outside this window",
+      "altitude_restrictions": "None noted"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "No climbing or wilderness permit is required. This corridor is Okanogan-Wenatchee National Forest outside any designated wilderness, so there is no quota, no reservation and no self-issue permit.",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Alpine granite spire climbing area",
+     "landManager": "USFS - Okanogan-Wenatchee National Forest",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping at Burgundy Col and the approach benches needs no permit; Lone Fir Campground is a fee, first-come first-served car campground, not a backcountry permit area."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "before": {
+    "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No formal quota/permit system for the Wine Spires bivy sites; standard backcountry/Leave No Trace ethics apply.",
+     "permit": "None required to climb",
+     "closures": "SR-20 gated closed for the winter season",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District (Winthrop, WA)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "No Northwest Forest Pass or fee needed at the SR-20 pullout",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping at Burgundy Col and the approach benches needs no permit; Lone Fir Campground is a fee, first-come first-served car campground, not a backcountry permit area."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_direct_west_face",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "Access pitch off the talus/scree gully onto the lower west face, following corners and cracks on clean granite to establish the line up the tallest wall in the Wine Spires.",
+      "pitch": 1,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Sustained face and crack climbing continuing up the wall; solid rock with good pro in intermittent cracks between blanker sections.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 1,
+      "grade": "5.9",
+      "notes": "Technical face moves connect discontinuous crack systems; a single fixed bolt backs up the belay where natural gear placements thin out.",
+      "pitch": 3,
+      "anchor": "1-bolt + gear anchor",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.9+",
+      "notes": "Continues the sustained nature of the route noted by the first ascent party — high-quality but strenuous face climbing that keeps the grade well above moderate for a full rope-length.",
+      "pitch": 4,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 2,
+      "grade": "5.10-",
+      "notes": "Steep face climbing on the upper wall using small edges and side-pulls; two fixed bolts anchor the stance below the route's hardest pitch.",
+      "pitch": 5,
+      "anchor": "2-bolt anchor",
+      "lengthM": 35
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.10+ R",
+      "notes": "The technical crux pitch: sustained, high-quality face climbing where protection opportunities thin out and the runout (the route's \"R\" rating) is most pronounced — confident face-climbing technique matters more than gear here.",
+      "pitch": 6,
+      "anchor": "Gear (sparse)",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.9",
+      "notes": "Easing slightly from the crux below, this pitch works up cracks and flakes toward the summit ridge, still sustained but with better protection than the pitch beneath it.",
+      "pitch": 7,
+      "anchor": "Gear",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Final, easier pitch gaining the summit ridge at the route's only fixed rappel anchor (nuts left in place); old aid-era bolts nearby (one missing its hanger, another loose) should be treated as unreliable rather than used as pro or anchor.",
+      "pitch": 8,
+      "anchor": "Fixed nut anchor (summit ridge)",
+      "lengthM": 45
+     }
+    ],
+    "rope_type": "single",
+    "access": {
+     "_raw": {
+      "permit_cost": "$0 for climbing/wilderness permit",
+      "permit_type": "Free self-issued wilderness permit for overnight stays",
+      "land_manager": "USFS - Okanogan-Wenatchee National Forest",
+      "parking_pass": "Northwest Forest Pass ($5 day / $30 annual)",
+      "permit_pickup": "Self-issued at trailhead or ranger stations",
+      "special_hazards": "Sharp granite spires; exposed climbing; weather dependent",
+      "wilderness_zone": "Alpine granite spire climbing area",
+      "group_size_limit": "Typically 6-12 depending on specific wilderness area",
+      "seasonal_closures": "Best late June-September; snow and avalanche danger outside this window",
+      "altitude_restrictions": "None noted"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "Free self-issued wilderness permit for overnight stays",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "Alpine granite spire climbing area",
+     "landManager": "USFS - Okanogan-Wenatchee National Forest",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Camping at Burgundy Col and the approach benches needs no permit; Lone Fir Campground is a fee, first-come first-served car campground, not a backcountry permit area."
+     }
+    },
+    "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads."
+   }
+  }
+ ]
+}

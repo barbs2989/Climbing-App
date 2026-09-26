@@ -1,0 +1,1111 @@
+{
+ "file": "r303.json",
+ "results": [
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "fact": "Glacier travel",
+   "verdict": "fixed",
+   "correct_value": "The route crosses the low-angle Green Creek (Sisters) Glacier to the Cinderella-Little Sister notch; basic glacier gear is carried.",
+   "evidence": "The West Ridge route page says to gain the Green Creek Glacier and head to its top left side to the notch between Cinderella and Little Sister. A Green Creek Circuit trip report describes crossing the Sisters/Green Creek glacier and its moat on descent, and a Mountaineers basic-glacier-climb report roped up on the Green Glacier toward Cinderella. The crevasses N/A and 'no glacier travel gear' lines are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/126694852/west-ridge",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-green-glacier-twin-sisters-range"
+   ],
+   "patches": [
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Glacier travel",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel; route is dunite/olivine rock scrambling",
+     "value": "Low-angle Green Creek (Sisters) Glacier crossed on the way to the Cinderella-Little Sister notch; crevasse hazard is generally low but grows later in the season, and the moat at the glacier margin must be crossed in both directions"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Glacier travel",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "no glacier travel gear required",
+     "replace": "plus basic glacier gear for the Green Creek Glacier crossing"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Glacier travel",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer scramble route;",
+     "replace": "N/A - summer scramble route;"
+    }
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+   "verdict": "fixed",
+   "correct_value": "Elbow Lake Trailhead at the end of FS Road 38 (Forest Service land, Northwest Forest Pass), Middle Fork Nooksack crossing at the start, Elbow Lake Trail to the Hildebrand Creek switchback, then the Green Creek climbers' trail, glacier and notch. No Sister Divide, no private timberland, no Discover Pass.",
+   "evidence": "The Forest Service trail page puts the north Elbow Lake trailhead at the end of FSR 38 (about 11 mi from Mosquito Lake Road) with no bridge over the Middle Fork Nooksack, and the Twin Sisters view about 2 mi from the north end. A Green Creek Circuit trip report and an alpine-guide trip report both describe the Middle Fork crossing at the trailhead, ~1.5 mi of Elbow Lake Trail to a switchback, then the blue-blazed Green Creek climbers' trail. The WTA page requires a Northwest Forest Pass or America the Beautiful pass and notes the FR 38 washout/barrier at milepost 7. The itinerary's Sister Divide line and the private/DNR timberland text describe a different approach.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/elbow-lake-trail-697",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.alpineinstitute.com/green-creek-glacier-exploratory-trip/",
+    "https://www.wta.org/go-hiking/hikes/elbow-lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "expect": "Nearly all parties do this as a single long car-to-car day, not a backpack. Start by biking the washed-out lower Middle Fork Nooksack logging road to save the legs, then hike the Elbow Lake Trail up through old growth to the Sister Divide basin, before picking up climbers'-trail/cross-country ridge terrain on grippy olivine rock to Cinderella's summit. Descend by reversing the route, including re-biking the flat/downhill logging-road miles at the end.",
+     "value": "Fit parties often do this as one long car-to-car day; others camp in the Green Creek basin. While FS Road 38 is closed by its washout, biking the closed road miles saves the legs. From the trailhead, cross the Middle Fork Nooksack, hike the Elbow Lake Trail through old growth to the Hildebrand Creek switchback, and follow the blue-blazed Green Creek climbers' trail into the cirque, across the low-angle glacier to the Cinderella-Little Sister notch and up the west ridge on grippy olivine rock to the summit. Descend by reversing the route, including re-biking the closed road miles at the end."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "expect": "Lower Middle Fork Nooksack road/bridge access is washed out in sections; most parties bike the flat/rolling miles to save time and legs.",
+     "value": "FS Road 38 is closed by a washout at milepost 7, about 4 miles short of the trailhead; biking those closed miles saves time and legs."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "expect": "Trail climbs steadily through old growth above Green Creek valley, about 4 mi / 3,000 ft to the Sister Divide highpoint area near Elbow Lake.",
+     "value": "Cross the Middle Fork Nooksack right at the trailhead (no bridge), then climb through old growth above the Green Creek valley about 1.5 mi to the Hildebrand Creek switchback, where the blue-blazed Green Creek climbers' trail branches off."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "expect": "Reach Sister Divide / Elbow Lake basin",
+     "value": "Reach the Green Creek cirque"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Leave the maintained trail and pick up climbers'-trail and cross-country ridge terrain toward Cinderella.",
+     "value": "Talus, loose scree and Class 3 rock steps lead to the toe of the glacier; cross it to the notch between Cinderella and Little Sister."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "retrace the Elbow Lake Trail descent.",
+     "replace": "retrace the glacier, the Green Creek climbers' trail and the Elbow Lake Trail."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "find": "Mostly downhill/flat logging-road miles back to the vehicle.",
+     "replace": "Mostly downhill/flat closed-road miles back to the vehicle."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "west ridge/Sister Divide olivine scramble",
+     "replace": "west ridge olivine scramble"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "expect": "Nearly all parties do this as a single long car-to-car day, not a backpack. Start by biking the washed-out lower Middle Fork Nooksack logging road to save the legs, then hike the E…",
+     "value": "Fit parties often do this as one long car-to-car day: Elbow Lake Trail, the Green Creek climbers' trail, the glacier to the Cinderella-Little Sister notch, and the west ridge."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "set",
+     "column": "permit",
+     "path": [],
+     "expect": "No climbing permit; the approach crosses private and DNR timberland - check current access, and carry a Discover Pass where parking on DNR land.",
+     "value": "No climbing permit; a Northwest Forest Pass or interagency pass is required to park at the Elbow Lake Trailhead."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "via the Twin Sisters gated road network before gaining the southern ridge near Little Sister; a full-day objective, more if road gates add mileage",
+     "replace": "via the Elbow Lake Trail, the Green Creek climbers' trail and a glacier crossing to the notch near Little Sister; a full-day objective, more while road closures add mileage"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "over gated/rough logging roads and an informal ridge approach near Little Sister; extra road mileage on foot or bike if gates are locked",
+     "replace": "on a maintained trail, an unmaintained climbers' trail and a glacier to the notch near Little Sister; extra road mileage on foot or bike when FS Road 38 is gated or closed"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "set",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      3
+     ],
+     "expect": "navigating gated, seasonally-variable logging-road access on private/managed timberland",
+     "value": "crossing the unbridged Middle Fork Nooksack and basic glacier travel"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Mount Baker-Snoqualmie National Forest and private timberland;",
+     "replace": "Mount Baker-Snoqualmie National Forest land;"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "no wilderness permit or registration is needed. The Dailey Prairie logging-road gate is separately locked to vehicles by the timber company, which is an access issue unrelated to camping.",
+     "replace": "no wilderness permit or registration is needed."
+    }
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "fact": "Position of the Middle Fork Nooksack crossing",
+   "verdict": "fixed",
+   "correct_value": "The Middle Fork Nooksack is crossed at the trailhead; the second crossing, on the climbers' trail after the switchback, is Green Creek.",
+   "evidence": "An alpine-guide trip report describes the Middle Fork Nooksack as the first of two difficult crossings right after the trailhead, then ~1.5 mi of trail to a switchback and a later ford of Green Creek. A Mountaineers trip report likewise crosses the Middle Fork at the start on a log with hand lines and wades Green Creek about two hours in. The pin at 2.6 mi therefore marks the Green Creek crossing, not the Middle Fork. Its elevation and distance are left as stored.",
+   "sources": [
+    "https://www.alpineinstitute.com/green-creek-glacier-exploratory-trip/",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-green-glacier-twin-sisters-range",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Position of the Middle Fork Nooksack crossing",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "name"
+     ],
+     "expect": "Middle Fork Nooksack River crossing",
+     "value": "Green Creek crossing"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Position of the Middle Fork Nooksack crossing",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "expect": "Climbers' trail drops back down to an unofficial log/logjam crossing of the Middle Fork Nooksack; no bridge, and it can be dangerous or impassable during high runoff.",
+     "value": "The climbers' trail reaches Green Creek, which parties ford at the best spot they can find; there is no bridge, and the crossing is harder at high runoff."
+    }
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "fact": "Day trip vs overnight",
+   "verdict": "fixed",
+   "correct_value": "Both are done: fit parties commonly go car-to-car in one long day (10-14 h for the full circuit), others camp in the Green Creek basin. Neither 'nearly all' nor 'most' is supported.",
+   "evidence": "A Green Creek Circuit trip report did the whole circuit including Cinderella car-to-car in a little over 12 hours, and the circuit's route page calls it a 10-14 hour day for competent parties. An alpine-guide trip into the same basin camped at 4,800-5,000 ft. So the row's 'nearly all parties do it in a day' and 'most parties camp' are both overstated; the patches state both options.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.mountainproject.com/route/126696768/green-creek-circuit",
+    "https://www.alpineinstitute.com/green-creek-glacier-exploratory-trip/"
+   ],
+   "patches": [
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Day trip vs overnight",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "most parties treat this as a multi-day trip, camping near Elbow Lake or in the Green Creek basin rather than going car-to-car.",
+     "replace": "fit parties often go car-to-car in one long day, while others split it with a camp in the Green Creek basin."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Day trip vs overnight",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Most parties treat this as a multi-day trip, camping near Elbow Lake or in the Green Creek basin.",
+     "replace": "Fit parties often do it car-to-car in one long day; others camp in the Green Creek basin."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Day trip vs overnight",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Most parties reach the peak as an overnight trip via the Green Creek cirque, either",
+     "replace": "Parties reach the peak via the Green Creek cirque in one long day or with a night in the basin, and climb it either"
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Day trip vs overnight",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "directions"
+     ],
+     "find": "which is why most parties break the trip up rather than pushing car-to-car.",
+     "replace": "which is why some parties break the trip up with a camp in the basin rather than pushing car-to-car."
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Day trip vs overnight",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "done in a day like nearly every party's report on this peak.",
+     "replace": "done in a day, as many fit parties do."
+    }
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "fact": "Total time (timing)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "12 hours car-to-car (matching the 4:30 AM - 4:30 PM itinerary).",
+   "evidence": "The 0 is a placeholder; the itinerary schedule (4:30 AM to 4:30 PM), its total note (11-12 h) and watch_out (10-12+ h) agree on about 12 hours. A Green Creek Circuit trip report took a little over 12 hours car to car and the circuit route page gives 10-14 hours.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "https://www.mountainproject.com/route/126696768/green-creek-circuit"
+   ],
+   "patches": [
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Total time (timing)",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "totalHrs"
+     ],
+     "expect": 0,
+     "value": 12
+    },
+    {
+     "id": "wa_cinderella_peak_scramble",
+     "fact": "Total time (timing)",
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "hrs"
+     ],
+     "expect": 0,
+     "value": 12
+    }
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "fact": "North Face pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only route page found for Cinderella's North Face lists it as Trad/Alpine, 300 ft, 3 pitches, 5.2, Grade II; its area table shows '3' (stars) and '8' (votes) columns, which is likely where '~8 pitches' came from. No second independent source for the pitch count was found (SummitPost blocked, other trip reports do not describe the North Face), so no patch. Evidence favours 3 pitches.",
+   "sources": [
+    "https://www.mountainproject.com/route/126694971/north-face",
+    "https://www.mountainproject.com/area/126694792/cinderella-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "fact": "Elbow Lake waypoint position and note",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 'Elbow Lake' waypoint sits at distMi 0.7 with a note saying the lake is passed early, and its directions describe the Middle Fork ford. The Forest Service trail page puts Elbow Lake about 3.5 mi from the north trailhead, beyond the Twin Sisters viewpoint (2 mi) and past the Green Creek branch, so this route never reaches Elbow Lake. What the pin actually marks cannot be settled without moving coordinates, which is out of scope.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/elbow-lake-trail-697"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colfax_peak_fords_theatre",
+   "fact": "Length of the ice section / pitch count",
+   "verdict": "fixed",
+   "correct_value": "The whole route is about 500 ft (AI4+); the steep ice step at its base went as three pitches on the first ascent and about one 70 m rope-length in good ice, followed by snow gullies and the Cosley-Houston finish.",
+   "evidence": "The first-ascent report gives Ford's Theatre as 500 ft, AI4+, with three pitches of steep ice, then steep snow gullies and the final 100 ft of the Cosley-Houston. A May 2015 repeat climbed the ice in one ~70 m lead with the 70 m rope and then steep snow to the summit. So 500 ft is the whole route, not the ice alone; length_m 152 and the pitch_detail are consistent, and only the approach-variant text calling the ice itself 500 ft needs correcting.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213714/Colfax-Peak-North-Face-Fords-Theatre",
+    "https://www.jeffreyjhebert.com/adventures/fords-theatre-on-colfax-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_fords_theatre",
+     "fact": "Length of the ice section / pitch count",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "it is about 500 ft of AI4+: three pitches of steep ice before the angle relents into steep snow gullies.",
+     "replace": "it is about 500 ft long and graded AI4+: an ice step of three pitches (about one 70 m rope-length in good ice) before the angle relents into steep snow gullies."
+    },
+    {
+     "id": "wa_colfax_peak_fords_theatre",
+     "fact": "Length of the ice section / pitch count",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "CONFIRM ON THE CLIMB: three pitches of sustained steep ice, roughly 500 ft, then the angle eases into snow gullies.",
+     "replace": "CONFIRM ON THE CLIMB: a steep ice step of three pitches, roughly one 70 m rope-length, then the angle eases into snow gullies; the whole line is roughly 500 ft."
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "fact": "Best season window",
+   "verdict": "fixed",
+   "correct_value": "Late October through May (cold season); March is in season, June is past it.",
+   "evidence": "The route page and a December 2018 trip report both say the route forms as early as October and lasts as late as May; a December 2019 report says it is often in condition from late October until May. Documented ascents include November, December and early March. The April-June window, the 'risky' March and 'good' June in seasonal_guidance are the outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/110142302/cosley-houston",
+    "https://northshorealpinism.wordpress.com/2018/12/11/colfax-peak-cosley-houston-route/",
+    "https://climberkyle.com/2019/12/13/colfax-peak-cosley-houston-wi4/",
+    "https://www.jeffreyjhebert.com/adventures/colsey-houston-route-on-colfax-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "April through June, with April-May generally offering the firmest, coldest conditions",
+     "value": "Late October through May, whenever sustained cold keeps the couloir frozen"
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "March",
+      "status"
+     ],
+     "expect": "risky",
+     "value": "good"
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "March",
+      "reason"
+     ],
+     "expect": "Couloir often not fully formed yet; deeper unconsolidated snow and less-predictable ice per climate data for this range",
+     "value": "Well inside the late-October-to-May season; the route has been climbed in good condition in early March"
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "status"
+     ],
+     "expect": "good",
+     "value": "risky"
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "expect": "Later in the window rockfall as the couloir warms becomes more pronounced, so timing/early starts matter more",
+     "value": "Past the usual late-October-to-May season; warming brings rockfall into the couloir and softens the ice"
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "May",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "good"
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "May",
+      "reason"
+     ],
+     "expect": "Continuation of the firm spring window; still within the April-June best-season range",
+     "value": "End of the usual season; still climbable in a cold spell, with an early start to beat sun-warming"
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Best season window",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "typical"
+     ],
+     "find": "Cold, firm conditions in the prime spring window;",
+     "replace": "Cold, firm conditions in the cold season;"
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Best season window",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "probability"
+     ],
+     "find": "June ascents face higher probability of afternoon warmth accelerating rockfall",
+     "replace": "late-season ascents face higher probability of afternoon warmth accelerating rockfall"
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "fact": "Which summit to descend around",
+   "verdict": "fixed",
+   "correct_value": "The secondary summit skirted on descent is the lower EASTERN summit, toward Mount Baker.",
+   "evidence": "The route page says to descend toward the second peak of Colfax toward Mount Baker and skirt it on the south side to the Baker-Colfax saddle; a 2018 trip report says to contour around the south side of the lower eastern summit of Colfax. Mount Baker and the saddle lie east of Colfax, so 'west' in the summit waypoint is wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/110142302/cosley-houston",
+    "https://northshorealpinism.wordpress.com/2018/12/11/colfax-peak-cosley-houston-route/"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Which summit to descend around",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "descend toward the false (west) summit,",
+     "replace": "descend toward the lower eastern summit,"
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "fact": "Ropes / rappels",
+   "verdict": "fixed",
+   "correct_value": "One 60 m rope; the descent is a walk-off with no rappels.",
+   "evidence": "A December 2019 party climbed on one 60 m rope and a December 2018 party on one 60 m half rope; both walked off via the Colfax-Baker saddle with no rappelling. The route page describes the same walk-off descent.",
+   "sources": [
+    "https://climberkyle.com/2019/12/13/colfax-peak-cosley-houston-wi4/",
+    "https://northshorealpinism.wordpress.com/2018/12/11/colfax-peak-cosley-houston-route/",
+    "https://www.mountainproject.com/route/110142302/cosley-houston"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Ropes / rappels",
+     "op": "set",
+     "column": "gear",
+     "path": [
+      4
+     ],
+     "expect": "Two ropes for the rappels",
+     "value": "One 60 m rope — the descent is a walk-off, so no rappel ropes are needed"
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "fact": "Route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: the route page gives 800 ft (242 m), 4 pitches; a 2008 trip report says 600-800 ft; a search summary of another page gives 600 ft. None supports length_m 305 (1,000 ft, the Polish Route's figure), but no two sources agree on a single value to adopt.",
+   "sources": [
+    "https://www.mountainproject.com/route/110142302/cosley-houston",
+    "http://contraserius.blogspot.com/2008/10/colfax-peak-cosley-houston.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "fact": "Elevation of the route base",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The bergschrund and crux sit above the Coleman bench (~8,000-8,200 ft), not at 6,250/6,500 ft; exact heights unsourced, so the two pin elevations are cleared.",
+   "evidence": "The approach, climbing_route and bivy all put the base near 8,000 ft, and the glacier waypoint crossed before the schrund is at 7,200 ft. The Colfax Peak area page says to leave the Coleman-Deming route at a flat area around 8,200 ft and head for the route, and a 600-800 ft route topping out at 9,440 ft cannot start at 6,250 ft. No source gives the schrund or crux height, so the wrong values are set to null rather than replaced.",
+   "sources": [
+    "https://www.mountainproject.com/area/110142122/colfax-peak",
+    "https://www.mountainproject.com/route/110142302/cosley-houston"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Elevation of the route base",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "elev"
+     ],
+     "expect": 6250,
+     "value": null
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Elevation of the route base",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "elev"
+     ],
+     "expect": 6500,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "fact": "Glacier Creek Road status",
+   "verdict": "fixed",
+   "correct_value": "FR 39 reopened to vehicles to the Heliotrope Ridge trailhead on 20 August 2026 after the flood repairs.",
+   "evidence": "A local news report says the Forest Service announced on 20 August 2026 that repairs to Glacier Creek Road were complete and vehicles could again reach the Heliotrope Ridge trailhead. Trail-condition reports from 25 August to 9 September 2026 describe the road as open and passable for all vehicles, with potholes on the upper half.",
+   "sources": [
+    "https://www.cascadiadaily.com/2026/aug/20/glacier-creek-road-reopens-following-washout-repairs/",
+    "https://www.hikewa.app/trails/heliotrope-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Glacier Creek Road status",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "but December 2025 flood damage caused fresh washouts: as of June 30, 2026 the road is closed to all vehicles at the Glacier Creek bridge (MP 3.0) to the Heliotrope Ridge trailhead for repairs, expected to last through October 2026, though pedestrians, bikes, and e-bikes are allowed through at Forest Service discretion.",
+     "replace": "but December 2025 flood damage caused fresh washouts and closed the road to vehicles at the Glacier Creek bridge (MP 3.0) from June 30, 2026; the repairs were completed and the road reopened to vehicles all the way to the Heliotrope Ridge trailhead on 20 August 2026. The upper miles remain potholed."
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Glacier Creek Road status",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": " -- note the road is currently closed to vehicles at MP 3.0, so budget extra time/distance to walk or bike in.",
+     "replace": "."
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Glacier Creek Road status",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "washouts, winter conditions, and the current 2026 repair closure can force a longer walk-in.",
+     "replace": "washouts and winter conditions can force a longer walk-in."
+    },
+    {
+     "id": "wa_colfax_peak_cosley_houston",
+     "fact": "Glacier Creek Road status",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "find": "December 2025 flood damage triggered a new closure to all vehicles at MP 3.0 (Glacier Creek bridge) to the Heliotrope Ridge Trailhead starting June 30, 2026, expected through October 2026, with pedestrian/bike access allowed at Forest Service discretion --",
+     "replace": "December 2025 flood damage closed it to vehicles at MP 3.0 (Glacier Creek bridge) from June 30, 2026; the repairs were completed and it reopened to the Heliotrope Ridge Trailhead on 20 August 2026 --"
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_kimchi_suicide_volcano",
+   "fact": "Glacier Creek Road status",
+   "verdict": "fixed",
+   "correct_value": "FS-39 reopened to vehicles to the Heliotrope Ridge trailhead on 20 August 2026.",
+   "evidence": "A local news report says the Forest Service announced on 20 August 2026 that repairs to Glacier Creek Road were complete and vehicles could again reach the Heliotrope Ridge trailhead. Trail-condition reports from late August and early September 2026 describe the road as open and passable for all vehicles.",
+   "sources": [
+    "https://www.cascadiadaily.com/2026/aug/20/glacier-creek-road-reopens-following-washout-repairs/",
+    "https://www.hikewa.app/trails/heliotrope-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_kimchi_suicide_volcano",
+     "fact": "Glacier Creek Road status",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Closed to vehicles at mile 3 for washout repairs (as of July 2026)",
+     "value": "Closed to vehicles at mile 3 for washout repairs from summer 2026; the repairs were completed and the road reopened to vehicles all the way to the Heliotrope Ridge trailhead on 20 August 2026."
+    },
+    {
+     "id": "wa_colfax_peak_kimchi_suicide_volcano",
+     "fact": "Glacier Creek Road status",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "before driving due to the active closure.",
+     "replace": "before driving."
+    },
+    {
+     "id": "wa_colfax_peak_kimchi_suicide_volcano",
+     "fact": "Glacier Creek Road status",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "closures"
+     ],
+     "expect": "Glacier Creek Road (FS-39) closed to vehicles at mile 3 for washout repair as of July 2026 — verify current status with the Mt. Baker Ranger District before driving.",
+     "value": "Glacier Creek Road (FS-39) was closed to vehicles at mile 3 for washout repair in summer 2026 and reopened to the Heliotrope Ridge trailhead on 20 August 2026 — verify current status with the Mt. Baker Ranger District before driving."
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "fact": "Descent method",
+   "verdict": "fixed",
+   "correct_value": "Parties who top out walk off past the lower eastern summit to the Colfax-Baker saddle and down the Coleman Glacier; V-thread rappels are for retreat from partway up.",
+   "evidence": "A May 2015 Polish Route party topped out, then 'the descent went smoothly' and they walked back down to gear left at the base; on the crux a V-thread was used only to lower off a failed attempt. The Colfax route pages describe the summit descent as skirting the lower eastern summit on its south side to the Baker-Colfax saddle, and a 2018 report gives the same walk-off with no rappelling. No source found describes rappelling the Polish Route as the normal descent.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/polish-route-on-colfax-peak",
+    "https://www.mountainproject.com/route/110142302/cosley-houston",
+    "https://northshorealpinism.wordpress.com/2018/12/11/colfax-peak-cosley-houston-route/"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Descent method",
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Most parties rappel/downclimb the route itself using V-thread anchors, reversing the bergschrund crossing; alternatively, traverse to the Colfax-Baker saddle and descend the standard Coleman-Deming route back to Hogsback Camp and the trailhead.",
+     "value": "From the summit, walk off: skirt the lower eastern summit on its south side to the Colfax-Baker saddle, then descend the standard Coleman-Deming route past Hogsback Camp to the trailhead. V-thread rappels are for retreating from partway up, not the normal way down."
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Descent method",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "and most parties rappel/downclimb the route on V-threads rather than descending via the saddle, which also takes longer than a walk-off.",
+     "replace": "and the day ends with the long walk-off via the Colfax-Baker saddle and the Coleman Glacier."
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Descent method",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "detail"
+     ],
+     "expect": "Most parties rappel the route itself on V-thread anchors back to the bergschrund, then descend the standard Coleman-Deming route to the car.",
+     "value": "Walk off past the lower eastern summit to the Colfax-Baker saddle, then descend the standard Coleman-Deming route to the car."
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Descent method",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "descend via a series of V-thread rappels reversing the route, or traverse to the Colfax-Baker saddle.",
+     "replace": "walk off around the south side of the lower eastern summit to the Colfax-Baker saddle."
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Descent method",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "mainly due to the WI6 crux pitch and a rappel descent of the route.",
+     "replace": "mainly due to the WI6 crux pitch."
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "fact": "Best season window",
+   "verdict": "fixed",
+   "correct_value": "Cold season, roughly late autumn through May when the dagger has formed; March is in season, June is past it.",
+   "evidence": "One first-hand report climbed the route in fat condition on 6 March 2015 and says ice on Colfax's north face forms reliably from autumn. Another party climbed it on 3 May 2015 after three other ascents earlier that spring. Together with the row's own season (Nov-May), best_season (Dec-May) and itinerary (Oct-May), this contradicts the April-June window, 'risky' March and June's inclusion.",
+   "sources": [
+    "https://colinhaley.com/colfax-peak-and-the-heart-of-darkness/",
+    "https://www.jeffreyjhebert.com/adventures/polish-route-on-colfax-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "April through June, with April-May offering the firmest, most consistent ice",
+     "value": "Late autumn through May in sustained cold, once the crux dagger has formed"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "March",
+      "status"
+     ],
+     "expect": "risky",
+     "value": "good"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "March",
+      "reason"
+     ],
+     "expect": "Couloir/ice line often not fully formed; thin or variable ice, which is more likely before the route is in full condition",
+     "value": "Inside the cold season; the route has been climbed in fat condition in early March, though the dagger still varies year to year"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "status"
+     ],
+     "expect": "marginal",
+     "value": "risky"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "June",
+      "reason"
+     ],
+     "expect": "Rockfall and variable ice conditions once the route warms later in the season",
+     "value": "Past the usual season; warming brings rockfall and degrades the ice"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "May",
+      "status"
+     ],
+     "expect": "optimal",
+     "value": "good"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Best season window",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "May",
+      "reason"
+     ],
+     "expect": "Continuation of the firm spring window within the April-June best-season range",
+     "value": "End of the usual season; still climbable in a cold freeze-thaw spell, with an early start to beat sun-warming"
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Best season window",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "typical"
+     ],
+     "find": "Cold, firm conditions in the prime spring window;",
+     "replace": "Cold, firm conditions in the cold season;"
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "fact": "Elevation of the route base",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The bench and bergschrund sit near 8,000-8,200 ft; the schrund, first-pitch and crux pins cannot be at 6,300/7,000/7,500 ft. Exact heights unsourced, so those three pin elevations and the '~6,600 ft' bench figure are removed.",
+   "evidence": "The Colfax Peak area page says to leave the Coleman-Deming route at a flat area around 8,200 ft and head for the route; the Polish Route page gives it as 1,000 ft long to the 9,440 ft summit, so the base cannot be at 6,300 ft. The bivy note (lines start near 8,000 ft) and the 7,200 ft glacier pin crossed before the schrund agree. No source gives exact pin heights, so wrong values are set to null rather than replaced.",
+   "sources": [
+    "https://www.mountainproject.com/area/110142122/colfax-peak",
+    "https://www.mountainproject.com/route/110439392/polish-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Elevation of the route base",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "elev"
+     ],
+     "expect": 6300,
+     "value": null
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Elevation of the route base",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "elev"
+     ],
+     "expect": 7000,
+     "value": null
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Elevation of the route base",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "elev"
+     ],
+     "expect": 7500,
+     "value": null
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Elevation of the route base",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "label"
+     ],
+     "find": "Reach the bench below Colfax (~6,600 ft)",
+     "replace": "Reach the bench below Colfax"
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "fact": "How often the crux dagger forms",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The dagger is condition-dependent and does not form fully every season; the 'handful of times per decade' figure is unsupported.",
+   "evidence": "best_season, itinerary.cal, hazards and pro_tips all say the dagger varies year to year and does not form fully every season. A first-hand account calls ice on Colfax's north face far more reliable than elsewhere in the range, and multiple ascents were made in the spring of 2015 alone, with another in February 2025. No source supports 'a handful of times per decade'.",
+   "sources": [
+    "https://colinhaley.com/colfax-peak-and-the-heart-of-darkness/",
+    "https://www.jeffreyjhebert.com/adventures/polish-route-on-colfax-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "How often the crux dagger forms",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "Free-hanging, rarely-formed ice dagger/curtain -- the route's defining pitch; only climbable in select conditions (formed only a handful of times per decade).",
+     "replace": "Free-hanging ice dagger/curtain -- the route's defining pitch; only climbable when the dagger has fully formed, which it does not do every season."
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "fact": "Road closure still current?",
+   "verdict": "fixed",
+   "correct_value": "The 2026 repair closure ended on 20 August 2026.",
+   "evidence": "A local news report says the Forest Service announced on 20 August 2026 that Glacier Creek Road repairs were complete and the trailhead is drivable again; trail-condition reports through 9 September 2026 confirm the road open to all vehicles. The seasonalGate line still calling the closure current is stale. The duplicated clause in road.status is tidied at the same time.",
+   "sources": [
+    "https://www.cascadiadaily.com/2026/aug/20/glacier-creek-road-reopens-following-washout-repairs/",
+    "https://www.hikewa.app/trails/heliotrope-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Road closure still current?",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "washouts, winter conditions, and the current 2026 repair closure can force a longer walk-in.",
+     "replace": "washouts and winter conditions can force a longer walk-in."
+    },
+    {
+     "id": "wa_colfax_peak_polish_route",
+     "fact": "Road closure still current?",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "but December 2025 flood damage caused fresh washouts: December 2025 flood damage closed the road",
+     "replace": "but December 2025 flood damage closed the road"
+    }
+   ]
+  }
+ ]
+}
