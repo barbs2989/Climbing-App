@@ -28057,3 +28057,53 @@ batch: 701 in-scope routes (unchanged), 300 remain unaudited this pass. No `.env
 were made (read-only anon key query only). WebFetch was egress-blocked network-wide again
 this run (alpenglow.org, en.wikipedia.org, and others); all research used WebSearch
 snippet synthesis only.
+
+## 2026-09-26 — Pass 6, Batch 345
+
+Checked 10 routes: `wa_mount_lago_south_slope_south_face`, `wa_mount_lawson_standard`,
+`wa_mount_logan_fremont_glacier`, `wa_mount_logan_r1`, `wa_mount_logan_r2`,
+`wa_mount_mathias_scramble`, `wa_mount_maude_r1`, `wa_mount_maude_r2`,
+`wa_mount_mccausland_n_route`, `wa_mount_mystery_standard`.
+
+**Confirmed errors fixed:** none this batch — no SQL file.
+
+**Flagged for human review:** none.
+
+**Checked and confirmed correct, not touched:** Mount Lago's 8,745 ft summit (a lidar
+re-survey gives 8,743 ft — noise, not a discrepancy) and 1933 Ulrichs/Alt FA; Mount
+Lawson's 5,401 ft summit and the North Fork Quinault approach's three fords (Wild Rose
+Creek, Elip Creek, the North Fork at Sixteen Mile Camp), which match NPS/trip-report
+descriptions; Mount Logan's 9,087 ft summit (shared by all three routes on it); the
+Fremont Glacier / Banded Glacier / Douglas Glacier routes' stored `access.closures` text
+for the active Thunder Creek Fire — Thunder Creek Trail closed beyond the Fisher Creek
+junction, plus Junction/Skagit Queen/Thunder Basin Camp closures — matches NPS's
+fire-closures page (last updated Sept 14, 2026) and WTA's Aug 27, 2026 report; the SR-20/
+Easy Pass seasonal gate and 2026 storm-delayed June 14 reopening also check out; Mount
+Mathias's 7,156 ft summit and its unusually long Hoh-River-to-Bailey-Range approach
+distance, which is plausible for this genuinely remote objective; Mount Maude's 9,082 ft
+modern-survey elevation (Wikipedia's older 9,040+ ft is NGVD29 rounding, already
+correctly annotated in `corrections` as a datum difference, not an error) and the North
+Face's Beckey/Gordon/Rupley/Staley June 1957 FA, confirmed via AAC Publications; the
+Little Giant Fire closure order (Sept 3–Oct 31, 2026) and the separate FR 6200/Chiwawa
+River Road storm-damage closure at Atkinson Flat (effective May 20, 2026 through Dec 31,
+2027), both verified against the actual USFS closure-order text; Mount McCausland's
+5,747 ft summit (Wikipedia's 5,741 ft is the same rounding noise) and its FR 6700/
+Smithbrook Road closure, covered by the same USFS storm-damage order as Chiwawa River
+Road; Mount Mystery's 7,639 ft summit and the stated July 2022 fatality (Sean Allen, 38,
+fall near the Del Monte ridgeline), independently confirmed against contemporary news
+coverage — name, age, location, and date all match.
+
+**Noted but not flagged as an error:** `wa_mount_maude_r2` ("Entiat Ice Fall")'s blank
+`grade`/`grade_system` fields — this is a real, still-climbed route (Mountaineers and
+CascadeClimbers trip reports confirm it), but no source gave a clean, citable modern
+technical grade to fill in (Beckey-era accounts describe "9 pitches of ice," which no
+longer matches the receded glacier); missing data, not wrong data, so left alone per the
+audit's no-guessing rule.
+
+`last_processed_id` advanced to `wa_mount_mystery_standard`; re-counted scope this batch:
+698 in-scope routes (was 701 at batch 344), 751 total wa_ alpine/mountaineering tagged
+(was 753) — a small net decrease, consistent with ongoing catalog corrections elsewhere,
+not investigated further by this audit. No `.env`/`.env.local` present at run start
+(fresh clone) — none needed this batch since no writes were made (read-only anon key
+query only). WebFetch remained egress-blocked network-wide this run; all research used
+WebSearch snippet synthesis only.
