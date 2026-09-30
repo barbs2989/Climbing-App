@@ -1,0 +1,90 @@
+{
+  "wa_and_say": {
+    "area": "wa_lookout_point",
+    "skip_reason": "UNCLEAR — no source gives a letter grade for the 5.11+ pitches or the route; grade stays 5.11b",
+    "review": {
+      "findings": [
+        { "claim": "stored grade 5.11b understates P4/P5 (5.11+); is there a letter grade such as 5.11c?", "verdict": "UNCLEAR", "evidence": "The route listing gives overall 5.11 with P2 5.11b, P4 5.11+, P5 5.11+; a trip-report page gives P5 as 5.11+ ('a notch harder than P2'). No source found that assigns a letter grade (5.11c/d) to P4, P5 or the route. '5.11+' is not usable per the brief, so no change.", "sources": ["https://www.mountainproject.com/route/110383269/and-say", "https://stephabegg.com/trip-reports/washington/index/"] }
+      ]
+    }
+  },
+  "wa_accidental_discharge_east_face": {
+    "area": "wa_south_peak",
+    "skip_reason": "no prose fix; discipline change proposed in review.classification",
+    "review": {
+      "findings": [
+        { "claim": "discipline 'mountaineering' is wrong; this is a 3-pitch 5.10 crack/offwidth alpine rock route", "verdict": "CONFIRMED", "evidence": "Both the AAJ report and the Alpinist newswire describe Accidental Discharge as a 3-pitch 5.10 (II 5.10) new route on the steep east face of South Gunsight Peak, with 5.10 hand cracks and a broken offwidth/chimney/dike pitch — technical rock climbing on a remote glaciated peak, i.e. alpine rock, not a mountaineering route. The stored FA date (July 8, 2007) matches the Alpinist item published August 1, 2007.", "sources": ["http://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner", "https://alpinist.com/newswire/remote-cascades-traverse-established/"] }
+      ],
+      "classification": { "discipline": { "proposed": "alpine", "evidence": "AAJ + Alpinist: II 5.10, 3 pitches, crack/offwidth rock on South Gunsight's east face; matches the peak's other route, which is filed alpine." } }
+    }
+  },
+  "wa_south_spur": {
+    "area": "wa_whatcom_peak",
+    "skip_reason": "no prose fix; grade change proposed in review.classification for human decision",
+    "review": {
+      "findings": [
+        { "claim": "stored grade '4th' — sources call the summit ridge Class 3", "verdict": "CONFIRMED (for classification review)", "evidence": "Two independent sources give Class 3 for the south side from Perfect Pass: an FKT route page ('scramble some 3rd class rock to the summit') and a trip report ('very exposed but enjoyable Class 3 scramble along the south ridge crest'). A third calls it easy class 2+, a fourth says there is little if any 4th class on the easiest line, and a peak page says 'not very hard climbing' though parties rope part of the ridge. Only the route-database listing gives '4th, PG13'. Class 3 is better supported; the stored pitch_detail already says 'Grades from 3rd to 4th class are given', which stays accurate. overview says '4th class, PG13' — that is the database listing's grade, not a false statement, so it is left; if grade moves to Class 3 a human may want overview aligned.", "sources": ["https://fastestknowntime.com/route/whatcom-peak-wa", "https://trailcatjim.com/whatcom-peak-loop-easy-peak-perfect-pass-whatcom-peak/", "https://www.lemkeclimbs.com/whatcom-peak.html", "https://drdirtbag.com/2014/08/03/challenger-whatcom-16h05/", "https://www.summitpost.org/whatcom-peak/326232"] },
+        { "claim": "climbing_route step 3: the crest is 'on the order of a hundred feet'", "verdict": "UNCLEAR", "evidence": "No source gives a length for the summit crest; sources only call it 'short'. climbing_route is not a correctable column in this batch — flag for removal of the number by a human.", "sources": ["https://www.summitpost.org/whatcom-peak/326232"] }
+      ],
+      "classification": { "grade": { "proposed": "Class 3", "evidence": "FKT route page and an independent trip report both give Class 3 (plus class 2+ and 'little if any 4th class' from two more); only the route-database listing gives 4th PG13. Human decision, since one listing disagrees." } }
+    }
+  },
+  "wa_tower_mountain_southwest_route": {
+    "area": "wa_tower_mountain",
+    "skip_reason": "REFUTED — 'Class 3-4' is a defensible grade",
+    "review": {
+      "findings": [
+        { "claim": "stored 'Class 3-4' overstates a Class 3 route", "verdict": "REFUTED", "evidence": "Wikipedia/peak pages call the west and south gullies class 3; but one scrambling report grades the route Class 3/4 overall and a SW Gully route page describes a steep class-4 step of smooth rock midway up the gully (the same slab the stored beta describes). Two independent sources support 3-4, so the stored grade stands.", "sources": ["https://en.wikipedia.org/wiki/Tower_Mountain_(Washington)", "https://hike2hike.com/scrambling/tower-mountain-golden-horn-north-cascades/", "https://www.summitpost.org/sw-gully-upper-south-ridge/162400", "https://www.mountaineers.org/activities/routes-places/tower-mountain-golden-horn"] }
+      ]
+    }
+  },
+  "wa_davis_peak_nc_north_face": {
+    "area": "wa_davis_peak_nc",
+    "skip_reason": "UNCLEAR — FA year and winter date each have sources that disagree; stored fa already records the ambiguity",
+    "review": {
+      "findings": [
+        { "claim": "FA year: stored 'July 1974 or 1976'; peak page says 1972; 1988 AAJ says 1974", "verdict": "UNCLEAR", "evidence": "A peak page gives 1972 (Kloke and Simon); the 1988 AAJ report refers to 'the 1974 Kloke-Simon route'. No second independent source for either year found; 1976 source not located. Three different years, none with two agreeing sources — leave.", "sources": ["https://www.summitpost.org/davis-peak/257251", "http://publications.americanalpineclub.org/articles/12198813004/North-America-United-States-Washington-Cascade-Mountains-Davis-Peak-North-Face-Southern-Pickets"] },
+        { "claim": "first winter ascent March 12 or 13, 2005", "verdict": "UNCLEAR", "evidence": "AAJ 2005 Cascade summary gives March 13, 2005 (Ade Miller and Stuart Taylor, first winter ascent of the Northeast Couloir); the climbers' own trip-report title is dated 3/12/2005 (page body did not load). Stored March 13 matches the AAJ; not enough to change it.", "sources": ["http://publications.americanalpineclub.org/articles/12200514800/North-America-United-States-Washington-Cascade-Range-Summary-of-Activity", "https://cascadeclimbers.com/forum/topic/32306-tr-davis-peak-ne-face-couloir-3122005/"] }
+      ]
+    }
+  },
+  "wa_davis_holland_route": {
+    "area": "wa_central_wall_area",
+    "set": {
+      "descent_text": "Most parties rappel from the bolted anchor at the top of pitch 3 rather than continuing up the brushy upper pitches or onto Lovin' Arms. Every belay on the route is bolted. Double ropes allow a long rappel to the ground; with a single rope, expect more, shorter rappels.",
+      "rappels": "Rappel from the bolted P3 anchor; double ropes make the descent quickest, a single rope needs more, shorter rappels."
+    },
+    "review": {
+      "findings": [
+        { "claim": "fa has no year; sources give 1965", "verdict": "UNCLEAR", "evidence": "One route page gives 1965; a magazine feature gives 1964; the route-database page gives no year (and a 1971 free ascent). Two sources disagree, so fa is left without a year.", "sources": ["https://www.summitpost.org/davis-holland/855706", "https://www.climbing.com/travel/davis-holland-to-lovin-arms-510c-index-washington/", "https://www.mountainproject.com/route/105836583/davis-holland-route"] },
+        { "claim": "descent_text/rappels empty; parties rappel from the P3 anchor", "verdict": "CONFIRMED (fill)", "evidence": "Route page: most parties rappel from the end of the third pitch or continue on Lovin' Arms. Route-database page: bolted anchors at each belay; from the P3 anchor rap 25 m to a 3-bolt anchor, then one double-rope (55 m) rap to the ground or a couple more 20-30 m raps trending climber's left. Index guide page: the route can be rappelled. Trip-report page: rap with a single 70 or rap beside the route with double ropes. Written only what two or more agree on (rappel from P3, bolted belays, double ropes allow a long rap, single rope means more raps); the 25 m / 3-bolt / climber's-left detail is single-source and left out.", "sources": ["https://www.summitpost.org/davis-holland/855706", "https://www.mountainproject.com/route/105836583/davis-holland-route", "https://wenatcheeoutdoors.org/2020/08/10/index/", "https://stephabegg.com/trip-reports/washington/index/"] }
+      ]
+    }
+  },
+  "wa_prusik_peak_prayer_for_a_friend": {
+    "area": "wa_prusik_peak",
+    "skip_reason": "REFUTED — 6 pitches is supported by two sources",
+    "review": {
+      "findings": [
+        { "claim": "stored pitches 6; AAJ says 7", "verdict": "REFUTED", "evidence": "The route-database page lists six pitches with the 5.14a crux as P6, and a magazine news report on the free ascent describes five pitches before the crux (six total). The AAJ report says 7 pitches but does not describe a 7th — most likely the West Ridge scramble, which the stored table already carries as its own non-pitch row. Keep 6.", "sources": ["https://www.mountainproject.com/route/125073409/prayer-for-a-friend", "https://www.climbing.com/news/new-5-14-crack-washington-alpine/?scope=anon", "https://publications.americanalpineclub.org/articles/13201216752"] }
+      ]
+    }
+  },
+  "wa_south_face_4": {
+    "area": "wa_kangaroo_temple",
+    "skip_reason": "REFUTED — 7 pitches is supported; 244 m length unverified but no source contradicts it",
+    "review": {
+      "findings": [
+        { "claim": "stored 7 pitches / 244 m; one page says 8 pitches / 800 ft", "verdict": "REFUTED", "evidence": "The guidebook-publisher route page describes pitches 1-7 (crux pitches 5 and 6, V-slot on 7) and a peak page gives the south/southwest face as 5.8 over seven pitches. The 8-pitch figure is single-source. No source gives a length other than the 800 ft figure (244 m), so length_m is left as is.", "sources": ["http://www.supertopo.com/rock-climbing/Washington-Pass-Kangaroo-Temple-South-Face", "https://www.summitpost.org/kangaroo-temple/815101"] }
+      ]
+    }
+  },
+  "wa_little_sister": {
+    "skip_reason": "report only — area columns are not in the batch",
+    "review": {
+      "findings": [
+        { "claim": "area elevation 6,017 ft vs range listings 6,600 ft", "verdict": "CONFIRMED (report only)", "evidence": "Peakbagger: 6,600+ ft (2,012+ m), USGS 40-ft closed contour 6,600-6,640 ft, NAVD88 6,604 ft; 48.6924, -121.9764, Whatcom County. The range page and a 2007 AAJ report both give 6,600 ft. No source supports 6,017 ft. Proposed area elevation: 6,600 ft (or 6,620 ft as contour midpoint, per catalog convention).", "sources": ["https://www.peakbagger.com/peak.aspx?pid=30751", "https://www.summitpost.org/twin-sisters-range/171190", "http://publications.americanalpineclub.org/articles/12200712900/North-America-United-States-Washington-Cascade-Range-Twin-Sister-High-Route"] }
+      ]
+    }
+  }
+}
