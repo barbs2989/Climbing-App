@@ -447,6 +447,11 @@ async function runState(st) {
   const effSplits = [...splits.entries()].filter(([x]) => planned.some(a => keep.has(a.id) && a.parent_id === x)).map(([x, c]) => ({ x, c }));
   const splitTo = new Map(effSplits.map(({ x, c }) => [x, c.id]));
   for (const ins of inserts) if (splitTo.has(ins.area_id)) ins.area_id = splitTo.get(ins.area_id);
+  // ...and a split that does NOT take effect (every sub-area planned under it was refused) is never
+  // made, so a route planning already pointed at its _climbs child goes back to the area itself —
+  // California failed three times inserting into a ca_k_rock_climbs that was never created.
+  const unsplit = new Map([...splits.entries()].filter(([x]) => !splitTo.has(x)).map(([x, c]) => [c.id, x]));
+  for (const ins of inserts) if (unsplit.has(ins.area_id)) ins.area_id = unsplit.get(ins.area_id);
   const newAreas = planned.filter(a => keep.has(a.id));
   if (SAMPLE && newAreas.length) {
     console.log("  sample NEW AREAS:");
