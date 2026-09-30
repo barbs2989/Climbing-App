@@ -28602,3 +28602,60 @@ domain tried (nps.gov, fs.usda.gov, wta.org, en.wikipedia.org, summitpost.org, m
 stephabegg.com, cascadeclimbers.com, climbing.com, mazamas.org, peakbagger.com) as EGRESS_BLOCKED in
 this environment — every finding above rests on WebSearch result snippets only, not fetched primary
 pages.
+
+## Batch 354 (2026-09-30) — pass 6
+
+Routes: `wa_mushroom_tower_standard`, `wa_navaho_peak_south_slopes`, `wa_ne_ridge`,
+`wa_needle_peak_north_ridge`, `wa_neve_glacier_west_ridge`, `wa_news_nw_corner`,
+`wa_nooksack_tower_beckey_route`, `wa_nooksack_tower_south_face`.
+
+**Fixed (1 route, 1 UPDATE):** `wa_mushroom_tower_standard`'s own `overview` field cited
+neighboring Big Kangaroo's summit elevation as "8,280 ft," contradicting Big Kangaroo's own area
+row (`elevation_ft` = 8326) *and* Mushroom Tower's own area-table blurb (also "8,326 ft") — 2 of
+3 in-app mentions of this one fact already agreed. Externally, Wikipedia and a 2023 theodolite
+survey (8,326 ft ± 2 ft) corroborate 8,326 ft; the competing 8,280 ft figure is an older reading,
+and a 2024 LiDAR pass split the difference at 8,318 ft. Corrected the outlier overview sentence
+to 8,326 ft.
+
+**Flagged for human review (4):** `wa_mushroom_tower_standard` has a second, separate internal
+split left unfixed — `rock_grade` ("5.5") and `beta` ("roughly 5.5") disagree with
+`grade`/`grade_num` ("5.4") and the row's own `pitch_detail`, whose crux pitch is explicitly
+graded "5.4." No independent source for this specific tower's grade was found (Mountain Project
+lists zero routes for it), and the row's own `data_quality.gaps` already flags the grade/pitch
+breakdown as carried over rather than independently re-verified — a pre-existing gap, not a new
+finding. `wa_navaho_peak_south_slopes` stores `length_m` = 1609 — exactly 1.000 mile in meters —
+on a Class 2, 0-pitch, 0-rappel scramble; looks like a placeholder/default value rather than a
+real measurement, worth a data-eng look (not externally verifiable either way).  `wa_ne_ridge`
+(Cathedral Peak, Pasayten) stores FA as "August 1973"; a Mountain Project search snippet shows a
+"07/1973" FA date in the same result set, but ambiguously — it may describe this NE Ridge route
+or the neighboring SE Buttress route on the same peak — so the July-vs-August question is
+unresolved, not corrected. `wa_needle_peak_north_ridge`'s own `id` says "north_ridge" but its
+`name` ("Northwest Ridge (from Needle Peak)") and `overview` ("Bonanza Peak's Northwest Ridge")
+both call it Northwest, not North — a naming/id question for route-identity review, not a
+factual error, so left untouched.
+
+**Clean (6, all first-ascent claims independently corroborated in detail):**
+`wa_navaho_peak_south_slopes`'s Stafford Creek Trail/Labor Mountain Fire closure (confirmed real,
+in effect through Dec 31, 2026, correctly hedged in the row's own `road` field);
+`wa_needle_peak_north_ridge`'s Blake Herrington/Tim Haider Aug 19, 2006 Needle Peak-to-Bonanza
+traverse (matches the Northwest Mountaineering Journal account exactly, including the date);
+`wa_neve_glacier_west_ridge`'s Degenhardt/Strandberg Aug 1, 1931 FA of Snowfield Peak;
+`wa_news_nw_corner`'s Boving/Pollack Sept 25, 1976 FA of North Early Winters Spire's Northwest
+Corner; `wa_nooksack_tower_beckey_route`'s Beckey/Schmidtke July 5, 1946 FA (camp elevation,
+bergschrund timing, and couloir angle all matched an AAC Publications account);
+`wa_nooksack_tower_south_face`'s Klubberud/Manfredi July 2001 FA (Grade V 5.10-, 12 pitches,
+17-hour push, descent via the north face route — a near-exact match against an AAC Publications
+first-ascent account, down to the 200-foot rope and simul-climbing detail).
+
+`last_processed_id` advanced to `wa_nooksack_tower_south_face`; scope counts not re-run this batch
+(last known: 698 in-scope, 751 total wa_ alpine/mountaineering tagged, from batch 352) — this
+batch's own 8 candidates were confirmed on 'peak'-type areas via a direct `areas` lookup before
+auditing. Next up: Nooksack Tower's remaining routes' siblings, then continuing alphabetically
+past "wa_nooksack_tower_south_face" (`north_ridge_left`, `north_ridge`, or whatever the next
+`wa_no*`/`wa_or*`-range ids turn out to be — not pre-checked this run). No `.env`/`.env.local`
+present at run start (fresh clone); wrote a local `.env.local` with just the anon read key
+supplied in the task prompt to run `check:sql` before committing the fix file (no service key
+used or needed — this run made no writes). PR #811 for this branch was already open, so no new
+PR was opened. WebFetch to every research domain tried this batch (mountainproject.com,
+cascadeclimbers.com) returned `EGRESS_BLOCKED` in this environment, same as recent prior batches —
+every finding above rests on WebSearch result snippets only, not fetched primary pages.
