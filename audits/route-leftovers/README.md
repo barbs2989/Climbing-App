@@ -67,6 +67,13 @@ one-way figure; split grades become a range). Applied live:
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
   (miles only on the summit day) shows ~2 mi. Three Fingers r2 / south-peak-lookout `dist_km` also look like round
   trips; Tupso Pass Road (FR 41) may be closed short of the Three Fingers trailhead.
-- **Pins nobody publishes:** Buck 3-4, Glacier Peak Boulder Basin camp, Esmeralda (text De Roux, pins Esmeralda
-  Basin), Iron Cap (Middle vs West Fork Foss), Drilling Me Softly trailhead, Alta turnoff, Vanishing Point / Blood
-  Sport — second deep pass running (`deep/out/d7b.json`, `d8b.json`).
+- **Vanishing Point** base/top-out pins sit ~1,900 ft below their stated heights; one GPS track places the tower
+  NNW of Baring's summit. One source only, and not provably >500 m off route — held (`deep/out/d8b.json`).
+- Sibling `wa_spraying_mantis` pin 0 carries the same wrong trailhead coordinate Drilling Me Softly had. Glacier
+  Peak Sitkum `approach` still describes the washed-out White Chuck approach in full.
+
+Second deep pass (`d7b`, `d8b`), applied: Esmeralda -> De Roux line (trailhead moved, 5 basin pins removed, last
+switchback added); Iron Cap -> West Fork Foss (trailhead moved, 6 Middle Fork pins removed, Big Heart Lake and
+Chetwoot camp added); Buck pins 3-4 and Sitkum's Boulder Basin camp pin removed (rule 1), Sitkum's line cleared
+(never reaches Boulder Basin); Drilling Me Softly trailhead -> the FS 9070 road end; Alta turnoff + Rampart junction
+onto the mapped fork; Blood Sport's crag pin (Guye summit) removed.
