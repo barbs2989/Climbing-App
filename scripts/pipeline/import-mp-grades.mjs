@@ -58,14 +58,20 @@ const SPLIT_SUFFIX = areaId => `(select case when bool_and(discipline = 'boulder
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 
-function sql(text, tries = 4) {
+// Eight tries, backing off to a minute: four tries over 30 s were all answered with EMPTY output
+// once (California, 2026-09-30), and "Unexpected end of JSON input" said nothing about why.
+function sql(text, tries = 8) {
   for (let i = 0; ; i++) {
     try {
       const out = execFileSync("npx", ["supabase", "db", "query", "--linked", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
+      if (!out.includes("{")) throw new Error("empty answer from supabase db query: " + JSON.stringify(out.slice(0, 200)));
       const j = JSON.parse(out.slice(out.indexOf("{")));
       if (!Array.isArray(j.rows)) throw new Error("unexpected output: " + out.slice(0, 200));
       return j.rows;
-    } catch (e) { if (i >= tries - 1) throw e; execFileSync("sleep", [String(5 * (i + 1))]); }
+    } catch (e) {
+      if (i >= tries - 1) { if (e.stderr) e.message += " | stderr: " + String(e.stderr).slice(-400); throw e; }
+      execFileSync("sleep", [String(Math.min(60, 5 * 2 ** i))]);
+    }
   }
 }
 
