@@ -53,7 +53,13 @@
 --
 -- Re-runnable: every statement is ON CONFLICT DO NOTHING.
 
-begin;
+-- REPLAY NOTE (2026-09-30): begin/commit became one DO block (atomic in the same way) that returns
+-- early when the catalog this file extends is not loaded — an empty database, i.e. a Supabase preview
+-- branch, where every insert below would raise in the areas trigger. Unchanged wherever it is loaded.
+do $replay$ begin
+if not exists (select 1 from areas where id = 'california') then
+  raise notice '0140: catalog not loaded (no area california), nothing to add'; return;
+end if;
 
 -- 1. The White Mountains, as a region under California. Bachelor needs no new container —
 --    or_oregon_volcanoes already parents Mt. Hood, Mt. Thielsen and (from 0138) Mt. McLoughlin,
@@ -74,7 +80,7 @@ insert into routes (id, area_id, name, discipline, grade, grade_system, source) 
   ('or_mt_bachelor_trail',         'or_mt_bachelor',         'Mt. Bachelor Trail',        'scrambling', 'Class 1', 'class', 'peak-lists')
 on conflict (id) do nothing;
 
-commit;
+end $replay$;
 
 -- Verify AFTER, as SEPARATE statements:
 --

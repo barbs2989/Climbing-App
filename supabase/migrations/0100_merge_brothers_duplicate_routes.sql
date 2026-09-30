@@ -43,6 +43,11 @@
 --     this table and the app doubles it for round trips; copying the distance without the
 --     shape that explains it is the actual bug to avoid.
 
+-- REPLAY NOTE (2026-09-30): `difficulty` was created by hand in the SQL editor long before this
+-- file, and was not declared in a migration until 0168. Without this line a fresh build (a Supabase
+-- preview branch) fails below. It is idempotent and a no-op wherever the column exists.
+alter table public.routes add column if not exists difficulty jsonb;
+
 -- South Couloir: fill 11 blank column(s) on wa_the_brothers_south_couloir from wa_south_couloir
 update routes set
   alpine_draws = coalesce(alpine_draws, (select alpine_draws from routes where id = 'wa_south_couloir')),

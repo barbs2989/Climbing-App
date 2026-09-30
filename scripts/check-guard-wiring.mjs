@@ -85,6 +85,12 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
+  "check-migration-replay.mjs":
+    "replays supabase/migrations into an empty PGlite database — the local copy of what the " +
+    "Supabase GitHub integration's 'Supabase Preview' check already runs on EVERY PR that touches " +
+    "supabase/migrations/, so CI has the real thing. Hand-run before pushing a migration, because " +
+    "the preview's own logs are not reachable from a session; --compare-live also needs the linked " +
+    "Supabase CLI, which CI does not have.",
   "check-new-climber-journey.mjs":
     "drives a BRAND-NEW real account through onboarding and then asks the DATABASE whether what " +
     "it typed survived — the question four static censuses each answered a different half of. It " +

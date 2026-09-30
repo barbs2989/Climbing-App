@@ -35,6 +35,12 @@
 ALTER TABLE routes
 ADD COLUMN IF NOT EXISTS hazard_tags text[] DEFAULT '{}'::text[];
 
+-- REPLAY NOTE (2026-09-30): production records this version as applied. The column above is real
+-- schema and stays live. Everything below is the superseded data pass (see the header): it calls an
+-- `array_distinct()` that no migration defines, so a fresh build failed here. It is kept as history
+-- inside one block comment so a Supabase preview branch replays past it.
+/*
+
 -- Step 2: Update routes with researched hazards
 -- Agent 1 (Alpine Volcanoes): Rainier, Baker, Adams, Glacier Peak variants
 UPDATE routes SET hazard_tags = array_distinct(array_cat(COALESCE(hazard_tags, '{}'::text[]), ARRAY[
@@ -95,3 +101,4 @@ LIMIT 10;
 --
 -- Deployment Verified: 2026-07-28
 -- Status: READY FOR PRODUCTION
+*/

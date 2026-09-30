@@ -3,6 +3,7 @@
 // Zero imports from ClimbMatch.jsx — same "leaf module" pattern as lib/db.js —
 // so both files can import this without a circular dependency (ClimbMatch.jsx
 // lazy-loads lib/DbAreaBrowser.jsx).
+import { useEffect, useState } from "react";
 
 export const MAP_TILE_URLS = {
   street: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -11,37 +12,99 @@ export const MAP_TILE_URLS = {
 };
 
 // "Snow" is the one layer that shows the ground as it is NOW. The satellite layer above is a
-// years-old mosaic, usually chosen snow-free, so it can never show fresh snow. This one is
-// NASA's daily true-colour composite (NOAA-20 VIIRS). The trade is sharpness: about 375 m a
-// pixel, and native tiles stop at zoom 9. That is enough to see whether a range is white and
-// nowhere near enough for a couloir. The day being viewed is in the layer key ("snow" =
-// yesterday, "snow:3" = three days back), so every map's existing `baseLayer` state carries it
-// without new state. Today's composite is blank until the day is processed, so 1 is the floor.
-// Clouds are white too, and on a Washington autumn day they usually cover the peaks, so the
-// toggle offers a stepper to go back to a clear day.
-export const SNOW_MAX_DAYS = 30;
-export function snowDaysAgo(baseLayer) {
-  if (typeof baseLayer !== "string" || baseLayer.indexOf("snow") !== 0) return null;
-  const n = parseInt(baseLayer.slice(5), 10);
-  return n >= 1 && n <= SNOW_MAX_DAYS ? n : 1;
+// years-old mosaic, usually chosen snow-free, so it can never show fresh snow.
+//
+// Its picture is a single satellite PASS over the spot: Sentinel-2 (S30) or Landsat (L30),
+// harmonised to 30 m a pixel with native tiles to zoom 12 -- sharp enough to see which
+// glaciers and faces hold new snow. A pass only happens every 2-3 days at any one place and
+// the days between are BLANK tiles, so stepping by calendar day would mostly show nothing.
+// The stepper instead walks the passes NASA's granule catalogue (CMR) lists for the map's
+// point, each with the cloud cover of its ~110 km scene. If CMR cannot be reached, or the map
+// has no point, it falls back to the daily VIIRS composite: every day has one, but at 375 m a
+// pixel it only says whether a range is white.
+//
+// The pass being viewed is in the layer key -- "snow:S30:2026-09-21" -- so every map's
+// existing `baseLayer` state carries it without new state. Bare "snow" means "not chosen
+// yet": the toggle picks one once the passes load, and until then no tiles are drawn.
+const GIBS = "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/";
+const SNOW_PRODUCTS = {
+  S30: { layer: "HLS_S30_Nadir_BRDF_Adjusted_Reflectance", tms: "GoogleMapsCompatible_Level12", ext: "png", native: 12, view: 13 },
+  L30: { layer: "HLS_L30_Nadir_BRDF_Adjusted_Reflectance", tms: "GoogleMapsCompatible_Level12", ext: "png", native: 12, view: 13 },
+  // Beyond zoom 10 a 375 m pixel is a grey smear that reads as a broken map.
+  VIIRS: { layer: "VIIRS_NOAA20_CorrectedReflectance_TrueColor", tms: "GoogleMapsCompatible_Level9", ext: "jpg", native: 9, view: 10 },
+};
+const SNOW_LOOKBACK_DAYS = 60;
+const SNOW_VIIRS_DAYS = 30;
+// The default pass is the newest one whose scene is at most this cloudy; a fully clouded
+// newest pass would open the layer on a white sheet.
+const SNOW_DEFAULT_MAX_CLOUD = 50;
+
+export function isSnowLayer(baseLayer) { return typeof baseLayer === "string" && baseLayer.indexOf("snow") === 0; }
+// { p, date } for a chosen pass, { p: null } for bare "snow", null for any other layer.
+function snowPick(baseLayer) {
+  if (!isSnowLayer(baseLayer)) return null;
+  const m = /^snow:(S30|L30|VIIRS):(\d{4}-\d{2}-\d{2})$/.exec(baseLayer);
+  return m ? { p: m[1], date: m[2] } : { p: null, date: null };
 }
-// The UTC calendar day the composite is filed under; GIBS keys its days in UTC.
-export function snowDateIso(daysAgo) { return new Date(Date.now() - daysAgo * 864e5).toISOString().slice(0, 10); }
-function snowTileUrl(daysAgo) { return "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/" + snowDateIso(daysAgo) + "/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg"; }
-const SNOW_NATIVE_ZOOM = 9;
-// Beyond zoom 10 a 375 m pixel is a grey smear that reads as a broken map, so choosing Snow
-// steps OUT to 10. The climber can still zoom back in; nothing is locked.
-const SNOW_VIEW_ZOOM = 10;
+const snowKey = (x) => "snow:" + x.p + ":" + x.date;
+const isoDaysAgo = (n) => new Date(Date.now() - n * 864e5).toISOString().slice(0, 10);
+// VIIRS is filed by UTC day, and today's is blank until the day is processed, so it starts at 1.
+const viirsPasses = () => Array.from({ length: SNOW_VIIRS_DAYS }, (_, i) => ({ p: "VIIRS", date: isoDaysAgo(i + 1), cloud: null }));
+
+// One CMR lookup per ~1 km cell per session: reopening a route must not refetch.
+const snowPassCache = new Map();
+function fetchSnowPasses(lat, lng) {
+  const key = lat.toFixed(2) + "," + lng.toFixed(2);
+  if (snowPassCache.has(key)) return snowPassCache.get(key);
+  const since = isoDaysAgo(SNOW_LOOKBACK_DAYS);
+  const one = (p) => fetch("https://cmr.earthdata.nasa.gov/search/granules.json?short_name=HLS" + p + "&version=2.0&point=" + lng + "," + lat + "&temporal=" + since + "T00:00:00Z,&page_size=100&sort_key=-start_date")
+    .then((r) => { if (!r.ok) throw new Error("cmr " + r.status); return r.json(); })
+    .then((j) => ((j.feed && j.feed.entry) || []).map((e) => ({ p, date: String(e.time_start).slice(0, 10), cloud: e.cloud_cover != null && e.cloud_cover !== "" ? Math.round(Number(e.cloud_cover)) : null })));
+  const pr = Promise.all([one("S30"), one("L30")]).then(([a, b]) => {
+    // Two passes can land on one day (two orbits, or Sentinel and Landsat): keep the clearer.
+    const byDay = new Map();
+    a.concat(b).forEach((x) => { const o = byDay.get(x.date); if (!o || (x.cloud != null && (o.cloud == null || x.cloud < o.cloud))) byDay.set(x.date, x); });
+    return [...byDay.values()].sort((x, y) => (x.date < y.date ? 1 : -1));
+  });
+  // A failed lookup is not cached, so the next open tries again.
+  pr.catch(() => snowPassCache.delete(key));
+  snowPassCache.set(key, pr);
+  return pr;
+}
+// The passes the stepper walks, newest first; null while loading.
+function useSnowPasses(at, active) {
+  const lat = at && at.lat != null ? Number(at.lat) : null, lng = at && at.lng != null ? Number(at.lng) : null;
+  const [res, setRes] = useState(null);
+  useEffect(() => {
+    if (!active) return undefined;
+    if (lat == null || lng == null || !isFinite(lat) || !isFinite(lng)) { setRes({ list: viirsPasses(), fellBack: true }); return undefined; }
+    let live = true;
+    setRes(null);
+    fetchSnowPasses(lat, lng).then(
+      (list) => { if (live) setRes(list.length ? { list, fellBack: false } : { list: viirsPasses(), fellBack: true }); },
+      () => { if (live) setRes({ list: viirsPasses(), fellBack: true }); }
+    );
+    return () => { live = false; };
+  }, [active, lat, lng]);
+  return active ? res : null;
+}
 
 // The one place a base tile layer is built, so a map that swaps layers in place and one that
 // builds its layer at init cannot disagree about a layer's URL or zoom limits.
 export function baseTileLayer(L, baseLayer) {
-  const d = snowDaysAgo(baseLayer);
-  if (d != null) return L.tileLayer(snowTileUrl(d), { maxNativeZoom: SNOW_NATIVE_ZOOM, maxZoom: 19 });
+  const s = snowPick(baseLayer);
+  if (s && !s.p) return L.layerGroup();
+  if (s) {
+    const P = SNOW_PRODUCTS[s.p];
+    return L.tileLayer(GIBS + P.layer + "/default/" + s.date + "/" + P.tms + "/{z}/{y}/{x}." + P.ext, { maxNativeZoom: P.native, maxZoom: 19 });
+  }
   return L.tileLayer(MAP_TILE_URLS[baseLayer] || MAP_TILE_URLS.sat, { maxZoom: baseLayer === "topo" ? 17 : 19 });
 }
+// Choosing a snow picture steps OUT to the zoom its pixels can carry. The climber can still
+// zoom back in; nothing is locked.
 export function fitZoomToLayer(map, baseLayer) {
-  if (snowDaysAgo(baseLayer) != null && map.getZoom() > SNOW_VIEW_ZOOM) map.setZoom(SNOW_VIEW_ZOOM);
+  const s = snowPick(baseLayer);
+  if (s && s.p && map.getZoom() > SNOW_PRODUCTS[s.p].view) map.setZoom(SNOW_PRODUCTS[s.p].view);
 }
 
 // Injects the Leaflet CDN css/js once (dedupes what used to be 4 copy-pasted
@@ -152,30 +215,53 @@ export function applyBaseLayer(map, tileRef, baseLayer) {
 }
 
 // The satellite/topo/street button row — lifted verbatim from GPXMap, the one
-// map that already had this toggle. `snow` opts a map into the Snow layer; its day stepper
-// sits top-right under the full-screen button (44px from top:10), so a map that puts its
-// own controls there (FireMap's zoom) leaves it off.
-export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow }) {
-  const days = snowDaysAgo(baseLayer);
+// map that already had this toggle. `snow` opts a map into the Snow layer, and `snowAt`
+// ({lat,lng}) is the point whose satellite passes it lists. Its stepper sits top-right under
+// the full-screen button (44px from top:10), so a map that puts its own controls there
+// (FireMap's zoom) leaves it off.
+export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt }) {
+  const pick = snow ? snowPick(baseLayer) : null;
+  const passes = useSnowPasses(snowAt, !!pick);
+  const list = passes ? passes.list : null;
+  // Bare "snow" becomes a real pass as soon as the list is in.
+  useEffect(() => {
+    if (!pick || pick.p || !list || !list.length) return;
+    const clear = list.find((x) => x.cloud != null && x.cloud <= SNOW_DEFAULT_MAX_CLOUD);
+    setBaseLayer(snowKey(clear || list[0]));
+  }, [pick && pick.p, list, setBaseLayer]);
+  // Stepping is by DATE, not by index, so a key chosen before a remount still steps correctly.
+  const older = pick && pick.p && list ? list.find((x) => x.date < pick.date) : null;
+  const newer = pick && pick.p && list ? list.filter((x) => x.date > pick.date).pop() : null;
+  const cur = pick && pick.p && list ? list.find((x) => x.date === pick.date && x.p === pick.p) : null;
   const opts = [["sat", "Satellite"], ["topo", "Topo"], ["street", "Street"]].concat(snow ? [["snow", "Snow"]] : []);
   const step = { width: 30, height: 30, borderRadius: 7, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 15, fontWeight: 800, lineHeight: 1, padding: 0, cursor: "pointer" };
   const off = { opacity: 0.35, cursor: "default" };
+  const fmt = (d) => new Date(d + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" });
   return (
     <>
       <div style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, display: "flex", gap: 4 }}>
         {opts.map(([k, lbl]) => {
-          const on = k === "snow" ? days != null : baseLayer === k;
-          return <button key={k} onClick={() => setBaseLayer(k)} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>;
+          const on = k === "snow" ? pick != null : baseLayer === k;
+          return <button key={k} onClick={() => { if (!(k === "snow" && on)) setBaseLayer(k); }} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>;
         })}
       </div>
-      {snow && days != null ? (
-        <div style={{ position: "absolute", top: 62, right: 10, zIndex: 1000, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: 6, boxShadow: "0 2px 8px rgba(0,0,0,0.4)", display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <button onClick={() => { if (days < SNOW_MAX_DAYS) setBaseLayer("snow:" + (days + 1)); }} disabled={days >= SNOW_MAX_DAYS} aria-label="Show the day before" style={days >= SNOW_MAX_DAYS ? Object.assign({}, step, off) : step}>‹</button>
-            <div aria-live="polite" style={{ fontSize: 12, fontWeight: 700, color: C.text, minWidth: 52, textAlign: "center" }}>{new Date(snowDateIso(days) + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" })}</div>
-            <button onClick={() => { if (days > 1) setBaseLayer("snow:" + (days - 1)); }} disabled={days <= 1} aria-label="Show the day after" style={days <= 1 ? Object.assign({}, step, off) : step}>›</button>
-          </div>
-          <div style={{ fontSize: 10, color: C.textMuted, maxWidth: 124, textAlign: "center", lineHeight: 1.3 }}>Cloud looks white too. Step back for a clear day.</div>
+      {pick ? (
+        <div style={{ position: "absolute", top: 62, right: 10, zIndex: 1000, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: 6, boxShadow: "0 2px 8px rgba(0,0,0,0.4)", display: "flex", flexDirection: "column", alignItems: "center", gap: 4, maxWidth: 150 }}>
+          {pick.p ? (
+            <>
+              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <button onClick={() => { if (older) setBaseLayer(snowKey(older)); }} disabled={!older} aria-label="Show the picture before" style={older ? step : Object.assign({}, step, off)}>‹</button>
+                <div aria-live="polite" style={{ textAlign: "center", minWidth: 58 }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: C.text }}>{fmt(pick.date)}</div>
+                  {cur && cur.cloud != null ? <div style={{ fontSize: 10, color: C.textSub }}>{cur.cloud + "% cloud"}</div> : null}
+                </div>
+                <button onClick={() => { if (newer) setBaseLayer(snowKey(newer)); }} disabled={!newer} aria-label="Show the picture after" style={newer ? step : Object.assign({}, step, off)}>›</button>
+              </div>
+              <div style={{ fontSize: 10, color: C.textMuted, textAlign: "center", lineHeight: 1.3 }}>{pick.p === "VIIRS" ? "Daily, coarse view. Cloud looks white too." : "Cloud % is for the wider area. Cloud looks white too."}</div>
+            </>
+          ) : (
+            <div aria-live="polite" style={{ fontSize: 11, color: C.textSub, padding: "4px 2px", textAlign: "center" }}>Finding recent pictures…</div>
+          )}
         </div>
       ) : null}
     </>

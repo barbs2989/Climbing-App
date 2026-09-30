@@ -773,20 +773,27 @@ function TechStats({route,onEdit}){
   const isOutBack=recShape?recShape==="outback":shapeOf(route)==="outback";
   const rtNote=isOutBack?(recShape?" Round trip: this route is recorded as retracing its approach.":" Round trip assumes the same trail back to the trailhead.")
     :recShape==="loop"?" This route loops back to the trailhead by a different line, so doubling the approach would overstate it."
-    :recShape==="point"?" This route finishes at a different trailhead, so there is no round trip to show."
+    :recShape==="point"?(distIsWholeTrip?" This route finishes at a different trailhead, so the total runs from one trailhead to the other.":" This route finishes at a different trailhead, so there is no round trip to show.")
     :" This route is a loop or point-to-point outing, so no round-trip distance is shown.";
+  /* ONE distance tile, and never the one-way figure. It used to print "Distance"/"Approach"
+     (the walk IN) beside "Round trip" (the same number doubled) — two tiles for one fact, and the
+     one-way one is not what a party plans a day around. What shows now is the whole outing:
+     doubled for a route that retraces its approach, and as stored for a recorded loop/point
+     whose itinerary already totals it (effDistIsWholeTrip). A loop/point with no itinerary keeps
+     a plain "Distance": its dist_km convention is unsettled (CLAUDE.md), so it claims neither. */
+  const distTile=!hasDist?null:isOutBack?["Round trip",uDist(roundTripKm),C.blue]
+    :distIsWholeTrip?[recShape==="point"?"Total distance":"Round trip",uDist(distKm),C.blue]
+    :["Distance",uDist(distKm),C.blue];
   let stats,note;
   if(disc==="bouldering"){
     stats=[["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]];
-    if(hasDist)stats.unshift(["Approach",uDist(distKm),C.blue]);
-    if(hasDist&&isOutBack)stats.splice(1,0,["Round trip",uDist(roundTripKm),C.blue]);
+    if(distTile)stats.unshift(distTile);
     if(route.routeFt)stats.unshift(["Boulder height",uElev(route.routeFt),C.orange]);
-    note="Height is the boulder itself. The approach is just the walk in — there is no meaningful elevation gain to a single boulder."+rtNote+"";
+    note="Height is the boulder itself. The distance is just the walk in and out — there is no meaningful elevation gain to a single boulder."+rtNote+"";
   }else if(disc==="hiking"||disc==="mountaineering"){
     stats=[];
     if(hasAscent)stats.push(["Total ascent","↑ "+uElev(totalAscentFt),C.green]);
-    if(hasDist)stats.push(["Distance",uDist(distKm),C.blue]);
-    if(hasDist&&isOutBack)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
+    if(distTile)stats.push(distTile);
     if(maxEl>0)stats.push(["High point",uElev(maxEl),C.amber]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     if(avgGrade!=null)stats.push(["Avg grade",avgGrade.toFixed(1)+"%",C.textSub]);
@@ -799,8 +806,7 @@ function TechStats({route,onEdit}){
     if(hasAscent)stats.push(["Total ascent","↑ "+uElev(totalAscentFt),C.green]);
     if(climbDisp)stats.push(["Climb length",climbDisp,C.teal]);
     if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
-    if(hasDist)stats.push(["Distance",uDist(distKm),C.blue]);
-    if(hasDist&&isOutBack)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
+    if(distTile)stats.push(distTile);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.cruxGrade||route.grade)stats.push(["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]);
     if(maxEl>0)stats.push(["High point",uElev(maxEl),C.purple]);
@@ -816,13 +822,12 @@ function TechStats({route,onEdit}){
     stats=climbDisp?[[climbLabel,climbDisp,C.teal]]:[];
     if(route.pitches>0)stats.push(["Pitches",route.pitches,C.blue]);
     if(hasAscent)stats.push([gainIsWholeOuting?"Total ascent":"Approach gain","↑ "+uElev(totalAscentFt),C.green]);
-    if(hasDist)stats.push([distIsWholeTrip?"Distance":"Approach dist",uDist(distKm),C.blue]);
-    if(hasDist&&isOutBack)stats.push(["Round trip",uDist(roundTripKm),C.blue]);
+    if(distTile)stats.push(distTile);
     if(route.cruxGrade||route.grade)stats.push(["Crux grade",cruxGrade(route.cruxGrade||route.grade),C.amber]);
     if(route.maxAngle)stats.push(["Max slope",route.maxAngle+"°",C.orange]);
     if(route.peakMetadata&&route.peakMetadata.prominence)stats.push(["Prominence",uElev(route.peakMetadata.prominence),C.purple]);
     /* Second copy of the Rappels tile — same reasoning as the pitched branch above. */
-    const _gainClause=!hasAscent?"":(gainIsWholeOuting?"Total ascent is the whole day from the trailhead, not just the walk in.":"Approach gain is the hike in to the base.");const _distClause=!hasDist?"":(distIsWholeTrip?" Distance is the whole outing, not just the walk in.":" Approach distance is the hike in to the base.");const _bothApproach=hasAscent&&hasDist&&!gainIsWholeOuting&&!distIsWholeTrip;note=(hasAscent||hasDist)?(climbLabel+" is the climbing itself. "+(_bothApproach?"Approach gain and distance are the hike in to the base — kept separate so the climb is not buried in approach numbers.":(_gainClause+_distClause).trim())+rtNote+""):null;
+    const _gainClause=!hasAscent?"":(gainIsWholeOuting?"Total ascent is the whole day from the trailhead, not just the walk in.":"Approach gain is the hike in to the base.");const _distClause=!hasDist?"":(distIsWholeTrip?" Distance is the whole outing, not just the walk in.":isOutBack?" Round trip is the walk in to the base and back out.":"");note=(hasAscent||hasDist)?(climbLabel+" is the climbing itself. "+(_gainClause+_distClause).trim()+rtNote+""):null;
   }
   /* Discipline-agnostic tiles, appended after BOTH branches above so they cannot be lost to
      whichever branch a route falls into. Every one of these is offered in SuggestFix and, until

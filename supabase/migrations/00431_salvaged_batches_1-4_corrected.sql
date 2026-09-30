@@ -560,19 +560,22 @@ update routes set
   what_to_bring = '["ice axe","crampons","helmet","harness + rappel/belay device","gaiters","approach shoes for the hike, boots for snow/rock sections","extra prusik/cordelette for improvised rappel anchors and any summit-horn pull-throughs"]'::jsonb
 where id = 'wa_brothers_traverse';
 
-update routes set
-  gear = null,
-  detailed_rack = '',
-  pro_needs = '',
-  what_to_bring = null,
-  sling_rack = '[{"type":"alpine_slings","size_cm":"various","qty":"6-10","note":"Multiple slings around peak for anchor construction; bring fresh webbing for anchor repair"}]'::jsonb,
-  alpine_draws = [object Object],
-  rope_type = 'single_or_double',
-  rope_length_m = 70,
-  rope_note = '',
-  ascender = '[object Object]',
-  corrections = '[object Object]'
-where id = 'wa_burgundy_spire_north_face';
+-- REPLAY NOTE (2026-09-30): this block is not valid SQL (`alpine_draws = [object Object]`), so it
+-- never ran. The live row confirms it: 10 draws, a 60m rope and real corrections, none of these
+-- values. It is kept as a comment so a fresh build replays past it.
+-- update routes set
+--   gear = null,
+--   detailed_rack = '',
+--   pro_needs = '',
+--   what_to_bring = null,
+--   sling_rack = '[{"type":"alpine_slings","size_cm":"various","qty":"6-10","note":"Multiple slings around peak for anchor construction; bring fresh webbing for anchor repair"}]'::jsonb,
+--   alpine_draws = [object Object],
+--   rope_type = 'single_or_double',
+--   rope_length_m = 70,
+--   rope_note = '',
+--   ascender = '[object Object]',
+--   corrections = '[object Object]'
+-- where id = 'wa_burgundy_spire_north_face';
 
 update routes set
   gear = null,
@@ -665,8 +668,7 @@ UPDATE routes SET
   rope_length_m = NULL,
   rope_note = NULL,
   ascender = NULL,
-  corrections = '{"route_type_assessment":"Cascade Peak East Ridge is a Class 4 alpine scramble (5.2 rock grade), NOT primarily a technical rock climbing peak like Forbidden Peak or Liberty Bell. It is an alpine peak ascent with scrambling exposure and optional protection placements.","standard_rack_philosophy":"Bring a moderate alpine rock rack (8 cams total, 12 stoppers) for protection on scrambling sections and exposed terrain. Ice climbing protection is secondary but valuable for September traverse conditions with rime ice or persistent snowfields. Snow anchors (2 pickets, 1 snow fluke) are mandatory for any overnight camps or emergency anchor situations.","seasonal_best_practice":"Plan for dry rock, potential rime ice, and high altitude cold in September-October. Prioritize helmet, crampons, and ice axe for safety on frost-slicked traverses. One 50-foot rope sufficient for belayed scramble sections; glacier rope useful for team travel if roped. Avoid mid-July peak season crowds; accept early-season short days (darkness by 6:30pm by early Oct).","permit_requirements":"North Cascades National Park overnight permit required. Cascade Pass Trailhead requires NW Forest Pass.","navigation_hazard":"Doug''s Direct descent (standard route back to Cascade Pass Trail) involves route-finding through steep meadows and is a common source of confusion. Bivy location (7,100 ft) well-documented on trip reports.","river_ford":"Cascade River ford at trailhead can be dangerously cold and fast during afternoon snowmelt. Cross early in the day or on return before peak flows.","cell_communication":"North Cascades NP explicitly advises climbers to be self-sufficient and not rely on personal locator or cell devices for rescue"}',
-  updated_at = now()
+  corrections = '{"route_type_assessment":"Cascade Peak East Ridge is a Class 4 alpine scramble (5.2 rock grade), NOT primarily a technical rock climbing peak like Forbidden Peak or Liberty Bell. It is an alpine peak ascent with scrambling exposure and optional protection placements.","standard_rack_philosophy":"Bring a moderate alpine rock rack (8 cams total, 12 stoppers) for protection on scrambling sections and exposed terrain. Ice climbing protection is secondary but valuable for September traverse conditions with rime ice or persistent snowfields. Snow anchors (2 pickets, 1 snow fluke) are mandatory for any overnight camps or emergency anchor situations.","seasonal_best_practice":"Plan for dry rock, potential rime ice, and high altitude cold in September-October. Prioritize helmet, crampons, and ice axe for safety on frost-slicked traverses. One 50-foot rope sufficient for belayed scramble sections; glacier rope useful for team travel if roped. Avoid mid-July peak season crowds; accept early-season short days (darkness by 6:30pm by early Oct).","permit_requirements":"North Cascades National Park overnight permit required. Cascade Pass Trailhead requires NW Forest Pass.","navigation_hazard":"Doug''s Direct descent (standard route back to Cascade Pass Trail) involves route-finding through steep meadows and is a common source of confusion. Bivy location (7,100 ft) well-documented on trip reports.","river_ford":"Cascade River ford at trailhead can be dangerously cold and fast during afternoon snowmelt. Cross early in the day or on return before peak flows.","cell_communication":"North Cascades NP explicitly advises climbers to be self-sufficient and not rely on personal locator or cell devices for rescue"}'
 where id = 'wa_cascade_peak_east_ridge';
 
 UPDATE routes SET
@@ -676,8 +678,7 @@ UPDATE routes SET
   rope_length_m = NULL,
   rope_note = NULL,
   ascender = NULL,
-  corrections = NULL,
-  updated_at = now()
+  corrections = NULL
 where id = 'wa_jack_mountain_south_face';
 
 UPDATE routes SET
@@ -687,8 +688,7 @@ UPDATE routes SET
   rope_length_m = NULL,
   rope_note = NULL,
   ascender = NULL,
-  corrections = '["Elevation discrepancy resolved: Dolomite Tower base ~5,708 ft (not 11,948 ft user-provided). User elevation may refer to another peak; verified via multiple independent sources.","Rope length: Sources consensus 60-70m single rope. Angle 5 (generic alpine) recommends 30m minimum, but Dolomite Tower''s 20-pitch length requires 60m minimum; 70m preferred to avoid forced simul-climbing on 5.10 pitches.","Approach time: Angles 1 & 3 cite 3-3.5 hours; Angle 4 cites 3-4 hours. 3-3.5 hours is consensus for fit parties. 2020 improvements noted (new bolts, alternative slab route).","Gear rack: All sources (Angles 1, 2, 3) agree on single rack to #1 Camalot + optional #2. Small/medium nuts optional (Angles 1, 2). P4 requires gear; rest primarily bolted.","P3 crux: 2020 modernization added 2 bolts; still technically runout but safer than pre-2020. Multiple sources reference P3 as site of historic fall/injury.","P5 loose rock: Multiple trip reports (Angle 3) confirm significant deterioration and rock falls. Alternate ''mystery bolts out left'' avoids worst section.","2020 modernization: Confirmed by multiple recent ascent reports. All anchors replaced stainless steel. Route improved but retains intentional runouts (P8) for mental challenge.","Deep Blue (separate route): 5.13c sport, 12 pitches effective (30 total). All bolted. 70m rope. Can be rapped or walked off."]',
-  updated_at = now()
+  corrections = '["Elevation discrepancy resolved: Dolomite Tower base ~5,708 ft (not 11,948 ft user-provided). User elevation may refer to another peak; verified via multiple independent sources.","Rope length: Sources consensus 60-70m single rope. Angle 5 (generic alpine) recommends 30m minimum, but Dolomite Tower''s 20-pitch length requires 60m minimum; 70m preferred to avoid forced simul-climbing on 5.10 pitches.","Approach time: Angles 1 & 3 cite 3-3.5 hours; Angle 4 cites 3-4 hours. 3-3.5 hours is consensus for fit parties. 2020 improvements noted (new bolts, alternative slab route).","Gear rack: All sources (Angles 1, 2, 3) agree on single rack to #1 Camalot + optional #2. Small/medium nuts optional (Angles 1, 2). P4 requires gear; rest primarily bolted.","P3 crux: 2020 modernization added 2 bolts; still technically runout but safer than pre-2020. Multiple sources reference P3 as site of historic fall/injury.","P5 loose rock: Multiple trip reports (Angle 3) confirm significant deterioration and rock falls. Alternate ''mystery bolts out left'' avoids worst section.","2020 modernization: Confirmed by multiple recent ascent reports. All anchors replaced stainless steel. Route improved but retains intentional runouts (P8) for mental challenge.","Deep Blue (separate route): 5.13c sport, 12 pitches effective (30 total). All bolted. 70m rope. Can be rapped or walked off."]'
 where id = 'wa_vanishing_point';
 
 UPDATE routes SET
@@ -698,8 +698,7 @@ UPDATE routes SET
   rope_length_m = NULL,
   rope_note = NULL,
   ascender = NULL,
-  corrections = NULL,
-  updated_at = now()
+  corrections = NULL
 where id = 'wa_glacier_peak_kennedy_glacier';
 
 UPDATE routes SET
@@ -709,8 +708,7 @@ UPDATE routes SET
   rope_length_m = NULL,
   rope_note = NULL,
   ascender = NULL,
-  corrections = NULL,
-  updated_at = now()
+  corrections = NULL
 where id = 'wa_glacier_peak_frostbite_ridge';
 
 COMMIT;

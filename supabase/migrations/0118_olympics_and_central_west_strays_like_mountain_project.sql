@@ -32,9 +32,13 @@
 -- simply never imported — not a place invented to tidy the tree. lat/lng is the centroid of
 -- the six members (all six carry coordinates), matching how the other grouping rows in this
 -- table are positioned.
+-- REPLAY NOTE (2026-09-30): VALUES became SELECT … WHERE EXISTS (parent). The same row wherever the
+-- catalog is loaded; on an empty database (a Supabase preview branch) the insert is skipped instead
+-- of raising in the areas trigger.
 insert into areas (id, name, parent_id, area_type, region, lat, lng, route_count)
-values ('wa_kitsap_puget_islands', 'Kitsap Peninsula & Puget Sound Islands',
-        'wa_olympics', 'region', 'Washington', 47.585195, -122.597075, 0);
+select 'wa_kitsap_puget_islands', 'Kitsap Peninsula & Puget Sound Islands',
+        'wa_olympics', 'region', 'Washington', 47.585195, -122.597075, 0
+ where exists (select 1 from areas where id = 'wa_olympics');
 
 update areas set parent_id = 'wa_kitsap_puget_islands'
  where id in ('wa_blakely_harbor_graffiti_building','wa_eagle_rock_a_k_a_school_rock',
