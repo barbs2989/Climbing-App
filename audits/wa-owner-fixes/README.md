@@ -38,16 +38,15 @@ Every moved pin passed `scripts/oneoff/wa-owner-fixes/verify-pins.mjs`: inside W
 - Researched, still open: no source publishes a coordinate for the Washington Pass hairpin or pond pullouts, Red
   Ledges, the Spider-Formidable col or this Cub Lake (the mapped Cub Lake is a different lake near the Entiat).
   No source gives Clean Break a car-to-car gain (only the 1,500 ft wall).
-- Researched, the owner's to apply (the guard's columns): Inner Constance → "South Gully / East Ridge via Lake
-  Constance"; Ives → "Northwest Ridge / South Face"; Clast from the Past → sport (listed Sport; bolted per its own
-  fields); Washington Pass camp card (43 routes) "roughly half a mile" → "about a mile"; Killen Creek camp card
-  (5 routes) → no parking fee; Clean Break `gpx` start → the corrected trailhead pin.
+- **Applied by the owner** with `owner-items-1-3.sql` (the guard's columns), re-read live afterwards:
+  Ives → "Northwest Ridge / South Face"; Clast from the Past → sport (listed Sport; bolted per its own fields);
+  Washington Pass camp card "roughly half a mile" → "about a mile" (42 routes; Dolphin Chimney already said "just
+  under a mile"); Killen Creek camp card → no parking fee (4 routes; North Ridge already said so); Clean Break `gpx`
+  now starts at the corrected trailhead pin. Inner Constance matched nothing: another session had already renamed it
+  "Standard Route (Northeast summit via South Gully and East Ridge)", which agrees with its fields, so it was kept.
 
-## Not done, and why
-- **Renames, `discipline` and camp cards (`bivy`)**: Inner Constance ("via Crystal Pass"), Ives ("NE"),
-  Clast from the Past (trad → sport?), and the camp-card errors (Larrabee permit, Washington Pass "half a mile",
-  Killen Creek parking pass). The apply guard forbids these columns, and loosening it was refused in this
-  session, so they wait for the owner.
+## Not done, and why (as of 2026-09-26; renames, discipline, camp cards, the delete/reorder and the Clean Break
+## approach and line were all done on 2026-09-30, above)
 - **Pins with no published coordinate** (moving them would mean inventing one): the hairpin and pond pullouts
   east of Washington Pass (Blue's Buttress, Minuteman, SEWS East Buttress); the in-between pins on Beckey-Tate,
   Big Kangaroo West Face and Cutthroat West Ridge; Ptarmigan's Red Ledges, Spider-Formidable Col and Cub Lake.
