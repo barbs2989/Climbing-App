@@ -1,0 +1,193 @@
+{
+ "applied": [
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "op": "move_pin",
+   "index": 0,
+   "name": "FR 6835 roadside pullout past the East Fork Foss bridge",
+   "moved_km": 5.7,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "op": "move_pin",
+   "index": 1,
+   "name": "Leave road, enter forest for North Ridge",
+   "moved_km": 5.54,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_vanishing_point",
+   "op": "remove_pin",
+   "index": 1,
+   "name": "Barclay Lake",
+   "gpx_vertices_dropped": 1
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "waypoints": [
+    {
+     "lat": 47.611404,
+     "lng": -121.2425768,
+     "elev": 1280,
+     "name": "FR 6835 roadside pullout past the East Fork Foss bridge",
+     "note": "Park on the shoulder just after FR 6835 crosses the East Fork Foss River bridge; no formal trailhead or sign, road access requires a Northwest Forest Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From US-2 at Skykomish, follow Foss River Road (FR 68) about 4.7 miles, turn left onto FR 6835, and continue about half a mile to the shoulder pullout just past the concrete bridge over the East Fork Foss River. There is no sign and no formal trailhead — parking is on the road shoulder — and a Northwest Forest Pass is required for the road."
+    },
+    {
+     "lat": 47.61173509090909,
+     "lng": -121.2443376,
+     "elev": 1400,
+     "name": "Leave road, enter forest for North Ridge",
+     "note": "No trail from the road; head cross-country uphill through old-growth forest toward the North Ridge crest.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "Cross to the far side of the road at the bridge and go straight into the forest. There is no trail and no marked start: pick up the toe of the north ridge at around 1,600 ft and climb. Carry all your water, since nothing on the ridge above is reliable."
+    },
+    {
+     "lat": 47.613225,
+     "lng": -121.25226119999999,
+     "elev": 2600,
+     "name": "Deadfall zone below 2,600 ft",
+     "note": "Dense down timber strewn through the forest floor up to about 2,600 ft; weave through, stays passable but slows progress.",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "The lower second-growth is choked with fallen timber, so the first several hundred feet of gain are spent weaving and scrambling over deadfall rather than walking. Stay on or near the crest; it stays passable, just slow. Around 2,600 ft the forest turns to older growth and the underbrush thins out noticeably."
+    },
+    {
+     "lat": 47.61537709090909,
+     "lng": -121.2637064,
+     "elev": 4900,
+     "name": "Brushy ridge section, 4,500-5,200 ft",
+     "note": "Thickest brush on the route with steep drop-offs on both sides of the narrow ridge crest; heavy vegetation forces careful footing.",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "Through the old-growth the crest is easy to follow and there are few reasons to leave it, with moderate going to about 4,500 ft. There the ridge narrows and steepens into the brushiest stretch of the trip — small trees and slide alder crowding a pointier crest with real drop-offs on both sides. Stay on the crest despite the vegetation, since the flanks put you above those drop-offs, and expect heavy mosquitoes in season."
+    },
+    {
+     "lat": 47.61587372727273,
+     "lng": -121.2663476,
+     "elev": 5267,
+     "name": "First summit view point",
+     "note": "Rocky, more open ridge crest where the summit block comes into view for the first time; snow patches begin appearing here in early season.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "By roughly 5,200 ft the brush releases and the ridge opens into rockier, more open ground with expanding views up the valley. Snow lingers later on the east side of the crest than on the drier crest itself."
+    },
+    {
+     "lat": 47.61620481818182,
+     "lng": -121.2681084,
+     "elev": 5400,
+     "name": "Cliff band bypass gully, 5,400 ft",
+     "note": "A cliff wall blocks the direct ridge line; bypass via a small gully with a rising traverse on the north-facing slope, often icy and best done with crampons/axe into summer.",
+     "type": "Hazard",
+     "distMi": null,
+     "directions": "A short stretch of open ridge past the viewpoint runs straight into a cliff wall. Do not take it head-on: veer left off the crest into a small gully. This is where helmets go on and where crampons or spikes and an axe earn their weight, since the bypass holds hard snow and ice well into summer and is the route's crux."
+    },
+    {
+     "lat": 47.616701454545456,
+     "lng": -121.2707496,
+     "elev": 6100,
+     "name": "Regain North Ridge crest",
+     "note": "Above the gully bypass the route rejoins the North Ridge crest for the final push to the summit.",
+     "type": "Junction",
+     "distMi": 3.2,
+     "directions": "From the gully take a rising traverse across the shaded north-facing slopes into the upper basin, then climb steeply back onto the ridge crest. Loose rock and exposure make this the one section that demands real route-finding and careful downclimbing on the way out, so note the line you took as you go up."
+    },
+    {
+     "lat": 47.61686,
+     "lng": -121.27162,
+     "elev": 6259,
+     "name": "Bald Eagle Peak summit",
+     "note": "Snow-free rocky summit with a lingering snowfield on the east edge into summer; first ascent 1933 by Hermann Ulrichs and Ben Falkenburg via this same North Ridge.",
+     "type": "Summit",
+     "distMi": 3.3,
+     "directions": "A short stroll along the crest leads to rock outcrops just below the top. Traverse the exposed ledge past them, bypass the steep snow in a shallow moat, and finish the last twenty vertical feet through small trees to the rocky summit. An ice axe and light traction are worth keeping on for that ledge into midsummer."
+    }
+   ],
+   "gpx": null
+  },
+  {
+   "id": "wa_vanishing_point",
+   "waypoints": [
+    {
+     "lat": 47.7923,
+     "lng": -121.4592,
+     "elev": 2280,
+     "name": "Barclay Lake Trailhead (FR-6024)",
+     "note": "Barclay Lake Trailhead parking area; the approach follows the Barclay Lake trail before leaving it off-trail toward the tower.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 2280,
+     "directions": "Leave US-2 near Baring and follow FR-6024 to its end at the Barclay Lake Trailhead, listed as 74920 NE Stevens Pass Hwy, Skykomish. Parking is at about 2,280 ft and the level Barclay Creek trail starts from the lot. The technical approach beyond the trail takes competent parties two and a half to four hours even with good beta, so parties going car-to-car start pre-dawn."
+    },
+    {
+     "lat": 47.784586,
+     "lng": -121.426684,
+     "elev": 2422,
+     "name": "Barclay Lake",
+     "note": "Trail continues past the lake toward Baring's north side.",
+     "type": "Water",
+     "distMi": 2.2
+    },
+    {
+     "lat": 47.7805,
+     "lng": -121.429,
+     "elev": 5200,
+     "name": "Dolomite Tower Base",
+     "note": "Climbers trail circles around most of Dolomite Tower before reaching the gully separating it from Baring Mountain.",
+     "type": "Junction",
+     "distMi": null
+    },
+    {
+     "lat": 47.781,
+     "lng": -121.43,
+     "elev": 5708,
+     "name": "Vanishing Point Topout",
+     "note": "Top of the last pitch: a two-bolt anchor right at the lip of the tower, at the edge of the woods. Unrope here and scramble down heather to the BASE-jumper descent trail.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.77918,
+     "lng": -121.43599,
+     "elev": 5708,
+     "name": "Dolomite Tower",
+     "type": "Summit",
+     "elevFt": 5708
+    }
+   ],
+   "gpx": [
+    [
+     47.784586,
+     -121.426684
+    ],
+    [
+     47.7805,
+     -121.429
+    ],
+    [
+     47.781,
+     -121.43
+    ],
+    [
+     47.77918,
+     -121.43599
+    ],
+    [
+     47.7923,
+     -121.4592
+    ],
+    [
+     47.77918,
+     -121.43599
+    ]
+   ]
+  }
+ ]
+}

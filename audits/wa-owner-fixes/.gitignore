@@ -1,0 +1,10 @@
+# Regenerable working state (snapshot of live rows, reader batches, research inputs, patch files).
+# Re-run snapshot.mjs -> detect.mjs -> dossiers.mjs -> mkresearch.mjs to rebuild them from the LIVE DB.
+wa-routes.json
+wa-areas.json
+findings.json
+batches/
+research/in/
+research/patches-*.json
+superseded/research/in/
+superseded/research/patches-*.json

@@ -1,0 +1,222 @@
+{
+ "file": "u021",
+ "results": [
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "fact": "total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: gain_ft 4,799 and loss_ft 7,000 against itinerary days of 7,200 ft up / 7,200 ft down and a totalNote of 6,500-7,000 ft. No new source gives a car-to-car gain for this rarely repeated face: the only ascent account of the face itself is a 2011 ski-mountaineering trip, and published figures for the neighbouring Northeast Buttress (~4,700 ft each way, 5,300 ft on a ski trip, 20,000 ft combined with Logan) disagree with one another. The row's own geometry (down the PCT from ~4,875 ft to Bridge Creek, up to a ~6,700 ft camp and the 9,220 ft summit, back up the PCT) implies a larger cumulative figure than any stored one, but that would be a computed value.",
+   "sources": [
+    "https://www.cascadecrusades.org/SkiMountaineering/goode/goode2011.htm",
+    "http://ericsbasecamp.net/trips/Goode/Goode.htm",
+    "https://turns-all-year.com/trip-reports/mt-goode"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "fact": "commitment grade: grade 'IV' vs commitment 'III' vs alpine_grade 'Grade III'",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The header pill shows IV from `grade` while commitment and alpine_grade say III. Sources confirm only that Beckey and Parrott climbed the ice apron and steep slabs of the direct northeast face in 1954; every graded listing found (route database, club route page, trip reports) grades the separate Northeast Buttress, at III-IV or IV. No source publishes a commitment grade for the Northeast Face itself.",
+   "sources": [
+    "http://www.alpenglow.org/people/fred-beckey-devoted-to-mountains/photo-captions.html",
+    "https://www.mountainproject.com/route/110103763/northeast-buttress",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "fact": "trailhead elevation (waypoint elev 4855 vs elevFt 4500 on the same pin)",
+   "verdict": "fixed",
+   "correct_value": "4,875 ft",
+   "evidence": "The waypoint is named the Rainy Pass PCT Trailhead and its pin (48.5181, -120.7331) sits beside the pass. The USGS elevation service gives 4,878 ft of ground at that exact pin, and the encyclopedia entry for Rainy Pass gives the pass as 4,875 ft. Both agree on ~4,875 ft; elevFt 4,500 is ~375 ft too low for this pin, and elev 4,855 is close but not the measured figure, so both copies are set to 4,875. (4,500 ft is roughly the height of the separate Bridge Creek trailhead lower on SR-20, which is a different pin.)",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.7331&y=48.5181&units=Feet&wkid=4326",
+    "https://en.wikipedia.org/wiki/Rainy_Pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_goode_mountain_northeast_face",
+     "fact": "trailhead elevation (waypoint elev 4855 vs elevFt 4500 on the same pin)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4855,
+     "value": 4875
+    },
+    {
+     "id": "wa_goode_mountain_northeast_face",
+     "fact": "trailhead elevation (waypoint elev 4855 vs elevFt 4500 on the same pin)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 4500,
+     "value": 4875
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_goode_northeast_buttress",
+   "fact": "total elevation gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: gain_ft / loss_ft 10,700 against itinerary days of 7,500 up / 8,900 down. Retry sources for the same Bridge Creek start split in two: the hiking-guide and club route pages (which share one set of stats and count once) and a 2023 trip report that used that guide give 37.0 mi and 8,400 ft; the speed-record route page gives 38.3 mi and 10,700 ft from the Bridge Creek Trailhead, and a 2025 single-day ascent reports 11,000+ ft over ~40 mi. A 2025 carry-over trip exiting to Stehekin gives ~8,100 ft, a different line. So 10,700 has one source and 8,400 one independent source; nothing is adopted. Whichever figure is settled, the itinerary also needs its day-1 PCT descent and day-4 PCT regain.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/goode-mountain",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-24.1991434807",
+    "https://fastestknowntime.com/route/goode-mountain-northeast-buttress",
+    "https://billwright510climbing.blogspot.com/2025/08/giad-mt-goodes-northeast-ridge-in-day.html",
+    "https://www.rajahamid.com/journal/2025/7/14/goode-mountain-climb-beta"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "fact": "total elevation gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: gain_ft / loss_ft 8,400 against itinerary days of 7,000 and a totalNote of ~6,500, with the itinerary omitting the PCT descent on day 1 and the PCT regain on day 3. The 8,400 ft figure in the hiking guide and club route page belongs to the Northeast Buttress climbed from Bridge Creek with a Park Creek exit, not to this route, and the Southwest Couloir figures found remain for other approaches (7,200 ft via Park Creek, ~4,700 ft net and 5,300 ft on Bridge Creek trips). No two sources give a cumulative gain for this route by this approach.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/goode-mountain",
+    "https://trailcatjim.com/mt-goode-via-southeast-couloir-upper-northeast-face/",
+    "http://ericsbasecamp.net/trips/Goode/Goode.htm",
+    "https://turns-all-year.com/trip-reports/mt-goode"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "fact": "trailhead elevation: waypoint elev 4,500 vs approach '~4,875 ft' for the same Rainy Pass trailhead",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "4,875 ft",
+   "evidence": "The approach prose puts the Rainy Pass/PCT trailhead at ~4,875 ft while the Trailhead waypoint on the same pin (48.5181, -120.7331) says 4,500. The USGS elevation service gives 4,878 ft of ground at that pin and the encyclopedia entry for Rainy Pass gives 4,875 ft, so the waypoint elev is set to 4,875. (The waypoint's note and directions also place it 'about two miles east of Rainy Pass', which does not match the pin; pin placement is out of scope here and is left for the trailhead audit.)",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.7331&y=48.5181&units=Feet&wkid=4326",
+    "https://en.wikipedia.org/wiki/Rainy_Pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_goode_mountain_southwest_couloir",
+     "fact": "trailhead elevation: waypoint elev 4,500 vs approach '~4,875 ft' for the same Rainy Pass trailhead",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4500,
+     "value": 4875
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hinman_hinman_glacier",
+   "fact": "Elevation gain for the approach leg (trailhead to La Bohn Gap/Lakes camp)",
+   "verdict": "unresolved",
+   "correct_value": "Not 6,100 (that is the whole-outing gain_ft); the approach figure lies between ~4,200 ft net and ~5,100 ft cumulative",
+   "evidence": "approach_variants[0].gainFt 6,100 still equals the car-to-car gain_ft and cannot be the approach alone (trailhead ~1,650 ft to La Bohn Gap ~5,856 ft is ~4,200 ft net). Retry sources are whole-trip totals only: trip reports via La Bohn Gap give ~24 mi / 7,000 ft, 23.3 mi / 7,100 ft and 24.6 mi / 8,475 ft, and the Necklace Valley hike guide gives the trail to the lakes, not to the gap. Inside the row the approach figure varies too (itinerary day 1 4,200 ft, approach prose '5,000+ ft cumulative', beta '9 miles, 5,100 ft'). No two sources agree on an approach-only gain, so the value is not replaced.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/necklace-valley",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-09-18.1968042484",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-30.193820068626",
+    "https://www.mountaineers.org/activities/routes-places/mount-hinman-west-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "fact": "Easy Pass approach length: itinerary day 1 12.5 mi vs beta/access '~10 mi one-way via Easy Pass'",
+   "verdict": "unresolved",
+   "correct_value": "roughly 10-11 mi one way (12.5 looks high), but no single figure is agreed",
+   "evidence": "Itinerary days 1 and 3 still say 12.5 mi while the beta, approach and access.closures say ~10 mi one way to the lake camp. Retry: a club trip report puts the creek below the ~5,160-5,200 ft lake at about 10.5 mi from the Easy Pass trailhead, with the lake a short climb above that; a 2015 single-day report gives 10 mi each way (29 mi round trip with the summit); a third describes 11-13 mi on day 1. The figures cluster around 10-11 mi and argue against 12.5, but no two give the same one-way number, so neither the itinerary nor the prose is changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-logan-banded-glacier",
+    "https://drdirtbag.com/2015/06/23/logan-banded-glacier-29-mi-12500-ft-13h35/",
+    "https://www.alpinewanderlust.com/the-unexpected-mt-logan-banded-glacier/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "fact": "Which approach reaches Mount Lyall (High Bridge/Agnes-Swamp Creek vs Holden/Railroad Creek) and the route's class",
+   "verdict": "not_a_contradiction",
+   "correct_value": "High Bridge / Agnes Creek / Swamp Creek approach; exposed Class 3 gully with Class 3-4 boulders",
+   "evidence": "Already consistent: the live row's waypoints are now only the High Bridge trailhead and the summit (the Holden Village / Holden Lake chain is gone), partner_requirements now describes the boat, valley shuttle and Agnes Creek trail, the Holden Lake bivy entry is hidden, and the itinerary now calls the line the Southwest Ridge with an exposed Class 3 gully and Class 3-4 boulders, matching grade and beta. The one leftover class claim in seasonal_hazards.exposure is handled as a separate discovered item below.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "fact": "SEASONAL HAZARDS exposure calls the route Class 2-3 terrain 'rather than sheer exposure' vs an exposed Class 3 gully and Class 3-4 boulders everywhere else",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Exposed Class 3 gully finishing on loose Class 3-4 boulders",
+   "evidence": "grade (Class 3-4), beta, hazards, watch_out, pitch_detail (Traverse and Summit Gully rows, both 'Class 3, exposed'), the itinerary summit day and descent_text all describe an exposed, narrowing Class 3 gully and loose Class 3-4 boulders to the summit; only seasonal_hazards.exposure (left from an older south-slopes description) calls it Class 2-3 terrain without real exposure. The one detailed ascent account of this line describes the exposed class 3 gully narrowing toward the summit with the last ~200 ft on stacked, loose boulders. The outlier clause is reworded to match.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-02-05.8491434130"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_lyall_south_route",
+     "fact": "SEASONAL HAZARDS exposure calls the route Class 2-3 terrain 'rather than sheer exposure' vs an exposed Class 3 gully and Class 3-4 boulders everywhere else",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "loose scree and talus on the south slopes create rockfall and twisted-ankle/fall risk typical of Class 2-3 terrain rather than sheer exposure;",
+     "replace": "loose scree and talus below the southwest-ridge notch bring rockfall and twisted-ankle risk, and the narrowing Class 3 gully and loose Class 3-4 boulders below the summit are genuinely exposed;"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "fact": "Round-trip distance: itinerary/approach 10 mi vs partner_requirements 11-13 mi",
+   "verdict": "fixed",
+   "correct_value": "About 10 mi round trip from the Merritt Lake Trailhead",
+   "evidence": "The club route page for Howard and Mastiff gives Mastiff alone, from and back to the Merritt Lake trailhead, as 10 mi round trip (13 mi for the two-peak loop), and a 2021 trip report on the Merritt Lake / Nason Ridge boot-path line recorded 9.5 mi by GPS. The row's itinerary, approach and totalNote already say 10 mi and the summit waypoint sits at 4.5 mi one way; only partner_requirements says 11-13 mi, which matches the longer Lost Lake / NE-ridge variant (~11 mi) or the two-peak loop, not this route. (Both sources give less gain than the row's 4,900 ft - 3,330 and 3,670 ft - but they do not agree with each other, so gain is not changed.)",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-06-08-0963176949"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_mastiff_south_route",
+     "fact": "Round-trip distance: itinerary/approach 10 mi vs partner_requirements 11-13 mi",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~11-13 miles round trip",
+     "replace": "~10 miles round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both lines exist, so this needs an owner choice of which one the row describes rather than a value fix. A 2021 trip report follows the Merritt Lake Trail onto the Nason Ridge Trail, forks right onto a long forest climb and then a ~1/4-mile ridge scramble - the waypoint / approach_variants line. Route descriptions for the Howard-Mastiff pair instead reach Crescent Lake along the Nason Ridge Trail and climb scree from the head of the basin to the Howard-Mastiff ridge, then follow the crest to Mastiff - the beta / itinerary / descent_text line (and a ski guide uses a third line via Lost Lake and the NE ridge). The row mixes them: its descent reverses a gendarme bypass on the southeast ridge yet drops into the Crescent basin and walks ~3.5 mi east. Rewriting either half means new prose and new timings no source gives for this row, so it is left flagged.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-06-08-0963176949",
+    "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+    "https://wenatcheeoutdoors.org/2016/06/30/mastiff-mountain-via-merritt-lake/"
+   ],
+   "patches": []
+  }
+ ]
+}

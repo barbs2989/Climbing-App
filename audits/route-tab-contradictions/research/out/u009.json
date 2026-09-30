@@ -1,0 +1,95 @@
+{
+ "file": "u009",
+ "results": [
+  {
+   "id": "wa_glacier_view_temple",
+   "fact": "Rope length needed to lower off (30 m rope vs a stated 60 m requirement)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Partly consistent now: descent_text has been changed to say a 30 m rope is enough for the 12 m pitch, matching length_m, pitch_detail (12 m) and rappels (~40 ft). The remaining outlier is rope_note, which still guesses the route is 60-90 ft. The route is still absent from the crag's online route lists, so no source gives its length and rope_note cannot be corrected by research; no patch.",
+   "sources": ["https://www.mountainproject.com/area/114570429/keechelus-ridge", "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/4494758211"],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "fact": "Trailhead waypoint (4,700 ft) sits higher than the crag base (4,601 ft) although the approach hikes uphill to the crag",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled (same shared waypoints as the other East Face rows). Sources give the crag at about 4,700 ft and parking in a lot about 3 mi up FR 4934 with a ~25 min uphill walk, but none states the parking elevation. The parking pin sits only about 65 m from the crag pin, so a ground-elevation lookup at that pin would not measure the real lot, and pin positions are out of scope. No patch.",
+   "sources": ["https://www.mountaineers.org/activities/routes-places/keechelus-ridge-crag", "https://www.mountainproject.com/area/114570429/keechelus-ridge"],
+   "patches": []
+  },
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "fact": "Total trip time vs its own approach/summit/descent legs",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. New reports: one took about 10 hours from a Stetattle Ridge camp to the summit and back to camp; another carrying overnight packs took 10-12 hours each way over about 30 miles and 13,000 ft; a spring overnight reached the Sourdough/Stetattle saddle about 4.5 hours from Diablo. These do not agree with each other on leg times or a car-to-car total, so neither the 36 h total nor the 5/3/4 h legs can be corrected.",
+   "sources": ["https://www.adventuresnw.com/a-tale-of-four-elephants/", "https://www.nwhikers.net/forums/viewtopic.php?t=8030175", "https://stephabegg.com/trip-reports/washington/stetattle/"],
+   "patches": []
+  },
+  {
+   "id": "wa_enchantment_peak_southwest_scramble",
+   "fact": "Whether the approach goes via Prusik Pass (beta) or deliberately avoids it (approach / baseFinding)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Clearer but not settled. One trip report says the standard line to the NE summit is the east ridge from Prusik Pass, with several shortcuts from the Aasgard side, and its party used a 3rd-class south-face couloir; a peak page snippet also describes heading west from Prusik Pass up the shoulder to the NE summit, and describes a separate south-side Class 4 line to the SW summit. So both lines exist. The row is split: overview, face, approach, the variant notes and baseFinding describe a south-side line from the basin (and call it the line 'for the SW summit' while saying the route ends on the NE summit), while beta and pitch_detail rows 3-4 go via Prusik Pass. Only one source documents a south-side line to the NE summit, so beta and pitch_detail are not rewritten.",
+   "sources": ["https://stevensong.com/usa/washington/enchantment-peak-wa/", "https://www.summitpost.org/enchantment-peak/151418", "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/enchantment-peak"],
+   "patches": []
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "fact": "which approach this route describes — Esmeralda Basin/Fortune Creek Pass vs. De Roux Creek Trail",
+   "verdict": "unresolved",
+   "correct_value": "De Roux Creek approach (Boulder-De Roux Trail #1392 to the house-sized boulder at the last switchback)",
+   "evidence": "Mostly resolved since the first pass: name, overview, beta, approach, approach_variants and itinerary now all describe the De Roux Creek line, which the peak page, the trail database and a detailed trip report all document. What is left is the waypoint list (Esmeralda Basin trail junction, Esmeralda Basin camps, Lake Ann junction, Fortune Creek Pass, and a trailhead named Esmeralda Basin) and approach_logistics.trailhead, whose pins sit on the Esmeralda Basin side. Renaming them would leave names on pins in the wrong valley, and pin positions are out of scope, so no patch; the waypoints need a pin rework.",
+   "sources": ["https://trailcatjim.com/high-esmerelda-peak-via-southwest-slope/"],
+   "patches": []
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "fact": "gain_ft 3,300 vs itinerary gainFt/lossFt 2,500",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "already consistent. gain_ft and loss_ft are now 3,100 and the itinerary day now gains and loses 3,100 ft over 7 mi, matching the approach text.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "fact": "season window (Jun-Sep) doesn't include the best_season's recommended October",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "already consistent. season is now Jul-Oct, best_season now recommends mid-summer to late September, and seasonal_guidance marks October marginal; all sit inside the window.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. Snippets now show a club route page calling it a four-pitch climb (and another saying the route does no more than 4 full pitches), a guide service saying eight pitches, and trip reports that simul-climb in short pitches; the count depends on style. pitches=8 and the six-row breakdown both disagree with the four-pitch figure, and rewriting the breakdown to four rows would need a pitch-by-pitch source, which was not found. No patch.",
+   "sources": ["https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge", "https://www.summitpost.org/forbidden-peak-west-ridge/169044", "https://www.countryhighpoints.com/forbidden-peak/", "https://climberkyle.com/2019/06/12/forbidden-peak-west-ridge-5-6/"],
+   "patches": []
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "fact": "climbing season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. The park's Boston Basin conditions posts describe the basin's seasons in general (snow to treeline in June-July, moats and bergschrunds opening by August, little snow by September) but say nothing about this face. The only route-specific account remains the 15 September 1961 first ascent. season 'Jul-Sep' against 'late spring to early summer' in best_season and seasonal_guidance cannot be settled by two sources.",
+   "sources": ["https://home.nps.gov/noca/blogs/climbing-conditions-for-boston-basin-area.htm", "http://publications.americanalpineclub.org/articles/12196136101/North-America-United-States-WashingtonCascades-Forbidden-Peak-Northeast-Face"],
+   "patches": []
+  },
+  {
+   "id": "wa_forbidden_peak_northwest_face",
+   "fact": "trip length (days)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Closer but not patched. A second guide service now also runs the Northwest Face as 3 days/2 nights (hike in, climb and bivy near Forbidden-Torment, descend and hike out), agreeing with the first guide service and with approach and approach_variants ('most parties treat this as a 3-day trip'). The itinerary is 2 days whose day 2 ends back at camp with no hike-out day, and its totalNote says 2-day. Correcting it would need a new third itinerary day with gain, loss and miles that no source states for the hike out, and one-day car-to-car ascents also exist, so no patch.",
+   "sources": ["https://www.miyaradventures.com/trip/nw-face-of-forbidden-peak/", "https://mountainmadness.com/trips/washington-forbidden-peak-northwest-face"],
+   "patches": []
+  }
+ ]
+}

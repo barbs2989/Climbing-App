@@ -1,0 +1,149 @@
+{
+ "file": "u019",
+ "results": [
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "which notch/direction the route uses",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "South Ridge (the notch used is in the southeast ridge; there is no 'North Notch' on this line)",
+   "evidence": "The Mountaineers South Ridge route description has parties climb slabs to a notch in Morning Star's southeast ridge at ~5,600 ft, drop ~200 ft into the southeast basin and finish up a gully to the south ridge. The row's approach, pitch_detail row 4, climbing_route step 2 and descent_text all name the same southeast-ridge notch; only `face` says 'North Notch'. A 2015 trip report also describes an access notch on the ridge reached from the drainage, with no north notch. `face` is reduced to the route's name.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge",
+    "https://onehikeaweek.com/2015/02/21/morning-star-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_morning_star_peak_standard",
+     "fact": "which notch/direction the route uses",
+     "op": "set",
+     "column": "face",
+     "path": [],
+     "expect": "South Ridge / North Notch",
+     "value": "South Ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "total car-to-car time / one-way time to summit",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 9 hrs car-to-car, about 5 hrs to the summit",
+   "evidence": "timing.totalHrs, timing.summitTimeHrs, the itinerary day hours, totalNote and the 6:00 AM-3:00 PM schedule (summit 11:00 AM) all say 9 hrs car-to-car and ~5 hrs up; only partner_requirements says 8 hrs total and 3-4 hrs one-way. The Mountaineers South Ridge page gives 5-7 hrs trailhead to summit and 4-5 hrs back, i.e. at least 9 hrs, which agrees with the row majority and rules out 8 hrs / 3-4 hrs up.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_morning_star_peak_standard",
+     "fact": "total car-to-car time / one-way time to summit",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "Full day out (8 hrs total)",
+     "replace": "Full day out (9 hrs total)"
+    },
+    {
+     "id": "wa_morning_star_peak_standard",
+     "fact": "total car-to-car time / one-way time to summit",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Roughly 3-4 hrs one-way to the basin/summit based on the 8-hr round-trip total with a 06:00 recommended start",
+     "replace": "Roughly 5 hrs one-way to the summit, within a 9-hr round trip from a 6:00 AM start"
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "Sunrise Mine Trailhead location",
+   "verdict": "unresolved",
+   "correct_value": "48.0251, -121.4779 (waypoint position)",
+   "evidence": "Still a coordinate-only disagreement: the Trailhead waypoint (48.02473, -121.47785) matches the Sunrise Mine trailhead position in the Headlee Pass trail description to ~50 m, while approach_logistics.trailheadLat/Lng sits ~300 m east. Pin and coordinate positions are out of scope for these patches, so it stays flagged for a coordinate pass.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/headlee-pass-and-vesper-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "Whether the scramble goes via Headlee Pass or up the South Fork Stillaguamish drainage",
+   "verdict": "unresolved",
+   "correct_value": "South Fork Stillaguamish drainage to the southeast-ridge notch (the South Ridge line), not over Headlee Pass",
+   "evidence": "The Mountaineers South Ridge description and a 2015 trip report both leave the Sunrise Mine Trail ~0.5 mi in and go up the South Fork Stillaguamish drainage to a notch in the southeast ridge; neither crosses Headlee Pass. The only Headlee-side line found (the SummitPost peak page's Northwest Face/North Ridge) leaves the trail at the BASE of the switchbacks below the pass, not at the pass, with ~50 ft of class 4 - so the itinerary's 'climb to Headlee Pass, then traverse' and approach_variants' 'do NOT leave the trail lower down' match no source. Fixing it means rewriting the itinerary schedule, timing note, approach_variants and several hazard/gear lines with new times and mileages that no source states, so it is left for an owner rewrite rather than patched.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge",
+    "https://onehikeaweek.com/2015/02/21/morning-star-peak/",
+    "https://www.summitpost.org/morning-star-peak/212932"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "fact": "total elevation gain: gain_ft 3,670 vs loss_ft 3,800 / itinerary 3,800 on an out-and-back",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft is 3,670 while loss_ft, the itinerary day and totalNote say 3,800, and the approach text says 3,700-4,200 ft. External figures disagree with each other: the Mountaineers South Ridge page gives 4,200 ft over 6.0 mi, a 2015 trip report 3,700 ft over 5.4 mi. No two sources agree on one figure.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/morning-star-peak-south-ridge",
+    "https://onehikeaweek.com/2015/02/21/morning-star-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mile_high_club",
+   "fact": "total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": "roughly 3,000-3,200 ft car-to-car (2,700 is the approach-to-base figure and is too low; 3,500 looks high)",
+   "evidence": "gain_ft 2,700 matches the commonly quoted approach gain to the base, while the itinerary day, lossFt and totalNote say 3,500. With the trailhead near 2,350 ft and the Eros Tower top at 5,280 ft, the net rise alone is ~2,930 ft. A route-log site records 3,156 ft over 4.9 mi for the outing and a 2023 GPS trip report logged 921 m (~3,020 ft); these are close but not the same figure, and neither matches 3,500, so no value is adopted.",
+   "sources": [
+    "http://hiking.andrewleader.net/routes/mile-high-club/",
+    "https://www.francisbaileyh.com/2023/09/02/eros-tower/",
+    "https://www.mountainproject.com/route/112553808/mile-high-club"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_moss_out_for_harambe",
+   "fact": "which tier (upper/lower) the route climbs",
+   "verdict": "unresolved",
+   "correct_value": "Upper tier (face field likely right; overview's 'lower tier' likely wrong)",
+   "evidence": "The crag and route pages written by the first ascensionist remain the only description found: the crag has two tiers, the lower tier holding easy 5.6-and-under lines and the upper tier sitting by the small railroad sign, with Harambe on the upper tier. Searches for the crag or the route name on other climbing databases, trip-report blogs and general web return nothing independent (the crag and route exist only on that one author's pages), so a second source is still missing. Recommended change once one appears: overview 'up Mossy Loaf's lower tier' -> 'up Mossy Loaf's upper tier'.",
+   "sources": [
+    "https://www.mountainproject.com/area/119509121/mossy-loaf",
+    "https://www.mountainproject.com/route/119509372/moss-out-for-harambe"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "fact": "Waypoint distance jump at the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit waypoint's 16.92 mi (tagged distFrom: track) is still inconsistent with the row: the waypoint chain reaches the gully below the summit at 7.5 mi, while the itinerary (10.5 mi to a treeline camp plus a 3-mi round-trip summit day), totalNote (~24 mi round trip) and dist_km (19.31 km = 12 mi) imply roughly 12 mi one way. Route descriptions of the Little Giant Pass / Napeequa approach and multi-peak trip reports on this ridge describe the line but give only loop totals (e.g. a 40-mile multi-peak trip), never a one-way distance to Berge's summit, and a figure derived from the itinerary would be a computed value. No patch; the waypoint chain's own distances also look inconsistent with the itinerary and should be reviewed with the pins.",
+   "sources": [
+    "https://www.summitpost.org/mount-berge/664777",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2007090107",
+    "https://www.countryhighpoints.com/buck-mountain-mt-berge-and-berge-north/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_challenger_challenger_glacier",
+   "fact": "crux rock grade",
+   "verdict": "unresolved",
+   "correct_value": "5.5 (one ~50 ft summit pitch)",
+   "evidence": "[Held: sources split 5.5 / 5.6 / 5.7.] Two independent sources grade the summit rock at 5.5: the route database gives the final summit as one pitch of 5.5 with fixed protection, and a full north-to-south Pickets traverse report lists Challenger as a class 2 glacier with 50 ft of 5.5 rock to the summit. Some other trip reports call it 5.6 or mention a 5.7 move, but no two of those agree. The row's rock_grade, pitch_detail, itinerary and partner_requirements already say 5.5; the 5.6-5.7 and 5.5-5.7 copies in grade, gear, hazards, rack, pro_needs, pro_tips, approach, descent, the summit waypoint note, the approach baseFinding and climbing_route are brought to 5.5. grade_num is derived and not touched.",
+   "sources": [
+    "https://www.mountainproject.com/route/112031867/challenger-glacier",
+    "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/"
+   ],
+   "patches": []
+  }
+ ]
+}

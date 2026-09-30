@@ -1,0 +1,388 @@
+{
+ "file": "F2.json",
+ "results": [
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Kangaroo Pass pin (waypoints[2]) off its feature",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The stored pin (48.507339,-120.629967) sits at USGS ground 5,661 ft, not on a pass; the named OSM saddle node Kangaroo Pass is at 48.5015712,-120.62226 (ground 6,665 ft, matching the claimed 6,671). But the row claims the south-face approach tops out at Kangaroo Pass, while the published approach heads toward Kangaroo Pass (about 3 mi from the car) and turns off before it to cross Kangaroo Ridge at the broad col dead centre between Half Moon and Big Kangaroo; moving the pin to the true pass would put a ~1 km southern detour into the drawn line for a point the route may not visit. Pin left unchanged; recommend removing or renaming it once the actual turn-off is located.",
+   "sources": [
+    "https://nominatim.openstreetmap.org/search?format=json&q=Kangaroo+Pass,+Washington",
+    "https://www.summitpost.org/big-kangaroo/153834",
+    "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.62226&y=48.5015712&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Half Moon–Big Kangaroo col pin (waypoints[3]) off its feature",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.505385,-120.624173 is USGS ground 6,072 ft vs claimed 7,400 and lies south of Wallaby Peak (OSM 48.5068,-120.6154), whereas the col is on Kangaroo Ridge north of Half Moon and south of Big Kangaroo (OSM summit 48.5193792,-120.6177554). No source states a coordinate for this unnamed col; per the pin rule nothing was moved.",
+   "sources": [
+    "https://www.summitpost.org/big-kangaroo/153834",
+    "http://iannicholsonslife.blogspot.com/2010/09/big-kangaroo-becky-tate-iii-59.html",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Big+Kangaroo,+Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Base of South Face pin (waypoints[4]) off its feature",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.503707,-120.624412 is ground 6,310 ft vs claimed 7,600 and 1.8 km from the summit, though the south face is ~900 ft tall and directly below the summit. A face base is part of a feature and no source states a coordinate for it; unchanged.",
+   "sources": [
+    "https://www.summitpost.org/big-kangaroo/153834",
+    "http://iannicholsonslife.blogspot.com/2010/09/big-kangaroo-becky-tate-iii-59.html",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Big+Kangaroo,+Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Top of South Face / Snow Gully Exit pin (waypoints[5]) off its feature",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.502284,-120.6232 is ground 6,498 ft vs claimed 8,150 and ~1.9 km south of the summit, while the row says the face tops out a few hundred feet below the summit. No stated coordinate exists for this point; unchanged.",
+   "sources": [
+    "https://www.summitpost.org/big-kangaroo/153834",
+    "http://iannicholsonslife.blogspot.com/2010/09/big-kangaroo-becky-tate-iii-59.html",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Big+Kangaroo,+Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beckey_tate",
+   "fact": "Early Winters Creek turnoff pin (waypoints[1])",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.511531,-120.639814 has ground 5,342 ft vs claimed 5,300, consistent with a creek crossing near the hairpin, but no source states a coordinate for the crossing; left unchanged. The summit pin (48.519416,-120.617505) agrees with the OSM Big Kangaroo node (48.5193792,-120.6177554) and is correct.",
+   "sources": [
+    "https://www.summitpost.org/big-kangaroo/153834",
+    "http://iannicholsonslife.blogspot.com/2010/09/big-kangaroo-becky-tate-iii-59.html",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Big+Kangaroo,+Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Talus Fork / Gully Base pin (waypoints[2]) off the line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.50818,-120.63223 is ground 5,604 ft vs claimed 6,000. The published approach walks south ~2 mi from the hairpin to a meadow, then climbs NE up the prominent gully that descends from the crest just south of the summit (OSM summit 48.5193792,-120.6177554); the pin is ~1.5 km SSW of the summit. No source states a coordinate for the gully base; unchanged.",
+   "sources": [
+    "https://www.summitpost.org/big-kangaroo/153834",
+    "https://onehikeaweek.com/2019/07/28/big-kangaroo/",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Big+Kangaroo,+Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Chockstone / Loose Gully Band pin (waypoints[3]) off the line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.505269,-120.624051 is ground 6,098 ft vs claimed 7,400 and ~1.6 km south of the summit, not in the summit gully. The chockstone is mentioned in trip narratives but no coordinate is published; unchanged.",
+   "sources": [
+    "https://www.summitpost.org/big-kangaroo/153834",
+    "https://onehikeaweek.com/2019/07/28/big-kangaroo/",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Big+Kangaroo,+Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "fact": "Ridge Crest Notch pin (waypoints[4]) off the line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.502472,-120.62322 is ground 6,461 ft vs claimed 8,100 and ~1.9 km south of the summit it is said to sit just below. No stated coordinate for the notch; unchanged.",
+   "sources": [
+    "https://www.summitpost.org/big-kangaroo/153834",
+    "https://onehikeaweek.com/2019/07/28/big-kangaroo/",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Big+Kangaroo,+Washington"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Basin below Whistler Mountain pin (waypoints[2])",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.524506,-120.705127 is ground 7,080 ft vs claimed 6,200, only ~200 m from the summit (GNIS/OSM 48.5263,-120.7035). Ground elevations at pins 2-6 are 7,080 / 6,765 / 6,325 / 5,756 / 5,055 ft, i.e. they step DOWN toward the SR-20 pullout (ground 5,227) while their names/elevs step UP the ridge (6,200 to 7,900), so the coordinates trace the lower southeast approach (in reverse) rather than the west ridge. No source states a coordinate for this basin; unchanged.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1518440 Cutthroat Peak 48.526253,-120.703175)",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Cutthroat+Peak",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Southwest Gully entrance pin (waypoints[3])",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.523586,-120.703942 is ground 6,765 vs claimed 7,400. Ground elevations at pins 2-6 are 7,080 / 6,765 / 6,325 / 5,756 / 5,055 ft, i.e. they step DOWN toward the SR-20 pullout (ground 5,227) while their names/elevs step UP the ridge (6,200 to 7,900), so the coordinates trace the lower southeast approach (in reverse) rather than the west ridge. No stated coordinate for the gully entrance; unchanged.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1518440 Cutthroat Peak 48.526253,-120.703175)",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Cutthroat+Peak",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Crux face above rap station pin (waypoints[4])",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.521142,-120.699485 is ground 6,325 vs claimed 7,600, 0.7 km SE of the summit and not on the west ridge. No stated coordinate; unchanged.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1518440 Cutthroat Peak 48.526253,-120.703175)",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Cutthroat+Peak",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "West Ridge crest / notch pin (waypoints[5])",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.518247,-120.695781 is ground 5,756 vs claimed 7,800, ~1.1 km SE of the summit on the approach slope. No stated coordinate for the notch; unchanged.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1518440 Cutthroat Peak 48.526253,-120.703175)",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Cutthroat+Peak",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "Northwest face traverse pin (waypoints[6])",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.515127,-120.692058 is ground 5,055 vs claimed 7,900 and ~1.5 km SSE of the summit, the opposite side from the northwest face. No stated coordinate for the ledge; unchanged.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1518440 Cutthroat Peak 48.526253,-120.703175)",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Cutthroat+Peak",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cutthroat_west_ridge",
+   "fact": "\"West Ridge base / area reference point\" pin (waypoints[8]) sits on the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at 48.52623,-120.70347 is ~25 m from the GNIS summit point (ground 7,942) and has no elev or distance, so it is a duplicate summit marker mislabelled as the ridge base. Renaming it to the summit would create a second summit pin, and no source states a coordinate for the west ridge base; recommend removing this pin (not possible with the patch ops).",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1518440 Cutthroat Peak 48.526253,-120.703175)",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Cutthroat+Peak",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "fact": "Yang-Yang Lakes pin (waypoints[5]) 3.2 km off the lakes",
+   "verdict": "fixed",
+   "correct_value": "48.3917734,-121.0569268",
+   "evidence": "OSM camp node \"Yang Yang Lakes Camp\" states 48.3917734,-121.0569268; the GNIS Yang Yang Lakes point is 48.392597,-121.056932 (~90 m away). USGS ground at the new point is 5,841 ft vs the pin's claimed 5,852 (bivy list: 5,830), so elev is unchanged. The old point (48.421,-121.061) was 3.2 km north, ground 6,223.",
+   "sources": [
+    "https://www.openstreetmap.org/node/12059706151",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1528348 Yang Yang Lakes 48.392597,-121.056932)"
+   ],
+   "patches": [
+    {
+     "id": "wa_ptarmigan_traverse",
+     "fact": "Yang-Yang Lakes pin (waypoints[5]) 3.2 km off the lakes",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "lat"
+     ],
+     "expect": 48.421,
+     "value": 48.3917734
+    },
+    {
+     "id": "wa_ptarmigan_traverse",
+     "fact": "Yang-Yang Lakes pin (waypoints[5]) 3.2 km off the lakes",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "lng"
+     ],
+     "expect": -121.061,
+     "value": -121.0569268
+    }
+   ]
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "fact": "White Rock Lakes pin (waypoints[7]) off the lakes, wrong elevation and sequence note",
+   "verdict": "fixed",
+   "correct_value": "48.3395954,-121.052078; elev 6200",
+   "evidence": "OSM camp node \"White Rock Lakes Camp\" states 48.3395954,-121.052078 (GNIS lake point 48.340745,-121.056975, ~0.4 km across the lake group). USGS ground there is 6,188 ft; published camp elevations are ~6,200 and 6,229 ft, and the row's own bivy entry says 6,200, so elev 6500 -> 6200. Itineraries order the route LeConte Glacier -> South Cascade Glacier -> White Rock Lakes -> Dana Glacier -> Spire Col, so the note's claim that the camp \"crosses the South Cascade Glacier en route to Spire Point\" is reworded. The pin NAME (\"White Rock Lakes / South Cascade Glacier Col\") was left as is because bivy[] hides this waypoint by that exact name (bivy is owned by the camping clean-up); recommend renaming both to \"White Rock Lakes\" together.",
+   "sources": [
+    "https://www.openstreetmap.org/node/12059706152",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1528086 White Rock Lakes 48.340745,-121.056975)",
+    "https://www.alpineascents.com/climbs/ptarmigan-traverse/itinerary/",
+    "https://climberkyle.com/2019/07/09/the-extended-ptarmigan-traverse/",
+    "https://turns-all-year.com/trip-reports/june-17-20-2004-ptarmigan-traverse"
+   ],
+   "patches": [
+    {
+     "id": "wa_ptarmigan_traverse",
+     "fact": "White Rock Lakes pin (waypoints[7]) off the lakes, wrong elevation and sequence note",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "lat"
+     ],
+     "expect": 48.36,
+     "value": 48.3395954
+    },
+    {
+     "id": "wa_ptarmigan_traverse",
+     "fact": "White Rock Lakes pin (waypoints[7]) off the lakes, wrong elevation and sequence note",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "lng"
+     ],
+     "expect": -121.05,
+     "value": -121.052078
+    },
+    {
+     "id": "wa_ptarmigan_traverse",
+     "fact": "White Rock Lakes pin (waypoints[7]) off the lakes, wrong elevation and sequence note",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "elev"
+     ],
+     "expect": 6500,
+     "value": 6200
+    },
+    {
+     "id": "wa_ptarmigan_traverse",
+     "fact": "White Rock Lakes pin (waypoints[7]) off the lakes, wrong elevation and sequence note",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "crosses the flat South Cascade Glacier en route to Spire Point.",
+     "replace": "reached off the south end of the South Cascade Glacier, with the Dana Glacier leading on toward Spire Point."
+    }
+   ]
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "fact": "Spire Point pin (waypoints[8]) 2 km off the peak",
+   "verdict": "fixed",
+   "correct_value": "48.3175653,-121.0717302",
+   "evidence": "OSM peak node Spire Point states 48.3175653,-121.0717302; the GNIS Spire Point point is 48.317629,-121.071233 (~40 m). USGS ground at the OSM node is 8,262 ft vs the pin's claimed 8,264 (the row's prose also says 8,264). The old point (48.335,-121.06) was ~2.1 km NE at ground 5,916.",
+   "sources": [
+    "https://www.openstreetmap.org/node/356546538",
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1526374 Spire Point 48.317629,-121.071233)"
+   ],
+   "patches": [
+    {
+     "id": "wa_ptarmigan_traverse",
+     "fact": "Spire Point pin (waypoints[8]) 2 km off the peak",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      8,
+      "lat"
+     ],
+     "expect": 48.335,
+     "value": 48.3175653
+    },
+    {
+     "id": "wa_ptarmigan_traverse",
+     "fact": "Spire Point pin (waypoints[8]) 2 km off the peak",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      8,
+      "lng"
+     ],
+     "expect": -121.06,
+     "value": -121.0717302
+    }
+   ]
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "fact": "Red Ledges (Art's Knoll) pin (waypoints[4]) off its feature",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at rounded 48.43,-121.03 is ground 6,741 ft and ~0.9 km east of Arts Knoll (GNIS 48.430354,-121.042781; OSM 48.4305869,-121.0425699). The Red Ledges are a ledge crossing below Arts Knoll (a part of the feature) and no source states their coordinate, so the knoll label point cannot be used; unchanged.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1515966 Arts Knoll)",
+    "https://www.alpineascents.com/climbs/ptarmigan-traverse/itinerary/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "fact": "Spider-Formidable Col pin (waypoints[6]) off its feature",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at rounded 48.4,-121.03 is ground 6,834 ft vs claimed 7,500 (published col figures are ~7,300-7,320); it lies SE of Spider Mountain (GNIS 48.409449,-121.036092) rather than on the Spider-Formidable ridge (Formidable GNIS 48.416236,-121.066968). No source states a coordinate for the col; unchanged.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Spider_Mountain",
+    "https://www.summitpost.org/spider-mountain/154649"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "fact": "Cub Lake / Itswoot Ridge pin (waypoints[9]) off its feature",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Pin at rounded 48.308,-121.1 is ground 5,444 ft vs the claimed 6,400 Itswoot Ridge camp (6,400 is confirmed by published itineraries); it is ~0.7 km west of Cub Lake (GNIS 48.30564,-121.091241, ground 5,343). No stated coordinate for the Itswoot Ridge camp was found, and the Cub Lake point would contradict the 6,400 ft ridge camp the note describes; unchanged.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer (GNIS 1518392 Cub Lake, 1521277 Itswoot Lake)",
+    "https://turns-all-year.com/trip-reports/june-17-20-2004-ptarmigan-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "fact": "Yang-Yang Lakes listed before Spider-Formidable Col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Every itinerary (and the row's own prose: \"climb the Middle Cascade Glacier to Spider-Formidable Col, descend to Yang-Yang Lakes\") crosses the col BEFORE Yang Yang Lakes, but waypoints[5] (Yang-Yang, distMi 12) precedes waypoints[6] (col, distMi 13.5). Both distances are unsourced and the list order cannot be swapped with the patch ops; recommend swapping entries 5 and 6 and nulling both distMi before the line is redrawn.",
+   "sources": [
+    "https://www.alpineascents.com/climbs/ptarmigan-traverse/itinerary/",
+    "https://climberkyle.com/2019/07/09/the-extended-ptarmigan-traverse/"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "fact": "Cascade Pass, Cache Col, Kool-Aid Lake, trailhead, Dome Peak pins",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Checked against named points: Cache Col matches GNIS (48.448465,-121.052904) exactly; Kool-Aid Lake is 3 m from the OSM Kool-Aid Lake Camp node; Cascade Pass is ~45 m from GNIS; the trailhead is ~10 m from the OSM Cascade Pass Trailhead node; Dome Peak matches GNIS. These pins are on their features.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer",
+    "https://www.openstreetmap.org/node/1420498929"
+   ],
+   "patches": []
+  }
+ ]
+}

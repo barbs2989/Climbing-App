@@ -1,0 +1,3085 @@
+{
+ "applied": [
+  {
+   "id": "wa_needle_peak_north_ridge",
+   "op": "refile",
+   "to": "wa_bonanza_peak"
+  },
+  {
+   "id": "wa_needle_peak_north_ridge",
+   "op": "rename",
+   "name": "Northwest Ridge (from Needle Peak)"
+  },
+  {
+   "id": "wa_needle_peak_north_ridge",
+   "op": "patch",
+   "columns": [
+    "grade",
+    "grade_system",
+    "grade_num",
+    "aspect",
+    "season",
+    "best_season",
+    "overview",
+    "beta",
+    "approach_logistics",
+    "waypoints"
+   ]
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "op": "rename",
+   "name": "North Ridge"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "op": "patch",
+   "columns": [
+    "beta",
+    "pitch_detail",
+    "partner_requirements",
+    "seasonal_hazards",
+    "seasonal_guidance"
+   ]
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "op": "patch",
+   "columns": [
+    "fa"
+   ]
+  },
+  {
+   "id": "wa_lewis_creek_route",
+   "op": "merge",
+   "into": "wa_gunn_peak_southeast_route"
+  },
+  {
+   "id": "wa_guye_peak_r1",
+   "op": "patch",
+   "columns": [
+    "grade",
+    "grade_num",
+    "rock_grade",
+    "alpine_grade",
+    "pitches",
+    "length_m",
+    "fa",
+    "overview",
+    "pitch_detail",
+    "hazards",
+    "turnaround",
+    "bail",
+    "descent",
+    "obj_haz",
+    "rappels",
+    "pro_needs",
+    "detailed_rack",
+    "partner_requirements",
+    "itinerary",
+    "approach_variants"
+   ]
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "op": "split",
+   "new": "wa_davis_peak_nc_north_face_burdo_cairns"
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "op": "rename",
+   "name": "Northeast Face Couloir"
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "op": "patch",
+   "columns": [
+    "fa",
+    "overview",
+    "beta",
+    "pitch_detail",
+    "pitches",
+    "length_m",
+    "gain_ft",
+    "hazards",
+    "watch_out",
+    "approach"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_needle_peak_north_ridge",
+   "area_id": "wa_needle_peak",
+   "name": "North Ridge",
+   "discipline": "mountaineering",
+   "grade": null,
+   "grade_system": null,
+   "grade_num": null,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Aug (single documented ascent date)",
+   "description": null,
+   "gear": [
+    "Ice axe (early-season snow on approach)",
+    "Helmet",
+    "30m rope (short rope for a crux move and/or rappel)",
+    "A few slings/webbing for a handline or short rap anchor",
+    "Sturdy scrambling boots"
+   ],
+   "hazards": [
+    "The full traverse from Needle Peak to Bonanza Peak crosses two glaciers and multiple rock towers requiring rappels to bypass",
+    "No established bail points exist once past Needle Peak onto the Anonymity Towers–Dark Peak ridge"
+   ],
+   "verif": null,
+   "overview": "Needle Peak's North Ridge is the peak's one well-documented technical line, climbed in a single push as the opening stage of a two-day, multi-summit traverse (Needle Peak → Anonymity Towers → Dark Peak → Bonanza Peak) that produced the first ascent of Bonanza Peak's Northwest Ridge.",
+   "beta": "On August 19, 2006, Blake Herrington and Tim Halder left the Agnes Creek Trail at Swamp Creek and climbed Needle Peak via its North Ridge, then continued along the connecting ridgeline, making the first ascents of the North and South Anonymity Towers, before climbing the Dark Glacier to a bivouac atop Dark Peak. The next day they continued the ridge crest to Bonanza Peak's west and main summits. The overall linkup was rated Grade V, 5.8, and described as 'wild and highly variable in quality' along the crest; the source account does not break the grade, pitch count, or length out separately for the Needle Peak segment alone.",
+   "turnaround": null,
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": null,
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+   "comms": null,
+   "descent": null,
+   "obj_haz": [
+    "Loose, quality-variable alpine rock along the connecting ridge crest",
+    "No safe retreat once committed past Needle Peak toward the Anonymity Towers/Dark Peak",
+    "Glacier travel on the Dark Glacier and Mary Greene Glacier requiring crevasse-rescue readiness"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.3807,
+     "lng": -120.8403,
+     "name": "High Bridge (Stehekin Valley Road)",
+     "type": "Trailhead"
+    },
+    {
+     "lat": 48.279605,
+     "lng": -120.902705,
+     "elev": 7896,
+     "name": "Needle Peak Summit",
+     "type": "Summit",
+     "elevFt": 7896
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": null,
+   "detailed_rack": "A 30m rope and a few slings cover a crux move or short rappel; ice axe for early-season snow on the Swamp Creek basin approach.",
+   "what_to_bring": null,
+   "pro_tips": [
+    "Approach via Stehekin and the Agnes Creek Trail, leaving the trail at Swamp Creek to reach Needle Peak's north side",
+    "The first-ascent party climbed with minimal bivouac gear (belay jackets and a small tarp instead of a tent/sleeping bags) to move fast over the terrain — plan gear accordingly for an intentionally light, fast style"
+   ],
+   "watch_out": [
+    "Retreat is very difficult beyond Needle Peak — the first-ascent party noted this 'would not be a good route to begin during unsettled weather'",
+    "Rock quality on the ridge crest is described in the account on record as 'wild and highly variable in quality'"
+   ],
+   "pro_needs": null,
+   "best_season": "The only documented ascent (August 19–20, 2006) was in mid-to-late summer, consistent with typical North Cascades high-alpine climbing season; the route crosses the Dark Glacier, so late-season timing affects crevasse/moat conditions.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "From Stehekin (reached only by passenger boat or floatplane up Lake Chelan — no road access), follow the Agnes Creek Trail upstream and leave the maintained trail at Swamp Creek to travel cross-country onto Needle Peak's north side and gain the North Ridge.",
+   "descent_text": null,
+   "bail": "The connecting ridge beyond Needle Peak offers no easy escape — per the first-ascent account, retreating from anywhere along the Anonymity Towers–Dark Peak–Bonanza ridge means retracing the entire traverse, so parties should only commit to this line in settled weather.",
+   "pitch_detail": null,
+   "itinerary": "Day 1: hike from Stehekin via the Agnes Creek Trail to Swamp Creek, climb Needle Peak's North Ridge, continue over the North and South Anonymity Towers, climb the Dark Glacier, and bivouac atop Dark Peak. Day 2: continue the connecting ridge crest to Bonanza Peak's west summit and then the main summit, descending via the Mary Greene Glacier.",
+   "access": {
+    "fees": null,
+    "permit": null,
+    "closures": "Sisi Fire: Okanogan-Wenatchee National Forest closure order 06-17-02-2026-35 (Sisi Fire), in effect August 22 through December 31, 2026 unless lifted sooner, closes the Pacific Crest Trail (Trail 2000) along Agnes Creek on the Chelan Ranger District, along with Agnes Creek Trail 1272, Agnes Gorge Trail 1281 and Swamp Creek Trail 1242. North Cascades National Park's Sisi Fire closures (its fire-closure list, updated September 14, 2026, gives no end date) also close the Pacific Crest Trail from the park boundary down to High Bridge and on to Bridge Creek Camp, the High Bridge area, and the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge. This approach cannot be used while these closures stand. Chelan Ranger District: (509) 682-4900. North Cascades National Park: (360) 854-7200.",
+    "landManager": "Okanogan-Wenatchee National Forest",
+    "passRequired": null,
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+     "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+    }
+   },
+   "road": null,
+   "climate": null,
+   "emergency": {
+    "notes": "Stehekin, the trailhead for this route, has no road connection to the outside world — access and evacuation are by passenger boat, floatplane, or trail only.",
+    "county": "Chelan",
+    "rangerStation": null,
+    "nearestHospital": null,
+    "sheriffDispatch": "(509) 667-6851 — Chelan County Sheriff's Office, non-emergency; dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": {
+    "peakLat": 48.2795734,
+    "peakLng": -120.902325,
+    "trailhead": "High Bridge (Stehekin Valley Road)",
+    "trailheadLat": 48.3807,
+    "trailheadLng": -120.8403,
+    "trailheadDirection": "Via the Lady of the Lake ferry to Stehekin and the NPS shuttle to High Bridge, then the Agnes Creek / PCT trails"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 2800,
+     "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+     "role": "main",
+     "type": "camp",
+     "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for NEEDLE PEAK, MOUNT LYALL at 7,892 ft and the ridge between them. The unmaintained Swamp Creek trail leaves the corridor here and climbs toward Needle Peak's north ridge; the ground above is class 3 and 4 scrambling with real exposure and a helmet is wanted, and the northeast ridge of DARK PEAK continues over to Lyall, so a party willing to spend the days can link several of these summits off one camp. Budget five days for the full set including the boat at both ends, and something close to forty miles of walking. THE APPROACH IS ALL OF THE DIFFICULTY. These are not hard climbs by North Cascades standards; they are remote, brushy and slow, and the price of admission is the boat, the shuttle, the mileage and a good deal of unpleasant bushwhacking once you leave the corridor. Nothing about this is a weekend. Cedar Camp further up the valley is the alternative if this one is taken; Hemlock Camp above it is unsafe from falling insect-killed timber and should be skipped.",
+     "water": "Swamp Creek at the camp, reliable. THIS IS ALSO THE HAUL POINT. There is no water on the ridges above and parties putting a high camp on Lyall Ridge or the north ridge of Needle carry it up from here, which is the single biggest load consideration on these summits.",
+     "permit": "Free North Cascades backcountry permit, booked through the federal recreation booking site or collected in person as a walk-up. Bear canisters not specifically required at this camp; store food properly regardless. Fires are not appropriate here and restrictions are usually in force anyway.",
+     "capacity": "A small trail camp, one or two parties. Like everything on this corridor it is shared with through-hikers in high summer."
+    },
+    {
+     "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+     "role": "route",
+     "type": "camp",
+     "notes": "READ THIS BEFORE ANY OTHER SITE IN THE ZONE. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, sets the shape of the trip. The slow boat takes roughly four hours each way and the express about two and a half; a typical summer sailing leaves Chelan mid-morning, reaches Stehekin around midday, and turns round after a layover of an hour or ninety minutes. That means a party arriving on the boat has half a day at most before the last sailing out, and a party finishing a climb has to be at the landing on the boat's schedule or spend another night. Book the boat and the permit together and treat the return sailing as a hard deadline. From the landing a valley shuttle runs eleven miles up to High Bridge, four times a day in each direction in season, and it is the second half of the same logistics problem — miss it and you are walking. Purple Point is where you sleep if the boat gets in too late to reach the upper valley, and Harlequin is where you sleep if you are heading for the Company Creek road in the morning. Neither serves a summit directly, and both are essential.",
+     "water": "Purple Point has potable water and vault toilets. Harlequin has vault toilets, tables, fire rings and animal-resistant food lockers, with the Stehekin River alongside. Neither is a water problem.",
+     "permit": "This is a two-jurisdiction valley and it matters. The landing and the lower road are in the Lake Chelan National Recreation Area; the upper valley and everything you climb from it are North Cascades National Park. A backcountry permit is required year round for every overnight in the park backcountry, and the valley campgrounds require a free permit as well. Permits are issued through the federal recreation booking site, with a lottery in early March, winners assigned booking dates through late March and April, and the general release at seven in the morning Pacific in late April. Roughly sixty percent of permits are reservable and forty percent held for walk-ups. THERE IS NO PERMIT OFFICE IN STEHEKIN — a walk-up permit has to be collected in person elsewhere in the park complex before you get on the boat, which is the trap that ends more trips here than weather. Bear canisters are not required at these particular camps but food must be stored in the lockers or hung; the valley has bears and they know the campgrounds. Purple Point was free for the 2026 season.",
+     "capacity": "Purple Point has six walk-in tent sites about ten minutes on foot from the boat dock. Harlequin, four and a half miles up the valley road, has seven walk-in sites with shared parking. Both are first come, first served and both are small enough that a busy summer afternoon fills them."
+    },
+    {
+     "elev": 1600,
+     "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+     "role": "route",
+     "type": "camp",
+     "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is MCGREGOR MOUNTAIN, whose trail leaves the valley road near the guard station a mile or so from the bridge and is one of the biggest sustained climbs in the state: about 7.7 miles and 6,400 ft of gain to within half a mile of the top, past Coon Lake in the first mile and then switchback after switchback with almost no relief. The last 1,100 ft to the summit is exposed scrambling rather than trail, and an ice axe is wanted while snow is still lying on it. Doing that in a day from High Bridge is a very long outing and most parties camp here the night before rather than trying to fit it around the boat. Water is the specific worry: the lake and Coon Creek are early on and the upper mountain has nothing. High Bridge is also the start of the Agnes Creek trail south and the Pacific Crest corridor, so it is where the Agnes, Needle, Lyall and Dark Peak trips begin as well. Bicycles are allowed on the valley road and some parties ride the fourteen miles up rather than wait for a shuttle.",
+     "water": "The Stehekin River and Agnes Creek at the bridge, plus Coon Creek on the trail above. Reliable, and it is worth filling here because the McGregor trail is a long way between sources once it starts switchbacking.",
+     "permit": "Free backcountry permit required through the federal recreation booking site, collected in person outside the valley. No fee for the camp itself. Food storage is required; bears work the road end hard. Fires only where rings exist and only when no restriction is in force — Stage restrictions are common on the east side by midsummer.",
+     "capacity": "A small road-end camp with a handful of sites, plus Bullion and Dolly Varden further up the valley road at ten and thirteen miles with two sites each. All first come, first served, none reservable."
+    },
+    {
+     "elev": 2200,
+     "name": "Fivemile Camp, Agnes Creek",
+     "role": "route",
+     "type": "camp",
+     "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for AGNES MOUNTAIN — the West Fork Agnes Creek trail leaves here heading west, and it is the start of the standard approach to the 8,115 ft summit, first climbed in 1936 from this same drainage. It is also the first night for parties heading further up Agnes Creek toward DARK PEAK, which is usually described as a three-day trip built off this camp and the ground above it. The camp itself is unremarkable: deep valley forest at 2,200 ft, no views, mosquitoes early in the season, and the creek. What makes it matter is position. Anything you climb from here is thousands of feet above and mostly trackless, so the difference between sleeping at High Bridge and sleeping here is a full extra push tacked onto an already long day.",
+     "water": "Reliable — Agnes Creek runs at the camp all season. Fill completely here if you are heading up the West Fork, because there is no camp, no trail and no certainty of anything above.",
+     "permit": "Free North Cascades backcountry permit required, reserved through the federal recreation booking site or taken as a walk-up collected in person before you reach the valley. Bear canisters are not on the required list for this camp, but food must be hung or stored properly and this is a long-established camp in bear country. No fires above the valley floor rings; check what restriction is running.",
+     "capacity": "A modest forested camp on the creek, a couple of parties at most. It sees Pacific Crest Trail traffic through the summer, so it is busier in late July and August than its remoteness suggests."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "north ridge rdg",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "area_id": "wa_needle_peak",
+   "name": "South Route",
+   "discipline": "scrambling",
+   "grade": "Class 4 (5.0 crux)",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jul–Sep",
+   "description": null,
+   "gear": [
+    "Helmet (essential — loose rock throughout)",
+    "Light rope (~30m) and a few slings for the crux notch/downclimb",
+    "Rock shoes or sticky-soled approach shoes for the polished slab and summit moves",
+    "Bear canister or a food-hanging kit (a canister is not required at the camps on this route, but food must be hung or stored in a bear-resistant container)"
+   ],
+   "hazards": [
+    "Loose, 'wobbly' rock and an eroded, polished slab low on the route",
+    "Significant exposure at the north-ridge crux (7,300-7,400 ft) with an airy notch downclimb",
+    "Old, unvetted rappel webbing left in place at the crux by previous parties — inspect or back it up before trusting it",
+    "Wasp nests reported in the approach brush and lower slopes, especially late summer",
+    "Fully unmaintained route beyond Swamp Creek Camp — bushwhacking, deadfall, and route-finding required",
+    "No cell coverage; remote, rarely-visited peak with long evacuation times"
+   ],
+   "verif": {
+    "status": "unverified",
+    "updated": "2026-07-29"
+   },
+   "overview": "A slender granite spire in the North Cascades backcountry above Stehekin, standing just west of Mount Lyall and linked south to Dark Peak by the jagged, largely unclimbed Anonymity Towers ridge. The peak is not in the Entiat Mountains as earlier described — it rises above the Agnes Creek/Swamp Creek drainage on the west side of Lake Chelan, reached only via the roadless village of Stehekin and the Pacific Crest Trail. It is a rarely-visited, essentially unmaintained scramble/low-5th-class objective, known mainly from a handful of independent trip reports rather than any published description.",
+   "beta": "Needle Peak sees very few ascents. The standard (and only reported) line leaves the unmaintained Swamp Creek Trail around 3,200 ft, climbs a steep brushy slope to gain the peak's long north ridge near 7,300–7,400 ft, then route-finds through west-facing gullies and krummholz along the ridge before a narrow, choss-filled Class 3 gully leads through stacked boulders to the summit.",
+   "turnaround": "Set a firm turnaround time before committing to the 7,300 ft crux band — descending the loose, exposed north ridge terrain in the dark is inadvisable, and the remote approach means self-rescue is the default.",
+   "auto_generated": true,
+   "alpine_grade": "PD-",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 6300,
+   "loss_ft": 6300,
+   "dist_km": 18.7,
+   "max_angle": null,
+   "rappels": "1",
+   "commitment": "III",
+   "face": "North Ridge",
+   "permit": "NPS wilderness/backcountry permit required for overnight camping in the North Cascades NP/Lake Chelan NRA portion of the approach ($10/person plus a $6 non-refundable reservation fee); free, self-issued permit once past the wilderness boundary into the Glacier Peak Wilderness (USFS) near Swamp Creek and the peak itself.",
+   "comms": "No cell coverage anywhere along the approach or on the route (per on-file hazards and emergency notes); carry a satellite messenger (e.g. Garmin inReach/Zoleo) — self-rescue is the default given the remote, boat-only access.",
+   "descent": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+   "obj_haz": [
+    "loose rock/choss",
+    "dense brush and krummholz",
+    "route-finding difficulty",
+    "exposure",
+    "wasp nests reported on approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.3802457,
+     "lng": -120.8395461,
+     "elev": 1627,
+     "name": "High Bridge PCT/Agnes Creek Trailhead",
+     "note": "End of the Stehekin Valley shuttle road; PCT crosses High Bridge here, southbound tread starts about a quarter-mile up the road toward Agnes Creek.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "There is no road connection to this trailhead from outside the valley: reach Stehekin by the Lake Chelan ferry or floatplane, then take the Stehekin Valley Road or the NPS shuttle about eleven miles up-valley to the bridge. Plan the whole trip around the boat and shuttle timetable, because missing the last run means an extra night."
+    },
+    {
+     "lat": 48.3428,
+     "lng": -120.9161,
+     "elev": 2200,
+     "name": "Fivemile Camp (Agnes Creek)",
+     "note": "First established creekside camp on the PCT south of High Bridge; reliable water from Agnes Creek.",
+     "type": "Water",
+     "distMi": 5.1,
+     "directions": "Walk a few hundred yards up the road from the bridge to pick up the PCT heading south, then follow it into the Agnes Creek valley. The tread is well graded and gains only a few hundred feet through old-growth forest, with the gorge and its cascades off to the side for much of the way."
+    },
+    {
+     "lat": 48.3424,
+     "lng": -120.9046,
+     "elev": 2800,
+     "name": "Swamp Creek Camp",
+     "note": "PCT camp at the Swamp Creek fork; jumping-off point for the unmaintained boot path toward Needle Peak's north ridge.",
+     "type": "Campsite",
+     "distMi": 8.2,
+     "directions": "Keep heading south on the PCT for roughly another three miles of easy valley walking to the fork where Swamp Creek comes in. The peak shows itself up-valley along this stretch. Most parties treat this as an overnight approach rather than pushing straight through from the boat."
+    },
+    {
+     "lat": 48.335009,
+     "lng": -120.904332,
+     "elev": 3200,
+     "name": "Boot path departure at 3,200 ft",
+     "note": "Leave the maintained Swamp Creek trail here onto a steep, brushy, unmarked boot path climbing toward the north ridge crest.",
+     "type": "Junction",
+     "distMi": 8.6,
+     "directions": "From camp pick up the unmaintained trail up the Swamp Creek drainage; expect blowdown, eroded tread and heavy brush, plus a crossing of Swamp Creek itself on a large downed log. Wasps are a recurring nuisance in this overgrown section. The path is left behind at about 3,200 ft, below the north ridge."
+    },
+    {
+     "lat": 48.31653,
+     "lng": -120.903663,
+     "elev": 5000,
+     "name": "Polished slab gully, ~5,000 ft",
+     "note": "Slick, polished slab in the gully; parties bypass west through rock with a tree belay to gain about 200 ft.",
+     "type": "Hazard",
+     "distMi": 9.6,
+     "directions": "Climb straight up the steep, brushy hillside toward the ridge, roughly 1,800 ft of gain with no tread, on vegetation, dirt and small steps of rock. Higher up the ground funnels into the gully system. The slab at its head is the first place the route stops being a walk."
+    },
+    {
+     "lat": 48.309139,
+     "lng": -120.903396,
+     "elev": 5500,
+     "name": "Ridgeline camp above 5,400 ft",
+     "note": "Flat ground near the ridge crest with the first clear view of Needle Peak; no water on site, must be hauled up from below.",
+     "type": "Campsite",
+     "distMi": 10,
+     "directions": "Do not force the polished slab directly. The usual line escapes west through the taller rock, and parties belay off a tree for roughly 200 ft to regain the top of the gully, so carry a rope for this leg. Above it the angle eases onto the crest and flat ground appears."
+    },
+    {
+     "lat": 48.285117,
+     "lng": -120.902526,
+     "elev": 7350,
+     "name": "Crux notch, 7,300-7,400 ft",
+     "note": "Exposed Class 4/5.0 notch with krummholz for holds and wobbly boulders on the ridge above; this is the section that is downclimbed or rappelled on descent.",
+     "type": "Hazard",
+     "distMi": 11.3,
+     "directions": "From the camp the ridge steepens into dense krummholz and sloping slabs beneath the sheer north face; stay west of the crest and weave through the cliff bands rather than trying the face. Taking the rib immediately west of the gully gives better holds, and the two lines merge after about 600 ft of gain. Exposure above the talus field is serious through here and blocks are loose — this is Class 4 with a 5.0 move at the notch, not a walk-up."
+    },
+    {
+     "lat": 48.2795734,
+     "lng": -120.902325,
+     "elev": 7896,
+     "name": "Needle Peak Summit",
+     "note": "True summit; final approach is a narrow gully with overhanging rock below the top.",
+     "type": "Summit",
+     "distMi": 11.6,
+     "directions": "Step across the notch onto the summit ridge and follow ledges just below the crest on its east side. The crest itself overhangs and is stacked with wobbly rock near the top, so the last stretch drops into a narrow gully before topping out. Study this section on the way up, because it is the piece you have to reverse or rappel coming down."
+    }
+   ],
+   "gpx": [
+    [
+     48.3802457,
+     -120.8395461
+    ],
+    [
+     48.3428,
+     -120.9161
+    ],
+    [
+     48.3424,
+     -120.9046
+    ],
+    [
+     48.335009,
+     -120.904332
+    ],
+    [
+     48.31653,
+     -120.903663
+    ],
+    [
+     48.309139,
+     -120.903396
+    ],
+    [
+     48.285117,
+     -120.902526
+    ],
+    [
+     48.2795734,
+     -120.902325
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 22,
+    "summitTimeHrs": 12,
+    "descentTimeHrs": 5,
+    "approachTimeHrs": 5,
+    "recommendedStart": "4:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 5,
+      "note": "Ferry/shuttle to Stehekin then High Bridge, then a leisurely 9-mile hike on the PCT/Agnes Creek Trail up-valley to Swamp Creek, gaining about 1,200 ft along the way. Camp here and …",
+      "fromTo": "Approach to Swamp Creek camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 12,
+      "note": "The crux day: leave the unmaintained Swamp Creek Trail around 3,200 ft, work up through brush and slabs below the north face, and climb the west gully on the north ridge, weaving t…",
+      "fromTo": "Needle Peak north ridge",
+      "section": "Climb"
+     },
+     {
+      "hrs": 5,
+      "note": "Break camp and hike back down the Agnes Creek Trail/PCT to High Bridge, then pick up the shuttle to Stehekin and the ferry/floatplane back to Chelan.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rock rack is required — every documented ascent is an unroped scramble. Bring a helmet for the loose rock in the upper cliff bands and gully, trekking poles for the brushy lower approach, and a light ice axe if snow lingers in the gullies early in the season.",
+   "what_to_bring": [
+    "NPS wilderness permit (reserved or self-issued) for the park/NRA portion of the approach",
+    "Overnight camping gear for Swamp Creek Camp",
+    "Extra water — camp sits well below the summit with no reliable water higher up",
+    "Insect repellent (wasp activity reported on the approach)",
+    "Topo map/GPS track — the route is unmarked and unmaintained beyond Swamp Creek Camp",
+    "Satellite messenger — no cell coverage in the valley or on route"
+   ],
+   "pro_tips": [
+    "Break the long approach into two days by camping at Swamp Creek Camp before the climb",
+    "Inspect or back up the old webbing at the crux notch before weighting it — its age and condition are unknown",
+    "Target August once the 5,000 ft slab gully and upper snow patches have melted out",
+    "Check the ferry/shuttle schedule and any active wildfire closures for Stehekin before committing to a trip"
+   ],
+   "watch_out": [
+    "The crux notch downclimb near the summit has committing exposure — many parties choose to rope up here",
+    "The ~5,000 ft slab gully gets slick when wet or in early season with residual snow/ice",
+    "Route-finding through the 7,300-7,400 ft cliff bands is the reported crux — parties have wandered into harder terrain trying to stay too close to the ridge crest"
+   ],
+   "pro_needs": "Minimal rack — a light rope plus a few slings/small pieces to back up or replace the crux notch anchor; this is a scramble with a short technical crux, not a pitched rock climb.",
+   "best_season": "August into early September is most reliable: the approach's 5,000 ft slab gully and the north-facing terrain below the crux often still hold snow into July, and the route is essentially unmaintained beyond Swamp Creek Camp, so expect brush and deadfall regardless of timing. Wasp nests in the approach brush become more of an issue by late summer.",
+   "high_point_ft": 7896,
+   "aid_grade": null,
+   "approach": "Needle Peak is only reachable by boat or floatplane: ride the Lady of the Lake ferry (or a Chelan Airways floatplane) up 50-mile-long Lake Chelan from the town of Chelan to Stehekin Landing — there is no road access from the outside world. From Stehekin Landing, take the Stehekin Valley Road (or the NPS shuttle) about 11 miles up-valley to High Bridge, where the road crosses the Stehekin River and the Pacific Crest Trail comes down off Cottonwood Camp and continues south as the Agnes Creek Trail. Follow the PCT/Agnes Creek Trail (National Park Service-maintained, gentle grade through old-growth forest along Agnes Creek) roughly 8-9 miles south to Swamp Creek Camp (about 2,800 ft), a designated PCT camp and the standard base for the peak — most parties treat this as an overnight approach rather than a single push. From camp, leave the PCT and pick up the unmaintained Swamp Creek Trail heading north/northeast up the Swamp Creek drainage; expect heavy blowdown, erosion, and brush-choked tread that has seen little maintenance in years. Cross Swamp Creek itself on a large fallen log around 3,600 ft (a small waterfall near 3,500 ft and a side stream joining Swamp Creek near 5,200 ft are the last reliable water before the upper mountain, though both can thin out late season). Around 3,200 ft, below Needle's north/south ridge system, most parties leave the Swamp Creek Trail proper and climb a steep, brushy slope directly toward the peak, working through dense foliage and sloping slabs. Near 5,000 ft a polished, slick slab gully is best avoided by staying west through a band of rocks; above that the line continues over talus and (even in summer) lingering snow, aiming for the prominent 7,300 ft notch on Needle's north side, below the steep north ridge and face rising above Swamp Creek, that gives the route its character. Watch for wobbly, loose-grained blocks on the upper talus and near the notch, wasp nests in the brush lower down, and route-finding difficulty in the unmaintained brush sections — this is a full mountaineering day (or two) from camp, not a casual scramble.",
+   "descent_text": "Descend the same north-ridge line used on ascent: from the summit, reverse the class 3 gully above the notch (some parties find an alternate exposed gully slightly east of the ascent line 'looks manageable from above' but funnels into the same terrain) and downclimb to the crux 7,300-7,400 ft notch. This notch is the one place on the route where parties differ — many downclimb it unroped on adequate but exposed hand/footholds, while others back off with a single rappel of roughly 30 m/100 ft. There is no fixed or bolted rappel station here: any anchor is a natural one (slung block, horn, or krummholz/tree) built by the descending party, and old rappel webbing/cord has been reported at the notch by multiple parties of unclear age and origin — treat any found tat as unverified and back it up or replace it rather than trusting it outright. Below the notch, work back down through the talus and snow, staying on the west side of the cliff bands to avoid the steeper, more exposed rock, then pick back through the polished slab gully near 5,000 ft (stemming with the help of trees rooted in the cracks helps on the slicker sections) and down the brushy slope to rejoin the unmaintained Swamp Creek Trail around 3,200 ft. Follow Swamp Creek Trail back down to Swamp Creek Camp on the PCT (re-crossing Swamp Creek on the same log around 3,600 ft), then retrace the Agnes Creek Trail/PCT roughly 8-9 miles to High Bridge and the Stehekin Valley Road for the shuttle or walk back to Stehekin Landing and the ferry. No technical descent gear beyond a single rope/rack for the optional notch rappel is needed; the rest is a sustained, loose, brushy class 2-3 walk-down with real route-finding demands.",
+   "bail": "The clearest bail-out point is below the 7,300-7,400 ft cliff-band crux, before committing to the notch downclimb; retreat from there simply reverses the ascent line back to Swamp Creek Camp.",
+   "pitch_detail": [
+    {
+     "grade": null,
+     "notes": "Agnes Creek Trail (PCT) from High Bridge to Swamp Creek Camp (~2,800 ft)",
+     "pitch": "Approach"
+    },
+    {
+     "grade": null,
+     "notes": "Unmaintained trail switchbacks ~800 ft over 1-1.5 mi before fading into alder brush",
+     "pitch": "Swamp Creek Trail"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Steep brush from ~3,200 ft up to Needle Peak's long north ridge near 7,300-7,400 ft",
+     "pitch": "Brushy slope to north ridge"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Route-find through west-facing gullies and krummholz along the ridge crest",
+     "pitch": "North ridge traverse"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Narrow gully through loose, stacked boulders/choss for the final ~200 ft to the summit",
+     "pitch": "Summit gully"
+    }
+   ],
+   "itinerary": {
+    "cal": "Requires a North Cascades NP backcountry camping permit for the Swamp Creek zone, and access depends on the Stehekin ferry/shuttle and the seasonal High Bridge shuttle (roughly June-Sept); best conditions are mid-July through September once the approach trail and gully snow have melted out.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Ferry/shuttle to Stehekin then High Bridge, then a leisurely 9-mile hike on the PCT/Agnes Creek Trail up-valley to Swamp Creek, gaining about 1,200 ft along the way. Camp here and scout the route for tomorrow.",
+      "hours": 5,
+      "miles": 9,
+      "title": "Approach to Swamp Creek camp",
+      "gainFt": 1200,
+      "lossFt": 0,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Establish base camp at Swamp Creek"
+     },
+     {
+      "n": 2,
+      "note": "The crux day: leave the unmaintained Swamp Creek Trail around 3,200 ft, work up through brush and slabs below the north face, and climb the west gully on the north ridge, weaving through cliff bands on a sustained, exposed Class 3-4 crux around 7,300-7,400 ft before a final loose gully to the summit block.",
+      "hours": 12,
+      "miles": 6,
+      "title": "Needle Peak north ridge",
+      "gainFt": 5100,
+      "lossFt": 5100,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave Swamp Creek camp",
+        "detail": "Follow the unmaintained Swamp Creek Trail north toward the peak."
+       },
+       {
+        "time": "6:00 AM",
+        "label": "Leave the trail near 3,200 ft",
+        "detail": "Begin bushwhacking and slab-walking below the north face."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Crux band, 7,300-7,400 ft",
+        "detail": "Exposed Class 3-4 scrambling through cliff bands via the west gully; helmet recommended."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Summit (7,896 ft)",
+        "detail": "Final loose/choss gully leads to a summit block that's easier than it looks from a distance."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Begin descent",
+        "detail": "Reverse the ascent line (or descend the parallel east gully) back toward the north ridge base."
+       },
+       {
+        "time": "6:00 PM",
+        "label": "Back at Swamp Creek camp"
+       }
+      ],
+      "objective": "Summit Needle Peak (7,896 ft) and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back down the Agnes Creek Trail/PCT to High Bridge, then pick up the shuttle to Stehekin and the ferry/floatplane back to Chelan.",
+      "hours": 5,
+      "miles": 9,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 1200,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to High Bridge and catch the shuttle/ferry"
+     }
+    ],
+    "totalNote": "A 3-day, ~24-mile round-trip backpack via ferry/shuttle to High Bridge and the Agnes Creek/Swamp Creek Trail, built around one long summit day that gains roughly 5,100 ft on exposed Class 3-4 terrain above camp."
+   },
+   "access": {
+    "fees": "Lady of the Lake ferry from Chelan (fares vary by boat/season) or floatplane charter to reach Stehekin; Stehekin shuttle bus to High Bridge is about $10/adult, $5/child one-way. No separate climbing fee.",
+    "rules": "Standard NPS wilderness regulations apply in the park/NRA portion (permit and, where applicable, designated-site camping, bear canister recommended); standard Leave No Trace and USFS wilderness group-size limits apply once past the wilderness boundary.",
+    "permit": "An NPS wilderness/backcountry permit is required for any overnight camping within the North Cascades National Park Complex boundary (the lower Agnes Creek Trail corridor) — $10/person plus a $6 non-refundable reservation fee if booked in advance via recreation.gov, or self-issued at the Stehekin Ranger Station when the Wilderness Information Center is unstaffed. Once across into the Glacier Peak Wilderness (USFS) near Swamp Creek, permits are free, self-issued trailhead registers.",
+    "closures": "Stehekin Valley Road and the village have faced wildfire evacuation closures in recent fire seasons (e.g., the 2024 Pioneer Fire) — check NPS and Chelan County alerts before a trip. Sisi Fire: Okanogan-Wenatchee National Forest closure order 06-17-02-2026-35 (Sisi Fire), in effect August 22 through December 31, 2026 unless lifted sooner, closes the Pacific Crest Trail (Trail 2000) along Agnes Creek on the Chelan Ranger District, along with Agnes Creek Trail 1272, Agnes Gorge Trail 1281 and Swamp Creek Trail 1242. North Cascades National Park's Sisi Fire closures (its fire-closure list, updated September 14, 2026, gives no end date) also close the Pacific Crest Trail from the park boundary down to High Bridge and on to Bridge Creek Camp, the High Bridge area, and the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge. This approach cannot be used while these closures stand. Chelan Ranger District: (509) 682-4900. North Cascades National Park: (360) 854-7200.",
+    "landManager": "North Cascades National Park Complex / Lake Chelan National Recreation Area (NPS) covers the Stehekin–High Bridge–lower Agnes Creek corridor; the route transitions into the Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (Chelan Ranger District) for the Swamp Creek approach and the peak itself.",
+    "passRequired": "None for day use of the National Forest portion; an NPS wilderness camping permit (see Permit) is required for overnight stays within the Park/NRA portion.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+     "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+    }
+   },
+   "road": {
+    "name": "Stehekin Valley Road (boat landing to High Bridge)",
+    "status": "Not connected to any outside highway — Stehekin is accessible only by boat, floatplane, or trail. Within the valley, the road is a local shuttle/bike route from the boat landing to High Bridge (~11 mi). North Cascades National Park has closed the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge, and the High Bridge area, for the Sisi Fire (park fire-closure list updated September 14, 2026; no end date given).",
+    "driveNote": "Reach Stehekin via the Lady of the Lake ferry from Chelan or by floatplane charter; from the boat landing, ride the Stehekin shuttle bus (~$10 adult one-way) or bike/walk the valley road to the High Bridge trailhead.",
+    "seasonalGate": "Ferry and shuttle run year-round on a reduced winter schedule; the trail beyond High Bridge is typically snow-free from July into October."
+   },
+   "climate": {
+    "fall": "Early snow can arrive by mid-to-late September at this elevation, and shortening days plus the boat/shuttle schedule compress the usable window.",
+    "spring": "Heavy lingering snow into June keeps the off-trail gullies avalanche-prone and makes the unmaintained Swamp Creek Trail hard to follow.",
+    "summer": "Late July through September offers the most reliable dry, snow-free scrambling window (as in the documented September 2023 ascent).",
+    "winter": "Effectively inaccessible — Stehekin itself is snowed in and boat/floatplane service is reduced; no winter ascents are documented.",
+    "typical": "Dry, warm summer days at elevation with cold nights; afternoon thunderstorms are possible July-August. North-facing terrain below the crux holds snow later into summer than typical south-facing Cascades approaches.",
+    "bySeason": {
+     "fall": "A narrow window in early-to-mid September is possible before fall snow returns; days shorten quickly and access logistics (ferry schedule) get tighter.",
+     "spring": "Generally not viable — snow lingers in the approach gullies and on the crux terrain well into early summer.",
+     "summer": "Late July through September is the best window, though early-summer parties report lingering snow in the 5,000 ft slab gully and upper gullies into July.",
+     "winter": "Not a recognized route — roadless Stehekin access, avalanche exposure on the approach, and the technical crux make a winter ascent impractical for typical parties."
+    },
+    "forecastZone": "Approximately NWS Zone WAZ522, \"Upper Slopes of the Eastern Washington Cascades Crest\" (forecast.weather.gov)"
+   },
+   "emergency": {
+    "notes": "Stehekin is roadless; medical evacuation is typically by NPS/private boat down-lake or by helicopter staged out of Brewster, WA (~30 min flight time). Call the North Cascades NPS Wilderness Information Center, (360) 854-7245, for trip planning or to help coordinate backcountry rescue.",
+    "county": "Chelan County, WA",
+    "rangerStation": "NPS Golden West Visitor Center / Stehekin Ranger Station (Stehekin) for the park/NRA portion; Chelan Ranger District office, Okanogan-Wenatchee National Forest, (509) 682-4900, for the Glacier Peak Wilderness portion.",
+    "nearestHospital": "Lake Chelan Health (Lake Chelan Community Hospital), Chelan, WA — roughly 50 lake-miles from Stehekin by boat; there is no road connection.",
+    "sheriffDispatch": "911, routed to Chelan County Sheriff's Office — no cell coverage in the Stehekin valley or on route, so plan a communication device (satellite messenger) in advance."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed; the ~24-mile round trip from High Bridge via the PCT (with a multi-day approach through Swamp Creek/Agnes Creek country) strongly limits day-trip and casual traffic to essentially none",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - low-traffic, plausibly single-digit to low-double-digit parties per season given the remote, multi-day wilderness approach"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong backcountry fitness - the approach alone (High Bridge via PCT to a Swamp Creek-area base camp) is roughly 24 miles round trip with substantial elevation gain, typically broken into a multi-day trip rather than a single push",
+     "packWeight": "Overnight/multi-day pack weight (shelter, food, water treatment for a multi-day wilderness approach) for at least the approach and camp portion, dropping to a light summit-day pack for the scramble itself"
+    },
+    "approachTime": "Long - a multi-day wilderness approach (roughly 24 miles round trip from High Bridge via the PCT and Swamp Creek to the north ridge), not a single-day car-to-summit outing",
+    "requiredSkills": [
+     "Class 3 scrambling on talus and broken rock",
+     "comfort with exposure at the narrow, exposed summit step",
+     "wilderness navigation (off-trail route-finding above the basins, no maintained summit trail)",
+     "multi-day backcountry travel / camp skills for the long approach",
+     "loose rock (choss) management and careful foot/handhold testing"
+    ],
+    "experienceLevel": "Solid Class 3 scrambling experience with comfort on loose rock and exposed terrain; ideally someone who has done similar exposed summit scrambles, since the crux is a short but consequential exposed step just below the narrow summit"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, with August as the core optimal month",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still hold lingering snow on the approach and in the summit basins; conditions generally firm up and become favorable only by late July",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak dry-season window - most consistent snow-free talus/rock conditions and stable weather for the exposed summit step",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Generally still climbable with dry rock, but shorter daylight and higher chance of early-season snow or storms late in the month, especially at this long multi-day approach's exposed elevations",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "East Cascades summer pattern - generally warm and dry with cool nights at elevation, consistent with the Stehekin/Lake Chelan backcountry location",
+     "probability": "Afternoon thunderstorms/convective buildups are a realistic risk on east-slope Cascades summits in summer, which would compound the loose-rock and exposure hazards near the summit"
+    },
+    "exposure": "Consequential but localized - the primary fall exposure is concentrated at the final summit step, where a slip on loose rock could result in a serious fall; the broader talus approach is lower-consequence but still requires care due to loose rock underfoot",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; NWAC does not issue forecasts during the July-September climbing season, and no NWAC winter zone is specific to this remote Agnes Creek-area summit",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; this is a talus/rock scramble route"
+   },
+   "data_quality": {
+    "gaps": [
+     "No official first-ascent record found for this route",
+     "Crux difficulty is reported inconsistently between trip reports (roughly 5.0-5.2)",
+     "No round-trip distance/elevation-gain figure isolated to Needle Peak alone — the only mileage found (38.8 mi, 1,600-7,892 ft) covers a larger multi-peak itinerary, not this route in isolation",
+     "No guidebook (e.g., Beckey's Cascade Alpine Guide) entry was directly confirmed for this specific peak/route during this research pass",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 3,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.2795734,
+    "peakLng": -120.902325,
+    "trailhead": "High Bridge (Stehekin Valley Road)",
+    "trailheadLat": 48.3807,
+    "trailheadLng": -120.8403,
+    "trailheadDirection": "Via the Lady of the Lake ferry to Stehekin and the NPS shuttle to High Bridge, then the Agnes Creek / PCT trails"
+   },
+   "sling_rack": {
+    "webbing": {
+     "length": "60cm",
+     "purpose": "rap anchor/handline at the 5.0 crux",
+     "quantity": 2
+    }
+   },
+   "alpine_draws": 0,
+   "rope_type": "Optional 30m rope for the 5.0 crux move and/or rappel descent",
+   "rope_length_m": 30,
+   "rope_note": "A light 30 m rope and a few slings, for one place: the notch at 7,300-7,400 ft. Many parties downclimb it unroped on adequate but exposed holds and others back off it with a single rappel of about 30 m, and the exposure is committing enough that it is better to have the rope than to decide you want it from above. There is no fixed or bolted station there - any anchor is one you build off a slung block, horn or krummholz - and the old webbing already at the notch is of unknown age, so inspect or back it up before you weight it. Otherwise this is a scramble rather than a pitched climb: no technical rack, a helmet for the loose rock throughout, and sticky-soled shoes for the polished slab.",
+   "ascender": null,
+   "corrections": "Could not verify this specific WA 'Needle Peak' South Route via Mountain Project, SummitPost, or guidebook search; recommendation is grade-based inference.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "30m rope for the 5.0 crux notch downclimb/rappel",
+    "2x 60cm webbing for the rap anchor/handline at the crux",
+    "A few small slings/pieces to back up the anchor"
+   ],
+   "features": [
+    "Slab",
+    "Exposed",
+    "Adventurous",
+    "Committing"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Agnes Creek crest trail to Swamp Creek Camp and the ridge",
+     "notes": "No road reaches this valley: take the passenger ferry or a floatplane up the lake to the landing, then the valley road or the shuttle up to the bridge at the road end, and plan the whole trip around those timetables. Walk a few hundred yards up the road to pick up the crest trail heading south, then follow well-graded tread through old-growth forest into the Agnes Creek valley past the first creekside camp, and on to the camp at the Swamp Creek fork — the standard overnight base. The peak shows itself up-valley along that stretch. From camp pick up the unmaintained trail up the Swamp Creek drainage, with blowdown, eroded tread, heavy brush and a crossing of Swamp Creek on a large downed log, and leave it near 3,200 ft below the ridge.",
+     "season": "Midsummer into early autumn, and tied to the boat and shuttle timetable at both ends. Snow lingers on the upper talus even in summer.",
+     "hazards": [
+      "The Swamp Creek path is unmaintained and heavily overgrown, with wasps a recurring nuisance in the brush",
+      "About 1,800 ft of trackless steep brushy climbing on vegetation, dirt and small rock steps",
+      "A slick polished slab at the head of the gully near 5,000 ft, bypassed with a rope and a tree belay",
+      "Serious exposure above the talus field and loose, wobbly blocks near the notch and on the summit ridge",
+      "No water on the ridge — it has to be carried up from below",
+      "The crest overhangs near the top and the last stretch drops into a narrow gully that has to be reversed or rappelled"
+     ],
+     "baseFinding": "THE POLISHED SLAB LOW DOWN AND THE BUTTRESS BETWEEN TWO GULLIES HIGHER UP ARE THE TWO PROOFS. Leave the unmaintained drainage path near 3,200 ft, below the ridge, and climb straight up steep brushy hillside with no tread at all — vegetation, dirt and small steps of rock. Around 5,000 ft the ground funnels into a gully whose head is a slick, polished slab; that slab is where the route stops being a walk and is how you know you are in the right drainage. Do not force it. The line escapes west through the taller band of rock, with a tree belay for a couple of hundred feet to regain the top of the gully, so carry a rope for this leg. Above it the angle eases and the first clear view of the peak comes at about 5,400 ft off a mild grass slope. Higher, below the sheer north face, two gullies are separated by a buttress: take the WEST one, or better the rib immediately west of it where the krummholz gives better holds. The east gully looks less steep and is the trap — it goes over cliffs, and its crux is crossing the cliff tops. The two lines merge in the upper basin about 600 ft higher."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 2800,
+     "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+     "role": "main",
+     "type": "camp",
+     "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for NEEDLE PEAK, MOUNT LYALL at 7,892 ft and the ridge between them. The unmaintained Swamp Creek trail leaves the corridor here and climbs toward Needle Peak's north ridge; the ground above is class 3 and 4 scrambling with real exposure and a helmet is wanted, and the northeast ridge of DARK PEAK continues over to Lyall, so a party willing to spend the days can link several of these summits off one camp. Budget five days for the full set including the boat at both ends, and something close to forty miles of walking. THE APPROACH IS ALL OF THE DIFFICULTY. These are not hard climbs by North Cascades standards; they are remote, brushy and slow, and the price of admission is the boat, the shuttle, the mileage and a good deal of unpleasant bushwhacking once you leave the corridor. Nothing about this is a weekend. Cedar Camp further up the valley is the alternative if this one is taken; Hemlock Camp above it is unsafe from falling insect-killed timber and should be skipped.",
+     "water": "Swamp Creek at the camp, reliable. THIS IS ALSO THE HAUL POINT. There is no water on the ridges above and parties putting a high camp on Lyall Ridge or the north ridge of Needle carry it up from here, which is the single biggest load consideration on these summits.",
+     "permit": "Free North Cascades backcountry permit, booked through the federal recreation booking site or collected in person as a walk-up. Bear canisters not specifically required at this camp; store food properly regardless. Fires are not appropriate here and restrictions are usually in force anyway.",
+     "capacity": "A small trail camp, one or two parties. Like everything on this corridor it is shared with through-hikers in high summer."
+    },
+    {
+     "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+     "role": "route",
+     "type": "camp",
+     "notes": "READ THIS BEFORE ANY OTHER SITE IN THE ZONE. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, sets the shape of the trip. The slow boat takes roughly four hours each way and the express about two and a half; a typical summer sailing leaves Chelan mid-morning, reaches Stehekin around midday, and turns round after a layover of an hour or ninety minutes. That means a party arriving on the boat has half a day at most before the last sailing out, and a party finishing a climb has to be at the landing on the boat's schedule or spend another night. Book the boat and the permit together and treat the return sailing as a hard deadline. From the landing a valley shuttle runs eleven miles up to High Bridge, four times a day in each direction in season, and it is the second half of the same logistics problem — miss it and you are walking. Purple Point is where you sleep if the boat gets in too late to reach the upper valley, and Harlequin is where you sleep if you are heading for the Company Creek road in the morning. Neither serves a summit directly, and both are essential.",
+     "water": "Purple Point has potable water and vault toilets. Harlequin has vault toilets, tables, fire rings and animal-resistant food lockers, with the Stehekin River alongside. Neither is a water problem.",
+     "permit": "This is a two-jurisdiction valley and it matters. The landing and the lower road are in the Lake Chelan National Recreation Area; the upper valley and everything you climb from it are North Cascades National Park. A backcountry permit is required year round for every overnight in the park backcountry, and the valley campgrounds require a free permit as well. Permits are issued through the federal recreation booking site, with a lottery in early March, winners assigned booking dates through late March and April, and the general release at seven in the morning Pacific in late April. Roughly sixty percent of permits are reservable and forty percent held for walk-ups. THERE IS NO PERMIT OFFICE IN STEHEKIN — a walk-up permit has to be collected in person elsewhere in the park complex before you get on the boat, which is the trap that ends more trips here than weather. Bear canisters are not required at these particular camps but food must be stored in the lockers or hung; the valley has bears and they know the campgrounds. Purple Point was free for the 2026 season.",
+     "capacity": "Purple Point has six walk-in tent sites about ten minutes on foot from the boat dock. Harlequin, four and a half miles up the valley road, has seven walk-in sites with shared parking. Both are first come, first served and both are small enough that a busy summer afternoon fills them."
+    },
+    {
+     "elev": 1600,
+     "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+     "role": "route",
+     "type": "camp",
+     "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is MCGREGOR MOUNTAIN, whose trail leaves the valley road near the guard station a mile or so from the bridge and is one of the biggest sustained climbs in the state: about 7.7 miles and 6,400 ft of gain to within half a mile of the top, past Coon Lake in the first mile and then switchback after switchback with almost no relief. The last 1,100 ft to the summit is exposed scrambling rather than trail, and an ice axe is wanted while snow is still lying on it. Doing that in a day from High Bridge is a very long outing and most parties camp here the night before rather than trying to fit it around the boat. Water is the specific worry: the lake and Coon Creek are early on and the upper mountain has nothing. High Bridge is also the start of the Agnes Creek trail south and the Pacific Crest corridor, so it is where the Agnes, Needle, Lyall and Dark Peak trips begin as well. Bicycles are allowed on the valley road and some parties ride the fourteen miles up rather than wait for a shuttle.",
+     "water": "The Stehekin River and Agnes Creek at the bridge, plus Coon Creek on the trail above. Reliable, and it is worth filling here because the McGregor trail is a long way between sources once it starts switchbacking.",
+     "permit": "Free backcountry permit required through the federal recreation booking site, collected in person outside the valley. No fee for the camp itself. Food storage is required; bears work the road end hard. Fires only where rings exist and only when no restriction is in force — Stage restrictions are common on the east side by midsummer.",
+     "capacity": "A small road-end camp with a handful of sites, plus Bullion and Dolly Varden further up the valley road at ten and thirteen miles with two sites each. All first come, first served, none reservable."
+    },
+    {
+     "elev": 2200,
+     "name": "Fivemile Camp, Agnes Creek",
+     "role": "route",
+     "type": "camp",
+     "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for AGNES MOUNTAIN — the West Fork Agnes Creek trail leaves here heading west, and it is the start of the standard approach to the 8,115 ft summit, first climbed in 1936 from this same drainage. It is also the first night for parties heading further up Agnes Creek toward DARK PEAK, which is usually described as a three-day trip built off this camp and the ground above it. The camp itself is unremarkable: deep valley forest at 2,200 ft, no views, mosquitoes early in the season, and the creek. What makes it matter is position. Anything you climb from here is thousands of feet above and mostly trackless, so the difference between sleeping at High Bridge and sleeping here is a full extra push tacked onto an already long day.",
+     "water": "Reliable — Agnes Creek runs at the camp all season. Fill completely here if you are heading up the West Fork, because there is no camp, no trail and no certainty of anything above.",
+     "permit": "Free North Cascades backcountry permit required, reserved through the federal recreation booking site or taken as a walk-up collected in person before you reach the valley. Bear canisters are not on the required list for this camp, but food must be hung or stored properly and this is a long-established camp in bear country. No fires above the valley floor rings; check what restriction is running.",
+     "capacity": "A modest forested camp on the creek, a couple of parties at most. It sees Pacific Crest Trail traffic through the summer, so it is busier in late July and August than its remoteness suggests."
+    },
+    {
+     "name": "Swamp Creek Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south route rte",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_lewis_creek_route",
+   "area_id": "wa_gunn_peak",
+   "name": "Lewis Creek Route",
+   "discipline": "scrambling",
+   "grade": "3rd",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": 3,
+   "fa": "Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh, July 18, 1915, via Lewis Creek, on their fifth attempt at the peak",
+   "lat": null,
+   "lng": null,
+   "aspect": "S for the approach and most of the climb; crosses to the N side near the summit",
+   "season": "Jul-Sep is the standard window; snow and high water can persist into July",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ten essentials",
+    "light rack (optional, for the exposed summit scramble)"
+   ],
+   "hazards": [
+    "dense brush (alder, devil's club, salmonberry) on the lower approach",
+    "loose rock",
+    "difficult route-finding through old clear-cuts and unmaintained climbers' path",
+    "exposed class 3 scrambling near the summit block"
+   ],
+   "verif": {
+    "status": "unverified",
+    "updated": "2026-07-29"
+   },
+   "overview": "The Lewis Creek Route is the original 1915 first-ascent line up Gunn Peak, named for the Lewis Creek drainage the FA party used on their approach. It is rated 3rd Class (3 stars) and its modern access is via overgrown logging roads leading to a climbers' trail beginning around 3,200 ft on the ragged, brushy crest north of Barclay Creek — essentially the same corridor used by today's standard (Southeast/Tailgunner Pass) approach. It is climbed far less often than the standard line today and is largely of historical interest; expect an unmaintained, easy-to-lose path.",
+   "beta": "Not a maintained trail — a rough, easily-lost climbers' path that gains roughly 4,000-4,900 ft over 5.5-7.5 miles round trip depending on the exact line and any side trips (figures vary across sources). Expect steep muddy/slick forest low down, a brushy cliff-and-waterfall traverse, alpine meadows and boulder fields higher up, and a loose, narrow gully/ledge crux just below the summit. Most parties treat it as a long single day (7-10 hours) or descend via the same route.",
+   "turnaround": "This is a long, remote, easily-lost scramble with a documented history of search-and-rescue incidents and an exposed, unprotected ledge crux near the summit. Set a firm turnaround time that accounts for round-trip estimates of 7-10+ hours, and do not commit to the summit ledge traverse in wet, icy, or low-visibility conditions.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "Class 3-4 scramble (also rated 3rd class)",
+   "ice_grade": null,
+   "gain_ft": 5200,
+   "loss_ft": 5200,
+   "dist_km": 6,
+   "max_angle": null,
+   "rappels": "None required for most parties in dry conditions; some parties place a short rope-assisted downclimb or rappel through the 'hidden ramp' gully or the summit notch on descent",
+   "commitment": null,
+   "face": "South gully / 'Hidden Ramp' — the standard route",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": null,
+   "descent": "Down-climb the same climbers' route.",
+   "obj_haz": [
+    "rockfall / loose rock",
+    "exposed, unprotected scrambling",
+    "brush and deadfall on the lower approach",
+    "creek and waterfall crossing hazard at high early-season water",
+    "lingering snow on the shaded north-side ledge into early summer"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.7923,
+     "lng": -121.4592,
+     "elev": "2200",
+     "name": "Barclay Lake Trailhead",
+     "note": "US-2 trailhead near Baring, off FR-6024.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.81621,
+     "lng": -121.4477,
+     "elev": "6244",
+     "name": "Gunn Peak Summit",
+     "note": "Class 3-4 scramble with a notoriously hard-to-follow approach and a narrow, exposed summit ledge on the north side.",
+     "type": "Summit",
+     "distMi": 4
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 11,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "4:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 11,
+      "note": "This is the historic 1915 first-ascent line up the Lewis Creek drainage on the peak's north/west side, distinct from (and far less traveled than) the now-standard Barclay Lake clim…",
+      "fromTo": "Car-to-car via the historic Lewis Creek line",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rock gear is required in normal, dry, snow-free conditions — this is a scrambling route. A helmet is strongly recommended for the loose gully/boulder-field sections due to rockfall (including from other parties).",
+   "what_to_bring": [
+    "map/compass or GPS with a pre-loaded track (route-finding is genuinely difficult)",
+    "extra water (no reliable water sources above Barclay Creek)",
+    "layers for wind/weather exposure on the upper ridge",
+    "headlamp (round trips commonly run 7-10+ hours)",
+    "Northwest Forest Pass for trailhead parking"
+   ],
+   "pro_tips": [
+    "Find the correct climbers' path early: walk back down the road about 1/4 mile from the Barclay Lake trailhead parking to the old spur/fire-pit turnoff — missing it adds significant bushwhacking.",
+    "This route is notorious for faint, hard-to-follow tread; carry or pre-load a GPX track from a recent trip report.",
+    "Aim for August-September for the driest, most melted-out conditions on the crux ledge and gully."
+   ],
+   "watch_out": [
+    "A narrow, roughly foot-wide ledge with no fall protection traverses the north side of the mountain just below the summit — very dangerous when wet, icy, or snow-covered.",
+    "The boulder-field/gully crux below the summit is loose rock and can hold lingering snow into early summer.",
+    "The peak has a long history of search-and-rescue callouts; the route is steep, exposed, and easy to get off-route on, especially in poor visibility."
+   ],
+   "pro_needs": "This is essentially unprotected 3rd/4th-class scrambling — a handful of slings for a hip belay or quick running protection at the crux notch and the hidden-ramp gully covers the real 'gear' needs rather than a traditional trad rack.",
+   "best_season": "July through September (snow-free window); August and September are most reliable for low water and firmer footing on brush-covered slopes.",
+   "high_point_ft": 6244,
+   "aid_grade": null,
+   "approach": "From the Barclay Lake Trailhead (2,200 ft, end of FR-6024), do not take the maintained Barclay Lake Trail; instead walk back down the access road a short distance to an old spur/climbers' path dropping toward Barclay Creek. Ford Barclay Creek — parties describe essentially two back-to-back crossings, rock-hopping over boulders and deadfall (a small mid-channel island splits the ford), the route's main water hazard and genuinely tricky at high early-season flow. On the far bank, pick up a boot-worn, unsigned climbers' path that starts near the downstream tip of that island and switchbacks relentlessly uphill through second-growth forest — roughly 1,500 vertical feet of steep dirt-and-root tread with few cairns. Around 3,800 ft the path runs into a rock face; go right (don't try to scramble the face itself) and follow a rising traverse beneath cliff bands that crosses a small waterfall/seep with real exposure — arguably the single most consequential stretch of the hike-in. Above this the grade eases through fern-and-alder benches and mixed forest to about 4,400 ft, where the summer line bends left and climbs a brushy weakness in the cliff band rather than continuing up the adjacent Tailgunner couloir (which holds snow late into the season and is a common wrong-turn/avalanche-path hazard). From there, huckleberry-and-heather meadows lead to Tailgunner Pass / the Gunn Lake saddle near 5,400 ft, generally the last reliable water. From the saddle, talus and boulders lead to the base of the class 3-4 'hidden ramp,' where the maintained-feeling climbers' trail effectively ends and the technical scramble route begins. Total gain from trailhead to summit is on the order of 4,600+ ft over only a few miles, almost all of it steep, and the tread is faint enough in several places (especially the final approach to the ramp) that GPS track-following is genuinely useful, not just a nicety.",
+   "descent_text": "Descent retraces the ascent line — there is no separate descent trail or established walk-off. The crux is reversing the 'hidden ramp' below the summit block: most parties downclimb this exposed class 3-4 terrain facing in, checking GPS/landmarks to confirm the correct ledge or gully, but parties note a fixed or improvised rappel anchor (webbing/tat around a horn or chockstone — not bolted) at the top of the trickiest scramble move on the ramp, and it's common for parties to make one short, single-strand rappel there (well under 30 m/one rope length) rather than downclimb it, particularly if the rock is wet or there's residual snow. Below the ramp, downclimb talus and heather back to Tailgunner Pass/Gunn Lake saddle, then reverse the brushy cliff-band weakness and the exposed traverse beneath the cliff bands past the waterfall/seep — use extra caution here if wet. From about 3,800 ft, descend the same steep, faint climbers' trail back down through the forest to Barclay Creek, re-ford it, and rejoin the spur road back to the Barclay Lake Trailhead. Route-finding is the dominant descent hazard on this peak — parties often mention needing to double-check GPS to find the correct gully/ledge off the ramp and to avoid dropping into the Tailgunner couloir by mistake — so most parties treat the one short rappel (or careful downclimb) on the hidden ramp as the only technical rope-work required, with everything else being steep hiking/scrambling.",
+   "bail": "There is no established bail-out short of retreating the way you came; the crux gully/ledge section can be down-climbed by parties comfortable with Class 3-4 exposure. Turn back before committing to the exposed north-side ledge traverse if it is wet, snow-covered, or icy.",
+   "pitch_detail": [
+    {
+     "grade": null,
+     "notes": "Barclay Lake TH down the road ~1/4 mi to old spur/fire-pit turnoff, then two crossings of Barclay Creek.",
+     "pitch": "Approach 1"
+    },
+    {
+     "grade": "Class 1-2",
+     "notes": "Steep forest climb, muddy transitioning to dry dirt, for roughly the first mile.",
+     "pitch": "Approach 2"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Steep, trail-less section on slick, dirt-covered rock; hands needed.",
+     "pitch": "Section 3"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Traverse beneath a cliff band, drop to and pass a small waterfall (branch-assisted squeeze), climb out on rockier ground.",
+     "pitch": "Section 4"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Berry meadows, Baring Mountain viewpoint, overgrown brush, up to the alpine high point between Wing, Tailgunner and Gunn peaks.",
+     "pitch": "Section 5"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Drop and traverse around a subsidiary bump on a faint path along its southern side.",
+     "pitch": "Section 6"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Steep boulder field to a hidden gully (or an alternate, more-exposed rock scramble beside it); the technical crux of the route.",
+     "pitch": "Crux"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Traverse beneath Gunn's south side to a ridge gap, then descend the narrow, mostly tree-protected north-side ledge to unexposed hiking terrain and the summit.",
+     "pitch": "Summit pitch"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best attempted July-September once snow clears the north-facing basin and brush is driest; this off-trail line has minimal beta, so treat it as an expedition-style day requiring strong navigation skills.",
+    "days": [
+     {
+      "n": 1,
+      "note": "This is the historic 1915 first-ascent line up the Lewis Creek drainage on the peak's north/west side, distinct from (and far less traveled than) the now-standard Barclay Lake climbers' trail. Expect real bushwhacking low down, then open talus/basin travel higher, with essentially no cairns, flagging, or boot path to follow — budget extra time for navigation.",
+      "hours": 11,
+      "miles": 7.5,
+      "title": "Car-to-car via the historic Lewis Creek line",
+      "gainFt": 5200,
+      "lossFt": 5200,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave trailhead before first light",
+        "detail": "Earlier start than the standard route to bank daylight for slower off-trail travel and route-finding."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Clear the brushiest section of the Lewis Creek drainage",
+        "detail": "Alder, salmonberry, and devil's club low down give way to more open forest higher up."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Enter the basin below Gunn Peak (~5,150 ft)",
+        "detail": "Small tarns/snowmelt pools here are the last reliable water; some parties camp this basin instead of pushing on."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Summit (~6,238 ft)",
+        "detail": "Class 3-4 scrambling on the final talus/summit block; minimal beta on exact line."
+       },
+       {
+        "time": "7:00 PM",
+        "label": "Back at trailhead near dusk",
+        "detail": "Full daylight-to-dusk day — carry a headlamp as a margin for the descent."
+       }
+      ],
+      "objective": "Summit Gunn Peak via the 1915 first-ascent route and return same day"
+     }
+    ],
+    "totalNote": "A long, rarely-traveled single day car-to-car (~7.5 miles, an estimated ~5,200 ft of gain) — significantly more bushwhacking and route-finding than the standard Southeast climbers' trail, even though total mileage is similar."
+   },
+   "access": {
+    "_raw": {
+     "notes": "Gunn Peak is 6,244 feet (highest in Wild Sky Wilderness). Trailhead: Barclay Lake via Forest Road 6024 near Baring, WA on US-2",
+     "permit_cost": "Free (day-use only)",
+     "permit_type": "No specific backcountry permit for day-use alpine climbing",
+     "land_manager": "USDA Forest Service - Mount Baker-Snoqualmie National Forest",
+     "seasonal_access": "Summer only; best July-October",
+     "special_hazards": "Class 3-4 alpine scrambling with exposure, narrow ledges, snow/ice hazards in shoulder season, difficult route-finding, suitable only for experienced climbers",
+     "group_size_limit": "Not specified",
+     "parking_pass_cost": "$5 per day or $30 annual pass",
+     "wilderness_zone_name": "Wild Sky Wilderness",
+     "altitude_restrictions": "No specific restrictions",
+     "parking_pass_required": "Northwest Forest Pass"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Gunn Peak lies within the Wild Sky Wilderness, of which it is the highest point; day-use alpine climbing requires no special backcountry permit beyond the standard trailhead parking pass.",
+    "permit": "No specific backcountry permit for day-use alpine climbing",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "USDA Forest Service - Mount Baker-Snoqualmie National Forest",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+     "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "FR-6024 (Barclay Creek Road)",
+    "status": "Open gravel forest road to the Barclay Lake trailhead as of the most recent Forest Service listing; check the Mt. Baker-Snoqualmie NF current-conditions/alerts page before driving, as the Skykomish district periodically posts road damage/closure alerts",
+    "driveNote": "From US Hwy 2 near milepost 41-42 in Baring (across from the old Baring store), turn north onto 635th Place NE, cross the railroad tracks, and continue about 4.3 miles on FR-6024 (watch for potholes) to the Barclay Lake Trailhead (2,200 ft).",
+    "seasonalGate": "FR-6024 suffered a washout/mudslide that USFS had cleared to the trailhead by April 2026, and the trail itself still has blowdown — but as of 6 May 2026, the Barclay Creek footlog crossing has been fully removed for safety (beyond just 'poor condition'), with no replacement timeline yet; expect a rock-hop/log crossing without a fixed bridge. Check current Mt. Baker-Snoqualmie NF conditions before driving out."
+   },
+   "climate": {
+    "fall": "Generally good conditions into September and sometimes October, until the first significant snow",
+    "spring": "Heavy residual snowpack and high, difficult creek crossings typically persist into June",
+    "summer": "The warmest, driest, most reliable window, though wet brush is common after rain even in July",
+    "winter": "Not a winter route: deep snow, avalanche-prone terrain, and short daylight",
+    "typical": "Wet, mossy west-Cascades rainforest at the trailhead transitioning to open subalpine/alpine terrain near the summit; a roughly July-October snow-free window",
+    "forecastZone": "Stevens Pass zone (NWAC winter avalanche forecast area); this route is a snow-free-season scramble, not a winter objective"
+   },
+   "emergency": {
+    "notes": "Gunn Peak has a documented history of search-and-rescue callouts due to its steep, exposed, and easily-lost climbers' path; carry a map/GPX track and leave a trip plan with someone.",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288, (360) 677-2414 (limited hours: Wed-Fri, 9am-12pm and 1pm-4pm)",
+    "nearestHospital": "EvergreenHealth Monroe (west on US-2) is the nearest hospital-level facility to the Baring/Skykomish corridor; Providence Regional Medical Center Everett is the nearest major trauma center",
+    "sheriffDispatch": "Snohomish County Sheriff non-emergency dispatch: 425-407-3999 (dial 911 for active emergencies); Search & Rescue is coordinated through the Snohomish County Sheriff's Office"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "No strong peak-season crowding is reported; one party raised concern about growing social-media popularity, implying it was previously more obscure, and the Mountaineers run it as an official Alpine Scramble (Strenuous 5/Technical 4) restricted to vetted, experienced parties.",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low -- little documented traffic for a named Cascades objective."
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Severe gain-to-distance ratio -- roughly 4,300 ft gain in 2-3 miles depending on start point (a pace of ~2,000 ft/mile has been reported)."
+    },
+    "approachTime": "Via Forest Road 6024 (Barclay Creek Rd) to the Barclay Lake Trailhead -- road status is variable year to year (a 2026 washout/mudslide was cleared by USFS by April 2026, though blowdowns and a damaged creek-crossing bridge persisted into June 2026).",
+    "requiredSkills": [
+     "Route-finding on a faint, braided climbers' trail requiring cairn-following",
+     "Class 3 (locally 'class 3/4') exposed scrambling near the summit, including a foot-wide exposed ledge/catwalk on the north side that has turned back many parties, especially wet, snowy, or icy",
+     "Bushwhacking tolerance through dense devil's club and salmonberry, particularly north of the Barclay Creek crossing where the path is easily lost",
+     "Stream/creek crossing competence (Barclay Creek plus a waterfall traverse)"
+    ],
+    "experienceLevel": "It is rated Strenuous 5 / Technical 4 with a 'Challenging' leader rating -- near the top of that scrambling scale, appropriate for scramble/basic-alpine-course graduates with demonstrated route-finding and fitness, not a beginner objective."
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Summer-only, roughly July through September, with August-September commonly cited as optimal once high water on stream crossings has subsided and any lingering snow/ice on the crux summit ledge has melted out.",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Within the standard summer window, though the crux narrow summit ledge may still carry snow/ice in some years.",
+      "status": "good"
+     },
+     "August": {
+      "reason": "One late-July ascent during an unusually hot year found the crux ledge fully melted out and straightforward; low water favors the Barclay Creek and waterfall crossings.",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Cited alongside August as a favorable late-season window with low water and a melted-out summit ledge.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Standard Central Cascades summer pattern -- afternoon cloud buildup can obscure the summit even in July; a weekday/early start is commonly recommended to beat both weather and any parking congestion at the Barclay Lake trailhead.",
+     "probability": "Not quantified by route-specific sources."
+    },
+    "exposure": "The class 3 (locally 'class 3/4') summit block and especially a foot-wide exposed ledge on the north side are repeatedly singled out as high-consequence -- 'little more than a foot wide,' 'no safety net' -- and are worse when wet, snowy, or icy; numerous search and rescue missions have been reported on this route.",
+    "avalanche": {
+     "zone": "N/A -- no dedicated avalanche-zone documentation found; the operative winter/spring hazard described by sources is technical difficulty and fall/slip risk from snow/ice on rock rather than slide risk.",
+     "byMonth": {}
+    }
+   },
+   "data_quality": {
+    "gaps": [
+     "The historic Lewis Creek approach line is not documented today as a distinct path separate from the modern Barclay Creek/Southeast approach — sources largely treat them as the same corridor.",
+     "No verified pitch count, exact grade beyond 'Class 3', or FA route topo found.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "FA field corrected in this pass -- on-file spelling 'Walter Erisen' appears to be a transcription error; Wikipedia's Gunn Peak article and SummitPost/Mountain Project both independently spell the second climber's name 'Walter Eriksen.' Date (July 18, 1915) and all three names otherwise confirmed; a detail not previously on file notes this was the party's fifth attempt on the peak. These tertiary sources likely trace to Fred Beckey's Cascade Alpine Guide as a common root rather than fully independent primary triangulation, but Beckey's guide is considered a reliable primary compilation for this era of Cascades FA records.",
+     "Confidence upgraded from LOW to MEDIUM in this pass -- general Gunn Peak crowd/partner/season/hazard data is now well-supported by multiple independent sources (Mountain Project, WTA, SummitPost, Mountaineers.org, several detailed trip reports), but the core naming issue remains unresolved: no source treats \"Lewis Creek Route\" as a distinct, separately-documented line from the standard Barclay Creek/Southeast approach."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.8162914,
+    "peakLng": -121.4479383,
+    "trailhead": "Barclay Lake Trailhead (FR-6024)",
+    "trailheadLat": 47.7923,
+    "trailheadLng": -121.4592,
+    "trailheadDirection": "From the Barclay Lake Trailhead at the end of FR-6024 off US-2 near Baring"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Listed as 3rd class in the same area as Gunn Peak's standard route; no route-specific beta found under this exact name (a similarly-named 'Lewis Creek' elsewhere in WA is an unrelated canyoneering rappel route). Treated as an easy 3rd-class scramble consistent with Gunn Peak-area terrain.",
+   "ascender": null,
+   "corrections": "Could not verify this as a distinct documented named route on Gunn Peak; recommend spot-checking this route_id against source data.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Barclay Creek and Tailgunner Pass to the hidden ramp",
+     "notes": "From the Barclay Lake trailhead, walk back down the access road a short way to an old spur dropping toward Barclay Creek and ford it — effectively two back-to-back crossings over boulders and deadfall, split by a small mid-channel island, and genuinely tricky at early-season flow. An unsigned boot-worn path starts near the downstream tip of that island and switchbacks relentlessly up about 1,500 vertical feet of dirt and root. Near 3,800 ft it runs into a rock face: go right and take the rising traverse beneath the cliff bands, which crosses a waterfall seep with real exposure. Above that the grade eases through fern and alder benches to about 4,400 ft, where the summer line bends left through a brushy weakness in the cliff band rather than continuing up the adjacent couloir, and meadows lead to the pass and Gunn Lake saddle near 5,400 ft.",
+     "season": "Mid-July to September",
+     "hazards": [
+      "Two creek crossings that are serious at high flow",
+      "An exposed traverse beneath cliff bands past a waterfall seep",
+      "Loose rock and exposure on the ramp and the summit ledges",
+      "Steep snow on the north side of the summit notch into early summer",
+      "Faint tread that is easy to lose in both directions"
+     ],
+     "baseFinding": "The climbing starts at the hidden ramp, and it earns the name — from below it does not look like a way through. Drop off the pass into the basin and cross large talus blocks toward the peak's northern side. The ramp is the drippy, uninviting weakness angling up and to the RIGHT through a lower cliff band; it looks harder and wetter than it is. The line is not the wet centre but the steep face on its right-hand edge, which gives clean and enjoyable class 3 up to trees and a hanging snowfield above. If nothing in the cliff band in front of you looks like it goes at all, you are probably still below the ramp rather than at it. Above the snowfield the route continues to a tiny notch immediately east of the summit — the point where a June attempt commonly ends, because the north face beyond holds steep snow. Squirm through the notch onto the north side and the remaining ground is a traverse of exposed heather ledges and snowpatches, then a short class 3 scramble to the top. The standing error on this mountain is dropping into the adjacent couloir by mistake, on the way up or on the way down."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 880,
+     "name": "Money Creek Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits almost directly under Grotto Mountain and is a sensible base for the Beckler-side objectives, for Baring and the Barclay Creek peaks about fifteen minutes back down the highway, and for anyone wanting a shower-free but civilised night before an early start. Being this low it is usable well outside the alpine season — a real advantage in a zone where several of the objectives are winter routes and everything above 3,000 ft is snowbound. Do not treat it as an approach camp; it is a place to sleep in the valley with a proper toilet and a fire ring, twenty to forty minutes' drive from any of the trailheads.",
+     "water": "Potable water at the campground. The South Fork Skykomish runs alongside.",
+     "permit": "Standard national forest campground fee, booked through the federal reservation system or taken first-come at the two unreserved sites. Day use needs a Northwest Forest Pass, Interagency pass or the day fee. Fourteen-day stay limit. Check the current forest-wide campfire ban before planning a fire.",
+     "capacity": "25 sites, 24 single and one double, most of them accessible. Reservable, with a couple held first-come first-served. Picnic tables, vault toilets, and a swimming hole on the river."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "lewis creek crk ck route rte",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "area_id": "wa_gunn_peak",
+   "name": "Southeast Route",
+   "discipline": "scrambling",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "July 18, 1915 by Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh",
+   "lat": null,
+   "lng": null,
+   "aspect": "SE approach via Tailgunner Pass, crossing the south face to a north-side ledge below the summit",
+   "season": "Jun-Sep; early-June parties encounter significant lingering snow and brush, while late-July through August is typically clearer",
+   "description": null,
+   "gear": [
+    "rope (recommended)",
+    "light rock rack",
+    "helmet"
+   ],
+   "hazards": [
+    "steep brush (alder, devil's club, salmonberry) on the lower approach",
+    "loose rock",
+    "narrow, ~1-ft-wide exposed ledge/ramp on the summit block, dangerous when wet",
+    "route-finding — the climbers' path is unmaintained and easy to lose, especially in the old clear-cut and boulder field",
+    "log-jam creek crossing of Barclay Creek can be slick"
+   ],
+   "verif": null,
+   "overview": "Gunn Peak is an extraordinarily prominent summit above the Sultan Basin and Skykomish valley — the highest point in the Wild Sky Wilderness and the 29th-most prominent peak in Washington, its 3,600-plus feet of prominence making it a coveted objective. First climbed July 18, 1915 by Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh. The standard route climbs from Barclay Lake Trailhead over Tailgunner Pass into Gunn Basin, then up the southwest corner of the summit block via a hidden, often-wet Class 3 ramp through a lower cliff band (the 'hidden ramp'), squeezing through a notch east of the true summit to exposed heather ledges on the north side leading to the top. Few parties climb it each year, largely due to the brushy, easy-to-lose approach and short but serious summit-block exposure; many combine it with neighboring Tailgunner Peak.",
+   "beta": "Serious alpine scramble requiring climbing experience and high mountain skills. Follows overgrown logging roads and climbers' trails from Barclay Lake, ascending steeply through forest to boulder field approach. Technical crux is an exposed class 3-4 hidden ramp with loose rock and significant exposure. A narrow ledge on north side of summit requires careful foot placement, especially in wet or icy conditions. Multiple search and rescue incidents have occurred on this peak.",
+   "turnaround": "Start descent by 3-4 PM at latest to ensure full daylight return to trailhead. Be especially conservative in autumn (shorter days) and spring (weather instability).",
+   "auto_generated": true,
+   "alpine_grade": "PD",
+   "rock_grade": "Class 2-4 scrambling, with exposed class 3-4 sections on the hidden-ramp-equivalent step and the summit block",
+   "ice_grade": null,
+   "gain_ft": 4700,
+   "loss_ft": 4700,
+   "dist_km": 4.8,
+   "max_angle": 40,
+   "rappels": "A short rappel is sometimes placed over the steepest scramble step on descent; otherwise the route is climbed unroped with occasional running belays",
+   "commitment": "III",
+   "face": "South Face / East Ridge via Tailgunner Pass and Gunn Point",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell phone service unreliable or absent in Barclay Lake area and Wild Sky Wilderness. Download offline topographic maps (Gaia GPS, Caltopo, or similar) before departing. Carry satellite messenger or personal locator beacon (PLB) if possible, as multiple search and rescue operations conducted on this peak.",
+   "descent": "Reverse the ascent: downclimb the exposed heather ledges and the 'hidden ramp' back through the notch (some parties place a hand-line or short rappel on the ramp if wet or for less-experienced members), then re-cross Gunn Basin, back over Tailgunner Pass, and down the brushy climbers' path to the Barclay Creek log jam and trailhead.",
+   "obj_haz": [
+    "loose rock",
+    "brush and deadfall on the lower approach",
+    "steep, hard snowpatches on the north-facing traverse into midsummer",
+    "exposed unprotected scrambling",
+    "long, remote approach via Tailgunner Pass"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.7923,
+     "lng": -121.4592,
+     "elev": 2300,
+     "name": "Barclay Lake Trailhead",
+     "note": "Self-issue day-use fee ($5) or Northwest Forest Pass at the kiosk; vault toilet on site, no potable water; walk back down the access road ~0.25 mi to find the old forest road turnoff.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Leave US 2 at Baring and follow FS Road 6024 to its end at the Barclay Lake trailhead. A Northwest Forest Pass is required here, or pay the $5 self-issue day-use fee at the kiosk. There is a vault toilet at the lot but no potable water, so arrive with what you need. Note that this route does not start on the Barclay Lake trail — you walk back down the access road about a quarter mile to an old gated spur road, and parties who already know the line often park at that spur start rather than driving on to the main lot."
+    },
+    {
+     "lat": 47.797424,
+     "lng": -121.460837,
+     "elev": 2180,
+     "name": "Barclay Creek log jam crossing",
+     "note": "Cross the first log jam, then immediately turn left and follow the south shore of the smaller creek branch on a flagged path for ~50 yards rather than crossing the tempting second log jam, which leads to a trail that fades out.",
+     "type": "Water",
+     "distMi": 0.3
+    },
+    {
+     "lat": 47.808025,
+     "lng": -121.451837,
+     "elev": 4400,
+     "name": "Cliff-band brush weakness (leaves couloir line)",
+     "note": "Around 3,800-4,400 ft the climbers' path bends right off the rock face and pushes up a brushy weakness in the cliff band into ferns, alders, then huckleberry-heather meadows dotted with light gray rock.",
+     "type": "Junction",
+     "distMi": 1.5
+    },
+    {
+     "lat": 47.81195,
+     "lng": -121.447844,
+     "elev": 5100,
+     "name": "Ramp/chockstone crux",
+     "note": "A short (~10 ft) Class 3-4 ramp past a cliff band; the gully line has a chockstone move nearing low Class 5, the climbers'-right alternative avoids it but feels more exposed.",
+     "type": "Hazard",
+     "distMi": 2
+    },
+    {
+     "lat": 47.81547,
+     "lng": -121.446635,
+     "elev": 5800,
+     "name": "The notch",
+     "note": "Boulder-hop up from the hidden bench to an opening on the left revealing a notch to hop through onto the upper south face; this is the key navigational landmark referenced on both ascent and descent.",
+     "type": "Junction",
+     "distMi": 2.45
+    },
+    {
+     "lat": 47.816299,
+     "lng": -121.445481,
+     "elev": 6050,
+     "name": "Exposed upper south face traverse",
+     "note": "Cross two remnant snowpatches and an exposed heather/rock ledge below a smooth granite wall with a steep drop-off; parties report using a handline here and carrying an axe into early July.",
+     "type": "Hazard",
+     "distMi": 2.62
+    },
+    {
+     "lat": 47.8162174,
+     "lng": -121.4473274,
+     "elev": 6238,
+     "name": "Gunn Peak summit",
+     "note": "Final Class 3 boulder scramble to the true summit; sweeping views over the Wild Sky Wilderness toward Monte Cristo and the Skykomish valley.",
+     "type": "Summit",
+     "distMi": 2.75
+    }
+   ],
+   "gpx": [
+    [
+     47.794651,
+     -121.46168
+    ],
+    [
+     47.79475,
+     -121.460792
+    ],
+    [
+     47.795492,
+     -121.460527
+    ],
+    [
+     47.796153,
+     -121.460514
+    ],
+    [
+     47.796834,
+     -121.460517
+    ],
+    [
+     47.797351,
+     -121.460713
+    ],
+    [
+     47.798021,
+     -121.459556
+    ],
+    [
+     47.798528,
+     -121.458818
+    ],
+    [
+     47.799002,
+     -121.457958
+    ],
+    [
+     47.79952,
+     -121.457068
+    ],
+    [
+     47.800179,
+     -121.456005
+    ],
+    [
+     47.801008,
+     -121.456232
+    ],
+    [
+     47.801673,
+     -121.456366
+    ],
+    [
+     47.80238,
+     -121.456178
+    ],
+    [
+     47.802661,
+     -121.456532
+    ],
+    [
+     47.802884,
+     -121.456392
+    ],
+    [
+     47.803305,
+     -121.456321
+    ],
+    [
+     47.803557,
+     -121.456498
+    ],
+    [
+     47.803717,
+     -121.455918
+    ],
+    [
+     47.803458,
+     -121.455671
+    ],
+    [
+     47.803564,
+     -121.454993
+    ],
+    [
+     47.803504,
+     -121.454819
+    ],
+    [
+     47.8037,
+     -121.454351
+    ],
+    [
+     47.803813,
+     -121.453884
+    ],
+    [
+     47.80398,
+     -121.453544
+    ],
+    [
+     47.804149,
+     -121.453166
+    ],
+    [
+     47.80439,
+     -121.452549
+    ],
+    [
+     47.804775,
+     -121.452633
+    ],
+    [
+     47.804788,
+     -121.453235
+    ],
+    [
+     47.804946,
+     -121.453536
+    ],
+    [
+     47.805237,
+     -121.453185
+    ],
+    [
+     47.80553,
+     -121.452745
+    ],
+    [
+     47.805839,
+     -121.452728
+    ],
+    [
+     47.806152,
+     -121.452606
+    ],
+    [
+     47.806335,
+     -121.452398
+    ],
+    [
+     47.806537,
+     -121.452624
+    ],
+    [
+     47.806754,
+     -121.452545
+    ],
+    [
+     47.806998,
+     -121.452622
+    ],
+    [
+     47.807213,
+     -121.452572
+    ],
+    [
+     47.807578,
+     -121.4524
+    ],
+    [
+     47.808093,
+     -121.452214
+    ],
+    [
+     47.808343,
+     -121.451806
+    ],
+    [
+     47.80889,
+     -121.450949
+    ],
+    [
+     47.809204,
+     -121.450367
+    ],
+    [
+     47.809509,
+     -121.450397
+    ],
+    [
+     47.809897,
+     -121.450959
+    ],
+    [
+     47.809565,
+     -121.451492
+    ],
+    [
+     47.80951,
+     -121.451621
+    ],
+    [
+     47.809517,
+     -121.451611
+    ],
+    [
+     47.809803,
+     -121.451397
+    ],
+    [
+     47.810125,
+     -121.45069
+    ],
+    [
+     47.810441,
+     -121.450805
+    ],
+    [
+     47.810694,
+     -121.449845
+    ],
+    [
+     47.810828,
+     -121.449536
+    ],
+    [
+     47.810972,
+     -121.449073
+    ],
+    [
+     47.811052,
+     -121.448611
+    ],
+    [
+     47.811552,
+     -121.448413
+    ],
+    [
+     47.812208,
+     -121.448732
+    ],
+    [
+     47.812765,
+     -121.449159
+    ],
+    [
+     47.813411,
+     -121.449716
+    ],
+    [
+     47.813708,
+     -121.449899
+    ],
+    [
+     47.814272,
+     -121.449763
+    ],
+    [
+     47.814516,
+     -121.449568
+    ],
+    [
+     47.814733,
+     -121.449345
+    ],
+    [
+     47.814876,
+     -121.449125
+    ],
+    [
+     47.815126,
+     -121.44905
+    ],
+    [
+     47.815353,
+     -121.449116
+    ],
+    [
+     47.815501,
+     -121.449055
+    ],
+    [
+     47.815644,
+     -121.44898
+    ],
+    [
+     47.815678,
+     -121.448803
+    ],
+    [
+     47.815617,
+     -121.448474
+    ],
+    [
+     47.81566,
+     -121.448228
+    ],
+    [
+     47.815608,
+     -121.447805
+    ],
+    [
+     47.815753,
+     -121.447112
+    ],
+    [
+     47.81589,
+     -121.446697
+    ],
+    [
+     47.816101,
+     -121.446686
+    ],
+    [
+     47.816218,
+     -121.44682
+    ],
+    [
+     47.81644,
+     -121.446828
+    ],
+    [
+     47.816368,
+     -121.447553
+    ],
+    [
+     47.81625,
+     -121.447973
+    ],
+    [
+     47.816234,
+     -121.447972
+    ],
+    [
+     47.816329,
+     -121.447703
+    ],
+    [
+     47.816369,
+     -121.447392
+    ],
+    [
+     47.8164,
+     -121.447058
+    ],
+    [
+     47.816426,
+     -121.446623
+    ],
+    [
+     47.816327,
+     -121.446033
+    ],
+    [
+     47.81628,
+     -121.445982
+    ],
+    [
+     47.816348,
+     -121.446021
+    ],
+    [
+     47.816373,
+     -121.446103
+    ],
+    [
+     47.816401,
+     -121.446527
+    ],
+    [
+     47.816394,
+     -121.446762
+    ],
+    [
+     47.816219,
+     -121.446623
+    ],
+    [
+     47.815968,
+     -121.446579
+    ],
+    [
+     47.815816,
+     -121.446956
+    ],
+    [
+     47.815627,
+     -121.447502
+    ],
+    [
+     47.815443,
+     -121.447721
+    ],
+    [
+     47.815401,
+     -121.447999
+    ],
+    [
+     47.815566,
+     -121.448355
+    ],
+    [
+     47.815595,
+     -121.448528
+    ],
+    [
+     47.815598,
+     -121.448485
+    ],
+    [
+     47.815776,
+     -121.448343
+    ],
+    [
+     47.815637,
+     -121.448494
+    ],
+    [
+     47.815626,
+     -121.448453
+    ],
+    [
+     47.815445,
+     -121.449245
+    ],
+    [
+     47.815615,
+     -121.44887
+    ],
+    [
+     47.815675,
+     -121.448949
+    ],
+    [
+     47.815332,
+     -121.449245
+    ],
+    [
+     47.815139,
+     -121.44956
+    ],
+    [
+     47.814922,
+     -121.449905
+    ],
+    [
+     47.81468,
+     -121.450299
+    ],
+    [
+     47.814468,
+     -121.450378
+    ],
+    [
+     47.813684,
+     -121.450306
+    ],
+    [
+     47.813122,
+     -121.449435
+    ],
+    [
+     47.812433,
+     -121.448886
+    ],
+    [
+     47.811784,
+     -121.448639
+    ],
+    [
+     47.811068,
+     -121.448658
+    ],
+    [
+     47.810988,
+     -121.44911
+    ],
+    [
+     47.810858,
+     -121.449558
+    ],
+    [
+     47.810692,
+     -121.449849
+    ],
+    [
+     47.810487,
+     -121.450806
+    ],
+    [
+     47.810108,
+     -121.45086
+    ],
+    [
+     47.80968,
+     -121.451525
+    ],
+    [
+     47.809538,
+     -121.45173
+    ],
+    [
+     47.809582,
+     -121.451361
+    ],
+    [
+     47.809863,
+     -121.450911
+    ],
+    [
+     47.809435,
+     -121.450273
+    ],
+    [
+     47.809011,
+     -121.450619
+    ],
+    [
+     47.808483,
+     -121.45166
+    ],
+    [
+     47.808048,
+     -121.452198
+    ],
+    [
+     47.807509,
+     -121.452598
+    ],
+    [
+     47.807056,
+     -121.452598
+    ],
+    [
+     47.806839,
+     -121.452607
+    ],
+    [
+     47.806549,
+     -121.452709
+    ],
+    [
+     47.806315,
+     -121.45246
+    ],
+    [
+     47.806223,
+     -121.452522
+    ],
+    [
+     47.80591,
+     -121.452773
+    ],
+    [
+     47.805436,
+     -121.452825
+    ],
+    [
+     47.805164,
+     -121.453378
+    ],
+    [
+     47.804834,
+     -121.453449
+    ],
+    [
+     47.804818,
+     -121.452888
+    ],
+    [
+     47.804618,
+     -121.452509
+    ],
+    [
+     47.804197,
+     -121.452918
+    ],
+    [
+     47.804042,
+     -121.453724
+    ],
+    [
+     47.803796,
+     -121.454029
+    ],
+    [
+     47.803685,
+     -121.454542
+    ],
+    [
+     47.803447,
+     -121.454869
+    ],
+    [
+     47.803612,
+     -121.455265
+    ],
+    [
+     47.803816,
+     -121.455674
+    ],
+    [
+     47.803698,
+     -121.456303
+    ],
+    [
+     47.803367,
+     -121.456339
+    ],
+    [
+     47.803056,
+     -121.456354
+    ],
+    [
+     47.802662,
+     -121.456499
+    ],
+    [
+     47.802245,
+     -121.456179
+    ],
+    [
+     47.801781,
+     -121.456296
+    ],
+    [
+     47.801317,
+     -121.456246
+    ],
+    [
+     47.800861,
+     -121.456243
+    ],
+    [
+     47.800498,
+     -121.455982
+    ],
+    [
+     47.800243,
+     -121.456105
+    ],
+    [
+     47.79979,
+     -121.456266
+    ],
+    [
+     47.799645,
+     -121.456739
+    ],
+    [
+     47.799492,
+     -121.457437
+    ],
+    [
+     47.799168,
+     -121.457878
+    ],
+    [
+     47.798834,
+     -121.458397
+    ],
+    [
+     47.798476,
+     -121.459085
+    ],
+    [
+     47.797778,
+     -121.460061
+    ],
+    [
+     47.797083,
+     -121.46114
+    ],
+    [
+     47.796601,
+     -121.460321
+    ],
+    [
+     47.795787,
+     -121.460502
+    ],
+    [
+     47.795081,
+     -121.461022
+    ],
+    [
+     47.794743,
+     -121.461142
+    ],
+    [
+     47.794797,
+     -121.461188
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "A relentless, steep, mostly off-trail scramble: cross Barclay Creek, grind up a faint dirt climbers' trail through forest (~2,000-2,500 ft/mile in places), then negotiate talus, th…",
+      "fromTo": "Car-to-car via the SE climbers' trail",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No rock protection needed as this is a scramble, not a rock climbing route. However, carry 1-2 runners/slings and carabiners if planning to use rappel station above hidden ramp section. A 30 m rope is optional but recommended for groups with inexperienced members, as a handline or for the one short rappel at the hidden ramp.",
+   "what_to_bring": [
+    "light rock rack",
+    "helmet",
+    "rope (recommended)",
+    "satellite communicator"
+   ],
+   "pro_tips": [
+    "The exposed summit ramp becomes dangerous when wet — avoid climbing it during or right after rain.",
+    "Many parties link Gunn Peak with neighboring Tailgunner Peak via the connecting ridge and a small tarn near Tailgunner Pass.",
+    "The climbers' path beyond the old logging road is unmaintained and easy to lose; a GPS track or prior route beta is strongly recommended."
+   ],
+   "watch_out": [
+    "heavy brush on the approach",
+    "exposure near the top"
+   ],
+   "pro_needs": "No technical protection required for ascent (scramble), but some parties install slings and anchors at hidden ramp crux to facilitate safe descent via rappel. If descending by rappel, ensure anchor integrity before committing weight.",
+   "best_season": "Late July through September for reliable snow-free conditions; August is generally the most reliable month (lower creek levels, drier brush and ramp). An early-season variant exists via the snow-filled Tailgunner Couloir but requires different gear/skills.",
+   "high_point_ft": 6244,
+   "aid_grade": null,
+   "approach": "From the Barclay Lake Trailhead (~2,200 ft, end of FS Rd 6024 out of Baring) do not follow the maintained Barclay Lake Trail #1055; instead walk back down the access road roughly a quarter mile and pick up the old, deactivated Barclay Creek spur road (parties who know the route often park directly at the spur's gated start rather than the main Barclay Lake lot). Follow the old roadbed about 100-200 yards to a fire-pit clearing, turn right, and pick up the unmarked but well-trodden 'Gunn climbers' path.' The path drops to Barclay Creek and crosses via a log-jam/rock-hop near the downstream tip of a small mid-channel island — this ford is the approach's main early-season hazard, since the crossing can run high and slick with spring runoff. On the far bank the boot path swings west then turns north and starts climbing in earnest: about 200 ft of easier grade gives way to sustained, tight switchbacks gaining roughly 1,500 ft through second-growth timber with generally good tree/root holds underfoot but a steep, sometimes loose tread. Around 3,600-3,800 ft the path forks near a band of exposed rock — stay right and do not scramble the outcrop straight ahead, a known route-finding trap; the correct line keeps traversing climber's-left beneath a cliff band in partial shade. A usually-dry waterfall ravine is crossed around 4,400 ft (can carry meltwater and be slick in early season). The trail continues switchbacking up brushy, sometimes slide-alder-choked terrain for another ~1,500 ft to gain the ridge crest at roughly 5,400 ft — call it 3-4 hours and about 3,200 ft of gain above the creek crossing for a fit party. From the ridge crest, drop about 100 ft off the crest to skirt a cliff band, then boulder-hop roughly 500 ft up a talus basin to the upper tree benches directly below the peak's south face, which marks the base of the summit scrambling. There is no reliable water above Barclay Creek/the waterfall ravine in late summer, so fill up early. Cairns thin out badly above treeline and the boot path fades in the talus, so route-finding (not technical difficulty) is the main hazard on the upper approach — carrying a GPS track or recent trip-report beta is strongly recommended.",
+   "descent_text": "Descend by reversing the ascent line — essentially every accessible way off Gunn's summit block funnels back through the same notch, ledge, and ramp used going up, so this is fundamentally a downclimb/walk-off rather than a rappel route, with one optional short rappel commonly used at the crux. From the summit, downclimb the short class 3 blocks back to the notch between the peak's two summit 'horns,' then reverse the narrow, roughly one-foot-wide dirt/heather ledge traversing the north face — this exposed traverse is the route's crux in both directions and is meaningfully more dangerous descending when wet, icy, or snow-covered; less experienced parties should consider a handline here. Below the ledge, downclimb back through the class 3-4 notch move to the 'hidden ramp,' a roughly 10-ft, near-vertical step in the cliff band with two options: a chockstone-choked gully (near class 5) on the left, or a more exposed class 3-4 line to the right. This ramp is the one spot on the peak where parties commonly rappel instead of downclimbing — parties describe a sling/rappel station left on a horn or chockstone here (a natural anchor, not bolted; inspect and back it up before trusting it), and a single rappel of roughly 15-20 m clears the step, so a 30 m rope doubled is more than sufficient. Confident scramblers frequently downclimb this section unroped instead, and some parties opt to rappel the steeper gully just right of the ramp when it is wet, icy, or holding snow rather than the ramp itself. Below the ramp, re-cross the talus basin, regain the boot path, and climb back up to the ridge crest (~5,400 ft) before dropping down the switchbacking forest trail, re-crossing Barclay Creek at the log jam, and following the old spur road back to the Barclay Lake Trailhead.",
+   "bail": "Bail points: Lower switchback section (descend back to trailhead at any point); Boulder field (descend back to trailhead by returning to forest edge); Hidden ramp (critical juncture - consider rappel descent or delay to better conditions rather than forcing technical down-climb in poor visibility).",
+   "pitch_detail": [
+    {
+     "grade": "1-2",
+     "notes": "Steep forest trail and overgrown logging road, stream crossing, initial switchbacks on grippy dirt",
+     "pitch": "Lower forest and approach (Class 1-2)"
+    },
+    {
+     "grade": "2",
+     "notes": "Steep switchbacks on dirt trail gaining 1,500 feet to 3,800 feet elevation; slippery when wet",
+     "pitch": "Lower switchback section (Class 2)"
+    },
+    {
+     "grade": "2-3",
+     "notes": "Navigate under cliff bands, traverse talus and boulder field; route-finding critical",
+     "pitch": "Mid-section boulder field and cliff bands (Class 2-3)"
+    },
+    {
+     "grade": "3-4",
+     "notes": "Steep exposed gully with loose rock; alternate lines available (left: chockstone move; right: exposed climb); exposure significant",
+     "pitch": "Hidden ramp crux (Class 3-4)"
+    },
+    {
+     "grade": "2-3",
+     "notes": "Heather ledge and granite catwalk on north side, exposed class 2 traverse with 1000+ foot drop-offs; narrow and requires careful foot placement",
+     "pitch": "Upper traverse to summit (Class 2-3)"
+    },
+    {
+     "grade": "2-3",
+     "notes": "Final scramble over boulders to summit register; brief but exposed",
+     "pitch": "Summit section (Class 2-3)"
+    }
+   ],
+   "itinerary": {
+    "cal": "Barclay Lake trailhead requires a Northwest Forest Pass; the route is driest and most in-condition July through September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "A relentless, steep, mostly off-trail scramble: cross Barclay Creek, grind up a faint dirt climbers' trail through forest (~2,000-2,500 ft/mile in places), then negotiate talus, the exposed 'hidden ramp,' and a keyhole notch onto a narrow north-side ledge before the final easy scramble to the summit. Most parties treat it as a full daylight outing with an early start.",
+      "hours": 9,
+      "miles": 7.5,
+      "title": "Car-to-car via the SE climbers' trail",
+      "gainFt": 4900,
+      "lossFt": 4900,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Barclay Lake trailhead",
+        "detail": "Walk back down the road, cut onto the old forest road, cross Barclay Creek at the log jam to pick up the climbers' trail."
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Clear the steep forest slog",
+        "detail": "Faint, punishing dirt trail gains close to 3,000 ft in the trees before breaking into the alpine."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Reach the talus/rockslide below the hidden ramp",
+        "detail": "First class 3 exposure of the day; a cairn marks the ramp's start."
+       },
+       {
+        "time": "10:45 AM",
+        "label": "Through the keyhole notch onto the north-side ledge",
+        "detail": "Foot-wide traverse beneath cliffs — the crux, especially if wet or icy."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Summit (6,238')",
+        "detail": "Views of Merchant, Baring, and Index; typical parties linger 20-30 min."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Back at trailhead",
+        "detail": "Reverse the ramp/ledge with care; some parties place a short hand-line or rappel on the ramp."
+       }
+      ],
+      "objective": "Summit Gunn Peak (6,238') and return to the Barclay Lake trailhead"
+     }
+    ],
+    "totalNote": "A big single day car-to-car: ~7.5 miles round trip with 4,900 ft of gain; strong parties finish in 5.5-6 hours, most take 7-9 hours."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass required at the Barclay Lake Trailhead — $5 daily or $30 annual.",
+    "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+    "rules": "Wilderness regulations apply: no mechanized equipment/bikes, pack out human waste (WAG bags recommended), and follow strict Leave No Trace due to the fragile alpine terrain.",
+    "permit": "Free self-issue Wild Sky Wilderness permit at the trailhead.",
+    "closures": "FR-6024 (Barclay Creek Road) suffered a washout/mudslide that USFS had cleared to the trailhead by April 2026, and blowdown remains on the trail — but as of 6 May 2026, the footlog crossing over Barclay Creek (~1.2 mi in) has been fully removed for safety (not merely damaged/'in poor shape'), with no timeline yet for a replacement; expect to rock-hop/log-cross without a fixed bridge. Verify current Mt. Baker-Snoqualmie NF road/trail conditions before a trip.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (office: 74920 NE Stevens Pass Hwy, Skykomish, WA 98288)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+     "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "FR-6024 (Barclay Creek Road)",
+    "status": "Road itself reopened by USFS as of April 2026 after washout repairs and is passable, but the separate Barclay Creek footlog/bridge on the trail has since been fully removed (May 2026) rather than just damaged — check current conditions before a trip.",
+    "driveNote": "From US Hwy 2 near milepost 41-42 in the town of Baring (across from the old Baring store), turn north onto 635th Place NE, cross the railroad tracks, keep left after 0.1 mile as the road becomes FR-6024, then continue about 3.9-4.3 miles (accounts differ slightly) to the Barclay Lake Trailhead (2,200 ft, ~20 car parking, privy). Watch for potholes; a higher-clearance vehicle is recommended."
+   },
+   "climate": {
+    "typical": "Marine west coast climate: Pacific weather systems produce strong orographic lift and heavy precipitation on this west-slope Cascades location, with wet, heavy winter/spring snowfall that drives high avalanche danger in the Tailgunner Couloir season.",
+    "bySeason": {
+     "fall": "Possible extension into early October in dry years, but shortening daylight and early-season snow are risks.",
+     "spring": "Deep snowpack can cover much of the approach brush (some parties prefer this for easier travel) but the Tailgunner Couloir and upper slopes carry real avalanche hazard.",
+     "summer": "July-September is the practical climbing window; the summit ramp and heather ledges are typically snow-free and driest in August."
+    }
+   },
+   "emergency": {
+    "notes": "Cell service is unreliable in the Barclay Creek/Gunn Peak drainage; save maps and directions offline. This route has a history of search-and-rescue incidents, largely tied to the exposed summit-block ramp and route-finding on the brushy approach.",
+    "county": "Snohomish County",
+    "rangerStation": "Skykomish Ranger District, Mt. Baker-Snoqualmie National Forest, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288",
+    "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), Monroe"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in July-August; weekday climbers consistently report having the mountain to themselves. Sultan/Hwy 2 weekend traffic on the drive out is also a known nuisance",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low-to-moderate — likely a few dozen parties per summer, an estimate rather than any counted total; growing social media popularity has reportedly pushed recent traffic up from historically sparse numbers"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong, sustained hiking fitness — most parties report 7-9 hours round trip with continuous steep, brushy, off-trail elevation gain",
+     "packWeight": "Light day-pack load (roughly 15-20 lb); this is a long day-trip, not an overnight, and a heavy pack makes the brush-bashing much harder"
+    },
+    "approachTime": "Long — 7-9 hours round trip is typical, most of it steep and brushy with no real trail",
+    "requiredSkills": [
+     "Class 3-4 scrambling and exposed rock movement",
+     "off-trail routefinding through heavy, disorienting brush",
+     "comfort on loose rock near the summit",
+     "sound turnaround/bail judgment given the peak's SAR history"
+    ],
+    "experienceLevel": "Experienced scramblers only. This is unmaintained Class 3-4 terrain with a faint boot path, steep brush, and exposed summit moves — not a beginner objective. The peak has a history of search-and-rescue incidents, so partners should have solid turnaround judgment."
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through August — this is when brush and rock are driest",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Brush is drying out and snow is retreating, though wet vegetation and possible high snow patches can still linger, especially early in the month",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Late-June starts the season, but lingering snow patches on upper slopes plus wet, dense brush from spring runoff make conditions slow and unpleasant",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Driest conditions of the year for both the brush approach and the summit rock, matching the best-season",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still generally dry, but shorter daylight for the long round trip and increasing risk of an early fall wet-weather system closing the window",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Very wet maritime climate overall; during the summer window expect the brush to stay damp longer than the calendar suggests, and weather can turn quickly given the very wet spring/fall shoulder seasons",
+     "probability": "Afternoon thunderstorms and convective buildup are possible July-August in the Cascades; because the approach and summit push commit you to exposed terrain, get an early start and watch the forecast"
+    },
+    "exposure": "Exposed Class 3-4 climbing right at the summit combined with loose rock and routefinding through heavy brush on the approach; the peak's documented history of search-and-rescue calls underscores that a slip or a wrong turn here has real consequences, not just an inconvenience",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; no NWAC forecast zone specifically covers this peak (nearest general coverage would be the West Slopes Central/Stevens Pass corridor, but that forecast doesn't target this route)",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Exact current FR-6024/trailhead road mileage varies slightly between sources (3.9-4.3 mi) and its post-washout condition is still changing.",
+     "No official topo/photo confirming the precise line of the 'hidden ramp' crux beyond trip-report descriptions.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/2L3J",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.8162914,
+    "peakLng": -121.4479383,
+    "trailhead": "Barclay Lake Trailhead (FR-6024)",
+    "trailheadLat": 47.7923,
+    "trailheadLng": -121.4592,
+    "trailheadDirection": "From the Barclay Lake Trailhead at the end of FR-6024 off US-2 near Baring"
+   },
+   "sling_rack": {
+    "runners": "1-2 slings for optional hand line/rappel anchor"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic (optional)",
+   "rope_length_m": 30,
+   "rope_note": "Standard route is unroped Class 3-4 for competent scramblers; a hand line is sometimes rigged on the exposed 'hidden ramp' descent, and the narrow summit ledge is consequential if wet/icy.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Barclay Creek climbers' path — summer line",
+     "notes": "From the Barclay Lake trailhead, do NOT take the maintained lake trail. Walk back down the access road about a quarter mile and pick up the old deactivated spur road — parties who know it often park at the spur's gated start instead of the main lot. Follow the old roadbed a hundred or two hundred yards to a FIRE-PIT CLEARING, turn right, and pick up the unmarked but well-trodden climbers' path. It drops to the creek and crosses on a log jam or by rock-hopping near the DOWNSTREAM TIP OF A SMALL MID-CHANNEL ISLAND; this crossing is the main early-season hazard. On the far bank the path swings west, then north, and starts climbing in earnest through sustained tight switchbacks in second-growth timber. Two decision points follow. Around thirty-six to thirty-eight hundred feet the path forks near a BAND OF EXPOSED ROCK — stay RIGHT and do not scramble the outcrop straight ahead, which is a known trap; the correct line keeps traversing climber's-left beneath a cliff band. Then around forty-four hundred feet the summer line bends LEFT up a brushy weakness in the cliff band rather than continuing up the couloir, which holds snow late. Huckleberry and heather meadows lead to the saddle at about fifty-four hundred feet, the last reliable water.",
+     "season": "June to September. Early June parties meet significant lingering snow and heavy brush; late July through August is typically the clearest.",
+     "hazards": [
+      "Steep brush — alder, devil's club and salmonberry — on the lower approach",
+      "Log-jam crossing of the creek is slick and runs high in spring",
+      "The fork near the exposed rock band around thirty-six to thirty-eight hundred feet is a known route-finding trap; the outcrop ahead is not the way",
+      "Loose rock on the talus fan and at the ramp",
+      "No reliable water above the creek and the waterfall ravine in late summer",
+      "Cairns thin out badly above treeline and the boot path fades in the talus; route-finding rather than difficulty is the main hazard here",
+      "Multiple search-and-rescue incidents have occurred on this peak"
+     ],
+     "primary": true,
+     "baseFinding": "From the saddle, drop about a hundred feet off the crest to skirt a cliff band and boulder-hop up the TALUS FAN toward the upper tree benches directly below the peak's south face. The base of the technical ground is the top of that fan — and the feature you are looking for CANNOT BE SEEN FROM BELOW. A ramp cuts up the face from the top of the talus and only appears once you are underneath it, which is exactly why parties overshoot by continuing up the rockslide. The unmistakable test is the single step at the ramp's foot: a boulder with TWO options off it, a left-hand line past a CHOCKSTONE that takes a steep low-fifth move, and a right-hand line, steeper and more exposed but on solid holds, which is what most parties take. If there is no boulder with a two-way step above it, you are not at the ramp. Negative marker: if you are still grinding up loose rockslide with no ramp cutting off to either side, you have gone past the entry — the ramp is entered FROM the talus, not from the top of it. Higher up, the next landmark is a keyhole notch through the ridge to the north side; if you have not passed the ramp step you will not reach it."
+    },
+    {
+     "name": "Tailgunner couloir — snow-season line",
+     "notes": "The same start — the spur road, the fire-pit clearing, the creek crossing at the island, and the switchbacks up through the timber. The difference comes at about forty-four hundred feet: instead of bending left into the brushy weakness in the cliff band, the snow-season line continues directly up the couloir to the saddle. This same couloir is a documented WRONG TURN in summer and an avalanche path, so it is only reasonable when it is a continuous snow climb and conditions have been assessed.",
+     "season": "Late spring, while the couloir holds continuous consolidated snow. Once it starts melting out it becomes the wrong answer and the summer line through the brushy weakness is correct.",
+     "hazards": [
+      "Avalanche hazard — this couloir is an active path and holds snow late",
+      "Snow conditions vary hour to hour on it; assess before committing",
+      "Everything the summer line carries below the cliff band, including the brushy lower approach and the creek crossing at higher spring flow",
+      "The ramp above is harder to protect and downclimb when wet or holding snow, and it is the one place on this peak where parties commonly rappel"
+     ],
+     "baseFinding": "The couloir tops out at the same saddle as the summer line, so the base of the climbing is identical: drop about a hundred feet off the crest to skirt the cliff band, then boulder-hop up the talus fan to the upper tree benches below the south face. The ramp at the top of the fan is invisible until you are under it; identify it by the BOULDER at its foot with a two-way step above — a left-hand chockstone move at low fifth, or a steeper, more exposed line on good holds to the right. Negative marker: if you are still on snow when you expect to be on talus, you have carried on above the saddle into the wrong basin; the couloir delivers you to a saddle, and the talus fan starts on the far side of it."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 2",
+     "label": "Talus fan below the south face",
+     "notes": "Ascend the fan of large talus blocks that runs up to the base of the south face directly below the summit. The blocks are big enough to walk on but some shift; the cairns that mark the way lower down have usually thinned to nothing by here, so the line is chosen by eye toward the base of the ramp above."
+    },
+    {
+     "n": 2,
+     "class": "Class 3-4",
+     "label": "The hidden ramp",
+     "notes": "The route's crux, and it is short. A ramp cuts up the face from the top of the talus and is not obvious until you are underneath it. The hard part is the single step off the boulder at its foot: the left-hand option passes a chockstone and involves a steep low fifth-class move, while the right-hand option is a steep, exposed Class 3-4 sequence on solid holds and is the line most parties take. Above that step the ramp itself eases. Some parties sling the ramp for a belay or a handline; a short rope is worth carrying even though a confident scrambler will not need it."
+    },
+    {
+     "n": 3,
+     "class": "Class 3",
+     "label": "Upper south face to the high notch",
+     "notes": "Above the ramp, cross the upper south face — typically over two remnant snow patches that persist well into summer — and scramble to the high notch between the west and east summits. In June, or any heavy snow year, these patches are steep snow immediately above the very exposed north side and turn a scramble into a climb needing axe and crampons; by August they are usually melted out and the section is unremarkable. Judge this from the notch below, not from the trailhead."
+    },
+    {
+     "n": 4,
+     "class": "Class 2",
+     "label": "North-side ledge and summit block",
+     "notes": "From the notch, traverse north-side heather ledges — easy walking, but with substantial drop below, and parties sometimes leave a handline here for the return. A short Class 3 scramble on the prominent summit block finishes the climb. The descent reverses everything, and the step down off the hidden ramp feels harder than it did going up; plan on downclimbing it carefully or rappelling from a slung block."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 880,
+     "name": "Money Creek Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits almost directly under Grotto Mountain and is a sensible base for the Beckler-side objectives, for Baring and the Barclay Creek peaks about fifteen minutes back down the highway, and for anyone wanting a shower-free but civilised night before an early start. Being this low it is usable well outside the alpine season — a real advantage in a zone where several of the objectives are winter routes and everything above 3,000 ft is snowbound. Do not treat it as an approach camp; it is a place to sleep in the valley with a proper toilet and a fire ring, twenty to forty minutes' drive from any of the trailheads.",
+     "water": "Potable water at the campground. The South Fork Skykomish runs alongside.",
+     "permit": "Standard national forest campground fee, booked through the federal reservation system or taken first-come at the two unreserved sites. Day use needs a Northwest Forest Pass, Interagency pass or the day fee. Fourteen-day stay limit. Check the current forest-wide campfire ban before planning a fire.",
+     "capacity": "25 sites, 24 single and one double, most of them accessible. Reservable, with a couple held first-come first-served. Picnic tables, vault toilets, and a swimming hole on the river."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "southeast se route rte",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_guye_peak_r1",
+   "area_id": "wa_guye_peak",
+   "name": "West Face",
+   "discipline": "alpine",
+   "grade": "Grade II-III alpine rock",
+   "grade_system": "yds",
+   "grade_num": 8,
+   "pitches": 6,
+   "length_m": 610,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Dave Hiser and Mike Borghoff, 1960 (first winter ascent by Kit Lewis, 1975)",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jun-Oct",
+   "description": null,
+   "gear": [
+    "rock rack",
+    "helmet",
+    "rope"
+   ],
+   "hazards": [
+    "November 2021 rockfall damaged the lower pitches and stripped rock from the traverse area — expect loose blocks and altered belays versus older topos",
+    "mossy, dirty, and slippery rock, especially on lower pitches and after rain",
+    "avalanche danger on approach gullies and the East Gully in winter/spring — check NWAC before winter attempts",
+    "private-property access disputes on the old Alpental Community Club road approach"
+   ],
+   "verif": null,
+   "overview": "Guye Peak's steep, sun-exposed West Face rises directly above the Alpental valley and is one of the most visible alpine rock walls from I-90 at Snoqualmie Pass. It holds several moderate multi-pitch lines on generally featured but often dirty and loose Cascade rock, following discontinuous ramp and slab systems up to the summit ridge; the best-known specific line on this face is the Improbable Traverse. A November 2021 rockfall event stripped a large section of rock from the face and buried lower pitches in dirt and debris, changing conditions from older route descriptions.",
+   "beta": "From Alpental parking, make a rising traverse up talus to the far left (north) side of the west face (note private road access restrictions as of 2021). Ascend a very large ramp that traverses the entire face from north to south. The climbing starts up a steep crack/face (crux) for approximately 30 feet of low 5th class, then transitions to Class 4 for about half a rope length through rocks and alpine trees with exposure. Climbing continues via mixed scrambling and rock sections to the summit. Route involves significant high-consequence scrambling.",
+   "turnaround": "Because the crux traverse pitch is currently degraded by 2021 rockfall damage and the descent requires downclimbing exposed, loose terrain, turn back if the rock is wet, if daylight is limited, or if any party member is not confident downclimbing loose 5th-class terrain — Cascade afternoon thunderstorms are common in summer and this route has no quick retreat once past the traverse.",
+   "auto_generated": true,
+   "alpine_grade": "II-III",
+   "rock_grade": "5.8",
+   "ice_grade": null,
+   "gain_ft": 2000,
+   "loss_ft": 2000,
+   "dist_km": 4.67,
+   "max_angle": null,
+   "rappels": "Rappel from a tree anchor on the east side, then a short gully to bypass the true summit (single-rope rap; length depends on tree used)",
+   "commitment": "II",
+   "face": "West Face",
+   "permit": "Free self-issue Alpine Lakes Wilderness permit, May 15-Oct 31 (available at the trailhead box)",
+   "comms": "Cell coverage generally reliable at Snoqualmie Pass itself but can be spotty on the peak's north and east sides",
+   "descent": "Most parties descend via the South Rib/South Gully line or walk off toward the Cave Ridge saddle and back down to the Alpental/Snow Lake trailhead; some rappel from fixed anchors near the top of the Improbable Traverse pitch. Loose rock on the descent gullies is a real hazard — keep helmets on until back at the talus.",
+   "obj_haz": [
+    "Loose/crumbly rock (except the traverse pitch)",
+    "Rockfall",
+    "Ski-area avalanche control blasting nearby in winter"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.44542,
+     "lng": -121.42353,
+     "elev": 3120,
+     "name": "Snow Lake / Alpental Trailhead",
+     "note": "Large gravel lot off Alpental Rd (I-90 exit 52); Northwest Forest Pass required, unsigned West Face boot path leaves the Snow Lake Trail roughly 50 ft downhill from the trailhead.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take I-90 to Exit 52 and follow Alpental Road to its end at the Alpental/Snow Lake trailhead, around 3,100 to 3,120 feet. Park in the large gravel lot; a Northwest Forest Pass is required. The unsigned West Face climbers' path leaves the Snow Lake Trail about 50 feet downhill from the trailhead — stay on that path rather than any of the private roads through the Alpental development, which have been closed to climbers since 2021."
+    },
+    {
+     "lat": 47.44290083571428,
+     "lng": -121.41435713571428,
+     "elev": 4000,
+     "name": "Talus cone & rocky streambed below West Face",
+     "note": "Boot path climbs through slide alder onto an open talus cone, then a rising traverse crosses a rocky streambed (often dry) to the base of the face — helmet strongly advised, climber-kicked rockfall is common here.",
+     "type": "Hazard",
+     "distMi": 0.9
+    },
+    {
+     "lat": 47.44234102142857,
+     "lng": -121.41231872142856,
+     "elev": 4450,
+     "name": "Large tree-covered ramp",
+     "note": "Exit the streambed right onto a broad, rising ramp with full-grown trees that traverses the whole west face north to south; some parties belay this, most scramble it.",
+     "type": "Junction",
+     "distMi": 1.1
+    },
+    {
+     "lat": 47.442061114285714,
+     "lng": -121.4112995142857,
+     "elev": 4750,
+     "name": "Notch at top of the ramp",
+     "note": "Ramp ends at a notch; pass through it to climber's right into a wide gully where the crux pitch begins.",
+     "type": "Junction",
+     "distMi": 1.2
+    },
+    {
+     "lat": 47.44178120714285,
+     "lng": -121.41028030714284,
+     "elev": 4950,
+     "name": "Crux crack/face pitch",
+     "note": "Low 5th-class crack/face for ~30 ft easing to Class 4 through alpine trees for about half a rope length; belay just below the notch above.",
+     "type": "Hazard",
+     "distMi": 1.3
+    },
+    {
+     "lat": 47.44203,
+     "lng": -121.40875,
+     "elev": 5168,
+     "name": "Guye Peak summit",
+     "note": "True summit (5,168 ft); small register, open views over Snoqualmie Pass and across to Cave Ridge and Snoqualmie Mountain.",
+     "type": "Summit",
+     "distMi": 1.4
+    },
+    {
+     "lat": 47.446655,
+     "lng": -121.410962,
+     "elev": 4600,
+     "name": "Guye Peak–Cave Ridge saddle",
+     "note": "Standard walk-off descent drops from the north/true summit down to this saddle before continuing north to rejoin the Snow Lake/Cave Ridge trail system back to Alpental.",
+     "type": "Junction",
+     "distMi": 1.8
+    }
+   ],
+   "gpx": [
+    [
+     47.44542,
+     -121.42353
+    ],
+    [
+     47.44203,
+     -121.40875
+    ],
+    [
+     47.44290083571428,
+     -121.41435713571428
+    ],
+    [
+     47.44234102142857,
+     -121.41231872142856
+    ],
+    [
+     47.442061114285714,
+     -121.4112995142857
+    ],
+    [
+     47.44178120714285,
+     -121.41028030714284
+    ],
+    [
+     47.446655,
+     -121.410962
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 6.5,
+    "summitTimeHrs": 6.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "7:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "From the Alpental/Snow Lake trailhead, make a rising traverse up talus to the base of the West Face, then follow diagonal ramps and a short gully system through mostly 3rd/4th clas…",
+      "fromTo": "Car-to-car: talus approach, West Face gullies, summit",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Standard rock rack with cams and nuts; slings for blocky/vegetated terrain",
+   "what_to_bring": [
+    "rock rack",
+    "helmet",
+    "rope",
+    "approach shoes"
+   ],
+   "pro_tips": [
+    "Great quick alpine rock outing thanks to the short approach",
+    "Watch for loose rock and other parties above you"
+   ],
+   "watch_out": [
+    "loose rock",
+    "routefinding",
+    "parties above"
+   ],
+   "pro_needs": "Moderate rack; protection varies",
+   "best_season": "June to October",
+   "high_point_ft": 5169,
+   "aid_grade": null,
+   "approach": "From the Alpental/Snow Lake trailhead (~3,100-3,120 ft, I-90 Exit 52), pick up the unsigned climbers' path that leaves the pavement about 100 ft south of the signed Snow Lake trailhead sign. It fords a small stream almost immediately, then climbs steeply — dirt, roots, loose talus — straight up Guye's southeast flank with no real flat sections. After roughly 1 mile and about 1,000 ft of gain, the boot path breaks into the open at a junction where the right fork heads for Guye Peak/Cave Ridge and the left continues toward Commonwealth Basin and the PCT. Bear right, then make a rising traverse across a large, unstable talus field to the base of the west face — helmet on here, since climber-triggered rockfall is a real hazard on this talus, both from your own party and anyone above. Near the north end of the talus you'll cross a rocky streambed that's often dry by mid-to-late summer (your last realistic water before the climb). From there it's a short scramble up broken rock/slab to the base of the West Face route proper. Total approach is around 1.5 miles and 1,500-2,000 ft of gain, roughly 45 minutes to 1.5 hours depending on conditions and pace.",
+   "descent_text": "West Face tops out on Guye's south summit (where the route tops out and the register sits; GPS surveys suggest the north summit may be marginally higher) at ~5,169-5,172 ft alongside the middle and north summits, and the descent is a scramble/rappel traverse north along the connecting ridge rather than a reversal of the climbing line. From the south summit, follow the climber's path around the east (right) side of the middle summit to the notch between the south and middle summits. The drop into the gully here is loose, mossy class 3/4 slab; most parties rappel rather than downclimb it. The total rappelling on this route comes to roughly 100 ft, enough that many groups get by with an arm-wrap/hip rappel off a sling rather than a full rap setup, though bringing a rope and device is still the sane default. Important: there is a tree at the top of the gully between the south and middle summits that climbers should specifically NOT rappel from (flagged as unsound/inadvisable in route notes) — use the established sling/anchor lower or to the side instead. Past the middle-summit notch, descend the gully and slabs to the right (east side) to go around the north summit, then scramble up an easy gully to the notch on the north summit's north side. From there, a well-defined scrambler's trail leads down past a small pond, then west (left) back to the Alpental parking lot. Bring a single 30m+ rope and rap device even though the raps are short — anchor tat and rock quality are inconsistent year to year, and the loose gully rock is a real hazard for parties above/below each other. Expect 1 rappel as the norm on this route (occasionally a short second one depending on exact line through the middle/north notch), well short of full pitch length.",
+   "bail": "Retreat is straightforward on the lower pitches by rappelling/downclimbing back toward the talus cone from natural (tree) anchors. Once committed across the crux traverse pitch, it is generally easier to continue to the tree-rappel/gully descent on the east side than to reverse the exposed traverse.",
+   "pitch_detail": [
+    {
+     "grade": "4th-5th class",
+     "notes": "Roughly 300 ft of low-quality, low-angle slab/4th-5th class terrain leading to the 'Lunch Ledge' belay.",
+     "pitch": "1-3"
+    },
+    {
+     "grade": "5.8",
+     "notes": "The route's namesake pitch and best rock; climb ~5.8 moves out right, protected by old fixed pitons. Since a Nov 2021 rockfall, the far end now involves an unprotected 5.9-10- downclimb — verify current condition before committing.",
+     "pitch": "4 (Improbable Traverse)"
+    },
+    {
+     "grade": "4th class",
+     "notes": "Downclimb off the far end of the traverse to a 4th-class ramp, then ascend the ramp toward the summit approach; many parties bypass the loose, exposed true-summit ridge.",
+     "pitch": "5-6"
+    }
+   ],
+   "itinerary": {
+    "cal": "Access note: since 2021 the Alpental Community Club has closed its private roads to climbers, so parties must use the newer non-established talus approach; climb June-October (west face gets full afternoon sun, so an early start beats the heat).",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Alpental/Snow Lake trailhead, make a rising traverse up talus to the base of the West Face, then follow diagonal ramps and a short gully system through mostly 3rd/4th class terrain with one ~30-ft low-5th-class crack/face crux near the top. Descend via the South Rib/Cave Ridge saddle back to the trailhead.",
+      "hours": 6.5,
+      "miles": 2.9,
+      "title": "Car-to-car: talus approach, West Face gullies, summit",
+      "gainFt": 2000,
+      "lossFt": 2000,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "7:00 AM",
+        "label": "Leave Alpental/Snow Lake trailhead",
+        "detail": "Park at the Snow Lake TH (~3,120 ft); use the non-established talus approach that avoids the private Alpental Community Club roads."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Reach base of talus cone / start of face",
+        "detail": "Rising traverse up talus to the north side of the West Face."
+       },
+       {
+        "time": "+2.5 hr",
+        "label": "Class 4 gully and ramp system",
+        "detail": "Scramble/low-5th terrain leading toward the summit gully."
+       },
+       {
+        "time": "+3.5 hr",
+        "label": "Crux: ~30 ft low 5th class crack/face",
+        "detail": "Short technical section, then eases back to 4th class to the top."
+       },
+       {
+        "time": "+4 hr",
+        "label": "Summit (5,169 ft)",
+        "detail": ""
+       },
+       {
+        "time": "+4.5 to 6.5 hr",
+        "label": "Descend via South Rib / Cave Ridge saddle",
+        "detail": "Walk off back toward the Snow Lake trailhead."
+       }
+      ],
+      "objective": "Summit Guye Peak via the West Face"
+     }
+    ],
+    "totalNote": "A single, roadside day: about 6-7 hrs car-to-car for ~2,000 ft gain, with one short low-5th-class crux near the summit."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass or America the Beautiful/Interagency Pass required at the Snow Lake/Alpental trailhead ($5 single-day pass or $30 annual if you don't have one); this is separate from the Summit at Snoqualmie ski resort's own paid parking, which applies to winter ski-season lots, not the Forest Service trailhead.",
+    "notes": "The Alpental approach road crosses private Alpental Community Club land — a rerouted public approach to the talus field is used following a 2021 access dispute; check current beta before relying on the old direct approach.",
+    "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party.",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit required May 15-Oct 31, available at the trailhead box.",
+    "closures": "Alpental Community Club private roads ('...Strasse' names) above the ski area are off-limits to public foot and vehicle access as of 2021 - use the Snow Lake trailhead boot path approach instead.",
+    "seasonal": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "group_limit": 12,
+    "landManager": "Mount Baker-Snoqualmie National Forest, Snoqualmie Ranger District (within the Alpine Lakes Wilderness boundary)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness",
+    "parking_pass": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass.",
+    "passRequired": "Northwest Forest Pass / America the Beautiful Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the Alpental trailhead kiosk. A Northwest Forest Pass is needed to park, and Denny Creek and Tinkham campsites are reserved on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "Alpental Road / I-90 Snoqualmie Pass",
+    "status": "paved, open year-round to the ski area parking lot",
+    "driveNote": "Direct access from Snoqualmie Pass exits off I-90",
+    "seasonalGate": null
+   },
+   "climate": {
+    "fall": "Cooling, wetter by October.",
+    "spring": "Snow can linger in the approach streambed into May-June.",
+    "summer": "Warm, drier — the main climbing season; full afternoon sun on this west-facing route.",
+    "winter": "Heavy snow; active avalanche control run by the adjacent Alpental ski area.",
+    "typical": "Summer-only rock climbing. The low-elevation, south/west-facing lower face melts out earlier than most Cascade alpine routes, but upper gullies and the notch between summits can hold snow into June. Afternoon showers and thunderstorms are common in the shoulder seasons and quickly make the mossy lower pitches greasy.",
+    "forecastZone": "NWAC Snoqualmie Pass zone"
+   },
+   "emergency": {
+    "notes": "Cell coverage is generally reliable at Snoqualmie Pass itself but can be spotty on the peak's north and east sides.",
+    "county": "King",
+    "rangerStation": "Snoqualmie Ranger District (North Bend Office), 902 SE North Bend Way Bldg 1, North Bend, WA 98045, (425) 888-1421",
+    "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA, 24-hr ED, (425) 831-2300 — a critical-access/Level 5 trauma facility; serious trauma or technical-rescue patients are typically flown or transported on to Harborview Medical Center (Level I trauma) in Seattle.",
+    "sheriffDispatch": "911 (King County Sheriff Search & Rescue coordinates technical rescues)"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends June-August, including Mountaineers Basic Climb outings",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Moderate - one of the more frequently climbed moderate lines on Guye given the very short access, though generally less trafficked than the Improbable Traverse specifically"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "very short approach directly from Alpental / Snoqualmie Pass parking",
+     "packWeight": "light rack, roughly 20 lbs"
+    },
+    "approachTime": "well under 1 hr from Alpental parking",
+    "requiredSkills": [
+     "multi-pitch leading up to low 5th class",
+     "routefinding on featured but occasionally loose rock",
+     "awareness of rockfall from parties climbing above",
+     "standard anchor building and rappelling"
+    ],
+    "experienceLevel": "Solid alpine rock follower/leader comfortable with Grade II-III terrain and routefinding on sometimes-loose rock; a reasonable objective for climbers building toward harder alpine leads"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "June through October, with July-September the most reliably dry stretch",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Best window once dry",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Wet/snowy and not fully in season yet",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Best window once dry",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Good until wet weather returns",
+      "status": "good"
+     },
+     "September": {
+      "reason": "Conditions remain favorable heading into fall",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Snoqualmie Pass alpine rock; quick to access but weather-sensitive given the pass's wet reputation",
+     "probability": "Afternoon thunderstorms possible in peak summer; fall brings an increasing chance of wet-weather systems moving in"
+    },
+    "exposure": "Moderate - exposure builds through the upper face; routefinding, exposure and loose rock are the dominant risks, worsened when other parties are climbing above",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer rock route",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No crowd/traffic data specific to the West Face as distinct from the Improbable Traverse - estimate is inferred from Guye Peak's overall popularity and short approach",
+     "No route-specific avalanche or NWAC advisory exists (dry summer rock route)",
+     "Partner skill requirements are inferred from the on-file grade and hazards rather than a dedicated skills source",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.442945,
+    "peakLng": -121.409145,
+    "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+    "trailheadLat": 47.44542,
+    "trailheadLng": -121.42353,
+    "trailheadDirection": "From the Alpental / Snow Lake Trailhead (~3,100 ft), at the end of Alpental Road off I-90 Exit 52"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": "A Mountain Project page titled 'West Face' (route ID 106324866) that surfaces in search results for this name is NOT Guye Peak's West Face — it is a 5.11+ route on 'North Peak' in the Gunsight Range, Glacier Peak Wilderness. That page's data (grade, FA by Jim Nelson/Carl Dietrich, etc.) was excluded entirely and must not be conflated with this route.",
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "loop",
+   "approach_variants": [
+    {
+     "name": "Talus cone below the west face",
+     "notes": "The west face rises above the houses on the Alpental access road. Every road along it carrying a 'Strasse' name is private, and the Alpental Community Club has since 2021 prohibited both driving and walking on them; climbers report being confronted. The talus cone under the face therefore has to be reached by a line that does not cross private land, and there is no established or signed path to it — this is the part of the approach with no fixed answer.\n\nOnce on the talus, make a rising traverse up toward the far left (north) end of the west face's talus field. At the top end of the field there is a rocky stream bed, which may be dry depending on the season; that streambed marks the north end of the talus and is the last realistic water.\n\nWear a helmet on the talus. Climber-triggered rockfall here is a real hazard, from your own party as much as from anyone above.",
+     "season": "Jun-Oct",
+     "hazards": [
+      "no established approach to the talus - the direct approach crosses private roads that residents forbid, and climbers have been confronted",
+      "climber-triggered rockfall on the talus and on the mossy slabs",
+      "a couple of hundred feet of loose dirty slab scrambled unroped before the climbing starts",
+      "generally poor rock quality on the face",
+      "no reliable water past the streambed at the north end of the talus"
+     ],
+     "baseFinding": "From the top of the talus cone you scramble a couple of hundred feet of loose, mossy, dirty slab before any roped climbing. That dirty scrambling is part of the approach, not the route — the base of the climb is where it ends against the face proper.\n\nThe first pitch wanders about 100 ft of low fourth to low fifth class to a TREE belay. The tree is the confirmation. If you are 100 ft up and there is nothing to belay off, you are not on the line.\n\nNegative marker: the rocky, usually dry streambed marks the far NORTH end of the talus field. If you are south of it and the wall above you is short and clean with bolts on it, you have drifted round to the sport climbing at the base of Guye's south wall and are on a different aspect of the mountain.\n\nApart from the traverse pitch higher up, the rock on this face is generally poor and loose. Loose rock low down is normal here and is not evidence you are off route."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 2283,
+     "name": "Denny Creek Campground, I-90 exit 47",
+     "role": "main",
+     "type": "camp",
+     "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Tooth or Chair Peak day, since it needs no wilderness permit and no early-morning decisions. Sites go quickly on summer weekends; book ahead rather than driving up hoping. In winter this option disappears entirely and you are back to sleeping in the valley towns or driving up in the dark.",
+     "water": "Potable water provided during the operating season.",
+     "permit": "Standard campground fee, reserved through recreation.gov up to six months ahead; a small number of first-come sites. No wilderness permit needed, and no trailhead pass required to sleep here. Seasonal — closed outside the summer months, so it is not an option for a winter climb.",
+     "capacity": "About 33 sites, most reservable, including electric and double sites plus one group site"
+    },
+    {
+     "elev": 1535,
+     "name": "Tinkham Campground, I-90 exit 42",
+     "role": "main",
+     "type": "camp",
+     "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next morning, which matters little against a ten-hour climbing day. Like every developed site on this stretch of I-90 it is a summer-only option. It sits well below the pass, low in the South Fork valley.",
+     "water": "Water availability here varies by year and is not guaranteed — confirm before relying on it and carry enough for the night otherwise.",
+     "permit": "Campground fee via recreation.gov; seasonal operation only, closed outside the summer months. No wilderness permit or trailhead pass involved.",
+     "capacity": "Small forested Forest Service campground, reservable sites"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "west face",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "area_id": "wa_davis_peak_nc",
+   "name": "North Face",
+   "discipline": "alpine",
+   "grade": "5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 7,
+   "length_m": 930,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Dallas Kloke and Bryce Simon, July 1976. First winter ascent (to the summit ridge): Stuart Taylor and Ade Miller, March 13, 2005",
+   "lat": null,
+   "lng": null,
+   "aspect": "NE",
+   "season": "Feb-Apr (frozen); FA was July",
+   "description": null,
+   "gear": [
+    "Single rope",
+    "Full set of wires/nuts",
+    "Knifeblade pitons (the key protection)",
+    "Lost Arrow pitons",
+    "Cams #1-#3.5 Friends",
+    "Short and medium ice screws",
+    "Picket for the upper snow",
+    "Two technical ice tools",
+    "Crampons",
+    "Helmet",
+    "Slings and tat for improvised anchors",
+    "Bivouac kit for a camp at 4,000 ft"
+   ],
+   "hazards": [
+    "Large, sometimes loose chockstones in the summit gully.",
+    "A serious, committing alpine rock route on one of the biggest, least-documented walls in the North Cascades."
+   ],
+   "verif": null,
+   "overview": "A serious, rarely-repeated alpine rock route up Davis Peak's huge north-facing cirque wall: four pitches up a prominent central chimney system, then three pitches out onto an exposed rib of delicate face climbing, finishing through a gully choked with large chockstones to the summit.",
+   "beta": "First climbed by Andy Cairns and Bryan Burdo (Affiliated Climbers of the Montlake Erratic). The route climbs the northern cirque via a central chimney system — possibly a melted-out variant of an earlier 1974 Kloke-Simon line — for four pitches, then exits left onto an exposed rib for three pitches of delicate face climbing, before re-entering a gully with large ('monstrous') chockstones leading to the summit. Part of the first ascent was done by moonlight.",
+   "turnaround": "Make the decision on the mid-face snowfield, before you commit to the crux pitches. Ask whether you can be established above the chockstone with enough daylight left to climb the upper couloir AND get the top 1,500 ft of the 6,000-ft south-side descent done in the light. If the answer is no, go back down to the glacier while downclimbing is still an option. Two things worsen steadily through the day and neither is negotiable: the cornices over the couloir, and the south-facing descent snow, which the 2005 party found already turned to mush by the sun in mid-March. Getting into the timber after dark is what turns this climb into an epic.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": 4000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "No fixed anchors and no established rappel line. The rock is compact enough that the 2005 party wrote that 'rap anchors aren't going to be leaping out at you' — retreating from mid-face means leaving pins. On topping out they rappelled from pitons off the top of the couloir onto the SE ridge and then walked the south side down. Carry a pin rack and tat if you want the option of going back down the face.",
+   "commitment": "IV",
+   "face": "Northeast Face — the 5,250-ft wall above Stetattle Creek",
+   "permit": null,
+   "comms": "Assume no coverage. Both trailheads sit deep in the Skagit River gorge below the Gorge and Diablo dams, and the climb itself is on a north-facing wall boxed in by Sourdough Mountain and the Pickets; North Cascades National Park advises that cellular service is limited or absent through its backcountry. A satellite messenger or PLB is the practical option. Seattle City Light's Newhalem and Diablo company towns are the nearest places to raise help by telephone, and the Wilderness Information Center at Marblemount is the nearest staffed park facility. Note that the timber on the descent is dense enough that the 2005 party could not even see the lights of the dam from it.",
+   "descent": "Over the top and down the far side: rappel from the top of the couloir onto the SE ridge, then descend the entire south slope roughly 6,000 ft to the Gorge Creek bridge on SR 20. Do not plan on reversing the face.",
+   "obj_haz": [
+    "cornice collapse",
+    "avalanche",
+    "rockfall",
+    "icefall",
+    "runout / poor protection",
+    "compact unprotectable slab",
+    "bergschrund and moat",
+    "glacier travel / crevasses",
+    "river ford",
+    "burn-scar deadfall",
+    "benighted descent"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.7171,
+     "lng": -121.15,
+     "name": "Stetattle Creek Trailhead, Diablo (approach; currently closed by fire damage)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": null
+    },
+    {
+     "lat": 48.72945,
+     "lng": -121.20281,
+     "elev": 7054,
+     "name": "Davis Peak summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 7054
+    },
+    {
+     "lat": 48.7118,
+     "lng": -121.2002,
+     "elev": 1096,
+     "name": "Gorge Creek bridge, SR 20 (~MP 122) — descent exit and shuttle car",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 1096
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": 4.5,
+    "approachTimeHrs": 8.5,
+    "recommendedStart": "Leave the road at first light on the approach day so you reach the glacier-toe bivouac with time to look at the face; start up the glacier at first light on the climbing day so the couloir is done and the south-side descent begun before afternoon sun softens everything."
+   },
+   "detailed_rack": "Directly from the 2005 gear notes: a full set of wires, knifeblades, lost arrows, and Friends/cams from #1 to #3.5, plus 'a picket might have been nice.' Add a few short and medium ice screws — stubbies specifically, since the useful placements were in thin ice under an overhang and in the ice above the chockstone — a single rope, two technical ice tools and crampons. The pitons are not optional: the rock is compact and the party wrote that they were later 'very glad of the knifeblades' on the runout bulge below the chockstone. Belays were improvised from a cam, a stubby screw and a doubtful horn. Bring slings and tat for rappel anchors you may have to leave behind.",
+   "what_to_bring": [
+    "Compass and USGS 7.5' Diablo Dam quad — the descent timber is too thick to see the dam lights, and a bearing error puts you back in Stetattle Creek",
+    "Headlamp with spare batteries; the 2005 party credited a bright headlamp with saving them repeatedly",
+    "Altimeter or GPS — Beckey's stated couloir-top elevation is wrong by roughly 500 ft",
+    "Footwear or a plan for the Stetattle Creek ford",
+    "Water carry for the south-side descent, which is dry",
+    "Satellite messenger or PLB",
+    "Light bivouac gear, stove and no-cook backup",
+    "North Cascades wilderness permit for the overnight",
+    "Shuttle-car keys — the climb finishes four road miles from the approach trailhead"
+   ],
+   "pro_tips": [
+    "This is a rarely-repeated, serious objective on one of the biggest walls in the North Cascades; modern route-finding beta is thin, so treat any description (including this one) as provisional."
+   ],
+   "watch_out": [
+    "The chimney system may follow (in a melted-out form) an earlier 1974 Kloke-Simon line, per the first-ascent report — expect variable/unconfirmed conditions on a rarely-repeated route.",
+    "Chockstones in the final gully are described as 'monstrous' — test them before committing weight."
+   ],
+   "pro_needs": "Poor to marginal throughout. The lower band is compact gneiss and was simul-climbed with long gaps between pieces; the crux traverse across a partially iced slab was described as terrain where 'falling would not be good, so he thoughtfully doesn't'. Pins are the primary protection. The one properly protected move on the route is the chockstone itself — a cam below the roof and a stubby screw in the good ice on the left. On the upper couloir and rib, expect simul-climbing with occasional gear and very large exposure. Nothing about this route rewards a cam-only rack.",
+   "best_season": "Both ends of the calendar have been used. The first ascent was in July, so the line goes as a summer rock-and-snow route; the only recorded winter ascent was 13 March 2005. Late winter through early spring is the more attractive window: the couloir is filled and frozen, the lower rock band takes hooks, thin ice and turf instead of being bare compact slab, the bergschrund is filled in, and the slide alder on the approach has no foliage. Against that, the snowpack must be settled — the whole route sits under the summit cornices — and the Stetattle Creek ford is unpleasant in any month. Consult the NWAC West Slopes North forecast before committing. Note that the approach trail is presently closed by fire damage regardless of season.",
+   "high_point_ft": 7054,
+   "aid_grade": null,
+   "approach": "Approached via Davis Peak's northern cirque, gained from the Gorge Creek/Stetattle Creek drainages north of the peak; beyond that the first-ascent account gives no detailed trailhead-to-base mileage.",
+   "descent_text": "The 2005 party's words: 'Stuart doesn't fancy descending to the river any more than I do. So, one way or another; we're going down the other side.' That is the correct call — the northeast face has no easy retreat, and the south side, though long and unpleasant, is walkable.\n\nFrom the top of the couloir at about 6,700 ft, rappel from pitons onto the SE ridge (or continue up the ridge to the 7,054 ft summit first if the clock allows). Descend the south side following the South Slope and Ridge route in reverse: down the ridge crest, past the 5,720+ ft saddle, over or around Point 5872, and then straight down the sustained trackless forest of the south slope to the highway.\n\nThe key is daylight. The 2005 party got the upper 1,500 ft done in the light and credit that with saving them; it let them avoid all the cliff bands and the rappelling-off-trees that comes with getting them wrong. They reached the top of the timber just after dark, found the forest thick but not as bad as feared — no cliffs and not much slide alder on their line — and took four hours from there to the road. The timber is dense enough that they never saw the lights from the dam the whole way down; the only lights they saw were a car's, a few hundred feet above the highway. A bit of compass work is what kept them from ending up back in Stetattle Creek.\n\nYou finish at the Gorge Creek bridge, about four highway miles from where you parked in Diablo. Arrange a shuttle car — retrieving the truck cost the 2005 party another half hour on foot at the end of a two-day climb.",
+   "bail": "There is no good bail from the northeast face. Below the mid-face snowfield you can reverse the approach pitches (they were simul-climbed, so this means downclimbing runout terrain) and walk back down the glacier to the bivouac. Once you are traversing the snowfield toward the couloir entrance, retreat means building rappel anchors in compact gneiss that gives up almost nothing — expect to leave a pin rack. Above the chockstone, 'up' is unambiguously the answer; the route tops out on a walkable, if very long, descent side. Treat the mid-face snowfield as the last honest decision point. If you bail from the bivouac instead, reverse the rib and the ford back to the Stetattle Creek trail.",
+   "pitch_detail": [
+    {
+     "grade": "5.9-5.10",
+     "notes": "Four pitches up the prominent central chimney splitting the north face.",
+     "pitch": "1-4",
+     "lengthM": null
+    },
+    {
+     "grade": "5.10",
+     "notes": "Exit left onto an exposed rib for three pitches of delicate face climbing, then a gully with large chockstones to the summit.",
+     "pitch": "5-7",
+     "lengthM": null
+    }
+   ],
+   "itinerary": "Two days, one bivouac. Day 1: sleep near Diablo (there is a 'No Camping' sign the 2005 party parked next to; the legal option is a permitted backcountry site or a night in the Newhalem campground). Leave at first light, hike the Stetattle Creek trail about 2 mi / 3 km, drop 200 ft to ford the creek opposite Davis, then bushwhack and scramble the 3rd/4th-class rib — roping up for the slabby sections — through a slide-alder band above the cliffs to a bivouac on flat snow at the toe of the glacier, 4,000 ft. The 2005 party had bivy coffins dug and a brew on by late afternoon, roughly eight or nine hours from the road, with running water at the site. Spend the evening looking at the face and deciding whether the couloir will go.\n\nDay 2: up the glacier at first light, gear up at the bergschrund, climb the lower band, the snowfield, the crux pitches and the upper couloir to the summit ridge near 6,700 ft. Tag the summit if you have time. Then commit to the full south-side descent — 6,000 ft — aiming to be below the cliff bands before dark, and walk or shuttle the four road miles back to Diablo.",
+   "access": {
+    "fees": null,
+    "permit": null,
+    "closures": "NPS North Cascades fire closures page, last updated August 28, 2026: 'Stetattle Creek Trail' is closed under long-term post-fire hazard closures ('hazards from falling dead trees and other ground hazards resulting from wildfires').",
+    "landManager": "National Park Service — North Cascades National Park / Ross Lake National Recreation Area",
+    "passRequired": null
+   },
+   "road": {
+    "name": "SR 20 (North Cascades Highway)",
+    "status": "Paved and open year-round as far as Newhalem, Gorge Creek and Diablo; plowed to the seasonal gate. Approach parking for this route is at the Diablo townsite, milepost 126.",
+    "driveNote": "Turn into Diablo at milepost 126. Older directions run you to the northernmost street and across a lawn to find the unmarked Stetattle Creek trail on the east bank of the creek; this is a quiet residential neighbourhood, so bypass the houses and drive the lakeshore past the powerhouse to the large public parking lot with restrooms built for the Seattle City Light dam tours, and walk the extra distance. Since the climb finishes at the Gorge Creek bridge at about milepost 122, leave a shuttle car there.",
+    "seasonalGate": "WSDOT closes SR 20 for the winter between milepost 134 (Ross Dam Trailhead) and milepost 171 (Silver Star gate), moving the gates down to milepost 120 (Newhalem) and milepost 178 (Early Winters) in deep winter conditions. Both Davis Peak access points are normally west of the gate and reachable year-round, but check WSDOT before a winter attempt — in 2026 the section between milepost 130 and milepost 156 stayed shut well past the usual reopening because of major storm damage."
+   },
+   "climate": {
+    "fall": "Cool, dry and often stable in a good year, but the couloir is at its most stripped and the days are short for a two-day climb finishing with a 6,000-ft forest descent.",
+    "spring": "The most attractive window for the face. Late winter and early spring keep the couloir filled and frozen, the lower rock band icy rather than bare slab, the bergschrund closed, and the slide alder on the approach rib leafless. Watch for wet-loose and wet-slab release on the sun-hit south-facing descent by early afternoon.",
+    "summer": "The couloir loses its ice; the first ascent went in July, so the line still goes as a rock-and-snow route at mid-fifth class on the lower band. The south-side descent becomes an oven and its water sources dry up, and the approach brush is at full leaf.",
+    "winter": "Ascents have been made. The one recorded winter ascent was 13 March 2005; a party on the south side climbed in January and recorded -22F at the 5,720-ft saddle. Expect deep snow, very large cornices along the summit ridge, and daylight that is the limiting factor on the descent.",
+    "typical": "West-side maritime North Cascades. Pacific fronts drive heavy orographic precipitation onto these slopes, giving deep winter snow and significant rain in the other seasons. The base of the mountain is only about 1,100 ft above sea level while the summit is 7,054 ft, so the snowline moves through nearly 6,000 ft of relief and conditions on the approach can be completely different from conditions on the face.",
+    "forecastZone": "NWAC West Slopes North (avalanche); NOAA/NWS Seattle point forecast for the Diablo Dam quadrangle"
+   },
+   "emergency": {
+    "notes": "Leave an itinerary with someone and be specific about which Davis Peak you mean — there is another one near Cle Elum, and the two are 90 miles apart. Because you approach from Diablo (MP 126) and descend to Gorge Creek (MP 122), a shuttle car left at the wrong end is itself a hazard. There is no cell coverage; carry a satellite messenger. Your permit itinerary is the record rangers will work from.",
+    "county": "Whatcom County, Washington. The peak and both access points lie inside the North Cascades National Park Complex, so the National Park Service leads search and rescue.",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Road, Marblemount WA 98267 — 360-854-7245 (park main line 360-854-7200). Open roughly mid-May to mid-October; in the off-season contact the park headquarters in Sedro-Woolley.",
+    "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley WA 98284 — 360-856-6021, 24-hour emergency department. It is well down SR 20 to the west of Newhalem.",
+    "sheriffDispatch": "911. Whatcom County Sheriff's Office non-emergency dispatch: 360-676-6911."
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "north face",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [
+  {
+   "route": "wa_davis_peak_nc_north_face_burdo_cairns"
+  }
+ ],
+ "deleted": [
+  "wa_lewis_creek_route"
+ ]
+}

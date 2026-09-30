@@ -1,0 +1,265 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_angeles_standard",
+   "verdict": "confirmed",
+   "resolution": "leave (camp-card sentence corrected)",
+   "summary": "The Heart o' the Hills camp card now gives the Switchback Trail climb as about 700 ft in six-tenths of a mile to the junction with the trail from Hurricane Ridge, matching the route's own approach and beta.",
+   "evidence": "The trail association's Mount Angeles and Klahhane Ridge pages both give 700 ft of gain in 0.6 mi on the Switchback Trail to the junction with the Mount Angeles trail; the 1,500 ft / 1.5 mi figure is for continuing to Victor Pass, which is not the summit route. The row's beta and approach already use 700 ft in 0.6 mi and a half-mile westward leg to the climbers' path. The camp card's \"close to 1,000 ft in under a mile to Klahhane Ridge\" matches neither segment.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-angeles",
+    "https://www.wta.org/go-hiking/hikes/klahhane-ridge",
+    "https://www.hikingproject.com/trail/7001906/switchback-trail"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_mount_angeles_standard",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "where the Switchback trail gains close to 1,000 ft in under a mile to Klahhane Ridge, then a short westward stretch and a spur onto the unmaintained final ridge",
+     "replace": "where the Switchback trail gains about 700 ft in six-tenths of a mile to its junction with the trail from Hurricane Ridge, then about half a mile west along that trail and a spur onto the unmaintained final ridge"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_mount_duckabush_standard",
+   "verdict": "confirmed",
+   "resolution": "leave (camp card, area elevation and two source mentions corrected)",
+   "summary": "Fixed the Marmot Lake camp card's wrong 1.1-mile distance above Upper Duckabush camp, raised the peak's header elevation from 6,232 to 6,254 ft, and removed two phrases in the approach that named where facts came from.",
+   "evidence": "A trail-crew log gives Upper Duckabush Camp at 2,700 ft and Marmot Lake at 4,400 ft (1,700 ft of gain) and shows the 1.1 mi figure is only the final leg from the upper Duckabush ford to the lake, the ford itself being 2.2 mi beyond the camp; the row's own waypoints put the camp and lake about 3.5 mi apart, so \"1.1 miles\" is dropped and the 1,700 ft kept (a guiding log also gives 2,694 ft and 4,400 ft). The main (west) summit is 6,254 ft (NAVD88) at 47.6305,-123.3616, which is the area record's own coordinate and the route's high_point_ft and summit pin; 6,232-6,233 ft is the lower East Peak. The class question (2-3 vs 4) is not part of this item and stays open.",
+   "sources": [
+    "https://www.bchw.org/files/olympic-national-parks-upper-duckabush-and-home-sweet-home-trails-20240823.pdf",
+    "https://mbguiding.ca/skokomish-upper-duckabush-olympic-national-park/",
+    "https://en.wikipedia.org/wiki/Mount_Duckabush",
+    "https://peakvisor.com/peak/mount-duckabush.html",
+    "https://peakery.com/mount-duckabush-east-peak-washington/",
+    "https://www.nps.gov/olym/planyourvisit/duckabush-river-trail.htm"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_mount_duckabush_standard",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "and roughly 1.1 miles and 1,700 ft above the Upper Duckabush camp",
+     "replace": "and a steep climb of about 1,700 ft above the Upper Duckabush camp"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_duckabush_standard",
+     "column": "approach",
+     "path": [],
+     "find": " (the Duckabush/O'Neil Pass corridor runs 16+ miles from the park boundary alone, per NPS)",
+     "replace": " (the Duckabush/O'Neil Pass corridor runs 16+ miles from the park boundary alone)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_duckabush_standard",
+     "column": "approach",
+     "path": [],
+     "find": "both listed as Grade I, Class 4 lines in the regional climbers' guide.",
+     "replace": "both Grade I, Class 4 lines."
+    },
+    {
+     "op": "area_set",
+     "area_id": "wa_mount_duckabush",
+     "column": "elevation_ft",
+     "expect": 6232,
+     "value": 6254
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "verdict": "confirmed",
+   "resolution": "leave (camp-card sentence corrected)",
+   "summary": "The Lake of the Woods camp card no longer says a parking pass is needed; the Monument Creek trailhead has no parking fee, only a free self-issue wilderness permit.",
+   "evidence": "The Forest Service page for the Monument Creek Trailhead says no fees are required at the site and a free permit is filled out at the trailhead; the trail association's hike page lists the parking pass as \"None\" and the permit as a free self-issue wilderness permit. The row's access.parking_pass already agrees.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/monument-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/monument-creek"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_monument_peak_pasayten_scramble",
+     "column": "bivy",
+     "path": [
+      0,
+      "permit"
+     ],
+     "find": "Northwest Forest Pass or Interagency pass to park.",
+     "replace": "No parking pass or fee is needed at this trailhead."
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "verdict": "confirmed",
+   "resolution": "leave (camp-card sentence corrected)",
+   "summary": "The Easy Pass trailhead camp card now says dogs are not allowed at Easy Pass or beyond it, matching the route's access rules.",
+   "evidence": "The park's Easy Pass page states pets are not allowed at Easy Pass or anywhere else in the national park; the Forest Service Easy Pass trail page says that once you cross over the pass you are in the national park and that dogs are not allowed in the park. The camp card's \"Dogs may come only as far as the pass\" implies dogs may reach the pass itself; access.rules already says no dogs including at Easy Pass.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/easy-pass-trail.htm",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/easy-pass-trail"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_mount_arriva_scramble",
+     "column": "bivy",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "Dogs may come only as far as the pass, because the top of the pass is the national park boundary.",
+     "replace": "Dogs are not allowed at Easy Pass or anywhere beyond it, because the national park begins at the pass."
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A (the Eye Col line from Crescent Creek Basin); grade left pending a second source",
+   "summary": "Keep this as the moderate route up the south gullies to the Eye Col and the summit block above it, and take off the first-ascent credit, description, face and hazards that belong to the separate, much harder 2003 east arête; the headline grade (still II 5.10a) needs one more source before it can be lowered.",
+   "evidence": "Two lines are fused. (A) The Eye Col line: the Eye Col is the notch between East and West Twin Needle; a 2009 party climbed East Twin Needle directly from the col (crux a 5.7 hand crack, half iced), a 2022 party downclimbed and rappelled from the summit to the Eye Col and then down the south-facing gullies to Crescent Creek Basin, and a 2023 party reaching the col cites a 1981 Roper/Kroeker ascent by that gully and describes the chockstone pitches. The row's name, approach, itinerary, approach variant, climbing_route[0], descent, pro_needs and partner requirements all describe A. (B) The 2003 enchainment credits \"East Twin Needle, southeast ridge/face, II 5.10a\" as a first ascent, climbed on the tremendously exposed east arête while traversing from the east; that is where grade, rock_grade, grade_num, fa, beta, face, aspect and obj_haz came from. A is the better documented line and matches the name, so B-only fields are rewritten and fa is cleared (no source names a first-ascent party for the Eye Col line). Crescent Creek Basin is on the south side of the crest (the 2009 and 2022 parties reach the north side only by crossing the Ottohorn-Himmelhorn col), so the camp card is corrected. NOT changed: grade \"Grade II, 5.10a\", rock_grade 5.10a, grade_num 10.25 and commitment II. Only one source I read grades the Eye Col line (5.7), and a lower grade needs two; a second account grading the summit block from the Eye Col would settle it (then grade, rock_grade and grade_num to 5.7, and commitment reviewed). The overview's 1932 first-ascent sentence and dist_km remain the earlier open items.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/twin-needles/",
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "https://onehikeaweek.com/2023/08/28/west-twin-needle/",
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "fa",
+     "path": [],
+     "expect": "Wayne Wallace, Colin Haley, and Mark Bunker, July 27, 2003 (Southern Picket Range enchainment)",
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "beta",
+     "path": [],
+     "expect": "Established on July 27, 2003 by Mark Bunker, Colin Haley, and Wayne Wallace during their four-day, 14-summit Complete Southern Pickets Traverse (rated overall VI 5.10+, ~50 technical pitches), this was one of only three genuine first ascents on that trip (with The Rake and Himmelhorn). Wallace described the climbing as requiring some traversing around the ridgecrest and 'still very difficult ascending the tremendously exposed east arête.' It is graded II 5.10a. Because it was climbed mid-enchainment rather than as a stand-alone objective, no independent topo or pitch-by-pitch account has been published; parties repeating it do so almost exclusively as part of a Southern Pickets traverse rather than as a dedicated route.",
+     "value": "The South Route climbs East Twin Needle from Crescent Creek Basin by the loose south-facing gullies to the Eye Col (about 7,400 ft), the notch between East and West Twin Needle. Small chockstones low in the gully are scrambled past; the larger ones higher up are fifth class and are usually pitched, and a short scree walk finishes at the col. From the col the route climbs the steep summit block directly above, with a short hand-crack crux near the top that can hold ice early in the season; the summit is small, with a sheer drop to the east. Descend by downclimbing and rappelling back to the Eye Col, then down the south gullies with several short rappels off natural anchors. This is a different climb from the hard southeast ridge/face (east arête) put up during the 2003 Southern Pickets enchainment, which is reached along the crest from the east and is not gained from the Eye Col."
+    },
+    {
+     "op": "set",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "face",
+     "path": [],
+     "expect": "Southeast ridge / east arête",
+     "value": "South gullies to the Eye Col, then the summit block above it"
+    },
+    {
+     "op": "set",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "aspect",
+     "path": [],
+     "expect": "SE",
+     "value": "S"
+    },
+    {
+     "op": "set",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "obj_haz",
+     "path": [],
+     "expect": [
+      "Tremendously exposed, loose east arête",
+      "Ridge crest too difficult to follow directly, forcing off-ridge traverses",
+      "Extremely remote setting with limited retreat options"
+     ],
+     "value": [
+      "Loose, rockfall-prone gullies below the Eye Col",
+      "Fifth-class chockstone steps in the upper gully to the col",
+      "Extremely remote setting with limited retreat options"
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "approach",
+     "path": [],
+     "find": "before gaining the exposed southeast ridge/east arête that the route follows to the summit.",
+     "replace": "before reaching the col, from which the route climbs East Twin Needle's summit block directly above."
+    },
+    {
+     "op": "set",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "climbing_route",
+     "path": [
+      1
+     ],
+     "expect": {
+      "n": 2,
+      "label": "Southeast ridge / east arete",
+      "notes": "From the Eye Col, gain the exposed southeast ridge/east arete, which the route follows to the summit."
+     },
+     "value": {
+      "n": 2,
+      "label": "Eye Col to the summit",
+      "notes": "From the Eye Col, climb the steep summit block of East Twin Needle directly above the notch; the crux is a short hand crack near the top, which can hold ice early in the season. Reverse it by downclimbing and rappelling to the col."
+     }
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "3rd/4th class terrain on the south side; roped pitches for less-experienced parties.",
+     "replace": "Steep rock on the summit block directly above the col, with a short hand-crack crux near the top; parties rope up."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "rope_note",
+     "path": [],
+     "find": "Picket Range alpine rock route, Grade III. Sources most directly document a Southeast Ridge/Face line at II 5.10a rather than a distinctly-named 'South Route' at 5.7 — treat this as a related but not exactly-matched line. ",
+     "replace": "Picket Range alpine rock route by the Eye Col; the hard southeast ridge/face (east arête) is a separate line. "
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Sustained exposure on Grade III alpine rock",
+     "replace": "Sustained exposure on alpine rock"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_east_twin_needle_south_route",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "sits on the north side of the crest",
+     "replace": "sits on the south side of the crest"
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}

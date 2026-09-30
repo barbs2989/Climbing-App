@@ -1,0 +1,2374 @@
+[
+ {
+  "id": "wa_dolphin_chimney",
+  "name": "Dolphin Chimney",
+  "area": {
+   "id": "wa_south_early_winters_spire",
+   "name": "South Early Winters Spire",
+   "parent_id": "wa_liberty_bell_group",
+   "elevation_ft": 7807,
+   "lat": 48.512275,
+   "lng": -120.655395
+  },
+  "prior_findings": "Two sources give a 2.5 mi one-way approach, but the row's own itinerary says 5.2-5.5 mi round trip; dist_km was left alone. Settle which is right and make the fields agree.",
+  "earlier_research": [
+   {
+    "file": "r221.json",
+    "fact": "Wide-gear sizes",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The route page says a #6 might protect the first 20 ft below the chockstone and otherwise found only tiny nuts and cams; no source gives a rack. gear[0]'s '#5 (roughly 3 inches)' is internally wrong (a #5 is far wider than 3 in), and rope_note/rack stop at #3-#4, but no two sources settle the rack. Not changed.",
+    "sources": [
+     "https://www.mountainproject.com/route/117509825/dolphin-chimney"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Rope for the descent",
+    "status": "fixed",
+    "correct_value": "A single 60 m rope",
+    "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes.",
+    "sources": [
+     "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+     "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+     "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Face",
+    "status": "fixed",
+    "correct_value": "On SEWS's west face, beside the Southwest Rib and Boving Roofs",
+    "evidence": "The route page places it about 100 ft left of the Boving Roof, reached from pitch 2 of the Southwest Rib or pitch 3 of Boving-Pollock; the Southwest Rib and the Boving Roofs are on the west face (a club trip report is titled 'West Face & Southwest Rib').",
+    "sources": [
+     "https://www.mountainproject.com/route/117509825/dolphin-chimney",
+     "https://www.mountainproject.com/route/110616122/boving-roofs",
+     "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-south-early-winter-spire-west-face-southwest-rib-1"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Summit time vs car-to-car total",
+    "status": "fixed",
+    "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+    "evidence": "timing.summitTimeHrs (8.5) equals totalHrs (8.5), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+    "sources": []
+   },
+   {
+    "file": "r221.json",
+    "fact": "SR-20 closing month",
+    "status": "fixed",
+    "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+    "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+    "sources": [
+     "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+     "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+     "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+     "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+    "status": "fixed",
+    "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+    "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/blue-lake",
+     "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+    ]
+   },
+   {
+    "file": "s069.json",
+    "fact": "Wide-gear sizes",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Only one route description exists: the party carried gear to a #5 as the guidebook suggested, found the chockstone about 20 ft up plus a few tiny nuts and cams, and thought a #6 might protect the first 20 ft. No second independent source gives a rack, so whether the rack tops out at #3-#4 (rope_note, rack) or #5/#6 (gear) cannot be settled on two sources. The separate, factual error that a #5 is 'roughly 3 inches' is fixed below.",
+    "sources": [
+     "https://www.mountainproject.com/route/117509825/dolphin-chimney"
+    ]
+   },
+   {
+    "file": "s069.json",
+    "fact": "Size of a #5 cam",
+    "status": "fixed",
+    "correct_value": "A #5 cam covers roughly 3.4-5.9 in, not 3 in",
+    "evidence": "Two gear listings give the Camalot C4 #5 expansion range as 85.4-148.5 mm (3.36-5.85 in); 3 in is the #3/#4 range. The parenthetical in gear[0] misstated the size of the cam it names.",
+    "sources": [
+     "https://www.bentgate.com/black-diamond-camalot-c4.html",
+     "https://weighmyrack.com/cam/black-diamond-camalot-c4-5-2018-0"
+    ]
+   },
+   {
+    "file": "s069.json",
+    "fact": "One-way approach distance",
+    "status": "unresolved",
+    "correct_value": "dist_km 4.0 (about 2.5 mi one way)",
+    "evidence": "The stored 8.37 km equals this row's own itinerary round-trip mileage (5.2 mi) and sits in the one-way approach slot. A trail-map record gives 2.5 mi one way from the Blue Lake Trailhead to the Early Winters Spires, and an independent Southwest Rib write-up (same basin approach) gives 5 miles round trip; 2.5 mi = 4.0 km. [Held: 4.0 km would contradict this row’s own itinerary round trip.]",
+    "sources": [
+     "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+     "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html"
+    ]
+   },
+   {
+    "file": "t102.json",
+    "fact": "Season window",
+    "status": "fixed",
+    "correct_value": "Jun-Sep chip, with the window opening in late June",
+    "evidence": "The Washington Pass area page gives the best season as late June through September, with snow and ice possible early; a regional climbing guide says latish June through latish September. The row's own best_season/optimalWindow already open in (late) June, so the Jul-Sep chip and approach-variant season are the outliers; this matches the precedent set for Southern Man (season Jun-Sep).",
+    "sources": [
+     "https://www.mountainproject.com/area/105792192/washington-pass",
+     "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+    ]
+   },
+   {
+    "file": "t102.json",
+    "fact": "Time to summit vs car-to-car total",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+    "sources": []
+   },
+   {
+    "file": "t102.json",
+    "fact": "Blue Lake Trailhead distance from Washington Pass",
+    "status": "bivy_zone_list",
+    "correct_value": "About 1 mile west of Washington Pass",
+    "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/blue-lake",
+     "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+     "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+     "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_south_early_winters_spire_nothing",
+    "name": "Nothing",
+    "grade": "5.11d A0"
+   },
+   {
+    "id": "wa_sews_sw_rib",
+    "name": "Southwest Rib",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_south_early_winter_spire_east_buttress",
+    "name": "East Buttress",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_mojo_rising",
+    "name": "Mojo Rising",
+    "grade": "5.11b C1+"
+   },
+   {
+    "id": "wa_south_early_winter_spire_passenger",
+    "name": "Passenger",
+    "grade": "5.11d"
+   },
+   {
+    "id": "wa_the_hitchhiker",
+    "name": "The Hitchhiker",
+    "grade": "5.11-"
+   },
+   {
+    "id": "wa_northwest_face_boving_pollock",
+    "name": "Northwest Face (Boving-Pollock)",
+    "grade": "5.11a"
+   },
+   {
+    "id": "wa_free_mojo",
+    "name": "Free Mojo",
+    "grade": "5.11-"
+   },
+   {
+    "id": "wa_boving_roofs",
+    "name": "Boving Roofs",
+    "grade": "5.10b"
+   },
+   {
+    "id": "wa_south_arete",
+    "name": "South Arete",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_south_early_winter_spire_direct_east_buttress",
+    "name": "Direct East Buttress",
+    "grade": "Grade III+, 5.9 A0 (or 5.11 free), 9 pitches"
+   },
+   {
+    "id": "wa_south_early_winter_spire_southwest_couloir",
+    "name": "Southwest Couloir",
+    "grade": "Grade II, snow to 50°"
+   },
+   {
+    "id": "wa_southern_man",
+    "name": "Southern Man",
+    "grade": "5.11d"
+   }
+  ],
+  "row": {
+   "id": "wa_dolphin_chimney",
+   "area_id": "wa_south_early_winters_spire",
+   "name": "Dolphin Chimney",
+   "discipline": "alpine",
+   "grade": "5.9+",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 23,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Fred Beckey and Jim Madsen, 1967",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Rack to a #5 cam (roughly 3.5 to 6 inches) — the size published descriptions call for on this pitch",
+    "A #6 can back up the first 20 feet below the chockstone, but parties who've climbed it don't trust it as solid pro there",
+    "Only a few thin nuts and small cams protect around the chockstone itself — expect real gaps, not just tight spacing",
+    "Gear improves markedly above the roof, on the wild exit moves — good placements return once you're through",
+    "Rated 5.9+ R, so chimney/offwidth technique carries more of the safety margin than the rack size does"
+   ],
+   "hazards": [
+    "Rated R — minimal protection for most of the pitch"
+   ],
+   "verif": null,
+   "overview": "A short but serious offwidth/chimney pitch on SEWS — the unmistakable dark chasm midway up the wall, directly left of the Boving Roofs. Often climbed as a variation linking into the Southwest Rib rather than as a full independent route to the summit. First ascended by Fred Beckey and Jim Madsen in 1967.",
+   "beta": "An amazing and unique offwidth/chimneying experience on great rock, transitioning from chimneying to slab moves near the top; the chimney narrows from about 2 ft to 1 ft near the exit. Backpacks can be hauled from the belay.",
+   "turnaround": "A short, serious single-pitch route - the main hazard is the runout (R) rating rather than time, so assess conditions and confidence before committing.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9+",
+   "ice_grade": null,
+   "gain_ft": 2200,
+   "loss_ft": 2200,
+   "dist_km": 8.37,
+   "max_angle": null,
+   "rappels": "3",
+   "commitment": null,
+   "face": "Southwest Rib (chimney feature)",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No cell service at Washington Pass.",
+   "descent": "Rejoins the Southwest Rib's final slabby arete pitch to the summit; descend via the South Arete.",
+   "obj_haz": [
+    "runout/R-rated protection",
+    "offwidth chimney hazard"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5191,
+     "lng": -120.6742,
+     "elev": 5400,
+     "name": "Blue Lake Trailhead",
+     "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51217,
+     "lng": -120.65536,
+     "elev": 7807,
+     "name": "South Early Winters Spire",
+     "note": "True summit of South Early Winters Spire, between Liberty Bell and Blue Lake Peak.",
+     "type": "Summit",
+     "distMi": 2.3
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 8.5,
+    "summitTimeHrs": 8.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Pre-dawn start",
+    "sectionBreakdown": [
+     {
+      "hrs": 8.5,
+      "note": "Dolphin Chimney is the striking offwidth/chimney feature midway up SEWS's west face, just left of the Boving Roofs — typically reached via the lower Southwest Rib pitches, then fi…",
+      "fromTo": "Car-to-car climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Wide gear for the offwidth/chimney section (large cams) plus a standard rack for the exit sequence, where good placements appear near the roof.",
+   "what_to_bring": [
+    "confidence on runout, unprotected chimney terrain"
+   ],
+   "pro_tips": [
+    "Packs can be hauled from the belay rather than climbed with, given the chimney's tight dimensions."
+   ],
+   "watch_out": "Sustained 5.9+ climbing in chimney terrain with exposure\nChimney sections can trap loose rock which falls on climbers below\nRoute-finding near chimney exit critical; easy to commit to wrong line\nWeather hazard - afternoon storms on exposed sections\nDescent requires careful rope management through chimney sections",
+   "pro_needs": "Sparse, committing protection — a serious lead given the R rating and lack of good gear in the lower chimney.",
+   "best_season": "Late June through September, dry rock.",
+   "high_point_ft": 7807,
+   "aid_grade": null,
+   "approach": "Start from the Blue Lake Trailhead on Highway 20 just west of Washington Pass. Follow the maintained Blue Lake Trail roughly 1.25 miles (about an hour of easy hiking, modest gain) to the open meadow/clearing on the northwest side of the Liberty Bell massif marked by a wooden trail sign. Leave the maintained trail here and follow the well-worn climber's path up through talus and heather benches into the basin below South Early Winters Spire's west side. Continue up the scree/boulder slope toward the base of the Southwest Rib / Boving-Pollock start (the Y-shaped larch tree left of the southwest couloir is the landmark most parties use). Dolphin Chimney itself is not started from the ground — it is gained by climbing the first 2-3 pitches of the Southwest Rib or Northwest Face (Boving-Pollock), then traversing left over easy terrain to the obvious dark, unmistakable chasm about 100 ft left of the Boving Roof.",
+   "descent_text": "Dolphin Chimney is a single spectacular ~75 ft pitch (5.9+ R), not a full line to the summit, so it is normally done as a one-pitch add-on within a Southwest Rib / Boving-Pollock day rather than climbed and descended on its own. Most parties either continue past it on easier cracks to rejoin the Southwest Rib and finish to the summit, then take the standard South Early Winters Spire descent: downclimb the South Arete (3rd/4th class with one short, more exposed step) to the 'Rabbit Ears' — two boulder towers with fixed rappel slings — then make a short traverse/downclimb into the descent gully and do 3 single-rope rappels (60m rope) from bolted anchors/chains to the base, finishing on scree back to the climber's trail and Blue Lake Trail. If a party climbs the Dolphin as an out-and-back pitch, expect to lower or make a single rappel back to the ledge below rather than continue up. Given the offwidth/chimney nature of the pitch and sparse gear noted by climbers, rope management on any rappel of the chimney itself deserves extra care.",
+   "bail": "Limited protection makes retreat from mid-pitch difficult; commit only with confidence on wide/chimney terrain.",
+   "pitch_detail": [
+    {
+     "grade": "5.9+ R",
+     "notes": "Offwidth/chimney narrowing to 1-2 ft near the top; limited gear until the roof exit.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Dolphin Chimney is the striking offwidth/chimney feature midway up SEWS's west face, just left of the Boving Roofs — typically reached via the lower Southwest Rib pitches, then finished to the summit and descended via the standard South Arete line.",
+      "hours": 8.5,
+      "miles": 5.2,
+      "title": "Car-to-car climb",
+      "gainFt": 2200,
+      "lossFt": 2200,
+      "packLb": 0,
+      "schedule": [],
+      "objective": "Climb Dolphin Chimney and return to the Blue Lake trailhead"
+     }
+    ],
+    "totalNote": "A moderate single day, roughly 8.5 hrs car-to-car; pitch-by-pitch timing for this specific link-up wasn't found so hours are estimated."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass at the Blue Lake Trailhead",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "Standard national forest day-use rules; Leave No Trace.",
+    "permit": "None required for day climbing",
+    "closures": "Highway 20 (North Cascades Highway) over Washington Pass closes seasonally in winter.",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate each winter, typically from mid-November or early December until April or May; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest (Washington Pass / Okanogan NF)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Dispersed camping on National Forest land is free; nearby developed campgrounds charge a site fee and take no reservation."
+    }
+   },
+   "road": {
+    "name": "Blue Lake Trailhead, Highway 20, Washington Pass",
+    "status": "Highway 20 is fully paved to the Blue Lake Trailhead parking area; no rough-road driving required.",
+    "driveNote": "Roughly 3 hours from Seattle via I-5 and Highway 20, or about 45 minutes from Mazama/Winthrop.",
+    "seasonalGate": "Highway 20 over Washington Pass is a seasonal highway, closed by snow each winter (typically between mid-November and early December) with variable spring reopening, historically ranging from mid-April to mid-June."
+   },
+   "climate": {
+    "fall": "Good into September",
+    "spring": "Snow lingers into June",
+    "summer": "Prime season",
+    "winter": "Highway closed",
+    "typical": "Warm dry summers",
+    "forecastZone": "Washington Pass / East Slopes Cascades (NWAC)"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies.",
+    "county": "Okanogan",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA; or Mid-Valley Hospital, Omak, WA",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": null,
+    "solitudeRating": 5,
+    "estimatePerSeason": "Rarely climbed — the lack of good protection has probably minimized the number of ascents"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "length": "Short — 75 ft (23 m), typically climbed as part of a longer link-up via the Southwest Rib/Boving-Pollock variation"
+    },
+    "approachTime": "No route-specific approach time found; likely shares the Blue Lake Trail west-side approach (~1–1.5 hrs to basin, not confirmed for this line specifically)",
+    "requiredSkills": [
+     "Offwidth/chimney technique, 1–2 ft wide",
+     "Minimal gear until near the top of the pitch (rated R)",
+     "Backpacks reportedly hauled separately at the belay given the chimney's width"
+    ],
+    "experienceLevel": "Real offwidth/chimney comfort with tolerance for sparse protection"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late June–September (area-wide SR-20-gated window); no route-specific season notes found beyond this",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Area-wide reliable rock season; no route-specific data found",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Area-wide reliable rock season; no route-specific data found",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "North Cascades afternoon-thunderstorm pattern (area-wide); no route-specific mention found"
+    },
+    "exposure": "Rated R — minimal protection for most of the pitch; The route's low traffic is attributed to this protection gap",
+    "avalanche": {
+     "zone": "NWAC — North Cascades (forecast program runs mid-Nov–mid-Apr only; no product exists during the summer rock season)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A"
+     }
+    },
+    "crevasses": {
+     "timing": "N/A",
+     "location": "None — dry granite formation, no glacier travel on any approach or route variant"
+    }
+   },
+   "data_quality": {
+    "gaps": [
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "Only two substantive sources found (Mountain Project's own thin page plus passing mentions on SEWS overview pages); no trip report, no Cascade Climbers thread, no AAJ entry, and no independent corroboration of the FA despite targeted searches. Treat crowds/partner/seasonal fields above as provisional pending better sourcing.",
+     "FA 'Fred Beckey and Jim Madsen, 1967' could not be independently corroborated beyond Mountain Project (no second source — guidebook, AAJ, or Beckey route inventory — confirms spelling or date); left unchanged. Do not conflate with the separately well-documented Direct East Buttress FA (Beckey with Doug Leen, 1968) — a different SEWS route."
+    ],
+    "confidence": "LOW",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 3,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.512275,
+    "peakLng": -120.655395,
+    "trailhead": "Blue Lake Trailhead (SR-20)",
+    "trailheadLat": 48.518965,
+    "trailheadLng": -120.67436,
+    "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1 mile west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+   },
+   "sling_rack": {
+    "cams": "set 0.3-4in",
+    "nuts": "small-mid set"
+   },
+   "alpine_draws": 6,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "Classic 5.9+ chimney/face line, SEWS. Standard rack to 3in; wide piece (#3-#4) useful for the chimney section.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Cam set 0.3–4in (wide piece #3-#4 useful for the chimney)",
+    "Small-to-mid nut set",
+    "Single 60m rope"
+   ],
+   "features": [
+    "Chimney",
+    "Offwidth",
+    "Runout",
+    "Technical"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Blue Lake Trail to the Y-shaped larch, up two or three pitches, then LEFT to the dark chasm",
+     "notes": "Start from the Blue Lake Trailhead on Highway 20 just west of Washington Pass. Follow the maintained Blue Lake Trail roughly 1.25 miles, about an hour of easy hiking at modest gain, to the open meadow and clearing on the northwest side of the Liberty Bell massif, marked by a WOODEN TRAIL SIGN. Leave the maintained trail there and follow the well-worn climber's path up through talus and heather benches into the basin below South Early Winters Spire's west side.\n\nA single spectacular pitch of about 75 ft at 5.9+ R, first climbed in 1967.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "No ground start; two or three pitches of another route come first",
+      "5.9+ R with sparse gear in an offwidth and chimney",
+      "Rope management on any rappel of the chimney itself deserves extra care",
+      "No water in the basin"
+     ],
+     "baseFinding": "DOLPHIN CHIMNEY IS NOT STARTED FROM THE GROUND. It is gained by climbing the FIRST TWO OR THREE PITCHES of the Southwest Rib or the Northwest Face Boving-Pollock line, then TRAVERSING LEFT OVER EASY TERRAIN TO THE OBVIOUS DARK, UNMISTAKABLE CHASM ABOUT 100 FT LEFT OF THE BOVING ROOF.\n\nSO THE FEATURE ITSELF IS THE TEST AND IT IS AS GOOD AS THEY GET ON THIS WALL: A DARK CHASM. Not a crack, not a corner, and not something you could talk yourself into. If you are unsure whether you are looking at it, you are not looking at it.\n\nTHE MEASURED OFFSET GIVES A SECOND CHECK: ABOUT 100 FT LEFT OF THE BOVING ROOF. The Boving Roofs pitch is the double-roof feature reached by going left at a ledge from the same rib. Two roofs stacked above you, then a hundred feet further left, is the chimney.\n\nTHE GROUND-LEVEL AIMING POINT FOR THE WHOLE DAY: THE Y-SHAPED LARCH TREE LEFT OF THE SOUTHWEST COULOIR, at the base of the Southwest Rib. That is the landmark most parties use to start up this wall, and it is the one thing here you can find at ground level.\n\nHOW THIS ROUTE IS ACTUALLY DONE, WHICH SHOULD SHAPE THE PLAN: it is a one-pitch add-on within a Southwest Rib or Boving-Pollock day, not a climb with its own descent. Most parties continue past it on easier cracks to rejoin the Southwest Rib and finish to the summit, then take the standard South Arete descent to the RABBIT EARS, two boulder towers with fixed rappel slings, then a short traverse and downclimb into the descent gully and three single-rope 60 m rappels to the base. A party doing the Dolphin as an out-and-back lowers or makes a single rappel back to the ledge below."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    },
+    {
+     "elev": 3600,
+     "name": "Lone Fir Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season runs roughly from late spring into autumn and is decided by snow rather than by a date.",
+     "water": "Early Winters Creek runs through the campground",
+     "permit": "Standard national forest campground fee",
+     "capacity": "27 sites, first come first served"
+    },
+    {
+     "elev": 2900,
+     "name": "Klipchuck Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quiet and has more plumbing than anything nearer the climbing. The trade is a longer drive to the trailhead each morning. Check current status before relying on it; the highway-corridor campgrounds take periodic maintenance closures.",
+     "water": "Piped water, sinks and flush toilets",
+     "permit": "Standard national forest campground fee",
+     "capacity": "First come first served"
+    },
+    {
+     "name": "Liberty Bell basin dispersed sites",
+     "role": "route",
+     "type": "camp",
+     "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes at first light rather than walking up from the road. Note the separate restriction around Blue Lake itself, where overnight camping is not allowed within a quarter mile of the lake — the basin sites are the ones to aim for, not the lakeshore. Treat it as a basin camp below the spires rather than a fixed spot.",
+     "water": "Snowmelt and seasonal runoff in the basin — unreliable once the snow has gone",
+     "permit": "No permit for dispersed camping; this is national forest, not the national park",
+     "capacity": "Scattered dispersed sites, small parties"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_mount_adams_north_ridge",
+  "name": "North Ridge",
+  "area": {
+   "id": "wa_mount_adams",
+   "name": "Mount Adams",
+   "parent_id": "wa_southwest_cascades",
+   "elevation_ft": 12276,
+   "lat": 46.202494,
+   "lng": -121.490746
+  },
+  "prior_findings": "Itinerary day 2 says 4 mi, but two sources give ~17 mi round trip on a 4.1 mi each-way approach; no source states the day figure. Also Killen Creek parking pass: the land manager's trail page lists no pass; others say Northwest Forest Pass (camp cards) — settle with the ranger district's page if possible.",
+  "earlier_research": [
+   {
+    "file": "r661.json",
+    "fact": "High camp elevation",
+    "status": "fixed",
+    "correct_value": "High Camp at about 6,900 ft",
+    "evidence": "WTA and Oregon Hikers put High Camp / Adams Glacier Meadows at 6,900 ft and the onX track tops out at 6,860 ft; the row's approach, pitch_detail, camp card and partner fields already say ~6,900 ft.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/killen-creek",
+     "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+     "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek"
+    ]
+   },
+   {
+    "file": "r661.json",
+    "fact": "Approach distance and total distance",
+    "status": "fixed",
+    "correct_value": "About 4.1 miles one way to High Camp",
+    "evidence": "Trail #113 is 3.1 mi to the PCT (Forest Service) plus about a mile to High Camp; NW Hiker and Oregon Hikers give 8.2 mi round trip and onX 8 mi round trip. Itinerary days 1 and 3 (8.6 mi each) and the High Camp pin (5 mi) are fixed to 4.1. Not changed: dist_km 5.6 (convention not established) and the unsourced 7 / 11.5 mi distances on the ridge-base and summit pins (still in order).",
+    "sources": [
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+     "https://www.nwhiker.com/GPNFHike28.html",
+     "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+     "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek"
+    ]
+   },
+   {
+    "file": "r661.json",
+    "fact": "Total gain/loss",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "gain_ft 7,691 is consistent with a North Cleaver guide's 'almost 8,000 ft' car to car, but the itinerary day gains (2,900 + 3,300) were built on a 9,000 ft camp and no source states per-day figures for this route; per-day gainFt/lossFt are left unchanged.",
+    "sources": [
+     "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route"
+    ]
+   },
+   {
+    "file": "r661.json",
+    "fact": "Last reliable water",
+    "status": "fixed",
+    "correct_value": "East Fork Adams Creek, crossed about 2.5 miles up Trail #113",
+    "evidence": "onX's High Camp via Killen Creek guide says the trail crosses East Fork Adams Creek at about 2.5 miles and that it is the place to fill water; Oregon Hikers' Adams Glacier Meadows hike also crosses the East Fork of Adams Creek on this trail; the Forest Service lists no water on the trail itself. Killen Creek Meadows lies about a mile north along the PCT, off this approach.",
+    "sources": [
+     "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek",
+     "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek"
+    ]
+   },
+   {
+    "file": "r661.json",
+    "fact": "Glaciers crossed",
+    "status": "fixed",
+    "correct_value": "Adams and Lava glaciers (either side of the ridge)",
+    "evidence": "SummitPost describes the North Ridge (North Cleaver) as lying between the Adams and Lava glaciers; the Lava Glacier headwall fills the triangle between the North Ridge and Lava Ridge (Mazamas), and the Lyman Glacier lies beyond Lava Ridge (reached 'around the toe of Lava Ridge', Mountaineers). The Lyman is not on this route.",
+    "sources": [
+     "https://www.summitpost.org/mount-adams/150198",
+     "https://mazamas.org/activity/221/",
+     "https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-routes"
+    ]
+   },
+   {
+    "file": "r661.json",
+    "fact": "Trailhead parking pass at Killen Creek",
+    "status": "bivy_zone_list",
+    "correct_value": "No parking pass is required at Killen Creek Trailhead (access card is correct; the High Camp camp card's 'Northwest Forest Pass' line is the wrong one).",
+    "evidence": "The Forest Service's Killen Creek trailhead page says no fees are required for the site, and a Killen Creek backpacking guide lists the parking pass as 'None required'; the Oregon Hikers trailhead page lists only a bridge toll and the wilderness permit. Older hiking guides still say a Northwest Forest Pass is needed. The only field in conflict with the sourced answer is bivy[0].permit, which this pass may not patch.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+     "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/",
+     "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+     "https://www.wta.org/go-hiking/hikes/killen-creek",
+     "https://www.nwhiker.com/GPNFHike28.html"
+    ]
+   },
+   {
+    "file": "r661.json",
+    "fact": "Killen Creek trailhead elevation",
+    "status": "fixed",
+    "correct_value": "4,600 ft",
+    "evidence": "Trailhead elevation is about 4,585-4,600 ft (4,585 ft on one trail guide; the High Camp track's low point is 4,596 ft; 4,600 ft on a third guide). The trailhead pin stored 4,400 ft while approach_variants says ~4,600 ft.",
+    "sources": [
+     "https://www.oregonhikers.org/field_guide/Killen_Creek_Trailhead",
+     "https://www.onxmaps.com/hiking/xdwz7ox7o6l5/mount-adams-high-camp-via-killen-creek",
+     "https://www.iheartpacificnorthwest.com/backpack-mount-adams-killen-creek/"
+    ]
+   },
+   {
+    "file": "s029.json",
+    "fact": "Total gain/loss",
+    "status": "fixed",
+    "correct_value": "Itinerary days: day 1 +2,300 ft; day 2 +5,391/-5,390 ft; day 3 -2,300 ft (totals 7,691 / 7,690 = gain_ft / loss_ft)",
+    "evidence": "Two independent North Ridge/North Cleaver sources give car-to-car gain of 7,800 ft (Killen Creek, 17 mi) and 8,160 ft (20 mi, starting lower because of snow), both consistent with gain_ft 7,691 and contradicting the itinerary's 6,200 ft. The Killen Creek to High Camp hike page gives 2,300 ft of gain to a 6,900 ft high point (matching approach_variants gainFt 2300 and the bivy note), so day 1's 2,900 and day 3's 2,900 loss were overstated, and day 2 (6,900 -> 12,276 ft and back) was understated at 3,300. The corrected days sum exactly to the stored gain_ft and loss_ft.",
+    "sources": [
+     "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route",
+     "https://www.alpinewanderlust.com/hot-pa-pahto-north-ridge-adams/",
+     "https://www.wta.org/go-hiking/hikes/killen-creek"
+    ]
+   },
+   {
+    "file": "t341.json",
+    "fact": "Route distance",
+    "status": "fixed",
+    "correct_value": "About 17 mi round trip from Killen Creek (about 8.5 mi each way); summit day from High Camp about 8.8 mi",
+    "evidence": "Two independent sources give the North Ridge from the Killen Creek trailhead as about 17 miles round trip. With the sourced 4.1 mi each way to High Camp (3.1 mi Killen Creek Trail + 1.0 mi High Camp Trail), the camp-summit-camp day is about 8.8 mi, not 4, and the summit is about 8.5 mi from the trailhead, not 11.5. dist_km (3.5 mi) is left: it renders as the one-way approach and matches the 3.5 mi walk to the PCT.",
+    "sources": [
+     "http://ericsbasecamp.net/trips/AdamsNR/AdamsNR.htm",
+     "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route",
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trails/trail-113-killen-creek",
+     "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike"
+    ]
+   },
+   {
+    "file": "t341.json",
+    "fact": "Whether the approach crosses glacier",
+    "status": "fixed",
+    "correct_value": "The approach from High Camp to the ridge is snowfield and moraine, not glacier; glacier lies on the ridge's flanks and on the summit ice cap",
+    "evidence": "From High Camp parties go up late-season snowfields and moraine to the cleaver and gain the ridge almost immediately after the lake above camp; the route is described as non-technical, with the only glacier travel being a corridor of unbroken glacier between the top of the ridge and the summit. The rack, protection and approach text are reworded to put the glacier gear on the ice cap and flanks rather than the approach.",
+    "sources": [
+     "https://climberkyle.com/2018/08/18/mt-adams-traverse/",
+     "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route",
+     "https://www.mountainproject.com/route/107223000/north-ridge",
+     "http://ericsbasecamp.net/trips/AdamsNR/AdamsNR.htm"
+    ]
+   },
+   {
+    "file": "t341.json",
+    "fact": "Distance to the base of the ridge",
+    "status": "fixed",
+    "correct_value": "The ridge is gained almost immediately above camp; the 7-mile figure is unsupported",
+    "evidence": "Parties leaving the lake about a mile above High Camp gain the ridge 'almost immediately', and another report goes straight from the lake up snowfields and moraine onto the cleaver. The pin's 7 mi (2.9 mi past camp) has no source and contradicts both, so it is set to unknown rather than replaced with an interpolated number.",
+    "sources": [
+     "https://www.theoutbound.com/washington/backpacking/climb-mount-adams-north-cleaver-route",
+     "https://climberkyle.com/2018/08/18/mt-adams-traverse/"
+    ]
+   },
+   {
+    "file": "t341.json",
+    "fact": "Running water at High Camp",
+    "status": "bivy_zone_list",
+    "correct_value": null,
+    "evidence": "Dispute is only with the shared High Camp bivy card. Sources show a meadow stream at High Camp that may stop running late in summer, and a glacial lake above camp where parties fill up, so 'last reliable water' at East Fork Adams Creek is defensible while the card's 'reliable through summer' is overstated; left to the camping clean-up.",
+    "sources": [
+     "https://www.oregonhikers.org/field_guide/Adams_Glacier_Meadows_Hike",
+     "https://climberkyle.com/2018/08/18/mt-adams-traverse/",
+     "https://www.alpinewanderlust.com/hot-pa-pahto-north-ridge-adams/"
+    ]
+   },
+   {
+    "file": "t341.json",
+    "fact": "Steepest angle",
+    "status": "fixed",
+    "correct_value": 40,
+    "evidence": "A guide service says the steepest sections of the North Ridge are around 40 degrees, and a route listing gives a maximum slope of about 40 degrees. The itinerary's 'around 40°' is right and max_angle 50 is the outlier.",
+    "sources": [
+     "https://www.mountainschool.com/mt-adams-guides",
+     "https://www.bivy.com/adventures/us/washington/mt-adams:-north-ridge-route-483011"
+    ]
+   },
+   {
+    "file": "t341.json",
+    "fact": "Summit-day start time",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "No outside source found giving a recommended departure time for this route (one traverse party started at 7 a.m. from the car, which does not bear on a camp start). A published route description stating a start window would settle 2-3 AM vs 3-4 AM.",
+    "sources": [
+     "https://climberkyle.com/2018/08/18/mt-adams-traverse/"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_mount_adams_mount_adams_circumnavigation",
+    "name": "Mount Adams circumnavigation",
+    "grade": "Easy 5th WI1 PG13"
+   },
+   {
+    "id": "wa_mount_adams_south_climb",
+    "name": "South Climb (South Spur)",
+    "grade": "Grade I"
+   },
+   {
+    "id": "wa_mount_adams_adams_glacier",
+    "name": "Adams Glacier",
+    "grade": "Grade III, steep glacier ice/snow"
+   },
+   {
+    "id": "adams_northwest_ridge",
+    "name": "North Face of the Northwest Ridge",
+    "grade": "AI2-3 Mod. Snow PG13"
+   },
+   {
+    "id": "wa_mount_adams_lyman_glacier",
+    "name": "Lyman Glacier",
+    "grade": "III"
+   },
+   {
+    "id": "wa_mount_adams_mazama_glacier_headwall",
+    "name": "Mazama Glacier Headwall",
+    "grade": "Steep snow to 45°"
+   },
+   {
+    "id": "adams_avalanche_glacier",
+    "name": "Avalanche Glacier",
+    "grade": null
+   },
+   {
+    "id": "wa_mount_adams_wilson_glacier_headwall",
+    "name": "Wilson Glacier Headwall",
+    "grade": "III-IV"
+   },
+   {
+    "id": "wa_mount_adams_northwest_ridge",
+    "name": "North Ridge (West Face)",
+    "grade": "Grade III, AI1-2"
+   },
+   {
+    "id": "wa_mount_adams_lava_glacier_headwall",
+    "name": "Lava Glacier Headwall",
+    "grade": "III-IV"
+   }
+  ],
+  "row": {
+   "id": "wa_mount_adams_north_ridge",
+   "area_id": "wa_mount_adams",
+   "name": "North Ridge",
+   "discipline": "mountaineering",
+   "grade": "Grade II, moderate snow",
+   "grade_system": "class",
+   "grade_num": null,
+   "pitches": 0,
+   "length_m": 1067,
+   "sort_order": null,
+   "stars": null,
+   "fa": "A.G. Aiken, Edward J. Allen, and Andrew J. Burge, 1854 (first ascent of Mount Adams)",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "ice axe",
+    "crampons",
+    "pickets",
+    "rope",
+    "helmet",
+    "harness"
+   ],
+   "hazards": [
+    "Steep, sustained snow on the upper ridge with rockfall from the ridge crest",
+    "Crevasses on the Adams and Lava glaciers either side of the ridge",
+    "Cornices on the ridgeline",
+    "Remote north-side approach — long self-reliant day"
+   ],
+   "verif": null,
+   "overview": "Also called the North Cleaver, the North Ridge is Adams' second most-popular summit route and a scenic, less-crowded alternative to the South Climb. It climbs the rock-and-snow rib between the Adams and Lava Glaciers, reached via the quiet Killen Creek approach on the north side, and is most pleasant early season while still largely snow-covered.",
+   "beta": "From high camp near the Adams Glacier moraine, gain the North Ridge (North Cleaver) and follow it upward, bypassing most obstacles on either side, to the summit ice cap; traverse roughly a mile across the plateau to reach the true summit.",
+   "turnaround": "Turn around by midday on the upper ridge if snow is softening or weather builds; the descent is long.",
+   "auto_generated": true,
+   "alpine_grade": "II",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 7691,
+   "loss_ft": 7690,
+   "dist_km": 5.6,
+   "max_angle": 40,
+   "rappels": null,
+   "commitment": "II",
+   "face": "North Ridge / North Cleaver",
+   "permit": "Mt. Adams Climbing Pass (Cascade Volcano Pass) required above 7,000 ft May 1-Sep 30, sold per trip on Recreation.gov; free self-issue wilderness permit at the trailhead otherwise. Pack out human waste.",
+   "comms": "Cell coverage is limited to absent on this side of the mountain.",
+   "descent": "Retrace route via North Ridge and Lava Glacier back to high camp.",
+   "obj_haz": [],
+   "waypoints": [
+    {
+     "lat": 46.2885,
+     "lng": -121.5525,
+     "elev": 4600,
+     "name": "Killen Creek Trailhead",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 46.27,
+     "lng": -121.53,
+     "elev": 7000,
+     "name": "High Camp",
+     "type": "Campsite",
+     "distMi": 4.1
+    },
+    {
+     "lat": 46.275,
+     "lng": -121.52,
+     "elev": 8000,
+     "name": "North Ridge Base",
+     "type": "Junction",
+     "distMi": null
+    },
+    {
+     "lat": 46.2024,
+     "lng": -121.4909,
+     "elev": 12276,
+     "name": "Mount Adams Summit",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "mountaineering",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 18,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 5,
+    "recommendedStart": "2:00-3:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 5,
+      "note": "Hike the Killen Creek Trail through forest, meadow, and huckleberry fields, crossing East Fork Adams Creek (last reliable water) before climbing onto snow to High Camp at about 6,900 ft.",
+      "fromTo": "Killen Creek to High Camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Alpine start up steep sections to around 40°, gaining the ridge and the summit plateau, then reversing the route back to High Camp. Parties who stage a shuttle car at Cold Springs …",
+      "fromTo": "Summit via the North Ridge, return to camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4,
+      "note": "Break camp and hike back down the Killen Creek Trail to the trailhead.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Per person: ice axe (second tool useful in firm conditions), crampons, helmet, harness. Per team: 30–40 m rope, 2–4 pickets, crevasse-rescue kit for the summit ice cap.",
+   "what_to_bring": [
+    "alpine layers + shell",
+    "mountaineering boots",
+    "glacier glasses/goggles",
+    "headlamp",
+    "bivy/camp gear",
+    "blue bags",
+    "Cascades Volcano Pass"
+   ],
+   "pro_tips": [
+    "Use the Killen Creek approach and camp at High Camp for the best base",
+    "Plan a South Spur descent and arrange transport between trailheads",
+    "Go early season for firm snow and filled-in crevasses",
+    "Start early to climb the steep snow before it softens"
+   ],
+   "watch_out": [
+    "Moderate snow climbing at high elevation",
+    "Ridge traverse creates exposure hazard",
+    "Water availability at notch dependent on seasonal snowmelt"
+   ],
+   "pro_needs": "Snow protection (pickets) for the steeper upper ridge plus glacier-travel gear for the summit ice cap; generally no rock pro.",
+   "best_season": "June to mid-July for firm snow and minimized rockfall/crevasse hazard.",
+   "high_point_ft": 12276,
+   "aid_grade": null,
+   "approach": "Killen Creek Trailhead (Trail #113, off FR 2329 via FR 23) climbs through forest and meadow ~3.1 mi/1,400 ft to the PCT, then continues to High Camp — roughly 4 mi and 2,300 ft of gain total from the trailhead — the shared base camp for the North Ridge, Adams Glacier, and Northwest Ridge routes.",
+   "descent_text": "Most parties descend the route itself, back down the North Ridge toward high camp; it is non-technical, mostly Class 2 over loose volcanic scree. Some parties instead carry over and descend the South Climb to Cold Springs, which requires a long car shuttle. Watch crevasses on any glacier descent.",
+   "bail": "High Camp on the north side is the bail/base point; retreat down the ridge or glacier toward it. In poor weather the broad north-side snowfields offer non-committing descent terrain.",
+   "pitch_detail": [
+    {
+     "grade": "Trail",
+     "notes": "Killen Creek Trail #113 climbs through forest and meadow to the Pacific Crest Trail, then a climbers' path continues to High Camp at about 6,900 ft. The last stretch crosses an exposed talus slope above a permanent snowfield. Some parties bivy higher, on scree or snow near 8,000 ft, to shorten summit day.",
+     "pitch": "Killen Creek TH → High Camp"
+    },
+    {
+     "grade": "Snowfields, moraine",
+     "notes": "Head southeast from High Camp onto the foot of the North Ridge, which is gained almost right away above the camp. Early in the season snow can hide the path, so carry a compass. The approach does not require a glacier crossing.",
+     "pitch": "High Camp → ridge base"
+    },
+    {
+     "grade": "Class 2–3 loose scree",
+     "notes": "About 2,500 ft of scrambling up rock, scree and gritty pumice, mostly Class 2 with some Class 3. Stay on the crest where you can and wind from side to side around obstacles, occasionally dropping to the west side. Rockfall is the real crux: move gently and wear a helmet. Earlier in the season there is less scree.",
+     "pitch": "North Ridge"
+    },
+    {
+     "grade": "Steep snow, no runout",
+     "notes": "From around 10,000 ft the ridge turns to snowfields. One steep section has no runout and falls toward the Lava Glacier far below; crampons and an axe are needed, and it is safest while the snow is firm in the morning. On the way down it needs careful downclimbing, and a narrow rocky shelf may deserve a belay.",
+     "pitch": "Upper ridge snow"
+    },
+    {
+     "grade": "Ice cap, gentle",
+     "notes": "The ridge reaches the ice cap around 12,000 ft and the angle eases. Walk about a mile across the summit plateau to the true summit (12,276 ft). The ice cap has held small crevasses in the past, and the high point is hard to pick out in cloud, so mark the ridge exit for the descent.",
+     "pitch": "Upper mountain → summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Killen Creek Trail through forest, meadow, and huckleberry fields, crossing East Fork Adams Creek (last reliable water) before climbing to High Camp at about 6,900 ft.",
+      "hours": 5,
+      "miles": 4.1,
+      "title": "Killen Creek to High Camp",
+      "gainFt": 2900,
+      "lossFt": 0,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach High Camp (~6,900 ft) below the North Ridge"
+     },
+     {
+      "n": 2,
+      "note": "Alpine start up steep sections to around 40°, gaining the ridge and the summit plateau, then reversing the route back to High Camp. Parties who stage a shuttle car at Cold Springs instead descend the South Spur directly off the summit, finishing in 2 days.",
+      "hours": 9,
+      "miles": 4,
+      "title": "Summit via the North Ridge, return to camp",
+      "gainFt": 3300,
+      "lossFt": 3300,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "2:00-3:00 AM",
+        "label": "Leave High Camp",
+        "detail": "Early start for firm snow."
+       },
+       {
+        "time": "Late morning",
+        "label": "Summit",
+        "detail": ""
+       },
+       {
+        "time": "Afternoon",
+        "label": "Return to High Camp",
+        "detail": "Reverse the ridge (or descend the South Spur to a shuttle car at Cold Springs)."
+       }
+      ],
+      "objective": "Climb the North Ridge to the summit and back to High Camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back down the Killen Creek Trail to the trailhead.",
+      "hours": 4,
+      "miles": 4.1,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2900,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Return to the Killen Creek trailhead"
+     }
+    ],
+    "totalNote": "A 3-day trip for parties without a car shuttle: ~5 hr approach to high camp, an alpine-start summit day on the North Ridge back to camp, then a hike out; with a shuttle car staged at Cold Springs, the summit-day descent can instead go straight down the South Spur, finishing in 2 days."
+   },
+   "access": {
+    "fees": "$20 per person (single-trip, not annual); free for climbers under 16.",
+    "notes": "Purchase online in advance — no cell coverage at the trailhead, so print or save the pass. Party leader enters each climber’s name and a vehicle license plate.",
+    "rules": "Group size capped at 12. Human waste must be packed out above 7,000 ft (blue/WAG bags) — free bags available at the Trout Lake Ranger District office, no collection service. The Mazama Glacier route and Bird Creek Meadows/Round-the-Mountain area cross Yakama Nation land and require a separate small tribal recreation permit purchased at Bird Creek Meadows — the standard South Climb/Cold Springs route stays on Forest Service land and does not.",
+    "permit": "Mt. Adams Climbing Activity Pass",
+    "seasonal": "South Climb route typically opens as snow melts out around May.",
+    "group_limit": 12,
+    "land_manager": "U.S. Forest Service",
+    "parking_pass": "No trailhead parking pass is required at the Killen Creek Trailhead. The Mount Adams Climbing Pass applies separately above 7,000 ft.",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+     "what": "Mount Adams Climbing Pass above 7,000 ft (May to September), plus a free self-issue wilderness permit below 7,000 ft",
+     "where": "Buy the Climbing Pass on Recreation.gov before arriving, since cell coverage is poor; fill out the wilderness permit at the trailhead."
+    }
+   },
+   "road": {
+    "name": "FR 2329 to Killen Creek",
+    "status": "Seasonal dirt forest road; opens as snow melts",
+    "driveNote": "Access from Randle/Trout Lake area via forest roads to the Killen Creek trailhead.",
+    "seasonalGate": "Snow-gated until early summer"
+   },
+   "climate": {
+    "typical": "North-facing, holds snow longer and colder than the south side.",
+    "bySeason": {
+     "fall": "Loose rock, early storms",
+     "spring": "Snowbound, firm; road gated",
+     "summer": "Prime June–mid-July; rockfall increases later",
+     "winter": "Full winter; very long approach"
+    },
+    "forecastZone": "Mount Adams (NWS)"
+   },
+   "emergency": {
+    "rangerStation": "Mount Adams Ranger District, Trout Lake (509-395-3402)"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in June through mid-July",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Moderate - widely cited as the second-most-popular route on Mount Adams (after the South Climb), but a small fraction of South Climb traffic; likely dozens of parties per season rather than hundreds"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong aerobic fitness for a long approach to High Camp (~6,900 ft) followed by a sustained pre-dawn summit push on steep snow",
+     "packWeight": "~35-45 lbs with overnight camp gear, rope, and glacier travel kit"
+    },
+    "approachTime": "~4-6 hours from Killen Creek trailhead to High Camp, plus a pre-dawn (3-4 a.m.) summit push",
+    "requiredSkills": [
+     "Roped glacier travel & crevasse rescue",
+     "Steep snow climbing and self-arrest",
+     "Ridge route-finding, including cornice avoidance",
+     "Alpine-start discipline (pre-dawn departure for firm snow)"
+    ],
+    "experienceLevel": "Intermediate-advanced mountaineer; prior experience on a glaciated Cascade volcano strongly recommended before leading or following this route"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "June through mid-July",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Killen Creek road access is often still snow-gated and the approach carries deep, unstable spring snowpack",
+      "status": "risky"
+     },
+     "July": {
+      "reason": "First half of the month remains solid; rockfall from the warming ridge crest increases later in July",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Firm snow with minimized rockfall and crevasse hazard",
+      "status": "optimal"
+     },
+     "August": {
+      "reason": "Outside the June-to-mid-July window; expect increased rockfall and more open crevasses on the glaciers beside the ridge",
+      "status": "risky"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "North-facing, holds snow longer and colder than the south side",
+     "probability": "Not explicitly documented for this route; Cascade volcanoes commonly see afternoon convective activity in summer, as noted for the South Climb, so treat as a plausible but unverified risk here"
+    },
+    "exposure": "High - sustained steep snow on the upper ridge with rockfall from the crest as it warms, cornices along the ridgeline, and a remote, self-reliant north-side approach with no quick bailout",
+    "avalanche": {
+     "zone": "NWAC West Slopes South",
+     "byMonth": {
+      "May": "Considerable",
+      "July": "Low",
+      "June": "Moderate",
+      "August": "N/A"
+     }
+    },
+    "crevasses": "Crevasses on the Adams and Lava glaciers flanking the ridge require roped travel and crevasse-rescue readiness"
+   },
+   "data_quality": {
+    "gaps": [
+     "No hard per-season party counts found, only a relative popularity ranking versus other Mount Adams routes",
+     "NWAC does not issue a route-specific June-July forecast; the June-August avalanche ratings above are inferred from general spring-to-summer snowpack consolidation, not an official forecast",
+     "Afternoon-thunderstorm probability specific to this route was not found in sources",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/1E93",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 3,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 46.206,
+    "peakLng": -121.49,
+    "trailhead": "Killen Creek Trailhead",
+    "trailheadLat": 46.288612,
+    "trailheadLng": -121.551532
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Killen Creek trailhead and High Camp",
+     "notes": "The same walk in as the Adams Glacier and the Northwest Ridge, and High Camp is the shared base for all three. Killen Creek Trail #113 from the trailhead (~4,600 ft) runs about 3.1 miles to the PCT junction at roughly 6,100 ft; cross straight over onto High Camp Trail #10 for another mile to its end at about 6,900 ft on the edge of the Adams Glacier moraine. Camping is spread between 7,000 and 7,600 ft, including a glacial lake camp near 7,650 ft.\n\nAccess is by FR 23, 21 and 2329; FR 2329 is gravel and holds snow into early summer. East Fork Adams Creek, crossed about 2.5 miles up the trail, is the last dependable water.\n\nPermits: free self-issue wilderness permit at the trailhead, plus a Cascade Volcano Pass for travel above 7,000 ft in the summer season.\n\nThis is a longer and more committing day than the South Climb from a much quieter side of the mountain, and crevassed glacier lies on both flanks of the ridge and on the summit ice cap, so glacier skills are expected, unlike the South Spur.",
+     "distMi": 4.1,
+     "gainFt": 2300,
+     "season": "June through September; a snow route early, a loose rock route once it melts out",
+     "hazards": [
+      "Very loose volcanic rock the length of the ridge — helmets, and spacing between climbers",
+      "Crevassed glacier on both flanks if you leave the crest",
+      "Exposed snow travel between rock sections",
+      "Thin moraine tread above treeline, easy to lose in dark or whiteout",
+      "No running water above East Fork Adams Creek"
+     ],
+     "baseFinding": "From High Camp the line is southeast, toward the foot of the ridge, and in clear weather you can see the whole thing from the approach — parties describe it as impossible to miss.\n\nThe recognition problem is entirely a poor-visibility one, and the test is what is under your boots. The North Ridge is the rubble-and-cinder rib that separates the Adams Glacier on its west from the Lava Glacier ground on its east. You should be on loose volcanic rock and scree, on a defined crest, with glacier falling away on BOTH sides. If you are on ice with crevasses, you have slid off the rib onto one glacier or the other, and which one tells you which way to correct.\n\nA smooth, clean, snow-only ascent is the wrong sign on this route: it is a choss pile, and the loose rock is the confirmation rather than the complaint. Expect short easy scrambling steps low down.\n\nThe angle eases noticeably around 11,000 ft, which is the sign the ridge proper is behind you and the summit plateau ground is ahead."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 6900,
+     "name": "High Camp (Adams Creek Meadows)",
+     "role": "main",
+     "type": "camp",
+     "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compared with the Lunch Counter, and it puts you directly under the glacier's icefall. There is no shelter from wind other than what the rock benches give you, and afternoon weather rolls in fast off the north face. Snow lingers here into July in a heavy year, which affects both the boot track and where you can pitch.",
+     "water": "Generally reliable through summer. Meltwater streams from the Adams Glacier snout and small tarns feed the meadows, and Killen Creek runs lower on the approach; filter everything, and expect surface streams to shrink late in a dry season.",
+     "permit": "Free self-issued wilderness permit at the Killen Creek trailhead. Note the elevation carefully — at about 6,900 ft this camp sits just under the 7,000 ft threshold, so the camp itself does not require a Cascade Volcano Pass, but any climbing above that line between May 1 and Sept 30 does, so a party heading for the Adams Glacier or North Ridge needs one. Northwest Forest Pass or equivalent for trailhead parking. Camp on durable ground and well back from water — this is fragile subalpine meadow.",
+     "capacity": "Moderate — open meadow and bench terrain with many dispersed spots; busy in wildflower season but rarely crowded by alpine standards"
+    },
+    {
+     "name": "High Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_firearms",
+  "name": "Firearms",
+  "area": {
+   "id": "wa_dikes_the",
+   "name": "Dikes, The",
+   "parent_id": "wa_southeast_corner",
+   "elevation_ft": null,
+   "lat": 46.12344,
+   "lng": -117.81893
+  },
+  "prior_findings": "Dikes (FR-64 / Middle Point): siblings were set to 'no pass needed' (fee list + tourism page); this row still carries the pass in access (check rendered fields; do not edit access._raw).",
+  "earlier_research": [
+   {
+    "file": "r640.json",
+    "fact": "Season window and when the FR-64 access road is open",
+    "status": "fixed",
+    "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+    "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+    "sources": [
+     "https://www.mountainproject.com/area/107487344/the-dikes",
+     "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+     "https://en.wikipedia.org/wiki/Ski_Bluewood"
+    ]
+   },
+   {
+    "file": "r640.json",
+    "fact": "Northwest Forest Pass requirement",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/umatilla/passes",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+    ]
+   },
+   {
+    "file": "s010.json",
+    "fact": "Northwest Forest Pass requirement",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The Umatilla NF day-use fee list and the Region 6 fee-site list both name only nine Umatilla fee sites (Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon, Twin Buttes); neither lists Middle Point or any FR 64 pullout, and the Middle Point Trailhead page states no fee. That supports the rendered 'no pass' fields, but both lists come from one publisher (the Forest Service); the climbing area page and the crag guide (unreachable) say nothing about passes. The disputed values live only in access._raw, which does not render. Would settle: an independent climbing or local source stating no pass is needed at the Dikes pullouts.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+    ]
+   },
+   {
+    "file": "t321.json",
+    "fact": "Driving distance from Dayton to the crag",
+    "status": "fixed",
+    "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+    "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+    "sources": [
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+     "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+     "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_notta_slab",
+    "name": "Notta Slab",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_cheap_beer",
+    "name": "Cheap Beer",
+    "grade": "5.11b"
+   },
+   {
+    "id": "wa_bachelor_party",
+    "name": "Bachelor Party",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_moe",
+    "name": "Moe",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_morning_thunder",
+    "name": "Morning Thunder",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_groove_thang",
+    "name": "Groove Thang",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_unknown_climb_up_the_castle",
+    "name": "Unknown Climb Up the Castle",
+    "grade": "5.8+"
+   },
+   {
+    "id": "wa_cordwood",
+    "name": "Cordwood",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_czech_it_out",
+    "name": "Czech it Out",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wa_monkey_on_a_woodpile",
+    "name": "Monkey On A Woodpile",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_henpecked",
+    "name": "Henpecked",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_internal_combustion",
+    "name": "Internal Combustion",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wa_just_enough",
+    "name": "Just Enough",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_ahoot",
+    "name": "Ahoot",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_face_farce",
+    "name": "Face Farce",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_incoming",
+    "name": "Incoming",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_a_little_something",
+    "name": "A Little Something",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_redtail_arete",
+    "name": "Redtail Arete",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_red_zinger",
+    "name": "Red Zinger",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_safety_dance",
+    "name": "Safety Dance",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_joe_s_route",
+    "name": "Joe's Route",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_lady_slipper",
+    "name": "Lady Slipper",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_just_for_fun",
+    "name": "Just For Fun",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_heinous_thing",
+    "name": "Heinous Thing",
+    "grade": "5.10b"
+   }
+  ],
+  "row": {
+   "id": "wa_firearms",
+   "area_id": "wa_dikes_the",
+   "name": "Firearms",
+   "discipline": "sport",
+   "grade": "5.10b",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 1,
+   "length_m": 11,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Kevin Pogue",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "May-Oct",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Fractured basalt typical of the Dikes"
+   ],
+   "verif": null,
+   "overview": "The first route seen from the trail at Minidike; overhanging start easing to a good rest before the chains.",
+   "beta": "Begins with an overhanging section, then eases up with a great resting point before the chain anchor.",
+   "turnaround": "Short, fully bolted single pitch with no objective weather exposure beyond normal canyon heat/afternoon-storm considerations.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10b",
+   "ice_grade": null,
+   "gain_ft": 200,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Minidike",
+   "permit": null,
+   "comms": null,
+   "descent": "Lower from the chain anchor (7 bolts, shared anchor with the adjacent Cheap Beer route) on a single strand.",
+   "obj_haz": [
+    "overhanging terrain"
+   ],
+   "waypoints": [
+    {
+     "lat": 46.13757,
+     "lng": -117.80862,
+     "elev": 3400,
+     "name": "Middle Point Trailhead (FR 64)",
+     "note": "Drive ~1.5 miles further south on FR 64 past this trailhead, then a short scramble up to Minidike's base.",
+     "type": "Trailhead",
+     "elevFt": 3400,
+     "directions": "From Dayton, follow North Touchet Road out of town toward Ski Bluewood; it is paved for roughly the first 15 to 16 miles, then turns to gravel as Forest Service Road 64 at the national forest boundary. The Dikes sit along that road in the East Fork Touchet River valley below Ski Bluewood, in the Walla Walla Ranger District of the Umatilla National Forest. The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April. You do not park at this trailhead: for the Minidike, keep driving about 1.5 miles further south on FR 64 past it and park on the left, southeast side of the road just after you cross the bridge over the river."
+    },
+    {
+     "lat": 46.11857,
+     "lng": -117.82283,
+     "elev": 3708,
+     "name": "Minidike",
+     "note": "Smaller of the two closely-spaced fins at the core of The Dikes; park ~1.5 mi past the trailhead just after the river bridge, cross the road, scramble down the abutment, and follow the trail downstream on the NW bank.",
+     "type": "Topout",
+     "distMi": 1.5
+    },
+    {
+     "lat": 46.11857,
+     "lng": -117.82283,
+     "name": "Minidike wall (Firearms)",
+     "type": "Junction"
+    },
+    {
+     "lat": 46.11857,
+     "lng": -117.82283,
+     "elev": 3712,
+     "name": "Minidike",
+     "type": "Summit",
+     "elevFt": 3712
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": null,
+   "detailed_rack": "7 bolts to chain anchors, shared with Cheap Beer.",
+   "what_to_bring": [
+    "Helmet"
+   ],
+   "pro_tips": [
+    "Use the good rest point before the chains to shake out on the overhanging start"
+   ],
+   "watch_out": [
+    "Overhanging opening moves — pace yourself before the rest"
+   ],
+   "pro_needs": "Fully bolted (7 bolts).",
+   "best_season": "Roughly May through October, sometimes from April.",
+   "high_point_ft": 3712,
+   "aid_grade": null,
+   "approach": "The Dikes sit in the Umatilla National Forest's Walla Walla Ranger District, in the East Fork Touchet River valley near Ski Bluewood, southeast Washington — not near the Snake River. Access is via North Touchet Road out of Dayton, WA, paved for roughly the first 15-16 miles before becoming gravel Forest Service Road 64 at the forest boundary; the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April. Approaches are very short and roadside: the south Megadike is reached by parking near a bridge 1.2 miles past the Middle Point Ridge Trailhead and scrambling directly up the steep hillside above the bridge abutment, while Weeping Wall and Joe's Rock are similar short pullout-to-cliff scrambles at 1.1 and 2.0 miles past the same trailhead respectively. The area is lightly visited and faint-trailed, and the basalt is notably loose/fractured, requiring routine loose-rock cleaning. This route is on the Minidike: park 1.5 miles past the Middle Point Ridge Trailhead on the left (SE) side of the road, just after crossing a bridge over the river. Cross the road, scramble down the bridge abutment, and follow a trail downstream on the NW side.",
+   "descent_text": "Single pitch, 35 ft.",
+   "bail": "Fully bolted; lower from any bolt.",
+   "pitch_detail": [
+    {
+     "grade": "5.10b",
+     "notes": "Overhanging start eases to a good rest before the shared chain anchor (7 bolts).",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "_raw": {
+     "permit_type": "Northwest Forest Pass (day use)",
+     "special_hazards": "Climbing rock (check current condition via climbing guides)",
+     "group_size_limits": "Not specified",
+     "permit_pickup_hours": "Self-service at trailhead",
+     "altitude_restrictions": "None documented",
+     "parking_pass_required": "Northwest Forest Pass",
+     "permit_cost_structure": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "permit_pickup_location": "Online, local retail, or trailhead"
+    },
+    "fees": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site.",
+    "notes": "A basalt \"cordwood-jointed\" dike/fin formation in the East Fork Touchet River valley off FS Rd 64, ~18 mi south of Dayton, WA. Unmaintained approach, seasonally snowed in late fall through spring.",
+    "permit": "No permit required for day climbing at these informal roadside pullouts.",
+    "closures": "FR-64 (Bluewood Road) stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October; check with the Walla Walla Ranger District before a winter/spring trip.",
+    "permitZone": "Not in designated wilderness -- Blue Mountains, East Fork Touchet River valley",
+    "landManager": "Umatilla National Forest (Walla Walla Ranger District)",
+    "land_manager": "Umatilla National Forest (Walla Walla Ranger District)",
+    "passRequired": "No -- informal roadside pullout, not a developed fee site"
+   },
+   "road": {
+    "name": "Touchet Road / FR-64 (Bluewood Road) from Dayton",
+    "status": "Paved North Touchet Road out of Dayton becomes gravel-to-dirt Forest Service Road 64 at the forest boundary as it climbs toward the Bluewood ski area; the climbing dikes sit right along this road roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton). Approach paths to individual crags (Megadike, Minidike, Weeping Wall, Joe's Rock) are unofficial, brushy, and easy to lose.",
+    "driveNote": "Roughly 25-30 minutes (about 18 miles) from Dayton, WA via S 4th Street/North Touchet Road (FR-64).",
+    "seasonalGate": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+   },
+   "climate": {
+    "fall": "Dry, pleasant",
+    "spring": "Climbable from ~April",
+    "summer": "Hot in canyon",
+    "winter": "Often snowbound",
+    "typical": "Dry hot summers, cold snowy winters",
+    "forecastZone": "Blue Mountains foothills, eastern WA"
+   },
+   "emergency": {
+    "notes": "Remote gravel forest-road approach; cell coverage not guaranteed.",
+    "county": "Columbia County, WA",
+    "rangerStation": "Walla Walla Ranger District, Umatilla National Forest — (509) 522-6290",
+    "nearestHospital": "Dayton General Hospital, 1012 S 3rd St, Dayton, WA — 24-hour ER",
+    "sheriffDispatch": "Columbia County Sheriff's Office — (509) 382-2518; 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 46.12344,
+    "peakLng": -117.81893,
+    "trailhead": "North Touchet Road roadside (The Dikes, below Ski Bluewood)",
+    "trailheadDirection": "From Dayton via North Touchet Road toward Ski Bluewood (paved ~15-16 miles, then gravel FR); the dikes cross the road about 1.5 miles above the Middle Point Ridge trailhead — roadside parking at the crags"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "Single-pitch bolted sport route at Minidike (The Dikes, WA). Minidike routes are shorter than Megadike; 60m is sufficient.",
+   "ascender": null,
+   "corrections": "Grade 5.10b matches MP exactly.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Overhanging",
+    "Face",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_moe",
+  "name": "Moe",
+  "area": {
+   "id": "wa_dikes_the",
+   "name": "Dikes, The",
+   "parent_id": "wa_southeast_corner",
+   "elevation_ft": null,
+   "lat": 46.12344,
+   "lng": -117.81893
+  },
+  "prior_findings": "Dikes (FR-64 / Middle Point): siblings were set to 'no pass needed'; this row still carries the pass (check rendered fields; do not edit access._raw).",
+  "earlier_research": [
+   {
+    "file": "r640.json",
+    "fact": "Season window and when the FR-64 access road is open",
+    "status": "fixed",
+    "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+    "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+    "sources": [
+     "https://www.mountainproject.com/area/107487344/the-dikes",
+     "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+     "https://en.wikipedia.org/wiki/Ski_Bluewood"
+    ]
+   },
+   {
+    "file": "r640.json",
+    "fact": "Northwest Forest Pass requirement",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/umatilla/passes",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+    ]
+   },
+   {
+    "file": "r640.json",
+    "fact": "Parking distance past Middle Point Ridge Trailhead",
+    "status": "fixed",
+    "correct_value": "Megadike South parking is 1.2 mi past the Middle Point Ridge trailhead (1.5 mi is Minidike)",
+    "evidence": "The Dikes area page lists parking at 1.2 mi past the trailhead for Megadike South and 1.5 mi for Minidike; the Dikes climbing guide says to drive 1.2 mi past the Middle Point Ridge trailhead and park just before the bridge for the south megadike. The row's approach and trailhead waypoint already say 1.2 mi.",
+    "sources": [
+     "https://www.mountainproject.com/area/107487344/the-dikes",
+     "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+    ]
+   },
+   {
+    "file": "s010.json",
+    "fact": "Northwest Forest Pass requirement",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The Umatilla NF day-use fee list and the Region 6 fee-site list both name only nine Umatilla fee sites (Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon, Twin Buttes); neither lists Middle Point or any FR 64 pullout, and the Middle Point Trailhead page states no fee. That supports the rendered 'no pass' fields, but both lists come from one publisher (the Forest Service); the climbing area page and the crag guide (unreachable) say nothing about passes. The disputed values live only in access._raw, which does not render. Would settle: an independent climbing or local source stating no pass is needed at the Dikes pullouts.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+    ]
+   },
+   {
+    "file": "t321.json",
+    "fact": "Driving distance from Dayton to the crag",
+    "status": "fixed",
+    "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+    "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+    "sources": [
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+     "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+     "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_notta_slab",
+    "name": "Notta Slab",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_cheap_beer",
+    "name": "Cheap Beer",
+    "grade": "5.11b"
+   },
+   {
+    "id": "wa_bachelor_party",
+    "name": "Bachelor Party",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_morning_thunder",
+    "name": "Morning Thunder",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_groove_thang",
+    "name": "Groove Thang",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_unknown_climb_up_the_castle",
+    "name": "Unknown Climb Up the Castle",
+    "grade": "5.8+"
+   },
+   {
+    "id": "wa_firearms",
+    "name": "Firearms",
+    "grade": "5.10b"
+   },
+   {
+    "id": "wa_cordwood",
+    "name": "Cordwood",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_czech_it_out",
+    "name": "Czech it Out",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wa_monkey_on_a_woodpile",
+    "name": "Monkey On A Woodpile",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_henpecked",
+    "name": "Henpecked",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_internal_combustion",
+    "name": "Internal Combustion",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wa_just_enough",
+    "name": "Just Enough",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_ahoot",
+    "name": "Ahoot",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_face_farce",
+    "name": "Face Farce",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_incoming",
+    "name": "Incoming",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_a_little_something",
+    "name": "A Little Something",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_redtail_arete",
+    "name": "Redtail Arete",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_red_zinger",
+    "name": "Red Zinger",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_safety_dance",
+    "name": "Safety Dance",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_joe_s_route",
+    "name": "Joe's Route",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_lady_slipper",
+    "name": "Lady Slipper",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_just_for_fun",
+    "name": "Just For Fun",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_heinous_thing",
+    "name": "Heinous Thing",
+    "grade": "5.10b"
+   }
+  ],
+  "row": {
+   "id": "wa_moe",
+   "area_id": "wa_dikes_the",
+   "name": "Moe",
+   "discipline": "sport",
+   "grade": "5.8",
+   "grade_system": "yds",
+   "grade_num": 8,
+   "pitches": 1,
+   "length_m": 15,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Kevin Pogue",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "May-Oct",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Fractured basalt typical of the Dikes, with accumulated dirt on holds"
+   ],
+   "verif": null,
+   "overview": "Great holds all the way, though the route can be dirty and requires cleaning.",
+   "beta": "Great holds throughout; be prepared to clean holds as the route can be dirty.",
+   "turnaround": "Short, fully bolted single pitch — main consideration is cleaning dirty holds before committing, not a time-based turnaround.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.8",
+   "ice_grade": null,
+   "gain_ft": 350,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Megadike South",
+   "permit": null,
+   "comms": null,
+   "descent": "Lower from the anchor at top on a single strand.",
+   "obj_haz": [
+    "loose rock",
+    "dirty/lichen-covered holds"
+   ],
+   "waypoints": [
+    {
+     "lat": 46.13757,
+     "lng": -117.80862,
+     "elev": 3400,
+     "name": "Middle Point Trailhead (FR 64)",
+     "note": "Drive ~1.2 miles further south on FR 64 past this trailhead, then scramble up the hillside to Megadike.",
+     "type": "Trailhead",
+     "elevFt": 3400,
+     "directions": "From Dayton, follow North Touchet Road out of town toward Ski Bluewood; it is paved for roughly the first 15 to 16 miles, then turns to gravel as Forest Service Road 64 at the national forest boundary. The Dikes sit along that road in the East Fork Touchet River valley below Ski Bluewood, in the Walla Walla Ranger District of the Umatilla National Forest. The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April. You do not park at this trailhead: for Megadike South, keep driving about 1.2 miles further south on FR 64 past it and pull off on either side of the road just before the bridge over the river."
+    },
+    {
+     "lat": 46.1238,
+     "lng": -117.8215,
+     "elev": 3850,
+     "name": "Megadike South",
+     "note": "South end of the same megadike wall as Megadike North; park ~1.2 mi past the trailhead just before the river bridge, scramble up the NW hillside above the bridge abutment, then traverse the ridge to the south-facing walls.",
+     "type": "Topout",
+     "distMi": 1.2
+    },
+    {
+     "lat": 46.1243,
+     "lng": -117.8218,
+     "elev": 3890,
+     "name": "Megadike (south section)",
+     "type": "Summit",
+     "elevFt": 3890
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": null,
+   "detailed_rack": "Bolted route to anchors at top; standard sport rack.",
+   "what_to_bring": [
+    "Helmet",
+    "A small brush — route is noted as sometimes dirty"
+   ],
+   "pro_tips": [
+    "Bring a brush; holds are good once cleaned but can be dirty on lower-traffic days"
+   ],
+   "watch_out": [
+    "Dirty holds when not recently climbed — clean before committing to moves"
+   ],
+   "pro_needs": "Fully bolted.",
+   "best_season": "Roughly May through October, sometimes from April.",
+   "high_point_ft": 3850,
+   "aid_grade": null,
+   "approach": "The Dikes sit in the Umatilla National Forest's Walla Walla Ranger District, in the East Fork Touchet River valley near Ski Bluewood, southeast Washington — not near the Snake River. Access is via North Touchet Road out of Dayton, WA, paved for roughly the first 15-16 miles before becoming gravel Forest Service Road 64 at the forest boundary; the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April. Approaches are very short and roadside: the south Megadike is reached by parking near a bridge 1.2 miles past the Middle Point Ridge Trailhead and scrambling directly up the steep hillside above the bridge abutment, while Weeping Wall and Joe's Rock are similar short pullout-to-cliff scrambles at 1.1 and 2.0 miles past the same trailhead respectively. The area is lightly visited and faint-trailed, and the basalt is notably loose/fractured, requiring routine loose-rock cleaning. This route is on Megadike South: drive 1.2 miles past the Middle Point Ridge Trailhead and park on either side of the road just before the bridge over the river. Scramble up the steep hillside on the NW side of the road above the bridge abutment, then continue uphill along the dike to a passable gully.",
+   "descent_text": "Single pitch, 50 ft.",
+   "bail": "Fully bolted; lower from any bolt.",
+   "pitch_detail": [
+    {
+     "grade": "5.8",
+     "notes": "Consistently good holds to a top anchor; often dirty enough to warrant a hold brush.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "_raw": {
+     "permit_type": "Northwest Forest Pass (day use)",
+     "special_hazards": "Climbing rock (check current condition via climbing guides)",
+     "group_size_limits": "Not specified",
+     "permit_pickup_hours": "Self-service at trailhead",
+     "altitude_restrictions": "None documented",
+     "parking_pass_required": "Northwest Forest Pass",
+     "permit_cost_structure": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "permit_pickup_location": "Online, local retail, or trailhead"
+    },
+    "fees": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site.",
+    "notes": "A basalt \"cordwood-jointed\" dike/fin formation in the East Fork Touchet River valley off FS Rd 64, ~18 mi south of Dayton, WA. Unmaintained approach, seasonally snowed in late fall through spring.",
+    "permit": "No permit required for day climbing at these informal roadside pullouts.",
+    "closures": "FR-64 (Bluewood Road) stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October; check with the Walla Walla Ranger District before a winter/spring trip.",
+    "permitZone": "Not in designated wilderness -- Blue Mountains, East Fork Touchet River valley",
+    "landManager": "Umatilla National Forest (Walla Walla Ranger District)",
+    "land_manager": "Umatilla National Forest (Walla Walla Ranger District)",
+    "passRequired": "No -- informal roadside pullout, not a developed fee site"
+   },
+   "road": {
+    "name": "Touchet Road / FR-64 (Bluewood Road) from Dayton",
+    "status": "Paved North Touchet Road out of Dayton becomes gravel-to-dirt Forest Service Road 64 at the forest boundary as it climbs toward the Bluewood ski area; the climbing dikes sit right along this road roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton). Approach paths to individual crags (Megadike, Minidike, Weeping Wall, Joe's Rock) are unofficial, brushy, and easy to lose.",
+    "driveNote": "Roughly 25-30 minutes (about 18 miles) from Dayton, WA via S 4th Street/North Touchet Road (FR-64).",
+    "seasonalGate": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+   },
+   "climate": {
+    "fall": "Dry, pleasant",
+    "spring": "Climbable from ~April",
+    "summer": "Hot and exposed",
+    "winter": "Often snowbound",
+    "typical": "Dry hot summers, cold snowy winters",
+    "forecastZone": "Blue Mountains foothills, eastern WA"
+   },
+   "emergency": {
+    "notes": "Remote roadside crag; helmets mandatory.",
+    "county": "Columbia County, Washington",
+    "rangerStation": "Walla Walla Ranger District, Umatilla NF — (509) 522-6290",
+    "nearestHospital": "Dayton General Hospital, Dayton, WA — (509) 382-2531",
+    "sheriffDispatch": "Columbia County Sheriff's Office: (509) 382-2518 (911 for emergencies)"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 46.12344,
+    "peakLng": -117.81893,
+    "trailhead": "North Touchet Road roadside (The Dikes, below Ski Bluewood)",
+    "trailheadDirection": "From Dayton via North Touchet Road toward Ski Bluewood (paved ~15-16 miles, then gravel FR); Megadike South crosses the road about 1.2 miles above the Middle Point Ridge trailhead — roadside parking at the crags"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "single",
+   "rope_length_m": 70,
+   "rope_note": "Single-pitch bolted sport route at Megadike South (The Dikes, WA). 70m recommended given crag-wide walls up to 120-140ft.",
+   "ascender": null,
+   "corrections": "Grade 5.8 matches MP exactly.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Face",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_internal_combustion",
+  "name": "Internal Combustion",
+  "area": {
+   "id": "wa_dikes_the",
+   "name": "Dikes, The",
+   "parent_id": "wa_southeast_corner",
+   "elevation_ft": null,
+   "lat": 46.12344,
+   "lng": -117.81893
+  },
+  "prior_findings": "Dikes (FR-64 / Middle Point): siblings were set to 'no pass needed'; this row still carries the pass (check rendered fields; do not edit access._raw).",
+  "earlier_research": [
+   {
+    "file": "r640.json",
+    "fact": "Season window and when the FR-64 access road is open",
+    "status": "fixed",
+    "correct_value": "Climbing season roughly May-October (sometimes from April); FR-64 is the ski-area road and stays in use through winter — snow on the crags/approach slopes, not the road, sets the season. April-November is only the trailhead's season of use.",
+    "evidence": "The Dikes area page gives the climbing season as May-October for most routes; the Whitman College outdoor program lists The Dikes as an April-October destination; they agree on a spring (April/May) start and an October end. April-November is the Forest Service season of use for the Middle Point trailhead itself (whose page also says forest trails are typically inaccessible late fall to late spring), not a climbing window. North Touchet Road/FR-64 continues past the Dikes to Ski Bluewood (FS directions: 19.3 mi on North Touchet Road/FR 64) and is the ski area's only surface access, so the road is in use through winter; the stored claim that the road is only snow-free mid-June to October and blocked in winter and spring is unsupported and contradicts both climbing-season sources.",
+    "sources": [
+     "https://www.mountainproject.com/area/107487344/the-dikes",
+     "https://www.whitman.edu/life-at-whitman/outdoor-program/climbing-center/outdoor-climbing-areas",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/bluewood-ski-area",
+     "https://en.wikipedia.org/wiki/Ski_Bluewood"
+    ]
+   },
+   {
+    "file": "r640.json",
+    "fact": "Northwest Forest Pass requirement",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The Umatilla NF passes page says the NW Forest Pass applies only at Forest Service sites where a day-use fee is charged; a search summary of the forest's day-use fee list named Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon and Twin Buttes (not Middle Point or any FR-64 pullout), and the Middle Point Trailhead page lists no fee. That points to the rendered 'no pass' fields being right, but it is one publisher and the fee list itself could not be fetched to confirm; web tools hit their limit. Note other Dikes rows in this batch render 'Northwest Forest Pass' as required, a cross-route disagreement for the same pullouts.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/umatilla/passes",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+    ]
+   },
+   {
+    "file": "s010.json",
+    "fact": "Northwest Forest Pass requirement",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The Umatilla NF day-use fee list and the Region 6 fee-site list both name only nine Umatilla fee sites (Elk Flats, Jubilee Lake, Meadow Creek, Panjab, Teepee, Three Forks, Timothy Springs, Tucannon, Twin Buttes); neither lists Middle Point or any FR 64 pullout, and the Middle Point Trailhead page states no fee. That supports the rendered 'no pass' fields, but both lists come from one publisher (the Forest Service); the climbing area page and the crag guide (unreachable) say nothing about passes. The disputed values live only in access._raw, which does not render. Would settle: an independent climbing or local source stating no pass is needed at the Dikes pullouts.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/umatilla/recreation/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/passes/recreation-sites-where-day-use-fees-are-charged",
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead"
+    ]
+   },
+   {
+    "file": "t321.json",
+    "fact": "Driving distance from Dayton to the crag",
+    "status": "fixed",
+    "correct_value": "The Middle Point Ridge Trailhead is 16-17 mi from Dayton and the dikes cross the road 1.1-1.5 mi beyond it, so the crag is ~18 mi from Dayton, not 20 and not 16-17",
+    "evidence": "The Forest Service gives 1.5 mi on S 4th St plus ~15 mi on North Touchet Road (~16.5 mi) to Middle Point Trailhead; WTA gives 16.9 mi from downtown Dayton; the Dikes climbing guide says 16-17 mi from the Hwy 12 turn and puts the megadike/minidike parking 1.1-1.5 mi past the trailhead (The Castle parking 1.2 mi back down the road). The row's own trailhead and Megadike pins are ~1.1 mi apart. So 20 mi overstates it, and the 16-17 mi in road.status/access.notes is the trailhead distance, not the crag distance (road.status even says 16-17 mi AND 1-2 mi past the trailhead).",
+    "sources": [
+     "https://www.fs.usda.gov/r06/umatilla/recreation/middle-point-trailhead",
+     "https://www.wta.org/go-hiking/hikes/middle-point-ridge",
+     "http://people.whitman.edu/~pogue/climbing/dikesguide.html"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_notta_slab",
+    "name": "Notta Slab",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_cheap_beer",
+    "name": "Cheap Beer",
+    "grade": "5.11b"
+   },
+   {
+    "id": "wa_bachelor_party",
+    "name": "Bachelor Party",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_moe",
+    "name": "Moe",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_morning_thunder",
+    "name": "Morning Thunder",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_groove_thang",
+    "name": "Groove Thang",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_unknown_climb_up_the_castle",
+    "name": "Unknown Climb Up the Castle",
+    "grade": "5.8+"
+   },
+   {
+    "id": "wa_firearms",
+    "name": "Firearms",
+    "grade": "5.10b"
+   },
+   {
+    "id": "wa_cordwood",
+    "name": "Cordwood",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_czech_it_out",
+    "name": "Czech it Out",
+    "grade": "5.10a"
+   },
+   {
+    "id": "wa_monkey_on_a_woodpile",
+    "name": "Monkey On A Woodpile",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_henpecked",
+    "name": "Henpecked",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_just_enough",
+    "name": "Just Enough",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_ahoot",
+    "name": "Ahoot",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_face_farce",
+    "name": "Face Farce",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_incoming",
+    "name": "Incoming",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_a_little_something",
+    "name": "A Little Something",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_redtail_arete",
+    "name": "Redtail Arete",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_red_zinger",
+    "name": "Red Zinger",
+    "grade": "5.7"
+   },
+   {
+    "id": "wa_safety_dance",
+    "name": "Safety Dance",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_joe_s_route",
+    "name": "Joe's Route",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_lady_slipper",
+    "name": "Lady Slipper",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_just_for_fun",
+    "name": "Just For Fun",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_heinous_thing",
+    "name": "Heinous Thing",
+    "grade": "5.10b"
+   }
+  ],
+  "row": {
+   "id": "wa_internal_combustion",
+   "area_id": "wa_dikes_the",
+   "name": "Internal Combustion",
+   "discipline": "sport",
+   "grade": "5.10a",
+   "grade_system": "yds",
+   "grade_num": 10.25,
+   "pitches": 1,
+   "length_m": 14,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Kevin Pogue",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "May-Oct",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Talus approach and fractured basalt typical of the Dikes"
+   ],
+   "verif": null,
+   "overview": "The last route on the Minidike face, a little up the talus; juggy start building to a technical crux near the top.",
+   "beta": "Begins with juggy holds and progresses through increasingly technical movement. The crux comes right before the last bolt, with an option to move right or take a recently-cleaned left-side slot finish. Anchors sit 6 ft above the final bolt, partly hidden behind small trees.",
+   "turnaround": "Short, fully bolted single pitch — the notable hazard is loose talus underfoot at the base rather than a time-based turnaround.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10a",
+   "ice_grade": null,
+   "gain_ft": 200,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Minidike",
+   "permit": null,
+   "comms": null,
+   "descent": "Lower from the chain anchor (8 bolts) on a single strand.",
+   "obj_haz": [
+    "talus/loose footing",
+    "loose rock"
+   ],
+   "waypoints": [
+    {
+     "lat": 46.13757,
+     "lng": -117.80862,
+     "elev": 3400,
+     "name": "Middle Point Trailhead (FR 64)",
+     "note": "Drive ~1.5 miles further south on FR 64 past this trailhead, then a short scramble up to Minidike's base.",
+     "type": "Trailhead",
+     "elevFt": 3400,
+     "directions": "From Dayton, follow North Touchet Road out of town toward Ski Bluewood; it is paved for roughly the first 15 to 16 miles, then turns to gravel as Forest Service Road 64 at the national forest boundary. The Dikes sit along that road in the East Fork Touchet River valley below Ski Bluewood, in the Walla Walla Ranger District of the Umatilla National Forest. The road continues to Ski Bluewood and stays in use through winter; snow on the crags and approach slopes is what limits climbing, to roughly May through October, sometimes from April. You do not park at this trailhead: for the Minidike, keep driving about 1.5 miles further south on FR 64 past it and park on the left, southeast side of the road just after you cross the bridge over the river."
+    },
+    {
+     "lat": 46.11857,
+     "lng": -117.82283,
+     "elev": 3708,
+     "name": "Minidike",
+     "note": "Smaller of the two closely-spaced fins at the core of The Dikes; park ~1.5 mi past the trailhead just after the river bridge, cross the road, scramble down the abutment, and follow the trail downstream on the NW bank.",
+     "type": "Topout",
+     "distMi": 1.5
+    },
+    {
+     "lat": 46.11857,
+     "lng": -117.82283,
+     "name": "Minidike wall (Internal Combustion)",
+     "type": "Junction"
+    },
+    {
+     "lat": 46.11857,
+     "lng": -117.82283,
+     "elev": 3712,
+     "name": "Minidike",
+     "type": "Summit",
+     "elevFt": 3712
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": null,
+   "detailed_rack": "8 bolts to chains, set 6 ft above the final bolt behind small trees.",
+   "what_to_bring": [
+    "Helmet"
+   ],
+   "pro_tips": [
+    "Crux is right before the last bolt — a recently-cleaned left-side slot finish is an alternative to moving right"
+   ],
+   "watch_out": [
+    "Anchors are partly hidden behind small trees — look carefully above the last bolt"
+   ],
+   "pro_needs": "Fully bolted (8 bolts).",
+   "best_season": "Roughly May through October, sometimes from April.",
+   "high_point_ft": 3712,
+   "aid_grade": null,
+   "approach": "The Dikes sit in the Umatilla National Forest's Walla Walla Ranger District, in the East Fork Touchet River valley near Ski Bluewood, southeast Washington — not near the Snake River. Access is via North Touchet Road out of Dayton, WA, paved for roughly the first 15-16 miles before becoming gravel Forest Service Road 64 at the forest boundary; the road continues to Ski Bluewood and stays in use through winter, but snow on the crags and approach slopes keeps the climbing season to roughly May-October, sometimes from April. Approaches are very short and roadside: the south Megadike is reached by parking near a bridge 1.2 miles past the Middle Point Ridge Trailhead and scrambling directly up the steep hillside above the bridge abutment, while Weeping Wall and Joe's Rock are similar short pullout-to-cliff scrambles at 1.1 and 2.0 miles past the same trailhead respectively. The area is lightly visited and faint-trailed, and the basalt is notably loose/fractured, requiring routine loose-rock cleaning. This route is on the Minidike: park 1.5 miles past the Middle Point Ridge Trailhead on the left (SE) side of the road, just after crossing a bridge over the river. Cross the road, scramble down the bridge abutment, and follow a trail downstream on the NW side.",
+   "descent_text": "Single pitch, 45 ft.",
+   "bail": "Fully bolted; lower from any bolt.",
+   "pitch_detail": [
+    {
+     "grade": "5.10a",
+     "notes": "Juggy start builds to a technical crux just below the last bolt; finish right or via a cleaned left-side slot to chains hidden behind small trees.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "_raw": {
+     "permit_type": "Northwest Forest Pass (day use)",
+     "special_hazards": "Climbing rock (check current condition via climbing guides)",
+     "group_size_limits": "Not specified",
+     "permit_pickup_hours": "Self-service at trailhead",
+     "altitude_restrictions": "None documented",
+     "parking_pass_required": "Northwest Forest Pass",
+     "permit_cost_structure": "Day use only; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "permit_pickup_location": "Online, local retail, or trailhead"
+    },
+    "fees": "No developed-trailhead fee at these roadside pullouts -- the approaches are informal, unofficial parking spots along FR-64, not a developed fee site.",
+    "notes": "A basalt \"cordwood-jointed\" dike/fin formation in the East Fork Touchet River valley off FS Rd 64, ~18 mi south of Dayton, WA. Unmaintained approach, seasonally snowed in late fall through spring.",
+    "permit": "No permit required for day climbing at these informal roadside pullouts.",
+    "closures": "FR-64 (Bluewood Road) stays in use through winter as the road to Ski Bluewood, but snow on the crags and approach slopes limits climbing to roughly May through October; check with the Walla Walla Ranger District before a winter/spring trip.",
+    "permitZone": "Not in designated wilderness -- Blue Mountains, East Fork Touchet River valley",
+    "landManager": "Umatilla National Forest (Walla Walla Ranger District)",
+    "land_manager": "Umatilla National Forest (Walla Walla Ranger District)",
+    "passRequired": "No -- informal roadside pullout, not a developed fee site"
+   },
+   "road": {
+    "name": "Touchet Road / FR-64 (Bluewood Road) from Dayton",
+    "status": "Paved North Touchet Road out of Dayton becomes gravel-to-dirt Forest Service Road 64 at the forest boundary as it climbs toward the Bluewood ski area; the climbing dikes sit right along this road roughly 18 miles in (about 1-2 miles past the Middle Point Ridge Trailhead, which is 16-17 miles from Dayton). Approach paths to individual crags (Megadike, Minidike, Weeping Wall, Joe's Rock) are unofficial, brushy, and easy to lose.",
+    "driveNote": "Roughly 25-30 minutes (about 18 miles) from Dayton, WA via S 4th Street/North Touchet Road (FR-64).",
+    "seasonalGate": "FR-64 continues past The Dikes to Ski Bluewood and is the ski area's only road, so it stays in use through winter; snow on the crags and approach slopes, rather than the road, limits climbing to roughly May through October, sometimes from April."
+   },
+   "climate": {
+    "fall": "Dry, pleasant",
+    "spring": "Climbable from ~April",
+    "summer": "Hot in canyon",
+    "winter": "Often snowbound",
+    "typical": "Dry hot summers, cold snowy winters",
+    "forecastZone": "Blue Mountains foothills, eastern WA"
+   },
+   "emergency": {
+    "notes": "Remote gravel forest-road approach; cell coverage not guaranteed.",
+    "county": "Columbia County, WA",
+    "rangerStation": "Walla Walla Ranger District, Umatilla National Forest — (509) 522-6290",
+    "nearestHospital": "Dayton General Hospital, 1012 S 3rd St, Dayton, WA — 24-hour ER",
+    "sheriffDispatch": "Columbia County Sheriff's Office — (509) 382-2518; 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 46.12344,
+    "peakLng": -117.81893,
+    "trailhead": "North Touchet Road roadside (The Dikes, below Ski Bluewood)",
+    "trailheadDirection": "From Dayton via North Touchet Road toward Ski Bluewood (paved ~15-16 miles, then gravel FR); the dikes cross the road about 1.5 miles above the Middle Point Ridge trailhead — roadside parking at the crags"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "Single-pitch bolted sport route at Minidike (The Dikes, WA). Minidike routes are shorter than Megadike; 60m is sufficient.",
+   "ascender": null,
+   "corrections": "Grade 5.10a matches MP exactly.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Face",
+    "Technical"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

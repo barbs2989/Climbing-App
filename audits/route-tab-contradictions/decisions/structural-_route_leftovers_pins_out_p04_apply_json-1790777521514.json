@@ -1,0 +1,1899 @@
+{
+ "applied": [
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "area_id": "wa_navaho_peak",
+   "name": "South Slopes",
+   "discipline": "mountaineering",
+   "grade": "Class 2",
+   "grade_system": "class",
+   "grade_num": 2,
+   "pitches": null,
+   "length_m": 1609,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "trekking poles",
+    "sturdy boots",
+    "ice axe early season"
+   ],
+   "hazards": [
+    "Lingering snowfields on the upper bowl/ridge into July — can obscure the route and create fall/glissade hazard on steep sections",
+    "Afternoon thunderstorms with lightning exposure on the open ridge and summit",
+    "Loose talus and blocky terrain above ~6,000 ft — rockfall risk onto parties below",
+    "Active Forest Service closure (hazard trees, fire-damaged terrain) on Trail #1359 through Dec 31, 2026",
+    "Long, mostly waterless upper approach — carry sufficient water"
+   ],
+   "verif": null,
+   "overview": "Navaho Peak is the fourth-highest summit in the Teanaway high country and sits on the boundary of the Alpine Lakes Wilderness, on the Kittitas/Chelan county line about 2 miles northeast of Earl Peak and 1.3 miles west of Three Brothers. The South Slopes/Southwest Ridge line is the standard non-technical route: a long approach up Stafford Creek to an open bowl and ridge system, then a broad talus-and-heather scramble to a small summit (room for only 4-5 people) with wide views of Mount Stuart, Ingalls Peak, Sherpa Peak, Earl Peak, and Mount Rainier.",
+   "beta": "The standard route follows the Stafford Creek Trail to Navaho Pass, then picks up the old County Line Trail heading east to intersect Navaho's south ridge; from there it's roughly a 700-foot Class 2 ridge scramble on a boot path to the summit. Reported round-trip stats vary by source from about 11-14 miles with 4,000-4,300 feet of gain depending on the exact line taken. A known shortcut leaves the main trail about 3 miles in, where two creek forks meet, and climbs directly to the saddle below the peak's southeast ridge, cutting roughly 2 miles off the round trip.",
+   "turnaround": "Set a firm turnaround time (e.g., early-to-mid afternoon) given the long, mostly open ridge above treeline with no quick escape from lightning — East Cascades thunderstorms typically build in the afternoon.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 4223,
+   "loss_ft": 4200,
+   "dist_km": 11,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "I",
+   "face": "South Slopes",
+   "permit": null,
+   "comms": "Cell coverage is unreliable to absent for most of the approach and at the summit given the remote, forested/alpine terrain of the Teanaway backcountry; do not rely on a cell signal for emergencies.",
+   "descent": "Reverse the ascent route",
+   "obj_haz": [
+    "loose scree/talus",
+    "lingering snow into July",
+    "route-finding near summit",
+    "exposed/small summit with limited room",
+    "afternoon thunderstorms"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.3663,
+     "lng": -120.8027,
+     "elev": 3100,
+     "name": "Stafford Creek Trailhead",
+     "note": "End of FR 9703; ~20-car lot with pit toilet, Northwest Forest Pass or $5 self-issue fee required; trail has seen closures for Labor Mountain Fire damage so check current USFS alerts before going.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive the Teanaway River Road to 29 Pines Campground, bear right where the pavement ends, then turn onto Stafford Creek Road and follow it a couple of miles to where it ends at the trailhead. The last stretch is dirt and washboarded but passable to low-clearance cars in dry conditions."
+    },
+    {
+     "lat": 47.401465,
+     "lng": -120.803455,
+     "elev": 4800,
+     "name": "Stafford Creek crossing, Stafford Creek Meadows",
+     "note": "Stream crossing in the meadows on Trail #1359; last reliable water before the drier climb toward the pass.",
+     "type": "Water",
+     "distMi": 3.5,
+     "directions": "Trail #1359 leaves the lot at an easy grade through dry ponderosa and lodgepole forest, staying close to Stafford Creek most of the way. A short rerouted section of steeper switchbacks near the half-mile mark bypasses old avalanche-damaged tread. The forest stays open and the grade never gets hard before the trail reaches the marshy meadow ground."
+    },
+    {
+     "lat": 47.409686,
+     "lng": -120.802068,
+     "elev": 5450,
+     "name": "Standup Creek Trail junction",
+     "note": "Trail #1359 meets the Standup Creek Trail about 2 miles below Navaho Pass; continue straight/left on #1359 toward the pass.",
+     "type": "Junction",
+     "distMi": 3.8,
+     "directions": "Stay on Stafford Creek Trail #1359, still gaining gradually along the creek, to the signed junction with the Standup Creek Trail (#1369)."
+    },
+    {
+     "lat": 47.409284,
+     "lng": -120.799768,
+     "elev": 5500,
+     "name": "Upper meadow camp",
+     "note": "Established camp area in the upper meadow (elev/dist interpolated between the 4,800 ft creek crossing and the pass); common overnight staging spot before the steep push above.",
+     "type": "Campsite",
+     "distMi": 5,
+     "directions": "Continue on Trail #1359 above the junction; the trail opens out into a large, marshy subalpine meadow with a feeder stream — another water source, and the usual base camp for parties splitting the trip over two days."
+    },
+    {
+     "lat": 47.414557,
+     "lng": -120.795687,
+     "elev": 6000,
+     "name": "Navaho Pass",
+     "note": "Junction with the old County Line Trail (Cascade Creek Trail #1217); barren, rocky 'moon-scape' terrain with big Enchantments views, but very exposed to wind for camping.",
+     "type": "Junction",
+     "distMi": 5.85,
+     "directions": "Above the meadow the trail leaves the trees and switchbacks up open, rocky slope for the last stretch, gaining roughly 500 ft to the saddle. There is no water and essentially no shade on this section, and on the dry east side it bakes on a warm afternoon."
+    },
+    {
+     "lat": 47.418341,
+     "lng": -120.799937,
+     "elev": 6600,
+     "name": "South ridge scramble path",
+     "note": "Steep climber's path of loose scree and dirt gaining the south ridge; snow patches can linger into July, making poles/microspikes worthwhile.",
+     "type": "Hazard",
+     "distMi": 6.3,
+     "directions": "From the pass turn east and follow the crest trail a short way toward the peak, then leave it where a boot path breaks off uphill onto the south ridge. The path is loose scree over dirt and steepens quickly, so poles earn their keep and it is easy to push rock down onto anyone below you."
+    },
+    {
+     "lat": 47.4226199,
+     "lng": -120.803141,
+     "elev": 7223,
+     "name": "Navaho Peak",
+     "note": "True summit at 7,223 ft on the Alpine Lakes Wilderness boundary; panoramic views of the Enchantments and Stuart Range.",
+     "type": "Summit",
+     "distMi": 6.85,
+     "directions": "Follow the crest up for a bit over 600 ft of gain on broken rock and scree; the scrambling stays easy Class 2 with hands wanted only occasionally. Stay on the ridge line rather than dropping onto the looser slopes on either side, which are steeper than they look from above."
+    }
+   ],
+   "gpx": [
+    [
+     47.366596,
+     -120.80206
+    ],
+    [
+     47.366364,
+     -120.80267
+    ],
+    [
+     47.366805,
+     -120.803111
+    ],
+    [
+     47.367336,
+     -120.803248
+    ],
+    [
+     47.36774,
+     -120.803782
+    ],
+    [
+     47.368157,
+     -120.804235
+    ],
+    [
+     47.368517,
+     -120.804684
+    ],
+    [
+     47.369008,
+     -120.804974
+    ],
+    [
+     47.369512,
+     -120.80502
+    ],
+    [
+     47.37,
+     -120.805328
+    ],
+    [
+     47.370483,
+     -120.805383
+    ],
+    [
+     47.371027,
+     -120.805434
+    ],
+    [
+     47.37151,
+     -120.805416
+    ],
+    [
+     47.371758,
+     -120.80536
+    ],
+    [
+     47.372297,
+     -120.805403
+    ],
+    [
+     47.372646,
+     -120.805098
+    ],
+    [
+     47.373178,
+     -120.805228
+    ],
+    [
+     47.373708,
+     -120.805378
+    ],
+    [
+     47.374202,
+     -120.805726
+    ],
+    [
+     47.37457,
+     -120.806215
+    ],
+    [
+     47.375036,
+     -120.806516
+    ],
+    [
+     47.375417,
+     -120.806931
+    ],
+    [
+     47.375937,
+     -120.807016
+    ],
+    [
+     47.376451,
+     -120.807174
+    ],
+    [
+     47.376956,
+     -120.8072
+    ],
+    [
+     47.377472,
+     -120.80732
+    ],
+    [
+     47.378004,
+     -120.807241
+    ],
+    [
+     47.37849,
+     -120.806966
+    ],
+    [
+     47.378942,
+     -120.806578
+    ],
+    [
+     47.379445,
+     -120.806678
+    ],
+    [
+     47.379961,
+     -120.806565
+    ],
+    [
+     47.380472,
+     -120.806493
+    ],
+    [
+     47.380966,
+     -120.806259
+    ],
+    [
+     47.381425,
+     -120.806114
+    ],
+    [
+     47.381698,
+     -120.80566
+    ],
+    [
+     47.382116,
+     -120.805198
+    ],
+    [
+     47.382539,
+     -120.804779
+    ],
+    [
+     47.383016,
+     -120.804548
+    ],
+    [
+     47.383541,
+     -120.804365
+    ],
+    [
+     47.384065,
+     -120.804291
+    ],
+    [
+     47.384602,
+     -120.804277
+    ],
+    [
+     47.385119,
+     -120.804284
+    ],
+    [
+     47.385637,
+     -120.804447
+    ],
+    [
+     47.386167,
+     -120.804281
+    ],
+    [
+     47.38669,
+     -120.804292
+    ],
+    [
+     47.38722,
+     -120.80414
+    ],
+    [
+     47.387637,
+     -120.803726
+    ],
+    [
+     47.388128,
+     -120.803413
+    ],
+    [
+     47.388633,
+     -120.80313
+    ],
+    [
+     47.389105,
+     -120.802749
+    ],
+    [
+     47.38962,
+     -120.802557
+    ],
+    [
+     47.389978,
+     -120.802009
+    ],
+    [
+     47.390457,
+     -120.801655
+    ],
+    [
+     47.390971,
+     -120.801452
+    ],
+    [
+     47.391449,
+     -120.801099
+    ],
+    [
+     47.391953,
+     -120.800865
+    ],
+    [
+     47.392472,
+     -120.800639
+    ],
+    [
+     47.392925,
+     -120.800285
+    ],
+    [
+     47.393425,
+     -120.800069
+    ],
+    [
+     47.393784,
+     -120.800055
+    ],
+    [
+     47.394312,
+     -120.800066
+    ],
+    [
+     47.394812,
+     -120.800327
+    ],
+    [
+     47.395334,
+     -120.800432
+    ],
+    [
+     47.395826,
+     -120.800741
+    ],
+    [
+     47.396291,
+     -120.801151
+    ],
+    [
+     47.396722,
+     -120.801587
+    ],
+    [
+     47.397252,
+     -120.801716
+    ],
+    [
+     47.397755,
+     -120.802018
+    ],
+    [
+     47.398282,
+     -120.802231
+    ],
+    [
+     47.39881,
+     -120.802357
+    ],
+    [
+     47.399306,
+     -120.802671
+    ],
+    [
+     47.39985,
+     -120.802731
+    ],
+    [
+     47.400373,
+     -120.802895
+    ],
+    [
+     47.400872,
+     -120.803153
+    ],
+    [
+     47.401359,
+     -120.803364
+    ],
+    [
+     47.401816,
+     -120.803758
+    ],
+    [
+     47.402282,
+     -120.804144
+    ],
+    [
+     47.402778,
+     -120.804447
+    ],
+    [
+     47.403194,
+     -120.804429
+    ],
+    [
+     47.403096,
+     -120.803644
+    ],
+    [
+     47.403444,
+     -120.803385
+    ],
+    [
+     47.403894,
+     -120.803413
+    ],
+    [
+     47.404329,
+     -120.803575
+    ],
+    [
+     47.404819,
+     -120.803828
+    ],
+    [
+     47.405253,
+     -120.804271
+    ],
+    [
+     47.405685,
+     -120.804651
+    ],
+    [
+     47.406011,
+     -120.805032
+    ],
+    [
+     47.406065,
+     -120.804274
+    ],
+    [
+     47.406261,
+     -120.804087
+    ],
+    [
+     47.406517,
+     -120.804697
+    ],
+    [
+     47.406912,
+     -120.805167
+    ],
+    [
+     47.40703,
+     -120.805886
+    ],
+    [
+     47.407258,
+     -120.806441
+    ],
+    [
+     47.407384,
+     -120.805788
+    ],
+    [
+     47.407494,
+     -120.806082
+    ],
+    [
+     47.407758,
+     -120.806777
+    ],
+    [
+     47.408127,
+     -120.806977
+    ],
+    [
+     47.407806,
+     -120.807034
+    ],
+    [
+     47.407984,
+     -120.806912
+    ],
+    [
+     47.407837,
+     -120.806868
+    ],
+    [
+     47.408067,
+     -120.806806
+    ],
+    [
+     47.408386,
+     -120.806385
+    ],
+    [
+     47.408483,
+     -120.805761
+    ],
+    [
+     47.408721,
+     -120.805189
+    ],
+    [
+     47.409171,
+     -120.804817
+    ],
+    [
+     47.409411,
+     -120.80412
+    ],
+    [
+     47.409714,
+     -120.803516
+    ],
+    [
+     47.409781,
+     -120.802779
+    ],
+    [
+     47.409686,
+     -120.802067
+    ],
+    [
+     47.40965,
+     -120.801348
+    ],
+    [
+     47.40955,
+     -120.800597
+    ],
+    [
+     47.40937,
+     -120.799902
+    ],
+    [
+     47.409073,
+     -120.799436
+    ],
+    [
+     47.408927,
+     -120.798895
+    ],
+    [
+     47.408873,
+     -120.798094
+    ],
+    [
+     47.409022,
+     -120.797414
+    ],
+    [
+     47.409147,
+     -120.79678
+    ],
+    [
+     47.409144,
+     -120.796259
+    ],
+    [
+     47.409254,
+     -120.795587
+    ],
+    [
+     47.409564,
+     -120.79503
+    ],
+    [
+     47.410062,
+     -120.794786
+    ],
+    [
+     47.410542,
+     -120.794439
+    ],
+    [
+     47.411072,
+     -120.794365
+    ],
+    [
+     47.411588,
+     -120.794336
+    ],
+    [
+     47.412011,
+     -120.79409
+    ],
+    [
+     47.412462,
+     -120.794435
+    ],
+    [
+     47.412945,
+     -120.79436
+    ],
+    [
+     47.413421,
+     -120.794073
+    ],
+    [
+     47.413916,
+     -120.794174
+    ],
+    [
+     47.414155,
+     -120.794739
+    ],
+    [
+     47.41443,
+     -120.795411
+    ],
+    [
+     47.414734,
+     -120.796074
+    ],
+    [
+     47.415114,
+     -120.796646
+    ],
+    [
+     47.41547,
+     -120.797221
+    ],
+    [
+     47.415781,
+     -120.797871
+    ],
+    [
+     47.416169,
+     -120.798428
+    ],
+    [
+     47.416636,
+     -120.798841
+    ],
+    [
+     47.417121,
+     -120.799167
+    ],
+    [
+     47.417518,
+     -120.799658
+    ],
+    [
+     47.41801,
+     -120.79981
+    ],
+    [
+     47.418476,
+     -120.799989
+    ],
+    [
+     47.418933,
+     -120.800362
+    ],
+    [
+     47.419361,
+     -120.800736
+    ],
+    [
+     47.41987,
+     -120.801002
+    ],
+    [
+     47.420351,
+     -120.801322
+    ],
+    [
+     47.420867,
+     -120.8015
+    ],
+    [
+     47.421384,
+     -120.801717
+    ],
+    [
+     47.421877,
+     -120.801921
+    ],
+    [
+     47.422352,
+     -120.802303
+    ],
+    [
+     47.42276,
+     -120.802574
+    ],
+    [
+     47.422888,
+     -120.803321
+    ],
+    [
+     47.422906,
+     -120.80358
+    ],
+    [
+     47.422751,
+     -120.802872
+    ],
+    [
+     47.422348,
+     -120.802383
+    ],
+    [
+     47.421895,
+     -120.802024
+    ],
+    [
+     47.421435,
+     -120.801591
+    ],
+    [
+     47.420923,
+     -120.80162
+    ],
+    [
+     47.42045,
+     -120.801222
+    ],
+    [
+     47.419987,
+     -120.800858
+    ],
+    [
+     47.419523,
+     -120.800436
+    ],
+    [
+     47.419072,
+     -120.8001
+    ],
+    [
+     47.418543,
+     -120.799923
+    ],
+    [
+     47.418011,
+     -120.799892
+    ],
+    [
+     47.41781,
+     -120.799204
+    ],
+    [
+     47.417772,
+     -120.798484
+    ],
+    [
+     47.417948,
+     -120.797738
+    ],
+    [
+     47.418079,
+     -120.796978
+    ],
+    [
+     47.41828,
+     -120.796232
+    ],
+    [
+     47.41852,
+     -120.79553
+    ],
+    [
+     47.418755,
+     -120.794819
+    ],
+    [
+     47.418682,
+     -120.794029
+    ],
+    [
+     47.418816,
+     -120.79327
+    ],
+    [
+     47.418859,
+     -120.792498
+    ],
+    [
+     47.41901,
+     -120.791747
+    ],
+    [
+     47.419094,
+     -120.790978
+    ],
+    [
+     47.419089,
+     -120.790181
+    ],
+    [
+     47.418983,
+     -120.789424
+    ],
+    [
+     47.419115,
+     -120.788716
+    ],
+    [
+     47.41929,
+     -120.787962
+    ],
+    [
+     47.419382,
+     -120.787269
+    ],
+    [
+     47.419445,
+     -120.786546
+    ],
+    [
+     47.419408,
+     -120.785758
+    ],
+    [
+     47.419245,
+     -120.785049
+    ],
+    [
+     47.419185,
+     -120.784409
+    ],
+    [
+     47.41937,
+     -120.783762
+    ],
+    [
+     47.41951,
+     -120.783093
+    ],
+    [
+     47.419622,
+     -120.782336
+    ],
+    [
+     47.419754,
+     -120.781873
+    ],
+    [
+     47.420157,
+     -120.781534
+    ],
+    [
+     47.420394,
+     -120.781069
+    ],
+    [
+     47.42041,
+     -120.780363
+    ],
+    [
+     47.420762,
+     -120.7799
+    ],
+    [
+     47.421183,
+     -120.779405
+    ],
+    [
+     47.421444,
+     -120.77872
+    ],
+    [
+     47.421712,
+     -120.778038
+    ],
+    [
+     47.42201,
+     -120.777399
+    ],
+    [
+     47.422457,
+     -120.777012
+    ],
+    [
+     47.42295,
+     -120.776678
+    ],
+    [
+     47.423169,
+     -120.775967
+    ],
+    [
+     47.423013,
+     -120.776641
+    ],
+    [
+     47.422564,
+     -120.777048
+    ],
+    [
+     47.422083,
+     -120.777404
+    ],
+    [
+     47.42171,
+     -120.777812
+    ],
+    [
+     47.421338,
+     -120.77827
+    ],
+    [
+     47.421059,
+     -120.778911
+    ],
+    [
+     47.420827,
+     -120.779607
+    ],
+    [
+     47.420562,
+     -120.780298
+    ],
+    [
+     47.420375,
+     -120.780872
+    ],
+    [
+     47.420278,
+     -120.781426
+    ],
+    [
+     47.419935,
+     -120.781926
+    ],
+    [
+     47.419461,
+     -120.782141
+    ],
+    [
+     47.419142,
+     -120.782712
+    ],
+    [
+     47.418668,
+     -120.782869
+    ],
+    [
+     47.418217,
+     -120.783269
+    ],
+    [
+     47.417758,
+     -120.783607
+    ],
+    [
+     47.417225,
+     -120.783736
+    ],
+    [
+     47.416833,
+     -120.784207
+    ],
+    [
+     47.416709,
+     -120.78493
+    ],
+    [
+     47.416918,
+     -120.785657
+    ],
+    [
+     47.416875,
+     -120.786421
+    ],
+    [
+     47.416716,
+     -120.786892
+    ],
+    [
+     47.416541,
+     -120.787344
+    ],
+    [
+     47.41622,
+     -120.787513
+    ],
+    [
+     47.415758,
+     -120.787878
+    ],
+    [
+     47.415227,
+     -120.787826
+    ],
+    [
+     47.414699,
+     -120.787741
+    ],
+    [
+     47.414298,
+     -120.788242
+    ],
+    [
+     47.414127,
+     -120.788908
+    ],
+    [
+     47.414055,
+     -120.789696
+    ],
+    [
+     47.41382,
+     -120.790386
+    ],
+    [
+     47.413396,
+     -120.79088
+    ],
+    [
+     47.413055,
+     -120.791468
+    ],
+    [
+     47.412778,
+     -120.792153
+    ],
+    [
+     47.412544,
+     -120.792844
+    ],
+    [
+     47.412145,
+     -120.793339
+    ],
+    [
+     47.412465,
+     -120.793803
+    ],
+    [
+     47.412049,
+     -120.794078
+    ],
+    [
+     47.411588,
+     -120.794279
+    ],
+    [
+     47.411109,
+     -120.794451
+    ],
+    [
+     47.410598,
+     -120.794244
+    ],
+    [
+     47.410123,
+     -120.7939
+    ],
+    [
+     47.40959,
+     -120.793981
+    ],
+    [
+     47.409105,
+     -120.794043
+    ],
+    [
+     47.40863,
+     -120.794001
+    ],
+    [
+     47.40828,
+     -120.79343
+    ],
+    [
+     47.407886,
+     -120.792925
+    ],
+    [
+     47.407475,
+     -120.792421
+    ],
+    [
+     47.407493,
+     -120.792403
+    ],
+    [
+     47.407905,
+     -120.79283
+    ],
+    [
+     47.408242,
+     -120.793414
+    ],
+    [
+     47.408605,
+     -120.793995
+    ],
+    [
+     47.409092,
+     -120.794176
+    ],
+    [
+     47.409589,
+     -120.794325
+    ],
+    [
+     47.410034,
+     -120.794552
+    ],
+    [
+     47.409885,
+     -120.795202
+    ],
+    [
+     47.409612,
+     -120.795872
+    ],
+    [
+     47.40955,
+     -120.796539
+    ],
+    [
+     47.409393,
+     -120.797215
+    ],
+    [
+     47.409253,
+     -120.797973
+    ],
+    [
+     47.409235,
+     -120.798753
+    ],
+    [
+     47.409208,
+     -120.799403
+    ],
+    [
+     47.409583,
+     -120.799883
+    ],
+    [
+     47.409737,
+     -120.80062
+    ],
+    [
+     47.40963,
+     -120.801214
+    ],
+    [
+     47.409698,
+     -120.801814
+    ],
+    [
+     47.409767,
+     -120.802593
+    ],
+    [
+     47.409837,
+     -120.803326
+    ],
+    [
+     47.409553,
+     -120.803956
+    ],
+    [
+     47.409272,
+     -120.804595
+    ],
+    [
+     47.408863,
+     -120.804993
+    ],
+    [
+     47.408451,
+     -120.80545
+    ],
+    [
+     47.408133,
+     -120.80601
+    ],
+    [
+     47.407793,
+     -120.806505
+    ],
+    [
+     47.407759,
+     -120.806377
+    ],
+    [
+     47.407808,
+     -120.80623
+    ],
+    [
+     47.407487,
+     -120.805652
+    ],
+    [
+     47.407176,
+     -120.806046
+    ],
+    [
+     47.40702,
+     -120.805319
+    ],
+    [
+     47.406736,
+     -120.804656
+    ],
+    [
+     47.406306,
+     -120.804168
+    ],
+    [
+     47.406109,
+     -120.804003
+    ],
+    [
+     47.40607,
+     -120.804797
+    ],
+    [
+     47.405722,
+     -120.804497
+    ],
+    [
+     47.405267,
+     -120.804075
+    ],
+    [
+     47.404827,
+     -120.80365
+    ],
+    [
+     47.40433,
+     -120.803392
+    ],
+    [
+     47.403798,
+     -120.803302
+    ],
+    [
+     47.403255,
+     -120.803255
+    ],
+    [
+     47.403158,
+     -120.803907
+    ],
+    [
+     47.403103,
+     -120.804558
+    ],
+    [
+     47.402617,
+     -120.804211
+    ],
+    [
+     47.402114,
+     -120.803932
+    ],
+    [
+     47.401642,
+     -120.803583
+    ],
+    [
+     47.401189,
+     -120.803236
+    ],
+    [
+     47.400706,
+     -120.802986
+    ],
+    [
+     47.400191,
+     -120.802749
+    ],
+    [
+     47.399651,
+     -120.802704
+    ],
+    [
+     47.399158,
+     -120.802468
+    ],
+    [
+     47.398653,
+     -120.802209
+    ],
+    [
+     47.398128,
+     -120.80205
+    ],
+    [
+     47.39759,
+     -120.801927
+    ],
+    [
+     47.397078,
+     -120.801679
+    ],
+    [
+     47.396562,
+     -120.801456
+    ],
+    [
+     47.396138,
+     -120.800978
+    ],
+    [
+     47.395665,
+     -120.800574
+    ],
+    [
+     47.395166,
+     -120.80037
+    ],
+    [
+     47.394651,
+     -120.800275
+    ],
+    [
+     47.394166,
+     -120.79997
+    ],
+    [
+     47.393623,
+     -120.800022
+    ],
+    [
+     47.39309,
+     -120.800174
+    ],
+    [
+     47.392598,
+     -120.800418
+    ],
+    [
+     47.392105,
+     -120.800745
+    ],
+    [
+     47.391594,
+     -120.800975
+    ],
+    [
+     47.391079,
+     -120.801234
+    ],
+    [
+     47.390574,
+     -120.80149
+    ],
+    [
+     47.390082,
+     -120.801809
+    ],
+    [
+     47.38962,
+     -120.802226
+    ],
+    [
+     47.389211,
+     -120.802671
+    ],
+    [
+     47.388702,
+     -120.802915
+    ],
+    [
+     47.388221,
+     -120.803247
+    ],
+    [
+     47.387748,
+     -120.803621
+    ],
+    [
+     47.387224,
+     -120.803797
+    ],
+    [
+     47.386797,
+     -120.804161
+    ],
+    [
+     47.386268,
+     -120.804321
+    ],
+    [
+     47.385736,
+     -120.804412
+    ],
+    [
+     47.385221,
+     -120.804349
+    ],
+    [
+     47.384704,
+     -120.804149
+    ],
+    [
+     47.384171,
+     -120.804219
+    ],
+    [
+     47.383628,
+     -120.804236
+    ],
+    [
+     47.383097,
+     -120.804379
+    ],
+    [
+     47.382609,
+     -120.804571
+    ],
+    [
+     47.382157,
+     -120.805002
+    ],
+    [
+     47.381719,
+     -120.805448
+    ],
+    [
+     47.381374,
+     -120.805945
+    ],
+    [
+     47.380928,
+     -120.806222
+    ],
+    [
+     47.380427,
+     -120.806405
+    ],
+    [
+     47.379929,
+     -120.80652
+    ],
+    [
+     47.379394,
+     -120.806579
+    ],
+    [
+     47.378862,
+     -120.806628
+    ],
+    [
+     47.378446,
+     -120.807049
+    ],
+    [
+     47.377955,
+     -120.807211
+    ],
+    [
+     47.377441,
+     -120.807317
+    ],
+    [
+     47.376956,
+     -120.807184
+    ],
+    [
+     47.376425,
+     -120.807129
+    ],
+    [
+     47.375912,
+     -120.806915
+    ],
+    [
+     47.375377,
+     -120.80676
+    ],
+    [
+     47.374916,
+     -120.806526
+    ],
+    [
+     47.374482,
+     -120.806067
+    ],
+    [
+     47.374087,
+     -120.805699
+    ],
+    [
+     47.373586,
+     -120.805378
+    ],
+    [
+     47.37306,
+     -120.80521
+    ],
+    [
+     47.372523,
+     -120.805187
+    ],
+    [
+     47.372087,
+     -120.805319
+    ],
+    [
+     47.371544,
+     -120.805311
+    ],
+    [
+     47.371463,
+     -120.805504
+    ],
+    [
+     47.370932,
+     -120.805377
+    ],
+    [
+     47.370396,
+     -120.805447
+    ],
+    [
+     47.36988,
+     -120.8052
+    ],
+    [
+     47.369382,
+     -120.804919
+    ],
+    [
+     47.368881,
+     -120.804832
+    ],
+    [
+     47.368383,
+     -120.804548
+    ],
+    [
+     47.367989,
+     -120.804016
+    ],
+    [
+     47.367614,
+     -120.803551
+    ],
+    [
+     47.367186,
+     -120.803132
+    ],
+    [
+     47.366658,
+     -120.80295
+    ],
+    [
+     47.366417,
+     -120.802429
+    ],
+    [
+     47.366505,
+     -120.80207
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": null,
+    "descentTimeHrs": 3.5,
+    "approachTimeHrs": 5,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "From the Stafford Creek trailhead, follow Stafford Creek through meadows to Navaho Pass (~5.5 mi, ~3,000 ft gain), then turn onto the southwest ridge / south slopes for a Class 2 s…",
+      "fromTo": "Car-to-car via Stafford Creek and Navaho Pass",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical gear required.",
+   "what_to_bring": [
+    "Sturdy boots with good ankle support for extended talus/scree",
+    "Trekking poles",
+    "Ice axe if attempting before mid-late July or after early-season snow",
+    "Map/compass or GPS track — the trail fades near Navaho Pass and the ridge is mostly cross-country",
+    "Sun protection — much of the upper route is open and exposed",
+    "Northwest Forest Pass for trailhead parking",
+    "Self-issue wilderness permit (fill out at the trailhead kiosk)"
+   ],
+   "pro_tips": [
+    "Start early for the long approach",
+    "Great fall outing with golden larches en route"
+   ],
+   "watch_out": [
+    "dehydration",
+    "snow on upper slopes early",
+    "long return hike"
+   ],
+   "pro_needs": "None.",
+   "best_season": "Late June openings are possible in low-snow years, but snow often lingers into July and can turn the final scramble into route-finding on snow — August and September typically offer the driest, most straightforward conditions. October brings golden larches on the lower approach and clear, cool weather but shorter days. Regardless of season, check current Forest Service closure status before going (see access.closures).",
+   "high_point_ft": 7223,
+   "aid_grade": null,
+   "approach": "Start at the Stafford Creek Trailhead (Trail #1359), Cle Elum Ranger District, Okanogan-Wenatchee National Forest, at the end of Stafford Creek Road (FR 9703), which leaves North Fork Teanaway River Road (FR 9737) past 29 Pines Campground — a small, often-overflowing lot for roughly 20 cars (Northwest Forest Pass required). From the trailhead, Stafford Creek Trail #1359 climbs at a gentle-to-moderate grade through dry ponderosa/lodgepole forest, staying close to Stafford Creek for the first mile (a short rerouted, steeper switchback section around 0.5 mile bypasses old avalanche-damaged tread). The trail continues gaining gradually along the creek — figure roughly 3,000 ft of gain spread over the approach — reaching a signed junction with the Standup Creek Trail (#1369) at about 3.5–3.8 miles; this crossing of Stafford Creek is the last reliable, easy water source before the high country and is worth topping off here. Bear right (east/north) at the junction to stay on the Navaho Pass approach. Around 4.5 miles the trail opens into a large, marshy subalpine meadow with established campsites and a feeder stream — the usual base camp for parties splitting the trip over two days, and another water source. Beyond camp the trail crosses the barren, eroded 'Moon Landing' stretch (sparse vegetation, serpentine/greenstone talus) before a final push to Navaho Pass (~6,000 ft) around mile 5.5. A commonly used shortcut leaves the main trail where two creek forks merge around the 3-mile mark, climbing steep, loose slopes directly up the northeast-facing drainage to the col below Navaho's southeast ridge — it saves close to 2 miles of trail hiking but is steeper, unmaintained, and involves loose scree/dirt, so most parties use it only for one direction of the trip. Total car-to-summit is on the order of 11–13 miles round trip with about 4,000–4,200 ft of gain depending on which junction/shortcut combination is used. Note: this trail corridor has had closures tied to the Labor Mountain Fire and storm damage; Forest Service order 06-17-03-2026-14 closed Stafford Creek Trail #1359 from May 20 through December 31, 2026 unless rescinded sooner, but that order is no longer posted on the Okanogan-Wenatchee alerts page (checked September 26, 2026) — verify current trail status with the Cle Elum Ranger District (509-852-1100) before heading in. A second off-trail variant leaves the trail right after the Stafford Creek crossing and climbs directly into the open bowl between Earl Peak and Navaho Peak to about 5,000 ft, scrambles north to the ridgeline near 6,000 ft, then follows the west/southwest ridge to the summit — a different line than the northeast-drainage shortcut.",
+   "descent_text": "Descend by reversing the ascent line: drop off the summit back down the broad south/southeast ridge to Navaho Pass (easy Class 2 scrambling, no rope or rappelling needed), then rejoin Stafford Creek Trail #1359 and retrace it past the Moon Landing section, the meadow camp/water source, the Standup Creek Trail (#1369) junction at ~3.5–3.8 miles, and back down along Stafford Creek to the trailhead. Parties who used the creek-fork shortcut on the way up sometimes descend the standard pass-and-trail route instead (or vice versa) to make a rough loop, but both options are plain hiking/scrambling terrain — there is no rappelling on this route. Watch for loose scree and dirt on the steeper shortcut drainage if descending that way, and expect possible lingering snow near the pass and on the upper ridge into early-mid summer, which can make the descent line slicker than the ascent.",
+   "bail": "Reversible anywhere on the nontechnical route.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1 (trail)",
+     "notes": "Stafford Creek Trail #1359 from the trailhead to Navaho Pass (~5.5 mi one-way, ~3,000 ft gain) -- maintained trail, not technical.",
+     "pitch": "Trail to Navaho Pass",
+     "lengthM": 8850
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Leave the pass and follow a boot path east/northeast up loose scree/talus, gaining the final ~1,000-1,200 ft over roughly one mile to the summit block; can involve snow and route-finding into July.",
+     "pitch": "Summit scramble",
+     "lengthM": 1609
+    }
+   ],
+   "itinerary": {
+    "cal": "The Stafford Creek trailhead access/trail was reported closed due to Labor Mountain Fire damage as of the last check - confirm current road/trail status before planning a trip.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Stafford Creek trailhead, follow Stafford Creek through meadows to Navaho Pass (~5.5 mi, ~3,000 ft gain), then turn onto the southwest ridge / south slopes for a Class 2 scramble to the summit. Descend by reversing the same route.",
+      "hours": 9,
+      "miles": 13,
+      "title": "Car-to-car via Stafford Creek and Navaho Pass",
+      "gainFt": 4200,
+      "lossFt": 4200,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Stafford Creek trailhead",
+        "detail": "Start early to beat the heat on the exposed upper slopes and finish at a reasonable hour."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Reach Navaho Pass",
+        "detail": "~5.5 miles and ~3,000 ft gained through Stafford Creek Meadows; junction with the old County Line Trail."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Begin southwest ridge / south slopes scramble",
+        "detail": "Steep, loose Class 2 terrain for the final ~700-1,000 ft to the summit; snow patches possible into early summer."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Summit Navaho Peak (7,223 ft)",
+        "detail": "Small summit with room for only a few people; views of the Enchantments, Alpine Lakes Wilderness, and Rainier."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the ascent route back through Navaho Pass and down Stafford Creek."
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Back at trailhead",
+        "detail": "Total elapsed time typically 8.5-9 hours car-to-car."
+       }
+      ],
+      "objective": "Summit Navaho Peak and return to the trailhead"
+     }
+    ],
+    "totalNote": "A single long day hike/scramble: about 13 miles round trip with roughly 4,200 ft of gain, typically 8.5-9 hours car-to-car via Stafford Creek Trail to Navaho Pass then the southwest ridge/south slopes - not an overnight trip for the standard approach."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass or America the Beautiful pass required to park at the Stafford Creek Trailhead (day pass ~$5, annual NW Forest Pass ~$30).",
+    "rules": "Standard Alpine Lakes Wilderness regulations apply: group size limits (typically 12 people/8 stock), no bikes or motorized equipment, Leave No Trace camping (200 ft from water), and campfire restrictions may apply in dry years — check current fire restrictions before an overnight trip.",
+    "permit": "Free, self-issue Alpine Lakes Wilderness permit required for day and overnight use; forms available at the trailhead kiosk.",
+    "closures": "Stafford Creek Trail #1359 — the only approach to Navaho Peak — is CLOSED under Okanogan-Wenatchee National Forest Closure Order 06-17-03-2026-14, effective May 20 through December 31, 2026, due to hazard trees and suppression damage from the 2025 Labor Mountain Fire (~43,000 acres burned Sept-Oct 2025). Repair crews worked the area through spring/early summer 2026; verify current status with the Cle Elum Ranger District (509-852-1100) before attempting this route.",
+    "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District.",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk. This is distinct from the quota Enchantment Permit Area to the west."
+    }
+   },
+   "road": {
+    "name": "FR 9703 (Stafford Creek Road)",
+    "status": "Trail #1359 from this trailhead is CLOSED for 2026 under an active Forest Service closure order; confirm current road/trailhead access with the Cle Elum Ranger District before driving out.",
+    "driveNote": "Unpaved forest road from North Fork Teanaway Road (FR 9737) to the trailhead; passable to most vehicles in dry conditions, but may be gated or rough after storms — park before any closed gate."
+   },
+   "climate": {
+    "typical": "East-Cascades continental climate: hot, dry summer days with real afternoon thunderstorm risk once above treeline, and cool, sunny falls. Snow can persist in the summit bowl and on the final ridge into July, and early-season/late-fall storms can bring new snow with little warning."
+   },
+   "emergency": {
+    "notes": "No cell service at the trailhead or on the climbing route; the nearest reliable signal is generally near Cle Elum along I-90/SR 970.",
+    "county": "Kittitas County (trailhead and approach); the summit itself sits on the Kittitas/Chelan county line.",
+    "rangerStation": "Cle Elum Ranger District, 803 W 2nd St, Cle Elum, WA — (509) 852-1100.",
+    "nearestHospital": "Kittitas Valley Healthcare, 603 S Chestnut St, Ellensburg, WA — 24-hour ER, roughly 45 minutes/40+ miles from the trailhead. KVH Urgent Care, 214 W 1st St, Cle Elum, WA, is closer (~15 miles) for non-emergency injuries.",
+    "sheriffDispatch": "Kittcom 911 for emergencies; Kittitas County Sheriff non-emergency (509) 962-7525, which coordinates Kittitas County Search & Rescue."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July through September, driven mainly by Navaho Pass backpacking/camping traffic rather than summit-specific traffic",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Moderate overall, lighter on the actual summit — the Stafford Creek/Navaho Pass corridor is one of the more popular Teanaway backpacking and camping destinations (parties describe lots of people, with groups of 20+ hikers/backpackers on a given weekend), but many of those parties stop at the pass to camp rather than push on to the summit scramble; realistically on the order of a few dozen summit parties per weekend in peak season, fewer on weekdays"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong — roughly 12 miles round trip with about 4,100 ft of gain (3,100 ft trailhead to 7,223 ft summit), typically an 8-10 hour car-to-car day",
+     "packWeight": "Light daypack (10-20 lb) for a day ascent; heavier if pairing with a Navaho Pass backpacking approach"
+    },
+    "approachTime": "About 3-4 hours from the Stafford Creek trailhead to Navaho Pass, plus roughly 1-2 more hours off-trail up the open south slopes to the summit",
+    "requiredSkills": [
+     "Class 2 talus and heather scrambling",
+     "off-trail routefinding above Navaho Pass (no maintained trail to the summit)",
+     "judgment for lingering/early-season snow on the upper south slopes",
+     "comfort with a long, remote descent late in the day"
+    ],
+    "experienceLevel": "Intermediate scrambler — a fit hiker's first easy alpine scramble objective is reasonable, but this is not a true beginner outing given the long day, off-trail travel, and early-season snow"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September, after the upper south slopes have shed their seasonal snow, with July-Sept being the most reliable core of it",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow typically cleared from the south-facing summit slopes; stable, warm East Cascades summer conditions",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Snow on the upper slopes early in the season; south aspect speeds melt-out but early-June ascents should expect some lingering snow and firmer footing",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Driest, most stable month; primary hazard shifts to dehydration and afternoon thunderstorms rather than snow",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Return of early-season snow becomes more likely, days are shorter, and storm frequency increases toward the tail end of the season window",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Reliable conditions and cooler temperatures, though early high-elevation snow is possible late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Warm, dry East Cascades summer weather typical of the Teanaway — notably hotter and drier than west-side Cascades routes, which reinforces the dehydration warning",
+     "probability": "Afternoon thunderstorms are possible in July and August, as on the broader East Cascades"
+    },
+    "exposure": "Low to moderate — sustained Class 2 talus and heather with no significant fall exposure, but loose talus raises rockfall/twisted-ankle risk, and the long, remote return hike increases the consequence of a late-day injury or slow party",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; the peak falls roughly within NWAC's East Slopes Central Cascades coverage area, but the June-October climbing season is outside NWAC's active forecasting season (which runs roughly Nov-April), so no operational avalanche forecast applies during the climbing window",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "October": "Low",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Prominence figures vary between sources (roughly 1,143-1,182 ft) depending on the underlying DEM/database.",
+     "Roundtrip mileage and gain are reported inconsistently across sources (11-14 mi, 4,100-4,276 ft) — likely reflects the two common approach-line variants rather than one authoritative track.",
+     "Current on-the-ground trail condition post-Labor Mountain Fire repair work (post-June 2026) is not confirmed by recent trip reports; the closure order remains legally in force through Dec 31, 2026 regardless of physical trail condition.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/4QQ0",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.4231,
+    "peakLng": -120.8037,
+    "trailhead": "Stafford Creek Trailhead",
+    "trailheadDirection": "Start at the Stafford Creek Trailhead (Trail #1359), Cle Elum Ranger District, Okanogan-Wenatchee National Forest, at the end of Stafford Creek Road (FR 9703), which leaves North Fork Teanaway River Road (FR 9737) past 29 Pines Campground - a small, often-overflowing lot for roughly 20 cars (Northwest Forest Pass required)."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Stafford Creek Trail #1359 to Navaho Pass",
+     "notes": "From the small road-end lot, Trail #1359 leaves at an easy grade through dry ponderosa and lodgepole forest, staying close to Stafford Creek; a short rerouted section of steeper switchbacks near the half-mile mark bypasses old avalanche-damaged tread. The creek crossing in the meadows is the last easy water and worth topping off at. Stay on #1359 at the signed Standup Creek Trail junction, and the trail opens into a large marshy subalpine meadow with a feeder stream and established campsites — the usual overnight base. Above the meadow the tread leaves the trees and switchbacks up open, rocky, sparsely vegetated slope for the last stretch to the pass.",
+     "season": "July into October. Snow patches linger on the upper ridge into July, when poles and light traction are worthwhile.",
+     "hazards": [
+      "No water and essentially no shade above the meadows, on ground that bakes on a warm afternoon",
+      "Loose scree over dirt on the climbers' path onto the ridge, steepening quickly and easy to push down onto a party below",
+      "Lingering snow patches into July",
+      "Slopes on either flank of the summit ridge are looser and steeper than they look from above",
+      "The trail corridor has been closed for fire and storm damage — check current status before driving in"
+     ],
+     "baseFinding": "THE SUMMIT PATH IS NOW MORE WORN THAN THE TRAIL IT LEAVES, AND THE WRONG TURN HAS A NAME. Navaho Pass is unmistakable ground — small, rocky, sparsely vegetated and wind-exposed, with the Stuart Range filling the view — and it is where the trail meets the old crest trail along the county line. Head EAST out of the pass, paralleling the range. The old boot-path junction that descriptions still mention has effectively vanished: the beaten track now IS the summit path, more worn than the crest trail beside it, so the thing to look for is the most-used tread rather than a faint branch. If instead you follow the connecting ridge LEFT from the pass, you are heading for Wrong Turn Peak, which is what it is called and why. Two more confusions worth knowing: the prominent peak straight ahead on the walk in is Little Navaho, not this one, and the final ridge throws up several false tops before the true summit, which is small — barely higher than a rocky outcrop just east of it. On the way down, do not follow the southeast ridge all the way toward Little Navaho; there are cliffs below it."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 2",
+     "label": "South ridge to the summit",
+     "notes": "From Navaho Pass (~6,000 ft), leave the maintained trail and traverse/climb east along the broad south ridge of Navaho Peak: an easy, mostly open scramble on rock and heather with no technical exposure, gaining the final 1,100–1,200 ft to the 7,223 ft summit over about 0.8–1 mile."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5600,
+     "name": "Stafford Creek meadow camps below Navaho Pass",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pulls away from it, crosses a marshy open meadow, and reaches these camps at around five miles. Navaho Pass is another half mile up a bare serpentine slope at about 6,000 feet, and the south slopes above the pass are walking and easy scrambling to the summit. Most parties do the whole thing car to car and the camp is the contingency: a late start, a hot afternoon, or a group that wants the summit at dawn. It is also the hinge of the standard two-day loop that links Navaho Pass with the Bean Creek side and comes out at a different trailhead. The meadow is buggy in early summer and the burn scar in the drainage has changed shade and blowdown patterns, so expect the walking to be rougher than an older description suggests.",
+     "water": "The reason this camp exists. Stafford Creek and a side stream come down the rock faces at the meadow edge and run into late summer in most years, and this is the last dependable water before the pass. Above the meadow there is nothing: the final half mile of bare serpentine to Navaho Pass and the whole of the south slopes above it are completely dry, and on a hot east-side day that is four or five hours of climbing on what you carry.",
+     "permit": "No permit, no quota, no lottery, and no connection to the Enchantment system. Northwest Forest Pass at the Stafford Creek trailhead. Campfires are prohibited above 5,000 feet here and the drainage is normally under a full burn ban by July. The Stafford Creek road and trail were inside the 2025 fire closure and were still subject to repair-work closures afterwards, so this is the site most likely to be legally unreachable on any given date — check before you drive.",
+     "capacity": "Established sites in the timber along the edge of a large meadow, with room for several parties; this is a popular long-weekend base camp and can hold a half dozen tents on a summer Saturday"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south slopes",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

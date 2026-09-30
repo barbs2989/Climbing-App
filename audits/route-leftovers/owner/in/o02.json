@@ -1,0 +1,1970 @@
+[
+ {
+  "id": "wa_mount_larrabee_south_ridge",
+  "name": "South Ridge",
+  "area": {
+   "id": "wa_mount_larrabee",
+   "name": "Mount Larrabee",
+   "parent_id": "wa_shuksan_baker_neighbors",
+   "elevation_ft": 7865,
+   "lat": 48.9791,
+   "lng": -121.6481
+  },
+  "prior_findings": "permit column now says no wilderness permit required (sourced); bivy[0] and bivy[1] still say a self-issue permit is needed (the Mount Baker Wilderness has only a voluntary climbing register).",
+  "earlier_research": [
+   {
+    "file": "r342.json",
+    "fact": "Where the Twin Lakes Trailhead is (road end at the lakes vs 2 mi below)",
+    "status": "fixed",
+    "correct_value": "The Twin Lakes Trailhead is at the road end beside Twin Lakes (~5,200 ft); the rough last ~2 miles of FS-3065 lie below it, above the Yellow Aster Butte trailhead.",
+    "evidence": "The Forest Service High Pass Trail page says high-clearance vehicles can negotiate the remaining two miles to Twin Lakes, with the Twin Lakes Trailhead as the start of Trail 685/676. WTA's Twin Lakes page describes a 2.5-mile road walk from the Yellow Aster Butte trailhead to the lakes, and a Larrabee trip report starts at the trailhead at Twin Lakes, 5,200 ft. The trailhead and Twin Lakes waypoints wrongly put the 2-mile rough road above the trailhead.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676",
+     "https://www.wta.org/go-hiking/hikes/twin-lakes-2",
+     "https://trailcatjim.com/mt-larrabee-via-southwest-slope/"
+    ]
+   },
+   {
+    "file": "r342.json",
+    "fact": "Pass waypoint positions",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The High Pass pin sits almost on the trailhead pin and the Low Pass pin lies southwest of the lakes although the route heads north; these are waypoint coordinates, which are out of scope for this pass. The waypoint mileages were corrected under the distance fix, but the pins themselves need a separate coordinate repair.",
+    "sources": []
+   },
+   {
+    "file": "r342.json",
+    "fact": "Round-trip distance",
+    "status": "fixed",
+    "correct_value": "About 8 mi round trip from Twin Lakes (about 4 mi one way).",
+    "evidence": "The Mountaineers route description gives 8 miles from Twin Lakes, and a separate trip report logs 8 miles from the Twin Lakes trailhead. The stored dist_km (6.4 km = 4.0 mi one way) already matches; the itinerary's 10 mi, the partner card's 6 mi and the waypoint mileages (built from a trailhead 2 mi below the lakes) were the outliers. High Pass is about 1.8-2.6 mi from the lakes (WTA, Hike of the Week), consistent with the approach's 'roughly 2 miles' and the breakdown's 2.3.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mount-larrabee",
+     "https://trailcatjim.com/mt-larrabee-via-southwest-slope/",
+     "https://www.wta.org/go-hiking/hikes/high-pass-1",
+     "https://www.hikeoftheweek.com/2021/09/30/high-pass/"
+    ]
+   },
+   {
+    "file": "r342.json",
+    "fact": "Where the maintained trail is left",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The Mountaineers route description says to continue on trail to about 6,400 ft and then traverse left and down into the basin, which supports the breakdown and schedule; the approach and waypoints end the maintained trail at High Pass (~5,940 ft) and treat 6,400 ft as a cliff band. A SummitPost page mentions a cliffy area at 6,400 ft where heather ends. A user path continuing past the end of the maintained trail could reconcile both, but no second source confirms the trail to 6,400 ft, so nothing was changed.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mount-larrabee",
+     "https://www.summitpost.org/mount-larrabee/151373"
+    ]
+   },
+   {
+    "file": "r342.json",
+    "fact": "Extra gain when parking at Yellow Aster Butte TH",
+    "status": "fixed",
+    "correct_value": "Parking at the Yellow Aster Butte trailhead adds about 2.3-2.5 mi each way and about 1,500 ft of climbing on the walk in.",
+    "evidence": "Hike of the Week says starting from the Yellow Aster Butte trailhead adds 4.8 miles round trip and 1,500 ft of gain on the access road. The Yellow Aster Butte trailhead sits at about 3,600 ft and Twin Lakes at about 5,200 ft (a ~1,600-ft difference), and WTA gives the road walk as 2.5 miles. The itinerary's 500 ft was the outlier.",
+    "sources": [
+     "https://www.hikeoftheweek.com/2021/09/30/high-pass/",
+     "https://www.wta.org/go-hiking/hikes/yellow-aster-butte",
+     "https://trailcatjim.com/mt-larrabee-via-southwest-slope/"
+    ]
+   },
+   {
+    "file": "r342.json",
+    "fact": "Wilderness permit",
+    "status": "fixed",
+    "correct_value": "No wilderness permit is required for the Mount Baker Wilderness here; only a recreation pass (Northwest Forest Pass) to park at Twin Lakes.",
+    "evidence": "The Forest Service High Pass Trail 676 page lists a valid Recreation Pass at Twin Lakes Trailhead plus wilderness regulations (party of 12, no campfires) and no wilderness permit. The Forest Service Mt. Baker Wilderness page mentions only recreation passes and a voluntary climbing register, and Hike of the Week lists 'Northwest Forest or Interagency Pass required; wilderness rules apply'. The permit column was fixed; the bivy[0]/bivy[1] permit lines repeat the self-issue claim but bivy is owned by the camping clean-up and was not patched.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/high-pass-trail-676",
+     "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+     "https://www.hikeoftheweek.com/2021/09/30/high-pass/"
+    ]
+   },
+   {
+    "file": "r342.json",
+    "fact": "Total elevation gain (gain_ft 3,900 vs itinerary 4,225 / totalNote ~4,200)",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "gain_ft says 3,900 while the itinerary day and total note say about 4,200 and the approach says 3,500-4,000. Outside figures disagree: one trip report logs 3,900 ft (via the lower Gargett Mine basin variant) and the Mountaineers give 2,600 ft from Twin Lakes. No two sources agree on this route's figure, so nothing was changed.",
+    "sources": [
+     "https://trailcatjim.com/mt-larrabee-via-southwest-slope/",
+     "https://www.mountaineers.org/activities/routes-places/mount-larrabee"
+    ]
+   },
+   {
+    "file": "s041.json",
+    "fact": "Where the maintained trail is left",
+    "status": "fixed",
+    "correct_value": "Leave the trail a short way past High Pass (no fixed elevation)",
+    "evidence": "The Mountaineers route says to continue on trail past High Pass and then traverse left and down into the basin (giving ~6,400 ft); a 2016 trip report says the trail continues on beyond High Pass and they left it before it began switchbacking up again, with a short traversing descent to the snow; a 2025 trip report says the route leaves the High Pass Trail about a third of a mile past High Pass. All agree the turn-off is a short way past High Pass; only one gives 6,400 ft, which the row's own approach uses for a cliff band in the basin. Replacing the unconfirmed elevation with 'a short way past High Pass' removes the clash without asserting an unsourced figure.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mount-larrabee",
+     "https://bcmtnman.wordpress.com/2016/08/30/wherin-i-forget-to-protect-my-head/",
+     "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-08-22.074806859737"
+    ]
+   },
+   {
+    "file": "s041.json",
+    "fact": "Total elevation gain (gain_ft 3,900 vs itinerary 4,225 / totalNote ~4,200)",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Outside figures for Twin Lakes to the summit still disagree: 1,013 m (~3,320 ft) over 9.6 km in a 2016 trip report, about 1,000 m over ~10 km in another blog, 3,900 ft via the lower Gargett Mine basin in a third, and 2,600 ft in the Mountaineers route. Two sources near ~3,300 ft would move gain_ft, but loss_ft (3,900) cannot be changed without its own sourced descent figure, so changing gain_ft alone would trade one contradiction for another. A GPS track from Twin Lakes on the standard line, reporting both gain and loss, would settle it.",
+    "sources": [
+     "https://bcmtnman.wordpress.com/2016/08/30/wherin-i-forget-to-protect-my-head/",
+     "https://adventuresinelevation.com/mount-larrabee/",
+     "https://trailcatjim.com/mt-larrabee-via-southwest-slope/",
+     "https://www.mountaineers.org/activities/routes-places/mount-larrabee"
+    ]
+   },
+   {
+    "file": "t163.json",
+    "fact": "Wilderness permit",
+    "status": "bivy_zone_list",
+    "correct_value": "No wilderness permit is required in the Mount Baker Wilderness (only a voluntary climbing register and a trailhead recreation pass); the permit fields are right and the bivy entries' 'free self-issue wilderness permit' text is the outlier.",
+    "evidence": "The Forest Service Mt. Baker Wilderness page lists only a voluntary climbing register ('Registration is optional') and a recreation pass at some trailheads; the free self-issue overnight permit found in searches belongs to the Alpine Lakes Wilderness, not Mount Baker. The route's permit, access.permit and access.overnight_permit fields agree with this; only bivy[0], bivy[1] and bivy[2] permit text claims a self-issue wilderness permit. Only one authoritative source found, and the wrong copies live in bivy, which is owned by the camping clean-up, so no patch.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+     "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+     "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie"
+    ]
+   }
+  ],
+  "siblings": [],
+  "row": {
+   "id": "wa_mount_larrabee_south_ridge",
+   "area_id": "wa_mount_larrabee",
+   "name": "South Ridge",
+   "discipline": "scrambling",
+   "grade": "Grade II, Class 3-4",
+   "grade_system": "yds",
+   "grade_num": 4,
+   "pitches": 0,
+   "length_m": 442,
+   "sort_order": null,
+   "stars": null,
+   "fa": "James J. McArthur party, September 11, 1908",
+   "lat": null,
+   "lng": null,
+   "aspect": "S/SW",
+   "season": "Jul-Sep (best); snow lingers in the gully into Aug",
+   "description": null,
+   "gear": [
+    "Helmet",
+    "Ice axe",
+    "Crampons or microspikes (early season)"
+   ],
+   "hazards": [
+    "Loose, crumbly phyllite/greenstone rock throughout the gully and upper ridge — frequent rockfall",
+    "Steep, often corniced snow-filled summit gully lingers into July",
+    "Easy to mistakenly follow a boot path toward the East Ridge instead of the correct South/SW line"
+   ],
+   "verif": null,
+   "overview": "A striking reddish peak in the Border Peaks group of the Mount Baker Wilderness, 1.4 miles south of the Canada–US border and immediately southeast of taller American Border Peak. The rust color comes from oxidized iron in the peak's phyllite and greenstone rock. First climbed September 11, 1908 by James J. McArthur's party, it's now one of the most popular scrambles near Mount Baker, typically done from a Twin Lakes camp and often paired with American Border Peak.",
+   "beta": "From High Pass, descend into the basin below the peak. Traverse west and ascend boulder fields and scree to the southwest spur at approximately 6,900 feet. Locate the gully system in the rocky face with two narrow channels 30 feet apart; take the right channel and ascend the narrow then open gully to broken rock to attain the ridge top. Follow the ridge, favoring the west side, to the summit. Most of ridge top has a way trail and the route is partially marked with cairns after leaving the basin, but cairns may be far apart and the way trail may disappear for long stretches. If you lose cairns or way trail most gullies probably work though some may be more difficult than others.",
+   "turnaround": "Turn around well before dark to ensure safe descent. If summit is not reached by early afternoon, consider turning around to allow sufficient daylight for safe descent. The approach trail can be difficult to locate in poor visibility or darkness.",
+   "auto_generated": true,
+   "alpine_grade": "PD",
+   "rock_grade": "Class 3-4",
+   "ice_grade": null,
+   "gain_ft": 3900,
+   "loss_ft": 3900,
+   "dist_km": 6.4,
+   "max_angle": 40,
+   "rappels": "None required - the descent reverses the ascent line as a walk-off/downclimb. There are no fixed rappel anchors on the route.",
+   "commitment": "II",
+   "face": "South/Southwest side — crosses the South Ridge onto the SW-face gully",
+   "permit": "No wilderness permit required; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell phone reception is unreliable in the area and should not be counted on for emergencies. Satellite communicators (like Garmin InReach or SPOT) are strongly recommended for parties venturing into this remote alpine terrain.",
+   "descent": "Reverse the ascent route",
+   "obj_haz": [
+    "Loose, rotten phyllite/greenstone rock in the summit gully and ridge",
+    "Rockfall onto climbers below in the gully",
+    "Persistent steep snowfields between Low Pass and High Pass into midsummer",
+    "Avalanche terrain on the approach in early season",
+    "Cornices on the north side of the summit ridge",
+    "Black bear activity along the High Pass approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.95176,
+     "lng": -121.6358,
+     "elev": 5200,
+     "name": "Twin Lakes Trailhead",
+     "note": "Self-issue Northwest Forest Pass/day-use fee kiosk at the road end beside Twin Lakes; the last ~2 miles of FS-3065 below it are rough and need a high-clearance vehicle.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Twin Lakes Road (FS 3065) past the Yellow Aster Butte trailhead and up the final, roughly two-mile rough section to the road end at Twin Lakes, where a Northwest Forest Pass or the day-use fee is needed. The road is snow-gated through winter and spring. That last section is steep and rutted and needs a high-clearance vehicle, so many parties park at the Yellow Aster Butte trailhead and walk it."
+    },
+    {
+     "lat": 48.9512,
+     "lng": -121.6384,
+     "elev": 5180,
+     "name": "Twin Lakes",
+     "note": "Established backcountry camp at the alpine lake basin between Winchester and Bear Mountains; last reliable water before the high traverse to Low and High Passes.",
+     "type": "Campsite",
+     "distMi": 0,
+     "directions": "The lakes lie at the road end, in the basin between Winchester and Bear Mountains. Fill water here. These lakes are the last reliable source before the high traverse to Low and High Passes, and there is nothing dependable past High Pass in late season."
+    },
+    {
+     "lat": 48.945076,
+     "lng": -121.65624,
+     "elev": 5660,
+     "name": "Low Pass",
+     "note": "Trail contours Winchester Mountain's east shoulder and drops through Low Pass before climbing again toward High Pass; boot path is easy to lose here in fog or lingering snow.",
+     "type": "Junction",
+     "distMi": 1.7,
+     "directions": "From the lakes follow the Winchester Mountain Trail (#685) about half a mile to a signed junction. The left branch climbs to the Winchester lookout, so take the right fork onto the High Pass Trail (#676). It runs through meadows across Winchester Mountain's east shoulder and crosses an avalanche chute where steep, exposed snow can hang on into August, then reaches the notch of Low Pass. Carry an ice axe and know how to use it while that chute still holds snow, and expect to lose the boot path through the pass itself in fog or lingering snow."
+    },
+    {
+     "lat": 48.9523,
+     "lng": -121.6358,
+     "elev": 5940,
+     "name": "High Pass",
+     "note": "Basin-facing pass with the first close views of Larrabee's south face; leave the maintained High Pass Trail here and traverse cross-country toward the peak.",
+     "type": "Junction",
+     "distMi": 2.3,
+     "directions": "Climb again out of Low Pass on the High Pass Trail, a little over half a mile and about 300 feet of gain, passing the tailings and ruins of the old Gargett Mine just below the pass. High Pass is a scenic but wind-exposed spot with the first close look at Larrabee's south face. It is also the end of the maintained trail."
+    },
+    {
+     "lat": 48.965455,
+     "lng": -121.644946,
+     "elev": 6900,
+     "name": "South Ridge crossing / SW Face gullies",
+     "note": "Boot up ~40-degree scree/snow slopes to cross the south ridge onto the southwest-face gully system; Larrabee's rock is notoriously loose and crumbly, so a helmet is essential.",
+     "type": "Hazard",
+     "distMi": 3.3,
+     "directions": "Leave the maintained trail at the pass and follow the unmarked climbers' path as it contours and drops 100 to 200 feet northwest into the basin under Larrabee's south face, passing a small cliff band near 6,400 feet. Cross boulder fields and then scree and dirt, booting up steep ground to the southwest spur at about 6,900 feet. Cairns mark parts of this but they sit far apart and the way trail vanishes for long stretches, and boot paths here can pull you toward the East Ridge, so hold to the south and southwest side of the peak."
+    },
+    {
+     "lat": 48.9791,
+     "lng": -121.6481,
+     "elev": 7865,
+     "name": "Mount Larrabee Summit",
+     "note": "True summit (7,865 ft), 1.4 mi south of the Canada–US border; descend by reversing the south ridge/gully system back through the scree basin to High Pass.",
+     "type": "Summit",
+     "distMi": 4,
+     "directions": "From the spur, find the gully system cut into the rock face: two narrow parallel channels about thirty feet apart, of which the right-hand one is the line. It starts tight and opens into broken rock, Class 3 to 4 on loose phyllite, and holds steep snow into July and sometimes August. Climb it one person at a time with helmets on, since anything knocked loose runs straight down onto whoever is below. It tops out on the crest of the south ridge; follow the crest to the summit, favoring the west side and the firmer rock of the rib over the gully floor, with a faint way trail and scattered cairns coming and going."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 8,
+    "summitTimeHrs": 8,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 8,
+      "note": "From the Twin Lakes trailhead, follow the High Pass trail north over Low Pass and High Pass, then leave the trail a short way past High Pass and traverse/descend slightly into the basin below…",
+      "fromTo": "Twin Lakes to summit and back, car-to-car",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical gear required; a few pieces optional for confidence on the steeper steps.",
+   "what_to_bring": [
+    "Climbing helmet (essential — the rock is notoriously loose)",
+    "Ice axe and crampons/microspikes for early-season snow (through roughly July)",
+    "Northwest Forest Pass for trailhead parking",
+    "Trekking poles for the scree/talus sections"
+   ],
+   "pro_tips": [
+    "Climb the summit gully one person at a time — dislodged rock is a serious hazard to anyone below",
+    "Favor the rib/ridge crest over the gully itself, especially on descent, for firmer footing",
+    "Stay on the South/SW line; parties have mistakenly followed a boot path toward the East Ridge",
+    "Often combined with neighboring American Border Peak from the same Twin Lakes camp"
+   ],
+   "watch_out": [
+    "Rockfall in the gully — climb one at a time and wear a helmet",
+    "Snow and ice in the gully can persist into July; carry an ice axe and crampons/microspikes for early-season trips",
+    "Don't follow the boot path toward the East Ridge by mistake"
+   ],
+   "pro_needs": "Minimal to none.",
+   "best_season": "August–September for the driest, most solid conditions; late-June/early-July ascents are feasible but require ice axe and crampons/microspikes for a steep snow gully.",
+   "high_point_ft": 7865,
+   "aid_grade": null,
+   "approach": "Park at the Twin Lakes Trailhead at the end of FS-3065 (the last 2 miles are rough, high-clearance terrain — many parties park lower and walk the road). From the trailhead, follow the Winchester Mountain Trail (#685) briefly; at about 0.5 mile a signed junction splits left to Winchester Lookout and right onto the High Pass Trail (#676) — take the right fork. High Pass Trail #676 climbs through meadows and crosses an avalanche chute beneath Winchester Mountain (steep, exposed snowfields can linger here into August — an ice axe and snow-travel experience are recommended until the chute melts out), then continues up over Low Pass and on to High Pass, passing the old tailings and remains of the historic Gargett Mine just below the pass. High Pass is reached roughly 2 miles / 1.5–2 hours from the trailhead and makes a scenic, if exposed, campsite. There is no reliable water past this point in late season, so treat/carry water from Twin Lakes or early snowmelt. Beyond High Pass the maintained trail ends; an unmarked climbers' path continues west, contouring and dropping 100–200 ft into the basin below Larrabee's south face (around 6,400 ft you pass a small cliff band). Cross boulder fields, then scree and dirt, up to the southwest spur at approximately 6,900 ft. Here the route-finding crux: locate a gully system cut into the rock face — of two narrow parallel channels about 30 feet apart, take the RIGHT-hand one. Ascend the narrowing gully, which opens into broken rock, to gain the crest of the south ridge. Follow the ridge crest, favoring the west side, to the summit; a faint boot path and scattered cairns mark much of this stretch but both disappear for long sections, so be prepared to route-find. Total distance is roughly 8–10 miles round trip with on the order of 3,500–4,000 ft of cumulative elevation gain (the up-and-over via Low Pass and High Pass adds real gain beyond straight-line distance to the summit). The rock throughout — especially the gully and upper ridge — is notoriously loose and crumbly by Cascades standards; helmets are strongly recommended and parties should keep group size small (6 or fewer) and spread out to manage rockfall risk to those below.",
+   "descent_text": "Descend by reversing the ascent line — there is no technical descent gear needed and this is a walk-off/downclimb, not a rappel route. From the summit, follow the ridge crest (favoring the west side) back down to where you gained it, then descend the gully system, taking the same right-hand channel used on the way up; this loose, narrow gully is the most hazard-prone part of the descent (parties frequently trigger rockfall here even while descending carefully — down-climb one at a time or spread well apart, and keep helmets on). Below the gully, cross the broken rock and scree back down to the southwest spur (~6,900 ft) and continue down through the boulder fields and basin to regain the climbers' path near High Pass, watching for the intermittent cairns since the way trail vanishes in spots. From High Pass, retrace the High Pass Trail (#676) back over Low Pass, across the avalanche chute below Winchester Mountain (glissading or plunge-stepping lingering snow here can save time in early/mid season, but stay alert to runout hazard), and down the Winchester Mountain Trail (#685) to the Twin Lakes Trailhead.",
+   "bail": "No fixed rappel anchors; bailing means downclimbing the same ridge/gully back to High Pass. Wet rock or a whiteout on the upper mountain significantly raises rockfall and route-finding risk, so turn around early if weather closes in.",
+   "pitch_detail": [
+    {
+     "grade": "Trail, Class 1-2",
+     "notes": "Maintained High Pass Trail via Low Pass then High Pass, roughly 2.3 miles one-way; can hold snow/avalanche debris into summer.",
+     "pitch": "Trailhead to High Pass"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Leave the trail a short way past High Pass, traverse/descend about 100-200 ft into the basin, then ascend boulder fields, scree, and dirt to the southwest spur near 6,900 ft.",
+     "pitch": "High Pass basin to SW spur"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Two narrow gully channels about 30 ft apart split the rocky face; take the right-hand one, ascending narrow then open gully through loose, broken rock to the ridge crest.",
+     "pitch": "Summit gully"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Follow the ridge crest, favoring the west side, to the summit.",
+     "pitch": "Ridge to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "Twin Lakes Rd (FS 3065) can be rough or seasonally gated below the lakes, and the gully often holds snow into July, favoring an ice axe/microspikes for early-season attempts.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Twin Lakes trailhead, follow the High Pass trail north over Low Pass and High Pass, then leave the trail a short way past High Pass and traverse/descend slightly into the basin below Larrabee's south face. Scramble scree and boulders to a gully system at ~6,900 ft (take the right-hand of two narrow chutes), climb loose rock to gain the south ridge, then follow the ridge crest (favoring the west side) to the summit. Descend by reversing the route — the loose, chossy rock makes the descent nearly as slow as the ascent, and a helmet is considered mandatory due to rockfall.",
+      "hours": 8,
+      "miles": 8,
+      "title": "Twin Lakes to summit and back, car-to-car",
+      "gainFt": 4225,
+      "lossFt": 4225,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave trailhead area",
+        "detail": "Twin Lakes Rd is rough/rutted and sometimes gated below the lakes; if impassable, park near Yellow Aster Butte TH, adding ~2.3 mi each way and ~1,500 ft of climbing on the walk in."
+       },
+       {
+        "time": "6:00 AM",
+        "label": "Twin Lakes, start High Pass trail",
+        "detail": "Head north past the lakes toward Low Pass then High Pass."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Leave trail, enter south-face basin",
+        "detail": "A short way past High Pass, traverse and drop slightly into the basin facing Larrabee's south side."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Ascend the gully",
+        "detail": "At ~6,900 ft find the two narrow parallel chutes; take the right-hand one, staying climber's right on better rock, to broken terrain and the ridge crest."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Summit (7,865 ft)",
+        "detail": "Follow the ridge, favoring the west side, to the top."
+       },
+       {
+        "time": "1:30 PM",
+        "label": "Back at trailhead",
+        "detail": "Reverse the full route; loose rock makes downclimbing the gully slow and rockfall-prone."
+       }
+      ],
+      "objective": "Summit Mount Larrabee via the South Ridge gully"
+     }
+    ],
+    "totalNote": "A single long day car-to-car: roughly 8 miles round trip with about 4,200 ft of gain, typically 7-9 hours including a slow, loose descent; strong parties have done it in 6, casual parties closer to 9-10."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass at trailhead",
+    "rules": "Leave No Trace; Mount Baker Wilderness regulations apply (group size limited to 12, no campfires, foot travel only)",
+    "permit": "None for day use; wilderness practices",
+    "closures": "Twin Lakes Road rough and snow-gated seasonally",
+    "landManager": "Mount Baker-Snoqualmie National Forest",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+    "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight wilderness permit required",
+     "where": "A Northwest Forest Pass is required to park at the trailhead; camp on snow, rock or bare ground at the designated tarns/sites and pack out human waste."
+    }
+   },
+   "road": {
+    "name": "Twin Lakes Road (FS Road 3065)",
+    "status": "Rough high-clearance road near the top",
+    "driveNote": "High clearance is recommended for the final ~2 miles beyond the Yellow Aster Butte/Tomyhoi Lake trailhead; per the Forest Service, 4WD helps but isn't strictly required, and many parties park early and walk in.",
+    "seasonalGate": "Snow closure in winter/spring"
+   },
+   "climate": {
+    "typical": "Snow lingers on the upper mountain into July; the summit gully is often a steep snow chute requiring ice axe/crampons through late June–early July, transitioning to a dry, loose-rock scramble by August. First snow can return by late September–October.",
+    "bySeason": {
+     "fall": "Late September–October: first snow possible and shorter days, but still climbable in good weather.",
+     "spring": "Generally not climbed — Twin Lakes Road is usually still snowed-in or impassable.",
+     "summer": "August–September: typically dry loose talus/scree and rock scramble; the most reliable window.",
+     "winter": "Not a winter objective — road access is closed by snow."
+    },
+    "forecastZone": "NWAC West Slopes North / Mount Baker area (daily avalanche forecasts run roughly Thanksgiving–April; use the general Mountain Weather Forecast for summer trip planning)."
+   },
+   "emergency": {
+    "notes": "No cell coverage at Twin Lakes, Low Pass, or High Pass — plan accordingly and consider a satellite communicator.",
+    "county": "Whatcom County",
+    "rangerStation": "Glacier Public Service Center (Mt. Baker Ranger District), 10091 Mt. Baker Hwy, Glacier, WA — (360) 599-2714",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA — (360) 734-5400",
+    "sheriffDispatch": "Whatcom County Sheriff's Office non-emergency (360) 676-6911; dial 911 for emergencies. Search and rescue is coordinated through the Sheriff's Office via Whatcom County Search & Rescue (Bellingham Mountain Rescue unit)."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in late July and August during the short dry window",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Likely 20-40 parties per season attempt the South Ridge; the Twin Lakes/Yellow Aster Butte trailhead itself is heavily used (lots are reportedly full by 9am on weekends), but most of that hiking traffic peels off before the scramble begins"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strenuous full day; roughly 8 miles and significant elevation gain if done car-to-car, or a shorter summit push if camped at Twin Lakes",
+     "packWeight": "Light day pack for the summit push; overnight pack if establishing the Twin Lakes camp described in the beta"
+    },
+    "approachTime": "~2-3 hrs hiking in to Twin Lakes/High Pass area for a day trip; multi-day parties hike in and camp at Twin Lakes first, then face a shorter (~6 hr) summit day",
+    "requiredSkills": [
+     "Class 3-4 scrambling on loose, blocky rock",
+     "Route-finding on ridge and gully terrain (staying on the more solid rib, avoiding the looser gully)",
+     "Rockfall awareness and helmet use - small party size recommended to reduce rockfall risk to others",
+     "Comfort with exposed summit moves",
+     "Basic snow travel/kick-stepping for lingering early-season snow near the ridge"
+    ],
+    "experienceLevel": "Intermediate to advanced scrambler; prior Class 3-4 scrambling experience strongly recommended given sustained loose rock and summit exposure"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September, with late July-August as the most reliable stretch",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still hold lingering snow patches; conditions firm up and become optimal by late month",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Still snow-covered and Twin Lakes Road is often gated/impassable this early",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Best window - dry rock, road open, most stable weather",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still within the best-season; cooler and more stable, but shorter daylight for the full day",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Wet maritime climate typical of the North Cascades border peaks, with only brief stable windows in summer",
+     "probability": "Afternoon thunderstorms and fast-moving weather can develop in July-August; check forecasts before committing to the exposed upper ridge"
+    },
+    "exposure": "Sustained Class 3-4 exposure with real fall consequence near the summit; the loose rock, rockfall, and summit exposure hazards are compounded by climbers above/below on the same rib, which is why trip reports recommend small parties (6 or fewer) and helmets",
+    "avalanche": {
+     "zone": "Mount Baker zone (NWAC) covers this part of the North Cascades border region, though it is a general-area forecast rather than a Larrabee-specific product",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Considerable",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel on the South Ridge"
+   },
+   "data_quality": {
+    "gaps": [
+     "Exact current Northwest Forest Pass fee amount not confirmed",
+     "Mountaineers.org and SummitPost route pages returned 403 and could not be fetched directly; relied on trip reports, USFS pages, and Wikipedia instead",
+     "Round-trip mileage/gain figures vary by trailhead choice (Twin Lakes vs. Yellow Aster Butte) across sources",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/J1DG",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.9791,
+    "peakLng": -121.6481,
+    "trailhead": "Twin Lakes Trailhead",
+    "trailheadLat": 48.95176,
+    "trailheadLng": -121.6358
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Twin Lakes, High Pass Trail #676 over Low Pass, then the basin to the southwest spur",
+     "notes": "Park at the Twin Lakes Trailhead at the end of FS-3065; the last two miles are rough and many parties park lower and walk the road. From the trailhead follow Winchester Mountain Trail #685 briefly; at about half a mile a signed junction splits LEFT to the Winchester lookout and RIGHT onto High Pass Trail #676. Take the right fork.\n\n#676 climbs through meadows and crosses an avalanche chute beneath Winchester Mountain, where steep exposed snowfields can linger into August, then goes over Low Pass and on to High Pass, passing the tailings and remains of the historic Gargett Mine just below the pass. High Pass is roughly two miles and an hour and a half to two hours from the trailhead. There is no reliable water past this point late season.\n\nBeyond High Pass the maintained trail ends. An unmarked climbers' path continues west, contouring and dropping 100-200 ft into the basin below Larrabee's south face, passing a small cliff band around 6,400 ft. Cross boulder fields, then scree and dirt, up to the southwest spur at about 6,900 ft.\n\nKeep the party to six or fewer and spread out. The rock here is notoriously loose even by Cascades standards.",
+     "season": "Roughly Jul-Sep at best; snow lingers in the gully into August and in the avalanche chute below Winchester",
+     "hazards": [
+      "Two nearly identical parallel gullies thirty feet apart, only one of which is the route",
+      "Notoriously loose and crumbly rock in the gully and on the upper ridge — helmets, small parties, spread out",
+      "An avalanche chute below Winchester Mountain holding steep snow into August",
+      "A faint boot path and cairns that disappear for long sections above the gully",
+      "No reliable water past High Pass late season"
+     ],
+     "baseFinding": "TWO NARROW PARALLEL CHANNELS ABOUT THIRTY FEET APART. TAKE THE RIGHT-HAND ONE. That is the route-finding crux of the whole climb, it is at the southwest spur around 6,900 ft, and it is the sentence to have memorised before you leave camp. Both channels are cut into the same rock face, both look plausible, and only one of them opens into broken rock and gains the south ridge cleanly.\n\nFINDING THE SPUR ITSELF, in order and without needing a view: leave the maintained trail at High Pass. Contour WEST on the climbers' path and lose 100-200 ft into the basin. Pass a small cliff band around 6,400 ft. Cross boulder fields, then scree and dirt, and climb to about 6,900 ft. Losing height first is counterintuitive and correct; a party that only ever goes up from High Pass ends up on Larrabee's south arm ridge instead of in the basin under its face.\n\nCONFIRM THE GULLY BY WHAT IT DOES: the right-hand channel NARROWS and then opens into broken rock that leads to the crest of the south ridge. A channel that stays uniform, or that cliffs out, is the other one.\n\nABOVE THE GULLY, FAVOUR THE WEST SIDE OF THE CREST. There is a faint boot path and scattered cairns, and both disappear for long stretches, so this is genuine route-finding rather than following.\n\nWHAT THE NEIGHBOURING OBJECTIVE LOOKS LIKE: from the same High Pass the col in Larrabee's SOUTH ARM leads northeast to the Pleiades and the traverse under Larrabee's west flank leads to American Border Peak. Three separate objectives leave from one pass, so name yours before you set off."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Right-hand gully from the southwest spur",
+     "notes": "From the southwest spur at approximately 6,900 ft, the route-finding crux: locate a gully system cut into the rock face and, of two narrow parallel channels about 30 feet apart, take the RIGHT-hand one. Ascend the narrowing gully, which opens into broken rock, to gain the crest of the south ridge. The rock here is notoriously loose and crumbly by Cascades standards; helmets are strongly recommended and parties should keep group size small (6 or fewer) and spread out to manage rockfall risk to those below."
+    },
+    {
+     "n": 2,
+     "label": "South ridge crest to the summit",
+     "notes": "Follow the ridge crest, favoring the west side, to the summit. A faint boot path and scattered cairns mark much of this stretch but both disappear for long sections, so be prepared to route-find. The upper ridge rock is loose and crumbly."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5900,
+     "name": "High Pass camp",
+     "role": "main",
+     "type": "bivy",
+     "notes": "High Pass is reached from the Twin Lakes isthmus by way of the Winchester junction, a traverse under an avalanche chute, then Low Pass and a short climb, roughly two and a half miles with a little over a thousand feet of gain. It is directly on the line for both of the big objectives here: the basin north of the pass leads to the south face of Mount Larrabee and its standard south ridge scramble, and the same ground continues around Larrabee's west slope towards American Border Peak. Camping at the pass buys you height and a very short morning, and costs you water and shelter, since it is a windy notch with almost nothing flat. The snow slopes between Twin Lakes and the pass are the crux of the approach for much of the season and can stay steep and firm into August. Parties who want to sleep dry and drink freely usually pass over the top and drop into the mine basin instead.",
+     "water": "Nothing running. Snow patches into midsummer are the only source, so most parties carry water from Twin Lakes or drop to the creek at the mine basin below.",
+     "permit": "Free self-issue wilderness permit at the Twin Lakes register. Mount Baker Wilderness rules: no fires, party size twelve, camp on durable ground, pack out all waste including human waste. The international boundary runs a little over a mile north of the pass; camp and climb south of it, and see the border note on the mine basin below.",
+     "capacity": "A couple of small tent spots on and just below the pass; two or three tents at most, and they are exposed"
+    },
+    {
+     "elev": 5200,
+     "name": "Twin Lakes basin road-end camp",
+     "role": "route",
+     "type": "camp",
+     "notes": "This is the base for everything on the north side of the zone. An alpine cirque at 5,200 ft with the two lakes, subalpine trees and meadow, vault toilets at both lakes, picnic tables at many sites, and no drinking water. Because you can drive to it in a capable vehicle it is the only place in the zone where a heavy pack costs you nothing, so most parties on Winchester, Mount Larrabee and American Border Peak sleep here and start from the isthmus between the lakes. The Winchester Mountain trail and the High Pass trail both begin there. It does not melt out completely until July in most years, and late-season parties should expect a busy, social camp rather than a quiet one. Everything the lakes hold is heavily used; pick an established site rather than making a new one in the meadow.",
+     "water": "The two lakes, right at camp. No treated water; filter or boil.",
+     "permit": "Recreation pass or the posted per-vehicle day-use fee for the trailhead. Free self-issue wilderness permit at the register for anyone continuing onto the trails. The lakes basin at the road end sits outside the wilderness and several sites have metal fire rings, but everything above and beyond is wilderness where fires are prohibited outright, and county or forest-wide burn bans routinely close the road-end rings as well. Party size in the wilderness is capped at twelve. Hang or canister your food.",
+     "capacity": "Roughly ten to fifteen informal sites spread around the two lakes; first come, first served, and competitive on any decent summer weekend"
+    },
+    {
+     "elev": 5400,
+     "name": "Gargett Mine basin bivy",
+     "role": "route",
+     "type": "bivy",
+     "notes": "This is the base camp for American Border Peak and for the west side of Mount Larrabee, and it is what turns both from a punishing single push into a sane two-day trip. From High Pass a boot path drops north and west into the basin, reached in well under an hour from the pass and about two and a half hours from the Twin Lakes trailhead. The workings themselves sit on a bench with space for a handful of people lying down, and the friendlier option is to keep descending a few hundred feet to the green basin below, where gravel bars beside the creek take proper tents. From here the American Border Peak approach traverses Larrabee's west slope to a notch around 6,200 ft and on into the moraine bowl below the south saddle, which is the reason parties who try the peak in a day so often run out of daylight. Fill every bottle before you leave the creek. Snow lingers in the bowls above the basin all summer, and the ground is loose scree and gravel that will not hold a stake well.",
+     "water": "A creek runs through the basin by the old mine, and it is the last reliable water on the way to either summit; everything beyond is snowmelt or nothing",
+     "permit": "Free self-issue wilderness permit at the Twin Lakes register. No fires anywhere in the wilderness, party size twelve, pack out all waste including human waste. The old mine is an abandoned working, not a shelter; stay out of any adit. The international boundary is the other thing to have straight before you leave camp: American Border Peak's summit stands just south of it and its twin across the connecting col to the north is in another country, so on this climb the line is a route-finding constraint and not an abstraction. It is unmarked on the ground for most of its length here, there is no port of entry anywhere near, and there is no way to present yourself to either country's customs from the mountains, so crossing it, whether by carrying on along a summit ridge or dropping down the far side of a col, is an illegal entry rather than a technicality and can cost you at a staffed crossing later. Know where the line runs before you leave camp and stay south of it. This is patrolled country, so being asked for identification on the road or in the basin is routine; carry photo identification, and proof of status if you are not a citizen.",
+     "capacity": "Room for only a few bivy sacks at the old mine workings themselves; several tent sites on the gravel bars in the green basin a few hundred feet lower"
+    },
+    {
+     "name": "Twin Lakes",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_hadley_peak_cougar_divide",
+  "name": "Cougar Divide Route",
+  "area": {
+   "id": "wa_hadley_peak",
+   "name": "Hadley Peak",
+   "parent_id": "wa_shuksan_baker_neighbors",
+   "elevation_ft": 7522,
+   "lat": 48.814065,
+   "lng": -121.822285
+  },
+  "prior_findings": "bivy[0] says the route goes 'east' to Hadley; route fields now say south then southeast.",
+  "earlier_research": [
+   {
+    "file": "r321.json",
+    "fact": "Direction from the Cougar Divide high point to Hadley",
+    "status": "fixed",
+    "correct_value": "The route runs south along Cougar Divide to Chowder Ridge, then southeast along Chowder Ridge to Hadley (the pins put the summit south-southwest of the trailhead).",
+    "evidence": "Dave Tucker's Cougar Divide guide says the unmaintained trail heads south from the trailhead along the north-south ridge. A 2023 WTA trip report climbs to Chowder Ridge heading south/southwest from the trail's end and sees the use trail heading southeast toward Hadley; a 2025 blog report labels Chowder Ridge southwest and Hadley southeast from the divide. 'Northeast' and 'north' are wrong; bivy[0]'s 'east' is left to the camping clean-up.",
+    "sources": [
+     "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-cougar-divide-mount-baker/",
+     "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-03.4326670756",
+     "https://www.withmytwofeet.com/post/cougar-divide-trail"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Trail #601 maintained vs unmaintained",
+    "status": "fixed",
+    "correct_value": "Cougar Divide Trail is unmaintained (blowdown, erosion ruts).",
+    "evidence": "Dave Tucker's geology guide calls it 'the unmaintained trail', rough and rutted from erosion. Best Hikes BC says it is not a maintained trail and has blowdown for lack of maintenance; a 2023 WTA trip report contrasts it with the better-maintained Skyline Divide trail. Beta, descent and descent_text wrongly call it maintained.",
+    "sources": [
+     "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-cougar-divide-mount-baker/",
+     "https://besthikesbc.ca/hiking-cougar-divide-in-the-mount-baker-wilderness/",
+     "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-03.4326670756"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Gain to the trail high point",
+    "status": "fixed",
+    "correct_value": "About 1,000 ft net from the ~4,920 ft trailhead to the ~5,920 ft high point; 1,790 ft is the round-trip cumulative gain for the 6.2-mile out-and-back trail hike.",
+    "evidence": "WTA lists Cougar Divide as 6.2 miles round trip with 1,790 ft gain and a 5,920 ft high point; Best Hikes BC lists 6.2 mi / 1,788 ft round trip, a 4,921 ft start and ~5,906 ft high point, noting the undulation. Dave Tucker puts the trailhead at 4,930 ft. So ~1,790 ft is the round-trip figure, not the one-way gain to the high point.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/cougar-divide",
+     "https://besthikesbc.ca/hiking-cougar-divide-in-the-mount-baker-wilderness/",
+     "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-cougar-divide-mount-baker/"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Season window",
+    "status": "fixed",
+    "correct_value": "Road open from July 7, but the best window is mid-August into early October; climate.summer should not call July prime.",
+    "evidence": "Best Hikes BC's Cougar Divide and Hadley pages both give a full season of July-October with the best period mid-August to early October because of heavy early-summer mosquitoes and lingering snow; the Forest Service notes biting insects abundant in July-August on the neighbouring divide, abating in September. best_season, climate.fall and the Aug-Oct chip already agree.",
+    "sources": [
+     "https://besthikesbc.ca/hiking-cougar-divide-in-the-mount-baker-wilderness/",
+     "https://besthikesbc.ca/hadley-peak/",
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Overnight-permit text names another area's trailheads",
+    "status": "fixed",
+    "correct_value": "Parking pass applies at the Cougar Divide trailhead; the route lies wholly in Mount Baker Wilderness, not North Cascades National Park.",
+    "evidence": "WTA lists a Northwest Forest / America the Beautiful pass for the Cougar Divide trailhead, agreeing with the row's fees, parking_pass, passRequired and what_to_bring. Wikipedia's Mount Baker Wilderness article and Lauren Danner's history both state Mount Baker was left out of North Cascades National Park, so the national-park sentence and clause are wrong for this route.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/cougar-divide",
+     "https://en.wikipedia.org/wiki/Mount_Baker_Wilderness",
+     "https://laurendanner.com/why-isnt-mt-baker-a-national-park/"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Summit elevation (summit pin 7,470 vs high_point_ft 7,522)",
+    "status": "fixed",
+    "correct_value": "7,515 ft",
+    "evidence": "Lists of John gives Hadley Peak 7,515 ft; PeakVisor 2,290 m (~7,513 ft) and Best Hikes BC 2,291 m (7,516 ft). The 7,470 pin is the older rounded map figure and the 7,522 has no support; the sister Skyline route's pin already says 7,515.",
+    "sources": [
+     "https://listsofjohn.com/peak/49192",
+     "https://peakvisor.com/peak/hadley-peak-united-states.html",
+     "https://besthikesbc.ca/hadley-peak/"
+    ]
+   },
+   {
+    "file": "t142.json",
+    "fact": "Direction Cougar Divide arrives from",
+    "status": "fixed",
+    "correct_value": "Cougar Divide runs north-south and the route travels SOUTH from the trailhead to Chowder Ridge; Skyline Divide lies about 1.5 mi to the west across Deadhorse Creek; both join on Chowder Ridge and finish on the same northwest ridge",
+    "evidence": "A geology field guide says Cougar Divide runs north-south, the trail heads south to a 5,800 ft saddle then on to Chowder Ridge's crest, with Skyline Divide about 1.5 mi to the west across Deadhorse Creek and the Dobbs Creek basin seen from the trail, not travelled. A hiking guide says the two approaches meet on Chowder Ridge and follow the same northwest ridge to the summit, and a trip-report summary says the Cougar Divide Trail goes south to the top of Chowder Ridge. The row's own pins put the trailhead north-northeast of the summit and the approach text says south. The baseFinding's 'north-west via Dobbs Creek' is corrected. The camp card's 'east along the ridge' is in bivy[] and left to the camping clean-up (no bivy patch).",
+    "sources": [
+     "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-cougar-divide-mount-baker/",
+     "https://besthikesbc.ca/hadley-peak/",
+     "https://www.wta.org/go-hiking/trip-reports/tripreport-2008090706"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_hadley_peak_skyline_divide",
+    "name": "Skyline Divide Route",
+    "grade": null
+   }
+  ],
+  "row": {
+   "id": "wa_hadley_peak_cougar_divide",
+   "area_id": "wa_hadley_peak",
+   "name": "Cougar Divide Route",
+   "discipline": "mountaineering",
+   "grade": null,
+   "grade_system": null,
+   "grade_num": null,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "NW",
+   "season": "Aug-Oct",
+   "description": null,
+   "gear": [
+    "trekking poles",
+    "sturdy hiking/scrambling boots",
+    "map/compass or GPS",
+    "ice axe (early/late season)"
+   ],
+   "hazards": [
+    "Loose rock and talus on the final Class 2/3 scramble to the summit.",
+    "Steep, loose terrain along sections of the ridge traverse with a drop-off to one side.",
+    "Snow on the ridge can persist into early summer, requiring an ice axe and creating slip hazard on the traverse."
+   ],
+   "verif": null,
+   "overview": "A shorter, higher-starting alternative to the Skyline Divide approach, climbing the Cougar Divide ridge trail from the end of FS Road 33 to Chowder Ridge before joining the same Class 2 scramble to Hadley Peak's summit.",
+   "beta": "From the Cougar Divide Trailhead (~4,900 ft), the unmaintained Cougar Divide Trail #601 climbs along a ridge crest through meadows and old growth to its high point near 5,920 ft (about 3.1 miles in). From there the route continues cross-country along the open ridge, crossing toward Dobbs Cleaver/Chowder Ridge, to merge with the Skyline Divide approach below Hadley Peak's northwest ridge. The final push to the summit is Class 2 with a brief Class 3 step over loose scree, with generally mild exposure for experienced scramblers.",
+   "turnaround": "Set a turnaround time that allows a full daylight margin for the return along the ridge and loose summit scramble, and avoid the final scramble block in wet or icy conditions given the loose rock underfoot.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 3600,
+   "loss_ft": 3600,
+   "dist_km": 8.5,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Northwest Ridge (Chowder Ridge - Hadley Peak connecting ridge)",
+   "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell coverage is unreliable in this area; no dependable service should be expected on the drive in or along the ridge — carry a satellite communicator for emergencies.",
+   "descent": "Reverse the ascent line: downclimb the loose summit scramble, retrace the ridge back to the Cougar Divide Trail high point, and follow the trail back to the trailhead.",
+   "obj_haz": [
+    "loose rock",
+    "exposure on short Class 3 step",
+    "lingering snow on ridge traverse",
+    "steep side-hill sections"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.86773,
+     "lng": -121.80637,
+     "elev": 4920,
+     "name": "Cougar Divide Trailhead",
+     "note": "End of NF Road 33 off Mount Baker Highway (SR-542); road closed Nov 1–Jul 7 for wildlife protection. Higher/shorter start than Skyline Divide.",
+     "type": "Trailhead",
+     "elevFt": 4920
+    },
+    {
+     "lat": 48.8140103,
+     "lng": -121.8223671,
+     "elev": 7515,
+     "name": "Hadley Peak",
+     "type": "Summit",
+     "elevFt": 7515
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Early-morning start recommended"
+   },
+   "detailed_rack": "None — this is a non-technical class 2-3 scramble with no roped climbing; no rack, rope, or protection is used.",
+   "what_to_bring": [
+    "Recreation/day-use pass or annual Interagency pass for the trailhead",
+    "self-issue wilderness permit from the trailhead box",
+    "extra water/treatment",
+    "layers for exposed ridge walking",
+    "sun protection",
+    "insect repellent (mosquitoes common into midsummer)"
+   ],
+   "pro_tips": [
+    "Cougar Divide's trailhead sits notably higher (~4,900 ft) than Skyline Divide's, making this the shorter and less-crowded of the two standard approaches.",
+    "FS Road 33 is gated seasonally (closed roughly Nov 1-Jul 7 for wildlife protection) — confirm the gate is open before driving out.",
+    "The actual trailhead is reported to be roughly a kilometer beyond where mapping apps typically route drivers along FS 33 — don't stop early."
+   ],
+   "watch_out": [
+    "FS Road 33 is closed to vehicles annually from November 1 through July 7 to protect wildlife; the route is not accessible by this approach outside that window.",
+    "Loose rock and a steep dropoff to one side along parts of the ridge traverse.",
+    "Severe mosquitoes are commonly reported until mid-summer on the meadow sections."
+   ],
+   "pro_needs": "No fixed protection or rope is used on the standard scramble line; an ice axe is the main security item carried, useful for residual snow on the ridge in early or late season.",
+   "best_season": "The higher Cougar Divide trailhead (~4,900 ft, versus Skyline Divide's lower start) makes this a shorter outing once the seasonal road gate opens; ideal timing is roughly mid-August through early October, avoiding early-season mosquitoes and late-season snow on the ridge.",
+   "high_point_ft": 7515,
+   "aid_grade": null,
+   "approach": "From Glacier, WA, drive Mt. Baker Highway (SR 542) east and turn onto Forest Service Road 33; follow roughly 11 miles of gravel road (rough in sections, high-clearance/SUV recommended, sedans passable with care) to its end at the Cougar Divide Trailhead/parking (room for 8-10 vehicles). Note the true trailhead may be roughly another kilometer past where online mapping apps route. Hike Cougar Divide Trail #601 along the ridge to its high point (~5,920 ft), then continue cross-country south along the open ridge, crossing near Dobbs Creek, to Chowder Ridge and the base of Hadley Peak's final scramble.",
+   "descent_text": "From the summit, downclimb the short Class 3 step and loose scree back onto the connecting ridge, then retrace the cross-country ridge traverse back to the Cougar Divide Trail's high point (~5,920 ft). Follow the unmaintained Cougar Divide Trail #601 back down through meadows and forest to the trailhead.",
+   "bail": "The route can be abandoned at any point by retracing the ridge crest and Cougar Divide Trail back to the trailhead; no fixed rappel or technical retreat is required.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1",
+     "notes": "Trailhead through forest onto Cougar Divide ridge crest (Trail #601), about 1,000 ft net gain, with some up-and-down, to ~5,920 ft",
+     "pitch": "1"
+    },
+    {
+     "grade": "Class 1-2",
+     "notes": "Cross-country along Cougar Divide ridge to the Chowder Ridge junction; broad open ridge with occasional loose sections",
+     "pitch": "2"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Chowder Ridge traverse southeast on an established boot-path; mild exposure, side-hilling on steep slope",
+     "pitch": "3"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Final northwest-ridge summit block; loose rock, hard class 3 scrambling to the small, exposed summit",
+     "pitch": "4"
+    }
+   ],
+   "itinerary": "Commonly done car-to-car in a single day given the shorter, higher-starting approach: an early start, roughly 5-6 hours to the summit and back given the ~10.6-mile round trip and ~3,600 ft of cumulative gain.",
+   "access": {
+    "fees": "$5/vehicle day-use fee at the trailhead, or annual Recreation/Interagency Pass",
+    "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. The route stays inside Mount Baker Wilderness, where party size is capped at 12 and campfires are prohibited.",
+    "permit": "Free self-issue wilderness permit available at the trailhead",
+    "closures": "Forest Service Road 33 (the sole vehicle access) is gated and closed November 1 - July 7 each year for wildlife protection.",
+    "landManager": "USDA Forest Service, Mt. Baker-Snoqualmie National Forest (Mount Baker Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+    "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+    "passRequired": "Northwest Forest Pass or other accepted Interagency Pass",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+     "what": "No overnight permit required",
+     "where": "No climbing or wilderness permit. A recreation pass is needed to park at the trailhead; buy it ahead or on the Recreation.gov app."
+    }
+   },
+   "road": {
+    "name": "Forest Service Road 33",
+    "status": "Gravel forest road, approximately 11 miles; generally passable to high-clearance vehicles/SUVs, sedans with careful driving; rocky sections and cross-ditches reported near the end",
+    "driveNote": "From Glacier, take Mt. Baker Highway (SR 542) east and turn onto FS Road 33; follow the gravel road roughly 11 miles to its end at the Cougar Divide Trailhead/parking area.",
+    "seasonalGate": "Closed to vehicles annually November 1 through July 7 to protect wildlife"
+   },
+   "climate": {
+    "fall": "Generally the best window (mid-August to early October) — drier trail, fewer bugs, but earliest season snow possible by late October.",
+    "spring": "Road gate still closed (opens July 7); ridge typically snow-covered regardless.",
+    "summer": "Reachable once the road gate opens in July, though the best window starts in mid-August; heather/meadow terrain usually dry by August, mosquitoes can be heavy into July.",
+    "winter": "Road gated and route not accessible in standard scramble form.",
+    "typical": "Wet, maritime North Cascades weather with rapid changes possible even in summer; the higher trailhead means less low-elevation approach but similar exposed-ridge weather near the summit.",
+    "forecastZone": "NWAC West Slopes North (Mount Baker area)"
+   },
+   "emergency": {
+    "notes": "No reliable cell coverage along the FR 33 corridor or on the ridge; carry a satellite communicator.",
+    "county": "Whatcom County, Washington",
+    "rangerStation": "Glacier Public Service Center, Mt. Baker Ranger District, 10091 Mt. Baker Hwy, Glacier, WA 98244 — (360) 599-2714",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA 98225 — (360) 734-5400",
+    "sheriffDispatch": "Whatcom County Sheriff's Office non-emergency dispatch: (360) 676-6911 (911 for emergencies)"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-August to early October, after Chowder Ridge sheds its snow and the mosquitoes fade, before the FS 33 gate closes Nov 1",
+    "monthBreakdown": {
+     "July": {
+      "reason": "FS 33 only opens after its early-July wildlife closure, and snow on the ridge traverse and heavy mosquitoes are still common.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "The ridge traverse is usually snow-free by mid-month and the bugs thin out, leaving easy walking to the final scramble.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Still reachable until the gate closes November 1, but shorter days and the first snow can glaze the side-hill ridge traverse.",
+      "status": "good"
+     },
+     "November": {
+      "reason": "FS 33 is gated closed from November 1, so the trailhead cannot be reached by vehicle.",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Dry scree, few bugs and stable weather make this the most reliable month on the ridge and the loose summit step.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": {
+    "peakLat": 48.814065,
+    "peakLng": -121.822285,
+    "trailhead": "Cougar Divide Trailhead",
+    "trailheadDirection": "From Glacier, WA, drive Mt. Baker Highway (SR 542) east and turn onto Forest Service Road 33; follow roughly 11 miles of gravel road (rough in sections, high-clearance/SUV recommended, sedans passable with care) to its end at the Cougar Divide Trailhead/parking (room for 8-10 vehicles)."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Cougar Divide Trail #601 and the open ridge south to Chowder Ridge",
+     "notes": "From Glacier, WA, drive SR-542 east and turn onto Forest Service Road 33; follow about 11 miles of gravel — rough in sections, high-clearance recommended, sedans passable with care — to its end at the Cougar Divide trailhead, with room for eight to ten vehicles. The true trailhead may be roughly a kilometre past where online mapping routes you, so do not stop at the first turnaround that looks right.\n\nHike Cougar Divide Trail #601 along the ridge to its high point around 5,920 ft. That high point is where the trail tread ends and the route becomes cross-country: continue south along the open ridge, crossing near Dobbs Creek, to Chowder Ridge and the foot of Hadley's summit block.\n\nThis and the Skyline Divide route are two different walks to the SAME summit block; the beta below for the block is common to both.",
+     "season": "Roughly Aug-Oct, once the ridge is out from under snow",
+     "hazards": [
+      "Eleven miles of rough gravel road, and a trailhead that mapping apps place short of the real one",
+      "Cross-country ridge travel with no tread and no cairns once past the 5,920 ft high point",
+      "Loose scree below a short Class 3 step",
+      "Open ridge with no shelter and no water beyond the trailhead",
+      "In cloud, two different divides converge on this summit and neither exit is marked"
+     ],
+     "baseFinding": "THE RIDGE IS THE ROUTE AND ITS HIGH POINT IS THE HANDOFF. Trail #601 runs along the crest to a high point near 5,920 ft, and everything after that is open ridge. In cloud you do not need a view: stay on the crest, going south, with the ground falling away on both sides. The moment you are sidehilling with the drop on only one side, you have come off the divide.\n\nARRIVAL AT THE CLIMBING, and this is the test that matters: the summit block of Hadley is a SHORT CLASS 3 STEP above loose scree, roughly the last 100 ft of the day. Everything below it is walking. So the base is the point where the ridge stops being walkable and stands up in a single short step. If you are scrambling for hundreds of feet you are on the wrong feature; if you have not scrambled at all you are not at the summit.\n\nTHE APPROACH IS NOT A LOOP AND CHOWDER RIDGE IS THE CONFIRMATION. You should arrive at the block having travelled along Chowder Ridge. If you are dropping into a basin or crossing a glacier to reach a rock block, you are somewhere else on the north side of Baker.\n\nWHICH DIVIDE DID YOU WALK IN ON? This is the one thing to be sure of before you commit to a descent line in poor visibility, because the two approaches to this summit leave in different directions and neither is signed. Cougar Divide comes in from the NORTH, straight down its own ridge; Skyline Divide comes in from the WEST, a parallel ridge about a mile and a half over across the Deadhorse Creek valley, and is the much longer walk. Note your entry point onto Chowder Ridge on the way up."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5100,
+     "name": "Cougar Divide meadow camps",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the north-side approach to Hadley Peak and it has nothing to do with the Black Buttes or the Coleman — a party here is on the far side of the mountain from the Heliotrope Ridge climbers. Cougar Divide is an unofficial, unmaintained path along the ridge crest, reached from Wells Creek Road, whose first several miles are badly potholed to the Nooksack bridge and then improve. From the meadows at the head of the divide the ground opens onto Chowder Ridge, and the connection east along the ridge leads to Hadley. The gate opening in July combined with mosquitoes that are genuinely bad here until midsummer pushes the sensible window to mid-August through early October, which is also when the talus is clear and the route is straightforward walking with the odd second-class step.",
+     "water": "Better than anywhere else on this side. A creek fed by a lingering snowfield runs at the upper camp through most of the season, and there are ponds along the divide that are worth treating and not drinking untreated. Water gets scarce once the snowfield goes.",
+     "permit": "Mt Baker-Snoqualmie National Forest, Mount Baker Wilderness. No overnight permit and no climbing permit. The access road is gated seasonally, closed from the start of November until the second week of July for wildlife, which is the single biggest planning constraint on this side of the mountain. Party size 12, no campfires, pack out all waste.",
+     "capacity": "A handful of small sites in the meadows near the head of the divide; pick rocky ground rather than heather, which recovers slowly here"
+    },
+    {
+     "elev": 5300,
+     "name": "Deadhorse Creek basin, below Chowder Ridge",
+     "role": "route",
+     "type": "camp",
+     "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approaching Hadley from either road can drop into it, sleep out of the wind, and take the ridge in the morning with full bottles. Summit day from here is short by any standard on this mountain. It is subalpine meadow and creek terrain, so camp on durable ground well back from the water. Season is the same as everything else on the north side, mid-August into early October, held back at the front end by mosquitoes and by the road gate on the Cougar Divide side and at the back end by the first real snow.",
+     "water": "The most reliable water on the Hadley approach — the creek runs from snowmelt above the basin and holds up later than anything on the ridge crests. Treat it. This is the reason to camp here rather than higher.",
+     "permit": "Mount Baker Wilderness, no overnight permit required. Recreation pass at whichever trailhead you start from. Party size 12, campfires prohibited, human waste and everything else packed out — there are no toilets on either divide.",
+     "capacity": "Scattered informal sites in the basin between the two divides; sheltered, low use, no facilities of any kind"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_hadley_peak_skyline_divide",
+  "name": "Skyline Divide Route",
+  "area": {
+   "id": "wa_hadley_peak",
+   "name": "Hadley Peak",
+   "parent_id": "wa_shuksan_baker_neighbors",
+   "elevation_ft": 7522,
+   "lat": 48.814065,
+   "lng": -121.822285
+  },
+  "prior_findings": "gain_ft 2,818 is below the rise between its own trailhead and summit pins (3,265 ft); no source stated the right total in pass 1.",
+  "earlier_research": [
+   {
+    "file": "r321.json",
+    "fact": "FS 37 closure point",
+    "status": "fixed",
+    "correct_value": "FS 37 is currently closed to vehicles at mile 0.03 (since 1 June 2026) while repair of the 2021 flood washout at milepost 3.1 is under way; the milepost-3.1 'no repair date' wording is out of date.",
+    "evidence": "The Mt. Baker-Snoqualmie alerts page lists 'FS Road 37 Deadhorse Creek CLOSED Until Further Notice' — flood damage repair underway, road closed at mile 0.03, alert start June 1, 2026 (the trailhead page still carries the older mile-3.1 text). Cascadia Daily News (16 Jun 2026) reports Deadhorse Road repairs beginning in June with a roughly two-year construction timeline. Both agree repair is now under way, so 'no repair date / impassable at 3.1' is stale and the current closure point is mile 0.03.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/mbs/alerts",
+     "https://www.cascadiadaily.com/2026/jun/16/flood-damaged-forest-roads-are-eroding-access-for-outdoor-enthusiasts/",
+     "https://www.fs.usda.gov/r06/mbs/recreation/skyline-divide-trailhead"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Total gain vs trailhead-to-summit relief",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Real contradiction: gain_ft 2,818 is below the 3,265 ft net rise between the route's own 4,250 ft trailhead and 7,515 ft summit pins. The 2,818 figure matches the FKT route page exactly; other published totals disagree widely — Gaia ~2,989 ft one way, a Mountaineers scramble listing 4,700 ft / 13 mi, a ClubTread report ~5,000 ft / 14+ mi. No two independent sources agree on a replacement value, so no patch; the pro_tips '3,300+' line is also unsupported as stated.",
+    "sources": [
+     "https://fastestknowntime.com/route/hadley-peak-wa",
+     "https://www.gaiagps.com/hike/235506/hadley-peak/",
+     "https://www.mountaineers.org/activities/routes-places/hadley-peak",
+     "https://forums.clubtread.com/37-washington-state/76218-skyline-divide-chowder-ridge-hadley-peak-sept-11-16-a.html"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Season window",
+    "status": "fixed",
+    "correct_value": "Snow-free from July, but the best window is mid-August into early October (bugs heavy July-August); the Aug-Oct chip stands and climate.summer should not call July-September prime.",
+    "evidence": "Best Hikes BC's Hadley Peak guide (covering both divides) gives a ~July-October season but names mid-August to early October as the ideal window because of snow on the climb to Chowder Ridge and heavy mosquitoes. The Forest Service Skyline Divide trail page says biting insects are abundant in July and August and abate in September. Both support the Aug-Oct chip and contradict 'prime July-September'.",
+    "sources": [
+     "https://besthikesbc.ca/hadley-peak/",
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678",
+     "https://uprootedtraveler.com/skyline-divide-mount-baker-hikes/"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Distance to the ridge crest",
+    "status": "fixed",
+    "correct_value": "The trail reaches the ridge crest at about 2 miles and continues about 2.5 miles over a series of knolls to its 6,563 ft high point at ~4.5 miles; the 4.4-4.5 mi figure is the end of the trail, not the first ridge-crest viewpoint.",
+    "evidence": "WTA's Skyline Divide entry: the trail gains 1,500 ft in two miles to reach the ridgeline, then continues 2.5 more miles over knolls to 6,563 ft (9.0 mi round trip). Uprooted Traveler independently describes 1,500 ft in the first two miles to the ridge, then two and a half miles over six knolls to 6,563 ft. So beta/approach mislabel the 4.5-mile point as the first crest viewpoint, and pitch 2's ~1.5 miles (the Forest Service's shorter figure) undercounts the crest section.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/skyline-divide",
+     "https://uprootedtraveler.com/skyline-divide-mount-baker-hikes/",
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Direction of travel along the ridge",
+    "status": "fixed",
+    "correct_value": "From the end of the trail the route runs south along Skyline Divide and then southeast along Chowder Ridge to Hadley (the pins put the summit south-southeast of the trailhead).",
+    "evidence": "WTA's Skyline Divide entry describes moving southward along the divide toward Baker with Chowder Ridge ahead; Uprooted Traveler likewise has hikers turn toward Mount Baker to the south along the ridge. A 2023 WTA trip report looks southeast from Chowder Ridge to Hadley and sees the use trail heading southeast toward it. Neither 'north' (pitch 3) nor 'east' (variant) is right.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/skyline-divide",
+     "https://uprootedtraveler.com/skyline-divide-mount-baker-hikes/",
+     "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-03.4326670756"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Overnight-permit text names another area's trailheads",
+    "status": "fixed",
+    "correct_value": "The pass applies at the Skyline Divide trailhead; the route lies wholly in Mount Baker Wilderness — no part of Mount Baker is in North Cascades National Park.",
+    "evidence": "The Forest Service Skyline Divide trailhead/trail pages require a valid recreation pass (NW Forest / Interagency, $5/day) at Skyline Divide Trailhead and put the trail in Mt. Baker Wilderness (party size 12, no campfires). Wikipedia's Mount Baker Wilderness article and Lauren Danner's history both state Mount Baker was excluded from North Cascades National Park in 1968, the wilderness only bordering the park to the east, so the NPS-permit sentence and the 'crossing into the national park' clause do not apply.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/skyline-divide-trailhead",
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678",
+     "https://www.wta.org/go-hiking/hikes/skyline-divide",
+     "https://en.wikipedia.org/wiki/Mount_Baker_Wilderness",
+     "https://laurendanner.com/why-isnt-mt-baker-a-national-park/"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Summit elevation (high_point_ft 7,522 vs summit pin 7,515)",
+    "status": "fixed",
+    "correct_value": "7,515 ft",
+    "evidence": "Lists of John gives Hadley Peak 7,515 ft; PeakVisor gives 2,290 m (~7,513 ft) and Best Hikes BC 2,291 m (7,516 ft). The row's own summit waypoint says 7,515; high_point_ft 7,522 has no support.",
+    "sources": [
+     "https://listsofjohn.com/peak/49192",
+     "https://peakvisor.com/peak/hadley-peak-united-states.html",
+     "https://besthikesbc.ca/hadley-peak/"
+    ]
+   },
+   {
+    "file": "r321.json",
+    "fact": "Wilderness permit: required self-issue vs none",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "permit, access.permit and what_to_bring say a free self-issue wilderness permit is needed at the trailhead, while access.overnight_permit says there is no wilderness permit. The Forest Service Skyline Divide pages list only a recreation pass and wilderness regulations (no self-issue permit mentioned), but no second source settled whether Mount Baker Wilderness uses trailhead self-issue permits, so no patch.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/skyline-divide-trailhead",
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678"
+    ]
+   },
+   {
+    "file": "s015.json",
+    "fact": "Wilderness permit: required self-issue vs none",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Forest Service Skyline Divide trail/trailhead pages and the Mt. Baker Wilderness page list only a recreation pass, wilderness rules (party 12, no fires) and a voluntary climbing register; the Forest Service says it requires no permits for climbing Mt. Baker; WTA, 10adventures, Grey Otter and Uprooted Traveler list only a parking pass. However none states explicitly that no wilderness permit exists, the Forest Service's general wilderness page says day visitors 'may need' a self-issue permit at trailheads, and one secondary page claims overnight permits are self-issued at Mount Baker Wilderness trailheads. Silence is not a statement; an explicit Mt. Baker Ranger District statement would settle it.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678",
+     "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-wilderness",
+     "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+     "https://www.wta.org/go-hiking/hikes/skyline-divide",
+     "https://summitborn.com/mount-baker-mountain-guide/"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_hadley_peak_cougar_divide",
+    "name": "Cougar Divide Route",
+    "grade": null
+   }
+  ],
+  "row": {
+   "id": "wa_hadley_peak_skyline_divide",
+   "area_id": "wa_hadley_peak",
+   "name": "Skyline Divide Route",
+   "discipline": "mountaineering",
+   "grade": null,
+   "grade_system": null,
+   "grade_num": null,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "NW",
+   "season": "Aug-Oct",
+   "description": null,
+   "gear": [
+    "trekking poles",
+    "sturdy hiking/scrambling boots",
+    "map/compass or GPS",
+    "ice axe (early/late season)"
+   ],
+   "hazards": [
+    "Loose rock and talus on the final Class 2/3 scramble to the summit.",
+    "Residual snow on the ridge crest into early summer creates slip-and-fall hazard on steep side-hill terrain.",
+    "Route-finding difficulty in poor visibility, since the trail fades to an unmarked boot-path along much of Chowder Ridge."
+   ],
+   "verif": null,
+   "overview": "The more popular of Hadley Peak's two standard approaches, following the well-known Skyline Divide trail up onto the ridge crest and then continuing cross-country along Chowder Ridge to the base of Hadley's summit block for a long, scenic ridge-walk scramble.",
+   "beta": "From the Skyline Divide Trailhead, a rugged, eroded trail switchbacks through forest to the ridge crest at about 2 miles, then rolls over a series of knolls along the open crest to the trail's high point (~6,563 ft) at about 4.5 miles. From there the maintained tread fades into a boot-packed path that continues along the open ridge crest for roughly another 3 miles, crossing minor ups and downs on Chowder Ridge, before reaching the base of Hadley Peak's final scramble. The last push is Class 2 with a short Class 3 step, climbing loose scree and talus to the summit; exposure is generally minimal for experienced parties.",
+   "turnaround": "Because the final scramble involves loose rock and a short exposed step, parties should set a turnaround time that leaves ample daylight and margin for slower downclimbing, and should not push onto the summit block in wet, icy, or low-visibility conditions.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 2818,
+   "loss_ft": 2818,
+   "dist_km": 11.9,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Northwest Ridge (Chowder Ridge - Hadley Peak connecting ridge)",
+   "permit": "Free self-issue Mount Baker Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell coverage is unreliable in this area; no dependable service should be expected along the ridge — carry a satellite communicator for emergencies.",
+   "descent": "Reverse the ascent: downclimb the loose summit scramble back onto the ridge crest, then follow Chowder Ridge and the Skyline Divide trail back to the trailhead.",
+   "obj_haz": [
+    "loose rock",
+    "exposure on short Class 3 step",
+    "lingering snow on ridge traverse",
+    "route-finding in fog/poor visibility"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.88083333,
+     "lng": -121.8633333,
+     "elev": 4250,
+     "name": "Skyline Divide Trailhead",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": 4250
+    },
+    {
+     "lat": 48.814065,
+     "lng": -121.822285,
+     "elev": 7515,
+     "name": "Hadley Peak Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 7515
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Pre-dawn/early-morning start given the long ridge day"
+   },
+   "detailed_rack": "None — this is a non-technical class 2-3 scramble with no roped climbing; no rack, rope, or protection is used.",
+   "what_to_bring": [
+    "Recreation/day-use pass or annual Interagency pass for the trailhead",
+    "self-issue wilderness permit from the trailhead box",
+    "extra water/treatment (little to no reliable water on the ridge)",
+    "layers for exposed, wind-prone ridge walking",
+    "sun protection"
+   ],
+   "pro_tips": [
+    "The ridge route is long and mostly unshaded — start early to beat both heat and afternoon thunderstorm risk on the exposed crest.",
+    "Parties describe the trail fading into a boot-path partway along Chowder Ridge; carry a GPS track or map, since route-finding in cloud/fog on the open ridge can be tricky.",
+    "Budget significant extra time for the up-and-down undulation of the ridge crest — GPS-tracked hikes commonly log more gain (3,300+ ft) than simple trailhead-to-summit elevation math would suggest."
+   ],
+   "watch_out": [
+    "FS Road 37 is closed to vehicles at mile 0.03 while the 2021 washout at milepost 3.1 is repaired, making the Skyline Divide Trailhead inaccessible by vehicle — check current Forest Service alerts before planning this approach.",
+    "Loose scree and talus on the final summit push; a short Class 3 step near the top has real exposure.",
+    "Snow can linger on the ridge into July, requiring an ice axe and self-arrest skill on the traverse."
+   ],
+   "pro_needs": "No fixed protection or rope is used on the standard scramble line; the main 'gear' concern is footing on loose rock and residual snow, for which an ice axe is recommended in early or late season.",
+   "best_season": "Best from mid-summer through early fall once snow has cleared from the ridge and ambient mosquito pressure has dropped; the trail itself is usually snow-free by July, but lingering snow on the ridge traverse and lower-elevation mosquitoes in early season are common complaints in trip reports.",
+   "high_point_ft": 7515,
+   "aid_grade": null,
+   "approach": "From Glacier, WA, drive Mt. Baker Highway (SR 542) east about 1 mile past the Glacier Public Service Center to Glacier Creek Road (FS 39); turn right, then take an immediate left onto Deadhorse Road (FS 37). FS 37 normally continues 12.7 miles to the Skyline Divide Trailhead. FS 37 has been closed to vehicles at mile 0.03 since 1 June 2026 while the 2021 flood washout at milepost 3.1 is repaired, with no end date given on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026, so the trailhead is not reachable by vehicle. When open, hike Skyline Divide Trail #678 through old-growth forest switchbacks and into meadows on the ridge crest (~2 mi), follow the crest to the trail's high point (~6,563 ft, ~4.5 mi), then continue cross-country along the open ridge to Chowder Ridge and the base of Hadley Peak.",
+   "descent_text": "From the summit, carefully downclimb the short Class 3 step and the loose scree/talus below it back to the base of the summit block. Retrace the boot-packed path along Chowder Ridge and the open ridge crest (roughly 3 miles) back to the trail's high point (~6,563 ft), then descend the maintained Skyline Divide Trail #678 through meadows and forest switchbacks to the trailhead.",
+   "bail": "The ridge route can be abandoned at nearly any point by simply retracing the ridge crest and trail back toward the Skyline Divide Trailhead; there is no fixed rappel or technical retreat required.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1",
+     "notes": "Trailhead through forest to Skyline Divide meadows (Trail #678), ~2 miles",
+     "pitch": "1"
+    },
+    {
+     "grade": "Class 1",
+     "notes": "Along Skyline Divide ridge crest to ~6,563 ft, ~2.5 miles of established trail",
+     "pitch": "2"
+    },
+    {
+     "grade": "Class 1-2",
+     "notes": "Cross-country south along the ridge to the Chowder Ridge junction",
+     "pitch": "3"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Chowder Ridge traverse on an established boot-path; mild exposure, side-hilling on steep slope",
+     "pitch": "4"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Final northwest-ridge summit block; loose rock, hard class 3 scrambling to the small, exposed summit",
+     "pitch": "5"
+    }
+   ],
+   "itinerary": "Typically done as a long single-day car-to-camp-free outing (when the trailhead is reachable): early trailhead start, roughly 4–5 hours to the summit along the ridge, and a similar time back down; some parties break it into an overnight with a ridge-camp on Chowder Ridge given the length (~14–15 miles round trip).",
+   "access": {
+    "fees": "$5/vehicle day-use fee at the trailhead, or annual Recreation/Interagency Pass",
+    "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. The route stays inside Mount Baker Wilderness, where party size is capped at 12 and campfires are prohibited.",
+    "permit": "Free self-issue wilderness permit available at the trailhead",
+    "closures": "Skyline Divide Trailhead is not reachable by vehicle: FS Road 37 (Deadhorse Road) has been closed at mile 0.03 since 1 June 2026 for flood-damage repair, with heavy equipment on the road and no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026.",
+    "landManager": "USDA Forest Service, Mt. Baker-Snoqualmie National Forest (Mount Baker Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness",
+    "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+    "passRequired": "Northwest Forest Pass or other accepted Interagency Pass",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+     "what": "No overnight permit required",
+     "where": "No climbing or wilderness permit. A recreation pass is needed to park at the Skyline Divide trailhead; buy it ahead or on the Recreation.gov app."
+    }
+   },
+   "road": {
+    "name": "Deadhorse Road (Forest Service Road 37)",
+    "status": "Closed to vehicles at mile 0.03 since 1 June 2026 while flood-damage repair is under way, with no end date given, as listed on the Mt. Baker-Snoqualmie National Forest alert still posted on 25 September 2026",
+    "driveNote": "From Glacier, drive SR 542 east about 1 mile, turn right onto Glacier Creek Road (FS 39), then take an immediate left onto Deadhorse Road (FS 37); FS 37 normally continues 12.7 miles to the Skyline Divide Trailhead, but has been gated at mile 0.03 for flood-damage repair since 1 June 2026, with no end date given.",
+    "seasonalGate": "No routine seasonal gate reported for FS 37 itself; access is presently blocked by the repair closure regardless of season"
+   },
+   "climate": {
+    "fall": "Often clear and dry with fewer bugs, but shorter daylight and increasing chance of early-season snow by October.",
+    "spring": "Ridge typically still snow-covered; not the standard scramble season.",
+    "summer": "Trail generally snow-free by July, but biting insects are heavy through July and August and the best window runs mid-August into early October; the ridge traverse can hold patchy snow into early July.",
+    "winter": "Full winter mountaineering/avalanche conditions; not the standard scramble route in winter.",
+    "typical": "Wet, maritime North Cascades weather with rapid changes possible even in summer; the exposed ridge crest is prone to wind and fast-moving cloud.",
+    "forecastZone": "NWAC West Slopes North (Mount Baker area)"
+   },
+   "emergency": {
+    "notes": "No reliable cell coverage along FR 37 or on the ridge; carry a satellite communicator.",
+    "county": "Whatcom County, Washington",
+    "rangerStation": "Glacier Public Service Center, Mt. Baker Ranger District, 10091 Mt. Baker Hwy, Glacier, WA 98244 — (360) 599-2714",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, 2901 Squalicum Pkwy, Bellingham, WA 98225 — (360) 734-5400",
+    "sheriffDispatch": "Whatcom County Sheriff's Office non-emergency dispatch: (360) 676-6911 (911 for emergencies)"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-August through September, once Chowder Ridge's side-hill snow is gone and the mosquitoes have eased",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The trail usually clears in July, but lingering snow on the Chowder Ridge side-hill is a slip hazard and mosquitoes are at their worst.",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Snow usually still covers the upper road and the trailhead area, and the ridge side-hills hold steep snow.",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "The ridge is usually snow-free by mid-August and the bugs drop off, leaving a long but straightforward approach to the scramble.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Often still dry early in the month, but the long ridge day meets short daylight and the first snow can coat the side-hill.",
+      "status": "good"
+     },
+     "November": {
+      "reason": "Early-winter snow covers the exposed ridge crest and the road to the trailhead may not be passable.",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Dry scree, few bugs and settled weather; the long day still fits the shortening daylight.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": {
+    "peakLat": 48.814065,
+    "peakLng": -121.822285,
+    "trailhead": "Skyline Divide Trailhead",
+    "trailheadDirection": "From Glacier, WA, drive Mt. Baker Highway (SR 542) east about 1 mile past the Glacier Public Service Center to Glacier Creek Road (FS 39); turn right, then take an immediate left onto Deadhorse Road (FS 37)."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Skyline Divide Trail #678 and the long open ridge south to Chowder Ridge",
+     "notes": "ACCESS FIRST: from Glacier, WA drive SR-542 about a mile past the Glacier Public Service Center to Glacier Creek Road (FS-39), turn right, then immediately left onto Deadhorse Road (FS-37). FS-37 normally runs 12.7 miles to the Skyline Divide trailhead. FS-37 has been closed to vehicles at mile 0.03 since June 1, 2026 while the 2021 flood washout at milepost 3.1 is repaired, with no end date given on the Mt. Baker-Snoqualmie National Forest alert still posted on September 26, 2026, so the trailhead is not reachable by vehicle. Confirm before planning around it.\n\nWhen open, Skyline Divide Trail #678 climbs through old-growth switchbacks into meadows and reaches the ridge crest at about 2 miles and its high point near 6,563 ft at about 4.5 miles. From there the route is cross-country along the open ridge — roughly three miles of it — to Chowder Ridge and the base of Hadley's summit block.\n\nThe trail's high point on the crest near 6,563 ft is the landmark parties use to re-find the maintained trail on the way back.",
+     "season": "Roughly Aug-Oct — this trailhead may not currently be reachable at all",
+     "hazards": [
+      "FS-37 closed at mile 0.03 during washout repair — the trailhead is not drivable until the work ends",
+      "Three miles of cross-country open ridge with no tread and no cairns",
+      "A short Class 3 step above loose scree and talus",
+      "Two unmarked divides converging on one summit, with very different roads at the bottom",
+      "No water once past the meadows"
+     ],
+     "baseFinding": "THE 6,600 FT VIEWPOINT IS THE GATE, IN BOTH DIRECTIONS. It is where maintained trail ends and where you rejoin it. In cloud it is the only reliable waypoint on this approach, because everything beyond it is three miles of undifferentiated open ridge. Note it on the way out — parties who do not, spend the return walking a crest that all looks the same.\n\nTHE CREST IS THE HANDRAIL. From the viewpoint the route runs SOUTH along the ridge and then SOUTHEAST along Chowder Ridge, roughly three miles in all. Keep the crest under your feet with air on both sides; this ridge has heather benches falling away either side and it is easy to drift onto one and lose the line.\n\nARRIVAL AT THE CLIMBING: the summit block is a SHORT CLASS 3 STEP above loose scree and talus — the last stretch of the day and the only scrambling on it. Walking stops, one short step of rock, summit. That is the whole climb, and it is the test: if you are scrambling for a long time, you are on a false feature; if you have not left your feet, you are not there.\n\nTHE DISCRIMINATOR AGAINST THE OTHER APPROACH TO THIS SAME BLOCK: Cougar Divide arrives on Chowder Ridge from the NORTH-WEST after crossing near Dobbs Creek, and its trail high point is 5,920 ft. Skyline arrives from the WEST after roughly three miles of ridge from a 6,600 ft viewpoint. If you are descending in poor visibility, going down the wrong divide puts you 11 miles of gravel road away from your car on a road that may itself be washed out."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 6000,
+     "name": "Skyline Divide crest camps",
+     "role": "main",
+     "type": "camp",
+     "notes": "The other approach to Hadley Peak, from the west along the divide and over Chowder Ridge. The road in has been the problem for years rather than the trail: flood damage at around mile three has left the trailhead inaccessible to vehicles for extended periods with no firm repair date, and the trail has been listed as closed on that account, so this is the first thing to confirm and not an afterthought. When it goes, the crest is easy walking with big views and the last three quarters of a mile up to Chowder Ridge is talus with one steeper step before you top out west of the Hadley Glacier. Camping on the open crest means taking whatever weather arrives off the mountain, and the exposure is the reason parties often drop into the basin instead.",
+     "water": "None at the trailhead and none along the trail after early summer, when the snow patches below the crest are gone. Carry everything or plan the trip around a lingering snowfield you have confirmed is still there.",
+     "permit": "Mt Baker-Snoqualmie National Forest, Mount Baker Wilderness. A recreation pass is required at the trailhead. No campfires anywhere, party size capped at 12, all waste packed out. There is no permit or quota for camping, but the meadows are heavily used and heavily damaged, so camp on bare ground.",
+     "capacity": "Several exposed sites along the open crest of the divide once the trail tops out; popular and visible, with no screening from wind or weather"
+    },
+    {
+     "elev": 5300,
+     "name": "Deadhorse Creek basin, below Chowder Ridge",
+     "role": "route",
+     "type": "camp",
+     "notes": "The basin sits between Skyline Divide and Cougar Divide, just short of the climb onto Chowder Ridge, and it solves the problem both crest camps have: it has water and it has shelter. A party approaching Hadley from either road can drop into it, sleep out of the wind, and take the ridge in the morning with full bottles. Summit day from here is short by any standard on this mountain. It is subalpine meadow and creek terrain, so camp on durable ground well back from the water. Season is the same as everything else on the north side, mid-August into early October, held back at the front end by mosquitoes and by the road gate on the Cougar Divide side and at the back end by the first real snow.",
+     "water": "The most reliable water on the Hadley approach — the creek runs from snowmelt above the basin and holds up later than anything on the ridge crests. Treat it. This is the reason to camp here rather than higher.",
+     "permit": "Mount Baker Wilderness, no overnight permit required. Recreation pass at whichever trailhead you start from. Party size 12, campfires prohibited, human waste and everything else packed out — there are no toilets on either divide.",
+     "capacity": "Scattered informal sites in the basin between the two divides; sheltered, low use, no facilities of any kind"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": "2026-08-27T12:00:00+00:00",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_clast_from_the_past",
+  "name": "Clast from the Past",
+  "area": {
+   "id": "wa_north_side",
+   "name": "North Side",
+   "parent_id": "wa_pinto_rock",
+   "elevation_ft": null,
+   "lat": 46.32448,
+   "lng": -121.92476
+  },
+  "prior_findings": "discipline is trad, but its own gear fields describe a sport route; two sources say sport.",
+  "earlier_research": [
+   {
+    "file": "r701.json",
+    "fact": "Route grade vs crux pitch",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The only route description found rates the route 5.10b overall while listing pitch 2 at 5.10c/d and pitch 1 at 5.5 — the same internal mismatch the row carries. No second independent source for either the overall grade or the pitch grade could be found (theCrag and SummitPost returned 403; searches found nothing else), so neither number can be changed.",
+    "sources": [
+     "https://www.mountainproject.com/route/110931364/clast-from-the-past",
+     "https://www.mountainproject.com/area/110928210/north-side"
+    ]
+   },
+   {
+    "file": "r701.json",
+    "fact": "Discipline / protection style",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Fully bolted sport route; no trad gear (discipline column itself is out of patch scope — should read sport)",
+    "evidence": "The route page lists it as sport, bolts throughout (7 clips P1, 9 clips P2); the North Side area listing also types all its routes sport/toprope. Internally gear, pro_needs, detailed_rack and beta all say fully bolted; sling_rack (cams, nuts, knob slings) is the lone outlier and is cleared. The discipline column 'trad' is also wrong but discipline is not patchable under the rules — flagged for the owner.",
+    "sources": [
+     "https://www.mountainproject.com/route/110931364/clast-from-the-past",
+     "https://www.mountainproject.com/area/110928210/north-side"
+    ]
+   },
+   {
+    "file": "r701.json",
+    "fact": "Pitch count and descent method in rope note",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Two-pitch route descended by two rappels on a single 60m rope",
+    "evidence": "The route page gives 2 pitches, 180 ft (55 m), descent 'rappel the route'. Internally pitches, pitch_detail, beta, descent, descent_text, rappel_detail and watch_out all agree on 2 pitches and 2 rappels; rope_note is the lone outlier.",
+    "sources": [
+     "https://www.mountainproject.com/route/110931364/clast-from-the-past"
+    ]
+   },
+   {
+    "file": "r701.json",
+    "fact": "Descent method",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Rappel the route from its own chain anchors in 2 raps",
+    "evidence": "The route page gives the descent as rappel the route. The Sidewinder page mentions summit rappel rings that meet Clast from the Past partway and hiking around the east side — but as ways to REACH the North Side base, not as a descent from this route; gear[1] misread that approach note. descent, descent_text, rappel_detail, rappels, watch_out and pro_tips all say rappel the route.",
+    "sources": [
+     "https://www.mountainproject.com/route/110931364/clast-from-the-past",
+     "https://www.mountainproject.com/route/114937321/sidewinder"
+    ]
+   },
+   {
+    "file": "r701.json",
+    "fact": "Gear list says lowering is an option while watch_out says rappelling is required",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Rappel (not lower) from the chain anchors",
+    "evidence": "The route page says rappel the route; at 180 ft total a 60m rope cannot lower from the top. watch_out, pro_tips, descent and rappel_detail all say rappel; gear[3]'s 'if lowering rather than rappelling' is the outlier.",
+    "sources": [
+     "https://www.mountainproject.com/route/110931364/clast-from-the-past"
+    ]
+   },
+   {
+    "file": "r701.json",
+    "fact": "High point vs topout",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The North Side area page puts the wall base at 4,864 ft and the Pinto Rock location at 4,821 ft; the 5,118 ft figure is the formation's summit pin, which a 55 m route on the North Side does not reach. By catalog convention high_point_ft on crag routes tracks the base (4,864 ft here), but only one outside source gives that figure and no second source was found, so no patch. The 'topout' waypoint at 4,821 ft is really the pullout coordinate/area elevation, not a topout; same values are shared with Sidewinder and Top Gun.",
+    "sources": [
+     "https://www.mountainproject.com/area/110928210/north-side",
+     "https://www.mountainproject.com/area/109294508/pinto-rock"
+    ]
+   },
+   {
+    "file": "s061.json",
+    "fact": "Route grade vs crux pitch",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Searches found no second description of this route; the only route page carries the same 5.10b overall / 5.10c-d P2 mismatch, and the other crag database returned 403. A second route listing or trip report with a pitch grade would settle it.",
+    "sources": [
+     "https://www.mountainproject.com/route/110931364/clast-from-the-past"
+    ]
+   },
+   {
+    "file": "t362.json",
+    "fact": "Discipline (trad vs sport)",
+    "status": "unresolved",
+    "correct_value": "sport (per every protection field on the row)",
+    "evidence": "Internally pro_needs, gear, detailed_rack and hazards all describe a fully bolted two-pitch sport route, so 'trad' is the outlier. However the discipline column is out of scope for this patch process, and no route-specific page for Clast from the Past could be found online (only Pinto Rock area pages). Settling it needs an owner-approved discipline change, ideally after a route page confirms the bolted protection.",
+    "sources": [
+     "https://www.mountainproject.com/area/109294508/pinto-rock",
+     "https://www.thecrag.com/en/climbing/united-states/washington/area/4510029027"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_sidewinder_4",
+    "name": "Sidewinder",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_top_gun",
+    "name": "Top Gun",
+    "grade": "5.10a/b"
+   }
+  ],
+  "row": {
+   "id": "wa_clast_from_the_past",
+   "area_id": "wa_north_side",
+   "name": "Clast from the Past",
+   "discipline": "trad",
+   "grade": "5.10b",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 2,
+   "length_m": 55,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Kevin Buselmeier, Jim Yoder & Brenden Sullivan (ground-up first ascent; reported August 2015)",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Quickdraws — the route is fully bolted up the lichen-covered basalt band on Pinto Rock's north face; bring a standard sport rack for the pitch length rather than a trad rack",
+    "60m rope — single rope is fine; descent is two rappels down the route from its own chain anchors",
+    "Helmet — basalt is knobby and generally solid, but loose blocks and other parties above are a real concern on this face",
+    "Alpine quickdraws/slings for rigging the rappels at the chain anchors"
+   ],
+   "hazards": [
+    "Remote, multi-mile forest-road approach from the nearest town",
+    "Loose rock and steep use trail on approach",
+    "Two-pitch sport climbing requires rappel competency, unlike most single-pitch lines at this crag"
+   ],
+   "verif": null,
+   "overview": "A two-pitch bolted line up the left (west) side of Pinto Rock's north-facing basalt band, with an easy warm-up pitch leading to a harder roof-pull finish.",
+   "beta": "P1 (5.5) climbs about 100 ft up slabby rock on 7 bolts to a chain anchor; P2 (5.10c/d) continues about 80 ft on 9 bolts through the route's crux, pulling a roof near the top. Rated 5.10b overall. It shares the same lichen-covered basalt band as Sidewinder but follows it up and to the left rather than traversing right.",
+   "turnaround": "No fixed turnaround time is documented; as with any two-pitch sport route here, start early enough to finish both rappels and hike out before dark given the steep, loose descent trail.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10b",
+   "ice_grade": null,
+   "gain_ft": 250,
+   "loss_ft": null,
+   "dist_km": 0.47,
+   "max_angle": null,
+   "rappels": "Rappel the route (chain anchors at each pitch)",
+   "commitment": null,
+   "face": "North Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "AT&T reportedly gets 2-3 bars at the pullout, approach trail, and summit per a Mountaineers trip report — coverage should not be relied upon and may vary by carrier.",
+   "descent": "Rappel the route in 2 raps.",
+   "obj_haz": [
+    "loose approach trail",
+    "roof-pull crux exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 46.3268,
+     "lng": -121.92379,
+     "name": "Pinto Rock Pullout (North Side)",
+     "note": "Roadside pullout on NF-77 (via NF-25 -> NF-28 -> NF-77 from Randle, WA) directly below Pinto Rock;",
+     "type": "Trailhead",
+     "directions": "From Randle on US Highway 12, head south on SR 131 and follow NF-25 for 19.2 miles. Just past milepost 21, turn left at the Mosquito Meadows sign onto NF-28 and follow it 2.7 miles, then turn left onto NF-77. That last stretch is rough gravel, so drive it slowly; after about 2 miles Pinto Rock comes into view at a large pullout, and that pullout is the parking."
+    },
+    {
+     "lat": 46.3268,
+     "lng": -121.92379,
+     "elev": 4821,
+     "name": "Pinto Rock topout (approximate)",
+     "note": "Approximate - research confirms a short (~0.3mi) documented climbers trail from the pullout to the formation, but no exact topout coordinate was found; this reuses the pullout coordinate with a disclosed ~0.3mi uncertainty rather than a precise fix.",
+     "type": "Topout",
+     "distMi": 0.3
+    },
+    {
+     "lat": 46.32799,
+     "lng": -121.92374,
+     "elev": 4864,
+     "name": "North Side wall (GPS pin)",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 4864
+    },
+    {
+     "lat": 46.3265018,
+     "lng": -121.9237007,
+     "elev": 5118,
+     "name": "Pinto Rock",
+     "type": "Summit",
+     "elevFt": 5118
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Morning start recommended to be off the rock before any afternoon thunderstorm build-up"
+   },
+   "detailed_rack": "Sport rack: 16-18 quickdraws to cover both pitches (7 bolts + anchor on P1, 9 bolts + anchor on P2) plus a 60m rope for the rappels.",
+   "what_to_bring": [
+    "Helmet",
+    "Approach shoes for the steep use trail",
+    "Extra draws for the anchors",
+    "Water — none at the crag"
+   ],
+   "pro_tips": [
+    "P1 is an easy 5.5 warm-up — don't underestimate the P2 roof crux",
+    "Rack for both pitches before leaving the ground since retreat from height means rappelling, not lowering",
+    "Basalt sections here are grippier and more edge-based than Pinto Rock's typical knobby welded tuff"
+   ],
+   "watch_out": [
+    "P2's roof pull is a real step up in difficulty from P1",
+    "Rappelling (not lowering) is required to descend — carry rappel devices/backup",
+    "Steep, loose approach/exit trail"
+   ],
+   "pro_needs": "Fully bolted two-pitch sport route; no trad gear required, just enough draws for both pitches and anchors.",
+   "best_season": "July-September is the reported prime window; this north-facing line can stay cool and hold moisture longer into spring than south-facing walls at Pinto Rock.",
+   "high_point_ft": 5118,
+   "aid_grade": null,
+   "approach": "From Randle, WA on US Hwy 12: head south on SR 131, then follow NF-25 for 19.2 miles; just past milepost 21, turn left at the Mosquito Meadows sign onto NF-28 for 2.7 miles; turn left onto NF-77 (rough gravel, drive slowly) for about 2 miles until Pinto Rock comes into view at a large pullout. An evident use trail leads north from the pullout to the base of the formation (~0.3 mi/0.47 km). For North Side, hike around the formation's east side to the base, or summit and rappel the fixed rings to reach the route.",
+   "descent_text": "From the P2 anchor, rappel ~80 ft to the P1 chain anchor, then rappel ~100 ft to the ground — both raps are within single-rope (60m) range.",
+   "bail": "Both pitch anchors are bolted chains — a party can rappel from the P1 anchor after pitch one without continuing, or lower/rappel from any bolt on lead if conditions turn.",
+   "pitch_detail": [
+    {
+     "grade": "5.5",
+     "notes": "~100 ft up the basalt band via 7 bolts to a chain anchor on a slab to the right.",
+     "pitch": "P1"
+    },
+    {
+     "grade": "5.10c/d",
+     "notes": "~80 ft on 9 bolts; crux pulling a roof near the top.",
+     "pitch": "P2"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "fees": "N/A",
+    "notes": "A ~400 ft welded-tuff crag near Randle, WA — not designated wilderness, a bolted sport/trad crag.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Gifford Pinchot National Forest (Cowlitz Valley Ranger District)",
+    "passRequired": "N/A"
+   },
+   "road": {
+    "name": "NF-77 pullout, Pinto Rock, Gifford Pinchot National Forest",
+    "status": "Gravel Forest Service roads throughout (NF-25, NF-28, NF-77); NF-77 is rough for its final ~2 miles and should be driven slowly, but the road is generally passable to careful drivers without requiring full 4WD.",
+    "driveNote": "From Randle, WA (Hwy 12): south on Hwy 131/NF-25 for about 19 miles, left onto NF-28 for 2.7 miles, then left onto NF-77 for about 2 miles to the Pinto Rock pullout. Roughly 2.5-3 hours from Seattle or Portland.",
+    "seasonalGate": "Gated/closed with the onset of winter snow (Gifford Pinchot NF's routine winter closure, typically by early December) through spring"
+   },
+   "climate": {
+    "fall": "Good climbing into September before fall rains",
+    "spring": "Often too wet, with lingering snow near 5,000 ft and possible road gate closures",
+    "summer": "Warm and dry — the primary season",
+    "winter": "Access roads gated; not a winter objective",
+    "typical": "Prime climbing window is July-September",
+    "forecastZone": "Southern WA Cascades / Mt. Adams region"
+   },
+   "emergency": {
+    "notes": "Very remote; cell coverage is inconsistent. Nearest town with services (Randle) is roughly 25+ road miles away.",
+    "county": "Skamania County, WA",
+    "rangerStation": "Cowlitz Valley Ranger District, 10024 US Hwy 12, Randle, WA 98377 — (360) 497-1103",
+    "nearestHospital": "Arbor Health – Morton Hospital (critical access hospital with ER), Morton, WA — (360) 496-5112; reached via Hwy 12 west from Randle",
+    "sheriffDispatch": "Skamania County Sheriff non-emergency: (509) 427-9490 (911 for emergencies)"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 46.32448,
+    "peakLng": -121.92476,
+    "trailhead": "NF-77 roadside pullout (Mosquito Meadows area, Randle)",
+    "trailheadDirection": "From Randle via SR-131, NF-25 ~19 miles, NF-28 2.7 miles, then rough gravel NF-77 to the roadside pullout below the formation"
+   },
+   "sling_rack": null,
+   "alpine_draws": 8,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Two-pitch basalt route on the North Side of Pinto Rock; a single 60m rope is enough for both rappels.",
+   "ascender": null,
+   "corrections": "No dedicated route page found; based on Pinto Rock's general area description and neighboring Sidewinder's confirmed single-pitch bolted format at the same North Side sub-area.",
+   "gear_confidence": "inferred",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Rappel from the P2 anchor down roughly 80 ft to the P1 chain anchor.",
+     "anchor": "P1 bolted chain anchor",
+     "lengthM": 25
+    },
+    {
+     "n": 2,
+     "notes": "Rappel from the P1 chain anchor roughly 100 ft to the ground; both raps are within single-rope (60m) range.",
+     "anchor": "ground",
+     "lengthM": 30
+    }
+   ],
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Slab",
+    "Overhanging",
+    "Well-protected",
+    "Technical"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_sidewinder_4",
+  "name": "Sidewinder",
+  "area": {
+   "id": "wa_north_side",
+   "name": "North Side",
+   "parent_id": "wa_pinto_rock",
+   "elevation_ft": null,
+   "lat": 46.32448,
+   "lng": -121.92476
+  },
+  "prior_findings": "discipline should be sport (same crag as Clast from the Past; research found it bolted).",
+  "earlier_research": [
+   {
+    "file": "r701.json",
+    "fact": "Discipline / protection style",
+    "status": "unresolved",
+    "correct_value": "sport",
+    "evidence": "The route page types Sidewinder as sport, bolts about every four feet to a chain anchor, and the North Side area listing agrees. Every protection field on the row already says bolted sport; the only wrong field is discipline ('trad'), which the rules put out of patch scope — flagged for the owner to change to sport.",
+    "sources": [
+     "https://www.mountainproject.com/route/114937321/sidewinder",
+     "https://www.mountainproject.com/area/110928210/north-side"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_clast_from_the_past",
+    "name": "Clast from the Past",
+    "grade": "5.10b"
+   },
+   {
+    "id": "wa_top_gun",
+    "name": "Top Gun",
+    "grade": "5.10a/b"
+   }
+  ],
+  "row": {
+   "id": "wa_sidewinder_4",
+   "area_id": "wa_north_side",
+   "name": "Sidewinder",
+   "discipline": "trad",
+   "grade": "5.9",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 18,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Brenden Sullivan & Oren Cowlishaw, August 2017",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "A generous rack of quickdraws, since the bolted traverse is protected roughly every four feet",
+    "A rope, since the route lowers off a chain anchor near a roof",
+    "Helmet, standard for the bolted basalt face"
+   ],
+   "hazards": [
+    "Remote crag roughly 25+ road miles from Randle, the nearest town",
+    "Loose rock and a steep, loose use trail on approach/descent",
+    "Featured volcanic rock can shed loose knobs — helmet recommended"
+   ],
+   "verif": null,
+   "overview": "A slightly overhanging, bolt-protected traverse rightward (east) along a lichen-stained basalt band on Pinto Rock's north side, ending at a chain anchor near a roof.",
+   "beta": "Good feet throughout with one pumpy crux section that loads the arms; the difficulty here is more mental than physical since bolts are spaced roughly every four feet. The basalt climbs differently than Pinto Rock's typical knobby welded tuff, with a character closer to Exit 38. Best cleaned by the second since it's a lateral traverse.",
+   "turnaround": "This is a single-pitch crag route with no summit turnaround; the main time hazard is the descent trail, described by multiple parties as steep and loose — plan to be off the hillside before dark.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9",
+   "ice_grade": null,
+   "gain_ft": 250,
+   "loss_ft": null,
+   "dist_km": 0.47,
+   "max_angle": null,
+   "rappels": "Lower or rappel from the bolted chain anchor",
+   "commitment": null,
+   "face": "North Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "AT&T reportedly gets 2-3 bars of coverage at the parking pullout, along the approach trail, and even on the summit per a Mountaineers trip report — but coverage should not be relied upon and may vary by carrier.",
+   "descent": "Lower off the chain anchor.",
+   "obj_haz": [
+    "loose approach trail",
+    "exposed traverse"
+   ],
+   "waypoints": [
+    {
+     "lat": 46.3268,
+     "lng": -121.92379,
+     "name": "Pinto Rock Pullout (North Side)",
+     "note": "Same pullout as the other North Side routes; the approach trail is extremely steep and loose.",
+     "type": "Trailhead",
+     "directions": "From Randle on US Highway 12, head south on SR 131 and follow NF-25 for 19.2 miles. Just past milepost 21, turn left at the Mosquito Meadows sign onto NF-28 and follow it 2.7 miles, then turn left onto NF-77. That last stretch is rough gravel, so drive it slowly; after about 2 miles Pinto Rock comes into view at a large pullout, and that pullout is the parking."
+    },
+    {
+     "lat": 46.3268,
+     "lng": -121.92379,
+     "elev": 4821,
+     "name": "Pinto Rock topout (approximate)",
+     "note": "Approximate - research confirms a short (~0.3mi) documented climbers trail from the pullout to the formation, but no exact topout coordinate was found; this reuses the pullout coordinate with a disclosed ~0.3mi uncertainty rather than a precise fix.",
+     "type": "Topout",
+     "distMi": 0.3
+    },
+    {
+     "lat": 46.32799,
+     "lng": -121.92374,
+     "elev": 4864,
+     "name": "North Side wall (GPS pin)",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 4864
+    },
+    {
+     "lat": 46.3265018,
+     "lng": -121.9237007,
+     "elev": 5118,
+     "name": "Pinto Rock",
+     "type": "Summit",
+     "elevFt": 5118
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Morning start recommended to be off the rock before any afternoon thunderstorm build-up"
+   },
+   "detailed_rack": "Sport rack: 10-12 quickdraws (bolts roughly every 4 ft over the 60 ft pitch) plus draws for the chain anchor; a 60m rope is sufficient for the lower.",
+   "what_to_bring": [
+    "Helmet (loose approach terrain and featured volcanic rock)",
+    "Sticky-soled shoes for slab/knob footwork",
+    "Sun protection — the wall is fully exposed",
+    "Water — none available at the crag"
+   ],
+   "pro_tips": [
+    "Have the second clean gear rather than lead-cleaning a traverse",
+    "Link into a lower-then-toprope lap on Top Gun using the same anchor",
+    "Basalt on this face climbs more like a grippy sport crag than Pinto Rock's typical knobby welded tuff"
+   ],
+   "watch_out": [
+    "Following a bolted traverse creates swing-fall potential for the second",
+    "The exit/approach trail is steep and loose, especially with a pack",
+    "NF-77 is rough gravel — high clearance recommended, drive slowly"
+   ],
+   "pro_needs": "Fully bolted; no trad gear needed. Bring at least 10-12 quickdraws.",
+   "best_season": "Prime season is reported as July through September. The access road and approach trail can hold snow or be muddy outside summer, and the crag sits near 5,000 ft where conditions change quickly with weather.",
+   "high_point_ft": 5118,
+   "aid_grade": null,
+   "approach": "From Randle, WA on US Hwy 12: head south on SR 131, then follow NF-25 (Forest Road 25) for 19.2 miles; just past milepost 21, turn left at the sign for Mosquito Meadows onto NF-28 and follow it 2.7 miles; turn left onto NF-77 (rough gravel, drive slowly) for about 2 miles until Pinto Rock comes into view at a large pullout. An evident use trail leads north from the pullout to the base of the formation (~0.3 mi/0.47 km). For the North Side wall specifically, either hike around the formation's east side to the base, or summit via the standard trail/scramble and rappel the fixed rings, which meet the route partway.",
+   "descent_text": "From the anchor at the end of the traverse, lower back to the base on a single rope (~60 ft). Many parties instead keep the rope through the anchor, lower to the roof lip, and set up a toprope on the adjacent Top Gun before finally lowering all the way to the ground.",
+   "bail": "Fully bolted with a chain anchor at the far end — from anywhere on the traverse the leader can lower off the last bolt clipped; there is no mid-route retreat anchor, so downclimbing back along the traverse is the usual bail option if needed.",
+   "pitch_detail": [
+    {
+     "grade": "5.9",
+     "notes": "Slightly overhanging rightward/eastward traverse on a lichen-covered basalt band; positive feet except one pumpy crux section; bolts roughly every 4 ft to a chain anchor.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "fees": "N/A",
+    "notes": "A ~400 ft welded-tuff crag near Randle, WA — not designated wilderness, a bolted sport/trad crag.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Gifford Pinchot National Forest (Cowlitz Valley Ranger District)",
+    "passRequired": "N/A"
+   },
+   "road": {
+    "name": "NF-77 pullout, Pinto Rock, Gifford Pinchot National Forest",
+    "status": "Gravel Forest Service roads throughout (NF-25, NF-28, NF-77); NF-77 is rough for its final ~2 miles and should be driven slowly, but the road is generally passable to careful drivers without requiring full 4WD.",
+    "driveNote": "From Randle, WA (Hwy 12): south on Hwy 131/NF-25 for about 19 miles, left onto NF-28 for 2.7 miles, then left onto NF-77 for about 2 miles to the Pinto Rock pullout. Roughly 2.5-3 hours from Seattle or Portland.",
+    "seasonalGate": "Gated/closed with the onset of winter snow (Gifford Pinchot NF's routine winter closure, typically by early December) through spring"
+   },
+   "climate": {
+    "fall": "Good climbing into September before fall rains",
+    "spring": "Often too wet, with lingering snow near 5,000 ft and possible road gate closures",
+    "summer": "Warm and dry — the primary season",
+    "winter": "Access roads gated; not a winter objective",
+    "typical": "Prime climbing window is July-September",
+    "forecastZone": "Southern WA Cascades / Mt. Adams region"
+   },
+   "emergency": {
+    "notes": "Very remote; cell coverage is inconsistent (AT&T reportedly gets some signal at the pullout/trail/summit, other carriers unconfirmed). Nearest town with services (Randle) is roughly 25+ road miles away.",
+    "county": "Skamania County, WA",
+    "rangerStation": "Cowlitz Valley Ranger District, 10024 US Hwy 12, Randle, WA 98377 — (360) 497-1103",
+    "nearestHospital": "Arbor Health – Morton Hospital (critical access hospital with ER), Morton, WA — (360) 496-5112; reached via Hwy 12 west from Randle",
+    "sheriffDispatch": "Skamania County Sheriff non-emergency: (509) 427-9490 (911 for emergencies)"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 46.32448,
+    "peakLng": -121.92476,
+    "trailhead": "NF-77 roadside pullout (Mosquito Meadows area, Randle)",
+    "trailheadDirection": "From Randle via SR-131, NF-25 ~19 miles, NF-28 2.7 miles, then rough gravel NF-77 to the roadside pullout below the formation"
+   },
+   "sling_rack": null,
+   "alpine_draws": 10,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Single-pitch, slightly overhung sport route, bolts every ~4ft; lower from chains (anchor also used to toprope Top Gun).",
+   "ascender": null,
+   "corrections": "Mountain Project confirms grade (5.9) and 'sport bolted' single-pitch protection at Pinto Rock's North Side; matches listed grade exactly.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Overhanging",
+    "Pumpy",
+    "Face"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

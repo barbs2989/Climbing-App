@@ -1,0 +1,103 @@
+{
+ "applied": [
+  {
+   "id": "wa_spire_point_southwest_face",
+   "column": "waypoints",
+   "path": [
+    4,
+    "elev"
+   ],
+   "fact": "Itswoot Ridge camp elevation: waypoint 6,600 ft vs approach ~6,400 ft vs bivy 5,880 ft"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_spire_point_southwest_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.2591,
+      "lng": -121.2244,
+      "elev": 1450,
+      "name": "Downey Creek Trailhead",
+      "note": "Self-issue wilderness permit and Northwest Forest Pass required at the kiosk; trail starts just past the Downey Creek bridge, 20.6 mi up Suiattle River Road (FR 26) from SR 530.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Suiattle River Road (FR 26) 20.6 miles from SR 530; the trailhead is just past the Downey Creek bridge. Self-issue a wilderness permit at the kiosk and display a Northwest Forest Pass."
+     },
+     {
+      "lat": 48.324303,
+      "lng": -121.15708,
+      "elev": 2400,
+      "name": "Sixmile Camp / Bachelor Creek Trail junction",
+      "note": "Maintained Downey Creek Trail 768 ends here at an established camp; the unmarked, unmaintained Bachelor Creek Trail climbs steeply south toward Bachelor Meadows.",
+      "type": "Junction",
+      "distMi": 6.6,
+      "directions": "Follow the Downey Creek Trail (768/792) roughly 6.5 miles of gentle, well-graded walking through old-growth forest. Recent Forest Service work has added boardwalks and new log bridges, so this is the easy day; the maintained trail simply ends at the established camp."
+     },
+     {
+      "lat": 48.305207,
+      "lng": -121.127325,
+      "elev": 4200,
+      "name": "Bachelor Creek log crossing",
+      "note": "Cross Bachelor Creek on a downed log below Bachelor Meadows — last reliable water before the high camps; dense alder and old blowdown make this stretch the route-finding crux of the approach.",
+      "type": "Water",
+      "distMi": 8,
+      "directions": "From the north side of the crossing, pick up the unmaintained Bachelor Creek climbers' path. It starts as a clear boot-track climbing steeply beside the creek before easing into switchbacks, then gets overgrown with salmonberry and vine maple through the meadows around 4,000 ft. Dense alder and old blowdown make this the route-finding crux of the whole approach; the path is easy to lose and the creek can run swift in early season."
+     },
+     {
+      "lat": 48.308523,
+      "lng": -121.093465,
+      "elev": 5900,
+      "name": "Cub Lake pass",
+      "note": "Forested saddle overlooking Cub Lake; descend steep talus and switchbacks about 500 ft to the lake's east shore before regaining the ridge toward Itswoot.",
+      "type": "Junction",
+      "distMi": 10,
+      "directions": "Keep climbing on switchbacks, crossing an avalanche chute that holds snow late and is exposed to slide activity into early summer, then duck back into trees on climber's left. Around 5,900 ft the path tops out on the forested ridge overlooking the lake."
+     },
+     {
+      "lat": 48.309270257142856,
+      "lng": -121.09332588571428,
+      "elev": 6600,
+      "name": "Itswoot Ridge camp",
+      "note": "Open bivy sites on the ridge crest with a stream running down from Spire Point; continuous snow above roughly 6,800 ft typically requires crampons.",
+      "type": "Campsite",
+      "distMi": 12,
+      "directions": "Drop about 500 ft on steep talus and switchbacks to the lake, which also has good camping, skirt its north shore, and regain the ridge heading toward Itswoot. A stream draining the Spire Point basin gives reliable water at the ridge camp."
+     },
+     {
+      "lat": 48.31652841964286,
+      "lng": -121.07442966071429,
+      "elev": 7760,
+      "name": "Spire Col",
+      "note": "Standard high camp on Itswoot Ridge with the first view north across the Ptarmigan Traverse; the climb starts about a quarter mile east along the ridge, not on the slabby ledges directly above camp.",
+      "type": "Campsite",
+      "distMi": 13.75,
+      "directions": "Hike north up Itswoot Ridge, staying on talus on its west side near the stream to bypass the rock towers directly above camp; the crest itself is only walkable in short gentle stretches. Snow is usually continuous above about 6,800 ft, so crampons and an axe come out here. You can either climb the moderate 30-degree snow straight to the col or skirt the left edge of the snowfield on rock."
+     },
+     {
+      "lat": 48.31715054785714,
+      "lng": -121.07280998428571,
+      "elev": 8100,
+      "name": "Class 4 summit chimney",
+      "note": "Short, loose class 4 chimney through scree gains the summit ridge crest — the technical crux, exposed and prone to kicked-down rock from parties above.",
+      "type": "Hazard",
+      "distMi": 13.9,
+      "directions": "From the col, gain roughly 400 to 500 ft on talus and broken ledges to the base of the face, about a quarter mile along the ridge. Loose talus leads to the foot of the chimney, which is only about 30 ft of climbing on solid granite with good holds but is where parties rope up."
+     },
+     {
+      "lat": 48.317565,
+      "lng": -121.07173,
+      "elev": 8264,
+      "name": "Spire Point",
+      "note": "Tiny summit block holds one climber at a time; descend via two 60m rappels back down the chimney/ledge system to Spire Col.",
+      "type": "Summit",
+      "distMi": 14,
+      "directions": "Above the chimney, traverse exposed class 3 ledges across the face to the ridge crest and around onto the west side, with well over a thousand feet of air below. The last 50 ft goes as a 5.6 friction slab or, alternatively, cracks just left of the slab with better holds. Belay it: the horn holds one climber at a time, so parties take turns."
+     }
+    ]
+   }
+  }
+ ]
+}

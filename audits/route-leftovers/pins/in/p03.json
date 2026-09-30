@@ -1,0 +1,1936 @@
+[
+ {
+  "id": "wa_bald_eagle_peak_scramble",
+  "name": "Standard Scramble",
+  "area_id": "wa_bald_eagle_peak",
+  "findings": [
+   "r023.json: The reader assumed FR 6835 was the outlier, but the peak's climbing page says to drive 4.7 mi up the Foss road, turn left onto FR 6835, and park about 0.5 mi on, 200 ft past a small concrete bridge, across from the toe of the north ridge. OpenStreetMap road data shows FR 68 (Foss River Road, FS 6800) ends at a gate by the main Foss bridge, and the bridge over the East Fork Foss River (15 m from the river line) is on FS 6835, West Fork Foss Road. The Forest Service and trail-association pages for West Fork Foss both put the FR 6835 turn at 4.7 mi on FR 68, and a trip report parks just after the East Fork bridge at mile 5.2 (4.7 + 0.5). Note: the trailhead waypoint pin itself (47.6114,-121.242"
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_bald_eagle_peak_scramble",
+   "area_id": "wa_bald_eagle_peak",
+   "name": "Standard Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": 1518,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Hermann Ulrichs and Ben Falkenburg, 1933 (via the North Ridge — this was also the peak's first ascent)",
+   "lat": 47.616805,
+   "lng": -121.271555,
+   "aspect": "N",
+   "season": "Jun-Oct (snow commonly lingers above ~4,500 ft into June)",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe",
+    "microspikes or crampons (early-season/lingering snow)",
+    "trekking poles",
+    "sturdy mountaineering boots"
+   ],
+   "hazards": [
+    "off-trail routefinding",
+    "steep brushy, exposed terrain with drop-offs",
+    "lingering snow and ice on north-facing slopes into summer",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "Bald Eagle Peak (6,259 ft) rises above the Foss River valley near Skykomish, on the divide between the East and West Forks of the Foss River within the northern Alpine Lakes Wilderness. The standard North Ridge — first climbed in 1933 by Hermann Ulrichs and Ben Falkenburg — is an off-trail Class 3-4 scramble with sustained routefinding, brush, a cliff-band bypass near 5,400 ft, and an exposed ledge just below the summit.",
+   "beta": "The North Ridge is the standard and first-ascent route: an unmaintained, off-trail climb gaining nearly 5,000 ft directly from Foss River Road to the summit, mixing brushy Class 2-3 forest travel, a rocky Class 3-4 crest, and (especially in spring/early summer) a steep snow traverse and cliff-band bypass near 5,400-6,100 ft that call for an ice axe, crampons, and a helmet.",
+   "turnaround": "Because the ridge is largely unprotected and includes an exposed snow/ledge traverse just below the summit, set a turnaround time that gets the party off the steep upper mountain before afternoon snow softening, thunderstorms, or fatigue compromise footing on the descent.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 3-4 scramble (unroped; a short section can feel low 4th class when wet/snowy)",
+   "ice_grade": null,
+   "gain_ft": 4979,
+   "loss_ft": 4979,
+   "dist_km": 5.3,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "North Ridge",
+   "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+   "comms": null,
+   "descent": "Descend the North Ridge in reverse, carefully downclimbing the exposed summit ledge and using the gully bypass around the 5,400 ft cliff band; snow/ice can linger in the moat below the summit into midsummer.",
+   "obj_haz": [
+    "loose rock",
+    "dense brush / route-finding",
+    "steep drop-offs on the ridge crest",
+    "lingering snow and ice above ~4,500 ft into early summer",
+    "no maintained trail"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.611404,
+     "lng": -121.2425768,
+     "elev": 1280,
+     "name": "FR 6835 roadside pullout past the East Fork Foss bridge",
+     "note": "Park on the shoulder just after FR 6835 crosses the East Fork Foss River bridge; no formal trailhead or sign, road access requires a Northwest Forest Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From US-2 at Skykomish, follow Foss River Road (FR 68) about 4.7 miles, turn left onto FR 6835, and continue about half a mile to the shoulder pullout just past the concrete bridge over the East Fork Foss River. There is no sign and no formal trailhead — parking is on the road shoulder — and a Northwest Forest Pass is required for the road."
+    },
+    {
+     "lat": 47.61173509090909,
+     "lng": -121.2443376,
+     "elev": 1400,
+     "name": "Leave road, enter forest for North Ridge",
+     "note": "No trail from the road; head cross-country uphill through old-growth forest toward the North Ridge crest.",
+     "type": "Junction",
+     "distMi": 0.2,
+     "directions": "Cross to the far side of the road at the bridge and go straight into the forest. There is no trail and no marked start: pick up the toe of the north ridge at around 1,600 ft and climb. Carry all your water, since nothing on the ridge above is reliable."
+    },
+    {
+     "lat": 47.613225,
+     "lng": -121.25226119999999,
+     "elev": 2600,
+     "name": "Deadfall zone below 2,600 ft",
+     "note": "Dense down timber strewn through the forest floor up to about 2,600 ft; weave through, stays passable but slows progress.",
+     "type": "Hazard",
+     "distMi": 1.1,
+     "directions": "The lower second-growth is choked with fallen timber, so the first several hundred feet of gain are spent weaving and scrambling over deadfall rather than walking. Stay on or near the crest; it stays passable, just slow. Around 2,600 ft the forest turns to older growth and the underbrush thins out noticeably."
+    },
+    {
+     "lat": 47.61537709090909,
+     "lng": -121.2637064,
+     "elev": 4900,
+     "name": "Brushy ridge section, 4,500-5,200 ft",
+     "note": "Thickest brush on the route with steep drop-offs on both sides of the narrow ridge crest; heavy vegetation forces careful footing.",
+     "type": "Hazard",
+     "distMi": 2.4,
+     "directions": "Through the old-growth the crest is easy to follow and there are few reasons to leave it, with moderate going to about 4,500 ft. There the ridge narrows and steepens into the brushiest stretch of the trip — small trees and slide alder crowding a pointier crest with real drop-offs on both sides. Stay on the crest despite the vegetation, since the flanks put you above those drop-offs, and expect heavy mosquitoes in season."
+    },
+    {
+     "lat": 47.61587372727273,
+     "lng": -121.2663476,
+     "elev": 5267,
+     "name": "First summit view point",
+     "note": "Rocky, more open ridge crest where the summit block comes into view for the first time; snow patches begin appearing here in early season.",
+     "type": "Junction",
+     "distMi": 2.7,
+     "directions": "By roughly 5,200 ft the brush releases and the ridge opens into rockier, more open ground with expanding views up the valley. Snow lingers later on the east side of the crest than on the drier crest itself."
+    },
+    {
+     "lat": 47.61620481818182,
+     "lng": -121.2681084,
+     "elev": 5400,
+     "name": "Cliff band bypass gully, 5,400 ft",
+     "note": "A cliff wall blocks the direct ridge line; bypass via a small gully with a rising traverse on the north-facing slope, often icy and best done with crampons/axe into summer.",
+     "type": "Hazard",
+     "distMi": 2.9,
+     "directions": "A short stretch of open ridge past the viewpoint runs straight into a cliff wall. Do not take it head-on: veer left off the crest into a small gully. This is where helmets go on and where crampons or spikes and an axe earn their weight, since the bypass holds hard snow and ice well into summer and is the route's crux."
+    },
+    {
+     "lat": 47.616701454545456,
+     "lng": -121.2707496,
+     "elev": 6100,
+     "name": "Regain North Ridge crest",
+     "note": "Above the gully bypass the route rejoins the North Ridge crest for the final push to the summit.",
+     "type": "Junction",
+     "distMi": 3.2,
+     "directions": "From the gully take a rising traverse across the shaded north-facing slopes into the upper basin, then climb steeply back onto the ridge crest. Loose rock and exposure make this the one section that demands real route-finding and careful downclimbing on the way out, so note the line you took as you go up."
+    },
+    {
+     "lat": 47.61686,
+     "lng": -121.27162,
+     "elev": 6259,
+     "name": "Bald Eagle Peak summit",
+     "note": "Snow-free rocky summit with a lingering snowfield on the east edge into summer; first ascent 1933 by Hermann Ulrichs and Ben Falkenburg via this same North Ridge.",
+     "type": "Summit",
+     "distMi": 3.3,
+     "directions": "A short stroll along the crest leads to rock outcrops just below the top. Traverse the exposed ledge past them, bypass the steep snow in a shallow moat, and finish the last twenty vertical feet through small trees to the rocky summit. An ice axe and light traction are worth keeping on for that ledge into midsummer."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 10,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10,
+      "note": "An unrelenting, unmaintained forest scramble with no water sources — climbers bushwhack from the Foss River Road pullout straight up the North Ridge, fight through a brushy, expose…",
+      "fromTo": "North Ridge scramble, car-to-car",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rock rack is used on the standard North Ridge route — this is an unroped scramble, not a roped climb. No cams, nuts, or slings are placed. Parties describe the route as forested ridge travel with brush, a short crampon-and-helmet bypass gully around a cliff band near 5,400 ft, and an exposed summit ledge traverse — none involve gear placements.",
+   "what_to_bring": [
+    "helmet",
+    "ice axe",
+    "microspikes or crampons for spring/early-summer snow",
+    "trekking poles",
+    "map/GPS (brushy, route-finding-heavy lower ridge)",
+    "plenty of water — no reliable water source on the north ridge"
+   ],
+   "pro_tips": [
+    "Extensive off-trail navigation is required even with a GPS track — the north ridge crest is the key line to follow.",
+    "Expect a cliff band near 5,400 ft; bypass it via a gully/rising traverse on the north side rather than forcing the ridge crest directly.",
+    "Traction (microspikes/crampons) is worth carrying most of the season, not just early season, for steep forest-duff and lingering snow patches.",
+    "A secondary, less-documented line ascends the peak's southeast shoulder ridge for parties seeking an alternative to the standard north ridge."
+   ],
+   "watch_out": [
+    "loose rock",
+    "dense brush and deadfall",
+    "cliff band near 5,400 ft — use the gully bypass, don't force the ridge",
+    "exposed summit ledge",
+    "afternoon thunderstorms",
+    "lingering snow/ice"
+   ],
+   "pro_needs": "None — no fixed or removable protection is used. The only protective gear is a helmet for the loose-rock cliff-bypass gully (~5,400 ft) and traction (ice axe + crampons/microspikes) for lingering snow on the upper ridge, which can persist into summer on north-facing slopes.",
+   "best_season": "July through September",
+   "high_point_ft": 6259,
+   "aid_grade": null,
+   "approach": "From the pullout along FR 6835 (West Fork Foss Road) — just past the concrete bridge over the East Fork Foss River, about half a mile from its junction with FR 68 and roughly 5.2 miles from US-2 at Skykomish — there is no maintained trail. Climbers cross to the north side of the road and pick up the toe of Bald Eagle's north ridge at about 1,600 ft, entering second-growth forest thick with fallen timber that requires weaving/scrambling over deadfall for the first few hundred feet of gain. Stay on or near the ridge crest heading south-southeast; around 2,600 ft the forest transitions to older growth and the underbrush thins out, making travel noticeably easier and the ridgeline easy to follow with few reasons to leave it. The going stays moderate until roughly 4,500 ft, where the ridge narrows and steepens into the trip's brushiest stretch — a pointier crest with real drop-offs on both sides, dense small trees/slide alder crowding the tread, and (in season) heavy mosquito pressure; move carefully here as exposure picks up. By 5,200 ft the ridge opens into rockier, more open terrain, with snow patches lingering later into the season (more persistent on the east side of the crest than on the drier, rockier ridge itself). At about 5,400 ft the ridge runs into a cliff band directly below the summit — this is the route's crux: bypass it by veering left (east) off the crest into a small gully and taking a rising traverse into the upper summit basin rather than attempting the band head-on. The final approach to the 6,259 ft summit crosses steep snow and a few small trees for the last ~20 vertical feet; helmet is warranted here for rockfall off the cliff band, and in early-to-mid season an ice axe and light traction (microspikes/crampons) are worth carrying for the final snow pitch and for the traverse below 5,400 ft. There is no reliable water source directly on the ridge once you leave the East Fork Foss River at the trailhead, so carry what you need. Best conditions are July–September; the route is class 3-4 scrambling with no roped climbing required on a dry ridge.",
+   "descent_text": "This is a walk-off/downclimb — descend by reversing the North Ridge exactly as ascended; there is no rappelling on the standard route. From the summit, downclimb the steep snow/small-tree section back to the top of the 5,400 ft cliff band, then carefully reverse the rising traverse and gully bypass on the east side of the crest to regain the ridge crest below the cliffs — this bypass is the one spot demanding real route-finding and careful downclimbing (loose rock and exposure in the gully), so many parties down-face here rather than walk it. Below 5,200 ft, follow the open rocky ridge back into the brushy, exposed 4,500-5,200 ft stretch, staying on the crest to avoid the steep drop-offs to either side. Once back into old-growth forest below 4,500 ft the ridge broadens and travel gets easy and fast; one party found the descent takes well under half the time of the ascent once past the brush and cliff band. Continue down through the second-growth/deadfall lower forest to regain FR 6835 at the East Fork Foss River bridge pullout. No technical anchors (bolted or natural) are used on this route — it is entirely natural terrain.",
+   "bail": "Retreat down the North Ridge the way you came. There is no shorter bail option once past the cliff band near 5,400 ft, so turn around early if weather or visibility deteriorates before committing to that section.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2",
+     "notes": "Enter forest on the ridge just past the FR 6835 bridge over the East Fork Foss River; numerous fallen trees to negotiate but manageable terrain.",
+     "pitch": "1,600-2,600 ft"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Old-growth forest with mixed vegetation; traverse the ridge crest, bypassing dense brush and deadfall to the west side.",
+     "pitch": "2,600-4,500 ft"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "The brushiest section of the route, with steep drop-offs and dense small trees; staying on the crest is most feasible despite the brush.",
+     "pitch": "4,500-5,200 ft"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Rocky, mostly dry crest with expanding views; snow patches increase to the east of the ridgeline.",
+     "pitch": "5,200-5,400 ft"
+    },
+    {
+     "grade": "Class 3-4 / steep snow",
+     "notes": "A cliff wall forces a leftward traverse into a gully - crampons and helmet recommended - followed by a rising traverse across snow-covered northern slopes.",
+     "pitch": "5,400-6,100 ft"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Ridge stroll to outcrops below the summit, then an exposed ledge traverse (ice axe/microspikes) bypassing steep snow in a shallow moat for the final ~20 ft through small trees to the top.",
+     "pitch": "6,100-6,259 ft (summit)"
+    }
+   ],
+   "itinerary": {
+    "cal": "Early-season parties should expect lingering snow/ice on the upper ridge and summit ledge and carry traction devices; there are no water sources on route, so carry all water.",
+    "days": [
+     {
+      "n": 1,
+      "note": "An unrelenting, unmaintained forest scramble with no water sources — climbers bushwhack from the Foss River Road pullout straight up the North Ridge, fight through a brushy, exposed section around 4,500-5,200 ft, then pick through Class 3-4 terrain to a final exposed summit ledge. Descent retraces the ridge and typically goes noticeably faster than the climb up.",
+      "hours": 10,
+      "miles": 6.6,
+      "title": "North Ridge scramble, car-to-car",
+      "gainFt": 4979,
+      "lossFt": 4979,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave trailhead",
+        "detail": "Park along FR 6835 off Foss River Road; no formal trail, route-find directly up the North Ridge."
+       },
+       {
+        "time": "+3-4 hr",
+        "label": "Brushy ridge crest, 4,500-5,200 ft",
+        "detail": "Steep forest-duff slopes with drop-offs on both sides; traction devices help if snow or wet duff is present."
+       },
+       {
+        "time": "+5-6 hr",
+        "label": "Base of summit block",
+        "detail": "Class 3-4 scrambling leads to an exposed summit ledge — the route's crux."
+       },
+       {
+        "time": "~10:30-11:00 AM",
+        "label": "Summit (6,259 ft)",
+        "detail": "Short break; assess snow/ice on the ledge before descending."
+       },
+       {
+        "time": "+2-3 hr",
+        "label": "Back through the brush section",
+        "detail": "Descent of the ridge runs noticeably quicker than the ascent."
+       },
+       {
+        "time": "~3:00-4:00 PM",
+        "label": "Back at trailhead",
+        "detail": "Total car-to-car typically 9-11 hours for a fit party."
+       }
+      ],
+      "objective": "Summit Bald Eagle Peak via the North Ridge and return same day"
+     }
+    ],
+    "totalNote": "A long, strenuous single day: about 6.6 miles round trip with roughly 4,979 ft of gain, no camping, done car-to-car in around 9-11 hours."
+   },
+   "access": {
+    "fees": "None — no climbing fee (National Forest wilderness, not Mount Rainier NP)",
+    "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party where the peak is inside Alpine Lakes Wilderness.",
+    "permit": "Self-issued Alpine Lakes Wilderness permit at the trailhead, available May 15–Oct 31",
+    "closures": "Foss River Road (FR 68) is subject to seasonal washouts. The Forest Service's Skykomish District road-damage alert of June 30, 2026 reports damage high on the road that prevents access to its top, with no milepost and no end date given; check with the Skykomish Ranger District, (360) 677-2414, before driving.",
+    "group_limit": 12,
+    "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Alpine Lakes Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry your copy."
+    }
+   },
+   "road": {
+    "name": "Foss River Road (FR 68) and West Fork Foss Road (FR 6835)",
+    "status": "Open seasonally. The Forest Service's Skykomish District road-damage alert of June 30, 2026 reports road damage high on Foss River Road (FR 68) that prevents access to the top of the road; it gives no milepost and no end date. Skykomish Ranger District: (360) 677-2414.",
+    "driveNote": "From Skykomish, follow US-2 east about 2 miles to Foss River Road (FR 68), then continue about 4.7 miles and turn left onto FR 6835 (West Fork Foss Road); park on its shoulder about half a mile on, just after the concrete bridge over the East Fork Foss River."
+   },
+   "climate": {
+    "fall": "Shortening days and increasing storm frequency; early-season snow can return to the upper mountain by October.",
+    "spring": "Snow lingers on the north-facing upper ridge into June; a Memorial Day weekend ascent found full winter conditions (ice axe/crampons needed) on the upper mountain.",
+    "summer": "Warmest and driest window (Jul-Sep); as snow melts out, brush and mosquitoes become more of an issue lower on the ridge while the upper cliff-band crux eases.",
+    "winter": "Full winter mountaineering conditions with real avalanche hazard on the steep upper slopes; road access on FR 68 may be limited by snow or existing road damage.",
+    "typical": "West-slope Cascade climate; wet and green",
+    "bySeason": {
+     "fall": "Good early; wet and cold later",
+     "spring": "Wet, snowy up high, brushy",
+     "summer": "Best window; drier, watch for storms",
+     "winter": "Snowbound; not a standard objective"
+    },
+    "forecastZone": "NOAA West Slopes Central Cascades"
+   },
+   "emergency": {
+    "notes": "The route is off-trail, unmaintained, and unpatrolled; assume unreliable cell coverage once off US Hwy 2 in the Foss River drainage and carry independent means of emergency communication (e.g., a satellite messenger) and self-rescue capability.",
+    "county": "King County",
+    "rangerStation": "Skykomish Ranger District, Mt. Baker-Snoqualmie National Forest: (360) 677-2414",
+    "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), Monroe, WA — nearest hospital, roughly 30 mi west via US-2",
+    "sheriffDispatch": "King County Sheriff's Office non-emergency dispatch: 206-296-3311"
+   },
+   "lists": [
+    "Peakbagger 'Home Court' Top 100 Washington peaks by elevation – ranked #29",
+    "Peakbagger Washington 400'+ clean-prominence steepest-peaks 'Master List' – ranked #93"
+   ],
+   "crowds": {
+    "peakTraffic": "Rarely climbed; any traffic would cluster on clear summer weekends (Aug) among prominence/peak-bagging scramblers",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Unknown precise count - likely well under 20-30 parties per season; not a maintained trail or a standard trade route"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strenuous full car-to-car day: off-trail approach with sustained elevation gain and likely bushwhacking, no established boot path to the summit",
+     "packWeight": "Light day pack (~15-25 lb); no glacier or big technical rack needed"
+    },
+    "approachTime": "Long, unmarked approach straight up the north ridge from the Foss River valley; expect most/all of a day car-to-car since there is no dedicated summit trail",
+    "requiredSkills": [
+     "Off-trail navigation (map/compass or GPS)",
+     "Loose rock and talus scrambling",
+     "Bushwhack tolerance",
+     "Basic exposure/self-arrest comfort on blocky Class 3 terrain",
+     "Turnaround judgment for afternoon thunderstorms"
+    ],
+    "experienceLevel": "Intermediate off-trail scrambler - comfortable on unmarked Class 2-3 terrain and confident with independent routefinding (some parties describe sections as Class 3-4)"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through October; driest, most stable weeks in Aug-Sept are most reliable",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Season opens mid-July; snow largely melted at this elevation but early-month remnants and thunderstorms possible",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Outside the established season - snow likely lingers at upper elevations and approach brush is wet",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Driest, most stable window ('Best window; drier, watch for storms')",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Fall is 'Good early; wet and cold later' - early snow and storms increasingly likely, shorter daylight",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Stable weather often persists and brush dies back, easing off-trail travel",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "West-slope Cascade climate - wet and green, with the summer window being drier but still changeable",
+     "probability": "Afternoon thunderstorms common July-August"
+    },
+    "exposure": "Class 2-3 scrambling on loose rock; a slip on blocky terrain could cause injury but the route is not sustained high-exposure 5th class. Primary risks are off-trail routefinding error and lightning/thunderstorm exposure above treeline rather than long fall potential.",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; nearest NWAC zone is Snoqualmie Pass but it does not specifically forecast this peak and isn't applicable within the July-Oct climbing season",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Exact first-ascent date/route history beyond the 1933 North Ridge ascent by Ulrichs and Falkenburg is not independently confirmed beyond Wikipedia.",
+     "The southeast shoulder route is referenced but not detailed in available trip reports.",
+     "Precise GPS waypoints/track for the cliff-band bypass were not found in a form reliable enough to record.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.616805,
+    "peakLng": -121.271555,
+    "trailhead": "FR 6835 pullout past the East Fork Foss bridge",
+    "trailheadDirection": "From the FR 6835 pullout past the East Fork Foss bridge"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Standard route is Class 3-4 scrambling with ~5,000 ft cumulative gain; traction devices (microspikes) recommended for steep forest-duff slopes, no rope typically carried.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "North ridge direct from the Foss River Road bridge",
+     "notes": "There is no trail of any kind. Park on the road shoulder just past the concrete bridge over the East Fork Foss River, cross to the far side of the road, and go straight into the forest to pick up the toe of the north ridge around 1,600 ft. The first several hundred feet of gain are spent weaving over down timber rather than walking; near 2,600 ft the forest turns to older growth and the underbrush thins so the crest becomes easy to follow. Moderate going holds until about 4,500 ft, where the ridge narrows and steepens into the brushiest stretch of the day, then opens into rock and heather by 5,200 ft. Carry all your water from the river — nothing above the road is dependable.",
+     "season": "July to September",
+     "hazards": [
+      "No trail and no marked start from the road",
+      "Down timber low down, then slide alder and small trees crowding a narrow crest between 4,500 and 5,200 ft",
+      "Hard snow and ice in the bypass gully and on the traverse into midsummer",
+      "Rockfall off the cliff band above the traverse",
+      "No water anywhere above the river"
+     ],
+     "baseFinding": "The climbing starts where the crest hits a wall. Once the brush releases near 5,200 ft the ridge opens into rock and heather and the summit block comes into view for the first time; a short stretch of open crest past that viewpoint runs straight into a cliff band standing square across the ridge at about 5,400 ft. That wall is the marker, not the route — parties who take it head-on are on the wrong ground. The way through breaks LEFT (east) off the crest into a small gully, and this is where helmets go on and where an axe and light traction earn their weight, since the shaded north-facing ground beyond holds hard snow and ice well into summer. From the gully the correct line is a rising traverse into the upper summit basin, regaining the crest near 6,100 ft. If you are still on a pointy, brush-crowded crest with drop-offs on both sides you have not reached the band yet; if the ground ahead is open rock with no wall in it, you are already above the bypass."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Upper north ridge above 5,200 ft",
+     "notes": "The ridge opens into rockier, more open terrain. Snow patches linger later in the season and are more persistent on the east side of the crest than on the drier, rockier crest itself. On a dry ridge the whole route stays class 3-4 scrambling with no roped climbing required; an ice axe and light traction (microspikes/crampons) are worth carrying in early-to-mid season."
+    },
+    {
+     "n": 2,
+     "label": "Cliff band bypass at ~5,400 ft (crux)",
+     "notes": "The ridge runs into a cliff band directly below the summit. Do not attempt the band head-on — veer left (east) off the crest into a small gully and take a rising traverse into the upper summit basin. Helmet warranted for rockfall off the cliff band."
+    },
+    {
+     "n": 3,
+     "label": "Final snow to the 6,259 ft summit",
+     "notes": "The last ~20 vertical feet cross steep snow and a few small trees. Ice axe and light traction are worth having for this final snow pitch."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Money Creek and Miller River campgrounds, Foss River roadhead",
+     "role": "main",
+     "type": "camp",
+     "notes": "The valley-bottom staging option for every Foss River objective, and worth a line of its own because of what the road has been doing. The Foss River road leaves Highway 2 just east of Skykomish and has been running weekday construction delays of about half an hour through the summer, with damage further up that has at times cut off the top of the road, while the West Fork Foss spur has been impassable to vehicles and adding a two-and-a-half-mile road walk. All of that argues for sleeping close to the highway the night before rather than driving out in the dark and discovering the situation at 5 a.m. Both campgrounds sit off the old highway just west of milepost 46 — one on the South Fork Skykomish in old growth, the other a mile or two up the Miller River road — and both are twenty minutes or so from either Foss trailhead. This is the practical first night for a party heading to Necklace Valley for LA BOHN PEAK or MOUNT HINMAN, or up the West Fork for BALD EAGLE PEAK. Open roughly late May through September; outside that, it is roadside pull-outs and your own judgement.",
+     "water": "Piped or hand-pumped drinking water on site, with the South Fork Skykomish and the Miller River beside them. No treating required.",
+     "permit": "Standard national forest campground fees, and reservations for most sites. No wilderness permit needed at this elevation — pick that up at the trailhead the next morning. Campfires are allowed in the provided rings when there is no seasonal fire ban in force, which is the last time you will see one on any of these trips.",
+     "capacity": "Money Creek has around twenty-five sites, a couple of them first-come; Miller River is a group camp of about fifteen sites with a gathering area. Both take vehicles and both fill on summer weekends, so reserve where you can."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_vanishing_point",
+  "name": "Vanishing Point",
+  "area_id": "wa_dolomite_tower",
+  "findings": [
+   "r028.json: No source gives a mileage for the approach. Sources agree it follows the Barclay Creek trail only about a mile to the bridge and then leaves it for the gullies, so it never passes Barclay Lake (2.2 mi); the waypoint list's 3.8 mi base figure is routed via the lake and looks wrong, and the straight-line distance from the trailhead pin to the base pin is about 1.6 mi, which fits the variant's 2 mi. With no two sources for a number, and the Barclay Lake waypoint itself off the approach (pin positions out of scope), no patch."
+  ],
+  "gpx_summary": "6 points; 5 of 5 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_vanishing_point",
+   "area_id": "wa_dolomite_tower",
+   "name": "Vanishing Point",
+   "discipline": "alpine",
+   "grade": "5.12b",
+   "grade_system": "yds",
+   "grade_num": 12.5,
+   "pitches": 14,
+   "length_m": 427,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Bryan Burdo, established over several years in the late 1990s and completed 1998-1999, graded VI 5.12b; the first ascent took three days. Modernized (stainless anchors, added bolts on P3, death-flake bypass, upgraded approach fixed lines) by Luke Stefurak and Nathan Hadley in 2020.",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Single rack of nuts and cams to #1 (finger to mid-hand)",
+    "15 draws (including 6 single runners)",
+    "60-meter single rope",
+    "Helmet (essential for rockfall hazard)",
+    "Alpine rock shoes",
+    "Approach shoes for the wet gully/creek approach",
+    "Sling or prusik to ascend/clip the fixed ropes on the approach",
+    "Harness",
+    "Carabiners",
+    "Belay/rappel device",
+    "Anchor-building kit"
+   ],
+   "hazards": [
+    "Objective rockfall hazard on upper pitches and roof sections, exacerbated by weathering and freeze–thaw cycles.",
+    "Runout sections on pitch 8 (intentional) create exposure and mental difficulty.",
+    "Approach gully waterfall is chossy and exposed; loose rock is common.",
+    "The 60–70° forested rib with fixed lines presents scrambling hazard if weather or darkness arrives.",
+    "Summer thunderstorms can develop rapidly; lightning exposure is significant on the tower.",
+    "Lichen and moisture on bolts and slab sections create slipping hazard after rain."
+   ],
+   "verif": null,
+   "overview": "A nearly 1,500-foot overhanging prow of very sustained alpine climbing at 5.11+/5.12, featuring multiple roof systems, technical arete climbing, and serious exposure throughout. One of the most demanding alpine climbs in the Cascades.",
+   "beta": "Vanishing Point is approximately as steep a route as one could find on the mountain—sustained, largely overhanging climbing, with most pitches at 5.11–5.12 and several at 5.10. The route was established over several years and fully modernized in 2020 with new stainless-steel anchors and improved protection. Notable features include the crux 5.12 pitch out a huge roof (pitch 11), a collapsed roof section, and several intentionally runout pitches. The approach involves 800 feet of mostly roped-up slab climbing with fixed lines and bolts. Published pitch counts vary between 14 and 20 depending on how the climbing is split or linked; the pitch-by-pitch breakdown here uses the 14-pitch convention.",
+   "turnaround": "If not making good time by mid-afternoon (typically by 12–1 pm depending on start time and climbing speed), seriously consider rappelling off rather than pushing through darkness. The descent is long and can be hazardous with exposure in poor light.",
+   "auto_generated": false,
+   "alpine_grade": "VI",
+   "rock_grade": "5.12b",
+   "ice_grade": null,
+   "gain_ft": 3430,
+   "loss_ft": 3430,
+   "dist_km": 3.2,
+   "max_angle": 70,
+   "rappels": "Rappel anchors have been updated to stainless steel, and the approach can be reversed with a single 70 m rope where the updated anchors allow it. Most parties do not rappel the route — they top out and walk off via the BASE-jumper trail.",
+   "commitment": "VI",
+   "face": "Dolomite Tower, north face amphitheatre (Mt. Baring massif)",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell phone coverage is unreliable or absent in the Skykomish drainage and on the tower. A satellite communicator (Garmin inReach, PLB, or similar) is strongly recommended for emergency communication and trip reporting. Notify the Skykomish Ranger Station before your climb if possible.",
+   "descent": "Walk off via the heather descent to a BASE jumper trail system, then follow well-worn switchbacks through forested ridge system back to the Barclay Lake trailhead parking area. Approximately 3 hours car-to-car from summit.",
+   "obj_haz": [
+    "rockfall from parties above",
+    "loose flakes despite 2020 cleaning",
+    "exposed fixed-line traverses on the approach",
+    "wet or dirty approach slabs early season",
+    "runout 5.7-5.9 terrain on P8",
+    "sudden maritime weather",
+    "benightment",
+    "BASE-jumper traffic"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.7923,
+     "lng": -121.4592,
+     "elev": 2280,
+     "name": "Barclay Lake Trailhead (FR-6024)",
+     "note": "Barclay Lake Trailhead parking area; the approach follows the Barclay Lake trail before leaving it off-trail toward the tower.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 2280,
+     "directions": "Leave US-2 near Baring and follow FR-6024 to its end at the Barclay Lake Trailhead, listed as 74920 NE Stevens Pass Hwy, Skykomish. Parking is at about 2,280 ft and the level Barclay Creek trail starts from the lot. The technical approach beyond the trail takes competent parties two and a half to four hours even with good beta, so parties going car-to-car start pre-dawn."
+    },
+    {
+     "lat": 47.784586,
+     "lng": -121.426684,
+     "elev": 2422,
+     "name": "Barclay Lake",
+     "note": "Trail continues past the lake toward Baring's north side.",
+     "type": "Water",
+     "distMi": 2.2
+    },
+    {
+     "lat": 47.7805,
+     "lng": -121.429,
+     "elev": 5200,
+     "name": "Dolomite Tower Base",
+     "note": "Climbers trail circles around most of Dolomite Tower before reaching the gully separating it from Baring Mountain.",
+     "type": "Junction",
+     "distMi": 3.8
+    },
+    {
+     "lat": 47.781,
+     "lng": -121.43,
+     "elev": 5708,
+     "name": "Vanishing Point Topout",
+     "note": "Top of the last pitch: a two-bolt anchor right at the lip of the tower, at the edge of the woods. Unrope here and scramble down heather to the BASE-jumper descent trail.",
+     "type": "Topout",
+     "distMi": 4
+    },
+    {
+     "lat": 47.77918,
+     "lng": -121.43599,
+     "elev": 5708,
+     "name": "Dolomite Tower",
+     "type": "Summit",
+     "elevFt": 5708
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 13,
+    "summitTimeHrs": 7,
+    "descentTimeHrs": 3,
+    "approachTimeHrs": 3,
+    "recommendedStart": "4:00 AM–5:00 AM from trailhead"
+   },
+   "detailed_rack": "Single rack to #1 with a few duplicates in the finger sizes. Recommended: 2–3 nuts in fingers, 2–3 mid-hand nuts, 2–3 hand-sized cams, 1–2 #1 cams. Approach climbing may require ice axe (early season). Small to medium nuts and slings optional but not required. 15 draws (mix of singles and doubles) recommended; 6 of these can be single runners.",
+   "what_to_bring": [
+    "Rock climbing shoes (alpine)",
+    "Approach shoes for the wet gully/creek approach",
+    "Helmet (essential for rockfall hazard)",
+    "Layers (fleece, wind jacket, rain shell)",
+    "Headlamp with extra batteries",
+    "Water or hydration system (2–3L for dry/late-season)",
+    "High-calorie food (energy bars, nuts, nut butter)",
+    "First aid kit (blood stoppers, pain relief, blister treatment)",
+    "Knife/multitool",
+    "Sunscreen and lip balm",
+    "Toilet paper and trowel",
+    "Map and compass (GPS unreliable in dense forest)",
+    "Satellite communicator or PLB",
+    "Rappel backup device (if retreating)",
+    "Rain cover for pack",
+    "Insulation bivy layer (in case of unplanned bivy; caves reported near route start)"
+   ],
+   "pro_tips": [
+    "Pitch 11 holds the crux: a short, all-bolted boulder problem on the headwall above the big roof (5.12b). Pitch 5 (graded 5.11c on FA) felt far harder on its original line, but part of that pitch has since fallen away. Scout the line on approach if possible.",
+    "The partly collapsed roof on pitch 5, and the 2020 reroute of pitches 9/10 around a loose flake, demonstrate route changes since FA—the route may still undergo evolution as weathering continues.",
+    "Pitch 8 is intentionally left with significant runout as a mental challenge; this is by design. Know your comfort level.",
+    "Start very early (4–5 am from trailhead) to maximize light on the climb and descent.",
+    "Water is usually available in the approach gully until early August; carry extra capacity if climbing later in season.",
+    "Bring a satellite communicator or PLB—cell service is unreliable in the Skykomish drainage.",
+    "The 2020 modernization improved the approach significantly; older trip reports may reference less secure sections.",
+    "Ben Gilkison's 2012 onsight of most pitches is impressive but not representative of typical climbing here—this is a serious, committing alpine route.",
+    "The approach gully has fixed ropes at its steepest sections — bring a sling or prusik to use them rather than free-climbing wet, loose rock.",
+    "Several pitches have variation options; review a topo or a recent trip report before committing to a given line."
+   ],
+   "watch_out": [
+    "Rockfall risk is real, especially on pitch 5 area where the roof has partially collapsed since 1999 FA.",
+    "Loose rock throughout approach and on tower—wear helmet at all times.",
+    "Multiple runout sections—not all are bolted; know the line before committing.",
+    "Serious exposure on most pitches—not a beginner alpine climb.",
+    "Approach is technical and hard to navigate even with beta; parties have gotten lost.",
+    "Weather can change rapidly in the Cascades—be prepared to descend or bivy.",
+    "Fixed lines on approach may be weathered or absent in some years—do not rely solely on them.",
+    "No moderate pitches — sustained difficulty from bottom to top with several 5.11–5.12 sections and limited rests.",
+    "A wet 5.8 slab low on the approach has seen recent rockfall."
+   ],
+   "pro_needs": "Primarily bolted sport climbing with some trad pitches. Anchors are bolted throughout; the bolts were replaced with stainless steel and upgraded during 2020 modernization. Climbers must be comfortable with self-rescue, anchor building, and transitioning between bolted and trad protection. The route involves high commitment and serious altitude—turnaround decisions should be made early.",
+   "best_season": "Late July through September, once the approach gully has shed its snow and running water (typically early-to-mid August in a normal year); documented ascents cluster in September. Spring and late fall carry significant snow hazard on the approach gullies, and snow risk returns toward October.",
+   "high_point_ft": 5708,
+   "aid_grade": null,
+   "approach": "Start at Barclay Lake trailhead (74920 NE Stevens Pass Hwy, Skykomish, WA 98288). Follow the pleasant level main trail for about 20 minutes to a bridge crossing a large creek (~1 mile). Before the bridge, break right into forest around a large boulder, then walk through relatively open forest or along the creek bed until reaching an open boulder field. Continue through the boulder field to reach steep gullies. Ascend a 60–70° forested rib with fixed lines and natural protection. Climb around the right side of a chossy waterfall (exposed scrambling). Continue up the wash to a ramp with hand lines, then ascend approximately 800 feet of mostly roped-up slab via bolted sections and natural features. Total approach time: 2.5–3.5 hours for competent parties.",
+   "descent_text": "From the summit, descend via the established BASE jumper trail system (marked on climbing area maps). The descent is non-technical but lengthy. Follow the forested ridge and switchback trail through old-growth forest back down to the Barclay Lake trailhead. The descent can be muddy and root-strewn; allow 3 hours total for descent and return to parking.",
+   "bail": "Retreat is possible via rappel using anchor bolts throughout the route. The approach anchors added in 2020 are now reversible with a single 70-meter rope, allowing full retreat from the approach slab if weather or other factors necessitate turning back.",
+   "pitch_detail": [
+    {
+     "grade": "5.10",
+     "notes": "Starts just left of the prominent arete dividing Dolomite Tower; the first two bolts are visible from the ground. Pull left under a small overhang straight off the ground, then follow bolts up and left and back right around the arete. Graded 5.10 to 5.10c. Often linked with pitch 2.",
+     "pitch": "1",
+     "anchor": "bolted",
+     "lengthM": 20
+    },
+    {
+     "grade": "5.10",
+     "notes": "Straight up, then trend left on bolts, turn the corner and pull back onto the arete to a bolted stance on a pedestal. Optional finger-sized gear, or a hand crack to the right at 5.10a. A 60 m rope barely links pitches 1 and 2.",
+     "pitch": "2",
+     "anchor": "bolted",
+     "lengthM": 40
+    },
+    {
+     "grade": "5.11",
+     "notes": "Scramble up a ledge, clip a bolt and traverse right onto a pedestal of stacked blocks, then climb the corner on three bolts and gear. Before the 2020 bolt additions this pitch was runout and loose. Ends on a good ledge.",
+     "pitch": "3",
+     "lengthM": 35
+    },
+    {
+     "grade": "5.11",
+     "notes": "Steep finger and thin-hand crack in the corner beside a crystalline face, with the hardest moves just above the anchor. The main gear pitch. Belay on a ledge out left about 25 ft below the roof; do not climb past it.",
+     "pitch": "4",
+     "lengthM": 30
+    },
+    {
+     "bolts": 7,
+     "grade": "5.11-",
+     "notes": "Up steep blocks and left onto a face with three bolts, then jog right on two more; do not head out to the arete. A large part of the original roof has fallen away. Parties who climbed the older line felt it far harder than its 5.11c grade.",
+     "pitch": "5"
+    },
+    {
+     "grade": "5.11+",
+     "notes": "Step down and right off the belay, then follow roughly 10–12 bolts through a band of poor rock, with a 5.11c section near the top on the arete. Test holds; the bolting is close enough that a broken hold is not a disaster.",
+     "pitch": "6"
+    },
+    {
+     "grade": "5.12-",
+     "notes": "Steep arete climbing just left of the prow, with a thin, hard sequence close to the belay and tricky moves above. A small piece protects the final moves. Some parties rate the key move 5.12+.",
+     "pitch": "7",
+     "lengthM": 30
+    },
+    {
+     "bolts": 4,
+     "grade": "5.11",
+     "notes": "Three bolts of 5.11 on the arete, then veer left into a slabby, shallow dihedral with a bolt on the arete. The most serious pitch on the route: the upper section has runouts of about 25 ft on 5.7–5.9 ground. Bring small and medium nuts.",
+     "pitch": "8"
+    },
+    {
+     "bolts": 16,
+     "grade": "5.12",
+     "notes": "One of the two best pitches: a crimpy boulder problem on the arete, a rest at deep pockets, then a second hard boulder. Bring every draw.",
+     "pitch": "9"
+    },
+    {
+     "bolts": 9,
+     "grade": "5.11",
+     "notes": "Past four bolts in lichen-covered rock to the old death-flake anchor, then clip the bolt above the roof and traverse right on jugs. The 2020 reroute avoids the loose death flake entirely.",
+     "pitch": "10"
+    },
+    {
+     "crux": true,
+     "grade": "5.12",
+     "notes": "Pull back left out the roof on big jugs to a hard boulder problem on the vertical headwall, just out of sight from the belay. Short, all bolts, and the likely crux of the route (5.12b).",
+     "pitch": "11"
+    },
+    {
+     "grade": "5.10+",
+     "notes": "Pockets and crimps up steep ground, then back right to the arete and a belay perched on the prow. All bolts. It can be linked with pitch 11 to avoid the poor intermediate belay.",
+     "pitch": "12"
+    },
+    {
+     "grade": "5.10-",
+     "notes": "Straight up past a bolt onto ledgy climbing, with gear and one or two more bolts, to chains on a slab.",
+     "pitch": "13",
+     "lengthM": 35
+    },
+    {
+     "grade": "5.10-",
+     "notes": "Two bolts up a dirty slab to a juggy hand crack, over a bolted roof, then slab to a two-bolt anchor right at the lip and the edge of the woods. Scramble down heather to pick up the BASE-jumper descent trail.",
+     "pitch": "14",
+     "anchor": "bolted",
+     "lengthM": 35
+    }
+   ],
+   "itinerary": "Typically climbed as a 2-3 day trip mirroring the original ascent style: Day 1 — hike in and complete the ~3-3.5 hour technical approach (forested rib with fixed lines, roped slab) to the bivy caves below the tower; Day 2 — climb the full 14-pitch route (a very long day given sustained 5.10-5.12 climbing with few easy pitches); Day 3 (or same-day if fast) — descend via the ~3-hour descent route back to the trailhead. Strong parties also do the route car-to-car in one very long day (roughly 3 hours of approach, a full day on route, and about 3 hours of descent) with a pre-dawn start.",
+   "access": {
+    "fees": "$5/vehicle/day or $30/year day-use fee at the Barclay Lake Trailhead",
+    "notes": "Much of the Baring massif sits outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+    "permit": "No formal climbing permit; a day-use fee or valid pass is required at the trailhead",
+    "closures": "Barclay Creek Road (FS 6024) had a significant washout reported roughly 2 miles before the trailhead in January 2026; verify current road status before driving in.",
+    "landManager": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "passRequired": "Northwest Forest Pass or Interagency Recreation Pass accepted (WA Discover Pass is NOT valid here)",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+     "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "Barclay Creek Road / FS Road 6024",
+    "status": "Generally drivable to the trailhead, but a significant washout roughly 2 miles before the trailhead was reported in January 2026; confirm current conditions with the Skykomish Ranger District.",
+    "driveNote": "Roughly 1-1.5 hours from Seattle via US-2. From US-2 milepost 42 in Baring, turn north onto Barclay Creek Road (FS 6024, across from 'Der Baring Store'), cross the railroad tracks, and continue about 4.3-4.5 miles to the trailhead.",
+    "seasonalGate": "Not gated on a fixed seasonal schedule, but subject to closure from winter storm damage/washouts."
+   },
+   "climate": {
+    "fall": "September: Cooling nights, shorter days, lower crowds. Early September resembles summer; late September sees increasing snow risk. October can have early snow on high terrain.",
+    "spring": "April–May: Snow lingers on approach gullies above 3,500 ft through May; ice axe often needed. Spring runoff swells creeks. Approach is technical and avalanche-hazardous early in season.",
+    "summer": "June–August: Most reliable climbing window. June is typically drier than July–August. Expect afternoon clouds and occasional thunderstorms. July–August can be humid and buggy. Water is abundant in approach gullies.",
+    "winter": "November–March: Route is snow and ice-covered; winter alpine climbing required. Approach is avalanche-hazardous. Not recommended for most climbers.",
+    "typical": "The Central-West Cascades are maritime-influenced with mild summers and wet winters. Expect rapidly changing weather, afternoon thunderstorms (especially July–August), and cool nights. Afternoon clouds and rain are common even in summer.",
+    "forecastZone": "NWAC Stevens Pass / West Slopes Central Cascades zone; NWS Everett/Stevens Pass corridor"
+   },
+   "emergency": {
+    "notes": "Rescue response time is long due to remote location and steep approach. Self-rescue skills and party discipline are essential. Notify ranger station before climbing. Carry a satellite communicator.",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Skykomish Ranger Station, Mount Baker-Snoqualmie National Forest, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288. Hours: Wed–Fri 9:00 AM–12:00 PM, 1:00 PM–4:00 PM. Phone: (360) 677-2414.",
+    "nearestHospital": "EvergreenHealth Monroe (Monroe, WA) — 24-hour ER roughly 30 miles west via US-2; Providence Regional Medical Center Everett is the nearest full-service hospital. Helicopter airlift (SAR) likely required from the route for serious injury.",
+    "sheriffDispatch": "Snohomish County Sheriff: 911 (emergency) or (425) 407-3999 (non-emergency)"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-August through September, after the approach gully stops running water and before the autumn rains return",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The approach gully usually still has running water on the chossy waterfall step and small snow patches, making the fixed-line scramble slick.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "The approach gully typically dries out by early-to-mid August; the lichen and seepage on the roofs have had the most time to dry.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Autumn rain soaks the approach slabs and fixed lines, and freeze-thaw loosens rock on the upper pitches and roofs.",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Dry approach slabs and cooler temperatures for the sustained overhanging pitches; shorter days make a bivy or pre-dawn start more important.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 5,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.77918,
+    "peakLng": -121.43599,
+    "trailhead": "Barclay Lake Trailhead (FR-6024)",
+    "trailheadLat": 47.7923,
+    "trailheadLng": -121.4592,
+    "trailheadDirection": "From the Barclay Lake Trailhead at the end of FR-6024 off US-2 near Baring"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": "[\"Elevation discrepancy resolved: Dolomite Tower base ~5,708 ft (not 11,948 ft user-provided). User elevation may refer to another peak; verified via multiple independent sources.\",\"Rope length: Sources consensus 60-70m single rope. Angle 5 (generic alpine) recommends 30m minimum, but Dolomite Tower's 20-pitch length requires 60m minimum; 70m preferred to avoid forced simul-climbing on 5.10 pitches.\",\"Approach time: Angles 1 & 3 cite 3-3.5 hours; Angle 4 cites 3-4 hours. 3-3.5 hours is consensus for fit parties. 2020 improvements noted (new bolts, alternative slab route).\",\"Gear rack: All sources (Angles 1, 2, 3) agree on single rack to #1 Camalot + optional #2. Small/medium nuts optional (Angles 1, 2). P4 requires gear; rest primarily bolted.\",\"P3 crux: 2020 modernization added 2 bolts; still technically runout but safer than pre-2020. Multiple sources reference P3 as site of historic fall/injury.\",\"P5 loose rock: Multiple trip reports (Angle 3) confirm significant deterioration and rock falls. Alternate 'mystery bolts out left' avoids worst section.\",\"2020 modernization: Confirmed by multiple recent ascent reports. All anchors replaced stainless steel. Route improved but retains intentional runouts (P8) for mental challenge.\",\"Deep Blue (separate route): 5.13c sport, 12 pitches effective (30 total). All bolted. 70m rope. Can be rapped or walked off.\"]",
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "loop",
+   "approach_variants": [
+    {
+     "name": "Barclay Creek Trail, right before the bridge, fixed lines to the tower",
+     "hours": "2.5-4",
+     "notes": "Start at the Barclay Lake trailhead (74920 NE Stevens Pass Hwy, Skykomish). Walk the pleasant, level main Barclay Creek trail for about 20 minutes and roughly a mile to a bridge crossing a large creek — often dry by mid-to-late summer.\n\nDO NOT CROSS THE BRIDGE. Just before it, break RIGHT into the forest around a LARGE BOULDER. Bushwhack through relatively open forest, or walk the creek bed, until you reach an open boulder field. Cross the boulder field to large trees and an open wash.\n\nThe wash leads to a steep, chossy, dirty waterfall; climb around its RIGHT side, staying out of the bushes — this stretch is exposed. Above that a ramp with hand lines, then a 60-70 degree forested rib with fixed lines and natural protection, including a low-fifth step in a gully protected by a fixed line, and a small rock face with a bolt. Then roughly 800 ft of mostly roped slab in 35-50 m pitches on bolts and natural gear. Competent parties with good beta take two and a half to four hours; the approach is technical and hard to get right even with information.",
+     "distMi": 2,
+     "gainFt": 3430,
+     "season": "Jul-Sep",
+     "hazards": [
+      "Exposed scrambling around the right side of the chossy waterfall",
+      "Fixed lines of unknown age and condition",
+      "60-70 degree forested rib — a fall here is not survivable ground",
+      "Loose rock and brush throughout",
+      "Route-finding: the correct line is not obvious even with beta"
+     ],
+     "baseFinding": "The end of the fixed and roped section is where you unrope and scramble UP AND LEFT to the base of the tower. The test the first-ascent party wrote down is a negative one and it is the most useful thing on this approach: IF WHAT YOU ARE DOING FEELS SKETCHY, YOU ARE OFF THE LINE. The approach is unpleasant but it is protected the whole way — fixed lines, hand lines, bolts — so unprotected, committing ground means you have lost the route, not that the route has got harder. The base of the tower is the foot of a nearly 1,500 ft overhanging prow; there is no mistaking it once you are under it."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Dolomite Tower bivy caves",
+     "role": "main",
+     "type": "bivy",
+     "notes": "Shallow caves about 150 ft right of the start of the route. Spray can blow in during wind and rain.",
+     "water": "Carry it in or melt from nearby snow early season",
+     "permit": "No overnight permit required",
+     "capacity": "Three flat platforms, one person each"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_eagle_rock_scramble",
+  "name": "Standard Scramble",
+  "area_id": "wa_eagle_rock",
+  "findings": [
+   "r028.json: SummitPost puts the FR6517 parking 0.5 mi east of the summit at 4,150 ft; the USGS 3DEP elevation at the trailhead pin is ~4,100 ft vs ~5,600 ft at the summit pin. The row's own overview, trailhead waypoint and gain_ft agree; 'nearly level with the summit' in approach is wrong. | Parking about 0.5 mi east of the summit at ~4,150 ft, about 1,460 ft below it"
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_eagle_rock_scramble",
+   "area_id": "wa_eagle_rock",
+   "name": "Standard Scramble",
+   "discipline": "mountaineering",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": 198,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "NE/N",
+   "season": "Jun-Oct",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season)",
+    "50 ft handline (optional, for the Class 3 downclimb)"
+   ],
+   "hazards": [
+    "off-trail routefinding",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "Eagle Rock is a prominent, blocky summit (5,614 ft, about 1,400 ft of prominence) on the ridge between the Beckler River and Skykomish valleys near Stevens Pass. From the FR6517 trailhead (elev. ~4,150 ft), it's roughly 0.8 miles one-way and about 1,460 ft of gain to the top — a short outing (often under 3 hours round trip) for a big, airy summit panorama over the US-2 corridor peaks, the Beckler and North Fork Skykomish drainages, and (on clear days) Glacier Peak and the Monte Cristo group. The route finishes with a Class 2–3 scramble on blocky rock.",
+   "beta": "From a high parking area on FR6517 about 0.5 mile east of the summit, the route gains about 1,460 ft in all, finishing with roughly 600 vertical feet of open slope/talus to the top — easy class 2 if you stay to the right side, or class 2/3 up the center. Total distance is well under a mile each way, and the round trip from the car is typically under three hours. The peak sees very few visitors compared to nearby Beckler Peak and Evergreen Mountain.",
+   "turnaround": "This is a short outing, so set your turnaround based on weather, remaining daylight for the long forest-road drive out, and terrain conditions rather than clock time — deteriorating visibility, wet/slick rock on the class 2/3 sections, or lingering snow on the upper slope in early season are the main reasons to turn back.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 1464,
+   "loss_ft": 1464,
+   "dist_km": 1.29,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "Northeast side, wrapping to the north side (talus approach and scramble line)",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": null,
+   "descent": "Reverse the scramble back to the approach.",
+   "obj_haz": [
+    "loose_rock",
+    "exposure",
+    "route_finding",
+    "remoteness"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.776833,
+     "lng": -121.344633,
+     "elev": 4150,
+     "name": "FR6517 Roadside Parking",
+     "note": "Pull-off on FR6517, reached via FR6510 and FR6514 off Beckler River Road (FR65) — about 10.8 mi of gravel forest road; parking sits roughly 0.5 mi east of the summit.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Skykomish take the Beckler River Road (FR 65) north, then follow the FR 6510 / FR 6514 / FR 6517 spur network — about 10.8 miles of gravel and dirt past the pavement — to the road end. The spurs can be rough or snow-blocked into early summer. There is no maintained trail beyond the pull-off and no water anywhere above the car, so carry all of it from here."
+    },
+    {
+     "lat": 47.7767345,
+     "lng": -121.345972,
+     "elev": 4250,
+     "name": "Brush Exit / Open Forest",
+     "note": "Route leaves the roadside brush and enters open forest within a few hundred feet of the parking pull-off — head west, straight up the hillside.",
+     "type": "Junction",
+     "distMi": 0.1,
+     "directions": "Leave the road and head west-southwest, straight up the hillside. There is no trail and no cairns, so the line is picked by eye. A short push through roadside brush puts you into open timber within the first few hundred feet."
+    },
+    {
+     "lat": 47.77658675000001,
+     "lng": -121.3479805,
+     "elev": 4500,
+     "name": "Talus Below NE Cliffs",
+     "note": "A few hundred yards past the forest edge, trees give way to loose talus beneath Eagle Rock's northeast cliff band — watch for rockfall from above and unstable blocks underfoot.",
+     "type": "Hazard",
+     "distMi": 0.25,
+     "directions": "Keep climbing west through the timber; after a few hundred yards the trees thin and the ground turns to open talus. It is steep — nearly all of the route's roughly 1,400 ft of gain is packed into the 0.8 mile from the car, so it feels considerably bigger than the mileage suggests."
+    },
+    {
+     "lat": 47.77638975000001,
+     "lng": -121.3506585,
+     "elev": 4800,
+     "name": "Start of Counterclockwise Traverse",
+     "note": "Begin the ascending, counterclockwise traverse around the peak toward its north side; stay on talus, avoiding the cliff bands directly above.",
+     "type": "Junction",
+     "distMi": 0.45,
+     "directions": "Do not push straight up into the cliffs from the base of the talus: parties who take the direct line up the northeast side get cliffed out. Start a rising traverse to climber's left instead, holding the arc across loose talus and scree below the rock rather than gaining height too fast."
+    },
+    {
+     "lat": 47.776242,
+     "lng": -121.352667,
+     "elev": 5000,
+     "name": "North Side Scramble Start (~5000')",
+     "note": "On reaching the north side at about 5000', the final pitch splits: an easier Class 2 line on the right or a steeper Class 2/3 line straight up the center.",
+     "type": "Junction",
+     "distMi": 0.6,
+     "directions": "Hold the counterclockwise arc around onto the peak's north side, gaining a couple of hundred feet across talus to the broad bench. Fix the line in your head as you go — this traverse is what you reverse, and in poor visibility it is easy to drift back toward the cliff bands on the way down."
+    },
+    {
+     "lat": 47.776045,
+     "lng": -121.355345,
+     "elev": 5614,
+     "name": "Eagle Rock Summit",
+     "note": "True summit after roughly 600' of Class 2/3 scrambling from the north-side base; round trip from the car is typically under 3 hours.",
+     "type": "Summit",
+     "distMi": 0.8,
+     "directions": "From the bench, angle southwest a few hundred yards to the foot of the summit slope, then take about 600 vertical feet of open slope and talus to the top. A far-left finish adds around 50 ft of slightly exposed Class 3; some parties carry a short length of rope to rig a handline there, though neither of the standard lines needs one."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 2.5,
+    "summitTimeHrs": 2.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "9:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 2.5,
+      "note": "A short, brisk scramble on King County's Eagle Rock (5,615 ft) near Skykomish. From the high trailhead on FR6517 it's under a mile to the summit: an ascending traverse across talus…",
+      "fromTo": "Car-to-car scramble",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack is used on the standard route — it is a class 2-3 scramble on open slope/talus requiring no rope, protection, or anchors.",
+   "what_to_bring": [
+    "sturdy boots",
+    "helmet",
+    "map/GPS",
+    "extra water"
+   ],
+   "pro_tips": [
+    "Identify the correct gully/ramp on the north side before committing — the right side is easier Class 2, the center/left is Class 2/3 and more exposed",
+    "Bring a map/GPS track for the NE-to-N counterclockwise talus traverse; it's easy to end up on the wrong side of the cliffs in the forest",
+    "Call the Skykomish Ranger Station or check MBS current-conditions page for FR65/6510/6514/6517 status before driving — these spur roads see periodic washout/shoulder damage",
+    "Carry a 50 ft handline for the exposed Class 3 downclimb on the north side rather than downclimbing it unroped",
+    "Best after the north-facing summit gully clears of snow for secure scrambling"
+   ],
+   "watch_out": [
+    "loose rock",
+    "brush",
+    "exposure near summit",
+    "thunderstorms"
+   ],
+   "pro_needs": "None; the standard line is unroped scrambling terrain throughout.",
+   "best_season": "Mid-July through October for the driest, most secure scrambling; because the standard line ascends the north-facing summit gully, snow/ice can linger there into early-to-mid July even after the approach slopes have cleared — carry an ice axe and check recent trip reports before a June/early-July attempt.",
+   "high_point_ft": 5614,
+   "aid_grade": null,
+   "approach": "Drive the Beckler River Road (FR-65) out of Skykomish and follow it into the FR-6510/FR-6514/FR-6517 spur network (about 10.8 miles of gravel/dirt forest road past the pavement) to road's end, roughly 0.5 mile east of Eagle Rock's summit at about 4,150 ft — this is the trailhead; there is no maintained trail beyond it. From the parking area, leave the road and head west/southwest straight up the hillside cross-country. You break out of brush and into open forest within the first few hundred feet, then continue uphill through timber; after a few hundred yards the trees give way to open talus slopes below the cliff bands on Eagle Rock's northeast side. From the base of the talus, do not push straight up into the cliffs — instead make an ascending, counterclockwise (climber's-left) traverse across and around the north side of the peak to a broad bench/step at roughly 5,000 ft. From that step, angle southwest a few hundred yards to the base of the final summit slope, where the scramble proper begins. One-way distance from the car to the summit is only about 0.8 mile, but essentially all of the route's ~1,400 ft of gain is packed into that short distance, so it feels considerably steeper than the mileage implies. There is no reliable water source anywhere on the approach — carry all the water you need from the car. Hazards are mostly footing and route-finding: loose talus and scree on the traverse, brush low down, no trail or cairns to follow, and cliff bands that will cliff out parties who try to go straight up the northeast talus instead of arcing counterclockwise.",
+   "descent_text": "Descend by reversing the ascent line — this is a walk-off/downclimb, not a rappel route. From the summit, downclimb the same Class 2 (right side) or Class 2/3 (center) slope back down about 600 vertical feet to the ~5,000 ft bench, then reverse the counterclockwise talus traverse below the cliff bands back to treeline, and continue down through open forest and brush to the FR-6517 parking area. No technical anchors or rappels are needed on the standard line. The main descent hazards are loose talus/scree (easy to kick rocks onto anyone below) and route-finding — in poor visibility it's easy to drift toward the cliff bands instead of holding the correct counterclockwise line, so retrace your ascent traverse carefully. Parties who climbed the more exposed far-left finish (about 50 ft of slightly exposed Class 3) sometimes downclimb that section more cautiously or carry ~50 ft of rope to rig an optional handline for extra security, but this is a personal-comfort choice on a minor variation, not a fixed rappel station, and the standard Class 2/3 line requires no rope at all.",
+   "bail": "Descend the ascent slopes back toward the approach drainage.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1-2",
+     "notes": "Short approach walk from the FR6517 parking area toward the base of Eagle Rock's final slope.",
+     "pitch": "Parking area to base of summit slope"
+    },
+    {
+     "grade": "Class 2 (right side) / Class 2-3 (center)",
+     "notes": "About 600 vertical feet of open slope/talus to the summit; staying right keeps it easy class 2, the direct center line is class 2-3.",
+     "pitch": "Summit slope"
+    }
+   ],
+   "itinerary": {
+    "cal": "Access requires FR6510/6514/6517, 10.8 mi of forest road beyond Beckler River Road (FR65) - these spur roads can be rough or snow-blocked into early summer, so check current conditions before driving in.",
+    "days": [
+     {
+      "n": 1,
+      "note": "A short, brisk scramble on King County's Eagle Rock (5,615 ft) near Skykomish. From the high trailhead on FR6517 it's under a mile to the summit: an ascending traverse across talus below the northeast cliffs to about 5,000 ft, then roughly 600 ft of easy class 2 (or class 2/3 up the center) to the top. Most parties are back at the car in well under 3 hours.",
+      "hours": 2.5,
+      "miles": 1.6,
+      "title": "Car-to-car scramble",
+      "gainFt": 1460,
+      "lossFt": 1460,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "9:00 AM",
+        "label": "Leave trailhead",
+        "detail": "Parking on FR6517, about 0.5 mi east of the summit; head west up through brush into open forest."
+       },
+       {
+        "time": "+20 min",
+        "label": "Reach talus below the NE cliffs",
+        "detail": "Trees give way to open talus slopes beneath Eagle Rock's cliffs."
+       },
+       {
+        "time": "+40 min",
+        "label": "Ascending traverse to the north side",
+        "detail": "Counterclockwise traverse across talus to gain the north side of the peak."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Start the summit scramble at ~5,000 ft",
+        "detail": "About 600 ft of class 2 on the right side, or class 2/3 straight up the center."
+       },
+       {
+        "time": "+1 hr 30 min",
+        "label": "Summit",
+        "detail": "Short stay - the view is the payoff for under an hour of climbing from the base."
+       },
+       {
+        "time": "+2 hr 30 min",
+        "label": "Back at the car",
+        "detail": "Reverse the scramble and traverse; round trip typically finishes in under 3 hours."
+       }
+      ],
+      "objective": "Tag the summit via the class 2/3 talus and rock route"
+     }
+    ],
+    "totalNote": "A short single-day scramble: about 1.6 miles and 1,460 ft round trip, typically under 3 hours car-to-car once at the high trailhead."
+   },
+   "access": {
+    "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+    "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+    "rules": "Standard national forest regulations",
+    "permit": "None required.",
+    "closures": "Access spur roads (FR6510/FR6514/FR6517) are prone to seasonal washouts, downed trees, and closures; check current Mt. Baker-Snoqualmie NF road-status alerts for the Skykomish District before driving.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish WA 98288, (360) 677-2414)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "passRequired": "Northwest Forest Pass required at the FR6517 trailhead parking — $5/day or $30/year (also honored: America the Beautiful federal interagency pass)",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+     "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "US-2 to 0.8 mi east of Skykomish, then Beckler River Road (FR65) 0.6 mi to FR6510, then FR6510 → FR6514 → FR6517 for 10.8 mi to the trailhead parking area (~4,150 ft elevation), about 0.5 mi/0.8 mi short of the summit",
+    "status": "Rough, narrow Forest Service spur roads with a documented history of washouts, downed trees, blown culverts, and sinkholes on this section of the Skykomish Ranger District. The Forest Service's Skykomish District road-damage alert of June 30, 2026 lists FR 6510 (Bolt Creek Road) closed at its gate at milepost 1.0, with a blown-out culvert at MP 1.2 and a bridge out at MP 2, and FR 6514 (Eagle Creek Road) gated closed at milepost 0, with a blown culvert at MP 1.6 and a sinkhole at MP 7.1; no reopening date is given, so no vehicle can reach this trailhead while that stands. Skykomish Ranger District: (360) 677-2414.",
+    "driveNote": "Paved highway (US-2) to gravel/dirt forest roads; narrow and rough in spots, high-clearance vehicle recommended. MBS National Forest's current-conditions reports have noted shoulder damage on FR65 near milepost 7.4 and 12.1 — check current conditions with the Skykomish Ranger Station before driving, especially after storms."
+   },
+   "climate": {
+    "summer": "Driest and most reliable conditions, especially July-August.",
+    "typical": "West-slope Cascade climate; wet and heavily vegetated",
+    "bySeason": {
+     "fall": "Good early; wet and cold later",
+     "spring": "Wet, snowy up high, brushy",
+     "summer": "Best window; drier rock, watch for storms",
+     "winter": "Snowbound; not a standard objective"
+    },
+    "forecastZone": "NOAA West Slopes Central Cascades"
+   },
+   "emergency": {
+    "notes": "Use 911 for emergencies.",
+    "county": "King",
+    "rangerStation": "Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish WA 98288, (360) 677-2414 (limited walk-in hours, Wed–Fri; call ahead)",
+    "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), on US-2 in Monroe, WA — nearest full-service emergency department to Skykomish/Beckler River area",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed; if any uptick occurs it would be summer weekends (July-August), but this is not a heavily trafficked objective compared to other Skykomish-area destinations",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Low - likely well under 20 parties per season; the summit register was once signed by only two people over a two-year span"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Solid hiking fitness for a sustained off-trail/brushy approach through forest before any scrambling begins",
+     "packWeight": "Light day-pack (scramble, not a multi-day or technical rock objective)"
+    },
+    "approachTime": "Longer than a typical trailhead scramble due to off-trail forest travel via the Eagle Creek/Beckler River roads before reaching rock",
+    "requiredSkills": [
+     "Off-trail routefinding/navigation (map, compass or GPS - route is not signed or maintained)",
+     "Class 3 scrambling on loose rock",
+     "Bushwhacking through brush",
+     "Comfort with exposure near the summit",
+     "Judgment to retreat from afternoon thunderstorms"
+    ],
+    "experienceLevel": "Comfortable with off-trail Class 3 scrambling and independent routefinding; not a beginner objective given the bushwhacking approach and unmarked upper route"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through October, per prior research on this route",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Season opens mid-July; brush and vegetation still wet/thick early in the month, drying out by late July",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Driest rock and clearest conditions of the season, though watch for afternoon thunderstorms",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Wetter and colder later in the month; still viable early October but conditions degrade",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Continues the best window with typically stable, drier weather before fall wetness sets in",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "West-slope Cascade climate - wet and heavily vegetated per prior research; summer offers the driest rock and best conditions",
+     "probability": "Afternoon thunderstorms are a known hazard on this route per prior research; build in an early start and turnaround plan"
+    },
+    "exposure": "Class 3 terrain with loose rock and exposure concentrated near the summit; a slip in the upper scramble section carries real fall consequence, compounded by off-trail routefinding that makes retreat less straightforward than on a marked trail",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer/fall scramble route with no snow-season use documented",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Live/current closure status of FR65, FR6510, FR6514, and FR6517 could not be verified at research time — these roads have a history of storm damage and spot washouts",
+     "Exact difficulty of the summit gully varies by line chosen (Class 2 on the right vs Class 2/3 up the center/left) — no single official grade nailed down across sources",
+     "No confirmed lat/lng or exact trailhead GPS coordinates found in sourced material; not fabricated here",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.776045,
+    "peakLng": -121.355345,
+    "trailhead": "FR-6517 road-end (Beckler River road network)",
+    "trailheadDirection": "Via Beckler River Road (FR-65) into the FR-6510/6514/6517 spur network to road's end ~0.5 mile east of the summit"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Standard route: talus below cliffs on the NE side, an ascending counterclockwise traverse around the mountain (the route's crux section), then ~600 ft of Class 2 (or Class 2/3 direct) to the summit.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "FR-6517 road end and the counterclockwise traverse",
+     "notes": "The road end is the trailhead and there is nothing beyond it — no tread, no cairns, no water. Leave the pull-off heading west-southwest straight up the hillside; a short push through roadside brush puts you into open timber within the first few hundred feet, and after a few hundred yards the trees thin onto open talus below the northeast cliffs. The whole outing is under a mile each way, but nearly all of roughly 1,400 ft of gain is packed into it, so it climbs far harder than the mileage suggests.",
+     "season": "July to October",
+     "hazards": [
+      "No trail, no cairns and no water above the car",
+      "Loose talus and scree across the traverse",
+      "Cliff bands that will stop a party going straight up the northeast side",
+      "Easy to drift back toward the cliffs in poor visibility on the way down"
+     ],
+     "baseFinding": "The climbing begins at a broad step at about 5,000 ft on the peak's north side, and the mistake that costs people the summit is made well below it. At the base of the northeast talus the cliff bands stand directly overhead: that is the signal to stop gaining height and start an ascending, counterclockwise arc to climber's-left, holding the line across loose talus and scree beneath the rock. Parties who push straight up the northeast talus into the cliffs get stopped. You know you have arrived when the arc brings you round onto the north side and the ground steps out onto a broad open bench, with the slope above turning to open talus and blocky rock rather than walls. From there angle southwest a few hundred yards to the foot of the summit slope; the final six hundred feet go at easy class 2 keeping to the right-hand side, or class 2/3 straight up the centre. A far-left finish adds about fifty feet of slightly exposed class 3. Fix the traverse in your head on the way up — it is the thing you reverse, and in cloud it is easy to drift back into the cliff bands."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 1000,
+     "name": "Beckler River Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6510 and FR 6514, is what gets you to Eagle Rock, to the road end at roughly 3,500 ft used for Grotto Mountain, and to the gentle back-door approach to Eagle Lake. If the campground is full or closed for the season, the upper Beckler road corridor and its spurs are national forest land where dispersed camping is allowed with no permit — the standing rules are to camp at least 100 ft from water, use an existing pullout rather than making a new clearing, stay a maximum of fourteen days in one spot, and obey whatever fire restriction is current. Those spurs are rough, gated in places, and can be locked without warning, so check the gate on your way in rather than discovering it on your way out. Being a valley campground it says nothing about conditions up high; expect snow on the FR 6514 spurs well into spring.",
+     "water": "Potable water from a solar pump at the campground, and the Beckler River itself.",
+     "permit": "Standard national forest campground fee through the federal reservation system. Day use needs a Northwest Forest Pass, Interagency pass or the day fee. Open roughly May through September, so it is not a winter option. Fourteen-day stay limit, no fireworks, and a food storage order applies — check the current campfire ban.",
+     "capacity": "26 sites, 22 single and four double, all reservable. Picnic tables and vault toilets. No stock or pack animals."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_blood_sport",
+  "name": "Blood Sport",
+  "area_id": "wa_guye_peak",
+  "findings": [
+   "r031.json: The approach is described as about half a mile and 15 minutes from the Alpental lot, whose ground elevation is about 3,127 ft (USGS 3DEP point query). But the stored crag pin sits on ground at about 4,227 ft (USGS query), which would fit the 1,200 ft gain, while the crag waypoint's own elev says 3,400. No source gives the crag's elevation, so the right gain cannot be set; the pin, the waypoint elev and gain_ft need checking against each other."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_blood_sport",
+   "area_id": "wa_guye_peak",
+   "name": "Blood Sport",
+   "discipline": "sport",
+   "grade": "5.11b",
+   "grade_system": "yds",
+   "grade_num": 11.5,
+   "pitches": 1,
+   "length_m": 15,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Frank Bush, 2014",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "May-Oct",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Rockfall from the South Rib and the loose slopes above the crag.",
+    "Aging, seldom-inspected fixed hardware on a route established in 2014 with almost no recorded traffic.",
+    "Poor rock quality typical of Guye Peak - highly fractured, crumbly rhyolite - even on a bolted line."
+   ],
+   "verif": null,
+   "overview": "A 50ft single-pitch sport/mixed route on Guye Peak in the Snoqualmie Pass area, combining bolt protection with one traditional gear placement; ends at a 2-bolt chain anchor with no top-out.",
+   "beta": "Steep start off a left-hand side-pull, placing a #1 Camalot into a pod before clipping into bolted protection; a rest ledge partway up breaks the pitch before a pumpy, sustained bolted sequence moving left and up to the anchor.",
+   "turnaround": "The only real judgment call here is the approach and the base. Do not climb it with parties above you on the South Rib, back off if the rock is wet - this is fractured, crumbly rhyolite and the face stays greasy after rain - and inspect the fixed hardware before you weight it, since the route sees very little traffic and the bolts date from 2014.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.11b",
+   "ice_grade": null,
+   "gain_ft": 1200,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "None - lower off the two-bolt chain anchor. The route does not top out.",
+   "commitment": null,
+   "face": "Isolated crag at the base of the South Rib, right of the West Face",
+   "permit": null,
+   "comms": "The crag sits low on the south side, in direct line of sight of the Summit West base area and the I-90 corridor, so cell service should be reliable - by a wide margin the best-connected climbing on this peak.",
+   "descent": "Lower off the 2-bolt chain anchor.",
+   "obj_haz": [
+    "loose rock on the surrounding peak",
+    "lightly travelled fixed hardware",
+    "brushy approach",
+    "private property near the base"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.4454,
+     "lng": -121.4235,
+     "name": "Alpental Ski Area / Snow Lake Trailhead parking lot",
+     "note": "Blood Sport is reached by heading up the boot path/old Sahale ski track from this lot and traversing east along the base of Guye Peak's south rib — the route is passed while traversing east along the base of the South Rib.",
+     "type": "Trailhead",
+     "directions": "Take I-90 exit 52 and follow Alpental Road to its end at the Alpental ski area lot, which is also the Snow Lake Trailhead parking — about 45 minutes from Seattle. Respect the posted no-parking signs on the private-property sections of the road on the way up. From the lot it is only about half a mile of walking, roughly 15 minutes, so this is a park-and-go rather than an approach."
+    },
+    {
+     "lat": 47.442,
+     "lng": -121.411,
+     "elev": 3400,
+     "name": "Blood Sport crag",
+     "note": "Short (~50') isolated crag low on the mountain, just around the corner from the main West Face, near the base of South Rib.",
+     "type": "Topout",
+     "distMi": 0.6
+    },
+    {
+     "lat": 47.4415,
+     "lng": -121.4093,
+     "elev": 5168,
+     "name": "Guye Peak",
+     "type": "Summit",
+     "elevFt": 5168
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Any time in summer, but mornings are better - the crag faces south and low on the mountain it gets hot and greasy in afternoon sun."
+   },
+   "detailed_rack": "A rack of quickdraws for the bolted sections plus one #1 Camalot for a pod near the start; fixed 2-bolt chain anchor at the top.",
+   "what_to_bring": [
+    "helmet",
+    "quickdraws",
+    "single #1 Camalot"
+   ],
+   "pro_tips": [
+    "Spot the crag from the west-most parking lots at the Summit West base area before you walk in - it is visible from there and much easier to find that way than from below.",
+    "Get the #1 Camalot into the pod at the start before you commit to the steep opening moves off the left-hand side-pull; that placement is the protection for the ground you are on.",
+    "Take the rest at the ledge seriously. The sequence above it goes left and up and gets pumpy, and this is a route that punishes arriving at the last bolts already tired.",
+    "The route has seen almost no traffic since it was posted in 2016 - inspect the 2014-vintage bolts and the chain anchor before you trust them.",
+    "Wear a helmet at the base as well as on the route. You are standing under the South Rib of a peak known for rockfall.",
+    "Park where the posted signs allow. The approach passes private chalet and ski-club property at Alpental and the restrictions are enforced.",
+    "Pair it with the South Rib if you want a full day - both start from the same side of the mountain."
+   ],
+   "watch_out": [
+    "Fixed hardware dates from 2014 and the route is very lightly travelled; inspect the bolts and anchor rather than assuming they are maintained.",
+    "The crag sits beneath the South Rib on a peak whose area description records fatalities from rockfall and breakage - do not belay in the fall line and keep helmets on at the base.",
+    "The route does not top out; you must lower from the chain anchor.",
+    "The approach passes through slide alder and boulder fields and across private property near Alpental.",
+    "South-facing rock bakes in afternoon sun and stays greasy after rain."
+   ],
+   "pro_needs": "Mostly bolt-protected; carry a single #1 Camalot for the pod low on the route in addition to quickdraws.",
+   "best_season": "Late spring through early autumn, roughly May to October, once the snow is off the south side and the approach brush is passable. The south-facing aspect low on the mountain dries early and quickly, which makes this one of the first things on Guye to come into condition each year and one of the last to go out - but it also means it bakes on a hot midsummer afternoon, so mornings and shoulder-season days climb better.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "From I-90 Exit 52, follow Alpental Road up to the ski area and park at the Alpental ski-area lot (the Snow Lake trailhead parking) or in a legal spot along Alpental Road itself. The side roads named 'Strasse' are private, and since 2021 residents have barred climbers from driving or walking on them. For the south-face/rock routes, the crag rises directly above the parking area with essentially no approach hike required. For routes on other aspects of the mountain, use the Commonwealth Basin/PCT North Trailhead a short distance up the highway instead, following the Pacific Crest Trail into Commonwealth Basin before cutting up toward the peak. Because of the short, direct access, Guye Peak is climbed both summer and winter, though rock routes are primarily a snow-free-season (summer-fall) objective.",
+   "descent_text": "Lower directly from the fixed 2-bolt chain anchor at the top of the pitch; no rappel or walk-off required.",
+   "bail": "There is nothing to bail from - it is a single 50-foot bolted pitch. If the sequence shuts you down, lower from the last bolt you clipped and clean the draws on a top-rope or leave them for the next attempt.",
+   "pitch_detail": [
+    {
+     "grade": "5.11b",
+     "notes": "Steep start off a left-hand side-pull; plug the #1 Camalot into a pod, clip a bolt, gain a rest ledge, then move left and up through several bolts on a pumpy finish to the anchor.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "An hour or two, and best treated as an add-on rather than a destination. Drive from Seattle in about 45 minutes, walk in through the boulder field and alder, warm up, work the route, and go. It pairs naturally with the South Rib if you want to make a day of Guye's south side, or with the rest of the Snoqualmie Pass area sport crags.",
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "The Alpental approach road crosses private Alpental Community Club land — a rerouted public approach to the talus field is used following a 2021 access dispute; check current beta before relying on the old direct approach.",
+    "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party.",
+    "permit": "Unknown",
+    "seasonal": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "permitZone": "Unknown",
+    "group_limit": 12,
+    "landManager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness",
+    "parking_pass": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass.",
+    "passRequired": "Northwest Forest Pass or America the Beautiful pass (or the $5 day-use fee)"
+   },
+   "road": {
+    "name": "Alpental / Snow Lake Trailhead (I-90 exit 52)",
+    "status": "Paved access: take I-90 exit 52, turn left under the freeway to the Alpental ski area parking lot; the signed Snow Lake Trailhead (#1013) is across the street. From the trailhead, hike the maintained trail to the Source Lake Overlook Trail junction (about 1.7 mi) which leads toward the Tooth/Bryant Peak basin where the Summer-Fall Rock routes sit.",
+    "driveNote": "About 45-60 minutes from Seattle via I-90 east to exit 52. Alpental charges a wintertime paid parking fee (roughly late Nov-Apr) when the Northwest Forest Pass is not accepted; a Northwest Forest Pass covers parking the rest of the year."
+   },
+   "climate": {
+    "fall": "Cool temperatures and the best friction of the year; short days matter little on a 50-foot route.",
+    "spring": "The low, south-facing crag dries out early - often the first thing on Guye in condition - but the approach brush and boulder field may still hold snow.",
+    "summer": "Prime, though the south aspect bakes in the afternoon. Morning sessions climb far better than midday ones on a hot day.",
+    "winter": "Snowbound and out of condition; this side of the peak is also subject to ski-area avalanche control.",
+    "typical": "Marine west coast climate with heavy Pacific precipitation; west of the crest, temperatures very rarely fall below 0 F or exceed 80 F. Summer is comparatively dry and stable.",
+    "forecastZone": "NWAC Snoqualmie Pass zone (West Slopes Central); NOAA point forecast for Snoqualmie Pass"
+   },
+   "emergency": {
+    "notes": "Call 911; King County Sheriff's Office coordinates SAR through the King County Search & Rescue Association and Seattle Mountain Rescue. This crag is close to the road with reliable cell service, so an injured climber can usually be reached quickly - the limiting factor is the brushy boulder-field approach, not distance.",
+    "county": "King County, Washington",
+    "rangerStation": "Snoqualmie Ranger District, North Bend office, 902 SE North Bend Way Bldg 1, North Bend WA 98045 - (425) 888-1421",
+    "nearestHospital": "Snoqualmie Valley Hospital Emergency Room, 9801 Frontier Ave SE, Snoqualmie WA 98065 - (425) 831-2300, 24 hours, about 25 miles west on I-90",
+    "sheriffDispatch": "911; King County Sheriff's Office non-emergency 206-296-3311"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": {
+    "cams": "one #1 Camalot"
+   },
+   "alpine_draws": 7,
+   "rope_type": "single",
+   "rope_length_m": 30,
+   "rope_note": "Guye Peak, 5.11b, 50ft sport/mixed pitch - bolts plus one #1 Camalot placement into a pod near the start; 2-bolt chain anchor, no top-out.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "7 quickdraws",
+    "1x Camalot #1 (starting pod placement)"
+   ],
+   "features": [
+    "Face",
+    "Technical",
+    "Pumpy",
+    "Sustained",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Alpental lot, boot path east along the base of the South Rib",
+     "notes": "Park at the Alpental lot at the end of Alpental Road off I-90 exit 52. Take the boot path and old ski track up from the lot and traverse EAST along the base of Guye Peak's South Rib. The crag is passed on that traverse; it is roughly half a mile of walking and about 15 minutes, not an approach in any real sense.\n\nThis is a single 50 ft pitch that does not top out, so it is a crag visit rather than a mountain day.",
+     "season": "Roughly May to October. This south-facing crag low on the mountain dries early and stays dry late, but it bakes on a hot midsummer afternoon — mornings and shoulder seasons climb better",
+     "hazards": [
+      "Rockfall from the South Rib and the loose slopes above the crag",
+      "Aging, seldom-inspected fixed hardware on a route with almost no recorded traffic",
+      "Poor rock quality typical of Guye Peak's fractured rhyolite even on a bolted line",
+      "South aspect low on the mountain bakes on hot afternoons"
+     ],
+     "baseFinding": "YOU CAN SEE THE CRAG FROM THE CAR PARK, AND THAT IS THE ANSWER IN BAD WEATHER. The cliff is visible from the west-most parking lots at the Summit West base area. Look at it from the road before you walk in, fix which lump of rock it is, and the walk becomes trivial.\n\nWHERE IT SITS RELATIVE TO THE PEAK: it is an isolated crag, separate from the rest of Guye, low down and near the base of the South Rib. If you are looking at the large WEST FACE, this cliff is just around the corner to the RIGHT of it and well below. So: west face on your left shoulder, corner, small isolated cliff low on the right.\n\nTHE MOVE OFF THE GROUND IS THE PROOF, AND IT IS UNMISTAKABLE. The pitch starts steeply off a LEFT-HAND SIDE-PULL, and the first piece is a #1 Camalot plugged into a POD, before you clip the first bolt. If there is no pod at head height taking a #1 and no bolt above it, you are at the wrong bit of rock.\n\nAND THE SHAPE OF THE WHOLE THING, as a final check: 50 ft, a rest ledge partway up, then a pumpy sequence moving left to a TWO-BOLT CHAIN ANCHOR. It does not top out. Any line here that continues into the mountain above is not this route.\n\nHONEST CAVEAT: this is a 2014 line with almost no recorded traffic, so the fixed gear is aging and seldom inspected."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_iron_peak_teanaway_scramble",
+  "name": "Standard Scramble",
+  "area_id": "wa_iron_peak_teanaway",
+  "findings": [
+   "r034.json: The overview, descent, itinerary, schedule and approach all say the route follows Iron Peak's north ridge south from Eldorado Pass, and the saddle pin sits north-northwest of the summit pin. WTA says that on reaching the saddle the peak is off to the right (south for a party arriving eastbound), about 350 ft above; a 2013 trip report likewise has the summit to the right, a half mile along the ridge. descent_text's 'south ridge' and the saddle bivy's 'turns west' are outliers. | From the saddle the summit lies south-southeast, up Iron Peak's north ridge"
+  ],
+  "gpx_summary": "275 points; 0 of 6 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_iron_peak_teanaway_scramble",
+   "area_id": "wa_iron_peak_teanaway",
+   "name": "Standard Scramble",
+   "discipline": "mountaineering",
+   "grade": "Class 2",
+   "grade_system": "class",
+   "grade_num": 2,
+   "pitches": null,
+   "length_m": 107,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "south",
+   "season": "July–October",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe (early season, before mid-July snow melts out)",
+    "trekking poles for the steep switchbacks",
+    "sun protection — most of the trail is exposed with little shade"
+   ],
+   "hazards": [
+    "routefinding above Iron Peak Trail — cairned boot path along the north ridge is easy to lose in cloud/whiteout near Eldorado Pass",
+    "loose serpentine/peridotite talus on the final summit ridge scramble",
+    "afternoon thunderstorms — the summit ridge is fully exposed with no cover",
+    "no reliable water beyond ~0.2 mile from the trailhead"
+   ],
+   "verif": null,
+   "overview": "Iron Peak (6,510 ft) is one of the more approachable summits on the Teanaway Ridge in the eastern Wenatchee Mountains, reached via Trail #1399 and a short Class 2 scramble. The trail climbs through mixed forest and the serpentine/peridotite terrain of the Eldorado Research Natural Area to a broad saddle called Eldorado Pass (~6,140 ft) between Iron and Teanaway Peaks, then follows Iron Peak's open north ridge about 0.7 mile to the summit. The peak sits just outside (east of) the Alpine Lakes Wilderness boundary and gives one of the best close-up views of Mount Stuart, Sherpa, Colchuck, Dragontail, and Little Annapurna anywhere in the Teanaway, plus Glacier Peak and Rainier on clear days. Many parties combine it with neighboring Teanaway Peak (Gene's Peak, 6,779 ft) from the same saddle.",
+   "beta": "The standard (and only well-documented) route follows the maintained Iron Creek Trail from North Fork Teanaway Road up through the Eldorado Research Natural Area to a saddle below Iron Peak, from which the true summit is gained by an unmaintained scramble up and to the right (south-southeast) of the saddle for a party arriving eastbound. The trail itself tops out around 6,160 ft at the saddle area; the remaining roughly 350 vertical feet to the 6,510 ft summit is off-trail, loose, rocky scrambling with some route-finding required. no published account gives a formal YDS class rating for this scramble.",
+   "turnaround": "This is a dry, waterless, sun-exposed trail beyond its first 1/8 mile, and the final push to the true summit is unmaintained off-trail scrambling on loose rock; turn back toward the saddle/trail if water, daylight, or weather margins get tight rather than pushing into the scramble late or in poor visibility.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 2710,
+   "loss_ft": 2710,
+   "dist_km": 6.1,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": null,
+   "permit": null,
+   "comms": null,
+   "descent": "Reverse the north ridge back down to Eldorado Pass, then descend Trail #1399 alongside Eldorado Creek to the Iron Peak Trailhead on FR 9737.",
+   "obj_haz": [
+    "loose rock",
+    "route-finding on off-trail scramble",
+    "waterless/exposed trail"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.421416,
+     "lng": -120.937261,
+     "elev": 3800,
+     "name": "Iron Peak Trailhead (Trail #1399)",
+     "note": "USFS trailhead on FR 9737, 0.5 mi past De Roux Campground; no fee/permit and no water or restrooms on site.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.42140910810811,
+     "lng": -120.93634381081081,
+     "elev": 3900,
+     "name": "Unnamed creek crossing",
+     "note": "Trail climbs alongside a steep unnamed creek for about the first eighth-mile before turning away from it for good — last reliable water, so carry what you need from here.",
+     "type": "Water",
+     "distMi": 0.1,
+     "directions": "The tread pitches up the moment it leaves the lot — there is no flat warm-up — with the creek audible on your left through the trees for the first few hundred yards. Above the crossing the trail rides a rib between two drainages, which is why the water goes out of reach and stays there."
+    },
+    {
+     "lat": 47.41905862162162,
+     "lng": -120.92259316216216,
+     "elev": 5200,
+     "name": "Ridge crest / Eldorado Creek drainage",
+     "note": "Trail bumps over a minor ridge with Koppen Mountain and the Esmeralda Peaks in view, and Eldorado Creek becomes audible in the drainage below to the east.",
+     "type": "Junction",
+     "distMi": 1.5,
+     "directions": "Above the crossing the trail switchbacks steadily up a south-facing forested slope, gaining around 1,300 ft in a little over a mile. The switchbacks tighten and the tread turns rocky and uneven as the trees begin to thin. This aspect bakes on hot afternoons and there is no shade once you are out of the timber."
+    },
+    {
+     "lat": 47.42212,
+     "lng": -120.90591,
+     "elev": 6140,
+     "name": "Eldorado Pass (saddle)",
+     "note": "Broad saddle between Iron and Teanaway Peaks inside the Eldorado Research Natural Area (est. 1972); leave the maintained trail here and head north/right on the open ridge boot path for Iron Peak.",
+     "type": "Junction",
+     "distMi": 3,
+     "directions": "Stay on the maintained trail as it works up the ridge above the Eldorado Creek drainage at a steady moderate grade for another mile and a half. Snow lies across these upper slopes into late June and can bury the tread on the last open stretch below the saddle."
+    },
+    {
+     "lat": 47.41620445945946,
+     "lng": -120.90589594594596,
+     "elev": 6300,
+     "name": "Snow patches on the north ridge",
+     "note": "Lingering snow lingers on the open ridge above the pass into early summer; reported as easy to kick-step across but can hide the boot path in June.",
+     "type": "Hazard",
+     "distMi": 3.2,
+     "directions": "The boot path climbs the open crest in the clear, on low brush and rock with nothing to obstruct the view of where you are going. It is faint in places, but the crest itself is the line — if you lose the tread, simply keep to the high ground."
+    },
+    {
+     "lat": 47.41514,
+     "lng": -120.9005,
+     "elev": 6510,
+     "name": "Iron Peak summit",
+     "note": "Broad open summit ridge-top (47°24'55\"N 120°54'01\"W) with views of Mount Stuart, Sherpa, Colchuck, Dragontail, and Little Annapurna.",
+     "type": "Summit",
+     "distMi": 3.7,
+     "directions": "The last half mile is open ridge walking on rocky ground and needs no scrambling. Stay on the crest rather than drifting onto the scree slopes falling away to the west, which are steeper, looser and slower than they look from above."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 6,
+    "summitTimeHrs": 6,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "note": "From the Iron Peak Trailhead on FR-9737, climb switchbacks up Trail #1399 to the 6,140 ft saddle at Eldorado Pass (about 3 miles), then follow the north ridge roughly 0.7 miles to …",
+      "fromTo": "Car-to-car scramble",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "extra water — none reliable past the first 0.2 mi from the trailhead",
+    "sun protection",
+    "trekking poles",
+    "helmet for the summit ridge",
+    "ice axe if climbing before mid-July"
+   ],
+   "pro_tips": [
+    "A great early-season scramble and wildflower hike combined",
+    "Short summit-day from the trailhead"
+   ],
+   "watch_out": [
+    "losing the boot path above Eldorado Pass in fog or low cloud",
+    "loose rock underfoot on the final ridge scramble",
+    "building afternoon cumulus on this fully exposed ridge — start early and watch the sky"
+   ],
+   "pro_needs": "None — this is an unroped hiking/scrambling route with no reported technical protection.",
+   "best_season": "Mid-July through October",
+   "high_point_ft": 6510,
+   "aid_grade": null,
+   "approach": "Start from the De Roux Creek Campground trailhead (~3,800 ft) at the end of Forest Road 9737 in the North Fork Teanaway drainage. Pick up the Iron Peak Trail, USFS Trail No. 1399, which climbs immediately and steeply alongside an unnamed creek on climbers-left — this creek is audible for roughly the first half of the hike and is your only reliable water source, since the trail rides a rib between two drainages that stay out of reach the rest of the way; tank up here, especially on hot summer days when this south-facing trail gets exposed and dry. The trail switchbacks up through forest, crosses the small creek at about 1/8 mile, then keeps climbing along the ridge toward Eldorado Creek and Eldorado Pass. Around the halfway point the trail crosses onto the ridge crest proper; tread gets rockier and uneven here, with some short, tight switchbacks. Continue to a broad saddle at roughly 6,100 ft (about 3 miles in, ~2,300-2,700 ft of gain from the trailhead), where the maintained trail fades and a well-worn boot/climbers' path takes over. From the saddle, leave the Eldorado Creek/Beverly Turnpike trail junctions behind and head south-southeast along the open ridge — this is Iron Peak's north ridge, so you climb it heading SOUTH; the peak half a mile north-northwest of the saddle is a different and harder summit for about 0.7 mile of class 1-2 hiking/scrambling over a boot path with a few short rock patches near the top, gaining the last few hundred feet to the 6,510 ft summit. No technical climbing is required, but the upper ridge has some loose rock and mild exposure on the west (Teanaway River) side — stay on or east of the crest.",
+   "descent_text": "Descend by reversing the ascent ridge and boot path back to the 6,100 ft saddle — this is a walk-off/scramble down-climb with no rappelling required (rappels: 0). From the summit, favor staying on the crest of the north ridge rather than dropping onto the loose scree/gully slopes to the west; the direct scree line below the summit is reportedly steep, loose, and slower than it looks, and the gully drop-in around 6,250 ft that is sometimes suggested is worse than simply staying on the ridge the whole way down. Once back at the saddle, rejoin the maintained Iron Peak Trail (No. 1399) and follow it down the rib, re-crossing onto the ridge tread and back down along the creek drainage to the De Roux Creek Campground trailhead. Watch footing on the rocky, uneven upper tread and the short switchbacks lower down; there is no water again until you near the trailhead creek crossing.",
+   "bail": "Descend the ascent slopes back to the trail.",
+   "pitch_detail": [
+    {
+     "grade": null,
+     "notes": "Maintained Trail #1399; not part of the technical routeFt figure (approach, not climbing/scrambling terrain).",
+     "pitch": "Trailhead to saddle",
+     "lengthM": null
+    },
+    {
+     "grade": null,
+     "notes": "~350 vertical feet of off-trail, unrated scrambling over loose serpentine rock to the 6,510 ft summit; no formal class rating is published.",
+     "pitch": "Saddle to true summit",
+     "lengthM": 106.7
+    }
+   ],
+   "itinerary": {
+    "cal": "Trail is dry and exposed with no water — best done with an early start in summer to avoid the heat; snow can linger on the approach into early summer at this elevation.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Iron Peak Trailhead on FR-9737, climb switchbacks up Trail #1399 to the 6,140 ft saddle at Eldorado Pass (about 3 miles), then follow the north ridge roughly 0.7 miles to the 6,510 ft summit — the ridge narrows near the top but stays a straightforward hands-optional scramble in dry conditions. Reverse the same line to descend. There is no water on route, so carry what you need and start early since the south-facing trail gets hot.",
+      "hours": 6,
+      "miles": 7.5,
+      "title": "Car-to-car scramble",
+      "gainFt": 2500,
+      "lossFt": 2500,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave trailhead",
+        "detail": "Early start recommended — trail is exposed, hot, and dry with no water sources."
+       },
+       {
+        "time": "+1.5-2 hr",
+        "label": "Reach Eldorado Pass saddle",
+        "detail": "~3 miles and most of the elevation gain via switchbacks."
+       },
+       {
+        "time": "+45-60 min",
+        "label": "Ridge to summit",
+        "detail": "0.7 miles along the narrowing north ridge; some easy hands-on scrambling near the top."
+       },
+       {
+        "time": "~9:30-10:30 AM",
+        "label": "Summit Iron Peak",
+        "detail": "Views of Mt. Stuart, Bill's Peak, Teanaway Peak, Rainier, and Adams on a clear day."
+       },
+       {
+        "time": "+2.5-3 hr",
+        "label": "Descend reverse route",
+        "detail": "Back down the ridge to the saddle and switchbacks to the trailhead."
+       },
+       {
+        "time": "~12:00-12:30 PM",
+        "label": "Back at trailhead",
+        "detail": "Total car-to-car around 5.5-6.5 hours for Iron Peak alone."
+       }
+      ],
+      "objective": "Summit Iron Peak via the north ridge from Eldorado Pass"
+     }
+    ],
+    "totalNote": "A single long day: about 5.5-6.5 hours car-to-car, roughly 2,500 ft gain over ~7.5 miles round trip — no backcountry camp is used."
+   },
+   "access": {
+    "fees": "$5 daily or $30 annual Northwest Forest Pass",
+    "permit": "Northwest Forest Pass (or America the Beautiful interagency pass) required to park at the Iron Peak/De Roux Trailhead on FR 9737",
+    "landManager": "Okanogan-Wenatchee National Forest — Cle Elum Ranger District; the trail crosses the Eldorado Research Natural Area and lies just outside (adjacent to) the Alpine Lakes Wilderness boundary, not within designated wilderness",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk. This is distinct from the quota Enchantment Permit Area to the west."
+    }
+   },
+   "road": {
+    "name": "Forest Road 9737 (North Fork Teanaway Road)",
+    "status": "Paved to the end of North Fork Teanaway Road (~7 mi from the Teanaway Rd junction), then gravel/washboard FR 9737 for ~9 more miles to the trailhead; passable to most passenger cars in dry conditions but can be rutted after rain.",
+    "driveNote": "From Cle Elum: Hwy 970 north ~8.5 mi → left on Teanaway River Rd → ~7 mi to pavement's end → continue on FR 9737 → ~9 mi to the signed Iron Peak Trailhead (#1399), just past the De Roux Campground turnoff."
+   },
+   "climate": {
+    "typical": "East-of-the-crest rain-shadow climate: hot, dry summers with a real chance of afternoon thunderstorms building over the exposed upper ridge, and lingering snow on shaded sections of the trail into late June in heavy-snow years.",
+    "forecastZone": "NWAC Cascade East Central (relevant mainly for early/late-season snow travel, not the core July–Oct scrambling window)"
+   },
+   "emergency": {
+    "county": "Kittitas",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest",
+    "nearestHospital": "Kittitas Valley Healthcare Hospital, 603 S Chestnut St, Ellensburg, WA — the closest full-service ER, roughly 40 miles / ~1 hr from the trailhead via Teanaway Rd and I-90.",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July-September; Iron Peak is a regularly-run Mountaineers club scramble outing, so club groups add to weekend traffic, but it is far less crowded than Seattle-adjacent trade scrambles",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low-moderate - roughly a few dozen parties per season; parties often describe seeing no other groups on Iron Peak itself even when nearby Teanaway/Judi Peak had crowds"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Moderate-high fitness for a roughly 7.5-mile round trip with about 2,700 ft of gain, often done car-to-car in a day",
+     "packWeight": "Light day pack (water, layers, navigation) - no technical rack or overnight gear needed for the standard scramble"
+    },
+    "approachTime": "Roughly 2-3 hours from the Iron Peak trailhead to the saddle/scramble start, based on trip reports reaching the ridge saddle by mid-morning from a ~8am start",
+    "requiredSkills": [
+     "off-trail routefinding",
+     "loose-rock scrambling judgment",
+     "basic navigation/map reading above the trail",
+     "afternoon-thunderstorm awareness and turnaround discipline"
+    ],
+    "experienceLevel": "Comfortable with off-trail Class 2 scrambling and basic routefinding; prior scrambling or peak-bagging experience recommended since the route leaves the maintained Iron Peak Trail onto open slopes"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through October - this matches trip reports noting it's easiest once seasonal snow has cleared from the ridge",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow largely melted out by mid-July; dry, sunny east-Cascade conditions, though early-month north-facing patches can linger",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Lingering snow and muddy roads/trails in spring, with snow on north slopes.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Prime dry summer season; watch for afternoon thunderstorms",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Still viable, but shorter days and earlier snow/weather changes possible late in the month",
+      "status": "good"
+     },
+     "September": {
+      "reason": "Excellent, cool and clear; lower thunderstorm frequency than mid-summer",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "East-slope Cascade climate - dry, sunny, and hot in mid-summer, becoming cooler and clearer in fall",
+     "probability": "Afternoon thunderstorms are a recurring hazard July-August; start early to be off exposed ridge terrain before storms build"
+    },
+    "exposure": "Class 2 terrain with loose rock. There is no real sense of exposure on the ridge line itself, but routefinding above the Iron Peak Trail and loose rock increase slip/fall consequence off-route",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route (Teanaway is not covered by a dedicated NWAC zone; nearest relevant winter forecasting is the Stevens Pass zone, but this is not a winter/avalanche objective)",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Reported mileage/gain vary across sources (6.8–7.6 mi roundtrip, 2,360–2,600 ft gain) — no single authoritative current USFS figure was retrieved",
+     "no official GPS trailhead coordinates were confirmed from a primary source",
+     "unconfirmed whether FR 9737 has a seasonal gate or closure history",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.415365,
+    "peakLng": -120.900985,
+    "trailhead": "De Roux Creek Campground Trailhead",
+    "trailheadDirection": "Start from the De Roux Creek Campground trailhead (~3,800 ft) at the end of Forest Road 9737 in the North Fork Teanaway drainage."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Class 2 ridge walk-up from De Roux camp via Trail 1399; one narrow ridge section near summit with no exposure requiring hands. No technical gear needed.",
+   "ascender": null,
+   "corrections": "Mountaineers/WTA describe as straightforward non-technical scramble; no gear list published.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": [
+    {
+     "name": "Iron Peak Trail #1399 to Eldorado Pass",
+     "notes": "From the trailhead on the forest road just past the campground, Trail #1399 pitches up the moment it leaves the lot — there is no flat warm-up — with a creek audible through the trees on the left for the first few hundred yards. Cross that creek early and carry what water you need, because the trail then rides a rib between two drainages and the water goes out of reach and stays there. Switchbacks climb a south-facing forested slope, tightening and turning rocky as the trees thin, and bump over a minor ridge where the Eldorado Creek drainage becomes audible below to the east. The tread then works up the ridge above that drainage at a steady moderate grade to a broad open saddle where the maintained trail fades out.",
+     "season": "Late June to October. Snow lies across the upper slopes into late June and can bury the tread on the last open stretch below the saddle.",
+     "hazards": [
+      "The maintained trail carries on over the saddle and descends the far side — following tread instead of leaving it puts you in the wrong drainage",
+      "The only water is the creek in the first eighth of a mile; the rest is dry and the south-facing slope bakes in the afternoon",
+      "Lingering snow on the open crest into early summer, which hides the boot path",
+      "Loose rock and mild exposure on the west side of the upper crest",
+      "The scree slopes falling away west are steeper and looser than they appear from above"
+     ],
+     "baseFinding": "AT THE SADDLE THE PEAK IS TO THE SOUTH, AND THE HIGHER SUMMIT TO THE NORTH IS THE NEIGHBOUR. This is the one thing to get right here, because the ridge you walk is called the north ridge and the direction you walk it is south — the two are easy to conflate. Eldorado Pass is the broad open saddle where the maintained trail stops being useful; from it, this peak lies roughly half a mile south-southeast, and the noticeably higher summit a short distance north-northwest is Teanaway Peak. The terrain settles it even if the compass does not: the way to this summit is a simple open ridge walk on a climbers' trail, on low brush and rock with the whole line visible ahead. The neighbour's route immediately traverses around the east side and climbs gullies, so if you are sidehilling east into broken ground within a few minutes of leaving the saddle, you have turned the wrong way. The other failure is not turning at all — the maintained trail continues over the saddle and descends the far side toward the creek trail below, so a party following tread ends up in the valley rather than on either peak."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Iron Peak saddle dry camp",
+     "role": "main",
+     "type": "bivy",
+     "notes": "A perch rather than a campsite, and included because Iron Peak's standard approach offers nothing else. The trailhead sits on the North Fork Teanaway Road roughly half a mile above the De Roux campground turn and a mile and a half short of the road end, at about 3,800 feet. The trail climbs a rib at a steady moderate grade with no flat ground and no water until it reaches the saddle, from which the scramble turns west up the ridge to the summit, and most parties continue on to Mount Teanaway from the same saddle. Almost nobody sleeps here and almost nobody needs to — this is a half-day objective for a fit party — but a group that has started late, or one linking Iron Peak with the Beverly Creek peaks over the divide, has this saddle as the only level ground on the route. It is windy, exposed and cold after dark even in August. If there is any choice at all, the creekside camps at the Fourth Creek junction on the other side of the divide are a far better place to spend a night.",
+     "water": "None. This is the defining fact about the route and the camp both. The Iron Peak trail passes a steep unnamed creek in the first eighth of a mile from the trailhead and then turns away from it for good; you can hear water in the gullies on either side for half the climb and cannot reach any of it. Carry everything you intend to drink and cook with from the road, and plan on more than feels necessary, because this is a south-facing, sun-hammered hillside.",
+     "permit": "No permit and no quota. Northwest Forest Pass at the Iron Peak trailhead. Campfires are prohibited at this elevation and there is nothing here to burn in any case. Pitch on gravel or bare ground; the saddle carries thin meadow that does not recover.",
+     "capacity": "A few flat spots at and just below the saddle between Iron Peak and Mount Teanaway; one or two small tents, no shelter, and nothing resembling an established site"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

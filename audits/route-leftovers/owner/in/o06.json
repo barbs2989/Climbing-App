@@ -1,0 +1,2577 @@
+[
+ {
+  "id": "wa_half_moon_southwest_slopes",
+  "name": "Southwest Slopes / Standard Scramble",
+  "area": {
+   "id": "wa_half_moon",
+   "name": "Half Moon",
+   "parent_id": "wa_kangaroo_ridge",
+   "elevation_ft": 7960,
+   "lat": 48.50981,
+   "lng": -120.613587
+  },
+  "prior_findings": "Row is framed as a Class 3-4 scramble; sources say Half Moon has no easy route (easiest line class 5+). Needs re-authoring.",
+  "earlier_research": [
+   {
+    "file": "r160.json",
+    "fact": "Technical difficulty of the route (scramble vs low-5th/5.6 pitch)",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Two sources agree the peak has no easy route: one says there are at least three difficult and no easy routes to the summit, and an encyclopedia entry rates the easiest route class 5+. That contradicts the header grade 'Class 3-4', overview, pro_needs, hazards and the disciplines=['scrambling'] framing, but no source describes a 'Southwest Slopes/Ridge' line, the 5.6 open-book pitch, or gives a specific YDS grade to adopt. The row's scramble identity appears to be synthesized; it needs a re-author of the whole route (grade, overview, pro_needs, hazards, waypoint 'Class 4 Step', partner requirements), not a minimal patch. Recommend human review; do not publish as a Class 3-4 scramble.",
+    "sources": [
+     "https://www.summitpost.org/half-moon/153612",
+     "https://en.wikipedia.org/wiki/Half_Moon_(Washington)",
+     "https://www.mountainproject.com/area/120749906/half-moon"
+    ]
+   },
+   {
+    "file": "r160.json",
+    "fact": "Rope needed for the summit rappel",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The only rappel description found is that parties rappel and down-climb from the summit toward the first tower on the ridge; no source gives the rappel length, anchor, or rope needed. The 100-150 ft figure in descent_text is unsourced, so rope_length_m 30 vs a doubled 60 m cannot be settled. Depends on the unresolved grade question above.",
+    "sources": [
+     "https://www.summitpost.org/half-moon/153612"
+    ]
+   },
+   {
+    "file": "r160.json",
+    "fact": "Approach line to the base (over Kangaroo Pass vs talus ramp left of the pass)",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "One source describes both lines, but for DIFFERENT routes: the talus gully/ledge angling left from the last soggy meadow to the notch north of Half Moon is the approach for the North Ridge, while the South Face approach continues to Kangaroo Pass and traverses east below Wallaby's south slope to cross the ridge at a low point. Other pages copy that text. No source describes a 'Southwest' route, so which approach belongs to this row cannot be settled until the route itself is identified (see grade finding).",
+    "sources": [
+     "https://www.summitpost.org/half-moon/153612",
+     "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face"
+    ]
+   },
+   {
+    "file": "r160.json",
+    "fact": "Distance and time from the car to Kangaroo Pass",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Sources disagree: one page puts Kangaroo Pass 3 miles from the hairpin (2 miles to the route fork, 1 more to the pass); a trip report gives 4.4 miles round trip to Wallaby's summit via the pass (implying under ~2 mi to the pass); a hiking guide gives 6.0 miles round trip for Wallaby via the pass; a GPS trip report gives 3.54 mi round trip to the pass. No two agree on one figure, and none give the hiking time.",
+    "sources": [
+     "https://www.summitpost.org/half-moon/153612",
+     "https://onehikeaweek.com/2018/05/27/wallaby-peak/",
+     "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+     "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-11-3111130648"
+    ]
+   },
+   {
+    "file": "r160.json",
+    "fact": "Hairpin pullout position relative to Washington Pass",
+    "status": "fixed",
+    "correct_value": "Hairpin pullout is about 1 mile EAST of Washington Pass (~MP 163); Blue Lake trailhead is on the west side of the pass.",
+    "evidence": "One source puts the parking at the large hairpin pullout near milepost 163 directly below and east of South Early Winters Spire; a hiking guide says that traveling east, just after the Washington Pass crest the road makes a hairpin turn; a trip report labels it the Highway 20 hairpin turn just east of Washington Pass. The Blue Lake trailhead is reached from the east a little under a mile past the Washington Pass Overlook, i.e. west of the pass, so the hairpin cannot be 0.25 mi east of it.",
+    "sources": [
+     "https://www.summitpost.org/half-moon/153612",
+     "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+     "https://www.yellowleaf.org/scramble/g/r/2006-09-23-kangaroo.html",
+     "https://www.wta.org/go-hiking/hikes/blue-lake"
+    ]
+   },
+   {
+    "file": "r160.json",
+    "fact": "Summit time within the day",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Internally, summitTimeHrs (10.5) equals totalHrs and the itinerary's return-to-car time, while the itinerary summits at +6.5 hr, so summitTimeHrs holds the car-to-car total. No external source gives a summit time for this line to adopt. Recommend nulling timing.summitTimeHrs (the catalog's established repair for this class) rather than writing a computed number.",
+    "sources": []
+   },
+   {
+    "file": "r160.json",
+    "fact": "Dispersed camping stay limit",
+    "status": "fixed",
+    "correct_value": "14 consecutive days",
+    "evidence": "The forest's closure order prohibits camping or occupying a single location for longer than 14 consecutive days (renewed as a 2025 order with the same 14-day limit). A Washington camping guide gives national forest dispersed camping a 14-days-in-30 limit. No 10-day limit found.",
+    "sources": [
+     "https://www.fs.usda.gov/sites/nfs/files/r06/okanogan-wenatchee/publication/alerts/Order%2006-17-00-23-02%20camping%20restrictions%20on%20OkaWen%20&%20Colville%20NFs.pdf",
+     "https://explorewashingtonstate.com/free-camping-washington-state/"
+    ]
+   },
+   {
+    "file": "r160.json",
+    "fact": "Elevation of Kangaroo Pass",
+    "status": "fixed",
+    "correct_value": "6,671 ft (~6,670 ft)",
+    "evidence": "The approach prose says Kangaroo Pass is ~6,800 ft while the Kangaroo Pass waypoint says 6671. A hiking guide states the path reaches Kangaroo Pass at 6671 feet, and a separate trip report labels the pass 6671 on its route. The waypoint is correct; the approach figure is the outlier.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+     "https://onehikeaweek.com/2018/05/27/wallaby-peak/"
+    ]
+   },
+   {
+    "file": "r160.json",
+    "fact": "Distance from the hairpin pullout to the Blue Lake trailhead",
+    "status": "fixed",
+    "correct_value": "Blue Lake Trailhead is on the west side of Washington Pass, not a quarter mile from the hairpin.",
+    "evidence": "access.passRequired calls Blue Lake Trailhead 'a quarter mile away' from the hairpin. The Blue Lake trailhead is just under a mile west of the Washington Pass Overlook, and the hairpin is on the east side just after the pass crest, so they are on opposite sides of the pass (their coordinates are ~1.4 mi apart in a straight line).",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/blue-lake",
+     "https://www.wta.org/go-hiking/hikes/wallaby-peak-7995",
+     "https://www.summitpost.org/half-moon/153612"
+    ]
+   },
+   {
+    "file": "s016.json",
+    "fact": "Rope needed for the summit rappel",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Archived route pages for the peak's documented lines show every one is technical: South Face 5.9+ (or 5.7 A0) Grade III, five pitches; North Ridge 5.7+ Grade III, seven pitches; both recommend double ropes for the rappels and found no fixed anchors. The peak overview says there are at least three difficult and no easy routes. No source describes a southwest scramble, its rappel, anchor or length, so the 100-150 ft figure and the 30 m rope cannot be checked. Would settle: identifying the actual route this row describes (likely none exists as a scramble).",
+    "sources": [
+     "https://web.archive.org/web/2023/https://www.summitpost.org/half-moon/153612",
+     "https://web.archive.org/web/2023/https://www.summitpost.org/south-face/163682",
+     "https://web.archive.org/web/2023/https://www.summitpost.org/north-ridge/163686"
+    ]
+   },
+   {
+    "file": "s016.json",
+    "fact": "Approach line to the base (over Kangaroo Pass vs talus ramp left of the pass)",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Confirmed on the route pages themselves: the scree gully north of Half Moon from about 2 miles leads to the deep notch that is the base of the North Ridge, while the South Face approach goes over Kangaroo Pass and traverses east below Wallaby to cross the ridge into the basin south of the peak. Each approach belongs to a different documented route and neither page describes a southwest scramble, so which approach this row should carry cannot be settled. Would settle: identifying which documented route this row is.",
+    "sources": [
+     "https://web.archive.org/web/2023/https://www.summitpost.org/south-face/163682",
+     "https://web.archive.org/web/2023/https://www.summitpost.org/north-ridge/163686"
+    ]
+   },
+   {
+    "file": "s016.json",
+    "fact": "Distance and time from the car to Kangaroo Pass",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "One route page gives Kangaroo Pass as 3 miles from the hairpin; a 2021 hiker's GPS stats give 6.91 miles and 5 hours round trip to the pass (about 3.5 mi one way); another party reports 4.4 miles round trip to Wallaby's summit via the pass, which implies the pass is closer to 2 miles. The straight-line distance from the stored trailhead to the pass pin is about 1.3 mi. Figures range from ~2 to ~3.5 mi one way with no two agreeing, and no source gives a time to the pass. Would settle: a measured track to the pass from the hairpin.",
+    "sources": [
+     "https://web.archive.org/web/2023/https://www.summitpost.org/half-moon/153612",
+     "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-10-11-3111130648",
+     "https://onehikeaweek.com/2018/05/27/wallaby-peak/"
+    ]
+   },
+   {
+    "file": "s016.json",
+    "fact": "Summit time within the day",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "Already resolved: timing.summitTimeHrs is now null in the current row, so it no longer claims the car-to-car 10.5 hr as the summit time.",
+    "sources": []
+   }
+  ],
+  "siblings": [],
+  "row": {
+   "id": "wa_half_moon_southwest_slopes",
+   "area_id": "wa_half_moon",
+   "name": "Southwest Slopes / Standard Scramble",
+   "discipline": "alpine",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Helmy Beckey, Fred Beckey, and Walt Varney, June 17, 1942 (first ascent of the peak)",
+   "lat": null,
+   "lng": null,
+   "aspect": "SW",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "approach shoes or light boots",
+    "optional light rock rack"
+   ],
+   "hazards": [
+    "Loose blocks on the upper ridge, especially hazardous to parties below while descending",
+    "Lingering snow in the approach gullies and in the shaded notch north of Half Moon into early-mid July",
+    "Route-finding on broken, cairn-marked terrain through brush and talus below Kangaroo Pass, easy to lose in poor visibility",
+    "Short, low-exposure but unroped Class 4 step just below the summit"
+   ],
+   "verif": null,
+   "overview": "Half Moon is a crescent-shaped granite fin on the north half of Kangaroo Ridge, between Wallaby Peak (0.23 mi south, the peak's higher neighbor) and Big Kangaroo (8,326 ft) to the north. It sits about two miles east of, and in clear view from, the North Cascades Highway at Washington Pass. The rock is ~45-million-year-old rapakivi-textured granite of the Golden Horn batholith. Fred and Helmy Beckey, with Walt Varney, made the first ascent on June 17, 1942. There is no easy walk-up: at least three technical lines are known (Southwest Ridge, North Ridge, South Face), all involving sustained Class 3-4 scrambling with at least one low-5th-class move. This route takes the Southwest Ridge, generally regarded as the least difficult option, which finishes with a short, low-exposure Class 4 step just below the summit.",
+   "beta": "Half Moon is a SW-to-NE trending rock fin on Kangaroo Ridge between Wallaby Peak and Big Kangaroo, with solid, steep, crack-laden faces. Documented lines include the 1942 first-ascent (original) route, rated roughly Class 5+ (low 5th class) — the easiest known way to the summit — plus at least one modern route, Uncle Wehrly's Toupee (5.10-, trad), and at least 3 other difficult unnamed technical lines. None of these is a non-technical scramble.",
+   "turnaround": "As with other Washington Pass alpine granite objectives, set a turnaround time based on daylight, weather, and party pace rather than a fixed clock time — Cascades crest thunderstorms build in summer afternoons, and the peak's technical routes offer no easy retreat once committed.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 5+ (an older, unnumbered YDS class rating -- roughly a short, low-5th-class step above scrambling terrain, not a specific numeric grade)",
+   "ice_grade": null,
+   "gain_ft": 3200,
+   "loss_ft": 3200,
+   "dist_km": 12.87,
+   "max_angle": null,
+   "rappels": "1",
+   "commitment": "II",
+   "face": "Kangaroo Ridge, between Wallaby Peak and Big Kangaroo",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": null,
+   "descent": "Reverse the Southwest Ridge. Most parties avoid down-climbing the full lower ridge crest by dropping west into the obvious heather gully toward Early Winters Creek partway down.",
+   "obj_haz": [
+    "loose rock",
+    "exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5160,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "note": "Large paved pullout on Highway 20 just east of Washington Pass, below Liberty Bell/South Early Winter Spire; pick up cairns leading south through brush toward Early Winters Creek.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take Highway 20 to the large hairpin-turn pullout near milepost 163, just east of Washington Pass, at roughly 5,100 ft. It is a big paved pullout sitting below Liberty Bell and South Early Winter Spire, and it doubles as the trailhead for Kangaroo Pass. Park here and start from the east end of the lot, where cairns lead south through the brush toward Early Winters Creek."
+    },
+    {
+     "lat": 48.51845706666666,
+     "lng": -120.64115333333334,
+     "elev": 5660,
+     "name": "Early Winters Creek Clearing (Airplane Wreckage)",
+     "note": "Small clearing along Early Winters Creek scattered with old wreckage from a small-plane crash; last reliable water before the boot path climbs away from the creek.",
+     "type": "Water",
+     "distMi": 1,
+     "directions": "Drop into the woods from the east end of the pullout and pick up the unsigned but well-used climbers' path. It runs south, staying west of and well above Early Winters Creek; angling down toward the creek itself is the standard route-finding mistake on this stretch. Reaching the clearing at about a mile confirms you are still on line."
+    },
+    {
+     "lat": 48.51001413333333,
+     "lng": -120.63170666666667,
+     "elev": 6170,
+     "name": "Three-Route Fork below Kangaroo Pass",
+     "note": "Boot path splits toward Half Moon's three route options here; stay on the Southwest Ridge line rather than continuing straight up to the Kangaroo Pass notch.",
+     "type": "Junction",
+     "distMi": 2,
+     "directions": "Above the clearing the path climbs through boulder fields and slab benches marked only by intermittent cairns, and the tread all but disappears on the slabs — this is the hardest stretch to follow in fog or fresh snow. It also crosses the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak, which is a hazard in early season or after new snow and is better crossed early than once the slope has baked in the sun."
+    },
+    {
+     "lat": 48.50157,
+     "lng": -120.62226,
+     "elev": 6671,
+     "name": "Kangaroo Pass",
+     "note": "Broad saddle on Kangaroo Ridge shared with approaches to Wallaby Peak and Big Kangaroo; gain the ridge here and traverse toward Half Moon's southwest side.",
+     "type": "Junction",
+     "distMi": 3
+    },
+    {
+     "lat": 48.50737826,
+     "lng": -120.6161203,
+     "elev": 7800,
+     "name": "Class 4 Step below the Summit",
+     "note": "A short, exposed Class 4 slab step breaks up the otherwise Class 3 Southwest Ridge just below the top; loose blocks reported, test holds before committing.",
+     "type": "Hazard",
+     "distMi": 3.7,
+     "directions": "From the pass, contour east below Wallaby's south slopes, staying just under the crest, until you can cross back over the ridge at a low notch north of Half Moon into the basin on its southwest side. That drops you at the foot of the broad southwest gully, which starts as Class 2-3 talus and loose scree where rockfall from any party above you is the real danger. Higher up the gully narrows and steepens onto cleaner rock."
+    },
+    {
+     "lat": 48.509867,
+     "lng": -120.613489,
+     "elev": 7960,
+     "name": "Half Moon Summit",
+     "note": "Crescent-shaped granite high point of Kangaroo Ridge climbing, first ascended June 17, 1942 by Fred and Helmy Beckey with Walt Varney.",
+     "type": "Summit",
+     "distMi": 4
+    },
+    {
+     "elev": 7000,
+     "name": "Heather Gully Descent Cutoff",
+     "note": "Partway down the ridge, cut west off the rock into a steep heather-and-dirt gully dropping directly toward Early Winters Creek; loose footing and easy to lose the boot path in poor visibility.",
+     "type": "Hazard",
+     "distMi": 4.4
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 10.5,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10.5,
+      "note": "A long roadside day, no camp: from the Hwy 20 Hairpin pullout near Washington Pass, follow cairns/boot path through brush staying above Early Winters Creek toward Kangaroo Pass, th…",
+      "fromTo": "Car-to-car scramble via Kangaroo Pass approach",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "helmet",
+    "ice axe (early season)",
+    "map and compass/GPS"
+   ],
+   "pro_tips": [
+    "At the ~2-mile fork below Kangaroo Pass, commit to SW Ridge vs. North Ridge vs. South Face before continuing — they diverge substantially and re-routing costs real time",
+    "On descent, cut west into the heather gully partway down the ridge to avoid down-climbing the full lower Southwest Ridge crest",
+    "Choi Oi and Hai Towers on the ridge can be combined with the day if conditions and time allow"
+   ],
+   "watch_out": [
+    "Loose rock while descending — stay close as a party and warn climbers below before moving over any suspect block",
+    "Snow filling the approach gullies/notch into early July can force a postponed attempt or require an axe",
+    "The boot path below Kangaroo Pass is unmaintained and cairn-marked only; easy to lose track of in brush or low visibility"
+   ],
+   "pro_needs": "Mostly unroped Class 3-4; a short rope and a few small cams/slings are useful for the exposed summit blocks.",
+   "best_season": "Reliable window is mid-summer through early fall (roughly July–September) once snow clears the approach gullies and the shaded notch north of Half Moon, which can hold snow into early-mid July in heavy-snowpack years. Access is also gated by Highway 20's seasonal opening over Washington and Rainy Passes — normally mid/late April through late November or early December, though closures/openings vary year to year (in 2026, winter storm damage delayed the opening to June 14, tying 1974 for the latest season-opening on record).",
+   "high_point_ft": 7960,
+   "aid_grade": null,
+   "approach": "Park at the large Hairpin Turn pullout on Highway 20 near milepost 163 (roughly 5,100 ft), just east of Washington Pass — this doubles as the trailhead for Kangaroo Pass. From the east end of the pullout, drop into the woods and pick up the unsigned but well-used climbers' path (no official trail number; this is the standard Kangaroo Ridge/Wallaby/Half Moon approach). The path runs south, staying west of and well above Early Winters Creek — do not angle down toward the creek itself, a common route-finding mistake. Around 1 mile in you pass a small clearing near the creek where old small-plane wreckage is still visible, a useful landmark that you're on line. Beyond this the path climbs through boulder fields and slab benches with intermittent cairns (route-finding gets genuinely tricky here in fog or fresh snow — the tread all but disappears on the slabs), crossing the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak; this slope is a hazard in early-season or after fresh snow and should be crossed with care or avoided later in the day once it's baked in the sun. The path gains the ridge at Kangaroo Pass (~6,670 ft, about 1.5-2 miles and roughly an hour of hiking from the car). From the pass, contour east below Wallaby's south slopes, staying just below the crest, until you can cross over the ridge at a low notch north of Half Moon into the basin on its southwest side — this puts you at the base of the broad southwest gully/slopes that give the route its name. Water is only reliably available near Early Winters Creek in the first mile; carry what you need above the pass. From the base of the gully, the route climbs class 2-3 talus and loose scree — rockfall is a real concern with any party above you — before the gully narrows to a steeper class 4 step of cleaner rock roughly midway up; above that, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins.",
+   "descent_text": "Descend by reversing the ascent line rather than continuing over the ridge. From the summit, downclimb back to the flat belay ledge about 200 ft below the top; this is where the route's one unavoidable technical bit lives — an open-book crack beside a 60-degree slab (roughly a 60 ft 5.6 pitch on the way up). Most parties do not downclimb this: rappel from slung webbing around a large block on the southwest side of the peak just below the summit to get back down past this section. This is a natural gear/block anchor, not bolted — inspect any existing tat before trusting it and back it up if it looks tired. A single rappel here is on the order of 100-150 ft, so a 60 m rope (doubled) covers it comfortably, and a 30 m single-strand rappel is enough if you stop at the first good ledge/stance; parties differ on exactly where they break it depending on rope length carried, but one rappel is the norm to clear the crux. Below the rappel, continue down the loose class 2-3 southwest gully, taking care with scree and rockfall onto anyone below. Rather than downclimbing the full lower southwest ridge, most parties drop west off the crest partway down into the obvious heather gully, which avoids the worst of the loose rock in the lower gully. From there, cross back over the low notch/ridge point into the basin below Wallaby's south slopes, contour west back to Kangaroo Pass, and descend the climbers' path back through the boulder fields and across the avalanche path to the Hairpin Turn pullout.",
+   "bail": "Retreat is straightforward down the southwest slopes at almost any point.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Approach talus is described as best done with snow cover in early spring, or after it melts out by July, since bare talus is exposed and leg-breaking.",
+    "days": [
+     {
+      "n": 1,
+      "note": "A long roadside day, no camp: from the Hwy 20 Hairpin pullout near Washington Pass, follow cairns/boot path through brush staying above Early Winters Creek toward Kangaroo Pass, then break off into the talus gully/ledge system left of the pass that angles up to the notch north of Half Moon. From the notch, scramble the final rock to the summit fin. Descend by reversing the ridge and dropping into the heather gully back toward Early Winters Creek to avoid down-climbing the full lower ridge crest.",
+      "hours": 10.5,
+      "miles": 8,
+      "title": "Car-to-car scramble via Kangaroo Pass approach",
+      "gainFt": 3200,
+      "lossFt": 3200,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave Hairpin pullout (Hwy 20, ~MP 163)",
+        "detail": "Brush/boot path staying west of and above Early Winters Creek."
+       },
+       {
+        "time": "+2.5 hr",
+        "label": "Cross the last soggy meadow below Kangaroo Pass",
+        "detail": "Begin ascending toward the pass; watch for the talus gully breaking off left."
+       },
+       {
+        "time": "+4 hr",
+        "label": "Enter the talus gully/ledge system",
+        "detail": "Loose, leg-breaking talus when snow-free; angles back to the notch north of Half Moon."
+       },
+       {
+        "time": "+5.5 hr",
+        "label": "Reach the notch and start the summit scramble",
+        "detail": "Class 3-4 rock on the fin between Wallaby and Big Kangaroo."
+       },
+       {
+        "time": "+6.5 hr",
+        "label": "Summit",
+        "detail": "Views across Kangaroo Ridge to Liberty Bell and the Washington Pass corridor."
+       },
+       {
+        "time": "+10.5 hr",
+        "label": "Back at the Hairpin pullout",
+        "detail": "Descent reverses the route, dropping into the heather gully near the bottom to bypass the lower ridge crest."
+       }
+      ],
+      "objective": "Summit Half Moon and return to the Hairpin trailhead"
+     }
+    ],
+    "totalNote": "A long single-day scramble car-to-car: roughly 8 miles round trip with about 3,200 ft of gain, typically 9-11 hours for a fit party; no camping is involved."
+   },
+   "access": {
+    "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 14 consecutive days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "None required for day climbing",
+    "closures": "Approach is only accessible when SR 20 (North Cascades Highway) is open over Rainy and Washington Passes, roughly mid/late April through late November or early December in a typical year; check WSDOT's mountain pass report before driving, since dates vary and can be delayed by storm damage (as in 2026, when repairs pushed the opening to June 14).",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "No fee is collected at the informal Hairpin Turn highway pullout itself, but carrying a Northwest Forest Pass or America the Beautiful/Interagency pass is recommended — it's required at the developed Blue Lake Trailhead on the west side of Washington Pass.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+    }
+   },
+   "road": {
+    "name": "North Cascades Highway (SR 20)",
+    "status": "Open seasonally; closed by WSDOT for winter avalanche/storm risk between roughly late November and mid/late April",
+    "driveNote": "The Hairpin Turn pullout used for the Half Moon approach is at approximately milepost 163, about 1 mile east of Washington Pass, where the highway makes its big switchback below Liberty Bell and the Early Winters Spires.",
+    "seasonalGate": "Winter closure points are typically near the Ross Dam trailhead (MP134) on the west and Silver Star (MP171) on the east, sometimes retreating further to Newhalem (MP120)/Early Winters (MP178) gates in deep winter"
+   },
+   "climate": {
+    "fall": "Cooling but often stable dry spells continue through September before early-season snow returns.",
+    "spring": "Snow lingers on the approach into June; the access highway itself often isn't open until mid-to-late April.",
+    "summer": "Warm and dry; July-August are the most reliable snow-free months for climbing.",
+    "winter": "Highway closed; deep snow and avalanche terrain make this a non-objective in winter.",
+    "typical": "High, dry-summer East Cascades alpine climate: warm days with real afternoon thunderstorm potential and cold nights at this elevation; snow can linger in the approach gullies and shaded north notch into early-mid July.",
+    "bySeason": {
+     "fall": "Late-season (late Sep–Oct) can bring clear, stable weather but a shorter daylight window and colder nights; an early snowfall can end the season abruptly.",
+     "summer": "Jul-Sep is the reliable weather and snow-free window; check current conditions before early-July attempts."
+    },
+    "forecastZone": "NWAC maintains a Washington Pass weather station for on-the-ground mountain weather; the area falls within NWS zone WAZ523 (Lower Slopes of the Eastern Washington Cascades Crest) for point forecasts."
+   },
+   "emergency": {
+    "notes": "Access depends entirely on SR 20 being open for the season; plan for slow/no cell signal on route and treat a vehicle at the Hairpin Turn pullout as the nearest reliable point to call out from.",
+    "county": "Okanogan",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest — 24 W Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+    "nearestHospital": "Mid-Valley Hospital, 810 Jasmine St, Omak, WA — roughly 65 road miles via SR-20 through Winthrop; Three Rivers Hospital in Brewster is a comparable distance. Both are well over an hour's drive, and cell coverage in the Kangaroo Ridge basin is unreliable.",
+    "sheriffDispatch": "911 — Okanogan County Sheriff's Office dispatches; Aero Methow Rescue Service (based in Twisp/Winthrop) provides EMS transport and technical/high-angle rescue for the Methow Valley area in partnership with County Search & Rescue"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed - occasional weekend party July-August; no easy route on this summit keeps volume low compared to neighboring Liberty Bell/Blue Lake objectives",
+    "solitudeRating": 4,
+    "estimatePerSeason": "unknown - low-traffic; likely well under 20 parties per season"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strenuous cross-country approach (several miles, brush and talus, no maintained trail) from the SR-20 hairpin pullout up toward Kangaroo Pass basin before the climb even starts",
+     "packWeight": "Light day-climbing pack (helmet, layers, water) - not an overnight-weight approach"
+    },
+    "approachTime": "Multi-hour, off-trail approach (roughly half a day) from the North Cascades Highway to the base of the route",
+    "requiredSkills": [
+     "Class 3-4 scrambling movement",
+     "route-finding on broken/unmarked terrain",
+     "loose-rock/rockfall management, especially with parties below",
+     "basic self-arrest/steep talus and gully travel judgment",
+     "afternoon-storm turnaround discipline"
+    ],
+    "experienceLevel": "Solid Class 3-4 scrambling experience with comfort on loose, broken alpine rock and exposed ridge terrain; prior route-finding on unmarked, off-trail terrain strongly recommended"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-to-late July through August, once the approach gullies have shed their snow; tapering into a good but shortening window in September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow generally cleared from approach gullies and upper ridge; dry rock is the best window, though afternoon thunderstorms are possible",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Approach gullies typically still hold snow into early summer; highway may only recently have reopened",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Most reliable dry-rock conditions of the season; watch for typical afternoon convective storms",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Cool and stable early in the month, but snow can return by late September, so late-season attempts carry more risk",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "High alpine eastside conditions - drier than the west-slope Cascades but fully exposed once above treeline",
+     "probability": "Afternoon thunderstorms are a recognized hazard on this route; plan for an early start and be off the exposed ridge before storms build"
+    },
+    "exposure": "Sustained exposure on a broken, loose upper ridge; the existing beta's warnings about loose blocks above other parties and route-finding on broken terrain mean a slip or dislodged rock has serious consequences, particularly with multiple parties on route",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route (nearest NWAC zone is East Slopes North, but this route is only climbed as a dry-season scramble, not a winter/spring snow objective)",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No confirmed date/FA credit for the Southwest Ridge line specifically — only the peak's overall 1942 FA (via presumably the SW or S side) is documented",
+     "No published rack/pro recommendation for the Class 4 summit step",
+     "No verified GPS track or waypoints for the ~2-mile route-fork or the ridge line itself",
+     "Distance/elevation-gain figures for the SW Ridge specifically (vs. the 3-mile South Face approach) are not precisely documented in available sources",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.50981,
+    "peakLng": -120.613587,
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332,
+    "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft), via the cairned climbers' paths"
+   },
+   "sling_rack": {
+    "nuts": "small stopper set (optional)",
+    "runners": "2-3 slings"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic (optional)",
+   "rope_length_m": 30,
+   "rope_note": "Half Moon is a rock fin on Kangaroo Ridge surrounded by 5.6-5.10 routes; the 'standard scramble' approach crosses Class 3-4 terrain with short exposed steps where a rope is commonly carried for protection/rappel.",
+   "ascender": null,
+   "corrections": "No dedicated trip report found describing this exact scramble line; inferred from the peak's known rock character and adjacent route grades.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Hairpin pullout and the ramp to the notch north of Half Moon",
+     "notes": "Park at the large pullout on the hairpin near milepost 163 and take the unsigned climbers' path south, staying west of and well above Early Winters Creek — angling down toward the creek is the standard error here. Around a mile in, a small clearing near the creek holds the remains of an old light aircraft, a useful confirmation that you are on line. Beyond it the path crosses boulder fields and slab benches with occasional cairns and all but disappears on the slabs. Rather than going right over Kangaroo Pass, cross the last soggy meadow before the trail rears up for the pass and look left: a talus gully, slope and ledge system angles back toward the notch immediately north of Half Moon, and crossing at that notch drops you into the basin on the fin's southwest side.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "The avalanche path shedding off the col between South Early Winters Spire and Cornice Peak",
+      "Loose scree and rockfall in the southwest gully with any party above",
+      "Cairns and tread vanish on the slab benches in fog or fresh snow",
+      "No water above the first mile"
+     ],
+     "baseFinding": "HALF MOON IS A FIN, AND THAT IS HOW YOU KNOW YOU ARE UNDER IT. It is a thin, crescent-shaped rock blade trending southwest to northeast, sitting between Wallaby Peak to the south and Big Kangaroo to the north; a broad blocky summit mass with a wide gully splitting it is Wallaby, not this. Aim for the notch immediately NORTH of the fin, gained by the talus ramp that angles back from the meadow below Kangaroo Pass, and cross there into the basin on the southwest side. The route begins at the foot of the broad gully draining that southwest flank. Climb loose class 2-3 talus and scree until the gully pinches down to a short step of noticeably cleaner, more solid rock about halfway up — that step is your confirmation you are in the right gully rather than a neighbouring one. Above it, scrambling reaches a flat belay ledge about 200 ft below the true summit, where the short technical finish starts."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "2-3",
+     "label": "Lower southwest gully",
+     "notes": "From the base of the gully, class 2-3 talus and loose scree — rockfall is a real concern with any party above you."
+    },
+    {
+     "n": 2,
+     "class": "4",
+     "label": "Narrow class 4 step",
+     "notes": "Roughly midway up, the gully narrows to a steeper class 4 step of cleaner rock."
+    },
+    {
+     "n": 3,
+     "label": "Scramble to the belay ledge",
+     "notes": "Above the step, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+     "role": "main",
+     "type": "camp",
+     "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangaroo, Poster Peak and the crags immediately above the highway, while the broad pullout further east sits at roughly 4,300 ft and serves the M&M Wall, the Wine Spires and Vasiliki Ridge. Elevations across these pullouts run from about 4,300 ft up to near the 5,477 ft pass, so nights are cool even in midsummer. Nothing is developed — no toilet, no table, no water — and highway noise carries.",
+     "water": "None at either pullout. Carry everything, or filter from Early Winters Creek where the Wine Spires climbers' trail crosses it.",
+     "permit": "Okanogan-Wenatchee National Forest — no quota permit and no reservation of any kind. A Northwest Forest Pass covers day-use parking at the fee trailheads; sleeping in a vehicle at a pullout needs no separate permit, and the general 14-day stay limit applies.",
+     "capacity": "Informal; a handful of vehicles at each pullout, with the hairpin lot the largest and busiest on summer weekends"
+    },
+    {
+     "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+     "role": "main",
+     "type": "camp",
+     "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone Fir around 3,600 ft, Early Winters near 2,200 ft — so they are warmer and considerably lower than the climbing, and Lone Fir is about seven miles from the Blue Lake area. Klipchuck sits back off the highway and is the quietest of the three. All are seasonal and closed when the road is.",
+     "water": "Klipchuck and Early Winters have drinking water in season, shut off outside it. Lone Fir has none, but sits on Early Winters Creek, which needs filtering.",
+     "permit": "Fee per night, first-come first-served at all three — no reservations, no climbing or backcountry permit. A Northwest Forest Pass is not needed to occupy a site. Fourteen-day stay limit.",
+     "capacity": "Roughly 27 sites at Lone Fir, 46 at Klipchuck and about a dozen tent-only sites at Early Winters"
+    },
+    {
+     "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Kangaroo Temple in a day. Some do carry up and sleep near the tarn to get an early start on a longer link-up, so the practice exists even though it is not recommended. If you go, use bare ground well away from the meadow and expect the tarn to be a dry hollow after midsummer. The pass's elevation is uncertain, so plan on a cold, exposed camp rather than a specific number.",
+     "water": "A small tarn below the pass is the only source and it commonly dries out by late summer and autumn. Treat it as unreliable and carry water from the road.",
+     "permit": "None required — Okanogan-Wenatchee National Forest, outside any quota area. Leave-no-trace practice is the only constraint, and it is a real one here.",
+     "capacity": "A few small parties at most, on the flats south of the pass; the ground is fragile"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_mount_hardy_snow_scramble",
+  "name": "Southwest Slopes (Snow/Scramble)",
+  "area": {
+   "id": "wa_mount_hardy",
+   "name": "Mount Hardy",
+   "parent_id": "wa_sub_wapass",
+   "elevation_ft": 8097,
+   "lat": 48.581898,
+   "lng": -120.755232
+  },
+  "prior_findings": "Breakdown/beta follow the short Swamp Creek south ridge; the rest of the row is the long Rainy Pass / Methow Pass approach. Pick one line or split.",
+  "earlier_research": [
+   {
+    "file": "r243.json",
+    "fact": "Which line the route describes",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The south-side line from the Swamp Creek pullout (brushy forest, stay climber's right of the ~5,200 ft cliff bands, leave the ridge ~7,200 ft for a notch and summit gully) is the standard short route documented as Mount Hardy's South Face/South Ridge (~4-4.5 mi, ~4,100-4,200 ft); ROUTE BREAKDOWN and beta match it and approach_variants marks it primary. APPROACH, waypoints, itinerary, timing, CLIMBING ROUTE, DESCENT, gain_ft and dist_km instead describe the long Rainy Pass PCT / Methow Pass / southeast-slope approach, which is also a documented way up. Reconciling means choosing one line for the whole row and rewriting many fields (or re-splitting into two routes) — not a minimal patch; left for an owner decision.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mount-hardy-south-face",
+     "https://trailcatjim.com/mount-hardy-upper-methow-mountains-2/",
+     "https://trailcatjim.com/mount-hardy-upper-methow-mountains/"
+    ]
+   },
+   {
+    "file": "r243.json",
+    "fact": "Granite Pass elevation",
+    "status": "fixed",
+    "correct_value": "Granite Pass ~6,300 ft",
+    "evidence": "One trail write-up gives Granite Pass as 6,300 ft; another gives 6,270 ft. Both agree with the camp card (6,300) and put the pass roughly 500 ft below Cutthroat Pass, so the approach's '~6,700 ft' and 'drops slightly' are wrong.",
+    "sources": [
+     "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes",
+     "https://musthikemusteat.com/sr-20-north-cascade-hwy/snowy-lakes/"
+    ]
+   },
+   {
+    "file": "r243.json",
+    "fact": "Water at Cutthroat Pass / Porcupine Creek",
+    "status": "fixed",
+    "correct_value": "No water at Cutthroat Pass; Porcupine Creek (~mile 2) is the last reliable water, then a dry 7-8 miles over Cutthroat and Granite Passes",
+    "evidence": "A PCT section description says to fill up at the Porcupine Creek crossing (mile 2) and carry water for at least 7-8 miles, with no water noted at Cutthroat or Granite Pass. A Cutthroat Pass trail guide says there are no water sources at the pass and the Porcupine Creek area is the last good water. The 7-8 miles is the dry stretch onward toward Snowy Lakes, not the ~3 miles up to Cutthroat Pass.",
+    "sources": [
+     "https://pctwashington.com/descriptions/section_l1",
+     "https://explorenborgen.com/cutthroat-pass-north-cascades/"
+    ]
+   },
+   {
+    "file": "r243.json",
+    "fact": "Snowy Lakes side trail: up or down",
+    "status": "fixed",
+    "correct_value": "The 0.8-mile side trail climbs (~500 ft) from the PCT to the lakes",
+    "evidence": "Several trail guides describe the Snowy Lakes spur as climbing: well-graded switchbacks up to Lower then Upper Snowy Lake, a gain of 500+ ft in about half a mile, and 'short and steep' on scree. This agrees with the waypoint elevations and itinerary; the 'descend' wording in two waypoint texts is wrong.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/golden-horn",
+     "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes",
+     "https://www.theoutbound.com/washington/backpacking/camp-at-snowy-lakes"
+    ]
+   },
+   {
+    "file": "r243.json",
+    "fact": "When SR-20 opens",
+    "status": "fixed",
+    "correct_value": "SR 20 typically reopens mid/late April to early May and closes late November to mid December",
+    "evidence": "A regional tourism update relaying the highway's pattern says spring reopening is usually accomplished by early May and avalanches typically close it between late November and mid December. A news explainer says it typically reopens mid-to-late April or early May (recent years April 19-20, 2023 May 10) and shuts in late November or early December. The approach's and trailhead card's 'late May/June through October' is therefore too narrow on both ends, and 'typically just reopened' in June is wrong.",
+    "sources": [
+     "https://www.bellingham.org/update-on-sr-20-north-cascades-highway",
+     "https://www.kiro7.com/news/local/when-will-north-cascades-highway-reopen/SH5LSVS4SNBCLDUA6VTLRSC2FY/"
+    ]
+   },
+   {
+    "file": "r243.json",
+    "fact": "Wilderness permit",
+    "status": "fixed",
+    "correct_value": "No overnight or wilderness permit on the Rainy Pass PCT approach; only a parking pass",
+    "evidence": "One backpacking guide states no overnight permit is needed to camp at Snowy Lakes, only a Northwest Forest Pass for parking; another trip write-up lists only the Northwest Forest Pass. The row's permit, access and camp fields all agree, so the partner skill asking for permit self-issue know-how is the outlier and is removed.",
+    "sources": [
+     "https://www.theoutbound.com/washington/backpacking/camp-at-snowy-lakes",
+     "https://wefoundadventure.com/backpacking/cutthroat-pass-to-snowy-lakes"
+    ]
+   },
+   {
+    "file": "t125.json",
+    "fact": "Snowy Lakes turnoff relative to Methow Pass",
+    "status": "bivy_zone_list",
+    "correct_value": null,
+    "evidence": "The only dissenting field is bivy[1] (the Methow Pass meadow camp card), which places the lakes path about a mile beyond Methow Pass; the waypoints, approach, itinerary and approach variant all put the Snowy Lakes turnoff (about 6,200 ft) before Methow Pass northbound, matching a trip report that reached Methow Pass by returning from the lakes camp. The camp card belongs to the camping clean-up; no patch.",
+    "sources": [
+     "https://trailcatjim.com/mount-hardy-upper-methow-mountains/"
+    ]
+   },
+   {
+    "file": "t125.json",
+    "fact": "Day-2 elevation from camp to Methow Pass and summit",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "The figures are cumulative gain, not net elevation differences: from Upper Snowy Lake (~6,900 ft) the route drops to the PCT turnoff (~6,200 ft) and then climbs ~350-400 ft to Methow Pass, and the off-trail leg undulates, giving ~1,850 ft cumulative for ~1,500 ft net. The same numbers (+350 ft camp to pass, +1,850 ft pass to summit) are recorded in a trip report of this exact itinerary.",
+    "sources": [
+     "https://trailcatjim.com/mount-hardy-upper-methow-mountains/"
+    ]
+   },
+   {
+    "file": "t125.json",
+    "fact": "Last reliable water",
+    "status": "bivy_zone_list",
+    "correct_value": null,
+    "evidence": "The only dissenting field is bivy[2].water (Cutthroat Pass camp card, 'roughly three miles'); the waypoint puts Porcupine Creek at mile 2. A PCT hike guide puts the last good water at the Porcupine Creek waterfall/crossing about 2.5 mi up. Camp card owned by the camping clean-up; no patch.",
+    "sources": [
+     "https://explorenborgen.com/cutthroat-pass-north-cascades/"
+    ]
+   },
+   {
+    "file": "t125.json",
+    "fact": "Rainy Pass trailhead parking type",
+    "status": "fixed",
+    "correct_value": "Rainy Pass PCT north trailhead is a developed parking lot (short access road, vault toilets) on the north side of SR 20; Swamp Creek is a highway pullout.",
+    "evidence": "The PCTA trailhead/trip pages describe a short access road on the north side of Highway 20 to a fairly large parking lot with vault toilets, the PCT running through the lot. A separate hike guide describes two pit toilets at the trailhead lot (with overflow cars lining the road in larch season). Only access.permit called it informal shoulder parking.",
+    "sources": [
+     "https://explore.pcta.org/trips/rainy-pass-to-cutthroat-pass",
+     "https://explore.pcta.org/trailheads/rainy-pass-north-trailhead",
+     "https://explorenborgen.com/cutthroat-pass-north-cascades/"
+    ]
+   }
+  ],
+  "siblings": [],
+  "row": {
+   "id": "wa_mount_hardy_snow_scramble",
+   "area_id": "wa_mount_hardy",
+   "name": "Southwest Slopes (Snow/Scramble)",
+   "discipline": "mountaineering",
+   "grade": "Class 2-3 + snow",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Sidney Schmerling and Hermann Ulrichs, 1933 (first recorded ascent of the peak, via this standard southwest line)",
+   "lat": null,
+   "lng": null,
+   "aspect": "SW",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "ice axe",
+    "crampons (early season/snow gully)",
+    "helmet"
+   ],
+   "hazards": [
+    "long, mostly off-trail approach via the PCT (Rainy Pass - Cutthroat Pass - Granite Pass - Methow Pass, then cross-country to the peak)",
+    "loose scree, talus, and blocky rock on the unmarked upper route, especially near the summit saddle and final gully",
+    "lingering snow and possible wet-slide/sluff activity on north-facing terrain and the Swamp Creek route's ~40-degree snow finger into early summer",
+    "cliff bands near 5,200 ft on the Swamp Creek approach ridge requiring correct routefinding (stay climber's right)",
+    "afternoon thunderstorms and rapid weather changes on the exposed ridge crest and passes",
+    "wildfire smoke can reduce visibility and air quality in late summer (Aug-Sept)",
+    "SR 20 closes seasonally for avalanche danger, roughly early Dec-Apr/May, cutting off road access to both trailheads entirely"
+   ],
+   "verif": null,
+   "overview": "Mount Hardy (8,099 ft, or 8,097 ft depending on the survey, within normal survey variance) sits in the Okanogan Range of the North Cascades above the headwaters of the Methow River, just west of Methow Pass on the Pacific Crest Trail and ~1.75 miles southwest of taller neighbor Golden Horn (8,366 ft). It's composed of rapakivi-textured Golden Horn batholith granite (same body as Golden Horn, Tower Mountain and Azurite Peak) and is a prominent, easily-seen summit from SR 20 between Washington and Rainy Passes. Sidney Schmerling and Hermann Ulrichs made the first recorded ascent in 1933; the name was officially adopted in 1973.",
+   "beta": "The standard approach ascends the south ridge via brushy forest to the base of the ridge, then follows the ridge upward while staying climber's right to avoid cliff bands at mid-elevations. From approximately 7,200 feet, leave the ridge and scramble loose scree and granite blocks on the east side to reach a notch below the summit block. From the notch, traverse left and scramble a shallow gully to reach the summit. Snow extends the hiking window and covers loose talus early in the season.",
+   "turnaround": "Given the long approach on the PCT route, set an early-afternoon turnaround for the summit push to avoid the common afternoon thunderstorm window on the exposed ridge and passes.",
+   "auto_generated": true,
+   "alpine_grade": "Class 2-3",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 5950,
+   "loss_ft": 5950,
+   "dist_km": 21.3,
+   "max_angle": 45,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "Southwest Slopes",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "Cell service is unreliable at the Highway 20 pullout and nonexistent above the forest line. Sat-comm devices (InReach, Spot) recommended for emergencies. Highway 20 is closed seasonally, typically from December through April, depending on snow conditions.",
+   "descent": "Reverse the ascent line: down-climb the scree/talus slopes to the saddle and Methow Pass, then hike out the PCT over Granite and Cutthroat Passes to the Rainy Pass trailhead. Parties using the Swamp Creek line can glissade the upper snow slopes early season when stable, watching for wet-slide/sluff activity on the steep finishing pitch.",
+   "obj_haz": [
+    "loose rock/scree/talus",
+    "residual snow/ice on approach slopes into early summer",
+    "afternoon thunderstorms",
+    "remote, long approach with no maintained trail on the final scramble"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5181,
+     "lng": -120.7331,
+     "elev": 4880,
+     "name": "Rainy Pass North Trailhead (PCT)",
+     "note": "Large paved lot on the north side of SR 20 at Rainy Pass; Northwest Forest Pass or Interagency Recreation Pass required for day use.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive SR 20 to Rainy Pass and park in the large paved lot on the north side of the highway. A Northwest Forest Pass or Interagency pass is needed for day use. The highway sits inside WSDOT's winter closure zone, so access typically runs late April or May through November depending on snowpack."
+    },
+    {
+     "lat": 48.538183,
+     "lng": -120.725159,
+     "elev": 5300,
+     "name": "Porcupine Creek crossing",
+     "note": "Last reliable, easy water before a long dry 7-8 mile stretch over Cutthroat and Granite Passes — top off here.",
+     "type": "Water",
+     "distMi": 2,
+     "directions": "Head north on the Pacific Crest Trail, climbing steadily through subalpine forest and larch parkland for about 2 miles to the creek. Fill up here, because it is the last easy water before a long dry stretch of switchbacks."
+    },
+    {
+     "lat": 48.55458,
+     "lng": -120.70011,
+     "elev": 6834,
+     "name": "Cutthroat Pass",
+     "note": "PCT crosses the Skagit/Okanogan county line here; a side trail drops east to Cutthroat Lake while the route continues north on the PCT.",
+     "type": "Junction",
+     "distMi": 5,
+     "directions": "Keep climbing north on the PCT for roughly another 3 miles and 1,500 ft of switchbacks to the pass, about 2 to 2.5 hours from the car at a hiking pace. Snow can linger in the north-facing gullies near the pass into early summer."
+    },
+    {
+     "lat": 48.56110573389831,
+     "lng": -120.70775150169491,
+     "elev": 6200,
+     "name": "Snowfield past Granite Pass",
+     "note": "Trail descends ~700 ft from Cutthroat Pass to this saddle; a steep snowfield just beyond the pass often lingers into August and has caused slide-for-life falls — carry an ice axe early season.",
+     "type": "Hazard",
+     "distMi": 6.4,
+     "directions": "Continue north as the trail drops about 700 ft toward the saddle beyond Granite Pass. A steep snowfield just past the pass often lasts into August and has caused slide-for-life falls, so carry an axe if you are here early in the season."
+    },
+    {
+     "lat": 48.585667,
+     "lng": -120.719997,
+     "elev": 6500,
+     "name": "Snowy Lakes Trail junction",
+     "note": "Leave the PCT here and climb west on the 0.8-mile Snowy Lakes side trail toward the basin below Tower Mountain and Golden Horn.",
+     "type": "Junction",
+     "distMi": 9.5,
+     "directions": "Stay on the PCT as it contours across open, sparsely treed slopes to Snowy Creek Meadow, a common water and camp stop. The side trail leaves the PCT here."
+    },
+    {
+     "lat": 48.592704,
+     "lng": -120.722615,
+     "elev": 6900,
+     "name": "Upper Snowy Lake basin",
+     "note": "Established camp on the upper lake ringed by Tower Mountain and Golden Horn; standard base camp for the Hardy climb, treat lake water before drinking.",
+     "type": "Campsite",
+     "distMi": 10.3,
+     "directions": "Climb west on the 0.8-mile Snowy Lakes side trail into the basin under Tower Mountain and Golden Horn. Camp on the rocky bench above the upper lake; treat the lake water."
+    },
+    {
+     "lat": 48.58208,
+     "lng": -120.73233,
+     "elev": 6591,
+     "name": "Methow Pass",
+     "note": "Open plateau at the PCT's crossing of the Cascade Crest just east of Hardy; leave the trail here and head cross-country up the scree/talus benches on Hardy's southeast slope.",
+     "type": "Junction",
+     "distMi": 10.9,
+     "directions": "Drop back down the side trail to Snowy Creek Meadow and rejoin the PCT northbound, then follow it roughly 1 to 1.5 miles and about 350 ft of gain, around an hour, to the open plateau at the pass."
+    },
+    {
+     "lat": 48.5816962,
+     "lng": -120.7555432,
+     "elev": 8097,
+     "name": "Mount Hardy summit",
+     "note": "Class 2-3 scramble up sand/scree/talus benches to a saddle then a short south-face rock step to the summit block; views of Golden Horn, Tower Mtn, and the Methow River headwaters.",
+     "type": "Summit",
+     "distMi": 11.8,
+     "directions": "Leave the trail and travel off-trail west and southwest through open heather and talus benches toward the east ridge. Gain the ridge and follow moderate sand, scree and talus, loose in places and with real route-finding, up to the saddle between the true summit and the lower false summit around 7,200 to 7,600 ft. From the saddle several hundred feet of blocky class 2-3 scrambling leads up; a notch below the summit block is crossed before a short, shallow summit gully. Allow roughly 3 hours from the pass."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "mountaineering",
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 20.1,
+    "summitTimeHrs": 8.2,
+    "descentTimeHrs": 5.5,
+    "approachTimeHrs": 6.4,
+    "recommendedStart": "7:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.4,
+      "note": "From the Rainy Pass PCT-northbound trailhead, climb steadily to Cutthroat Pass, then roll over Granite Pass and down into Snowy Creek Meadow before a short side-trail climb to a ca…",
+      "fromTo": "Approach to Snowy Lakes camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 8.2,
+      "note": "Head back to Snowy Creek Meadow and up the PCT to Methow Pass, then leave the trail and traverse open terrain to the peak's east ridge. Moderate sand, scree and talus slopes lead t…",
+      "fromTo": "Summit push via Methow Pass",
+      "section": "Climb"
+     },
+     {
+      "hrs": 5.5,
+      "note": "Break camp and reverse Day 1's route over Granite and Cutthroat Passes back down to the highway. Downhill and familiar ground makes this noticeably faster than the approach.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No ropes or technical climbing gear required for the standard scramble. A climbing helmet is essential for loose rock protection. Microspikes or crampons may be necessary March through May depending on snow conditions; check avalanche forecasts and current condition reports.",
+   "what_to_bring": [
+    "ice axe",
+    "crampons (early season)",
+    "helmet (loose rock)",
+    "map & compass or GPS (extensive off-trail navigation above Methow Pass or on the Swamp Creek ridge)",
+    "trekking poles (talus/scree)",
+    "layers and a rain shell (afternoon storms)",
+    "sun protection for extended above-treeline travel"
+   ],
+   "pro_tips": [
+    "Camp near Snowy Lakes to break the long PCT approach into two easier days and add a scenic destination in its own right.",
+    "The off-trail section from Methow Pass to the summit saddle has no maintained tread; carry a map/compass or GPS since scree benches are easy to misread in flat light.",
+    "The Swamp Creek approach (South Ridge/South Face) is a much faster, steeper alternative from a highway pullout ~2 miles west of Rainy Pass for parties comfortable with a sustained ~40-degree snow finish early season."
+   ],
+   "watch_out": [
+    "faint/unmarked line off-trail between Methow Pass and the summit saddle — easy to lose in poor visibility",
+    "cliff bands force routefinding decisions high on the Swamp Creek ridge"
+   ],
+   "pro_needs": "Route-finding experience essential; faint boot trail in lower forest and terrain exposure above tree line. The route lacks marked waypoints. Topographic map and compass recommended. GPS and knowledge of scrambling terrain assessment are highly valuable for safe navigation.",
+   "best_season": "Late June through September; July-September gives the driest scree/talus with the least lingering snow. June ascents are feasible but the final slopes/gully still hold snow and require axe/crampons. Regardless of season, the peak is only reachable by car when SR 20 is open (roughly May-November); outside that window the approach becomes a full winter expedition.",
+   "high_point_ft": 8099,
+   "aid_grade": null,
+   "approach": "From the PCT-Northbound (Rainy Pass) trailhead on SR 20 (elev. ~4,855-4,900 ft), follow the Pacific Crest Trail north. The trail climbs steadily through subalpine forest and larch parkland past Porcupine Creek, reaching Cutthroat Pass (6,820 ft) at about 4.9 miles / ~1,900 ft gain (roughly 2-2.5 hours at a hiking pace). There is no water at the pass itself; Porcupine Creek below is the last reliable source before the high country dries out in late summer, so top off there. From Cutthroat Pass continue north on the PCT, which drops to Granite Pass (~6,300 ft) and then contours across open, sparsely-treed slopes to Snowy Creek Meadow (~6,400-6,900 ft) - a common camp/water stop, with a short side-trail up to Snowy Lakes if you want a higher, more scenic bivy. From the meadow, stay on the PCT northbound roughly another 1-1.5 miles / ~350 ft gain (about an hour) to Methow Pass (~6,600 ft). Leave the trail here: travel west/southwest, off-trail, through open heather and talus benches toward Mount Hardy's east ridge. Gain the ridge and follow moderate slopes of sand, scree and talus - loose in spots, with real route-finding required - up to the saddle between the true summit and a lower false summit (roughly 7,200-7,600 ft). From the saddle, several hundred feet of enjoyable Class 2-3 scrambling over blocky rock leads to the summit at 8,097 ft; some parties note a notch below the true summit block that's crossed before a short, shallow summit gully. Total one-way distance from the trailhead to the summit is roughly 11-12 miles with about 5,100 ft of cumulative gain, matching the recorded figures - this is a long day for strong parties or, more commonly, a 2-day trip with camp near Snowy Creek Meadow/Snowy Lakes. Snow can linger on the upper ridge and in north-facing gullies near Cutthroat and Granite Passes well into early summer; the highway itself (and both this trailhead and the alternate Swamp Creek pullout used for the shorter South Ridge route) sit inside WSDOT's SR 20 winter closure zone, so the route is typically only accessible from around late April or May through November depending on snowpack. Carry an ice axe and know how to use it if attempting before the passes fully melt out.",
+   "descent_text": "Descend the same line used on ascent: reverse the Class 2-3 scramble and scree/talus slopes back down to the saddle, then drop off the east ridge to Methow Pass and rejoin the PCT southbound. Retrace through Snowy Creek Meadow, Granite Pass, and Cutthroat Pass, then back down the PCT to the Rainy Pass trailhead. This is a walk-off/downclimb - no rappelling is involved on the standard route, so rappels = 0. In early season, lingering snow on the upper south-facing slopes below the saddle can sometimes be glissaded (ice axe and glissading skill required, and only where runouts are clean of rock); by mid-to-late summer this becomes a dry, loose scree/talus descent, so care with route-finding and loose rock is the main hazard, along with the long trail miles back to the car. Some parties returning from camp near Snowy Lakes cut cross-country along the open ridge back toward camp instead of the trail, but parties note this is scenic rather than faster, and it doesn't shorten the standard descent to the trailhead.",
+   "bail": "Retreat is straightforward back down the ascent slopes to Methow Pass (or to the Swamp Creek ridge) — the real hazard is weather/visibility on the exposed ridge and passes, not technical terrain, so turn around early if thunderstorms build.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1-2",
+     "notes": "Brushy forest with boot trail; 1.2-1.5 miles of elevation gain through mixed conifer forest to ridge base. Faint trail; route-finding experience helpful.",
+     "pitch": "1: Forest Approach"
+    },
+    {
+     "grade": "Class 2+",
+     "notes": "Ridge crest and slabs; stay climber's right to avoid 5,200-foot cliff band. Loose blocks and moderate exposure. Approximately 1,000 feet of elevation gain.",
+     "pitch": "2: South Ridge to Cliff Zone"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Leave ridge at 7,200 feet, scramble loose scree and granite blocks on east side of ridge toward summit block notch. Loose, steep terrain with exposure. 800+ feet of gain.",
+     "pitch": "3: Scree and Blocks to Summit Block Notch"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Shallow gully scramble from notch to summit. Loose rock, ~100 feet of scrambling to peak. Final exposed section with good granite.",
+     "pitch": "4: Summit Gully"
+    }
+   ],
+   "itinerary": {
+    "cal": "SR-20 (North Cascades Highway) typically opens for the season in mid-to-late April, but this is a high alpine route that often still holds snow into July, matching the route's 'snow/scramble' character; scree/talus conditions firm up by August-September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Rainy Pass PCT-northbound trailhead, climb steadily to Cutthroat Pass, then roll over Granite Pass and down into Snowy Creek Meadow before a short side-trail climb to a camp on the rocky bench above Upper Snowy Lake. This is the long approach day; most of the trip's mileage is banked here.",
+      "hours": 6.4,
+      "miles": 9.5,
+      "title": "Approach to Snowy Lakes camp",
+      "gainFt": 2900,
+      "lossFt": 850,
+      "packLb": 34,
+      "schedule": [
+       {
+        "time": "7:00 AM",
+        "label": "Leave Rainy Pass trailhead",
+        "detail": "PCT-northbound trailhead, ~4,900 ft."
+       },
+       {
+        "time": "+2.4 hr",
+        "label": "Reach Cutthroat Pass",
+        "detail": "~1,900 ft gained, ~6,800 ft."
+       },
+       {
+        "time": "+~4 hr",
+        "label": "Over Granite Pass, down to Snowy Creek Meadow",
+        "detail": ""
+       },
+       {
+        "time": "6.4 hr total",
+        "label": "Arrive Snowy Lakes camp",
+        "detail": "Rocky bench above Upper Snowy Lake, ~6,900 ft."
+       }
+      ],
+      "objective": "Reach base camp at Upper Snowy Lake via Cutthroat & Granite Passes"
+     },
+     {
+      "n": 2,
+      "note": "Head back to Snowy Creek Meadow and up the PCT to Methow Pass, then leave the trail and traverse open terrain to the peak's east ridge. Moderate sand, scree and talus slopes lead to the summit saddle and a short final scramble to the top; reverse the same line back to camp.",
+      "hours": 8.2,
+      "miles": 7.5,
+      "title": "Summit push via Methow Pass",
+      "gainFt": 2200,
+      "lossFt": 2200,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "7:30 AM",
+        "label": "Leave camp",
+        "detail": "Light day pack; back via Snowy Creek Meadow to the PCT."
+       },
+       {
+        "time": "+1.2 hr",
+        "label": "Reach Methow Pass",
+        "detail": "~350 ft gained from camp."
+       },
+       {
+        "time": "+3.2 hr from pass",
+        "label": "Reach the summit",
+        "detail": "~1,850 ft gained off-trail via scree/talus to the east ridge and saddle."
+       },
+       {
+        "time": "+2.8 hr",
+        "label": "Back down to Methow Pass",
+        "detail": "Down-climb the scree/talus to the saddle."
+       },
+       {
+        "time": "~3:30-4:00 PM",
+        "label": "Arrive back at camp",
+        "detail": "Total round trip from camp roughly 8 hours."
+       }
+      ],
+      "objective": "Climb Mount Hardy's southwest/southeast slopes and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and reverse Day 1's route over Granite and Cutthroat Passes back down to the highway. Downhill and familiar ground makes this noticeably faster than the approach.",
+      "hours": 5.5,
+      "miles": 9.5,
+      "title": "Hike out",
+      "gainFt": 850,
+      "lossFt": 2900,
+      "packLb": 28,
+      "schedule": [],
+      "objective": "Return to Rainy Pass trailhead"
+     }
+    ],
+    "totalNote": "A moderate 3-day, ~24-mile round trip with about 5,100-6,000 ft of cumulative gain, based at a Snowy Lakes camp; fit parties sometimes compress the summit push and hike-out into one long Day 2, making it a 2-day trip."
+   },
+   "access": {
+    "fees": "None for the climb itself; a Northwest Forest Pass ($5 day / $30 annual) is the standard fee for National Forest trailhead parking in the district.",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "No climbing permit required. There is no fee specific to this off-trail summit route; the Rainy Pass PCT-Northbound trailhead is a developed parking lot with vault toilets, while the Swamp Creek pullout is informal highway-shoulder parking.",
+    "closures": "SR 20 (North Cascades Highway) closes for winter between the Ross Dam trailhead (MP 134) and the Silver Star gate (MP 171) — a zone that includes both the Rainy Pass and Swamp Creek trailheads. Typical closure runs early December through April or May depending on avalanche conditions and any DOT repair work; check WSDOT's mountain pass report before planning a trip.",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass recommended for National Forest trailhead parking in this district ($5/day or $30/year); not separately booth-enforced at either pullout.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No wilderness camping permit required",
+     "where": "A Northwest Forest Pass, an America the Beautiful pass, or a Recreation.gov day pass covers parking at the Rainy Pass PCT North trailhead; no permit paperwork is needed to camp anywhere along this stretch of the Pacific Crest Trail."
+    }
+   },
+   "road": {
+    "name": "SR 20 / North Cascades Highway",
+    "status": "Open seasonally only, typically ~May-November; closed by avalanche danger the rest of the year",
+    "driveNote": "Both the Rainy Pass PCT trailhead and the Swamp Creek pullout sit inside the winter closure zone, so the peak is inaccessible by car for roughly half the year.",
+    "seasonalGate": "Gates at Ross Dam (MP 134) and Silver Star (MP 171) close the highway in winter; closure points can move to Newhalem (MP 120) and Early Winters (MP 178) later in the season depending on conditions."
+   },
+   "climate": {
+    "fall": "Cooler, often stable weather through September-October before the road closes for winter; early-season snow is possible.",
+    "spring": "Snow-covered into June; the road may only just have reopened and the upper mountain still holds a continuous snowpack (good glissade conditions but slough/avalanche hazard on warm days).",
+    "summer": "Typically snow-free by late July/August; the route becomes a dry, loose Class 2-3 talus scramble that is hot and exposed on the south-facing slopes.",
+    "winter": "Highway 20 is closed for the season; the peak is essentially inaccessible without a very long approach on foot or skis.",
+    "typical": "Marine west-coast climate with heavy winter snowfall; summers are drier with clear mornings and a real chance of afternoon thunderstorms/showers, especially July-August.",
+    "bySeason": {
+     "fall": "Cools quickly; possible early snow, shorter days, and wildfire smoke can linger into September in bad fire years.",
+     "spring": "Road typically reopens April-May; approach still largely snow-covered — good for early snow climbs but watch for wet-slide activity on steep terrain.",
+     "summer": "Best window (July-Sept); talus/scree mostly snow-free, with real afternoon thunderstorm risk.",
+     "winter": "Highway closed; deep snowpack and avalanche terrain on all approach slopes."
+    },
+    "forecastZone": "NWAC East Slopes North (Canadian Border to Lake Chelan) for winter/spring avalanche forecasting; check WSDOT's SR 20 pass report for current road status."
+   },
+   "emergency": {
+    "notes": "Aero Methow Rescue Service (based in Winthrop/Twisp) provides local EMS and coordinates backcountry evacuations in the Methow Valley. Cell coverage is unreliable to absent along SR 20 and on the peak itself — carry a satellite communicator or PLB.",
+    "county": "Okanogan (trailhead side); the summit itself sits on the Okanogan-Skagit county line",
+    "rangerStation": "Methow Valley Ranger District, 24 W. Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital (Brewster, WA) or Mid-Valley Hospital (Omak, WA) — both roughly 1.5-2 hours' drive from the trailhead via SR 20.",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rare even at peak PCT season (July-August); most PCT thru-hikers pass below without detouring to the summit, and there is no maintained trail up the mountain itself",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - roughly 10-20 parties per season, based on the paucity of indexed trip reports"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong, sustained hiking fitness - the PCT approach from Rainy Pass over Methow Pass before even leaving the trail is long, and existing beta flags 'a long return to the trailhead' as a watch-out",
+     "packWeight": "20-35 lbs; ice axe (and crampons in early season) plus enough food/layers for a full alpine day, heavier if bivying to break up the long approach"
+    },
+    "approachTime": "Long - a full day of PCT hiking from Rainy Pass over Methow Pass before the scramble portion even begins; many parties treat it as an overnight objective given the round-trip distance",
+    "requiredSkills": [
+     "Self-arrest and steep snow travel with an ice axe (steep snow and cornices early season)",
+     "Off-trail routefinding once leaving the PCT near Methow Pass",
+     "Loose rock scrambling judgment (Class 2-3 terrain)",
+     "Weather awareness / turnaround discipline for afternoon thunderstorms"
+    ],
+    "experienceLevel": "Intermediate to advanced scrambler comfortable with unmarked off-trail routefinding on a remote peak, not a first-scramble objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late June through September; July-August is the most dependable stretch, while June still carries meaningful snow",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow retreating on the lower approach; long daylight, though upper mountain snow can linger early in the month",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "SR 20 is normally open, but the upper mountain and approach still hold snow with cornice/steep-snow hazard",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Best combination of stable weather and minimal snow, matching the climate field's 'best window' summer note",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Mostly talus/scramble conditions, but shortening days and possible early-season snow late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "North Cascades crest-to-east-slope climate; summer is the best window but snow lingers high early on before giving way to talus",
+     "probability": "Afternoon thunderstorms are a real concern in July-August North Cascades high country"
+    },
+    "exposure": "Moderate - loose rock and steep snow/cornice sections carry real fall potential, and the long, remote PCT approach raises the consequence of any injury or benightment",
+    "avalanche": {
+     "zone": "Approximate NWAC East Slopes North zone (SR 20/Washington Pass corridor) - not confirmed as a dedicated zone for this exact peak, and NWAC does not issue forecasts during the typical June-Sept climbing season",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; this is a snow/talus scramble route, not a glaciated one"
+   },
+   "data_quality": {
+    "gaps": [
+     "Round-trip mileage/elevation gain for the PCT/Methow Pass approach is not confirmed from an official source — the gain_ft figure here is summed from a single trip report's leg-by-leg splits, not a surveyed total.",
+     "No confirmed technical rock route beyond the standard Class 2-3 scramble lines described here.",
+     "No verified GPS track/waypoints for either approach.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.581898,
+    "peakLng": -120.755232,
+    "trailhead": "Rainy Pass PCT North Trailhead",
+    "trailheadLat": 48.5181,
+    "trailheadLng": -120.7331,
+    "trailheadDirection": "From the PCT North trailhead parking at Rainy Pass on SR-20 (~4,860 ft)"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "Southwest Slopes standard route is non-technical Class 2-3 scrambling with loose scree/blocks; no rope carried on typical ascents. Ice axe for early-season snow, no roped travel documented in route beta.",
+   "ascender": null,
+   "corrections": "None; SummitPost/Mountaineers route description confirms scramble-only terrain.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Adventurous",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Rainy Pass, the crest trail to Methow Pass, and the east ridge",
+     "notes": "The long way, and the one that suits a two-day trip. From the large paved lot on the north side of SR-20 at Rainy Pass, follow the crest trail north as it climbs steadily through subalpine forest and larch parkland past Porcupine Creek — fill up there, it is the last easy water before a long dry stretch of switchbacks — to Cutthroat Pass. From the pass the trail drops toward Granite Pass and a saddle beyond it, where a steep snowfield often lasts into August and has caused slide-for-life falls, so carry an axe if you are early in the season. Beyond, the trail contours across open, sparsely treed slopes to Snowy Creek Meadow, a common water and camp stop, with a short side trail west into the Snowy Lakes basin for a higher and more scenic bivy under Tower Mountain and Golden Horn. From the meadow, stay on the crest trail north to the open plateau at Methow Pass and leave it there: travel west and southwest off-trail through open heather and talus benches toward the peak's east ridge, gain the ridge, and follow moderate sand, scree and talus — loose in places, with real route-finding — up to the saddle between the true summit and its lower false summit.",
+     "season": "Late June through September, with July through September giving the driest scree. June ascents work but the final slopes and gully still hold snow and want an axe and crampons. The highway is shut for avalanche control through the winter, which closes both approaches outright.",
+     "hazards": [
+      "loose scree, talus and blocky rock on the unmarked upper route, worst near the summit saddle and the final gully",
+      "a steep lingering snowfield just past Granite Pass that has caused slide-for-life falls into August",
+      "a long, mostly off-trail final leg with no marked line",
+      "afternoon thunderstorms and fast weather changes on exposed ridge crest and passes",
+      "wildfire smoke reducing visibility in late summer",
+      "seasonal closure of the highway cutting off road access entirely"
+     ],
+     "longForm": true,
+     "baseFinding": "THE NOTCH IS ON THE FAR SIDE OF THE BLOCK FROM WHERE YOU ARRIVE, AND YOU HAVE TO TRAVERSE TO IT. Whichever approach you used, the climbing starts the same way. At about 7,200 ft the ridge you have been following runs into the summit block; leave the crest there and scramble loose scree and granite blocks across the EAST side — climber's right — until you reach a notch tucked under the summit block. Cross the notch, and the way on is a short, SHALLOW gully leading up to the top. That gully is the marker: it is shallow and blocky rather than deep and cut, and it is the only break that goes at scrambling grade. If the block above you is unbroken wall, keep traversing right rather than starting up; if you have dropped far enough to be under steep cliff bands, you have gone too low and should regain height. The upper ground is several hundred feet of enjoyable blocky scrambling on rock that takes hands, and a lower false summit sits beside the true one — if the highest ground you can reach still has something higher a short distance away, you are on the false summit and the saddle between them is where you crossed."
+    },
+    {
+     "name": "Swamp Creek pullout and the south ridge",
+     "notes": "The short, steep alternative, and the way most day parties go. Start from the highway pullout at Swamp Creek and climb through brushy forest to the foot of the prominent ridge on the mountain's south side. Follow the ridge upward, staying on the crest where it lets you and moving climber's right to get around the cliff bands that block the crest around 5,200 ft — getting that traverse wrong is what turns parties back. Above the cliff bands the ridge opens out onto sand and scree and continues to the summit block. This side faces the sun and dries early, which is why it comes into condition before the crest-trail approach and why it turns into a loose, dusty grind by late summer; a snow finger on this flank can hold firm snow at a fairly steep angle into early summer, which speeds the ascent considerably for a party carrying an axe.",
+     "season": "Late June through September once the snow finger has stabilised or melted, with July and August driest. Earlier in the season the finger is a snow climb rather than a scramble.",
+     "hazards": [
+      "cliff bands around 5,200 ft where the crest is blocked and the bypass is on climber's right — the main route-finding failure on this side",
+      "a steep snow finger on this flank into early summer, with wet-slide and sluff potential",
+      "brushy forest on the lower ridge with no maintained tread",
+      "loose scree and blocky rock on the upper route and in the final gully",
+      "an exposed ridge crest with no shelter from afternoon thunderstorms",
+      "seasonal closure of the highway cutting off road access entirely"
+     ],
+     "primary": true,
+     "baseFinding": "THE NOTCH IS ON THE FAR SIDE OF THE BLOCK FROM WHERE YOU ARRIVE, AND YOU HAVE TO TRAVERSE TO IT. Whichever approach you used, the climbing starts the same way. At about 7,200 ft the ridge you have been following runs into the summit block; leave the crest there and scramble loose scree and granite blocks across the EAST side — climber's right — until you reach a notch tucked under the summit block. Cross the notch, and the way on is a short, SHALLOW gully leading up to the top. That gully is the marker: it is shallow and blocky rather than deep and cut, and it is the only break that goes at scrambling grade. If the block above you is unbroken wall, keep traversing right rather than starting up; if you have dropped far enough to be under steep cliff bands, you have gone too low and should regain height. The upper ground is several hundred feet of enjoyable blocky scrambling on rock that takes hands, and a lower false summit sits beside the true one — if the highest ground you can reach still has something higher a short distance away, you are on the false summit and the saddle between them is where you crossed."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "East ridge to the saddle",
+     "notes": "Gain the ridge and follow moderate slopes of sand, scree and talus - loose in spots, with real route-finding required - up to the saddle between the true summit and a lower false summit (roughly 7,200-7,600 ft). Snow can linger on the upper ridge well into early summer; carry an ice axe and know how to use it before the passes fully melt out."
+    },
+    {
+     "n": 2,
+     "class": "Class 2-3",
+     "label": "Summit scramble from the saddle",
+     "notes": "From the saddle, several hundred feet of enjoyable scrambling over blocky rock leads to the summit at 8,097 ft; some parties note a notch below the true summit block that's crossed before a short, shallow summit gully."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 4860,
+     "name": "Rainy Pass PCT north trailhead",
+     "role": "main",
+     "type": "camp",
+     "notes": "Everything starts from this lot. It is also the start of Whistler Mountain, which is unlike the rest: head east from the parking area into the second gully and follow it to the summit, about four miles round trip and three thousand feet of gain, and no camp helps in the slightest. There is a toilet and no water. Parties routinely sleep in the car here before a long PCT day. As with everything on this stretch of SR 20, access is governed by the winter closure — the highway shuts in late November or early December and normally reopens between mid April and early May, though a bad winter can push it very much later, so confirm before driving. Note also that this specific trailhead has been closed at times for roadwork in recent seasons, which strands the entire zone when it happens.",
+     "water": "None at the lot, and this matters more here than it looks. The crest north of the pass is dry, so what you carry out of the car is what you have until well down the far side.",
+     "permit": "Northwest Forest Pass or Interagency pass to park. No camping permit, no quota and nothing to reserve anywhere in this zone — this is national forest, and the park permit system that governs the country west of here does not apply.",
+     "capacity": "A large paved lot on the north-east side of the highway at the pass, shared between climbers, larch-season day hikers and long-distance walkers. It fills early on weekends from late summer onward and there is no overflow."
+    },
+    {
+     "name": "Methow Pass and the PCT meadow camps below Snowy Lakes",
+     "role": "main",
+     "type": "camp",
+     "notes": "Methow Pass is where the PCT crosses from the Granite Creek side into the head of the West Fork Methow, and the camps just beyond it are the sheltered alternative to Snowy Lakes for anyone who does not want a night in the open at six thousand seven hundred feet. They cost a little climbing back up on summit morning and are worth it in bad weather. This is also the departure point for Mount Hardy by the long approach: the PCT is left near the pass and a climbers' path leads up toward the peak, which stands directly to the west. Parties combining Hardy with Golden Horn and Tower usually base here or at the lakes and take Hardy on the way out, since the ridge rambling between the lakes and Hardy's south side connects the whole group. Camping on the established sites rather than in fresh meadow matters here more than most places, because the ground is soft and the trail is walked by a steady stream of long-distance hikers all summer.",
+     "water": "Good here — this is the drainage side of the crest and the creeks running off toward the West Fork Methow are dependable. It is the reason to choose these camps over the lakes when the wind is up.",
+     "permit": "None. National forest, dispersed camping at established sites, no permit and no reservation. Northwest Forest Pass to park at Rainy Pass.",
+     "capacity": "A string of established sites in the meadows along the trail around a mile beyond Methow Pass, near where the boot path to the lakes leaves. Enough ground for several parties spread out, and lower and more sheltered than the lake basin."
+    },
+    {
+     "elev": 6800,
+     "name": "Cutthroat Pass, PCT crest camps",
+     "role": "route",
+     "type": "camp",
+     "notes": "Cutthroat Pass is about five miles north of Rainy Pass by a steadily graded trail and is the first natural stop for anyone heading for Golden Horn or Tower Mountain, though a fit party carrying enough water will push straight past it toward Granite Pass or the lakes. It is not a climbers' camp for any peak — nothing is climbed directly from it — but it is the obvious bad-weather or late-start stop, and it is where a party discovers whether it brought enough water. The larch stands here are the reason the pass is crowded from the third week of September. This is also the point where the Cutthroat Creek trail comes up from the east, so a party can leave one car at each trailhead and walk through.",
+     "water": "NONE AT THE PASS, and this is the planning problem of the whole approach. The last certain water is on the climb up, roughly three miles from the trailhead, and there is little to nothing again until close to the lakes far ahead. Carry enough for the evening, the night and the next morning's walk, which for two people is more than most parties expect to shoulder.",
+     "permit": "None. Dispersed camping on national forest land needs no permit and no reservation. Camp on durable ground rather than in the meadow, and note that the quarter-mile camping closure around Cutthroat Lake, well below and to the east, does not reach up here. Forest-wide campfire bans are normal from mid summer; there is nothing worth burning at this elevation anyway.",
+     "capacity": "No established or numbered sites, but a scatter of well-used flat patches on the shoulders and in the larch benches either side of the pass. Several parties can spread out. It is one of the most popular overnight spots on this stretch of trail in larch season, so a Friday arrival in late September will not have it to itself."
+    },
+    {
+     "elev": 6300,
+     "name": "Granite Pass",
+     "role": "route",
+     "type": "camp",
+     "notes": "Granite Pass sits a couple of miles beyond Cutthroat Pass as the trail swings north-west and begins the long traverse under Tower Mountain. Its value is position rather than comfort: it breaks the walk from Rainy Pass to Snowy Lakes into two manageable halves and it puts a party on the right side of the exposed traverse ahead. That traverse is the reason to think about timing — beyond Granite Pass the trail is cut and blasted into the cliffs, and while it is a walk in dry conditions, it is genuinely dangerous under snow. Snowfields cross the trail here into August in a normal year and an axe belongs in the pack until they have gone. Most parties passing through are heading for the lakes and stop here only when the day has run out.",
+     "water": "Seasonal at best. There is nothing dependable at the pass and the trail either side of it is dry. Treat this as a dry camp and plan accordingly.",
+     "permit": "None. National forest, dispersed camping, no permit and no quota. Northwest Forest Pass to park back at Rainy Pass.",
+     "capacity": "One small site at the pass, room for a party or two at most. It is a stopgap rather than a destination and will not absorb a group."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_ottohorn_west_ridge",
+  "name": "West Ridge",
+  "area": {
+   "id": "wa_ottohorn",
+   "name": "Ottohorn",
+   "parent_id": "wa_southern_pickets",
+   "elevation_ft": 7840,
+   "lat": 48.7764,
+   "lng": -121.3125
+  },
+  "prior_findings": "name/overview/hazards describe the 2017 West Ridge (to 5.9); most other fields describe the 1961 east ridge. Decide which climb the row is.",
+  "earlier_research": [
+   {
+    "file": "r083.json",
+    "fact": "Which route the row describes (2017 West Ridge vs standard east ridge)",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The 2017 first-ascent trip report confirms a separate route: the West Ridge ('Bring The Noise'), gained from the crest saddle just east of West Peak and traversed east over the sub-summits Beep and Honk, with belayed climbing to 5.8 and a couple of 5.9 sequences, a double-rope rappel, an unplanned bivy, and a descent by rappel off the summit ridge then the Otto-Himmel gully to Crescent Creek Basin. So the name/overview/hazards describe that route, while rock_grade, pitch_detail, climbing_route, descent, rappels, pro_needs, face and aspect describe the 1961 east ridge (class III per the 1962 AAJ). Only one source documents the West Ridge, and fixing it means rewriting most of the row (and the overview's 'grade not recorded' is itself wrong: the FA report gives up to 5.9) — left open for an owner decision on what this row should be.",
+    "sources": [
+     "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/",
+     "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets"
+    ]
+   },
+   {
+    "file": "r083.json",
+    "fact": "Aspect",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The 2017 FA report has the West Ridge approached from the saddle east of West Peak and climbed eastward along the crest to the summit, i.e. a west-facing ridge line not reached from the Otto-Himmel col; aspect S and the face text describe the south-side col approach of the standard route. Depends on the unresolved route-identity question; only one source for the West Ridge.",
+    "sources": [
+     "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/"
+    ]
+   },
+   {
+    "file": "r083.json",
+    "fact": "Side of the col descended",
+    "status": "fixed",
+    "correct_value": "The retreat from the col goes back down its south side into Crescent Creek Basin, which can itself be harder late season than the scramble above.",
+    "evidence": "The 2017 party descended from the Otto-Himmel gully to their Crescent Creek Basin camp via a rappel station above a giant chockstone and face-in snow downclimbing. A traverse party descending south from the col into Crescent Creek Basin in August used three rappel anchors before kicking down the snow finger; the north side leads to the Mustard Glacier. So the retreat is down the south side and it does get harder late season; only the side named in climbing_route was wrong.",
+    "sources": [
+     "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/",
+     "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/"
+    ]
+   },
+   {
+    "file": "r083.json",
+    "fact": "Trailhead location",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "48.6866, -121.2712 (Upper Goodell Creek Group Camp trailhead, ~600 ft)",
+    "evidence": "Climbing write-ups place the climbers' trailhead at the Upper Goodell Creek Group Campground, reached by following the road uphill from the T-junction, at about 600 ft. USGS 3DEP gives ~611 ft at the pin/approach_logistics coordinate (48.68664, -121.27121) but ~483 ft at the prose coordinate (48.6733, -121.2658), which sits near Goodell Creek's mouth by the lower campground and contradicts the prose's own 'about 600 ft'. The pin, approach_logistics name ('Upper Goodell Group Camp trailhead') and the stated elevation all agree; the prose coordinate is the outlier.",
+    "sources": [
+     "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+     "https://www.theoutbound.com/washington/backpacking/hike-to-terror-basin-and-climb-west-mcmillan-spire",
+     "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+     "https://epqs.nationalmap.gov/v1/json?x=-121.2658&y=48.6733&units=Feet&wkid=4326"
+    ]
+   },
+   {
+    "file": "r083.json",
+    "fact": "Whether the camp zone permit can be reserved in advance",
+    "status": "fixed",
+    "correct_value": "Crescent Creek (and Terror Basin) cross-country zones are walk-up only; not reservable in advance.",
+    "evidence": "The park's cross-country zones page states that only Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes can be reserved in advance and that the remaining cross-country zones (including Terror Basin and Crescent Creek) are walk-up only. The park's backcountry reservations page repeats the same list and says most cross-country zones can only be obtained in person at a permit station. The 60/40 reservable split applies park-wide, not to these zones. The row's own camp cards already say walk-up only.",
+    "sources": [
+     "https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm",
+     "https://home.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+    ]
+   },
+   {
+    "file": "r083.json",
+    "fact": "Rappels on the south side of the Otto-Himmel col",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "rappels says none are required on the standard south-side descent, but the 2017 FA party rappelled from a station above a giant chockstone in the Otto-Himmel gully on the way to Crescent Creek Basin, and an August traverse party used three rappel anchors descending the south side of the col. Seasonal snow cover likely decides it; the exact wording of a seasonal rappel note was not settled, so no patch.",
+    "sources": [
+     "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/",
+     "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/"
+    ]
+   },
+   {
+    "file": "s062.json",
+    "fact": "Rappels on the south side of the Otto-Himmel col",
+    "status": "fixed",
+    "correct_value": "No rappels in early season, when snow fills the gully below the south side of the col; later in the summer the snow melts back and parties rappel the top of the gully (chockstone/moats) from fixed anchors before kicking down the remaining snow.",
+    "evidence": "A route page for the neighbouring Himmelhorn climb, which uses the same gully from Crescent Creek Basin to the Himmel-Otto col, says the gully is all snow early season but by late season has icy snow, chossy moats and an overhanging boulder near the top, and that descent is trivial early but rap anchors in the moats may be needed late. An August traverse party rappelled from three anchors on the south side of the col before kicking down the snow finger, and the 2017 first-ascent party rappelled from a station above a giant chockstone in the same gully. So 'none required' is only true in early season.",
+    "sources": [
+     "https://www.mountainproject.com/route/122905014/wild-hair-crack",
+     "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/",
+     "https://cascadeclimbers.com/forum/topic/100886-tr-southern-pickets-fas-of-beep-honk-and-the-west-ridge-of-ottohorn-7252017/"
+    ]
+   },
+   {
+    "file": "t042.json",
+    "fact": "Glacier used on the approach",
+    "status": "fixed",
+    "correct_value": "The glacier kit is for the snow and small glacier slopes between Crescent Creek Basin and the Ottohorn-Himmelhorn col; the Mustard Glacier lies on the north side and is not part of this route's approach.",
+    "evidence": "The Mustard Glacier is a small glacier on the northern slope of Himmelhorn, i.e. north of the Otto-Himmel col; a Picket Range overview describes a ramp from the col dropping onto the Mustard Glacier on the far side. The row's own approach, descent_text, bail and rappels all keep the route on the south (Crescent Creek) side and treat the Mustard Glacier as the north-side alternative.",
+    "sources": [
+     "https://en.wikipedia.org/wiki/Himmelhorn_(Washington)",
+     "https://www.summitpost.org/picket-range/171088"
+    ]
+   },
+   {
+    "file": "t042.json",
+    "fact": "Scramble grade of the standard finish",
+    "status": "fixed",
+    "correct_value": "Class 3-4 (a 5.7 variation exists)",
+    "evidence": "The 2003 enchainment party's feature article calls Ottohorn class 3 and one of the few Southern Picket summits that is not fifth class, and a 2011 party also found it 3rd-class scrambling until a fresh rockfall zone forced two 5.7 pitches; the same 2003 party's short report lists the east ridge as class 4. Sources therefore span class 3 to 4, so 'consistently class 3' overstates and a flat 'Class 4' understates; the row's own descent_text (Class 3 with a short Class 4 step) and pro_needs (Class 3-4) already say 3-4.",
+    "sources": [
+     "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+     "http://publications.americanalpineclub.org/articles/12200415801/North-America-United-States-Washington-Southern-Picket-Range-Complete-Enchainment",
+     "https://jensholsten.blogspot.com/2011/09/adventure-journal-pickets-day-5.html"
+    ]
+   },
+   {
+    "file": "t042.json",
+    "fact": "Round-trip distance",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "dist_km renders as the ONE-WAY approach distance; 16.1 km (10 mi) one way is consistent with the 20-mile round trip the approach text quotes for the near-identical Mount Terror approach.",
+    "sources": []
+   },
+   {
+    "file": "t042.json",
+    "fact": "Route identity: 'West Ridge' 2017 line vs an east-ridge description",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The overview and hazards say this is a 2017 west-ridge first-ascent line whose grade, pitch count and length are not recorded, yet rock_grade, pitch_detail, climbing_route, pro_needs and descent_text describe the 1961 standard east ridge from the Otto-Himmel col with grades. The Southeast Route row covers that standard line. Settling it needs an owner decision on whether this row is the 2017 west ridge (and should drop the east-ridge grade/pitch detail) or a duplicate of the standard route; no source describes a 2017 west ridge in detail.",
+    "sources": []
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_ottohorn_southeast_route",
+    "name": "Southeast Route",
+    "grade": "Grade III-IV, 5.7"
+   }
+  ],
+  "row": {
+   "id": "wa_ottohorn_west_ridge",
+   "area_id": "wa_ottohorn",
+   "name": "West Ridge",
+   "discipline": "mountaineering",
+   "grade": null,
+   "grade_system": null,
+   "grade_num": null,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Ice axe & crampons (snow and small glacier slopes from Crescent Creek Basin to the col)",
+    "Glacier travel rope + crevasse-rescue kit (2-3 person rope team)",
+    "Light alpine rock rack for the ridge climbing",
+    "Helmet (loose rock typical of unrepeated Southern Pickets lines)",
+    "60m rope for climbing/rappelling loose sections",
+    "Full overnight glacier-camping kit (multi-day approach)"
+   ],
+   "hazards": [
+    "Loose rock, typical of unrepeated Picket Range lines.",
+    "Documented by a single 2017 first-ascent trip report — no grade, pitch count, or length is recorded, so treat all difficulty and gear information as unknown.",
+    "Deep in the Southern Pickets: a long, committing wilderness approach with route-finding throughout and no realistic prospect of quick outside help.",
+    "Afternoon weather deterioration is a recurring hazard on this peak."
+   ],
+   "verif": null,
+   "overview": "A 2017 first-ascent line up Ottohorn's west ridge, climbed during the same outing that established two nearby new routes ('Beep' and 'Honk') in the Southern Pickets. Its grade, pitch count and length are not recorded.",
+   "beta": "Established alongside two other new Southern Pickets routes in July 2017; beyond the trip-report title and date, no further route beta (grade, protection, or descent) is publicly available.",
+   "turnaround": "Set a hard turnaround before you leave camp and honour it. Two conditions should stop you regardless of the clock: fresh rockfall debris or visibly unstable blocks on the last 30 ft of the summit ridge (back off and take the north-side variation or go home — one party found exactly this and made the right call), and a moat or bergschrund below the col that has opened enough that you are not confident of recrossing it in the afternoon when it is softer. Weather turnaround: if cloud is filling Crescent Creek Basin, go down while you can still see the Barrier — routefinding across it in a whiteout on loose grassy ledges is how people get hurt here. Because the col is only about an hour from camp, there is almost never a good reason to push a marginal call on this peak.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "Class 3-4 (a 5.7 variation exists on the north side of the summit blocks)",
+   "ice_grade": null,
+   "gain_ft": 7240,
+   "loss_ft": 7240,
+   "dist_km": 16.1,
+   "max_angle": null,
+   "rappels": "None on the east ridge, which is normally downclimbed to the col. The south-side gully below the col needs none in early season while snow fills it; later in the summer, as the snow melts back, parties rappel the chockstone and moats at its top from fixed anchors before kicking down the remaining snow. Parties who take the 5.7 variation on the north side of the summit blocks generally make one or two single-rope rappels off slung blocks to regain the ridge. If you continue north out of the col instead of returning to Crescent Creek Basin (i.e. toward the Mustard Glacier and Picket Pass), budget three or more rappels off improvised anchors — a 2011 party built theirs from a driven piton, a slung block and a nut in a constriction, then rappelled the broken couloir and glacier spilling off the north side.",
+   "commitment": null,
+   "face": "Crescent Creek Spires — south side, from Crescent Creek Basin via the Ottohorn-Himmelhorn (Otto-Himmel) col",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (the Terror Basin and Crescent Creek cross-country zones are walk-up only, issued in person at the Marblemount Wilderness Information Center).",
+   "comms": "Assume no cell coverage. The Goodell Creek trailhead sits in a deep valley beside SR 20 near Newhalem with marginal service at best, and there is none on the climbers' path, in Terror Basin or in Crescent Creek Basin. Line-of-sight from high points on the crest occasionally produces a bar or two toward the Skagit valley, but it is not something to plan around. Carry a satellite messenger or PLB — NPS climbing guidance for North Cascades is explicit that parties here must be self-reliant, and a rescue in the Southern Pickets is a multi-day helicopter operation dependent on weather windows. Leave a detailed itinerary with someone at home and file your route with the Wilderness Information Center in Marblemount when you pick up the permit.",
+   "descent": "Downclimb the east ridge back to the Ottohorn-Himmelhorn col, then descend the snow south into Crescent Creek Basin and reverse the approach over the Barrier.",
+   "obj_haz": [
+    "rockfall",
+    "loose rock",
+    "bergschrund",
+    "moat",
+    "glacier travel",
+    "cornice",
+    "avalanche",
+    "exposure",
+    "routefinding",
+    "extreme remoteness",
+    "afternoon whiteout"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.68664,
+     "lng": -121.27121,
+     "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+     "type": "Trailhead"
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 1,
+    "recommendedStart": "From a Crescent Creek Basin camp, leave at first light (roughly 05:00-06:00) so the snow up to the Otto-Himmel col is still firm and the moat crossing is at its most solid, and so you are back at camp with the whole afternoon in hand. A pre-dawn alpine start is not necessary for the climb itself — the col is only about an hour above camp — but it matters if you intend to link Himmelhorn or Mount Terror the same day, or to recross the Barrier and keep descending."
+   },
+   "detailed_rack": "Glacier travel gear for the snow and small glacier slopes from Crescent Creek Basin to the col, plus a light alpine rock rack (assorted nuts + small-to-mid cams ~0.3-2in) and slings for rock steps on the ridge; a 60m rope covers rappelling loose terrain near the Otto-Himmel col.",
+   "what_to_bring": [
+    "North Cascades backcountry permit, picked up in person at Marblemount, since the zones here are walk-up only",
+    "Satellite messenger or PLB — there is no cell coverage on any part of this route",
+    "Bear canister or a proper hang bag (NPS food-storage rules apply)",
+    "Blue bags for human waste on snow and bare rock — never bury it in snow",
+    "3-4 L water capacity; the climbers' path has essentially no water for 5,000 ft",
+    "GPX or waypoint for the stone arrow at ~1,700 ft where the Terror Creek path leaves the roadbed",
+    "Approach shoes for the roadbed plus boots that take crampons",
+    "Full storm shell and insulation — maritime squalls hit the Pickets even in August",
+    "Sun protection and glacier glasses for the snow basins",
+    "Trekking poles for the 5,000 ft climbers' path and the brutal descent of it",
+    "Map of the Barrier crossing; it is the single easiest place on the trip to get cliffed out"
+   ],
+   "pro_tips": [
+    "Camp in Crescent Creek Basin, not Terror Basin. One party reached the Ottohorn-Himmelhorn col in about an hour from a Crescent Creek Basin camp — that turns Ottohorn into a short morning instead of a full day with a Barrier crossing at each end.",
+    "The turnoff from the Goodell Creek roadbed to the Terror Creek climbers' path is marked only by a stone arrow on the ground at about 1,700 ft, roughly 3.5-4 miles in. Waypoint it before you leave home; people walk past it every season.",
+    "Go while there is still snow in the basins. The Otto-Himmel col is straightforward when snow-filled and turns into loose, tricky low-fifth-class rock once it melts out.",
+    "Nobody comes all this way for Ottohorn alone. Plan it as one of several summits from a single Crescent Creek Basin camp — Himmelhorn's Wild Hair Crack, Mount Terror and Twin Needles all share the same base.",
+    "Treat the last 30 ft as a rockfall zone rather than a scramble. A 2011 party found the standard finish had collapsed into fresh unstable blocks and went around the corner onto two juggy 5.7 pitches instead — the harder line was the safer one that day.",
+    "Carry a couple of pitons and be prepared to leave gear. Anchors in this cirque are slung blocks, nuts and driven pins, not fixed stations.",
+    "Scout the moat below the col on the way up and remember exactly where you crossed it; it will be softer and wider on the way down.",
+    "Pick up the permit and current conditions in person at the Marblemount Wilderness Information Center (360-854-7200) — the rangers there track snow levels on the Terror Creek path and the state of the Barrier.",
+    "Build a spare day into the trip. Parties on the Southern Picket traverse routinely burn one to squalls, and both the Barrier and the climbers' path are markedly more dangerous wet."
+   ],
+   "watch_out": [
+    "The final ~30 ft to the summit ridge has produced active rockfall; blocks that look welded in place are not.",
+    "The south side of the Otto-Himmel col is the friendly side. The north side can demand loose 5th class or rappels once the snow goes, and it commits you to the Mustard Glacier.",
+    "Moats and bergschrunds where the snow meets rock below the col open into overhanging pits by late season — one party had to jump one and axe their way out the far side.",
+    "The Barrier crossing at about 6,100 ft is 'serious Class 3' on steep, loose, grassy ledges. It is the real crux of the trip and it is not a place to slip.",
+    "This is arguably the most isolated terrain in the contiguous United States. A broken ankle in Crescent Creek Basin is a multi-day, weather-dependent helicopter problem.",
+    "The Terror Creek climbers' path gains roughly 5,000 ft with almost no water between the creek and treeline — carry it.",
+    "Skagit Gneiss in the Pickets swings between excellent and appalling within a single pitch; test everything, and keep the party out of each other's fall line."
+   ],
+   "pro_needs": "Protection needs are minimal but the rock quality is the variable. On the standard Class 3-4 east ridge most parties place nothing at all, or slings over blocks and horns for a moving belay through the final step. If the direct summit finish looks loose, the north-side 5.7 variation takes conventional small-to-medium gear in solid, juggy rock and is the safer choice despite the higher grade. The larger protection problem is the snow below the col — a bergschrund and moat that grows through the season — so bring the glacier kit even though the rock rack is trivial.",
+   "best_season": "Mid-July through mid-September is the working window, and earlier in it is generally better. The whole trip is easier with snow: the traverse of Terror Basin, the Barrier crossing and the slopes up to the Otto-Himmel col are all straightforward when snow-filled, and the col specifically is described as easy when snowy and as loose, tricky low-fifth-class rock once melted out. Against that, a big snow year can leave the Terror Basin approach and the climbers' path buried and the basins short of running water in early July. Late July and August are the usual compromise — settled maritime high pressure, the climbers' path melted out, and enough snow left in the basins for travel. By September the col and the moats below it are at their worst, though the summit ridge is at its driest. Outside that window this is a full winter expedition into the most isolated terrain in the lower 48, with an avalanche-prone maritime snowpack.",
+   "high_point_ft": 7840,
+   "aid_grade": null,
+   "approach": "There is no trail to this peak; the approach is the trip. From SR 20 just west of Newhalem, turn north opposite the North Cascades Visitor Center entrance road, go left at the immediate T-junction, past a gravel quarry, then right and uphill on a narrow but well-graded gravel road to the signed Goodell Creek climbers' trailhead (48.6866, -121.2712, about 600 ft). Follow the old roadbed up Goodell Creek for roughly 3.5-4 miles. At about 1,700 ft a stone arrow on the ground marks the unsigned turnoff for the Terror Creek climbers' path — it is easy to walk straight past it, so waypoint it in advance. From the arrow the boot-beaten path climbs relentlessly and steeply up the hillside, gaining about 5,000 ft with essentially no reliable water, to timberline at 5,000-5,200 ft. Above treeline make a rising traverse over meadows, slabs and snowfields toward a 6,200 ft saddle; the standard Terror Basin camp sits about 400 ft below the saddle at roughly 5,800 ft. One party took about 6.5 hours from the trailhead to Terror Basin. For Ottohorn you must keep going west: traverse Terror Basin holding roughly the 6,000 ft contour, then cross the Barrier — the ridge dividing Terror Basin from Crescent Creek Basin — at about 6,100 ft. The Barrier crossing is the non-technical crux of the whole trip: steep, loose, grassy 'serious Class 3' ledges where a slip is not survivable. Drop into Crescent Creek Basin and camp at about 6,200 ft (a good alternative camp sits at 6,400 ft on the Chopping Block ridge overlooking the basin). From that camp, snow and small glacier slopes lead northwest in about an hour to the Ottohorn-Himmelhorn col at roughly 7,400 ft, where the route proper begins. Note on the numbers: the listed 7,240 ft is the net trailhead-to-summit gain from recorded elevations; the Barrier crossing and the Terror Basin traverse add several hundred feet of extra up-and-down each way, and the near-identical Goodell Creek / Terror Basin / Barrier approach to Mount Terror is recorded at 20 miles and 10,000 ft round trip.",
+   "descent_text": "Reverse the east ridge — 200-250 ft of blocky Class 3 with a short Class 4 step, downclimbed by most parties. If you climbed the 5.7 variation on the north side of the summit blocks, one or two single-rope rappels off slung blocks put you back on the ridge crest; back the anchor up, because the rock here has proven itself capable of moving. From the Otto-Himmel col descend the snow and glacier slopes south back into Crescent Creek Basin. The critical detail here is the moat and bergschrund where the snow meets the rock: it is a non-event when snow-filled in early season and can become an overhanging pit by August. One party descending the equivalent feature on the north side had to jump a large overhanging moat and then climb out the far side with an ice axe. Scout the crossing on the way up and remember where it was; late in the season parties rappel this upper section from fixed anchors. Do NOT descend north out of the col unless you are deliberately continuing toward the Mustard Glacier and Picket Pass — that side takes multiple rappels off improvised anchors down a broken couloir and glacier. From Crescent Creek Basin, recross the Barrier at about 6,100 ft (the steep grassy ledges are considerably worse downhill-facing and tired), traverse Terror Basin at roughly the 6,000 ft contour, then drop the 5,000 ft climbers' path to the stone arrow at 1,700 ft and follow the old roadbed out to Goodell Creek. Give the descent of the climbers' path real respect — it is steep, loose, brushy and hard on knees, and the exit is where most parties are moving slowest.",
+   "bail": "There is no quick exit from Crescent Creek Basin — every retreat goes back over the Barrier into Terror Basin and down the Goodell Creek climbers' path, so plan on a full day out from high camp regardless of what has gone wrong. On the route itself, bailing is easy and cheap: the east ridge can be downclimbed anywhere back to the Otto-Himmel col, and the col is only about an hour of snow above camp. If the summit blocks look freshly loose, retreating from the col and going to Himmelhorn or Terror instead costs nothing. Do not use the north side of the col as an escape — it drops onto the Mustard Glacier and commits you to multiple rappels off improvised gear and, ultimately, to an exit via Picket Pass and the Big Beaver or Access Creek valleys, which is a far bigger undertaking than walking back over the Barrier.",
+   "pitch_detail": [
+    {
+     "grade": "Snow / small glacier, moderate",
+     "notes": "From camp at roughly 6,200 ft, climb snow and small glacier slopes northwest toward the notch between Ottohorn and Himmelhorn. About an hour from a Crescent Creek Basin camp. Rope up for glacier travel; crampons and axe. Early season this is a straightforward snow plod, late season it becomes bare ice and rubble.",
+     "pitch": "Section 1 — Crescent Creek Basin to below the col",
+     "lengthM": 305
+    },
+    {
+     "grade": "Steep snow, or loose low 5th class late season",
+     "notes": "The transition from snow to rock at roughly 7,400 ft. Trivial when snow-filled; by August the moat can be overhanging and the exit onto the col can require loose fifth-class moves. The south (Crescent Creek) side is markedly friendlier than the north. Scout the crossing here for the descent.",
+     "pitch": "Section 2 — bergschrund / moat and exit onto the Otto-Himmel col",
+     "lengthM": 60
+    },
+    {
+     "grade": "Class 3",
+     "notes": "From the col, blocky scrambling west up the ridge crest on Skagit Gneiss. Most parties move unroped. Good holds interspersed with detached blocks — keep the party out of each other's fall line.",
+     "pitch": "Section 3 — lower east ridge",
+     "lengthM": 75
+    },
+    {
+     "grade": "Class 3-4 (or 5.7 variation on the north side)",
+     "notes": "The final step to the summit at 7,840 ft. Graded Class III by the 1961 first-ascent party and Class 4 by the 2003 enchainment party. In 2011 the direct finish was found to be an active fresh-rockfall zone about 30 ft below the ridge; that party avoided it by moving around the corner onto two juggy 5.7 pitches. Judge it on the day and rope up if there is any doubt.",
+     "pitch": "Section 4 — summit blocks",
+     "lengthM": 60
+    }
+   ],
+   "itinerary": "Day 1 — Goodell Creek trailhead (600 ft) to Terror Basin camp (5,800 ft), about 6.5 hours; 3.5-4 miles of old roadbed then 5,000 ft of climbers' path. Day 2 — traverse Terror Basin at the 6,000 ft contour, cross the Barrier at about 6,100 ft, and camp in Crescent Creek Basin (6,200 ft) or on the Chopping Block ridge at 6,400 ft; a short day that leaves the afternoon for scouting the line to the col. Day 3 — summit day: about an hour of snow and glacier from camp to the Ottohorn-Himmelhorn col (7,400 ft), then the east ridge to the summit (7,840 ft) and back to camp; almost everyone links a second objective from the same camp (Himmelhorn's Wild Hair Crack, Mount Terror, or Twin Needles) rather than making a dedicated trip for Ottohorn. Day 4 — recross the Barrier and descend to the trailhead. Build a weather day into the plan: parties on the full traverse routinely lose a day to squalls, and the Barrier and the climbers' path are both much worse wet.",
+   "access": {
+    "fees": "Summer backcountry permits cost $10 per person plus a $6 non-refundable reservation fee; youth 15 and under are free. Fees apply mid-May through early October; permits are free from early October to mid-May. There is no park entrance fee and no parking fee on North Cascades National Park land.",
+    "permit": "A backcountry/wilderness permit is required for every overnight stay, including bivouacs — which means every realistic ascent of this peak. The Terror Basin and Crescent Creek cross-country zones cannot be booked ahead: their permits are walk-up only, issued in person the day of or the day before your trip. The Wilderness Information Center at 7280 Ranger Station Road, Marblemount WA 98267 (360-854-7200) issues permits, lends bear canisters and gives current conditions.",
+    "closures": "No standing closure on this approach. Practical constraints instead: no campfires anywhere in the backcountry zones (stoves only), food must be stored in a bear canister or hung, human waste must be packed out in blue bags on snow and bare rock and never buried in snow or crevasses, and all flagging and webbing left behind counts as trash. Cutting vegetation is illegal and citable. Check with the Wilderness Information Center for temporary closures before each trip.",
+    "landManager": "North Cascades National Park (National Park Service) — the Southern Picket Range cross-country zone. Trailhead and approach are within the North Cascades National Park Complex.",
+    "passRequired": "No Northwest Forest Pass or America the Beautiful pass is needed to park at the Goodell Creek climbers' trailhead — it is on park land, where NPS charges no entry or parking fee. (Note that many other North Cascades-area trailheads on adjacent Forest Service land do require a Northwest Forest Pass.)",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+     "where": "This zone is walk-up only: get the permit in person at the Marblemount Wilderness Information Center, the day of or the day before your trip."
+    }
+   },
+   "road": {
+    "name": "Goodell Creek Campground access road off SR 20 (North Cascades Highway) at Newhalem",
+    "status": "Open — paved SR 20 to Newhalem, then a short gravel spur past a gravel quarry to a developed climbers' trailhead with parking and a sign noting this is a climbers' trail, not a hikers' trail. Passable to any passenger car.",
+    "driveNote": "From Marblemount follow SR 20 east about 14 miles to Newhalem. Turn north opposite the North Cascades Visitor Center entrance road, go left at the immediate T-junction, continue past a gravel quarry where the pavement ends, then take the right fork uphill on a narrow but well-graded gravel road; the trailhead is on the right within about a mile. Trailhead at 48.6866, -121.2712, roughly 600 ft.",
+    "seasonalGate": "None affecting this approach. SR 20's winter closure gates sit east of Newhalem — the initial closure is between the Ross Dam trailhead (MP 134) and the Silver Star gate (MP 171), moving down to the Newhalem gate (MP 120) and Early Winters (MP 178) in deep winter. Access to Goodell Creek from Marblemount and the west is open year-round."
+   },
+   "climate": {
+    "fall": "Early September can be superb: dry rock on the summit ridge, stable air, fewer bugs. The trade-off is that the Otto-Himmel col and the moats below it are at their most melted-out and awkward, and the first Pacific fronts of the autumn arrive without much warning. After late September, storms and short days make the approach and the Barrier crossing dangerous.",
+    "spring": "Deep, consolidating maritime snowpack. Wet, heavy snow and high avalanche danger on the basins and the couloirs off the crest; cornices along the Southern Picket ridgeline. The Terror Creek climbers' path is usually snow-covered and the approach becomes a serious snow-travel undertaking rather than a hike.",
+    "summer": "The season. Late July through August brings the most settled high pressure, the climbers' path melts out, and the basins still hold enough snow to make the Terror Basin traverse, the Barrier and the slopes to the col straightforward. Squalls still come through — parties on multi-day traverses routinely lose a day to rain and wind even in August.",
+    "winter": "Full expedition conditions. Heavy maritime snowfall, high and persistent avalanche danger, and a 5,000 ft approach path buried under snow with no reliable route through the Barrier. Essentially unvisited in winter.",
+    "typical": "Marine west coast climate. Most weather originates over the Pacific and is driven northeast into the Cascades, where orographic lift wrings out heavy precipitation on the western slopes — the Pickets sit right in the firing line. Temperatures are moderated by the maritime influence and rarely drop below 0F or exceed 80F. Expect the range to make its own weather: clear valleys below and cloud sitting on the crest is a normal Picket day.",
+    "forecastZone": "NWAC 'West Slopes North' avalanche forecast zone."
+   },
+   "emergency": {
+    "notes": "Plan as if no outside help is coming quickly. The Picket Range is among the most isolated terrain in the contiguous United States, there is no cell coverage anywhere on the route, and a rescue from Crescent Creek Basin depends on a helicopter and a weather window — realistically a multi-day proposition. Carry a satellite messenger or PLB, leave a detailed itinerary with a contact at home, and register your route with the Wilderness Information Center when collecting the permit. Self-rescue capability (crevasse and moat extraction, improvised rappel anchors, the ability to get an injured partner back over the Barrier) is the practical minimum standard for this trip.",
+    "county": "Whatcom County, Washington (the Goodell Creek trailhead and the SR 20 drive are in Whatcom County; the nearest hospital is over the line in Skagit County)",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Road, Marblemount WA 98267 — 360-854-7200. Permits, current conditions, bear canister loans and trip-planning advice.",
+    "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Drive, Sedro-Woolley WA 98284 — 24/7 Level IV emergency department, ED phone 360-856-6021. It is the critical-access hospital serving Marblemount and the upper Skagit; anything major will be transferred onward.",
+    "sheriffDispatch": "911 for emergencies. Whatcom County Sheriff's Office non-emergency dispatch: 360-676-6911. The WCSO runs search and rescue for the Southern Pickets."
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through August, with the Terror Basin path melted out but enough basin snow left to ease the col",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still bury the approach, but by late month the path is clear and snow still fills the Otto-Himmel col.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "The Terror Creek path and basins are buried, avalanche slopes loom over the Barrier traverse, and meltwater is scarce.",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Settled high pressure, a melted-out climbers' path and enough snow in the basins for fast travel to the col.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early storms and short days on a committing route in the most remote part of the Pickets; walk-up permits end with the season.",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "The summit ridge is driest, but the col melts to loose low-fifth-class rock and the moats below it are at their worst.",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": {
+    "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "trailheadLat": 48.68664,
+    "trailheadLng": -121.27121
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": 60,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": null,
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "3",
+     "label": "Scramble from the Himmelhorn-Ottohorn col",
+     "notes": "From the col the summit is reported as easy scrambling — most accounts call the peak class 3, with a short class 4 step, and describe it as one of the few Southern Picket summits that is not fifth class. Parties have climbed it from the col in roughly an hour round trip, some without taking rope or rack out of camp. Picket rock is broken and the col itself is loose, so helmets and careful block-testing matter more than the grade suggests; the col is also the retreat point, and getting back down into Crescent Creek Basin late in the season can be harder than the scramble above."
+    },
+    {
+     "n": 2,
+     "class": "5.7",
+     "label": "Rockfall scar below the summit ridge",
+     "notes": "At least one party found the easy line broke into a fresh rockfall zone about 30 ft below the summit ridge and backed off rather than cross it, returning with a rope and climbing a roped alternative of about two pitches of juggy 5.7 to the top. Treat this as conditions-dependent rather than fixed: the scar is recent enough that the terrain here may have changed again, and a scramble party arriving without gear may find no acceptable line through the unstable blocks. Carry enough to retreat or to protect a short 5th-class variation, and do not commit to the last 100 ft until you can see it."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 6050,
+     "name": "Crescent Creek Basin camp",
+     "role": "main",
+     "type": "camp",
+     "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between them; Frenzel Spitz sits off the main chain near the Ottohorn's north side. Parties camp at several benches at different heights.",
+     "water": "Snowmelt streams and pools fed by the basin's snowfields, reliable early and mid season and unreliable late once the snow has pulled back. Plan on melting snow in a lean year.",
+     "permit": "This is the SEPARATE Crescent Creek cross-country zone, not Terror Basin — a trip camping in both needs both zones written onto the same permit, night by night. Like Terror Basin it is walk-up only at Marblemount rather than bookable in advance.",
+     "capacity": "A few parties on gravel, slab and snow; the zone is capped at 6 people per party"
+    },
+    {
+     "elev": 500,
+     "name": "Goodell Creek Campground, roadhead staging",
+     "role": "route",
+     "type": "camp",
+     "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it does let you hit the roadbed at first light, which matters on an approach this long.",
+     "water": "Potable water when the campground is open for the season; the Skagit and Goodell Creek are immediately adjacent as backup",
+     "permit": "Frontcountry campground fee only — no wilderness permit needed to sleep here. Reservable through recreation.gov in peak season, first-come outside it; not always open year round, so confirm before counting on it.",
+     "capacity": "19 individual drive-in sites, plus a separate group campground where the old roadbed begins"
+    },
+    {
+     "elev": 2000,
+     "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by headlamp. The cost is that the whole climb to the basin still lies ahead, so a low night usually means a full second day of approach with no climbing in it.",
+     "water": "Reliable year round from Goodell and Terror Creeks; the last certain running water until the climbers' path regains streams high in the timber",
+     "permit": "A wilderness permit is required, and this spot is LEGALLY AWKWARD: cross-country camping in the park is meant to be at least half a mile from a trail and a mile from designated camps, and the old roadbed is a trail. Ask the Marblemount Wilderness Information Center where they will place you before you plan on it.",
+     "capacity": "One or two small parties on flat ground beside the old grade"
+    },
+    {
+     "elev": 5800,
+     "name": "Terror Basin camp",
+     "role": "route",
+     "type": "camp",
+     "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party gets this far on day one is genuinely contested — strong parties who know the path do it, and parties who lose the path in the timber routinely do not.",
+     "water": "Meltwater off the snowfields above the basin, generally dependable while snow remains and a hunt in a dry late summer. Sources are seasonal, not spring-fed.",
+     "permit": "Terror Basin cross-country zone, from Marblemount. 6-person party maximum. It is NOT on the short list of zones reservable in advance, so it is WALK-UP ONLY — up to 24 hours ahead, with permits released in the morning of day one. Fires prohibited; human waste in a cathole, or out in a blue bag above treeline.",
+     "capacity": "Small flat gravelly ground for a few tents; the park caps the zone at 6 people per party"
+    },
+    {
+     "elev": 6000,
+     "name": "Stump Hollow bench",
+     "role": "route",
+     "type": "camp",
+     "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeast of the Chopping Block near 6,400 ft and drops into Crescent Creek Basin from there. Camp on rock, gravel or snow rather than the heather — this is thin alpine ground that shows every night somebody spends on it.",
+     "water": "Snowmelt only. Trickles and small pools are dependable through early summer while snow lingers, and can dry up or retreat entirely by late season; late-summer parties should expect to search or carry.",
+     "permit": "Cross-country zone permit from the Wilderness Information Center. This bench sits close to the divide between the Terror Basin and Crescent Creek zones, so ask which zone the rangers are writing you into rather than assuming — the answer decides what the rest of your itinerary can say.",
+     "capacity": "Small — a couple of parties on heather benches and slabs, and it is easy to end up spread out"
+    },
+    {
+     "name": "High bivouacs at the western end of the crest",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gravel bench to a night sitting on a ledge. There is no shelter and no water, so this only makes sense with a settled forecast and a party willing to move fast the next morning.",
+     "water": "No dependable source. These are snow-and-rock bivouacs: carry water up or melt snow, and expect nothing at all once the summer snow has gone.",
+     "permit": "Still inside a cross-country zone and still requires a wilderness permit with the night assigned to the correct zone. Camp only on snow, rock or bare ground, keep 100 ft from water, no fires, and carry waste out in a blue bag above treeline.",
+     "capacity": "One party, and often only a ledge or a gravel patch for two people"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_lexington_tower_south_face",
+  "name": "South Face",
+  "area": {
+   "id": "wa_lexington_tower",
+   "name": "Lexington Tower",
+   "parent_id": "wa_liberty_bell_group",
+   "elevation_ft": 7560,
+   "lat": 48.514255,
+   "lng": -120.657465
+  },
+  "prior_findings": "This 'South Face' is Concord Tower's South Face (2 sources).",
+  "earlier_research": [
+   {
+    "file": "r181.json",
+    "fact": "Which tower and face this route climbs",
+    "status": "unresolved",
+    "correct_value": "This is Concord Tower's South Face (5.6, 3 pitches, Grade II, FA 1965), starting from the far eastern edge of the Concord-Lexington notch and finishing over the shark fin to Concord's summit. The row is filed on the wrong tower.",
+    "evidence": "The identical beta (price-of-admission gravelly traverse, sandy spot by the shark fin, pink tricam on the summit block, bolts on the summit, rappel to the notch) and the 1965 Cramer/Anderson/Schuler/Stanley FA are listed under Concord Tower as its South Face; a second route database also lists South Face under Concord Tower with the same FA party and describes the shark fin finish. Settled by research, but the fix is re-filing the row to Concord Tower (area_id, name, summit waypoint), which is out of scope for text patches; patching prose alone would contradict the page's Lexington header.",
+    "sources": [
+     "https://www.mountainproject.com/route/117635520/south-face",
+     "http://www.supertopo.com/rock-climbing/Washington-Pass-Concord-Tower-South-Face",
+     "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+    ]
+   },
+   {
+    "file": "r181.json",
+    "fact": "First ascent",
+    "status": "fixed",
+    "correct_value": "Donald Cramer, Donald Anderson, Bruce Schuler, and Fred Stanley, 1965 (the fa field as stored).",
+    "evidence": "Two independent route databases give the FA as Donald N. Cramer, Donald Anderson, Bruce Schuler and Fred Stanley in 1965. No source found for an Anderson/Scott 1964 ascent. The approach_variants note arguing the FA (and its 'conflicting records' hazard) is removed; fa is unchanged.",
+    "sources": [
+     "https://www.mountainproject.com/route/117635520/south-face",
+     "http://www.supertopo.com/rock-climbing/Washington-Pass-Concord-Tower-South-Face"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_lexington_tower_east_face",
+    "name": "East Face",
+    "grade": "5.9+"
+   },
+   {
+    "id": "wa_tooth_and_claw",
+    "name": "Tooth and Claw",
+    "grade": "5.12a"
+   },
+   {
+    "id": "wa_north_face_3",
+    "name": "North Face",
+    "grade": "5.7"
+   }
+  ],
+  "row": {
+   "id": "wa_lexington_tower_south_face",
+   "area_id": "wa_lexington_tower",
+   "name": "South Face",
+   "discipline": "alpine",
+   "grade": "5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 3,
+   "length_m": 91,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Donald Cramer, Donald Anderson, Bruce Schuler, and Fred Stanley, 1965",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m rope",
+    "Cams 0.4\"-3\" (doubles in finger sizes)",
+    "Nuts",
+    "Pink tricam",
+    "Helmet"
+   ],
+   "hazards": [
+    "Loose, gravelly rock on the initial traverse pitch",
+    "Exposed unroped-feeling scramble sections despite being roped"
+   ],
+   "verif": null,
+   "overview": "A short, moderate 3-pitch 5.6 up Lexington Tower's south side, starting from the Concord-Lexington notch and finishing over a distinctive rock fin to the true summit.",
+   "beta": "P1 is a gravelly, gently down-sloping traverse to trees, staying right — considered the 'price of admission' pitch. P2 climbs to the ridge crest then becomes a roped hike/scramble to a sandy spot near a feature called the 'shark fin,' with a gear anchor behind a flake. P3, the 'money pitch,' traverses up and over the shark fin and then up the summit block to bolted anchors at the top.",
+   "turnaround": "This is a short route, but the summit-block finish and exposed P2 scramble are still consequential — set a turnaround time appropriate to the day's weather rather than pushing through deteriorating conditions.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "From summit bolts: either a single-rope rappel to an intermediate anchor on the face, or a double-rope rappel all the way back to the Concord-Lexington notch.",
+   "commitment": "II",
+   "face": "South Face",
+   "permit": null,
+   "comms": null,
+   "descent": "From the summit bolts, either make a single-rope rappel to an intermediate anchor on the face, or a double-rope rappel all the way back down to the Concord-Lexington notch.",
+   "obj_haz": [
+    "Gravelly, down-sloping rock on P1 (\"the price of admission pitch\")",
+    "Roped hike/scramble section on P2 near the \"shark fin\"",
+    "Exposed summit-block finish on P3"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51901,
+     "lng": -120.6742,
+     "elev": 5400,
+     "name": "Blue Lake Trailhead",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": 5400
+    },
+    {
+     "lat": 48.5144,
+     "lng": -120.6575,
+     "elev": 7560,
+     "name": "Lexington Tower summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 7560
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Morning start; short route but plan around the shared Blue Lake/Liberty Bell approach and afternoon storm risk."
+   },
+   "detailed_rack": "60m rope; a modest rack with cams in the 0.4-3\" range (doubles in finger sizes recommended for confidence), nuts, and a pink tricam for a slot on the summit block. Fixed bolts exist at the summit belay.",
+   "what_to_bring": [
+    "Approach shoes for the notch approach",
+    "Helmet for gravelly P1 terrain"
+   ],
+   "pro_tips": [
+    "Stay right on the gravelly P1 traverse — it's the least protected section of the route.",
+    "The pink tricam is specifically useful for a slot on the summit block; don't skip it."
+   ],
+   "watch_out": [
+    "P1's down-sloping, gravelly rock has minimal protection",
+    "P2 becomes a roped hike/scramble over exposed terrain near the 'shark fin'",
+    "Summit block finish on P3 is exposed"
+   ],
+   "pro_needs": "Light rack overall; the key non-standard piece is a pink tricam for a specific slot on the summit block (P3).",
+   "best_season": "July through September for reliably dry rock; as a south-facing route it can come into condition earlier in the season than the north-facing routes on the tower.",
+   "high_point_ft": 7560,
+   "aid_grade": null,
+   "approach": "Reach the Concord-Lexington notch via the standard Blue Lake Trailhead approach (trending toward the col between Concord and Lexington Towers); the route's first belay starts from the far eastern edge of the notch.",
+   "descent_text": "From the bolted summit anchor, parties either make one single-rope rappel to an intermediate bolted anchor partway down the face and then continue down, or run a full double-rope rappel directly back to the Concord-Lexington notch, from which the standard approach gully/climbers' trail leads back to Blue Lake Trailhead.",
+   "bail": "P1 and P2 offer natural gear-anchor options (flakes/trees) for a rappel retreat back to the notch if needed before committing to the summit block on P3.",
+   "pitch_detail": null,
+   "itinerary": null,
+   "access": {
+    "fees": "$5/vehicle/day (or $30 annual) Northwest Forest Pass/Interagency pass required at Blue Lake Trailhead.",
+    "permit": "No climbing permit required; day-use fee only at the formal trailhead.",
+    "closures": "SR-20 closes seasonally for winter; the trailhead is unreachable by car during closure.",
+    "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+    "passRequired": "Northwest Forest Pass or America the Beautiful/Interagency Pass at Blue Lake Trailhead."
+   },
+   "road": {
+    "name": "North Cascades Highway (SR-20)",
+    "status": "Open seasonally",
+    "driveNote": "From Winthrop, drive ~31 miles west on SR-20 to Blue Lake Trailhead, just past Washington Pass, for the approach to the Concord-Lexington notch.",
+    "seasonalGate": "Gated for winter roughly mid/late November through mid/late April; check WSDOT mountain pass report before approach."
+   },
+   "climate": {
+    "fall": "Good conditions into September/early October before the highway closes for winter.",
+    "spring": "Highway often still gated by winter snow.",
+    "summer": "Prime season — south aspect dries out early and holds sun most of the day.",
+    "winter": "SR-20 closed to vehicles.",
+    "typical": "Dry, sunny alpine-rock weather July-September with occasional afternoon convective storms.",
+    "forecastZone": "NWS zone WAZ048 (Western Chelan County) covers the Washington Pass corridor."
+   },
+   "emergency": {
+    "notes": "Aero Methow Rescue Service (Twisp/Winthrop) provides local EMS; Okanogan County SAR coordinates technical mountain rescue.",
+    "county": "Okanogan County (near the Chelan County line)",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee NF — (509) 996-4000, 24 W Chewuch Rd, Winthrop, WA",
+    "nearestHospital": "Mid-Valley Hospital, Omak, WA (509-826-1760) or Three Rivers Hospital, Brewster, WA",
+    "sheriffDispatch": "Okanogan County Sheriff/911 Dispatch: 509-422-7232 (non-emergency); dial 911 for emergencies"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September, once the gully to the Concord-Lexington notch is snow-free",
+    "monthBreakdown": {
+     "July": {
+      "reason": "The south face is dry and the notch gully melts out through the month; long days leave room for the gravelly first-pitch traverse.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "SR 20 is normally open by now, but snow and ice often fill the gully to the Concord-Lexington notch; an axe and crampons may be needed.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Snow-free approach and dry rock; the sunny south face gets hot midday and late-summer wildfire smoke can drift over Washington Pass.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "The south face stays climbable on clear days, but cold nights, short daylight and early snow before SR 20 closes cut the season off.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cool, stable days suit the sunny south aspect and the approach is dry; larches start turning late in the month.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Blue Lake Trail to the Concord-Lexington notch, then its FAR EASTERN edge",
+     "notes": "Reach the Concord-Lexington notch via the standard Blue Lake Trailhead approach, trending toward the col between Concord and Lexington Towers rather than toward the Liberty Bell-Concord gully. Higher in that gully a climbers' path appears along its left side and is better than the gully bed. Three pitches.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "Two notches a few hundred feet apart on one ridge",
+      "A gully bed better avoided in favour of the path along its left side",
+      "Far less traffic than the Liberty Bell-Concord col, so fainter tread"
+     ],
+     "baseFinding": "THE ROUTE'S FIRST BELAY STARTS FROM THE FAR EASTERN EDGE OF THE NOTCH. So there are two finds and they nest: the right notch, then the right end of it.\n\nWHICH NOTCH: THE CONCORD-LEXINGTON NOTCH IS THE ONE WHERE CONCORD IS ON ONE SIDE OF YOU AND LEXINGTON ON THE OTHER, AND THE CONCORD WALL IN FRONT OF YOU GIVES ONTO LOW-ANGLE, GRAVELLY LEDGES RATHER THAN A STEEP CRACK SYSTEM. IF YOU ARE FACING A STEEP CRACK SYSTEM, YOU ARE AT THE LIBERTY BELL-CONCORD NOTCH, ONE SADDLE BACK, AND LOOKING AT CONCORD'S NORTH FACE.\n\nWHICH END OF IT: the FAR EASTERN edge. The notch is a gap with two ends; walk to the eastern one before racking up. Concord's south-face routes go the other way, up the wall on the notch's Concord side.\n\nCONFIRM BY HARDWARE, BECAUSE THIS ROUTE HAS A DISTINCTIVE ONE: THERE IS A BOLTED SUMMIT ANCHOR. Parties either make one single-rope rappel to an intermediate bolted anchor partway down the face and continue down, or run a full double-rope rappel directly back to the Concord-Lexington notch. A bolted top and a bolted mid-face station on a three-pitch route is what this line offers.\n\nFROM THE NOTCH THE APPROACH GULLY AND CLIMBERS' TRAIL LEAD BACK TO THE BLUE LAKE TRAILHEAD, which is the same car you started from. That is not true of Lexington's east-side routes, which start at the hairpin pond pullout on the other side of the ridge."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_liberty_bell_east_face",
+  "name": "East Face",
+  "area": {
+   "id": "wa_liberty_bell",
+   "name": "Liberty Bell Mountain",
+   "parent_id": "wa_liberty_bell_group",
+   "elevation_ft": 7720,
+   "lat": 48.515435,
+   "lng": -120.658365
+  },
+  "prior_findings": "No evidence a 4-pitch 5.6 'East Face' exists on Liberty Bell; the row's own corrections note says its facts came from Lexington Tower. Identity review.",
+  "earlier_research": [
+   {
+    "file": "r182.json",
+    "fact": "Beta describes a different route",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Outside descriptions of Liberty Bell's East Face list only hard lines (Liberty Crack, Thin Red Line, Freedom Rider etc., 5.10-5.13); the Grade II 5.6 four-pitch line on Liberty Bell is the Beckey Route on the southwest side. The row's own corrections note says its original facts were copied from Lexington Tower's East Face. No source documents a 4-pitch 5.6 'East Face' route on Liberty Bell, so the row's identity is in doubt and no field can be researched against it. The beta (10 pitches, offwidth crux past a 2x4) matches Lexington Tower's East Face; replacing it would mean writing beta for a route that may not exist. Flag the row for an identity review. No patch.",
+    "sources": [
+     "https://www.mountainproject.com/area/105797864/liberty-bell",
+     "https://stephabegg.com/trip-reports/washington/washington-pass/",
+     "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6"
+    ]
+   },
+   {
+    "file": "r182.json",
+    "fact": "Trailhead and approach",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Outside descriptions of Liberty Bell's East Face list only hard lines (Liberty Crack, Thin Red Line, Freedom Rider etc., 5.10-5.13); the Grade II 5.6 four-pitch line on Liberty Bell is the Beckey Route on the southwest side. The row's own corrections note says its original facts were copied from Lexington Tower's East Face. No source documents a 4-pitch 5.6 'East Face' route on Liberty Bell, so the row's identity is in doubt and no field can be researched against it. Which approach is right depends on which route this row really is (East Face lines use the hairpin pullout; the Beckey-like 4-pitch 5.6 uses Blue Lake). No patch.",
+    "sources": [
+     "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+     "https://stephabegg.com/trip-reports/washington/washington-pass/"
+    ]
+   },
+   {
+    "file": "r182.json",
+    "fact": "Popularity",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Outside descriptions of Liberty Bell's East Face list only hard lines (Liberty Crack, Thin Red Line, Freedom Rider etc., 5.10-5.13); the Grade II 5.6 four-pitch line on Liberty Bell is the Beckey Route on the southwest side. The row's own corrections note says its original facts were copied from Lexington Tower's East Face. No source documents a 4-pitch 5.6 'East Face' route on Liberty Bell, so the row's identity is in doubt and no field can be researched against it. Popularity cannot be researched for an unidentified route. No patch.",
+    "sources": [
+     "https://www.mountainproject.com/area/105797864/liberty-bell"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_liberty_bell_freedom_rider",
+    "name": "Freedom Rider",
+    "grade": "5.10d"
+   },
+   {
+    "id": "wa_liberty_bell_sidewinder",
+    "name": "Sidewinder (Southwest Corner)",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_nw_face_var_remsberg_variation",
+    "name": "NW Face Var. (Remsberg Variation)",
+    "grade": "5.10d"
+   },
+   {
+    "id": "wa_liberty_bell_overexposure",
+    "name": "Overexposure",
+    "grade": "Grade II, 5.8"
+   },
+   {
+    "id": "wa_a_servant_to_liberty",
+    "name": "A Servant To Liberty",
+    "grade": "5.13-"
+   },
+   {
+    "id": "wa_liberty_bell_thin_red_line",
+    "name": "Thin Red Line",
+    "grade": "Grade IV, 5.12 free (orig. aid V, 5.9 A3)"
+   },
+   {
+    "id": "wa_dark_side_of_liberty",
+    "name": "Dark Side of Liberty",
+    "grade": "Grade IV, 5.13+, 1,100 ft"
+   },
+   {
+    "id": "wa_liberty_crack",
+    "name": "Liberty Crack",
+    "grade": "Grade V, 5.11a (or 5.9 A3 original aid; 5.13- fully free)"
+   },
+   {
+    "id": "wa_liberty_bell_nw_face",
+    "name": "Northwest Face",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_liberty_bell_freedom_or_death",
+    "name": "Freedom or Death",
+    "grade": "5.12a"
+   },
+   {
+    "id": "wa_liberty_bell_serpentine_crack",
+    "name": "Serpentine Crack",
+    "grade": "Grade III, 5.11"
+   },
+   {
+    "id": "wa_liberty_crack_free",
+    "name": "Liberty Crack (Free)",
+    "grade": "5.13b"
+   },
+   {
+    "id": "wa_rapple_grapple",
+    "name": "Rapple Grapple",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_liberty_traverse",
+    "name": "Liberty Traverse",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_live_free_or_die",
+    "name": "Live Free or Die!™",
+    "grade": "5.12-"
+   },
+   {
+    "id": "wa_liberty_bell_girl_next_door",
+    "name": "The Girl Next Door",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_liberty_bell_independence_route",
+    "name": "The Independence Route",
+    "grade": "Grade V, 5.12a free (orig. F8 A4)"
+   },
+   {
+    "id": "wa_liberty_bell_beckey_route",
+    "name": "Beckey Route (Southwest Face)",
+    "grade": "Grade II, 5.6"
+   },
+   {
+    "id": "wa_liberty_and_injustice_for_all",
+    "name": "Liberty and Injustice for All",
+    "grade": "5.12b"
+   }
+  ],
+  "row": {
+   "id": "wa_liberty_bell_east_face",
+   "area_id": "wa_liberty_bell",
+   "name": "East Face",
+   "discipline": "alpine",
+   "grade": "Grade II, 5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 4,
+   "length_m": 125,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "alpine rock rack",
+    "cams to 3in",
+    "nuts"
+   ],
+   "hazards": [
+    "moderate exposed rock",
+    "route-finding to the summit block",
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "A moderate rock route on the east side of Liberty Bell, giving accessible alpine rock climbing on good Washington Pass granite to the summit. A popular, lower-grade line on the formation.",
+   "beta": "Ten pitches of varied crack, chimney and face climbing on the East Face, with a difficult-to-protect slopey pitch 1 traverse and an offwidth crux (pitch 6) passing a fixed 2x4 and two bolts to an alcove.",
+   "turnaround": "Turn around if storms build over the Pass in the afternoon.",
+   "auto_generated": true,
+   "alpine_grade": "PD",
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": 2400,
+   "loss_ft": 2400,
+   "dist_km": 4.02,
+   "max_angle": null,
+   "rappels": "2",
+   "commitment": "II",
+   "face": "East Face",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No reliable cell coverage anywhere on the peak or at Washington Pass.",
+   "descent": "Descend via the standard Beckey Route rappels/downclimb on the southwest side.",
+   "obj_haz": [
+    "rockfall",
+    "exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5200,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "note": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive SR-20 to the hairpin curve just east of Washington Pass and park on the north shoulder near the curve, at roughly 5,100 ft. This is the east-side pullout that every route on this wall uses, not the Blue Lake Trailhead. If you top out on the true summit and descend the standard west-side notch line you will come out about a mile of highway from the car, so leave a shuttle vehicle or accept the road walk back."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5750,
+     "name": "Stream crossing near meadow",
+     "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+     "type": "Water",
+     "distMi": 1.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5800,
+     "name": "Climbers' path junction",
+     "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward the Liberty Bell-Concord notch.",
+     "type": "Junction",
+     "distMi": 1.6
+    },
+    {
+     "lat": 48.514639,
+     "lng": -120.659478,
+     "elev": 7100,
+     "name": "Approach gully rockfall zone",
+     "note": "Gully below the notch holds snow into late June and sheds rock heavily once it melts out; stay on the boot path that breaks off before the loose gully proper.",
+     "type": "Hazard",
+     "distMi": 2.2
+    },
+    {
+     "lat": 48.514666,
+     "lng": -120.658696,
+     "elev": 7300,
+     "name": "Liberty Bell-Concord Tower notch",
+     "note": "Base for the east side; gain the east aspect from here rather than the SW-facing Beckey gully.",
+     "type": "Junction",
+     "distMi": 2.4
+    },
+    {
+     "lat": 48.514677,
+     "lng": -120.658591,
+     "elev": 7350,
+     "name": "East face loose rock",
+     "note": "Moderate 5.6 face/crack systems on this aspect see far less traffic than the Beckey Route and hold looser rock — helmet strongly advised.",
+     "type": "Hazard",
+     "distMi": 2.5
+    },
+    {
+     "lat": 48.515435,
+     "lng": -120.658365,
+     "elev": 7720,
+     "name": "Liberty Bell summit",
+     "note": "Summit block gained via the east-side crack systems; descend via the Beckey/Overexposure bolted rappels back into the notch.",
+     "type": "Summit",
+     "distMi": 2.7
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "Approach from Blue Lake TH into the basin below the east face (about 1.5-2 hr), climb the 4 pitches, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+      "fromTo": "Car-to-car day climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A light single rack through hand size with a set of nuts is ample for the moderate climbing.",
+   "what_to_bring": [
+    "helmet",
+    "rock shoes",
+    "light rack",
+    "slings"
+   ],
+   "pro_tips": [
+    "A good first route on Liberty Bell for parties newer to alpine rock.",
+    "Start early to avoid afternoon storms.",
+    "Keep an eye on route-finding to the true summit."
+   ],
+   "watch_out": [
+    "afternoon thunderstorms",
+    "route-finding to the summit",
+    "rockfall in the descent gully"
+   ],
+   "pro_needs": "Modest rack; the climbing is moderate and well-featured.",
+   "best_season": "Summer into early fall for dry, warm granite.",
+   "high_point_ft": 7720,
+   "aid_grade": null,
+   "approach": "This is on the East Face, so — like Liberty Crack — the approach is not from the Blue Lake Trailhead but from a separate pullout on SR-20 at the hairpin curve just east of Washington Pass. Park on the north shoulder near the curve, walk back toward the pass to a small pond on the south side of the highway, round its east end, and follow a cairned boot path north into the forest. The path climbs through timber and breaks out onto the talus field directly below the East Face after roughly 20-30 minutes and 0.5 mile (~600-800 ft gain). No water source along the way; watch for the cairned track being hard to follow in low light, and loose talus underfoot at the base.",
+   "descent_text": "Because this is a shorter (4-pitch) line on the East Face rather than a full summit route like Liberty Crack or Thin Red Line, the standard descent is the same notch-based line used across Liberty Bell: downclimb east ~100 ft through trees/loose rock to the 2-bolt station, then one rappel to an intermediate stance followed by a double-rope rappel (or two single-rope raps) into the Liberty Bell-Concord notch — 2 rappels on bolted anchors — then downclimb the scree gully to the climbers' path. Note that because this route (like Liberty Crack) is approached from the East Face pullout rather than Blue Lake Trailhead, returning via the west-side notch means either a car shuttle or a roughly 1-mile roadside walk back to your vehicle; parties who top out near Liberty Crack's finish sometimes instead use that route's dedicated 6-bolt rap line or the 4-double-rope-rap line off M&M Ledge to return directly to the East Face base.",
+   "bail": "Rappel or downclimb to the Beckey descent; retreat is straightforward on this moderate terrain.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Lower-angle face and crack climbing off the East Face talus, easier than the neighboring bolted testpieces at this same cluster of routes.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "The technical crux of this shorter, lower-grade East Face line: sustained crack and face moves on solid Washington Pass granite.",
+     "pitch": 2,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.5",
+     "notes": "Easier climbing continues up the face toward the upper mountain.",
+     "pitch": 3,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Final easy pitch/scramble; most parties then descend via the standard Beckey Route notch rappels rather than topping out directly above this line.",
+     "pitch": 4,
+     "anchor": "Walk-off (no belay)",
+     "lengthM": 30
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Approach from Blue Lake TH into the basin below the east face (about 1.5-2 hr), climb the 4 pitches, then descend the standard Beckey Route rappels/downclimb on the southwest side.",
+      "hours": 9,
+      "miles": 5,
+      "title": "Car-to-car day climb",
+      "gainFt": 2400,
+      "lossFt": 2400,
+      "packLb": 16,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "7:15 AM",
+        "label": "Reach base",
+        "detail": ""
+       },
+       {
+        "time": "7:45 AM",
+        "label": "Start climbing",
+        "detail": ""
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Top out",
+        "detail": ""
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Back at car",
+        "detail": ""
+       }
+      ],
+      "objective": "Climb the East Face and descend the Beckey gully"
+     }
+    ],
+    "totalNote": "A single roadside day, about 9 hrs car-to-car, matching the Beckey Route timing since they share the descent."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass at the Blue Lake Trailhead",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "Standard national forest day-use rules; Leave No Trace.",
+    "permit": "None required for day climbing",
+    "closures": "Highway 20 (North Cascades Highway) over Washington Pass closes seasonally in winter.",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest (Washington Pass / Okanogan NF)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Outside any wilderness boundary; parties bivy informally at the Blue Lake Trailhead lot or the highway hairpin pullout east of the pass. A Northwest Forest Pass or day-use fee is needed to park, and no camping is allowed within a quarter mile of Blue Lake itself."
+    }
+   },
+   "road": {
+    "name": "WA-20 (North Cascades Highway) to Blue Lake Trailhead",
+    "status": "Open seasonally",
+    "driveNote": "From the east (Mazama/Winthrop) or west via Highway 20 to the Blue Lake Trailhead near Washington Pass.",
+    "seasonalGate": "Washington Pass closed in winter (typically late fall to spring)"
+   },
+   "climate": {
+    "typical": "Sunny east-slope granite; afternoon thunderstorms common in summer.",
+    "bySeason": {
+     "fall": "Crisp and dry; great climbing before the highway closes.",
+     "spring": "Snow lingering; highway may still be closed.",
+     "summer": "Prime season; warm dry granite, afternoon storm risk.",
+     "winter": "Highway closed; not accessible."
+    },
+    "forecastZone": "Washington East Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies. Note: Washington Pass straddles the Chelan/Okanogan county boundary; confirm jurisdiction locally.",
+    "county": "Chelan County / Okanogan County (summit straddles the line)",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": null,
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Overshadowed by the Beckey Route and the west-face classics; low traffic, likely only occasional ascents per season"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Blue Lake Trailhead approach around to the east side",
+     "packWeight": "Light alpine rack, roughly 12-15 lb"
+    },
+    "approachTime": "Roughly 1.5-2 hours from the Blue Lake Trailhead, potentially longer approaching around to the east side",
+    "requiredSkills": [
+     "moderate multi-pitch leading around 5.6",
+     "route-finding to the summit block on a less-documented line",
+     "rappel descent",
+     "comfort on exposed rock"
+    ],
+    "experienceLevel": "Competent alpine rock leader comfortable on moderate terrain around 5.6 with route-finding to the summit block"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Summer into early fall for dry, warm granite",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Warm dry granite, prime conditions",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Approach can still be damp or snow-affected early in the month",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Cooler and drier",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Sunny east-slope granite with afternoon thunderstorms common in summer",
+     "probability": "Afternoon storm buildup"
+    },
+    "exposure": "Moderate exposure; route-finding uncertainty to the summit block and rockfall in the descent gully",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer rock route",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Little indexed beta found beyond what is already on file - this is a minor, obscure line on the peak",
+     "No crowd or party-count sources located",
+     "No dedicated NWAC or seasonal timing data for this exact aspect",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/6PBH",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "First ascent party/date for this specific 4-pitch East Face line is unknown -- the previously-stored FA (Marts & McPherson, June 1966) was Lexington Tower's East Face FA, mistakenly copied onto this row; removed rather than left wrong."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.515435,
+    "peakLng": -120.658365,
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332,
+    "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft), via the cairned climbers' paths"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": "This route's header facts (FA: Steve Marts & Don McPherson, June 1966; 10 pitches; 5.9+) were copied from Lexington Tower's East Face, a different nearby formation -- this row's own pitch_detail/descent_text/itinerary consistently describe a shorter, easier 4-pitch 5.6 line that stays on Liberty Bell. Fixed pitches/length/grade to match the on-file pitch_detail; fa left blank pending a human source for this specific short line's actual first ascent.",
+   "gear_confidence": null,
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "Reached via ~100 ft downclimb through trees/loose rock from the summit; rappels to an intermediate stance.",
+     "anchor": "2-bolt station",
+     "lengthM": 30
+    },
+    {
+     "n": 2,
+     "notes": "Double-rope rappel (or two single-rope rappels) down to the Liberty Bell-Concord notch.",
+     "anchor": "bolted anchor at intermediate stance",
+     "lengthM": 55
+    }
+   ],
+   "rappel_count_note": "Shares the standard Liberty Bell notch descent with the Beckey Route and Northwest Face. The count depends on rope configuration - the lower section is one double-rope rappel or two single-rope rappels, so a party on a single 60 m rope should expect one more rappel than the number shown. The East Face enters this line lower than the Beckey Route does.",
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "East Face from the SR-20 hairpin pullout",
+     "hours": "0.5-1",
+     "notes": "Shared with every route on this wall: park at the hairpin turnout on SR-20 just east of Washington Pass, walk back west along the shoulder to the small pond on the south side of the road, round its east end, and follow the cairned boot path north into the trees. It climbs steeply through timber and comes out on the talus directly beneath the East Face in roughly half an hour to an hour.\n\nNo water on the way. The cairns are hard to follow in the dark.\n\nIf you finish on the true summit and descend the standard west-side notch line you will be about a mile of highway from your car, so plan a shuttle or accept the road walk.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "loose talus at the base",
+      "cairned path easy to lose before dawn",
+      "rockfall from parties higher on the wall",
+      "descent by the west-side notch leaves you at the wrong trailhead"
+     ],
+     "baseFinding": "The East Face carries a dense cluster of routes in a short stretch of wall, so identify your line off the big features before you leave the talus rather than by picking the nearest crack. The reference point everybody uses is the large roof high on the left-hand part of the wall — the Lithuanian Lip — which Liberty Crack passes on its right. Anything you start well right of that roof-and-crack system is a different route. Approach ledges at the base are third and fourth class and traverse in from the left, so the start of a line is usually a short sideways walk from where the talus meets the rock, not straight up from it."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

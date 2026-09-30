@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "wa_merchant_peak_south_route",
+   "column": "permit",
+   "path": [],
+   "fact": "access.permit ('None required'; rules: 'no permit required for day use') vs the top-level permit field ('Free self-issue Wild Sky Wilderness permit or trailhead registration')"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_merchant_peak_south_route",
+   "before": {
+    "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads."
+   }
+  }
+ ]
+}

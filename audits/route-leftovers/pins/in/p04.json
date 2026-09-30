@@ -1,0 +1,2678 @@
+[
+ {
+  "id": "wa_little_annapurna_south_slopes",
+  "name": "North Slopes",
+  "area_id": "wa_little_annapurna",
+  "findings": [
+   "r034.json: Wenatchee Outdoors says the northern slopes are a nice hike or ski tour from the Upper Enchantment Lakes while the southern slope drops precipitously toward the Nightmare and Knitting Needles. Wikipedia describes the peak's gentle north slope (holding the Snow Creek Glacier remnant). The row's pins agree: the basin and the base-of-slopes junction lie north of the summit, and the row's hazards/watch_out/bail all put the cliffs on the south edge. | The standard line climbs the gentle north-facing slopes from the Upper Enchantment basin; the south side drops precipitously"
+  ],
+  "gpx_summary": "800 points; 0 of 6 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_little_annapurna_south_slopes",
+   "area_id": "wa_little_annapurna",
+   "name": "North Slopes",
+   "discipline": "mountaineering",
+   "grade": "Grade II, Class 2 to 3",
+   "grade_system": "class",
+   "grade_num": 2,
+   "pitches": null,
+   "length_m": 198,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Sherpa Climbing Club of Ellensburg, 1947 (first ascent of the peak)",
+   "lat": null,
+   "lng": null,
+   "aspect": "N/NW",
+   "season": "late Jun-early Oct",
+   "description": null,
+   "gear": [
+    "ice axe early season",
+    "trekking poles",
+    "helmet"
+   ],
+   "hazards": [
+    "loose talus and slabs",
+    "the abrupt south-side drop from the summit plateau",
+    "early-season snow up high - ice axe and crampons are often needed into July",
+    "afternoon thunderstorms, most common July-August",
+    "the steep, loose Aasgard Pass headwall (about 2,000 ft of gain in ~0.5 mile) on approach and descent, with rockfall risk from parties climbing above"
+   ],
+   "verif": null,
+   "overview": "Little Annapurna (8,485 ft) is a granite summit in the Core (Upper) Enchantments, Stuart Range, Alpine Lakes Wilderness, immediately south of the Enchantment Lakes basin near Isolation and Tranquil Lakes. It was named by Ellensburg's Sherpa Climbing Club for its resemblance to the Himalayan Annapurna massif. The North Slopes route is the easiest way up the peak, an enjoyable Class 2-3 scramble typically approached via Aasgard Pass, finishing with a short 3rd-class step onto the small summit pedestal and views of Dragontail Peak, the Knitting/Nightmare Needles, and the Enchantment Lakes.",
+   "beta": "From the Stuart/Colchuck Lake Trailhead, hike to Colchuck Lake and grind up the steep boulder-and-scree gully of Aasgard Pass to reach the upper Enchantment basin. From the pass, head roughly south-southwest past Isolation and Tranquil Lakes toward Little Annapurna's northeast ridge, then follow cairns up open granite slabs and talus on the peak's north side to the summit -- one of three rocky high points on the ridge, with the true summit being the middle one. The line itself involves minimal exposure and only occasional Class 3 moves, but Aasgard Pass is the physical and route-finding crux of the day.",
+   "turnaround": "The route is short, so weather is the deciding factor. Be off the open summit plateau before afternoon storms, which can build quickly over the Enchantments.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": "Class 2",
+   "ice_grade": null,
+   "gain_ft": 5018,
+   "loss_ft": 5018,
+   "dist_km": 11.7,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "Standard route: upper Enchantments basin and the peak's north/west-facing slopes, ascending near (west of) the northeast ridge",
+   "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+   "comms": "Parties report no cell service at the trailhead or anywhere along the approach and route; a satellite communicator (e.g., inReach) is recommended for emergencies.",
+   "descent": "Reverse the NE-flank scramble to the plateau, then retrace the route back over Aasgard Pass and down to Colchuck Lake and the Stuart/Colchuck Lake Trail. Early season the Aasgard Pass headwall can often be glissaded; by late summer it is loose talus/scree, and the descent is typically slower and harder on the knees than the climb up.",
+   "obj_haz": [
+    "loose talus and scree on Aasgard Pass",
+    "steep snow/ice on Aasgard Pass in early season, requiring ice axe and crampons",
+    "afternoon thunderstorms typical of Cascades summer",
+    "route-finding difficulty in fog/whiteout across cairned granite slabs",
+    "long, exposed round trip with no reliable cell coverage"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3500,
+     "name": "Stuart Lake Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3500,
+     "directions": "Drive Eightmile Road (FR-7601) to its end at the Stuart Lake/Colchuck Lake trailhead, about 3,500 ft. Overnight stays in the Colchuck Zone need a quota wilderness permit."
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5570,
+     "name": "Colchuck Lake",
+     "type": "Junction",
+     "distMi": 4.3,
+     "elevFt": 5570,
+     "directions": "Follow the Stuart Lake Trail #1599 about 2.5 miles to the signed fork where the Colchuck Lake Trail #1599.1 splits left and south. Continue roughly 1.8 miles more, crossing Mountaineer Creek and a boulder-hop stretch near the outlet, to the lake at 5,570 ft. This is the last easy, reliable water, so fill here because there is none above."
+    },
+    {
+     "lat": 47.4803,
+     "lng": -120.8206,
+     "elev": 7841,
+     "name": "Aasgard Pass",
+     "type": "Junction",
+     "distMi": 5.5,
+     "elevFt": 7841,
+     "directions": "Skirt the lake's south and east shoreline on a braided, cairned climbers' path over talus and slab to the foot of the obvious steep gully and headwall at the head of the lake. Aasgard gains roughly 2,000 ft in under a mile on dirt switchbacks, loose scree and boulder-hopping; cairns get knocked over and the path splits into several use trails, so keep re-picking the line toward the notch. Firm snow and ice can linger into July, making an axe and sometimes crampons worthwhile on what is otherwise a scramble."
+    },
+    {
+     "lat": 47.476,
+     "lng": -120.81,
+     "elev": 7400,
+     "name": "Core Enchantments",
+     "type": "Campsite",
+     "distMi": 6.5,
+     "elevFt": 7400,
+     "directions": "From the pass, cross the grey talus and glacial till of the upper Core Zone past Tranquil Lake (Lake Freya) and Isolation Lake, then drop slightly into the meadow-and-tarn complex sometimes called the Brisingamen Lakelets."
+    },
+    {
+     "lat": 47.47,
+     "lng": -120.815,
+     "elev": 7700,
+     "name": "Base of north slopes",
+     "type": "Junction",
+     "distMi": 7,
+     "elevFt": 7700,
+     "directions": "Near the far end of the meadows, watch for an unsigned climbers' path forking right, to the west, toward Little Annapurna. If you cross a stream and pass a toilet sign you have gone by the junction and should backtrack."
+    },
+    {
+     "lat": 47.4682,
+     "lng": -120.8143,
+     "elev": 8485,
+     "name": "Little Annapurna summit",
+     "type": "Summit",
+     "distMi": 7.3,
+     "elevFt": 8485,
+     "directions": "Above here it is a scatter of cairned, well-worn boot paths rather than a trail. Take the line of least resistance up the broad north-facing slabs and talus on the peak's east side, switchbacking and scrambling at low 3rd class at most. The true summit is the middle of three rocky high points along the crest."
+    }
+   ],
+   "elev_pts": [
+    3565,
+    3568,
+    3571,
+    3577,
+    3583,
+    3587,
+    3592,
+    3596,
+    3601,
+    3606,
+    3611,
+    3615,
+    3618,
+    3619,
+    3619,
+    3620,
+    3621,
+    3622,
+    3623,
+    3624,
+    3624,
+    3625,
+    3627,
+    3629,
+    3631,
+    3634,
+    3636,
+    3638,
+    3640,
+    3645,
+    3650,
+    3656,
+    3663,
+    3671,
+    3679,
+    3683,
+    3686,
+    3688,
+    3691,
+    3693,
+    3699,
+    3705,
+    3710,
+    3715,
+    3719,
+    3723,
+    3726,
+    3731,
+    3735,
+    3741,
+    3747,
+    3754,
+    3760,
+    3767,
+    3773,
+    3779,
+    3784,
+    3788,
+    3793,
+    3798,
+    3800,
+    3800,
+    3799,
+    3796,
+    3792,
+    3788,
+    3786,
+    3783,
+    3781,
+    3780,
+    3780,
+    3782,
+    3785,
+    3790,
+    3796,
+    3802,
+    3808,
+    3813,
+    3816,
+    3818,
+    3820,
+    3822,
+    3825,
+    3827,
+    3828,
+    3828,
+    3827,
+    3825,
+    3824,
+    3825,
+    3826,
+    3827,
+    3827,
+    3828,
+    3829,
+    3830,
+    3833,
+    3836,
+    3839,
+    3843,
+    3848,
+    3852,
+    3856,
+    3860,
+    3862,
+    3865,
+    3867,
+    3870,
+    3873,
+    3875,
+    3879,
+    3882,
+    3884,
+    3887,
+    3890,
+    3893,
+    3895,
+    3896,
+    3898,
+    3899,
+    3899,
+    3900,
+    3900,
+    3900,
+    3899,
+    3897,
+    3896,
+    3895,
+    3894,
+    3895,
+    3898,
+    3900,
+    3903,
+    3906,
+    3910,
+    3914,
+    3919,
+    3925,
+    3933,
+    3940,
+    3947,
+    3953,
+    3960,
+    3964,
+    3968,
+    3970,
+    3971,
+    3973,
+    3975,
+    3979,
+    3984,
+    3989,
+    3993,
+    3995,
+    3996,
+    3998,
+    3999,
+    4002,
+    4006,
+    4012,
+    4017,
+    4024,
+    4031,
+    4039,
+    4046,
+    4052,
+    4057,
+    4063,
+    4068,
+    4075,
+    4083,
+    4093,
+    4102,
+    4113,
+    4122,
+    4131,
+    4140,
+    4149,
+    4157,
+    4165,
+    4174,
+    4183,
+    4194,
+    4202,
+    4209,
+    4218,
+    4225,
+    4232,
+    4241,
+    4252,
+    4262,
+    4272,
+    4280,
+    4288,
+    4295,
+    4301,
+    4309,
+    4317,
+    4326,
+    4336,
+    4346,
+    4358,
+    4370,
+    4383,
+    4396,
+    4409,
+    4422,
+    4435,
+    4446,
+    4458,
+    4469,
+    4480,
+    4490,
+    4498,
+    4505,
+    4508,
+    4509,
+    4510,
+    4512,
+    4515,
+    4520,
+    4527,
+    4535,
+    4545,
+    4554,
+    4564,
+    4573,
+    4579,
+    4584,
+    4586,
+    4586,
+    4586,
+    4585,
+    4582,
+    4580,
+    4576,
+    4573,
+    4572,
+    4573,
+    4571,
+    4568,
+    4565,
+    4562,
+    4558,
+    4557,
+    4558,
+    4560,
+    4560,
+    4561,
+    4563,
+    4565,
+    4566,
+    4566,
+    4566,
+    4564,
+    4562,
+    4563,
+    4568,
+    4575,
+    4583,
+    4594,
+    4604,
+    4612,
+    4620,
+    4629,
+    4635,
+    4641,
+    4646,
+    4649,
+    4650,
+    4651,
+    4655,
+    4659,
+    4666,
+    4675,
+    4684,
+    4693,
+    4701,
+    4711,
+    4722,
+    4733,
+    4746,
+    4756,
+    4765,
+    4772,
+    4777,
+    4781,
+    4787,
+    4795,
+    4802,
+    4810,
+    4820,
+    4830,
+    4840,
+    4852,
+    4864,
+    4875,
+    4886,
+    4894,
+    4902,
+    4909,
+    4917,
+    4925,
+    4934,
+    4940,
+    4945,
+    4949,
+    4952,
+    4955,
+    4959,
+    4963,
+    4967,
+    4972,
+    4978,
+    4982,
+    4987,
+    4989,
+    4989,
+    4989,
+    4993,
+    4998,
+    5006,
+    5017,
+    5028,
+    5038,
+    5050,
+    5061,
+    5072,
+    5084,
+    5097,
+    5109,
+    5120,
+    5131,
+    5142,
+    5152,
+    5162,
+    5171,
+    5175,
+    5175,
+    5172,
+    5165,
+    5159,
+    5155,
+    5152,
+    5150,
+    5151,
+    5152,
+    5153,
+    5156,
+    5161,
+    5168,
+    5177,
+    5187,
+    5196,
+    5204,
+    5209,
+    5215,
+    5220,
+    5225,
+    5231,
+    5237,
+    5242,
+    5246,
+    5250,
+    5252,
+    5253,
+    5254,
+    5256,
+    5261,
+    5270,
+    5281,
+    5293,
+    5302,
+    5311,
+    5318,
+    5322,
+    5328,
+    5336,
+    5345,
+    5354,
+    5365,
+    5374,
+    5381,
+    5388,
+    5395,
+    5402,
+    5412,
+    5424,
+    5436,
+    5450,
+    5464,
+    5479,
+    5493,
+    5507,
+    5521,
+    5533,
+    5545,
+    5558,
+    5570,
+    5580,
+    5589,
+    5594,
+    5593,
+    5591,
+    5589,
+    5587,
+    5583,
+    5580,
+    5580,
+    5581,
+    5585,
+    5595,
+    5609,
+    5620,
+    5625,
+    5624,
+    5615,
+    5605,
+    5597,
+    5591,
+    5588,
+    5588,
+    5585,
+    5577,
+    5572,
+    5571,
+    5574,
+    5583,
+    5595,
+    5605,
+    5610,
+    5612,
+    5608,
+    5601,
+    5598,
+    5597,
+    5596,
+    5597,
+    5599,
+    5595,
+    5590,
+    5586,
+    5582,
+    5578,
+    5577,
+    5577,
+    5578,
+    5580,
+    5582,
+    5585,
+    5588,
+    5587,
+    5586,
+    5585,
+    5581,
+    5578,
+    5579,
+    5581,
+    5582,
+    5587,
+    5591,
+    5597,
+    5603,
+    5611,
+    5620,
+    5628,
+    5634,
+    5639,
+    5643,
+    5641,
+    5637,
+    5630,
+    5624,
+    5615,
+    5612,
+    5610,
+    5614,
+    5618,
+    5623,
+    5627,
+    5630,
+    5632,
+    5635,
+    5633,
+    5632,
+    5633,
+    5630,
+    5619,
+    5616,
+    5613,
+    5607,
+    5605,
+    5615,
+    5621,
+    5623,
+    5627,
+    5631,
+    5629,
+    5628,
+    5632,
+    5632,
+    5633,
+    5638,
+    5643,
+    5648,
+    5657,
+    5661,
+    5665,
+    5670,
+    5671,
+    5674,
+    5679,
+    5686,
+    5692,
+    5701,
+    5708,
+    5717,
+    5727,
+    5741,
+    5761,
+    5783,
+    5806,
+    5826,
+    5844,
+    5856,
+    5871,
+    5881,
+    5895,
+    5912,
+    5931,
+    5946,
+    5966,
+    5986,
+    5999,
+    6015,
+    6036,
+    6052,
+    6080,
+    6111,
+    6140,
+    6165,
+    6194,
+    6211,
+    6224,
+    6242,
+    6260,
+    6274,
+    6291,
+    6311,
+    6330,
+    6347,
+    6368,
+    6388,
+    6413,
+    6429,
+    6444,
+    6459,
+    6474,
+    6493,
+    6515,
+    6538,
+    6562,
+    6587,
+    6607,
+    6627,
+    6650,
+    6678,
+    6706,
+    6734,
+    6763,
+    6789,
+    6805,
+    6820,
+    6828,
+    6834,
+    6845,
+    6860,
+    6875,
+    6895,
+    6917,
+    6936,
+    6953,
+    6970,
+    6985,
+    7004,
+    7025,
+    7048,
+    7071,
+    7093,
+    7112,
+    7132,
+    7150,
+    7165,
+    7180,
+    7191,
+    7202,
+    7210,
+    7219,
+    7227,
+    7239,
+    7252,
+    7269,
+    7292,
+    7317,
+    7342,
+    7366,
+    7390,
+    7415,
+    7439,
+    7465,
+    7488,
+    7509,
+    7529,
+    7548,
+    7564,
+    7580,
+    7596,
+    7615,
+    7637,
+    7657,
+    7675,
+    7692,
+    7705,
+    7714,
+    7723,
+    7739,
+    7756,
+    7768,
+    7779,
+    7789,
+    7792,
+    7793,
+    7795,
+    7796,
+    7798,
+    7800,
+    7798,
+    7798,
+    7796,
+    7793,
+    7790,
+    7789,
+    7790,
+    7793,
+    7795,
+    7796,
+    7796,
+    7793,
+    7787,
+    7779,
+    7772,
+    7766,
+    7762,
+    7760,
+    7760,
+    7759,
+    7755,
+    7749,
+    7743,
+    7734,
+    7729,
+    7725,
+    7724,
+    7724,
+    7726,
+    7727,
+    7729,
+    7727,
+    7724,
+    7721,
+    7718,
+    7716,
+    7715,
+    7713,
+    7709,
+    7705,
+    7698,
+    7691,
+    7684,
+    7677,
+    7672,
+    7668,
+    7666,
+    7662,
+    7657,
+    7649,
+    7636,
+    7621,
+    7607,
+    7595,
+    7582,
+    7573,
+    7566,
+    7562,
+    7560,
+    7560,
+    7560,
+    7559,
+    7557,
+    7553,
+    7552,
+    7553,
+    7555,
+    7555,
+    7556,
+    7553,
+    7551,
+    7549,
+    7548,
+    7547,
+    7546,
+    7543,
+    7542,
+    7543,
+    7544,
+    7547,
+    7550,
+    7551,
+    7551,
+    7549,
+    7547,
+    7545,
+    7542,
+    7539,
+    7537,
+    7536,
+    7535,
+    7534,
+    7533,
+    7533,
+    7536,
+    7539,
+    7544,
+    7550,
+    7556,
+    7563,
+    7573,
+    7583,
+    7594,
+    7604,
+    7611,
+    7620,
+    7631,
+    7644,
+    7662,
+    7681,
+    7698,
+    7714,
+    7728,
+    7736,
+    7744,
+    7755,
+    7766,
+    7777,
+    7787,
+    7802,
+    7814,
+    7826,
+    7840,
+    7855,
+    7864,
+    7877,
+    7891,
+    7907,
+    7925,
+    7941,
+    7955,
+    7966,
+    7975,
+    7982,
+    7994,
+    8005,
+    8019,
+    8035,
+    8051,
+    8065,
+    8079,
+    8093,
+    8105,
+    8120,
+    8134,
+    8151,
+    8167,
+    8187,
+    8206,
+    8225,
+    8241,
+    8261,
+    8282,
+    8302,
+    8325,
+    8351,
+    8370,
+    8385,
+    8395,
+    8401,
+    8404,
+    8408,
+    8406,
+    8409
+   ],
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 12.5,
+    "summitTimeHrs": 3,
+    "descentTimeHrs": 9.5,
+    "approachTimeHrs": null,
+    "recommendedStart": "Early start",
+    "sectionBreakdown": [
+     {
+      "hrs": 3,
+      "note": "Hike from the Stuart Lake/Colchuck Lake Trailhead via the Colchuck Lake Trail (moderate, well-graded climb through forest and boulder fields) to camp at Colchuck Lake, 5,570 ft. Mo…",
+      "fromTo": "Approach to Colchuck Lake camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 9.5,
+      "note": "An early alpine start up the steep, loose Aasgard Pass gully (2,200+ ft in under 2 miles) gains the Enchantment plateau, from which an easy walk-up leads to the summit. Most partie…",
+      "fromTo": "Aasgard Pass to Little Annapurna, then out to trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rock gear is needed. An ice axe is worthwhile early in the season for snow on the upper slopes, and trekking poles help on the talus.",
+   "what_to_bring": [
+    "trekking poles",
+    "ice axe early season",
+    "helmet",
+    "2 liters of water",
+    "sun protection",
+    "wind layer",
+    "headlamp",
+    "navigation tools",
+    "satellite communicator"
+   ],
+   "pro_tips": [
+    "Combine it with nearby Core summits in one outing.",
+    "Carry an axe early season for the upper snow.",
+    "Stay well back from the dramatic south edge.",
+    "Go in larch season for the best views."
+   ],
+   "watch_out": [
+    "loose talus underfoot",
+    "the abrupt south-side cliffs",
+    "afternoon storms on the plateau",
+    "early-season snow"
+   ],
+   "pro_needs": "There is no protectable climbing; movement is unroped scrambling. The challenge is minimal beyond basic route-finding and staying back from the south edge.",
+   "best_season": "Late June/July through early October for a snow-free scramble; the Aasgard Pass headwall and upper slopes often hold snow well into July, so an ice axe (and sometimes crampons) is recommended early season. Late September brings the Enchantment basin's famous larch color along with its heaviest crowds and permit competition.",
+   "high_point_ft": 8485,
+   "aid_grade": null,
+   "approach": "From the Stuart Lake/Colchuck Lake Trailhead (~3,500 ft, end of Eightmile Road/FR-7601), follow the Stuart Lake Trail (#1599) about 2.5 miles to the signed fork where the Colchuck Lake Trail (#1599.1) splits left/south. Continue roughly 1.8 more miles — crossing Mountaineer Creek and a boulder-hop stretch near the outlet — to Colchuck Lake (5,570 ft, ~4.3 mi in), the last easy, reliable water before the pass. Skirt the lake's south/east shoreline on a braided, cairned climbers' path over talus and slab to the base of Aasgard Pass, the obvious steep gully/headwall at the lake's south end. Aasgard Pass is the crux of the approach: it gains roughly 2,000 ft in under a mile on a mix of dirt switchbacks, loose scree and boulder-hopping, cairns are frequently knocked down and the path braids into several use-trails, and well into summer it can still hold firm snow/ice that makes an ice axe (and sometimes crampons) worthwhile even though the route is otherwise a scramble. Top out at Aasgard Pass (~7,800-7,841 ft, ~5.3 mi from the trailhead). Beyond the pass, cross the grey talus/glacial-till 'moonscape' of the upper Core Zone past Tranquil Lake (Lake Freya) and Isolation Lake, then drop slightly into the meadow-and-tarn complex sometimes called the Brisingamen Lakelets. Near the far end of these meadows watch for an unsigned climbers' path forking right (west) toward Little Annapurna — crossing a stream and passing a toilet sign means you've overshot the junction. From there the route is more a scatter of cairned, well-worn boot paths than a trail; pick the path of least resistance up the broad north-facing slabs and talus on the peak's east/left side, switchbacking and scrambling (low 3rd class at most) to the 8,485-ft summit. Trailhead-to-summit totals run about 15-16 miles and 5,000-5,800 ft. Hazards: no water past the Colchuck Lake outlet, so fill up there; loose rock and rockfall potential on Aasgard Pass and the final slopes, especially with parties above you; full sun/thunderstorm exposure on the open talus above the pass; and early/mid-season snow on the pass creating slip-and-slide fall hazard.",
+   "descent_text": "Reverse the North Slopes: downclimb the low-3rd-class/class-2 slabs and talus on the peak's east side back to the col/basin, pick up the braided boot paths back through the Brisingamen Lakelets meadows, and rejoin the Core Zone trail past Isolation and Tranquil Lakes to Aasgard Pass. This is a scramble walk-off in both directions — no rope, rack, or rappelling is used on the standard North Slopes line; parties simply describe reversing the ascent, and the peak is often characterized as little more than a steep class 2 hike. The one genuine descent-specific hazard is Aasgard Pass itself: down-climbing its ~2,000 ft of loose scree and talus in the afternoon (often with the sun having softened any remaining snow, and other parties ascending below) is a common cause of rockfall incidents and slips — down-climb deliberately, stay out of others' fall line, and only glissade if a real, clean snow chute with a safe runout is in (by mid-to-late summer the pass is usually bare, exposed talus rather than snow). From the base of the pass, retrace the trail around Colchuck Lake and down the Colchuck Lake/Stuart Lake Trail to the trailhead. Rappels: 0.",
+   "bail": "Retreat is trivial by reversing the scramble at any point, with no committing terrain. The only real caution is keeping well back from the abrupt south edge of the summit plateau.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1 (trail)",
+     "notes": "4.3 mi via the Lake Stuart Trail (2.5 mi) then the Colchuck Lake Trail (1.8 mi), gaining roughly 1,900 ft to the lake at 5,570 ft.",
+     "pitch": "Trailhead to Colchuck Lake"
+    },
+    {
+     "grade": "Class 2 (steep talus/boulder)",
+     "notes": "Gains roughly 2,270 ft in under a mile up a loose boulder-and-scree gully between Dragontail Peak and Little Annapurna; can hold hard snow/ice into summer.",
+     "pitch": "Colchuck Lake to Aasgard Pass"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Cross the open upper Enchantment basin near Isolation and Tranquil Lakes, then turn south/southwest toward Little Annapurna's northeast ridge.",
+     "pitch": "Aasgard Pass to the upper basin below Little Annapurna"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Ascend granite slabs and blocks on the peak's north side/slopes to the summit, following cairns; occasional Class 3 moves are possible depending on the exact line chosen. The true summit is the middle of three rocky high points.",
+     "pitch": "Upper basin to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "Camping at Colchuck Lake requires a quota Colchuck Zone wilderness permit (lottery in winter, limited walk-up availability) for the roughly late-May–Oct season; Aasgard Pass often still holds snow/ice into July, so an ice axe is worth carrying for early-season trips.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike from the Stuart Lake/Colchuck Lake Trailhead via the Colchuck Lake Trail (moderate, well-graded climb through forest and boulder fields) to camp at Colchuck Lake, 5,570 ft. Most parties use this shorter approach day to bank energy and scout the Aasgard Pass gully before the long summit day.",
+      "hours": 3,
+      "miles": 4,
+      "title": "Approach to Colchuck Lake camp",
+      "gainFt": 2270,
+      "lossFt": 0,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Establish camp at Colchuck Lake for an Aasgard Pass summit push"
+     },
+     {
+      "n": 2,
+      "note": "An early alpine start up the steep, loose Aasgard Pass gully (2,200+ ft in under 2 miles) gains the Enchantment plateau, from which an easy walk-up leads to the summit. Most parties then descend the full route back through camp, break down their tent, and continue all the way out to the trailhead the same day — a long, full day, so an early start matters and headlamps for the final miles are common.",
+      "hours": 9.5,
+      "miles": 11,
+      "title": "Aasgard Pass to Little Annapurna, then out to trailhead",
+      "gainFt": 2815,
+      "lossFt": 5185,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Break camp, start up Aasgard Pass",
+        "detail": "Leave non-summit gear cached or carry light packs; steep boot-track/scree gully."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Top of Aasgard Pass (~7,800 ft)",
+        "detail": "Onto the Enchantment plateau near Isolation/Tranquil Lakes; goats common here."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Summit Little Annapurna (8,485 ft)",
+        "detail": "Easy walk-up from the plateau; views of Rainier, Stuart, Dragontail, Prusik."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Begin descent",
+        "detail": "Reverse route back down the plateau and Aasgard Pass to camp."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Back at Colchuck Lake camp",
+        "detail": "Break camp fully, repack for the hike out."
+       },
+       {
+        "time": "~2:30 PM",
+        "label": "Back at trailhead",
+        "detail": "Final 4 miles down the Colchuck Lake Trail; many parties finish in fading light."
+       }
+      ],
+      "objective": "Summit Little Annapurna via Aasgard Pass and hike all the way out to the car"
+     }
+    ],
+    "totalNote": "A 2-day, 1-night trip: hike in and camp at Colchuck Lake, then an early alpine-start summit day over Aasgard Pass to Little Annapurna and all the way back out to the car (~15 mi and ~5,100 ft round trip total). Strong, fit parties do sometimes push it car-to-car in a single very long day (~12-13 hrs), but most treat it as an overnight given the permit system and the risk of descending the loose Aasgard Pass gully in the dark."
+   },
+   "access": {
+    "fees": "$6 non-refundable lottery application fee; overnight camping fee of $5 per person per night (May 15-October 31); a Northwest Forest Pass is required for trailhead parking at the Stuart Lake/Colchuck Lake Trailhead.",
+    "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "rules": "Campfires are prohibited above 5,000 ft and within 0.5 mile of any lake, which effectively bans fires along the entire approach and on the peak; dogs are prohibited throughout the Enchantment Permit Area; group size is capped at 8 in the Colchuck/Stuart zones; camp only at established sites on rock, gravel, or sand.",
+    "permit": "Overnight camping anywhere in the Enchantment Permit Area (including the Colchuck and Stuart zones used to approach Little Annapurna, and the Core Zone around Isolation/Tranquil Lakes) requires a permit via Recreation.gov, allocated mostly through the advance lottery held mid-February to March 1 (results posted mid-March), with a limited number of rolling 7-day-window/walk-up releases through the rest of the season.",
+    "group_limit": 8,
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+    "overnight_permit": {
+     "url": "https://www.recreation.gov/permits/233273",
+     "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+     "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+    }
+   },
+   "road": {
+    "name": "Icicle Creek Road to Forest Road 7601 (Mountaineer Creek Road)",
+    "driveNote": "From US-2 in Leavenworth, follow Icicle Creek Road about 8.4 miles, then Forest Road 7601 about 3.7 miles to the Stuart Lake/Colchuck Lake Trailhead (~3,500 ft). The trailhead parking area is small and routinely fills before dawn on summer weekends."
+   },
+   "climate": {
+    "typical": "Dry, sunny high-Cascade summers with cool nights above 7,000 ft; afternoon thunderstorms are common in July and August; the season's first accumulating snow at this elevation can arrive by late September."
+   },
+   "emergency": {
+    "rangerStation": "Wenatchee River Ranger District, Okanogan-Wenatchee National Forest (Leavenworth, WA) - the district covering the Icicle Creek/Enchantments area is now named Wenatchee River Ranger District, not Leavenworth Ranger District",
+    "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA - 24-hour ER, (509) 548-5815",
+    "sheriffDispatch": "911 - Chelan County Sheriff's Office backcountry search-and-rescue callouts for the Enchantments are coordinated through RiverCom regional 911 dispatch"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Late-September larch season and July-August weekends, when the Core Enchantments zone is at its busiest with permit holders and thru-hikers; Little Annapurna itself sees noticeably less traffic than the main lake basin since it is an optional side-scramble rather than the thru-hike route",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Core Enchantments permit holders number in the hundreds per season (one of the most competitive lotteries in WA), but likely only a few dozen parties actually detour to summit Little Annapurna specifically"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong — able to sustain 15+ mile, 5,000-6,000 ft days if day-tripping the whole loop, or carry overnight gear over Aasgard Pass to a Core camp and do the summit as a shorter 4-hr round trip from there",
+     "packWeight": "Overnight pack (roughly 30-40 lb) if camping in the Core zone; fast-and-light day pack only for parties attempting it as a single huge push"
+    },
+    "approachTime": "Long — the peak is reached from a Core Enchantments camp (itself roughly 8-9 mi and ~6,200 ft gain via Aasgard Pass from the Stuart Lake trailhead); the summit push from camp is about 4 hrs round trip",
+    "requiredSkills": [
+     "Class 2-3 scrambling on loose talus and slabs",
+     "off-trail routefinding across similar-looking granite terrain in the basin",
+     "steep, loose, unmaintained trail/scree competence for the Aasgard Pass approach",
+     "early-season snow travel and basic self-arrest if attempting before full melt-out"
+    ],
+    "experienceLevel": "Comfortable with sustained Class 2-3 off-trail scrambling and long alpine days; should already have Enchantments-caliber backcountry experience given the approach"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "July through October, with late September the standout window for larch color and stable weather",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early month can still hold lingering snowfields on north-facing terrain and on the Aasgard Pass approach; conditions firm up through the month",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Driest, most stable month with slabs and talus mostly clear of snow",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Shorter days and possible early snow/freezing temps as the season closes out; larches have dropped needles",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Stable fall weather and famous larch color late in the month though this is also the most crowded stretch",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "A short summer-to-fall scramble best done July through October, with late September larch season especially scenic",
+     "probability": "Afternoon thunderstorms are a known risk on the exposed summit plateau — check forecasts and turn around early if storms are building"
+    },
+    "exposure": "Moderate — Class 2-3 talus/slab terrain; an abrupt drop-off on the south side of the summit plateau, so straying off-route in poor visibility or storm is the main fall hazard, compounded by loose underfoot rock throughout",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble climbed July-Oct, outside NWAC's typical Nov-Apr forecast season",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "The specific NWAC avalanche-forecast zone covering this peak could not be confirmed",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/SSMM",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "HIGH",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.468226,
+    "peakLng": -120.814335,
+    "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+    "trailheadLat": 47.5282,
+    "trailheadLng": -120.82036,
+    "trailheadDirection": "From the Stuart Lake/Colchuck Lake Trailhead (~3,500 ft, end of Eightmile Road/FR-7601)"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Aasgard Pass and the Core, snow-free",
+     "hours": "6-8",
+     "notes": "Stuart Lake / Colchuck Lake Trailhead at about 3,500 ft, Stuart Lake Trail #1599 for roughly 2.5 miles to the signed fork, then left/south on the Colchuck Lake Trail for another 1.8 miles to Colchuck Lake at 5,570 ft, around 4.3 miles in. That is the last easy, reliable water.\n\nSkirt the lake's south and east shore on a braided cairned path over talus and slab to the foot of Aasgard Pass, the obvious steep headwall at the lake's south end. The pass gains roughly 2,000 ft in under a mile on dirt switchbacks, loose scree and boulder-hopping. Cairns get knocked over and the path braids; there are cairns marking more than one line, so follow the most worn tread and keep climber's LEFT of the cliff bands. Drifting climber's right toward the waterfall terrain on Colchuck Peak's flank is how people get cliffed out and killed here. Near the top the path passes a small waterfall and climbs steeply beside a much bigger one — missing the turn there puts you on vertical rock.\n\nTop out at about 7,800-7,841 ft, roughly 5.3 miles from the car. Cross the grey talus and glacial till of the upper Core past Tranquil Lake and Isolation Lake, then drop slightly into the meadow-and-tarn complex sometimes called the Brisingamen Lakelets.\n\nLate September brings the larches, and with them the year's heaviest crowds and permit competition. A day scramble needs no lottery permit; camping in the Core does.",
+     "distMi": 5.3,
+     "gainFt": 4300,
+     "season": "late Jul-early Oct",
+     "hazards": [
+      "Aasgard Pass: cliffed-out terrain climber's right near the waterfalls, with fatalities on record",
+      "Misleading and duplicated cairns on the pass and on the peak itself",
+      "Loose rock and rockfall from parties above, on the pass and on the final slopes",
+      "No water past the Colchuck Lake outlet",
+      "Full sun and thunderstorm exposure on open talus above the pass — no shelter anywhere in the Core"
+     ],
+     "primary": true,
+     "baseFinding": "There are two separate 'find it' problems on this route and the first one is the trail junction, not the mountain.\n\nNear the FAR END of the meadows, watch for an UNSIGNED path forking RIGHT (west) toward Little Annapurna. It is a use-path, not tread. The unambiguous overshoot marker is downstream of it: if you cross a small stream AND pass a sign for the toilet, you have gone too far and need to come back. That pair — stream then toilet sign — is the single most useful navigational fact on this route, because the junction itself has nothing to see.\n\nFrom the pass at Aasgard, Little Annapurna lies to the SOUTHEAST and reads as a gently rolling hill rather than a peak, which is part of why people walk past the turn.\n\nThe second problem is the mountain itself, and the honest answer is that there is no single line. The 'route' is a scatter of well-worn boot paths over broad north-facing slabs and talus. Cairns are present, easy to lose, and mark more than one option. The working rule reported by everyone: take the path of least resistance up the peak's LEFT (east) side, switchbacking and scrambling, nothing harder than low 3rd class, to the summit at 8,485 ft.\n\nIf you find yourself on anything that feels like real climbing, you have drifted off the line — this is a walk-up with hands occasionally on rock, and any steepening means come back left and lower."
+    },
+    {
+     "name": "Aasgard Pass and the Core with snow",
+     "notes": "The same line with snow on the pass and on the upper slopes. An ice axe is worth carrying, and sometimes crampons, even though the peak itself is a scramble — the exposure is on Aasgard, not on Little Annapurna.\n\nEarly-season snow on the pass firms overnight and turns punchy through the day, hiding ice underneath; there is also a creek running beneath the talus that snow bridges. The pass is avalanche terrain in shoulder season.\n\nDescending the pass in the afternoon on softened snow, with tired legs and other parties below, is the well-documented incident scenario here. Glissade only where there is a genuine clean chute with a safe runout — by mid to late summer the pass is bare talus and there is nothing to glissade.",
+     "season": "late Jun-mid Jul, and shoulder season either side",
+     "hazards": [
+      "Avalanche terrain on Aasgard Pass in shoulder season",
+      "Creek running beneath the talus under snow bridges on the pass",
+      "Punchy afternoon snow over hidden ice",
+      "Patchy snow-to-slab transitions on the summit slopes",
+      "Uncontrolled glissade descending the pass — the classic afternoon incident here"
+     ],
+     "baseFinding": "With snow covering the Core, the unsigned right-hand fork toward Little Annapurna and the stream-then-toilet-sign overshoot marker are all buried or unreliable, so navigate by the lakes instead: from the top of Aasgard, travel between Isolation Lake and Tranquil Lake and then head SOUTH toward the broad rolling summit mass that sits southeast of the pass.\n\nOn the peak, snow simplifies the problem — the braided boot paths and contradictory cairns that make the summer scramble confusing are gone, and the broad north-facing slopes go directly. Keep to the LEFT (east) side of the mountain and take the easiest angle available.\n\nWhat to watch for instead: the transition from snow to bare slab, which happens patchily on a north-facing slope in early summer and is where an unroped slip becomes a slide."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "low 3rd class at most",
+     "label": "North slabs and talus to the summit",
+     "notes": "A scatter of cairned, well-worn boot paths rather than a trail: pick the path of least resistance up the broad north-facing slabs and talus on the peak's east/left side, switchbacking and scrambling to the 8,485-ft summit. Loose rock and rockfall potential on the final slopes, especially with parties above you; full sun and thunderstorm exposure on the open talus; no water past the Colchuck Lake outlet."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 7190,
+     "name": "Perfection Lake and Inspiration Lake basin camps",
+     "role": "main",
+     "type": "camp",
+     "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a steep loose grind with a heavy pack rather than a trail in any real sense. Camp on rock, sand or gravel and stay off the heather — the meadows here recover very slowly. No fires at any elevation in the basin.",
+     "water": "Reliable — the chain of lakes and the connecting streams hold water all season",
+     "permit": "Core Enchantment zone. This is the hardest overnight permit in the area to draw; the advance lottery through recreation.gov is the main route in, with a small number of Core spots also released in the geofenced daily lottery at Leavenworth. A Core permit is the flexible one — it is valid for camping in any of the five zones (Core, Colchuck, Snow, Stuart, Eightmile/Caroline).",
+     "capacity": "Numerous hardened sites on granite benches and sand between the two lakes; the whole Core zone is held to roughly two dozen people a night, so it is never crowded once you are in"
+    },
+    {
+     "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+     "role": "main",
+     "type": "camp",
+     "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra driving in the morning is only a few miles of dirt. Expect a very long day from here — car to base of route commonly runs three to four hours, and finishing after dark is normal.",
+     "water": "Icicle Creek runs alongside both; check current potable-water status at the site, as it varies by year and season",
+     "permit": "No wilderness permit at all — both are ordinary Forest Service campgrounds outside the Enchantment Permit Area, paid per night. This is what a party climbs from when it has no zone permit and is doing the route car-to-car, which is entirely legal: day use in the permit area needs only the free self-issue wilderness slip at the trailhead.",
+     "capacity": "Bridge Creek is small and rustic; Eightmile is much larger with roughly forty family sites. Both take a mix of reservations and first-come nights depending on the season."
+    },
+    {
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "role": "route",
+     "type": "camp",
+     "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the road is gated through winter and into spring. Parking is small for the demand, so a party arriving the night before should expect to be squeezed. Campfires are banned here, so plan on stoves only.",
+     "water": "Reliable — the lake itself, plus inlet streams on the south shore through most of the season. Treat it; the shoreline is heavily used.",
+     "permit": "Colchuck Lake zone of the Enchantment Permit Area. An overnight permit is required May 15–Oct 31 and comes either from the advance lottery on recreation.gov (applications open in February, success rates in the single digits) or the daily lottery run through the recreation.gov app inside a geofence around the Wenatchee River Ranger Station in Leavenworth. Day climbing needs no overnight permit, only the free self-issue Alpine Lakes Wilderness day slip at the trailhead and a parking pass.",
+     "capacity": "Roughly a dozen scattered hardened sites around the east and north shores and up the west side; each permit covers one party, and group size in this zone is capped at 8"
+    },
+    {
+     "name": "Core Enchantments",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_the_direct_north_ridge_w_gendarme",
+  "name": "The Direct North Ridge w/ Gendarme",
+  "area_id": "wa_mount_stuart",
+  "findings": [
+   "r038.json: The route documents two genuine approaches (Esmeralda/Goat Pass, marked primary, and Stuart Lake/Mountaineer Creek), and waypoint[0]'s own directions explicitly label that pin as the Icicle-side start and tell the party the Teanaway side is a different drive; two labelled options, not a wrong fact."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "area_id": "wa_mount_stuart",
+   "name": "The Direct North Ridge w/ Gendarme",
+   "discipline": "alpine",
+   "grade": "5.9+",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 20,
+   "length_m": 853,
+   "sort_order": null,
+   "stars": null,
+   "fa": "North Ridge (original line, bypassing the Great Gendarme): Don Claunch & John Rupley, September 9, 1956. Complete North Ridge, via the lower ridge's west side: Fred Beckey & Steve Marts, 1963. First ascent climbing directly over the Great Gendarme: James Wickwire & Fred Stanley, 1964. Direct lower-ridge start variation (from the true toe): Mead Hargis & Jay Ossiander, 1970",
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Cams 0.3-3in (doubles 0.4-2in)",
+    "#4 cam (Gendarme offwidth)",
+    "Nuts/offsets",
+    "8-12 alpine draws",
+    "Helmet",
+    "Rope"
+   ],
+   "hazards": [
+    "The gendarme-bypass gully (rappelling right/west at its base) is prone to rockfall on dirty rock and is not recommended; the upper mountain is almost always shaded and can be icy/cold on the crux pitches",
+    "Documented accident, July 2020: a climber was struck by rockfall near the top of the route, took a long fall, and required roughly 24 hours to rescue after failed helicopter extraction attempts."
+   ],
+   "verif": null,
+   "overview": "The full-length version of the North Ridge, starting at the true toe rather than the notch, adding roughly 800 vertical feet and a sustained 5.9+ opening lieback before joining the standard North Ridge line up through the Great Gendarme.",
+   "beta": "Three opening pitches off a ledge ~150 ft above the toe — including an awkward 5.8 squeeze slot and a striking, sustained 5.9+ lieback crack — join the standard North Ridge; from there roughly 11 more pitches of exposed 4th-to-mid-5th ridge climbing on excellent granite lead to the Great Gendarme (two 5.9 pitches: a fingers/hands dihedral and an offwidth), then blocky 4th/low-5th terrain to the summit.",
+   "turnaround": "A full-value Grade IV outing — recorded ascents range from about 9 hours of pure climbing to 15-40 hours car-to-car including bivies. Set a firm turnaround before the Gendarme and carry bivy gear as a contingency.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9+",
+   "ice_grade": null,
+   "gain_ft": 6050,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "~75 ft rappel around the Great Gendarme if bypassing; otherwise walk off via Cascadian Couloir or Sherpa Glacier/Sherpa Pass",
+   "commitment": "IV",
+   "face": "North Ridge (complete, base to summit via the 1970 direct start)",
+   "permit": "Depends on the approach. Over Ingalls Lake and Goat Pass from the Esmeralda Basin trailhead you are outside the Enchantment Permit Area: the free self-issued Alpine Lakes Wilderness permit covers day and overnight use, with no lottery. Via Mountaineer Creek from the Stuart Lake trailhead, camps are in the Enchantment Permit Area's Stuart Zone, where overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need only the free self-issued permit.",
+   "comms": "No reliable cell coverage on the ridge.",
+   "descent": "Cascadian Couloir (most common) or Sherpa Glacier/Sherpa Pass (faster, early season, north side)",
+   "obj_haz": [
+    "loose, lichen-covered rock in places",
+    "cold/icy shaded Gendarme",
+    "rockfall in bypass gullies"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.52779,
+     "lng": -120.82082,
+     "elev": 3540,
+     "name": "Stuart Lake Trailhead (Eightmile Creek Rd #7601)",
+     "note": "Trail #1599 up Icicle/Eightmile Creek, then cross-country up Mountaineer Creek to the base of the ridge.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "This pin is the Icicle-side start, not the Teanaway one. Drive Eightmile Creek Road (FS 7601) to its end at the Stuart Lake Trailhead, about 3,400 ft, where Trail #1599 up Icicle/Eightmile Creek leaves the lot; the approach then goes cross-country up Mountaineer Creek to the toe of the ridge. If you are coming at the ridge the other way, over Ingalls Pass and Goat Pass, that is a different drive to the Esmeralda Basin trailhead at the end of the North Fork Teanaway Road, so make sure you and your partner agree on the trailhead before you leave town."
+    },
+    {
+     "lat": 47.47854,
+     "lng": -120.88416,
+     "elev": 6600,
+     "name": "Base of North Ridge (glacier moat)",
+     "note": "Gain the ridge crest via the moat beside the Sherpa/Ice Cliff Glaciers; complete ridge route starts here.",
+     "type": "Junction",
+     "distMi": 6
+    },
+    {
+     "lat": 47.4751179,
+     "lng": -120.9031444,
+     "elev": 9415,
+     "name": "Mount Stuart summit",
+     "note": "Crux is the Great Gendarme (5.9 offwidth) about 500 ft below the summit; a short rappel bypasses it around the base.",
+     "type": "Summit",
+     "distMi": 7.5
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": 6.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 3.5,
+    "recommendedStart": "Very early alpine start (a recorded ascent left the trailhead at 5:24am)"
+   },
+   "detailed_rack": "Cams 0.3-3in (doubles 0.4-2in, optional #4 for the Gendarme offwidth), one set of nuts (offsets recommended), 8-12 alpine draws; optional ice axe/crampons/helmet for approach snow.",
+   "what_to_bring": [
+    "Ice axe & crampons (early-season snow/moat)",
+    "Bivy gear",
+    "Headlamp",
+    "Extra food/water for a long day"
+   ],
+   "pro_tips": [
+    "The lower 3 pitches are a real technical crux (5.9+ sustained lieback) — don't underestimate them",
+    "Decide on the Gendarme bypass vs. direct finish before you're below it"
+   ],
+   "watch_out": "Loose rock and sometimes crumbly black lichen on rock at times\nAlternative bypass gully NOT recommended - involves climbing dirty rock prone to rockfall\nGendarme section almost always in shade - can be very cold or even icy, creating hypothermia risk and icy climbing conditions\nSignificant complex terrain: 'parties have accidentally taken wrong descent path' - disorientation hazard\nSeasonal constraints: snow patches affect water availability at notch (8,200 ft)\nMultiple approach/descent options involve glacier travel (Sherpa, Stuart glaciers) that become 'too difficult to navigate' as season progresses\nRoute quality varies - some sections clean, others lichen-covered and unstable\n20 pitches of mostly 5th class climbing with mixed terrain\nHelmet essential due to rockfall concern\nComplex terrain and poor visibility increase navigation challenges especially during descent",
+   "pro_needs": "A standard alpine rack sized up for the offwidth crux; natural pro (horns, slung blocks) supplements the rack on the long ridge sections.",
+   "best_season": "July through September; a lingering ice/snow patch in the gully below the Great Gendarme can persist into midsummer.",
+   "high_point_ft": 9415,
+   "aid_grade": null,
+   "approach": "From the Esmeralda/Lake Ingalls Trailhead at the end of FS-9737, hike the Ingalls Way Trail up switchbacks past several waterfalls. For the Cascadian Couloir and South Headwall, turn right onto the Longs Pass Trail at the junction about 1.7 miles in, climb to Longs Pass (about 6,250 ft) near mile 2.9, and descend the rocky climbers' trail on the far side to Ingalls Creek, cross on a log bridge, and follow the climbers' path up the meadow into the base of the Cascadian Couloir (South Headwall lies further up-basin via the same drainage). For West Ridge, the North Ridge routes, and the South Face (Gorillas in the Mist / Gorillas Direct / King Kong), instead stay on the Ingalls Way Trail over Ingalls Pass (about 6,500 ft, roughly mile 3) and continue past Ingalls Lake toward Stuart Pass, then follow the climbers' trail onto the talus shoulder below Stuart's West Ridge and contour northwest to Goat Pass (7,600 ft) — the South Face wall with the Gorillas routes sits in the amphitheater roughly midway between Stuart Pass and Goat Pass, while West Ridge and North Ridge climbers continue over or along Goat Pass toward their respective start points. Camping is common near Goat Pass or down at Ingalls Creek depending on the objective. The North Ridge routes can also be reached from the opposite (Mountaineer Creek) side.",
+   "descent_text": "The Cascadian Couloir is the most common descent — a long traverse south then a loose, sustained scree/talus descent to Ingalls Creek. On the north side, the Sherpa Glacier is quicker and more direct in early season for parties based at a Mountaineer Creek camp; alternatively descend 3rd-class terrain around the south side of Sherpa Peak to Sherpa Pass and glissade a snow slope. A West Ridge downclimb is reported as tedious and not recommended.",
+   "bail": "Retreat is difficult once established above the first few pitches; the short rappel around the Great Gendarme is the main planned bail/bypass option below the final headwall.",
+   "pitch_detail": [
+    {
+     "grade": "5.8",
+     "notes": "Start from a big ledge about 150 ft above the true toe of the ridge. Climb easy ground and a lieback to a small pine, then continue into an awkward squeeze slot, 5.8 and considerably harder with a pack on. Pitch breaks vary between parties here; belay on the ledge above the slot.",
+     "pitch": "1"
+    },
+    {
+     "grade": "5.7",
+     "notes": "Face climbing on good granite to a comfortable ledge at the foot of the long crack on the left. Moderate and well protected; it sets up the belay for the crux pitch.",
+     "pitch": "2"
+    },
+    {
+     "crux": true,
+     "grade": "5.9+",
+     "notes": "The technical crux of the whole route: a striking, sustained lieback crack on the left that goes on for a long way, ending with a pull over a small roof to a belay ledge. Pumpy and insecure with alpine packs. Parties who cannot free it often aid through the crux.",
+     "pitch": "3"
+    },
+    {
+     "grade": "5.7",
+     "notes": "A short pitch that finishes the steep lower buttress. Above it, the ridge eases and the simul-climbing begins. Take note of the terrain above before pulling the rope, since route-finding from here to the notch is by the cleanest path.",
+     "pitch": "4"
+    },
+    {
+     "grade": "5.6",
+     "notes": "Long simul-climbing blocks of 3rd class to 5.6 up and right along the ridge to the large notch at about 8,200 ft, where the Stuart Glacier approach joins. Rock off the most-travelled line is loose and lichen-covered, so follow the cleanest path. The notch has bivy sites and, earlier in the season, water from snowmelt.",
+     "pitch": "5-15 (approx)"
+    },
+    {
+     "grade": "5.7",
+     "notes": "From the notch stay on the left (east) side, then follow an easy ramp to the crest. The ridge narrows to an exposed knife-edge, taken on its west side, with short 5.5 laybacks and one 5.7 move. A superb 5.5 slab split by a crack comes just before the Gendarme. Most parties simul-climb most of this upper ridge.",
+     "pitch": "Notch → Great Gendarme"
+    },
+    {
+     "grade": "5.9",
+     "notes": "A steep fingers-and-hands dihedral with laybacks and underclings, with good rests between the harder sections, to the top of a pillar. Given grades range from 5.8 to 5.9. The Gendarme is almost always shaded and can be cold, wet or iced after bad weather. Bypass option: a bolted rappel down the west side, then a dirty, rockfall-prone gully; not recommended.",
+     "pitch": "Gendarme, lower"
+    },
+    {
+     "grade": "5.9",
+     "notes": "Traverse to the offwidth and climb it. It is steep and intimidating from below but has solid holds and fist jams inside; given grades range from 5.8+ to 5.9+. A 3.5–4 in cam is essential, and a second one makes it much safer. Belay above once the angle eases.",
+     "pitch": "Gendarme, upper"
+    },
+    {
+     "grade": "5.7",
+     "notes": "Above the Gendarme, trend right on an airy traverse back to the crest at a small saddle. Climb a short 5.7 hand crack (some parties find a 5.8 move), then lower-angle broken ground leads to the summit (9,415 ft). The descent is the Cascadian Couloir to the south, or the Sherpa Glacier for a north-side camp.",
+     "pitch": "Final"
+    }
+   ],
+   "itinerary": "Typically done as a long single day by fast parties (simul-climbing) or over 2-3 days with a bivy on the ridge for parties pitching it out fully.",
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+    "permit": "Free Self-Issue Day Permit",
+    "group_limit": 8,
+    "land_manager": "U.S. Forest Service",
+    "parking_pass": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+     "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+     "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season."
+    }
+   },
+   "road": {
+    "name": "Teanaway River Road (FR-9737) to Longs Pass/Ingalls Creek approach, or Stuart Lake Trailhead (Icicle Creek Road) depending on route/face",
+    "status": "Teanaway River Road: paved then gravel, generally passable to standard cars to the road-end parking (~4,243 ft) about 1 mile past DeRoux Campground. Stuart Lake TH access road (FS-7601 off Icicle Road) is steep/washboarded, high-clearance recommended.",
+    "driveNote": "Roughly 2-2.5 hours from Seattle via I-90 to Cle Elum then Teanaway River Road (for Cascadian Couloir/south-side routes), or via US-2/Icicle Creek Road from Leavenworth (for north-side/Stuart Lake approaches)."
+   },
+   "climate": {
+    "fall": "Climbable into October in dry years",
+    "spring": "Approach and Gendarme moat still snow-covered",
+    "summer": "Prime rock season, July-September",
+    "winter": "Access roads gated; essentially unclimbed",
+    "typical": "Dry, continental high-alpine climate; hot days, cold nights, afternoon-storm risk",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "No cell coverage on route; carry a satellite communicator.",
+    "county": "Chelan County (north approach) or Kittitas County (south approach)",
+    "rangerStation": "Leavenworth Ranger District (north) / Cle Elum Ranger District (south), Okanogan-Wenatchee NF",
+    "nearestHospital": "Cascade Medical Center, Leavenworth (north) / Kittitas Valley Healthcare, Ellensburg (south)",
+    "sheriffDispatch": "Chelan County Sheriff (911) / Kittitas County Sheriff-KITTCOM (911) depending on approach side"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "5-8 party pileups documented; up to a 3-hour wait reported on Labor Day",
+    "solitudeRating": 2,
+    "estimatePerSeason": "High on weekends/holidays"
+   },
+   "partner_requirements": {
+    "requiredSkills": [
+     "Simul-climbing",
+     "Exposed bivy readiness",
+     "Crampon/axe skills for the Stuart Glacier crossing in early season"
+    ],
+    "experienceLevel": "Solid 5.9 trad leader able to lead while fatigued after 2,300+ ft of roped climbing; one of the 'Fifty Classic Climbs of North America'"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July-August",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July marginal; late July improves, though crampons are still advised for the glacier",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Snow travel gear needed for the glacier crossing",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Best window; crampons still advised for the glacier crossing",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Route too long for short daylight",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still solid",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "A confirmed lightning storm has forced a retreat at the notch bivy in the past"
+    },
+    "exposure": "Upper mountain is shaded/icy on the crux pitches",
+    "avalanche": {
+     "zone": "NWAC East Slopes Central",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": {
+     "timing": "Early-season crossings (June) carry real fall consequence even though avalanche forecasting does not cover this window",
+     "location": "Stuart Glacier crossing"
+    }
+   },
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "Well corroborated over a decade-plus, including a specific confirmed AAC accident record (see Known Hazards)."
+    ],
+    "confidence": "HIGH",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.475118,
+    "peakLng": -120.903144,
+    "trailhead": "Esmeralda Basin Trailhead (FR-9737)",
+    "trailheadLat": 47.43656,
+    "trailheadLng": -120.93697,
+    "trailheadDirection": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail"
+   },
+   "sling_rack": {
+    "cams": "0.3-3, doubles 0.4-2, optional #4 for the Gendarme offwidth",
+    "nuts": "1 set, offsets work well"
+   },
+   "alpine_draws": 10,
+   "rope_type": "single 60m dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Striking pitch-3 liebeck crack, Great Gendarme offwidth crux, 5.5 slab with a good crack up top. Rock 'loose in spots, lichen covered' in places.",
+   "ascender": null,
+   "corrections": "fa corrected to include the North Ridge's actual 1956 original ascent (Claunch & Rupley, bypassing the Great Gendarme), previously omitted. 1963 Beckey/Marts re-labeled as the first ascent climbing directly over the Gendarme rather than the route's original FA, per American Alpine Institute / SummitPost / Cascades climbing-history sources. Rest of the row's beta was pulled directly from Mountain Project and is unchanged.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Cams 0.3-3in, doubles 0.4-2in, plus #4 for the Gendarme offwidth",
+    "Nuts/offsets, 1 set",
+    "8-12 alpine draws",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Crack",
+    "Offwidth",
+    "Dihedral",
+    "Sustained",
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Mountaineer Creek to the hanging valley, then straight to the toe of the ridge",
+     "notes": "From the Stuart Lake trailhead at the end of Eightmile Road (about 3,400 ft), follow the trail past the Colchuck Lake fork and keep going. Roughly a mile beyond that fork the maintained trail turns uphill and switchbacks away to the right for Stuart Lake. Leave it there and stay flat in the valley with Mountaineer Creek. Cross the creek on logs — there is no canonical log and the crossing moves with the snowpack — then follow the south fork upstream. After a couple of miles the valley steepens; turn up a steep talus and boulder slope into the hanging valley beneath Sherpa Peak, where the bivy sites are. That flat ground under the glaciers is the arrival cue for camp. From the hanging valley the last leg is a faint climbers' path through trees and talus to the moraine, then up the edge of the moraine to rock. The Direct start is the same climb as the Complete North Ridge with a lower-ridge variation on its first pitches; if you are looking at an entry on this app for 'North Ridge (Complete)' as well, treat the approach as identical.",
+     "season": "Jun-mid Jul; best early, while the Sherpa Glacier still gives a straightforward descent back to this side",
+     "hazards": [
+      "Log crossings of Mountaineer Creek that shift year to year and are worse under early-season snow",
+      "Rockfall and icefall off the Ice Cliff Glacier while traversing the moraine beneath it",
+      "An open moat between snow and rock at the toe late in the season",
+      "Loose rock and crumbly black lichen on the lower pitches",
+      "A committing 20-pitch route with the Great Gendarme high on it and no easy retreat once above the lower ridge"
+     ],
+     "baseFinding": "KEEP THE ICE CLIFF GLACIER ON YOUR LEFT AND WALK UNTIL THE ROCK STOPS YOU. That single sentence is the whole test, and it works in cloud because it is about which side the ice is on rather than about seeing the summit. Climbing out of the hanging valley towards the mountain, the Ice Cliff Glacier must stay on your left the whole way. If it swings round to your right you have walked past the toe and out onto the Stuart Glacier side.\n\nThe toe itself is the lowest rock of the ridge, at roughly 6,600 ft, where the moraine runs into the buttress. You are at the correct place when there is nothing lower to climb — the ridge above you rises unbroken and the ground on either side falls away into a glacier.\n\nSECOND TEST, and it is what tells the Direct start from a wander onto the flank: the first belay is off a BIG LEDGE about 150 ft above the base of the toe, with a small tree on it. If you have not passed a big ledge with a tree inside the first rope length, you are not on the line. The three opening pitches are the hardest on the whole route — an awkward squeeze slot and then a long, sustained lieback crack on the left. If your first pitches feel easy, you have started too high and joined the ordinary ridge.\n\nWHAT GOING TOO FAR LOOKS LIKE: the ridge you are standing under gains a deep notch with flat bivy ground in it. That notch is where the Upper North Ridge starts, and reaching it on foot means you have skipped the 1,200 ft this route exists for."
+    },
+    {
+     "name": "Ingalls Lake and Goat Pass, traversing east below the Stuart Glacier to the toe",
+     "hours": "4-5",
+     "notes": "From the Esmeralda Basin trailhead at the end of the North Fork Teanaway Road, follow the Ingalls Way trail over Ingalls Pass and past Ingalls Lake toward Stuart Pass, then pick up the climbers' path onto the talus shoulder below Stuart's West Ridge and contour northwest to Goat Pass, about 7,600 ft — the col between Point 7893 and the West Ridge.\n\nThis is now the common way parties reach the ridge, and its advantage is that it puts you on the SOUTH side of the range where the descent also finishes, rather than committing you to a north-side camp you then have to walk back around to.\n\nFrom Goat Pass, do not drop onto the glacier and go up. Traverse EAST below the Stuart Glacier, staying above the large moraine mound, and aim for the toe.\n\nBivy sites exist at Goat Pass and at Stuart Pass. Published trailhead-to-base times for this variant vary widely enough that no figure is given here.",
+     "season": "Roughly Jul-Sep, once the Ingalls Way trail is clear and the Stuart Glacier traverse is walkable",
+     "hazards": [
+      "Crevasses and a soft afternoon snow surface on the Stuart Glacier traverse",
+      "Loose moraine and talus on the traverse below the glacier",
+      "Route-finding error at Goat Pass in cloud, where dropping onto the glacier feels natural and is wrong",
+      "A long committing route with the Great Gendarme high on it",
+      "No water between the last melt stream and the summit"
+     ],
+     "primary": true,
+     "baseFinding": "STAY ABOVE THE MORAINE MOUND AND KEEP TRAVERSING. Coming from Goat Pass the mistake is vertical, not horizontal: the ground invites you to drop down onto the glacier or to climb up onto the ridge crest early, and both put you on the route above its start.\n\nThe line is a rising traverse east, above the large moraine mound below the Stuart Glacier, all the way to the toe. If you find yourself walking DOWN onto flat glacier ice you have dropped too low. If you find yourself scrambling onto ridge crest before you have gone round the end of the rock, you are on the west flank and above the toe.\n\nARRIVAL: the toe is the point where the buttress runs out into the moraine and there is nothing below it to climb, at roughly 6,600 ft. Confirm it the same way the north-side party does — from the toe, the Ice Cliff Glacier is on the far (east) side of the ridge and the Stuart Glacier is behind you to the west. If both glaciers are on the same side of you, you are not at the toe.\n\nAnd the same first-pitch check applies: the opening belay is a big ledge with a small tree roughly 150 ft up, and the first three pitches are the hardest of the route. Easy first pitches mean you started too high."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 7650,
+     "name": "Goat Pass bivies",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The high camp of choice for the upper North Ridge and the Stuart Glacier Couloir when approaching from the Ingalls side, putting the traverse under the glacier and the entry gully within an easy morning. Bivy ground is plentiful and reasonably flat, but the position is exposed and windy, so bring a shelter rather than counting on a sheltered nook. From here the standard line traverses east below the Stuart Glacier above the moraine, with snow crossings well into summer. The water situation is the binding constraint late in the season — treat it as a dry camp unless you have seen recent conditions.",
+     "water": "No dependable running water. Snowmelt trickles and lingering patches are usually workable into midsummer, but by late season the pass is dry and you must carry water up or melt snow off the glacier below",
+     "permit": "Reached from the Esmeralda Basin trailhead over Ingalls Pass and Stuart Pass, so approached on Alpine Lakes Wilderness ground under the Cle Elum Ranger District — free self-issued trailhead permit, Northwest Forest Pass to park, no Enchantment lottery permit. The pass sits on the divide, however: a party that continues down into the Mountaineer Creek drainage and camps there is entering the Stuart Zone and needs that overnight permit between May 15 and Oct 31.",
+     "capacity": "Numerous small rock-and-gravel platforms along the pass; several independent parties can spread out without crowding each other"
+    },
+    {
+     "elev": 5400,
+     "name": "Mountaineer Creek basin below the Sherpa Glacier",
+     "role": "main",
+     "type": "camp",
+     "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers.",
+     "water": "Creek runs through the basin",
+     "permit": "Enchantment Permit Area overnight permit (Stuart zone) from May 15 to October 31",
+     "capacity": "Several small tent sites on flat ground in the basin"
+    },
+    {
+     "elev": 8200,
+     "name": "North Ridge notch bivy",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The ridge is gained at roughly 8,200 ft from the upper Stuart Glacier at about 7,800 ft via a snow-filled gully usually climbed on fourth-class rock along its edge, and the notch just above is the last genuinely comfortable bivy before the climbing proper. A second cluster of usable ledges sits several pitches higher, above the junction with the lower west variation, which suits parties splitting the Complete North Ridge over two days. Everything here is an emergency-grade perch rather than a campsite: no water, no shelter, and no easy retreat once committed. Whether to bivy at all is a live disagreement — many parties climb the route in a single push from Goat Pass, and which is better depends on your speed and the descent you have chosen.",
+     "water": "None on the ridge. Fill from snowmelt streams on the traverse below the Stuart Glacier before committing, or melt snow from the glacier; there is nothing above.",
+     "permit": "No separate climbing permit exists for the ridge itself, and the wilderness permit requirement is driven by which drainage you camped in. Parties staging from Ingalls and the Esmeralda side need only the free self-issued Alpine Lakes Wilderness permit; parties who camped in Mountaineer Creek below are in the Stuart Zone and need that overnight permit May 15 to Oct 31. The boundary in the upper basin is not clearly drawn — confirm with the Wenatchee River Ranger District if you intend to bivy low on the north side.",
+     "capacity": "Around four or five people at the notch itself, with a scattering of poorer spots higher on the ridge; the good ledges are few and far between once you are on the route"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_navaho_peak_south_slopes",
+  "name": "South Slopes",
+  "area_id": "wa_navaho_peak",
+  "findings": [
+   "r039.json: A trip log states the Standup Trail #1369 junction is reached 3.8 miles in, with camp about a mile beyond and the pass about half a mile past camp. The Navaho Pass hike page puts the T junction at the Stafford Creek crossing about 3.5 miles in. So the approach and descent text (3.5-3.8 mi) are right and the waypoint's 4.85 mi and 'about 1 mile below Navaho Pass' are wrong (the reader's internal resolution had it backwards). The waypoint's pin and its 5,450 ft elevation also sit up near the meadow camp; pins are out of scope and the elevation is flagged separately. | The Standup Creek Trail junction is about 3.5-3.8 mi from the trailhead, roughly 2 mi below Navaho Pass",
+   "r039.json: With the junction at 3.8 mi, its stored elevation (5,450 ft) sits 650 ft above the 4,800 ft creek-crossing waypoint only 0.3 mi earlier, which is implausible on a trail described as gaining gradually; the pin itself also appears to sit near the meadow camp. No source found giving the junction's elevation, so it is left unchanged."
+  ],
+  "gpx_summary": "367 points; 0 of 7 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_navaho_peak_south_slopes",
+   "area_id": "wa_navaho_peak",
+   "name": "South Slopes",
+   "discipline": "mountaineering",
+   "grade": "Class 2",
+   "grade_system": "class",
+   "grade_num": 2,
+   "pitches": null,
+   "length_m": 1609,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "trekking poles",
+    "sturdy boots",
+    "ice axe early season"
+   ],
+   "hazards": [
+    "Lingering snowfields on the upper bowl/ridge into July — can obscure the route and create fall/glissade hazard on steep sections",
+    "Afternoon thunderstorms with lightning exposure on the open ridge and summit",
+    "Loose talus and blocky terrain above ~6,000 ft — rockfall risk onto parties below",
+    "Active Forest Service closure (hazard trees, fire-damaged terrain) on Trail #1359 through Dec 31, 2026",
+    "Long, mostly waterless upper approach — carry sufficient water"
+   ],
+   "verif": null,
+   "overview": "Navaho Peak is the fourth-highest summit in the Teanaway high country and sits on the boundary of the Alpine Lakes Wilderness, on the Kittitas/Chelan county line about 2 miles northeast of Earl Peak and 1.3 miles west of Three Brothers. The South Slopes/Southwest Ridge line is the standard non-technical route: a long approach up Stafford Creek to an open bowl and ridge system, then a broad talus-and-heather scramble to a small summit (room for only 4-5 people) with wide views of Mount Stuart, Ingalls Peak, Sherpa Peak, Earl Peak, and Mount Rainier.",
+   "beta": "The standard route follows the Stafford Creek Trail to Navaho Pass, then picks up the old County Line Trail heading east to intersect Navaho's south ridge; from there it's roughly a 700-foot Class 2 ridge scramble on a boot path to the summit. Reported round-trip stats vary by source from about 11-14 miles with 4,000-4,300 feet of gain depending on the exact line taken. A known shortcut leaves the main trail about 3 miles in, where two creek forks meet, and climbs directly to the saddle below the peak's southeast ridge, cutting roughly 2 miles off the round trip.",
+   "turnaround": "Set a firm turnaround time (e.g., early-to-mid afternoon) given the long, mostly open ridge above treeline with no quick escape from lightning — East Cascades thunderstorms typically build in the afternoon.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 4223,
+   "loss_ft": 4200,
+   "dist_km": 11,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "I",
+   "face": "South Slopes",
+   "permit": null,
+   "comms": "Cell coverage is unreliable to absent for most of the approach and at the summit given the remote, forested/alpine terrain of the Teanaway backcountry; do not rely on a cell signal for emergencies.",
+   "descent": "Reverse the ascent route",
+   "obj_haz": [
+    "loose scree/talus",
+    "lingering snow into July",
+    "route-finding near summit",
+    "exposed/small summit with limited room",
+    "afternoon thunderstorms"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.3663,
+     "lng": -120.8027,
+     "elev": 3100,
+     "name": "Stafford Creek Trailhead",
+     "note": "End of FR 9703; ~20-car lot with pit toilet, Northwest Forest Pass or $5 self-issue fee required; trail has seen closures for Labor Mountain Fire damage so check current USFS alerts before going.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive the Teanaway River Road to 29 Pines Campground, bear right where the pavement ends, then turn onto Stafford Creek Road and follow it a couple of miles to where it ends at the trailhead. The last stretch is dirt and washboarded but passable to low-clearance cars in dry conditions."
+    },
+    {
+     "lat": 47.401465,
+     "lng": -120.803455,
+     "elev": 4800,
+     "name": "Stafford Creek crossing, Stafford Creek Meadows",
+     "note": "Stream crossing in the meadows on Trail #1359; last reliable water before the drier climb toward the pass.",
+     "type": "Water",
+     "distMi": 3.5,
+     "directions": "Trail #1359 leaves the lot at an easy grade through dry ponderosa and lodgepole forest, staying close to Stafford Creek most of the way. A short rerouted section of steeper switchbacks near the half-mile mark bypasses old avalanche-damaged tread. The forest stays open and the grade never gets hard before the trail reaches the marshy meadow ground."
+    },
+    {
+     "lat": 47.409686,
+     "lng": -120.802068,
+     "elev": 5450,
+     "name": "Standup Creek Trail junction",
+     "note": "Trail #1359 meets the Standup Creek Trail about 2 miles below Navaho Pass; continue straight/left on #1359 toward the pass.",
+     "type": "Junction",
+     "distMi": 3.8,
+     "directions": "Stay on Stafford Creek Trail #1359, still gaining gradually along the creek, to the signed junction with the Standup Creek Trail (#1369)."
+    },
+    {
+     "lat": 47.409284,
+     "lng": -120.799768,
+     "elev": 5500,
+     "name": "Upper meadow camp",
+     "note": "Established camp area in the upper meadow (elev/dist interpolated between the 4,800 ft creek crossing and the pass); common overnight staging spot before the steep push above.",
+     "type": "Campsite",
+     "distMi": 5,
+     "directions": "Continue on Trail #1359 above the junction; the trail opens out into a large, marshy subalpine meadow with a feeder stream — another water source, and the usual base camp for parties splitting the trip over two days."
+    },
+    {
+     "lat": 47.414557,
+     "lng": -120.795687,
+     "elev": 6000,
+     "name": "Navaho Pass",
+     "note": "Junction with the old County Line Trail (Cascade Creek Trail #1217); barren, rocky 'moon-scape' terrain with big Enchantments views, but very exposed to wind for camping.",
+     "type": "Junction",
+     "distMi": 5.85,
+     "directions": "Above the meadow the trail leaves the trees and switchbacks up open, rocky slope for the last stretch, gaining roughly 500 ft to the saddle. There is no water and essentially no shade on this section, and on the dry east side it bakes on a warm afternoon."
+    },
+    {
+     "lat": 47.418341,
+     "lng": -120.799937,
+     "elev": 6600,
+     "name": "South ridge scramble path",
+     "note": "Steep climber's path of loose scree and dirt gaining the south ridge; snow patches can linger into July, making poles/microspikes worthwhile.",
+     "type": "Hazard",
+     "distMi": 6.3,
+     "directions": "From the pass turn east and follow the crest trail a short way toward the peak, then leave it where a boot path breaks off uphill onto the south ridge. The path is loose scree over dirt and steepens quickly, so poles earn their keep and it is easy to push rock down onto anyone below you."
+    },
+    {
+     "lat": 47.4226199,
+     "lng": -120.803141,
+     "elev": 7223,
+     "name": "Navaho Peak",
+     "note": "True summit at 7,223 ft on the Alpine Lakes Wilderness boundary; panoramic views of the Enchantments and Stuart Range.",
+     "type": "Summit",
+     "distMi": 6.85,
+     "directions": "Follow the crest up for a bit over 600 ft of gain on broken rock and scree; the scrambling stays easy Class 2 with hands wanted only occasionally. Stay on the ridge line rather than dropping onto the looser slopes on either side, which are steeper than they look from above."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": null,
+    "descentTimeHrs": 3.5,
+    "approachTimeHrs": 5,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "From the Stafford Creek trailhead, follow Stafford Creek through meadows to Navaho Pass (~5.5 mi, ~3,000 ft gain), then turn onto the southwest ridge / south slopes for a Class 2 s…",
+      "fromTo": "Car-to-car via Stafford Creek and Navaho Pass",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical gear required.",
+   "what_to_bring": [
+    "Sturdy boots with good ankle support for extended talus/scree",
+    "Trekking poles",
+    "Ice axe if attempting before mid-late July or after early-season snow",
+    "Map/compass or GPS track — the trail fades near Navaho Pass and the ridge is mostly cross-country",
+    "Sun protection — much of the upper route is open and exposed",
+    "Northwest Forest Pass for trailhead parking",
+    "Self-issue wilderness permit (fill out at the trailhead kiosk)"
+   ],
+   "pro_tips": [
+    "Start early for the long approach",
+    "Great fall outing with golden larches en route"
+   ],
+   "watch_out": [
+    "dehydration",
+    "snow on upper slopes early",
+    "long return hike"
+   ],
+   "pro_needs": "None.",
+   "best_season": "Late June openings are possible in low-snow years, but snow often lingers into July and can turn the final scramble into route-finding on snow — August and September typically offer the driest, most straightforward conditions. October brings golden larches on the lower approach and clear, cool weather but shorter days. Regardless of season, check current Forest Service closure status before going (see access.closures).",
+   "high_point_ft": 7223,
+   "aid_grade": null,
+   "approach": "Start at the Stafford Creek Trailhead (Trail #1359), Cle Elum Ranger District, Okanogan-Wenatchee National Forest, at the end of Stafford Creek Road (FR 9703), which leaves North Fork Teanaway River Road (FR 9737) past 29 Pines Campground — a small, often-overflowing lot for roughly 20 cars (Northwest Forest Pass required). From the trailhead, Stafford Creek Trail #1359 climbs at a gentle-to-moderate grade through dry ponderosa/lodgepole forest, staying close to Stafford Creek for the first mile (a short rerouted, steeper switchback section around 0.5 mile bypasses old avalanche-damaged tread). The trail continues gaining gradually along the creek — figure roughly 3,000 ft of gain spread over the approach — reaching a signed junction with the Standup Creek Trail (#1369) at about 3.5–3.8 miles; this crossing of Stafford Creek is the last reliable, easy water source before the high country and is worth topping off here. Bear right (east/north) at the junction to stay on the Navaho Pass approach. Around 4.5 miles the trail opens into a large, marshy subalpine meadow with established campsites and a feeder stream — the usual base camp for parties splitting the trip over two days, and another water source. Beyond camp the trail crosses the barren, eroded 'Moon Landing' stretch (sparse vegetation, serpentine/greenstone talus) before a final push to Navaho Pass (~6,000 ft) around mile 5.5. A commonly used shortcut leaves the main trail where two creek forks merge around the 3-mile mark, climbing steep, loose slopes directly up the northeast-facing drainage to the col below Navaho's southeast ridge — it saves close to 2 miles of trail hiking but is steeper, unmaintained, and involves loose scree/dirt, so most parties use it only for one direction of the trip. Total car-to-summit is on the order of 11–13 miles round trip with about 4,000–4,200 ft of gain depending on which junction/shortcut combination is used. Note: this trail corridor has had closures tied to the Labor Mountain Fire and storm damage; Forest Service order 06-17-03-2026-14 closed Stafford Creek Trail #1359 from May 20 through December 31, 2026 unless rescinded sooner, but that order is no longer posted on the Okanogan-Wenatchee alerts page (checked September 26, 2026) — verify current trail status with the Cle Elum Ranger District (509-852-1100) before heading in. A second off-trail variant leaves the trail right after the Stafford Creek crossing and climbs directly into the open bowl between Earl Peak and Navaho Peak to about 5,000 ft, scrambles north to the ridgeline near 6,000 ft, then follows the west/southwest ridge to the summit — a different line than the northeast-drainage shortcut.",
+   "descent_text": "Descend by reversing the ascent line: drop off the summit back down the broad south/southeast ridge to Navaho Pass (easy Class 2 scrambling, no rope or rappelling needed), then rejoin Stafford Creek Trail #1359 and retrace it past the Moon Landing section, the meadow camp/water source, the Standup Creek Trail (#1369) junction at ~3.5–3.8 miles, and back down along Stafford Creek to the trailhead. Parties who used the creek-fork shortcut on the way up sometimes descend the standard pass-and-trail route instead (or vice versa) to make a rough loop, but both options are plain hiking/scrambling terrain — there is no rappelling on this route. Watch for loose scree and dirt on the steeper shortcut drainage if descending that way, and expect possible lingering snow near the pass and on the upper ridge into early-mid summer, which can make the descent line slicker than the ascent.",
+   "bail": "Reversible anywhere on the nontechnical route.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1 (trail)",
+     "notes": "Stafford Creek Trail #1359 from the trailhead to Navaho Pass (~5.5 mi one-way, ~3,000 ft gain) -- maintained trail, not technical.",
+     "pitch": "Trail to Navaho Pass",
+     "lengthM": 8850
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Leave the pass and follow a boot path east/northeast up loose scree/talus, gaining the final ~1,000-1,200 ft over roughly one mile to the summit block; can involve snow and route-finding into July.",
+     "pitch": "Summit scramble",
+     "lengthM": 1609
+    }
+   ],
+   "itinerary": {
+    "cal": "The Stafford Creek trailhead access/trail was reported closed due to Labor Mountain Fire damage as of the last check - confirm current road/trail status before planning a trip.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Stafford Creek trailhead, follow Stafford Creek through meadows to Navaho Pass (~5.5 mi, ~3,000 ft gain), then turn onto the southwest ridge / south slopes for a Class 2 scramble to the summit. Descend by reversing the same route.",
+      "hours": 9,
+      "miles": 13,
+      "title": "Car-to-car via Stafford Creek and Navaho Pass",
+      "gainFt": 4200,
+      "lossFt": 4200,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Stafford Creek trailhead",
+        "detail": "Start early to beat the heat on the exposed upper slopes and finish at a reasonable hour."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Reach Navaho Pass",
+        "detail": "~5.5 miles and ~3,000 ft gained through Stafford Creek Meadows; junction with the old County Line Trail."
+       },
+       {
+        "time": "9:30 AM",
+        "label": "Begin southwest ridge / south slopes scramble",
+        "detail": "Steep, loose Class 2 terrain for the final ~700-1,000 ft to the summit; snow patches possible into early summer."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Summit Navaho Peak (7,223 ft)",
+        "detail": "Small summit with room for only a few people; views of the Enchantments, Alpine Lakes Wilderness, and Rainier."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the ascent route back through Navaho Pass and down Stafford Creek."
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Back at trailhead",
+        "detail": "Total elapsed time typically 8.5-9 hours car-to-car."
+       }
+      ],
+      "objective": "Summit Navaho Peak and return to the trailhead"
+     }
+    ],
+    "totalNote": "A single long day hike/scramble: about 13 miles round trip with roughly 4,200 ft of gain, typically 8.5-9 hours car-to-car via Stafford Creek Trail to Navaho Pass then the southwest ridge/south slopes - not an overnight trip for the standard approach."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass or America the Beautiful pass required to park at the Stafford Creek Trailhead (day pass ~$5, annual NW Forest Pass ~$30).",
+    "rules": "Standard Alpine Lakes Wilderness regulations apply: group size limits (typically 12 people/8 stock), no bikes or motorized equipment, Leave No Trace camping (200 ft from water), and campfire restrictions may apply in dry years — check current fire restrictions before an overnight trip.",
+    "permit": "Free, self-issue Alpine Lakes Wilderness permit required for day and overnight use; forms available at the trailhead kiosk.",
+    "closures": "Stafford Creek Trail #1359 — the only approach to Navaho Peak — is CLOSED under Okanogan-Wenatchee National Forest Closure Order 06-17-03-2026-14, effective May 20 through December 31, 2026, due to hazard trees and suppression damage from the 2025 Labor Mountain Fire (~43,000 acres burned Sept-Oct 2025). Repair crews worked the area through spring/early summer 2026; verify current status with the Cle Elum Ranger District (509-852-1100) before attempting this route.",
+    "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District.",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk. This is distinct from the quota Enchantment Permit Area to the west."
+    }
+   },
+   "road": {
+    "name": "FR 9703 (Stafford Creek Road)",
+    "status": "Trail #1359 from this trailhead is CLOSED for 2026 under an active Forest Service closure order; confirm current road/trailhead access with the Cle Elum Ranger District before driving out.",
+    "driveNote": "Unpaved forest road from North Fork Teanaway Road (FR 9737) to the trailhead; passable to most vehicles in dry conditions, but may be gated or rough after storms — park before any closed gate."
+   },
+   "climate": {
+    "typical": "East-Cascades continental climate: hot, dry summer days with real afternoon thunderstorm risk once above treeline, and cool, sunny falls. Snow can persist in the summit bowl and on the final ridge into July, and early-season/late-fall storms can bring new snow with little warning."
+   },
+   "emergency": {
+    "notes": "No cell service at the trailhead or on the climbing route; the nearest reliable signal is generally near Cle Elum along I-90/SR 970.",
+    "county": "Kittitas County (trailhead and approach); the summit itself sits on the Kittitas/Chelan county line.",
+    "rangerStation": "Cle Elum Ranger District, 803 W 2nd St, Cle Elum, WA — (509) 852-1100.",
+    "nearestHospital": "Kittitas Valley Healthcare, 603 S Chestnut St, Ellensburg, WA — 24-hour ER, roughly 45 minutes/40+ miles from the trailhead. KVH Urgent Care, 214 W 1st St, Cle Elum, WA, is closer (~15 miles) for non-emergency injuries.",
+    "sheriffDispatch": "Kittcom 911 for emergencies; Kittitas County Sheriff non-emergency (509) 962-7525, which coordinates Kittitas County Search & Rescue."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July through September, driven mainly by Navaho Pass backpacking/camping traffic rather than summit-specific traffic",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Moderate overall, lighter on the actual summit — the Stafford Creek/Navaho Pass corridor is one of the more popular Teanaway backpacking and camping destinations (parties describe lots of people, with groups of 20+ hikers/backpackers on a given weekend), but many of those parties stop at the pass to camp rather than push on to the summit scramble; realistically on the order of a few dozen summit parties per weekend in peak season, fewer on weekdays"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong — roughly 12 miles round trip with about 4,100 ft of gain (3,100 ft trailhead to 7,223 ft summit), typically an 8-10 hour car-to-car day",
+     "packWeight": "Light daypack (10-20 lb) for a day ascent; heavier if pairing with a Navaho Pass backpacking approach"
+    },
+    "approachTime": "About 3-4 hours from the Stafford Creek trailhead to Navaho Pass, plus roughly 1-2 more hours off-trail up the open south slopes to the summit",
+    "requiredSkills": [
+     "Class 2 talus and heather scrambling",
+     "off-trail routefinding above Navaho Pass (no maintained trail to the summit)",
+     "judgment for lingering/early-season snow on the upper south slopes",
+     "comfort with a long, remote descent late in the day"
+    ],
+    "experienceLevel": "Intermediate scrambler — a fit hiker's first easy alpine scramble objective is reasonable, but this is not a true beginner outing given the long day, off-trail travel, and early-season snow"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September, after the upper south slopes have shed their seasonal snow, with July-Sept being the most reliable core of it",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow typically cleared from the south-facing summit slopes; stable, warm East Cascades summer conditions",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Snow on the upper slopes early in the season; south aspect speeds melt-out but early-June ascents should expect some lingering snow and firmer footing",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Driest, most stable month; primary hazard shifts to dehydration and afternoon thunderstorms rather than snow",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Return of early-season snow becomes more likely, days are shorter, and storm frequency increases toward the tail end of the season window",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Reliable conditions and cooler temperatures, though early high-elevation snow is possible late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Warm, dry East Cascades summer weather typical of the Teanaway — notably hotter and drier than west-side Cascades routes, which reinforces the dehydration warning",
+     "probability": "Afternoon thunderstorms are possible in July and August, as on the broader East Cascades"
+    },
+    "exposure": "Low to moderate — sustained Class 2 talus and heather with no significant fall exposure, but loose talus raises rockfall/twisted-ankle risk, and the long, remote return hike increases the consequence of a late-day injury or slow party",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; the peak falls roughly within NWAC's East Slopes Central Cascades coverage area, but the June-October climbing season is outside NWAC's active forecasting season (which runs roughly Nov-April), so no operational avalanche forecast applies during the climbing window",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "October": "Low",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Prominence figures vary between sources (roughly 1,143-1,182 ft) depending on the underlying DEM/database.",
+     "Roundtrip mileage and gain are reported inconsistently across sources (11-14 mi, 4,100-4,276 ft) — likely reflects the two common approach-line variants rather than one authoritative track.",
+     "Current on-the-ground trail condition post-Labor Mountain Fire repair work (post-June 2026) is not confirmed by recent trip reports; the closure order remains legally in force through Dec 31, 2026 regardless of physical trail condition.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/4QQ0",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.4231,
+    "peakLng": -120.8037,
+    "trailhead": "Stafford Creek Trailhead",
+    "trailheadDirection": "Start at the Stafford Creek Trailhead (Trail #1359), Cle Elum Ranger District, Okanogan-Wenatchee National Forest, at the end of Stafford Creek Road (FR 9703), which leaves North Fork Teanaway River Road (FR 9737) past 29 Pines Campground - a small, often-overflowing lot for roughly 20 cars (Northwest Forest Pass required)."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Stafford Creek Trail #1359 to Navaho Pass",
+     "notes": "From the small road-end lot, Trail #1359 leaves at an easy grade through dry ponderosa and lodgepole forest, staying close to Stafford Creek; a short rerouted section of steeper switchbacks near the half-mile mark bypasses old avalanche-damaged tread. The creek crossing in the meadows is the last easy water and worth topping off at. Stay on #1359 at the signed Standup Creek Trail junction, and the trail opens into a large marshy subalpine meadow with a feeder stream and established campsites — the usual overnight base. Above the meadow the tread leaves the trees and switchbacks up open, rocky, sparsely vegetated slope for the last stretch to the pass.",
+     "season": "July into October. Snow patches linger on the upper ridge into July, when poles and light traction are worthwhile.",
+     "hazards": [
+      "No water and essentially no shade above the meadows, on ground that bakes on a warm afternoon",
+      "Loose scree over dirt on the climbers' path onto the ridge, steepening quickly and easy to push down onto a party below",
+      "Lingering snow patches into July",
+      "Slopes on either flank of the summit ridge are looser and steeper than they look from above",
+      "The trail corridor has been closed for fire and storm damage — check current status before driving in"
+     ],
+     "baseFinding": "THE SUMMIT PATH IS NOW MORE WORN THAN THE TRAIL IT LEAVES, AND THE WRONG TURN HAS A NAME. Navaho Pass is unmistakable ground — small, rocky, sparsely vegetated and wind-exposed, with the Stuart Range filling the view — and it is where the trail meets the old crest trail along the county line. Head EAST out of the pass, paralleling the range. The old boot-path junction that descriptions still mention has effectively vanished: the beaten track now IS the summit path, more worn than the crest trail beside it, so the thing to look for is the most-used tread rather than a faint branch. If instead you follow the connecting ridge LEFT from the pass, you are heading for Wrong Turn Peak, which is what it is called and why. Two more confusions worth knowing: the prominent peak straight ahead on the walk in is Little Navaho, not this one, and the final ridge throws up several false tops before the true summit, which is small — barely higher than a rocky outcrop just east of it. On the way down, do not follow the southeast ridge all the way toward Little Navaho; there are cliffs below it."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 2",
+     "label": "South ridge to the summit",
+     "notes": "From Navaho Pass (~6,000 ft), leave the maintained trail and traverse/climb east along the broad south ridge of Navaho Peak: an easy, mostly open scramble on rock and heather with no technical exposure, gaining the final 1,100–1,200 ft to the 7,223 ft summit over about 0.8–1 mile."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5600,
+     "name": "Stafford Creek meadow camps below Navaho Pass",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the camp for Navaho Peak's south slopes and effectively the only one worth using on that side. From the Stafford Creek trailhead the trail climbs gently for the first mile beside the creek, then steepens as it pulls away from it, crosses a marshy open meadow, and reaches these camps at around five miles. Navaho Pass is another half mile up a bare serpentine slope at about 6,000 feet, and the south slopes above the pass are walking and easy scrambling to the summit. Most parties do the whole thing car to car and the camp is the contingency: a late start, a hot afternoon, or a group that wants the summit at dawn. It is also the hinge of the standard two-day loop that links Navaho Pass with the Bean Creek side and comes out at a different trailhead. The meadow is buggy in early summer and the burn scar in the drainage has changed shade and blowdown patterns, so expect the walking to be rougher than an older description suggests.",
+     "water": "The reason this camp exists. Stafford Creek and a side stream come down the rock faces at the meadow edge and run into late summer in most years, and this is the last dependable water before the pass. Above the meadow there is nothing: the final half mile of bare serpentine to Navaho Pass and the whole of the south slopes above it are completely dry, and on a hot east-side day that is four or five hours of climbing on what you carry.",
+     "permit": "No permit, no quota, no lottery, and no connection to the Enchantment system. Northwest Forest Pass at the Stafford Creek trailhead. Campfires are prohibited above 5,000 feet here and the drainage is normally under a full burn ban by July. The Stafford Creek road and trail were inside the 2025 fire closure and were still subject to repair-work closures afterwards, so this is the site most likely to be legally unreachable on any given date — check before you drive.",
+     "capacity": "Established sites in the timber along the edge of a large meadow, with room for several parties; this is a popular long-weekend base camp and can hold a half dozen tents on a summer Saturday"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_standard",
+  "name": "Standard Scramble",
+  "area_id": "wa_red_mountain_snoqualmie",
+  "findings": [
+   "r042.json: The WTA route description puts the scramble takeoff at a cairn in the middle of the path before the small pond (reach the pond and you have gone ~300 yards too far), with the trail continuing to Red Pass at 5,300 ft. Mountain Project's East Ridge (Lundin Peak) approach follows the Commonwealth Creek trail up to Red Pass, passing Red Mountain on the right and Red Pond on the left, so Red Pass is beyond the Red Mountain turnoff. The row's approach, climbing_route and itinerary agree. Contradiction confirmed, but the fix is removing/relocating a waypoint pin, which this pass may not do; no patch written. | The scramble leaves the Commonwealth Creek trail at a cairn a few hundred yards before th"
+  ],
+  "gpx_summary": "214 points; 0 of 3 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_red_mountain_snoqualmie_standard",
+   "area_id": "wa_red_mountain_snoqualmie",
+   "name": "Standard Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "W. C. Mendenhall, 1898 (first recorded ascent of the peak, via its standard scramble route)",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jun-Oct",
+   "description": null,
+   "gear": [
+    "Helmet (genuine rockfall hazard, not optional despite the peak's 'walk-up' reputation)",
+    "Trekking poles for the scree/heather slope",
+    "Sturdy boots with good edging traction for the summit rock",
+    "GPS track or map/compass — the boot path above the pond is easy to lose"
+   ],
+   "hazards": [
+    "Rockfall on the loose, heavily fractured red rock — documented close calls with softball/grapefruit-sized rock near the summit",
+    "Slick, slippery rock when wet — a normally easy Class 2 slope can become unsafe in rain",
+    "Route-finding above the basin pond, where the maintained trail gives way to a cairned boot path",
+    "Lingering snow/postholing on the approach and lower slope into early summer"
+   ],
+   "verif": null,
+   "overview": "Red Mountain (5,890 ft) is the distinctive rust-red peak rising above Commonwealth Basin, 3 miles north of Snoqualmie Pass in the Alpine Lakes Wilderness. One of the popular 'Snoqualmie Ten,' it's a non-technical but genuinely loose scramble: the red color comes from iron-oxide staining on heavily fractured volcanic rock, which is notoriously crumbly and rockfall-prone despite the peak's benign reputation as a walk-up.",
+   "beta": "Approach via Pacific Crest Trail north from Exit 52, following Commonwealth Creek trail to the base of the mountain. The final 1,000-1,100 feet ascends the west-facing slope at 30-40 degrees inclination. Most loose rock has been removed by frequent traffic. South-facing sections feature more solid red volcanic slabs. Winter ascents are possible with snow coverage on the southwest ridge when avalanche conditions are stable.",
+   "turnaround": "Set a firm turnaround in early-to-mid afternoon: the upper slope is more dangerous to descend in fading light, and July–August afternoons can bring thunderstorms over the Cascade crest with no shelter on the open summit rock.",
+   "auto_generated": true,
+   "alpine_grade": "I",
+   "rock_grade": "Class 2-3",
+   "ice_grade": null,
+   "gain_ft": 2900,
+   "loss_ft": 2900,
+   "dist_km": 6.45,
+   "max_angle": 40,
+   "rappels": "0",
+   "commitment": "I",
+   "face": "West Slope",
+   "permit": null,
+   "comms": "T-Mobile provides the best cellular coverage in the Snoqualmie Pass area at 92%+ availability. Other carriers (AT&T, Verizon) also available but with variable coverage. Terrain and weather can degrade signal. Sat communication devices recommended for emergencies on longer trips into the wilderness.",
+   "descent": "Same west-slope or south-ridge line used on ascent",
+   "obj_haz": [
+    "loose/fractured rock",
+    "rockfall from parties above",
+    "slippery rock when wet"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.42789444,
+     "lng": -121.4121917,
+     "elev": 3020,
+     "name": "PCT North Trailhead, Snoqualmie Pass",
+     "note": "Start of the PCT-North/Commonwealth Basin corridor trailhead at Snoqualmie Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "This scramble starts at the Pacific Crest Trailhead at Snoqualmie Pass West, reached via I-90 Exit 52 — the road-access endpoint for the hike. The lot sits at about 3,000 feet, and parking here fills on weekends, so get an early start on busy days."
+    },
+    {
+     "lat": 47.4592466,
+     "lng": -121.3954014,
+     "name": "Red Pass",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 47.456135,
+     "lng": -121.389105,
+     "elev": 5890,
+     "name": "Red Mountain Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 5890
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 6.5,
+    "summitTimeHrs": 6.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "7:00–8:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "Standard day trip from the PCT North Trailhead: hike the PCT to the Commonwealth Creek Trail junction, follow it up into Commonwealth Basin to the small pond below Red Mountain's w…",
+      "fromTo": "Car-to-car scramble",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack required. Helmet is the one piece of 'gear' that meaningfully changes the risk profile here given documented rockfall.",
+   "what_to_bring": [
+    "Helmet",
+    "2+ liters of water (no reliable water past the basin pond)",
+    "Trekking poles",
+    "Sun protection — the upper slope is fully exposed",
+    "Layers for wind on the open summit"
+   ],
+   "pro_tips": [
+    "Wear a helmet — this is a real rockfall hazard, not a formality; parties describe rocks zinging past climbers within 10 feet near the summit.",
+    "Skip it after rain — the smooth, fractured red rock gets slick enough to need aid it wouldn't otherwise require.",
+    "Avoid climbing directly beneath other parties on the upper slope/gully; spread out laterally where possible.",
+    "If using the shorter Commonwealth Basin Trail 'shortcut,' bring a GPS track — it's unsigned, overgrown, and easy to lose above the switchbacks.",
+    "Descend via the southwest ridge crest rather than the ascent gully to reduce rockfall risk to yourself and others below."
+   ],
+   "watch_out": [
+    "Parties stacking directly above one another on the loose upper gully",
+    "Mistaking the unmaintained, overgrown 'shortcut' Commonwealth Basin Trail for a maintained route — easy to lose",
+    "Descending the same loose line used for ascent instead of the sturdier southwest ridge crest"
+   ],
+   "pro_needs": "None — no rack, rope, or protection needed; this is unroped Class 2-3 scrambling on both standard lines.",
+   "best_season": "July through October is the reliable window; snow typically lingers in Commonwealth Basin and on the upper slope into early-to-mid July, and the fractured rock becomes genuinely unsafe when wet, so a dry-rock, snow-free window from late July through September is the sweet spot. October is climbable but daylight and weather windows shrink fast and early snow can arrive by month's end.",
+   "high_point_ft": 5890,
+   "aid_grade": null,
+   "approach": "Start at the Pacific Crest Trailhead (PCT trailhead) at Snoqualmie Pass West, reached via I-90 Exit 52 — this is the road-access endpoint; from the trailhead the hike itself begins on the newer rerouted Pacific Crest Trail heading north. Follow the PCT for roughly 2–2.5 miles of well-graded, well-maintained trail through old-growth forest with blueberry and salmonberry understory, gaining a gentle ~2,000 ft over the first 4.5 miles combined. At the signed junction, leave the PCT and turn left (west) onto Trail #1033, the Commonwealth Creek Trail, following it up Commonwealth Basin toward Red Pass. The trail parallels and crosses Commonwealth Creek in the basin, which is the one reliable natural water source on the approach (treat before drinking) — carry enough water above this point since the final scramble slopes are dry. As the trail levels out near a small tarn/pond below Red Mountain's west slope, watch for a cairn planted in the middle of the path — this marks the scramble takeoff point where you leave the maintained trail. An alternate, rougher approach follows the older, partly overgrown Commonwealth Basin Trail starting about 20 yards up from the parking lot, switchbacking directly up into the basin and rejoining near the same trail split (bear right toward Red Pass); it's shorter but harder to follow and not recommended in poor visibility. From the cairn, pick up a boot path climbing the west slope; the track is intermittent and easy to lose on scree, so stay close to the ridge crest on climber's right (south) if you're unsure of the line. The final roughly 900 ft over the last half mile is the crux of the approach: a 30–40° slope of fractured red (iron-stained) rock, loose scree, heather, and scattered alpine trees, alternating Class 2 and low Class 3 scrambling with no real exposure — hands are needed intermittently but it's non-technical. This upper slope holds snow into early summer and can present avalanche/glissade hazard in spring conditions; by mid-to-late summer it's typically dry but still loose and slick when wet.",
+   "descent_text": "No rope or rappelling is used on the standard route — this is a pure walk/scramble descent. Most parties reverse the ascent line down the west-slope boot path back to the cairn and Commonwealth Creek Trail, then retrace the Commonwealth Creek Trail and PCT back to the trailhead. Some parties instead descend via the southwest ridge crest before dropping back into the boot-path drainage, which can offer more solid footing than the loose central scree the boot path sometimes follows — either line rejoins the same trail system before the pond. The overriding descent hazard is loose, fractured rock underfoot (a helmet is strongly recommended for the whole party, not just the leader, since Red Mountain's red rock is notoriously fractured and easy to kick loose onto climbers below); keep the group tight and avoid spreading out on the open scree. Do not attempt to traverse east/south off the summit toward the PCT near the Kendall Catwalk as a shortcut — that terrain quickly becomes Class 3/4 and cliffs out without a rope. Once back on the boot path, staying close to the ridge crest on the way down (rather than cutting straight down the gut of the scree slope) both preserves the trail and reduces rockfall risk to other parties.",
+   "bail": "Retreat is simple at any point — reverse the boot path back down to the basin pond and rejoin the maintained PCT/Commonwealth Creek Trail. No technical descent or fixed retreat gear needed.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2",
+     "notes": "Well-traveled boot path through scattered trees and meadow. Gentle to moderate incline, loose gravel and scree.",
+     "pitch": "Lower west slope to boulder field"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Steeper terrain at 30-40 degrees. Frequent loose rock requiring careful foot placement. Hands needed frequently. Rock quality poor on ridges, better on south-facing slabs.",
+     "pitch": "Mid-slope scramble section"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Exposed scramble over loose slabs. Most technical section. Good hand holds available. Exposure is minimal despite terrain steepness. Solid rock on south-side alternative.",
+     "pitch": "Final summit push"
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard day trip from the PCT North Trailhead: hike the PCT to the Commonwealth Creek Trail junction, follow it up into Commonwealth Basin to the small pond below Red Mountain's west face, then take the cairned climber's boot path up open slopes, ledges, and scree/heather gullies to the summit. Descend the same west-slope/southwest-ridge line back to the pond and out.",
+      "hours": 6.5,
+      "miles": 8,
+      "title": "Car-to-car scramble",
+      "gainFt": 2900,
+      "lossFt": 2900,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "7:00–8:00 AM",
+        "label": "Leave PCT North Trailhead",
+        "detail": "Elevation ~3,000 ft; parking fills on weekends."
+       },
+       {
+        "time": "+1 hr",
+        "label": "Commonwealth Creek Trail (#1033) junction",
+        "detail": "2 miles up the PCT, then turn off onto #1033 toward Red Pass/Red Mountain."
+       },
+       {
+        "time": "+2 hr",
+        "label": "Reach the pond below the west face",
+        "detail": "~4.5 mi and ~4,600 ft mark; look for the cairn/boot path leaving the trail."
+       },
+       {
+        "time": "~3.5–4 hr after start",
+        "label": "Ascend boot path to summit",
+        "detail": "Hands-on scrambling across ledges, scree gullies, and heather; some parties report noon summits on an 8 AM start."
+       },
+       {
+        "label": "Summit (5,890 ft)",
+        "detail": "Rock-bench seating at the top; typical stay 15–30 min."
+       },
+       {
+        "label": "Descend same route to trailhead",
+        "detail": "Descent runs faster than the ascent, roughly 2.5 hours back to the car."
+       }
+      ],
+      "objective": "Summit via the west-slope boot path"
+     }
+    ],
+    "totalNote": "A single long day: ~8 miles round trip, 2,900 ft gain, typically 5.5–7 hours car-to-car (this account's ascent 3.8 hr / descent 2.4 hr)."
+   },
+   "access": {
+    "fees": "$5 per vehicle per day at the PCT North (Commonwealth Basin) trailhead if no valid recreation pass is displayed.",
+    "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "rules": "Standard Alpine Lakes Wilderness rules apply: group size capped at 12 people/stock combined, no campfires above 4,000 ft anywhere in the Mt. Baker-Snoqualmie National Forest (the entire route is above this), and pack out all trash.",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit, available at the trailhead kiosk — fill out and carry a copy.",
+    "group_limit": 12,
+    "landManager": "Mount Baker-Snoqualmie National Forest, Snoqualmie Ranger District (North Bend office, 902 SE North Bend Way, North Bend, WA; (425) 888-1421); route lies within the Alpine Lakes Wilderness.",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+    "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+    "passRequired": "Northwest Forest Pass or America the Beautiful/Interagency pass at the PCT North trailhead; a $5/vehicle/day fee (payable via Recreation.gov Scan & Pay) applies if you don't have a valid pass.",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "I-90 Exit 52 to PCT North (Commonwealth Basin) Trailhead",
+    "status": "Paved, plowed, open year-round",
+    "driveNote": "From Seattle, take I-90 east to Exit 52 (Snoqualmie Pass West); at the bottom of the ramp turn north, cross under the freeway, and turn right about 100 yards later into the signed PCT North trailhead parking lot.",
+    "seasonalGate": "None — paved lot is accessible year-round, though the trail itself is a winter snowshoe/ski objective, not a scramble, once snow covers the upper mountain."
+   },
+   "climate": {
+    "typical": "Typical Central Cascades crest weather: wet, snowy winters and springs give way to a dry-ish summer window. Snow can linger in Commonwealth Basin and on the upper west slope into early-to-mid July in an average year.",
+    "bySeason": {
+     "fall": "Good, often driest and most stable scrambling window into September and early October; days shorten fast and first snow can arrive by late October.",
+     "spring": "Basin and upper mountain typically still snow-covered; this becomes a snowshoe/ski-touring approach to Red Pass rather than a rock scramble.",
+     "summer": "Prime season once the upper slope clears, usually by mid-to-late July; watch for afternoon thunderstorms building over the crest in July/August.",
+     "winter": "Not a scrambling objective — deep snow, avalanche terrain in the basin, and no maintained winter access to the summit rock."
+    },
+    "forecastZone": "NWAC Snoqualmie Pass zone for winter/spring snow conditions; NWS point forecast for the Alpine Lakes Wilderness/Snoqualmie Pass area for summer scrambling weather."
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable in Commonwealth Basin and on the peak itself; the trailhead sits right off I-90 so driving out for help is often faster than waiting for cell signal to return.",
+    "county": "King County, Washington",
+    "rangerStation": "Snoqualmie Ranger District, North Bend office, 902 SE North Bend Way, North Bend, WA 98045, (425) 888-1421; seasonal Snoqualmie Pass Visitor Center at 69802 WA-906, Suite 102 (open Fri–Sun in summer).",
+    "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065 — 24-hour ER, (425) 831-2300, roughly 25 miles/35 min west via I-90. Overlake Medical Center in Bellevue is the nearest major trauma center for serious injuries.",
+    "sheriffDispatch": "King County Sheriff's Office — dial 911 for emergencies; non-emergency (206) 296-3311. King County Search & Rescue (volunteer) and the Ski Patrol Rescue Team (SPART) respond to mountain incidents in the pass area."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July through September (peak Seattle day-trip season); noticeably quieter on weekdays and once snow returns in October",
+    "solitudeRating": 2,
+    "estimatePerSeason": "High for an alpine scramble — Red Mountain sits right off I-90 at Snoqualmie Pass via the popular Commonwealth Basin/PCT trailhead. Climbers describe 6+ other parties on the scramble portion on a single weekend day, and locals explicitly recommend a weekday ascent to avoid the crush."
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "~9 miles round trip with roughly 2,900 ft of gain (Commonwealth Basin approach + summit scramble); moderate-strenuous full-day effort",
+     "packWeight": "Light day pack (~15-20 lb) — helmet, layers, and the usual scramble kit; no overnight or glacier gear needed"
+    },
+    "approachTime": "Roughly 2-3 hours from the PCT/Commonwealth Basin trailhead to the base of the summit scramble, before the steep loose scrambling begins",
+    "requiredSkills": [
+     "Route-finding on a boot-path through loose talus/scree",
+     "Steady footing on steep, unconsolidated gully terrain",
+     "Comfort with exposure near the summit block",
+     "Helmet discipline — rockfall risk from parties above is real given how popular and loose this route is",
+     "Turnaround judgment for afternoon weather / early-season snow in the gullies"
+    ],
+    "experienceLevel": "Comfortable scrambler with prior Class 2-3 talus/scree experience — this is not a beginner's first scramble given the loose reddish scree and steep gully sections"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September — this window has the driest talus and lowest residual-snow risk in the summit gullies",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Trail is generally in, but early-season snow can still linger in the upper gully sections early in the month",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Driest, most stable talus conditions; peak weekend crowding",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Shorter daylight and the first snow/freeze events of fall can return, adding to the already-loose footing on the summit slopes",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Dry scree, cooler temps, thinner crowds on weekdays; still within the best-season window",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Typical Central Cascades summer pattern — clear mornings that can build cloud through the day",
+     "probability": "Afternoon thunderstorms/showers are a recognized risk in the Cascades in July-August; parties are advised to summit early and be off the exposed upper mountain before storms build"
+    },
+    "exposure": "Exposure near the summit block compounds the steep, loose reddish scree and gully terrain — a slip on the loose rock has real fall consequence, and rockfall from other parties is a hazard on this heavily-trafficked route; a helmet is strongly recommended",
+    "avalanche": {
+     "zone": "NWAC Snoqualmie Pass forecast zone",
+     "byMonth": {
+      "July": "Low",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Prominence (590 ft) left as-is — could not independently confirm via a fetchable primary source (Peakbagger/ListsOfJohn blocked WebFetch)",
+     "No published NCCS-style technical grade exists for this scramble; 'Class 2-3' is synthesized from consistent trip-report descriptions, not a single guidebook citation",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/2M68",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.456135,
+    "peakLng": -121.389105,
+    "trailhead": "Pacific Crest Trailhead",
+    "trailheadLat": 47.4278,
+    "trailheadLng": -121.4135,
+    "trailheadDirection": "Start at the Pacific Crest Trailhead (PCT trailhead) at Snoqualmie Pass West, reached via I-90 Exit 52 - this is the road-access endpoint; from the trailhead the hike itself begins on the newer rerouted Pacific Crest Trail heading north."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "PCT and Commonwealth Creek trail to the cairn by the tarn, then the west-slope boot path",
+     "notes": "Start at the Pacific Crest Trailhead at Snoqualmie Pass West, I-90 exit 52. Follow the rerouted PCT north roughly 2 to 2.5 miles of well-graded trail through old growth. At the signed junction, turn LEFT (west) onto Trail #1033, the Commonwealth Creek Trail, and follow it up Commonwealth Basin toward Red Pass. The trail parallels and crosses Commonwealth Creek, the one reliable water on the approach — fill up there, because the scramble slopes above are dry.\n\nAn older, partly overgrown Commonwealth Basin trail leaves about 20 yards up from the parking lot and switchbacks directly into the basin, rejoining near the same split. It is shorter, harder to follow, and not recommended in poor visibility.\n\nAbout 12.9 km round trip and 2,900 ft.",
+     "distMi": 8,
+     "gainFt": 2900,
+     "season": "July to October. Snow lingers in Commonwealth Basin and on the upper slope into early-to-mid July, and the fractured rock is genuinely unsafe wet, so late July to September is the sweet spot",
+     "hazards": [
+      "Rockfall on loose, heavily fractured red rock, with documented close calls near the summit",
+      "Slick, dangerous rock when wet — an easy class 2 slope becomes unsafe in rain",
+      "Route-finding above the basin tarn where maintained trail becomes a cairned boot path",
+      "Lingering snow and postholing into early summer",
+      "Cliffed-out class 3-4 ground if a party tries to shortcut east toward the Kendall Katwalk"
+     ],
+     "baseFinding": "THE TAKEOFF IS MARKED BY A CAIRN PLANTED IN THE MIDDLE OF THE PATH, AND THAT IS THE ARRIVAL TEST. As the trail levels out near a small tarn below Red Mountain's west slope, a cairn sits in the middle of the tread. That is where the scramble leaves the maintained trail. A cairn off to one side is not it; this one is in the way, deliberately.\n\nFROM THE CAIRN, WHAT THE GROUND SHOULD DO: a boot path climbs the west slope. It is intermittent and easy to lose on scree. THE RULE WHEN YOU LOSE IT IS TO STAY CLOSE TO THE RIDGE CREST ON CLIMBERS' RIGHT — the south side. That single rule replaces route-finding for the whole upper slope, and it also keeps you off the loose gut of the scree where you would be kicking rock onto people.\n\nWHAT THE LAST 900 FT SHOULD FEEL LIKE: a 30 to 40 degree slope of fractured, iron-stained RED rock, loose scree, heather and scattered alpine trees, alternating class 2 and low class 3, with no real exposure. Hands needed intermittently. If you are on genuinely exposed ground with real fall consequence, you have drifted off the line.\n\nAND THE MOST IMPORTANT NEGATIVE, WHICH IS ABOUT THE DESCENT BUT BELONGS HERE: do NOT traverse east or south off the summit toward the PCT near the Kendall Katwalk as a shortcut. That terrain becomes class 3 and 4 and cliffs out without a rope.\n\nHONEST NOTE ON THE ROCK: helmets are for the whole party, not just a leader. Red Mountain's rock is notoriously fractured and there are documented close calls with softball- and grapefruit-sized rock near the summit."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Boot path up the west slope",
+     "notes": "From the cairn planted in the middle of the path near the tarn, pick up a boot path climbing the west slope. The track is intermittent and easy to lose on scree, so stay close to the ridge crest on climber's right (south) if you're unsure of the line."
+    },
+    {
+     "n": 2,
+     "class": "Class 2 alternating with low Class 3",
+     "label": "Final 900 ft of red rock and scree",
+     "notes": "The final roughly 900 ft over the last half mile is a 30-40° slope of fractured red (iron-stained) rock, loose scree, heather, and scattered alpine trees, with no real exposure — hands are needed intermittently but it's non-technical. This upper slope holds snow into early summer and can present avalanche/glissade hazard in spring conditions; by mid-to-late summer it's typically dry but still loose and slick when wet."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Commonwealth Basin and Red Pond",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two and a half miles before the Commonwealth Basin trail branches left and climbs the basin; spur paths reach Red Pond at around three and a half to four miles, with Red Pass another half mile above at roughly 5,400 ft. Red Mountain's scramble leaves from near the pass, and Lundin's west ridge is gained by traversing the ridge crest west from the same ground, so a camp at the pond removes the entire approach from the summit day. Be honest about the trade: both peaks are comfortable day climbs car-to-car and most parties do them that way, so this is a way to buy a relaxed morning or to rescue a late finish rather than a necessity. The basin is snowbound and avalanche-prone well into spring, and the old trail below the pond is steep and eroded in places.",
+     "water": "The creek through Commonwealth Basin runs all summer and Red Pond holds water into autumn. Treat everything. The upper basin melts out late and can be entirely snow-covered into early July.",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit at the PCT trailhead, required for day and overnight use roughly May 15 to October 31. Party size capped at 12. Unlike Melakwa, Snow and Gravel Lakes, this basin is NOT on the designated-sites-only list, so dispersed camping is legal here — which puts the whole burden on siting well, on durable ground and away from the water. Campfires are prohibited above 4,000 ft, which covers the pond and the upper basin. Parking at the exit 52 trailhead takes a Northwest Forest Pass or an interagency pass; in winter the lot becomes a Sno-Park and needs the state permit instead. No drones anywhere in the wilderness.",
+     "capacity": "Informal established sites scattered through the basin and a small amount of level ground by the pond; a handful of parties rather than a large camp"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_drilling_me_softly",
+  "name": "Drilling Me Softly",
+  "area_id": "wa_sofa_king_buttress",
+  "findings": [
+   "r044.json: The reader's internal resolution (65 ft) is not supported: both waypoints sit on the same crag coordinate, and the 4585 'trailhead' elevation is the Citidel area's listed elevation, not the road end. USGS 3DEP gives ~4,670 ft at the crag coordinate and ~4,230-4,250 ft at the end of the left-fork road spur (located from OSM geometry of FS 9070-310), implying roughly 450 ft of gain, but the crag coordinate is itself approximate and no source states the approach gain. Neither 750 nor 65 can be adopted from two agreeing sources; waypoint[0].elev (4585) also looks wrong for a road-end trailhead but its pin sits on the crag, so it is not patched."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_drilling_me_softly",
+   "area_id": "wa_sofa_king_buttress",
+   "name": "Drilling Me Softly",
+   "discipline": "sport",
+   "grade": "5.10b/c",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 1,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Wylie Moreshead, 2020",
+   "lat": null,
+   "lng": null,
+   "aspect": "NW",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Loose and sharp rock is a known issue at this recently-developed alpine sport crag.",
+    "The approach and crag sit in a remote basin with no cell coverage, so any injury means a long self-evacuation or SAR response."
+   ],
+   "verif": {
+    "status": "unverified"
+   },
+   "overview": "Alpine sport climb at Sofa King Buttress in The Citidel area.",
+   "beta": "Fully bolted 5.10b/c sport pitch on Sofa King Buttress, positioned as the leftmost route on the wall. The line (FA party Wylie Moreshead) is known for the sheer variety of technique packed into one pitch rather than a single hard crux — 3D stemming, backstepping, flagging, a roof, laybacking, jugs, crimps and underclings. Protected by 12 bolts to chain anchors at the top; photos of the route show the crux section and a rest stance before an upper bulge.",
+   "turnaround": "Not a big-mountain turnaround-time objective — the real time constraint is the 20-30 minute approach through Silver Basin and weather: the approach and buttress base are exposed, so turn back on the approach if lightning or fast-moving weather threatens before you're committed to the rock.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10b/c (6b, VII, E2 5b)",
+   "ice_grade": null,
+   "gain_ft": 750,
+   "loss_ft": null,
+   "dist_km": 0.5,
+   "max_angle": null,
+   "rappels": "Single lower-off from chain anchors at the top.",
+   "commitment": null,
+   "face": "Sofa King Buttress, The Citidel",
+   "permit": null,
+   "comms": "No documented cell coverage in this remote, forested Silver Basin approach off NF-9070; treat the area as a dead zone and carry a satellite messenger for emergencies.",
+   "descent": "Lower off the chain anchor at the top of the route.",
+   "obj_haz": [
+    "loose rock",
+    "rockfall"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.36741,
+     "lng": -121.45564,
+     "elev": 4585,
+     "name": "FS Road 9070 Turnaround at Silver Basin",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 4585
+    },
+    {
+     "lat": 47.36741,
+     "lng": -121.45564,
+     "elev": 4650,
+     "name": "Sofa King Buttress base",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": 4650
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 0.5,
+    "recommendedStart": "Early morning"
+   },
+   "detailed_rack": "Fully bolted: 12 bolts to a two-bolt chain anchor. No trad gear needed.",
+   "what_to_bring": [
+    "Helmet — rock at this new crag is still loose/sharp in places",
+    "Sturdy approach shoes for the talus/brush walk-in",
+    "Extra layer — Silver Basin can be cool and windy even in summer"
+   ],
+   "pro_tips": [
+    "Expect a full toolbox of technique in one pitch — 3D stemming, backstepping, flagging, a roof, laybacks, jugs, crimps and underclings — so pace yourself for sustained variety rather than a single crux move.",
+    "Use the rest stance below the upper bulge (visible in the route's photos) to shake out before the final section."
+   ],
+   "watch_out": [
+    "This is a newly-developed, \"raw\" crag — expect some loose or sharp holds and wear a helmet.",
+    "The NF-9070 access road is rough with sharp rocks and deep water bars; a high-clearance vehicle is recommended."
+   ],
+   "pro_needs": "Sport rack only — 12 quickdraws (plus 1-2 extra for the anchor). No natural/trad protection required or possible.",
+   "best_season": "June through October when FS Road 9070 is open and snow is minimal",
+   "high_point_ft": 4650,
+   "aid_grade": null,
+   "approach": "From I-90 Exit 54 (Hyak), follow Hyak Drive onto Forest Service Road NF-9070, continuing past where the pavement ends to the junction at Ollallie Meadow where the Pacific Crest Trail crosses the road. Take the left fork of NF-9070 and follow it until the road terminates in a large turnaround just below Silver Basin. From that turnaround, it's roughly a 20-30 minute approach on foot up into Silver Basin to reach the base of The Citadel's walls, including Sofa King Buttress on the NW side of the basin's east wall. The road is not plowed and is generally only clear of snow from around July through November.",
+   "descent_text": "Single-pitch, fully bolted sport route with a chain lower-off anchor at the top; there is no walk-off. Clip/thread the chains and lower back to the base.",
+   "bail": "Single-pitch and fully bolted — retreat simply means lowering off the last bolt clipped (leave a biner/draw behind if you can't otherwise clean while lowering).",
+   "pitch_detail": [
+    {
+     "grade": "5.10b/c",
+     "notes": "Sustained, technically varied bolted pitch — 3D stemming, backstepping, flagging, a roof, laybacks, jugs, crimps, underclings — 12 bolts to chain anchor; furthest-left line on the buttress.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "fees": null,
+    "permit": null,
+    "closures": "FS Road 9070 seasonally closed winter months",
+    "landManager": "USDA Forest Service, Snoqualmie Pass area",
+    "passRequired": null
+   },
+   "road": {
+    "name": "Hyak Drive / FS Road 9070, Snoqualmie Pass (I-90 Exit 54), for The Citadel",
+    "status": "Pavement ends on Hyak Drive and the road continues as gravel FS Road 9070 to the PCT crossing at Olallie Meadow; the left fork beyond it to the turnaround below Silver Basin is rough, with sharp rocks and deep water bars, so a high-clearance vehicle is recommended. Not plowed in winter.",
+    "driveNote": "Roughly 45 min-1 hour from Seattle via I-90 to Exit 54, then a slow gravel drive up FS Road 9070."
+   },
+   "climate": {
+    "fall": "Generally stable, good conditions through October",
+    "spring": "Snowmelt, road may still be closed",
+    "summer": "Best season for climbing, temperatures moderate",
+    "winter": "Road typically closed, heavy snow",
+    "typical": "Alpine climate, weather can change rapidly",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "Remote alpine area, cell reception unreliable",
+    "county": "King County",
+    "rangerStation": "Snoqualmie Pass Ranger Station area",
+    "nearestHospital": "Snoqualmie Valley Hospital (Snoqualmie, ~20 miles)",
+    "sheriffDispatch": "206-296-3311"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": 12,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "Single-pitch bolted sport route; one single rope lowers off the chain anchor.",
+   "ascender": null,
+   "corrections": "Could not verify area name/location despite exhaustive search of Washington Pass's 14 indexed sub-areas; gear inferred, not fabricated from trip reports.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Dihedral",
+    "Face",
+    "Overhanging",
+    "Technical"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

@@ -1,0 +1,205 @@
+{
+ "applied": [
+  {
+   "id": "wa_iceman",
+   "op": "move_pin",
+   "index": 0,
+   "name": "Washington Pass Hairpin Turnout (SR-20)",
+   "moved_km": 2.4,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_route_c",
+   "op": "move_pin",
+   "index": 0,
+   "name": "Washington Pass Hairpin Turnout (SR-20)",
+   "moved_km": 2.4,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_route_d",
+   "op": "move_pin",
+   "index": 0,
+   "name": "Washington Pass Hairpin Turnout (SR-20)",
+   "moved_km": 2.4,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "op": "move_pin",
+   "index": 3,
+   "name": "Left Rim of Church Lake Basin",
+   "moved_km": 0.58,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "op": "move_pin",
+   "index": 4,
+   "name": "Steep Heather/Meadow Ridge Below Point 6066",
+   "moved_km": 0.91,
+   "gpx_vertices_carried": 0
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_iceman",
+   "waypoints": [
+    {
+     "lat": 48.5192,
+     "lng": -120.6743,
+     "elev": 5200,
+     "name": "Washington Pass Hairpin Turnout (SR-20)",
+     "note": "Large pullout on the outside of the SR-20 hairpin east of Washington Pass. Follow the climbers' trail toward Spire Gully, cut right into a dry creek bed and go up smooth slabs (the upper one has a fixed line) to the Ice Box.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51344,
+     "lng": -120.64594,
+     "elev": 5490,
+     "name": "Ice Box Left Side Base",
+     "note": "Base of the Ice Box wall, shared by Iceman, Route C, and Route D; approach slabs are smooth and slippery.",
+     "type": "Base",
+     "distMi": null
+    }
+   ],
+   "gpx": null
+  },
+  {
+   "id": "wa_route_c",
+   "waypoints": [
+    {
+     "lat": 48.5192,
+     "lng": -120.6743,
+     "elev": 5200,
+     "name": "Washington Pass Hairpin Turnout (SR-20)",
+     "note": "Large pullout on the outside of the SR-20 hairpin east of Washington Pass. Follow the climbers' trail toward Spire Gully, cut right into a dry creek bed and go up smooth slabs (the upper one has a fixed line) to the Ice Box.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51344,
+     "lng": -120.64594,
+     "elev": 5490,
+     "name": "Ice Box Left Side Base",
+     "note": "Base of the Ice Box wall, shared by Iceman, Route C, and Route D.",
+     "type": "Base",
+     "distMi": null
+    }
+   ],
+   "gpx": null
+  },
+  {
+   "id": "wa_route_d",
+   "waypoints": [
+    {
+     "lat": 48.5192,
+     "lng": -120.6743,
+     "elev": 5200,
+     "name": "Washington Pass Hairpin Turnout (SR-20)",
+     "note": "Large pullout on the outside of the SR-20 hairpin east of Washington Pass. Follow the climbers' trail toward Spire Gully, cut right into a dry creek bed and go up smooth slabs (the upper one has a fixed line) to the Ice Box.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51344,
+     "lng": -120.64594,
+     "elev": 5490,
+     "name": "Ice Box Left Side Base",
+     "note": "Base of the Ice Box wall, shared by Iceman, Route C, and Route D.",
+     "type": "Base",
+     "distMi": null
+    }
+   ],
+   "gpx": null
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "waypoints": [
+    {
+     "lat": 48.957,
+     "lng": -121.851,
+     "elev": 4800,
+     "name": "FS Road 3160 End Trailhead",
+     "note": "End of the rough, single-lane FS Road 3160 (high-clearance/4x4 recommended); unmaintained boot path to Church Lake starts here.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Canyon Creek Road (FS-31) north off SR-542 just east of Glacier, then FS-3160 to its end at about 4,800 ft. The upper road is single-lane and rough, high clearance is the usual advice, and the parking is no more than a wide spot at the end."
+    },
+    {
+     "lat": 48.95563333333333,
+     "lng": -121.85343333333333,
+     "elev": 5100,
+     "name": "Boot Path Junction / Old Roadbed",
+     "note": "Unmarked user-built path leaves the old roadbed and climbs through brush toward the lake basin.",
+     "type": "Junction",
+     "distMi": 0.2,
+     "directions": "Continue on the old roadbed past the parking area for a couple of hundred yards. The user-built path toward the lake basin leaves it unmarked, though motorbike use has worn the line in well enough to follow."
+    },
+    {
+     "lat": 48.94962,
+     "lng": -121.84918,
+     "elev": 5150,
+     "name": "Church Lake",
+     "note": "Emerald subalpine lake in a basin below Bearpaw; established rough camp spots on the shore, often overgrown approach.",
+     "type": "Campsite",
+     "distMi": 0.6,
+     "directions": "The path climbs steeply through forest — the steepest sustained grade of the day, about 400 ft — then rolls over a rise into the cirque holding the lake, 0.6 to 0.7 mile from the car."
+    },
+    {
+     "lat": 48.951086751999995,
+     "lng": -121.854669344,
+     "elev": 5450,
+     "name": "Left Rim of Church Lake Basin",
+     "note": "Keep left around the lake and start climbing the rim of the basin toward Point 6066 rather than following the lakeshore fully around.",
+     "type": "Junction",
+     "distMi": 1,
+     "directions": "Skirt the lake along its east/left shore rather than following the shoreline the whole way around, then start up the rim of the basin on the left (east) toward Point 6066. Fill water at the lake; there is none above it."
+    },
+    {
+     "lat": 48.948673504,
+     "lng": -121.854238688,
+     "elev": 5800,
+     "name": "Steep Heather/Meadow Ridge Below Point 6066",
+     "note": "Steep, loose tread through heather and meadow gains the ridge crest; described by hikers as steep but 'nothing scary' in dry conditions, slick when wet.",
+     "type": "Hazard",
+     "distMi": 1.4,
+     "directions": "Above the lake the tread fades into intermittent boot path and cairns through meadow and heather benches, and the rim steepens on loose footing. Straightforward when dry, genuinely slick when wet, and snow lingers on the shaded slopes here into midsummer."
+    },
+    {
+     "lat": 48.941,
+     "lng": -121.8525,
+     "elev": 6066,
+     "name": "Point 6066 Knoll",
+     "note": "Knoll with 270-degree views from Mount Baker eastward into Canada; the narrow summit ridge to Bearpaw's true top begins here.",
+     "type": "Junction",
+     "distMi": 1.7,
+     "directions": "Keep working up the rim to the broad high point on the ridge dividing Church Lake's basin from Bearpaw's summit block. This stretch accounts for most of the day's remaining gain."
+    },
+    {
+     "lat": 48.946260255999995,
+     "lng": -121.853808032,
+     "elev": 6060,
+     "name": "Exposed Summit Ridge",
+     "note": "Narrow, sometimes exposed ridgeline with loose footing for the final approach; use caution, easy to slip off either side.",
+     "type": "Hazard",
+     "distMi": 1.8,
+     "directions": "From the knoll drop slightly and traverse north across a rocky, heathery bowl toward the base of the summit block, picking up the narrow connecting ridge. Footing is loose and the crest is exposed on both sides in places."
+    },
+    {
+     "lat": 48.94605,
+     "lng": -121.85402,
+     "elev": 6091,
+     "name": "Bearpaw Mountain",
+     "note": "True summit; final ~100m from the ridge is a short Class 2-3 scramble over blocky rock.",
+     "type": "Summit",
+     "distMi": 1.85,
+     "directions": "The last stretch is a short Class 2-3 scramble, roughly 100 m, on generally solid blocky rock with mild exposure. Reverse the same ground to descend, or drop the scree-and-dirt chute that cuts straight from the ridge down to the lakeshore — quicker, but loose enough that it is no place to be below another party."
+    }
+   ],
+   "gpx": null
+  }
+ ]
+}

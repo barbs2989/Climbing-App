@@ -1,0 +1,219 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_hardy_snow_scramble",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A (the Rainy Pass / Methow Pass / southeast-slope line) + rename",
+   "summary": "Keep this row as the long Methow Pass route up Mount Hardy's southeast slope, rename it to match, and take the short Swamp Creek south-ridge steps out of its route breakdown (that line stays listed as the alternative approach).",
+   "evidence": "Two write-ups of the Methow Pass line agree: leave the crest trail at Methow Pass, follow a climbers' path west onto talus toward the east ridge, stay high on the ridge, reach the saddle between the summit and an eastern knob (false summit), then Class 2-3 scrambling to the top; one titles it the Southeast Slope—South Face. The short line from the Swamp Creek pullout is a separate, well-documented south-ridge route (4-4.5 mi, ~4,100-4,200 ft; stay climber's right of the 5,200 ft cliff bands, leave the ridge at ~7,200 ft for a notch and a shallow summit gully). No source calls either line 'Southwest Slopes'. The row's waypoints, camps, itinerary, timing, approach, climbing_route, descent, gain and distance all describe the Methow Pass line, and its pins and camps cannot be moved, so that line is kept; only pitch_detail and beta described the Swamp Creek line. The Swamp Creek approach variant stays as the alternative, no longer marked primary, and its baseFinding no longer claims both approaches finish the same way. The encyclopedia entry confirms Class 3 as the easiest grade, Methow Pass to the east, and the 1933 first ascent (route not recorded, so the 'via this southwest line' claim is removed).",
+   "sources": [
+    "https://trailcatjim.com/mount-hardy-upper-methow-mountains/",
+    "https://www.thewildoutsiders.com/adventure-journal/golden-horn-and-tower-mountain",
+    "https://trailcatjim.com/mount-hardy-upper-methow-mountains-2/",
+    "https://www.mountaineers.org/activities/routes-places/mount-hardy-south-face",
+    "https://onehikeaweek.com/2015/05/02/mount-hardy/",
+    "https://en.wikipedia.org/wiki/Mount_Hardy_(Washington)"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_mount_hardy_snow_scramble",
+     "expect_name": "Southwest Slopes (Snow/Scramble)",
+     "name": "Southeast Slope via Methow Pass"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "aspect",
+     "path": [],
+     "expect": "SW",
+     "value": "SE"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "face",
+     "path": [],
+     "expect": "Southwest Slopes",
+     "value": "Southeast Slope, from Methow Pass"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "fa",
+     "path": [],
+     "find": " (first recorded ascent of the peak, via this standard southwest line)",
+     "replace": " (first recorded ascent of the peak)"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "beta",
+     "path": [],
+     "expect": "The standard approach ascends the south ridge via brushy forest to the base of the ridge, then follows the ridge upward while staying climber's right to avoid cliff bands at mid-elevations. From approximately 7,200 feet, leave the ridge and scramble loose scree and granite blocks on the east side to reach a notch below the summit block. From the notch, traverse left and scramble a shallow gully to reach the summit. Snow extends the hiking window and covers loose talus early in the season.",
+     "value": "From Methow Pass, leave the crest trail and head west and southwest over open heather and talus benches to the peak's east ridge. Get onto the ridge as early as you can and stay close to its crest; the talus below it is loose and slow. Moderate sand, scree and talus lead to the saddle between the true summit and a lower eastern knob, and from there several hundred feet of blocky Class 2-3 scrambling reach the summit. Early in the season snow covers much of the loose talus."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "Class 1-2",
+       "notes": "Brushy forest with boot trail; 1.2-1.5 miles of elevation gain through mixed conifer forest to ridge base. Faint trail; route-finding experience helpful.",
+       "pitch": "1: Forest Approach"
+      },
+      {
+       "grade": "Class 2+",
+       "notes": "Ridge crest and slabs; stay climber's right to avoid 5,200-foot cliff band. Loose blocks and moderate exposure. Approximately 1,000 feet of elevation gain.",
+       "pitch": "2: South Ridge to Cliff Zone"
+      },
+      {
+       "grade": "Class 2-3",
+       "notes": "Leave ridge at 7,200 feet, scramble loose scree and granite blocks on east side of ridge toward summit block notch. Loose, steep terrain with exposure. 800+ feet of gain.",
+       "pitch": "3: Scree and Blocks to Summit Block Notch"
+      },
+      {
+       "grade": "Class 2-3",
+       "notes": "Shallow gully scramble from notch to summit. Loose rock, ~100 feet of scrambling to peak. Final exposed section with good granite.",
+       "pitch": "4: Summit Gully"
+      }
+     ],
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "rope_note",
+     "path": [],
+     "find": "Southwest Slopes standard route is",
+     "replace": "The southeast-slope route is"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "corrections",
+     "path": [],
+     "expect": "None; SummitPost/Mountaineers route description confirms scramble-only terrain.",
+     "value": "None; the route is scramble-only terrain."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "southwest/southeast slopes",
+     "replace": "southeast slope"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_hardy_snow_scramble",
+     "column": "approach_variants",
+     "path": [],
+     "expect": [
+      {
+       "name": "Rainy Pass, the crest trail to Methow Pass, and the east ridge",
+       "notes": "The long way, and the one that suits a two-day trip. From the large paved lot on the north side of SR-20 at Rainy Pass, follow the crest trail north as it climbs steadily through subalpine forest and larch parkland past Porcupine Creek — fill up there, it is the last easy water before a long dry stretch of switchbacks — to Cutthroat Pass. From the pass the trail drops toward Granite Pass and a saddle beyond it, where a steep snowfield often lasts into August and has caused slide-for-life falls, so carry an axe if you are early in the season. Beyond, the trail contours across open, sparsely treed slopes to Snowy Creek Meadow, a common water and camp stop, with a short side trail west into the Snowy Lakes basin for a higher and more scenic bivy under Tower Mountain and Golden Horn. From the meadow, stay on the crest trail north to the open plateau at Methow Pass and leave it there: travel west and southwest off-trail through open heather and talus benches toward the peak's east ridge, gain the ridge, and follow moderate sand, scree and talus — loose in places, with real route-finding — up to the saddle between the true summit and its lower false summit.",
+       "season": "Late June through September, with July through September giving the driest scree. June ascents work but the final slopes and gully still hold snow and want an axe and crampons. The highway is shut for avalanche control through the winter, which closes both approaches outright.",
+       "hazards": [
+        "loose scree, talus and blocky rock on the unmarked upper route, worst near the summit saddle and the final gully",
+        "a steep lingering snowfield just past Granite Pass that has caused slide-for-life falls into August",
+        "a long, mostly off-trail final leg with no marked line",
+        "afternoon thunderstorms and fast weather changes on exposed ridge crest and passes",
+        "wildfire smoke reducing visibility in late summer",
+        "seasonal closure of the highway cutting off road access entirely"
+       ],
+       "longForm": true,
+       "baseFinding": "THE NOTCH IS ON THE FAR SIDE OF THE BLOCK FROM WHERE YOU ARRIVE, AND YOU HAVE TO TRAVERSE TO IT. Whichever approach you used, the climbing starts the same way. At about 7,200 ft the ridge you have been following runs into the summit block; leave the crest there and scramble loose scree and granite blocks across the EAST side — climber's right — until you reach a notch tucked under the summit block. Cross the notch, and the way on is a short, SHALLOW gully leading up to the top. That gully is the marker: it is shallow and blocky rather than deep and cut, and it is the only break that goes at scrambling grade. If the block above you is unbroken wall, keep traversing right rather than starting up; if you have dropped far enough to be under steep cliff bands, you have gone too low and should regain height. The upper ground is several hundred feet of enjoyable blocky scrambling on rock that takes hands, and a lower false summit sits beside the true one — if the highest ground you can reach still has something higher a short distance away, you are on the false summit and the saddle between them is where you crossed."
+      },
+      {
+       "name": "Swamp Creek pullout and the south ridge",
+       "notes": "The short, steep alternative, and the way most day parties go. Start from the highway pullout at Swamp Creek and climb through brushy forest to the foot of the prominent ridge on the mountain's south side. Follow the ridge upward, staying on the crest where it lets you and moving climber's right to get around the cliff bands that block the crest around 5,200 ft — getting that traverse wrong is what turns parties back. Above the cliff bands the ridge opens out onto sand and scree and continues to the summit block. This side faces the sun and dries early, which is why it comes into condition before the crest-trail approach and why it turns into a loose, dusty grind by late summer; a snow finger on this flank can hold firm snow at a fairly steep angle into early summer, which speeds the ascent considerably for a party carrying an axe.",
+       "season": "Late June through September once the snow finger has stabilised or melted, with July and August driest. Earlier in the season the finger is a snow climb rather than a scramble.",
+       "hazards": [
+        "cliff bands around 5,200 ft where the crest is blocked and the bypass is on climber's right — the main route-finding failure on this side",
+        "a steep snow finger on this flank into early summer, with wet-slide and sluff potential",
+        "brushy forest on the lower ridge with no maintained tread",
+        "loose scree and blocky rock on the upper route and in the final gully",
+        "an exposed ridge crest with no shelter from afternoon thunderstorms",
+        "seasonal closure of the highway cutting off road access entirely"
+       ],
+       "primary": true,
+       "baseFinding": "THE NOTCH IS ON THE FAR SIDE OF THE BLOCK FROM WHERE YOU ARRIVE, AND YOU HAVE TO TRAVERSE TO IT. Whichever approach you used, the climbing starts the same way. At about 7,200 ft the ridge you have been following runs into the summit block; leave the crest there and scramble loose scree and granite blocks across the EAST side — climber's right — until you reach a notch tucked under the summit block. Cross the notch, and the way on is a short, SHALLOW gully leading up to the top. That gully is the marker: it is shallow and blocky rather than deep and cut, and it is the only break that goes at scrambling grade. If the block above you is unbroken wall, keep traversing right rather than starting up; if you have dropped far enough to be under steep cliff bands, you have gone too low and should regain height. The upper ground is several hundred feet of enjoyable blocky scrambling on rock that takes hands, and a lower false summit sits beside the true one — if the highest ground you can reach still has something higher a short distance away, you are on the false summit and the saddle between them is where you crossed."
+      }
+     ],
+     "value": [
+      {
+       "name": "Rainy Pass, the crest trail to Methow Pass, and the east ridge",
+       "notes": "The long way, and the one that suits a two-day trip. From the large paved lot on the north side of SR-20 at Rainy Pass, follow the crest trail north as it climbs steadily through subalpine forest and larch parkland past Porcupine Creek — fill up there, it is the last easy water before a long dry stretch of switchbacks — to Cutthroat Pass. From the pass the trail drops toward Granite Pass and a saddle beyond it, where a steep snowfield often lasts into August and has caused slide-for-life falls, so carry an axe if you are early in the season. Beyond, the trail contours across open, sparsely treed slopes to Snowy Creek Meadow, a common water and camp stop, with a short side trail west into the Snowy Lakes basin for a higher and more scenic bivy under Tower Mountain and Golden Horn. From the meadow, stay on the crest trail north to the open plateau at Methow Pass and leave it there: travel west and southwest off-trail through open heather and talus benches toward the peak's east ridge, gain the ridge, and follow moderate sand, scree and talus — loose in places, with real route-finding — up to the saddle between the true summit and its lower false summit.",
+       "season": "Late June through September, with July through September giving the driest scree. June ascents work but the final slopes and gully still hold snow and want an axe and crampons. The highway is shut for avalanche control through the winter, which closes both approaches outright.",
+       "hazards": [
+        "loose scree, talus and blocky rock on the unmarked upper route, worst near the summit saddle and the final gully",
+        "a steep lingering snowfield just past Granite Pass that has caused slide-for-life falls into August",
+        "a long, mostly off-trail final leg with no marked line",
+        "afternoon thunderstorms and fast weather changes on exposed ridge crest and passes",
+        "wildfire smoke reducing visibility in late summer",
+        "seasonal closure of the highway cutting off road access entirely"
+       ],
+       "longForm": true,
+       "baseFinding": "THE SADDLE YOU ARE AIMING FOR SITS BETWEEN THE TRUE SUMMIT AND A LOWER KNOB TO ITS EAST — DO NOT STOP ON THE KNOB. From Methow Pass, get up onto the east ridge as early as you can and keep close to its crest; the talus slopes below it are loose and slow, and parties who angle across them lose time. Moderate sand, scree and talus lead to the saddle between the summit and the eastern false summit. From the saddle, several hundred feet of blocky Class 2-3 scrambling on rock that takes hands reach the top. If the highest ground you can reach still has something higher a short distance to the west, you are on the knob, and the saddle below it is where you cross to the true summit.",
+       "primary": true
+      },
+      {
+       "name": "Swamp Creek pullout and the south ridge",
+       "notes": "The short, steep alternative, and the way most day parties go. Start from the highway pullout at Swamp Creek and climb through brushy forest to the foot of the prominent ridge on the mountain's south side. Follow the ridge upward, staying on the crest where it lets you and moving climber's right to get around the cliff bands that block the crest around 5,200 ft — getting that traverse wrong is what turns parties back. Above the cliff bands the ridge opens out onto sand and scree and continues to the summit block. This side faces the sun and dries early, which is why it comes into condition before the crest-trail approach and why it turns into a loose, dusty grind by late summer; a snow finger on this flank can hold firm snow at a fairly steep angle into early summer, which speeds the ascent considerably for a party carrying an axe.",
+       "season": "Late June through September once the snow finger has stabilised or melted, with July and August driest. Earlier in the season the finger is a snow climb rather than a scramble.",
+       "hazards": [
+        "cliff bands around 5,200 ft where the crest is blocked and the bypass is on climber's right — the main route-finding failure on this side",
+        "a steep snow finger on this flank into early summer, with wet-slide and sluff potential",
+        "brushy forest on the lower ridge with no maintained tread",
+        "loose scree and blocky rock on the upper route and in the final gully",
+        "an exposed ridge crest with no shelter from afternoon thunderstorms",
+        "seasonal closure of the highway cutting off road access entirely"
+       ],
+       "baseFinding": "THE NOTCH IS ON THE FAR SIDE OF THE BLOCK FROM WHERE YOU ARRIVE, AND YOU HAVE TO TRAVERSE TO IT. At about 7,200 ft the ridge you have been following runs into the summit block; leave the crest there and scramble loose scree and granite blocks across the EAST side — climber's right — until you reach a notch tucked under the summit block. Cross the notch, and the way on is a short, SHALLOW gully leading up to the top. That gully is the marker: it is shallow and blocky rather than deep and cut, and it is the only break that goes at scrambling grade. If the block above you is unbroken wall, keep traversing right rather than starting up; if you have dropped far enough to be under steep cliff bands, you have gone too low and should regain height. The upper ground is several hundred feet of enjoyable blocky scrambling on rock that takes hands, and a lower false summit sits beside the true one — if the highest ground you can reach still has something higher a short distance away, you are on the false summit and the saddle between them is where you crossed."
+      }
+     ]
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_lexington_tower_south_face",
+   "verdict": "confirmed",
+   "resolution": "merge_into wa_south_face_3 (Concord Tower, South Face)",
+   "summary": "This climb is Concord Tower's South Face, which already has its own page; fold this duplicate into that page and carry over its one extra gear note (a pink tricam for the summit block).",
+   "evidence": "Two route databases list this exact line — 5.6, 3 pitches, Grade II, FA Cramer, Anderson, Schuler and Stanley 1965, gravelly 'price of admission' traverse, sandy stance by the shark fin, bolts on the summit, single-rope rappel to an intermediate anchor or double-rope rappel to the notch — as Concord Tower's South Face, and a separate trip report climbs the same shark-fin line on Concord. Concord Tower already has that route as wa_south_face_3 (same name, grade, pitches, length, FA and beta, with a fuller pitch table, approach, descent and camps), so a refile would create a duplicate; merge instead. The only fact on this row missing from the kept row is the pink tricam for the slot on the summit block, stated on the route database page this row was built from, so it is carried into the kept row's gear list.",
+   "sources": [
+    "https://www.mountainproject.com/route/117635520/south-face",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Concord-Tower-South-Face",
+    "https://trailcatjim.com/concord-tower-via-southeast-face-lexington-tower-via-north-face/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_south_face_3",
+     "column": "gear",
+     "path": [],
+     "expect": [
+      "cams 0.4-3 in",
+      "stoppers",
+      "double-length slings"
+     ],
+     "value": [
+      "cams 0.4-3 in",
+      "stoppers",
+      "double-length slings",
+      "pink tricam (for a slot on the summit block)"
+     ]
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}

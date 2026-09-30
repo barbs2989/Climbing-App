@@ -1,0 +1,171 @@
+{
+ "file": "u005",
+ "results": [
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "fact": "Aspect/face of the documented Walrus Glacier line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: aspect W / face \"West Ridge\" while the row describes the Walrus Glacier (east side) and a scramble via the south ridge of Pt. 8373 and the final south/west ridge. The club route listing for the non-glacier scramble calls it the \"Southeast Route\"; trip reports describe crossing Clark's west and southwest ridges on the scramble. No source describes a \"West Ridge\" line, and the row bundles two lines under one name, so the aspect is a naming/scope decision rather than a researchable value.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/clark-mountain-southeast-route",
+    "https://www.mountaineers.org/activities/routes-places/clark-mountain-walrus-luahna-peak",
+    "https://drdirtbag.com/2021/08/10/clark-luahna/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Approach side of Colchuck Lake - waypoint routes via Aasgard Pass while approach/approach_variants say EAST shoreline",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live waypoint is now \"East-shore gully to the Jabberwocky notch\", describing the east-shore gully to the notch above Jabberwocky Tower, matching approach and approach_variants.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "fact": "Is the balanced summit block usually climbed? descent_text says most parties do not attempt it; beta/pro_tips/pro_needs say most parties protect/belay it",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: descent_text says most parties do not attempt the summit boulder; beta says most protect it and pro_needs says most belay it. Sources found describe individual parties (one skipped it; others threw a rope over the top and belayed or jugged it) and grade it V1, but none states what most parties do. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/121203676/the-balanced-rock",
+    "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "fact": "Commitment grade - Grade IV (in `grade`) vs commitment III",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: grade \"Grade IV, 5.11+\" vs commitment III. New source: the SuperTopo route page grades the West Face \"III 5.11 C1\" (supporting III). The route listing, the first-winter-ascent report and two trip reports give no Roman numeral. That is one source for III and none for IV; not two agreeing sources, so no patch.",
+   "sources": [
+    "http://www.supertopo.com/rock-climbing/North-Cascades-Colchuck-Balanced-Rock-West-Face",
+    "https://www.mountainproject.com/route/105806033/west-face",
+    "http://forevergripped.blogspot.com/2016/09/theres-something-cleansing-about-good.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "fact": "Side of the summit the slung-horn rappel leaves from: descent/rappels say south/southwest, other CBR routes say east",
+   "verdict": "fixed",
+   "correct_value": "The 30 m summit rappel goes down the east side from a slung horn",
+   "evidence": "Two independent accounts put the standard summit rappel on the EAST side: a descent guide gives a short rappel to the east from in-situ slings, and a trip-report series (West Face, The Scoop, Let it Burn) describes a 30 m rappel to the east from a slung horn before scrambling scree clockwise around the peak; a third report describes a single 25 m rappel down the east side. The one dissenting listing places the slung chickenhead on the south/southwest face without stating the rappel direction. descent and rappels on this row are changed to east; descent_text does not name a side.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/02/colchuck-balance-rock/",
+    "https://stephabegg.com/trip-reports/washington/cbr-west-face/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2003070609",
+    "https://www.mountainproject.com/route/108157307/let-it-burn"
+   ],
+   "patches": [
+    {
+     "id": "wa_full_tilt_tempest_wall_free_version",
+     "fact": "Side of the summit the slung-horn rappel leaves from: descent/rappels say south/southwest, other CBR routes say east",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "slung horn on the south/southwest side of the summit",
+     "replace": "slung horn on the east side of the summit"
+    },
+    {
+     "id": "wa_full_tilt_tempest_wall_free_version",
+     "fact": "Side of the summit the slung-horn rappel leaves from: descent/rappels say south/southwest, other CBR routes say east",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "slung horn on the south/southwest side of the summit",
+     "replace": "slung horn on the east side of the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: pitches=5 and beta list five pitches, while overview (\"4-pitch\"), descent_text (\"four pitches\") and the itinerary (\"4 pitches\") say four. The route listing gives 5 pitches with P5 a ~100 m simul-climbed 4th/low-5th finish; other summaries give 4 roped pitches. A 2015 trip report describes only the first three pitches. The count depends on whether the simul finish is counted, and sources do not agree on one number.",
+   "sources": [
+    "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+    "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+    "https://cascadeclimbers.com/forum/topic/97385-tr-colchuck-balanced-rock-and-aasguard-pass-leche-la-vaca-cbr-and-acid-baby-5192015/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "fact": "Pitch 3 and 4 lengths: pitch_detail 35 m / 40 m vs beta ~60 m / ~45 m",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Found while re-reading: pitch_detail gives P3 35 m and P4 40 m, while beta (and pro_tips' \"the 60 m P3\") give ~60 m and ~45 m. The route listing gives ~60 m and ~45 m, but it is the only source with pitch lengths, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/106864357/leche-la-vaca"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_scarface_3",
+   "fact": "Pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: pitches=6 while pitch_detail lists 5 pitches and the itinerary says 5; overview says 5+. The route listing and the first-ascent trip report title give III 5.10+, 1,200 ft, with P5+ as the finishing pitches; no source gives an exact count (the first-ascent report could not be loaded). No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/108157279/scarface",
+    "https://cascadeclimbers.com/forum/topic/75607-tr-colchuck-balanced-rock-scarface-iii-510-8152010/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_tempest",
+   "fact": "Side of the summit the slung-horn rappel leaves from: rappels says south/southwest, descent/descent_text say east",
+   "verdict": "fixed",
+   "correct_value": "The 30 m summit rappel goes down the east side from a slung horn",
+   "evidence": "Two independent accounts put the standard summit rappel on the EAST side: a descent guide gives a short rappel to the east from in-situ slings, and a trip-report series (West Face, The Scoop, Let it Burn) describes a 30 m rappel to the east from a slung horn before scrambling scree clockwise around the peak; a third report describes a single 25 m rappel down the east side. The one dissenting listing places the slung chickenhead on the south/southwest face without stating the rappel direction. On this row descent and descent_text already say east; only rappels is changed.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/02/colchuck-balance-rock/",
+    "https://stephabegg.com/trip-reports/washington/cbr-west-face/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2003070609",
+    "https://www.mountainproject.com/route/108157307/let-it-burn"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_tempest",
+     "fact": "Side of the summit the slung-horn rappel leaves from: rappels says south/southwest, descent/descent_text say east",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "the slung horn on the south/southwest side of the summit",
+     "replace": "the slung horn on the east side of the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "fact": "dist_km 17.06 (10.6 mi) is shown as the one-way approach but equals the itinerary round trip; the col waypoint is at 5.3 mi",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: dist_km 17.06 km equals the itinerary's 10.6 mi round trip while the col waypoint is at 5.3 mi one way. Sources give 4 mi to the lake plus about an hour to the col; none states a one-way trailhead-to-col mileage, and a value derived by adding or halving is not allowed. No patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.mountainproject.com/route/108159527/colchuck-balanced-rock-col-east-lake-side-approch"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_couloir",
+   "fact": "Summit-day length and start time: partner_requirements vs timing/itinerary",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: partner_requirements says a 04:00 start and an 8.5-hr round trip; timing/itinerary say a 2:30 AM start and an 11-hr summit day. Further reports found give couloir climbing times of 2.5-3.5 hr and camp departures of 4:30-5 AM, but they mostly concern the neighbouring North Buttress Couloir and none gives a camp-to-camp time for this line. No patch.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/07/19/colchuck-peak-ne-couloir/",
+    "https://www.summitpost.org/north-east-couloir-colchuck-peak/847282",
+    "https://www.jeffreyjhebert.com/adventures/northeast-couloir-on-colchuck-peak"
+   ],
+   "patches": []
+  }
+ ]
+}

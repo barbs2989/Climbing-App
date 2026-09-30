@@ -1,0 +1,1558 @@
+[
+ {
+  "id": "wa_lefty",
+  "name": "Lefty",
+  "area": {
+   "id": "wa_summertime_crag",
+   "name": "Summertime Crag",
+   "parent_id": "wa_sub_wapass",
+   "elevation_ft": null,
+   "lat": 48.52006,
+   "lng": -120.6398
+  },
+  "prior_findings": "discipline trad, but the listing and every protection field say sport (2 sources).",
+  "earlier_research": [
+   {
+    "file": "r282.json",
+    "fact": "Discipline (trad vs fully bolted)",
+    "status": "unresolved",
+    "correct_value": "sport (bolted, quickdraws only)",
+    "evidence": "The route's own listing types it Sport/Alpine with 'no widgets necessary', and the crag's route table lists Lefty as Sport; every protection field on the row agrees it is bolted. The only wrong field is `discipline`, which is out of patch scope, and only one independent source exists; owner should reclassify discipline to sport.",
+    "sources": [
+     "https://www.mountainproject.com/route/125126360/lefty",
+     "https://www.mountainproject.com/area/110728644/summertime-crag"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_wild_child",
+    "name": "Wild Child",
+    "grade": "5.12a (7a+ French)"
+   },
+   {
+    "id": "wa_summertime",
+    "name": "Summertime",
+    "grade": "5.11c"
+   },
+   {
+    "id": "wa_friction_therapy",
+    "name": "Friction Therapy",
+    "grade": "5.10c (6b French, E2 5b British)"
+   },
+   {
+    "id": "wa_caravan",
+    "name": "Caravan",
+    "grade": "5.11b/c"
+   },
+   {
+    "id": "wa_django",
+    "name": "Django",
+    "grade": "5.11d"
+   },
+   {
+    "id": "wa_chitlins_con_carne",
+    "name": "Chitlins Con Carne",
+    "grade": "5.11a"
+   },
+   {
+    "id": "wa_alice_in_wonderland",
+    "name": "Alice in Wonderland",
+    "grade": "5.11b/c"
+   },
+   {
+    "id": "wa_hottentot",
+    "name": "Hottentot",
+    "grade": "5.12"
+   }
+  ],
+  "row": {
+   "id": "wa_lefty",
+   "area_id": "wa_summertime_crag",
+   "name": "Lefty",
+   "discipline": "trad",
+   "grade": "5.11b (6c French, E3 5c British)",
+   "grade_system": "yds",
+   "grade_num": 11.5,
+   "pitches": 1,
+   "length_m": 17,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Zachary Winters (Z Winters)",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Late June - September",
+   "description": null,
+   "gear": [
+    "quickdraws"
+   ],
+   "hazards": null,
+   "verif": null,
+   "overview": "A compact, technical face/friction line on the Friction Therapy slab that needs no gear beyond quickdraws.",
+   "beta": "Delivers varied movement styles across a modest distance - mostly technical face climbing with clever beta and a little friction. Climbers debate whether it has a true 5.11 crux, but it feels notably harder than the adjacent line.",
+   "turnaround": null,
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.11b (6c French, E3 5c British)",
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Center line on the Friction Therapy slab (originally the leftmost line before another route was added further left)",
+   "permit": null,
+   "comms": "No reliable cell service at Washington Pass; nearest dependable coverage is down-valley toward Mazama/Winthrop.",
+   "descent": "Lower or rappel from the bolted anchor",
+   "obj_haz": null,
+   "waypoints": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "approachTimeHrs": 0.4
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "sturdy approach shoes for the Early Winters Creek crossing"
+   ],
+   "pro_tips": null,
+   "watch_out": null,
+   "pro_needs": "No trad gear needed - fully bolted ('no widgets necessary').",
+   "best_season": "Best in summer, late June through September; the crag holds shade until early/mid-afternoon.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "From Highway 20, park at the pullout near Mazama before the Spires Gully parking area. Descend through trees to Early Winters Creek, cross it, follow it downstream, then angle up-slope and contour left to the crag. About 20-25 minutes.",
+   "descent_text": "Route ends at a bolted anchor on the Friction Therapy slab; lower off or rappel with a single rope.",
+   "bail": "Lower off the bolted anchor at the top if needed.",
+   "pitch_detail": [
+    {
+     "grade": "5.11b",
+     "notes": "Technical face/friction climbing on the Friction Therapy slab; fully bolted, no trad gear needed.",
+     "pitch": "P1",
+     "lengthM": 17
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "closures": "Highway 20 is gated and closed each winter for avalanche safety.",
+    "landManager": "USDA Forest Service - Okanogan-Wenatchee National Forest, Methow Valley Ranger District"
+   },
+   "road": {
+    "name": "North Cascades Highway (State Route 20)",
+    "status": "Open seasonally; closed and gated in winter"
+   },
+   "climate": {
+    "summer": "Prime season; crag stays shaded until early/mid-afternoon.",
+    "typical": "Alpine/high-desert transition climate at ~5,200 ft."
+   },
+   "emergency": {
+    "notes": "No reliable cell coverage at Washington Pass.",
+    "county": "Okanogan County, WA",
+    "rangerStation": "Methow Valley Ranger District, Winthrop, WA - (509) 996-4000",
+    "nearestHospital": "Mid-Valley Hospital, Omak, WA - (509) 826-1760",
+    "sheriffDispatch": "Okanogan County Sheriff's Office non-emergency (509) 422-7200"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_friction_therapy",
+  "name": "Friction Therapy",
+  "area": {
+   "id": "wa_summertime_crag",
+   "name": "Summertime Crag",
+   "parent_id": "wa_sub_wapass",
+   "elevation_ft": null,
+   "lat": 48.52006,
+   "lng": -120.6398
+  },
+  "prior_findings": "discipline trad, but the listing and every protection field say sport (2 sources).",
+  "earlier_research": [
+   {
+    "file": "r282.json",
+    "fact": "Discipline (trad vs fully bolted)",
+    "status": "unresolved",
+    "correct_value": "sport (6 bolts to a bolted anchor)",
+    "evidence": "The route's listing types it Sport with '6 bolts to bolted anchor with rap rings', and the crag table lists it Sport; all row gear fields agree. Only `discipline` is wrong, and it is out of patch scope; single independent source. Owner should reclassify discipline to sport.",
+    "sources": [
+     "https://www.mountainproject.com/route/124743128/friction-therapy",
+     "https://www.mountainproject.com/area/110728644/summertime-crag"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_wild_child",
+    "name": "Wild Child",
+    "grade": "5.12a (7a+ French)"
+   },
+   {
+    "id": "wa_summertime",
+    "name": "Summertime",
+    "grade": "5.11c"
+   },
+   {
+    "id": "wa_lefty",
+    "name": "Lefty",
+    "grade": "5.11b (6c French, E3 5c British)"
+   },
+   {
+    "id": "wa_caravan",
+    "name": "Caravan",
+    "grade": "5.11b/c"
+   },
+   {
+    "id": "wa_django",
+    "name": "Django",
+    "grade": "5.11d"
+   },
+   {
+    "id": "wa_chitlins_con_carne",
+    "name": "Chitlins Con Carne",
+    "grade": "5.11a"
+   },
+   {
+    "id": "wa_alice_in_wonderland",
+    "name": "Alice in Wonderland",
+    "grade": "5.11b/c"
+   },
+   {
+    "id": "wa_hottentot",
+    "name": "Hottentot",
+    "grade": "5.12"
+   }
+  ],
+  "row": {
+   "id": "wa_friction_therapy",
+   "area_id": "wa_summertime_crag",
+   "name": "Friction Therapy",
+   "discipline": "trad",
+   "grade": "5.10c (6b French, E2 5b British)",
+   "grade_system": "yds",
+   "grade_num": 10.75,
+   "pitches": 1,
+   "length_m": 15,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Zachary Winters (Z Winters)",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Late June - September",
+   "description": null,
+   "gear": [
+    "6 quickdraws"
+   ],
+   "hazards": null,
+   "verif": null,
+   "overview": "A short, fun friction slab climb up the center rib of a distinct slab left of the crag's original JMK-established routes; first put on record in 2023.",
+   "beta": "Fun movement on really nice stone follows the center rib up the slab. It feels deceptively short due to concentrated difficulty, with a couple of stout (5.10+) moves in the middle.",
+   "turnaround": null,
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10c (6b French, E2 5b British)",
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Right-most line on a separate slab, left of JMK's routes (identifiable by a large dead snag leaning against the wall)",
+   "permit": null,
+   "comms": "No reliable cell service at Washington Pass; nearest dependable coverage is down-valley toward Mazama/Winthrop.",
+   "descent": "Lower or rappel from the bolted anchor",
+   "obj_haz": null,
+   "waypoints": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "approachTimeHrs": 0.4
+   },
+   "detailed_rack": "6 bolts to a bolted anchor with rap rings; quickdraws only.",
+   "what_to_bring": [
+    "sturdy approach shoes for the Early Winters Creek crossing"
+   ],
+   "pro_tips": [
+    "Short climbers may struggle to reach the crux clip in the middle bolt run - be ready for a reachy sequence or bring a stick clip."
+   ],
+   "watch_out": null,
+   "pro_needs": null,
+   "best_season": "Best in summer, late June through September; the crag holds shade until early/mid-afternoon.",
+   "high_point_ft": null,
+   "aid_grade": null,
+   "approach": "From Highway 20, park at the pullout near Mazama before the Spires Gully parking area. Descend through trees to Early Winters Creek, cross it, follow it downstream, then angle up-slope and contour left to the crag. About 20-25 minutes.",
+   "descent_text": "Route ends at a bolted anchor with rap rings; lower off or rappel with a single rope.",
+   "bail": "Lower off the bolted anchor at the top if needed.",
+   "pitch_detail": [
+    {
+     "grade": "5.10c",
+     "notes": "Center-rib friction slab climbing with a couple of stout (5.10+) moves mid-route; 6 bolts to a bolted anchor with rap rings.",
+     "pitch": "P1",
+     "lengthM": 15
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "closures": "Highway 20 is gated and closed each winter for avalanche safety.",
+    "landManager": "USDA Forest Service - Okanogan-Wenatchee National Forest, Methow Valley Ranger District"
+   },
+   "road": {
+    "name": "North Cascades Highway (State Route 20)",
+    "status": "Open seasonally; closed and gated in winter"
+   },
+   "climate": {
+    "summer": "Prime season; crag stays shaded until early/mid-afternoon.",
+    "typical": "Alpine/high-desert transition climate at ~5,200 ft."
+   },
+   "emergency": {
+    "notes": "No reliable cell coverage at Washington Pass.",
+    "county": "Okanogan County, WA",
+    "rangerStation": "Methow Valley Ranger District, Winthrop, WA - (509) 996-4000",
+    "nearestHospital": "Mid-Valley Hospital, Omak, WA - (509) 826-1760",
+    "sheriffDispatch": "Okanogan County Sheriff's Office non-emergency (509) 422-7200"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_on_the_prowl",
+  "name": "On the Prowl (D)",
+  "area": {
+   "id": "wa_ice_box_right_side",
+   "name": "Ice Box right side",
+   "parent_id": "wa_hairpin_crags",
+   "elevation_ft": null,
+   "lat": 48.51379,
+   "lng": -120.64526
+  },
+  "prior_findings": "discipline trad vs sport.",
+  "earlier_research": [
+   {
+    "file": "r143.json",
+    "fact": "Trad vs bolted protection",
+    "status": "unresolved",
+    "correct_value": "sport (bolt-protected, ~7 bolts, hook anchors)",
+    "evidence": "The route's own page lists On the Prowl (D) as Sport, 5.10-, 70 ft with about 7 bolts and hooked bolted anchors, and the Ice Box right side area page lists it as Sport; every protection field on the row agrees. The only wrong field is `discipline` ('trad'), which is out of scope for patching under the rules, so it is flagged for the owner rather than patched.",
+    "sources": [
+     "https://www.mountainproject.com/route/126509881/on-the-prowl-d",
+     "https://www.mountainproject.com/area/117797283/ice-box-right-side"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_ephemeral",
+    "name": "Ephemeral",
+    "grade": "5.11d"
+   },
+   {
+    "id": "wa_particulate_matter",
+    "name": "Particulate Matter",
+    "grade": "5.10-"
+   }
+  ],
+  "row": {
+   "id": "wa_on_the_prowl",
+   "area_id": "wa_ice_box_right_side",
+   "name": "On the Prowl (D)",
+   "discipline": "trad",
+   "grade": "5.10-",
+   "grade_system": "yds",
+   "grade_num": 10,
+   "pitches": 1,
+   "length_m": 21,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Summer only",
+   "description": null,
+   "gear": [
+    "quickdraws (7+)",
+    "60m rope",
+    "helmet"
+   ],
+   "hazards": [
+    "Loose/blocky terrain at the very start of the route"
+   ],
+   "verif": null,
+   "overview": "A quirky single pitch beginning on blocky, scrambly ground at the downhill end of the Ice Box, climbing deceptively low-angle dark rock past an exposed traverse to an arete, then a bolted leftward traverse near the top to an anchor shared with a neighboring unnamed trad line.",
+   "beta": "Begins on blocky terrain at the downhill (toward-the-hairpin) end of the wall. Above the scrambly start the rock looks deceptively low-angle; scramble the lower section and trend right as it steepens, aiming for the arete after a short, exposed rightward traverse. Continue up varied knobs, crimps, and jugs. Near the top, traverse left on bolts through steeper, similarly-featured climbing to the anchors — the position and quality of climbing are better than the route looks from the ground, though the bolts themselves can be hard to spot before starting.",
+   "turnaround": "Scope the bolt line from the ground before committing since the hardware is hard to see; if you can't confirm gear placement or the exposed low traverse feels wrong for the party, back off rather than press on.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10-",
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "Lower from the bolted, hook-equipped anchor at the top of the wall (single pitch, 21 m).",
+   "commitment": null,
+   "face": "Ice Box right-hand wall, far right/downhill end (toward the hairpin)",
+   "permit": null,
+   "comms": null,
+   "descent": "Lower from the bolted, hook-equipped anchor at the top.",
+   "obj_haz": [
+    "Short, exposed rightward traverse low on the route",
+    "Bolts are hard to spot from the ground, complicating on-lead route-finding",
+    "Blocky/loose terrain at the scrambling start"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51429,
+     "lng": -120.64284,
+     "elev": 5200,
+     "name": "Hairpin pullout (SR-20 parking)",
+     "type": "Trailhead",
+     "distMi": null,
+     "elevFt": 5200
+    },
+    {
+     "lat": 48.51379,
+     "lng": -120.64526,
+     "elev": 5305,
+     "name": "Ice Box right side (base of wall)",
+     "type": "crag base",
+     "distMi": null,
+     "elevFt": 5305
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 0.25,
+    "recommendedStart": "Afternoon (the gully's only sun window)"
+   },
+   "detailed_rack": "7+ quickdraws for the bolts, plus the bolted top anchor (shared with the neighboring unnamed trad line at this crag); a 60 m rope is ample for this 21 m/70 ft pitch.",
+   "what_to_bring": [
+    "approach shoes for the scrambly start and 3rd-class approach",
+    "helmet — blocky terrain low on the route and in the approach gully"
+   ],
+   "pro_tips": [
+    "Trust the deceptively low-angle-looking rock above the scramble start — it climbs better than it looks",
+    "Scope the bolt line from the ground first, since the hardware is hard to spot",
+    "The position and rock quality make this one worth doing despite an unassuming look from below"
+   ],
+   "watch_out": [
+    "Route looks like nothing from below — don't underestimate the exposure once on it",
+    "Bolts can be difficult to locate visually before starting",
+    "Short, exposed rightward traverse low on the route"
+   ],
+   "pro_needs": "Bolt-protected (~7 bolts) with a bolted, hook-equipped anchor; no natural gear needed.",
+   "best_season": "Same summer window as the rest of Hairpin Crags/Ice Box; best climbed in the crag's brief afternoon sun.",
+   "high_point_ft": 5305,
+   "aid_grade": null,
+   "approach": "Park at the hairpin switchback on SR-20 between the Washington Pass summit and Early Winters/Mazama. Follow the climbers' trail up toward the chasm/gully right of the drainage, cross left below a slab, then scramble 3rd-class terrain up the left margin of the slabs into the Ice Box — about 15 minutes from the car. This route starts at the downhill (right-hand, toward-the-hairpin) end of the wall.",
+   "descent_text": "Single pitch (21 m/70 ft) — lower directly from the top bolted anchor (fitted with rap hooks) back to the base; no walk-off needed.",
+   "bail": "Bolt-protected (about 7 bolts); retreat at any point by lowering off a bolt.",
+   "pitch_detail": [
+    {
+     "grade": "5.10-",
+     "notes": "Scrambly blocky start; short exposed rightward traverse to the arete; varied face climbing on knobs/crimps/jugs; final leftward bolted traverse near the top to the shared anchor.",
+     "pitch": "1",
+     "lengthM": 21
+    }
+   ],
+   "itinerary": "A short afternoon outing: drive to the hairpin pullout, make the 15-minute scramble approach into the Ice Box, climb the route, then lower and walk back to the car.",
+   "access": {
+    "fees": null,
+    "permit": null,
+    "closures": "SR-20 (North Cascades Highway) is gated and impassable in winter, typically early December to mid-spring.",
+    "landManager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "passRequired": null
+   },
+   "road": {
+    "name": "SR-20 / North Cascades Highway",
+    "status": "Seasonal — closed to vehicles in winter",
+    "driveNote": "Park at the hairpin switchback on SR-20 between the Washington Pass summit and Early Winters/Mazama.",
+    "seasonalGate": "WSDOT closes SR-20 near Washington Pass each winter for avalanche safety, typically early December through mid-spring (the 2025–26 season closed Dec 4, 2025 and reopened June 14, 2026); exact dates vary by year."
+   },
+   "climate": {
+    "fall": "Climbable into early fall before snow and the highway's seasonal closure return.",
+    "spring": "Snowbound; SR-20 itself is typically still gated.",
+    "summer": "Prime and effectively only real season.",
+    "winter": "SR-20 is gated for the season near Washington Pass; the crag is inaccessible.",
+    "typical": "High-elevation (~5,300 ft) North Cascades summer climate: warm, dry days, but a shaded gully that stays cooler than open crags nearby.",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "No confirmed cell-coverage data for this specific gully; the SR-20/Washington Pass corridor is a remote mountain highway with historically unreliable cell service.",
+    "county": "Okanogan County, WA",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest, 24 West Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital, 507 Hospital Way, Brewster, WA 98812 (roughly 65-70 mi east via SR-20); closer non-ER primary/urgent care is Confluence Health's Methow Valley Clinic in Winthrop, WA.",
+    "sheriffDispatch": "Okanogan County Sheriff's Office, (509) 422-7200 (option 2 for dispatch/complaints)"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_iceman",
+  "name": "Iceman",
+  "area": {
+   "id": "wa_ice_box_left_side",
+   "name": "Ice box left side",
+   "parent_id": "wa_hairpin_crags",
+   "elevation_ft": null,
+   "lat": 48.51344,
+   "lng": -120.64594
+  },
+  "prior_findings": "discipline sport vs should-be trad. (Its pins are handled separately; do not touch waypoint coordinates.)",
+  "earlier_research": [
+   {
+    "file": "r142.json",
+    "fact": "Trailhead and approach to the crag",
+    "status": "unresolved",
+    "correct_value": "Probably: park at the apex of the SR-20 hairpin below Washington Pass, take the climbers' trail toward Quicksilver Slab/Spire Gully, cut right into a dry creek bed and climb slabs (upper one fixed-lined) to the Ice Box — not the Alpenkuhl/Spire Gully-right approach, the Blue Lake TH, or the Cutthroat Lake TH.",
+    "evidence": "Mountain Project's Ice Box (Left Side) page says to park at the apex of the hairpin, follow the trail up to Quicksilver Slab and Spire Gully, cut right into a dry creek bed and climb slabs (one with a fixed line) to the Ice Box; the row's itinerary, waypoint note and obj_haz match that. The approach prose is copied from the Alpenkuhl rows, road names the Cutthroat Lake TH and the trailhead pin (name AND coordinates) is the Blue Lake TH. No second independent source describing the Ice Box access was found (stephabegg and others only confirm the hairpin as a start for the Early Winter Spires), and the waypoint pin's coordinates sit at Blue Lake TH and are out of scope, so no patch; flagged for a pin + approach fix together.",
+    "sources": [
+     "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+     "https://stephabegg.com/trip-reports/washington/washington-pass/"
+    ]
+   },
+   {
+    "file": "r142.json",
+    "fact": "Approach length and gain",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Depends on the unresolved trailhead: the 1.8 mi / 5,200 ft pin describes a Blue Lake TH start, the 10-15 minute figure belongs to the Alpenkuhl approach. Mountain Project gives the crag at 5,490 ft (matching the base pin) but no approach time or distance from the hairpin; no sources give the walk's length or gain, so no patch.",
+    "sources": [
+     "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+    ]
+   },
+   {
+    "file": "r142.json",
+    "fact": "Parking pass requirement",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Depends on the unresolved parking spot: a Northwest Forest Pass is required at the developed Washington Pass trailheads (Blue Lake, Cutthroat) as parking_pass says, but the Ice Box is reached from the SR-20 hairpin, a highway pullout; no source was found stating whether a pass is required there, so passRequired 'None' and parking_pass may both be true. No patch until the trailhead is settled.",
+    "sources": [
+     "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+    ]
+   },
+   {
+    "file": "r142.json",
+    "fact": "Watch-out list describes a waterfall ice climb",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Watch-outs for a one-pitch summer granite route: slick approach slabs, gear-protected upper section, occasional loose rock.",
+    "evidence": "Mountain Project describes the Ice Box as a shady summer rock crag and Iceman as an 80 ft trad pitch protected by 3 bolts and gear from BD .3 to #1; every other field of the row (season, beta, pitch_detail, rack, hazards, obj_haz) describes the same summer rock pitch. The watch_out text (waterfall ice, avalanche slopes, 80-degree ice pitches, whiteout gully navigation) is plainly copied from an ice route. Replaced with watch-outs drawn from the row's own hazards and rack.",
+    "sources": [
+     "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+     "https://www.mountainproject.com/route/117767212/iceman"
+    ]
+   },
+   {
+    "file": "r142.json",
+    "fact": "Sport vs trad protection",
+    "status": "unresolved",
+    "correct_value": "trad",
+    "evidence": "Mountain Project types Iceman as 'Trad, Alpine' with protection '3 bolts and gear from .3 to #1 bd', matching the row's beta, detailed_rack and pro_needs. The outlier is `discipline: sport`, but `discipline` is out of scope for these patches, so it is flagged rather than changed.",
+    "sources": [
+     "https://www.mountainproject.com/route/117767212/iceman",
+     "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+    ]
+   },
+   {
+    "file": "s017.json",
+    "fact": "Parking pass requirement",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Two independent sources say no permit or pass is needed to park at the SR-20 hairpin pullout (a Kangaroo Temple page: no permits required to park at the hairpin turn; a Washington Pass ski-tour page: plowed hairpin pullouts need no permit), while the Forest Service requires a Northwest Forest Pass at Blue Lake and Cutthroat. So which is right depends on where this crag is reached from, and only one source (the Ice Box area page: park at the apex of the hairpin) places its parking; the row itself splits (approach/itinerary/face say hairpin, road and trailhead waypoint say Cutthroat / Blue Lake). Would settle: a second source for the Ice Box parking spot (e.g. the Mazama granite guidebook); if hairpin, passRequired None is correct and parking_pass should say the pass applies only at those other trailheads.",
+    "sources": [
+     "https://web.archive.org/web/20210617034753/https://www.summitpost.org/kangaroo-temple/815101",
+     "https://wenatcheeoutdoors.org/2017/01/17/washington-pass-birthday-tour-2/",
+     "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/cutthroat-trailhead"
+    ]
+   },
+   {
+    "file": "s017.json",
+    "fact": "Trailhead and approach text",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The approach column describes a different crag (Spire Gully right / Alpenkuhl, a 10-15 minute walk), the road column names the Cutthroat Lake Trailhead, and the trailhead waypoint is Blue Lake Trailhead 1.8 mi away, while the face and itinerary put the crag at the SR-20 hairpin. The Ice Box area page says to park at the apex of the hairpin, walk up past Quicksilver Slab and Spire Gully, cut right into a dry creek bed and climb slabs (one with a fixed line) to the Ice Box. Only that one source was reachable, so no rewrite. Would settle: a second description of the Ice Box approach.",
+    "sources": [
+     "https://www.mountainproject.com/area/117767156/ice-box-left-side"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_route_c",
+    "name": "Route C",
+    "grade": "5.9"
+   },
+   {
+    "id": "wa_route_d",
+    "name": "Route D",
+    "grade": "5.10b/c"
+   }
+  ],
+  "row": {
+   "id": "wa_iceman",
+   "area_id": "wa_ice_box_left_side",
+   "name": "Iceman",
+   "discipline": "sport",
+   "grade": "5.10a/b",
+   "grade_system": "yds",
+   "grade_num": 10.25,
+   "pitches": 1,
+   "length_m": 24,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Bryan Burdo and Gabe Grayum",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "Summer — a shaded destination good for hot days when nearby Mazama crags are too warm.",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Slick approach slabs pose a fall hazard on the hike in, independent of the climbing itself.",
+    "Alpine granite setting means occasional loose rock off-route."
+   ],
+   "verif": null,
+   "overview": "A one-pitch 5.10a/b line up the shaded Ice Box (Left Side) buttress, the 'dead middle' finger-crack/roof line splitting sport routes Route C and Route D.",
+   "beta": "Climbs a steep face on good holds to a bolt guarding a thin finger-crack move, then finishes on horizontal cracks into an awkward but enjoyable left-facing corner. Mixed protection (3 bolts plus small-to-mid cams) makes it the trad line of the three Ice Box routes.",
+   "turnaround": "Start early enough to be off the exposed approach slabs and rock before afternoon thunderstorms, which are common in the North Cascades in summer; treat the slick granite slabs as more hazardous in rain.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10a/b",
+   "ice_grade": null,
+   "gain_ft": 500,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Ice Box (left side), Hairpin Crags — the finger-crack line between two of the sport routes",
+   "permit": null,
+   "comms": "No cell phone service is available at Washington Pass or along this stretch of the North Cascades Highway corridor per NPS and WSDOT; do not rely on a signal for emergencies.",
+   "descent": "Lower or rappel from the anchor back to the base.",
+   "obj_haz": [
+    "Smooth, slippery approach slabs above the dry creek bed (fall hazard, worse when wet)",
+    "Loose rock possible on unfeatured alpine granite"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5192,
+     "lng": -120.6743,
+     "elev": 5200,
+     "name": "Blue Lake Trailhead",
+     "note": "Same trailhead used for the Concord/Lexington cluster; from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51344,
+     "lng": -120.64594,
+     "elev": 5490,
+     "name": "Ice Box Left Side Base",
+     "note": "Base of the Ice Box wall, shared by Iceman, Route C, and Route D; approach slabs are smooth and slippery.",
+     "type": "Topout",
+     "distMi": 1.8
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": null
+   },
+   "detailed_rack": "3 fixed bolts protect the crux face and finger-crack section; supplement with a small rack of cams from about BD #0.3 to #1 for the horizontal-crack and corner finish. A single 60m rope and standard quickdraws/alpine draws are sufficient for this one-pitch route.",
+   "what_to_bring": [
+    "Approach shoes suited to slick granite slabs",
+    "Helmet (loose rock/approach hazard)"
+   ],
+   "pro_tips": [
+    "Good handholds on the initial face make the opening moves easier than they look — save gear placements for after the bolt-protected finger-crack crux.",
+    "Combine with neighboring Route C and Route D for a full day at this shaded, cooler crag."
+   ],
+   "watch_out": "Approach slabs above the dry creek bed are smooth and slippery, and the lower slab has no hand-line — worse when wet.\nOnly the crux face and finger crack are bolted; the horizontal cracks and left-facing corner above need your own small-to-mid cams.\nAlpine granite can shed occasional loose rock off-route.",
+   "pro_needs": "Mixed protection — 3 bolts plus a handful of small-to-medium cams (0.3-1 BD equivalent) placed in the horizontal cracks and finishing corner.",
+   "best_season": "Late June through September, matching the broader Washington Pass climbing season; the Ice Box's shaded, north-facing character keeps it cooler than sunnier Washington Pass walls and can hold wet rock or residual snow later into the early season.",
+   "high_point_ft": 5490,
+   "aid_grade": null,
+   "approach": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+   "descent_text": "From the top anchor, lower on a single strand or rappel with a 60m rope directly back to the base of the route; no walk-off is required for this single-pitch line.",
+   "bail": "Straightforward retreat on a single-pitch route — lower or rappel off the highest gear/bolt placed at any point.",
+   "pitch_detail": [
+    {
+     "grade": "5.10a/b",
+     "notes": "Steep face on good holds to a bolt protecting a thin finger-crack section, then horizontal cracks into a left-facing corner finish.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": "A single-day cragging objective, typically combined with Route C and/or Route D at the same crag: drive to the hairpin turn on SR-20, approach via the slab/creek-bed trail, climb, then lower/rappel and retrace the approach to the car.",
+   "access": {
+    "_raw": {
+     "permit_cost": "$0 for climbing/wilderness permit",
+     "permit_type": "Free self-issued wilderness permit for overnight stays",
+     "land_manager": "USFS - Okanogan-Wenatchee National Forest",
+     "parking_pass": "Northwest Forest Pass ($5 day / $30 annual)",
+     "permit_pickup": "Self-issued at trailhead or ranger stations",
+     "special_hazards": "Smooth, slippery slabs; first slab without fixed line; approach requires scrambling",
+     "wilderness_zone": "Alpine/rock climbing area, day-use observation site available",
+     "group_size_limit": "Typically 6-12 depending on specific wilderness area",
+     "seasonal_closures": "Best June-October; winter access difficult due to snow, spring access steep",
+     "altitude_restrictions": "None noted"
+    },
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "Free self-issued wilderness permit for overnight stays",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Alpine/rock climbing area, day-use observation site available",
+    "landManager": "USFS - Okanogan-Wenatchee National Forest",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "None"
+   },
+   "road": {
+    "name": "Cutthroat Lake Trailhead, SR-20, Washington Pass",
+    "status": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+    "driveNote": "Roughly 3-3.5 hours from Seattle via SR-20 to the Cutthroat Lake area near Washington Pass.",
+    "seasonalGate": "SR-20 closes seasonally over Washington Pass due to avalanche danger (closed Dec 12, 2025-June 14, 2026 in the 2025-26 season, with exact dates varying by year)."
+   },
+   "climate": {
+    "fall": "Climbable into September/early October with shortening days and increasing storm risk before the highway's winter closure.",
+    "spring": "Highway typically still gated or freshly reopened (mid-to-late April); snow and wet rock likely at the crag into early summer.",
+    "summer": "Best climbing window, late June through September; dry granite but watch for afternoon convective storms.",
+    "winter": "SR-20 is gated closed; the area is inaccessible by road.",
+    "typical": "Dry, warm alpine summers with afternoon thunderstorm risk; the shaded Ice Box stays notably cooler than sun-exposed Washington Pass faces.",
+    "forecastZone": "North Cascades / Washington Pass corridor (East Slopes Northern Cascades)"
+   },
+   "emergency": {
+    "notes": "No cell coverage at Washington Pass — plan for a satellite communicator; the highway is remote with no services in the immediate area.",
+    "county": "Chelan/Okanogan county line (Washington Pass straddles the two)",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest — 24 West Chewuch Rd, Winthrop, WA; (509) 996-4000",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA, or Mid-Valley Hospital, Omak, WA (both roughly 30 mi from Winthrop, the nearest town)",
+    "sheriffDispatch": "Okanogan County Sheriff non-emergency: 509-422-7232 / 800-572-6604; Chelan County Sheriff: 509-667-6851"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_mount_mathias_scramble",
+  "name": "Bailey Range Scramble",
+  "area": {
+   "id": "wa_mount_mathias",
+   "name": "Mount Mathias",
+   "parent_id": "wa_bailey_range",
+   "elevation_ft": 7156,
+   "lat": 47.80522,
+   "lng": -123.676932
+  },
+  "prior_findings": "Mixes a Hoh out-and-back with a Sol Duc traverse; choose one line (list any pin that must move under pin_followups).",
+  "earlier_research": [
+   {
+    "file": "r485.json",
+    "fact": "Trailhead and approach line",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Both lines are real: Mathias is reached from the Hoh River Trail via Glacier Meadows, the Blue Glacier and Glacier Pass, and Bailey Range traverse parties start at Sol Duc, reach Camp Pan, then cross the Hoh Glacier to Glacier Pass and descend the Blue Glacier to Glacier Meadows and the Hoh. The row mixes them: approach/trailhead card/pitch_detail describe the Hoh out-and-back while itinerary, timing and waypoints[1..] describe the Sol Duc traverse from a pin that sits at the Hoh trailhead. Settling it means choosing which line the page describes and moving or renaming the trailhead pin (out of scope), so no patch beyond the separately listed pin note/elevation fixes.",
+    "sources": [
+     "https://en.wikipedia.org/wiki/Mount_Mathias",
+     "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+     "https://engineeredforadventure.com/bailey-range-traverse/",
+     "https://www.oregonhikers.org/field_guide/Hoh_River_to_Blue_Glacier_Hike"
+    ]
+   },
+   {
+    "file": "r485.json",
+    "fact": "Glacier travel required",
+    "status": "fixed",
+    "correct_value": "Roped glacier travel on the Hoh (and, from the Hoh side, Blue) Glacier is required to reach the summit ridge; ice axe needed all season.",
+    "evidence": "Mathias sits between the Blue Glacier on its west and the Hoh Glacier on its east. Traverse parties descend from Camp Pan onto the Hoh Glacier, cross it to Glacier Pass and continue across the Blue Glacier toward Glacier Meadows; the Hoh-side line climbs the Blue Glacier to Snow Dome. The row's own gear, rack, pro_needs, approach and itinerary all require roped glacier travel.",
+    "sources": [
+     "https://en.wikipedia.org/wiki/Mount_Mathias",
+     "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+     "https://engineeredforadventure.com/bailey-range-traverse/"
+    ]
+   },
+   {
+    "file": "r485.json",
+    "fact": "Scramble grade",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Class 4 summit ridge (the traverse approach itself is Class 3 off-trail terrain).",
+    "evidence": "The easiest route on Mathias is given as Class 4 on the west face/summit ridge. Inside the row, grade, rock_grade, beta, overview, pitch_detail, hazards, watch_out and the summit waypoint note all say Class 4; only the partner and seasonal-hazard lines say Class 3. A second independent external statement of the class was not found (peak pages returned 403), hence internal-plus-one.",
+    "sources": [
+     "https://en.wikipedia.org/wiki/Mount_Mathias"
+    ]
+   },
+   {
+    "file": "r485.json",
+    "fact": "Total gain",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "No outside source states car-to-car gain for this exact line (Sol Duc to Camp Pan, Mathias, out the Hoh). Published traverse totals are for different variants: about 26,000 ft over 61 mi for Sol Duc out-and-back with Olympus, and about 15,000 ft over 58 mi for a Quinault exit. The stored 6,130 ft is far below any traverse figure but no two sources agree on a replacement; it also depends on the unresolved choice of line.",
+    "sources": [
+     "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+     "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/"
+    ]
+   },
+   {
+    "file": "r485.json",
+    "fact": "Trailhead elevation",
+    "status": "fixed",
+    "correct_value": "578 ft (Hoh trailhead, as the pin's name and coordinates place it)",
+    "evidence": "The elevation sign at the Hoh Visitor Center reads 573 ft, and a DEM lookup at the visitor-center coordinates gives about 640 ft; the row's approach, pitch_detail and trailheadDirection say 578 ft. 1,950 ft is roughly the Sol Duc trailhead's height, not the Hoh's, so the pin as drawn (Hoh coordinates, Hoh name) should read 578.",
+    "sources": [
+     "https://www.waymarking.com/waymarks/WMHG03_573_Ft_at_Hoh_Visitor_Center_Olympic_National_Park",
+     "https://elevation.maplogs.com/poi/hoh_rain_forest_visitor_center_upper_hoh_rd_forks_wa_usa.364212.html"
+    ]
+   },
+   {
+    "file": "r485.json",
+    "fact": "Distance to first camp",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Trip reports put Sol Duc to Eleven Bull Basin at about 15 mi (nearly 6,000 ft gain) and about 12.5 mi (5,000 ft); both exceed the itinerary's 9 mi, which is only the distance to High Divide, but the two sources do not agree on one figure, and changing day 1 would also change the itinerary total and totalNote.",
+    "sources": [
+     "https://xanderuyttendaele.substack.com/p/the-bailey-range-traverse",
+     "https://www.mountaineers.org/activities/trip-reports/bailey-range-traverse"
+    ]
+   },
+   {
+    "file": "r485.json",
+    "fact": "Descent route",
+    "status": "fixed",
+    "correct_value": "From Glacier Pass cross onto the Blue Glacier and descend it to Glacier Meadows; Camp Pan is not on this line.",
+    "evidence": "Traverse parties go Camp Pan -> Hoh Glacier -> Glacier Pass -> Blue Glacier -> moraine -> Glacier Meadows; Camp Pan lies east of the Hoh Glacier, so returning there before descending the Blue Glacier is geographically backwards. Both sources describe crossing Glacier Pass straight onto the Blue Glacier toward Glacier Meadows, matching the itinerary day 4 note.",
+    "sources": [
+     "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+     "https://engineeredforadventure.com/bailey-range-traverse/"
+    ]
+   },
+   {
+    "file": "r485.json",
+    "fact": "Hoh trailhead pin says it starts the Sol Duc approach",
+    "status": "fixed",
+    "correct_value": "The Hoh trailhead starts the Hoh River Trail toward Glacier Meadows; the Sol Duc trailhead is a separate start on Sol Duc Hot Springs Road.",
+    "evidence": "The Hoh River Trail runs from the Hoh visitor center about 17-18 mi to Glacier Meadows; Bailey Range traverse parties start at the separate Sol Duc trailhead. The row's own road.driveNote lists the two trailheads on different roads.",
+    "sources": [
+     "https://www.nps.gov/places/000/hoh-river-trailhead.htm",
+     "https://www.oregonhikers.org/field_guide/Hoh_River_to_Blue_Glacier_Hike",
+     "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+    ]
+   },
+   {
+    "file": "s042.json",
+    "fact": "Total gain",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Retry found only more traverse totals for other variants: 61 mi / 26,000 ft (Sol Duc loop with Olympus), 57.8 mi / 15,000 ft (Quinault exit, 7 days), and 65+ mi with no gain figure (Sol Duc loop). None states car-to-car gain for Sol Duc to Camp Pan, Mathias, out the Hoh. A GPS-measured total for this exact line would settle it.",
+    "sources": [
+     "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+     "https://mountainflamingo.com/2020-08-29-09-04-bailey-range-traverse/",
+     "https://adventurejon.com/2024/12/08/the-bailey-traverse/"
+    ]
+   },
+   {
+    "file": "s042.json",
+    "fact": "Distance to first camp",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Additional reports (cwillett, engineeredforadventure, climberkyle, mountainflamingo, a guide service itinerary) confirm Eleven Bull Basin lies beyond Heart Lake/High Divide and the Catwalk start, so 9 mi is too short for it, but none gives a mileage; the two figures on record (12.5 mi and 15 mi) still disagree. Note also the waypoint list mixes a Hoh trailhead at mile 0 with Sol Duc-based distances. Two agreeing mileages from Sol Duc to Eleven Bull Basin would settle it.",
+    "sources": [
+     "http://cwillett.imathas.com/local/bailey/index.html",
+     "https://engineeredforadventure.com/bailey-range-traverse/",
+     "https://www.pacificalpineguides.com/bailey-range-traverse"
+    ]
+   }
+  ],
+  "siblings": [],
+  "row": {
+   "id": "wa_mount_mathias_scramble",
+   "area_id": "wa_mount_mathias",
+   "name": "Bailey Range Scramble",
+   "discipline": "mountaineering",
+   "grade": "Class 4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Yves Eriksson and Jim Hawkins, 1957 (west face)",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Ice axe",
+    "Crampons",
+    "30m glacier-travel rope",
+    "Crevasse rescue kit (tibloc/microtraxion, pulley, prusiks or slings)",
+    "Helmet (loose rock on the ridge/gullies)",
+    "Bear-resistant canister (mandatory for overnight stays)",
+    "Satellite communicator (no cell coverage)",
+    "Map/compass/GPS for extensive off-trail navigation"
+   ],
+   "hazards": [
+    "remote Bailey Range traverse terrain",
+    "committing multi-day access",
+    "short Class 4 exposed scrambling on the summit ridge"
+   ],
+   "verif": null,
+   "overview": "Mount Mathias (7,156 ft) is a high summit in the rugged Bailey Range in the interior of Olympic National Park, flanked by the Blue Glacier to the west and the Hoh Glacier to the east. It is reached by long wilderness approaches, culminating in a short but genuine Class 4 scramble on the summit ridge above Glacier Pass or the Mercury-Mathias col.",
+   "beta": "Two variations reach the same Class 4 summit ridge: (1) climb the steep snow finger between Mount Mathias and Glacier Pass, then scramble Class 4 rock on the ridge to the summit; or (2) climb steep gullies to the Mercury-Mathias col and take the Class 4 ridge from there. Both require prior glacier travel across the Blue Glacier/Hoh Glacier system and are typically combined with a Bailey Range trip or a Mount Olympus/Mount Mercury objective, since the approach alone is a multi-day undertaking.",
+   "turnaround": "Given the multi-mile glacier crossing and long hike-out required to reach safety, turn back from the ridge or snow finger with enough of the day left to recross the glacier and reach camp before dark, and before typical afternoon convective weather (thunderstorms, whiteout on the glacier) develops.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 4",
+   "ice_grade": null,
+   "gain_ft": 6130,
+   "loss_ft": null,
+   "dist_km": 91.73,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "West Face",
+   "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+   "comms": "No reliable cell service beyond about a mile past the Hoh Rain Forest Visitor Center; the Bailey Range/Blue Glacier basin is effectively a dead zone. Park guidance is not to rely on a phone to \"bail you out\" — carry a satellite communicator or PLB.",
+   "descent": "Reverse the ascent route.",
+   "obj_haz": [
+    "crevassed glacier travel",
+    "off-trail route-finding",
+    "rapid weather changes",
+    "remote/committing approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.86028,
+     "lng": -123.93472,
+     "elev": 578,
+     "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+     "note": "Olympic National Park wilderness permit required, booked through Recreation.gov - there are no longer paper self-registration permits at trailheads, and no Northwest Forest Pass is needed on National Park land; start of the Hoh River Trail toward Glacier Meadows.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.9053,
+     "lng": -123.7769,
+     "elev": 5474,
+     "name": "High Divide (Bailey Range Trail split, near Bogachiel Peak)",
+     "note": "Unmaintained Bailey Range climbers' path branches off the maintained High Divide trail here and drops into the woods toward Cat Peak; unmarked and easy to lose in fog.",
+     "type": "Junction",
+     "distMi": 9
+    },
+    {
+     "lat": 47.882274,
+     "lng": -123.641263,
+     "elev": 5200,
+     "name": "Eleven Bull Basin",
+     "note": "First established camp on the Northern Baileys - heather benches with streams gushing off the hillside; last easy reliable water before the long exposed sidehill traverse.",
+     "type": "Campsite",
+     "distMi": 15
+    },
+    {
+     "lat": 47.85391435897436,
+     "lng": -123.7256282051282,
+     "elev": 5900,
+     "name": "Ferry Basin",
+     "note": "Broad glacially-scoured pass/basin below Mt. Ferry with glacial lakes and streams, reached via the Stephen Lake bypass to avoid sidehilling; smooth walking before terrain roughens toward Queets Basin.",
+     "type": "Campsite",
+     "distMi": 19
+    },
+    {
+     "lat": 47.79314,
+     "lng": -123.66241,
+     "elev": 6150,
+     "name": "Blizzard Pass",
+     "note": "Flat snowfield pass gained after crossing the Humes Glacier terminus and Queets Basin; first clear view of Mt. Mathias and the Hoh Glacier cirque below.",
+     "type": "Junction",
+     "distMi": 26
+    },
+    {
+     "lat": 47.815375128205126,
+     "lng": -123.68717435897436,
+     "elev": 5500,
+     "name": "Camp Pan",
+     "note": "Obvious sandy-flat campsite on a prow jutting into the glacial valley, a half-mile and 600 ft below Blizzard Pass; the standard last camp before climbing Mathias.",
+     "type": "Campsite",
+     "distMi": 26.5
+    },
+    {
+     "lat": 47.81023656410257,
+     "lng": -123.68204717948717,
+     "elev": 6500,
+     "name": "Hoh Glacier / snow finger below Glacier Pass",
+     "note": "Steep snow finger and crevassed glacier crossing between Camp Pan and Glacier Pass leading to the base of the summit ridge; rope up, hidden crevasses reported here.",
+     "type": "Hazard",
+     "distMi": 27.5
+    },
+    {
+     "lat": 47.80522,
+     "lng": -123.676932,
+     "elev": 7156,
+     "name": "Mount Mathias summit",
+     "note": "True summit via Class 4 climbing on the ridge from the Mercury-Mathias col or the Glacier Pass snow finger; a seldom-climbed, exposed final scramble between the Blue and Hoh glaciers.",
+     "type": "Summit",
+     "distMi": 28.5
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 42,
+    "summitTimeHrs": 12,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 22,
+    "recommendedStart": "4:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "Start at the Sol Duc trailhead, climb through Deer Lake to High Divide, then continue the ridgeline past Cat Basin to a high camp near Eleven Bull Basin. Packs are heaviest here — …",
+      "fromTo": "Sol Duc to High Divide / Eleven Bull Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 7,
+      "note": "Sidehill, mostly off-trail travel across the Baileys' famous narrow \"catwalk\" ridge sections below Mt Carrie and Stephen Peak, dropping into Ferry Basin to camp. Slow-going scree a…",
+      "fromTo": "The Catwalks to Ferry Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 8,
+      "note": "Cross Bear Pass and Queets Basin, work around the Humes Glacier and Blizzard Pass, and drop to Camp Pan — the classic promontory camp used as the staging point for Mathias, Mercury…",
+      "fromTo": "Bear Pass to Camp Pan",
+      "section": "Approach"
+     },
+     {
+      "hrs": 12,
+      "note": "Rope up and descend onto the Hoh Glacier, cross to Glacier Pass, stash packs, and climb the steep snow finger between Mathias and the pass to Class 4 rock on the summit ridge. Reve…",
+      "fromTo": "Glacier Pass and the Mathias summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8,
+      "note": "A long, mostly downhill trail day from Glacier Meadows past Elk Lake and Lewis Meadow back to the Hoh trailhead, finishing the traverse.",
+      "fromTo": "Hoh River exit",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Standard glacier-travel kit for the Blue Glacier/Hoh Glacier crossing: rope-team gear, harness, crevasse-rescue kit (prusiks or mechanical ascenders, pulley, cordage), ice axe, crampons, and a helmet (required). No technical rock rack is typically carried — the Class 4 ridge above the col/snow finger is generally scrambled unroped by parties comfortable with the exposure and loose rock.",
+   "what_to_bring": [
+    "helmet",
+    "ice axe and crampons",
+    "map/compass/GPS",
+    "multi-day backcountry kit"
+   ],
+   "pro_tips": [
+    "Most parties climb Mathias as a side-trip from an Olympus base camp near Glacier Pass rather than as a dedicated objective — it's commonly combined with Mount Mercury, and sometimes Athena/Circe, in one trip",
+    "Mid-July through mid-August is the reported sweet spot: enough snow remains on the approach gullies/snow finger, before the glaciers turn to bare, more crevassed ice later in the season",
+    "Reserve wilderness permits and Glacier Meadows/Elk Lake/Martin Creek campsites through the Wilderness Information Center as early as possible — quotas fill fast in peak season",
+    "Check current NPS road-condition alerts before a Hoh-side trip given the Upper Hoh Road's history of storm washouts"
+   ],
+   "watch_out": [
+    "remote/committing terrain",
+    "lingering snow",
+    "long self-evacuation distances",
+    "summit block is Class 4, harder than a typical Class 3 scramble"
+   ],
+   "pro_needs": "Minimal fixed protection is used; the summit ridge is Class 4 scrambling, generally climbed unroped. The mandatory gear is for the approach: rope, harness, and crevasse-rescue kit for the Blue Glacier and Hoh Glacier crossings.",
+   "best_season": "Mid-July through early September; mid-July–mid-August is the reported sweet spot (enough snow coverage on the approach gullies/snow finger before the Blue and Hoh Glaciers go to bare, more heavily crevassed ice later in the season). NPS gives late June–early September as the broader climbing season for the Olympus/Bailey Range high country.",
+   "high_point_ft": 7156,
+   "aid_grade": null,
+   "approach": "Drive the paved Upper Hoh Road to its end at the Hoh Ranger Station (578 ft). Hike the Hoh River Trail 17.2 miles to Glacier Meadows (~4,200-4,300 ft), the standard base camp for this side of the range (note: a washed-out section partway up requires a fixed ladder/rope crossing). From Glacier Meadows, follow the way trail 0.8 mi to the top of the Blue Glacier lateral moraine, continue along the moraine crest ~0.2 mi, then descend onto the Blue Glacier and ascend snow slopes around rock islands to the crest of Snow Dome (6,600 ft). From Snow Dome, rope up and traverse the upper Hoh Glacier toward Glacier Pass (between Mathias and the East Peak of Olympus), then gain the base of either the Mathias snow finger or the steep gullies leading to the Mercury-Mathias col.",
+   "descent_text": "Descend by the same line used on ascent: downclimb the Class 4 summit ridge back to the top of the snow finger, then plunge-step or downclimb the 35–40° snow finger back to Glacier Pass. This is a walk-off/downclimb — no fixed rappel stations are reported on Mathias itself, and no rappels are specifically documented for this line; treat the snow finger and the loose upper ridge as the descent crux (rockfall and a fall-arrest-consequence slope, not technical lowering). If the snow has gone to hard ice/firm neve late in the season, some parties choose to belay or downclimb facing in rather than plunge-stepping. From Glacier Pass, reverse the approach: cross back onto the Blue Glacier and descend it — passing the Snow Dome bootpack and exiting via the glacier's lateral/terminal moraine — down to Glacier Meadows Camp, and out the Hoh River Trail to the trailhead (roughly 2 days of hiking/glacier travel from Glacier Pass back to the car). If this climb is combined with the full Bailey Range Traverse, the alternate exit continues north from High Divide back to the Sol Duc trailhead instead. Watch for rockfall on the loose upper mountain as the day warms, softening snow bridges on the Hoh/Blue Glacier crossings later in the day, and the same unstable Hoh Lake Slide sidehill on the way out.",
+   "bail": "No easy bail once committed to the class 4 ridge terrain — retreat means reversing the full route back down to Glacier Pass and across the glacier the way you came.",
+   "pitch_detail": [
+    {
+     "grade": null,
+     "notes": "Hoh Ranger Station (578 ft) to Glacier Meadows (~4,200-4,300 ft) via Hoh River Trail, 17.2 mi; includes a fixed ladder/rope crossing at a major washout.",
+     "pitch": "Approach"
+    },
+    {
+     "grade": null,
+     "notes": "Way trail to moraine top (0.8 mi), moraine crest (0.2 mi), then roped glacier travel up snow/rock-island terrain to Snow Dome (6,600 ft).",
+     "pitch": "Blue Glacier / Snow Dome"
+    },
+    {
+     "grade": null,
+     "notes": "Roped travel across the upper Hoh Glacier toward Glacier Pass, between Mount Mathias and the East Peak of Mount Olympus.",
+     "pitch": "Glacier Pass traverse"
+    },
+    {
+     "grade": null,
+     "notes": "Either the steep snow finger between Mathias and Glacier Pass, or steep gullies to the Mercury-Mathias col.",
+     "pitch": "Snow finger or col gullies"
+    },
+    {
+     "grade": "Class 4",
+     "notes": "Exposed, loose scrambling on the ridge to the summit; typically climbed unroped.",
+     "pitch": "Summit ridge"
+    }
+   ],
+   "itinerary": {
+    "cal": "Requires an Olympic NP wilderness permit in the quota-controlled Sol Duc/Bailey Range corridor; the route is really only in condition July–September, and doing it while the Bailey Range snowfields and Mathias's snow finger still hold snow (rather than bare ice/scree) makes for much faster, safer travel.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Start at the Sol Duc trailhead, climb through Deer Lake to High Divide, then continue the ridgeline past Cat Basin to a high camp near Eleven Bull Basin. Packs are heaviest here — full glacier kit plus five days of food.",
+      "hours": 7,
+      "miles": 9,
+      "title": "Sol Duc to High Divide / Eleven Bull Basin",
+      "gainFt": 4000,
+      "lossFt": 300,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach a high camp beyond High Divide"
+     },
+     {
+      "n": 2,
+      "note": "Sidehill, mostly off-trail travel across the Baileys' famous narrow \"catwalk\" ridge sections below Mt Carrie and Stephen Peak, dropping into Ferry Basin to camp. Slow-going scree and heather traverses keep mileage low.",
+      "hours": 7,
+      "miles": 8,
+      "title": "The Catwalks to Ferry Basin",
+      "gainFt": 2500,
+      "lossFt": 1800,
+      "packLb": 43,
+      "schedule": [],
+      "objective": "Cross the Baileys' exposed catwalks to Ferry Basin"
+     },
+     {
+      "n": 3,
+      "note": "Cross Bear Pass and Queets Basin, work around the Humes Glacier and Blizzard Pass, and drop to Camp Pan — the classic promontory camp used as the staging point for Mathias, Mercury, and Olympus.",
+      "hours": 8,
+      "miles": 10,
+      "title": "Bear Pass to Camp Pan",
+      "gainFt": 2500,
+      "lossFt": 2200,
+      "packLb": 41,
+      "schedule": [],
+      "objective": "Reach Camp Pan overlooking the Hoh Glacier"
+     },
+     {
+      "n": 4,
+      "note": "Rope up and descend onto the Hoh Glacier, cross to Glacier Pass, stash packs, and climb the steep snow finger between Mathias and the pass to Class 4 rock on the summit ridge. Reverse the climb, re-rope for the Blue Glacier, and descend the moraine to camp at Glacier Meadows — the longest day of the trip.",
+      "hours": 12,
+      "miles": 10,
+      "title": "Glacier Pass and the Mathias summit",
+      "gainFt": 2200,
+      "lossFt": 3700,
+      "packLb": 38,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave Camp Pan",
+        "detail": "Full packs, roped up for the Hoh Glacier crossing."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Reach Glacier Pass",
+        "detail": "Stash packs and rack up for the climb."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Start the snow finger",
+        "detail": "Steep snow between Mathias and the pass, then Class 4 rock to the ridge."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Summit Mount Mathias",
+        "detail": "Loose volcanic rock near the top; keep the stop short."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Back at Glacier Pass",
+        "detail": "Re-shoulder packs, rope up again for the Blue Glacier."
+       },
+       {
+        "time": "5:30 PM",
+        "label": "Camp at Glacier Meadows",
+        "detail": "Descend the Blue Glacier and lateral moraine to camp."
+       }
+      ],
+      "objective": "Climb Mount Mathias via the snow finger and Class 4 ridge, then descend to Glacier Meadows"
+     },
+     {
+      "n": 5,
+      "note": "A long, mostly downhill trail day from Glacier Meadows past Elk Lake and Lewis Meadow back to the Hoh trailhead, finishing the traverse.",
+      "hours": 8,
+      "miles": 17.6,
+      "title": "Hoh River exit",
+      "gainFt": 200,
+      "lossFt": 3900,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Hike out to the Hoh Rain Forest trailhead"
+     }
+    ],
+    "totalNote": "A serious point-to-point traverse from Sol Duc to the Hoh, roughly 55 miles and ~11,000 ft of gain over 5 days, tagging Mathias's loose Class 4 summit near Glacier Pass along the way with a roped glacier crossing on summit day."
+   },
+   "access": {
+    "fees": "$8/person/night (16+; free for 15 and under) + $6 non-refundable reservation fee per permit. An optional annual Wilderness Pass ($45/person) covers per-night fees for 12 months but not the $6 reservation fee.",
+    "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+    "rules": "Olympic NP wilderness regulations; bear canisters are required for ALL overnight wilderness stays park-wide (not just select zones).",
+    "permit": "Wilderness camping permit required for all overnight trips, reserved in advance via Recreation.gov (summer-season permits typically release mid-April); $8/person/night plus a $6 reservation fee, or covered by the $45 Annual Olympic Wilderness Pass.",
+    "group_limit": 12,
+    "landManager": "Olympic National Park",
+    "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+    "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+     "what": "Olympic National Park wilderness permit, per person per night; some Hoh River Trail sites are quota",
+     "where": "Reserve on Recreation.gov, or get one in person at a park Wilderness Information Center."
+    }
+   },
+   "road": {
+    "name": "Upper Hoh Road (Hoh approach) or Sol Duc Hot Springs Road (Bailey Range Traverse approach)",
+    "status": "Paved to both trailheads; Upper Hoh Road was washed out by a bomb-cyclone storm and closed from Dec 2025 until reopening in May 2026 after state-funded emergency repairs — check current NPS road-conditions alerts before relying on it",
+    "driveNote": "Hoh: ~19 mi off US-101 via Upper Hoh Road to the Hoh Rain Forest Visitor Center. Sol Duc: ~30 mi west of Port Angeles on US-101, then 14 mi up Sol Duc Hot Springs Road to trailhead."
+   },
+   "climate": {
+    "typical": "Cool, wet, and often socked-in even in midsummer — the Bailey Range/Olympus massif sits directly in the path of Pacific storms and the Blue Glacier occupies one of the heaviest-snowfall accumulation zones in the Lower 48. Weather windows are short and can deteriorate quickly; plan for a contingency day."
+   },
+   "emergency": {
+    "notes": "Olympic NP Wilderness Information Center (Port Angeles) (360) 565-3100 handles backcountry/climbing questions; Jefferson County Sheriff non-emergency line (360) 344-9779. In-park incidents are coordinated by NPS (with Olympic Mountain Rescue assisting); nearest hospital is Olympic Medical Center (Olympic Memorial Hospital) in Port Angeles. Always use 911 for active emergencies.",
+    "county": "Jefferson",
+    "rangerStation": "Olympic National Park Wilderness Information Center, Port Angeles — (360) 565-3100",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Late July-August during the short snow-free window, timed with Bailey Range Traverse permits; even then most parties report seeing few or no other groups once off the maintained trail system",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely single digits to low teens of parties per season; this is reached only via the multi-day Bailey Range Traverse, one of the Olympics' most committing off-trail routes"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Very high endurance for consecutive long days (typically 4-8+ days) with significant elevation gain/loss and off-trail travel over talus, heather, and snowfields",
+     "packWeight": "Multi-day expedition load (overnight/backpacking gear, food for a week+, bear canister) typically 35-50+ lb"
+    },
+    "approachTime": "Multi-day approach; Mathias is reached only as part of the several-days-long Bailey Range Traverse, not a single-day approach",
+    "requiredSkills": [
+     "off-trail navigation and route-finding (map/compass/GPS) in featureless or complex terrain",
+     "exposed Class 3 scrambling with a pack, and Class 4 on the summit ridge",
+     "steep snowfield/glissade travel and self-arrest",
+     "stream/river crossing judgment",
+     "self-sufficient wilderness travel and self-evacuation given remote location"
+    ],
+    "experienceLevel": "Advanced backcountry traveler with prior multi-day off-trail/cross-country navigation experience; comfortable on sustained Class 3 terrain with a loaded overnight pack and unmarked route-finding through remote alpine terrain"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September - the short window when the Bailey Range is reliably snow-free enough for the traverse",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July often still holds significant lingering snow; conditions improve toward late month",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Most reliable snow-free window for the scramble and off-trail traverse terrain",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still viable and often clear, but shortening daylight and increasing chance of early fall storms",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Wet maritime climate typical of the Olympics the Bailey Range holds snow well into summer, and a short clear window exists in fall before storms return",
+     "probability": "Weather can change quickly in this exposed, remote range; multi-day trips carry meaningful exposure to a shift toward wet/stormy conditions given the several-day commitment"
+    },
+    "exposure": "Committing, remote terrain with an exposed Class 4 summit ridge with long self-evacuation distances; a fall or injury far from help is a serious consequence given the multi-day, off-trail nature of the approach",
+    "avalanche": {
+     "zone": "N/A - summer route with a glaciated approach; NWAC does not issue forecasts for the Olympics outside roughly mid-November to mid-April, well outside this route's season",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Roped glacier travel is required to reach the peak: the Hoh Glacier must be crossed to Glacier Pass, and the Hoh-side line also climbs the Blue Glacier. Expect hidden crevasses and softening snow bridges; the Class 4 summit ridge itself is off the ice."
+   },
+   "data_quality": {
+    "gaps": [
+     "No authoritative alpine/YDS grade or Beckey-style route grade found for Mathias specifically",
+     "Precise one-way distance/elevation gain from Glacier Pass to the Mathias summit not found in sourced material",
+     "No documented rappel/rope-length specifics for descending Mathias itself (only the adjacent Mercury descent is documented, via the same Mercury–Mathias col anchor)",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 3,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.80522,
+    "peakLng": -123.676932,
+    "trailhead": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+    "trailheadLat": 47.86028,
+    "trailheadLng": -123.93472,
+    "trailheadDirection": "From the Hoh River Trailhead (578 ft) up the Hoh River Trail"
+   },
+   "sling_rack": {
+    "slings": "2-3 runners for occasional handline/rappel anchors on Class 4 sections"
+   },
+   "alpine_draws": 0,
+   "rope_type": "dynamic single",
+   "rope_length_m": 30,
+   "rope_note": "Bailey Range Scramble sits within the broader Bailey Range Traverse: permanent snowfields and crevassed glacier terrain (Hoh Glacier vicinity) require rope for glacier-travel legs; the Class 4 ridge scrambling on broken sedimentary rock itself is typically unroped by experienced parties, but a short rope aids confidence on exposed sections.",
+   "ascender": "prusik cord recommended for glacier crossings en route",
+   "corrections": "Distinguish from a dry-rock Class 4 scramble elsewhere — glacier travel gear is warranted by the route's proximity to permanent snow/glacier per Bailey Range Traverse trip reports.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "30m glacier-travel rope + harness",
+    "Crevasse rescue kit (prusiks/ascenders, pulley, cordage)",
+    "2-3 runners (handline/rappel anchors on Class 4 sections)",
+    "Ice axe and crampons"
+   ],
+   "features": [
+    "Exposed",
+    "Committing",
+    "Technical",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Hoh River and the Blue Glacier to Glacier Pass",
+     "notes": "The long rainforest walk to Glacier Meadows, including a washed-out section crossed on a fixed ladder, then the way trail onto the Blue Glacier lateral moraine, across the glacier and up to Snow Dome. A Bailey Range crest line reaches the same ground from the north. Either way this is combined with a broader trip rather than done for itself.",
+     "season": "Late July to mid-September",
+     "hazards": [
+      "Hidden crevasses on the Blue and Hoh glaciers — roped travel throughout",
+      "Rockfall off the loose upper mountain as the day warms",
+      "Steep snow at 35 to 40 degrees with a fall-arrest consequence",
+      "Hard neve or ice on the finger late season, where downclimbing beats plunge-stepping",
+      "Softening snow bridges on the glacier crossings later in the day"
+     ],
+     "baseFinding": "From Snow Dome, rope up and traverse the upper Hoh Glacier toward Glacier Pass — the saddle between Mathias and the East Peak of Olympus, and the one clear low point on that skyline. Two entries onto the Class 4 summit ridge start from around here and both are identifiable on sight. The first is a snow finger running up between Mathias and the pass: a narrow tongue of snow set into rock at roughly 35 to 40 degrees, unmistakable because it is the only continuous snow line on that flank. The second is a set of steep gullies climbing to the Mercury–Mathias col, north of the pass. Whichever you choose, the base of the climbing is where snow or scree ends against rock and the ridge above turns blocky and exposed, with the Blue Glacier falling away on one side and the Hoh on the other. Crevasse-broken ground short of the pass looks like a shortcut onto the ridge and is not one. And if you are climbing toward the East Peak of Olympus you are on the wrong side of the pass entirely."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 4200,
+     "name": "Glacier Meadows",
+     "role": "main",
+     "type": "camp",
+     "notes": "The standard base camp for climbs off the Blue Glacier, about 17 miles up the Hoh River Trail. Summit day starts with the short way trail to the Blue Glacier moraine.",
+     "water": "Creek beside camp",
+     "permit": "Olympic National Park wilderness permit",
+     "capacity": "Several designated tent sites in the forest at the end of the Hoh River Trail"
+    },
+    {
+     "elev": 6600,
+     "name": "Snow Dome high camp",
+     "role": "route",
+     "type": "bivy",
+     "notes": "Higher option on the rocks of the lower Snow Dome or on its crest, above the Blue Glacier. It shortens the day to Glacier Pass and Mathias; carry out human waste.",
+     "water": "Snowmelt only",
+     "permit": "Olympic National Park wilderness permit",
+     "capacity": "A few rock-sheltered tent sites on and below the crest of the Snow Dome"
+    },
+    {
+     "name": "Eleven Bull Basin",
+     "role": "hidden"
+    },
+    {
+     "name": "Ferry Basin",
+     "role": "hidden"
+    },
+    {
+     "name": "Camp Pan",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

@@ -1,0 +1,163 @@
+{
+ "file": "u017",
+ "results": [
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "fact": "Trailhead to Kool-Aid Lake distance: itinerary day 1 (6.5 mi) vs the Kool-Aid Lake waypoint and dist_km (5.5 mi)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried with other traverse descriptions and route pages. They consistently give 3.7 mi of trail to Cascade Pass and describe the rest (Mixup traverse, Cache Glacier, Cache Col, descent to the lake) by time rather than distance; a club route page gives 12.0 mi and 4,000 ft trailhead-to-summit round trip, and the row itself also cites 16-17 mi (totalNote) and ~19-20 mi (approach) round trip. No two sources state the trailhead-to-Kool-Aid Lake distance, so neither 5.5 nor 6.5 mi can be confirmed without computing it.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/",
+    "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/magic-mountain-south-ridge",
+    "https://www.alpineascents.com/climbs/ptarmigan-traverse/itinerary/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "fact": "Summit-day duration vs. its own timestamped schedule",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real on the live row: day 2 hours 9 (= summitTimeHrs 6 + descentTimeHrs 3) against a schedule running 2:30 AM to 2:30 PM. No published source gives timings for the Northeast Face itself; the only published times are for the standard East Ridge summit day. Rewriting the clock times would mean inventing a schedule, so nothing is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/117628561/northeast-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "fact": "Total gain 4,500 ft is less than the trailhead-to-summit rise",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Confirmed real: 4,500 ft is below the ~5,400 ft net rise from the ~600 ft trailhead to the 5,991 ft Main Peak. Published car-to-car gain figures exist only for Main Peak by itself (a club route page gives 5,500 ft; a 2017 party reports over 6,000 ft), and they disagree; neither covers the three-summit traverse with its intermediate drops. Adopting either would be a figure for a different outing, so gain_ft is left for a source that states the traverse total.",
+   "sources": [
+    "https://climberkyle.com/2017/05/21/mt-index-hourglass-gully/",
+    "https://www.mountaineers.org/activities/routes-places/mount-index-east-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "fact": "Total gain/loss: gain_ft 6,000 vs loss_ft 5,500 vs approach '~5,500 ft' on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried. A club route page for the Lake Serene / east gully line gives 5,500 ft of gain; a 2017 party on Hourglass Gully itself writes that they did over 6,000 ft of gain to the summit. The two sources disagree in the same way the row does, so there is no two-source figure to make gain_ft, loss_ft, the approach and the approach variant agree on.",
+   "sources": [
+    "https://climberkyle.com/2017/05/21/mt-index-hourglass-gully/",
+    "https://www.mountaineers.org/activities/routes-places/mount-index-east-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_baring_mountain_northwest_ridge",
+   "fact": "round-trip distance and gain figures disagree",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried; a further club route page for the Northwest Ridge gives 8.0 mi and 4,000 ft, adding a fifth distinct figure to the 7.0 / 7.4 / 5.3 / 4.62 mi already found. No two independent sources agree on one distance or gain for this path, so the row is left as is.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-baring-northwest-ridge",
+    "https://www.theoutbound.com/washington/hiking/hike-baring-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_baring_mountain_south_route",
+   "fact": "round-trip distance: dist_km vs itinerary/approach_variants",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same open question as the Northwest Ridge row (same climbers' path): published round-trip figures are 4.62, 5.3, 7.0, 7.4 and 8.0 mi, with no two independent sources agreeing. dist_km (5.6 km) and the itinerary/variant 5.3 mi RT are both left unchanged.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-baring-northwest-ridge",
+    "https://www.gaiagps.com/hike/297635/baring-mountain-trail/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_baring_mountain_south_route",
+   "fact": "access.permit says 'None required' but the top-level permit field says a free self-issue Wild Sky Wilderness permit or trailhead registration",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit or quota; Northwest Forest Pass (or equivalent) at the Barclay Lake trailhead",
+   "evidence": "The Forest Service's own Wild Sky Wilderness page lists under Passes and Permits only that some trailheads require a recreation pass, and the forest's wilderness-regulations page lists a self-issue permit only for the Alpine Lakes Wilderness. The Barclay Lake hike listing on an independent trail database gives only the Northwest Forest Pass / interagency pass. Both agree no Wild Sky permit or registration exists, matching access.permit, so the top-level permit field is corrected.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.wta.org/go-hiking/hikes/barclay-lake"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No wilderness permit or quota is required.",
+     "id": "wa_baring_mountain_south_route",
+     "fact": "access.permit says 'None required' but the top-level permit field says a free self-issue Wild Sky Wilderness permit or trailhead registration"
+    }
+   ]
+  },
+  {
+   "id": "wa_baring_mountain_r1",
+   "fact": "access.permit says 'None required' but the top-level permit field says a free self-issue Wild Sky Wilderness permit or trailhead registration",
+   "verdict": "fixed",
+   "correct_value": "No wilderness permit or quota; Northwest Forest Pass (or equivalent) at the Barclay Lake trailhead",
+   "evidence": "The Forest Service's Wild Sky Wilderness page lists only a recreation pass at some trailheads under Passes and Permits, and its wilderness-regulations page names a self-issue permit only for the Alpine Lakes Wilderness. An independent trail database's Barclay Lake listing gives only the Northwest Forest Pass / interagency pass. Both agree with access.permit ('None required'), so the top-level permit field is corrected.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.wta.org/go-hiking/hikes/barclay-lake"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "permit",
+     "path": [],
+     "find": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee.",
+     "replace": "No wilderness permit or quota is required.",
+     "id": "wa_baring_mountain_r1",
+     "fact": "access.permit says 'None required' but the top-level permit field says a free self-issue Wild Sky Wilderness permit or trailhead registration"
+    }
+   ]
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "fact": "summit elevation: waypoint 8,509 ft vs itinerary schedule 'Summit (8,511 ft)'",
+   "verdict": "fixed",
+   "correct_value": "8,509 ft",
+   "evidence": "A peak-list database gives 8,509 ft from LiDAR and notes the older map figure of 8,511 ft; the encyclopedia entry also gives 8,509 ft. 8,511 ft is the superseded map value, so the one schedule label is aligned with the waypoint, high_point_ft and the other 8,509 copies. (The USGS 1 m service at the stored summit pin reads 8,496 ft, consistent with the pin sitting a few metres off the top.)",
+   "sources": [
+    "https://listsofjohn.com/peak/17567",
+    "https://en.wikipedia.org/wiki/Martin_Peak_(Washington)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "label"
+     ],
+     "find": "Summit (8,511 ft)",
+     "replace": "Summit (8,509 ft)",
+     "id": "wa_martin_peak_west_ridge",
+     "fact": "summit elevation: waypoint 8,509 ft vs itinerary schedule 'Summit (8,511 ft)'"
+    }
+   ]
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "fact": "distance and gain: dist_km 25.75 km (16 mi, shown as the one-way approach) and gain_ft 5300 vs itinerary days 7 + 3.5 + 7 mi and 3,200 + 2,200 = 5,400 ft gain, and totalNote '~16 mi and ~5,400 ft round trip'",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried. A club route page gives the West Ridge from Holden Village as 14 mi round trip with 5,300 ft of gain (agreeing with gain_ft), while a trip report gives 12 mi and 5,600 ft; leg descriptions (about 1 mi to the Holden Lake trail junction, 4 mi to Holden Lake, then on to Holden Pass) give no stated total. Neither the distance nor the gain has two agreeing sources, so nothing is changed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+    "http://trailcatjim.com/martin-peak-via-southwest-gullies-west-ridge/"
+   ],
+   "patches": []
+  }
+ ]
+}
