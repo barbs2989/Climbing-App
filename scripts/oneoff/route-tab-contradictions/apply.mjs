@@ -35,6 +35,9 @@ for (const [id, ps] of Object.entries(byRoute)) {
       if (typeof newText === "string" && CITE.test(newText)) return `new text cites a source: ${newText.match(CITE)[0]}`;
       if (newText && typeof newText === "object" && CITE.test(JSON.stringify(newText))) return `new value cites a source`;
       if (p.column === "season" && typeof newText === "string" && newText.length > 40) return "season must stay a short window";
+      // held by the other half's review: _raw is not rendered, and summitTimeHrs is nulled only when a leg is published
+      if (path.includes("_raw")) return "access._raw is not edited";
+      if (p.column === "timing" && path.join(".") === "summitTimeHrs" && p.value === null && row.timing?.approachTimeHrs == null && row.timing?.descentTimeHrs == null) return "summitTimeHrs null held: no approach/descent leg published";
       if (p.op === "set") {
         if (!eq(at, p.expect)) return `expect mismatch at ${p.column}${JSON.stringify(path)}: live ${JSON.stringify(at)?.slice(0, 120)}`;
         next[p.column] = setAt(cur(p.column), path, p.value);

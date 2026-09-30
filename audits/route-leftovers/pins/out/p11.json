@@ -1,0 +1,24 @@
+{"results": [
+ {"id": "wa_mount_rainier_liberty_ridge",
+  "verdict": "confirmed",
+  "summary": "Three of the route's map pins sat on the far (west) side of Rainier. The first now sits on St. Elmo Pass, which the approach crosses. The other two are removed, because no one publishes positions for the places they should mark (the Curtis Ridge camp and the icefall zone below Willis Wall) precisely enough to place them.",
+  "evidence": "Pin 1 'Mowich Lake Camp' (46.952,-121.818) is on the northwest side of the mountain, about 13 km from this route's White River / Glacier Basin approach, and its distMi 0.5 fits nothing on this route. After the trailhead, the first named landmark on the approach is St. Elmo Pass (7,400 ft, with bivouac sites). OpenStreetMap places the St. Elmo Pass saddle at 46.88834,-121.72148, and the USGS names database (Saint Elmo Pass, Gap, Pierce County) at 46.88872,-121.72094, about 60 m apart. The pin goes between them at 46.8885,-121.7212, ground height 7,417 ft -> 7,420 ft. It is renamed 'St. Elmo Pass' and typed Pass, and distMi is set to null because no source gives the trail distance to it. Pin 2 'Puyallup Winthrop Junction Camp' (46.89,-121.80) lies west of the Carbon Glacier, off the approach. The place it should mark is the lower Curtis Ridge camp near 7,400 ft, but no source gives coordinates for that camp (searches found only elevations and descriptions), so it is removed. Pin 3 'Puyallup Glacier Serac Zone' names a glacier on the west side that the route never touches. The route's real icefall hazard comes off Willis Wall onto the Carbon Glacier below the toe, but no source places the exposed stretch to within 300 m, so the pin is removed rather than guessed. Pin 0 (White River Campground) and pin 4 (Liberty Cap, identical to the USGS names coordinate 46.86298,-121.77486) are correct and left alone. The text ops run before the pin ops (see apply-pins.mjs), so the move_pin expect uses the renamed name 'St. Elmo Pass'; the live name before any op is 'Mowich Lake Camp'. Note: the row's bivy list has two 'hidden' entries named 'Mowich Lake Camp' and 'Puyallup Winthrop Junction Camp'. After these ops they match no pin and hide nothing, so they are harmless and were left untouched.",
+  "sources": [
+   "https://nominatim.openstreetmap.org/search?format=json&q=St.%20Elmo%20Pass%2C%20Washington",
+   "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/find?searchText=Saint%20Elmo%20Pass&contains=false&searchFields=GAZ_NAME&layers=5&returnGeometry=true&sr=4326&f=json",
+   "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/find?searchText=Liberty%20Cap&contains=false&searchFields=GAZ_NAME&layers=5&returnGeometry=true&sr=4326&f=json",
+   "https://epqs.nationalmap.gov/v1/json?x=-121.7212&y=46.8885&units=Feet&wkid=4326"
+  ],
+  "pin_ops": [
+   {"op":"move_pin","id":"wa_mount_rainier_liberty_ridge","index":1,"expect":{"name":"St. Elmo Pass","lat":46.952,"lng":-121.818},
+    "lat":46.8885,"lng":-121.7212,"elev":7420,
+    "sources":["https://nominatim.openstreetmap.org/search?format=json&q=St.%20Elmo%20Pass%2C%20Washington","https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/find?searchText=Saint%20Elmo%20Pass&contains=false&searchFields=GAZ_NAME&layers=5&returnGeometry=true&sr=4326&f=json"]},
+   {"op":"remove_pin","id":"wa_mount_rainier_liberty_ridge","index":2,"expect":{"name":"Puyallup Winthrop Junction Camp","lat":46.89,"lng":-121.8}},
+   {"op":"remove_pin","id":"wa_mount_rainier_liberty_ridge","index":3,"expect":{"name":"Puyallup Glacier Serac Zone","lat":46.875,"lng":-121.775}}
+  ],
+  "ops": [
+   {"op":"set","id":"wa_mount_rainier_liberty_ridge","column":"waypoints","path":[1,"name"],"expect":"Mowich Lake Camp","value":"St. Elmo Pass"},
+   {"op":"set","id":"wa_mount_rainier_liberty_ridge","column":"waypoints","path":[1,"type"],"expect":"Campsite","value":"Pass"},
+   {"op":"set","id":"wa_mount_rainier_liberty_ridge","column":"waypoints","path":[1,"distMi"],"expect":0.5,"value":null}
+  ]}
+]}

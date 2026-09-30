@@ -1,0 +1,1888 @@
+[
+ {
+  "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+  "name": "Colchuck Balanced Rock Col (East Lake Side Approch)",
+  "area_id": "wa_colchuck_balanced_rock",
+  "findings": [
+   "r009.json: 17.06 km is exactly 10.6 mi, the itinerary's round-trip figure, while the col waypoint sits at 5.3 mi one way; dist_km should probably be ~8.5 km. External sources give only 4 mi to the lake plus about an hour to the col, not a one-way mileage to the col, so the value is flagged rather than changed."
+  ],
+  "gpx_summary": "317 points; 0 of 6 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "area_id": "wa_colchuck_balanced_rock",
+   "name": "Colchuck Balanced Rock Col (East Lake Side Approch)",
+   "discipline": "scrambling",
+   "grade": "3rd",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": 0,
+   "length_m": 762,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Various",
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": null,
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Off-trail talus and a short 3rd/4th-class rock step"
+   ],
+   "verif": null,
+   "overview": "A scenic, non-technical approach/scramble route to the col between Colchuck Balanced Rock and Colchuck Peak, used both as an approach for the harder rock routes and as a moderate objective in its own right. The line is rated 3rd class overall (Grade II).",
+   "beta": "A direct, cairned line through open forest and talus from the lake's north-end dam to the col, including one short 3rd/4th-class rock step.",
+   "turnaround": "This is route-finding terrain through open forest with a short 3rd/4th-class step — allow extra time in poor visibility or after dark.",
+   "auto_generated": false,
+   "alpine_grade": "3rd class",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 4600,
+   "loss_ft": null,
+   "dist_km": 17.06,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "East approach (Colchuck Lake side)",
+   "permit": null,
+   "comms": "No reliable cell coverage between the lake and the col.",
+   "descent": "Reverse the same cairned line back down to Colchuck Lake's north-end dam.",
+   "obj_haz": [
+    "Off-trail route-finding through open forest and talus",
+    "A short 3rd/4th-class rock step"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Northwest Forest Pass required for parking; self-issue overnight wilderness permit at the kiosk if camping June 15-Oct 15.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5580,
+     "name": "Colchuck Lake, east shore",
+     "note": "Take the left fork staying high on the ridge/shoreline north, avoiding the many spurs that drop to the water.",
+     "type": "Water",
+     "distMi": 4
+    },
+    {
+     "lat": 47.4948,
+     "lng": -120.8362,
+     "elev": 5590,
+     "name": "Outlet dam creek crossing",
+     "note": "Cross the outlet creek at or just below the small dam on the lake's north end, then pick up the climbers' path on the far side, south for about 100 yards.",
+     "type": "Junction",
+     "distMi": 4.3
+    },
+    {
+     "lat": 47.493471,
+     "lng": -120.8249,
+     "elev": 6000,
+     "name": "3rd/4th class rock step",
+     "note": "Short step of rock above a talus clearing; pull up on tree roots and branches with the rock face on your left rather than climbing it head-on.",
+     "type": "Hazard",
+     "distMi": 4.5
+    },
+    {
+     "lat": 47.4901,
+     "lng": -120.819413,
+     "elev": 7400,
+     "name": "Boulder camp in the flats",
+     "note": "Low-impact camping on rock and gravel among boulders just below the col; no reliable water at this camp.",
+     "type": "Campsite",
+     "distMi": 5
+    },
+    {
+     "lat": 47.49184,
+     "lng": -120.81797,
+     "elev": 8000,
+     "name": "Colchuck Balanced Rock Col",
+     "note": "Well-cairned path through open forest/hillside (~1 hr from the dam) gains the col; reaching the true summit block from here requires additional 4th/5th-class scrambling.",
+     "type": "Topout",
+     "distMi": 5.3
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "This is the access route rather than a summit climb: stay high on the ridge past the north end of the lake, cross the outlet creek near the dam, then follow the cairned path throug…",
+      "fromTo": "Approach hike to the Colchuck-Balanced Rock col",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "Sturdy approach shoes or light boots",
+    "Trekking poles for the talus",
+    "Map/GPS — the cairned path is easy to lose track of at the lake's north end"
+   ],
+   "pro_tips": [
+    "Once familiar, this line shaves about an hour off the old approach",
+    "There are good low-impact camping spots on rock/gravel just as the path drops into the col"
+   ],
+   "watch_out": [
+    "Easy to miss the correct fork at the trail junction near the lake — many parties follow spurs down to the water's edge by mistake"
+   ],
+   "pro_needs": "Route-finding skill is the main 'protection' here — this is an unroped scramble/approach, not a technical pitch.",
+   "best_season": "July–September; the route is snow-free and the cairned path most followable once the Enchantments overnight permit season is active (May 15–Oct 31) and the access road is open.",
+   "high_point_ft": 8011,
+   "aid_grade": null,
+   "approach": "This is the approach/scramble route to the col above Colchuck Lake's east side, used to access objectives beyond Colchuck Balanced Rock (notably Dragontail Peak). Start at the Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road) and hike the Colchuck Lake Trail (#1599) 4 miles and 2,280 ft to the lake outlet (2.5-3 hours), the last reliable water. At the lake, take the left fork and stay high on the ridge, avoiding spur trails that drop to the water's edge. Continue to a small dam near the lake's north end and cross the outlet creek at or just below it; pick up the trail on the far side and follow it south roughly 100 yards to a slight clearing with boulders and talus on the left. Ascend the talus, angling slightly left into the woods, and negotiate a brief 3rd/4th-class rock step (using roots/branches as holds). From there the path climbs southward through open, cairned forest for about an hour to the col, which overlooks a boulder-strewn camp area with views of Dragontail and Colchuck peaks — about 2,500 ft above the lake, or roughly 4,600 ft of gain from the trailhead.",
+   "descent_text": "This is a hiking/scrambling approach line, not a technical climb, so descent is simply the reverse of the ascent: down through the open, cairned forest, back through the brief 3rd/4th-class rock step, down the talus to the clearing, back across the outlet creek near the small dam, and along the high ridge line back to the lakeshore trail and out to the Stuart Lake Trailhead. No rappelling is involved. The 3rd/4th-class step and the talus above the dam are the main hazards — loose rock and awkward footing, worse if wet or descending in the dark.",
+   "bail": null,
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Day-use only needs a self-issue trailhead permit.",
+    "days": [
+     {
+      "n": 1,
+      "note": "This is the access route rather than a summit climb: stay high on the ridge past the north end of the lake, cross the outlet creek near the dam, then follow the cairned path through talus and open forest up to the col — roughly an hour above the lake.",
+      "hours": 9,
+      "miles": 10.6,
+      "title": "Approach hike to the Colchuck-Balanced Rock col",
+      "gainFt": 4600,
+      "lossFt": 4600,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "7:15 AM",
+        "label": "Reach Colchuck Lake, east side",
+        "detail": "Take the left fork, staying high on the ridge, cross the outlet near the dam."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Reach the col",
+        "detail": "Cairned path through talus/open forest, ~1 hr above the lake."
+       },
+       {
+        "time": "9:15 AM",
+        "label": "Begin return",
+        "detail": ""
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Back at car",
+        "detail": ""
+       }
+      ],
+      "objective": "Reach the col via the east side of Colchuck Lake"
+     }
+    ],
+    "totalNote": "A single day, roughly 9 hrs round trip to the col and back — this is the approach used to access CBR's climbing routes, not a summit itself."
+   },
+   "access": {
+    "fees": "Day-use: free. Overnight lottery: $6 non-refundable application fee, then $5/person/night if selected. (Some approaches — e.g. Mount Stuart via Ingalls Creek/Longs Pass — fall entirely outside the Enchantment Permit Area and need only the free self-issue permit even overnight.)",
+    "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+    "permit": "Day climbs: free self-issue day-use permit at the trailhead — no lottery needed. Overnight camping inside the Enchantment Permit Area boundary: Enchantments overnight lottery permit (Recreation.gov).",
+    "group_limit": 8,
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+    "overnight_permit": {
+     "url": "https://www.recreation.gov/permits/233273",
+     "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+     "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+    }
+   },
+   "road": {
+    "name": "Icicle Creek Road to FR 7601 (Eightmile Road), Stuart Lake Trailhead",
+    "status": "Icicle Creek Road is paved for 8.4 miles from US 2 in Leavenworth; FR 7601 is 3.7 miles of rough, sometimes deeply potholed dirt to the trailhead. Passenger cars manage it driven slowly.",
+    "driveNote": "The Stuart Lake trailhead lot holds only 20-30 vehicles and has a vault toilet. It fills long before dawn on summer weekends because it is also the entry point for Enchantments through-hikers and the Colchuck Lake day-hike crowd — arrive very early or be prepared to park down the road and walk.",
+    "seasonalGate": "FR 7601 is typically closed or unmaintained from November through May, which effectively defines the climbing season."
+   },
+   "climate": null,
+   "emergency": null,
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/031S",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 2,
+    "physical": 2,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 2
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Colchuck Lake outlet, east-side talus to the col",
+     "hours": "3-4",
+     "notes": "Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road). Colchuck Lake Trail #1599 runs 4 miles and 2,280 ft to the lake outlet in about two and a half to three hours; the lake is the last reliable water.\n\nAt the lake take the LEFT fork and stay high on the ridge, avoiding the spur trails that drop to the water's edge. Continue to the small dam near the lake's north end and cross the outlet creek at or just below it. Pick up the trail on the far side and follow it south roughly 100 yards to a slight clearing with boulders and talus on the LEFT.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "Outlet creek crossing at the dam",
+      "Brief 3rd/4th class rock step gained on vegetation",
+      "Loose talus",
+      "No water above the lake"
+     ],
+     "baseFinding": "The clearing with boulders and talus on the left, about 100 yards south of the outlet crossing, is the turn — it is easy to walk past. Ascend the talus angling slightly left into the woods and negotiate a brief 3rd/4th class rock step, using roots and branches as holds; that step is the confirmation you are on the right line and not on a lakeside spur. From there the path climbs southward through open, cairned forest for about an hour to the col, which overlooks a boulder-strewn camp area with views of Dragontail and Colchuck peaks."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the road is gated through winter and into spring. Parking is small for the demand, so a party arriving the night before should expect to be squeezed. Campfires are banned here, so plan on stoves only.",
+     "water": "Reliable — the lake itself, plus inlet streams on the south shore through most of the season. Treat it; the shoreline is heavily used.",
+     "permit": "Colchuck Lake zone of the Enchantment Permit Area. An overnight permit is required May 15–Oct 31 and comes either from the advance lottery on recreation.gov (applications open in February, success rates in the single digits) or the daily lottery run through the recreation.gov app inside a geofence around the Wenatchee River Ranger Station in Leavenworth. Day climbing needs no overnight permit, only the free self-issue Alpine Lakes Wilderness day slip at the trailhead and a parking pass.",
+     "capacity": "Roughly a dozen scattered hardened sites around the east and north shores and up the west side; each permit covers one party, and group size in this zone is capped at 8"
+    },
+    {
+     "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+     "role": "main",
+     "type": "camp",
+     "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra driving in the morning is only a few miles of dirt. Expect a very long day from here — car to base of route commonly runs three to four hours, and finishing after dark is normal.",
+     "water": "Icicle Creek runs alongside both; check current potable-water status at the site, as it varies by year and season",
+     "permit": "No wilderness permit at all — both are ordinary Forest Service campgrounds outside the Enchantment Permit Area, paid per night. This is what a party climbs from when it has no zone permit and is doing the route car-to-car, which is entirely legal: day use in the permit area needs only the free self-issue wilderness slip at the trailhead.",
+     "capacity": "Bridge Creek is small and rustic; Eightmile is much larger with roughly forty family sites. Both take a mix of reservations and first-come nights depending on the season."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_southwest_rib_2",
+  "name": "Southwest Rib",
+  "area_id": "wa_crystal_lake_tower",
+  "findings": [
+   "r011.json: Crystal Lake Tower is the westernmost point of McClellan Peak's summit ridge, so the waypoint note describes where the tower sits rather than renaming the summit; SummitPost states exactly this and Mountain Project places the tower on the ridge between the Chessmen and the Nightmare Needles."
+  ],
+  "gpx_summary": "4 points; 4 of 4 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_southwest_rib_2",
+   "area_id": "wa_crystal_lake_tower",
+   "name": "Southwest Rib",
+   "discipline": "alpine",
+   "grade": "5.8",
+   "grade_system": "yds",
+   "grade_num": 8,
+   "pitches": 19,
+   "length_m": 457,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Pete and Judy Doorish, September 1982",
+   "lat": null,
+   "lng": null,
+   "aspect": "SW",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Rock rack to 3 inches (doubled #2-#3 cams)",
+    "Set of nuts",
+    "50-60m rope",
+    "Ice axe (before mid-July)",
+    "Helmet",
+    "Sturdy approach shoes/boots for off-trail scrambling"
+   ],
+   "hazards": [
+    "Rockfall and loose blocks occur along sections of the rib and the upper gendarmes.",
+    "The lower rib and the towers near the summit present genuine route-finding challenges rather than an obvious line.",
+    "The long, partly off-trail approach via Ingalls Creek and Crystal Creek/Nightmare Gorge increases commitment and the difficulty of self-rescue if something goes wrong."
+   ],
+   "verif": null,
+   "overview": "A long, moderate alpine rock line that follows the crest of Crystal Lake Tower's prominent southwest rib for roughly 1,400-1,500 feet from its toe in Crystal Creek Basin to the summit, mixing an indistinct lower crest, a knife-edged ridge section, corner systems, and a gendarme-studded upper headwall at sustained mid-5th-class-to-5.8 difficulty.",
+   "beta": "A full-value, remote adventure alpine rock climb that is infrequently traveled and requires real route-finding rather than following an obvious line. Roughly 19 ropelengths (60m) wind up the rib and around towers: intermittent treed/sandy ledges, slabs, and short steep steps lead up an indistinct crest for about 500 vertical feet until it becomes a defined, knife-edged ridge (marked by a large open slab visible on climber's left from a distance); the rib then relaxes into low-angled, sometimes loose/sandy corners for another ~400 feet; the upper climb is steeper and more continuously exposed, featuring prominent gendarmes, a sharp ridge traverse, a left-trending ramp below a steep white headwall, and a final summit block to reach the top Beckey identifies as Crystal Lake Tower's summit.",
+   "turnaround": "Given the long approach, ~19-pitch length, route-finding demands, and a descent that itself requires further travel over connecting terrain (Westernmost Chessman or Crystal Lake outlet), set a turnaround time before starting that guarantees reaching the top and completing the descent in daylight, with a safety margin for route-finding delays or afternoon weather typical of Cascades summers.",
+   "auto_generated": false,
+   "alpine_grade": "III",
+   "rock_grade": "5.8",
+   "ice_grade": null,
+   "gain_ft": 6000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": "No fixed rappel line down the rib itself; a short mid-5th-class step is rappelled or downclimbed off the summit block, then descent continues by scrambling (either east to Fantasia Saddle with a rappel down to Fantasia Pond, or northeast/around to Chessmen Notch back to the Enchantment Plateau).",
+   "commitment": "III",
+   "face": "Southwest Rib / Southwest Face",
+   "permit": "Camping in Crystal Creek Basin, reached from the Ingalls Creek Trailhead, lies outside the Enchantment permit area; fill out the free self-issued wilderness permit at the trailhead. Any overnight inside the Enchantment permit area (May 15-Oct 31) needs a quota permit from the advance lottery.",
+   "comms": null,
+   "descent": "Traverse east over the Westernmost Chessman to reach the Enchantment Plateau, or descend south from Crystal Lake following its outlet stream back down into Crystal Creek Basin.",
+   "obj_haz": [
+    "rockfall",
+    "loose rock / choss",
+    "route-finding difficulty",
+    "remoteness / limited traffic"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.4629,
+     "lng": -120.67301,
+     "elev": 1900,
+     "name": "Ingalls Creek Trailhead (Trail #1215)",
+     "note": "Off Hwy 97 near Blewett Pass.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.472,
+     "lng": -120.755,
+     "elev": 4200,
+     "name": "Crystal Creek Junction",
+     "note": "Leave Ingalls Creek Trail ~100 ft before it crosses Crystal Creek.",
+     "type": "Junction",
+     "distMi": 6.5
+    },
+    {
+     "lat": 47.471,
+     "lng": -120.78,
+     "elev": 6900,
+     "name": "Crystal Lake",
+     "note": "Basin camp below the SW Rib; also reachable descending from the Enchantments plateau.",
+     "type": "Junction",
+     "distMi": 8.5
+    },
+    {
+     "lat": 47.47,
+     "lng": -120.792,
+     "elev": 7800,
+     "name": "Crystal Lake Tower",
+     "note": "Westernmost point on McClellan Peak's summit ridge; SW Rib forms a continuous ~1,400-ft line down into Crystal Creek Basin.",
+     "type": "Summit",
+     "distMi": 9.3
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Early alpine start recommended given the ~19-pitch length, route-finding demands, and a descent that itself requires additional travel (over the Westernmost Chessman or via Crystal Lake)."
+   },
+   "detailed_rack": "A standard alpine rock rack to about 3 inches, with multiple ascent parties specifically noting they placed a lot of #3 Camalot-sized pieces — doubling up in the #2-#3 range is worth considering. A 50m rope is the stated minimum, though many parties climb it in the 60m-ropelength count published for it.",
+   "what_to_bring": [
+    "Backpacking/camping gear for a Crystal Creek Basin or Crystal Lake camp",
+    "Stove and water treatment (streams may be low/dry late season)",
+    "Free self-issue wilderness permit (obtained at Ingalls Creek Trailhead)",
+    "Map/GPS for the unmaintained Crystal Creek/Nightmare Gorge boot path",
+    "Extra food, water, and layers for a long, remote day"
+   ],
+   "pro_tips": [
+    "The Ingalls Creek/Crystal Creek approach sees far less traffic than the Enchantments' Snow Lakes or Stuart Lake entries — expect genuine route-finding through Nightmare Gorge, not a boot-beaten path.",
+    "Many parties descend by traversing over the Westernmost Chessman to the Enchantment Plateau rather than reversing the climbing route.",
+    "Several trip reports specifically mention placing a lot of #3-size cams — don't skimp on that size."
+   ],
+   "watch_out": "Southwest-facing terrain subject to afternoon weather and heat exposure\nMixed terrain transitions with loose rock throughout\nRoute-finding hazard on descent; easy to wander off-route\nLoose rock creates rockfall hazard, especially between parties\nApproach water hazard (Ingalls Creek crossing)",
+   "pro_needs": "Alpine rack to 3 inches (nuts plus cams, doubled through #2-#3) for the corner systems and cracks along the rib; gear anchors are also needed for any rappel-based retreat.",
+   "best_season": "Climbed roughly June through September; documented ascents span from late June to mid-August. Carry an ice axe for lingering snow on the approach and lower route before mid-July; later in the season, running water can become scarce, so parties often carry a stove to melt snow or treat limited water sources.",
+   "high_point_ft": 7923,
+   "aid_grade": null,
+   "approach": null,
+   "descent_text": "The most practical descent from the summit continues over the Westernmost Chessman tower, from which the Enchantment Plateau is readily reached and can be used to exit toward Snow Lakes or Aasgard Pass, or to return to a Crystal Lake camp. Alternatively, from Crystal Lake an easy descent follows the outlet stream south back into Crystal Creek Basin to rejoin the approach route toward Ingalls Creek. Both options involve loose, off-trail terrain and benefit from prior familiarity or careful navigation, especially in poor visibility.",
+   "bail": "The rib's crest and gendarme-studded upper section make lateral escape difficult once well established on route; the most likely retreat is downclimbing and/or rappelling established gear anchors back down the rib toward the toe in Crystal Creek Basin. Carry a rack sufficient to build multiple rappel anchors given the route's remote, infrequently-traveled character.",
+   "pitch_detail": [
+    {
+     "grade": null,
+     "notes": "Indistinct crest; intermittent treed, sandy ledges, slabs, and short steep steps.",
+     "pitch": "Lower rib (~first 500 ft)"
+    },
+    {
+     "grade": null,
+     "notes": "Rib becomes well-defined and knife-edged; landmark is a large open slab visible on climber's left from a distance.",
+     "pitch": "Knife-edge crest section"
+    },
+    {
+     "grade": null,
+     "notes": "Rib becomes less distinct again; low-angled corners, some filled with loose blocks and sand.",
+     "pitch": "Mid rib (~next 400 ft)"
+    },
+    {
+     "grade": "5.8 (route crux)",
+     "notes": "Prominent gendarmes; continuously steeper and more exposed climbing; sharp ridge traverse, left-trending ramp below a steep white headwall, and a final summit block to top out.",
+     "pitch": "Upper rib to summit"
+    }
+   ],
+   "itinerary": "Day 1: Drive to Ingalls Creek Trailhead and backpack in via the Ingalls Creek Trail and the Crystal Creek/Nightmare Gorge boot path to a camp in Crystal Creek Basin or at Crystal Lake. Day 2: Climb the Southwest Rib (roughly 19 pitches) to the summit, then descend via the Westernmost Chessman to the Enchantment Plateau or back to Crystal Lake; return to camp. Day 3: Hike out via Crystal Creek and Ingalls Creek Trail to the trailhead.",
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "group_limit": 8,
+    "landManager": "N/A",
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required to park at the Ingalls Creek Trailhead ($5/day or $30/annual).",
+    "passRequired": "N/A",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit in lower Crystal Creek; an Enchantment zone permit to camp at Crystal Lake itself",
+     "where": "Fill one out at the Ingalls Creek trailhead kiosk. Camping at Crystal Lake on the plateau needs an Enchantment Permit Area permit from Recreation.gov, May 15 to Oct 31."
+    }
+   },
+   "road": {
+    "name": "Ingalls Creek Road off US-97, to the Ingalls Creek Trailhead",
+    "status": "About a mile of access road from US-97 to the trailhead at road's end; from there the Ingalls Creek trail and an off-trail climb up Crystal Creek lead to the basin below the rib.",
+    "driveNote": "From Leavenworth, head east on US-2 for about 4 miles and turn south on US-97 toward Blewett Pass; after about 7 miles turn right onto Ingalls Creek Road, cross Peshastin Creek, keep left, and drive to the trailhead at the end of the road."
+   },
+   "climate": {
+    "fall": "Possible early-season snow by late September and shortening daylight windows.",
+    "spring": "Lingering snow on the approach and lower rib into June/early July; carry an ice axe before mid-July.",
+    "summer": "Prime climbing season; warm and mostly dry, but approach water sources can dry up by mid-to-late summer.",
+    "winter": "Snowbound; not a winter climbing objective.",
+    "typical": "Dry, warm east-slope Cascades rain-shadow summer climate; the route is climbed roughly June-September.",
+    "forecastZone": "East Slopes Central Cascades / Stuart Range"
+   },
+   "emergency": {
+    "notes": "Remote, off-trail approach through Nightmare Gorge and a rarely-traveled route mean rescue response will be slow; cell coverage in Crystal Creek Basin is unconfirmed and likely unreliable — do not count on it.",
+    "county": "Chelan County, WA",
+    "rangerStation": "Wenatchee River Ranger District (Leavenworth), Okanogan-Wenatchee National Forest — (509) 548-2550",
+    "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA — 24/7 ER, (509) 548-5815",
+    "sheriffDispatch": "RiverCom 911 dispatch: (509) 663-9911 (or 911); Chelan County Sheriff's Office coordinates search and rescue, supported by the volunteer Chelan County Mountain Rescue for technical mountain rescues"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "July through mid-August, after snow leaves the rib and the Crystal Creek drainage but before late-summer water runs out",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Crystal Creek and the rib still carry heavy snow, Ingalls Creek runs high with snowmelt, and route-finding on a snowy 19-pitch line is slow.",
+      "status": "risky"
+     },
+     "July": {
+      "reason": "Snow has largely left the rib while meltwater still runs in Crystal Creek; long days suit a route of roughly 19 ropelengths.",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Late in the month the rib becomes climbable, but lingering snow on the approach and lower route calls for an ice axe.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Dry rock and long days, but water becomes scarce high on the approach and the low Ingalls Creek valley is hot; carry a stove to melt snow.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Short days and first snow on the upper gendarmes make the length of the route and the remote descent a real commitment.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cooler temperatures on the south-facing rib, but little running water and shorter days on a very long route with a slow retreat.",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.46872,
+    "peakLng": -120.79532,
+    "trailhead": "Ingalls Creek Trailhead (Trail #1215)",
+    "trailheadLat": 47.4629,
+    "trailheadLng": -120.67301,
+    "trailheadDirection": null
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": "Elevation sources disagree slightly: Fred Beckey's Cascade Alpine Guide describes Crystal Lake Tower as a pinnacle at about 7,800 ft just below McClellan Peak's summit ridge, while Mountain Project lists 7,923 ft for the same coordinates used in our database (47.46872, -120.79532) — likely a DEM-derived figure for that exact point. Beckey's guide also notes the route's practical high point continues past the tower's cairned summit to a separate, slightly higher rounded point on the ridge (~8,000 ft) — climbers should be aware the first cairn is not the true top. No specific rappel count/anchor sequence for descending the SW Rib itself was found in available sources; only the general Fantasia Saddle/Fantasia Pond descent option is documented.",
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Ingalls Creek to Crystal Creek Basin",
+     "notes": "This side of the massif is approached from the Ingalls Creek trail rather than from the lakes basin above, and it sits outside the permit area, which is much of its appeal. Walk the Ingalls Creek trail up-valley and turn off it into the Crystal Creek drainage; there is no trail from there and the ground is rough and steep in places, with a faint boot path that appears and vanishes and cairns you may or may not find. Most parties camp in the basin and climb from there. The route is nineteen ropelengths of genuine adventure terrain, infrequently travelled, with real route-finding rather than an obvious line, and it wants more research than any single description gives. Water gets scarce late in the season, so parties often carry a stove to melt snow.",
+     "season": "Late June to September; axe before mid-July",
+     "hazards": [
+      "Rockfall and loose blocks along the rib and among the upper gendarmes",
+      "Sustained route-finding on an indistinct lower crest with no fixed gear and no obvious line",
+      "A long, partly off-trail approach that makes self-rescue slow and difficult",
+      "Southwest-facing terrain that bakes in afternoon sun and catches afternoon weather",
+      "Loose off-trail descent terrain in both descent options, easy to wander in poor visibility"
+     ],
+     "baseFinding": "Leave the Ingalls Creek trail about a hundred feet before it crosses Crystal Creek — look for cairns, but do not count on them — and climb the drainage keeping to the creek's right-hand side. The formation you want is the westernmost point on the summit ridge above the basin, and it presents a single continuous southwest face of roughly 1,400 ft dropping from a summit thumb straight down into Crystal Creek Basin. Start at the very toe of the rib, on the lowest and easiest-angled ground where the crest first rises out of the basin floor; the line does not begin on a ledge or in a gully, it begins on the ground. Confirmation comes about 500 vertical feet up: the crest sharpens from an indistinct rib into a defined knife edge, and a large open slab shows on your left, visible from a distance. The separate wall standing in the same basin is a different formation entirely and is the thing most likely to draw you left of the rib."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Crystal Creek basin below the Southwest Rib",
+     "role": "main",
+     "type": "camp",
+     "notes": "Informal camping on the floor of Crystal Creek basin near the toe of the rib. Reach it by hiking up Crystal Creek from the Ingalls Creek trail, or by dropping south from Crystal Lake on the Enchantment plateau along its outlet stream.",
+     "water": "Crystal Creek",
+     "permit": "Outside the Enchantment Permit Area once far enough down the basin; self-issue Alpine Lakes Wilderness permit",
+     "capacity": "A few informal sites on the basin floor"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_devore_peak_west_ridge",
+  "name": "Southeast Ridge",
+  "area_id": "wa_devore_peak",
+  "findings": [
+   "r012.json: The Mountaineers route description places Bird Creek Camp about 4 miles up the Devore Creek Trail from Weaver Point at 4,200 ft, about 100 ft before the Bird Creek crossing; a 2022 trip report camped at the '4200ft Devore/Bird Creek junction'. The waypoint's 5,800 ft (and the beta/pitch_detail '~5,400 ft', which is the separate unofficial higher camp) are wrong for the named camp; the waypoint's distMi 8 from Harlequin (3 mi river trail + ~4-5 mi) is consistent and left alone. Note the waypoint's pin sits far above the camp (terrain ~8,100 ft) — pin position is out of scope. | Bird Creek Camp is at ~4,200 ft, about 4 mi up the Devore Creek trail from Weaver Point"
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_devore_peak_west_ridge",
+   "area_id": "wa_devore_peak",
+   "name": "Southeast Ridge",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": 268,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Everett Darr, Ida Darr, Abigail Avery, Stuart B. Avery, Jane Foster McConnell, Grant McConnell, and Paul Parker, July 28, 1940 (first ascent of the peak; a 1940 summit register sits on this route)",
+   "lat": 48.276774,
+   "lng": -120.7653,
+   "aspect": "E/SE",
+   "season": "Late Jul-Sep",
+   "description": null,
+   "gear": [
+    "ice axe (essential into July for the approach snowfield)",
+    "crampons (early/mid-season)",
+    "helmet",
+    "light rock rack (a few small-to-mid cams/nuts) and 30-60m rope for the exposed summit crux/optional rappel",
+    "sturdy mountain boots",
+    "bear canister or approved food storage for camp"
+   ],
+   "hazards": [
+    "very long remote multi-day approach (boat/ferry to Stehekin, then trail and cross-country travel)",
+    "routefinding on broad ridge and open talus benches",
+    "exposed, unavoidable low-5th-class crux move on the true summit block",
+    "loose rock on the southeast face and near the summit tower"
+   ],
+   "verif": null,
+   "overview": "Devore Peak (8,382 ft) is the high point of a long, remote north-south ridge in the Glacier Peak Wilderness dividing Company and Hilgard Creeks (west) from Devore Creek (east), about 6 miles WSW of Stehekin on Lake Chelan. It is composed of granodiorite and is one of Washington's Bulger '100 Highest Peaks.' The standard line climbs the peak's southeast ridge/face from the Bird Creek basin above Devore Creek — a broad talus and rock scramble broken by one short, exposed crux move on the true summit block. It was first climbed July 28, 1940 by Everett and Ida Darr, Abigail and Stuart Avery, Jane Foster and Grant McConnell, and Paul Parker; their original summit register has since been recovered intact by later climbers.",
+   "beta": "From Bird Creek Camp (~4,200 ft) on the Devore Creek Trail, traverse to open meadows and a waterfall cirque, then climb semi-open slopes and snow ramps into the ~7,000 ft basin between Wy'North Peak and Devore Peak (the Bird Lakes basin). Cross Bird Creek at the northern lake and hike southeast up talus/scree to a col at roughly 7,500 ft on Devore's southeast ridge. From the col, scramble west along Class 3 terrain, working past a false summit block, to an unavoidable ~20-ft rock step (Class 5.0-5.4) just below the true summit; a short final Class 3-4 pitch tops out at the 1940 first-ascent register.",
+   "turnaround": "Because the crux and upper ridge involve loose rock and exposed scrambling with no easy bailout, turn around before deteriorating weather, thunderstorms, or softening snow/rockfall conditions make the ridge and crux unsafe to reverse — don't press on without a comfortable margin to retreat before conditions worsen.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "5.0",
+   "ice_grade": null,
+   "gain_ft": 7600,
+   "loss_ft": 7600,
+   "dist_km": 17.7,
+   "max_angle": 40,
+   "rappels": "1-2 short rappels (roughly 15-30m) to get down the crux step/false-summit block; fixed rap anchors have been reported in place by recent parties, though some climbers instead downclimb the same section",
+   "commitment": "III",
+   "face": "East ridge to southeast face (via the Bird Lakes basin and a ~7,500 ft col/notch)",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+   "comms": "No cell service in Stehekin or anywhere on the approach/route — the area is legally wilderness where cell towers are prohibited. Carry a satellite communicator or PLB for emergency contact.",
+   "descent": "Reverse the southeast ridge/face route back to the saddle and down into the Bird Creek basin.",
+   "obj_haz": [
+    "loose rock and rockfall on the upper ridge and descent gully",
+    "exposed, largely unprotected traversing near the false summit and crux",
+    "lingering steep snow / bergschrund-like moat at the east-ridge col into July",
+    "very long, remote, off-trail approach with real route-finding"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.3476353,
+     "lng": -120.7137122,
+     "elev": 1234,
+     "name": "Harlequin Bridge / Campground shuttle stop",
+     "note": "NPS shuttle stop where Stehekin Valley Road crosses the Stehekin River; start of the Stehekin River Trail approach toward Weaver Point.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "There is no road into Stehekin. Drive to Fields Point Landing or Chelan and take the Lady of the Lake II or Lady Express up-lake — two to four hours depending on which boat — then ride the National Park Service shuttle up the Stehekin Valley Road to the Harlequin Bridge stop. Some parties bike or walk the road instead. Sailings drop to a few a week outside peak summer, so build the trip around the boat schedule rather than the other way round."
+    },
+    {
+     "lat": 48.31596,
+     "lng": -120.68181,
+     "elev": 1500,
+     "name": "Stehekin River Trail / Devore Creek Trail junction",
+     "note": "Leave the flat Stehekin River Trail here and turn onto Devore Creek Trail #1244, which climbs steeply through rock bluffs into the Glacier Peak Wilderness.",
+     "type": "Junction",
+     "distMi": 3,
+     "directions": "Cross Harlequin Bridge at the end of the airstrip and pick up the Stehekin River Trail on the far bank, heading downvalley. It is three essentially flat miles along the river to the junction, which sits about half a mile short of Weaver Point — parties who come in by water taxi to Weaver Point instead join this point from the other direction."
+    },
+    {
+     "lat": 48.296118718181816,
+     "lng": -120.75108514545455,
+     "elev": 4200,
+     "name": "Bird Creek Camp",
+     "note": "Small established bivy/camp used as base for Devore and Tupshin climbs; reliable water from Bird Creek nearby, last easy flat tent sites before the open basin.",
+     "type": "Campsite",
+     "distMi": 8,
+     "directions": "Turn uphill and climb hard: roughly 30 switchbacks in about two miles carry the trail through rock bluffs and open forest to the Wilderness boundary near 2,300 ft, and the grade stays relentless for another three-plus miles alongside Devore Creek. The tread through here sees little maintenance and is brushy underfoot. The creek is crossed and paralleled repeatedly and is the water source for the whole stretch."
+    },
+    {
+     "lat": 48.279175,
+     "lng": -120.762533,
+     "elev": 7000,
+     "name": "Upper Bird Creek basin (~7,000 ft)",
+     "note": "Open basin with small lakes below Devore; cross Bird Creek near the northern lake and head southeast toward the bench/gully leading to Devore's ridge.",
+     "type": "Junction",
+     "distMi": 9.5,
+     "directions": "Leave the maintained trail and follow use paths and animal trails up along Bird Creek, gaining about a mile to an unofficial bench camp near 5,400 ft — parties wanting one big summit day often push to there instead. Gaining a hundred feet or so of hillside before sidehilling keeps the brush manageable; fighting up the creekbed does not. Above the bench the ground steepens into heather benches and a talus staircase, then a second looser gully of scree and dirt, before opening into the lake basin."
+    },
+    {
+     "lat": 48.28001978636364,
+     "lng": -120.7627641909091,
+     "elev": 7500,
+     "name": "Saddle west of Point 7657",
+     "note": "Col on Devore's southeast ridge reached via a snowfield/talus scramble from the basin; from here the route works west and traverses onto the peak's southeast face.",
+     "type": "Junction",
+     "distMi": 10.5,
+     "directions": "Cross Bird Creek near the northern lake and climb loose Class 2-3 talus and scree southeast out of the basin to the col. Snow lingers here well into July and can leave a short traverse of around 40 degrees, so carry an axe and take crampons if it is likely to be firm. Loose rock and old avalanche debris are the other hazards on this stretch."
+    },
+    {
+     "lat": 48.27744395727273,
+     "lng": -120.76463283818183,
+     "elev": 8200,
+     "name": "Exposed traverse below summit block",
+     "note": "Class 3-4 ledge traverse across the southeast face to the summit ridge; reported as \"extremely exposed 3rd class (4th?)\" by climbers and the crux of the descent (reverse or short rappel).",
+     "type": "Hazard",
+     "distMi": 10.9,
+     "directions": "From the col, scramble west along the ridge crest, passing the pair of rock towers known locally as the Bottles. The crest then pushes you out onto the southeast face where it steepens and the ledge line begins. Rock quality is mixed — some of it solid, some of it slab under a layer of gravel."
+    },
+    {
+     "lat": 48.27661,
+     "lng": -120.765,
+     "elev": 8383,
+     "name": "Devore Peak summit",
+     "note": "True summit at 8,383 ft on the long north-south ridge dividing Company/Hilgard Creek from Devore Creek; summit block requires a short downclimb or rappel on descent.",
+     "type": "Summit",
+     "distMi": 11,
+     "directions": "Once across the traverse, scramble easier Class 2-3 ground up an obvious gully to the edge of the summit ridge. The last obstacle is a short, unavoidable rock face of about 20 ft, vertical and exposed. It is the one move on the route that most parties choose to rappel on the way down rather than downclimb."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 22,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": 5,
+    "approachTimeHrs": 6,
+    "recommendedStart": "5:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "note": "Drive to Fields Point Landing on Lake Chelan and take the Lady of the Lake/Lady Express ferry to Stehekin, then a boat shuttle or road walk to Weaver Point Campground on Lake Chela…",
+      "fromTo": "Ferry in and approach to Bird Creek Camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 11,
+      "note": "Leave camp pre-dawn and head up-valley along Bird Creek, cutting off-trail into the basin above ~5,400 ft, then continuing to the open lake basin near 7,000 ft. Cross Bird Creek at…",
+      "fromTo": "Summit push via the SE col and West Ridge/face",
+      "section": "Climb"
+     },
+     {
+      "hrs": 5,
+      "note": "Break camp and hike back down the Devore Creek Trail to Weaver Point, then boat/walk to Stehekin in time for the return ferry to Fields Point Landing.",
+      "fromTo": "Hike out and ferry home",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Most parties solo the short 5.0-5.4 crux, but a single rope and a small rack (a few nuts/small cams plus slings) let you belay, protect, or rappel the ~20-ft rock step; a sling around a nearby tree/horn has served as an anchor for past parties. No additional technical gear is needed for the Class 2-4 talus, gully, and ridge terrain below or above it.",
+   "what_to_bring": [
+    "map and compass/GPS (the climber's route leaves the maintained trail at Bird Creek Camp)",
+    "sun protection",
+    "extra water and a filter/treatment (Devore/Bird Creek are the last reliable sources before the upper basin)",
+    "bear canister or hang for overnight food storage",
+    "bivy/overnight gear — this is realistically a multi-day trip, not a day climb"
+   ],
+   "pro_tips": [
+    "Book the Lady Express ferry to Stehekin well ahead of time and plan your return sailing before you leave — Stehekin has no road access, so your exit is fixed by the boat schedule",
+    "Use Bird Creek Camp in the Devore Creek drainage as base camp; it's the standard staging point for the southeast ridge/face route",
+    "Plan extra days for the long approach",
+    "Carry water — high terrain dries out by midsummer"
+   ],
+   "watch_out": [
+    "loose rock, especially near the summit block",
+    "afternoon thunderstorms",
+    "snow in shaded gullies and on the approach snowfield into July",
+    "ferry/boat schedule constraints that dictate how much time you actually have on the mountain"
+   ],
+   "pro_needs": "A light rock rack (a few small-to-mid cams and nuts) plus a 30-60m rope is worth carrying for the short, exposed low-5th-class crux move and optional rappel near the true summit; unnecessary for the rest of the Class 3-4 scramble.",
+   "best_season": "Mid-July through September for reliable snow-free travel; parties in late June/early July should expect a lingering snowfield on the approach basin and southeast face and should carry an ice axe and crampons.",
+   "high_point_ft": 8382,
+   "aid_grade": null,
+   "approach": "Devore Peak is only reachable by a multi-day approach out of Stehekin, at the head of Lake Chelan — there is no road access. Drive to Fields Point Landing (or Chelan) and take the Lady of the Lake II or Lady Express passenger ferry up-lake to Stehekin (roughly a 2-4 hour boat ride depending on which boat); the National Park Service shuttle bus or a short water-taxi hop then covers the last few miles to Weaver Point Campground on the north shore, which is the trailhead (some parties instead bike or hike the road from Stehekin to High Bridge/Harlequin Bridge and pick up the Stehekin River Trail on foot). From Weaver Point (~1,160 ft), pick up the Devore Creek Trail (USFS Trail #1244). The trail switchbacks steeply — roughly 30 switchbacks over about 2 miles — up through open forest to the Glacier Peak Wilderness boundary at ~2,300 ft, then settles into a steady, unrelenting climb alongside Devore Creek for another 3+ miles; this middle section sees little maintenance and can be brushy underfoot. Devore Creek is crossed/paralleled repeatedly and is the reliable water source through this stretch. At roughly 4-5 miles from Weaver Point you reach Bird Creek Camp (~4,200 ft), the last established campsite and a common bivy for a two-day itinerary. From here leave the maintained tread and follow the open-forest use path/animal trails up along Bird Creek about another mile to a higher, unofficial camp at ~5,400 ft — many parties who want a single big summit day push to this basin instead. Continue upvalley along Bird Creek through heather benches and a talus staircase into a broader open basin holding the Bird Lakes (~7,000 ft); cross Bird Creek near the northern lake (last reliable water before the summit ridge). From the lake basin, climb loose Class 2-3 talus/scree southeast to a col (~7,500 ft) on Devore's southeast ridge, passing beneath a pair of distinctive rock towers locally called \"the Bottles.\" Expect lingering snow in this basin and on the col approach well into July, sometimes requiring an ice axe/crampons on a short ~40-degree traverse; loose rock and occasional avalanche debris are the main hazards on this upper section. From the col, the route turns west along the summit ridge/west flank — ledges and shallow gullies of variable rock quality (some solid, some \"kitty-litter\"-covered slab) lead through Class 3-4 scrambling with a route-finding crux threading the ledge systems below the summit block.",
+   "descent_text": "Descend the same way you came up: reverse the west-ridge/west-flank ledge system back down to the 7,500 ft col, then drop into the Bird Lakes basin and follow Bird Creek back down through the 5,400 ft high camp to Bird Creek Camp and the maintained Devore Creek Trail to Weaver Point. This is fundamentally a downclimb, not a rappel-dependent descent — most of the Class 3-4 terrain is downclimbed in place. The one spot that regularly gets a rope is a short, steep ~20-ft 4th-class rock step just below the summit; there are no bolts or chains, but slung webbing rappel anchors have been found in place at the edge of the summit ridge and above the step — inspect and back up any old webbing before trusting it (carry spare cord), or downclimb it with a spot/handline. At least one party describes placing two short rappels on the descent (the summit step plus one more short step lower on the ridge where a loaded pack makes downclimbing feel insecure); a single 30m rope, or a doubled 60m rope, is more than enough length for either. Treat this as an optional-rappel route: confident scramblers downclimb the whole thing with zero rappels, while parties less comfortable with exposed 4th class commonly place one or two short raps off natural anchors. The bigger real hazard on descent is footing — the ridge and the approach basin are loose talus, scree, and \"kitty-litter\" over slab, and at least one climber has taken a ~15-ft scree fall here with contusions and a bruised rib, so move carefully, spread the party out to avoid rockfall onto those below, and expect the ~7,200 ft of elevation loss back to Weaver Point (and the ferry schedule back down Lake Chelan) to be a long day.",
+   "bail": "There is no shortcut retreat once past Bird Creek Camp — the only way out is back down the southeast ridge/face to the basin and then out the Devore Creek Trail; budget a full extra day of contingency given the remoteness and multi-day approach.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2",
+     "notes": "Bird Creek Camp (~4,200 ft) to the open ~7,000 ft basin/lakes; talus, meadows, occasional snow ramps.",
+     "pitch": "Basin approach"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Cross Bird Creek at the northern lake, ascend SE to a col at ~7,500 ft on Devore's southeast ridge.",
+     "pitch": "Southeast ridge col"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "From the col head west; loose rock and exposed ledges past a false summit block.",
+     "pitch": "Ridge scramble"
+    },
+    {
+     "grade": "5.0-5.4",
+     "notes": "Unavoidable ~20-ft rock face just below the true summit; a slung tree/rap anchor exists nearby for those who want protection.",
+     "pitch": "Crux step"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Short final exposed pitch to the true summit and 1940 first-ascent register.",
+     "pitch": "Summit pitch"
+    }
+   ],
+   "itinerary": {
+    "cal": "Ferry to Stehekin runs on a limited schedule (often a few departures per week outside peak summer) and the route is typically snow-free and passable roughly July through September; check NPS/Lake Chelan Boat Co. schedules before planning exact days.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Drive to Fields Point Landing on Lake Chelan and take the Lady of the Lake/Lady Express ferry to Stehekin, then a boat shuttle or road walk to Weaver Point Campground on Lake Chelan. From there follow the Devore Creek Trail roughly 4-5 miles, gaining steadily through forest, to Bird Creek Camp (~4,200 ft), the standard basecamp for Devore Peak.",
+      "hours": 6,
+      "miles": 9,
+      "title": "Ferry in and approach to Bird Creek Camp",
+      "gainFt": 3100,
+      "lossFt": 300,
+      "packLb": 38,
+      "schedule": [
+       {
+        "time": "",
+        "label": "Fields Point Landing",
+        "detail": "Catch the Lake Chelan ferry to Stehekin; check current schedule, as it only runs a few times a week in shoulder season."
+       },
+       {
+        "time": "",
+        "label": "Stehekin to Weaver Point",
+        "detail": "Boat shuttle or lakeshore road/trail to the Weaver Point Campground trailhead."
+       },
+       {
+        "time": "",
+        "label": "Devore Creek Trail",
+        "detail": "Hike ~4-5 miles up Devore Creek Trail to Bird Creek Camp at ~4,200 ft."
+       }
+      ],
+      "objective": "Reach Bird Creek Camp basecamp"
+     },
+     {
+      "n": 2,
+      "note": "Leave camp pre-dawn and head up-valley along Bird Creek, cutting off-trail into the basin above ~5,400 ft, then continuing to the open lake basin near 7,000 ft. Cross Bird Creek at the northern lake, climb SE to a col (~7,500 ft) on Devore's southeast ridge, then work west across scree/talus and short Class 3-4 rock steps to the summit; reverse the same line to camp.",
+      "hours": 11,
+      "miles": 7,
+      "title": "Summit push via the SE col and West Ridge/face",
+      "gainFt": 4200,
+      "lossFt": 4200,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave Bird Creek Camp",
+        "detail": "Early alpine start; off-trail travel through the basin takes longer than trail miles suggest."
+       },
+       {
+        "time": "~8:00 AM",
+        "label": "Reach 7,000 ft lake basin",
+        "detail": "Cross Bird Creek near the northern lake and start the climb to the SE col."
+       },
+       {
+        "time": "~9:30 AM",
+        "label": "Gain the SE ridge col (~7,500 ft)",
+        "detail": "Turn west and scramble/climb loose ground toward the summit block."
+       },
+       {
+        "time": "~11:00 AM - 12:30 PM",
+        "label": "Summit (8,383 ft)",
+        "detail": "Class 3-4 scrambling with some exposed moves near the top; some parties place a rope on the crux step."
+       },
+       {
+        "time": "~4:00 - 6:00 PM",
+        "label": "Back at Bird Creek Camp",
+        "detail": "Descent retraces the ascent line; loose talus and the basin crossing slow the return."
+       }
+      ],
+      "objective": "Climb Devore Peak (8,383 ft) and return to Bird Creek Camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and hike back down the Devore Creek Trail to Weaver Point, then boat/walk to Stehekin in time for the return ferry to Fields Point Landing.",
+      "hours": 5,
+      "miles": 9,
+      "title": "Hike out and ferry home",
+      "gainFt": 300,
+      "lossFt": 3100,
+      "packLb": 32,
+      "schedule": [],
+      "objective": "Return to Weaver Point and catch the ferry out"
+     }
+    ],
+    "totalNote": "A 3-day, 2-night wilderness trip car-to-car (plus ferry): roughly 25 miles and 7,600 ft of gain round trip, with one long ~11-hour summit day from Bird Creek Camp over a col on Devore's SE ridge and west to the summit."
+   },
+   "access": {
+    "fees": "No fee to climb; a round-trip passenger ferry (Lake Chelan Boat Co. 'Lady of the Lake' or Stehekin Ferry) or floatplane fare is required to reach Stehekin.",
+    "rules": "Glacier Peak Wilderness group-size and camping regulations apply on USFS-managed sections; NPS backcountry regulations (bear canister requirements, designated-site rules) apply within the Lake Chelan National Recreation Area near Stehekin and Weaver Point.",
+    "permit": "No permit is required for the Weaver Point boat-in campground itself (first-come, first-served). For off-trail/cross-country backcountry camping elsewhere on the route, NPS North Cascades now requires a paid backcountry permit — $10/person/night plus a $6 non-refundable reservation fee (in effect since a March 2024 fee-structure change), booked via recreation.gov (60% of sites) or obtained walk-up (40% held); contact the park's wilderness office (noca_wilderness@nps.gov, 360-854-7200) or the Golden West Visitor Center in Stehekin (509-699-2080 ext. 14) if open for current conditions.",
+    "closures": "Sisi Fire: Okanogan-Wenatchee National Forest closure order 06-17-02-2026-35 (Sisi Fire), in effect August 22 through December 31, 2026 unless lifted sooner, closes Devore Creek Trail 1244 from where it enters the national forest to Hilgard Pass, the 4th of July Basin Trail 1244.1 and Company Creek Trail 1243. This approach cannot be used while the order stands. Chelan Ranger District: (509) 682-4900.",
+    "landManager": "Chelan Ranger District, Okanogan-Wenatchee National Forest (Glacier Peak Wilderness) for the upper mountain; Lake Chelan National Recreation Area, National Park Service (North Cascades NP Complex) for the Stehekin/Weaver Point trailhead corridor.",
+    "passRequired": "None at the Stehekin-area trailheads (NPS land, no entrance fee or Northwest Forest Pass required); a Northwest Forest Pass may be needed only if accessing via a separate front-country Wenatchee NF trailhead.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "Free self-issue Glacier Peak Wilderness permit; an NPS backcountry permit for any night inside Lake Chelan NRA",
+     "where": "Bird Creek camps are in the Glacier Peak Wilderness: fill out the self-issue permit at the trail register. Nights in the Stehekin valley or at Weaver Point need an NPS permit, reserved on Recreation.gov or picked up in Stehekin."
+    }
+   },
+   "road": {
+    "name": "No vehicle road reaches Stehekin — access is by passenger ferry, floatplane, or trail only",
+    "status": "Boat/floatplane access only; no vehicle road reaches Stehekin or the trailhead",
+    "driveNote": "Take the Lady Express ferry (~2.5 hrs, ~$43/adult one-way) or Lady of the Lake (Sundays only, ~4 hrs, ~$25/adult) from Field's Point Landing near Chelan to Stehekin Landing, or fly in by floatplane. From Stehekin, use the NPS shuttle or hike/bike the Stehekin Valley Road to reach the Harlequin Bridge or Company Creek trailheads, or arrange a boat drop directly at Weaver Point Campground.",
+    "seasonalGate": "The Weaver Point dock is removed each fall and reinstalled in early summer once Lake Chelan reaches ~1,096 ft"
+   },
+   "climate": {
+    "fall": "Cooler, often stable weather but shorter days; early-season snow is possible by October.",
+    "spring": "Lower Devore Creek Trail is typically snow-free by early summer, but the upper basin and route commonly remain snow-covered.",
+    "summer": "Best climbing window; talus and scree are exposed, though snow patches and moats can persist into July on shaded sections.",
+    "winter": "A winter ascent has been documented by determined parties, but boat/lake access and deep snow make it a serious undertaking.",
+    "typical": "East-slope Cascade climate transitioning toward the wetter crest",
+    "bySeason": {
+     "fall": "Good early, deteriorating later",
+     "spring": "Snowbound; limited access",
+     "summer": "Prime window; dry rock, watch for storms",
+     "winter": "Full winter conditions; not a standard scramble objective"
+    },
+    "forecastZone": "NOAA Central Washington Cascades"
+   },
+   "emergency": {
+    "notes": "Stehekin has no road access — medical evacuation from the Devore Peak area is by boat, floatplane, or helicopter only. Report emergencies via 911 or through the Golden West Visitor Center in Stehekin (509-699-2080 ext. 14), which coordinates with North Cascades NPS Complex and Chelan County SAR.",
+    "county": "Chelan",
+    "rangerStation": "Golden West Visitor Center, Stehekin (North Cascades NPS Complex / Lake Chelan NRA), 509-699-2080 ext. 14; Chelan Ranger District, Okanogan-Wenatchee NF, for Glacier Peak Wilderness portions",
+    "nearestHospital": "Lake Chelan Health Hospital, 110 S Apple Blossom Dr, Chelan, WA — reachable only by boat/floatplane from Stehekin, so evacuation is slow",
+    "sheriffDispatch": "911 (Chelan County Sheriff SAR responds in coordination with NPS)"
+   },
+   "lists": [
+    "Washington Bulger List (100 Highest Peaks in Washington)"
+   ],
+   "crowds": {
+    "peakTraffic": "rarely climbed; occasional peakbagger visits mid-July through August (Devore is on the Washington 100 Highest Peaks list, which drives a small but steady trickle of dedicated peakbaggers despite the remote ferry-in approach)",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - likely under 10-15 parties per season"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "High - multi-day wilderness itinerary combining a long boat/ferry approach with a lengthy off-trail and cross-country ascent from the Stehekin/Company Creek or Agnes Creek drainages",
+     "packWeight": "35-45 lb multi-day pack (camping/bivy gear, several days of food) for most of the approach, lightened to a day pack for the summit push"
+    },
+    "approachTime": "Multi-day approach (long remote hike from Stehekin via Company Creek or Agnes Creek); not a car-to-summit day objective",
+    "requiredSkills": [
+     "Class 3 scrambling on loose/exposed rock",
+     "off-trail and cross-country routefinding on a broad ridge with no established path",
+     "map/compass/GPS navigation in remote terrain",
+     "wilderness self-sufficiency (multi-day, far from any road or quick rescue)",
+     "comfort with early/late-season snow travel in shaded gullies"
+    ],
+    "experienceLevel": "Experienced scrambler comfortable with sustained Class 3 terrain, loose rock, and independent routefinding on a broad, complex ridge with no cairns or beaten path; this is not a beginner objective given the remoteness"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Season opens; snow can linger in shaded gullies early in the month, but conditions are generally climbable",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Still largely snowbound with limited trail/creek access; not a viable window for this route",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Prime window - driest rock, most stable access, though afternoon thunderstorms remain a watch-out",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Good conditions early in the month, deteriorating later in fall; rock stays dry but weather grows less reliable as the month progresses",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "East-slope Cascade climate transitioning toward the wetter crest; drier and more continental than west-side Cascades in summer, but still convective",
+     "probability": "Afternoon thunderstorms common July-August, especially as the route gains the exposed upper ridge"
+    },
+    "exposure": "Sustained Class 3 scrambling on loose rock with routefinding across a broad, complex ridge; a slip on loose terrain could produce a serious fall, and the very long remote approach (multi-day from Stehekin) means any injury or rescue is far more consequential than on a roadside scramble",
+    "avalanche": {
+     "zone": "No NWAC forecast zone precisely covers this remote Entiat/Stehekin-adjacent peak; nearest approximate coverage is the East Central Cascades zone, but NWAC forecasting is oriented toward winter recreation season, not this route's July-September climbing window",
+     "byMonth": {
+      "July": "Moderate",
+      "June": "Considerable",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel on this route"
+   },
+   "data_quality": {
+    "gaps": [
+     "The route name on file ('West Ridge') does not match any documented route name for Devore Peak — all sources describe a 'Southeast Ridge'/southeast face line (and a separate North Ridge line); consider renaming the route to match.",
+     "Exact grade of the summit crux varies by source and by exact line taken (Class 4 vs. 5.0-5.4) — treated as a range rather than a single number.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 3,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.276774,
+    "peakLng": -120.7653
+   },
+   "sling_rack": {
+    "cams": "0.3-2 in, light rack",
+    "nuts": "small set",
+    "slings": 2
+   },
+   "alpine_draws": 2,
+   "rope_type": "single",
+   "rope_length_m": 30,
+   "rope_note": "Approach to a col (~7,500 ft) on Devore's SE ridge, then face scramble to summit with routefinding; Mountaineers beta describes Class 4 terrain with a few Class 5 moves, and descent uses a mix of rappels and downclimbing — meaningfully harder than the listed Class 2-3 grade.",
+   "ascender": null,
+   "corrections": "Source grade (Class 4 w/ 5th-class moves, rappel required) exceeds the DB's listed Class 2-3; treat as harder than labeled.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Light cam rack 0.3–2in",
+    "Small nut set",
+    "2 slings",
+    "30-60m rope for the exposed crux/optional rappel"
+   ],
+   "features": [
+    "Technical",
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Devore Creek Trail and the Bird Creek basin",
+     "notes": "There is no road to this side of the valley: come up the lake by passenger ferry, then reach the Devore Creek Trail either by shuttle to the Harlequin Bridge stop and three flat miles of river trail, or by water taxi to Weaver Point and join the same junction from the other direction. The trail then climbs hard — roughly thirty switchbacks through rock bluffs to the wilderness boundary, then a relentless grade alongside Devore Creek on lightly maintained, brushy tread. Above the established camp, leave the trail and follow use paths and animal trails up along Bird Creek, gaining a hundred feet or so of hillside before sidehilling rather than fighting up the creekbed. Heather benches and a talus staircase, then a looser gully of scree and dirt, open into the lake basin near 7,000 ft.",
+     "season": "Mid-July through September. Snow lingers in the basin and on the col approach well into July.",
+     "hazards": [
+      "Lightly maintained, brushy tread on the middle section of the trail",
+      "The gully out of the creek tops out in a false, larch-filled minor basin before the real lake basin",
+      "Snow on the north side of the Bottles into July, with a short stretch around forty degrees — crampons wanted",
+      "Later in the season that snow shrinks to a moat squeeze at its edge that parties have backed off",
+      "An exposed ledge traverse across the southeast face with mixed rock, some solid and some slab under loose gravel",
+      "A short vertical step below the summit with no cracks, only ledges and slabs, that most parties rappel on the way down",
+      "A false summit before the true one"
+     ],
+     "baseFinding": "THE BOTTLES SIT ABOVE THE COL, NOT BELOW IT, AND YOU PASS THEM ON THEIR NORTH SIDE. From the Bird Lakes basin climb talus and scree southeast to a saddle around 7,500 ft, just west of the point marked 7657; that saddle is where you gain the ridge, and the two towers known locally as the Bottles are not there yet. An easy ridgewalk west along the crest brings you to them near 7,650 ft, and the way past is across the snow on their north side to the small notch immediately west of them — early season easy snow with one short stretch around forty degrees, later in the year a squeeze up the moat at the snow's edge that parties have backed off from. If you are hunting for towers before you have reached the crest, you are looking too low. Beyond the notch the route crosses the southeast face, and the line is marked by hardware rather than by rock features: a rappel anchor sits at the edge of the summit ridge, and cairns run from it along the left-hand side of the crest. The unavoidable step near the top has a second rappel station visible above it, which makes it look shorter than it climbs — there are no cracks in it, only ledges and slabs. Above the step, traverse left at the same height around an exposed corner until an obvious gully with a short boot path leading into it appears; if no such gully turns up, you are on the wrong ledge."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "loose Class 2-3",
+     "label": "Talus/scree to the ~7,500 ft col on the southeast ridge",
+     "notes": "From the Bird Lakes basin, climb talus/scree southeast to a col (~7,500 ft) on Devore's southeast ridge, passing beneath a pair of distinctive rock towers locally called 'the Bottles.' Expect lingering snow in the basin and on the col approach well into July, sometimes requiring an ice axe/crampons on a short ~40-degree traverse; loose rock and occasional avalanche debris are the main hazards on this upper section."
+    },
+    {
+     "n": 2,
+     "class": "Class 3-4",
+     "label": "West along the summit ridge / west flank",
+     "notes": "From the col the route turns west along the summit ridge/west flank — ledges and shallow gullies of variable rock quality, some solid, some 'kitty-litter'-covered slab, with a route-finding crux threading the ledge systems below the summit block."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 4200,
+     "name": "Bird Creek Camp, Devore Creek trail",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore Creek, and everything about them - the wilderness, the permit system, the transport - is different from the Twisp River peaks. The usual way in is a ferry to the Stehekin landing, then the Company Creek road, with the Devore Creek trail reached from Weaver Point on the far side of the head of the lake; Bird Creek Camp sits about four miles up that trail at around 4,200 ft. From here Tupshin's South Ridge and Devore's Southeast Ridge are both reachable, and parties commonly climb both from the same base, either from this camp or from a higher bivouac around 5,800 ft in the Bird Creek basin. Both are steep, brushy and loose by reputation and neither is a walk-up. The season is roughly late July into early October; the approach is low, hot and overgrown early, and the upper slopes hold snow. This is the least forgiving logistics in the zone - a party that misses a boat or a bus loses a day at each end - so build slack into the itinerary and carry more food than the schedule strictly needs.",
+     "water": "Bird Creek is immediately past the camp; the site sits about a hundred feet short of the crossing. Below here, Devore Creek is the last dependable water on the climb, so fill there if you are unsure. Parties going higher can camp near 5,800 ft in the Bird Creek drainage, where there is water in early and mid-season but which can dry out late.",
+     "permit": "This is inside the Lake Chelan National Recreation Area, so a North Cascades backcountry permit is required year-round for the overnight, tied to a specific camp and itinerary. Peak-season demand is high enough that an early-access lottery governs the best dates and the odds are poor; plan around it rather than hoping. Open fires are banned at several camps in this unit and restricted to established pits elsewhere, and a total ban is normal by late summer. The ferry and the Stehekin shuttle are the other half of the planning: the boat must be booked, the shuttle up the valley runs a limited seasonal schedule, and the Company Creek road trailhead is several miles from the landing, so missing a bus costs you a half day on foot.",
+     "capacity": "Three small tent openings and a fire ring - room for perhaps four small tents. Very small, and there is no overflow."
+    },
+    {
+     "name": "Bird Creek Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_lichtenberg_mountain_southeast_ridge",
+  "name": "Southeast Ridge (from Lichtenwasser Lake)",
+  "area_id": "wa_lichtenberg_mountain",
+  "findings": [
+   "r014.json: Sources split: a climbing-club route page gives 7 miles and 2,100 ft from the first switchback, while the 1975 party's report gives about 4 miles and 2,600 ft round trip from the Smith Brook Meadows pullout, and a winter page gives 4 miles including a 2-mile road walk. The route's own pins (road to Lichtenwasser Lake about 1.1 km straight-line, lake to summit about 1.2 km) favour roughly 2 miles one way, i.e. the stored dist_km of 3.2, but no two independent sources agree on a single round-trip figure. The itinerary's '4 to 7 miles' already brackets both; the beta's flat '7-mile' is the claim most likely wrong but is left until sources agree.",
+   "r014.json: The Lichtenberg Boulders are a cluster below a large slab on the mountain, about 2.5 miles from the Smithbrook trailhead, reached mostly on the Lake Valhalla/McCausland trail plus a short bushwhack — the sibling west-side approach, not the Lichtenwasser Lake fishing trail this route uses; the pin's distMi 2.5 is that trail's mileage. The fix is to drop the pin, which is a waypoint-list change outside the text/number patch scope, so it is flagged (research confirms the contradiction) rather than patched. | The Lichtenberg Boulders pin does not belong on this route's waypoint list and should be removed."
+  ],
+  "gpx_summary": "no drawn line",
+  "row": {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "area_id": "wa_lichtenberg_mountain",
+   "name": "Southeast Ridge (from Lichtenwasser Lake)",
+   "discipline": "mountaineering",
+   "grade": null,
+   "grade_system": null,
+   "grade_num": null,
+   "pitches": null,
+   "length_m": 346,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "SE",
+   "season": "Dec-Apr",
+   "description": null,
+   "gear": [
+    "Trekking poles (summer)",
+    "Skis with skins or snowshoes (winter)",
+    "Avalanche transceiver, probe and shovel (winter)",
+    "Ice axe for firm spring snow",
+    "Map, compass and GPS with the bearings loaded — 177 degrees true to Lichtenwasser Lake, 248 degrees to the 5,640 ft saddle",
+    "Helmet (optional, for the loose ridge rock in summer)"
+   ],
+   "hazards": [
+    "Avalanche hazard on both the north and south flanks of the peak, with documented slide cycles on the north slopes below 5,000 ft and a history of large releases on the south side.",
+    "Cornice development along the summit ridge in winter and spring.",
+    "Steep timbered slopes and tree wells on the approach from the road to Lichtenwasser Lake.",
+    "Loose rock on the ridge crest above the saddle in summer conditions.",
+    "Whiteout navigation risk in the featureless forest between the road and the lake.",
+    "No cell coverage, no fixed anchors, and a 31-mile drive to the nearest 24-hour emergency department."
+   ],
+   "verif": null,
+   "overview": "The short, direct line on Lichtenberg's northeast side and the peak's most-travelled route: a fishing trail to Lichtenwasser Lake at 4,708 ft, then open slopes southwest to a 5,640-foot saddle and an easy rocky ridge to the 5,844-foot summit. It is a rock scramble in summer and the classic Stevens Pass ski and snowshoe tour in winter.",
+   "beta": "This is the line described as a ridge that 'just screams skin me in winter'. In summer it is a 7-mile, 2,100-foot scramble starting from the first switchback on Smith Brook Road / FR 6700 and following the Lichtenwasser Lake fishing trail to a saddle on the southeast ridge. Jim Brisbine's party climbed it as a rock scramble over 20-21 September 1975, camping at Lichtenwasser Lake and continuing over the true summit to The Lichtenhorn before descending the west ridge. The winter version has you leave the road at the first major hairpin, head southwest up wooded and steep but always snowshoeable hillside, traverse toward Lichtenwasser Lake at about 4,600 ft (crossing the lake if it is frozen), then take easy slopes to the ridge crest and follow the summit ridge to the top. A winter north-side version is given with compass bearings: ski 2.6 miles up Smithbrook Road, leave it before the major switchback near 3,970 ft, follow a true bearing of 177 degrees to Lichtenwasser Lake, then 248 degrees from the lake's south end to a 5,640-foot saddle, and ascend the southeast ridge to the summit — about 5.2-plus miles, rated 2 to 2+ in skill and 2-minus in fitness, and included among the classic backcountry ski and snowboard routes in Washington. Avalanche hazard is the defining concern; both sides of the mountain present it.",
+   "turnaround": "Make the call on snow stability and visibility rather than the clock. Turn around if the slopes between Lichtenwasser Lake and the 5,640-foot saddle show any of the classic instability signs, if the NWAC Stevens Pass forecast is elevated and you would be travelling on or under steep open terrain, or if cloud drops low enough that you cannot hold your bearings between the lake and the saddle — this is compass-and-GPS country in a whiteout, with no landmarks in the trees. In summer, allow enough daylight to find the fishing trail again; missing it means a slow forested descent to the road.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "Class 2-3 rock scramble on the ridge above the 5,640 ft saddle; class 1-2 on the slopes below",
+   "ice_grade": null,
+   "gain_ft": 2100,
+   "loss_ft": 2100,
+   "dist_km": 3.2,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "I",
+   "face": "Southeast Ridge / northeast side above Lichtenwasser Lake",
+   "permit": null,
+   "comms": "No cell service on Smith Brook Road above US 2, at Lichtenwasser Lake, or on the summit. Download offline maps and load your bearings or track before leaving the highway. Carry a satellite messenger; in winter this matters more than in summer, since a burial or injury here is time-critical and there is no way to call for help from the basin.",
+   "descent": "Reverse the southeast ridge to the 5,640 ft saddle and descend northeast to Lichtenwasser Lake and the road; skiers descend the same north-side slopes.",
+   "obj_haz": [
+    "avalanche",
+    "cornices on the summit ridge",
+    "tree wells and steep timber on the lower approach",
+    "loose rock",
+    "route-finding in forest and whiteout",
+    "no trail above the lake"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.8025,
+     "lng": -121.0765,
+     "elev": 4000,
+     "name": "Smith Brook Road (FR 6700) — first major switchback, start of the Lichtenwasser Lake approach",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 4000,
+     "directions": "In summer, drive US 2 to the Smith Brook Road turnoff, Forest Road 6700, roughly 3.5 to 4 miles east of Stevens Pass around mileposts 68.7 to 68.9. Follow the unpaved road up toward the Smithbrook Trailhead and park at or near the first major switchback, where the Lichtenwasser Lake fishing trail leads off toward the lake. In winter FR 6700 is unplowed, so park on the shoulder of US 2 at or just before the Smith Brook Road turnoff and skin or snowshoe 2 to 2.6 miles up the snow-covered road, which is usually well packed by other parties. Start early on a winter trip so the road approach is behind you before the snow softens."
+    },
+    {
+     "lat": 47.7923562,
+     "lng": -121.076815,
+     "elev": 4708,
+     "name": "Lichtenwasser Lake — camp and the launching point for the 248-degree bearing to the saddle",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 4708
+    },
+    {
+     "lat": 47.79369,
+     "lng": -121.08864,
+     "elev": 4683,
+     "name": "Lichtenberg Boulders (granitic boulder field on the north side)",
+     "type": "Junction",
+     "distMi": 2.5,
+     "elevFt": 4683
+    },
+    {
+     "lat": 47.7882093,
+     "lng": -121.0912723,
+     "elev": 5844,
+     "name": "Lichtenberg Mountain summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 5844
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 5,
+    "summitTimeHrs": 1.5,
+    "descentTimeHrs": 2,
+    "approachTimeHrs": 1.5,
+    "recommendedStart": "Summer: a mid-morning start is ample for this short day. Winter: start at first light — the 2 to 2.6 miles of road eat time on the way in, and an early start lets you be on and off the open slopes below the saddle before the day warms them."
+   },
+   "detailed_rack": "No rock gear. Summer: trekking poles and boots with decent tread are the whole kit. Winter: skis with skins or snowshoes, plus the standard avalanche kit — transceiver, probe and shovel, worn and practised with, not carried as decoration. An ice axe is worth having in spring or after a freeze-thaw cycle for the firm slopes below the saddle; ski crampons help on the road and lower slopes when the track is icy in the morning.",
+   "what_to_bring": [
+    "Offline topo maps and a downloaded GPX track",
+    "NWAC Stevens Pass avalanche forecast checked the morning of the trip",
+    "Satellite messenger",
+    "2 litres of water plus a filter (Lichtenwasser Lake in summer)",
+    "Insect repellent in July and August",
+    "Insulation and shell adequate for a windy summit ridge",
+    "Headlamp",
+    "Goggles and warm gloves in winter",
+    "Northwest Forest Pass for the dashboard"
+   ],
+   "pro_tips": [
+    "The road walk is the crux of the winter day, not the mountain. It is usually packed hard by other parties, so boots often work as well as snowshoes for the first 2 miles.",
+    "Load the compass bearings, not just a track: 177 degrees true from the road to Lichtenwasser Lake and 248 degrees from the lake's south end to the 5,640-foot saddle. The forested lower section is featureless in flat light.",
+    "Cross Lichtenwasser Lake directly if it is solidly frozen — it saves a slow traverse around the shore. Verify the ice first.",
+    "The north side generally holds better snow quality through the winter than the south, which is the main reason to prefer this line over the Yodelin approach.",
+    "In summer, camping at Lichtenwasser Lake makes this a relaxed overnight and lets you tag The Lichtenhorn as well as the main summit, which is what the 1975 party did.",
+    "If you want a circuit, climbing this side and descending south toward Yodelin works — but the south exit crosses private ground near the lodge, so ask permission before you leave a car there.",
+    "This route reaches the true 5,844-foot summit; the west peak (The Lichtenhorn, ~5,800 ft) is a separate top requiring a further scramble west along the ridge."
+   ],
+   "watch_out": [
+    "Both flanks of the mountain present avalanche hazard, and the south side has been observed to release massive slides. Do not treat the moderate skill rating as a statement about stability.",
+    "The open bowl between Lichtenwasser Lake and the 5,640-foot saddle is the committing terrain — evaluate it before you enter it, not from partway up.",
+    "Cornices can form along the summit ridge; stay well back from the west and north edges in winter.",
+    "The lower forested slopes are steep enough in places to slide and hold tree wells; keep partners in sight.",
+    "Flat light in the trees makes the bearings essential; there are no reliable landmarks below the lake.",
+    "No cell service anywhere above US 2."
+   ],
+   "pro_needs": "None. There is no protectable rock climbing on this route and no fixed anchors anywhere on the mountain.",
+   "best_season": "This route has two seasons and both are good. Winter, roughly December through April, is the peak's main season and what this line is best known for — snow cover buries the brush and turns the whole thing into a straightforward skin and ski, and the north side holds the better snow quality through most of the winter. Summer and early autumn, July through October, give a short and pleasant rock and heather scramble; September is ideal, with the 1975 first documented ascent of the line falling on 20-21 September. Avoid late spring, when the snowpack is wet and heavy, avalanche hazard lingers on both flanks, and the ground below is still buried but no longer supportive.",
+   "high_point_ft": 5844,
+   "aid_grade": null,
+   "approach": "Summer: drive US 2 to the Smith Brook Road / FR 6700 turnoff 3.5 miles east of Stevens Pass and follow the unpaved road up toward the Smithbrook Trailhead. Park at or near the first major switchback and find the Lichtenwasser Lake fishing trail, which leads roughly southeast then south through forest to the lake at 4,708 ft (47.7924, -121.0768). From the south end of the lake leave any semblance of path and climb southwest up open and lightly wooded slopes to the broad 5,640-foot saddle on the mountain's southeast ridge; turn right (northwest) and follow the ridge to the summit. Winter: FR 6700 is unplowed, so park on the shoulder of US 2 at or just before the Smith Brook Road turnoff, around mileposts 68.7-68.9 and 4 miles east of Stevens Pass, and skin or snowshoe 2 to 2.6 miles up the snow-covered road — it is usually well packed by other parties. Leave the road at the first major hairpin (near 3,970 ft), head southwest and then follow a bearing of 177 degrees true to Lichtenwasser Lake, crossing it when frozen, and continue on 248 degrees to the 5,640-foot saddle before finishing up the ridge.",
+   "descent_text": "The normal descent is a straight reversal: back down the summit ridge southeast to the 5,640-foot saddle, then northeast down the open slopes to Lichtenwasser Lake, and out on the fishing trail to Smith Brook Road. In winter this is the ski descent as well, and it is the reason the route is popular — the north side generally holds better snow through the season than the south. Two variants are known. Brisbine's 1975 party continued west over the true summit to The Lichtenhorn and descended the west ridge, which makes a traverse of the whole massif but commits you to trailless ground on the far side. There is also a circuit going up one side of the mountain and down the other, exiting south toward the Yodelin area near milepost 66.25, 1.3 miles east of Stevens Pass — that exit crosses private land near the lodge and homes, so ask permission before parking there. Whichever you choose, assess snow stability continuously before dropping into any steep slope: both flanks present avalanche hazard, and the south side in particular sheds massive slides from time to time.",
+   "bail": "Retreat is easy at every stage. From the summit ridge you can reverse to the 5,640-foot saddle in minutes, and from the saddle the fall line drops you back to Lichtenwasser Lake. The road approach means there is never more than a couple of miles of easy ground between you and the car. The real bail decision on this route is an avalanche decision rather than a terrain one: if stability is questionable on the slopes between the lake and the saddle, turn around at the lake — it is a fine destination in its own right — rather than committing to the open bowl above it. In winter, the packed road makes the return trivially fast even in bad weather.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1-2 (snow slopes in winter)",
+     "notes": "From the lake's south end, climb southwest on a bearing of roughly 248 degrees true up open and lightly wooded slopes to the broad saddle on the southeast ridge. This is the avalanche terrain on the route and the section to assess carefully in winter; in summer it is easy walking on heather and scattered boulders.",
+     "pitch": "Section 1 - Lichtenwasser Lake (4,708 ft) to the 5,640 ft saddle",
+     "lengthM": 284
+    },
+    {
+     "grade": "Class 2-3 rock scramble (easy snow ridge in winter)",
+     "notes": "Turn northwest at the saddle and follow the ridge crest to the 5,844-foot top. Short and easy, with a little hands-on scrambling on blocky rock when snow-free. Watch for cornices along the crest in winter.",
+     "pitch": "Section 2 - southeast ridge from the 5,640 ft saddle to the summit",
+     "lengthM": 62
+    }
+   ],
+   "itinerary": "Summer: a single easy day, roughly 4 to 7 miles round trip depending on where you leave the road, with about 2,100 to 2,600 ft of gain. Brisbine's party made an overnight of it in September, camping at Lichtenwasser Lake and taking in both the true summit and The Lichtenhorn the following day — a pleasant way to do it if you want an unhurried trip. Winter: a full but moderate day tour, about 5.2 to 8 miles and 2,100 to 2,700 ft of gain from US 2, with the road approach taking a good chunk of the time. Start early in winter to have the road walk behind you before the snow softens and to keep your options open on stability.",
+   "access": {
+    "fees": "The Forest Service lists no fee for the Smithbrook Trailhead site, and no permit is required for the north-side winter start on the US 2 shoulder. A Northwest Forest Pass is nonetheless reportedly expected at the trailhead — carry one if you park on the forest road.",
+    "permit": "No permit or quota for day or overnight use in the Henry M. Jackson Wilderness here. Standard wilderness regulations apply; no mechanized travel.",
+    "closures": "FR 6700 is unplowed and effectively closed in winter. The southern Yodelin start uses private parking and requires the owners' permission. Campfires are prohibited at Lake Valhalla and discouraged throughout the wilderness.",
+    "landManager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District, Leavenworth — (509) 548-2550. Lichtenwasser Lake and the summit lie within the Henry M. Jackson Wilderness.",
+    "passRequired": "Northwest Forest Pass or America the Beautiful recommended for the FR 6700 trailhead; no pass needed for the winter US 2 shoulder parking."
+   },
+   "road": {
+    "name": "Smith Brook Road / Forest Road 6700",
+    "status": "Unpaved and passable to passenger cars in summer, roughly 2.5-3 miles from US 2 to the Smithbrook Trailhead at about 4,000 ft; this route leaves it earlier, at the first major switchback near 3,970 ft. Not recommended for stock trucks or trailers.",
+    "driveNote": "From Stevens Pass drive 3.5 miles east on US 2 and turn left (north) at the FR 6700 sign; from Leavenworth drive 31 miles west and turn right. In winter, watch for the large pullout on the highway shoulder about a quarter mile before the Smithbrook sign. The alternative south-side start near Yodelin (milepost 66.25, 1.3 miles east of Stevens Pass) uses private parking and requires permission from the lodge or homeowners.",
+    "seasonalGate": "Unplowed and impassable to vehicles once snow arrives. Winter parties park on the US 2 shoulder at the Smith Brook Road turnoff, roughly milepost 68.7-68.9 and 4.2 miles east of Stevens Pass, and travel 2 to 2.6 miles of snow-covered road on foot, snowshoes or skis; it is usually packed by prior traffic."
+   },
+   "climate": {
+    "fall": "Excellent. Cool, dry, bug-free and with firm footing; the 1975 documented ascent was on 20-21 September. The window closes with the first substantial snowfall, usually late October or November.",
+    "spring": "Wet, heavy maritime snowpack and continuing avalanche hazard on both flanks. The road melts out ahead of the mountain, giving a long dry approach to a still-snowbound peak — an awkward combination and the least attractive season on this route.",
+    "summer": "Snow-free from about early July. The fishing trail to Lichtenwasser Lake is straightforward, the upper slopes are heather and boulder walking, and the ridge is a short easy scramble. Bugs are heavy at the lake in July and August.",
+    "winter": "The route's headline season and a listed classic backcountry ski tour. Snowfall makes the ridge easy to skin, and the north-facing approach generally holds the better snow. Avalanche hazard is present on both sides of the mountain throughout; consult the NWAC Stevens Pass forecast and reassess continuously in the field.",
+    "typical": "Marine west-coast climate with heavy Pacific precipitation, predominantly winter snowfall. Just east of the crest, so snow here is typically a little drier and colder than on the west-side slopes, and the north-side approach used by this route holds better quality snow than the sun-exposed south flank.",
+    "forecastZone": "NWAC Stevens Pass avalanche and mountain-weather zone; Okanogan-Wenatchee National Forest, Chelan County"
+   },
+   "emergency": {
+    "notes": "No cell coverage above US 2, so an avalanche or injury response depends on a satellite messenger or on someone travelling back to the highway. Stevens Pass, 4 road miles west, is the nearest developed point. In winter the route is popular enough that other parties are often on the road, but the slopes above Lichtenwasser Lake can be empty — never rely on being found.",
+    "county": "Chelan County, Washington",
+    "rangerStation": "Wenatchee River Ranger District, 600 Sherbourne St, Leavenworth WA 98826 — (509) 548-2550",
+    "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth WA — (509) 548-5815; 24-hour emergency department and ambulance service, about 31 road miles east on US 2.",
+    "sheriffDispatch": "911 for emergencies. Chelan County Sheriff's Office non-emergency: (509) 667-6851. Backcountry rescue in Chelan County is coordinated through the Sheriff's Office."
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "January and February, when deep snow buries the brush and the north side holds its best snow for the skin up",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Late spring brings rotten, unsupportive snow over buried ground and lingering wet-avalanche hazard on both flanks.",
+      "status": "risky"
+     },
+     "April": {
+      "reason": "The snowpack turns wet and heavy, the lake ice becomes unsafe, and brush starts to reappear low on the approach.",
+      "status": "marginal"
+     },
+     "March": {
+      "reason": "Longer days and still-deep snow, but warming raises wet-slide and cornice hazard, especially on the south side.",
+      "status": "good"
+     },
+     "January": {
+      "reason": "Deep cover buries brush and talus, the lake is usually frozen to cross, and the north slopes hold good snow; watch for cornices on the ridge.",
+      "status": "optimal"
+     },
+     "December": {
+      "reason": "The unplowed Smith Brook Road is usually packed for skinning and snow is filling in the forest, but early-winter slide cycles are common.",
+      "status": "good"
+     },
+     "February": {
+      "reason": "Deepest snowpack and good north-side snow make the classic skin to the 5,640 ft saddle; check avalanche danger on both flanks.",
+      "status": "optimal"
+     },
+     "November": {
+      "reason": "Early snow may not yet cover the brush and timber between FR 6700 and Lichtenwasser Lake, and the lake is not reliably frozen.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "A pleasant snow-free rock and heather scramble via the fishing trail, but a different outing from the ski line this route is known for.",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_spectacle_buttes_west_route",
+  "name": "West Route",
+  "area_id": "wa_spectacle_buttes",
+  "findings": [
+   "r020.json: One description puts the Leroy Basin meadow camp at 6,100 ft above a 4,120 ft ford. A trail database has the Leroy Basin path topping out at 6,121 ft. The row's own figures agree: a ~4,140 ft ford plus ~1,200 ft/mile for ~1.5 mi comes to ~5,900-6,100 ft, not 5,400. The camp pin also sits beside the Seven Fingered Jack row's 6,100 ft Leroy Basin pin. Day 1 gain and day 3 loss become 2,600 ft (3,500 to 6,100), and the camp-to-Leroy-Pass leg (6,100 to 6,850) becomes ~750 ft net. | Leroy Basin camp ~6,100 ft"
+  ],
+  "gpx_summary": "1110 points; 3 of 8 pins sit exactly on a vertex",
+  "row": {
+   "id": "wa_spectacle_buttes_west_route",
+   "area_id": "wa_spectacle_buttes",
+   "name": "West Route",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": 479,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Rowland Tabor and Dwight Crowder, August 20, 1953 (first ascent of the peak)",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Helmet (loose rock on the ridge and scree ramp)",
+    "Sturdy approach shoes or light boots with good edging for the ledges near the summit block",
+    "Trekking poles for the scree ramp and cross-country traverse",
+    "Ice axe (and crampons in early season, roughly through mid-July) for the Freezer Pass traverse if snow lingers",
+    "Optional 30m rope, harness, and a few slings for parties wanting protection on the Class 3/4 exposure near the summit block",
+    "Map/compass or GPS — the traverse and cairned sections are easy to lose in poor visibility"
+   ],
+   "hazards": [
+    "Sustained loose rock/talus on the southwest ridge and scree ramp — significant rockfall risk to climbers below, keep parties close together",
+    "Exposed Class 3/4 sections near the summit block with real fall consequences",
+    "No reliable water on the traverse beyond the one stream-bed crossing below the ridge — carry 4-5+ liters in summer heat",
+    "Route-finding difficulty — cairns can be sparse or blend into the terrain across the Ice Lakes traverse and lower ridge",
+    "Afternoon thunderstorms typical of the east-side Cascades in summer",
+    "Lingering snow/ice on the Freezer Pass traverse into early-mid July"
+   ],
+   "verif": null,
+   "overview": "A pair of pyramidal twin summits in the Entiat Mountains subrange of the North Cascades, within the Glacier Peak Wilderness on Okanogan-Wenatchee National Forest (Wenatchee River Ranger District) land in Chelan County. The sharper south summit (8,392 ft) is the true high point; the north butte (8,080 ft) sits about a half-mile away across a connecting basin. The name comes from their twin-lensed profile as seen from the Entiat River valley. First ascent of the south peak was made August 20, 1953 by Rowland Tabor and Dwight Crowder. This route follows the southwest ridge/west-facing slopes — the standard line on South Spectacle Butte — reached via a long, mostly cross-country approach through Leroy Basin and the Ice Lakes basin. Traffic is light; most parties combine it with Ice Lakes camping or a Leroy-Carne loop.",
+   "beta": "Most parties approach via Phelps Creek Trail to Leroy Basin, cross the Leroy High Route to Ice Lakes, camp at Lower or Upper Ice Lake, then descend and traverse into the basin between North and South Spectacle Butte before climbing the Southwest Ridge to the south summit. The line is a straightforward Class 3 ridge scramble, but the ridge crest is broken by loose gendarmes that force route-finding onto ledges and a short chossy chute/dike passage that some parties rate closer to Class 4.",
+   "turnaround": "Because the descent retraces exposed, loose Class 3-4 ridge terrain and a long cross-country approach, parties should set a firm turnaround time that leaves ample daylight to reverse the ridge and reach camp or the trailhead before dark, and turn back early if weather, rockfall risk from other parties, or route-finding delays compound.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 7554,
+   "loss_ft": 7554,
+   "dist_km": 35.41,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "West side of the peak, above the Ice Lakes/Ice Creek basin",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+   "comms": "No reliable cell coverage reported in the Phelps Creek valley, Leroy Basin, or Ice Lakes basin; a satellite communicator is advisable for this remote, multi-day approach.",
+   "descent": "Reverse the ascent line: down-climb the ledges to the base of the summit block, regain the southwest ridge crest, descend the loose scree ramp back into the basin between the buttes, then retrace the traverse and Ice Lakes/Freezer Pass cross-country route back to Leroy Basin.",
+   "obj_haz": [
+    "Loose gneissic rock on the ledge system and near the gendarme",
+    "Route-finding through talus basins below the saddle in poor visibility",
+    "Afternoon thunderstorms common in summer on the east-side Cascades",
+    "Residual snow/ice in the crux gully into early summer"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.083,
+     "lng": -120.8349,
+     "elev": 3500,
+     "name": "Phelps Creek Trailhead",
+     "note": "End of Phelps Creek Rd/FR 6211 off Chiwawa River Road; no parking pass or day-use fee required (per USFS), wilderness boundary is 2.6 mi up-trail.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Leavenworth, take US-2 west about 15 miles to Coles Corner, WA-207 north about 4.4 miles, then the Chiwawa Loop Road onto Chiwawa River Road (FR 6200) for roughly 22 miles and FR 6211 for the last 2.3 miles to the trailhead at about 3,500 ft. The gravel and dirt beyond about mile 11 is rough and rutted and is not suitable for low-clearance vehicles; the road is normally snowed shut from late fall through spring and is also subject to washout closures, so check Wenatchee River Ranger District alerts before driving. No parking pass or day-use fee is required, but fill out the free self-issue Glacier Peak Wilderness permit at the trailhead."
+    },
+    {
+     "lat": 48.141041,
+     "lng": -120.827725,
+     "elev": 6100,
+     "name": "Leroy Basin camp",
+     "note": "Established sites reached via a steep unmaintained path off the Leroy Creek crossing (~3.5 mi up Phelps Creek Trail then about 1.5 mi up-basin); streams provide water and there are views of Seven-Fingered Jack.",
+     "type": "Campsite",
+     "distMi": 5,
+     "directions": "Follow Phelps Creek Trail #1511 up the east side of the valley, a gentle well-graded grade of roughly 275 ft per mile, crossing the wilderness boundary at 2.6 miles and reaching the Leroy Creek ford at about 3.5 miles. Immediately across the ford the unmaintained Leroy Creek high route (#1512) branches steeply up to the north-east; it is well trodden but climbs at roughly 1,200 ft per mile for the final mile and a half into the basin. This half is hot and exposed under a full overnight pack, so carry several liters, and note that campfires are prohibited above 5,000 ft anywhere in the wilderness."
+    },
+    {
+     "lat": 48.128952,
+     "lng": -120.816313,
+     "elev": 6850,
+     "name": "Leroy Pass",
+     "note": "Sheepherder trail on the Leroy/Carne high route crests here before the cross-country traverse toward Freezer Pass.",
+     "type": "Junction",
+     "distMi": 6.5,
+     "directions": "From camp pick up the Carne Mountain high trail, an old sheepherder track, and follow it south-east; it gives up a little elevation to cross the south fork of Leroy Creek before climbing to the 6,850 ft saddle. Cairns mark the way, but several paths braid apart in the basin, so stay on the lower and better-trodden line where they diverge. About 1.5 miles and roughly 750 ft of net gain from camp."
+    },
+    {
+     "lat": 48.127538,
+     "lng": -120.799605,
+     "elev": 7600,
+     "name": "Freezer Pass",
+     "note": "Faint footpaths through heather, talus and scree cross the pass and drop cross-country into the Ice Lakes basin.",
+     "type": "Junction",
+     "distMi": 7.5,
+     "directions": "Continue east from the saddle on faint footpaths through heather and then talus and scree, gaining about 750 ft over roughly a mile to the 7,600 ft pass. There is no maintained tread here and the bootpaths come and go, so keep track of your line for the return. Snow can linger on this stretch into early or mid July."
+    },
+    {
+     "lat": 48.13219,
+     "lng": -120.77903,
+     "elev": 6600,
+     "name": "Lower Ice Lake / old Ice Lakes Trail remnants",
+     "note": "Faint remnants of the historic Ice Lakes Trail mark the point where the route leaves the lakeshore and begins the exposed east traverse toward the Buttes; both lakes are reliable water sources.",
+     "type": "Water",
+     "distMi": 9,
+     "directions": "Drop north-east off the pass down talus into the Ice Lakes basin, losing about 1,000 ft. Pass the north end of Upper Ice Lake and follow the dry stream bed down to the west shore of Lower Ice Lake, then pick up the faint remnants of the old Ice Lakes Trail on the north side. Both lakes are reliable water."
+    },
+    {
+     "lat": 48.130907846153846,
+     "lng": -120.774626,
+     "elev": 6600,
+     "name": "Creek washout crossing",
+     "note": "Loose, slippery scrub-and-rock traverse around 6,600 ft crosses a hardpan-dirt gully/washout — pick the crossing line carefully, it's easy to end up cliffed out.",
+     "type": "Hazard",
+     "distMi": 9.3,
+     "directions": "Leave the lakeshore where the old trail remnants fade and sidehill east at about 6,600 ft, alternating between slippery scrub and loose rock with no real tread. Keep the party strung out in a line rather than stacked one above another, because almost everything here moves underfoot. Roughly a third of a mile brings you to the lip of the washed-out gully."
+    },
+    {
+     "lat": 48.12962569230769,
+     "lng": -120.770222,
+     "elev": 6800,
+     "name": "Base of the southwest ridge",
+     "note": "Cross-country basin floor between the two Buttes where a scree ramp gains the southwest ridge crest; Class 3 scrambling begins about 400 ft above here, staying climber's right past several loose gendarmes.",
+     "type": "Junction",
+     "distMi": 9.6,
+     "directions": "Pick a crossing line carefully and downclimb the loose clay and scree into the washout, then climb the far side back to about the same elevation; dropping too low here can leave you cliffed out. This is the last reliable water before the summit, so fill up at the crossing. Beyond it the traverse eases and flattens into the open basin floor between the two Buttes, about a third of a mile in all."
+    },
+    {
+     "lat": 48.12654,
+     "lng": -120.75984,
+     "elev": 8392,
+     "name": "South Spectacle Butte summit",
+     "note": "True summit gained via ledges on the southeast corner of the summit block above ~8,100 ft, after sustained, exposed Class 3 scrambling on the ridge below.",
+     "type": "Summit",
+     "distMi": 10.3,
+     "directions": "From the basin floor climb the scree-and-talus ramp about 400 ft to gain the crest of the southwest ridge, then follow the crest on Class 2-3 talus and broken rock, turning the gendarmes on climber's right. At around 7,700 ft a spire forces the crux: a short chossy chute, a traverse on down-sloping rock, and a Class 3 dike back up, all with real exposure on rotten holds, so move one at a time. Above about 8,100 ft leave the crest for ledges on the south-east corner of the summit block; cairns mark the line but blend into the surrounding rock and are easy to lose."
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 18.5,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": 3.5,
+    "approachTimeHrs": 4,
+    "recommendedStart": "5:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4,
+      "note": "Hike the Phelps Creek Trail then break off onto the Leroy climbers' path, which steepens sharply (around 1,200 ft/mile) into Leroy Basin. Parties report going through several liter…",
+      "fromTo": "Approach to high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 11,
+      "note": "A long day: cross Leroy Pass and Freezer Pass, drop into the Ice Lakes basin, then traverse a loose, consequential stream-bed crux before gaining the southwest ridge on a scree ram…",
+      "fromTo": "Summit push via Freezer Pass and the SW ridge",
+      "section": "Climb"
+     },
+     {
+      "hrs": 3.5,
+      "note": "Break camp and retrace the Leroy climbers' path and Phelps Creek Trail back to the car.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "No fixed protection exists on this scramble route. Some parties carry a short rope and a small rack/slings as a safety margin for the class 3 ledge/gully step near the gendarme, though most climb it unroped.",
+   "what_to_bring": [
+    "4-5+ liters of water per person for the traverse and climb",
+    "Sun protection — the approach and ridge get full exposure",
+    "Helmet worn (not just carried) on the ridge and scree ramp",
+    "Satellite messenger/InReach given unreliable cell coverage"
+   ],
+   "pro_tips": [
+    "Camp in Leroy Basin away from the crowded main sites (deeper in the trees) for more solitude, and arrive early on summer weekends to get a spot",
+    "Fill water bottles at the stream-bed crossing below the ridge — it's the last reliable water before the summit push",
+    "August generally offers the driest, most predictable talus/heather conditions for the SW ridge",
+    "A late-September attempt trades some daylight/weather margin for larch color through the Ice Lakes basin if combining with the North Butte"
+   ],
+   "watch_out": [
+    "The scree ramp gaining the ridge crest is loose in both directions — test holds and expect debris underfoot",
+    "Cairns on the traverse from Ice Lakes to the ridge are easy to lose track of in whiteout or low light — note handrails/landmarks on the way in",
+    "The washed-out stream-bed crossing has slick, loose footing on the far side"
+   ],
+   "pro_needs": "No fixed protection is placed; this is an unroped scramble on loose rock, though some parties carry a short rope/harness for the exposed traverse near the second spire as a precaution.",
+   "best_season": "August is the most reliable month — talus/heather dry out and stream crossings drop. Early-mid July can still have lingering snow/high water on the Freezer Pass traverse and the washed-out stream-bed crossing en route to the ridge. Late September into early October trades some summit-day margin (shorter days, first-snow risk on the ridge) for golden larch color on the North Butte approach through Ice Lakes.",
+   "high_point_ft": 8392,
+   "aid_grade": null,
+   "approach": "The standard approach is a long, mostly cross-country line from the Phelps Creek Trailhead at the end of Phelps Creek Road (FR 6211), about 3,500 ft. Follow Phelps Creek Trail #1511 up the east side of the valley — a gentle, well-graded grade of roughly 275 ft per mile — crossing into the Glacier Peak Wilderness at 2.6 miles and reaching the Leroy Creek ford at about 3.5 miles. Immediately across the ford, the unmaintained Leroy Creek high route (Trail #1512) branches steeply north-east; it is well trodden but climbs at roughly 1,200 ft per mile for about 1.5 miles into Leroy Basin, where established camps sit off a steep path above the creek crossing. This half is hot and exposed under an overnight pack, so carry several liters. Campfires are prohibited above 5,000 ft anywhere in the wilderness, and a free self-issue wilderness permit is filled out at the trailhead. From camp, pick up the Carne Mountain high trail — an old sheepherder track — and follow it south-east, giving up a little elevation to cross the south fork of Leroy Creek before climbing to the 6,850 ft saddle at Leroy Pass; cairns mark the way but several paths braid apart in the basin, so stay on the lower and better-trodden line where they diverge. Continue east on faint footpaths through heather, then talus and scree, gaining about 750 ft over roughly a mile to Freezer Pass at 7,600 ft. There is no maintained tread here and the bootpaths come and go, so keep track of your line for the return; snow can linger on this stretch into early or mid July. Drop north-east off the pass down talus into the Ice Lakes basin, losing about 1,000 ft, passing the north end of Upper Ice Lake and following the dry stream bed to the west shore of Lower Ice Lake. Both lakes are reliable water. Pick up the faint remnants of the historic Ice Lakes Trail on the north side and sidehill east at about 6,600 ft on slippery scrub and loose rock with no real tread — keep the party strung out in a line rather than stacked one above another, because almost everything here moves underfoot. Roughly a third of a mile brings you to the lip of a washed-out gully; downclimb the loose clay and scree into it and climb the far side back to about the same elevation, picking the crossing line carefully, since dropping too low can leave you cliffed out. This is the last reliable water before the summit. Beyond it the traverse eases into the open basin floor between the two Buttes at about 6,800 ft, where a scree-and-talus ramp gains the crest of the southwest ridge and the scrambling begins. A separate approach corridor exists on the west side of the peak: leaving Phelps Creek Trail #1511 at around 5,300 ft and climbing cross-country east through heather and talus benches to gain the peak's west-facing slopes. It is a shorter day from the trailhead and avoids the Freezer Pass crossing, but it is a different line from the one this route's waypoints and descent follow, and the north side of that ridge is cliffy and should not be entered.",
+   "descent_text": "There is no rappelling on this route and no shortcut descent gully — it is a walk-off and downclimb by the line used on the ascent. From the 8,392 ft summit, reverse the ledges on the south-east corner of the summit block back onto the crest of the southwest ridge at about 8,100 ft; the cairns here blend into the surrounding rock and are easy to lose, so pick the line up deliberately rather than drifting down the first ledge system that goes. Downclimb the crest on Class 2-3 talus and broken rock, turning the gendarmes on climber's right as you did on the way up, and reverse the crux at around 7,700 ft — the Class 3 dike, the traverse on down-sloping rock, and the short chossy chute — facing in, one at a time, on rotten holds with real exposure. Below the gendarmes, descend the scree-and-talus ramp roughly 400 ft into the open basin floor between the two Buttes. From there retrace the traverse west: cross the washed-out gully at about 6,600 ft, keeping the party strung out in a line rather than stacked, and sidehill back across the loose scrub and rock to the west shore of Lower Ice Lake. Regain the faint remnants of the old Ice Lakes Trail, climb back up the talus roughly 1,000 ft to Freezer Pass at 7,600 ft, then follow the faint heather-and-scree footpaths west over Leroy Pass at 6,850 ft and down the Carne Mountain high trail into Leroy Basin camp. The bootpaths between the passes come and go, so the return is materially easier if you tracked your line on the way in. From camp, reverse the steep unmaintained Leroy Creek high route to the ford and follow Phelps Creek Trail #1511 back down-valley to the trailhead. The hazards on the whole descent are rockfall, loose downsloping rock on the ridge, and losing the cairned or booted line in scree and talus — not rope work. An alternate exit some parties use drops west off the peak's west-facing slopes through heather and talus to rejoin Phelps Creek Trail #1511 directly at around 5,300 ft, avoiding the return over Freezer and Leroy Passes; it is a different line from the ascent, it leaves any camp at Ice Lakes or Leroy Basin behind you, and the north side of that ridge is cliffy and should not be entered, so treat it as a deliberate choice made in advance rather than a shortcut taken on the descent.",
+   "bail": "The route can be abandoned at almost any point on the southwest ridge by reversing the ascent line back into the basin between the buttes; there is no fixed rappel infrastructure, so retreat is by downclimbing the same terrain.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2-3",
+     "notes": "Talus and broken rock up the southwest ridge crest, bypassing minor gendarmes on climber's right.",
+     "pitch": "Ridge base to ~7,700 ft"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Crux: exposed traverse around a rotten gully headwall; one documented line descends a short chossy chute, traverses on down-sloping rock, then ascends a Class 3 dike.",
+     "pitch": "Second spire / gully headwall"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Leave the ridge crest and follow ledges/ribs on the southeast side of the summit block to the top.",
+     "pitch": "~8,100 ft to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "Phelps Creek Road (FS 6211) is rough gravel and best climbed July-September once the scree ramp and stream-bed crux are snow-free.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Hike the Phelps Creek Trail then break off onto the Leroy climbers' path, which steepens sharply (around 1,200 ft/mile) into Leroy Basin. Parties report going through several liters of water on this leg in afternoon heat; camp in the trees away from the busier lakeside sites.",
+      "hours": 4,
+      "miles": 5,
+      "title": "Approach to high camp",
+      "gainFt": 2600,
+      "lossFt": 0,
+      "packLb": 38,
+      "schedule": [
+       {
+        "time": "9:00 AM",
+        "label": "Leave Phelps Creek trailhead",
+        "detail": "~3,500 ft; well-graded trail for the first ~3.5 miles."
+       },
+       {
+        "time": "~10:30 AM",
+        "label": "Turn off onto Leroy climbers' path",
+        "detail": "About 1.5 hrs from the trailhead to the Leroy High Route junction."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Arrive Leroy Basin camp",
+        "detail": "~6,100 ft; steep final push, plan for a hot, exposed climb with a full overnight pack."
+       }
+      ],
+      "objective": "Reach Leroy Basin camp"
+     },
+     {
+      "n": 2,
+      "note": "A long day: cross Leroy Pass and Freezer Pass, drop into the Ice Lakes basin, then traverse a loose, consequential stream-bed crux before gaining the southwest ridge on a scree ramp. The scrambling above is chossy class 3 (feels like low class 4 with the exposure) with several one-at-a-time sections to avoid rockfall.",
+      "hours": 11,
+      "miles": 10.6,
+      "title": "Summit push via Freezer Pass and the SW ridge",
+      "gainFt": 4950,
+      "lossFt": 4950,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Wake, leave camp before/at sunrise",
+        "detail": "Light packs; leave the overnight gear at Leroy Basin."
+       },
+       {
+        "time": "~7:00 AM",
+        "label": "Freezer Pass, drop into Ice Lakes basin",
+        "detail": "Cross-country traverse, ~500 ft down to the basin."
+       },
+       {
+        "time": "~9:00 AM",
+        "label": "Stream-bed crux",
+        "detail": "Loose clay/scree gully — tricky down-climb and re-ascent, reported as the route's toughest obstacle."
+       },
+       {
+        "time": "~9:30 AM",
+        "label": "Gain the southwest ridge",
+        "detail": "~400 ft up a scree/talus ramp to the ridge crest."
+       },
+       {
+        "time": "12:30 PM",
+        "label": "Summit",
+        "detail": "Class 3-4 ledges and gendarmes on the final push; trip reports place summit arrival early-to-mid afternoon."
+       },
+       {
+        "time": "5:30 PM",
+        "label": "Back at camp",
+        "detail": "Reverse the full line; budget 7+ hours round trip from camp."
+       }
+      ],
+      "objective": "Climb South Spectacle Butte (8,392 ft) and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Break camp and retrace the Leroy climbers' path and Phelps Creek Trail back to the car.",
+      "hours": 3.5,
+      "miles": 5,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 2600,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to trailhead"
+     }
+    ],
+    "totalNote": "A 3-day, ~21-mile round trip with a long class 3-4 summit day out of a Leroy Basin high camp; ~7,500 ft of cumulative gain, most of it on day 2."
+   },
+   "access": {
+    "fees": "None known.",
+    "rules": "Standard Glacier Peak Wilderness regulations apply: Leave No Trace, camp at least 200 ft from water and trails, and campfires are prohibited above 5,000 ft throughout the wilderness and specifically within 1/2 mile of Ice Lakes — carry a stove for cooking on this route since nearly all viable camps/traverse terrain sit above that line.",
+    "permit": "Free, self-issue Glacier Peak Wilderness permit required at the trailhead for entry beyond 2.6 miles; no advance reservation or quota known for this trailhead.",
+    "closures": "Chiwawa River Road (FR 6200) and Phelps Creek Road (FR 6211) are gated by snow roughly late fall through spring (opening timing varies by year/snowpack) and are subject to washout/storm-damage closures — check current Wenatchee River Ranger District alerts before driving.",
+    "landManager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District (600 Sherbourne St, Leavenworth, WA 98826; (509) 548-2550) — Glacier Peak Wilderness",
+    "passRequired": "None at Phelps Creek Trailhead — no Northwest Forest Pass or America the Beautiful pass currently required for parking there.",
+    "overnight_permit": {
+     "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/glacier-peak-wilderness-okanogan-wenatchee",
+     "what": "Free self-issue Glacier Peak Wilderness permit",
+     "where": "Fill one out at the North Fork Entiat, Entiat River or Phelps Creek trailhead kiosk."
+    }
+   },
+   "road": {
+    "name": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)",
+    "status": "Paved/gravel Chiwawa Loop Road transitions to gravel/dirt FR 6200 beyond about mile 11, then FR 6211 for the final ~2.3 miles — rough and rutted, not suitable for low-clearance vehicles; roughly 14 miles of rough dirt/gravel total. Closed to vehicles beyond the Atkinson Flat Campground junction since May 20, 2026 for storm damage (Okanogan-Wenatchee order 06-17-07-2026-11, in effect through December 31, 2027, no reopening estimate), which cuts off the Trinity and Phelps Creek trailheads. The Little Giant Fire closure (order 06-17-07-2026-40) also closes the Chiwawa River Road and Phelps Creek Road through October 31, 2026 unless lifted sooner. Check with the Wenatchee River Ranger District, (509) 548-2550, before you go.",
+    "driveNote": "From Leavenworth: US-2 west ~15 mi to Coles Corner, WA-207 north ~4.4 mi, then Chiwawa Loop Road to Chiwawa River Rd/FR 6200 for ~22 mi, then FR 6211 ~2.3 mi to the Phelps Creek Trailhead (3,500 ft).",
+    "seasonalGate": "Typically snowed shut from late fall through spring; opening date varies by year and is further affected by storm-damage closures — check Wenatchee River Ranger District road/trail alerts before driving."
+   },
+   "climate": {
+    "typical": "East of the Cascade crest, so noticeably drier and sunnier than the west-side range, but the area still catches heavy winter snowpack from orographic lift and can hold snow into July on the Freezer Pass traverse. Summers are warm to hot with strong afternoon sun on the mostly south/west-facing approach and real thunderstorm risk; wildfire smoke is common in late summer.",
+    "bySeason": {
+     "fall": "Crisp, stable weather is common in September, with larch gold in the upper basins by late month, but early snow/ice on the ridge becomes a real risk into October.",
+     "spring": "Access road and Freezer Pass traverse are typically still snow-covered; not a realistic season for this route.",
+     "summer": "Warm, dry, and sunny with afternoon thunderstorm potential; carry more water than you think — the traverse to the ridge is dry after the one reliable stream crossing.",
+     "winter": "Road closed by snow; not accessible."
+    }
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable to absent from the trailhead through Leroy Basin and the Ice Lakes basin; a satellite messenger is strongly advised given the remote, mostly off-trail nature of this route.",
+    "county": "Chelan County, WA",
+    "rangerStation": "Wenatchee River Ranger District, 600 Sherbourne St, Leavenworth, WA 98826 — (509) 548-2550",
+    "nearestHospital": "Cascade Medical Center, Leavenworth, WA — 24-hour ED, roughly 40 miles / ~1.25 hr drive from the Phelps Creek Trailhead via Chiwawa River Rd and US-2; advanced trauma cases are transported onward to Wenatchee, Seattle, or Spokane.",
+    "sheriffDispatch": "Chelan County Sheriff's Office — 911 for emergencies; non-emergency (509) 667-6851. Backcountry/SAR calls in this drainage are coordinated by Chelan County Sheriff SAR."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rare; if any, a handful of weekend parties in August when the approach is fully snow-free",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Low - likely fewer than a dozen parties per season; most traffic is backpackers heading to Ice Lakes basin, not summit-bound scramblers"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong multi-day backpacking fitness - the approach up Phelps Creek, into Leroy Basin and over Freezer Pass to the Ice Lakes basin is long (miles of trail plus off-trail talus/heather) before the summit push",
+     "packWeight": "Moderate-heavy - typically an overnight (or multi-night) backpacking load to basin camp, then a lighter day pack for the scramble"
+    },
+    "approachTime": "Long - remote Phelps Creek trailhead at the end of the long, rough Chiwawa River and Phelps Creek roads, then about 5 miles of trail and steep climbers' path to Leroy Basin and a cross-country crossing of Leroy and Freezer passes into the Ice Lakes basin; most parties treat this as a 2-3 day backpacking trip rather than a day climb",
+    "requiredSkills": [
+     "Off-trail route-finding on talus and heather",
+     "Class 2-3 scrambling on loose rock",
+     "Map/compass or GPS navigation (route-finding between the two buttes is a named hazard)",
+     "Loose-rock/scree management and basic self-arrest awareness"
+    ],
+    "experienceLevel": "Intermediate scrambler comfortable with unmarked, off-trail Class 2-3 terrain and independent route-finding between the two buttes"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, with August the most reliable month",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still hold lingering snow on the approach and west-facing slopes and higher creek crossings; conditions typically firm up by late July, consistent with the season start",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak dry-season window - talus and heather slopes are snow-free, creek crossings are low, and this is the best-season month",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still generally dry and stable, but shorter daylight and a real chance of early-season snow or freezing temps late in the month at 8,400 ft",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Dry, warm East Cascades alpine summer weather typical of the Entiat Mountains rain-shadow area",
+     "probability": "Afternoon thunderstorms are possible in late summer, particularly August, as is common across the Cascades crest"
+    },
+    "exposure": "Moderate - Class 2-3 talus/scree and heather slopes with loose footing and route-finding required between the two buttes; consequence of a slip is a fall/injury on loose rock rather than sustained high-exposure climbing",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route outside the standard NWAC forecast season",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel on this route"
+   },
+   "data_quality": {
+    "gaps": [
+     "Mountaineers.org and SummitPost route pages returned HTTP 403 on direct fetch; beta was cross-verified from a detailed independent trip report (hike2hike.com) plus search-result excerpts of those pages rather than the primary pages themselves.",
+     "No official published topo/photo route line located.",
+     "Exact current group-size limit for Glacier Peak Wilderness not confirmed (fire/camping restrictions were found; group size was not).",
+     "GPS coordinates for the basin camp and ridge access point are approximate, drawn from a single trip report waypoint, and were not independently verified.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.126497,
+    "peakLng": -120.760019,
+    "trailhead": "Phelps Creek Trailhead (Trail #1511)",
+    "trailheadLat": 48.0829,
+    "trailheadLng": -120.835,
+    "trailheadDirection": "From the Phelps Creek Trailhead (~3,500 ft) off Chiwawa River Road / Phelps Creek Road, toward Spider Meadow"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Entiat Mountains. Southwest ridge line; Class 2-3 with a short, exposed Class 3 crux near 7,700 ft that most parties climb unroped.",
+   "ascender": null,
+   "corrections": "North vs South Spectacle Butte 'West Route' not fully disambiguated in sources.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Adventurous",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": [
+    {
+     "name": "Phelps Creek and Leroy Basin over Leroy and Freezer passes to the Ice Lakes basin",
+     "notes": "From the Phelps Creek Trailhead at about 3,500 ft, Phelps Creek Trail #1511 climbs the east side of the valley at roughly 275 ft per mile, crossing into the wilderness at 2.6 miles and reaching the Leroy Creek ford at about 3.5. Immediately across the ford the unmaintained Leroy Creek high route branches steeply north-east and climbs about 1.5 miles into Leroy Basin at about 6,100 ft, where the camps are. That half is hot and exposed under a pack.\n\nFrom camp pick up the Carne Mountain high trail — an old sheepherder track — south-east; it gives up a little height to cross the south fork of Leroy Creek before climbing to Leroy Pass at 6,850 ft. Cairns mark the way but several paths braid apart in the basin: stay on the LOWER and better-trodden line where they diverge.\n\nContinue east on faint footpaths through heather, then talus and scree, gaining about 750 ft over roughly a mile to Freezer Pass at 7,600 ft. There is no maintained tread here and the boot paths come and go, so TRACK YOUR OWN LINE FOR THE RETURN.\n\nDrop north-east off the pass into the Ice Lakes basin, losing about 1,000 ft past the north end of Upper Ice Lake and down the dry stream bed to the west shore of Lower Ice Lake. Both lakes are reliable water.",
+     "season": "Aug is the reliable month. Early-to-mid July can still hold snow and high water on the Freezer Pass traverse and at the washed-out stream bed; late September adds larch colour and takes away daylight",
+     "hazards": [
+      "A washed-out gully crossing at 6,600 ft where dropping too low cliffs you out",
+      "Sustained loose rock and talus on the ridge and the scree ramp, with real rockfall risk onto anyone below",
+      "The north side of the south-west ridge is cliffy and must not be entered when the crags force you off the crest",
+      "No reliable water beyond the washout crossing — carry four to five litres in summer heat",
+      "Cairns that blend into the surrounding rock across the Ice Lakes traverse and on the descent from the summit block"
+     ],
+     "baseFinding": "THE BASE IS AN OPEN BASIN FLOOR BETWEEN TWO SUMMITS AND THAT IS WHY IT IS FINDABLE IN CLOUD — you are not looking for a feature on a face, you are walking into a gap between the two Buttes at about 6,800 ft. The traverse eases into it. If the ground is still side-hilling and everything moves under your feet, you have not arrived.\n\nGETTING THERE, THE ONE PLACE PEOPLE GET HURT: from Lower Ice Lake the old Ice Lakes Trail fades and you SIDEHILL EAST AT ABOUT 6,600 FT on slippery scrub and loose rock with no tread. Keep the party STRUNG OUT IN A LINE rather than stacked one above another — almost everything here moves. About a third of a mile brings the lip of a WASHED-OUT GULLY. Downclimb the loose clay and scree into it and climb the far side back to ABOUT THE SAME ELEVATION.\n\nTHAT ELEVATION RULE IS THE NEGATIVE MARKER AND IT HAS A STATED CONSEQUENCE: DROPPING TOO LOW IN THE WASHOUT LEAVES YOU CLIFFED OUT. Cross at 6,600, not below it. This is also the last reliable water before the summit, so fill there.\n\nTHE CLIMBING STARTS AT A RAMP: from the basin floor, a SCREE-AND-TALUS RAMP of about 400 ft gains the crest of the south-west ridge. Ramp first, ridge second. If you are on the crest without having walked up 400 ft of scree, you got onto the ridge somewhere else.\n\nTHE SIDE RULE ON THE RIDGE, AND IT IS ABSOLUTE: broken crags and short cliff bands repeatedly force the route OFF the crest onto ledges on the SOUTH side. THE NORTH SIDE OF THE RIDGE IS CLIFFY AND SHOULD NOT BE ENTERED. If you have been pushed off the crest and the ground below you drops away in a way that feels wrong, check which side you stepped onto before you commit.\n\nTHE CRUX HAS AN ELEVATION: around 7,700 ft a spire forces a short chossy chute, a traverse on down-sloping rock, and a Class 3 dike. Some parties call it low Class 4. That is the hardest ground and it is a single passage, not a section.\n\nCAIRNS HERE BLEND INTO THE ROCK. On the way up that costs time; on the way down it costs a great deal more, because from the summit block you have to find the crest again at about 8,100 ft. Pick the line up deliberately rather than drifting down the first ledge system that goes."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "2-3",
+     "label": "Scree ramp to the southwest ridge",
+     "notes": "From the open basin floor between the two Buttes, climb a scree-and-talus ramp about 400 ft to gain the crest of the southwest ridge, then follow the crest upward on class 2-3 terrain."
+    },
+    {
+     "n": 2,
+     "class": "class 3, a short section regarded by some as low class 4",
+     "label": "Forced ledge traverses on the south side",
+     "notes": "Broken crags and short cliff bands along the crest repeatedly force the route off the true ridgeline onto looser, chossy ledges on the south side; the north side of the ridge is cliffy and should not be attempted. These traverses are the crux: rock is loose and ledges are narrow, so parties should move one at a time to avoid raining rock on those below."
+    },
+    {
+     "n": 3,
+     "label": "Ledges on the summit block",
+     "notes": "Above about 8,100 ft leave the crest and work up ledges and small ribs on the south-east side of the summit block to the top; cairns mark the line but blend into the surrounding rock and are easy to lose, so expect some route-finding on the way up."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Leroy Basin camp",
+     "role": "main",
+     "type": "camp"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]
