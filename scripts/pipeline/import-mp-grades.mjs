@@ -63,7 +63,9 @@ const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 function sql(text, tries = 8) {
   for (let i = 0; ; i++) {
     try {
-      const out = execFileSync("npx", ["supabase", "db", "query", "--linked", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
+      // --output-format json is explicit: run from a plain Terminal the CLI answers with a TEXT
+      // table by default (the "empty answers" that stopped California from run-all.sh).
+      const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
       if (!out.includes("{")) throw new Error("empty answer from supabase db query: " + JSON.stringify(out.slice(0, 200)));
       const j = JSON.parse(out.slice(out.indexOf("{")));
       if (!Array.isArray(j.rows)) throw new Error("unexpected output: " + out.slice(0, 200));
