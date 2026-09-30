@@ -30,6 +30,8 @@
     <!-- Matches the app banner (C.surface), not the page background, so the Android
          status bar reads as an extension of the banner sitting directly below it. -->
     <meta name="theme-color" content="#161b22" />
+    <!-- Declared before the stylesheet so the very first paint (and iOS's scroll indicator) is dark. -->
+    <meta name="color-scheme" content="dark" />
     <!-- What a shared link shows. A ?route= or ?list= link pasted into Messages, Slack or a
          social app used to preview as a bare "ClimbMatch" with no text and no image, because
          the page carried no description at all. og:image and og:url are ABSOLUTE on purpose:
@@ -111,6 +113,23 @@
       .cm-ring { animation: cm-ring 2.4s ease-in-out infinite; transform-origin: 50% 10%; display: inline-block; }
       .cm-puff { animation: cm-puff .6s ease-out forwards; }
       .cm-newitem { animation: cm-glow 1.6s ease-in-out 2; }
+      /* Scrollbars you can SEE, everywhere. Nothing styled them, so the browser drew its default
+         dark thumb on the app's #0d1117 background: a black bar on a near-black page, invisible
+         in the feed and in every popup (Add a climb was the report). One rule on :root reaches
+         every scroller because scrollbar-color is inherited. #6e7681 is 4.1:1 against the page
+         and 3.8:1 against a popup's #161b22 surface (WCAG 1.4.11 asks 3:1 for a UI component).
+         Chrome/Firefox read scrollbar-color; desktop Safari reads only the ::-webkit-scrollbar
+         rules, which Chrome ignores wherever scrollbar-color is set, so the two never fight.
+         A PHONE draws neither: iOS's overlay indicator is black unless the page declares itself
+         dark, and this page never did (computed color-scheme was "normal"). color-scheme: dark
+         is what turns it light -- and it also gives native pickers (date, time) the dark look
+         the rest of the app already has. */
+      :root { color-scheme: dark; scrollbar-color: #6e7681 transparent; }
+      ::-webkit-scrollbar { width: 10px; height: 10px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #6e7681; border-radius: 6px; border: 2px solid transparent; background-clip: padding-box; }
+      ::-webkit-scrollbar-thumb:hover { background: #8b949e; background-clip: padding-box; }
+      ::-webkit-scrollbar-corner { background: transparent; }
       /* Horizontal sliders: smooth touch scroll, no visible scrollbar */
       .cm-hscroll { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       .cm-hscroll::-webkit-scrollbar { display: none; }
