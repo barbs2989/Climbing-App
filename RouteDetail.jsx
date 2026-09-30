@@ -772,14 +772,14 @@ function TechStats({route,onEdit}){
   const isOutBack=recShape?recShape==="outback":shapeOf(route)==="outback";
   const rtNote=isOutBack?(recShape?" Round trip: this route is recorded as retracing its approach.":" Round trip assumes the same trail back to the trailhead.")
     :recShape==="loop"?" This route loops back to the trailhead by a different line, so doubling the approach would overstate it."
-    :recShape==="point"?(distIsWholeTrip?" This route finishes at a different trailhead, so the total runs from one trailhead to the other.":" This route finishes at a different trailhead, so there is no round trip to show.")
+    :recShape==="point"?" This route finishes at a different trailhead, so the total runs from one trailhead to the other."
     :" This route is a loop or point-to-point outing, so no round-trip distance is shown.";
   /* ONE distance tile, and never the one-way figure. It used to print "Distance"/"Approach"
      (the walk IN) beside "Round trip" (the same number doubled) — two tiles for one fact, and the
      one-way one is not what a party plans a day around. What shows now is the whole outing:
-     doubled for a route that retraces its approach, and as stored for a recorded loop/point
-     whose itinerary already totals it (effDistIsWholeTrip). A loop/point with no itinerary keeps
-     a plain "Distance": its dist_km convention is unsettled (CLAUDE.md), so it claims neither. */
+     doubled for a route that retraces its approach, and as stored for a recorded loop/point,
+     whose distance is the whole outing (effDistIsWholeTrip records how that was established). A
+     loop/point GUESSED from the name alone keeps a plain "Distance": it claims neither. */
   const distTile=!hasDist?null:isOutBack?["Round trip",uDist(roundTripKm),C.blue]
     :distIsWholeTrip?[recShape==="point"?"Total distance":"Round trip",uDist(distKm),C.blue]
     :["Distance",uDist(distKm),C.blue];
