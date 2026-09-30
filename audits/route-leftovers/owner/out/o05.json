@@ -859,6 +859,150 @@
     }
    ],
    "pin_followups": []
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "verdict": "confirmed",
+   "resolution": "rename",
+   "summary": "Rename this to Standard Route: its content is the 1961 first-ascent line from the col west of the summit onto the north and northwest side, which no source calls a Southeast Route, and lower its grade from the unsupported Grade IV 5.8 to class 4-5.",
+   "evidence": "The 1961 first-ascent account (September 8, 1961; Cooper, Denny, Whitmore and the Fireys) reached the west notch, which is the Himmel-Otto col, and followed a ledge onto the north face to find a class IV route. The peak's area page describes the standard way up as the narrow gully to the Himmel-Otto col, and an encyclopedia entry gives the easiest route as YDS class 5. No source found names a Southeast Route on Himmelhorn or grades any line on it Grade IV 5.8; the other documented lines, Wild Hair Crack (5.7) and Stonehenge (5.10-), are separate sibling rows. The row's own aspect, face, approach, beta, detailed rack and climbing section already describe a northwest-side line of class 4 to low 5th. The name, the 'Southeast Route' mentions in the day plan, timing, summit pin note and climbing section, the grade (both read sources are below 5.8, one class 4 and one class 5, so 'Class 4-5'), and the rappel prose (the '2' and the false-summit-notch descent belong to Wild Hair Crack) are changed. Not changed for want of sources: alpine_grade D+, commitment IV, gain/loss and distances, the Oct season end.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196206500/",
+    "https://en.wikipedia.org/wiki/Himmelhorn_(Washington)",
+    "https://www.mountainproject.com/area/122904990/himmelhorn",
+    "https://www.mountainproject.com/route/122905014/wild-hair-crack"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_himmelhorn_southeast_route",
+     "expect_name": "Southeast Route",
+     "name": "Standard Route"
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "grade",
+     "path": [],
+     "expect": "Grade IV, 5.8",
+     "value": "Class 4-5"
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.8",
+     "value": "Class 4-5"
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "rappels",
+     "path": [],
+     "expect": "2",
+     "value": "Downclimb with short rappels where the rock steepens back to the Himmel-Otto col; late in the season, rappels over the moats in the col gully help. No published count."
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "rope_note",
+     "path": [],
+     "expect": "Remote Grade IV alpine rock route in the Southern Pickets; long off-trail approach and col gully, then multi-pitch rock to a rappel descent (rap/scramble to a false-summit notch, then rap the route). Bring extra tat — anchors are minimal in this range.",
+     "value": "Remote alpine rock and scramble route in the Southern Pickets: a long off-trail approach and col gully, then class 4 to low fifth-class rock from the col. The descent reverses the route by downclimbing and short rappels. Bring extra tat; anchors are minimal in this range."
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "From the col the Southeast Route continues up easier ground on Himmelhorn's northwest flank to the 7,880 ft summit.",
+     "value": "From the col, follow a ledge onto the north face and continue up the northwest side, mostly scrambling with short steeper steps of class 4 to low 5th, to the 7,880 ft summit."
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "expect": "True summit (7,880 ft); the Southeast Route finishes via crack systems on the face above the col — downclimb and rappel the same line back to the Himmel-Otto col to descend.",
+     "value": "True summit (7,880 ft); from the Himmel-Otto col the route follows a ledge onto the north face and climbs the northwest side. Downclimb and rappel the same line back to the col to descend."
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "title"
+     ],
+     "expect": "Climb Himmelhorn (Southeast Route) and return to camp",
+     "value": "Climb Himmelhorn (Standard Route) and return to camp"
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "fromTo"
+     ],
+     "expect": "Climb Himmelhorn (Southeast Route) and return to camp",
+     "value": "Climb Himmelhorn (Standard Route) and return to camp"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": " NOTE ON THE NAME: this route is titled Southeast Route, but the published standard route on this peak is on the NORTHWEST aspect, and its aspect is already recorded as NW.",
+     "replace": ""
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "expect": "5.8 alpine rock climbing on unfamiliar, loose gneiss",
+     "value": "Class 4 to low fifth-class alpine rock on unfamiliar, loose gneiss"
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "data_quality",
+     "path": [
+      "gaps",
+      0
+     ],
+     "expect": "The exact modern technical grade of the original 1961 line is disputed in available sources — the first-ascent account calls it a Class 4 route, while the on-file \"Grade IV, 5.8\" figure could not be independently confirmed against a primary topo, so it was left as-is rather than guessed at.",
+     "value": "The exact modern technical grade of the original 1961 line is not settled: the first-ascent account calls it class 4, and the peak's easiest route is also rated class 5; no topo gives a precise YDS grade, so it is recorded as class 4-5."
+    },
+    {
+     "op": "set",
+     "id": "wa_himmelhorn_southeast_route",
+     "column": "data_quality",
+     "path": [
+      "gaps",
+      2
+     ],
+     "expect": "GPS track sourced from public CalTopo map: https://caltopo.com/m/D81T",
+     "value": "GPS track taken from a public online map."
+    }
+   ],
+   "pin_followups": []
   }
  ]
 }

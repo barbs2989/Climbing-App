@@ -41,5 +41,15 @@
   "pin_ops": [
     {"op":"remove_pin","id":"wa_lichtenberg_mountain_southeast_ridge","index":2,"expect":{"name":"Lichtenberg Boulders (granitic boulder field on the north side)","lat":47.79369,"lng":-121.08864}}
   ],
+  "ops": []},
+ {"id": "wa_spectacle_buttes_west_route",
+  "verdict": "confirmed",
+  "summary": "The Freezer Pass pin sat about 600 m east of the pass, already down on the Ice Lakes side at about 7,200 ft; it moves to the 7,600 ft crest itself. The Leroy Basin camp elevation (6,100 ft) was already corrected and the other pins are left.",
+  "evidence": "Pin 3 'Freezer Pass' (48.127538,-120.799605) reads ~7,200 ft on the ground, 400 ft below the pass's published 7,600 ft, and sits on the descent toward the Ice Lakes. OpenStreetMap names Freezer Pass at 48.12648,-120.80724, where the ground reads 7,618 ft; the route's own drawn line reaches its highest point (~7,640 ft) at 48.126392,-120.806989, 21 m from that node, and published trip reports give the pass as 7,600 ft, about 500 ft above the Ice Lakes. Moved to the named node; ground 7,620 ft. Pin 1 (Leroy Basin camp, 6,100 ft) is within ~300 m of the Leroy Basin pins on the Seven Fingered Jack, Mount Maude and Mount Fernow routes and reads 6,085 ft on the ground; left. Pin 2 'Leroy Pass' reads ~6,680 ft against a published 6,850 ft, but no source gives its position and no saddle of that height lies on the drawn line; left and flagged. Pin 4 sits on the drawn line ~225 m east of Lower Ice Lake's outlet (lake outline and outlet per OpenStreetMap and the USGS Ice Creek source point 48.13152,-120.78234), where the route leaves the lake on its east traverse at ~6,600 ft as its note and height say; left. Pins 5-6 lie on the drawn line; the summit pin matches the USGS South Spectacle Butte coordinate (48.12654,-120.75986); the trailhead pin matches the start of the drawn line within ~60 m.",
+  "sources": ["https://overpass-api.de/api/interpreter?data=[out:json];node(48.115,-120.835,48.145,-120.765)[name];out;", "https://api.openstreetmap.org/api/0.6/relation/11483504/full.json", "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer", "https://trailcatjim.com/carne-leroy-loop-south-spectacle-butte-ice-lakes/", "https://epqs.nationalmap.gov/v1/json?x=-120.80724&y=48.12648&units=Feet&wkid=4326"],
+  "pin_ops": [
+    {"op":"move_pin","id":"wa_spectacle_buttes_west_route","index":3,"expect":{"name":"Freezer Pass","lat":48.127538,"lng":-120.799605},
+     "lat":48.12648,"lng":-120.80724,"elev":7620,"sources":["https://overpass-api.de/api/interpreter?data=[out:json];node(48.115,-120.835,48.145,-120.765)[name];out;","https://trailcatjim.com/carne-leroy-loop-south-spectacle-butte-ice-lakes/"]}
+  ],
   "ops": []}
 ]}

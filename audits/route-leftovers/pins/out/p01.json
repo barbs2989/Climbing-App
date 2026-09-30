@@ -1,0 +1,208 @@
+{
+ "results": [
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "verdict": "confirmed",
+   "summary": "The two trail junctions were pinned miles up the wrong valley and now sit where the trails actually fork; the ford, the upper-basin exit, the high-camp bench and the col are still misplaced (all north or east of the summit) but no reliable coordinates exist to move them, so they are left for a later pass.",
+   "evidence": "Pin 1 (Buck Creek / Chiwawa River fork) sat at 48.1402,-120.8516, about 4.7 mi north of Trinity; the Forest Service trail layer starts Buck Creek Trail #1513 off the Chiwawa River trail at 48.09263,-120.86797 (1.9 mi along #1550 from Trinity) and OpenStreetMap starts its Chiwawa River Trail #1550 segment at 48.0926,-120.8680 - agree within 5 m; ground 3,176 ft. Pin 2 (Red Mountain Trail junction) sat at 48.1579,-120.8686 on a slope near 5,030 ft; both datasets end the Chiwawa River trail and begin Chiwawa Basin Trail #1550A at 48.13772,-120.88668 (OSM 48.13770,-120.88668), with an unnamed path climbing north toward Red Mountain from the same point; USFS mileage to it is 5.29 mi from Trinity, matching the route text's 'roughly 5 miles' and the published '3.7 miles from the Buck Creek fork'; ground 4,840 ft, matching the itinerary's 'junctions around 4,800 ft'. Its stored distMi 3.7 is the fork-to-junction leg, not trailhead distance, so it is set to null. Pins 3-6 (ford, leave-trail, 6,300 ft bench, col) all sit 2+ km north of the real basin at ground heights 6,690-8,040 ft, and the col pin is EAST of the summit although Fortress Mountain (48.1595,-120.9335) is WSW of it; Chiwawa Basin Trail #1550A ends at 48.14396,-120.89833 at only 4,786 ft, and the Chiwawa headwater runs from 48.147,-120.922, so the basin, bench and col lie south/southwest of the summit. No two sources place the ford, the 5,500 ft trail exit, the bench or the 7,200 ft col within 300 m (a route page gives the col height only), so those four are LEFT and need a later placement. Summit pin (48.16342,-120.90762) agrees with the USGS/OSM peak at 48.16379,-120.90736 (45 m). Trailhead agrees with the road end at 48.0720,-120.8499.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+    "https://overpass-api.de/api/interpreter",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2004101404",
+    "http://www.willhiteweb.com/washington_climbing/chiwawa_mountain/bulger_list_109.htm",
+    "https://armchairmountaineer.com/chiwawa-mountain"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_chiwawa_mountain_southwest",
+     "index": 1,
+     "expect": {
+      "name": "Buck Creek Trail / Chiwawa River Trail fork",
+      "lat": 48.140239,
+      "lng": -120.851631
+     },
+     "lat": 48.09263,
+     "lng": -120.86797,
+     "elev": 3180,
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+      "https://overpass-api.de/api/interpreter"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_chiwawa_mountain_southwest",
+     "index": 2,
+     "expect": {
+      "name": "Red Mountain Trail junction",
+      "lat": 48.157861,
+      "lng": -120.868596
+     },
+     "lat": 48.13772,
+     "lng": -120.88668,
+     "elev": 4840,
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+      "https://overpass-api.de/api/interpreter"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_chiwawa_mountain_southwest",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 3.7,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_south_face_12",
+   "verdict": "confirmed",
+   "summary": "The Fourth Creek junction and pass pins sat down by Ingalls Creek while the confluence camp and ford sat back near the trailhead; all four now sit on the Fourth Creek trail where they belong, and the gully pin, which is on the wrong side of Ingalls Creek, is left for a later placement.",
+   "evidence": "Pin 1 (1391/Fourth Creek junction) was at 47.4452,-120.8664 beside Ingalls Creek; OpenStreetMap branches the Fourth Creek trail off Beverly Turnpike #1391 at 47.41969,-120.88811 and the Forest Service #1391 line passes 7 m from that point at 2.70 mi from the trailhead (pin says 2.6 mi); a published description puts the fork a steep 0.3 mi below the pass. Ground 5,228 ft. Pin 2 (Fourth Creek Pass) was at 47.4566,-120.8641 (north of Ingalls Creek); the Forest Service ends Fourth Creek #1219 and Hardscrabble #1218 at 47.42277,-120.88479 and OSM has the same junction at 47.42279,-120.88500, the named 'saddle intersection' of the two trails; ground 5,563 ft, matching the published 5,600 ft high point (the pin's 5,800 was the Beverly Turnpike high point). Pin 3 (confluence camp) was at 47.4111,-120.8813, 4 km south in the Beverly/Bean Creek drainage; Fourth Creek meets Ingalls Creek at 47.44829,-120.86055 in the USGS hydrography and 47.44828,-120.86012 in OSM (33 m); ground 4,206 ft vs text ~4,200. Pin 4 (Ingalls Creek ford) was at 47.4089,-120.8824; the OSM Fourth Creek trail crosses Ingalls Creek at 47.44884,-120.86422 and the Forest Service #1219 line has a vertex at 47.44852,-120.86454 (45 m); ground 4,223 ft. Pin 5 (south-side gully) sits at 47.3991,-120.8826, ground 4,202 ft, south of Ingalls Creek near the trailhead, although the route climbs north from the creek toward the summit (47.4701,-120.8615); no source places the gully to 300 m, so it is LEFT. Trailhead matches the mapped Beverly Turnpike trailhead parking (47.38917,-120.87230) and summit matches the mapped peak (47.47012,-120.86148).",
+   "sources": [
+    "https://overpass-api.de/api/interpreter",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+    "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/6/query",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.wta.org/go-hiking/hikes/fourth-creek",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Beverly+Turnpike+Trailhead"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_south_face_12",
+     "index": 1,
+     "expect": {
+      "name": "Beverly Creek Trail (FST 1391) / Fourth Creek Trail (FST 1226.1) junction",
+      "lat": 47.445194,
+      "lng": -120.866447
+     },
+     "lat": 47.41969,
+     "lng": -120.88811,
+     "elev": 5230,
+     "sources": [
+      "https://overpass-api.de/api/interpreter",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_south_face_12",
+     "index": 2,
+     "expect": {
+      "name": "Fourth Creek Pass",
+      "lat": 47.456595,
+      "lng": -120.864103
+     },
+     "lat": 47.42277,
+     "lng": -120.88479,
+     "elev": 5560,
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+      "https://overpass-api.de/api/interpreter"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_south_face_12",
+     "index": 3,
+     "expect": {
+      "name": "Fourth Creek / Ingalls Creek confluence camp",
+      "lat": 47.411068,
+      "lng": -120.881313
+     },
+     "lat": 47.44829,
+     "lng": -120.86055,
+     "elev": 4210,
+     "sources": [
+      "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/6/query",
+      "https://overpass-api.de/api/interpreter"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_south_face_12",
+     "index": 4,
+     "expect": {
+      "name": "Ingalls Creek ford",
+      "lat": 47.408861,
+      "lng": -120.882363
+     },
+     "lat": 47.44884,
+     "lng": -120.86422,
+     "elev": 4220,
+     "sources": [
+      "https://overpass-api.de/api/interpreter",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query"
+     ]
+    }
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "verdict": "confirmed",
+   "summary": "The Chiwawa River footbridge was pinned at the trailhead but the trail crosses the river about three miles up, so the pin now sits at the crossing; the two upper-mountain pins still sit near the trailhead on the wrong side of the peak and are left for a later placement because nobody publishes where they are.",
+   "evidence": "Pin 1 (Chiwawa River footbridge, distMi 0.2) sat at 48.0766,-120.8544 beside the trailhead; the only place Buck Creek Trail #1513 crosses the Chiwawa River is 48.10512,-120.87932 in OpenStreetMap and 48.10500,-120.87938 where the Forest Service #1513 line meets the USGS hydrography river line (14 m apart), about 1 mi up #1513 from its fork 1.9 mi from Trinity - matching the route text's 'around mile 2.75-3'. Ground 3,302 ft. Its distMi 0.2 is wrong and no source gives an exact figure, so it is set to null, and the note's 'just beyond the trailhead' is corrected. Pins 3 ('Basin below Buck's south/southwest slopes', 7,400 ft) and 4 ('Snowfield and loose schist below the summit', 8,300 ft) sit at 48.0880,-120.8746 (ground 4,394 ft) and 48.0781,-120.8570 (ground 2,847 ft) - east of the summit and next to the Trinity trailhead, while the route now reaches the summit from Louis Creek Basin on the WEST (Louis Creek heads at 48.0933,-120.9321). They describe places this route does visit, but no source places the 7,400 ft basin or the summit snowfield to 300 m, so they are LEFT and need placing or removing by the owner. Trailhead, Buck Creek Pass (mapped saddle 48.14374,-120.96275) and summit (mapped peak 48.09363,-120.91220) are correct.",
+   "sources": [
+    "https://overpass-api.de/api/interpreter",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+    "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/6/query",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_buck_mountain_south_ridge",
+     "index": 1,
+     "expect": {
+      "name": "Chiwawa River footbridge",
+      "lat": 48.076579,
+      "lng": -120.854449
+     },
+     "lat": 48.10506,
+     "lng": -120.87935,
+     "elev": 3300,
+     "sources": [
+      "https://overpass-api.de/api/interpreter",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+      "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/6/query"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_buck_mountain_south_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 0.2,
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_buck_mountain_south_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "crossing the Chiwawa River just beyond the trailhead",
+     "replace": "crossing the Chiwawa River about three miles up the trail"
+    }
+   ]
+  }
+ ]
+}

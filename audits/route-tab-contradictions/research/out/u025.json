@@ -1,0 +1,11 @@
+{"file": "u025", "results": [
+  {"id": "wa_west_face_2",
+   "fact": "which ranger district / county administers the route (emergency.rangerStation says Mount Baker Ranger District; access.land_manager says Darrington Ranger District; emergency.county Snohomish)",
+   "verdict": "fixed",
+   "correct_value": "Darrington Ranger District (Mt. Baker-Snoqualmie NF) administers the Downey Creek trail and trailhead this route uses",
+   "evidence": "The Forest Service's own Downey Creek Trail 768 page places the trail in the Darrington Ranger District and gives the Darrington station (1405 Emens Ave N, 360-436-1155) as the contact; the Darrington visitor site's Downey Creek Trail #768 page and the Forest Service Suiattle washout alert agree. So emergency.rangerStation's 'Mount Baker Ranger District' is the outlier against access.land_manager and access.closures. The county question is separate and left alone: the summit itself is listed in Chelan County (Wenatchee NF side of the crest), while the trailhead and approach are in Snohomish County, so Snohomish as the rescue county for this approach is defensible and not patched.",
+   "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/downey-creek-trail-768", "https://www.discoverdarrington.com/recreation/hiking/downey-creek-trail-768/", "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure"],
+   "patches": [
+     {"id": "wa_west_face_2", "fact": "ranger district", "op": "replace_text", "column": "emergency", "path": ["rangerStation"], "find": "Mount Baker Ranger District (Glacier Peak Wilderness office)", "replace": "Darrington Ranger District, Darrington, (360) 436-1155"}
+   ]}
+]}
