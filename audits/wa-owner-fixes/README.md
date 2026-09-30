@@ -23,6 +23,26 @@ cited source in new text, and re-reads after writing; old values are in `applied
 Every moved pin passed `scripts/oneoff/wa-owner-fixes/verify-pins.mjs`: inside Washington, USGS ground within
 200 ft of the pin's own elevation, and not on top of another pin.
 
+## Follow-up, 2026-09-30 (5 more patches on 4 routes: `patches-G1/G5/G6.json`)
+- **Ives Peak**: `aspect` NE → NW (the line is the northwest ridge, then the upper south face; 2 sources), and the
+  beta no longer names a website.
+- **Cutthroat West Ridge**: pin 8 (the area's reference coordinate, ~22 m from the summit pin, no elevation or note)
+  deleted. The drawn line is a recorded track and never used it.
+- **Ptarmigan Traverse**: Spider-Formidable Col now comes before Yang-Yang Lakes, the order a party meets them. Both
+  mileages had followed the wrong order and no source states them, so they are null rather than recomputed.
+- **Clean Break**: `approach` now starts at the Silver Star Creek pullout and gives Burgundy Col as the way down
+  (every fact was already in the row).
+- Re-checked, already right: Larrabee's three camp cards no longer claim a permit. Killen Creek has no parking fee
+  (the Forest Service trailhead page says "No fees are required for this site"); the route fields already say so,
+  and only the five camp cards still claim a Northwest Forest Pass.
+- Researched, still open: no source publishes a coordinate for the Washington Pass hairpin or pond pullouts, Red
+  Ledges, the Spider-Formidable col or this Cub Lake (the mapped Cub Lake is a different lake near the Entiat).
+  No source gives Clean Break a car-to-car gain (only the 1,500 ft wall).
+- Researched, the owner's to apply (the guard's columns): Inner Constance → "South Gully / East Ridge via Lake
+  Constance"; Ives → "Northwest Ridge / South Face"; Clast from the Past → sport (listed Sport; bolted per its own
+  fields); Washington Pass camp card (43 routes) "roughly half a mile" → "about a mile"; Killen Creek camp card
+  (5 routes) → no parking fee; Clean Break `gpx` start → the corrected trailhead pin.
+
 ## Not done, and why
 - **Renames, `discipline` and camp cards (`bivy`)**: Inner Constance ("via Crystal Pass"), Ives ("NE"),
   Clast from the Past (trad → sport?), and the camp-card errors (Larrabee permit, Washington Pass "half a mile",
