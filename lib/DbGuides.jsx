@@ -14,6 +14,7 @@ import {
   dbGuideToCamel, isGuideVerified, CERT_TRACK_LABELS, DISCIPLINE_LABELS,
 } from "./db";
 import { POP_BACK } from "./popupChrome.js";
+import { askConfirm } from "./ConfirmSheet.jsx";
 
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
@@ -72,7 +73,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const openInquiryId = sentId || ((myInquiries || []).find(i => i.status === "new") || {}).id || null;
   const withdraw = async () => {
     if (!openInquiryId || withdrawing) return;
-    if (!window.confirm("Withdraw your inquiry to " + guide.name.split(" ")[0] + "?")) return;
+    if (!(await askConfirm({ title: "Withdraw your inquiry to " + guide.name.split(" ")[0] + "?", confirmLabel: "Withdraw" }))) return;
     setWithdrawing(true);
     try {
       await withdrawInquiry(openInquiryId);

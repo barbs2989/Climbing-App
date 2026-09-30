@@ -17,6 +17,7 @@ import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { usePhotoReports, dismissPhotoReport, deleteRoutePhoto } from "./db";
 import { C } from "../ClimbMatchCore";
+import { askConfirm } from "./ConfirmSheet.jsx";
 
 const REASON_LABEL = {
   not_this_route: "Not this route",
@@ -38,6 +39,11 @@ export function PhotoReportQueue({ notify }) {
   if (!data || !data.length) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>Nothing reported.</div>;
 
   const act = (r, what) => {
+    // Taking a photo down deletes it for everyone; it is not a tap to land on by accident.
+    if (what === "down") { askConfirm({ title: "Take this photo down?", body: "It is deleted for everyone, with its reports. This can't be undone.", confirmLabel: "Take down" }).then(ok => { if (ok) run(r, what); }); return; }
+    run(r, what);
+  };
+  const run = (r, what) => {
     setBusy(r.id);
     const url = r.contributions && r.contributions.value && r.contributions.value.url;
     const p = what === "down"
@@ -64,14 +70,14 @@ export function PhotoReportQueue({ notify }) {
               <div style={{ fontSize: 13, fontWeight: 700, color: C.text }}>{REASON_LABEL[r.reason] || r.reason}</div>
               <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.route_id || "route unknown"}</div>
               {r.detail ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 4, lineHeight: 1.4 }}>{r.detail}</div> : null}
-              <div style={{ display: "flex", gap: 7, marginTop: 8 }}>
-                <button disabled={busy === r.id} onClick={() => act(r, "down")}
-                  style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.red + "55", background: C.redBg, color: C.red, fontSize: 12.5, fontWeight: 700, cursor: busy === r.id ? "default" : "pointer" }}>
-                  {busy === r.id ? "Working…" : "Take down"}
-                </button>
+              <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
                 <button disabled={busy === r.id} onClick={() => act(r, "dismiss")}
-                  style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12.5, fontWeight: 600, cursor: busy === r.id ? "default" : "pointer" }}>
+                  style={{ padding: "9px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12.5, fontWeight: 600, cursor: busy === r.id ? "default" : "pointer" }}>
                   Keep it up
+                </button>
+                <button disabled={busy === r.id} onClick={() => act(r, "down")}
+                  style={{ marginLeft: "auto", padding: "9px 12px", borderRadius: 9, border: "1px solid " + C.red + "55", background: C.redBg, color: C.red, fontSize: 12.5, fontWeight: 700, cursor: busy === r.id ? "default" : "pointer" }}>
+                  {busy === r.id ? "Working…" : "Take down"}
                 </button>
               </div>
             </div>

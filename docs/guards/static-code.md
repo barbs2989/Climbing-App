@@ -315,6 +315,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     32px and 34px variants, a bordered 16px `×`; back as a zero-padding blue text link or a bordered
     pill at 13/15/16/17px, spelled `← Back` or `‹ Back`. All 73 moved to the tokens (52 close,
     21 back); the glyphs were normalised to `✕` and `← Back`.
+  - **Rule 6 (2026-09-30): no `window.confirm(`, and no POP_REMOVE with a NEGATIVE margin.** Reported:
+    *"the cancel button and ok are too close together"* on Remove crew, and the proposed-day ✕ *"too
+    close"* to Evening. The browser draws `window.confirm`'s Cancel/OK and nothing of ours can space
+    them, so all 7 sites moved to `askConfirm` in `lib/ConfirmSheet.jsx` (stacked, full width, 48px,
+    14px apart, Cancel focused). The day ✕'s `margin:"-6px -6px -6px 0"` put its 32px hit area ~1px
+    above the Evening button. The same pass raised ~40 Accept/Decline and Confirm/Cancel rows from a
+    6–9px gap to 12px and put Block, Remove friend, group-member Remove, topo Clear all, photo take-down
+    and Remove check-in behind `askConfirm`. The gap sweep is NOT guarded: a flex gap is not a
+    reliable static signal (a column, a wrap, a spacer), so a new cramped pair needs a person's eye.
   - **Style OBJECTS, not a component, deliberately.** Each popup keeps its own `<button>`, its own
     `aria-label` and its visible label, which is what `check:dialog-dismiss`, `check:a11y-names`
     and `check:control-names` read. A `<CloseX/>` wrapper would hide the label from all three.
