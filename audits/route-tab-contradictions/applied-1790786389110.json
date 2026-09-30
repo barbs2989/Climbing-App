@@ -1,0 +1,125 @@
+{
+ "applied": [
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Overnight camp location/elevation — 'Basin below Cannon' at 6,200 ft (waypoints) vs Perfection/Inspiration Lake at ~7,500 ft (itinerary/approach)"
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "column": "seasonal_hazards",
+   "path": [
+    "crevasses"
+   ],
+   "fact": "glacier/crevasse hazard on this route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "before": {
+    "itinerary": {
+     "cal": "Core Enchantment Zone overnight permits (required for the basin camp, May 15-Oct 31) are lottery/walk-up only and are among the hardest to get in Washington; plan well ahead or be ready to camp lower and day-trip the summit instead.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Snow Lakes trailhead (~1,300 ft), climb the long, steadily steepening Snow Lakes Trail past Nada and Snow Lakes and up into the core Enchantment basin, camping near Perfection or Inspiration Lake (~7,500 ft). A Core Enchantment Zone overnight permit is required in season and is hard to draw/walk up for.",
+       "hours": 7.5,
+       "miles": 10.5,
+       "title": "Hike in to core Enchantment basin",
+       "gainFt": 6000,
+       "lossFt": 300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Establish camp near Perfection/Inspiration Lake"
+      },
+      {
+       "n": 2,
+       "note": "A long out-and-back day-climb from camp: up past Talisman/Rune Lakes to Prusik Pass, northwest around Lorelei Lakelets and up onto Druid Plateau, then west up scree/snow to the summit block and a final friction-slab scramble. This typically takes roughly 9-9.5 hours round trip in good conditions; expect longer if snow lingers on the plateau or the summit block is wet/icy.",
+       "hours": 9.4,
+       "miles": 6.5,
+       "title": "Climb Cannon Mountain from camp",
+       "gainFt": 2300,
+       "lossFt": 2300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave camp",
+         "detail": "Depart Perfection/Inspiration Lake camp after breakfast, heading toward Talisman and Rune Lakes."
+        },
+        {
+         "time": "8:45 AM",
+         "label": "Reach Prusik Pass",
+         "detail": "~7,463 ft; contour northwest from here staying high (7,300-7,400 ft) past the Lorelei Lakelets."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Gain Druid Plateau",
+         "detail": "Climb the rib to ~7,900-8,000 ft then up to the plateau at ~8,350 ft; summit comes into view."
+        },
+        {
+         "time": "1:45 PM",
+         "label": "Reach the summit",
+         "detail": "West slopes to the summit block, then the friction-slab ramp on its south side to the top (~8,600+ ft)."
+        },
+        {
+         "time": "2:15 PM",
+         "label": "Begin descent",
+         "detail": "Reverse the route down through Druid Plateau and Lorelei Lakelets to Prusik Pass."
+        },
+        {
+         "time": "4:30 PM",
+         "label": "Back at camp",
+         "detail": "Round trip typically ~9-9.5 hours; strong parties can be faster in firm snow conditions."
+        }
+       ],
+       "objective": "Tag the Cannon Mountain summit and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: descend from the core basin back down the Snow Lakes Trail past Snow and Nada Lakes to the trailhead. Knees take a beating on the steep switchbacks below Snow Lakes; many parties budget extra time versus the hike in.",
+       "hours": 6,
+       "miles": 10.5,
+       "title": "Hike out",
+       "gainFt": 300,
+       "lossFt": 6000,
+       "packLb": 28,
+       "schedule": [],
+       "objective": "Break camp and return to the Snow Lakes trailhead"
+      }
+     ],
+     "totalNote": "A standard 3-day, 2-night trip: ~9-10.5 mile carries on the in/out days (~6,000 ft each way) bracketing a long ~9-9.5 hour, ~2,300 ft round-trip summit day from a core Enchantment basecamp; very fit parties compress the summit push and hike-out into one very long single day."
+    }
+   }
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Late-spring to early-summer snow climb window; conditions swing quickly between a filled, climbable couloir and an unstable or melted-out one",
+      "probability": "Afternoon storms are a known hazard; combined with softening snow late in the day this raises both lightning and wet-slide/rockfall risk on a late descent"
+     },
+     "exposure": "Sustained, consequential exposure on both the steep access couloir (a fall would be a long slide onto rock/into the runout) and the loose Class 4 ridge above it, where the existing hazards list flags rockfall and loose rock typical of the Johannesburg massif as ongoing threats to the party and to any parties below",
+     "avalanche": {
+      "zone": "North Cascades / Cascade Pass area - approximates NWAC's West Slopes North zone",
+      "byMonth": {
+       "May": "Moderate",
+       "July": "N/A",
+       "June": "Low",
+       "April": "Considerable"
+      }
+     },
+     "crevasses": "N/A - no glacier travel indicated for this route; it is a couloir/ridge snow-and-rock line, not a glaciated approach (not explicitly confirmed either way in sources)"
+    }
+   }
+  }
+ ]
+}

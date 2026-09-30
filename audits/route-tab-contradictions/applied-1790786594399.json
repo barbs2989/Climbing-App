@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain for the route"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "before": {
+    "gain_ft": 1500
+   }
+  }
+ ]
+}
