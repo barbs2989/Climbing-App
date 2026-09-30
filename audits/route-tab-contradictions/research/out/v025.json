@@ -1,0 +1,220 @@
+{
+ "file": "v025",
+ "results": [
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "fact": "distance to camp: itinerary day 1 6.2 mi vs Cooney Lake waypoint at 8 mi",
+   "verdict": "unresolved",
+   "correct_value": "About 8 mi one way to Cooney Lake (the waypoint's figure) looks right; itinerary day 1 (6.2) and the day-2 'full 6.2 miles back out' look short, but no source states a one-way figure and the two stated round trips differ slightly.",
+   "evidence": "Two new independent guides both put the lake near 16 mi round trip from the Foggy Dew Trailhead: one gives 16.25 mi round trip (5 mi to the Martin Creek junction, then 2.1 mi to the pass above Merchants Basin and 0.9 mi down to the lake, or 3 mi on the Martin Creek trail), the other 16 mi round trip (junction with the Cooney Lake Trail at 7.7 mi via Martin Creek). Both support the waypoint's 8 mi and contradict 6.2, and the first adds 2.5 mi round trip from the lake to the peak above it, consistent with the row's ~19 mi total. But the two round trips are not the same figure, no source states the one-way distance, and fixing day 1 alone would push the itinerary TOTAL to 20.8 mi against the ~19 mi in totalNote and approach; rebalancing day 2 would be a subtraction. Recommended owner fix: day 1 miles 8, day-2 note '8 miles back out', day 2 miles ~10.5-11.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/04/02/cooney-lake/",
+    "https://www.hikeoftheweek.com/2025/09/18/cooney-lake/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "fact": "Whether a wilderness permit is needed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The Barclay Lake Trailhead page lists only recreation-pass/day-use fee payment (Northwest Forest Pass, Interagency, scan-and-pay) and no wilderness permit; an archived Barclay Lake hike page lists only a Northwest Forest Pass. The forest-wide wilderness page still says only that day-use visitors 'may need' a free self-issue permit, without naming Wild Sky. No source states either that Wild Sky uses a self-issue permit or that it does not, so neither the permit column nor access.permit can be confirmed.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/barclay-lake-trailhead",
+    "https://web.archive.org/web/2025/https://www.wta.org/go-hiking/hikes/barclay-lake",
+    "https://www.fs.usda.gov/r06/mbs/wilderness"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "fact": "Thunder Basin high-camp elevation: 6,400 ft (waypoint) vs. ~5,180 ft (approach text and itinerary schedule)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Re-read: the approach, beta, itinerary schedule and the day-1/day-2 gains (2,880 and 3,130 ft) are all built on the 5,180 ft upper basin, which one guide states; the waypoint (6,400 ft, 'granite slabs and small tarns') matches a first-hand report that passed the two small lakes at the top of the basin and bivied on platforms at 6,400 ft. A third report on the same site is by the same author as that one (one source). A Pack & Paddle traverse and a 2021 three-day ascent camped in Thunder Basin or at Butterfly Lake but give no elevation. Both camps are real and no second source names either as the standard high camp, so nothing is changed.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/07/17/thunder-basin/",
+    "https://onehikeaweek.com/2019/08/26/tenpeak-mountain/",
+    "https://trailcatjim.com/high-thunder-traverse-tenpeak-mtn-southeast-slope-north-face/",
+    "https://www.whereiskylemiller.com/stevens-pass/tenpeak-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "fact": "Itinerary day-mile sum vs. totalNote's stated round-trip mileage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only stated round trip (26.8 mi including the West Peak) and the 25 mi day-climb figure come from pages by the same author, so they count as one source; the Wenatchee guide gives 6 mi to Thunder Creek plus 0.5 mi to the sheep trail but no total. Other reports found are traverses (32 mi, 31 mi) that do not isolate this route. Nothing states a round trip for the Southeast Route a second time, so neither the 15.5 mi day sum nor the ~13 mi totalNote can be replaced. Note also the camp waypoint's distMi 7.5 vs the approach's 6.5 mi to camp.",
+   "sources": [
+    "https://onehikeaweek.com/2019/08/26/tenpeak-mountain/",
+    "https://www.countryhighpoints.com/tenpeak-mountain/",
+    "https://wenatcheeoutdoors.org/2016/07/17/thunder-basin/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "climbing season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Documented ascents span mid-May (on snow), June (2001, 2005, 2013) and September (2015, 2019); none found in October and no source states a window. The season chip (Jun-Sep) and the July-October best_season / seasonal_guidance / approach-variant window ('July to early October') still disagree at both ends, and no two sources settle either end.",
+   "sources": [
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1007331",
+    "https://onehikeaweek.com/2019/09/07/the-temple/",
+    "https://cascadeclimbers.com/forum/topic/98164-tr-temple-ridge-the-temple-9192015/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "crux grade (3-way disagreement)",
+   "verdict": "fixed",
+   "correct_value": "5.3-5.6 (sources split over the same summit-block friction move)",
+   "evidence": "Decision rule 2 (sources split over the same line): the 5.6 end is supported by the Mountaineers West Side route page (bolt-protected friction face, 5.6 moves, Grade II+ 5.6) plus 2005 and 2015 trip reports; the 5.3 end by Wikipedia (easiest route class 5.3) and a 2001 report ('reported to be 5.3' with a quarter-inch bolt). A 2013 first-hand report and the 2019/2021 ascents give no number. Nothing supports 5.4. Every grade field and prose copy (grade, rock_grade, pitch_detail[0], climbing_route[2], hazards[1], overview, beta, pro_tips[3], descent_text) now states 5.3-5.6; 'Class 3 to 4' in the grade column is replaced because the row's own crux is roped fifth class.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side",
+    "https://cascadeclimbers.com/forum/topic/98164-tr-temple-ridge-the-temple-9192015/",
+    "https://en.wikipedia.org/wiki/The_Temple_(Washington)",
+    "https://trailcatjim.com/nada-lake-the-temple-attempt-via-north-chute/"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Grade II, Class 3 to 4",
+     "value": "Grade II, 5.3-5.6"
+    },
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.6",
+     "value": "5.3-5.6"
+    },
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "grade"
+     ],
+     "expect": "5.6",
+     "value": "5.3-5.6"
+    },
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "class"
+     ],
+     "expect": "5.4",
+     "value": "5.3-5.6"
+    },
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "generally given around 5.4 for the route overall",
+     "replace": "graded anywhere from 5.3 to 5.6"
+    },
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "low-5th-class (5.3) crux",
+     "replace": "low-5th-class (5.3-5.6) crux"
+    },
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "exposed 5.3 slab crux",
+     "replace": "exposed 5.3-5.6 slab crux"
+    },
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "(5.0-5.3, reported inconsistently between sources)",
+     "replace": "(5.3-5.6)"
+    },
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "find": "the 5.3 summit-block crux",
+     "replace": "the 5.3-5.6 summit-block crux"
+    },
+    {
+     "id": "wa_the_temple_south_ridge",
+     "fact": "crux grade (3-way disagreement)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "past the 5.3/low-5th-class friction slab crux",
+     "replace": "past the 5.3-5.6 friction slab crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "number/type of summit rappels",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new count: a 2013 first-hand report mentions a rappel with 'double overhangs' but no number or rope; another report used 60 m of rope as a hand line. Earlier accounts (one double-rope rap; two raps on 2x30 m; three raps on a single 60 m) still disagree, so rappels, descent_text and climbing_route[3] cannot be reconciled on two agreeing sources.",
+   "sources": [
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1007331",
+    "https://www.summitpost.org/west-temple-climb/770102"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "one-way / round-trip approach distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found states a one-way mileage to the base or a 3-day total; stated round trips remain 16, 16.5, ~17 and ~18 mi from different parties and camps. The waypoint distMi values and the 19-20 mi 3-day total cannot be sourced, and halving is not a stated figure.",
+   "sources": [
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1007331"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "Total elevation gain/loss",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No additional cumulative gain found; figures remain 8,000, ~7,300, ~7,400 and 6,972 ft (net) from different reports, no two equal. gain_ft 8,000, loss_ft 6,995 and the itinerary's ~7,200 are left for a decision.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

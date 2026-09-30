@@ -1,0 +1,176 @@
+{
+ "file": "v014",
+ "results": [
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Total round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "dist_km null (the stored 37.82 km is the whole round trip, not the one-way approach; no one-way figure is stated)",
+   "evidence": "Two independent parties who climbed BOTH Clark Mountain and Luahna from the White River Trailhead by the Boulder Pass / sheepherder line state the whole round trip as 25.7 mi and about 22 mi, so a 23.5 mi ONE-WAY approach to Luahna alone (dist_km 37.82 km, shown as 'Approach (one way)') is impossible; it equals the itinerary's 23.5 mi round trip. No source states a one-way figure for Luahna alone (a 10.5 mi one-way figure is stated only to Boulder Pass, and the row's line leaves the trail before the pass), so under the delegated rule the provably wrong value is set to null rather than replaced; the itinerary's 23.5 mi round trip is left.",
+   "sources": [
+    "https://onehikeaweek.com/2012/09/16/clark-mountain/",
+    "http://ericsbasecamp.net/trips/ClarkLuahna/ClarkLuahna.htm",
+    "https://wenatcheeoutdoors.org/2016/06/09/boulder-pass-white-river/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 37.82,
+     "value": null,
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Total round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Header gain_ft/loss_ft 6,150 vs itinerary day totals 6,520 ft (and totalNote ~6,500 ft)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third attempt. The only stated cumulative gains found remain for Clark and Luahna together (nearly 7,500 ft in one report; about 8,600 ft in a speed-record listing), and a 2012 route write-up gives only leg figures (4 mi to the Boulder Pass junction, 6+ mi and 3,700 ft up to the pass). No source states a total gain for Luahna alone by this line, and the itinerary sum would be a computed figure, so neither 6,150 nor 6,520 is changed.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/ClarkLuahna/ClarkLuahna.htm",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/luahna-peak/833751",
+    "https://onehikeaweek.com/2012/09/16/clark-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "fact": "Trailhead to Kool-Aid Lake distance: itinerary day 1 (6.5 mi) vs the Kool-Aid Lake waypoint and dist_km (5.5 mi)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third attempt. One new source, a mapped hike listing for Kool-Aid Lake via Cascade Pass and the Ptarmigan route, gives 5.5 mi one way (agreeing with the waypoint and dist_km). The traverse stage write-up still gives only 4 mi of trail to the pass and about 1 mi from Cache Col to the lake, with the pass-to-col leg unmeasured, and other traverse reports give only totals (about 34 mi round trip) or times. Only one source states the trailhead-to-lake figure, and the row's 5.5 side is two fields (waypoint, dist_km) against day 1 and day 3 at 6.5, so the internal-majority rule is not met; nothing is changed.",
+   "sources": [
+    "https://www.gaiagps.com/hike/235287/kool-aid-lake-via-cascade-pass-trail-and-ptarmigan-traverse/",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/stage-1/166726",
+    "http://ericsbasecamp.net/trips/PtarmiganTraverse/PtarmiganTraverse.htm",
+    "https://galenweld.com/blog/2025/7/18/trip-report-a-long-awaited-ptarmigan-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "fact": "Summit-day duration vs. its own timestamped schedule",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third attempt. Searches of guide pages, club trip reports and the peak's climber log found only descriptions of the Northeast Face as several pitches of snow and ice to about 60 degrees, best in early fall, and summit-day times for the standard East Ridge (3-5 hours camp to summit; one party under 2 hours up and 1 down). No source gives times for the face itself, so the day's 9 hours and its 12-hour clock schedule cannot be reconciled without inventing times.",
+   "sources": [
+    "https://www.nemountaineering.com/climbs/eldorado-peak/",
+    "https://www.summitpost.org/eldorado-peak/climbers-log/150316"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "fact": "Total gain 4,500 ft is less than the trailhead-to-summit rise",
+   "verdict": "fixed",
+   "correct_value": "gain_ft null (4,500 ft is provably too low; no stated traverse total exists)",
+   "evidence": "The USGS elevation service puts the ground at the Lake Serene trailhead at about 540-575 ft, and the Main Peak where the traverse ends stands at 5,991-6,002 ft (the row's own high point and the peak's published elevation), so the net rise alone is at least about 5,400 ft before the drops between North, Middle and Main peaks; two club/trip sources give 5,500 ft and over 6,000 ft for Main Peak by itself from the same trailhead. 4,500 ft is therefore provably wrong, but no source states a total for the three-summit traverse, so under the delegated rule it is set to null rather than replaced. No prose on the row repeats 4,500.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.5514&y=47.8177&units=Feet&wkid=4326",
+    "https://en.wikipedia.org/wiki/Mount_Index",
+    "https://www.peakbagger.com/peak.aspx?pid=2045",
+    "https://climberkyle.com/2017/05/21/mt-index-hourglass-gully/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4500,
+     "value": null,
+     "id": "wa_traverse_of_mount_index",
+     "fact": "Total gain 4,500 ft is less than the trailhead-to-summit rise"
+    }
+   ]
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "fact": "Total gain/loss: gain_ft 6,000 vs loss_ft 5,500 vs approach '~5,500 ft' on an out-and-back",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third attempt. Archived copies of the Hourglass Gully route page and a Lake Serene trip report give only point elevations (Lake Serene ~2,251 ft, the gully base ~4,200 ft, the constriction ~5,000 ft, a schrund near 5,400 ft) and no cumulative gain; a 2013 party write-up gives none either. Stated totals remain 5,500 ft (club route page) and over 6,000 ft (one party), which disagree, so no figure is adopted.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/standard-route-hourglass-gully/160556",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/mt-index-via-lake-serene/168532",
+    "https://stevensong.com/usa/washington/mount-index-hourglass-gully/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_baring_mountain_northwest_ridge",
+   "fact": "round-trip distance and gain figures disagree",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third attempt. New figures found add to the spread rather than converging: a 2025 party recorded 5.71 mi and 4,122 ft round trip and another report calls it more like 6.2 mi, alongside the earlier 4.62, 5.3, 7.0, 7.4 and 8.0 mi. No two independent sources state the same distance or gain for this path.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-baring/@@related_tripreport_listing?b_start%3Aint=5",
+    "https://www.hikeoftheweek.com/2023/06/29/barclay-lakebaring/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_baring_mountain_south_route",
+   "fact": "round-trip distance: dist_km vs itinerary/approach_variants",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same open question as the Northwest Ridge row (one physical path): stated round trips now span 4.62, 5.3, 5.71, 6.2, 7.0, 7.4 and 8.0 mi with no two independent sources agreeing, so neither dist_km (5.6 km) nor the 5.3 mi round trip is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-baring/@@related_tripreport_listing?b_start%3Aint=5",
+    "https://www.hikeoftheweek.com/2023/06/29/barclay-lakebaring/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "fact": "distance and gain: dist_km 25.75 km (16 mi, shown as the one-way approach) and gain_ft 5300 vs itinerary days 7 + 3.5 + 7 mi and 3,200 + 2,200 = 5,400 ft gain, and totalNote '~16 mi and ~5,400 ft round trip'",
+   "verdict": "fixed",
+   "correct_value": "dist_km null (16 mi is not a one-way figure; no one-way figure is stated). The gain half stays open; see the next entry.",
+   "evidence": "Two independent sources state the WHOLE round trip to Martin Peak's West Ridge from Holden: 14 mi round trip from the Holden campground (club route page) and 12 mi round trip from the Railroad Creek trailhead at Holden Village (a trip report). A 16 mi ONE-WAY approach (dist_km 25.75 km) is contradicted by both, and neither states a one-way figure, so under the delegated rule dist_km is set to null rather than replaced (halving is not allowed: the two round trips disagree).",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+    "http://trailcatjim.com/martin-peak-via-southwest-gullies-west-ridge/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 25.75,
+     "value": null,
+     "id": "wa_martin_peak_west_ridge",
+     "fact": "distance and gain: dist_km 25.75 km (16 mi, shown as the one-way approach) and gain_ft 5300 vs itinerary days 7 + 3.5 + 7 mi and 3,200 + 2,200 = 5,400 ft gain, and totalNote '~16 mi and ~5,400 ft round trip'"
+    }
+   ]
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "fact": "gain_ft 5,300 vs itinerary 3,200 + 2,200 = 5,400 ft and totalNote ~5,400 ft",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Split out of the combined distance/gain item. The club route page states 5,300 ft (trailhead to camp 3,100, camp to Martin 2,200), matching gain_ft, but a trip report states 5,600 ft gained and lost; no second source states 5,300 or 5,400, so neither gain_ft nor the itinerary is changed.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+    "http://trailcatjim.com/martin-peak-via-southwest-gullies-west-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "fact": "Distance up the Chiwawa River Trail to the Massie Lake turnoff: approach/itinerary/sectionBreakdown 'about 4 miles' vs the 'M' tree waypoint distMi 2.8 (and lake 4.7)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third attempt. Figures for the Trinity-to-turnoff distance still do not converge: one high-route description says roughly 4 miles, a different party approx 3-4 miles, a summary cites about 3 miles, and a 2005 party describes a 1.4 mi leg plus a 3.1 mi leg before the lake path with the lake path itself 1.4 mi (another says ~2 mi). OpenStreetMap puts Massie Lake about 4.6 mi in a straight line from Trinity, which makes the lake pin's distMi 4.7 implausibly short for a trail-plus-sheep-path route, but no two sources state the same cumulative figure for either pin, and new distMi values would have to be computed, so nothing is changed.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/31/massie-lake-high-route/",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/massie-lake/373477",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2005082100",
+    "https://nominatim.openstreetmap.org/search?q=Massie+Lake,+Chelan+County,+Washington&format=json"
+   ],
+   "patches": []
+  }
+ ]
+}

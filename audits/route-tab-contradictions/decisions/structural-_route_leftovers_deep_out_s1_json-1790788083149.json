@@ -1,0 +1,445 @@
+{
+ "applied": [
+  {
+   "id": "wa_spire_mountain_scramble",
+   "op": "patch",
+   "columns": [
+    "approach_logistics"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_spire_mountain_scramble",
+   "area_id": "wa_spire_mountain",
+   "name": "Standard Scramble",
+   "discipline": "alpine",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": 91,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Dwight Dean and Kenneth Chapman, May 1934 — first ascent of the peak's true summit (Northwest Spire), reached via this ridge/approach line.",
+   "lat": 47.865705,
+   "lng": -121.406065,
+   "aspect": "W",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "rope optional for the summit blocks",
+    "ice axe (early season)"
+   ],
+   "hazards": [
+    "Steep, entirely off-trail approach through blowdown and brush, especially the first ~600 ft above the river",
+    "Cliff bands around 4,200-4,400 ft on the peak's north side that require careful route-finding to bypass",
+    "Exposed ~10 ft Class 5 mantle step at roughly 6,100 ft on the summit ridge — a clear step up from the Class 3 ridge around it",
+    "Permanent ice/snow patches on north and east aspects near the summit, present even in late summer",
+    "North Fork Skykomish River crossing can be hazardous during high water or early-season snowmelt",
+    "No reliable cell coverage anywhere on route"
+   ],
+   "verif": null,
+   "overview": "Spire Mountain (6,213-6,218 ft) is a three-summited peak — Northwest, Central, and Southeast Spires — in the Wild Sky Wilderness of the Mount Baker-Snoqualmie National Forest, about 7 miles northeast of Index and 4 miles north-northeast of Gunn Peak. It rises directly above the North Fork Skykomish River, on the west side of the range, not near Sultan Basin or the Sauk drainage/Monte Cristo group. One of the least-often-climbed of the 'Everett Pin Peaks,' Spire is reached by a long, entirely off-trail approach through brush and cliff bands and finishes on an airy summit ridge with a genuine, exposed Class 5 step that trips up parties expecting an easy Class 3 walk-up.",
+   "beta": "An all off-trail alpine scramble of roughly 6 miles and about 5,000 ft of elevation gain from the FR63 roadside parking to the summit. Sustained bushwhacking and blowdown low down give way to a cliff-band bypass and a snow/scree gully, ending with an exposed, sometimes loose ridge scramble with two short sections of 4th/low-5th-class climbing where a rope is often carried. It is one of the least-climbed of the Everett-area Pin Peaks, and sees sparse recent traffic.",
+   "turnaround": "Because the approach and descent are both off-trail, slow, and hard to navigate in poor visibility or fading light, set a firm turnaround time based on your slowest party member's pace on the ascent and stick to it — do not push into the exposed summit ridge scramble late in the day or in deteriorating weather.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 4-5 (short mantle crux); mostly class 3 ridge scrambling",
+   "ice_grade": null,
+   "gain_ft": 5000,
+   "loss_ft": 5000,
+   "dist_km": 9.7,
+   "max_angle": null,
+   "rappels": "No fixed rappel line for the whole route; one fixed anchor exists at the crux class 5 step for parties who choose to rappel it rather than down-climb (rope length/count at this anchor not documented) — the rest of the ridge and the approach slopes are down-climbed/hiked.",
+   "commitment": null,
+   "face": "West Ridge",
+   "permit": "Self-issue wilderness permit (free, at trailhead)",
+   "comms": null,
+   "descent": "Reverse the scramble; downclimb the Class 3-4 sections carefully.",
+   "obj_haz": [
+    "loose, blocky rock on the summit ridge",
+    "long off-trail bushwhacking and route-finding",
+    "cliff bands on the mountain's north side",
+    "avalanche danger on approach slopes in winter/spring",
+    "washed-out access roads (FR 63 and FR 65, closed on the Forest Service alert of June 30, 2026)"
+   ],
+   "waypoints": [
+    {
+     "elev": 1156,
+     "name": "Index-Galena Road / North Fork Skykomish River Access (FR-63, ~Mile 10)",
+     "note": "Park at the snowplow turnaround by the bridge about 1 mile east of Galena; this is the last reliable water, none is found once you leave the road.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive US 2 to Skykomish, then head north on the Beckler River Road (FR-65) for about 15 miles and turn left (west) onto FR-63. A high-clearance vehicle is worth having for the last few miles. Park at the turnaround by the river crossing near Galena at about 1,150 feet; the pullout is unmarked and easy to drive past. No permits are needed, and the river here is the last dependable water, since there is none once you leave the road."
+    },
+    {
+     "elev": 2300,
+     "name": "Old Logging Road / 2300-ft Saddle",
+     "note": "After a steep, brush-free first 600 ft through downed timber, cross an old overgrown logging road at this saddle on the lower north slopes.",
+     "type": "Junction",
+     "distMi": 0.7
+    },
+    {
+     "elev": 3300,
+     "name": "Hogsback Ridge Top",
+     "note": "The well-defined hogsback you've been following since ~2700 ft terminates here; continue straight uphill toward the cliff bands above.",
+     "type": "Junction",
+     "distMi": 1.4
+    },
+    {
+     "elev": 4300,
+     "name": "Cliff Band Traverse",
+     "note": "Large cliff bands block the north end of the peak between roughly 4200-4400 ft; traverse southeast below them to reach the mountain's west/northwest side.",
+     "type": "Hazard",
+     "distMi": 2
+    },
+    {
+     "elev": 5940,
+     "name": "5940-ft Saddle Northwest of Summit",
+     "note": "Gain this saddle via the traverse; a possible schrund/moat forms here depending on season and snow cover before you turn onto the final ridge.",
+     "type": "Hazard",
+     "distMi": 3.1
+    },
+    {
+     "elev": 6100,
+     "name": "Class 5 Step",
+     "note": "The final ridge is mostly Class 3, but two short sections here are Class 4-5; many parties place a rope for this exposed step.",
+     "type": "Hazard",
+     "distMi": 3.2
+    },
+    {
+     "lat": 47.865705,
+     "lng": -121.406065,
+     "elev": 6217,
+     "name": "Spire Mountain",
+     "note": "True summit at the top of the west/northwest ridge scramble, with views over the Monte Cristo peaks and North Fork Skykomish valley.",
+     "type": "Summit",
+     "distMi": 3.25
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 12,
+    "summitTimeHrs": 12,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "4:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 12,
+      "note": "A brutal, entirely off-trail day: steep old-growth and slide-alder bushwhacking up from the North Fork Skykomish, a rising traverse below cliff bands, then loose class 3-4 terrain …",
+      "fromTo": "Car-to-car: West Ridge scramble",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A light scrambling rack is sufficient: a single 30m/100 ft rope, a handful of slings including two double-length (240cm) runners for wrapping horns/blocks as rappel anchors, and optionally a few small nuts or cams if the party wants protection on the short 4th/low-5th-class steps near the top. This is not a route that requires a full trad rack.",
+   "what_to_bring": [
+    "Helmet",
+    "Short hand line or ~30m rope for the crux step",
+    "Sturdy boots with good edging for the ridge",
+    "Gaiters/long sleeves for brush",
+    "GPS or offline map with a saved track",
+    "Satellite messenger or PLB (no cell coverage)"
+   ],
+   "pro_tips": [
+    "Carry a short hand line or a few meters of rope for the ~10 ft Class 5 step at ~6,100 ft — most parties find it easier to protect than to solo",
+    "Start very early; the off-trail approach, brush, and cliff-band route-finding make for a long day even before the technical ridge",
+    "Save or download a GPS track from a recent trip report — there's no trail above the North Fork Skykomish Trail, and threading the cliff bands is the crux of the approach, not just the summit ridge"
+   ],
+   "watch_out": [
+    "The ridge is mostly Class 3, but two short sections are genuinely Class 4-5 — don't commit to the ridge unprepared for a real 5th-class move",
+    "The 4,200-4,400 ft cliff bands can cliff you out if you traverse too high or low — locate the described bypass before committing to a line",
+    "This is one of the least-visited Everett-area peaks; don't count on other parties, a boot path, or cell signal for help if something goes wrong"
+   ],
+   "pro_needs": "No rack needed for a typical ascent — a short hand line or a light 30m rope is enough to protect the one Class 5 step near 6,100 ft.",
+   "best_season": "Late July through September is the reliable window for mostly snow-free brush and rock. Even then, shaded gullies and the north/east-facing slopes below the summit spires can hold snow or verglas well into summer, since permanent ice patches persist on the north and east aspects of Spire, Gunn, and Merchant peaks. Fall (September-October) often has less brush resistance as vegetation dies back, at the cost of shorter days and a higher chance of wet rock.",
+   "high_point_ft": 6213,
+   "aid_grade": null,
+   "approach": "Drive US-2 to Skykomish, then north on Beckler River Road (FR-65) for about 15 miles; turn left (west) onto FR-63 and follow it about 4.6 miles to where it crosses the North Fork Skykomish River again. Just past that bridge the road bends right over a small rise about a mile east of Galena (~1,150 ft); park at the unmarked roadside pullout there. Leave the road on the side away from the river and head directly, off-trail, up the steep, blowdown-choked slope toward Spire Mountain. There is no tread anywhere on the mountain: the line works around cliff bands at roughly 4,200-4,400 ft on the peak's north side, traverses southeast to about 5,400 ft below the summit spires, and gains the west/northwest ridge for the final scramble to the top. An older, historic alternate approach (Fred Beckey's original line) starts south of Index via the North Fork Skykomish River Road, which now dead-ends at a washout around mile 6, then follows the unmaintained Trout Creek Road south to reach the same ridge — a much brushier ~16-mile, ~7,000 ft round trip, longer than today's standard FR-63 approach.",
+   "descent_text": "Descend by reversing the ascent line: downclimb (or rappel/back off facing in) the short Class 5 step near 6,100 ft, then retrace the ridge and the off-trail descent back through the 5,400 ft traverse and the 4,200-4,400 ft cliff-band bypass to the North Fork Skykomish Trail. Loose rock, brush, and the lack of a defined tread make the descent slow going — budget real time for it and avoid straying north or east into steeper terrain where permanent snow/ice and cliffs persist.",
+   "bail": "Retreat from below the summit blocks and reverse the approach if weather threatens.",
+   "pitch_detail": [
+    {
+     "grade": "Off-trail, Class 2",
+     "notes": "Steep timber and heavy blowdown from the FR63 parking area up to roughly 4,200 ft.",
+     "pitch": "Lower approach"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Traverse southeast beneath the north-side cliff band (~4,200-4,400 ft) to about 5,400 ft.",
+     "pitch": "Cliff-band bypass"
+    },
+    {
+     "grade": "Class 3; ice axe useful early season",
+     "notes": "Ascend the wide gully/slope to the 5,920 ft saddle northwest of the peak.",
+     "pitch": "Gully to saddle"
+    },
+    {
+     "grade": "Class 4-5 (short sections)",
+     "notes": "About 300 ft of exposed ridge scrambling southeast from the saddle to the Northwest Spire summit; rope sometimes used for the crux steps.",
+     "pitch": "Summit ridge"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best done after the seasonal snow/brush has dried out (roughly July-September); no permits required, but the unmarked FR63 parking area near the river crossing is easy to miss.",
+    "days": [
+     {
+      "n": 1,
+      "note": "A brutal, entirely off-trail day: steep old-growth and slide-alder bushwhacking up from the North Fork Skykomish, a rising traverse below cliff bands, then loose class 3-4 terrain to an exposed class 4-5 step on the upper West Ridge. There's no water source or camp once you leave the river, so essentially everyone does this car-to-car rather than backpacking in.",
+      "hours": 12,
+      "miles": 6,
+      "title": "Car-to-car: West Ridge scramble",
+      "gainFt": 5000,
+      "lossFt": 5000,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave the car",
+        "detail": "Park near the FR63 river crossing/hilltop turnaround; start hiking by headlamp to make the most of daylight."
+       },
+       {
+        "time": "+1.5 hr",
+        "label": "Clear the river-bottom brush",
+        "detail": "Steep, debris-choked old growth for the first ~600 ft is the slowest, most miserable section."
+       },
+       {
+        "time": "~9:00 AM",
+        "label": "Bypass the north cliff bands",
+        "detail": "Traverse around cliffs between roughly 4,200-4,400 ft, then angle southeast toward 5,400 ft below the summit spire."
+       },
+       {
+        "time": "~11:30 AM-1:00 PM",
+        "label": "West Ridge scramble to the summit",
+        "detail": "Mostly class 3 with short class 4-5 sections near the top; some parties bring a short rope/harness for the exposed final step."
+       },
+       {
+        "time": "~1:30 PM",
+        "label": "Summit",
+        "detail": "6,217 ft — views over the Monte Cristo peaks and Skykomish drainage."
+       },
+       {
+        "time": "~2:00 PM-8:00 PM",
+        "label": "Descend by the same line",
+        "detail": "Downclimb the class 3-4 terrain carefully (it's often the crux of the day), then reverse the traverse and bushwhack back to the car, often finishing near dusk."
+       }
+      ],
+      "objective": "Summit via the North Fork Skykomish approach and West Ridge, back to the car same day"
+     }
+    ],
+    "totalNote": "A hard single day car-to-car: roughly 10-14+ hours, ~5,000 ft gain, entirely off-trail with a class 4-5 step near the summit."
+   },
+   "access": {
+    "fees": "$5/vehicle/day or $30/year at the North Fork Skykomish Trailhead — Northwest Forest Pass, Interagency Recreation Pass, or the Forest Service's on-site digital 'Scan & Pay' all work; Washington's Discover Pass is NOT accepted here.",
+    "rules": "Standard Wild Sky Wilderness rules apply: group size capped at 12 people/stock combined (larger groups must split and stay 1+ mile apart), no bikes or other mechanized/motorized equipment, camp stoves recommended over open fires, no cutting of standing trees/snags/boughs, pack out all trash.",
+    "permit": "Free self-issue wilderness permit at the trailhead; no reservation or special-use permit needed beyond that for a day climb.",
+    "closures": "Both approach roads are washed out and access is effectively cut off: FR-63 (Index-Galena Road) has been closed since a December 2025 flood washout between mileposts 10-14 (Snohomish County Public Works estimates roughly $900,000 to repair) and is reported undrivable from the FR-65 side due to a North Fork Skykomish bridge/road failure; FR-65 (Beckler River Rd) itself is closed past Jack Pass (MP 12.3) due to downed trees and a washed-out bridge at the bottom of the valley. Neither closure has a reopening date on the Forest Service alert (June 30, 2026) or Snohomish County's road-closures page (checked September 25, 2026) — check the Mount Baker-Snoqualmie NF 'Road Damages/Closures - Skykomish District' alert page and call the Skykomish Ranger Station before planning a trip.",
+    "group_limit": 12,
+    "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+    "land_manager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+    "parking_pass": "No pass needed at the FR-63 roadside pullout east of Galena.",
+    "passRequired": "None at the roadside pullout",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Sign the trailhead register if one is present; no parking pass is needed at the roadside pullout."
+    }
+   },
+   "road": {
+    "name": "FR-65 (Beckler River Rd) to FR-63",
+    "status": "Normally a gravel Forest Service road, drivable in a standard car most of the way with high-clearance recommended for the last stretch — but both FR-65 and FR-63 are washed out/closed (the Forest Service alert of June 30, 2026 lists FR-65 closed past Jack Pass for downed trees and a bridge failure; FR-63 has been closed at mileposts 10-14 since December 2025 flood damage) and the trailhead is not reliably reachable by vehicle. Confirm current status with the Skykomish Ranger District before driving in.",
+    "driveNote": "From Skykomish: US-2 east ~0.8 mi, then north on FR-65 (Beckler River Rd) ~15 mi, then left (west) onto FR-63 for ~4.6 mi to the unmarked pullout just past the river bridge, about a mile east of Galena."
+   },
+   "climate": {
+    "fall": "Rain returns and early-season snow is possible at this elevation.",
+    "spring": "Snow lingers on north-facing slopes and in the approach gully well into early summer.",
+    "summer": "Warmest and driest period; July-September is the recommended climbing window.",
+    "winter": "Heavy snowpack and avalanche-prone terrain; not a winter/spring objective for this route.",
+    "typical": "Wet, heavy-snow Cascade winters give way to a fairly short snow-free window at this elevation; even in summer, permanent ice/snow patches persist on the north and east slopes of Spire, Gunn, and Merchant peaks.",
+    "bySeason": {
+     "fall": "Cooler, often clearer weather into October; brush dies back which can ease the bushwhack, but expect wetter rock and shorter daylight.",
+     "spring": "Heavy snow cover and avalanche hazard typically make this a poor scrambling objective.",
+     "summer": "Best window (roughly late July-September) for snow-free brush and rock, though shaded gullies and north/east-facing terrain near the summit can still hold snow or verglas.",
+     "winter": "Not a scrambling objective — deep snow, avalanche terrain, and a long approach."
+    },
+    "forecastZone": "No NWAC zone forecasts this peak directly; the Stevens Pass zone is the nearest reference point for regional snowpack trends in the shoulder seasons (this is primarily a summer/fall scramble, so avalanche forecasts mainly matter for early/late-season snow lingering on the approach and summit ridge)."
+   },
+   "emergency": {
+    "notes": "Snohomish County Volunteer Search & Rescue (SCVSAR) is the volunteer rescue resource backing the Sheriff's Office for backcountry incidents in this area. Cell coverage is unreliable to nonexistent on the off-trail approach and summit ridge — carry a satellite messenger/PLB and leave a trip plan with someone.",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288 — (360) 677-2414 (open Wed-Fri, 9am-12pm & 1-4pm)",
+    "nearestHospital": "EvergreenHealth Monroe, 14701 179th Ave SE, Monroe, WA 98272 (roughly 35 miles / ~1 hour drive from the Skykomish/Index area)",
+    "sheriffDispatch": "911 for emergencies; Snohomish County Sheriff non-emergency line (425) 407-3999"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rarely climbed at all; what little traffic exists concentrates on July-September weekends, mostly organized club (Mountaineers-style) scramble outings rather than casual hikers",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely well under 20 parties per season; independent accounts describe Spire Mountain as one of the least-often-climbed peaks in its cluster"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong - long, sustained off-trail approach with heavy bushwhacking/elevation gain typical of this peak before any scrambling begins",
+     "packWeight": "Light day-pack for the scramble itself; some parties carry a short rope/light rack for the harder Class 4 (occasionally low 5th) summit moves as a backup"
+    },
+    "approachTime": "Long, full-day approach - off-trail gain from the North Fork Skykomish/FR-63 approach to the ridge before the scramble even starts; most parties treat this as a full-day-plus car-to-car outing",
+    "requiredSkills": [
+     "Off-trail navigation and route-finding (no maintained trail to the ridge)",
+     "Comfortable soloing exposed Class 3-4 rock, including loose/blocky terrain",
+     "Judgment to back off or rope up on the airy summit block if conditions warrant",
+     "Basic snow travel/self-arrest if climbing in the early part of the season when snow lingers"
+    ],
+    "experienceLevel": "Experienced scrambler with prior Class 3-4 exposure and solid off-trail route-finding; not a beginner objective given the off-trail approach and committing summit block"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September is the optimal window, with late July marginal due to lingering snow and October a narrower, weather-dependent extension.",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow lingers into early season; late July is workable but early-July ascents may encounter snow patches on approach and ridge",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Driest, most stable conditions; rock is clear of snow and afternoon thunderstorm risk is the main thing to watch",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Season extends into October, but early snow/shortening daylight and increased storm frequency make this a narrower, weather-dependent window",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still reliably dry with cooler temps; good visibility and stable weather windows before fall storms arrive",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Cascade summer alpine weather - clear mornings with building cloud through the day",
+     "probability": "Afternoon thunderstorms are a hazard in July-August; exposed summit blocks make lightning timing important"
+    },
+    "exposure": "Significant - a committing Class 3-4 summit scramble means real fall consequence near the top, compounded by loose rock; the exposed summit block is not a place to be caught in weather",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; no NWAC zone specifically forecasts this peak",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "October": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No independently verified GPS track for the standard off-trail line",
+     "Current FR-63 road/washout status not confirmed for this season — check with Skykomish Ranger District before driving in",
+     "Documented first-ascent history exists for the individual spires (1934, 1938) but not for a single defined 'standard route'",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.865705,
+    "peakLng": -121.406065,
+    "trailhead": "FR-63 roadside pullout east of Galena",
+    "trailheadLat": 47.92684,
+    "trailheadLng": -121.27705,
+    "trailheadDirection": "Drive US-2 to Skykomish, then north on Beckler River Road (FR-65) for about 15 miles; turn left (west) onto FR-63 and follow it about 4.6 miles to where it crosses the North Fork Skykomish River again; park at the unmarked pullout on the rise just past the bridge, about a mile east of Galena."
+   },
+   "sling_rack": {
+    "cams": "2-3 light, optional",
+    "nuts": "few, optional"
+   },
+   "alpine_draws": 0,
+   "rope_type": "optional single (short pitches only)",
+   "rope_length_m": 30,
+   "rope_note": "Spire Mountain near Index; ~6mi off-trail, 5,000ft gain, finishing on the west ridge. Mostly Class 3 with short Class 4/occasional Class 5 spots where a rope is sometimes used.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Optional light rack: 2-3 small cams, a few nuts",
+    "Short 30m rope or hand line for the Class 5 step"
+   ],
+   "features": [
+    "Exposed",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "North Fork Skykomish riverside to the northwest saddle",
+     "notes": "Everything above the valley is off-trail. Leave the riverside near the road and head directly up the steep, blowdown-choked slope — the first several hundred feet are the worst of it — onto a well-defined hogsback that runs from about 2,700 ft to roughly 3,300 ft. Above the hogsback the slope steepens toward cliff bands, and there is no tread anywhere on the mountain. Carry water from the river; there is none once you leave it, and there is no usable cell coverage anywhere on route.",
+     "season": "Late July to September",
+     "hazards": [
+      "Entirely off-trail with sustained blowdown and brush low down",
+      "Cliff bands on the north side between roughly 4,200 and 4,400 ft that need careful route-finding to turn",
+      "A moat or bergschrund forming at the saddle depending on snow cover",
+      "Permanent snow and ice on north and east aspects near the summit even in late summer",
+      "A short exposed class 5 step considerably harder than the route's overall grade suggests"
+     ],
+     "baseFinding": "The scrambling starts at a saddle around 5,940 ft northwest of the summit, and you identify it by what you crossed to reach it. Large cliff bands block the north end of the peak between roughly 4,200 and 4,400 ft; the way past is a traverse SOUTHEAST beneath them onto the mountain's west and northwest side, and that traverse ends by rising onto a distinct notch on the ridge rather than onto any summit. Depending on the season a moat or bergschrund forms right at the saddle and is the last obstacle before you get on rock. Spire has three summits and the crest above the saddle is airy: mostly class 3, but with a short exposed mantle step of roughly ten feet at about 6,100 ft where many parties put a rope on, harder than the peak's overall billing prepares you for. Do not stray north or east off the crest — that ground steepens quickly into permanent snow and cliffs — and note the traverse line carefully, because reversing it through the cliff bands with no tread to follow is slow work."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 1481,
+     "name": "San Juan Campground, Index-Galena road",
+     "role": "main",
+     "type": "camp",
+     "notes": "The nearest developed camp to the Spire Mountain roadhead, sitting on the Index-Galena road a few miles below where the climb starts. It spent close to two decades unreachable by vehicle after flood damage took out the road, and access has been restored and lost again more than once since; treat its availability as a question to answer before you drive rather than an assumption. When the road is cut at the North Fork bridge it is unreachable from the Beckler River side entirely. Even when it is open it is a low, damp, mosquito-heavy site in early summer, and its value is convenience rather than pleasure — it puts a party within twenty minutes of the start of the Spire approach, which is worth a great deal on a climb that wants a pre-dawn departure. Beckler River Campground and Troublesome Creek Campground serve the same road system and are covered in the neighbouring zone, so check those first if this one is closed.",
+     "water": "River water only, treated. There is no potable supply.",
+     "permit": "Standard national forest campground fee when it is operating. No wilderness permit is involved at this elevation.",
+     "capacity": "A small forest campground of a dozen or so sites in second-growth beside the North Fork Skykomish, with vault toilets and no water system."
+    },
+    {
+     "elev": 5920,
+     "name": "Spire Mountain — the saddle northwest of the summit",
+     "role": "route",
+     "type": "bivy",
+     "notes": "Spire Mountain has no established camping of any kind and most parties climb it in a single very long day, which is the honest answer. The route is entirely off-trail: leave the Index-Galena road at the snowplow turnaround just past the bridge, drop south into old forest, and fight through six hundred feet of steep ground choked with fallen timber before the slope becomes merely steep. Cliffs on the north end of the mountain are turned between about 4,200 and 4,400 feet, then a rising traverse southeast reaches open ground around 5,400 feet below the summit spire. The saddle above that, northwest of the true summit, is the only ground on the route flat enough to lie down on, and a party that has misjudged the day will end up there whether they planned to or not. From it the last three hundred feet are technical enough that most rope up for short exposed sections. ROAD STATUS IS THE LIMITING FACTOR: the Index-Galena road has repeatedly been cut by flood damage and bridge failure on the North Fork Skykomish, and when the bridge is out the road is simply not drivable from the Beckler River road, which adds many miles of walking to an approach that is already brutal. Confirm the road is open before committing to this peak. Best season is late July to early October, once the timber is dry and before the first storms make the traverse slabs greasy.",
+     "water": "None. There is no water anywhere on this route once you leave the North Fork Skykomish at the road, and the saddle holds nothing but lingering snow patches into July. Carry everything, or melt snow early season.",
+     "permit": "Wild Sky Wilderness, no permit required. Parking is a roadside pullout, so no forest pass is needed there.",
+     "capacity": "One or two parties at most, on whatever flat ground the ridge crest offers. There is no established site here and nothing has been built."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "standard scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

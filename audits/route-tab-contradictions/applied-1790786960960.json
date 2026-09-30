@@ -1,0 +1,141 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "grade",
+   "path": [],
+   "fact": "crux grade (3-way disagreement)"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "crux grade (3-way disagreement)"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "fact": "crux grade (3-way disagreement)"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "class"
+   ],
+   "fact": "crux grade (3-way disagreement)"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "crux grade (3-way disagreement)"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "crux grade (3-way disagreement)"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "crux grade (3-way disagreement)"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "crux grade (3-way disagreement)"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "pro_tips",
+   "path": [
+    3
+   ],
+   "fact": "crux grade (3-way disagreement)"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "column": "descent_text",
+   "path": [],
+   "fact": "crux grade (3-way disagreement)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_temple_south_ridge",
+   "before": {
+    "grade": "Grade II, Class 3 to 4",
+    "rock_grade": "5.6",
+    "pitch_detail": [
+     {
+      "grade": "5.6",
+      "notes": "~70 ft up a friction face directly toward the summit, protected by one bolt; crux of the route.",
+      "pitch": "P1"
+     },
+     {
+      "grade": "Class 2-3 / low 5th",
+      "notes": "Ledge system leads left and up to a belay on a wide, level block just below/north of the true summit, then a short crack leads to the top.",
+      "pitch": "P2"
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Sandy ramp under the overhang",
+      "notes": "The technical climbing starts where the approach ends, at a sandy ramp running up beneath an overhang toward the right side of the buttress. This is scrambling rather than climbing, but it is sandy over rock and is the start of the fall line for anything dislodged above — the ground below this point is described as a rockfall zone and parties downclimb or rappel out of it rather than lingering."
+     },
+     {
+      "n": 2,
+      "class": "4",
+      "label": "Exposed ridge below the summit block",
+      "notes": "Above the ramp the line follows the ridge with several exposed fourth-class moves leading to the base of the summit block. The recurring hazard reported here is loose rock: large, poised blocks are scattered along the ridgeline, so test holds and keep the party out of each other's fall line. Zig-zagging is characteristic of the route, and long slings are recommended to control rope drag when it is climbed on a rope."
+     },
+     {
+      "n": 3,
+      "class": "5.4",
+      "label": "Summit-block crux",
+      "notes": "The crux is a short low-fifth-class sequence on the summit block, generally given around 5.4 for the route overall. The published sequence reaches well out left to a flake and uses the narrow ledge above it as a handhold. Accounts of the summit block also record a small, old and visibly rusty bolt low on a friction slab with essentially no other gear available on that section, so the protection is thin and the bolt should not be trusted as a running belay. Sticky rubber is repeatedly recommended for this bit. Small cams to about 2 inches plus stoppers is the reported rack."
+     },
+     {
+      "n": 4,
+      "class": "4",
+      "label": "Thin ramp to the summit",
+      "notes": "Above the crux a thin ramp trends east and reaches the roomy summit with one last fourth-class move. Descent is by rappelling the route rather than by any walk-off: three rappels with a single 60 m rope is the reported configuration — one from the end of the technical climbing to a bolted belay ledge, one from chains down the face trending skier's left which just barely reaches third-class ground, and one from a large boulder wrapped in webbing down to the talus. Carry spare webbing; the anchors are old and the slings periodically need replacing."
+     }
+    ],
+    "hazards": [
+     "Loose, blocky rock on the approach ledges and near the summit block",
+     "Exposed class 4 scrambling plus a low-5th-class (5.3) crux slab move protected by only a single, aging bolt",
+     "Long, complex off-trail approach through Temple Canyon requiring real route-finding",
+     "Lingering snow and steep gullies into early summer, requiring an ice axe and crampons in June/early July",
+     "Afternoon thunderstorms in July-August",
+     "Very long round trip (~16 miles, 7,000-8,000 ft gain) that leads to fatigue-related mistakes on the descent"
+    ],
+    "overview": "The Temple is the dramatic granite tower guarding the eastern edge of the Core Enchantments, rising above Prusik Pass and Tamarack Meadows in the Alpine Lakes Wilderness. First climbed by Fred Beckey in 1942, its standard route follows blocky, mostly class 3-4 terrain up the peak's south side to a short, exposed 5.3 slab crux just below the summit block, protected only by a single bolt. It's commonly linked with neighboring High Priest and Prusik Peak on the same trip, but the remote, all-off-trail approach through Temple Canyon makes it a serious full-day objective even before the climbing starts.",
+    "beta": "Parties approach via the Snow Lakes Trail into the Core Enchantments basin, then leave the trail to ascend talus and granite buttresses on Temple's south side. The line climbs mostly class 3-4 terrain - slabs, ledges, and blocky ribs - with exposure increasing near the top, finishing with a short low-5th-class (5.0-5.3, reported inconsistently between sources) section through a ramp/notch onto the small, airy summit. A helmet and a light rack are commonly carried for the final moves; most parties downclimb or make one or two short rappels to retreat.",
+    "pro_tips": [
+     "Many parties link The Temple with High Priest and/or Prusik Peak on the same trip since all three share the Prusik Pass/Tamarack Meadows approach.",
+     "The true summit block is reportedly distinct from what some older USGS quads mark — confirm you're on the actual high point before setting up the rappel.",
+     "Descending directly toward Temple Lake instead of reversing to Prusik Pass is faster but crosses looser, steeper terrain — downclimb carefully or rope up.",
+     "Rock shoes make the 5.3 summit-block crux considerably easier — worth carrying even though most of the route is done in approach shoes/boots."
+    ],
+    "descent_text": "Because the South Ridge is cliffed-out on multiple sides, parties descend by downclimbing and rappelling the same south-side line used on the ascent rather than walking off. From the summit block, the first rappel drops off a fixed station just below the top — parties describe a single old, not-fully-confidence-inspiring bolt/pin anchor here, so back it up with a cam or nut if you have any doubt — down past the 5.3/low-5th-class friction slab crux to a ledge. From there, most parties make one further rappel through a band of loose rock and boulders to a notch where the anchor is natural: a sling around a large wedged chockstone (some parties have refreshed this with a new sling and rap ring). A single 60m rope rappelled doubled (~30m per pitch) is generally sufficient, but at least one party found the rope only just reached the next station, so treat 60m as a minimum, knot your rope ends, and expect some parties to break the descent into three shorter rappels instead of two depending on the exact gully line and rope length carried. After the last rappel, downclimb and plunge-step the loose gully below the rockfall zone back onto the ascent talus, then retrace the approach through Temple Canyon, Tamarack Meadows, and the climbers' path back to Nada Lake and the Snow Lakes Trail. Wear a helmet throughout the descent — the gully channels loose rock kicked down by parties above."
+   }
+  }
+ ]
+}
