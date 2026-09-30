@@ -1,0 +1,128 @@
+{
+  "wa_and_say": {
+    "skip_reason": "UNCLEAR (third pass) - still no second source with a route letter grade; stored 5.11b stays",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored 5.11b; does any source give a letter grade (5.11a/b/c/d)?",
+          "verdict": "UNCLEAR",
+          "evidence": "New source types searched: climbing blogs (Blake Herrington 2016 archive does not mention the route), climbing.com/Index guide articles (no mention), cascadeclimbers (no thread found), theCrag area listing (403; search snippet shows only '5.11', 5 pitches, apparently mirrored from the route database). One search summary called it '5.12' with no traceable page behind it - disregarded. The only route-level letter grade anywhere remains the one trip-report site's 5.11b, which is what is stored. No change.",
+          "sources": [
+            "https://stephabegg.com/trip-reports/washington/index/",
+            "http://blakeclimbs.blogspot.com/2016/",
+            "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/2488786035"
+          ]
+        }
+      ],
+      "blocked_urls": [
+        "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/2488786035 (403)",
+        "https://www.summitpost.org/lookout-point/893881 (403)"
+      ]
+    }
+  },
+  "wa_bonanza_peak_northeast_buttress": {
+    "skip_reason": "UNCLEAR (third pass) - no second account of the Northeast Buttress on its own exists in reachable sources",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored V; what grade do two sources give for the NE Buttress alone?",
+          "verdict": "UNCLEAR",
+          "evidence": "New searches: cascadeclimbers (only the Oregonian/NW Buttress FA and other peaks' NE buttresses), personal blogs (havetent 2021 - Mary Green route, no NE Buttress), turns-all-year Bonanza reports (NW Buttress ski descents). The NWMJ short report surfaced again but is the same first-traverse note as the AAJ account (same party) and counts once. That single account rates the full three-summit traverse V 5.7/5.8 and describes 5.7-range climbing with wild exposure, a little under four hours to the main summit. No independent grade for the buttress alone. Stored V stays; the overview already explains it is the traverse grade.",
+          "sources": [
+            "http://publications.americanalpineclub.org/articles/12200416000/North-America-United-States-Washington-Bonanza-Peak-Three-Summit-Traverse",
+            "http://www.alpenglow.org/nwmj/04/041_Shorts2.html",
+            "https://havetent.com/2021/07/28/bonanza-peak/",
+            "https://turns-all-year.com/trip-reports/june-22-25-2005-bonanza-peak",
+            "https://cascadeclimbers.com/forum/topic/92806-tr-bonanza-peak-washington-fa-the-oregonian-route-942013/"
+          ]
+        }
+      ],
+      "blocked_urls": [
+        "http://www.alpenglow.org/nwmj/04/041_Shorts2.html (cert error in earlier pass; same content as AAJ note)"
+      ]
+    }
+  },
+  "wa_little_tahoma_cowlitz_ingraham_glaciers": {
+    "skip_reason": "no prose correction - classification proposal only (grade is null)",
+    "review": {
+      "findings": [
+        {
+          "claim": "grade null; is there a clear majority rating for the summit rock (Class 3 / 3-4 / 4+)?",
+          "verdict": "CONFIRMED (majority for Class 3 on the shared summit rock)",
+          "evidence": "Third pass added two independent Class 3 accounts: a guide service's itinerary ('3rd class rock scrambling up to the very exposed summit pinnacle', after a first loose rock step near 10,500 ft where guides belay) and a personal trip report (the loose notch to the summit, 'class 3'). Both are on the Fryingpan/Whitman side, which shares the summit rock with this route above the Ingraham-Whitman saddle. A Muir/Cowlitz/Ingraham trip report (this exact approach) gives no class but reached the summit unroped in ski boots. Tally now: Class 3 - route database, 100-peaks guide, Lemke, guide itinerary, Eric's Base Camp (5 independent); Class 3-4 - one ski report (a second 'Class 3-4' site, summitborn, looks like an aggregator and is not counted); Class 4 - the club South Face route page, one Summerland-side report, and one report that climbed an alternative line right of a snow-filled gully and called it 'harder than the normal gully... class 4'. Class 3 is now a clear majority for the summit. Caveat: the only source describing this route's specific saddle exit gives it a Class 4 move or two; the stored pitch_detail already says so.",
+          "sources": [
+            "https://www.mountainguides.com/rnr-tahoma-itin.shtml",
+            "http://ericsbasecamp.net/trips/LittleT3/LittleT3.htm",
+            "https://www.jeffreyjhebert.com/adventures/little-tahoma-via-paradise",
+            "https://www.washingtonstatehiking.com/reportslist/little_tahoma",
+            "https://www.mountainproject.com/route/122049367/cowlitzingraham-glaciers",
+            "https://sites.google.com/site/guideto100peaks/home/3-route-descriptions/49-little-tahoma-peak-11138-c",
+            "https://www.lemkeclimbs.com/little-tahoma.html",
+            "https://www.mountaineers.org/activities/routes-places/paradise-area-review/little-tahoma-south-face",
+            "https://turns-all-year.com/trip-reports/may-30-31-little-tahoma-mrnp",
+            "https://climberkyle.com/2022/06/25/little-t-big-t/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Class 3, steep snow",
+          "evidence": "Five independent accounts rate the summit rock Class 3 (route database '3rd, Steep Snow'; guide itinerary; 100-peaks guide; two trip reports) against one Class 3-4 and three Class 4 (one of those on a non-standard variation). Human reviewer: the South Face saddle exit has a Class 4 move per the one source that describes it; if the grade should cover the worst move on this specific line, 'Class 3-4, steep snow' is the conservative alternative."
+        }
+      },
+      "blocked_urls": [
+        "https://www.summitpost.org/2021-05-30-little-tahoma-trip-report/1061304 (SummitPost, 403 in prior passes)",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-19.4867204933 (WTA, 403 in prior passes)",
+        "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-little-tahoma-east-shoulder (Mountaineers, 403 in prior passes)"
+      ]
+    }
+  },
+  "wa_glacier_peak_sitkum_glacier": {
+    "skip_reason": "UNCLEAR (third pass) - no third NCCS grade found; stored Grade II stays",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored 'Grade II glacier climb' vs SummitPost I-II vs route database III - any other rating?",
+          "verdict": "UNCLEAR",
+          "evidence": "Guide services checked: Northwest Mountain School guides Glacier Peak via the North Fork Sauk, not Sitkum, and gives no NCCS grade ('very moderate'); Mountain Madness and Northwest Alpine Guides use other routes; the Alpine Institute catalog does not list Glacier Peak. New trip reports (trailcatjim 2024, countryhighpoints 2025, NWHikers 2025) surfaced in search with no NCCS grade. Search snippets again attribute 'Grade I' to the SummitPost Glacier Peak page (same site as the I-II route page; counts once). Still one source each for I-II and III.",
+          "sources": [
+            "https://www.mountainschool.com/content/main/glacier-peak-climb/",
+            "https://mountainmadness.com/trips/glacier-peak",
+            "https://www.northwestalpineguides.com/northwest-climbs/glacier-peak/",
+            "https://www.alpineinstitute.com/catalog/guided-alpine-climbing-in-the-cascades/",
+            "https://trailcatjim.com/glacier-peak/",
+            "https://www.countryhighpoints.com/glacier-peak-winter-ascent/",
+            "https://www.nwhikers.net/forums/viewtopic.php?p=1278905"
+          ]
+        }
+      ],
+      "blocked_urls": [
+        "http://cascadeclassics.org/GlacierPeak/Spring01/Sitkum,Spring01.htm (self-signed certificate)",
+        "https://www.mountaineers.org/activities/activities/basic-alpine-climb-glacier-peak-sitkum-glacier-1 (Mountaineers, 403 in prior passes)",
+        "https://www.summitpost.org/sitkum-glacier/155846 (403)"
+      ]
+    }
+  },
+  "wa_mount_lyall_south_route": {
+    "skip_reason": "UNCLEAR (third pass) - still one first-hand account; stored Class 3-4 is not disproven",
+    "review": {
+      "findings": [
+        {
+          "claim": "stored 'Class 3-4' - Class 3 or 3-4?",
+          "verdict": "UNCLEAR",
+          "evidence": "New searches: NWHikers (Agnes Mountain and Dark Peak reports from Swamp Creek; none climbs Lyall), listsofjohn peak page (403; confirms the peak, 7,912 ft LiDAR, Chelan County), Bivouac (only the Alberta/BC Lyall), wildwanderer (no Lyall). The WTA report on the same Swamp Creek approach appears to be by the same author as the one blog account (same trip set: Needle Peak, Mount Lyall, Lyall Ridge), so even if opened it likely counts once. That account gives an exposed class 3 gully plus a class 4 move noted on descent, so Class 3-4 remains defensible.",
+          "sources": [
+            "https://onehikeaweek.com/2023/09/11/needle-peak/",
+            "https://www.nwhikers.net/forums/viewtopic.php?p=1234637",
+            "http://www.nwhikers.net/forums/viewtopic.php?t=8033943",
+            "https://listsofjohn.com/peak/48949"
+          ]
+        }
+      ],
+      "blocked_urls": [
+        "https://listsofjohn.com/peak/48949 (403; may list trip reports)",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-02-05.8491434130 (403; likely same author as the blog)"
+      ]
+    }
+  }
+}

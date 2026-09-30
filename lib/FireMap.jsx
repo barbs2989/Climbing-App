@@ -111,6 +111,7 @@ function bboxForView(el, lat, lng, zoom) {
 export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.round(mi) + " mi", focus = null, locale = undefined }) {
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null);
   const perimRef = useRef(null), wxRef = useRef(null), fireRef = useRef(null);
+  const userRef = useRef(null), accRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
   const [bbox, setBbox] = useState(null);
@@ -145,9 +146,12 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
       const L = window.L;
       // Same view the bbox was seeded from — see viewFor.
       const [vLat, vLng, vZoom] = viewFor(focus);
-      const map = L.map(mapDiv.current, { attributionControl: false }).setView([vLat, vLng], vZoom);
-      // Clear the base-layer toggle in the top-left corner, as GPXMap does.
-      if (map.zoomControl) map.zoomControl.getContainer().style.marginTop = "46px";
+      // Zoom sits TOP-RIGHT, a corner nothing else on this map uses. It used to sit
+      // top-left under the base-layer toggle, pushed down by a hand-tuned 46px — which
+      // cleared the toggle's ~44px by two pixels, so any taller rendering of the
+      // toggle's text put the Satellite button over the + button on a phone.
+      const map = L.map(mapDiv.current, { attributionControl: false, zoomControl: false }).setView([vLat, vLng], vZoom);
+      L.control.zoom({ position: "topright" }).addTo(map);
       applyBaseLayer(map, tileRef, baseLayer);
       // Order matters: perimeters and weather zones are fills, incident points sit
       // on top so a marker inside a perimeter stays clickable.
@@ -167,6 +171,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
       cancelled = true; clearTimeout(ft);
       if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} }
       mapRef.current = null; tileRef.current = null; perimRef.current = null; wxRef.current = null; fireRef.current = null;
+      userRef.current = null; accRef.current = null;
     };
   }, []);
 
@@ -241,18 +246,42 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   // geolocation was unavailable or the map had not loaded, and swallowed the error
   // callback too — so a denied permission, a timeout, and a browser without
   // geolocation all produced a button that visibly did nothing.
+  // The control is GPXMap's "📍 Me" button, and like it, locating draws where you are —
+  // a dot and an accuracy ring — rather than only moving the map, which left nothing
+  // on screen to say which point was you.
   const [locateMsg, setLocateMsg] = useState("");
+  const [locating, setLocating] = useState(false);
+  // GPXMap's "↺ Reset view", offered — as there — only once locating has moved the map
+  // away from where it opened. It returns to that opening view (viewFor), so a climber
+  // who located themselves 200 miles from the area they were browsing can get back.
+  const [locatedOnce, setLocatedOnce] = useState(false);
+  const resetView = () => {
+    const map = mapRef.current;
+    if (!map) return;
+    const [vLat, vLng, vZoom] = viewFor(focus);
+    try { map.setView([vLat, vLng], vZoom, { animate: true }); } catch (e) {}
+  };
   const locate = () => {
     if (!navigator.geolocation) { setLocateMsg("This browser can't share your location."); return; }
     if (!mapRef.current) { setLocateMsg("The map isn't loaded, so there's nothing to centre."); return; }
-    setLocateMsg("Finding you…");
+    setLocating(true); setLocateMsg("");
     navigator.geolocation.getCurrentPosition(
       p => {
-        setLocateMsg("");
-        try { mapRef.current.setView([p.coords.latitude, p.coords.longitude], 9); } catch (e) { setLocateMsg("Couldn't move the map."); }
+        setLocating(false);
+        const L = window.L, map = mapRef.current;
+        if (!L || !map) return;
+        const la = p.coords.latitude, ln = p.coords.longitude, ac = p.coords.accuracy || 50;
+        try {
+          if (userRef.current) userRef.current.setLatLng([la, ln]);
+          else userRef.current = L.circleMarker([la, ln], { radius: 7, color: "#ffffff", weight: 3, fillColor: C.green, fillOpacity: 1 }).addTo(map).bindTooltip("You are here", { direction: "top" });
+          if (accRef.current) accRef.current.setLatLng([la, ln]).setRadius(ac);
+          else accRef.current = L.circle([la, ln], { radius: ac, color: C.green, weight: 1, fillColor: C.green, fillOpacity: 0.12 }).addTo(map);
+          map.setView([la, ln], 9);
+          setLocatedOnce(true);
+        } catch (e) { setLocateMsg("Couldn't move the map."); }
       },
-      err => setLocateMsg(err && err.code === 1 ? "Location permission is off for this site." : "Couldn't get your location."),
-      { timeout: 8000 }
+      err => { setLocating(false); setLocateMsg(err && err.code === 1 ? "Location permission is off for this site." : "Couldn't get your location."); },
+      { enableHighAccuracy: true, timeout: 12000, maximumAge: 30000 }
     );
   };
 
@@ -323,14 +352,6 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
             Active wildfires &amp; fire weather
           </div>
         </div>
-        {/* Not offered at all when the map failed to load — there is nothing to centre,
-            and a button whose only possible outcome is an apology is worse than absent. */}
-        {mapFail ? null : (
-          <button onClick={locate} aria-label="Centre on my location"
-            style={{ padding: "8px 9px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.textSub, cursor: "pointer", display: "flex", alignItems: "center" }}>
-            <ActionIcon name="target" size={15} color={C.textSub} />
-          </button>
-        )}
         <button onClick={onClose} aria-label="Close fire map" style={POP_CLOSE}>✕</button>
       </div>
 
@@ -371,11 +392,25 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           <>
             <div ref={mapDiv} style={{ position: "absolute", inset: 0, background: C.card }} />
             <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} />
-            <div style={{ position: "absolute", bottom: 10, left: 10, right: 10, zIndex: 1000, display: "flex", gap: 6, flexWrap: "wrap" }}>
+            {/* right: 80 leaves the bottom-right corner to the Me button below. */}
+            <div style={{ position: "absolute", bottom: 10, left: 10, right: 80, zIndex: 1000, display: "flex", gap: 6, flexWrap: "wrap" }}>
               {chip("fires", "Fires", C.red, firesQ.data ? fires.length : null)}
               {chip("perims", "Perimeters", C.orange, perimQ.data ? perims.length : null)}
               {chip("wx", "Red flag", C.amber, wxQ.data ? zones.length : null)}
             </div>
+            {/* Inside the map branch, so it is not offered when the map failed to load —
+                there is nothing to centre, and a button whose only outcome is an apology
+                is worse than absent. Styled exactly as GPXMap's. */}
+            <button onClick={locate} aria-label="Show my location on the map"
+              style={{ position: "absolute", bottom: 10, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 6, verticalAlign: "middle" }}><ActionIcon name="pin" size={14} color="currentColor" />{locating ? "Locating…" : "Me"}</span>
+            </button>
+            {/* Top-right under the zoom buttons (which end ~73px down), not GPXMap's
+                bottom-left: that corner holds the layer chips here. */}
+            {locatedOnce ? (
+              <button onClick={resetView}
+                style={{ position: "absolute", top: 84, right: 10, zIndex: 1000, background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>↺ Reset view</button>
+            ) : null}
           </>
         )}
       </div>

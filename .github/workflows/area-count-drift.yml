@@ -61,3 +61,13 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: node scripts/check-catalog-duplicates.mjs --rows-only
+      # Third question on the same read: is any PLACE filed twice? 0221 folded 268 same-place area
+      # pairs (MP's parallel bouldering/ice trees among them) and the MP import is still adding
+      # states. Pairs READ as different places ("West Face" of two domes) are listed in
+      # scripts/data/area-duplicates-baseline.json; anything else fails. Anon key, no DB link.
+      - name: Has any place been filed twice?
+        if: always()
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-area-duplicates.mjs

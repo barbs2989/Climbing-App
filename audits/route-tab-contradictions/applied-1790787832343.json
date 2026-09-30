@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance: dist_km vs. itinerary total"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "before": {
+    "dist_km": 5.9
+   }
+  }
+ ]
+}

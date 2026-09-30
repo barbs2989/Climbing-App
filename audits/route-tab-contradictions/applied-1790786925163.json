@@ -1,0 +1,171 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_price_north_route",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Whether a parking pass/fee is required at the trailhead"
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Whether a parking pass/fee is required at the trailhead"
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Whether a parking pass/fee is required at the trailhead"
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "column": "bivy",
+   "path": [
+    0,
+    "permit"
+   ],
+   "fact": "Whether a parking pass/fee is required at the trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_price_north_route",
+   "before": {
+    "access": {
+     "fees": "No fee at the trailhead",
+     "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "rules": "Standard Alpine Lakes Wilderness rules apply: no bikes or motorized use, group size limits, Leave No Trace, dogs permitted but should be under control on the brushy/cliff sections",
+     "permit": "None required — free self-issue day-use permit at the trailhead (no quota for day use).",
+     "closures": "Forest Road 56 (Middle Fork Snoqualmie River Road) is gated and closed to vehicles beyond the Dutch Miller Gap/Dingford Creek trailhead; check Mt. Baker-Snoqualmie NF road status before driving in, since the road is prone to washouts",
+     "group_limit": 12,
+     "landManager": "Alpine Lakes Wilderness (Mt. Baker-Snoqualmie National Forest, Snoqualmie Ranger District)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)",
+     "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+     "passRequired": "None currently — Dingford Creek Trailhead is a fee-free USFS site (no Northwest Forest Pass charged as of the current USFS trailhead listing)",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk before an overnight in the wilderness. Middle Fork Campground is a fee campground reserved separately."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 47.5172,
+      "lng": -121.45437,
+      "elev": 1400,
+      "name": "Dingford Creek Trailhead",
+      "note": "End of FR 56/5620 in the Middle Fork Snoqualmie valley; Northwest Forest Pass required to park and a self-issue Alpine Lakes Wilderness permit is at the trailhead kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive the Middle Fork Snoqualmie Road (FR 56/5620) from North Bend roughly 17-18 miles to the Dingford Creek Trailhead, at the end of the road at about 1,400 ft. A Northwest Forest Pass is required to park, and the self-issue Alpine Lakes Wilderness permit is at the trailhead kiosk. Both the road and the creek crossings on the trail are best left until spring runoff has subsided, roughly July through October."
+     },
+     {
+      "lat": 47.524081,
+      "lng": -121.420795,
+      "elev": 2570,
+      "name": "Goat Creek and tributary fords",
+      "note": "Dingford Creek Trail (#1005) crosses 4-5 unbridged tributaries to reach Goat Creek; fords run high and slick with early-season snowmelt.",
+      "type": "Hazard",
+      "distMi": 2.1
+     },
+     {
+      "lat": 47.527387,
+      "lng": -121.403785,
+      "elev": 2850,
+      "name": "Hester Lake Trail (#1005.1) junction",
+      "note": "Primitive, poorly-marked Hester Lake Trail forks off the maintained Dingford Creek Trail here; expect mud and washouts beyond this point.",
+      "type": "Junction",
+      "distMi": 3
+     },
+     {
+      "lat": 47.50878,
+      "lng": -121.39363,
+      "elev": 3890,
+      "name": "Hester Lake",
+      "note": "Reliable water at the outlet; a rough boot-worn camp exists here for parties splitting the approach over two days.",
+      "type": "Water",
+      "distMi": 5.3
+     },
+     {
+      "lat": 47.50798,
+      "lng": -121.40308,
+      "elev": 4236,
+      "name": "Little Hester Lake",
+      "note": "Cross talus benches between the two lakes to dodge brush and cliff bands; a slippery, tough bushwhack by Washington standards.",
+      "type": "Water",
+      "distMi": 6
+     },
+     {
+      "lat": 47.510063,
+      "lng": -121.407133,
+      "elev": 4680,
+      "name": "4,680 ft saddle NW of Little Hester Lake",
+      "note": "Standard col for gaining Mount Price's north ridge; this is also the descent's return point for the reverse route.",
+      "type": "Junction",
+      "distMi": 6.5
+     },
+     {
+      "lat": 47.50513466666666,
+      "lng": -121.40664733333334,
+      "elev": 5200,
+      "name": "5,200 ft summit-view meadow",
+      "note": "First clear look at the summit block from this heather meadow; the final scramble on grass, talus, and short rock steps starts here with increasing exposure.",
+      "type": "Junction",
+      "distMi": 7.2
+     },
+     {
+      "lat": 47.503723,
+      "lng": -121.408428,
+      "elev": 5587,
+      "name": "Mount Price Summit",
+      "note": "True summit (5,587 ft); broad views of Big Snow Mountain, Chimney Rock, and the Middle Fork Snoqualmie valley.",
+      "type": "Summit",
+      "distMi": 7.8
+     }
+    ],
+    "bivy": [
+     {
+      "elev": 3900,
+      "name": "Hester Lake and Myrtle Lake basins",
+      "role": "main",
+      "type": "camp",
+      "notes": "This is the real base camp for Mount Price, and the only one. The Dingford Creek trail climbs steeply from the trailhead, passes the Myrtle Lake junction at a little over three miles, and reaches Hester Lake at around five and a half; beyond the junction the tread deteriorates noticeably and the crossings multiply. Price rises directly above Hester, and both the Hester Lake Route and the North Route stage out of this basin, so a party camping here is looking at their objective from the tent. Myrtle is the softer option if the day runs out early, but it puts you further from the peak. Snow lingers in these basins into June and the summit slopes hold it later, so July through early October is the window. With the road washout in place the whole trip is several miles longer each way, which pushes this from a fit party's long day firmly into an overnight.",
+      "water": "Both lakes are reliable all season, and Dingford Creek runs the length of the approach. Filter or treat.",
+      "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead: fill it in, drop the stub in the box, carry your copy. Northwest Forest Pass to park. Group size is capped at twelve people. Campfires are prohibited above 4,000 ft on this side of the wilderness; both lakes sit just under that line so a fire is technically legal, but the ground is thin and the sites are heavily used, and stoves are the better answer. Seasonal fire bans override all of that and are common by August.",
+      "capacity": "A few established, flat tent spots at Hester Lake, enough for two or three parties before it feels crowded. Myrtle Lake, at about 3,780 ft and a couple of miles nearer the road, has a smaller number of rougher sites."
+     },
+     {
+      "elev": 1100,
+      "name": "Middle Fork Campground",
+      "role": "main",
+      "type": "camp",
+      "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhead, so a party sleeping here is already at the start of the Preacher Mountain approach and within a short drive of the Garfield pull-outs. The road to it is paved the whole way now, which is a recent change and makes this reachable in any car. Season is roughly mid-May to mid-September; outside those months the gate is shut and the valley has no legal developed option at all. Book ahead, because this is the closest forest campground to Seattle and summer weekends fill months in advance. For Mount Teneriffe parties it is the nearest legal camping of any kind, about twenty minutes' drive from that trailhead.",
+      "water": "Potable water is provided from a solar-pumped system, but it has failed for stretches in recent seasons and been shut off mid-summer. Carry enough for the first night rather than counting on the tap. The river runs alongside the campground year-round and can be filtered.",
+      "permit": "Standard campground fee, booked up to six months ahead through the federal reservation system or by phone; the adjacent day-use parking takes a Northwest Forest Pass or a small daily fee. No wilderness permit applies at the campground itself. Forest-wide campfire bans are routine through late summer and one is in force at the time of writing, so confirm before planning a fire. A food storage order applies across the whole forest.",
+      "capacity": "About 36 tent and trailer units plus a pair of group sites, no hookups, all reservable. Fourteen-day stay limit."
+     },
+     {
+      "elev": 1400,
+      "name": "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+      "role": "route",
+      "type": "camp",
+      "notes": "Worth reading before driving up with a plan to sleep in the back of the car, because the situation has changed and the change is not obvious on the ground. The lower valley is closed to dispersed camping, so the answer there is the campground or nothing. The Taylor River road is gated at the bridge at the end of the drivable road and its old roadbed is now the trail, so there is no driving in to a quieter spot. The upper road toward Dingford Creek is the one stretch still open to roadside camping, and it is cut by a washout at milepost 17.3 that closes vehicle access short of the Dingford Creek trailhead at 1,400 ft; the Forest Service's road-damage alert of June 30, 2026 lists it with no reopening date. That washout matters well beyond camping: with it in place the Mount Price approach and the Treen Peak path both gain several road miles on foot or bike each way, which turns two long days into overnight trips. Beyond the Dingford Creek trailhead the road has been gated to vehicles for years in any case. Road status in this valley changes year to year, so confirm the current state with the ranger district before committing; a party that discovers the washout at the barricade has lost the day.",
+      "water": "The river and its side creeks are within a few minutes of the road the entire length of the valley and run all year. Treat everything; this is a heavily used corridor.",
+      "permit": "This is the field that decides whether you can sleep here at all. A forest order closes dispersed camping along the road from the forest boundary up to the confluence of the Taylor and Middle Fork rivers, and along the Taylor River road out to the Snoqualmie Lake trailhead, including a quarter-mile strip on either side. That closure runs through the end of 2026 and covers essentially every pull-out parties used to use, including the ones nearest the Garfield approaches. Above the confluence, on the upper road toward Dingford Creek, roadside camping is not covered by the order. Trailhead parking takes a Northwest Forest Pass or the interagency equivalent.",
+      "capacity": "Informal gravel pull-outs only, a vehicle or two apiece, nothing signed, levelled or established."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,2020 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_mathias_scramble",
+   "op": "rename",
+   "name": "West Face"
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "op": "patch",
+   "columns": [
+    "itinerary",
+    "timing",
+    "hazards",
+    "descent_text",
+    "road",
+    "crowds",
+    "partner_requirements",
+    "seasonal_guidance",
+    "seasonal_hazards",
+    "rope_note",
+    "corrections",
+    "overview",
+    "beta",
+    "approach",
+    "pitch_detail",
+    "approach_variants",
+    "climate",
+    "comms",
+    "best_season",
+    "gear",
+    "waypoints",
+    "gain_ft",
+    "dist_km"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_mathias_scramble",
+   "area_id": "wa_mount_mathias",
+   "name": "Bailey Range Scramble",
+   "discipline": "mountaineering",
+   "grade": "Class 4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Yves Eriksson and Jim Hawkins, 1957 (west face)",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Ice axe",
+    "Crampons",
+    "30m glacier-travel rope",
+    "Crevasse rescue kit (tibloc/microtraxion, pulley, prusiks or slings)",
+    "Helmet (loose rock on the ridge/gullies)",
+    "Bear-resistant canister (mandatory for overnight stays)",
+    "Satellite communicator (no cell coverage)",
+    "Map/compass/GPS for extensive off-trail navigation"
+   ],
+   "hazards": [
+    "remote Bailey Range traverse terrain",
+    "committing multi-day access",
+    "short Class 4 exposed scrambling on the summit ridge"
+   ],
+   "verif": null,
+   "overview": "Mount Mathias (7,156 ft) is a high summit in the rugged Bailey Range in the interior of Olympic National Park, flanked by the Blue Glacier to the west and the Hoh Glacier to the east. It is reached by long wilderness approaches, culminating in a short but genuine Class 4 scramble on the summit ridge above Glacier Pass or the Mercury-Mathias col.",
+   "beta": "Two variations reach the same Class 4 summit ridge: (1) climb the steep snow finger between Mount Mathias and Glacier Pass, then scramble Class 4 rock on the ridge to the summit; or (2) climb steep gullies to the Mercury-Mathias col and take the Class 4 ridge from there. Both require prior glacier travel across the Blue Glacier/Hoh Glacier system and are typically combined with a Bailey Range trip or a Mount Olympus/Mount Mercury objective, since the approach alone is a multi-day undertaking.",
+   "turnaround": "Given the multi-mile glacier crossing and long hike-out required to reach safety, turn back from the ridge or snow finger with enough of the day left to recross the glacier and reach camp before dark, and before typical afternoon convective weather (thunderstorms, whiteout on the glacier) develops.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 4",
+   "ice_grade": null,
+   "gain_ft": 6130,
+   "loss_ft": null,
+   "dist_km": 91.73,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "West Face",
+   "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+   "comms": "No reliable cell service beyond about a mile past the Hoh Rain Forest Visitor Center; the Bailey Range/Blue Glacier basin is effectively a dead zone. Park guidance is not to rely on a phone to \"bail you out\" — carry a satellite communicator or PLB.",
+   "descent": "Reverse the ascent route.",
+   "obj_haz": [
+    "crevassed glacier travel",
+    "off-trail route-finding",
+    "rapid weather changes",
+    "remote/committing approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.86028,
+     "lng": -123.93472,
+     "elev": 578,
+     "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+     "note": "Olympic National Park wilderness permit required, booked through Recreation.gov - there are no longer paper self-registration permits at trailheads, and no Northwest Forest Pass is needed on National Park land; start of the Hoh River Trail toward Glacier Meadows.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.9053,
+     "lng": -123.7769,
+     "elev": 5474,
+     "name": "High Divide (Bailey Range Trail split, near Bogachiel Peak)",
+     "note": "Unmaintained Bailey Range climbers' path branches off the maintained High Divide trail here and drops into the woods toward Cat Peak; unmarked and easy to lose in fog.",
+     "type": "Junction",
+     "distMi": 9
+    },
+    {
+     "lat": 47.882274,
+     "lng": -123.641263,
+     "elev": 5200,
+     "name": "Eleven Bull Basin",
+     "note": "First established camp on the Northern Baileys - heather benches with streams gushing off the hillside; last easy reliable water before the long exposed sidehill traverse.",
+     "type": "Campsite",
+     "distMi": 15
+    },
+    {
+     "lat": 47.85391435897436,
+     "lng": -123.7256282051282,
+     "elev": 5900,
+     "name": "Ferry Basin",
+     "note": "Broad glacially-scoured pass/basin below Mt. Ferry with glacial lakes and streams, reached via the Stephen Lake bypass to avoid sidehilling; smooth walking before terrain roughens toward Queets Basin.",
+     "type": "Campsite",
+     "distMi": 19
+    },
+    {
+     "lat": 47.79314,
+     "lng": -123.66241,
+     "elev": 6150,
+     "name": "Blizzard Pass",
+     "note": "Flat snowfield pass gained after crossing the Humes Glacier terminus and Queets Basin; first clear view of Mt. Mathias and the Hoh Glacier cirque below.",
+     "type": "Junction",
+     "distMi": 26
+    },
+    {
+     "lat": 47.815375128205126,
+     "lng": -123.68717435897436,
+     "elev": 5500,
+     "name": "Camp Pan",
+     "note": "Obvious sandy-flat campsite on a prow jutting into the glacial valley, a half-mile and 600 ft below Blizzard Pass; the standard last camp before climbing Mathias.",
+     "type": "Campsite",
+     "distMi": 26.5
+    },
+    {
+     "lat": 47.81023656410257,
+     "lng": -123.68204717948717,
+     "elev": 6500,
+     "name": "Hoh Glacier / snow finger below Glacier Pass",
+     "note": "Steep snow finger and crevassed glacier crossing between Camp Pan and Glacier Pass leading to the base of the summit ridge; rope up, hidden crevasses reported here.",
+     "type": "Hazard",
+     "distMi": 27.5
+    },
+    {
+     "lat": 47.80522,
+     "lng": -123.676932,
+     "elev": 7156,
+     "name": "Mount Mathias summit",
+     "note": "True summit via Class 4 climbing on the ridge from the Mercury-Mathias col or the Glacier Pass snow finger; a seldom-climbed, exposed final scramble between the Blue and Hoh glaciers.",
+     "type": "Summit",
+     "distMi": 28.5
+    }
+   ],
+   "gpx": [
+    [
+     47.95478,
+     -123.83493
+    ],
+    [
+     47.95402,
+     -123.83347
+    ],
+    [
+     47.95328,
+     -123.82991
+    ],
+    [
+     47.95225,
+     -123.82468
+    ],
+    [
+     47.95211,
+     -123.82071
+    ],
+    [
+     47.95172,
+     -123.82004
+    ],
+    [
+     47.95113,
+     -123.82092
+    ],
+    [
+     47.9502,
+     -123.82247
+    ],
+    [
+     47.94864,
+     -123.82315
+    ],
+    [
+     47.94807,
+     -123.82247
+    ],
+    [
+     47.94717,
+     -123.82259
+    ],
+    [
+     47.94581,
+     -123.82238
+    ],
+    [
+     47.9449,
+     -123.82321
+    ],
+    [
+     47.94509,
+     -123.824
+    ],
+    [
+     47.94336,
+     -123.82352
+    ],
+    [
+     47.94213,
+     -123.82124
+    ],
+    [
+     47.94113,
+     -123.82244
+    ],
+    [
+     47.94061,
+     -123.82217
+    ],
+    [
+     47.93939,
+     -123.82114
+    ],
+    [
+     47.93856,
+     -123.82139
+    ],
+    [
+     47.93691,
+     -123.82174
+    ],
+    [
+     47.93561,
+     -123.82166
+    ],
+    [
+     47.93484,
+     -123.82294
+    ],
+    [
+     47.93341,
+     -123.82126
+    ],
+    [
+     47.93208,
+     -123.82317
+    ],
+    [
+     47.93244,
+     -123.82375
+    ],
+    [
+     47.93176,
+     -123.82503
+    ],
+    [
+     47.9306,
+     -123.82542
+    ],
+    [
+     47.92871,
+     -123.82471
+    ],
+    [
+     47.92806,
+     -123.82426
+    ],
+    [
+     47.92692,
+     -123.82268
+    ],
+    [
+     47.92671,
+     -123.82296
+    ],
+    [
+     47.92577,
+     -123.82265
+    ],
+    [
+     47.92433,
+     -123.82147
+    ],
+    [
+     47.92339,
+     -123.82127
+    ],
+    [
+     47.92255,
+     -123.82013
+    ],
+    [
+     47.92083,
+     -123.81967
+    ],
+    [
+     47.92032,
+     -123.82138
+    ],
+    [
+     47.91923,
+     -123.82324
+    ],
+    [
+     47.91789,
+     -123.8224
+    ],
+    [
+     47.91765,
+     -123.82154
+    ],
+    [
+     47.91813,
+     -123.82008
+    ],
+    [
+     47.91688,
+     -123.81894
+    ],
+    [
+     47.91636,
+     -123.81927
+    ],
+    [
+     47.91608,
+     -123.81991
+    ],
+    [
+     47.91557,
+     -123.82021
+    ],
+    [
+     47.91541,
+     -123.82137
+    ],
+    [
+     47.91382,
+     -123.81915
+    ],
+    [
+     47.91309,
+     -123.81809
+    ],
+    [
+     47.91243,
+     -123.81673
+    ],
+    [
+     47.91149,
+     -123.81521
+    ],
+    [
+     47.91093,
+     -123.81384
+    ],
+    [
+     47.91112,
+     -123.81178
+    ],
+    [
+     47.91187,
+     -123.80588
+    ],
+    [
+     47.91305,
+     -123.80562
+    ],
+    [
+     47.91393,
+     -123.80222
+    ],
+    [
+     47.91336,
+     -123.79849
+    ],
+    [
+     47.91335,
+     -123.79437
+    ],
+    [
+     47.91242,
+     -123.79274
+    ],
+    [
+     47.91189,
+     -123.79131
+    ],
+    [
+     47.91193,
+     -123.78984
+    ],
+    [
+     47.91122,
+     -123.78795
+    ],
+    [
+     47.91044,
+     -123.78596
+    ],
+    [
+     47.90961,
+     -123.78476
+    ],
+    [
+     47.9093,
+     -123.78418
+    ],
+    [
+     47.9086,
+     -123.78269
+    ],
+    [
+     47.90782,
+     -123.78126
+    ],
+    [
+     47.90655,
+     -123.77997
+    ],
+    [
+     47.90578,
+     -123.77874
+    ],
+    [
+     47.90577,
+     -123.77859
+    ],
+    [
+     47.90544,
+     -123.77629
+    ],
+    [
+     47.90529,
+     -123.7737
+    ],
+    [
+     47.90572,
+     -123.77164
+    ],
+    [
+     47.90647,
+     -123.76872
+    ],
+    [
+     47.90629,
+     -123.7663
+    ],
+    [
+     47.90692,
+     -123.76421
+    ],
+    [
+     47.90639,
+     -123.76092
+    ],
+    [
+     47.90686,
+     -123.75893
+    ],
+    [
+     47.9074,
+     -123.75732
+    ],
+    [
+     47.90779,
+     -123.75489
+    ],
+    [
+     47.90776,
+     -123.75245
+    ],
+    [
+     47.90682,
+     -123.74957
+    ],
+    [
+     47.90761,
+     -123.74806
+    ],
+    [
+     47.90781,
+     -123.74651
+    ],
+    [
+     47.9081,
+     -123.74448
+    ],
+    [
+     47.90816,
+     -123.73991
+    ],
+    [
+     47.90749,
+     -123.73731
+    ],
+    [
+     47.90659,
+     -123.73397
+    ],
+    [
+     47.90585,
+     -123.73123
+    ],
+    [
+     47.90627,
+     -123.7297
+    ],
+    [
+     47.90669,
+     -123.72683
+    ],
+    [
+     47.90672,
+     -123.72488
+    ],
+    [
+     47.90674,
+     -123.72402
+    ],
+    [
+     47.90681,
+     -123.72247
+    ],
+    [
+     47.90773,
+     -123.72066
+    ],
+    [
+     47.90784,
+     -123.71991
+    ],
+    [
+     47.90774,
+     -123.71856
+    ],
+    [
+     47.90736,
+     -123.71765
+    ],
+    [
+     47.90635,
+     -123.71662
+    ],
+    [
+     47.90698,
+     -123.71611
+    ],
+    [
+     47.90699,
+     -123.71511
+    ],
+    [
+     47.90556,
+     -123.71471
+    ],
+    [
+     47.90508,
+     -123.71242
+    ],
+    [
+     47.90365,
+     -123.7103
+    ],
+    [
+     47.90208,
+     -123.7074
+    ],
+    [
+     47.90134,
+     -123.70489
+    ],
+    [
+     47.90196,
+     -123.7033
+    ],
+    [
+     47.90253,
+     -123.70209
+    ],
+    [
+     47.90161,
+     -123.701
+    ],
+    [
+     47.90115,
+     -123.70088
+    ],
+    [
+     47.90091,
+     -123.69854
+    ],
+    [
+     47.90054,
+     -123.69769
+    ],
+    [
+     47.89995,
+     -123.69628
+    ],
+    [
+     47.89964,
+     -123.69537
+    ],
+    [
+     47.89891,
+     -123.69269
+    ],
+    [
+     47.89786,
+     -123.69135
+    ],
+    [
+     47.89703,
+     -123.68975
+    ],
+    [
+     47.89683,
+     -123.68819
+    ],
+    [
+     47.89624,
+     -123.68658
+    ],
+    [
+     47.8962,
+     -123.68498
+    ],
+    [
+     47.89588,
+     -123.68353
+    ],
+    [
+     47.89518,
+     -123.68218
+    ],
+    [
+     47.89467,
+     -123.67991
+    ],
+    [
+     47.8933,
+     -123.67891
+    ],
+    [
+     47.89274,
+     -123.67775
+    ],
+    [
+     47.89195,
+     -123.67715
+    ],
+    [
+     47.8915,
+     -123.67548
+    ],
+    [
+     47.89164,
+     -123.67381
+    ],
+    [
+     47.89179,
+     -123.67268
+    ],
+    [
+     47.89204,
+     -123.6717
+    ],
+    [
+     47.89111,
+     -123.66911
+    ],
+    [
+     47.89099,
+     -123.66766
+    ],
+    [
+     47.89103,
+     -123.66502
+    ],
+    [
+     47.89002,
+     -123.66233
+    ],
+    [
+     47.8898,
+     -123.65968
+    ],
+    [
+     47.8899,
+     -123.65792
+    ],
+    [
+     47.88946,
+     -123.65702
+    ],
+    [
+     47.8889,
+     -123.65586
+    ],
+    [
+     47.88872,
+     -123.65547
+    ],
+    [
+     47.88889,
+     -123.6542
+    ],
+    [
+     47.8883,
+     -123.65269
+    ],
+    [
+     47.88732,
+     -123.65164
+    ],
+    [
+     47.88613,
+     -123.65049
+    ],
+    [
+     47.88525,
+     -123.6488
+    ],
+    [
+     47.88473,
+     -123.64731
+    ],
+    [
+     47.88357,
+     -123.64548
+    ],
+    [
+     47.88272,
+     -123.64396
+    ],
+    [
+     47.88263,
+     -123.64254
+    ],
+    [
+     47.88253,
+     -123.64111
+    ],
+    [
+     47.88275,
+     -123.64014
+    ],
+    [
+     47.88251,
+     -123.63858
+    ],
+    [
+     47.88205,
+     -123.63746
+    ],
+    [
+     47.88182,
+     -123.63642
+    ],
+    [
+     47.88101,
+     -123.63505
+    ],
+    [
+     47.8794,
+     -123.63428
+    ],
+    [
+     47.87851,
+     -123.63262
+    ],
+    [
+     47.87817,
+     -123.63009
+    ],
+    [
+     47.8768,
+     -123.6283
+    ],
+    [
+     47.87587,
+     -123.62726
+    ],
+    [
+     47.87495,
+     -123.6264
+    ],
+    [
+     47.87354,
+     -123.62479
+    ],
+    [
+     47.87261,
+     -123.62442
+    ],
+    [
+     47.87122,
+     -123.62202
+    ],
+    [
+     47.86972,
+     -123.61727
+    ],
+    [
+     47.86738,
+     -123.61739
+    ],
+    [
+     47.86685,
+     -123.61237
+    ],
+    [
+     47.8681,
+     -123.60642
+    ],
+    [
+     47.86558,
+     -123.59877
+    ],
+    [
+     47.86369,
+     -123.60065
+    ],
+    [
+     47.86148,
+     -123.59945
+    ],
+    [
+     47.85899,
+     -123.59382
+    ],
+    [
+     47.85522,
+     -123.58488
+    ],
+    [
+     47.85221,
+     -123.58138
+    ],
+    [
+     47.84716,
+     -123.57707
+    ],
+    [
+     47.84266,
+     -123.57647
+    ],
+    [
+     47.84127,
+     -123.57422
+    ],
+    [
+     47.84108,
+     -123.56734
+    ],
+    [
+     47.83393,
+     -123.57045
+    ],
+    [
+     47.82914,
+     -123.56893
+    ],
+    [
+     47.82497,
+     -123.57171
+    ],
+    [
+     47.8217,
+     -123.57216
+    ],
+    [
+     47.8191,
+     -123.57455
+    ],
+    [
+     47.81315,
+     -123.57978
+    ],
+    [
+     47.80942,
+     -123.5844
+    ],
+    [
+     47.80278,
+     -123.58737
+    ],
+    [
+     47.7984,
+     -123.59003
+    ],
+    [
+     47.79734,
+     -123.59619
+    ],
+    [
+     47.79701,
+     -123.60061
+    ],
+    [
+     47.79487,
+     -123.59842
+    ],
+    [
+     47.79214,
+     -123.59801
+    ],
+    [
+     47.79181,
+     -123.60338
+    ],
+    [
+     47.78863,
+     -123.6129
+    ],
+    [
+     47.78929,
+     -123.61835
+    ],
+    [
+     47.78984,
+     -123.62268
+    ],
+    [
+     47.78868,
+     -123.62876
+    ],
+    [
+     47.78876,
+     -123.6327
+    ],
+    [
+     47.79381,
+     -123.66456
+    ],
+    [
+     47.81592,
+     -123.68314
+    ],
+    [
+     47.82305,
+     -123.68039
+    ],
+    [
+     47.82583,
+     -123.68389
+    ],
+    [
+     47.82708,
+     -123.6848
+    ],
+    [
+     47.82891,
+     -123.687
+    ],
+    [
+     47.83015,
+     -123.68821
+    ],
+    [
+     47.83117,
+     -123.68954
+    ],
+    [
+     47.83244,
+     -123.69078
+    ],
+    [
+     47.83429,
+     -123.69197
+    ],
+    [
+     47.83642,
+     -123.69245
+    ],
+    [
+     47.838,
+     -123.69237
+    ],
+    [
+     47.83937,
+     -123.69301
+    ],
+    [
+     47.84016,
+     -123.69382
+    ],
+    [
+     47.84138,
+     -123.69496
+    ],
+    [
+     47.84266,
+     -123.69542
+    ],
+    [
+     47.84482,
+     -123.69573
+    ],
+    [
+     47.84538,
+     -123.69486
+    ],
+    [
+     47.84737,
+     -123.69432
+    ],
+    [
+     47.84956,
+     -123.6946
+    ],
+    [
+     47.85093,
+     -123.69354
+    ],
+    [
+     47.85225,
+     -123.69316
+    ],
+    [
+     47.85445,
+     -123.69206
+    ],
+    [
+     47.85513,
+     -123.69206
+    ],
+    [
+     47.85739,
+     -123.69211
+    ],
+    [
+     47.8586,
+     -123.69288
+    ],
+    [
+     47.86017,
+     -123.69115
+    ],
+    [
+     47.86182,
+     -123.69134
+    ],
+    [
+     47.86307,
+     -123.69155
+    ],
+    [
+     47.86581,
+     -123.69123
+    ],
+    [
+     47.86809,
+     -123.69141
+    ],
+    [
+     47.87036,
+     -123.69102
+    ],
+    [
+     47.87268,
+     -123.69168
+    ],
+    [
+     47.87415,
+     -123.69261
+    ],
+    [
+     47.87548,
+     -123.69364
+    ],
+    [
+     47.8769,
+     -123.69514
+    ],
+    [
+     47.87776,
+     -123.69684
+    ],
+    [
+     47.87867,
+     -123.69882
+    ],
+    [
+     47.87836,
+     -123.70178
+    ],
+    [
+     47.87903,
+     -123.70371
+    ],
+    [
+     47.87886,
+     -123.70605
+    ],
+    [
+     47.87896,
+     -123.70908
+    ],
+    [
+     47.88127,
+     -123.7131
+    ],
+    [
+     47.88306,
+     -123.71446
+    ],
+    [
+     47.88423,
+     -123.71706
+    ],
+    [
+     47.88395,
+     -123.71974
+    ],
+    [
+     47.88396,
+     -123.72519
+    ],
+    [
+     47.88479,
+     -123.7302
+    ],
+    [
+     47.88387,
+     -123.7334
+    ],
+    [
+     47.88187,
+     -123.7366
+    ],
+    [
+     47.88046,
+     -123.73842
+    ],
+    [
+     47.87895,
+     -123.73953
+    ],
+    [
+     47.87829,
+     -123.74238
+    ],
+    [
+     47.87723,
+     -123.74544
+    ],
+    [
+     47.87716,
+     -123.74786
+    ],
+    [
+     47.87749,
+     -123.75
+    ],
+    [
+     47.87796,
+     -123.75239
+    ],
+    [
+     47.87946,
+     -123.75348
+    ],
+    [
+     47.87987,
+     -123.75479
+    ],
+    [
+     47.88222,
+     -123.75287
+    ],
+    [
+     47.88424,
+     -123.75182
+    ],
+    [
+     47.885,
+     -123.75437
+    ],
+    [
+     47.88539,
+     -123.75523
+    ],
+    [
+     47.88583,
+     -123.75541
+    ],
+    [
+     47.88621,
+     -123.75591
+    ],
+    [
+     47.88617,
+     -123.76155
+    ],
+    [
+     47.88736,
+     -123.75923
+    ],
+    [
+     47.88721,
+     -123.76215
+    ],
+    [
+     47.88688,
+     -123.76418
+    ],
+    [
+     47.88853,
+     -123.76196
+    ],
+    [
+     47.88838,
+     -123.7638
+    ],
+    [
+     47.88847,
+     -123.76462
+    ],
+    [
+     47.88917,
+     -123.76469
+    ],
+    [
+     47.88915,
+     -123.76615
+    ],
+    [
+     47.88864,
+     -123.76909
+    ],
+    [
+     47.88866,
+     -123.77167
+    ],
+    [
+     47.8884,
+     -123.77465
+    ],
+    [
+     47.88955,
+     -123.77996
+    ],
+    [
+     47.89004,
+     -123.78477
+    ],
+    [
+     47.89107,
+     -123.78741
+    ],
+    [
+     47.89013,
+     -123.78731
+    ],
+    [
+     47.89163,
+     -123.78906
+    ],
+    [
+     47.89307,
+     -123.79054
+    ],
+    [
+     47.89494,
+     -123.78917
+    ],
+    [
+     47.89546,
+     -123.78836
+    ],
+    [
+     47.89532,
+     -123.78695
+    ],
+    [
+     47.89622,
+     -123.78719
+    ],
+    [
+     47.89751,
+     -123.7877
+    ],
+    [
+     47.8972,
+     -123.78676
+    ],
+    [
+     47.89652,
+     -123.78451
+    ],
+    [
+     47.89627,
+     -123.78383
+    ],
+    [
+     47.89743,
+     -123.78207
+    ],
+    [
+     47.89891,
+     -123.78115
+    ],
+    [
+     47.90004,
+     -123.78088
+    ],
+    [
+     47.90128,
+     -123.78116
+    ],
+    [
+     47.90298,
+     -123.78032
+    ],
+    [
+     47.90378,
+     -123.7783
+    ],
+    [
+     47.90499,
+     -123.77841
+    ],
+    [
+     47.90619,
+     -123.77921
+    ],
+    [
+     47.90738,
+     -123.7806
+    ],
+    [
+     47.9081,
+     -123.78241
+    ],
+    [
+     47.90911,
+     -123.78376
+    ],
+    [
+     47.9096,
+     -123.7845
+    ],
+    [
+     47.91011,
+     -123.78547
+    ],
+    [
+     47.91064,
+     -123.78722
+    ],
+    [
+     47.91187,
+     -123.78953
+    ],
+    [
+     47.91173,
+     -123.79096
+    ],
+    [
+     47.91213,
+     -123.792
+    ],
+    [
+     47.91312,
+     -123.79381
+    ],
+    [
+     47.91322,
+     -123.7976
+    ],
+    [
+     47.91366,
+     -123.80042
+    ],
+    [
+     47.91347,
+     -123.80443
+    ],
+    [
+     47.91208,
+     -123.80578
+    ],
+    [
+     47.91132,
+     -123.80933
+    ],
+    [
+     47.91121,
+     -123.8133
+    ],
+    [
+     47.91086,
+     -123.81468
+    ],
+    [
+     47.9121,
+     -123.81592
+    ],
+    [
+     47.91292,
+     -123.81813
+    ],
+    [
+     47.91352,
+     -123.81884
+    ],
+    [
+     47.91462,
+     -123.82034
+    ],
+    [
+     47.91563,
+     -123.82066
+    ],
+    [
+     47.9158,
+     -123.81975
+    ],
+    [
+     47.91625,
+     -123.81957
+    ],
+    [
+     47.91637,
+     -123.81896
+    ],
+    [
+     47.91805,
+     -123.81965
+    ],
+    [
+     47.91821,
+     -123.82099
+    ],
+    [
+     47.9172,
+     -123.82305
+    ],
+    [
+     47.91877,
+     -123.8229
+    ],
+    [
+     47.92002,
+     -123.82215
+    ],
+    [
+     47.92076,
+     -123.82061
+    ],
+    [
+     47.92193,
+     -123.81985
+    ],
+    [
+     47.92285,
+     -123.82087
+    ],
+    [
+     47.92391,
+     -123.82134
+    ],
+    [
+     47.92503,
+     -123.82161
+    ],
+    [
+     47.92653,
+     -123.82276
+    ],
+    [
+     47.92686,
+     -123.8227
+    ],
+    [
+     47.92778,
+     -123.82376
+    ],
+    [
+     47.92808,
+     -123.8244
+    ],
+    [
+     47.92999,
+     -123.82548
+    ],
+    [
+     47.93122,
+     -123.8249
+    ],
+    [
+     47.93226,
+     -123.82415
+    ],
+    [
+     47.93263,
+     -123.82252
+    ],
+    [
+     47.93281,
+     -123.82171
+    ],
+    [
+     47.93421,
+     -123.82218
+    ],
+    [
+     47.93495,
+     -123.82215
+    ],
+    [
+     47.93646,
+     -123.82147
+    ],
+    [
+     47.93791,
+     -123.82164
+    ],
+    [
+     47.93922,
+     -123.82132
+    ],
+    [
+     47.94024,
+     -123.82195
+    ],
+    [
+     47.94088,
+     -123.82197
+    ],
+    [
+     47.94166,
+     -123.82169
+    ],
+    [
+     47.94275,
+     -123.82269
+    ],
+    [
+     47.9449,
+     -123.82422
+    ],
+    [
+     47.94474,
+     -123.8235
+    ],
+    [
+     47.94562,
+     -123.82277
+    ],
+    [
+     47.94678,
+     -123.82273
+    ],
+    [
+     47.94766,
+     -123.82297
+    ],
+    [
+     47.94834,
+     -123.82331
+    ],
+    [
+     47.94975,
+     -123.82319
+    ],
+    [
+     47.95069,
+     -123.82171
+    ],
+    [
+     47.95158,
+     -123.82033
+    ],
+    [
+     47.95206,
+     -123.8202
+    ],
+    [
+     47.95184,
+     -123.82253
+    ],
+    [
+     47.9531,
+     -123.82821
+    ],
+    [
+     47.95355,
+     -123.83308
+    ],
+    [
+     47.95482,
+     -123.83488
+    ],
+    [
+     47.95493,
+     -123.83486
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 42,
+    "summitTimeHrs": 12,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 22,
+    "recommendedStart": "4:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 7,
+      "note": "Start at the Sol Duc trailhead, climb through Deer Lake to High Divide, then continue the ridgeline past Cat Basin to a high camp near Eleven Bull Basin. Packs are heaviest here — …",
+      "fromTo": "Sol Duc to High Divide / Eleven Bull Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 7,
+      "note": "Sidehill, mostly off-trail travel across the Baileys' famous narrow \"catwalk\" ridge sections below Mt Carrie and Stephen Peak, dropping into Ferry Basin to camp. Slow-going scree a…",
+      "fromTo": "The Catwalks to Ferry Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 8,
+      "note": "Cross Bear Pass and Queets Basin, work around the Humes Glacier and Blizzard Pass, and drop to Camp Pan — the classic promontory camp used as the staging point for Mathias, Mercury…",
+      "fromTo": "Bear Pass to Camp Pan",
+      "section": "Approach"
+     },
+     {
+      "hrs": 12,
+      "note": "Rope up and descend onto the Hoh Glacier, cross to Glacier Pass, stash packs, and climb the steep snow finger between Mathias and the pass to Class 4 rock on the summit ridge. Reve…",
+      "fromTo": "Glacier Pass and the Mathias summit",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8,
+      "note": "A long, mostly downhill trail day from Glacier Meadows past Elk Lake and Lewis Meadow back to the Hoh trailhead, finishing the traverse.",
+      "fromTo": "Hoh River exit",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Standard glacier-travel kit for the Blue Glacier/Hoh Glacier crossing: rope-team gear, harness, crevasse-rescue kit (prusiks or mechanical ascenders, pulley, cordage), ice axe, crampons, and a helmet (required). No technical rock rack is typically carried — the Class 4 ridge above the col/snow finger is generally scrambled unroped by parties comfortable with the exposure and loose rock.",
+   "what_to_bring": [
+    "helmet",
+    "ice axe and crampons",
+    "map/compass/GPS",
+    "multi-day backcountry kit"
+   ],
+   "pro_tips": [
+    "Most parties climb Mathias as a side-trip from an Olympus base camp near Glacier Pass rather than as a dedicated objective — it's commonly combined with Mount Mercury, and sometimes Athena/Circe, in one trip",
+    "Mid-July through mid-August is the reported sweet spot: enough snow remains on the approach gullies/snow finger, before the glaciers turn to bare, more crevassed ice later in the season",
+    "Reserve wilderness permits and Glacier Meadows/Elk Lake/Martin Creek campsites through the Wilderness Information Center as early as possible — quotas fill fast in peak season",
+    "Check current NPS road-condition alerts before a Hoh-side trip given the Upper Hoh Road's history of storm washouts"
+   ],
+   "watch_out": [
+    "remote/committing terrain",
+    "lingering snow",
+    "long self-evacuation distances",
+    "summit block is Class 4, harder than a typical Class 3 scramble"
+   ],
+   "pro_needs": "Minimal fixed protection is used; the summit ridge is Class 4 scrambling, generally climbed unroped. The mandatory gear is for the approach: rope, harness, and crevasse-rescue kit for the Blue Glacier and Hoh Glacier crossings.",
+   "best_season": "Mid-July through early September; mid-July–mid-August is the reported sweet spot (enough snow coverage on the approach gullies/snow finger before the Blue and Hoh Glaciers go to bare, more heavily crevassed ice later in the season). NPS gives late June–early September as the broader climbing season for the Olympus/Bailey Range high country.",
+   "high_point_ft": 7156,
+   "aid_grade": null,
+   "approach": "Drive the paved Upper Hoh Road to its end at the Hoh Ranger Station (578 ft). Hike the Hoh River Trail 17.2 miles to Glacier Meadows (~4,200-4,300 ft), the standard base camp for this side of the range (note: a washed-out section partway up requires a fixed ladder/rope crossing). From Glacier Meadows, follow the way trail 0.8 mi to the top of the Blue Glacier lateral moraine, continue along the moraine crest ~0.2 mi, then descend onto the Blue Glacier and ascend snow slopes around rock islands to the crest of Snow Dome (6,600 ft). From Snow Dome, rope up and traverse the upper Hoh Glacier toward Glacier Pass (between Mathias and the East Peak of Olympus), then gain the base of either the Mathias snow finger or the steep gullies leading to the Mercury-Mathias col.",
+   "descent_text": "Descend by the same line used on ascent: downclimb the Class 4 summit ridge back to the top of the snow finger, then plunge-step or downclimb the 35–40° snow finger back to Glacier Pass. This is a walk-off/downclimb — no fixed rappel stations are reported on Mathias itself, and no rappels are specifically documented for this line; treat the snow finger and the loose upper ridge as the descent crux (rockfall and a fall-arrest-consequence slope, not technical lowering). If the snow has gone to hard ice/firm neve late in the season, some parties choose to belay or downclimb facing in rather than plunge-stepping. From Glacier Pass, reverse the approach: cross back onto the Blue Glacier and descend it — passing the Snow Dome bootpack and exiting via the glacier's lateral/terminal moraine — down to Glacier Meadows Camp, and out the Hoh River Trail to the trailhead (roughly 2 days of hiking/glacier travel from Glacier Pass back to the car). If this climb is combined with the full Bailey Range Traverse, the alternate exit continues north from High Divide back to the Sol Duc trailhead instead. Watch for rockfall on the loose upper mountain as the day warms, softening snow bridges on the Hoh/Blue Glacier crossings later in the day, and the same unstable Hoh Lake Slide sidehill on the way out.",
+   "bail": "No easy bail once committed to the class 4 ridge terrain — retreat means reversing the full route back down to Glacier Pass and across the glacier the way you came.",
+   "pitch_detail": [
+    {
+     "grade": null,
+     "notes": "Hoh Ranger Station (578 ft) to Glacier Meadows (~4,200-4,300 ft) via Hoh River Trail, 17.2 mi; includes a fixed ladder/rope crossing at a major washout.",
+     "pitch": "Approach"
+    },
+    {
+     "grade": null,
+     "notes": "Way trail to moraine top (0.8 mi), moraine crest (0.2 mi), then roped glacier travel up snow/rock-island terrain to Snow Dome (6,600 ft).",
+     "pitch": "Blue Glacier / Snow Dome"
+    },
+    {
+     "grade": null,
+     "notes": "Roped travel across the upper Hoh Glacier toward Glacier Pass, between Mount Mathias and the East Peak of Mount Olympus.",
+     "pitch": "Glacier Pass traverse"
+    },
+    {
+     "grade": null,
+     "notes": "Either the steep snow finger between Mathias and Glacier Pass, or steep gullies to the Mercury-Mathias col.",
+     "pitch": "Snow finger or col gullies"
+    },
+    {
+     "grade": "Class 4",
+     "notes": "Exposed, loose scrambling on the ridge to the summit; typically climbed unroped.",
+     "pitch": "Summit ridge"
+    }
+   ],
+   "itinerary": {
+    "cal": "Requires an Olympic NP wilderness permit in the quota-controlled Sol Duc/Bailey Range corridor; the route is really only in condition July–September, and doing it while the Bailey Range snowfields and Mathias's snow finger still hold snow (rather than bare ice/scree) makes for much faster, safer travel.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Start at the Sol Duc trailhead, climb through Deer Lake to High Divide, then continue the ridgeline past Cat Basin to a high camp near Eleven Bull Basin. Packs are heaviest here — full glacier kit plus five days of food.",
+      "hours": 7,
+      "miles": 9,
+      "title": "Sol Duc to High Divide / Eleven Bull Basin",
+      "gainFt": 4000,
+      "lossFt": 300,
+      "packLb": 45,
+      "schedule": [],
+      "objective": "Reach a high camp beyond High Divide"
+     },
+     {
+      "n": 2,
+      "note": "Sidehill, mostly off-trail travel across the Baileys' famous narrow \"catwalk\" ridge sections below Mt Carrie and Stephen Peak, dropping into Ferry Basin to camp. Slow-going scree and heather traverses keep mileage low.",
+      "hours": 7,
+      "miles": 8,
+      "title": "The Catwalks to Ferry Basin",
+      "gainFt": 2500,
+      "lossFt": 1800,
+      "packLb": 43,
+      "schedule": [],
+      "objective": "Cross the Baileys' exposed catwalks to Ferry Basin"
+     },
+     {
+      "n": 3,
+      "note": "Cross Bear Pass and Queets Basin, work around the Humes Glacier and Blizzard Pass, and drop to Camp Pan — the classic promontory camp used as the staging point for Mathias, Mercury, and Olympus.",
+      "hours": 8,
+      "miles": 10,
+      "title": "Bear Pass to Camp Pan",
+      "gainFt": 2500,
+      "lossFt": 2200,
+      "packLb": 41,
+      "schedule": [],
+      "objective": "Reach Camp Pan overlooking the Hoh Glacier"
+     },
+     {
+      "n": 4,
+      "note": "Rope up and descend onto the Hoh Glacier, cross to Glacier Pass, stash packs, and climb the steep snow finger between Mathias and the pass to Class 4 rock on the summit ridge. Reverse the climb, re-rope for the Blue Glacier, and descend the moraine to camp at Glacier Meadows — the longest day of the trip.",
+      "hours": 12,
+      "miles": 10,
+      "title": "Glacier Pass and the Mathias summit",
+      "gainFt": 2200,
+      "lossFt": 3700,
+      "packLb": 38,
+      "schedule": [
+       {
+        "time": "4:30 AM",
+        "label": "Leave Camp Pan",
+        "detail": "Full packs, roped up for the Hoh Glacier crossing."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Reach Glacier Pass",
+        "detail": "Stash packs and rack up for the climb."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Start the snow finger",
+        "detail": "Steep snow between Mathias and the pass, then Class 4 rock to the ridge."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Summit Mount Mathias",
+        "detail": "Loose volcanic rock near the top; keep the stop short."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Back at Glacier Pass",
+        "detail": "Re-shoulder packs, rope up again for the Blue Glacier."
+       },
+       {
+        "time": "5:30 PM",
+        "label": "Camp at Glacier Meadows",
+        "detail": "Descend the Blue Glacier and lateral moraine to camp."
+       }
+      ],
+      "objective": "Climb Mount Mathias via the snow finger and Class 4 ridge, then descend to Glacier Meadows"
+     },
+     {
+      "n": 5,
+      "note": "A long, mostly downhill trail day from Glacier Meadows past Elk Lake and Lewis Meadow back to the Hoh trailhead, finishing the traverse.",
+      "hours": 8,
+      "miles": 17.6,
+      "title": "Hoh River exit",
+      "gainFt": 200,
+      "lossFt": 3900,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Hike out to the Hoh Rain Forest trailhead"
+     }
+    ],
+    "totalNote": "A serious point-to-point traverse from Sol Duc to the Hoh, roughly 55 miles and ~11,000 ft of gain over 5 days, tagging Mathias's loose Class 4 summit near Glacier Pass along the way with a roped glacier crossing on summit day."
+   },
+   "access": {
+    "fees": "$8/person/night (16+; free for 15 and under) + $6 non-refundable reservation fee per permit. An optional annual Wilderness Pass ($45/person) covers per-night fees for 12 months but not the $6 reservation fee.",
+    "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+    "rules": "Olympic NP wilderness regulations; bear canisters are required for ALL overnight wilderness stays park-wide (not just select zones).",
+    "permit": "Wilderness camping permit required for all overnight trips, reserved in advance via Recreation.gov (summer-season permits typically release mid-April); $8/person/night plus a $6 reservation fee, or covered by the $45 Annual Olympic Wilderness Pass.",
+    "group_limit": 12,
+    "landManager": "Olympic National Park",
+    "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+    "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+     "what": "Olympic National Park wilderness permit, per person per night; some Hoh River Trail sites are quota",
+     "where": "Reserve on Recreation.gov, or get one in person at a park Wilderness Information Center."
+    }
+   },
+   "road": {
+    "name": "Upper Hoh Road (Hoh approach) or Sol Duc Hot Springs Road (Bailey Range Traverse approach)",
+    "status": "Paved to both trailheads; Upper Hoh Road was washed out by a bomb-cyclone storm and closed from Dec 2025 until reopening in May 2026 after state-funded emergency repairs — check current NPS road-conditions alerts before relying on it",
+    "driveNote": "Hoh: ~19 mi off US-101 via Upper Hoh Road to the Hoh Rain Forest Visitor Center. Sol Duc: ~30 mi west of Port Angeles on US-101, then 14 mi up Sol Duc Hot Springs Road to trailhead."
+   },
+   "climate": {
+    "typical": "Cool, wet, and often socked-in even in midsummer — the Bailey Range/Olympus massif sits directly in the path of Pacific storms and the Blue Glacier occupies one of the heaviest-snowfall accumulation zones in the Lower 48. Weather windows are short and can deteriorate quickly; plan for a contingency day."
+   },
+   "emergency": {
+    "notes": "Olympic NP Wilderness Information Center (Port Angeles) (360) 565-3100 handles backcountry/climbing questions; Jefferson County Sheriff non-emergency line (360) 344-9779. In-park incidents are coordinated by NPS (with Olympic Mountain Rescue assisting); nearest hospital is Olympic Medical Center (Olympic Memorial Hospital) in Port Angeles. Always use 911 for active emergencies.",
+    "county": "Jefferson",
+    "rangerStation": "Olympic National Park Wilderness Information Center, Port Angeles — (360) 565-3100",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Late July-August during the short snow-free window, timed with Bailey Range Traverse permits; even then most parties report seeing few or no other groups once off the maintained trail system",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely single digits to low teens of parties per season; this is reached only via the multi-day Bailey Range Traverse, one of the Olympics' most committing off-trail routes"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Very high endurance for consecutive long days (typically 4-8+ days) with significant elevation gain/loss and off-trail travel over talus, heather, and snowfields",
+     "packWeight": "Multi-day expedition load (overnight/backpacking gear, food for a week+, bear canister) typically 35-50+ lb"
+    },
+    "approachTime": "Multi-day approach; Mathias is reached only as part of the several-days-long Bailey Range Traverse, not a single-day approach",
+    "requiredSkills": [
+     "off-trail navigation and route-finding (map/compass/GPS) in featureless or complex terrain",
+     "exposed Class 3 scrambling with a pack, and Class 4 on the summit ridge",
+     "steep snowfield/glissade travel and self-arrest",
+     "stream/river crossing judgment",
+     "self-sufficient wilderness travel and self-evacuation given remote location"
+    ],
+    "experienceLevel": "Advanced backcountry traveler with prior multi-day off-trail/cross-country navigation experience; comfortable on sustained Class 3 terrain with a loaded overnight pack and unmarked route-finding through remote alpine terrain"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September - the short window when the Bailey Range is reliably snow-free enough for the traverse",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July often still holds significant lingering snow; conditions improve toward late month",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Most reliable snow-free window for the scramble and off-trail traverse terrain",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still viable and often clear, but shortening daylight and increasing chance of early fall storms",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Wet maritime climate typical of the Olympics the Bailey Range holds snow well into summer, and a short clear window exists in fall before storms return",
+     "probability": "Weather can change quickly in this exposed, remote range; multi-day trips carry meaningful exposure to a shift toward wet/stormy conditions given the several-day commitment"
+    },
+    "exposure": "Committing, remote terrain with an exposed Class 4 summit ridge with long self-evacuation distances; a fall or injury far from help is a serious consequence given the multi-day, off-trail nature of the approach",
+    "avalanche": {
+     "zone": "N/A - summer route with a glaciated approach; NWAC does not issue forecasts for the Olympics outside roughly mid-November to mid-April, well outside this route's season",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Roped glacier travel is required to reach the peak: the Hoh Glacier must be crossed to Glacier Pass, and the Hoh-side line also climbs the Blue Glacier. Expect hidden crevasses and softening snow bridges; the Class 4 summit ridge itself is off the ice."
+   },
+   "data_quality": {
+    "gaps": [
+     "No authoritative alpine/YDS grade or Beckey-style route grade found for Mathias specifically",
+     "Precise one-way distance/elevation gain from Glacier Pass to the Mathias summit not found in sourced material",
+     "No documented rappel/rope-length specifics for descending Mathias itself (only the adjacent Mercury descent is documented, via the same Mercury–Mathias col anchor)",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 3,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.80522,
+    "peakLng": -123.676932,
+    "trailhead": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+    "trailheadLat": 47.86028,
+    "trailheadLng": -123.93472,
+    "trailheadDirection": "From the Hoh River Trailhead (578 ft) up the Hoh River Trail"
+   },
+   "sling_rack": {
+    "slings": "2-3 runners for occasional handline/rappel anchors on Class 4 sections"
+   },
+   "alpine_draws": 0,
+   "rope_type": "dynamic single",
+   "rope_length_m": 30,
+   "rope_note": "Bailey Range Scramble sits within the broader Bailey Range Traverse: permanent snowfields and crevassed glacier terrain (Hoh Glacier vicinity) require rope for glacier-travel legs; the Class 4 ridge scrambling on broken sedimentary rock itself is typically unroped by experienced parties, but a short rope aids confidence on exposed sections.",
+   "ascender": "prusik cord recommended for glacier crossings en route",
+   "corrections": "Distinguish from a dry-rock Class 4 scramble elsewhere — glacier travel gear is warranted by the route's proximity to permanent snow/glacier per Bailey Range Traverse trip reports.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "30m glacier-travel rope + harness",
+    "Crevasse rescue kit (prusiks/ascenders, pulley, cordage)",
+    "2-3 runners (handline/rappel anchors on Class 4 sections)",
+    "Ice axe and crampons"
+   ],
+   "features": [
+    "Exposed",
+    "Committing",
+    "Technical",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Hoh River and the Blue Glacier to Glacier Pass",
+     "notes": "The long rainforest walk to Glacier Meadows, including a washed-out section crossed on a fixed ladder, then the way trail onto the Blue Glacier lateral moraine, across the glacier and up to Snow Dome. A Bailey Range crest line reaches the same ground from the north. Either way this is combined with a broader trip rather than done for itself.",
+     "season": "Late July to mid-September",
+     "hazards": [
+      "Hidden crevasses on the Blue and Hoh glaciers — roped travel throughout",
+      "Rockfall off the loose upper mountain as the day warms",
+      "Steep snow at 35 to 40 degrees with a fall-arrest consequence",
+      "Hard neve or ice on the finger late season, where downclimbing beats plunge-stepping",
+      "Softening snow bridges on the glacier crossings later in the day"
+     ],
+     "baseFinding": "From Snow Dome, rope up and traverse the upper Hoh Glacier toward Glacier Pass — the saddle between Mathias and the East Peak of Olympus, and the one clear low point on that skyline. Two entries onto the Class 4 summit ridge start from around here and both are identifiable on sight. The first is a snow finger running up between Mathias and the pass: a narrow tongue of snow set into rock at roughly 35 to 40 degrees, unmistakable because it is the only continuous snow line on that flank. The second is a set of steep gullies climbing to the Mercury–Mathias col, north of the pass. Whichever you choose, the base of the climbing is where snow or scree ends against rock and the ridge above turns blocky and exposed, with the Blue Glacier falling away on one side and the Hoh on the other. Crevasse-broken ground short of the pass looks like a shortcut onto the ridge and is not one. And if you are climbing toward the East Peak of Olympus you are on the wrong side of the pass entirely."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 4200,
+     "name": "Glacier Meadows",
+     "role": "main",
+     "type": "camp",
+     "notes": "The standard base camp for climbs off the Blue Glacier, about 17 miles up the Hoh River Trail. Summit day starts with the short way trail to the Blue Glacier moraine.",
+     "water": "Creek beside camp",
+     "permit": "Olympic National Park wilderness permit",
+     "capacity": "Several designated tent sites in the forest at the end of the Hoh River Trail"
+    },
+    {
+     "elev": 6600,
+     "name": "Snow Dome high camp",
+     "role": "route",
+     "type": "bivy",
+     "notes": "Higher option on the rocks of the lower Snow Dome or on its crest, above the Blue Glacier. It shortens the day to Glacier Pass and Mathias; carry out human waste.",
+     "water": "Snowmelt only",
+     "permit": "Olympic National Park wilderness permit",
+     "capacity": "A few rock-sheltered tent sites on and below the crest of the Snow Dome"
+    },
+    {
+     "name": "Eleven Bull Basin",
+     "role": "hidden"
+    },
+    {
+     "name": "Ferry Basin",
+     "role": "hidden"
+    },
+    {
+     "name": "Camp Pan",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "bailey range scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

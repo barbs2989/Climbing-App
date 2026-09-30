@@ -52,17 +52,32 @@ const FOLD_WORDS = /\b(?:bouldering|boulders|mixed|problems)\b/g;
 const fk = s => { const k = ck(s); const f = String(k).replace(FOLD_WORDS, " ").replace(/\s+/g, " ").trim(); return f || k; };
 const foldKind = s => /\bice\b/i.test(s) ? "ice" : /\b(?:bouldering|boulders|problems)\b/i.test(s) ? "boulder" : "";
 const foldTwins = (a, b) => { const x = foldKind(a), y = foldKind(b); return !(x && y && x !== y); };
+// The suffix a _climbs split child takes after its area's name, decided in SQL by the routes the
+// area holds: all bouldering -> " Bouldering", all ice/mixed -> " Ice Climbs", else " Routes".
+const SPLIT_SUFFIX = areaId => `(select case when bool_and(discipline = 'bouldering') then ' Bouldering' when bool_and(discipline in ('ice', 'mixed')) then ' Ice Climbs' else ' Routes' end from routes where area_id = ${q(areaId)})`;
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 
-function sql(text, tries = 4) {
+// Eight tries, backing off to a minute: four tries over 30 s were all answered with EMPTY output
+// once (California, 2026-09-30), and "Unexpected end of JSON input" said nothing about why.
+function sql(text, tries = 8) {
   for (let i = 0; ; i++) {
     try {
-      const out = execFileSync("npx", ["supabase", "db", "query", "--linked", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
-      const j = JSON.parse(out.slice(out.indexOf("{")));
-      if (!Array.isArray(j.rows)) throw new Error("unexpected output: " + out.slice(0, 200));
-      return j.rows;
-    } catch (e) { if (i >= tries - 1) throw e; execFileSync("sleep", [String(5 * (i + 1))]); }
+      // --output-format json is explicit: run from a plain Terminal the CLI answers with a TEXT
+      // table by default (the "empty answers" that stopped California from run-all.sh).
+      const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
+      // Two shapes: inside an agent session {"boundary", "rows": [...], "warning"}; from a plain
+      // Terminal a BARE array of rows. Parse from whichever bracket comes first.
+      const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0);
+      if (!at.length) throw new Error("empty answer from supabase db query: " + JSON.stringify(out.slice(0, 200)));
+      const j = JSON.parse(out.slice(Math.min(...at)));
+      const rows = Array.isArray(j) ? j : j.rows;
+      if (!Array.isArray(rows)) throw new Error("unexpected output: " + out.slice(0, 200));
+      return rows;
+    } catch (e) {
+      if (i >= tries - 1) { if (e.stderr) e.message += " | stderr: " + String(e.stderr).slice(-400); throw e; }
+      execFileSync("sleep", [String(Math.min(60, 5 * 2 ** i))]);
+    }
   }
 }
 
@@ -209,7 +224,8 @@ function resolver(stateId, stateName, planned, splits) {
     }
     if (created && planned.some(a => a.id === cur)) return { areaId: cur, created: true };
     if (hasKids.has(cur)) {
-      const c = (kids.get(cur + "|" + areaNorm(chain[chain.length - 1])) || []).filter(r => r.id === cur + "_climbs");
+      // Found by ID, not name: a split child is named "<X> Routes" / "<X> Bouldering" / "<X> Ice Climbs".
+      const c = [byId.get(cur + "_climbs")].filter(r => r && r.parent_id === cur);
       if (c.length !== 1) return { why: "area has sub-areas and no _climbs child" };
       cur = c[0].id;
       if (hasKids.has(cur)) return { why: "_climbs child is not a leaf" };
@@ -300,12 +316,18 @@ async function runState(st) {
   //   with a coordinate  -> the same key within 1.5 km, anywhere in the state
   //   without one        -> a PEAK in the state spelled the same (search_canon) — intermediate
   //                         levels arrive with no coordinate, which is how "Mt. Shuksan" did
+  //   with a coordinate, 1.5–15 km, and a DISTINCTIVE name -> HELD, not created: MP puts "Table
+  //                         Mountain Ice" 9 km from our Table Mountain (0213 folded it in once);
+  //                         a generic name ("North Face", "Main Wall") is exempt, since two
+  //                         formations 5 km apart legitimately share it. A hold costs one refused
+  //                         route a person places by hand; a wrong create costs a duplicate area.
   // A route landing in, or anywhere under, such an area is refused rather than re-homed: which of
   // our areas it belongs in is a judgement (0213 moved one onto Table Mountain, another under the
   // Hwy region), and a refused route is one a person can place; a wrongly placed one is not seen.
   if (planned.length) {
     const vals = planned.map(a => `(${q(a.id)}, ${q(a.name)}, ${a.lat ?? "null"}::float8, ${a.lng ?? "null"}::float8)`);
-    const hits = new Map();
+    const hits = new Map(), holds = new Map();
+    const GENERIC = /\b(face|wall|walls|side|boulder|boulders|buttress|slab|slabs|main|north|south|east|west|upper|lower|left|right|center|central|cliff|cliffs|block|sector|gully)\b/;
     // Each name's key is computed ONCE (materialized), not once per pairing: calling catalog_key
     // inside the correlated subquery timed out on California (300 planned x every state area).
     for (let i = 0; i < vals.length; i += 1000) for (const h of sql(`
@@ -318,16 +340,25 @@ async function runState(st) {
                            then s.k = v.k and s.lat between v.lat - 0.02 and v.lat + 0.02
                                 and catalog_km(v.lat, v.lng, s.lat, s.lng) <= 1.5
                            else s.area_type = 'peak' and s.sc = v.sc end
-                     order by catalog_km(v.lat, v.lng, s.lat, s.lng) nulls last limit 1) hit
-        from v`)) if (h.hit) hits.set(h.id, h.hit);
+                     order by catalog_km(v.lat, v.lng, s.lat, s.lng) nulls last limit 1) hit,
+             (select s.id || ' (' || s.name || ', ' || round(catalog_km(v.lat, v.lng, s.lat, s.lng)::numeric, 1) || ' km)' from s
+                     where v.lat is not null and s.k = v.k and s.lat between v.lat - 0.14 and v.lat + 0.14
+                       and catalog_km(v.lat, v.lng, s.lat, s.lng) <= 15
+                     order by catalog_km(v.lat, v.lng, s.lat, s.lng) limit 1) near, v.k
+        from v`)) {
+      if (h.hit) hits.set(h.id, h.hit);
+      else if (h.near && !GENERIC.test(h.k)) { hits.set(h.id, h.near); holds.set(h.id, true); }
+    }
     if (hits.size) {
       const plannedBy = new Map(planned.map(a => [a.id, a]));
       const dupOf = id => { for (let x = id; plannedBy.has(x); x = plannedBy.get(x).parent_id) if (hits.has(x)) return x; return null; };
       const why = "area already in our catalog under another parent or spelling";
+      const whyHeld = "held: an area of the same name 1.5–15 km away may be this one — place by hand";
       for (let i = cand.length - 1; i >= 0; i--) {
         const d = dupOf(cand[i].areaId);
         if (!d) continue;
-        refused[why] = (refused[why] || 0) + 1;
+        const w = holds.has(d) ? whyHeld : why;
+        refused[w] = (refused[w] || 0) + 1;
         if (SAMPLE) console.log(`  refused (existing area): ${cand[i].r.Route}  ->  planned "${plannedBy.get(d).name}" is our ${hits.get(d)}`);
         cand.splice(i, 1);
       }
@@ -432,6 +463,11 @@ async function runState(st) {
   const effSplits = [...splits.entries()].filter(([x]) => planned.some(a => keep.has(a.id) && a.parent_id === x)).map(([x, c]) => ({ x, c }));
   const splitTo = new Map(effSplits.map(({ x, c }) => [x, c.id]));
   for (const ins of inserts) if (splitTo.has(ins.area_id)) ins.area_id = splitTo.get(ins.area_id);
+  // ...and a split that does NOT take effect (every sub-area planned under it was refused) is never
+  // made, so a route planning already pointed at its _climbs child goes back to the area itself —
+  // California failed three times inserting into a ca_k_rock_climbs that was never created.
+  const unsplit = new Map([...splits.entries()].filter(([x]) => !splitTo.has(x)).map(([x, c]) => [c.id, x]));
+  for (const ins of inserts) if (unsplit.has(ins.area_id)) ins.area_id = unsplit.get(ins.area_id);
   const newAreas = planned.filter(a => keep.has(a.id));
   if (SAMPLE && newAreas.length) {
     console.log("  sample NEW AREAS:");
@@ -458,12 +494,14 @@ async function runState(st) {
   const num = v => v == null ? "null" : String(+v);
   for (const { x, c } of effSplits) {
     const n = sql(`select count(*)::int n from routes where area_id = ${q(x)}`)[0].n;
-    // The _climbs child carries the area's own name and is the area itself, not a new place, so
-    // refuse_duplicate_area (which fired on Arizona's two Rappel Rocks 0.35 km apart) is told so —
-    // `set local` lasts for this transaction only.
+    // The _climbs child is the area itself, not a new place, so refuse_duplicate_area (which fired
+    // on Arizona's two Rappel Rocks 0.35 km apart) is told so — `set local` lasts for this
+    // transaction only. It is NAMED for what it holds, as 0221 names a folded area ("<X> Routes" /
+    // "<X> Bouldering" / "<X> Ice Climbs"): a same-named child read "AFPA Rock › AFPA Rock" in the
+    // breadcrumb, a duplicate to a climber.
     sql(`begin;
       set local catalog.allow_duplicate = 'on';
-      insert into areas (id, name, parent_id, area_type, region, lat, lng) values (${q(c.id)}, ${q(c.name)}, (select parent_id from areas where id = ${q(x)}), 'crag', ${q(c.region)}, ${num(c.lat)}, ${num(c.lng)});
+      insert into areas (id, name, parent_id, area_type, region, lat, lng) values (${q(c.id)}, ${q(c.name)} || ${SPLIT_SUFFIX(x)}, (select parent_id from areas where id = ${q(x)}), 'crag', ${q(c.region)}, ${num(c.lat)}, ${num(c.lng)});
       update routes set area_id = ${q(c.id)} where area_id = ${q(x)};
       update areas set parent_id = ${q(x)} where id = ${q(c.id)};
       update areas set route_count = route_count + ${n} where id = ${q(x)};

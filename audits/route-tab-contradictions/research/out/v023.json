@@ -1,0 +1,147 @@
+{
+ "file": "v023",
+ "results": [
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "fact": "Total elevation gain and loss for the Southwest Route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still present (gain_ft 7,000, loss_ft 5,500; itinerary days sum to 8,200 gain / 8,400 loss; totalNote 8,000-9,000 ft). The third search found only per-leg figures for the Downey Creek / Cub Lake / Itswoot Ridge approach shared by the Sinister lines (trailhead to camp 1 +3,900 ft, camp 1 to camp 2 +3,450 ft, camp to summit -1,600/+1,300 ft), a spring ski trip over Dome and Sinister's north face, and multi-peak outings. None states a car-to-car total for the Southwest Route, and summing legs would be a computed figure. No patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/sinister-peak-northwest-face",
+    "https://www.turnsallyear.org/trip-reports/may-28-30-2005-sinister-and-dome-peaks",
+    "https://turns-all-year.com/trip-reports/dome-south-couloir-sinister-north-face"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_new_york_gully",
+   "fact": "Overview's stated route length (~1,300 ft) is roughly double length_m and the pitch-length total",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still present (overview ~1,300 ft vs length_m 213 m and four rows of 35-55 m). A club route page and a club trip report (2,000s ascent, base at ~5,700 ft, top of the harder climbing then a rappel into the Slot couloir and ~6,200 ft on the summit ridge) give no route length; two forum trip reports (2016, 2019) give 50-60 m pitches and 6 pitches on a 60 m rope, i.e. longer than 213 m; the route database gives 700 ft and the first-free-ascent note 1,300 ft for the whole line. The figures measure different things and no two sources agree on one length for the page. No patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/snoqualmie-mountain-new-york-gully-winter",
+    "https://cascadeclimbers.com/forum/topic/102655-tr-snoqualmie-mountain-new-york-gully-03162019/",
+    "https://cascadeclimbers.com/forum/topic/98715-tr-snoqualmie-mountain-new-york-gully-192016/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_new_york_gully",
+   "fact": "ice grade: ice_grade/alpine_grade WI3 vs grade WI4 and pitch 4 WI4",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still one source per end: the route database gives WI3 (M5-), the first-ascent/first-free-ascent note WI4. Additional reports checked (a club route page, a club trip report, 2016 and 2019 forum reports, a 2014 blog) describe the ice step (takes a 10 cm screw; 'short ice step') without an ice number. Rule 2 needs two sources per end or a source stating the range; neither holds. No patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/snoqualmie-mountain-new-york-gully-winter",
+    "https://www.mountaineers.org/activities/trip-reports/snoqualmie-mountain-new-york-gully-winter",
+    "https://cascadeclimbers.com/forum/topic/102655-tr-snoqualmie-mountain-new-york-gully-03162019/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_new_york_gully",
+   "fact": "pitches 5 vs 4 ROUTE BREAKDOWN rows",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "New detail: a club trip report pitches the route as two simul-climbed snow/mixed pitches to the snag, the 35 m box-gully pitch, a pitch to a short ice step and a boulder-sling anchor, then a separate short 5.8/aid crack pitch that ends the harder climbing, i.e. five pitches, matching the header's 5 and the route database. The four ROUTE BREAKDOWN rows stop at the ice-step anchor and omit the 5.8 crack pitch (its only trace is in pitch 3's notes). But a 2019 party did it in 6 pitches on a 60 m rope and a 2025 party in six, and descent_text says 4 long pitches (70 m); adding a fifth row means writing a new pitch entry, beyond a minimal patch. No patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/snoqualmie-mountain-new-york-gully-winter",
+    "https://cascadeclimbers.com/forum/topic/102655-tr-snoqualmie-mountain-new-york-gully-03162019/",
+    "https://www.mountainproject.com/route/107493225/new-york-gully"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "fact": "Total gain: gain_ft vs itinerary day gains",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still present: gain_ft/loss_ft 6,800 while the itinerary days now sum to 7,300 ft gain and 6,400 ft loss and totalNote speaks of ~4,700 + ~2,000-2,600 ft. The published totals (6,800 ft from an older start; ~7,100 ft; ~7,300 ft for a 2018 club trip from 1,850 ft; ~8,000 ft GPS from the 1,160 ft washout parking) all depend on where the party parked, and no two agree on one figure for the current parking. A cumulative figure assembled from legs would be computed. No patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/snowking-mountain-via-ne-shoulder",
+    "https://onehikeaweek.com/2023/10/20/snowking-mountain/",
+    "https://mazamas.org/activity/instance/1799/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "fact": "Climbing season window",
+   "verdict": "unresolved",
+   "correct_value": "Glacier route best in late spring / early summer (roughly May-July); the ridge line is the late-summer/fall alternative",
+   "evidence": "The direction is settled by two sources: the Northeast Shoulder route listing calls it a very good early-season climb (May-June), and the peak's route summary says the Kindy Ridge line uses the Snowking Glacier/snowfield in spring and early summer and the west ridge in late summer and fall. That supports season (May-Jul), gear and pro_tips, and contradicts best_season, seasonal_guidance (August 'optimal', optimalWindow mid-July to early September), itinerary.cal and approach_variants[0].season (June-September), climate.summer, seasonal_hazards.crevasses ('best traveled once well-covered (mid-summer)') and the avalanche block ('N/A' because the window is Jul-Sep). Aligning them needs new month-by-month guidance for May and June and a real avalanche entry for an early-season approach, which no source supplies month by month; that is a rebuild, not a minimal patch. No patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/snowking-mountain-via-ne-shoulder",
+    "https://www.summitpost.org/snowking-mountain/152058",
+    "https://turns-all-year.com/trip-reports/june-8-10-snowking-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "fact": "Elevation gain to the crag",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The live row changed since the earlier passes: the trailhead pin now sits at the FS 9070 left-fork road end at 4,254 ft and the crag pin at 4,650 ft, so the row's own waypoints now show ~400 ft of net rise against gain_ft 750 (the ground heights, ~4,250 ft at the road end and ~4,670 ft at the crag, agree). But net relief is only a floor for cumulative gain, so 750 is not provably wrong, and no published source states the approach gain for the Silver Basin / Citadel crags (area pages give only the 20-30 minute walk). A gain figure from pin heights would be computed. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/120477448/the-citidel",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.45787&y=47.373&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.45564&y=47.36741&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "fact": "Season / when the access road is open",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still split between the only two statements found: one hiking guide says FR-9070 is generally snow-free from July until November; the Silver Peak route page gives June-October as the window while FR-9070 is open to the public. A third search (other Silver Peak and Olallie Meadow pages) gave road directions but no opening month. The sources disagree on June vs July, so no window is adopted.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/silver-peak",
+    "https://www.summitpost.org/silver-peak/151393",
+    "http://www.willhiteweb.com/snoqualmie_pass/silver_peak/pacific_crest_trail_210.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "fact": "Elevation gain to the crag",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same as Drilling Me Softly: no published approach gain for the Silver Basin crags; ground heights give ~4,250 ft at the FS 9070 road end and ~4,670 ft at the crag, i.e. ~400 ft of net rise, which is only a floor for cumulative gain, so 750 is neither confirmed nor provably wrong. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/120477448/the-citidel",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.45787&y=47.373&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "fact": "Season / when the access road is open",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Same as Drilling Me Softly: one source gives FR-9070 snow-free July to November, another June-October as the period the road is open; no third source states an opening month. No window adopted.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/silver-peak",
+    "https://www.summitpost.org/silver-peak/151393"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spraying_mantis",
+   "fact": "Trailhead waypoint sits on the crag coordinate with the area's 4,585 ft elevation",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": "Trailhead pin at the FS 9070 left-fork road end (~47.3730,-121.4579), ground ~4,254 ft",
+   "evidence": "STRUCTURAL: waypoints[0] 'FS Road 9070 Turnaround at Silver Basin' carries the crag's own coordinate (47.36741,-121.45564, identical to waypoints[1]) and the parent area's 4,585 ft. The same defect on sibling Drilling Me Softly was fixed by moving the pin to the road end: the U.S. Forest Service road layer ends the left-fork spur at 47.37289,-121.45781 and OpenStreetMap's 9070-310 track at 47.37310,-121.45793 (two independent road datasets ~25 m apart); USGS ground there is ~4,254 ft. Move waypoints[0] to that point and set elev/elevFt 4254. A pin move is outside the patch format, and setting only the elevation would leave the pin on the crag, so no patch here.",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/32",
+    "https://www.openstreetmap.org/way/202991403",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.45787&y=47.373&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  }
+ ]
+}

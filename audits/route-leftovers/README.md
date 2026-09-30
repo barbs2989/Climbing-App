@@ -30,23 +30,78 @@ source mentions removed (Duckabush, Mount Stone, Pernod, Ives).
 37 already consistent after later work; **263 still unresolved** (sources disagree, only one reachable — several
 key sites now block automated fetching — or only a computed figure would settle it).
 
+## 4. Deep research on the held items (`deep/out/d*.json`, rules in `scripts/oneoff/route-leftovers/deep-instructions.md`)
+The owner delegated five decision rules (remove an unplaceable off-route pin; a two-approach row follows its most
+documented line; an undocumented climb is rewritten or recommended for deletion; `dist_km` only from a stated
+one-way figure; split grades become a range). Applied live:
+- **Mount Mathias** -> "West Face" from the Hoh (Glacier Meadows, Blue Glacier); 6 traverse pins removed, Glacier
+  Meadows added, the Sol Duc traverse line cleared, `gain_ft`/`dist_km` nulled (they were the traverse's).
+- **Mount Dana** -> the Elwha / Happy Hollow ridge line; Snow Finger / Dodwell-Rixon pins removed.
+- **Primus South Ridge** -> Eldorado approach: only the ice cap reaches the south side; Thunder Creek reaches the
+  EAST ridge (kept as a variant). Trailhead moved to Eldorado Creek, Thunder Creek line cleared, its
+  `dist_km`/`gain_ft` nulled. This settles the earlier move-then-restore.
+- **Challenger Glacier** grade -> 5.5-5.7 in every field (two sources for each end).
+- **Pins:** Old Guard Red Ledge, Navaho upper camp, Cinderella split / Green Creek crossing / west ridge, Chiwawa
+  ford / basin / col (high-camp bench removed), Argonaut S Face gully, Baker Cockscomb / North Ridge / Coleman
+  Headwall camp and base pins, Doorway Flake + Skeena26 trailhead (duplicate saddle removed, sketch line cleared).
+  Bald Eagle pins 2-3 removed (rule 1: >1 km off the route; the offered placement was computed from the crest).
+- **`dist_km`:** Mount Seattle 30.58 (19 mi stated; the Skyline-Ridge pins and line removed so the row is one
+  approach), Sherpa Glacier 13.04 (8.1 mi stated); Bear Mountain N Buttress x2, Three Fingers r1, Mutchler, Stuart
+  West Ridge nulled (no stated one-way figure; the offered 21 mi / 7.5 mi were assembled, so not written).
+- `apply-pins.mjs` fix: a coordinate-less summit pin (crag rows) was the 60 km anchor and read as 0,0.
+
+## 5. Deep retry of the 263 still-unresolved contradictions, and the held items (2026-09-30)
+Third attempt at every contradiction the retry left open (`research/in/v001-v028`, built by
+`scripts/oneoff/route-tab-contradictions/mkdeep.mjs`; rules in `deep-retry-instructions.md`): archived copies of
+blocked sites, journals, GPS tracks, USFS/NPS pages, and the owner's delegated rules (one-way slot, split grade ->
+range, most-documented line wins, null a provably wrong value). 271 results: **50 fixed, 23 already consistent, 198
+still unresolved** (one source, or sources disagree). **96 patches live** (`applied.log`, `research/patches-v*.json`),
+e.g. The Temple 5.3-5.6, Mastiff -> the southeast-ridge line, Philadelphia season April-May, Price/Union no parking
+pass, Spire -> the Galena pullout, Spindrift Couloir WI5, ~15 round-trip `dist_km`/gain figures nulled.
+
+Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied via `s*-apply.json`):
+- Renamed / rebuilt to the documented line: Abernathy (Wolf Creek / Gardner Meadows), Argonaut (SE Ridge breakdown),
+  Bryant (Denny Creek), Clark -> Walrus Glacier, Enchantment SW -> South Gully, La Bohn -> East Ridge, Overcoat ->
+  East Face, Hurry-up Class 2-3, Sherpa East Ridge Class 3-4 low 5th, Witches Tower South Face Class 3, Mesahchie
+  (Easy Pass high traverse), Morning Star (valley line), Storm King (washout start), Hozomeen (water-taxi pins only).
+- Pins: Spraying Mantis and Mile High Club trailheads moved; Marvin's Ear / Morning Star trailhead coordinates fixed;
+  Spire's wrong trailhead coordinate nulled.
+- Held items settled (`deep/out/h1-apply.json`, `h2-apply.json`): **Half Moon -> North Ridge 5.7** (second source
+  found; commitment unconfirmed so null), Mathias Glacier Pass pin, Seattle `gain_ft` nulled, Three Fingers FR 41
+  closure stated on all three rows and r2/lookout `dist_km` nulled, Glacier Peak Sitkum rewritten to the North Fork
+  Sauk / Red Pass approach.
+
 ## Held for the owner (not applied)
-- **Lexington Tower "South Face" = Concord Tower's South Face** (`wa_south_face_3` already has it). Merge = delete,
-  which this session may not run:
-  `node scripts/oneoff/route-tab-contradictions/apply-structural.mjs ../../route-leftovers/owner/out/o06-merge.json`
-- **One source only:** Mount Mathias Hoh rewrite (`owner/out/o03.json`; would also orphan 5 traverse pins),
-  Ottohorn West Ridge rewrite (`owner/out/o06.json`), Old Guard "Red Ledge" pin (`pins/out/p06-held-old-guard.json`),
-  Bald Eagle pins 2-5 and Navaho camp and Cinderella pins 2/5 (computed placements; `pins/out/*-held-*.json`),
-  Challenger summit-pitch grade (5.5 vs 5.6 vs 5.7).
-- **No documented climb matches:** Half Moon "Southwest Slopes" (easiest line is 5th class), Liberty Bell "East Face",
-  Mount Dana (no approach documented). Hide or delete?
-- **Primus South Ridge:** the trailhead was moved to Eldorado Creek and then RESTORED to Thunder Creek (a retry
-  found Thunder Creek is the most-used approach). Which approach should the row describe?
-- **Grade vs text:** East Twin Needle South Route now describes the Eye Col line (~5.7) but `grade` still says
-  5.10a — one source for the lower grade.
-- **Distance in the one-way slot is a round trip:** Mount Seattle (98 km), Bear Mountain rows, Three Fingers N Peak,
-  Mutchler, Sherpa Glacier, Stuart West Ridge. No source states the one-way figure; halving is not allowed.
-- **Pins nobody publishes:** Chiwawa 3-6, Argonaut S Face 5, Buck 3-4, Cockscomb 2-3 (also North Ridge / Coleman
-  Headwall share those coordinates), Glacier Peak Boulder Basin camp, Doorway Flake / Skeena26 trailhead,
-  Drilling Me Softly trailhead, Esmeralda (text now De Roux, pins still Esmeralda Basin), Iron Cap waypoints
-  (Middle Fork vs West Fork Foss), Alta Mountain turnoff pin, Vanishing Point / Blood Sport crag pins.
+- **Deletes this session may not run** (the permission classifier blocks route DELETEs):
+  - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
+    `node scripts/oneoff/route-tab-contradictions/apply-structural.mjs ../../route-leftovers/owner/out/o06-merge.json`
+  - `wa_ottohorn_west_ridge`: the 2017 ridge has one account; the row holds the col route its sibling
+    `wa_ottohorn_southeast_route` already has. Do NOT apply `owner/out/o06.json`'s rewrite — the FA thread says the
+    sub-summit names were swapped (westernmost = Honk) and Honk had an earlier ascent.
+  - `wa_liberty_bell_east_face`: no such route in two independent route lists; its beta is Lexington Tower's East
+    Face, which has its own row.
+- **Single source / one author:** East Twin Needle South Route 5.7 (grade still 5.10a); King Kong commitment IV,
+  its `fa` (Wertkin & Johnson, FFA with Gleason) and crux 5.11d-5.12a — every source is the first ascensionist
+  (`deep/out/h1.json`, `research/held-v019.json`); Prusik West Ridge II-III (both Grade II sources may be one guide,
+  `held-v021.json`).
+- **Parking-pass claims resting on fee law, not a statement about the spot:** Eagle Rock, Half Fast, Astral
+  Projection, Astroglide, Asymptotic, Artic Rose (`held-v010/v011.json`); Spire `access.fees` (open product decision,
+  `held-v024.json`).
+- **Weak evidence:** Rock Mountain "south-facing" (second source is a slope sample, `held-v021.json`); Berdeen
+  `loss_ft` null (`loss_ft` holds two conventions); Cashmere west-col pin (col only located to 0.7 km); La Bohn Gap
+  pin (sources 335 m apart); Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
+  ridge base) and the Longs/Goat Pass pins are the standard south approach, so NOT applied (`deep/out/s3.json`).
+- **No source found:** Vanishing Point pins (one track; owner: remove pins 1-2 or accept it), Bald Eagle pins,
+  Rimrock Ridge approach, Witches Tower E/SE Face (two lines, one source each — a split candidate).
+- **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
+  (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 says 7.3 mi
+  to Goat Flats, USFS says 4.8. Abernathy `loss_ft` 4,660 now stands beside a nulled gain. Hozomeen summit pin
+  7,614 ft ground vs 8,003 stored; Clark waypoint 5 7,000 vs ~8,025 ground; Enchantment summit pin ~330 m off the NE
+  summit. Switchback Mountain day 1 6.2 mi vs two guides' ~8 mi one way. Denny Mountain permit wording (pins outside
+  the wilderness, summit on its edge).
+
+Second deep pass (`d7b`, `d8b`), applied: Esmeralda -> De Roux line (trailhead moved, 5 basin pins removed, last
+switchback added); Iron Cap -> West Fork Foss (trailhead moved, 6 Middle Fork pins removed, Big Heart Lake and
+Chetwoot camp added); Buck pins 3-4 and Sitkum's Boulder Basin camp pin removed (rule 1), Sitkum's line cleared
+(never reaches Boulder Basin); Drilling Me Softly trailhead -> the FS 9070 road end; Alta turnoff + Rampart junction
+onto the mapped fork; Blood Sport's crag pin (Guye summit) removed.
