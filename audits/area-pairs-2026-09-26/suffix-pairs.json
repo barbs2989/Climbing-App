@@ -66,16 +66,22 @@
   "tag": "suffix Bigcone and Ladybug Canyons ~ Bigcone and Ladybug Canyons (bouldering)"
  },
  {
+  "xid": "ca_cap_rock_area",
+  "yid": "ca_cap_rock_bouldering",
+  "st": "usa.california",
+  "tag": "suffix Cap Rock Area ~ Cap Rock Bouldering"
+ },
+ {
   "xid": "ca_cap_rock_2",
   "yid": "ca_cap_rock_bouldering",
   "st": "usa.california",
   "tag": "suffix Cap Rock ~ Cap Rock Bouldering"
  },
  {
-  "xid": "ca_cap_rock_area",
-  "yid": "ca_cap_rock_bouldering",
+  "xid": "ca_castle_rock_proper",
+  "yid": "ca_castle_rock_proper_bouldering",
   "st": "usa.california",
-  "tag": "suffix Cap Rock Area ~ Cap Rock Bouldering"
+  "tag": "suffix Castle Rock Proper ~ Castle Rock Proper Bouldering"
  },
  {
   "xid": "ca_central_joshua_tree",
@@ -103,18 +109,6 @@
  },
  {
   "xid": "ca_echo_rock_area",
-  "yid": "ca_echo_rock_boulders",
-  "st": "usa.california",
-  "tag": "suffix Echo Rock Area ~ Echo Rock Boulders"
- },
- {
-  "xid": "ca_echo_rock",
-  "yid": "ca_echo_rock_boulders",
-  "st": "usa.california",
-  "tag": "suffix Echo Rock ~ Echo Rock Boulders"
- },
- {
-  "xid": "ca_echo_rock_area",
   "yid": "ca_echo_rock_bouldering",
   "st": "usa.california",
   "tag": "suffix Echo Rock Area ~ Echo Rock Bouldering"
@@ -124,6 +118,18 @@
   "yid": "ca_echo_rock_bouldering",
   "st": "usa.california",
   "tag": "suffix Echo Rock ~ Echo Rock Bouldering"
+ },
+ {
+  "xid": "ca_echo_rock_area",
+  "yid": "ca_echo_rock_boulders",
+  "st": "usa.california",
+  "tag": "suffix Echo Rock Area ~ Echo Rock Boulders"
+ },
+ {
+  "xid": "ca_echo_rock",
+  "yid": "ca_echo_rock_boulders",
+  "st": "usa.california",
+  "tag": "suffix Echo Rock ~ Echo Rock Boulders"
  },
  {
   "xid": "ca_geology_tour_road",
@@ -138,16 +144,22 @@
   "tag": "suffix Ghetto Wall ~ Ghetto Wall Boulders, The"
  },
  {
-  "xid": "ca_hall_of_horrors",
-  "yid": "ca_hall_of_horrors_bouldering",
+  "xid": "ca_goat_rock_bouldering_circuit",
+  "yid": "ca_goat_rock_circuit",
   "st": "usa.california",
-  "tag": "suffix Hall of Horrors ~ Hall of Horrors Bouldering"
+  "tag": "suffix Goat Rock Bouldering Circuit ~ Goat Rock circuit"
  },
  {
   "xid": "ca_hall_of_horrors_area",
   "yid": "ca_hall_of_horrors_bouldering",
   "st": "usa.california",
   "tag": "suffix Hall of Horrors Area ~ Hall of Horrors Bouldering"
+ },
+ {
+  "xid": "ca_hall_of_horrors",
+  "yid": "ca_hall_of_horrors_bouldering",
+  "st": "usa.california",
+  "tag": "suffix Hall of Horrors ~ Hall of Horrors Bouldering"
  },
  {
   "xid": "ca_hidden_valley_area",
@@ -172,6 +184,12 @@
   "yid": "ca_indian_cove_bouldering",
   "st": "usa.california",
   "tag": "suffix Indian Cove ~ Indian Cove Bouldering"
+ },
+ {
+  "xid": "ca_indian_rock_3",
+  "yid": "ca_indian_rock_bouldering",
+  "st": "usa.california",
+  "tag": "suffix Indian Rock ~ Indian Rock Bouldering"
  },
  {
   "xid": "ca_lake_audrain",
@@ -262,6 +280,12 @@
   "yid": "ca_school_rock_bouldering",
   "st": "usa.california",
   "tag": "suffix School Rock ~ School Rock Bouldering"
+ },
+ {
+  "xid": "ca_summit_rock_boulders",
+  "yid": "ca_summit_rock_climbs",
+  "st": "usa.california",
+  "tag": "suffix Summit Rock boulders ~ Summit Rock"
  },
  {
   "xid": "ca_summit_rock",
@@ -522,16 +546,16 @@
   "tag": "suffix Lower Canyon ~ Lower Canyon Bouldering"
  },
  {
-  "xid": "nv_moderate_mecca",
-  "yid": "nv_moderate_mecca_boulders",
-  "st": "usa.nevada",
-  "tag": "suffix Moderate Mecca Bouldering ~ Moderate Mecca Boulders "
- },
- {
   "xid": "nv_moderate_mecca_2",
   "yid": "nv_moderate_mecca_boulders",
   "st": "usa.nevada",
   "tag": "suffix Moderate Mecca ~ Moderate Mecca Boulders "
+ },
+ {
+  "xid": "nv_moderate_mecca",
+  "yid": "nv_moderate_mecca_boulders",
+  "st": "usa.nevada",
+  "tag": "suffix Moderate Mecca Bouldering ~ Moderate Mecca Boulders "
  },
  {
   "xid": "nv_oak_creek_canyon",

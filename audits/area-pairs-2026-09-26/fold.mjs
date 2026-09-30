@@ -8,7 +8,7 @@ const key = requireServiceKey();
 const get = async p => { const r = await fetch(SUPABASE_URL + "/rest/v1/" + p, { headers: headers(key) }); if (!r.ok) throw new Error(p + " " + r.status); return r.json(); };
 const J = process.env.CLAUDE_JOB_DIR + "/tmp/";
 const P = JSON.parse(fs.readFileSync(J + "pairs.json", "utf8"));
-const V = [0, 1, 2, 3].flatMap(n => JSON.parse(fs.readFileSync(J + "verdict" + n + ".json", "utf8")));
+const V = [0, 1, 2, 3, 4].flatMap(n => JSON.parse(fs.readFileSync(J + "verdict" + n + ".json", "utf8")));
 const A = JSON.parse(fs.readFileSync(J + "m0221.json", "utf8"));
 const raw = fs.readFileSync(J + "sub.out", "utf8"); const rows = JSON.parse(raw.slice(raw.indexOf("{"))).rows;
 const log = []; const L = s => log.push(s);
@@ -62,7 +62,9 @@ function leafMerge(K, D) {
 }
 function place(X, Pid) {       // make area X a child of non-leaf (or empty) Pid, folding into a same-named child
   const p = area.get(Pid), x = area.get(X);
-  const twin = kids(Pid).find(c => c.id !== X && c.k === x.k);
+  // "X Ice Climbs" and "X Bouldering" share the wide key but are different disciplines: not twins
+  const dword = n => /\bice\b|mixed/i.test(n) ? "ice" : /boulder/i.test(n) ? "boulder" : "";
+  const twin = kids(Pid).find(c => c.id !== X && c.k === x.k && (!dword(c.name) || !dword(x.name) || dword(c.name) === dword(x.name)));
   if (twin) return fold(twin.id, X);
   if (x.c === p.c) {
     const f = domFam(X), label = p.name.replace(/^(.*), The$/, "The $1") + " " + (f === domFam(Pid) ? "Other Climbs" : LABEL[f || "rock"]);

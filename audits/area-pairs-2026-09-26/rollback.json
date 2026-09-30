@@ -1,5 +1,5 @@
 {
- "taken": "2026-09-26T15:12:29.556Z",
+ "taken": "2026-09-30T14:05:41.357Z",
  "pairs": [
   {
    "pair": 21,
@@ -8959,11 +8959,11 @@
    "elevation": null,
    "avy_zone": null,
    "blurb": null,
-   "route_count": 2,
+   "route_count": 7,
    "elevation_ft": null,
    "prominence_ft": null,
    "parent_peak": null,
-   "dominant_discipline": "toprope",
+   "dominant_discipline": "trad",
    "coords_approx": false,
    "name_search": "little stuff crags",
    "disciplines": [
@@ -9536,7 +9536,7 @@
    {
     "t": "parent",
     "id": "nh_cathedral_ledge_ice_climbs",
-    "to": "nh_cathedral_ledge_bouldering",
+    "to": "nh_cathedral_ledge",
     "from": "nh_north_conway_area"
    },
    {
@@ -10640,6 +10640,100 @@
    },
    {
     "t": "parent",
+    "id": "ca_lonesome_crowded_west",
+    "to": "ca_central_joshua_tree",
+    "from": "ca_central_joshua_tree_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_stonehenge_and_fry_boulders",
+    "to": "ca_central_joshua_tree",
+    "from": "ca_central_joshua_tree_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_teenage_wasteland_oyster_bar",
+    "to": "ca_central_joshua_tree",
+    "from": "ca_central_joshua_tree_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_planet_x_bouldering",
+    "to": "ca_central_joshua_tree",
+    "from": "ca_central_joshua_tree_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_ryan_campground_bouldering",
+    "to": "ca_central_joshua_tree",
+    "from": "ca_central_joshua_tree_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_yoda_head_boulder",
+    "to": "ca_barker_dam_area",
+    "from": "ca_barker_dam_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_gunsmoke_area_2",
+    "to": "ca_barker_dam_area",
+    "from": "ca_barker_dam_bouldering"
+   },
+   {
+    "t": "rename",
+    "id": "ca_gunsmoke_area",
+    "name": "Gunsmoke Area Routes",
+    "was": "Gunsmoke Area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_gunsmoke_area",
+    "to": "ca_gunsmoke_area_2",
+    "from": "ca_barker_dam_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_alisters_cave",
+    "to": "ca_barker_dam_area",
+    "from": "ca_barker_dam_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_crack_a_no_no_area",
+    "to": "ca_barker_dam_area",
+    "from": "ca_barker_dam_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_lost_and_found_corridor",
+    "to": "ca_barker_dam_area",
+    "from": "ca_barker_dam_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_indian_wave_boulders",
+    "to": "ca_barker_dam_area",
+    "from": "ca_barker_dam_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_barker_dam_boulders",
+    "to": "ca_barker_dam_area",
+    "from": "ca_barker_dam_bouldering"
+   },
+   {
+    "t": "delete",
+    "id": "ca_barker_dam_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_hall_of_horrors_bouldering",
+    "to": "ca_central_joshua_tree",
+    "from": "ca_central_joshua_tree_bouldering"
+   },
+   {
+    "t": "parent",
     "id": "ca_necco_boulder",
     "to": "ca_echo_rock",
     "from": "ca_echo_rock_boulders"
@@ -10676,7 +10770,19 @@
    },
    {
     "t": "parent",
+    "id": "ca_american_spirit",
+    "to": "ca_echo_rock",
+    "from": "ca_echo_rock_boulders"
+   },
+   {
+    "t": "parent",
     "id": "ca_value_boulder",
+    "to": "ca_echo_rock",
+    "from": "ca_echo_rock_boulders"
+   },
+   {
+    "t": "parent",
+    "id": "ca_v69_dihedral",
     "to": "ca_echo_rock",
     "from": "ca_echo_rock_boulders"
    },
@@ -10686,19 +10792,13 @@
    },
    {
     "t": "parent",
+    "id": "ca_bird_business",
+    "to": "ca_echo_rock_area",
+    "from": "ca_echo_rock_bouldering"
+   },
+   {
+    "t": "parent",
     "id": "ca_classic_thin_crack_boulder",
-    "to": "ca_echo_cove",
-    "from": "ca_echo_cove_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_arete_boulders",
-    "to": "ca_echo_cove",
-    "from": "ca_echo_cove_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_big_moe_wall",
     "to": "ca_echo_cove",
     "from": "ca_echo_cove_bouldering"
    },
@@ -10716,13 +10816,49 @@
    },
    {
     "t": "parent",
-    "id": "ca_land_of_the_lost_boulder",
+    "id": "ca_mystical_stones",
     "to": "ca_echo_cove",
     "from": "ca_echo_cove_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_smith_rock_2",
+    "to": "ca_echo_cove",
+    "from": "ca_echo_cove_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_arete_boulders",
+    "to": "ca_echo_cove",
+    "from": "ca_echo_cove_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_land_of_the_lost_boulder",
+    "to": "ca_echo_cove",
+    "from": "ca_echo_cove_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_big_moe_wall",
+    "to": "ca_echo_cove",
+    "from": "ca_echo_cove_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_bizarn_boulder",
+    "to": "ca_echo_cove",
+    "from": "ca_echo_cove_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_bluff_boulder_2",
+    "to": "ca_echo_cove",
+    "from": "ca_echo_cove_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_the_goodnight_boulder",
     "to": "ca_echo_cove",
     "from": "ca_echo_cove_bouldering"
    },
@@ -10735,106 +10871,18 @@
     "id": "ca_echo_rock_bouldering"
    },
    {
-    "t": "parent",
-    "id": "ca_hall_of_horrors_bouldering",
-    "to": "ca_central_joshua_tree",
-    "from": "ca_central_joshua_tree_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_lonesome_crowded_west",
-    "to": "ca_central_joshua_tree",
-    "from": "ca_central_joshua_tree_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_stonehenge_and_fry_boulders",
-    "to": "ca_central_joshua_tree",
-    "from": "ca_central_joshua_tree_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_planet_x_bouldering",
-    "to": "ca_central_joshua_tree",
-    "from": "ca_central_joshua_tree_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_yoda_head_boulder",
-    "to": "ca_barker_dam_area",
-    "from": "ca_barker_dam_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_gunsmoke_area_2",
-    "to": "ca_barker_dam_area",
-    "from": "ca_barker_dam_bouldering"
-   },
-   {
-    "t": "rename",
-    "id": "ca_gunsmoke_area",
-    "name": "Gunsmoke Area Routes",
-    "was": "Gunsmoke Area"
-   },
-   {
-    "t": "parent",
-    "id": "ca_gunsmoke_area",
-    "to": "ca_gunsmoke_area_2",
-    "from": "ca_barker_dam_area"
-   },
-   {
-    "t": "parent",
-    "id": "ca_indian_wave_boulders",
-    "to": "ca_barker_dam_area",
-    "from": "ca_barker_dam_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_barker_dam_boulders",
-    "to": "ca_barker_dam_area",
-    "from": "ca_barker_dam_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_alisters_cave",
-    "to": "ca_barker_dam_area",
-    "from": "ca_barker_dam_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_crack_a_no_no_area",
-    "to": "ca_barker_dam_area",
-    "from": "ca_barker_dam_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_lost_and_found_corridor",
-    "to": "ca_barker_dam_area",
-    "from": "ca_barker_dam_bouldering"
-   },
-   {
-    "t": "delete",
-    "id": "ca_barker_dam_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_ryan_campground_bouldering",
-    "to": "ca_central_joshua_tree",
-    "from": "ca_central_joshua_tree_bouldering"
-   },
-   {
     "t": "delete",
     "id": "ca_central_joshua_tree_bouldering"
    },
    {
     "t": "parent",
-    "id": "ca_hvcg_bouldering_circuit",
+    "id": "ca_manx_asteroid_belt_circuit",
     "to": "ca_hidden_valley_campground",
     "from": "ca_hidden_valley_campground_bouldering"
    },
    {
     "t": "parent",
-    "id": "ca_manx_asteroid_belt_circuit",
+    "id": "ca_hvcg_bouldering_circuit",
     "to": "ca_hidden_valley_campground",
     "from": "ca_hidden_valley_campground_bouldering"
    },
@@ -10891,6 +10939,18 @@
    {
     "t": "parent",
     "id": "ca_turtle_rock_circuit",
+    "to": "ca_real_hidden_valley",
+    "from": "ca_real_hidden_valley_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_the_yeah_boulders",
+    "to": "ca_real_hidden_valley",
+    "from": "ca_real_hidden_valley_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_barrel_of_monkeys",
     "to": "ca_real_hidden_valley",
     "from": "ca_real_hidden_valley_bouldering"
    },
@@ -10955,6 +11015,24 @@
    {
     "t": "parent",
     "id": "ca_powell_boulder",
+    "to": "ca_outback_the_2",
+    "from": "ca_outback_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_coprolites",
+    "to": "ca_outback_the_2",
+    "from": "ca_outback_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_chimoth_e_chalamet",
+    "to": "ca_outback_the_2",
+    "from": "ca_outback_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_brown_sugar_boulder",
     "to": "ca_outback_the_2",
     "from": "ca_outback_bouldering"
    },
@@ -11074,6 +11152,36 @@
    },
    {
     "t": "parent",
+    "id": "ca_dorsimus_boulder",
+    "to": "ca_outback_the_2",
+    "from": "ca_outback_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_grassroots",
+    "to": "ca_outback_the_2",
+    "from": "ca_outback_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_twin_lieback_boulder",
+    "to": "ca_outback_the_2",
+    "from": "ca_outback_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_stone_throne_boulder",
+    "to": "ca_outback_the_2",
+    "from": "ca_outback_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_the_slaughtahouse",
+    "to": "ca_outback_the_2",
+    "from": "ca_outback_bouldering"
+   },
+   {
+    "t": "parent",
     "id": "ca_false_hueco_boulder",
     "to": "ca_outback_the_2",
     "from": "ca_outback_bouldering"
@@ -11094,6 +11202,12 @@
    },
    {
     "t": "parent",
+    "id": "ca_cave_boulder_4",
+    "to": "ca_hospital_rock_area",
+    "from": "ca_hospital_rock_boulders"
+   },
+   {
+    "t": "parent",
     "id": "ca_parking_lot_boulder_the",
     "to": "ca_hospital_rock_area",
     "from": "ca_hospital_rock_boulders"
@@ -11101,12 +11215,6 @@
    {
     "t": "parent",
     "id": "ca_fat_darrell_sandwich",
-    "to": "ca_hospital_rock_area",
-    "from": "ca_hospital_rock_boulders"
-   },
-   {
-    "t": "parent",
-    "id": "ca_cave_boulder_4",
     "to": "ca_hospital_rock_area",
     "from": "ca_hospital_rock_boulders"
    },
@@ -11121,14 +11229,44 @@
     "from": "ca_rattlesnake_canyon_2"
    },
    {
+    "t": "parent",
+    "id": "ca_buttermilk_boulder_2",
+    "to": "ca_rattlesnake_canyon",
+    "from": "ca_rattlesnake_canyon_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_lower_wash_boulder_2",
+    "to": "ca_rattlesnake_canyon",
+    "from": "ca_rattlesnake_canyon_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_lower_wash_boulder_3",
+    "to": "ca_rattlesnake_canyon",
+    "from": "ca_rattlesnake_canyon_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_upper_wash_boulder_4",
+    "to": "ca_rattlesnake_canyon",
+    "from": "ca_rattlesnake_canyon_2"
+   },
+   {
     "t": "delete",
     "id": "ca_rattlesnake_canyon_2"
    },
    {
     "t": "parent",
-    "id": "ca_49_palms_oasis_area",
-    "to": "ca_indian_cove",
-    "from": "ca_indian_cove_bouldering"
+    "id": "ca_group_camp_5_boulder",
+    "to": "ca_group_campsites_road",
+    "from": "ca_group_campsites_road_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_group_camp_8_boulders",
+    "to": "ca_group_campsites_road",
+    "from": "ca_group_campsites_road_2"
    },
    {
     "t": "move",
@@ -11149,6 +11287,12 @@
    {
     "t": "delete",
     "id": "ca_group_campsites_road_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_49_palms_oasis_area",
+    "to": "ca_indian_cove",
+    "from": "ca_indian_cove_bouldering"
    },
    {
     "t": "parent",
@@ -11183,6 +11327,12 @@
    {
     "t": "parent",
     "id": "ca_picnic_boulder",
+    "to": "ca_indian_cove_campground",
+    "from": "ca_indian_cove_campground_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_the_rats_ass",
     "to": "ca_indian_cove_campground",
     "from": "ca_indian_cove_campground_2"
    },
@@ -11238,6 +11388,72 @@
    },
    {
     "t": "parent",
+    "id": "ca_bum_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_bush_boulder_2",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_looney_tunes_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_mac_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_pie_kwando",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_side_story",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_assembly_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_duck_duck_dino_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_whale_boulder_2",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_dab_slab",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_slaughter_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
     "id": "ca_yabo_boulder_the",
     "to": "ca_lost_horse_area",
     "from": "ca_lost_horse_bouldering"
@@ -11268,6 +11484,54 @@
    },
    {
     "t": "parent",
+    "id": "ca_the_needle_overlook",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_dab_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_the_autopsy_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_orbvs_terrarum",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_skinwalker_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_veil_of_libitina",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_hidden_worlds_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_misty_mountain_boulder",
+    "to": "ca_lost_horse_area",
+    "from": "ca_lost_horse_bouldering"
+   },
+   {
+    "t": "parent",
     "id": "ca_big_bud_boulder",
     "to": "ca_lost_horse_area",
     "from": "ca_lost_horse_bouldering"
@@ -11287,6 +11551,12 @@
    {
     "t": "parent",
     "id": "ca_ankle_breaker_rock",
+    "to": "ca_jimmy_cliff",
+    "from": "ca_jimmy_cliff_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_29_palms_boulder",
     "to": "ca_jimmy_cliff",
     "from": "ca_jimmy_cliff_area"
    },
@@ -11354,13 +11624,31 @@
    },
    {
     "t": "parent",
-    "id": "ca_west_entrance_boulder",
+    "id": "ca_lonely_stones_1",
     "to": "ca_quail_springs_area",
     "from": "ca_quail_springs_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_psycho_boulders",
+    "to": "ca_quail_springs_area",
+    "from": "ca_quail_springs_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_west_entrance_boulder",
+    "to": "ca_quail_springs_area",
+    "from": "ca_quail_springs_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_lonely_stones",
+    "to": "ca_quail_springs_area",
+    "from": "ca_quail_springs_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_lonely_stones_2",
     "to": "ca_quail_springs_area",
     "from": "ca_quail_springs_bouldering"
    },
@@ -11378,7 +11666,7 @@
    },
    {
     "t": "parent",
-    "id": "ca_lonely_stones_1",
+    "id": "ca_baskerville_boulder",
     "to": "ca_quail_springs_area",
     "from": "ca_quail_springs_bouldering"
    },
@@ -11396,6 +11684,12 @@
    },
    {
     "t": "parent",
+    "id": "ca_burnout_area",
+    "to": "ca_quail_springs_area",
+    "from": "ca_quail_springs_bouldering"
+   },
+   {
+    "t": "parent",
     "id": "ca_zen_boulder",
     "to": "ca_trashcan_rock",
     "from": "ca_trashcan_rock_area"
@@ -11403,6 +11697,12 @@
    {
     "t": "parent",
     "id": "ca_dover_cliffs_boulder",
+    "to": "ca_trashcan_rock",
+    "from": "ca_trashcan_rock_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_picnic_boulders_2",
     "to": "ca_trashcan_rock",
     "from": "ca_trashcan_rock_area"
    },
@@ -11424,15 +11724,25 @@
    },
    {
     "t": "parent",
-    "id": "ca_afpa_rock_area",
+    "id": "ca_lonely_stones_3",
     "to": "ca_quail_springs_area",
     "from": "ca_quail_springs_bouldering"
    },
    {
     "t": "parent",
-    "id": "ca_afpa_rock",
-    "to": "ca_afpa_rock_area",
-    "from": "ca_quail_springs_area"
+    "id": "ca_crack_boulder_3",
+    "to": "ca_afpa_rock",
+    "from": "ca_afpa_rock_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_broken_boulder_the",
+    "to": "ca_afpa_rock",
+    "from": "ca_afpa_rock_area"
+   },
+   {
+    "t": "delete",
+    "id": "ca_afpa_rock_area"
    },
    {
     "t": "delete",
@@ -11977,19 +12287,37 @@
    },
    {
     "t": "parent",
+    "id": "ca_sugar_cube",
+    "to": "ca_rainbow",
+    "from": "ca_rainbow_2"
+   },
+   {
+    "t": "parent",
     "id": "ca_trigantor",
     "to": "ca_rainbow",
     "from": "ca_rainbow_2"
    },
    {
     "t": "parent",
-    "id": "ca_ginja_ninja",
+    "id": "ca_riverside_boulders",
     "to": "ca_rainbow",
     "from": "ca_rainbow_2"
    },
    {
     "t": "parent",
-    "id": "ca_sugar_cube",
+    "id": "ca_the_beach_chair",
+    "to": "ca_rainbow",
+    "from": "ca_rainbow_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_entrance_slabs",
+    "to": "ca_rainbow",
+    "from": "ca_rainbow_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_ginja_ninja",
     "to": "ca_rainbow",
     "from": "ca_rainbow_2"
    },
@@ -12264,6 +12592,12 @@
    {
     "t": "delete",
     "id": "ca_carson_peak_ice_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_honey_pot_boulder",
+    "to": "ca_lake_george",
+    "from": "ca_lake_george_2"
    },
    {
     "t": "parent",
@@ -12574,6 +12908,40 @@
     "id": "ca_bigcone_and_ladybug_canyons_bouldering"
    },
    {
+    "t": "move",
+    "id": "ca_castle_rock_proper_bouldering_castle_rock_face",
+    "from": "ca_castle_rock_proper_bouldering",
+    "to": "ca_castle_rock_proper"
+   },
+   {
+    "t": "move",
+    "id": "ca_castle_rock_proper_bouldering_master_bate_s_left_face",
+    "from": "ca_castle_rock_proper_bouldering",
+    "to": "ca_castle_rock_proper"
+   },
+   {
+    "t": "move",
+    "id": "ca_castle_rock_proper_bouldering_unnamed_pockets",
+    "from": "ca_castle_rock_proper_bouldering",
+    "to": "ca_castle_rock_proper"
+   },
+   {
+    "t": "move",
+    "id": "ca_castle_rock_proper_bouldering_castle_rock_traverse",
+    "from": "ca_castle_rock_proper_bouldering",
+    "to": "ca_castle_rock_proper"
+   },
+   {
+    "t": "move",
+    "id": "ca_castle_rock_proper_bouldering_auto_bots",
+    "from": "ca_castle_rock_proper_bouldering",
+    "to": "ca_castle_rock_proper"
+   },
+   {
+    "t": "delete",
+    "id": "ca_castle_rock_proper_bouldering"
+   },
+   {
     "t": "parent",
     "id": "ca_drug_dome_boulders",
     "to": "ca_tuolumne_meadows",
@@ -12596,6 +12964,12 @@
     "id": "ca_drug_dome",
     "to": "ca_drug_dome_boulders",
     "from": "ca_tuolumne_meadows"
+   },
+   {
+    "t": "parent",
+    "id": "ca_obtuse_oyster",
+    "to": "ca_geology_tour_road",
+    "from": "ca_geology_tour_road_bouldering"
    },
    {
     "t": "parent",
@@ -12680,8 +13054,20 @@
     "from": "ca_towers_of_uncertainty_2"
    },
    {
+    "t": "parent",
+    "id": "ca_boulder_of_uncertainty",
+    "to": "ca_towers_of_uncertainty",
+    "from": "ca_towers_of_uncertainty_2"
+   },
+   {
     "t": "delete",
     "id": "ca_towers_of_uncertainty_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_western_belt",
+    "to": "ca_geology_tour_road",
+    "from": "ca_geology_tour_road_bouldering"
    },
    {
     "t": "parent",
@@ -12708,18 +13094,52 @@
     "from": "ca_virgin_islands_area"
    },
    {
+    "t": "parent",
+    "id": "ca_lechlinski_cracks_area",
+    "to": "ca_virgin_islands_area",
+    "from": "ca_virgin_islands_area_2"
+   },
+   {
     "t": "delete",
     "id": "ca_virgin_islands_area_2"
    },
    {
     "t": "parent",
-    "id": "ca_western_belt",
+    "id": "ca_jerbmfp_cluster",
+    "to": "ca_geology_tour_road",
+    "from": "ca_geology_tour_road_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_redacted_tank",
+    "to": "ca_geology_tour_road",
+    "from": "ca_geology_tour_road_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_berdoo_canyon",
+    "to": "ca_geology_tour_road",
+    "from": "ca_geology_tour_road_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_damo_s_roof",
     "to": "ca_geology_tour_road",
     "from": "ca_geology_tour_road_bouldering"
    },
    {
     "t": "delete",
     "id": "ca_geology_tour_road_bouldering"
+   },
+   {
+    "t": "move",
+    "id": "ca_indian_rock_bouldering_the_burglar",
+    "from": "ca_indian_rock_bouldering",
+    "to": "ca_indian_rock_3"
+   },
+   {
+    "t": "delete",
+    "id": "ca_indian_rock_bouldering"
    },
    {
     "t": "parent",
@@ -12747,6 +13167,18 @@
    },
    {
     "t": "parent",
+    "id": "ca_boulder_2_4",
+    "to": "ca_loveland",
+    "from": "ca_loveland_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_boulder_3_6",
+    "to": "ca_loveland",
+    "from": "ca_loveland_bouldering"
+   },
+   {
+    "t": "parent",
     "id": "ca_rosetta_stone_the",
     "to": "ca_loveland",
     "from": "ca_loveland_bouldering"
@@ -12759,7 +13191,7 @@
    },
    {
     "t": "parent",
-    "id": "ca_boulder_2_4",
+    "id": "ca_boulder_4_3",
     "to": "ca_loveland",
     "from": "ca_loveland_bouldering"
    },
@@ -12772,18 +13204,6 @@
    {
     "t": "delete",
     "id": "ca_loveland_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_stumbling_blocks_area",
-    "to": "ca_malibu_creek_state_park",
-    "from": "ca_malibu_creek_state_park_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_stumbling_blocks",
-    "to": "ca_stumbling_blocks_area",
-    "from": "ca_malibu_creek_state_park"
    },
    {
     "t": "parent",
@@ -12813,6 +13233,18 @@
     "t": "parent",
     "id": "ca_ghetto_wall",
     "to": "ca_ghetto_wall_boulders_the",
+    "from": "ca_malibu_creek_state_park"
+   },
+   {
+    "t": "parent",
+    "id": "ca_stumbling_blocks_area",
+    "to": "ca_malibu_creek_state_park",
+    "from": "ca_malibu_creek_state_park_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_stumbling_blocks",
+    "to": "ca_stumbling_blocks_area",
     "from": "ca_malibu_creek_state_park"
    },
    {
@@ -12869,27 +13301,19 @@
    },
    {
     "t": "parent",
-    "id": "ca_summit_rock_boulders",
-    "to": "ca_castle_rock_area",
-    "from": "ca_castle_rock_area_bouldering"
-   },
-   {
-    "t": "rename",
-    "id": "ca_summit_rock_boulders",
-    "name": "Summit Rock",
-    "was": "Summit Rock boulders"
-   },
-   {
-    "t": "rename",
-    "id": "ca_summit_rock",
-    "name": "Summit Rock Routes",
-    "was": "Summit Rock"
+    "id": "ca_little_monsters_boulder",
+    "to": "ca_summit_rock",
+    "from": "ca_summit_rock_boulders"
    },
    {
     "t": "parent",
-    "id": "ca_summit_rock",
-    "to": "ca_summit_rock_boulders",
-    "from": "ca_castle_rock_area"
+    "id": "ca_dyno_project_boulder",
+    "to": "ca_summit_rock",
+    "from": "ca_summit_rock_boulders"
+   },
+   {
+    "t": "delete",
+    "id": "ca_summit_rock_boulders"
    },
    {
     "t": "parent",
@@ -12900,6 +13324,12 @@
    {
     "t": "parent",
     "id": "ca_big_lebowski_area",
+    "to": "ca_tenaya_lake_area",
+    "from": "ca_tenaya_lake_boulders"
+   },
+   {
+    "t": "parent",
+    "id": "ca_hillside_tree_area",
     "to": "ca_tenaya_lake_area",
     "from": "ca_tenaya_lake_boulders"
    },
@@ -14151,6 +14581,12 @@
    },
    {
     "t": "parent",
+    "id": "ca_hall_of_corps",
+    "to": "ca_hall_of_horrors_area",
+    "from": "ca_hall_of_horrors_area_2"
+   },
+   {
+    "t": "parent",
     "id": "ca_real_hall_of_horrors_the",
     "to": "ca_hall_of_horrors_area",
     "from": "ca_hall_of_horrors_area_2"
@@ -14169,37 +14605,43 @@
     "t": "move",
     "id": "ca_fling",
     "from": "ca_intersection_rock_2",
-    "to": "ca_intersection_rock"
+    "to": "ca_intersection_rock_climbs"
+   },
+   {
+    "t": "move",
+    "id": "ca_intersection_rock_2_split_end_right",
+    "from": "ca_intersection_rock_2",
+    "to": "ca_intersection_rock_climbs"
    },
    {
     "t": "move",
     "id": "ca_split_end_left",
     "from": "ca_intersection_rock_2",
-    "to": "ca_intersection_rock"
+    "to": "ca_intersection_rock_climbs"
    },
    {
     "t": "move",
     "id": "ca_knuckle_cracker",
     "from": "ca_intersection_rock_2",
-    "to": "ca_intersection_rock"
+    "to": "ca_intersection_rock_climbs"
    },
    {
     "t": "move",
     "id": "ca_intersection_traverse",
     "from": "ca_intersection_rock_2",
-    "to": "ca_intersection_rock"
+    "to": "ca_intersection_rock_climbs"
    },
    {
     "t": "move",
     "id": "ca_augie_problem",
     "from": "ca_intersection_rock_2",
-    "to": "ca_intersection_rock"
+    "to": "ca_intersection_rock_climbs"
    },
    {
     "t": "move",
     "id": "ca_the_reider_problem",
     "from": "ca_intersection_rock_2",
-    "to": "ca_intersection_rock"
+    "to": "ca_intersection_rock_climbs"
    },
    {
     "t": "delete",
@@ -14472,6 +14914,18 @@
    {
     "t": "delete",
     "id": "wi_tree_tower_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_side_block_1",
+    "to": "ca_boreal_area",
+    "from": "ca_boreal_area_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_deep_boreal",
+    "to": "ca_boreal_area",
+    "from": "ca_boreal_area_2"
    },
    {
     "t": "parent",
@@ -14893,25 +15347,7 @@
    },
    {
     "t": "parent",
-    "id": "ca_boulder_crack_rock",
-    "to": "ca_planet_x_area",
-    "from": "ca_planet_x_area_2"
-   },
-   {
-    "t": "parent",
     "id": "ca_newton_s_law_boulder",
-    "to": "ca_planet_x_area",
-    "from": "ca_planet_x_area_2"
-   },
-   {
-    "t": "parent",
-    "id": "ca_ok_corridor",
-    "to": "ca_planet_x_area",
-    "from": "ca_planet_x_area_2"
-   },
-   {
-    "t": "parent",
-    "id": "ca_planet_x_boulder",
     "to": "ca_planet_x_area",
     "from": "ca_planet_x_area_2"
    },
@@ -14923,7 +15359,49 @@
    },
    {
     "t": "parent",
+    "id": "ca_planet_x_boulder",
+    "to": "ca_planet_x_area",
+    "from": "ca_planet_x_area_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_ok_corridor",
+    "to": "ca_planet_x_area",
+    "from": "ca_planet_x_area_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_boulder_crack_rock",
+    "to": "ca_planet_x_area",
+    "from": "ca_planet_x_area_2"
+   },
+   {
+    "t": "parent",
     "id": "ca_satellite_boulder",
+    "to": "ca_planet_x_area",
+    "from": "ca_planet_x_area_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_iron_curtain_wall",
+    "to": "ca_planet_x_area",
+    "from": "ca_planet_x_area_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_satan_s_skylight",
+    "to": "ca_planet_x_area",
+    "from": "ca_planet_x_area_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_the_wedge",
+    "to": "ca_planet_x_area",
+    "from": "ca_planet_x_area_2"
+   },
+   {
+    "t": "parent",
+    "id": "ca_font_problem_boulder",
     "to": "ca_planet_x_area",
     "from": "ca_planet_x_area_2"
    },
@@ -15206,67 +15684,73 @@
    {
     "t": "parent",
     "id": "ca_vibrator_boulder",
-    "to": "ca_cap_rock_2",
+    "to": "ca_cap_rock_area",
     "from": "ca_cap_rock_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_ayatollah_boulder",
-    "to": "ca_cap_rock_2",
+    "to": "ca_cap_rock_area",
     "from": "ca_cap_rock_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_collieherb_boulder",
-    "to": "ca_cap_rock_2",
+    "to": "ca_cap_rock_area",
     "from": "ca_cap_rock_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_four_corners_boulder",
-    "to": "ca_cap_rock_2",
+    "to": "ca_cap_rock_area",
     "from": "ca_cap_rock_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_french_roast_boulder",
-    "to": "ca_cap_rock_2",
+    "to": "ca_cap_rock_area",
     "from": "ca_cap_rock_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_gram_parsons_memorial_boulder",
-    "to": "ca_cap_rock_2",
+    "to": "ca_cap_rock_area",
     "from": "ca_cap_rock_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_hatrack_the",
-    "to": "ca_cap_rock_2",
+    "to": "ca_cap_rock_area",
     "from": "ca_cap_rock_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_parking_lot_boulder_8",
-    "to": "ca_cap_rock_2",
-    "from": "ca_cap_rock_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_pumping_monzonite_boulder",
-    "to": "ca_cap_rock_2",
-    "from": "ca_cap_rock_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_sandy_wash_corridor",
-    "to": "ca_cap_rock_2",
+    "to": "ca_cap_rock_area",
     "from": "ca_cap_rock_bouldering"
    },
    {
     "t": "parent",
     "id": "ca_powell_pinch_boulder",
-    "to": "ca_cap_rock_2",
+    "to": "ca_cap_rock_area",
+    "from": "ca_cap_rock_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_sandy_wash_corridor",
+    "to": "ca_cap_rock_area",
+    "from": "ca_cap_rock_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_pumping_monzonite_boulder",
+    "to": "ca_cap_rock_area",
+    "from": "ca_cap_rock_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_house_of_mirrors_face",
+    "to": "ca_cap_rock_area",
     "from": "ca_cap_rock_bouldering"
    },
    {
@@ -15274,15 +15758,71 @@
     "id": "ca_cap_rock_bouldering"
    },
    {
+    "t": "move",
+    "id": "ca_goat_rock_bouldering_circuit_bowling_bawl_sit_left",
+    "from": "ca_goat_rock_bouldering_circuit",
+    "to": "ca_goat_rock_circuit"
+   },
+   {
+    "t": "delete",
+    "id": "ca_goat_rock_bouldering_circuit"
+   },
+   {
     "t": "parent",
-    "id": "ca_king_dome_area",
-    "to": "ca_hall_of_horrors",
-    "from": "ca_hall_of_horrors_bouldering"
+    "id": "ca_lynn_hill_memorial_boulder",
+    "to": "ca_king_dome",
+    "from": "ca_king_dome_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_pygmy_boulder",
+    "to": "ca_king_dome",
+    "from": "ca_king_dome_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_simpleton_rock",
+    "to": "ca_king_dome",
+    "from": "ca_king_dome_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_split_boulder_5",
+    "to": "ca_king_dome",
+    "from": "ca_king_dome_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_house_of_cards",
+    "to": "ca_king_dome",
+    "from": "ca_king_dome_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_unnamed_formation",
+    "to": "ca_king_dome",
+    "from": "ca_king_dome_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_little_rascal_rock",
+    "to": "ca_king_dome",
+    "from": "ca_king_dome_area"
+   },
+   {
+    "t": "parent",
+    "id": "ca_iron_meteorite_aka_kingpin_boulder_the",
+    "to": "ca_king_dome",
+    "from": "ca_king_dome_area"
+   },
+   {
+    "t": "delete",
+    "id": "ca_king_dome_area"
    },
    {
     "t": "parent",
     "id": "ca_meadows_boulder",
-    "to": "ca_hall_of_horrors",
+    "to": "ca_hall_of_horrors_area",
     "from": "ca_hall_of_horrors_bouldering"
    },
    {
@@ -15357,12 +15897,6 @@
    },
    {
     "t": "parent",
-    "id": "ca_camp_boulder_2",
-    "to": "ca_ryan_campground",
-    "from": "ca_ryan_campground_bouldering"
-   },
-   {
-    "t": "parent",
     "id": "ca_chipped_bulge_the",
     "to": "ca_ryan_campground",
     "from": "ca_ryan_campground_bouldering"
@@ -15382,12 +15916,6 @@
    {
     "t": "parent",
     "id": "ca_master_boulder_2",
-    "to": "ca_ryan_campground",
-    "from": "ca_ryan_campground_bouldering"
-   },
-   {
-    "t": "parent",
-    "id": "ca_matatte_boulder",
     "to": "ca_ryan_campground",
     "from": "ca_ryan_campground_bouldering"
    },
@@ -15416,6 +15944,48 @@
     "from": "ca_ryan_campground_bouldering"
    },
    {
+    "t": "parent",
+    "id": "ca_matatte_boulder",
+    "to": "ca_ryan_campground",
+    "from": "ca_ryan_campground_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_camp_boulder_2",
+    "to": "ca_ryan_campground",
+    "from": "ca_ryan_campground_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_boulder_15",
+    "to": "ca_ryan_campground",
+    "from": "ca_ryan_campground_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_campsite_18",
+    "to": "ca_ryan_campground",
+    "from": "ca_ryan_campground_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_turbo_snail",
+    "to": "ca_ryan_campground",
+    "from": "ca_ryan_campground_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_campsite_22",
+    "to": "ca_ryan_campground",
+    "from": "ca_ryan_campground_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_ryan_camp_cracks",
+    "to": "ca_ryan_campground",
+    "from": "ca_ryan_campground_bouldering"
+   },
+   {
     "t": "delete",
     "id": "ca_ryan_campground_bouldering"
    },
@@ -15428,6 +15998,18 @@
    {
     "t": "parent",
     "id": "ca_drawing_of_the_three_the",
+    "to": "ca_school_rock",
+    "from": "ca_school_rock_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_academia_boulder",
+    "to": "ca_school_rock",
+    "from": "ca_school_rock_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_mcdeath_circuit",
     "to": "ca_school_rock",
     "from": "ca_school_rock_bouldering"
    },
@@ -15887,22 +16469,6 @@
    },
    {
     "t": "parent",
-    "id": "ca_king_dome_east_face",
-    "to": "ca_king_dome_area",
-    "from": "ca_king_dome"
-   },
-   {
-    "t": "parent",
-    "id": "ca_king_dome_west_face",
-    "to": "ca_king_dome_area",
-    "from": "ca_king_dome"
-   },
-   {
-    "t": "delete",
-    "id": "ca_king_dome"
-   },
-   {
-    "t": "parent",
     "id": "ca_volcano_boulder",
     "to": "ca_volcano_boulder_area",
     "from": "ca_virgin_islands_area"
@@ -16137,19 +16703,49 @@
    },
    {
     "t": "move",
-    "id": "ca_route_right_of_the_dumbest_climb_in_the_monument",
-    "from": "ca_real_hall_of_horrors",
-    "to": "ca_real_hall_of_horrors_the"
+    "id": "ca_walking_mexican_down_the_hall",
+    "from": "ca_real_hall_of_horrors_the",
+    "to": "ca_real_hall_of_horrors"
    },
    {
     "t": "move",
-    "id": "ca_first_eleven",
-    "from": "ca_real_hall_of_horrors",
-    "to": "ca_real_hall_of_horrors_the"
+    "id": "ca_chevron_star",
+    "from": "ca_real_hall_of_horrors_the",
+    "to": "ca_real_hall_of_horrors"
+   },
+   {
+    "t": "move",
+    "id": "ca_lost_lieback",
+    "from": "ca_real_hall_of_horrors_the",
+    "to": "ca_real_hall_of_horrors"
    },
    {
     "t": "delete",
-    "id": "ca_real_hall_of_horrors"
+    "id": "ca_real_hall_of_horrors_the"
+   },
+   {
+    "t": "parent",
+    "id": "ca_ryan_s_corner",
+    "to": "ca_central_pinnacles",
+    "from": "ca_central_pinnacles_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_chonkster_boulder_1",
+    "to": "ca_central_pinnacles",
+    "from": "ca_central_pinnacles_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_chonkster_boulder_2",
+    "to": "ca_central_pinnacles",
+    "from": "ca_central_pinnacles_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_skaagos_boulder",
+    "to": "ca_central_pinnacles",
+    "from": "ca_central_pinnacles_bouldering"
    },
    {
     "t": "parent",
@@ -16160,6 +16756,36 @@
    {
     "t": "parent",
     "id": "ca_lost_orbit_bouldering",
+    "to": "ca_central_pinnacles",
+    "from": "ca_central_pinnacles_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_pistol_whipped_boulders",
+    "to": "ca_central_pinnacles",
+    "from": "ca_central_pinnacles_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_stabby_cave",
+    "to": "ca_central_pinnacles",
+    "from": "ca_central_pinnacles_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_ant_nest_boulder",
+    "to": "ca_central_pinnacles",
+    "from": "ca_central_pinnacles_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_calico_cat_and_tabby_cat_boulders",
+    "to": "ca_central_pinnacles",
+    "from": "ca_central_pinnacles_bouldering"
+   },
+   {
+    "t": "parent",
+    "id": "ca_caveman_boulder_2",
     "to": "ca_central_pinnacles",
     "from": "ca_central_pinnacles_bouldering"
    },
@@ -16286,6 +16912,27 @@
     ]
    },
    {
+    "id": "ca_afpa_rock_area",
+    "name": "AFPA Rock Area",
+    "parent_id": "ca_quail_springs_bouldering",
+    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_quail_springs_bouldering.ca_afpa_rock_area",
+    "area_type": "region",
+    "region": "California",
+    "lat": 34.039755,
+    "lng": -116.194385,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 12,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": null,
+    "coords_approx": false,
+    "name_search": "afpa rock area",
+    "disciplines": []
+   },
+   {
     "id": "ca_barker_dam_bouldering",
     "name": "Barker Dam Bouldering",
     "parent_id": "ca_central_joshua_tree_bouldering",
@@ -16297,7 +16944,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 53,
+    "route_count": 68,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16341,7 +16988,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 344,
+    "route_count": 460,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16362,7 +17009,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 22,
+    "route_count": 45,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16383,7 +17030,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 47,
+    "route_count": 75,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16404,7 +17051,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 25,
+    "route_count": 29,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16448,7 +17095,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 7,
+    "route_count": 14,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16469,7 +17116,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 401,
+    "route_count": 479,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16490,7 +17137,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 161,
+    "route_count": 194,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16511,7 +17158,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 3,
+    "route_count": 9,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16532,7 +17179,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 74,
+    "route_count": 105,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16553,7 +17200,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 41,
+    "route_count": 47,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16574,7 +17221,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 37,
+    "route_count": 39,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16595,7 +17242,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 80,
+    "route_count": 134,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16616,34 +17263,13 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 103,
+    "route_count": 131,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
     "dominant_discipline": null,
     "coords_approx": false,
     "name_search": "outback bouldering",
-    "disciplines": []
-   },
-   {
-    "id": "ca_quail_springs_bouldering",
-    "name": "Quail Springs Bouldering",
-    "parent_id": "ca_joshua_tree_bouldering",
-    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_quail_springs_bouldering",
-    "area_type": "region",
-    "region": "California",
-    "lat": 34.0656996507937,
-    "lng": -116.22853276455,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 146,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": null,
-    "coords_approx": false,
-    "name_search": "quail springs bouldering",
     "disciplines": []
    },
    {
@@ -16658,7 +17284,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 3,
+    "route_count": 21,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16679,7 +17305,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 84,
+    "route_count": 92,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16700,7 +17326,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 53,
+    "route_count": 62,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -16721,7 +17347,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 18,
+    "route_count": 21,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -17591,6 +18217,29 @@
     ]
    },
    {
+    "id": "ca_castle_rock_proper_bouldering",
+    "name": "Castle Rock Proper Bouldering",
+    "parent_id": "ca_castle_rock_loop",
+    "path": "usa.california.ca_san_francisco_bay_area.ca_castle_rock_area.ca_castle_rock_area_bouldering.ca_castle_rock_loop.ca_castle_rock_proper_bouldering",
+    "area_type": "crag",
+    "region": "California",
+    "lat": 37.22862,
+    "lng": -122.09618,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 5,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": "bouldering",
+    "coords_approx": false,
+    "name_search": "castle rock proper bouldering",
+    "disciplines": [
+     "bouldering"
+    ]
+   },
+   {
     "id": "ca_geology_tour_road_bouldering",
     "name": "Geology Tour Road Bouldering",
     "parent_id": "ca_queen_valley_area_bouldering",
@@ -17602,7 +18251,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 98,
+    "route_count": 139,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -17633,6 +18282,29 @@
     "disciplines": []
    },
    {
+    "id": "ca_indian_rock_bouldering",
+    "name": "Indian Rock Bouldering",
+    "parent_id": "ca_indian_rock_bouldering_area",
+    "path": "usa.california.ca_san_francisco_bay_area.ca_south_bay_area.ca_castle_rock_and_sanborn_area.ca_castle_and_sanborn_area_bouldering.ca_indian_rock_bouldering_area.ca_indian_rock_bouldering",
+    "area_type": "crag",
+    "region": "California",
+    "lat": 37.23158,
+    "lng": -122.09373,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 1,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": "bouldering",
+    "coords_approx": false,
+    "name_search": "indian rock bouldering",
+    "disciplines": [
+     "bouldering"
+    ]
+   },
+   {
     "id": "ca_lake_george_2",
     "name": "Lake George",
     "parent_id": "ca_mammoth_lakes_bouldering",
@@ -17644,7 +18316,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 15,
+    "route_count": 21,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -17665,7 +18337,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 14,
+    "route_count": 18,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -17709,7 +18381,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 12,
+    "route_count": 17,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -17740,6 +18412,27 @@
     "disciplines": []
    },
    {
+    "id": "ca_quail_springs_bouldering",
+    "name": "Quail Springs Bouldering",
+    "parent_id": "ca_joshua_tree_bouldering",
+    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_quail_springs_bouldering",
+    "area_type": "region",
+    "region": "California",
+    "lat": 34.0656996507937,
+    "lng": -116.22853276455,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 208,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": null,
+    "coords_approx": false,
+    "name_search": "quail springs bouldering",
+    "disciplines": []
+   },
+   {
     "id": "ca_queen_mountain_bouldering",
     "name": "Queen Mountain Bouldering",
     "parent_id": "ca_queen_valley_area_bouldering",
@@ -17751,7 +18444,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 84,
+    "route_count": 114,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -17772,13 +18465,34 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 51,
+    "route_count": 74,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
     "dominant_discipline": null,
     "coords_approx": false,
     "name_search": "rainbow",
+    "disciplines": []
+   },
+   {
+    "id": "ca_summit_rock_boulders",
+    "name": "Summit Rock boulders",
+    "parent_id": "ca_castle_rock_area_bouldering",
+    "path": "usa.california.ca_san_francisco_bay_area.ca_castle_rock_area.ca_castle_rock_area_bouldering.ca_summit_rock_boulders",
+    "area_type": "region",
+    "region": "California",
+    "lat": 37.24076,
+    "lng": -122.09865,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 4,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": null,
+    "coords_approx": false,
+    "name_search": "summit rock boulders",
     "disciplines": []
    },
    {
@@ -17837,7 +18551,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 4,
+    "route_count": 5,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -17858,7 +18572,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 27,
+    "route_count": 28,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -17879,7 +18593,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 43,
+    "route_count": 66,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -17959,29 +18673,6 @@
     ]
    },
    {
-    "id": "co_diamond_head_bouldering",
-    "name": "Diamond Head Bouldering",
-    "parent_id": "co_eldorado_canyon_bouldering",
-    "path": "usa.colorado.co_boulder.co_eldorado_canyon_state_park.co_eldorado_canyon_bouldering.co_diamond_head_bouldering",
-    "area_type": "crag",
-    "region": "Colorado",
-    "lat": 39.92981,
-    "lng": -105.2881,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 3,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": "bouldering",
-    "coords_approx": false,
-    "name_search": "diamond head bouldering",
-    "disciplines": [
-     "bouldering"
-    ]
-   },
-   {
     "id": "co_glacier_gorge_2",
     "name": "Glacier Gorge",
     "parent_id": "co_glacier_gorge_trailhead_ice",
@@ -18001,29 +18692,6 @@
     "coords_approx": false,
     "name_search": "glacier glac gl gorge",
     "disciplines": []
-   },
-   {
-    "id": "co_little_eiger_bouldering",
-    "name": "Little Eiger Bouldering",
-    "parent_id": "co_clear_creek_canyon_bouldering",
-    "path": "usa.colorado.co_golden.co_clear_creek_canyon.co_clear_creek_canyon_bouldering.co_little_eiger_bouldering",
-    "area_type": "crag",
-    "region": "Colorado",
-    "lat": 39.74382,
-    "lng": -105.29869,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 11,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": "bouldering",
-    "coords_approx": false,
-    "name_search": "little eiger bouldering",
-    "disciplines": [
-     "bouldering"
-    ]
    },
    {
     "id": "co_mchenry_s_peak_2",
@@ -18047,52 +18715,6 @@
     "disciplines": [
      "ice",
      "mixed"
-    ]
-   },
-   {
-    "id": "co_new_economy_cliff_bouldering",
-    "name": "New Economy Cliff Bouldering",
-    "parent_id": "co_clear_creek_canyon_bouldering",
-    "path": "usa.colorado.co_golden.co_clear_creek_canyon.co_clear_creek_canyon_bouldering.co_new_economy_cliff_bouldering",
-    "area_type": "crag",
-    "region": "Colorado",
-    "lat": 39.74126,
-    "lng": -105.3463,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 1,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": "bouldering",
-    "coords_approx": false,
-    "name_search": "new economy cliff bouldering",
-    "disciplines": [
-     "bouldering"
-    ]
-   },
-   {
-    "id": "co_new_river_wall_bouldering",
-    "name": "New River Wall Bouldering",
-    "parent_id": "co_clear_creek_canyon_bouldering",
-    "path": "usa.colorado.co_golden.co_clear_creek_canyon.co_clear_creek_canyon_bouldering.co_new_river_wall_bouldering",
-    "area_type": "crag",
-    "region": "Colorado",
-    "lat": 39.73696,
-    "lng": -105.31648,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 25,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": "bouldering",
-    "coords_approx": false,
-    "name_search": "new river wall bouldering",
-    "disciplines": [
-     "bouldering"
     ]
    },
    {
@@ -18501,7 +19123,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 4,
+    "route_count": 6,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -18522,7 +19144,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 43,
+    "route_count": 47,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -18530,6 +19152,29 @@
     "coords_approx": false,
     "name_search": "cap rock bouldering",
     "disciplines": []
+   },
+   {
+    "id": "ca_goat_rock_bouldering_circuit",
+    "name": "Goat Rock Bouldering Circuit",
+    "parent_id": "ca_castle_and_sanborn_area_bouldering",
+    "path": "usa.california.ca_san_francisco_bay_area.ca_south_bay_area.ca_castle_rock_and_sanborn_area.ca_castle_and_sanborn_area_bouldering.ca_goat_rock_bouldering_circuit",
+    "area_type": "crag",
+    "region": "California",
+    "lat": 37.2282,
+    "lng": -122.10791,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 1,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": "bouldering",
+    "coords_approx": false,
+    "name_search": "goat rock bouldering circuit",
+    "disciplines": [
+     "bouldering"
+    ]
    },
    {
     "id": "ca_hall_of_horrors_area_2",
@@ -18543,34 +19188,13 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 26,
+    "route_count": 27,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
     "dominant_discipline": null,
     "coords_approx": false,
     "name_search": "hall of horrors area",
-    "disciplines": []
-   },
-   {
-    "id": "ca_hall_of_horrors_bouldering",
-    "name": "Hall of Horrors Bouldering",
-    "parent_id": "ca_central_joshua_tree_bouldering",
-    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_hall_of_horrors_bouldering",
-    "area_type": "region",
-    "region": "California",
-    "lat": 33.9985630952381,
-    "lng": -116.14653077381,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 64,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": null,
-    "coords_approx": false,
-    "name_search": "hall of horrors bouldering",
     "disciplines": []
    },
    {
@@ -18585,57 +19209,13 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 6,
+    "route_count": 7,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
     "dominant_discipline": "bouldering",
     "coords_approx": false,
     "name_search": "intersection rock",
-    "disciplines": [
-     "bouldering"
-    ]
-   },
-   {
-    "id": "ca_love_nest_area_2",
-    "name": "Love Nest Area",
-    "parent_id": "ca_planet_x_bouldering",
-    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_planet_x_bouldering.ca_love_nest_area_2",
-    "area_type": "region",
-    "region": "California",
-    "lat": 33.99609,
-    "lng": -116.157946666667,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 13,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": null,
-    "coords_approx": false,
-    "name_search": "love nest area",
-    "disciplines": []
-   },
-   {
-    "id": "ca_north_star_wall_bouldering",
-    "name": "North Star Wall Bouldering",
-    "parent_id": "ca_donner_pass",
-    "path": "usa.california.ca_lake_tahoe.ca_i_80_corridor.ca_donner_truckee_bouldering.ca_donner_pass.ca_north_star_wall_bouldering",
-    "area_type": "crag",
-    "region": "California",
-    "lat": 39.32294,
-    "lng": -120.32205,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 3,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": "bouldering",
-    "coords_approx": false,
-    "name_search": "north star wall bouldering",
     "disciplines": [
      "bouldering"
     ]
@@ -18652,34 +19232,13 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 16,
+    "route_count": 34,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
     "dominant_discipline": null,
     "coords_approx": false,
     "name_search": "planet x area",
-    "disciplines": []
-   },
-   {
-    "id": "ca_planet_x_bouldering",
-    "name": "Planet X Bouldering",
-    "parent_id": "ca_central_joshua_tree_bouldering",
-    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_planet_x_bouldering",
-    "area_type": "region",
-    "region": "California",
-    "lat": 33.9967455555556,
-    "lng": -116.155921666667,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 47,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": null,
-    "coords_approx": false,
-    "name_search": "planet x bouldering",
     "disciplines": []
    },
    {
@@ -18706,27 +19265,6 @@
     ]
    },
    {
-    "id": "ca_ryan_campground_bouldering",
-    "name": "Ryan Campground Bouldering",
-    "parent_id": "ca_central_joshua_tree_bouldering",
-    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_ryan_campground_bouldering",
-    "area_type": "region",
-    "region": "California",
-    "lat": 33.9837295833333,
-    "lng": -116.153262638889,
-    "elevation": null,
-    "avy_zone": null,
-    "blurb": null,
-    "route_count": 35,
-    "elevation_ft": null,
-    "prominence_ft": null,
-    "parent_peak": null,
-    "dominant_discipline": null,
-    "coords_approx": false,
-    "name_search": "ryan campground bouldering",
-    "disciplines": []
-   },
-   {
     "id": "ca_talking_heads_area",
     "name": "Talking Heads Area",
     "parent_id": "ca_summit_the_2",
@@ -18746,6 +19284,98 @@
     "coords_approx": false,
     "name_search": "talking heads area",
     "disciplines": []
+   },
+   {
+    "id": "co_diamond_head_bouldering",
+    "name": "Diamond Head Bouldering",
+    "parent_id": "co_eldorado_canyon_bouldering",
+    "path": "usa.colorado.co_boulder.co_eldorado_canyon_state_park.co_eldorado_canyon_bouldering.co_diamond_head_bouldering",
+    "area_type": "crag",
+    "region": "Colorado",
+    "lat": 39.92981,
+    "lng": -105.2881,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 3,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": "bouldering",
+    "coords_approx": false,
+    "name_search": "diamond head bouldering",
+    "disciplines": [
+     "bouldering"
+    ]
+   },
+   {
+    "id": "co_little_eiger_bouldering",
+    "name": "Little Eiger Bouldering",
+    "parent_id": "co_clear_creek_canyon_bouldering",
+    "path": "usa.colorado.co_golden.co_clear_creek_canyon.co_clear_creek_canyon_bouldering.co_little_eiger_bouldering",
+    "area_type": "crag",
+    "region": "Colorado",
+    "lat": 39.74382,
+    "lng": -105.29869,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 11,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": "bouldering",
+    "coords_approx": false,
+    "name_search": "little eiger bouldering",
+    "disciplines": [
+     "bouldering"
+    ]
+   },
+   {
+    "id": "co_new_economy_cliff_bouldering",
+    "name": "New Economy Cliff Bouldering",
+    "parent_id": "co_clear_creek_canyon_bouldering",
+    "path": "usa.colorado.co_golden.co_clear_creek_canyon.co_clear_creek_canyon_bouldering.co_new_economy_cliff_bouldering",
+    "area_type": "crag",
+    "region": "Colorado",
+    "lat": 39.74126,
+    "lng": -105.3463,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 1,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": "bouldering",
+    "coords_approx": false,
+    "name_search": "new economy cliff bouldering",
+    "disciplines": [
+     "bouldering"
+    ]
+   },
+   {
+    "id": "co_new_river_wall_bouldering",
+    "name": "New River Wall Bouldering",
+    "parent_id": "co_clear_creek_canyon_bouldering",
+    "path": "usa.colorado.co_golden.co_clear_creek_canyon.co_clear_creek_canyon_bouldering.co_new_river_wall_bouldering",
+    "area_type": "crag",
+    "region": "Colorado",
+    "lat": 39.73696,
+    "lng": -105.31648,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 25,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": "bouldering",
+    "coords_approx": false,
+    "name_search": "new river wall bouldering",
+    "disciplines": [
+     "bouldering"
+    ]
    },
    {
     "id": "co_nomad_s_cave_bouldering",
@@ -19616,7 +20246,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 2,
+    "route_count": 3,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -19658,7 +20288,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 3,
+    "route_count": 31,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
@@ -19668,14 +20298,56 @@
     "disciplines": []
    },
    {
-    "id": "ca_king_dome",
-    "name": "King Dome",
-    "parent_id": "ca_hall_of_horrors_area",
-    "path": "usa.california.ca_joshua_tree_national_park.ca_central_joshua_tree.ca_sheep_pass_area.ca_hall_of_horrors_area.ca_king_dome",
+    "id": "ca_hall_of_horrors_bouldering",
+    "name": "Hall of Horrors Bouldering",
+    "parent_id": "ca_central_joshua_tree_bouldering",
+    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_hall_of_horrors_bouldering",
     "area_type": "region",
     "region": "California",
-    "lat": 34.003315,
-    "lng": -116.149485,
+    "lat": 33.9985630952381,
+    "lng": -116.14653077381,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 71,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": null,
+    "coords_approx": false,
+    "name_search": "hall of horrors bouldering",
+    "disciplines": []
+   },
+   {
+    "id": "ca_king_dome_area",
+    "name": "King Dome Area",
+    "parent_id": "ca_hall_of_horrors_bouldering",
+    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_hall_of_horrors_bouldering.ca_king_dome_area",
+    "area_type": "region",
+    "region": "California",
+    "lat": 34.0028042857143,
+    "lng": -116.149638571429,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 27,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": null,
+    "coords_approx": false,
+    "name_search": "king dome area",
+    "disciplines": []
+   },
+   {
+    "id": "ca_love_nest_area_2",
+    "name": "Love Nest Area",
+    "parent_id": "ca_planet_x_bouldering",
+    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_planet_x_bouldering.ca_love_nest_area_2",
+    "area_type": "region",
+    "region": "California",
+    "lat": 33.99609,
+    "lng": -116.157946666667,
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
@@ -19685,31 +20357,96 @@
     "parent_peak": null,
     "dominant_discipline": null,
     "coords_approx": false,
-    "name_search": "king dome",
+    "name_search": "love nest area",
     "disciplines": []
    },
    {
-    "id": "ca_real_hall_of_horrors",
-    "name": "Real Hall of Horrors",
-    "parent_id": "ca_hall_of_horrors",
-    "path": "usa.california.ca_joshua_tree_national_park.ca_central_joshua_tree.ca_sheep_pass_area.ca_hall_of_horrors_area.ca_hall_of_horrors.ca_real_hall_of_horrors",
+    "id": "ca_north_star_wall_bouldering",
+    "name": "North Star Wall Bouldering",
+    "parent_id": "ca_donner_pass",
+    "path": "usa.california.ca_lake_tahoe.ca_i_80_corridor.ca_donner_truckee_bouldering.ca_donner_pass.ca_north_star_wall_bouldering",
     "area_type": "crag",
     "region": "California",
-    "lat": 34.00063,
-    "lng": -116.14711,
+    "lat": 39.32294,
+    "lng": -120.32205,
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 2,
+    "route_count": 3,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
-    "dominant_discipline": "trad",
+    "dominant_discipline": "bouldering",
     "coords_approx": false,
-    "name_search": "real hall of horrors",
+    "name_search": "north star wall bouldering",
     "disciplines": [
-     "trad"
+     "bouldering"
     ]
+   },
+   {
+    "id": "ca_planet_x_bouldering",
+    "name": "Planet X Bouldering",
+    "parent_id": "ca_central_joshua_tree_bouldering",
+    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_planet_x_bouldering",
+    "area_type": "region",
+    "region": "California",
+    "lat": 33.9967455555556,
+    "lng": -116.155921666667,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 69,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": null,
+    "coords_approx": false,
+    "name_search": "planet x bouldering",
+    "disciplines": []
+   },
+   {
+    "id": "ca_real_hall_of_horrors_the",
+    "name": "Real Hall of Horrors, The",
+    "parent_id": "ca_hall_of_horrors_area_2",
+    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_hall_of_horrors_bouldering.ca_hall_of_horrors_area_2.ca_real_hall_of_horrors_the",
+    "area_type": "crag",
+    "region": "California",
+    "lat": 34.00056,
+    "lng": -116.14758,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 3,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": "bouldering",
+    "coords_approx": false,
+    "name_search": "real hall of horrors the",
+    "disciplines": [
+     "bouldering"
+    ]
+   },
+   {
+    "id": "ca_ryan_campground_bouldering",
+    "name": "Ryan Campground Bouldering",
+    "parent_id": "ca_central_joshua_tree_bouldering",
+    "path": "usa.california.ca_joshua_tree_national_park.ca_joshua_tree_bouldering.ca_central_joshua_tree_bouldering.ca_ryan_campground_bouldering",
+    "area_type": "region",
+    "region": "California",
+    "lat": 33.9837295833333,
+    "lng": -116.153262638889,
+    "elevation": null,
+    "avy_zone": null,
+    "blurb": null,
+    "route_count": 50,
+    "elevation_ft": null,
+    "prominence_ft": null,
+    "parent_peak": null,
+    "dominant_discipline": null,
+    "coords_approx": false,
+    "name_search": "ryan campground bouldering",
+    "disciplines": []
    },
    {
     "id": "ca_school_rock_bouldering",
@@ -19723,7 +20460,7 @@
     "elevation": null,
     "avy_zone": null,
     "blurb": null,
-    "route_count": 3,
+    "route_count": 6,
     "elevation_ft": null,
     "prominence_ft": null,
     "parent_peak": null,
