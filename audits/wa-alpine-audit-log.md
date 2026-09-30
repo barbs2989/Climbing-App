@@ -28659,3 +28659,55 @@ used or needed — this run made no writes). PR #811 for this branch was already
 PR was opened. WebFetch to every research domain tried this batch (mountainproject.com,
 cascadeclimbers.com) returned `EGRESS_BLOCKED` in this environment, same as recent prior batches —
 every finding above rests on WebSearch result snippets only, not fetched primary pages.
+
+## 2026-09-30 — Pass 6, Batch 355
+
+Eight routes on the North Cascades' Liberty Bell/Washington Pass and Cutthroat/North Gardner/
+Primus/North Star cluster: `wa_north_face_3` (Lexington Tower), `wa_north_face_left_buttress`
+("Fight or Flight," Castle Peak), `wa_north_face_var_right_directisimo` (Concord Tower),
+`wa_north_gardner_mountain_nw_couloir`, `wa_north_gardner_mountain_southwest` (both North Gardner
+Mountain), `wa_north_ridge_3` (Cutthroat Peak), `wa_north_ridge_4` (Primus Peak),
+`wa_north_star_mountain_east_route`.
+
+**Confirmed errors → fixes in `sql/2026-09-30-batch-355.sql` (2 UPDATE statements + 1
+paired jsonb_set):**
+- `wa_north_face_var_right_directisimo` (on Concord Tower): `high_point_ft` and its own
+  "Concord Tower Summit" waypoint both stored 7,560 ft — Lexington Tower's elevation, not
+  Concord Tower's, apparently pulled across during a prior "correction" on this same field
+  (its own `corrections` note, dated 2026-07-31, wrongly claims external sources "consistently
+  give Concord Tower a 7,560 ft summit"). This app's own `wa_concord_tower` area row already
+  stores 7,611 ft, and two independent external sources agree closely and both contradict
+  7,560 ft: Peakbagger (7,610.6 ft) and ListsOfJohn's LiDAR figure (7,612 ft). Corrected both
+  fields to 7,611 ft to match the area row and the converging external measurements.
+- `wa_north_ridge_3` (Cutthroat Peak): the route's own `high_point_ft` (8,065) already agreed
+  with its area row and 2 of 3 external sources (Peakbagger 8,065 ft, Wikipedia 8,066 ft; only
+  Wikidata's 8,050 ft disagreed), but the route's own "Cutthroat Peak Summit" waypoint stored
+  8,050 — the minority figure, contradicting the route's own `high_point_ft`. Corrected the
+  waypoint's `elev`/`elevFt` to 8,065 to agree with everything else already on file for this peak.
+
+**Flagged for human review (0):** none this batch — no other discrepancy found firm enough to
+flag as opposed to fix or leave alone.
+
+**Clean (6):** `wa_north_face_3`'s Kelley/McGowan July 5, 1954 FA (matches SummitPost/Wikipedia/
+Mountain Project exactly) and its Lexington Tower summit elevation (7,560 ft, independently
+confirmed, and does not conflict with Concord Tower's separate figure above); `wa_north_face_
+left_buttress`'s Herrington/Hirst Aug 3, 2008 accidental-FA story (matches the contemporaneous
+Alpinist Newswire account almost verbatim, including the abandoned Colorado Route attempt and
+the snow patch at the base); `wa_north_gardner_mountain_nw_couloir` (internally consistent,
+matches its area row); `wa_north_gardner_mountain_southwest`'s "highest point in Okanogan County,
+20th on the Bulger list" claim and neighboring Gardner Mountain's 8,898 ft/58-ft-lower figure
+(both externally confirmed; the route's own "59 ft lower" phrasing is a 1-ft rounding
+difference, not a real error); `wa_north_ridge_4`'s Mark Bebie 1986 FA and Primus Peak elevation
+(8,508 vs a 8,510 ft waypoint — 2 ft, within normal survey variance, not flagged);
+`wa_north_star_mountain_east_route`'s USGS 1904 name-swap-with-Bonanza-Peak story (matches
+Wikipedia/HistoryLink) and 8,096 ft elevation (exact match, multiple sources).
+
+`last_processed_id` advanced to `wa_north_star_mountain_east_route`. Scope counts not re-run
+this batch (last known: 698 in-scope, 751 total, from batch 352); this batch's 8 candidates were
+confirmed on 'peak'-type areas via a direct `areas` lookup before auditing, same method as the
+prior batch. No `.env`/`.env.local` present at run start (fresh clone); read-only queries used
+the anon key supplied in the task prompt directly as shell env vars (no `.env.local` written,
+no service key used or needed — this run made no writes). WebFetch to summitpost.org and
+en.wikipedia.org both returned `EGRESS_BLOCKED` in this environment; every finding above rests
+on WebSearch result snippets, cross-checked across 2+ independent sources per claim, not
+fetched primary pages.
