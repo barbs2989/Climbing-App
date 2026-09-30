@@ -970,3 +970,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested 4/4, cases at the bottom of the script, each proving its edit landed **by
     checksum** before judging the guard. Case 4 must **pass**: a guard clause returning `null` is
     not a screen.
+- **`check:scroll-containment`** asks whether every inline scroll pane (`overflowY`/`overflow`
+  `auto|scroll`) declares `overscrollBehavior`. Without it a drag that reaches the pane's end
+  is handed to the page behind, and on a phone the sheet reads as **stuck**. Prompted by
+  "Challenges and lists scroll is sticky" (2026-09-30).
+  - **It covers the hole `check:overlay-scroll` has by construction.** That walk opens an
+    overlay by setting App's or RouteDetail's own state, so an overlay whose open flag is
+    LOCAL to a component (Challenges' `showLists`, the All-areas picker, the guide screens)
+    is never opened. 11 overlay panes sat in that hole, plus the DM and crew-chat threads.
+  - **The rule is total, not "inside an overlay"**: deciding what is an overlay from text is
+    the pairing `check:overlay-scroll` says a regex cannot do. `#appscroll` — the page itself —
+    is the one exemption, matched by its `id`.
+  - Fails closed: a self-test fixture on every run, and fewer than 40 panes found (90 at
+    writing) is a broken scan. Injection-tested: removing containment from the Challenges
+    pane fails the run naming `ClimbMatchCore.jsx` and the style.
+  - Cannot see a style held in a variable or spread; those are `check:overlay-scroll`'s where
+    reachable.
+  - **Same day, same report: `PullToRefresh` (Today) tested `window.scrollY`**, which is always
+    0 because `#appscroll` scrolls, not the document — so any downward drag mid-feed grew the
+    pull spacer instead of scrolling. It now reads `#appscroll.scrollTop` and ignores touches
+    bubbling up (through the React tree) from portalled overlays. No guard covers that one.
