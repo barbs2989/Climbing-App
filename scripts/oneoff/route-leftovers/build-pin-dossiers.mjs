@@ -23,7 +23,7 @@ const extra = {
   wa_route_c: "Ice Box: road/trailhead pin says Cutthroat/Blue Lake, not the SR-20 hairpin; approach text describes the Alpenkuhl crag.",
   wa_route_d: "Ice Box: road/trailhead pin says Cutthroat/Blue Lake, not the SR-20 hairpin; approach text describes the Alpenkuhl crag.",
   wa_bearpaw_mountain_scramble: "Approach now says the trail passes the EAST side of the lake; waypoint[3] pin still sits west of the lake.",
-  wa_mount_rainier_liberty_ridge: "3 waypoint pins sit on other sides of the mountain (Mowich Lake, Puyallup Glacier).",
+
 };
 const ids = [...new Set([...Object.keys(findings), ...Object.keys(extra)])].filter(id => id.startsWith("wa_"));
 const out = [];

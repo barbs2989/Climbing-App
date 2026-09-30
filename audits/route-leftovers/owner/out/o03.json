@@ -1,0 +1,507 @@
+{
+ "results": [
+  {
+   "id": "wa_lefty",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Lefty is a bolted sport climb; its discipline is changed from trad to sport, matching every protection field on the page.",
+   "evidence": "The route listing types Lefty as Sport/Alpine, 5.11b, 17 m, needing nothing beyond quickdraws; the crag's route table lists it as Sport. The row's gear (quickdraws), pro_needs (fully bolted) and pitch notes already agree; only discipline said trad.",
+   "sources": [
+    "https://www.mountainproject.com/route/125126360/lefty",
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_lefty",
+     "column": "discipline",
+     "path": [],
+     "expect": "trad",
+     "value": "sport"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_friction_therapy",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Friction Therapy is a bolted sport climb (6 bolts to a bolted anchor); its discipline is changed from trad to sport.",
+   "evidence": "The route listing types it Sport/Alpine, 5.10c, 15 m, protected by 6 bolts to a bolted anchor with rap rings; the crag's route table lists it as Sport. The row's gear, detailed_rack and pitch notes already say bolts only.",
+   "sources": [
+    "https://www.mountainproject.com/route/124743128/friction-therapy",
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_friction_therapy",
+     "column": "discipline",
+     "path": [],
+     "expect": "trad",
+     "value": "sport"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_on_the_prowl",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "On the Prowl is a bolted sport climb (about 7 bolts); its discipline is changed from trad to sport.",
+   "evidence": "The route listing types it Sport/Alpine, 5.10-, 21 m, with about 7 bolts and hooked bolted anchors; the Ice Box right side table lists it as Sport (Route B and Route C there are the trad lines). The row's gear, pro_needs, detailed_rack and bail text already say bolts only.",
+   "sources": [
+    "https://www.mountainproject.com/route/126509881/on-the-prowl-d",
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_on_the_prowl",
+     "column": "discipline",
+     "path": [],
+     "expect": "trad",
+     "value": "sport"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_iceman",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Iceman is a mixed bolts-and-gear route, so its discipline is changed to trad; its approach and road text, which described a different crag and trailhead, now describe the walk up from the SR-20 hairpin.",
+   "evidence": "The route listing types Iceman as Trad/Alpine, 5.10a/b, 24 m, with 3 bolts and cams from BD .3 to #1, and the Ice Box left side table lists it as the trad line between two sport routes; the row's beta, detailed_rack and pro_needs agree. Both Ice Box area pages (left and right side, written separately) start from the SR-20 hairpin, up the climbers' trail and slabs into the Ice Box, matching the row's own itinerary, face and base-pin note; the approach column instead described the Spire Gully (Alpenkuhl) walk and the road column named the Cutthroat Lake Trailhead. Only the one site describes this crag's approach, so the rewrite rests on it plus the row's own itinerary and pin note; no time or distance was written.",
+   "sources": [
+    "https://www.mountainproject.com/route/117767212/iceman",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "discipline",
+     "path": [],
+     "expect": "sport",
+     "value": "trad"
+    },
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "approach",
+     "path": [],
+     "expect": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+     "value": "Park at the apex of the hairpin turn on SR-20 below Washington Pass. Follow the climbers' trail up toward Quicksilver Slab and Spire Gully, then cut right into a dry creek bed and climb the slabs above it into the Ice Box. The upper, entrance slab has a fixed line; the lower slab does not. Both are smooth and slippery, and worse when wet."
+    },
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Cutthroat Lake Trailhead, SR-20, Washington Pass",
+     "value": "SR-20 (North Cascades Highway), hairpin turn below Washington Pass"
+    },
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+     "value": "Paved highway pullout at the apex of the hairpin; no unpaved road driving required."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_iceman",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "to the Cutthroat Lake area near Washington Pass",
+     "replace": "to the hairpin turn below Washington Pass"
+    }
+   ],
+   "pin_followups": [
+    "waypoints[0] is named \"Blue Lake Trailhead\" and sits at the Blue Lake Trailhead (48.5192,-120.6743), 1.8 mi from the crag; it should be the SR-20 hairpin pullout (the sibling On the Prowl row uses 48.51429,-120.64284). Rename and move it and rewrite its note (which calls it the Concord/Lexington trailhead) together with the base pin distMi.",
+    "gain_ft 500 and the base pin distMi 1.8 were measured from the Blue Lake Trailhead; revisit once the trailhead pin moves."
+   ]
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this page as the climb of Mount Mathias from the Hoh River Trail (Glacier Meadows, the Blue Glacier and Glacier Pass) and rewrite the day plan, timing and text that described a Sol Duc to Hoh Bailey Range traverse.",
+   "evidence": "The published route for Mathias (paired with Mount Mercury) is a Hoh River round trip: the steep snow finger between Mathias and Glacier Pass or the gullies to the Mercury-Mathias col, then Class 4 on the ridge, descending to Glacier Meadows; Mathias is described as a seldom-climbed peak, and the easiest line is Class 4. Detailed Bailey Range traverse reports cross the Hoh Glacier to Glacier Pass and exit by the Blue Glacier but do not climb Mathias. The row's approach, pitch_detail, approach_variants, main camp (Glacier Meadows), trailhead pin, approach_logistics, descent_text and pro_tips already describe the Hoh line; itinerary, timing, the middle waypoints, crowds, partner requirements, seasonal guidance, rope_note and one hazard described the traverse. The new day plan carries no mileages, hours, gains or pack weights rather than computed ones. (The Mathias & Mercury route page blocked direct fetch; its content was read from search extracts.)",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-mathias-mount-mercury",
+    "https://www.mountaineers.org/activities/activities/basic-alpine-climb-mount-mathias-mount-mercury",
+    "https://en.wikipedia.org/wiki/Mount_Mathias",
+    "https://www.willhiteweb.com/washington_climbing/olympic_mountains/forks/mount_olympus_077.htm",
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Requires an Olympic NP wilderness permit in the quota-controlled Sol Duc/Bailey Range corridor; the route is really only in condition July–September, and doing it while the Bailey Range snowfields and Mathias's snow finger still hold snow (rather than bare ice/scree) makes for much faster, safer travel.",
+      "days": [
+       {
+        "n": 1,
+        "note": "Start at the Sol Duc trailhead, climb through Deer Lake to High Divide, then continue the ridgeline past Cat Basin to a high camp near Eleven Bull Basin. Packs are heaviest here — full glacier kit plus five days of food.",
+        "hours": 7,
+        "miles": 9,
+        "title": "Sol Duc to High Divide / Eleven Bull Basin",
+        "gainFt": 4000,
+        "lossFt": 300,
+        "packLb": 45,
+        "schedule": [],
+        "objective": "Reach a high camp beyond High Divide"
+       },
+       {
+        "n": 2,
+        "note": "Sidehill, mostly off-trail travel across the Baileys' famous narrow \"catwalk\" ridge sections below Mt Carrie and Stephen Peak, dropping into Ferry Basin to camp. Slow-going scree and heather traverses keep mileage low.",
+        "hours": 7,
+        "miles": 8,
+        "title": "The Catwalks to Ferry Basin",
+        "gainFt": 2500,
+        "lossFt": 1800,
+        "packLb": 43,
+        "schedule": [],
+        "objective": "Cross the Baileys' exposed catwalks to Ferry Basin"
+       },
+       {
+        "n": 3,
+        "note": "Cross Bear Pass and Queets Basin, work around the Humes Glacier and Blizzard Pass, and drop to Camp Pan — the classic promontory camp used as the staging point for Mathias, Mercury, and Olympus.",
+        "hours": 8,
+        "miles": 10,
+        "title": "Bear Pass to Camp Pan",
+        "gainFt": 2500,
+        "lossFt": 2200,
+        "packLb": 41,
+        "schedule": [],
+        "objective": "Reach Camp Pan overlooking the Hoh Glacier"
+       },
+       {
+        "n": 4,
+        "note": "Rope up and descend onto the Hoh Glacier, cross to Glacier Pass, stash packs, and climb the steep snow finger between Mathias and the pass to Class 4 rock on the summit ridge. Reverse the climb, re-rope for the Blue Glacier, and descend the moraine to camp at Glacier Meadows — the longest day of the trip.",
+        "hours": 12,
+        "miles": 10,
+        "title": "Glacier Pass and the Mathias summit",
+        "gainFt": 2200,
+        "lossFt": 3700,
+        "packLb": 38,
+        "schedule": [
+         {
+          "time": "4:30 AM",
+          "label": "Leave Camp Pan",
+          "detail": "Full packs, roped up for the Hoh Glacier crossing."
+         },
+         {
+          "time": "7:00 AM",
+          "label": "Reach Glacier Pass",
+          "detail": "Stash packs and rack up for the climb."
+         },
+         {
+          "time": "8:00 AM",
+          "label": "Start the snow finger",
+          "detail": "Steep snow between Mathias and the pass, then Class 4 rock to the ridge."
+         },
+         {
+          "time": "10:30 AM",
+          "label": "Summit Mount Mathias",
+          "detail": "Loose volcanic rock near the top; keep the stop short."
+         },
+         {
+          "time": "1:00 PM",
+          "label": "Back at Glacier Pass",
+          "detail": "Re-shoulder packs, rope up again for the Blue Glacier."
+         },
+         {
+          "time": "5:30 PM",
+          "label": "Camp at Glacier Meadows",
+          "detail": "Descend the Blue Glacier and lateral moraine to camp."
+         }
+        ],
+        "objective": "Climb Mount Mathias via the snow finger and Class 4 ridge, then descend to Glacier Meadows"
+       },
+       {
+        "n": 5,
+        "note": "A long, mostly downhill trail day from Glacier Meadows past Elk Lake and Lewis Meadow back to the Hoh trailhead, finishing the traverse.",
+        "hours": 8,
+        "miles": 17.6,
+        "title": "Hoh River exit",
+        "gainFt": 200,
+        "lossFt": 3900,
+        "packLb": 30,
+        "schedule": [],
+        "objective": "Hike out to the Hoh Rain Forest trailhead"
+       }
+      ],
+      "totalNote": "A serious point-to-point traverse from Sol Duc to the Hoh, roughly 55 miles and ~11,000 ft of gain over 5 days, tagging Mathias's loose Class 4 summit near Glacier Pass along the way with a roped glacier crossing on summit day."
+     },
+     "value": {
+      "cal": "Needs an Olympic National Park wilderness permit for the nights at Glacier Meadows. The route is in condition roughly July to September, and it goes faster and more safely while the snow finger still holds snow rather than bare ice or scree.",
+      "days": [
+       {
+        "n": 1,
+        "title": "Hoh trailhead to Glacier Meadows",
+        "objective": "Reach the Glacier Meadows base camp",
+        "note": "The long, mostly gentle Hoh River Trail through the rainforest, climbing steadily only in the last few miles out of the valley. A washed-out section near the top is crossed on a fixed ladder. Packs carry full glacier kit.",
+        "schedule": []
+       },
+       {
+        "n": 2,
+        "title": "Blue Glacier, Glacier Pass and the Mathias summit",
+        "objective": "Climb Mount Mathias by the snow finger or the Mercury-Mathias col and return to camp",
+        "note": "Take the way trail to the Blue Glacier moraine, rope up and cross the glacier toward Snow Dome, then traverse the upper Hoh Glacier to Glacier Pass. Climb the steep snow finger between Mathias and the pass, or the gullies to the Mercury-Mathias col, to Class 4 rock on the summit ridge. Reverse the climb and recross the glaciers to Glacier Meadows. Mount Mercury is often added from the col.",
+        "schedule": []
+       },
+       {
+        "n": 3,
+        "title": "Hike out",
+        "objective": "Walk back down the Hoh River Trail to the trailhead",
+        "note": "A long, mostly downhill trail day back to the Hoh Rain Forest Visitor Center.",
+        "schedule": []
+       }
+      ],
+      "totalNote": "An out-and-back from the Hoh: a long trail day in to Glacier Meadows, a roped glacier day to Glacier Pass and the summit ridge, and the walk out. Many parties add a spare day for weather or climb Mathias alongside Mount Olympus."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 42,
+      "summitTimeHrs": 12,
+      "descentTimeHrs": 8,
+      "approachTimeHrs": 22,
+      "recommendedStart": "4:30 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": 7,
+        "note": "Start at the Sol Duc trailhead, climb through Deer Lake to High Divide, then continue the ridgeline past Cat Basin to a high camp near Eleven Bull Basin. Packs are heaviest here — …",
+        "fromTo": "Sol Duc to High Divide / Eleven Bull Basin",
+        "section": "Approach"
+       },
+       {
+        "hrs": 7,
+        "note": "Sidehill, mostly off-trail travel across the Baileys' famous narrow \"catwalk\" ridge sections below Mt Carrie and Stephen Peak, dropping into Ferry Basin to camp. Slow-going scree a…",
+        "fromTo": "The Catwalks to Ferry Basin",
+        "section": "Approach"
+       },
+       {
+        "hrs": 8,
+        "note": "Cross Bear Pass and Queets Basin, work around the Humes Glacier and Blizzard Pass, and drop to Camp Pan — the classic promontory camp used as the staging point for Mathias, Mercury…",
+        "fromTo": "Bear Pass to Camp Pan",
+        "section": "Approach"
+       },
+       {
+        "hrs": 12,
+        "note": "Rope up and descend onto the Hoh Glacier, cross to Glacier Pass, stash packs, and climb the steep snow finger between Mathias and the pass to Class 4 rock on the summit ridge. Reve…",
+        "fromTo": "Glacier Pass and the Mathias summit",
+        "section": "Climb"
+       },
+       {
+        "hrs": 8,
+        "note": "A long, mostly downhill trail day from Glacier Meadows past Elk Lake and Lewis Meadow back to the Hoh trailhead, finishing the traverse.",
+        "fromTo": "Hoh River exit",
+        "section": "Descent"
+       }
+      ]
+     },
+     "value": {
+      "totalHrs": null,
+      "summitTimeHrs": null,
+      "descentTimeHrs": null,
+      "approachTimeHrs": null,
+      "recommendedStart": "4:30 AM from Glacier Meadows"
+     }
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_mathias_scramble",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "find": "remote Bailey Range traverse terrain",
+     "replace": "remote glaciated terrain far from the road"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_mathias_scramble",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "between Camp Pan and Glacier Pass",
+     "replace": "on the way to Glacier Pass"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_mathias_scramble",
+     "column": "descent_text",
+     "path": [],
+     "find": " If this climb is combined with the full Bailey Range Traverse, the alternate exit continues north from High Divide back to the Sol Duc trailhead instead.",
+     "replace": ""
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_mathias_scramble",
+     "column": "descent_text",
+     "path": [],
+     "find": "and the same unstable Hoh Lake Slide sidehill on the way out",
+     "replace": "and the washed-out section of the Hoh River Trail, crossed on a fixed ladder, on the way out"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Upper Hoh Road (Hoh approach) or Sol Duc Hot Springs Road (Bailey Range Traverse approach)",
+     "value": "Upper Hoh Road"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_mathias_scramble",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Paved to both trailheads;",
+     "replace": "Paved to the trailhead;"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "Hoh: ~19 mi off US-101 via Upper Hoh Road to the Hoh Rain Forest Visitor Center. Sol Duc: ~30 mi west of Port Angeles on US-101, then 14 mi up Sol Duc Hot Springs Road to trailhead.",
+     "value": "About 19 mi off US-101 via the Upper Hoh Road to the Hoh Rain Forest Visitor Center."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "expect": "Late July-August during the short snow-free window, timed with Bailey Range Traverse permits; even then most parties report seeing few or no other groups once off the maintained trail system",
+     "value": "Late July-August during the short snow-free window; Mount Olympus parties use the same trail and the Blue Glacier, but few go on to Mathias"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "expect": "Very low - likely single digits to low teens of parties per season; this is reached only via the multi-day Bailey Range Traverse, one of the Olympics' most committing off-trail routes",
+     "value": "Very low - a seldom-climbed peak, most often done as a side trip from a Mount Olympus trip out of Glacier Meadows"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "partner_requirements",
+     "path": [],
+     "expect": {
+      "fitnessSpec": {
+       "hiking": "Very high endurance for consecutive long days (typically 4-8+ days) with significant elevation gain/loss and off-trail travel over talus, heather, and snowfields",
+       "packWeight": "Multi-day expedition load (overnight/backpacking gear, food for a week+, bear canister) typically 35-50+ lb"
+      },
+      "approachTime": "Multi-day approach; Mathias is reached only as part of the several-days-long Bailey Range Traverse, not a single-day approach",
+      "requiredSkills": [
+       "off-trail navigation and route-finding (map/compass/GPS) in featureless or complex terrain",
+       "exposed Class 3 scrambling with a pack, and Class 4 on the summit ridge",
+       "steep snowfield/glissade travel and self-arrest",
+       "stream/river crossing judgment",
+       "self-sufficient wilderness travel and self-evacuation given remote location"
+      ],
+      "experienceLevel": "Advanced backcountry traveler with prior multi-day off-trail/cross-country navigation experience; comfortable on sustained Class 3 terrain with a loaded overnight pack and unmarked route-finding through remote alpine terrain"
+     },
+     "value": {
+      "fitnessSpec": {
+       "hiking": "Very high endurance for consecutive long days with significant elevation gain and loss: a long trail approach, then roped glacier travel and loose scrambling on summit day",
+       "packWeight": "Multi-day load with glacier kit, overnight gear, several days of food and a bear canister, typically 35-50+ lb"
+      },
+      "approachTime": "Multi-day approach: the Hoh River Trail to Glacier Meadows, then roped travel on the Blue and Hoh glaciers to Glacier Pass",
+      "requiredSkills": [
+       "roped glacier travel and crevasse rescue",
+       "route-finding on glaciers in poor visibility (map/compass/GPS)",
+       "steep snow travel and self-arrest",
+       "exposed Class 4 scrambling on loose rock",
+       "self-sufficient wilderness travel and self-evacuation given the remote location"
+      ],
+      "experienceLevel": "Advanced backcountry traveler with glacier-travel and crevasse-rescue experience, comfortable on steep snow and exposed, loose Class 4 rock far from help"
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "seasonal_guidance",
+     "path": [
+      "optimalWindow"
+     ],
+     "expect": "Late July through September - the short window when the Bailey Range is reliably snow-free enough for the traverse",
+     "value": "Mid-July through August - enough snow remains on the snow finger and the glaciers before late-season bare, more crevassed ice"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "expect": "Most reliable snow-free window for the scramble and off-trail traverse terrain",
+     "value": "Most reliable window: settled weather while the snow finger still holds snow, though the glaciers open up late in the month"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_mathias_scramble",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "given the multi-day, off-trail nature of the approach",
+     "replace": "given the multi-day approach and the glacier crossings"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_mathias_scramble",
+     "column": "rope_note",
+     "path": [],
+     "find": "Bailey Range Scramble sits within the broader Bailey Range Traverse: permanent snowfields and crevassed glacier terrain (Hoh Glacier vicinity) require rope for glacier-travel legs;",
+     "replace": "The Blue and Hoh glaciers on the approach are crevassed and require a rope;"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_mathias_scramble",
+     "column": "corrections",
+     "path": [],
+     "expect": "Distinguish from a dry-rock Class 4 scramble elsewhere — glacier travel gear is warranted by the route's proximity to permanent snow/glacier per Bailey Range Traverse trip reports.",
+     "value": "Distinguish from a dry-rock Class 4 scramble elsewhere: glacier travel gear is required because the Blue and Hoh glaciers must be crossed to reach the peak."
+    }
+   ],
+   "pin_followups": [
+    "waypoints[1..5] (High Divide, Eleven Bull Basin, Ferry Basin, Blizzard Pass, Camp Pan) are Bailey Range traverse points and are not on the Hoh line; remove them and add pins for Glacier Meadows, the Blue Glacier moraine / Snow Dome and Glacier Pass. The distMi values on waypoints[6] (27.5) and the summit (28.5) are traverse distances and should be re-measured along the Hoh line.",
+    "gain_ft 6,130 is below the summit-minus-trailhead difference (7,156 - 578 ft) and dist_km 91.73 fits a traverse; only one source gives a Hoh round-trip figure (45 mi, 7,000 ft), so both columns were left for a measured value."
+   ]
+  }
+ ]
+}

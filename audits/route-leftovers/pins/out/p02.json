@@ -1,0 +1,14 @@
+{"results": [
+ {"id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+  "verdict": "confirmed",
+  "summary": "The outlet-dam crossing pin sat on the small saddle dam on the lake's west side, so it moves to the real outlet dam at the lake's north end; the lake pin, which sits mid-lake, is renamed from 'east shore' to plain 'Colchuck Lake'.",
+  "evidence": "Pin 2 'Outlet dam creek crossing' (47.4948,-120.8362) matches the dam inventory's Colchuck Lake SADDLE dam (47.49476,-120.83613, west side of the lake), not the outlet. The main Colchuck Lake Dam is listed at 47.49826,-120.83274, and OpenStreetMap starts the outlet stream at 47.49839,-120.83256 with the mapped 'Balanced Rock climber's access trail' beginning beside it at 47.49837,-120.83246 — agreement within ~25 m, and it matches the route text (small dam at the north end, cross the outlet, continue on the far side). Moved to 47.49832,-120.83265; ground 5560 ft. Pin 1 (47.4919578,-120.8335801) is the lake centroid used by ~20 other routes (OSM lake centre 47.49314,-120.83325, ~130 m) and sits in the water, so it cannot be an 'east shore'; renamed rather than moved, since no source places the point the text means. Pins 0 (trailhead, within ~30 m of OSM's Stuart Lake Trailhead), 3 (rock step, ~70 m off the mapped climbers' trail), 4 (boulder camp) and 5 (col) have no published coordinates to check against and are left; note pin 3 stores 6000 ft where the ground reads ~6680 ft and pin 4 stores 7400 ft where the ground reads ~7800 ft — heights not changed because the pins are not moved. The finding about dist_km is not a pin issue and is not addressed here.",
+  "sources": ["https://damlookup.com/dam/wa00227", "https://damlookup.com/dam/wa00226", "https://api.openstreetmap.org/api/0.6/map.json?bbox=-120.8360,47.4970,-120.8300,47.5000", "https://nominatim.openstreetmap.org/search?format=json&q=Colchuck%20Lake"],
+  "pin_ops": [
+    {"op":"move_pin","id":"wa_colchuck_balanced_rock_col_east_lake_side_approch","index":2,"expect":{"name":"Outlet dam creek crossing","lat":47.4948,"lng":-120.8362},
+     "lat":47.49832,"lng":-120.83265,"elev":5560,"sources":["https://damlookup.com/dam/wa00227","https://api.openstreetmap.org/api/0.6/map.json?bbox=-120.8360,47.4970,-120.8300,47.5000"]}
+  ],
+  "ops": [
+    {"op":"set","id":"wa_colchuck_balanced_rock_col_east_lake_side_approch","column":"waypoints","path":[1,"name"],"expect":"Colchuck Lake, east shore","value":"Colchuck Lake"}
+  ]}
+]}

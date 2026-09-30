@@ -56,3 +56,6 @@ wrong too, so it only counts as corroboration when an outside source agrees (wit
 Paths use the CURRENT indexes (text ops run before any pin is removed). Never put `lat`/`lng` in `ops`.
 Text rules: never write a URL, a site/guidebook/person name, "according to", or "trip reports say"; state facts
 plainly in your own words. Check every `find` occurs exactly once and every `expect` equals the current value.
+
+## Save as you go
+After finishing EACH route, rewrite your output file with every result so far (valid JSON each time), so work survives if you are cut off.

@@ -31,3 +31,6 @@ format) with these differences:
 
 Before writing, check every `find` occurs exactly once in the current row text and every `expect` equals the
 current value. Every input route must appear in `results`.
+
+## Save as you go
+After finishing EACH route, rewrite your output file with every result so far (valid JSON each time), so work survives if you are cut off.

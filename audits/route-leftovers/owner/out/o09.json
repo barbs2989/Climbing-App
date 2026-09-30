@@ -1,0 +1,136 @@
+{
+ "results": [
+  {
+   "id": "wa_the_rake_traverse_route",
+   "verdict": "unresolved",
+   "resolution": "leave (no sourced figure to write)",
+   "summary": "The summit-day climb of 1,600 ft on The Rake is unsourced, but no published account gives a better figure, so it stays until someone records the real one.",
+   "evidence": "No trip report, first-ascent account or guide found states a summit-day or car-to-car gain for The Rake; the published ascents (the 2003 Southern Pickets enchainment and later traverse parties) give no per-day gain. The 'impossible' reading assumes a 6,050 ft camp and a 7,869 ft summit, but the row's own Crescent Creek high-camp pin is 6,200 ft, the basin is camped at several benches (a 6,400 ft camp on the Chopping Block ridge is documented), and outside lists split between 7,840 and 7,869 ft for the summit, so 1,600 ft is low but not provably impossible from a high bench. Nulling the day's gain would make the Trip plan TOTAL read 6,100 ft, worse than now, and a computed replacement is not allowed. Settled by a party recording its camp height and summit-day climb.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+    "https://www.peakbagger.com/peak.aspx?pid=38258",
+    "https://www.listsofjohn.com/PeakStats/Climbers.php?Id=48962",
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington"
+   ],
+   "ops": [],
+   "pin_followups": [
+    "approach_logistics.peakLat/peakLng (48.768, -121.288) is not The Rake's summit; the summit waypoint and the area record agree at 48.7755, -121.3067."
+   ]
+  },
+  {
+   "id": "wa_mount_hopper_standard",
+   "verdict": "confirmed",
+   "resolution": "leave (closure stated in the three fields that still read as open)",
+   "summary": "Both trails to Mount Hopper are still closed after the 2025 fire; three places on the page that still read as if the trip can be done now now say so.",
+   "evidence": "The park's wilderness trail-conditions page (updated 29 Sep 2026) lists the North Fork Skokomish Trail from Staircase to First Divide and the Home Sweet Home Trail from First Divide to the Duckabush junction as closed for the Bear Gulch Fire, with the Duckabush River Trail itself open. The park's fire-closure page (updated 18 Sep 2026) keeps the North Fork Skokomish Trail closed to Home Sweet Home and lists Camp Pleasant, Nine Stream, Two Bear and First Divide camps as closed. The overview, approach, closures, drive note, variant, tips and warnings already state this; the beta, the descent's closing sentence and the itinerary calendar did not.",
+   "sources": [
+    "https://www.nps.gov/olym/planyourvisit/wilderness-trail-conditions.htm",
+    "https://www.nps.gov/olym/planyourvisit/fire-conditions-and-updates.htm"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_mount_hopper_standard",
+     "column": "beta",
+     "path": [],
+     "find": "Most parties backpack in and camp at Home Sweet Home (just below First Divide) to split the approach over two days.",
+     "replace": "Most parties backpack in and camp at Home Sweet Home (just below First Divide) to split the approach over two days. The Staircase trail, the Home Sweet Home Trail and the camps along them are currently closed after the 2025 Bear Gulch Fire, so check the park's trail status first."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_hopper_standard",
+     "column": "descent_text",
+     "path": [],
+     "find": "If the historic Staircase approach reopens in the future, the equivalent reversal would instead drop from First Divide down the North Fork Skokomish Trail to Staircase.",
+     "replace": "Both trails off First Divide, the Home Sweet Home Trail toward the Duckabush and the North Fork Skokomish Trail to Staircase, are currently closed after the 2025 Bear Gulch Fire; once the Staircase side reopens, the equivalent reversal drops from First Divide down the North Fork Skokomish Trail instead."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_hopper_standard",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "some parties extend to 5 days to also tag nearby Mount Steel from a First Divide camp.",
+     "replace": "some parties extend to 5 days to also tag nearby Mount Steel from a First Divide camp. The North Fork Skokomish Trail and its camps (Camp Pleasant, Nine Stream, Two Bear, First Divide) are closed after the 2025 Bear Gulch Fire, so this plan cannot be followed until the park reopens them."
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "verdict": "confirmed",
+   "resolution": "leave",
+   "summary": "This page is for Ares Tower and does not carry the wrong 7,663 ft Vasiliki Tower height; that figure lives on the Vasiliki Tower route pages, so nothing changes here.",
+   "evidence": "The row holds no 7,663 ft figure or any Vasiliki Tower elevation: its heights are Ares Tower's (summit pin 8,203 ft, high point 8,190 ft) and Burgundy Col's 7,800 ft, and Ares Tower lies north of and above the col. The earlier audit records the 7,663 ft summit-below-col contradiction on the Vasiliki Tower rows wa_northwest_face and wa_south_face, which belong to a different area and are handled with those rows.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vasiliki_Ridge",
+    "https://www.countryhighpoints.com/ares-tower-and-the-acropolis/"
+   ],
+   "ops": [],
+   "pin_followups": [
+    "The 7,663 ft Vasiliki Tower summit (below the 7,800 ft Burgundy Col) sits on wa_northwest_face and wa_south_face, not on this row."
+   ]
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "verdict": "confirmed",
+   "resolution": "leave (clear the unsourced 7,337 ft on the duplicate Junction pin)",
+   "summary": "A duplicate pin sitting on the summit of this climb still claimed 7,337 ft against the 7,840 ft summit; that unsupported height is cleared, and the area record has no elevation to fix.",
+   "evidence": "The route tops out on the summit of the Blob (also called The Rake), which two peak lists give as 7,840 ft, matching high_point_ft and the Summit pin. waypoints[1] is a Junction pin with the same name and coordinate as the Summit pin carrying 7,337 ft, a figure no source gives for the summit, the route's base or any junction. The Ed Wood Memorial Buttress area record's elevation_ft is null (read live), so it does not carry 7,337 and is left alone: a buttress on the peak should not take the summit height.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200713301",
+    "https://stephabegg.com/trip-reports/washington/pickets/",
+    "https://en.wikipedia.org/wiki/Picket_Range"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_plan_9_from_outer_space",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 7337,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_plan_9_from_outer_space",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": 7337,
+     "value": null
+    }
+   ],
+   "pin_followups": [
+    "waypoints[1] (Junction, 'Ed Wood Memorial Buttress') duplicates the Summit pin's coordinate 48.7716, -121.28356; it should be moved to a real junction or removed. The area coordinate (48.7716, -121.28356) is also about 1.8 km from The Rake area's summit coordinate (48.7755, -121.3067), though the climb tops out on that summit."
+   ]
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "verdict": "confirmed",
+   "resolution": "leave (area record corrected)",
+   "summary": "East Fury's area record still said 8,356 ft while its routes say 8,322 ft; the area is set to 8,322 ft.",
+   "evidence": "The live wa_mount_fury_east area record reads elevation_ft 8,356, the old theodolite figure. A 2024 differential-GPS survey measured East Fury's summit at 8,321.5 ft (superseding the earlier theodolite result, whose error bounds were several feet), and an independent lidar-based peak list gives 8,325 ft; both put it near 8,322 ft and neither supports 8,356. This row's overview and high_point_ft already use 8,322 ft.",
+   "sources": [
+    "https://www.countryhighpoints.com/east-fury-survey/",
+    "https://listsofjohn.com/peak/48772"
+   ],
+   "ops": [
+    {
+     "op": "area_set",
+     "area_id": "wa_mount_fury_east",
+     "column": "elevation_ft",
+     "expect": 8356,
+     "value": 8322
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}

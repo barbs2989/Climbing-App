@@ -1,0 +1,64 @@
+{
+ "file": "u001",
+ "results": [
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "fact": "Approach mileage/gain figures citing the wrong route's trailhead (Scatter Lake)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled on retry. The partner_requirements figures (Scatter Lake ~11 mi RT / 5,200 ft) are genuine for the south-side standard route (an FKT route page gives 11.3 mi / 5,300 ft via Scatter Lake), not for the North Ridge. But which approach the North Ridge row should present (North Creek vs Wolf Creek/Gardner Meadows) is itself unresolved (next result), so the figures cannot be replaced without choosing one; no car-to-car distance/gain for either north-side approach was found in two agreeing sources.",
+   "sources": [
+    "https://fastestknowntime.com/route/abernathy-peak-wa",
+    "https://www.whereiskylemiller.com/highway-20/abernathy-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "fact": "Which approach/trailhead the North Ridge uses (North Creek Trail #413 + mine trail vs Wolf Creek/Gardner Meadows; Trailhead waypoint named Scatter Creek at 3,150 ft)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Searches again surface only one description of the North Creek approach (North Creek TH 3,660 ft, 25 mi from Twisp, old mine trail leaving at ~2 mi, crossing the creek east, 1.5-2 mi to a 7,680+ ft saddle 0.6 mi north of the summit) — it is the peak's main route page, which could not be fetched (403) and is repeated only in search snippets. Every trip report found (Wolf Creek/Gardner Meadows, tarn, spur ridge, mine on the crest) comes from the Wolf Creek side, and a separate report climbs a Northwest Ridge from Cedar Creek. WTA trip reports that might confirm the North Creek mine trail returned 403. With one source for North Creek and the row split between the two approaches, nothing is patched; the Trailhead waypoint (Scatter Creek name/coords but a North Creek note) should be rewritten once the approach is chosen.",
+   "sources": [
+    "https://www.summitpost.org/abernathy-peak/152230",
+    "https://cascadeclimbers.com/forum/topic/103635-tr-abernathy-peak-northwest-ridge-08222020/",
+    "https://www.countryhighpoints.com/abernathy-and-the-gardners/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_north_ridge_7",
+   "fact": "Approach distance to Boston Basin high camp: itinerary ~2.5 mi vs approach prose roughly 3-4 miles one-way",
+   "verdict": "fixed",
+   "correct_value": "About 3-4 miles one way (~3,000 ft gain) from the Boston Basin trailhead to high camp",
+   "evidence": "A guide service describes the approach as roughly 3-4 hours to camp with 3,000 ft of gain over 3 miles on a rough climbers trail; a second, independent guide service gives 3-4 miles for the Boston Basin approach. Both put the approach at 3 miles or more, so the itinerary figure of ~2.5 mi is the outlier against the approach prose (3-4 mi one-way) and dist_km (6 km). Only the itinerary string is changed.",
+   "sources": [
+    "https://blackbirdguides.com/products/forbidden-peak-west-ridge",
+    "https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_north_ridge_7",
+     "fact": "Approach distance to Boston Basin high camp: itinerary ~2.5 mi vs approach prose roughly 3-4 miles one-way",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "hike ~2.5 mi / ~3,000 ft gain to high camp",
+     "replace": "hike ~3-4 mi / ~3,000 ft gain to high camp"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "fact": "Descent method: rappels/itinerary say descend via the North Ridge (1 rappel), but descent/descent_text/bail describe reversing the South Ridge itself",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry searches found no second description of how South Ridge parties descend. A route photo caption only identifies the South Ridge as the left skyline and the North Ridge as the right; the guide-service profile covers only the North Ridge's own descent (one 40-ft rappel then reverse that ridge); no trip report of the South Ridge surfaced. The only source addressing it (already tried) says descend the North Ridge, which remains the likely answer, but the two-source rule is not met, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/photo/109252871/the-aiguille-de-lm-boston-basin-north-cascades-national-park-the-south-ridge-is-",
+    "https://www.mountainproject.com/area/109252144/aiguille-de-lm"
+   ],
+   "patches": []
+  }
+ ]
+}

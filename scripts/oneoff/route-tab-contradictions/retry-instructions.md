@@ -23,3 +23,6 @@ and the tab map it names, with <AUDIT_DIR> = audits/route-tab-contradictions), w
 Output format, patch format and text rules are exactly those of research-instructions.md. Write ONE output file per
 input file, at `audits/route-tab-contradictions/research/out/<same name>.json` (e.g. `u007.json`), with
 `"file": "u007"`.
+
+## Save as you go
+After finishing EACH route, rewrite your output file with every result so far (valid JSON each time), so work survives if you are cut off.

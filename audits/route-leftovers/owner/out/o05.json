@@ -1,0 +1,363 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_claywood_standard",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this as the Obstruction Point line over Grand Pass, Cameron Pass and Lost Pass (the line its trailhead, road, permits, waypoints, itinerary and exit already describe), and rewrite the approach, descent, beta and route-breakdown text that described a wrong-way shortcut from Grand Pass or the Dosewallips/Hayden Pass line.",
+   "evidence": "The Dosewallips road to the Hayden Pass line has been washed out since 2002, adding a long road walk, while the row's trailhead card, road, access, pins, itinerary, timing and descent all already follow the Obstruction Point line. Two backpacking reports describe the trail from Obstruction Point over Grand Pass, down into Cameron Basin, steeply over Cameron Pass and on to Lost Pass (one camped at Upper Cameron at 10.4 mi, another reached Lost Pass at 12.5 mi); the steep path from Dose Meadows to Lost Pass is under a mile. Lost Pass (47.807,-123.342) lies about 1.4 mi east-northeast of Claywood's summit (47.801,-123.370), and a high-route report links Lost Pass to Claywood off-trail. The easiest route is rated class 2, and an ascent log records a brief class 3 stretch on the west side of the summit. The old approach text sent parties cross-country east-northeast from Grand Pass, but the peak lies about 5 mi south of Grand Pass. Not changed (only one source each, so left as they are): the itinerary's day-1 7 mi and 21.5 mi round-trip figures, and the Cameron Pass pin's 7.6 mi, all look short against the 10.4-12.5 mi those reports give to Upper Cameron and Lost Pass.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Claywood",
+    "https://en.wikipedia.org/wiki/Lost_Pass",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-09-06-6969362263",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-08-24-3147745203",
+    "https://peakery.com/mount-claywood-washington/",
+    "https://grokipedia.com/page/mount_claywood",
+    "https://www.nwhikers.net/forums/viewtopic.php?t=8032474",
+    "http://www.protrails.com/trail/584/olympic-national-park-cameron-pass"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_claywood_standard",
+     "column": "approach",
+     "path": [],
+     "expect": "From the Obstruction Point Trailhead (6,150 ft) — reached via the narrow, unpaved Obstruction Point Road that branches off Hurricane Ridge Road just below Hurricane Ridge — follow the Grand Pass Trail as it climbs onto and traverses Lillian Ridge. The first mile-plus is an easy, open ridge walk (the unmarked boot path up the Lillian Ridge Way / Elk Mountain high route splits off here for those doing the ridge-top variation instead). The trail then drops into the Grand Lake basin before climbing steadily to Grand Pass (6,488 ft) at roughly 5.95 mi and only a few hundred feet of net gain from the trailhead but close to 2,000 ft of total climbing, because the trail first loses well over 1,000 ft into the lake basin. Seasonal tarns in the Grand Lake basin below the pass are the last reliable water before the climb to the pass — fill up there, since water on the open ridge is unreliable. From Grand Pass the maintained trail ends for this objective: the route to Claywood's summit continues cross-country, dropping a few hundred feet down loose scree and shale on the pass's east side into the upper Cameron Creek/Lillian Basin drainage (moderately steep and loose underfoot, worse when wet — this gully is the one approach-specific hazard called out by parties doing this same descent off Grand Pass in trip reports). From the basin floor, contour and climb generally east-northeast across open alpine benches and talus toward the Cameron–Claywood divide, staying below Mount Cameron's north ridge and aiming for the shoulder immediately west/southwest of Claywood's summit block (Claywood's nearest higher neighbor, Mount Cameron, sits about 2.4 mi northeast; Mt. Fromme and Sentinel Peak are just southeast of Claywood in the same cluster). The final several hundred feet to the 6,836 ft summit are class 2–3 scrambling on broken shale and loose scree — similar in character to the well-documented scramble route on neighboring Lost Peak in the same basin system. This whole cross-country stretch beyond Grand Pass (roughly 4–5 mi round trip of the route's total ~21.5 mi) is unmarked, off-trail, and route-finding is real: bring a topo/GPS track and only attempt it with good visibility, since the terrain is used almost exclusively by peak-baggers linking Claywood with Cameron, Fromme, Lost, and Sentinel rather than by any constructed path.",
+     "value": "From the Obstruction Point Trailhead (6,150 ft), reached by the narrow, unpaved Obstruction Point Road that leaves Hurricane Ridge Road just below Hurricane Ridge, follow the Grand Pass Trail along open Lillian Ridge, then down into Grand Valley past Grand and Moose Lakes and up past Gladys Lake to Grand Pass (6,488 ft) at about 6 miles. Net gain to the pass is only a few hundred feet, but the trail first loses well over 1,000 ft into the valley, so total climbing to the pass is close to 2,000 ft. Beyond Grand Pass the trail drops steeply into Cameron Basin, then climbs steeply to Cameron Pass (6,448 ft), the highest trail-served pass in the park; the last part of that climb is loose and rocky in spots and holds snow into midsummer. From Cameron Pass the primitive trail descends into Lost Basin at the head of the Lost River and continues to Lost Pass (5,570 ft), the low notch between Lost Peak and Claywood. Parties camp in Upper Cameron Basin or in Lost Basin and climb the peak from there. At Lost Pass leave the trail and head west-southwest across open heather benches and talus toward Claywood, the higher, greyer and more broken summit about a mile and a half away. The final several hundred feet are class 2-3 scrambling on broken shale and loose scree, with a short class 3 step on the west side of the summit block. Everything beyond Lost Pass is unmarked and off-trail, so carry a map and GPS and go only in good visibility."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_claywood_standard",
+     "column": "descent_text",
+     "path": [],
+     "expect": "This is a walk-off/downclimb — no rappelling is involved. From the summit, reverse the class 2–3 scramble down to the shoulder on the Cameron–Claywood divide, then descend back into the upper Cameron Creek/Lillian Basin drainage on the same talus and open benches used on the way up. Regain Grand Pass by climbing the loose scree/shale slope on the basin's west side; this slope is notably looser and more insecure on the reascent than it felt going down, so expect slow, careful travel with some hand use, and glissadeable snow patches here in early season instead. From Grand Pass, follow the Grand Pass Trail back over Lillian Ridge to the Obstruction Point Trailhead. Watch for afternoon thunderstorm buildup over the exposed ridge on the final miles, and budget real time for the cross-country middle section in both directions — at roughly 21.5 mi / 34.6 km round trip with a significant off-trail component, this is a trip built around a basin camp rather than a single day, and parties should reverse-navigate carefully rather than assume the outbound track is easy to retrace.",
+     "value": "This is a walk-off and downclimb; no rappels are needed. Reverse the class 2-3 scramble carefully on the loose shale, then return east-northeast over the talus and heather benches to Lost Pass and back to camp. To exit, climb out of Lost Basin to Cameron Pass, descend steeply into Cameron Basin, climb back over Grand Pass and follow the Grand Pass Trail through Grand Valley and along Lillian Ridge to Obstruction Point. The loose, steep ground on both sides of Cameron Pass is slower than it looks, and snow can linger there early in the season. Watch for afternoon thunderstorms on the exposed ridge on the final miles. This is a multi-day trip built around a basin camp, not a single day."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_claywood_standard",
+     "column": "beta",
+     "path": [],
+     "expect": "Claywood has no maintained summit trail. Parties approach via the Dosewallips River Trail to Dose Meadows, then climb the short but very steep unmaintained path to Lost Pass (5,570 ft) on the ridge between Lost Peak and Claywood, and finally leave the trail entirely for a cross-country scramble over talus, heather benches, and loose rock to the 6,836 ft summit. It is almost always combined with neighboring Lost Peak, Mount Fromme, and/or Sentinel Peak from a single Dose Meadows or Lost Pass camp, since the approach itself is a multi-day undertaking.",
+     "value": "Claywood has no maintained summit trail. This line starts at Obstruction Point and follows the Grand Pass Trail over Grand Pass, down into Cameron Basin and steeply up over Cameron Pass, then drops into Lost Basin at the head of the Lost River below Lost Pass. From Lost Pass (5,570 ft) the route leaves the trail and heads west-southwest over heather benches, talus and loose shale to the 6,836 ft summit. It is often combined with Lost Peak, Mount Fromme or Sentinel Peak from the same camp. The southern way in, a long valley walk up the Dosewallips to Dose Meadows and then the short, very steep path to Lost Pass, reaches the same pass."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_claywood_standard",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "Class 1",
+       "notes": "About 5.5-6.5 miles of road walking/biking from the current vehicle washout to the Dosewallips Ranger Station (~1,540 ft).",
+       "pitch": "Road walk"
+      },
+      {
+       "grade": "Class 1 trail",
+       "notes": "About 14.9 miles of maintained trail (NPS figure) from the ranger station, past Dose Forks, Deception Creek, Bear Camp, and Dose Meadows camps, to Hayden Pass (~5,847 ft).",
+       "pitch": "Dosewallips River Trail to Hayden Pass"
+      },
+      {
+       "grade": "Class 2",
+       "notes": "Off-trail travel along the barrier ridge near Hayden Pass, crossing meadow, heather, and slide-alder brush to Mount Claywood's summit — the line used by The Mountaineers' 1920 outing party.",
+       "pitch": "Barrier ridge to summit"
+      }
+     ],
+     "value": [
+      {
+       "grade": "Class 1 trail",
+       "notes": "About 6 miles on the Grand Pass Trail from Obstruction Point along Lillian Ridge, down through Grand Valley and up to Grand Pass (6,488 ft), with close to 2,000 ft of total climbing.",
+       "pitch": "Grand Pass Trail to Grand Pass"
+      },
+      {
+       "grade": "Class 1 trail",
+       "notes": "A steep descent into Cameron Basin, then a steep climb, loose and rocky in spots, to Cameron Pass (6,448 ft). Snow lingers on the pass into midsummer.",
+       "pitch": "Cameron Basin and Cameron Pass"
+      },
+      {
+       "grade": "Class 1 primitive trail",
+       "notes": "Down from Cameron Pass into Lost Basin at the head of the Lost River and on to Lost Pass (5,570 ft), the notch between Lost Peak and Claywood.",
+       "pitch": "Lost Basin to Lost Pass"
+      },
+      {
+       "grade": "Class 2-3",
+       "notes": "Off-trail west-southwest from Lost Pass over heather benches and talus, finishing on broken shale and loose scree with a short class 3 step on the west side of the summit block.",
+       "pitch": "Lost Pass to the summit"
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_claywood_standard",
+     "column": "climbing_route",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "class": "class 2-3",
+       "label": "Summit block from the west/southwest shoulder",
+       "notes": "The final several hundred feet to the 6,836 ft summit are scrambling on broken shale and loose scree, from the shoulder immediately west/southwest of Claywood's summit block."
+      }
+     ],
+     "value": [
+      {
+       "n": 1,
+       "class": "class 2-3",
+       "label": "Lost Pass to the summit",
+       "notes": "Leave the trail at Lost Pass and climb west-southwest off-trail over heather benches and talus. The final several hundred feet to the 6,836 ft summit are scrambling on broken shale and loose scree, with a short class 3 step on the west side of the summit block."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_claywood_standard",
+     "column": "obj_haz",
+     "path": [
+      1
+     ],
+     "expect": "lingering snow/ice near Hayden Pass and above into early-mid summer",
+     "value": "lingering snow and ice on Cameron Pass and the upper slopes into midsummer"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_claywood_standard",
+     "column": "obj_haz",
+     "path": [
+      2
+     ],
+     "expect": "black bear activity in the Dosewallips corridor (bear canister required)",
+     "value": "black bear activity in the backcountry (bear canister required)"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_claywood_standard",
+     "column": "obj_haz",
+     "path": [
+      4
+     ],
+     "expect": "difficult off-trail route-finding above Hayden Pass",
+     "value": "difficult off-trail route-finding beyond Lost Pass"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_claywood_standard",
+     "column": "comms",
+     "path": [],
+     "find": "in the Dosewallips valley, at Hayden Pass, or on the barrier ridge",
+     "replace": "on the Grand Pass and Cameron Pass trails, in Lost Basin, or on the off-trail summit slopes"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_claywood_standard",
+     "column": "climate",
+     "path": [
+      "spring"
+     ],
+     "expect": "Snow lingers at Hayden Pass and on the barrier ridge well into early summer; the pass typically doesn't melt out until mid-July.",
+     "value": "Snow lingers on Grand Pass, Cameron Pass and the upper slopes well into early summer; the passes typically do not melt out until mid-July."
+    }
+   ],
+   "pin_followups": [
+    "Cameron Pass pin (47.9485,-123.2591) sits far northeast of both Grand Pass and the summit; move it to the mapped pass. Its distMi of 7.6 also looks short (another trail listing puts the pass about 11 mi from Obstruction Point) but only one source gives that, so it was not changed.",
+    "Upper Cameron Basin high camp pin has no coordinate. The itinerary camps in Lost Basin, so either the pin or the itinerary camp needs to be settled when the pin is placed."
+   ]
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this as the Meade Glacier route its name, face, gear and season advice already describe, and rewrite the approach, overview, beta, descent, route breakdown and approach card that described the separate Klickton Divide ridge walk or the Conrad Glacier line.",
+   "evidence": "Two route descriptions give the Meade Glacier line from Conrad Meadows: Trail #1120 and the Surprise Lake loop (right fork to its high point), cross-country west into a basin, a short drop to the foot of the Meade, up the glacier (now a series of snowfields) right of the rock band splitting it, to the ridge, then a goat/boot path on the southwest side to a saddle and a short class 2-3 scramble to the summit just west of it. Neither mentions Klickton Divide. The Klickton Divide line (from Warm Lake southwest to the divide, then northwest along the crest) is a separate ridge route with no glacier travel. The Conrad Glacier alternative in the old beta is already its own sibling row. Gilbert Peak's Meade Glacier lies on its southeast slopes, matching the row's SE aspect.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/GoatRocks/Gilbert.htm",
+    "https://www.oregonhikers.org/field_guide/Mt._Curtis_Gilbert",
+    "https://onehikeaweek.com/2019/06/02/gilbert-peak/",
+    "https://en.wikipedia.org/wiki/Gilbert_Peak_(Washington)",
+    "https://mazamas.org/activity/instance/9354/detail/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "overview",
+     "path": [],
+     "expect": "The standard/easiest ascent: a long approach through Conrad Meadows and over Klickton Divide, gaining the Meade Glacier's permanent snowfields on the peak's southeast side and finishing with a short class 3 scramble to the summit block.",
+     "value": "The standard, most straightforward ascent: a long approach through Conrad Meadows and up the Surprise Lake loop trail, then cross-country to the foot of the Meade Glacier on the peak's southeast side, up its snowfields to the ridge, and a short class 3 scramble to the summit."
+    },
+    {
+     "op": "set",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "beta",
+     "path": [],
+     "expect": "From the Conrad Meadows / South Fork Tieton Trailhead, follow Trail #1120 through Conrad Meadows and up toward Warm Lake, then traverse southwest to Klickton Divide and follow the ridge (mixing snow and rock, with Gilbert in view most of the way) toward the summit block. Alternatively, climbers can cross the east side of the Conrad Glacier to the saddle east of the summit, drop onto the Meade Glacier, and climb it (now largely reduced to persistent snowfields rather than a crevassed glacier) to a rock outcrop below the final pitch. Either way, the route tops out with a steep snow/scree slope and a short, loose class 3 scramble through a notch to the true summit. Very popular and rated the most straightforward line up the peak, though it is a long day (~20 miles round trip) with real elevation gain.",
+     "value": "From the Conrad Meadows / South Fork Tieton Trailhead, follow Trail #1120 through Conrad Meadows to the Surprise Lake loop and take its right fork to the trail's high point. Leave the trail there, climb west into a basin, cross it left of some large mounds and drop briefly to the foot of the Meade Glacier. Climb the glacier (now largely a series of persistent snowfields rather than a crevassed glacier) near the center of the cirque, right of the rock band that splits the upper and lower sections, then right of the snow dome to gain the ridge. A rough goat and boot path on the usually snow-free southwest side leads to a small saddle just east of the true summit, and a short, loose class 3 scramble finishes it. Popular and the most straightforward line up the peak, though it is a long outing (~20 miles round trip) with real elevation gain."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "approach",
+     "path": [],
+     "find": "continuing toward Surprise Lake and Warm Lake, then climb southwest to gain Klickton Divide near Point 6,882 before following the ridge northwest toward the summit.",
+     "replace": "continuing to the Surprise Lake loop. Take the loop's right fork to the trail's high point, then leave the trail and climb west into a basin; cross it left of some large mounds and descend briefly to the foot of the Meade Glacier."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "descent",
+     "path": [],
+     "find": "the snowfield, and Klickton Divide back to Conrad Meadows Trail #1120.",
+     "replace": "the Meade Glacier snowfields and the basin back to the Surprise Lake loop and Conrad Meadows Trail #1120."
+    },
+    {
+     "op": "set",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "descent_text",
+     "path": [],
+     "expect": "From the summit, downclimb the same class 3 notch and steep snow/scree slope used on ascent, then follow Klickton Divide back southeast. Rejoin the boot path down through Warm Lake basin and Conrad Meadows to the trailhead. Many parties vary the return via Surprise Lake for scenery; glissading the snowfield below the summit is common in early/mid season when snow is consolidated (self-arrest gear required).",
+     "value": "From the summit, downclimb the short, loose scramble to the small saddle and follow the goat and boot path on the southwest side back to the ridge. Descend the Meade Glacier snowfields past the rock band that splits the upper and lower glacier; glissading is common in early and mid season when the snow is consolidated (self-arrest gear required). Recross the basin to the trail's high point, then follow the Surprise Lake loop and Trail #1120 back through Conrad Meadows to the trailhead."
+    },
+    {
+     "op": "set",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "bail",
+     "path": [],
+     "expect": "The ridge/glacier approach has no major technical commitment below the final summit scramble — parties can retreat along Klickton Divide or back down the snowfield to Warm Lake/Conrad Meadows at essentially any point before the summit notch.",
+     "value": "The glacier line has no major technical commitment below the final summit scramble — parties can retreat down the Meade snowfields and back across the basin to the trail at essentially any point before the summit saddle."
+    },
+    {
+     "op": "set",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": null,
+       "notes": "Trail #1120 through Conrad Meadows to Surprise Lake / Warm Lake, ~8-9 mi one way.",
+       "pitch": "Approach"
+      },
+      {
+       "grade": "Class 2",
+       "notes": "Ridge travel mixing snow and loose rock, Gilbert visible most of the way.",
+       "pitch": "Klickton Divide"
+      },
+      {
+       "grade": "I1 (Easy Snow)",
+       "notes": "Snow travel/glacier crossing on the southeast side, crampons recommended.",
+       "pitch": "Meade Glacier / summit snowfield"
+      },
+      {
+       "grade": "Class 3",
+       "notes": "Short, loose scramble through a notch to the true summit; exposed in places, and the rock is unstable.",
+       "pitch": "Summit scramble"
+      }
+     ],
+     "value": [
+      {
+       "grade": null,
+       "notes": "Trail #1120 through Conrad Meadows to the Surprise Lake loop, then the loop's right fork to the trail's high point.",
+       "pitch": "Approach"
+      },
+      {
+       "grade": "Class 2",
+       "notes": "Off-trail west into a basin, crossing it left of some large mounds, then a short descent to the foot of the Meade Glacier.",
+       "pitch": "Basin to the Meade Glacier"
+      },
+      {
+       "grade": "I1 (Easy Snow)",
+       "notes": "Up the Meade near the center of the cirque, right of the rock band between the upper and lower glacier, then right of the snow dome to the ridge. Crampons recommended; moats and crevasses can open late in the season.",
+       "pitch": "Meade Glacier to the ridge"
+      },
+      {
+       "grade": "Class 3",
+       "notes": "A rough goat and boot path on the southwest side to a small saddle, then a short, loose scramble west to the true summit; exposed in places, and the rock is unstable.",
+       "pitch": "Summit scramble"
+      }
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "itinerary",
+     "path": [],
+     "find": "over Klickton Divide and the Meade Glacier snowfields",
+     "replace": "across the basin and up the Meade Glacier snowfields"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "The Conrad and Meade Glaciers are receding",
+     "replace": "The Meade Glacier is receding"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "along Klickton Divide and near camp",
+     "replace": "in the upper basin and near camp"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "watch_out",
+     "path": [
+      2
+     ],
+     "find": "around Warm Lake in early season",
+     "replace": "around the Surprise Lake loop in early season"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "especially in flat, featureless sections near Warm Lake",
+     "replace": "especially in the flat, featureless basin below the glacier"
+    },
+    {
+     "op": "set",
+     "id": "wa_gilbert_peak_meade_glacier",
+     "column": "approach_variants",
+     "path": [
+      0
+     ],
+     "expect": {
+      "name": "Conrad Meadows and the South Fork Tieton to Klickton Divide",
+      "notes": "Drive to the Conrad Meadows and South Fork Tieton trailhead at road's end, about 4,044 ft, reached by the Tieton Reservoir road and then the South Fork Tieton road off the highway west of Naches. The last several miles are gravel.\n\nHike Trail #1120 through Conrad Meadows, crossing Conrad Creek, into the Goat Rocks Wilderness and on toward Surprise Lake and Warm Lake. From there climb southwest to gain Klickton Divide near Point 6,882, then follow the ridge northwest toward the summit, mixing snow and rock with Gilbert in view most of the way.\n\nAn alternative from the same trailhead crosses the east side of the Conrad Glacier to a saddle east of the summit, drops onto the Meade, and climbs it — now largely persistent snowfields rather than a crevassed glacier — to a rock outcrop below the final pitch.\n\nThis is a long day: roughly 20 miles round trip with real gain, and limited water late in a dry season.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "A steep summit snowfield requiring solid self-arrest",
+       "Loose rock on the summit scramble, with rockfall risk between parties climbing close together",
+       "Receding glaciers that can still hide crevasses and moats early season",
+       "A long, remote round trip of roughly 20 miles with limited water in a dry year",
+       "Ridge navigation that depends on visibility once off the trail"
+      ],
+      "baseFinding": "GAINING KLICKTON DIVIDE IN THE RIGHT PLACE IS THE WHOLE ROUTE-FINDING PROBLEM, AND EVERYTHING BEFORE IT IS TRAIL.\n\nYou leave the trail beyond Warm Lake and climb SOUTHWEST to gain the divide near POINT 6,882. From there the ridge runs NORTHWEST to the peak. Two directions, in that order: southwest to gain, northwest to follow. Getting the second one wrong walks you away from the mountain along the same ridge.\n\nTHE POSITIVE THAT MAKES THIS A GENEROUS ROUTE IN CLEAR WEATHER, AND A HARSH ONE IN CLOUD: once you are on the divide, GILBERT IS IN VIEW ALMOST THE WHOLE WAY. If you cannot see the peak from the ridge you are either not on the divide or the day has closed in, and in the second case the ridge crest itself is the handrail.\n\nTHE BASE OF THE CLIMBING IS A NOTCH, AND THERE IS ONLY ONE. The route tops out with a steep snow and scree slope and then a SHORT, LOOSE CLASS 3 SCRAMBLE THROUGH A NOTCH to the true summit. Short is the operative word: the summit is immediately above the notch. If you have gone through a gap and the ground keeps rising well beyond it, you are at the wrong gap.\n\nTHE NEGATIVE THAT SEPARATES THIS FROM ITS SIBLING ON THE SAME PEAK: this line goes ONTO THE RIDGE. The other route from this trailhead goes UNDER the peak — across the east side of the Conrad Glacier to a saddle, then onto the Meade. If you find yourself roping up for glacier travel before you have been on a ridge, you are on that one instead.\n\nSELF-ARREST IS PART OF THE BASE FINDING HERE, NOT AN AFTERTHOUGHT: the snowfield below the summit is steep enough that the route assumes you can hold a slip on it. Arriving without an axe is a reason to turn round at the divide."
+     },
+     "value": {
+      "name": "Conrad Meadows and the Surprise Lake loop to the Meade Glacier",
+      "notes": "Drive to the Conrad Meadows and South Fork Tieton trailhead at road's end, about 4,044 ft, reached by the Tieton Reservoir road and then the South Fork Tieton road off the highway west of Naches. The last several miles are gravel.\n\nHike Trail #1120 through Conrad Meadows, crossing Conrad Creek, into the Goat Rocks Wilderness and on to the Surprise Lake loop. Take the loop's right fork to the trail's high point, then leave the trail and climb west into a basin. Cross it left of some large mounds and descend briefly to the foot of the Meade Glacier.\n\nThis is a long day: roughly 20 miles round trip with real gain, and limited water late in a dry season.",
+      "season": "Roughly Jul-Sep",
+      "hazards": [
+       "A steep snowfield below the summit requiring solid self-arrest",
+       "Loose rock on the summit scramble, with rockfall risk between parties climbing close together",
+       "A receding glacier that can still hide crevasses and moats",
+       "A long, remote round trip of roughly 20 miles with limited water in a dry year",
+       "Basin navigation that depends on visibility once off the trail"
+      ],
+      "baseFinding": "LEAVING THE TRAIL IN THE RIGHT PLACE AND FINDING THE FOOT OF THE MEADE IS THE WHOLE ROUTE-FINDING PROBLEM, AND EVERYTHING BEFORE IT IS TRAIL.\n\nTake the RIGHT fork of the Surprise Lake loop and stay on it to its HIGH POINT. From there climb WEST into a basin, cross it keeping LEFT of the large mounds, and drop a short way to the foot of the glacier. If you are climbing onto a long ridge crest before you have reached any snow, you are on the ridge line to the south, not this route.\n\nON THE GLACIER, ONE ROCK BAND ORGANISES EVERYTHING. It splits the lower glacier from the upper; go up near the center of the cirque and pass it on its RIGHT. Above it, stay right of the snow dome and the ridge comes easily.\n\nTHE BASE OF THE SCRAMBLE IS A SMALL SADDLE, AND THE SUMMIT IS JUST WEST OF IT. From the ridge a rough goat and boot path on the usually snow-free southwest side leads to that saddle; the true summit is immediately to its west, a short, loose class 3 scramble. If the ground keeps rising well beyond a gap, you are at the wrong gap.\n\nTHE NEGATIVE THAT SEPARATES THIS FROM ITS SIBLING ON THE SAME PEAK: this line reaches the Meade from BELOW, out of the basin. The other route from this trailhead crosses the east side of the Conrad Glacier to a saddle east of the summit and drops onto the Meade from above. If you are on the Conrad Glacier, you are on that one instead.\n\nSELF-ARREST IS PART OF THE BASE FINDING HERE, NOT AN AFTERTHOUGHT: the snowfield below the summit is steep enough that the route assumes you can hold a slip on it. Arriving without an axe is a reason to turn round at the foot of the glacier."
+     }
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}
