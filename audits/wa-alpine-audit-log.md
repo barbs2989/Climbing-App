@@ -28825,3 +28825,120 @@ AAC Publications, Peakbagger, ListsOfJohn, countryhighpoints.com, WTA and fs.usd
 snippets; WebFetch was not attempted directly given prior batches' consistent `EGRESS_BLOCKED`
 results in this environment, so every finding above rests on WebSearch snippets, cross-checked
 across 2+ independent sources per claim, not fetched primary pages.
+
+## Batch 358 (2026-09-30) — pass 6
+
+Routes: `wa_olympus_blue_glacier_east_ramps`, `wa_olympus_summit_block_north_face`,
+`wa_olympus_summit_block_west_edge`, `wa_olympus_traverse` (Mount Olympus, Olympic NP),
+`wa_open_book_2` (Unicorn Peak, Tatoosh Range), `wa_osceola_peak_scramble` (Osceola Peak,
+Pasayten Wilderness), `wa_ottohorn_southeast_route`, `wa_ottohorn_west_ridge` (Ottohorn,
+Southern Pickets, North Cascades NP).
+
+**Fixed (16 UPDATE statements across 8 routes):**
+
+*Mount Olympus cluster* — `wa_olympus_blue_glacier_east_ramps` and
+`wa_olympus_summit_block_north_face` both stored top-level `gain_ft`/`loss_ft` as
+7500/7402, contradicting their own (identical) `itinerary.days[]` breakdowns, which sum to
+10200/10250 — confirmed as the intended convention by sibling `wa_olympus_traverse`, whose
+top-level gain/loss already exactly equal its own itinerary sum. Corrected both routes'
+gain_ft/loss_ft to 10200/10250. `wa_olympus_summit_block_north_face` also stored
+`length_m=30` while its own `pitch_detail[0].lengthM` (24), `overview` ("~80-ft pitch") and
+`rappels` text ("about 80 ft") all agree on 24m — corrected to 24. Three of the four Olympus
+routes (`blue_glacier_east_ramps`, `summit_block_north_face`, `traverse`) stated the Upper
+Hoh Road's Dec 2024 storm closure lasted until "May 2026" (~17 months); KUOW, Washington
+State Standard and NPS's own current-conditions page confirm it reopened **May 2025** (~4.5
+months) — corrected `road.status`/`road.seasonalGate`/`access.closures` in all three.
+`wa_olympus_summit_block_west_edge`'s `road.status` claimed the same road is "Maintained
+year-round" with no closure history at all — corrected to acknowledge the same washout,
+consistent with its three sibling rows.
+
+*Unicorn Peak* — `wa_open_book_2`'s `itinerary.days[0].gainFt/lossFt` (2600/2600) and
+`itinerary.totalNote` ("~2,600 ft gain") contradicted the row's own top-level `gain_ft`/
+`loss_ft` (2397/2397), which an external aggregator independently corroborates ("Unicorn
+Peak roundtrip is 4.8 miles with 2,397 feet of elevation gain") — corrected the itinerary
+day entry and totalNote text to 2397.
+
+*Osceola Peak* — `wa_osceola_peak_scramble`'s summit waypoint stored `elev=8584`, and the
+`approach`/`itinerary.days[1].objective` text repeated "8,584 ft" twice, while the row's own
+`high_point_ft` (8587) and `beta`/`descent` fields already said 8587 — externally confirmed
+via a WTA trip report ("Osceola Peak (8587')") and Wikipedia-sourced results; corrected the
+waypoint and both text mentions to 8587. Top-level `gain_ft`/`loss_ft` (3439/3439)
+contradicted the row's own itinerary, whose day-by-day sums (5650/5650) agree with each
+other and with the row's own totalNote ("~5,600 ft of cumulative gain") — corrected to
+5650. `access.passRequired` flatly denied a Northwest Forest Pass is needed at Harts
+Pass/Slate Pass, contradicting this same row's own `access.parking_pass` and `bivy` fields
+(both say a pass is required) and external sources describing the Harts Pass trailhead lots
+— corrected to state a pass is required.
+
+*Ottohorn* — `wa_ottohorn_southeast_route`'s `emergency.county` said "Skagit County" for
+the Goodell Creek trailhead, which is in Whatcom County (Wikipedia; also contradicted by
+sibling `wa_ottohorn_west_ridge`'s already-correct field) — corrected, along with
+`emergency.sheriffDispatch`, which named the Skagit County Sheriff instead of the Whatcom
+County Sheriff's Office (360-676-6911, confirmed via a WA 211 listing and matching the
+sibling row). This route's `gpx` track array was out of order — the Goodell Creek Trailhead
+point was second-to-last instead of first, contradicting the row's own `waypoints[]` array,
+which correctly lists it first — reordered to match. Its `itinerary.days[1].note` called
+Himmelgeisterhorn "(Düsseldorfspitz)" as if the two names were the same feature; an
+Alpinist.com Southern Pickets feature establishes Himmelgeisterhorn is simply Himmelhorn's
+original/full name, while Düsseldorferspitze is a separate, smaller pinnacle en route to it
+— corrected the parenthetical. `wa_ottohorn_west_ridge` had the Marblemount Wilderness
+Information Center's phone number wrong in three places on the same row
+(`emergency.rangerStation`, `pro_tips`, `access.permit`) — all three said "360-854-7200";
+confirmed correct number is (360) 854-7245 via WTA, Yellow Pages and the Chamber of
+Commerce, and matches the sibling row's already-correct `emergency.rangerStation` — all
+three corrected.
+
+**Flagged for human review (partial list — full detail in the SQL file's comments and this
+run's research notes):** `wa_olympus_summit_block_west_edge`'s `timing` block
+(`approachTimeHrs=1.5` contradicts its own "identical to the standard route" claim, whose
+approach is 11 hrs — but correcting it would break the row's own `totalHrs` arithmetic, and
+`summitTimeHrs`/`descentTimeHrs` use a different day-structure than the siblings entirely,
+so left unfixed rather than guessing a new total). All four Olympus routes share an
+identical `dist_km=28`, which matches only the one-way Hoh River Trail distance to Glacier
+Meadows, not each route's actual distance — flagged, not fixed, per the documented dual-
+convention caveat. `wa_osceola_peak_scramble`'s FA (Ulrichs/Alt, 1933) is contested — a
+specialized FA-chronology source credits a possible 1925 ascent by USFS surveyor Lage
+Wernstedt — left unresolved; its 2025-2026 road/fire closure narrative is broadly
+corroborated but exact dates couldn't be pinned down, flagged for re-verification against
+current Okanogan-Wenatchee NF alerts. Both Ottohorn routes share an unresolved question
+about which side (north vs. southeast) carries the "2011 party" 5.7 rockfall-bypass
+variation — sourced confidently to a specific 2011 Hilden/Holsten/Wertkin enchainment for
+the southeast-route row, but attributed only to "a 2011 party" with the opposite compass
+side on the west-ridge row; primary source (a trip blog) was unreachable. `wa_open_book_2`'s
+own `itinerary.days[0].miles` (5.5) vs. an external 4.8-mi round-trip figure — softer
+discrepancy, not fixed. `wa_ottohorn_west_ridge`'s entire premise (a 2017 FA of the west
+ridge during the same outing as two named-but-uncorroborated routes, "Beep" and "Honk")
+could not be corroborated against any reachable source — recommend a human check AAJ/
+cascadeclimbers.com directly; its `gain_ft`/`loss_ft` (7240/7240) may be a net-vs-cumulative
+convention difference rather than a clean error, given its own approach text explicitly
+calls 7240 a "net" figure and compares to a much larger cumulative figure on a "near-
+identical" neighboring route.
+
+**Clean:** FAs and elevations independently corroborated across the batch, including Mount
+Olympus's 1907 L.A. Nelson FA (npshistory.com's digitized 1907 Mountaineer journal) and
+7,980 ft West Peak elevation; Middle Peak (7,929 ft) and East Peak (7,762 ft, with a noted
+~5 ft source spread); Unicorn Peak's 6,971 ft elevation and Open Book's 5.0/"Easy 5th"
+grade; Osceola Peak's land manager, Bulger #48 rank, and free self-issue Pasayten permit;
+Ottohorn's 1961 Cooper/Denny/Firey/Firey/Whitmore FA (AAC Publications, NWMJ) and permit/fee
+structure. Several genuine cross-source elevation spreads (Ottohorn's summit at 7,640 ft
+Wikipedia / 7,703 ft Peakbagger / 7,840 ft on-file, on a rarely-surveyed peak) were left
+as-is with the conflict documented rather than picking a side without a tie-breaking primary
+source.
+
+This batch's 8 candidates were split across 3 parallel research agents (Mount Olympus x4;
+Unicorn+Osceola x2; Ottohorn x2) to keep turnaround reasonable. `last_processed_id` advances
+to `wa_ottohorn_west_ridge`; `wa_one_piece_at_a_time` (Cutthroat Wall) was excluded from the
+candidate range as a crag, not a peak, per scope. Scope counts not re-run this batch (last
+known: 698 in-scope / 751 total, from batch 352). No `.env`/`.env.local` present at run
+start (fresh clone); read-only queries used the anon key supplied in the task prompt
+directly as shell env vars. `node_modules` was not installed in this environment, so
+`check:sql` could not be run against the fix file before committing — every literal value in
+every UPDATE's WHERE guard was instead hand-verified by diffing it, via a small Python
+script, against a fresh JSON dump of the live rows fetched immediately before the SQL file
+was written, so a mismatched quote/dash/apostrophe would have been caught rather than
+silently no-opping. WebFetch to every research domain attempted (nps.gov, wikipedia.org,
+peakbagger.com, americanalpineclub.org publications, summitpost.org, mountainproject.com,
+cascadeclimbers.com, wta.org, willhiteweb.com) returned `EGRESS_BLOCKED` in this environment
+across all three research agents — every finding rests on WebSearch result snippets,
+cross-checked across 2+ independent sources per claim wherever the finding wasn't a same-row
+internal contradiction, not on fetched primary pages.
