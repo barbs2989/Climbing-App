@@ -57,6 +57,7 @@ npm run check:popup-chrome # ...and every ✕, ← Back and remove-✕ in the ap
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
 npm run check:injection-anchors # every INJECTION CASE still LANDS, so a guard's proof cannot rot (in build)
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
+npm run check:scroll-containment # every scroll pane contains its overscroll, so a sheet never reads as STUCK (in build)
 
 # ── Browser walks — notes: docs/guards/browser-walks.md ──
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
