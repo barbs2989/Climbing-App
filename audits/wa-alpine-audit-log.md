@@ -28711,3 +28711,58 @@ no service key used or needed — this run made no writes). WebFetch to summitpo
 en.wikipedia.org both returned `EGRESS_BLOCKED` in this environment; every finding above rests
 on WebSearch result snippets, cross-checked across 2+ independent sources per claim, not
 fetched primary pages.
+
+## Batch 356 (2026-09-30) — pass 6
+
+Routes: `wa_northeast_buttress_4`, `wa_northeast_face_direct`, `wa_northeast_ridge_1963_route`,
+`wa_northwest_arete`, `wa_northwest_buttress`, `wa_northwest_face_2`, `wa_northwest_face_4`,
+`wa_northwest_face_boving_pollock`.
+
+**Fixed (2 routes, 2 UPDATE statements):** `wa_northeast_ridge_1963_route`'s (Johannesburg
+Mountain) own "Johannesburg Mountain" summit waypoint stored `elev` = 8066 while the *same*
+waypoint object's own `elevFt` already said 8200 — matching this route's own `high_point_ft`
+(8200) and the `wa_johannesburg_mountain` area row (`elevation_ft` = 8200). Wikipedia's infobox
+("8,200+ ft NGVD 29") and Peakbagger (8,210.5 ft) both back the 8,200 side; nothing found
+supports 8,066. Corrected the outlier `elev` to 8200 to match its own sibling field.
+`wa_northwest_face_boving_pollock`'s (South Early Winters Spire) `fa` field read "Boving and
+Kerns, 1977" — that's the first *free* ascent team/date, not the first ascent — while the
+route's own `name` ("...(Boving-Pollock)") and its own `overview` text ("First ascended (aid) by
+Boving & Pollock in 1976; freed by Boving & Kerns in 1977") both already had it right. SuperTopo's
+page for this exact route and Mountain Project's page for this same route (also titled "Northwest
+Face (Boving-Pollock)") independently confirm the same chronology: FA Paul Boving & Steve
+Pollock, October 1976 (aid); FFA Boving & Matt Kerns, July 1977. Corrected `fa` to name the
+actual first ascent, bringing it into agreement with the route's own name and overview.
+
+**Flagged for human review:** none this batch.
+
+**Clean (6):** `wa_northeast_buttress_4` (Colchuck Peak — no FA on file, waypoints/elevation
+internally consistent, the existing 12–20-pitch spread already caveated in `data_quality`);
+`wa_northeast_face_direct`'s (Mount Formidable) Loren Campbell/Jens Klubberud July 19–20, 2002 FA
+— independently confirmed via SummitPost's second-ascent trip report and an AAC
+Publications/AAJ 2003 mention, resolving this route's own pre-existing `data_quality` gap (the
+on-file "July 20, 2002" names the same two-day push, not a conflicting date);
+`wa_northwest_arete` (Argonaut Peak — no FA on file; the peak's own 1955 FA by Maxwell/McCall/
+Prater was found, but that documents the peak's standard route, not necessarily this specific
+arete, so left unset rather than assumed); `wa_northwest_buttress`'s (Sloan Peak) M. Preiss & M.
+Bunker 2000 FA — independently confirmed via Mountain Project and SummitPost, resolving this
+route's own pre-existing 2000-vs-2020 `data_quality` gap in favor of the on-file 2000 date;
+`wa_northwest_face_2`'s (Kangaroo Temple) Fred & Helmy Beckey 1942 FA — independently confirmed
+via The Mountaineers' own route page for this exact route; `wa_northwest_face_4`'s (Little Big
+Chief Mountain, "Falcon Route") Martin Volken & Jeff Hansell September 10, 2001 FA —
+independently confirmed via an AAC Publications entry, an exact match including the
+mid-September date and the route's falcon-swoop naming story.
+
+`last_processed_id` advanced to `wa_northwest_face_boving_pollock`. Scope counts not re-run this
+batch (last known: 698 in-scope, 751 total, from batch 352); this batch's 8 candidates were
+confirmed on 'peak'-type areas via a direct `areas` lookup before auditing, same method as prior
+batches. No `.env`/`.env.local` present at run start (fresh clone); read-only queries used the
+anon key supplied in the task prompt directly as shell env vars. `node_modules` was not installed
+in this environment (no `npm install` run), so `check:sql` could not be run against the fix file
+before committing — the two UPDATEs were instead hand-verified against the live row values
+queried directly over REST immediately before writing them, and each carries a WHERE guard on
+the pre-fix value so it cannot silently no-op or double-apply. No service key used or needed —
+this run made no writes. WebSearch reached Wikipedia, SuperTopo, Mountain Project, The
+Mountaineers, Peakbagger and AAC Publications via result snippets; WebFetch was not attempted
+directly given prior batches' consistent `EGRESS_BLOCKED` results in this environment, so every
+finding above rests on WebSearch snippets, cross-checked across 2+ independent sources per claim,
+not fetched primary pages.
