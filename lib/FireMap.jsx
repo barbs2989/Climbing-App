@@ -251,6 +251,16 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   // on screen to say which point was you.
   const [locateMsg, setLocateMsg] = useState("");
   const [locating, setLocating] = useState(false);
+  // GPXMap's "↺ Reset view", offered — as there — only once locating has moved the map
+  // away from where it opened. It returns to that opening view (viewFor), so a climber
+  // who located themselves 200 miles from the area they were browsing can get back.
+  const [locatedOnce, setLocatedOnce] = useState(false);
+  const resetView = () => {
+    const map = mapRef.current;
+    if (!map) return;
+    const [vLat, vLng, vZoom] = viewFor(focus);
+    try { map.setView([vLat, vLng], vZoom, { animate: true }); } catch (e) {}
+  };
   const locate = () => {
     if (!navigator.geolocation) { setLocateMsg("This browser can't share your location."); return; }
     if (!mapRef.current) { setLocateMsg("The map isn't loaded, so there's nothing to centre."); return; }
@@ -267,6 +277,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           if (accRef.current) accRef.current.setLatLng([la, ln]).setRadius(ac);
           else accRef.current = L.circle([la, ln], { radius: ac, color: C.green, weight: 1, fillColor: C.green, fillOpacity: 0.12 }).addTo(map);
           map.setView([la, ln], 9);
+          setLocatedOnce(true);
         } catch (e) { setLocateMsg("Couldn't move the map."); }
       },
       err => { setLocating(false); setLocateMsg(err && err.code === 1 ? "Location permission is off for this site." : "Couldn't get your location."); },
@@ -394,6 +405,12 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
               style={{ position: "absolute", bottom: 10, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 6, verticalAlign: "middle" }}><ActionIcon name="pin" size={14} color="currentColor" />{locating ? "Locating…" : "Me"}</span>
             </button>
+            {/* Top-right under the zoom buttons (which end ~73px down), not GPXMap's
+                bottom-left: that corner holds the layer chips here. */}
+            {locatedOnce ? (
+              <button onClick={resetView}
+                style={{ position: "absolute", top: 84, right: 10, zIndex: 1000, background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>↺ Reset view</button>
+            ) : null}
           </>
         )}
       </div>
