@@ -1,0 +1,26 @@
+{
+ "applied": [
+  {
+   "id": "wa_ives_peak_r1",
+   "column": "aspect",
+   "path": [],
+   "fact": "Line is the NW ridge then the upper south face (2 sources); face column already says so"
+  },
+  {
+   "id": "wa_ives_peak_r1",
+   "column": "beta",
+   "path": [],
+   "fact": "No sources named in app text"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ives_peak_r1",
+   "before": {
+    "aspect": "NE",
+    "beta": "The easiest way up Ives Peak is a scramble. The standard approach follows the Pacific Crest Trail / Goat Rocks crest, which runs close to the peak's western slopes, then leaves the crest at the col northwest of the peak and follows the northwest ridge and a short south-face scramble to the summit; this is unroped class 2-3 talus/scree, not a technical rock or ice route. A 2026 ski-mountaineering trip report (climberkyle.com) that circled the peak describes the ridge north of the summit as rocky and wind-scoured, with a short loose ('choss') section near the col, and notes lingering snow on the peak's flanks into early summer."
+   }
+  }
+ ]
+}
