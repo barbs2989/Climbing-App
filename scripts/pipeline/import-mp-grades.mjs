@@ -52,6 +52,9 @@ const FOLD_WORDS = /\b(?:bouldering|boulders|mixed|problems)\b/g;
 const fk = s => { const k = ck(s); const f = String(k).replace(FOLD_WORDS, " ").replace(/\s+/g, " ").trim(); return f || k; };
 const foldKind = s => /\bice\b/i.test(s) ? "ice" : /\b(?:bouldering|boulders|problems)\b/i.test(s) ? "boulder" : "";
 const foldTwins = (a, b) => { const x = foldKind(a), y = foldKind(b); return !(x && y && x !== y); };
+// The suffix a _climbs split child takes after its area's name, decided in SQL by the routes the
+// area holds: all bouldering -> " Bouldering", all ice/mixed -> " Ice Climbs", else " Routes".
+const SPLIT_SUFFIX = areaId => `(select case when bool_and(discipline = 'bouldering') then ' Bouldering' when bool_and(discipline in ('ice', 'mixed')) then ' Ice Climbs' else ' Routes' end from routes where area_id = ${q(areaId)})`;
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 
@@ -209,7 +212,8 @@ function resolver(stateId, stateName, planned, splits) {
     }
     if (created && planned.some(a => a.id === cur)) return { areaId: cur, created: true };
     if (hasKids.has(cur)) {
-      const c = (kids.get(cur + "|" + areaNorm(chain[chain.length - 1])) || []).filter(r => r.id === cur + "_climbs");
+      // Found by ID, not name: a split child is named "<X> Routes" / "<X> Bouldering" / "<X> Ice Climbs".
+      const c = [byId.get(cur + "_climbs")].filter(r => r && r.parent_id === cur);
       if (c.length !== 1) return { why: "area has sub-areas and no _climbs child" };
       cur = c[0].id;
       if (hasKids.has(cur)) return { why: "_climbs child is not a leaf" };
@@ -478,12 +482,14 @@ async function runState(st) {
   const num = v => v == null ? "null" : String(+v);
   for (const { x, c } of effSplits) {
     const n = sql(`select count(*)::int n from routes where area_id = ${q(x)}`)[0].n;
-    // The _climbs child carries the area's own name and is the area itself, not a new place, so
-    // refuse_duplicate_area (which fired on Arizona's two Rappel Rocks 0.35 km apart) is told so —
-    // `set local` lasts for this transaction only.
+    // The _climbs child is the area itself, not a new place, so refuse_duplicate_area (which fired
+    // on Arizona's two Rappel Rocks 0.35 km apart) is told so — `set local` lasts for this
+    // transaction only. It is NAMED for what it holds, as 0221 names a folded area ("<X> Routes" /
+    // "<X> Bouldering" / "<X> Ice Climbs"): a same-named child read "AFPA Rock › AFPA Rock" in the
+    // breadcrumb, a duplicate to a climber.
     sql(`begin;
       set local catalog.allow_duplicate = 'on';
-      insert into areas (id, name, parent_id, area_type, region, lat, lng) values (${q(c.id)}, ${q(c.name)}, (select parent_id from areas where id = ${q(x)}), 'crag', ${q(c.region)}, ${num(c.lat)}, ${num(c.lng)});
+      insert into areas (id, name, parent_id, area_type, region, lat, lng) values (${q(c.id)}, ${q(c.name)} || ${SPLIT_SUFFIX(x)}, (select parent_id from areas where id = ${q(x)}), 'crag', ${q(c.region)}, ${num(c.lat)}, ${num(c.lng)});
       update routes set area_id = ${q(c.id)} where area_id = ${q(x)};
       update areas set parent_id = ${q(x)} where id = ${q(c.id)};
       update areas set route_count = route_count + ${n} where id = ${q(x)};
