@@ -1,0 +1,117 @@
+{
+ "applied": [
+  {
+   "id": "wa_union_peak_se_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Parking pass: access.fees / access.passRequired say no Northwest Forest Pass, while permit, the Trailhead waypoint note and the Smithbrook bivy entry say one is required"
+  },
+  {
+   "id": "wa_union_peak_se_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Parking pass: access.fees / access.passRequired say no Northwest Forest Pass, while permit, the Trailhead waypoint note and the Smithbrook bivy entry say one is required"
+  },
+  {
+   "id": "wa_union_peak_se_route",
+   "column": "bivy",
+   "path": [
+    0,
+    "permit"
+   ],
+   "fact": "Parking pass: access.fees / access.passRequired say no Northwest Forest Pass, while permit, the Trailhead waypoint note and the Smithbrook bivy entry say one is required"
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total elevation gain to the crag"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_union_peak_se_route",
+   "before": {
+    "permit": "Free self-issue Henry M. Jackson Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "waypoints": [
+     {
+      "lat": 47.8025,
+      "lng": -121.0765,
+      "elev": 4000,
+      "name": "Smithbrook Trailhead",
+      "note": "Small dirt lot (~15 cars) off FR 6700; Northwest Forest Pass required, no potable water or restrooms.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive US 2 to the Smithbrook Road turnoff, Forest Road 6700, about 4.2 miles east of the Stevens Pass summit — roughly half a mile east of milepost 69 if you are coming from the Leavenworth and Wenatchee side, or about 68 miles out from Everett and Seattle. Follow FR 6700 about 2.7 to 3 miles to the Smithbrook Trailhead at around 4,000 feet, on the left. The gravel road is normally passable to passenger cars once it is snow-free, but it is not plowed in winter; then you park at a pullout on the highway shoulder and add miles of road travel each way. The trailhead is a small dirt lot for about 15 cars, with no potable water and no restrooms."
+     },
+     {
+      "lat": 47.811858,
+      "lng": -121.061602,
+      "elev": 4100,
+      "name": "Rainy Creek tributary crossing",
+      "note": "Only reliable stream on this route — top off here, nothing higher on the ridge.",
+      "type": "Water",
+      "distMi": 0.2
+     },
+     {
+      "lat": 47.80706,
+      "lng": -121.08593,
+      "elev": 4688,
+      "name": "Union Gap - PCT junction",
+      "note": "Smithbrook Trail #1590 switchbacks up old growth to this saddle and ends at the PCT; leave the maintained trail here for the boot path.",
+      "type": "Junction",
+      "distMi": 1.3
+     },
+     {
+      "lat": 47.808496733333335,
+      "lng": -121.0808174,
+      "elev": 4900,
+      "name": "Boulder field below the SE ridge",
+      "note": "First left off the PCT at a ~10-ft dead snag; boulder field lies to the north — follow cairns lined up with the snag to the field's high point.",
+      "type": "Junction",
+      "distMi": 1.8
+     },
+     {
+      "lat": 47.81016304814815,
+      "lng": -121.0819764,
+      "elev": 5200,
+      "name": "SE ridge avalanche slope",
+      "note": "Steep, brush-choked slope gains the southeast ridge; brush is very slick when wet or snow-covered and this line is avalanche-prone on all aspects — not recommended in unstable snow.",
+      "type": "Hazard",
+      "distMi": 2.3
+     },
+     {
+      "lat": 47.81129,
+      "lng": -121.08282,
+      "elev": 5696,
+      "name": "Union Peak summit",
+      "note": "True summit, no maintained trail; open views down the Rainy Creek valley and along the PCT corridor toward Grizzly Peak.",
+      "type": "Summit",
+      "distMi": 2.7
+     }
+    ],
+    "bivy": [
+     {
+      "name": "Smithbrook trailhead and Union Gap",
+      "role": "main",
+      "type": "camp",
+      "notes": "This is the staging point for Union Peak, and worth having as its own entry because Union Peak is not climbed from any lake. The trail switchbacks about six hundred and fifty feet in a little over a mile from the road to the gap; the scramble leaves it after roughly a third of a mile, bushwhacks northeast to gain the southeast ridge, and follows that to a summit at about 5,700 feet. It is non-technical from summer through autumn and a popular winter objective when the snow simplifies the brush, which is the main reason to know where the road-end sits. Mount McCausland is reached from the same road by staying on the trail through the gap and taking the spur off the Pacific Crest Trail. From the top of Union Peak a party can drop north down meadows about seven hundred feet to the saddle below Jove Peak and add that summit, which is the usual outing. Smithbrook Road is a reasonable gravel road in summer and closed by snow through the winter, when the trailhead is a shoulder pullout on US 2 several miles and a thousand feet lower. This is a place to sleep before a start rather than a place to spend a night for its own sake.",
+      "water": "Smith Brook crosses near the trailhead. Nothing at the gap itself — carry water up.",
+      "permit": "Northwest Forest Pass at the trailhead. Union Gap is inside the Henry M. Jackson Wilderness, so the free self-issue permit applies from the register at the road. Camp well off the trail and out of the saddle proper if you stop there.",
+      "capacity": "A gravel turnaround at the road end taking perhaps a dozen cars, with room to sleep in a vehicle. Union Gap itself is a forested saddle with a little flat ground and no established sites."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "before": {
+    "gain_ft": 4400
+   }
+  }
+ ]
+}

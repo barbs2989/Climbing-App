@@ -1,0 +1,492 @@
+{
+ "applied": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "op": "rename",
+   "name": "North Ridge"
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "op": "patch",
+   "columns": [
+    "grade",
+    "grade_system",
+    "grade_num",
+    "rock_grade",
+    "commitment",
+    "pitches",
+    "aspect",
+    "face",
+    "disciplines",
+    "overview",
+    "beta",
+    "hazards",
+    "gear",
+    "rappels",
+    "descent",
+    "descent_text",
+    "pro_needs",
+    "bail",
+    "pro_tips",
+    "watch_out",
+    "dist_km",
+    "timing",
+    "itinerary",
+    "approach",
+    "approach_variants",
+    "climbing_route",
+    "pitch_detail",
+    "rope_type",
+    "rope_length_m",
+    "rope_note",
+    "sling_rack",
+    "partner_requirements",
+    "seasonal_hazards",
+    "data_quality",
+    "corrections",
+    "waypoints"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "area_id": "wa_half_moon",
+   "name": "Southwest Slopes / Standard Scramble",
+   "discipline": "alpine",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Helmy Beckey, Fred Beckey, and Walt Varney, June 17, 1942 (first ascent of the peak)",
+   "lat": null,
+   "lng": null,
+   "aspect": "SW",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "approach shoes or light boots",
+    "optional light rock rack"
+   ],
+   "hazards": [
+    "Loose blocks on the upper ridge, especially hazardous to parties below while descending",
+    "Lingering snow in the approach gullies and in the shaded notch north of Half Moon into early-mid July",
+    "Route-finding on broken, cairn-marked terrain through brush and talus below Kangaroo Pass, easy to lose in poor visibility",
+    "Short, low-exposure but unroped Class 4 step just below the summit"
+   ],
+   "verif": null,
+   "overview": "Half Moon is a crescent-shaped granite fin on the north half of Kangaroo Ridge, between Wallaby Peak (0.23 mi south, the peak's higher neighbor) and Big Kangaroo (8,326 ft) to the north. It sits about two miles east of, and in clear view from, the North Cascades Highway at Washington Pass. The rock is ~45-million-year-old rapakivi-textured granite of the Golden Horn batholith. Fred and Helmy Beckey, with Walt Varney, made the first ascent on June 17, 1942. There is no easy walk-up: at least three technical lines are known (Southwest Ridge, North Ridge, South Face), all involving sustained Class 3-4 scrambling with at least one low-5th-class move. This route takes the Southwest Ridge, generally regarded as the least difficult option, which finishes with a short, low-exposure Class 4 step just below the summit.",
+   "beta": "Half Moon is a SW-to-NE trending rock fin on Kangaroo Ridge between Wallaby Peak and Big Kangaroo, with solid, steep, crack-laden faces. Documented lines include the 1942 first-ascent (original) route, rated roughly Class 5+ (low 5th class) — the easiest known way to the summit — plus at least one modern route, Uncle Wehrly's Toupee (5.10-, trad), and at least 3 other difficult unnamed technical lines. None of these is a non-technical scramble.",
+   "turnaround": "As with other Washington Pass alpine granite objectives, set a turnaround time based on daylight, weather, and party pace rather than a fixed clock time — Cascades crest thunderstorms build in summer afternoons, and the peak's technical routes offer no easy retreat once committed.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 5+ (an older, unnumbered YDS class rating -- roughly a short, low-5th-class step above scrambling terrain, not a specific numeric grade)",
+   "ice_grade": null,
+   "gain_ft": 3200,
+   "loss_ft": 3200,
+   "dist_km": 12.87,
+   "max_angle": null,
+   "rappels": "1",
+   "commitment": "II",
+   "face": "Kangaroo Ridge, between Wallaby Peak and Big Kangaroo",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": null,
+   "descent": "Reverse the Southwest Ridge. Most parties avoid down-climbing the full lower ridge crest by dropping west into the obvious heather gully toward Early Winters Creek partway down.",
+   "obj_haz": [
+    "loose rock",
+    "exposure"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5160,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "note": "Large paved pullout on Highway 20 just east of Washington Pass, below Liberty Bell/South Early Winter Spire; pick up cairns leading south through brush toward Early Winters Creek.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take Highway 20 to the large hairpin-turn pullout near milepost 163, just east of Washington Pass, at roughly 5,100 ft. It is a big paved pullout sitting below Liberty Bell and South Early Winter Spire, and it doubles as the trailhead for Kangaroo Pass. Park here and start from the east end of the lot, where cairns lead south through the brush toward Early Winters Creek."
+    },
+    {
+     "lat": 48.51845706666666,
+     "lng": -120.64115333333334,
+     "elev": 5660,
+     "name": "Early Winters Creek Clearing (Airplane Wreckage)",
+     "note": "Small clearing along Early Winters Creek scattered with old wreckage from a small-plane crash; last reliable water before the boot path climbs away from the creek.",
+     "type": "Water",
+     "distMi": 1,
+     "directions": "Drop into the woods from the east end of the pullout and pick up the unsigned but well-used climbers' path. It runs south, staying west of and well above Early Winters Creek; angling down toward the creek itself is the standard route-finding mistake on this stretch. Reaching the clearing at about a mile confirms you are still on line."
+    },
+    {
+     "lat": 48.51001413333333,
+     "lng": -120.63170666666667,
+     "elev": 6170,
+     "name": "Three-Route Fork below Kangaroo Pass",
+     "note": "Boot path splits toward Half Moon's three route options here; stay on the Southwest Ridge line rather than continuing straight up to the Kangaroo Pass notch.",
+     "type": "Junction",
+     "distMi": 2,
+     "directions": "Above the clearing the path climbs through boulder fields and slab benches marked only by intermittent cairns, and the tread all but disappears on the slabs — this is the hardest stretch to follow in fog or fresh snow. It also crosses the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak, which is a hazard in early season or after new snow and is better crossed early than once the slope has baked in the sun."
+    },
+    {
+     "lat": 48.50157,
+     "lng": -120.62226,
+     "elev": 6671,
+     "name": "Kangaroo Pass",
+     "note": "Broad saddle on Kangaroo Ridge shared with approaches to Wallaby Peak and Big Kangaroo; gain the ridge here and traverse toward Half Moon's southwest side.",
+     "type": "Junction",
+     "distMi": 3
+    },
+    {
+     "lat": 48.50737826,
+     "lng": -120.6161203,
+     "elev": 7800,
+     "name": "Class 4 Step below the Summit",
+     "note": "A short, exposed Class 4 slab step breaks up the otherwise Class 3 Southwest Ridge just below the top; loose blocks reported, test holds before committing.",
+     "type": "Hazard",
+     "distMi": 3.7,
+     "directions": "From the pass, contour east below Wallaby's south slopes, staying just under the crest, until you can cross back over the ridge at a low notch north of Half Moon into the basin on its southwest side. That drops you at the foot of the broad southwest gully, which starts as Class 2-3 talus and loose scree where rockfall from any party above you is the real danger. Higher up the gully narrows and steepens onto cleaner rock."
+    },
+    {
+     "lat": 48.509867,
+     "lng": -120.613489,
+     "elev": 7960,
+     "name": "Half Moon Summit",
+     "note": "Crescent-shaped granite high point of Kangaroo Ridge climbing, first ascended June 17, 1942 by Fred and Helmy Beckey with Walt Varney.",
+     "type": "Summit",
+     "distMi": 4
+    },
+    {
+     "elev": 7000,
+     "name": "Heather Gully Descent Cutoff",
+     "note": "Partway down the ridge, cut west off the rock into a steep heather-and-dirt gully dropping directly toward Early Winters Creek; loose footing and easy to lose the boot path in poor visibility.",
+     "type": "Hazard",
+     "distMi": 4.4
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 10.5,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10.5,
+      "note": "A long roadside day, no camp: from the Hwy 20 Hairpin pullout near Washington Pass, follow cairns/boot path through brush staying above Early Winters Creek toward Kangaroo Pass, th…",
+      "fromTo": "Car-to-car scramble via Kangaroo Pass approach",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "helmet",
+    "ice axe (early season)",
+    "map and compass/GPS"
+   ],
+   "pro_tips": [
+    "At the ~2-mile fork below Kangaroo Pass, commit to SW Ridge vs. North Ridge vs. South Face before continuing — they diverge substantially and re-routing costs real time",
+    "On descent, cut west into the heather gully partway down the ridge to avoid down-climbing the full lower Southwest Ridge crest",
+    "Choi Oi and Hai Towers on the ridge can be combined with the day if conditions and time allow"
+   ],
+   "watch_out": [
+    "Loose rock while descending — stay close as a party and warn climbers below before moving over any suspect block",
+    "Snow filling the approach gullies/notch into early July can force a postponed attempt or require an axe",
+    "The boot path below Kangaroo Pass is unmaintained and cairn-marked only; easy to lose track of in brush or low visibility"
+   ],
+   "pro_needs": "Mostly unroped Class 3-4; a short rope and a few small cams/slings are useful for the exposed summit blocks.",
+   "best_season": "Reliable window is mid-summer through early fall (roughly July–September) once snow clears the approach gullies and the shaded notch north of Half Moon, which can hold snow into early-mid July in heavy-snowpack years. Access is also gated by Highway 20's seasonal opening over Washington and Rainy Passes — normally mid/late April through late November or early December, though closures/openings vary year to year (in 2026, winter storm damage delayed the opening to June 14, tying 1974 for the latest season-opening on record).",
+   "high_point_ft": 7960,
+   "aid_grade": null,
+   "approach": "Park at the large Hairpin Turn pullout on Highway 20 near milepost 163 (roughly 5,100 ft), just east of Washington Pass — this doubles as the trailhead for Kangaroo Pass. From the east end of the pullout, drop into the woods and pick up the unsigned but well-used climbers' path (no official trail number; this is the standard Kangaroo Ridge/Wallaby/Half Moon approach). The path runs south, staying west of and well above Early Winters Creek — do not angle down toward the creek itself, a common route-finding mistake. Around 1 mile in you pass a small clearing near the creek where old small-plane wreckage is still visible, a useful landmark that you're on line. Beyond this the path climbs through boulder fields and slab benches with intermittent cairns (route-finding gets genuinely tricky here in fog or fresh snow — the tread all but disappears on the slabs), crossing the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak; this slope is a hazard in early-season or after fresh snow and should be crossed with care or avoided later in the day once it's baked in the sun. The path gains the ridge at Kangaroo Pass (~6,670 ft, about 1.5-2 miles and roughly an hour of hiking from the car). From the pass, contour east below Wallaby's south slopes, staying just below the crest, until you can cross over the ridge at a low notch north of Half Moon into the basin on its southwest side — this puts you at the base of the broad southwest gully/slopes that give the route its name. Water is only reliably available near Early Winters Creek in the first mile; carry what you need above the pass. From the base of the gully, the route climbs class 2-3 talus and loose scree — rockfall is a real concern with any party above you — before the gully narrows to a steeper class 4 step of cleaner rock roughly midway up; above that, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins.",
+   "descent_text": "Descend by reversing the ascent line rather than continuing over the ridge. From the summit, downclimb back to the flat belay ledge about 200 ft below the top; this is where the route's one unavoidable technical bit lives — an open-book crack beside a 60-degree slab (roughly a 60 ft 5.6 pitch on the way up). Most parties do not downclimb this: rappel from slung webbing around a large block on the southwest side of the peak just below the summit to get back down past this section. This is a natural gear/block anchor, not bolted — inspect any existing tat before trusting it and back it up if it looks tired. A single rappel here is on the order of 100-150 ft, so a 60 m rope (doubled) covers it comfortably, and a 30 m single-strand rappel is enough if you stop at the first good ledge/stance; parties differ on exactly where they break it depending on rope length carried, but one rappel is the norm to clear the crux. Below the rappel, continue down the loose class 2-3 southwest gully, taking care with scree and rockfall onto anyone below. Rather than downclimbing the full lower southwest ridge, most parties drop west off the crest partway down into the obvious heather gully, which avoids the worst of the loose rock in the lower gully. From there, cross back over the low notch/ridge point into the basin below Wallaby's south slopes, contour west back to Kangaroo Pass, and descend the climbers' path back through the boulder fields and across the avalanche path to the Hairpin Turn pullout.",
+   "bail": "Retreat is straightforward down the southwest slopes at almost any point.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Approach talus is described as best done with snow cover in early spring, or after it melts out by July, since bare talus is exposed and leg-breaking.",
+    "days": [
+     {
+      "n": 1,
+      "note": "A long roadside day, no camp: from the Hwy 20 Hairpin pullout near Washington Pass, follow cairns/boot path through brush staying above Early Winters Creek toward Kangaroo Pass, then break off into the talus gully/ledge system left of the pass that angles up to the notch north of Half Moon. From the notch, scramble the final rock to the summit fin. Descend by reversing the ridge and dropping into the heather gully back toward Early Winters Creek to avoid down-climbing the full lower ridge crest.",
+      "hours": 10.5,
+      "miles": 8,
+      "title": "Car-to-car scramble via Kangaroo Pass approach",
+      "gainFt": 3200,
+      "lossFt": 3200,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave Hairpin pullout (Hwy 20, ~MP 163)",
+        "detail": "Brush/boot path staying west of and above Early Winters Creek."
+       },
+       {
+        "time": "+2.5 hr",
+        "label": "Cross the last soggy meadow below Kangaroo Pass",
+        "detail": "Begin ascending toward the pass; watch for the talus gully breaking off left."
+       },
+       {
+        "time": "+4 hr",
+        "label": "Enter the talus gully/ledge system",
+        "detail": "Loose, leg-breaking talus when snow-free; angles back to the notch north of Half Moon."
+       },
+       {
+        "time": "+5.5 hr",
+        "label": "Reach the notch and start the summit scramble",
+        "detail": "Class 3-4 rock on the fin between Wallaby and Big Kangaroo."
+       },
+       {
+        "time": "+6.5 hr",
+        "label": "Summit",
+        "detail": "Views across Kangaroo Ridge to Liberty Bell and the Washington Pass corridor."
+       },
+       {
+        "time": "+10.5 hr",
+        "label": "Back at the Hairpin pullout",
+        "detail": "Descent reverses the route, dropping into the heather gully near the bottom to bypass the lower ridge crest."
+       }
+      ],
+      "objective": "Summit Half Moon and return to the Hairpin trailhead"
+     }
+    ],
+    "totalNote": "A long single-day scramble car-to-car: roughly 8 miles round trip with about 3,200 ft of gain, typically 9-11 hours for a fit party; no camping is involved."
+   },
+   "access": {
+    "fees": "None — no climbing permit fee (this is National Forest, not Mount Rainier NP)",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 14 consecutive days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "None required for day climbing",
+    "closures": "Approach is only accessible when SR 20 (North Cascades Highway) is open over Rainy and Washington Passes, roughly mid/late April through late November or early December in a typical year; check WSDOT's mountain pass report before driving, since dates vary and can be delayed by storm damage (as in 2026, when repairs pushed the opening to June 14).",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "No fee is collected at the informal Hairpin Turn highway pullout itself, but carrying a Northwest Forest Pass or America the Beautiful/Interagency pass is recommended — it's required at the developed Blue Lake Trailhead on the west side of Washington Pass.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee."
+    }
+   },
+   "road": {
+    "name": "North Cascades Highway (SR 20)",
+    "status": "Open seasonally; closed by WSDOT for winter avalanche/storm risk between roughly late November and mid/late April",
+    "driveNote": "The Hairpin Turn pullout used for the Half Moon approach is at approximately milepost 163, about 1 mile east of Washington Pass, where the highway makes its big switchback below Liberty Bell and the Early Winters Spires.",
+    "seasonalGate": "Winter closure points are typically near the Ross Dam trailhead (MP134) on the west and Silver Star (MP171) on the east, sometimes retreating further to Newhalem (MP120)/Early Winters (MP178) gates in deep winter"
+   },
+   "climate": {
+    "fall": "Cooling but often stable dry spells continue through September before early-season snow returns.",
+    "spring": "Snow lingers on the approach into June; the access highway itself often isn't open until mid-to-late April.",
+    "summer": "Warm and dry; July-August are the most reliable snow-free months for climbing.",
+    "winter": "Highway closed; deep snow and avalanche terrain make this a non-objective in winter.",
+    "typical": "High, dry-summer East Cascades alpine climate: warm days with real afternoon thunderstorm potential and cold nights at this elevation; snow can linger in the approach gullies and shaded north notch into early-mid July.",
+    "bySeason": {
+     "fall": "Late-season (late Sep–Oct) can bring clear, stable weather but a shorter daylight window and colder nights; an early snowfall can end the season abruptly.",
+     "summer": "Jul-Sep is the reliable weather and snow-free window; check current conditions before early-July attempts."
+    },
+    "forecastZone": "NWAC maintains a Washington Pass weather station for on-the-ground mountain weather; the area falls within NWS zone WAZ523 (Lower Slopes of the Eastern Washington Cascades Crest) for point forecasts."
+   },
+   "emergency": {
+    "notes": "Access depends entirely on SR 20 being open for the season; plan for slow/no cell signal on route and treat a vehicle at the Hairpin Turn pullout as the nearest reliable point to call out from.",
+    "county": "Okanogan",
+    "rangerStation": "Methow Valley Ranger District, Okanogan-Wenatchee National Forest — 24 W Chewuch Rd, Winthrop, WA 98862, (509) 996-4000",
+    "nearestHospital": "Mid-Valley Hospital, 810 Jasmine St, Omak, WA — roughly 65 road miles via SR-20 through Winthrop; Three Rivers Hospital in Brewster is a comparable distance. Both are well over an hour's drive, and cell coverage in the Kangaroo Ridge basin is unreliable.",
+    "sheriffDispatch": "911 — Okanogan County Sheriff's Office dispatches; Aero Methow Rescue Service (based in Twisp/Winthrop) provides EMS transport and technical/high-angle rescue for the Methow Valley area in partnership with County Search & Rescue"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed - occasional weekend party July-August; no easy route on this summit keeps volume low compared to neighboring Liberty Bell/Blue Lake objectives",
+    "solitudeRating": 4,
+    "estimatePerSeason": "unknown - low-traffic; likely well under 20 parties per season"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strenuous cross-country approach (several miles, brush and talus, no maintained trail) from the SR-20 hairpin pullout up toward Kangaroo Pass basin before the climb even starts",
+     "packWeight": "Light day-climbing pack (helmet, layers, water) - not an overnight-weight approach"
+    },
+    "approachTime": "Multi-hour, off-trail approach (roughly half a day) from the North Cascades Highway to the base of the route",
+    "requiredSkills": [
+     "Class 3-4 scrambling movement",
+     "route-finding on broken/unmarked terrain",
+     "loose-rock/rockfall management, especially with parties below",
+     "basic self-arrest/steep talus and gully travel judgment",
+     "afternoon-storm turnaround discipline"
+    ],
+    "experienceLevel": "Solid Class 3-4 scrambling experience with comfort on loose, broken alpine rock and exposed ridge terrain; prior route-finding on unmarked, off-trail terrain strongly recommended"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-to-late July through August, once the approach gullies have shed their snow; tapering into a good but shortening window in September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow generally cleared from approach gullies and upper ridge; dry rock is the best window, though afternoon thunderstorms are possible",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Approach gullies typically still hold snow into early summer; highway may only recently have reopened",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Most reliable dry-rock conditions of the season; watch for typical afternoon convective storms",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Cool and stable early in the month, but snow can return by late September, so late-season attempts carry more risk",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "High alpine eastside conditions - drier than the west-slope Cascades but fully exposed once above treeline",
+     "probability": "Afternoon thunderstorms are a recognized hazard on this route; plan for an early start and be off the exposed ridge before storms build"
+    },
+    "exposure": "Sustained exposure on a broken, loose upper ridge; the existing beta's warnings about loose blocks above other parties and route-finding on broken terrain mean a slip or dislodged rock has serious consequences, particularly with multiple parties on route",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route (nearest NWAC zone is East Slopes North, but this route is only climbed as a dry-season scramble, not a winter/spring snow objective)",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No confirmed date/FA credit for the Southwest Ridge line specifically — only the peak's overall 1942 FA (via presumably the SW or S side) is documented",
+     "No published rack/pro recommendation for the Class 4 summit step",
+     "No verified GPS track or waypoints for the ~2-mile route-fork or the ridge line itself",
+     "Distance/elevation-gain figures for the SW Ridge specifically (vs. the 3-mile South Face approach) are not precisely documented in available sources",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.50981,
+    "peakLng": -120.613587,
+    "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "trailheadLat": 48.51454,
+    "trailheadLng": -120.64332,
+    "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft), via the cairned climbers' paths"
+   },
+   "sling_rack": {
+    "nuts": "small stopper set (optional)",
+    "runners": "2-3 slings"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic (optional)",
+   "rope_length_m": 30,
+   "rope_note": "Half Moon is a rock fin on Kangaroo Ridge surrounded by 5.6-5.10 routes; the 'standard scramble' approach crosses Class 3-4 terrain with short exposed steps where a rope is commonly carried for protection/rappel.",
+   "ascender": null,
+   "corrections": "No dedicated trip report found describing this exact scramble line; inferred from the peak's known rock character and adjacent route grades.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Hairpin pullout and the ramp to the notch north of Half Moon",
+     "notes": "Park at the large pullout on the hairpin near milepost 163 and take the unsigned climbers' path south, staying west of and well above Early Winters Creek — angling down toward the creek is the standard error here. Around a mile in, a small clearing near the creek holds the remains of an old light aircraft, a useful confirmation that you are on line. Beyond it the path crosses boulder fields and slab benches with occasional cairns and all but disappears on the slabs. Rather than going right over Kangaroo Pass, cross the last soggy meadow before the trail rears up for the pass and look left: a talus gully, slope and ledge system angles back toward the notch immediately north of Half Moon, and crossing at that notch drops you into the basin on the fin's southwest side.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "The avalanche path shedding off the col between South Early Winters Spire and Cornice Peak",
+      "Loose scree and rockfall in the southwest gully with any party above",
+      "Cairns and tread vanish on the slab benches in fog or fresh snow",
+      "No water above the first mile"
+     ],
+     "baseFinding": "HALF MOON IS A FIN, AND THAT IS HOW YOU KNOW YOU ARE UNDER IT. It is a thin, crescent-shaped rock blade trending southwest to northeast, sitting between Wallaby Peak to the south and Big Kangaroo to the north; a broad blocky summit mass with a wide gully splitting it is Wallaby, not this. Aim for the notch immediately NORTH of the fin, gained by the talus ramp that angles back from the meadow below Kangaroo Pass, and cross there into the basin on the southwest side. The route begins at the foot of the broad gully draining that southwest flank. Climb loose class 2-3 talus and scree until the gully pinches down to a short step of noticeably cleaner, more solid rock about halfway up — that step is your confirmation you are in the right gully rather than a neighbouring one. Above it, scrambling reaches a flat belay ledge about 200 ft below the true summit, where the short technical finish starts."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "2-3",
+     "label": "Lower southwest gully",
+     "notes": "From the base of the gully, class 2-3 talus and loose scree — rockfall is a real concern with any party above you."
+    },
+    {
+     "n": 2,
+     "class": "4",
+     "label": "Narrow class 4 step",
+     "notes": "Roughly midway up, the gully narrows to a steeper class 4 step of cleaner rock."
+    },
+    {
+     "n": 3,
+     "label": "Scramble to the belay ledge",
+     "notes": "Above the step, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+     "role": "main",
+     "type": "camp",
+     "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangaroo, Poster Peak and the crags immediately above the highway, while the broad pullout further east sits at roughly 4,300 ft and serves the M&M Wall, the Wine Spires and Vasiliki Ridge. Elevations across these pullouts run from about 4,300 ft up to near the 5,477 ft pass, so nights are cool even in midsummer. Nothing is developed — no toilet, no table, no water — and highway noise carries.",
+     "water": "None at either pullout. Carry everything, or filter from Early Winters Creek where the Wine Spires climbers' trail crosses it.",
+     "permit": "Okanogan-Wenatchee National Forest — no quota permit and no reservation of any kind. A Northwest Forest Pass covers day-use parking at the fee trailheads; sleeping in a vehicle at a pullout needs no separate permit, and the general 14-day stay limit applies.",
+     "capacity": "Informal; a handful of vehicles at each pullout, with the hairpin lot the largest and busiest on summer weekends"
+    },
+    {
+     "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+     "role": "main",
+     "type": "camp",
+     "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone Fir around 3,600 ft, Early Winters near 2,200 ft — so they are warmer and considerably lower than the climbing, and Lone Fir is about seven miles from the Blue Lake area. Klipchuck sits back off the highway and is the quietest of the three. All are seasonal and closed when the road is.",
+     "water": "Klipchuck and Early Winters have drinking water in season, shut off outside it. Lone Fir has none, but sits on Early Winters Creek, which needs filtering.",
+     "permit": "Fee per night, first-come first-served at all three — no reservations, no climbing or backcountry permit. A Northwest Forest Pass is not needed to occupy a site. Fourteen-day stay limit.",
+     "capacity": "Roughly 27 sites at Lone Fir, 46 at Klipchuck and about a dozen tent-only sites at Early Winters"
+    },
+    {
+     "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Kangaroo Temple in a day. Some do carry up and sleep near the tarn to get an early start on a longer link-up, so the practice exists even though it is not recommended. If you go, use bare ground well away from the meadow and expect the tarn to be a dry hollow after midsummer. The pass's elevation is uncertain, so plan on a cold, exposed camp rather than a specific number.",
+     "water": "A small tarn below the pass is the only source and it commonly dries out by late summer and autumn. Treat it as unreliable and carry water from the road.",
+     "permit": "None required — Okanogan-Wenatchee National Forest, outside any quota area. Leave-no-trace practice is the only constraint, and it is a real one here.",
+     "capacity": "A few small parties at most, on the flats south of the pass; the ground is fragile"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "southwest sw slopes standard scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

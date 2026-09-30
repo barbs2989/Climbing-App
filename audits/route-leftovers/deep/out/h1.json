@@ -1,0 +1,789 @@
+{
+ "results": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "verdict": "confirmed",
+   "resolution": "rule 3: rewritten as the North Ridge (d2's rewrite, re-verified against the live row), with the grade now settled by a second independent source at 5.7; commitment set null (III still has one source); dist_km 12.87 nulled as the old Kangaroo Pass line's round trip; gain_ft/loss_ft 3200 kept (not provably wrong for this line); Kangaroo Pass and Class 4 Step pins removed.",
+   "summary": "Half Moon has no scramble, so this row becomes the North Ridge, graded 5.7 by two separate parties (a 2025 party calls it a 4-pitch 5.7; the older route page says 5.7+), about seven pitches from the notch north of the peak with a rappel descent; its 8-mile distance, which was the old Kangaroo Pass line's round trip, is cleared.",
+   "evidence": "SECOND GRADE SOURCE (new): a 2025 survey trip by a different climber (Sept 19, 2025, two climbers, one leading every pitch) says the peak's easiest route is 'a 4-pitch 5.7 rock climb' and describes it: from the hairpin, the climbers' path up the valley to its head, open cross-country to the base of the NW face, scree to the notch below the north ridge (car to notch 8am-10am); P1 ~100 ft from just right of a blocky arete up-left to a slung horn; P2 ~200 ft up-left to the skyline, past a fixed piton, hand jams up-right to a ledge; P3 90 ft up cracks to a two-piton anchor; a 200 ft third-class walk along a sandy ledge on the east side to below an 'echo hole'; P5 undercling traverse left of the hole and the exposed arete to a two-piton anchor; scramble to the flat summit; descent by rappels (single and double rope) back to the notch by 4:30pm, car by 6pm. The partner's separate peakbagger log of the same climb gives the same pitches with no grade. A 2018 CascadeClimbers report (a third party) went in 'knowing' only that the route is 5.7 and climbs from the notch (from the old route page and Beckey), climbed it in about four leads plus scrambling from the notch, rappelled with double ropes past two bolted stations, and did not dispute the grade. The 2005-08 route page gives 5.7+, Grade III. So: 5.7 is stated by the 2025 party and 5.7+ by the route page; 5.7+ has only one source, so rule 5's range does not apply and the grade is written as 5.7 (grade_num 7 from lib/grade.js). COMMITMENT: only the route page gives a numeral (III); the row's current 'II' was the invented scramble's, so commitment is set null rather than kept or raised on one source (gap added to data_quality). PITCHES: 7 stays - the route page and the 2013 report both give seven belays (the 2013 party ran them as six 50 m pitches; the 2025 party ran fewer, longer ones). DISTANCE: dist_km 12.87 km is exactly 8.00 mi, i.e. twice the old summit pin's distMi of 4 along the Kangaroo Pass line (TH 0 -> fork 2 -> Kangaroo Pass 3 -> Class 4 step 3.7 -> summit 4), so it is that line's round trip in a one-way slot; the North Ridge leaves the path at 2 mi and the straight line from the hairpin pin to the summit is only ~2.3 km. No source states this approach's distance, so it is nulled. GAIN: 3,200 ft is not provably the old line's: both lines run from the same pullout (~5,100-5,160 ft) to the same summit (7,960 ft on the row; measured 7,992 ft by the 2025 survey), a net 2,800+ ft, so 3,200 ft is plausible for either and is kept, along with the itinerary's gainFt/lossFt. All other content, pins and the rest of the reasoning are as in d2 (the North Ridge line from two independent accounts: the route page and the 2013 report; the 2025 report agrees on the start in the notch reached by the scree gully, belays at piton/horn anchors, the exposed arete high up, the scramble finish and rappelling the route). Every expect/find in d2's ops was re-checked against the live row on 2026-09-30 and still matches. PINS (from d2): 'Kangaroo Pass' (48.50157,-120.62226) removed under rule 1 (~0.95 km off the fork-to-notch line); 'Class 4 Step below the Summit' removed as a feature of the non-existent scramble; the coordinate-less 'Heather Gully Descent Cutoff' is dropped inside the waypoints set; no pin lat/lng changes.",
+   "sources": [
+    "https://www.countryhighpoints.com/half-moon-survey/",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2989047",
+    "https://cascadeclimbers.com/forum/topic/101846-tr-half-moon-north-ridge-06232018/",
+    "https://web.archive.org/web/2023/https://www.summitpost.org/north-ridge/163686",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/north-ridge-of-half-moon-kangaroo-ridge/863616",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/half-moon/153612",
+    "https://en.wikipedia.org/wiki/Half_Moon_(Washington)",
+    "https://www.mountainproject.com/area/120749906/half-moon",
+    "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/100916-tr-uncle-wehrlys-toupee-half-moon/",
+    "https://web.archive.org/web/2023/https://www.summitpost.org/south-face/163682"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_half_moon_southwest_slopes",
+     "expect_name": "Southwest Slopes / Standard Scramble",
+     "name": "North Ridge"
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 3-4",
+     "value": "5.7"
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "grade_system",
+     "path": [],
+     "expect": "class",
+     "value": "yds"
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "grade_num",
+     "path": [],
+     "expect": 4,
+     "value": 7
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "Class 5+ (an older, unnumbered YDS class rating -- roughly a short, low-5th-class step above scrambling terrain, not a specific numeric grade)",
+     "value": "5.7"
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "commitment",
+     "path": [],
+     "expect": "II",
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "pitches",
+     "path": [],
+     "expect": null,
+     "value": 7
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "aspect",
+     "path": [],
+     "expect": "SW",
+     "value": "N"
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "face",
+     "path": [],
+     "expect": "Kangaroo Ridge, between Wallaby Peak and Big Kangaroo",
+     "value": "North ridge, from the deep notch just north of the summit fin"
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "disciplines",
+     "path": [],
+     "expect": [
+      "scrambling"
+     ],
+     "value": [
+      "alpine"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "overview",
+     "path": [],
+     "expect": "Half Moon is a crescent-shaped granite fin on the north half of Kangaroo Ridge, between Wallaby Peak (0.23 mi south, the peak's higher neighbor) and Big Kangaroo (8,326 ft) to the north. It sits about two miles east of, and in clear view from, the North Cascades Highway at Washington Pass. The rock is ~45-million-year-old rapakivi-textured granite of the Golden Horn batholith. Fred and Helmy Beckey, with Walt Varney, made the first ascent on June 17, 1942. There is no easy walk-up: at least three technical lines are known (Southwest Ridge, North Ridge, South Face), all involving sustained Class 3-4 scrambling with at least one low-5th-class move. This route takes the Southwest Ridge, generally regarded as the least difficult option, which finishes with a short, low-exposure Class 4 step just below the summit.",
+     "value": "Half Moon is a crescent-shaped granite fin on the north half of Kangaroo Ridge, between Wallaby Peak and Big Kangaroo, about two miles east of the North Cascades Highway at Washington Pass. It has no easy way up: every line to its summit is a roped rock climb, and the easiest is fifth class. The North Ridge starts in the deep notch just north of the fin and climbs about seven pitches on or just west of the crest to the summit. The rock is friable and eroded on the first pitch or two and much better above, and the upper ridge has real exposure over the west face. Fred and Helmy Beckey and Walt Varney made the first ascent of the peak on June 17, 1942. The route sees few parties, so expect lichen, some loose rock and anchors that may need rebuilding."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "beta",
+     "path": [],
+     "expect": "Half Moon is a SW-to-NE trending rock fin on Kangaroo Ridge between Wallaby Peak and Big Kangaroo, with solid, steep, crack-laden faces. Documented lines include the 1942 first-ascent (original) route, rated roughly Class 5+ (low 5th class) — the easiest known way to the summit — plus at least one modern route, Uncle Wehrly's Toupee (5.10-, trad), and at least 3 other difficult unnamed technical lines. None of these is a non-technical scramble.",
+     "value": "Start in the deep notch north of the peak and climb the broad buttress above it toward the ridge crest. The first pitch has hollow, friable rock that improves steadily on the second. From there the line stays on the crest or just west of it, belaying at ledges, with steeper crack climbing in the middle of the route. High on the ridge a pitch traverses the west side of the narrowing crest with big exposure over the west face before working back to the crest. The last pitch is easy climbing on the crest, then a short scramble to the summit. Seven pitches is the usual count; belay at the obvious ledges rather than running pitches together, which causes rope drag."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "hazards",
+     "path": [],
+     "expect": [
+      "Loose blocks on the upper ridge, especially hazardous to parties below while descending",
+      "Lingering snow in the approach gullies and in the shaded notch north of Half Moon into early-mid July",
+      "Route-finding on broken, cairn-marked terrain through brush and talus below Kangaroo Pass, easy to lose in poor visibility",
+      "Short, low-exposure but unroped Class 4 step just below the summit"
+     ],
+     "value": [
+      "Friable, hollow rock on the first pitch or two; test holds and protect carefully until the rock improves",
+      "Lingering snow in the approach gully and the shaded notch north of Half Moon into early-mid July",
+      "Loose scree in the gully up to the notch; rockfall onto anyone below",
+      "Rappel anchors are old, sparse or missing in some years; carry cord to rebuild them",
+      "Exposed traverse on the west side of the upper ridge"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "gear",
+     "path": [],
+     "expect": [
+      "helmet",
+      "approach shoes or light boots",
+      "optional light rock rack"
+     ],
+     "value": [
+      "helmet",
+      "approach shoes or light boots",
+      "medium alpine rack (nuts and cams)",
+      "two ropes for the rappels",
+      "slings and cord to rebuild rappel anchors",
+      "ice axe early in the season for the approach gully"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "rappels",
+     "path": [],
+     "expect": "1",
+     "value": "The route is descended by rappelling the line of ascent back to the notch. Carry two ropes. Anchors are a mix of fixed pitons, bolts, slung horns and nuts of varying age, and some parties have found none at all, so bring slings and cord to back up or build each station."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "descent",
+     "path": [],
+     "expect": "Reverse the Southwest Ridge. Most parties avoid down-climbing the full lower ridge crest by dropping west into the obvious heather gully toward Early Winters Creek partway down.",
+     "value": "Rappel the North Ridge back to the notch north of the peak, then descend the scree gully and reverse the approach to the highway."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Descend by reversing the ascent line rather than continuing over the ridge. From the summit, downclimb back to the flat belay ledge about 200 ft below the top; this is where the route's one unavoidable technical bit lives — an open-book crack beside a 60-degree slab (roughly a 60 ft 5.6 pitch on the way up). Most parties do not downclimb this: rappel from slung webbing around a large block on the southwest side of the peak just below the summit to get back down past this section. This is a natural gear/block anchor, not bolted — inspect any existing tat before trusting it and back it up if it looks tired. A single rappel here is on the order of 100-150 ft, so a 60 m rope (doubled) covers it comfortably, and a 30 m single-strand rappel is enough if you stop at the first good ledge/stance; parties differ on exactly where they break it depending on rope length carried, but one rappel is the norm to clear the crux. Below the rappel, continue down the loose class 2-3 southwest gully, taking care with scree and rockfall onto anyone below. Rather than downclimbing the full lower southwest ridge, most parties drop west off the crest partway down into the obvious heather gully, which avoids the worst of the loose rock in the lower gully. From there, cross back over the low notch/ridge point into the basin below Wallaby's south slopes, contour west back to Kangaroo Pass, and descend the climbers' path back through the boulder fields and across the avalanche path to the Hairpin Turn pullout.",
+     "value": "Descend the route. From the summit, downclimb the easy but exposed top of the ridge to the first anchor and rappel back down the line of ascent, using the ledges on the crest and its west side as stations, until you are back in the notch north of the peak. Carry two ropes; the stations are a mix of old fixed pitons, bolts, slung horns and nuts, some parties have found no fixed anchors at all, and any tat left there should be inspected and backed up. From the notch, descend the loose scree gully carefully (keep the party close to limit rockfall), and at its foot rejoin the climbers' path and follow it back north to the hairpin pullout on the highway."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "Mostly unroped Class 3-4; a short rope and a few small cams/slings are useful for the exposed summit blocks.",
+     "value": "A medium alpine rack of nuts and cams protects the route; the cracks take gear well once past the eroded rock on the first pitch. Bring plenty of slings, and two ropes for the rappel descent."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "bail",
+     "path": [],
+     "expect": "Retreat is straightforward down the southwest slopes at almost any point.",
+     "value": "Retreat is by rappel down the line of ascent from almost any belay ledge, back to the notch north of the peak; carry enough slings and cord to leave anchors. Below the notch, the scree gully leads back to the climbers' path."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "pro_tips",
+     "path": [],
+     "expect": [
+      "At the ~2-mile fork below Kangaroo Pass, commit to SW Ridge vs. North Ridge vs. South Face before continuing — they diverge substantially and re-routing costs real time",
+      "On descent, cut west into the heather gully partway down the ridge to avoid down-climbing the full lower Southwest Ridge crest",
+      "Choi Oi and Hai Towers on the ridge can be combined with the day if conditions and time allow"
+     ],
+     "value": [
+      "About two miles from the car, before the path climbs to Kangaroo Pass, leave it for the scree gully that angles back toward the notch just north of Half Moon; the North Ridge starts in that notch",
+      "Belay at the obvious ledges; running pitches together causes rope drag",
+      "Carry cord to replace old tat at the rappel stations"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "watch_out",
+     "path": [],
+     "expect": [
+      "Loose rock while descending — stay close as a party and warn climbers below before moving over any suspect block",
+      "Snow filling the approach gullies/notch into early July can force a postponed attempt or require an axe",
+      "The boot path below Kangaroo Pass is unmaintained and cairn-marked only; easy to lose track of in brush or low visibility"
+     ],
+     "value": [
+      "Friable rock on the first pitch — protect early and test holds",
+      "Snow filling the approach gully and notch into early July can require an axe",
+      "The boot path below Kangaroo Pass is unmaintained and cairn-marked only; easy to lose track of in brush or low visibility"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "dist_km",
+     "path": [],
+     "expect": 12.87,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 10.5,
+      "summitTimeHrs": null,
+      "descentTimeHrs": null,
+      "approachTimeHrs": null,
+      "recommendedStart": "5:00 AM from the trailhead",
+      "sectionBreakdown": [
+       {
+        "hrs": 10.5,
+        "note": "A long roadside day, no camp: from the Hwy 20 Hairpin pullout near Washington Pass, follow cairns/boot path through brush staying above Early Winters Creek toward Kangaroo Pass, th…",
+        "fromTo": "Car-to-car scramble via Kangaroo Pass approach",
+        "section": "Climb"
+       }
+      ]
+     },
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Approach talus is described as best done with snow cover in early spring, or after it melts out by July, since bare talus is exposed and leg-breaking.",
+      "days": [
+       {
+        "n": 1,
+        "note": "A long roadside day, no camp: from the Hwy 20 Hairpin pullout near Washington Pass, follow cairns/boot path through brush staying above Early Winters Creek toward Kangaroo Pass, then break off into the talus gully/ledge system left of the pass that angles up to the notch north of Half Moon. From the notch, scramble the final rock to the summit fin. Descend by reversing the ridge and dropping into the heather gully back toward Early Winters Creek to avoid down-climbing the full lower ridge crest.",
+        "hours": 10.5,
+        "miles": 8,
+        "title": "Car-to-car scramble via Kangaroo Pass approach",
+        "gainFt": 3200,
+        "lossFt": 3200,
+        "packLb": 0,
+        "schedule": [
+         {
+          "time": "5:00 AM",
+          "label": "Leave Hairpin pullout (Hwy 20, ~MP 163)",
+          "detail": "Brush/boot path staying west of and above Early Winters Creek."
+         },
+         {
+          "time": "+2.5 hr",
+          "label": "Cross the last soggy meadow below Kangaroo Pass",
+          "detail": "Begin ascending toward the pass; watch for the talus gully breaking off left."
+         },
+         {
+          "time": "+4 hr",
+          "label": "Enter the talus gully/ledge system",
+          "detail": "Loose, leg-breaking talus when snow-free; angles back to the notch north of Half Moon."
+         },
+         {
+          "time": "+5.5 hr",
+          "label": "Reach the notch and start the summit scramble",
+          "detail": "Class 3-4 rock on the fin between Wallaby and Big Kangaroo."
+         },
+         {
+          "time": "+6.5 hr",
+          "label": "Summit",
+          "detail": "Views across Kangaroo Ridge to Liberty Bell and the Washington Pass corridor."
+         },
+         {
+          "time": "+10.5 hr",
+          "label": "Back at the Hairpin pullout",
+          "detail": "Descent reverses the route, dropping into the heather gully near the bottom to bypass the lower ridge crest."
+         }
+        ],
+        "objective": "Summit Half Moon and return to the Hairpin trailhead"
+       }
+      ],
+      "totalNote": "A long single-day scramble car-to-car: roughly 8 miles round trip with about 3,200 ft of gain, typically 9-11 hours for a fit party; no camping is involved."
+     },
+     "value": {
+      "cal": "Approach talus is described as best done with snow cover in early spring, or after it melts out by July, since bare talus is exposed and leg-breaking.",
+      "days": [
+       {
+        "n": 1,
+        "note": "A long day from the road, no camp: from the hairpin pullout on the highway near Washington Pass, follow the cairned climbers' path south, staying above Early Winters Creek. About two miles in, cross the last soggy meadow before the path climbs toward Kangaroo Pass and turn up the talus and scree gully that angles back to the deep notch just north of Half Moon. Climb about seven pitches of the North Ridge to the summit, then rappel the route back to the notch and reverse the approach.",
+        "hours": null,
+        "miles": null,
+        "title": "Car-to-car climb of the North Ridge",
+        "gainFt": 3200,
+        "lossFt": 3200,
+        "packLb": 0,
+        "schedule": [
+         {
+          "time": "",
+          "label": "Leave the hairpin pullout (Hwy 20, ~MP 163)",
+          "detail": "Climbers' path staying west of and above Early Winters Creek."
+         },
+         {
+          "time": "",
+          "label": "Leave the path about two miles in",
+          "detail": "After the last soggy meadow below Kangaroo Pass, turn up the scree gully that angles back toward the notch north of Half Moon."
+         },
+         {
+          "time": "",
+          "label": "Notch north of Half Moon",
+          "detail": "Base of the North Ridge."
+         },
+         {
+          "time": "",
+          "label": "Summit",
+          "detail": "About seven pitches on or just west of the ridge crest."
+         },
+         {
+          "time": "",
+          "label": "Back at the notch",
+          "detail": "Rappel the line of ascent, then descend the gully and reverse the path."
+         }
+        ],
+        "objective": "Climb the North Ridge of Half Moon and return to the hairpin pullout"
+       }
+      ],
+      "totalNote": "A single long day car-to-car with no camp: an off-trail approach, about seven pitches of climbing and a rappel descent."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "approach",
+     "path": [],
+     "expect": "Park at the large Hairpin Turn pullout on Highway 20 near milepost 163 (roughly 5,100 ft), just east of Washington Pass — this doubles as the trailhead for Kangaroo Pass. From the east end of the pullout, drop into the woods and pick up the unsigned but well-used climbers' path (no official trail number; this is the standard Kangaroo Ridge/Wallaby/Half Moon approach). The path runs south, staying west of and well above Early Winters Creek — do not angle down toward the creek itself, a common route-finding mistake. Around 1 mile in you pass a small clearing near the creek where old small-plane wreckage is still visible, a useful landmark that you're on line. Beyond this the path climbs through boulder fields and slab benches with intermittent cairns (route-finding gets genuinely tricky here in fog or fresh snow — the tread all but disappears on the slabs), crossing the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak; this slope is a hazard in early-season or after fresh snow and should be crossed with care or avoided later in the day once it's baked in the sun. The path gains the ridge at Kangaroo Pass (~6,670 ft, about 1.5-2 miles and roughly an hour of hiking from the car). From the pass, contour east below Wallaby's south slopes, staying just below the crest, until you can cross over the ridge at a low notch north of Half Moon into the basin on its southwest side — this puts you at the base of the broad southwest gully/slopes that give the route its name. Water is only reliably available near Early Winters Creek in the first mile; carry what you need above the pass. From the base of the gully, the route climbs class 2-3 talus and loose scree — rockfall is a real concern with any party above you — before the gully narrows to a steeper class 4 step of cleaner rock roughly midway up; above that, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins.",
+     "value": "Park at the large hairpin-turn pullout on Highway 20 near milepost 163 (roughly 5,100 ft), just east of Washington Pass. From the east end of the pullout, drop into the woods and pick up the unsigned but well-used climbers' path toward Kangaroo Pass. It runs south, staying west of and well above Early Winters Creek — angling down toward the creek itself is the common route-finding mistake. Beyond the first mile the path climbs through boulder fields and slab benches with intermittent cairns, and the tread all but disappears on the slabs, so route-finding is tricky in fog or fresh snow. It also crosses the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak, a hazard in early season or after new snow. About two miles from the car, cross the last soggy meadow before the path climbs toward Kangaroo Pass and leave it: look up and left (east) for the prominent talus and scree gully that angles back to the deep notch just north of Half Moon. Climb it — a loose slog at the end — to the notch, where the route starts. Water is only reliably available near Early Winters Creek low on the approach; carry what you need above it."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "approach_variants",
+     "path": [],
+     "expect": [
+      {
+       "name": "Hairpin pullout and the ramp to the notch north of Half Moon",
+       "notes": "Park at the large pullout on the hairpin near milepost 163 and take the unsigned climbers' path south, staying west of and well above Early Winters Creek — angling down toward the creek is the standard error here. Around a mile in, a small clearing near the creek holds the remains of an old light aircraft, a useful confirmation that you are on line. Beyond it the path crosses boulder fields and slab benches with occasional cairns and all but disappears on the slabs. Rather than going right over Kangaroo Pass, cross the last soggy meadow before the trail rears up for the pass and look left: a talus gully, slope and ledge system angles back toward the notch immediately north of Half Moon, and crossing at that notch drops you into the basin on the fin's southwest side.",
+       "season": "Jul-Sep",
+       "hazards": [
+        "The avalanche path shedding off the col between South Early Winters Spire and Cornice Peak",
+        "Loose scree and rockfall in the southwest gully with any party above",
+        "Cairns and tread vanish on the slab benches in fog or fresh snow",
+        "No water above the first mile"
+       ],
+       "baseFinding": "HALF MOON IS A FIN, AND THAT IS HOW YOU KNOW YOU ARE UNDER IT. It is a thin, crescent-shaped rock blade trending southwest to northeast, sitting between Wallaby Peak to the south and Big Kangaroo to the north; a broad blocky summit mass with a wide gully splitting it is Wallaby, not this. Aim for the notch immediately NORTH of the fin, gained by the talus ramp that angles back from the meadow below Kangaroo Pass, and cross there into the basin on the southwest side. The route begins at the foot of the broad gully draining that southwest flank. Climb loose class 2-3 talus and scree until the gully pinches down to a short step of noticeably cleaner, more solid rock about halfway up — that step is your confirmation you are in the right gully rather than a neighbouring one. Above it, scrambling reaches a flat belay ledge about 200 ft below the true summit, where the short technical finish starts."
+      }
+     ],
+     "value": [
+      {
+       "name": "Hairpin pullout and the scree gully to the notch north of Half Moon",
+       "notes": "Park at the large pullout on the hairpin near milepost 163 and take the unsigned climbers' path south, staying west of and well above Early Winters Creek — angling down toward the creek is the standard error here. Beyond the first mile the path crosses boulder fields and slab benches with occasional cairns and all but disappears on the slabs. About two miles from the car, before the path climbs to Kangaroo Pass, cross the last soggy meadow and look left: a talus and scree gully angles back to the deep notch immediately north of Half Moon, and the North Ridge starts in that notch.",
+       "season": "Jul-Sep",
+       "hazards": [
+        "The avalanche path shedding off the col between South Early Winters Spire and Cornice Peak",
+        "Loose scree and rockfall in the gully to the notch with any party above",
+        "Cairns and tread vanish on the slab benches in fog or fresh snow",
+        "No water above the lower approach"
+       ],
+       "baseFinding": "HALF MOON IS A FIN, AND THAT IS HOW YOU KNOW YOU ARE UNDER IT. It is a thin, crescent-shaped rock blade trending southwest to northeast, sitting between Wallaby Peak to the south and Big Kangaroo to the north; a broad blocky summit mass with a wide gully splitting it is Wallaby, not this. Aim for the deep notch immediately NORTH of the fin, reached by the scree gully that angles back from the meadow below Kangaroo Pass. The North Ridge starts in that notch, climbing the broad buttress directly above it toward the crest."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "climbing_route",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "class": "2-3",
+       "label": "Lower southwest gully",
+       "notes": "From the base of the gully, class 2-3 talus and loose scree — rockfall is a real concern with any party above you."
+      },
+      {
+       "n": 2,
+       "class": "4",
+       "label": "Narrow class 4 step",
+       "notes": "Roughly midway up, the gully narrows to a steeper class 4 step of cleaner rock."
+      },
+      {
+       "n": 3,
+       "label": "Scramble to the belay ledge",
+       "notes": "Above the step, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins."
+      }
+     ],
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": null,
+     "value": [
+      {
+       "pitch": "Pitches 1-2 — lower buttress",
+       "grade": "5th class",
+       "notes": "From the notch, climb the broad buttress toward the ridge crest. The rock on the first pitch is hollow and eroded; it improves markedly on the second."
+      },
+      {
+       "pitch": "Pitches 3-5 — middle ridge",
+       "grade": "5th class",
+       "notes": "Continue on or just west of the crest on better rock, belaying at the obvious ledges; stopping at ledges rather than running pitches together avoids rope drag."
+      },
+      {
+       "pitch": "Pitch 6 — west-side traverse",
+       "grade": "5th class",
+       "notes": "Where the ridge narrows, climb on the west side of the crest with big exposure over the west face, then work back to the crest."
+      },
+      {
+       "pitch": "Pitch 7 — summit crest",
+       "grade": "Easy 5th class, then scrambling",
+       "notes": "A few exposed moves on the crest lead to an easy scramble to the summit."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "rope_type",
+     "path": [],
+     "expect": "single dynamic (optional)",
+     "value": "double ropes"
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "rope_length_m",
+     "path": [],
+     "expect": 30,
+     "value": 60
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "rope_note",
+     "path": [],
+     "expect": "Half Moon is a rock fin on Kangaroo Ridge surrounded by 5.6-5.10 routes; the 'standard scramble' approach crosses Class 3-4 terrain with short exposed steps where a rope is commonly carried for protection/rappel.",
+     "value": "Two ropes are recommended for the rappel descent down the route."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "sling_rack",
+     "path": [],
+     "expect": {
+      "nuts": "small stopper set (optional)",
+      "runners": "2-3 slings"
+     },
+     "value": {
+      "nuts": "medium set",
+      "runners": "plenty of slings, plus cord to rebuild rappel anchors"
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "partner_requirements",
+     "path": [],
+     "expect": {
+      "fitnessSpec": {
+       "hiking": "Strenuous cross-country approach (several miles, brush and talus, no maintained trail) from the SR-20 hairpin pullout up toward Kangaroo Pass basin before the climb even starts",
+       "packWeight": "Light day-climbing pack (helmet, layers, water) - not an overnight-weight approach"
+      },
+      "approachTime": "Multi-hour, off-trail approach (roughly half a day) from the North Cascades Highway to the base of the route",
+      "requiredSkills": [
+       "Class 3-4 scrambling movement",
+       "route-finding on broken/unmarked terrain",
+       "loose-rock/rockfall management, especially with parties below",
+       "basic self-arrest/steep talus and gully travel judgment",
+       "afternoon-storm turnaround discipline"
+      ],
+      "experienceLevel": "Solid Class 3-4 scrambling experience with comfort on loose, broken alpine rock and exposed ridge terrain; prior route-finding on unmarked, off-trail terrain strongly recommended"
+     },
+     "value": {
+      "fitnessSpec": {
+       "hiking": "Strenuous cross-country approach (several miles, brush and talus, no maintained trail) from the SR-20 hairpin pullout up toward Kangaroo Pass basin before the climb even starts",
+       "packWeight": "Light day-climbing pack (helmet, layers, water) - not an overnight-weight approach"
+      },
+      "approachTime": "Multi-hour, off-trail approach (roughly half a day) from the North Cascades Highway to the base of the route",
+      "requiredSkills": [
+       "leading moderate fifth-class alpine rock with a trad rack",
+       "building and backing up rappel anchors",
+       "route-finding on broken, unmarked terrain",
+       "loose-rock and rockfall management",
+       "afternoon-storm turnaround discipline"
+      ],
+      "experienceLevel": "Comfortable leading moderate multi-pitch alpine rock on trad gear, with rappelling experience on old or improvised anchors; prior route-finding on unmarked, off-trail terrain strongly recommended"
+     }
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "only climbed as a dry-season scramble",
+     "replace": "only climbed as a dry-season rock route"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Sustained exposure on a broken, loose upper ridge; the existing beta's warnings about loose blocks above other parties and route-finding on broken terrain mean",
+     "replace": "Sustained exposure on the upper ridge, especially on the traverse along its west side; loose rock low on the route and in the approach gully means"
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "data_quality",
+     "path": [],
+     "expect": {
+      "gaps": [
+       "No confirmed date/FA credit for the Southwest Ridge line specifically — only the peak's overall 1942 FA (via presumably the SW or S side) is documented",
+       "No published rack/pro recommendation for the Class 4 summit step",
+       "No verified GPS track or waypoints for the ~2-mile route-fork or the ridge line itself",
+       "Distance/elevation-gain figures for the SW Ridge specifically (vs. the 3-mile South Face approach) are not precisely documented in available sources",
+       "No public GPS track found for this route as of this research pass.",
+       "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+      ],
+      "confidence": "MEDIUM",
+      "lastVerified": "2026-07-01"
+     },
+     "value": {
+      "gaps": [
+       "No verified GPS track or pin for the notch at the start of the route",
+       "Car-to-car time, distance and elevation gain for this approach are not precisely documented",
+       "Individual pitch grades are not recorded; only the overall grade is",
+       "The commitment grade (I-VI) for this route is not confirmed, so none is shown",
+       "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+      ],
+      "confidence": "MEDIUM",
+      "lastVerified": "2026-07-01"
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "corrections",
+     "path": [],
+     "expect": "No dedicated trip report found describing this exact scramble line; inferred from the peak's known rock character and adjacent route grades.",
+     "value": "Rewritten as the North Ridge: Half Moon has no scramble route, and the previous description matched no documented line."
+    },
+    {
+     "op": "set",
+     "id": "wa_half_moon_southwest_slopes",
+     "column": "waypoints",
+     "path": [],
+     "expect": [
+      {
+       "lat": 48.51454,
+       "lng": -120.64332,
+       "elev": 5160,
+       "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+       "note": "Large paved pullout on Highway 20 just east of Washington Pass, below Liberty Bell/South Early Winter Spire; pick up cairns leading south through brush toward Early Winters Creek.",
+       "type": "Trailhead",
+       "distMi": 0,
+       "directions": "Take Highway 20 to the large hairpin-turn pullout near milepost 163, just east of Washington Pass, at roughly 5,100 ft. It is a big paved pullout sitting below Liberty Bell and South Early Winter Spire, and it doubles as the trailhead for Kangaroo Pass. Park here and start from the east end of the lot, where cairns lead south through the brush toward Early Winters Creek."
+      },
+      {
+       "lat": 48.51845706666666,
+       "lng": -120.64115333333334,
+       "elev": 5660,
+       "name": "Early Winters Creek Clearing (Airplane Wreckage)",
+       "note": "Small clearing along Early Winters Creek scattered with old wreckage from a small-plane crash; last reliable water before the boot path climbs away from the creek.",
+       "type": "Water",
+       "distMi": 1,
+       "directions": "Drop into the woods from the east end of the pullout and pick up the unsigned but well-used climbers' path. It runs south, staying west of and well above Early Winters Creek; angling down toward the creek itself is the standard route-finding mistake on this stretch. Reaching the clearing at about a mile confirms you are still on line."
+      },
+      {
+       "lat": 48.51001413333333,
+       "lng": -120.63170666666667,
+       "elev": 6170,
+       "name": "Three-Route Fork below Kangaroo Pass",
+       "note": "Boot path splits toward Half Moon's three route options here; stay on the Southwest Ridge line rather than continuing straight up to the Kangaroo Pass notch.",
+       "type": "Junction",
+       "distMi": 2,
+       "directions": "Above the clearing the path climbs through boulder fields and slab benches marked only by intermittent cairns, and the tread all but disappears on the slabs — this is the hardest stretch to follow in fog or fresh snow. It also crosses the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak, which is a hazard in early season or after new snow and is better crossed early than once the slope has baked in the sun."
+      },
+      {
+       "lat": 48.50157,
+       "lng": -120.62226,
+       "elev": 6671,
+       "name": "Kangaroo Pass",
+       "note": "Broad saddle on Kangaroo Ridge shared with approaches to Wallaby Peak and Big Kangaroo; gain the ridge here and traverse toward Half Moon's southwest side.",
+       "type": "Junction",
+       "distMi": 3
+      },
+      {
+       "lat": 48.50737826,
+       "lng": -120.6161203,
+       "elev": 7800,
+       "name": "Class 4 Step below the Summit",
+       "note": "A short, exposed Class 4 slab step breaks up the otherwise Class 3 Southwest Ridge just below the top; loose blocks reported, test holds before committing.",
+       "type": "Hazard",
+       "distMi": 3.7,
+       "directions": "From the pass, contour east below Wallaby's south slopes, staying just under the crest, until you can cross back over the ridge at a low notch north of Half Moon into the basin on its southwest side. That drops you at the foot of the broad southwest gully, which starts as Class 2-3 talus and loose scree where rockfall from any party above you is the real danger. Higher up the gully narrows and steepens onto cleaner rock."
+      },
+      {
+       "lat": 48.509867,
+       "lng": -120.613489,
+       "elev": 7960,
+       "name": "Half Moon Summit",
+       "note": "Crescent-shaped granite high point of Kangaroo Ridge climbing, first ascended June 17, 1942 by Fred and Helmy Beckey with Walt Varney.",
+       "type": "Summit",
+       "distMi": 4
+      },
+      {
+       "elev": 7000,
+       "name": "Heather Gully Descent Cutoff",
+       "note": "Partway down the ridge, cut west off the rock into a steep heather-and-dirt gully dropping directly toward Early Winters Creek; loose footing and easy to lose the boot path in poor visibility.",
+       "type": "Hazard",
+       "distMi": 4.4
+      }
+     ],
+     "value": [
+      {
+       "lat": 48.51454,
+       "lng": -120.64332,
+       "elev": 5160,
+       "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+       "note": "Large paved pullout on Highway 20 just east of Washington Pass, below Liberty Bell/South Early Winter Spire; pick up cairns leading south through brush toward Early Winters Creek.",
+       "type": "Trailhead",
+       "distMi": 0,
+       "directions": "Take Highway 20 to the large hairpin-turn pullout near milepost 163, just east of Washington Pass, at roughly 5,100 ft. It is a big paved pullout sitting below Liberty Bell and South Early Winter Spire, and it doubles as the trailhead for Kangaroo Pass. Park here and start from the east end of the lot, where cairns lead south through the brush toward Early Winters Creek."
+      },
+      {
+       "lat": 48.51845706666666,
+       "lng": -120.64115333333334,
+       "elev": 5660,
+       "name": "Early Winters Creek Clearing (Airplane Wreckage)",
+       "note": "Small clearing along Early Winters Creek scattered with old wreckage from a small-plane crash; last reliable water before the boot path climbs away from the creek.",
+       "type": "Water",
+       "distMi": 1,
+       "directions": "Drop into the woods from the east end of the pullout and pick up the unsigned but well-used climbers' path. It runs south, staying west of and well above Early Winters Creek; angling down toward the creek itself is the standard route-finding mistake on this stretch. Reaching the clearing at about a mile confirms you are still on line."
+      },
+      {
+       "lat": 48.51001413333333,
+       "lng": -120.63170666666667,
+       "elev": 6170,
+       "name": "Leave the path for the gully to the notch",
+       "note": "Where the climbers' path turns up toward Kangaroo Pass, leave it for the talus and scree gully angling back east to the deep notch just north of Half Moon, where the North Ridge starts.",
+       "type": "Junction",
+       "distMi": 2,
+       "directions": "Above the clearing the path climbs through boulder fields and slab benches marked only by intermittent cairns, and the tread all but disappears on the slabs — this is the hardest stretch to follow in fog or fresh snow. It also crosses the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak, which is a hazard in early season or after new snow and is better crossed early than once the slope has baked in the sun."
+      },
+      {
+       "lat": 48.50157,
+       "lng": -120.62226,
+       "elev": 6671,
+       "name": "Kangaroo Pass",
+       "note": "Broad saddle on Kangaroo Ridge shared with approaches to Wallaby Peak and Big Kangaroo; gain the ridge here and traverse toward Half Moon's southwest side.",
+       "type": "Junction",
+       "distMi": 3
+      },
+      {
+       "lat": 48.50737826,
+       "lng": -120.6161203,
+       "elev": 7800,
+       "name": "Class 4 Step below the Summit",
+       "note": "A short, exposed Class 4 slab step breaks up the otherwise Class 3 Southwest Ridge just below the top; loose blocks reported, test holds before committing.",
+       "type": "Hazard",
+       "distMi": 3.7,
+       "directions": "From the pass, contour east below Wallaby's south slopes, staying just under the crest, until you can cross back over the ridge at a low notch north of Half Moon into the basin on its southwest side. That drops you at the foot of the broad southwest gully, which starts as Class 2-3 talus and loose scree where rockfall from any party above you is the real danger. Higher up the gully narrows and steepens onto cleaner rock."
+      },
+      {
+       "lat": 48.509867,
+       "lng": -120.613489,
+       "elev": 7960,
+       "name": "Half Moon Summit",
+       "note": "Crescent-shaped granite high point of Kangaroo Ridge climbing, first ascended June 17, 1942 by Fred and Helmy Beckey with Walt Varney.",
+       "type": "Summit",
+       "distMi": null
+      }
+     ]
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_half_moon_southwest_slopes",
+     "index": 3,
+     "expect": {
+      "name": "Kangaroo Pass",
+      "lat": 48.50157,
+      "lng": -120.62226
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_half_moon_southwest_slopes",
+     "index": 4,
+     "expect": {
+      "name": "Class 4 Step below the Summit",
+      "lat": 48.50737826,
+      "lng": -120.6161203
+     }
+    }
+   ]
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "verdict": "unresolved",
+   "resolution": "No ops. grade 'Grade II, 5.10a' / rock_grade '5.10a' / commitment 'II' stay: still only one account (the 2009 Thread of Ice party) grades the climb from the Eye Col to East Twin's summit (a 5.7 hand crack). data_quality.gaps[0] and corrections are left as they are because the grade is not settled.",
+   "summary": "No second grading of East Twin Needle from the Eye Col turned up, so the 5.10a grade (which belongs to the 2003 east arete) still cannot be lowered to 5.7.",
+   "evidence": "New places searched this pass, beyond d4's list: Jens Holsten's blog and Chad Kellogg's Outdoor Research story on the 2013 complete Picket enchainment ('the 5.10 on East Twin Needle', 'a 5.10 finish on the final pitch') - both describe the enchainment's east-side line (the 2003 east arete/southeast rib, 5.10), not the Eye Col line, so they support 5.10 only for that other line; the NWMJ #4 short report on the 2003 enchainment (Southeast Rib, 3 pitches, 5.9 and 5.10 moves) - same other line; the 2009 CascadeClimbers Thread of Ice thread (the report is by the same author as the one existing source; replies give no grade); Wayne Wallace's blog (the other 2009 climber - only a link to his video, no grade); the 1962 'First Ascents in the Southern Pickets' account (Crescent Creek spires; says only that the Twin Needles had been climbed); the adventuresnw 'Traversing the Pickets' and climberkyle 'Pickets High Route' reports (pass the Twin Needles, do not climb them); the SummitPost Southern Pickets photo page; theCrag (no routes listed); the 1932-34 Mountaineer bulletins on archive.org (no Pickets text); archive.org's scans of Beckey's Cascade Alpine Guide (lending-restricted, full-text search refused); Google Books (API quota exhausted, web search blocked); peakbagger (Cloudflare challenge; not bypassed). Re-read the AAJ 2023 North Buttress note: its party finished near the summit, 'scrambled to the summit at perhaps 5.6', then downclimbed and rappelled the 1,200-ft south face to the Eye Col - this grades the last moves from the north side and shows the Eye Col side was descended, but gives no grade for climbing up from the col, so it cannot serve as the second source. fa stays null (no source names a first-ascent party for this line). When a second grading is found: grade 'Grade II, 5.7', rock_grade '5.7', grade_num 7, review commitment, rewrite data_quality.gaps[0] ('South Route (III, 5.7) ... not independently confirmed') and corrections (which describe the 5.10a fix) to match.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://stephabegg.com/trip-reports/washington/pickets/twin-needles/",
+    "http://alpenglow.org/nwmj/10/101_Shorts2.html",
+    "http://publications.americanalpineclub.org/articles/13201216383",
+    "http://jensholsten.blogspot.com/2013/07/desperate-country-seven-day-enchainment.html",
+    "https://www.outdoorresearch.com/blogs/stories/chad-kellogg-jens-holsten-tackle-complete-picket-range-enchainment",
+    "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/67560-tr-southern-pickets-thread-of-ice-twin-needles-fa-6272009/",
+    "https://waynewallace.wordpress.com/?s=twin+needle",
+    "https://slideblast.com/first-ascents-in-the-southern-pickets_59a549771723dd4656d86612.html"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "verdict": "confirmed",
+   "resolution": "fa corrected to name the first-ascent party (Wertkin & Tyree Johnson) separately from the first-free-ascent party (Wertkin & Jon Gleason). commitment III vs IV left UNRESOLVED: still only the first ascensionist gives a numeral (IV); no op on commitment.",
+   "summary": "The first ascent of King Kong was Sol Wertkin with Tyree Johnson in early September 2016 and the first free ascent was Wertkin with Jon Gleason a week later, so the row's fa (which gave the FA to Gleason) is corrected; the III-vs-IV commitment grade still has only one source (IV) and is left for the owner.",
+   "evidence": "FA: the AAJ 2017 note says that in early September 'Tyree Johnson and I finally completed the 60m headwall crack', taking an 8 m fall on the last move, and that a week later he 'returned with Jon Gleason and was able to climb the crack clean' (Sept 9). The route database entry's FA line reads 'September 2016 - Sol Wertkin, Tyree Johnson, FFA Sol Wertkin'. The FA blog post says the same: he went back with Tyree Johnson, then on September 9 made the free ascent with Jon Gleason. The NWMJ new-route inbox lists Sept 9 as a 'Free ascent, Sol Wertkin and partners'. CAVEAT: every one of these accounts is written by the first ascensionist (the database page was 'Shared By: Sol Wertkin'), so strictly they are one author; they are, however, the only record of the ascent and all agree, and the row's current value (Gleason on the FA) is contradicted by every one of them and supported by none. The row's beta already says the first FREE ascent was with Gleason, which stays true. COMMITMENT: searched again for an independent grade (AAJ, NWMJ inbox, SuperTopo/CascadeClimbers FA threads, the FA blog, the route database page, repeat reports): the only numeral anywhere is the first ascensionist's 'IV 5.11+'; the route database gives no Grade numeral; no repeat or third-party account was found. Nothing supports III. Owner option unchanged: accept IV on one source (the shared lower wall, Gorillas in the Mist, is IV in the AAJ), or leave III.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214134/Mt-Stuart-King-Kong",
+    "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct",
+    "https://solclimbs.blogspot.com/2016/10/first-ascent-king-kong-joe-puryear.html",
+    "http://www.alpenglow.org/nwmj/inbox.html"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "column": "fa",
+     "path": [],
+     "expect": "Sol Wertkin & Jon Gleason, 2016 (freed by Sol Wertkin)",
+     "value": "Sol Wertkin & Tyree Johnson, September 2016 (first free ascent: Sol Wertkin & Jon Gleason, September 9, 2016)"
+    }
+   ],
+   "pin_ops": []
+  }
+ ]
+}

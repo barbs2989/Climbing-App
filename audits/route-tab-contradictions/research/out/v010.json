@@ -1,0 +1,185 @@
+{
+ "file": "v010",
+ "results": [
+  {
+   "id": "wa_half_fast",
+   "fact": "Whether trailhead parking requires a fee/pass",
+   "verdict": "fixed",
+   "correct_value": "No parking pass at the crag's unofficial roadside pulloff",
+   "evidence": "The crag is reached from an unofficial roadside pulloff uphill of the double hairpin on the Old Stevens Pass Highway (~1.4 mi from US-2), with no developed parking or facilities. Federal recreation-fee law bars standard-amenity fees 'solely for parking, undesignated parking, or picnicking along roads or trailsides' and allows them only where there is developed parking, a toilet, trash, an information kiosk, picnic tables and security; the national forest's own pass page says passes are required at many developed trailheads and that fee sites are signed; a statewide pass FAQ says the pass is only required where the trailhead offers developed facilities. So no pass is needed at the pulloff (the Wellington fee trailhead is a different site 2.8 mi up the road). access.passRequired is set to agree with access.notes/parking_pass; `permit`'s 'Northwest Forest Pass at developed trailheads' is already conditional and stays.",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/16/6802",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.wta.org/go-outside/passes/what-pass-do-i-need-faq",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Recreation pass",
+     "value": "None at the crag's roadside pulloff (not a fee site)",
+     "id": "wa_half_fast",
+     "fact": "Whether trailhead parking requires a fee/pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_half_fast",
+   "fact": "Rappel distance vs route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The route's own database page (re-read) gives 50 ft (15 m), 3 bolts, 'short route' and says to rappel the route from its anchors; the crag page says all routes are about 85 ft or less. No second independent per-route height was found (searches return only that database and a mirror), so the 85-ft figure in descent_text, which looks like the crag-wide cap reused, is left. Suggested fix unchanged: drop the 85-ft figure from descent_text.",
+   "sources": [
+    "https://www.mountainproject.com/route/117712840/half-fast",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_half_fast",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "correct_value": "Not the Wild Sky Wilderness; crag pin is 165 m outside the Henry M. Jackson Wilderness, permit status unsourced",
+   "evidence": "Third pass. Re-measured with the Forest Service wilderness boundary layer (with geometry): the crag pin lies OUTSIDE any wilderness, 165 m south of the Henry M. Jackson Wilderness boundary, and the ground height at the pin (4,758 ft, USGS 1 m DEM) fits the approach described for the crag (about 1,000 ft of gain from the hairpin pulloff), while the boundary point 165 m north is already at ~5,230 ft. Wild Sky Wilderness is more than 4 km away, so the Wild Sky name is certainly wrong. But no source states the crag's wilderness status or permit rule, and a 165 m margin is within the uncertainty of a guidebook-database pin, so the replacement text (no permit vs. a Henry M. Jackson self-issue permit) is still not settled; nothing patched. Suggested owner fix: drop the Wild Sky clause from `permit` so it agrees with access.permit 'N/A'.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-121.11626,47.75586&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=3000&units=esriSRUnit_Meter&outFields=WILDERNESSNAME&returnGeometry=true&outSR=4326&f=json",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.11626&y=47.75586&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_astral_projection",
+   "fact": "Whether trailhead parking requires a fee/pass",
+   "verdict": "fixed",
+   "correct_value": "No parking pass at the crag's unofficial roadside pulloff",
+   "evidence": "The crag is reached from an unofficial roadside pulloff uphill of the double hairpin on the Old Stevens Pass Highway (~1.4 mi from US-2), with no developed parking or facilities. Federal recreation-fee law bars standard-amenity fees 'solely for parking, undesignated parking, or picnicking along roads or trailsides' and allows them only where there is developed parking, a toilet, trash, an information kiosk, picnic tables and security; the national forest's own pass page says passes are required at many developed trailheads and that fee sites are signed; a statewide pass FAQ says the pass is only required where the trailhead offers developed facilities. So no pass is needed at the pulloff (the Wellington fee trailhead is a different site 2.8 mi up the road). access.passRequired is set to agree with access.notes/parking_pass; `permit`'s 'Northwest Forest Pass at developed trailheads' is already conditional and stays.",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/16/6802",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.wta.org/go-outside/passes/what-pass-do-i-need-faq",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Recreation pass",
+     "value": "None at the crag's roadside pulloff (not a fee site)",
+     "id": "wa_astral_projection",
+     "fact": "Whether trailhead parking requires a fee/pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_astral_projection",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "correct_value": "Not the Wild Sky Wilderness; crag pin is 165 m outside the Henry M. Jackson Wilderness, permit status unsourced",
+   "evidence": "Third pass. Re-measured with the Forest Service wilderness boundary layer (with geometry): the crag pin lies OUTSIDE any wilderness, 165 m south of the Henry M. Jackson Wilderness boundary, and the ground height at the pin (4,758 ft, USGS 1 m DEM) fits the approach described for the crag (about 1,000 ft of gain from the hairpin pulloff), while the boundary point 165 m north is already at ~5,230 ft. Wild Sky Wilderness is more than 4 km away, so the Wild Sky name is certainly wrong. But no source states the crag's wilderness status or permit rule, and a 165 m margin is within the uncertainty of a guidebook-database pin, so the replacement text (no permit vs. a Henry M. Jackson self-issue permit) is still not settled; nothing patched. Suggested owner fix: drop the Wild Sky clause from `permit` so it agrees with access.permit 'N/A'.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-121.11626,47.75586&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=3000&units=esriSRUnit_Meter&outFields=WILDERNESSNAME&returnGeometry=true&outSR=4326&f=json",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.11626&y=47.75586&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_astroglide",
+   "fact": "Whether trailhead parking requires a fee/pass",
+   "verdict": "fixed",
+   "correct_value": "No parking pass at the crag's unofficial roadside pulloff",
+   "evidence": "The crag is reached from an unofficial roadside pulloff uphill of the double hairpin on the Old Stevens Pass Highway (~1.4 mi from US-2), with no developed parking or facilities. Federal recreation-fee law bars standard-amenity fees 'solely for parking, undesignated parking, or picnicking along roads or trailsides' and allows them only where there is developed parking, a toilet, trash, an information kiosk, picnic tables and security; the national forest's own pass page says passes are required at many developed trailheads and that fee sites are signed; a statewide pass FAQ says the pass is only required where the trailhead offers developed facilities. So no pass is needed at the pulloff (the Wellington fee trailhead is a different site 2.8 mi up the road). access.passRequired is set to agree with access.notes/parking_pass; `permit`'s 'Northwest Forest Pass at developed trailheads' is already conditional and stays.",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/16/6802",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.wta.org/go-outside/passes/what-pass-do-i-need-faq",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Recreation pass",
+     "value": "None at the crag's roadside pulloff (not a fee site)",
+     "id": "wa_astroglide",
+     "fact": "Whether trailhead parking requires a fee/pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_astroglide",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "correct_value": "Not the Wild Sky Wilderness; crag pin is 165 m outside the Henry M. Jackson Wilderness, permit status unsourced",
+   "evidence": "Third pass. Re-measured with the Forest Service wilderness boundary layer (with geometry): the crag pin lies OUTSIDE any wilderness, 165 m south of the Henry M. Jackson Wilderness boundary, and the ground height at the pin (4,758 ft, USGS 1 m DEM) fits the approach described for the crag (about 1,000 ft of gain from the hairpin pulloff), while the boundary point 165 m north is already at ~5,230 ft. Wild Sky Wilderness is more than 4 km away, so the Wild Sky name is certainly wrong. But no source states the crag's wilderness status or permit rule, and a 165 m margin is within the uncertainty of a guidebook-database pin, so the replacement text (no permit vs. a Henry M. Jackson self-issue permit) is still not settled; nothing patched. Suggested owner fix: drop the Wild Sky clause from `permit` so it agrees with access.permit 'N/A'.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-121.11626,47.75586&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=3000&units=esriSRUnit_Meter&outFields=WILDERNESSNAME&returnGeometry=true&outSR=4326&f=json",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.11626&y=47.75586&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_asymptotic",
+   "fact": "Whether trailhead parking requires a fee/pass",
+   "verdict": "fixed",
+   "correct_value": "No parking pass at the crag's unofficial roadside pulloff",
+   "evidence": "The crag is reached from an unofficial roadside pulloff uphill of the double hairpin on the Old Stevens Pass Highway (~1.4 mi from US-2), with no developed parking or facilities. Federal recreation-fee law bars standard-amenity fees 'solely for parking, undesignated parking, or picnicking along roads or trailsides' and allows them only where there is developed parking, a toilet, trash, an information kiosk, picnic tables and security; the national forest's own pass page says passes are required at many developed trailheads and that fee sites are signed; a statewide pass FAQ says the pass is only required where the trailhead offers developed facilities. So no pass is needed at the pulloff (the Wellington fee trailhead is a different site 2.8 mi up the road). access.passRequired is set to agree with access.notes/parking_pass; `permit`'s 'Northwest Forest Pass at developed trailheads' is already conditional and stays.",
+   "sources": [
+    "https://www.law.cornell.edu/uscode/text/16/6802",
+    "https://www.fs.usda.gov/r06/mbs/passes",
+    "https://www.wta.org/go-outside/passes/what-pass-do-i-need-faq",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Recreation pass",
+     "value": "None at the crag's roadside pulloff (not a fee site)",
+     "id": "wa_asymptotic",
+     "fact": "Whether trailhead parking requires a fee/pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_asymptotic",
+   "fact": "Rappel distance vs route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The route's own database page (re-read) gives 60 ft (18 m), 6 bolts and says to rappel the route from its anchors; the crag page says all routes are about 85 ft or less. No second independent per-route height was found (searches return only that database and a mirror), so the 85-ft figure in descent_text, which looks like the crag-wide cap reused, is left. Suggested fix unchanged: drop the 85-ft figure from descent_text.",
+   "sources": [
+    "https://www.mountainproject.com/route/117712788/asymptotic",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_asymptotic",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "correct_value": "Not the Wild Sky Wilderness; crag pin is 165 m outside the Henry M. Jackson Wilderness, permit status unsourced",
+   "evidence": "Third pass. Re-measured with the Forest Service wilderness boundary layer (with geometry): the crag pin lies OUTSIDE any wilderness, 165 m south of the Henry M. Jackson Wilderness boundary, and the ground height at the pin (4,758 ft, USGS 1 m DEM) fits the approach described for the crag (about 1,000 ft of gain from the hairpin pulloff), while the boundary point 165 m north is already at ~5,230 ft. Wild Sky Wilderness is more than 4 km away, so the Wild Sky name is certainly wrong. But no source states the crag's wilderness status or permit rule, and a 165 m margin is within the uncertainty of a guidebook-database pin, so the replacement text (no permit vs. a Henry M. Jackson self-issue permit) is still not settled; nothing patched. Suggested owner fix: drop the Wild Sky clause from `permit` so it agrees with access.permit 'N/A'.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_Wilderness_01/MapServer/0/query?geometry=-121.11626,47.75586&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&distance=3000&units=esriSRUnit_Meter&outFields=WILDERNESSNAME&returnGeometry=true&outSR=4326&f=json",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.11626&y=47.75586&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "patches": []
+  }
+ ]
+}

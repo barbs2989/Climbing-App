@@ -1,0 +1,85 @@
+{
+ "applied": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "op": "remove_pin",
+   "index": 4,
+   "name": "Class 4 Step below the Summit",
+   "gpx_vertices_dropped": 0
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "op": "remove_pin",
+   "index": 3,
+   "name": "Kangaroo Pass",
+   "gpx_vertices_dropped": 0
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "waypoints": [
+    {
+     "lat": 48.51454,
+     "lng": -120.64332,
+     "elev": 5160,
+     "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+     "note": "Large paved pullout on Highway 20 just east of Washington Pass, below Liberty Bell/South Early Winter Spire; pick up cairns leading south through brush toward Early Winters Creek.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take Highway 20 to the large hairpin-turn pullout near milepost 163, just east of Washington Pass, at roughly 5,100 ft. It is a big paved pullout sitting below Liberty Bell and South Early Winter Spire, and it doubles as the trailhead for Kangaroo Pass. Park here and start from the east end of the lot, where cairns lead south through the brush toward Early Winters Creek."
+    },
+    {
+     "lat": 48.51845706666666,
+     "lng": -120.64115333333334,
+     "elev": 5660,
+     "name": "Early Winters Creek Clearing (Airplane Wreckage)",
+     "note": "Small clearing along Early Winters Creek scattered with old wreckage from a small-plane crash; last reliable water before the boot path climbs away from the creek.",
+     "type": "Water",
+     "distMi": 1,
+     "directions": "Drop into the woods from the east end of the pullout and pick up the unsigned but well-used climbers' path. It runs south, staying west of and well above Early Winters Creek; angling down toward the creek itself is the standard route-finding mistake on this stretch. Reaching the clearing at about a mile confirms you are still on line."
+    },
+    {
+     "lat": 48.51001413333333,
+     "lng": -120.63170666666667,
+     "elev": 6170,
+     "name": "Leave the path for the gully to the notch",
+     "note": "Where the climbers' path turns up toward Kangaroo Pass, leave it for the talus and scree gully angling back east to the deep notch just north of Half Moon, where the North Ridge starts.",
+     "type": "Junction",
+     "distMi": 2,
+     "directions": "Above the clearing the path climbs through boulder fields and slab benches marked only by intermittent cairns, and the tread all but disappears on the slabs — this is the hardest stretch to follow in fog or fresh snow. It also crosses the toe of the avalanche path that sheds off the col between South Early Winters Spire and Cornice Peak, which is a hazard in early season or after new snow and is better crossed early than once the slope has baked in the sun."
+    },
+    {
+     "lat": 48.50157,
+     "lng": -120.62226,
+     "elev": 6671,
+     "name": "Kangaroo Pass",
+     "note": "Broad saddle on Kangaroo Ridge shared with approaches to Wallaby Peak and Big Kangaroo; gain the ridge here and traverse toward Half Moon's southwest side.",
+     "type": "Junction",
+     "distMi": 3
+    },
+    {
+     "lat": 48.50737826,
+     "lng": -120.6161203,
+     "elev": 7800,
+     "name": "Class 4 Step below the Summit",
+     "note": "A short, exposed Class 4 slab step breaks up the otherwise Class 3 Southwest Ridge just below the top; loose blocks reported, test holds before committing.",
+     "type": "Hazard",
+     "distMi": 3.7,
+     "directions": "From the pass, contour east below Wallaby's south slopes, staying just under the crest, until you can cross back over the ridge at a low notch north of Half Moon into the basin on its southwest side. That drops you at the foot of the broad southwest gully, which starts as Class 2-3 talus and loose scree where rockfall from any party above you is the real danger. Higher up the gully narrows and steepens onto cleaner rock."
+    },
+    {
+     "lat": 48.509867,
+     "lng": -120.613489,
+     "elev": 7960,
+     "name": "Half Moon Summit",
+     "note": "Crescent-shaped granite high point of Kangaroo Ridge climbing, first ascended June 17, 1942 by Fred and Helmy Beckey with Walt Varney.",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": null
+  }
+ ]
+}

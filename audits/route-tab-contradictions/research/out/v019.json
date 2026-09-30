@@ -1,0 +1,224 @@
+{
+ "file": "v019",
+ "results": [
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row no longer stores dist_km at all, so the 20 mi 'one way' figure the dispute was about is gone and the header distance comes from the itinerary's 16.5 mi round trip. Published round trips for Stuart from the Esmeralda trailhead over Longs Pass still vary (about 11.7 mi for the Cascadian out-and-back, 13 mi for a club's West Ridge outing, 15-17 mi in one West Ridge report), and none states a one-way figure, so nothing new is written.",
+   "sources": [
+    "https://fastestknowntime.com/route/mt-stuart",
+    "https://stephabegg.com/trip-reports/washington/stuart-west-ridge/",
+    "https://wenatcheeoutdoors.org/2016/06/07/mt-stuart-west-ridge-2/",
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Hardest/crux rock grade",
+   "verdict": "fixed",
+   "correct_value": "5.11d-5.12a",
+   "evidence": "The grading of this line is split between the published records and the row already carries both numbers: the first-ascent account and its journal note grade the headwall 5.11d (IV 5.11+), while the route database page, which the first ascensionist himself shared, lists the route at 5.12a with the headwall pitch at 5.12-, and five climbers' votes on it average 5.12a. Under the delegated split-grade rule the range the sources span, 5.11d-5.12a, now goes in grade, rock_grade, the crux pitch and every prose copy that stated only one end.",
+   "sources": [
+    "https://solclimbs.blogspot.com/2016/10/first-ascent-king-kong-joe-puryear.html",
+    "http://publications.americanalpineclub.org/articles/13201214134/Mt-Stuart-King-Kong",
+    "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "5.11d",
+     "value": "5.11d-5.12a",
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Hardest/crux rock grade"
+    },
+    {
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.12a",
+     "value": "5.11d-5.12a",
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Hardest/crux rock grade"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      7,
+      "grade"
+     ],
+     "expect": "5.11d",
+     "value": "5.11d-5.12a",
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Hardest/crux rock grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "('Empire State Building', 5.12a)",
+     "replace": "('Empire State Building', 5.11d-5.12a)",
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Hardest/crux rock grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "aesthetic splitter crack on overhanging headwall (5.11d crux)",
+     "replace": "aesthetic splitter crack on overhanging headwall (5.11d-5.12a crux)",
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Hardest/crux rock grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Headwall pitch (5.11d):",
+     "replace": "Headwall pitch (5.11d-5.12a):",
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Hardest/crux rock grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "High-grade 5.11d sustained climbing",
+     "replace": "High-grade 5.11d-5.12a sustained climbing",
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Hardest/crux rock grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Total elevation gain",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "gain_ft 1663 is provably too low: the trail from the Esmeralda/Lake Ingalls trailhead gains 2,500 ft just to reach Lake Ingalls (4.5 mi one way, high point 6,500 ft), and the route's own location on the West Face Wall sits at about 8,136 ft on the USGS ground model, some 3,900 ft above the 4,243-4,270 ft trailhead before any of the 900 ft of climbing. No source states a car-to-car gain for the West Face Wall routes, so under the delegated rule the wrong figure is cleared (null) rather than replaced with a computed one.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.wta.org/go-hiking/hikes/lake-ingalls",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.9022&y=47.4773&units=Feet&wkid=4326",
+    "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 1663,
+     "value": null,
+     "id": "wa_king_kong_gorillas_direct_direct",
+     "fact": "Total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 7.2 (4.5 mi) equals the trail distance to Lake Ingalls alone (9.0 mi round trip), and the wall lies beyond the lake over the meadows toward Stuart Pass, so the stored figure is almost certainly short of the true one-way approach. But only one source gives a mileage on this line and none states the distance to the West Face Wall itself, so the value is left for a second source rather than cleared on inference.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.wta.org/go-hiking/hikes/lake-ingalls",
+    "https://www.mountainproject.com/forum/topic/122931727/mt-stuart-gorillas-in-the-mist-options"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "fact": "Commitment grade (commitment III vs beta 'Grade: IV')",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only numeral published for this route is IV (IV 5.11+) in the first-ascent party's journal note; the route database page, shared by the same first ascensionist, gives no commitment numeral, and no independent account grades it. One source, so commitment III and the beta's IV are left as they are.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214134/Mt-Stuart-King-Kong",
+    "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "fact": "Car-to-car total time vs its own schedule",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass found one more West Ridge day with clock times: a party left the car at about 7:30 AM, reached the notch 4 hours and 8.5 miles in, summited about 2 PM and called it roughly an 11 h 15 min round trip, which supports totalHrs 11 and the 10-12 h note rather than the 3:30 AM-to-5/6 PM schedule. A 2008 report was an overnight trip with no total, a guide-style listing gives 16 mi and 4,500 ft but no time, and earlier reports range from about 10.5 h to over 14 h. Making the schedule agree would mean writing clock times computed from a total, which no source states for a 3:30 AM start, so nothing is patched.",
+   "sources": [
+    "https://www.jeffreyjhebert.com/adventures/west-ridge-on-mount-thomson",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/mount-thomson-west-ridge/465040",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-mount-thomson",
+    "https://fastestknowntime.com/route/mt-thomson-west-ridge-wa"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_triumph_northeast_ridge",
+   "fact": "Total time vs its own sub-components",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real in the live row: PUBLISHED TIMES shows approach 5, summit 6, descent 6 and total 13, where 13 is the col-to-col climbing day. New sources do not converge on that day's length: a guide service describes a first-light start with about a dozen rappels but gives no summit-day duration (it does put the hike out at about 5 hours, the same as the approach), a search-listed report gives about 9 hours camp to camp, another gives 6 hours up and 10 down, and a guide summary gives 12-16 hours. Fixing the tiles still needs a decision on whether they describe the climbing day (drop the approach tile) or the whole trip, and no two sources give the same climbing-day or car-to-car total.",
+   "sources": [
+    "https://www.skywardmountaineering.com/mount-triumph-climbing",
+    "https://www.skylinemountainguides.com/all-trips/mt.-triumph-ne-ridge-climb",
+    "https://www.mountaineers.org/activities/trip-reports/mount-triumph-northeast-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "fact": "Whether the route involves glacier travel / needs a rope and crevasse-rescue gear",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "No roped glacier travel or crevasse-rescue kit on the standard line; an ice axe for lingering snow is the only technical gear.",
+   "evidence": "A 2012 four-day solo traverse report reached Mutchler by a heather ramp on its northeast ridge on relatively easy ground to the flat summit plateau and a final 400 ft to the top, with no rope used, and a commenter on a 2026 report says the traverse to the northeast ridge was very straightforward. The 2026 report adds that the old Mutchler Glacier now survives only on the highest north-facing slopes. Inside the row, seasonal_hazards.crevasses ('no glacier travel'), the avalanche zone ('non-glaciated summer scramble'), the gear list (ice axe, no rope), climbing_route (Class 2-3 heather and blocky rock) and the waypoints all describe a non-glaciated scramble; only detailed_rack and pro_needs call for glacier kit, and detailed_rack did so by naming a club programme. Those two are rewritten to match.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/88006-tr-buckindy-range-solo-traverse-7252012/",
+    "https://climberkyle.com/2026/06/19/buckindy-high-route/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "detailed_rack",
+     "path": [],
+     "expect": "No fixed rock rack is documented for this route. The Mountaineers program the Mutchler add-on as a Basic Glacier Climb, so parties carry standard glacier-travel gear (rope, harness, crevasse-rescue hardware, crampons, ice axe) rather than a traditional protection rack.",
+     "value": "No rock rack is needed. The standard line is a Class 2-3 scramble up heather and blocky rock; what is left of the Mutchler Glacier clings only to the highest north-facing slopes, and parties reach the summit unroped, so an ice axe for lingering snow is the only technical gear to carry.",
+     "id": "wa_mutchler_peak_scramble",
+     "fact": "Whether the route involves glacier travel / needs a rope and crevasse-rescue gear"
+    },
+    {
+     "op": "set",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "Protection needs are glacier-travel oriented (crevasse-rescue kit, and pickets if the Mutchler Glacier crossing warrants them) rather than rock protection; no fixed anchors or bolted protection are documented on the scrambling sections.",
+     "value": "No protection is needed on the standard line: it is a Class 2-3 scramble with no roped glacier travel, and there are no fixed anchors or bolts on the scrambling sections.",
+     "id": "wa_mutchler_peak_scramble",
+     "fact": "Whether the route involves glacier travel / needs a rope and crevasse-rescue gear"
+    }
+   ]
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row no longer stores dist_km, and the approach prose no longer calls ~24.8 km the round trip; it now says no published figure gives the car-to-summit distance for Mutchler and quotes only the Snowking round trip. The waypoints (summit at 7.7 mi) and the itinerary (7 + 3.5 + 7 mi) do not conflict.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "fact": "Elevation of the Standup Creek Trail junction waypoint",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: in the live row the junction waypoint has been moved to 47.40963,-120.81631 and stores 5,030 ft, which matches the USGS 1 m ground height there (about 5,034 ft); it sits a plausible ~230 ft above the 4,800 ft creek-crossing waypoint 0.3 mi earlier, so the implausible 5,450 ft figure the dispute was about is gone.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.81631&y=47.40963&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  }
+ ]
+}

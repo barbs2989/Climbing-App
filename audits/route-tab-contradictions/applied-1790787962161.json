@@ -1,0 +1,277 @@
+{
+ "applied": [
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Descent from Freezer Pass into the Ice Lakes basin (~500 ft vs ~1,000 ft)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "directions"
+   ],
+   "fact": "Descent from Freezer Pass into the Ice Lakes basin (~500 ft vs ~1,000 ft)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent from Freezer Pass into the Ice Lakes basin (~500 ft vs ~1,000 ft)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "dist_km stores the round trip but renders as the one-way approach"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "before": {
+    "approach": "The standard approach is a long, mostly cross-country line from the Phelps Creek Trailhead at the end of Phelps Creek Road (FR 6211), about 3,500 ft. Follow Phelps Creek Trail #1511 up the east side of the valley — a gentle, well-graded grade of roughly 275 ft per mile — crossing into the Glacier Peak Wilderness at 2.6 miles and reaching the Leroy Creek ford at about 3.5 miles. Immediately across the ford, the unmaintained Leroy Creek high route (Trail #1512) branches steeply north-east; it is well trodden but climbs at roughly 1,200 ft per mile for about 1.5 miles into Leroy Basin, where established camps sit off a steep path above the creek crossing. This half is hot and exposed under an overnight pack, so carry several liters. Campfires are prohibited above 5,000 ft anywhere in the wilderness, and a free self-issue wilderness permit is filled out at the trailhead. From camp, pick up the Carne Mountain high trail — an old sheepherder track — and follow it south-east, giving up a little elevation to cross the south fork of Leroy Creek before climbing to the 6,850 ft saddle at Leroy Pass; cairns mark the way but several paths braid apart in the basin, so stay on the lower and better-trodden line where they diverge. Continue east on faint footpaths through heather, then talus and scree, gaining about 750 ft over roughly a mile to Freezer Pass at 7,600 ft. There is no maintained tread here and the bootpaths come and go, so keep track of your line for the return; snow can linger on this stretch into early or mid July. Drop north-east off the pass down talus into the Ice Lakes basin, losing about 1,000 ft, passing the north end of Upper Ice Lake and following the dry stream bed to the west shore of Lower Ice Lake. Both lakes are reliable water. Pick up the faint remnants of the historic Ice Lakes Trail on the north side and sidehill east at about 6,600 ft on slippery scrub and loose rock with no real tread — keep the party strung out in a line rather than stacked one above another, because almost everything here moves underfoot. Roughly a third of a mile brings you to the lip of a washed-out gully; downclimb the loose clay and scree into it and climb the far side back to about the same elevation, picking the crossing line carefully, since dropping too low can leave you cliffed out. This is the last reliable water before the summit. Beyond it the traverse eases into the open basin floor between the two Buttes at about 6,800 ft, where a scree-and-talus ramp gains the crest of the southwest ridge and the scrambling begins. A separate approach corridor exists on the west side of the peak: leaving Phelps Creek Trail #1511 at around 5,300 ft and climbing cross-country east through heather and talus benches to gain the peak's west-facing slopes. It is a shorter day from the trailhead and avoids the Freezer Pass crossing, but it is a different line from the one this route's waypoints and descent follow, and the north side of that ridge is cliffy and should not be entered.",
+    "waypoints": [
+     {
+      "lat": 48.083,
+      "lng": -120.8349,
+      "elev": 3500,
+      "name": "Phelps Creek Trailhead",
+      "note": "End of Phelps Creek Rd/FR 6211 off Chiwawa River Road; no parking pass or day-use fee required (per USFS), wilderness boundary is 2.6 mi up-trail.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Leavenworth, take US-2 west about 15 miles to Coles Corner, WA-207 north about 4.4 miles, then the Chiwawa Loop Road onto Chiwawa River Road (FR 6200) for roughly 22 miles and FR 6211 for the last 2.3 miles to the trailhead at about 3,500 ft. The gravel and dirt beyond about mile 11 is rough and rutted and is not suitable for low-clearance vehicles; the road is normally snowed shut from late fall through spring and is also subject to washout closures, so check Wenatchee River Ranger District alerts before driving. No parking pass or day-use fee is required, but fill out the free self-issue Glacier Peak Wilderness permit at the trailhead."
+     },
+     {
+      "lat": 48.141041,
+      "lng": -120.827725,
+      "elev": 6100,
+      "name": "Leroy Basin camp",
+      "note": "Established sites reached via a steep unmaintained path off the Leroy Creek crossing (~3.5 mi up Phelps Creek Trail then about 1.5 mi up-basin); streams provide water and there are views of Seven-Fingered Jack.",
+      "type": "Campsite",
+      "distMi": 5,
+      "directions": "Follow Phelps Creek Trail #1511 up the east side of the valley, a gentle well-graded grade of roughly 275 ft per mile, crossing the wilderness boundary at 2.6 miles and reaching the Leroy Creek ford at about 3.5 miles. Immediately across the ford the unmaintained Leroy Creek high route (#1512) branches steeply up to the north-east; it is well trodden but climbs at roughly 1,200 ft per mile for the final mile and a half into the basin. This half is hot and exposed under a full overnight pack, so carry several liters, and note that campfires are prohibited above 5,000 ft anywhere in the wilderness."
+     },
+     {
+      "lat": 48.128952,
+      "lng": -120.816313,
+      "elev": 6850,
+      "name": "Leroy Pass",
+      "note": "Sheepherder trail on the Leroy/Carne high route crests here before the cross-country traverse toward Freezer Pass.",
+      "type": "Junction",
+      "distMi": 6.5,
+      "directions": "From camp pick up the Carne Mountain high trail, an old sheepherder track, and follow it south-east; it gives up a little elevation to cross the south fork of Leroy Creek before climbing to the 6,850 ft saddle. Cairns mark the way, but several paths braid apart in the basin, so stay on the lower and better-trodden line where they diverge. About 1.5 miles and roughly 750 ft of net gain from camp."
+     },
+     {
+      "lat": 48.12648,
+      "lng": -120.80724,
+      "elev": 7620,
+      "name": "Freezer Pass",
+      "note": "Faint footpaths through heather, talus and scree cross the pass and drop cross-country into the Ice Lakes basin.",
+      "type": "Junction",
+      "distMi": 7.5,
+      "directions": "Continue east from the saddle on faint footpaths through heather and then talus and scree, gaining about 750 ft over roughly a mile to the 7,600 ft pass. There is no maintained tread here and the bootpaths come and go, so keep track of your line for the return. Snow can linger on this stretch into early or mid July."
+     },
+     {
+      "lat": 48.13219,
+      "lng": -120.77903,
+      "elev": 6600,
+      "name": "Lower Ice Lake / old Ice Lakes Trail remnants",
+      "note": "Faint remnants of the historic Ice Lakes Trail mark the point where the route leaves the lakeshore and begins the exposed east traverse toward the Buttes; both lakes are reliable water sources.",
+      "type": "Water",
+      "distMi": 9,
+      "directions": "Drop north-east off the pass down talus into the Ice Lakes basin, losing about 1,000 ft. Pass the north end of Upper Ice Lake and follow the dry stream bed down to the west shore of Lower Ice Lake, then pick up the faint remnants of the old Ice Lakes Trail on the north side. Both lakes are reliable water."
+     },
+     {
+      "lat": 48.130907846153846,
+      "lng": -120.774626,
+      "elev": 6600,
+      "name": "Creek washout crossing",
+      "note": "Loose, slippery scrub-and-rock traverse around 6,600 ft crosses a hardpan-dirt gully/washout — pick the crossing line carefully, it's easy to end up cliffed out.",
+      "type": "Hazard",
+      "distMi": 9.3,
+      "directions": "Leave the lakeshore where the old trail remnants fade and sidehill east at about 6,600 ft, alternating between slippery scrub and loose rock with no real tread. Keep the party strung out in a line rather than stacked one above another, because almost everything here moves underfoot. Roughly a third of a mile brings you to the lip of the washed-out gully."
+     },
+     {
+      "lat": 48.12962569230769,
+      "lng": -120.770222,
+      "elev": 6800,
+      "name": "Base of the southwest ridge",
+      "note": "Cross-country basin floor between the two Buttes where a scree ramp gains the southwest ridge crest; Class 3 scrambling begins about 400 ft above here, staying climber's right past several loose gendarmes.",
+      "type": "Junction",
+      "distMi": 9.6,
+      "directions": "Pick a crossing line carefully and downclimb the loose clay and scree into the washout, then climb the far side back to about the same elevation; dropping too low here can leave you cliffed out. This is the last reliable water before the summit, so fill up at the crossing. Beyond it the traverse eases and flattens into the open basin floor between the two Buttes, about a third of a mile in all."
+     },
+     {
+      "lat": 48.12654,
+      "lng": -120.75984,
+      "elev": 8392,
+      "name": "South Spectacle Butte summit",
+      "note": "True summit gained via ledges on the southeast corner of the summit block above ~8,100 ft, after sustained, exposed Class 3 scrambling on the ridge below.",
+      "type": "Summit",
+      "distMi": 10.3,
+      "directions": "From the basin floor climb the scree-and-talus ramp about 400 ft to gain the crest of the southwest ridge, then follow the crest on Class 2-3 talus and broken rock, turning the gendarmes on climber's right. At around 7,700 ft a spire forces the crux: a short chossy chute, a traverse on down-sloping rock, and a Class 3 dike back up, all with real exposure on rotten holds, so move one at a time. Above about 8,100 ft leave the crest for ledges on the south-east corner of the summit block; cairns mark the line but blend into the surrounding rock and are easy to lose."
+     }
+    ],
+    "descent_text": "There is no rappelling on this route and no shortcut descent gully — it is a walk-off and downclimb by the line used on the ascent. From the 8,392 ft summit, reverse the ledges on the south-east corner of the summit block back onto the crest of the southwest ridge at about 8,100 ft; the cairns here blend into the surrounding rock and are easy to lose, so pick the line up deliberately rather than drifting down the first ledge system that goes. Downclimb the crest on Class 2-3 talus and broken rock, turning the gendarmes on climber's right as you did on the way up, and reverse the crux at around 7,700 ft — the Class 3 dike, the traverse on down-sloping rock, and the short chossy chute — facing in, one at a time, on rotten holds with real exposure. Below the gendarmes, descend the scree-and-talus ramp roughly 400 ft into the open basin floor between the two Buttes. From there retrace the traverse west: cross the washed-out gully at about 6,600 ft, keeping the party strung out in a line rather than stacked, and sidehill back across the loose scrub and rock to the west shore of Lower Ice Lake. Regain the faint remnants of the old Ice Lakes Trail, climb back up the talus roughly 1,000 ft to Freezer Pass at 7,600 ft, then follow the faint heather-and-scree footpaths west over Leroy Pass at 6,850 ft and down the Carne Mountain high trail into Leroy Basin camp. The bootpaths between the passes come and go, so the return is materially easier if you tracked your line on the way in. From camp, reverse the steep unmaintained Leroy Creek high route to the ford and follow Phelps Creek Trail #1511 back down-valley to the trailhead. The hazards on the whole descent are rockfall, loose downsloping rock on the ridge, and losing the cairned or booted line in scree and talus — not rope work. An alternate exit some parties use drops west off the peak's west-facing slopes through heather and talus to rejoin Phelps Creek Trail #1511 directly at around 5,300 ft, avoiding the return over Freezer and Leroy Passes; it is a different line from the ascent, it leaves any camp at Ice Lakes or Leroy Basin behind you, and the north side of that ridge is cliffy and should not be entered, so treat it as a deliberate choice made in advance rather than a shortcut taken on the descent.",
+    "dist_km": 35.41
+   }
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "before": {
+    "approach": "Drive US-2 to Skykomish, then north on Beckler River Road (FR-65) for about 15 miles; turn right (east) onto FR-63 and continue about 4.2 miles to its end at the North Fork Skykomish Trailhead (high-clearance vehicle recommended for the final miles; large parking area, vault toilet, no potable water). Walk North Fork Skykomish Trail #1051 a short distance before leaving the trail near the river and heading directly, off-trail, up the steep, brushy, blowdown-choked slope toward Spire Mountain. There is no tread above the trail: the line works around cliff bands at roughly 4,200-4,400 ft on the peak's north side, traverses southeast to about 5,400 ft below the summit spires, and gains the west/northwest ridge for the final scramble to the top. An older, historic alternate approach (Fred Beckey's original line) starts south of Index via the North Fork Skykomish River Road, which now dead-ends at a washout around mile 6, then follows the unmaintained Trout Creek Road south to reach the same ridge — a much brushier ~16-mile, ~7,000 ft round trip, longer than today's standard FR-63 approach.",
+    "road": {
+     "name": "FR-65 (Beckler River Rd) to FR-63",
+     "status": "Normally a gravel Forest Service road, drivable in a standard car most of the way with high-clearance recommended for the last stretch — but both FR-65 and FR-63 are washed out/closed (the Forest Service alert of June 30, 2026 lists FR-65 closed past Jack Pass for downed trees and a bridge failure; FR-63 has been closed at mileposts 10-14 since December 2025 flood damage) and the trailhead is not reliably reachable by vehicle. Confirm current status with the Skykomish Ranger District before driving in.",
+     "driveNote": "From Skykomish: US-2 east ~0.8 mi, then north on FR-65 (Beckler River Rd) ~15 mi, then right onto FR-63 for ~4.2 mi to road's end at the trailhead."
+    },
+    "approach_logistics": {
+     "peakLat": 47.865705,
+     "peakLng": -121.406065,
+     "trailhead": "North Fork Skykomish Trailhead",
+     "trailheadLat": 47.92684,
+     "trailheadLng": -121.27705,
+     "trailheadDirection": "Drive US-2 to Skykomish, then north on Beckler River Road (FR-65) for about 15 miles; turn right (east) onto FR-63 and continue about 4.2 miles to its end at the North Fork Skykomish Trailhead (high-clearance vehicle recommended for the final miles; large parking area, vault toilet, no potable water)."
+    },
+    "waypoints": [
+     {
+      "elev": 1156,
+      "name": "Index-Galena Road / North Fork Skykomish River Access (FR-63, ~Mile 10)",
+      "note": "Park at the snowplow turnaround by the bridge about 1 mile east of Galena; this is the last reliable water, none is found once you leave the road.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive US 2 to Skykomish, then head north on the Beckler River Road (FR-65) for about 15 miles and turn right (east) onto FR-63. A high-clearance vehicle is worth having for the last few miles. Park at the turnaround by the river crossing near Galena at about 1,150 feet; the pullout is unmarked and easy to drive past. No permits are needed, and the river here is the last dependable water, since there is none once you leave the road."
+     },
+     {
+      "elev": 2300,
+      "name": "Old Logging Road / 2300-ft Saddle",
+      "note": "After a steep, brush-free first 600 ft through downed timber, cross an old overgrown logging road at this saddle on the lower north slopes.",
+      "type": "Junction",
+      "distMi": 0.7
+     },
+     {
+      "elev": 3300,
+      "name": "Hogsback Ridge Top",
+      "note": "The well-defined hogsback you've been following since ~2700 ft terminates here; continue straight uphill toward the cliff bands above.",
+      "type": "Junction",
+      "distMi": 1.4
+     },
+     {
+      "elev": 4300,
+      "name": "Cliff Band Traverse",
+      "note": "Large cliff bands block the north end of the peak between roughly 4200-4400 ft; traverse southeast below them to reach the mountain's west/northwest side.",
+      "type": "Hazard",
+      "distMi": 2
+     },
+     {
+      "elev": 5940,
+      "name": "5940-ft Saddle Northwest of Summit",
+      "note": "Gain this saddle via the traverse; a possible schrund/moat forms here depending on season and snow cover before you turn onto the final ridge.",
+      "type": "Hazard",
+      "distMi": 3.1
+     },
+     {
+      "elev": 6100,
+      "name": "Class 5 Step",
+      "note": "The final ridge is mostly Class 3, but two short sections here are Class 4-5; many parties place a rope for this exposed step.",
+      "type": "Hazard",
+      "distMi": 3.2
+     },
+     {
+      "lat": 47.865705,
+      "lng": -121.406065,
+      "elev": 6217,
+      "name": "Spire Mountain",
+      "note": "True summit at the top of the west/northwest ridge scramble, with views over the Monte Cristo peaks and North Fork Skykomish valley.",
+      "type": "Summit",
+      "distMi": 3.25
+     }
+    ],
+    "access": {
+     "fees": "$5/vehicle/day or $30/year at the North Fork Skykomish Trailhead — Northwest Forest Pass, Interagency Recreation Pass, or the Forest Service's on-site digital 'Scan & Pay' all work; Washington's Discover Pass is NOT accepted here.",
+     "rules": "Standard Wild Sky Wilderness rules apply: group size capped at 12 people/stock combined (larger groups must split and stay 1+ mile apart), no bikes or other mechanized/motorized equipment, camp stoves recommended over open fires, no cutting of standing trees/snags/boughs, pack out all trash.",
+     "permit": "Free self-issue wilderness permit at the trailhead; no reservation or special-use permit needed beyond that for a day climb.",
+     "closures": "Both approach roads are washed out and access is effectively cut off: FR-63 (Index-Galena Road) has been closed since a December 2025 flood washout between mileposts 10-14 (Snohomish County Public Works estimates roughly $900,000 to repair) and is reported undrivable from the FR-65 side due to a North Fork Skykomish bridge/road failure; FR-65 (Beckler River Rd) itself is closed past Jack Pass (MP 12.3) due to downed trees and a washed-out bridge at the bottom of the valley. Neither closure has a reopening date on the Forest Service alert (June 30, 2026) or Snohomish County's road-closures page (checked September 25, 2026) — check the Mount Baker-Snoqualmie NF 'Road Damages/Closures - Skykomish District' alert page and call the Skykomish Ranger Station before planning a trip.",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+     "land_manager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+     "parking_pass": "Northwest Forest Pass required at the FR-63 trailhead near Skykomish — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass or Interagency Recreation Pass (or pay the day-use fee on site)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Sign the trailhead register if one is present; a Northwest Forest Pass is needed to park at the trailhead."
+     }
+    }
+   }
+  }
+ ]
+}

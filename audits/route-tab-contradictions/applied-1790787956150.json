@@ -1,0 +1,134 @@
+{
+ "applied": [
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "column": "waypoints",
+   "path": [
+    3,
+    "directions"
+   ],
+   "fact": "Direction the Pyramid Creek trail leaves the junction ('forks west' in Fox Camp note vs 'east' in waypoint directions/approach/approach_variants)"
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction the Pyramid Creek trail leaves the junction ('forks west' in Fox Camp note vs 'east' in waypoint directions/approach/approach_variants)"
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Direction the Pyramid Creek trail leaves the junction ('forks west' in Fox Camp note vs 'east' in waypoint directions/approach/approach_variants)"
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_standard",
+   "column": "face",
+   "path": [],
+   "fact": "face 'West Ridge' vs a route that reaches the block along the crest from the east and starts on its east-side pedestal"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.0112,
+      "lng": -120.572,
+      "elev": 3880,
+      "name": "North Fork Entiat River Trailhead",
+      "note": "End of FR 5606, about 35.3 mi from Entiat (32.3 mi on Entiat River Road/FR 51 + 3 mi on FR 5606); start of North Fork Entiat River Trail #1437, Northwest Forest Pass required with self-issue wilderness permit at the kiosk.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.052556,
+      "lng": -120.601088,
+      "name": "Glacier Peak Wilderness Boundary",
+      "note": "Trail crosses into Glacier Peak Wilderness here; stock/group-size rules apply beyond this point, no additional permit needed.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "The first four miles of the North Fork Entiat River Trail #1437 climb gently up the valley through old burn, where blowdown and washed-out sections make the going slower than the grade suggests. There is little shade on this stretch and the east-side valley bottom runs hot and dry in summer — carry more water than the mileage implies."
+     },
+     {
+      "lat": 48.090409,
+      "lng": -120.63657,
+      "elev": 6900,
+      "name": "Fox Camp (Pyramid Creek Trail junction)",
+      "note": "Established camp just off the North Fork Entiat trail where the Pyramid Creek Trail forks west; standard base camp for Saska/Emerald/Cardinal objectives.",
+      "type": "Campsite",
+      "distMi": 8,
+      "directions": "Continue up the North Fork Entiat valley another four miles, gaining roughly 3,000 ft from the trailhead to the Pyramid Creek / Fern Lake junction; the camp itself sits about a quarter mile north of the junction. This junction is anywhere from seven to nine miles in depending on how far up the road you were able to start, so navigate by the drainage and the fork rather than by an odometer."
+     },
+     {
+      "lat": 48.101567,
+      "lng": -120.630833,
+      "elev": 7100,
+      "name": "Basin between Emerald and Saska",
+      "note": "1.5 mi up the Pyramid Creek Trail from Fox Camp into the upper basin below Emerald and Saska; talus/snow camping, last reliable water before the col.",
+      "type": "Campsite",
+      "distMi": 9.5,
+      "directions": "From the junction take the primitive Pyramid Creek Trail east and climb steadily for roughly a mile and a half into the upper basin. The tread is unmaintained and intermittent. Pushing to this camp instead of stopping at the junction costs an extra hour on the approach day and takes about that much off the summit morning."
+     },
+     {
+      "lat": 48.108357,
+      "lng": -120.636205,
+      "elev": 7700,
+      "name": "Emerald-Saska col saddle",
+      "note": "Climb scree/talus (snow-filled gully early season) out of the basin to the notch on the ridge connecting Emerald and Saska; route splits toward either summit here.",
+      "type": "Junction",
+      "distMi": 10.3,
+      "directions": "Roughly 600 ft of gain out of the basin to the notch. Loose rock is the theme of this whole cirque — wear a helmet and avoid stacking the party directly above one another. In early-to-mid season continuous snow on this slope allows a glissade or boot-ski on the way back down; by August and September that is gone and the same ground becomes slow, controlled scree steps rather than good scree-skiing."
+     },
+     {
+      "lat": 48.107342,
+      "lng": -120.642855,
+      "elev": 8100,
+      "name": "Summit scree/talus gully",
+      "note": "Loose scree gully with Class 3 rock bands above the col; exposed and rockfall-prone, especially with other parties above on the south slopes.",
+      "type": "Hazard",
+      "distMi": 10.7,
+      "directions": "Head west from the col toward Saska. The connecting crest is narrow and knife-edged in places with steep drop-offs on both sides, so the usual line drops slightly onto its west flank to pick up an obvious scree-and-rock gully, then follows a cairned rising traverse back toward the crest. Everything underfoot moves — keep the party close together and out of each other's fall line."
+     },
+     {
+      "lat": 48.1120768,
+      "lng": -120.6425968,
+      "elev": 8404,
+      "name": "Saska Peak",
+      "note": "True summit of Saska Peak (8,404 ft); broad views of Emerald and Cardinal Peaks and the North Fork Entiat headwaters.",
+      "type": "Summit",
+      "distMi": 11,
+      "directions": "Roughly 300 ft of final class 3 scrambling on loose blocks gains the top. Test every hold: nothing is fixed and no rope is standard here, though the last exposed moves are steep enough that some parties carry a short handline for them. This is the stretch that punishes a late finish or poor visibility on the way back down, so set your turnaround before you leave the col."
+     }
+    ],
+    "approach": "Standard access is the North Fork Entiat River Trail (#1437) from the North Fork Entiat Trailhead (el. ~3,940 ft, at the end of Forest Road 5606, about 35.3 mi from the town of Entiat via Entiat River Road/Forest Road 51 then FR 5606). The trail crosses old fire-damaged forest with blowdown for its first miles, enters Glacier Peak Wilderness at about mile 4 (free self-issue permit required at the boundary), and reaches the Pyramid Creek/Fern Lake trail junction roughly 7-9 miles in depending on trip reports and current trailhead access (road washouts have periodically forced parties to start several miles below the official trailhead — check current Forest Service alerts). From the junction, the primitive, unmaintained Pyramid Creek Trail climbs east about 1,000 ft over roughly 1-1.5 miles into the high basin between Emerald and Saska; most parties camp either at Fox Camp near the junction or push on to a larch-meadow camp directly beneath the Emerald-Saska col for a shorter summit day.",
+    "approach_variants": [
+     {
+      "name": "North Fork Entiat and the primitive Pyramid Creek Trail to the Emerald-Saska basin",
+      "notes": "From the North Fork Entiat Trailhead near 3,880-3,940 ft at the end of FR-5606, the first four miles of Trail #1437 climb gently up the valley through old burn, where blowdown and washed-out sections make the going slower than the grade suggests. There is little shade and the valley bottom runs hot and dry — carry water. Continue up-valley another four miles, gaining roughly 3,000 ft from the trailhead, to the Pyramid Creek / Fern Lake junction. That junction is anywhere from seven to nine miles in depending on how far up the road you were able to start. Fox Camp sits about a quarter mile north of it. From the junction take the primitive, unmaintained Pyramid Creek Trail EAST and climb about 1,000 ft over a mile to a mile and a half into the upper basin between Emerald and Saska, around 7,100 ft. The tread is intermittent. Pushing to that camp rather than stopping at the junction costs an extra hour on the approach day and returns about the same on summit day. This is reported as the easiest and shortest of the Saska / Emerald / Cardinal trio's summit scrambles.",
+      "season": "Mid-Jul-Sep once the col and summit gullies clear. October adds larch colour and early-snow risk; before mid-July carry an axe for lingering snow and ice",
+      "hazards": [
+       "Loose rock and rockfall throughout the Emerald-Saska col basin and along the summit ridge",
+       "Cliff bands below the south-west face that have caught descending parties in icy or snow-covered conditions",
+       "A narrow, sometimes knife-edged connecting crest that has to be avoided rather than followed",
+       "Lingering snow and ice in the col and summit gullies into early-to-mid July in heavy years",
+       "Heavy blowdown and washed-out sections on the lower North Fork Entiat Trail from past wildfires and storm damage"
+      ],
+      "baseFinding": "THE BASE IS THE COL AND THE DIRECTION OFF IT IS WEST. From the basin camp, about 600 ft of gain on talus, scree or lingering snow reaches the EMERALD-SASKA COL at roughly 7,700 ft — a notch on the south ridge with a peak on either side. From the col, HEAD WEST toward Saska. Emerald is the other way. If you leave the col climbing east you are on the neighbouring peak's ground.\n\nTHE POSITIVE TEST IS THAT YOU DO NOT STAY ON THE CREST. The connecting ridge is narrow and knife-edged in places with steep drop-offs on both sides, so the usual line DROPS SLIGHTLY ONTO ITS WEST FLANK to pick up an OBVIOUS SCREE-AND-ROCK GULLY, then follows a CAIRNED RISING TRAVERSE back toward the crest. West flank, gully, cairned rising traverse. A party grimly balancing along the crest itself has missed the line rather than found the hard way.\n\nTHE FINISH IS COUNTED IN FEET, NOT FEATURES: roughly 300 ft of final Class 3 on loose blocks gains the top. Test every hold — nothing here is fixed and no rope is standard, although the last exposed moves are steep enough that some parties carry a short handline for them.\n\nTHE DESCENT MARKER IS A WARNING WITH A DOCUMENTED CONSEQUENCE: CLIFF BANDS SIT BELOW THE SOUTH-WEST FACE. Stay well clear of them when the ground is snow-covered or icy. A winter party misjudging that descent line in icy conditions lost a ski over those cliffs. In early-to-mid season the continuous snow below the col gives a glissade or boot-ski; by August and September the same ground is loose scree and dirt that has to be walked slowly.\n\nLOOSE ROCK IS THE THEME OF THE WHOLE CIRQUE. Helmet, and do not stack the party directly above one another, from the moment you leave the basin."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_standard",
+   "before": {
+    "face": "West Ridge"
+   }
+  }
+ ]
+}
