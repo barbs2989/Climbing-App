@@ -195,6 +195,7 @@ npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
 npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
 npm run audit:misplaced-prose # ...is ANY rendered string the pipeline talking, NAMING A SOURCE (every state + area blurbs), or a FIRST ASCENT that argues?
+npm run audit:shouted-prose # does any rendered string SHOUT in ALL CAPS? (enrich:apply refuses it too)
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route

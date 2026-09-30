@@ -1023,3 +1023,26 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **26 named-but-not-a-source values are exempt BY NAME in `KEEP`**, each read: a club as the OPERATOR
       of trips or owner of a grading scale, a guidebook a climber is told to CARRY (the owner's KEEP),
       a map app as a TOOL, a first-ascent credit, area naming history.
+- **`audit:shouted-prose`** asks whether a rendered string SHOUTS — ALL-CAPS words used as emphasis.
+  Reported by the user on 2026-09-30 from Megalodon Ridge (Mount Goode), whose *Finding the base of
+  the climbing* opened every paragraph with a shouted lead (*"THE SINGLE STRONGEST TEST IS THAT YOU
+  NEVER CROSS THE GLACIER."*). **A research-batch house style, not one route:** 1,772 distinct strings on 863
+  routes, led by `approach_variants[].baseFinding` (831) and `.notes` (370), `bivy[].permit` (334) and
+  `bivy[].notes` (252). The app's own copy was clean — its capitals are section LABELS, styled with
+  `textTransform:"uppercase"`, which is design, not prose.
+  - **Repaired by changing CASE ONLY.** Each shouted run was extracted with its context and recased
+    (sentence case, names kept Title Case, acronyms and units handled); the applier refused any
+    string whose lowercase differed from the live one, so no word could change. Pass 1 recased
+    1,612 strings on 858 rows; pass 2 caught 160 more on 131 rows that pass 1's dictionary test missed
+    (inflected words — *PLANNED*, *DESCENDS* — British *CENTRE*, and shouted names). Rollbacks:
+    `audits/shouted-prose/`. Scripts: `scripts/oneoff/shouted-prose-recase-2026-09-30/`.
+  - **The detector is `scripts/lib/shouted-prose.mjs`**, shared with `enrich:apply`, which now
+    REFUSES a batch that shouts rather than recasing it — which capitals are names is the author's call.
+    A token is shouting at 4+ capitals unless it is in `ACRONYMS`; two-letter tokens only when
+    adjacent to another capital and one is a short English word (*"NO GO"*). A new acronym that is
+    refused goes in `ACRONYMS`; **never add an English word there.** `detector-test.mjs` in the
+    oneoff folder holds the 8 cases (4 shouts, 4 legitimate — BASE jumpers, SPOT, NEWS-SEWS, SR-20).
+  - **Skipped on purpose:** `name` (real climb names are capitalised, *LIVE FREE OR DIE*), `fa`
+    (climber initials, *JB, DN, RG*), `data_quality` (`MEDIUM`/`UI Route` — enums with no reader).
+  - Service key, reads ~230k routes + 53k areas (~3 min). After 2026-09-30: **0 on 0 rows.** Not a
+    build gate — a property of the DB, not the checkout.
