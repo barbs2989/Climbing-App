@@ -69,14 +69,19 @@ a mileage whose starting pin moved, and that no source states, is now null rathe
   two "Spire Gully" pins sat in the west-side gully and were removed; the trailhead record now names the hairpin.
   The notch, buttress base and summit are fixed places and stay; Blue Lake stays as the alternate start/way out.
 
-## Still open (as of 2026-09-30)
-- **Drawn lines (`gpx`, which this session may not edit)** that now disagree with the corrected pins: Blue's
-  Buttress and Minuteman draw a 2-point line from 48.5233,-120.655 (neither trailhead); SEWS East Buttress draws
-  the recorded west-side Blue Lake track, not the Spire Gully approach; Beckey-Tate and Big Kangaroo West Face draw
-  the same recorded track to Kangaroo Pass, which neither route uses. Clearing those lines (map shows pins only)
-  is the fix; no published track exists for the right approaches.
-- **Red Ledges** (Ptarmigan): the two trip maps mark the ledge 318 m apart, just over the bar; either is far
-  closer than the current pin (1.2–1.5 km east of both) and the ledge is ~6,200–6,400 ft, not 6,900.
+- **Red Ledges** (Ptarmigan, `patches-G8.json`, on the owner's "do what research says"): moved 1.5 km onto the
+  first trip map's point, west of Art's Knoll; the second map marks the same long ramp 318 m along it. Height
+  6,900 → 6,339 (the ground; the route passes the ledge at ~6,200–6,400 ft).
+
+## For the owner to run: `owner-gpx-clear.sql`
+Five drawn lines follow the wrong approach, and no published track exists for the right ones, so clearing them
+(the map then shows the corrected pins only) is the fix. `gpx` is outside the apply guard. `check:sql` passed and
+a read-only copy of the five WHERE clauses matched exactly 5 rows; old lines in `gpx-cleared-backup-2026-09-30.json`.
+- Blue's Buttress and Minuteman: a 2-point line from 48.5233,-120.655 (neither trailhead).
+- SEWS East Buttress: the recorded west-side Blue Lake track, not the Spire Gully approach.
+- Beckey-Tate and Big Kangaroo West Face: the same recorded track to Kangaroo Pass, which neither route uses.
+
+## Left as the research says (as of 2026-09-30)
 - **Minuteman's summit**: two sources put it ~350 m apart (one looks misplaced onto the Early Winters Spires);
   only one gives the alternative, so it stays. **Cutthroat's trailhead** has only one coordinate source.
 - **Clean Break milepost** 171 vs one source's 170: one source, not changed.
