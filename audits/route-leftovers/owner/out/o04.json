@@ -1,0 +1,686 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_fairchild_standard",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this as the climb from the Sol Duc trailhead over the High Divide, the Catwalk and Mount Carrie; the day-by-day plan described a different approach from the Elwha over Mount Fitzhenry and has been rewritten to match the rest of the page.",
+   "evidence": "The row's approach, descent, approach variant, camps and trailhead all describe the Sol Duc / High Divide / Cat Basin / Catwalk / Carrie line; only the itinerary and the timing breakdown described Whiskey Bend, Long Ridge and Fitzhenry. Two independent Bailey Range trip accounts start at Sol Duc, reach the Bailey Range trail from the High Divide, carry water from Heart Lake because the stretch to Cat Peak is dry, camp near Cat Peak, cross the Catwalk and climb about 2,000 ft to Mount Carrie; a third describes the Catwalk as the exposed ridge between Cat Peak and Carrie. The published line to Fairchild itself goes from Carrie's summit northeast down the glacier, round the north side of Fairchild and up its Southwest Ridge (encyclopedic peak summaries of the club route). The new day plan states no miles, gain, hours or pack weight, because no source gives day figures for this out-and-back; header gain_ft 9300 / loss_ft 9200 / dist_km 38.6 and the timing hour tiles (31/12/10/9) were left untouched per the no-computed-figures rule, though gain_ft/loss_ft match the old Whiskey Bend day sums. The timing breakdown now mirrors the days (hrs null), so the app hides it as a duplicate. Also removed a stale cross-reference to a '12-hour summit-day' figure no field states.",
+   "sources": [
+    "https://climberkyle.com/2021/07/31/the-bailey-range-traverse/",
+    "https://www.turns-all-year.com/trip-reports/august-4-8-2011-onp-mt-carrie-mt-ruth",
+    "https://backcountrypost.com/threads/the-bailey-range-traverse-an-8-day-olympic-national-park-epic.9395/",
+    "https://en.wikipedia.org/wiki/Mount_Fairchild",
+    "https://en.wikipedia.org/wiki/Mount_Carrie"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_fairchild_standard",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Best done mid-summer to early fall once the Long Creek ford is low and the glacier remnant is more open/less avalanche-prone; snow can linger on the approach ridges into July.",
+      "days": [
+       {
+        "n": 1,
+        "note": "Start at the Whiskey Bend trailhead and follow the Elwha River Trail roughly 2 miles to Michaels Ranch, then turn onto the Long Ridge Trail, crossing the Elwha on a high suspension bridge before climbing steadily through forest onto the ridge. This maintained trail section gains several thousand feet and is the last easy walking of the trip.",
+        "hours": 6,
+        "miles": 9,
+        "title": "Whiskey Bend to Long Ridge camp",
+        "gainFt": 4500,
+        "lossFt": 200,
+        "packLb": 42,
+        "schedule": [],
+        "objective": "Establish a forest camp along Long Ridge"
+       },
+       {
+        "n": 2,
+        "note": "Leave the maintained trail and continue along Long Ridge through brush, downed timber, and rocky ridge terrain, dropping to ford Long Creek — the route's crux water crossing, best done early in the day at low flow. From there climb steep, mossy, brushy slopes to a high camp near timberline below Fitzhenry.",
+        "hours": 6,
+        "miles": 3.5,
+        "title": "Off-trail to a high camp below Fitzhenry",
+        "gainFt": 2200,
+        "lossFt": 900,
+        "packLb": 42,
+        "schedule": [
+         {
+          "time": "7:00 AM",
+          "label": "Leave Long Ridge camp",
+          "detail": "Continue off-trail along the ridge crest."
+         },
+         {
+          "time": "10:00 AM",
+          "label": "Ford Long Creek",
+          "detail": "Considered the most hazardous obstacle on the route; scout for the safest braid."
+         },
+         {
+          "time": "2:00 PM",
+          "label": "Reach high camp",
+          "detail": "Timberline camp below Fitzhenry sets up the summit push."
+         }
+        ],
+        "objective": "Reach a camp near timberline below Mount Fitzhenry"
+       },
+       {
+        "n": 3,
+        "note": "From high camp, climb over or skirt Mount Fitzhenry's false summit (a 250-ft drop-and-reclimb is often needed) and negotiate a short class 3 step near its true top, then descend and traverse to the base of the glacier remnant below Fairchild. Rope up or use crampons/axe as needed to ascend the remnant to Fairchild's summit, then reverse the whole traverse back to high camp.",
+        "hours": 10,
+        "miles": 6,
+        "title": "Summit day: Fitzhenry traverse to Fairchild",
+        "gainFt": 1900,
+        "lossFt": 1900,
+        "packLb": 18,
+        "schedule": [
+         {
+          "time": "4:30 AM",
+          "label": "Leave high camp",
+          "detail": "Alpine start for the long traverse and glacier travel in firm morning conditions."
+         },
+         {
+          "time": "7:00 AM",
+          "label": "Over/around Fitzhenry",
+          "detail": "False summit down-climb, then short class 3 step near the true summit."
+         },
+         {
+          "time": "9:30 AM",
+          "label": "Base of Fairchild's north glacier remnant",
+          "detail": "Gear up with axe/crampons; rope up if crevasses are open."
+         },
+         {
+          "time": "11:30 AM",
+          "label": "Summit Mount Fairchild",
+          "detail": "6,899 ft — views across the Bailey Range to Olympus."
+         },
+         {
+          "time": "2:30 PM",
+          "label": "Back over Fitzhenry",
+          "detail": "Reverse the traverse, taking care on the class 3 step and false summit."
+         },
+         {
+          "time": "4:30 PM",
+          "label": "Return to high camp",
+          "detail": "Rest and refuel before the hike out."
+         }
+        ],
+        "objective": "Summit Mount Fairchild (6,899 ft) via the north glacier remnant"
+       },
+       {
+        "n": 4,
+        "note": "Reverse the off-trail ridge descent and re-ford Long Creek, then rejoin the Long Ridge and Elwha River trails for the long walk back to the Whiskey Bend trailhead. Most parties treat this as one continuous, tiring exit day.",
+        "hours": 9,
+        "miles": 12.5,
+        "title": "Hike out to Whiskey Bend",
+        "gainFt": 700,
+        "lossFt": 6200,
+        "packLb": 38,
+        "schedule": [],
+        "objective": "Return to the trailhead"
+       }
+      ],
+      "totalNote": "A demanding 4-day, 3-night out-and-back (~24 mi RT, ~8,000 ft gain): two days of trail-plus-bushwhack approach, one long summit day traversing Fitzhenry to Fairchild's glacier remnant, and a full day to hike out."
+     },
+     "value": {
+      "cal": "Best from mid-July to early September. Earlier, steep snow can linger on the Catwalk and the Carrie side; later, the glacier runs to bare ice and its snow bridges thin.",
+      "days": [
+       {
+        "n": 1,
+        "title": "Sol Duc trailhead to Cat Basin",
+        "objective": "Camp in Cat Basin below Cat Peak",
+        "note": "Walk the Sol Duc River Trail past Sol Duc Falls and climb to the High Divide by way of Deer Lake or Heart Lake, then follow the divide east to the Cat Basin junction, where the maintained trail ends. Fill every bottle before leaving the divide trail: the way on toward Cat Peak carries no water. Camp in Cat Basin, the last sheltered ground before the route goes cross-country.",
+        "schedule": []
+       },
+       {
+        "n": 2,
+        "title": "Across the Catwalk to Boston Charlie's",
+        "objective": "Camp at Boston Charlie's, at the foot of Mount Carrie",
+        "note": "Leave Cat Basin on the boot path below Cat Peak and cross the Catwalk, the narrow, exposed ridge between Cat Peak and Mount Carrie. With a full pack it is the crux of the approach, and no place to be in wet weather. Camp at Boston Charlie's on the far side, where the only water is a small sinkhole pond that must be filtered.",
+        "schedule": []
+       },
+       {
+        "n": 3,
+        "title": "Summit day: over Mount Carrie to Fairchild",
+        "objective": "Summit Mount Fairchild (6,899 ft) and return to Boston Charlie's",
+        "note": "Climb roughly 2,000 ft from camp to the summit of Mount Carrie. From Carrie's top, rope up and put on crampons, head northeast down onto the glacier, circle round to the north side of Fairchild and climb its Southwest Ridge to the summit. Reverse the whole line back over Carrie to camp, allowing for snow bridges that soften through the afternoon.",
+        "schedule": []
+       },
+       {
+        "n": 4,
+        "title": "Hike out to Sol Duc",
+        "objective": "Return to the Sol Duc trailhead",
+        "note": "Recross the Catwalk to Cat Basin, regain the High Divide trail and follow it back down past Sol Duc Falls to the trailhead.",
+        "schedule": []
+       }
+      ],
+      "totalNote": "A 4-day, 3-night out-and-back from the Sol Duc trailhead: a trail day to Cat Basin, a short day across the Catwalk to Boston Charlie's, a long summit day over Mount Carrie to Fairchild and back, and a long day out."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_fairchild_standard",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown"
+     ],
+     "expect": [
+      {
+       "hrs": 6,
+       "note": "Start at the Whiskey Bend trailhead and follow the Elwha River Trail roughly 2 miles to Michaels Ranch, then turn onto the Long Ridge Trail, crossing the Elwha on a high suspension…",
+       "fromTo": "Whiskey Bend to Long Ridge camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "Leave the maintained trail and continue along Long Ridge through brush, downed timber, and rocky ridge terrain, dropping to ford Long Creek — the route's crux water crossing, best …",
+       "fromTo": "Off-trail to a high camp below Fitzhenry",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "From high camp, climb over or skirt Mount Fitzhenry's false summit (a 250-ft drop-and-reclimb is often needed) and negotiate a short class 3 step near its true top, then descend an…",
+       "fromTo": "Summit day: Fitzhenry traverse to Fairchild",
+       "section": "Climb"
+      },
+      {
+       "hrs": 9,
+       "note": "Reverse the off-trail ridge descent and re-ford Long Creek, then rejoin the Long Ridge and Elwha River trails for the long walk back to the Whiskey Bend trailhead. Most parties tre…",
+       "fromTo": "Hike out to Whiskey Bend",
+       "section": "Descent"
+      }
+     ],
+     "value": [
+      {
+       "hrs": null,
+       "note": "Walk the Sol Duc River Trail past Sol Duc Falls and climb to the High Divide by way of Deer Lake or Heart Lake, then follow the divide east to the Cat Basin junction, where the maintained trail ends. Fill every bottle before leaving the divide trail: the way on toward Cat Peak carries no water. Camp in Cat Basin, the last sheltered ground before the route goes cross-country.",
+       "fromTo": "Sol Duc trailhead to Cat Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": null,
+       "note": "Leave Cat Basin on the boot path below Cat Peak and cross the Catwalk, the narrow, exposed ridge between Cat Peak and Mount Carrie. With a full pack it is the crux of the approach, and no place to be in wet weather. Camp at Boston Charlie's on the far side, where the only water is a small sinkhole pond that must be filtered.",
+       "fromTo": "Across the Catwalk to Boston Charlie's",
+       "section": "Approach"
+      },
+      {
+       "hrs": null,
+       "note": "Climb roughly 2,000 ft from camp to the summit of Mount Carrie. From Carrie's top, rope up and put on crampons, head northeast down onto the glacier, circle round to the north side of Fairchild and climb its Southwest Ridge to the summit. Reverse the whole line back over Carrie to camp, allowing for snow bridges that soften through the afternoon.",
+       "fromTo": "Summit day: over Mount Carrie to Fairchild",
+       "section": "Climb"
+      },
+      {
+       "hrs": null,
+       "note": "Recross the Catwalk to Cat Basin, regain the High Divide trail and follow it back down past Sol Duc Falls to the trailhead.",
+       "fromTo": "Hike out to Sol Duc",
+       "section": "Descent"
+      }
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_fairchild_standard",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": ", consistent with the 12-hour summit-day timing estimate starting from high camp",
+     "replace": ""
+    }
+   ],
+   "pin_followups": [
+    "waypoints[2] 'Appleton Pass Trail junction' (47.932375,-123.75057) and waypoints[3] 'Appleton Pass' (47.93842,-123.72269) belong to the Boulder Creek/Appleton Pass corridor, not this route's Deer Lake / High Divide / Cat Basin line; replace them with pins for Deer Lake (or Heart Lake), the High Divide and the Cat Basin junction, and change waypoints[1].note ('the climb toward Appleton Pass') to name the climb toward Deer Lake and the High Divide once the pins move.",
+    "Header gain_ft 9300 / loss_ft 9200 equal the old Whiskey Bend itinerary sums and dist_km 38.6 was never sourced for this line; revisit when a GPS track or two sources give the Sol Duc out-and-back figures."
+   ]
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "verdict": "unresolved",
+   "resolution": "leave (unresolved)",
+   "summary": "Could not fix this one: no published account says how anyone actually reaches Mount Dana, so neither the Sol Duc day plan nor the Elwha / Dodwell-Rixon Pass approach on the rest of the page can be confirmed or rewritten.",
+   "evidence": "Searched again for any documented ascent (peak encyclopedias, club scramble lists, summit registers, trip-report forums). Encyclopedic sources only place Dana (6,213 ft) in the Bailey Range draining to the Elwha; a peak-listing site shows no logged climbs; the only thing tying it to an approach is its inclusion in a club scramble group with Fitzhenry, Ferry and Scott (the Long Ridge / Dodger Point group), which is not a route description. The one ascent log found could not be read (blocked). Both lines on the page look geographically wrong: by its own coordinates (47.7913,-123.4857) Dana sits a short distance west of the Elwha between Hayes River and Camp Wilder, roughly 5 miles east of Dodwell-Rixon Pass and far east of the Catwalk/Eleven Bull Basin line the itinerary uses. Writing a new approach, itinerary or figures would be invention, so no operations.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Dana_(Washington)",
+    "https://peakery.com/mount-dana-washington-6209ft/",
+    "https://www.mountaineers.org/membership/badges/award-badges/olympia-branch/olympia-branch-scramble-peaks-3-gold",
+    "https://en.wikipedia.org/wiki/Dodger_Point"
+   ],
+   "ops": [],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this as the five-day loop from Robinson Creek over Shellrock Pass, climbing Lost Peak by the ridge from Butte Pass and Pass Butte, and walking out over Pistol Pass; the parts that described a Monument Creek out-and-back or a Pistol Pass approach now match that loop.",
+   "evidence": "The itinerary, timing and waypoints already matched a documented five-day loop (Robinson Creek trailhead, Robinson Pass, Middle Fork flats, Fred's Lake, Rolo and Shellrock passes, North Monument Creek pond, Butte Pass / Pass Butte / Lost Peak, Lake of the Woods, Pistol Pass, Eureka Falls, Monument trailhead). The summit line from Butte Pass over Point 7275 and along the Pass Butte ridge southeast over false summits is described by a club route page, a one-day traverse report and two trip reports, one of which notes the ridge avoids the W/SW scree; two call it the NW ridge. The Forest Service says Monument Creek trail beyond Eureka Creek has not been maintained for over 25 years and is difficult for hikers, and a traverse report calls it abandoned, so the Monument Creek out-and-back loses. The Forest Service also says the Monument Creek trailhead has no restrooms or potable water and no fee, and Slate Pass has no fee, so the trailhead pin note and two camp-card pass sentences were corrected. Grade stays Class 3: the club page calls the ridge mostly Class 2 but could only be read as a search excerpt, so no lowering was made. Header gain/loss/distance were left as they are (loop figures, not sourced to two agreeing sources).",
+   "sources": [
+    "https://trailcatjim.com/lost-peak-pass-butte-shellrock-pass-loop/",
+    "https://www.countryhighpoints.com/pasayten-peakbagging/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2006100103",
+    "https://www.mountaineers.org/activities/routes-places/osceola-carru-lago-blackcap-lost-traverse",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/monument-creek-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/robinson-creek-trailhead",
+    "https://www.wta.org/go-hiking/hikes/robinson-creek"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "approach",
+     "path": [],
+     "expect": "Lost Peak sits deep in the Pasayten Wilderness and the standard approach is a serious backcountry undertaking, not a day hike from a roadside trailhead. From the Monument Creek Trailhead (2,400 ft, off Lost River Road) follow Monument Creek Trail #484, which is well-maintained through old-growth forest for the first ~4 miles along Monument Creek and the Lost River — water is plentiful here and this stretch is even rideable by mountain bike, which some parties use to bank easy miles before caching bikes at the wilderness boundary. At roughly mile 4 the maintained tread ends at a washed-out bridge over Eureka Creek; beyond this point the trail has not been maintained in 25-30 years and becomes a faint, brushy, deadfall-choked route requiring solid navigation and a ford of Eureka Creek. Continue up the Monument Creek drainage (on-and-off tread, increasingly cross-country) into the North Monument Creek basin, where parties commonly camp at a small pond/tarn below Butte Pass — this is roughly 16+ miles in and the practical base camp for the peak (an alternate approach comes in from Robinson Creek/Shellrock Pass to the south, about 21.5 miles, used on longer Pasayten-Eleven traverses). From camp, climb to Butte Pass, then follow the ridge directly up to Pass Butte (~8,140 ft). From Pass Butte, continue along the connecting ridge over the col near Point 8107 and southeast across several false summits — Class 2 talus and rock scrambling, reported as 'quite fun' underfoot with mostly firm dirt/talus rather than loose scree — to Lost Peak's summit. Given the recorded ~77 km round-trip distance, this route is essentially always done as a multi-day backpack with the peak tagged as a day-scramble from high camp, not car-to-car. Hazards: the unmarked, unmaintained trail beyond Eureka Creek with brush and deadfall; the Eureka Creek ford; remote terrain with no cell coverage; a long, navigation-heavy ridge walk with numerous false summits that is easy to get wrong in poor visibility; and lingering snow or sudden weather on the high, exposed ridge even in summer.",
+     "value": "Lost Peak sits deep in the Pasayten Wilderness and is climbed as the summit day of a multi-day loop, not from a roadside trailhead. Start at the Robinson Creek trailhead (about 2,500 ft, on Lost River Road beyond Mazama) and follow the Robinson Creek trail about 9 miles to Robinson Pass (6,220 ft), then drop about three miles into the Middle Fork Pasayten valley and camp on the river flats. Next day follow the valley down past Fred's Lake, climb over Rolo Pass (7,100 ft) to the head of Eureka Creek, cross Shellrock Basin and go over Shellrock Pass (7,500 ft); the tread through this high country is faint and easy to lose in fog. Camp at the small pond in the North Monument Creek basin below Butte Pass, the base for the climb. On summit day walk up to Butte Pass, go over Point 7275 and along the ridge toward Pass Butte (8,140 ft), which many parties climb on the way, then from the col between Pass Butte and Point 8107 follow the connecting ridge southeast over several false summits to Lost Peak's summit. The ridge keeps you off the loose scree of the peak's west and southwest slopes. To close the loop, move camp to Lake of the Woods, cross Pistol Pass to the Eureka Falls camp where Eureka Creek meets the Lost River, then ford Eureka Creek and walk out the lower Monument Creek trail to the Monument Creek trailhead (about 2,400 ft), on the same road as the start. The upper Monument Creek trail beyond Eureka Creek looks like a shorter way in to the North Monument Creek basin, but it has not been maintained for decades and is overgrown and choked with deadfall. Hazards: faint or missing tread above the passes; a long ridge of false summits that is disorienting in whiteout or after dark; cold fords of Eureka Creek during snowmelt; afternoon thunderstorms with no shelter above treeline; and multi-day self-rescue distance from any road."
+    },
+    {
+     "op": "set",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "beta",
+     "path": [],
+     "expect": "Lost Peak has no technical climbing routes. The standard (and essentially only documented) line ascends loose scree/talus on the southwest slope at Class 3. Parties approaching from the north often traverse in from Pass Butte along the connecting ridge/slopes to avoid the worst of the scree found on the south and southwest aspects, then descend via the southwest slope/ridge. Because the approach is 20+ miles round trip through unmaintained trail on parts of the route, most parties treat this as a 3-day wilderness backpack rather than a day climb.",
+     "value": "Lost Peak has no technical climbing. The usual line starts at Butte Pass, goes over Point 7275 and along the ridge toward Pass Butte, which many parties climb on the way, then follows the connecting ridge southeast from the col with Point 8107 over several false summits to the top. The ridge is mostly firm dirt and blocky talus and avoids the loose scree of the west and southwest slopes, which some parties use on the way down. Because the peak is two days from any road, it is the summit day of a multi-day loop rather than a climb on its own."
+    },
+    {
+     "op": "set",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "face",
+     "path": [],
+     "expect": "Southwest slope",
+     "value": "Northwest ridge"
+    },
+    {
+     "op": "set",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "aspect",
+     "path": [],
+     "expect": "SW",
+     "value": "NW"
+    },
+    {
+     "op": "set",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": null,
+       "notes": "Multi-day trail approach (roughly 9-11+ miles one-way over Robinson Pass or to Pistol Pass, depending on trailhead) including unmaintained trail sections and an Eureka Creek ford, to a high camp near Butte Pass or Shellrock Pass.",
+       "pitch": "Approach (Days 1-2)"
+      },
+      {
+       "grade": "Class 3",
+       "notes": "Loose scree/talus scramble up the southwest slope to the 8,464-ft summit; often linked with Pass Butte via a connecting ridge traverse from the north.",
+       "pitch": "Summit scramble"
+      }
+     ],
+     "value": [
+      {
+       "grade": null,
+       "notes": "Two days in from the Robinson Creek trailhead: over Robinson Pass to the Middle Fork Pasayten, then over Rolo and Shellrock passes to the pond camp below Butte Pass.",
+       "pitch": "Approach (Days 1-2)"
+      },
+      {
+       "grade": "Class 3",
+       "notes": "From Butte Pass go over Point 7275 and along the ridge toward Pass Butte, then follow the connecting ridge southeast over several false summits to the 8,464-ft summit. Staying on the ridge avoids the loose scree of the west and southwest slopes.",
+       "pitch": "Summit scramble"
+      }
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "descent",
+     "path": [],
+     "find": "then retrace the multi-day approach trail out.",
+     "replace": "then continue the loop out over Pistol Pass to the Monument Creek trailhead."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "descent_text",
+     "path": [],
+     "find": "From camp, the return to the trailhead simply reverses the ~16+ mile approach down Monument Creek, re-fording Eureka Creek and picking the maintained tread back up for the final 4 miles to the trailhead.",
+     "replace": "From camp the loop continues rather than reversing: move camp to Lake of the Woods, cross Pistol Pass to the Eureka Falls camp, then ford Eureka Creek and walk the lower Monument Creek trail out to the Monument Creek trailhead."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "is normally a three-day trip rather than a climb.",
+     "replace": "is normally the summit day of a multi-day loop rather than a climb in its own right."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The common line follows the Monument Creek trail, which is well graded and even rideable by bike for the first few miles along the creek and the Lost River, then ends abruptly at a washed-out bridge; beyond that the tread has been unmaintained for decades and is faint, brushy and choked with deadfall. Parties camp at a small pond below Butte Pass in the North Monument Creek basin. A longer line comes in from the Robinson Creek side over Shellrock Pass and is used on extended traverses.",
+     "replace": "The usual way in is from the Robinson Creek trailhead over Robinson Pass, down the Middle Fork Pasayten and over Rolo and Shellrock passes, two days to a small pond camp below Butte Pass in the North Monument Creek basin; the trip then loops out over Pistol Pass to the Monument Creek trailhead. The direct line up Monument Creek looks shorter, but beyond Eureka Creek that trail has been unmaintained for decades and is faint, brushy and choked with deadfall."
+    },
+    {
+     "op": "set",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Long, multi-day approach - shortest proven line follows Lost River-Monument Creek-Ptarmigan Creek Trail toward Pistol Peaks, reaching 7,100-ft Pistol Pass at roughly 11 miles before off-trail travel to the summit; most parties do it as part of a several-day Pasayten loop",
+     "value": "Long, multi-day approach - two days from the Robinson Creek trailhead over Robinson, Rolo and Shellrock passes to a camp below Butte Pass, with the summit climbed from there as part of a five-day loop that exits over Pistol Pass"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "proven approaches run 11+ miles one-way to Pistol Pass, and loop trip reports log 40+ miles with 13,000+ ft gain over several days",
+     "replace": "the loop runs over 40 miles with more than 13,000 ft of gain across five days"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "at the kiosk, last reliable water/toilet before miles of Pasayten trail.",
+     "replace": "at the kiosk. There is no toilet or drinking water here."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "waypoints",
+     "path": [
+      6,
+      "note"
+     ],
+     "find": "Class 3 talus/meadow scramble up the southwest or northwest ridge from a Shellrock Pass area camp; descend the same ridge line reversed.",
+     "replace": "Reached along the ridge from Butte Pass and Pass Butte over several false summits; the loose west and southwest slopes are the other way down."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "bivy",
+     "path": [
+      0,
+      "permit"
+     ],
+     "find": "Northwest Forest Pass to park at Slate Pass, Robinson Creek or Monument Creek depending on which end you started.",
+     "replace": "A Northwest Forest Pass is needed to park at Robinson Creek; Slate Pass and Monument Creek need none."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_lost_peak_pasayten_scramble",
+     "column": "bivy",
+     "path": [
+      1,
+      "permit"
+     ],
+     "find": "Northwest Forest Pass or interagency pass to park.",
+     "replace": "A Northwest Forest Pass or interagency pass is needed to park at Robinson Creek; Slate Pass needs none."
+    }
+   ],
+   "pin_followups": [
+    "waypoints[0] is named 'Monument Creek Trailhead' and sits on the Monument Creek trailhead (FS 48.65543,-120.515172, 2,430 ft), but the loop starts at the Robinson Creek trailhead (FS 48.6617,-120.54201, 2,500 ft): add a Robinson Creek start pin at distMi 0, move the Monument Creek pin to the end of the list after Pistol Pass / Eureka Falls, and correct its elev (stored 2550 is Robinson Creek's height). approach_logistics.trailhead/trailheadLat/trailheadLng name and place Monument Creek and should become Robinson Creek with the pin.",
+    "No pins exist for Butte Pass, Pass Butte, Lake of the Woods, Pistol Pass or Eureka Falls; the waypoint list stops at the summit.",
+    "Closure note: access.closures describes the Ptarmigan Fire order of Sep 9 2026; local news of mid-September reports it reduced (Robinson Creek closed north of Beauty Creek, Monument Creek closed north of the Eureka Creek foot log). Not edited here; recheck the Forest Service order before relying on it."
+   ]
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this as the south-side scramble from Mill Creek; the description, route breakdown, face, snow angle, turnaround and gear text that belonged to the separate east ridge climb from Slate Creek have been rewritten for the south side.",
+   "evidence": "The name, climbing_route, descent, itinerary, timing, trailhead, primary approach variant and camps all describe the Canyon Creek / Mill Creek approach to the Azurite Mine and the south slopes. A Mill Creek ascent report gives about six good miles up Canyon Creek, then five mostly brutal, alder-choked miles to camp at the Azurite Mine, and a summit day with two cruxes (brush low down, and finding the correct gully for the final stretch) with several steps near the summit block; a second report confirms the Mill Creek trail's condition and an ascent of Ballard from the mine area; peak references give the easiest route as Class 3. The east ridge (Slate Creek gate, South Fork bridge, 45-50 degree snow, class 4 corner, low 5th claim) is a different climb, already kept as approach_variants[1]; a split was not made because no two sources support a full second row. max_angle 50 came only from the east ridge snow and was cleared rather than replaced, since no source gives an angle for the south side. The Harts Pass snow observation and the 'col' were east-side details in climate and were removed.",
+   "sources": [
+    "https://onehikeaweek.com/2012/08/19/mount-ballard/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-07-05.0406827852",
+    "https://en.wikipedia.org/wiki/Mount_Ballard_(Washington)",
+    "https://trailcatjim.com/mt-ballard-via-slate-creek-east-ridge-west-face/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_ballard_south",
+     "column": "beta",
+     "path": [],
+     "expect": "From Harts Pass Road, descend into the South Fork Slate Creek drainage, cross the South Fork on a metal bridge, and traverse open forest to a basin around 4,900 ft. From there climb through trees and open slopes to a bench on the east ridge (~6,200 ft), then continue up mixed class 3-4 rock and steep snow (up to 45-50°), angling left through cliff bands to reach the upper east ridge (~7,650 ft). At the col below the summit, cross a snow-covered ledge on the west face to the base of the summit gully, then scramble a short class 3-4 section, a ~10 ft class 4 corner, and blocky class 3 terrain to the true south summit. Parties describe route-finding through the cliff bands as the crux of navigation, and the final summit block as the technical crux (brief low 5th class, per one party).",
+     "value": "Mount Ballard's south side is a Class 3 scramble from a camp at the old Azurite Mine on Mill Creek. The approach is the hard part: about six miles of good trail up Canyon Creek, then roughly five miles on the Mill Creek trail, most of it buried in slide alder and deadfall. Above camp the climb is steep, rocky ground with two cruxes: a band of brush low on the mountain and, higher up, picking the gully that actually leads to the summit block, where a few short steps need hands. The higher of Ballard's two summits is the southern one. The east ridge from the Slate Creek side is a separate, harder line described under its own approach."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_ballard_south",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "Class 2",
+       "notes": "Old road/forest traverse from Slate Creek Road gate, over the South Fork bridge, to the ~4,900 ft basin.",
+       "pitch": "Approach"
+      },
+      {
+       "grade": "Class 3-4",
+       "notes": "Ascend snow/rock from the 4,900 ft basin to a 6,200 ft bench, then continue to ~7,650 ft, angling left through cliff bands; slopes up to 45-50°.",
+       "pitch": "East Ridge"
+      },
+      {
+       "grade": "Class 3-4 (brief low 5th)",
+       "notes": "Traverse a snow-covered ledge on the west face to the summit gully; finish with a ~10 ft class 4 corner and short class 3 blocks to the true (south) summit.",
+       "pitch": "Col to summit"
+      }
+     ],
+     "value": [
+      {
+       "grade": null,
+       "notes": "Canyon Creek trail about 6 miles to the Mill Creek trail, then roughly 5 brushy, poorly maintained miles to camp at the old Azurite Mine.",
+       "pitch": "Approach"
+      },
+      {
+       "grade": null,
+       "notes": "From camp, push through the brush band low on the south slopes onto steep, rocky ground.",
+       "pitch": "Lower south slopes"
+      },
+      {
+       "grade": "Class 3",
+       "notes": "Find the gully that leads to the summit block and scramble it, with a few short steps near the top, to the higher south summit.",
+       "pitch": "Summit gully"
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_ballard_south",
+     "column": "face",
+     "path": [],
+     "expect": "East Ridge (Slate Creek approach) with a West Face finish to the true summit",
+     "value": "South slopes"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_ballard_south",
+     "column": "max_angle",
+     "path": [],
+     "expect": 50,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_ballard_south",
+     "column": "turnaround",
+     "path": [],
+     "expect": "There is no fixed clock-time turnaround — the approach is long (documented round trips of 8.5-10 hours) and includes route-finding through cliff bands and steep snow. Set a turnaround based on remaining daylight, weather trends, and snow condition: wet, sun-softened snow on the 45-50° slopes sharply increases fall risk, and if the col/summit gully hasn't been reached with enough daylight and stable snow remaining to retrace the route, retreat.",
+     "value": "There is no fixed clock time. Leave camp early: the lower brush and the search for the right summit gully are both slow, and the loose gully should be downclimbed in daylight. If you have not found the summit gully with enough daylight left to reverse it and the brush back to camp, turn around."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_ballard_south",
+     "column": "detailed_rack",
+     "path": [],
+     "expect": "No technical rock rack is needed for the standard route. Bring an ice axe and crampons for the steep (up to 45-50°) snowfields below the col, which can persist well into summer. A single short rope with a few slings can be carried to protect the brief low 5th-class/exposed class 4 step near the true summit for less experienced or larger parties, though most parties free-solo it.",
+     "value": "No rack is needed. Bring a helmet for the loose summit gully, and an ice axe while early-season snow lingers on the upper mountain."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_ballard_south",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "No fixed protection (bolts or pitons) exists on the route — it's a scramble with one short, exposed low-5th-class move near the summit. Any belay on that step would be improvised off natural rock features.",
+     "value": "No fixed protection exists on the route. It is a Class 3 scramble with a few short, exposed steps near the summit block, normally climbed unroped."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_ballard_south",
+     "column": "climate",
+     "path": [
+      "spring"
+     ],
+     "find": "; a late-May ascent found ~2 ft of snow at Harts Pass and wet, unstable snow on the route.",
+     "replace": "."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_ballard_south",
+     "column": "climate",
+     "path": [
+      "summer"
+     ],
+     "find": "Best window for the class 3-4 rock, typically July-September, though shaded gullies and the col area can hold snow well into summer.",
+     "replace": "Best window for the class 3 rock, typically July-September, though shaded gullies can hold snow well into summer."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_ballard_south",
+     "column": "climate",
+     "path": [
+      "winter"
+     ],
+     "find": "Harts Pass Road closed;",
+     "replace": "SR 20 is closed in winter;"
+    }
+   ],
+   "pin_followups": [
+    "waypoints[6] 'Harts Pass' belongs to the east (Slate Creek) side and is not on this route; drop or hide it.",
+    "waypoints[7] 'Canyon Creek Trailhead' is the start of the route but sits near the end of the list with no distMi; move it to the head of the list at distMi 0.",
+    "Closure note: the Mill Creek trail was listed closed for the Ptarmigan Fire in summer 2026; access.closures does not mention it. Recheck the current Forest Service order."
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "This page is the standard Kautz Glacier route through the Kautz ice chute, not the separate Kautz Headwall line, which has its own page; the wording that called the chute or the ice cliff a 'headwall' was changed, and every mention of the chute's length now gives the same year-dependent range.",
+   "evidence": "The park's official route description names the hazard above the traverse and Camp Hazard as the Kautz Ice Cliff, and describes two steps in the ice chute separated by lower-angle snow: the first from a short pitch of steep snow to as much as 250 ft of alpine ice, the upper (AI3 crux) from a short pitch to over 300 ft. Park ranger condition reports show the range in practice: in 2020 a 300 ft upper step climbed in two 60 m pitches with about 200 ft of low-angle ice below; in 2024 a single mandatory step of about 50 ft at the base. The Kautz Headwall is a distinct line (a steep ski and climbing objective reached from the Kautz Glacier toward Point Success), which the catalog already carries as wa_mount_rainier_kautz_headwall. Fields fixed: hazards[0-1], overview, summit waypoint directions, watch_out, itinerary schedule label, seasonal_hazards, and the approach variant's '400 ft + 400 ft' chute description, which exceeded the park's range. pitch_detail and descent_text already used the range and were left alone.",
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf",
+    "https://mountrainierclimbing.blogspot.com/2020/08/kautz-glacier-route-2020-update.html",
+    "https://mountrainierclimbing.blogspot.com/2024/07/kautz-glacier-conditions-report-72724.html",
+    "https://turns-all-year.com/trip-reports/6-26-08-mt-rainier-kautz-headwall",
+    "https://wildsnow.com/12840/rainier-wilson-headwall-ski-kautz/"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "find": "usually one to two short steep pitches that can be bare and hard late season",
+     "replace": "in two steps, each anywhere from a short pitch to a few hundred feet depending on the year, and bare and hard late season"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "off the Kautz headwall and Wapowety Cleaver",
+     "replace": "off the Kautz Ice Cliff and Wapowety Cleaver"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "column": "overview",
+     "path": [],
+     "find": "with one or two genuine pitches of alpine ice in the Kautz ice chute",
+     "replace": "with two steps of alpine ice in the Kautz ice chute that range from a short pitch to a few hundred feet each, depending on the year"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "column": "waypoints",
+     "path": [
+      4,
+      "directions"
+     ],
+     "find": "The chute is two or three pitches of roughly 40 to 50 degree snow and ice, bare and hard in a lean year,",
+     "replace": "The chute is two steps of snow and ice separated by easier snow, each anything from a short pitch to a few hundred feet depending on the year, bare and hard in a lean year,"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "column": "watch_out",
+     "path": [],
+     "find": "Two significant ice pitches (35-40 and 45-50 degrees) requiring ice tools and protection",
+     "replace": "Two ice steps in the chute, each from a short pitch to a few hundred feet depending on the year, requiring ice tools and protection"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "Climb the upper Kautz headwall",
+     "replace": "Climb the upper ice step and the upper Kautz Glacier"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "probability"
+     ],
+     "find": "off the Kautz headwall",
+     "replace": "off the Kautz Ice Cliff"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "expect": "Moderate-high - one to two short, steep (40-45°) ice pitches in the chute, plus rock/icefall exposure once the sun is on the headwall",
+     "value": "Moderate-high - two steep ice steps in the chute, each from a short pitch to a few hundred feet depending on the year, plus rock/icefall exposure once the sun is on the Kautz Ice Cliff"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_rainier_kautz_glacier",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "What you should find in the chute: a first pitch of roughly 400 ft at 35–40 degrees on stepped ground that most parties climb with a single tool, then a second pitch of roughly 400 ft at 45–50 degrees where a second tool earns its place.",
+     "replace": "What you should find in the chute: two steps of alpine ice separated by lower-angle snow. The first is the easier, anything from a short pitch of steep snow to about 250 ft of ice; the second is the crux, from a short pitch to more than 300 ft, steeper, and where a second tool earns its place. Both change a great deal from year to year."
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}

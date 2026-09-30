@@ -358,6 +358,507 @@
     }
    ],
    "pin_followups": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this as Pernod's original 1952 line (from the east side up to the notch between Pernod and Chianti, then the northeast corner) and rewrite the approach, pitch table, day plan, summit note and rappel notes that had been copied from the separate West Face and South Face routes; the beta no longer credits a guidebook.",
+   "evidence": "The 1952 first-ascent account has the party climbing from the east (Silver Star Creek side) over moraine and ice to the eastern walls and the notch between Pernod and Chianti, with the first lead to a ledge on the northeast corner, a bolt for an insecure section, an 8-foot bolt-assisted pendulum around an overhanging corner, summit bolts placed from a shoulder stand, and rappels to the notch then long rappels to the glacier. A later ascent account from a Burgundy Col camp approached from the east side, climbed obliquely up and around to the north notch between Pernod and Chianti (about three pitches, mostly 4th and 5th class) and descended by rappel on double ropes; the same writer rates the climbing moderate 5.5-5.7 and not sustained. The route database lists only the Direct West Face (reached by the gully contouring right from the bench) and the South Face (5.9 A0, rappelling to the Chablis notch) on Pernod; both are separate sibling rows, and those were the sources of this row's approach, pitch table, itinerary and rappel table. Numbers not changed for want of a second source: pitches 6, length_m 213, gain/loss 4,000, the Grade III / III-IV commitment, and the 5.5-5.7 rock grade (one source only).",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star",
+    "https://www.summitpost.org/silver-star-mountain/297453",
+    "https://www.mountainproject.com/area/108106031/pernod-spire",
+    "https://www.mountainproject.com/route/108106040/direct-west-face",
+    "https://www.mountainproject.com/route/119394671/south-face",
+    "https://www.summitpost.org/chianti-spire/229839"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "beta",
+     "path": [],
+     "expect": "Per Beckey-guide-derived route descriptions, Pernod and neighboring Chablis are considered the easiest of the Wine Spires and can be climbed in an easy day; the climbing is moderate (5.5-5.7) and not sustained.",
+     "value": "Pernod and neighboring Chablis are the easiest of the Wine Spires, and this line is a reasonable day from a Burgundy Col camp. The climbing is moderate (about 5.5-5.7) and not sustained. It climbs from the east side up to the notch between Pernod and Chianti and then up the northeast corner to a tiny summit block; the South Face and the Direct West Face are separate, harder routes on the same spire."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_pernod_spire_standard",
+     "column": "approach",
+     "path": [],
+     "find": "From the bench, leave the main Burgundy Col trail and contour right past a couple of subsidiary buttresses, dropping slightly before regaining a large talus/scree gully that runs directly to the base of Pernod's west face. This final gully is loose scree-over-slab ('kitty litter,' Class 2-3) and is the route-finding and footing crux of the approach, especially under a pack — trekking poles help. All told the approach is roughly 3,500-4,000 ft of gain over about 3 miles one-way (3-5 hours for a fit party). Lingering snow in the gully into early July may require an axe/light traction for the last few hundred feet in a big-snow year; check current conditions before committing. Burgundy Col itself also holds 3-4 bivy sites (one large enough for a 2-person tent), with old rock wind-shelters built by past parties still standing.",
+     "replace": "From the bench, continue up the main climbers' trail over steep talus and scree to Burgundy Col, which holds three or four bivy sites with old rock wind-shelters built by past parties. From the col, cross to the east side and traverse south over snow and talus at the edge of the Silver Star Glacier basin, below the east walls of Chianti and Pernod. From below the east walls, climb obliquely up and around to the notch between Chianti and Pernod; this section runs to roughly three pitches of mostly 4th and 5th class. Lingering snow on the east side into early July may call for an axe and light traction."
+    },
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "approach_variants",
+     "path": [
+      0
+     ],
+     "expect": {
+      "name": "The Wine Spires pullout and the bench camp, then contour right off the Burgundy Col trail into the gully under the west face",
+      "notes": "From the roadside pullout on SR-20 about 0.7 mile past the Cutthroat Lake Road turnoff, directly across the highway from the Wine Spires, a boot and climbers' trail drops off the shoulder, crosses Early Winters Creek on logs or a rock-hop, and climbs a timbered rib on the climber's-left side of the Burgundy Creek drainage. The creek can run high and require a wet ford in early-season snowmelt. The trail gains steeply and steadily, on the order of 2,000 ft over the first 1.5-2 miles, to a broad flat bench at roughly 6,400-6,600 ft that holds established camps. THIS BENCH IS THE LAST RELIABLE WATER: small tarns and a creek trickle that can run dry by late summer. Roughly 3,500-4,000 ft of gain over about 3 miles one-way, 3-5 hours for a fit party. Note that the aspect recorded for this route says north while its own approach and descent describe the west face and an east-side rappel.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "Loose scree-over-slab in the final approach gully, the footing crux of the day",
+       "Lingering snow in the gully into early July in a big-snow year",
+       "A rappel descent down the opposite side of the peak onto a glacier, followed by a re-ascent to Burgundy Col",
+       "Natural anchors only, with aging fixed webbing; carry cord to back up or replace",
+       "A single 60 m rope is tight in places on the descent; many parties run a 70 m or doubles",
+       "The bench is the last reliable water and can run dry by late summer"
+      ],
+      "baseFinding": "LEAVE THE MAIN BURGUNDY COL TRAIL AT THE BENCH. THAT IS THE TURN, AND MISSING IT IS THE ONLY WAY TO GET THIS APPROACH WRONG. From the bench, contour RIGHT past a couple of subsidiary buttresses, DROPPING SLIGHTLY before regaining a large talus and scree gully that runs directly to the base of Pernod's west face.\n\nSO THERE IS A SMALL DESCENT IN THE MIDDLE OF AN OTHERWISE RELENTLESS CLIMB, AND THAT DIP IS THE CONFIRMATION. If everything you have done since the bench has been uphill, you are still on the Burgundy Col trail.\n\nTHE GULLY IS THE ROUTE-FINDING AND FOOTING CRUX OF THE APPROACH: loose scree over slab, class 2-3, described as kitty litter, especially under a pack. Trekking poles help. Lingering snow in it into early July may require an axe or light traction for the last few hundred feet in a big-snow year.\n\nARRIVAL: the base of Pernod's west face, THE TALLEST WALL IN THE WINE SPIRES. Six pitches at Grade III. If the wall above you is one of the smaller buttresses you passed on the contour, you stopped too early.\n\nAND FOR PARTIES WHO CAMP HIGH INSTEAD: Burgundy Col itself holds three or four bivy sites, one large enough for a two-person tent, with old rock wind-shelters built by past parties still standing. Those shelters are a positive identification of the col.\n\nDESCENT IS BY RAPPEL DOWN THE BACK, NOT BY REVERSING THE APPROACH GULLY: the first rappel drops into the notch just below and east of the top, then a string of rappels continues down the peak's EAST side into the Silver Star Glacier basin, on the order of four to five in total. Anchors are natural, slung horns and blocks with occasional aging fixed webbing, not bolts. Once on the glacier, climb back up a few hundred feet to regain Burgundy Col, then descend the standard climbers' trail."
+     },
+     "value": {
+      "name": "The Wine Spires pullout and Burgundy Col, then across the east side to the Pernod–Chianti notch",
+      "notes": "From the roadside pullout on SR-20 about 0.7 mile past the Cutthroat Lake Road turnoff, directly across the highway from the Wine Spires, a boot and climbers' trail drops off the shoulder, crosses Early Winters Creek on logs or a rock-hop, and climbs a timbered rib on the climber's-left side of the Burgundy Creek drainage. The creek can run high and require a wet ford in early-season snowmelt. The trail gains steeply and steadily, on the order of 2,000 ft over the first 1.5-2 miles, to a broad flat bench at roughly 6,400-6,600 ft that holds established camps. THIS BENCH IS THE LAST RELIABLE WATER: small tarns and a creek trickle that can run dry by late summer. Above it the trail climbs steep talus and scree to Burgundy Col, the usual camp for this climb. From the col the route crosses to the east side of the spires and traverses south below their east walls to reach the notch between Chianti and Pernod.",
+      "season": "Jun-Sep",
+      "hazards": [
+       "Loose talus and scree on the climb to Burgundy Col",
+       "Snow and névé at the edge of the Silver Star Glacier basin on the east side, with moats along the rock late in the season",
+       "Roughly three pitches of mostly 4th and 5th class to reach the notch",
+       "A rappel descent back down the east side, followed by a re-ascent to Burgundy Col",
+       "Old first-ascent bolts on the summit block; carry cord to back up or replace old slings",
+       "The bench is the last reliable water and can run dry by late summer"
+      ],
+      "baseFinding": "THIS LINE IS CLIMBED FROM THE EAST, NOT FROM THE WEST FACE GULLY. Stay on the main climbers' trail past the bench all the way to Burgundy Col; the gully that contours right off the bench leads to the base of the west face, which is the start of a different and much harder route.\n\nFROM THE COL, CROSS TO THE EAST SIDE AND GO SOUTH. Traverse below the east walls of Chianti and then Pernod, on snow and talus at the edge of the glacier basin. Pernod is the highest of the four spires and sits just south of Chianti.\n\nTHE KEY FEATURE IS THE NOTCH BETWEEN CHIANTI AND PERNOD. From below the east walls, climb obliquely up and around to that notch; the ground is mostly 4th and 5th class, roughly three pitches. Going south from the col you pass below Chianti first, and the notch you want is the one immediately south of it. The next notch beyond Pernod separates Pernod from Chablis and is the wrong one.\n\nFROM THE NOTCH THE ROUTE GOES UP THE NORTHEAST CORNER to the small summit block, which carries old first-ascent bolts that are worth backing up.\n\nFOR PARTIES WHO CAMP HIGH: Burgundy Col holds three or four bivy sites, one large enough for a two-person tent, with old rock wind-shelters built by past parties still standing. Those shelters are a positive identification of the col.\n\nDESCENT IS BY RAPPEL: back to the notch, then long rappels down the east side to the snow at the edge of the glacier basin. From there climb back up a few hundred feet to regain Burgundy Col, then descend the climbers' trail."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.4",
+       "notes": "Lower-angle rock gains the base of the technical climbing above the scree gully approach; easy ground used to reach the first real belay stance on the wall.",
+       "pitch": 1,
+       "anchor": "Gear",
+       "lengthM": 35
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.6",
+       "notes": "Moderate crack and corner climbing following essentially the same line the 1952 first-ascent party (Beckey, Wilde, McGowan) established, before the angle and difficulty pick up higher on the face.",
+       "pitch": 2,
+       "anchor": "Gear",
+       "lengthM": 35
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.7",
+       "notes": "Sustained face moves lead toward the route's historically hardest section; solid granite with adequate but spaced protection.",
+       "pitch": 3,
+       "anchor": "Gear",
+       "lengthM": 40
+      },
+      {
+       "crux": false,
+       "bolts": 1,
+       "grade": "5.8",
+       "notes": "The insecure section the first-ascent party protected with a hand-drilled Rawl-drive bolt — the old fixed bolt (or its replacement) still marks the technical crux of the lower wall.",
+       "pitch": 4,
+       "anchor": "Old fixed piton/bolt + gear",
+       "lengthM": 35
+      },
+      {
+       "crux": true,
+       "bolts": 1,
+       "grade": "5.9 (A0 optional)",
+       "notes": "Passes the overhanging, holdless corner that stumped the 1952 first ascensionists, who bolted and pendulumed roughly 8 feet around it on aid; most modern parties free it near 5.9, though a short pull on gear (A0) remains an option if it doesn't go free.",
+       "pitch": 5,
+       "anchor": "Fixed bolt (historic pendulum point)",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 2,
+       "grade": "5.6",
+       "notes": "Finishes at the small summit block using bolts the first-ascent trio placed from a shoulder-stand to reach the top; treat these old, weathered bolts with caution and back them up with gear/slings where possible before starting the multi-rappel descent.",
+       "pitch": 6,
+       "anchor": "Old fixed bolts (summit, FA shoulder-stand aid points)",
+       "lengthM": 40
+      }
+     ],
+     "value": [
+      {
+       "pitch": "East side to the Pernod–Chianti notch",
+       "grade": "4th-5th class",
+       "notes": "From below the east walls, climb obliquely up and around to the notch between Pernod and Chianti; roughly three pitches, mostly 4th and 5th class."
+      },
+      {
+       "pitch": "Notch to the summit",
+       "grade": "5.5-5.7",
+       "notes": "From the notch the line goes up the northeast corner. The first-ascent party used aid, a bolt to protect an insecure section and a bolt for an 8-foot pendulum around an overhanging corner, and reached the small summit block with bolts placed from a shoulder stand; the old fixed bolts are worth inspecting and backing up."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "descent_text",
+     "path": [],
+     "expect": "This is a rappel descent, not a walk-off. From the summit, the first rappel drops into the notch just below/east of the top — anchors on this line are natural (slung horns and blocks, occasional aging fixed webbing/tat) rather than bolted, so carry some cord to back up or replace sun-bleached slings. From the notch, continue down a further string of rappels on the peak's back (east) side into the Silver Star Glacier basin rather than reversing the approach gully; expect on the order of 4-5 rappels total to reach easy glacier snow/talus. A single 60m rope works but is tight in a few spots — many parties run a 70m single or rappel on doubled ropes so they're not left short above the next anchor — and watch for rope-stuck hazard pulling ropes through the blocky terrain. Once down on the Silver Star Glacier, climb/traverse back up a few hundred feet to regain Burgundy Col, then descend the standard climbers' trail (scree bench, then timbered rib) back to the SR-20 pullout, essentially reversing the approach. Rope up for the glacier crossing if there's any question about moat/crevasse conditions, and budget real time for the loose 'kitty litter' scree below the col — it's notoriously slow going.",
+     "value": "This is a rappel descent, not a walk-off. Rappel from the summit block back to the notch between Pernod and Chianti, then make long rappels down the east side to the snow and névé at the edge of the Silver Star Glacier basin. No rappel count is published for this line; carry double ropes, and cord to back up or replace old slings and bolts. From the glacier edge, traverse back north below Chianti and climb a few hundred feet to regain Burgundy Col, then descend the climbers' trail (scree, the bench, then the timbered rib) to the SR-20 pullout. Watch for moats along the rock late in the season, and budget real time for the loose scree below the col."
+    },
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "rappel_detail",
+     "path": [],
+     "expect": [
+      {
+       "n": 1,
+       "notes": "Rappel from Pernod's true summit down the south face to a notch/ledge near Chablis Spire; a single 70m rope reaches, a 60m leaves you short of the notch.",
+       "anchor": "bolted (new bolt + old original 1/4-inch bolt with hanger, backed by 2 equalized pitons)",
+       "lengthM": null
+      },
+      {
+       "n": 2,
+       "notes": "After a short 4th-class downclimb/scramble to regain Chablis Spire's east-face rap line, first of two double-rope rappels down that route toward its base.",
+       "anchor": "natural/mixed (poor rock, bring tat)",
+       "lengthM": 30
+      },
+      {
+       "n": 3,
+       "notes": "Second double-rope rappel down Chablis Spire's east-face route, reaching the base of that route rather than descending directly into the Silver Star Glacier basin.",
+       "anchor": "natural/mixed (poor rock, bring tat)",
+       "lengthM": 30
+      }
+     ],
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "rappel_count_note",
+     "path": [],
+     "expect": "1 rappel off the true summit on a bolted anchor down to a notch/ledge near Chablis Spire, then a short 4th-class scramble to regain Chablis's east-face rappel line, then 2 double-rope rappels down that line to the base.",
+     "value": "No published count: rappels lead from the summit back to the notch between Pernod and Chianti, then long rappels on double ropes descend the east side to the glacier edge."
+    },
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "rappels",
+     "path": [],
+     "expect": "3",
+     "value": "Several: from the summit back to the Pernod–Chianti notch, then long rappels down the east side to the glacier edge (no published count)"
+    },
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1
+     ],
+     "expect": {
+      "n": 2,
+      "note": "A short drop/traverse from the col gains the base of the South Face for a moderate 6-pitch 5.9 (A0) climb, then the crux of the day is really the descent: rappel the standard line off the spire, break camp at the col, and hike all the way back down past the bench camp to the highway.",
+      "hours": 10.5,
+      "miles": 3,
+      "title": "Climb, summit, and hike all the way out",
+      "gainFt": 900,
+      "lossFt": 3600,
+      "packLb": 26,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave Burgundy Col bivy",
+        "detail": "Short approach to the base of the South Face."
+       },
+       {
+        "time": "5:45 AM",
+        "label": "Rope up and start climbing",
+        "detail": "6 pitches, 5.9 with a point of aid (A0)."
+       },
+       {
+        "time": "~10:00 AM",
+        "label": "Top out on the summit",
+        "detail": "About 4-4.5 hours of climbing."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Begin rappel descent",
+        "detail": "Standard rappel line off the spire back toward the col."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Back at Burgundy Col",
+        "detail": "Break down the bivy and shoulder full packs."
+       },
+       {
+        "time": "5:00 PM",
+        "label": "Back at the car",
+        "detail": "Descend past bench camp to the Hwy 20 pullout."
+       }
+      ],
+      "objective": "Climb Pernod's standard South Face line and return to the car"
+     },
+     "value": {
+      "n": 2,
+      "note": "Cross from the col to the east side and traverse below the east walls, then climb obliquely up to the notch between Pernod and Chianti and on up the northeast corner to the small summit block. Rappel back to the notch and down the east side to the glacier edge, regain the col, break camp and hike all the way back down past the bench camp to the highway.",
+      "hours": 10.5,
+      "miles": 3,
+      "title": "Climb, summit, and hike all the way out",
+      "gainFt": 900,
+      "lossFt": 3600,
+      "packLb": 26,
+      "schedule": [
+       {
+        "time": "5:00 AM",
+        "label": "Leave Burgundy Col bivy",
+        "detail": "Cross to the east side and traverse below the east walls."
+       },
+       {
+        "time": "5:45 AM",
+        "label": "Rope up and start climbing",
+        "detail": "Up to the Pernod–Chianti notch, then the northeast corner."
+       },
+       {
+        "time": "~10:00 AM",
+        "label": "Top out on the summit",
+        "detail": "About 4-4.5 hours of climbing."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Begin rappel descent",
+        "detail": "Rappel to the notch, then down the east side to the glacier edge."
+       },
+       {
+        "time": "1:00 PM",
+        "label": "Back at Burgundy Col",
+        "detail": "Break down the bivy and shoulder full packs."
+       },
+       {
+        "time": "5:00 PM",
+        "label": "Back at the car",
+        "detail": "Descend past bench camp to the Hwy 20 pullout."
+       }
+      ],
+      "objective": "Climb Pernod's original northeast-corner line from the Pernod–Chianti notch and return to the car"
+     }
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_pernod_spire_standard",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "(~6 pitches, 5.9, rappel off the spire, hike all the way out)",
+     "replace": "(the notch and the northeast corner, rappels down the east side, hike all the way out)"
+    },
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "expect": "A short drop/traverse from the col gains the base of the South Face for a moderate 6-pitch 5.9 (A0) climb, then the crux of the day is really the descent: rappel the standard line …",
+     "value": "Cross to the east side, climb to the Pernod–Chianti notch and up the northeast corner to the summit, then rappel back to the notch and down the east side to the glacier edge, regain the col and hike all the way out."
+    },
+    {
+     "op": "set",
+     "id": "wa_pernod_spire_standard",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "expect": "A short drop and traverse from the col gains the base of the route, then six pitches — 5.4 and 5.6 corners, sustained 5.7-5.8 face past an old fixed bolt, and the 5.9 (A0 optional) overhanging corner — finish at the small summit block on old, weathered fixed bolts that are worth backing up.",
+     "value": "From Burgundy Col, cross to the east side and traverse south below the east walls, then climb obliquely up to the notch between Pernod and Chianti; from the notch the line goes up the northeast corner to the small summit block, which carries old first-ascent bolts worth backing up."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_pernod_spire_standard",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "on a ~6-pitch Grade III spire",
+     "replace": "on a Grade III spire"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_pernod_spire_standard",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "find": "approach-plus-6-pitch day",
+     "replace": "approach-plus-multi-pitch day"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_pernod_spire_standard",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "packWeight"
+     ],
+     "find": "cached or carried through 6 pitches",
+     "replace": "cached or carried on the climb"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Keep this as the south-side snow gully reached from the col southeast of the summit, and replace the pitch table, 50-degree angle, ice grade, pitch count and length, gear notes and day plan that had been copied from a different crux on the 2007 range traverse.",
+   "evidence": "The 2007 traverse account places its 40 m of 4th-class rock, 100+ m of 50-degree ice and 100+ m of rappelling on the crossing near South Twin, not on Little Sister, where the South Couloir was simply skied on day two. The 2015 winter ascent page (two party members' accounts) describes hard snow to the 6,240+ ft col southeast of the summit, a steep last bit of snow to the col, a traverse onto the south aspect and a snow and rock slope/gully rated 3rd class, climbed unroped, with a bit of mixed climbing near the summit on reasonably solid rock; a double-60 m rappel from near the top and another from the col; about 10 mi, ~5,000 ft and 12 hours car to car. No source gives this gully an angle, an ice grade, a pitch count or a length, so max_angle, ice_grade, pitches and length_m are cleared rather than replaced. Discipline stays 'ice' (a snow/mixed gully), though 'mountaineering' may suit it better; not changed.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200712900",
+    "https://stephabegg.com/trip-reports/washington/little-sister/",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "overview",
+     "path": [],
+     "expect": "A steep snow/ice/mixed couloir on Little Sister's south side, called out in a 2007 account of the first known ski traverse of the entire Twin Sisters Range as 'the proudest line of the trip.'",
+     "value": "A snow and rock gully on Little Sister's south side, reached by climbing to the col southeast of the summit and traversing onto the south aspect. It has been skied during a traverse of the whole Twin Sisters Range and climbed in winter as a moderate snow gully with a bit of mixed ground near the summit."
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "4th class rock",
+       "notes": "About 40 m of fourth-class rock forms the entry to the line, per the published description of the Twin Sister High Route. On the ski descent this section was protected and rappelled. Depending on snow year this can be buried, in which case it climbs as moderate snow.",
+       "pitch": "1",
+       "lengthM": 40
+      },
+      {
+       "grade": "AI1 / 50 degrees",
+       "notes": "First rope length of the 100+ m of 50-degree ice and mixed rock described in the published account. A winter party climbed this ground unroped in firm conditions, describing it as a snow-and-rock slope/gully. Screws where there is real ice; often only snow over rock.",
+       "pitch": "2",
+       "lengthM": 50
+      },
+      {
+       "grade": "AI1 / 50 degrees, mixed",
+       "notes": "Second rope length, finishing with a bit of mixed climbing on reasonably solid rock near the summit; third-class scrambling on the final sections. The 100+ m section is split here into two rope lengths for planning — it is a continuous 100+ m, not discrete pitches.",
+       "pitch": "3",
+       "lengthM": 50
+      }
+     ],
+     "value": [
+      {
+       "pitch": "Snow to the col",
+       "grade": "Steep snow",
+       "notes": "The last snow up to the 6,240+ ft col southeast of the summit is steep. In hard winter conditions it cramponed well on the way up but was judged too sketchy to downclimb on single axes, so it was rappelled on the way down."
+      },
+      {
+       "pitch": "South-side gully",
+       "grade": "3rd class snow and rock",
+       "notes": "Traverse from the col onto the south side and climb a snow and rock slope/gully, with a bit of mixed climbing on reasonably solid rock near the summit. A winter party climbed it unroped in good snow; it softens as the south aspect warms."
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "ice_grade",
+     "path": [],
+     "expect": "AI1",
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "max_angle",
+     "path": [],
+     "expect": 50,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "pitches",
+     "path": [],
+     "expect": 3,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "length_m",
+     "path": [],
+     "expect": 140,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "expect": "Steep snow/ice couloir terrain (up to ~50 degrees).",
+     "value": "Steep snow just below the col and a snow and rock gully with some mixed ground near the summit; in firm conditions the snow below the col is unpleasant to downclimb."
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "expect": "Steep 50-degree ice/mixed terrain with two rappels on the descent, one from near the top and one below the col.",
+     "value": "Steep snow below the col and a bit of mixed ground near the summit, with two rappels on the descent, one from near the top and one below the col."
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "detailed_rack",
+     "path": [],
+     "expect": "Light alpine kit rather than a rock rack. One 60 m rope is enough for the documented rappels (Abegg's party carried two 60 m ropes and used them for a single double-rope rappel from near the top, and noted one rope would have sufficed at the col). Bring 2-3 ice screws for the 50-degree ice, a picket or two for snow anchors, a small selection of nuts and slings for rock anchors on the fourth-class band and summit mixed ground, and a generous amount of cord/webbing plus rap rings — there are no reliable fixed anchors and you should plan to leave gear. One technical ice tool plus a mountaineering axe is a reasonable compromise for AI1 mixed ground; Abegg's party used single axes.",
+     "value": "Light alpine kit rather than a rock rack. One 60 m rope is enough for the documented rappels: a winter party carried two 60 m ropes, used them together for one rappel from near the top, and found a single rope would have done at the col. Bring a picket or two for snow anchors, a few nuts and slings for rock anchors on the mixed ground near the summit, and plenty of cord or webbing plus rap rings; there are no reliable fixed anchors, so plan to leave gear. A mountaineering axe each is the usual tool, and the winter ascent was made on single axes."
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "Protection is thin and improvised. The 50-degree ice takes screws when it is real ice and takes nothing when it is unconsolidated snow over rock, which is the more common case. The fourth-class rock band and the mixed summit ground offer occasional horns, blocks and small nut placements in the dunite, which is coarse and generally solid but is not a splitter-crack medium. Plan on running it out on moderate snow and saving your gear for anchors. Because you will rappel the line, budget cord and rings for two stations you may have to build from scratch.",
+     "value": "Protection is thin and improvised. The south-side gully is snow and rock, climbed unroped in good conditions, with a bit of mixed ground near the summit where the dunite offers occasional horns, blocks and small nut placements; it is coarse and generally solid but is not a splitter-crack medium. Expect to move unroped or run it out on moderate snow and save your gear for anchors. Because you will rappel, budget cord and rings for two stations you may have to build from scratch."
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "itinerary",
+     "path": [],
+     "expect": "Part of a 3-day, ~26-mile south-to-north ski traverse of the whole range (Step Sister, Last Sister, Saddle Slab, Nancy, Barbara, Trisolace, Cinderella, Little Sister, Hayden, Skookum, South Twin, North Twin, and an unnamed peak called Mirage), with roughly 12,000 ft gained and 14,000 ft lost overall — not just on Little Sister.",
+     "value": "A long single day from the Elbow Lake Trailhead: a winter party left about 7 a.m., reached the summit around 1 p.m. and was back after dark, about 12 hours and roughly 10 miles and 5,000 ft car to car. The line has also been skied as part of a multi-day traverse of the whole range."
+    },
+    {
+     "op": "set",
+     "id": "wa_little_sister_south_couloir",
+     "column": "best_season",
+     "path": [],
+     "expect": "Documented ascent/descent was mid-May in a ski-mountaineering context (spring snowpack); this is not established as a summer rock route.",
+     "value": "A snow line: done in winter (a January ascent on hard snow) and in mid-May (a ski descent in spring snowpack). Not a summer rock route."
+    }
+   ],
+   "pin_followups": []
   }
  ]
 }

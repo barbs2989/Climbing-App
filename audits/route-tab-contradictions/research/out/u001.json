@@ -59,6 +59,303 @@
     "https://www.mountainproject.com/area/109252144/aiguille-de-lm"
    ],
    "patches": []
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "fact": "Total elevation gain for the traverse (gain_ft 2900 is only the trail gain to Easy Pass)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: gain_ft 2,900 matches the Easy Pass trail alone (the row's own breakdown says 3.4 mi / ~2,885 ft to Easy Pass), and the traverse then drops to Fisher Creek and climbs to four 8,000+ ft summits. New figures found on retry: an outing listing for the full four-peak traverse from Easy Pass gives 8,000 ft and 20 mi round trip (its sibling listings for the same trip give 6,000 ft/15 mi to Katsuk and 7,000 ft/18 mi to Kimtah, so they are one source); an earlier one-day report gives about 8,000 ft over 15 mi but not car to car. A partial-traverse report gives times but no totals, and the route-database and forum pages that might give a second total returned 403 or did not load. Two ~8,000 ft figures exist but they describe different outings (different mileages and end points), so no car-to-car total is adopted and nothing is patched.",
+   "sources": [
+    "https://mazamas.org/activity/instance/4333/detail/",
+    "https://mazamas.org/activity/instance/1947/detail/",
+    "https://turns-all-year.com/trip-reports/partial-ragged-ridge-traverse-cosho-via-mesahchie-glacier",
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)",
+   "verdict": "fixed",
+   "correct_value": "At the ridge-top junction above Rachel Lake, go RIGHT toward Lila Lake (left goes to Rampart Lakes); about 0.3 mi on, a cairn marks a fork where Lila Lake is straight ahead and the climbers' path up Alta's south ridge branches left.",
+   "evidence": "The trail association's hike description: at the ridge the left trail goes to Rampart Lakes, 'you want the trail to the right, to Lila Lake'; after 0.3 mi a cairned junction, Lila Lake straight ahead, the climbers' path to Alta on the left, steep and loose at first then a knife-edge ridge. An independent 2015-era forum trip report agrees: at the ridge junction Lila Lake and Alta are to the right and Rampart Lakes to the left, with the Alta cutoff spurring off before Lila. The row's own beta (cairned climbers' path at the Rachel/Lila junction) and partner_requirements (the easy-to-miss Lila Lake/Alta junction) already agree; the approach, approach variant, saddle waypoint, climbing_route, summit directions, descent_text and itinerary sent parties south through the Rampart Lakes basin to a boulder gully and a 5,570 ft saddle, which is the outlier. The renamed turnoff pin keeps its (estimated) coordinate; its elevation and distance are cleared rather than computed, since no source gives them.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/alta-mountain",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=21923"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "— for this route, follow the trail south along the ridge/east side of the Rampart Lakes basin. Stay on maintained tread through the lakes basin (it's fragile alpine turf/talus; short-cut social trails are discouraged and often marked closed with sticks/rock piles). At the south end of the lakes, locate the base of a large boulder gully with cliff bands on its left (west) side; ascend this gully on a boot path to a broad saddle at about 5,570 ft on the Rampart Ridge crest. Total to this point is roughly 5.3 miles and ~3,000 ft gain. From the saddle, turn west and follow the increasingly exposed",
+     "replace": "— for this route, go right toward Lila Lake. The tread is brushy in places but easy to follow; after about 0.3 mile a cairn marks a fork where the Lila Lake trail continues straight and the unsigned climber's path to Alta branches left. Take the left fork, which starts steep and loose with big steps and no shade, and follow the increasingly exposed",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Rachel Lake, Rampart Ridge, and the boulder gully to the 5,570 ft saddle",
+     "value": "Rachel Lake, Rampart Ridge, and the cairned Alta turnoff on the Lila Lake trail",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "At the ridge junction go LEFT (south) for Rampart Lakes, and follow the ridge and the east side of the lakes basin. Stay on maintained tread through the basin; the alpine turf is fragile and shortcut social trails are often deliberately blocked.\n\nAbout 5.3 miles and 3,000 ft to the saddle.",
+     "replace": "At the ridge junction go RIGHT toward Lila Lake; the left branch leads to Rampart Lakes and is not this route. After about 0.3 mile a cairn marks a fork: Lila Lake is straight ahead, and the climbers' path up Alta's south ridge is the left branch.",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "AT THE SOUTH END OF THE RAMPART LAKES, FIND A LARGE BOULDER GULLY WITH CLIFF BANDS ON ITS LEFT — THAT IS, ITS WEST — SIDE. Boulders in the gully, cliffs bounding it on the west: that pairing is the arrival test for the scramble takeoff, and it does not require seeing Alta.\n\nWHERE IT PUTS YOU: a boot path up that gully reaches a broad saddle at about 5,570 ft on the Rampart Ridge crest. Broad saddle at 5,570 ft is your altimeter confirmation. From there the route turns WEST along the crest toward Alta's summit block.",
+     "replace": "THE TAKEOFF IS A CAIRN ON THE LILA LAKE TRAIL, NOT ANYTHING IN THE RAMPART LAKES BASIN. At the ridge-top junction above Rachel Lake turn RIGHT (left goes to Rampart Lakes); about 0.3 mile along, a cairn marks a fork where Lila Lake is straight on and the unsigned climbers' path to Alta goes left. If you find yourself among the Rampart tarns, you took the wrong branch at the ridge.\n\nWHERE IT PUTS YOU: the climbers' path climbs Alta's south ridge, steep, loose and shadeless at first, before easing onto the narrow crest that leads to the summit block.",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "name"
+     ],
+     "expect": "Saddle below Alta's south ridge",
+     "value": "Alta climbers' path turnoff (cairn)",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "expect": "Top of the boulder gully on Rampart Ridge; start of the unmarked climbers' path toward the summit. Coordinate is a geometric interpolation (elevation-scaled) between the ridge junction and the summit — estimated, not surveyed.",
+     "value": "Cairned fork on the Lila Lake trail about 0.3 mi past the Rampart Ridge junction, where the unmarked climbers' path up Alta's south ridge leaves on the left. Coordinate is an estimate between the ridge junction and the summit, not surveyed.",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "directions"
+     ],
+     "expect": "Stay on maintained tread through the Rampart Lakes basin, keeping to the east side of the lakes — the alpine turf here is fragile and short-cut social trails are deliberately blocked with sticks and rock piles. At the far end of the lakes, find the base of a large boulder gully with cliff bands along its left side and follow the boot path up it to the broad saddle on the ridge crest. The gully is loose enough that parties should climb it one at a time.",
+     "value": "At the ridge-top junction above Rachel Lake, go right toward Lila Lake (the left branch leads to Rampart Lakes). The tread is brushy in places but always clear; after about 0.3 mile a cairn marks the fork where the Lila Lake trail carries straight on and the climbers' path to Alta leaves on the left.",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "elev"
+     ],
+     "expect": 5570,
+     "value": null,
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 5.3,
+     "value": null,
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "directions"
+     ],
+     "find": "From the saddle an unmarked climbers' path leaves the maintained trail at a cairn",
+     "replace": "At the cairned fork on the Lila Lake trail an unmarked climbers' path leaves the maintained trail",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "set",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "label"
+     ],
+     "expect": "West along the Rampart Ridge crest from the 5,570 ft saddle",
+     "value": "Up Alta's south ridge from the cairned turnoff",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From the saddle, turn west and follow",
+     "replace": "From the cairned turnoff, follow",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "back over the false summits to the 5,570 ft saddle, downclimb the boulder gully to the Rampart Lakes basin trail, follow the ridge trail back north to the Rachel Lake outlet,",
+     "replace": "back over the false summits and down the steep, loose lower ridge to the cairned fork, follow the Lila Lake trail back to the Rampart Ridge junction,",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "loose rock in the gully (rockfall risk",
+     "replace": "loose rock on the steep lower ridge (rockfall risk",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "improvised at the gully for",
+     "replace": "improvised on the steep lower ridge for",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "climb to Rampart Ridge/Rampart Lakes, then follow",
+     "replace": "climb to Rampart Ridge and turn right toward Lila Lake, then follow",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "find": "Reach Rampart Ridge / Rampart Lakes",
+     "replace": "Reach the Rampart Ridge junction",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "climbs ~600 ft more to the ridge and lake basin.",
+     "replace": "climbs ~600 ft more to the ridge; go right toward Lila Lake.",
+     "id": "wa_alta_mountain_scramble",
+     "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+    }
+   ]
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "fact": "access.closures is null while the bivy entries say the Rachel Lake trailhead / Box Canyon road were inside a 2026 wildfire closure",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first pass noted an 18 Sep 2026 Three Queens Fire order listing the Rachel Lake Trailhead and Trail 1313 as closed through 31 Oct 2026, and the bivy permit notes already say the road and trailhead were in a closure as of August 2026, while access.closures is null. A closure is time-bound and only one official source was checked, so no closure text is written here; it should be set (and later cleared) from the current Forest Service order.",
+   "sources": [
+    "http://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-area-closure-decreased-cle-elum-ranger-district"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_south_face_12",
+   "fact": "Whole-outing gain/loss: gain_ft 6257 vs loss_ft 6157 on an out-and-back, with day 2 not counting the re-climb over Fourth Creek Pass",
+   "verdict": "unresolved",
+   "correct_value": "Likely about 7,400-7,550 ft of gain (and the same loss) car to car, but not adopted",
+   "evidence": "Still real: the route is an out-and-back from the Beverly Turnpike trailhead, yet loss_ft (6157) differs from gain_ft (6257), and day 2 (4257 up / 4807 down) omits the ~1,350 ft re-climb to Fourth Creek Pass on the hike out. New on retry: a search excerpt of the peak's South Route page gives 15 mi round trip and 7,400 ft of gain from Beverly Creek (the page itself sat behind a bot check), and a club trip write-up gives the approach day as 5.5 mi, +1,800 / -1,400 ft. With the earlier report (~7,550 ft each way) there are two figures near 7,400-7,550 ft, but adopting one would also require new day-2 gain/loss values, which no source states directly and which may not be computed by subtraction, so gain_ft, loss_ft and the itinerary are left as they are.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/argonaut-peak-south-route",
+    "https://wenatcheeoutdoors.org/2016/05/19/argonaut-peak-south-side/",
+    "https://rocknropenw.com/2024/07/23/argonaut-peak-via-the-south-scramble-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Pitch count: 8 (pitches field / prose) vs 6 (approach text and pitch_detail rows)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry found the peak's club route page for the Southeast Ridge (Grade II, 5.6, via the SE spire, a false summit, continuing to the highest point) only as a search excerpt; the page is behind a bot check and the excerpt gives no pitch count. The '8 pitches, two single or one double rope rappel into the notch' figure still traces to a single route write-up. An archive lookup of the Southeast Ridge page id returned a different peak's route. With one source for 8 and the six pitch_detail rows describing the col-side East Ridge, the count cannot be settled without rebuilding the breakdown from a full Southeast Ridge description; nothing is patched.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+    "https://www.summitpost.org/argonaut-peak/152581",
+    "https://web.archive.org/web/2023/https://www.summitpost.org/southeast-ridge/158954"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Route name 'Southeast Ridge' vs prose describing the 'East Ridge' from the Argonaut-Colchuck col",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The conflation is confirmed again: a second listing (a club route page, seen as a search excerpt) independently names a Southeast Ridge route of Grade II 5.6 over the SE spire, matching the row's name, grade, beta and rappels, while the approach, pitch_detail, descent_text and rappel_detail describe the East Ridge from the Argonaut-Colchuck col with a notch west of a lone gendarme. But no full description of the Southeast Ridge line (start, pitches, descent) could be read on retry (bot checks and 403s), so the col-side prose cannot be replaced with researched Southeast Ridge text. Flagged, not patched.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+    "https://www.summitpost.org/argonaut-peak/152581"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Day-2 schedule spans 4:30 AM-9:00 PM (16.5 hrs) vs the day's stated 13 hours; timing.totalHrs 19; partner_requirements '10-hr round trip from bivy'; gain_ft 4300 vs itinerary total 4157",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real in the live row: the day-2 schedule runs 4:30 AM to 9:00 PM (16.5 h) against hours 13 and sectionBreakdown 13, partner_requirements says a 10-hr round trip from the bivy, and gain_ft 4300 differs from the itinerary sum (2800 + 1357 = 4157). No published car-to-car time or gain for Argonaut's Southeast Ridge was found on retry, and the row mixes two routes, so no figure can be adopted and nothing is computed.",
+   "sources": [],
+   "patches": []
   }
  ]
 }

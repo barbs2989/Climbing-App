@@ -1,0 +1,298 @@
+{
+ "results": [
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "verdict": "confirmed",
+   "summary": "The parking pin and the pins up the ridge sat far up the Necklace Valley on the East Fork, not at the bridge on the West Fork Foss Road where the north ridge starts; they now sit at the bridge pullout and along the north ridge crest at the heights the route describes.",
+   "evidence": "Pin 0: the drive (4.7 mi up the Foss River Road, left on FR 6835, about 0.5 mi on, ~200 ft past the small concrete bridge, across from the toe of the north ridge) and a trip report (parked just after the East Fork Foss bridge at road mile 5.2, low point ~1,280 ft) both put the start at the FR 6835 bridge over the East Fork Foss River; OSM draws that bridge at 47.6528,-121.2872 to 47.6530,-121.2867, 0.3 mi from the FR 68/6835 junction. The stored pin (47.6114,-121.2426) is where the Necklace Valley Trail crosses the East Fork, ~4.8 km SE, a place the route never visits. New pin 60 m past the bridge on the road, ground 1,547 ft. Pin 1: moved to the toe of the ridge just across the road (ground 1,616 ft; sources give ~1,600 ft). Pins 2-5 were evenly spaced on a straight line from the wrong trailhead to the summit, i.e. on the east slopes (ground 3,715 / 4,734 / 5,220 / 4,943 ft vs stated 2,600 / 4,900 / 5,267 / 5,400). A 375-point USGS elevation grid shows the north ridge crest running NNW from the summit to the bridge (crest 2,028 ft at 47.650, 2,873 at 47.645, 3,742 at 47.640, 4,426 at 47.6325, 4,889 at 47.630, 5,167 at 47.625, 5,433 at 47.6225, 5,807 at 47.620). Both sources say the route stays on the north ridge crest; the trip report gives the elevations (open forest to 4,500, brush 4,500-5,200, the 5,400 ft outcrop/cliff wall, back on the crest at 6,100). Each pin was placed on the crest where it reaches its stated height: deadfall top 2,600 -> 47.6465,-121.2860 (2,586); brush section 4,900 -> 47.6300,-121.2785 (4,889); first view ~5,200 -> 47.6250,-121.2755 (5,167); cliff band 5,400 -> 47.6228,-121.2755 (5,370). Pin 6 (regain crest, 6,100) is ~140 m from where the crest reaches 6,100 and was left. Summit pin agrees with the mapped peak (47.6168,-121.2716). distMi on pins 1-5 was computed along the wrong line (e.g. 1.1 mi to a point now 0.45 mi straight-line from the car) and no source gives these figures, so they are set to null.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+    "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+    "https://www.openstreetmap.org/way/62330588",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.summitpost.org/bald-eagle-peak/818481"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 0,
+     "expect": {
+      "name": "FR 6835 roadside pullout past the East Fork Foss bridge",
+      "lat": 47.611404,
+      "lng": -121.2425768
+     },
+     "lat": 47.65255,
+     "lng": -121.28795,
+     "elev": 1550,
+     "sources": [
+      "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+      "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+      "https://www.openstreetmap.org/way/62330588"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 1,
+     "expect": {
+      "name": "Leave road, enter forest for North Ridge",
+      "lat": 47.61173509090909,
+      "lng": -121.2443376
+     },
+     "lat": 47.65205,
+     "lng": -121.28775,
+     "elev": 1620,
+     "sources": [
+      "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+      "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+      "https://www.openstreetmap.org/way/62330588"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 2,
+     "expect": {
+      "name": "Deadfall zone below 2,600 ft",
+      "lat": 47.613225,
+      "lng": -121.25226119999999
+     },
+     "lat": 47.6465,
+     "lng": -121.286,
+     "elev": 2590,
+     "sources": [
+      "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+      "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 3,
+     "expect": {
+      "name": "Brushy ridge section, 4,500-5,200 ft",
+      "lat": 47.61537709090909,
+      "lng": -121.2637064
+     },
+     "lat": 47.63,
+     "lng": -121.2785,
+     "elev": 4890,
+     "sources": [
+      "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+      "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 4,
+     "expect": {
+      "name": "First summit view point",
+      "lat": 47.61587372727273,
+      "lng": -121.2663476
+     },
+     "lat": 47.625,
+     "lng": -121.2755,
+     "elev": 5170,
+     "sources": [
+      "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+      "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_bald_eagle_peak_scramble",
+     "index": 5,
+     "expect": {
+      "name": "Cliff band bypass gully, 5,400 ft",
+      "lat": 47.61620481818182,
+      "lng": -121.2681084
+     },
+     "lat": 47.6228,
+     "lng": -121.2755,
+     "elev": 5370,
+     "sources": [
+      "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+      "https://onehikeaweek.com/2019/05/27/bald-eagle-peak/",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_bald_eagle_peak_scramble",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 0.2,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_bald_eagle_peak_scramble",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 1.1,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_bald_eagle_peak_scramble",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 2.4,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_bald_eagle_peak_scramble",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 2.7,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_bald_eagle_peak_scramble",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 2.9,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_vanishing_point",
+   "verdict": "confirmed",
+   "summary": "The Barclay Lake pin is removed because the approach leaves the trail at the first bridge about a mile in and never reaches the lake, and the base and top-out mileages that counted the walk via the lake are cleared; the tower's own pins are still unplaced.",
+   "evidence": "Pin 1 (Barclay Lake, 47.7846,-121.4267): both the route page and a first-hand account leave the Barclay Lake trail at the first bridge, about 1-1.5 mi in, and go up the creek bed and gullies; the descent goes west on the BASE-jumper trail to an old logging road near the trailhead. The lake is at ~2.2 mi and neither way passes it, so the pin is removed. Trailhead pin 0 matches the mapped Barclay Creek trailhead (47.79226,-121.45924). distMi 3.8 (base) and 4.0 (top-out) were routed via the lake; no source gives a mileage, so both are set to null. NOT fixed (no two sources): pin 4 'Dolomite Tower' (47.77918,-121.43599) is the same coordinate other routes use for Baring Mountain's main summit and the ground there is 6,074 ft, not the tower's 5,708; the only published coordinate for the tower is that same point. Pins 2 and 3 (base 5,200 ft, top-out 5,708 ft) sit on ground at ~3,330-3,350 ft, 60 m apart, so they are also misplaced, but nothing publishes where the tower's base or top is.",
+   "sources": [
+    "https://www.mountainproject.com/area/119221018/dolomite-tower",
+    "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Barclay+Lake+Trailhead",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_vanishing_point",
+     "index": 1,
+     "expect": {
+      "name": "Barclay Lake",
+      "lat": 47.784586,
+      "lng": -121.426684
+     }
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_vanishing_point",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 3.8,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_vanishing_point",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 4,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_eagle_rock_scramble",
+   "verdict": "leave",
+   "summary": "The parking and summit pins are in the right places and at the right heights; the finding was about a sentence that has already been corrected.",
+   "evidence": "Pin 0 (47.776833,-121.344633) is at the mapped end of spur FR 6514-409 (47.7769,-121.3446); ground 4,102 ft vs stated 4,150. Summit pin (47.776045,-121.355345) is 12 m from the mapped Eagle Rock summit (47.77594,-121.35538); ground 5,604 ft. The 'nearly level with the summit' wording no longer appears in the row. Pins 1-4 are evenly spaced on the straight line between car and summit, so pin 4 ('north side scramble start ~5000') sits on the east side at 5,347 ft ground rather than on the north-side bench; no source publishes the bench's position, so it is left.",
+   "sources": [
+    "https://overpass-api.de/api/interpreter",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [],
+   "ops": []
+  },
+  {
+   "id": "wa_blood_sport",
+   "verdict": "unresolved",
+   "summary": "The crag pin is a copy of the whole peak's map pin and sits about 150 m from Guye Peak's summit, far above a crag reached in 15 minutes from the Alpental lot, but no source gives the crag's position, so it is left for now.",
+   "evidence": "Pin 1 'Blood Sport crag' (47.442,-121.411) is exactly the peak-wide pin used for Guye Peak on the route database; ground there is ~4,227 ft vs the pin's stated 3,400 ft and it is ~150 m from the summit pin (47.4415,-121.4093). Sources only say the crag sits low near the base of the South Rib, around the corner right of the West Face, passed while traversing east from the Alpental lot (~0.5 mi, 15 min); none gives a coordinate, so no move and no text change. Trailhead pin at the Alpental lot is fine.",
+   "sources": [
+    "https://www.mountainproject.com/area/107316329/guye-peak",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [],
+   "ops": []
+  },
+  {
+   "id": "wa_iron_peak_teanaway_scramble",
+   "verdict": "confirmed",
+   "summary": "All pins are in the right places; three sentences that sent climbers north or west from the saddle now say south, toward Iron Peak.",
+   "evidence": "The route's own GPS track passes within 10 m of the trailhead and saddle pins and 47 m of the summit pin; the summit pin matches its stated 47°24'55\"N 120°54'01\"W, and the saddle pin is NNW of the summit, so the summit lies SSE of the saddle along the north ridge. The creek and ridge-crest pins are within 53-165 m of the track and the snow-patch hazard 140 m. Text: the saddle pin's note said to head 'north/right' (the north-northwest summit is Teanaway Peak); the bivy note said the scramble 'turns west'; the approach had a spliced clause saying the peak half a mile NNW of the saddle is a different summit in the middle of the direction sentence. All three now say south.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/iron-peak"
+   ],
+   "pin_ops": [],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_iron_peak_teanaway_scramble",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": "head north/right on the open ridge boot path for Iron Peak",
+     "replace": "head south (to the right) on the open ridge boot path for Iron Peak"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_iron_peak_teanaway_scramble",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "from which the scramble turns west up the ridge to the summit",
+     "replace": "from which the scramble turns south up the ridge to the summit"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_iron_peak_teanaway_scramble",
+     "column": "approach",
+     "path": [],
+     "find": "so you climb it heading SOUTH; the peak half a mile north-northwest of the saddle is a different and harder summit for about 0.7 mile",
+     "replace": "so you climb it heading SOUTH (the higher summit a short distance north-northwest is Teanaway Peak) for about 0.7 mile"
+    }
+   ]
+  }
+ ]
+}

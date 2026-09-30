@@ -1,0 +1,73 @@
+{
+ "file": "u016",
+ "results": [
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "fact": "Round-trip distance (dist_km vs. stated mileage)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried with new sources. A hiking-club page for the Lichtenwasser-side scramble repeats 7 mi / 2,100 ft, while a 2024 party gives about 10 mi / 3,000 ft round trip and another club outing 10 mi / 2,700 ft, both of which appear to start at or beyond the Smithbrook trailhead rather than the first switchback. A regional outdoors page describes the peak from the Valhalla side at about 5 mi round trip, a different approach. No two independent sources agree on one round-trip or one-way figure for this line, and the stored 3.2 km cannot be confirmed or replaced without computing it, so nothing is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-03.160039722094",
+    "https://www.mountaineers.org/activities/activities/alpine-scramble-lichtenberg-mountain-43",
+    "https://wenatcheeoutdoors.org/2016/06/23/lichtenberg-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "fact": "Waypoint list includes a landmark from a different trail/approach",
+   "verdict": "unresolved",
+   "correct_value": "The Lichtenberg Boulders pin (waypoints[2]) belongs to the Valhalla-side approach and should be removed from this route's waypoint list.",
+   "evidence": "Still confirmed from the row itself: the boulder pin carries distMi 2.5, the Valhalla/McCausland-trail mileage, while this route follows the Lichtenwasser Lake fishing trail and none of its prose mentions the boulders. The remedy is removing a pin, which is outside the text/number patch scope, so it is left flagged for a structural edit.",
+   "sources": [
+    "https://www.mountainproject.com/area/125441968/lichtenberg-boulders"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint",
+   "verdict": "fixed",
+   "correct_value": "~4,000 ft",
+   "evidence": "The Forest Service trailhead page gives 4,000 ft and places the trailhead at 47.802498, -121.076645, the same point as this row's trailhead pin. The USGS 1 m elevation service at exactly that coordinate returns 3,981 ft, independently confirming ~4,000 ft rather than 3,800 ft. The 3,800 ft figure on hiking-guide pages is the outlier, so the three prose copies are changed to ~4,000 ft to match the waypoint.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/smithbrook-trailhead",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.076645&y=47.802498&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Park at the Smithbrook Trailhead (elev. ~3,800 ft)",
+     "replace": "Park at the Smithbrook Trailhead (elev. ~4,000 ft)",
+     "id": "wa_lichtenberg_mountain_se_route",
+     "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "to the Smithbrook Trailhead at about 3,800 ft.",
+     "replace": "to the Smithbrook Trailhead at about 4,000 ft.",
+     "id": "wa_lichtenberg_mountain_se_route",
+     "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "Park at the Smithbrook Trailhead (elev. ~3,800 ft)",
+     "replace": "Park at the Smithbrook Trailhead (elev. ~4,000 ft)",
+     "id": "wa_lichtenberg_mountain_se_route",
+     "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint"
+    }
+   ]
+  }
+ ]
+}
