@@ -69,7 +69,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const [rating, setRating] = useState(5); const [reviewText, setReviewText] = useState(""); const [reviewSent, setReviewSent] = useState(false);
   const reviewableInquiry = (myInquiries || []).find(i => i.status !== "withdrawn" && (!i.reviews || !i.reviews.length));
   // An inquiry still waiting on the guide can be taken back -- the one just sent, or one from an
-  // earlier visit (0224). Nothing could withdraw one before; it just sat in the guide's inbox.
+  // earlier visit (0226). Nothing could withdraw one before; it just sat in the guide's inbox.
   const openInquiryId = sentId || ((myInquiries || []).find(i => i.status === "new") || {}).id || null;
   const withdraw = async () => {
     if (!openInquiryId || withdrawing) return;
