@@ -28,6 +28,12 @@ on conflict (version) do nothing;
 `npx supabase migration list --linked` shows local and recorded versions side by side; every file
 on `main` should have both columns filled.
 
+**Expect one harmless window.** Between recording a version and its PR merging, production lists a
+version `main` does not have, and any production deploy in that window stops with "remote migration
+versions not found in local migrations directory", applying nothing. It clears when the PR merges.
+That is the safe side of the trade: recording AFTER the merge instead would let the merge re-apply
+the file.
+
 ## Numbering
 
 1. `ls supabase/migrations/ | tail -20` and take the next free **four-digit** number, then check
