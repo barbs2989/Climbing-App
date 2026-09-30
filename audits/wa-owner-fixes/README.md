@@ -45,14 +45,38 @@ Every moved pin passed `scripts/oneoff/wa-owner-fixes/verify-pins.mjs`: inside W
   now starts at the corrected trailhead pin. Inner Constance matched nothing: another session had already renamed it
   "Standard Route (Northeast summit via South Gully and East Ridge)", which agrees with its fields, so it was kept.
 
-## Not done, and why (as of 2026-09-26; renames, discipline, camp cards, the delete/reorder and the Clean Break
-## approach and line were all done on 2026-09-30, above)
-- **Pins with no published coordinate** (moving them would mean inventing one): the hairpin and pond pullouts
-  east of Washington Pass (Blue's Buttress, Minuteman, SEWS East Buttress); the in-between pins on Beckey-Tate,
-  Big Kangaroo West Face and Cutthroat West Ridge; Ptarmigan's Red Ledges, Spider-Formidable Col and Cub Lake.
-- **Needs a delete or reorder, which the patch format lacks**: Cutthroat West Ridge pin 8 duplicates the
-  summit; Ptarmigan lists Yang-Yang Lakes before Spider-Formidable Col (swap entries 5 and 6).
-- **Clean Break `gain_ft` 4,200** is below the ~4,470 ft rise from the corrected trailhead; no source states a
-  car-to-car gain (the recurring 1,500 ft is the route's own height), so it is left for a sourced figure. Its
-  2-point drawn line still starts at the old trailhead (~400 m off); it is still captioned as a straight segment,
-  not a track. Its `approach` still leads with the Burgundy Col trail.
+## Second research round, 2026-09-30 (16 patches on 9 routes: `patches-G7a..e.json`)
+Every moved pin passed the ground check (USGS within 200 ft of its height, not within 30 m of another pin);
+a mileage whose starting pin moved, and that no source states, is now null rather than recomputed.
+- **Clean Break** `gain_ft` 4,200 → **4,500**: two GPS-logged ascents from the Silver Star Creek pullout give
+  4,481 and 4,541 ft trailhead to summit. The car-to-car totals disagree (4,781 vs 5,541), so none is stated.
+- **Ptarmigan Traverse**: Spider-Formidable Col moved 1.7 km onto the col (two trip maps, 28 m apart), height
+  7,500 → 7,303 (the ground). Pin 9 is the Itswoot Ridge camp its note and 6,400 ft describe: moved 1.9 km onto it
+  (two trip maps, 16 m apart) and renamed "Itswoot Ridge camp (above Cub Lake)"; Cub Lake itself is ~5,340 ft.
+- **Big Kangaroo (Beckey-Tate, West Face, Kearney-Thomas) and Cutthroat West Ridge**: the summits were right. The
+  in-between pins had been snapped onto points along unrelated mapped trails (the Kangaroo Pass path; the
+  Cutthroat approach path) and given summit-area names and heights: the ground under them is 400–2,850 ft below
+  what each claims. All 13 removed, plus Kearney-Thomas's "South Face base" (no height, 96 m from the summit, a
+  duplicate). Beckey-Tate's "Kangaroo Pass" pin went too: the route's text never goes there.
+- **Blue's Buttress**: trailhead pin and record moved onto the SR-20 hairpin (4 sources start there; the pin sat
+  on the Blue Lake lot with the pass's height). Poster Peak is **7,565 ft** (4 sources, the area blurb and House
+  Buttress agree; ground 7,440 at the pin); 7,840 was another peak's height (summit pin + `high_point_ft`).
+- **Minuteman East Face**: the "pond pullout" pin sat on the Blue Lake lot ~1 km WEST of the pass; the pond is a
+  few hundred yards EAST (4 sources), not at the hairpin, and nobody publishes its coordinate: pin and the
+  trailhead record's coordinate removed. The text was already right.
+- **SEWS East Buttress**: approached from the hairpin up Spire Gully (3 sources, and the row's own text). Its
+  "hairpin" pin sat on the Blue Lake trail 2.3 km west: moved onto the hairpin and made the lead trailhead; the
+  two "Spire Gully" pins sat in the west-side gully and were removed; the trailhead record now names the hairpin.
+  The notch, buttress base and summit are fixed places and stay; Blue Lake stays as the alternate start/way out.
+
+## Still open (as of 2026-09-30)
+- **Drawn lines (`gpx`, which this session may not edit)** that now disagree with the corrected pins: Blue's
+  Buttress and Minuteman draw a 2-point line from 48.5233,-120.655 (neither trailhead); SEWS East Buttress draws
+  the recorded west-side Blue Lake track, not the Spire Gully approach; Beckey-Tate and Big Kangaroo West Face draw
+  the same recorded track to Kangaroo Pass, which neither route uses. Clearing those lines (map shows pins only)
+  is the fix; no published track exists for the right approaches.
+- **Red Ledges** (Ptarmigan): the two trip maps mark the ledge 318 m apart, just over the bar; either is far
+  closer than the current pin (1.2–1.5 km east of both) and the ledge is ~6,200–6,400 ft, not 6,900.
+- **Minuteman's summit**: two sources put it ~350 m apart (one looks misplaced onto the Early Winters Spires);
+  only one gives the alternative, so it stays. **Cutthroat's trailhead** has only one coordinate source.
+- **Clean Break milepost** 171 vs one source's 170: one source, not changed.
