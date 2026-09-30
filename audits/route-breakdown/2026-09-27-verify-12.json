@@ -1,0 +1,120 @@
+{
+  "wa_goode_mountain_megalodon_ridge": {
+    "area": "wa_mount_goode",
+    "skip_reason": "no prose fix; pitch-count proposal goes to classification review",
+    "review": {
+      "findings": [
+        { "claim": "stored pitches 8 undercounts the route; ~20 pitches is the widely given count", "verdict": "CONFIRMED", "evidence": "One route database gives 3,000 ft / 20 pitches. A climbing-news account of the first ascent says the route would total more than 20 pitches if pitched out; the party belayed only 7-8 and simul-climbed the rest. The stored 8 matches the belayed-pitch count of one simul-climbing party, not the route's pitch count. Two independent sources agree on ~20.", "sources": ["https://www.mountainproject.com/route/121051799/megalodon-ridge", "https://www.climbing.com/news/megalodon-man/ (via search snippet; page login-walled)", "http://www.alpinist.com/doc/web07f/newswire-goode-megalodon-ridge"] },
+        { "claim": "grade 5.9 vs stored IV+, 5.10", "verdict": "REFUTED", "evidence": "The first-ascent reports (AAJ, Alpinist) give IV+ 5.10: the direct crest line on the SE Peak headwall is two 5.10 crack pitches. The database gives 5.9 because it rates the three-pitch variation to the left. The stored 5.10 is the route as first climbed, and pitch_detail already describes both lines. No change.", "sources": ["http://publications.americanalpineclub.org/articles/12200813101/North-America-United-States-Goode-Mountain-Megalodon-east-Ridge", "http://www.alpinist.com/doc/web07f/newswire-goode-megalodon-ridge", "https://www.mountainproject.com/route/121051799/megalodon-ridge"] }
+      ],
+      "classification": { "pitches": { "proposed": 20, "evidence": "Database: 20 pitches / 3,000 ft. First-ascent news account: more than 20 if pitched out, of which 7-8 were belayed. Stored 8 is the belayed count of a simul-climbing party." } }
+    }
+  },
+  "wa_bonanza_peak_northeast_buttress": {
+    "area": "wa_bonanza_peak",
+    "skip_reason": "only one source rates the buttress alone; UNCLEAR under the two-source bar",
+    "review": {
+      "findings": [
+        { "claim": "stored grade V belongs to the three-summit traverse; the buttress alone is ~5.7", "verdict": "UNCLEAR", "evidence": "The only account found is the AAJ report of the first three-summit traverse (V 5.7/5.8). It says the buttress had several 5.7-range spots and took under four hours to the main summit. No second source rating the Northeast Buttress on its own was found: searches, a Summitpost archive and route databases turned up nothing, and the database 'Northeast Buttress' hits are Colchuck and other peaks. The stored overview already says the V grade belongs to the traverse.", "sources": ["http://publications.americanalpineclub.org/articles/12200416000/North-America-United-States-Washington-Bonanza-Peak-Three-Summit-Traverse"] }
+      ]
+    }
+  },
+  "wa_little_tahoma_cowlitz_ingraham_glaciers": {
+    "area": "wa_little_tahoma",
+    "skip_reason": "sources disagree on the grade; UNCLEAR",
+    "review": {
+      "findings": [
+        { "claim": "grade null; propose 'Class 3, steep snow'", "verdict": "UNCLEAR", "evidence": "The route database gives 3rd class, Steep Snow. The club route page for the same line (South Face via the Cowlitz/Ingraham traverse, Frying Pan corner, gully with a 6-ft step, gully-chimney, 30-ft summit scramble) gives Grade II, several pitches of Class 4 to low 5th rock, snow/ice to 45°. The two disagree on the rock grade, so no value meets the bar.", "sources": ["https://www.mountainproject.com/route/122049367/cowlitzingraham-glaciers", "https://www.mountaineers.org/activities/routes-places/paradise-area-review/little-tahoma-south-face (web.archive.org 2024 copy)"] }
+      ]
+    }
+  },
+  "wa_traverse_of_mount_index": {
+    "area": "wa_main_peak_2",
+    "skip_reason": "no prose fix; pitch-count question goes to classification review",
+    "review": {
+      "findings": [
+        { "claim": "stored pitches 4 cannot be the pitch count of the three-summit traverse", "verdict": "UNCLEAR", "evidence": "The 4 traces to one route database header ('5,000 ft, 4 pitches'). No source gives a total pitch count. A 2021 trip report describes the North Rib as 2-3 pitches and a knife-edge ridge on the Middle Peak as another 3-4 pitches, plus about 4,000 ft of technical ground and several rappels. Those two sections alone are more than 4. The database's 4 probably counts only the North Rib section (3-4 pitches of 5.5-5.7). Because no source gives a replacement count, null is proposed rather than a new number.", "sources": ["https://www.mountainproject.com/route/120466607/traverse-of-mount-index", "https://cascadeclimbers.com/forum/topic/104091-tr-mt-index-north-middle-main-traverse-07102021/ (web.archive.org copy)", "https://waynewallace.wordpress.com/2010/07/08/index-traverse-north-middle-and-main/"] }
+      ],
+      "classification": { "pitches": { "proposed": null, "evidence": "4 appears only in one database header and cannot be a total for a 5,000 ft traverse. A trip report's North Rib (2-3) and Middle Peak ridge (3-4) sections already exceed it. No source gives a total. Human call: null, or keep." } }
+    }
+  },
+  "wa_glacier_peak_sitkum_glacier": {
+    "area": "wa_glacier_peak",
+    "skip_reason": "only one source gives an NCCS grade; UNCLEAR",
+    "review": {
+      "findings": [
+        { "claim": "stored 'Grade II glacier climb' vs a database 'Grade III, Easy Snow'", "verdict": "UNCLEAR", "evidence": "The route database gives Easy Snow, Grade III. A second club rates it 'B' on its own non-NCCS scale and calls the climbing technically easy. The Summitpost route page could not be read (403, and the archive copy was truncated). No second NCCS grade was found either way, so the stored value stays.", "sources": ["https://www.mountainproject.com/route/121086767/sitkum-glacier", "https://mazamas.org/activity/197/"] }
+      ]
+    }
+  },
+  "wa_glacier_peak_kennedy_glacier": {
+    "area": "wa_glacier_peak",
+    "skip_reason": "no prose fix; grade proposal goes to classification review",
+    "review": {
+      "findings": [
+        { "claim": "stored 'Class 2-3, Glacier' understates a ~40° headwall above a bergschrund and ~180 ft of ~45° often-icy slope", "verdict": "CONFIRMED", "evidence": "The route page describes crossing the bergschrund, climbing the centre of a 40° headwall, then about 180 ft of 45° slope that is often icy, with pickets and 4 ice screws recommended. An independent trip report on the Kennedy Glacier ascent describes the steeper sections as 45-50°, frozen hard with a coat of rime. Both sources put the crux as steep snow/ice of 40° or more, not Class 2-3.", "sources": ["https://www.summitpost.org/kennedy-glacier/158306 (web.archive.org 2024 copy)", "https://trailcatjim.com/glacier-peak-via-lower-kennedy-glacier-frostbite-ridge-rabbit-ears-2000/"] }
+      ],
+      "classification": { "grade": { "proposed": "Glacier, steep snow/ice 40–45°", "evidence": "Route page: 40° headwall plus ~180 ft of 45° often-icy slope. Independent trip report: steeper sections 45-50°, hard and rimed." } }
+    }
+  },
+  "wa_sherpa_glacier": {
+    "area": "wa_mount_stuart",
+    "skip_reason": "no prose fix; grade proposal goes to classification review",
+    "review": {
+      "findings": [
+        { "claim": "stored grade '3rd' omits the ~40° snow couloir that is the route's crux", "verdict": "CONFIRMED", "evidence": "The route page gives Steep Snow, Grade II, couloir about 40°. The club route page gives the couloir as about 40°. A ski-route page gives high 30s to 40° and says it can be firm and icy. The database gives 4th class, Grade III, with simple class 3 scrambling on the summit ridge. All agree on a ~40° snow couloir. The NCCS grade itself is split (II vs III), so it is left out of the proposed value.", "sources": ["https://www.summitpost.org/sherpa-glacier/164046 (web.archive.org 2024 copy)", "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier (web.archive.org 2024 copy)", "https://skimo.co/sherpa-glacier-couloir", "https://www.mountainproject.com/route/108236928/sherpa-glacier"] }
+      ],
+      "classification": { "grade": { "proposed": "Class 3, steep snow to 40°", "evidence": "Snow couloir ~40° (three independent sources); Class 3 summit ridge (database and stored climbing_route). The NCCS grade is split II vs III, so it is omitted." } }
+    }
+  },
+  "wa_mount_maude_r2": {
+    "area": "wa_mount_maude",
+    "skip_reason": "no prose fix; grade proposal goes to classification review",
+    "review": {
+      "findings": [
+        { "claim": "grade null; one route page gives AI2-3, Steep Snow, Grade III", "verdict": "CONFIRMED", "evidence": "The route database gives Grade III, AI2-3. A club intermediate-climbs guide lists Maude / Entiat Icefall as Grade III Ice, with 40-50° ice and short vertical steps. That is two independent sources for Grade III ice. The AI2-3 number comes from only one source, so it is left out. The pitch count does not agree: the guide says 9 full pitches of icefall, the database and stored value say 6. Pitches not changed.", "sources": ["https://www.mountainproject.com/route/122154563/entiat-ice-fall", "https://www.bellinghammountaineers.com/wp-content/uploads/2017/11/Intermediate-Climbs-Guide-1.pdf (p. 78)", "http://www.alpinedave.com/maude.html"] }
+      ],
+      "classification": { "grade": { "proposed": "Grade III, alpine ice", "evidence": "Database: Grade III, AI2-3. Club guide: Grade III Ice, 40-50° with short vertical steps." } }
+    }
+  },
+  "wa_sinister_peak_north_face": {
+    "area": "wa_sinister_peak",
+    "skip_reason": "no prose fix; grade proposal goes to classification review",
+    "review": {
+      "findings": [
+        { "claim": "grade null; FA note gives 45-50° névé and ice, NCCS II", "verdict": "CONFIRMED", "evidence": "The 1980 AAJ note gives NCCS II, 45-50° névé and ice. The club route page (a separate account) gives 45-50° névé and ice straight toward the summit and rates it Intermediate Ice. The club's intermediate-climbs guide lists Sinister N Face as II-III. The angle is agreed; the NCCS grade is II in one and II-III in the other, so it is left out of the proposed value.", "sources": ["http://publications.americanalpineclub.org/articles/12198053802", "https://www.mountaineers.org/activities/routes-places/sinister-peak (web.archive.org 2024 copy)", "https://www.bellinghammountaineers.com/wp-content/uploads/2017/11/Intermediate-Climbs-Guide-1.pdf"] }
+      ],
+      "classification": { "grade": { "proposed": "Steep snow/ice 45–50°", "evidence": "45-50° névé and ice in both the AAJ note and the club route page. NCCS II vs II-III is not settled, so it is omitted." } }
+    }
+  },
+  "wa_lane_peak_r3": {
+    "area": "wa_lane_peak",
+    "skip_reason": "no prose fix; grade proposal goes to classification review",
+    "review": {
+      "findings": [
+        { "claim": "grade null; route page gives Grade II; a summary gives Grade II, snow/ice to 60°", "verdict": "CONFIRMED", "evidence": "The database gives AI1, Mod. Snow, Grade II. The club route page gives Grade II with snow and/or ice up to 60°. Two sources agree on Grade II steep snow/ice. The 60° figure and the AI1 each come from one source only, so neither is included.", "sources": ["https://www.mountainproject.com/route/114089121/lovers-lane", "https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane (web.archive.org 2025 copy)"] }
+      ],
+      "classification": { "grade": { "proposed": "Grade II, steep snow/ice", "evidence": "Database: Grade II, AI1. Club route page: Grade II, snow/ice to 60°." } }
+    }
+  },
+  "wa_mount_lyall_south_route": {
+    "area": "wa_mount_lyall",
+    "skip_reason": "one source only, and it does not contradict the stored value",
+    "review": {
+      "findings": [
+        { "claim": "stored 'Class 3-4' vs one source's exposed class 3 gully", "verdict": "UNCLEAR", "evidence": "The only route account found (a 2023 trip log) describes an exposed class 3 gully and a loose final 200 ft of stacked boulders. The same log mentions a class 4 move on the granite face on the way down. No second source found: the WTA report returned 403 with no archive copy. The stored 'Class 3-4' is not disproven. No change.", "sources": ["https://onehikeaweek.com/2023/09/11/needle-peak/"] }
+      ]
+    }
+  },
+  "wa_mount_logan_r2": {
+    "area": "wa_mount_logan",
+    "skip_reason": "no CONFIRMED prose fix; grade proposal goes to classification review",
+    "review": {
+      "findings": [
+        { "claim": "stored 'Grade II, Class 4' vs a description giving Grade III 4th class", "verdict": "CONFIRMED (NCCS numeral only)", "evidence": "Summitpost Douglas Glacier page: Grade III, Class 3 rock. Route database: Grade III, 4th class. Club route page: Grade II, Class 4, with a 3rd-4th class summit block. Two independent sources give Grade III against one giving II. The class splits 3 vs 4 (the club says 3rd-4th), so the stored Class 4 is kept. If Grade III is adopted, the overview sentence 'rated Grade II, Class 4' should then read 'rated Grade III, Class 4'. That edit is not in set because it depends on the classification decision.", "sources": ["https://www.summitpost.org/douglas-glacier/384796 (web.archive.org 2024 copy)", "https://www.mountainproject.com/route/122977581/douglas-glacier", "https://www.mountaineers.org/activities/routes-places/mt-logan-douglas-glacier (web.archive.org 2025 copy)"] },
+        { "claim": "descent_text's alternative of descending the Banded Glacier via the Banded–Douglas col to the Fisher Creek basin is undocumented", "verdict": "REFUTED", "evidence": "The club's Banded Glacier route climbs from the Fisher Creek drainage (lake at 5,160 ft) over a col onto the Banded Glacier and up to the Banded–Douglas col. Reversing it is a documented line to the Fisher Creek side. Trip reports also describe parties descending the Banded Glacier (broken ice midway). No change.", "sources": ["https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier (web.archive.org 2024 copy)", "https://www.summitpost.org/douglas-glacier/384796", "https://drdirtbag.com/2015/06/23/logan-banded-glacier-29-mi-12500-ft-13h35/"] }
+      ],
+      "classification": { "grade": { "proposed": "Grade III, Class 4", "evidence": "Grade III: Summitpost and the route database (two independent). Grade II: the club route page only. Class kept at 4 (database 4th; club 3rd-4th summit block; Summitpost 3)." } }
+    }
+  }
+}
