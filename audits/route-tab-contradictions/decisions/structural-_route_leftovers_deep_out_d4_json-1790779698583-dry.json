@@ -1,0 +1,1846 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_challenger_challenger_glacier",
+   "op": "patch",
+   "columns": [
+    "grade",
+    "rock_grade",
+    "gear",
+    "hazards",
+    "waypoints",
+    "detailed_rack",
+    "pro_needs",
+    "pitch_detail",
+    "itinerary",
+    "partner_requirements",
+    "seasonal_hazards",
+    "pro_tips",
+    "descent_text"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_challenger_challenger_glacier",
+   "area_id": "wa_mount_challenger",
+   "name": "Challenger Glacier",
+   "discipline": "mountaineering",
+   "grade": "Class 3-4, Glacier, 5.6-5.7",
+   "grade_system": "class",
+   "grade_num": 5,
+   "pitches": 1,
+   "length_m": 427,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Philip Dickert, Jack Hossack, and George MacGowan, September 7, 1936 (first ascent of the peak)",
+   "lat": null,
+   "lng": null,
+   "aspect": "NE",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "rope (30-40m is enough for the single rappel)",
+    "crampons",
+    "ice axe",
+    "glacier rescue kit (pickets, prusiks/ascenders)",
+    "small rack: a few small cams (~0.3-1 in) and stoppers for the 5.6-5.7 summit block — old fixed pitons are present but weathered, back them up",
+    "helmet",
+    "insect repellent for the buggy lower-forest sections of the approach"
+   ],
+   "hazards": [
+    "crevasse fall on the heavily crevassed lower Challenger Glacier",
+    "moat below the summit block — can widen to an awkward ~5 ft gap and become difficult or impassable late in the season",
+    "exposed, sometimes loose 5.6-5.7 summit block (an alternate notch line has loose, chossy rock)",
+    "extreme remoteness — a multi-day approach with essentially no quick bailout or cell coverage",
+    "complex routefinding, especially the Easy Ridge-to-Luna Lake-to-Challenger Ridge connection, where parties have cliffed out",
+    "aggressive insects (wasps/yellowjackets) reported in the lower forest approach",
+    "rapid, hard-to-predict weather changes typical of the North Cascades crest"
+   ],
+   "verif": null,
+   "overview": "Mount Challenger is the northern anchor of the Picket Range, one of the most remote and rugged sub-ranges in North Cascades National Park. The peak has five summits/highpoints strung along its crest, with the true (highest) summit on the eastern end. Its defining feature is the Challenger Glacier — the largest glacier in the Pickets — which drapes the peak's north/northwest flanks and gives the standard route its name. Because there's no nearby road access, reaching the mountain requires 2-3 days of approach (via Hannegan/Whatcom Pass or via Ross Lake and Wiley Ridge) before any technical climbing begins, making this as much a wilderness expedition as a climb.",
+   "beta": "Access via Hannegan Pass or Big Beaver Creek trailheads with multi-day approach through remote wilderness. The route gains the glacier via Easy Ridge or Wiley Ridge, then traverses moderate snowfields, crosses a bergschrund, and finishes with a Class 5 rock pitch on the summit horn. Fixed anchors exist for protection and rappels. The route sees relatively stable conditions July through early September; later season snowbridge degradation can make the bergshrund impassable.",
+   "turnaround": "Summit day from high camp (Whatcom Pass, Perfect Pass, or the Wiley Ridge bench) commonly runs 10-12+ hours round trip; start pre-dawn and set a firm turnaround given the total lack of quick retreat options and the multi-day walk back to the trailhead.",
+   "auto_generated": true,
+   "alpine_grade": "PD+",
+   "rock_grade": "5.5",
+   "ice_grade": null,
+   "gain_ft": 11500,
+   "loss_ft": 11500,
+   "dist_km": 30.5,
+   "max_angle": 50,
+   "rappels": "1 rappel off the final rock step is common on descent (variable with conditions/party preference)",
+   "commitment": "II",
+   "face": "Northeast side of the main (east) summit, above Challenger Glacier",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+   "comms": "No cell phone coverage throughout the approach or on the peak. The remote wilderness location means satellite communicators (Garmin inReach, Zoleo) or personal locator beacons are essential for emergency contact. The National Park ranger dispatch is contactable through emergency channels (911 initially triggers ranger response), but satellite communication is the only reliable method for non-emergency contact from the wilderness.",
+   "descent": "Reverse the glacier; rappel off the summit block",
+   "obj_haz": [
+    "crevasses",
+    "bergschrund",
+    "loose rock on the summit scramble",
+    "extreme remoteness/long rescue time",
+    "biting insects on the brushy approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.9101,
+     "lng": -121.5927,
+     "elev": 3100,
+     "name": "Hannegan Pass Trailhead",
+     "note": "Road-end at Hannegan Campground off Ruth Creek Rd/FR-32; Northwest Forest Pass required, self-issue wilderness permit needed for NOCA camps ahead.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive to the road-end at Hannegan Campground, at the end of FS Road 32 (Ruth Creek Road) off WA-542 — this is the Hannegan Pass Trailhead. A Northwest Forest Pass is required to park here, and a self-issue wilderness permit is needed for the North Cascades National Park camps ahead on the route."
+    },
+    {
+     "lat": 48.882183,
+     "lng": -121.540756,
+     "elev": 5100,
+     "name": "Hannegan Pass",
+     "note": "Trail crests the pass then drops roughly 650 ft per mile into North Cascades National Park toward the Chilliwack River, the gateway from Mt. Baker Wilderness into the park backcountry.",
+     "type": "Junction",
+     "distMi": 4
+    },
+    {
+     "lat": 48.88639,
+     "lng": -121.528303,
+     "elev": 2600,
+     "name": "Boundary Camp",
+     "note": "Marks the Mt. Baker National Forest / North Cascades National Park boundary; established campsites with pit toilet at the bottom of the roughly 2,500 ft descent off Hannegan Pass.",
+     "type": "Campsite",
+     "distMi": 5.3
+    },
+    {
+     "lat": 48.884457,
+     "lng": -121.502415,
+     "elev": 2800,
+     "name": "Chilliwack River ford / Easy Ridge climbers' path",
+     "note": "Faint, unsigned climbers' path leaves the valley trail here to gain Easy Ridge; parties commonly lose it near the river crossing, especially in fog.",
+     "type": "Hazard",
+     "distMi": 7
+    },
+    {
+     "lat": 48.8754,
+     "lng": -121.3646,
+     "elev": 5210,
+     "name": "Whatcom Pass",
+     "note": "High alpine pass on the Chilliwack River/Brush Creek trail (USGS Mount Redoubt quad); the Tapto Lakes side trail branches here while the climbing route continues toward Whatcom Peak and Perfect Pass.",
+     "type": "Junction",
+     "distMi": 16
+    },
+    {
+     "lat": 48.84929,
+     "lng": -121.37458,
+     "elev": 6200,
+     "name": "Perfect Pass",
+     "note": "Renowned high bivy site reached by descending roughly 1,000 ft off Easy Ridge around the exposed 'Imperfect Impasse' notch below Whatcom Peak; last reliable camp before the glacier.",
+     "type": "Campsite",
+     "distMi": null
+    },
+    {
+     "lat": 48.839677,
+     "lng": -121.34233,
+     "elev": 7500,
+     "name": "Challenger Glacier crossing",
+     "note": "Crevassed glacier traverse on Challenger's north/northwest slopes from Perfect Pass; crampons recommended even when an existing boot pack is present in season.",
+     "type": "Hazard",
+     "distMi": 19
+    },
+    {
+     "lat": 48.8356,
+     "lng": -121.342,
+     "elev": 8207,
+     "name": "Mount Challenger (East Summit)",
+     "note": "3rd/4th-class scramble off the glacier exits onto a short 5.6-5.7 pitch to the true east summit; descend by downclimbing to the notch and making a single rappel.",
+     "type": "Summit",
+     "distMi": 19.5
+    }
+   ],
+   "gpx": [
+    [
+     48.909763,
+     -121.594445
+    ],
+    [
+     48.90969,
+     -121.593234
+    ],
+    [
+     48.909852,
+     -121.591878
+    ],
+    [
+     48.909876,
+     -121.5908
+    ],
+    [
+     48.910152,
+     -121.589933
+    ],
+    [
+     48.910097,
+     -121.589076
+    ],
+    [
+     48.910245,
+     -121.587637
+    ],
+    [
+     48.909582,
+     -121.586479
+    ],
+    [
+     48.908867,
+     -121.585377
+    ],
+    [
+     48.908184,
+     -121.584333
+    ],
+    [
+     48.907726,
+     -121.583055
+    ],
+    [
+     48.907047,
+     -121.581899
+    ],
+    [
+     48.906734,
+     -121.580499
+    ],
+    [
+     48.906543,
+     -121.579037
+    ],
+    [
+     48.90601,
+     -121.577736
+    ],
+    [
+     48.905292,
+     -121.57664
+    ],
+    [
+     48.904428,
+     -121.575808
+    ],
+    [
+     48.903415,
+     -121.575463
+    ],
+    [
+     48.902494,
+     -121.574952
+    ],
+    [
+     48.901781,
+     -121.573884
+    ],
+    [
+     48.901121,
+     -121.573016
+    ],
+    [
+     48.90025,
+     -121.57237
+    ],
+    [
+     48.899489,
+     -121.571645
+    ],
+    [
+     48.899212,
+     -121.570217
+    ],
+    [
+     48.898581,
+     -121.569107
+    ],
+    [
+     48.897824,
+     -121.56809
+    ],
+    [
+     48.89781,
+     -121.567589
+    ],
+    [
+     48.897465,
+     -121.566865
+    ],
+    [
+     48.896807,
+     -121.565886
+    ],
+    [
+     48.896301,
+     -121.564623
+    ],
+    [
+     48.89607,
+     -121.563104
+    ],
+    [
+     48.89579,
+     -121.561655
+    ],
+    [
+     48.895441,
+     -121.56022
+    ],
+    [
+     48.895039,
+     -121.55879
+    ],
+    [
+     48.894422,
+     -121.557603
+    ],
+    [
+     48.893736,
+     -121.556436
+    ],
+    [
+     48.893166,
+     -121.55524
+    ],
+    [
+     48.892677,
+     -121.554162
+    ],
+    [
+     48.892144,
+     -121.552983
+    ],
+    [
+     48.891461,
+     -121.551978
+    ],
+    [
+     48.890886,
+     -121.551014
+    ],
+    [
+     48.890248,
+     -121.549863
+    ],
+    [
+     48.889456,
+     -121.549107
+    ],
+    [
+     48.88866,
+     -121.54823
+    ],
+    [
+     48.887975,
+     -121.547068
+    ],
+    [
+     48.887214,
+     -121.546154
+    ],
+    [
+     48.886573,
+     -121.545011
+    ],
+    [
+     48.885843,
+     -121.544098
+    ],
+    [
+     48.884956,
+     -121.543387
+    ],
+    [
+     48.884103,
+     -121.542592
+    ],
+    [
+     48.883343,
+     -121.541918
+    ],
+    [
+     48.88243,
+     -121.541204
+    ],
+    [
+     48.881607,
+     -121.540386
+    ],
+    [
+     48.881363,
+     -121.539704
+    ],
+    [
+     48.881334,
+     -121.539139
+    ],
+    [
+     48.881222,
+     -121.537709
+    ],
+    [
+     48.881205,
+     -121.536208
+    ],
+    [
+     48.881989,
+     -121.535996
+    ],
+    [
+     48.882571,
+     -121.537262
+    ],
+    [
+     48.882945,
+     -121.537099
+    ],
+    [
+     48.883046,
+     -121.536118
+    ],
+    [
+     48.882852,
+     -121.534653
+    ],
+    [
+     48.882847,
+     -121.534285
+    ],
+    [
+     48.883702,
+     -121.533572
+    ],
+    [
+     48.884349,
+     -121.532517
+    ],
+    [
+     48.884679,
+     -121.531667
+    ],
+    [
+     48.885613,
+     -121.531149
+    ],
+    [
+     48.885676,
+     -121.53109
+    ],
+    [
+     48.884767,
+     -121.530914
+    ],
+    [
+     48.885702,
+     -121.530302
+    ],
+    [
+     48.885844,
+     -121.530092
+    ],
+    [
+     48.885736,
+     -121.529494
+    ],
+    [
+     48.886334,
+     -121.528451
+    ],
+    [
+     48.887112,
+     -121.527501
+    ],
+    [
+     48.887557,
+     -121.526131
+    ],
+    [
+     48.887715,
+     -121.524578
+    ],
+    [
+     48.888051,
+     -121.523157
+    ],
+    [
+     48.888389,
+     -121.521856
+    ],
+    [
+     48.888981,
+     -121.520819
+    ],
+    [
+     48.889275,
+     -121.519406
+    ],
+    [
+     48.889565,
+     -121.518165
+    ],
+    [
+     48.889488,
+     -121.516745
+    ],
+    [
+     48.889564,
+     -121.515227
+    ],
+    [
+     48.889559,
+     -121.513797
+    ],
+    [
+     48.889241,
+     -121.512357
+    ],
+    [
+     48.888524,
+     -121.511816
+    ],
+    [
+     48.887858,
+     -121.511254
+    ],
+    [
+     48.887976,
+     -121.510315
+    ],
+    [
+     48.887654,
+     -121.509398
+    ],
+    [
+     48.887051,
+     -121.508186
+    ],
+    [
+     48.886892,
+     -121.506904
+    ],
+    [
+     48.886933,
+     -121.506493
+    ],
+    [
+     48.886327,
+     -121.505769
+    ],
+    [
+     48.885654,
+     -121.504794
+    ],
+    [
+     48.885169,
+     -121.503712
+    ],
+    [
+     48.884711,
+     -121.502645
+    ],
+    [
+     48.884142,
+     -121.501688
+    ],
+    [
+     48.883525,
+     -121.500707
+    ],
+    [
+     48.882954,
+     -121.499687
+    ],
+    [
+     48.88244,
+     -121.498695
+    ],
+    [
+     48.882091,
+     -121.497539
+    ],
+    [
+     48.881683,
+     -121.496431
+    ],
+    [
+     48.881153,
+     -121.495574
+    ],
+    [
+     48.881386,
+     -121.495031
+    ],
+    [
+     48.880724,
+     -121.493989
+    ],
+    [
+     48.880577,
+     -121.493615
+    ],
+    [
+     48.879937,
+     -121.492704
+    ],
+    [
+     48.879207,
+     -121.491917
+    ],
+    [
+     48.87912,
+     -121.490543
+    ],
+    [
+     48.878787,
+     -121.489225
+    ],
+    [
+     48.8794,
+     -121.488897
+    ],
+    [
+     48.879828,
+     -121.487523
+    ],
+    [
+     48.879954,
+     -121.486153
+    ],
+    [
+     48.880586,
+     -121.484939
+    ],
+    [
+     48.880966,
+     -121.483623
+    ],
+    [
+     48.881024,
+     -121.482186
+    ],
+    [
+     48.881106,
+     -121.480763
+    ],
+    [
+     48.881079,
+     -121.479365
+    ],
+    [
+     48.881083,
+     -121.478044
+    ],
+    [
+     48.881249,
+     -121.476743
+    ],
+    [
+     48.88151,
+     -121.475494
+    ],
+    [
+     48.881894,
+     -121.474124
+    ],
+    [
+     48.882234,
+     -121.472817
+    ],
+    [
+     48.883074,
+     -121.472013
+    ],
+    [
+     48.883891,
+     -121.471103
+    ],
+    [
+     48.884587,
+     -121.470021
+    ],
+    [
+     48.885308,
+     -121.469145
+    ],
+    [
+     48.885631,
+     -121.467948
+    ],
+    [
+     48.88591,
+     -121.466595
+    ],
+    [
+     48.886635,
+     -121.465566
+    ],
+    [
+     48.887041,
+     -121.465612
+    ],
+    [
+     48.887316,
+     -121.465232
+    ],
+    [
+     48.887599,
+     -121.463828
+    ],
+    [
+     48.888257,
+     -121.462728
+    ],
+    [
+     48.888724,
+     -121.461494
+    ],
+    [
+     48.889151,
+     -121.460439
+    ],
+    [
+     48.88956,
+     -121.459154
+    ],
+    [
+     48.889896,
+     -121.4577
+    ],
+    [
+     48.890543,
+     -121.456667
+    ],
+    [
+     48.891187,
+     -121.455982
+    ],
+    [
+     48.891655,
+     -121.454848
+    ],
+    [
+     48.892289,
+     -121.453764
+    ],
+    [
+     48.893268,
+     -121.453402
+    ],
+    [
+     48.894112,
+     -121.452903
+    ],
+    [
+     48.894977,
+     -121.452189
+    ],
+    [
+     48.895786,
+     -121.451524
+    ],
+    [
+     48.896598,
+     -121.450854
+    ],
+    [
+     48.897534,
+     -121.450901
+    ],
+    [
+     48.8979,
+     -121.449802
+    ],
+    [
+     48.898205,
+     -121.448358
+    ],
+    [
+     48.899135,
+     -121.447822
+    ],
+    [
+     48.900044,
+     -121.447398
+    ],
+    [
+     48.900542,
+     -121.44621
+    ],
+    [
+     48.90122,
+     -121.445181
+    ],
+    [
+     48.902159,
+     -121.444722
+    ],
+    [
+     48.902992,
+     -121.443904
+    ],
+    [
+     48.903644,
+     -121.442828
+    ],
+    [
+     48.904185,
+     -121.441671
+    ],
+    [
+     48.904663,
+     -121.440386
+    ],
+    [
+     48.904691,
+     -121.439458
+    ],
+    [
+     48.904444,
+     -121.439014
+    ],
+    [
+     48.903978,
+     -121.438235
+    ],
+    [
+     48.903935,
+     -121.437416
+    ],
+    [
+     48.904421,
+     -121.436258
+    ],
+    [
+     48.905212,
+     -121.435904
+    ],
+    [
+     48.905971,
+     -121.435084
+    ],
+    [
+     48.906536,
+     -121.433904
+    ],
+    [
+     48.906741,
+     -121.432473
+    ],
+    [
+     48.907315,
+     -121.43162
+    ],
+    [
+     48.9079,
+     -121.430411
+    ],
+    [
+     48.907947,
+     -121.428886
+    ],
+    [
+     48.908347,
+     -121.427835
+    ],
+    [
+     48.908518,
+     -121.426412
+    ],
+    [
+     48.908275,
+     -121.425002
+    ],
+    [
+     48.907741,
+     -121.423748
+    ],
+    [
+     48.906836,
+     -121.423036
+    ],
+    [
+     48.906334,
+     -121.421652
+    ],
+    [
+     48.905885,
+     -121.420569
+    ],
+    [
+     48.904999,
+     -121.419841
+    ],
+    [
+     48.904025,
+     -121.419942
+    ],
+    [
+     48.903126,
+     -121.419226
+    ],
+    [
+     48.902214,
+     -121.418543
+    ],
+    [
+     48.901359,
+     -121.417802
+    ],
+    [
+     48.900643,
+     -121.416685
+    ],
+    [
+     48.900169,
+     -121.41549
+    ],
+    [
+     48.899247,
+     -121.414924
+    ],
+    [
+     48.898233,
+     -121.41472
+    ],
+    [
+     48.897299,
+     -121.414982
+    ],
+    [
+     48.896306,
+     -121.415099
+    ],
+    [
+     48.895358,
+     -121.415588
+    ],
+    [
+     48.894396,
+     -121.416026
+    ],
+    [
+     48.893438,
+     -121.416502
+    ],
+    [
+     48.892502,
+     -121.416428
+    ],
+    [
+     48.891545,
+     -121.416092
+    ],
+    [
+     48.890682,
+     -121.415289
+    ],
+    [
+     48.889808,
+     -121.414664
+    ],
+    [
+     48.888881,
+     -121.414084
+    ],
+    [
+     48.88801,
+     -121.414298
+    ],
+    [
+     48.887017,
+     -121.414227
+    ],
+    [
+     48.886009,
+     -121.414398
+    ],
+    [
+     48.885078,
+     -121.413987
+    ],
+    [
+     48.884383,
+     -121.413388
+    ],
+    [
+     48.883645,
+     -121.413119
+    ],
+    [
+     48.882947,
+     -121.4128
+    ],
+    [
+     48.881947,
+     -121.412523
+    ],
+    [
+     48.880967,
+     -121.412123
+    ],
+    [
+     48.880379,
+     -121.411372
+    ],
+    [
+     48.879679,
+     -121.410543
+    ],
+    [
+     48.878804,
+     -121.409933
+    ],
+    [
+     48.877988,
+     -121.409131
+    ],
+    [
+     48.877287,
+     -121.408062
+    ],
+    [
+     48.876502,
+     -121.407185
+    ],
+    [
+     48.875938,
+     -121.406077
+    ],
+    [
+     48.875628,
+     -121.40506
+    ],
+    [
+     48.875334,
+     -121.403626
+    ],
+    [
+     48.875056,
+     -121.402583
+    ],
+    [
+     48.874694,
+     -121.401478
+    ],
+    [
+     48.87485,
+     -121.400997
+    ],
+    [
+     48.874456,
+     -121.399662
+    ],
+    [
+     48.874535,
+     -121.398157
+    ],
+    [
+     48.874639,
+     -121.397085
+    ],
+    [
+     48.874457,
+     -121.395559
+    ],
+    [
+     48.874537,
+     -121.394465
+    ],
+    [
+     48.87425,
+     -121.393525
+    ],
+    [
+     48.873812,
+     -121.392166
+    ],
+    [
+     48.873456,
+     -121.390915
+    ],
+    [
+     48.873267,
+     -121.389438
+    ],
+    [
+     48.873113,
+     -121.387945
+    ],
+    [
+     48.873157,
+     -121.38723
+    ],
+    [
+     48.873243,
+     -121.385935
+    ],
+    [
+     48.873238,
+     -121.384431
+    ],
+    [
+     48.872945,
+     -121.383031
+    ],
+    [
+     48.873216,
+     -121.381907
+    ],
+    [
+     48.87324,
+     -121.381135
+    ],
+    [
+     48.873068,
+     -121.379674
+    ],
+    [
+     48.873478,
+     -121.378661
+    ],
+    [
+     48.873732,
+     -121.377351
+    ],
+    [
+     48.873933,
+     -121.376268
+    ],
+    [
+     48.874453,
+     -121.375511
+    ],
+    [
+     48.874774,
+     -121.374232
+    ],
+    [
+     48.874377,
+     -121.373583
+    ],
+    [
+     48.8743,
+     -121.372623
+    ],
+    [
+     48.874956,
+     -121.371719
+    ],
+    [
+     48.874606,
+     -121.370791
+    ],
+    [
+     48.874874,
+     -121.36947
+    ],
+    [
+     48.875218,
+     -121.368989
+    ],
+    [
+     48.875215,
+     -121.367977
+    ],
+    [
+     48.875216,
+     -121.366421
+    ],
+    [
+     48.87471,
+     -121.365063
+    ],
+    [
+     48.873947,
+     -121.36433
+    ],
+    [
+     48.873513,
+     -121.363443
+    ],
+    [
+     48.872571,
+     -121.363719
+    ],
+    [
+     48.871714,
+     -121.364374
+    ],
+    [
+     48.87081,
+     -121.364164
+    ],
+    [
+     48.86995,
+     -121.36445
+    ],
+    [
+     48.869124,
+     -121.365081
+    ],
+    [
+     48.868395,
+     -121.36603
+    ],
+    [
+     48.867534,
+     -121.366798
+    ],
+    [
+     48.866667,
+     -121.367674
+    ],
+    [
+     48.865718,
+     -121.368286
+    ],
+    [
+     48.864771,
+     -121.368558
+    ],
+    [
+     48.863818,
+     -121.368636
+    ],
+    [
+     48.863208,
+     -121.367432
+    ],
+    [
+     48.862593,
+     -121.366214
+    ],
+    [
+     48.861905,
+     -121.365188
+    ],
+    [
+     48.861181,
+     -121.364096
+    ],
+    [
+     48.860469,
+     -121.362962
+    ],
+    [
+     48.860311,
+     -121.36159
+    ],
+    [
+     48.86064,
+     -121.360318
+    ],
+    [
+     48.860352,
+     -121.358982
+    ],
+    [
+     48.859651,
+     -121.358377
+    ],
+    [
+     48.858795,
+     -121.357538
+    ],
+    [
+     48.857944,
+     -121.356749
+    ],
+    [
+     48.85703,
+     -121.357325
+    ],
+    [
+     48.857141,
+     -121.358767
+    ],
+    [
+     48.857472,
+     -121.359514
+    ],
+    [
+     48.856463,
+     -121.359385
+    ],
+    [
+     48.855527,
+     -121.359485
+    ],
+    [
+     48.854902,
+     -121.360213
+    ],
+    [
+     48.855631,
+     -121.360877
+    ],
+    [
+     48.856146,
+     -121.362156
+    ],
+    [
+     48.856515,
+     -121.36339
+    ],
+    [
+     48.856783,
+     -121.364594
+    ],
+    [
+     48.857114,
+     -121.365337
+    ],
+    [
+     48.857924,
+     -121.365551
+    ],
+    [
+     48.857992,
+     -121.36553
+    ],
+    [
+     48.857165,
+     -121.36526
+    ],
+    [
+     48.856423,
+     -121.366233
+    ],
+    [
+     48.855518,
+     -121.367017
+    ],
+    [
+     48.854818,
+     -121.36804
+    ],
+    [
+     48.854346,
+     -121.369358
+    ],
+    [
+     48.853494,
+     -121.370256
+    ],
+    [
+     48.852724,
+     -121.371301
+    ],
+    [
+     48.851868,
+     -121.372139
+    ],
+    [
+     48.850971,
+     -121.372813
+    ],
+    [
+     48.850072,
+     -121.372939
+    ],
+    [
+     48.849072,
+     -121.373143
+    ],
+    [
+     48.848272,
+     -121.372198
+    ],
+    [
+     48.847399,
+     -121.37157
+    ],
+    [
+     48.846542,
+     -121.370987
+    ],
+    [
+     48.846146,
+     -121.369598
+    ],
+    [
+     48.845767,
+     -121.368827
+    ],
+    [
+     48.84505,
+     -121.367888
+    ],
+    [
+     48.844301,
+     -121.366935
+    ],
+    [
+     48.843374,
+     -121.366261
+    ],
+    [
+     48.842536,
+     -121.365549
+    ],
+    [
+     48.841847,
+     -121.364391
+    ],
+    [
+     48.841043,
+     -121.363523
+    ],
+    [
+     48.840498,
+     -121.362189
+    ],
+    [
+     48.840025,
+     -121.360844
+    ],
+    [
+     48.839845,
+     -121.359305
+    ],
+    [
+     48.83964,
+     -121.357834
+    ],
+    [
+     48.839925,
+     -121.356315
+    ],
+    [
+     48.840148,
+     -121.354766
+    ],
+    [
+     48.840472,
+     -121.353273
+    ],
+    [
+     48.840736,
+     -121.351752
+    ],
+    [
+     48.840437,
+     -121.350286
+    ],
+    [
+     48.840401,
+     -121.34872
+    ],
+    [
+     48.840298,
+     -121.34719
+    ],
+    [
+     48.840306,
+     -121.345631
+    ],
+    [
+     48.840211,
+     -121.344051
+    ],
+    [
+     48.840261,
+     -121.342507
+    ],
+    [
+     48.840064,
+     -121.341028
+    ],
+    [
+     48.840194,
+     -121.33947
+    ],
+    [
+     48.839421,
+     -121.339081
+    ],
+    [
+     48.838789,
+     -121.340311
+    ],
+    [
+     48.838039,
+     -121.341101
+    ],
+    [
+     48.83727,
+     -121.341019
+    ],
+    [
+     48.83671,
+     -121.341913
+    ],
+    [
+     48.836439,
+     -121.341873
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "mountaineering",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 26,
+    "summitTimeHrs": 11,
+    "descentTimeHrs": 7.5,
+    "approachTimeHrs": 7.5,
+    "recommendedStart": "7:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 7.5,
+      "note": "From the Hannegan Pass trailhead, climb to Hannegan Pass (~5,000 ft), then drop roughly 2,500 ft into the Chilliwack River valley before re-climbing to camp at Whatcom Pass. Long d…",
+      "fromTo": "Approach to Whatcom Pass camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 11,
+      "note": "An early alpine start traverses below Whatcom Peak (dipping to ~5,300 ft) to Perfect Pass, then climbs the Challenger Glacier, crosses the bergschrund, and finishes with a short 5.…",
+      "fromTo": "Summit day via Perfect Pass and the Challenger Glacier",
+      "section": "Climb"
+     },
+     {
+      "hrs": 7.5,
+      "note": "Reverse the approach over Hannegan Pass and back down to the car. Parties commonly treat this as a full day given the up-and-down profile; many build in a spare contingency day bef…",
+      "fromTo": "Exit to trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "A handful of small cams (~0.3-1 in) and a few stoppers for the short 5.6-5.7 summit pitch, plus standard glacier travel gear (2-3 pickets, crevasse rescue kit, prusiks). Old fixed pitons exist on the summit block but are weathered — don't rely on them alone.",
+   "what_to_bring": [
+    "satellite communicator (inReach/SPOT) — cell coverage is essentially nonexistent on approach or on the mountain",
+    "water treatment (no reliable water source on the glacier or at the summit block)",
+    "insect repellent for the lower forest approach",
+    "extra food/fuel for a weather contingency day"
+   ],
+   "pro_tips": [
+    "carry a small cam (~0.5 in) to back up the crux move on the summit block rather than relying on the old fixed pitons",
+    "a 30-40m rope is enough for the single rappel off the summit with rope to spare — a full 60m isn't necessary",
+    "if using the Ross Lake approach, reserve the water taxi well in advance; Ross Lake Resort only runs it roughly June-October",
+    "budget an extra contingency day — North Cascades weather can pin parties down mid-approach or mid-glacier",
+    "The crux 5.5-5.7 summit pitch is on solid rock, described by parties as 'bombproof and climbable in boots.'"
+   ],
+   "watch_out": [
+    "the summit moat/bergschrund can be the real crux of the trip in some years — it has been reported nearly impassable once fully opened",
+    "fixed pitons on the summit block are old and rusty — treat as backup only, not primary protection",
+    "losing the line from Easy Ridge down to Luna Lake and back up to Challenger Ridge is a common way parties get cliffed out"
+   ],
+   "pro_needs": "Light rock rack for one short pitch (5.6-5.7); the real technical demand is glacier travel gear and crevasse-rescue competence, not the rack.",
+   "best_season": "Mid-July through August is the reliable window — late enough that the long approach trails (Hannegan Pass, Whatcom Pass, Big Beaver) have melted out, but early enough that the glacier's snow bridges are still consolidated. By September the moat/bergschrund below the summit block can open wide enough to make the final few feet difficult or impassable, and early fall storms become more likely.",
+   "high_point_ft": 8207,
+   "aid_grade": null,
+   "approach": "Two approaches are in common use, both starting from the Hannegan Pass Trailhead (end of FS Road 32/Ruth Creek Rd off WA-542). Hannegan Pass Trail #674 climbs a well-graded ~2,000 ft over 4 miles to Hannegan Pass (5,100 ft), the last reliable easy water and the split point for both options. Route A - Whatcom Pass: from the pass, descend a steep, deceptively long ~2,500 ft into the Chilliwack River valley (Boundary Camp), ford the Chilliwack River (log crossings here are unreliable and have caught out parties who lost the crossing and had to bushwhack), then follow the Chilliwack River Trail up through Copper Creek Camp (reliable water, pit toilet, ~7.5 mi from the trailhead) and on to Whatcom Pass backcountry camp (NPS permit required), roughly 6-7 miles beyond the river crossing. From Whatcom Pass you must get around Whatcom Peak (7,574 ft) to reach Perfect Pass: the North Ridge direct is loose, extremely exposed, 'a formidable obstacle' and not recommended for most parties; the standard workaround traverses the Whatcom Glacier on Whatcom Peak's east side, which has been reported down to bare ice with open crevasses requiring in-and-out crevasse navigation in low-snow years. Route B - Easy Ridge: from the Chilliwack River Trail below Hannegan Pass, ford the Chilliwack again near Easy Ridge (same log-crossing caveat) and climb steeply onto Easy Ridge (site of an old fire lookout), then follow a faint climbers' path along the ridge crest past tarns and slabby sections (mosquito-heavy in season) over Easy Peak to a notch known as 'the Impasse,' continuing cross-country toward Perfect Pass. Round trip via Easy Ridge alone runs about 26 miles; the full car-to-summit distance by either line is roughly 37 miles (matching this route's recorded ~59.5 km distance), so most parties treat this as a 3-5 day trip with camps at Whatcom Pass and/or Perfect Pass. From Perfect Pass (or the Wiley Lake basin), drop onto the Challenger Glacier at about the 7,000-7,200 ft level - the exact entry point shifts year to year with crevasse conditions - cross a bergschrund, and climb steepening snow (a snow arete in late season) toward the base of the summit rocks. A known late-season hazard just below the summit rocks is a moat that has been reported up to ~5 ft wide and occasionally impassable, forcing a detour to find a snow bridge. From Perfect Pass camp itself, getting down onto the glacier can also involve ~200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat, depending on melt-out. The final approach to the true summit is a clean 3rd-class scramble to the base of a short (~50 ft), well-protected 5.5-5.7 rock pitch; many parties fix a handline from the summit rappel anchor down to the top of this scramble to manage the exposure on otherwise solid, unbroken rock.",
+   "descent_text": "Reverse the ascent line in essentially all cases - this is not a route with an independent descent gully. From the true summit, downclimb or rappel the short 5.5-5.7 summit pitch: a single rappel off the summit block gets a party back to the top of the 3rd-class scramble. Trip reports consistently report a 30m rope as sufficient for this rappel with a few feet to spare (some parties carry a 40m rope for margin, which is more than enough). The anchor is natural/fixed gear, not bolts: 3-4 old but sound pitons plus a fixed cam or sling, backed up or supplemented as parties see fit; check the tat before committing weight since it is exposed alpine hardware, not a maintained sport anchor. Below the rappel, reverse the scramble and handline section back down to the glacier, watching again for the moat just below the summit rocks that can require hunting for a snow bridge. Continue back down the snow arete and across the Challenger Glacier to Perfect Pass, re-crossing the bergschrund passed on the way up; regaining Perfect Pass itself may retrace the ~200 ft of wet class 4 climbing (and possible short rappel across a moat) noted on the approach. From Perfect Pass, reverse whichever approach line was used to get in - either back over/around Whatcom Peak (Whatcom Glacier traverse, watching for bare-ice sections and open crevasses) to Whatcom Pass and out the Chilliwack River Trail and Hannegan Pass, or back along Easy Ridge and down to the Chilliwack River ford and Hannegan Pass - to the trailhead. Some strong parties instead continue over Eiley-Wiley Ridge toward the Wiley Glacier and Beaver Pass as part of a longer Picket Range traverse exiting at Ross Lake, but that is a variant end, not the standard out-and-back descent for this route.",
+   "bail": "There is no quick bailout — the nearest realistic retreat from the glacier or summit block is back down to high camp, and a full retreat to the trailhead is a multi-day undertaking regardless of where you turn around, so weather and turnaround decisions need to be made early.",
+   "pitch_detail": [
+    {
+     "grade": "5.5",
+     "notes": "Approximately 50 feet to the summit horn. Fixed pitons and an old fixed cam are present but should not be relied upon as the sole anchor. The crux involves low-5.5 moves on reasonably solid rock. Belayed ascent is standard; an inverted V rappel anchor is established at the top by modern parties. Excellent protection available from both natural features and fixed gear. The moves are sustained and exposed.",
+     "pitch": "1 (Summit Pitch)"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best climbed June-Sept once the Chilliwack River fords and Challenger/Whatcom Glaciers are in reasonable shape; the Ross Lake Resort water taxi (used for the Beaver Pass variant) requires advance reservations.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Hannegan Pass trailhead, climb to Hannegan Pass (~5,000 ft), then drop roughly 2,500 ft into the Chilliwack River valley before re-climbing to camp at Whatcom Pass. Long day with a loaded pack on a mostly good trail; the up-down profile makes it feel longer than the raw mileage suggests.",
+      "hours": 7.5,
+      "miles": 10.4,
+      "title": "Approach to Whatcom Pass camp",
+      "gainFt": 4300,
+      "lossFt": 2400,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach Whatcom Pass high camp (5,200 ft)"
+     },
+     {
+      "n": 2,
+      "note": "An early alpine start traverses below Whatcom Peak (dipping to ~5,300 ft) to Perfect Pass, then climbs the Challenger Glacier, crosses the bergschrund, and finishes with a short 5.5 rock pitch to the true summit. Round trip from camp runs about 11 hours including a lunch break.",
+      "hours": 11,
+      "miles": 9,
+      "title": "Summit day via Perfect Pass and the Challenger Glacier",
+      "gainFt": 3400,
+      "lossFt": 3400,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "7:00 AM",
+        "label": "Leave Whatcom Pass camp",
+        "detail": "Traverse toward Perfect Pass, dipping below Whatcom Peak."
+       },
+       {
+        "time": "~10:00 AM",
+        "label": "Reach Perfect Pass",
+        "detail": "6,300 ft; roughly 3 hours from camp, one of the best bivy sites in the range."
+       },
+       {
+        "time": "~12:00 PM",
+        "label": "Top out on the summit rocks",
+        "detail": "Glacier ascent, bergschrund crossing, then a single 5.5 pitch (fixed gear) to the true summit."
+       },
+       {
+        "time": "~3:30 PM",
+        "label": "Back to Perfect Pass",
+        "detail": "Includes a lunch/rest break on the descent."
+       },
+       {
+        "time": "6:15 PM",
+        "label": "Return to Whatcom Pass camp",
+        "detail": "About 11 hours car-to-camp round trip."
+       }
+      ],
+      "objective": "Climb Mount Challenger via the Northwest (Challenger) Glacier"
+     },
+     {
+      "n": 3,
+      "note": "Reverse the approach over Hannegan Pass and back down to the car. Parties commonly treat this as a full day given the up-and-down profile; many build in a spare contingency day beforehand for weather given how remote and glacier-dependent this route is.",
+      "hours": 7.5,
+      "miles": 10.4,
+      "title": "Exit to trailhead",
+      "gainFt": 2400,
+      "lossFt": 4300,
+      "packLb": 0,
+      "schedule": [],
+      "objective": "Hike back out to the Hannegan Pass trailhead"
+     }
+    ],
+    "totalNote": "\"A remote 3-day trip (parties often pad in a 4th weather/contingency day): roughly 37 miles and ~10,000 ft of cumulative gain round trip, anchored by an 11-hour glacier summit day out of Whatcom Pass camp.\""
+   },
+   "access": {
+    "fees": "None beyond the Northwest Forest Pass for trailhead parking and the overnight wilderness permit fee, both stated above.",
+    "notes": "Northwest Forest Pass required ($5/day or $30/annual). No specific climbing permit.",
+    "rules": "Group size capped at 6 in off-trail cross-country zones (which includes most Picket Range approaches; 12 in on-trail corridors). Bear canisters required in some zones — free loaners at permit offices.",
+    "permit": "No permit is required for a day climb. Every overnight stay in the North Cascades National Park complex needs a wilderness permit, which costs $10 per person plus a $6 reservation fee, youth 15 and under free.",
+    "closures": "Graybeal, Graybeal Stock, and Whatcom Camps are CLOSED due to fire damage from the 2022 Chilliwack Complex. The trails themselves are open to hikers: Hannegan Pass/Chilliwack River and Brush Creek/Whatcom Pass.",
+    "permitZone": "N/A",
+    "group_limit": 6,
+    "landManager": "N/A",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "passRequired": "N/A",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+     "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+    }
+   },
+   "road": {
+    "name": "Ruth Creek Rd / Hannegan Pass Rd (FR-32)",
+    "status": "Seasonal USFS road, subject to washout",
+    "driveNote": "From WA-542 (Mt. Baker Hwy), follow FR-32 about 5.3 mi to road's end at the Hannegan Pass Trailhead; recent storm damage has at times restricted vehicles to around mile 5.2 — check current Mt. Baker-Snoqualmie NF alerts before you go.",
+    "seasonalGate": "Typically opens once snow clears in early-mid summer and closes with the first significant fall snow."
+   },
+   "climate": {
+    "typical": "Marine west coast climate typical of the North Cascades: Pacific storms are forced up over the range crest and can drop heavy precipitation with little warning even in summer, and snowpack lingers into July most years. Temperatures rarely fall below 0°F or exceed 80°F, but wind and whiteout conditions on the glacier and summit ridge are common.",
+    "bySeason": {
+     "summer": "Prime climbing window is mid-July through August, once approach trails and the Whatcom/Challenger Glaciers have consolidated but before the summit bergschrund/moat opens wide late in the season."
+    }
+   },
+   "emergency": {
+    "notes": "This is one of the most remote peaks in the North Cascades — cell coverage is essentially nonexistent beyond the trailhead, and any rescue is likely to require a multi-day approach or helicopter. Carry a satellite communicator and leave a float plan/itinerary with the Wilderness Information Center at permit pickup.",
+    "county": "Whatcom County",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Rd., Marblemount, WA 98267 - (360) 854-7245",
+    "nearestHospital": "PeaceHealth St. Joseph Medical Center, Bellingham, WA (roughly 2.5-3 hr drive from the Hannegan Pass trailhead)",
+    "sheriffDispatch": "Whatcom County Sheriff's Office non-emergency dispatch — (360) 676-6911 (call 911 for an active emergency)"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Scattered ascents July-August during the stable-glacier window; some clustering around Mountaineers club-organized basic/intermediate alpine climbs",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Low - likely well under a few dozen parties per season; it probably isn't climbed often enough for really accurate current conditions"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong, sustained multi-day backcountry fitness for off-trail, brushy travel (Devil's club and heavy brush reported on all approach options: Easy Ridge, Eiley-Wiley Ridge, Whatcom Pass) with elevation loss/regain to reach Perfect Pass",
+     "packWeight": "Heavy - full glacier mountaineering rack plus 3-5 days of camping/food for an approach-heavy trip"
+    },
+    "approachTime": "2-3 days to a camp near Perfect Pass via Easy Ridge, Eiley-Wiley Ridge, or Whatcom Pass before the glacier climb itself",
+    "requiredSkills": [
+     "glacier travel and crevasse rescue (roped travel across the Challenger Glacier around 7,000-7,200 ft)",
+     "off-trail routefinding through sustained brush and 'gnarly, Picket-ey' terrain",
+     "basic 5th-class rock competence for the summit pitch (5.5, currently fixed protection) and a bergschrund crossing",
+     "wilderness backcountry permit logistics (North Cascades NP permit)",
+     "self-sufficient multi-day expedition/camp management given the remoteness"
+    ],
+    "experienceLevel": "Advanced - multi-day glaciated alpine objective with a serious trail-less approach; not a beginner or first-glacier-climb route"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through August",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Core of the best-season window; glacier typically firmest with bridges intact",
+      "status": "optimal"
+     },
+     "August": {
+      "reason": "Continued prime glacier travel and stable weather window",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Colder temps, more-open crevasses, and early storms moving in by fall",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime glacier climate; best when the glacier is firm and bridges intact in early-to-mid summer",
+     "probability": "Early-season storms are more likely by September for fall; July-August is otherwise the most weather-stable window"
+    },
+    "exposure": "Exposed final summit pitch (5.5, per trip-report beta) plus steep exposed snow near the bergschrund; an 'exposed summit block' and 'remoteness' - a fall or injury here means a multi-day self-rescue/evacuation given the long, brushy approach",
+    "avalanche": {
+     "zone": "No NWAC forecast zone directly covers this remote North Cascades NP glacier; nearest reference zone is West Slopes North, but NWAC forecasts run roughly Nov-Apr and do not extend into the Jul-Sep climbing season",
+     "byMonth": {
+      "July": "Low",
+      "August": "Low",
+      "September": "Moderate"
+     }
+    },
+    "crevasses": "Primary technical hazard: the Challenger Glacier is crevassed and is traversed around 7,000-7,200 ft, with slot location and bergschrund character varying by season; afternoon crevasse-bridge softening is a specific timing hazard, reinforcing an early alpine start and roped glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Peak elevation is reported inconsistently across sources (8,113-8,238 ft); this record's own high_point_ft (8,207 ft) matches the most-cited USGS/Wikipedia figure, and the summit waypoint has been corrected to match.",
+     "First-ascent party roster beyond the September 7, 1936 date is not well corroborated across sources.",
+     "No verified GPS track/waypoints for the Wiley Ridge or Easy Ridge connections — routefinding notes here are qualitative only.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/G578V8T",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 4,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.8365,
+    "peakLng": -121.3419,
+    "trailhead": "Hannegan Pass Trailhead",
+    "trailheadLat": 48.91049444,
+    "trailheadLng": -121.5894222,
+    "trailheadDirection": "Two approaches are in common use, both starting from the Hannegan Pass Trailhead (end of FS Road 32/Ruth Creek Rd off WA-542)."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Hannegan Pass, Chilliwack River and Whatcom Pass, then around Whatcom Peak to Perfect Pass",
+     "notes": "From the Hannegan Pass Trailhead at the end of FS Road 32 (Ruth Creek Road) off WA-542, Trail #674 climbs a well-graded 2,000 ft over 4 miles to Hannegan Pass at about 5,100 ft. That pass is the last easy water and the point where the two approaches to Challenger split.\n\nThis one drops the far side, losing roughly 2,500 ft into the Chilliwack River valley at Boundary Camp, crosses the Chilliwack, and follows the Chilliwack River Trail past Copper Creek Camp to the Whatcom Pass backcountry camp. Log crossings of the Chilliwack are unreliable and have caught out parties who lost the crossing and had to bushwhack.\n\nFrom Whatcom Pass you still have to get round Whatcom Peak. The direct North Ridge is loose, extremely exposed and not recommended for most parties; the standard workaround traverses the Whatcom Glacier on Whatcom Peak's east side. Treat that as glacier travel.",
+     "season": "Roughly Jul-Sep. The Whatcom Glacier traverse is the season-limiting piece: in low-snow years it has been reported down to bare ice with open crevasses",
+     "hazards": [
+      "Unreliable log crossings of the Chilliwack River; parties have lost the crossing and been forced to bushwhack",
+      "The Whatcom Glacier traverse has been found down to bare ice with open crevasses in low-snow years",
+      "About 200 ft of wet class 4 downclimbing, sometimes with a short rappel across a moat, just to get off Perfect Pass onto the glacier",
+      "A bergschrund on the Challenger Glacier and a moat below the summit rocks that can be impassable late season",
+      "No bailout worth the name once you are past Whatcom Pass"
+     ],
+     "baseFinding": "PERFECT PASS IS THE ARRIVAL, AND YOU KNOW IT BECAUSE THE GROUND STOPS AND THE GLACIER STARTS. From the pass, getting down onto the Challenger Glacier at about 7,000-7,200 ft can involve roughly 200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat, depending on melt-out. The exact entry point moves year to year with crevasse conditions, so do not look for a particular spot; look for the lowest place you can step from rock onto continuous ice.\n\nARRIVAL AT THE CLIMBING, WHICH IS NOT THE SAME THING AS ARRIVAL AT THE GLACIER: the technical climbing on this route is 50 ft long and it is the last 50 ft. Above the bergschrund the glacier steepens into a snow arete, then a clean 3rd-class scramble runs out at the base of a short, well-protected 5.5-5.7 pitch. THAT PITCH IS THE ROUTE. If you are roping up anywhere lower than the foot of a single unbroken 50 ft wall with a rappel anchor visible at its top, you have roped up too early.\n\nTHE MOAT IS THE MARKER YOU WILL MEET FIRST, AND IN FOG IT IS THE ONE THAT MATTERS. Just below the summit rocks a moat has been reported up to about 5 ft wide and occasionally impassable, forcing a detour to hunt a snow bridge. Reaching an uncrossable gap where the snow has pulled away from the summit rock means you are at the base, not lost.\n\nWHAT GOING TOO FAR LOOKS LIKE: continuing east along the crest away from the summit block puts you on the connecting ridge toward Poltergeist Pinnacle and Crooked Thumb, which is a different day entirely."
+    },
+    {
+     "name": "Hannegan Pass, then Easy Ridge and the Impasse to Perfect Pass",
+     "notes": "The alternative from the same trailhead. From the Chilliwack River Trail below Hannegan Pass, ford the Chilliwack again near Easy Ridge and climb steeply onto the ridge, site of an old fire lookout. A faint climbers' path follows the crest past tarns and slabby sections, over Easy Peak, to a notch known as the Impasse, then continues cross-country toward Perfect Pass.\n\nRound trip via Easy Ridge alone runs about 26 miles; the full car-to-summit distance by either line is roughly 37 miles, so most parties treat this as a 3-5 day trip with camps at Whatcom Pass or Perfect Pass, or both.",
+     "season": "Roughly Jul-Sep. Snow in the Impasse notch can make the direct crossing either easier or impossible depending on the year",
+     "hazards": [
+      "The Impasse: deep snow moats on both sides and wet down-sloping slabs, with an 800 ft drop-and-re-climb workaround on exposed class 4",
+      "Fords of the Chilliwack River",
+      "Whiteout navigation between the Impasse and Perfect Pass, where parties have mistaken Whatcom Peak's summit wall for the pass",
+      "Crevasses on the Challenger Glacier and the moat below the summit rocks"
+     ],
+     "primary": true,
+     "baseFinding": "THE IMPASSE IS THE CHECKPOINT, NOT THE BASE, AND CONFUSING THE TWO IS THE COMMON ERROR IN CLOUD. It is a notch in the ridge guarded by deep snow moats on both sides and down-sloping, often wet slabs. In many seasons the direct crossing is unsafe; the established workaround drops roughly 800 ft to about 4,400 ft and re-climbs an exposed class 4 step to regain the crest beyond.\n\nBEYOND IT, THE TEST IS THE SAME AS ON THE OTHER APPROACH: Perfect Pass, then step onto ice, then keep going until the walking stops at a 50 ft rock wall. Nothing on this route is technical until that wall.\n\nA NAMED WHITEOUT TRAP ON THIS LINE: on the snowfields between the Impasse and Perfect Pass, parties in fog have headed for Whatcom Peak's summit wall instead of the pass. If the ground in front of you is steepening into a wall rather than levelling into a saddle, you are aimed at the wrong feature. Perfect Pass is a saddle with running water; Whatcom's wall has neither."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 4",
+     "label": "Gaining the Challenger Glacier from Perfect Pass",
+     "notes": "Drop onto the glacier at about 7,000-7,200 ft from Perfect Pass or the Wiley Lake basin; the exact entry point shifts year to year with crevasse conditions. Depending on melt-out, getting off Perfect Pass camp can involve roughly 200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat."
+    },
+    {
+     "n": 2,
+     "label": "Bergschrund and glacier snow to the summit rocks",
+     "notes": "Cross a bergschrund, then climb steepening snow — a snow arete in late season — toward the base of the summit rocks. Late-season hazard just below the summit rocks: a moat reported up to about 5 ft wide and occasionally impassable, forcing a detour to find a snow bridge."
+    },
+    {
+     "n": 3,
+     "class": "Class 3",
+     "label": "Scramble to the base of the summit pitch",
+     "notes": "A clean 3rd-class scramble takes the final approach to the true summit rock."
+    },
+    {
+     "n": 4,
+     "class": "5.5-5.7",
+     "label": "Summit rock pitch",
+     "notes": "A short pitch, roughly 50 ft, well protected on solid unbroken rock. Many parties fix a handline from the summit rappel anchor down to the top of the scramble to manage the exposure."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 6278,
+     "name": "Perfect Pass",
+     "role": "main",
+     "notes": "The planned high camp for this route and the one everything else is scheduled around. Ground is limited: early in the season much of the pass is still snow-covered and parties either camp on the snow or scout the sandy patches slightly higher on the ridge. It is a pass, so it is windy and weather-exposed with no shelter. Getting from camp onto the glacier is itself part of the climb — depending on melt-out it can mean around 200 ft of wet class 4 downclimbing and sometimes a short rappel across a moat, so leaving camp in the dark or returning to it late is a real commitment, not a stroll.",
+     "water": "Snowmelt at the pass; running water in the gully below it early in the season, drying back as the season goes on, so late-season parties should expect to melt snow",
+     "permit": "The Perfect Pass cross-country zone allows exactly one party of up to six per night on a National Park Service backcountry permit, and it is a walk-up zone rather than a reservable one. If it is taken, there is no second site here.",
+     "capacity": "One party per night, maximum six people — the tightest camp quota in the park's cross-country system"
+    },
+    {
+     "elev": 3146,
+     "name": "Copper Creek camp",
+     "role": "route",
+     "notes": "About 7.5 miles in on the valley approach, with reliable water and a pit toilet. It is a trail camp, not a mountain one, and it exists on this list because the approach to Challenger is long enough that most parties sleep low at least once in each direction. It is also the sensible retreat target if the Chilliwack ford turns you around — the log crossings there are unreliable and have caught parties out.",
+     "water": "Copper Creek, reliable",
+     "permit": "Designated National Park Service backcountry camp; permit itinerary must name it",
+     "capacity": "A designated backcountry camp on the Chilliwack River Trail"
+    },
+    {
+     "elev": 5210,
+     "name": "Whatcom Pass camp",
+     "role": "route",
+     "notes": "The last established camp before the committing ground, used by parties coming in on the Chilliwack River approach. From here you still have to get around Whatcom Peak to reach Perfect Pass — the direct north ridge is loose and very exposed and is not the way most parties go, while the standard workaround crosses the Whatcom Glacier on the peak's east side, which has been reported down to bare ice with open crevasses in low-snow years. Treat this as the last comfortable night rather than a high camp.",
+     "water": "Snowmelt and creeks at the pass",
+     "permit": "A designated National Park Service backcountry camp; you may only camp in the camp area named on your permit itinerary for the date on it",
+     "capacity": "A designated backcountry camp with a fixed number of sites assigned on the permit"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "challenger glacier glac gl",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}
