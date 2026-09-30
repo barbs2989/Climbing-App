@@ -28,8 +28,19 @@ function Sheet({ title, body, confirmLabel, cancelLabel, danger, onDone }) {
     if (cancelRef.current) cancelRef.current.focus();
     return () => { if (prev && prev.focus) try { prev.focus(); } catch (_) {} };
   }, []);
-  // Focus starts on Cancel inside the sheet, so Escape bubbles up to here.
-  const onKey = e => { if (e.key === "Escape") { e.preventDefault(); onDone(false); } };
+  // Focus starts on Cancel inside the sheet, so Escape and Tab bubble up to here. Both are STOPPED:
+  // lib/dialogA11y.js listens on document for the topmost role="dialog", which is the popup UNDER
+  // this sheet (this is an alertdialog in its own root) — its Escape would close that popup and its
+  // Tab would pull focus out of the sheet.
+  const onKey = e => {
+    if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); onDone(false); return; }
+    if (e.key !== "Tab") return;
+    e.preventDefault(); e.stopPropagation();
+    const bs = Array.prototype.slice.call(e.currentTarget.querySelectorAll("button"));
+    const i = bs.indexOf(document.activeElement);
+    const n = bs.length;
+    if (n) bs[((i < 0 ? 0 : i) + (e.shiftKey ? n - 1 : 1)) % n].focus();
+  };
   const btn = { width: "100%", minHeight: 48, boxSizing: "border-box", padding: "12px 14px", borderRadius: 12, fontSize: 15, fontWeight: 800, cursor: "pointer" };
   return <div onClick={() => onDone(false)} onKeyDown={onKey} tabIndex={-1} role="alertdialog" aria-modal="true" aria-label={title} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.78)", zIndex: Z, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
     <div onClick={e => e.stopPropagation()} style={{ background: P.surface, color: P.text, borderRadius: 18, width: "100%", maxWidth: 380, border: "1px solid " + P.border, padding: "22px 18px 18px", boxSizing: "border-box", fontFamily: "inherit" }}>
