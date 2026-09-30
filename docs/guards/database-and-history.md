@@ -388,6 +388,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Never add a new duplicate to the baseline: merge it (0213 is the pattern), then
     `--write-baseline` only to record groups that were FIXED.
 
+- **`check:area-duplicates`** asks whether any PLACE is filed twice — the area-level twin of
+  `check:catalog-duplicates`, which cannot see a copy under a different parent. Built 2026-09-30
+  after 0221 folded 268 same-place pairs, most of them Mountain Project's parallel discipline trees
+  ("*Joshua Tree Bouldering* › Hidden Valley Area Bouldering" beside "Hidden Valley Area"). The user:
+  *"fold into 1 area … i don't want duplicates"*. Runs **daily** in `area-count-drift.yml`, not in
+  build — a property of the database, and the MP import is still adding states.
+  - **A pair**: one state, different parents, neither inside the other, both holding climbs, under
+    3 km apart, same 0214 `catalog_key` — or that key with bouldering/boulders/mixed/problems also
+    ignored when one name carries such a word. An ICE name never pairs with a BOULDERING name.
+    Computed in JS from `areas` with the anon key; refuses a read under 40k rows.
+  - **100 pairs are LISTED as read** (`scripts/data/area-duplicates-baseline.json`), all different
+    places sharing a generic name: the West Face of Daff / Fairview / Cottage Domes, Warm-Up
+    Boulders in several canyons, Kraft Boulders / Kraft Crags, Cathedral Boulders / Cathedral Peak.
+    Do not re-read them. A pair NOT on the list is either one place twice (fold it; 0221's planner
+    is `audits/area-pairs-2026-09-26/fold.mjs`) or a newly READ different place (`--write-baseline`).
+  - **Proven to fail**: with Kraft Boulders / Kraft Crags removed from the list it exits 1 naming
+    exactly that pair.
+  - **Cannot see** a copy over 3 km off, one with no coordinate, one holding no climbs yet, or a
+    spelling the key does not fold. The trigger (0216/0218) refuses a same-key area within 1.5 km
+    at insert; this sweeps what got past it.
+
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
   not in the build. `route_count` is maintained by a trigger on the **routes**
