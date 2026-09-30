@@ -13,6 +13,7 @@
     "check:hooks": "node scripts/check-hooks-rules.mjs",
     "check:dead-props": "node scripts/check-dead-props.mjs",
     "check:migrations": "node scripts/check-migration-numbers.mjs",
+    "check:migration-replay": "node scripts/check-migration-replay.mjs",
     "check:rls": "node scripts/check-rls.mjs",
     "check:migration-claims": "node scripts/check-migration-claims.mjs",
     "check:merge-survival": "node scripts/check-merge-survival.mjs",
@@ -195,6 +196,7 @@
   "devDependencies": {
     "@babel/parser": "^7.26.0",
     "@babel/traverse": "^7.26.0",
+    "@electric-sql/pglite": "^0.5.8",
     "@vitejs/plugin-react": "^4.3.4",
     "playwright-core": "^1.61.1",
     "vite": "^6.4.3",

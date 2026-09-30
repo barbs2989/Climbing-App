@@ -39,7 +39,13 @@
 --
 -- Re-runnable: every statement is ON CONFLICT DO NOTHING, so a partial apply can be re-run.
 
-begin;
+-- REPLAY NOTE (2026-09-30): begin/commit became one DO block (atomic in the same way) that returns
+-- early when the catalog this file extends is not loaded — an empty database, i.e. a Supabase preview
+-- branch, where every insert below would raise in the areas trigger. Unchanged wherever it is loaded.
+do $replay$ begin
+if not exists (select 1 from areas where id = 'colorado') then
+  raise notice '0137: catalog not loaded (no area colorado), nothing to add'; return;
+end if;
 
 -- 1. The four ranges. `region`, holding peaks and no direct routes, which is what
 --    trg_areas_leaf_xor requires of a container.
@@ -97,7 +103,7 @@ insert into routes (id, area_id, name, discipline, grade, grade_system, source) 
   ('co_culebra_peak_northwest_ridge',        'co_culebra_peak',      'Northwest Ridge',         'scrambling',     'Class 2', 'class', 'fourteeners')
 on conflict (id) do nothing;
 
-commit;
+end $replay$;
 
 -- Verify AFTER, as separate statements (a pasted script is ONE transaction, and a failing SELECT
 -- rolls back the inserts — that is how 0097's writes were undone):

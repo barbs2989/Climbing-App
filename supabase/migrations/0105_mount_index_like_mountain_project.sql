@@ -49,10 +49,14 @@ update areas set area_type = 'peak',
 -- take a route directly — the route needs its own area, which is also what MP has.
 -- `path` is set by trg_areas_set_path; route_count defaults to 0 and the routes trigger
 -- maintains it from here.
+-- REPLAY NOTE (2026-09-30): VALUES became SELECT … WHERE EXISTS (parent). The same row wherever the
+-- catalog is loaded; on an empty database (a Supabase preview branch) the parent is absent and the
+-- areas trigger would raise, so the insert is skipped instead.
 insert into areas (id, name, area_type, parent_id, lat, lng, blurb)
-values ('wa_north_norwegian_buttress', 'North Norwegian Buttress', 'crag', 'wa_middle_peak_2',
+select 'wa_north_norwegian_buttress', 'North Norwegian Buttress', 'crag', 'wa_middle_peak_2',
         47.77748, -121.57543,
-        'The North Norwegian Buttress is a roughly 2,000-foot buttress on Mount Index''s northwest aspect, visible from US 2 above Lake Serene, separated from the South Norwegian Buttress by a deep cleft.')
+        'The North Norwegian Buttress is a roughly 2,000-foot buttress on Mount Index''s northwest aspect, visible from US 2 above Lake Serene, separated from the South Norwegian Buttress by a deep cleft.'
+ where exists (select 1 from areas where id = 'wa_middle_peak_2')
 on conflict (id) do nothing;
 
 -- ── 3. Empty Mount Index, putting each route where MP has it ────────────────

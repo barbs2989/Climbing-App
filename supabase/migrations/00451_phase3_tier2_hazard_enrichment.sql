@@ -34,6 +34,12 @@
 ALTER TABLE routes
 ADD COLUMN IF NOT EXISTS hazard_tags text[] DEFAULT '{}'::text[];
 
+-- REPLAY NOTE (2026-09-30): production records this version as applied. The column above is real
+-- schema and stays live. Everything below is the superseded data pass (see the header), which fails
+-- on a fresh build. It is kept as history inside one block comment so a Supabase preview branch
+-- replays past it.
+/*
+
 -- Agent 2: Secondary Peaks & Alpine Scrambles (14 routes, 67 entries)
 -- Mount Rainier DC/Nisqually variants, North Cascades secondary peaks (Sahale, Shuksan, Black Peak, Boston, Snowfield, Cascade, Dome, Watson, Hurryup, Cannon, Liberty Bell, Ptarmigan)
 UPDATE routes SET hazard_tags = COALESCE(hazard_tags, '{}'::text[]) || ARRAY[
@@ -96,3 +102,4 @@ LIMIT 15;
 --
 -- Deployment Verified: 2026-07-28
 -- Status: READY FOR PRODUCTION
+*/

@@ -34,10 +34,15 @@
 -- written down rather than wired in. Two further routes (wa_mount_torment_south_ridge,
 -- wa_sherpa_peak_east_ridge) are arguable — each offers an alternate descent — and are left alone.
 
+-- REPLAY NOTE (2026-09-30): `gear` is jsonb (since 0001), so `array_replace(gear, …)` as first written
+-- raised and never ran; the Mount Index change was applied by hand in a jsonb-safe form instead. Each
+-- statement now does the same exact-element replace on the jsonb array, only on a row that holds that
+-- element (so a null list stays null). On 2026-09-30 wa_east_face_3 no longer holds its element: the
+-- row was re-researched to three single-rope rappels, and its gear agrees with that.
 update routes
-set gear = array_replace(gear, 'single 60m rope', 'two 60m ropes (the descent is 4 double-rope rappels)')
-where id = 'wa_east_face_3';
+set gear = to_jsonb(array_replace(array(select jsonb_array_elements_text(gear)), 'single 60m rope', 'two 60m ropes (the descent is 4 double-rope rappels)'))
+where id = 'wa_east_face_3' and gear ? 'single 60m rope';
 
 update routes
-set gear = array_replace(gear, 'single rope', 'two ropes (the descent needs double-rope rappels)')
-where id = 'wa_mount_index_north_face';
+set gear = to_jsonb(array_replace(array(select jsonb_array_elements_text(gear)), 'single rope', 'two ropes (the descent needs double-rope rappels)'))
+where id = 'wa_mount_index_north_face' and gear ? 'single rope';

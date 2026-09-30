@@ -63,9 +63,13 @@ lines.push("-- Apply AFTER 0001_areas_routes.sql. Order matters (parents before 
 lines.push("begin;");
 lines.push("");
 lines.push("-- areas");
-ordered.forEach(m => {
-  lines.push(`insert into areas (id,name,parent_id,area_type,region,lat,lng,elevation,avy_zone,blurb,source) values (` +
-    [q(m.id), q(m.name), q(m.parentId), q(m.areaType), q(m.region), num(m.lat), num(m.lng), num(m.elevation), q(m.avyZone), q(m.blurb), q("seed")].join(",") + `);`);
+// areas_root_must_be_country (0048): the seed's `world` node cannot be stored, so it is skipped and
+// its children (the countries) become the roots.
+ordered.filter(m => m.areaType !== "world").forEach(m => {
+  // areas.source was dropped in 0161 (coords_approx replaced it).
+  const parent = byId[m.parentId] && byId[m.parentId].areaType === "world" ? null : m.parentId;
+  lines.push(`insert into areas (id,name,parent_id,area_type,region,lat,lng,elevation,avy_zone,blurb) values (` +
+    [q(m.id), q(m.name), q(parent), q(m.areaType), q(m.region), num(m.lat), num(m.lng), num(m.elevation), q(m.avyZone), q(m.blurb)].join(",") + `);`);
 });
 lines.push("");
 lines.push("-- routes");
@@ -73,10 +77,11 @@ ROUTES.forEach(r => {
   const sys = gradeSystem(r.discipline);
   const gear = (r.cams || r.rack || r.gearTiers) ? { cams: r.cams, rack: r.rack, gearTiers: r.gearTiers } : null;
   const lenM = r.routeFt != null ? Math.round(r.routeFt * 0.3048) : null;
-  lines.push(`insert into routes (id,area_id,name,discipline,grade,grade_system,grade_num,pitches,length_m,sort_order,stars,aspect,season,description,gear,verif,source) values (` +
+  // routes.source was dropped in 0155.
+  lines.push(`insert into routes (id,area_id,name,discipline,grade,grade_system,grade_num,pitches,length_m,sort_order,stars,aspect,season,description,gear,verif) values (` +
     [q(r.id), q(r.mountainId), q(r.name), q(r.discipline), q(r.grade), q(sys), num(gradeNum(r.grade, sys)),
      num(r.pitches), num(lenM), num(r.sortOrder), num(avgStars(r)), q(r.aspect), q(r.season),
-     q(r.blurb || r.summary), json(gear), json(r.verif), q("seed")].join(",") + `);`);
+     q(r.blurb || r.summary), json(gear), json(r.verif)].join(",") + `);`);
 });
 lines.push("");
 lines.push("commit;");

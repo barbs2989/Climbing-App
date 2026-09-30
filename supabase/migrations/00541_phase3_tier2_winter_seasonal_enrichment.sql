@@ -44,6 +44,12 @@
 ALTER TABLE routes
 ADD COLUMN IF NOT EXISTS hazard_tags text[] DEFAULT '{}'::text[];
 
+-- REPLAY NOTE (2026-09-30): production records this version as applied. The column above is real
+-- schema and stays live. Everything below is the superseded data pass (see the header), which is
+-- not valid SQL (`... LIMIT 150` inside an UPDATE), so a fresh build failed here. It is kept as
+-- history inside one block comment so a Supabase preview branch replays past it.
+/*
+
 -- Step 2: Update routes with researched winter/seasonal hazards
 -- Agent 3 (Winter & Seasonal Route Variants): 12 routes, ~95-120 hazard entries
 
@@ -212,3 +218,4 @@ LIMIT 15;
 -- Coverage Improvement: 12.2% → ~14.1%
 -- Deployment Status: READY FOR PRODUCTION
 -- Verified: 2026-07-28
+*/
