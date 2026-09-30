@@ -28766,3 +28766,62 @@ Mountaineers, Peakbagger and AAC Publications via result snippets; WebFetch was 
 directly given prior batches' consistent `EGRESS_BLOCKED` results in this environment, so every
 finding above rests on WebSearch snippets, cross-checked across 2+ independent sources per claim,
 not fetched primary pages.
+
+## Batch 357 (2026-09-30) — pass 6
+
+Routes: `wa_northwest_mox_peak_standard`, `wa_northwest_ridge`, `wa_northwest_ridge_2`,
+`wa_nw_face_var_remsberg_variation`, `wa_nw_ridge_2`, `wa_old_guard_peak_east_side_route`,
+`wa_old_guard_peak_southwest_route`, `wa_old_snowy_mountain_r1`.
+
+**Fixed (3 routes, 3 UPDATE statements, all same-row internal-consistency syncs):**
+`wa_northwest_ridge`'s (Dorado Needle) `gain_ft`/`loss_ft` were 7000/7000 while its own
+`itinerary.days[]` sums and its own `itinerary.totalNote` ("~14 mi, ~6,400 ft total gain") both
+already said 6400 — corrected both to 6400. `wa_nw_face_var_remsberg_variation`'s (Liberty Bell,
+Remsberg Variation) short `descent` field said 2 single-rope rappels while its own `rappels`
+field (3) and `descent_text` (a downclimb, a single-rope rappel, then a double-rope-rated section
+done as two single-rope raps since this route's own `rope_type` is single with no second rope)
+already agreed on 3 — corrected `descent` to match. `wa_old_snowy_mountain_r1`'s (Old Snowy
+Mountain) `loss_ft` was 3100 on a same-trail car-to-car out-and-back (approach/descent text both
+confirm the descent reverses the ascent) while its own `gain_ft` (3600) and its own
+`itinerary.days[0].lossFt` (3600) already agreed with each other — corrected `loss_ft` to 3600.
+None of these three needed an external source: each outlier was contradicted by 2+ of its own
+row's sibling fields.
+
+**Flagged for human review (2):** `wa_northwest_ridge_2`'s (Boston Peak, the "Boston Marathon"
+ridge) own `corrections` field already discloses a July-vs-August 2018 FA date conflict between
+Mountain Project (July) and AAJ (August); two independent WebSearch queries against AAC
+Publications both returned August, but the primary AAC page itself came back `EGRESS_BLOCKED`
+and 5+ other fields (`fa`/`overview`/`beta`/`best_season`/`seasonal_guidance`) all assert July —
+fixing this needs coordinated multi-field edits, which isn't safe from snippet-only evidence.
+`wa_old_guard_peak_southwest_route`'s (Old Guard Peak, West Side/LeConte Glacier) `dist_km`
+(26.23 km) is several times smaller than both its own `itinerary.totalNote` ("~33-mile traverse")
+and its own `itinerary.days[].miles` sum (35 mi) — per CLAUDE.md's documented `dist_km`
+dual-convention warning, no replacement value could be asserted with confidence, so this is left
+for a human to decide which convention applies rather than normalized.
+
+**Clean (3):** `wa_northwest_mox_peak_standard` (Northwest Mox Peak) — FA (the Beckeys, June
+1941), elevation (8,407 ft, matches the area row), and gain/loss-vs-itinerary math all confirmed;
+`wa_nw_ridge_2` (Colchuck Balanced Rock) — elevation/FA/grade/permit details all externally
+confirmed; one soft `dist_km`-vs-approach-prose mismatch was noted but left alone per the same
+dual-convention guidance, not counted as a flag; `wa_old_guard_peak_east_side_route` (Old Guard
+Peak) — a sparse stub row; its elevation (8,260 ft, matching its sibling route) was confirmed via
+Peakbagger/ListsOfJohn DGPS-era sources over an outdated 8,240 ft legacy figure, and its two
+access-closure claims (a Suiattle Road washout, a Miner's Fire closure order) were both
+independently confirmed against fs.usda.gov alert pages naming the same trail segments and dates.
+
+`last_processed_id` advanced to `wa_old_snowy_mountain_r1`. Scope counts not re-run this batch
+(last known: 698 in-scope, 751 total, from batch 352); this batch's 8 candidates were confirmed
+on 'peak'-type areas via a direct `areas` lookup before auditing, same method as prior batches —
+one candidate in the surrounding id range (`wa_one_piece_at_a_time`, Cutthroat Wall) was excluded
+as a crag, not a peak. No `.env`/`.env.local` present at run start (fresh clone); read-only
+queries used the anon key supplied in the task prompt directly as shell env vars, run in parallel
+across 4 subagents (2 routes each) to keep this within a reasonable turnaround. `node_modules`
+was not installed in this environment (no `npm install` run), so `check:sql` could not be run
+against the fix file before committing — the three UPDATEs were instead hand-verified against
+live row values queried directly over REST immediately before writing them, and each carries a
+WHERE guard on the pre-fix value so it cannot silently no-op or double-apply. No service key used
+or needed — this run made no writes. WebSearch reached Wikipedia, Mountain Project, SummitPost,
+AAC Publications, Peakbagger, ListsOfJohn, countryhighpoints.com, WTA and fs.usda.gov via result
+snippets; WebFetch was not attempted directly given prior batches' consistent `EGRESS_BLOCKED`
+results in this environment, so every finding above rests on WebSearch snippets, cross-checked
+across 2+ independent sources per claim, not fetched primary pages.
