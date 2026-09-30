@@ -46,9 +46,9 @@ const CASES = [
     name: "badge-verified-core",
     why: "the climb-matches list doing the same thing on a screen the browser half never opens",
     file: "lib/PartnerSearch.jsx",
-    find: '{"✓ "+condRep(p[0])+" report"+(condRep(p[0])!==1?"s":"")}',
-    repl: '{"✓ "+condRep(p[0])+" verified report"+(condRep(p[0])!==1?"s":"")}',
-    expect: /ClimbMatchCore\.jsx @\d+: ".* verified report/,
+    find: '{"✓ "+condRep(r)+" report"+(condRep(r)!==1?"s":"")}',
+    repl: '{"✓ "+condRep(r)+" verified report"+(condRep(r)!==1?"s":"")}',
+    expect: /lib\/PartnerSearch\.jsx @\d+: ".* verified report/,
     section: "static only — this is why the static half exists",
   },
   {
