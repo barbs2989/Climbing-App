@@ -926,6 +926,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     only thing that gave it away.
   - Failures print a **locator** (the element's inline style), because in a codebase with no
     class names a failure without one sends you hunting through a 40,000-character line.
+  - **What it structurally cannot see: a drag that never reaches a scrollable pane.** Containment
+    governs only a pane that is itself scrolling, so a drag starting on a popup's header, its
+    backdrop, or a pane whose content fits went straight to the page behind — two scrolls from
+    one gesture (reported on "Log a climb", 2026-09-30). That half is not this guard's job; it is
+    the page lock in `lib/dialogA11y.js`, which pins `<body>` (`position:fixed; top:-scrollY`)
+    while any dialog **or any opaque full-viewport fixed layer** is open. Two traps it records:
+    `overflow:hidden` on `<html>` — all it used to do — is **ignored by iOS Safari for a touch
+    drag**, so it passed every desktop check and failed on the phone; and it keyed on
+    `role="dialog"`, which Edit profile, Guides and Calendar do not carry. Measuring it in the
+    extension's tab: a **hidden** tab never fires `requestAnimationFrame`, so the lock looks
+    broken until a screenshot brings the tab to the front.
   - Not in `npm run build` — browser automation, same reasoning as `check:ui`. It **does** run
     on every PR, via `.github/workflows/render-guards.yml`, and that is not decoration: it was
     hand-run only until 2026-08-09, by which point it had **already gone red on main** and

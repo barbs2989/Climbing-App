@@ -5,7 +5,11 @@
 -- The verified, corrected subset of this file's real content was salvaged into
 -- migration 0043_salvaged_batches_1-4_corrected.sql. Apply 0043 instead.
 -- See gear-audit-progress memory for the full incident writeup.
-
+--
+-- REPLAY NOTE (2026-09-30): production records 0033 as applied, but this file fails outright and
+-- never took effect in this form. The whole body is kept below as history inside one block
+-- comment, so a fresh build from the migrations (a Supabase preview branch) replays past it.
+/*
 -- Gear audit batch 4: 4 peaks / 37 routes
 -- Generated: 2026-07-16T04:21:17.549Z
 -- Research methodology: 7-source integration (guidebooks, guides, manufacturers, media, forums, terrain, weather)
@@ -422,3 +426,4 @@ UPDATE routes SET
 WHERE route_id = 'wa_kyes_peak_pride_glacier';
 
 COMMIT;
+*/

@@ -259,6 +259,39 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **80 commits, because the window must reach the ADDING commit.** #1239 was reverted 27
       commits later; a 12-commit window reports that exact history clean. Measured across nine
       12-commit windows of recent history: 0 findings, i.e. a short window is quiet *and blind*.
+- **`check:migration-replay`** asks whether `supabase/migrations/` rebuilds an **empty** database —
+  what a Supabase preview branch does on every migration PR since the GitHub integration went on
+  (2026-09-26) — and, with `--compare-live`, whether what it builds **is the live schema**.
+  Hand-run (~30s, PGlite WASM, no Docker), because it only matters for a change under `supabase/`.
+  - **The first PR that added a migration after the integration went on (#1992) failed "Supabase
+    Preview" in 13s, and the preview's logs are not reachable from a session.** This replay is how
+    the cause was found, and it was not one cause but five, each of which reads as fine on production
+    because production applied these files BY HAND, in its own order, around columns made in the SQL
+    editor: 13 numbers shared by 28 files (the tracking table's primary key refuses the second);
+    data files writing columns that never existed (`routes.updated_at`, `routes.state`, `route_id`)
+    or not SQL at all (`alpine_draws = [object Object]`); a grant naming a signature that never
+    existed, so **0037 never created `climb_logs`** and everything after it cascaded; catalog
+    inserts whose parents only an import creates; and two columns plus four indexes made by hand.
+    All repaired 2026-09-30, each with a `REPLAY NOTE` in the file saying what and why.
+  - **The duplicates were RENUMBERED, not grandfathered**, reversing `check:migrations`' original
+    call ("renumbering applied migrations churns history to no benefit"). The integration is the
+    benefit: a shared number went from a documentation problem to a hard failure. Each group became
+    NNNN0, NNNN1, … in filename order (5 digits, so the order holds under BOTH filename sort and
+    version-string sort); production's history was re-recorded to match. `check:migrations`,
+    `check:migration-claims` and `check:trust-breakdown` accept 4 or 5 digits; the baseline is empty.
+  - **`--compare-live` is the real claim.** A replay that succeeds into the WRONG schema is not a
+    rebuild. It diffs columns (with type and nullability), tables/views, functions, policies,
+    triggers and indexes. That is what caught `rack` coming out `jsonb` (0043 added it before 0050
+    could, the reverse of production's order) and 0134's duplicate `lists` index that production
+    had dropped. First clean run: 560/560 columns, 49/49 relations, 130/130 policies, 33/33 triggers,
+    136/136 indexes; the one difference was another session's `withdraw_inquiry()`, applied live
+    before its migration merged — which is exactly what "live only" is for.
+  - **What it cannot see:** it stands in for Supabase's `auth`/`storage` schemas, roles and realtime
+    publication with minimal copies, so a migration depending on a Supabase-internal object it lacks
+    fails here and not on a preview (fix the stand-in, not the migration). And it cannot see DATA:
+    catalog data files are no-ops on an empty database by design.
+  - **Injection cases (run 2026-09-30):** a migration writing a nonexistent column → FAILED at that
+    file; a second file taking an existing number → FAILED; the clean tree → pass.
 - **`check:migration-claims`** asks whether two **open PRs** claim the same migration
   number. `check:migrations` already refuses two files sharing a number in the checkout and
   runs inside `npm run build` — but it cannot see this failure, because when either PR is

@@ -71,6 +71,26 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   closure stated on all three rows and r2/lookout `dist_km` nulled, Glacier Peak Sitkum rewritten to the North Fork
   Sauk / Red Pass approach.
 
+## 6. Owner: "do what you recommend for all" (`deep/out/s4.json`, applied)
+- East Twin Needle -> Grade II, 5.7: the row is the Eye Col line, and 5.10a is the East Arête's grade.
+- King Kong: `fa` corrected (Johnson on the first ascent, Gleason on the free ascent), commitment IV — the first
+  ascensionist's accounts are the only record and nothing supported the old values; its `corrections` no longer
+  names a source.
+- Vanishing Point pins 1-2 removed (claimed 5,200/5,708 ft on ~3,330 ft ground); Cashmere's off-line camp pin
+  removed; La Bohn Gap pin moved 1.17 km to the mapped saddle; Abernathy `loss_ft` nulled (the North Creek line's).
+- Recommended and NOT applied (the permission classifier refused, so these are the owner's to run):
+  - `lib/outing.js` `itinTotalMi`: return null when fewer than half the days state miles. Measured by
+    `scripts/oneoff/route-leftovers/measure-partial-itinerary.mjs` — 3 of 526 WA itineraries leave a day blank and
+    the rule moves only Mount Seattle (3.2 km shown vs 30.58 km stated); Jack Mountain keeps its reading.
+  - Patches: King Kong crux 5.11d-5.12a (`research/held-v019.json`), Prusik West Ridge II-III (the Prusik entries
+    of `held-v021.json`), Eagle Rock "no pass at the FR6517 pull-off" (re-extract with `extract.mjs v007`, keep
+    only `wa_eagle_rock_scramble`). Apply with `node scripts/oneoff/route-tab-contradictions/apply.mjs <file>`.
+- Recommended to LEAVE: the five crag "no pass" claims resting only on fee law (a wrong "no pass" costs a
+  climber a ticket; a wrong "pass required" costs nothing), Spire `access.fees` (open product decision), Rock
+  Mountain aspect, Berdeen `loss_ft`, Cashmere base-pin move, Stuart North Ridge pins, Bald Eagle pins, Rimrock,
+  Witches Tower E/SE Face, and Clark waypoint 5 (USGS reads ~8,025 ft there, so the coordinate — not the 7,000 ft
+  rope-up height — is what is off; rewriting the height would make it claim the wrong thing).
+
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
   - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:

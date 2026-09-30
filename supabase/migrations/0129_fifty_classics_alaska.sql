@@ -25,16 +25,19 @@ begin;
 
 -- Parent is the St. Elias Range region, which holds no routes of its own, so the
 -- areas_leaf_xor trigger permits a child underneath it.
+-- REPLAY NOTE (2026-09-30): both inserts now select only rows whose parent area exists. Same rows
+-- wherever the catalog is loaded; on an empty database (a Supabase preview branch) they are skipped
+-- instead of raising in the areas trigger or the routes.area_id foreign key.
 insert into areas (id, name, area_type, parent_id, region, lat, lng, elevation_ft, source, blurb)
-values (
+select
   'ak_mount_saint_elias', 'Mount Saint Elias', 'crag', 'ak_st_elias_range', 'Alaska',
   60.29222, -140.93139, 18008, 'fifty-classics-roster',
   'A huge, heavily glaciated peak on the Alaska-Yukon border and one of the biggest vertical rises on earth, going from tidewater to over 18,000 ft in about ten miles. Objectively serious rather than technically hard, and climbed only rarely.'
-)
+ where exists (select 1 from areas where id = 'ak_st_elias_range')
 on conflict (id) do nothing;
 
 insert into routes (id, area_id, name, discipline, grade, alpine_grade, lists, classic, source, description)
-values
+select v.* from (values
   ('ak_mount_saint_elias_abruzzi_ridge', 'ak_mount_saint_elias', 'Abruzzi Ridge',
    'mountaineering', null, null, array['fifty_classics'], true, 'fifty-classics-roster',
    'The line of the 1897 first ascent of the peak, led by Luigi Amedeo, Duke of the Abruzzi. It is in the book as a piece of mountaineering history rather than as a route in condition: the approach beneath the northeast face is exposed to icefall, and glacial recession has made the access harder than it was, so repeats are very rare.'),
@@ -54,6 +57,8 @@ values
   ('ak_middle_triple_peak_east_buttress', 'ak_middle_triple_peak', 'East Buttress',
    'alpine', '5.9 A3', 'VI', array['fifty_classics'], true, 'fifty-classics-roster',
    'A big-wall line in the Kichatna Spires, a granite range whose weather keeps it far quieter than the Ruth. Grade VI, with aid climbing on a wall a long way from anywhere.')
+) as v(id, area_id, name, discipline, grade, alpine_grade, lists, classic, source, description)
+ where exists (select 1 from areas a where a.id = v.area_id)
 on conflict (id) do nothing;
 
 commit;

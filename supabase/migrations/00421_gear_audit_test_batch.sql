@@ -5,7 +5,12 @@
 -- The verified, corrected subset of this file's real content was salvaged into
 -- migration 0043_salvaged_batches_1-4_corrected.sql. Apply 0043 instead.
 -- See gear-audit-progress memory for the full incident writeup.
-
+--
+-- REPLAY NOTE (2026-09-30): production records 0042 as applied, but this file is not valid SQL
+-- (it contains the literal text `[object Object]`) and never took effect in this form. The whole
+-- body is kept below as history inside one block comment, so a fresh build from the migrations
+-- (a Supabase preview branch) replays past it.
+/*
 -- Gear audit batch 2: test batch (6 peaks) verified via workflow research
 
 update routes set
@@ -105,3 +110,4 @@ update routes set
   ascender = '',
   corrections = ''
 where id = 'north_ridge';
+*/

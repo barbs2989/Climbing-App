@@ -64,7 +64,13 @@
 -- `grade_num` stays NULL — a class rating is not on the sortable rock-grade ladder.
 -- Re-runnable: every statement is ON CONFLICT DO NOTHING.
 
-begin;
+-- REPLAY NOTE (2026-09-30): begin/commit became one DO block (atomic in the same way) that returns
+-- early when the catalog this file extends is not loaded — an empty database, i.e. a Supabase preview
+-- branch, where every insert below would raise in the areas trigger. Unchanged wherever it is loaded.
+do $replay$ begin
+if not exists (select 1 from areas where id = 'co_sangre_de_cristo_range') then
+  raise notice '0146: catalog not loaded (no area co_sangre_de_cristo_range), nothing to add'; return;
+end if;
 
 insert into areas (id, name, parent_id, area_type, elevation_ft, lat, lng, source) values
   ('co_crestone_peak',   'Crestone Peak',   'co_sangre_de_cristo_range', 'peak', 14299, 37.9669, -105.5854, 'fourteeners'),
@@ -80,7 +86,7 @@ insert into routes (id, area_id, name, discipline, grade, grade_system, source) 
   ('co_maroon_peak_south_ridge',       'co_maroon_peak',     'South Ridge',       'scrambling',     'Class 3', 'class', 'fourteeners')
 on conflict (id) do nothing;
 
-commit;
+end $replay$;
 
 -- Verify AFTER, as SEPARATE statements — a failing SELECT inside the transaction rolls the inserts
 -- back, which is how 0097's writes were undone:
