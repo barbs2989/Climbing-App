@@ -90,7 +90,7 @@ npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads o
 npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)
 npm run check:untracked-factors # a factor nobody has measured must not read as ZERO (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
-npm run check:preview-claims # a control that changes only CLIENT STATE must not claim a real outcome (in build)
+npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:match-percent # the match % blends what the screen SAYS it blends; no term may saturate it (in build)

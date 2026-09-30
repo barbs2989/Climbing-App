@@ -1,135 +1,99 @@
 #!/usr/bin/env node
-// check:preview-claims — a control that changes only CLIENT STATE must not report a real outcome.
+// check:preview-claims — no toast tells a climber they are using a PREVIEW, a DEMO or a SIMULATION.
 //
-// Nine controls told a climber that another person had been invited, approved, kudos'd or nudged,
-// or that an event was scheduled, while setting nothing but a useState. Every one of them is
-// reachable today: the two group-request cards render on Crew > Requests because DEMO_FILLERS is
-// on, and the other seven -- kudos, nudge, the two invite sheets, RSVP, event creation -- are
-// ordinary controls on real groups and real crews that simply have no write behind them.
+// OWNER DECISION, 2026-09-30: "Remove the toast popup about being in preview mode … Just make the
+// toast popups as if they are in the final app state for the users … make this the normal for the
+// whole app." Until then this guard enforced the OPPOSITE convention -- nine client-only controls
+// had to say "this preview doesn't send it to X yet", and the guard failed closed if the app used
+// "this preview" fewer than 8 times. That convention is retired, so the guard now forbids it.
 //
-// WHY IT IS A GUARD RATHER THAN A NOTE. The repair changes STRINGS AND NO IDENTIFIER, which
-// `audit:silent-reverts` says in its own closing caveat it cannot see: a stale-base squash would
-// restore all nine claims with every existing gate green. `check:claims` and `check:writes` are
-// both blind by construction -- they forbid a success message in front of a write that is
-// session-gated or whose failure is unobservable, and BOTH PRESUME A WRITE EXISTS. A toast in
-// front of no write at all passes both, which is the census-4 shape CLAUDE.md records for
-// "Remove friend".
+// WHAT IS STILL ALLOWED, and why the rule is narrow. A toast may still say a write FAILED
+// ("Couldn't save that — try again") and may still tell a SIGNED-OUT visitor that something stays on
+// this device until they sign in: both are true in the finished app. What it may not do is describe
+// the app itself as unfinished -- "this preview", "(simulated)", "Demo crew", "only for now".
 //
-// WHAT IT ASSERTS, and the shape is chosen so a REWORD passes and a REVERT fails: each control is
-// located by a distinctive fragment of its own handler -- not by its message -- and the toast
-// inside that handler must carry the app's existing preview vocabulary. The wording is free; the
-// admission is not.
+// HOW IT READS A TOAST. Every call to showToast / notify / toast / onToast / say in the app sources,
+// its argument read by STRING-AWARE paren balancing, never a character window: these files pack
+// whole screens onto one physical line of 20,000+ characters.
 //
-// THE VOCABULARY IS READ FROM THE APP, never restated here. Seventeen other toasts already say
-// this ("this preview doesn't send it to a moderator yet", "Kudos noted -- this preview doesn't
-// deliver it to X", "this preview doesn't deliver invites to example climbers"), so a list written
-// into this guard would be a second copy of a convention that already exists.
-//
-// WHAT IT DOES NOT CLAIM: that these features should stay unwritten. Each caveat is correct until
-// the feature gains a write; when one does, remove its entry here in the same change -- a stale
-// entry FAILS, so this cannot rot into a demand that a working feature apologise for itself.
+// THE JOIN-REQUESTS HEADING check is kept from the previous rule, because it is not about preview
+// wording: since 0178 the section lists real requests (which write) beside seed ones (which do
+// not), so the heading must state what the section holds rather than promise what approving does.
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const FILE = "ClimbMatch.jsx";
+const APP = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx",
+  ...fs.readdirSync(path.join(ROOT, "lib")).filter((f) => f.endsWith(".jsx")).map((f) => "lib/" + f)];
 let failures = 0;
 const ok = (m) => console.log("  ok    " + m);
 const fail = (m) => { failures++; console.log("  FAIL  " + m); };
 const dead = (m) => { console.error("\ncheck:preview-claims BROKEN — " + m + "\nReporting nothing is not a pass."); process.exit(2); };
 
-const src = fs.readFileSync(path.join(ROOT, FILE), "utf8");
+// Wording that describes the APP as unfinished. Deliberately not "on this device" -- that is the
+// true signed-out caveat -- and not "demo" alone, which is also a climbing word ("demo day").
+const PREVIEW_TALK = /\bthis preview\b|\bin preview\b|\bpreview mode\b|\bsimulat(ed|ion)\b|\(demo\)|\bdemo (crew|profile|mode|account)\b|\bleft the demo\b|\bonly for now\b|\b(isn|aren)[’']t live\b|\bswitched on yet\b|\bexample climbers?\b|\bnot (wired|hooked) up\b/i;
 
-// Anchors are fragments of the HANDLER, so rewording the message cannot make a control invisible.
-// Each must occur exactly once: these files pack whole screens onto one physical line, and an
-// anchor matching twice would silently check a control this guard was not aimed at.
-const CONTROLS = [
-  { what: "accepting a group invite",        anchor: 'rm();showToast("Joined "+cl.name' },
-  { what: "approving a join request",        anchor: 'rm();showToast("Approved' },
-  { what: "the group invite sheet",          anchor: 'o[cl.id]=cur.indexOf(c.id)>=0?cur:cur.concat([c.id]);return o;});showToast(' },
-  { what: "the event invite sheet",          anchor: 'ne.invited=(e.invited||[]).indexOf(c.id)>=0?e.invited:(e.invited||[]).concat([c.id]);return ne;});return o;});showToast(' },
-  { what: "RSVPing to an event",             anchor: 'toggle(true);showToast(' },
-  { what: "cancelling an RSVP",              anchor: 'toggle(false);showToast(' },
-  { what: "creating an event",               anchor: 'setOpenEvent({groupId:cid,id:seriesId});showToast(' },
-  { what: "kudos from the friends feed",     anchor: 'onKudos={it=>showToast(' },
-  { what: "nudging a crew member",           anchor: 'onNudge={(cid,nm,mid)=>{showToast(' },
-];
-
-// The convention, read from the app rather than restated. A control is honest if its message uses
-// wording the app ALREADY uses elsewhere for exactly this.
-const CAVEAT = /this preview|in this preview|on this device|simulated|isn’t live|isn't live|not saved/i;
-
-// Fail closed: the vocabulary has to exist in the app, or every assertion below passes vacuously
-// against a file that no longer says any of this.
-const vocabUses = (src.match(/this preview/g) || []).length;
-if (vocabUses < 8)
-  dead(`the app uses "this preview" only ${vocabUses} time(s). Either the convention was removed — ` +
-       `in which case this guard is asserting a convention that no longer exists — or the file could ` +
-       `not be read.`);
-
-console.log(`check:preview-claims — ${CONTROLS.length} client-only control(s); the app uses "this preview" ${vocabUses} times\n`);
-
-for (const c of CONTROLS) {
-  const n = src.split(c.anchor).length - 1;
-  if (n === 0)
-    { fail(`ANCHOR LOST for ${c.what}. Either the control was removed — drop this entry — or its ` +
-           `handler was rewritten, in which case this entry stopped asking its question and the ` +
-           `control is unchecked. Anchor: ${c.anchor.slice(0, 60)}`); continue; }
-  if (n > 1)
-    { fail(`the anchor for ${c.what} matches ${n} times, so this entry cannot say WHICH control it ` +
-           `checked. Narrow it. Anchor: ${c.anchor.slice(0, 60)}`); continue; }
-
-  // Read the showToast argument by balancing parens from the anchor, never a fixed window: a
-  // character budget encodes a guess about the size of the thing being read, and on a line of
-  // 20,000 characters that guess is wrong.
-  const at = src.indexOf(c.anchor) + c.anchor.length;
-  const from = src.lastIndexOf("showToast(", at) + "showToast(".length;
-  let depth = 1, j = from;
-  for (; j < src.length && depth; j++) {
-    if (src[j] === "(") depth++;
-    else if (src[j] === ")") depth--;
+const CALL = /\b(showToast|notify|toast|onToast|say)\s*\(/g;
+const argAt = (s, from) => {
+  let d = 1, i = from, q = null;
+  for (; i < s.length && d > 0; i++) {
+    const c = s[i];
+    if (q) { if (c === "\\") { i++; continue; } if (c === q) q = null; continue; }
+    if (c === '"' || c === "'" || c === "`") { q = c; continue; }
+    if (c === "(") d++; else if (c === ")") d--;
   }
-  if (depth) { fail(`could not read the message for ${c.what} — its showToast( never closes`); continue; }
-  const msg = src.slice(from, j - 1);
+  return d ? null : s.slice(from, i - 1);
+};
 
-  if (CAVEAT.test(msg)) ok(`${c.what} says what the preview does not do`);
-  else fail(`${c.what} reports a real outcome and this preview produces none. Its handler sets ` +
-            `client state only — no write — so nobody is told and nothing survives a reload. Use the ` +
-            `wording the app already uses seventeen times over ("this preview doesn’t …", "on this ` +
-            `device"). Message: ${msg.slice(0, 110)}`);
+const perFile = {};
+let calls = 0;
+let mainSrc = "";
+for (const rel of APP) {
+  const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
+  if (rel === "ClimbMatch.jsx") mainSrc = src;
+  let m, n = 0;
+  CALL.lastIndex = 0;
+  while ((m = CALL.exec(src))) {
+    const arg = argAt(src, m.index + m[0].length);
+    if (arg === null || !arg.trim()) continue;
+    n++;
+    const hit = arg.match(PREVIEW_TALK);
+    if (hit) {
+      const line = src.slice(0, m.index).split("\n").length;
+      fail(`${rel}:${line} tells the climber the app is a preview ("${hit[0]}"). Write the toast as the ` +
+           `finished app would say it. Message: ${arg.replace(/\s+/g, " ").slice(0, 140)}`);
+    }
+  }
+  perFile[rel] = n;
+  calls += n;
 }
 
-// THE SECTION HEADING IS ON SCREEN THE WHOLE TIME rather than for 2.6 seconds — a moderator reads
-// it BEFORE tapping Approve — so it was held to the same standard as the toast beneath it.
-//
-// SINCE 0178 THE SECTION HOLDS TWO KINDS OF ROW AT ONCE and one sentence cannot describe both.
-// Approving a REAL request now writes (`approveGroupMember`, pending -> active); approving a SEED
-// one still only sets client state, and DEMO_FILLERS is on, so both are listed together. The old
-// heading — "Approving adds them on this device — this preview doesn't tell them or the group" —
-// became false for half the rows the day the write landed, and the caveat moved to the CARD, which
-// is the only level that knows which kind of row it is.
-//
-// So the rule is no longer "carry the caveat" but "make no claim about what approving DOES".
-// Stating what the section HOLDS is always true; promising an outcome is true for only one kind.
+// Fail closed: a traversal that found almost no toasts prints the same clean line as a clean app.
+if ((perFile["ClimbMatch.jsx"] || 0) < 150 || calls < 200)
+  dead(`read only ${calls} toast call(s) (${perFile["ClimbMatch.jsx"] || 0} in ClimbMatch.jsx). The app ` +
+       `has ~290; either the toast function was renamed or the files could not be read.`);
+
+console.log(`check:preview-claims — ${calls} toast call(s) across ${APP.length} file(s)\n`);
+if (!failures) ok("no toast describes the app as a preview, a demo or a simulation");
+
 const HEADING = "Climbers asking to join a group you moderate";
 const CLAIMS_AN_OUTCOME = /\b(approv\w*|accept\w*)\b[^"]*\b(adds?|joins?|tells?|notif\w*)\b/i;
-const hAt = src.indexOf(HEADING);
+const hAt = mainSrc.indexOf(HEADING);
 if (hAt < 0) fail(`ANCHOR LOST: the join-requests section heading is gone, so its claim went unchecked`);
 else {
-  const line = src.slice(hAt, src.indexOf('"', hAt + HEADING.length + 1) + 1);
+  const line = mainSrc.slice(hAt, mainSrc.indexOf('"', hAt + HEADING.length + 1) + 1);
   if (!CLAIMS_AN_OUTCOME.test(line)) ok("the join-requests section heading states what the section holds, and claims no outcome");
-  else if (CAVEAT.test(line)) ok("the join-requests section heading says approving is device-local");
   else fail(`the join-requests section heading promises an outcome of approving, and the section ` +
-            `now lists BOTH real requests (which write) and seed ones (which do not), so one ` +
-            `sentence cannot be true of both — say what the section holds and let each card ` +
-            `speak for itself: ${line.slice(0, 130)}`);
+            `lists BOTH real requests (which write) and seed ones (which do not), so one sentence ` +
+            `cannot be true of both — say what the section holds: ${line.slice(0, 130)}`);
 }
 
 if (failures) {
-  console.error(`\ncheck:preview-claims FAILED — ${failures} control(s) claim more than the app does.\n`);
+  console.error(`\ncheck:preview-claims FAILED — ${failures} problem(s).\n`);
   process.exit(1);
 }
-console.log(`\nok — every client-only control says what this preview does not do.\n`);
+console.log(`\nok — every toast reads as the finished app.\n`);
 
-// Injection cases: scripts/oneoff/inject-preview-claim-cases.mjs (4/4).
+// Injection cases: scripts/oneoff/inject-preview-claim-cases.mjs
