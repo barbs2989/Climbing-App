@@ -179,6 +179,44 @@
      "replace": "loose scree and talus below the southwest-ridge notch bring rockfall and twisted-ankle risk, and the narrowing Class 3 gully and loose Class 3-4 boulders below the summit are genuinely exposed;"
     }
    ]
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "fact": "Round-trip distance: itinerary/approach 10 mi vs partner_requirements 11-13 mi",
+   "verdict": "fixed",
+   "correct_value": "About 10 mi round trip from the Merritt Lake Trailhead",
+   "evidence": "The club route page for Howard and Mastiff gives Mastiff alone, from and back to the Merritt Lake trailhead, as 10 mi round trip (13 mi for the two-peak loop), and a 2021 trip report on the Merritt Lake / Nason Ridge boot-path line recorded 9.5 mi by GPS. The row's itinerary, approach and totalNote already say 10 mi and the summit waypoint sits at 4.5 mi one way; only partner_requirements says 11-13 mi, which matches the longer Lost Lake / NE-ridge variant (~11 mi) or the two-peak loop, not this route. (Both sources give less gain than the row's 4,900 ft - 3,330 and 3,670 ft - but they do not agree with each other, so gain is not changed.)",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-06-08-0963176949"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_mastiff_south_route",
+     "fact": "Round-trip distance: itinerary/approach 10 mi vs partner_requirements 11-13 mi",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~11-13 miles round trip",
+     "replace": "~10 miles round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "fact": "Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Both lines exist, so this needs an owner choice of which one the row describes rather than a value fix. A 2021 trip report follows the Merritt Lake Trail onto the Nason Ridge Trail, forks right onto a long forest climb and then a ~1/4-mile ridge scramble - the waypoint / approach_variants line. Route descriptions for the Howard-Mastiff pair instead reach Crescent Lake along the Nason Ridge Trail and climb scree from the head of the basin to the Howard-Mastiff ridge, then follow the crest to Mastiff - the beta / itinerary / descent_text line (and a ski guide uses a third line via Lost Lake and the NE ridge). The row mixes them: its descent reverses a gendarme bypass on the southeast ridge yet drops into the Crescent basin and walks ~3.5 mi east. Rewriting either half means new prose and new timings no source gives for this row, so it is left flagged.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-06-08-0963176949",
+    "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+    "https://wenatcheeoutdoors.org/2016/06/30/mastiff-mountain-via-merritt-lake/"
+   ],
+   "patches": []
   }
  ]
 }

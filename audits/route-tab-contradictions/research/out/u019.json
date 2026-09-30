@@ -136,129 +136,14 @@
   {
    "id": "wa_mount_challenger_challenger_glacier",
    "fact": "crux rock grade",
-   "verdict": "fixed",
+   "verdict": "unresolved",
    "correct_value": "5.5 (one ~50 ft summit pitch)",
-   "evidence": "Two independent sources grade the summit rock at 5.5: the route database gives the final summit as one pitch of 5.5 with fixed protection, and a full north-to-south Pickets traverse report lists Challenger as a class 2 glacier with 50 ft of 5.5 rock to the summit. Some other trip reports call it 5.6 or mention a 5.7 move, but no two of those agree. The row's rock_grade, pitch_detail, itinerary and partner_requirements already say 5.5; the 5.6-5.7 and 5.5-5.7 copies in grade, gear, hazards, rack, pro_needs, pro_tips, approach, descent, the summit waypoint note, the approach baseFinding and climbing_route are brought to 5.5. grade_num is derived and not touched.",
+   "evidence": "[Held: sources split 5.5 / 5.6 / 5.7.] Two independent sources grade the summit rock at 5.5: the route database gives the final summit as one pitch of 5.5 with fixed protection, and a full north-to-south Pickets traverse report lists Challenger as a class 2 glacier with 50 ft of 5.5 rock to the summit. Some other trip reports call it 5.6 or mention a 5.7 move, but no two of those agree. The row's rock_grade, pitch_detail, itinerary and partner_requirements already say 5.5; the 5.6-5.7 and 5.5-5.7 copies in grade, gear, hazards, rack, pro_needs, pro_tips, approach, descent, the summit waypoint note, the approach baseFinding and climbing_route are brought to 5.5. grade_num is derived and not touched.",
    "sources": [
     "https://www.mountainproject.com/route/112031867/challenger-glacier",
     "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/"
    ],
-   "patches": [
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "grade",
-     "path": [],
-     "find": "Glacier, 5.6-5.7",
-     "replace": "Glacier, 5.5"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "gear",
-     "path": [
-      4
-     ],
-     "find": "for the 5.6-5.7 summit block",
-     "replace": "for the 5.5 summit block"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "hazards",
-     "path": [
-      2
-     ],
-     "find": "loose 5.6-5.7 summit block",
-     "replace": "loose 5.5 summit block"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "waypoints",
-     "path": [
-      7,
-      "note"
-     ],
-     "find": "a short 5.6-5.7 pitch",
-     "replace": "a short 5.5 pitch"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "detailed_rack",
-     "path": [],
-     "find": "the short 5.6-5.7 summit pitch",
-     "replace": "the short 5.5 summit pitch"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "pro_tips",
-     "path": [
-      4
-     ],
-     "find": "The crux 5.5-5.7 summit pitch",
-     "replace": "The crux 5.5 summit pitch"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "pro_needs",
-     "path": [],
-     "find": "one short pitch (5.6-5.7)",
-     "replace": "one short pitch (5.5)"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "approach",
-     "path": [],
-     "find": "well-protected 5.5-5.7 rock pitch",
-     "replace": "well-protected 5.5 rock pitch"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "descent_text",
-     "path": [],
-     "find": "the short 5.5-5.7 summit pitch",
-     "replace": "the short 5.5 summit pitch"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "replace_text",
-     "column": "approach_variants",
-     "path": [
-      0,
-      "baseFinding"
-     ],
-     "find": "well-protected 5.5-5.7 pitch",
-     "replace": "well-protected 5.5 pitch"
-    },
-    {
-     "id": "wa_mount_challenger_challenger_glacier",
-     "fact": "crux rock grade",
-     "op": "set",
-     "column": "climbing_route",
-     "path": [
-      3,
-      "class"
-     ],
-     "expect": "5.5-5.7",
-     "value": "5.5"
-    }
-   ]
+   "patches": []
   }
  ]
 }

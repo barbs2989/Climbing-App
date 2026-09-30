@@ -110,6 +110,44 @@
     "https://alpinist.com/newswire/massive-ridge-climbed-in-north-cascades/"
    ],
    "patches": []
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "fact": "trailhead elevation: waypoint elev/elevFt 4,500 vs approach '~4,800 ft' and trailheadDirection '~4,860 ft' for the Rainy Pass trailhead",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "4,875 ft",
+   "evidence": "The approach starts at the Rainy Pass trailhead ('large paved lot at ~4,800 ft') and approach_logistics.trailheadDirection gives ~4,860 ft, but the Trailhead waypoint on pin 48.5181, -120.7331 says 4,500 ft in both elev and elevFt. The USGS elevation service gives 4,878 ft of ground at that pin and the encyclopedia entry for Rainy Pass gives 4,875 ft, so both copies are set to 4,875. The waypoint's note ('a separate, slightly lower trailhead ~1 mi east of Rainy Pass') does not fit its own pin; pin placement is out of scope and is left for the trailhead audit.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.7331&y=48.5181&units=Feet&wkid=4326",
+    "https://en.wikipedia.org/wiki/Rainy_Pass"
+   ],
+   "patches": [
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "trailhead elevation: waypoint elev/elevFt 4,500 vs approach '~4,800 ft' and trailheadDirection '~4,860 ft' for the Rainy Pass trailhead",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4500,
+     "value": 4875
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "trailhead elevation: waypoint elev/elevFt 4,500 vs approach '~4,800 ft' and trailheadDirection '~4,860 ft' for the Rainy Pass trailhead",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 4500,
+     "value": 4875
+    }
+   ]
   }
  ]
 }
