@@ -1,7 +1,7 @@
 -- Clear five drawn lines that follow the WRONG approach (research round 2, 2026-09-30); the map then shows
 -- the corrected pins only, as audits/route-leftovers did with clear_line. Old lines: gpx-cleared-backup-2026-09-30.json.
 -- Each UPDATE matches only while the row still holds that exact line (length + first + last point), so a re-run
--- changes nothing. Expected row counts: 1, 1, 1, 1, 1.
+-- changes nothing. Expected row counts: 1, 1, 1, 1, 1. Run by the owner 2026-09-30; re-read live: all five gpx null.
 begin;
 
 -- 1. wa_beckey_tate: recorded track to Kangaroo Pass; the route cuts east to the Big Kangaroo-Half Moon ridge and never goes to the pass.

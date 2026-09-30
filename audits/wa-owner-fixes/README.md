@@ -73,7 +73,7 @@ a mileage whose starting pin moved, and that no source states, is now null rathe
   first trip map's point, west of Art's Knoll; the second map marks the same long ramp 318 m along it. Height
   6,900 → 6,339 (the ground; the route passes the ledge at ~6,200–6,400 ft).
 
-## For the owner to run: `owner-gpx-clear.sql`
+## Run by the owner 2026-09-30: `owner-gpx-clear.sql` (re-read live: all five lines cleared)
 Five drawn lines follow the wrong approach, and no published track exists for the right ones, so clearing them
 (the map then shows the corrected pins only) is the fix. `gpx` is outside the apply guard. `check:sql` passed and
 a read-only copy of the five WHERE clauses matched exactly 5 rows; old lines in `gpx-cleared-backup-2026-09-30.json`.
