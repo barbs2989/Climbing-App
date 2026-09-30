@@ -34,6 +34,12 @@
 //      and the route map as a bare ⤤/⤢ square with no name. (b) The ✕ drawn inside a chip that is
 //      itself the button — a <span> holding only ✕/× — must be styled POP_CHIP_X (a small ring in
 //      the same edge and fill), not a bare faded glyph. Floor: 3 POP_CHIP_X uses.
+//   6. Added 2026-09-30, "the cancel button and ok are too close together" (Remove crew) and "the x
+//      on proposed day is too close to Evening". (a) No window.confirm( in the app: the browser
+//      draws its Cancel/OK, side by side, and we cannot space them. Use askConfirm from
+//      lib/ConfirmSheet.jsx (stacked, full width, 14px apart). (b) No POP_REMOVE / _MEDIA given a
+//      NEGATIVE margin through Object.assign: the day chip's ✕ had margin "-6px -6px -6px 0", which
+//      pulled its 32px hit area to ~1px above the Evening button.
 //
 // Fails closed: fewer than 45 POP_CLOSE / 30 POP_BACK / 18 POP_REMOVE / 3 POP_CHIP_X uses means the scan is not reading the app
 // (see the counts it prints), and that must never read as a clean pass.
@@ -113,6 +119,12 @@ for (const rel of files) {
     else bad.push(`${rel}:${lineOf(m.index)}  a ✕ inside a chip is not styled POP_CHIP_X`);
   }
   while ((m = bareArrow.exec(src))) bad.push(`${rel}:${lineOf(m.index)}  a clickable "←" that is not a <button> — use <button style={POP_BACK}>← Back</button>`);
+  // Rule 6: a destructive confirm is askConfirm (lib/ConfirmSheet.jsx), never the browser's own.
+  const nativeConfirm = /\bwindow\.confirm\s*\(/g;
+  while ((m = nativeConfirm.exec(src))) bad.push(`${rel}:${lineOf(m.index)}  window.confirm — its Cancel/OK sit side by side where a thumb hits the wrong one; use askConfirm from lib/ConfirmSheet.jsx`);
+  // ...and a remove ✕ keeps its own footprint: a negative margin drags its 32px hit area onto a neighbour.
+  const pulledRemove = /Object\.assign\(\s*\{\s*\}\s*,\s*POP_REMOVE(?:_MEDIA)?\s*,\s*\{[^}]*\bmargin\s*:\s*"[^"]*-\d/g;
+  while ((m = pulledRemove.exec(src))) bad.push(`${rel}:${lineOf(m.index)}  a POP_REMOVE ✕ with a NEGATIVE margin — its hit area overlaps the control beside it`);
 }
 
 console.log(`check:popup-chrome — read ${files.length} file(s): ${closeUses} POP_CLOSE, ${backUses} POP_BACK, ${removeUses} POP_REMOVE, ${chipXUses} POP_CHIP_X`);

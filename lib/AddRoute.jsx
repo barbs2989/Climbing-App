@@ -243,7 +243,7 @@ export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,s
       <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:6}}>
         <div style={{fontSize:11.5,fontWeight:800,color:C.textMuted,letterSpacing:0.3}}>{"PITCH "+(i+1)}</div>
         <div style={{flex:1}}/>
-        <button onClick={function(){removePitchRow(i);}} aria-label={"Remove pitch "+(i+1)} style={{background:"none",border:"none",color:C.red,fontSize:12.5,fontWeight:700,padding:"2px 4px",cursor:"pointer"}}>{"Remove"}</button>
+        <button onClick={function(){removePitchRow(i);}} aria-label={"Remove pitch "+(i+1)} style={{background:"none",border:"none",color:C.red,fontSize:12.5,fontWeight:700,padding:"8px 10px",margin:"-6px -10px -6px 0",cursor:"pointer"}}>{"Remove"}</button>
       </div>
       <div style={{display:"flex",gap:8}}>
         <input aria-label={"Pitch "+(i+1)+" label"} value={r.pitch} onChange={function(e){setPitchAt(i,"pitch",e.target.value);}} placeholder="P1, or “Trailhead to meadows”" style={Object.assign({},fld,{flex:2})}/>

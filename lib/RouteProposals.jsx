@@ -150,7 +150,7 @@ export function RouteProposalQueue() {
                   aria-label="Why this proposal is rejected"
                   placeholder="Why? (optional, kept on the record)"
                   style={{ width: "100%", background: C.surface, color: C.text, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 9px", fontSize: 12.5, fontFamily: "inherit", resize: "vertical" }} />
-                <div style={{ display: "flex", gap: 7, marginTop: 7 }}>
+                <div style={{ display: "flex", gap: 12, marginTop: 7 }}>
                   <button onClick={() => doReject(r.id)} disabled={busy}
                     style={{ flex: 1, padding: 9, background: busy ? C.surface : C.redBg, color: C.red, border: "1px solid " + C.red, borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>
                     {busy ? "Working…" : "Confirm reject"}
@@ -161,7 +161,7 @@ export function RouteProposalQueue() {
                   </button>
                 </div>
               </div>
-            : <div style={{ display: "flex", gap: 7, marginTop: 9 }}>
+            : <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
                 <button onClick={() => doApprove(r)} disabled={busy}
                   style={{ flex: 2, padding: 9, background: busy ? C.surface : C.blueSolid, color: busy ? C.textMuted : "#fff", border: busy ? "1px solid " + C.border : "none", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer" }}>
                   {busy ? "Working…" : "Approve — file this climb"}

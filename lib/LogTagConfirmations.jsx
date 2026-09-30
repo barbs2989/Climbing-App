@@ -42,7 +42,7 @@ export default function LogTagConfirmations({ uid, showToast }) {
         return (
           <div key={t.log_id} style={{ borderTop: i ? `1px solid ${C.borderLight}` : "none", padding: "8px 0" }}>
             <div style={{ fontSize: 13.5, color: C.text, lineHeight: 1.45 }}><b>{who}</b>{" logged " + what + (t.date_climbed ? " on " + dayOf(t.date_climbed) : "") + (t.tick_type ? " · " + t.tick_type : "")}</div>
-            <div style={{ display: "flex", gap: 8, marginTop: 7 }}>
+            <div style={{ display: "flex", gap: 12, marginTop: 7 }}>
               <button disabled={busy === t.log_id} onClick={() => answer(t, "confirmed")} aria-label={"Confirm you climbed " + what + " with " + who} style={{ flex: 1, padding: "8px 10px", borderRadius: 10, border: "none", background: C.greenChip, color: C.green, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>I was there</button>
               <button disabled={busy === t.log_id} onClick={() => answer(t, "denied")} aria-label={"Say you did not climb " + what + " with " + who} style={{ flex: 1, padding: "8px 10px", borderRadius: 10, border: `1px solid ${C.border}`, background: C.surface, color: C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Wasn’t me</button>
             </div>

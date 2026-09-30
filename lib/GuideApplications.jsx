@@ -112,7 +112,7 @@ function CredentialRow({ cred, notify, refresh }) {
           <textarea aria-label="Why this credential was rejected" value={reason} onChange={(e) => setReason(e.target.value)} rows={2}
             placeholder="The guide sees this. Say what was wrong and what would fix it."
             style={{ width: "100%", padding: "7px 9px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 12.5, boxSizing: "border-box", fontFamily: "inherit", resize: "vertical" }} />
-          <div style={{ display: "flex", gap: 6 }}>
+          <div style={{ display: "flex", gap: 12 }}>
             <button disabled={busy || !reason.trim()} onClick={() => send("rejected")}
               style={{ padding: "6px 11px", borderRadius: 8, border: "1px solid " + C.red + "55", background: C.redBg, color: reason.trim() ? C.red : C.textMuted, fontSize: 12.5, fontWeight: 700, cursor: reason.trim() ? "pointer" : "default" }}>
               {busy ? "Working…" : "Confirm rejection"}
@@ -121,7 +121,7 @@ function CredentialRow({ cred, notify, refresh }) {
           </div>
         </div>
       ) : (
-        <div style={{ display: "flex", gap: 6, marginTop: 7 }}>
+        <div style={{ display: "flex", gap: 12, marginTop: 7 }}>
           <button onClick={() => setMode("verify")} style={{ padding: "6px 11px", borderRadius: 8, border: "1px solid " + C.green + "55", background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Verify</button>
           <button onClick={() => setMode("reject")} style={{ padding: "6px 11px", borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>Reject</button>
         </div>
@@ -198,7 +198,7 @@ export function GuideApplicationQueue({ notify, onViewProfile }) {
                 <textarea aria-label="Why this application was rejected" value={reason} onChange={(e) => setReason(e.target.value)} rows={2}
                   placeholder="The guide sees this."
                   style={{ width: "100%", padding: "7px 9px", borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 12.5, boxSizing: "border-box", fontFamily: "inherit", resize: "vertical" }} />
-                <div style={{ display: "flex", gap: 6 }}>
+                <div style={{ display: "flex", gap: 12 }}>
                   <button disabled={busy === g.id || !reason.trim()} onClick={() => setStatus(g, "rejected")}
                     style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.red + "55", background: C.redBg, color: reason.trim() ? C.red : C.textMuted, fontSize: 12.5, fontWeight: 700, cursor: reason.trim() ? "pointer" : "default" }}>
                     {busy === g.id ? "Working…" : "Confirm rejection"}
@@ -207,7 +207,7 @@ export function GuideApplicationQueue({ notify, onViewProfile }) {
                 </div>
               </div>
             ) : (
-              <div style={{ display: "flex", gap: 7, marginTop: 9, flexWrap: "wrap" }}>
+              <div style={{ display: "flex", gap: 12, marginTop: 9, flexWrap: "wrap" }}>
                 <button disabled={busy === g.id || missing.length > 0} onClick={() => setStatus(g, "active")}
                   style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + (missing.length ? C.border : C.green + "55"), background: missing.length ? C.surface : C.greenBg, color: missing.length ? C.textMuted : C.green, fontSize: 12.5, fontWeight: 700, cursor: missing.length ? "default" : "pointer" }}>
                   {busy === g.id ? "Working…" : "List this guide"}
