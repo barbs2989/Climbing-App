@@ -1,0 +1,165 @@
+{
+ "file": "u011",
+ "results": [
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "total one-way/round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The live row now starts at the North Fork Sauk trailhead (waypoint 0, itinerary 21 mi each way) while the approach prose and the waypoint distMi values (Kennedy Ridge junction 7.7, Glacier Creek 9.7) still carry the White Chuck mileages. The Forest Service trail page confirms only that the Kennedy Ridge Trail meets the PCT 0.25 mi north of Kennedy Creek and that trails 643/639 are inaccessible since 2003; no source found gives North Fork Sauk to Glacier Creek mileage or settles the White Chuck 4-mile vs ~6-mile figure. No patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/kennedy-ridge-trail-639",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2000070311"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "fact": "summit-day descent line (Sitkum vs Frostbite Ridge/Vista Glacier)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The itinerary's summit day descends Frostbite Ridge and the Vista Glacier",
+   "evidence": "Four rendered fields (descent, descent_text, itinerary day 2 note and its schedule) all describe the descent via Frostbite Ridge past the Rabbit Ears and down the Vista Glacier to the lower Kennedy Glacier; only the day-2 title and its copy in timing.sectionBreakdown[1] (fromTo and note) say Sitkum Glacier/Boulder Basin, which would not return the party to its Kennedy Creek camp. The long-standing Kennedy Glacier route page gives the usual descent as past the Rabbit Ears, up onto Frostbite Ridge and down the Vista Glacier to the lower Kennedy Glacier.",
+   "sources": [
+    "https://www.summitpost.org/kennedy-glacier/158306"
+   ],
+   "patches": [
+    {
+     "id": "wa_glacier_peak_kennedy_glacier",
+     "fact": "summit-day descent line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "title"
+     ],
+     "find": "descend via Sitkum",
+     "replace": "descend via Frostbite Ridge"
+    },
+    {
+     "id": "wa_glacier_peak_kennedy_glacier",
+     "fact": "summit-day descent line",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "fromTo"
+     ],
+     "find": "descend via Sitkum",
+     "replace": "descend via Frostbite Ridge"
+    },
+    {
+     "id": "wa_glacier_peak_kennedy_glacier",
+     "fact": "summit-day descent line",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "then descend the Sitkum Glacier and Boulder Basin, traversing back over to Sitkum/Kenned…",
+     "replace": "then descend via Frostbite Ridge and the Vista Glacier back down to the lower Kennedy Glacier, regaining camp in the evening."
+    }
+   ]
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "total gain/loss: gain_ft vs itinerary vs approach prose",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry searches found no additional Grotto Mountain (WA) report stating a car-to-car gain; results are dominated by Grotto Mountain in Alberta. The peak's 5,618 ft height and 836 ft prominence are confirmed, and the two known reports still give only the 3,480 ft start and ~2,138 ft net rise with small intermediate drops. 2,138 ft is a floor; 3,400 and '3,900 ft one-way' remain unsupported but no sourced total exists to replace them.",
+   "sources": [
+    "https://www.peakbagger.com/peak.aspx?pid=34254",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002030201"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "trailhead waypoint coordinates are geometrically impossible for this route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: the trailhead pin sits ~3.6 mi from the summit against a 2.4 mi one-way route. Pin coordinates are out of scope for this pass, so no patch.",
+   "sources": [
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No further account of the summit line was found beyond the 2002 and 2025 reports, which took different lines (col between summit block and eastern knob vs the bouldered east summit from the north ridge). Which line the row presents is unsettled.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314",
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Round-trip / total hiking distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Recent trip-report pages mostly repeat the hike-page stats (7.5 mi RT, 4,900 ft), and one gives 5.5 mi / ~3,300 ft for a walk from the Barclay Lake trailhead; GPS-tracked reports remain at ~5.4-5.5 mi. The spread is unchanged, so no single figure has independent agreement.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-06-03.214234535360",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-09.093527135496",
+    "https://www.alltrails.com/trail/us/washington/gunn-peak-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Total elevation gain (gain_ft/loss_ft 4,700 vs itinerary gainFt/lossFt and totalNote 4,900)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "4,900 ft appears only as the hike-page statistic (repeated on report pages that display it), 4,700 ft in one two-day report, and other reports give 3,300-4,380 ft. No two independent sources agree.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-11-10.102301319582",
+    "https://www.komoot.com/smarttour/e1303689028/gunn-peak-trail"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_blood_sport",
+   "fact": "Elevation gain for the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's database page puts it on an isolated crag low near the base of Guye's South Rib, but its coordinate (47.44195,-121.40882) is on ground at ~5,150 ft (USGS), essentially the summit, so it is an area placeholder, not the crag. The Alpental lot is ~3,127 ft; the row's crag pin is on ~4,227 ft ground while its elev says 3,400. The row's own baseFinding also says the crag is seen from the Summit West lots, not Alpental. No source gives the crag's height, so gain_ft cannot be set.",
+   "sources": [
+    "https://www.mountainproject.com/route/112214146/blood-sport",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.40882&y=47.44195&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_guye_peak_improbable_traverse",
+   "fact": "Total car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A long-standing route page gives 4-5 hours on the face, 1.5-2 hours down the Cave Ridge trail and a few minutes back to the car (about 6-7.5 hours plus the approach), which supports timing.totalHrs 7; the row's itinerary prose instead says 5-7 hours on route plus 2.5-4 hours of descent, ~8 hours for a fast pair. Other reports are epics (14.5 and 16 hours). Only one source gives a typical figure, so neither side can be set.",
+   "sources": [
+    "https://www.summitpost.org/improbable-traverse/162420",
+    "https://www.summitpost.org/guye-peak-improbable-traverse-5-8/643498",
+    "https://cascadeclimbers.com/forum/topic/99886-tr-guye-peak-the-very-probable-direct-improbable-traverse-8302016/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_guye_peak_r1",
+   "fact": "Location, grade and structure of the route's crux",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Unchanged: the row mixes the West Face scramble (beta, itinerary) with the Improbable Traverse (rock_grade, pitch_detail, fa), which has its own row. Deciding which route this row is is an owner decision, not a researchable fact.",
+   "sources": [
+    "https://www.mountaineers.org/activities/activities/basic-alpine-climb-guye-peak-west-face-96",
+    "https://www.mountainproject.com/route/107316713/improbable-traverse"
+   ],
+   "patches": []
+  }
+ ]
+}

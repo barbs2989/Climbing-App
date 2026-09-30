@@ -203,6 +203,102 @@
      "replace": "crossing the Chiwawa River about three miles up the trail"
     }
    ]
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "verdict": "confirmed",
+   "summary": "Perfection Lake was pinned about a kilometre west of the real lake and now sits on it at its mapped height; the two pins on Cannon's north side, a camp basin and a 'base of south slopes' that this Snow Lakes route never visits, are removed.",
+   "evidence": "Pin 2 (Perfection Lake, 7,556 ft) sat at 47.47762,-120.81342, 1.2 km west of the lake near Hildr Tarn; the federal names record for Perfection Lake (GNIS 1524335, as carried in the public knowledge base) puts it at 47.47986,-120.79735, elevation 2,164 m, and OpenStreetMap's lake is at 47.48021,-120.79714 (40 m apart); ground 7,100 ft at the new point, matching 2,164 m, so elev and elevFt become 7,100. Pins 0 ('Basin below Cannon', Campsite 6,200 ft) and 1 ('Base of south slopes', 6,800 ft) sit at 47.512,-120.795 and 47.507,-120.800, north-northeast of the summit (mapped peak 47.50271,-120.80238), on ground at 7,638 and 7,721 ft - the far side of the mountain from Prusik Pass and the Druid Plateau (mapped at 47.50134,-120.79991, southeast of the summit). This route camps at Perfection/Inspiration Lake (already pinned) and reaches the block from the plateau, so neither pin is a place it visits and both are removed. Prusik Pass (47.48734,-120.79064) agrees with the mapped pass at 47.48725,-120.79008 (45 m); the Snow Lakes trailhead and summit pins agree with neighbouring routes and the mapped peak.",
+   "sources": [
+    "https://www.wikidata.org/wiki/Special:EntityData/Q124361573.json",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Perfection+Lake+Chelan+County",
+    "https://overpass-api.de/api/interpreter",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_cannon_mountain_south_slopes",
+     "index": 2,
+     "expect": {
+      "name": "Perfection Lake",
+      "lat": 47.4776193,
+      "lng": -120.8134206
+     },
+     "lat": 47.47986,
+     "lng": -120.79735,
+     "elev": 7100,
+     "elevFt": 7100,
+     "sources": [
+      "https://www.wikidata.org/wiki/Special:EntityData/Q124361573.json",
+      "https://nominatim.openstreetmap.org/search?format=json&q=Perfection+Lake+Chelan+County"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_cannon_mountain_south_slopes",
+     "index": 0,
+     "expect": {
+      "name": "Basin below Cannon",
+      "lat": 47.512,
+      "lng": -120.795
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_cannon_mountain_south_slopes",
+     "index": 1,
+     "expect": {
+      "name": "Base of south slopes",
+      "lat": 47.507,
+      "lng": -120.8
+     }
+    }
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "verdict": "confirmed",
+   "summary": "The Stuart/Colchuck trail split was pinned about a kilometre off the trail and now sits at the real fork; the gully pin sat south of Jabberwocky Tower on the Aasgard side, a place this east-shore route never crosses, and is removed because the gully itself cannot be placed from two sources.",
+   "evidence": "Pin 1 (Stuart/Colchuck Trail Split, distMi 2.3) sat at 47.513,-120.833, 347 m off the trail line; the Forest Service starts Colchuck Lake trail #1599.1 at 47.50514,-120.84042, 2.21 mi along #1599 from the trailhead, and OpenStreetMap starts its Colchuck Lake Trail at 47.50513,-120.84035 (5 m); ground 4,522 ft (pin said 4,200). Pin 3 ('East-shore gully to the Jabberwocky notch', 6,000 ft) sits at 47.487,-120.825 on ground at 6,709 ft, about 450 m SOUTH of Jabberwocky Tower (mapped 47.49102,-120.82599) and near the Aasgard Pass trail - the spot the old 'Aasgard Pass Gully Break' pin marked for the west-side approach. The route's real line runs from the lake's northeast shore (about 47.4984,-120.8325) up to the notch between Jabberwocky Tower and the summit (about 47.4920,-120.8230, ground 6,919 ft) as one mapped climbers' path shows, but no second source places the gully or notch within 300 m (a route listing gives only the formation's own coordinate, 380 m away), so the pin is removed rather than moved; the gully stays described in the approach text. Trailhead (47.52779,-120.82082 vs mapped 47.52775,-120.82087), Colchuck Lake (130 m from the mapped lake centre) and summit (25 m from the mapped rock) are correct.",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+    "https://overpass-api.de/api/interpreter",
+    "https://epqs.nationalmap.gov/v1/json",
+    "https://www.mountainproject.com/route/108159527/colchuck-balanced-rock-col-east-lake-side-approch",
+    "https://en.wikipedia.org/wiki/Jabberwocky_Tower"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_nw_ridge_2",
+     "index": 1,
+     "expect": {
+      "name": "Stuart/Colchuck Trail Split",
+      "lat": 47.513,
+      "lng": -120.833
+     },
+     "lat": 47.50514,
+     "lng": -120.84042,
+     "elev": 4520,
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query",
+      "https://overpass-api.de/api/interpreter"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_nw_ridge_2",
+     "index": 3,
+     "expect": {
+      "name": "East-shore gully to the Jabberwocky notch",
+      "lat": 47.487,
+      "lng": -120.825
+     }
+    }
+   ],
+   "ops": []
   }
  ]
 }

@@ -1,0 +1,38 @@
+{
+ "applied": [
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "column": "descent",
+   "path": [],
+   "fact": "Side of the summit the slung-horn rappel leaves from: descent/rappels say south/southwest, other CBR routes say east"
+  },
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "column": "rappels",
+   "path": [],
+   "fact": "Side of the summit the slung-horn rappel leaves from: descent/rappels say south/southwest, other CBR routes say east"
+  },
+  {
+   "id": "wa_the_tempest",
+   "column": "rappels",
+   "path": [],
+   "fact": "Side of the summit the slung-horn rappel leaves from: rappels says south/southwest, descent/descent_text say east"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_full_tilt_tempest_wall_free_version",
+   "before": {
+    "descent": "Standard peak descent: one 30 m rappel from a slung horn on the south/southwest side of the summit, then sandy scree and snow clockwise around the peak back to the base, about 50 minutes.",
+    "rappels": "Descent is over the top by the standard walk-off: a single 30 m rappel from a slung horn on the south/southwest side of the summit, then scree scrambling clockwise around the peak. No rappel route is published for the line itself; retreat means building anchors."
+   }
+  },
+  {
+   "id": "wa_the_tempest",
+   "before": {
+    "rappels": "Descent is over the top: a single 30 m rappel from the slung horn on the south/southwest side of the summit, then a scree walk-off. The finish is described as simulclimbing blocky ground leftward to the summit rather than rappelling the route."
+   }
+  }
+ ]
+}

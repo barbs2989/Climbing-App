@@ -158,6 +158,19 @@
     "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-14.202832307969"
    ],
    "patches": []
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Approach mileage: itinerary days 1-3 (7.5 + 5.5 + 3 = 16 mi to White Rock Lakes) vs waypoints (Kool-Aid Lake 6.7 mi, White Rock Lakes 13.5 mi)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Found while re-reading the row: day 1 gives 7.5 mi to Kool-Aid Lake where the Kool-Aid waypoint says 6.7 mi, and the first three days total 16 mi to White Rock Lakes where the waypoint chain says 13.5 mi. Published traverse descriptions give 3.7 mi of trail to Cascade Pass but describe the cross-country legs by time, not distance (the same gap left the Magic Mountain row's trailhead-to-Kool-Aid distance open), so no sourced figure is available and nothing is changed.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/",
+    "https://www.alpineascents.com/climbs/ptarmigan-traverse/itinerary/"
+   ],
+   "patches": []
   }
  ]
 }

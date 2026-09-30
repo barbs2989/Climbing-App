@@ -1,11 +1,129 @@
-{"file": "u025", "results": [
-  {"id": "wa_west_face_2",
+{
+ "file": "u025",
+ "results": [
+  {
+   "id": "wa_west_face_2",
    "fact": "which ranger district / county administers the route (emergency.rangerStation says Mount Baker Ranger District; access.land_manager says Darrington Ranger District; emergency.county Snohomish)",
    "verdict": "fixed",
    "correct_value": "Darrington Ranger District (Mt. Baker-Snoqualmie NF) administers the Downey Creek trail and trailhead this route uses",
    "evidence": "The Forest Service's own Downey Creek Trail 768 page places the trail in the Darrington Ranger District and gives the Darrington station (1405 Emens Ave N, 360-436-1155) as the contact; the Darrington visitor site's Downey Creek Trail #768 page and the Forest Service Suiattle washout alert agree. So emergency.rangerStation's 'Mount Baker Ranger District' is the outlier against access.land_manager and access.closures. The county question is separate and left alone: the summit itself is listed in Chelan County (Wenatchee NF side of the crest), while the trailhead and approach are in Snohomish County, so Snohomish as the rescue county for this approach is defensible and not patched.",
-   "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/downey-creek-trail-768", "https://www.discoverdarrington.com/recreation/hiking/downey-creek-trail-768/", "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure"],
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/downey-creek-trail-768",
+    "https://www.discoverdarrington.com/recreation/hiking/downey-creek-trail-768/",
+    "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure"
+   ],
    "patches": [
-     {"id": "wa_west_face_2", "fact": "ranger district", "op": "replace_text", "column": "emergency", "path": ["rangerStation"], "find": "Mount Baker Ranger District (Glacier Peak Wilderness office)", "replace": "Darrington Ranger District, Darrington, (360) 436-1155"}
-   ]}
-]}
+    {
+     "id": "wa_west_face_2",
+     "fact": "ranger district",
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "rangerStation"
+     ],
+     "find": "Mount Baker Ranger District (Glacier Peak Wilderness office)",
+     "replace": "Darrington Ranger District, Darrington, (360) 436-1155"
+    }
+   ]
+  },
+  {
+   "id": "wa_lone_wolf",
+   "fact": "The Obelisk's own elevation disagreement across waypoints",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Re-checked with new data points. The crag database lists The Obelisk at 4,494 ft and says it sits down the shoulder of Silver Peak from Sofa King Buttress, which it lists at 4,650 ft (Citidel 4,585 ft), so the 4,900 ft waypoint and its note's 'further up-slope' reasoning conflict with that record. But the USGS 1 m ground height at the stored coordinate is ~4,699 ft, and four samples within ~100 m of it range from ~4,478 to ~4,944 ft: the coordinate sits on steep ground and is too imprecise for the terrain to confirm any one figure. No two sources agree on a number, so nothing is patched.",
+   "sources": [
+    "https://www.mountainproject.com/area/120477509/sofa-king-buttress",
+    "https://www.mountainproject.com/area/120477448/the-citidel",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.4535&y=47.3690&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.4535&y=47.3680&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Which side of the summit block the route climbs (south/west vs east/northeast)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "A third account (a 2002 day attempt from the old upper trailhead) climbed a ~400 ft, 45-degree snow finger on the north side to within ~100 ft of the summit, found the rock above iced, and noted that a class 3 line is described on the side facing Chimney Rock and steep ledges on the west side. That adds a third description rather than a second source for either line the row mixes (east-side ledges after the snow finger vs the south-ridge ledge/slot/chimney). Rewriting pitch_detail and climbing_route into one line still lacks two agreeing sources.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002060107",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-18.120306196249"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Approach-day (day 1) duration vs its own schedule",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No new source gives a day-1 duration for the Dingford Creek bike-and-hike approach to the glacier camp. The WTA summary of the 2024 trip is the same author as the blog already tried and gives no clock times, and the 2002 report (12 h car to car) started 7+ miles closer on a road that is now closed. The 12 h schedule vs the 9 h figures cannot be settled.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-18.120306196249",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002060107"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "dist_km vs one-way and round-trip distance figures elsewhere",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The WTA trip summary repeats the 40.4 mi round trip for the 3-day loop (with the Bears Breast and Williams Lake extras) and puts Camp Pedro at mile 13 of the 14.5 mi to Dutch Miller Gap, then a ford, a hanging valley, a 6,140 ft pass and under a mile to the 6,600 ft camp. That supports a one-way figure of roughly 15-16 mi to camp, but no source states the trailhead-to-summit one-way distance, and deriving it would be computing a figure. dist_km left as is.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-18.120306196249",
+    "https://www.wta.org/go-hiking/hikes/dutch-miller-gap"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Waypoint mileages vs the approach text's mileages",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The waypoint distances (Overcoat Lake 12, benches 13, summit 14.5) do look short: the only mileage-bearing account puts Camp Pedro, before the river ford, at mile 13, and the Overcoat Lake/bench camps are beyond the ford. But the WTA summary is by the same author as the blog already tried, so this is still a single source, and replacement mileages would have to be computed. No patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-18.120306196249"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "fact": "Expected car-to-car time",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The hike page lists 8 mi round trip and 4,875 ft of gain but gives no time. Search summaries of trip reports give only the ascent: nearly 5,000 ft in just over five hours, which matches the row's summit waypoint. The WTA reports reached (a 2017 winter lookout trip, a 2015 rain attempt) did not reach the summit or give a total. No source states a car-to-car total, so the 6-9 h commitment and the 10 h timing stay as they are.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/red-mountain",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-03-15.6519444776",
+    "https://climberkyle.com/2026/07/12/painted-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "New sources lean toward the snow-covered season: a 2025 WTA snowshoe report reached the summit in February, a 2005 winter trip report calls it a nice winter trip, and the route guide's search summary recommends May-June when snow still covers the brush. That supports best_season, pro_tips and rope_note over seasonal_guidance's 'Mid-July through September' optimal window. Fixing it would mean rewriting seasonal_guidance's optimal window and every month's status and reason, not a minimal patch, and 'optimal' stays partly a preference. So it is left for an editorial decision. The row itself is 4 fields to 1 against seasonal_guidance.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-02-12.210624914424",
+    "https://www.yellowleaf.org/scramble/g/r/2005-11-20-philadelphia.html",
+    "https://www.summitpost.org/philadelphia-mountain-via-the-lake-serene-trail/712896"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Best time of year: rope_note says May/June is best, best_season says avoid late April-May",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route guide's summary recommends May or June, when snow still covers the underbrush and avalanche danger has usually passed, which agrees with rope_note. The winter reports found (Feb 2025, Nov 2005) support a winter window but say nothing about whether late April-May snow is rotten. There is only one source for a specific best month, so neither rope_note nor best_season is changed.",
+   "sources": [
+    "https://www.summitpost.org/philadelphia-mountain-via-the-lake-serene-trail/712896",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-02-12.210624914424"
+   ],
+   "patches": []
+  }
+ ]
+}

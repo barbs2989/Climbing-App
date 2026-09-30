@@ -1,10 +1,177 @@
-{"file": "u014", "results": [
-{"id": "wa_hurry_up_peak_south_ridge", "fact": "Round-trip distance: dist_km vs. itinerary total", "verdict": "unresolved", "correct_value": null, "evidence": "Still real: dist_km 5.9 km (3.7 mi, trailhead to Cascade Pass only) against the approach's 5-6 mi to camp, itinerary day 1 6.5 mi, the Kool-Aid Lake waypoint's 7.2 mi and totalNote's ~16 mi round trip. New sources add nothing firm: a traverse guide gives only the 3.7 mi to Cascade Pass and says the cross-country mileage beyond is hard to track, and a GPS route page gives 5.5 mi / 3,307 ft to Kool-Aid Lake. No two sources agree on a one-way figure.", "sources": ["https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/", "https://www.gaiagps.com/hike/235287/kool-aid-lake-via-cascade-pass-trail-and-ptarmigan-traverse/"], "patches": []},
-{"id": "wa_hurry_up_peak_south_ridge", "fact": "Scramble grade: Class 3-4 vs Class 2-3", "verdict": "unresolved", "correct_value": null, "evidence": "Still real: grade 'Grade II, Class 3-4' and pitch_detail (3-4 finish) against rock_grade 'Class 2-3 (scramble)' and climbing_route's 2-3. No new source on the retry gives a rating for the south ridge; the earlier split (class 3; class 2-3; exposed class 3-4 between false and true summits) stands, so no single value is established.", "sources": [], "patches": []},
-{"id": "wa_hurry_up_peak_south_ridge", "fact": "Kool-Aid Lake elevation: 6,200 (waypoint, approach_variants) vs 6,320 (approach, itinerary day 1 note)", "verdict": "fixed", "correct_value": "Kool-Aid Lake is at about 6,120 ft", "evidence": "The USGS elevation service returns 6,119-6,121 ft at three points on the mapped lake polygon (centre 48.43867, -121.04581), a flat water surface. A Ptarmigan Traverse description gives 6,120 ft and a map gazetteer 6,119 ft. Neither 6,320 nor 6,200 is right; every copy on the row is set to 6,120.", "sources": ["https://epqs.nationalmap.gov/v1/json?x=-121.0458149&y=48.4386686&units=Feet&wkid=4326", "https://summitborn.com/ptarmigan-traverse-trail/", "https://mapcarta.com/23945672"], "patches": [
- {"id": "wa_hurry_up_peak_south_ridge", "fact": "Kool-Aid Lake elevation", "op": "set", "column": "waypoints", "path": [4, "elev"], "expect": 6200, "value": 6120},
- {"id": "wa_hurry_up_peak_south_ridge", "fact": "Kool-Aid Lake elevation", "op": "replace_text", "column": "approach", "path": [], "find": "down to Kool-Aid Lake (6,320 ft)", "replace": "down to Kool-Aid Lake (6,120 ft)"},
- {"id": "wa_hurry_up_peak_south_ridge", "fact": "Kool-Aid Lake elevation", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "a small tarn at ~6,320 ft", "replace": "a small tarn at ~6,120 ft"},
- {"id": "wa_hurry_up_peak_south_ridge", "fact": "Kool-Aid Lake elevation", "op": "replace_text", "column": "approach_variants", "path": [0, "notes"], "find": "KOOL-AID LAKE at about 6,200 ft", "replace": "KOOL-AID LAKE at about 6,120 ft"}
-]}
-]}
+{
+ "file": "u014",
+ "results": [
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "fact": "Round-trip distance: dist_km vs. itinerary total",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: dist_km 5.9 km (3.7 mi, trailhead to Cascade Pass only) against the approach's 5-6 mi to camp, itinerary day 1 6.5 mi, the Kool-Aid Lake waypoint's 7.2 mi and totalNote's ~16 mi round trip. New sources add nothing firm: a traverse guide gives only the 3.7 mi to Cascade Pass and says the cross-country mileage beyond is hard to track, and a GPS route page gives 5.5 mi / 3,307 ft to Kool-Aid Lake. No two sources agree on a one-way figure.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/",
+    "https://www.gaiagps.com/hike/235287/kool-aid-lake-via-cascade-pass-trail-and-ptarmigan-traverse/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "fact": "Scramble grade: Class 3-4 vs Class 2-3",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: grade 'Grade II, Class 3-4' and pitch_detail (3-4 finish) against rock_grade 'Class 2-3 (scramble)' and climbing_route's 2-3. No new source on the retry gives a rating for the south ridge; the earlier split (class 3; class 2-3; exposed class 3-4 between false and true summits) stands, so no single value is established.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "fact": "Kool-Aid Lake elevation: 6,200 (waypoint, approach_variants) vs 6,320 (approach, itinerary day 1 note)",
+   "verdict": "fixed",
+   "correct_value": "Kool-Aid Lake is at about 6,120 ft",
+   "evidence": "The USGS elevation service returns 6,119-6,121 ft at three points on the mapped lake polygon (centre 48.43867, -121.04581), a flat water surface. A Ptarmigan Traverse description gives 6,120 ft and a map gazetteer 6,119 ft. Neither 6,320 nor 6,200 is right; every copy on the row is set to 6,120.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.0458149&y=48.4386686&units=Feet&wkid=4326",
+    "https://summitborn.com/ptarmigan-traverse-trail/",
+    "https://mapcarta.com/23945672"
+   ],
+   "patches": [
+    {
+     "id": "wa_hurry_up_peak_south_ridge",
+     "fact": "Kool-Aid Lake elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "elev"
+     ],
+     "expect": 6200,
+     "value": 6120
+    },
+    {
+     "id": "wa_hurry_up_peak_south_ridge",
+     "fact": "Kool-Aid Lake elevation",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "down to Kool-Aid Lake (6,320 ft)",
+     "replace": "down to Kool-Aid Lake (6,120 ft)"
+    },
+    {
+     "id": "wa_hurry_up_peak_south_ridge",
+     "fact": "Kool-Aid Lake elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "a small tarn at ~6,320 ft",
+     "replace": "a small tarn at ~6,120 ft"
+    },
+    {
+     "id": "wa_hurry_up_peak_south_ridge",
+     "fact": "Kool-Aid Lake elevation",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "KOOL-AID LAKE at about 6,200 ft",
+     "replace": "KOOL-AID LAKE at about 6,120 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "fact": "pitch count on the South Ridge",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: `pitches` 4 against pitch_detail's 3 rows and the itinerary's '3 pitches'. New sources split the same way as before: a trip report on the route climbed it as 4 pitches ('the fourth and final pitch was fairly short'), and a route page lists three pitches (5.2/80 ft, 5.4/115 ft, 5.4/80 ft) with a scramble above. Parties link or split the short upper pitches differently, so no single count is established and pitch_detail cannot be re-split from agreeing sources.",
+   "sources": [
+    "https://www.shane.st/trip-reports/ingalls/",
+    "https://www.summitpost.org/south-ridge-5-4/156856"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_ridge_9",
+   "fact": "rappel sequence/count on the shared South Ridge descent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The rendered counts now agree under the single-rope/two-rope convention: `rappels` and descent_text both say 4 on one 60 m rope or 3 on two. What still disagrees is the sequence: rappel_count_note describes the three two-rope rappels as a double from the summit bolts to the ledge atop pitch 2, a short single to the top of pitch 1, then one to the base, while rappel_detail lists a single-strand rappel to a narrow ledge, then a full-rope-length rappel from near the top of pitch 2, then one to the base, and the hidden `descent` gives a four-rappel double/single/double sequence. A South Ridge route description found on retry says three raps on a single 60 m rope, a fourth count. No two sources give the same station sequence, so nothing is rewritten.",
+   "sources": [
+    "https://www.summitpost.org/south-ridge-5-4/156856",
+    "https://www.mountainproject.com/route/107664796/south-ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "fact": "Total elevation gain/loss vs the itinerary's own day-by-day figures",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The row now uses the West Fork Foss / Chetwoot Lake approach; its itinerary days sum to 6,400 ft up and down while gain_ft/loss_ft stay 4,707. A trail-database listing gives 19 mi and 6,437 ft for Chetwoot Lake alone (without Iron Cap), and a trip report gives segment gains (3,400 ft to Big Heart Lake, 1,400 ft to Chetwoot, 1,100 ft Chetwoot to Iron Cap Gap) but no total. A car-to-car figure would have to be added up, which is not allowed, and the WTA trip reports that might state one returned 403.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/chetwoot-lake-trail-via-west-fork-foss-lakes-trail",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-15.9756207890"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "fact": "Waypoints describe the Middle Fork Snoqualmie / Williams Lake approach while every other field uses the West Fork Foss / Chetwoot Lake approach",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach, itinerary, timing, overview and partner_requirements all describe the West Fork Foss trail past Trout, Copper and Big Heart lakes to Chetwoot Lake, but the waypoint list is the Middle Fork route (Dingford Creek Trailhead, Middle Fork footbridge, Hardscrabble Horse Camp, Pedro Camp, Williams Lake junction, Williams Lake and saddle). The fix is replacing the pins, which is outside this patch scope; flagged for the pin pass.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "fact": "total gain figure vs overview's stated gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: gain_ft 9069 against the overview's '30 miles and 10,000 ft'. The retry found a two-day spring report that gives only segment detail (about 13 km of trail each way to May Creek, close to 1,000 m from the lower camp to the headwall base) and no total; the earlier club listings (10,000 ft vs 9,069 ft) and a trip report (8,000 ft) still disagree. No two sources agree.",
+   "sources": [
+    "https://stevensong.com/usa/washington/jack-mountain-nohokomeen-headwall/",
+    "https://www.mountaineers.org/activities/routes-places/jack-mountain-nohokomeen-headwall"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "fact": "round-trip distance vs overview's stated mileage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "dist_km 17.7 km (11 mi) matches the approach's one-way 8 mi of trail plus ~3 mi off-trail; the overview's 30 mi round trip is more than twice that. Reports agree on the parts (the East Bank trail just under 8 mi / about 13 km to May Creek, then ~3 mi to the glacier toe), which supports the one-way figure, but no source other than the club listing gives a round-trip total and a trip report measured 25.5 mi. The overview's 30 mi is not settled either way.",
+   "sources": [
+    "https://stevensong.com/usa/washington/jack-mountain-nohokomeen-headwall/",
+    "https://www.whereiskylemiller.com/highway-20/jack-mountain-nohokomeen-glacier/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "pitch count vs numbered ROUTE BREAKDOWN rows",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: `pitches` 20 and the overview's 'roughly twenty-pitch' against 12 pitch_detail rows. Searches on retry turn up only the same guide profile (terrain description, no count) and a report of about 30 roped pitches, belayed or simul-climbed; the vegetated lower route is pitched short or simul-climbed differently by every party. No two sources give a count.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1198106"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_johannesburg_mountain_cj_couloir",
+   "fact": "approach time stated two different ways",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row's itinerary day 1 and timing.sectionBreakdown[0] now describe about twenty minutes from the road to the couloir apron followed by the 3,000 ft couloir climb to the C-J col bivy, so their 6 h covers approach plus couloir, while approach_variants' 'under 1' hour is to the apron only.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

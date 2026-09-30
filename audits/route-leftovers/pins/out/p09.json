@@ -1,0 +1,348 @@
+{
+ "results": [
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "verdict": "confirmed",
+   "summary": "The trailhead pin sat at the far (south) end of the Elbow Lake Trail, the lake pin marked a lake the route never reaches, and the climbers' trail split, the Cinderella-Little Sister notch and the ridge pin were each far off; these are moved or removed, the Green Creek crossing pin is still unplaced, and the note that said to turn west from the notch now says east.",
+   "evidence": "Pin 0: stored 48.6797,-121.897 is the south (FR-12 / Pioneer Camp) end of Trail 697; the route starts at the north end on FR-38 by the Middle Fork Nooksack. The trail association's trailhead page gives 48.737355,-121.931444 and the Forest Service trail line starts milepost 0 at 48.73757,-121.93233 (~70 m apart); moved there, ground 2,059 ft. (Map data puts a trailhead node ~450 m east at 48.73484,-121.92638, also on FR-38.) Pin 1 Elbow Lake (48.7097,-121.9146) is ~3.2 trail miles in, beyond where the climbers' trail leaves at ~1.5 mi, so the route never reaches it: removed, and its river-crossing directions are carried onto the next pin's leg. Pin 2: stored point is ~1 km off the trail. Two trip reports put the Green Creek climbers' trail turnoff at a switchback where the trail swings toward Hildebrand Creek near 2,600 ft, about 1.5 mi in; the map-data and Forest Service trail lines both show a switchback at 48.7219,-121.9343 (1.33 mi from the north end, ground 2,715 ft; the 1.5-mi point and the 2,600-ft point are each within ~250 m). Moved there. Pin 3 Green Creek crossing (48.70299,-121.93491, 2,300 ft): ~1.6 km from Green Creek itself; one report says parties cross the creek on reaching the cirque, but no two sources place the crossing, so it is LEFT and still needs a position. Pin 4: stored 48.6945,-121.9606 is ~1 km east of Cinderella, not between it and Little Sister. Cinderella summit is 48.69092,-121.97153 (map data) / 48.69086,-121.97183 (peak list); Little Sister 48.69238,-121.97638 (map data). The ground profile between them bottoms out at 6,053 ft at 48.69165,-121.97395, ~190 m west of Cinderella's summit; moved there. Pin 5 West ridge scramble section: stored point lay east of the summit, off the west ridge; moved onto the ridge between the notch and the summit (48.69128,-121.97274, ground 6,178 ft). Pin 6 summit agrees with both peak sources; left. Text: Little Sister is west-northwest of Cinderella, so from the notch the route goes EAST up Cinderella's west ridge; the base-finding note said the opposite and is corrected.",
+   "sources": [
+    "https://www.pnt.org/locations/elbow-lake-trail/",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27697%27",
+    "https://www.openstreetmap.org/way/183512681",
+    "https://www.openstreetmap.org/way/183507566",
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+    "http://www.willhiteweb.com/north_cascades/sister_divide/elbow_lake_trail_211.htm",
+    "https://www.openstreetmap.org/node/4271111544",
+    "https://listsofjohn.com/peak/211985",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_cinderella_peak_scramble",
+     "index": 0,
+     "expect": {
+      "name": "Elbow Lake Trailhead (FR-38)",
+      "lat": 48.6797,
+      "lng": -121.897
+     },
+     "lat": 48.737355,
+     "lng": -121.931444,
+     "elev": 2060,
+     "sources": [
+      "https://www.pnt.org/locations/elbow-lake-trail/",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27697%27"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_cinderella_peak_scramble",
+     "index": 1,
+     "expect": {
+      "name": "Elbow Lake",
+      "lat": 48.7096986,
+      "lng": -121.914558
+     }
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_cinderella_peak_scramble",
+     "index": 2,
+     "expect": {
+      "name": "Twin Sisters Viewpoint / Green Creek climbers' trail split",
+      "lat": 48.705110924528306,
+      "lng": -121.92848443396227
+     },
+     "lat": 48.72193,
+     "lng": -121.93431,
+     "elev": 2720,
+     "sources": [
+      "https://www.openstreetmap.org/way/183512681",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27697%27",
+      "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "http://www.willhiteweb.com/north_cascades/sister_divide/elbow_lake_trail_211.htm"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_cinderella_peak_scramble",
+     "index": 4,
+     "expect": {
+      "name": "Little Sister saddle",
+      "lat": 48.69452398113208,
+      "lng": -121.96062235849057
+     },
+     "lat": 48.69165,
+     "lng": -121.97395,
+     "elev": 6050,
+     "sources": [
+      "https://www.openstreetmap.org/node/4271111544",
+      "https://listsofjohn.com/peak/211985",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_cinderella_peak_scramble",
+     "index": 5,
+     "expect": {
+      "name": "West ridge scramble section",
+      "lat": 48.69240659245283,
+      "lng": -121.96704994339622
+     },
+     "lat": 48.69128,
+     "lng": -121.97274,
+     "elev": 6180,
+     "sources": [
+      "https://www.openstreetmap.org/node/4271111544",
+      "https://listsofjohn.com/peak/211985",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_cinderella_peak_scramble",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "expect": "Stay on the maintained tread as it climbs above the Green Creek valley through old-growth forest, roughly a mile and a half from the crossing. Near 2,600 ft the trail swings into the Hildebrand Creek drainage, and it is at a switchback here that the unofficial Green Creek climbers' trail branches off. It is marked only by small blue markers on the trees — they are easy to walk straight past, so start looking for them before you think you need to.",
+     "value": "The trail meets the Middle Fork Nooksack within a few minutes of the car and there is no bridge — it has been gone for decades, and any log that replaces it tends to wash out. The marked ford can be dangerous or impossible at high flow, so most parties use an unofficial crossing about a quarter mile downstream, logs lashed between two boulders. Once across, bushwhack the short distance back up to the Elbow Lake Trail proper and start climbing through old growth. Stay on the maintained tread as it climbs above the Green Creek valley through old-growth forest, roughly a mile and a half from the crossing. Near 2,600 ft the trail swings into the Hildebrand Creek drainage, and it is at a switchback here that the unofficial Green Creek climbers' trail branches off. It is marked only by small blue markers on the trees — they are easy to walk straight past, so start looking for them before you think you need to."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_cinderella_peak_scramble",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "FROM THE NOTCH, GO WEST, NOT EAST. Cinderella's WEST RIDGE is the route",
+     "replace": "FROM THE NOTCH, GO EAST, NOT WEST. Cinderella's WEST RIDGE rises eastward from the notch and is the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "verdict": "confirmed",
+   "summary": "The Independence Route is an East Face climb reached from the hairpin pond, so the three pins for the Blue Lake Trail stream, its climbers' path junction and the west-face bench are removed, and the two leftover distances measured along that west-side approach are cleared.",
+   "evidence": "Pins 1 (stream crossing, no coordinate) and 2 (Blue Lake Trail junction, no coordinate) describe the Blue Lake Trail approach to the west side; the route's own approach leaves from the pond at the SR-20 hairpin and follows a cairned path about a mile to the East Face talus, never touching the Blue Lake Trail. Pin 3 'West face base / sloping bench' (48.514633,-120.658546) is the west-side start of the big-wall routes; this route starts on the East Face. None of the three has a counterpart on this approach, so they are removed. Pin 0 (hairpin pullout, 48.51454,-120.64332) sits at the start of the mapped climbers' path east of the pass (map data 48.51439,-120.64295) and is left. Pin 5 summit agrees with the mapped Liberty Bell summit (48.5154726,-120.6583222) and is left. Pin 4 (on-route hazard) is ~90 m south of the summit rather than on the East Face; no source places a mid-wall point, and it is within ~200 m of the wall, so it is left. Their distMi values (2.4 and 2.7) were measured along the Blue Lake approach; the hairpin path is about a mile to the talus, so they are set to null. Pin 4's note referred to 'the bench' (the west-side feature); reworded to the wall.",
+   "sources": [
+    "https://www.openstreetmap.org/node/356545624",
+    "https://www.openstreetmap.org/way/564153480"
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_liberty_bell_independence_route",
+     "index": 1,
+     "expect": {
+      "name": "Stream crossing near meadow",
+      "lat": null,
+      "lng": null
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_liberty_bell_independence_route",
+     "index": 2,
+     "expect": {
+      "name": "Climbers' path junction",
+      "lat": null,
+      "lng": null
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_liberty_bell_independence_route",
+     "index": 3,
+     "expect": {
+      "name": "West face base / sloping bench",
+      "lat": 48.514633,
+      "lng": -120.658546
+     }
+    }
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_liberty_bell_independence_route",
+     "column": "waypoints",
+     "path": [
+      4,
+      "note"
+     ],
+     "find": "once established above the bench",
+     "replace": "once established on the wall"
+    },
+    {
+     "op": "set",
+     "id": "wa_liberty_bell_independence_route",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 2.4,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_liberty_bell_independence_route",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 2.7,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "verdict": "confirmed",
+   "summary": "The trailhead pin was at Artist Point on the far side of the mountain and the camp pin sat on the trail about 1,100 ft below camp; both are moved to the Heliotrope Ridge trailhead and the Hogsback camp, but the two Cockscomb pins still sit on the Hogsback far west of the ridge and need placing.",
+   "evidence": "Pin 0: stored 48.8465,-121.6927 is Artist Point. Heliotrope Ridge Trailhead: map data 48.8022384,-121.8956744, trail association 48.8020833,-121.8956667 (~20 m); moved there, ground 3,668 ft. Pin 1 'Heliotrope Ridge Camp' (the Hogsback camp near 6,000 ft at the Coleman Glacier edge): stored 48.795,-121.885 is on the trail at 4,843 ft ground. Map data puts Hogsback Camp at 48.7893,-121.86777; the Forest Service Hogsback Route line (677.1) passes 48.78902,-121.86749 at 5,912 ft, within ~30 m. Moved there, ground 5,897 ft. Pins 2 (Cockscomb Ridge base, 48.785,-121.868, stated 7,800 ft) and 3 (Cockscomb Tower, 48.782,-121.865, stated 9,200 ft) both lie on the Hogsback climbing line at 6,494 and 6,909 ft ground, while the Cockscomb is the ridge between the Roosevelt and Mazama glaciers several km east; the route does pass these spots on its Coleman-Deming descent, and no two sources give coordinates for the ridge toe or the tower, so both are LEFT and still need positions (the North Ridge and Coleman Headwall routes carry similar placeholder pins at 48.788,-121.872 and 48.781,-121.865). Pin 4 summit is correct.",
+   "sources": [
+    "https://www.openstreetmap.org/node/4939697885",
+    "https://www.wta.org/go-hiking/hikes/heliotrope-ridge",
+    "https://www.openstreetmap.org/node/4259623457",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27677.1%27",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "index": 0,
+     "expect": {
+      "name": "Heliotrope Ridge Trailhead",
+      "lat": 48.8465,
+      "lng": -121.6927
+     },
+     "lat": 48.80224,
+     "lng": -121.89567,
+     "elev": 3670,
+     "sources": [
+      "https://www.openstreetmap.org/node/4939697885",
+      "https://www.wta.org/go-hiking/hikes/heliotrope-ridge"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "index": 1,
+     "expect": {
+      "name": "Heliotrope Ridge Camp",
+      "lat": 48.795,
+      "lng": -121.885
+     },
+     "lat": 48.7893,
+     "lng": -121.86777,
+     "elev": 5900,
+     "sources": [
+      "https://www.openstreetmap.org/node/4259623457",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27677.1%27"
+     ]
+    }
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "verdict": "confirmed",
+   "summary": "The high-camp pin sat on the northwest side of the mountain beside the Coleman and Roosevelt glaciers, a place this east-side route never goes; it is removed because no source gives the camp's real position.",
+   "evidence": "Pin 1 'High Camp below Boulder-Park Cleaver' at 48.79,-121.84 (ground 6,892 ft) is northwest of the summit, beside the Roosevelt/Coleman glaciers. The route climbs the east side: Boulder Ridge Trail #605 to a ridge camp near 5,700 ft, then the cleaver between the Boulder Glacier (~48.768,-121.797) and Park Glacier (~48.782,-121.792), and descends the same way. No source gives coordinates for the ridge camp or the 7,500-ft shelf beside the cleaver, so the pin is removed rather than moved. Pin 0 trailhead (48.73525,-121.71027) agrees with map data (48.7351,-121.7103) and the Forest Service trail start (48.73512,-121.71041); left. Pin 2 summit is correct.",
+   "sources": [
+    "https://www.openstreetmap.org/node/37151227",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27605%27",
+    "https://www.openstreetmap.org/relation/2439502",
+    "https://www.openstreetmap.org/relation/2439493",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_baker_boulder_park_cleaver",
+     "index": 1,
+     "expect": {
+      "name": "High Camp below Boulder-Park Cleaver",
+      "lat": 48.79,
+      "lng": -121.84
+     }
+    }
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "verdict": "confirmed",
+   "summary": "Thin Red Line is an East Face climb reached from the hairpin pond, so the three pins for the Blue Lake Trail stream, its climbers' path junction and the west-face bench are removed, and the two leftover distances measured along that west-side approach are cleared.",
+   "evidence": "Pins 1 (stream crossing, no coordinate) and 2 (Blue Lake Trail junction, no coordinate) describe the Blue Lake Trail approach to the west side; the route's own approach leaves from the pond at the SR-20 hairpin and follows a cairned path about a mile to the East Face talus, never touching the Blue Lake Trail. Pin 3 'West face base / sloping bench' (48.514633,-120.658546) is the west-side start of the big-wall routes; this route starts on the East Face. None of the three has a counterpart on this approach, so they are removed. Pin 0 (hairpin pullout, 48.51454,-120.64332) sits at the start of the mapped climbers' path east of the pass (map data 48.51439,-120.64295) and is left. Pin 5 summit agrees with the mapped Liberty Bell summit (48.5154726,-120.6583222) and is left. Pin 4 (on-route hazard) is ~90 m south of the summit rather than on the East Face; no source places a mid-wall point, and it is within ~200 m of the wall, so it is left. Their distMi values (2.4 and 2.7) were measured along the Blue Lake approach; the hairpin path is about a mile to the talus, so they are set to null.",
+   "sources": [
+    "https://www.openstreetmap.org/node/356545624",
+    "https://www.openstreetmap.org/way/564153480"
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_liberty_bell_thin_red_line",
+     "index": 1,
+     "expect": {
+      "name": "Stream crossing near meadow",
+      "lat": null,
+      "lng": null
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_liberty_bell_thin_red_line",
+     "index": 2,
+     "expect": {
+      "name": "Climbers' path junction",
+      "lat": null,
+      "lng": null
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_liberty_bell_thin_red_line",
+     "index": 3,
+     "expect": {
+      "name": "West face base / sloping bench",
+      "lat": 48.514633,
+      "lng": -120.658546
+     }
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_liberty_bell_thin_red_line",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 2.4,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_liberty_bell_thin_red_line",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 2.7,
+     "value": null
+    }
+   ]
+  }
+ ]
+}
