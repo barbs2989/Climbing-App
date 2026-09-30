@@ -89,8 +89,9 @@ function RouteRow({ r, onOpen, C, areaName }) {
 // are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
 // this file doesn't import — see its own header comment on why) and passed down.
 function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, discSlots, C }) {
-  // null = undecided, so content decides (see autoOpen below); once toggled, the climber wins.
-  const [openManual, setOpenManual] = useState(null);
+  // Collapsed until the climber opens it — the user's call (2026-09-30): the rows are one tap
+  // away behind the "Suggested climbs · N" header, never spread across the area page by default.
+  const [open, setOpen] = useState(false);
   const recentIds = useRecentRouteIds();
   const { data: objRoutes } = useScopedWishlistRoutes(area, wishlist);
   /* THE POOL IS NO LONGER FILTERED BY DISCIPLINE, and that is the actual fix.
@@ -129,13 +130,6 @@ function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rank
   }).filter(b => b.rows.length);
   const popular = (!objectives.length && !recent.length && !bands.length) ? [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5) : [];
   const total = objectives.length + recent.length + bands.reduce((n, b) => n + b.rows.length, 0) + popular.length;
-  /* Open on HIGH-SIGNAL rows only — your own objectives, or climbs you were just looking at.
-     NOT on `total`: "More climbs in this area" is the alphabetical fallback (only 6 routes in
-     the whole 205k catalog carry a star rating), and auto-opening for that would make the panel
-     noise on every area page. These arrive async, so the panel opens when the data lands. */
-  const autoOpen = !!(objectives.length || recent.length);
-  const open = openManual === null ? autoOpen : openManual;
-  const setOpen = fn => setOpenManual(typeof fn === "function" ? fn(open) : fn);
   if (!total) return null;
   const lbl = { fontSize: 11.5, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
   const discLabel = d => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
@@ -144,7 +138,7 @@ function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rank
   const bandTitle = s => (s.src === "viewed" ? "Because you've been looking at " : "Because you've been climbing ") + discLabel(s.disc);
   return (
     <div style={{ marginTop: 14 }}>
-      <button onClick={() => setOpen(o => !o)} style={{ width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
+      <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{ width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
         <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{"Suggested climbs · " + total}</span>
         <span style={{ color: C.blue, fontSize: 13, fontWeight: 700 }}>{open ? "▾" : "▸"}</span>
       </button>
@@ -1186,7 +1180,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
       <div style={{ position: "relative", marginBottom: fullscreen ? 0 : 8 }}>
         <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 210px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
         {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
-        <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} />
+        <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow />
         <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>{fullscreen ? "✕" : "⤢"}</button>
         {sel ? (
           <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
@@ -1251,25 +1245,33 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
   const { data: children, isLoading, error } = useAreaChildren(area.id, { enabled: isOpen });
   const cur = area.id === currentId;
   const n = area.route_count;
-  const pad = 14 + depth * 22;
+  // Indent TAPERS. It used to be 22px per level with no ceiling, so the spires under
+  // Liberty Bell Group (depth 7: usa > wa > region > hwy 20 > north cascades > pass >
+  // group) spent 168px on indent and the name was ellipsised to a few letters on a 390px
+  // phone. Every level must still step right — a hard cap put the group and its own
+  // spires at one indent, reading as siblings — so past depth 4 each level costs 6px.
+  const pad = 12 + Math.min(depth, 4) * 12 + Math.max(depth - 4, 0) * 6;
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 12px 12px " + pad + "px", borderBottom: "1px solid " + C.borderLight, background: cur ? C.blueBg : "transparent" }}>
         <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>{isOpen ? "▾" : "▸"}</button>
-        <button onClick={() => onNavigate(area)} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
-          <div style={{ fontSize: 14.5, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px" }}>You are here</span> : null}</div>
+        {/* One target opens the area: the name, its count and the chevron. The chevron used
+            to be a separate 16px span and the name was cut to one line, so the only ways in
+            were a sliver of truncated text or an arrow a thumb barely covers. Names wrap. */}
+        <button onClick={() => onNavigate(area)} aria-label={"Open " + area.name + (n > 0 ? ", " + n + " climb" + (n !== 1 ? "s" : "") : "")} style={{ flex: 1, minWidth: 0, minHeight: 38, display: "flex", alignItems: "center", gap: 8, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
+          <div style={{ flex: 1, minWidth: 0, fontSize: 14.5, lineHeight: 1.3, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflowWrap: "anywhere" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px", whiteSpace: "nowrap", display: "inline-block" }}>You are here</span> : null}</div>
+          {n > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{n}</span> : null}
+          <span aria-hidden="true" style={{ flexShrink: 0, color: C.textMuted, fontSize: 18, padding: "0 2px" }}>{"›"}</span>
         </button>
-        {n > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{n}</span> : null}
-        <span {...clickable(() => onNavigate(area))} aria-label={"Open " + area.name} style={{ flexShrink: 0, color: C.textMuted, fontSize: 16, cursor: "pointer", padding: "0 2px" }}>{"›"}</span>
       </div>
       {isOpen ? (
         isLoading
-          ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
+          ? <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
           : children && children.length
             ? pinFirst(children, pinIds).map(k => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />)
             : error
-              ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.amber, fontSize: 12 }}>Couldn’t load what’s inside.</div>
-              : <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
+              ? <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.amber, fontSize: 12 }}>Couldn’t load what’s inside.</div>
+              : <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
       ) : null}
     </div>
   );
@@ -1342,7 +1344,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
             : "Tap a name to open that area’s climbs · tap ▸ to see what’s inside it"}
         </div>
       </div>
-      <div style={{ flex: 1, overflowY: "auto", paddingBottom: 30 }}>
+      <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", paddingBottom: 30 }}>
         {q.trim() ? (
           searching ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.textMuted, fontSize: 13 }}>Loading…</div>
           : searchError ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.red, fontSize: 13 }}>Couldn't search areas — check your connection and try again.</div>

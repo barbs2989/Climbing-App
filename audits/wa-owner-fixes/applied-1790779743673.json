@@ -1,0 +1,19 @@
+{
+ "applied": [
+  {
+   "id": "wa_clean_break",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Trailhead-to-summit gain from the Silver Star Creek pullout: two independent GPS-logged ascents give 4,481 and 4,541 ft (within 2%); 4,200 was below the row's own pins (3,450 -> 7,920). Car-to-car totals disagree between sources, so none is stated."
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_clean_break",
+   "before": {
+    "gain_ft": 4200
+   }
+  }
+ ]
+}

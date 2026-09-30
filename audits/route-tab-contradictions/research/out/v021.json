@@ -1,0 +1,190 @@
+{
+ "file": "v021",
+ "results": [
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "fact": "Primary trailhead and one-way distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: in the live row the trailhead waypoint, approach_logistics (name, coordinates and direction), approach, overview and itinerary all describe the Eldorado Creek trailhead on Cascade River Road, dist_km is no longer stored, and the Thunder Creek/Lucky Pass line appears only as a clearly labelled alternative in approach_variants.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "fact": "One-way distance: approach says 18-20 miles one way; itinerary totals about 20 miles round trip",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the approach text no longer states an 18-20 mile one-way distance (it now gives only the height below the summit and a two-to-three-day round trip), and the itinerary's days (7 + 3.5 + 3 + 6.5 mi) agree with its own 'roughly 20 miles round trip' note.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_boving_christensen",
+   "fact": "total route length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route database page publishes both figures at once: a 450 ft total and pitch lengths of about 120, 200, 100 and 170 ft, which pitch_detail mirrors (35/60/30/50 m), and a separate report also gives 4 pitches and 450 ft. The difference is rope run out along a line that trends left (pitch 2 is a long leftward traverse of face cracks) against the height of the face, not two incompatible claims, and no source gives different pitch lengths.",
+   "sources": [
+    "https://www.mountainproject.com/route/203227680/boving-christensen",
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "fact": "total route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The route database page gives 500 ft, 6 pitches and says pitches 1-2 and 3-4 each link into roughly 180 ft pitches, but divides the route differently from the row (its P1-P2 are the row's pitch 1, and its P3-P4 are the row's pitches 2-3, which the row makes 85 m / ~280 ft together). A regional write-up gives a 7-pitch split with 70, 50, 70 and 140 ft for the upper pitches, again a different division. Published totals run 500-650 ft and length_m (600 ft) sits inside them; the pitch_detail lengths (~778 ft in all) look inflated, but no two sources give per-pitch lengths on the row's own division, so nothing is changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/105808515/stanley-burgner",
+    "https://wenatcheeoutdoors.org/2016/05/02/prusik-peak-south-face/",
+    "https://stephabegg.com/trip-reports/washington/prusik-burgner-stanley/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "fact": "total route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The only other record found is the first-ascent party's own journal note (5 pitches, 450 ft, 5.10+ A0), the same party as the trip report already used, so still a single source; it gives no per-pitch lengths. length_m and rope_note (450 ft) agree with it, but the pitch_detail lengths (five round 30-45 m figures, ~541 ft) cannot be corrected from research.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201213722/Prusik-Peak-South-Face-Energizer-Bunny",
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_prusik_peak_taylor_wood_route",
+   "fact": "number of sections/pitches on the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. A fresh search found no ascent of the 2023 Taylor-Wood Route by anyone other than the first-ascent party: the route database page (8 pitches, 670 ft in its header, a 10-pitch description with P9-P10 added later to reach the true summit) and the new-route write-up are both theirs. With one source that itself gives both counts, neither pitches=8 nor the overview's 'ten-section' can be settled.",
+   "sources": [
+    "https://www.summitpost.org/new-route-the-taylor-wood-route-on-prusik-peak-wa/1080379",
+    "https://www.mountainproject.com/route/124913765/taylor-wood-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "fact": "overall commitment grade (roman numeral)",
+   "verdict": "fixed",
+   "correct_value": "II-III",
+   "evidence": "The sources split evenly over the same line. Grade II, 5.7: the club route page ('rated Grade II, 5.7') and a 2013 one-day ascent report that gives Grade II, 5.7 from the regional guide; a route page also lists it as a half-day climb. Grade III: the route database page (Trad, Alpine, 400 ft, 4 pitches, Grade III) and a 2016 report titled West Ridge (III 5.7). Under the delegated split-grade rule the range II-III goes in grade, commitment, alpine_grade and the itinerary's copy, replacing the row's own split (grade II vs commitment/alpine_grade III).",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge",
+    "https://mountainlessons.com/climbing/west-ridge-of-prusik-peak-in-a-day",
+    "https://www.mountainproject.com/route/105808527/west-ridge",
+    "https://spokalpine.com/2016/07/17/prusik-peak/",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/west-ridge/156932"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Grade II, 5.7",
+     "value": "Grade II-III, 5.7",
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "overall commitment grade (roman numeral)"
+    },
+    {
+     "op": "set",
+     "column": "commitment",
+     "path": [],
+     "expect": "III",
+     "value": "II-III",
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "overall commitment grade (roman numeral)"
+    },
+    {
+     "op": "set",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "III",
+     "value": "II-III",
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "overall commitment grade (roman numeral)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "(5.7, II, 4 pitches)",
+     "replace": "(5.7, II-III, 4 pitches)",
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "overall commitment grade (roman numeral)"
+    }
+   ]
+  },
+  {
+   "id": "wa_red_mountain_snoqualmie_standard",
+   "fact": "Waypoint list names 'Red Pass' as a mid-route junction, but the route's own prose never goes there",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row's waypoints are now only the PCT North trailhead and the Red Mountain summit; the 'Red Pass' pin is gone. The itinerary's one mention ('turn off onto #1033 toward Red Pass/Red Mountain') only names the trail's direction, which matches the geography (the scramble leaves the Commonwealth Creek trail at a cairn before the pond, short of Red Pass).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "fact": "Which drainage/trail the approach to Rimrock Ridge uses",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "STRUCTURAL: the approach's final leg ('follow the Agnes Creek Trail roughly 8-9 miles up-valley ... Swamp Creek Camp near mile 8.5, then leave the trail and bushwhack east into the upper Agnes Creek/Blue Basin drainage ... fording Agnes Creek or Spruce Creek') and the Swamp Creek Camp waypoint (distMi 8.1) should be removed, because they lead away from the peak; a researched line up Flat Creek or the West Fork Agnes Creek would have to replace them, and none is published. OpenStreetMap maps Rimrock Ridge as a ridge running from about 48.370 to 48.383 N and -121.018 to -120.969 W, and Swamp Creek Camp at 48.3097, -120.9205, so the ridge lies 4-5 miles north-west of that camp, not east of it; the trail pages already tried place it between upper Flat Creek and the West Fork Agnes Creek, whose trail leaves the PCT near Fivemile Camp. No 'Blue Basin' appears in the map data. No ascent account names a route, so a replacement approach would be invention, and removing the leg would leave the approach without a line; this needs a human with a map.",
+   "sources": [
+    "https://nominatim.openstreetmap.org/search?q=Rimrock%20Ridge%2C%20Chelan%20County%2C%20Washington&format=json",
+    "https://nominatim.openstreetmap.org/search?q=Swamp%20Creek%20Camp&format=json",
+    "https://www.wta.org/go-hiking/hikes/west-fork-agnes-creek",
+    "https://www.wta.org/go-hiking/hikes/flat-creek"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Slope aspect of the switchbacks: 'southeast-facing' (itinerary note, sectionBreakdown note) vs 'south/southwest-facing' (approach, face, descent_text)",
+   "verdict": "fixed",
+   "correct_value": "south-facing",
+   "evidence": "The WTA trail page describes the climb up the Rock Mountain trail as an arid, exposed slope whose southern exposure melts the snow off early, and USGS 1 m ground heights sampled along the lower switchback slope (47.780-47.784 N) show it facing due south (~180 degrees). Every other field in the row (approach, face, overview, hazards, waypoint directions, approach_variants, best_season, climate) already calls it south- or south/southwest-facing; only the itinerary note and its sectionBreakdown copy say southeast-facing, so those two are changed to south-facing. The 'southwest' in the other fields is left as is, since only the ground model speaks to it.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.963&y=47.784&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "climb southeast-facing, largely shadeless slopes",
+     "replace": "climb south-facing, largely shadeless slopes",
+     "id": "wa_rock_mountain_west_route",
+     "fact": "Slope aspect of the switchbacks: 'southeast-facing' (itinerary note, sectionBreakdown note) vs 'south/southwest-facing' (approach, face, descent_text)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "climb southeast-facing, largely shadeless slopes",
+     "replace": "climb south-facing, largely shadeless slopes",
+     "id": "wa_rock_mountain_west_route",
+     "fact": "Slope aspect of the switchbacks: 'southeast-facing' (itinerary note, sectionBreakdown note) vs 'south/southwest-facing' (approach, face, descent_text)"
+    }
+   ]
+  }
+ ]
+}

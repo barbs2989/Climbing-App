@@ -1,0 +1,99 @@
+{
+ "applied": [
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "status"
+   ],
+   "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "status"
+   ],
+   "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window"
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "column": "best_season",
+   "path": [],
+   "fact": "Best time of year: rope_note says May/June is best, best_season says avoid late April-May"
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Best time of year: rope_note says May/June is best, best_season says avoid late April-May"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September, within the broader late-spring-to-October window",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Brush and rock are typically dry and passable, long daylight hours help with the long, slow off-trail sections",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Lingering snow patches possible on the upper ridge in higher-snow years, and brush is leafing out and at its thickest, compounding the already-brushy approach",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Driest and most reliable conditions of the season, though this is also when afternoon thunderstorms are most common",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Early snow or sustained rain can arrive, wet brush and rock significantly slow and add risk to the already loose, routefinding-heavy terrain",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Stable weather and cooler temps typical, brush begins dying back which can ease travel, but shorter days trim margin for a long brushy day",
+       "status": "good"
+      }
+     }
+    },
+    "best_season": "This is treated as much as a winter/early-season snowshoe objective as a summer scramble. Roughly November through April, consolidated snow bridges the worst slide-alder brush and boulder fields on the west ridge, though it demands snowshoes, an ice axe, and solid routefinding in what is often fog/whiteout terrain. A July-September ascent is driest underfoot but means fighting through dense brush and downed timber the whole way. Avoid the shoulder season (roughly late April-May) when snow on the boulder fields tends to be rotten/isothermal and hides holes.",
+    "rope_note": "Class 2 off-trail scramble up steep western slopes from Lake Serene; best May/June when snow covers underbrush. No technical gear."
+   }
+  }
+ ]
+}

@@ -57,6 +57,7 @@ npm run check:popup-chrome # ...and every ✕, ← Back and remove-✕ in the ap
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
 npm run check:injection-anchors # every INJECTION CASE still LANDS, so a guard's proof cannot rot (in build)
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
+npm run check:scroll-containment # every scroll pane contains its overscroll, so a sheet never reads as STUCK (in build)
 
 # ── Browser walks — notes: docs/guards/browser-walks.md ──
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
@@ -225,6 +226,7 @@ npm run check:search-norm # "mt baker" finds Mount Baker — the JS and SQL spel
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:catalog-duplicates # can a duplicate route land again (triggers live on INSERT+UPDATE), and has one?
+npm run check:area-duplicates # is any PLACE filed twice? (same-name areas < 3 km, vs a READ list; daily)
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?
 npm run check:function-drift # is the LIVE function the one the migrations describe?
 npm run check:column-drift # ...and is the LIVE TABLE? (a column git has never seen)

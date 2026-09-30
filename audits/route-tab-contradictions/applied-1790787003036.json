@@ -1,0 +1,285 @@
+{
+ "applied": [
+  {
+   "id": "wa_ghost_peak_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Ross Lake described as serving only Luna/Fury"
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    1,
+    "directions"
+   ],
+   "fact": "Ross Lake described as serving only Luna/Fury"
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Ross Lake described as serving only Luna/Fury"
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Ross Lake described as serving only Luna/Fury"
+  },
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "column": "dist_km",
+   "path": [],
+   "fact": "one-way approach distance (dist_km 0.97 km shown as 'Approach (one way)' vs ~8+ mile walk in)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_ghost_peak_south_route",
+   "before": {
+    "approach": "Ghost Peak sits deep in the Northern Pickets, just south of Crooked Thumb Peak and about 0.3 mi NNE of Phantom Peak, so this is a multi-day wilderness approach, not a day hike to a base. Standard access is from the Hannegan Pass Trailhead at the end of Ruth Creek Road (FR 32, ~3,100 ft) - not Ross Lake, which instead serves Luna Peak and Mount Fury further south via the Big Beaver Trail/Access Creek approach. From the Hannegan Trailhead, follow the Ruth Creek Trail over Hannegan Pass (5,066 ft, ~4 mi in) and drop into the Chilliwack River valley to a forest camp near Copper Creek/Graybeal Camp (~8 mi in). Day two crosses the Chilliwack River on the cable car and climbs the steep, brushy Brush Creek Trail to Whatcom Pass (~5,210 ft, ~16 mi in) - the last maintained trailbed before the range proper. From Whatcom Pass the route leaves the trail: rope up for glacier travel across the Whatcom Glacier (or go up and over Whatcom Peak's north ridge) to Perfect Pass (6,300 ft), then continue over the Challenger Glacier and Solar Pass to a moraine high camp on the Crooked Thumb Glacier, directly below Ghost Peak's south face - roughly 23-24 mi and three days in. From that camp, a roped glacier crossing reaches the base of the peak, where the original 1970 line climbs low-5th/Class 4 rock up the south face and south arete before finishing on the west face; route-finding here is the crux in poor visibility, since Ghost Peak, Crooked Thumb, and Phantom Peak all crowd the same skyline. Overall hazards: early-season fords on the Chilliwack River, real crevasse risk on the Whatcom and Challenger Glaciers, and loose, exposed ground near the high camp that's easy to lose in cloud.",
+    "waypoints": [
+     {
+      "lat": 48.910185,
+      "lng": -121.591971,
+      "elev": 3100,
+      "name": "Hannegan Trailhead",
+      "note": "Road-end trailhead at Hannegan Campground on Ruth Creek Road (FR 32); Northwest Forest Pass required and a self-issue wilderness permit is needed once you cross into North Cascades National Park.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The route begins at Hannegan Campground, a road-end trailhead at the very end of Ruth Creek Road (Forest Road 32), at about 3,100 feet. A Northwest Forest Pass is required to park here, and a self-issue wilderness permit is needed once you continue on into North Cascades National Park."
+     },
+     {
+      "lat": 48.883737,
+      "lng": -121.533471,
+      "elev": 5066,
+      "name": "Hannegan Pass",
+      "note": "Trail crest where the Ruth Creek approach tops out and meets the Chilliwack River/Copper Ridge trail junctions; bear south into the Chilliwack drainage toward Boundary and Copper Creek camps.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "Follow the Ruth Creek trail up the valley on a steady, maintained grade for about four miles and 2,000 ft to the pass — the easiest travel of the whole trip. Note that this, not Ross Lake, is the standard access; the Big Beaver/Access Creek approach out of Ross Lake serves Luna Peak and Fury, well to the south."
+     },
+     {
+      "lat": 48.875,
+      "lng": -121.3617,
+      "elev": 5210,
+      "name": "Whatcom Pass",
+      "note": "Established high camp and trail junction (~5,210 ft) below Whatcom Peak; last reliable water and flat tent sites before leaving maintained trail for the Whatcom/Challenger glacier terrain.",
+      "type": "Campsite",
+      "distMi": 16,
+      "directions": "From the pass bear south past the Copper Ridge junction and drop into the Chilliwack River valley, following the valley trail to the forest camps near Copper Creek and Graybeal, where most parties finish the first day. Continue down-valley to the Chilliwack River cable car, cross, then climb the steep, brushy Brush Creek trail to the pass. This is a full second day, and it is the last maintained tread on the route."
+     },
+     {
+      "lat": 48.84929,
+      "lng": -121.37458,
+      "elev": 6300,
+      "name": "Perfect Pass",
+      "note": "Granite-slab and heather climbers' camp on the shoulder above the Whatcom Glacier, reached via a steep boot path from Whatcom Pass; the standard staging camp for parties heading onto Challenger Glacier and the Northern Pickets.",
+      "type": "Campsite",
+      "distMi": 18,
+      "directions": "Leave the trail at the pass and rope up. The standard line traverses the Whatcom Glacier around Whatcom Peak's flank to Perfect Pass; parties who would rather not be on the glacier go up and over Whatcom Peak's north ridge instead. Either way this is genuine crevasse terrain and not a snow walk."
+     },
+     {
+      "lat": 48.839663,
+      "lng": -121.362133,
+      "elev": 7100,
+      "name": "Challenger Glacier crossing",
+      "note": "Roped glacier travel required across bergschrund and open crevasses at roughly the 7,000-7,200 ft band below Challenger's summit pinnacles before dropping toward Luna Cirque.",
+      "type": "Hazard",
+      "distMi": 19.5,
+      "directions": "From Perfect Pass climb firm snow past rock outcrops and traverse steep slopes onto the western edge of the Challenger Glacier, then continue up and east across it on a rope. The 7,000–7,200 ft band under Challenger's summit pinnacles is where the bergschrund and the most open crevasses are."
+     },
+     {
+      "lat": 48.830031,
+      "lng": -121.349687,
+      "elev": 6400,
+      "name": "Luna Cirque high camp (near Lousy Lake)",
+      "note": "Remote bivy on the Luna Cirque floor near the Lousy Lake tarn, ringed by the south faces of Challenger, Crooked Thumb, and Phantom Peaks; staging point for the south-side push on Ghost Peak.",
+      "type": "Campsite",
+      "distMi": 21
+     },
+     {
+      "lat": 48.82361,
+      "lng": -121.34139,
+      "elev": 8000,
+      "name": "Ghost Peak",
+      "note": "True summit (8,000+ ft) sits about 0.3 mi NNE of Phantom Peak and 0.2 mi south of Crooked Thumb Peak; gained by moderate snow and Class 4 rock up from the Luna Cirque camp.",
+      "type": "Summit",
+      "distMi": 22,
+      "directions": "The summit is gained from the notch on its south side, which is reached from the west; from there the line follows obvious weaknesses on the south and west faces at 4th to low-5th class. Route-finding is the crux in poor visibility, because Ghost, Crooked Thumb and Phantom all crowd the same skyline and look alike from below. There is no fixed hardware anywhere here, so carry slings and a small rack if you want the option of a short rappel off a natural anchor on the way down."
+     }
+    ],
+    "itinerary": {
+     "cal": "North Cascades NP backcountry permits are required, and the Whatcom Pass/Perfect Pass/Tapto Lakes camp zones are quota-limited — reserve early and plan for July-September when the glacier crossings and snow bridges are most consolidated.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard access to Ghost Peak is from the Hannegan Pass trailhead, not Ross Lake — that approach serves Fury/Luna further south. Day one climbs over Hannegan Pass and drops into the Chilliwack River valley on maintained trail to a forest camp.",
+       "hours": 6,
+       "miles": 8.2,
+       "title": "Approach via Hannegan Pass to the Chilliwack River",
+       "gainFt": 2200,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach Copper Creek / Graybeal Camp"
+      },
+      {
+       "n": 2,
+       "note": "Cross the Chilliwack River (cable car) and grind up the steep, brushy Brush Creek Trail to Whatcom Pass. This is the long, sweaty day of the approach — real parties report 10+ hours of travel with full packs.",
+       "hours": 10,
+       "miles": 8,
+       "title": "Brush Creek Trail to Whatcom Pass",
+       "gainFt": 3000,
+       "lossFt": 800,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach Whatcom Pass / Tapto Lakes camp"
+      },
+      {
+       "n": 3,
+       "note": "Rope up for glacier travel across the Whatcom Glacier to 6,300 ft Perfect Pass, then continue over the Challenger Glacier and Solar Pass to a moraine camp on the Crooked Thumb Glacier, directly below Ghost Peak's south face. This is the technical crux of the approach with real crevasse hazard.",
+       "hours": 10.5,
+       "miles": 7.5,
+       "title": "Over Whatcom and Perfect Pass to high camp",
+       "gainFt": 3700,
+       "lossFt": 1200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach the Crooked Thumb Glacier moraine camp below Ghost Peak"
+      },
+      {
+       "n": 4,
+       "note": "A roped glacier approach to the base of the peak, then low-5th-class alpine rock up the south face and arete before finishing on the west face — the original 1970 line. Round trip from high camp; descend the same way with a mix of downclimbing and short rappels.",
+       "hours": 10,
+       "miles": 4,
+       "title": "Summit day: Ghost Peak South Route",
+       "gainFt": 2200,
+       "lossFt": 2200,
+       "packLb": 16,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave high camp",
+         "detail": "Roped up for glacier travel in the dark."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Gain the south face access col",
+         "detail": "Cross the bergschrund/moat below the face."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Rope up for rock at the south arete",
+         "detail": "Exposed low-5th-class climbing begins."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Summit",
+         "detail": "Finish via the west face traverse."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Begin descent",
+         "detail": "Downclimb/rappel the west face and south arete."
+        },
+        {
+         "time": "5:30 PM",
+         "label": "Back at high camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the south face to the south arete, then the west face, to the summit"
+      },
+      {
+       "n": 5,
+       "note": "Reverse the glacier crossings — Solar Pass, Challenger Glacier, Perfect Pass, Whatcom Glacier — back down to a camp near Whatcom Pass. Long day, mostly downhill but with the reverse crevasse navigation.",
+       "hours": 9.5,
+       "miles": 9,
+       "title": "Begin the exit: back over the passes",
+       "gainFt": 800,
+       "lossFt": 4700,
+       "packLb": 34,
+       "schedule": [],
+       "objective": "Return to Whatcom Pass camp"
+      },
+      {
+       "n": 6,
+       "note": "Descend the Brush Creek Trail, re-cross the Chilliwack River, and climb back over Hannegan Pass to the trailhead — a long but straightforward trail day to close the loop.",
+       "hours": 6.5,
+       "miles": 7,
+       "title": "Hike out to the Hannegan Pass trailhead",
+       "gainFt": 200,
+       "lossFt": 3300,
+       "packLb": 28,
+       "schedule": [],
+       "objective": "Return to the car"
+      }
+     ],
+     "totalNote": "A 6-day, ~44-mile round trip with roughly 12,000 ft of cumulative gain — two-plus days of trail and glacier approach each way bracketing a single technical summit day; strong parties sometimes compress this to 5 days."
+    },
+    "timing": {
+     "totalHrs": 52.5,
+     "summitTimeHrs": 10,
+     "descentTimeHrs": 16,
+     "approachTimeHrs": 26.5,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "Standard access to Ghost Peak is from the Hannegan Pass trailhead, not Ross Lake — that approach serves Fury/Luna further south. Day one climbs over Hannegan Pass and drops into th…",
+       "fromTo": "Approach via Hannegan Pass to the Chilliwack River",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "Cross the Chilliwack River (cable car) and grind up the steep, brushy Brush Creek Trail to Whatcom Pass. This is the long, sweaty day of the approach — real parties report 10+ hour…",
+       "fromTo": "Brush Creek Trail to Whatcom Pass",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10.5,
+       "note": "Rope up for glacier travel across the Whatcom Glacier to 6,300 ft Perfect Pass, then continue over the Challenger Glacier and Solar Pass to a moraine camp on the Crooked Thumb Glac…",
+       "fromTo": "Over Whatcom and Perfect Pass to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 10,
+       "note": "A roped glacier approach to the base of the peak, then low-5th-class alpine rock up the south face and arete before finishing on the west face — the original 1970 line. Round trip …",
+       "fromTo": "Summit day: Ghost Peak South Route",
+       "section": "Climb"
+      },
+      {
+       "hrs": 9.5,
+       "note": "Reverse the glacier crossings — Solar Pass, Challenger Glacier, Perfect Pass, Whatcom Glacier — back down to a camp near Whatcom Pass. Long day, mostly downhill but with the revers…",
+       "fromTo": "Begin the exit: back over the passes",
+       "section": "Descent"
+      },
+      {
+       "hrs": 6.5,
+       "note": "Descend the Brush Creek Trail, re-cross the Chilliwack River, and climb back over Hannegan Pass to the trailhead — a long but straightforward trail day to close the loop.",
+       "fromTo": "Hike out to the Hannegan Pass trailhead",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "before": {
+    "dist_km": 0.97
+   }
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+  "file": "v004",
+  "results": [
+    {
+      "id": "wa_east_face_6",
+      "fact": "Total elevation gain/loss for the route",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. An archived route page for the East Face Direct (same approach and summit) gives the legs separately: about 2,000 ft over 7.5 mi to the bivy basin, then 3,100 ft from the basin to the summit, but no car-to-car total. The ascent log for the peak lists user-entered gains of 4,927 ft (two East Face parties, i.e. the plain trailhead-to-summit difference), 5,127, 5,567 and 7,400 ft. The only stated round-trip totals remain 4,900 ft (club page, Direct) and 6,000 ft (one trip report); a total built from the legs would be computed, so no patch.",
+      "sources": [
+        "https://web.archive.org/web/2016/http://www.summitpost.org/east-face-direct/161716",
+        "https://web.archive.org/web/2024/https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2143",
+        "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_east_face_6",
+      "fact": "Hardest grade of the summit pitches",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. An archived detailed route page describes the same summit tower above the Key Ledge as a 5.3 chimney, a class 3/4 traverse, and a final chimney whose overhang is 5.5 direct or about 5.2 by a traverse on blocks. That supports 5.3 as the easiest way (with the route listing) but also a 5.5 option, while a 2017 party called the last pitch no harder than 5.6 and the club page rates its Direct line 5.6 overall. No two sources give the same maximum for the summit pitches, and a range needs two sources at each end (5.6 has only an upper-bound estimate), so no patch.",
+      "sources": [
+        "https://web.archive.org/web/2016/http://www.summitpost.org/east-face-direct/161716",
+        "https://www.mountainproject.com/route/112042082/east-face",
+        "https://mountainflamingo.com/2017-08-19-20-chimney-rock/"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_east_face_6",
+      "fact": "Overall commitment/alpine grade of the route",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. The route listing still grades the East Face IV; the archived detailed route page for the Direct gives no Roman numeral ('most of a day', class 5.6 with much class 4); the club page gives the Direct Grade II; the peak's ascent log shows one Direct entry labelled 'II, 5.6' and none for the East Face. No second source for IV or for II on this line, so no patch.",
+      "sources": [
+        "https://www.mountainproject.com/route/112042082/east-face",
+        "https://web.archive.org/web/2016/http://www.summitpost.org/east-face-direct/161716",
+        "https://web.archive.org/web/2024/https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2143"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_chimney_rock_west_face",
+      "fact": "Summit-day gain 3,080 ft reaches the 7,727 ft central summit, not the 7,440 ft South Peak this row climbs",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. Still real: day 2 gains/loses 3,080 ft from the 4,650 ft Sunrise Knob camp, exactly the camp-to-main-summit difference, while this row ends on the 7,440 ft South Peak. The one South Peak trip report found (East Gully, from Sunrise Knob at 4,650 ft) gives only whole-trip stats of 19 mi and 5,000 ft gained and lost, and times (4.9 h up, 3.1 h down) with no summit-day gain; an archived route page gives 3,100 ft from the bivy basin but to the main summit. No source states the camp-to-South-Peak gain, and a figure from pin heights would be computed, so no patch.",
+      "sources": [
+        "https://trailcatjim.com/chimney-rock-south-peak-via-east-gully/",
+        "https://web.archive.org/web/2016/http://www.summitpost.org/east-face-direct/161716",
+        "https://en.wikipedia.org/wiki/Chimney_Rock_(Washington)"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_clark_mountain_west_ridge",
+      "fact": "Aspect/face of the documented Walrus Glacier line",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "STRUCTURAL: the row is two lines under one name and needs splitting (or a rename plus a climbing_route rewrite), which the patch format cannot express. Sources agree Clark has two standard ways up: a glacier route on the northeast/east side (the Walrus/Clark Glacier) and a non-glacier scramble on the south-west side that crosses the ridge south of Pt. 8373 by one improbable gully and finishes on Clark's southwest/west ridge. The row's aspect W, face 'West Ridge' and climbing_route[] (Pt. 8373 gully, final south/west ridge) all describe the scramble, while beta describes the Walrus Glacier and says the glacier-free line 'is not the line documented here'. Proposed: either split into a 'Southwest Ridge' scramble row (aspect W/SW, keep climbing_route) and a 'Walrus Glacier' row (aspect NE/E, keep beta), or rename this row to the scramble and rewrite beta to it with the glacier kept as an approach_variants alternative. Sources: a winter ascent report naming the two main routes (glaciated NE slopes vs SW scramble via the gully by Pt. 8373 and the SW ridge) and a 2017 report finishing the scramble on the west ridge.",
+      "sources": [
+        "https://www.countryhighpoints.com/luahna-peak-and-clark-mountain/",
+        "https://www.lemkeclimbs.com/clark-and-luahna-peaks.html",
+        "https://wenatcheeoutdoors.org/2016/05/20/clark-mountain-walrus-glacier/",
+        "https://www.mountaineers.org/activities/routes-places/clark-mountain-southeast-route"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_nw_ridge_2",
+      "fact": "Is the balanced summit block usually climbed? descent_text says most parties do not attempt it; beta/pro_tips/pro_needs say most parties protect/belay it",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. A 2003 trip report reached the platform under the block and got on top by throwing the rope over and jugging with both ends anchored; the other reports found (the 2016 regional route write-up, and the two accounts already used) describe single parties either skipping the block or rope-tossing it. Every source describes what one party did; none states what most parties do, so neither 'most do not attempt' nor 'most protect/belay it' can be adopted or corrected.",
+      "sources": [
+        "https://www.wta.org/go-hiking/trip-reports/tripreport-2003070609",
+        "https://wenatcheeoutdoors.org/2016/05/02/colchuck-balance-rock/",
+        "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_colchuck_balanced_rock_west_face",
+      "fact": "Commitment grade - Grade IV (in `grade`) vs commitment III",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. For III: the topo site's 'III 5.11 C1' and a spot-guide aggregator's 'grade III' (weak, likely derived from the topo site). For IV: a 2017 climber's trip log records the route as 'IV 5.11c/5.11a C1, 300m'. The route listing, a crag database listing (9 pitches, 5.11+, no numeral), and three AAJ reports on neighbouring lines (which call the West Face 'classic' and 'relatively popular') give no numeral. With III effectively one source and IV one source, neither value nor a III-IV range (needs two sources at each end) can be adopted.",
+      "sources": [
+        "http://www.supertopo.com/rock-climbing/North-Cascades-Colchuck-Balanced-Rock-West-Face",
+        "https://www.xtremespots.com/mountain-sports/rock-climbing/colchuck-balanced-rock-west-face-route-wenatchee-washington-usa/",
+        "https://marcusrussi.github.io/cascades-spring-2017/",
+        "https://www.outdooractive.com/en/climbingspot/crag/colchuck-balanced-rock/226010718/",
+        "https://publications.americanalpineclub.org/articles/12201108800/Colchuck-Balanced-Rock-Let-it-Burn"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_leche_la_vaca",
+      "fact": "Pitch count",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. Sources still split by convention over one physical line: the route listing (posted by a first-ascent party member) gives 5 pitches with P5 a ~100 m simul-climbed 4th/low-5th finish; the encyclopedia's route table and a crag database both list 4 pitches (likely not independent of each other); a 2015 trip report describes four belayed pitches then simul-climbing to the summit, consistent with either count. The row is split the same way (pitches, beta, turnaround, pro_tips and watch_out use a P5; overview, descent_text, itinerary and pitch_detail say four), so adopting either number means rewriting four or five fields on a convention call rather than a settled fact. No patch.",
+      "sources": [
+        "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+        "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+        "https://www.outdooractive.com/en/climbingspot/crag/colchuck-balanced-rock/226010718/",
+        "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/97385-tr-colchuck-balanced-rock-and-aasguard-pass-leche-la-vaca-cbr-and-acid-baby-5192015/"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_leche_la_vaca",
+      "fact": "Pitch 3 and 4 lengths: pitch_detail 35 m / 40 m vs beta ~60 m / ~45 m",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. The route listing (first-ascent party) gives ~30, ~30, ~60, ~45 m and ~100 m for the finish; beta and pro_tips ('the 60 m P3') follow it, and length_m 265 equals that sum, so three row fields plus one source favour 60/45 over pitch_detail's 35/40. No second source gives pitch lengths (the encyclopedia table, the crag database and the 2015 trip report give none), and three fields fall short of the 4-field bar for an internal fix, so no patch.",
+      "sources": [
+        "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+        "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/97385-tr-colchuck-balanced-rock-and-aasguard-pass-leche-la-vaca-cbr-and-acid-baby-5192015/"
+      ],
+      "patches": []
+    },
+    {
+      "id": "wa_scarface_3",
+      "fact": "Pitch count",
+      "verdict": "unresolved",
+      "correct_value": null,
+      "evidence": "Third pass. A crag database lists Scarface as 6 pitches, Grade III, 366 m (the row's pitches=6 and length_m=366 match it exactly, so they probably came from it). The archived first-ascent trip report (read in full this time) names the 2nd, 3rd and 4th pitches and 'the last couple moderate pitches' but gives the count only on a topo image; the route listing says P5+ without a number. One source for 6 and none for 5, so neither pitches nor the itinerary's '5 pitches' is changed.",
+      "sources": [
+        "https://www.outdooractive.com/en/climbingspot/crag/colchuck-balanced-rock/226010718/",
+        "https://web.archive.org/web/2024/https://cascadeclimbers.com/forum/topic/75607-tr-colchuck-balanced-rock-scarface-iii-510-8152010/",
+        "https://www.mountainproject.com/route/108157279/scarface"
+      ],
+      "patches": []
+    }
+  ]
+}

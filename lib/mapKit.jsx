@@ -10,6 +10,40 @@ export const MAP_TILE_URLS = {
   topo: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
 };
 
+// "Snow" is the one layer that shows the ground as it is NOW. The satellite layer above is a
+// years-old mosaic, usually chosen snow-free, so it can never show fresh snow. This one is
+// NASA's daily true-colour composite (NOAA-20 VIIRS). The trade is sharpness: about 375 m a
+// pixel, and native tiles stop at zoom 9. That is enough to see whether a range is white and
+// nowhere near enough for a couloir. The day being viewed is in the layer key ("snow" =
+// yesterday, "snow:3" = three days back), so every map's existing `baseLayer` state carries it
+// without new state. Today's composite is blank until the day is processed, so 1 is the floor.
+// Clouds are white too, and on a Washington autumn day they usually cover the peaks, so the
+// toggle offers a stepper to go back to a clear day.
+export const SNOW_MAX_DAYS = 30;
+export function snowDaysAgo(baseLayer) {
+  if (typeof baseLayer !== "string" || baseLayer.indexOf("snow") !== 0) return null;
+  const n = parseInt(baseLayer.slice(5), 10);
+  return n >= 1 && n <= SNOW_MAX_DAYS ? n : 1;
+}
+// The UTC calendar day the composite is filed under; GIBS keys its days in UTC.
+export function snowDateIso(daysAgo) { return new Date(Date.now() - daysAgo * 864e5).toISOString().slice(0, 10); }
+function snowTileUrl(daysAgo) { return "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/" + snowDateIso(daysAgo) + "/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg"; }
+const SNOW_NATIVE_ZOOM = 9;
+// Beyond zoom 10 a 375 m pixel is a grey smear that reads as a broken map, so choosing Snow
+// steps OUT to 10. The climber can still zoom back in; nothing is locked.
+const SNOW_VIEW_ZOOM = 10;
+
+// The one place a base tile layer is built, so a map that swaps layers in place and one that
+// builds its layer at init cannot disagree about a layer's URL or zoom limits.
+export function baseTileLayer(L, baseLayer) {
+  const d = snowDaysAgo(baseLayer);
+  if (d != null) return L.tileLayer(snowTileUrl(d), { maxNativeZoom: SNOW_NATIVE_ZOOM, maxZoom: 19 });
+  return L.tileLayer(MAP_TILE_URLS[baseLayer] || MAP_TILE_URLS.sat, { maxZoom: baseLayer === "topo" ? 17 : 19 });
+}
+export function fitZoomToLayer(map, baseLayer) {
+  if (snowDaysAgo(baseLayer) != null && map.getZoom() > SNOW_VIEW_ZOOM) map.setZoom(SNOW_VIEW_ZOOM);
+}
+
 // Injects the Leaflet CDN css/js once (dedupes what used to be 4 copy-pasted
 // bootstraps) and calls onReady once window.L is available, or onError if the
 // script fails to load.
@@ -113,18 +147,38 @@ export function applyBaseLayer(map, tileRef, baseLayer) {
   if (!map || !window.L) return;
   const L = window.L;
   if (tileRef.current) { try { map.removeLayer(tileRef.current); } catch (e) {} }
-  tileRef.current = L.tileLayer(MAP_TILE_URLS[baseLayer], { maxZoom: baseLayer === "topo" ? 17 : 19 }).addTo(map);
+  tileRef.current = baseTileLayer(L, baseLayer).addTo(map);
+  fitZoomToLayer(map, baseLayer);
 }
 
 // The satellite/topo/street button row — lifted verbatim from GPXMap, the one
-// map that already had this toggle.
-export function BaseLayerToggle({ baseLayer, setBaseLayer, C }) {
+// map that already had this toggle. `snow` opts a map into the Snow layer; its day stepper
+// sits top-right under the full-screen button (44px from top:10), so a map that puts its
+// own controls there (FireMap's zoom) leaves it off.
+export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow }) {
+  const days = snowDaysAgo(baseLayer);
+  const opts = [["sat", "Satellite"], ["topo", "Topo"], ["street", "Street"]].concat(snow ? [["snow", "Snow"]] : []);
+  const step = { width: 30, height: 30, borderRadius: 7, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 15, fontWeight: 800, lineHeight: 1, padding: 0, cursor: "pointer" };
+  const off = { opacity: 0.35, cursor: "default" };
   return (
-    <div style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, display: "flex", gap: 4 }}>
-      {[["sat", "Satellite"], ["topo", "Topo"], ["street", "Street"]].map(([k, lbl]) => (
-        <button key={k} onClick={() => setBaseLayer(k)} aria-current={baseLayer === k ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (baseLayer === k ? C.blue : C.border), background: baseLayer === k ? C.blueBg : C.surface, color: baseLayer === k ? C.blue : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>
-      ))}
-    </div>
+    <>
+      <div style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, display: "flex", gap: 4 }}>
+        {opts.map(([k, lbl]) => {
+          const on = k === "snow" ? days != null : baseLayer === k;
+          return <button key={k} onClick={() => setBaseLayer(k)} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>;
+        })}
+      </div>
+      {snow && days != null ? (
+        <div style={{ position: "absolute", top: 62, right: 10, zIndex: 1000, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: 6, boxShadow: "0 2px 8px rgba(0,0,0,0.4)", display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <button onClick={() => { if (days < SNOW_MAX_DAYS) setBaseLayer("snow:" + (days + 1)); }} disabled={days >= SNOW_MAX_DAYS} aria-label="Show the day before" style={days >= SNOW_MAX_DAYS ? Object.assign({}, step, off) : step}>‹</button>
+            <div aria-live="polite" style={{ fontSize: 12, fontWeight: 700, color: C.text, minWidth: 52, textAlign: "center" }}>{new Date(snowDateIso(days) + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" })}</div>
+            <button onClick={() => { if (days > 1) setBaseLayer("snow:" + (days - 1)); }} disabled={days <= 1} aria-label="Show the day after" style={days <= 1 ? Object.assign({}, step, off) : step}>›</button>
+          </div>
+          <div style={{ fontSize: 10, color: C.textMuted, maxWidth: 124, textAlign: "center", lineHeight: 1.3 }}>Cloud looks white too. Step back for a clear day.</div>
+        </div>
+      ) : null}
+    </>
   );
 }
 

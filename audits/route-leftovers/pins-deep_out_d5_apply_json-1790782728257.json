@@ -1,0 +1,152 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_seattle_south",
+   "op": "clear_line",
+   "points": 8,
+   "why": "The drawn line runs from the trailhead up the Skyline Ridge primitive route via Three Lakes and Kimta Peak; the row describes the North Fork Quinault river trail, so no vertex of it can be kept."
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "op": "remove_pin",
+   "index": 4,
+   "name": "Beauty (Lake Beauty) Pass",
+   "gpx_vertices_dropped": 0
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "op": "remove_pin",
+   "index": 3,
+   "name": "Promise Creek Bench",
+   "gpx_vertices_dropped": 0
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "op": "remove_pin",
+   "index": 2,
+   "name": "Kimta Peak",
+   "gpx_vertices_dropped": 0
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "op": "remove_pin",
+   "index": 1,
+   "name": "Three Lakes",
+   "gpx_vertices_dropped": 0
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_seattle_south",
+   "waypoints": [
+    {
+     "lat": 47.5759,
+     "lng": -123.648,
+     "elev": 500,
+     "name": "North Fork Quinault Trailhead (North Shore Road)",
+     "note": "Road's end on North Shore Road above Lake Quinault; Wilderness Information Center permit required, start of the North Fork Quinault River Trail; the Three Lakes trail up to the Skyline Ridge Primitive Trail also leaves from here.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.60059,
+     "lng": -123.72375,
+     "elev": 3175,
+     "name": "Three Lakes",
+     "note": "Established camp beside the largest of the Three Lakes (moss-covered shoreline); water from the outlet stream just north of the sites is the last dependable source before a dry 5.2-mile stretch toward Kimta Peak.",
+     "type": "Campsite",
+     "distMi": 6.9
+    },
+    {
+     "lat": 47.6975,
+     "lng": -123.6889,
+     "elev": 4700,
+     "name": "Kimta Peak",
+     "note": "Skyline Ridge Primitive Trail sidehills Kimta Peak's south flank; parties camp on a gravel flat in Kimta Basin here after the waterless stretch from Three Lakes.",
+     "type": "Junction",
+     "distMi": 16.5
+    },
+    {
+     "lat": 47.70395204761905,
+     "lng": -123.6568627857143,
+     "elev": 5340,
+     "name": "Promise Creek Bench",
+     "note": "High point of the Skyline Trail; NPS describes 'lunar-esque' loose rocky terrain here that demands careful routefinding, especially in fog.",
+     "type": "Hazard",
+     "distMi": 19
+    },
+    {
+     "lat": 47.7162655,
+     "lng": -123.6396276,
+     "elev": 5080,
+     "name": "Beauty (Lake Beauty) Pass",
+     "note": "Ridge crossing marked by cairns and marker ducks; a 0.3-mile spur drops to Lake Beauty camp with a view of Mount Olympus's south face.",
+     "type": "Junction",
+     "distMi": 22
+    },
+    {
+     "lat": 47.72481,
+     "lng": -123.55462,
+     "elev": 3602,
+     "name": "Low Divide",
+     "note": "Saddle between Mount Seattle and Mount Christie and the terminus of the Skyline Ridge Primitive Trail, near the historic Low Divide Ranger Station site.",
+     "type": "Junction",
+     "distMi": 16
+    },
+    {
+     "lat": 47.727303057142855,
+     "lng": -123.56447954285714,
+     "elev": 4550,
+     "name": "Seattle Meadows",
+     "note": "High camp in Upper Seattle Basin reached via a ~1,000 ft climb from Seattle Creek; standard launch point for the summit scramble, per route beta.",
+     "type": "Campsite",
+     "distMi": null
+    },
+    {
+     "lat": 47.730995,
+     "lng": -123.577965,
+     "elev": 6246,
+     "name": "Mount Seattle",
+     "note": "True summit gained by a Class 2-3 scramble up the east ridge, crossing scree and talus slopes on the peak's eastern side above Upper Seattle Basin.",
+     "type": "Summit",
+     "distMi": 19
+    }
+   ],
+   "gpx": [
+    [
+     47.5759,
+     -123.648
+    ],
+    [
+     47.62192181818182,
+     -123.66935090909091
+    ],
+    [
+     47.6975,
+     -123.6889
+    ],
+    [
+     47.70395204761905,
+     -123.6568627857143
+    ],
+    [
+     47.7162655,
+     -123.6396276
+    ],
+    [
+     47.7245986,
+     -123.5543437
+    ],
+    [
+     47.727303057142855,
+     -123.56447954285714
+    ],
+    [
+     47.730909,
+     -123.577994
+    ]
+   ]
+  }
+ ]
+}

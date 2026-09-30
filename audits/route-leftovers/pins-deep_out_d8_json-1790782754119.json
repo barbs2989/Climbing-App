@@ -1,0 +1,397 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "op": "move_pin",
+   "index": 2,
+   "name": "Cockscomb Ridge base (east edge of the Roosevelt Glacier)",
+   "moved_km": 3.89,
+   "gpx_vertices_carried": 1
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "op": "move_pin",
+   "index": 3,
+   "name": "Cockscomb Tower",
+   "moved_km": 3.78,
+   "gpx_vertices_carried": 1
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "op": "move_pin",
+   "index": 1,
+   "name": "Heliotrope Ridge Camp",
+   "moved_km": 1.41,
+   "gpx_vertices_carried": 1
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "op": "move_pin",
+   "index": 2,
+   "name": "North Ridge Base / Coleman Glacier Junction",
+   "moved_km": 2.35,
+   "gpx_vertices_carried": 1
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "op": "move_pin",
+   "index": 1,
+   "name": "Heliotrope Ridge Camp",
+   "moved_km": 1.41,
+   "gpx_vertices_carried": 1
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "op": "move_pin",
+   "index": 2,
+   "name": "Coleman Headwall Base",
+   "moved_km": 2.48,
+   "gpx_vertices_carried": 1
+  },
+  {
+   "id": "wa_doorway_flake",
+   "op": "clear_line",
+   "points": 4,
+   "why": "4-point sketch (saddle, saddle, old trailhead pin, a point south-east of the wall) that follows no approach; after the duplicate saddle is removed it would be a straight segment from the parking lot to south of the wall."
+  },
+  {
+   "id": "wa_doorway_flake",
+   "op": "move_pin",
+   "index": 0,
+   "name": "Squire Creek Road washout parking (FS Rd 2040)",
+   "moved_km": 1.34,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_doorway_flake",
+   "op": "remove_pin",
+   "index": 2,
+   "name": "South Face grassy saddle",
+   "gpx_vertices_dropped": 0
+  },
+  {
+   "id": "wa_skeena26",
+   "op": "clear_line",
+   "points": 4,
+   "why": "4-point sketch (saddle, saddle, old trailhead pin, a point south-east of the wall) that follows no approach; after the duplicate saddle is removed it would be a straight segment from the parking lot to south of the wall."
+  },
+  {
+   "id": "wa_skeena26",
+   "op": "move_pin",
+   "index": 0,
+   "name": "Squire Creek Road washout parking (FS Rd 2040)",
+   "moved_km": 1.34,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_skeena26",
+   "op": "remove_pin",
+   "index": 2,
+   "name": "South Face grassy saddle",
+   "gpx_vertices_dropped": 0
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "waypoints": [
+    {
+     "lat": 48.80224,
+     "lng": -121.89567,
+     "elev": 3670,
+     "name": "Heliotrope Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From the Mount Baker Highway (SR 542) about a mile east of Glacier, turn onto Glacier Creek Road (FR 39) and follow it to its end at the Heliotrope Ridge trailhead for Trail 677, at about 3,700 ft."
+    },
+    {
+     "lat": 48.7893,
+     "lng": -121.86777,
+     "elev": 5900,
+     "name": "Heliotrope Ridge Camp",
+     "type": "Campsite",
+     "distMi": 3
+    },
+    {
+     "lat": 48.785,
+     "lng": -121.868,
+     "elev": 7800,
+     "name": "Cockscomb Ridge base (east edge of the Roosevelt Glacier)",
+     "type": "Junction",
+     "distMi": null
+    },
+    {
+     "lat": 48.782,
+     "lng": -121.865,
+     "elev": 9200,
+     "name": "Cockscomb Tower",
+     "type": "Hazard",
+     "distMi": null
+    },
+    {
+     "lat": 48.776797,
+     "lng": -121.814467,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     48.80224,
+     -121.89567
+    ],
+    [
+     48.7893,
+     -121.86777
+    ],
+    [
+     48.785,
+     -121.868
+    ],
+    [
+     48.782,
+     -121.865
+    ],
+    [
+     48.776797,
+     -121.814467
+    ]
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "waypoints": [
+    {
+     "lat": 48.80201,
+     "lng": -121.89597,
+     "elev": 3700,
+     "name": "Heliotrope Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.795,
+     "lng": -121.885,
+     "elev": 6000,
+     "name": "Heliotrope Ridge Camp",
+     "type": "Campsite",
+     "distMi": 3
+    },
+    {
+     "lat": 48.788,
+     "lng": -121.872,
+     "elev": 7500,
+     "name": "North Ridge Base / Coleman Glacier Junction",
+     "type": "Junction",
+     "distMi": 4
+    },
+    {
+     "lat": 48.776797,
+     "lng": -121.814467,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 6
+    }
+   ],
+   "gpx": [
+    [
+     48.80201,
+     -121.89597
+    ],
+    [
+     48.795,
+     -121.885
+    ],
+    [
+     48.788,
+     -121.872
+    ],
+    [
+     48.776797,
+     -121.814467
+    ]
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "waypoints": [
+    {
+     "lat": 48.80201,
+     "lng": -121.89597,
+     "elev": 3700,
+     "name": "Heliotrope Ridge Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "The trailhead sits at roughly 3,400 to 3,700 ft on Glacier Creek Road 39. The road washed out in December 2025 and reopened to vehicles in August 2026 after repairs; it has washed out before, so check its status before committing."
+    },
+    {
+     "lat": 48.795,
+     "lng": -121.885,
+     "elev": 6700,
+     "name": "Heliotrope Ridge Camp",
+     "type": "Campsite",
+     "distMi": 3,
+     "directions": "Trail 677 climbs through old-growth forest and flower-filled avalanche chutes, with a couple of unbridged creek crossings that are awkward early season or after rain. At about 2.25 miles the maintained trail forks; the left branch goes to the Coleman Glacier overlook, so take the RIGHT climbers' path that drops toward the moraine. Past the former Kulshan Cabin site near 4,800 to 5,000 ft, the last reliable running water, the path climbs steeply up the crest of the Hogsback lateral moraine to the usual camps between about 6,500 and 7,200 ft, roughly 3 to 3.5 miles and 3,000 ft above the car. Above camp there is no water except what you melt."
+    },
+    {
+     "lat": 48.781,
+     "lng": -121.865,
+     "elev": 8500,
+     "name": "Coleman Headwall Base",
+     "type": "Hazard",
+     "distMi": 4.5,
+     "directions": "Rope up for glacier travel and cross the broken lower Coleman, generally trending up toward 8,000 ft to meet the North Ridge tracks before dropping back down and cutting under the Roman Nose to reach the base near 8,500 ft. This crossing is a real route-finding crux that changes year to year, with big crevasses to weave around, questionable snow bridges, and sometimes a committing, barely-reversible jump or a short vertical step to get established. Leave camp in the dark (starts between 11 p.m. and 4:30 a.m. are typical) so you are past the exposed crossing and the lower face before the sun brings rock and ice down off the headwall and the Black Buttes."
+    },
+    {
+     "lat": 48.776797,
+     "lng": -121.814467,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "Roughly a dozen pitches of sustained 45 to 50 degree neve and ice lead up the face: hard, dirty ice on leftward-trending traverses low down with rockfall exposure from a choss band above, then short steeper steps and an 800 ft band of brittle, plated 60 to 80 degree ice that takes screws well despite looking suspect. A bergschrund near 10,000 ft is the other crux and its lip often forces a short, occasionally overhanging step, sometimes belayed or lowered across off a screw or picket. Above it the angle relents to moderate snow and then an easy slope onto the summit plateau; 8 to 12 hours camp-to-summit is typical."
+    }
+   ],
+   "gpx": [
+    [
+     48.80201,
+     -121.89597
+    ],
+    [
+     48.795,
+     -121.885
+    ],
+    [
+     48.781,
+     -121.865
+    ],
+    [
+     48.776797,
+     -121.814467
+    ]
+   ]
+  },
+  {
+   "id": "wa_doorway_flake",
+   "waypoints": [
+    {
+     "lat": 48.2088,
+     "lng": -121.6298,
+     "elev": 1900,
+     "name": "Squire Creek Road washout parking (FS Rd 2040)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 1900,
+     "directions": "From I-5 take the Arlington exit and drive SR 530 east through Oso to Darrington. Leave town on Squire Creek Road and follow it to the washout gate, which is where the road ends for vehicles and where you park. Everything past the gate is walked, starting along the old roadbed past the flagged landslide crossing."
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "Grassy saddle (South Face routes)",
+     "note": "Shares the same ~3 hr approach as the wall's other South Face routes.",
+     "type": "Base/bivy",
+     "distMi": 3
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "South Face grassy saddle",
+     "type": "Base/bivy",
+     "distMi": null,
+     "elevFt": 3249
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4958,
+     "name": "Squire Creek Wall (true summit/high point)",
+     "type": "Summit",
+     "elevFt": 4958
+    }
+   ],
+   "gpx": [
+    [
+     48.19575,
+     -121.65485
+    ],
+    [
+     48.19575,
+     -121.65485
+    ],
+    [
+     48.2088,
+     -121.6298
+    ],
+    [
+     48.1854,
+     -121.6493
+    ]
+   ]
+  },
+  {
+   "id": "wa_skeena26",
+   "waypoints": [
+    {
+     "lat": 48.2088,
+     "lng": -121.6298,
+     "elev": 1900,
+     "name": "Squire Creek Road washout parking (FS Rd 2040)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 1900,
+     "directions": "Take I-5 to the Arlington exit, then SR 530 east through Oso to Darrington. From town, follow Squire Creek Road until it is blocked by the washout and park at the gated area there, around 1,200 feet. You cannot drive past that point; the climbers' path toward the Squire Creek Walls starts from the parking area, beginning on the old roadbed beyond the gate."
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "Grassy saddle (South Face routes)",
+     "note": "Brilliant white slab starting near the saddle, mostly 5.4-5.6 with a 5.9 opening pitch.",
+     "type": "Base/bivy",
+     "distMi": 3
+    },
+    {
+     "lat": 48.19575,
+     "lng": -121.65485,
+     "elev": 3249,
+     "name": "South Face grassy saddle",
+     "type": "Base/bivy",
+     "distMi": null,
+     "elevFt": 3249
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4958,
+     "name": "Squire Creek Wall (true summit/high point)",
+     "type": "Summit",
+     "elevFt": 4958
+    }
+   ],
+   "gpx": [
+    [
+     48.19575,
+     -121.65485
+    ],
+    [
+     48.19575,
+     -121.65485
+    ],
+    [
+     48.2088,
+     -121.6298
+    ],
+    [
+     48.1854,
+     -121.6493
+    ]
+   ]
+  }
+ ]
+}
