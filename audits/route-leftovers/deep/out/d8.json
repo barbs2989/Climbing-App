@@ -1,0 +1,407 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "verdict": "confirmed",
+   "resolution": "Move pin 2 (ridge base) and pin 3 (Cockscomb Tower) from the Hogsback onto the crest of the ridge that divides the Roosevelt Glacier from the Mazama and Park glaciers, at the heights the sources give; rename pin 2 to match; clear the distMi values on pins 2-4, which were measured along the wrong line.",
+   "summary": "The two Cockscomb pins sat on the Hogsback climbing line about 3.5 km west of the ridge; they now sit on the ridge itself, at its foot where the Roosevelt Glacier crossing ends (about 7,800 ft) and on the upper crest where the tower stands beside the Park Glacier (about 9,250 ft).",
+   "evidence": "Identity of the ridge: the 1961 first-ascent account crosses the Coleman and then the Roosevelt Glacier northeastward to the foot of the ridge at 7,800 ft, turns the 300-ft Cockscomb Tower on its east side, after which the ridge broadens into the summit plateau; a guide-service high traverse descends from the summit plateau down the Cockscomb Ridge, rides from the Cockscomb Tower onto the Park Glacier, crosses the Mazama Glacier and then returns to the Cockscomb Ridge before dropping WEST onto the Roosevelt Glacier; a separate route page says the ridge is gained around 7,500 ft after 2-3 hours of glacier travel from the Heliotrope side. So the ridge is the one with the Roosevelt Glacier on its west and the Park (upper) and Mazama (lower) glaciers on its east. Map data draws exactly that ridge (way 1196235732, tagged natural=ridge, running due north from the summit at lng -121.8145 to 48.7963,-121.8184), and the mapped glacier outlines put the Roosevelt's east edge and the Park/Mazama west edges on that line (Park meets the crest from the summit down to ~48.7842; Mazama from ~48.7847 northward). USGS ground along that crest: 9,258 ft at 48.78642,-121.81378; 9,602 at 48.7849; 8,961 at 48.7878; 8,008 at 48.7939; 7,859 at 48.7960,-121.8172; 7,774 at 48.7961,-121.8177. Pin 2 (base) -> 48.79605,-121.81755, ground 7,804 ft, where the crest reaches the 7,800 ft stated for the foot of the ridge (the 7,500 ft figure is ~200 m further down the same crest). Pin 3 (tower) -> 48.78642,-121.81378, ground 9,258 ft, matching the row's 9,200 ft and ~210 m below the point where the Park Glacier meets the crest, i.e. where one source steps off the tower onto the Park Glacier, and below the ~9,500 ft level the first-ascent party reached before the ridge merges into the plateau; the whole crest stretch that fits both accounts is within ~300 m of this point. The old points (48.785,-121.868 and 48.782,-121.865; ground 6,494 / 6,909 ft) are on the Hogsback, ~3.5 km west. Pin 2's name said 'Coleman/Roosevelt Glacier Junction'; the ridge foot is on the Roosevelt's east edge, so it is renamed. distMi 9.5 / 11 / 12.5 on pins 2-4 do not fit the row's own itinerary (3 mi to camp; the whole ridge day including the descent is 9 mi) and no source gives them, so they are set to null. The row's drawn line has vertices at the old pin coordinates and is carried with the moves.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge",
+    "https://guidedexposure.com/blogs/guided-exposure-blog/mount-baker-high-level-lunar-orbit",
+    "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+    "https://www.openstreetmap.org/way/1196235732",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Roosevelt+Glacier,+Whatcom",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Park+Glacier,+Whatcom",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Mazama+Glacier,+Whatcom",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "column": "waypoints",
+     "path": [
+      2,
+      "name"
+     ],
+     "expect": "Cockscomb Ridge Base (Coleman/Roosevelt Glacier Junction)",
+     "value": "Cockscomb Ridge base (east edge of the Roosevelt Glacier)"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 9.5,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 11,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 12.5,
+     "value": null
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "index": 2,
+     "expect": {
+      "name": "Cockscomb Ridge Base (Coleman/Roosevelt Glacier Junction)",
+      "lat": 48.785,
+      "lng": -121.868
+     },
+     "lat": 48.79605,
+     "lng": -121.81755,
+     "elev": 7800,
+     "sources": [
+      "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge",
+      "https://guidedexposure.com/blogs/guided-exposure-blog/mount-baker-high-level-lunar-orbit",
+      "https://www.openstreetmap.org/way/1196235732",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_mount_baker_cockscomb_ridge",
+     "index": 3,
+     "expect": {
+      "name": "Cockscomb Tower",
+      "lat": 48.782,
+      "lng": -121.865
+     },
+     "lat": 48.78642,
+     "lng": -121.81378,
+     "elev": 9260,
+     "sources": [
+      "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge",
+      "https://guidedexposure.com/blogs/guided-exposure-blog/mount-baker-high-level-lunar-orbit",
+      "https://www.openstreetmap.org/way/1196235732",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "verdict": "confirmed",
+   "resolution": "Move the camp pin from Trail 677 (4,843 ft ground) to the mapped Hogsback camp, and the ridge-base pin from beside the Hogsback to the toe of the ridge dividing the Coleman and Roosevelt glaciers.",
+   "summary": "The camp pin sat on the trail about 1,100 ft below camp and the 'North Ridge base' pin sat beside the Hogsback about 2 km west of the ridge; both now sit where the route actually goes: the Hogsback camp near 5,900 ft, and the foot of the ridge between the Coleman and Roosevelt glaciers near 6,900 ft.",
+   "evidence": "Pin 1 (48.795,-121.885) is the same placeholder the Cockscomb row had: it is on Trail 677 at 4,843 ft ground. Map data places Hogsback Camp at 48.7893,-121.86777 and the Forest Service Hogsback Route line (677.1) passes 48.78902,-121.86749 at 5,912 ft; ground 5,897 ft. Moved there (the row's approach puts the standard high camp at ~6,000 ft). Pin 2 'North Ridge Base / Coleman Glacier Junction' (48.788,-121.872, stated 7,500) is on the west side of the Coleman beside the Hogsback at 6,056 ft ground. Sources: a guide service says to traverse east across the Coleman along a ramp near 6,600 ft to the ridge base, then climb an 800-ft 50-degree slope to the crest; a route page says to cross the Coleman laterally to the base of the broad ridge that bounds the east side of the north face, which is the ridge between the Coleman and Roosevelt glaciers. The mapped glacier outlines share their boundary along that ridge from 48.7897,-121.8400 (its lowest shared point) up to 48.7782,-121.8207 by the summit plateau; the toe, ground 6,903 ft, is where the traverse from the ~6,600 ft ramp reaches the ridge, and the crest 800 ft above is near the 7,500 ft the pin named. Pin moved to the toe with the ground height; the pin keeps its name. distMi values (3 and 4) fit the moved positions (about 1.3 mi from camp to the toe) and are left.",
+   "sources": [
+    "https://www.openstreetmap.org/node/4259623457",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27677.1%27",
+    "https://www.alpineinstitute.com/articles/peaks-and-routes/mt-baker,-north-ridge/",
+    "https://www.mountainproject.com/route/106445849/north-ridge",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Coleman+Glacier,+Whatcom",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Roosevelt+Glacier,+Whatcom",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_mount_baker_north_ridge",
+     "index": 1,
+     "expect": {
+      "name": "Heliotrope Ridge Camp",
+      "lat": 48.795,
+      "lng": -121.885
+     },
+     "lat": 48.7893,
+     "lng": -121.86777,
+     "elev": 5900,
+     "sources": [
+      "https://www.openstreetmap.org/node/4259623457",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27677.1%27"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_mount_baker_north_ridge",
+     "index": 2,
+     "expect": {
+      "name": "North Ridge Base / Coleman Glacier Junction",
+      "lat": 48.788,
+      "lng": -121.872
+     },
+     "lat": 48.7897,
+     "lng": -121.84,
+     "elev": 6900,
+     "sources": [
+      "https://www.alpineinstitute.com/articles/peaks-and-routes/mt-baker,-north-ridge/",
+      "https://www.mountainproject.com/route/106445849/north-ridge",
+      "https://nominatim.openstreetmap.org/search?format=json&q=Coleman+Glacier,+Whatcom",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "verdict": "confirmed",
+   "resolution": "Move the camp pin from Trail 677 to the mapped Hogsback camp, and the headwall-base pin from the Hogsback climbing line to the foot of the face just left of the Roman Nose at about 8,500 ft.",
+   "summary": "The camp pin sat on the trail at about 4,850 ft and the headwall-base pin sat on the Hogsback line about 2.5 km west of the face at about 7,000 ft; they now sit at the Hogsback camp and at the foot of the headwall just left of the Roman Nose, near 8,500 ft.",
+   "evidence": "Pin 1 (48.795,-121.885) is on Trail 677 at 4,843 ft ground; moved to the mapped Hogsback Camp (48.7893,-121.86777), which the Forest Service Hogsback Route line passes within ~30 m (ground 5,897 ft). The pin's own directions say camps spread up the Hogsback to about 7,200 ft; this is the mapped camp at its foot, and elev is set to the ground height there. Pin 2 'Coleman Headwall Base' (48.781,-121.865, stated 8,500) sits at 7,031 ft ground on the Hogsback/Coleman-Deming line, ~2.5 km west of the face. Two sources: a guide service's route profile starts the route at about 8,500 ft left of the Roman Nose; a route page bounds the route by the Roman Nose on the climber's right and seracs on the left, with ~2,000 ft of climbing to the plateau (i.e. a base near 8,500 ft). Map data draws the Roman Nose arete from 48.7802,-121.8357 up to 48.7766,-121.8260; on the ground the 8,500 ft level just north-east (climber's left) of the arete is at 48.7792,-121.8312 (grid ground 8,443-8,584 ft around it). Moved there; any point along the arete's left flank at that height is within ~300 m. distMi (3 and 4.5) fit the new positions and are left.",
+   "sources": [
+    "https://www.openstreetmap.org/node/4259623457",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27677.1%27",
+    "http://blog.alpineinstitute.com/2018/04/route-profile-mt-baker-coleman-headwall.html",
+    "https://www.mountainproject.com/route/105893407/coleman-headwall",
+    "https://www.openstreetmap.org/way/1196235734",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_mount_baker_coleman_headwall",
+     "index": 1,
+     "expect": {
+      "name": "Heliotrope Ridge Camp",
+      "lat": 48.795,
+      "lng": -121.885
+     },
+     "lat": 48.7893,
+     "lng": -121.86777,
+     "elev": 5900,
+     "sources": [
+      "https://www.openstreetmap.org/node/4259623457",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27677.1%27"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_mount_baker_coleman_headwall",
+     "index": 2,
+     "expect": {
+      "name": "Coleman Headwall Base",
+      "lat": 48.781,
+      "lng": -121.865
+     },
+     "lat": 48.7792,
+     "lng": -121.8312,
+     "elev": 8500,
+     "sources": [
+      "http://blog.alpineinstitute.com/2018/04/route-profile-mt-baker-coleman-headwall.html",
+      "https://www.mountainproject.com/route/105893407/coleman-headwall",
+      "https://www.openstreetmap.org/way/1196235734",
+      "https://epqs.nationalmap.gov/v1/json"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wa_doorway_flake",
+   "verdict": "confirmed",
+   "resolution": "Move the trailhead pin to the washout parking on Squire Creek Road (48.22062,-121.62597, ~1,170 ft) and rename it; align approach_logistics; remove the duplicate saddle pin; clear the sketched line.",
+   "summary": "The trailhead pin sat on the abandoned roadbed about a mile past where cars park; it now sits at the washout parking where the road is blocked, the duplicate saddle pin is removed, and the sketched line that followed no approach is cleared.",
+   "evidence": "Where cars stop: the land manager says the 2002 slide blocks the road two miles before the trailhead, and a town recreation page says the same (a path through the slide boulders, then two miles to the original trailhead). The Forest Service's own data puts the original trailhead, milepost 0 of Trail 654 and the end of FS Rd 2040, at 48.19328,-121.63426 (ground 1,787 ft, which is the ~1,900 ft the pin claims). Measured back two miles along the Forest Service line for FS Rd 2040 gives 48.2212,-121.6263. Map data draws a parking area named for the trailhead at 48.22062,-121.62597 (ground 1,172 ft), ~70 m from that point, where the road is still drivable and beyond which it is mapped as a rough track. A hiking guide says 2.2 miles of the old road has become trail (point 2.2 mi back: 48.2230, ~270 m away); a 2024 road report says the road to the parking lot is in good condition and the rockslide that stops cars is about a quarter mile above the lot; a town recreation page says to follow Darrington Street 3.75 miles to its end, which lands at this spot (Darrington Street leaves the Mountain Loop ~0.55 mi before the Forest Service road begins, and 3.75 - 0.55 = 3.2 mi, the same point); a trip blog says the new lot is about 3 miles up the road and about a third short of the old one. The route page's approach walks from there to the Trail 654 sign and then 8-10 minutes further before turning off to the creek. The stored pin (48.2088,-121.6298) is the hiking guide's trailhead coordinate, which sits on the abandoned roadbed ~1.1 mi past the parking and ~1.1 mi short of the old trailhead; ground 1,376 ft. The earlier pass took the end of the paved-class road at 48.2368,-121.6335 as the likely stop, but that is ~1.6 mi (not ~0.25 mi) below the slide and does not fit any source's distances. So the pin moves to the washout parking, which is what its directions describe, and it is renamed; its height becomes the ground height there (~1,170 ft), and the ~1,900 ft figure in one row's directions (the old trailhead's height) is corrected. The trailhead copy in approach_logistics is aligned to the same point. Pins 1 and 2 are the same grassy saddle at one coordinate; pin 2 (no note, no distance) is removed. The drawn line was a 4-point sketch (saddle, saddle, old pin, a point south-east of the wall) that follows no approach; with the duplicate removed it would be a straight segment from the parking to the south of the wall, so it is cleared.",
+   "sources": [
+    "https://www.openstreetmap.org/way/372637897",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/squire-creek-trail-654",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27654%27",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RoadBasic_01/MapServer/0/query?where=ID%3D%272040000%27",
+    "https://web.archive.org/web/2025/https://www.wta.org/go-hiking/hikes/squire-creek",
+    "https://web.archive.org/web/2025/https://cascadeclimbers.com/forum/topic/107757-squire-creek-road-conditions-2024-edition/",
+    "https://musthikemusteat.com/mountain-loop-hwy/squire-creek-trail/",
+    "https://www.discoverdarrington.com/recreation/hiking/squire-creek-pass-trail-654/",
+    "https://www.mountainproject.com/area/118278469/south-face",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_doorway_flake",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+     "value": "Squire Creek Road washout parking (FS Rd 2040)"
+    },
+    {
+     "op": "set",
+     "id": "wa_doorway_flake",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLat"
+     ],
+     "expect": 48.2088,
+     "value": 48.22062
+    },
+    {
+     "op": "set",
+     "id": "wa_doorway_flake",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLng"
+     ],
+     "expect": -121.6298,
+     "value": -121.62597
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_doorway_flake",
+     "index": 0,
+     "expect": {
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "lat": 48.2088,
+      "lng": -121.6298
+     },
+     "lat": 48.22062,
+     "lng": -121.62597,
+     "elev": 1170,
+     "elevFt": 1170,
+     "sources": [
+      "https://www.openstreetmap.org/way/372637897",
+      "https://www.fs.usda.gov/r06/mbs/recreation/trails/squire-creek-trail-654",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RoadBasic_01/MapServer/0/query?where=ID%3D%272040000%27",
+      "https://web.archive.org/web/2025/https://cascadeclimbers.com/forum/topic/107757-squire-creek-road-conditions-2024-edition/"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_doorway_flake",
+     "index": 2,
+     "expect": {
+      "name": "South Face grassy saddle",
+      "lat": 48.19575,
+      "lng": -121.65485
+     }
+    },
+    {
+     "op": "clear_line",
+     "id": "wa_doorway_flake",
+     "why": "4-point sketch (saddle, saddle, old trailhead pin, a point south-east of the wall) that follows no approach; after the duplicate saddle is removed it would be a straight segment from the parking lot to south of the wall.",
+     "expect_gpx": "LIVE"
+    }
+   ]
+  },
+  {
+   "id": "wa_skeena26",
+   "verdict": "confirmed",
+   "resolution": "Move the trailhead pin to the washout parking on Squire Creek Road (48.22062,-121.62597, ~1,170 ft) and rename it; align approach_logistics; remove the duplicate saddle pin; clear the sketched line.",
+   "summary": "The trailhead pin sat on the abandoned roadbed about a mile past where cars park; it now sits at the washout parking where the road is blocked, the duplicate saddle pin is removed, and the sketched line that followed no approach is cleared.",
+   "evidence": "Where cars stop: the land manager says the 2002 slide blocks the road two miles before the trailhead, and a town recreation page says the same (a path through the slide boulders, then two miles to the original trailhead). The Forest Service's own data puts the original trailhead, milepost 0 of Trail 654 and the end of FS Rd 2040, at 48.19328,-121.63426 (ground 1,787 ft, which is the ~1,900 ft the pin claims). Measured back two miles along the Forest Service line for FS Rd 2040 gives 48.2212,-121.6263. Map data draws a parking area named for the trailhead at 48.22062,-121.62597 (ground 1,172 ft), ~70 m from that point, where the road is still drivable and beyond which it is mapped as a rough track. A hiking guide says 2.2 miles of the old road has become trail (point 2.2 mi back: 48.2230, ~270 m away); a 2024 road report says the road to the parking lot is in good condition and the rockslide that stops cars is about a quarter mile above the lot; a town recreation page says to follow Darrington Street 3.75 miles to its end, which lands at this spot (Darrington Street leaves the Mountain Loop ~0.55 mi before the Forest Service road begins, and 3.75 - 0.55 = 3.2 mi, the same point); a trip blog says the new lot is about 3 miles up the road and about a third short of the old one. The route page's approach walks from there to the Trail 654 sign and then 8-10 minutes further before turning off to the creek. The stored pin (48.2088,-121.6298) is the hiking guide's trailhead coordinate, which sits on the abandoned roadbed ~1.1 mi past the parking and ~1.1 mi short of the old trailhead; ground 1,376 ft. The earlier pass took the end of the paved-class road at 48.2368,-121.6335 as the likely stop, but that is ~1.6 mi (not ~0.25 mi) below the slide and does not fit any source's distances. So the pin moves to the washout parking, which is what its directions describe, and it is renamed; its height becomes the ground height there (~1,170 ft), and the ~1,900 ft figure in one row's directions (the old trailhead's height) is corrected. The trailhead copy in approach_logistics is aligned to the same point. Pins 1 and 2 are the same grassy saddle at one coordinate; pin 2 (no note, no distance) is removed. The drawn line was a 4-point sketch (saddle, saddle, old pin, a point south-east of the wall) that follows no approach; with the duplicate removed it would be a straight segment from the parking to the south of the wall, so it is cleared.",
+   "sources": [
+    "https://www.openstreetmap.org/way/372637897",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/squire-creek-trail-654",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27654%27",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RoadBasic_01/MapServer/0/query?where=ID%3D%272040000%27",
+    "https://web.archive.org/web/2025/https://www.wta.org/go-hiking/hikes/squire-creek",
+    "https://web.archive.org/web/2025/https://cascadeclimbers.com/forum/topic/107757-squire-creek-road-conditions-2024-edition/",
+    "https://musthikemusteat.com/mountain-loop-hwy/squire-creek-trail/",
+    "https://www.discoverdarrington.com/recreation/hiking/squire-creek-pass-trail-654/",
+    "https://www.mountainproject.com/area/118278469/south-face",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_skeena26",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+     "value": "Squire Creek Road washout parking (FS Rd 2040)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_skeena26",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "park at the gated area there, around 1,900 feet",
+     "replace": "park at the gated area there, around 1,200 feet"
+    },
+    {
+     "op": "set",
+     "id": "wa_skeena26",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLat"
+     ],
+     "expect": 48.2088,
+     "value": 48.22062
+    },
+    {
+     "op": "set",
+     "id": "wa_skeena26",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLng"
+     ],
+     "expect": -121.6298,
+     "value": -121.62597
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_skeena26",
+     "index": 0,
+     "expect": {
+      "name": "Squire Creek Trailhead (Trail #654, end of FS Rd 2040)",
+      "lat": 48.2088,
+      "lng": -121.6298
+     },
+     "lat": 48.22062,
+     "lng": -121.62597,
+     "elev": 1170,
+     "elevFt": 1170,
+     "sources": [
+      "https://www.openstreetmap.org/way/372637897",
+      "https://www.fs.usda.gov/r06/mbs/recreation/trails/squire-creek-trail-654",
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RoadBasic_01/MapServer/0/query?where=ID%3D%272040000%27",
+      "https://web.archive.org/web/2025/https://cascadeclimbers.com/forum/topic/107757-squire-creek-road-conditions-2024-edition/"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_skeena26",
+     "index": 2,
+     "expect": {
+      "name": "South Face grassy saddle",
+      "lat": 48.19575,
+      "lng": -121.65485
+     }
+    },
+    {
+     "op": "clear_line",
+     "id": "wa_skeena26",
+     "why": "4-point sketch (saddle, saddle, old trailhead pin, a point south-east of the wall) that follows no approach; after the duplicate saddle is removed it would be a straight segment from the parking lot to south of the wall.",
+     "expect_gpx": "LIVE"
+    }
+   ]
+  }
+ ]
+}

@@ -19,15 +19,18 @@ for (const [id, ops] of Object.entries(byRow)) {
   const row = await one(id); if (!row) { report.rejected.push({ id, why: "row missing" }); continue; }
   report.backups.push(row);
   let wps = structuredClone(row.waypoints), gpx = Array.isArray(row.gpx) ? structuredClone(row.gpx) : row.gpx, changed = false;
-  const summit = wps.find(w => /summit/i.test(w?.type || "") && Number.isFinite(w.lat)) || wps[wps.length - 1];
+  // a coordinate-less summit pin (crag rows) must not become the anchor: null reads as 0,0 and refuses every move
+  const summit = wps.find(w => /summit/i.test(w?.type || "") && Number.isFinite(w.lat)) || wps.findLast(w => Number.isFinite(w?.lat) && Number.isFinite(w?.lng));
   const removals = [];
   // clear_line: the drawn line was sketched along the WRONG approach, so no carried vertex can save it; the map then
   // shows pins only. Compare-and-set on the exact current line.
   for (const o of ops.filter(o => o.op === "clear_line")) {
-    if (JSON.stringify(row.gpx) !== JSON.stringify(o.expect_gpx)) { report.rejected.push({ id, op: o.op, why: "line changed" }); continue; }
+    // "LIVE": clear whatever line the row holds right now (it was just read, and is backed up in full above)
+    if (o.expect_gpx === "LIVE") o.expect_gpx = row.gpx;
+    if (!Array.isArray(o.expect_gpx) || JSON.stringify(row.gpx) !== JSON.stringify(o.expect_gpx)) { report.rejected.push({ id, op: o.op, why: "line changed" }); continue; }
     gpx = null; changed = true; report.applied.push({ id, op: "clear_line", points: o.expect_gpx.length, why: o.why });
   }
-  for (const o of ops.filter(o => o.op !== "clear_line")) {
+  for (const o of ops.filter(o => o.op !== "clear_line" && o.op !== "add_pin")) {
     const w = wps[o.index], e = o.expect || {};
     let why = null;
     if (!w) why = `no waypoint ${o.index}`;
@@ -51,6 +54,20 @@ for (const [id, ops] of Object.entries(byRow)) {
     if (Array.isArray(gpx)) { const n = gpx.length; gpx = gpx.filter(p => !(Array.isArray(p) && same(p[0], w.lat) && same(p[1], w.lng))); dropped = n - gpx.length; }
     wps.splice(i, 1); changed = true;
     report.applied.push({ id, op: "remove_pin", index: i, name: w.name, gpx_vertices_dropped: dropped });
+  }
+  // add_pin: insert a new pin after the pin named `after_name` (resolved AFTER removals, so indexes cannot drift);
+  // needs 2 sources like a move, and refuses a name the route already has.
+  for (const o of ops.filter(o => o.op === "add_pin")) {
+    const p = o.pin || {}, at = wps.findIndex(w => w.name === o.after_name);
+    let why = null;
+    if (at < 0) why = `no pin named "${o.after_name}"`;
+    else if (!p.name || !Number.isFinite(p.lat) || !Number.isFinite(p.lng)) why = "pin needs name, lat, lng";
+    else if (wps.some(w => w.name === p.name)) why = `pin "${p.name}" already exists`;
+    else if (!Array.isArray(o.sources) || o.sources.length < 2) why = "an added pin needs 2 sources";
+    else if (summit && km(p.lat, p.lng, summit.lat, summit.lng) > 60) why = "new pin is >60 km from the route's summit";
+    if (why) { report.rejected.push({ id, op: o.op, name: p.name, why }); continue; }
+    wps.splice(at + 1, 0, p); changed = true;
+    report.applied.push({ id, op: "add_pin", name: p.name, after: o.after_name });
   }
   if (!changed) continue;
   const patch = { waypoints: wps }; if (JSON.stringify(gpx) !== JSON.stringify(row.gpx)) patch.gpx = gpx;

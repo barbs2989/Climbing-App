@@ -1,0 +1,764 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_dana_scramble",
+   "verdict": "confirmed",
+   "resolution": "rule 2: keep the Elwha approach as far as Chicago Camp and rewrite everything beyond it, plus the Sol Duc day plan and timing, to the one documented line: the Elwha Basin way trail past Happy Hollow, north up to the Barnes–Wilder ridge, and along the crest to Dana; remove the three pins on the Snow Finger / Dodwell-Rixon line",
+   "summary": "Mount Dana now follows its one documented line from end to end: up the Elwha to Chicago Camp, past Happy Hollow, up to the ridge between Mount Barnes and Mount Wilder and along it to the summit; the Sol Duc day plan and the Snow Finger / Dodwell-Rixon Pass pins described other routes and are gone.",
+   "evidence": "A 2007 route report of a six-day Elwha trip (the only one with detail; the same party logged this ascent on 2007-08-04 on a peak-register site) went Whiskey Bend - Hayes River - Chicago Camp, then 'up trail past Happy Hollow, then left trail for cross country travel up ridge between Barnes and Wilder', leaving the trail west of the first major creek after Happy Hollow camp, gaining that ridge at about 4,900 ft (2,500 ft above the trail, 3 h with full packs), then running the ridge to Dana and back to Wilder (9 h round trip from the packs). Independently, a forum thread about Dana cites the Olympic climbing guide's route 'leaving Happy Hollow Camp on the Elwha and following the ridge', and a second, unrelated poster states that leaving from Happy Hollow is the easiest route and that once on the ridge it is a matter of staying high while getting around to Dana. The climbing guide's own online peak index lists Dana as class 2 (two routes, west and east side, no text archived) and Mount Wilder's route as 'via Happy Hollow and South Ridge'; the peak-list site also gives class 2. OSM maps a 'Happy Hollow Trail' leaving the Elwha River Trail at Chicago Camp westward to the 'Elwha Basin Way Trail'. Nothing documents Dana from Sol Duc/the Catwalk (the itinerary and timing) or from Dodwell-Rixon Pass (the approach tail, descent and pins 4-6); both lie far west of the peak. Pin removals: Elwha Snowfinger (47.776,-123.582) and Dodwell-Rixon Pass (47.785,-123.593) are about 5 km west of the documented line; 'Elwha Basin (\"the maze\")' (47.759,-123.559) is about 0.9 km west of where the line leaves the way trail and its note describes the Dodwell-Rixon bushwhack. No pins added: Happy Hollow camp and the ridge top-out could not be placed with two sources. The new day plan states no miles, gain, hours or pack weights (only one source gives any); the timing breakdown mirrors the days with hrs null. LEFT FOR THE OWNER: gain_ft 5414, dist_km 56.33 and the timing hour tiles (totalHrs 52.5, approachTimeHrs 24.5, summitTimeHrs 12, descentTimeHrs 16) belong to the old lines and no source gives replacements; grade stays 'Class 2-3' though both sources that rate the peak say class 2 (not lowered - they may share an origin); bivy[0] (the Elwha Basin / Queets Basin zone card) still mentions the Snowfinger for other peaks - it is a shared camp card and the ridge camp falls inside its cross-country zones.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/53223-tr-norton-wilder-dana-barnes-childs-luddenscott-elwah-to-bailey-to-dodger-point-to-elwah-842007/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1114394",
+    "https://web.archive.org/web/2021/http://www.climbersguideolympics.com/peaks/quinault-group/mount-dana",
+    "https://web.archive.org/web/2021/http://www.climbersguideolympics.com/peaks/quinault-group/mount-wilder",
+    "https://web.archive.org/web/2025/https://www.peakbagger.com/climber/PeakAscents.aspx?pid=978",
+    "https://listsofjohn.com/peak/50268",
+    "https://www.openstreetmap.org/way/36745881",
+    "https://en.wikipedia.org/wiki/Mount_Dana_(Washington)",
+    "https://en.wikipedia.org/wiki/Mount_Wilder"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_mount_dana_scramble",
+     "column": "approach",
+     "path": [],
+     "find": "Continue south to Elwha Basin and Chicago Camp (roughly 24-26 trail miles from Whiskey Bend), where the Elwha River must be forded — NPS explicitly flags this crossing as one to check conditions on beforehand, since it can be genuinely hazardous in early-season high water or after rain. At and beyond Chicago Camp the maintained trail effectively dissolves into the Elwha Basin, and travel becomes cross-country: a boot-beaten climbers' path continues up the valley headwaters toward the obvious white tongue of the Elwha Snow Finger, a permanent, avalanche-fed snowfield filling the bedrock gully that leads to Dodwell-Rixon Pass (4,763'). The Snow Finger is the standard way through this section — carry an ice axe and know self-arrest. Recent parties note the snowpack has been thinning in late summer, exposing an opening moat, running water under the snow, and rockfall funneling off the surrounding walls, so climb it early in the day and reassess if it looks broken up; NPS notes snow can linger above Chicago Camp into July. From the top of the Snow Finger at Dodwell-Rixon Pass, Mount Dana sits several miles east-northeast (its coordinates place it roughly 5 miles from the pass, closer to the Mount Norton/Elwha-headwaters side of the range than to the main Carrie-Ferry-Pulitzer crest). There is no path here; parties pick a line across talus, heather benches, and lingering snow patches toward Dana's western slopes for the final class 2 scramble to the 6,214' summit. Water becomes scarce above the pass, so carry enough for a high camp. Given the roughly 70-mile round-trip distance, this is realistically a multi-day trip (3+ days) with a high camp near Dodwell-Rixon Pass or in the upper Elwha basin, not a car-to-car push, and solid off-trail navigation skill is essential once you're past Chicago Camp.",
+     "replace": "Continue up the valley to Chicago Camp, roughly 24-26 trail miles from Whiskey Bend, where the Elwha River must be forded; check conditions before you go, since the crossing can be genuinely hazardous in early-season high water or after rain. At Chicago Camp leave the main trail, which turns south for Low Divide, and take the fainter way trail west up the Elwha toward Elwha Basin, past Happy Hollow camp. Beyond Happy Hollow the route leaves all paths: strike north up the valley side, steep and brushy through timber, to the crest of the ridge that joins Mount Barnes and Mount Wilder. There is no path on the ridge either. Stay high and follow the crest east toward Mount Wilder and then northeast to Dana, finishing with a class 2 scramble to the 6,213-ft summit. Water is scarce once you leave the valley floor, so carry enough for a camp on the ridge. This is a trip of several days, and solid off-trail navigation is essential from Chicago Camp on."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_dana_scramble",
+     "column": "descent_text",
+     "path": [],
+     "expect": "This is a walk-off/scramble-down — no rappelling is documented (or generally needed) on Mount Dana or on the standard Dodwell-Rixon Pass access route. From the summit, reverse the ascent line: cross-country back west-southwest over the talus and heather benches to Dodwell-Rixon Pass, then down-climb the Elwha Snow Finger as the return route to Elwha Basin/Chicago Camp. Descending the Snow Finger is generally more hazard-prone than climbing it — a glissade is tempting on a mellow day but should be avoided if the moat at the base is open, if the surface has softened into slush, or if there's a risk of sliding into exposed rock (trip reports from this same drainage describe a nearby 'crevasse-like gap' where a stream undercuts the snow), so plan to face in and down-climb with an axe ready for self-arrest anywhere it steepens, particularly late season when the finger has thinned and pulled away from the surrounding rock walls. Below the snow, pick up the boot path back to Chicago Camp, re-ford the Elwha River, and rejoin the maintained Elwha River Trail for the long, gentle walk back down-valley (~24-26 miles) to Whiskey Bend — plus the current ~7-mile road walk/bike back to Madison Falls while the Olympic Hot Springs Road washout remains unrepaired. No technical anchors, fixed or natural, come into play anywhere on this route; the real crux of the descent is correctly reading the Snow Finger's snow condition and the scree/talus around the pass, not rope work.",
+     "value": "This is a walk-off and scramble-down; nothing on Mount Dana or its ridge is rappelled. From the summit, reverse the ascent: back southwest along the crest toward Mount Wilder to the point where you topped out on the Barnes–Wilder ridge, then down the steep, brushy slope to the Elwha Basin way trail near Happy Hollow. The brush and timber below the ridge are where parties lose the line on the way down, so note landmarks where you gained the crest before you leave it. From the way trail, walk back down to Chicago Camp, re-ford the Elwha, and follow the Elwha River Trail out to Whiskey Bend, plus the road walk or ride back to Madison Falls while the Olympic Hot Springs Road washout stands. No anchors, fixed or natural, come into play anywhere on this route."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_dana_scramble",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Requires an Olympic National Park wilderness permit (cross-country nights are arranged by phone with the Wilderness Information Center) and is only reasonable snow-free from roughly July through September; check Sol Duc Road status before committing to a trailhead date.",
+      "days": [
+       {
+        "n": 1,
+        "note": "Standard trail hiking from the Sol Duc trailhead via Sol Duc Falls and the High Divide/Deer Lake corridor up to Heart Lake, the last established camp before the route goes fully off-trail. Full food/fuel loads for a week-plus trip make this a heavy-pack day even though the tread is good.",
+        "hours": 6,
+        "miles": 10,
+        "title": "Sol Duc trailhead to Heart Lake",
+        "gainFt": 3300,
+        "lossFt": 300,
+        "packLb": 44,
+        "schedule": [],
+        "objective": "Reach Heart Lake basin, the gateway to the Bailey Range"
+       },
+       {
+        "n": 2,
+        "note": "Leaves the trail for good: sidehilling steep scree below Bogachiel Peak, over/around Cat Peak, and across the exposed but short 'Catwalk' ridge connecting to the Carrie/Stephen massif, then down to a basin camp. This is the first of the long, slow off-trail days typical of Bailey Range trip reports.",
+        "hours": 9.5,
+        "miles": 9,
+        "title": "Over Cat Peak and the Catwalk to Eleven Bull Basin",
+        "gainFt": 2800,
+        "lossFt": 2400,
+        "packLb": 40,
+        "schedule": [],
+        "objective": "Cross the Catwalk and drop into Eleven Bull Basin"
+       },
+       {
+        "n": 3,
+        "note": "Continues east along the range past Stephen Lake/Cream Lake country toward the Mount Norton-Mount Dana massif, picking a bench or basin camp within striking distance of Dana's summit ridge. Route-finding on benches, heather, and lingering snow patches is slow and deliberate.",
+        "hours": 9,
+        "miles": 10,
+        "title": "Push deeper to a high camp below Mount Dana",
+        "gainFt": 2600,
+        "lossFt": 1900,
+        "packLb": 36,
+        "schedule": [],
+        "objective": "Establish a high camp near the Mount Norton/Dana basin"
+       },
+       {
+        "n": 4,
+        "note": "A light-pack round trip from high camp up Dana's flank: heather ledges and scree/talus give way to short class 2-3 scrambling near the summit ridge. There is no shorter way out from here, so the party breaks camp on return and pushes several miles back toward Eleven Bull Basin the same day to keep the retreat on pace.",
+        "hours": 12,
+        "miles": 14,
+        "title": "Summit Mount Dana, then start the retreat",
+        "gainFt": 3500,
+        "lossFt": 4100,
+        "packLb": 30,
+        "schedule": [
+         {
+          "time": "5:00 AM",
+          "label": "Leave high camp",
+          "detail": "Light day packs; main gear cached at camp."
+         },
+         {
+          "time": "6:30 AM",
+          "label": "Reach base of summit ridge",
+          "detail": "Talus and heather benches give way to steeper ground."
+         },
+         {
+          "time": "8:30 AM",
+          "label": "Summit Mount Dana",
+          "detail": "Short class 2-3 scrambling on the final pitch."
+         },
+         {
+          "time": "9:00 AM",
+          "label": "Begin descent",
+          "detail": "Reverse the ascent line exactly."
+         },
+         {
+          "time": "11:00 AM",
+          "label": "Back at high camp",
+          "detail": "Break camp and repack for the multi-day return."
+         },
+         {
+          "time": "12:00 PM",
+          "label": "Start retreat toward Eleven Bull Basin",
+          "detail": "First leg of the long reversal back to Sol Duc."
+         }
+        ],
+        "objective": "Reach the 6,213 ft summit of Mount Dana and begin the return"
+       },
+       {
+        "n": 5,
+        "note": "The core retreat day, re-crossing the ground of Days 2-3 in reverse: back around Stephen/Cream Lake country, over the Catwalk and Cat Peak, and down to regain the maintained trail near Heart Lake. In the Bailey Range there is no faster way out than the way in, so this mirrors the outbound pace closely.",
+        "hours": 10,
+        "miles": 13,
+        "title": "Back over Cat Peak and the Catwalk to Heart Lake",
+        "gainFt": 1900,
+        "lossFt": 3200,
+        "packLb": 24,
+        "schedule": [],
+        "objective": "Retrace the off-trail line back to Heart Lake basin"
+       },
+       {
+        "n": 6,
+        "note": "An easy, mostly downhill trail walk back out via High Divide and Sol Duc Falls to the trailhead, with light packs after a week of consumed food.",
+        "hours": 6,
+        "miles": 10,
+        "title": "Heart Lake to Sol Duc trailhead",
+        "gainFt": 300,
+        "lossFt": 3900,
+        "packLb": 18,
+        "schedule": [],
+        "objective": "Hike out to the trailhead"
+       }
+      ],
+      "totalNote": "A demanding roughly 66-mile, 6-day round trip with an estimated 14,000-16,000 ft of cumulative gain, almost entirely off-trail through the Bailey Range — once you're near Mount Dana, retreat is essentially as long as the way in."
+     },
+     "value": {
+      "cal": "Requires an Olympic National Park wilderness permit (cross-country nights on the ridge are arranged by phone with the Wilderness Information Center) and is only reasonable snow-free from roughly July through September; check the Elwha road and trail status before committing to dates.",
+      "days": [
+       {
+        "n": 1,
+        "title": "Madison Falls and Whiskey Bend up the Elwha",
+        "objective": "Camp in the mid-valley, around Hayes River",
+        "note": "Walk or ride the closed road from Madison Falls to Whiskey Bend, then follow the Elwha River Trail upstream through old-growth forest past Lillian River, Mary's Falls and Elkhorn. The camps around Hayes River make a sensible first night with a full week's food on your back.",
+        "schedule": []
+       },
+       {
+        "n": 2,
+        "title": "Up the Elwha to Chicago Camp",
+        "objective": "Reach Chicago Camp, the last camp on the main trail",
+        "note": "Continue up the valley past Camp Wilder to Chicago Camp. The Elwha ford here is the crossing to check before the trip; the main trail turns south for Low Divide, and everything beyond is on the fainter way trail or off-trail.",
+        "schedule": []
+       },
+       {
+        "n": 3,
+        "title": "Past Happy Hollow and up to the Barnes–Wilder ridge",
+        "objective": "Camp on the ridge between Mount Barnes and Mount Wilder",
+        "note": "Take the way trail west up the Elwha toward Elwha Basin, past Happy Hollow camp. Beyond it, leave the path and climb north, steeply and through brush and timber, to the crest of the ridge joining Mount Barnes and Mount Wilder. Carry water for the night: the ridge has little.",
+        "schedule": []
+       },
+       {
+        "n": 4,
+        "title": "Along the crest to Mount Dana and back",
+        "objective": "Summit Mount Dana (6,213 ft)",
+        "note": "With light packs, follow the crest east toward Mount Wilder and on northeast to Dana, finishing with class 2 scrambling to the summit, then return along the ridge to camp. It is a long day for its distance, and Mount Wilder can be taken in on the way back.",
+        "schedule": []
+       },
+       {
+        "n": 5,
+        "title": "Down to the valley and back down the Elwha",
+        "objective": "Regain the trail and walk out to the mid-valley camps",
+        "note": "Descend the steep, brushy slope to the Elwha Basin way trail near Happy Hollow, walk back to Chicago Camp, re-ford the Elwha, and continue down the Elwha River Trail to a camp around Hayes River or Elkhorn.",
+        "schedule": []
+       },
+       {
+        "n": 6,
+        "title": "Out to Whiskey Bend and Madison Falls",
+        "objective": "Return to the car",
+        "note": "An easy trail walk down the lower Elwha to Whiskey Bend, then the road walk or ride back to Madison Falls.",
+        "schedule": []
+       }
+      ],
+      "totalNote": "A six-day out-and-back up the Elwha: two days of trail walking to Chicago Camp, a steep off-trail climb from the Elwha Basin way trail to the Barnes–Wilder ridge, a day along the crest to Dana and back, and two days out."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_dana_scramble",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 52.5,
+      "summitTimeHrs": 12,
+      "descentTimeHrs": 16,
+      "approachTimeHrs": 24.5,
+      "recommendedStart": "5:00 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": 6,
+        "note": "Standard trail hiking from the Sol Duc trailhead via Sol Duc Falls and the High Divide/Deer Lake corridor up to Heart Lake, the last established camp before the route goes fully of…",
+        "fromTo": "Sol Duc trailhead to Heart Lake",
+        "section": "Approach"
+       },
+       {
+        "hrs": 9.5,
+        "note": "Leaves the trail for good: sidehilling steep scree below Bogachiel Peak, over/around Cat Peak, and across the exposed but short 'Catwalk' ridge connecting to the Carrie/Stephen mas…",
+        "fromTo": "Over Cat Peak and the Catwalk to Eleven Bull Basin",
+        "section": "Approach"
+       },
+       {
+        "hrs": 9,
+        "note": "Continues east along the range past Stephen Lake/Cream Lake country toward the Mount Norton-Mount Dana massif, picking a bench or basin camp within striking distance of Dana's summ…",
+        "fromTo": "Push deeper to a high camp below Mount Dana",
+        "section": "Approach"
+       },
+       {
+        "hrs": 12,
+        "note": "A light-pack round trip from high camp up Dana's flank: heather ledges and scree/talus give way to short class 2-3 scrambling near the summit ridge. There is no shorter way out fro…",
+        "fromTo": "Summit Mount Dana, then start the retreat",
+        "section": "Climb"
+       },
+       {
+        "hrs": 10,
+        "note": "The core retreat day, re-crossing the ground of Days 2-3 in reverse: back around Stephen/Cream Lake country, over the Catwalk and Cat Peak, and down to regain the maintained trail …",
+        "fromTo": "Back over Cat Peak and the Catwalk to Heart Lake",
+        "section": "Descent"
+       },
+       {
+        "hrs": 6,
+        "note": "An easy, mostly downhill trail walk back out via High Divide and Sol Duc Falls to the trailhead, with light packs after a week of consumed food.",
+        "fromTo": "Heart Lake to Sol Duc trailhead",
+        "section": "Descent"
+       }
+      ]
+     },
+     "value": {
+      "totalHrs": 52.5,
+      "summitTimeHrs": 12,
+      "descentTimeHrs": 16,
+      "approachTimeHrs": 24.5,
+      "recommendedStart": "5:00 AM from camp",
+      "sectionBreakdown": [
+       {
+        "hrs": null,
+        "note": "Walk or ride the closed road from Madison Falls to Whiskey Bend, then follow the Elwha River Trail upstream through old-growth forest past Lillian River, Mary's Falls and Elkhorn. The camps around Hayes River make a sensible first night with a full week's food on your back.",
+        "fromTo": "Madison Falls and Whiskey Bend up the Elwha",
+        "section": "Approach"
+       },
+       {
+        "hrs": null,
+        "note": "Continue up the valley past Camp Wilder to Chicago Camp. The Elwha ford here is the crossing to check before the trip; the main trail turns south for Low Divide, and everything beyond is on the fainter way trail or off-trail.",
+        "fromTo": "Up the Elwha to Chicago Camp",
+        "section": "Approach"
+       },
+       {
+        "hrs": null,
+        "note": "Take the way trail west up the Elwha toward Elwha Basin, past Happy Hollow camp. Beyond it, leave the path and climb north, steeply and through brush and timber, to the crest of the ridge joining Mount Barnes and Mount Wilder. Carry water for the night: the ridge has little.",
+        "fromTo": "Past Happy Hollow and up to the Barnes–Wilder ridge",
+        "section": "Approach"
+       },
+       {
+        "hrs": null,
+        "note": "With light packs, follow the crest east toward Mount Wilder and on northeast to Dana, finishing with class 2 scrambling to the summit, then return along the ridge to camp. It is a long day for its distance, and Mount Wilder can be taken in on the way back.",
+        "fromTo": "Along the crest to Mount Dana and back",
+        "section": "Climb"
+       },
+       {
+        "hrs": null,
+        "note": "Descend the steep, brushy slope to the Elwha Basin way trail near Happy Hollow, walk back to Chicago Camp, re-ford the Elwha, and continue down the Elwha River Trail to a camp around Hayes River or Elkhorn.",
+        "fromTo": "Down to the valley and back down the Elwha",
+        "section": "Descent"
+       },
+       {
+        "hrs": null,
+        "note": "An easy trail walk down the lower Elwha to Whiskey Bend, then the road walk or ride back to Madison Falls.",
+        "fromTo": "Out to Whiskey Bend and Madison Falls",
+        "section": "Descent"
+       }
+      ]
+     }
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_dana_scramble",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "find": "the Snow Finger or approach gullies",
+     "replace": "the ridge or the gullies below it"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_dana_scramble",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "expect": "Elwha Snow Finger deterioration — the historic snow-ramp into Queets Basin has shrunk badly with climate-driven glacial recession and can be crevassed, broken up, or melted out by late summer",
+     "value": "a steep, brushy off-trail climb from the Elwha Basin way trail to the Barnes–Wilder ridge, where the line is easy to lose on the way down"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_dana_scramble",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "expect": "Call the Wilderness Information Center (360-565-3100) for current Elwha Snow Finger conditions before relying on it as your route through Dodwell-Rixon Pass.",
+     "value": "Call the Wilderness Information Center (360-565-3100) for the Elwha ford and upper-valley trail conditions before committing."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_dana_scramble",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "Not a true glaciated route, but the Elwha Snow Finger (the permanent snow ramp to Dodwell-Rixon Pass) behaves like a small glacier as it recedes — it can develop hidden crevasse-like gaps, an opening basal moat, and running water under the snow by late summer, so treat it with crevasse-terrain caution, especially late season.",
+     "value": "No glacier on this line. Snow lingering on the ridge and in the gullies below it can be hard early in the season, so carry an axe until it has melted out."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_dana_scramble",
+     "column": "rope_note",
+     "path": [],
+     "find": "An ice axe early season, and crampons if snow or ice is sitting on the Elwha Snow Finger or the approach gullies, are what the terrain actually asks for, along with a helmet and footwear you can ford a river in. Descending the Snow Finger is more hazard-prone than climbing it, so check its condition before you commit to it as your way back.",
+     "replace": "An ice axe early season, and crampons if hard snow is sitting on the ridge or in the gullies below it, are what the terrain actually asks for, along with a helmet and footwear you can ford a river in."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_dana_scramble",
+     "column": "beta",
+     "path": [],
+     "expect": "Mount Dana's only recorded route is a straightforward scramble; it is classified simply as 'scrambling' with no formal class rating published, and it lacks the pitch-by-pitch detail that exists for the main Bailey Range Traverse peaks. Most parties reach the Bailey Range crest via the Elwha River Trail and travel off-trail; an alternate approach along the ridge from Mount Barnes to Dana reportedly involves exposed downclimbing, but this has not been formally written up. Treat this as a route-finding, self-sufficient objective rather than a beta-rich one.",
+     "value": "Mount Dana is a class 2 scramble with no pitch-by-pitch detail published. The line with a described approach leaves the Elwha Basin way trail beyond Happy Hollow, climbs steeply north through brush and timber to the ridge joining Mount Barnes and Mount Wilder, and follows that crest high, past Wilder, to Dana's summit. Treat it as a route-finding, self-sufficient objective rather than a beta-rich one."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_dana_scramble",
+     "column": "overview",
+     "path": [],
+     "find": "climbers reach it only as a side excursion from a multi-day Bailey Range or Elwha-interior traverse",
+     "replace": "climbers reach it on a multi-day trip up the Elwha, climbing out of the upper valley to the ridge it shares with Mount Wilder"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_dana_scramble",
+     "column": "turnaround",
+     "path": [],
+     "find": "retreat all the way back to the Bailey Range crest and down to the Elwha corridor",
+     "replace": "retreat all the way back along the ridge and down the steep slope to the Elwha Basin way trail"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_dana_scramble",
+     "column": "data_quality",
+     "path": [
+      "gaps",
+      0
+     ],
+     "expect": "No dedicated pitch-by-pitch or turn-by-turn description of the final summit scramble was found in a Mount-Dana-specific guide; route detail above the Bailey Range high country is inferred from general Bailey Range Traverse and Elwha-approach sources, not a Dana-specific trip report.",
+     "value": "No turn-by-turn description of the final summit scramble was found; the line from the Elwha Basin way trail to the ridge and along it to Dana is documented only in outline."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_dana_scramble",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "expect": "True summit gained by a Class 2-3 side excursion off the main Bailey Range Traverse, traversing north past the Bear Pass/Mount Barnes basin from Dodwell-Rixon Pass.",
+     "value": "Summit of Mount Dana, reached by following the ridge crest east and then northeast from the Barnes–Wilder ridge; class 2 scrambling at the top."
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_dana_scramble",
+     "index": 6,
+     "expect": {
+      "name": "Dodwell-Rixon Pass",
+      "lat": 47.78453,
+      "lng": -123.59268
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_dana_scramble",
+     "index": 5,
+     "expect": {
+      "name": "Elwha Snowfinger",
+      "lat": 47.776124289473685,
+      "lng": -123.58158021578947
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_dana_scramble",
+     "index": 4,
+     "expect": {
+      "name": "Elwha Basin (\"the maze\")",
+      "lat": 47.759307868421054,
+      "lng": -123.55937284736842
+     }
+    }
+   ]
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "verdict": "confirmed",
+   "resolution": "rule 2: the south side / McAllister Glacier line is reached only from the Eldorado Creek trailhead across the Eldorado ice cap; trailhead pin, trailhead record and pin notes moved to Eldorado, the Thunder Creek line cleared, Thunder Creek kept as a second approach_variants entry (it finishes on the east ridge), the glacier sequence corrected, the 'one-way 18-20 miles' sentence and the Thunder-Creek-only dist_km/gain_ft removed",
+   "summary": "Primus's South Ridge / McAllister Glacier route is only reached from the Eldorado Creek trailhead across the ice cap (Thunder Creek leads to the other side of the peak and its east ridge), so the trailhead, pins and map line now match the Eldorado approach the rest of the page already described, and Thunder Creek is listed as the alternative way in.",
+   "evidence": "Two independent accounts of this line both start at Eldorado Creek: a peak page (two approaches) describes the Eldorado ice cap approach as 'probably the most used', going Eldorado Glacier - Inspiration Glacier - Klawatti Col - a 0.4 mi traverse on a lobe of the McAllister Glacier to the Klawatti-Austera col - Klawatti Glacier - traversing south of Austera's east ridge and rounding it near 6,800 ft - North Klawatti Glacier - class 2 to the summit from the south and west; a separate 2016 trip report went Klawatti Col - McAllister Glacier - notch onto the Klawatti Glacier - round Austera Towers - North Klawatti Glacier, then snow ramps on Primus's south face, talus, and 'a couple hundred feet below summit we moved right onto south ridge'. A 2003 ski report (third author) confirms the Klawatti Glacier then North Klawatti order. The Thunder Creek approach (peak page; 2024 report) goes Thunder Creek Trail ~6 mi to McAllister Camp, across Thunder Creek (bridge now washed out, ford), up the lower north ridge of Tricouni (Lucky Ridge boot path) to the Borealis Glacier, up it to Lucky Pass (~7,200 ft), then the class 3 east ridge - the other side of the peak. The hiking-site entry that calls Thunder Creek the most common approach is for Primus in general (its 19.0 mi RT / 7,300 ft is that approach), not this line. So rule 2 picks Eldorado. Distances: no source gives an Eldorado-side distance (the peak page says the dome SSE of Eldorado is still 'a good five miles' from Primus, and gives no trailhead-to-dome figure); the approach's 'one-way 18-20 miles' matched the Thunder Creek round-trip figure and is replaced by the elevation difference (2,100 ft trailhead to 8,508 ft summit) and the days parties report (two possible, three typical). dist_km 15.3 is exactly half of the Thunder Creek 19.0 mi round trip and gain_ft 7300 is that approach's gain, so both are nulled rather than replaced (no Eldorado figure found). Trailhead pin: the same target the earlier pin pass used - mapped climbers' parking 48.49275,-121.12231, mapped path start 48.49279,-121.12333, a trip report's river log crossing 48.493061,-121.123988 (130 m); USGS ground 2,160 ft; the catalog's Inspiration Traverse pins the trailhead at 48.49274,-121.12222. Summit pin stays (matches the mapped peak); its distMi (11.5, from Thunder Creek) set null. The glacier naming in approach, pitch_detail, climbing_route and the variant said the notch dropped straight onto the North Klawatti Glacier; all three accounts put the Klawatti Glacier and the rounding of Austera's east ridge between them, so those sentences are corrected. The main camp card said this approach is NOT how most parties reach the peak; reworded for this route. LEFT FOR THE OWNER: itinerary/timing figures (Eldorado-side, unsourced) and the itinerary totalNote '~20 miles round trip' are unchanged; grade 'Grade II, Class 2-3' unchanged (sources say class 2 from the south, the row's summit notes allow class 3).",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.summitpost.org/primus-peak/152519",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-12-16.9555821609",
+    "https://turns-all-year.com/trip-reports/june-6-8-2003-primus-peak",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-05-28.130422421623",
+    "https://www.wta.org/go-hiking/hikes/primus-peak",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-mcallister-klawatti-ice-cap",
+    "https://www.openstreetmap.org/way/1110149578",
+    "https://rocknropenw.com/2021/11/25/eldorado-nw-couloir/",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.1223&y=48.4927&units=Feet&wkid=4326"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach",
+     "path": [],
+     "find": "onto the North Klawatti Glacier, rope up and traverse east/north across the glacier (probing for hidden crevasses - this section has caught parties by surprise even in good visibility) to the base of Primus's south/west ridge, then unrope and scramble snow-covered talus to the 8,508 ft summit.",
+     "replace": "onto the Klawatti Glacier. Rope up, traverse north and then east below the south side of Austera's east ridge, descending to round the end of that ridge near 6,800 ft onto the North Klawatti Glacier, and cross it (probing for hidden crevasses - this section has caught parties by surprise even in good visibility) to the foot of Primus's south face. Unrope and climb snow ramps and then talus up the face, moving right onto the south ridge for the last couple of hundred feet to the 8,508 ft summit."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach",
+     "path": [],
+     "find": "Total one-way distance from trailhead to summit is on the order of 18-20 miles with roughly 6,400 ft of net gain, normally split over 2-3 days each way;",
+     "replace": "The trailhead sits about 6,400 ft below the summit, and the round trip takes two to three days or more;"
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "dist_km",
+     "path": [],
+     "expect": 15.3,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 7300,
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "onto the North Klawatti Glacier.",
+     "replace": "onto the Klawatti Glacier."
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "pitch"
+     ],
+     "expect": "North Klawatti Glacier",
+     "value": "Klawatti and North Klawatti Glaciers"
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "notes"
+     ],
+     "expect": "Traverse east and north across the crevassed North Klawatti Glacier, probing for hidden cracks, to the base of Primus's south/west ridge.",
+     "value": "Traverse below the south side of Austera's east ridge, round its end near 6,800 ft onto the North Klawatti Glacier, and cross it, probing for hidden cracks, to the foot of Primus's south face."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "climbing_route",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "onto the North Klawatti Glacier.",
+     "replace": "onto the Klawatti Glacier."
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "label"
+     ],
+     "expect": "North Klawatti Glacier to the base of the south/west ridge",
+     "value": "Klawatti and North Klawatti Glaciers to the south face"
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "climbing_route",
+     "path": [
+      1,
+      "notes"
+     ],
+     "expect": "Rope up and traverse east/north across the glacier to the base of Primus's south/west ridge, probing for hidden crevasses — this section has caught parties by surprise even in good visibility.",
+     "value": "Rope up, traverse below the south side of Austera's east ridge and round its end near 6,800 ft onto the North Klawatti Glacier, then cross it to the foot of Primus's south face, probing for hidden crevasses — this section has caught parties by surprise even in good visibility."
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "expect": "Unrope and scramble snow-covered talus to the 8,508 ft summit.",
+     "value": "Unrope and climb snow ramps and then talus up the south face, moving right onto the south ridge for the last couple of hundred feet to the 8,508 ft summit."
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach_variants",
+     "path": [],
+     "expect": [
+      {
+       "name": "The far end of the Eldorado ice cap: five glaciers and a notch at the McAllister-Klawatti col",
+       "notes": "This is the long way to Primus and it comes from the opposite side of the mountain to the East Slope. From the Eldorado Creek trailhead on Cascade River Road near 2,100 ft, cross the Cascade River, climb the steep root-laced boot path through timber, cross the boulder field around 4,000 ft following cairns on the right side of the talus, and reach the meadows of Eldorado Basin. Continue to the toe of the Eldorado Glacier and rope up — it is broken and thinly bridged in a normal-to-low snow year.\n\nFrom the upper Eldorado Glacier, traverse north below Eldorado's east ridge and continue on the Inspiration Glacier toward Klawatti Col near 7,800 ft. Parties describe crossing the Inspiration's crevasse fields with zero visibility, so plan for it.\n\nSummit day from a Klawatti Col camp: downclimb or make a short rappel of about 50 ft through the notch at the McAllister-Klawatti col onto the North Klawatti Glacier, rope up, and traverse east and north across it — probing, because this stretch has caught parties by surprise even in good visibility — to the foot of Primus's south side. Then unrope and walk.\n\nThe route crosses the Eldorado, Inspiration, McAllister, Klawatti and North Klawatti glaciers in sequence; Austera Towers is passed and bypassed on a short scree ramp along the glacier's eastern edge.",
+       "season": "Mid-July through August, when the glacier bridges are most consolidated and whiteout risk is lowest",
+       "hazards": [
+        "A heavily crevassed North Klawatti and McAllister glacier system, especially late season",
+        "Thin, unreliable snow bridges by August and September — probe before committing weight",
+        "Complex glacier route-finding around Klawatti Col in poor visibility",
+        "A short technical step at the McAllister-Klawatti notch that has to be reversed at the end of the day",
+        "Extreme remoteness: a multi-day approach with no cell coverage"
+       ],
+       "baseFinding": "THE ONE FINDABLE FEATURE ON THIS ROUTE IS THE NOTCH AT THE McALLISTER-KLAWATTI COL, AND IT IS FINDABLE BECAUSE IT IS THE ONLY PLACE ALL DAY YOU NEED A ROPE FOR ROCK. It is a step of roughly 50 ft: downclimbed, hand-lined, or rappelled off a sling on a horn or block — there is no fixed hardware. If you have crossed a col without a technical step, you are not through it yet. AFTER THE NOTCH, THE TEST IS WHAT YOU ARE STANDING ON RATHER THAN WHAT YOU CAN SEE. You drop onto the NORTH KLAWATTI GLACIER and traverse east and north across it. The climbing begins where you take the rope OFF: snow-covered talus, class 2-3, straight to the 8,508 ft summit. There is no notch, no rib and no marked start above the glacier — the honest answer is that this route has no rock landmark at its base, and the col behind you is what tells you where you are. THE NEGATIVE TEST IS THE STRONG ONE AND IT SETTLES THE WHOLE PEAK: THE OTHER STANDARD LINE ON PRIMUS IS REACHED FROM THUNDER CREEK, AND IT STARTS AT LUCKY PASS — a notch at the head of the Borealis Glacier where the route to Tricouni Peak splits off east. IF YOU ARE AT A PASS WITH A SECOND PEAK'S ROUTE LEAVING IT, YOU ARE ON THE EAST SLOPE AND YOU CAME UP THE WRONG VALLEY FOR THIS ROUTE. The two lines are on opposite sides of the mountain and share no ground below the summit. AND WATCH THE FALSE SUMMIT WHATEVER SIDE YOU CAME FROM: a false top stands around 8,270 ft and is passed on climber's-left. A high point reached without traversing round anything is not the summit."
+      }
+     ],
+     "value": [
+      {
+       "name": "The far end of the Eldorado ice cap: five glaciers and a notch at the McAllister-Klawatti col",
+       "notes": "This is the way to Primus's south side, and it comes from the opposite side of the mountain to the Thunder Creek approach. From the Eldorado Creek trailhead on Cascade River Road near 2,100 ft, cross the Cascade River, climb the steep root-laced boot path through timber, cross the boulder field around 4,000 ft following cairns on the right side of the talus, and reach the meadows of Eldorado Basin. Continue to the toe of the Eldorado Glacier and rope up — it is broken and thinly bridged in a normal-to-low snow year.\n\nFrom the upper Eldorado Glacier, traverse north below Eldorado's east ridge and continue on the Inspiration Glacier toward Klawatti Col near 7,800 ft. Parties describe crossing the Inspiration's crevasse fields with zero visibility, so plan for it.\n\nSummit day from a Klawatti Col camp: downclimb or make a short rappel of about 50 ft through the notch at the McAllister-Klawatti col onto the Klawatti Glacier, rope up, and traverse below the south side of Austera's east ridge, rounding its end near 6,800 ft onto the North Klawatti Glacier — probing, because this stretch has caught parties by surprise even in good visibility — to the foot of Primus's south side. Then unrope and walk.\n\nThe route crosses the Eldorado, Inspiration, McAllister, Klawatti and North Klawatti glaciers in sequence; Austera Towers is passed and bypassed on a short scree ramp along the glacier's eastern edge.",
+       "season": "Mid-July through August, when the glacier bridges are most consolidated and whiteout risk is lowest",
+       "hazards": [
+        "A heavily crevassed North Klawatti and McAllister glacier system, especially late season",
+        "Thin, unreliable snow bridges by August and September — probe before committing weight",
+        "Complex glacier route-finding around Klawatti Col in poor visibility",
+        "A short technical step at the McAllister-Klawatti notch that has to be reversed at the end of the day",
+        "Extreme remoteness: a multi-day approach with no cell coverage"
+       ],
+       "baseFinding": "THE ONE FINDABLE FEATURE ON THIS ROUTE IS THE NOTCH AT THE McALLISTER-KLAWATTI COL, AND IT IS FINDABLE BECAUSE IT IS THE ONLY PLACE ALL DAY YOU NEED A ROPE FOR ROCK. It is a step of roughly 50 ft: downclimbed, hand-lined, or rappelled off a sling on a horn or block — there is no fixed hardware. If you have crossed a col without a technical step, you are not through it yet. AFTER THE NOTCH, THE TEST IS WHAT YOU ARE STANDING ON RATHER THAN WHAT YOU CAN SEE. You drop onto the KLAWATTI GLACIER, traverse below Austera's east ridge and round its end onto the NORTH KLAWATTI GLACIER. The climbing begins where you take the rope OFF: snow-covered talus, class 2-3, straight to the 8,508 ft summit. There is no notch, no rib and no marked start above the glacier — the honest answer is that this route has no rock landmark at its base, and the col behind you is what tells you where you are. THE NEGATIVE TEST IS THE STRONG ONE AND IT SETTLES THE WHOLE PEAK: THE OTHER STANDARD LINE ON PRIMUS IS REACHED FROM THUNDER CREEK, AND IT STARTS AT LUCKY PASS — a notch at the head of the Borealis Glacier where the route to Tricouni Peak splits off east. IF YOU ARE AT A PASS WITH A SECOND PEAK'S ROUTE LEAVING IT, YOU ARE ON THE EAST SLOPE AND YOU CAME UP THE WRONG VALLEY FOR THIS ROUTE. The two lines are on opposite sides of the mountain and share no ground below the summit. AND WATCH THE FALSE SUMMIT WHATEVER SIDE YOU CAME FROM: a false top stands around 8,270 ft and is passed on climber's-left. A high point reached without traversing round anything is not the summit."
+      },
+      {
+       "name": "Thunder Creek and the Borealis Glacier: the east ridge from Lucky Pass",
+       "notes": "The other way onto Primus comes from the north, and it finishes on a different line: the east ridge, not this route's south side. From Colonial Creek Campground on the North Cascades Highway, walk the Thunder Creek Trail about six miles to McAllister Camp. The bridge over Thunder Creek there has washed out, so expect to ford cold, fast water or hunt for a log crossing.\n\nAcross the creek, a faint, steep boot path climbs the long, brushy lower north ridge of Tricouni Peak to the toe of the Borealis Glacier near 6,000 ft, where there is good camping. From camp, climb the glacier along its eastern edge, keeping clear of the icefall in its middle, to Lucky Pass, the col between Primus and Tricouni near 7,200 ft, and follow the east ridge to the summit on class 3 ground.\n\nThe brush on the ridge above Thunder Creek is slow going in either direction, and worse carrying skis or a long pack.",
+       "hazards": [
+        "An unbridged ford of Thunder Creek at McAllister Camp",
+        "A steep, brushy boot path that is easy to lose on the ridge above Thunder Creek",
+        "An icefall in the middle of the Borealis Glacier that has to be skirted",
+        "Class 3 ground on the east ridge above Lucky Pass"
+       ]
+      }
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "This is the multi-day route in, from the Eldorado side across the ice, and it is NOT how most parties reach these two peaks — it is recorded so the option is visible, not recommended as a shortcut. It is a genuinely different undertaking:",
+     "replace": "This is the camp for this route, reached from the Eldorado side across the ice. It is a serious undertaking:"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": " Choose it because you want the traverse.",
+     "replace": ""
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "bivy",
+     "path": [
+      0,
+      "permit"
+     ],
+     "find": "A DIFFERENT approach means a different permit. Parties coming across the ice cap from Eldorado start in a zone that does accept advance reservations, but",
+     "replace": "Parties coming across the ice cap from Eldorado start in a zone that accepts advance reservations, but"
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "expect": "6+ mile approach (Thunder Creek or Eldorado approaches) with substantial elevation gain to a high glacier camp, followed by a long roped glacier travel/summit day",
+     "value": "A steep climbers' path and a long glacier approach from the Eldorado Creek trailhead to a high camp near Klawatti Col, followed by a long roped glacier travel and summit day"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "Camps above Thunder Creek fall in cross-country zones.",
+     "replace": "Camps on the Eldorado ice cap fall in cross-country zones."
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Thunder Creek Trailhead",
+     "value": "Eldorado Creek Trailhead (Cascade River Road)"
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "South end of Colonial Creek Campground on Hwy 20; an alternate southern approach via Eldorado Creek and the Eldorado ice cap is also used for this side.",
+     "value": "Climbers' parking at about mile 20 of Cascade River Road, near 2,100 ft. The unsigned path starts by crossing the Cascade River on logs a short way downstream of the parking."
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "expect": "South side/McAllister Glacier aspect reached by continuing past Lucky Pass or via the Eldorado ice cap traverse; glacier travel gear required.",
+     "value": "Reached from a camp at Klawatti Col across the Klawatti and North Klawatti glaciers, then snow ramps and talus up the south face to the upper south ridge; glacier travel gear required."
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 11.5,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Thunder Creek Trailhead",
+     "value": "Eldorado Creek Trailhead (Cascade River Road)"
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLat"
+     ],
+     "expect": 48.6855,
+     "value": 48.4927
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLng"
+     ],
+     "expect": -121.0925,
+     "value": -121.1223
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "Start at the Thunder Creek Trailhead at Colonial Creek Campground on SR 20; this is not the Eldorado Creek trailhead on Cascade River Road, which serves Dorado Needle and is 21.5 km away.",
+     "value": "Start at the Eldorado Creek climbers' trailhead at about mile 20 of Cascade River Road, east of Marblemount; cross the Cascade River on logs just downstream of the parking to reach the climbers' path."
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_primus_peak_south_ridge",
+     "index": 0,
+     "expect": {
+      "name": "Thunder Creek Trailhead",
+      "lat": 48.6855,
+      "lng": -121.0925
+     },
+     "lat": 48.4927,
+     "lng": -121.1223,
+     "elev": 2160,
+     "sources": [
+      "https://www.openstreetmap.org/way/1110149578",
+      "https://rocknropenw.com/2021/11/25/eldorado-nw-couloir/"
+     ]
+    },
+    {
+     "op": "clear_line",
+     "id": "wa_primus_peak_south_ridge",
+     "why": "the 198-point line runs up Thunder Creek from Colonial Creek to the summit (the Borealis / Lucky Pass approach); this route starts at Eldorado Creek and reaches the south side across the ice cap",
+     "expect_gpx": "LIVE"
+    }
+   ]
+  }
+ ]
+}

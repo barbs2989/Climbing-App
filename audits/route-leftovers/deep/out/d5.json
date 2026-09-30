@@ -1,0 +1,342 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_seattle_south",
+   "verdict": "confirmed",
+   "resolution": "rule 4 (one-way figure a source states) for dist_km; gain_ft from two sources; rule 2 applied to the pins/line so the distances they carry agree with the North Fork Quinault trail the row now describes",
+   "summary": "Mount Seattle's approach is about 19 miles one way up the North Fork Quinault (not the old 61-mile Elwha round trip) with about 5,750 ft of gain; the distance, gain, day-by-day pin mileages and the leftover Elwha wording now all describe that one approach, and the pins and drawn line that followed the Skyline Ridge route instead are removed.",
+   "evidence": "dist_km 98.17 km (61 mi) was the old Elwha round trip. A club route listing states the approach as 19 miles along the North Fork Quinault with 5,750 ft of gain. The park's trail page puts Low Divide 16 miles from the North Fork trailhead (519 ft to 3,602 ft), and an independent 2010 trip report over the same trail agrees (Twelvemile about 11.4 mi from the car, the last 4 miles climbing to Low Divide; out again as 11 miles to Halfway House plus 5 to the car), leaving about 3 miles of climbers' route from Low Divide past Seattle Meadows to the 6,246 ft summit -- consistent with the 19. dist_km set to 30.58 km (19 mi, the stated one-way figure). Gain: 5,750 ft stated by the club listing; the park's elevations give a net 519 -> 3,602 ft to Low Divide plus 2,644 ft on to the summit = 5,727 ft, and the 2010 report measured about 3,100 ft of climbing to Low Divide (-> ~5,750 total), so gain_ft 7,500 (an Elwha-side figure) becomes 5,750. The row mixed two approaches: its day plan, route breakdown, road card and trailhead use the North Fork Quinault river trail, but pins 1-4 (Three Lakes, Kimta Peak, Promise Creek Bench, Beauty Pass) and the drawn line follow the Skyline Ridge primitive route, whose park page gives ~23 miles from Three Lakes to Low Divide on top of the climb to Three Lakes -- which is why the pins put Low Divide at mile 27 and the summit at 30.5. Rule 2: the maintained river trail is the most-documented line in current use, so the Skyline pins are removed, the line is cleared, Low Divide's distMi becomes 16 (two sources), the summit's 19, and Seattle Meadows' distMi is nulled (no source splits the last 3 miles). The Skyline route stays described as an alternative in approach_variants and in the approach prose, whose '16-20 miles one-way' is corrected (the ridge is far longer than 20). The route-breakdown '~3 mi' for Low Divide to Seattle Meadows is dropped because it would put the meadows alone at the full 19 miles. The descent line and crowd estimate still named the Elwha approach and are re-pointed. NOT fixed and worth an owner look: the day plan states miles only for the summit day (4), and lib/outing.js effDistKm prefers the itinerary's day-miles sum over dist_km, so the route page will still show the approach as about 2 mi one way until either the other day plan days carry miles or the reader ignores a partial itinerary.",
+   "sources": [
+    "https://mazamas.org/activity/286/",
+    "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+    "http://web.archive.org/web/20241228131636/https://www.summitpost.org/christie-noyes-meany-seattle-martins-lakes/652442",
+    "https://www.nps.gov/olym/planyourvisit/skyline-ridge-primitive-trail.htm",
+    "https://trailcatjim.com/skyline-trail-loop-three-lakes-low-divide-mt-seattle/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "dist_km",
+     "path": [],
+     "expect": 98.17,
+     "value": 30.58
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 7500,
+     "value": 5750
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_seattle_south",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 16-20 miles one-way depending on the line chosen",
+     "replace": "16 miles one-way by the river trail and much farther by the ridge"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "grade"
+     ],
+     "expect": "Primitive trail/off-trail, ~3 mi",
+     "value": "Primitive trail/off-trail"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_seattle_south",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "start of the Three Lakes / Skyline Ridge Primitive Trail.",
+     "replace": "start of the North Fork Quinault River Trail; the Three Lakes trail up to the Skyline Ridge Primitive Trail also leaves from here."
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 27,
+     "value": 16
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 28.5,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "waypoints",
+     "path": [
+      7,
+      "distMi"
+     ],
+     "expect": 30.5,
+     "value": 19
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_seattle_south",
+     "column": "descent",
+     "path": [],
+     "expect": "Reverse the south slopes back toward the Elwha Basin approach.",
+     "value": "Reverse the south slopes to Seattle Meadows, then descend to Low Divide and the North Fork Quinault trail."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_seattle_south",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "based on remote Elwha approach",
+     "replace": "given the long, remote approach"
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_seattle_south",
+     "index": 1,
+     "expect": {
+      "name": "Three Lakes",
+      "lat": 47.60059,
+      "lng": -123.72375
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_seattle_south",
+     "index": 2,
+     "expect": {
+      "name": "Kimta Peak",
+      "lat": 47.6975,
+      "lng": -123.6889
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_seattle_south",
+     "index": 3,
+     "expect": {
+      "name": "Promise Creek Bench",
+      "lat": 47.70395204761905,
+      "lng": -123.6568627857143
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_mount_seattle_south",
+     "index": 4,
+     "expect": {
+      "name": "Beauty (Lake Beauty) Pass",
+      "lat": 47.7162655,
+      "lng": -123.6396276
+     }
+    },
+    {
+     "op": "clear_line",
+     "id": "wa_mount_seattle_south",
+     "why": "The drawn line runs from the trailhead up the Skyline Ridge primitive route via Three Lakes and Kimta Peak; the row describes the North Fork Quinault river trail, so no vertex of it can be kept.",
+     "expect_gpx": "LIVE"
+    }
+   ]
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "verdict": "confirmed",
+   "resolution": "rule 4: dist_km set to the one-way trailhead-to-camp distance (21 mi) instead of the 45-mile round trip",
+   "summary": "Bear Mountain North Buttress: the one-way approach from Hannegan Pass is about 21 miles to the saddle camp, not 45 (that is the round trip), so the stored distance is halved to match the page's own text.",
+   "evidence": "72.4 km is the 45-mile round trip (both rows' own text: about 21 miles trailhead-to-camp, 5-6 days and about 45 miles round trip). The trail distance from the Hannegan Pass trailhead down the Chilliwack River trail to the Bear Creek camp is about 17 miles in a climbing-area route guide, and a hiking guide gives the Chilliwack River trail as 17.3 miles one way to its end (the park's trail report says the trail is cleared to Bear Creek camp and abandoned beyond). An independent route write-up of the North Buttress (from the Canadian side, which meets this approach at Bear Creek) puts Bear Creek at about 6 miles and the saddle camp at about 9 miles, i.e. about 3 miles and 4,300 ft from Bear Creek to camp, with the base of the route under a mile beyond. So one-way to camp is about 17 + 3-4 = 21 miles, the figure the row's own approach, pins (camp at mile 21) and day plan (12 + 9 miles) already state; dist_km set to 33.8 km (21 mi). Caveat for the owner: no single source states 21 miles from Hannegan -- the 17-mile trail part is two-sourced, the ~3-4 mile off-trail part rests on one write-up. Halving the 45-mile figure would give nearly the same (22.5) but only the row states that round trip.",
+   "sources": [
+    "https://www.mountainproject.com/area/112828230/bear-mountain",
+    "https://www.wta.org/go-hiking/hikes/chilliwack-river",
+    "https://www.nps.gov/noca/planyourvisit/trail-conditions.htm",
+    "https://web.archive.org/web/2024/https://stephabegg.com/trip-reports/washington/bear-nf-buttress/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_bear_mountain_chilliwack_north_buttress",
+     "column": "dist_km",
+     "path": [],
+     "expect": 72.4,
+     "value": 33.8
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "verdict": "confirmed",
+   "resolution": "rule 4: dist_km set to the one-way trailhead-to-camp distance (21 mi) instead of the 45-mile round trip",
+   "summary": "Bear Mountain Direct North Buttress: the one-way approach from Hannegan Pass is about 21 miles to the saddle camp, not 45 (that is the round trip), so the stored distance is halved to match the page's own text.",
+   "evidence": "72.4 km is the 45-mile round trip (both rows' own text: about 21 miles trailhead-to-camp, 5-6 days and about 45 miles round trip). The trail distance from the Hannegan Pass trailhead down the Chilliwack River trail to the Bear Creek camp is about 17 miles in a climbing-area route guide, and a hiking guide gives the Chilliwack River trail as 17.3 miles one way to its end (the park's trail report says the trail is cleared to Bear Creek camp and abandoned beyond). An independent route write-up of the North Buttress (from the Canadian side, which meets this approach at Bear Creek) puts Bear Creek at about 6 miles and the saddle camp at about 9 miles, i.e. about 3 miles and 4,300 ft from Bear Creek to camp, with the base of the route under a mile beyond. So one-way to camp is about 17 + 3-4 = 21 miles, the figure the row's own approach, pins (camp at mile 21) and day plan (12 + 9 miles) already state; dist_km set to 33.8 km (21 mi). Caveat for the owner: no single source states 21 miles from Hannegan -- the 17-mile trail part is two-sourced, the ~3-4 mile off-trail part rests on one write-up. Halving the 45-mile figure would give nearly the same (22.5) but only the row states that round trip.",
+   "sources": [
+    "https://www.mountainproject.com/area/112828230/bear-mountain",
+    "https://www.wta.org/go-hiking/hikes/chilliwack-river",
+    "https://www.nps.gov/noca/planyourvisit/trail-conditions.htm",
+    "https://web.archive.org/web/2024/https://stephabegg.com/trip-reports/washington/bear-nf-buttress/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_direct_north_buttress",
+     "column": "dist_km",
+     "path": [],
+     "expect": 72.4,
+     "value": 33.8
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "verdict": "confirmed",
+   "resolution": "rule 4: dist_km set to 7.5 mi (12.07 km) one way, half of the 14-16 mile round trips sources give for this out-and-back",
+   "summary": "Three Fingers North Peak is about 7.5 miles one way from the Tupso Pass trailhead (14-16 miles round trip), so the stored 14-mile figure in the one-way slot becomes 7.5 miles.",
+   "evidence": "dist_km 22.53 km = 14.0 mi, the round trip: the row's own day plan totals 14.5 mi, its summit pin sits at mile 7.3, and a 2018 trip report for the North Peak specifically (out and back from the Saddle Lake / Tupso Pass trailhead via Goat Flats, Tin Can Gap and the col) logs 14 miles round trip and 5,600 ft. A peak page for the 6,870 ft summit (the North Peak's coordinates) gives the trail #641 approach as 16 miles round trip; a hiking guide gives 15 miles round trip to the lookout on the neighbouring south summit, which shares everything to Tin Can Gap. Sources therefore span 7-8 miles one way; 7.5 mi (12.07 km) is set: half the lookout round trip and the midpoint of the two North Peak round trips (14 and 16). Gain (5,600) matches the North Peak report and is unchanged. Owner follow-up, not changed: a hiking guide's current access note says Tupso Pass Road (FR 41) has a washout and a closure well short of the trailhead, open to foot and bike only; the row's road card has no status and its partner notes mention a washout, so the drivable start (and so the real walking distance) should be re-checked.",
+   "sources": [
+    "https://trailcatjim.com/three-fingers-north-peak-via-west-couloir-south-face/",
+    "http://web.archive.org/web/20260911085855/https://www.summitpost.org/three-fingers/150549",
+    "https://www.wta.org/go-hiking/hikes/three-fingers"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_three_fingers_r1",
+     "column": "dist_km",
+     "path": [],
+     "expect": 22.53,
+     "value": 12.07
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "verdict": "confirmed",
+   "resolution": "rule 4 cannot be met (no source states any distance to Mutchler); the round-trip value is removed from the one-way slot (dist_km null) and the approach sentence that derived a one-way figure from it is rewritten",
+   "summary": "No source gives the distance to Mutchler Peak itself, and the stored figure was a round trip in the one-way slot, so the distance is cleared rather than guessed; the page's own day plan (about 17.5 miles round trip) still supplies the approach figure shown.",
+   "evidence": "dist_km 24.78 km (15.4 mi) is a round trip: the approach prose itself calls it 'the ~24.8 km round trip', the summit pin sits at mile 7.7 and the day plan totals 17.5 mi. Mutchler (7,160+ ft, south-east of Snowking, 'Snowqueen' in some reports) has a peak record but no route description, trip report or distance anywhere searched (route databases, club listings, WTA, forum and archive searches); the row's own corrections and data-quality notes say the same. Snowking, reached by the same Kindy Ridge / Cyclone Lake approach, is logged by different trip reporters at 16, 17.1 and about 18 miles round trip, so the approach sentence now states that instead of a one-way figure derived from the stored round trip, and no longer credits 'reports'. dist_km is set to null: a wrong figure misleads more than a missing one, and the route page's approach figure comes from the itinerary (lib/outing.js effDistKm) so nothing disappears from screen.",
+   "sources": [
+    "https://www.peakbagger.com/peak.aspx?pid=38017",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2006082011",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-05-29.4313826348",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-02-20.1483691359"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mutchler_peak_scramble",
+     "column": "dist_km",
+     "path": [],
+     "expect": 24.78,
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mutchler_peak_scramble",
+     "column": "approach",
+     "path": [],
+     "find": "total car-to-summit distance is on the order of 12-14 km one way given the ~24.8 km round trip, consistent with reports citing full Snowking/Kindy Ridge trips of 15-17 miles round trip and 6,500-7,100+ ft of cumulative gain.",
+     "replace": "no published figure gives the car-to-summit distance for Mutchler itself, but Snowking, reached by the same approach over Kindy Ridge, is roughly 16-18 miles round trip."
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "verdict": "confirmed",
+   "resolution": "rule 4: dist_km set to the stated one-way 8.1 mi (13.04 km); the unsupported 27-mile car-to-car figure it was derived from is corrected to about 16",
+   "summary": "The Sherpa Glacier climb is about 8 miles one way from the Stuart Lake trailhead (about 16 round trip), not 13.5 one way / 27 round trip, so the distance and the fitness note now say that.",
+   "evidence": "dist_km 21.73 km (13.5 mi) was halved in July from a '~27 mi car-to-car' fitness note that nothing supports. A club route page gives the trip profile as trailhead to camp 6.1 mi, camp to summit 2.0 mi, summit to trailhead 8.1 mi (length 16.2 mi, gain 5,833 ft). Independently, a route page says to leave the Stuart Lake trail at the first switchback and that it is 3 to 4 miles from the trail into the basin below the Sherpa and Ice Cliff glaciers, and a 2020 Sherpa Glacier trip report puts that turn-off about 3.7 miles up the trail -- about 7-7.5 miles to the basin, then the glacier and summit ridge, consistent with 8.1. dist_km set to 13.04 km (8.1 mi, the stated one-way figure); fitness note changed to about 16 mi car-to-car; the corrections note that justified the old value is replaced. The row's pins (glacier toe at mile 6, top of glacier 6.5) are consistent and unchanged; gain 6,000 left (sources 5,833).",
+   "sources": [
+    "http://web.archive.org/web/20251211031346/https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-stuart-sherpa-glacier",
+    "http://web.archive.org/web/20240518221020/https://www.summitpost.org/sherpa-glacier/164046",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-06-16-2487535542"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_sherpa_glacier",
+     "column": "dist_km",
+     "path": [],
+     "expect": 21.73,
+     "value": 13.04
+    },
+    {
+     "op": "set",
+     "id": "wa_sherpa_glacier",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec"
+     ],
+     "expect": "Serious approach — ~27 mi / 6,000 ft gain car-to-car logged",
+     "value": "Serious approach — about 16 mi / 6,000 ft gain car-to-car"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_sherpa_glacier",
+     "column": "corrections",
+     "path": [],
+     "find": "2026-07-31: dist_km corrected from 43.45 (an exact km conversion of this row's own 27-mi round-trip fitness spec, mistakenly stored as one-way) to 21.73, the one-way value that reproduces 27 mi round trip under this app's distKm*2 display convention.",
+     "replace": "2026-09-30: dist_km set to 13.04 (8.1 mi trailhead to summit, one way); the 27-mi round trip the earlier value was derived from had no support, and the fitness note now gives about 16 mi car-to-car."
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "verdict": "confirmed",
+   "resolution": "rule 4 cannot be met (no source states the one-way distance to the base of the ridge, and the route is a loop, so a round trip cannot be halved); the 20-mile value, which exceeds even the whole published loop, is removed (dist_km null); the approach's Longs Pass mileage is corrected",
+   "summary": "The West Ridge is a 15-18 mile loop (up the ridge, down the Cascadian Couloir), so the stored 20 miles 'one way' is wrong on any reading; with no published one-way figure it is cleared (the page's own 16.5-mile day still shows as the distance), and Longs Pass is corrected from 5 to about 3 miles from the trailhead.",
+   "evidence": "dist_km 32.2 km = 20 mi. The row is recorded as a loop (outing_shape 'loop'; up the West Ridge, down the Cascadian Couloir) and its own day plan is 16.5 mi car-to-car. A climbing-project route page gives the West Ridge / Cascadian loop from the Esmeralda trailhead as 15-18 miles round trip with 5,250 ft of gain, and other reports give times and camps but no mileage; no source states the one-way distance from the trailhead to the base of the ridge. Rule 4's halving applies only to out-and-back routes, so the value cannot be derived; 20 mi exceeds the whole loop, so it is nulled (the route page takes the itinerary's 16.5 mi for a loop -- lib/outing.js effDistKm -- so the displayed distance is unchanged). The approach prose also put Longs Pass 5 miles from the trailhead: one hiking guide gives Longs Pass as 5.8 miles round trip (2.9 one way) with 2,100 ft of gain and another as 11.3 km (7 mi) round trip (3.5 one way), and the row's own Longs Pass pin is at mile 3.5, so it now reads 'roughly 3 mi'. Gain 5,175 is within the stated 5,250 and left.",
+   "sources": [
+    "http://cnmtstuartclimbproject.blogspot.com/2017/09/route-mount-stuart-west-ridge-carryover.html",
+    "https://wenatcheeoutdoors.org/2016/06/07/mt-stuart-west-ridge-2/",
+    "https://www.wta.org/go-hiking/hikes/longs-pass",
+    "https://www.10adventures.com/hikes/wenatchee-national-forest/longs-pass-trail/",
+    "http://web.archive.org/web/20260308162733/https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_stuart_west_ridge",
+     "column": "dist_km",
+     "path": [],
+     "expect": 32.2,
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stuart_west_ridge",
+     "column": "approach",
+     "path": [],
+     "find": "Longs Pass (5 mi, ~2,100 ft gain from the trailhead",
+     "replace": "Longs Pass (roughly 3 mi, ~2,100 ft gain from the trailhead"
+    }
+   ],
+   "pin_ops": []
+  }
+ ]
+}
