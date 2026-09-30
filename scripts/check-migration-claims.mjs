@@ -61,7 +61,8 @@ const selfPr = (() => {
   } catch {}
   return null;
 })();
-const numOf = (p) => { const m = path.basename(p).match(/^(\d{4})_/); return m ? m[1] : null; };
+// 4 digits, or 5 for the renumbered historical duplicates (see check-migration-numbers.mjs).
+const numOf = (p) => { const m = path.basename(p).match(/^(\d{4,5})_/); return m ? m[1] : null; };
 
 // ---- what is already on main -------------------------------------------------------
 const DIR = path.join(process.cwd(), "supabase", "migrations");
@@ -126,7 +127,7 @@ async function openPrMigrations() {
   // declined to look at. A person renumbering it is what fixed that, not this check.
   for (const pr of prs) {
     const files = await api(`/repos/${slug}/pulls/${pr.number}/files?per_page=300`);
-    const migs = files.map((f) => f.filename).filter((f) => /^supabase\/migrations\/\d{4}_.*\.sql$/.test(f));
+    const migs = files.map((f) => f.filename).filter((f) => /^supabase\/migrations\/\d{4,5}_.*\.sql$/.test(f));
     if (migs.length) out.push({ number: pr.number, title: pr.title, files: migs });
   }
   return out;

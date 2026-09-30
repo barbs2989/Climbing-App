@@ -53,7 +53,13 @@
 --
 -- Re-runnable: every statement is ON CONFLICT DO NOTHING.
 
-begin;
+-- REPLAY NOTE (2026-09-30): begin/commit became one DO block (atomic in the same way) that returns
+-- early when the catalog this file extends is not loaded — an empty database, i.e. a Supabase preview
+-- branch, where every insert below would raise in the areas trigger. Unchanged wherever it is loaded.
+do $replay$ begin
+if not exists (select 1 from areas where id = 'ca_lassen_national_park') then
+  raise notice '0138: catalog not loaded (no area ca_lassen_national_park), nothing to add'; return;
+end if;
 
 -- 1. The two peaks that have no area. Filed beside their existing siblings:
 --    or_oregon_volcanoes already parents or_mt_hood and or_mt_thielsen, and
@@ -71,7 +77,7 @@ insert into routes (id, area_id, name, discipline, grade, grade_system, source) 
   ('or_middle_sister_north_ridge_hayden_glacier', 'or_middle_sister', 'North Ridge (Hayden Glacier)','mountaineering', 'Grade II Snow', 'class', 'cascade-volcanoes')
 on conflict (id) do nothing;
 
-commit;
+end $replay$;
 
 -- Verify AFTER, as SEPARATE statements — a failing SELECT inside the transaction would roll the
 -- inserts back, which is how 0097's writes were undone:

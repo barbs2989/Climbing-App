@@ -234,6 +234,7 @@ npm run check:merge-survival # did a merge silently DELETE what a parent added?
 npm run audit:silent-reverts # ...and did a SQUASH, which leaves no merge commit?
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
 npm run check:migrations # two migrations must never share a number (in build)
+npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
 ```
 
@@ -338,6 +339,11 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   array**, so after any batch write, re-read and reconcile: a 200 is not evidence the data changed.
 - **A row count that decides something must be read with the service key.** An RLS-protected table
   answers `count=exact` with **0 and a 200** under the public key, whatever it holds.
+- **The Supabase GitHub integration REPLAYS `supabase/migrations/` (on since 2026-09-26).** Every
+  migration PR gets an empty preview database, and a merge to `main` applies whatever production
+  has not RECORDED. So when you apply a migration by hand, record its version in
+  `supabase_migrations.schema_migrations` in the same step, or the merge applies it twice; and run
+  `npm run check:migration-replay` before pushing one. → [README-numbering.md](supabase/migrations/README-numbering.md)
 - **Run `npm run check:sql -- fix.sql` before handing over any SQL.** The SQL Editor reports
   success for an UPDATE or DELETE that matched zero rows; a wrong id has already destroyed the only
   copy of a route. → [hand-written-sql.md](docs/codebase/hand-written-sql.md)

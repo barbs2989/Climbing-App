@@ -35,6 +35,12 @@
 ALTER TABLE routes
 ADD COLUMN IF NOT EXISTS hazard_tags text[] DEFAULT '{}'::text[];
 
+-- REPLAY NOTE (2026-09-30): production records this version as applied. The column above is real
+-- schema and stays live. Everything below is the superseded data pass (see the header): it filters
+-- on a `routes.state` column that has never existed, so a fresh build failed here. It is kept as
+-- history inside one block comment so a Supabase preview branch replays past it.
+/*
+
 -- Step 2: Update routes with researched hazards
 
 -- Route 1: Kautz Glacier / Kautz Couloir (Mount Rainier)
@@ -160,3 +166,4 @@ WHERE state = 'WA';
 -- Total hazard entries: 99
 -- Deployment date: 2026-07-28
 -- Status: READY FOR PRODUCTION
+*/
