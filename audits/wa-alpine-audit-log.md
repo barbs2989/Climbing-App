@@ -28942,3 +28942,38 @@ cascadeclimbers.com, wta.org, willhiteweb.com) returned `EGRESS_BLOCKED` in this
 across all three research agents — every finding rests on WebSearch result snippets,
 cross-checked across 2+ independent sources per claim wherever the finding wasn't a same-row
 internal contradiction, not on fetched primary pages.
+
+## Batch 359 — 2026-09-30 (pass 6)
+
+Checked: wa_oval_peak_scramble, wa_overcoat_peak_southeast_route, wa_pernod_spire_standard,
+wa_phantom_peak_south_route, wa_phantom_peak_west_ridge, wa_philadelphia_mountain_scramble.
+
+Found and fixed 3 (`audits/sql/2026-09-30-batch-359.sql`): Oval Peak's high_point_ft (8795)
+disagreed with its own summit waypoint and the area row (both 8800, matching Wikipedia/WTA/
+ListsOfJohn) — corrected to 8800. Overcoat Peak's East Face route had top-level gain_ft/
+loss_ft (6032/5800) that broke the gain=loss identity a car-to-car route must satisfy, while
+its own 3-day itinerary already summed to an equal 6200/6200 — corrected both. Phantom Peak's
+South Route had top-level gain_ft/loss_ft (1916/1000) that turned out to be only the final
+summit-push segment (8016 summit minus the ~6100 ft high-camp saddle), ignoring the rest of
+its own documented 5-day Hannegan/Whatcom/Perfect Pass approach; its own itinerary already
+summed to an equal 8400/8400 — corrected both.
+
+Flagged for human review (1): Phantom Peak's West Ridge shares that exact same gain_ft=1916
+with its sibling South Route (same summit, same saddle math), so it's almost certainly the
+identical bug — but this route's itinerary has no day-by-day breakdown to source a confident
+replacement total from, so left alone rather than guessing a number.
+
+Clean (2): Pernod Spire (Standard Rock Route) — FA and elevation both confirmed; a modest
+(~12.5%) gain/loss split-vs-total mismatch was left alone as ambiguous rather than guessed at.
+Philadelphia Mountain (Standard Scramble) — elevation, permit and land-manager details all
+confirmed; a ~1% gain/loss rounding difference against its itinerary was left alone as
+negligible.
+
+`last_processed_id` advances to `wa_philadelphia_mountain_scramble`. Confirmed via a live,
+gap-checked id-ordered query that `wa_plan_9_from_outer_space` and `wa_playing_not_spraying`
+(both alpine-discipline but filed on crags, not peaks) are skipped next per scope, before the
+next batch's `wa_plummer_peak_r1`, `wa_point_success_south_side`, `wa_poltergeist_pinnacle`.
+Scope counts not re-run this batch (last known: 698 in-scope / 751 total, from batch 352).
+No `.env`/`.env.local` present at run start (fresh clone); read-only queries used the anon key
+supplied in the task prompt directly as shell env vars. `check:sql` ran successfully against
+the fix file before committing (all 3 write targets confirmed to exist live).
